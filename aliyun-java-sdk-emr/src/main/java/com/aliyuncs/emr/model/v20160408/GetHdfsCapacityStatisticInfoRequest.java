@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetHdfsCapacityStatisticInfoRequest extends RpcAcsRequest<GetHdfsCapacityStatisticInfoResponse> {
 	
 	public GetHdfsCapacityStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetHdfsCapacityStatisticInfo");
+		super("Emr", "2016-04-08", "GetHdfsCapacityStatisticInfo", "emr");
 	}
 
 	private String fromDatetime;

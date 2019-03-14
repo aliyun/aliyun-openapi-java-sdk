@@ -113,6 +113,8 @@ public class ListFlowResponse extends AcsResponse {
 
 		private String alertDingDingGroupBizId;
 
+		private String alertConf;
+
 		private String categoryId;
 
 		public String getId() {
@@ -257,6 +259,14 @@ public class ListFlowResponse extends AcsResponse {
 
 		public void setAlertDingDingGroupBizId(String alertDingDingGroupBizId) {
 			this.alertDingDingGroupBizId = alertDingDingGroupBizId;
+		}
+
+		public String getAlertConf() {
+			return this.alertConf;
+		}
+
+		public void setAlertConf(String alertConf) {
+			this.alertConf = alertConf;
 		}
 
 		public String getCategoryId() {

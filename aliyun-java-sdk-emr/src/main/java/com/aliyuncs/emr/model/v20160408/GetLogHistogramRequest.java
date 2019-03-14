@@ -23,12 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetLogHistogramRequest extends RpcAcsRequest<GetLogHistogramResponse> {
 	
 	public GetLogHistogramRequest() {
-		super("Emr", "2016-04-08", "GetLogHistogram");
+		super("Emr", "2016-04-08", "GetLogHistogram", "emr");
 	}
 
 	private Long resourceOwnerId;
 
 	private String hostInnerIp;
+
+	private String hostName;
 
 	private String logstoreName;
 
@@ -59,6 +61,17 @@ public class GetLogHistogramRequest extends RpcAcsRequest<GetLogHistogramRespons
 		this.hostInnerIp = hostInnerIp;
 		if(hostInnerIp != null){
 			putQueryParameter("HostInnerIp", hostInnerIp);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
 		}
 	}
 

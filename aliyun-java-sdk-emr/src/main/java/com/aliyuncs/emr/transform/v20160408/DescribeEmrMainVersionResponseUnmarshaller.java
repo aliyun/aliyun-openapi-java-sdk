@@ -21,7 +21,6 @@ import com.aliyuncs.emr.model.v20160408.DescribeEmrMainVersionResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeEmrMainVersionResponse.EmrMainVersion;
 import com.aliyuncs.emr.model.v20160408.DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfo.ServiceInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

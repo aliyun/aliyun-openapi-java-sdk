@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyFlowCategoryRequest extends RpcAcsRequest<ModifyFlowCategoryResponse> {
 	
 	public ModifyFlowCategoryRequest() {
-		super("Emr", "2016-04-08", "ModifyFlowCategory");
+		super("Emr", "2016-04-08", "ModifyFlowCategory", "emr");
 	}
 
 	private String name;

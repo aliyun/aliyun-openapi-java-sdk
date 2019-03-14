@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyResourcePoolRequest extends RpcAcsRequest<ModifyResourcePoolResponse> {
 	
 	public ModifyResourcePoolRequest() {
-		super("Emr", "2016-04-08", "ModifyResourcePool");
+		super("Emr", "2016-04-08", "ModifyResourcePool", "emr");
 	}
 
 	private Long resourceOwnerId;

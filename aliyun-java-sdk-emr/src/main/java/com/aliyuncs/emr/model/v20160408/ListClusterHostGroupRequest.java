@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -23,16 +24,22 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListClusterHostGroupRequest extends RpcAcsRequest<ListClusterHostGroupResponse> {
 	
 	public ListClusterHostGroupRequest() {
-		super("Emr", "2016-04-08", "ListClusterHostGroup");
+		super("Emr", "2016-04-08", "ListClusterHostGroup", "emr");
 	}
 
 	private Long resourceOwnerId;
+
+	private List<String> statusLists;
 
 	private String hostGroupId;
 
 	private Integer pageSize;
 
 	private String clusterId;
+
+	private String hostGroupName;
+
+	private String hostGroupType;
 
 	private Integer pageNumber;
 
@@ -45,6 +52,19 @@ public class ListClusterHostGroupRequest extends RpcAcsRequest<ListClusterHostGr
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<String> getStatusLists() {
+		return this.statusLists;
+	}
+
+	public void setStatusLists(List<String> statusLists) {
+		this.statusLists = statusLists;	
+		if (statusLists != null) {
+			for (int i = 0; i < statusLists.size(); i++) {
+				putQueryParameter("StatusList." + (i + 1) , statusLists.get(i));
+			}
+		}	
 	}
 
 	public String getHostGroupId() {
@@ -77,6 +97,28 @@ public class ListClusterHostGroupRequest extends RpcAcsRequest<ListClusterHostGr
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getHostGroupName() {
+		return this.hostGroupName;
+	}
+
+	public void setHostGroupName(String hostGroupName) {
+		this.hostGroupName = hostGroupName;
+		if(hostGroupName != null){
+			putQueryParameter("HostGroupName", hostGroupName);
+		}
+	}
+
+	public String getHostGroupType() {
+		return this.hostGroupType;
+	}
+
+	public void setHostGroupType(String hostGroupType) {
+		this.hostGroupType = hostGroupType;
+		if(hostGroupType != null){
+			putQueryParameter("HostGroupType", hostGroupType);
 		}
 	}
 

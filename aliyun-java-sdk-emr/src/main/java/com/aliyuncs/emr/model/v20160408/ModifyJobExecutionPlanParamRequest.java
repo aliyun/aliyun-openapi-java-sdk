@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyJobExecutionPlanParamRequest extends RpcAcsRequest<ModifyJobExecutionPlanParamResponse> {
 	
 	public ModifyJobExecutionPlanParamRequest() {
-		super("Emr", "2016-04-08", "ModifyJobExecutionPlanParam");
+		super("Emr", "2016-04-08", "ModifyJobExecutionPlanParam", "emr");
 	}
 
 	private Long resourceOwnerId;

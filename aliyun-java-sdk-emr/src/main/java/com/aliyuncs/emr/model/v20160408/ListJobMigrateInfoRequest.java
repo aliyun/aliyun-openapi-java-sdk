@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListJobMigrateInfoRequest extends RpcAcsRequest<ListJobMigrateInfoResponse> {
 	
 	public ListJobMigrateInfoRequest() {
-		super("Emr", "2016-04-08", "ListJobMigrateInfo");
+		super("Emr", "2016-04-08", "ListJobMigrateInfo", "emr");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetJobRunningTimeStatisticInfoRequest extends RpcAcsRequest<GetJobRunningTimeStatisticInfoResponse> {
 	
 	public GetJobRunningTimeStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetJobRunningTimeStatisticInfo");
+		super("Emr", "2016-04-08", "GetJobRunningTimeStatisticInfo", "emr");
 	}
 
 	private String fromDatetime;

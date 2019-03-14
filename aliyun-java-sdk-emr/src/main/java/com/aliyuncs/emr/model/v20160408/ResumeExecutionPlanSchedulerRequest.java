@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResumeExecutionPlanSchedulerRequest extends RpcAcsRequest<ResumeExecutionPlanSchedulerResponse> {
 	
 	public ResumeExecutionPlanSchedulerRequest() {
-		super("Emr", "2016-04-08", "ResumeExecutionPlanScheduler");
+		super("Emr", "2016-04-08", "ResumeExecutionPlanScheduler", "emr");
 	}
 
 	private Long resourceOwnerId;

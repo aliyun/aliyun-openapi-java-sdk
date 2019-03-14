@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeExecutionPlanRequest extends RpcAcsRequest<DescribeExecutionPlanResponse> {
 	
 	public DescribeExecutionPlanRequest() {
-		super("Emr", "2016-04-08", "DescribeExecutionPlan");
+		super("Emr", "2016-04-08", "DescribeExecutionPlan", "emr");
 	}
 
 	private Long resourceOwnerId;

@@ -39,29 +39,9 @@ public class DescribeScalingTaskGroupResponse extends AcsResponse {
 
 	private String status;
 
-	private String payType;
+	private String activeRuleCategory;
 
-	private String dataDiskCategory;
-
-	private Integer dataDiskSize;
-
-	private Integer dataDiskCount;
-
-	private String sysDiskCategory;
-
-	private Integer sysDiskSize;
-
-	private Integer cpuCount;
-
-	private Integer memSize;
-
-	private String spotStrategy;
-
-	private List<ScalingRule> scalingRules;
-
-	private List<SpotPriceLimit> spotPriceLimits;
-
-	private List<String> instanceTypeList;
+	private ScalingConfig scalingConfig;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -119,235 +99,155 @@ public class DescribeScalingTaskGroupResponse extends AcsResponse {
 		this.status = status;
 	}
 
-	public String getPayType() {
-		return this.payType;
+	public String getActiveRuleCategory() {
+		return this.activeRuleCategory;
 	}
 
-	public void setPayType(String payType) {
-		this.payType = payType;
+	public void setActiveRuleCategory(String activeRuleCategory) {
+		this.activeRuleCategory = activeRuleCategory;
 	}
 
-	public String getDataDiskCategory() {
-		return this.dataDiskCategory;
+	public ScalingConfig getScalingConfig() {
+		return this.scalingConfig;
 	}
 
-	public void setDataDiskCategory(String dataDiskCategory) {
-		this.dataDiskCategory = dataDiskCategory;
+	public void setScalingConfig(ScalingConfig scalingConfig) {
+		this.scalingConfig = scalingConfig;
 	}
 
-	public Integer getDataDiskSize() {
-		return this.dataDiskSize;
-	}
+	public static class ScalingConfig {
 
-	public void setDataDiskSize(Integer dataDiskSize) {
-		this.dataDiskSize = dataDiskSize;
-	}
+		private String payType;
 
-	public Integer getDataDiskCount() {
-		return this.dataDiskCount;
-	}
+		private String dataDiskCategory;
 
-	public void setDataDiskCount(Integer dataDiskCount) {
-		this.dataDiskCount = dataDiskCount;
-	}
+		private Integer dataDiskSize;
 
-	public String getSysDiskCategory() {
-		return this.sysDiskCategory;
-	}
+		private Integer dataDiskCount;
 
-	public void setSysDiskCategory(String sysDiskCategory) {
-		this.sysDiskCategory = sysDiskCategory;
-	}
+		private String sysDiskCategory;
 
-	public Integer getSysDiskSize() {
-		return this.sysDiskSize;
-	}
+		private Integer sysDiskSize;
 
-	public void setSysDiskSize(Integer sysDiskSize) {
-		this.sysDiskSize = sysDiskSize;
-	}
+		private Integer cpuCount;
 
-	public Integer getCpuCount() {
-		return this.cpuCount;
-	}
+		private Integer memSize;
 
-	public void setCpuCount(Integer cpuCount) {
-		this.cpuCount = cpuCount;
-	}
+		private String spotStrategy;
 
-	public Integer getMemSize() {
-		return this.memSize;
-	}
+		private List<SpotPriceLimit> spotPriceLimits;
 
-	public void setMemSize(Integer memSize) {
-		this.memSize = memSize;
-	}
+		private List<String> instanceTypeList;
 
-	public String getSpotStrategy() {
-		return this.spotStrategy;
-	}
-
-	public void setSpotStrategy(String spotStrategy) {
-		this.spotStrategy = spotStrategy;
-	}
-
-	public List<ScalingRule> getScalingRules() {
-		return this.scalingRules;
-	}
-
-	public void setScalingRules(List<ScalingRule> scalingRules) {
-		this.scalingRules = scalingRules;
-	}
-
-	public List<SpotPriceLimit> getSpotPriceLimits() {
-		return this.spotPriceLimits;
-	}
-
-	public void setSpotPriceLimits(List<SpotPriceLimit> spotPriceLimits) {
-		this.spotPriceLimits = spotPriceLimits;
-	}
-
-	public List<String> getInstanceTypeList() {
-		return this.instanceTypeList;
-	}
-
-	public void setInstanceTypeList(List<String> instanceTypeList) {
-		this.instanceTypeList = instanceTypeList;
-	}
-
-	public static class ScalingRule {
-
-		private String id;
-
-		private String ruleCategory;
-
-		private String ruleName;
-
-		private String adjustmentType;
-
-		private Integer adjustmentValue;
-
-		private Integer cooldown;
-
-		private String launchTime;
-
-		private Integer launchExpirationTime;
-
-		private String recurrenceType;
-
-		private String recurrenceValue;
-
-		private String recurrenceEndTime;
-
-		public String getId() {
-			return this.id;
+		public String getPayType() {
+			return this.payType;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setPayType(String payType) {
+			this.payType = payType;
 		}
 
-		public String getRuleCategory() {
-			return this.ruleCategory;
+		public String getDataDiskCategory() {
+			return this.dataDiskCategory;
 		}
 
-		public void setRuleCategory(String ruleCategory) {
-			this.ruleCategory = ruleCategory;
+		public void setDataDiskCategory(String dataDiskCategory) {
+			this.dataDiskCategory = dataDiskCategory;
 		}
 
-		public String getRuleName() {
-			return this.ruleName;
+		public Integer getDataDiskSize() {
+			return this.dataDiskSize;
 		}
 
-		public void setRuleName(String ruleName) {
-			this.ruleName = ruleName;
+		public void setDataDiskSize(Integer dataDiskSize) {
+			this.dataDiskSize = dataDiskSize;
 		}
 
-		public String getAdjustmentType() {
-			return this.adjustmentType;
+		public Integer getDataDiskCount() {
+			return this.dataDiskCount;
 		}
 
-		public void setAdjustmentType(String adjustmentType) {
-			this.adjustmentType = adjustmentType;
+		public void setDataDiskCount(Integer dataDiskCount) {
+			this.dataDiskCount = dataDiskCount;
 		}
 
-		public Integer getAdjustmentValue() {
-			return this.adjustmentValue;
+		public String getSysDiskCategory() {
+			return this.sysDiskCategory;
 		}
 
-		public void setAdjustmentValue(Integer adjustmentValue) {
-			this.adjustmentValue = adjustmentValue;
+		public void setSysDiskCategory(String sysDiskCategory) {
+			this.sysDiskCategory = sysDiskCategory;
 		}
 
-		public Integer getCooldown() {
-			return this.cooldown;
+		public Integer getSysDiskSize() {
+			return this.sysDiskSize;
 		}
 
-		public void setCooldown(Integer cooldown) {
-			this.cooldown = cooldown;
+		public void setSysDiskSize(Integer sysDiskSize) {
+			this.sysDiskSize = sysDiskSize;
 		}
 
-		public String getLaunchTime() {
-			return this.launchTime;
+		public Integer getCpuCount() {
+			return this.cpuCount;
 		}
 
-		public void setLaunchTime(String launchTime) {
-			this.launchTime = launchTime;
+		public void setCpuCount(Integer cpuCount) {
+			this.cpuCount = cpuCount;
 		}
 
-		public Integer getLaunchExpirationTime() {
-			return this.launchExpirationTime;
+		public Integer getMemSize() {
+			return this.memSize;
 		}
 
-		public void setLaunchExpirationTime(Integer launchExpirationTime) {
-			this.launchExpirationTime = launchExpirationTime;
+		public void setMemSize(Integer memSize) {
+			this.memSize = memSize;
 		}
 
-		public String getRecurrenceType() {
-			return this.recurrenceType;
+		public String getSpotStrategy() {
+			return this.spotStrategy;
 		}
 
-		public void setRecurrenceType(String recurrenceType) {
-			this.recurrenceType = recurrenceType;
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
 		}
 
-		public String getRecurrenceValue() {
-			return this.recurrenceValue;
+		public List<SpotPriceLimit> getSpotPriceLimits() {
+			return this.spotPriceLimits;
 		}
 
-		public void setRecurrenceValue(String recurrenceValue) {
-			this.recurrenceValue = recurrenceValue;
+		public void setSpotPriceLimits(List<SpotPriceLimit> spotPriceLimits) {
+			this.spotPriceLimits = spotPriceLimits;
 		}
 
-		public String getRecurrenceEndTime() {
-			return this.recurrenceEndTime;
+		public List<String> getInstanceTypeList() {
+			return this.instanceTypeList;
 		}
 
-		public void setRecurrenceEndTime(String recurrenceEndTime) {
-			this.recurrenceEndTime = recurrenceEndTime;
-		}
-	}
-
-	public static class SpotPriceLimit {
-
-		private String instanceType;
-
-		private Float priceLimit;
-
-		public String getInstanceType() {
-			return this.instanceType;
+		public void setInstanceTypeList(List<String> instanceTypeList) {
+			this.instanceTypeList = instanceTypeList;
 		}
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
+		public static class SpotPriceLimit {
 
-		public Float getPriceLimit() {
-			return this.priceLimit;
-		}
+			private String instanceType;
 
-		public void setPriceLimit(Float priceLimit) {
-			this.priceLimit = priceLimit;
+			private Float priceLimit;
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public Float getPriceLimit() {
+				return this.priceLimit;
+			}
+
+			public void setPriceLimit(Float priceLimit) {
+				this.priceLimit = priceLimit;
+			}
 		}
 	}
 

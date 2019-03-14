@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateFlowProjectUserRequest extends RpcAcsRequest<CreateFlowProjectUserResponse> {
 	
 	public CreateFlowProjectUserRequest() {
-		super("Emr", "2016-04-08", "CreateFlowProjectUser");
+		super("Emr", "2016-04-08", "CreateFlowProjectUser", "emr");
 	}
 
 	private String projectId;

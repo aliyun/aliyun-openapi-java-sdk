@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class KillExecutionJobInstanceRequest extends RpcAcsRequest<KillExecutionJobInstanceResponse> {
 	
 	public KillExecutionJobInstanceRequest() {
-		super("Emr", "2016-04-08", "KillExecutionJobInstance");
+		super("Emr", "2016-04-08", "KillExecutionJobInstance", "emr");
 	}
 
 	private Long resourceOwnerId;

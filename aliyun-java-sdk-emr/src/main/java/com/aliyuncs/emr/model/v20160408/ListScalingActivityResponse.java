@@ -95,6 +95,10 @@ public class ListScalingActivityResponse extends AcsResponse {
 
 		private String transition;
 
+		private String scalingRuleId;
+
+		private Integer expectNum;
+
 		public String getBizId() {
 			return this.bizId;
 		}
@@ -165,6 +169,22 @@ public class ListScalingActivityResponse extends AcsResponse {
 
 		public void setTransition(String transition) {
 			this.transition = transition;
+		}
+
+		public String getScalingRuleId() {
+			return this.scalingRuleId;
+		}
+
+		public void setScalingRuleId(String scalingRuleId) {
+			this.scalingRuleId = scalingRuleId;
+		}
+
+		public Integer getExpectNum() {
+			return this.expectNum;
+		}
+
+		public void setExpectNum(Integer expectNum) {
+			this.expectNum = expectNum;
 		}
 	}
 

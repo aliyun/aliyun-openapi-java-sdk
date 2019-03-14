@@ -24,10 +24,16 @@ import java.util.List;
 public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Response> {
 	
 	public ResizeClusterV2Request() {
-		super("Emr", "2016-04-08", "ResizeClusterV2");
+		super("Emr", "2016-04-08", "ResizeClusterV2", "emr");
 	}
 
 	private String vswitchId;
+
+	private Boolean isOpenPublicIp;
+
+	private Boolean autoPayOrder;
+
+	private List<HostComponentInfo> hostComponentInfos;
 
 	private List<HostGroup> hostGroups;
 
@@ -44,6 +50,47 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 		}
 	}
 
+	public Boolean getIsOpenPublicIp() {
+		return this.isOpenPublicIp;
+	}
+
+	public void setIsOpenPublicIp(Boolean isOpenPublicIp) {
+		this.isOpenPublicIp = isOpenPublicIp;
+		if(isOpenPublicIp != null){
+			putQueryParameter("IsOpenPublicIp", isOpenPublicIp.toString());
+		}
+	}
+
+	public Boolean getAutoPayOrder() {
+		return this.autoPayOrder;
+	}
+
+	public void setAutoPayOrder(Boolean autoPayOrder) {
+		this.autoPayOrder = autoPayOrder;
+		if(autoPayOrder != null){
+			putQueryParameter("AutoPayOrder", autoPayOrder.toString());
+		}
+	}
+
+	public List<HostComponentInfo> getHostComponentInfos() {
+		return this.hostComponentInfos;
+	}
+
+	public void setHostComponentInfos(List<HostComponentInfo> hostComponentInfos) {
+		this.hostComponentInfos = hostComponentInfos;	
+		if (hostComponentInfos != null) {
+			for (int depth1 = 0; depth1 < hostComponentInfos.size(); depth1++) {
+				putQueryParameter("HostComponentInfo." + (depth1 + 1) + ".HostName" , hostComponentInfos.get(depth1).getHostName());
+				if (hostComponentInfos.get(depth1).getComponentNameLists() != null) {
+					for (int i = 0; i < hostComponentInfos.get(depth1).getComponentNameLists().size(); i++) {
+						putQueryParameter("HostComponentInfo." + (depth1 + 1) + ".ComponentNameList." + (i + 1) , hostComponentInfos.get(depth1).getComponentNameLists().get(i));
+					}
+				}
+				putQueryParameter("HostComponentInfo." + (depth1 + 1) + ".ServiceName" , hostComponentInfos.get(depth1).getServiceName());
+			}
+		}	
+	}
+
 	public List<HostGroup> getHostGroups() {
 		return this.hostGroups;
 	}
@@ -54,6 +101,7 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 			for (int depth1 = 0; depth1 < hostGroups.size(); depth1++) {
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".Period" , hostGroups.get(depth1).getPeriod());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskCapacity" , hostGroups.get(depth1).getSysDiskCapacity());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostKeyPairName" , hostGroups.get(depth1).getHostKeyPairName());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".DiskCapacity" , hostGroups.get(depth1).getDiskCapacity());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".SysDiskType" , hostGroups.get(depth1).getSysDiskType());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".ClusterId" , hostGroups.get(depth1).getClusterId());
@@ -68,6 +116,7 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".Comment" , hostGroups.get(depth1).getComment());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".ChargeType" , hostGroups.get(depth1).getChargeType());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".CreateType" , hostGroups.get(depth1).getCreateType());
+				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostPassword" , hostGroups.get(depth1).getHostPassword());
 				putQueryParameter("HostGroup." + (depth1 + 1) + ".HostGroupType" , hostGroups.get(depth1).getHostGroupType());
 			}
 		}	
@@ -84,11 +133,46 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 		}
 	}
 
+	public static class HostComponentInfo {
+
+		private String hostName;
+
+		private List<String> componentNameLists;
+
+		private String serviceName;
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public List<String> getComponentNameLists() {
+			return this.componentNameLists;
+		}
+
+		public void setComponentNameLists(List<String> componentNameLists) {
+			this.componentNameLists = componentNameLists;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
+		}
+	}
+
 	public static class HostGroup {
 
 		private Integer period;
 
 		private Integer sysDiskCapacity;
+
+		private String hostKeyPairName;
 
 		private Integer diskCapacity;
 
@@ -118,6 +202,8 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 		private String createType;
 
+		private String hostPassword;
+
 		private String hostGroupType;
 
 		public Integer getPeriod() {
@@ -134,6 +220,14 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 		public void setSysDiskCapacity(Integer sysDiskCapacity) {
 			this.sysDiskCapacity = sysDiskCapacity;
+		}
+
+		public String getHostKeyPairName() {
+			return this.hostKeyPairName;
+		}
+
+		public void setHostKeyPairName(String hostKeyPairName) {
+			this.hostKeyPairName = hostKeyPairName;
 		}
 
 		public Integer getDiskCapacity() {
@@ -246,6 +340,14 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 		public void setCreateType(String createType) {
 			this.createType = createType;
+		}
+
+		public String getHostPassword() {
+			return this.hostPassword;
+		}
+
+		public void setHostPassword(String hostPassword) {
+			this.hostPassword = hostPassword;
 		}
 
 		public String getHostGroupType() {

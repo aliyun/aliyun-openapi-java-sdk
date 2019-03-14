@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreDeleteKafkaTopicRequest extends RpcAcsRequest<MetastoreDeleteKafkaTopicResponse> {
 	
 	public MetastoreDeleteKafkaTopicRequest() {
-		super("Emr", "2016-04-08", "MetastoreDeleteKafkaTopic");
+		super("Emr", "2016-04-08", "MetastoreDeleteKafkaTopic", "emr");
 	}
 
 	private Long resourceOwnerId;

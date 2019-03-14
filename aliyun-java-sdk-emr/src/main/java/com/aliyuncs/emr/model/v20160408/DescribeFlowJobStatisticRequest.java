@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeFlowJobStatisticRequest extends RpcAcsRequest<DescribeFlowJobStatisticResponse> {
 	
 	public DescribeFlowJobStatisticRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowJobStatistic");
+		super("Emr", "2016-04-08", "DescribeFlowJobStatistic", "emr");
 	}
 
 	private String fromApp;

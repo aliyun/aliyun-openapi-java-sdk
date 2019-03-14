@@ -24,7 +24,7 @@ import java.util.List;
 public class RemoveClusterHostsRequest extends RpcAcsRequest<RemoveClusterHostsResponse> {
 	
 	public RemoveClusterHostsRequest() {
-		super("Emr", "2016-04-08", "RemoveClusterHosts");
+		super("Emr", "2016-04-08", "RemoveClusterHosts", "emr");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyUserStatisticsRequest extends RpcAcsRequest<ModifyUserStatisticsResponse> {
 	
 	public ModifyUserStatisticsRequest() {
-		super("Emr", "2016-04-08", "ModifyUserStatistics");
+		super("Emr", "2016-04-08", "ModifyUserStatistics", "emr");
 	}
 
 	private Integer jobMigratedNum;

@@ -24,7 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateScalingTaskGroupResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String hostGroupId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getHostGroupId() {
 		return this.hostGroupId;

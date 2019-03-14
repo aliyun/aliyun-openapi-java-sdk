@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateScalingTaskGroupRequest extends RpcAcsRequest<CreateScalingTaskGroupResponse> {
 	
 	public CreateScalingTaskGroupRequest() {
-		super("Emr", "2016-04-08", "CreateScalingTaskGroup");
+		super("Emr", "2016-04-08", "CreateScalingTaskGroup", "emr");
 	}
 
 	private Long resourceOwnerId;
@@ -42,6 +42,8 @@ public class CreateScalingTaskGroupRequest extends RpcAcsRequest<CreateScalingTa
 	private List<SpotPriceLimits> spotPriceLimitss;
 
 	private List<ScalingRule> scalingRules;
+
+	private String activeRuleCategory;
 
 	private Integer maxSize;
 
@@ -144,15 +146,45 @@ public class CreateScalingTaskGroupRequest extends RpcAcsRequest<CreateScalingTa
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".LaunchTime" , scalingRules.get(depth1).getLaunchTime());
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".RuleCategory" , scalingRules.get(depth1).getRuleCategory());
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".AdjustmentValue" , scalingRules.get(depth1).getAdjustmentValue());
+				if (scalingRules.get(depth1).getSchedulerTriggers() != null) {
+					for (int depth2 = 0; depth2 < scalingRules.get(depth1).getSchedulerTriggers().size(); depth2++) {
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".SchedulerTrigger." + (depth2 + 1) + ".LaunchTime" , scalingRules.get(depth1).getSchedulerTriggers().get(depth2).getLaunchTime());
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".SchedulerTrigger." + (depth2 + 1) + ".LaunchExpirationTime" , scalingRules.get(depth1).getSchedulerTriggers().get(depth2).getLaunchExpirationTime());
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".SchedulerTrigger." + (depth2 + 1) + ".RecurrenceValue" , scalingRules.get(depth1).getSchedulerTriggers().get(depth2).getRecurrenceValue());
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".SchedulerTrigger." + (depth2 + 1) + ".RecurrenceEndTime" , scalingRules.get(depth1).getSchedulerTriggers().get(depth2).getRecurrenceEndTime());
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".SchedulerTrigger." + (depth2 + 1) + ".RecurrenceType" , scalingRules.get(depth1).getSchedulerTriggers().get(depth2).getRecurrenceType());
+					}
+				}
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".AdjustmentType" , scalingRules.get(depth1).getAdjustmentType());
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".Cooldown" , scalingRules.get(depth1).getCooldown());
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".RuleName" , scalingRules.get(depth1).getRuleName());
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".LaunchExpirationTime" , scalingRules.get(depth1).getLaunchExpirationTime());
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".RecurrenceValue" , scalingRules.get(depth1).getRecurrenceValue());
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".RecurrenceEndTime" , scalingRules.get(depth1).getRecurrenceEndTime());
+				if (scalingRules.get(depth1).getCloudWatchTriggers() != null) {
+					for (int depth2 = 0; depth2 < scalingRules.get(depth1).getCloudWatchTriggers().size(); depth2++) {
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".CloudWatchTrigger." + (depth2 + 1) + ".Period" , scalingRules.get(depth1).getCloudWatchTriggers().get(depth2).getPeriod());
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".CloudWatchTrigger." + (depth2 + 1) + ".EvaluationCount" , scalingRules.get(depth1).getCloudWatchTriggers().get(depth2).getEvaluationCount());
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".CloudWatchTrigger." + (depth2 + 1) + ".Threshold" , scalingRules.get(depth1).getCloudWatchTriggers().get(depth2).getThreshold());
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".CloudWatchTrigger." + (depth2 + 1) + ".MetricName" , scalingRules.get(depth1).getCloudWatchTriggers().get(depth2).getMetricName());
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".CloudWatchTrigger." + (depth2 + 1) + ".ComparisonOperator" , scalingRules.get(depth1).getCloudWatchTriggers().get(depth2).getComparisonOperator());
+						putQueryParameter("ScalingRule." + (depth1 + 1) + ".CloudWatchTrigger." + (depth2 + 1) + ".Statistics" , scalingRules.get(depth1).getCloudWatchTriggers().get(depth2).getStatistics());
+					}
+				}
 				putQueryParameter("ScalingRule." + (depth1 + 1) + ".RecurrenceType" , scalingRules.get(depth1).getRecurrenceType());
 			}
 		}	
+	}
+
+	public String getActiveRuleCategory() {
+		return this.activeRuleCategory;
+	}
+
+	public void setActiveRuleCategory(String activeRuleCategory) {
+		this.activeRuleCategory = activeRuleCategory;
+		if(activeRuleCategory != null){
+			putQueryParameter("ActiveRuleCategory", activeRuleCategory);
+		}
 	}
 
 	public Integer getMaxSize() {
@@ -243,6 +275,8 @@ public class CreateScalingTaskGroupRequest extends RpcAcsRequest<CreateScalingTa
 
 		private Integer adjustmentValue;
 
+		private List<SchedulerTrigger> schedulerTriggers;
+
 		private String adjustmentType;
 
 		private Integer cooldown;
@@ -254,6 +288,8 @@ public class CreateScalingTaskGroupRequest extends RpcAcsRequest<CreateScalingTa
 		private String recurrenceValue;
 
 		private String recurrenceEndTime;
+
+		private List<CloudWatchTrigger> cloudWatchTriggers;
 
 		private String recurrenceType;
 
@@ -279,6 +315,14 @@ public class CreateScalingTaskGroupRequest extends RpcAcsRequest<CreateScalingTa
 
 		public void setAdjustmentValue(Integer adjustmentValue) {
 			this.adjustmentValue = adjustmentValue;
+		}
+
+		public List<SchedulerTrigger> getSchedulerTriggers() {
+			return this.schedulerTriggers;
+		}
+
+		public void setSchedulerTriggers(List<SchedulerTrigger> schedulerTriggers) {
+			this.schedulerTriggers = schedulerTriggers;
 		}
 
 		public String getAdjustmentType() {
@@ -329,12 +373,136 @@ public class CreateScalingTaskGroupRequest extends RpcAcsRequest<CreateScalingTa
 			this.recurrenceEndTime = recurrenceEndTime;
 		}
 
+		public List<CloudWatchTrigger> getCloudWatchTriggers() {
+			return this.cloudWatchTriggers;
+		}
+
+		public void setCloudWatchTriggers(List<CloudWatchTrigger> cloudWatchTriggers) {
+			this.cloudWatchTriggers = cloudWatchTriggers;
+		}
+
 		public String getRecurrenceType() {
 			return this.recurrenceType;
 		}
 
 		public void setRecurrenceType(String recurrenceType) {
 			this.recurrenceType = recurrenceType;
+		}
+
+		public static class SchedulerTrigger {
+
+			private String launchTime;
+
+			private Integer launchExpirationTime;
+
+			private String recurrenceValue;
+
+			private String recurrenceEndTime;
+
+			private String recurrenceType;
+
+			public String getLaunchTime() {
+				return this.launchTime;
+			}
+
+			public void setLaunchTime(String launchTime) {
+				this.launchTime = launchTime;
+			}
+
+			public Integer getLaunchExpirationTime() {
+				return this.launchExpirationTime;
+			}
+
+			public void setLaunchExpirationTime(Integer launchExpirationTime) {
+				this.launchExpirationTime = launchExpirationTime;
+			}
+
+			public String getRecurrenceValue() {
+				return this.recurrenceValue;
+			}
+
+			public void setRecurrenceValue(String recurrenceValue) {
+				this.recurrenceValue = recurrenceValue;
+			}
+
+			public String getRecurrenceEndTime() {
+				return this.recurrenceEndTime;
+			}
+
+			public void setRecurrenceEndTime(String recurrenceEndTime) {
+				this.recurrenceEndTime = recurrenceEndTime;
+			}
+
+			public String getRecurrenceType() {
+				return this.recurrenceType;
+			}
+
+			public void setRecurrenceType(String recurrenceType) {
+				this.recurrenceType = recurrenceType;
+			}
+		}
+
+		public static class CloudWatchTrigger {
+
+			private Integer period;
+
+			private String evaluationCount;
+
+			private String threshold;
+
+			private String metricName;
+
+			private String comparisonOperator;
+
+			private String statistics;
+
+			public Integer getPeriod() {
+				return this.period;
+			}
+
+			public void setPeriod(Integer period) {
+				this.period = period;
+			}
+
+			public String getEvaluationCount() {
+				return this.evaluationCount;
+			}
+
+			public void setEvaluationCount(String evaluationCount) {
+				this.evaluationCount = evaluationCount;
+			}
+
+			public String getThreshold() {
+				return this.threshold;
+			}
+
+			public void setThreshold(String threshold) {
+				this.threshold = threshold;
+			}
+
+			public String getMetricName() {
+				return this.metricName;
+			}
+
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
+			}
+
+			public String getComparisonOperator() {
+				return this.comparisonOperator;
+			}
+
+			public void setComparisonOperator(String comparisonOperator) {
+				this.comparisonOperator = comparisonOperator;
+			}
+
+			public String getStatistics() {
+				return this.statistics;
+			}
+
+			public void setStatistics(String statistics) {
+				this.statistics = statistics;
+			}
 		}
 	}
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreDeleteDataResourceRequest extends RpcAcsRequest<MetastoreDeleteDataResourceResponse> {
 	
 	public MetastoreDeleteDataResourceRequest() {
-		super("Emr", "2016-04-08", "MetastoreDeleteDataResource");
+		super("Emr", "2016-04-08", "MetastoreDeleteDataResource", "emr");
 	}
 
 	private Long resourceOwnerId;

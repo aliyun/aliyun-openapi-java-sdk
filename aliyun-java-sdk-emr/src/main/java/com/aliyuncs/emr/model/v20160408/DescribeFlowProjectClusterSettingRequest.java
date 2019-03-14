@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeFlowProjectClusterSettingRequest extends RpcAcsRequest<DescribeFlowProjectClusterSettingResponse> {
 	
 	public DescribeFlowProjectClusterSettingRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowProjectClusterSetting");
+		super("Emr", "2016-04-08", "DescribeFlowProjectClusterSetting", "emr");
 	}
 
 	private String clusterId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryAlarmHistoryRequest extends RpcAcsRequest<QueryAlarmHistoryResponse> {
 	
 	public QueryAlarmHistoryRequest() {
-		super("Emr", "2016-04-08", "QueryAlarmHistory");
+		super("Emr", "2016-04-08", "QueryAlarmHistory", "emr");
 	}
 
 	private String cursor;

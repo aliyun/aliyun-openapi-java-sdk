@@ -24,10 +24,20 @@ import java.util.List;
 public class ListFlowInstanceRequest extends RpcAcsRequest<ListFlowInstanceResponse> {
 	
 	public ListFlowInstanceRequest() {
-		super("Emr", "2016-04-08", "ListFlowInstance");
+		super("Emr", "2016-04-08", "ListFlowInstance", "emr");
 	}
 
+	private String owner;
+
+	private String timeRange;
+
 	private List<String> statusLists;
+
+	private String orderBy;
+
+	private Integer pageNumber;
+
+	private String instanceId;
 
 	private Integer pageSize;
 
@@ -39,7 +49,29 @@ public class ListFlowInstanceRequest extends RpcAcsRequest<ListFlowInstanceRespo
 
 	private String projectId;
 
-	private Integer pageNumber;
+	private String orderType;
+
+	public String getOwner() {
+		return this.owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putQueryParameter("Owner", owner);
+		}
+	}
+
+	public String getTimeRange() {
+		return this.timeRange;
+	}
+
+	public void setTimeRange(String timeRange) {
+		this.timeRange = timeRange;
+		if(timeRange != null){
+			putQueryParameter("TimeRange", timeRange);
+		}
+	}
 
 	public List<String> getStatusLists() {
 		return this.statusLists;
@@ -52,6 +84,39 @@ public class ListFlowInstanceRequest extends RpcAcsRequest<ListFlowInstanceRespo
 				putQueryParameter("StatusList." + (i + 1) , statusLists.get(i));
 			}
 		}	
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -109,14 +174,14 @@ public class ListFlowInstanceRequest extends RpcAcsRequest<ListFlowInstanceRespo
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getOrderType() {
+		return this.orderType;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 

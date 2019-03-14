@@ -24,7 +24,7 @@ import java.util.List;
 public class OperateExistsNodeClusterRequest extends RpcAcsRequest<OperateExistsNodeClusterResponse> {
 	
 	public OperateExistsNodeClusterRequest() {
-		super("Emr", "2016-04-08", "OperateExistsNodeCluster");
+		super("Emr", "2016-04-08", "OperateExistsNodeCluster", "emr");
 	}
 
 	private Long resourceOwnerId;

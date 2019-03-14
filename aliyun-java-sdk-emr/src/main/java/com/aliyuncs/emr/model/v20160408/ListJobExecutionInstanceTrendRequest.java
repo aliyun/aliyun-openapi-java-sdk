@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListJobExecutionInstanceTrendRequest extends RpcAcsRequest<ListJobExecutionInstanceTrendResponse> {
 	
 	public ListJobExecutionInstanceTrendRequest() {
-		super("Emr", "2016-04-08", "ListJobExecutionInstanceTrend");
+		super("Emr", "2016-04-08", "ListJobExecutionInstanceTrend", "emr");
 	}
 
 	private Long resourceOwnerId;

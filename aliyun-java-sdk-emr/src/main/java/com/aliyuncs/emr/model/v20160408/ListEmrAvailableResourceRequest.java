@@ -23,10 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvailableResourceResponse> {
 	
 	public ListEmrAvailableResourceRequest() {
-		super("Emr", "2016-04-08", "ListEmrAvailableResource");
+		super("Emr", "2016-04-08", "ListEmrAvailableResource", "emr");
 	}
 
 	private Long resourceOwnerId;
+
+	private String clusterId;
 
 	private String depositType;
 
@@ -56,6 +58,17 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

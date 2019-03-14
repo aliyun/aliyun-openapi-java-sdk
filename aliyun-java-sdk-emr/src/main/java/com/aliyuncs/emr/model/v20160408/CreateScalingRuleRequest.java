@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -23,7 +24,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleResponse> {
 	
 	public CreateScalingRuleRequest() {
-		super("Emr", "2016-04-08", "CreateScalingRule");
+		super("Emr", "2016-04-08", "CreateScalingRule", "emr");
 	}
 
 	private String launchTime;
@@ -46,7 +47,11 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 
 	private String recurrenceEndTime;
 
+	private List<CloudWatchTrigger> cloudWatchTriggers;
+
 	private String hostGroupId;
+
+	private List<SchedulerTrigger> schedulerTriggers;
 
 	private Integer cooldown;
 
@@ -162,6 +167,24 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		}
 	}
 
+	public List<CloudWatchTrigger> getCloudWatchTriggers() {
+		return this.cloudWatchTriggers;
+	}
+
+	public void setCloudWatchTriggers(List<CloudWatchTrigger> cloudWatchTriggers) {
+		this.cloudWatchTriggers = cloudWatchTriggers;	
+		if (cloudWatchTriggers != null) {
+			for (int depth1 = 0; depth1 < cloudWatchTriggers.size(); depth1++) {
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".Period" , cloudWatchTriggers.get(depth1).getPeriod());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".EvaluationCount" , cloudWatchTriggers.get(depth1).getEvaluationCount());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".Threshold" , cloudWatchTriggers.get(depth1).getThreshold());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".MetricName" , cloudWatchTriggers.get(depth1).getMetricName());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".ComparisonOperator" , cloudWatchTriggers.get(depth1).getComparisonOperator());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".Statistics" , cloudWatchTriggers.get(depth1).getStatistics());
+			}
+		}	
+	}
+
 	public String getHostGroupId() {
 		return this.hostGroupId;
 	}
@@ -171,6 +194,23 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		if(hostGroupId != null){
 			putQueryParameter("HostGroupId", hostGroupId);
 		}
+	}
+
+	public List<SchedulerTrigger> getSchedulerTriggers() {
+		return this.schedulerTriggers;
+	}
+
+	public void setSchedulerTriggers(List<SchedulerTrigger> schedulerTriggers) {
+		this.schedulerTriggers = schedulerTriggers;	
+		if (schedulerTriggers != null) {
+			for (int depth1 = 0; depth1 < schedulerTriggers.size(); depth1++) {
+				putQueryParameter("SchedulerTrigger." + (depth1 + 1) + ".LaunchTime" , schedulerTriggers.get(depth1).getLaunchTime());
+				putQueryParameter("SchedulerTrigger." + (depth1 + 1) + ".LaunchExpirationTime" , schedulerTriggers.get(depth1).getLaunchExpirationTime());
+				putQueryParameter("SchedulerTrigger." + (depth1 + 1) + ".RecurrenceValue" , schedulerTriggers.get(depth1).getRecurrenceValue());
+				putQueryParameter("SchedulerTrigger." + (depth1 + 1) + ".RecurrenceEndTime" , schedulerTriggers.get(depth1).getRecurrenceEndTime());
+				putQueryParameter("SchedulerTrigger." + (depth1 + 1) + ".RecurrenceType" , schedulerTriggers.get(depth1).getRecurrenceType());
+			}
+		}	
 	}
 
 	public Integer getCooldown() {
@@ -192,6 +232,122 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		this.recurrenceType = recurrenceType;
 		if(recurrenceType != null){
 			putQueryParameter("RecurrenceType", recurrenceType);
+		}
+	}
+
+	public static class CloudWatchTrigger {
+
+		private Integer period;
+
+		private String evaluationCount;
+
+		private String threshold;
+
+		private String metricName;
+
+		private String comparisonOperator;
+
+		private String statistics;
+
+		public Integer getPeriod() {
+			return this.period;
+		}
+
+		public void setPeriod(Integer period) {
+			this.period = period;
+		}
+
+		public String getEvaluationCount() {
+			return this.evaluationCount;
+		}
+
+		public void setEvaluationCount(String evaluationCount) {
+			this.evaluationCount = evaluationCount;
+		}
+
+		public String getThreshold() {
+			return this.threshold;
+		}
+
+		public void setThreshold(String threshold) {
+			this.threshold = threshold;
+		}
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
+		}
+
+		public String getComparisonOperator() {
+			return this.comparisonOperator;
+		}
+
+		public void setComparisonOperator(String comparisonOperator) {
+			this.comparisonOperator = comparisonOperator;
+		}
+
+		public String getStatistics() {
+			return this.statistics;
+		}
+
+		public void setStatistics(String statistics) {
+			this.statistics = statistics;
+		}
+	}
+
+	public static class SchedulerTrigger {
+
+		private String launchTime;
+
+		private Integer launchExpirationTime;
+
+		private String recurrenceValue;
+
+		private String recurrenceEndTime;
+
+		private String recurrenceType;
+
+		public String getLaunchTime() {
+			return this.launchTime;
+		}
+
+		public void setLaunchTime(String launchTime) {
+			this.launchTime = launchTime;
+		}
+
+		public Integer getLaunchExpirationTime() {
+			return this.launchExpirationTime;
+		}
+
+		public void setLaunchExpirationTime(Integer launchExpirationTime) {
+			this.launchExpirationTime = launchExpirationTime;
+		}
+
+		public String getRecurrenceValue() {
+			return this.recurrenceValue;
+		}
+
+		public void setRecurrenceValue(String recurrenceValue) {
+			this.recurrenceValue = recurrenceValue;
+		}
+
+		public String getRecurrenceEndTime() {
+			return this.recurrenceEndTime;
+		}
+
+		public void setRecurrenceEndTime(String recurrenceEndTime) {
+			this.recurrenceEndTime = recurrenceEndTime;
+		}
+
+		public String getRecurrenceType() {
+			return this.recurrenceType;
+		}
+
+		public void setRecurrenceType(String recurrenceType) {
+			this.recurrenceType = recurrenceType;
 		}
 	}
 

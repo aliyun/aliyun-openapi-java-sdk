@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecurityGroupResponse> {
 	
 	public AuthorizeSecurityGroupRequest() {
-		super("Emr", "2016-04-08", "AuthorizeSecurityGroup");
+		super("Emr", "2016-04-08", "AuthorizeSecurityGroup", "emr");
 	}
 
 	private String bizType;

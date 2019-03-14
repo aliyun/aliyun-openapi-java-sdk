@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.MetastoreListDataSourceResponse;
 import com.aliyuncs.emr.model.v20160408.MetastoreListDataSourceResponse.DataSource;
 import com.aliyuncs.emr.model.v20160408.MetastoreListDataSourceResponse.DataSource.Config;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

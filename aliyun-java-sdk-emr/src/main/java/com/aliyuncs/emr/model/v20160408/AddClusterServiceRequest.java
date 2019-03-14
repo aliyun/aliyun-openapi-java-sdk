@@ -24,7 +24,7 @@ import java.util.List;
 public class AddClusterServiceRequest extends RpcAcsRequest<AddClusterServiceResponse> {
 	
 	public AddClusterServiceRequest() {
-		super("Emr", "2016-04-08", "AddClusterService");
+		super("Emr", "2016-04-08", "AddClusterService", "emr");
 	}
 
 	private Long resourceOwnerId;

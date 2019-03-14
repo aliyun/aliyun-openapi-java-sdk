@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreListDatabasesRequest extends RpcAcsRequest<MetastoreListDatabasesResponse> {
 	
 	public MetastoreListDatabasesRequest() {
-		super("Emr", "2016-04-08", "MetastoreListDatabases");
+		super("Emr", "2016-04-08", "MetastoreListDatabases", "emr");
 	}
 
 	private Long resourceOwnerId;
@@ -31,6 +31,8 @@ public class MetastoreListDatabasesRequest extends RpcAcsRequest<MetastoreListDa
 	private String dbName;
 
 	private Integer pageSize;
+
+	private String fuzzyDatabaseName;
 
 	private Integer pageNumber;
 
@@ -64,6 +66,17 @@ public class MetastoreListDatabasesRequest extends RpcAcsRequest<MetastoreListDa
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFuzzyDatabaseName() {
+		return this.fuzzyDatabaseName;
+	}
+
+	public void setFuzzyDatabaseName(String fuzzyDatabaseName) {
+		this.fuzzyDatabaseName = fuzzyDatabaseName;
+		if(fuzzyDatabaseName != null){
+			putQueryParameter("FuzzyDatabaseName", fuzzyDatabaseName);
 		}
 	}
 

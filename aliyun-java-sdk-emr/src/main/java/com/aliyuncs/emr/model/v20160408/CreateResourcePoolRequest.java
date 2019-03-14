@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolResponse> {
 	
 	public CreateResourcePoolRequest() {
-		super("Emr", "2016-04-08", "CreateResourcePool");
+		super("Emr", "2016-04-08", "CreateResourcePool", "emr");
 	}
 
 	private String note;

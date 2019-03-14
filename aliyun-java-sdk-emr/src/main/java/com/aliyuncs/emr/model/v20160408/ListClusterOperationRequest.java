@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListClusterOperationRequest extends RpcAcsRequest<ListClusterOperationResponse> {
 	
 	public ListClusterOperationRequest() {
-		super("Emr", "2016-04-08", "ListClusterOperation");
+		super("Emr", "2016-04-08", "ListClusterOperation", "emr");
 	}
 
 	private Long resourceOwnerId;

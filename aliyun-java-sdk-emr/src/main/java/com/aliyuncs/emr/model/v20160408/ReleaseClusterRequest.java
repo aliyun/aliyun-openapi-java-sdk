@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReleaseClusterRequest extends RpcAcsRequest<ReleaseClusterResponse> {
 	
 	public ReleaseClusterRequest() {
-		super("Emr", "2016-04-08", "ReleaseCluster");
+		super("Emr", "2016-04-08", "ReleaseCluster", "emr");
 	}
 
 	private Long resourceOwnerId;

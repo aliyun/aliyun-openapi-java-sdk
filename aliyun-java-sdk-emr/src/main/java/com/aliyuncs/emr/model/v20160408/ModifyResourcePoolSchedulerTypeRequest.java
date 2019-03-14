@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyResourcePoolSchedulerTypeRequest extends RpcAcsRequest<ModifyResourcePoolSchedulerTypeResponse> {
 	
 	public ModifyResourcePoolSchedulerTypeRequest() {
-		super("Emr", "2016-04-08", "ModifyResourcePoolSchedulerType");
+		super("Emr", "2016-04-08", "ModifyResourcePoolSchedulerType", "emr");
 	}
 
 	private Long resourceOwnerId;

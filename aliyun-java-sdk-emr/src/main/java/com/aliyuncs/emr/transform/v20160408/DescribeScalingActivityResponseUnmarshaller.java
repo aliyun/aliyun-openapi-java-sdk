@@ -31,6 +31,9 @@ public class DescribeScalingActivityResponseUnmarshaller {
 		describeScalingActivityResponse.setCause(context.stringValue("DescribeScalingActivityResponse.Cause"));
 		describeScalingActivityResponse.setDescription(context.stringValue("DescribeScalingActivityResponse.Description"));
 		describeScalingActivityResponse.setStatus(context.stringValue("DescribeScalingActivityResponse.Status"));
+		describeScalingActivityResponse.setTransition(context.stringValue("DescribeScalingActivityResponse.Transition"));
+		describeScalingActivityResponse.setScalingRuleId(context.stringValue("DescribeScalingActivityResponse.ScalingRuleId"));
+		describeScalingActivityResponse.setExpectNum(context.integerValue("DescribeScalingActivityResponse.ExpectNum"));
 	 
 	 	return describeScalingActivityResponse;
 	}

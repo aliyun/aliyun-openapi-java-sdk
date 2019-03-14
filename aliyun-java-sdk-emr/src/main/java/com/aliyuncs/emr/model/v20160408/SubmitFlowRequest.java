@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitFlowRequest extends RpcAcsRequest<SubmitFlowResponse> {
 	
 	public SubmitFlowRequest() {
-		super("Emr", "2016-04-08", "SubmitFlow");
+		super("Emr", "2016-04-08", "SubmitFlow", "emr");
 	}
 
 	private String conf;

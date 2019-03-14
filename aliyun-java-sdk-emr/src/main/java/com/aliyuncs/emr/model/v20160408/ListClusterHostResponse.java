@@ -105,6 +105,14 @@ public class ListClusterHostResponse extends AcsResponse {
 
 		private Long expiredTime;
 
+		private String hostGroupId;
+
+		private String createTime;
+
+		private String emrExpiredTime;
+
+		private Boolean supportIpV6;
+
 		private List<Disk> diskList;
 
 		public String getHostName() {
@@ -217,6 +225,38 @@ public class ListClusterHostResponse extends AcsResponse {
 
 		public void setExpiredTime(Long expiredTime) {
 			this.expiredTime = expiredTime;
+		}
+
+		public String getHostGroupId() {
+			return this.hostGroupId;
+		}
+
+		public void setHostGroupId(String hostGroupId) {
+			this.hostGroupId = hostGroupId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getEmrExpiredTime() {
+			return this.emrExpiredTime;
+		}
+
+		public void setEmrExpiredTime(String emrExpiredTime) {
+			this.emrExpiredTime = emrExpiredTime;
+		}
+
+		public Boolean getSupportIpV6() {
+			return this.supportIpV6;
+		}
+
+		public void setSupportIpV6(Boolean supportIpV6) {
+			this.supportIpV6 = supportIpV6;
 		}
 
 		public List<Disk> getDiskList() {

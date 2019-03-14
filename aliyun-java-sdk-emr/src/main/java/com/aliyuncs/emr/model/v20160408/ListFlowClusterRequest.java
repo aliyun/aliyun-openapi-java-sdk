@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowClusterRequest extends RpcAcsRequest<ListFlowClusterResponse> {
 	
 	public ListFlowClusterRequest() {
-		super("Emr", "2016-04-08", "ListFlowCluster");
+		super("Emr", "2016-04-08", "ListFlowCluster", "emr");
 	}
 
 	private Integer pageSize;

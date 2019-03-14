@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.ListFlowJobResponse;
 import com.aliyuncs.emr.model.v20160408.ListFlowJobResponse.Job;
 import com.aliyuncs.emr.model.v20160408.ListFlowJobResponse.Job.Resource;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,11 +46,15 @@ public class ListFlowJobResponseUnmarshaller {
 			job.setRetryInterval(context.longValue("ListFlowJobResponse.JobList["+ i +"].RetryInterval"));
 			job.setParams(context.stringValue("ListFlowJobResponse.JobList["+ i +"].Params"));
 			job.setParamConf(context.stringValue("ListFlowJobResponse.JobList["+ i +"].ParamConf"));
+			job.setCustomVariables(context.stringValue("ListFlowJobResponse.JobList["+ i +"].CustomVariables"));
 			job.setEnvConf(context.stringValue("ListFlowJobResponse.JobList["+ i +"].EnvConf"));
 			job.setRunConf(context.stringValue("ListFlowJobResponse.JobList["+ i +"].RunConf"));
 			job.setMonitorConf(context.stringValue("ListFlowJobResponse.JobList["+ i +"].MonitorConf"));
 			job.setCategoryId(context.stringValue("ListFlowJobResponse.JobList["+ i +"].CategoryId"));
 			job.setMode(context.stringValue("ListFlowJobResponse.JobList["+ i +"].mode"));
+			job.setAdhoc(context.stringValue("ListFlowJobResponse.JobList["+ i +"].Adhoc"));
+			job.setAlertConf(context.stringValue("ListFlowJobResponse.JobList["+ i +"].AlertConf"));
+			job.setLastInstanceDetail(context.stringValue("ListFlowJobResponse.JobList["+ i +"].LastInstanceDetail"));
 
 			List<Resource> resourceList = new ArrayList<Resource>();
 			for (int j = 0; j < context.lengthValue("ListFlowJobResponse.JobList["+ i +"].ResourceList.Length"); j++) {

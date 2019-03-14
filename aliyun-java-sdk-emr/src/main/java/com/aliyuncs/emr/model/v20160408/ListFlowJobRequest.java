@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowJobRequest extends RpcAcsRequest<ListFlowJobResponse> {
 	
 	public ListFlowJobRequest() {
-		super("Emr", "2016-04-08", "ListFlowJob");
+		super("Emr", "2016-04-08", "ListFlowJob", "emr");
 	}
 
 	private String name;
@@ -33,6 +33,8 @@ public class ListFlowJobRequest extends RpcAcsRequest<ListFlowJobResponse> {
 	private String id;
 
 	private String type;
+
+	private Boolean adhoc;
 
 	private String projectId;
 
@@ -79,6 +81,17 @@ public class ListFlowJobRequest extends RpcAcsRequest<ListFlowJobResponse> {
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public Boolean getAdhoc() {
+		return this.adhoc;
+	}
+
+	public void setAdhoc(Boolean adhoc) {
+		this.adhoc = adhoc;
+		if(adhoc != null){
+			putQueryParameter("Adhoc", adhoc.toString());
 		}
 	}
 

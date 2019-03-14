@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyClusterServiceConfigRequest extends RpcAcsRequest<ModifyClusterServiceConfigResponse> {
 	
 	public ModifyClusterServiceConfigRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterServiceConfig");
+		super("Emr", "2016-04-08", "ModifyClusterServiceConfig", "emr");
 	}
 
 	private Long resourceOwnerId;

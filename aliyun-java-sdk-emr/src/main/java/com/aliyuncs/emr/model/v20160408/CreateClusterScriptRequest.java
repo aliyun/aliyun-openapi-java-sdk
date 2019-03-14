@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateClusterScriptRequest extends RpcAcsRequest<CreateClusterScriptResponse> {
 	
 	public CreateClusterScriptRequest() {
-		super("Emr", "2016-04-08", "CreateClusterScript");
+		super("Emr", "2016-04-08", "CreateClusterScript", "emr");
 	}
 
 	private String args;

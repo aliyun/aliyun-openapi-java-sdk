@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListScalingRuleRequest extends RpcAcsRequest<ListScalingRuleResponse> {
 	
 	public ListScalingRuleRequest() {
-		super("Emr", "2016-04-08", "ListScalingRule");
+		super("Emr", "2016-04-08", "ListScalingRule", "emr");
 	}
 
 	private Long resourceOwnerId;

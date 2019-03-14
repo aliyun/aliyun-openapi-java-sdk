@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeClusterServiceRequest extends RpcAcsRequest<DescribeClusterServiceResponse> {
 	
 	public DescribeClusterServiceRequest() {
-		super("Emr", "2016-04-08", "DescribeClusterService");
+		super("Emr", "2016-04-08", "DescribeClusterService", "emr");
 	}
 
 	private Long resourceOwnerId;

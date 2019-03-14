@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteFlowCategoryRequest extends RpcAcsRequest<DeleteFlowCategoryResponse> {
 	
 	public DeleteFlowCategoryRequest() {
-		super("Emr", "2016-04-08", "DeleteFlowCategory");
+		super("Emr", "2016-04-08", "DeleteFlowCategory", "emr");
 	}
 
 	private String id;

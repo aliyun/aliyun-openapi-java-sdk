@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUserStatisticsRequest extends RpcAcsRequest<DescribeUserStatisticsResponse> {
 	
 	public DescribeUserStatisticsRequest() {
-		super("Emr", "2016-04-08", "DescribeUserStatistics");
+		super("Emr", "2016-04-08", "DescribeUserStatistics", "emr");
 	}
 
 	private Long resourceOwnerId;

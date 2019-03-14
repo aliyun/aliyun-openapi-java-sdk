@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListFlowResponse;
 import com.aliyuncs.emr.model.v20160408.ListFlowResponse.FlowItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,6 +52,7 @@ public class ListFlowResponseUnmarshaller {
 			flowItem.setGraph(context.stringValue("ListFlowResponse.Flow["+ i +"].Graph"));
 			flowItem.setAlertUserGroupBizId(context.stringValue("ListFlowResponse.Flow["+ i +"].AlertUserGroupBizId"));
 			flowItem.setAlertDingDingGroupBizId(context.stringValue("ListFlowResponse.Flow["+ i +"].AlertDingDingGroupBizId"));
+			flowItem.setAlertConf(context.stringValue("ListFlowResponse.Flow["+ i +"].AlertConf"));
 			flowItem.setCategoryId(context.stringValue("ListFlowResponse.Flow["+ i +"].CategoryId"));
 
 			flow.add(flowItem);

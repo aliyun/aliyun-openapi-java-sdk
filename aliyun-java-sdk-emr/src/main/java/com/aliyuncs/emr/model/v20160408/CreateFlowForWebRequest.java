@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebResponse> {
 	
 	public CreateFlowForWebRequest() {
-		super("Emr", "2016-04-08", "CreateFlowForWeb");
+		super("Emr", "2016-04-08", "CreateFlowForWeb", "emr");
 	}
 
 	private String cronExpr;
@@ -49,6 +49,8 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 	private String name;
 
 	private Long endSchedule;
+
+	private String alertConf;
 
 	private String projectId;
 
@@ -183,6 +185,17 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		this.endSchedule = endSchedule;
 		if(endSchedule != null){
 			putQueryParameter("EndSchedule", endSchedule.toString());
+		}
+	}
+
+	public String getAlertConf() {
+		return this.alertConf;
+	}
+
+	public void setAlertConf(String alertConf) {
+		this.alertConf = alertConf;
+		if(alertConf != null){
+			putQueryParameter("AlertConf", alertConf);
 		}
 	}
 

@@ -25,6 +25,7 @@ public class DescribeClusterResourcePoolSchedulerTypeResponseUnmarshaller {
 		describeClusterResourcePoolSchedulerTypeResponse.setRequestId(context.stringValue("DescribeClusterResourcePoolSchedulerTypeResponse.RequestId"));
 		describeClusterResourcePoolSchedulerTypeResponse.setCurrentSchedulerType(context.stringValue("DescribeClusterResourcePoolSchedulerTypeResponse.CurrentSchedulerType"));
 		describeClusterResourcePoolSchedulerTypeResponse.setSupportSchedulerType(context.stringValue("DescribeClusterResourcePoolSchedulerTypeResponse.SupportSchedulerType"));
+		describeClusterResourcePoolSchedulerTypeResponse.setDefaultSchedulerType(context.stringValue("DescribeClusterResourcePoolSchedulerTypeResponse.DefaultSchedulerType"));
 	 
 	 	return describeClusterResourcePoolSchedulerTypeResponse;
 	}

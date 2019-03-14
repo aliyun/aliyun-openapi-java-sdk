@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReleaseClusterHostGroupRequest extends RpcAcsRequest<ReleaseClusterHostGroupResponse> {
 	
 	public ReleaseClusterHostGroupRequest() {
-		super("Emr", "2016-04-08", "ReleaseClusterHostGroup");
+		super("Emr", "2016-04-08", "ReleaseClusterHostGroup", "emr");
 	}
 
 	private Long resourceOwnerId;

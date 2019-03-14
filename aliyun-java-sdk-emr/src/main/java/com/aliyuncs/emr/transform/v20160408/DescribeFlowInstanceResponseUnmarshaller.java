@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.DescribeFlowInstanceResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeFlowInstanceResponse.NodeInstanceItem;
-import java.util.Map;
+import com.aliyuncs.emr.model.v20160408.DescribeFlowInstanceResponse.ParentFlow;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,7 +39,25 @@ public class DescribeFlowInstanceResponseUnmarshaller {
 		describeFlowInstanceResponse.setStartTime(context.longValue("DescribeFlowInstanceResponse.StartTime"));
 		describeFlowInstanceResponse.setEndTime(context.longValue("DescribeFlowInstanceResponse.EndTime"));
 		describeFlowInstanceResponse.setDuration(context.longValue("DescribeFlowInstanceResponse.Duration"));
+		describeFlowInstanceResponse.setScheduleTime(context.longValue("DescribeFlowInstanceResponse.ScheduleTime"));
 		describeFlowInstanceResponse.setGraph(context.stringValue("DescribeFlowInstanceResponse.Graph"));
+		describeFlowInstanceResponse.setCronExpression(context.stringValue("DescribeFlowInstanceResponse.CronExpression"));
+		describeFlowInstanceResponse.setHasNodeFailed(context.booleanValue("DescribeFlowInstanceResponse.HasNodeFailed"));
+
+		List<ParentFlow> dependencyFlowList = new ArrayList<ParentFlow>();
+		for (int i = 0; i < context.lengthValue("DescribeFlowInstanceResponse.DependencyFlowList.Length"); i++) {
+			ParentFlow parentFlow = new ParentFlow();
+			parentFlow.setProjectId(context.stringValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].ProjectId"));
+			parentFlow.setFlowId(context.stringValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].FlowId"));
+			parentFlow.setDependencyFlowId(context.stringValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].DependencyFlowId"));
+			parentFlow.setFlowInstanceId(context.stringValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].FlowInstanceId"));
+			parentFlow.setDependencyInstanceId(context.stringValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].DependencyInstanceId"));
+			parentFlow.setScheduleKey(context.stringValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].ScheduleKey"));
+			parentFlow.setBizDate(context.longValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].BizDate"));
+
+			dependencyFlowList.add(parentFlow);
+		}
+		describeFlowInstanceResponse.setDependencyFlowList(dependencyFlowList);
 
 		List<NodeInstanceItem> nodeInstance = new ArrayList<NodeInstanceItem>();
 		for (int i = 0; i < context.lengthValue("DescribeFlowInstanceResponse.NodeInstance.Length"); i++) {

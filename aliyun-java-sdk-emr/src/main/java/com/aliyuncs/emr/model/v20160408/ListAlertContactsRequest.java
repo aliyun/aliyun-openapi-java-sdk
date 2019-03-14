@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListAlertContactsRequest extends RpcAcsRequest<ListAlertContactsResponse> {
 	
 	public ListAlertContactsRequest() {
-		super("Emr", "2016-04-08", "ListAlertContacts");
+		super("Emr", "2016-04-08", "ListAlertContacts", "emr");
 	}
 
 	private Long resourceOwnerId;

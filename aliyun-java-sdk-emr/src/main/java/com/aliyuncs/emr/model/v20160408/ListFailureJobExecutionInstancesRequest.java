@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFailureJobExecutionInstancesRequest extends RpcAcsRequest<ListFailureJobExecutionInstancesResponse> {
 	
 	public ListFailureJobExecutionInstancesRequest() {
-		super("Emr", "2016-04-08", "ListFailureJobExecutionInstances");
+		super("Emr", "2016-04-08", "ListFailureJobExecutionInstances", "emr");
 	}
 
 	private Long resourceOwnerId;

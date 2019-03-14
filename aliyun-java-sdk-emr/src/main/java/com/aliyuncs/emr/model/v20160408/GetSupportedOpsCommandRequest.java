@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetSupportedOpsCommandRequest extends RpcAcsRequest<GetSupportedOpsCommandResponse> {
 	
 	public GetSupportedOpsCommandRequest() {
-		super("Emr", "2016-04-08", "GetSupportedOpsCommand");
+		super("Emr", "2016-04-08", "GetSupportedOpsCommand", "emr");
 	}
 
 	private Long resourceOwnerId;

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.GetJobRunningTimeStatisticInfoResponse;
 import com.aliyuncs.emr.model.v20160408.GetJobRunningTimeStatisticInfoResponse.ClusterStatJobRunningTime;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

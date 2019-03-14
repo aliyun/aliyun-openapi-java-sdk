@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SaveParagraphRequest extends RpcAcsRequest<SaveParagraphResponse> {
 	
 	public SaveParagraphRequest() {
-		super("Emr", "2016-04-08", "SaveParagraph");
+		super("Emr", "2016-04-08", "SaveParagraph", "emr");
 	}
 
 	private Long resourceOwnerId;

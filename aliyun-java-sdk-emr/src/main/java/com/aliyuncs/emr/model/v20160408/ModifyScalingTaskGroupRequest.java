@@ -23,12 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyScalingTaskGroupRequest extends RpcAcsRequest<ModifyScalingTaskGroupResponse> {
 	
 	public ModifyScalingTaskGroupRequest() {
-		super("Emr", "2016-04-08", "ModifyScalingTaskGroup");
+		super("Emr", "2016-04-08", "ModifyScalingTaskGroup", "emr");
 	}
 
 	private Long resourceOwnerId;
 
 	private String hostGroupId;
+
+	private String activeRuleCategory;
 
 	private String clusterId;
 
@@ -57,6 +59,17 @@ public class ModifyScalingTaskGroupRequest extends RpcAcsRequest<ModifyScalingTa
 		this.hostGroupId = hostGroupId;
 		if(hostGroupId != null){
 			putQueryParameter("HostGroupId", hostGroupId);
+		}
+	}
+
+	public String getActiveRuleCategory() {
+		return this.activeRuleCategory;
+	}
+
+	public void setActiveRuleCategory(String activeRuleCategory) {
+		this.activeRuleCategory = activeRuleCategory;
+		if(activeRuleCategory != null){
+			putQueryParameter("ActiveRuleCategory", activeRuleCategory);
 		}
 	}
 

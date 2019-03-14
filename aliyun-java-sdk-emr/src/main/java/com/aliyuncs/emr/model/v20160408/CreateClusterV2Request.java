@@ -24,8 +24,10 @@ import java.util.List;
 public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Response> {
 	
 	public CreateClusterV2Request() {
-		super("Emr", "2016-04-08", "CreateClusterV2");
+		super("Emr", "2016-04-08", "CreateClusterV2", "emr");
 	}
+
+	private Boolean autoPayOrder;
 
 	private Long resourceOwnerId;
 
@@ -51,6 +53,8 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 	private String machineType;
 
+	private List<HostComponentInfo> hostComponentInfos;
+
 	private List<BootstrapAction> bootstrapActions;
 
 	private Boolean useLocalMetaDb;
@@ -61,9 +65,13 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 	private String userDefinedEmrEcsRole;
 
+	private String authorizeContent;
+
 	private Boolean isOpenPublicIp;
 
 	private Integer period;
+
+	private String whiteListType;
 
 	private String relatedClusterId;
 
@@ -96,6 +104,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 	private Boolean highAvailabilityEnable;
 
 	private Boolean initCustomHiveMetaDB;
+
+	public Boolean getAutoPayOrder() {
+		return this.autoPayOrder;
+	}
+
+	public void setAutoPayOrder(Boolean autoPayOrder) {
+		this.autoPayOrder = autoPayOrder;
+		if(autoPayOrder != null){
+			putQueryParameter("AutoPayOrder", autoPayOrder.toString());
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -229,6 +248,25 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
+	public List<HostComponentInfo> getHostComponentInfos() {
+		return this.hostComponentInfos;
+	}
+
+	public void setHostComponentInfos(List<HostComponentInfo> hostComponentInfos) {
+		this.hostComponentInfos = hostComponentInfos;	
+		if (hostComponentInfos != null) {
+			for (int depth1 = 0; depth1 < hostComponentInfos.size(); depth1++) {
+				putQueryParameter("HostComponentInfo." + (depth1 + 1) + ".HostName" , hostComponentInfos.get(depth1).getHostName());
+				if (hostComponentInfos.get(depth1).getComponentNameLists() != null) {
+					for (int i = 0; i < hostComponentInfos.get(depth1).getComponentNameLists().size(); i++) {
+						putQueryParameter("HostComponentInfo." + (depth1 + 1) + ".ComponentNameList." + (i + 1) , hostComponentInfos.get(depth1).getComponentNameLists().get(i));
+					}
+				}
+				putQueryParameter("HostComponentInfo." + (depth1 + 1) + ".ServiceName" , hostComponentInfos.get(depth1).getServiceName());
+			}
+		}	
+	}
+
 	public List<BootstrapAction> getBootstrapActions() {
 		return this.bootstrapActions;
 	}
@@ -292,6 +330,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
+	public String getAuthorizeContent() {
+		return this.authorizeContent;
+	}
+
+	public void setAuthorizeContent(String authorizeContent) {
+		this.authorizeContent = authorizeContent;
+		if(authorizeContent != null){
+			putQueryParameter("AuthorizeContent", authorizeContent);
+		}
+	}
+
 	public Boolean getIsOpenPublicIp() {
 		return this.isOpenPublicIp;
 	}
@@ -311,6 +360,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getWhiteListType() {
+		return this.whiteListType;
+	}
+
+	public void setWhiteListType(String whiteListType) {
+		this.whiteListType = whiteListType;
+		if(whiteListType != null){
+			putQueryParameter("WhiteListType", whiteListType);
 		}
 	}
 
@@ -515,6 +575,39 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.initCustomHiveMetaDB = initCustomHiveMetaDB;
 		if(initCustomHiveMetaDB != null){
 			putQueryParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB.toString());
+		}
+	}
+
+	public static class HostComponentInfo {
+
+		private String hostName;
+
+		private List<String> componentNameLists;
+
+		private String serviceName;
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public List<String> getComponentNameLists() {
+			return this.componentNameLists;
+		}
+
+		public void setComponentNameLists(List<String> componentNameLists) {
+			this.componentNameLists = componentNameLists;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 	}
 

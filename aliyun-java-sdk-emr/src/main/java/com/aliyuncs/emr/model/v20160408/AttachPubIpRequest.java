@@ -24,7 +24,7 @@ import java.util.List;
 public class AttachPubIpRequest extends RpcAcsRequest<AttachPubIpResponse> {
 	
 	public AttachPubIpRequest() {
-		super("Emr", "2016-04-08", "AttachPubIp");
+		super("Emr", "2016-04-08", "AttachPubIp", "emr");
 	}
 
 	private Long resourceOwnerId;

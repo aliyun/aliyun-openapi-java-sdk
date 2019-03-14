@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateVerificationCodeRequest extends RpcAcsRequest<CreateVerificationCodeResponse> {
 	
 	public CreateVerificationCodeRequest() {
-		super("Emr", "2016-04-08", "CreateVerificationCode");
+		super("Emr", "2016-04-08", "CreateVerificationCode", "emr");
 	}
 
 	private String mode;

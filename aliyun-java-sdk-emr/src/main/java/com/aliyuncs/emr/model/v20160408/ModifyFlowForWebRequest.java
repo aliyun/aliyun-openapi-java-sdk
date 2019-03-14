@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebResponse> {
 	
 	public ModifyFlowForWebRequest() {
-		super("Emr", "2016-04-08", "ModifyFlowForWeb");
+		super("Emr", "2016-04-08", "ModifyFlowForWeb", "emr");
 	}
 
 	private String cronExpr;
@@ -53,6 +53,8 @@ public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebRespo
 	private Long endSchedule;
 
 	private String id;
+
+	private String alertConf;
 
 	private String projectId;
 
@@ -211,6 +213,17 @@ public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebRespo
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
+		}
+	}
+
+	public String getAlertConf() {
+		return this.alertConf;
+	}
+
+	public void setAlertConf(String alertConf) {
+		this.alertConf = alertConf;
+		if(alertConf != null){
+			putQueryParameter("AlertConf", alertConf);
 		}
 	}
 

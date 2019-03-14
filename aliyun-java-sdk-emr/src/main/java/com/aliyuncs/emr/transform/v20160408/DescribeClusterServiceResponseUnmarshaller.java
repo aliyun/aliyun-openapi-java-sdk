@@ -21,7 +21,6 @@ import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceResponse.ServiceInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummary;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceResponse.ServiceInfo.ServiceAction;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -69,8 +68,10 @@ public class DescribeClusterServiceResponseUnmarshaller {
 			clusterServiceSummary.setKey(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Key"));
 			clusterServiceSummary.setDisplayName(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].DisplayName"));
 			clusterServiceSummary.setValue(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Value"));
+			clusterServiceSummary.setDesiredStoppedValue(context.integerValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].DesiredStoppedValue"));
 			clusterServiceSummary.setStatus(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Status"));
 			clusterServiceSummary.setType(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Type"));
+			clusterServiceSummary.setCategory(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Category"));
 			clusterServiceSummary.setAlertInfo(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].AlertInfo"));
 
 			clusterServiceSummaryList.add(clusterServiceSummary);

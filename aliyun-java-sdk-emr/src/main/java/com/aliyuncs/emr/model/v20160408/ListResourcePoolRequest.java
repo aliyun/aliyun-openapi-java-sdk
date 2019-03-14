@@ -23,12 +23,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListResourcePoolRequest extends RpcAcsRequest<ListResourcePoolResponse> {
 	
 	public ListResourcePoolRequest() {
-		super("Emr", "2016-04-08", "ListResourcePool");
+		super("Emr", "2016-04-08", "ListResourcePool", "emr");
 	}
 
 	private Long resourceOwnerId;
 
+	private Integer pageSize;
+
 	private String clusterId;
+
+	private Integer pageNumber;
 
 	private String poolType;
 
@@ -43,6 +47,17 @@ public class ListResourcePoolRequest extends RpcAcsRequest<ListResourcePoolRespo
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -51,6 +66,17 @@ public class ListResourcePoolRequest extends RpcAcsRequest<ListResourcePoolRespo
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

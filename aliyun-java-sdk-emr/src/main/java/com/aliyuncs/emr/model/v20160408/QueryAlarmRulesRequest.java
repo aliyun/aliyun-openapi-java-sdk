@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryAlarmRulesRequest extends RpcAcsRequest<QueryAlarmRulesResponse> {
 	
 	public QueryAlarmRulesRequest() {
-		super("Emr", "2016-04-08", "QueryAlarmRules");
+		super("Emr", "2016-04-08", "QueryAlarmRules", "emr");
 	}
 
 	private Long resourceOwnerId;

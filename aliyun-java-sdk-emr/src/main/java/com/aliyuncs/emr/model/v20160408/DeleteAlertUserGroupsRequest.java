@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteAlertUserGroupsRequest extends RpcAcsRequest<DeleteAlertUserGroupsResponse> {
 	
 	public DeleteAlertUserGroupsRequest() {
-		super("Emr", "2016-04-08", "DeleteAlertUserGroups");
+		super("Emr", "2016-04-08", "DeleteAlertUserGroups", "emr");
 	}
 
 	private Long resourceOwnerId;

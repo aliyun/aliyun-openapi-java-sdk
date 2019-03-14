@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteResourcePoolRequest extends RpcAcsRequest<DeleteResourcePoolResponse> {
 	
 	public DeleteResourcePoolRequest() {
-		super("Emr", "2016-04-08", "DeleteResourcePool");
+		super("Emr", "2016-04-08", "DeleteResourcePool", "emr");
 	}
 
 	private Long resourceOwnerId;

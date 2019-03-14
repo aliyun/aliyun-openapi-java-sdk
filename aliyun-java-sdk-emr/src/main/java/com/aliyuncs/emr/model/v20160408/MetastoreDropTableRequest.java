@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreDropTableRequest extends RpcAcsRequest<MetastoreDropTableResponse> {
 	
 	public MetastoreDropTableRequest() {
-		super("Emr", "2016-04-08", "MetastoreDropTable");
+		super("Emr", "2016-04-08", "MetastoreDropTable", "emr");
 	}
 
 	private Long resourceOwnerId;

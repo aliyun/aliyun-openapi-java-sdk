@@ -57,6 +57,8 @@ public class ListScalingTaskGroupResponse extends AcsResponse {
 
 		private Integer defaultCooldown;
 
+		private String activeRuleCategory;
+
 		private String status;
 
 		private String payType;
@@ -77,11 +79,13 @@ public class ListScalingTaskGroupResponse extends AcsResponse {
 
 		private String spotStrategy;
 
-		private List<ScalingRule> scalingRuleList;
-
 		private List<SpotPriceLimit> spotPriceLimits;
 
+		private List<ScalingRule> scalingRuleList;
+
 		private List<String> instanceTypeList;
+
+		private ScalingConfig scalingConfig;
 
 		public String getScalingGroupId() {
 			return this.scalingGroupId;
@@ -121,6 +125,14 @@ public class ListScalingTaskGroupResponse extends AcsResponse {
 
 		public void setDefaultCooldown(Integer defaultCooldown) {
 			this.defaultCooldown = defaultCooldown;
+		}
+
+		public String getActiveRuleCategory() {
+			return this.activeRuleCategory;
+		}
+
+		public void setActiveRuleCategory(String activeRuleCategory) {
+			this.activeRuleCategory = activeRuleCategory;
 		}
 
 		public String getStatus() {
@@ -203,14 +215,6 @@ public class ListScalingTaskGroupResponse extends AcsResponse {
 			this.spotStrategy = spotStrategy;
 		}
 
-		public List<ScalingRule> getScalingRuleList() {
-			return this.scalingRuleList;
-		}
-
-		public void setScalingRuleList(List<ScalingRule> scalingRuleList) {
-			this.scalingRuleList = scalingRuleList;
-		}
-
 		public List<SpotPriceLimit> getSpotPriceLimits() {
 			return this.spotPriceLimits;
 		}
@@ -219,12 +223,51 @@ public class ListScalingTaskGroupResponse extends AcsResponse {
 			this.spotPriceLimits = spotPriceLimits;
 		}
 
+		public List<ScalingRule> getScalingRuleList() {
+			return this.scalingRuleList;
+		}
+
+		public void setScalingRuleList(List<ScalingRule> scalingRuleList) {
+			this.scalingRuleList = scalingRuleList;
+		}
+
 		public List<String> getInstanceTypeList() {
 			return this.instanceTypeList;
 		}
 
 		public void setInstanceTypeList(List<String> instanceTypeList) {
 			this.instanceTypeList = instanceTypeList;
+		}
+
+		public ScalingConfig getScalingConfig() {
+			return this.scalingConfig;
+		}
+
+		public void setScalingConfig(ScalingConfig scalingConfig) {
+			this.scalingConfig = scalingConfig;
+		}
+
+		public static class SpotPriceLimit {
+
+			private String instanceType;
+
+			private Float priceLimit;
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public Float getPriceLimit() {
+				return this.priceLimit;
+			}
+
+			public void setPriceLimit(Float priceLimit) {
+				this.priceLimit = priceLimit;
+			}
 		}
 
 		public static class ScalingRule {
@@ -241,6 +284,8 @@ public class ListScalingTaskGroupResponse extends AcsResponse {
 
 			private Integer cooldown;
 
+			private String status;
+
 			private String launchTime;
 
 			private Integer launchExpirationTime;
@@ -250,6 +295,10 @@ public class ListScalingTaskGroupResponse extends AcsResponse {
 			private String recurrenceValue;
 
 			private String recurrenceEndTime;
+
+			private SchedulerTrigger schedulerTrigger;
+
+			private CloudWatchTrigger cloudWatchTrigger;
 
 			public String getId() {
 				return this.id;
@@ -299,6 +348,14 @@ public class ListScalingTaskGroupResponse extends AcsResponse {
 				this.cooldown = cooldown;
 			}
 
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
 			public String getLaunchTime() {
 				return this.launchTime;
 			}
@@ -338,28 +395,293 @@ public class ListScalingTaskGroupResponse extends AcsResponse {
 			public void setRecurrenceEndTime(String recurrenceEndTime) {
 				this.recurrenceEndTime = recurrenceEndTime;
 			}
+
+			public SchedulerTrigger getSchedulerTrigger() {
+				return this.schedulerTrigger;
+			}
+
+			public void setSchedulerTrigger(SchedulerTrigger schedulerTrigger) {
+				this.schedulerTrigger = schedulerTrigger;
+			}
+
+			public CloudWatchTrigger getCloudWatchTrigger() {
+				return this.cloudWatchTrigger;
+			}
+
+			public void setCloudWatchTrigger(CloudWatchTrigger cloudWatchTrigger) {
+				this.cloudWatchTrigger = cloudWatchTrigger;
+			}
+
+			public static class SchedulerTrigger {
+
+				private Long launchTime;
+
+				private Integer launchExpirationTime;
+
+				private String recurrenceType;
+
+				private String recurrenceValue;
+
+				private Long recurrenceEndTime;
+
+				public Long getLaunchTime() {
+					return this.launchTime;
+				}
+
+				public void setLaunchTime(Long launchTime) {
+					this.launchTime = launchTime;
+				}
+
+				public Integer getLaunchExpirationTime() {
+					return this.launchExpirationTime;
+				}
+
+				public void setLaunchExpirationTime(Integer launchExpirationTime) {
+					this.launchExpirationTime = launchExpirationTime;
+				}
+
+				public String getRecurrenceType() {
+					return this.recurrenceType;
+				}
+
+				public void setRecurrenceType(String recurrenceType) {
+					this.recurrenceType = recurrenceType;
+				}
+
+				public String getRecurrenceValue() {
+					return this.recurrenceValue;
+				}
+
+				public void setRecurrenceValue(String recurrenceValue) {
+					this.recurrenceValue = recurrenceValue;
+				}
+
+				public Long getRecurrenceEndTime() {
+					return this.recurrenceEndTime;
+				}
+
+				public void setRecurrenceEndTime(Long recurrenceEndTime) {
+					this.recurrenceEndTime = recurrenceEndTime;
+				}
+			}
+
+			public static class CloudWatchTrigger {
+
+				private String metricName;
+
+				private Integer period;
+
+				private String statistics;
+
+				private String comparisonOperator;
+
+				private String threshold;
+
+				private String evaluationCount;
+
+				private String unit;
+
+				private String metricDisplayName;
+
+				public String getMetricName() {
+					return this.metricName;
+				}
+
+				public void setMetricName(String metricName) {
+					this.metricName = metricName;
+				}
+
+				public Integer getPeriod() {
+					return this.period;
+				}
+
+				public void setPeriod(Integer period) {
+					this.period = period;
+				}
+
+				public String getStatistics() {
+					return this.statistics;
+				}
+
+				public void setStatistics(String statistics) {
+					this.statistics = statistics;
+				}
+
+				public String getComparisonOperator() {
+					return this.comparisonOperator;
+				}
+
+				public void setComparisonOperator(String comparisonOperator) {
+					this.comparisonOperator = comparisonOperator;
+				}
+
+				public String getThreshold() {
+					return this.threshold;
+				}
+
+				public void setThreshold(String threshold) {
+					this.threshold = threshold;
+				}
+
+				public String getEvaluationCount() {
+					return this.evaluationCount;
+				}
+
+				public void setEvaluationCount(String evaluationCount) {
+					this.evaluationCount = evaluationCount;
+				}
+
+				public String getUnit() {
+					return this.unit;
+				}
+
+				public void setUnit(String unit) {
+					this.unit = unit;
+				}
+
+				public String getMetricDisplayName() {
+					return this.metricDisplayName;
+				}
+
+				public void setMetricDisplayName(String metricDisplayName) {
+					this.metricDisplayName = metricDisplayName;
+				}
+			}
 		}
 
-		public static class SpotPriceLimit {
+		public static class ScalingConfig {
 
-			private String instanceType;
+			private String payType;
 
-			private Float priceLimit;
+			private String dataDiskCategory;
 
-			public String getInstanceType() {
-				return this.instanceType;
+			private Integer dataDiskSize;
+
+			private Integer dataDiskCount;
+
+			private String sysDiskCategory;
+
+			private Integer sysDiskSize;
+
+			private Integer cpuCount;
+
+			private Integer memSize;
+
+			private String spotStrategy;
+
+			private List<SpotPriceLimit3> spotPriceLimits2;
+
+			private List<String> instanceTypeList1;
+
+			public String getPayType() {
+				return this.payType;
 			}
 
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
+			public void setPayType(String payType) {
+				this.payType = payType;
 			}
 
-			public Float getPriceLimit() {
-				return this.priceLimit;
+			public String getDataDiskCategory() {
+				return this.dataDiskCategory;
 			}
 
-			public void setPriceLimit(Float priceLimit) {
-				this.priceLimit = priceLimit;
+			public void setDataDiskCategory(String dataDiskCategory) {
+				this.dataDiskCategory = dataDiskCategory;
+			}
+
+			public Integer getDataDiskSize() {
+				return this.dataDiskSize;
+			}
+
+			public void setDataDiskSize(Integer dataDiskSize) {
+				this.dataDiskSize = dataDiskSize;
+			}
+
+			public Integer getDataDiskCount() {
+				return this.dataDiskCount;
+			}
+
+			public void setDataDiskCount(Integer dataDiskCount) {
+				this.dataDiskCount = dataDiskCount;
+			}
+
+			public String getSysDiskCategory() {
+				return this.sysDiskCategory;
+			}
+
+			public void setSysDiskCategory(String sysDiskCategory) {
+				this.sysDiskCategory = sysDiskCategory;
+			}
+
+			public Integer getSysDiskSize() {
+				return this.sysDiskSize;
+			}
+
+			public void setSysDiskSize(Integer sysDiskSize) {
+				this.sysDiskSize = sysDiskSize;
+			}
+
+			public Integer getCpuCount() {
+				return this.cpuCount;
+			}
+
+			public void setCpuCount(Integer cpuCount) {
+				this.cpuCount = cpuCount;
+			}
+
+			public Integer getMemSize() {
+				return this.memSize;
+			}
+
+			public void setMemSize(Integer memSize) {
+				this.memSize = memSize;
+			}
+
+			public String getSpotStrategy() {
+				return this.spotStrategy;
+			}
+
+			public void setSpotStrategy(String spotStrategy) {
+				this.spotStrategy = spotStrategy;
+			}
+
+			public List<SpotPriceLimit3> getSpotPriceLimits2() {
+				return this.spotPriceLimits2;
+			}
+
+			public void setSpotPriceLimits2(List<SpotPriceLimit3> spotPriceLimits2) {
+				this.spotPriceLimits2 = spotPriceLimits2;
+			}
+
+			public List<String> getInstanceTypeList1() {
+				return this.instanceTypeList1;
+			}
+
+			public void setInstanceTypeList1(List<String> instanceTypeList1) {
+				this.instanceTypeList1 = instanceTypeList1;
+			}
+
+			public static class SpotPriceLimit3 {
+
+				private String instanceType;
+
+				private Float priceLimit;
+
+				public String getInstanceType() {
+					return this.instanceType;
+				}
+
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
+				}
+
+				public Float getPriceLimit() {
+					return this.priceLimit;
+				}
+
+				public void setPriceLimit(Float priceLimit) {
+					this.priceLimit = priceLimit;
+				}
 			}
 		}
 	}

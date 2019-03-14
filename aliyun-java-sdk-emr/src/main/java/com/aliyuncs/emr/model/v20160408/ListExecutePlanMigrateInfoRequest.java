@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListExecutePlanMigrateInfoRequest extends RpcAcsRequest<ListExecutePlanMigrateInfoResponse> {
 	
 	public ListExecutePlanMigrateInfoRequest() {
-		super("Emr", "2016-04-08", "ListExecutePlanMigrateInfo");
+		super("Emr", "2016-04-08", "ListExecutePlanMigrateInfo", "emr");
 	}
 
 	private Long resourceOwnerId;

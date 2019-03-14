@@ -24,7 +24,7 @@ import java.util.List;
 public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 	
 	public ListClustersRequest() {
-		super("Emr", "2016-04-08", "ListClusters");
+		super("Emr", "2016-04-08", "ListClusters", "emr");
 	}
 
 	private Long resourceOwnerId;
@@ -38,6 +38,8 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 	private Boolean isDesc;
 
 	private String createType;
+
+	private String depositType;
 
 	private Boolean defaultStatus;
 
@@ -110,6 +112,17 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.createType = createType;
 		if(createType != null){
 			putQueryParameter("CreateType", createType);
+		}
+	}
+
+	public String getDepositType() {
+		return this.depositType;
+	}
+
+	public void setDepositType(String depositType) {
+		this.depositType = depositType;
+		if(depositType != null){
+			putQueryParameter("DepositType", depositType);
 		}
 	}
 

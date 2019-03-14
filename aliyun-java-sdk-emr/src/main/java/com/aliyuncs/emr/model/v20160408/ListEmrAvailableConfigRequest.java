@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListEmrAvailableConfigRequest extends RpcAcsRequest<ListEmrAvailableConfigResponse> {
 	
 	public ListEmrAvailableConfigRequest() {
-		super("Emr", "2016-04-08", "ListEmrAvailableConfig");
+		super("Emr", "2016-04-08", "ListEmrAvailableConfig", "emr");
 	}
 
 	private Long resourceOwnerId;

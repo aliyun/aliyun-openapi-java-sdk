@@ -33,7 +33,7 @@ public class MetastoreListKafkaConsumerGroupResponse extends AcsResponse {
 
 	private Integer pageSize;
 
-	private List<ConsumeGroup> consumeGroupList;
+	private List<ConsumerGroup> consumerGroupList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,15 +67,15 @@ public class MetastoreListKafkaConsumerGroupResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public List<ConsumeGroup> getConsumeGroupList() {
-		return this.consumeGroupList;
+	public List<ConsumerGroup> getConsumerGroupList() {
+		return this.consumerGroupList;
 	}
 
-	public void setConsumeGroupList(List<ConsumeGroup> consumeGroupList) {
-		this.consumeGroupList = consumeGroupList;
+	public void setConsumerGroupList(List<ConsumerGroup> consumerGroupList) {
+		this.consumerGroupList = consumerGroupList;
 	}
 
-	public static class ConsumeGroup {
+	public static class ConsumerGroup {
 
 		private String id;
 
@@ -85,11 +85,13 @@ public class MetastoreListKafkaConsumerGroupResponse extends AcsResponse {
 
 		private String consumerType;
 
-		private Integer totalLag;
+		private Long totalLag;
 
 		private Long gmtCreate;
 
 		private Long gmtModified;
+
+		private String partitionProportion;
 
 		public String getId() {
 			return this.id;
@@ -123,11 +125,11 @@ public class MetastoreListKafkaConsumerGroupResponse extends AcsResponse {
 			this.consumerType = consumerType;
 		}
 
-		public Integer getTotalLag() {
+		public Long getTotalLag() {
 			return this.totalLag;
 		}
 
-		public void setTotalLag(Integer totalLag) {
+		public void setTotalLag(Long totalLag) {
 			this.totalLag = totalLag;
 		}
 
@@ -145,6 +147,14 @@ public class MetastoreListKafkaConsumerGroupResponse extends AcsResponse {
 
 		public void setGmtModified(Long gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getPartitionProportion() {
+			return this.partitionProportion;
+		}
+
+		public void setPartitionProportion(String partitionProportion) {
+			this.partitionProportion = partitionProportion;
 		}
 	}
 

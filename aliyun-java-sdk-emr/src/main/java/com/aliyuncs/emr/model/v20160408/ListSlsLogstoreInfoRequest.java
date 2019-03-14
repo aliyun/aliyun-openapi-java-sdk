@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListSlsLogstoreInfoRequest extends RpcAcsRequest<ListSlsLogstoreInfoResponse> {
 	
 	public ListSlsLogstoreInfoRequest() {
-		super("Emr", "2016-04-08", "ListSlsLogstoreInfo");
+		super("Emr", "2016-04-08", "ListSlsLogstoreInfo", "emr");
 	}
 
 	private Long resourceOwnerId;

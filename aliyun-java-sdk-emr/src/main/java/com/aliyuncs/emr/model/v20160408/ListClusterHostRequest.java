@@ -24,7 +24,7 @@ import java.util.List;
 public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostResponse> {
 	
 	public ListClusterHostRequest() {
-		super("Emr", "2016-04-08", "ListClusterHost");
+		super("Emr", "2016-04-08", "ListClusterHost", "emr");
 	}
 
 	private Long resourceOwnerId;
@@ -46,6 +46,8 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 	private String hostName;
 
 	private String groupType;
+
+	private String hostGroupId;
 
 	private Integer pageSize;
 
@@ -158,6 +160,17 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		this.groupType = groupType;
 		if(groupType != null){
 			putQueryParameter("GroupType", groupType);
+		}
+	}
+
+	public String getHostGroupId() {
+		return this.hostGroupId;
+	}
+
+	public void setHostGroupId(String hostGroupId) {
+		this.hostGroupId = hostGroupId;
+		if(hostGroupId != null){
+			putQueryParameter("HostGroupId", hostGroupId);
 		}
 	}
 

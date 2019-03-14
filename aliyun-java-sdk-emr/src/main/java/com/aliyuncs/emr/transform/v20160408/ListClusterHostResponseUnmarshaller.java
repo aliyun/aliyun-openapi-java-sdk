@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.ListClusterHostResponse;
 import com.aliyuncs.emr.model.v20160408.ListClusterHostResponse.Host;
 import com.aliyuncs.emr.model.v20160408.ListClusterHostResponse.Host.Disk;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +49,10 @@ public class ListClusterHostResponseUnmarshaller {
 			host.setSerialNumber(context.stringValue("ListClusterHostResponse.HostList["+ i +"].SerialNumber"));
 			host.setChargeType(context.stringValue("ListClusterHostResponse.HostList["+ i +"].ChargeType"));
 			host.setExpiredTime(context.longValue("ListClusterHostResponse.HostList["+ i +"].ExpiredTime"));
+			host.setHostGroupId(context.stringValue("ListClusterHostResponse.HostList["+ i +"].HostGroupId"));
+			host.setCreateTime(context.stringValue("ListClusterHostResponse.HostList["+ i +"].CreateTime"));
+			host.setEmrExpiredTime(context.stringValue("ListClusterHostResponse.HostList["+ i +"].EmrExpiredTime"));
+			host.setSupportIpV6(context.booleanValue("ListClusterHostResponse.HostList["+ i +"].SupportIpV6"));
 
 			List<Disk> diskList = new ArrayList<Disk>();
 			for (int j = 0; j < context.lengthValue("ListClusterHostResponse.HostList["+ i +"].DiskList.Length"); j++) {

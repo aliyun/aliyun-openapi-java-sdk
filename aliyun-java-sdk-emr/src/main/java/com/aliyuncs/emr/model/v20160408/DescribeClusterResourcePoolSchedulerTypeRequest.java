@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeClusterResourcePoolSchedulerTypeRequest extends RpcAcsRequest<DescribeClusterResourcePoolSchedulerTypeResponse> {
 	
 	public DescribeClusterResourcePoolSchedulerTypeRequest() {
-		super("Emr", "2016-04-08", "DescribeClusterResourcePoolSchedulerType");
+		super("Emr", "2016-04-08", "DescribeClusterResourcePoolSchedulerType", "emr");
 	}
 
 	private Long resourceOwnerId;

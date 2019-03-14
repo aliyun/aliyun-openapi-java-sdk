@@ -23,7 +23,6 @@ import com.aliyuncs.emr.model.v20160408.DescribeClusterBasicInfoResponse.Cluster
 import com.aliyuncs.emr.model.v20160408.DescribeClusterBasicInfoResponse.ClusterInfo.FailReason;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterBasicInfoResponse.ClusterInfo.SoftwareInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterBasicInfoResponse.ClusterInfo.SoftwareInfo.Software;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

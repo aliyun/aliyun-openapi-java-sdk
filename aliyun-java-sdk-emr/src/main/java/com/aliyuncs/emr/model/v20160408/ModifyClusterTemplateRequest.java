@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyClusterTemplateRequest extends RpcAcsRequest<ModifyClusterTemplateResponse> {
 	
 	public ModifyClusterTemplateRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterTemplate");
+		super("Emr", "2016-04-08", "ModifyClusterTemplate", "emr");
 	}
 
 	private Long resourceOwnerId;

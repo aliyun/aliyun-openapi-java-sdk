@@ -23,12 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreListTaskRequest extends RpcAcsRequest<MetastoreListTaskResponse> {
 	
 	public MetastoreListTaskRequest() {
-		super("Emr", "2016-04-08", "MetastoreListTask");
+		super("Emr", "2016-04-08", "MetastoreListTask", "emr");
 	}
 
 	private Long resourceOwnerId;
 
 	private String taskStatus;
+
+	private String taskSourceType;
 
 	private String taskType;
 
@@ -59,6 +61,17 @@ public class MetastoreListTaskRequest extends RpcAcsRequest<MetastoreListTaskRes
 		this.taskStatus = taskStatus;
 		if(taskStatus != null){
 			putQueryParameter("TaskStatus", taskStatus);
+		}
+	}
+
+	public String getTaskSourceType() {
+		return this.taskSourceType;
+	}
+
+	public void setTaskSourceType(String taskSourceType) {
+		this.taskSourceType = taskSourceType;
+		if(taskSourceType != null){
+			putQueryParameter("TaskSourceType", taskSourceType);
 		}
 	}
 

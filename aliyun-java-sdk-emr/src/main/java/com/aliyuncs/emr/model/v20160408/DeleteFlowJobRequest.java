@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteFlowJobRequest extends RpcAcsRequest<DeleteFlowJobResponse> {
 	
 	public DeleteFlowJobRequest() {
-		super("Emr", "2016-04-08", "DeleteFlowJob");
+		super("Emr", "2016-04-08", "DeleteFlowJob", "emr");
 	}
 
 	private String id;

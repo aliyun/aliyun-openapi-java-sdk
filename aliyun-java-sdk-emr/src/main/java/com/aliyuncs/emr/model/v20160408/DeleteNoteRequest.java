@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteNoteRequest extends RpcAcsRequest<DeleteNoteResponse> {
 	
 	public DeleteNoteRequest() {
-		super("Emr", "2016-04-08", "DeleteNote");
+		super("Emr", "2016-04-08", "DeleteNote", "emr");
 	}
 
 	private Long resourceOwnerId;

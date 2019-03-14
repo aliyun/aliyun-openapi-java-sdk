@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListScalingActivityResponse;
 import com.aliyuncs.emr.model.v20160408.ListScalingActivityResponse.ScalingActivity;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +43,8 @@ public class ListScalingActivityResponseUnmarshaller {
 			scalingActivity.setDescription(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Description"));
 			scalingActivity.setStatus(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Status"));
 			scalingActivity.setTransition(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Transition"));
+			scalingActivity.setScalingRuleId(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].ScalingRuleId"));
+			scalingActivity.setExpectNum(context.integerValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].ExpectNum"));
 
 			scalingActivityList.add(scalingActivity);
 		}

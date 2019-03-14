@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	
 	public CreateFlowJobRequest() {
-		super("Emr", "2016-04-08", "CreateFlowJob");
+		super("Emr", "2016-04-08", "CreateFlowJob", "emr");
 	}
 
 	private String runConf;
@@ -56,6 +56,8 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	private Integer maxRetry;
 
 	private Boolean adhoc;
+
+	private String alertConf;
 
 	private String projectId;
 
@@ -226,6 +228,17 @@ public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 		this.adhoc = adhoc;
 		if(adhoc != null){
 			putQueryParameter("Adhoc", adhoc.toString());
+		}
+	}
+
+	public String getAlertConf() {
+		return this.alertConf;
+	}
+
+	public void setAlertConf(String alertConf) {
+		this.alertConf = alertConf;
+		if(alertConf != null){
+			putQueryParameter("AlertConf", alertConf);
 		}
 	}
 

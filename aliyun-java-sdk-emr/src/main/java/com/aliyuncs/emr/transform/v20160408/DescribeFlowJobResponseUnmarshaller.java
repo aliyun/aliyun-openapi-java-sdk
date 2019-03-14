@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.DescribeFlowJobResponse;
 import com.aliyuncs.emr.model.v20160408.DescribeFlowJobResponse.Resource;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +38,7 @@ public class DescribeFlowJobResponseUnmarshaller {
 		describeFlowJobResponse.setRetryInterval(context.longValue("DescribeFlowJobResponse.RetryInterval"));
 		describeFlowJobResponse.setParams(context.stringValue("DescribeFlowJobResponse.Params"));
 		describeFlowJobResponse.setParamConf(context.stringValue("DescribeFlowJobResponse.ParamConf"));
+		describeFlowJobResponse.setCustomVariables(context.stringValue("DescribeFlowJobResponse.CustomVariables"));
 		describeFlowJobResponse.setEnvConf(context.stringValue("DescribeFlowJobResponse.EnvConf"));
 		describeFlowJobResponse.setRunConf(context.stringValue("DescribeFlowJobResponse.RunConf"));
 		describeFlowJobResponse.setMonitorConf(context.stringValue("DescribeFlowJobResponse.MonitorConf"));
@@ -46,6 +46,7 @@ public class DescribeFlowJobResponseUnmarshaller {
 		describeFlowJobResponse.setMode(context.stringValue("DescribeFlowJobResponse.mode"));
 		describeFlowJobResponse.setLastInstanceId(context.stringValue("DescribeFlowJobResponse.LastInstanceId"));
 		describeFlowJobResponse.setAdhoc(context.stringValue("DescribeFlowJobResponse.Adhoc"));
+		describeFlowJobResponse.setAlertConf(context.stringValue("DescribeFlowJobResponse.AlertConf"));
 
 		List<Resource> resourceList = new ArrayList<Resource>();
 		for (int i = 0; i < context.lengthValue("DescribeFlowJobResponse.ResourceList.Length"); i++) {

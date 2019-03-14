@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyExecutionPlanClusterInfoRequest extends RpcAcsRequest<ModifyExecutionPlanClusterInfoResponse> {
 	
 	public ModifyExecutionPlanClusterInfoRequest() {
-		super("Emr", "2016-04-08", "ModifyExecutionPlanClusterInfo");
+		super("Emr", "2016-04-08", "ModifyExecutionPlanClusterInfo", "emr");
 	}
 
 	private Long resourceOwnerId;

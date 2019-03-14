@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListRequiredServiceRequest extends RpcAcsRequest<ListRequiredServiceResponse> {
 	
 	public ListRequiredServiceRequest() {
-		super("Emr", "2016-04-08", "ListRequiredService");
+		super("Emr", "2016-04-08", "ListRequiredService", "emr");
 	}
 
 	private Long resourceOwnerId;

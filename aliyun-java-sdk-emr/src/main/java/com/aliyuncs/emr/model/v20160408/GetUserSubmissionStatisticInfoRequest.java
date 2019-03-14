@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetUserSubmissionStatisticInfoRequest extends RpcAcsRequest<GetUserSubmissionStatisticInfoResponse> {
 	
 	public GetUserSubmissionStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetUserSubmissionStatisticInfo");
+		super("Emr", "2016-04-08", "GetUserSubmissionStatisticInfo", "emr");
 	}
 
 	private String fromDatetime;

@@ -25,7 +25,6 @@ import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceConfigResponse.Con
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceConfigResponse.Config.PropertyInfo.EffectWay;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceConfigResponse.Config.PropertyInfo.PropertyValueAttributes;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterServiceConfigResponse.Config.PropertyInfo.PropertyValueAttributes.ValueEntryInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

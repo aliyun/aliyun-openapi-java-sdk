@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteAlertContactsRequest extends RpcAcsRequest<DeleteAlertContactsResponse> {
 	
 	public DeleteAlertContactsRequest() {
-		super("Emr", "2016-04-08", "DeleteAlertContacts");
+		super("Emr", "2016-04-08", "DeleteAlertContacts", "emr");
 	}
 
 	private Long resourceOwnerId;

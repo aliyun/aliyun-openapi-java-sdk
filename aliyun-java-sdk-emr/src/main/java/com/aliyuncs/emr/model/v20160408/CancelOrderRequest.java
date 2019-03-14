@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelOrderRequest extends RpcAcsRequest<CancelOrderResponse> {
 	
 	public CancelOrderRequest() {
-		super("Emr", "2016-04-08", "CancelOrder");
+		super("Emr", "2016-04-08", "CancelOrder", "emr");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RetryExecutionPlanInstanceRequest extends RpcAcsRequest<RetryExecutionPlanInstanceResponse> {
 	
 	public RetryExecutionPlanInstanceRequest() {
-		super("Emr", "2016-04-08", "RetryExecutionPlanInstance");
+		super("Emr", "2016-04-08", "RetryExecutionPlanInstance", "emr");
 	}
 
 	private Long resourceOwnerId;

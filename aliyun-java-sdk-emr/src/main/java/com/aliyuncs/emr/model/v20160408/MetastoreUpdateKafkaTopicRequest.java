@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -23,20 +24,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreUpdateKafkaTopicRequest extends RpcAcsRequest<MetastoreUpdateKafkaTopicResponse> {
 	
 	public MetastoreUpdateKafkaTopicRequest() {
-		super("Emr", "2016-04-08", "MetastoreUpdateKafkaTopic");
+		super("Emr", "2016-04-08", "MetastoreUpdateKafkaTopic", "emr");
 	}
 
 	private Long resourceOwnerId;
 
 	private String topicId;
 
-	private String topicName;
-
-	private String advancedConfig;
+	private List<AdvancedConfig> advancedConfigs;
 
 	private Integer numPartitions;
-
-	private Integer replicationFactor;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,26 +57,18 @@ public class MetastoreUpdateKafkaTopicRequest extends RpcAcsRequest<MetastoreUpd
 		}
 	}
 
-	public String getTopicName() {
-		return this.topicName;
+	public List<AdvancedConfig> getAdvancedConfigs() {
+		return this.advancedConfigs;
 	}
 
-	public void setTopicName(String topicName) {
-		this.topicName = topicName;
-		if(topicName != null){
-			putQueryParameter("TopicName", topicName);
-		}
-	}
-
-	public String getAdvancedConfig() {
-		return this.advancedConfig;
-	}
-
-	public void setAdvancedConfig(String advancedConfig) {
-		this.advancedConfig = advancedConfig;
-		if(advancedConfig != null){
-			putQueryParameter("AdvancedConfig", advancedConfig);
-		}
+	public void setAdvancedConfigs(List<AdvancedConfig> advancedConfigs) {
+		this.advancedConfigs = advancedConfigs;	
+		if (advancedConfigs != null) {
+			for (int depth1 = 0; depth1 < advancedConfigs.size(); depth1++) {
+				putQueryParameter("AdvancedConfig." + (depth1 + 1) + ".Value" , advancedConfigs.get(depth1).getValue());
+				putQueryParameter("AdvancedConfig." + (depth1 + 1) + ".Key" , advancedConfigs.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Integer getNumPartitions() {
@@ -93,14 +82,26 @@ public class MetastoreUpdateKafkaTopicRequest extends RpcAcsRequest<MetastoreUpd
 		}
 	}
 
-	public Integer getReplicationFactor() {
-		return this.replicationFactor;
-	}
+	public static class AdvancedConfig {
 
-	public void setReplicationFactor(Integer replicationFactor) {
-		this.replicationFactor = replicationFactor;
-		if(replicationFactor != null){
-			putQueryParameter("ReplicationFactor", replicationFactor.toString());
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

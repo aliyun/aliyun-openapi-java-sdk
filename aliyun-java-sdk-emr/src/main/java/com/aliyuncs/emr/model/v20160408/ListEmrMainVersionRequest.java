@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListEmrMainVersionRequest extends RpcAcsRequest<ListEmrMainVersionResponse> {
 	
 	public ListEmrMainVersionRequest() {
-		super("Emr", "2016-04-08", "ListEmrMainVersion");
+		super("Emr", "2016-04-08", "ListEmrMainVersion", "emr");
 	}
 
 	private Long resourceOwnerId;

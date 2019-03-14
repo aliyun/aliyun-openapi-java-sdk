@@ -60,6 +60,8 @@ public class MetastoreDescribeTaskResponse extends AcsResponse {
 
 		private String taskDetail;
 
+		private String taskObject;
+
 		private String taskResultDetail;
 
 		private Integer taskProcess;
@@ -128,6 +130,14 @@ public class MetastoreDescribeTaskResponse extends AcsResponse {
 
 		public void setTaskDetail(String taskDetail) {
 			this.taskDetail = taskDetail;
+		}
+
+		public String getTaskObject() {
+			return this.taskObject;
+		}
+
+		public void setTaskObject(String taskObject) {
+			this.taskObject = taskObject;
 		}
 
 		public String getTaskResultDetail() {

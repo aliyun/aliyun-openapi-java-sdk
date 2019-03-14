@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DetachClusterForNoteRequest extends RpcAcsRequest<DetachClusterForNoteResponse> {
 	
 	public DetachClusterForNoteRequest() {
-		super("Emr", "2016-04-08", "DetachClusterForNote");
+		super("Emr", "2016-04-08", "DetachClusterForNote", "emr");
 	}
 
 	private Long resourceOwnerId;

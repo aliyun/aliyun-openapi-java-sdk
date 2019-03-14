@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteParagraphRequest extends RpcAcsRequest<DeleteParagraphResponse> {
 	
 	public DeleteParagraphRequest() {
-		super("Emr", "2016-04-08", "DeleteParagraph");
+		super("Emr", "2016-04-08", "DeleteParagraph", "emr");
 	}
 
 	private Long resourceOwnerId;

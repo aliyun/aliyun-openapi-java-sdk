@@ -24,7 +24,7 @@ import java.util.List;
 public class RunOpsCommandRequest extends RpcAcsRequest<RunOpsCommandResponse> {
 	
 	public RunOpsCommandRequest() {
-		super("Emr", "2016-04-08", "RunOpsCommand");
+		super("Emr", "2016-04-08", "RunOpsCommand", "emr");
 	}
 
 	private Long resourceOwnerId;

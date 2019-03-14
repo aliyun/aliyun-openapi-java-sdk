@@ -15,7 +15,6 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.DescribeEmrMainVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -66,10 +65,26 @@ public class DescribeEmrMainVersionResponse extends AcsResponse {
 
 		private List<String> whiteUserList;
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}

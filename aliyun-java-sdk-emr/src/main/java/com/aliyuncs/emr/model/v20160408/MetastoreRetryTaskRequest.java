@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreRetryTaskRequest extends RpcAcsRequest<MetastoreRetryTaskResponse> {
 	
 	public MetastoreRetryTaskRequest() {
-		super("Emr", "2016-04-08", "MetastoreRetryTask");
+		super("Emr", "2016-04-08", "MetastoreRetryTask", "emr");
 	}
 
 	private Long resourceOwnerId;
