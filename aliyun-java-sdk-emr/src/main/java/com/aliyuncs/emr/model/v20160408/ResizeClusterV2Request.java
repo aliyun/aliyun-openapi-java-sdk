@@ -24,7 +24,7 @@ import java.util.List;
 public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Response> {
 	
 	public ResizeClusterV2Request() {
-		super("Emr", "2016-04-08", "ResizeClusterV2", "emr");
+		super("Emr", "2016-04-08", "ResizeClusterV2");
 	}
 
 	private String vswitchId;

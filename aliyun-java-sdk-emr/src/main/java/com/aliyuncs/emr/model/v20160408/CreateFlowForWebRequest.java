@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebResponse> {
 	
 	public CreateFlowForWebRequest() {
-		super("Emr", "2016-04-08", "CreateFlowForWeb", "emr");
+		super("Emr", "2016-04-08", "CreateFlowForWeb");
 	}
 
 	private String cronExpr;

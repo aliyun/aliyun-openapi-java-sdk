@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListClusterServiceQuickLinkRequest extends RpcAcsRequest<ListClusterServiceQuickLinkResponse> {
 	
 	public ListClusterServiceQuickLinkRequest() {
-		super("Emr", "2016-04-08", "ListClusterServiceQuickLink", "emr");
+		super("Emr", "2016-04-08", "ListClusterServiceQuickLink");
 	}
 
 	private Long resourceOwnerId;

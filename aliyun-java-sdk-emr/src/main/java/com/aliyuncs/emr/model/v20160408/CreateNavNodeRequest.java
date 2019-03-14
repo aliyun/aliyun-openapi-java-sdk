@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateNavNodeRequest extends RpcAcsRequest<CreateNavNodeResponse> {
 	
 	public CreateNavNodeRequest() {
-		super("Emr", "2016-04-08", "CreateNavNode", "emr");
+		super("Emr", "2016-04-08", "CreateNavNode");
 	}
 
 	private Long resourceOwnerId;

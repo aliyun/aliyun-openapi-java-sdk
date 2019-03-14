@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListResourceQueueRequest extends RpcAcsRequest<ListResourceQueueResponse> {
 	
 	public ListResourceQueueRequest() {
-		super("Emr", "2016-04-08", "ListResourceQueue", "emr");
+		super("Emr", "2016-04-08", "ListResourceQueue");
 	}
 
 	private Long resourceOwnerId;

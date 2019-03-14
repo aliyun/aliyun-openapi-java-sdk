@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowProjectRequest extends RpcAcsRequest<ListFlowProjectResponse> {
 	
 	public ListFlowProjectRequest() {
-		super("Emr", "2016-04-08", "ListFlowProject", "emr");
+		super("Emr", "2016-04-08", "ListFlowProject");
 	}
 
 	private String name;

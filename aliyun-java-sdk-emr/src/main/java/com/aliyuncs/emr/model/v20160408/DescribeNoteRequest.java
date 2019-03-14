@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeNoteRequest extends RpcAcsRequest<DescribeNoteResponse> {
 	
 	public DescribeNoteRequest() {
-		super("Emr", "2016-04-08", "DescribeNote", "emr");
+		super("Emr", "2016-04-08", "DescribeNote");
 	}
 
 	private Long resourceOwnerId;

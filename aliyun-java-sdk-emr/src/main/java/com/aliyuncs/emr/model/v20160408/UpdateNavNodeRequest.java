@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateNavNodeRequest extends RpcAcsRequest<UpdateNavNodeResponse> {
 	
 	public UpdateNavNodeRequest() {
-		super("Emr", "2016-04-08", "UpdateNavNode", "emr");
+		super("Emr", "2016-04-08", "UpdateNavNode");
 	}
 
 	private Long resourceOwnerId;

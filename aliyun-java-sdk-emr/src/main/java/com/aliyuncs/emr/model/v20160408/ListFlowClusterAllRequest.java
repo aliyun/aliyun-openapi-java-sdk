@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowClusterAllRequest extends RpcAcsRequest<ListFlowClusterAllResponse> {
 	
 	public ListFlowClusterAllRequest() {
-		super("Emr", "2016-04-08", "ListFlowClusterAll", "emr");
+		super("Emr", "2016-04-08", "ListFlowClusterAll");
 	}
 
 	@Override

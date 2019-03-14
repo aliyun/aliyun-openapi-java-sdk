@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListSupportedServiceNameRequest extends RpcAcsRequest<ListSupportedServiceNameResponse> {
 	
 	public ListSupportedServiceNameRequest() {
-		super("Emr", "2016-04-08", "ListSupportedServiceName", "emr");
+		super("Emr", "2016-04-08", "ListSupportedServiceName");
 	}
 
 	private Long resourceOwnerId;

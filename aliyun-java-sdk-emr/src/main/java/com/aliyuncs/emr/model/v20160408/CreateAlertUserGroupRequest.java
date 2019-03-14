@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateAlertUserGroupRequest extends RpcAcsRequest<CreateAlertUserGroupResponse> {
 	
 	public CreateAlertUserGroupRequest() {
-		super("Emr", "2016-04-08", "CreateAlertUserGroup", "emr");
+		super("Emr", "2016-04-08", "CreateAlertUserGroup");
 	}
 
 	private String userList;

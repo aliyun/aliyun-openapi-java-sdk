@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowJobHistoryRequest extends RpcAcsRequest<ListFlowJobHistoryResponse> {
 	
 	public ListFlowJobHistoryRequest() {
-		super("Emr", "2016-04-08", "ListFlowJobHistory", "emr");
+		super("Emr", "2016-04-08", "ListFlowJobHistory");
 	}
 
 	private Integer pageSize;

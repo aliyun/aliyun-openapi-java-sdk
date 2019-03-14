@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeFlowNodeInstanceContainerLogRequest extends RpcAcsRequest<DescribeFlowNodeInstanceContainerLogResponse> {
 	
 	public DescribeFlowNodeInstanceContainerLogRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowNodeInstanceContainerLog", "emr");
+		super("Emr", "2016-04-08", "DescribeFlowNodeInstanceContainerLog");
 	}
 
 	private Integer offset;

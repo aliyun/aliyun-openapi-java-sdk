@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AttachClusterForNoteRequest extends RpcAcsRequest<AttachClusterForNoteResponse> {
 	
 	public AttachClusterForNoteRequest() {
-		super("Emr", "2016-04-08", "AttachClusterForNote", "emr");
+		super("Emr", "2016-04-08", "AttachClusterForNote");
 	}
 
 	private Long resourceOwnerId;

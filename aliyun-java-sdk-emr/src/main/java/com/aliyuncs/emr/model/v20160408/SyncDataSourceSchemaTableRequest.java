@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SyncDataSourceSchemaTableRequest extends RpcAcsRequest<SyncDataSourceSchemaTableResponse> {
 	
 	public SyncDataSourceSchemaTableRequest() {
-		super("Emr", "2016-04-08", "SyncDataSourceSchemaTable", "emr");
+		super("Emr", "2016-04-08", "SyncDataSourceSchemaTable");
 	}
 
 	private Long resourceOwnerId;

@@ -24,7 +24,7 @@ import java.util.List;
 public class MetastoreUpdateKafkaTopicBatchRequest extends RpcAcsRequest<MetastoreUpdateKafkaTopicBatchResponse> {
 	
 	public MetastoreUpdateKafkaTopicBatchRequest() {
-		super("Emr", "2016-04-08", "MetastoreUpdateKafkaTopicBatch", "emr");
+		super("Emr", "2016-04-08", "MetastoreUpdateKafkaTopicBatch");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAlertUserGroupRequest extends RpcAcsRequest<ModifyAlertUserGroupResponse> {
 	
 	public ModifyAlertUserGroupRequest() {
-		super("Emr", "2016-04-08", "ModifyAlertUserGroup", "emr");
+		super("Emr", "2016-04-08", "ModifyAlertUserGroup");
 	}
 
 	private String userList;

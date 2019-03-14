@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleResponse> {
 	
 	public CreateScalingRuleRequest() {
-		super("Emr", "2016-04-08", "CreateScalingRule", "emr");
+		super("Emr", "2016-04-08", "CreateScalingRule");
 	}
 
 	private String launchTime;

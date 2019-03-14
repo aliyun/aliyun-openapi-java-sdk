@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteClusterTemplateRequest extends RpcAcsRequest<DeleteClusterTemplateResponse> {
 	
 	public DeleteClusterTemplateRequest() {
-		super("Emr", "2016-04-08", "DeleteClusterTemplate", "emr");
+		super("Emr", "2016-04-08", "DeleteClusterTemplate");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeFlowProjectRequest extends RpcAcsRequest<DescribeFlowProjectResponse> {
 	
 	public DescribeFlowProjectRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowProject", "emr");
+		super("Emr", "2016-04-08", "DescribeFlowProject");
 	}
 
 	private String projectId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteFlowProjectUserRequest extends RpcAcsRequest<DeleteFlowProjectUserResponse> {
 	
 	public DeleteFlowProjectUserRequest() {
-		super("Emr", "2016-04-08", "DeleteFlowProjectUser", "emr");
+		super("Emr", "2016-04-08", "DeleteFlowProjectUser");
 	}
 
 	private String projectId;

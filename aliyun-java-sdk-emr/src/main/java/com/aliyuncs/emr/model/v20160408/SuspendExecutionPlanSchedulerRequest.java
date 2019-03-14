@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SuspendExecutionPlanSchedulerRequest extends RpcAcsRequest<SuspendExecutionPlanSchedulerResponse> {
 	
 	public SuspendExecutionPlanSchedulerRequest() {
-		super("Emr", "2016-04-08", "SuspendExecutionPlanScheduler", "emr");
+		super("Emr", "2016-04-08", "SuspendExecutionPlanScheduler");
 	}
 
 	private Long resourceOwnerId;

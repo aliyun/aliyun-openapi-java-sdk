@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListClusterHostComponentRequest extends RpcAcsRequest<ListClusterHostComponentResponse> {
 	
 	public ListClusterHostComponentRequest() {
-		super("Emr", "2016-04-08", "ListClusterHostComponent", "emr");
+		super("Emr", "2016-04-08", "ListClusterHostComponent");
 	}
 
 	private Long resourceOwnerId;

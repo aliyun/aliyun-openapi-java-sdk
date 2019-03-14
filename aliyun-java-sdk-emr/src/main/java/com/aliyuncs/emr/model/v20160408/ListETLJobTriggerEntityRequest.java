@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListETLJobTriggerEntityRequest extends RpcAcsRequest<ListETLJobTriggerEntityResponse> {
 	
 	public ListETLJobTriggerEntityRequest() {
-		super("Emr", "2016-04-08", "ListETLJobTriggerEntity", "emr");
+		super("Emr", "2016-04-08", "ListETLJobTriggerEntity");
 	}
 
 	private Long resourceOwnerId;

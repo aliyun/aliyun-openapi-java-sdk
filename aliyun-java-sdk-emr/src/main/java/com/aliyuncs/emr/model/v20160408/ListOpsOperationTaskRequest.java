@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListOpsOperationTaskRequest extends RpcAcsRequest<ListOpsOperationTaskResponse> {
 	
 	public ListOpsOperationTaskRequest() {
-		super("Emr", "2016-04-08", "ListOpsOperationTask", "emr");
+		super("Emr", "2016-04-08", "ListOpsOperationTask");
 	}
 
 	private Long resourceOwnerId;

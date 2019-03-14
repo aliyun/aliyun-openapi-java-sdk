@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateUserPasswordRequest extends RpcAcsRequest<CreateUserPasswordResponse> {
 	
 	public CreateUserPasswordRequest() {
-		super("Emr", "2016-04-08", "CreateUserPassword", "emr");
+		super("Emr", "2016-04-08", "CreateUserPassword");
 	}
 
 	private Long resourceOwnerId;

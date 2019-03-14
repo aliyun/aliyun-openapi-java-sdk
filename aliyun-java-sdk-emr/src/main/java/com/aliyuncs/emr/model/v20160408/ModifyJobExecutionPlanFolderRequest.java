@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyJobExecutionPlanFolderRequest extends RpcAcsRequest<ModifyJobExecutionPlanFolderResponse> {
 	
 	public ModifyJobExecutionPlanFolderRequest() {
-		super("Emr", "2016-04-08", "ModifyJobExecutionPlanFolder", "emr");
+		super("Emr", "2016-04-08", "ModifyJobExecutionPlanFolder");
 	}
 
 	private Long resourceOwnerId;

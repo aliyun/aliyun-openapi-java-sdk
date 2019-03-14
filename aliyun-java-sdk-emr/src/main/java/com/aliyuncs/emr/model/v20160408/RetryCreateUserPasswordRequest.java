@@ -24,7 +24,7 @@ import java.util.List;
 public class RetryCreateUserPasswordRequest extends RpcAcsRequest<RetryCreateUserPasswordResponse> {
 	
 	public RetryCreateUserPasswordRequest() {
-		super("Emr", "2016-04-08", "RetryCreateUserPassword", "emr");
+		super("Emr", "2016-04-08", "RetryCreateUserPassword");
 	}
 
 	private Long resourceOwnerId;

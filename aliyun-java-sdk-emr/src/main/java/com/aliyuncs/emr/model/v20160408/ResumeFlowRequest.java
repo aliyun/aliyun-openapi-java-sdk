@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResumeFlowRequest extends RpcAcsRequest<ResumeFlowResponse> {
 	
 	public ResumeFlowRequest() {
-		super("Emr", "2016-04-08", "ResumeFlow", "emr");
+		super("Emr", "2016-04-08", "ResumeFlow");
 	}
 
 	private String flowInstanceId;

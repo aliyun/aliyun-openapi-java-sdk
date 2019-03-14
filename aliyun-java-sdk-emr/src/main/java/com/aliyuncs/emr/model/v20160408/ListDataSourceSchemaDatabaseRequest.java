@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListDataSourceSchemaDatabaseRequest extends RpcAcsRequest<ListDataSourceSchemaDatabaseResponse> {
 	
 	public ListDataSourceSchemaDatabaseRequest() {
-		super("Emr", "2016-04-08", "ListDataSourceSchemaDatabase", "emr");
+		super("Emr", "2016-04-08", "ListDataSourceSchemaDatabase");
 	}
 
 	private Long resourceOwnerId;

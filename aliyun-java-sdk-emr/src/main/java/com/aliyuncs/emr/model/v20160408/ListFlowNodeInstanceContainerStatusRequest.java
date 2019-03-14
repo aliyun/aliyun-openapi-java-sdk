@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowNodeInstanceContainerStatusRequest extends RpcAcsRequest<ListFlowNodeInstanceContainerStatusResponse> {
 	
 	public ListFlowNodeInstanceContainerStatusRequest() {
-		super("Emr", "2016-04-08", "ListFlowNodeInstanceContainerStatus", "emr");
+		super("Emr", "2016-04-08", "ListFlowNodeInstanceContainerStatus");
 	}
 
 	private Integer pageSize;

@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleResponse> {
 	
 	public ModifyScalingRuleRequest() {
-		super("Emr", "2016-04-08", "ModifyScalingRule", "emr");
+		super("Emr", "2016-04-08", "ModifyScalingRule");
 	}
 
 	private String launchTime;

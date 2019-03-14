@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAlertDingDingGroupRequest extends RpcAcsRequest<ModifyAlertDingDingGroupResponse> {
 	
 	public ModifyAlertDingDingGroupRequest() {
-		super("Emr", "2016-04-08", "ModifyAlertDingDingGroup", "emr");
+		super("Emr", "2016-04-08", "ModifyAlertDingDingGroup");
 	}
 
 	private Long resourceOwnerId;

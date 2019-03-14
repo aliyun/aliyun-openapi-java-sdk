@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListJobExecutionInstancesRequest extends RpcAcsRequest<ListJobExecutionInstancesResponse> {
 	
 	public ListJobExecutionInstancesRequest() {
-		super("Emr", "2016-04-08", "ListJobExecutionInstances", "emr");
+		super("Emr", "2016-04-08", "ListJobExecutionInstances");
 	}
 
 	private Long resourceOwnerId;

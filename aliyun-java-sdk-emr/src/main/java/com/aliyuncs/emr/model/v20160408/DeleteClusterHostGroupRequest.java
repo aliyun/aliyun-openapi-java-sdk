@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteClusterHostGroupRequest extends RpcAcsRequest<DeleteClusterHostGroupResponse> {
 	
 	public DeleteClusterHostGroupRequest() {
-		super("Emr", "2016-04-08", "DeleteClusterHostGroup", "emr");
+		super("Emr", "2016-04-08", "DeleteClusterHostGroup");
 	}
 
 	private Long resourceOwnerId;

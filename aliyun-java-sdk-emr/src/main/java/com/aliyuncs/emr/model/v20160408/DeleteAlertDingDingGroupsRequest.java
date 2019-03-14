@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteAlertDingDingGroupsRequest extends RpcAcsRequest<DeleteAlertDingDingGroupsResponse> {
 	
 	public DeleteAlertDingDingGroupsRequest() {
-		super("Emr", "2016-04-08", "DeleteAlertDingDingGroups", "emr");
+		super("Emr", "2016-04-08", "DeleteAlertDingDingGroups");
 	}
 
 	private Long resourceOwnerId;

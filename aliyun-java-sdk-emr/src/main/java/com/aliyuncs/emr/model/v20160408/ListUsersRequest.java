@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	
 	public ListUsersRequest() {
-		super("Emr", "2016-04-08", "ListUsers", "emr");
+		super("Emr", "2016-04-08", "ListUsers");
 	}
 
 	private Long resourceOwnerId;

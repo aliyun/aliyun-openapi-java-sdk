@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class KillFlowRequest extends RpcAcsRequest<KillFlowResponse> {
 	
 	public KillFlowRequest() {
-		super("Emr", "2016-04-08", "KillFlow", "emr");
+		super("Emr", "2016-04-08", "KillFlow");
 	}
 
 	private String flowInstanceId;

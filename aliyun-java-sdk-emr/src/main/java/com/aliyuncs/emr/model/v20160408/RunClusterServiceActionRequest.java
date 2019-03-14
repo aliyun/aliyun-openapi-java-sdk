@@ -24,7 +24,7 @@ import java.util.List;
 public class RunClusterServiceActionRequest extends RpcAcsRequest<RunClusterServiceActionResponse> {
 	
 	public RunClusterServiceActionRequest() {
-		super("Emr", "2016-04-08", "RunClusterServiceAction", "emr");
+		super("Emr", "2016-04-08", "RunClusterServiceAction");
 	}
 
 	private String executeStrategy;

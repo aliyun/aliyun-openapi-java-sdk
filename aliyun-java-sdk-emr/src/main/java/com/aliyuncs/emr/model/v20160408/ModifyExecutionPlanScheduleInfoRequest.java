@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyExecutionPlanScheduleInfoRequest extends RpcAcsRequest<ModifyExecutionPlanScheduleInfoResponse> {
 	
 	public ModifyExecutionPlanScheduleInfoRequest() {
-		super("Emr", "2016-04-08", "ModifyExecutionPlanScheduleInfo", "emr");
+		super("Emr", "2016-04-08", "ModifyExecutionPlanScheduleInfo");
 	}
 
 	private Long resourceOwnerId;

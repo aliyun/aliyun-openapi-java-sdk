@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RenderResourcePoolXmlRequest extends RpcAcsRequest<RenderResourcePoolXmlResponse> {
 	
 	public RenderResourcePoolXmlRequest() {
-		super("Emr", "2016-04-08", "RenderResourcePoolXml", "emr");
+		super("Emr", "2016-04-08", "RenderResourcePoolXml");
 	}
 
 	private Long resourceOwnerId;

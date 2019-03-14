@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyExecutionPlanJobInfoRequest extends RpcAcsRequest<ModifyExecutionPlanJobInfoResponse> {
 	
 	public ModifyExecutionPlanJobInfoRequest() {
-		super("Emr", "2016-04-08", "ModifyExecutionPlanJobInfo", "emr");
+		super("Emr", "2016-04-08", "ModifyExecutionPlanJobInfo");
 	}
 
 	private Long resourceOwnerId;

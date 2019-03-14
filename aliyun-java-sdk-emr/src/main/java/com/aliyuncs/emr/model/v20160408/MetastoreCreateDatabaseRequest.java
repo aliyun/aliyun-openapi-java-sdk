@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreCreateDatabaseRequest extends RpcAcsRequest<MetastoreCreateDatabaseResponse> {
 	
 	public MetastoreCreateDatabaseRequest() {
-		super("Emr", "2016-04-08", "MetastoreCreateDatabase", "emr");
+		super("Emr", "2016-04-08", "MetastoreCreateDatabase");
 	}
 
 	private String dbSource;

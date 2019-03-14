@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListClusterServiceCustomActionSupportConfigRequest extends RpcAcsRequest<ListClusterServiceCustomActionSupportConfigResponse> {
 	
 	public ListClusterServiceCustomActionSupportConfigRequest() {
-		super("Emr", "2016-04-08", "ListClusterServiceCustomActionSupportConfig", "emr");
+		super("Emr", "2016-04-08", "ListClusterServiceCustomActionSupportConfig");
 	}
 
 	private String serviceCustomActionName;

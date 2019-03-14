@@ -24,7 +24,7 @@ import java.util.List;
 public class ListExecutionPlanInstancesRequest extends RpcAcsRequest<ListExecutionPlanInstancesResponse> {
 	
 	public ListExecutionPlanInstancesRequest() {
-		super("Emr", "2016-04-08", "ListExecutionPlanInstances", "emr");
+		super("Emr", "2016-04-08", "ListExecutionPlanInstances");
 	}
 
 	private Boolean onlyLastInstance;

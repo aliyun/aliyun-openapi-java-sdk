@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreDescribeKafkaConsumerGroupRequest extends RpcAcsRequest<MetastoreDescribeKafkaConsumerGroupResponse> {
 	
 	public MetastoreDescribeKafkaConsumerGroupRequest() {
-		super("Emr", "2016-04-08", "MetastoreDescribeKafkaConsumerGroup", "emr");
+		super("Emr", "2016-04-08", "MetastoreDescribeKafkaConsumerGroup");
 	}
 
 	private Long resourceOwnerId;

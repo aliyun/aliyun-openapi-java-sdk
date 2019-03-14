@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateDataSourceRequest extends RpcAcsRequest<UpdateDataSourceResponse> {
 	
 	public UpdateDataSourceRequest() {
-		super("Emr", "2016-04-08", "UpdateDataSource", "emr");
+		super("Emr", "2016-04-08", "UpdateDataSource");
 	}
 
 	private Long resourceOwnerId;

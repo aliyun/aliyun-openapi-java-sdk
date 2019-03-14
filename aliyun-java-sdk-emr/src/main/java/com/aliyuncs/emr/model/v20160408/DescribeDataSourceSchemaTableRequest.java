@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDataSourceSchemaTableRequest extends RpcAcsRequest<DescribeDataSourceSchemaTableResponse> {
 	
 	public DescribeDataSourceSchemaTableRequest() {
-		super("Emr", "2016-04-08", "DescribeDataSourceSchemaTable", "emr");
+		super("Emr", "2016-04-08", "DescribeDataSourceSchemaTable");
 	}
 
 	private Long resourceOwnerId;

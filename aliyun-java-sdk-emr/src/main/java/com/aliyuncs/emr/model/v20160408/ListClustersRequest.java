@@ -24,7 +24,7 @@ import java.util.List;
 public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 	
 	public ListClustersRequest() {
-		super("Emr", "2016-04-08", "ListClusters", "emr");
+		super("Emr", "2016-04-08", "ListClusters");
 	}
 
 	private Long resourceOwnerId;

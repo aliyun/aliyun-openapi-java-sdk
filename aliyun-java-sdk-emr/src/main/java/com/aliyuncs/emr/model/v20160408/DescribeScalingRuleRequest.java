@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScalingRuleRequest extends RpcAcsRequest<DescribeScalingRuleResponse> {
 	
 	public DescribeScalingRuleRequest() {
-		super("Emr", "2016-04-08", "DescribeScalingRule", "emr");
+		super("Emr", "2016-04-08", "DescribeScalingRule");
 	}
 
 	private Long resourceOwnerId;

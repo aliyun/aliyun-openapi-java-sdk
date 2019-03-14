@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowNodeSqlResultRequest extends RpcAcsRequest<ListFlowNodeSqlResultResponse> {
 	
 	public ListFlowNodeSqlResultRequest() {
-		super("Emr", "2016-04-08", "ListFlowNodeSqlResult", "emr");
+		super("Emr", "2016-04-08", "ListFlowNodeSqlResult");
 	}
 
 	private Integer offset;

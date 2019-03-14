@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDataSourceCommandRequest extends RpcAcsRequest<DescribeDataSourceCommandResponse> {
 	
 	public DescribeDataSourceCommandRequest() {
-		super("Emr", "2016-04-08", "DescribeDataSourceCommand", "emr");
+		super("Emr", "2016-04-08", "DescribeDataSourceCommand");
 	}
 
 	private Long resourceOwnerId;

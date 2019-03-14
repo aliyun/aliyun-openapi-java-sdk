@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyFlowRequest extends RpcAcsRequest<ModifyFlowResponse> {
 	
 	public ModifyFlowRequest() {
-		super("Emr", "2016-04-08", "ModifyFlow", "emr");
+		super("Emr", "2016-04-08", "ModifyFlow");
 	}
 
 	private String cronExpr;

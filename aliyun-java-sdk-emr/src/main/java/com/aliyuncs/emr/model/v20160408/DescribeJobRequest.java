@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeJobRequest extends RpcAcsRequest<DescribeJobResponse> {
 	
 	public DescribeJobRequest() {
-		super("Emr", "2016-04-08", "DescribeJob", "emr");
+		super("Emr", "2016-04-08", "DescribeJob");
 	}
 
 	private Long resourceOwnerId;

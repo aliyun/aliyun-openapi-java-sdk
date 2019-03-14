@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SearchLogRequest extends RpcAcsRequest<SearchLogResponse> {
 	
 	public SearchLogRequest() {
-		super("Emr", "2016-04-08", "SearchLog", "emr");
+		super("Emr", "2016-04-08", "SearchLog");
 	}
 
 	private Long resourceOwnerId;

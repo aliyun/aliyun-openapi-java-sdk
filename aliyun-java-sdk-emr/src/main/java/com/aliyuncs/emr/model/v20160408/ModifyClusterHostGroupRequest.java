@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyClusterHostGroupRequest extends RpcAcsRequest<ModifyClusterHostGroupResponse> {
 	
 	public ModifyClusterHostGroupRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterHostGroup", "emr");
+		super("Emr", "2016-04-08", "ModifyClusterHostGroup");
 	}
 
 	private String vswitchId;

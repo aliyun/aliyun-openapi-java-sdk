@@ -24,7 +24,7 @@ import java.util.List;
 public class ListFlowInstanceRequest extends RpcAcsRequest<ListFlowInstanceResponse> {
 	
 	public ListFlowInstanceRequest() {
-		super("Emr", "2016-04-08", "ListFlowInstance", "emr");
+		super("Emr", "2016-04-08", "ListFlowInstance");
 	}
 
 	private String owner;

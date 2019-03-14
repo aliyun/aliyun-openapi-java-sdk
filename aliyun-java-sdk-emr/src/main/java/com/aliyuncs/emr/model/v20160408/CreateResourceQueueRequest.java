@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueueResponse> {
 	
 	public CreateResourceQueueRequest() {
-		super("Emr", "2016-04-08", "CreateResourceQueue", "emr");
+		super("Emr", "2016-04-08", "CreateResourceQueue");
 	}
 
 	private Long resourceOwnerId;

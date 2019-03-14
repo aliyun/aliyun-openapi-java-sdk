@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteExecutionPlanRequest extends RpcAcsRequest<DeleteExecutionPlanResponse> {
 	
 	public DeleteExecutionPlanRequest() {
-		super("Emr", "2016-04-08", "DeleteExecutionPlan", "emr");
+		super("Emr", "2016-04-08", "DeleteExecutionPlan");
 	}
 
 	private Long resourceOwnerId;

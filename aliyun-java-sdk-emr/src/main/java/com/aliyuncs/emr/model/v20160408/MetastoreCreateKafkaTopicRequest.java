@@ -24,7 +24,7 @@ import java.util.List;
 public class MetastoreCreateKafkaTopicRequest extends RpcAcsRequest<MetastoreCreateKafkaTopicResponse> {
 	
 	public MetastoreCreateKafkaTopicRequest() {
-		super("Emr", "2016-04-08", "MetastoreCreateKafkaTopic", "emr");
+		super("Emr", "2016-04-08", "MetastoreCreateKafkaTopic");
 	}
 
 	private Long resourceOwnerId;

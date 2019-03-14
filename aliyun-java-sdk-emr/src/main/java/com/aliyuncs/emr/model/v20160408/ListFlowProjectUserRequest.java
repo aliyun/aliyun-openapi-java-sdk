@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowProjectUserRequest extends RpcAcsRequest<ListFlowProjectUserResponse> {
 	
 	public ListFlowProjectUserRequest() {
-		super("Emr", "2016-04-08", "ListFlowProjectUser", "emr");
+		super("Emr", "2016-04-08", "ListFlowProjectUser");
 	}
 
 	private Integer pageSize;

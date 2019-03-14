@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeClusterTemplateRequest extends RpcAcsRequest<DescribeClusterTemplateResponse> {
 	
 	public DescribeClusterTemplateRequest() {
-		super("Emr", "2016-04-08", "DescribeClusterTemplate", "emr");
+		super("Emr", "2016-04-08", "DescribeClusterTemplate");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeParagraphRequest extends RpcAcsRequest<DescribeParagraphResponse> {
 	
 	public DescribeParagraphRequest() {
-		super("Emr", "2016-04-08", "DescribeParagraph", "emr");
+		super("Emr", "2016-04-08", "DescribeParagraph");
 	}
 
 	private Long resourceOwnerId;

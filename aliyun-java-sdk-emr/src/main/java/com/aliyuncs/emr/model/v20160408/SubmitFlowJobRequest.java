@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitFlowJobRequest extends RpcAcsRequest<SubmitFlowJobResponse> {
 	
 	public SubmitFlowJobRequest() {
-		super("Emr", "2016-04-08", "SubmitFlowJob", "emr");
+		super("Emr", "2016-04-08", "SubmitFlowJob");
 	}
 
 	private String jobId;

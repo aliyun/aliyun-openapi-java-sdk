@@ -24,7 +24,7 @@ import java.util.List;
 public class MigrateClusterHostGroupHostRequest extends RpcAcsRequest<MigrateClusterHostGroupHostResponse> {
 	
 	public MigrateClusterHostGroupHostRequest() {
-		super("Emr", "2016-04-08", "MigrateClusterHostGroupHost", "emr");
+		super("Emr", "2016-04-08", "MigrateClusterHostGroupHost");
 	}
 
 	private List<String> hostInstanceIdLists;

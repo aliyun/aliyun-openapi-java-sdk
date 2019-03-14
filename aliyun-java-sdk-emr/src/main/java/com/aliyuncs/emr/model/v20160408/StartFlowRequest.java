@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartFlowRequest extends RpcAcsRequest<StartFlowResponse> {
 	
 	public StartFlowRequest() {
-		super("Emr", "2016-04-08", "StartFlow", "emr");
+		super("Emr", "2016-04-08", "StartFlow");
 	}
 
 	private String flowInstanceId;

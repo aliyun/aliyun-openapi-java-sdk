@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelETLJobReleaseRequest extends RpcAcsRequest<CancelETLJobReleaseResponse> {
 	
 	public CancelETLJobReleaseRequest() {
-		super("Emr", "2016-04-08", "CancelETLJobRelease", "emr");
+		super("Emr", "2016-04-08", "CancelETLJobRelease");
 	}
 
 	private Long resourceOwnerId;

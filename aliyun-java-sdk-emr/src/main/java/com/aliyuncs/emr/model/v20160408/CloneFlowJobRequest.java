@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CloneFlowJobRequest extends RpcAcsRequest<CloneFlowJobResponse> {
 	
 	public CloneFlowJobRequest() {
-		super("Emr", "2016-04-08", "CloneFlowJob", "emr");
+		super("Emr", "2016-04-08", "CloneFlowJob");
 	}
 
 	private String id;

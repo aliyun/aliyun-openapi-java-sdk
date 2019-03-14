@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 	
 	public DeleteUserRequest() {
-		super("Emr", "2016-04-08", "DeleteUser", "emr");
+		super("Emr", "2016-04-08", "DeleteUser");
 	}
 
 	private Long resourceOwnerId;

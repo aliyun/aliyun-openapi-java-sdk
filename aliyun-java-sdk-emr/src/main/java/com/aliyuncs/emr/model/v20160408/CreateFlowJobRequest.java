@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateFlowJobRequest extends RpcAcsRequest<CreateFlowJobResponse> {
 	
 	public CreateFlowJobRequest() {
-		super("Emr", "2016-04-08", "CreateFlowJob", "emr");
+		super("Emr", "2016-04-08", "CreateFlowJob");
 	}
 
 	private String runConf;

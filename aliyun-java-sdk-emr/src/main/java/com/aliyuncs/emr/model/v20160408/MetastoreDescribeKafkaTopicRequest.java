@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreDescribeKafkaTopicRequest extends RpcAcsRequest<MetastoreDescribeKafkaTopicResponse> {
 	
 	public MetastoreDescribeKafkaTopicRequest() {
-		super("Emr", "2016-04-08", "MetastoreDescribeKafkaTopic", "emr");
+		super("Emr", "2016-04-08", "MetastoreDescribeKafkaTopic");
 	}
 
 	private Long resourceOwnerId;

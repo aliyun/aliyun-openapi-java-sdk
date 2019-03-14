@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class KillExecutionPlanInstanceRequest extends RpcAcsRequest<KillExecutionPlanInstanceResponse> {
 	
 	public KillExecutionPlanInstanceRequest() {
-		super("Emr", "2016-04-08", "KillExecutionPlanInstance", "emr");
+		super("Emr", "2016-04-08", "KillExecutionPlanInstance");
 	}
 
 	private Long resourceOwnerId;

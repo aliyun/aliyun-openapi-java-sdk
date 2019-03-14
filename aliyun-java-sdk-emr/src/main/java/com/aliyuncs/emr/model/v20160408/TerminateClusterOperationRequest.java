@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class TerminateClusterOperationRequest extends RpcAcsRequest<TerminateClusterOperationResponse> {
 	
 	public TerminateClusterOperationRequest() {
-		super("Emr", "2016-04-08", "TerminateClusterOperation", "emr");
+		super("Emr", "2016-04-08", "TerminateClusterOperation");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeFlowNodeInstanceRequest extends RpcAcsRequest<DescribeFlowNodeInstanceResponse> {
 	
 	public DescribeFlowNodeInstanceRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowNodeInstance", "emr");
+		super("Emr", "2016-04-08", "DescribeFlowNodeInstance");
 	}
 
 	private String id;

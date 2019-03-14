@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteFlowProjectClusterSettingRequest extends RpcAcsRequest<DeleteFlowProjectClusterSettingResponse> {
 	
 	public DeleteFlowProjectClusterSettingRequest() {
-		super("Emr", "2016-04-08", "DeleteFlowProjectClusterSetting", "emr");
+		super("Emr", "2016-04-08", "DeleteFlowProjectClusterSetting");
 	}
 
 	private String clusterId;

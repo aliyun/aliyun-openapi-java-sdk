@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAlertContactRequest extends RpcAcsRequest<ModifyAlertContactResponse> {
 	
 	public ModifyAlertContactRequest() {
-		super("Emr", "2016-04-08", "ModifyAlertContact", "emr");
+		super("Emr", "2016-04-08", "ModifyAlertContact");
 	}
 
 	private String emailVerificationCode;

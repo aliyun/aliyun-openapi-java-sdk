@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreListTablesRequest extends RpcAcsRequest<MetastoreListTablesResponse> {
 	
 	public MetastoreListTablesRequest() {
-		super("Emr", "2016-04-08", "MetastoreListTables", "emr");
+		super("Emr", "2016-04-08", "MetastoreListTables");
 	}
 
 	private Long resourceOwnerId;

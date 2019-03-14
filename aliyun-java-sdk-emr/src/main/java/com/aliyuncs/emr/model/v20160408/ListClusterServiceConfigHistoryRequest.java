@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListClusterServiceConfigHistoryRequest extends RpcAcsRequest<ListClusterServiceConfigHistoryResponse> {
 	
 	public ListClusterServiceConfigHistoryRequest() {
-		super("Emr", "2016-04-08", "ListClusterServiceConfigHistory", "emr");
+		super("Emr", "2016-04-08", "ListClusterServiceConfigHistory");
 	}
 
 	private Long resourceOwnerId;

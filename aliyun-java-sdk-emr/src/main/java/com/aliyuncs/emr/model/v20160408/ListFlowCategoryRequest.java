@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowCategoryRequest extends RpcAcsRequest<ListFlowCategoryResponse> {
 	
 	public ListFlowCategoryRequest() {
-		super("Emr", "2016-04-08", "ListFlowCategory", "emr");
+		super("Emr", "2016-04-08", "ListFlowCategory");
 	}
 
 	private Boolean root;

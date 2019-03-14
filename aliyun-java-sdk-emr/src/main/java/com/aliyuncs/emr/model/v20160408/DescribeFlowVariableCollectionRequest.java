@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeFlowVariableCollectionRequest extends RpcAcsRequest<DescribeFlowVariableCollectionResponse> {
 	
 	public DescribeFlowVariableCollectionRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowVariableCollection", "emr");
+		super("Emr", "2016-04-08", "DescribeFlowVariableCollection");
 	}
 
 	private String entityId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResolveETLJobSqlSchemaRequest extends RpcAcsRequest<ResolveETLJobSqlSchemaResponse> {
 	
 	public ResolveETLJobSqlSchemaRequest() {
-		super("Emr", "2016-04-08", "ResolveETLJobSqlSchema", "emr");
+		super("Emr", "2016-04-08", "ResolveETLJobSqlSchema");
 	}
 
 	private String stageName;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteNavNodeRequest extends RpcAcsRequest<DeleteNavNodeResponse> {
 	
 	public DeleteNavNodeRequest() {
-		super("Emr", "2016-04-08", "DeleteNavNode", "emr");
+		super("Emr", "2016-04-08", "DeleteNavNode");
 	}
 
 	private Long resourceOwnerId;

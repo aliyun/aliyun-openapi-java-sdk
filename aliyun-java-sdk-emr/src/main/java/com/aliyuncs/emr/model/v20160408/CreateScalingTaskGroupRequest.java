@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateScalingTaskGroupRequest extends RpcAcsRequest<CreateScalingTaskGroupResponse> {
 	
 	public CreateScalingTaskGroupRequest() {
-		super("Emr", "2016-04-08", "CreateScalingTaskGroup", "emr");
+		super("Emr", "2016-04-08", "CreateScalingTaskGroup");
 	}
 
 	private Long resourceOwnerId;

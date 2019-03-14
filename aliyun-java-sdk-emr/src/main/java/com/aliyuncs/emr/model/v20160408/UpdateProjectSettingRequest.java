@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateProjectSettingRequest extends RpcAcsRequest<UpdateProjectSettingResponse> {
 	
 	public UpdateProjectSettingRequest() {
-		super("Emr", "2016-04-08", "UpdateProjectSetting", "emr");
+		super("Emr", "2016-04-08", "UpdateProjectSetting");
 	}
 
 	private Long resourceOwnerId;

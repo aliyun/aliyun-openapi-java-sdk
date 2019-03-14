@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteClusterScriptRequest extends RpcAcsRequest<DeleteClusterScriptResponse> {
 	
 	public DeleteClusterScriptRequest() {
-		super("Emr", "2016-04-08", "DeleteClusterScript", "emr");
+		super("Emr", "2016-04-08", "DeleteClusterScript");
 	}
 
 	private Long resourceOwnerId;

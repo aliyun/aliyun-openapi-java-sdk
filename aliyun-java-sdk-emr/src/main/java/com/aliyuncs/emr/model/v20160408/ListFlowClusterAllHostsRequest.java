@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowClusterAllHostsRequest extends RpcAcsRequest<ListFlowClusterAllHostsResponse> {
 	
 	public ListFlowClusterAllHostsRequest() {
-		super("Emr", "2016-04-08", "ListFlowClusterAllHosts", "emr");
+		super("Emr", "2016-04-08", "ListFlowClusterAllHosts");
 	}
 
 	private String clusterId;

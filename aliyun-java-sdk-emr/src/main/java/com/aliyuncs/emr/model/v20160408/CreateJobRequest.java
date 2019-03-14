@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 	
 	public CreateJobRequest() {
-		super("Emr", "2016-04-08", "CreateJob", "emr");
+		super("Emr", "2016-04-08", "CreateJob");
 	}
 
 	private String runParameter;

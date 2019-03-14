@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SuspendExecutionPlanInstanceRequest extends RpcAcsRequest<SuspendExecutionPlanInstanceResponse> {
 	
 	public SuspendExecutionPlanInstanceRequest() {
-		super("Emr", "2016-04-08", "SuspendExecutionPlanInstance", "emr");
+		super("Emr", "2016-04-08", "SuspendExecutionPlanInstance");
 	}
 
 	private Long resourceOwnerId;

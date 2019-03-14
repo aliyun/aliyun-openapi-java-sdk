@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreDescribeDatabaseRequest extends RpcAcsRequest<MetastoreDescribeDatabaseResponse> {
 	
 	public MetastoreDescribeDatabaseRequest() {
-		super("Emr", "2016-04-08", "MetastoreDescribeDatabase", "emr");
+		super("Emr", "2016-04-08", "MetastoreDescribeDatabase");
 	}
 
 	private Long resourceOwnerId;

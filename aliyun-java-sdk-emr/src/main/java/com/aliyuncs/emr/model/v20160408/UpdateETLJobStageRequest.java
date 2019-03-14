@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateETLJobStageRequest extends RpcAcsRequest<UpdateETLJobStageResponse> {
 	
 	public UpdateETLJobStageRequest() {
-		super("Emr", "2016-04-08", "UpdateETLJobStage", "emr");
+		super("Emr", "2016-04-08", "UpdateETLJobStage");
 	}
 
 	private String stageName;

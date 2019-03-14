@@ -24,7 +24,7 @@ import java.util.List;
 public class RunETLJobRequest extends RpcAcsRequest<RunETLJobResponse> {
 	
 	public RunETLJobRequest() {
-		super("Emr", "2016-04-08", "RunETLJob", "emr");
+		super("Emr", "2016-04-08", "RunETLJob");
 	}
 
 	private Long resourceOwnerId;

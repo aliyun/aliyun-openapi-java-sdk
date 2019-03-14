@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshClusterResourcePoolRequest extends RpcAcsRequest<RefreshClusterResourcePoolResponse> {
 	
 	public RefreshClusterResourcePoolRequest() {
-		super("Emr", "2016-04-08", "RefreshClusterResourcePool", "emr");
+		super("Emr", "2016-04-08", "RefreshClusterResourcePool");
 	}
 
 	private Long resourceOwnerId;

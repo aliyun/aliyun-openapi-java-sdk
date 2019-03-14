@@ -24,7 +24,7 @@ import java.util.List;
 public class ListClusterHostGroupRequest extends RpcAcsRequest<ListClusterHostGroupResponse> {
 	
 	public ListClusterHostGroupRequest() {
-		super("Emr", "2016-04-08", "ListClusterHostGroup", "emr");
+		super("Emr", "2016-04-08", "ListClusterHostGroup");
 	}
 
 	private Long resourceOwnerId;

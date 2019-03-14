@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeETLJobStageOutputSchemaRequest extends RpcAcsRequest<DescribeETLJobStageOutputSchemaResponse> {
 	
 	public DescribeETLJobStageOutputSchemaRequest() {
-		super("Emr", "2016-04-08", "DescribeETLJobStageOutputSchema", "emr");
+		super("Emr", "2016-04-08", "DescribeETLJobStageOutputSchema");
 	}
 
 	private String stageName;

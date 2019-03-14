@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class KillFlowJobRequest extends RpcAcsRequest<KillFlowJobResponse> {
 	
 	public KillFlowJobRequest() {
-		super("Emr", "2016-04-08", "KillFlowJob", "emr");
+		super("Emr", "2016-04-08", "KillFlowJob");
 	}
 
 	private String jobInstanceId;

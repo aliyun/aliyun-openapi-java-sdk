@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyResourceQueueRequest extends RpcAcsRequest<ModifyResourceQueueResponse> {
 	
 	public ModifyResourceQueueRequest() {
-		super("Emr", "2016-04-08", "ModifyResourceQueue", "emr");
+		super("Emr", "2016-04-08", "ModifyResourceQueue");
 	}
 
 	private Long resourceOwnerId;

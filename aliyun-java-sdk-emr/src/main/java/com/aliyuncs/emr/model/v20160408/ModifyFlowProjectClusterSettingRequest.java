@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyFlowProjectClusterSettingRequest extends RpcAcsRequest<ModifyFlowProjectClusterSettingResponse> {
 	
 	public ModifyFlowProjectClusterSettingRequest() {
-		super("Emr", "2016-04-08", "ModifyFlowProjectClusterSetting", "emr");
+		super("Emr", "2016-04-08", "ModifyFlowProjectClusterSetting");
 	}
 
 	private List<String> userLists;

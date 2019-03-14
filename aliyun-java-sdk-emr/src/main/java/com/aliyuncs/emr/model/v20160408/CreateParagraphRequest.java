@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateParagraphRequest extends RpcAcsRequest<CreateParagraphResponse> {
 	
 	public CreateParagraphRequest() {
-		super("Emr", "2016-04-08", "CreateParagraph", "emr");
+		super("Emr", "2016-04-08", "CreateParagraph");
 	}
 
 	private Long resourceOwnerId;

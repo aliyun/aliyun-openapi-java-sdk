@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListNavSubTreeRequest extends RpcAcsRequest<ListNavSubTreeResponse> {
 	
 	public ListNavSubTreeRequest() {
-		super("Emr", "2016-04-08", "ListNavSubTree", "emr");
+		super("Emr", "2016-04-08", "ListNavSubTree");
 	}
 
 	private Long resourceOwnerId;

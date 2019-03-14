@@ -24,7 +24,7 @@ import java.util.List;
 public class MetastoreUpdateTableRequest extends RpcAcsRequest<MetastoreUpdateTableResponse> {
 	
 	public MetastoreUpdateTableRequest() {
-		super("Emr", "2016-04-08", "MetastoreUpdateTable", "emr");
+		super("Emr", "2016-04-08", "MetastoreUpdateTable");
 	}
 
 	private Long resourceOwnerId;

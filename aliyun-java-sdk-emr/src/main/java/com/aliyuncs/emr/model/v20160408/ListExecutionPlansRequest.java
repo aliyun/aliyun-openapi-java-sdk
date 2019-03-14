@@ -24,7 +24,7 @@ import java.util.List;
 public class ListExecutionPlansRequest extends RpcAcsRequest<ListExecutionPlansResponse> {
 	
 	public ListExecutionPlansRequest() {
-		super("Emr", "2016-04-08", "ListExecutionPlans", "emr");
+		super("Emr", "2016-04-08", "ListExecutionPlans");
 	}
 
 	private String jobId;

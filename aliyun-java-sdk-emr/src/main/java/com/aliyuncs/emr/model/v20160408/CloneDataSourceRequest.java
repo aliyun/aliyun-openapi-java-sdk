@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CloneDataSourceRequest extends RpcAcsRequest<CloneDataSourceResponse> {
 	
 	public CloneDataSourceRequest() {
-		super("Emr", "2016-04-08", "CloneDataSource", "emr");
+		super("Emr", "2016-04-08", "CloneDataSource");
 	}
 
 	private Long resourceOwnerId;

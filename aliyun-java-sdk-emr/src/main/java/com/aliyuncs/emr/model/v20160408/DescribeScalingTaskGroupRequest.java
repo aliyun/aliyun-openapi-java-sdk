@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeScalingTaskGroupRequest extends RpcAcsRequest<DescribeScalingTaskGroupResponse> {
 	
 	public DescribeScalingTaskGroupRequest() {
-		super("Emr", "2016-04-08", "DescribeScalingTaskGroup", "emr");
+		super("Emr", "2016-04-08", "DescribeScalingTaskGroup");
 	}
 
 	private Long resourceOwnerId;

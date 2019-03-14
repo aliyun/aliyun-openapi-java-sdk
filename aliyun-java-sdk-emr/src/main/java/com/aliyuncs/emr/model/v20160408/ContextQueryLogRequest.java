@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ContextQueryLogRequest extends RpcAcsRequest<ContextQueryLogResponse> {
 	
 	public ContextQueryLogRequest() {
-		super("Emr", "2016-04-08", "ContextQueryLog", "emr");
+		super("Emr", "2016-04-08", "ContextQueryLog");
 	}
 
 	private String packId;

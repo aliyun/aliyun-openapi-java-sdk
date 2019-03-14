@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDataSourceRequest extends RpcAcsRequest<CreateDataSourceResponse> {
 	
 	public CreateDataSourceRequest() {
-		super("Emr", "2016-04-08", "CreateDataSource", "emr");
+		super("Emr", "2016-04-08", "CreateDataSource");
 	}
 
 	private Long resourceOwnerId;

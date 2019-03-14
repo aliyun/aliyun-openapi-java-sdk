@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetLogDownloadUrlRequest extends RpcAcsRequest<GetLogDownloadUrlResponse> {
 	
 	public GetLogDownloadUrlRequest() {
-		super("Emr", "2016-04-08", "GetLogDownloadUrl", "emr");
+		super("Emr", "2016-04-08", "GetLogDownloadUrl");
 	}
 
 	private Long resourceOwnerId;

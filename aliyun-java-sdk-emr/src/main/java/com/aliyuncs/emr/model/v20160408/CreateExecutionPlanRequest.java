@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateExecutionPlanRequest extends RpcAcsRequest<CreateExecutionPlanResponse> {
 	
 	public CreateExecutionPlanRequest() {
-		super("Emr", "2016-04-08", "CreateExecutionPlan", "emr");
+		super("Emr", "2016-04-08", "CreateExecutionPlan");
 	}
 
 	private Long resourceOwnerId;

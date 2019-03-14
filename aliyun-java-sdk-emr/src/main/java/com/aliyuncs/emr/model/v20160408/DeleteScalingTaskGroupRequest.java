@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteScalingTaskGroupRequest extends RpcAcsRequest<DeleteScalingTaskGroupResponse> {
 	
 	public DeleteScalingTaskGroupRequest() {
-		super("Emr", "2016-04-08", "DeleteScalingTaskGroup", "emr");
+		super("Emr", "2016-04-08", "DeleteScalingTaskGroup");
 	}
 
 	private Long resourceOwnerId;

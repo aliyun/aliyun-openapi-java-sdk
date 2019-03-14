@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetLogHistogramRequest extends RpcAcsRequest<GetLogHistogramResponse> {
 	
 	public GetLogHistogramRequest() {
-		super("Emr", "2016-04-08", "GetLogHistogram", "emr");
+		super("Emr", "2016-04-08", "GetLogHistogram");
 	}
 
 	private Long resourceOwnerId;

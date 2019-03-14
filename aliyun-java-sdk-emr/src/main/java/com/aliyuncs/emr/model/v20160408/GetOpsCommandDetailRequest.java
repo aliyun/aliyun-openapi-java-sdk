@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetOpsCommandDetailRequest extends RpcAcsRequest<GetOpsCommandDetailResponse> {
 	
 	public GetOpsCommandDetailRequest() {
-		super("Emr", "2016-04-08", "GetOpsCommandDetail", "emr");
+		super("Emr", "2016-04-08", "GetOpsCommandDetail");
 	}
 
 	private Long resourceOwnerId;

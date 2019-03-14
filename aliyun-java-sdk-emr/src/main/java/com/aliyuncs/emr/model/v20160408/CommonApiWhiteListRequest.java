@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CommonApiWhiteListRequest extends RpcAcsRequest<CommonApiWhiteListResponse> {
 	
 	public CommonApiWhiteListRequest() {
-		super("Emr", "2016-04-08", "CommonApiWhiteList", "emr");
+		super("Emr", "2016-04-08", "CommonApiWhiteList");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopParagraphRequest extends RpcAcsRequest<StopParagraphResponse> {
 	
 	public StopParagraphRequest() {
-		super("Emr", "2016-04-08", "StopParagraph", "emr");
+		super("Emr", "2016-04-08", "StopParagraph");
 	}
 
 	private Long resourceOwnerId;

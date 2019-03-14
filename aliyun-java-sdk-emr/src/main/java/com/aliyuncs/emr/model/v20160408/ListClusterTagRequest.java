@@ -24,7 +24,7 @@ import java.util.List;
 public class ListClusterTagRequest extends RpcAcsRequest<ListClusterTagResponse> {
 	
 	public ListClusterTagRequest() {
-		super("Emr", "2016-04-08", "ListClusterTag", "emr");
+		super("Emr", "2016-04-08", "ListClusterTag");
 	}
 
 	private Long resourceOwnerId;

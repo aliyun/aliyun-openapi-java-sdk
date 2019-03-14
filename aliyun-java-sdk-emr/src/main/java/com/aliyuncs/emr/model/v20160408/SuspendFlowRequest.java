@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SuspendFlowRequest extends RpcAcsRequest<SuspendFlowResponse> {
 	
 	public SuspendFlowRequest() {
-		super("Emr", "2016-04-08", "SuspendFlow", "emr");
+		super("Emr", "2016-04-08", "SuspendFlow");
 	}
 
 	private String flowInstanceId;

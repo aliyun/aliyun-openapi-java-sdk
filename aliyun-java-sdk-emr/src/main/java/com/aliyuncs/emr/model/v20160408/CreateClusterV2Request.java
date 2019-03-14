@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Response> {
 	
 	public CreateClusterV2Request() {
-		super("Emr", "2016-04-08", "CreateClusterV2", "emr");
+		super("Emr", "2016-04-08", "CreateClusterV2");
 	}
 
 	private Boolean autoPayOrder;

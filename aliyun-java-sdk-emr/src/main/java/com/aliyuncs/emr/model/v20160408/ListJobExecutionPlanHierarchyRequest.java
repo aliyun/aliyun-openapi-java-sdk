@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListJobExecutionPlanHierarchyRequest extends RpcAcsRequest<ListJobExecutionPlanHierarchyResponse> {
 	
 	public ListJobExecutionPlanHierarchyRequest() {
-		super("Emr", "2016-04-08", "ListJobExecutionPlanHierarchy", "emr");
+		super("Emr", "2016-04-08", "ListJobExecutionPlanHierarchy");
 	}
 
 	private Long resourceOwnerId;

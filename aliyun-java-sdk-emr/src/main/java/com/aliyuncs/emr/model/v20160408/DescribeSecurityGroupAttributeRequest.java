@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<DescribeSecurityGroupAttributeResponse> {
 	
 	public DescribeSecurityGroupAttributeRequest() {
-		super("Emr", "2016-04-08", "DescribeSecurityGroupAttribute", "emr");
+		super("Emr", "2016-04-08", "DescribeSecurityGroupAttribute");
 	}
 
 	private Long resourceOwnerId;

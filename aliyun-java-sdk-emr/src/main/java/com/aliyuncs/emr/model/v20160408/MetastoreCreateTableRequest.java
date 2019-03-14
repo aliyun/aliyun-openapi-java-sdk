@@ -24,7 +24,7 @@ import java.util.List;
 public class MetastoreCreateTableRequest extends RpcAcsRequest<MetastoreCreateTableResponse> {
 	
 	public MetastoreCreateTableRequest() {
-		super("Emr", "2016-04-08", "MetastoreCreateTable", "emr");
+		super("Emr", "2016-04-08", "MetastoreCreateTable");
 	}
 
 	private Long resourceOwnerId;

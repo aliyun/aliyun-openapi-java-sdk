@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateETLJobRequest extends RpcAcsRequest<CreateETLJobResponse> {
 	
 	public CreateETLJobRequest() {
-		super("Emr", "2016-04-08", "CreateETLJob", "emr");
+		super("Emr", "2016-04-08", "CreateETLJob");
 	}
 
 	private Long resourceOwnerId;

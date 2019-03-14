@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreListTablePartitionRequest extends RpcAcsRequest<MetastoreListTablePartitionResponse> {
 	
 	public MetastoreListTablePartitionRequest() {
-		super("Emr", "2016-04-08", "MetastoreListTablePartition", "emr");
+		super("Emr", "2016-04-08", "MetastoreListTablePartition");
 	}
 
 	private Long resourceOwnerId;

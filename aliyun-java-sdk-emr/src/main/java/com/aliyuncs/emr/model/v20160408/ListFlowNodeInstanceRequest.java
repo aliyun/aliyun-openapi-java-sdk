@@ -24,7 +24,7 @@ import java.util.List;
 public class ListFlowNodeInstanceRequest extends RpcAcsRequest<ListFlowNodeInstanceResponse> {
 	
 	public ListFlowNodeInstanceRequest() {
-		super("Emr", "2016-04-08", "ListFlowNodeInstance", "emr");
+		super("Emr", "2016-04-08", "ListFlowNodeInstance");
 	}
 
 	private List<String> statusLists;

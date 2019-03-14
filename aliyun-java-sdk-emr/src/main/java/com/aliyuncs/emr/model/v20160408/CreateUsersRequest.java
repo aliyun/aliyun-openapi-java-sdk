@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateUsersRequest extends RpcAcsRequest<CreateUsersResponse> {
 	
 	public CreateUsersRequest() {
-		super("Emr", "2016-04-08", "CreateUsers", "emr");
+		super("Emr", "2016-04-08", "CreateUsers");
 	}
 
 	private Long resourceOwnerId;
