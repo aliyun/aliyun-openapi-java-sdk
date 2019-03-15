@@ -14,18 +14,19 @@
 
 package com.aliyuncs.rtc.model.v20180111;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.StopAppResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.GetMPUTaskStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StopAppResponse extends AcsResponse {
+public class GetMPUTaskStatusResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Integer status;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,8 +36,16 @@ public class StopAppResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
 	@Override
-	public StopAppResponse getInstance(UnmarshallerContext context) {
-		return	StopAppResponseUnmarshaller.unmarshall(this, context);
+	public GetMPUTaskStatusResponse getInstance(UnmarshallerContext context) {
+		return	GetMPUTaskStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 }

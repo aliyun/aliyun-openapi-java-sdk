@@ -14,16 +14,16 @@
 
 package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.rtc.model.v20180111.StartAppResponse;
+import com.aliyuncs.rtc.model.v20180111.StartMPUTaskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StartAppResponseUnmarshaller {
+public class StartMPUTaskResponseUnmarshaller {
 
-	public static StartAppResponse unmarshall(StartAppResponse startAppResponse, UnmarshallerContext context) {
+	public static StartMPUTaskResponse unmarshall(StartMPUTaskResponse startMPUTaskResponse, UnmarshallerContext context) {
 		
-		startAppResponse.setRequestId(context.stringValue("StartAppResponse.RequestId"));
+		startMPUTaskResponse.setRequestId(context.stringValue("StartMPUTaskResponse.RequestId"));
 	 
-	 	return startAppResponse;
+	 	return startMPUTaskResponse;
 	}
 }

@@ -14,16 +14,17 @@
 
 package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.rtc.model.v20180111.StopAppResponse;
+import com.aliyuncs.rtc.model.v20180111.ReceiveNotifyResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopAppResponseUnmarshaller {
+public class ReceiveNotifyResponseUnmarshaller {
 
-	public static StopAppResponse unmarshall(StopAppResponse stopAppResponse, UnmarshallerContext context) {
+	public static ReceiveNotifyResponse unmarshall(ReceiveNotifyResponse receiveNotifyResponse, UnmarshallerContext context) {
 		
-		stopAppResponse.setRequestId(context.stringValue("StopAppResponse.RequestId"));
+		receiveNotifyResponse.setRequestId(context.stringValue("ReceiveNotifyResponse.RequestId"));
+		receiveNotifyResponse.setTraceId(context.stringValue("ReceiveNotifyResponse.TraceId"));
 	 
-	 	return stopAppResponse;
+	 	return receiveNotifyResponse;
 	}
 }

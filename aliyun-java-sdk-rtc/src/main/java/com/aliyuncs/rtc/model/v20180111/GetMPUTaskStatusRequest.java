@@ -20,15 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class StartAppRequest extends RpcAcsRequest<StartAppResponse> {
+public class GetMPUTaskStatusRequest extends RpcAcsRequest<GetMPUTaskStatusResponse> {
 	
-	public StartAppRequest() {
-		super("rtc", "2018-01-11", "StartApp", "rtc");
+	public GetMPUTaskStatusRequest() {
+		super("rtc", "2018-01-11", "GetMPUTaskStatus", "rtc");
 	}
 
 	private Long ownerId;
 
 	private String appId;
+
+	private String taskId;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -52,9 +54,20 @@ public class StartAppRequest extends RpcAcsRequest<StartAppResponse> {
 		}
 	}
 
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
 	@Override
-	public Class<StartAppResponse> getResponseClass() {
-		return StartAppResponse.class;
+	public Class<GetMPUTaskStatusResponse> getResponseClass() {
+		return GetMPUTaskStatusResponse.class;
 	}
 
 }

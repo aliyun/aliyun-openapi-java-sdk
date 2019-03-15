@@ -12,30 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.rtc.model.v20180111;
+package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.DeleteTemplateResponseUnmarshaller;
+import com.aliyuncs.rtc.model.v20180111.GetMPUTaskStatusResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class DeleteTemplateResponse extends AcsResponse {
 
-	private String requestId;
+public class GetMPUTaskStatusResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public DeleteTemplateResponse getInstance(UnmarshallerContext context) {
-		return	DeleteTemplateResponseUnmarshaller.unmarshall(this, context);
+	public static GetMPUTaskStatusResponse unmarshall(GetMPUTaskStatusResponse getMPUTaskStatusResponse, UnmarshallerContext context) {
+		
+		getMPUTaskStatusResponse.setRequestId(context.stringValue("GetMPUTaskStatusResponse.RequestId"));
+		getMPUTaskStatusResponse.setStatus(context.integerValue("GetMPUTaskStatusResponse.Status"));
+	 
+	 	return getMPUTaskStatusResponse;
 	}
 }

@@ -15,16 +15,18 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.DeleteTemplateResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.ReceiveNotifyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteTemplateResponse extends AcsResponse {
+public class ReceiveNotifyResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String traceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class DeleteTemplateResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
+	}
+
 	@Override
-	public DeleteTemplateResponse getInstance(UnmarshallerContext context) {
-		return	DeleteTemplateResponseUnmarshaller.unmarshall(this, context);
+	public ReceiveNotifyResponse getInstance(UnmarshallerContext context) {
+		return	ReceiveNotifyResponseUnmarshaller.unmarshall(this, context);
 	}
 }

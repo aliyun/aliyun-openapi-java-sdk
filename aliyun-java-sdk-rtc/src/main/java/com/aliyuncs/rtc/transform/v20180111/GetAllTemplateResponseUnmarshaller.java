@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.rtc.model.v20180111.GetAllTemplateResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

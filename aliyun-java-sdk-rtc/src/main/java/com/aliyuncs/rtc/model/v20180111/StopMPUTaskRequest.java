@@ -20,15 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class StopAppRequest extends RpcAcsRequest<StopAppResponse> {
+public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 	
-	public StopAppRequest() {
-		super("rtc", "2018-01-11", "StopApp", "rtc");
+	public StopMPUTaskRequest() {
+		super("rtc", "2018-01-11", "StopMPUTask", "rtc");
 	}
 
 	private Long ownerId;
 
 	private String appId;
+
+	private String taskId;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -52,9 +54,20 @@ public class StopAppRequest extends RpcAcsRequest<StopAppResponse> {
 		}
 	}
 
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
 	@Override
-	public Class<StopAppResponse> getResponseClass() {
-		return StopAppResponse.class;
+	public Class<StopMPUTaskResponse> getResponseClass() {
+		return StopMPUTaskResponse.class;
 	}
 
 }

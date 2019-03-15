@@ -14,16 +14,15 @@
 
 package com.aliyuncs.rtc.model.v20180111;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.StartAppResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.StartMPUTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartAppResponse extends AcsResponse {
+public class StartMPUTaskResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -36,7 +35,7 @@ public class StartAppResponse extends AcsResponse {
 	}
 
 	@Override
-	public StartAppResponse getInstance(UnmarshallerContext context) {
-		return	StartAppResponseUnmarshaller.unmarshall(this, context);
+	public StartMPUTaskResponse getInstance(UnmarshallerContext context) {
+		return	StartMPUTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }
