@@ -161,6 +161,7 @@ IAcsClient client = new DefaultAcsClient(profile);
 ## Timeout
 Request Settings -> Client Settings -> Default Settings, priority from high to low;
 The default ConnectTimeout is 5 seconds and the ReadTimeout is 10 seconds.
+
 ```java
 //The client setting is valid for all requests
 HttpClientConfig clientConfig = HttpClientConfig.getDefault();
@@ -180,11 +181,11 @@ Priority: Request > Client > Default
 
 Support below configurations:
 
-1. Whether to verify the server certificates
+1.  Whether to verify the server certificates
 
-2. Configure X509TrustManagers(trusted server certificates)
+2.  Configure X509TrustManagers(trusted server certificates)
 
-3. Configure KeyManagers(client certificates)
+3.  Configure KeyManagers(client certificates)
 
 ```java
 // Client HTTPS configurations

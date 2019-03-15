@@ -12,6 +12,8 @@ public class CompositeX509TrustManager implements X509TrustManager {
 
     private final List<X509TrustManager> trustManagers;
 
+    private boolean ignoreSSLCert = false;
+
     public boolean isIgnoreSSLCert() {
         return ignoreSSLCert;
     }
@@ -19,8 +21,6 @@ public class CompositeX509TrustManager implements X509TrustManager {
     public void setIgnoreSSLCert(boolean ignoreSSLCert) {
         this.ignoreSSLCert = ignoreSSLCert;
     }
-
-    private boolean ignoreSSLCert = false;
 
     public CompositeX509TrustManager(List<X509TrustManager> trustManagers) {
         this.trustManagers = trustManagers;

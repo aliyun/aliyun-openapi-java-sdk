@@ -147,6 +147,7 @@ IAcsClient client = new DefaultAcsClient(profile);
 ## 超时机制
 Request 设置 -> Client 设置 -> 默认，优先级依次降低；
 默认连接超时为5秒，读超时为10秒；
+
 ```java
 //Client超时设置，对当前所有request有效
 HttpClientConfig clientConfig = HttpClientConfig.getDefault();
@@ -165,12 +166,9 @@ request.setConnectionTimeoutMillis(connectionTimeoutMillis);
 优先级: Request > Client > Default
 
 支持以下配置项:
-
-1. 是否校验服务端证书 
-
-2. 设置X509TrustManagers(信任的服务端证书)
-
-3. 设置 KeyManagers(客户端证书)
+1.  是否校验服务端证书 
+2.  设置X509TrustManagers(信任的服务端证书)
+3.  设置 KeyManagers(客户端证书)
 
 ```java
 // Client HTTPS配置

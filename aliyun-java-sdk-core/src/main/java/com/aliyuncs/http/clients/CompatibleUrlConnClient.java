@@ -37,6 +37,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
 
     @Override
     protected void init(HttpClientConfig clientConfig) {
+        // do nothing
     }
 
     @Override

@@ -409,14 +409,19 @@ public class ApacheHttpClientTest {
 
     @Test
     public void testIgnoreSSLCert() throws ClientException, IOException {
-        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-        clientConfig.setIgnoreSSLCerts(true);
-        ApacheHttpClient client = ApacheHttpClient.getInstance(clientConfig);
-        client.close();
-        client = ApacheHttpClient.getInstance(clientConfig);
-        HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
-        request.setSysMethod(MethodType.GET);
-        client.syncInvoke(request);
-        client.close();
+        try {
+            HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+            clientConfig.setIgnoreSSLCerts(true);
+            ApacheHttpClient client = ApacheHttpClient.getInstance(clientConfig);
+            client.close();
+            client = ApacheHttpClient.getInstance(clientConfig);
+            HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
+            request.setSysMethod(MethodType.GET);
+            client.syncInvoke(request);
+            client.close();
+        } catch (Exception e) {
+            Assert.fail();
+        }
+
     }
 }

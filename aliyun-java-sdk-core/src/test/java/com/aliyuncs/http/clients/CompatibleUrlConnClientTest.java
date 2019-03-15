@@ -4,6 +4,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.*;
 import org.apache.http.conn.ssl.DefaultHostnameVerifier;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -695,8 +696,8 @@ public class CompatibleUrlConnClientTest {
         HttpRequest request = new HttpRequest("http://test.com");
         request.setSysMethod(MethodType.GET);
         request.setIgnoreSSLCerts(true);
-        Whitebox.invokeMethod(client, "createHostnameVerifier", request);
-
+        HostnameVerifier hostnameVerifier = Whitebox.invokeMethod(client, "createHostnameVerifier", request);
+        Assert.assertTrue(hostnameVerifier instanceof NoopHostnameVerifier);
     }
 
     @Test
@@ -733,12 +734,17 @@ public class CompatibleUrlConnClientTest {
 
     @Test
     public void testIgnoreSSLCert() throws ClientException, IOException {
-        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-        clientConfig.setIgnoreSSLCerts(true);
-        CompatibleUrlConnClient client = new CompatibleUrlConnClient(clientConfig);
-        HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
-        request.setSysMethod(MethodType.GET);
-        client.syncInvoke(request);
+        try {
+            HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+            clientConfig.setIgnoreSSLCerts(true);
+            CompatibleUrlConnClient client = new CompatibleUrlConnClient(clientConfig);
+            HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
+            request.setSysMethod(MethodType.GET);
+            client.syncInvoke(request);
+        } catch (Exception e) {
+            Assert.fail();
+        }
+
     }
 
     @Test
@@ -755,17 +761,18 @@ public class CompatibleUrlConnClientTest {
 
     @Test
     public void testRequestLevelIgnoreSSLCert() throws ClientException, IOException {
-        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-        clientConfig.setIgnoreSSLCerts(false);
-        clientConfig.setX509TrustManagers();
-        clientConfig.setKeyManagers();
-        clientConfig.setClientType(HttpClientType.ApacheHttpClient);
-        CompatibleUrlConnClient client = new CompatibleUrlConnClient(clientConfig);
-        HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
-        request.setSysMethod(MethodType.GET);
-        request.setIgnoreSSLCerts(true);
-        request.setX509TrustManagers();
-        request.setKeyManagers();
-        client.syncInvoke(request);
+        try {
+            HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+            clientConfig.setIgnoreSSLCerts(false);
+            clientConfig.setClientType(HttpClientType.ApacheHttpClient);
+            CompatibleUrlConnClient client = new CompatibleUrlConnClient(clientConfig);
+            HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
+            request.setSysMethod(MethodType.GET);
+            request.setIgnoreSSLCerts(true);
+            client.syncInvoke(request);
+        } catch (Exception e) {
+            Assert.fail();
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 package com.aliyuncs.http;
 
+import com.aliyuncs.auth.sts.AssumeRoleResponse;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -30,29 +31,43 @@ public class CompositeX509TrustManagerTest {
 
     @Test
     public void testCheckClientTrusted() throws CertificateException {
-        CompositeX509TrustManager trustManager = new CompositeX509TrustManager(Collections.<X509TrustManager>emptyList());
-        trustManager.checkClientTrusted(new X509Certificate[0], "authType");
+        try {
+            CompositeX509TrustManager trustManager = new CompositeX509TrustManager(Collections.<X509TrustManager>emptyList());
+            trustManager.checkClientTrusted(new X509Certificate[0], "authType");
+        }catch (Exception e){
+            Assert.fail();
+        }
+
     }
 
     @Test
     public void testCheckServerTrustedAndIgnoreSSLCert() throws CertificateException {
-        CompositeX509TrustManager trustManager = new CompositeX509TrustManager(Collections.<X509TrustManager>emptyList());
-        trustManager.setIgnoreSSLCert(true);
-        trustManager.checkServerTrusted(new X509Certificate[0], "authType");
+        try{
+            CompositeX509TrustManager trustManager = new CompositeX509TrustManager(Collections.<X509TrustManager>emptyList());
+            trustManager.setIgnoreSSLCert(true);
+            trustManager.checkServerTrusted(new X509Certificate[0], "authType");
+        }catch (Exception e){
+            Assert.fail();
+        }
+
     }
 
     @Test
     public void testCheckServerTrustedSucceedTwice() throws CertificateException {
-        final X509TrustManager trustManager0 = mock(X509TrustManager.class);
-        doThrow(CertificateException.class).when(trustManager0).checkServerTrusted(any(X509Certificate[].class), anyString());
-        final X509TrustManager trustManager1 = mock(X509TrustManager.class);
-        doNothing().when(trustManager0).checkServerTrusted(any(X509Certificate[].class), anyString());
-        List<X509TrustManager> trustManagerList = new ArrayList<X509TrustManager>() {{
-            add(trustManager0);
-            add(trustManager1);
-        }};
-        CompositeX509TrustManager trustManager = new CompositeX509TrustManager(trustManagerList);
-        trustManager.checkServerTrusted(new X509Certificate[0], "authType");
+        try{
+            final X509TrustManager trustManager0 = mock(X509TrustManager.class);
+            doThrow(CertificateException.class).when(trustManager0).checkServerTrusted(any(X509Certificate[].class), anyString());
+            final X509TrustManager trustManager1 = mock(X509TrustManager.class);
+            doNothing().when(trustManager0).checkServerTrusted(any(X509Certificate[].class), anyString());
+            List<X509TrustManager> trustManagerList = new ArrayList<X509TrustManager>();
+            trustManagerList.add(trustManager0);
+            trustManagerList.add(trustManager1);
+            CompositeX509TrustManager trustManager = new CompositeX509TrustManager(trustManagerList);
+            trustManager.checkServerTrusted(new X509Certificate[0], "authType");
+        }catch (Exception e){
+            Assert.fail();
+        }
+
     }
 
     @Test
@@ -60,9 +75,8 @@ public class CompositeX509TrustManagerTest {
         thrown.expect(CertificateException.class);
         final X509TrustManager trustManager0 = mock(X509TrustManager.class);
         doThrow(CertificateException.class).when(trustManager0).checkServerTrusted(any(X509Certificate[].class), anyString());
-        List<X509TrustManager> trustManagerList = new ArrayList<X509TrustManager>() {{
-            add(trustManager0);
-        }};
+        List<X509TrustManager> trustManagerList = new ArrayList<X509TrustManager>();
+        trustManagerList.add(trustManager0);
         CompositeX509TrustManager trustManager = new CompositeX509TrustManager(trustManagerList);
         trustManager.checkServerTrusted(new X509Certificate[0], "authType");
     }
@@ -72,9 +86,8 @@ public class CompositeX509TrustManagerTest {
         final X509TrustManager trustManager0 = mock(X509TrustManager.class);
         X509Certificate certificate = mock(X509Certificate.class);
         when(trustManager0.getAcceptedIssuers()).thenReturn(new X509Certificate[]{certificate});
-        List<X509TrustManager> trustManagerList = new ArrayList<X509TrustManager>() {{
-            add(trustManager0);
-        }};
+        List<X509TrustManager> trustManagerList = new ArrayList<X509TrustManager>();
+        trustManagerList.add(trustManager0);
         CompositeX509TrustManager trustManager = new CompositeX509TrustManager(trustManagerList);
         X509Certificate[] res = trustManager.getAcceptedIssuers();
         Assert.assertEquals(1, res.length);
