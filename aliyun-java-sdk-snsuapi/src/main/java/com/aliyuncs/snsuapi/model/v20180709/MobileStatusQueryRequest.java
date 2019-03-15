@@ -20,17 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class BandStatusQueryRequest extends RpcAcsRequest<BandStatusQueryResponse> {
+public class MobileStatusQueryRequest extends RpcAcsRequest<MobileStatusQueryResponse> {
 	
-	public BandStatusQueryRequest() {
-		super("Snsuapi", "2018-07-09", "BandStatusQuery", "snsuapi");
+	public MobileStatusQueryRequest() {
+		super("Snsuapi", "2018-07-09", "MobileStatusQuery", "snsuapi");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private Long bandId;
+	private String correlationId;
 
 	private Long ownerId;
 
@@ -56,14 +56,14 @@ public class BandStatusQueryRequest extends RpcAcsRequest<BandStatusQueryRespons
 		}
 	}
 
-	public Long getBandId() {
-		return this.bandId;
+	public String getCorrelationId() {
+		return this.correlationId;
 	}
 
-	public void setBandId(Long bandId) {
-		this.bandId = bandId;
-		if(bandId != null){
-			putQueryParameter("BandId", bandId.toString());
+	public void setCorrelationId(String correlationId) {
+		this.correlationId = correlationId;
+		if(correlationId != null){
+			putQueryParameter("CorrelationId", correlationId);
 		}
 	}
 
@@ -79,8 +79,8 @@ public class BandStatusQueryRequest extends RpcAcsRequest<BandStatusQueryRespons
 	}
 
 	@Override
-	public Class<BandStatusQueryResponse> getResponseClass() {
-		return BandStatusQueryResponse.class;
+	public Class<MobileStatusQueryResponse> getResponseClass() {
+		return MobileStatusQueryResponse.class;
 	}
 
 }

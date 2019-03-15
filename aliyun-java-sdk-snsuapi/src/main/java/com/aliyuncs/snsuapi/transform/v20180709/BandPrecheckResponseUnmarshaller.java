@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.snsuapi.model.v20180709.BandPrecheckResponse;
 import com.aliyuncs.snsuapi.model.v20180709.BandPrecheckResponse.ResultModule;
 import com.aliyuncs.snsuapi.model.v20180709.BandPrecheckResponse.ResultModule.BandOfferListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

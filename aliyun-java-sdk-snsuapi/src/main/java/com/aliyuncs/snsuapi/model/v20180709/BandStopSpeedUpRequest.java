@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BandStopSpeedUpRequest extends RpcAcsRequest<BandStopSpeedUpResponse> {
 	
 	public BandStopSpeedUpRequest() {
-		super("Snsuapi", "2018-07-09", "BandStopSpeedUp");
+		super("Snsuapi", "2018-07-09", "BandStopSpeedUp", "snsuapi");
 	}
 
 	private String ipAddress;

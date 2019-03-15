@@ -15,14 +15,14 @@
 package com.aliyuncs.snsuapi.model.v20180709;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.snsuapi.transform.v20180709.BandOfferOrderResponseUnmarshaller;
+import com.aliyuncs.snsuapi.transform.v20180709.MobileStartSpeedUpResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BandOfferOrderResponse extends AcsResponse {
+public class MobileStartSpeedUpResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -30,7 +30,7 @@ public class BandOfferOrderResponse extends AcsResponse {
 
 	private String resultMessage;
 
-	private ResultModule resultModule;
+	private String resultModule;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,29 +56,16 @@ public class BandOfferOrderResponse extends AcsResponse {
 		this.resultMessage = resultMessage;
 	}
 
-	public ResultModule getResultModule() {
+	public String getResultModule() {
 		return this.resultModule;
 	}
 
-	public void setResultModule(ResultModule resultModule) {
+	public void setResultModule(String resultModule) {
 		this.resultModule = resultModule;
 	}
 
-	public static class ResultModule {
-
-		private Long lxOrderId;
-
-		public Long getLxOrderId() {
-			return this.lxOrderId;
-		}
-
-		public void setLxOrderId(Long lxOrderId) {
-			this.lxOrderId = lxOrderId;
-		}
-	}
-
 	@Override
-	public BandOfferOrderResponse getInstance(UnmarshallerContext context) {
-		return	BandOfferOrderResponseUnmarshaller.unmarshall(this, context);
+	public MobileStartSpeedUpResponse getInstance(UnmarshallerContext context) {
+		return	MobileStartSpeedUpResponseUnmarshaller.unmarshall(this, context);
 	}
 }

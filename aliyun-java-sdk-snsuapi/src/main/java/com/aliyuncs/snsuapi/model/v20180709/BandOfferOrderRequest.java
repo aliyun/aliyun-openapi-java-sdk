@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BandOfferOrderRequest extends RpcAcsRequest<BandOfferOrderResponse> {
 	
 	public BandOfferOrderRequest() {
-		super("Snsuapi", "2018-07-09", "BandOfferOrder");
+		super("Snsuapi", "2018-07-09", "BandOfferOrder", "snsuapi");
 	}
 
 	private Long resourceOwnerId;
