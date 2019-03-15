@@ -15,14 +15,14 @@
 package com.aliyuncs.openanalytics.model.v20180301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.openanalytics.transform.v20180301.SetAllowIPResponseUnmarshaller;
+import com.aliyuncs.openanalytics.transform.v20180301.CloseProductAccountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetAllowIPResponse extends AcsResponse {
+public class CloseProductAccountResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -61,8 +61,8 @@ public class SetAllowIPResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetAllowIPResponse getInstance(UnmarshallerContext context) {
-		return	SetAllowIPResponseUnmarshaller.unmarshall(this, context);
+	public CloseProductAccountResponse getInstance(UnmarshallerContext context) {
+		return	CloseProductAccountResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

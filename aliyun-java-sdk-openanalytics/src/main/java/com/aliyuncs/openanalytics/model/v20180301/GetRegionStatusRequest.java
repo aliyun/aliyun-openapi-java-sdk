@@ -20,28 +20,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
+public class GetRegionStatusRequest extends RpcAcsRequest<GetRegionStatusResponse> {
 	
-	public CreateInstanceRequest() {
-		super("openanalytics", "2018-03-01", "CreateInstance", "openanalytics", "innerAPI");
+	public GetRegionStatusRequest() {
+		super("openanalytics", "2018-03-01", "GetRegionStatus", "openanalytics");
 	}
 
-	private String data;
+	private Long targetUid;
 
-	public String getData() {
-		return this.data;
+	public Long getTargetUid() {
+		return this.targetUid;
 	}
 
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putBodyParameter("data", data);
+	public void setTargetUid(Long targetUid) {
+		this.targetUid = targetUid;
+		if(targetUid != null){
+			putBodyParameter("TargetUid", targetUid.toString());
 		}
 	}
 
 	@Override
-	public Class<CreateInstanceResponse> getResponseClass() {
-		return CreateInstanceResponse.class;
+	public Class<GetRegionStatusResponse> getResponseClass() {
+		return GetRegionStatusResponse.class;
 	}
 
 }

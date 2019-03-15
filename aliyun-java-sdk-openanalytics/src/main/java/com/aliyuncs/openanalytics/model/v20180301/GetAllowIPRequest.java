@@ -23,10 +23,23 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetAllowIPRequest extends RpcAcsRequest<GetAllowIPResponse> {
 	
 	public GetAllowIPRequest() {
-		super("openanalytics", "2018-03-01", "GetAllowIP", "openanalytics", "innerAPI");
+		super("openanalytics", "2018-03-01", "GetAllowIP", "openanalytics");
 	}
 
+	private Long userID;
+
 	private String networkType;
+
+	public Long getUserID() {
+		return this.userID;
+	}
+
+	public void setUserID(Long userID) {
+		this.userID = userID;
+		if(userID != null){
+			putBodyParameter("UserID", userID.toString());
+		}
+	}
 
 	public String getNetworkType() {
 		return this.networkType;

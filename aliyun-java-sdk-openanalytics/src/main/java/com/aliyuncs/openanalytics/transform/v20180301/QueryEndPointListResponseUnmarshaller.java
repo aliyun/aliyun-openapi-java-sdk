@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.openanalytics.model.v20180301.QueryEndPointListResponse;
 import com.aliyuncs.openanalytics.model.v20180301.QueryEndPointListResponse.EndPointListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

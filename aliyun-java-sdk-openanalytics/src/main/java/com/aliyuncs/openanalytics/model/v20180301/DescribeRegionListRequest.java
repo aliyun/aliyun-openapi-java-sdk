@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRegionListRequest extends RpcAcsRequest<DescribeRegionListResponse> {
 	
 	public DescribeRegionListRequest() {
-		super("openanalytics", "2018-03-01", "DescribeRegionList", "openanalytics", "innerAPI");
+		super("openanalytics", "2018-03-01", "DescribeRegionList", "openanalytics");
 	}
 
 	@Override

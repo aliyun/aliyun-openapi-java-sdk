@@ -15,18 +15,20 @@
 package com.aliyuncs.openanalytics.model.v20180301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.openanalytics.transform.v20180301.SetAllowIPResponseUnmarshaller;
+import com.aliyuncs.openanalytics.transform.v20180301.GetRegionStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetAllowIPResponse extends AcsResponse {
+public class GetRegionStatusResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String regionId;
+
+	private String status;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -60,13 +62,16 @@ public class SetAllowIPResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
-	@Override
-	public SetAllowIPResponse getInstance(UnmarshallerContext context) {
-		return	SetAllowIPResponseUnmarshaller.unmarshall(this, context);
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public GetRegionStatusResponse getInstance(UnmarshallerContext context) {
+		return	GetRegionStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 }
