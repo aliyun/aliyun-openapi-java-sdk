@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddLabelRequest extends RpcAcsRequest<AddLabelResponse> {
 	
 	public AddLabelRequest() {
-		super("Crm", "2015-04-08", "AddLabel");
+		super("Crm", "2015-04-08", "AddLabel", "crm");
 	}
 
 	private String labelSeries;

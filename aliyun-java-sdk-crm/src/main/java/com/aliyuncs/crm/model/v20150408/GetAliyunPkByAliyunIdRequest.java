@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetAliyunPkByAliyunIdRequest extends RpcAcsRequest<GetAliyunPkByAliyunIdResponse> {
 	
 	public GetAliyunPkByAliyunIdRequest() {
-		super("Crm", "2015-04-08", "GetAliyunPkByAliyunId");
+		super("Crm", "2015-04-08", "GetAliyunPkByAliyunId", "crm");
 	}
 
 	private String aliyunId;

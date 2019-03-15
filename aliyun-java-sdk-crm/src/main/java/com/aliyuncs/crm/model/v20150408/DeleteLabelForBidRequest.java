@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLabelForBidRequest extends RpcAcsRequest<DeleteLabelForBidResponse> {
 	
 	public DeleteLabelForBidRequest() {
-		super("Crm", "2015-04-08", "DeleteLabelForBid");
+		super("Crm", "2015-04-08", "DeleteLabelForBid", "crm");
 	}
 
 	private String labelSeries;
