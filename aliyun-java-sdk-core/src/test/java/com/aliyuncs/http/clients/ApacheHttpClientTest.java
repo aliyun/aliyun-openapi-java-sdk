@@ -8,6 +8,7 @@ import org.apache.http.StatusLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -21,9 +22,9 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
+import org.powermock.reflect.Whitebox;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.*;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -33,6 +34,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+
+import static org.mockito.Mockito.mock;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({FormatType.class, ContentType.class})
@@ -131,22 +134,22 @@ public class ApacheHttpClientTest {
     public void testRestoreSSLCertificate() throws ClientException, IOException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
         ApacheHttpClient httpClient = ApacheHttpClient.getInstance(config);
+        httpClient.close();
         thrown.expect(IllegalStateException.class);
         thrown.expectMessage("Apache httpclient does not support modify sslFactory after inited, "
                 + "use HttpClientConfig.setIgnoreSSLCerts(true) while building client");
         httpClient.restoreSSLCertificate();
-        httpClient.close();
     }
 
     @Test
     public void testIgnoreSSLCertificate() throws ClientException, IOException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
         ApacheHttpClient httpClient = ApacheHttpClient.getInstance(config);
+        httpClient.close();
         thrown.expect(IllegalStateException.class);
         thrown.expectMessage("Apache httpclient does not support modify sslFactory after inited, "
                 + "use HttpClientConfig.setIgnoreSSLCerts(true) while building client");
         httpClient.ignoreSSLCertificate();
-        httpClient.close();
     }
 
     private HttpRequest getMockHttpRequest() {
@@ -270,6 +273,7 @@ public class ApacheHttpClientTest {
 
         Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(null);
         Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+        apacheHttpClient.close();
     }
 
     @Test
@@ -297,6 +301,7 @@ public class ApacheHttpClientTest {
         HttpResponse response = apacheHttpClient.syncInvoke(apiRequest);
         Assert.assertEquals(FormatType.JSON, response.getHttpContentType());
         Assert.assertEquals("utf-8", response.getSysEncoding());
+        apacheHttpClient.close();
     }
 
     @Test
@@ -327,6 +332,7 @@ public class ApacheHttpClientTest {
         HttpResponse response = apacheHttpClient.syncInvoke(apiRequest);
         Assert.assertEquals(FormatType.JSON, response.getHttpContentType());
         Assert.assertEquals("UTF-8", response.getSysEncoding());
+        apacheHttpClient.close();
     }
 
     @Test
@@ -377,4 +383,45 @@ public class ApacheHttpClientTest {
         apacheHttpClient.close();
     }
 
+    @Test
+    public void testCreateSSLSocketFactoryWithManagers() throws Exception {
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        X509TrustManager trustManager = mock(X509TrustManager.class);
+        KeyManager keyManager = mock(KeyManager.class);
+        clientConfig.setX509TrustManagers(new X509TrustManager[]{trustManager});
+        clientConfig.setKeyManagers(new KeyManager[]{keyManager});
+        ApacheHttpClient client = ApacheHttpClient.getInstance(clientConfig);
+        SSLConnectionSocketFactory sslSocketFactory = Whitebox.invokeMethod(client, "createSSLConnectionSocketFactory");
+        Assert.assertNotNull(sslSocketFactory);
+        client.close();
+    }
+
+    @Test
+    public void testThrowSSLHandshakeException() throws ClientException, IOException {
+        thrown.expect(SSLHandshakeException.class);
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        ApacheHttpClient client = ApacheHttpClient.getInstance(clientConfig);
+        HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
+        request.setSysMethod(MethodType.GET);
+        client.syncInvoke(request);
+        client.close();
+    }
+
+    @Test
+    public void testIgnoreSSLCert() throws ClientException, IOException {
+        try {
+            HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+            clientConfig.setIgnoreSSLCerts(true);
+            ApacheHttpClient client = ApacheHttpClient.getInstance(clientConfig);
+            client.close();
+            client = ApacheHttpClient.getInstance(clientConfig);
+            HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
+            request.setSysMethod(MethodType.GET);
+            client.syncInvoke(request);
+            client.close();
+        } catch (Exception e) {
+            Assert.fail();
+        }
+
+    }
 }

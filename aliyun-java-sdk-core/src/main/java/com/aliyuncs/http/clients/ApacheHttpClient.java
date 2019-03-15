@@ -1,22 +1,9 @@
 package com.aliyuncs.http.clients;
 
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import javax.net.ssl.SSLContext;
-
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.*;
+import com.aliyuncs.utils.IOUtils;
+import com.aliyuncs.utils.StringUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
@@ -28,27 +15,26 @@ import org.apache.http.config.RegistryBuilder;
 import org.apache.http.conn.ConnectionKeepAliveStrategy;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
+import org.apache.http.conn.ssl.DefaultHostnameVerifier;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLInitializationException;
 import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.protocol.HttpContext;
-import org.apache.http.ssl.SSLContextBuilder;
-import org.apache.http.ssl.TrustStrategy;
 import org.apache.http.util.EntityUtils;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.CallBack;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientConfig;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.IHttpClient;
-import com.aliyuncs.utils.IOUtils;
-import com.aliyuncs.utils.StringUtils;
+import javax.net.ssl.*;
+import java.io.IOException;
+import java.security.KeyStore;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ApacheHttpClient extends IHttpClient {
 
@@ -79,6 +65,52 @@ public class ApacheHttpClient extends IHttpClient {
         super(config);
     }
 
+    private SSLConnectionSocketFactory createSSLConnectionSocketFactory() throws ClientException {
+        try {
+            List<TrustManager> trustManagerList = new ArrayList<TrustManager>();
+            X509TrustManager[] trustManagers = clientConfig.getX509TrustManagers();
+
+            if (null != trustManagers) {
+                trustManagerList.addAll(Arrays.asList(trustManagers));
+            }
+
+            // get trustManager using default certification from jdk
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            tmf.init((KeyStore) null);
+            trustManagerList.addAll(Arrays.asList(tmf.getTrustManagers()));
+
+            final List<X509TrustManager> finalTrustManagerList = new ArrayList<X509TrustManager>();
+            for (TrustManager tm : trustManagerList) {
+                if (tm instanceof X509TrustManager) {
+                    finalTrustManagerList.add((X509TrustManager) tm);
+                }
+            }
+            CompositeX509TrustManager compositeX509TrustManager = new CompositeX509TrustManager(finalTrustManagerList);
+            compositeX509TrustManager.setIgnoreSSLCert(clientConfig.isIgnoreSSLCerts());
+            KeyManager[] keyManagers = null;
+            if (clientConfig.getKeyManagers() != null) {
+                keyManagers = clientConfig.getKeyManagers();
+            }
+
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(keyManagers, new TrustManager[]{compositeX509TrustManager}, clientConfig.getSecureRandom());
+
+            HostnameVerifier hostnameVerifier = null;
+            if (clientConfig.isIgnoreSSLCerts()) {
+                hostnameVerifier = new NoopHostnameVerifier();
+            } else if (clientConfig.getHostnameVerifier() != null) {
+                hostnameVerifier = clientConfig.getHostnameVerifier();
+            } else {
+                hostnameVerifier = new DefaultHostnameVerifier();
+            }
+            SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext, hostnameVerifier);
+            return sslConnectionSocketFactory;
+        } catch (Exception e) {
+            throw new ClientException("SDK.InitFailed", "Init https with SSL socket failed", e);
+        }
+
+    }
+
     @Override
     protected void init(final HttpClientConfig config) throws ClientException {
         HttpClientBuilder builder;
@@ -99,45 +131,8 @@ public class ApacheHttpClient extends IHttpClient {
         socketFactoryRegistryBuilder.register("http", new PlainConnectionSocketFactory());
 
         // https
-        // register default https connector(ignore untrusted cert)
-        try {
-            SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy() {
-                // trust all
-                @Override
-                public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-                    return true;
-                }
-            }).build();
-
-            SSLConnectionSocketFactory connectionFactory = new SSLConnectionSocketFactory(sslContext,
-                    NoopHostnameVerifier.INSTANCE);
-
-            socketFactoryRegistryBuilder.register("https", connectionFactory);
-
-        } catch (Exception e) {
-            throw new ClientException("SDK.InitFailed", "Init https with SSL certs ignore failed", e);
-        }
-
-        // override default https connector if possible
-        if (!config.isIgnoreSSLCerts()) {
-            if (config.getSslSocketFactory() != null) {
-                SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(config
-                        .getSslSocketFactory(), config.getHostnameVerifier());
-                socketFactoryRegistryBuilder.register("https", sslConnectionSocketFactory);
-            } else if (config.getKeyManagers() != null || config.getX509TrustManagers() != null || config
-                    .getSecureRandom() != null) {
-                try {
-                    SSLContext sslContext = SSLContext.getInstance("TLS");
-                    sslContext.init(config.getKeyManagers(), config.getX509TrustManagers(), config.getSecureRandom());
-                    SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext);
-                    socketFactoryRegistryBuilder.register("https", sslConnectionSocketFactory);
-                } catch (NoSuchAlgorithmException e1) {
-                    throw new SSLInitializationException(e1.getMessage(), e1);
-                } catch (KeyManagementException e2) {
-                    throw new SSLInitializationException(e2.getMessage(), e2);
-                }
-            }
-        }
+        SSLConnectionSocketFactory sslConnectionSocketFactory = createSSLConnectionSocketFactory();
+        socketFactoryRegistryBuilder.register("https", sslConnectionSocketFactory);
 
         // connPool
         connectionManager = new PoolingHttpClientConnectionManager(socketFactoryRegistryBuilder.build());
@@ -260,7 +255,7 @@ public class ApacheHttpClient extends IHttpClient {
 
     @Override
     public final Future<com.aliyuncs.http.HttpResponse> asyncInvoke(final HttpRequest apiRequest,
-            final CallBack callback) {
+                                                                    final CallBack callback) {
         return executorService.submit(new Callable<com.aliyuncs.http.HttpResponse>() {
             @Override
             public com.aliyuncs.http.HttpResponse call() throws Exception {

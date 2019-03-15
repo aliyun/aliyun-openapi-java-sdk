@@ -147,6 +147,7 @@ IAcsClient client = new DefaultAcsClient(profile);
 ## 超时机制
 Request 设置 -> Client 设置 -> 默认，优先级依次降低；
 默认连接超时为5秒，读超时为10秒；
+
 ```java
 //Client超时设置，对当前所有request有效
 HttpClientConfig clientConfig = HttpClientConfig.getDefault();
@@ -159,4 +160,38 @@ DefaultAcsClient client = new DefaultAcsClient(profile);
 // request超时设置，仅对当前请求有效
 request.setSysReadTimeout(readTimeoutMillis);
 request.setConnectionTimeoutMillis(connectionTimeoutMillis);
+```
+
+## HTTPS配置
+优先级: Request > Client > Default
+
+支持以下配置项:
+1.  是否校验服务端证书 
+2.  设置X509TrustManagers(信任的服务端证书)
+3.  设置 KeyManagers(客户端证书)
+
+```java
+// Client HTTPS配置
+HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+// 设置不校验服务端证书
+clientConfig.setIgnoreSSLCerts(true);
+// 设置自定义的TrustManagers
+clientConfig.setX509TrustManagers(clientTrustManagers);
+// 设置自定义的KeyManagers
+clientConfig.setKeyManagers(clientKeyManagers);
+
+// 设置HttpClient类型，可选Compatible或者ApacheHttpClient(默认)
+clientConfig.setClientType(HttpClientType.Compatible);
+// clientConfig.setClientType(HttpClientType.ApacheHttpClient);
+
+IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+profile.setHttpClientConfig(clientConfig);
+DefaultAcsClient client = new DefaultAcsClient(profile);
+ 
+// Request HTTPS配置(ApacheHttpClient会忽略Request级别的HTTPS配置)
+request.setIgnoreSSLCerts(true);
+request.setX509TrustManagers(requestTrustManagers);
+request.setKeyManagers(requestKeyManagers);
+
+client.getAcsResponse(request)
 ```
