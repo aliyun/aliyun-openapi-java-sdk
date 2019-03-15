@@ -39,6 +39,9 @@ public class GetCreditDetailResponseUnmarshaller {
 		data.setCreateDate(context.stringValue("GetCreditDetailResponse.Data.CreateDate"));
 		data.setUpdateDate(context.stringValue("GetCreditDetailResponse.Data.UpdateDate"));
 		data.setProductId(context.stringValue("GetCreditDetailResponse.Data.ProductId"));
+		data.setFundPartyId(context.stringValue("GetCreditDetailResponse.Data.FundPartyId"));
+		data.setDownPaymentAmount(context.stringValue("GetCreditDetailResponse.Data.DownPaymentAmount"));
+		data.setDownPaymentRate(context.stringValue("GetCreditDetailResponse.Data.DownPaymentRate"));
 		getCreditDetailResponse.setData(data);
 	 
 	 	return getCreditDetailResponse;

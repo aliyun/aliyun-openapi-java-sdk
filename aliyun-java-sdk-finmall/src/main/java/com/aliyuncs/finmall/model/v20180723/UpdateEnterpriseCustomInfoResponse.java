@@ -15,22 +15,30 @@
 package com.aliyuncs.finmall.model.v20180723;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.finmall.transform.v20180723.GetCreditSignatureInfoResponseUnmarshaller;
+import com.aliyuncs.finmall.transform.v20180723.UpdateEnterpriseCustomInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCreditSignatureInfoResponse extends AcsResponse {
+public class UpdateEnterpriseCustomInfoResponse extends AcsResponse {
+
+	private String requestId;
 
 	private String code;
 
 	private String message;
 
-	private String requestId;
-
 	private String data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -48,14 +56,6 @@ public class GetCreditSignatureInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getData() {
 		return this.data;
 	}
@@ -65,7 +65,7 @@ public class GetCreditSignatureInfoResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetCreditSignatureInfoResponse getInstance(UnmarshallerContext context) {
-		return	GetCreditSignatureInfoResponseUnmarshaller.unmarshall(this, context);
+	public UpdateEnterpriseCustomInfoResponse getInstance(UnmarshallerContext context) {
+		return	UpdateEnterpriseCustomInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -20,39 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SignLoanAgreementRequest extends RpcAcsRequest<SignLoanAgreementResponse> {
+public class QueryFundPartyListRequest extends RpcAcsRequest<QueryFundPartyListResponse> {
 	
-	public SignLoanAgreementRequest() {
-		super("finmall", "2018-07-23", "SignLoanAgreement", "finmall");
+	public QueryFundPartyListRequest() {
+		super("finmall", "2018-07-23", "QueryFundPartyList", "finmall");
 	}
-
-	private String creditId;
-
-	private String reserved;
 
 	private String userId;
-
-	public String getCreditId() {
-		return this.creditId;
-	}
-
-	public void setCreditId(String creditId) {
-		this.creditId = creditId;
-		if(creditId != null){
-			putQueryParameter("CreditId", creditId);
-		}
-	}
-
-	public String getReserved() {
-		return this.reserved;
-	}
-
-	public void setReserved(String reserved) {
-		this.reserved = reserved;
-		if(reserved != null){
-			putQueryParameter("Reserved", reserved);
-		}
-	}
 
 	public String getUserId() {
 		return this.userId;
@@ -66,8 +40,8 @@ public class SignLoanAgreementRequest extends RpcAcsRequest<SignLoanAgreementRes
 	}
 
 	@Override
-	public Class<SignLoanAgreementResponse> getResponseClass() {
-		return SignLoanAgreementResponse.class;
+	public Class<QueryFundPartyListResponse> getResponseClass() {
+		return QueryFundPartyListResponse.class;
 	}
 
 }

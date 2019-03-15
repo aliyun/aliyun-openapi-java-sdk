@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse> {
+public class UpdateEnterpriseCustomInfoRequest extends RpcAcsRequest<UpdateEnterpriseCustomInfoResponse> {
 	
-	public VerifyCustomerRequest() {
-		super("finmall", "2018-07-23", "VerifyCustomer", "finmall");
+	public UpdateEnterpriseCustomInfoRequest() {
+		super("finmall", "2018-07-23", "UpdateEnterpriseCustomInfo", "finmall");
 	}
 
 	private String idCardNumber;
@@ -47,6 +47,8 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	private String loanSubject;
 
 	private String zhimaReturnUrl;
+
+	private String smsIvToken;
 
 	private String bankCard;
 
@@ -173,6 +175,17 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 		}
 	}
 
+	public String getSmsIvToken() {
+		return this.smsIvToken;
+	}
+
+	public void setSmsIvToken(String smsIvToken) {
+		this.smsIvToken = smsIvToken;
+		if(smsIvToken != null){
+			putQueryParameter("SmsIvToken", smsIvToken);
+		}
+	}
+
 	public String getBankCard() {
 		return this.bankCard;
 	}
@@ -196,8 +209,8 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	}
 
 	@Override
-	public Class<VerifyCustomerResponse> getResponseClass() {
-		return VerifyCustomerResponse.class;
+	public Class<UpdateEnterpriseCustomInfoResponse> getResponseClass() {
+		return UpdateEnterpriseCustomInfoResponse.class;
 	}
 
 }

@@ -15,14 +15,14 @@
 package com.aliyuncs.finmall.model.v20180723;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.finmall.transform.v20180723.UploadCustomIDImageResponseUnmarshaller;
+import com.aliyuncs.finmall.transform.v20180723.GetSignContractUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UploadCustomIDImageResponse extends AcsResponse {
+public class GetSignContractUrlResponse extends AcsResponse {
 
 	private String code;
 
@@ -66,17 +66,7 @@ public class UploadCustomIDImageResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String returnCode;
-
 		private String url;
-
-		public String getReturnCode() {
-			return this.returnCode;
-		}
-
-		public void setReturnCode(String returnCode) {
-			this.returnCode = returnCode;
-		}
 
 		public String getBizUrl() {
 			return this.url;
@@ -104,7 +94,7 @@ public class UploadCustomIDImageResponse extends AcsResponse {
 	}
 
 	@Override
-	public UploadCustomIDImageResponse getInstance(UnmarshallerContext context) {
-		return	UploadCustomIDImageResponseUnmarshaller.unmarshall(this, context);
+	public GetSignContractUrlResponse getInstance(UnmarshallerContext context) {
+		return	GetSignContractUrlResponseUnmarshaller.unmarshall(this, context);
 	}
 }

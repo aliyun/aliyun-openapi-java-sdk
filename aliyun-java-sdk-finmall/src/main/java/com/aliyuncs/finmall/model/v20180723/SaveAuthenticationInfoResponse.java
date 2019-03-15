@@ -15,22 +15,30 @@
 package com.aliyuncs.finmall.model.v20180723;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.finmall.transform.v20180723.GetCreditSignatureInfoResponseUnmarshaller;
+import com.aliyuncs.finmall.transform.v20180723.SaveAuthenticationInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCreditSignatureInfoResponse extends AcsResponse {
+public class SaveAuthenticationInfoResponse extends AcsResponse {
+
+	private String requestId;
 
 	private String code;
 
 	private String message;
 
-	private String requestId;
+	private Boolean data;
 
-	private String data;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getCode() {
 		return this.code;
@@ -48,24 +56,16 @@ public class GetCreditSignatureInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getData() {
+	public Boolean getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Boolean data) {
 		this.data = data;
 	}
 
 	@Override
-	public GetCreditSignatureInfoResponse getInstance(UnmarshallerContext context) {
-		return	GetCreditSignatureInfoResponseUnmarshaller.unmarshall(this, context);
+	public SaveAuthenticationInfoResponse getInstance(UnmarshallerContext context) {
+		return	SaveAuthenticationInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 }

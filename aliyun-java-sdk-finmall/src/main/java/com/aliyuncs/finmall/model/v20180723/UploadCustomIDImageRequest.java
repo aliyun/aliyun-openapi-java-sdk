@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UploadCustomIDImageRequest extends RpcAcsRequest<UploadCustomIDImageResponse> {
 	
 	public UploadCustomIDImageRequest() {
-		super("finmall", "2018-07-23", "UploadCustomIDImage", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "UploadCustomIDImage", "finmall");
 		setMethod(MethodType.POST);
 	}
 

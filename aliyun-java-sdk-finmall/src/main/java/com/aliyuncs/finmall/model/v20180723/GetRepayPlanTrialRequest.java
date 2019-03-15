@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetRepayPlanTrialRequest extends RpcAcsRequest<GetRepayPlanTrialResponse> {
 	
 	public GetRepayPlanTrialRequest() {
-		super("finmall", "2018-07-23", "GetRepayPlanTrial", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetRepayPlanTrial", "finmall");
 	}
 
 	private String creditId;

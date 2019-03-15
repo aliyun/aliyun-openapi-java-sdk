@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PayForOrderRequest extends RpcAcsRequest<PayForOrderResponse> {
 	
 	public PayForOrderRequest() {
-		super("finmall", "2018-07-23", "PayForOrder", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "PayForOrder", "finmall");
 	}
 
 	private String creditId;

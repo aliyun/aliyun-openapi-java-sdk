@@ -20,37 +20,37 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse> {
+public class UpdateAuthenticationInfoRequest extends RpcAcsRequest<UpdateAuthenticationInfoResponse> {
 	
-	public VerifyCustomerRequest() {
-		super("finmall", "2018-07-23", "VerifyCustomer", "finmall");
+	public UpdateAuthenticationInfoRequest() {
+		super("finmall", "2018-07-23", "UpdateAuthenticationInfo", "finmall");
 	}
 
 	private String idCardNumber;
 
 	private String address;
 
-	private String idCardFrontPage;
+	private String employeeEmail;
+
+	private String employeePhoneNumber;
 
 	private String phoneNumber;
 
 	private String businessLicense;
 
-	private String idCardBackPage;
-
 	private String legalPersonName;
-
-	private String enterpriseName;
 
 	private String userId;
 
-	private String loanSubject;
-
-	private String zhimaReturnUrl;
+	private String smsIvToken;
 
 	private String bankCard;
 
 	private String email;
+
+	private String employeeName;
+
+	private String employeeIdCardNumber;
 
 	public String getIdCardNumber() {
 		return this.idCardNumber;
@@ -59,7 +59,7 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	public void setIdCardNumber(String idCardNumber) {
 		this.idCardNumber = idCardNumber;
 		if(idCardNumber != null){
-			putQueryParameter("IdCardNumber", idCardNumber);
+			putBodyParameter("IdCardNumber", idCardNumber);
 		}
 	}
 
@@ -70,18 +70,29 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	public void setAddress(String address) {
 		this.address = address;
 		if(address != null){
-			putQueryParameter("Address", address);
+			putBodyParameter("Address", address);
 		}
 	}
 
-	public String getIdCardFrontPage() {
-		return this.idCardFrontPage;
+	public String getEmployeeEmail() {
+		return this.employeeEmail;
 	}
 
-	public void setIdCardFrontPage(String idCardFrontPage) {
-		this.idCardFrontPage = idCardFrontPage;
-		if(idCardFrontPage != null){
-			putQueryParameter("IdCardFrontPage", idCardFrontPage);
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
+		if(employeeEmail != null){
+			putBodyParameter("EmployeeEmail", employeeEmail);
+		}
+	}
+
+	public String getEmployeePhoneNumber() {
+		return this.employeePhoneNumber;
+	}
+
+	public void setEmployeePhoneNumber(String employeePhoneNumber) {
+		this.employeePhoneNumber = employeePhoneNumber;
+		if(employeePhoneNumber != null){
+			putBodyParameter("EmployeePhoneNumber", employeePhoneNumber);
 		}
 	}
 
@@ -92,7 +103,7 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 		if(phoneNumber != null){
-			putQueryParameter("PhoneNumber", phoneNumber);
+			putBodyParameter("PhoneNumber", phoneNumber);
 		}
 	}
 
@@ -103,18 +114,7 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	public void setBusinessLicense(String businessLicense) {
 		this.businessLicense = businessLicense;
 		if(businessLicense != null){
-			putQueryParameter("BusinessLicense", businessLicense);
-		}
-	}
-
-	public String getIdCardBackPage() {
-		return this.idCardBackPage;
-	}
-
-	public void setIdCardBackPage(String idCardBackPage) {
-		this.idCardBackPage = idCardBackPage;
-		if(idCardBackPage != null){
-			putQueryParameter("IdCardBackPage", idCardBackPage);
+			putBodyParameter("BusinessLicense", businessLicense);
 		}
 	}
 
@@ -125,18 +125,7 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	public void setLegalPersonName(String legalPersonName) {
 		this.legalPersonName = legalPersonName;
 		if(legalPersonName != null){
-			putQueryParameter("LegalPersonName", legalPersonName);
-		}
-	}
-
-	public String getEnterpriseName() {
-		return this.enterpriseName;
-	}
-
-	public void setEnterpriseName(String enterpriseName) {
-		this.enterpriseName = enterpriseName;
-		if(enterpriseName != null){
-			putQueryParameter("EnterpriseName", enterpriseName);
+			putBodyParameter("LegalPersonName", legalPersonName);
 		}
 	}
 
@@ -147,29 +136,18 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	public void setUserId(String userId) {
 		this.userId = userId;
 		if(userId != null){
-			putQueryParameter("UserId", userId);
+			putBodyParameter("UserId", userId);
 		}
 	}
 
-	public String getLoanSubject() {
-		return this.loanSubject;
+	public String getSmsIvToken() {
+		return this.smsIvToken;
 	}
 
-	public void setLoanSubject(String loanSubject) {
-		this.loanSubject = loanSubject;
-		if(loanSubject != null){
-			putQueryParameter("LoanSubject", loanSubject);
-		}
-	}
-
-	public String getZhimaReturnUrl() {
-		return this.zhimaReturnUrl;
-	}
-
-	public void setZhimaReturnUrl(String zhimaReturnUrl) {
-		this.zhimaReturnUrl = zhimaReturnUrl;
-		if(zhimaReturnUrl != null){
-			putQueryParameter("ZhimaReturnUrl", zhimaReturnUrl);
+	public void setSmsIvToken(String smsIvToken) {
+		this.smsIvToken = smsIvToken;
+		if(smsIvToken != null){
+			putBodyParameter("SmsIvToken", smsIvToken);
 		}
 	}
 
@@ -180,7 +158,7 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	public void setBankCard(String bankCard) {
 		this.bankCard = bankCard;
 		if(bankCard != null){
-			putQueryParameter("BankCard", bankCard);
+			putBodyParameter("BankCard", bankCard);
 		}
 	}
 
@@ -191,13 +169,35 @@ public class VerifyCustomerRequest extends RpcAcsRequest<VerifyCustomerResponse>
 	public void setEmail(String email) {
 		this.email = email;
 		if(email != null){
-			putQueryParameter("Email", email);
+			putBodyParameter("Email", email);
+		}
+	}
+
+	public String getEmployeeName() {
+		return this.employeeName;
+	}
+
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+		if(employeeName != null){
+			putBodyParameter("EmployeeName", employeeName);
+		}
+	}
+
+	public String getEmployeeIdCardNumber() {
+		return this.employeeIdCardNumber;
+	}
+
+	public void setEmployeeIdCardNumber(String employeeIdCardNumber) {
+		this.employeeIdCardNumber = employeeIdCardNumber;
+		if(employeeIdCardNumber != null){
+			putBodyParameter("EmployeeIdCardNumber", employeeIdCardNumber);
 		}
 	}
 
 	@Override
-	public Class<VerifyCustomerResponse> getResponseClass() {
-		return VerifyCustomerResponse.class;
+	public Class<UpdateAuthenticationInfoResponse> getResponseClass() {
+		return UpdateAuthenticationInfoResponse.class;
 	}
 
 }

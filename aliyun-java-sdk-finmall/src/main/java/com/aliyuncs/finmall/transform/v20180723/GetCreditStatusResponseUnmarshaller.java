@@ -33,6 +33,7 @@ public class GetCreditStatusResponseUnmarshaller {
 		data.setProductId(context.stringValue("GetCreditStatusResponse.Data.ProductId"));
 		data.setFundPartyId(context.stringValue("GetCreditStatusResponse.Data.FundPartyId"));
 		data.setTradeDataId(context.stringValue("GetCreditStatusResponse.Data.TradeDataId"));
+		data.setCreditApproveComment(context.stringValue("GetCreditStatusResponse.Data.CreditApproveComment"));
 		getCreditStatusResponse.setData(data);
 	 
 	 	return getCreditStatusResponse;

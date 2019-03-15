@@ -15,14 +15,14 @@
 package com.aliyuncs.finmall.model.v20180723;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.finmall.transform.v20180723.UploadCustomIDImageResponseUnmarshaller;
+import com.aliyuncs.finmall.transform.v20180723.QueryFundPartyListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UploadCustomIDImageResponse extends AcsResponse {
+public class QueryFundPartyListResponse extends AcsResponse {
 
 	private String code;
 
@@ -30,7 +30,7 @@ public class UploadCustomIDImageResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Data data;
+	private String data;
 
 	public String getCode() {
 		return this.code;
@@ -56,55 +56,16 @@ public class UploadCustomIDImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
+	public String getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
-	public static class Data {
-
-		private String returnCode;
-
-		private String url;
-
-		public String getReturnCode() {
-			return this.returnCode;
-		}
-
-		public void setReturnCode(String returnCode) {
-			this.returnCode = returnCode;
-		}
-
-		public String getBizUrl() {
-			return this.url;
-		}
-
-		public void setBizUrl(String url) {
-			this.url = url;
-		}
-
-		/**
-		 * @deprecated use getBizUrl instead of this.
-		 */
-		@Deprecated
-		public String getUrl() {
-			return this.url;
-		}
-
-		/**
-		 * @deprecated use setBizUrl instead of this.
-		 */
-		@Deprecated
-		public void setUrl(String url) {
-			this.url = url;
-		}
-	}
-
 	@Override
-	public UploadCustomIDImageResponse getInstance(UnmarshallerContext context) {
-		return	UploadCustomIDImageResponseUnmarshaller.unmarshall(this, context);
+	public QueryFundPartyListResponse getInstance(UnmarshallerContext context) {
+		return	QueryFundPartyListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

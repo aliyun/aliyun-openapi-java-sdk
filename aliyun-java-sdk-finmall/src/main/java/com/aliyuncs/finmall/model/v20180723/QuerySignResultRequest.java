@@ -20,28 +20,30 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetDocumentDownloadUrlRequest extends RpcAcsRequest<GetDocumentDownloadUrlResponse> {
+public class QuerySignResultRequest extends RpcAcsRequest<QuerySignResultResponse> {
 	
-	public GetDocumentDownloadUrlRequest() {
-		super("finmall", "2018-07-23", "GetDocumentDownloadUrl", "finmall");
+	public QuerySignResultRequest() {
+		super("finmall", "2018-07-23", "QuerySignResult", "finmall");
 	}
 
-	private String bizType;
+	private String extInfo;
 
 	private String bizId;
 
-	private String documentId;
+	private String sceneId;
+
+	private String type;
 
 	private String userId;
 
-	public String getBizType() {
-		return this.bizType;
+	public String getExtInfo() {
+		return this.extInfo;
 	}
 
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+		if(extInfo != null){
+			putQueryParameter("ExtInfo", extInfo);
 		}
 	}
 
@@ -56,14 +58,25 @@ public class GetDocumentDownloadUrlRequest extends RpcAcsRequest<GetDocumentDown
 		}
 	}
 
-	public String getDocumentId() {
-		return this.documentId;
+	public String getSceneId() {
+		return this.sceneId;
 	}
 
-	public void setDocumentId(String documentId) {
-		this.documentId = documentId;
-		if(documentId != null){
-			putQueryParameter("DocumentId", documentId);
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -79,8 +92,8 @@ public class GetDocumentDownloadUrlRequest extends RpcAcsRequest<GetDocumentDown
 	}
 
 	@Override
-	public Class<GetDocumentDownloadUrlResponse> getResponseClass() {
-		return GetDocumentDownloadUrlResponse.class;
+	public Class<QuerySignResultResponse> getResponseClass() {
+		return QuerySignResultResponse.class;
 	}
 
 }

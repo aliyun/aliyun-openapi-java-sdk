@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ApplyForLoanRequest extends RpcAcsRequest<ApplyForLoanResponse> {
 	
 	public ApplyForLoanRequest() {
-		super("finmall", "2018-07-23", "ApplyForLoan", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "ApplyForLoan", "finmall");
 	}
 
 	private String bizType;

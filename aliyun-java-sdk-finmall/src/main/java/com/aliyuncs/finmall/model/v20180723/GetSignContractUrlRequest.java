@@ -20,39 +20,52 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetLoanAgreementRequest extends RpcAcsRequest<GetLoanAgreementResponse> {
+public class GetSignContractUrlRequest extends RpcAcsRequest<GetSignContractUrlResponse> {
 	
-	public GetLoanAgreementRequest() {
-		super("finmall", "2018-07-23", "GetLoanAgreement", "finmall");
+	public GetSignContractUrlRequest() {
+		super("finmall", "2018-07-23", "GetSignContractUrl", "finmall");
 	}
 
-	private String creditId;
+	private String extInfo;
 
-	private String fundPartyId;
+	private String bizId;
+
+	private String sceneId;
 
 	private String returnUrl;
 
 	private String userId;
 
-	public String getCreditId() {
-		return this.creditId;
+	public String getExtInfo() {
+		return this.extInfo;
 	}
 
-	public void setCreditId(String creditId) {
-		this.creditId = creditId;
-		if(creditId != null){
-			putQueryParameter("CreditId", creditId);
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+		if(extInfo != null){
+			putQueryParameter("ExtInfo", extInfo);
 		}
 	}
 
-	public String getFundPartyId() {
-		return this.fundPartyId;
+	public String getBizId() {
+		return this.bizId;
 	}
 
-	public void setFundPartyId(String fundPartyId) {
-		this.fundPartyId = fundPartyId;
-		if(fundPartyId != null){
-			putQueryParameter("FundPartyId", fundPartyId);
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getSceneId() {
+		return this.sceneId;
+	}
+
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId);
 		}
 	}
 
@@ -79,8 +92,8 @@ public class GetLoanAgreementRequest extends RpcAcsRequest<GetLoanAgreementRespo
 	}
 
 	@Override
-	public Class<GetLoanAgreementResponse> getResponseClass() {
-		return GetLoanAgreementResponse.class;
+	public Class<GetSignContractUrlResponse> getResponseClass() {
+		return GetSignContractUrlResponse.class;
 	}
 
 }
