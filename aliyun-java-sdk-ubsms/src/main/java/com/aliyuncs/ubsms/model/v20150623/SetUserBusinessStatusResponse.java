@@ -11,17 +11,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ubsms.model.v20150623;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ubsms.transform.v20150623.SetUserBusinessStatusesResponseUnmarshaller;
+import com.aliyuncs.ubsms.transform.v20150623.SetUserBusinessStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetUserBusinessStatusesResponse extends AcsResponse {
+public class SetUserBusinessStatusResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -44,7 +45,7 @@ public class SetUserBusinessStatusesResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetUserBusinessStatusesResponse getInstance(UnmarshallerContext context) {
-		return	SetUserBusinessStatusesResponseUnmarshaller.unmarshall(this, context);
+	public SetUserBusinessStatusResponse getInstance(UnmarshallerContext context) {
+		return	SetUserBusinessStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 }

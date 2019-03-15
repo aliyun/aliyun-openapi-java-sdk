@@ -11,19 +11,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ubsms.transform.v20150623;
 
-import com.aliyuncs.ubsms.model.v20150623.SetUserBusinessStatusesResponse;
+import com.aliyuncs.ubsms.model.v20150623.SetUserBusinessStatusResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetUserBusinessStatusesResponseUnmarshaller {
+public class SetUserBusinessStatusResponseUnmarshaller {
 
-	public static SetUserBusinessStatusesResponse unmarshall(SetUserBusinessStatusesResponse setUserBusinessStatusesResponse, UnmarshallerContext context) {
+	public static SetUserBusinessStatusResponse unmarshall(SetUserBusinessStatusResponse setUserBusinessStatusResponse, UnmarshallerContext context) {
 		
-		setUserBusinessStatusesResponse.setRequestId(context.stringValue("SetUserBusinessStatusesResponse.RequestId"));
-		setUserBusinessStatusesResponse.setSuccess(context.booleanValue("SetUserBusinessStatusesResponse.Success"));
+		setUserBusinessStatusResponse.setRequestId(context.stringValue("SetUserBusinessStatusResponse.RequestId"));
+		setUserBusinessStatusResponse.setSuccess(context.booleanValue("SetUserBusinessStatusResponse.Success"));
 	 
-	 	return setUserBusinessStatusesResponse;
+	 	return setUserBusinessStatusResponse;
 	}
 }
