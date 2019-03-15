@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.yundun.model.v20150227;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class TodayqpsByRegionRequest extends RpcAcsRequest<TodayqpsByRegionResponse> {
 	
 	public TodayqpsByRegionRequest() {
-		super("Yundun", "2015-02-27", "TodayqpsByRegion");
+		super("Yundun", "2015-02-27", "TodayqpsByRegion", "yundun");
 	}
 
 	@Override

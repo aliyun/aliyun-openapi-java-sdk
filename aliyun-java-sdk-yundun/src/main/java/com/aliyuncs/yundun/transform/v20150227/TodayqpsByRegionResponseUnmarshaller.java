@@ -11,10 +11,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.yundun.transform.v20150227;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.yundun.model.v20150227.TodayqpsByRegionResponse;
 import com.aliyuncs.yundun.model.v20150227.TodayqpsByRegionResponse.Region;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,7 +30,7 @@ public class TodayqpsByRegionResponseUnmarshaller {
 
 		List<Region> data = new ArrayList<Region>();
 		for (int i = 0; i < context.lengthValue("TodayqpsByRegionResponse.Data.Length"); i++) {
-			Region  region = new Region();
+			Region region = new Region();
 			region.setRegionId(context.stringValue("TodayqpsByRegionResponse.Data["+ i +"].RegionId"));
 			region.setRegionNumber(context.longValue("TodayqpsByRegionResponse.Data["+ i +"].RegionNumber"));
 			region.setRegionFlow(context.longValue("TodayqpsByRegionResponse.Data["+ i +"].RegionFlow"));

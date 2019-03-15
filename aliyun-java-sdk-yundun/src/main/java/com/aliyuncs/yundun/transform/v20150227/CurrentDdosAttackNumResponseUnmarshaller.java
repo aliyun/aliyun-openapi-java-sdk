@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.yundun.transform.v20150227;
 
 import com.aliyuncs.yundun.model.v20150227.CurrentDdosAttackNumResponse;

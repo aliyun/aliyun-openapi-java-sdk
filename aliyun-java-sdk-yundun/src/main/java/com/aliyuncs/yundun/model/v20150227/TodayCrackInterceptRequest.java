@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.yundun.model.v20150227;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class TodayCrackInterceptRequest extends RpcAcsRequest<TodayCrackInterceptResponse> {
 	
 	public TodayCrackInterceptRequest() {
-		super("Yundun", "2015-02-27", "TodayCrackIntercept");
+		super("Yundun", "2015-02-27", "TodayCrackIntercept", "yundun");
 	}
 
 	@Override

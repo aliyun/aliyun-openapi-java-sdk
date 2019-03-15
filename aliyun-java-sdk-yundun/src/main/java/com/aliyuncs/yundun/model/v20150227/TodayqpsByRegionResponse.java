@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.yundun.model.v20150227;
 
 import java.util.List;
@@ -52,10 +53,26 @@ public class TodayqpsByRegionResponse extends AcsResponse {
 
 		private Long regionFlow;
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
