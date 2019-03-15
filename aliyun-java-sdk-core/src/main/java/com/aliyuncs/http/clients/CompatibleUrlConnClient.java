@@ -72,7 +72,6 @@ public class CompatibleUrlConnClient extends IHttpClient {
         HttpResponse response = null;
         HttpURLConnection httpConn = buildHttpConnection(request);
         OutputStream out = null;
-
         try {
             httpConn.connect();
             if (null != request.getHttpContent() && request.getHttpContent().length > 0) {
