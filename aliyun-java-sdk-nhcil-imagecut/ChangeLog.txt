@@ -1,3 +1,0 @@
-2018-05-22 Version: 1.0.0
-1, SimpleAutoImageCut v1.0.0
-
