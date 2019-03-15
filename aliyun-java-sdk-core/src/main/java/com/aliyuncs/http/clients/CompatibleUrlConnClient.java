@@ -1,51 +1,28 @@
 package com.aliyuncs.http.clients;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.InetSocketAddress;
-import java.net.MalformedURLException;
-import java.net.Proxy;
-import java.net.SocketAddress;
-import java.net.URL;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.*;
+import com.aliyuncs.utils.EnvironmentUtils;
+import com.aliyuncs.utils.StringUtils;
+import org.apache.http.conn.ssl.DefaultHostnameVerifier;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+
+import javax.net.ssl.*;
+import javax.xml.bind.DatatypeConverter;
+import java.io.*;
+import java.net.*;
+import java.security.KeyStore;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
 
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-import javax.xml.bind.DatatypeConverter;
-
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.CallBack;
-import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientConfig;
-import com.aliyuncs.http.HttpRequest;
-import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.IHttpClient;
-import com.aliyuncs.http.MethodType;
-
 public class CompatibleUrlConnClient extends IHttpClient {
 
     protected static final String CONTENT_TYPE = "Content-Type";
-    protected static final String CONTENT_MD5 = "Content-MD5";
-    protected static final String CONTENT_LENGTH = "Content-Length";
     protected static final String ACCEPT_ENCODING = "Accept-Encoding";
-
-    private SSLSocketFactory sslSocketFactory;
 
     public CompatibleUrlConnClient(HttpClientConfig clientConfig) throws ClientException {
         super(clientConfig);
@@ -59,15 +36,11 @@ public class CompatibleUrlConnClient extends IHttpClient {
     }
 
     @Override
-    protected void init(HttpClientConfig clientConfig) throws ClientException {
-        this.sslSocketFactory = clientConfig.getSslSocketFactory();
-        if (clientConfig.isIgnoreSSLCerts()) {
-            this.ignoreSSLCertificate();
-        }
+    protected void init(HttpClientConfig clientConfig) {
     }
 
     @Override
-    public HttpResponse syncInvoke(HttpRequest request) throws IOException {
+    public HttpResponse syncInvoke(HttpRequest request) throws IOException, ClientException {
         InputStream content = null;
         HttpResponse response = null;
         HttpURLConnection httpConn = buildHttpConnection(request);
@@ -102,11 +75,69 @@ public class CompatibleUrlConnClient extends IHttpClient {
     }
 
     @Override
-    public Future<HttpResponse> asyncInvoke(HttpRequest apiRequest, CallBack callback) throws IOException {
+    public Future<HttpResponse> asyncInvoke(HttpRequest apiRequest, CallBack callback) {
         throw new IllegalStateException("not supported");
     }
 
-    private HttpURLConnection buildHttpConnection(HttpRequest request) throws IOException {
+    private SSLSocketFactory createSSLSocketFactory(HttpRequest request) throws ClientException {
+        try {
+            boolean ignoreSSLCert = request.isIgnoreSSLCerts() ? request.isIgnoreSSLCerts() : clientConfig.isIgnoreSSLCerts();
+            X509TrustManager[] trustManagers = null;
+            KeyManager[] keyManagers = null;
+            if (clientConfig.getX509TrustManagers() != null) {
+                trustManagers = clientConfig.getX509TrustManagers();
+            }
+            if (request.getX509TrustManagers() != null) {
+                trustManagers = request.getX509TrustManagers();
+            }
+
+            List<TrustManager> trustManagerList = new ArrayList<TrustManager>();
+            if (null != trustManagers) {
+                trustManagerList.addAll(Arrays.asList(trustManagers));
+            }
+
+            // get trustManager using default certification from jdk
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            tmf.init((KeyStore) null);
+            trustManagerList.addAll(Arrays.asList(tmf.getTrustManagers()));
+
+            final List<X509TrustManager> finalTrustManagerList = new ArrayList<X509TrustManager>();
+            for (TrustManager tm : trustManagerList) {
+                if (tm instanceof X509TrustManager) {
+                    finalTrustManagerList.add((X509TrustManager) tm);
+                }
+            }
+            CompositeX509TrustManager compositeX509TrustManager = new CompositeX509TrustManager(finalTrustManagerList);
+            compositeX509TrustManager.setIgnoreSSLCert(ignoreSSLCert);
+
+            if (clientConfig.getKeyManagers() != null) {
+                keyManagers = clientConfig.getKeyManagers();
+            }
+            if (request.getKeyManagers() != null) {
+                keyManagers = request.getKeyManagers();
+            }
+
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(keyManagers, new TrustManager[]{compositeX509TrustManager}, clientConfig.getSecureRandom());
+            return sslContext.getSocketFactory();
+        } catch (Exception e) {
+            throw new ClientException("SDK.InitFailed", "Init https with SSL socket failed", e);
+        }
+
+    }
+
+    private HostnameVerifier createHostnameVerifier(HttpRequest request) {
+        boolean ignoreSSLCert = request.isIgnoreSSLCerts() ? request.isIgnoreSSLCerts() : clientConfig.isIgnoreSSLCerts();
+        if (ignoreSSLCert) {
+            return new NoopHostnameVerifier();
+        } else if (clientConfig.getHostnameVerifier() != null) {
+            return clientConfig.getHostnameVerifier();
+        } else {
+            return new DefaultHostnameVerifier();
+        }
+    }
+
+    private HttpURLConnection buildHttpConnection(HttpRequest request) throws IOException, ClientException {
         String strUrl = request.getSysUrl();
 
         if (null == strUrl) {
@@ -126,16 +157,19 @@ public class CompatibleUrlConnClient extends IHttpClient {
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         HttpURLConnection httpConn = null;
         if ("https".equalsIgnoreCase(url.getProtocol())) {
-            if (sslSocketFactory != null) {
-                Proxy proxy = getProxy("HTTPS_PROXY", request);
-                HttpsURLConnection httpsConn = (HttpsURLConnection) url.openConnection(proxy);
-                httpsConn.setSSLSocketFactory(sslSocketFactory);
-                httpConn = httpsConn;
-            }
+            SSLSocketFactory sslSocketFactory = createSSLSocketFactory(request);
+            String httpsProxy = EnvironmentUtils.getHttpsProxy();
+            Proxy proxy = getProxy(httpsProxy, request);
+            HttpsURLConnection httpsConn = (HttpsURLConnection) url.openConnection(proxy);
+            httpsConn.setSSLSocketFactory(sslSocketFactory);
+            HostnameVerifier hostnameVerifier = createHostnameVerifier(request);
+            httpsConn.setHostnameVerifier(hostnameVerifier);
+            httpConn = httpsConn;
         }
 
         if (httpConn == null) {
-            Proxy proxy = getProxy("HTTP_PROXY", request);
+            String httpProxy = EnvironmentUtils.getHttpProxy();
+            Proxy proxy = getProxy(httpProxy, request);
             httpConn = (HttpURLConnection) url.openConnection(proxy);
         }
 
@@ -231,12 +265,12 @@ public class CompatibleUrlConnClient extends IHttpClient {
 
     @Override
     public void ignoreSSLCertificate() {
-        HttpsCertIgnoreHelper.ignoreSSLCertificate();
+        throw new IllegalStateException("use HttpClientConfig.setIgnoreSSLCerts(true) instead");
     }
 
     @Override
     public void restoreSSLCertificate() {
-        HttpsCertIgnoreHelper.restoreSSLCertificate();
+        throw new IllegalStateException("use HttpClientConfig.setIgnoreSSLCerts(false) instead");
     }
 
     @Override
@@ -249,11 +283,10 @@ public class CompatibleUrlConnClient extends IHttpClient {
 
     }
 
-    private Proxy getProxy(String env, HttpRequest request) throws MalformedURLException, UnsupportedEncodingException {
+    private Proxy getProxy(String envProxy, HttpRequest request) throws MalformedURLException, UnsupportedEncodingException {
         Proxy proxy = Proxy.NO_PROXY;
-        String httpProxy = System.getenv(env);
-        if (httpProxy != null) {
-            URL proxyUrl = new URL(httpProxy);
+        if (!StringUtils.isEmpty(envProxy)) {
+            URL proxyUrl = new URL(envProxy);
             String userInfo = proxyUrl.getUserInfo();
             if (userInfo != null) {
                 byte[] bytes = userInfo.getBytes("UTF-8");
@@ -269,56 +302,5 @@ public class CompatibleUrlConnClient extends IHttpClient {
             proxy = new Proxy(Proxy.Type.HTTP, addr);
         }
         return proxy;
-    }
-
-    public static final class HttpsCertIgnoreHelper implements X509TrustManager, HostnameVerifier {
-
-        private static HostnameVerifier defaultVerifier;
-        private static SSLSocketFactory defaultSSLFactory;
-
-        public static void restoreSSLCertificate() {
-            if (null != defaultSSLFactory) {
-                HttpsURLConnection.setDefaultSSLSocketFactory(defaultSSLFactory);
-                HttpsURLConnection.setDefaultHostnameVerifier(defaultVerifier);
-            }
-        }
-
-        public static void ignoreSSLCertificate() {
-            try {
-                HttpsCertIgnoreHelper trustAll = new HttpsCertIgnoreHelper();
-                SSLContext sc = SSLContext.getInstance("SSL");
-                sc.init(null, new TrustManager[] { trustAll }, new java.security.SecureRandom());
-                if (null == defaultSSLFactory) {
-                    defaultSSLFactory = HttpsURLConnection.getDefaultSSLSocketFactory();
-                    defaultVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
-                }
-                HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-                HttpsURLConnection.setDefaultHostnameVerifier(trustAll);
-            } catch (NoSuchAlgorithmException e) {
-                throw new RuntimeException("Failed setting up all thrusting certificate manager.", e);
-            } catch (KeyManagementException e) {
-                throw new RuntimeException("Failed setting up all thrusting certificate manager.", e);
-            }
-        }
-
-        @Override
-        public boolean verify(String hostname, SSLSession session) {
-            return true;
-        }
-
-        @Override
-        public void checkClientTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
-            // Don't check
-        }
-
-        @Override
-        public void checkServerTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
-            // Don't check
-        }
-
-        @Override
-        public X509Certificate[] getAcceptedIssuers() {
-            return null;
-        }
     }
 }

@@ -3,6 +3,7 @@ package com.aliyuncs.http;
 import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
 
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLSocketFactory;
@@ -10,9 +11,16 @@ import javax.net.ssl.X509TrustManager;
 
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import static org.mockito.Mockito.mock;
 
 public class HttpClientConfigTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void getDefaultTest() {
@@ -21,13 +29,39 @@ public class HttpClientConfigTest {
     }
 
     @Test
+    public void setCertPath(){
+        thrown.expect(IllegalArgumentException.class);
+        HttpClientConfig httpClientConfig = new HttpClientConfig();
+        httpClientConfig.setCertPath("my/cert/path");
+    }
+
+    @Test
+    public void getCertPath(){
+        thrown.expect(IllegalArgumentException.class);
+        HttpClientConfig httpClientConfig = new HttpClientConfig();
+        httpClientConfig.getCertPath();
+    }
+
+
+    @Test
+    public void getSSLSocketFactory(){
+        thrown.expect(IllegalArgumentException.class);
+        HttpClientConfig httpClientConfig = new HttpClientConfig();
+        httpClientConfig.getSslSocketFactory();
+    }
+
+    @Test
+    public void setSSLSocketFactory(){
+        thrown.expect(IllegalArgumentException.class);
+        HttpClientConfig httpClientConfig = new HttpClientConfig();
+        httpClientConfig.setSslSocketFactory(mock(SSLSocketFactory.class));
+    }
+
+    @Test
     public void getSetTest() {
         HttpClientConfig httpClientConfig = new HttpClientConfig();
         httpClientConfig.setClientType(HttpClientType.Custom);
         Assert.assertTrue(HttpClientType.Custom == httpClientConfig.getClientType());
-
-        httpClientConfig.setCertPath("test");
-        Assert.assertEquals("test", httpClientConfig.getCertPath());
 
         httpClientConfig.setExtParams(new HashMap<String, Object>());
         Assert.assertTrue(httpClientConfig.getExtParams() instanceof Map);
@@ -53,9 +87,6 @@ public class HttpClientConfigTest {
 
         httpClientConfig.setWriteTimeoutMillis(88L);
         Assert.assertEquals(88L, httpClientConfig.getWriteTimeoutMillis());
-
-        httpClientConfig.setSslSocketFactory((SSLSocketFactory) SSLSocketFactory.getDefault());
-        Assert.assertTrue(httpClientConfig.getSslSocketFactory() instanceof SSLSocketFactory);
 
         httpClientConfig.setKeyManagers(new KeyManager[1]);
         Assert.assertNull(httpClientConfig.getKeyManagers()[0]);
@@ -97,6 +128,32 @@ public class HttpClientConfigTest {
 
         httpClientConfig.setCustomClientClassName("test");
         Assert.assertEquals("test", httpClientConfig.getCustomClientClassName());
+
+        SecureRandom secureRandom = new SecureRandom();
+        httpClientConfig.setSecureRandom(secureRandom);
+        Assert.assertEquals(secureRandom, httpClientConfig.getSecureRandom());
+
+        httpClientConfig.setMaxRequests(100);
+        Assert.assertEquals(100,httpClientConfig.getMaxRequests());
+
+        httpClientConfig.setMaxRequestsPerHost(100);
+        Assert.assertEquals(100,httpClientConfig.getMaxRequestsPerHost());
+
+        ExecutorService executorService = mock(ExecutorService.class);
+        httpClientConfig.setExecutorService(executorService);
+        Assert.assertEquals(executorService, httpClientConfig.getExecutorService());
+
+        Runnable callback = mock(Runnable.class);
+        httpClientConfig.setIdleCallback(callback);
+        Assert.assertEquals(callback, httpClientConfig.getIdleCallback());
+
+        httpClientConfig.setIgnoreSSLCerts(true);
+        Assert.assertEquals(true, httpClientConfig.isIgnoreSSLCerts());
+
+        httpClientConfig.setProtocolType(ProtocolType.HTTPS);
+        Assert.assertEquals(ProtocolType.HTTPS, httpClientConfig.getProtocolType());
+
     }
+
 
 }

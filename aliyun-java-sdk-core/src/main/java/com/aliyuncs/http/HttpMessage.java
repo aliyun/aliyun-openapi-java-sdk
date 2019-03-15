@@ -3,6 +3,8 @@ package com.aliyuncs.http;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.ParameterHelper;
 
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.X509TrustManager;
 import java.io.UnsupportedEncodingException;
 import java.util.Collections;
 import java.util.HashMap;
@@ -21,6 +23,33 @@ public abstract class HttpMessage {
     protected Integer readTimeout = null;
     private String url = null;
     private MethodType method = null;
+    protected boolean ignoreSSLCerts = false;
+    private KeyManager[] keyManagers = null;
+    private X509TrustManager[] x509TrustManagers = null;
+
+    public KeyManager[] getKeyManagers() {
+        return keyManagers;
+    }
+
+    public void setKeyManagers(KeyManager[] keyManagers) {
+        this.keyManagers = keyManagers;
+    }
+
+    public X509TrustManager[] getX509TrustManagers() {
+        return x509TrustManagers;
+    }
+
+    public void setX509TrustManagers(X509TrustManager[] x509TrustManagers) {
+        this.x509TrustManagers = x509TrustManagers;
+    }
+
+    public boolean isIgnoreSSLCerts() {
+        return ignoreSSLCerts;
+    }
+
+    public void setIgnoreSSLCerts(boolean ignoreSSLCerts) {
+        this.ignoreSSLCerts = ignoreSSLCerts;
+    }
 
     public HttpMessage(String strUrl) {
         this.url = strUrl;
