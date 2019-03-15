@@ -6,7 +6,7 @@ import java.io.IOException;
 
 
 public class AuthUtils {
-    private static volatile String clientType = "default";
+    private static volatile String clientType = System.getenv("ALIBABA_CLOUD_PROFILE");
     private static volatile String environmentAccessKeyId;
     private static volatile String environmentAccesskeySecret;
     private static volatile String environmentECSMetaData;
@@ -46,7 +46,12 @@ public class AuthUtils {
     }
 
     public static String getClientType() {
-        return clientType;
+        if (null == clientType) {
+            AuthUtils.clientType = "default";
+            return AuthUtils.clientType;
+        } else {
+            return AuthUtils.clientType;
+        }
     }
 
     public static void setClientType(String clientType) {
