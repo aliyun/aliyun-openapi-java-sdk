@@ -15,7 +15,6 @@
 package com.aliyuncs.hsm.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -25,7 +24,6 @@ public class ConfigWhiteListRequest extends RpcAcsRequest<ConfigWhiteListRespons
 	
 	public ConfigWhiteListRequest() {
 		super("hsm", "2018-01-11", "ConfigWhiteList", "hsm");
-		setMethod(MethodType.POST);
 	}
 
 	private Long resourceOwnerId;

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetLoanApplyRecordListRequest extends RpcAcsRequest<GetLoanApplyRecordListResponse> {
 	
 	public GetLoanApplyRecordListRequest() {
-		super("finmall", "2018-07-23", "GetLoanApplyRecordList", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetLoanApplyRecordList", "finmall");
 		setMethod(MethodType.POST);
 	}
 

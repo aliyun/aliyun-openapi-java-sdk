@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRiskTrendRequest extends RpcAcsRequest<DescribeRiskTrendResponse> {
 	
 	public DescribeRiskTrendRequest() {
-		super("jarvis", "2018-02-06", "DescribeRiskTrend");
+		super("jarvis", "2018-02-06", "DescribeRiskTrend", "jarvis");
 	}
 
 	private String sourceIp;

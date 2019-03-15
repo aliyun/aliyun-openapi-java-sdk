@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.PlayInfoResponse;
 import com.aliyuncs.mts.model.v20140618.PlayInfoResponse.PlayInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

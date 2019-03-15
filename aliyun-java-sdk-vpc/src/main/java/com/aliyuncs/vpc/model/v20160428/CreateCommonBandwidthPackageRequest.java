@@ -34,15 +34,21 @@ public class CreateCommonBandwidthPackageRequest extends RpcAcsRequest<CreateCom
 
 	private Integer bandwidth;
 
-	private String internetChargeType;
-
 	private String ownerAccount;
 
-	private String name;
+	private String iSP;
 
 	private String description;
 
 	private Long ownerId;
+
+	private String resourceGroupId;
+
+	private String zone;
+
+	private String internetChargeType;
+
+	private String name;
 
 	private Integer ratio;
 
@@ -90,17 +96,6 @@ public class CreateCommonBandwidthPackageRequest extends RpcAcsRequest<CreateCom
 		}
 	}
 
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -112,14 +107,14 @@ public class CreateCommonBandwidthPackageRequest extends RpcAcsRequest<CreateCom
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getISP() {
+		return this.iSP;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+		if(iSP != null){
+			putQueryParameter("ISP", iSP);
 		}
 	}
 
@@ -142,6 +137,50 @@ public class CreateCommonBandwidthPackageRequest extends RpcAcsRequest<CreateCom
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getZone() {
+		return this.zone;
+	}
+
+	public void setZone(String zone) {
+		this.zone = zone;
+		if(zone != null){
+			putQueryParameter("Zone", zone);
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

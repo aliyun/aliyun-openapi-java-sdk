@@ -25,7 +25,6 @@ import com.aliyuncs.mts.model.v20140618.QueryPornJobListResponse.PornJob.CensorP
 import com.aliyuncs.mts.model.v20140618.QueryPornJobListResponse.PornJob.Input;
 import com.aliyuncs.mts.model.v20140618.QueryPornJobListResponse.PornJob.PornConfig;
 import com.aliyuncs.mts.model.v20140618.QueryPornJobListResponse.PornJob.PornConfig.OutputFile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -29,15 +29,17 @@ public class ListFlowNodeInstanceRequest extends RpcAcsRequest<ListFlowNodeInsta
 
 	private List<String> statusLists;
 
-	private String fromApp;
-
 	private Integer pageSize;
+
+	private String orderBy;
 
 	private Long startTime;
 
 	private String projectId;
 
 	private Integer pageNumber;
+
+	private String orderType;
 
 	public List<String> getStatusLists() {
 		return this.statusLists;
@@ -52,17 +54,6 @@ public class ListFlowNodeInstanceRequest extends RpcAcsRequest<ListFlowNodeInsta
 		}	
 	}
 
-	public String getFromApp() {
-		return this.fromApp;
-	}
-
-	public void setFromApp(String fromApp) {
-		this.fromApp = fromApp;
-		if(fromApp != null){
-			putQueryParameter("FromApp", fromApp);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -71,6 +62,17 @@ public class ListFlowNodeInstanceRequest extends RpcAcsRequest<ListFlowNodeInsta
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
 		}
 	}
 
@@ -104,6 +106,17 @@ public class ListFlowNodeInstanceRequest extends RpcAcsRequest<ListFlowNodeInsta
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 

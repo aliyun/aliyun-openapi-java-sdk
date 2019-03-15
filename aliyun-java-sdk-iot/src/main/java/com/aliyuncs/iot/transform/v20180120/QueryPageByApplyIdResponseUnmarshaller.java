@@ -41,6 +41,7 @@ public class QueryPageByApplyIdResponseUnmarshaller {
 			applyDeviceInfo.setDeviceId(context.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].DeviceId"));
 			applyDeviceInfo.setDeviceName(context.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].DeviceName"));
 			applyDeviceInfo.setDeviceSecret(context.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].DeviceSecret"));
+			applyDeviceInfo.setIotId(context.stringValue("QueryPageByApplyIdResponse.ApplyDeviceList["+ i +"].IotId"));
 
 			applyDeviceList.add(applyDeviceInfo);
 		}

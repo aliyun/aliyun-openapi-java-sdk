@@ -147,10 +147,26 @@ public class DescribeCpmcPunishListResponse extends AcsResponse {
 			this.punishResult = punishResult;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -163,10 +179,26 @@ public class DescribeCpmcPunishListResponse extends AcsResponse {
 			this.dstPort = dstPort;
 		}
 
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		/**
+		 * @deprecated use getBizProtocol instead of this.
+		 */
+		@Deprecated
 		public String getProtocol() {
 			return this.protocol;
 		}
 
+		/**
+		 * @deprecated use setBizProtocol instead of this.
+		 */
+		@Deprecated
 		public void setProtocol(String protocol) {
 			this.protocol = protocol;
 		}

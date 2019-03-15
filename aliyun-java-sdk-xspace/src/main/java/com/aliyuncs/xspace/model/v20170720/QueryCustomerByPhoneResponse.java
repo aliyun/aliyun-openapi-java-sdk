@@ -15,7 +15,6 @@
 package com.aliyuncs.xspace.model.v20170720;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.xspace.transform.v20170720.QueryCustomerByPhoneResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -184,6 +183,10 @@ public class QueryCustomerByPhoneResponse extends AcsResponse {
 
 			private String abcUrl;
 
+			private String distributionLevel;
+
+			private String mainAccountUid;
+
 			private List<String> associatePersonList;
 
 			public String getCid() {
@@ -200,6 +203,22 @@ public class QueryCustomerByPhoneResponse extends AcsResponse {
 
 			public void setAbcUrl(String abcUrl) {
 				this.abcUrl = abcUrl;
+			}
+
+			public String getDistributionLevel() {
+				return this.distributionLevel;
+			}
+
+			public void setDistributionLevel(String distributionLevel) {
+				this.distributionLevel = distributionLevel;
+			}
+
+			public String getMainAccountUid() {
+				return this.mainAccountUid;
+			}
+
+			public void setMainAccountUid(String mainAccountUid) {
+				this.mainAccountUid = mainAccountUid;
 			}
 
 			public List<String> getAssociatePersonList() {

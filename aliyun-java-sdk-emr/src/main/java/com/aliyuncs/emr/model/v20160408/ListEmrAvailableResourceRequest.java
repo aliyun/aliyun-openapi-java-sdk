@@ -28,6 +28,8 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 
 	private Long resourceOwnerId;
 
+	private String clusterId;
+
 	private String depositType;
 
 	private String destinationResource;
@@ -56,6 +58,17 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

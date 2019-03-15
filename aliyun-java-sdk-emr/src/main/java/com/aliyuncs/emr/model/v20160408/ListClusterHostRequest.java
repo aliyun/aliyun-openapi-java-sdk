@@ -47,6 +47,8 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 
 	private String groupType;
 
+	private String hostGroupId;
+
 	private Integer pageSize;
 
 	public Long getResourceOwnerId() {
@@ -158,6 +160,17 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		this.groupType = groupType;
 		if(groupType != null){
 			putQueryParameter("GroupType", groupType);
+		}
+	}
+
+	public String getHostGroupId() {
+		return this.hostGroupId;
+	}
+
+	public void setHostGroupId(String hostGroupId) {
+		this.hostGroupId = hostGroupId;
+		if(hostGroupId != null){
+			putQueryParameter("HostGroupId", hostGroupId);
 		}
 	}
 

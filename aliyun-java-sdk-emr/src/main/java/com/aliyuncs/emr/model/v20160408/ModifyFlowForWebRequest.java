@@ -54,6 +54,8 @@ public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebRespo
 
 	private String id;
 
+	private String alertConf;
+
 	private String projectId;
 
 	private String status;
@@ -211,6 +213,17 @@ public class ModifyFlowForWebRequest extends RpcAcsRequest<ModifyFlowForWebRespo
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
+		}
+	}
+
+	public String getAlertConf() {
+		return this.alertConf;
+	}
+
+	public void setAlertConf(String alertConf) {
+		this.alertConf = alertConf;
+		if(alertConf != null){
+			putQueryParameter("AlertConf", alertConf);
 		}
 	}
 

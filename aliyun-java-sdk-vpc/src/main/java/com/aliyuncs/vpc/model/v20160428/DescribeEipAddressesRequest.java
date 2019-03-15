@@ -32,6 +32,8 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private String filter2Value;
 
+	private String iSP;
+
 	private String ownerAccount;
 
 	private String allocationId;
@@ -41,6 +43,8 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 	private String filter2Key;
 
 	private Long ownerId;
+
+	private Boolean includeReservationData;
 
 	private String eipAddress;
 
@@ -92,6 +96,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.filter2Value = filter2Value;
 		if(filter2Value != null){
 			putQueryParameter("Filter.2.Value", filter2Value);
+		}
+	}
+
+	public String getISP() {
+		return this.iSP;
+	}
+
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+		if(iSP != null){
+			putQueryParameter("ISP", iSP);
 		}
 	}
 
@@ -147,6 +162,17 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
 		}
 	}
 

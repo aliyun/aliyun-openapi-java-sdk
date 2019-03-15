@@ -26,6 +26,8 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 		super("Vpc", "2016-04-28", "DescribeCommonBandwidthPackages", "vpc");
 	}
 
+	private String resourceGroupId;
+
 	private Long resourceOwnerId;
 
 	private String bandwidthPackageId;
@@ -40,7 +42,20 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 
+	private Boolean includeReservationData;
+
 	private Integer pageNumber;
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -116,6 +131,17 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
 		}
 	}
 

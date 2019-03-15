@@ -33,7 +33,9 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 
 	private Integer total;
 
-	private List<Host> hostList;
+	private String clusterId;
+
+	private List<HostGroup> hostGroupList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,27 +69,45 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public List<Host> getHostList() {
-		return this.hostList;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setHostList(List<Host> hostList) {
-		this.hostList = hostList;
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
 	}
 
-	public static class Host {
+	public List<HostGroup> getHostGroupList() {
+		return this.hostGroupList;
+	}
 
-		private String hostId;
+	public void setHostGroupList(List<HostGroup> hostGroupList) {
+		this.hostGroupList = hostGroupList;
+	}
 
-		private String hostName;
+	public static class HostGroup {
 
-		private String publicIp;
+		private String hostGroupId;
 
-		private String privateIp;
+		private String hostGroupName;
 
-		private String role;
+		private String hostGroupType;
+
+		private String hostGroupSubType;
 
 		private String instanceType;
+
+		private String systemDiskType;
+
+		private Integer systemDiskSize;
+
+		private Integer systemDiskCount;
+
+		private String dataDiskType;
+
+		private Integer dataDiskSize;
+
+		private Integer dataDiskCount;
 
 		private Integer cpu;
 
@@ -95,50 +115,54 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 
 		private String status;
 
-		private String type;
+		private String lockType;
 
-		private String hostInstanceId;
+		private String lockReason;
 
-		private String serialNumber;
+		private String payType;
 
-		public String getHostId() {
-			return this.hostId;
+		private Integer nodeCount;
+
+		private String vswitchId;
+
+		private String comment;
+
+		private String securityGroupId;
+
+		private String gmtCreate;
+
+		private String gmtModified;
+
+		public String getHostGroupId() {
+			return this.hostGroupId;
 		}
 
-		public void setHostId(String hostId) {
-			this.hostId = hostId;
+		public void setHostGroupId(String hostGroupId) {
+			this.hostGroupId = hostGroupId;
 		}
 
-		public String getHostName() {
-			return this.hostName;
+		public String getHostGroupName() {
+			return this.hostGroupName;
 		}
 
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
+		public void setHostGroupName(String hostGroupName) {
+			this.hostGroupName = hostGroupName;
 		}
 
-		public String getPublicIp() {
-			return this.publicIp;
+		public String getHostGroupType() {
+			return this.hostGroupType;
 		}
 
-		public void setPublicIp(String publicIp) {
-			this.publicIp = publicIp;
+		public void setHostGroupType(String hostGroupType) {
+			this.hostGroupType = hostGroupType;
 		}
 
-		public String getPrivateIp() {
-			return this.privateIp;
+		public String getHostGroupSubType() {
+			return this.hostGroupSubType;
 		}
 
-		public void setPrivateIp(String privateIp) {
-			this.privateIp = privateIp;
-		}
-
-		public String getRole() {
-			return this.role;
-		}
-
-		public void setRole(String role) {
-			this.role = role;
+		public void setHostGroupSubType(String hostGroupSubType) {
+			this.hostGroupSubType = hostGroupSubType;
 		}
 
 		public String getInstanceType() {
@@ -147,6 +171,54 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 
 		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
+		}
+
+		public String getSystemDiskType() {
+			return this.systemDiskType;
+		}
+
+		public void setSystemDiskType(String systemDiskType) {
+			this.systemDiskType = systemDiskType;
+		}
+
+		public Integer getSystemDiskSize() {
+			return this.systemDiskSize;
+		}
+
+		public void setSystemDiskSize(Integer systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
+		}
+
+		public Integer getSystemDiskCount() {
+			return this.systemDiskCount;
+		}
+
+		public void setSystemDiskCount(Integer systemDiskCount) {
+			this.systemDiskCount = systemDiskCount;
+		}
+
+		public String getDataDiskType() {
+			return this.dataDiskType;
+		}
+
+		public void setDataDiskType(String dataDiskType) {
+			this.dataDiskType = dataDiskType;
+		}
+
+		public Integer getDataDiskSize() {
+			return this.dataDiskSize;
+		}
+
+		public void setDataDiskSize(Integer dataDiskSize) {
+			this.dataDiskSize = dataDiskSize;
+		}
+
+		public Integer getDataDiskCount() {
+			return this.dataDiskCount;
+		}
+
+		public void setDataDiskCount(Integer dataDiskCount) {
+			this.dataDiskCount = dataDiskCount;
 		}
 
 		public Integer getCpu() {
@@ -173,28 +245,76 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getType() {
-			return this.type;
+		public String getLockType() {
+			return this.lockType;
 		}
 
-		public void setType(String type) {
-			this.type = type;
+		public void setLockType(String lockType) {
+			this.lockType = lockType;
 		}
 
-		public String getHostInstanceId() {
-			return this.hostInstanceId;
+		public String getLockReason() {
+			return this.lockReason;
 		}
 
-		public void setHostInstanceId(String hostInstanceId) {
-			this.hostInstanceId = hostInstanceId;
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
 		}
 
-		public String getSerialNumber() {
-			return this.serialNumber;
+		public String getPayType() {
+			return this.payType;
 		}
 
-		public void setSerialNumber(String serialNumber) {
-			this.serialNumber = serialNumber;
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public Integer getNodeCount() {
+			return this.nodeCount;
+		}
+
+		public void setNodeCount(Integer nodeCount) {
+			this.nodeCount = nodeCount;
+		}
+
+		public String getVswitchId() {
+			return this.vswitchId;
+		}
+
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
+		}
+
+		public String getSecurityGroupId() {
+			return this.securityGroupId;
+		}
+
+		public void setSecurityGroupId(String securityGroupId) {
+			this.securityGroupId = securityGroupId;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public String getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(String gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 	}
 

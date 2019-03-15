@@ -28,11 +28,7 @@ public class MigrateJobsRequest extends RpcAcsRequest<MigrateJobsResponse> {
 
 	private Long resourceOwnerId;
 
-	private String fromApp;
-
-	private String ids;
-
-	private String userId;
+	private String projectName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -45,36 +41,14 @@ public class MigrateJobsRequest extends RpcAcsRequest<MigrateJobsResponse> {
 		}
 	}
 
-	public String getFromApp() {
-		return this.fromApp;
+	public String getProjectName() {
+		return this.projectName;
 	}
 
-	public void setFromApp(String fromApp) {
-		this.fromApp = fromApp;
-		if(fromApp != null){
-			putQueryParameter("FromApp", fromApp);
-		}
-	}
-
-	public String getIds() {
-		return this.ids;
-	}
-
-	public void setIds(String ids) {
-		this.ids = ids;
-		if(ids != null){
-			putQueryParameter("Ids", ids);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putQueryParameter("ProjectName", projectName);
 		}
 	}
 

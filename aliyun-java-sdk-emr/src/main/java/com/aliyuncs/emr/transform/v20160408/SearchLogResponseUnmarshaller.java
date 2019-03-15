@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.SearchLogResponse;
 import com.aliyuncs.emr.model.v20160408.SearchLogResponse.SlsLogItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +37,8 @@ public class SearchLogResponseUnmarshaller {
 			slsLogItem.setHostName(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].HostName"));
 			slsLogItem.setPath(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].Path"));
 			slsLogItem.setContent(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].Content"));
+			slsLogItem.setPackMeta(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].PackMeta"));
+			slsLogItem.setPackId(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].PackId"));
 
 			slsLogItemList.add(slsLogItem);
 		}

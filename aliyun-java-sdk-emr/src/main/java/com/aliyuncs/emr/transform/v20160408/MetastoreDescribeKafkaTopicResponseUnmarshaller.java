@@ -19,8 +19,9 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeKafkaTopicResponse;
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeKafkaTopicResponse.AdvancedConfig;
+import com.aliyuncs.emr.model.v20160408.MetastoreDescribeKafkaTopicResponse.Cluster;
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeKafkaTopicResponse.Distribution;
-import java.util.Map;
+import com.aliyuncs.emr.model.v20160408.MetastoreDescribeKafkaTopicResponse.Summary;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,29 +32,22 @@ public class MetastoreDescribeKafkaTopicResponseUnmarshaller {
 		metastoreDescribeKafkaTopicResponse.setRequestId(context.stringValue("MetastoreDescribeKafkaTopicResponse.RequestId"));
 		metastoreDescribeKafkaTopicResponse.setId(context.stringValue("MetastoreDescribeKafkaTopicResponse.Id"));
 		metastoreDescribeKafkaTopicResponse.setDataSourceId(context.stringValue("MetastoreDescribeKafkaTopicResponse.DataSourceId"));
+		metastoreDescribeKafkaTopicResponse.setTopicName(context.stringValue("MetastoreDescribeKafkaTopicResponse.TopicName"));
 		metastoreDescribeKafkaTopicResponse.setNumPartitions(context.integerValue("MetastoreDescribeKafkaTopicResponse.NumPartitions"));
 		metastoreDescribeKafkaTopicResponse.setReplicationFactor(context.integerValue("MetastoreDescribeKafkaTopicResponse.ReplicationFactor"));
 		metastoreDescribeKafkaTopicResponse.setGmtCreate(context.longValue("MetastoreDescribeKafkaTopicResponse.GmtCreate"));
 		metastoreDescribeKafkaTopicResponse.setGmtModified(context.longValue("MetastoreDescribeKafkaTopicResponse.GmtModified"));
+		metastoreDescribeKafkaTopicResponse.setBrokerTotal(context.integerValue("MetastoreDescribeKafkaTopicResponse.BrokerTotal"));
+		metastoreDescribeKafkaTopicResponse.setNumUsingBrokers(context.integerValue("MetastoreDescribeKafkaTopicResponse.NumUsingBrokers"));
+		metastoreDescribeKafkaTopicResponse.setBrokersLeaderSkewPercentage(context.stringValue("MetastoreDescribeKafkaTopicResponse.BrokersLeaderSkewPercentage"));
+		metastoreDescribeKafkaTopicResponse.setUnderReplicatedPercentage(context.stringValue("MetastoreDescribeKafkaTopicResponse.UnderReplicatedPercentage"));
+		metastoreDescribeKafkaTopicResponse.setPreferredReplicasPercentage(context.stringValue("MetastoreDescribeKafkaTopicResponse.PreferredReplicasPercentage"));
 
-		Distribution distribution = new Distribution();
-		distribution.setPartition(context.integerValue("MetastoreDescribeKafkaTopicResponse.Distribution.Partition"));
-		distribution.setLeader(context.integerValue("MetastoreDescribeKafkaTopicResponse.Distribution.Leader"));
-		distribution.setPreferredLeader(context.booleanValue("MetastoreDescribeKafkaTopicResponse.Distribution.PreferredLeader"));
-		distribution.setUnderReplicated(context.booleanValue("MetastoreDescribeKafkaTopicResponse.Distribution.UnderReplicated"));
-
-		List<String> isrList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("MetastoreDescribeKafkaTopicResponse.Distribution.IsrList.Length"); i++) {
-			isrList.add(context.stringValue("MetastoreDescribeKafkaTopicResponse.Distribution.IsrList["+ i +"]"));
-		}
-		distribution.setIsrList(isrList);
-
-		List<String> replicaList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("MetastoreDescribeKafkaTopicResponse.Distribution.ReplicaList.Length"); i++) {
-			replicaList.add(context.stringValue("MetastoreDescribeKafkaTopicResponse.Distribution.ReplicaList["+ i +"]"));
-		}
-		distribution.setReplicaList(replicaList);
-		metastoreDescribeKafkaTopicResponse.setDistribution(distribution);
+		Cluster cluster = new Cluster();
+		cluster.setClusterBizId(context.stringValue("MetastoreDescribeKafkaTopicResponse.Cluster.ClusterBizId"));
+		cluster.setClusterName(context.stringValue("MetastoreDescribeKafkaTopicResponse.Cluster.ClusterName"));
+		cluster.setClusterStatus(context.stringValue("MetastoreDescribeKafkaTopicResponse.Cluster.ClusterStatus"));
+		metastoreDescribeKafkaTopicResponse.setCluster(cluster);
 
 		List<AdvancedConfig> advancedConfigList = new ArrayList<AdvancedConfig>();
 		for (int i = 0; i < context.lengthValue("MetastoreDescribeKafkaTopicResponse.AdvancedConfigList.Length"); i++) {
@@ -64,6 +58,42 @@ public class MetastoreDescribeKafkaTopicResponseUnmarshaller {
 			advancedConfigList.add(advancedConfig);
 		}
 		metastoreDescribeKafkaTopicResponse.setAdvancedConfigList(advancedConfigList);
+
+		List<Summary> summaryList = new ArrayList<Summary>();
+		for (int i = 0; i < context.lengthValue("MetastoreDescribeKafkaTopicResponse.SummaryList.Length"); i++) {
+			Summary summary = new Summary();
+			summary.setKey(context.stringValue("MetastoreDescribeKafkaTopicResponse.SummaryList["+ i +"].Key"));
+			summary.setValue(context.stringValue("MetastoreDescribeKafkaTopicResponse.SummaryList["+ i +"].Value"));
+
+			summaryList.add(summary);
+		}
+		metastoreDescribeKafkaTopicResponse.setSummaryList(summaryList);
+
+		List<Distribution> distributionList = new ArrayList<Distribution>();
+		for (int i = 0; i < context.lengthValue("MetastoreDescribeKafkaTopicResponse.DistributionList.Length"); i++) {
+			Distribution distribution = new Distribution();
+			distribution.setPartition(context.integerValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].Partition"));
+			distribution.setOffset(context.longValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].Offset"));
+			distribution.setLeader(context.integerValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].Leader"));
+			distribution.setPreferredLeader(context.booleanValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].PreferredLeader"));
+			distribution.setUnderReplicated(context.booleanValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].UnderReplicated"));
+			distribution.setLogEndOffset(context.longValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].LogEndOffset"));
+
+			List<String> isrList = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].IsrList.Length"); j++) {
+				isrList.add(context.stringValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].IsrList["+ j +"]"));
+			}
+			distribution.setIsrList(isrList);
+
+			List<String> replicaList = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].ReplicaList.Length"); j++) {
+				replicaList.add(context.stringValue("MetastoreDescribeKafkaTopicResponse.DistributionList["+ i +"].ReplicaList["+ j +"]"));
+			}
+			distribution.setReplicaList(replicaList);
+
+			distributionList.add(distribution);
+		}
+		metastoreDescribeKafkaTopicResponse.setDistributionList(distributionList);
 	 
 	 	return metastoreDescribeKafkaTopicResponse;
 	}

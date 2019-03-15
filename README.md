@@ -53,6 +53,7 @@ If maven is not downloading jar packages from a central repository, you need to 
 ```
 ## Initiate a call
 
+
 The following code example shows the three main steps to use Alibaba Cloud Java SDK:
 
 1. Create and initialize a `DefaultAcsClient` instance.
@@ -60,6 +61,8 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
 2. Create an API request and set parameters.
 
 3. Initiate the request and handle the response or exceptions.
+
+### Using AccessKey call
 
 ```java
  package com.testprogram;
@@ -95,6 +98,43 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
      }
  }
 ```
+### Using BearerToken call
+
+Only CCC supports this method
+
+```java
+ package com.testprogram;
+ import com.aliyuncs.profile.DefaultProfile;
+ import com.aliyuncs.DefaultAcsClient;
+ import com.aliyuncs.IAcsClient;
+ import com.aliyuncs.exceptions.ClientException;
+ import com.aliyuncs.exceptions.ServerException;
+ import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersRequest;
+ import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersResponse;
+ public class Main {
+     public static void main(String[] args) {
+         // Create and initialize a DefaultAcsClient instance
+         DefaultProfile profile = DefaultProfile.getProfile(
+             "<your-region-id>"         // The region ID
+         ); 
+         BearerTokenCredentials bearerTokenCredential = new BearerTokenCredentials("<your-bearer-token>");
+         DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
+         // Create an API request and set parameters
+         ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
+         request.getInstanceId("yourId");
+         request.setOutboundOnly(true);
+         // Initiate the request and handle the response or exceptions
+         ListPhoneNumbersResponse response; 
+         try {
+             response = client.getAcsResponse(request);
+         } catch (ServerException e) {
+             e.printStackTrace();
+         } catch (ClientException e) {
+             e.printStackTrace();
+         }
+     }
+ }
+```
 
 ## Debugging
 If there is an environment variable DEBUG=sdk , all http request/response will work in debug mode.
@@ -116,4 +156,21 @@ clientConfig.setMaxRequests(60);
 
 profile.setHttpClientConfig(clientConfig);
 IAcsClient client = new DefaultAcsClient(profile);
+```
+
+## Timeout
+Request Settings -> Client Settings -> Default Settings, priority from high to low;
+The default ConnectTimeout is 5 seconds and the ReadTimeout is 10 seconds.
+```java
+//The client setting is valid for all requests
+HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+clientConfig.setReadTimeoutMillis(readTimeoutMillis);
+clientConfig.setConnectionTimeoutMillis(connectionTimeoutMillis);
+IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+profile.setHttpClientConfig(clientConfig);
+DefaultAcsClient client = new DefaultAcsClient(profile);
+
+//The request setting, valid only for the current request
+request.setSysReadTimeout(readTimeoutMillis);
+request.setConnectionTimeoutMillis(connectionTimeoutMillis);
 ```

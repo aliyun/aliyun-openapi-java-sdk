@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCustomerVerifyInfoRequest extends RpcAcsRequest<GetCustomerVerifyInfoResponse> {
 	
 	public GetCustomerVerifyInfoRequest() {
-		super("finmall", "2018-07-23", "GetCustomerVerifyInfo", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetCustomerVerifyInfo", "finmall");
 	}
 
 	private String userId;

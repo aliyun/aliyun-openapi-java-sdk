@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCreditSignatureInfoRequest extends RpcAcsRequest<GetCreditSignatureInfoResponse> {
 	
 	public GetCreditSignatureInfoRequest() {
-		super("finmall", "2018-07-23", "GetCreditSignatureInfo", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetCreditSignatureInfo", "finmall");
 	}
 
 	private String creditId;

@@ -435,6 +435,10 @@ public class FindImagesResponse extends AcsResponse {
 
 			private Float emotionConfidence;
 
+			private String groupId;
+
+			private Float faceQuality;
+
 			private EmotionDetails emotionDetails;
 
 			private FaceAttributes faceAttributes;
@@ -501,6 +505,22 @@ public class FindImagesResponse extends AcsResponse {
 
 			public void setEmotionConfidence(Float emotionConfidence) {
 				this.emotionConfidence = emotionConfidence;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public Float getFaceQuality() {
+				return this.faceQuality;
+			}
+
+			public void setFaceQuality(Float faceQuality) {
+				this.faceQuality = faceQuality;
 			}
 
 			public EmotionDetails getEmotionDetails() {
@@ -612,6 +632,8 @@ public class FindImagesResponse extends AcsResponse {
 
 				private FaceBoundary faceBoundary;
 
+				private HeadPose headPose;
+
 				public Float getGlassesConfidence() {
 					return this.glassesConfidence;
 				}
@@ -684,6 +706,14 @@ public class FindImagesResponse extends AcsResponse {
 					this.faceBoundary = faceBoundary;
 				}
 
+				public HeadPose getHeadPose() {
+					return this.headPose;
+				}
+
+				public void setHeadPose(HeadPose headPose) {
+					this.headPose = headPose;
+				}
+
 				public static class FaceBoundary {
 
 					private Integer top;
@@ -724,6 +754,39 @@ public class FindImagesResponse extends AcsResponse {
 
 					public void setLeft(Integer left) {
 						this.left = left;
+					}
+				}
+
+				public static class HeadPose {
+
+					private Float pitch;
+
+					private Float roll;
+
+					private Float yaw;
+
+					public Float getPitch() {
+						return this.pitch;
+					}
+
+					public void setPitch(Float pitch) {
+						this.pitch = pitch;
+					}
+
+					public Float getRoll() {
+						return this.roll;
+					}
+
+					public void setRoll(Float roll) {
+						this.roll = roll;
+					}
+
+					public Float getYaw() {
+						return this.yaw;
+					}
+
+					public void setYaw(Float yaw) {
+						this.yaw = yaw;
 					}
 				}
 			}

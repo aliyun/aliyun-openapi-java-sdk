@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMarketCategoriesRequest extends RpcAcsRequest<QueryMarketCategoriesResponse> {
 	
 	public QueryMarketCategoriesRequest() {
-		super("Market", "2015-11-01", "QueryMarketCategories", "yunmarket");
+		super("Market", "2015-11-01", "QueryMarketCategories", "market");
 	}
 
 	@Override

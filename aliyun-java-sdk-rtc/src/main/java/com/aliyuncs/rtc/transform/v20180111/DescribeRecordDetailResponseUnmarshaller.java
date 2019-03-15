@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.rtc.model.v20180111.DescribeRecordDetailResponse;
 import com.aliyuncs.rtc.model.v20180111.DescribeRecordDetailResponse.Duration;
 import com.aliyuncs.rtc.model.v20180111.DescribeRecordDetailResponse.RecordDetailInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

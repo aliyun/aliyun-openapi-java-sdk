@@ -72,6 +72,8 @@ public class GetCustomStatusInfoResponse extends AcsResponse {
 
 		private String validateTime;
 
+		private String customId;
+
 		public String getUserState() {
 			return this.userState;
 		}
@@ -94,6 +96,14 @@ public class GetCustomStatusInfoResponse extends AcsResponse {
 
 		public void setValidateTime(String validateTime) {
 			this.validateTime = validateTime;
+		}
+
+		public String getCustomId() {
+			return this.customId;
+		}
+
+		public void setCustomId(String customId) {
+			this.customId = customId;
 		}
 	}
 

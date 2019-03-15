@@ -93,6 +93,10 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private Long expiredTime;
 
+		private Integer deployType;
+
+		private String sslEndPoint;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -101,10 +105,26 @@ public class GetInstanceListResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -155,6 +175,22 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		public void setExpiredTime(Long expiredTime) {
 			this.expiredTime = expiredTime;
+		}
+
+		public Integer getDeployType() {
+			return this.deployType;
+		}
+
+		public void setDeployType(Integer deployType) {
+			this.deployType = deployType;
+		}
+
+		public String getSslEndPoint() {
+			return this.sslEndPoint;
+		}
+
+		public void setSslEndPoint(String sslEndPoint) {
+			this.sslEndPoint = sslEndPoint;
 		}
 	}
 

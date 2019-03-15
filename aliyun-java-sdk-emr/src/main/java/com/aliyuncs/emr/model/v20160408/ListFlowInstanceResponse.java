@@ -93,11 +93,15 @@ public class ListFlowInstanceResponse extends AcsResponse {
 
 		private String clusterId;
 
+		private String owner;
+
 		private Long startTime;
 
 		private Long endTime;
 
 		private Long duration;
+
+		private Boolean hasNodeFailed;
 
 		public String getId() {
 			return this.id;
@@ -163,6 +167,14 @@ public class ListFlowInstanceResponse extends AcsResponse {
 			this.clusterId = clusterId;
 		}
 
+		public String getOwner() {
+			return this.owner;
+		}
+
+		public void setOwner(String owner) {
+			this.owner = owner;
+		}
+
 		public Long getStartTime() {
 			return this.startTime;
 		}
@@ -185,6 +197,14 @@ public class ListFlowInstanceResponse extends AcsResponse {
 
 		public void setDuration(Long duration) {
 			this.duration = duration;
+		}
+
+		public Boolean getHasNodeFailed() {
+			return this.hasNodeFailed;
+		}
+
+		public void setHasNodeFailed(Boolean hasNodeFailed) {
+			this.hasNodeFailed = hasNodeFailed;
 		}
 	}
 

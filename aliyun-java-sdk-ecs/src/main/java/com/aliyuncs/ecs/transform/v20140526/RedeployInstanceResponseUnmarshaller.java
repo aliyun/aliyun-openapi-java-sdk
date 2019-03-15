@@ -23,6 +23,7 @@ public class RedeployInstanceResponseUnmarshaller {
 	public static RedeployInstanceResponse unmarshall(RedeployInstanceResponse redeployInstanceResponse, UnmarshallerContext context) {
 		
 		redeployInstanceResponse.setRequestId(context.stringValue("RedeployInstanceResponse.RequestId"));
+		redeployInstanceResponse.setTaskId(context.stringValue("RedeployInstanceResponse.TaskId"));
 	 
 	 	return redeployInstanceResponse;
 	}

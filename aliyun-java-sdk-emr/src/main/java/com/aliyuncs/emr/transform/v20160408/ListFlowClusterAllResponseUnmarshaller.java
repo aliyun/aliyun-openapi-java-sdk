@@ -21,7 +21,6 @@ import com.aliyuncs.emr.model.v20160408.ListFlowClusterAllResponse;
 import com.aliyuncs.emr.model.v20160408.ListFlowClusterAllResponse.ClusterInfo;
 import com.aliyuncs.emr.model.v20160408.ListFlowClusterAllResponse.ClusterInfo.FailReason;
 import com.aliyuncs.emr.model.v20160408.ListFlowClusterAllResponse.ClusterInfo.OrderTaskInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

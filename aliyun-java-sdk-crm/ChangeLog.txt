@@ -1,3 +1,6 @@
+2019-03-15 Version: 2.2.1
+1,  Update Dependency
+
 2018-10-24 Version: 2.2.0
 1,  Add feature to support lightweight bid user to operate realname certification.
 

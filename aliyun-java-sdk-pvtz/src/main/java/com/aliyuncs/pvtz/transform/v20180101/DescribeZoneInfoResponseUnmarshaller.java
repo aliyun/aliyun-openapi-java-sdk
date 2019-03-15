@@ -36,6 +36,7 @@ public class DescribeZoneInfoResponseUnmarshaller {
 		describeZoneInfoResponse.setUpdateTime(context.stringValue("DescribeZoneInfoResponse.UpdateTime"));
 		describeZoneInfoResponse.setUpdateTimestamp(context.longValue("DescribeZoneInfoResponse.UpdateTimestamp"));
 		describeZoneInfoResponse.setIsPtr(context.booleanValue("DescribeZoneInfoResponse.IsPtr"));
+		describeZoneInfoResponse.setProxyPattern(context.stringValue("DescribeZoneInfoResponse.ProxyPattern"));
 
 		List<Vpc> bindVpcs = new ArrayList<Vpc>();
 		for (int i = 0; i < context.lengthValue("DescribeZoneInfoResponse.BindVpcs.Length"); i++) {
@@ -44,6 +45,7 @@ public class DescribeZoneInfoResponseUnmarshaller {
 			vpc.setVpcId(context.stringValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].VpcId"));
 			vpc.setVpcName(context.stringValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].VpcName"));
 			vpc.setRegionName(context.stringValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].RegionName"));
+			vpc.setRegionId(context.stringValue("DescribeZoneInfoResponse.BindVpcs["+ i +"].RegionId"));
 
 			bindVpcs.add(vpc);
 		}

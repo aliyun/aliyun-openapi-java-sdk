@@ -26,47 +26,25 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		super("Vpc", "2016-04-28", "DescribeVpcs", "vpc");
 	}
 
-	private String vpcName;
-
-	private String resourceGroupId;
-
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String vpcId;
-
 	private String ownerAccount;
-
-	private Integer pageSize;
-
-	private Boolean isDefault;
 
 	private Long ownerId;
 
 	private Integer pageNumber;
 
-	public String getVpcName() {
-		return this.vpcName;
-	}
+	private String vpcName;
 
-	public void setVpcName(String vpcName) {
-		this.vpcName = vpcName;
-		if(vpcName != null){
-			putQueryParameter("VpcName", vpcName);
-		}
-	}
+	private String resourceGroupId;
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
+	private String vpcId;
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
+	private Integer pageSize;
+
+	private Boolean isDefault;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -90,17 +68,6 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -109,28 +76,6 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Boolean getIsDefault() {
-		return this.isDefault;
-	}
-
-	public void setIsDefault(Boolean isDefault) {
-		this.isDefault = isDefault;
-		if(isDefault != null){
-			putQueryParameter("IsDefault", isDefault.toString());
 		}
 	}
 
@@ -153,6 +98,61 @@ public class DescribeVpcsRequest extends RpcAcsRequest<DescribeVpcsResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getVpcName() {
+		return this.vpcName;
+	}
+
+	public void setVpcName(String vpcName) {
+		this.vpcName = vpcName;
+		if(vpcName != null){
+			putQueryParameter("VpcName", vpcName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Boolean getIsDefault() {
+		return this.isDefault;
+	}
+
+	public void setIsDefault(Boolean isDefault) {
+		this.isDefault = isDefault;
+		if(isDefault != null){
+			putQueryParameter("IsDefault", isDefault.toString());
 		}
 	}
 

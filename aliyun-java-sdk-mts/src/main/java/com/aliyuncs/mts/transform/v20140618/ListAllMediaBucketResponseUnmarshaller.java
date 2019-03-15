@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.ListAllMediaBucketResponse;
 import com.aliyuncs.mts.model.v20140618.ListAllMediaBucketResponse.MediaBucket;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +27,7 @@ public class ListAllMediaBucketResponseUnmarshaller {
 	public static ListAllMediaBucketResponse unmarshall(ListAllMediaBucketResponse listAllMediaBucketResponse, UnmarshallerContext context) {
 		
 		listAllMediaBucketResponse.setRequestId(context.stringValue("ListAllMediaBucketResponse.RequestId"));
+		listAllMediaBucketResponse.setNextPageToken(context.stringValue("ListAllMediaBucketResponse.NextPageToken"));
 
 		List<MediaBucket> mediaBucketList = new ArrayList<MediaBucket>();
 		for (int i = 0; i < context.lengthValue("ListAllMediaBucketResponse.MediaBucketList.Length"); i++) {

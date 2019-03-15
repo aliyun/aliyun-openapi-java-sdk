@@ -32,6 +32,8 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 
 	private String ipProtocol;
 
+	private String forwardEntryName;
+
 	private String ownerAccount;
 
 	private String forwardTableId;
@@ -78,6 +80,17 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		this.ipProtocol = ipProtocol;
 		if(ipProtocol != null){
 			putQueryParameter("IpProtocol", ipProtocol);
+		}
+	}
+
+	public String getForwardEntryName() {
+		return this.forwardEntryName;
+	}
+
+	public void setForwardEntryName(String forwardEntryName) {
+		this.forwardEntryName = forwardEntryName;
+		if(forwardEntryName != null){
+			putQueryParameter("ForwardEntryName", forwardEntryName);
 		}
 	}
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetJobTopologyRequest extends RpcAcsRequest<GetJobTopologyResponse> {
 	
 	public GetJobTopologyRequest() {
-		super("TeslaStream", "2018-01-15", "GetJobTopology");
+		super("TeslaStream", "2018-01-15", "GetJobTopology", "teslastream");
 	}
 
 	private String jobName;

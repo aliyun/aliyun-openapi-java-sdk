@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeResetRecordListRequest extends RpcAcsRequest<DescribeResetRecordListResponse> {
 	
 	public DescribeResetRecordListRequest() {
-		super("jarvis", "2018-02-06", "DescribeResetRecordList");
+		super("jarvis", "2018-02-06", "DescribeResetRecordList", "jarvis");
 	}
 
 	private String srcIP;

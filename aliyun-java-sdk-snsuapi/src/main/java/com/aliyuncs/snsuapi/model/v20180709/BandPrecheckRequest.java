@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BandPrecheckRequest extends RpcAcsRequest<BandPrecheckResponse> {
 	
 	public BandPrecheckRequest() {
-		super("Snsuapi", "2018-07-09", "BandPrecheck");
+		super("Snsuapi", "2018-07-09", "BandPrecheck", "snsuapi");
 	}
 
 	private String ipAddress;

@@ -32,6 +32,8 @@ public class MetastoreListDatabasesRequest extends RpcAcsRequest<MetastoreListDa
 
 	private Integer pageSize;
 
+	private String fuzzyDatabaseName;
+
 	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
@@ -64,6 +66,17 @@ public class MetastoreListDatabasesRequest extends RpcAcsRequest<MetastoreListDa
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFuzzyDatabaseName() {
+		return this.fuzzyDatabaseName;
+	}
+
+	public void setFuzzyDatabaseName(String fuzzyDatabaseName) {
+		this.fuzzyDatabaseName = fuzzyDatabaseName;
+		if(fuzzyDatabaseName != null){
+			putQueryParameter("FuzzyDatabaseName", fuzzyDatabaseName);
 		}
 	}
 

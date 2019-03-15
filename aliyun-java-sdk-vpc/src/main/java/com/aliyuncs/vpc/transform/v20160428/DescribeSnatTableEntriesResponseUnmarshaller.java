@@ -40,6 +40,7 @@ public class DescribeSnatTableEntriesResponseUnmarshaller {
 			snatTableEntry.setSourceCIDR(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SourceCIDR"));
 			snatTableEntry.setSnatIp(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIp"));
 			snatTableEntry.setStatus(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].Status"));
+			snatTableEntry.setSnatEntryName(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatEntryName"));
 
 			snatTableEntries.add(snatTableEntry);
 		}

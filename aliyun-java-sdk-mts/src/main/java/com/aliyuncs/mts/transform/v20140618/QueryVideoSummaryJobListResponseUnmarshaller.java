@@ -23,7 +23,6 @@ import com.aliyuncs.mts.model.v20140618.QueryVideoSummaryJobListResponse.Job.Inp
 import com.aliyuncs.mts.model.v20140618.QueryVideoSummaryJobListResponse.Job.VideoSummaryResult;
 import com.aliyuncs.mts.model.v20140618.QueryVideoSummaryJobListResponse.Job.VideoSummaryResult.OutputFile;
 import com.aliyuncs.mts.model.v20140618.QueryVideoSummaryJobListResponse.Job.VideoSummaryResult.VideoSummary;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

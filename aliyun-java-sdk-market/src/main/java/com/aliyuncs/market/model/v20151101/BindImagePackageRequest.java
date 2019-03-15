@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindImagePackageRequest extends RpcAcsRequest<BindImagePackageResponse> {
 	
 	public BindImagePackageRequest() {
-		super("Market", "2015-11-01", "BindImagePackage", "yunmarket");
+		super("Market", "2015-11-01", "BindImagePackage", "market");
 	}
 
 	private String ecsInstanceId;

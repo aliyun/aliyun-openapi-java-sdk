@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetTradeDataRequest extends RpcAcsRequest<GetTradeDataResponse> {
 	
 	public GetTradeDataRequest() {
-		super("finmall", "2018-07-23", "GetTradeData", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetTradeData", "finmall");
 	}
 
 	private String creditId;

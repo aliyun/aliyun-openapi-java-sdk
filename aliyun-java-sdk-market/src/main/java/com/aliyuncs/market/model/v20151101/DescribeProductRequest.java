@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeProductRequest extends RpcAcsRequest<DescribeProductResponse> {
 	
 	public DescribeProductRequest() {
-		super("Market", "2015-11-01", "DescribeProduct", "yunmarket");
+		super("Market", "2015-11-01", "DescribeProduct", "market");
 	}
 
 	private String code;

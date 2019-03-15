@@ -34,7 +34,6 @@ import com.aliyuncs.mts.model.v20140618.SubmitAnalysisJobResponse.AnalysisJob.Te
 import com.aliyuncs.mts.model.v20140618.SubmitAnalysisJobResponse.AnalysisJob.Template.TransConfig;
 import com.aliyuncs.mts.model.v20140618.SubmitAnalysisJobResponse.AnalysisJob.Template.Video;
 import com.aliyuncs.mts.model.v20140618.SubmitAnalysisJobResponse.AnalysisJob.Template.Video.BitrateBnd;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

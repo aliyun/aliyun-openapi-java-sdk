@@ -32,6 +32,8 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 
 	private String ownerAccount;
 
+	private String snatEntryName;
+
 	private String snatTableId;
 
 	private String snatEntryId;
@@ -70,6 +72,17 @@ public class ModifySnatEntryRequest extends RpcAcsRequest<ModifySnatEntryRespons
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getSnatEntryName() {
+		return this.snatEntryName;
+	}
+
+	public void setSnatEntryName(String snatEntryName) {
+		this.snatEntryName = snatEntryName;
+		if(snatEntryName != null){
+			putQueryParameter("SnatEntryName", snatEntryName);
 		}
 	}
 

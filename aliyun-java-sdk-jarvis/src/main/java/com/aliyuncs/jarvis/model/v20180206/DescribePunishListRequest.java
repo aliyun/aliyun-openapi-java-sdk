@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribePunishListRequest extends RpcAcsRequest<DescribePunishListResponse> {
 	
 	public DescribePunishListRequest() {
-		super("jarvis", "2018-02-06", "DescribePunishList");
+		super("jarvis", "2018-02-06", "DescribePunishList", "jarvis");
 	}
 
 	private String srcIP;

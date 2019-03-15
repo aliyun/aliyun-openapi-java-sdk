@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteBuildRequest extends RoaAcsRequest<DeleteBuildResponse> {
 	
 	public DeleteBuildRequest() {
-		super("Cds", "2017-09-25", "DeleteBuild", "codepipeline");
+		super("Cds", "2017-09-25", "DeleteBuild", "cds");
 		setUriPattern("/v1/job/[JobName]/build/[BuildNumber]");
 		setMethod(MethodType.DELETE);
 	}

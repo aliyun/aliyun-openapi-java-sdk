@@ -42,6 +42,8 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 
 	private Integer pageNumber;
 
+	private String childInstanceRegionId;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -127,6 +129,17 @@ public class DescribeCenAttachedChildInstancesRequest extends RpcAcsRequest<Desc
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getChildInstanceRegionId() {
+		return this.childInstanceRegionId;
+	}
+
+	public void setChildInstanceRegionId(String childInstanceRegionId) {
+		this.childInstanceRegionId = childInstanceRegionId;
+		if(childInstanceRegionId != null){
+			putQueryParameter("ChildInstanceRegionId", childInstanceRegionId);
 		}
 	}
 

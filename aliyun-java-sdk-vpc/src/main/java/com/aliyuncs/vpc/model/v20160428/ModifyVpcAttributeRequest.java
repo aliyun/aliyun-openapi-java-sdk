@@ -36,6 +36,10 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 
 	private String ownerAccount;
 
+	private String cidrBlock;
+
+	private Boolean enableIPv6;
+
 	private String description;
 
 	private Long ownerId;
@@ -92,6 +96,28 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
+		}
+	}
+
+	public Boolean getEnableIPv6() {
+		return this.enableIPv6;
+	}
+
+	public void setEnableIPv6(Boolean enableIPv6) {
+		this.enableIPv6 = enableIPv6;
+		if(enableIPv6 != null){
+			putQueryParameter("EnableIPv6", enableIPv6.toString());
 		}
 	}
 

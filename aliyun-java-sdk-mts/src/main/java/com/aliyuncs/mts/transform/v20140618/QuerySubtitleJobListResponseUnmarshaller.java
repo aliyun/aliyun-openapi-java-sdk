@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.QuerySubtitleJobListResponse;
 import com.aliyuncs.mts.model.v20140618.QuerySubtitleJobListResponse.Job;
 import com.aliyuncs.mts.model.v20140618.QuerySubtitleJobListResponse.Job.MNSMessageResult;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

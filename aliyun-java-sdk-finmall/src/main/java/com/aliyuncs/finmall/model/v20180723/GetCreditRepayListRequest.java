@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCreditRepayListRequest extends RpcAcsRequest<GetCreditRepayListResponse> {
 	
 	public GetCreditRepayListRequest() {
-		super("finmall", "2018-07-23", "GetCreditRepayList", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetCreditRepayList", "finmall");
 	}
 
 	private String queryExpression;

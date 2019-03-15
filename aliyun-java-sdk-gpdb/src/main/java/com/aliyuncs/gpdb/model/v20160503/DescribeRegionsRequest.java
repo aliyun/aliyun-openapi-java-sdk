@@ -26,19 +26,6 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		super("gpdb", "2016-05-03", "DescribeRegions", "gpdb");
 	}
 
-	private String zoneId;
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	@Override
 	public Class<DescribeRegionsResponse> getResponseClass() {
 		return DescribeRegionsResponse.class;

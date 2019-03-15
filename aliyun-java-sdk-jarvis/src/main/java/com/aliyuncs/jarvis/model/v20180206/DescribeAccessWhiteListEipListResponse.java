@@ -31,7 +31,7 @@ public class DescribeAccessWhiteListEipListResponse extends AcsResponse {
 
 	private String module;
 
-	private List<Ecs> ecsList;
+	private List<Ecs> eipList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,12 +57,12 @@ public class DescribeAccessWhiteListEipListResponse extends AcsResponse {
 		this.module = module;
 	}
 
-	public List<Ecs> getEcsList() {
-		return this.ecsList;
+	public List<Ecs> getEipList() {
+		return this.eipList;
 	}
 
-	public void setEcsList(List<Ecs> ecsList) {
-		this.ecsList = ecsList;
+	public void setEipList(List<Ecs> eipList) {
+		this.eipList = eipList;
 	}
 
 	public static class Ecs {
@@ -72,6 +72,10 @@ public class DescribeAccessWhiteListEipListResponse extends AcsResponse {
 		private String instanceId;
 
 		private String iP;
+
+		private String region;
+
+		private String itemSign;
 
 		public String getInstanceName() {
 			return this.instanceName;
@@ -95,6 +99,22 @@ public class DescribeAccessWhiteListEipListResponse extends AcsResponse {
 
 		public void setIP(String iP) {
 			this.iP = iP;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getItemSign() {
+			return this.itemSign;
+		}
+
+		public void setItemSign(String itemSign) {
+			this.itemSign = itemSign;
 		}
 	}
 

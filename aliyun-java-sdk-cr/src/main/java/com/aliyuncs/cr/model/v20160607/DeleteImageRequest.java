@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteImageRequest extends RoaAcsRequest<DeleteImageResponse> {
 	
 	public DeleteImageRequest() {
-		super("cr", "2016-06-07", "DeleteImage");
+		super("cr", "2016-06-07", "DeleteImage", "cr");
 		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]");
 		setMethod(MethodType.DELETE);
 	}

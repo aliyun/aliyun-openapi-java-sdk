@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetImageManifestRequest extends RoaAcsRequest<GetImageManifestResponse> {
 	
 	public GetImageManifestRequest() {
-		super("cr", "2016-06-07", "GetImageManifest");
+		super("cr", "2016-06-07", "GetImageManifest", "cr");
 		setUriPattern("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest");
 		setMethod(MethodType.GET);
 	}

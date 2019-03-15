@@ -1,3 +1,6 @@
+2019-03-15 Version: 1.1.19
+1,  Update Dependency
+
 2018-04-24 Version: 1.1.18
 1, add interface FetchPhotos
 2, add xflush log param unixTimestamp

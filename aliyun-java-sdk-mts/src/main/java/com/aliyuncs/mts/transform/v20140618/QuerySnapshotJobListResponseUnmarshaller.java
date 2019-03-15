@@ -25,7 +25,6 @@ import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig.OutputFile;
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig.TileOut;
 import com.aliyuncs.mts.model.v20140618.QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig.TileOutputFile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

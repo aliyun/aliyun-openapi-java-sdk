@@ -31,6 +31,7 @@ public class GetCustomStatusInfoResponseUnmarshaller {
 		data.setUserState(context.stringValue("GetCustomStatusInfoResponse.Data.UserState"));
 		data.setValidateState(context.stringValue("GetCustomStatusInfoResponse.Data.ValidateState"));
 		data.setValidateTime(context.stringValue("GetCustomStatusInfoResponse.Data.ValidateTime"));
+		data.setCustomId(context.stringValue("GetCustomStatusInfoResponse.Data.CustomId"));
 		getCustomStatusInfoResponse.setData(data);
 	 
 	 	return getCustomStatusInfoResponse;

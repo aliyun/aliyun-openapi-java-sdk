@@ -137,6 +137,8 @@ public class QueryDeviceResponse extends AcsResponse {
 
 		private String utcModified;
 
+		private String iotId;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -215,6 +217,14 @@ public class QueryDeviceResponse extends AcsResponse {
 
 		public void setUtcModified(String utcModified) {
 			this.utcModified = utcModified;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

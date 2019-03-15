@@ -23,7 +23,20 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryEndPointListRequest extends RpcAcsRequest<QueryEndPointListResponse> {
 	
 	public QueryEndPointListRequest() {
-		super("openanalytics", "2018-03-01", "QueryEndPointList", "openanalytics", "innerAPI");
+		super("openanalytics", "2018-03-01", "QueryEndPointList", "openanalytics");
+	}
+
+	private Long userID;
+
+	public Long getUserID() {
+		return this.userID;
+	}
+
+	public void setUserID(Long userID) {
+		this.userID = userID;
+		if(userID != null){
+			putBodyParameter("UserID", userID.toString());
+		}
 	}
 
 	@Override

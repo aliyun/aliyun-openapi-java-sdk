@@ -30,11 +30,25 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 
 	private String resourceOwnerAccount;
 
-	private String jobIds;
+	private String nextPageToken;
+
+	private String startOfJobCreatedTimeRange;
 
 	private String ownerAccount;
 
+	private Long maximumPageSize;
+
 	private Long ownerId;
+
+	private String pipelineId;
+
+	private String primaryKeyList;
+
+	private String jobIds;
+
+	private String state;
+
+	private String endOfJobCreatedTimeRange;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,14 +72,25 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 		}
 	}
 
-	public String getJobIds() {
-		return this.jobIds;
+	public String getNextPageToken() {
+		return this.nextPageToken;
 	}
 
-	public void setJobIds(String jobIds) {
-		this.jobIds = jobIds;
-		if(jobIds != null){
-			putQueryParameter("JobIds", jobIds);
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
+		if(nextPageToken != null){
+			putQueryParameter("NextPageToken", nextPageToken);
+		}
+	}
+
+	public String getStartOfJobCreatedTimeRange() {
+		return this.startOfJobCreatedTimeRange;
+	}
+
+	public void setStartOfJobCreatedTimeRange(String startOfJobCreatedTimeRange) {
+		this.startOfJobCreatedTimeRange = startOfJobCreatedTimeRange;
+		if(startOfJobCreatedTimeRange != null){
+			putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
 		}
 	}
 
@@ -80,6 +105,17 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 		}
 	}
 
+	public Long getMaximumPageSize() {
+		return this.maximumPageSize;
+	}
+
+	public void setMaximumPageSize(Long maximumPageSize) {
+		this.maximumPageSize = maximumPageSize;
+		if(maximumPageSize != null){
+			putQueryParameter("MaximumPageSize", maximumPageSize.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -88,6 +124,61 @@ public class QueryFpShotJobListRequest extends RpcAcsRequest<QueryFpShotJobListR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getPrimaryKeyList() {
+		return this.primaryKeyList;
+	}
+
+	public void setPrimaryKeyList(String primaryKeyList) {
+		this.primaryKeyList = primaryKeyList;
+		if(primaryKeyList != null){
+			putQueryParameter("PrimaryKeyList", primaryKeyList);
+		}
+	}
+
+	public String getJobIds() {
+		return this.jobIds;
+	}
+
+	public void setJobIds(String jobIds) {
+		this.jobIds = jobIds;
+		if(jobIds != null){
+			putQueryParameter("JobIds", jobIds);
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public String getEndOfJobCreatedTimeRange() {
+		return this.endOfJobCreatedTimeRange;
+	}
+
+	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
+		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
+		if(endOfJobCreatedTimeRange != null){
+			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 		}
 	}
 

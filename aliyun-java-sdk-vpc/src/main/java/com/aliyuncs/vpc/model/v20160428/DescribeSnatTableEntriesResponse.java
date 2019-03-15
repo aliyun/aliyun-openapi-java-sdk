@@ -89,6 +89,8 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		private String status;
 
+		private String snatEntryName;
+
 		public String getSnatTableId() {
 			return this.snatTableId;
 		}
@@ -135,6 +137,14 @@ public class DescribeSnatTableEntriesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getSnatEntryName() {
+			return this.snatEntryName;
+		}
+
+		public void setSnatEntryName(String snatEntryName) {
+			this.snatEntryName = snatEntryName;
 		}
 	}
 

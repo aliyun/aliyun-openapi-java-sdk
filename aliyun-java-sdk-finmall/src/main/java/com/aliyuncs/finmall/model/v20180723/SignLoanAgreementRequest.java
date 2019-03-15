@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SignLoanAgreementRequest extends RpcAcsRequest<SignLoanAgreementResponse> {
 	
 	public SignLoanAgreementRequest() {
-		super("finmall", "2018-07-23", "SignLoanAgreement", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "SignLoanAgreement", "finmall");
 	}
 
 	private String creditId;

@@ -38,6 +38,7 @@ public class DescribeAccountAttributesResponseUnmarshaller {
 			for (int j = 0; j < context.lengthValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues.Length"); j++) {
 				ValueItem valueItem = new ValueItem();
 				valueItem.setValue(context.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Value"));
+				valueItem.setExpiredTime(context.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ExpiredTime"));
 				valueItem.setZoneId(context.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ZoneId"));
 				valueItem.setInstanceChargeType(context.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceChargeType"));
 				valueItem.setInstanceType(context.stringValue("DescribeAccountAttributesResponse.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceType"));

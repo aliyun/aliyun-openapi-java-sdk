@@ -32,11 +32,13 @@ public class DescribeZoneRecordsRequest extends RpcAcsRequest<DescribeZoneRecord
 
 	private String zoneId;
 
+	private String searchMode;
+
 	private String tag;
 
-	private String keyword;
-
 	private String lang;
+
+	private String keyword;
 
 	private Integer pageNumber;
 
@@ -73,6 +75,17 @@ public class DescribeZoneRecordsRequest extends RpcAcsRequest<DescribeZoneRecord
 		}
 	}
 
+	public String getSearchMode() {
+		return this.searchMode;
+	}
+
+	public void setSearchMode(String searchMode) {
+		this.searchMode = searchMode;
+		if(searchMode != null){
+			putQueryParameter("SearchMode", searchMode);
+		}
+	}
+
 	public String getTag() {
 		return this.tag;
 	}
@@ -84,17 +97,6 @@ public class DescribeZoneRecordsRequest extends RpcAcsRequest<DescribeZoneRecord
 		}
 	}
 
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -103,6 +105,17 @@ public class DescribeZoneRecordsRequest extends RpcAcsRequest<DescribeZoneRecord
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
 		}
 	}
 

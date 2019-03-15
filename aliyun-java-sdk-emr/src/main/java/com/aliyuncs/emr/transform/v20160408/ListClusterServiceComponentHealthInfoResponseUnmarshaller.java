@@ -21,7 +21,6 @@ import com.aliyuncs.emr.model.v20160408.ListClusterServiceComponentHealthInfoRes
 import com.aliyuncs.emr.model.v20160408.ListClusterServiceComponentHealthInfoResponse.HealthInfo;
 import com.aliyuncs.emr.model.v20160408.ListClusterServiceComponentHealthInfoResponse.HealthInfo.HealthDetail;
 import com.aliyuncs.emr.model.v20160408.ListClusterServiceComponentHealthInfoResponse.HealthInfo.HealthDetail.HealthRuleParam;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

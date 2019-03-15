@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteRepoRequest extends RoaAcsRequest<DeleteRepoResponse> {
 	
 	public DeleteRepoRequest() {
-		super("cr", "2016-06-07", "DeleteRepo");
+		super("cr", "2016-06-07", "DeleteRepo", "cr");
 		setUriPattern("/repos/[RepoNamespace]/[RepoName]");
 		setMethod(MethodType.DELETE);
 	}

@@ -22,6 +22,7 @@ public class CreateScalingTaskGroupResponseUnmarshaller {
 
 	public static CreateScalingTaskGroupResponse unmarshall(CreateScalingTaskGroupResponse createScalingTaskGroupResponse, UnmarshallerContext context) {
 		
+		createScalingTaskGroupResponse.setRequestId(context.stringValue("CreateScalingTaskGroupResponse.RequestId"));
 		createScalingTaskGroupResponse.setHostGroupId(context.stringValue("CreateScalingTaskGroupResponse.HostGroupId"));
 	 
 	 	return createScalingTaskGroupResponse;

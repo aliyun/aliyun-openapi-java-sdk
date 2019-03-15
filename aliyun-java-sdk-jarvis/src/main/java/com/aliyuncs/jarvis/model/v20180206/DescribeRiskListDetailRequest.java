@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRiskListDetailRequest extends RpcAcsRequest<DescribeRiskListDetailResponse> {
 	
 	public DescribeRiskListDetailRequest() {
-		super("jarvis", "2018-02-06", "DescribeRiskListDetail");
+		super("jarvis", "2018-02-06", "DescribeRiskListDetail", "jarvis");
 	}
 
 	private String riskType;

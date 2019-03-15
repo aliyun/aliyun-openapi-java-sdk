@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class SignResultNotifyRequest extends RpcAcsRequest<SignResultNotifyResponse> {
 	
 	public SignResultNotifyRequest() {
-		super("finmall", "2018-07-23", "SignResultNotify", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "SignResultNotify", "finmall");
 		setMethod(MethodType.POST);
 	}
 

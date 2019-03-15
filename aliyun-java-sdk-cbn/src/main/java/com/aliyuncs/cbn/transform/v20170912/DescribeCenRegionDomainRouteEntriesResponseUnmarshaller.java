@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCenRegionDomainRouteEntriesResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntry;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

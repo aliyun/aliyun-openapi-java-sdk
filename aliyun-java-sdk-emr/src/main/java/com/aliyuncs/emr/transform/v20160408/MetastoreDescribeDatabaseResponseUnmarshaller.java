@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeDatabaseResponse;
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeDatabaseResponse.Database;
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeDatabaseResponse.Parameter;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

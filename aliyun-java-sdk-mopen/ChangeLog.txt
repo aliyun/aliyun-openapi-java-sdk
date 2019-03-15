@@ -1,3 +1,6 @@
+2019-03-14 Version: 1.1.1
+1, Update Dependency
+
 2018-08-01 Version: 1.1.0
 1, Add api: MoPenQueryCanvas, MoPenDoRecognize, MoPenSendMqttMessage, MoPenFindGroup
 

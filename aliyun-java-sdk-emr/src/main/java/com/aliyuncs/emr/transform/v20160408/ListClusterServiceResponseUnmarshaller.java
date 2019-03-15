@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.emr.model.v20160408.ListClusterServiceResponse;
 import com.aliyuncs.emr.model.v20160408.ListClusterServiceResponse.ClusterService;
 import com.aliyuncs.emr.model.v20160408.ListClusterServiceResponse.ClusterService.ServiceAction;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

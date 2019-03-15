@@ -49,6 +49,8 @@ public class DescribeFlowJobResponse extends AcsResponse {
 
 	private String paramConf;
 
+	private String customVariables;
+
 	private String envConf;
 
 	private String runConf;
@@ -62,6 +64,8 @@ public class DescribeFlowJobResponse extends AcsResponse {
 	private String lastInstanceId;
 
 	private String adhoc;
+
+	private String alertConf;
 
 	private List<Resource> resourceList;
 
@@ -161,6 +165,14 @@ public class DescribeFlowJobResponse extends AcsResponse {
 		this.paramConf = paramConf;
 	}
 
+	public String getCustomVariables() {
+		return this.customVariables;
+	}
+
+	public void setCustomVariables(String customVariables) {
+		this.customVariables = customVariables;
+	}
+
 	public String getEnvConf() {
 		return this.envConf;
 	}
@@ -215,6 +227,14 @@ public class DescribeFlowJobResponse extends AcsResponse {
 
 	public void setAdhoc(String adhoc) {
 		this.adhoc = adhoc;
+	}
+
+	public String getAlertConf() {
+		return this.alertConf;
+	}
+
+	public void setAlertConf(String alertConf) {
+		this.alertConf = alertConf;
 	}
 
 	public List<Resource> getResourceList() {

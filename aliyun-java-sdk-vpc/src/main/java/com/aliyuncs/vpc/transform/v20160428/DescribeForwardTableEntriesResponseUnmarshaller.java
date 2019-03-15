@@ -42,6 +42,7 @@ public class DescribeForwardTableEntriesResponseUnmarshaller {
 			forwardTableEntry.setInternalIp(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].InternalIp"));
 			forwardTableEntry.setInternalPort(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].InternalPort"));
 			forwardTableEntry.setStatus(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].Status"));
+			forwardTableEntry.setForwardEntryName(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ForwardEntryName"));
 
 			forwardTableEntries.add(forwardTableEntry);
 		}

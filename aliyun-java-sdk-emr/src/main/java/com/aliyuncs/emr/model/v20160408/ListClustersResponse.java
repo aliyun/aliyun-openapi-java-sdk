@@ -101,6 +101,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String createResource;
 
+		private String depositType;
+
 		private OrderTaskInfo orderTaskInfo;
 
 		private FailReason failReason;
@@ -199,6 +201,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setCreateResource(String createResource) {
 			this.createResource = createResource;
+		}
+
+		public String getDepositType() {
+			return this.depositType;
+		}
+
+		public void setDepositType(String depositType) {
+			this.depositType = depositType;
 		}
 
 		public OrderTaskInfo getOrderTaskInfo() {

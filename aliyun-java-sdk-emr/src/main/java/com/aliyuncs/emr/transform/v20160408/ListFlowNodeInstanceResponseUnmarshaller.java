@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.ListFlowNodeInstanceResponse;
 import com.aliyuncs.emr.model.v20160408.ListFlowNodeInstanceResponse.FlowNodeInstance;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

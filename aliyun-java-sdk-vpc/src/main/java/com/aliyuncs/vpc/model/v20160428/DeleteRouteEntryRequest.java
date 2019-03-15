@@ -31,6 +31,8 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	private String resourceOwnerAccount;
 
+	private String routeEntryId;
+
 	private String destinationCidrBlock;
 
 	private String ownerAccount;
@@ -62,6 +64,17 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getRouteEntryId() {
+		return this.routeEntryId;
+	}
+
+	public void setRouteEntryId(String routeEntryId) {
+		this.routeEntryId = routeEntryId;
+		if(routeEntryId != null){
+			putQueryParameter("RouteEntryId", routeEntryId);
 		}
 	}
 
@@ -117,8 +130,8 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		this.nextHopLists = nextHopLists;	
 		if (nextHopLists != null) {
 			for (int depth1 = 0; depth1 < nextHopLists.size(); depth1++) {
-				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
 				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopId" , nextHopLists.get(depth1).getNextHopId());
+				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
 			}
 		}	
 	}
@@ -136,17 +149,9 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	public static class NextHopList {
 
-		private String nextHopType;
-
 		private String nextHopId;
 
-		public String getNextHopType() {
-			return this.nextHopType;
-		}
-
-		public void setNextHopType(String nextHopType) {
-			this.nextHopType = nextHopType;
-		}
+		private String nextHopType;
 
 		public String getNextHopId() {
 			return this.nextHopId;
@@ -154,6 +159,14 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 		public void setNextHopId(String nextHopId) {
 			this.nextHopId = nextHopId;
+		}
+
+		public String getNextHopType() {
+			return this.nextHopType;
+		}
+
+		public void setNextHopType(String nextHopType) {
+			this.nextHopType = nextHopType;
 		}
 	}
 

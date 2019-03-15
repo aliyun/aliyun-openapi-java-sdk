@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.emr.model.v20160408.MetastoreListTaskResponse;
 import com.aliyuncs.emr.model.v20160408.MetastoreListTaskResponse.Task;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +36,7 @@ public class MetastoreListTaskResponseUnmarshaller {
 			Task task = new Task();
 			task.setBizId(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].BizId"));
 			task.setTaskType(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskType"));
+			task.setTaskObject(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskObject"));
 			task.setTaskStatus(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskStatus"));
 			task.setStartTime(context.longValue("MetastoreListTaskResponse.TaskList["+ i +"].StartTime"));
 			task.setEndTime(context.longValue("MetastoreListTaskResponse.TaskList["+ i +"].EndTime"));

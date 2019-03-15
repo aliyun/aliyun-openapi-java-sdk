@@ -22,6 +22,7 @@ public class CreateScalingRuleResponseUnmarshaller {
 
 	public static CreateScalingRuleResponse unmarshall(CreateScalingRuleResponse createScalingRuleResponse, UnmarshallerContext context) {
 		
+		createScalingRuleResponse.setRequestId(context.stringValue("CreateScalingRuleResponse.RequestId"));
 		createScalingRuleResponse.setScalingRuleId(context.stringValue("CreateScalingRuleResponse.ScalingRuleId"));
 	 
 	 	return createScalingRuleResponse;

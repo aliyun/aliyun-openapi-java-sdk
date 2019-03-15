@@ -22,7 +22,6 @@ import com.aliyuncs.mts.model.v20140618.RegisterMediaDetailPersonResponse.Failed
 import com.aliyuncs.mts.model.v20140618.RegisterMediaDetailPersonResponse.FailedImage.ImageFile1;
 import com.aliyuncs.mts.model.v20140618.RegisterMediaDetailPersonResponse.RegisteredPersonage;
 import com.aliyuncs.mts.model.v20140618.RegisterMediaDetailPersonResponse.RegisteredPersonage.ImageFile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

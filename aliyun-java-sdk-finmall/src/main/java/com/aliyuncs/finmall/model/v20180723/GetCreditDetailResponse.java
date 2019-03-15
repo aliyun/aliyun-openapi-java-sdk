@@ -88,6 +88,12 @@ public class GetCreditDetailResponse extends AcsResponse {
 
 		private String productId;
 
+		private String fundPartyId;
+
+		private String downPaymentAmount;
+
+		private String downPaymentRate;
+
 		public String getCreditId() {
 			return this.creditId;
 		}
@@ -174,6 +180,30 @@ public class GetCreditDetailResponse extends AcsResponse {
 
 		public void setProductId(String productId) {
 			this.productId = productId;
+		}
+
+		public String getFundPartyId() {
+			return this.fundPartyId;
+		}
+
+		public void setFundPartyId(String fundPartyId) {
+			this.fundPartyId = fundPartyId;
+		}
+
+		public String getDownPaymentAmount() {
+			return this.downPaymentAmount;
+		}
+
+		public void setDownPaymentAmount(String downPaymentAmount) {
+			this.downPaymentAmount = downPaymentAmount;
+		}
+
+		public String getDownPaymentRate() {
+			return this.downPaymentRate;
+		}
+
+		public void setDownPaymentRate(String downPaymentRate) {
+			this.downPaymentRate = downPaymentRate;
 		}
 	}
 

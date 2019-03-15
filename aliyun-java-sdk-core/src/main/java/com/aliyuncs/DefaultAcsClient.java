@@ -35,6 +35,7 @@ public class DefaultAcsClient implements IAcsClient {
     private boolean autoRetry = true;
     private IClientProfile clientProfile = null;
     private AlibabaCloudCredentialsProvider credentialsProvider;
+    private DefaultCredentialsProvider defaultCredentialsProvider;
 
     private IHttpClient httpClient;
     private EndpointResolver endpointResolver;
@@ -42,9 +43,17 @@ public class DefaultAcsClient implements IAcsClient {
     private final UserAgentConfig userAgentConfig = new UserAgentConfig();
 
     @Deprecated
-    public DefaultAcsClient() {
+    public DefaultAcsClient() throws ClientException {
         this.clientProfile = DefaultProfile.getProfile();
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
+    }
+
+    public DefaultAcsClient(String regionId) throws ClientException {
+        this.clientProfile = DefaultProfile.getProfile(regionId);
+        this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
+        this.defaultCredentialsProvider = new DefaultCredentialsProvider();
+        this.endpointResolver = new DefaultEndpointResolver(this);
+        this.appendUserAgent("HTTPClient", this.httpClient.getClass().getSimpleName());
     }
 
     public DefaultAcsClient(IClientProfile profile) {
@@ -61,7 +70,7 @@ public class DefaultAcsClient implements IAcsClient {
         this.clientProfile.setCredentialsProvider(this.credentialsProvider);
         this.httpClient = HttpClientFactory.buildClient(this.clientProfile);
         this.endpointResolver = new DefaultEndpointResolver(this, profile);
-        this.appendUserAgent("Client", this.httpClient.getClass().getSimpleName());
+        this.appendUserAgent("HTTPClient", this.httpClient.getClass().getSimpleName());
     }
 
     @Override
@@ -165,8 +174,12 @@ public class DefaultAcsClient implements IAcsClient {
         if (null == request.getSysRegionId()) {
             request.setSysRegionId(region);
         }
-
-        AlibabaCloudCredentials credentials = this.credentialsProvider.getCredentials();
+        AlibabaCloudCredentials credentials;
+        if (null == credentialsProvider) {
+            credentials = this.defaultCredentialsProvider.getCredentials();
+        } else {
+            credentials = this.credentialsProvider.getCredentials();
+        }
         Signer signer = Signer.getSigner(credentials);
         FormatType format = profile.getFormat();
 

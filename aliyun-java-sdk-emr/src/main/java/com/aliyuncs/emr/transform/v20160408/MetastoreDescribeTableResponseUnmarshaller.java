@@ -23,7 +23,6 @@ import com.aliyuncs.emr.model.v20160408.MetastoreDescribeTableResponse.Partition
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeTableResponse.SerdeParameter;
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeTableResponse.StorageDescParameter;
 import com.aliyuncs.emr.model.v20160408.MetastoreDescribeTableResponse.TableParameter;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

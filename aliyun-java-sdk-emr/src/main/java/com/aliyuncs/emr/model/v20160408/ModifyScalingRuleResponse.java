@@ -24,7 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyScalingRuleResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String scalingRuleId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getScalingRuleId() {
 		return this.scalingRuleId;

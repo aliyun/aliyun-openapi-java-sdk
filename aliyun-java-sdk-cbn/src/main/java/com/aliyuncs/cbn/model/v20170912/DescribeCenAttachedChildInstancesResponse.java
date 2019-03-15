@@ -89,6 +89,8 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 
 		private String status;
 
+		private String childInstanceAttachTime;
+
 		public String getCenId() {
 			return this.cenId;
 		}
@@ -135,6 +137,14 @@ public class DescribeCenAttachedChildInstancesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getChildInstanceAttachTime() {
+			return this.childInstanceAttachTime;
+		}
+
+		public void setChildInstanceAttachTime(String childInstanceAttachTime) {
+			this.childInstanceAttachTime = childInstanceAttachTime;
 		}
 	}
 

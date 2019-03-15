@@ -30,6 +30,10 @@ public class MetastoreListKafkaConsumerGroupRequest extends RpcAcsRequest<Metast
 
 	private String topicId;
 
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -49,6 +53,28 @@ public class MetastoreListKafkaConsumerGroupRequest extends RpcAcsRequest<Metast
 		this.topicId = topicId;
 		if(topicId != null){
 			putQueryParameter("TopicId", topicId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

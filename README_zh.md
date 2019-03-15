@@ -43,12 +43,13 @@
 </dependency>
 ```
 ## 开始调用
+
 以下这个代码示例向您展示了调用阿里云Java SDK的3个主要步骤：
 1. 创建DefaultAcsClient实例并初始化。
 2. 创建API请求并设置参数。
 3. 发起请求并处理应答或异常。
 
-
+### 使用 AccessKey 调用
 ```java
  package com.testprogram;
  import com.aliyuncs.profile.DefaultProfile;
@@ -83,6 +84,44 @@
      }
  }
 ```
+### 使用 Bearertoken 调用
+只有 CCC 这个产品支持此方式
+
+```java
+ package com.testprogram;
+ import com.aliyuncs.profile.DefaultProfile;
+ import com.aliyuncs.DefaultAcsClient;
+ import com.aliyuncs.IAcsClient;
+ import com.aliyuncs.exceptions.ClientException;
+ import com.aliyuncs.exceptions.ServerException;
+ import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersRequest;
+ import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersResponse;
+ public class Main {
+     public static void main(String[] args) {
+         // 创建DefaultAcsClient实例并初始化
+         DefaultProfile profile = DefaultProfile.getProfile(
+             "<your-region-id>"         // 地域ID
+         ); 
+         BearerTokenCredentials bearerTokenCredential = new BearerTokenCredentials("<your-bearer-token>");
+         DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
+         // 创建API请求并设置参数
+         ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
+         request.getInstanceId("yourId");
+         request.setOutboundOnly(true);
+         // 发起请求并处理应答或异常
+         ListPhoneNumbersResponse response; 
+         try {
+             response = client.getAcsResponse(request);
+             // 自己的逻辑
+         } catch (ServerException e) {
+             e.printStackTrace();
+         } catch (ClientException e) {
+             e.printStackTrace();
+         }
+     }
+ }
+```
+
 ## 调试
 如果存在环境变量 `DEBUG=sdk` ，所有的http请求和响应都将启用调试输出。
 
@@ -105,3 +144,19 @@ profile.setHttpClientConfig(clientConfig);
 IAcsClient client = new DefaultAcsClient(profile);
 ```
 
+## 超时机制
+Request 设置 -> Client 设置 -> 默认，优先级依次降低；
+默认连接超时为5秒，读超时为10秒；
+```java
+//Client超时设置，对当前所有request有效
+HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+clientConfig.setReadTimeoutMillis(readTimeoutMillis);
+clientConfig.setConnectionTimeoutMillis(connectionTimeoutMillis);
+IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+profile.setHttpClientConfig(clientConfig);
+DefaultAcsClient client = new DefaultAcsClient(profile);
+
+// request超时设置，仅对当前请求有效
+request.setSysReadTimeout(readTimeoutMillis);
+request.setConnectionTimeoutMillis(connectionTimeoutMillis);
+```

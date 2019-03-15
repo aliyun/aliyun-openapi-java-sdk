@@ -32,6 +32,7 @@ public class QueryConfigCenterResponseUnmarshaller {
 		configCenterInfo.setDataId(context.stringValue("QueryConfigCenterResponse.configCenterInfo.DataId"));
 		configCenterInfo.setGroup(context.stringValue("QueryConfigCenterResponse.configCenterInfo.Group"));
 		configCenterInfo.setId(context.stringValue("QueryConfigCenterResponse.configCenterInfo.Id"));
+		configCenterInfo.setAppName(context.stringValue("QueryConfigCenterResponse.configCenterInfo.AppName"));
 		queryConfigCenterResponse.setConfigCenterInfo(configCenterInfo);
 	 
 	 	return queryConfigCenterResponse;

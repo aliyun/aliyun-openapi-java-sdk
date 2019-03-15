@@ -21,7 +21,6 @@ import com.aliyuncs.green.model.v20170823.DescribeAuditContentResponse;
 import com.aliyuncs.green.model.v20170823.DescribeAuditContentResponse.AuditContent;
 import com.aliyuncs.green.model.v20170823.DescribeAuditContentResponse.AuditContent.FrameResult;
 import com.aliyuncs.green.model.v20170823.DescribeAuditContentResponse.AuditContent.Result;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,7 +48,7 @@ public class DescribeAuditContentResponseUnmarshaller {
 			auditContent.setAudit(context.integerValue("DescribeAuditContentResponse.AuditContentList["+ i +"].Audit"));
 			auditContent.setAuditResult(context.stringValue("DescribeAuditContentResponse.AuditContentList["+ i +"].AuditResult"));
 			auditContent.setSuggestion(context.stringValue("DescribeAuditContentResponse.AuditContentList["+ i +"].Suggestion"));
-			auditContent.setId(context.integerValue("DescribeAuditContentResponse.AuditContentList["+ i +"].Id"));
+			auditContent.setId(context.longValue("DescribeAuditContentResponse.AuditContentList["+ i +"].Id"));
 
 			List<String> auditIllegalReasons = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeAuditContentResponse.AuditContentList["+ i +"].AuditIllegalReasons.Length"); j++) {

@@ -24,7 +24,6 @@ import com.aliyuncs.emr.model.v20160408.ListEmrAvailableConfigResponse.EmrMainVe
 import com.aliyuncs.emr.model.v20160408.ListEmrAvailableConfigResponse.SecurityGroup;
 import com.aliyuncs.emr.model.v20160408.ListEmrAvailableConfigResponse.VpcInfo;
 import com.aliyuncs.emr.model.v20160408.ListEmrAvailableConfigResponse.VpcInfo.VswitchInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

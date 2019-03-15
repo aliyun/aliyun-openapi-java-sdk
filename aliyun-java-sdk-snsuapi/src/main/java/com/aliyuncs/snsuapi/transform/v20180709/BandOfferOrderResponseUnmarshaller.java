@@ -15,6 +15,7 @@
 package com.aliyuncs.snsuapi.transform.v20180709;
 
 import com.aliyuncs.snsuapi.model.v20180709.BandOfferOrderResponse;
+import com.aliyuncs.snsuapi.model.v20180709.BandOfferOrderResponse.ResultModule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,7 +26,10 @@ public class BandOfferOrderResponseUnmarshaller {
 		bandOfferOrderResponse.setRequestId(context.stringValue("BandOfferOrderResponse.RequestId"));
 		bandOfferOrderResponse.setResultCode(context.stringValue("BandOfferOrderResponse.ResultCode"));
 		bandOfferOrderResponse.setResultMessage(context.stringValue("BandOfferOrderResponse.ResultMessage"));
-		bandOfferOrderResponse.setResultModule(context.stringValue("BandOfferOrderResponse.ResultModule"));
+
+		ResultModule resultModule = new ResultModule();
+		resultModule.setLxOrderId(context.longValue("BandOfferOrderResponse.ResultModule.LxOrderId"));
+		bandOfferOrderResponse.setResultModule(resultModule);
 	 
 	 	return bandOfferOrderResponse;
 	}

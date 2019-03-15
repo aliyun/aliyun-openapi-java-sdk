@@ -26,6 +26,8 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 		super("Vpc", "2016-04-28", "UnassociateEipAddress", "vpc");
 	}
 
+	private String privateIpAddress;
+
 	private Long resourceOwnerId;
 
 	private String instanceId;
@@ -41,6 +43,17 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 	private String allocationId;
 
 	private Long ownerId;
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

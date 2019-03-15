@@ -71,6 +71,8 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 
 			private String value;
 
+			private String expiredTime;
+
 			private String zoneId;
 
 			private String instanceChargeType;
@@ -85,6 +87,14 @@ public class DescribeAccountAttributesResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getExpiredTime() {
+				return this.expiredTime;
+			}
+
+			public void setExpiredTime(String expiredTime) {
+				this.expiredTime = expiredTime;
 			}
 
 			public String getZoneId() {

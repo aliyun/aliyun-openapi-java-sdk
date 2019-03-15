@@ -47,6 +47,13 @@ public class DescribeCommonBandwidthPackagesResponseUnmarshaller {
 			commonBandwidthPackage.setExpiredTime(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ExpiredTime"));
 			commonBandwidthPackage.setStatus(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Status"));
 			commonBandwidthPackage.setRatio(context.integerValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].Ratio"));
+			commonBandwidthPackage.setResourceGroupId(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ResourceGroupId"));
+			commonBandwidthPackage.setHasReservationData(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].HasReservationData"));
+			commonBandwidthPackage.setReservationBandwidth(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ReservationBandwidth"));
+			commonBandwidthPackage.setReservationInternetChargeType(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ReservationInternetChargeType"));
+			commonBandwidthPackage.setReservationActiveTime(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ReservationActiveTime"));
+			commonBandwidthPackage.setReservationOrderType(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ReservationOrderType"));
+			commonBandwidthPackage.setISP(context.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ISP"));
 
 			List<PublicIpAddresse> publicIpAddresses = new ArrayList<PublicIpAddresse>();
 			for (int j = 0; j < context.lengthValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].PublicIpAddresses.Length"); j++) {

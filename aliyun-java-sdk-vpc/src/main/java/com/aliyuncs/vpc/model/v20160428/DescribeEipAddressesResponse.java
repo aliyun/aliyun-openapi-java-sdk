@@ -81,6 +81,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String ipAddress;
 
+		private String privateIpAddress;
+
 		private String allocationId;
 
 		private String status;
@@ -103,6 +105,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String expiredTime;
 
+		private String hDMonitorStatus;
+
 		private String name;
 
 		private String iSP;
@@ -115,14 +119,44 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String hasReservationData;
+
+		private String reservationBandwidth;
+
+		private String reservationInternetChargeType;
+
+		private String reservationActiveTime;
+
+		private String reservationOrderType;
+
+		private String mode;
+
 		private List<LockReason> operationLocks;
+
+		private List<Tag> tags;
 
 		private List<String> availableRegions;
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -133,6 +167,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setIpAddress(String ipAddress) {
 			this.ipAddress = ipAddress;
+		}
+
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
+		}
+
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
 		}
 
 		public String getAllocationId() {
@@ -223,6 +265,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
+		public String getHDMonitorStatus() {
+			return this.hDMonitorStatus;
+		}
+
+		public void setHDMonitorStatus(String hDMonitorStatus) {
+			this.hDMonitorStatus = hDMonitorStatus;
+		}
+
 		public String getName() {
 			return this.name;
 		}
@@ -271,12 +321,68 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getHasReservationData() {
+			return this.hasReservationData;
+		}
+
+		public void setHasReservationData(String hasReservationData) {
+			this.hasReservationData = hasReservationData;
+		}
+
+		public String getReservationBandwidth() {
+			return this.reservationBandwidth;
+		}
+
+		public void setReservationBandwidth(String reservationBandwidth) {
+			this.reservationBandwidth = reservationBandwidth;
+		}
+
+		public String getReservationInternetChargeType() {
+			return this.reservationInternetChargeType;
+		}
+
+		public void setReservationInternetChargeType(String reservationInternetChargeType) {
+			this.reservationInternetChargeType = reservationInternetChargeType;
+		}
+
+		public String getReservationActiveTime() {
+			return this.reservationActiveTime;
+		}
+
+		public void setReservationActiveTime(String reservationActiveTime) {
+			this.reservationActiveTime = reservationActiveTime;
+		}
+
+		public String getReservationOrderType() {
+			return this.reservationOrderType;
+		}
+
+		public void setReservationOrderType(String reservationOrderType) {
+			this.reservationOrderType = reservationOrderType;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
 		public List<LockReason> getOperationLocks() {
 			return this.operationLocks;
 		}
 
 		public void setOperationLocks(List<LockReason> operationLocks) {
 			this.operationLocks = operationLocks;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public List<String> getAvailableRegions() {
@@ -297,6 +403,29 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 			public void setLockReason(String lockReason) {
 				this.lockReason = lockReason;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

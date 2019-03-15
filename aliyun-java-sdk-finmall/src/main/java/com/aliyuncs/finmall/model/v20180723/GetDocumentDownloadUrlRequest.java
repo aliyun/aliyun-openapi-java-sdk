@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetDocumentDownloadUrlRequest extends RpcAcsRequest<GetDocumentDownloadUrlResponse> {
 	
 	public GetDocumentDownloadUrlRequest() {
-		super("finmall", "2018-07-23", "GetDocumentDownloadUrl", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetDocumentDownloadUrl", "finmall");
 	}
 
 	private String bizType;

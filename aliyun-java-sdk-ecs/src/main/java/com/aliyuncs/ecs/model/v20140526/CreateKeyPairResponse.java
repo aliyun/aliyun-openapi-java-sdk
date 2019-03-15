@@ -26,6 +26,8 @@ public class CreateKeyPairResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String keyPairId;
+
 	private String keyPairName;
 
 	private String keyPairFingerPrint;
@@ -38,6 +40,14 @@ public class CreateKeyPairResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getKeyPairId() {
+		return this.keyPairId;
+	}
+
+	public void setKeyPairId(String keyPairId) {
+		this.keyPairId = keyPairId;
 	}
 
 	public String getKeyPairName() {

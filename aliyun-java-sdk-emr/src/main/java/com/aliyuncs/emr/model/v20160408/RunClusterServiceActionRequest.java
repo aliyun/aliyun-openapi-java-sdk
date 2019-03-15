@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class RunClusterServiceActionRequest extends RpcAcsRequest<RunClusterServ
 	public RunClusterServiceActionRequest() {
 		super("Emr", "2016-04-08", "RunClusterServiceAction");
 	}
+
+	private String executeStrategy;
+
+	private List<String> hostGroupIdLists;
 
 	private Long resourceOwnerId;
 
@@ -48,11 +53,37 @@ public class RunClusterServiceActionRequest extends RpcAcsRequest<RunClusterServ
 
 	private String comment;
 
+	private String customParams;
+
 	private Long interval;
 
 	private String hostIdList;
 
 	private Boolean turnOnMaintenanceMode;
+
+	public String getExecuteStrategy() {
+		return this.executeStrategy;
+	}
+
+	public void setExecuteStrategy(String executeStrategy) {
+		this.executeStrategy = executeStrategy;
+		if(executeStrategy != null){
+			putQueryParameter("ExecuteStrategy", executeStrategy);
+		}
+	}
+
+	public List<String> getHostGroupIdLists() {
+		return this.hostGroupIdLists;
+	}
+
+	public void setHostGroupIdLists(List<String> hostGroupIdLists) {
+		this.hostGroupIdLists = hostGroupIdLists;	
+		if (hostGroupIdLists != null) {
+			for (int i = 0; i < hostGroupIdLists.size(); i++) {
+				putQueryParameter("HostGroupIdList." + (i + 1) , hostGroupIdLists.get(i));
+			}
+		}	
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -172,6 +203,17 @@ public class RunClusterServiceActionRequest extends RpcAcsRequest<RunClusterServ
 		this.comment = comment;
 		if(comment != null){
 			putQueryParameter("Comment", comment);
+		}
+	}
+
+	public String getCustomParams() {
+		return this.customParams;
+	}
+
+	public void setCustomParams(String customParams) {
+		this.customParams = customParams;
+		if(customParams != null){
+			putQueryParameter("CustomParams", customParams);
 		}
 	}
 

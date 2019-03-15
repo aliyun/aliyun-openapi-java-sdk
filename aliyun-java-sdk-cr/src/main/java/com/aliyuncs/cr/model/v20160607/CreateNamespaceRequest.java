@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateNamespaceRequest extends RoaAcsRequest<CreateNamespaceResponse> {
 	
 	public CreateNamespaceRequest() {
-		super("cr", "2016-06-07", "CreateNamespace");
+		super("cr", "2016-06-07", "CreateNamespace", "cr");
 		setUriPattern("/namespace");
 		setMethod(MethodType.PUT);
 	}

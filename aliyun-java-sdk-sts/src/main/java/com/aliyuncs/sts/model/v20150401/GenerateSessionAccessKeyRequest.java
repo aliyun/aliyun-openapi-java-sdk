@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.sts.model.v20150401;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GenerateSessionAccessKeyRequest extends RpcAcsRequest<GenerateSessionAccessKeyResponse> {
 	
 	public GenerateSessionAccessKeyRequest() {
-		super("Sts", "2015-04-01", "GenerateSessionAccessKey");
+		super("Sts", "2015-04-01", "GenerateSessionAccessKey", "sts");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

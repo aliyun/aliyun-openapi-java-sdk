@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.QueryPipelineListResponse;
 import com.aliyuncs.mts.model.v20140618.QueryPipelineListResponse.Pipeline;
 import com.aliyuncs.mts.model.v20140618.QueryPipelineListResponse.Pipeline.NotifyConfig;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,11 +43,14 @@ public class QueryPipelineListResponseUnmarshaller {
 			pipeline.setState(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].State"));
 			pipeline.setSpeed(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Speed"));
 			pipeline.setSpeedLevel(context.longValue("QueryPipelineListResponse.PipelineList["+ i +"].SpeedLevel"));
+			pipeline.setQuotaAllocate(context.longValue("QueryPipelineListResponse.PipelineList["+ i +"].QuotaAllocate"));
 			pipeline.setRole(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Role"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setTopic(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
 			notifyConfig.setQueueName(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
+			notifyConfig.setMqTopic(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.MqTopic"));
+			notifyConfig.setMqTag(context.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.MqTag"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

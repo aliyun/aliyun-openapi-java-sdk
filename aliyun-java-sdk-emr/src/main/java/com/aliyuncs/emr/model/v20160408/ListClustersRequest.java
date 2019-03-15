@@ -39,6 +39,8 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 
 	private String createType;
 
+	private String depositType;
+
 	private Boolean defaultStatus;
 
 	private Integer pageNumber;
@@ -110,6 +112,17 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.createType = createType;
 		if(createType != null){
 			putQueryParameter("CreateType", createType);
+		}
+	}
+
+	public String getDepositType() {
+		return this.depositType;
+	}
+
+	public void setDepositType(String depositType) {
+		this.depositType = depositType;
+		if(depositType != null){
+			putQueryParameter("DepositType", depositType);
 		}
 	}
 

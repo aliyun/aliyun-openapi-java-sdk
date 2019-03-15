@@ -28,6 +28,28 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 
 	private Long resourceOwnerId;
 
+	private String voiceCodeParam;
+
+	private Boolean earlyMediaAsr;
+
+	private Integer speed;
+
+	private Integer sessionTimeout;
+
+	private String dynamicId;
+
+	private String calledNumber;
+
+	private Integer ttsSpeed;
+
+	private String voiceCode;
+
+	private String calledShowNumber;
+
+	private Integer actionCodeTimeBreak;
+
+	private Boolean ttsConf;
+
 	private Boolean actionCodeBreak;
 
 	private String resourceOwnerAccount;
@@ -36,25 +58,19 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 
 	private Long ownerId;
 
-	private Integer speed;
+	private Integer ttsVolume;
 
 	private Integer volume;
 
-	private String dynamicId;
-
-	private String calledNumber;
-
-	private String voiceCode;
-
 	private Integer muteTime;
-
-	private String calledShowNumber;
 
 	private String outId;
 
 	private String asrModelId;
 
 	private Integer pauseTime;
+
+	private String ttsStyle;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,6 +80,127 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getVoiceCodeParam() {
+		return this.voiceCodeParam;
+	}
+
+	public void setVoiceCodeParam(String voiceCodeParam) {
+		this.voiceCodeParam = voiceCodeParam;
+		if(voiceCodeParam != null){
+			putQueryParameter("VoiceCodeParam", voiceCodeParam);
+		}
+	}
+
+	public Boolean getEarlyMediaAsr() {
+		return this.earlyMediaAsr;
+	}
+
+	public void setEarlyMediaAsr(Boolean earlyMediaAsr) {
+		this.earlyMediaAsr = earlyMediaAsr;
+		if(earlyMediaAsr != null){
+			putQueryParameter("EarlyMediaAsr", earlyMediaAsr.toString());
+		}
+	}
+
+	public Integer getSpeed() {
+		return this.speed;
+	}
+
+	public void setSpeed(Integer speed) {
+		this.speed = speed;
+		if(speed != null){
+			putQueryParameter("Speed", speed.toString());
+		}
+	}
+
+	public Integer getSessionTimeout() {
+		return this.sessionTimeout;
+	}
+
+	public void setSessionTimeout(Integer sessionTimeout) {
+		this.sessionTimeout = sessionTimeout;
+		if(sessionTimeout != null){
+			putQueryParameter("SessionTimeout", sessionTimeout.toString());
+		}
+	}
+
+	public String getDynamicId() {
+		return this.dynamicId;
+	}
+
+	public void setDynamicId(String dynamicId) {
+		this.dynamicId = dynamicId;
+		if(dynamicId != null){
+			putQueryParameter("DynamicId", dynamicId);
+		}
+	}
+
+	public String getCalledNumber() {
+		return this.calledNumber;
+	}
+
+	public void setCalledNumber(String calledNumber) {
+		this.calledNumber = calledNumber;
+		if(calledNumber != null){
+			putQueryParameter("CalledNumber", calledNumber);
+		}
+	}
+
+	public Integer getTtsSpeed() {
+		return this.ttsSpeed;
+	}
+
+	public void setTtsSpeed(Integer ttsSpeed) {
+		this.ttsSpeed = ttsSpeed;
+		if(ttsSpeed != null){
+			putQueryParameter("TtsSpeed", ttsSpeed.toString());
+		}
+	}
+
+	public String getVoiceCode() {
+		return this.voiceCode;
+	}
+
+	public void setVoiceCode(String voiceCode) {
+		this.voiceCode = voiceCode;
+		if(voiceCode != null){
+			putQueryParameter("VoiceCode", voiceCode);
+		}
+	}
+
+	public String getCalledShowNumber() {
+		return this.calledShowNumber;
+	}
+
+	public void setCalledShowNumber(String calledShowNumber) {
+		this.calledShowNumber = calledShowNumber;
+		if(calledShowNumber != null){
+			putQueryParameter("CalledShowNumber", calledShowNumber);
+		}
+	}
+
+	public Integer getActionCodeTimeBreak() {
+		return this.actionCodeTimeBreak;
+	}
+
+	public void setActionCodeTimeBreak(Integer actionCodeTimeBreak) {
+		this.actionCodeTimeBreak = actionCodeTimeBreak;
+		if(actionCodeTimeBreak != null){
+			putQueryParameter("ActionCodeTimeBreak", actionCodeTimeBreak.toString());
+		}
+	}
+
+	public Boolean getTtsConf() {
+		return this.ttsConf;
+	}
+
+	public void setTtsConf(Boolean ttsConf) {
+		this.ttsConf = ttsConf;
+		if(ttsConf != null){
+			putQueryParameter("TtsConf", ttsConf.toString());
 		}
 	}
 
@@ -111,14 +248,14 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 		}
 	}
 
-	public Integer getSpeed() {
-		return this.speed;
+	public Integer getTtsVolume() {
+		return this.ttsVolume;
 	}
 
-	public void setSpeed(Integer speed) {
-		this.speed = speed;
-		if(speed != null){
-			putQueryParameter("Speed", speed.toString());
+	public void setTtsVolume(Integer ttsVolume) {
+		this.ttsVolume = ttsVolume;
+		if(ttsVolume != null){
+			putQueryParameter("TtsVolume", ttsVolume.toString());
 		}
 	}
 
@@ -133,39 +270,6 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 		}
 	}
 
-	public String getDynamicId() {
-		return this.dynamicId;
-	}
-
-	public void setDynamicId(String dynamicId) {
-		this.dynamicId = dynamicId;
-		if(dynamicId != null){
-			putQueryParameter("DynamicId", dynamicId);
-		}
-	}
-
-	public String getCalledNumber() {
-		return this.calledNumber;
-	}
-
-	public void setCalledNumber(String calledNumber) {
-		this.calledNumber = calledNumber;
-		if(calledNumber != null){
-			putQueryParameter("CalledNumber", calledNumber);
-		}
-	}
-
-	public String getVoiceCode() {
-		return this.voiceCode;
-	}
-
-	public void setVoiceCode(String voiceCode) {
-		this.voiceCode = voiceCode;
-		if(voiceCode != null){
-			putQueryParameter("VoiceCode", voiceCode);
-		}
-	}
-
 	public Integer getMuteTime() {
 		return this.muteTime;
 	}
@@ -174,17 +278,6 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 		this.muteTime = muteTime;
 		if(muteTime != null){
 			putQueryParameter("MuteTime", muteTime.toString());
-		}
-	}
-
-	public String getCalledShowNumber() {
-		return this.calledShowNumber;
-	}
-
-	public void setCalledShowNumber(String calledShowNumber) {
-		this.calledShowNumber = calledShowNumber;
-		if(calledShowNumber != null){
-			putQueryParameter("CalledShowNumber", calledShowNumber);
 		}
 	}
 
@@ -218,6 +311,17 @@ public class SmartCallRequest extends RpcAcsRequest<SmartCallResponse> {
 		this.pauseTime = pauseTime;
 		if(pauseTime != null){
 			putQueryParameter("PauseTime", pauseTime.toString());
+		}
+	}
+
+	public String getTtsStyle() {
+		return this.ttsStyle;
+	}
+
+	public void setTtsStyle(String ttsStyle) {
+		this.ttsStyle = ttsStyle;
+		if(ttsStyle != null){
+			putQueryParameter("TtsStyle", ttsStyle);
 		}
 	}
 

@@ -43,6 +43,8 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 
 	private String failAct;
 
+	private String customVariables;
+
 	private String mode;
 
 	private Long retryInterval;
@@ -54,6 +56,8 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 	private String id;
 
 	private Integer maxRetry;
+
+	private String alertConf;
 
 	private String projectId;
 
@@ -148,6 +152,17 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 		}
 	}
 
+	public String getCustomVariables() {
+		return this.customVariables;
+	}
+
+	public void setCustomVariables(String customVariables) {
+		this.customVariables = customVariables;
+		if(customVariables != null){
+			putQueryParameter("CustomVariables", customVariables);
+		}
+	}
+
 	public String getMode() {
 		return this.mode;
 	}
@@ -211,6 +226,17 @@ public class ModifyFlowJobRequest extends RpcAcsRequest<ModifyFlowJobResponse> {
 		this.maxRetry = maxRetry;
 		if(maxRetry != null){
 			putQueryParameter("MaxRetry", maxRetry.toString());
+		}
+	}
+
+	public String getAlertConf() {
+		return this.alertConf;
+	}
+
+	public void setAlertConf(String alertConf) {
+		this.alertConf = alertConf;
+		if(alertConf != null){
+			putQueryParameter("AlertConf", alertConf);
 		}
 	}
 

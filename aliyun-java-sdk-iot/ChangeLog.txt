@@ -1,3 +1,8 @@
+2019-03-08 Version: 6.7.0
+1, add API QueryDeviceDesiredProperty and SetDeviceDesiredProperty.
+2, add iotId support of APIs.
+
+
 2019-02-20 Version: 6.6.2
 1, fix aliyun-net-sdk-iot service code issue.
 

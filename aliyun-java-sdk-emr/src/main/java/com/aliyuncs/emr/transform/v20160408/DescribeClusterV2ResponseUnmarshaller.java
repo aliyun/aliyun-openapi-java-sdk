@@ -31,7 +31,6 @@ import com.aliyuncs.emr.model.v20160408.DescribeClusterV2Response.ClusterInfo.Ho
 import com.aliyuncs.emr.model.v20160408.DescribeClusterV2Response.ClusterInfo.RelateClusterInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterV2Response.ClusterInfo.SoftwareInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeClusterV2Response.ClusterInfo.SoftwareInfo.Software;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +43,7 @@ public class DescribeClusterV2ResponseUnmarshaller {
 		ClusterInfo clusterInfo = new ClusterInfo();
 		clusterInfo.setId(context.stringValue("DescribeClusterV2Response.ClusterInfo.Id"));
 		clusterInfo.setRegionId(context.stringValue("DescribeClusterV2Response.ClusterInfo.RegionId"));
+		clusterInfo.setDepositType(context.stringValue("DescribeClusterV2Response.ClusterInfo.DepositType"));
 		clusterInfo.setZoneId(context.stringValue("DescribeClusterV2Response.ClusterInfo.ZoneId"));
 		clusterInfo.setName(context.stringValue("DescribeClusterV2Response.ClusterInfo.Name"));
 		clusterInfo.setRelateClusterId(context.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterId"));
@@ -57,9 +57,8 @@ public class DescribeClusterV2ResponseUnmarshaller {
 		clusterInfo.setUserId(context.stringValue("DescribeClusterV2Response.ClusterInfo.UserId"));
 		clusterInfo.setStatus(context.stringValue("DescribeClusterV2Response.ClusterInfo.Status"));
 		clusterInfo.setHighAvailabilityEnable(context.booleanValue("DescribeClusterV2Response.ClusterInfo.HighAvailabilityEnable"));
+		clusterInfo.setLocalMetaDb(context.booleanValue("DescribeClusterV2Response.ClusterInfo.LocalMetaDb"));
 		clusterInfo.setChargeType(context.stringValue("DescribeClusterV2Response.ClusterInfo.ChargeType"));
-		clusterInfo.setDepositType(context.stringValue("DescribeClusterV2Response.ClusterInfo.DepositType"));
-		clusterInfo.setExpiredTime1(context.longValue("DescribeClusterV2Response.ClusterInfo.ExpiredTime"));
 		clusterInfo.setPeriod(context.integerValue("DescribeClusterV2Response.ClusterInfo.Period"));
 		clusterInfo.setRunningTime(context.integerValue("DescribeClusterV2Response.ClusterInfo.RunningTime"));
 		clusterInfo.setMasterNodeTotal(context.integerValue("DescribeClusterV2Response.ClusterInfo.MasterNodeTotal"));
@@ -85,11 +84,13 @@ public class DescribeClusterV2ResponseUnmarshaller {
 		clusterInfo.setAutoScalingEnable(context.booleanValue("DescribeClusterV2Response.ClusterInfo.AutoScalingEnable"));
 		clusterInfo.setAutoScalingAllowed(context.booleanValue("DescribeClusterV2Response.ClusterInfo.AutoScalingAllowed"));
 		clusterInfo.setAutoScalingSpotWithLimitAllowed(context.booleanValue("DescribeClusterV2Response.ClusterInfo.AutoScalingSpotWithLimitAllowed"));
+		clusterInfo.setAutoScalingByLoadAllowed(context.booleanValue("DescribeClusterV2Response.ClusterInfo.AutoScalingByLoadAllowed"));
 		clusterInfo.setResizeDiskEnable(context.booleanValue("DescribeClusterV2Response.ClusterInfo.ResizeDiskEnable"));
 
 		RelateClusterInfo relateClusterInfo = new RelateClusterInfo();
 		relateClusterInfo.setClusterId(context.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterInfo.ClusterId"));
 		relateClusterInfo.setClusterName(context.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterInfo.ClusterName"));
+		relateClusterInfo.setStatus(context.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterInfo.Status"));
 		clusterInfo.setRelateClusterInfo(relateClusterInfo);
 
 		FailReason failReason = new FailReason();
@@ -134,6 +135,7 @@ public class DescribeClusterV2ResponseUnmarshaller {
 			GatewayClusterInfo gatewayClusterInfo = new GatewayClusterInfo();
 			gatewayClusterInfo.setClusterId(context.stringValue("DescribeClusterV2Response.ClusterInfo.GatewayClusterInfoList["+ i +"].ClusterId"));
 			gatewayClusterInfo.setClusterName(context.stringValue("DescribeClusterV2Response.ClusterInfo.GatewayClusterInfoList["+ i +"].ClusterName"));
+			gatewayClusterInfo.setStatus(context.stringValue("DescribeClusterV2Response.ClusterInfo.GatewayClusterInfoList["+ i +"].Status"));
 
 			gatewayClusterInfoList.add(gatewayClusterInfo);
 		}
@@ -158,6 +160,8 @@ public class DescribeClusterV2ResponseUnmarshaller {
 			hostGroup.setDiskCapacity(context.integerValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].DiskCapacity"));
 			hostGroup.setDiskCount(context.integerValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].DiskCount"));
 			hostGroup.setBandWidth(context.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].BandWidth"));
+			hostGroup.setLockType(context.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].LockType"));
+			hostGroup.setLockReason(context.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].LockReason"));
 
 			List<Node> nodes = new ArrayList<Node>();
 			for (int j = 0; j < context.lengthValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].Nodes.Length"); j++) {
@@ -170,6 +174,7 @@ public class DescribeClusterV2ResponseUnmarshaller {
 				node.setExpiredTime(context.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].Nodes["+ j +"].ExpiredTime"));
 				node.setCreateTime(context.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].Nodes["+ j +"].CreateTime"));
 				node.setEmrExpiredTime(context.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].Nodes["+ j +"].EmrExpiredTime"));
+				node.setSupportIpV6(context.booleanValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].Nodes["+ j +"].SupportIpV6"));
 
 				List<DaemonInfo> daemonInfos = new ArrayList<DaemonInfo>();
 				for (int k = 0; k < context.lengthValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].Nodes["+ j +"].DaemonInfos.Length"); k++) {

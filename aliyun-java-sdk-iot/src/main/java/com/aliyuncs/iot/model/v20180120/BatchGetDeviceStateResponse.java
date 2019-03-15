@@ -87,6 +87,8 @@ public class BatchGetDeviceStateResponse extends AcsResponse {
 
 		private String lastOnlineTime;
 
+		private String iotId;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -125,6 +127,14 @@ public class BatchGetDeviceStateResponse extends AcsResponse {
 
 		public void setLastOnlineTime(String lastOnlineTime) {
 			this.lastOnlineTime = lastOnlineTime;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

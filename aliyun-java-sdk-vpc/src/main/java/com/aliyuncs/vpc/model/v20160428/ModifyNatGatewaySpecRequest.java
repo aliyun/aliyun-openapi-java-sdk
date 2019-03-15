@@ -28,6 +28,8 @@ public class ModifyNatGatewaySpecRequest extends RpcAcsRequest<ModifyNatGatewayS
 
 	private Long resourceOwnerId;
 
+	private Boolean autoPay;
+
 	private String resourceOwnerAccount;
 
 	private String clientToken;
@@ -48,6 +50,17 @@ public class ModifyNatGatewaySpecRequest extends RpcAcsRequest<ModifyNatGatewayS
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 

@@ -78,10 +78,26 @@ public class UploadCustomIDImageResponse extends AcsResponse {
 			this.returnCode = returnCode;
 		}
 
+		public String getBizUrl() {
+			return this.url;
+		}
+
+		public void setBizUrl(String url) {
+			this.url = url;
+		}
+
+		/**
+		 * @deprecated use getBizUrl instead of this.
+		 */
+		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
+		/**
+		 * @deprecated use setBizUrl instead of this.
+		 */
+		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
 		}

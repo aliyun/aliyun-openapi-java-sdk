@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ram.model.v20150501;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class RemoveUserFromGroupRequest extends RpcAcsRequest<RemoveUserFromGroupResponse> {
 	
 	public RemoveUserFromGroupRequest() {
-		super("Ram", "2015-05-01", "RemoveUserFromGroup");
+		super("Ram", "2015-05-01", "RemoveUserFromGroup", "ram");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

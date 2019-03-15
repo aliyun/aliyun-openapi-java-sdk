@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.sas_api.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetPhoneProfileRequest extends RpcAcsRequest<GetPhoneProfileResponse> {
 	
 	public GetPhoneProfileRequest() {
-		super("Sas-api", "2017-07-05", "GetPhoneProfile");
+		super("Sas-api", "2017-07-05", "GetPhoneProfile", "sas-api");
 	}
 
 	private String phone;

@@ -25,7 +25,6 @@ import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.ClusterInf
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.ClusterInfo.SoftwareInfo;
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.ClusterInfo.SoftwareInfo.Software;
 import com.aliyuncs.emr.model.v20160408.DescribeExecutionPlanResponse.JobInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

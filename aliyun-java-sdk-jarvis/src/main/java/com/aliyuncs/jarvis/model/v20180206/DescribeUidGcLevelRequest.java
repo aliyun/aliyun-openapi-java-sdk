@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeUidGcLevelRequest extends RpcAcsRequest<DescribeUidGcLevelResponse> {
 	
 	public DescribeUidGcLevelRequest() {
-		super("jarvis", "2018-02-06", "DescribeUidGcLevel");
+		super("jarvis", "2018-02-06", "DescribeUidGcLevel", "jarvis");
 	}
 
 	private String sourceIp;

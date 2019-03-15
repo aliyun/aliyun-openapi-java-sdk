@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVSwitchAttributesResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVSwitchAttributesResponse.CloudResourceSetType;
+import com.aliyuncs.vpc.model.v20160428.DescribeVSwitchAttributesResponse.RouteTable;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,12 +32,19 @@ public class DescribeVSwitchAttributesResponseUnmarshaller {
 		describeVSwitchAttributesResponse.setVpcId(context.stringValue("DescribeVSwitchAttributesResponse.VpcId"));
 		describeVSwitchAttributesResponse.setStatus(context.stringValue("DescribeVSwitchAttributesResponse.Status"));
 		describeVSwitchAttributesResponse.setCidrBlock(context.stringValue("DescribeVSwitchAttributesResponse.CidrBlock"));
+		describeVSwitchAttributesResponse.setIpv6CidrBlock(context.stringValue("DescribeVSwitchAttributesResponse.Ipv6CidrBlock"));
 		describeVSwitchAttributesResponse.setZoneId(context.stringValue("DescribeVSwitchAttributesResponse.ZoneId"));
 		describeVSwitchAttributesResponse.setAvailableIpAddressCount(context.longValue("DescribeVSwitchAttributesResponse.AvailableIpAddressCount"));
 		describeVSwitchAttributesResponse.setDescription(context.stringValue("DescribeVSwitchAttributesResponse.Description"));
 		describeVSwitchAttributesResponse.setVSwitchName(context.stringValue("DescribeVSwitchAttributesResponse.VSwitchName"));
 		describeVSwitchAttributesResponse.setCreationTime(context.stringValue("DescribeVSwitchAttributesResponse.CreationTime"));
 		describeVSwitchAttributesResponse.setIsDefault(context.booleanValue("DescribeVSwitchAttributesResponse.IsDefault"));
+		describeVSwitchAttributesResponse.setResourceGroupId(context.stringValue("DescribeVSwitchAttributesResponse.ResourceGroupId"));
+
+		RouteTable routeTable = new RouteTable();
+		routeTable.setRouteTableId(context.stringValue("DescribeVSwitchAttributesResponse.RouteTable.RouteTableId"));
+		routeTable.setRouteTableType(context.stringValue("DescribeVSwitchAttributesResponse.RouteTable.RouteTableType"));
+		describeVSwitchAttributesResponse.setRouteTable(routeTable);
 
 		List<CloudResourceSetType> cloudResources = new ArrayList<CloudResourceSetType>();
 		for (int i = 0; i < context.lengthValue("DescribeVSwitchAttributesResponse.CloudResources.Length"); i++) {

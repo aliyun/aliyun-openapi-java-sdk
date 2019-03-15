@@ -6,7 +6,7 @@ public class BasicSessionCredentials implements AlibabaCloudCredentials {
     private final String accessKeyId;
     private final String accessKeySecret;
     private final String sessionToken;
-    private final double expireFact = 0.8;
+    private final double expireFact = 0.95;
     private long sessionStartedTimeInMilliSeconds = 0;
 
     public BasicSessionCredentials(String accessKeyId, String accessKeySecret, String sessionToken) {

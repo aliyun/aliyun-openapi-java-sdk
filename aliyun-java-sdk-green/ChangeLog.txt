@@ -1,3 +1,6 @@
+2019-03-08 Version: 3.4.3
+1, bugfix for id type from Integer to Long 
+
 2018-12-21 Version: 3.4.2
 1, merge sdk 20161222 into 20180509 for compatible
 

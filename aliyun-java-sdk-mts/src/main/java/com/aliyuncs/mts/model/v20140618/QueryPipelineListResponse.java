@@ -67,6 +67,8 @@ public class QueryPipelineListResponse extends AcsResponse {
 
 		private Long speedLevel;
 
+		private Long quotaAllocate;
+
 		private String role;
 
 		private NotifyConfig notifyConfig;
@@ -111,6 +113,14 @@ public class QueryPipelineListResponse extends AcsResponse {
 			this.speedLevel = speedLevel;
 		}
 
+		public Long getQuotaAllocate() {
+			return this.quotaAllocate;
+		}
+
+		public void setQuotaAllocate(Long quotaAllocate) {
+			this.quotaAllocate = quotaAllocate;
+		}
+
 		public String getRole() {
 			return this.role;
 		}
@@ -133,6 +143,10 @@ public class QueryPipelineListResponse extends AcsResponse {
 
 			private String queueName;
 
+			private String mqTopic;
+
+			private String mqTag;
+
 			public String getTopic() {
 				return this.topic;
 			}
@@ -147,6 +161,22 @@ public class QueryPipelineListResponse extends AcsResponse {
 
 			public void setQueueName(String queueName) {
 				this.queueName = queueName;
+			}
+
+			public String getMqTopic() {
+				return this.mqTopic;
+			}
+
+			public void setMqTopic(String mqTopic) {
+				this.mqTopic = mqTopic;
+			}
+
+			public String getMqTag() {
+				return this.mqTag;
+			}
+
+			public void setMqTag(String mqTag) {
+				this.mqTag = mqTag;
 			}
 		}
 	}

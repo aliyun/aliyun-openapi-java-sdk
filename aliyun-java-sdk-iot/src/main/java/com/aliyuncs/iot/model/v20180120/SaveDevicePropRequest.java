@@ -26,6 +26,8 @@ public class SaveDevicePropRequest extends RpcAcsRequest<SaveDevicePropResponse>
 		super("Iot", "2018-01-20", "SaveDeviceProp", "iot");
 	}
 
+	private String iotId;
+
 	private String iotInstanceId;
 
 	private String deviceName;
@@ -33,6 +35,17 @@ public class SaveDevicePropRequest extends RpcAcsRequest<SaveDevicePropResponse>
 	private String productKey;
 
 	private String props;
+
+	public String getIotId() {
+		return this.iotId;
+	}
+
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
+		}
+	}
 
 	public String getIotInstanceId() {
 		return this.iotInstanceId;

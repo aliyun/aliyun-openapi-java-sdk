@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateCredentialRequest extends RoaAcsRequest<UpdateCredentialResponse> {
 	
 	public UpdateCredentialRequest() {
-		super("Cds", "2017-09-25", "UpdateCredential", "codepipeline");
+		super("Cds", "2017-09-25", "UpdateCredential", "cds");
 		setUriPattern("/v1/credential/update");
 		setMethod(MethodType.POST);
 	}

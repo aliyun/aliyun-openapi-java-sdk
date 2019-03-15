@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteCredentialRequest extends RoaAcsRequest<DeleteCredentialResponse> {
 	
 	public DeleteCredentialRequest() {
-		super("Cds", "2017-09-25", "DeleteCredential", "codepipeline");
+		super("Cds", "2017-09-25", "DeleteCredential", "cds");
 		setUriPattern("/v1/credential/delete");
 		setMethod(MethodType.POST);
 	}

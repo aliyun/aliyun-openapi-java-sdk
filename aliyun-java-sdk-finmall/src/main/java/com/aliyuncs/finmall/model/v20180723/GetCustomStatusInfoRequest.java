@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCustomStatusInfoRequest extends RpcAcsRequest<GetCustomStatusInfoResponse> {
 	
 	public GetCustomStatusInfoRequest() {
-		super("finmall", "2018-07-23", "GetCustomStatusInfo", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetCustomStatusInfo", "finmall");
 	}
 
 	private String userId;

@@ -28,11 +28,15 @@ public class MetastoreListKafkaTopicRequest extends RpcAcsRequest<MetastoreListK
 
 	private Long resourceOwnerId;
 
+	private Integer pageSize;
+
 	private String dataSourceId;
 
 	private String topicName;
 
 	private String clusterId;
+
+	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -42,6 +46,17 @@ public class MetastoreListKafkaTopicRequest extends RpcAcsRequest<MetastoreListK
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -75,6 +90,17 @@ public class MetastoreListKafkaTopicRequest extends RpcAcsRequest<MetastoreListK
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

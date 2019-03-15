@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetQuotaHistoryInfoRequest extends RpcAcsRequest<GetQuotaHistoryInfoResponse> {
 	
 	public GetQuotaHistoryInfoRequest() {
-		super("TeslaMaxCompute", "2018-01-04", "GetQuotaHistoryInfo");
+		super("TeslaMaxCompute", "2018-01-04", "GetQuotaHistoryInfo", "teslamaxcompute");
 	}
 
 	private String cluster;

@@ -26,6 +26,8 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 		super("Cbn", "2017-09-12", "CreateCen", "cbn");
 	}
 
+	private String protectionLevel;
+
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
@@ -39,6 +41,17 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 	private String description;
 
 	private Long ownerId;
+
+	public String getProtectionLevel() {
+		return this.protectionLevel;
+	}
+
+	public void setProtectionLevel(String protectionLevel) {
+		this.protectionLevel = protectionLevel;
+		if(protectionLevel != null){
+			putQueryParameter("ProtectionLevel", protectionLevel);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

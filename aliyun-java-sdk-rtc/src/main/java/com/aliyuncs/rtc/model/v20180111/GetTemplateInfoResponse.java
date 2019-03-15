@@ -14,7 +14,6 @@
 
 package com.aliyuncs.rtc.model.v20180111;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rtc.transform.v20180111.GetTemplateInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

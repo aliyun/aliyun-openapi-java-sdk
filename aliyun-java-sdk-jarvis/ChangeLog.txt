@@ -1,3 +1,6 @@
+2019-03-13 Version: 1.2.4
+1, Update Dependency
+
 2018-06-21 Version: 1.2.3
 1, This is add InstanceList.
 

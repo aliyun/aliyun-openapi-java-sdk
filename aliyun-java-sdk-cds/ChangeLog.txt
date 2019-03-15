@@ -1,3 +1,6 @@
+2019-03-15 Version: 1.8.2
+1,  Update Dependency
+
 2018-06-26 Version: 1.8.1
 1, add skipTagLatest in CreateJob API.
 2, add get NextBuildNumber in GetJob API.

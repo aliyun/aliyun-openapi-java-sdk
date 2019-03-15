@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetLatestOverdueRecordRequest extends RpcAcsRequest<GetLatestOverdueRecordResponse> {
 	
 	public GetLatestOverdueRecordRequest() {
-		super("finmall", "2018-07-23", "GetLatestOverdueRecord", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetLatestOverdueRecord", "finmall");
 	}
 
 	private String creditId;

@@ -68,7 +68,6 @@ import com.aliyuncs.mts.model.v20140618.SubmitEditingJobsResponse.JobResult.Job.
 import com.aliyuncs.mts.model.v20140618.SubmitEditingJobsResponse.JobResult.Job.EditingInput.InputConfig;
 import com.aliyuncs.mts.model.v20140618.SubmitEditingJobsResponse.JobResult.Job.EditingInput.InputFile;
 import com.aliyuncs.mts.model.v20140618.SubmitEditingJobsResponse.JobResult.Job.MNSMessageResult;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

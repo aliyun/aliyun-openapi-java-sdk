@@ -22,7 +22,6 @@ import com.aliyuncs.mts.model.v20140618.QueryVideoGifJobListResponse.Job;
 import com.aliyuncs.mts.model.v20140618.QueryVideoGifJobListResponse.Job.Input;
 import com.aliyuncs.mts.model.v20140618.QueryVideoGifJobListResponse.Job.VideoGifResult;
 import com.aliyuncs.mts.model.v20140618.QueryVideoGifJobListResponse.Job.VideoGifResult.OutputFile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

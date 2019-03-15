@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetCredentialsRequest extends RoaAcsRequest<GetCredentialsResponse> {
 	
 	public GetCredentialsRequest() {
-		super("Cds", "2017-09-25", "GetCredentials", "codepipeline");
+		super("Cds", "2017-09-25", "GetCredentials", "cds");
 		setUriPattern("/v1/credentials");
 		setMethod(MethodType.GET);
 	}

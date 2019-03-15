@@ -93,6 +93,8 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		private String status;
 
+		private String forwardEntryName;
+
 		public String getForwardTableId() {
 			return this.forwardTableId;
 		}
@@ -155,6 +157,14 @@ public class DescribeForwardTableEntriesResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getForwardEntryName() {
+			return this.forwardEntryName;
+		}
+
+		public void setForwardEntryName(String forwardEntryName) {
+			this.forwardEntryName = forwardEntryName;
 		}
 	}
 

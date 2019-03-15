@@ -28,6 +28,8 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 
 	private String imageUri;
 
+	private Float minSimilarity;
+
 	private Integer limit;
 
 	private String project;
@@ -44,6 +46,17 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 		this.imageUri = imageUri;
 		if(imageUri != null){
 			putQueryParameter("ImageUri", imageUri);
+		}
+	}
+
+	public Float getMinSimilarity() {
+		return this.minSimilarity;
+	}
+
+	public void setMinSimilarity(Float minSimilarity) {
+		this.minSimilarity = minSimilarity;
+		if(minSimilarity != null){
+			putQueryParameter("MinSimilarity", minSimilarity.toString());
 		}
 	}
 

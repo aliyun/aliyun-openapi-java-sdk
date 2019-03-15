@@ -30,6 +30,8 @@ public class MetastoreListTaskRequest extends RpcAcsRequest<MetastoreListTaskRes
 
 	private String taskStatus;
 
+	private String taskSourceType;
+
 	private String taskType;
 
 	private Integer pageSize;
@@ -59,6 +61,17 @@ public class MetastoreListTaskRequest extends RpcAcsRequest<MetastoreListTaskRes
 		this.taskStatus = taskStatus;
 		if(taskStatus != null){
 			putQueryParameter("TaskStatus", taskStatus);
+		}
+	}
+
+	public String getTaskSourceType() {
+		return this.taskSourceType;
+	}
+
+	public void setTaskSourceType(String taskSourceType) {
+		this.taskSourceType = taskSourceType;
+		if(taskSourceType != null){
+			putQueryParameter("TaskSourceType", taskSourceType);
 		}
 	}
 

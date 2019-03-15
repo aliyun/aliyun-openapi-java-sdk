@@ -22,7 +22,6 @@ import com.aliyuncs.mts.model.v20140618.QueryVideoSplitJobListResponse.Job;
 import com.aliyuncs.mts.model.v20140618.QueryVideoSplitJobListResponse.Job.Input;
 import com.aliyuncs.mts.model.v20140618.QueryVideoSplitJobListResponse.Job.VideoSplitResult;
 import com.aliyuncs.mts.model.v20140618.QueryVideoSplitJobListResponse.Job.VideoSplitResult.VideoSplit;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

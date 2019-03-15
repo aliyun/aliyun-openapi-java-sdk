@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetProductDetailRequest extends RpcAcsRequest<GetProductDetailResponse> {
 	
 	public GetProductDetailRequest() {
-		super("finmall", "2018-07-23", "GetProductDetail", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "GetProductDetail", "finmall");
 	}
 
 	private String productId;

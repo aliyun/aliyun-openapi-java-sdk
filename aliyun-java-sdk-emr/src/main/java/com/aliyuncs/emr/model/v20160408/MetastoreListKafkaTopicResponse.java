@@ -81,6 +81,8 @@ public class MetastoreListKafkaTopicResponse extends AcsResponse {
 
 		private String dataSourceId;
 
+		private String topicName;
+
 		private Integer numPartitions;
 
 		private Integer replicationFactor;
@@ -90,6 +92,8 @@ public class MetastoreListKafkaTopicResponse extends AcsResponse {
 		private Long gmtModified;
 
 		private List<AdvancedConfig> advancedConfigList;
+
+		private Cluster cluster;
 
 		public String getId() {
 			return this.id;
@@ -105,6 +109,14 @@ public class MetastoreListKafkaTopicResponse extends AcsResponse {
 
 		public void setDataSourceId(String dataSourceId) {
 			this.dataSourceId = dataSourceId;
+		}
+
+		public String getTopicName() {
+			return this.topicName;
+		}
+
+		public void setTopicName(String topicName) {
+			this.topicName = topicName;
 		}
 
 		public Integer getNumPartitions() {
@@ -147,6 +159,14 @@ public class MetastoreListKafkaTopicResponse extends AcsResponse {
 			this.advancedConfigList = advancedConfigList;
 		}
 
+		public Cluster getCluster() {
+			return this.cluster;
+		}
+
+		public void setCluster(Cluster cluster) {
+			this.cluster = cluster;
+		}
+
 		public static class AdvancedConfig {
 
 			private String key;
@@ -167,6 +187,39 @@ public class MetastoreListKafkaTopicResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+		}
+
+		public static class Cluster {
+
+			private String clusterBizId;
+
+			private String clusterName;
+
+			private String clusterStatus;
+
+			public String getClusterBizId() {
+				return this.clusterBizId;
+			}
+
+			public void setClusterBizId(String clusterBizId) {
+				this.clusterBizId = clusterBizId;
+			}
+
+			public String getClusterName() {
+				return this.clusterName;
+			}
+
+			public void setClusterName(String clusterName) {
+				this.clusterName = clusterName;
+			}
+
+			public String getClusterStatus() {
+				return this.clusterStatus;
+			}
+
+			public void setClusterStatus(String clusterStatus) {
+				this.clusterStatus = clusterStatus;
 			}
 		}
 	}

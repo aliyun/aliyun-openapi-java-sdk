@@ -37,6 +37,8 @@ public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRoute
 
 	private Long ownerId;
 
+	private Boolean includeReservationData;
+
 	private Integer pageNumber;
 
 	public List<Filter> getFilters() {
@@ -47,12 +49,12 @@ public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRoute
 		this.filters = filters;	
 		if (filters != null) {
 			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
 				if (filters.get(depth1).getValues() != null) {
 					for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
 						putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
 					}
 				}
+				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
 			}
 		}	
 	}
@@ -101,6 +103,17 @@ public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRoute
 		}
 	}
 
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -114,17 +127,9 @@ public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRoute
 
 	public static class Filter {
 
-		private String key;
-
 		private List<String> values;
 
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
+		private String key;
 
 		public List<String> getValues() {
 			return this.values;
@@ -132,6 +137,14 @@ public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRoute
 
 		public void setValues(List<String> values) {
 			this.values = values;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -51,6 +51,11 @@ public class DescribeGlobalAccelerationInstancesResponseUnmarshaller {
 			globalAccelerationInstance.setDescription(context.stringValue("DescribeGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].Description"));
 			globalAccelerationInstance.setExpiredTime(context.stringValue("DescribeGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].ExpiredTime"));
 			globalAccelerationInstance.setCreationTime(context.stringValue("DescribeGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].CreationTime"));
+			globalAccelerationInstance.setHasReservationData(context.stringValue("DescribeGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].HasReservationData"));
+			globalAccelerationInstance.setReservationBandwidth(context.stringValue("DescribeGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].ReservationBandwidth"));
+			globalAccelerationInstance.setReservationInternetChargeType(context.stringValue("DescribeGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].ReservationInternetChargeType"));
+			globalAccelerationInstance.setReservationActiveTime(context.stringValue("DescribeGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].ReservationActiveTime"));
+			globalAccelerationInstance.setReservationOrderType(context.stringValue("DescribeGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].ReservationOrderType"));
 
 			List<LockReason> operationLocks = new ArrayList<LockReason>();
 			for (int j = 0; j < context.lengthValue("DescribeGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].OperationLocks.Length"); j++) {

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.xspace.model.v20170720.QueryCustomerByPhoneResponse;
 import com.aliyuncs.xspace.model.v20170720.QueryCustomerByPhoneResponse.DataItem;
 import com.aliyuncs.xspace.model.v20170720.QueryCustomerByPhoneResponse.DataItem.CustomizeFields;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,6 +53,8 @@ public class QueryCustomerByPhoneResponseUnmarshaller {
 			CustomizeFields customizeFields = new CustomizeFields();
 			customizeFields.setCid(context.stringValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.Cid"));
 			customizeFields.setAbcUrl(context.stringValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.AbcUrl"));
+			customizeFields.setDistributionLevel(context.stringValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.DistributionLevel"));
+			customizeFields.setMainAccountUid(context.stringValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.MainAccountUid"));
 
 			List<String> associatePersonList = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.AssociatePersonList.Length"); j++) {

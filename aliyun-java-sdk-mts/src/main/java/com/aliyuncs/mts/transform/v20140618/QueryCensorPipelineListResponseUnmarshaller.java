@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.mts.model.v20140618.QueryCensorPipelineListResponse;
 import com.aliyuncs.mts.model.v20140618.QueryCensorPipelineListResponse.Pipeline;
 import com.aliyuncs.mts.model.v20140618.QueryCensorPipelineListResponse.Pipeline.NotifyConfig;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

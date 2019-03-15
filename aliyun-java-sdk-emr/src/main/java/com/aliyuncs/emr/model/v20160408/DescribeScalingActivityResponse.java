@@ -42,6 +42,12 @@ public class DescribeScalingActivityResponse extends AcsResponse {
 
 	private String status;
 
+	private String transition;
+
+	private String scalingRuleId;
+
+	private Integer expectNum;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +118,30 @@ public class DescribeScalingActivityResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getTransition() {
+		return this.transition;
+	}
+
+	public void setTransition(String transition) {
+		this.transition = transition;
+	}
+
+	public String getScalingRuleId() {
+		return this.scalingRuleId;
+	}
+
+	public void setScalingRuleId(String scalingRuleId) {
+		this.scalingRuleId = scalingRuleId;
+	}
+
+	public Integer getExpectNum() {
+		return this.expectNum;
+	}
+
+	public void setExpectNum(Integer expectNum) {
+		this.expectNum = expectNum;
 	}
 
 	@Override

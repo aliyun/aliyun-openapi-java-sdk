@@ -53,6 +53,8 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		private String status;
 
+		private String statusCategory;
+
 		private List<AvailableResource> availableResources;
 
 		public String getBizRegionId() {
@@ -95,6 +97,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getStatusCategory() {
+			return this.statusCategory;
+		}
+
+		public void setStatusCategory(String statusCategory) {
+			this.statusCategory = statusCategory;
+		}
+
 		public List<AvailableResource> getAvailableResources() {
 			return this.availableResources;
 		}
@@ -131,6 +141,8 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				private String status;
 
+				private String statusCategory;
+
 				private Integer min;
 
 				private Integer max;
@@ -151,6 +163,14 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				public void setStatus(String status) {
 					this.status = status;
+				}
+
+				public String getStatusCategory() {
+					return this.statusCategory;
+				}
+
+				public void setStatusCategory(String statusCategory) {
+					this.statusCategory = statusCategory;
 				}
 
 				public Integer getMin() {

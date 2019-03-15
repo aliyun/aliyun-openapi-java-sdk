@@ -15,7 +15,6 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.DescribeClusterServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -166,10 +165,26 @@ public class DescribeClusterServiceResponse extends AcsResponse {
 				this.componentName = componentName;
 			}
 
+			public String getBizActionName() {
+				return this.actionName;
+			}
+
+			public void setBizActionName(String actionName) {
+				this.actionName = actionName;
+			}
+
+			/**
+			 * @deprecated use getBizActionName instead of this.
+			 */
+			@Deprecated
 			public String getActionName() {
 				return this.actionName;
 			}
 
+			/**
+			 * @deprecated use setBizActionName instead of this.
+			 */
+			@Deprecated
 			public void setActionName(String actionName) {
 				this.actionName = actionName;
 			}
@@ -199,9 +214,13 @@ public class DescribeClusterServiceResponse extends AcsResponse {
 
 			private String value;
 
+			private Integer desiredStoppedValue;
+
 			private String status;
 
 			private String type;
+
+			private String category;
 
 			private String alertInfo;
 
@@ -229,6 +248,14 @@ public class DescribeClusterServiceResponse extends AcsResponse {
 				this.value = value;
 			}
 
+			public Integer getDesiredStoppedValue() {
+				return this.desiredStoppedValue;
+			}
+
+			public void setDesiredStoppedValue(Integer desiredStoppedValue) {
+				this.desiredStoppedValue = desiredStoppedValue;
+			}
+
 			public String getStatus() {
 				return this.status;
 			}
@@ -243,6 +270,14 @@ public class DescribeClusterServiceResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
 			}
 
 			public String getAlertInfo() {

@@ -49,7 +49,15 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 
 	private Long duration;
 
+	private Long scheduleTime;
+
 	private String graph;
+
+	private String cronExpression;
+
+	private Boolean hasNodeFailed;
+
+	private List<ParentFlow> dependencyFlowList;
 
 	private List<NodeInstanceItem> nodeInstance;
 
@@ -149,6 +157,14 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 		this.duration = duration;
 	}
 
+	public Long getScheduleTime() {
+		return this.scheduleTime;
+	}
+
+	public void setScheduleTime(Long scheduleTime) {
+		this.scheduleTime = scheduleTime;
+	}
+
 	public String getGraph() {
 		return this.graph;
 	}
@@ -157,12 +173,109 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 		this.graph = graph;
 	}
 
+	public String getCronExpression() {
+		return this.cronExpression;
+	}
+
+	public void setCronExpression(String cronExpression) {
+		this.cronExpression = cronExpression;
+	}
+
+	public Boolean getHasNodeFailed() {
+		return this.hasNodeFailed;
+	}
+
+	public void setHasNodeFailed(Boolean hasNodeFailed) {
+		this.hasNodeFailed = hasNodeFailed;
+	}
+
+	public List<ParentFlow> getDependencyFlowList() {
+		return this.dependencyFlowList;
+	}
+
+	public void setDependencyFlowList(List<ParentFlow> dependencyFlowList) {
+		this.dependencyFlowList = dependencyFlowList;
+	}
+
 	public List<NodeInstanceItem> getNodeInstance() {
 		return this.nodeInstance;
 	}
 
 	public void setNodeInstance(List<NodeInstanceItem> nodeInstance) {
 		this.nodeInstance = nodeInstance;
+	}
+
+	public static class ParentFlow {
+
+		private String projectId;
+
+		private String flowId;
+
+		private String dependencyFlowId;
+
+		private String flowInstanceId;
+
+		private String dependencyInstanceId;
+
+		private String scheduleKey;
+
+		private Long bizDate;
+
+		public String getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(String projectId) {
+			this.projectId = projectId;
+		}
+
+		public String getFlowId() {
+			return this.flowId;
+		}
+
+		public void setFlowId(String flowId) {
+			this.flowId = flowId;
+		}
+
+		public String getDependencyFlowId() {
+			return this.dependencyFlowId;
+		}
+
+		public void setDependencyFlowId(String dependencyFlowId) {
+			this.dependencyFlowId = dependencyFlowId;
+		}
+
+		public String getFlowInstanceId() {
+			return this.flowInstanceId;
+		}
+
+		public void setFlowInstanceId(String flowInstanceId) {
+			this.flowInstanceId = flowInstanceId;
+		}
+
+		public String getDependencyInstanceId() {
+			return this.dependencyInstanceId;
+		}
+
+		public void setDependencyInstanceId(String dependencyInstanceId) {
+			this.dependencyInstanceId = dependencyInstanceId;
+		}
+
+		public String getScheduleKey() {
+			return this.scheduleKey;
+		}
+
+		public void setScheduleKey(String scheduleKey) {
+			this.scheduleKey = scheduleKey;
+		}
+
+		public Long getBizDate() {
+			return this.bizDate;
+		}
+
+		public void setBizDate(Long bizDate) {
+			this.bizDate = bizDate;
+		}
 	}
 
 	public static class NodeInstanceItem {

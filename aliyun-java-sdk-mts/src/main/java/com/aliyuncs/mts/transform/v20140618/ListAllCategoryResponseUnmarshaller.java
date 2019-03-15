@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.ListAllCategoryResponse;
 import com.aliyuncs.mts.model.v20140618.ListAllCategoryResponse.Category;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

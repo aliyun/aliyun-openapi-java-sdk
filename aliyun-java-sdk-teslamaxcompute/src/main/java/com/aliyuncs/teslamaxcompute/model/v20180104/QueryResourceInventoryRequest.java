@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryResourceInventoryRequest extends RpcAcsRequest<QueryResourceInventoryResponse> {
 	
 	public QueryResourceInventoryRequest() {
-		super("TeslaMaxCompute", "2018-01-04", "QueryResourceInventory");
+		super("TeslaMaxCompute", "2018-01-04", "QueryResourceInventory", "teslamaxcompute");
 	}
 
 	@Override

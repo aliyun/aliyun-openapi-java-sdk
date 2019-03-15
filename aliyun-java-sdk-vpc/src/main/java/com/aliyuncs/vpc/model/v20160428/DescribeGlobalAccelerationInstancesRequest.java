@@ -40,6 +40,8 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 
 	private Long ownerId;
 
+	private Boolean includeReservationData;
+
 	private String globalAccelerationInstanceId;
 
 	private String serverId;
@@ -126,6 +128,17 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
 		}
 	}
 

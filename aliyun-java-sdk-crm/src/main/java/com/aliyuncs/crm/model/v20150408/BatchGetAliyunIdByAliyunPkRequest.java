@@ -24,7 +24,7 @@ import java.util.List;
 public class BatchGetAliyunIdByAliyunPkRequest extends RpcAcsRequest<BatchGetAliyunIdByAliyunPkResponse> {
 	
 	public BatchGetAliyunIdByAliyunPkRequest() {
-		super("Crm", "2015-04-08", "BatchGetAliyunIdByAliyunPk");
+		super("Crm", "2015-04-08", "BatchGetAliyunIdByAliyunPk", "crm");
 	}
 
 	private List<String> pkLists;

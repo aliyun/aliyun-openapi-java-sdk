@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ram.model.v20150501;
 
 import java.util.List;
@@ -26,6 +27,10 @@ public class ListUsersForGroupResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean isTruncated;
+
+	private String marker;
+
 	private List<User> users;
 
 	public String getRequestId() {
@@ -34,6 +39,22 @@ public class ListUsersForGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getIsTruncated() {
+		return this.isTruncated;
+	}
+
+	public void setIsTruncated(Boolean isTruncated) {
+		this.isTruncated = isTruncated;
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
 	}
 
 	public List<User> getUsers() {

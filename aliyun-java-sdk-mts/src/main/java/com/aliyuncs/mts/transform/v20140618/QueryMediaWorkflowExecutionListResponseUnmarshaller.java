@@ -23,7 +23,6 @@ import com.aliyuncs.mts.model.v20140618.QueryMediaWorkflowExecutionListResponse.
 import com.aliyuncs.mts.model.v20140618.QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Activity.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Input;
 import com.aliyuncs.mts.model.v20140618.QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Input.InputFile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

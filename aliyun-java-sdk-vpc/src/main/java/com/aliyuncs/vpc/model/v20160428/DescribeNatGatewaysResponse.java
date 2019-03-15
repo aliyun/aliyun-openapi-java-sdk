@@ -91,6 +91,10 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String instanceChargeType;
 
+		private String expiredTime;
+
+		private Boolean autoPay;
+
 		private String businessStatus;
 
 		private String creationTime;
@@ -113,10 +117,26 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			this.natGatewayId = natGatewayId;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -159,6 +179,22 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setInstanceChargeType(String instanceChargeType) {
 			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(String expiredTime) {
+			this.expiredTime = expiredTime;
+		}
+
+		public Boolean getAutoPay() {
+			return this.autoPay;
+		}
+
+		public void setAutoPay(Boolean autoPay) {
+			this.autoPay = autoPay;
 		}
 
 		public String getBusinessStatus() {

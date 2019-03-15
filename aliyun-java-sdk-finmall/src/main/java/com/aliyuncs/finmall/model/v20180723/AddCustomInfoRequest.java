@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddCustomInfoRequest extends RpcAcsRequest<AddCustomInfoResponse> {
 	
 	public AddCustomInfoRequest() {
-		super("finmall", "2018-07-23", "AddCustomInfo", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "AddCustomInfo", "finmall");
 	}
 
 	private String userId;

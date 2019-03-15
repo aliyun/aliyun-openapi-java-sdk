@@ -15,7 +15,6 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.mts.transform.v20140618.UpdateMediaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.xspace.model.v20170720.QueryCustomerByIdResponse;
 import com.aliyuncs.xspace.model.v20170720.QueryCustomerByIdResponse.Data;
 import com.aliyuncs.xspace.model.v20170720.QueryCustomerByIdResponse.Data.CustomizeFields;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

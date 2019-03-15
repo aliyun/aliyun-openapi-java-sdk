@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class PushMeteringDataRequest extends RpcAcsRequest<PushMeteringDataResponse> {
 	
 	public PushMeteringDataRequest() {
-		super("Market", "2015-11-01", "PushMeteringData", "yunmarket");
+		super("Market", "2015-11-01", "PushMeteringData", "market");
 		setMethod(MethodType.POST);
 	}
 

@@ -37,6 +37,8 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 
 	private Integer pageSize;
 
+	private List<Tag> tags;
+
 	private Long ownerId;
 
 	private Integer pageNumber;
@@ -103,6 +105,20 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -137,6 +153,29 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 
 		public void setValues(List<String> values) {
 			this.values = values;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 
 		public String getKey() {

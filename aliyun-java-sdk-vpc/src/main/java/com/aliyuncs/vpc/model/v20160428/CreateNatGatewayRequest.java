@@ -29,23 +29,31 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 
 	private Long resourceOwnerId;
 
+	private Boolean autoPay;
+
 	private String resourceOwnerAccount;
 
 	private String clientToken;
 
 	private String ownerAccount;
 
-	private String vpcId;
-
-	private String name;
-
 	private String description;
 
 	private Long ownerId;
 
+	private String spec;
+
+	private String duration;
+
+	private String vpcId;
+
+	private String name;
+
 	private List<BandwidthPackage> bandwidthPackages;
 
-	private String spec;
+	private String instanceChargeType;
+
+	private String pricingCycle;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,6 +63,17 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -91,28 +110,6 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -135,23 +132,6 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
-	public List<BandwidthPackage> getBandwidthPackages() {
-		return this.bandwidthPackages;
-	}
-
-	public void setBandwidthPackages(List<BandwidthPackage> bandwidthPackages) {
-		this.bandwidthPackages = bandwidthPackages;	
-		if (bandwidthPackages != null) {
-			for (int depth1 = 0; depth1 < bandwidthPackages.size(); depth1++) {
-				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".IpCount" , bandwidthPackages.get(depth1).getIpCount());
-				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Bandwidth" , bandwidthPackages.get(depth1).getBandwidth());
-				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Zone" , bandwidthPackages.get(depth1).getZone());
-				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".ISP" , bandwidthPackages.get(depth1).getISP());
-				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".InternetChargeType" , bandwidthPackages.get(depth1).getInternetChargeType());
-			}
-		}	
-	}
-
 	public String getSpec() {
 		return this.spec;
 	}
@@ -163,25 +143,89 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 		}
 	}
 
-	public static class BandwidthPackage {
+	public String getDuration() {
+		return this.duration;
+	}
 
-		private Integer ipCount;
+	public void setDuration(String duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public List<BandwidthPackage> getBandwidthPackages() {
+		return this.bandwidthPackages;
+	}
+
+	public void setBandwidthPackages(List<BandwidthPackage> bandwidthPackages) {
+		this.bandwidthPackages = bandwidthPackages;	
+		if (bandwidthPackages != null) {
+			for (int depth1 = 0; depth1 < bandwidthPackages.size(); depth1++) {
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Bandwidth" , bandwidthPackages.get(depth1).getBandwidth());
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".Zone" , bandwidthPackages.get(depth1).getZone());
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".InternetChargeType" , bandwidthPackages.get(depth1).getInternetChargeType());
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".ISP" , bandwidthPackages.get(depth1).getISP());
+				putQueryParameter("BandwidthPackage." + (depth1 + 1) + ".IpCount" , bandwidthPackages.get(depth1).getIpCount());
+			}
+		}	
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
+	public static class BandwidthPackage {
 
 		private Integer bandwidth;
 
 		private String zone;
 
-		private String iSP;
-
 		private String internetChargeType;
 
-		public Integer getIpCount() {
-			return this.ipCount;
-		}
+		private String iSP;
 
-		public void setIpCount(Integer ipCount) {
-			this.ipCount = ipCount;
-		}
+		private Integer ipCount;
 
 		public Integer getBandwidth() {
 			return this.bandwidth;
@@ -199,6 +243,14 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 			this.zone = zone;
 		}
 
+		public String getInternetChargeType() {
+			return this.internetChargeType;
+		}
+
+		public void setInternetChargeType(String internetChargeType) {
+			this.internetChargeType = internetChargeType;
+		}
+
 		public String getISP() {
 			return this.iSP;
 		}
@@ -207,12 +259,12 @@ public class CreateNatGatewayRequest extends RpcAcsRequest<CreateNatGatewayRespo
 			this.iSP = iSP;
 		}
 
-		public String getInternetChargeType() {
-			return this.internetChargeType;
+		public Integer getIpCount() {
+			return this.ipCount;
 		}
 
-		public void setInternetChargeType(String internetChargeType) {
-			this.internetChargeType = internetChargeType;
+		public void setIpCount(Integer ipCount) {
+			this.ipCount = ipCount;
 		}
 	}
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class SignedPageResultRequest extends RpcAcsRequest<SignedPageResultResponse> {
 	
 	public SignedPageResultRequest() {
-		super("finmall", "2018-07-23", "SignedPageResult", "finmall", "innerAPI");
+		super("finmall", "2018-07-23", "SignedPageResult", "finmall");
 		setMethod(MethodType.POST);
 	}
 

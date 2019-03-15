@@ -81,6 +81,8 @@ public class MetastoreListTaskResponse extends AcsResponse {
 
 		private String taskType;
 
+		private String taskObject;
+
 		private String taskStatus;
 
 		private Long startTime;
@@ -113,6 +115,14 @@ public class MetastoreListTaskResponse extends AcsResponse {
 
 		public void setTaskType(String taskType) {
 			this.taskType = taskType;
+		}
+
+		public String getTaskObject() {
+			return this.taskObject;
+		}
+
+		public void setTaskObject(String taskObject) {
+			this.taskObject = taskObject;
 		}
 
 		public String getTaskStatus() {

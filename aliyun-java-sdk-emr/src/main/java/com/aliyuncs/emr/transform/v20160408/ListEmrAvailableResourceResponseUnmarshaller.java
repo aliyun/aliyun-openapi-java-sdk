@@ -22,7 +22,6 @@ import com.aliyuncs.emr.model.v20160408.ListEmrAvailableResourceResponse.EmrZone
 import com.aliyuncs.emr.model.v20160408.ListEmrAvailableResourceResponse.EmrZoneInfo.EmrResourceInfo;
 import com.aliyuncs.emr.model.v20160408.ListEmrAvailableResourceResponse.EmrZoneInfo.EmrResourceInfo.SupportedResource;
 import com.aliyuncs.emr.model.v20160408.ListEmrAvailableResourceResponse.EmrZoneInfo.EmrResourceInfo.SupportedResource.EmrInstanceType;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

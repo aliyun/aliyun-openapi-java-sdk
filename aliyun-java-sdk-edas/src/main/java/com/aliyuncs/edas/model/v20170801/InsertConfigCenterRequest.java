@@ -33,6 +33,8 @@ public class InsertConfigCenterRequest extends RoaAcsRequest<InsertConfigCenterR
 
 	private String data;
 
+	private String appName;
+
 	private String logicalRegionId;
 
 	private String group;
@@ -56,6 +58,17 @@ public class InsertConfigCenterRequest extends RoaAcsRequest<InsertConfigCenterR
 		this.data = data;
 		if(data != null){
 			putQueryParameter("Data", data);
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
 		}
 	}
 

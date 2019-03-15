@@ -33,6 +33,8 @@ public class DescribeRegionsResponseUnmarshaller {
 			Region region = new Region();
 			region.setRegionId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
 			region.setRegionName(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionName"));
+			region.setLocalName(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
+			region.setRegionEndpoint(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
 
 			regions.add(region);
 		}

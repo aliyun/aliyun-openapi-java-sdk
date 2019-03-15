@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateCpmcPunishFeedBackRequest extends RpcAcsRequest<CreateCpmcPunishFeedBackResponse> {
 	
 	public CreateCpmcPunishFeedBackRequest() {
-		super("jarvis", "2018-02-06", "CreateCpmcPunishFeedBack");
+		super("jarvis", "2018-02-06", "CreateCpmcPunishFeedBack", "jarvis");
 	}
 
 	private Integer feedBack;

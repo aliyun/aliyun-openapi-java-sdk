@@ -93,6 +93,12 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		private String circuitCode;
 
+		private String localGatewayIp;
+
+		private String peerGatewayIp;
+
+		private String peeringSubnetMask;
+
 		public String getVbrId() {
 			return this.vbrId;
 		}
@@ -155,6 +161,30 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		public void setCircuitCode(String circuitCode) {
 			this.circuitCode = circuitCode;
+		}
+
+		public String getLocalGatewayIp() {
+			return this.localGatewayIp;
+		}
+
+		public void setLocalGatewayIp(String localGatewayIp) {
+			this.localGatewayIp = localGatewayIp;
+		}
+
+		public String getPeerGatewayIp() {
+			return this.peerGatewayIp;
+		}
+
+		public void setPeerGatewayIp(String peerGatewayIp) {
+			this.peerGatewayIp = peerGatewayIp;
+		}
+
+		public String getPeeringSubnetMask() {
+			return this.peeringSubnetMask;
+		}
+
+		public void setPeeringSubnetMask(String peeringSubnetMask) {
+			this.peeringSubnetMask = peeringSubnetMask;
 		}
 	}
 

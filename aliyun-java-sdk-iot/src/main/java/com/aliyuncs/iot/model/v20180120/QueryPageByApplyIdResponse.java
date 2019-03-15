@@ -123,6 +123,8 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 
 		private String deviceSecret;
 
+		private String iotId;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -145,6 +147,14 @@ public class QueryPageByApplyIdResponse extends AcsResponse {
 
 		public void setDeviceSecret(String deviceSecret) {
 			this.deviceSecret = deviceSecret;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
 		}
 	}
 

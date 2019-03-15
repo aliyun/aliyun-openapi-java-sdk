@@ -15,7 +15,6 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.emr.transform.v20160408.DescribeClusterV2ResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -52,6 +51,8 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		private String regionId;
 
+		private String depositType;
+
 		private String zoneId;
 
 		private String name;
@@ -78,11 +79,9 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		private Boolean highAvailabilityEnable;
 
+		private Boolean localMetaDb;
+
 		private String chargeType;
-
-		private String depositType;
-
-		private Long expiredTime1;
 
 		private Integer period;
 
@@ -134,6 +133,8 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		private Boolean autoScalingSpotWithLimitAllowed;
 
+		private Boolean autoScalingByLoadAllowed;
+
 		private Boolean resizeDiskEnable;
 
 		private List<GatewayClusterInfo> gatewayClusterInfoList;
@@ -158,12 +159,36 @@ public class DescribeClusterV2Response extends AcsResponse {
 			this.id = id;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getDepositType() {
+			return this.depositType;
+		}
+
+		public void setDepositType(String depositType) {
+			this.depositType = depositType;
 		}
 
 		public String getZoneId() {
@@ -270,28 +295,20 @@ public class DescribeClusterV2Response extends AcsResponse {
 			this.highAvailabilityEnable = highAvailabilityEnable;
 		}
 
+		public Boolean getLocalMetaDb() {
+			return this.localMetaDb;
+		}
+
+		public void setLocalMetaDb(Boolean localMetaDb) {
+			this.localMetaDb = localMetaDb;
+		}
+
 		public String getChargeType() {
 			return this.chargeType;
 		}
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
-		}
-
-		public String getDepositType() {
-			return this.depositType;
-		}
-
-		public void setDepositType(String depositType) {
-			this.depositType = depositType;
-		}
-
-		public Long getExpiredTime1() {
-			return this.expiredTime1;
-		}
-
-		public void setExpiredTime1(Long expiredTime1) {
-			this.expiredTime1 = expiredTime1;
 		}
 
 		public Integer getPeriod() {
@@ -494,6 +511,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 			this.autoScalingSpotWithLimitAllowed = autoScalingSpotWithLimitAllowed;
 		}
 
+		public Boolean getAutoScalingByLoadAllowed() {
+			return this.autoScalingByLoadAllowed;
+		}
+
+		public void setAutoScalingByLoadAllowed(Boolean autoScalingByLoadAllowed) {
+			this.autoScalingByLoadAllowed = autoScalingByLoadAllowed;
+		}
+
 		public Boolean getResizeDiskEnable() {
 			return this.resizeDiskEnable;
 		}
@@ -564,6 +589,8 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 			private String clusterName;
 
+			private String status;
+
 			public String getClusterId() {
 				return this.clusterId;
 			}
@@ -578,6 +605,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 			public void setClusterName(String clusterName) {
 				this.clusterName = clusterName;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 
@@ -614,6 +649,10 @@ public class DescribeClusterV2Response extends AcsResponse {
 			private Integer diskCount;
 
 			private String bandWidth;
+
+			private String lockType;
+
+			private String lockReason;
 
 			private List<Node> nodes;
 
@@ -745,6 +784,22 @@ public class DescribeClusterV2Response extends AcsResponse {
 				this.bandWidth = bandWidth;
 			}
 
+			public String getLockType() {
+				return this.lockType;
+			}
+
+			public void setLockType(String lockType) {
+				this.lockType = lockType;
+			}
+
+			public String getLockReason() {
+				return this.lockReason;
+			}
+
+			public void setLockReason(String lockReason) {
+				this.lockReason = lockReason;
+			}
+
 			public List<Node> getNodes() {
 				return this.nodes;
 			}
@@ -770,6 +825,8 @@ public class DescribeClusterV2Response extends AcsResponse {
 				private String createTime;
 
 				private String emrExpiredTime;
+
+				private Boolean supportIpV6;
 
 				private List<DaemonInfo> daemonInfos;
 
@@ -837,6 +894,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 				public void setEmrExpiredTime(String emrExpiredTime) {
 					this.emrExpiredTime = emrExpiredTime;
+				}
+
+				public Boolean getSupportIpV6() {
+					return this.supportIpV6;
+				}
+
+				public void setSupportIpV6(Boolean supportIpV6) {
+					this.supportIpV6 = supportIpV6;
 				}
 
 				public List<DaemonInfo> getDaemonInfos() {
@@ -962,6 +1027,8 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 			private String clusterName;
 
+			private String status;
+
 			public String getClusterId() {
 				return this.clusterId;
 			}
@@ -976,6 +1043,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 			public void setClusterName(String clusterName) {
 				this.clusterName = clusterName;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 
@@ -1088,10 +1163,26 @@ public class DescribeClusterV2Response extends AcsResponse {
 					this.startTpe = startTpe;
 				}
 
+				public String getBizVersion() {
+					return this.version;
+				}
+
+				public void setBizVersion(String version) {
+					this.version = version;
+				}
+
+				/**
+				 * @deprecated use getBizVersion instead of this.
+				 */
+				@Deprecated
 				public String getVersion() {
 					return this.version;
 				}
 
+				/**
+				 * @deprecated use setBizVersion instead of this.
+				 */
+				@Deprecated
 				public void setVersion(String version) {
 					this.version = version;
 				}

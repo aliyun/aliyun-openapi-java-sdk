@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAccessWhiteListSlbListRequest extends RpcAcsRequest<DescribeAccessWhiteListSlbListResponse> {
 	
 	public DescribeAccessWhiteListSlbListRequest() {
-		super("jarvis", "2018-02-06", "DescribeAccessWhiteListSlbList");
+		super("jarvis", "2018-02-06", "DescribeAccessWhiteListSlbList", "jarvis");
 	}
 
 	private String sourceIp;

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.lubanruler.transform.v20171228;
 
 import com.aliyuncs.lubanruler.model.v20171228.UpdateLubanrulerTaskResponse;

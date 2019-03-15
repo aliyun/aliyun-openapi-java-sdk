@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetUserInstanceRequest extends RpcAcsRequest<GetUserInstanceResponse> {
 	
 	public GetUserInstanceRequest() {
-		super("TeslaMaxCompute", "2018-01-04", "GetUserInstance");
+		super("TeslaMaxCompute", "2018-01-04", "GetUserInstance", "teslamaxcompute");
 	}
 
 	private Integer pageSize;

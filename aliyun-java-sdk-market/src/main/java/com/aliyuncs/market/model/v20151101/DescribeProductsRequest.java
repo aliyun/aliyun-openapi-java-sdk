@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeProductsRequest extends RpcAcsRequest<DescribeProductsResponse> {
 	
 	public DescribeProductsRequest() {
-		super("Market", "2015-11-01", "DescribeProducts", "yunmarket");
+		super("Market", "2015-11-01", "DescribeProducts", "market");
 	}
 
 	private List<Filter> filters;

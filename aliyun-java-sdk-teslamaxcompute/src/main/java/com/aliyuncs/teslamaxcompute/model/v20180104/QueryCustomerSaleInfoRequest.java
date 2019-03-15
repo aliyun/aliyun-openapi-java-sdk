@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryCustomerSaleInfoRequest extends RpcAcsRequest<QueryCustomerSaleInfoResponse> {
 	
 	public QueryCustomerSaleInfoRequest() {
-		super("TeslaMaxCompute", "2018-01-04", "QueryCustomerSaleInfo");
+		super("TeslaMaxCompute", "2018-01-04", "QueryCustomerSaleInfo", "teslamaxcompute");
 	}
 
 	private String regionName;
