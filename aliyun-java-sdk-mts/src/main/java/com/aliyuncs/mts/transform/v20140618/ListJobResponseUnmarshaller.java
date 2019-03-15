@@ -57,7 +57,6 @@ import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Video;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.Video.BitrateBnd;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.WaterMark;
 import com.aliyuncs.mts.model.v20140618.ListJobResponse.Job.Output.WaterMark.InputFile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

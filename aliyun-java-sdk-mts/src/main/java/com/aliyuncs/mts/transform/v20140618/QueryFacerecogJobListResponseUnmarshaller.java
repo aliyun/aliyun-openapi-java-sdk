@@ -23,7 +23,6 @@ import com.aliyuncs.mts.model.v20140618.QueryFacerecogJobListResponse.FacerecogJ
 import com.aliyuncs.mts.model.v20140618.QueryFacerecogJobListResponse.FacerecogJob.VideoFacerecogResult;
 import com.aliyuncs.mts.model.v20140618.QueryFacerecogJobListResponse.FacerecogJob.VideoFacerecogResult.Facerecog;
 import com.aliyuncs.mts.model.v20140618.QueryFacerecogJobListResponse.FacerecogJob.VideoFacerecogResult.Facerecog.Face;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

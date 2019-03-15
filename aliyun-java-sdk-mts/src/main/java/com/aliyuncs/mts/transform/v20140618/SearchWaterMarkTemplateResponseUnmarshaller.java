@@ -21,7 +21,6 @@ import com.aliyuncs.mts.model.v20140618.SearchWaterMarkTemplateResponse;
 import com.aliyuncs.mts.model.v20140618.SearchWaterMarkTemplateResponse.WaterMarkTemplate;
 import com.aliyuncs.mts.model.v20140618.SearchWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer;
 import com.aliyuncs.mts.model.v20140618.SearchWaterMarkTemplateResponse.WaterMarkTemplate.Timeline;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

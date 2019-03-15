@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.mts.model.v20140618.QueryMediaWorkflowListResponse;
 import com.aliyuncs.mts.model.v20140618.QueryMediaWorkflowListResponse.MediaWorkflow;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

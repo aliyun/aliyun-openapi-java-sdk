@@ -29,7 +29,6 @@ import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.Cen
 import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.CensorTerrorismResult.Top2;
 import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.ImageCensorResult;
 import com.aliyuncs.mts.model.v20140618.QueryCensorJobListResponse.CensorJob.Input;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

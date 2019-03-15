@@ -67,7 +67,6 @@ import com.aliyuncs.mts.model.v20140618.QueryEditingJobListResponse.Job.EditingI
 import com.aliyuncs.mts.model.v20140618.QueryEditingJobListResponse.Job.EditingInput.InputConfig;
 import com.aliyuncs.mts.model.v20140618.QueryEditingJobListResponse.Job.EditingInput.InputFile;
 import com.aliyuncs.mts.model.v20140618.QueryEditingJobListResponse.Job.MNSMessageResult;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

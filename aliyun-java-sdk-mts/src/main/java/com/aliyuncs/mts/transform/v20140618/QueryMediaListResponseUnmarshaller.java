@@ -33,7 +33,6 @@ import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Snapshot;
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Snapshot.File2;
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Summary;
 import com.aliyuncs.mts.model.v20140618.QueryMediaListResponse.Media.Summary.File3;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

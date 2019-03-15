@@ -30,7 +30,6 @@ import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.Medi
 import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult.FrameTagInfo;
 import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult.Politician;
 import com.aliyuncs.mts.model.v20140618.QueryMediaDetailJobListResponse.Job.MediaDetailResult.MediaDetailRecgResult.Sensitive;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

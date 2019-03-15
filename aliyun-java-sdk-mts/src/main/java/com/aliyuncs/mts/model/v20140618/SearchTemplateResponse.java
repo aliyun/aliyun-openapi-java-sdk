@@ -202,6 +202,8 @@ public class SearchTemplateResponse extends AcsResponse {
 
 			private String qscale;
 
+			private String longShortMode;
+
 			private String remove;
 
 			private String crop;
@@ -330,6 +332,14 @@ public class SearchTemplateResponse extends AcsResponse {
 
 			public void setQscale(String qscale) {
 				this.qscale = qscale;
+			}
+
+			public String getLongShortMode() {
+				return this.longShortMode;
+			}
+
+			public void setLongShortMode(String longShortMode) {
+				this.longShortMode = longShortMode;
 			}
 
 			public String getRemove() {

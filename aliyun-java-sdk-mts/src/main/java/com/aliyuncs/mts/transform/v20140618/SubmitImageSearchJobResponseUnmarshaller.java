@@ -14,17 +14,17 @@
 
 package com.aliyuncs.mts.transform.v20140618;
 
-import com.aliyuncs.mts.model.v20140618.SubmitCensorJobResponse;
+import com.aliyuncs.mts.model.v20140618.SubmitImageSearchJobResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SubmitCensorJobResponseUnmarshaller {
+public class SubmitImageSearchJobResponseUnmarshaller {
 
-	public static SubmitCensorJobResponse unmarshall(SubmitCensorJobResponse submitCensorJobResponse, UnmarshallerContext context) {
+	public static SubmitImageSearchJobResponse unmarshall(SubmitImageSearchJobResponse submitImageSearchJobResponse, UnmarshallerContext context) {
 		
-		submitCensorJobResponse.setRequestId(context.stringValue("SubmitCensorJobResponse.RequestId"));
-		submitCensorJobResponse.setJobId(context.stringValue("SubmitCensorJobResponse.JobId"));
+		submitImageSearchJobResponse.setRequestId(context.stringValue("SubmitImageSearchJobResponse.RequestId"));
+		submitImageSearchJobResponse.setJobId(context.stringValue("SubmitImageSearchJobResponse.JobId"));
 	 
-	 	return submitCensorJobResponse;
+	 	return submitImageSearchJobResponse;
 	}
 }

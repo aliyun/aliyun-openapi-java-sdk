@@ -22,7 +22,6 @@ import com.aliyuncs.mts.model.v20140618.QueryAnnotationJobListResponse.Annotatio
 import com.aliyuncs.mts.model.v20140618.QueryAnnotationJobListResponse.AnnotationJob.Input;
 import com.aliyuncs.mts.model.v20140618.QueryAnnotationJobListResponse.AnnotationJob.VideoAnnotationResult;
 import com.aliyuncs.mts.model.v20140618.QueryAnnotationJobListResponse.AnnotationJob.VideoAnnotationResult.Annotation;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

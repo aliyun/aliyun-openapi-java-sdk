@@ -23,7 +23,6 @@ import com.aliyuncs.mts.model.v20140618.QueryAsrJobListResponse.Job.AsrConfig;
 import com.aliyuncs.mts.model.v20140618.QueryAsrJobListResponse.Job.AsrResult;
 import com.aliyuncs.mts.model.v20140618.QueryAsrJobListResponse.Job.AsrResult.AsrText;
 import com.aliyuncs.mts.model.v20140618.QueryAsrJobListResponse.Job.Input;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

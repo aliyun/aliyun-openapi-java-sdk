@@ -23,7 +23,6 @@ import com.aliyuncs.mts.model.v20140618.QueryCoverJobListResponse.CoverJob.Cover
 import com.aliyuncs.mts.model.v20140618.QueryCoverJobListResponse.CoverJob.CoverConfig.OutputFile;
 import com.aliyuncs.mts.model.v20140618.QueryCoverJobListResponse.CoverJob.CoverImage;
 import com.aliyuncs.mts.model.v20140618.QueryCoverJobListResponse.CoverJob.Input;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

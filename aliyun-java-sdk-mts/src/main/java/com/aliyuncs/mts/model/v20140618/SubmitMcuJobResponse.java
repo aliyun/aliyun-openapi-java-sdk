@@ -15,14 +15,14 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mts.transform.v20140618.SubmitCensorJobResponseUnmarshaller;
+import com.aliyuncs.mts.transform.v20140618.SubmitMcuJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitCensorJobResponse extends AcsResponse {
+public class SubmitMcuJobResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -45,7 +45,7 @@ public class SubmitCensorJobResponse extends AcsResponse {
 	}
 
 	@Override
-	public SubmitCensorJobResponse getInstance(UnmarshallerContext context) {
-		return	SubmitCensorJobResponseUnmarshaller.unmarshall(this, context);
+	public SubmitMcuJobResponse getInstance(UnmarshallerContext context) {
+		return	SubmitMcuJobResponseUnmarshaller.unmarshall(this, context);
 	}
 }

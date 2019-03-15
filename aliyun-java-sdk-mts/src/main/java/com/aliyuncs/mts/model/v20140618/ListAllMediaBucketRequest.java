@@ -30,7 +30,11 @@ public class ListAllMediaBucketRequest extends RpcAcsRequest<ListAllMediaBucketR
 
 	private String resourceOwnerAccount;
 
+	private String nextPageToken;
+
 	private String ownerAccount;
+
+	private Integer maximumPageSize;
 
 	private Long ownerId;
 
@@ -56,6 +60,17 @@ public class ListAllMediaBucketRequest extends RpcAcsRequest<ListAllMediaBucketR
 		}
 	}
 
+	public String getNextPageToken() {
+		return this.nextPageToken;
+	}
+
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
+		if(nextPageToken != null){
+			putQueryParameter("NextPageToken", nextPageToken);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -64,6 +79,17 @@ public class ListAllMediaBucketRequest extends RpcAcsRequest<ListAllMediaBucketR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getMaximumPageSize() {
+		return this.maximumPageSize;
+	}
+
+	public void setMaximumPageSize(Integer maximumPageSize) {
+		this.maximumPageSize = maximumPageSize;
+		if(maximumPageSize != null){
+			putQueryParameter("MaximumPageSize", maximumPageSize.toString());
 		}
 	}
 

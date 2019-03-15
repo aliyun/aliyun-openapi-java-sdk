@@ -25,7 +25,6 @@ import com.aliyuncs.mts.model.v20140618.QueryTerrorismJobListResponse.TerrorismJ
 import com.aliyuncs.mts.model.v20140618.QueryTerrorismJobListResponse.TerrorismJob.Input;
 import com.aliyuncs.mts.model.v20140618.QueryTerrorismJobListResponse.TerrorismJob.TerrorismConfig;
 import com.aliyuncs.mts.model.v20140618.QueryTerrorismJobListResponse.TerrorismJob.TerrorismConfig.OutputFile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

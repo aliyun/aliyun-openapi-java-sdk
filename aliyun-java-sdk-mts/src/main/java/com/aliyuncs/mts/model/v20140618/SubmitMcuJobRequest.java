@@ -20,132 +20,38 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class SubmitCensorJobRequest extends RpcAcsRequest<SubmitCensorJobResponse> {
+public class SubmitMcuJobRequest extends RpcAcsRequest<SubmitMcuJobResponse> {
 	
-	public SubmitCensorJobRequest() {
-		super("Mts", "2014-06-18", "SubmitCensorJob", "mts");
+	public SubmitMcuJobRequest() {
+		super("Mts", "2014-06-18", "SubmitMcuJob", "mts");
 	}
 
-	private Long resourceOwnerId;
-
-	private String coverImages;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private String description;
-
-	private Long ownerId;
-
-	private String title;
-
-	private String censorConfig;
-
-	private String pipelineId;
+	private String template;
 
 	private String input;
 
 	private String userData;
 
-	private String barrages;
+	private Long resourceOwnerId;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String templateId;
+
+	private String pipelineId;
+
+	public String getTemplate() {
+		return this.template;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getCoverImages() {
-		return this.coverImages;
-	}
-
-	public void setCoverImages(String coverImages) {
-		this.coverImages = coverImages;
-		if(coverImages != null){
-			putQueryParameter("CoverImages", coverImages);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-		if(title != null){
-			putQueryParameter("Title", title);
-		}
-	}
-
-	public String getCensorConfig() {
-		return this.censorConfig;
-	}
-
-	public void setCensorConfig(String censorConfig) {
-		this.censorConfig = censorConfig;
-		if(censorConfig != null){
-			putQueryParameter("CensorConfig", censorConfig);
-		}
-	}
-
-	public String getPipelineId() {
-		return this.pipelineId;
-	}
-
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		if(pipelineId != null){
-			putQueryParameter("PipelineId", pipelineId);
+	public void setTemplate(String template) {
+		this.template = template;
+		if(template != null){
+			putQueryParameter("Template", template);
 		}
 	}
 
@@ -171,20 +77,75 @@ public class SubmitCensorJobRequest extends RpcAcsRequest<SubmitCensorJobRespons
 		}
 	}
 
-	public String getBarrages() {
-		return this.barrages;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setBarrages(String barrages) {
-		this.barrages = barrages;
-		if(barrages != null){
-			putQueryParameter("Barrages", barrages);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId);
 		}
 	}
 
 	@Override
-	public Class<SubmitCensorJobResponse> getResponseClass() {
-		return SubmitCensorJobResponse.class;
+	public Class<SubmitMcuJobResponse> getResponseClass() {
+		return SubmitMcuJobResponse.class;
 	}
 
 }

@@ -23,6 +23,7 @@ import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Input;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.MNSMessageResult;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output;
+import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.Amix;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.Audio;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.Audio.Volume;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.Clip;
@@ -60,7 +61,6 @@ import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.Video.BitrateBnd;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.WaterMark;
 import com.aliyuncs.mts.model.v20140618.SubmitJobsResponse.JobResult.Job.Output.WaterMark.InputFile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -424,6 +424,19 @@ public class SubmitJobsResponseUnmarshaller {
 				outSubtitleList.add(outSubtitle);
 			}
 			output.setOutSubtitleList(outSubtitleList);
+
+			List<Amix> amixList = new ArrayList<Amix>();
+			for (int j = 0; j < context.lengthValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.AmixList.Length"); j++) {
+				Amix amix = new Amix();
+				amix.setAmixURL(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].AmixURL"));
+				amix.setMap(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].Map"));
+				amix.setMixDurMode(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].MixDurMode"));
+				amix.setStart(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].Start"));
+				amix.setDuration(context.stringValue("SubmitJobsResponse.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].Duration"));
+
+				amixList.add(amix);
+			}
+			output.setAmixList(amixList);
 			job.setOutput(output);
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();

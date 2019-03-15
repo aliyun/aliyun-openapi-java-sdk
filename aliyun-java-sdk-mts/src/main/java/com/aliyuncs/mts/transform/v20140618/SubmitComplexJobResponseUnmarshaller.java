@@ -69,7 +69,6 @@ import com.aliyuncs.mts.model.v20140618.SubmitComplexJobResponse.ComplexJob.Tran
 import com.aliyuncs.mts.model.v20140618.SubmitComplexJobResponse.ComplexJob.TranscodeOutput.Video.BitrateBnd;
 import com.aliyuncs.mts.model.v20140618.SubmitComplexJobResponse.ComplexJob.TranscodeOutput.WaterMark;
 import com.aliyuncs.mts.model.v20140618.SubmitComplexJobResponse.ComplexJob.TranscodeOutput.WaterMark.InputFile2;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
