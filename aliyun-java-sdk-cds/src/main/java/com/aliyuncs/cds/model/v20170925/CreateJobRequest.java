@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateJobRequest extends RoaAcsRequest<CreateJobResponse> {
 	
 	public CreateJobRequest() {
-		super("Cds", "2017-09-25", "CreateJob", "codepipeline");
+		super("Cds", "2017-09-25", "CreateJob", "cds");
 		setUriPattern("/v1/job/create");
 		setMethod(MethodType.POST);
 	}

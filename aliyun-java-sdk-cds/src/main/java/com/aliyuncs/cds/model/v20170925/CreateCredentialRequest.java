@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateCredentialRequest extends RoaAcsRequest<CreateCredentialResponse> {
 	
 	public CreateCredentialRequest() {
-		super("Cds", "2017-09-25", "CreateCredential", "codepipeline");
+		super("Cds", "2017-09-25", "CreateCredential", "cds");
 		setUriPattern("/v1/credential/create");
 		setMethod(MethodType.POST);
 	}

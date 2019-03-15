@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class StopBuildRequest extends RoaAcsRequest<StopBuildResponse> {
 	
 	public StopBuildRequest() {
-		super("Cds", "2017-09-25", "StopBuild", "codepipeline");
+		super("Cds", "2017-09-25", "StopBuild", "cds");
 		setUriPattern("/v1/job/[JobName]/build/[BuildNumber]/stop");
 		setMethod(MethodType.POST);
 	}

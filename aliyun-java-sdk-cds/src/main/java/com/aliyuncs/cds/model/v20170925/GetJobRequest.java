@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetJobRequest extends RoaAcsRequest<GetJobResponse> {
 	
 	public GetJobRequest() {
-		super("Cds", "2017-09-25", "GetJob", "codepipeline");
+		super("Cds", "2017-09-25", "GetJob", "cds");
 		setUriPattern("/v1/job/[JobName]");
 		setMethod(MethodType.GET);
 	}
