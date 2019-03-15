@@ -45,6 +45,8 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 
 	private Boolean isPtr;
 
+	private String proxyPattern;
+
 	private List<Vpc> bindVpcs;
 
 	public String getRequestId() {
@@ -127,6 +129,14 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 		this.isPtr = isPtr;
 	}
 
+	public String getProxyPattern() {
+		return this.proxyPattern;
+	}
+
+	public void setProxyPattern(String proxyPattern) {
+		this.proxyPattern = proxyPattern;
+	}
+
 	public List<Vpc> getBindVpcs() {
 		return this.bindVpcs;
 	}
@@ -144,6 +154,8 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 		private String vpcName;
 
 		private String regionName;
+
+		private String regionId;
 
 		public String getReionId() {
 			return this.reionId;
@@ -175,6 +187,30 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 
 		public void setRegionName(String regionName) {
 			this.regionName = regionName;
+		}
+
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

@@ -20,17 +20,30 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
+public class SetProxyPatternRequest extends RpcAcsRequest<SetProxyPatternResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("pvtz", "2018-01-01", "DescribeRegions", "pvtz");
+	public SetProxyPatternRequest() {
+		super("pvtz", "2018-01-01", "SetProxyPattern", "pvtz");
 	}
+
+	private String proxyPattern;
 
 	private String userClientIp;
 
-	private String acceptLanguage;
+	private String zoneId;
 
 	private String lang;
+
+	public String getProxyPattern() {
+		return this.proxyPattern;
+	}
+
+	public void setProxyPattern(String proxyPattern) {
+		this.proxyPattern = proxyPattern;
+		if(proxyPattern != null){
+			putQueryParameter("ProxyPattern", proxyPattern);
+		}
+	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -43,14 +56,14 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getZoneId() {
+		return this.zoneId;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -66,8 +79,8 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<SetProxyPatternResponse> getResponseClass() {
+		return SetProxyPatternResponse.class;
 	}
 
 }
