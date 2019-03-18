@@ -12,17 +12,26 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.idst.transform.v20180108;
+package com.aliyuncs.idst.model.v20180108;
 
-import com.aliyuncs.idst.model.v20180108.InstanceQueryResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.MethodType;
 
-
-public class InstanceQueryResponseUnmarshaller {
-
-	public static InstanceQueryResponse unmarshall(InstanceQueryResponse instanceQueryResponse, UnmarshallerContext context) {
-		
-	 
-	 	return instanceQueryResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class InstanceTrailRequest extends RoaAcsRequest<InstanceTrailResponse> {
+	
+	public InstanceTrailRequest() {
+		super("IDST", "2018-01-08", "InstanceTrail", "idst");
+		setUriPattern("/console/instance/trail");
+		setMethod(MethodType.POST);
 	}
+
+	@Override
+	public Class<InstanceTrailResponse> getResponseClass() {
+		return InstanceTrailResponse.class;
+	}
+
 }

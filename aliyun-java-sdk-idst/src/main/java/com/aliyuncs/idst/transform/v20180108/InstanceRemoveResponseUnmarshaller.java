@@ -14,15 +14,15 @@
 
 package com.aliyuncs.idst.transform.v20180108;
 
-import com.aliyuncs.idst.model.v20180108.InstanceQueryResponse;
+import com.aliyuncs.idst.model.v20180108.InstanceRemoveResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class InstanceQueryResponseUnmarshaller {
+public class InstanceRemoveResponseUnmarshaller {
 
-	public static InstanceQueryResponse unmarshall(InstanceQueryResponse instanceQueryResponse, UnmarshallerContext context) {
+	public static InstanceRemoveResponse unmarshall(InstanceRemoveResponse instanceRemoveResponse, UnmarshallerContext context) {
 		
 	 
-	 	return instanceQueryResponse;
+	 	return instanceRemoveResponse;
 	}
 }

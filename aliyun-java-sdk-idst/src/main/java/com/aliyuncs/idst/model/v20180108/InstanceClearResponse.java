@@ -12,17 +12,20 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.idst.transform.v20180108;
+package com.aliyuncs.idst.model.v20180108;
 
-import com.aliyuncs.idst.model.v20180108.InstanceQueryResponse;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.idst.transform.v20180108.InstanceClearResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+/**
+ * @author auto create
+ * @version 
+ */
+public class InstanceClearResponse extends AcsResponse {
 
-public class InstanceQueryResponseUnmarshaller {
-
-	public static InstanceQueryResponse unmarshall(InstanceQueryResponse instanceQueryResponse, UnmarshallerContext context) {
-		
-	 
-	 	return instanceQueryResponse;
+	@Override
+	public InstanceClearResponse getInstance(UnmarshallerContext context) {
+		return	InstanceClearResponseUnmarshaller.unmarshall(this, context);
 	}
 }

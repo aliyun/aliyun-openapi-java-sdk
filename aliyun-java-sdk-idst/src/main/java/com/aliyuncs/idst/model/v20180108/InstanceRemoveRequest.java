@@ -12,17 +12,26 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.idst.transform.v20180108;
+package com.aliyuncs.idst.model.v20180108;
 
-import com.aliyuncs.idst.model.v20180108.InstanceQueryResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.http.MethodType;
 
-
-public class InstanceQueryResponseUnmarshaller {
-
-	public static InstanceQueryResponse unmarshall(InstanceQueryResponse instanceQueryResponse, UnmarshallerContext context) {
-		
-	 
-	 	return instanceQueryResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class InstanceRemoveRequest extends RoaAcsRequest<InstanceRemoveResponse> {
+	
+	public InstanceRemoveRequest() {
+		super("IDST", "2018-01-08", "InstanceRemove", "idst");
+		setUriPattern("/console/instance/remove");
+		setMethod(MethodType.POST);
 	}
+
+	@Override
+	public Class<InstanceRemoveResponse> getResponseClass() {
+		return InstanceRemoveResponse.class;
+	}
+
 }

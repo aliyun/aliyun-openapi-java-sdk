@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.idst.model.v20180108;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InstanceDetailRequest extends RoaAcsRequest<InstanceDetailResponse> {
 	
 	public InstanceDetailRequest() {
-		super("IDST", "2018-01-08", "InstanceDetail");
+		super("IDST", "2018-01-08", "InstanceDetail", "idst");
 		setUriPattern("/console/instance/detail");
 		setMethod(MethodType.POST);
 	}
