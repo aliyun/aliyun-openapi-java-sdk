@@ -277,12 +277,18 @@ public class ApacheHttpClient extends IHttpClient {
         });
     }
 
+    /**
+     * use HttpClientConfig.setIgnoreSSLCerts(true) instead
+     */
     @Override
     public void ignoreSSLCertificate() {
         throw new IllegalStateException("Apache httpclient does not support modify sslFactory after inited, "
                 + "use HttpClientConfig.setIgnoreSSLCerts(true) while building client");
     }
 
+    /**
+     * use HttpClientConfig.setIgnoreSSLCerts(false) instead
+     */
     @Override
     public void restoreSSLCertificate() {
         throw new IllegalStateException("Apache httpclient does not support modify sslFactory after inited, "
