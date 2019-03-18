@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.afs.model.v20180112;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,29 +23,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCaptchaIpCityRequest extends RpcAcsRequest<DescribeCaptchaIpCityResponse> {
 	
 	public DescribeCaptchaIpCityRequest() {
-		super("afs", "2018-01-12", "DescribeCaptchaIpCity");
+		super("afs", "2018-01-12", "DescribeCaptchaIpCity", "afs");
 	}
-
-	private Long resourceOwnerId;
 
 	private String sourceIp;
 
 	private String configName;
 
+	private String refExtId;
+
 	private String time;
 
 	private String type;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -65,6 +55,17 @@ public class DescribeCaptchaIpCityRequest extends RpcAcsRequest<DescribeCaptchaI
 		this.configName = configName;
 		if(configName != null){
 			putQueryParameter("ConfigName", configName);
+		}
+	}
+
+	public String getRefExtId() {
+		return this.refExtId;
+	}
+
+	public void setRefExtId(String refExtId) {
+		this.refExtId = refExtId;
+		if(refExtId != null){
+			putQueryParameter("RefExtId", refExtId);
 		}
 	}
 

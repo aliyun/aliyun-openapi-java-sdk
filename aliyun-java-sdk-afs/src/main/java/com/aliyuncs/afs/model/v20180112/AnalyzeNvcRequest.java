@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.afs.model.v20180112;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,27 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class AnalyzeNvcRequest extends RpcAcsRequest<AnalyzeNvcResponse> {
 	
 	public AnalyzeNvcRequest() {
-		super("afs", "2018-01-12", "AnalyzeNvc");
+		super("afs", "2018-01-12", "AnalyzeNvc", "afs");
 	}
-
-	private Long resourceOwnerId;
 
 	private String sourceIp;
 
 	private String data;
 
 	private String scoreJsonStr;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getSourceIp() {
 		return this.sourceIp;

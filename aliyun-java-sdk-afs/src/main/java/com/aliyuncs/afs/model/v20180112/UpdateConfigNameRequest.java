@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeCaptchaRiskRequest extends RpcAcsRequest<DescribeCaptchaRiskResponse> {
+public class UpdateConfigNameRequest extends RpcAcsRequest<UpdateConfigNameResponse> {
 	
-	public DescribeCaptchaRiskRequest() {
-		super("afs", "2018-01-12", "DescribeCaptchaRisk", "afs");
+	public UpdateConfigNameRequest() {
+		super("afs", "2018-01-12", "UpdateConfigName", "afs");
 	}
 
 	private String sourceIp;
@@ -32,7 +32,7 @@ public class DescribeCaptchaRiskRequest extends RpcAcsRequest<DescribeCaptchaRis
 
 	private String refExtId;
 
-	private String time;
+	private String lang;
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -67,20 +67,20 @@ public class DescribeCaptchaRiskRequest extends RpcAcsRequest<DescribeCaptchaRis
 		}
 	}
 
-	public String getTime() {
-		return this.time;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
-		if(time != null){
-			putQueryParameter("Time", time);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
 	@Override
-	public Class<DescribeCaptchaRiskResponse> getResponseClass() {
-		return DescribeCaptchaRiskResponse.class;
+	public Class<UpdateConfigNameResponse> getResponseClass() {
+		return UpdateConfigNameResponse.class;
 	}
 
 }

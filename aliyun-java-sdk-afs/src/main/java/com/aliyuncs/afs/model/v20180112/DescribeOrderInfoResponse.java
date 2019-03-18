@@ -15,18 +15,26 @@
 package com.aliyuncs.afs.model.v20180112;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.afs.transform.v20180112.SetEarlyWarningResponseUnmarshaller;
+import com.aliyuncs.afs.transform.v20180112.DescribeOrderInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetEarlyWarningResponse extends AcsResponse {
+public class DescribeOrderInfoResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String bizCode;
+
+	private String orderLevel;
+
+	private String num;
+
+	private String beginDate;
+
+	private String endDate;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,9 +52,41 @@ public class SetEarlyWarningResponse extends AcsResponse {
 		this.bizCode = bizCode;
 	}
 
+	public String getOrderLevel() {
+		return this.orderLevel;
+	}
+
+	public void setOrderLevel(String orderLevel) {
+		this.orderLevel = orderLevel;
+	}
+
+	public String getNum() {
+		return this.num;
+	}
+
+	public void setNum(String num) {
+		this.num = num;
+	}
+
+	public String getBeginDate() {
+		return this.beginDate;
+	}
+
+	public void setBeginDate(String beginDate) {
+		this.beginDate = beginDate;
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
 	@Override
-	public SetEarlyWarningResponse getInstance(UnmarshallerContext context) {
-		return	SetEarlyWarningResponseUnmarshaller.unmarshall(this, context);
+	public DescribeOrderInfoResponse getInstance(UnmarshallerContext context) {
+		return	DescribeOrderInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

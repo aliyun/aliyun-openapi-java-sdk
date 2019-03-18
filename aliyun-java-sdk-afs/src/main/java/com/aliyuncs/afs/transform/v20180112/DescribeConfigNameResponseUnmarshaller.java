@@ -11,9 +11,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.afs.transform.v20180112;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.afs.model.v20180112.DescribeConfigNameResponse;
+import com.aliyuncs.afs.model.v20180112.DescribeConfigNameResponse.ConfigName;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,8 +28,18 @@ public class DescribeConfigNameResponseUnmarshaller {
 		
 		describeConfigNameResponse.setRequestId(context.stringValue("DescribeConfigNameResponse.RequestId"));
 		describeConfigNameResponse.setHasConfig(context.booleanValue("DescribeConfigNameResponse.HasConfig"));
-		describeConfigNameResponse.setConfigNames(context.stringValue("DescribeConfigNameResponse.ConfigNames"));
 		describeConfigNameResponse.setBizCode(context.stringValue("DescribeConfigNameResponse.BizCode"));
+
+		List<ConfigName> configNames = new ArrayList<ConfigName>();
+		for (int i = 0; i < context.lengthValue("DescribeConfigNameResponse.ConfigNames.Length"); i++) {
+			ConfigName configName = new ConfigName();
+			configName.setAliUid(context.stringValue("DescribeConfigNameResponse.ConfigNames["+ i +"].AliUid"));
+			configName.setConfigName(context.stringValue("DescribeConfigNameResponse.ConfigNames["+ i +"].ConfigName"));
+			configName.setRefExtId(context.stringValue("DescribeConfigNameResponse.ConfigNames["+ i +"].RefExtId"));
+
+			configNames.add(configName);
+		}
+		describeConfigNameResponse.setConfigNames(configNames);
 	 
 	 	return describeConfigNameResponse;
 	}

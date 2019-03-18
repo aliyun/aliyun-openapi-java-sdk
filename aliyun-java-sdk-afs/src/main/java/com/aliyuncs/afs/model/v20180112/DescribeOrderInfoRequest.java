@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeConfigNameRequest extends RpcAcsRequest<DescribeConfigNameResponse> {
+public class DescribeOrderInfoRequest extends RpcAcsRequest<DescribeOrderInfoResponse> {
 	
-	public DescribeConfigNameRequest() {
-		super("afs", "2018-01-12", "DescribeConfigName", "afs");
+	public DescribeOrderInfoRequest() {
+		super("afs", "2018-01-12", "DescribeOrderInfo", "afs");
 	}
 
 	private String sourceIp;
@@ -40,8 +40,8 @@ public class DescribeConfigNameRequest extends RpcAcsRequest<DescribeConfigNameR
 	}
 
 	@Override
-	public Class<DescribeConfigNameResponse> getResponseClass() {
-		return DescribeConfigNameResponse.class;
+	public Class<DescribeOrderInfoResponse> getResponseClass() {
+		return DescribeOrderInfoResponse.class;
 	}
 
 }

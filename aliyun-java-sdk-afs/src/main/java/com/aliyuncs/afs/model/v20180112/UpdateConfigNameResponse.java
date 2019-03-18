@@ -15,14 +15,14 @@
 package com.aliyuncs.afs.model.v20180112;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.afs.transform.v20180112.SetEarlyWarningResponseUnmarshaller;
+import com.aliyuncs.afs.transform.v20180112.UpdateConfigNameResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetEarlyWarningResponse extends AcsResponse {
+public class UpdateConfigNameResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -45,8 +45,8 @@ public class SetEarlyWarningResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetEarlyWarningResponse getInstance(UnmarshallerContext context) {
-		return	SetEarlyWarningResponseUnmarshaller.unmarshall(this, context);
+	public UpdateConfigNameResponse getInstance(UnmarshallerContext context) {
+		return	UpdateConfigNameResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

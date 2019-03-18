@@ -20,13 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeConfigNameRequest extends RpcAcsRequest<DescribeConfigNameResponse> {
+public class DescribeCaptchaOrderRequest extends RpcAcsRequest<DescribeCaptchaOrderResponse> {
 	
-	public DescribeConfigNameRequest() {
-		super("afs", "2018-01-12", "DescribeConfigName", "afs");
+	public DescribeCaptchaOrderRequest() {
+		super("afs", "2018-01-12", "DescribeCaptchaOrder", "afs");
 	}
 
 	private String sourceIp;
+
+	private String lang;
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -39,9 +41,20 @@ public class DescribeConfigNameRequest extends RpcAcsRequest<DescribeConfigNameR
 		}
 	}
 
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
 	@Override
-	public Class<DescribeConfigNameResponse> getResponseClass() {
-		return DescribeConfigNameResponse.class;
+	public Class<DescribeCaptchaOrderResponse> getResponseClass() {
+		return DescribeCaptchaOrderResponse.class;
 	}
 
 }

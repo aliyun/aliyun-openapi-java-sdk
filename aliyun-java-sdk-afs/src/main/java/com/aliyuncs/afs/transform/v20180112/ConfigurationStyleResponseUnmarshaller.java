@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.afs.transform.v20180112;
 
 import com.aliyuncs.afs.model.v20180112.ConfigurationStyleResponse;
@@ -32,6 +33,11 @@ public class ConfigurationStyleResponseUnmarshaller {
 		codeData.setPython(context.stringValue("ConfigurationStyleResponse.CodeData.Python"));
 		codeData.setJava(context.stringValue("ConfigurationStyleResponse.CodeData.Java"));
 		codeData.setNodeJs(context.stringValue("ConfigurationStyleResponse.CodeData.NodeJs"));
+		codeData.setNetUrl(context.stringValue("ConfigurationStyleResponse.CodeData.NetUrl"));
+		codeData.setPhpUrl(context.stringValue("ConfigurationStyleResponse.CodeData.PhpUrl"));
+		codeData.setPythonUrl(context.stringValue("ConfigurationStyleResponse.CodeData.PythonUrl"));
+		codeData.setJavaUrl(context.stringValue("ConfigurationStyleResponse.CodeData.JavaUrl"));
+		codeData.setNodeJsUrl(context.stringValue("ConfigurationStyleResponse.CodeData.NodeJsUrl"));
 		configurationStyleResponse.setCodeData(codeData);
 	 
 	 	return configurationStyleResponse;

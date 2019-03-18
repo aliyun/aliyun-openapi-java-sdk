@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.afs.model.v20180112;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,23 +23,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribePersonMachineListRequest extends RpcAcsRequest<DescribePersonMachineListResponse> {
 	
 	public DescribePersonMachineListRequest() {
-		super("afs", "2018-01-12", "DescribePersonMachineList");
+		super("afs", "2018-01-12", "DescribePersonMachineList", "afs");
 	}
-
-	private Long resourceOwnerId;
 
 	private String sourceIp;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
 
 	public String getSourceIp() {
 		return this.sourceIp;

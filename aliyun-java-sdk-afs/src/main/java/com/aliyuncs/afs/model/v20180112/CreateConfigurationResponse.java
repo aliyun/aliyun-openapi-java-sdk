@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.afs.model.v20180112;
 
 import com.aliyuncs.AcsResponse;
@@ -27,6 +28,8 @@ public class CreateConfigurationResponse extends AcsResponse {
 
 	private String bizCode;
 
+	private String refExtId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -41,6 +44,14 @@ public class CreateConfigurationResponse extends AcsResponse {
 
 	public void setBizCode(String bizCode) {
 		this.bizCode = bizCode;
+	}
+
+	public String getRefExtId() {
+		return this.refExtId;
+	}
+
+	public void setRefExtId(String refExtId) {
+		this.refExtId = refExtId;
 	}
 
 	@Override

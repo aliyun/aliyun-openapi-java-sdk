@@ -14,17 +14,17 @@
 
 package com.aliyuncs.afs.transform.v20180112;
 
-import com.aliyuncs.afs.model.v20180112.AnalyzeNvcResponse;
+import com.aliyuncs.afs.model.v20180112.DescribeCaptchaOrderResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AnalyzeNvcResponseUnmarshaller {
+public class DescribeCaptchaOrderResponseUnmarshaller {
 
-	public static AnalyzeNvcResponse unmarshall(AnalyzeNvcResponse analyzeNvcResponse, UnmarshallerContext context) {
+	public static DescribeCaptchaOrderResponse unmarshall(DescribeCaptchaOrderResponse describeCaptchaOrderResponse, UnmarshallerContext context) {
 		
-		analyzeNvcResponse.setRequestId(context.stringValue("AnalyzeNvcResponse.RequestId"));
-		analyzeNvcResponse.setBizCode(context.stringValue("AnalyzeNvcResponse.BizCode"));
+		describeCaptchaOrderResponse.setRequestId(context.stringValue("DescribeCaptchaOrderResponse.RequestId"));
+		describeCaptchaOrderResponse.setBizCode(context.stringValue("DescribeCaptchaOrderResponse.BizCode"));
 	 
-	 	return analyzeNvcResponse;
+	 	return describeCaptchaOrderResponse;
 	}
 }

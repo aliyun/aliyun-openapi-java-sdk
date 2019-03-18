@@ -14,17 +14,17 @@
 
 package com.aliyuncs.afs.transform.v20180112;
 
-import com.aliyuncs.afs.model.v20180112.AnalyzeNvcResponse;
+import com.aliyuncs.afs.model.v20180112.UpdateConfigNameResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AnalyzeNvcResponseUnmarshaller {
+public class UpdateConfigNameResponseUnmarshaller {
 
-	public static AnalyzeNvcResponse unmarshall(AnalyzeNvcResponse analyzeNvcResponse, UnmarshallerContext context) {
+	public static UpdateConfigNameResponse unmarshall(UpdateConfigNameResponse updateConfigNameResponse, UnmarshallerContext context) {
 		
-		analyzeNvcResponse.setRequestId(context.stringValue("AnalyzeNvcResponse.RequestId"));
-		analyzeNvcResponse.setBizCode(context.stringValue("AnalyzeNvcResponse.BizCode"));
+		updateConfigNameResponse.setRequestId(context.stringValue("UpdateConfigNameResponse.RequestId"));
+		updateConfigNameResponse.setBizCode(context.stringValue("UpdateConfigNameResponse.BizCode"));
 	 
-	 	return analyzeNvcResponse;
+	 	return updateConfigNameResponse;
 	}
 }

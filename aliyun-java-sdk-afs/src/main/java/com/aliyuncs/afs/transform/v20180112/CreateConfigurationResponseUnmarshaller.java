@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.afs.transform.v20180112;
 
 import com.aliyuncs.afs.model.v20180112.CreateConfigurationResponse;
@@ -23,6 +24,7 @@ public class CreateConfigurationResponseUnmarshaller {
 		
 		createConfigurationResponse.setRequestId(context.stringValue("CreateConfigurationResponse.RequestId"));
 		createConfigurationResponse.setBizCode(context.stringValue("CreateConfigurationResponse.BizCode"));
+		createConfigurationResponse.setRefExtId(context.stringValue("CreateConfigurationResponse.RefExtId"));
 	 
 	 	return createConfigurationResponse;
 	}
