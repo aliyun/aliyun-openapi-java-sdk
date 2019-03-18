@@ -1,15 +1,16 @@
 package com.aliyuncs;
 
+import com.aliyuncs.ecs.model.v20140526.DescribeClassicLinkInstancesRequest;
+import com.aliyuncs.ecs.model.v20140526.DescribeClassicLinkInstancesResponse;
+import com.aliyuncs.http.MethodType;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.aliyuncs.ccc.model.v20170705.CommitContactFlowVersionModificationRequest;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailRequest;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesRequest;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysRequest;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysResponse;
@@ -228,17 +229,11 @@ public class APIEncapsulateTest extends BaseTest {
 
     @Test
     public void rpcPostTest() throws ClientException {
-        CommitContactFlowVersionModificationRequest request = new CommitContactFlowVersionModificationRequest();
-        request.setContent("test");
-        request.setCanvas("test");
-        request.setContactFlowVersionId("test");
-        request.setInstanceId("test");
-        try {
-            this.client.getAcsResponse(request);
-            Assert.fail();
-        } catch (ServerException e) {
-            Assert.assertEquals("ServiceUnavailable", e.getErrCode());
-            Assert.assertEquals("The request has failed due to a temporary failure of the server.", e.getErrMsg());
-        }
+        DescribeClassicLinkInstancesRequest request1 = new DescribeClassicLinkInstancesRequest();
+        request1.setSysMethod(MethodType.POST);
+        request1.setVpcId("test");
+        request1.putBodyParameter("test","test");
+        DescribeClassicLinkInstancesResponse response = this.client.getAcsResponse(request1);
+        Assert.assertEquals(0, (int)response.getTotalCount());
     }
 }

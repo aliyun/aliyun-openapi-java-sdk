@@ -87,7 +87,7 @@ public class BaseTest {
         this.tokenAccesskeyId = System.getenv("RAMAccessKeyId");
         this.tokenAccesskeySecret = System.getenv("RAMAccessKeySecret");
         this.roleArn = System.getenv("roleArn");
-        this.regionId = "cn-hangzhou";
+        this.regionId = "us-east-1";
         client = getClientWithRegionId(this.regionId);
         dailyEnvCredentail = new Credential(accesskeyId, accesskeySecret);
 

@@ -9,7 +9,6 @@ import org.junit.Test;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisRequest;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesRequest;
-import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRegionsRequest;
 import com.aliyuncs.ecs.model.v20140526.DescribeRegionsResponse;
 import com.aliyuncs.endpoint.ChainedEndpointResolver;
@@ -383,17 +382,9 @@ public class NewEndpointTest extends BaseTest {
     }
 
     @Test
-    public void testDocSample() throws ClientException {
-        DescribeInstancesRequest request = new DescribeInstancesRequest();
-        request.setSysEndpoint("ecs-cn-hangzhou.aliyuncs.com");
-        DescribeInstancesResponse response = this.client.getAcsResponse(request);
-        Assert.assertTrue(response.getInstances().size() > 0);
-    }
-
-    @Test
     public void testRkvstore() throws ClientException {
         EndpointResolver resolver = new DefaultEndpointResolver(this.client);
-        ResolveEndpointRequest request = new ResolveEndpointRequest("cn-hangzhou", "R-kvstore", null, null);
+        ResolveEndpointRequest request = new ResolveEndpointRequest("us-east-1", "R-kvstore", null, null);
         Assert.assertEquals("r-kvstore.aliyuncs.com", resolver.resolve(request));
     }
 
@@ -435,7 +426,7 @@ public class NewEndpointTest extends BaseTest {
         initEnv();
         this.client.setEndpointResolver(endpointResolver);
         DescribeRegionsRequest request = new DescribeRegionsRequest();
-        userCustomizedEndpointResolver.putEndpointEntry("cn-hangzhou", "ecs", "add.endpoint");
+        userCustomizedEndpointResolver.putEndpointEntry("us-east-1", "ecs", "add.endpoint");
         try {
             client.getAcsResponse(request);
             Assert.fail();

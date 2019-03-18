@@ -1,6 +1,6 @@
 package com.aliyuncs;
 
-import com.aliyuncs.airec.model.v20181012.PushDocumentRequest;
+import com.aliyuncs.cds.model.v20170925.RunJobRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.green.model.v20180509.TextScanRequest;
 import com.aliyuncs.http.FormatType;
@@ -40,7 +40,7 @@ public class ErrorHandlingTest extends BaseTest {
         request.setSysAction("DescribeAccessPoints");
         request.setSysReadTimeout(1);
         try {
-            this.getReadTimeoutClientWithRegionId(regionId,1L).getCommonResponse(request);
+            this.getReadTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
@@ -51,16 +51,15 @@ public class ErrorHandlingTest extends BaseTest {
     }
 
     @Test
-    public void badFormatTypeTest() throws ClientException {
-        PushDocumentRequest request = new PushDocumentRequest();
-        request.setInstanceId("ff");
-        request.setTableName("test");
+    public void badFormatTypeTest() {
+        RunJobRequest request = new RunJobRequest();
+        request.setJobName("test");
         try {
             this.client.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
-            Assert.assertEquals("InstanceNotExist", e.getErrCode());
-            Assert.assertEquals("The specified instance does not exist.", e.getErrMsg());
+            Assert.assertEquals("CDS.NotFound", e.getErrCode());
+            Assert.assertEquals("Job [test] Not Found , Please check whether you spell error", e.getErrMsg());
         }
     }
 
