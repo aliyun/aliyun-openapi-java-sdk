@@ -1,3 +1,7 @@
+2019-03-18 Version: 1.2.0
+1, move AssociatePerson\Tag field
+2, Optimize RealName field
+
 2019-03-12 Version: 1.1.1
 1,  add agency infomation
 2,  update sdk core resources
