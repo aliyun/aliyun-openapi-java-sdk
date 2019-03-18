@@ -16,6 +16,7 @@ public class DeleteModelRequest extends RpcAcsRequest<DeleteModelResponse> {
 
     public void setModelName(String modelName) {
         this.modelName = modelName;
+        putQueryParameter("ModelName",modelName);
     }
 
     public String getGroupId() {
@@ -24,6 +25,7 @@ public class DeleteModelRequest extends RpcAcsRequest<DeleteModelResponse> {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+        putQueryParameter("GroupId",groupId);
     }
 
     @Override

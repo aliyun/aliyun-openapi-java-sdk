@@ -5,8 +5,8 @@ import com.aliyuncs.cloudapi.model.v20160714.DetachPluginResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
- * @Author: wuling
- * @Date: 2018/11/13 上午11:02
+ * @author auto create
+ * @version
  */
 public class DetachPluginResponseUnmarshaller {
     public static DetachPluginResponse unmarshall(DetachPluginResponse detachPluginResponse, UnmarshallerContext context) {

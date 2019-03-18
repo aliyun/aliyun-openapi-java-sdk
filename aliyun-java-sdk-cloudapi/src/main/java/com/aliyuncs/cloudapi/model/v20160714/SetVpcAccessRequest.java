@@ -10,9 +10,8 @@ package com.aliyuncs.cloudapi.model.v20160714;
 import com.aliyuncs.RpcAcsRequest;
 
 /**
- * 类VpcGrantAccessRequest.java的实现描述：TODO 类实现描述
- * 
- * @author zhangw 2017-3-8 下午7:39:16
+ * @author auto create
+ * @version
  */
 public class SetVpcAccessRequest extends RpcAcsRequest<SetVpcAccessResponse> {
 

@@ -23,7 +23,8 @@ package com.aliyuncs.cloudapi.model.v20160714;
 import com.aliyuncs.RpcAcsRequest;
 
 /**
- * @author lenny
+ * @author auto create
+ * @version
  */
 public class ImportSwaggerRequest extends RpcAcsRequest<ImportSwaggerResponse> {
 

@@ -27,7 +27,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
 import java.util.List;
 
 /**
- * @author lenny
+ * @author auto create
+ * @version
  */
 public class ImportSwaggerResponse extends AcsResponse {
 

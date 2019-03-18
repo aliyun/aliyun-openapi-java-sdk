@@ -3,8 +3,8 @@ package com.aliyuncs.cloudapi.model.v20160714;
 import com.aliyuncs.RpcAcsRequest;
 
 /**
- * @Author: wuling
- * @Date: 2018/11/13 上午10:56
+ * @author auto create
+ * @version
  */
 public class CreatePluginRequest extends RpcAcsRequest<CreatePluginResponse> {
 

@@ -3,9 +3,8 @@ package com.aliyuncs.cloudapi.model.v20160714;
 import com.aliyuncs.RpcAcsRequest;
 
 /**
- * @Author: lenny
- * @Date: 2019/1/22 11:52 AM
- * @Version 1.0
+ * @author auto create
+ * @version
  */
 public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 
@@ -24,6 +23,7 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+        putQueryParameter("GroupId",groupId);
     }
 
     public String getModelName() {
@@ -32,6 +32,7 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 
     public void setModelName(String modelName) {
         this.modelName = modelName;
+        putQueryParameter("ModelName",modelName);
     }
 
     public String getSchema() {
@@ -40,6 +41,7 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 
     public void setSchema(String schema) {
         this.schema = schema;
+        putQueryParameter("Schema",schema);
     }
 
     public String getDescription() {
@@ -48,6 +50,7 @@ public class CreateModelRequest extends RpcAcsRequest<CreateModelResponse> {
 
     public void setDescription(String description) {
         this.description = description;
+        putQueryParameter("Description",description);
     }
 
     @Override

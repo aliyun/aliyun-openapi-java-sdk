@@ -14,8 +14,8 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
- * 类VpcRevokeAccessResponse.java的实现描述：TODO 类实现描述 
- * @author zhangw 2017-3-8 下午8:19:09
+ * @author auto create
+ * @version
  */
 public class RemoveVpcAccessResponse extends AcsResponse {
     

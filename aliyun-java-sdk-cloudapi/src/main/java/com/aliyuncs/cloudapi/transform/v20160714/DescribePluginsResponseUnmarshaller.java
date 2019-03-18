@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Author: wuling
- * @Date: 2018/11/13 上午11:02
+ * @author auto create
+ * @version
  */
 public class DescribePluginsResponseUnmarshaller {
     public static DescribePluginsResponse unmarshall(DescribePluginsResponse describePluginsResponse, UnmarshallerContext context) {

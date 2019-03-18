@@ -21,6 +21,7 @@ public class DescribeModelsRequest extends RpcAcsRequest<DescribeModelsResponse>
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+        putQueryParameter("GroupId",groupId);
     }
 
     public String getModelName() {
@@ -29,6 +30,7 @@ public class DescribeModelsRequest extends RpcAcsRequest<DescribeModelsResponse>
 
     public void setModelName(String modelName) {
         this.modelName = modelName;
+        putQueryParameter("ModelName",modelName);
     }
 
     public String getModelId() {
@@ -37,6 +39,7 @@ public class DescribeModelsRequest extends RpcAcsRequest<DescribeModelsResponse>
 
     public void setModelId(String modelId) {
         this.modelId = modelId;
+        putQueryParameter("ModelId",modelId);
     }
 
     public Integer getPageNumber() {
@@ -45,6 +48,7 @@ public class DescribeModelsRequest extends RpcAcsRequest<DescribeModelsResponse>
 
     public void setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
+        putQueryParameter("PageNumber",pageNumber);
     }
 
     public Integer getPageSize() {
@@ -53,6 +57,7 @@ public class DescribeModelsRequest extends RpcAcsRequest<DescribeModelsResponse>
 
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
+        putQueryParameter("PageSize",pageSize);
     }
 
     @Override

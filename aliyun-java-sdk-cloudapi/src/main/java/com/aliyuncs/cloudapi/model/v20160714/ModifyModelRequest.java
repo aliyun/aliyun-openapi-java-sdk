@@ -20,6 +20,7 @@ public class ModifyModelRequest extends RpcAcsRequest<ModifyModelResponse> {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+        putQueryParameter("GroupId",groupId);
     }
 
     public String getModelName() {
@@ -28,6 +29,7 @@ public class ModifyModelRequest extends RpcAcsRequest<ModifyModelResponse> {
 
     public void setModelName(String modelName) {
         this.modelName = modelName;
+        putQueryParameter("ModelName",modelName);
     }
 
     public String getDescription() {
@@ -36,6 +38,7 @@ public class ModifyModelRequest extends RpcAcsRequest<ModifyModelResponse> {
 
     public void setDescription(String description) {
         this.description = description;
+        putQueryParameter("Description",description);
     }
 
     public String getSchema() {
@@ -44,6 +47,7 @@ public class ModifyModelRequest extends RpcAcsRequest<ModifyModelResponse> {
 
     public void setSchema(String schema) {
         this.schema = schema;
+        putQueryParameter("Schema",schema);
     }
 
     public String getNewModelName() {
@@ -52,6 +56,7 @@ public class ModifyModelRequest extends RpcAcsRequest<ModifyModelResponse> {
 
     public void setNewModelName(String newModelName) {
         this.newModelName = newModelName;
+        putQueryParameter("NewModelName",newModelName);
     }
 
     @Override

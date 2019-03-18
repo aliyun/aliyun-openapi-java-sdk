@@ -10,8 +10,8 @@ package com.aliyuncs.cloudapi.model.v20160714;
 import com.aliyuncs.RpcAcsRequest;
 
 /**
- * 类VpcRevokeAccessRequest.java的实现描述：TODO 类实现描述 
- * @author zhangw 2017-3-8 下午8:18:49
+ * @author auto create
+ * @version
  */
 public class RemoveVpcAccessRequest extends RpcAcsRequest<RemoveVpcAccessResponse> {
     

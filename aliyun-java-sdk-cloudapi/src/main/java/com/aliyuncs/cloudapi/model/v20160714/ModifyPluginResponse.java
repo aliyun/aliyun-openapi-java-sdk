@@ -8,8 +8,8 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
- * @Author: wuling
- * @Date: 2018/11/13 上午10:57
+ * @author auto create
+ * @version
  */
 public class ModifyPluginResponse extends AcsResponse {
 

@@ -10,8 +10,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
 import java.util.List;
 
 /**
- * @Author: wuling
- * @Date: 2018/11/13 上午10:57
+ * @author auto create
+ * @version
  */
 public class DescribePluginsResponse extends AcsResponse {
 

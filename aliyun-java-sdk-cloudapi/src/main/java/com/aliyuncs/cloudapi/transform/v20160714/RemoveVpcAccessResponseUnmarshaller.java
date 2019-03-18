@@ -11,8 +11,8 @@ import com.aliyuncs.cloudapi.model.v20160714.RemoveVpcAccessResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
- * 类VpcRevokeAccessResponseUnmarshaller.java的实现描述：TODO 类实现描述 
- * @author zhangw 2017-3-8 下午8:22:43
+ * @author auto create
+ * @version
  */
 public class RemoveVpcAccessResponseUnmarshaller {
     

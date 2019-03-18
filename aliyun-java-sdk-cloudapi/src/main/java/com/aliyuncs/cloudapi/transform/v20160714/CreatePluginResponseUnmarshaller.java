@@ -4,8 +4,8 @@ import com.aliyuncs.cloudapi.model.v20160714.CreatePluginResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
- * @Author: wuling
- * @Date: 2018/11/13 上午11:02
+ * @author auto create
+ * @version
  */
 public class CreatePluginResponseUnmarshaller {
     public static CreatePluginResponse unmarshall(CreatePluginResponse createPluginResponse, UnmarshallerContext context) {

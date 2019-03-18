@@ -7,9 +7,8 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
- * @Author: lenny
- * @Date: 2019/1/22 11:52 AM
- * @Version 1.0
+ * @author auto create
+ * @version
  */
 public class CreateModelResponse extends AcsResponse {
 
