@@ -15,7 +15,6 @@
 package com.aliyuncs.dataworks_public.model.v20180601;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 
 /**
@@ -25,8 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class SearchManualDagNodeInstanceRequest extends RpcAcsRequest<SearchManualDagNodeInstanceResponse> {
 	
 	public SearchManualDagNodeInstanceRequest() {
-		super("dataworks-public", "2018-06-01", "SearchManualDagNodeInstance");
-		setProtocol(ProtocolType.HTTPS);
+		super("dataworks-public", "2018-06-01", "SearchManualDagNodeInstance", "dataworks-public");
 		setMethod(MethodType.POST);
 	}
 

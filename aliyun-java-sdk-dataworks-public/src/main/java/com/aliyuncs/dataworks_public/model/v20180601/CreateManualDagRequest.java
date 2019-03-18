@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateManualDagRequest extends RpcAcsRequest<CreateManualDagResponse> {
 	
 	public CreateManualDagRequest() {
-		super("dataworks-public", "2018-06-01", "CreateManualDag");
+		super("dataworks-public", "2018-06-01", "CreateManualDag", "dataworks-public");
 		setMethod(MethodType.POST);
 	}
 
