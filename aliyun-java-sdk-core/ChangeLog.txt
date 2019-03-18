@@ -1,3 +1,8 @@
+2019-03-18 Version: 4.3.6
+1. Add timeout setting and test
+2. Add the certificate provider chain and test
+3. Add region id in the http header
+
 2019-03-01 Version: 4.3.5
 1. Update endpoint data
 2. Modify the default client to apache client
