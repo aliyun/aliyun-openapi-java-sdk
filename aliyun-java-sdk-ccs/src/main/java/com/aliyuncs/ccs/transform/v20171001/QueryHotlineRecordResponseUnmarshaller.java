@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ccs.model.v20171001.QueryHotlineRecordResponse;
 import com.aliyuncs.ccs.model.v20171001.QueryHotlineRecordResponse.HotlineRecord;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,7 +27,7 @@ public class QueryHotlineRecordResponseUnmarshaller {
 	public static QueryHotlineRecordResponse unmarshall(QueryHotlineRecordResponse queryHotlineRecordResponse, UnmarshallerContext context) {
 		
 		queryHotlineRecordResponse.setRequestId(context.stringValue("QueryHotlineRecordResponse.RequestId"));
-		queryHotlineRecordResponse.setTotalCount(context.integerValue("QueryHotlineRecordResponse.TotalCount"));
+		queryHotlineRecordResponse.setTotalCount(context.longValue("QueryHotlineRecordResponse.TotalCount"));
 		queryHotlineRecordResponse.setPageNum(context.integerValue("QueryHotlineRecordResponse.PageNum"));
 		queryHotlineRecordResponse.setPageSize(context.integerValue("QueryHotlineRecordResponse.PageSize"));
 

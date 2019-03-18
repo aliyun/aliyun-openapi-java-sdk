@@ -27,7 +27,7 @@ public class QueryHotlineRecordResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer totalCount;
+	private Long totalCount;
 
 	private Integer pageNum;
 
@@ -43,11 +43,11 @@ public class QueryHotlineRecordResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTotalCount() {
+	public Long getTotalCount() {
 		return this.totalCount;
 	}
 
-	public void setTotalCount(Integer totalCount) {
+	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
 	}
 

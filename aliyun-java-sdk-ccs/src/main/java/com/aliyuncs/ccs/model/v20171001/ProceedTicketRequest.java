@@ -20,15 +20,32 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetHotlineRecordRequest extends RpcAcsRequest<GetHotlineRecordResponse> {
+public class ProceedTicketRequest extends RpcAcsRequest<ProceedTicketResponse> {
 	
-	public GetHotlineRecordRequest() {
-		super("Ccs", "2017-10-01", "GetHotlineRecord", "ccs");
+	public ProceedTicketRequest() {
+		super("Ccs", "2017-10-01", "ProceedTicket", "ccs");
 	}
+
+	private String memo;
 
 	private String id;
 
 	private String ccsInstanceId;
+
+	private String operation;
+
+	private String operatorId;
+
+	public String getMemo() {
+		return this.memo;
+	}
+
+	public void setMemo(String memo) {
+		this.memo = memo;
+		if(memo != null){
+			putQueryParameter("Memo", memo);
+		}
+	}
 
 	public String getId() {
 		return this.id;
@@ -52,9 +69,31 @@ public class GetHotlineRecordRequest extends RpcAcsRequest<GetHotlineRecordRespo
 		}
 	}
 
+	public String getOperation() {
+		return this.operation;
+	}
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+		if(operation != null){
+			putQueryParameter("Operation", operation);
+		}
+	}
+
+	public String getOperatorId() {
+		return this.operatorId;
+	}
+
+	public void setOperatorId(String operatorId) {
+		this.operatorId = operatorId;
+		if(operatorId != null){
+			putQueryParameter("OperatorId", operatorId);
+		}
+	}
+
 	@Override
-	public Class<GetHotlineRecordResponse> getResponseClass() {
-		return GetHotlineRecordResponse.class;
+	public Class<ProceedTicketResponse> getResponseClass() {
+		return ProceedTicketResponse.class;
 	}
 
 }

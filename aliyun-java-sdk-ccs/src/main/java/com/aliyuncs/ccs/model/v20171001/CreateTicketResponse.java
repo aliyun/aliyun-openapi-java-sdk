@@ -14,21 +14,27 @@
 
 package com.aliyuncs.ccs.model.v20171001;
 
-import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.ccs.transform.v20171001.CreateTicketResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetHotlineRecordRequest extends RpcAcsRequest<GetHotlineRecordResponse> {
-	
-	public GetHotlineRecordRequest() {
-		super("Ccs", "2017-10-01", "GetHotlineRecord", "ccs");
-	}
+public class CreateTicketResponse extends AcsResponse {
+
+	private String requestId;
 
 	private String id;
 
-	private String ccsInstanceId;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getId() {
 		return this.id;
@@ -36,25 +42,10 @@ public class GetHotlineRecordRequest extends RpcAcsRequest<GetHotlineRecordRespo
 
 	public void setId(String id) {
 		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
-	}
-
-	public String getCcsInstanceId() {
-		return this.ccsInstanceId;
-	}
-
-	public void setCcsInstanceId(String ccsInstanceId) {
-		this.ccsInstanceId = ccsInstanceId;
-		if(ccsInstanceId != null){
-			putQueryParameter("CcsInstanceId", ccsInstanceId);
-		}
 	}
 
 	@Override
-	public Class<GetHotlineRecordResponse> getResponseClass() {
-		return GetHotlineRecordResponse.class;
+	public CreateTicketResponse getInstance(UnmarshallerContext context) {
+		return	CreateTicketResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }
