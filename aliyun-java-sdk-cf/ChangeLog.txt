@@ -1,3 +1,6 @@
+2019-03-18 Version: 2.6.1
+1,  Update Dependency
+
 2017-12-18 Version: 2.6.0
 1, fix bug on 2015-12-08
 2, others stuffs

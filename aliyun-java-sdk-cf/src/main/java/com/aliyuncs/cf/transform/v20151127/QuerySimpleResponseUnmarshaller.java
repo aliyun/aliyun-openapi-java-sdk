@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cf.transform.v20151127;
 
 import com.aliyuncs.cf.model.v20151127.QuerySimpleResponse;

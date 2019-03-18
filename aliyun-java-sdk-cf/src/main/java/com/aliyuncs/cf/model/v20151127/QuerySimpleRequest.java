@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cf.model.v20151127;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,30 +24,21 @@ import com.aliyuncs.http.ProtocolType;
 public class QuerySimpleRequest extends RpcAcsRequest<QuerySimpleResponse> {
 	
 	public QuerySimpleRequest() {
-		super("CF", "2015-11-27", "QuerySimple");
+		super("CF", "2015-11-27", "QuerySimple", "cf");
 		setProtocol(ProtocolType.HTTPS);
 	}
-
-	private String serialNo;
 
 	private String tokenId;
 
 	private String sceneId;
 
+	private String appKey;
+
+	private String serialNo;
+
 	private Long timeStamp;
 
 	private String trans;
-
-	private String appKey;
-
-	public String getSerialNo() {
-		return this.serialNo;
-	}
-
-	public void setSerialNo(String serialNo) {
-		this.serialNo = serialNo;
-		putQueryParameter("SerialNo", serialNo);
-	}
 
 	public String getTokenId() {
 		return this.tokenId;
@@ -54,7 +46,9 @@ public class QuerySimpleRequest extends RpcAcsRequest<QuerySimpleResponse> {
 
 	public void setTokenId(String tokenId) {
 		this.tokenId = tokenId;
-		putQueryParameter("TokenId", tokenId);
+		if(tokenId != null){
+			putQueryParameter("TokenId", tokenId);
+		}
 	}
 
 	public String getSceneId() {
@@ -63,25 +57,9 @@ public class QuerySimpleRequest extends RpcAcsRequest<QuerySimpleResponse> {
 
 	public void setSceneId(String sceneId) {
 		this.sceneId = sceneId;
-		putQueryParameter("SceneId", sceneId);
-	}
-
-	public Long getTimeStamp() {
-		return this.timeStamp;
-	}
-
-	public void setTimeStamp(Long timeStamp) {
-		this.timeStamp = timeStamp;
-		putQueryParameter("TimeStamp", timeStamp);
-	}
-
-	public String getTrans() {
-		return this.trans;
-	}
-
-	public void setTrans(String trans) {
-		this.trans = trans;
-		putQueryParameter("Trans", trans);
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId);
+		}
 	}
 
 	public String getAppKey() {
@@ -90,7 +68,42 @@ public class QuerySimpleRequest extends RpcAcsRequest<QuerySimpleResponse> {
 
 	public void setAppKey(String appKey) {
 		this.appKey = appKey;
-		putQueryParameter("AppKey", appKey);
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey);
+		}
+	}
+
+	public String getSerialNo() {
+		return this.serialNo;
+	}
+
+	public void setSerialNo(String serialNo) {
+		this.serialNo = serialNo;
+		if(serialNo != null){
+			putQueryParameter("SerialNo", serialNo);
+		}
+	}
+
+	public Long getTimeStamp() {
+		return this.timeStamp;
+	}
+
+	public void setTimeStamp(Long timeStamp) {
+		this.timeStamp = timeStamp;
+		if(timeStamp != null){
+			putQueryParameter("TimeStamp", timeStamp.toString());
+		}
+	}
+
+	public String getTrans() {
+		return this.trans;
+	}
+
+	public void setTrans(String trans) {
+		this.trans = trans;
+		if(trans != null){
+			putQueryParameter("Trans", trans);
+		}
 	}
 
 	@Override

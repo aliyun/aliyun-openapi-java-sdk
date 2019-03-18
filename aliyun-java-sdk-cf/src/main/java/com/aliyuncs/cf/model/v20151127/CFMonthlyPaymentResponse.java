@@ -15,24 +15,26 @@
 package com.aliyuncs.cf.model.v20151127;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cf.transform.v20151127.CfAccountFeedbackResponseUnmarshaller;
+import com.aliyuncs.cf.transform.v20151127.CFMonthlyPaymentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CfAccountFeedbackResponse extends AcsResponse {
+public class CFMonthlyPaymentResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Boolean data;
+
+	private String code;
 
 	private Boolean success;
 
 	private String message;
 
-	private String detailMessage;
-
-	private AccountFeedbackResponse accountFeedbackResponse;
+	private Boolean synchro;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,6 +42,22 @@ public class CfAccountFeedbackResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getData() {
+		return this.data;
+	}
+
+	public void setData(Boolean data) {
+		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -58,47 +76,16 @@ public class CfAccountFeedbackResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getDetailMessage() {
-		return this.detailMessage;
+	public Boolean getSynchro() {
+		return this.synchro;
 	}
 
-	public void setDetailMessage(String detailMessage) {
-		this.detailMessage = detailMessage;
-	}
-
-	public AccountFeedbackResponse getAccountFeedbackResponse() {
-		return this.accountFeedbackResponse;
-	}
-
-	public void setAccountFeedbackResponse(AccountFeedbackResponse accountFeedbackResponse) {
-		this.accountFeedbackResponse = accountFeedbackResponse;
-	}
-
-	public static class AccountFeedbackResponse {
-
-		private Integer errorCode;
-
-		private String errorMessage;
-
-		public Integer getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(Integer errorCode) {
-			this.errorCode = errorCode;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
+	public void setSynchro(Boolean synchro) {
+		this.synchro = synchro;
 	}
 
 	@Override
-	public CfAccountFeedbackResponse getInstance(UnmarshallerContext context) {
-		return	CfAccountFeedbackResponseUnmarshaller.unmarshall(this, context);
+	public CFMonthlyPaymentResponse getInstance(UnmarshallerContext context) {
+		return	CFMonthlyPaymentResponseUnmarshaller.unmarshall(this, context);
 	}
 }
