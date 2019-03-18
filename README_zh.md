@@ -180,10 +180,6 @@ clientConfig.setX509TrustManagers(clientTrustManagers);
 // 设置自定义的KeyManagers
 clientConfig.setKeyManagers(clientKeyManagers);
 
-// 设置HttpClient类型，可选Compatible或者ApacheHttpClient(默认)
-clientConfig.setClientType(HttpClientType.Compatible);
-// clientConfig.setClientType(HttpClientType.ApacheHttpClient);
-
 IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
 profile.setHttpClientConfig(clientConfig);
 DefaultAcsClient client = new DefaultAcsClient(profile);
