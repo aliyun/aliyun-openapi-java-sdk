@@ -1,3 +1,6 @@
+2019-03-18 Version: 2.0.1
+1, Update Dependency
+
 2017-12-08 Version: 2.0.0
 1, Add ARMSQueryDataSet, WhereInDimQuery interface.
 
