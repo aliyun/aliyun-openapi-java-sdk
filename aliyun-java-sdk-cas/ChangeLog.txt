@@ -1,3 +1,8 @@
+2019-03-18 Version: 0.1.1
+1, Signature Document SDK.
+2, First version publish.
+3, Beta Version SDK
+
 2019-02-14 Version: 2.1.07130214
 1, fixed bugs  .
 2, new version: 2.1.07130214.
