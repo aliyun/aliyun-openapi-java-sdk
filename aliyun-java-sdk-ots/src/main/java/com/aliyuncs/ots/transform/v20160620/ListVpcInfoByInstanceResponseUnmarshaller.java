@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ots.model.v20160620.ListVpcInfoByInstanceResponse;
 import com.aliyuncs.ots.model.v20160620.ListVpcInfoByInstanceResponse.VpcInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

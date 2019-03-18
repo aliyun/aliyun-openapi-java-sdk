@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ots.model.v20160620.ListTagsResponse;
 import com.aliyuncs.ots.model.v20160620.ListTagsResponse.TagInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

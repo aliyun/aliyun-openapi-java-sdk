@@ -89,25 +89,17 @@ public class ListInstanceRequest extends RpcAcsRequest<ListInstanceResponse> {
 		this.tagInfos = tagInfos;	
 		if (tagInfos != null) {
 			for (int depth1 = 0; depth1 < tagInfos.size(); depth1++) {
-				putQueryParameter("TagInfo." + (depth1 + 1) + ".TagKey" , tagInfos.get(depth1).getTagKey());
 				putQueryParameter("TagInfo." + (depth1 + 1) + ".TagValue" , tagInfos.get(depth1).getTagValue());
+				putQueryParameter("TagInfo." + (depth1 + 1) + ".TagKey" , tagInfos.get(depth1).getTagKey());
 			}
 		}	
 	}
 
 	public static class TagInfo {
 
-		private String tagKey;
-
 		private String tagValue;
 
-		public String getTagKey() {
-			return this.tagKey;
-		}
-
-		public void setTagKey(String tagKey) {
-			this.tagKey = tagKey;
-		}
+		private String tagKey;
 
 		public String getTagValue() {
 			return this.tagValue;
@@ -115,6 +107,14 @@ public class ListInstanceRequest extends RpcAcsRequest<ListInstanceResponse> {
 
 		public void setTagValue(String tagValue) {
 			this.tagValue = tagValue;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
 		}
 	}
 

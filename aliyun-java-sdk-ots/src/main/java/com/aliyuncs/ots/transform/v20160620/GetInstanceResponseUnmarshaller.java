@@ -21,7 +21,6 @@ import com.aliyuncs.ots.model.v20160620.GetInstanceResponse;
 import com.aliyuncs.ots.model.v20160620.GetInstanceResponse.InstanceInfo;
 import com.aliyuncs.ots.model.v20160620.GetInstanceResponse.InstanceInfo.Quota;
 import com.aliyuncs.ots.model.v20160620.GetInstanceResponse.InstanceInfo.TagInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

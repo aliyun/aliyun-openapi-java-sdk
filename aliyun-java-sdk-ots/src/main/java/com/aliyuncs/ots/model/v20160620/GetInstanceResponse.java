@@ -15,7 +15,6 @@
 package com.aliyuncs.ots.model.v20160620;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ots.transform.v20160620.GetInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

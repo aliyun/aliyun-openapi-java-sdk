@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ots.model.v20160620.ListInstanceResponse;
 import com.aliyuncs.ots.model.v20160620.ListInstanceResponse.InstanceInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

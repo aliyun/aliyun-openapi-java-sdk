@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.ots.model.v20160620.ListClusterTypeResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
