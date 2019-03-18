@@ -68,12 +68,18 @@ public class DefaultProfile implements IClientProfile {
         return new DefaultProfile(regionId);
     }
 
+    /**
+     * @Deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
+     */
     @Deprecated
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain)
             throws ClientException {
         addEndpoint(endpointName, regionId, product, domain, true);
     }
 
+    /**
+     * @Deprecated : Use addEndpoint(String regionId, String product, String endpoint) instead of this
+     */
     @Deprecated
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain,
             boolean isNeverExpire) {

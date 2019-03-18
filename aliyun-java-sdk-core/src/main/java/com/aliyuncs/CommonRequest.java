@@ -100,71 +100,113 @@ public class CommonRequest {
         }
     }
 
+    /**
+     * @Deprecated : Use getSysVersion instead of this
+     */
     @Deprecated
     public String getVersion() {
         return version;
     }
 
+    /**
+     * @Deprecated : Use setSysVersion instead of this
+     */
     @Deprecated
     public void setVersion(String version) {
         this.version = version;
     }
 
+    /**
+     * @Deprecated : Use getSysProduct instead of this
+     */
     @Deprecated
     public String getProduct() {
         return product;
     }
 
+    /**
+     * @Deprecated : Use setSysProduct instead of this
+     */
     @Deprecated
     public void setProduct(String product) {
         this.product = product;
     }
 
+    /**
+     * @Deprecated : Use getSysAction instead of this
+     */
     @Deprecated
     public String getAction() {
         return action;
     }
 
+    /**
+     * @Deprecated : Use setSysAction instead of this
+     */
     @Deprecated
     public void setAction(String action) {
         this.action = action;
     }
 
+    /**
+     * @Deprecated : Use getSysLocationProduct instead of this
+     */
     @Deprecated
     public String getLocationProduct() {
         return locationProduct;
     }
 
+    /**
+     * @Deprecated : Use setSysLocationProduct instead of this
+     */
     @Deprecated
     public void setLocationProduct(String locationProduct) {
         this.locationProduct = locationProduct;
     }
 
+    /**
+     * @Deprecated : Use getSysEndpointType instead of this
+     */
     @Deprecated
     public String getEndpointType() {
         return endpointType;
     }
 
+    /**
+     * @Deprecated : Use setSysEndpointType instead of this
+     */
     @Deprecated
     public void setEndpointType(String endpointType) {
         this.endpointType = endpointType;
     }
 
+    /**
+     * @Deprecated : Use getSysRegionId instead of this
+     */
     @Deprecated
     public String getRegionId() {
         return regionId;
     }
 
+    /**
+     * @Deprecated : Use setSysRegionId instead of this
+     */
     @Deprecated
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
 
+    /**
+     * @Deprecated : Use getSysProtocol instead of this
+     */
     @Deprecated
     public ProtocolType getProtocol() {
         return protocol;
     }
 
+    /**
+     * @Deprecated : Use setSysProtocol instead of this
+     */
     @Deprecated
     public void setProtocol(ProtocolType protocol) {
         this.protocol = protocol;
@@ -189,41 +231,65 @@ public class CommonRequest {
         map.put(name, String.valueOf(value));
     }
 
+    /**
+     * @Deprecated : Use getSysConnectTimeout instead of this
+     */
     @Deprecated
     public Integer getConnectTimeout() {
         return connectTimeout;
     }
 
+    /**
+     * @Deprecated : Use setSysConnectTimeout instead of this
+     */
     @Deprecated
     public void setConnectTimeout(Integer connectTimeout) {
         this.connectTimeout = connectTimeout;
     }
 
+    /**
+     * @Deprecated : Use getSysReadTimeout instead of this
+     */
     @Deprecated
     public Integer getReadTimeout() {
         return readTimeout;
     }
 
+    /**
+     * @Deprecated : Use setSysReadTimeout instead of this
+     */
     @Deprecated
     public void setReadTimeout(Integer readTimeout) {
         this.readTimeout = readTimeout;
     }
 
+    /**
+     * @Deprecated : Use getSysMethod instead of this
+     */
     @Deprecated
     public MethodType getMethod() {
         return method;
     }
 
+    /**
+     * @Deprecated : Use setSysMethod instead of this
+     */
     @Deprecated
     public void setMethod(MethodType method) {
         this.method = method;
     }
 
+    /**
+     * @Deprecated : Use getSysUriPattern instead of this
+     */
     @Deprecated
     public String getUriPattern() {
         return uriPattern;
     }
 
+    /**
+     * @Deprecated : Use setSysUriPattern instead of this
+     */
     @Deprecated
     public void setUriPattern(String uriPattern) {
         this.uriPattern = uriPattern;
@@ -233,11 +299,17 @@ public class CommonRequest {
         setParameter(this.pathParameters, name, value);
     }
 
+    /**
+     * @Deprecated : Use getSysDomain instead of this
+     */
     @Deprecated
     public String getDomain() {
         return domain;
     }
 
+    /**
+     * @Deprecated : Use setSysDomain instead of this
+     */
     @Deprecated
     public void setDomain(String domain) {
         this.domain = domain;
@@ -251,26 +323,41 @@ public class CommonRequest {
         return httpContent;
     }
 
+    /**
+     * @Deprecated : Use getSysEncoding instead of this
+     */
     @Deprecated
     public String getEncoding() {
         return encoding;
     }
 
+    /**
+     * @Deprecated : Use getSysQueryParameters instead of this
+     */
     @Deprecated
     public Map<String, String> getQueryParameters() {
         return queryParameters;
     }
 
+    /**
+     * @Deprecated : Use getSysBodyParameters instead of this
+     */
     @Deprecated
     public Map<String, String> getBodyParameters() {
         return bodyParameters;
     }
 
+    /**
+     * @Deprecated : Use getSysHeadParameters instead of this
+     */
     @Deprecated
     public Map<String, String> getHeadParameters() {
         return headParameters;
     }
 
+    /**
+     * @Deprecated : Use getSysPathParameters instead of this
+     */
     @Deprecated
     public Map<String, String> getPathParameters() {
         return pathParameters;
