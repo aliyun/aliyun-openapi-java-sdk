@@ -48,8 +48,6 @@ public class InsertMaterialRequest extends RpcAcsRequest<InsertMaterialResponse>
 
 	private Integer type;
 
-	private String expirationDate;
-
 	private String contactName;
 
 	private String passportOssKey;
@@ -188,17 +186,6 @@ public class InsertMaterialRequest extends RpcAcsRequest<InsertMaterialResponse>
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type.toString());
-		}
-	}
-
-	public String getExpirationDate() {
-		return this.expirationDate;
-	}
-
-	public void setExpirationDate(String expirationDate) {
-		this.expirationDate = expirationDate;
-		if(expirationDate != null){
-			putQueryParameter("ExpirationDate", expirationDate);
 		}
 	}
 

@@ -44,8 +44,6 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 
 	private String idCardOssKey;
 
-	private String expirationDate;
-
 	private String contactName;
 
 	private String passportOssKey;
@@ -164,17 +162,6 @@ public class UpdateMaterialRequest extends RpcAcsRequest<UpdateMaterialResponse>
 		this.idCardOssKey = idCardOssKey;
 		if(idCardOssKey != null){
 			putQueryParameter("IdCardOssKey", idCardOssKey);
-		}
-	}
-
-	public String getExpirationDate() {
-		return this.expirationDate;
-	}
-
-	public void setExpirationDate(String expirationDate) {
-		this.expirationDate = expirationDate;
-		if(expirationDate != null){
-			putQueryParameter("ExpirationDate", expirationDate);
 		}
 	}
 

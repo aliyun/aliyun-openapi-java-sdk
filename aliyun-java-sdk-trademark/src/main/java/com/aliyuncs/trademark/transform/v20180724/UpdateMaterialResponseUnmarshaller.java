@@ -24,8 +24,6 @@ public class UpdateMaterialResponseUnmarshaller {
 		
 		updateMaterialResponse.setRequestId(context.stringValue("UpdateMaterialResponse.RequestId"));
 		updateMaterialResponse.setSuccess(context.booleanValue("UpdateMaterialResponse.Success"));
-		updateMaterialResponse.setErrorMsg(context.stringValue("UpdateMaterialResponse.ErrorMsg"));
-		updateMaterialResponse.setErrorCode(context.stringValue("UpdateMaterialResponse.ErrorCode"));
 	 
 	 	return updateMaterialResponse;
 	}

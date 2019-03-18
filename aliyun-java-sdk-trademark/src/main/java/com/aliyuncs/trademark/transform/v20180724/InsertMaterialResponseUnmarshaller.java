@@ -24,8 +24,6 @@ public class InsertMaterialResponseUnmarshaller {
 		
 		insertMaterialResponse.setRequestId(context.stringValue("InsertMaterialResponse.RequestId"));
 		insertMaterialResponse.setSuccess(context.booleanValue("InsertMaterialResponse.Success"));
-		insertMaterialResponse.setErrorMsg(context.stringValue("InsertMaterialResponse.ErrorMsg"));
-		insertMaterialResponse.setErrorCode(context.stringValue("InsertMaterialResponse.ErrorCode"));
 	 
 	 	return insertMaterialResponse;
 	}

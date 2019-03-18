@@ -35,10 +35,6 @@ public class QueryMaterialListResponse extends AcsResponse {
 
 	private Integer totalPageNum;
 
-	private Boolean prePage;
-
-	private Boolean nextPage;
-
 	private List<Trademark> data;
 
 	public String getRequestId() {
@@ -79,22 +75,6 @@ public class QueryMaterialListResponse extends AcsResponse {
 
 	public void setTotalPageNum(Integer totalPageNum) {
 		this.totalPageNum = totalPageNum;
-	}
-
-	public Boolean getPrePage() {
-		return this.prePage;
-	}
-
-	public void setPrePage(Boolean prePage) {
-		this.prePage = prePage;
-	}
-
-	public Boolean getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(Boolean nextPage) {
-		this.nextPage = nextPage;
 	}
 
 	public List<Trademark> getData() {

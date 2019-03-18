@@ -15,6 +15,7 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.trademark.transform.v20180724.QueryTradeMarkApplicationDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -53,15 +54,35 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 	private String acceptUrl;
 
+	private Long createTime;
+
+	private Long updateTime;
+
+	private Map<Object,Object> extendInfo;
+
+	private String sendSbjLogistics;
+
+	private String sendUserLogistics;
+
+	private String recvUserLogistics;
+
+	private Long materialId;
+
 	private List<ThirdClassifications> thirdClassification;
 
 	private List<SupplementsItem> supplements;
 
 	private List<String> receiptUrl;
 
+	private List<String> judgeResultUrl;
+
+	private AdminUploads adminUploads;
+
 	private MaterialDetail materialDetail;
 
 	private FirstClassification firstClassification;
+
+	private RenewResponse renewResponse;
 
 	public Integer getStatus() {
 		return this.status;
@@ -175,6 +196,62 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		this.acceptUrl = acceptUrl;
 	}
 
+	public Long getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
+
+	public Long getUpdateTime() {
+		return this.updateTime;
+	}
+
+	public void setUpdateTime(Long updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public Map<Object,Object> getExtendInfo() {
+		return this.extendInfo;
+	}
+
+	public void setExtendInfo(Map<Object,Object> extendInfo) {
+		this.extendInfo = extendInfo;
+	}
+
+	public String getSendSbjLogistics() {
+		return this.sendSbjLogistics;
+	}
+
+	public void setSendSbjLogistics(String sendSbjLogistics) {
+		this.sendSbjLogistics = sendSbjLogistics;
+	}
+
+	public String getSendUserLogistics() {
+		return this.sendUserLogistics;
+	}
+
+	public void setSendUserLogistics(String sendUserLogistics) {
+		this.sendUserLogistics = sendUserLogistics;
+	}
+
+	public String getRecvUserLogistics() {
+		return this.recvUserLogistics;
+	}
+
+	public void setRecvUserLogistics(String recvUserLogistics) {
+		this.recvUserLogistics = recvUserLogistics;
+	}
+
+	public Long getMaterialId() {
+		return this.materialId;
+	}
+
+	public void setMaterialId(Long materialId) {
+		this.materialId = materialId;
+	}
+
 	public List<ThirdClassifications> getThirdClassification() {
 		return this.thirdClassification;
 	}
@@ -199,6 +276,22 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		this.receiptUrl = receiptUrl;
 	}
 
+	public List<String> getJudgeResultUrl() {
+		return this.judgeResultUrl;
+	}
+
+	public void setJudgeResultUrl(List<String> judgeResultUrl) {
+		this.judgeResultUrl = judgeResultUrl;
+	}
+
+	public AdminUploads getAdminUploads() {
+		return this.adminUploads;
+	}
+
+	public void setAdminUploads(AdminUploads adminUploads) {
+		this.adminUploads = adminUploads;
+	}
+
 	public MaterialDetail getMaterialDetail() {
 		return this.materialDetail;
 	}
@@ -213,6 +306,14 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 	public void setFirstClassification(FirstClassification firstClassification) {
 		this.firstClassification = firstClassification;
+	}
+
+	public RenewResponse getRenewResponse() {
+		return this.renewResponse;
+	}
+
+	public void setRenewResponse(RenewResponse renewResponse) {
+		this.renewResponse = renewResponse;
 	}
 
 	public static class ThirdClassifications {
@@ -391,6 +492,29 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		}
 	}
 
+	public static class AdminUploads {
+
+		private String loaPicUrl;
+
+		private String licensePicUrl;
+
+		public String getLoaPicUrl() {
+			return this.loaPicUrl;
+		}
+
+		public void setLoaPicUrl(String loaPicUrl) {
+			this.loaPicUrl = loaPicUrl;
+		}
+
+		public String getLicensePicUrl() {
+			return this.licensePicUrl;
+		}
+
+		public void setLicensePicUrl(String licensePicUrl) {
+			this.licensePicUrl = licensePicUrl;
+		}
+	}
+
 	public static class MaterialDetail {
 
 		private String cardNumber;
@@ -436,6 +560,8 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		private Integer region;
 
 		private String contactName;
+
+		private String legalNoticeUrl;
 
 		public String getCardNumber() {
 			return this.cardNumber;
@@ -612,6 +738,14 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 		public void setContactName(String contactName) {
 			this.contactName = contactName;
 		}
+
+		public String getLegalNoticeUrl() {
+			return this.legalNoticeUrl;
+		}
+
+		public void setLegalNoticeUrl(String legalNoticeUrl) {
+			this.legalNoticeUrl = legalNoticeUrl;
+		}
 	}
 
 	public static class FirstClassification {
@@ -634,6 +768,69 @@ public class QueryTradeMarkApplicationDetailResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+	}
+
+	public static class RenewResponse {
+
+		private String name;
+
+		private String engName;
+
+		private String address;
+
+		private String engAddress;
+
+		private Long registerTime;
+
+		private Long submitSbjtime;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getEngName() {
+			return this.engName;
+		}
+
+		public void setEngName(String engName) {
+			this.engName = engName;
+		}
+
+		public String getAddress() {
+			return this.address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public String getEngAddress() {
+			return this.engAddress;
+		}
+
+		public void setEngAddress(String engAddress) {
+			this.engAddress = engAddress;
+		}
+
+		public Long getRegisterTime() {
+			return this.registerTime;
+		}
+
+		public void setRegisterTime(Long registerTime) {
+			this.registerTime = registerTime;
+		}
+
+		public Long getSubmitSbjtime() {
+			return this.submitSbjtime;
+		}
+
+		public void setSubmitSbjtime(Long submitSbjtime) {
+			this.submitSbjtime = submitSbjtime;
 		}
 	}
 

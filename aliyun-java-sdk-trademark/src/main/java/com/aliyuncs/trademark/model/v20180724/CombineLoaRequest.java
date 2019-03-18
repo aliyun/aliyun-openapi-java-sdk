@@ -38,8 +38,6 @@ public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
 
 	private String materialId;
 
-	private String loaName;
-
 	public String getTrademarkName() {
 		return this.trademarkName;
 	}
@@ -103,17 +101,6 @@ public class CombineLoaRequest extends RpcAcsRequest<CombineLoaResponse> {
 		this.materialId = materialId;
 		if(materialId != null){
 			putQueryParameter("MaterialId", materialId);
-		}
-	}
-
-	public String getLoaName() {
-		return this.loaName;
-	}
-
-	public void setLoaName(String loaName) {
-		this.loaName = loaName;
-		if(loaName != null){
-			putQueryParameter("LoaName", loaName);
 		}
 	}
 

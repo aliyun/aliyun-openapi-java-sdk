@@ -1,3 +1,6 @@
+2019-03-18 Version: 1.0.6
+1, Update Dependency
+
 2018-11-06 Version: 1.0.5
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.

@@ -28,19 +28,31 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 
 	private String tmName;
 
-	private String tmIcon;
-
-	private Boolean isBlackIcon;
-
 	private String orderData;
+
+	private String channel;
 
 	private Integer type;
 
 	private String materialId;
 
+	private Long userId;
+
+	private String registerName;
+
+	private String tmNameType;
+
+	private String tmIcon;
+
+	private Boolean isBlackIcon;
+
+	private String renewInfoId;
+
+	private String rootCode;
+
 	private String loaOssKey;
 
-	private Long userId;
+	private String registerNumber;
 
 	public String getTmName() {
 		return this.tmName;
@@ -53,28 +65,6 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		}
 	}
 
-	public String getTmIcon() {
-		return this.tmIcon;
-	}
-
-	public void setTmIcon(String tmIcon) {
-		this.tmIcon = tmIcon;
-		if(tmIcon != null){
-			putQueryParameter("TmIcon", tmIcon);
-		}
-	}
-
-	public Boolean getIsBlackIcon() {
-		return this.isBlackIcon;
-	}
-
-	public void setIsBlackIcon(Boolean isBlackIcon) {
-		this.isBlackIcon = isBlackIcon;
-		if(isBlackIcon != null){
-			putQueryParameter("IsBlackIcon", isBlackIcon.toString());
-		}
-	}
-
 	public String getOrderData() {
 		return this.orderData;
 	}
@@ -83,6 +73,17 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		this.orderData = orderData;
 		if(orderData != null){
 			putQueryParameter("OrderData", orderData);
+		}
+	}
+
+	public String getChannel() {
+		return this.channel;
+	}
+
+	public void setChannel(String channel) {
+		this.channel = channel;
+		if(channel != null){
+			putQueryParameter("Channel", channel);
 		}
 	}
 
@@ -108,6 +109,83 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		}
 	}
 
+	public Long getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId.toString());
+		}
+	}
+
+	public String getRegisterName() {
+		return this.registerName;
+	}
+
+	public void setRegisterName(String registerName) {
+		this.registerName = registerName;
+		if(registerName != null){
+			putQueryParameter("RegisterName", registerName);
+		}
+	}
+
+	public String getTmNameType() {
+		return this.tmNameType;
+	}
+
+	public void setTmNameType(String tmNameType) {
+		this.tmNameType = tmNameType;
+		if(tmNameType != null){
+			putQueryParameter("TmNameType", tmNameType);
+		}
+	}
+
+	public String getTmIcon() {
+		return this.tmIcon;
+	}
+
+	public void setTmIcon(String tmIcon) {
+		this.tmIcon = tmIcon;
+		if(tmIcon != null){
+			putQueryParameter("TmIcon", tmIcon);
+		}
+	}
+
+	public Boolean getIsBlackIcon() {
+		return this.isBlackIcon;
+	}
+
+	public void setIsBlackIcon(Boolean isBlackIcon) {
+		this.isBlackIcon = isBlackIcon;
+		if(isBlackIcon != null){
+			putQueryParameter("IsBlackIcon", isBlackIcon.toString());
+		}
+	}
+
+	public String getRenewInfoId() {
+		return this.renewInfoId;
+	}
+
+	public void setRenewInfoId(String renewInfoId) {
+		this.renewInfoId = renewInfoId;
+		if(renewInfoId != null){
+			putQueryParameter("RenewInfoId", renewInfoId);
+		}
+	}
+
+	public String getRootCode() {
+		return this.rootCode;
+	}
+
+	public void setRootCode(String rootCode) {
+		this.rootCode = rootCode;
+		if(rootCode != null){
+			putQueryParameter("RootCode", rootCode);
+		}
+	}
+
 	public String getLoaOssKey() {
 		return this.loaOssKey;
 	}
@@ -119,14 +197,14 @@ public class CreateTrademarkOrderRequest extends RpcAcsRequest<CreateTrademarkOr
 		}
 	}
 
-	public Long getUserId() {
-		return this.userId;
+	public String getRegisterNumber() {
+		return this.registerNumber;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
+	public void setRegisterNumber(String registerNumber) {
+		this.registerNumber = registerNumber;
+		if(registerNumber != null){
+			putQueryParameter("RegisterNumber", registerNumber);
 		}
 	}
 

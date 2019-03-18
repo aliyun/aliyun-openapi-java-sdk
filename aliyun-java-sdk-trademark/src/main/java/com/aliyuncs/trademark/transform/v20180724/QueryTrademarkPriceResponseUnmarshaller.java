@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.trademark.model.v20180724.QueryTrademarkPriceResponse;
 import com.aliyuncs.trademark.model.v20180724.QueryTrademarkPriceResponse.PricesItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

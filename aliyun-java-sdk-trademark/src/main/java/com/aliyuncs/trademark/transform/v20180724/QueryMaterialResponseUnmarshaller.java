@@ -23,7 +23,6 @@ public class QueryMaterialResponseUnmarshaller {
 	public static QueryMaterialResponse unmarshall(QueryMaterialResponse queryMaterialResponse, UnmarshallerContext context) {
 		
 		queryMaterialResponse.setRequestId(context.stringValue("QueryMaterialResponse.RequestId"));
-		queryMaterialResponse.setUserId(context.stringValue("QueryMaterialResponse.UserId"));
 		queryMaterialResponse.setType(context.integerValue("QueryMaterialResponse.Type"));
 		queryMaterialResponse.setRegion(context.integerValue("QueryMaterialResponse.Region"));
 		queryMaterialResponse.setContactName(context.stringValue("QueryMaterialResponse.ContactName"));
@@ -32,7 +31,6 @@ public class QueryMaterialResponseUnmarshaller {
 		queryMaterialResponse.setContactAddress(context.stringValue("QueryMaterialResponse.ContactAddress"));
 		queryMaterialResponse.setContactZipcode(context.stringValue("QueryMaterialResponse.ContactZipcode"));
 		queryMaterialResponse.setStatus(context.integerValue("QueryMaterialResponse.Status"));
-		queryMaterialResponse.setLoaId(context.longValue("QueryMaterialResponse.LoaId"));
 		queryMaterialResponse.setLoaUrl(context.stringValue("QueryMaterialResponse.LoaUrl"));
 		queryMaterialResponse.setName(context.stringValue("QueryMaterialResponse.Name"));
 		queryMaterialResponse.setCardNumber(context.stringValue("QueryMaterialResponse.CardNumber"));
@@ -43,15 +41,14 @@ public class QueryMaterialResponseUnmarshaller {
 		queryMaterialResponse.setAddress(context.stringValue("QueryMaterialResponse.Address"));
 		queryMaterialResponse.setEName(context.stringValue("QueryMaterialResponse.EName"));
 		queryMaterialResponse.setEAddress(context.stringValue("QueryMaterialResponse.EAddress"));
-		queryMaterialResponse.setExtend(context.stringValue("QueryMaterialResponse.Extend"));
-		queryMaterialResponse.setLoaType(context.integerValue("QueryMaterialResponse.LoaType"));
-		queryMaterialResponse.setLoaKey(context.stringValue("QueryMaterialResponse.LoaKey"));
 		queryMaterialResponse.setLoaStatus(context.integerValue("QueryMaterialResponse.LoaStatus"));
 		queryMaterialResponse.setIdCardUrl(context.stringValue("QueryMaterialResponse.IdCardUrl"));
 		queryMaterialResponse.setBusinessLicenceUrl(context.stringValue("QueryMaterialResponse.BusinessLicenceUrl"));
 		queryMaterialResponse.setPassportUrl(context.stringValue("QueryMaterialResponse.PassportUrl"));
 		queryMaterialResponse.setId(context.longValue("QueryMaterialResponse.Id"));
 		queryMaterialResponse.setLegalNoticeUrl(context.stringValue("QueryMaterialResponse.LegalNoticeUrl"));
+		queryMaterialResponse.setNote(context.stringValue("QueryMaterialResponse.Note"));
+		queryMaterialResponse.setCountry(context.stringValue("QueryMaterialResponse.Country"));
 	 
 	 	return queryMaterialResponse;
 	}

@@ -15,7 +15,6 @@
 package com.aliyuncs.trademark.model.v20180724;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.trademark.transform.v20180724.CheckLoaFillResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -59,6 +58,8 @@ public class CheckLoaFillResponse extends AcsResponse {
 		private Boolean nationalityFill;
 
 		private Boolean materialNameFill;
+
+		private String templateUrl;
 
 		private List<String> errorMsgs;
 
@@ -108,6 +109,14 @@ public class CheckLoaFillResponse extends AcsResponse {
 
 		public void setMaterialNameFill(Boolean materialNameFill) {
 			this.materialNameFill = materialNameFill;
+		}
+
+		public String getTemplateUrl() {
+			return this.templateUrl;
+		}
+
+		public void setTemplateUrl(String templateUrl) {
+			this.templateUrl = templateUrl;
 		}
 
 		public List<String> getErrorMsgs() {

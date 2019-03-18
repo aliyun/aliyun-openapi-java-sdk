@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.trademark.model.v20180724.QueryMaterialListResponse;
 import com.aliyuncs.trademark.model.v20180724.QueryMaterialListResponse.Trademark;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,8 +31,6 @@ public class QueryMaterialListResponseUnmarshaller {
 		queryMaterialListResponse.setCurrentPageNum(context.integerValue("QueryMaterialListResponse.CurrentPageNum"));
 		queryMaterialListResponse.setPageSize(context.integerValue("QueryMaterialListResponse.PageSize"));
 		queryMaterialListResponse.setTotalPageNum(context.integerValue("QueryMaterialListResponse.TotalPageNum"));
-		queryMaterialListResponse.setPrePage(context.booleanValue("QueryMaterialListResponse.PrePage"));
-		queryMaterialListResponse.setNextPage(context.booleanValue("QueryMaterialListResponse.NextPage"));
 
 		List<Trademark> data = new ArrayList<Trademark>();
 		for (int i = 0; i < context.lengthValue("QueryMaterialListResponse.Data.Length"); i++) {

@@ -35,8 +35,6 @@ public class QuerySupplementDetailResponse extends AcsResponse {
 
 	private Integer status;
 
-	private String orderId;
-
 	private String tmNumber;
 
 	private Long sendTime;
@@ -52,8 +50,6 @@ public class QuerySupplementDetailResponse extends AcsResponse {
 	private String uploadFileTemplateUrl;
 
 	private String content;
-
-	private String batchNum;
 
 	private List<String> fileTemplateUrls;
 
@@ -95,14 +91,6 @@ public class QuerySupplementDetailResponse extends AcsResponse {
 
 	public void setStatus(Integer status) {
 		this.status = status;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
 	}
 
 	public String getTmNumber() {
@@ -167,14 +155,6 @@ public class QuerySupplementDetailResponse extends AcsResponse {
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-	public String getBatchNum() {
-		return this.batchNum;
-	}
-
-	public void setBatchNum(String batchNum) {
-		this.batchNum = batchNum;
 	}
 
 	public List<String> getFileTemplateUrls() {

@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.trademark.model.v20180724.QuerySupplementDetailResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,7 +30,6 @@ public class QuerySupplementDetailResponseUnmarshaller {
 		querySupplementDetailResponse.setSerialNumber(context.stringValue("QuerySupplementDetailResponse.SerialNumber"));
 		querySupplementDetailResponse.setType(context.integerValue("QuerySupplementDetailResponse.Type"));
 		querySupplementDetailResponse.setStatus(context.integerValue("QuerySupplementDetailResponse.Status"));
-		querySupplementDetailResponse.setOrderId(context.stringValue("QuerySupplementDetailResponse.OrderId"));
 		querySupplementDetailResponse.setTmNumber(context.stringValue("QuerySupplementDetailResponse.TmNumber"));
 		querySupplementDetailResponse.setSendTime(context.longValue("QuerySupplementDetailResponse.SendTime"));
 		querySupplementDetailResponse.setAcceptTime(context.longValue("QuerySupplementDetailResponse.AcceptTime"));
@@ -40,7 +38,6 @@ public class QuerySupplementDetailResponseUnmarshaller {
 		querySupplementDetailResponse.setOperateTime(context.longValue("QuerySupplementDetailResponse.OperateTime"));
 		querySupplementDetailResponse.setUploadFileTemplateUrl(context.stringValue("QuerySupplementDetailResponse.UploadFileTemplateUrl"));
 		querySupplementDetailResponse.setContent(context.stringValue("QuerySupplementDetailResponse.Content"));
-		querySupplementDetailResponse.setBatchNum(context.stringValue("QuerySupplementDetailResponse.BatchNum"));
 
 		List<String> fileTemplateUrls = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QuerySupplementDetailResponse.FileTemplateUrls.Length"); i++) {

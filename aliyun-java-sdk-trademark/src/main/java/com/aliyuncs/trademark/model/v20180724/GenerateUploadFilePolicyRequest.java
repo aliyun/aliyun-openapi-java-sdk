@@ -28,8 +28,6 @@ public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploa
 
 	private String fileType;
 
-	private String keyword;
-
 	public String getFileType() {
 		return this.fileType;
 	}
@@ -38,17 +36,6 @@ public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploa
 		this.fileType = fileType;
 		if(fileType != null){
 			putQueryParameter("FileType", fileType);
-		}
-	}
-
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
 		}
 	}
 

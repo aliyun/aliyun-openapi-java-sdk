@@ -32,23 +32,19 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 
 	private String orderId;
 
-	private String tmNumber;
-
-	private Long createTimeLeft;
-
-	private Integer pageNum;
-
-	private String userId;
-
 	private Integer supplementStatus;
-
-	private String bizId;
 
 	private Integer pageSize;
 
-	private String keyword;
+	private String bizId;
 
-	private Long createTimeRight;
+	private String tmNumber;
+
+	private String sortOrder;
+
+	private Integer pageNum;
+
+	private String type;
 
 	private Integer status;
 
@@ -85,50 +81,6 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
-	public String getTmNumber() {
-		return this.tmNumber;
-	}
-
-	public void setTmNumber(String tmNumber) {
-		this.tmNumber = tmNumber;
-		if(tmNumber != null){
-			putQueryParameter("TmNumber", tmNumber);
-		}
-	}
-
-	public Long getCreateTimeLeft() {
-		return this.createTimeLeft;
-	}
-
-	public void setCreateTimeLeft(Long createTimeLeft) {
-		this.createTimeLeft = createTimeLeft;
-		if(createTimeLeft != null){
-			putQueryParameter("CreateTimeLeft", createTimeLeft.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
 	public Integer getSupplementStatus() {
 		return this.supplementStatus;
 	}
@@ -137,17 +89,6 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		this.supplementStatus = supplementStatus;
 		if(supplementStatus != null){
 			putQueryParameter("SupplementStatus", supplementStatus.toString());
-		}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
 		}
 	}
 
@@ -162,25 +103,58 @@ public class QueryTradeMarkApplicationsRequest extends RpcAcsRequest<QueryTradeM
 		}
 	}
 
-	public String getKeyword() {
-		return this.keyword;
+	public String getBizId() {
+		return this.bizId;
 	}
 
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 
-	public Long getCreateTimeRight() {
-		return this.createTimeRight;
+	public String getTmNumber() {
+		return this.tmNumber;
 	}
 
-	public void setCreateTimeRight(Long createTimeRight) {
-		this.createTimeRight = createTimeRight;
-		if(createTimeRight != null){
-			putQueryParameter("CreateTimeRight", createTimeRight.toString());
+	public void setTmNumber(String tmNumber) {
+		this.tmNumber = tmNumber;
+		if(tmNumber != null){
+			putQueryParameter("TmNumber", tmNumber);
+		}
+	}
+
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+		if(sortOrder != null){
+			putQueryParameter("SortOrder", sortOrder);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

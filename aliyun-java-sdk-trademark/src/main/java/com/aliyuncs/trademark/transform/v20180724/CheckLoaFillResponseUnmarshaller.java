@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.trademark.model.v20180724.CheckLoaFillResponse;
 import com.aliyuncs.trademark.model.v20180724.CheckLoaFillResponse.Data;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,6 +35,7 @@ public class CheckLoaFillResponseUnmarshaller {
 		data.setCountryFill(context.booleanValue("CheckLoaFillResponse.Data.CountryFill"));
 		data.setNationalityFill(context.booleanValue("CheckLoaFillResponse.Data.NationalityFill"));
 		data.setMaterialNameFill(context.booleanValue("CheckLoaFillResponse.Data.MaterialNameFill"));
+		data.setTemplateUrl(context.stringValue("CheckLoaFillResponse.Data.TemplateUrl"));
 
 		List<String> errorMsgs = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("CheckLoaFillResponse.Data.ErrorMsgs.Length"); i++) {

@@ -28,10 +28,6 @@ public class UpdateMaterialResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String errorMsg;
-
-	private String errorCode;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -46,22 +42,6 @@ public class UpdateMaterialResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorMsg() {
-		return this.errorMsg;
-	}
-
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	@Override

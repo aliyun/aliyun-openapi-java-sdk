@@ -30,6 +30,8 @@ public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListRes
 
 	private Integer pageSize;
 
+	private String cardNumber;
+
 	private Integer type;
 
 	private Integer region;
@@ -57,6 +59,17 @@ public class QueryMaterialListRequest extends RpcAcsRequest<QueryMaterialListRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getCardNumber() {
+		return this.cardNumber;
+	}
+
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+		if(cardNumber != null){
+			putQueryParameter("CardNumber", cardNumber);
 		}
 	}
 

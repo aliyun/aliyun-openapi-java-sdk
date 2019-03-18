@@ -24,6 +24,8 @@ public class CreateTrademarkOrderResponseUnmarshaller {
 		
 		createTrademarkOrderResponse.setRequestId(context.stringValue("CreateTrademarkOrderResponse.RequestId"));
 		createTrademarkOrderResponse.setOrderId(context.longValue("CreateTrademarkOrderResponse.OrderId"));
+		createTrademarkOrderResponse.setSuccess(context.booleanValue("CreateTrademarkOrderResponse.Success"));
+		createTrademarkOrderResponse.setErrorMsg(context.stringValue("CreateTrademarkOrderResponse.ErrorMsg"));
 	 
 	 	return createTrademarkOrderResponse;
 	}
