@@ -24,4 +24,4 @@ travis-test:
 	mv ./aliyun-java-sdk-airec/target/*.jar ./java-sdk-function-test/lib/airec.jar
 	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-green/pom.xml
 	mv ./aliyun-java-sdk-green/target/*.jar ./java-sdk-function-test/lib/green.jar
-	#mvn test -B -f ./java-sdk-function-test/pom.xml
+	mvn test -B -f ./java-sdk-function-test/pom.xml

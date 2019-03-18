@@ -82,14 +82,18 @@ public class HttpClientConfig {
         this.clientType = clientType;
     }
 
-    @Deprecated
-    public String getCertPath() {
-        throw new IllegalArgumentException("Use 'X509TrustManagers' property and 'KeyManagers' property instead");
-    }
 
     @Deprecated
+    public String getCertPath() {
+        return certPath;
+    }
+
+    /**
+     * use HttpClientConfig.setX509TrustManagers() and HttpClientConfig.setKeyManagers() instead
+     */
+    @Deprecated
     public void setCertPath(String certPath) {
-        throw new IllegalArgumentException("Use 'X509TrustManagers' property and 'KeyManagers' property instead");
+        this.certPath = certPath;
     }
 
     public int getMaxIdleConnections() {
@@ -142,12 +146,15 @@ public class HttpClientConfig {
 
     @Deprecated
     public SSLSocketFactory getSslSocketFactory() {
-        throw new IllegalArgumentException("Use 'X509TrustManagers' property and 'KeyManagers' property instead");
+        return this.sslSocketFactory;
     }
 
+    /**
+     * use HttpClientConfig.setX509TrustManagers() and HttpClientConfig.setKeyManagers() instead
+     */
     @Deprecated
     public void setSslSocketFactory(SSLSocketFactory sslSocketFactory) {
-        throw new IllegalArgumentException("Use 'X509TrustManagers' property and 'KeyManagers' property instead");
+        this.sslSocketFactory = sslSocketFactory;
     }
 
     public KeyManager[] getKeyManagers() {

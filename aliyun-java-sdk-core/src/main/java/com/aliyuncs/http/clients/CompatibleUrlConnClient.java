@@ -294,11 +294,17 @@ public class CompatibleUrlConnClient extends IHttpClient {
         return outputStream.toByteArray();
     }
 
+    /**
+     * use HttpClientConfig.setIgnoreSSLCerts(true) instead
+     */
     @Override
     public void ignoreSSLCertificate() {
         throw new IllegalStateException("use HttpClientConfig.setIgnoreSSLCerts(true) instead");
     }
 
+    /**
+     * use HttpClientConfig.setIgnoreSSLCerts(false) instead
+     */
     @Override
     public void restoreSSLCertificate() {
         throw new IllegalStateException("use HttpClientConfig.setIgnoreSSLCerts(false) instead");
