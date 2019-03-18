@@ -273,10 +273,6 @@ clientConfig.setX509TrustManagers(clientTrustManagers);
 // Configure user-defined KeyManagers
 clientConfig.setKeyManagers(clientKeyManagers);
 
-// Configure HttpClient type, choose Compatible or ApacheHttpClient(defalut)
-clientConfig.setClientType(HttpClientType.Compatible);
-// clientConfig.setClientType(HttpClientType.ApacheHttpClient);
-
 IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
 profile.setHttpClientConfig(clientConfig);
 DefaultAcsClient client = new DefaultAcsClient(profile);
