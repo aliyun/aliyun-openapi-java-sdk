@@ -775,4 +775,21 @@ public class CompatibleUrlConnClientTest {
         }
 
     }
+
+    @Test
+    public void testHttpsCertIgnoreHelperConstructor() {
+        Assert.assertNotNull(new CompatibleUrlConnClient.HttpsCertIgnoreHelper());
+    }
+
+    @Test
+    public void testHttpsCertIgnoreHelperIgnore() {
+        thrown.expect(IllegalStateException.class);
+        CompatibleUrlConnClient.HttpsCertIgnoreHelper.ignoreSSLCertificate();
+    }
+
+    @Test
+    public void testHttpsCertIgnoreHelperRestore() {
+        thrown.expect(IllegalStateException.class);
+        CompatibleUrlConnClient.HttpsCertIgnoreHelper.restoreSSLCertificate();
+    }
 }

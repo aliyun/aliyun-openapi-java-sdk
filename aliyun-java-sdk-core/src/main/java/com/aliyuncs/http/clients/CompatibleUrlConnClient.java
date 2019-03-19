@@ -11,9 +11,12 @@ import javax.net.ssl.*;
 import javax.xml.bind.DatatypeConverter;
 import java.io.*;
 import java.net.*;
+import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -339,5 +342,27 @@ public class CompatibleUrlConnClient extends IHttpClient {
             proxy = new Proxy(Proxy.Type.HTTP, addr);
         }
         return proxy;
+    }
+
+    /**
+     * use HttpClientConfig.setIgnoreSSLCerts(true/false) instead
+     */
+    @Deprecated
+    public static final class HttpsCertIgnoreHelper {
+        /**
+         * use HttpClientConfig.setIgnoreSSLCerts(false) instead
+         */
+        @Deprecated
+        public static void restoreSSLCertificate() {
+            throw new IllegalStateException("use HttpClientConfig.setIgnoreSSLCerts(false) instead");
+        }
+
+        /**
+         * use HttpClientConfig.setIgnoreSSLCerts(true) instead
+         */
+        @Deprecated
+        public static void ignoreSSLCertificate() {
+            throw new IllegalStateException("use HttpClientConfig.setIgnoreSSLCerts(true) instead");
+        }
     }
 }
