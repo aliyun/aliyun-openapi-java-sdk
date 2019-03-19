@@ -187,6 +187,10 @@ public class QueryCustomerByPhoneResponse extends AcsResponse {
 
 			private String mainAccountUid;
 
+			private String associatePerson;
+
+			private String tag;
+
 			private List<String> associatePersonList;
 
 			public String getCid() {
@@ -219,6 +223,22 @@ public class QueryCustomerByPhoneResponse extends AcsResponse {
 
 			public void setMainAccountUid(String mainAccountUid) {
 				this.mainAccountUid = mainAccountUid;
+			}
+
+			public String getAssociatePerson() {
+				return this.associatePerson;
+			}
+
+			public void setAssociatePerson(String associatePerson) {
+				this.associatePerson = associatePerson;
+			}
+
+			public String getTag() {
+				return this.tag;
+			}
+
+			public void setTag(String tag) {
+				this.tag = tag;
 			}
 
 			public List<String> getAssociatePersonList() {

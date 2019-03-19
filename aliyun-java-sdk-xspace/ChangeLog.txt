@@ -1,3 +1,6 @@
+2019-03-19 Version: 1.2.1
+1, format fields: tags, associatePerson
+
 2019-03-18 Version: 1.2.0
 1, move AssociatePerson\Tag field
 2, Optimize RealName field

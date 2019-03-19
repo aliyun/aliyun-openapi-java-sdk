@@ -55,6 +55,8 @@ public class QueryCustomerByPhoneResponseUnmarshaller {
 			customizeFields.setAbcUrl(context.stringValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.AbcUrl"));
 			customizeFields.setDistributionLevel(context.stringValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.DistributionLevel"));
 			customizeFields.setMainAccountUid(context.stringValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.MainAccountUid"));
+			customizeFields.setAssociatePerson(context.stringValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.AssociatePerson"));
+			customizeFields.setTag(context.stringValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.Tag"));
 
 			List<String> associatePersonList = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("QueryCustomerByPhoneResponse.Data["+ i +"].CustomizeFields.AssociatePersonList.Length"); j++) {
