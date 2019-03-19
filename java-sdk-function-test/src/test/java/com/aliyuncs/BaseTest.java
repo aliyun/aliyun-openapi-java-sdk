@@ -2,6 +2,7 @@ package com.aliyuncs;
 
 import java.io.IOException;
 
+import org.junit.After;
 import org.junit.Before;
 
 import com.aliyuncs.auth.BasicSessionCredentials;
@@ -17,7 +18,6 @@ import com.aliyuncs.profile.IClientProfile;
 
 @SuppressWarnings("deprecation")
 public class BaseTest {
-
     protected DefaultAcsClient client = null;
     protected Credential dailyEnvCredentail = null;
     protected String accesskeyId = null;
@@ -27,15 +27,25 @@ public class BaseTest {
     protected String roleArn = null;
     protected String regionId = null;
 
-    public DefaultAcsClient getClientWithRegionId(String regionId) {
+    @Before
+    public void initClient() throws ClientException, IOException {
+        this.client = getClientWithRegionId(this.regionId);
+    }
+
+    @After
+    public void destory() throws ClientException, IOException {
+        ApacheHttpClient.getInstance().close();
+    }
+
+    public DefaultAcsClient getClientWithRegionId(String regionId) throws ClientException, IOException {
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         return new DefaultAcsClient(profile);
     }
 
     protected DefaultAcsClient getReadTimeoutClientWithRegionId(String regionId, Long readTimeoutMillis)
             throws ClientException, IOException {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-        ApacheHttpClient.getInstance(clientConfig).close();
         clientConfig.setReadTimeoutMillis(readTimeoutMillis);
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         profile.setHttpClientConfig(clientConfig);
@@ -45,14 +55,13 @@ public class BaseTest {
     protected DefaultAcsClient getConnectTimeoutClientWithRegionId(String regionId, Long connectionTimeoutMillis)
             throws ClientException, IOException {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-        ApacheHttpClient.getInstance(clientConfig).close();
         clientConfig.setConnectionTimeoutMillis(connectionTimeoutMillis);
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         profile.setHttpClientConfig(clientConfig);
         return new DefaultAcsClient(profile);
     }
 
-    protected DefaultAcsClient getCompatibleUrlConnClient(String regionId) throws ClientException, IOException {
+    protected DefaultAcsClient getCompatibleUrlConnClient(String regionId) {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setClientType(HttpClientType.Compatible);
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
@@ -70,8 +79,7 @@ public class BaseTest {
         return new DefaultAcsClient(profile);
     }
 
-    protected DefaultAcsClient getConnectTimeoutCompatibleUrlConnClient(String regionId, Long connectionTimeoutMillis)
-            throws ClientException, IOException {
+    protected DefaultAcsClient getConnectTimeoutCompatibleUrlConnClient(String regionId, Long connectionTimeoutMillis) {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setClientType(HttpClientType.Compatible);
         clientConfig.setConnectionTimeoutMillis(connectionTimeoutMillis);
@@ -88,7 +96,7 @@ public class BaseTest {
         this.tokenAccesskeySecret = System.getenv("RAMAccessKeySecret");
         this.roleArn = System.getenv("roleArn");
         this.regionId = "cn-hangzhou";
-        client = getClientWithRegionId(this.regionId);
+        
         dailyEnvCredentail = new Credential(accesskeyId, accesskeySecret);
 
     }
@@ -108,6 +116,7 @@ public class BaseTest {
         BasicSessionCredentials credentials = new BasicSessionCredentials(this.tokenAccesskeyId,
                 this.tokenAccesskeySecret, getToken());
         DefaultProfile profile = DefaultProfile.getProfile(this.regionId);
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         return new DefaultAcsClient(profile, credentials);
     }
 }

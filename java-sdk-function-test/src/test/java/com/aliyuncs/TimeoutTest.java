@@ -20,18 +20,14 @@ public class TimeoutTest extends BaseTest {
         request.setSysDomain("ecs-cn-hangzhou.aliyuncs.com");
         request.setSysVersion("2014-05-26");
         request.setSysAction("DescribeAccessPoints");
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
-        this.getClientWithRegionId(regionId).getCommonResponse(request);
-
+        this.client.getCommonResponse(request);
+        ApacheHttpClient.getInstance().close();
         thrown.expect(ClientException.class);
         thrown.expectMessage("SDK.ServerUnreachable : SocketTimeoutException has occurred on a socket read or accept.");
         this.getReadTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
-
         request.setSysReadTimeout(10000);
         this.getReadTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
-
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
-    }
+        }
 
     @Test
     public void testApacheHttpClientConnectTimeoutException() throws IOException, ClientException {
@@ -39,9 +35,8 @@ public class TimeoutTest extends BaseTest {
         request.setSysDomain("ecs-cn-hangzhou.aliyuncs.com");
         request.setSysVersion("2014-05-26");
         request.setSysAction("DescribeAccessPoints");
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
         this.getClientWithRegionId(regionId).getCommonResponse(request);
-
+        ApacheHttpClient.getInstance().close();
         thrown.expect(ClientException.class);
         thrown.expectMessage(
                 "SDK.ServerUnreachable : Server unreachable: org.apache.http.conn.ConnectTimeoutException");
@@ -49,9 +44,7 @@ public class TimeoutTest extends BaseTest {
 
         request.setSysConnectTimeout(5000);
         this.getConnectTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
-
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
-    }
+        }
 
     @Test
     public void testCompatibleUrlConnClientSocketTimeoutException() throws IOException, ClientException {
