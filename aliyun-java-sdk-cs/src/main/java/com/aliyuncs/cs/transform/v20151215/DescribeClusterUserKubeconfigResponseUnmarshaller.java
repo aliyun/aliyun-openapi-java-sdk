@@ -11,26 +11,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.cs.model.v20151215;
 
-import com.aliyuncs.RoaAcsRequest;
-import com.aliyuncs.http.MethodType;
+package com.aliyuncs.cs.transform.v20151215;
 
-/**
- * @author auto create
- * @version 
- */
-public class AddAgilityClusterRequest extends RoaAcsRequest<AddAgilityClusterResponse> {
-	
-	public AddAgilityClusterRequest() {
-		super("CS", "2015-12-15", "AddAgilityCluster");
-		setUriPattern("/add_agility_cluster");
-		setMethod(MethodType.POST);
+import com.aliyuncs.cs.model.v20151215.DescribeClusterUserKubeconfigResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class DescribeClusterUserKubeconfigResponseUnmarshaller {
+
+	public static DescribeClusterUserKubeconfigResponse unmarshall(DescribeClusterUserKubeconfigResponse describeClusterUserKubeconfigResponse, UnmarshallerContext context) {
+		
+	 
+	 	return describeClusterUserKubeconfigResponse;
 	}
-
-	@Override
-	public Class<AddAgilityClusterResponse> getResponseClass() {
-		return AddAgilityClusterResponse.class;
-	}
-
 }

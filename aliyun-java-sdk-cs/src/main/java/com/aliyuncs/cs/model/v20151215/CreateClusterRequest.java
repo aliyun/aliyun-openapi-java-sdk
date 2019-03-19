@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 	
 	public CreateClusterRequest() {
-		super("CS", "2015-12-15", "CreateCluster");
+		super("CS", "2015-12-15", "CreateCluster", "cs");
 		setUriPattern("/clusters");
 		setMethod(MethodType.POST);
 	}

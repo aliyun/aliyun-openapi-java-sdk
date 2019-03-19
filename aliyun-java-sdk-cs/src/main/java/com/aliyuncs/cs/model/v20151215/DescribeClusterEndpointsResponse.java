@@ -11,20 +11,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cs.transform.v20151215.DescribeImagesResponseUnmarshaller;
+import com.aliyuncs.cs.transform.v20151215.DescribeClusterEndpointsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeImagesResponse extends AcsResponse {
+public class DescribeClusterEndpointsResponse extends AcsResponse {
 
 	@Override
-	public DescribeImagesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeImagesResponseUnmarshaller.unmarshall(this, context);
+	public DescribeClusterEndpointsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeClusterEndpointsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

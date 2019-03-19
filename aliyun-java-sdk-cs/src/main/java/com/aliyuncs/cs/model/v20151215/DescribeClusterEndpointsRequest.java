@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -20,30 +21,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeClusterNodeInfoRequest extends RoaAcsRequest<DescribeClusterNodeInfoResponse> {
+public class DescribeClusterEndpointsRequest extends RoaAcsRequest<DescribeClusterEndpointsResponse> {
 	
-	public DescribeClusterNodeInfoRequest() {
-		super("CS", "2015-12-15", "DescribeClusterNodeInfo");
-		setUriPattern("/token/[Token]/node_info");
+	public DescribeClusterEndpointsRequest() {
+		super("CS", "2015-12-15", "DescribeClusterEndpoints", "cs");
+		setUriPattern("/clusters/[ClusterId]/endpoints");
 		setMethod(MethodType.GET);
 	}
 
-	private String token;
+	private String clusterId;
 
-	public String getToken() {
-		return this.token;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putPathParameter("Token", token);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<DescribeClusterNodeInfoResponse> getResponseClass() {
-		return DescribeClusterNodeInfoResponse.class;
+	public Class<DescribeClusterEndpointsResponse> getResponseClass() {
+		return DescribeClusterEndpointsResponse.class;
 	}
 
 }

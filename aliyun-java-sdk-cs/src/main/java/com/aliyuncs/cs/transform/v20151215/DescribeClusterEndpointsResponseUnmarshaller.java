@@ -11,20 +11,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.cs.model.v20151215;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cs.transform.v20151215.CallbackClusterTokenResponseUnmarshaller;
+package com.aliyuncs.cs.transform.v20151215;
+
+import com.aliyuncs.cs.model.v20151215.DescribeClusterEndpointsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class CallbackClusterTokenResponse extends AcsResponse {
 
-	@Override
-	public CallbackClusterTokenResponse getInstance(UnmarshallerContext context) {
-		return	CallbackClusterTokenResponseUnmarshaller.unmarshall(this, context);
+public class DescribeClusterEndpointsResponseUnmarshaller {
+
+	public static DescribeClusterEndpointsResponse unmarshall(DescribeClusterEndpointsResponse describeClusterEndpointsResponse, UnmarshallerContext context) {
+		
+	 
+	 	return describeClusterEndpointsResponse;
 	}
 }

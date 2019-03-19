@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeApiVersionRequest extends RoaAcsRequest<DescribeApiVersionResponse> {
 	
 	public DescribeApiVersionRequest() {
-		super("CS", "2015-12-15", "DescribeApiVersion");
+		super("CS", "2015-12-15", "DescribeApiVersion", "cs");
 		setUriPattern("/version");
 		setMethod(MethodType.GET);
 	}

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cs.transform.v20151215;
 
 import com.aliyuncs.cs.model.v20151215.DescribeClusterDetailResponse;

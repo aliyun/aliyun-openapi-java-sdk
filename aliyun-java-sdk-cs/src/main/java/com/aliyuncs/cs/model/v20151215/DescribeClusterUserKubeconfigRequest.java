@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -20,12 +21,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateClusterTokenRequest extends RoaAcsRequest<CreateClusterTokenResponse> {
+public class DescribeClusterUserKubeconfigRequest extends RoaAcsRequest<DescribeClusterUserKubeconfigResponse> {
 	
-	public CreateClusterTokenRequest() {
-		super("CS", "2015-12-15", "CreateClusterToken");
-		setUriPattern("/clusters/[ClusterId]/token");
-		setMethod(MethodType.POST);
+	public DescribeClusterUserKubeconfigRequest() {
+		super("CS", "2015-12-15", "DescribeClusterUserKubeconfig", "cs");
+		setUriPattern("/k8s/[ClusterId]/user_config");
+		setMethod(MethodType.GET);
 	}
 
 	private String clusterId;
@@ -42,8 +43,8 @@ public class CreateClusterTokenRequest extends RoaAcsRequest<CreateClusterTokenR
 	}
 
 	@Override
-	public Class<CreateClusterTokenResponse> getResponseClass() {
-		return CreateClusterTokenResponse.class;
+	public Class<DescribeClusterUserKubeconfigResponse> getResponseClass() {
+		return DescribeClusterUserKubeconfigResponse.class;
 	}
 
 }

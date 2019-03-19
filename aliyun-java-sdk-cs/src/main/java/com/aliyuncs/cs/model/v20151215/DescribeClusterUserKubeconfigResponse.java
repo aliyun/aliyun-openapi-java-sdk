@@ -11,17 +11,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.cs.transform.v20151215;
 
-import com.aliyuncs.cs.model.v20151215.UpgradeClusterComponentsResponse;
+package com.aliyuncs.cs.model.v20151215;
+
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.cs.transform.v20151215.DescribeClusterUserKubeconfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+/**
+ * @author auto create
+ * @version 
+ */
+public class DescribeClusterUserKubeconfigResponse extends AcsResponse {
 
-public class UpgradeClusterComponentsResponseUnmarshaller {
-
-	public static UpgradeClusterComponentsResponse unmarshall(UpgradeClusterComponentsResponse upgradeClusterComponentsResponse, UnmarshallerContext context) {
-		
-	 
-	 	return upgradeClusterComponentsResponse;
+	@Override
+	public DescribeClusterUserKubeconfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeClusterUserKubeconfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

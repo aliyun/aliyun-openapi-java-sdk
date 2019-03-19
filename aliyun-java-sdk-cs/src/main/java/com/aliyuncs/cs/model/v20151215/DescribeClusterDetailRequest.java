@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeClusterDetailRequest extends RoaAcsRequest<DescribeClusterDetailResponse> {
 	
 	public DescribeClusterDetailRequest() {
-		super("CS", "2015-12-15", "DescribeClusterDetail");
+		super("CS", "2015-12-15", "DescribeClusterDetail", "cs");
 		setUriPattern("/clusters/[ClusterId]");
 		setMethod(MethodType.GET);
 	}

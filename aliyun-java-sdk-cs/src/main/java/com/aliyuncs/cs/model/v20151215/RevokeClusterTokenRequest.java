@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.RoaAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class RevokeClusterTokenRequest extends RoaAcsRequest<RevokeClusterTokenResponse> {
 	
 	public RevokeClusterTokenRequest() {
-		super("CS", "2015-12-15", "RevokeClusterToken");
+		super("CS", "2015-12-15", "RevokeClusterToken", "cs");
 		setUriPattern("/token/[Token]/revoke");
 		setMethod(MethodType.DELETE);
 	}
