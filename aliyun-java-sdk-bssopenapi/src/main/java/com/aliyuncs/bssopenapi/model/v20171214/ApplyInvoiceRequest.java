@@ -39,11 +39,15 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 
 	private Integer processWay;
 
+	private Long callerBid;
+
 	private Long ownerId;
 
 	private Long invoiceAmount;
 
 	private Long addressId;
+
+	private Long callerUid;
 
 	public Integer getInvoicingType() {
 		return this.invoicingType;
@@ -113,6 +117,17 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 		}
 	}
 
+	public Long getCallerBid() {
+		return this.callerBid;
+	}
+
+	public void setCallerBid(Long callerBid) {
+		this.callerBid = callerBid;
+		if(callerBid != null){
+			putQueryParameter("callerBid", callerBid.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -143,6 +158,17 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 		this.addressId = addressId;
 		if(addressId != null){
 			putQueryParameter("AddressId", addressId.toString());
+		}
+	}
+
+	public Long getCallerUid() {
+		return this.callerUid;
+	}
+
+	public void setCallerUid(Long callerUid) {
+		this.callerUid = callerUid;
+		if(callerUid != null){
+			putQueryParameter("callerUid", callerUid.toString());
 		}
 	}
 

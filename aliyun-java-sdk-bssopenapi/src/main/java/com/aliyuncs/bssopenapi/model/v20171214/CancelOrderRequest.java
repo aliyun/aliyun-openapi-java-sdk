@@ -20,26 +20,24 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryInvoicingCustomerListRequest extends RpcAcsRequest<QueryInvoicingCustomerListResponse> {
+public class CancelOrderRequest extends RpcAcsRequest<CancelOrderResponse> {
 	
-	public QueryInvoicingCustomerListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryInvoicingCustomerList");
+	public CancelOrderRequest() {
+		super("BssOpenApi", "2017-12-14", "CancelOrder");
 	}
 
-	private Long callerBid;
+	private String orderId;
 
 	private Long ownerId;
 
-	private Long callerUid;
-
-	public Long getCallerBid() {
-		return this.callerBid;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setCallerBid(Long callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid.toString());
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 
@@ -54,20 +52,9 @@ public class QueryInvoicingCustomerListRequest extends RpcAcsRequest<QueryInvoic
 		}
 	}
 
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
-		}
-	}
-
 	@Override
-	public Class<QueryInvoicingCustomerListResponse> getResponseClass() {
-		return QueryInvoicingCustomerListResponse.class;
+	public Class<CancelOrderResponse> getResponseClass() {
+		return CancelOrderResponse.class;
 	}
 
 }

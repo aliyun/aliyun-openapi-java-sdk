@@ -26,7 +26,22 @@ public class QueryCustomerAddressListRequest extends RpcAcsRequest<QueryCustomer
 		super("BssOpenApi", "2017-12-14", "QueryCustomerAddressList");
 	}
 
+	private Long callerBid;
+
 	private Long ownerId;
+
+	private Long callerUid;
+
+	public Long getCallerBid() {
+		return this.callerBid;
+	}
+
+	public void setCallerBid(Long callerBid) {
+		this.callerBid = callerBid;
+		if(callerBid != null){
+			putQueryParameter("callerBid", callerBid.toString());
+		}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -36,6 +51,17 @@ public class QueryCustomerAddressListRequest extends RpcAcsRequest<QueryCustomer
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getCallerUid() {
+		return this.callerUid;
+	}
+
+	public void setCallerUid(Long callerUid) {
+		this.callerUid = callerUid;
+		if(callerUid != null){
+			putQueryParameter("callerUid", callerUid.toString());
 		}
 	}
 
