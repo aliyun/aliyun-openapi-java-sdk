@@ -26,11 +26,13 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 		super("Cdn", "2014-11-11", "DescribeDomainBpsData");
 	}
 
+	private String locationNameEn;
+
+	private String startTime;
+
+	private String ispNameEn;
+
 	private String domainType;
-
-	private String fixTimeGap;
-
-	private String securityToken;
 
 	private String timeMerge;
 
@@ -38,15 +40,42 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 
 	private String endTime;
 
+	private Long ownerId;
+
 	private String interval;
 
-	private String locationNameEn;
+	public String getLocationNameEn() {
+		return this.locationNameEn;
+	}
 
-	private String startTime;
+	public void setLocationNameEn(String locationNameEn) {
+		this.locationNameEn = locationNameEn;
+		if(locationNameEn != null){
+			putQueryParameter("LocationNameEn", locationNameEn);
+		}
+	}
 
-	private String ispNameEn;
+	public String getStartTime() {
+		return this.startTime;
+	}
 
-	private Long ownerId;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNameEn() {
+		return this.ispNameEn;
+	}
+
+	public void setIspNameEn(String ispNameEn) {
+		this.ispNameEn = ispNameEn;
+		if(ispNameEn != null){
+			putQueryParameter("IspNameEn", ispNameEn);
+		}
+	}
 
 	public String getDomainType() {
 		return this.domainType;
@@ -56,47 +85,6 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 		this.domainType = domainType;
 		if(domainType != null){
 			putQueryParameter("DomainType", domainType);
-		}
-	}
-
-	public String getFixTimeGap() {
-		return this.fixTimeGap;
-	}
-
-	public void setFixTimeGap(String fixTimeGap) {
-		this.fixTimeGap = fixTimeGap;
-		if(fixTimeGap != null){
-			putQueryParameter("FixTimeGap", fixTimeGap);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -133,50 +121,6 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 		}
 	}
 
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getLocationNameEn() {
-		return this.locationNameEn;
-	}
-
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-		if(locationNameEn != null){
-			putQueryParameter("LocationNameEn", locationNameEn);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-		if(ispNameEn != null){
-			putQueryParameter("IspNameEn", ispNameEn);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -185,6 +129,17 @@ public class DescribeDomainBpsDataRequest extends RpcAcsRequest<DescribeDomainBp
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

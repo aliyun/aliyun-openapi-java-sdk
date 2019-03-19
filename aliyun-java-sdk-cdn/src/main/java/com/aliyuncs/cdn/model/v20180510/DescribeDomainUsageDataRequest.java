@@ -28,8 +28,6 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 
 	private String startTime;
 
-	private String type;
-
 	private String dataProtocol;
 
 	private String area;
@@ -42,6 +40,8 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 
 	private String field;
 
+	private String interval;
+
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -50,17 +50,6 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 
@@ -127,6 +116,17 @@ public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomain
 		this.field = field;
 		if(field != null){
 			putQueryParameter("Field", field);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

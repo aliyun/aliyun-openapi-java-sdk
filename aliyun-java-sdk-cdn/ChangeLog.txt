@@ -1,3 +1,6 @@
+2019-03-19 Version: 3.0.8
+1, Support ' fc ' Source DomainName
+
 2019-02-27 Version: 3.0.7
 1, Update Config API.
 

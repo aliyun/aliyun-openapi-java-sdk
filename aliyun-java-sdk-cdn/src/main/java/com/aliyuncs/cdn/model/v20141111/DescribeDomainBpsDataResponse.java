@@ -29,8 +29,6 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 	private String domainName;
 
-	private String dataInterval;
-
 	private String startTime;
 
 	private String endTime;
@@ -43,9 +41,9 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 	private String ispName;
 
-	private List<DataModule> bpsDataPerInterval;
+	private String dataInterval;
 
-	private List<DataModule1> supplyBpsDatas;
+	private List<DataModule> bpsDataPerInterval;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,14 +59,6 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getDataInterval() {
-		return this.dataInterval;
-	}
-
-	public void setDataInterval(String dataInterval) {
-		this.dataInterval = dataInterval;
 	}
 
 	public String getStartTime() {
@@ -119,20 +109,20 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 		this.ispName = ispName;
 	}
 
+	public String getDataInterval() {
+		return this.dataInterval;
+	}
+
+	public void setDataInterval(String dataInterval) {
+		this.dataInterval = dataInterval;
+	}
+
 	public List<DataModule> getBpsDataPerInterval() {
 		return this.bpsDataPerInterval;
 	}
 
 	public void setBpsDataPerInterval(List<DataModule> bpsDataPerInterval) {
 		this.bpsDataPerInterval = bpsDataPerInterval;
-	}
-
-	public List<DataModule1> getSupplyBpsDatas() {
-		return this.supplyBpsDatas;
-	}
-
-	public void setSupplyBpsDatas(List<DataModule1> supplyBpsDatas) {
-		this.supplyBpsDatas = supplyBpsDatas;
 	}
 
 	public static class DataModule {
@@ -145,6 +135,12 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 		private String overseasValue;
 
+		private String l2Value;
+
+		private String domesticL2Value;
+
+		private String overseasL2Value;
+
 		private String dynamicValue;
 
 		private String dynamicDomesticValue;
@@ -156,12 +152,6 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 		private String staticDomesticValue;
 
 		private String staticOverseasValue;
-
-		private String l2Value;
-
-		private String domesticL2Value;
-
-		private String overseasL2Value;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -193,6 +183,30 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 		public void setOverseasValue(String overseasValue) {
 			this.overseasValue = overseasValue;
+		}
+
+		public String getL2Value() {
+			return this.l2Value;
+		}
+
+		public void setL2Value(String l2Value) {
+			this.l2Value = l2Value;
+		}
+
+		public String getDomesticL2Value() {
+			return this.domesticL2Value;
+		}
+
+		public void setDomesticL2Value(String domesticL2Value) {
+			this.domesticL2Value = domesticL2Value;
+		}
+
+		public String getOverseasL2Value() {
+			return this.overseasL2Value;
+		}
+
+		public void setOverseasL2Value(String overseasL2Value) {
+			this.overseasL2Value = overseasL2Value;
 		}
 
 		public String getDynamicValue() {
@@ -241,53 +255,6 @@ public class DescribeDomainBpsDataResponse extends AcsResponse {
 
 		public void setStaticOverseasValue(String staticOverseasValue) {
 			this.staticOverseasValue = staticOverseasValue;
-		}
-
-		public String getL2Value() {
-			return this.l2Value;
-		}
-
-		public void setL2Value(String l2Value) {
-			this.l2Value = l2Value;
-		}
-
-		public String getDomesticL2Value() {
-			return this.domesticL2Value;
-		}
-
-		public void setDomesticL2Value(String domesticL2Value) {
-			this.domesticL2Value = domesticL2Value;
-		}
-
-		public String getOverseasL2Value() {
-			return this.overseasL2Value;
-		}
-
-		public void setOverseasL2Value(String overseasL2Value) {
-			this.overseasL2Value = overseasL2Value;
-		}
-	}
-
-	public static class DataModule1 {
-
-		private String timeStamp;
-
-		private String value;
-
-		public String getTimeStamp() {
-			return this.timeStamp;
-		}
-
-		public void setTimeStamp(String timeStamp) {
-			this.timeStamp = timeStamp;
-		}
-
-		public String getValue() {
-			return this.value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
 		}
 	}
 
