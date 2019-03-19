@@ -2,6 +2,7 @@ package com.aliyuncs;
 
 import java.io.IOException;
 
+import org.junit.After;
 import org.junit.Before;
 
 import com.aliyuncs.auth.BasicSessionCredentials;
@@ -17,7 +18,6 @@ import com.aliyuncs.profile.IClientProfile;
 
 @SuppressWarnings("deprecation")
 public class BaseTest {
-
     protected DefaultAcsClient client = null;
     protected Credential dailyEnvCredentail = null;
     protected String accesskeyId = null;
@@ -27,7 +27,7 @@ public class BaseTest {
     protected String roleArn = null;
     protected String regionId = null;
 
-    public DefaultAcsClient getClientWithRegionId(String regionId) {
+    public DefaultAcsClient getClientWithRegionId(String regionId) throws ClientException, IOException {
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         return new DefaultAcsClient(profile);
     }
@@ -35,7 +35,6 @@ public class BaseTest {
     protected DefaultAcsClient getReadTimeoutClientWithRegionId(String regionId, Long readTimeoutMillis)
             throws ClientException, IOException {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-        ApacheHttpClient.getInstance(clientConfig).close();
         clientConfig.setReadTimeoutMillis(readTimeoutMillis);
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         profile.setHttpClientConfig(clientConfig);
@@ -45,14 +44,13 @@ public class BaseTest {
     protected DefaultAcsClient getConnectTimeoutClientWithRegionId(String regionId, Long connectionTimeoutMillis)
             throws ClientException, IOException {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-        ApacheHttpClient.getInstance(clientConfig).close();
         clientConfig.setConnectionTimeoutMillis(connectionTimeoutMillis);
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         profile.setHttpClientConfig(clientConfig);
         return new DefaultAcsClient(profile);
     }
 
-    protected DefaultAcsClient getCompatibleUrlConnClient(String regionId) throws ClientException, IOException {
+    protected DefaultAcsClient getCompatibleUrlConnClient(String regionId) {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setClientType(HttpClientType.Compatible);
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
@@ -70,8 +68,7 @@ public class BaseTest {
         return new DefaultAcsClient(profile);
     }
 
-    protected DefaultAcsClient getConnectTimeoutCompatibleUrlConnClient(String regionId, Long connectionTimeoutMillis)
-            throws ClientException, IOException {
+    protected DefaultAcsClient getConnectTimeoutCompatibleUrlConnClient(String regionId, Long connectionTimeoutMillis) {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setClientType(HttpClientType.Compatible);
         clientConfig.setConnectionTimeoutMillis(connectionTimeoutMillis);
@@ -81,14 +78,14 @@ public class BaseTest {
     }
 
     @Before
-    public void init() {
+    public void init() throws IOException, ClientException {
         this.accesskeyId = System.getenv("daily_accessKeyId");
         this.accesskeySecret = System.getenv("daily_accessSecret");
         this.tokenAccesskeyId = System.getenv("RAMAccessKeyId");
         this.tokenAccesskeySecret = System.getenv("RAMAccessKeySecret");
         this.roleArn = System.getenv("roleArn");
         this.regionId = "cn-hangzhou";
-        client = getClientWithRegionId(this.regionId);
+        this.client = getClientWithRegionId(this.regionId);
         dailyEnvCredentail = new Credential(accesskeyId, accesskeySecret);
 
     }
@@ -109,5 +106,10 @@ public class BaseTest {
                 this.tokenAccesskeySecret, getToken());
         DefaultProfile profile = DefaultProfile.getProfile(this.regionId);
         return new DefaultAcsClient(profile, credentials);
+    }
+
+    @After
+    public void destroy() throws ClientException, IOException {
+        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
     }
 }

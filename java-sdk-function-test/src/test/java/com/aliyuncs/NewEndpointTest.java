@@ -1,5 +1,6 @@
 package com.aliyuncs;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Assert;
@@ -104,7 +105,7 @@ public class NewEndpointTest extends BaseTest {
     }
 
     @Test
-    public void testAddNewEndpointManually() throws ClientException {
+    public void testAddNewEndpointManually() throws ClientException, IOException {
 
         DefaultAcsClient myClient = getClientWithRegionId("cn-ningbo");
 
@@ -130,7 +131,7 @@ public class NewEndpointTest extends BaseTest {
     }
 
     @Test
-    public void testAddExistingEndpointManually() throws ClientException {
+    public void testAddExistingEndpointManually() throws ClientException, IOException {
         DefaultAcsClient myClient = getClientWithRegionId("cn-hangzhou");
         DescribeRegionsRequest request = new DescribeRegionsRequest();
         DescribeRegionsResponse response = myClient.getAcsResponse(request);
