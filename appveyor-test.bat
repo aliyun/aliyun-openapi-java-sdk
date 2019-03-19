@@ -23,4 +23,6 @@ call mvn package -Dmaven.test.skip=true -f .\aliyun-java-sdk-airec\pom.xml
 call move .\aliyun-java-sdk-airec\target\*.jar .\java-sdk-function-test\lib\airec.jar
 call mvn package -Dmaven.test.skip=true -f .\aliyun-java-sdk-green\pom.xml
 call move .\aliyun-java-sdk-green\target\*.jar .\java-sdk-function-test\lib\green.jar
+call mvn package -Dmaven.test.skip=true -f .\aliyun-java-sdk-imagesearch\pom.xml
+call move .\aliyun-java-sdk-imagesearch\target\*.jar .\java-sdk-function-test\lib\imagesearch.jar
 call mvn test -B -f .\java-sdk-function-test\pom.xml

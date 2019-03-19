@@ -29,6 +29,9 @@ public class BaseTest {
 
     public DefaultAcsClient getClientWithRegionId(String regionId) {
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        clientConfig.setConnectionTimeoutMillis(10000L);
+        profile.setHttpClientConfig(clientConfig);
         return new DefaultAcsClient(profile);
     }
 
@@ -108,6 +111,9 @@ public class BaseTest {
         BasicSessionCredentials credentials = new BasicSessionCredentials(this.tokenAccesskeyId,
                 this.tokenAccesskeySecret, getToken());
         DefaultProfile profile = DefaultProfile.getProfile(this.regionId);
+        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
+        clientConfig.setConnectionTimeoutMillis(10000L);
+        profile.setHttpClientConfig(clientConfig);
         return new DefaultAcsClient(profile, credentials);
     }
 }
