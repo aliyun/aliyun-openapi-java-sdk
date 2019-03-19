@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSignatureTradeDetailRequest extends RpcAcsRequest<DescribeSignatureTradeDetailResponse> {
 	
 	public DescribeSignatureTradeDetailRequest() {
-		super("cas", "2018-08-13", "DescribeSignatureTradeDetail", "cas_esign_fdd");
+		super("cas", "2018-08-13", "DescribeSignatureTradeDetail");
 	}
 
 	private String sourceIp;

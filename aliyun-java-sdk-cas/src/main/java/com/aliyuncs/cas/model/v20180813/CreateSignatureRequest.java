@@ -23,8 +23,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSignatureRequest extends RpcAcsRequest<CreateSignatureResponse> {
 	
 	public CreateSignatureRequest() {
-		super("cas", "2018-08-13", "CreateSignature", "cas_esign_fdd");
+		super("cas", "2018-08-13", "CreateSignature");
 	}
+
+	private String iconId;
 
 	private Integer quantity;
 
@@ -59,6 +61,17 @@ public class CreateSignatureRequest extends RpcAcsRequest<CreateSignatureRespons
 	private String lang;
 
 	private Integer keywordStrategy;
+
+	public String getIconId() {
+		return this.iconId;
+	}
+
+	public void setIconId(String iconId) {
+		this.iconId = iconId;
+		if(iconId != null){
+			putQueryParameter("IconId", iconId);
+		}
+	}
 
 	public Integer getQuantity() {
 		return this.quantity;

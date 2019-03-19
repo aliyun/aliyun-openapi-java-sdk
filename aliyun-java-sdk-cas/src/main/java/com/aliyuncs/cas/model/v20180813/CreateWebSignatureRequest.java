@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateWebSignatureRequest extends RpcAcsRequest<CreateWebSignatureResponse> {
 	
 	public CreateWebSignatureRequest() {
-		super("cas", "2018-08-13", "CreateWebSignature", "cas_esign_fdd");
+		super("cas", "2018-08-13", "CreateWebSignature");
 	}
 
 	private Integer quantity;

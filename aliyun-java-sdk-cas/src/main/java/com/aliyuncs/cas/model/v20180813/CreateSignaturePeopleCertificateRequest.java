@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSignaturePeopleCertificateRequest extends RpcAcsRequest<CreateSignaturePeopleCertificateResponse> {
 	
 	public CreateSignaturePeopleCertificateRequest() {
-		super("cas", "2018-08-13", "CreateSignaturePeopleCertificate", "cas_esign_fdd");
+		super("cas", "2018-08-13", "CreateSignaturePeopleCertificate");
 	}
 
 	private String peopleName;

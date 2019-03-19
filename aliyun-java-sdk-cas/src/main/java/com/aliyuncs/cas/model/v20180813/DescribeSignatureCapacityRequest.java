@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSignatureCapacityRequest extends RpcAcsRequest<DescribeSignatureCapacityResponse> {
 	
 	public DescribeSignatureCapacityRequest() {
-		super("cas", "2018-08-13", "DescribeSignatureCapacity", "cas_esign_fdd");
+		super("cas", "2018-08-13", "DescribeSignatureCapacity");
 	}
 
 	private String sourceIp;

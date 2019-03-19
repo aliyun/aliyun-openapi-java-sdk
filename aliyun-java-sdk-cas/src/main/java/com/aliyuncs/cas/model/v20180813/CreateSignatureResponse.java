@@ -26,12 +26,32 @@ public class CreateSignatureResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String transactionId;
+
+	private String docContent;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTransactionId() {
+		return this.transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public String getDocContent() {
+		return this.docContent;
+	}
+
+	public void setDocContent(String docContent) {
+		this.docContent = docContent;
 	}
 
 	@Override

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateFilingSignatureDocumentRequest extends RpcAcsRequest<CreateFilingSignatureDocumentResponse> {
 	
 	public CreateFilingSignatureDocumentRequest() {
-		super("cas", "2018-08-13", "CreateFilingSignatureDocument", "cas_esign_fdd");
+		super("cas", "2018-08-13", "CreateFilingSignatureDocument");
 	}
 
 	private String sourceIp;

@@ -26,12 +26,22 @@ public class CreateSignaturePeopleCertificateResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String peopleId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getPeopleId() {
+		return this.peopleId;
+	}
+
+	public void setPeopleId(String peopleId) {
+		this.peopleId = peopleId;
 	}
 
 	@Override

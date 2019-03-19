@@ -12,18 +12,23 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cas.transform.v20180813;
+package com.aliyuncs.cas.model.v20180813;
 
-import com.aliyuncs.cas.model.v20180813.DeleteCertificateResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RpcAcsRequest;
 
-
-public class DeleteCertificateResponseUnmarshaller {
-
-	public static DeleteCertificateResponse unmarshall(DeleteCertificateResponse deleteCertificateResponse, UnmarshallerContext context) {
-		
-		deleteCertificateResponse.setRequestId(context.stringValue("DeleteCertificateResponse.RequestId"));
-	 
-	 	return deleteCertificateResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class DescribeSignatureProductStateRequest extends RpcAcsRequest<DescribeSignatureProductStateResponse> {
+	
+	public DescribeSignatureProductStateRequest() {
+		super("cas", "2018-08-13", "DescribeSignatureProductState");
 	}
+
+	@Override
+	public Class<DescribeSignatureProductStateResponse> getResponseClass() {
+		return DescribeSignatureProductStateResponse.class;
+	}
+
 }

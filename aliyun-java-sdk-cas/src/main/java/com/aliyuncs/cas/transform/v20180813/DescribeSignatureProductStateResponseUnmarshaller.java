@@ -14,16 +14,17 @@
 
 package com.aliyuncs.cas.transform.v20180813;
 
-import com.aliyuncs.cas.model.v20180813.CreateOrderCancelResponse;
+import com.aliyuncs.cas.model.v20180813.DescribeSignatureProductStateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateOrderCancelResponseUnmarshaller {
+public class DescribeSignatureProductStateResponseUnmarshaller {
 
-	public static CreateOrderCancelResponse unmarshall(CreateOrderCancelResponse createOrderCancelResponse, UnmarshallerContext context) {
+	public static DescribeSignatureProductStateResponse unmarshall(DescribeSignatureProductStateResponse describeSignatureProductStateResponse, UnmarshallerContext context) {
 		
-		createOrderCancelResponse.setRequestId(context.stringValue("CreateOrderCancelResponse.RequestId"));
+		describeSignatureProductStateResponse.setRequestId(context.stringValue("DescribeSignatureProductStateResponse.RequestId"));
+		describeSignatureProductStateResponse.setState(context.stringValue("DescribeSignatureProductStateResponse.State"));
 	 
-	 	return createOrderCancelResponse;
+	 	return describeSignatureProductStateResponse;
 	}
 }

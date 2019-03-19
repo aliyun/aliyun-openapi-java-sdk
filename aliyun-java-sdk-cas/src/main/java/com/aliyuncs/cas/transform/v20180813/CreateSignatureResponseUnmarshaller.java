@@ -23,6 +23,8 @@ public class CreateSignatureResponseUnmarshaller {
 	public static CreateSignatureResponse unmarshall(CreateSignatureResponse createSignatureResponse, UnmarshallerContext context) {
 		
 		createSignatureResponse.setRequestId(context.stringValue("CreateSignatureResponse.RequestId"));
+		createSignatureResponse.setTransactionId(context.stringValue("CreateSignatureResponse.TransactionId"));
+		createSignatureResponse.setDocContent(context.stringValue("CreateSignatureResponse.DocContent"));
 	 
 	 	return createSignatureResponse;
 	}

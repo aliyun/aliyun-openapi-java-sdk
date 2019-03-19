@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateSignatureDocumentRequest extends RpcAcsRequest<CreateSignatureDocumentResponse> {
 	
 	public CreateSignatureDocumentRequest() {
-		super("cas", "2018-08-13", "CreateSignatureDocument", "cas_esign_fdd");
+		super("cas", "2018-08-13", "CreateSignatureDocument");
 	}
 
 	private String sourceIp;
@@ -52,7 +52,7 @@ public class CreateSignatureDocumentRequest extends RpcAcsRequest<CreateSignatur
 	public void setDocContent(String docContent) {
 		this.docContent = docContent;
 		if(docContent != null){
-			putQueryParameter("DocContent", docContent);
+			putBodyParameter("DocContent",docContent);
 		}
 	}
 

@@ -23,6 +23,7 @@ public class CreateSignaturePeopleCertificateResponseUnmarshaller {
 	public static CreateSignaturePeopleCertificateResponse unmarshall(CreateSignaturePeopleCertificateResponse createSignaturePeopleCertificateResponse, UnmarshallerContext context) {
 		
 		createSignaturePeopleCertificateResponse.setRequestId(context.stringValue("CreateSignaturePeopleCertificateResponse.RequestId"));
+		createSignaturePeopleCertificateResponse.setPeopleId(context.stringValue("CreateSignaturePeopleCertificateResponse.PeopleId"));
 	 
 	 	return createSignaturePeopleCertificateResponse;
 	}

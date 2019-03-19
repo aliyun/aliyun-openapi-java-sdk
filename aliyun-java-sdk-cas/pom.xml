@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aliyun</groupId>
-  <artifactId>aliyun-java-sdk-cas</artifactId>
+  <artifactId>aliyun-java-sdk-cas-esign</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.1</version>
-    <name>aliyun-java-sdk-cas</name>
+  <version>1.0.0</version>
+    <name>aliyun-java-sdk-cas-esign</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
 

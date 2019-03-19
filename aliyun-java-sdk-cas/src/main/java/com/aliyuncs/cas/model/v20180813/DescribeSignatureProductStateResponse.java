@@ -15,16 +15,18 @@
 package com.aliyuncs.cas.model.v20180813;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cas.transform.v20180813.DescribeDomainVerifyConfigurationStatusResponseUnmarshaller;
+import com.aliyuncs.cas.transform.v20180813.DescribeSignatureProductStateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDomainVerifyConfigurationStatusResponse extends AcsResponse {
+public class DescribeSignatureProductStateResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String state;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +36,17 @@ public class DescribeDomainVerifyConfigurationStatusResponse extends AcsResponse
 		this.requestId = requestId;
 	}
 
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
 	@Override
-	public DescribeDomainVerifyConfigurationStatusResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDomainVerifyConfigurationStatusResponseUnmarshaller.unmarshall(this, context);
+	public DescribeSignatureProductStateResponse getInstance(UnmarshallerContext context) {
+		return	DescribeSignatureProductStateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

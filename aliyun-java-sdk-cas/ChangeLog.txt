@@ -1,3 +1,8 @@
+2019-03-19 Version: 1.0.0
+1, Signature Document SDK.
+2, First version publish.
+3, 1.0.0 Version SDK
+
 2019-03-18 Version: 0.1.1
 1, Signature Document SDK.
 2, First version publish.
