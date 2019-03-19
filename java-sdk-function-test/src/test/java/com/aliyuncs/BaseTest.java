@@ -116,7 +116,6 @@ public class BaseTest {
         BasicSessionCredentials credentials = new BasicSessionCredentials(this.tokenAccesskeyId,
                 this.tokenAccesskeySecret, getToken());
         DefaultProfile profile = DefaultProfile.getProfile(this.regionId);
-        HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         return new DefaultAcsClient(profile, credentials);
     }
 }
