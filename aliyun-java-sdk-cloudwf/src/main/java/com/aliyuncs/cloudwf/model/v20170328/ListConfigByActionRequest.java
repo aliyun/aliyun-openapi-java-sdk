@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cloudwf.model.v20170328;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListConfigByActionRequest extends RpcAcsRequest<ListConfigByActionResponse> {
 	
 	public ListConfigByActionRequest() {
-		super("cloudwf", "2017-03-28", "ListConfigByAction");
+		super("cloudwf", "2017-03-28", "ListConfigByAction", "cloudwf");
 	}
 
 	private String searchName;
@@ -53,10 +54,29 @@ public class ListConfigByActionRequest extends RpcAcsRequest<ListConfigByActionR
 		}
 	}
 
+	public String getBizActionName() {
+		return this.actionName;
+	}
+
+	public void setBizActionName(String actionName) {
+		this.actionName = actionName;
+		if(actionName != null){
+			putQueryParameter("ActionName", actionName);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizActionName instead of this.
+	 */
+	@Deprecated
 	public String getActionName() {
 		return this.actionName;
 	}
 
+	/**
+	 * @deprecated use setBizActionName instead of this.
+	 */
+	@Deprecated
 	public void setActionName(String actionName) {
 		this.actionName = actionName;
 		if(actionName != null){

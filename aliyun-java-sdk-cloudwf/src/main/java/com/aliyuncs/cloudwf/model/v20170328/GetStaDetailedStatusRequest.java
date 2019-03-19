@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.cloudwf.model.v20170328;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetStaDetailedStatusRequest extends RpcAcsRequest<GetStaDetailedStatusResponse> {
 	
 	public GetStaDetailedStatusRequest() {
-		super("cloudwf", "2017-03-28", "GetStaDetailedStatus");
+		super("cloudwf", "2017-03-28", "GetStaDetailedStatus", "cloudwf");
 	}
 
 	private Long id;
