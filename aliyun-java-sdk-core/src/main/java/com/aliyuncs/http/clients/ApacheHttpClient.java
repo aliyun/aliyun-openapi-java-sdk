@@ -178,7 +178,7 @@ public class ApacheHttpClient extends IHttpClient {
 
         builder.setUri(apiReq.getSysUrl());
 
-        if (apiReq.getSysMethod().hasContent()) {
+        if (apiReq.getSysMethod().hasContent() && apiReq.getHttpContent() != null && apiReq.getHttpContent().length > 0) {
             EntityBuilder bodyBuilder = EntityBuilder.create();
 
             String contentType = apiReq.getHeaderValue(CONTENT_TYPE);
@@ -260,7 +260,7 @@ public class ApacheHttpClient extends IHttpClient {
 
     @Override
     public final Future<com.aliyuncs.http.HttpResponse> asyncInvoke(final HttpRequest apiRequest,
-            final CallBack callback) {
+                                                                    final CallBack callback) {
         return executorService.submit(new Callable<com.aliyuncs.http.HttpResponse>() {
             @Override
             public com.aliyuncs.http.HttpResponse call() throws Exception {

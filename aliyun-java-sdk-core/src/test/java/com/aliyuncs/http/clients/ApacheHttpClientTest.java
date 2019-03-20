@@ -246,6 +246,90 @@ public class ApacheHttpClientTest {
     }
 
     @Test
+    public void testSyncInvokeNullHttpRequestEntity() throws ClientException, IOException, NoSuchFieldException,
+            SecurityException, IllegalArgumentException, IllegalAccessException {
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
+        HttpRequest apiRequest = this.getMockHttpRequest();
+        Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.POST);
+        Mockito.when(apiRequest.getHttpContent()).thenReturn(null);
+        Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");
+        CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
+
+        Mockito.when(closeableHttpResponse.getEntity()).thenReturn(null);
+        Header contentTypeHeader = Mockito.mock(Header.class);
+        Mockito.when(contentTypeHeader.getValue()).thenReturn("value");
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(contentTypeHeader);
+
+        Field httpClientReflect = ApacheHttpClient.class.getDeclaredField("httpClient");
+        httpClientReflect.setAccessible(true);
+        CloseableHttpClient closeableHttpClient = Mockito.mock(CloseableHttpClient.class);
+        httpClientReflect.set(apacheHttpClient, closeableHttpClient);
+        Mockito.doReturn(closeableHttpResponse).when(closeableHttpClient).execute(Mockito.any(HttpUriRequest.class));
+        Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+        apacheHttpClient.close();
+
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(null);
+        Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+    }
+
+    @Test
+    public void testSyncInvokeZeroHttpRequestEntity() throws ClientException, IOException, NoSuchFieldException,
+            SecurityException, IllegalArgumentException, IllegalAccessException {
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
+        HttpRequest apiRequest = this.getMockHttpRequest();
+        Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.POST);
+        Mockito.when(apiRequest.getHttpContent()).thenReturn(new byte[0]);
+        Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");
+        CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
+
+        Mockito.when(closeableHttpResponse.getEntity()).thenReturn(null);
+        Header contentTypeHeader = Mockito.mock(Header.class);
+        Mockito.when(contentTypeHeader.getValue()).thenReturn("value");
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(contentTypeHeader);
+
+        Field httpClientReflect = ApacheHttpClient.class.getDeclaredField("httpClient");
+        httpClientReflect.setAccessible(true);
+        CloseableHttpClient closeableHttpClient = Mockito.mock(CloseableHttpClient.class);
+        httpClientReflect.set(apacheHttpClient, closeableHttpClient);
+        Mockito.doReturn(closeableHttpResponse).when(closeableHttpClient).execute(Mockito.any(HttpUriRequest.class));
+        Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+        apacheHttpClient.close();
+
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(null);
+        Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+    }
+
+    @Test
+    public void testSyncInvokeNotNullHttpRequestEntity() throws ClientException, IOException, NoSuchFieldException,
+            SecurityException, IllegalArgumentException, IllegalAccessException {
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance(config);
+        HttpRequest apiRequest = this.getMockHttpRequest();
+        Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.POST);
+        Mockito.when(apiRequest.getHttpContent()).thenReturn(new byte[]{1, 2, 3});
+        Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");
+        CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
+
+        Mockito.when(closeableHttpResponse.getEntity()).thenReturn(null);
+        Header contentTypeHeader = Mockito.mock(Header.class);
+        Mockito.when(contentTypeHeader.getValue()).thenReturn("value");
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(contentTypeHeader);
+
+        Field httpClientReflect = ApacheHttpClient.class.getDeclaredField("httpClient");
+        httpClientReflect.setAccessible(true);
+        CloseableHttpClient closeableHttpClient = Mockito.mock(CloseableHttpClient.class);
+        httpClientReflect.set(apacheHttpClient, closeableHttpClient);
+        Mockito.doReturn(closeableHttpResponse).when(closeableHttpClient).execute(Mockito.any(HttpUriRequest.class));
+        Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+        apacheHttpClient.close();
+
+        Mockito.when(closeableHttpResponse.getFirstHeader(Mockito.anyString())).thenReturn(null);
+        Assert.assertTrue(apacheHttpClient.syncInvoke(apiRequest) instanceof HttpResponse);
+    }
+
+    @Test
     public void testSyncInvokeNullHttpResponseEntity() throws ClientException, IOException, NoSuchFieldException,
             SecurityException, IllegalArgumentException, IllegalAccessException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
