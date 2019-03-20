@@ -11,7 +11,18 @@ branches: # build only on these branches
   only:
     - master
 
+install:
+  # Install Proxy
+  - sudo rm -rf ~/.nvm - curl -sL "https://deb.nodesource.com/setup_7.x" | sudo -E bash -
+  - sudo apt-get install -y nodejs
+  - sudo ln -s /usr/bin/nodejs /usr/bin/node
+  - sudo apt-get install -y npm
+  - sudo npm install o_o -g --registry=https://registry.npm.taobao.org
+
 script:
+  # Start Proxy
+  - sudo o_o &
+  # Test
   - mvn test -B -f ./aliyun-java-sdk-core/pom.xml
   - test -z $daily_accessKeyId -a -z $daily_accessSecret || make travis-test
  

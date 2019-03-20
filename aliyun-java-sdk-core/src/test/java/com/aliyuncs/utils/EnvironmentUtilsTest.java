@@ -23,4 +23,11 @@ public class EnvironmentUtilsTest {
         EnvironmentUtils.setHttpsProxy("https://www.aliyun.com");
         Assert.assertEquals("https://www.aliyun.com", EnvironmentUtils.getHttpsProxy());
     }
+
+    @Test
+    public void testGetSetNoProxy() {
+        Assert.assertNull(EnvironmentUtils.getNoProxy());
+        EnvironmentUtils.setNoProxy("https://www.aliyun.com");
+        Assert.assertEquals("https://www.aliyun.com", EnvironmentUtils.getNoProxy());
+    }
 }

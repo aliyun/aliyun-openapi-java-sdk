@@ -1,15 +1,23 @@
 package com.aliyuncs.http;
 
+import com.aliyuncs.exceptions.ClientException;
+import org.apache.http.HttpHost;
+import org.junit.Assert;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.mockito.Mockito;
+
+import java.net.Proxy;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.mockito.Mockito;
-
-import com.aliyuncs.exceptions.ClientException;
+import static org.mockito.Mockito.mock;
 
 public class HttpUtilTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void testHttpDebug() {
@@ -36,7 +44,7 @@ public class HttpUtilTest {
 
     @Test
     public void testDebugHttpRequest() throws ClientException {
-        HttpRequest request = Mockito.mock(HttpRequest.class);
+        HttpRequest request = mock(HttpRequest.class);
         Mockito.when(request.getSysMethod()).thenReturn(MethodType.GET);
         Mockito.when(request.getSysUrl()).thenReturn("http://test.domain");
         Map<String, String> requestHeaders = new HashMap<String, String>();
@@ -66,7 +74,7 @@ public class HttpUtilTest {
 
     @Test
     public void testDebugHttpResponse() throws ClientException {
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         Mockito.when(response.getStatus()).thenReturn(200);
         Mockito.when(response.getSysUrl()).thenReturn("http://test.domain");
         Mockito.when(response.getHttpContentString()).thenReturn("response body");
@@ -93,4 +101,61 @@ public class HttpUtilTest {
         HttpUtil.setIsHttpDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
         HttpUtil.setIsHttpContentDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
     }
+
+    @Test
+    public void testGetJDKProxyException() throws ClientException {
+        HttpRequest request = mock(HttpRequest.class);
+        thrown.expect(ClientException.class);
+        Proxy proxy = HttpUtil.getJDKProxy("http0://www.aliyun.com", null, request);
+        Assert.assertNotNull(proxy);
+    }
+
+    @Test
+    public void testGetJDKProxyEnvProxyHasUserInfo() throws ClientException {
+        HttpRequest request = mock(HttpRequest.class);
+        Proxy proxy = HttpUtil.getJDKProxy(null, "http://user:passwd@www.aliyun.com", request);
+        Assert.assertNotNull(proxy);
+    }
+
+    @Test
+    public void testGetJDKProxyEnvProxyNoUserInfo() throws ClientException {
+        HttpRequest request = mock(HttpRequest.class);
+        Proxy proxy = HttpUtil.getJDKProxy(null, "http://www.aliyun.com:80", request);
+        Assert.assertNotNull(proxy);
+    }
+
+    @Test
+    public void testGetApacheProxyException() throws ClientException {
+        HttpRequest request = mock(HttpRequest.class);
+        thrown.expect(ClientException.class);
+        HttpHost proxy = HttpUtil.getApacheProxy("http0://www.aliyun.com", null, request);
+        Assert.assertNotNull(proxy);
+    }
+
+    @Test
+    public void testGetApacheProxyEnvProxyHasUserInfo() throws ClientException {
+        HttpRequest request = mock(HttpRequest.class);
+        HttpHost proxy = HttpUtil.getApacheProxy(null, "http://user:passwd@www.aliyun.com", request);
+        Assert.assertNotNull(proxy);
+    }
+
+    @Test
+    public void testGetApacheProxyEnvProxyNoUserInfo() throws ClientException {
+        HttpRequest request = mock(HttpRequest.class);
+        HttpHost proxy = HttpUtil.getApacheProxy(null, "http://www.aliyun.com:80", request);
+        Assert.assertNotNull(proxy);
+    }
+
+    @Test
+    public void testNeedProxyHasClientProxy() {
+        boolean need = HttpUtil.needProxy("http://targethost.com", "http://www.aliyun.com", null);
+        Assert.assertTrue(need);
+    }
+
+    @Test
+    public void testNeedProxyHasEnvProxyList() {
+        boolean need = HttpUtil.needProxy("http://targethost.com", "", "http://www.aliyun.com,http://targethost.com");
+        Assert.assertFalse(need);
+    }
+
 }

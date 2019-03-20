@@ -138,6 +138,15 @@ public class HttpClientConfigTest {
         httpClientConfig.setProtocolType(ProtocolType.HTTPS);
         Assert.assertEquals(ProtocolType.HTTPS, httpClientConfig.getProtocolType());
 
+        httpClientConfig.setHttpProxy("http://www.aliyun.com");
+        Assert.assertEquals("http://www.aliyun.com", httpClientConfig.getHttpProxy());
+
+        httpClientConfig.setHttpsProxy("https://www.aliyun.com");
+        Assert.assertEquals("https://www.aliyun.com", httpClientConfig.getHttpsProxy());
+
+        httpClientConfig.setNoProxy("http://www.aliyun.com");
+        Assert.assertEquals("http://www.aliyun.com", httpClientConfig.getNoProxy());
+
     }
 
 
