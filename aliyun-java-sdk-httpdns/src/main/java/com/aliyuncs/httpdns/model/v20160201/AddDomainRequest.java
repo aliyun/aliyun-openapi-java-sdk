@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.httpdns.model.v20160201;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddDomainRequest extends RpcAcsRequest<AddDomainResponse> {
 	
 	public AddDomainRequest() {
-		super("Httpdns", "2016-02-01", "AddDomain");
+		super("Httpdns", "2016-02-01", "AddDomain", "httpdns");
 	}
 
 	private String accountId;

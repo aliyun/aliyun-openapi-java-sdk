@@ -20,17 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetResolveStatisticsRequest extends RpcAcsRequest<GetResolveStatisticsResponse> {
+public class GetResolveCountSummaryRequest extends RpcAcsRequest<GetResolveCountSummaryResponse> {
 	
-	public GetResolveStatisticsRequest() {
-		super("Httpdns", "2016-02-01", "GetResolveStatistics", "httpdns");
+	public GetResolveCountSummaryRequest() {
+		super("Httpdns", "2016-02-01", "GetResolveCountSummary", "httpdns");
 	}
 
 	private String granularity;
-
-	private String protocolName;
-
-	private String domainName;
 
 	private Integer timeSpan;
 
@@ -42,28 +38,6 @@ public class GetResolveStatisticsRequest extends RpcAcsRequest<GetResolveStatist
 		this.granularity = granularity;
 		if(granularity != null){
 			putQueryParameter("Granularity", granularity);
-		}
-	}
-
-	public String getProtocolName() {
-		return this.protocolName;
-	}
-
-	public void setProtocolName(String protocolName) {
-		this.protocolName = protocolName;
-		if(protocolName != null){
-			putQueryParameter("ProtocolName", protocolName);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -79,8 +53,8 @@ public class GetResolveStatisticsRequest extends RpcAcsRequest<GetResolveStatist
 	}
 
 	@Override
-	public Class<GetResolveStatisticsResponse> getResponseClass() {
-		return GetResolveStatisticsResponse.class;
+	public Class<GetResolveCountSummaryResponse> getResponseClass() {
+		return GetResolveCountSummaryResponse.class;
 	}
 
 }

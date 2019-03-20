@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.httpdns.model.v20160201;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,14 +23,25 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsResponse> {
 	
 	public DescribeDomainsRequest() {
-		super("Httpdns", "2016-02-01", "DescribeDomains");
+		super("Httpdns", "2016-02-01", "DescribeDomains", "httpdns");
 	}
+
+	private String accountId;
 
 	private Long pageSize;
 
 	private Long pageNumber;
 
-	private String accountId;
+	public String getAccountId() {
+		return this.accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+		if(accountId != null){
+			putQueryParameter("AccountId", accountId);
+		}
+	}
 
 	public Long getPageSize() {
 		return this.pageSize;
@@ -50,17 +62,6 @@ public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
 		}
 	}
 

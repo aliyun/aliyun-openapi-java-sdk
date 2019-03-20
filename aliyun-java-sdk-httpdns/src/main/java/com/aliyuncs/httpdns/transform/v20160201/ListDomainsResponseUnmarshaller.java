@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.httpdns.transform.v20160201;
 
 import java.util.ArrayList;
@@ -36,6 +37,8 @@ public class ListDomainsResponseUnmarshaller {
 			domainInfo.setDomainName(context.stringValue("ListDomainsResponse.DomainInfos["+ i +"].DomainName"));
 			domainInfo.setResolved(context.longValue("ListDomainsResponse.DomainInfos["+ i +"].Resolved"));
 			domainInfo.setResolvedHttps(context.longValue("ListDomainsResponse.DomainInfos["+ i +"].ResolvedHttps"));
+			domainInfo.setResolved6(context.longValue("ListDomainsResponse.DomainInfos["+ i +"].Resolved6"));
+			domainInfo.setResolvedHttps6(context.longValue("ListDomainsResponse.DomainInfos["+ i +"].ResolvedHttps6"));
 
 			domainInfos.add(domainInfo);
 		}
