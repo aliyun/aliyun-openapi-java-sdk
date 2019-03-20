@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.bss.model.v20140714;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class DescribeCouponDetailRequest extends RpcAcsRequest<DescribeCouponDetailResponse> {
 	
 	public DescribeCouponDetailRequest() {
-		super("Bss", "2014-07-14", "DescribeCouponDetail");
+		super("Bss", "2014-07-14", "DescribeCouponDetail", "bss");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
@@ -35,7 +36,9 @@ public class DescribeCouponDetailRequest extends RpcAcsRequest<DescribeCouponDet
 
 	public void setCouponNumber(String couponNumber) {
 		this.couponNumber = couponNumber;
-		putQueryParameter("CouponNumber", couponNumber);
+		if(couponNumber != null){
+			putQueryParameter("CouponNumber", couponNumber);
+		}
 	}
 
 	@Override

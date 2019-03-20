@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.bss.model.v20140714;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,39 +23,32 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetResourceBusinessStatusRequest extends RpcAcsRequest<SetResourceBusinessStatusResponse> {
 	
 	public SetResourceBusinessStatusRequest() {
-		super("Bss", "2014-07-14", "SetResourceBusinessStatus");
+		super("Bss", "2014-07-14", "SetResourceBusinessStatus", "bss");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
-
-	private Long resourceOwnerId;
-
-	private String resourceType;
-
-	private String resourceId;
 
 	private String businessStatus;
 
+	private Long resourceOwnerId;
+
+	private String resourceId;
+
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private Long ownerId;
+
+	private String resourceType;
+
+	public String getBusinessStatus() {
+		return this.businessStatus;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setBusinessStatus(String businessStatus) {
+		this.businessStatus = businessStatus;
+		if(businessStatus != null){
+			putQueryParameter("BusinessStatus", businessStatus);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,16 +57,9 @@ public class SetResourceBusinessStatusRequest extends RpcAcsRequest<SetResourceB
 
 	public void setResourceOwnerId(Long resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		putQueryParameter("ResourceType", resourceType);
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceId() {
@@ -86,16 +68,20 @@ public class SetResourceBusinessStatusRequest extends RpcAcsRequest<SetResourceB
 
 	public void setResourceId(String resourceId) {
 		this.resourceId = resourceId;
-		putQueryParameter("ResourceId", resourceId);
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
+		}
 	}
 
-	public String getBusinessStatus() {
-		return this.businessStatus;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setBusinessStatus(String businessStatus) {
-		this.businessStatus = businessStatus;
-		putQueryParameter("BusinessStatus", businessStatus);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -104,7 +90,31 @@ public class SetResourceBusinessStatusRequest extends RpcAcsRequest<SetResourceB
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
 	}
 
 	@Override

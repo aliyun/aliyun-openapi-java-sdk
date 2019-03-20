@@ -15,22 +15,33 @@
 package com.aliyuncs.bss.model.v20140714;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeCashDetailRequest extends RpcAcsRequest<DescribeCashDetailResponse> {
+public class OpenCallbackRequest extends RpcAcsRequest<OpenCallbackResponse> {
 	
-	public DescribeCashDetailRequest() {
-		super("Bss", "2014-07-14", "DescribeCashDetail", "bss");
-		setProtocol(ProtocolType.HTTPS);
+	public OpenCallbackRequest() {
+		super("Bss", "2014-07-14", "OpenCallback", "bss");
+	}
+
+	private String paramStr;
+
+	public String getParamStr() {
+		return this.paramStr;
+	}
+
+	public void setParamStr(String paramStr) {
+		this.paramStr = paramStr;
+		if(paramStr != null){
+			putQueryParameter("paramStr", paramStr);
+		}
 	}
 
 	@Override
-	public Class<DescribeCashDetailResponse> getResponseClass() {
-		return DescribeCashDetailResponse.class;
+	public Class<OpenCallbackResponse> getResponseClass() {
+		return OpenCallbackResponse.class;
 	}
 
 }

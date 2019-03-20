@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.bss.transform.v20140714;
 
 import com.aliyuncs.bss.model.v20140714.DescribeCashDetailResponse;

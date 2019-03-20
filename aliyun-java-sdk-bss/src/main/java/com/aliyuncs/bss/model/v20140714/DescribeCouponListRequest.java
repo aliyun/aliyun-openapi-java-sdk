@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.bss.model.v20140714;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,28 +24,19 @@ import com.aliyuncs.http.ProtocolType;
 public class DescribeCouponListRequest extends RpcAcsRequest<DescribeCouponListResponse> {
 	
 	public DescribeCouponListRequest() {
-		super("Bss", "2014-07-14", "DescribeCouponList");
+		super("Bss", "2014-07-14", "DescribeCouponList", "bss");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String status;
-
 	private String startDeliveryTime;
-
-	private String endDeliveryTime;
 
 	private Integer pageSize;
 
+	private String endDeliveryTime;
+
 	private Integer pageNum;
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		putQueryParameter("Status", status);
-	}
+	private String status;
 
 	public String getStartDeliveryTime() {
 		return this.startDeliveryTime;
@@ -52,16 +44,9 @@ public class DescribeCouponListRequest extends RpcAcsRequest<DescribeCouponListR
 
 	public void setStartDeliveryTime(String startDeliveryTime) {
 		this.startDeliveryTime = startDeliveryTime;
-		putQueryParameter("StartDeliveryTime", startDeliveryTime);
-	}
-
-	public String getEndDeliveryTime() {
-		return this.endDeliveryTime;
-	}
-
-	public void setEndDeliveryTime(String endDeliveryTime) {
-		this.endDeliveryTime = endDeliveryTime;
-		putQueryParameter("EndDeliveryTime", endDeliveryTime);
+		if(startDeliveryTime != null){
+			putQueryParameter("StartDeliveryTime", startDeliveryTime);
+		}
 	}
 
 	public Integer getPageSize() {
@@ -70,7 +55,20 @@ public class DescribeCouponListRequest extends RpcAcsRequest<DescribeCouponListR
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getEndDeliveryTime() {
+		return this.endDeliveryTime;
+	}
+
+	public void setEndDeliveryTime(String endDeliveryTime) {
+		this.endDeliveryTime = endDeliveryTime;
+		if(endDeliveryTime != null){
+			putQueryParameter("EndDeliveryTime", endDeliveryTime);
+		}
 	}
 
 	public Integer getPageNum() {
@@ -79,7 +77,20 @@ public class DescribeCouponListRequest extends RpcAcsRequest<DescribeCouponListR
 
 	public void setPageNum(Integer pageNum) {
 		this.pageNum = pageNum;
-		putQueryParameter("PageNum", String.valueOf(pageNum));
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	@Override

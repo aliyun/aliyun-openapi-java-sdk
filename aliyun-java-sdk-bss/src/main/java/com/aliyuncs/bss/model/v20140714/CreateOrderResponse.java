@@ -15,16 +15,24 @@
 package com.aliyuncs.bss.model.v20140714;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.bss.transform.v20140714.SetResourceBusinessStatusResponseUnmarshaller;
+import com.aliyuncs.bss.transform.v20140714.CreateOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetResourceBusinessStatusResponse extends AcsResponse {
+public class CreateOrderResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Boolean success;
+
+	private String code;
+
+	private String message;
+
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +42,40 @@ public class SetResourceBusinessStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	@Override
-	public SetResourceBusinessStatusResponse getInstance(UnmarshallerContext context) {
-		return	SetResourceBusinessStatusResponseUnmarshaller.unmarshall(this, context);
+	public CreateOrderResponse getInstance(UnmarshallerContext context) {
+		return	CreateOrderResponseUnmarshaller.unmarshall(this, context);
 	}
 }
