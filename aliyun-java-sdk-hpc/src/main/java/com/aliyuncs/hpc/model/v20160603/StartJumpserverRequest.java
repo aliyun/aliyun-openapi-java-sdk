@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.hpc.model.v20160603;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,24 +24,15 @@ import com.aliyuncs.http.MethodType;
 public class StartJumpserverRequest extends RpcAcsRequest<StartJumpserverResponse> {
 	
 	public StartJumpserverRequest() {
-		super("HPC", "2016-06-03", "StartJumpserver");
+		super("HPC", "2016-06-03", "StartJumpserver", "hpc");
 		setMethod(MethodType.POST);
 	}
-
-	private String tOKEN;
 
 	private String instanceId;
 
 	private Integer force;
 
-	public String getTOKEN() {
-		return this.tOKEN;
-	}
-
-	public void setTOKEN(String tOKEN) {
-		this.tOKEN = tOKEN;
-		putQueryParameter("TOKEN", tOKEN);
-	}
+	private String tOKEN;
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -48,7 +40,9 @@ public class StartJumpserverRequest extends RpcAcsRequest<StartJumpserverRespons
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public Integer getForce() {
@@ -57,7 +51,20 @@ public class StartJumpserverRequest extends RpcAcsRequest<StartJumpserverRespons
 
 	public void setForce(Integer force) {
 		this.force = force;
-		putQueryParameter("Force", force);
+		if(force != null){
+			putQueryParameter("Force", force.toString());
+		}
+	}
+
+	public String getTOKEN() {
+		return this.tOKEN;
+	}
+
+	public void setTOKEN(String tOKEN) {
+		this.tOKEN = tOKEN;
+		if(tOKEN != null){
+			putQueryParameter("TOKEN", tOKEN);
+		}
 	}
 
 	@Override

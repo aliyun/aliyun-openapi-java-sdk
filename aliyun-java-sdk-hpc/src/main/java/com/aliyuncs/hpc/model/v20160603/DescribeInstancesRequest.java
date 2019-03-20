@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.hpc.model.v20160603;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,24 +24,15 @@ import com.aliyuncs.http.MethodType;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	
 	public DescribeInstancesRequest() {
-		super("HPC", "2016-06-03", "DescribeInstances");
+		super("HPC", "2016-06-03", "DescribeInstances", "hpc");
 		setMethod(MethodType.POST);
 	}
-
-	private String tOKEN;
 
 	private String instanceId;
 
 	private String instanceType;
 
-	public String getTOKEN() {
-		return this.tOKEN;
-	}
-
-	public void setTOKEN(String tOKEN) {
-		this.tOKEN = tOKEN;
-		putQueryParameter("TOKEN", tOKEN);
-	}
+	private String tOKEN;
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -48,7 +40,9 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public String getInstanceType() {
@@ -57,7 +51,20 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	public void setInstanceType(String instanceType) {
 		this.instanceType = instanceType;
-		putQueryParameter("InstanceType", instanceType);
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getTOKEN() {
+		return this.tOKEN;
+	}
+
+	public void setTOKEN(String tOKEN) {
+		this.tOKEN = tOKEN;
+		if(tOKEN != null){
+			putQueryParameter("TOKEN", tOKEN);
+		}
 	}
 
 	@Override

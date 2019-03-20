@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.hpc.model.v20160603;
 
 import com.aliyuncs.AcsResponse;
@@ -47,10 +48,26 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.packageId = packageId;
 	}
 
+	public String getBizRegionId() {
+		return this.regionId;
+	}
+
+	public void setBizRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	/**
+	 * @deprecated use getBizRegionId instead of this.
+	 */
+	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
+	/**
+	 * @deprecated use setBizRegionId instead of this.
+	 */
+	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
 	}

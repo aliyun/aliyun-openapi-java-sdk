@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.hpc.model.v20160603;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -23,22 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	
 	public CreateInstanceRequest() {
-		super("HPC", "2016-06-03", "CreateInstance");
+		super("HPC", "2016-06-03", "CreateInstance", "hpc");
 		setMethod(MethodType.POST);
 	}
 
-	private String tOKEN;
-
 	private String packageId;
 
-	public String getTOKEN() {
-		return this.tOKEN;
-	}
-
-	public void setTOKEN(String tOKEN) {
-		this.tOKEN = tOKEN;
-		putQueryParameter("TOKEN", tOKEN);
-	}
+	private String tOKEN;
 
 	public String getPackageId() {
 		return this.packageId;
@@ -46,7 +38,20 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	public void setPackageId(String packageId) {
 		this.packageId = packageId;
-		putQueryParameter("PackageId", packageId);
+		if(packageId != null){
+			putQueryParameter("PackageId", packageId);
+		}
+	}
+
+	public String getTOKEN() {
+		return this.tOKEN;
+	}
+
+	public void setTOKEN(String tOKEN) {
+		this.tOKEN = tOKEN;
+		if(tOKEN != null){
+			putQueryParameter("TOKEN", tOKEN);
+		}
 	}
 
 	@Override

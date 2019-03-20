@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.hpc.model.v20160603;
 
 import java.util.List;
@@ -53,15 +49,15 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String instanceId;
 
-		private InstanceType instanceType;
+		private String instanceType;
 
-		private PackageId packageId;
+		private String packageId;
 
-		private Status status;
+		private String status;
 
 		private String innerIpAddress;
 
-		private JumpserverStatus jumpserverStatus;
+		private String jumpserverStatus;
 
 		private String jumpserverInnerIpAddress;
 
@@ -75,27 +71,27 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public InstanceType getInstanceType() {
+		public String getInstanceType() {
 			return this.instanceType;
 		}
 
-		public void setInstanceType(InstanceType instanceType) {
+		public void setInstanceType(String instanceType) {
 			this.instanceType = instanceType;
 		}
 
-		public PackageId getPackageId() {
+		public String getPackageId() {
 			return this.packageId;
 		}
 
-		public void setPackageId(PackageId packageId) {
+		public void setPackageId(String packageId) {
 			this.packageId = packageId;
 		}
 
-		public Status getStatus() {
+		public String getStatus() {
 			return this.status;
 		}
 
-		public void setStatus(Status status) {
+		public void setStatus(String status) {
 			this.status = status;
 		}
 
@@ -107,11 +103,11 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.innerIpAddress = innerIpAddress;
 		}
 
-		public JumpserverStatus getJumpserverStatus() {
+		public String getJumpserverStatus() {
 			return this.jumpserverStatus;
 		}
 
-		public void setJumpserverStatus(JumpserverStatus jumpserverStatus) {
+		public void setJumpserverStatus(String jumpserverStatus) {
 			this.jumpserverStatus = jumpserverStatus;
 		}
 
@@ -129,143 +125,6 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setJumpServerPublicIpAddress(String jumpServerPublicIpAddress) {
 			this.jumpServerPublicIpAddress = jumpServerPublicIpAddress;
-		}
-
-		public enum InstanceType {
-		
-			P_R_E_P_A_Y("PREPAY"),
-			P_O_S_T_P_A_Y("POSTPAY"),;
-			
-		    private String stringValue;
-		
-			InstanceType(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static InstanceType getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (InstanceType instanceType : InstanceType.values()) {
-					if(instanceType.getStringValue().equals(stringValue)){
-						return instanceType;
-					}
-				}
-		    	return null;
-		    }
-		}
-
-		public enum PackageId {
-		
-			G4("G4"),
-			G2("G2"),;
-			
-		    private String stringValue;
-		
-			PackageId(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static PackageId getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (PackageId packageId : PackageId.values()) {
-					if(packageId.getStringValue().equals(stringValue)){
-						return packageId;
-					}
-				}
-		    	return null;
-		    }
-		}
-
-		public enum Status {
-		
-			S_T_O_P_P_E_D("STOPPED"),
-			S_T_O_P_P_I_N_G("STOPPING"),
-			R_U_N_N_I_N_G("RUNNING"),
-			O_F_F_L_I_N_E("OFFLINE"),
-			S_T_A_R_T_I_N_G("STARTING"),;
-			
-		    private String stringValue;
-		
-			Status(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static Status getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (Status status : Status.values()) {
-					if(status.getStringValue().equals(stringValue)){
-						return status;
-					}
-				}
-		    	return null;
-		    }
-		}
-
-		public enum JumpserverStatus {
-		
-			S_T_O_P_P_E_D("STOPPED"),
-			S_T_O_P_P_I_N_G("STOPPING"),
-			R_U_N_N_I_N_G("RUNNING"),
-			S_T_A_R_T_I_N_G("STARTING"),;
-			
-		    private String stringValue;
-		
-			JumpserverStatus(String stringValue) {
-		        setStringValue(stringValue);
-		    }
-		
-		    public String getStringValue() {
-		        return stringValue;
-		    }
-		
-		    public void setStringValue(String stringValue) {
-		        this.stringValue = stringValue;
-		    }
-		    
-		    public static JumpserverStatus getEnum(String stringValue){
-		    	if(null == stringValue){
-		    		return null;
-		    	}
-		    	
-		    	for (JumpserverStatus jumpserverStatus : JumpserverStatus.values()) {
-					if(jumpserverStatus.getStringValue().equals(stringValue)){
-						return jumpserverStatus;
-					}
-				}
-		    	return null;
-		    }
 		}
 	}
 
