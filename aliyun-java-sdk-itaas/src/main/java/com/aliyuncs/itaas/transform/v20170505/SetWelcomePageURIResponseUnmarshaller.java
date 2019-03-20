@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.transform.v20170505;
 
 import java.util.ArrayList;
@@ -30,14 +31,14 @@ public class SetWelcomePageURIResponseUnmarshaller {
 		setWelcomePageURIResponse.setErrorMsg(context.stringValue("SetWelcomePageURIResponse.ErrorMsg"));
 		setWelcomePageURIResponse.setSuccess(context.booleanValue("SetWelcomePageURIResponse.Success"));
 
-		List<ErrorMessage> errorListList = new ArrayList<ErrorMessage>();
+		List<ErrorMessage> errorList = new ArrayList<ErrorMessage>();
 		for (int i = 0; i < context.lengthValue("SetWelcomePageURIResponse.ErrorList.Length"); i++) {
 			ErrorMessage errorMessage = new ErrorMessage();
 			errorMessage.setErrorMessage(context.stringValue("SetWelcomePageURIResponse.ErrorList["+ i +"].ErrorMessage"));
 
-			errorListList.add(errorMessage);
+			errorList.add(errorMessage);
 		}
-		setWelcomePageURIResponse.setErrorList(errorListList);
+		setWelcomePageURIResponse.setErrorList(errorList);
 	 
 	 	return setWelcomePageURIResponse;
 	}

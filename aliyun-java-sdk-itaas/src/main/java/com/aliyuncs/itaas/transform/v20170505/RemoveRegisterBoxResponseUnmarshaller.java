@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.transform.v20170505;
 
 import java.util.ArrayList;
@@ -30,14 +31,14 @@ public class RemoveRegisterBoxResponseUnmarshaller {
 		removeRegisterBoxResponse.setErrorMsg(context.stringValue("RemoveRegisterBoxResponse.ErrorMsg"));
 		removeRegisterBoxResponse.setSuccess(context.booleanValue("RemoveRegisterBoxResponse.Success"));
 
-		List<ErrorMessage> errorListList = new ArrayList<ErrorMessage>();
+		List<ErrorMessage> errorList = new ArrayList<ErrorMessage>();
 		for (int i = 0; i < context.lengthValue("RemoveRegisterBoxResponse.ErrorList.Length"); i++) {
 			ErrorMessage errorMessage = new ErrorMessage();
 			errorMessage.setErrorMessage(context.stringValue("RemoveRegisterBoxResponse.ErrorList["+ i +"].ErrorMessage"));
 
-			errorListList.add(errorMessage);
+			errorList.add(errorMessage);
 		}
-		removeRegisterBoxResponse.setErrorList(errorListList);
+		removeRegisterBoxResponse.setErrorList(errorList);
 	 
 	 	return removeRegisterBoxResponse;
 	}

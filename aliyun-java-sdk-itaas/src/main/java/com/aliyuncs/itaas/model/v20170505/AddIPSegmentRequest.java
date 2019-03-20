@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.model.v20170505;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,12 +23,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddIPSegmentRequest extends RpcAcsRequest<AddIPSegmentResponse> {
 	
 	public AddIPSegmentRequest() {
-		super("ITaaS", "2017-05-05", "AddIPSegment");
+		super("ITaaS", "2017-05-05", "AddIPSegment", "itaas");
 	}
-
-	private String sysfrom;
-
-	private String operator;
 
 	private String clientappid;
 
@@ -35,23 +32,9 @@ public class AddIPSegmentRequest extends RpcAcsRequest<AddIPSegmentResponse> {
 
 	private String memo;
 
-	public String getSysfrom() {
-		return this.sysfrom;
-	}
+	private String sysfrom;
 
-	public void setSysfrom(String sysfrom) {
-		this.sysfrom = sysfrom;
-		putQueryParameter("Sysfrom", sysfrom);
-	}
-
-	public String getOperator() {
-		return this.operator;
-	}
-
-	public void setOperator(String operator) {
-		this.operator = operator;
-		putQueryParameter("Operator", operator);
-	}
+	private String operator;
 
 	public String getClientappid() {
 		return this.clientappid;
@@ -59,7 +42,9 @@ public class AddIPSegmentRequest extends RpcAcsRequest<AddIPSegmentResponse> {
 
 	public void setClientappid(String clientappid) {
 		this.clientappid = clientappid;
-		putQueryParameter("Clientappid", clientappid);
+		if(clientappid != null){
+			putQueryParameter("Clientappid", clientappid);
+		}
 	}
 
 	public String getIpsegment() {
@@ -68,7 +53,9 @@ public class AddIPSegmentRequest extends RpcAcsRequest<AddIPSegmentResponse> {
 
 	public void setIpsegment(String ipsegment) {
 		this.ipsegment = ipsegment;
-		putQueryParameter("Ipsegment", ipsegment);
+		if(ipsegment != null){
+			putQueryParameter("Ipsegment", ipsegment);
+		}
 	}
 
 	public String getMemo() {
@@ -77,7 +64,31 @@ public class AddIPSegmentRequest extends RpcAcsRequest<AddIPSegmentResponse> {
 
 	public void setMemo(String memo) {
 		this.memo = memo;
-		putQueryParameter("Memo", memo);
+		if(memo != null){
+			putQueryParameter("Memo", memo);
+		}
+	}
+
+	public String getSysfrom() {
+		return this.sysfrom;
+	}
+
+	public void setSysfrom(String sysfrom) {
+		this.sysfrom = sysfrom;
+		if(sysfrom != null){
+			putQueryParameter("Sysfrom", sysfrom);
+		}
+	}
+
+	public String getOperator() {
+		return this.operator;
+	}
+
+	public void setOperator(String operator) {
+		this.operator = operator;
+		if(operator != null){
+			putQueryParameter("Operator", operator);
+		}
 	}
 
 	@Override

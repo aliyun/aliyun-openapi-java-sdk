@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.transform.v20170505;
 
 import java.util.ArrayList;
@@ -30,14 +31,14 @@ public class UpdateEnterpriseConfigResponseUnmarshaller {
 		updateEnterpriseConfigResponse.setErrorMsg(context.stringValue("UpdateEnterpriseConfigResponse.ErrorMsg"));
 		updateEnterpriseConfigResponse.setSuccess(context.booleanValue("UpdateEnterpriseConfigResponse.Success"));
 
-		List<ErrorMessage> errorListList = new ArrayList<ErrorMessage>();
+		List<ErrorMessage> errorList = new ArrayList<ErrorMessage>();
 		for (int i = 0; i < context.lengthValue("UpdateEnterpriseConfigResponse.ErrorList.Length"); i++) {
 			ErrorMessage errorMessage = new ErrorMessage();
 			errorMessage.setErrorMessage(context.stringValue("UpdateEnterpriseConfigResponse.ErrorList["+ i +"].ErrorMessage"));
 
-			errorListList.add(errorMessage);
+			errorList.add(errorMessage);
 		}
-		updateEnterpriseConfigResponse.setErrorList(errorListList);
+		updateEnterpriseConfigResponse.setErrorList(errorList);
 	 
 	 	return updateEnterpriseConfigResponse;
 	}

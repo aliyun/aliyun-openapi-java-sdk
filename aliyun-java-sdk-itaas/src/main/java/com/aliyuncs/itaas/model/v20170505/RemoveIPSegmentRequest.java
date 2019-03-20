@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.model.v20170505;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,34 +23,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveIPSegmentRequest extends RpcAcsRequest<RemoveIPSegmentResponse> {
 	
 	public RemoveIPSegmentRequest() {
-		super("ITaaS", "2017-05-05", "RemoveIPSegment");
+		super("ITaaS", "2017-05-05", "RemoveIPSegment", "itaas");
 	}
-
-	private String sysfrom;
-
-	private String operator;
 
 	private String clientappid;
 
+	private String sysfrom;
+
 	private String uuid;
 
-	public String getSysfrom() {
-		return this.sysfrom;
-	}
-
-	public void setSysfrom(String sysfrom) {
-		this.sysfrom = sysfrom;
-		putQueryParameter("Sysfrom", sysfrom);
-	}
-
-	public String getOperator() {
-		return this.operator;
-	}
-
-	public void setOperator(String operator) {
-		this.operator = operator;
-		putQueryParameter("Operator", operator);
-	}
+	private String operator;
 
 	public String getClientappid() {
 		return this.clientappid;
@@ -57,7 +40,20 @@ public class RemoveIPSegmentRequest extends RpcAcsRequest<RemoveIPSegmentRespons
 
 	public void setClientappid(String clientappid) {
 		this.clientappid = clientappid;
-		putQueryParameter("Clientappid", clientappid);
+		if(clientappid != null){
+			putQueryParameter("Clientappid", clientappid);
+		}
+	}
+
+	public String getSysfrom() {
+		return this.sysfrom;
+	}
+
+	public void setSysfrom(String sysfrom) {
+		this.sysfrom = sysfrom;
+		if(sysfrom != null){
+			putQueryParameter("Sysfrom", sysfrom);
+		}
 	}
 
 	public String getUuid() {
@@ -66,7 +62,20 @@ public class RemoveIPSegmentRequest extends RpcAcsRequest<RemoveIPSegmentRespons
 
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
-		putQueryParameter("Uuid", uuid);
+		if(uuid != null){
+			putQueryParameter("Uuid", uuid);
+		}
+	}
+
+	public String getOperator() {
+		return this.operator;
+	}
+
+	public void setOperator(String operator) {
+		this.operator = operator;
+		if(operator != null){
+			putQueryParameter("Operator", operator);
+		}
 	}
 
 	@Override

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.model.v20170505;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,36 +23,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateRoomNameRequest extends RpcAcsRequest<UpdateRoomNameResponse> {
 	
 	public UpdateRoomNameRequest() {
-		super("ITaaS", "2017-05-05", "UpdateRoomName");
+		super("ITaaS", "2017-05-05", "UpdateRoomName", "itaas");
 	}
+
+	private String clientappid;
+
+	private String drname;
 
 	private String sysfrom;
 
 	private String operator;
 
-	private String clientappid;
-
 	private String screencode;
-
-	private String drname;
-
-	public String getSysfrom() {
-		return this.sysfrom;
-	}
-
-	public void setSysfrom(String sysfrom) {
-		this.sysfrom = sysfrom;
-		putQueryParameter("Sysfrom", sysfrom);
-	}
-
-	public String getOperator() {
-		return this.operator;
-	}
-
-	public void setOperator(String operator) {
-		this.operator = operator;
-		putQueryParameter("Operator", operator);
-	}
 
 	public String getClientappid() {
 		return this.clientappid;
@@ -59,16 +42,9 @@ public class UpdateRoomNameRequest extends RpcAcsRequest<UpdateRoomNameResponse>
 
 	public void setClientappid(String clientappid) {
 		this.clientappid = clientappid;
-		putQueryParameter("Clientappid", clientappid);
-	}
-
-	public String getScreencode() {
-		return this.screencode;
-	}
-
-	public void setScreencode(String screencode) {
-		this.screencode = screencode;
-		putQueryParameter("Screencode", screencode);
+		if(clientappid != null){
+			putQueryParameter("Clientappid", clientappid);
+		}
 	}
 
 	public String getDrname() {
@@ -77,7 +53,42 @@ public class UpdateRoomNameRequest extends RpcAcsRequest<UpdateRoomNameResponse>
 
 	public void setDrname(String drname) {
 		this.drname = drname;
-		putQueryParameter("Drname", drname);
+		if(drname != null){
+			putQueryParameter("Drname", drname);
+		}
+	}
+
+	public String getSysfrom() {
+		return this.sysfrom;
+	}
+
+	public void setSysfrom(String sysfrom) {
+		this.sysfrom = sysfrom;
+		if(sysfrom != null){
+			putQueryParameter("Sysfrom", sysfrom);
+		}
+	}
+
+	public String getOperator() {
+		return this.operator;
+	}
+
+	public void setOperator(String operator) {
+		this.operator = operator;
+		if(operator != null){
+			putQueryParameter("Operator", operator);
+		}
+	}
+
+	public String getScreencode() {
+		return this.screencode;
+	}
+
+	public void setScreencode(String screencode) {
+		this.screencode = screencode;
+		if(screencode != null){
+			putQueryParameter("Screencode", screencode);
+		}
 	}
 
 	@Override

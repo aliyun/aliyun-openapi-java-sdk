@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.model.v20170505;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,36 +23,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateEnterpriseRequest extends RpcAcsRequest<CreateEnterpriseResponse> {
 	
 	public CreateEnterpriseRequest() {
-		super("ITaaS", "2017-05-05", "CreateEnterprise");
+		super("ITaaS", "2017-05-05", "CreateEnterprise", "itaas");
 	}
-
-	private String sysfrom;
-
-	private String operator;
 
 	private String clientappid;
 
-	private Integer boxNumber;
-
 	private Boolean serviceFlag;
 
-	public String getSysfrom() {
-		return this.sysfrom;
-	}
+	private String sysfrom;
 
-	public void setSysfrom(String sysfrom) {
-		this.sysfrom = sysfrom;
-		putQueryParameter("Sysfrom", sysfrom);
-	}
+	private Integer boxNumber;
 
-	public String getOperator() {
-		return this.operator;
-	}
-
-	public void setOperator(String operator) {
-		this.operator = operator;
-		putQueryParameter("Operator", operator);
-	}
+	private String operator;
 
 	public String getClientappid() {
 		return this.clientappid;
@@ -59,16 +42,9 @@ public class CreateEnterpriseRequest extends RpcAcsRequest<CreateEnterpriseRespo
 
 	public void setClientappid(String clientappid) {
 		this.clientappid = clientappid;
-		putQueryParameter("Clientappid", clientappid);
-	}
-
-	public Integer getBoxNumber() {
-		return this.boxNumber;
-	}
-
-	public void setBoxNumber(Integer boxNumber) {
-		this.boxNumber = boxNumber;
-		putQueryParameter("BoxNumber", boxNumber);
+		if(clientappid != null){
+			putQueryParameter("Clientappid", clientappid);
+		}
 	}
 
 	public Boolean getServiceFlag() {
@@ -77,7 +53,42 @@ public class CreateEnterpriseRequest extends RpcAcsRequest<CreateEnterpriseRespo
 
 	public void setServiceFlag(Boolean serviceFlag) {
 		this.serviceFlag = serviceFlag;
-		putQueryParameter("ServiceFlag", serviceFlag);
+		if(serviceFlag != null){
+			putQueryParameter("ServiceFlag", serviceFlag.toString());
+		}
+	}
+
+	public String getSysfrom() {
+		return this.sysfrom;
+	}
+
+	public void setSysfrom(String sysfrom) {
+		this.sysfrom = sysfrom;
+		if(sysfrom != null){
+			putQueryParameter("Sysfrom", sysfrom);
+		}
+	}
+
+	public Integer getBoxNumber() {
+		return this.boxNumber;
+	}
+
+	public void setBoxNumber(Integer boxNumber) {
+		this.boxNumber = boxNumber;
+		if(boxNumber != null){
+			putQueryParameter("BoxNumber", boxNumber.toString());
+		}
+	}
+
+	public String getOperator() {
+		return this.operator;
+	}
+
+	public void setOperator(String operator) {
+		this.operator = operator;
+		if(operator != null){
+			putQueryParameter("Operator", operator);
+		}
 	}
 
 	@Override

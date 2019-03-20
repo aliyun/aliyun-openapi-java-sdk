@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.model.v20170505;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,37 +23,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateEnterpriseConfigRequest extends RpcAcsRequest<UpdateEnterpriseConfigResponse> {
 	
 	public UpdateEnterpriseConfigRequest() {
-		super("ITaaS", "2017-05-05", "UpdateEnterpriseConfig");
+		super("ITaaS", "2017-05-05", "UpdateEnterpriseConfig", "itaas");
 	}
 
-	private String sysfrom;
-
-	private String operator;
+	private String configKey;
 
 	private String clientappid;
-
-	private String configKey;
 
 	private String configValue;
 
 	private String memo;
 
-	public String getSysfrom() {
-		return this.sysfrom;
+	private String sysfrom;
+
+	private String operator;
+
+	public String getConfigKey() {
+		return this.configKey;
 	}
 
-	public void setSysfrom(String sysfrom) {
-		this.sysfrom = sysfrom;
-		putQueryParameter("Sysfrom", sysfrom);
-	}
-
-	public String getOperator() {
-		return this.operator;
-	}
-
-	public void setOperator(String operator) {
-		this.operator = operator;
-		putQueryParameter("Operator", operator);
+	public void setConfigKey(String configKey) {
+		this.configKey = configKey;
+		if(configKey != null){
+			putQueryParameter("ConfigKey", configKey);
+		}
 	}
 
 	public String getClientappid() {
@@ -61,16 +55,9 @@ public class UpdateEnterpriseConfigRequest extends RpcAcsRequest<UpdateEnterpris
 
 	public void setClientappid(String clientappid) {
 		this.clientappid = clientappid;
-		putQueryParameter("Clientappid", clientappid);
-	}
-
-	public String getConfigKey() {
-		return this.configKey;
-	}
-
-	public void setConfigKey(String configKey) {
-		this.configKey = configKey;
-		putQueryParameter("ConfigKey", configKey);
+		if(clientappid != null){
+			putQueryParameter("Clientappid", clientappid);
+		}
 	}
 
 	public String getConfigValue() {
@@ -79,7 +66,9 @@ public class UpdateEnterpriseConfigRequest extends RpcAcsRequest<UpdateEnterpris
 
 	public void setConfigValue(String configValue) {
 		this.configValue = configValue;
-		putQueryParameter("ConfigValue", configValue);
+		if(configValue != null){
+			putQueryParameter("ConfigValue", configValue);
+		}
 	}
 
 	public String getMemo() {
@@ -88,7 +77,31 @@ public class UpdateEnterpriseConfigRequest extends RpcAcsRequest<UpdateEnterpris
 
 	public void setMemo(String memo) {
 		this.memo = memo;
-		putQueryParameter("Memo", memo);
+		if(memo != null){
+			putQueryParameter("Memo", memo);
+		}
+	}
+
+	public String getSysfrom() {
+		return this.sysfrom;
+	}
+
+	public void setSysfrom(String sysfrom) {
+		this.sysfrom = sysfrom;
+		if(sysfrom != null){
+			putQueryParameter("Sysfrom", sysfrom);
+		}
+	}
+
+	public String getOperator() {
+		return this.operator;
+	}
+
+	public void setOperator(String operator) {
+		this.operator = operator;
+		if(operator != null){
+			putQueryParameter("Operator", operator);
+		}
 	}
 
 	@Override

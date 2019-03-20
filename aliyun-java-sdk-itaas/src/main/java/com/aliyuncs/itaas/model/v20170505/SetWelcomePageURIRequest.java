@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.model.v20170505;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,16 +23,27 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetWelcomePageURIRequest extends RpcAcsRequest<SetWelcomePageURIResponse> {
 	
 	public SetWelcomePageURIRequest() {
-		super("ITaaS", "2017-05-05", "SetWelcomePageURI");
+		super("ITaaS", "2017-05-05", "SetWelcomePageURI", "itaas");
 	}
+
+	private String clientappid;
 
 	private String sysfrom;
 
 	private String operator;
 
-	private String clientappid;
-
 	private String welcomeuri;
+
+	public String getClientappid() {
+		return this.clientappid;
+	}
+
+	public void setClientappid(String clientappid) {
+		this.clientappid = clientappid;
+		if(clientappid != null){
+			putQueryParameter("Clientappid", clientappid);
+		}
+	}
 
 	public String getSysfrom() {
 		return this.sysfrom;
@@ -39,7 +51,9 @@ public class SetWelcomePageURIRequest extends RpcAcsRequest<SetWelcomePageURIRes
 
 	public void setSysfrom(String sysfrom) {
 		this.sysfrom = sysfrom;
-		putQueryParameter("Sysfrom", sysfrom);
+		if(sysfrom != null){
+			putQueryParameter("Sysfrom", sysfrom);
+		}
 	}
 
 	public String getOperator() {
@@ -48,16 +62,9 @@ public class SetWelcomePageURIRequest extends RpcAcsRequest<SetWelcomePageURIRes
 
 	public void setOperator(String operator) {
 		this.operator = operator;
-		putQueryParameter("Operator", operator);
-	}
-
-	public String getClientappid() {
-		return this.clientappid;
-	}
-
-	public void setClientappid(String clientappid) {
-		this.clientappid = clientappid;
-		putQueryParameter("Clientappid", clientappid);
+		if(operator != null){
+			putQueryParameter("Operator", operator);
+		}
 	}
 
 	public String getWelcomeuri() {
@@ -66,7 +73,9 @@ public class SetWelcomePageURIRequest extends RpcAcsRequest<SetWelcomePageURIRes
 
 	public void setWelcomeuri(String welcomeuri) {
 		this.welcomeuri = welcomeuri;
-		putQueryParameter("Welcomeuri", welcomeuri);
+		if(welcomeuri != null){
+			putQueryParameter("Welcomeuri", welcomeuri);
+		}
 	}
 
 	@Override

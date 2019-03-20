@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.model.v20170505;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,14 +23,25 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetEnterpriseConfigRequest extends RpcAcsRequest<GetEnterpriseConfigResponse> {
 	
 	public GetEnterpriseConfigRequest() {
-		super("ITaaS", "2017-05-05", "GetEnterpriseConfig");
+		super("ITaaS", "2017-05-05", "GetEnterpriseConfig", "itaas");
 	}
+
+	private String clientappid;
 
 	private String sysfrom;
 
 	private String operator;
 
-	private String clientappid;
+	public String getClientappid() {
+		return this.clientappid;
+	}
+
+	public void setClientappid(String clientappid) {
+		this.clientappid = clientappid;
+		if(clientappid != null){
+			putQueryParameter("Clientappid", clientappid);
+		}
+	}
 
 	public String getSysfrom() {
 		return this.sysfrom;
@@ -37,7 +49,9 @@ public class GetEnterpriseConfigRequest extends RpcAcsRequest<GetEnterpriseConfi
 
 	public void setSysfrom(String sysfrom) {
 		this.sysfrom = sysfrom;
-		putQueryParameter("Sysfrom", sysfrom);
+		if(sysfrom != null){
+			putQueryParameter("Sysfrom", sysfrom);
+		}
 	}
 
 	public String getOperator() {
@@ -46,16 +60,9 @@ public class GetEnterpriseConfigRequest extends RpcAcsRequest<GetEnterpriseConfi
 
 	public void setOperator(String operator) {
 		this.operator = operator;
-		putQueryParameter("Operator", operator);
-	}
-
-	public String getClientappid() {
-		return this.clientappid;
-	}
-
-	public void setClientappid(String clientappid) {
-		this.clientappid = clientappid;
-		putQueryParameter("Clientappid", clientappid);
+		if(operator != null){
+			putQueryParameter("Operator", operator);
+		}
 	}
 
 	@Override

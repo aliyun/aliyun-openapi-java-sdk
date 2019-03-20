@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.itaas.model.v20170505;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,38 +23,20 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateIPSegmentRequest extends RpcAcsRequest<UpdateIPSegmentResponse> {
 	
 	public UpdateIPSegmentRequest() {
-		super("ITaaS", "2017-05-05", "UpdateIPSegment");
+		super("ITaaS", "2017-05-05", "UpdateIPSegment", "itaas");
 	}
 
-	private String sysfrom;
-
-	private String operator;
-
 	private String clientappid;
-
-	private String uuid;
 
 	private String ipsegment;
 
 	private String memo;
 
-	public String getSysfrom() {
-		return this.sysfrom;
-	}
+	private String sysfrom;
 
-	public void setSysfrom(String sysfrom) {
-		this.sysfrom = sysfrom;
-		putQueryParameter("Sysfrom", sysfrom);
-	}
+	private String uuid;
 
-	public String getOperator() {
-		return this.operator;
-	}
-
-	public void setOperator(String operator) {
-		this.operator = operator;
-		putQueryParameter("Operator", operator);
-	}
+	private String operator;
 
 	public String getClientappid() {
 		return this.clientappid;
@@ -61,16 +44,9 @@ public class UpdateIPSegmentRequest extends RpcAcsRequest<UpdateIPSegmentRespons
 
 	public void setClientappid(String clientappid) {
 		this.clientappid = clientappid;
-		putQueryParameter("Clientappid", clientappid);
-	}
-
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		putQueryParameter("Uuid", uuid);
+		if(clientappid != null){
+			putQueryParameter("Clientappid", clientappid);
+		}
 	}
 
 	public String getIpsegment() {
@@ -79,7 +55,9 @@ public class UpdateIPSegmentRequest extends RpcAcsRequest<UpdateIPSegmentRespons
 
 	public void setIpsegment(String ipsegment) {
 		this.ipsegment = ipsegment;
-		putQueryParameter("Ipsegment", ipsegment);
+		if(ipsegment != null){
+			putQueryParameter("Ipsegment", ipsegment);
+		}
 	}
 
 	public String getMemo() {
@@ -88,7 +66,42 @@ public class UpdateIPSegmentRequest extends RpcAcsRequest<UpdateIPSegmentRespons
 
 	public void setMemo(String memo) {
 		this.memo = memo;
-		putQueryParameter("Memo", memo);
+		if(memo != null){
+			putQueryParameter("Memo", memo);
+		}
+	}
+
+	public String getSysfrom() {
+		return this.sysfrom;
+	}
+
+	public void setSysfrom(String sysfrom) {
+		this.sysfrom = sysfrom;
+		if(sysfrom != null){
+			putQueryParameter("Sysfrom", sysfrom);
+		}
+	}
+
+	public String getUuid() {
+		return this.uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+		if(uuid != null){
+			putQueryParameter("Uuid", uuid);
+		}
+	}
+
+	public String getOperator() {
+		return this.operator;
+	}
+
+	public void setOperator(String operator) {
+		this.operator = operator;
+		if(operator != null){
+			putQueryParameter("Operator", operator);
+		}
 	}
 
 	@Override
