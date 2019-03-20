@@ -1,13 +1,12 @@
 package com.aliyuncs;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesRequest;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.http.ProtocolType;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CoreTest extends BaseTest {
 
@@ -113,4 +112,25 @@ public class CoreTest extends BaseTest {
         Assert.assertEquals(200, response.getHttpStatus());
         Assert.assertNotNull(response.getData());
     }
+
+    @Test
+    public void emptyPOSTHttpRequestTest() {
+        CommonRequest request = new CommonRequest();
+        request.setProtocol(ProtocolType.HTTPS);
+        request.setMethod(MethodType.POST);
+        request.setDomain("dysmsapi.aliyuncs.com");
+        request.setVersion("2017-05-25");
+        request.setAction("QuerySendDetails");
+        request.putQueryParameter("PhoneNumber", "12345678900");
+        request.putQueryParameter("SendDate", "2019-3-20");
+        request.putQueryParameter("PageSize", "100");
+        request.putQueryParameter("CurrentPage", "1");
+
+        try {
+            client.getCommonResponse(request);
+        } catch (Exception e) {
+            Assert.fail();
+        }
+    }
+
 }

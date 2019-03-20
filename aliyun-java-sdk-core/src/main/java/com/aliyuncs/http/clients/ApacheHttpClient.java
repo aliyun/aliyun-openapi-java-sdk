@@ -173,7 +173,7 @@ public class ApacheHttpClient extends IHttpClient {
 
         builder.setUri(apiReq.getSysUrl());
 
-        if (apiReq.getSysMethod().hasContent()) {
+        if (apiReq.getSysMethod().hasContent() && apiReq.getHttpContent() != null && apiReq.getHttpContent().length > 0) {
             EntityBuilder bodyBuilder = EntityBuilder.create();
 
             String contentType = apiReq.getHeaderValue(CONTENT_TYPE);
