@@ -25,12 +25,12 @@
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-core</artifactId>
-    <version>[4.3.2,10.0.0)</version>
+    <version>[4.3.2,5.0.0)</version>
 </dependency>
 <dependency>
     <groupId>com.aliyun</groupId>
     <artifactId>aliyun-java-sdk-ecs</artifactId>
-    <version>[4.16.0,10.0.0)</version>
+    <version>[4.16.0,5.0.0)</version>
 </dependency>
 ```
 
