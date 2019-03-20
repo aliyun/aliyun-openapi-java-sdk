@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,28 +23,34 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRecordLogsRequest extends RpcAcsRequest<DescribeRecordLogsResponse> {
 	
 	public DescribeRecordLogsRequest() {
-		super("Alidns", "2015-01-09", "DescribeRecordLogs");
+		super("Alidns", "2015-01-09", "DescribeRecordLogs", "alidns");
 	}
 
-	private String lang;
+	private String endDate;
 
 	private String userClientIp;
 
 	private String domainName;
 
-	private Long pageNumber;
-
 	private Long pageSize;
+
+	private String lang;
 
 	private String keyWord;
 
-	public String getLang() {
-		return this.lang;
+	private String startDate;
+
+	private Long pageNumber;
+
+	public String getEndDate() {
+		return this.endDate;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("endDate", endDate);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -52,7 +59,9 @@ public class DescribeRecordLogsRequest extends RpcAcsRequest<DescribeRecordLogsR
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getDomainName() {
@@ -61,16 +70,9 @@ public class DescribeRecordLogsRequest extends RpcAcsRequest<DescribeRecordLogsR
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public Long getPageSize() {
@@ -79,7 +81,20 @@ public class DescribeRecordLogsRequest extends RpcAcsRequest<DescribeRecordLogsR
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getKeyWord() {
@@ -88,7 +103,31 @@ public class DescribeRecordLogsRequest extends RpcAcsRequest<DescribeRecordLogsR
 
 	public void setKeyWord(String keyWord) {
 		this.keyWord = keyWord;
-		putQueryParameter("KeyWord", keyWord);
+		if(keyWord != null){
+			putQueryParameter("KeyWord", keyWord);
+		}
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

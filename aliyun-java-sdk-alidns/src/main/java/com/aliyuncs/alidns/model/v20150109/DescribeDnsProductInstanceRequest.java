@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,22 +23,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDnsProductInstanceRequest extends RpcAcsRequest<DescribeDnsProductInstanceResponse> {
 	
 	public DescribeDnsProductInstanceRequest() {
-		super("Alidns", "2015-01-09", "DescribeDnsProductInstance");
+		super("Alidns", "2015-01-09", "DescribeDnsProductInstance", "alidns");
 	}
-
-	private String lang;
-
-	private String userClientIp;
 
 	private String instanceId;
 
-	public String getLang() {
-		return this.lang;
+	private String userClientIp;
+
+	private String lang;
+
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -46,16 +49,20 @@ public class DescribeDnsProductInstanceRequest extends RpcAcsRequest<DescribeDns
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		putQueryParameter("InstanceId", instanceId);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	@Override

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,22 +23,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDomainGroupRequest extends RpcAcsRequest<DeleteDomainGroupResponse> {
 	
 	public DeleteDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "DeleteDomainGroup");
+		super("Alidns", "2015-01-09", "DeleteDomainGroup", "alidns");
 	}
-
-	private String lang;
-
-	private String userClientIp;
 
 	private String groupId;
 
-	public String getLang() {
-		return this.lang;
+	private String userClientIp;
+
+	private String lang;
+
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -46,16 +49,20 @@ public class DeleteDomainGroupRequest extends RpcAcsRequest<DeleteDomainGroupRes
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		putQueryParameter("GroupId", groupId);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	@Override

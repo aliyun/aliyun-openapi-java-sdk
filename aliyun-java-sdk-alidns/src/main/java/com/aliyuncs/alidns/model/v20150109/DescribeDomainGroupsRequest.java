@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,27 +23,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainGroupsRequest extends RpcAcsRequest<DescribeDomainGroupsResponse> {
 	
 	public DescribeDomainGroupsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainGroups");
+		super("Alidns", "2015-01-09", "DescribeDomainGroups", "alidns");
 	}
 
-	private String lang;
-
 	private String userClientIp;
+
+	private Long pageSize;
+
+	private String lang;
 
 	private String keyWord;
 
 	private Long pageNumber;
-
-	private Long pageSize;
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -50,25 +42,9 @@ public class DescribeDomainGroupsRequest extends RpcAcsRequest<DescribeDomainGro
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
-	}
-
-	public String getKeyWord() {
-		return this.keyWord;
-	}
-
-	public void setKeyWord(String keyWord) {
-		this.keyWord = keyWord;
-		putQueryParameter("KeyWord", keyWord);
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public Long getPageSize() {
@@ -77,7 +53,42 @@ public class DescribeDomainGroupsRequest extends RpcAcsRequest<DescribeDomainGro
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getKeyWord() {
+		return this.keyWord;
+	}
+
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+		if(keyWord != null){
+			putQueryParameter("KeyWord", keyWord);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

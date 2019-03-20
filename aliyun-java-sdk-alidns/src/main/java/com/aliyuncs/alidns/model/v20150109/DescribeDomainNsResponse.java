@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import java.util.List;
@@ -31,6 +32,8 @@ public class DescribeDomainNsResponse extends AcsResponse {
 	private Boolean includeAliDns;
 
 	private List<String> dnsServers;
+
+	private List<String> expectDnsServers;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -62,6 +65,14 @@ public class DescribeDomainNsResponse extends AcsResponse {
 
 	public void setDnsServers(List<String> dnsServers) {
 		this.dnsServers = dnsServers;
+	}
+
+	public List<String> getExpectDnsServers() {
+		return this.expectDnsServers;
+	}
+
+	public void setExpectDnsServers(List<String> expectDnsServers) {
+		this.expectDnsServers = expectDnsServers;
 	}
 
 	@Override

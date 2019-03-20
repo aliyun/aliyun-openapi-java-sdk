@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,47 +23,20 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsResponse> {
 	
 	public DescribeDomainsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomains");
+		super("Alidns", "2015-01-09", "DescribeDomains", "alidns");
 	}
-
-	private String lang;
-
-	private String userClientIp;
-
-	private String keyWord;
 
 	private String groupId;
 
-	private Long pageNumber;
-
 	private Long pageSize;
 
-	public String getLang() {
-		return this.lang;
-	}
+	private String searchMode;
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
+	private String lang;
 
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
+	private String keyWord;
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
-	}
-
-	public String getKeyWord() {
-		return this.keyWord;
-	}
-
-	public void setKeyWord(String keyWord) {
-		this.keyWord = keyWord;
-		putQueryParameter("KeyWord", keyWord);
-	}
+	private Long pageNumber;
 
 	public String getGroupId() {
 		return this.groupId;
@@ -70,16 +44,9 @@ public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsRespons
 
 	public void setGroupId(String groupId) {
 		this.groupId = groupId;
-		putQueryParameter("GroupId", groupId);
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public Long getPageSize() {
@@ -88,7 +55,53 @@ public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsRespons
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSearchMode() {
+		return this.searchMode;
+	}
+
+	public void setSearchMode(String searchMode) {
+		this.searchMode = searchMode;
+		if(searchMode != null){
+			putQueryParameter("SearchMode", searchMode);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getKeyWord() {
+		return this.keyWord;
+	}
+
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+		if(keyWord != null){
+			putQueryParameter("KeyWord", keyWord);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

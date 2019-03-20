@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,24 +23,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateDNSSLBWeightRequest extends RpcAcsRequest<UpdateDNSSLBWeightResponse> {
 	
 	public UpdateDNSSLBWeightRequest() {
-		super("Alidns", "2015-01-09", "UpdateDNSSLBWeight");
+		super("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "alidns");
 	}
-
-	private String lang;
-
-	private String userClientIp;
 
 	private String recordId;
 
+	private String userClientIp;
+
 	private Integer weight;
 
-	public String getLang() {
-		return this.lang;
+	private String lang;
+
+	public String getRecordId() {
+		return this.recordId;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setRecordId(String recordId) {
+		this.recordId = recordId;
+		if(recordId != null){
+			putQueryParameter("RecordId", recordId);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -48,16 +51,9 @@ public class UpdateDNSSLBWeightRequest extends RpcAcsRequest<UpdateDNSSLBWeightR
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
-	}
-
-	public String getRecordId() {
-		return this.recordId;
-	}
-
-	public void setRecordId(String recordId) {
-		this.recordId = recordId;
-		putQueryParameter("RecordId", recordId);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public Integer getWeight() {
@@ -66,7 +62,20 @@ public class UpdateDNSSLBWeightRequest extends RpcAcsRequest<UpdateDNSSLBWeightR
 
 	public void setWeight(Integer weight) {
 		this.weight = weight;
-		putQueryParameter("Weight", weight);
+		if(weight != null){
+			putQueryParameter("Weight", weight.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	@Override

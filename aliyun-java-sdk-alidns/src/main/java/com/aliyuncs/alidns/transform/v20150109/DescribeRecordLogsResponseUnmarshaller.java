@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.transform.v20150109;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class DescribeRecordLogsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeRecordLogsResponse.RecordLogs.Length"); i++) {
 			RecordLog recordLog = new RecordLog();
 			recordLog.setActionTime(context.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTime"));
+			recordLog.setActionTimestamp(context.longValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTimestamp"));
 			recordLog.setAction(context.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].Action"));
 			recordLog.setMessage(context.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].Message"));
 			recordLog.setClientIp(context.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ClientIp"));

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,28 +23,32 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDomainRecordsResponse> {
 	
 	public DescribeSubDomainRecordsRequest() {
-		super("Alidns", "2015-01-09", "DescribeSubDomainRecords");
+		super("Alidns", "2015-01-09", "DescribeSubDomainRecords", "alidns");
 	}
 
-	private String lang;
+	private String line;
 
 	private String userClientIp;
 
+	private Long pageSize;
+
 	private String subDomain;
 
-	private Long pageNumber;
-
-	private Long pageSize;
+	private String lang;
 
 	private String type;
 
-	public String getLang() {
-		return this.lang;
+	private Long pageNumber;
+
+	public String getLine() {
+		return this.line;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setLine(String line) {
+		this.line = line;
+		if(line != null){
+			putQueryParameter("Line", line);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -52,25 +57,9 @@ public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDo
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
-	}
-
-	public String getSubDomain() {
-		return this.subDomain;
-	}
-
-	public void setSubDomain(String subDomain) {
-		this.subDomain = subDomain;
-		putQueryParameter("SubDomain", subDomain);
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public Long getPageSize() {
@@ -79,7 +68,31 @@ public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDo
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSubDomain() {
+		return this.subDomain;
+	}
+
+	public void setSubDomain(String subDomain) {
+		this.subDomain = subDomain;
+		if(subDomain != null){
+			putQueryParameter("SubDomain", subDomain);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getType() {
@@ -88,7 +101,20 @@ public class DescribeSubDomainRecordsRequest extends RpcAcsRequest<DescribeSubDo
 
 	public void setType(String type) {
 		this.type = type;
-		putQueryParameter("Type", type);
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

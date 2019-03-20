@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.transform.v20150109;
 
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class DescribeDomainGroupsResponseUnmarshaller {
 			DomainGroup domainGroup = new DomainGroup();
 			domainGroup.setGroupId(context.stringValue("DescribeDomainGroupsResponse.DomainGroups["+ i +"].GroupId"));
 			domainGroup.setGroupName(context.stringValue("DescribeDomainGroupsResponse.DomainGroups["+ i +"].GroupName"));
+			domainGroup.setDomainCount(context.longValue("DescribeDomainGroupsResponse.DomainGroups["+ i +"].DomainCount"));
 
 			domainGroups.add(domainGroup);
 		}

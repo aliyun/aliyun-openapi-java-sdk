@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,41 +23,53 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRecordsResponse> {
 	
 	public DescribeDomainRecordsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainRecords");
+		super("Alidns", "2015-01-09", "DescribeDomainRecords", "alidns");
 	}
 
-	private String lang;
+	private String valueKeyWord;
 
-	private String userClientIp;
+	private Long groupId;
 
 	private String domainName;
+
+	private String orderBy;
 
 	private Long pageNumber;
 
 	private Long pageSize;
 
-	private String rRKeyWord;
+	private String searchMode;
+
+	private String lang;
+
+	private String keyWord;
 
 	private String typeKeyWord;
 
-	private String valueKeyWord;
+	private String rRKeyWord;
 
-	public String getLang() {
-		return this.lang;
+	private String direction;
+
+	public String getValueKeyWord() {
+		return this.valueKeyWord;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setValueKeyWord(String valueKeyWord) {
+		this.valueKeyWord = valueKeyWord;
+		if(valueKeyWord != null){
+			putQueryParameter("ValueKeyWord", valueKeyWord);
+		}
 	}
 
-	public String getUserClientIp() {
-		return this.userClientIp;
+	public Long getGroupId() {
+		return this.groupId;
 	}
 
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
+		}
 	}
 
 	public String getDomainName() {
@@ -70,7 +78,20 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
 	}
 
 	public Long getPageNumber() {
@@ -79,7 +100,9 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 
 	public void setPageNumber(Long pageNumber) {
 		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public Long getPageSize() {
@@ -88,16 +111,42 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
-	public String getRRKeyWord() {
-		return this.rRKeyWord;
+	public String getSearchMode() {
+		return this.searchMode;
 	}
 
-	public void setRRKeyWord(String rRKeyWord) {
-		this.rRKeyWord = rRKeyWord;
-		putQueryParameter("RRKeyWord", rRKeyWord);
+	public void setSearchMode(String searchMode) {
+		this.searchMode = searchMode;
+		if(searchMode != null){
+			putQueryParameter("SearchMode", searchMode);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getKeyWord() {
+		return this.keyWord;
+	}
+
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+		if(keyWord != null){
+			putQueryParameter("KeyWord", keyWord);
+		}
 	}
 
 	public String getTypeKeyWord() {
@@ -106,16 +155,31 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 
 	public void setTypeKeyWord(String typeKeyWord) {
 		this.typeKeyWord = typeKeyWord;
-		putQueryParameter("TypeKeyWord", typeKeyWord);
+		if(typeKeyWord != null){
+			putQueryParameter("TypeKeyWord", typeKeyWord);
+		}
 	}
 
-	public String getValueKeyWord() {
-		return this.valueKeyWord;
+	public String getRRKeyWord() {
+		return this.rRKeyWord;
 	}
 
-	public void setValueKeyWord(String valueKeyWord) {
-		this.valueKeyWord = valueKeyWord;
-		putQueryParameter("ValueKeyWord", valueKeyWord);
+	public void setRRKeyWord(String rRKeyWord) {
+		this.rRKeyWord = rRKeyWord;
+		if(rRKeyWord != null){
+			putQueryParameter("RRKeyWord", rRKeyWord);
+		}
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		if(direction != null){
+			putQueryParameter("Direction", direction);
+		}
 	}
 
 	@Override

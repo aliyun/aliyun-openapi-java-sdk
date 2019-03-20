@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,27 +23,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSLBSubDomainsResponse> {
 	
 	public DescribeDNSSLBSubDomainsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains");
+		super("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "alidns");
 	}
-
-	private String lang;
 
 	private String userClientIp;
 
 	private String domainName;
 
-	private Long pageNumber;
-
 	private Long pageSize;
 
-	public String getLang() {
-		return this.lang;
-	}
+	private String lang;
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
+	private Long pageNumber;
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -50,7 +42,9 @@ public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSL
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getDomainName() {
@@ -59,16 +53,9 @@ public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSL
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
 	public Long getPageSize() {
@@ -77,7 +64,31 @@ public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSL
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

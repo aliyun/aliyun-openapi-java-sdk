@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,27 +23,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDnsProductInstancesResponse> {
 	
 	public DescribeDnsProductInstancesRequest() {
-		super("Alidns", "2015-01-09", "DescribeDnsProductInstances");
+		super("Alidns", "2015-01-09", "DescribeDnsProductInstances", "alidns");
 	}
-
-	private String lang;
 
 	private String userClientIp;
 
-	private Long pageNumber;
-
 	private Long pageSize;
+
+	private String lang;
 
 	private String versionCode;
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
+	private Long pageNumber;
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -50,16 +42,9 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		putQueryParameter("PageNumber", pageNumber);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public Long getPageSize() {
@@ -68,7 +53,20 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
-		putQueryParameter("PageSize", pageSize);
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getVersionCode() {
@@ -77,7 +75,20 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 
 	public void setVersionCode(String versionCode) {
 		this.versionCode = versionCode;
-		putQueryParameter("VersionCode", versionCode);
+		if(versionCode != null){
+			putQueryParameter("VersionCode", versionCode);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	@Override

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,25 +23,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusResponse> {
 	
 	public SetDNSSLBStatusRequest() {
-		super("Alidns", "2015-01-09", "SetDNSSLBStatus");
+		super("Alidns", "2015-01-09", "SetDNSSLBStatus", "alidns");
 	}
-
-	private String lang;
 
 	private String userClientIp;
 
 	private String subDomain;
 
+	private String lang;
+
 	private Boolean open;
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -48,7 +40,9 @@ public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusRespons
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getSubDomain() {
@@ -57,7 +51,20 @@ public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusRespons
 
 	public void setSubDomain(String subDomain) {
 		this.subDomain = subDomain;
-		putQueryParameter("SubDomain", subDomain);
+		if(subDomain != null){
+			putQueryParameter("SubDomain", subDomain);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public Boolean getOpen() {
@@ -66,7 +73,9 @@ public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusRespons
 
 	public void setOpen(Boolean open) {
 		this.open = open;
-		putQueryParameter("Open", open);
+		if(open != null){
+			putQueryParameter("Open", open.toString());
+		}
 	}
 
 	@Override

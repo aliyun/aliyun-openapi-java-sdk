@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.transform.v20150109;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class DescribeDNSSLBSubDomainsResponseUnmarshaller {
 			slbSubDomain.setSubDomain(context.stringValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].SubDomain"));
 			slbSubDomain.setRecordCount(context.longValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].RecordCount"));
 			slbSubDomain.setOpen(context.booleanValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].Open"));
+			slbSubDomain.setType(context.stringValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].Type"));
 
 			slbSubDomains.add(slbSubDomain);
 		}

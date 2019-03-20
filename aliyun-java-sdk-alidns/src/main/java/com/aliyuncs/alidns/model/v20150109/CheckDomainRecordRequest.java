@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,28 +23,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckDomainRecordRequest extends RpcAcsRequest<CheckDomainRecordResponse> {
 	
 	public CheckDomainRecordRequest() {
-		super("Alidns", "2015-01-09", "CheckDomainRecord");
+		super("Alidns", "2015-01-09", "CheckDomainRecord", "alidns");
 	}
 
-	private String lang;
+	private String rR;
 
 	private String userClientIp;
 
 	private String domainName;
 
-	private String rR;
+	private String lang;
 
 	private String type;
 
 	private String value;
 
-	public String getLang() {
-		return this.lang;
+	public String getRR() {
+		return this.rR;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setRR(String rR) {
+		this.rR = rR;
+		if(rR != null){
+			putQueryParameter("RR", rR);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -52,7 +55,9 @@ public class CheckDomainRecordRequest extends RpcAcsRequest<CheckDomainRecordRes
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getDomainName() {
@@ -61,16 +66,20 @@ public class CheckDomainRecordRequest extends RpcAcsRequest<CheckDomainRecordRes
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getRR() {
-		return this.rR;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setRR(String rR) {
-		this.rR = rR;
-		putQueryParameter("RR", rR);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getType() {
@@ -79,7 +88,9 @@ public class CheckDomainRecordRequest extends RpcAcsRequest<CheckDomainRecordRes
 
 	public void setType(String type) {
 		this.type = type;
-		putQueryParameter("Type", type);
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	public String getValue() {
@@ -88,7 +99,9 @@ public class CheckDomainRecordRequest extends RpcAcsRequest<CheckDomainRecordRes
 
 	public void setValue(String value) {
 		this.value = value;
-		putQueryParameter("Value", value);
+		if(value != null){
+			putQueryParameter("Value", value);
+		}
 	}
 
 	@Override

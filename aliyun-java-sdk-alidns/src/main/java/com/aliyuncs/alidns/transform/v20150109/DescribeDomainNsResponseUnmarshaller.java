@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.transform.v20150109;
 
 import java.util.ArrayList;
@@ -33,6 +34,12 @@ public class DescribeDomainNsResponseUnmarshaller {
 			dnsServers.add(context.stringValue("DescribeDomainNsResponse.DnsServers["+ i +"]"));
 		}
 		describeDomainNsResponse.setDnsServers(dnsServers);
+
+		List<String> expectDnsServers = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeDomainNsResponse.ExpectDnsServers.Length"); i++) {
+			expectDnsServers.add(context.stringValue("DescribeDomainNsResponse.ExpectDnsServers["+ i +"]"));
+		}
+		describeDomainNsResponse.setExpectDnsServers(expectDnsServers);
 	 
 	 	return describeDomainNsResponse;
 	}

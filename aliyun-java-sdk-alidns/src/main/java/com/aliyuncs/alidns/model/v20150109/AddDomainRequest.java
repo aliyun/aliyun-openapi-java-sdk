@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,33 +23,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddDomainRequest extends RpcAcsRequest<AddDomainResponse> {
 	
 	public AddDomainRequest() {
-		super("Alidns", "2015-01-09", "AddDomain");
+		super("Alidns", "2015-01-09", "AddDomain", "alidns");
 	}
-
-	private String lang;
-
-	private String userClientIp;
-
-	private String domainName;
 
 	private String groupId;
 
-	public String getLang() {
-		return this.lang;
+	private String domainName;
+
+	private String lang;
+
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getDomainName() {
@@ -57,16 +49,20 @@ public class AddDomainRequest extends RpcAcsRequest<AddDomainResponse> {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		putQueryParameter("GroupId", groupId);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	@Override

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,23 +23,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainInfoRequest extends RpcAcsRequest<DescribeDomainInfoResponse> {
 	
 	public DescribeDomainInfoRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainInfo");
+		super("Alidns", "2015-01-09", "DescribeDomainInfo", "alidns");
 	}
-
-	private String lang;
 
 	private String userClientIp;
 
 	private String domainName;
 
-	public String getLang() {
-		return this.lang;
-	}
+	private String lang;
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
-	}
+	private Boolean needDetailAttributes;
 
 	public String getUserClientIp() {
 		return this.userClientIp;
@@ -46,7 +40,9 @@ public class DescribeDomainInfoRequest extends RpcAcsRequest<DescribeDomainInfoR
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getDomainName() {
@@ -55,7 +51,31 @@ public class DescribeDomainInfoRequest extends RpcAcsRequest<DescribeDomainInfoR
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Boolean getNeedDetailAttributes() {
+		return this.needDetailAttributes;
+	}
+
+	public void setNeedDetailAttributes(Boolean needDetailAttributes) {
+		this.needDetailAttributes = needDetailAttributes;
+		if(needDetailAttributes != null){
+			putQueryParameter("NeedDetailAttributes", needDetailAttributes.toString());
+		}
 	}
 
 	@Override

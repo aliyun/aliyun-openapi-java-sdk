@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import java.util.List;
@@ -129,6 +125,20 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		private Long monitorTaskCount;
 
+		private Boolean regionLines;
+
+		private Boolean gslb;
+
+		private Boolean inClean;
+
+		private Boolean inBlackHole;
+
+		private Long bindDomainCount;
+
+		private Long bindDomainUsedCount;
+
+		private String dnsSecurity;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -185,10 +195,26 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 			this.endTimestamp = endTimestamp;
 		}
 
+		public String getBizDomain() {
+			return this.domain;
+		}
+
+		public void setBizDomain(String domain) {
+			this.domain = domain;
+		}
+
+		/**
+		 * @deprecated use getBizDomain instead of this.
+		 */
+		@Deprecated
 		public String getDomain() {
 			return this.domain;
 		}
 
+		/**
+		 * @deprecated use setBizDomain instead of this.
+		 */
+		@Deprecated
 		public void setDomain(String domain) {
 			this.domain = domain;
 		}
@@ -319,6 +345,62 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		public void setMonitorTaskCount(Long monitorTaskCount) {
 			this.monitorTaskCount = monitorTaskCount;
+		}
+
+		public Boolean getRegionLines() {
+			return this.regionLines;
+		}
+
+		public void setRegionLines(Boolean regionLines) {
+			this.regionLines = regionLines;
+		}
+
+		public Boolean getGslb() {
+			return this.gslb;
+		}
+
+		public void setGslb(Boolean gslb) {
+			this.gslb = gslb;
+		}
+
+		public Boolean getInClean() {
+			return this.inClean;
+		}
+
+		public void setInClean(Boolean inClean) {
+			this.inClean = inClean;
+		}
+
+		public Boolean getInBlackHole() {
+			return this.inBlackHole;
+		}
+
+		public void setInBlackHole(Boolean inBlackHole) {
+			this.inBlackHole = inBlackHole;
+		}
+
+		public Long getBindDomainCount() {
+			return this.bindDomainCount;
+		}
+
+		public void setBindDomainCount(Long bindDomainCount) {
+			this.bindDomainCount = bindDomainCount;
+		}
+
+		public Long getBindDomainUsedCount() {
+			return this.bindDomainUsedCount;
+		}
+
+		public void setBindDomainUsedCount(Long bindDomainUsedCount) {
+			this.bindDomainUsedCount = bindDomainUsedCount;
+		}
+
+		public String getDnsSecurity() {
+			return this.dnsSecurity;
+		}
+
+		public void setDnsSecurity(String dnsSecurity) {
+			this.dnsSecurity = dnsSecurity;
 		}
 	}
 

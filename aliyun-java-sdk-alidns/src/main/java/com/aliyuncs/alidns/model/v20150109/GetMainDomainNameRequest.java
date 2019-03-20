@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,22 +23,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetMainDomainNameRequest extends RpcAcsRequest<GetMainDomainNameResponse> {
 	
 	public GetMainDomainNameRequest() {
-		super("Alidns", "2015-01-09", "GetMainDomainName");
+		super("Alidns", "2015-01-09", "GetMainDomainName", "alidns");
 	}
-
-	private String lang;
-
-	private String userClientIp;
 
 	private String inputString;
 
-	public String getLang() {
-		return this.lang;
+	private String userClientIp;
+
+	private String lang;
+
+	public String getInputString() {
+		return this.inputString;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setInputString(String inputString) {
+		this.inputString = inputString;
+		if(inputString != null){
+			putQueryParameter("InputString", inputString);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -46,16 +49,20 @@ public class GetMainDomainNameRequest extends RpcAcsRequest<GetMainDomainNameRes
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
-	public String getInputString() {
-		return this.inputString;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setInputString(String inputString) {
-		this.inputString = inputString;
-		putQueryParameter("InputString", inputString);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	@Override

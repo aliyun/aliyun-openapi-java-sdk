@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,24 +23,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class ChangeDomainGroupRequest extends RpcAcsRequest<ChangeDomainGroupResponse> {
 	
 	public ChangeDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "ChangeDomainGroup");
+		super("Alidns", "2015-01-09", "ChangeDomainGroup", "alidns");
 	}
 
-	private String lang;
+	private String groupId;
 
 	private String userClientIp;
 
 	private String domainName;
 
-	private String groupId;
+	private String lang;
 
-	public String getLang() {
-		return this.lang;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -48,7 +51,9 @@ public class ChangeDomainGroupRequest extends RpcAcsRequest<ChangeDomainGroupRes
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
 	public String getDomainName() {
@@ -57,16 +62,20 @@ public class ChangeDomainGroupRequest extends RpcAcsRequest<ChangeDomainGroupRes
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-		putQueryParameter("DomainName", domainName);
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		putQueryParameter("GroupId", groupId);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	@Override

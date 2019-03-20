@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,24 +23,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDomainRecordStatusRequest extends RpcAcsRequest<SetDomainRecordStatusResponse> {
 	
 	public SetDomainRecordStatusRequest() {
-		super("Alidns", "2015-01-09", "SetDomainRecordStatus");
+		super("Alidns", "2015-01-09", "SetDomainRecordStatus", "alidns");
 	}
-
-	private String lang;
-
-	private String userClientIp;
 
 	private String recordId;
 
+	private String userClientIp;
+
+	private String lang;
+
 	private String status;
 
-	public String getLang() {
-		return this.lang;
+	public String getRecordId() {
+		return this.recordId;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setRecordId(String recordId) {
+		this.recordId = recordId;
+		if(recordId != null){
+			putQueryParameter("RecordId", recordId);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -48,16 +51,20 @@ public class SetDomainRecordStatusRequest extends RpcAcsRequest<SetDomainRecordS
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
-	public String getRecordId() {
-		return this.recordId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setRecordId(String recordId) {
-		this.recordId = recordId;
-		putQueryParameter("RecordId", recordId);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getStatus() {
@@ -66,7 +73,9 @@ public class SetDomainRecordStatusRequest extends RpcAcsRequest<SetDomainRecordS
 
 	public void setStatus(String status) {
 		this.status = status;
-		putQueryParameter("Status", status);
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	@Override

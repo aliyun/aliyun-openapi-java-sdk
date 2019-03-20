@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,24 +23,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateDomainGroupRequest extends RpcAcsRequest<UpdateDomainGroupResponse> {
 	
 	public UpdateDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "UpdateDomainGroup");
+		super("Alidns", "2015-01-09", "UpdateDomainGroup", "alidns");
 	}
-
-	private String lang;
-
-	private String userClientIp;
 
 	private String groupId;
 
+	private String userClientIp;
+
+	private String lang;
+
 	private String groupName;
 
-	public String getLang() {
-		return this.lang;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		putQueryParameter("Lang", lang);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getUserClientIp() {
@@ -48,16 +51,20 @@ public class UpdateDomainGroupRequest extends RpcAcsRequest<UpdateDomainGroupRes
 
 	public void setUserClientIp(String userClientIp) {
 		this.userClientIp = userClientIp;
-		putQueryParameter("UserClientIp", userClientIp);
+		if(userClientIp != null){
+			putQueryParameter("UserClientIp", userClientIp);
+		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		putQueryParameter("GroupId", groupId);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
 	}
 
 	public String getGroupName() {
@@ -66,7 +73,9 @@ public class UpdateDomainGroupRequest extends RpcAcsRequest<UpdateDomainGroupRes
 
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
-		putQueryParameter("GroupName", groupName);
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
 	}
 
 	@Override
