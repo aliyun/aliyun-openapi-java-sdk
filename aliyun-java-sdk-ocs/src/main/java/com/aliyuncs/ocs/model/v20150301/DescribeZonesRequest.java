@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorValuesResponse> {
+public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 	
-	public DescribeMonitorValuesRequest() {
-		super("Ocs", "2015-03-01", "DescribeMonitorValues", "ocs");
+	public DescribeZonesRequest() {
+		super("Ocs", "2015-03-01", "DescribeZones", "ocs");
 	}
 
 	private Long resourceOwnerId;
@@ -32,13 +32,11 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 
 	private String resourceOwnerAccount;
 
-	private String instanceIds;
-
 	private String ownerAccount;
 
-	private Long ownerId;
+	private String zoneId;
 
-	private String monitorKeys;
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -92,17 +90,6 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -111,6 +98,17 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -125,20 +123,9 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		}
 	}
 
-	public String getMonitorKeys() {
-		return this.monitorKeys;
-	}
-
-	public void setMonitorKeys(String monitorKeys) {
-		this.monitorKeys = monitorKeys;
-		if(monitorKeys != null){
-			putQueryParameter("MonitorKeys", monitorKeys);
-		}
-	}
-
 	@Override
-	public Class<DescribeMonitorValuesResponse> getResponseClass() {
-		return DescribeMonitorValuesResponse.class;
+	public Class<DescribeZonesResponse> getResponseClass() {
+		return DescribeZonesResponse.class;
 	}
 
 }

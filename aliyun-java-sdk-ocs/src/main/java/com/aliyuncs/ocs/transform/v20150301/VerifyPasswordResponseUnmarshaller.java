@@ -11,18 +11,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ocs.transform.v20141001;
 
-import com.aliyuncs.ocs.model.v20141001.ReplaceAuthenticIPResponse;
+package com.aliyuncs.ocs.transform.v20150301;
+
+import com.aliyuncs.ocs.model.v20150301.VerifyPasswordResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ReplaceAuthenticIPResponseUnmarshaller {
+public class VerifyPasswordResponseUnmarshaller {
 
-	public static ReplaceAuthenticIPResponse unmarshall(ReplaceAuthenticIPResponse replaceAuthenticIPResponse, UnmarshallerContext context) {
+	public static VerifyPasswordResponse unmarshall(VerifyPasswordResponse verifyPasswordResponse, UnmarshallerContext context) {
 		
-		replaceAuthenticIPResponse.setRequestId(context.stringValue("ReplaceAuthenticIPResponse.RequestId"));
+		verifyPasswordResponse.setRequestId(context.stringValue("VerifyPasswordResponse.RequestId"));
+		verifyPasswordResponse.setResult(context.booleanValue("VerifyPasswordResponse.Result"));
 	 
-	 	return replaceAuthenticIPResponse;
+	 	return verifyPasswordResponse;
 	}
 }

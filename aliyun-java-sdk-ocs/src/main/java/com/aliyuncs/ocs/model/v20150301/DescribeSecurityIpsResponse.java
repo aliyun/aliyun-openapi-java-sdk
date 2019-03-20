@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ocs.model.v20150301;
 
 import com.aliyuncs.AcsResponse;
@@ -25,7 +26,7 @@ public class DescribeSecurityIpsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private DescribeOcsSecurityIpsResponseDTO describeOcsSecurityIpsResponseDTO;
+	private String securityIps;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,25 +36,12 @@ public class DescribeSecurityIpsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public DescribeOcsSecurityIpsResponseDTO getDescribeOcsSecurityIpsResponseDTO() {
-		return this.describeOcsSecurityIpsResponseDTO;
+	public String getSecurityIps() {
+		return this.securityIps;
 	}
 
-	public void setDescribeOcsSecurityIpsResponseDTO(DescribeOcsSecurityIpsResponseDTO describeOcsSecurityIpsResponseDTO) {
-		this.describeOcsSecurityIpsResponseDTO = describeOcsSecurityIpsResponseDTO;
-	}
-
-	public static class DescribeOcsSecurityIpsResponseDTO {
-
-		private String securityIps;
-
-		public String getSecurityIps() {
-			return this.securityIps;
-		}
-
-		public void setSecurityIps(String securityIps) {
-			this.securityIps = securityIps;
-		}
+	public void setSecurityIps(String securityIps) {
+		this.securityIps = securityIps;
 	}
 
 	@Override

@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ocs.model.v20150301;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,26 +23,71 @@ import com.aliyuncs.RpcAcsRequest;
 public class ActivateInstanceRequest extends RpcAcsRequest<ActivateInstanceResponse> {
 	
 	public ActivateInstanceRequest() {
-		super("Ocs", "2015-03-01", "ActivateInstance");
+		super("Ocs", "2015-03-01", "ActivateInstance", "ocs");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
+	private String instanceId;
+
+	private String securityToken;
+
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
 
-	private String ocsInstanceId;
+	private Long ownerId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -50,16 +96,9 @@ public class ActivateInstanceRequest extends RpcAcsRequest<ActivateInstanceRespo
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -68,16 +107,20 @@ public class ActivateInstanceRequest extends RpcAcsRequest<ActivateInstanceRespo
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
-	public String getOcsInstanceId() {
-		return this.ocsInstanceId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setOcsInstanceId(String ocsInstanceId) {
-		this.ocsInstanceId = ocsInstanceId;
-		putQueryParameter("OcsInstanceId", ocsInstanceId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

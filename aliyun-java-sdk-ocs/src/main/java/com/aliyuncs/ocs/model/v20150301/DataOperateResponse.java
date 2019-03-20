@@ -15,16 +15,18 @@
 package com.aliyuncs.ocs.model.v20150301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ocs.transform.v20150301.AddAuthenticIPResponseUnmarshaller;
+import com.aliyuncs.ocs.transform.v20150301.DataOperateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddAuthenticIPResponse extends AcsResponse {
+public class DataOperateResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String commandResult;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class AddAuthenticIPResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCommandResult() {
+		return this.commandResult;
+	}
+
+	public void setCommandResult(String commandResult) {
+		this.commandResult = commandResult;
+	}
+
 	@Override
-	public AddAuthenticIPResponse getInstance(UnmarshallerContext context) {
-		return	AddAuthenticIPResponseUnmarshaller.unmarshall(this, context);
+	public DataOperateResponse getInstance(UnmarshallerContext context) {
+		return	DataOperateResponseUnmarshaller.unmarshall(this, context);
 	}
 }

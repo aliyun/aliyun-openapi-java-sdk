@@ -11,10 +11,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ocs.transform.v20150301;
 
 import com.aliyuncs.ocs.model.v20150301.DescribeSecurityIpsResponse;
-import com.aliyuncs.ocs.model.v20150301.DescribeSecurityIpsResponse.DescribeOcsSecurityIpsResponseDTO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +23,7 @@ public class DescribeSecurityIpsResponseUnmarshaller {
 	public static DescribeSecurityIpsResponse unmarshall(DescribeSecurityIpsResponse describeSecurityIpsResponse, UnmarshallerContext context) {
 		
 		describeSecurityIpsResponse.setRequestId(context.stringValue("DescribeSecurityIpsResponse.RequestId"));
-
-		DescribeOcsSecurityIpsResponseDTO  describeOcsSecurityIpsResponseDTO = new DescribeOcsSecurityIpsResponseDTO();
-		describeOcsSecurityIpsResponseDTO.setSecurityIps(context.stringValue("DescribeSecurityIpsResponse.DescribeOcsSecurityIpsResponseDTO.SecurityIps"));
-		describeSecurityIpsResponse.setDescribeOcsSecurityIpsResponseDTO(describeOcsSecurityIpsResponseDTO);
+		describeSecurityIpsResponse.setSecurityIps(context.stringValue("DescribeSecurityIpsResponse.SecurityIps"));
 	 
 	 	return describeSecurityIpsResponse;
 	}

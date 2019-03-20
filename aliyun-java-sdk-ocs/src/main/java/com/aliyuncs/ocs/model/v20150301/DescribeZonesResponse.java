@@ -16,18 +16,18 @@ package com.aliyuncs.ocs.model.v20150301;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ocs.transform.v20150301.DescribeMonitorItemsResponseUnmarshaller;
+import com.aliyuncs.ocs.transform.v20150301.DescribeZonesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeMonitorItemsResponse extends AcsResponse {
+public class DescribeZonesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<OcsMonitorItem> monitorItems;
+	private List<OcsZone> zones;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,39 +37,49 @@ public class DescribeMonitorItemsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<OcsMonitorItem> getMonitorItems() {
-		return this.monitorItems;
+	public List<OcsZone> getZones() {
+		return this.zones;
 	}
 
-	public void setMonitorItems(List<OcsMonitorItem> monitorItems) {
-		this.monitorItems = monitorItems;
+	public void setZones(List<OcsZone> zones) {
+		this.zones = zones;
 	}
 
-	public static class OcsMonitorItem {
+	public static class OcsZone {
 
-		private String monitorKey;
+		private String zoneId;
 
-		private String unit;
+		private String name;
 
-		public String getMonitorKey() {
-			return this.monitorKey;
+		private String description;
+
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setMonitorKey(String monitorKey) {
-			this.monitorKey = monitorKey;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
-		public String getUnit() {
-			return this.unit;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setUnit(String unit) {
-			this.unit = unit;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 
 	@Override
-	public DescribeMonitorItemsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeMonitorItemsResponseUnmarshaller.unmarshall(this, context);
+	public DescribeZonesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeZonesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

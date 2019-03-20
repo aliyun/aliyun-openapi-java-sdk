@@ -11,17 +11,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ocs.model.v20141001;
+
+package com.aliyuncs.ocs.model.v20150301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ocs.transform.v20141001.RemoveAuthenticIPResponseUnmarshaller;
+import com.aliyuncs.ocs.transform.v20150301.ModifyHotKeySwitchModeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RemoveAuthenticIPResponse extends AcsResponse {
+public class ModifyHotKeySwitchModeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,7 +35,7 @@ public class RemoveAuthenticIPResponse extends AcsResponse {
 	}
 
 	@Override
-	public RemoveAuthenticIPResponse getInstance(UnmarshallerContext context) {
-		return	RemoveAuthenticIPResponseUnmarshaller.unmarshall(this, context);
+	public ModifyHotKeySwitchModeResponse getInstance(UnmarshallerContext context) {
+		return	ModifyHotKeySwitchModeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

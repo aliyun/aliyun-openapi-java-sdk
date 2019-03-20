@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.ocs.model.v20150301;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -27,40 +23,66 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	
 	public DescribeInstancesRequest() {
-		super("Ocs", "2015-03-01", "DescribeInstances");
+		super("Ocs", "2015-03-01", "DescribeInstances", "ocs");
 	}
-
-	private Long ownerId;
-
-	private String resourceOwnerAccount;
 
 	private Long resourceOwnerId;
 
+	private String instanceStatus;
+
+	private String privateIpAddresses;
+
+	private String resourceOwnerAccount;
+
 	private String ownerAccount;
-
-	private String ocsInstanceId;
-
-	private String ocsInstanceStatus;
-
-	private Integer pageNo;
-
-	private Integer pageSize;
 
 	private String networkType;
 
-	private String vpcId;
+	private Long ownerId;
+
+	private Integer pageNumber;
 
 	private String vSwitchId;
 
-	private String privateIps;
+	private String securityToken;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	private String instanceIds;
+
+	private String vpcId;
+
+	private Integer pageSize;
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		putQueryParameter("OwnerId", String.valueOf(ownerId));
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceStatus() {
+		return this.instanceStatus;
+	}
+
+	public void setInstanceStatus(String instanceStatus) {
+		this.instanceStatus = instanceStatus;
+		if(instanceStatus != null){
+			putQueryParameter("InstanceStatus", instanceStatus);
+		}
+	}
+
+	public String getPrivateIpAddresses() {
+		return this.privateIpAddresses;
+	}
+
+	public void setPrivateIpAddresses(String privateIpAddresses) {
+		this.privateIpAddresses = privateIpAddresses;
+		if(privateIpAddresses != null){
+			putQueryParameter("PrivateIpAddresses", privateIpAddresses);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -69,16 +91,9 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	public void setResourceOwnerAccount(String resourceOwnerAccount) {
 		this.resourceOwnerAccount = resourceOwnerAccount;
-		putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		putQueryParameter("ResourceOwnerId", String.valueOf(resourceOwnerId));
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -87,43 +102,9 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
-	}
-
-	public String getOcsInstanceId() {
-		return this.ocsInstanceId;
-	}
-
-	public void setOcsInstanceId(String ocsInstanceId) {
-		this.ocsInstanceId = ocsInstanceId;
-		putQueryParameter("OcsInstanceId", ocsInstanceId);
-	}
-
-	public String getOcsInstanceStatus() {
-		return this.ocsInstanceStatus;
-	}
-
-	public void setOcsInstanceStatus(String ocsInstanceStatus) {
-		this.ocsInstanceStatus = ocsInstanceStatus;
-		putQueryParameter("OcsInstanceStatus", ocsInstanceStatus);
-	}
-
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		putQueryParameter("PageNo", String.valueOf(pageNo));
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		putQueryParameter("PageSize", String.valueOf(pageSize));
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
 	}
 
 	public String getNetworkType() {
@@ -132,16 +113,31 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	public void setNetworkType(String networkType) {
 		this.networkType = networkType;
-		putQueryParameter("NetworkType", networkType);
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
+		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		putQueryParameter("VpcId", vpcId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getVSwitchId() {
@@ -150,16 +146,72 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	public void setVSwitchId(String vSwitchId) {
 		this.vSwitchId = vSwitchId;
-		putQueryParameter("VSwitchId", vSwitchId);
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
 	}
 
-	public String getPrivateIps() {
-		return this.privateIps;
+	public String getBizSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setPrivateIps(String privateIps) {
-		this.privateIps = privateIps;
-		putQueryParameter("PrivateIps", privateIps);
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	@Override

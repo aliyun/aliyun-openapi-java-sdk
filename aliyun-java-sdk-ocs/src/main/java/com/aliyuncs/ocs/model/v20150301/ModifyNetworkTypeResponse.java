@@ -11,17 +11,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ocs.model.v20141001;
+
+package com.aliyuncs.ocs.model.v20150301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ocs.transform.v20141001.FlushInstanceResponseUnmarshaller;
+import com.aliyuncs.ocs.transform.v20150301.ModifyNetworkTypeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class FlushInstanceResponse extends AcsResponse {
+public class ModifyNetworkTypeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,7 +35,7 @@ public class FlushInstanceResponse extends AcsResponse {
 	}
 
 	@Override
-	public FlushInstanceResponse getInstance(UnmarshallerContext context) {
-		return	FlushInstanceResponseUnmarshaller.unmarshall(this, context);
+	public ModifyNetworkTypeResponse getInstance(UnmarshallerContext context) {
+		return	ModifyNetworkTypeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

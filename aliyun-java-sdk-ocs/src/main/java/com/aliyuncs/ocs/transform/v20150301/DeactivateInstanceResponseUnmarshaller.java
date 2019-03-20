@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ocs.transform.v20150301;
 
 import com.aliyuncs.ocs.model.v20150301.DeactivateInstanceResponse;

@@ -11,18 +11,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ocs.transform.v20141001;
 
-import com.aliyuncs.ocs.model.v20141001.DeactivateInstanceResponse;
+package com.aliyuncs.ocs.transform.v20150301;
+
+import com.aliyuncs.ocs.model.v20150301.ModifyHotKeySwitchModeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeactivateInstanceResponseUnmarshaller {
+public class ModifyHotKeySwitchModeResponseUnmarshaller {
 
-	public static DeactivateInstanceResponse unmarshall(DeactivateInstanceResponse deactivateInstanceResponse, UnmarshallerContext context) {
+	public static ModifyHotKeySwitchModeResponse unmarshall(ModifyHotKeySwitchModeResponse modifyHotKeySwitchModeResponse, UnmarshallerContext context) {
 		
-		deactivateInstanceResponse.setRequestId(context.stringValue("DeactivateInstanceResponse.RequestId"));
+		modifyHotKeySwitchModeResponse.setRequestId(context.stringValue("ModifyHotKeySwitchModeResponse.RequestId"));
 	 
-	 	return deactivateInstanceResponse;
+	 	return modifyHotKeySwitchModeResponse;
 	}
 }

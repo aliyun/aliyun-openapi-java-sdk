@@ -11,19 +11,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ocs.model.v20141001;
+
+package com.aliyuncs.ocs.model.v20150301;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ocs.transform.v20141001.ModifySecurityIpsResponseUnmarshaller;
+import com.aliyuncs.ocs.transform.v20150301.VerifyPasswordResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifySecurityIpsResponse extends AcsResponse {
+public class VerifyPasswordResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Boolean result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -33,8 +36,16 @@ public class ModifySecurityIpsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getResult() {
+		return this.result;
+	}
+
+	public void setResult(Boolean result) {
+		this.result = result;
+	}
+
 	@Override
-	public ModifySecurityIpsResponse getInstance(UnmarshallerContext context) {
-		return	ModifySecurityIpsResponseUnmarshaller.unmarshall(this, context);
+	public VerifyPasswordResponse getInstance(UnmarshallerContext context) {
+		return	VerifyPasswordResponseUnmarshaller.unmarshall(this, context);
 	}
 }

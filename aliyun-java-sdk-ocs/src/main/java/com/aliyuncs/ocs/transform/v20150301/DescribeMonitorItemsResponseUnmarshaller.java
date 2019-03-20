@@ -11,13 +11,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ocs.transform.v20150301;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ocs.model.v20150301.DescribeMonitorItemsResponse;
-import com.aliyuncs.ocs.model.v20150301.DescribeMonitorItemsResponse.GetOcsMonitorItemsResponseDTO;
-import com.aliyuncs.ocs.model.v20150301.DescribeMonitorItemsResponse.GetOcsMonitorItemsResponseDTO.MonitorItem;
+import com.aliyuncs.ocs.model.v20150301.DescribeMonitorItemsResponse.OcsMonitorItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,18 +28,15 @@ public class DescribeMonitorItemsResponseUnmarshaller {
 		
 		describeMonitorItemsResponse.setRequestId(context.stringValue("DescribeMonitorItemsResponse.RequestId"));
 
-		GetOcsMonitorItemsResponseDTO  getOcsMonitorItemsResponseDTO = new GetOcsMonitorItemsResponseDTO();
+		List<OcsMonitorItem> monitorItems = new ArrayList<OcsMonitorItem>();
+		for (int i = 0; i < context.lengthValue("DescribeMonitorItemsResponse.MonitorItems.Length"); i++) {
+			OcsMonitorItem ocsMonitorItem = new OcsMonitorItem();
+			ocsMonitorItem.setMonitorKey(context.stringValue("DescribeMonitorItemsResponse.MonitorItems["+ i +"].MonitorKey"));
+			ocsMonitorItem.setUnit(context.stringValue("DescribeMonitorItemsResponse.MonitorItems["+ i +"].Unit"));
 
-		List<MonitorItem> monitorItems = new ArrayList<MonitorItem>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitorItemsResponse.GetOcsMonitorItemsResponseDTO.MonitorItems.Length"); i++) {
-			MonitorItem  monitorItem = new MonitorItem();
-			monitorItem.setMonitorKey(context.stringValue("DescribeMonitorItemsResponse.GetOcsMonitorItemsResponseDTO.MonitorItems["+ i +"].MonitorKey"));
-			monitorItem.setUnit(context.stringValue("DescribeMonitorItemsResponse.GetOcsMonitorItemsResponseDTO.MonitorItems["+ i +"].Unit"));
-
-			monitorItems.add(monitorItem);
+			monitorItems.add(ocsMonitorItem);
 		}
-		getOcsMonitorItemsResponseDTO.setMonitorItems(monitorItems);
-		describeMonitorItemsResponse.setGetOcsMonitorItemsResponseDTO(getOcsMonitorItemsResponseDTO);
+		describeMonitorItemsResponse.setMonitorItems(monitorItems);
 	 
 	 	return describeMonitorItemsResponse;
 	}

@@ -20,25 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorValuesResponse> {
+public class DataOperateRequest extends RpcAcsRequest<DataOperateResponse> {
 	
-	public DescribeMonitorValuesRequest() {
-		super("Ocs", "2015-03-01", "DescribeMonitorValues", "ocs");
+	public DataOperateRequest() {
+		super("Ocs", "2015-03-01", "DataOperate", "ocs");
 	}
 
 	private Long resourceOwnerId;
+
+	private String instanceId;
 
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
-	private String instanceIds;
-
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String monitorKeys;
+	private String command;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +48,17 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -92,17 +103,6 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -125,20 +125,20 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		}
 	}
 
-	public String getMonitorKeys() {
-		return this.monitorKeys;
+	public String getCommand() {
+		return this.command;
 	}
 
-	public void setMonitorKeys(String monitorKeys) {
-		this.monitorKeys = monitorKeys;
-		if(monitorKeys != null){
-			putQueryParameter("MonitorKeys", monitorKeys);
+	public void setCommand(String command) {
+		this.command = command;
+		if(command != null){
+			putQueryParameter("Command", command);
 		}
 	}
 
 	@Override
-	public Class<DescribeMonitorValuesResponse> getResponseClass() {
-		return DescribeMonitorValuesResponse.class;
+	public Class<DataOperateResponse> getResponseClass() {
+		return DataOperateResponse.class;
 	}
 
 }

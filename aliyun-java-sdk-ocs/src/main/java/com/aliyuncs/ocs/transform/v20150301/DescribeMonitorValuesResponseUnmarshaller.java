@@ -1,29 +1,25 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.ocs.transform.v20150301;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.aliyuncs.ocs.model.v20150301.DescribeMonitorValuesResponse;
-import com.aliyuncs.ocs.model.v20150301.DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse;
-import com.aliyuncs.ocs.model.v20150301.DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.OcsMonitorDTO;
-import com.aliyuncs.ocs.model.v20150301.DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.OcsMonitorDTO.OcsMonitorKeyDTO;
+import com.aliyuncs.ocs.model.v20150301.DescribeMonitorValuesResponse.OcsInstanceMonitor;
+import com.aliyuncs.ocs.model.v20150301.DescribeMonitorValuesResponse.OcsInstanceMonitor.OcsMonitorKey;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,31 +28,27 @@ public class DescribeMonitorValuesResponseUnmarshaller {
 	public static DescribeMonitorValuesResponse unmarshall(DescribeMonitorValuesResponse describeMonitorValuesResponse, UnmarshallerContext context) {
 		
 		describeMonitorValuesResponse.setRequestId(context.stringValue("DescribeMonitorValuesResponse.RequestId"));
+		describeMonitorValuesResponse.setDate(context.stringValue("DescribeMonitorValuesResponse.Date"));
 
-		GetOcsMonitorValuesResponse  getOcsMonitorValuesResponse = new GetOcsMonitorValuesResponse();
-		getOcsMonitorValuesResponse.setDate(context.stringValue("DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.Date"));
+		List<OcsInstanceMonitor> instanceIds = new ArrayList<OcsInstanceMonitor>();
+		for (int i = 0; i < context.lengthValue("DescribeMonitorValuesResponse.InstanceIds.Length"); i++) {
+			OcsInstanceMonitor ocsInstanceMonitor = new OcsInstanceMonitor();
+			ocsInstanceMonitor.setInstanceId(context.stringValue("DescribeMonitorValuesResponse.InstanceIds["+ i +"].InstanceId"));
 
-		List<OcsMonitorDTO> ocsInstanceIds = new ArrayList<OcsMonitorDTO>();
-		for (int i = 0; i < context.lengthValue("DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.OcsInstanceIds.Length"); i++) {
-			OcsMonitorDTO  ocsMonitorDTO = new OcsMonitorDTO();
-			ocsMonitorDTO.setOcsInstanceId(context.stringValue("DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.OcsInstanceIds["+ i +"].OcsInstanceId"));
+			List<OcsMonitorKey> monitorKeys = new ArrayList<OcsMonitorKey>();
+			for (int j = 0; j < context.lengthValue("DescribeMonitorValuesResponse.InstanceIds["+ i +"].MonitorKeys.Length"); j++) {
+				OcsMonitorKey ocsMonitorKey = new OcsMonitorKey();
+				ocsMonitorKey.setMonitorKey(context.stringValue("DescribeMonitorValuesResponse.InstanceIds["+ i +"].MonitorKeys["+ j +"].MonitorKey"));
+				ocsMonitorKey.setValue(context.stringValue("DescribeMonitorValuesResponse.InstanceIds["+ i +"].MonitorKeys["+ j +"].Value"));
+				ocsMonitorKey.setUnit(context.stringValue("DescribeMonitorValuesResponse.InstanceIds["+ i +"].MonitorKeys["+ j +"].Unit"));
 
-			List<OcsMonitorKeyDTO> monitorKeys = new ArrayList<OcsMonitorKeyDTO>();
-			for (int j = 0; j < context.lengthValue("DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.OcsInstanceIds["+ i +"].MonitorKeys.Length"); j++) {
-				OcsMonitorKeyDTO  ocsMonitorKeyDTO = new OcsMonitorKeyDTO();
-				ocsMonitorKeyDTO.setMonitorKey(context.stringValue("DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.OcsInstanceIds["+ i +"].MonitorKeys["+ j +"].MonitorKey"));
-				ocsMonitorKeyDTO.setValue(context.stringValue("DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.OcsInstanceIds["+ i +"].MonitorKeys["+ j +"].Value"));
-				ocsMonitorKeyDTO.setUnit(context.stringValue("DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.OcsInstanceIds["+ i +"].MonitorKeys["+ j +"].Unit"));
-				ocsMonitorKeyDTO.setDate(context.stringValue("DescribeMonitorValuesResponse.GetOcsMonitorValuesResponse.OcsInstanceIds["+ i +"].MonitorKeys["+ j +"].Date"));
-
-				monitorKeys.add(ocsMonitorKeyDTO);
+				monitorKeys.add(ocsMonitorKey);
 			}
-			ocsMonitorDTO.setMonitorKeys(monitorKeys);
+			ocsInstanceMonitor.setMonitorKeys(monitorKeys);
 
-			ocsInstanceIds.add(ocsMonitorDTO);
+			instanceIds.add(ocsInstanceMonitor);
 		}
-		getOcsMonitorValuesResponse.setOcsInstanceIds(ocsInstanceIds);
-		describeMonitorValuesResponse.setGetOcsMonitorValuesResponse(getOcsMonitorValuesResponse);
+		describeMonitorValuesResponse.setInstanceIds(instanceIds);
 	 
 	 	return describeMonitorValuesResponse;
 	}

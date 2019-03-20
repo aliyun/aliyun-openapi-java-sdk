@@ -20,25 +20,38 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorValuesResponse> {
+public class ModifyNetworkTypeRequest extends RpcAcsRequest<ModifyNetworkTypeResponse> {
 	
-	public DescribeMonitorValuesRequest() {
-		super("Ocs", "2015-03-01", "DescribeMonitorValues", "ocs");
+	public ModifyNetworkTypeRequest() {
+		super("Ocs", "2015-03-01", "ModifyNetworkType", "ocs");
 	}
 
+	private String vSwitchId;
+
 	private Long resourceOwnerId;
+
+	private String instanceId;
 
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
-	private String instanceIds;
-
 	private String ownerAccount;
+
+	private String vpcId;
 
 	private Long ownerId;
 
-	private String monitorKeys;
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +61,17 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -92,17 +116,6 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -111,6 +124,17 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -125,20 +149,9 @@ public class DescribeMonitorValuesRequest extends RpcAcsRequest<DescribeMonitorV
 		}
 	}
 
-	public String getMonitorKeys() {
-		return this.monitorKeys;
-	}
-
-	public void setMonitorKeys(String monitorKeys) {
-		this.monitorKeys = monitorKeys;
-		if(monitorKeys != null){
-			putQueryParameter("MonitorKeys", monitorKeys);
-		}
-	}
-
 	@Override
-	public Class<DescribeMonitorValuesResponse> getResponseClass() {
-		return DescribeMonitorValuesResponse.class;
+	public Class<ModifyNetworkTypeResponse> getResponseClass() {
+		return ModifyNetworkTypeResponse.class;
 	}
 
 }

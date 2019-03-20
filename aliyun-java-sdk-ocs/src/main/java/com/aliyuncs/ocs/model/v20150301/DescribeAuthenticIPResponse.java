@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ocs.model.v20150301;
 
 import com.aliyuncs.AcsResponse;
@@ -25,7 +26,7 @@ public class DescribeAuthenticIPResponse extends AcsResponse {
 
 	private String requestId;
 
-	private GetAuthenticIpResponse getAuthenticIpResponse;
+	private String authenticIPs;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,25 +36,12 @@ public class DescribeAuthenticIPResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public GetAuthenticIpResponse getGetAuthenticIpResponse() {
-		return this.getAuthenticIpResponse;
+	public String getAuthenticIPs() {
+		return this.authenticIPs;
 	}
 
-	public void setGetAuthenticIpResponse(GetAuthenticIpResponse getAuthenticIpResponse) {
-		this.getAuthenticIpResponse = getAuthenticIpResponse;
-	}
-
-	public static class GetAuthenticIpResponse {
-
-		private String authenticIPs;
-
-		public String getAuthenticIPs() {
-			return this.authenticIPs;
-		}
-
-		public void setAuthenticIPs(String authenticIPs) {
-			this.authenticIPs = authenticIPs;
-		}
+	public void setAuthenticIPs(String authenticIPs) {
+		this.authenticIPs = authenticIPs;
 	}
 
 	@Override

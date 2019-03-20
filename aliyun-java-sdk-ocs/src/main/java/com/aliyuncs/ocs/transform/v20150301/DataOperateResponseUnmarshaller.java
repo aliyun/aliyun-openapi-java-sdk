@@ -11,30 +11,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ocs.model.v20141001;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ocs.transform.v20141001.ActivateInstanceResponseUnmarshaller;
+package com.aliyuncs.ocs.transform.v20150301;
+
+import com.aliyuncs.ocs.model.v20150301.DataOperateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class ActivateInstanceResponse extends AcsResponse {
 
-	private String requestId;
+public class DataOperateResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public ActivateInstanceResponse getInstance(UnmarshallerContext context) {
-		return	ActivateInstanceResponseUnmarshaller.unmarshall(this, context);
+	public static DataOperateResponse unmarshall(DataOperateResponse dataOperateResponse, UnmarshallerContext context) {
+		
+		dataOperateResponse.setRequestId(context.stringValue("DataOperateResponse.RequestId"));
+		dataOperateResponse.setCommandResult(context.stringValue("DataOperateResponse.CommandResult"));
+	 
+	 	return dataOperateResponse;
 	}
 }

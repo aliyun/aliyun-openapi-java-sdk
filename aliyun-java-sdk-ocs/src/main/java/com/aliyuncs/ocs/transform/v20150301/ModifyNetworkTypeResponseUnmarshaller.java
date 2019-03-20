@@ -11,18 +11,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.aliyuncs.ocs.transform.v20141001;
 
-import com.aliyuncs.ocs.model.v20141001.FlushInstanceResponse;
+package com.aliyuncs.ocs.transform.v20150301;
+
+import com.aliyuncs.ocs.model.v20150301.ModifyNetworkTypeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class FlushInstanceResponseUnmarshaller {
+public class ModifyNetworkTypeResponseUnmarshaller {
 
-	public static FlushInstanceResponse unmarshall(FlushInstanceResponse flushInstanceResponse, UnmarshallerContext context) {
+	public static ModifyNetworkTypeResponse unmarshall(ModifyNetworkTypeResponse modifyNetworkTypeResponse, UnmarshallerContext context) {
 		
-		flushInstanceResponse.setRequestId(context.stringValue("FlushInstanceResponse.RequestId"));
+		modifyNetworkTypeResponse.setRequestId(context.stringValue("ModifyNetworkTypeResponse.RequestId"));
 	 
-	 	return flushInstanceResponse;
+	 	return modifyNetworkTypeResponse;
 	}
 }

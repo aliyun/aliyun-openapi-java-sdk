@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.ocs.model.v20150301;
 
 import java.util.List;
@@ -31,7 +27,13 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private GetOcsInstancesResponse getOcsInstancesResponse;
+	private Integer totalCount;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private List<OcsInstance> instances;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,247 +43,234 @@ public class DescribeInstancesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public GetOcsInstancesResponse getGetOcsInstancesResponse() {
-		return this.getOcsInstancesResponse;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setGetOcsInstancesResponse(GetOcsInstancesResponse getOcsInstancesResponse) {
-		this.getOcsInstancesResponse = getOcsInstancesResponse;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
-	public static class GetOcsInstancesResponse {
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-		private Integer total;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
-		private Integer pageNo;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
 
-		private Integer pageSize;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
-		private List<OcsInstance> ocsInstances;
+	public List<OcsInstance> getInstances() {
+		return this.instances;
+	}
 
-		public Integer getTotal() {
-			return this.total;
+	public void setInstances(List<OcsInstance> instances) {
+		this.instances = instances;
+	}
+
+	public static class OcsInstance {
+
+		private String instanceId;
+
+		private String instanceName;
+
+		private String connectionDomain;
+
+		private Integer port;
+
+		private String userName;
+
+		private String instanceStatus;
+
+		private Long capacity;
+
+		private Long qPS;
+
+		private Long bandwidth;
+
+		private Long connections;
+
+		private String regionId;
+
+		private String zoneId;
+
+		private String networkType;
+
+		private String vpcId;
+
+		private String vSwitchId;
+
+		private String privateIpAddress;
+
+		private String creationTime;
+
+		private Integer hotkeyEnabled;
+
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setTotal(Integer total) {
-			this.total = total;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
-		public Integer getPageNo() {
-			return this.pageNo;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
-		public Integer getPageSize() {
-			return this.pageSize;
+		public String getConnectionDomain() {
+			return this.connectionDomain;
 		}
 
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
+		public void setConnectionDomain(String connectionDomain) {
+			this.connectionDomain = connectionDomain;
 		}
 
-		public List<OcsInstance> getOcsInstances() {
-			return this.ocsInstances;
+		public Integer getPort() {
+			return this.port;
 		}
 
-		public void setOcsInstances(List<OcsInstance> ocsInstances) {
-			this.ocsInstances = ocsInstances;
+		public void setPort(Integer port) {
+			this.port = port;
 		}
 
-		public static class OcsInstance {
+		public String getUserName() {
+			return this.userName;
+		}
 
-			private String ocsInstanceId;
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
 
-			private String ocsInstanceName;
+		public String getInstanceStatus() {
+			return this.instanceStatus;
+		}
 
-			private Long capacity;
+		public void setInstanceStatus(String instanceStatus) {
+			this.instanceStatus = instanceStatus;
+		}
 
-			private Long qps;
+		public Long getCapacity() {
+			return this.capacity;
+		}
 
-			private Long bandwidth;
+		public void setCapacity(Long capacity) {
+			this.capacity = capacity;
+		}
 
-			private Long connections;
+		public Long getQPS() {
+			return this.qPS;
+		}
 
-			private String connectionDomain;
+		public void setQPS(Long qPS) {
+			this.qPS = qPS;
+		}
 
-			private Integer port;
+		public Long getBandwidth() {
+			return this.bandwidth;
+		}
 
-			private String userName;
+		public void setBandwidth(Long bandwidth) {
+			this.bandwidth = bandwidth;
+		}
 
-			private String regionId;
+		public Long getConnections() {
+			return this.connections;
+		}
 
-			private String ocsInstanceStatus;
+		public void setConnections(Long connections) {
+			this.connections = connections;
+		}
 
-			private String gmtCreated;
+		public String getBizRegionId() {
+			return this.regionId;
+		}
 
-			private String endTime;
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
 
-			private String chargeType;
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
+		public String getRegionId() {
+			return this.regionId;
+		}
 
-			private String izId;
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
 
-			private String networkType;
+		public String getZoneId() {
+			return this.zoneId;
+		}
 
-			private String vpcId;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
 
-			private String vSwitchId;
+		public String getNetworkType() {
+			return this.networkType;
+		}
 
-			private String privateIp;
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
+		}
 
-			public String getOcsInstanceId() {
-				return this.ocsInstanceId;
-			}
+		public String getVpcId() {
+			return this.vpcId;
+		}
 
-			public void setOcsInstanceId(String ocsInstanceId) {
-				this.ocsInstanceId = ocsInstanceId;
-			}
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
 
-			public String getOcsInstanceName() {
-				return this.ocsInstanceName;
-			}
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
 
-			public void setOcsInstanceName(String ocsInstanceName) {
-				this.ocsInstanceName = ocsInstanceName;
-			}
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
 
-			public Long getCapacity() {
-				return this.capacity;
-			}
+		public String getPrivateIpAddress() {
+			return this.privateIpAddress;
+		}
 
-			public void setCapacity(Long capacity) {
-				this.capacity = capacity;
-			}
+		public void setPrivateIpAddress(String privateIpAddress) {
+			this.privateIpAddress = privateIpAddress;
+		}
 
-			public Long getQps() {
-				return this.qps;
-			}
+		public String getCreationTime() {
+			return this.creationTime;
+		}
 
-			public void setQps(Long qps) {
-				this.qps = qps;
-			}
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
-			public Long getBandwidth() {
-				return this.bandwidth;
-			}
+		public Integer getHotkeyEnabled() {
+			return this.hotkeyEnabled;
+		}
 
-			public void setBandwidth(Long bandwidth) {
-				this.bandwidth = bandwidth;
-			}
-
-			public Long getConnections() {
-				return this.connections;
-			}
-
-			public void setConnections(Long connections) {
-				this.connections = connections;
-			}
-
-			public String getConnectionDomain() {
-				return this.connectionDomain;
-			}
-
-			public void setConnectionDomain(String connectionDomain) {
-				this.connectionDomain = connectionDomain;
-			}
-
-			public Integer getPort() {
-				return this.port;
-			}
-
-			public void setPort(Integer port) {
-				this.port = port;
-			}
-
-			public String getUserName() {
-				return this.userName;
-			}
-
-			public void setUserName(String userName) {
-				this.userName = userName;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			public String getOcsInstanceStatus() {
-				return this.ocsInstanceStatus;
-			}
-
-			public void setOcsInstanceStatus(String ocsInstanceStatus) {
-				this.ocsInstanceStatus = ocsInstanceStatus;
-			}
-
-			public String getgmtCreated() {
-				return this.gmtCreated;
-			}
-
-			public void setgmtCreated(String gmtCreated) {
-				this.gmtCreated = gmtCreated;
-			}
-
-			public String getendTime() {
-				return this.endTime;
-			}
-
-			public void setendTime(String endTime) {
-				this.endTime = endTime;
-			}
-
-			public String getchargeType() {
-				return this.chargeType;
-			}
-
-			public void setchargeType(String chargeType) {
-				this.chargeType = chargeType;
-			}
-
-			public String getizId() {
-				return this.izId;
-			}
-
-			public void setizId(String izId) {
-				this.izId = izId;
-			}
-
-			public String getNetworkType() {
-				return this.networkType;
-			}
-
-			public void setNetworkType(String networkType) {
-				this.networkType = networkType;
-			}
-
-			public String getVpcId() {
-				return this.vpcId;
-			}
-
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
-			}
-
-			public String getVSwitchId() {
-				return this.vSwitchId;
-			}
-
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
-			public String getPrivateIp() {
-				return this.privateIp;
-			}
-
-			public void setPrivateIp(String privateIp) {
-				this.privateIp = privateIp;
-			}
+		public void setHotkeyEnabled(Integer hotkeyEnabled) {
+			this.hotkeyEnabled = hotkeyEnabled;
 		}
 	}
 
