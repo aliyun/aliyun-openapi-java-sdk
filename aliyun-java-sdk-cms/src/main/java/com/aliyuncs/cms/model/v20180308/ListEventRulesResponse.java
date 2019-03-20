@@ -177,10 +177,28 @@ public class ListEventRulesResponse extends AcsResponse {
 
 			private List<String> levelList;
 
+			private List<String> eventTypeList;
+
+			public String getBizProduct() {
+				return this.product;
+			}
+
+			public void setBizProduct(String product) {
+				this.product = product;
+			}
+
+			/**
+			 * @deprecated use getBizProduct instead of this.
+			 */
+			@Deprecated
 			public String getProduct() {
 				return this.product;
 			}
 
+			/**
+			 * @deprecated use setBizProduct instead of this.
+			 */
+			@Deprecated
 			public void setProduct(String product) {
 				this.product = product;
 			}
@@ -207,6 +225,14 @@ public class ListEventRulesResponse extends AcsResponse {
 
 			public void setLevelList(List<String> levelList) {
 				this.levelList = levelList;
+			}
+
+			public List<String> getEventTypeList() {
+				return this.eventTypeList;
+			}
+
+			public void setEventTypeList(List<String> eventTypeList) {
+				this.eventTypeList = eventTypeList;
 			}
 		}
 	}

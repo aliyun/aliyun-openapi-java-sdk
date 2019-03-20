@@ -28,6 +28,7 @@ public class QueryMetricListResponseUnmarshaller {
 		queryMetricListResponse.setCursor(context.stringValue("QueryMetricListResponse.Cursor"));
 		queryMetricListResponse.setDatapoints(context.stringValue("QueryMetricListResponse.Datapoints"));
 		queryMetricListResponse.setPeriod(context.stringValue("QueryMetricListResponse.Period"));
+		queryMetricListResponse.setSuccess(context.stringValue("QueryMetricListResponse.Success"));
 	 
 	 	return queryMetricListResponse;
 	}

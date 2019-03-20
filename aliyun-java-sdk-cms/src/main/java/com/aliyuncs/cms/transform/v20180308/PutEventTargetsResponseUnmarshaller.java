@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cms.model.v20180308.PutEventTargetsResponse;
 import com.aliyuncs.cms.model.v20180308.PutEventTargetsResponse.ContactParameter;
+import com.aliyuncs.cms.model.v20180308.PutEventTargetsResponse.FailedSlsParameter;
 import com.aliyuncs.cms.model.v20180308.PutEventTargetsResponse.FcParameter;
 import com.aliyuncs.cms.model.v20180308.PutEventTargetsResponse.MnsParameter;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -102,6 +103,18 @@ public class PutEventTargetsResponseUnmarshaller {
 			failedFcParameters.add(fcParameter);
 		}
 		putEventTargetsResponse.setFailedFcParameters(failedFcParameters);
+
+		List<FailedSlsParameter> failedSlsParameters = new ArrayList<FailedSlsParameter>();
+		for (int i = 0; i < context.lengthValue("PutEventTargetsResponse.FailedSlsParameters.Length"); i++) {
+			FailedSlsParameter failedSlsParameter = new FailedSlsParameter();
+			failedSlsParameter.setId(context.stringValue("PutEventTargetsResponse.FailedSlsParameters["+ i +"].Id"));
+			failedSlsParameter.setRegion(context.stringValue("PutEventTargetsResponse.FailedSlsParameters["+ i +"].Region"));
+			failedSlsParameter.setProject(context.stringValue("PutEventTargetsResponse.FailedSlsParameters["+ i +"].Project"));
+			failedSlsParameter.setLogStore(context.stringValue("PutEventTargetsResponse.FailedSlsParameters["+ i +"].LogStore"));
+
+			failedSlsParameters.add(failedSlsParameter);
+		}
+		putEventTargetsResponse.setFailedSlsParameters(failedSlsParameters);
 	 
 	 	return putEventTargetsResponse;
 	}

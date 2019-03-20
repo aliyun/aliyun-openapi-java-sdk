@@ -49,6 +49,8 @@ public class PutEventTargetsResponse extends AcsResponse {
 
 	private List<FcParameter> failedFcParameters;
 
+	private List<FailedSlsParameter> failedSlsParameters;
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -143,6 +145,14 @@ public class PutEventTargetsResponse extends AcsResponse {
 
 	public void setFailedFcParameters(List<FcParameter> failedFcParameters) {
 		this.failedFcParameters = failedFcParameters;
+	}
+
+	public List<FailedSlsParameter> getFailedSlsParameters() {
+		return this.failedSlsParameters;
+	}
+
+	public void setFailedSlsParameters(List<FailedSlsParameter> failedSlsParameters) {
+		this.failedSlsParameters = failedSlsParameters;
 	}
 
 	public static class ContactParameter {
@@ -251,6 +261,49 @@ public class PutEventTargetsResponse extends AcsResponse {
 
 		public void setFunctionName(String functionName) {
 			this.functionName = functionName;
+		}
+	}
+
+	public static class FailedSlsParameter {
+
+		private String id;
+
+		private String region;
+
+		private String project;
+
+		private String logStore;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public void setProject(String project) {
+			this.project = project;
+		}
+
+		public String getLogStore() {
+			return this.logStore;
+		}
+
+		public void setLogStore(String logStore) {
+			this.logStore = logStore;
 		}
 	}
 

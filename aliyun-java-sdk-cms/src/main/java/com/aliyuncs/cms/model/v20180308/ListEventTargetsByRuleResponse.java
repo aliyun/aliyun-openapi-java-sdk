@@ -39,6 +39,10 @@ public class ListEventTargetsByRuleResponse extends AcsResponse {
 
 	private List<MnsParameter> mnsParameters;
 
+	private List<WebhookParameter> webhookParameters;
+
+	private List<SlsParameter> slsParameters;
+
 	public String getCode() {
 		return this.code;
 	}
@@ -93,6 +97,22 @@ public class ListEventTargetsByRuleResponse extends AcsResponse {
 
 	public void setMnsParameters(List<MnsParameter> mnsParameters) {
 		this.mnsParameters = mnsParameters;
+	}
+
+	public List<WebhookParameter> getWebhookParameters() {
+		return this.webhookParameters;
+	}
+
+	public void setWebhookParameters(List<WebhookParameter> webhookParameters) {
+		this.webhookParameters = webhookParameters;
+	}
+
+	public List<SlsParameter> getSlsParameters() {
+		return this.slsParameters;
+	}
+
+	public void setSlsParameters(List<SlsParameter> slsParameters) {
+		this.slsParameters = slsParameters;
 	}
 
 	public static class ContactParameter {
@@ -201,6 +221,140 @@ public class ListEventTargetsByRuleResponse extends AcsResponse {
 
 		public void setId(String id) {
 			this.id = id;
+		}
+	}
+
+	public static class WebhookParameter {
+
+		private String id;
+
+		private String protocol;
+
+		private String method;
+
+		private String url;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		/**
+		 * @deprecated use getBizProtocol instead of this.
+		 */
+		@Deprecated
+		public String getProtocol() {
+			return this.protocol;
+		}
+
+		/**
+		 * @deprecated use setBizProtocol instead of this.
+		 */
+		@Deprecated
+		public void setProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public String getBizMethod() {
+			return this.method;
+		}
+
+		public void setBizMethod(String method) {
+			this.method = method;
+		}
+
+		/**
+		 * @deprecated use getBizMethod instead of this.
+		 */
+		@Deprecated
+		public String getMethod() {
+			return this.method;
+		}
+
+		/**
+		 * @deprecated use setBizMethod instead of this.
+		 */
+		@Deprecated
+		public void setMethod(String method) {
+			this.method = method;
+		}
+
+		public String getBizUrl() {
+			return this.url;
+		}
+
+		public void setBizUrl(String url) {
+			this.url = url;
+		}
+
+		/**
+		 * @deprecated use getBizUrl instead of this.
+		 */
+		@Deprecated
+		public String getUrl() {
+			return this.url;
+		}
+
+		/**
+		 * @deprecated use setBizUrl instead of this.
+		 */
+		@Deprecated
+		public void setUrl(String url) {
+			this.url = url;
+		}
+	}
+
+	public static class SlsParameter {
+
+		private String id;
+
+		private String region;
+
+		private String project;
+
+		private String logStore;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getProject() {
+			return this.project;
+		}
+
+		public void setProject(String project) {
+			this.project = project;
+		}
+
+		public String getLogStore() {
+			return this.logStore;
+		}
+
+		public void setLogStore(String logStore) {
+			this.logStore = logStore;
 		}
 	}
 

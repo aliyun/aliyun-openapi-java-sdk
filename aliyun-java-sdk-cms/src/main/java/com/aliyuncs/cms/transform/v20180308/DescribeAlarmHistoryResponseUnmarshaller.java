@@ -48,7 +48,7 @@ public class DescribeAlarmHistoryResponseUnmarshaller {
 			alarmHistory.setLastTime(context.longValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].LastTime"));
 			alarmHistory.setLevel(context.stringValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].Level"));
 			alarmHistory.setPreLevel(context.stringValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].PreLevel"));
-			alarmHistory.setRuleName(context.stringValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].ruleName"));
+			alarmHistory.setRuleName(context.stringValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].RuleName"));
 			alarmHistory.setState(context.stringValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].State"));
 			alarmHistory.setStatus(context.integerValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].Status"));
 			alarmHistory.setUserId(context.stringValue("DescribeAlarmHistoryResponse.AlarmHistoryList["+ i +"].UserId"));

@@ -26,6 +26,8 @@ public class ModifyTaskRequest extends RpcAcsRequest<ModifyTaskResponse> {
 		super("Cms", "2018-03-08", "ModifyTask", "cms");
 	}
 
+	private String caller;
+
 	private String address;
 
 	private String ispCity;
@@ -41,6 +43,17 @@ public class ModifyTaskRequest extends RpcAcsRequest<ModifyTaskResponse> {
 	private String alertRule;
 
 	private String taskId;
+
+	public String getCaller() {
+		return this.caller;
+	}
+
+	public void setCaller(String caller) {
+		this.caller = caller;
+		if(caller != null){
+			putQueryParameter("caller", caller);
+		}
+	}
 
 	public String getAddress() {
 		return this.address;

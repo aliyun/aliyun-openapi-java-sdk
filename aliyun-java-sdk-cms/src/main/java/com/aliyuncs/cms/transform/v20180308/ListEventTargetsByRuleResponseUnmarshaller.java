@@ -21,6 +21,8 @@ import com.aliyuncs.cms.model.v20180308.ListEventTargetsByRuleResponse;
 import com.aliyuncs.cms.model.v20180308.ListEventTargetsByRuleResponse.ContactParameter;
 import com.aliyuncs.cms.model.v20180308.ListEventTargetsByRuleResponse.FCParameter;
 import com.aliyuncs.cms.model.v20180308.ListEventTargetsByRuleResponse.MnsParameter;
+import com.aliyuncs.cms.model.v20180308.ListEventTargetsByRuleResponse.SlsParameter;
+import com.aliyuncs.cms.model.v20180308.ListEventTargetsByRuleResponse.WebhookParameter;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -66,6 +68,30 @@ public class ListEventTargetsByRuleResponseUnmarshaller {
 			mnsParameters.add(mnsParameter);
 		}
 		listEventTargetsByRuleResponse.setMnsParameters(mnsParameters);
+
+		List<WebhookParameter> webhookParameters = new ArrayList<WebhookParameter>();
+		for (int i = 0; i < context.lengthValue("ListEventTargetsByRuleResponse.WebhookParameters.Length"); i++) {
+			WebhookParameter webhookParameter = new WebhookParameter();
+			webhookParameter.setId(context.stringValue("ListEventTargetsByRuleResponse.WebhookParameters["+ i +"].Id"));
+			webhookParameter.setProtocol(context.stringValue("ListEventTargetsByRuleResponse.WebhookParameters["+ i +"].Protocol"));
+			webhookParameter.setMethod(context.stringValue("ListEventTargetsByRuleResponse.WebhookParameters["+ i +"].Method"));
+			webhookParameter.setUrl(context.stringValue("ListEventTargetsByRuleResponse.WebhookParameters["+ i +"].Url"));
+
+			webhookParameters.add(webhookParameter);
+		}
+		listEventTargetsByRuleResponse.setWebhookParameters(webhookParameters);
+
+		List<SlsParameter> slsParameters = new ArrayList<SlsParameter>();
+		for (int i = 0; i < context.lengthValue("ListEventTargetsByRuleResponse.SlsParameters.Length"); i++) {
+			SlsParameter slsParameter = new SlsParameter();
+			slsParameter.setId(context.stringValue("ListEventTargetsByRuleResponse.SlsParameters["+ i +"].Id"));
+			slsParameter.setRegion(context.stringValue("ListEventTargetsByRuleResponse.SlsParameters["+ i +"].Region"));
+			slsParameter.setProject(context.stringValue("ListEventTargetsByRuleResponse.SlsParameters["+ i +"].Project"));
+			slsParameter.setLogStore(context.stringValue("ListEventTargetsByRuleResponse.SlsParameters["+ i +"].LogStore"));
+
+			slsParameters.add(slsParameter);
+		}
+		listEventTargetsByRuleResponse.setSlsParameters(slsParameters);
 	 
 	 	return listEventTargetsByRuleResponse;
 	}

@@ -31,6 +31,8 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 
 	private List<ContactParameters> contactParameterss;
 
+	private List<SlsParameters> slsParameterss;
+
 	private List<FcParameters> fcParameterss;
 
 	private String ruleName;
@@ -45,10 +47,10 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 		this.webhookParameterss = webhookParameterss;	
 		if (webhookParameterss != null) {
 			for (int depth1 = 0; depth1 < webhookParameterss.size(); depth1++) {
-				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Id" , webhookParameterss.get(depth1).getId());
 				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Protocol" , webhookParameterss.get(depth1).getProtocol());
-				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Url" , webhookParameterss.get(depth1).getUrl());
 				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Method" , webhookParameterss.get(depth1).getMethod());
+				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Id" , webhookParameterss.get(depth1).getId());
+				putQueryParameter("WebhookParameters." + (depth1 + 1) + ".Url" , webhookParameterss.get(depth1).getUrl());
 			}
 		}	
 	}
@@ -61,9 +63,25 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 		this.contactParameterss = contactParameterss;	
 		if (contactParameterss != null) {
 			for (int depth1 = 0; depth1 < contactParameterss.size(); depth1++) {
+				putQueryParameter("ContactParameters." + (depth1 + 1) + ".Level" , contactParameterss.get(depth1).getLevel());
 				putQueryParameter("ContactParameters." + (depth1 + 1) + ".Id" , contactParameterss.get(depth1).getId());
 				putQueryParameter("ContactParameters." + (depth1 + 1) + ".ContactGroupName" , contactParameterss.get(depth1).getContactGroupName());
-				putQueryParameter("ContactParameters." + (depth1 + 1) + ".Level" , contactParameterss.get(depth1).getLevel());
+			}
+		}	
+	}
+
+	public List<SlsParameters> getSlsParameterss() {
+		return this.slsParameterss;
+	}
+
+	public void setSlsParameterss(List<SlsParameters> slsParameterss) {
+		this.slsParameterss = slsParameterss;	
+		if (slsParameterss != null) {
+			for (int depth1 = 0; depth1 < slsParameterss.size(); depth1++) {
+				putQueryParameter("SlsParameters." + (depth1 + 1) + ".Project" , slsParameterss.get(depth1).getProject());
+				putQueryParameter("SlsParameters." + (depth1 + 1) + ".Id" , slsParameterss.get(depth1).getId());
+				putQueryParameter("SlsParameters." + (depth1 + 1) + ".Region" , slsParameterss.get(depth1).getRegion());
+				putQueryParameter("SlsParameters." + (depth1 + 1) + ".LogStore" , slsParameterss.get(depth1).getLogStore());
 			}
 		}	
 	}
@@ -76,10 +94,10 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 		this.fcParameterss = fcParameterss;	
 		if (fcParameterss != null) {
 			for (int depth1 = 0; depth1 < fcParameterss.size(); depth1++) {
+				putQueryParameter("FcParameters." + (depth1 + 1) + ".FunctionName" , fcParameterss.get(depth1).getFunctionName());
+				putQueryParameter("FcParameters." + (depth1 + 1) + ".ServiceName" , fcParameterss.get(depth1).getServiceName());
 				putQueryParameter("FcParameters." + (depth1 + 1) + ".Id" , fcParameterss.get(depth1).getId());
 				putQueryParameter("FcParameters." + (depth1 + 1) + ".Region" , fcParameterss.get(depth1).getRegion());
-				putQueryParameter("FcParameters." + (depth1 + 1) + ".ServiceName" , fcParameterss.get(depth1).getServiceName());
-				putQueryParameter("FcParameters." + (depth1 + 1) + ".FunctionName" , fcParameterss.get(depth1).getFunctionName());
 			}
 		}	
 	}
@@ -112,13 +130,61 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 
 	public static class WebhookParameters {
 
-		private String id;
-
 		private String protocol;
+
+		private String method;
+
+		private String id;
 
 		private String url;
 
-		private String method;
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		/**
+		 * @deprecated use getBizProtocol instead of this.
+		 */
+		@Deprecated
+		public String getProtocol() {
+			return this.protocol;
+		}
+
+		/**
+		 * @deprecated use setBizProtocol instead of this.
+		 */
+		@Deprecated
+		public void setProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public String getBizMethod() {
+			return this.method;
+		}
+
+		public void setBizMethod(String method) {
+			this.method = method;
+		}
+
+		/**
+		 * @deprecated use getBizMethod instead of this.
+		 */
+		@Deprecated
+		public String getMethod() {
+			return this.method;
+		}
+
+		/**
+		 * @deprecated use setBizMethod instead of this.
+		 */
+		@Deprecated
+		public void setMethod(String method) {
+			this.method = method;
+		}
 
 		public String getId() {
 			return this.id;
@@ -128,38 +194,46 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 			this.id = id;
 		}
 
-		public String getProtocol() {
-			return this.protocol;
+		public String getBizUrl() {
+			return this.url;
 		}
 
-		public void setProtocol(String protocol) {
-			this.protocol = protocol;
+		public void setBizUrl(String url) {
+			this.url = url;
 		}
 
+		/**
+		 * @deprecated use getBizUrl instead of this.
+		 */
+		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
+		/**
+		 * @deprecated use setBizUrl instead of this.
+		 */
+		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
-		}
-
-		public String getMethod() {
-			return this.method;
-		}
-
-		public void setMethod(String method) {
-			this.method = method;
 		}
 	}
 
 	public static class ContactParameters {
 
+		private String level;
+
 		private String id;
 
 		private String contactGroupName;
 
-		private String level;
+		public String getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(String level) {
+			this.level = level;
+		}
 
 		public String getId() {
 			return this.id;
@@ -176,25 +250,25 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 		public void setContactGroupName(String contactGroupName) {
 			this.contactGroupName = contactGroupName;
 		}
-
-		public String getLevel() {
-			return this.level;
-		}
-
-		public void setLevel(String level) {
-			this.level = level;
-		}
 	}
 
-	public static class FcParameters {
+	public static class SlsParameters {
+
+		private String project;
 
 		private String id;
 
 		private String region;
 
-		private String serviceName;
+		private String logStore;
 
-		private String functionName;
+		public String getProject() {
+			return this.project;
+		}
+
+		public void setProject(String project) {
+			this.project = project;
+		}
 
 		public String getId() {
 			return this.id;
@@ -212,6 +286,33 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 			this.region = region;
 		}
 
+		public String getLogStore() {
+			return this.logStore;
+		}
+
+		public void setLogStore(String logStore) {
+			this.logStore = logStore;
+		}
+	}
+
+	public static class FcParameters {
+
+		private String functionName;
+
+		private String serviceName;
+
+		private String id;
+
+		private String region;
+
+		public String getFunctionName() {
+			return this.functionName;
+		}
+
+		public void setFunctionName(String functionName) {
+			this.functionName = functionName;
+		}
+
 		public String getServiceName() {
 			return this.serviceName;
 		}
@@ -220,12 +321,20 @@ public class PutEventTargetsRequest extends RpcAcsRequest<PutEventTargetsRespons
 			this.serviceName = serviceName;
 		}
 
-		public String getFunctionName() {
-			return this.functionName;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setFunctionName(String functionName) {
-			this.functionName = functionName;
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 	}
 

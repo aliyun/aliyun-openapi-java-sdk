@@ -34,10 +34,29 @@ public class SendDryRunSystemEventRequest extends RpcAcsRequest<SendDryRunSystem
 
 	private String eventContent;
 
+	public String getBizProduct() {
+		return this.product;
+	}
+
+	public void setBizProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizProduct instead of this.
+	 */
+	@Deprecated
 	public String getProduct() {
 		return this.product;
 	}
 
+	/**
+	 * @deprecated use setBizProduct instead of this.
+	 */
+	@Deprecated
 	public void setProduct(String product) {
 		this.product = product;
 		if(product != null){

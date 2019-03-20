@@ -30,10 +30,29 @@ public class EnableActiveAlertRequest extends RpcAcsRequest<EnableActiveAlertRes
 
 	private String userId;
 
+	public String getBizProduct() {
+		return this.product;
+	}
+
+	public void setBizProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizProduct instead of this.
+	 */
+	@Deprecated
 	public String getProduct() {
 		return this.product;
 	}
 
+	/**
+	 * @deprecated use setBizProduct instead of this.
+	 */
+	@Deprecated
 	public void setProduct(String product) {
 		this.product = product;
 		if(product != null){

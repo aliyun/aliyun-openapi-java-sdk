@@ -151,6 +151,8 @@ public class DescribeAlarmsForResourcesResponse extends AcsResponse {
 
 		private String threshold;
 
+		private Escalations escalations;
+
 		public String getUuid() {
 			return this.uuid;
 		}
@@ -325,6 +327,176 @@ public class DescribeAlarmsForResourcesResponse extends AcsResponse {
 
 		public void setThreshold(String threshold) {
 			this.threshold = threshold;
+		}
+
+		public Escalations getEscalations() {
+			return this.escalations;
+		}
+
+		public void setEscalations(Escalations escalations) {
+			this.escalations = escalations;
+		}
+
+		public static class Escalations {
+
+			private Info info;
+
+			private Warn warn;
+
+			private Critical critical;
+
+			public Info getInfo() {
+				return this.info;
+			}
+
+			public void setInfo(Info info) {
+				this.info = info;
+			}
+
+			public Warn getWarn() {
+				return this.warn;
+			}
+
+			public void setWarn(Warn warn) {
+				this.warn = warn;
+			}
+
+			public Critical getCritical() {
+				return this.critical;
+			}
+
+			public void setCritical(Critical critical) {
+				this.critical = critical;
+			}
+
+			public static class Info {
+
+				private String comparisonOperator;
+
+				private String statistics;
+
+				private String threshold;
+
+				private String times;
+
+				public String getComparisonOperator() {
+					return this.comparisonOperator;
+				}
+
+				public void setComparisonOperator(String comparisonOperator) {
+					this.comparisonOperator = comparisonOperator;
+				}
+
+				public String getStatistics() {
+					return this.statistics;
+				}
+
+				public void setStatistics(String statistics) {
+					this.statistics = statistics;
+				}
+
+				public String getThreshold() {
+					return this.threshold;
+				}
+
+				public void setThreshold(String threshold) {
+					this.threshold = threshold;
+				}
+
+				public String getTimes() {
+					return this.times;
+				}
+
+				public void setTimes(String times) {
+					this.times = times;
+				}
+			}
+
+			public static class Warn {
+
+				private String comparisonOperator;
+
+				private String statistics;
+
+				private String threshold;
+
+				private String times;
+
+				public String getComparisonOperator() {
+					return this.comparisonOperator;
+				}
+
+				public void setComparisonOperator(String comparisonOperator) {
+					this.comparisonOperator = comparisonOperator;
+				}
+
+				public String getStatistics() {
+					return this.statistics;
+				}
+
+				public void setStatistics(String statistics) {
+					this.statistics = statistics;
+				}
+
+				public String getThreshold() {
+					return this.threshold;
+				}
+
+				public void setThreshold(String threshold) {
+					this.threshold = threshold;
+				}
+
+				public String getTimes() {
+					return this.times;
+				}
+
+				public void setTimes(String times) {
+					this.times = times;
+				}
+			}
+
+			public static class Critical {
+
+				private String comparisonOperator;
+
+				private String statistics;
+
+				private String threshold;
+
+				private String times;
+
+				public String getComparisonOperator() {
+					return this.comparisonOperator;
+				}
+
+				public void setComparisonOperator(String comparisonOperator) {
+					this.comparisonOperator = comparisonOperator;
+				}
+
+				public String getStatistics() {
+					return this.statistics;
+				}
+
+				public void setStatistics(String statistics) {
+					this.statistics = statistics;
+				}
+
+				public String getThreshold() {
+					return this.threshold;
+				}
+
+				public void setThreshold(String threshold) {
+					this.threshold = threshold;
+				}
+
+				public String getTimes() {
+					return this.times;
+				}
+
+				public void setTimes(String times) {
+					this.times = times;
+				}
+			}
 		}
 	}
 

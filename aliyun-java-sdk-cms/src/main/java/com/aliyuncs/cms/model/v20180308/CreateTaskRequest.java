@@ -26,6 +26,8 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 		super("Cms", "2018-03-08", "CreateTask", "cms");
 	}
 
+	private String caller;
+
 	private String address;
 
 	private String taskType;
@@ -41,6 +43,17 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 	private String interval;
 
 	private String alertRule;
+
+	public String getCaller() {
+		return this.caller;
+	}
+
+	public void setCaller(String caller) {
+		this.caller = caller;
+		if(caller != null){
+			putQueryParameter("caller", caller);
+		}
+	}
 
 	public String getAddress() {
 		return this.address;

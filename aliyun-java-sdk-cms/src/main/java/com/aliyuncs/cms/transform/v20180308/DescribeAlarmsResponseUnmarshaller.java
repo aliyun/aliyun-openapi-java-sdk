@@ -19,6 +19,10 @@ import java.util.List;
 
 import com.aliyuncs.cms.model.v20180308.DescribeAlarmsResponse;
 import com.aliyuncs.cms.model.v20180308.DescribeAlarmsResponse.Alarm;
+import com.aliyuncs.cms.model.v20180308.DescribeAlarmsResponse.Alarm.Escalations;
+import com.aliyuncs.cms.model.v20180308.DescribeAlarmsResponse.Alarm.Escalations.Critical;
+import com.aliyuncs.cms.model.v20180308.DescribeAlarmsResponse.Alarm.Escalations.Info;
+import com.aliyuncs.cms.model.v20180308.DescribeAlarmsResponse.Alarm.Escalations.Warn;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,6 +64,30 @@ public class DescribeAlarmsResponseUnmarshaller {
 			alarm.setComparisonOperator(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].ComparisonOperator"));
 			alarm.setThreshold(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Threshold"));
 			alarm.setDisplayName(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].DisplayName"));
+
+			Escalations escalations = new Escalations();
+
+			Info info = new Info();
+			info.setComparisonOperator(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Info.ComparisonOperator"));
+			info.setStatistics(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Info.Statistics"));
+			info.setThreshold(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Info.Threshold"));
+			info.setTimes(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Info.Times"));
+			escalations.setInfo(info);
+
+			Warn warn = new Warn();
+			warn.setComparisonOperator(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Warn.ComparisonOperator"));
+			warn.setStatistics(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Warn.Statistics"));
+			warn.setThreshold(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Warn.Threshold"));
+			warn.setTimes(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Warn.Times"));
+			escalations.setWarn(warn);
+
+			Critical critical = new Critical();
+			critical.setComparisonOperator(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Critical.ComparisonOperator"));
+			critical.setStatistics(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Critical.Statistics"));
+			critical.setThreshold(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Critical.Threshold"));
+			critical.setTimes(context.stringValue("DescribeAlarmsResponse.Datapoints["+ i +"].Escalations.Critical.Times"));
+			escalations.setCritical(critical);
+			alarm.setEscalations(escalations);
 
 			datapoints.add(alarm);
 		}

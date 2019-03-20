@@ -36,6 +36,8 @@ public class QueryMetricListResponse extends AcsResponse {
 
 	private String period;
 
+	private String success;
+
 	public String getCode() {
 		return this.code;
 	}
@@ -82,6 +84,14 @@ public class QueryMetricListResponse extends AcsResponse {
 
 	public void setPeriod(String period) {
 		this.period = period;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

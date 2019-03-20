@@ -28,6 +28,7 @@ public class QueryMetricLastResponseUnmarshaller {
 		queryMetricLastResponse.setCursor(context.stringValue("QueryMetricLastResponse.Cursor"));
 		queryMetricLastResponse.setDatapoints(context.stringValue("QueryMetricLastResponse.Datapoints"));
 		queryMetricLastResponse.setPeriod(context.stringValue("QueryMetricLastResponse.Period"));
+		queryMetricLastResponse.setSuccess(context.stringValue("QueryMetricLastResponse.Success"));
 	 
 	 	return queryMetricLastResponse;
 	}

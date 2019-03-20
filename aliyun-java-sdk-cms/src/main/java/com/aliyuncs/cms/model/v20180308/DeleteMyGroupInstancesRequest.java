@@ -32,6 +32,8 @@ public class DeleteMyGroupInstancesRequest extends RpcAcsRequest<DeleteMyGroupIn
 
 	private Long groupId;
 
+	private String category;
+
 	public String getInstanceIds() {
 		return this.instanceIds;
 	}
@@ -62,6 +64,17 @@ public class DeleteMyGroupInstancesRequest extends RpcAcsRequest<DeleteMyGroupIn
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

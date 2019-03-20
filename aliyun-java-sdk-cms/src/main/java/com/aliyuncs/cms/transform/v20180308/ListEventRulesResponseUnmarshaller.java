@@ -67,6 +67,12 @@ public class ListEventRulesResponseUnmarshaller {
 				}
 				eventPatternItem.setLevelList(levelList);
 
+				List<String> eventTypeList = new ArrayList<String>();
+				for (int k = 0; k < context.lengthValue("ListEventRulesResponse.Datapoints["+ i +"].EventPattern["+ j +"].EventTypeList.Length"); k++) {
+					eventTypeList.add(context.stringValue("ListEventRulesResponse.Datapoints["+ i +"].EventPattern["+ j +"].EventTypeList["+ k +"]"));
+				}
+				eventPatternItem.setEventTypeList(eventTypeList);
+
 				eventPattern.add(eventPatternItem);
 			}
 			eventRule.setEventPattern(eventPattern);
