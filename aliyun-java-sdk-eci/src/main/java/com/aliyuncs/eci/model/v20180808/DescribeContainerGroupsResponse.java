@@ -21,7 +21,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author liumi
- * @version 1.0.3
+ * @version 1.0.5
  */
 public class DescribeContainerGroupsResponse extends AcsResponse {
 
@@ -108,6 +108,8 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 		private List<Container> initContainers;
 
 		private DnsConfig dnsConfig;
+
+		private List<HostAliase> hostAliases;
 
 		public String getContainerGroupId() {
 			return this.containerGroupId;
@@ -275,6 +277,14 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
 		public void setDnsConfig(DnsConfig dnsConfig) {
 			this.dnsConfig = dnsConfig;
+		}
+
+		public List<HostAliase> getHostAliases() {
+			return hostAliases;
+		}
+
+		public void setHostAliases(List<HostAliase> hostAliases) {
+			this.hostAliases = hostAliases;
 		}
 
 		public static class Label {
@@ -1014,6 +1024,29 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 				public void setValue(String value) {
 					this.value = value;
 				}
+			}
+		}
+
+		public static class HostAliase {
+
+			private String ip;
+
+			private List<String> hostnames;
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public List<String> getHostnames() {
+				return this.hostnames;
+			}
+
+			public void setHostnames(List<String> hostnames) {
+				this.hostnames = hostnames;
 			}
 		}
 	}

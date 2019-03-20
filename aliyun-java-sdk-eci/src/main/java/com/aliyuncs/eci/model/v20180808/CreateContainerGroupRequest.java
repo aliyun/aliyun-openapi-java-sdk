@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * @author liumi
- * @version 1.0.3
+ * @version 1.0.5
  */
 public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGroupResponse> {
 	
@@ -58,6 +58,10 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	private String zoneId;
 
 	private DnsConfig dnsConfig;
+
+	private List<HostAliase> hostAliases;
+
+	private String clientToken;
 
 	public List<Container> getContainers() {
 		return this.containers;
@@ -407,6 +411,35 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			for (int depth1 = 0; depth1 < dnsConfig.getOptions().size(); depth1++) {
 				putQueryParameter("DnsConfig.Option." + (depth1 + 1) + ".Name" , dnsConfig.getOptions().get(depth1).getName());
 				putQueryParameter("DnsConfig.Option." + (depth1 + 1) + ".Value" , dnsConfig.getOptions().get(depth1).getValue());
+			}
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public List<HostAliase> getHostAliases() {
+		return this.hostAliases;
+	}
+
+	public void setHostAliases(List<HostAliase> hostAliases) {
+		this.hostAliases = hostAliases;
+		if (hostAliases != null) {
+			for (int depth1 = 0; depth1 < hostAliases.size(); depth1++) {
+				putQueryParameter("HostAliase." + (depth1 + 1) + ".Ip" , hostAliases.get(depth1).getIp());
+				if (hostAliases.get(depth1).getHostnames() != null) {
+					for (int i = 0; i < hostAliases.get(depth1).getHostnames().size(); i++) {
+						putQueryParameter("HostAliase." + (depth1 + 1) + ".Hostname." + (i + 1) , hostAliases.get(depth1).getHostnames().get(i));
+					}
+				}
 			}
 		}
 	}
@@ -998,6 +1031,29 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			public void setValue(String value) {
 				this.value = value;
 			}
+		}
+	}
+
+	public static class HostAliase {
+
+		private String ip;
+
+		private List<String> hostnames;
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public List<String> getHostnames() {
+			return this.hostnames;
+		}
+
+		public void setHostnames(List<String> hostnames) {
+			this.hostnames = hostnames;
 		}
 	}
 

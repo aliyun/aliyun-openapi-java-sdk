@@ -34,12 +34,13 @@ import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.Containe
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Label;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Volume;
 import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.Volume.ConfigFileVolumeConfigFileToPath;
+import com.aliyuncs.eci.model.v20180808.DescribeContainerGroupsResponse.ContainerGroup.HostAliase;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * 2018/12/29
  * @author liumi
- * @version 1.0.3
+ * @version 1.0.5
  */
 public class DescribeContainerGroupsResponseUnmarshaller {
 
@@ -102,6 +103,21 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 				tags.add(label);
 			}
 			containerGroup.setTags(tags);
+
+			List<HostAliase> hostAliases = new ArrayList<HostAliase>();
+			for (int j = 0; j < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].HostAliases.Length"); j++) {
+				HostAliase hostAliase = new HostAliase();
+				hostAliase.setHostnames(new ArrayList<String>());
+				hostAliase.setIp(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].HostAliases["+ j +"].Ip"));
+				for(int k = 0; k < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].HostAliases["+ j +"].Hostnames.Length"); k++){
+					hostAliase.getHostnames().add(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].HostAliases["+ j +"].Hostnames[" + k + "]"));
+				}
+
+				hostAliases.add(hostAliase);
+			}
+			containerGroup.setHostAliases(hostAliases);
+
+
 
 			List<Event> events = new ArrayList<Event>();
 			for (int j = 0; j < context.lengthValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].Events.Length"); j++) {
