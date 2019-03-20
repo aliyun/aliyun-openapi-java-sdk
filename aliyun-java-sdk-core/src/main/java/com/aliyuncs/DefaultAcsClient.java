@@ -42,6 +42,9 @@ public class DefaultAcsClient implements IAcsClient {
     private static final String SIGNATURE_BEGIN = "string to sign is:";
     private final UserAgentConfig userAgentConfig = new UserAgentConfig();
 
+    /**
+     * @Deprecated : Use DefaultAcsClient(String regionId) instead of this
+     */
     @Deprecated
     public DefaultAcsClient() throws ClientException {
         this.clientProfile = DefaultProfile.getProfile();
@@ -213,6 +216,9 @@ public class DefaultAcsClient implements IAcsClient {
         }
     }
 
+    /**
+     * @Deprecated : Use other overload methods
+     */
     @Deprecated
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
                                                          String regionId, Credential credential, Signer signer, FormatType format) throws ClientException,

@@ -29,21 +29,33 @@ public abstract class HttpMessage {
     public HttpMessage() {
     }
 
+    /**
+     * @Deprecated : Use getSysUrl instead of this
+     */
     @Deprecated
     public String getUrl() {
         return url;
     }
 
+    /**
+     * @Deprecated : Use setSysUrl instead of this
+     */
     @Deprecated
     protected void setUrl(String url) {
         this.url = url;
     }
 
+    /**
+     * @Deprecated : Use getSysMethod instead of this
+     */
     @Deprecated
     public MethodType getMethod() {
         return method;
     }
 
+    /**
+     * @Deprecated : Use setSysMethod instead of this
+     */
     @Deprecated
     public void setMethod(MethodType method) {
         this.method = method;
@@ -97,11 +109,17 @@ public abstract class HttpMessage {
         }
     }
 
+    /**
+     * @Deprecated : Use getSysEncoding instead of this
+     */
     @Deprecated
     public String getEncoding() {
         return encoding;
     }
 
+    /**
+     * @Deprecated : Use setSysEncoding instead of this
+     */
     @Deprecated
     public void setEncoding(String encoding) {
         this.encoding = encoding;
@@ -117,26 +135,41 @@ public abstract class HttpMessage {
         return this.headers.get(name);
     }
 
+    /**
+     * @Deprecated : Use getSysConnectTimeout instead of this
+     */
     @Deprecated
     public Integer getConnectTimeout() {
         return connectTimeout;
     }
 
+    /**
+     * @Deprecated : Use setSysConnectTimeout instead of this
+     */
     @Deprecated
     public void setConnectTimeout(Integer connectTimeout) {
         this.connectTimeout = connectTimeout;
     }
 
+    /**
+     * @Deprecated : Use getSysReadTimeout instead of this
+     */
     @Deprecated
     public Integer getReadTimeout() {
         return readTimeout;
     }
 
+    /**
+     * @Deprecated : Use setSysReadTimeout instead of this
+     */
     @Deprecated
     public void setReadTimeout(Integer readTimeout) {
         this.readTimeout = readTimeout;
     }
 
+    /**
+     * @Deprecated : Use getSysHeaders instead of this
+     */
     @Deprecated
     public Map<String, String> getHeaders() {
         return Collections.unmodifiableMap(headers);

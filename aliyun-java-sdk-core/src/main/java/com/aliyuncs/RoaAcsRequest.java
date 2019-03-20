@@ -105,11 +105,17 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         return url;
     }
 
+    /**
+     * @Deprecated : Use getSysUriPattern instead of this
+     */
     @Deprecated
     public String getUriPattern() {
         return uriPattern;
     }
 
+    /**
+     * @Deprecated : Use setSysUriPattern instead of this
+     */
     @Deprecated
     public void setUriPattern(String uriPattern) {
         this.uriPattern = uriPattern;

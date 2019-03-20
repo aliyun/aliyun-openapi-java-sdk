@@ -9,6 +9,9 @@ import com.aliyuncs.http.HttpClientConfig;
 @SuppressWarnings("deprecation")
 public interface IClientProfile {
 
+    /**
+     * @Deprecated : Use Signer.getSigner(AlibabaCloudCredentials credentials) instead of this
+     */
     @Deprecated
     public ISigner getSigner();
 
@@ -16,6 +19,9 @@ public interface IClientProfile {
 
     public FormatType getFormat();
 
+    /**
+     * @Deprecated : Use AlibabaCloudCredentialsProvider getCredentials() instead of this
+     */
     @Deprecated
     public Credential getCredential();
 
@@ -54,6 +60,10 @@ public interface IClientProfile {
     public boolean isUsingVpcEndpoint();
 
     public void enableUsingVpcEndpoint();
+
+    /**
+     * @Deprecated : Use enableUsingInternalLocationService instead of this
+     */
     @Deprecated
     public void setUsingInternalLocationService();
 }
