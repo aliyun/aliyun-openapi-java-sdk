@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.jaq.model.v20160412;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,14 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetRiskDetailRequest extends RpcAcsRequest<GetRiskDetailResponse> {
 	
 	public GetRiskDetailRequest() {
-		super("jaq", "2016-04-12", "GetRiskDetail");
+		super("jaq", "2016-04-12", "GetRiskDetail", "jaq");
 	}
 
 	private String itemId;
 
-	private String language;
-
 	private String country;
+
+	private String language;
 
 	public String getItemId() {
 		return this.itemId;
@@ -37,16 +38,9 @@ public class GetRiskDetailRequest extends RpcAcsRequest<GetRiskDetailResponse> {
 
 	public void setItemId(String itemId) {
 		this.itemId = itemId;
-		putQueryParameter("ItemId", itemId);
-	}
-
-	public String getLanguage() {
-		return this.language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
-		putQueryParameter("Language", language);
+		if(itemId != null){
+			putQueryParameter("ItemId", itemId);
+		}
 	}
 
 	public String getCountry() {
@@ -55,7 +49,20 @@ public class GetRiskDetailRequest extends RpcAcsRequest<GetRiskDetailResponse> {
 
 	public void setCountry(String country) {
 		this.country = country;
-		putQueryParameter("Country", country);
+		if(country != null){
+			putQueryParameter("Country", country);
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
+		}
 	}
 
 	@Override

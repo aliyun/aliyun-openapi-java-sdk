@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.jaq.model.v20160412;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetRiskSummaryRequest extends RpcAcsRequest<GetRiskSummaryResponse> {
 	
 	public GetRiskSummaryRequest() {
-		super("jaq", "2016-04-12", "GetRiskSummary");
+		super("jaq", "2016-04-12", "GetRiskSummary", "jaq");
 	}
 
 	private String itemId;
@@ -33,7 +34,9 @@ public class GetRiskSummaryRequest extends RpcAcsRequest<GetRiskSummaryResponse>
 
 	public void setItemId(String itemId) {
 		this.itemId = itemId;
-		putQueryParameter("ItemId", itemId);
+		if(itemId != null){
+			putQueryParameter("ItemId", itemId);
+		}
 	}
 
 	@Override

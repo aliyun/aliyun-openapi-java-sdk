@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.jaq.model.v20160412;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,23 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DiyShieldRequest extends RpcAcsRequest<DiyShieldResponse> {
 	
 	public DiyShieldRequest() {
-		super("jaq", "2016-04-12", "DiyShield");
+		super("jaq", "2016-04-12", "DiyShield", "jaq");
 	}
-
-	private String appInfo;
 
 	private String channel;
 
+	private String appInfo;
+
 	private String enhance;
-
-	public String getAppInfo() {
-		return this.appInfo;
-	}
-
-	public void setAppInfo(String appInfo) {
-		this.appInfo = appInfo;
-		putQueryParameter("AppInfo", appInfo);
-	}
 
 	public String getChannel() {
 		return this.channel;
@@ -46,7 +38,20 @@ public class DiyShieldRequest extends RpcAcsRequest<DiyShieldResponse> {
 
 	public void setChannel(String channel) {
 		this.channel = channel;
-		putQueryParameter("Channel", channel);
+		if(channel != null){
+			putQueryParameter("Channel", channel);
+		}
+	}
+
+	public String getAppInfo() {
+		return this.appInfo;
+	}
+
+	public void setAppInfo(String appInfo) {
+		this.appInfo = appInfo;
+		if(appInfo != null){
+			putQueryParameter("AppInfo", appInfo);
+		}
 	}
 
 	public String getEnhance() {
@@ -55,7 +60,9 @@ public class DiyShieldRequest extends RpcAcsRequest<DiyShieldResponse> {
 
 	public void setEnhance(String enhance) {
 		this.enhance = enhance;
-		putQueryParameter("Enhance", enhance);
+		if(enhance != null){
+			putQueryParameter("Enhance", enhance);
+		}
 	}
 
 	@Override

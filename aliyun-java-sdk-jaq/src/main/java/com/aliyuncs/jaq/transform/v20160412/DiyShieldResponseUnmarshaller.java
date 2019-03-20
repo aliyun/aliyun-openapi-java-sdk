@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.jaq.transform.v20160412;
 
 import com.aliyuncs.jaq.model.v20160412.DiyShieldResponse;

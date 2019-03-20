@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.jaq.model.v20160412;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,21 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class ShieldRequest extends RpcAcsRequest<ShieldResponse> {
 	
 	public ShieldRequest() {
-		super("jaq", "2016-04-12", "Shield");
+		super("jaq", "2016-04-12", "Shield", "jaq");
 	}
-
-	private String appInfo;
 
 	private String channel;
 
-	public String getAppInfo() {
-		return this.appInfo;
-	}
-
-	public void setAppInfo(String appInfo) {
-		this.appInfo = appInfo;
-		putQueryParameter("AppInfo", appInfo);
-	}
+	private String appInfo;
 
 	public String getChannel() {
 		return this.channel;
@@ -44,7 +36,20 @@ public class ShieldRequest extends RpcAcsRequest<ShieldResponse> {
 
 	public void setChannel(String channel) {
 		this.channel = channel;
-		putQueryParameter("Channel", channel);
+		if(channel != null){
+			putQueryParameter("Channel", channel);
+		}
+	}
+
+	public String getAppInfo() {
+		return this.appInfo;
+	}
+
+	public void setAppInfo(String appInfo) {
+		this.appInfo = appInfo;
+		if(appInfo != null){
+			putQueryParameter("AppInfo", appInfo);
+		}
 	}
 
 	@Override

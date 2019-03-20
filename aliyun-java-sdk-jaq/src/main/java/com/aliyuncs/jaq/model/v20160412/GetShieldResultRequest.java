@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.jaq.model.v20160412;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetShieldResultRequest extends RpcAcsRequest<GetShieldResultResponse> {
 	
 	public GetShieldResultRequest() {
-		super("jaq", "2016-04-12", "GetShieldResult");
+		super("jaq", "2016-04-12", "GetShieldResult", "jaq");
 	}
 
 	private String itemId;
@@ -33,7 +34,9 @@ public class GetShieldResultRequest extends RpcAcsRequest<GetShieldResultRespons
 
 	public void setItemId(String itemId) {
 		this.itemId = itemId;
-		putQueryParameter("ItemId", itemId);
+		if(itemId != null){
+			putQueryParameter("ItemId", itemId);
+		}
 	}
 
 	@Override

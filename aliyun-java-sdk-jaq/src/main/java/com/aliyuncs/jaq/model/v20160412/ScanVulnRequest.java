@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.jaq.model.v20160412;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,21 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class ScanVulnRequest extends RpcAcsRequest<ScanVulnResponse> {
 	
 	public ScanVulnRequest() {
-		super("jaq", "2016-04-12", "ScanVuln");
+		super("jaq", "2016-04-12", "ScanVuln", "jaq");
 	}
-
-	private String appInfo;
 
 	private String extParam;
 
-	public String getAppInfo() {
-		return this.appInfo;
-	}
-
-	public void setAppInfo(String appInfo) {
-		this.appInfo = appInfo;
-		putQueryParameter("AppInfo", appInfo);
-	}
+	private String appInfo;
 
 	public String getExtParam() {
 		return this.extParam;
@@ -44,7 +36,20 @@ public class ScanVulnRequest extends RpcAcsRequest<ScanVulnResponse> {
 
 	public void setExtParam(String extParam) {
 		this.extParam = extParam;
-		putQueryParameter("ExtParam", extParam);
+		if(extParam != null){
+			putQueryParameter("ExtParam", extParam);
+		}
+	}
+
+	public String getAppInfo() {
+		return this.appInfo;
+	}
+
+	public void setAppInfo(String appInfo) {
+		this.appInfo = appInfo;
+		if(appInfo != null){
+			putQueryParameter("AppInfo", appInfo);
+		}
 	}
 
 	@Override
