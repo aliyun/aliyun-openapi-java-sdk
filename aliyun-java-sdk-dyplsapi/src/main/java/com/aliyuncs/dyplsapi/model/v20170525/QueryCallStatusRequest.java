@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryCallStatusRequest extends RpcAcsRequest<QueryCallStatusResponse> {
 	
 	public QueryCallStatusRequest() {
-		super("Dyplsapi", "2017-05-25", "QueryCallStatus");
+		super("Dyplsapi", "2017-05-25", "QueryCallStatus", "dyplsapi");
 	}
 
 	private String poolKey;

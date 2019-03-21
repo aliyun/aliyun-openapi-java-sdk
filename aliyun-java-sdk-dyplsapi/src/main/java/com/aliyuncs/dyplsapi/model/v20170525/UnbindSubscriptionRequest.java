@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnbindSubscriptionRequest extends RpcAcsRequest<UnbindSubscriptionResponse> {
 	
 	public UnbindSubscriptionRequest() {
-		super("Dyplsapi", "2017-05-25", "UnbindSubscription");
+		super("Dyplsapi", "2017-05-25", "UnbindSubscription", "dyplsapi");
 	}
 
 	private String poolKey;

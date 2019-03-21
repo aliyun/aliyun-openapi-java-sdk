@@ -20,45 +20,32 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecordFileDownloadUrlResponse> {
+public class QuerySecretNoRemainRequest extends RpcAcsRequest<QuerySecretNoRemainResponse> {
 	
-	public QueryRecordFileDownloadUrlRequest() {
-		super("Dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl", "dyplsapi");
+	public QuerySecretNoRemainRequest() {
+		super("Dyplsapi", "2017-05-25", "QuerySecretNoRemain", "dyplsapi");
 	}
 
-	private String callId;
-
-	private String poolKey;
+	private Long specId;
 
 	private Long resourceOwnerId;
 
+	private String secretNo;
+
 	private String resourceOwnerAccount;
+
+	private String city;
 
 	private Long ownerId;
 
-	private String productType;
-
-	private String callTime;
-
-	public String getCallId() {
-		return this.callId;
+	public Long getSpecId() {
+		return this.specId;
 	}
 
-	public void setCallId(String callId) {
-		this.callId = callId;
-		if(callId != null){
-			putQueryParameter("CallId", callId);
-		}
-	}
-
-	public String getPoolKey() {
-		return this.poolKey;
-	}
-
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
+	public void setSpecId(Long specId) {
+		this.specId = specId;
+		if(specId != null){
+			putQueryParameter("SpecId", specId.toString());
 		}
 	}
 
@@ -73,6 +60,17 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 		}
 	}
 
+	public String getSecretNo() {
+		return this.secretNo;
+	}
+
+	public void setSecretNo(String secretNo) {
+		this.secretNo = secretNo;
+		if(secretNo != null){
+			putQueryParameter("SecretNo", secretNo);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -81,6 +79,17 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getCity() {
+		return this.city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+		if(city != null){
+			putQueryParameter("City", city);
 		}
 	}
 
@@ -95,31 +104,9 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
-		}
-	}
-
-	public String getCallTime() {
-		return this.callTime;
-	}
-
-	public void setCallTime(String callTime) {
-		this.callTime = callTime;
-		if(callTime != null){
-			putQueryParameter("CallTime", callTime);
-		}
-	}
-
 	@Override
-	public Class<QueryRecordFileDownloadUrlResponse> getResponseClass() {
-		return QueryRecordFileDownloadUrlResponse.class;
+	public Class<QuerySecretNoRemainResponse> getResponseClass() {
+		return QuerySecretNoRemainResponse.class;
 	}
 
 }

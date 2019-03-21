@@ -32,9 +32,12 @@ public class QuerySubscriptionDetailResponseUnmarshaller {
 		secretBindDetailDTO.setPhoneNoA(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoA"));
 		secretBindDetailDTO.setPhoneNoX(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoX"));
 		secretBindDetailDTO.setPhoneNoB(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoB"));
+		secretBindDetailDTO.setExtension(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Extension"));
+		secretBindDetailDTO.setGroupId(context.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.GroupId"));
 		secretBindDetailDTO.setGmtCreate(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.GmtCreate"));
 		secretBindDetailDTO.setExpireDate(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.ExpireDate"));
 		secretBindDetailDTO.setNeedRecord(context.booleanValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.NeedRecord"));
+		secretBindDetailDTO.setCallRestrict(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.CallRestrict"));
 		secretBindDetailDTO.setStatus(context.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Status"));
 		querySubscriptionDetailResponse.setSecretBindDetailDTO(secretBindDetailDTO);
 	 

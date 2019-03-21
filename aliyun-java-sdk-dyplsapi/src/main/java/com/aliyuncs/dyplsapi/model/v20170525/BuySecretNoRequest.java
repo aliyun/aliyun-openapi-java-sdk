@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 	
 	public BuySecretNoRequest() {
-		super("Dyplsapi", "2017-05-25", "BuySecretNo");
+		super("Dyplsapi", "2017-05-25", "BuySecretNo", "dyplsapi");
 	}
 
 	private String poolKey;
@@ -37,6 +37,8 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 	private String resourceOwnerAccount;
 
 	private String city;
+
+	private Boolean displayPool;
 
 	private Long ownerId;
 
@@ -103,6 +105,17 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 		this.city = city;
 		if(city != null){
 			putQueryParameter("City", city);
+		}
+	}
+
+	public Boolean getDisplayPool() {
+		return this.displayPool;
+	}
+
+	public void setDisplayPool(Boolean displayPool) {
+		this.displayPool = displayPool;
+		if(displayPool != null){
+			putQueryParameter("DisplayPool", displayPool.toString());
 		}
 	}
 

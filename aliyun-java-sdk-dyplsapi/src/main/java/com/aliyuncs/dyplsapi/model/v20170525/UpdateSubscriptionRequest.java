@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionResponse> {
 	
 	public UpdateSubscriptionRequest() {
-		super("Dyplsapi", "2017-05-25", "UpdateSubscription");
+		super("Dyplsapi", "2017-05-25", "UpdateSubscription", "dyplsapi");
 	}
 
 	private String phoneNoB;
@@ -33,6 +33,8 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
+
+	private String groupId;
 
 	private Long ownerId;
 
@@ -47,6 +49,8 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 	private String expiration;
 
 	private String operateType;
+
+	private String callRestrict;
 
 	public String getPhoneNoB() {
 		return this.phoneNoB;
@@ -89,6 +93,17 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -166,6 +181,17 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 		this.operateType = operateType;
 		if(operateType != null){
 			putQueryParameter("OperateType", operateType);
+		}
+	}
+
+	public String getCallRestrict() {
+		return this.callRestrict;
+	}
+
+	public void setCallRestrict(String callRestrict) {
+		this.callRestrict = callRestrict;
+		if(callRestrict != null){
+			putQueryParameter("CallRestrict", callRestrict);
 		}
 	}
 

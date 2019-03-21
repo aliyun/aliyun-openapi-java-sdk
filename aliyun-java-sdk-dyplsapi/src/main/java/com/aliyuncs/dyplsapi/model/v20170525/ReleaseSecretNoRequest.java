@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReleaseSecretNoRequest extends RpcAcsRequest<ReleaseSecretNoResponse> {
 	
 	public ReleaseSecretNoRequest() {
-		super("Dyplsapi", "2017-05-25", "ReleaseSecretNo");
+		super("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "dyplsapi");
 	}
 
 	private String poolKey;

@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
+public class BindAxgRequest extends RpcAcsRequest<BindAxgResponse> {
 	
-	public BindAxbRequest() {
-		super("Dyplsapi", "2017-05-25", "BindAxb", "dyplsapi");
+	public BindAxgRequest() {
+		super("Dyplsapi", "2017-05-25", "BindAxg", "dyplsapi");
 	}
 
 	private String phoneNoB;
@@ -35,6 +35,8 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 	private String expectCity;
 
 	private String resourceOwnerAccount;
+
+	private String groupId;
 
 	private Long ownerId;
 
@@ -102,6 +104,17 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -183,8 +196,8 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 	}
 
 	@Override
-	public Class<BindAxbResponse> getResponseClass() {
-		return BindAxbResponse.class;
+	public Class<BindAxgResponse> getResponseClass() {
+		return BindAxgResponse.class;
 	}
 
 }

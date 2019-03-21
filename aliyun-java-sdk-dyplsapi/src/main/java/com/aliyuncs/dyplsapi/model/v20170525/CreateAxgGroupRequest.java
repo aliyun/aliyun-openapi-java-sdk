@@ -20,13 +20,11 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecordFileDownloadUrlResponse> {
+public class CreateAxgGroupRequest extends RpcAcsRequest<CreateAxgGroupResponse> {
 	
-	public QueryRecordFileDownloadUrlRequest() {
-		super("Dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl", "dyplsapi");
+	public CreateAxgGroupRequest() {
+		super("Dyplsapi", "2017-05-25", "CreateAxgGroup", "dyplsapi");
 	}
-
-	private String callId;
 
 	private String poolKey;
 
@@ -34,22 +32,13 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 
 	private String resourceOwnerAccount;
 
+	private String name;
+
+	private String numbers;
+
+	private String remark;
+
 	private Long ownerId;
-
-	private String productType;
-
-	private String callTime;
-
-	public String getCallId() {
-		return this.callId;
-	}
-
-	public void setCallId(String callId) {
-		this.callId = callId;
-		if(callId != null){
-			putQueryParameter("CallId", callId);
-		}
-	}
 
 	public String getPoolKey() {
 		return this.poolKey;
@@ -84,6 +73,39 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getNumbers() {
+		return this.numbers;
+	}
+
+	public void setNumbers(String numbers) {
+		this.numbers = numbers;
+		if(numbers != null){
+			putQueryParameter("Numbers", numbers);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -95,31 +117,9 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
-		}
-	}
-
-	public String getCallTime() {
-		return this.callTime;
-	}
-
-	public void setCallTime(String callTime) {
-		this.callTime = callTime;
-		if(callTime != null){
-			putQueryParameter("CallTime", callTime);
-		}
-	}
-
 	@Override
-	public Class<QueryRecordFileDownloadUrlResponse> getResponseClass() {
-		return QueryRecordFileDownloadUrlResponse.class;
+	public Class<CreateAxgGroupResponse> getResponseClass() {
+		return CreateAxgGroupResponse.class;
 	}
 
 }

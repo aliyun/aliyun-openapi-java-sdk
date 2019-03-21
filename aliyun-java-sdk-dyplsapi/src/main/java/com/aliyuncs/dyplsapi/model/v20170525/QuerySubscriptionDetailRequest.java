@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QuerySubscriptionDetailRequest extends RpcAcsRequest<QuerySubscriptionDetailResponse> {
 	
 	public QuerySubscriptionDetailRequest() {
-		super("Dyplsapi", "2017-05-25", "QuerySubscriptionDetail");
+		super("Dyplsapi", "2017-05-25", "QuerySubscriptionDetail", "dyplsapi");
 	}
 
 	private String poolKey;

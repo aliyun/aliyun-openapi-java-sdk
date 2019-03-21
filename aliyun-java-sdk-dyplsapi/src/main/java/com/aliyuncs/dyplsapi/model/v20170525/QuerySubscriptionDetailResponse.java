@@ -74,11 +74,17 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 
 		private String phoneNoB;
 
+		private String extension;
+
+		private Long groupId;
+
 		private String gmtCreate;
 
 		private String expireDate;
 
 		private Boolean needRecord;
+
+		private String callRestrict;
 
 		private Long status;
 
@@ -114,6 +120,22 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 			this.phoneNoB = phoneNoB;
 		}
 
+		public String getExtension() {
+			return this.extension;
+		}
+
+		public void setExtension(String extension) {
+			this.extension = extension;
+		}
+
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
+		}
+
 		public String getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -136,6 +158,14 @@ public class QuerySubscriptionDetailResponse extends AcsResponse {
 
 		public void setNeedRecord(Boolean needRecord) {
 			this.needRecord = needRecord;
+		}
+
+		public String getCallRestrict() {
+			return this.callRestrict;
+		}
+
+		public void setCallRestrict(String callRestrict) {
+			this.callRestrict = callRestrict;
 		}
 
 		public Long getStatus() {
