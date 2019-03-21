@@ -16,18 +16,20 @@ package com.aliyuncs.oms.model.v20150212;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.oms.transform.v20150212.GetProductDefineResponseUnmarshaller;
+import com.aliyuncs.oms.transform.v20150212.GetDataOpenConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetProductDefineResponse extends AcsResponse {
+public class GetDataOpenConfigResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String productName;
+
+	private String tableName;
 
 	private String dataType;
 
@@ -49,6 +51,14 @@ public class GetProductDefineResponse extends AcsResponse {
 
 	public void setProductName(String productName) {
 		this.productName = productName;
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
 	}
 
 	public String getDataType() {
@@ -79,7 +89,7 @@ public class GetProductDefineResponse extends AcsResponse {
 
 		private String productName;
 
-		private List<Type> typeList;
+		private List<Table> tableList;
 
 		public String getProductName() {
 			return this.productName;
@@ -89,40 +99,63 @@ public class GetProductDefineResponse extends AcsResponse {
 			this.productName = productName;
 		}
 
-		public List<Type> getTypeList() {
-			return this.typeList;
+		public List<Table> getTableList() {
+			return this.tableList;
 		}
 
-		public void setTypeList(List<Type> typeList) {
-			this.typeList = typeList;
+		public void setTableList(List<Table> tableList) {
+			this.tableList = tableList;
 		}
 
-		public static class Type {
+		public static class Table {
 
-			private String dataType;
+			private String tableName;
 
-			private List<String> fields;
+			private List<DataType> dataTypeList;
 
-			public String getDataType() {
-				return this.dataType;
+			public String getTableName() {
+				return this.tableName;
 			}
 
-			public void setDataType(String dataType) {
-				this.dataType = dataType;
+			public void setTableName(String tableName) {
+				this.tableName = tableName;
 			}
 
-			public List<String> getFields() {
-				return this.fields;
+			public List<DataType> getDataTypeList() {
+				return this.dataTypeList;
 			}
 
-			public void setFields(List<String> fields) {
-				this.fields = fields;
+			public void setDataTypeList(List<DataType> dataTypeList) {
+				this.dataTypeList = dataTypeList;
+			}
+
+			public static class DataType {
+
+				private String dataType;
+
+				private List<String> fields;
+
+				public String getDataType() {
+					return this.dataType;
+				}
+
+				public void setDataType(String dataType) {
+					this.dataType = dataType;
+				}
+
+				public List<String> getFields() {
+					return this.fields;
+				}
+
+				public void setFields(List<String> fields) {
+					this.fields = fields;
+				}
 			}
 		}
 	}
 
 	@Override
-	public GetProductDefineResponse getInstance(UnmarshallerContext context) {
-		return	GetProductDefineResponseUnmarshaller.unmarshall(this, context);
+	public GetDataOpenConfigResponse getInstance(UnmarshallerContext context) {
+		return	GetDataOpenConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

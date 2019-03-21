@@ -20,15 +20,17 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetProductDefineRequest extends RpcAcsRequest<GetProductDefineResponse> {
+public class GetDataOpenConfigRequest extends RpcAcsRequest<GetDataOpenConfigResponse> {
 	
-	public GetProductDefineRequest() {
-		super("Oms", "2015-02-12", "GetProductDefine", "oms");
+	public GetDataOpenConfigRequest() {
+		super("Oms", "2015-02-12", "GetDataOpenConfig", "oms");
 	}
 
 	private String dataType;
 
 	private String productName;
+
+	private String tableName;
 
 	private String siteBid;
 
@@ -54,6 +56,17 @@ public class GetProductDefineRequest extends RpcAcsRequest<GetProductDefineRespo
 		}
 	}
 
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
+		}
+	}
+
 	public String getSiteBid() {
 		return this.siteBid;
 	}
@@ -61,13 +74,13 @@ public class GetProductDefineRequest extends RpcAcsRequest<GetProductDefineRespo
 	public void setSiteBid(String siteBid) {
 		this.siteBid = siteBid;
 		if(siteBid != null){
-			putQueryParameter("siteBid", siteBid);
+			putQueryParameter("SiteBid", siteBid);
 		}
 	}
 
 	@Override
-	public Class<GetProductDefineResponse> getResponseClass() {
-		return GetProductDefineResponse.class;
+	public Class<GetDataOpenConfigResponse> getResponseClass() {
+		return GetDataOpenConfigResponse.class;
 	}
 
 }
