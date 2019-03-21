@@ -8,7 +8,13 @@ skip_commits:
 
 build: off
 
+install:
+  # Install Proxy
+  - npm install o_o -g
+
 test_script:
+  # Start Proxy
+  - ps: Start-Process -FilePath o_o -NoNewWindow
   - mvn test -B -f .\aliyun-java-sdk-core\pom.xml
   - if defined daily_accessKeyId ( if defined daily_accessSecret ( call appveyor-test.bat ) ) else echo BUILD FAILURE MissingAccessKeyId
 

@@ -3,20 +3,20 @@ package com.aliyuncs.http.clients;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.*;
 import com.aliyuncs.utils.EnvironmentUtils;
-import com.aliyuncs.utils.StringUtils;
 import org.apache.http.conn.ssl.DefaultHostnameVerifier;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 
 import javax.net.ssl.*;
-import javax.xml.bind.DatatypeConverter;
-import java.io.*;
-import java.net.*;
-import java.security.KeyManagementException;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.Proxy;
+import java.net.URL;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -167,12 +167,30 @@ public class CompatibleUrlConnClient extends IHttpClient {
         }
     }
 
+
+    private Proxy calcProxy(URL url, HttpRequest request) throws ClientException {
+        String targetHost = url.getHost();
+        boolean needProxy = HttpUtil.needProxy(targetHost, clientConfig.getNoProxy(), EnvironmentUtils.getNoProxy());
+        if (!needProxy) {
+            return Proxy.NO_PROXY;
+        }
+        Proxy proxy;
+        if ("https".equalsIgnoreCase(url.getProtocol())) {
+            String httpsProxy = EnvironmentUtils.getHttpsProxy();
+            proxy = HttpUtil.getJDKProxy(clientConfig.getHttpsProxy(), httpsProxy, request);
+        } else {
+            String httpProxy = EnvironmentUtils.getHttpProxy();
+            proxy = HttpUtil.getJDKProxy(clientConfig.getHttpProxy(), httpProxy, request);
+        }
+        return proxy;
+
+    }
+
     private HttpURLConnection initHttpConnection(URL url, HttpRequest request) throws ClientException, IOException {
         HttpURLConnection httpConn = null;
+        Proxy proxy = calcProxy(url, request);
         if ("https".equalsIgnoreCase(url.getProtocol())) {
             SSLSocketFactory sslSocketFactory = createSSLSocketFactory(request);
-            String httpsProxy = EnvironmentUtils.getHttpsProxy();
-            Proxy proxy = getProxy(httpsProxy, request);
             HttpsURLConnection httpsConn = (HttpsURLConnection) url.openConnection(proxy);
             httpsConn.setSSLSocketFactory(sslSocketFactory);
             HostnameVerifier hostnameVerifier = createHostnameVerifier(request);
@@ -181,8 +199,6 @@ public class CompatibleUrlConnClient extends IHttpClient {
         }
 
         if (httpConn == null) {
-            String httpProxy = EnvironmentUtils.getHttpProxy();
-            Proxy proxy = getProxy(httpProxy, request);
             httpConn = (HttpURLConnection) url.openConnection(proxy);
         }
 
@@ -246,7 +262,6 @@ public class CompatibleUrlConnClient extends IHttpClient {
         }
         return httpConn;
     }
-
 
     private void parseHttpConn(HttpResponse response, HttpURLConnection httpConn, InputStream content)
             throws IOException {
@@ -323,26 +338,6 @@ public class CompatibleUrlConnClient extends IHttpClient {
         // do nothing
     }
 
-    private Proxy getProxy(String envProxy, HttpRequest request) throws MalformedURLException, UnsupportedEncodingException {
-        Proxy proxy = Proxy.NO_PROXY;
-        if (!StringUtils.isEmpty(envProxy)) {
-            URL proxyUrl = new URL(envProxy);
-            String userInfo = proxyUrl.getUserInfo();
-            if (userInfo != null) {
-                byte[] bytes = userInfo.getBytes("UTF-8");
-                String auth = DatatypeConverter.printBase64Binary(bytes);
-                request.putHeaderParameter("Proxy-Authorization", "Basic " + auth);
-            }
-            String hostname = proxyUrl.getHost();
-            int port = proxyUrl.getPort();
-            if (port == -1) {
-                port = proxyUrl.getDefaultPort();
-            }
-            SocketAddress addr = new InetSocketAddress(hostname, port);
-            proxy = new Proxy(Proxy.Type.HTTP, addr);
-        }
-        return proxy;
-    }
 
     /**
      * use HttpClientConfig.setIgnoreSSLCerts(true/false) instead

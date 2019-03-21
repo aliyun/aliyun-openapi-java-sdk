@@ -1,12 +1,19 @@
 package com.aliyuncs.http;
 
-import java.util.Map;
-import java.util.Map.Entry;
-
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.utils.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.HttpHost;
 
-import com.aliyuncs.exceptions.ClientException;
+import javax.xml.bind.DatatypeConverter;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.net.SocketAddress;
+import java.net.URL;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class HttpUtil {
 
@@ -72,5 +79,68 @@ public class HttpUtil {
         } else {
             return null;
         }
+    }
+
+    public static Proxy getJDKProxy(String clientProxy, String envProxy, HttpRequest request) throws ClientException {
+        Proxy proxy = Proxy.NO_PROXY;
+        try {
+            String proxyStr = (!StringUtils.isEmpty(clientProxy) ? clientProxy : envProxy);
+            if (StringUtils.isEmpty(proxyStr)) {
+                return proxy;
+            }
+            URL proxyUrl = new URL(proxyStr);
+
+            String userInfo = proxyUrl.getUserInfo();
+            if (userInfo != null) {
+                byte[] bytes = userInfo.getBytes("UTF-8");
+                String auth = DatatypeConverter.printBase64Binary(bytes);
+                request.putHeaderParameter("Proxy-Authorization", "Basic " + auth);
+            }
+            String hostname = proxyUrl.getHost();
+            int port = proxyUrl.getPort();
+            if (port == -1) {
+                port = proxyUrl.getDefaultPort();
+            }
+            SocketAddress addr = new InetSocketAddress(hostname, port);
+            proxy = new Proxy(Proxy.Type.HTTP, addr);
+
+        } catch (IOException e) {
+            throw new ClientException("SDK.InvalidProxy", "proxy url is invalid");
+        }
+        return proxy;
+    }
+
+    public static HttpHost getApacheProxy(String clientProxy, String envProxy, HttpRequest request) throws ClientException {
+        try {
+            String proxyStr = (!StringUtils.isEmpty(clientProxy) ? clientProxy : envProxy);
+            if (StringUtils.isEmpty(proxyStr)) {
+                return null;
+            }
+            URL proxyUrl = new URL(proxyStr);
+            String userInfo = proxyUrl.getUserInfo();
+            if (userInfo != null) {
+                byte[] bytes = userInfo.getBytes("UTF-8");
+                String auth = DatatypeConverter.printBase64Binary(bytes);
+                request.putHeaderParameter("Proxy-Authorization", "Basic " + auth);
+            }
+            return new HttpHost(proxyUrl.getHost(), proxyUrl.getPort(), proxyUrl.getProtocol());
+
+        } catch (IOException e) {
+            throw new ClientException("SDK.InvalidProxy", "proxy url is invalid");
+        }
+    }
+
+    public static boolean needProxy(String targetHost, String clientNoProxyList, String envNoProxyList) {
+        String noProxyList = (!StringUtils.isEmpty(clientNoProxyList) ? clientNoProxyList : envNoProxyList);
+        if (StringUtils.isEmpty(noProxyList)) {
+            return true;
+        }
+        String[] noProxyArr = noProxyList.split(",");
+        for (String host : noProxyArr) {
+            if (host.equals(targetHost)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

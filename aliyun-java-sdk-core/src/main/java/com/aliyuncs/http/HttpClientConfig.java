@@ -1,14 +1,13 @@
 package com.aliyuncs.http;
 
-import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
-
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
+import java.security.SecureRandom;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
 
 public class HttpClientConfig {
 
@@ -60,6 +59,15 @@ public class HttpClientConfig {
     private int maxRequestsPerHost = 5;
     private Runnable idleCallback = null;
     private ExecutorService executorService = null;
+
+
+    /**
+     * proxy configurations
+     */
+
+    private String httpProxy = null;
+    private String httpsProxy = null;
+    private String noProxy = null;
 
     /**
      * extra params
@@ -271,5 +279,29 @@ public class HttpClientConfig {
 
     public void setProtocolType(ProtocolType protocolType) {
         this.protocolType = protocolType;
+    }
+
+    public String getHttpProxy() {
+        return httpProxy;
+    }
+
+    public void setHttpProxy(String httpProxy) {
+        this.httpProxy = httpProxy;
+    }
+
+    public String getHttpsProxy() {
+        return httpsProxy;
+    }
+
+    public void setHttpsProxy(String httpsProxy) {
+        this.httpsProxy = httpsProxy;
+    }
+
+    public String getNoProxy() {
+        return noProxy;
+    }
+
+    public void setNoProxy(String noProxy) {
+        this.noProxy = noProxy;
     }
 }

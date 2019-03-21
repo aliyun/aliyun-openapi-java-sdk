@@ -2,10 +2,11 @@ package com.aliyuncs.http.clients;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.*;
+import com.aliyuncs.utils.EnvironmentUtils;
 import com.aliyuncs.utils.IOUtils;
 import com.aliyuncs.utils.StringUtils;
 import org.apache.http.Header;
-import org.apache.http.HttpResponse;
+import org.apache.http.HttpHost;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.EntityBuilder;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -28,6 +29,8 @@ import org.apache.http.util.EntityUtils;
 
 import javax.net.ssl.*;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -153,7 +156,7 @@ public class ApacheHttpClient extends IHttpClient {
         if (config.getKeepAliveDurationMillis() > 0) {
             builder.setKeepAliveStrategy(new ConnectionKeepAliveStrategy() {
                 @Override
-                public long getKeepAliveDuration(HttpResponse response, HttpContext context) {
+                public long getKeepAliveDuration(org.apache.http.HttpResponse response, HttpContext context) {
                     long duration = DefaultConnectionKeepAliveStrategy.INSTANCE.getKeepAliveDuration(response, context);
 
                     if (duration > 0 && duration < config.getKeepAliveDurationMillis()) {
@@ -168,7 +171,7 @@ public class ApacheHttpClient extends IHttpClient {
         httpClient = builder.build();
     }
 
-    private HttpUriRequest parseToHttpRequest(HttpRequest apiReq) throws IOException {
+    private HttpUriRequest parseToHttpRequest(HttpRequest apiReq) throws IOException, ClientException {
         RequestBuilder builder = RequestBuilder.create(apiReq.getSysMethod().name());
 
         builder.setUri(apiReq.getSysUrl());
@@ -205,13 +208,29 @@ public class ApacheHttpClient extends IHttpClient {
         } else {
             readTimeout = (int) clientConfig.getReadTimeoutMillis();
         }
-        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(connectTimeout).setSocketTimeout(
+        HttpHost proxy = calcProxy(apiReq);
+        RequestConfig requestConfig = RequestConfig.custom().setProxy(proxy).setConnectTimeout(connectTimeout).setSocketTimeout(
                 readTimeout).setConnectionRequestTimeout((int) clientConfig.getWriteTimeoutMillis()).build();
         builder.setConfig(requestConfig);
         return builder.build();
     }
 
-    private com.aliyuncs.http.HttpResponse parseToHttpResponse(HttpResponse httpResponse) throws IOException {
+    private HttpHost calcProxy(HttpRequest apiReq) throws MalformedURLException, ClientException {
+        boolean needProxy = HttpUtil.needProxy(new URL(apiReq.getSysUrl()).getHost(), clientConfig.getNoProxy(), EnvironmentUtils.getNoProxy());
+        if (!needProxy) {
+            return null;
+        }
+        URL url = new URL(apiReq.getSysUrl());
+        HttpHost proxy = null;
+        if ("https".equalsIgnoreCase(url.getProtocol())) {
+            proxy = HttpUtil.getApacheProxy(clientConfig.getHttpsProxy(), EnvironmentUtils.getHttpsProxy(), apiReq);
+        } else {
+            proxy = HttpUtil.getApacheProxy(clientConfig.getHttpProxy(), EnvironmentUtils.getHttpProxy(), apiReq);
+        }
+        return proxy;
+    }
+
+    private HttpResponse parseToHttpResponse(org.apache.http.HttpResponse httpResponse) throws IOException {
         com.aliyuncs.http.HttpResponse result = new com.aliyuncs.http.HttpResponse();
 
         // status code
@@ -242,7 +261,7 @@ public class ApacheHttpClient extends IHttpClient {
     }
 
     @Override
-    public final com.aliyuncs.http.HttpResponse syncInvoke(HttpRequest apiRequest) throws IOException {
+    public final HttpResponse syncInvoke(HttpRequest apiRequest) throws IOException, ClientException {
         HttpUriRequest httpRequest = parseToHttpRequest(apiRequest);
         CloseableHttpResponse httpResponse = null;
         try {

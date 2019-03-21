@@ -4,6 +4,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.*;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -13,10 +14,12 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
+import org.mockito.BDDMockito;
 import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PowerMockIgnore;
@@ -35,15 +38,23 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({FormatType.class, ContentType.class})
+@PrepareForTest({FormatType.class, ContentType.class, HttpUtil.class, HttpHost.class})
 @PowerMockIgnore({"javax.net.ssl.*"})
 public class ApacheHttpClientTest {
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+
+    @Before
+    public void init() throws ClientException, IOException {
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient.getInstance(config).close();
+    }
 
     private HttpClientConfig getMockHttpClientConfigWithFalseIgnoreSSLCerts() {
         HttpClientConfig config = Mockito.mock(HttpClientConfig.class);
@@ -155,7 +166,7 @@ public class ApacheHttpClientTest {
     private HttpRequest getMockHttpRequest() {
         HttpRequest apiRequest = Mockito.mock(HttpRequest.class);
         Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.GET);
-        Mockito.when(apiRequest.getSysUrl()).thenReturn("www.test.domain");
+        Mockito.when(apiRequest.getSysUrl()).thenReturn("http://www.test.domain");
         Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("application/json");
         Mockito.when(apiRequest.getHttpContent()).thenReturn("httpContent".getBytes());
         Map<String, String> headers = new HashMap<String, String>();
@@ -508,4 +519,46 @@ public class ApacheHttpClientTest {
         }
 
     }
+
+    @Test
+    public void calcProxyNotNeedProxyTest() throws Exception {
+        PowerMockito.mockStatic(HttpUtil.class);
+        BDDMockito.given(HttpUtil.needProxy(anyString(), anyString(), anyString())).willReturn(false);
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient client = ApacheHttpClient.getInstance(config);
+        HttpRequest httpRequest = mock(HttpRequest.class);
+        Mockito.when(httpRequest.getSysUrl()).thenReturn("http://www.aliyun.com");
+        HttpHost proxy = Whitebox.invokeMethod(client, "calcProxy", httpRequest);
+        Assert.assertEquals(null, proxy);
+    }
+
+    @Test
+    public void calcHttpProxyTest() throws Exception {
+        PowerMockito.mockStatic(HttpUtil.class);
+        BDDMockito.given(HttpUtil.needProxy(anyString(), anyString(), anyString())).willReturn(true);
+        HttpHost proxy0 = mock(HttpHost.class);
+        BDDMockito.given(HttpUtil.getApacheProxy(anyString(), anyString(), any(HttpRequest.class))).willReturn(proxy0);
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient client = ApacheHttpClient.getInstance(config);
+        HttpRequest httpRequest = mock(HttpRequest.class);
+        Mockito.when(httpRequest.getSysUrl()).thenReturn("http://www.aliyun.com");
+        HttpHost proxy = Whitebox.invokeMethod(client, "calcProxy", httpRequest);
+        Assert.assertEquals(proxy0, proxy);
+    }
+
+    @Test
+    public void calcHttpsProxyTest() throws Exception {
+        PowerMockito.mockStatic(HttpUtil.class);
+        BDDMockito.given(HttpUtil.needProxy(anyString(), anyString(), anyString())).willReturn(true);
+        HttpHost proxy0 = mock(HttpHost.class);
+        BDDMockito.given(HttpUtil.getApacheProxy(anyString(), anyString(), any(HttpRequest.class))).willReturn(proxy0);
+        HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
+        ApacheHttpClient client = ApacheHttpClient.getInstance(config);
+        HttpRequest httpRequest = mock(HttpRequest.class);
+        Mockito.when(httpRequest.getSysUrl()).thenReturn("https://www.aliyun.com");
+        HttpHost proxy = Whitebox.invokeMethod(client, "calcProxy", httpRequest);
+        Assert.assertEquals(proxy0, proxy);
+    }
+
+
 }
