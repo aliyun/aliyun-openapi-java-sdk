@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.commondriver.model.v20151229;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,18 +23,20 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetOrderIdByQueryPurchaseRequest extends RpcAcsRequest<GetOrderIdByQueryPurchaseResponse> {
 	
 	public GetOrderIdByQueryPurchaseRequest() {
-		super("Commondriver", "2015-12-29", "GetOrderIdByQueryPurchase");
+		super("Commondriver", "2015-12-29", "GetOrderIdByQueryPurchase", "commondriver");
 	}
 
 	private String orderId;
 
-	public String getorderId() {
+	public String getOrderId() {
 		return this.orderId;
 	}
 
-	public void setorderId(String orderId) {
+	public void setOrderId(String orderId) {
 		this.orderId = orderId;
-		putQueryParameter("orderId", orderId);
+		if(orderId != null){
+			putQueryParameter("orderId", orderId);
+		}
 	}
 
 	@Override
