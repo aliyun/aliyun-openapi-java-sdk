@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.aliyuncs.ossadmin.model.v20130712;
 
 import com.aliyuncs.RpcAcsRequest;
@@ -22,33 +23,26 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetBucketPolicyRequest extends RpcAcsRequest<GetBucketPolicyResponse> {
 	
 	public GetBucketPolicyRequest() {
-		super("OssAdmin", "2013-07-12", "GetBucketPolicy");
+		super("OssAdmin", "2013-07-12", "GetBucketPolicy", "ossadmin");
 	}
 
 	private String uid;
-
-	private String bid;
 
 	private String bucketName;
 
 	private String ownerAccount;
 
-	public String getuid() {
+	private String bid;
+
+	public String getUid() {
 		return this.uid;
 	}
 
-	public void setuid(String uid) {
+	public void setUid(String uid) {
 		this.uid = uid;
-		putQueryParameter("uid", uid);
-	}
-
-	public String getbid() {
-		return this.bid;
-	}
-
-	public void setbid(String bid) {
-		this.bid = bid;
-		putQueryParameter("bid", bid);
+		if(uid != null){
+			putQueryParameter("uid", uid);
+		}
 	}
 
 	public String getBucketName() {
@@ -57,7 +51,9 @@ public class GetBucketPolicyRequest extends RpcAcsRequest<GetBucketPolicyRespons
 
 	public void setBucketName(String bucketName) {
 		this.bucketName = bucketName;
-		putQueryParameter("BucketName", bucketName);
+		if(bucketName != null){
+			putQueryParameter("BucketName", bucketName);
+		}
 	}
 
 	public String getOwnerAccount() {
@@ -66,7 +62,20 @@ public class GetBucketPolicyRequest extends RpcAcsRequest<GetBucketPolicyRespons
 
 	public void setOwnerAccount(String ownerAccount) {
 		this.ownerAccount = ownerAccount;
-		putQueryParameter("OwnerAccount", ownerAccount);
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getBid() {
+		return this.bid;
+	}
+
+	public void setBid(String bid) {
+		this.bid = bid;
+		if(bid != null){
+			putQueryParameter("bid", bid);
+		}
 	}
 
 	@Override
