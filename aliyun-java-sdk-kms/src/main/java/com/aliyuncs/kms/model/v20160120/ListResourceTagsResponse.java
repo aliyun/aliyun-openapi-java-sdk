@@ -16,18 +16,18 @@ package com.aliyuncs.kms.model.v20160120;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.ListResourceTagsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeRegionsResponse extends AcsResponse {
+public class ListResourceTagsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Region> regions;
+	private List<Tag> tags;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,45 +37,49 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Region> getRegions() {
-		return this.regions;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setRegions(List<Region> regions) {
-		this.regions = regions;
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 
-	public static class Region {
+	public static class Tag {
 
-		private String regionId;
+		private String keyId;
 
-		public String getBizRegionId() {
-			return this.regionId;
+		private String tagKey;
+
+		private String tagValue;
+
+		public String getKeyId() {
+			return this.keyId;
 		}
 
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setKeyId(String keyId) {
+			this.keyId = keyId;
 		}
 
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
-		public String getRegionId() {
-			return this.regionId;
+		public String getTagKey() {
+			return this.tagKey;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 	}
 
 	@Override
-	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	public ListResourceTagsResponse getInstance(UnmarshallerContext context) {
+		return	ListResourceTagsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

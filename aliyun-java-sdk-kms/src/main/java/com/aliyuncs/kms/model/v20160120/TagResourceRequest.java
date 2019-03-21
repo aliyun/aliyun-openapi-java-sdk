@@ -21,10 +21,10 @@ import com.aliyuncs.http.ProtocolType;
  * @author auto create
  * @version 
  */
-public class GetParametersForImportRequest extends RpcAcsRequest<GetParametersForImportResponse> {
+public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 	
-	public GetParametersForImportRequest() {
-		super("Kms", "2016-01-20", "GetParametersForImport", "kms");
+	public TagResourceRequest() {
+		super("Kms", "2016-01-20", "TagResource", "kms");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
@@ -32,9 +32,7 @@ public class GetParametersForImportRequest extends RpcAcsRequest<GetParametersFo
 
 	private String sTSToken;
 
-	private String wrappingAlgorithm;
-
-	private String wrappingKeySpec;
+	private String tags;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -58,31 +56,20 @@ public class GetParametersForImportRequest extends RpcAcsRequest<GetParametersFo
 		}
 	}
 
-	public String getWrappingAlgorithm() {
-		return this.wrappingAlgorithm;
+	public String getTags() {
+		return this.tags;
 	}
 
-	public void setWrappingAlgorithm(String wrappingAlgorithm) {
-		this.wrappingAlgorithm = wrappingAlgorithm;
-		if(wrappingAlgorithm != null){
-			putQueryParameter("WrappingAlgorithm", wrappingAlgorithm);
-		}
-	}
-
-	public String getWrappingKeySpec() {
-		return this.wrappingKeySpec;
-	}
-
-	public void setWrappingKeySpec(String wrappingKeySpec) {
-		this.wrappingKeySpec = wrappingKeySpec;
-		if(wrappingKeySpec != null){
-			putQueryParameter("WrappingKeySpec", wrappingKeySpec);
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 
 	@Override
-	public Class<GetParametersForImportResponse> getResponseClass() {
-		return GetParametersForImportResponse.class;
+	public Class<TagResourceResponse> getResponseClass() {
+		return TagResourceResponse.class;
 	}
 
 }

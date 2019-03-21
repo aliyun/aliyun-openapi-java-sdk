@@ -1,3 +1,6 @@
+2019-03-21 Version: 2.5.1
+1, Update Dependency
+
 2018-03-29 Version: 2.5.0
 1, Add APIs: CreateAlias, UpdateAlias, DeleteAlias, ListAliases, ListAliasesByKeyId.
 2, Add APIs: GetParametersForImport, ImportKeyMaterial, DeleteKeyMaterial.

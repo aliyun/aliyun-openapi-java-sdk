@@ -14,23 +14,17 @@
 
 package com.aliyuncs.kms.model.v20160120;
 
-import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.kms.transform.v20160120.UntagResourceResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteKeyMaterialRequest extends RpcAcsRequest<DeleteKeyMaterialResponse> {
-	
-	public DeleteKeyMaterialRequest() {
-		super("Kms", "2016-01-20", "DeleteKeyMaterial", "kms");
-		setProtocol(ProtocolType.HTTPS);
-	}
+public class UntagResourceResponse extends AcsResponse {
 
 	private String keyId;
-
-	private String sTSToken;
 
 	public String getKeyId() {
 		return this.keyId;
@@ -38,25 +32,10 @@ public class DeleteKeyMaterialRequest extends RpcAcsRequest<DeleteKeyMaterialRes
 
 	public void setKeyId(String keyId) {
 		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
-		}
 	}
 
 	@Override
-	public Class<DeleteKeyMaterialResponse> getResponseClass() {
-		return DeleteKeyMaterialResponse.class;
+	public UntagResourceResponse getInstance(UnmarshallerContext context) {
+		return	UntagResourceResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

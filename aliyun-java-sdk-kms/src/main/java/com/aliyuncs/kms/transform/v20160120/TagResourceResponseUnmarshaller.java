@@ -14,16 +14,16 @@
 
 package com.aliyuncs.kms.transform.v20160120;
 
-import com.aliyuncs.kms.model.v20160120.UpdateAliasResponse;
+import com.aliyuncs.kms.model.v20160120.TagResourceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateAliasResponseUnmarshaller {
+public class TagResourceResponseUnmarshaller {
 
-	public static UpdateAliasResponse unmarshall(UpdateAliasResponse updateAliasResponse, UnmarshallerContext context) {
+	public static TagResourceResponse unmarshall(TagResourceResponse tagResourceResponse, UnmarshallerContext context) {
 		
-		updateAliasResponse.setRequestId(context.stringValue("UpdateAliasResponse.RequestId"));
+		tagResourceResponse.setRequestId(context.stringValue("TagResourceResponse.RequestId"));
 	 
-	 	return updateAliasResponse;
+	 	return tagResourceResponse;
 	}
 }

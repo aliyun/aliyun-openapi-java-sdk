@@ -15,14 +15,14 @@
 package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.CancelKeyDeletionResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.TagResourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CancelKeyDeletionResponse extends AcsResponse {
+public class TagResourceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class CancelKeyDeletionResponse extends AcsResponse {
 	}
 
 	@Override
-	public CancelKeyDeletionResponse getInstance(UnmarshallerContext context) {
-		return	CancelKeyDeletionResponseUnmarshaller.unmarshall(this, context);
+	public TagResourceResponse getInstance(UnmarshallerContext context) {
+		return	TagResourceResponseUnmarshaller.unmarshall(this, context);
 	}
 }
