@@ -12,19 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.transform.v20181219;
+package com.aliyuncs.arms.transform.v20190219;
 
-import com.aliyuncs.arms.model.v20181219.MetricQueryResponse;
+import com.aliyuncs.arms.model.v20190219.ARMSQueryDataSetResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class MetricQueryResponseUnmarshaller {
+public class ARMSQueryDataSetResponseUnmarshaller {
 
-	public static MetricQueryResponse unmarshall(MetricQueryResponse metricQueryResponse, UnmarshallerContext context) {
+	public static ARMSQueryDataSetResponse unmarshall(ARMSQueryDataSetResponse aRMSQueryDataSetResponse, UnmarshallerContext context) {
 		
-		metricQueryResponse.setRequestId(context.stringValue("MetricQueryResponse.RequestId"));
-		metricQueryResponse.setData(context.stringValue("MetricQueryResponse.Data"));
+		aRMSQueryDataSetResponse.setRequestId(context.stringValue("ARMSQueryDataSetResponse.RequestId"));
+		aRMSQueryDataSetResponse.setData(context.stringValue("ARMSQueryDataSetResponse.Data"));
 	 
-	 	return metricQueryResponse;
+	 	return aRMSQueryDataSetResponse;
 	}
 }

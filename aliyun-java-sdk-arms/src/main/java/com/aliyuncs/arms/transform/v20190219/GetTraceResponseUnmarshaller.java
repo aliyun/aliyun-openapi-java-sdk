@@ -12,16 +12,16 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.transform.v20181219;
+package com.aliyuncs.arms.transform.v20190219;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.arms.model.v20181219.GetTraceResponse;
-import com.aliyuncs.arms.model.v20181219.GetTraceResponse.CallChainInfo;
-import com.aliyuncs.arms.model.v20181219.GetTraceResponse.CallChainInfo.LogEvent;
-import com.aliyuncs.arms.model.v20181219.GetTraceResponse.CallChainInfo.LogEvent.TagEntry2;
-import com.aliyuncs.arms.model.v20181219.GetTraceResponse.CallChainInfo.TagEntry;
+import com.aliyuncs.arms.model.v20190219.GetTraceResponse;
+import com.aliyuncs.arms.model.v20190219.GetTraceResponse.CallChainInfo;
+import com.aliyuncs.arms.model.v20190219.GetTraceResponse.CallChainInfo.LogEvent;
+import com.aliyuncs.arms.model.v20190219.GetTraceResponse.CallChainInfo.LogEvent.TagEntry2;
+import com.aliyuncs.arms.model.v20190219.GetTraceResponse.CallChainInfo.TagEntry;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

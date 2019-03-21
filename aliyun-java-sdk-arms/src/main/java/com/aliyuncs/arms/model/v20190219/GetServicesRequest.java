@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181219;
+package com.aliyuncs.arms.model.v20190219;
 
 import com.aliyuncs.RpcAcsRequest;
 
@@ -20,26 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
+public class GetServicesRequest extends RpcAcsRequest<GetServicesResponse> {
 	
-	public GetTraceRequest() {
-		super("ARMS", "2018-12-19", "GetTrace");
+	public GetServicesRequest() {
+		super("ARMS", "2019-02-19", "GetServices");
 	}
-
-	private String traceID;
 
 	private String appType;
-
-	public String getTraceID() {
-		return this.traceID;
-	}
-
-	public void setTraceID(String traceID) {
-		this.traceID = traceID;
-		if(traceID != null){
-			putQueryParameter("TraceID", traceID);
-		}
-	}
 
 	public String getAppType() {
 		return this.appType;
@@ -53,8 +40,8 @@ public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 	}
 
 	@Override
-	public Class<GetTraceResponse> getResponseClass() {
-		return GetTraceResponse.class;
+	public Class<GetServicesResponse> getResponseClass() {
+		return GetServicesResponse.class;
 	}
 
 }

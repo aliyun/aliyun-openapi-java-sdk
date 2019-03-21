@@ -12,11 +12,11 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181219;
+package com.aliyuncs.arms.model.v20190219;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20181219.SearchTracesResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190219.SearchTracesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**

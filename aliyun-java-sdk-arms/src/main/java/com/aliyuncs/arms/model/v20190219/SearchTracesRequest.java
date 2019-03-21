@@ -12,9 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181219;
+package com.aliyuncs.arms.model.v20190219;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -23,10 +24,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 	
 	public SearchTracesRequest() {
-		super("ARMS", "2018-12-19", "SearchTraces");
+		super("ARMS", "2019-02-19", "SearchTraces");
 	}
-
-	private String tag1;
 
 	private String operationName;
 
@@ -38,20 +37,9 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 
 	private Long startTime;
 
+	private List<String> tagMaps;
+
 	private Long minDuration;
-
-	private String tag2;
-
-	public String getTag1() {
-		return this.tag1;
-	}
-
-	public void setTag1(String tag1) {
-		this.tag1 = tag1;
-		if(tag1 != null){
-			putQueryParameter("Tag1", tag1);
-		}
-	}
 
 	public String getOperationName() {
 		return this.operationName;
@@ -108,6 +96,19 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		}
 	}
 
+	public List<String> getTagMaps() {
+		return this.tagMaps;
+	}
+
+	public void setTagMaps(List<String> tagMaps) {
+		this.tagMaps = tagMaps;	
+		if (tagMaps != null) {
+			for (int i = 0; i < tagMaps.size(); i++) {
+				putQueryParameter("TagMap." + (i + 1) , tagMaps.get(i));
+			}
+		}	
+	}
+
 	public Long getMinDuration() {
 		return this.minDuration;
 	}
@@ -116,17 +117,6 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		this.minDuration = minDuration;
 		if(minDuration != null){
 			putQueryParameter("MinDuration", minDuration.toString());
-		}
-	}
-
-	public String getTag2() {
-		return this.tag2;
-	}
-
-	public void setTag2(String tag2) {
-		this.tag2 = tag2;
-		if(tag2 != null){
-			putQueryParameter("Tag2", tag2);
 		}
 	}
 

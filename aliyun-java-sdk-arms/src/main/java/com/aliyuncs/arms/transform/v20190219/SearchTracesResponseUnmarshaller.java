@@ -12,13 +12,13 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.transform.v20181219;
+package com.aliyuncs.arms.transform.v20190219;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.arms.model.v20181219.SearchTracesResponse;
-import com.aliyuncs.arms.model.v20181219.SearchTracesResponse.TraceInfo;
+import com.aliyuncs.arms.model.v20190219.SearchTracesResponse;
+import com.aliyuncs.arms.model.v20190219.SearchTracesResponse.TraceInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

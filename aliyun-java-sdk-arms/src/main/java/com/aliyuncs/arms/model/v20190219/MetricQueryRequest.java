@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181219;
+package com.aliyuncs.arms.model.v20190219;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
@@ -24,7 +24,7 @@ import java.util.List;
 public class MetricQueryRequest extends RpcAcsRequest<MetricQueryResponse> {
 	
 	public MetricQueryRequest() {
-		super("ARMS", "2018-12-19", "MetricQuery");
+		super("ARMS", "2019-02-19", "MetricQuery");
 	}
 
 	private Long endTime;

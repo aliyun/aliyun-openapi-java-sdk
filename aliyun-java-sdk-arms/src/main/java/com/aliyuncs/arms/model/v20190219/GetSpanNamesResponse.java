@@ -12,22 +12,22 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181219;
+package com.aliyuncs.arms.model.v20190219;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20181219.GetServicesResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190219.GetSpanNamesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetServicesResponse extends AcsResponse {
+public class GetSpanNamesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Data data;
+	private List<String> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,29 +37,16 @@ public class GetServicesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
+	public List<String> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<String> data) {
 		this.data = data;
 	}
 
-	public static class Data {
-
-		private List<String> services;
-
-		public List<String> getServices() {
-			return this.services;
-		}
-
-		public void setServices(List<String> services) {
-			this.services = services;
-		}
-	}
-
 	@Override
-	public GetServicesResponse getInstance(UnmarshallerContext context) {
-		return	GetServicesResponseUnmarshaller.unmarshall(this, context);
+	public GetSpanNamesResponse getInstance(UnmarshallerContext context) {
+		return	GetSpanNamesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

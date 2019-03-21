@@ -12,13 +12,14 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.transform.v20181219;
+package com.aliyuncs.arms.transform.v20190219;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.arms.model.v20181219.GetServicesResponse;
-import com.aliyuncs.arms.model.v20181219.GetServicesResponse.Data;
+import com.aliyuncs.arms.model.v20190219.GetServicesResponse;
+import com.aliyuncs.arms.model.v20190219.GetServicesResponse.Data;
+import com.aliyuncs.arms.model.v20190219.GetServicesResponse.Data.DetailsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +36,17 @@ public class GetServicesResponseUnmarshaller {
 			services.add(context.stringValue("GetServicesResponse.Data.Services["+ i +"]"));
 		}
 		data.setServices(services);
+
+		List<DetailsItem> details = new ArrayList<DetailsItem>();
+		for (int i = 0; i < context.lengthValue("GetServicesResponse.Data.Details.Length"); i++) {
+			DetailsItem detailsItem = new DetailsItem();
+			detailsItem.setServiceName(context.stringValue("GetServicesResponse.Data.Details["+ i +"].ServiceName"));
+			detailsItem.setPid(context.stringValue("GetServicesResponse.Data.Details["+ i +"].Pid"));
+			detailsItem.setRegionId(context.stringValue("GetServicesResponse.Data.Details["+ i +"].RegionId"));
+
+			details.add(detailsItem);
+		}
+		data.setDetails(details);
 		getServicesResponse.setData(data);
 	 
 	 	return getServicesResponse;

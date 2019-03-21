@@ -12,29 +12,22 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.arms.model.v20181219;
+package com.aliyuncs.arms.model.v20190219;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20181219.MetricQueryResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190219.GetTagKeyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class MetricQueryResponse extends AcsResponse {
-
-	private String data;
+public class GetTagKeyResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private List<String> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +37,16 @@ public class MetricQueryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<String> getData() {
+		return this.data;
+	}
+
+	public void setData(List<String> data) {
+		this.data = data;
+	}
+
 	@Override
-	public MetricQueryResponse getInstance(UnmarshallerContext context) {
-		return	MetricQueryResponseUnmarshaller.unmarshall(this, context);
+	public GetTagKeyResponse getInstance(UnmarshallerContext context) {
+		return	GetTagKeyResponseUnmarshaller.unmarshall(this, context);
 	}
 }
