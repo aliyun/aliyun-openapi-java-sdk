@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FtDynamicAddressDubboRequest extends RpcAcsRequest<FtDynamicAddressDubboResponse> {
 	
 	public FtDynamicAddressDubboRequest() {
-		super("Ft", "2018-07-13", "FtDynamicAddressDubbo", "serviceCode");
+		super("Ft", "2018-07-13", "FtDynamicAddressDubbo", "ft");
 	}
 
 	private Integer intValue;

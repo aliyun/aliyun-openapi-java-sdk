@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FTApiAliasApiRequest extends RpcAcsRequest<FTApiAliasApiResponse> {
 	
 	public FTApiAliasApiRequest() {
-		super("Ft", "2018-07-13", "FTApiAliasApi", "serviceCode");
+		super("Ft", "2018-07-13", "FTApiAliasApi", "ft");
 	}
 
 	private String name;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FtFlowSpecialRequest extends RpcAcsRequest<FtFlowSpecialResponse> {
 	
 	public FtFlowSpecialRequest() {
-		super("Ft", "2018-07-13", "FtFlowSpecial", "serviceCode");
+		super("Ft", "2018-07-13", "FtFlowSpecial", "ft");
 	}
 
 	private String name;

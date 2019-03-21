@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FtGatedLaunchPolicy4Request extends RpcAcsRequest<FtGatedLaunchPolicy4Response> {
 	
 	public FtGatedLaunchPolicy4Request() {
-		super("Ft", "2018-07-13", "FtGatedLaunchPolicy4", "serviceCode");
+		super("Ft", "2018-07-13", "FtGatedLaunchPolicy4", "ft");
 	}
 
 	private String isGatedLaunch;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FtDynamicAddressHsfRequest extends RpcAcsRequest<FtDynamicAddressHsfResponse> {
 	
 	public FtDynamicAddressHsfRequest() {
-		super("Ft", "2018-07-13", "FtDynamicAddressHsf", "serviceCode");
+		super("Ft", "2018-07-13", "FtDynamicAddressHsf", "ft");
 	}
 
 	@Override

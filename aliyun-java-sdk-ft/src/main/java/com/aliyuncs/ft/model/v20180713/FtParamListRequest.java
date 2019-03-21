@@ -24,7 +24,7 @@ import java.util.List;
 public class FtParamListRequest extends RpcAcsRequest<FtParamListResponse> {
 	
 	public FtParamListRequest() {
-		super("Ft", "2018-07-13", "FtParamList", "serviceCode");
+		super("Ft", "2018-07-13", "FtParamList", "ft");
 	}
 
 	private List<Disk> disks;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FtEagleEyeRequest extends RpcAcsRequest<FtEagleEyeResponse> {
 	
 	public FtEagleEyeRequest() {
-		super("Ft", "2018-07-13", "FtEagleEye", "serviceCode");
+		super("Ft", "2018-07-13", "FtEagleEye", "ft");
 	}
 
 	private String name;
