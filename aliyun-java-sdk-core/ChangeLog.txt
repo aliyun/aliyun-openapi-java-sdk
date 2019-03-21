@@ -1,3 +1,8 @@
+2019-03-21 Version: 4.3.7
+1. Fix content has not bean provided
+2. Support https cert
+3. Add deprecated comments
+
 2019-03-18 Version: 4.3.6
 1. Add timeout setting and test
 2. Add the certificate provider chain and test
