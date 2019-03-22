@@ -190,6 +190,9 @@ public class ApacheHttpClient extends IHttpClient {
 
         builder.addHeader(ACCEPT_ENCODING, "identity");
 
+        // calcProxy will modify the "Proxy-Authorization" header of the request
+        HttpHost proxy = calcProxy(apiReq);
+
         for (Map.Entry<String, String> entry : apiReq.getSysHeaders().entrySet()) {
             if ("Content-Length".equalsIgnoreCase(entry.getKey())) {
                 continue;
@@ -208,7 +211,6 @@ public class ApacheHttpClient extends IHttpClient {
         } else {
             readTimeout = (int) clientConfig.getReadTimeoutMillis();
         }
-        HttpHost proxy = calcProxy(apiReq);
         RequestConfig requestConfig = RequestConfig.custom().setProxy(proxy).setConnectTimeout(connectTimeout).setSocketTimeout(
                 readTimeout).setConnectionRequestTimeout((int) clientConfig.getWriteTimeoutMillis()).build();
         builder.setConfig(requestConfig);
