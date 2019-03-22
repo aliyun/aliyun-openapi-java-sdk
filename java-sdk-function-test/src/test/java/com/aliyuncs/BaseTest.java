@@ -109,7 +109,7 @@ public class BaseTest {
     }
 
     @After
-    public void destroy() throws ClientException, IOException {
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+    public void destroy() throws IOException {
+        ApacheHttpClient.getInstance().close();
     }
 }

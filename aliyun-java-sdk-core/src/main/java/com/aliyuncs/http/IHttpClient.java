@@ -1,10 +1,10 @@
 package com.aliyuncs.http;
 
+import com.aliyuncs.exceptions.ClientException;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.concurrent.Future;
-
-import com.aliyuncs.exceptions.ClientException;
 
 public abstract class IHttpClient implements Closeable {
 
@@ -17,6 +17,10 @@ public abstract class IHttpClient implements Closeable {
         this.clientConfig = clientConfig;
         init(clientConfig);
 
+    }
+
+    public IHttpClient() {
+        // do nothing
     }
 
     protected abstract void init(HttpClientConfig clientConfig) throws ClientException;

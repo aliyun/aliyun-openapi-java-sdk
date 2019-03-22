@@ -37,6 +37,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ApacheHttpClient extends IHttpClient {
@@ -50,22 +51,32 @@ public class ApacheHttpClient extends IHttpClient {
     private ExecutorService executorService;
     private CloseableHttpClient httpClient;
     private PoolingHttpClientConnectionManager connectionManager;
+    private AtomicBoolean initialized = new AtomicBoolean(false);
+    private CountDownLatch latch = new CountDownLatch(1);
 
     private static volatile ApacheHttpClient client;
 
+    /**
+     * use ApacheHttpClient.getInstance() instead
+     */
+    @Deprecated
     public static ApacheHttpClient getInstance(HttpClientConfig config) throws ClientException {
+        throw new IllegalStateException("use ApacheHttpClient.getInstance() instead");
+    }
+
+    public static ApacheHttpClient getInstance() {
         if (client == null) {
             synchronized (ApacheHttpClient.class) {
                 if (client == null) {
-                    client = new ApacheHttpClient(config);
+                    client = new ApacheHttpClient();
                 }
             }
         }
         return client;
     }
 
-    private ApacheHttpClient(HttpClientConfig config) throws ClientException {
-        super(config);
+    private ApacheHttpClient() {
+        super();
     }
 
     private SSLConnectionSocketFactory createSSLConnectionSocketFactory() throws ClientException {
@@ -114,21 +125,7 @@ public class ApacheHttpClient extends IHttpClient {
 
     }
 
-    @Override
-    protected void init(final HttpClientConfig config) throws ClientException {
-        HttpClientBuilder builder;
-        if (config.containsExtParam(EXT_PARAM_KEY_BUILDER)) {
-            builder = (HttpClientBuilder) config.getExtParam(EXT_PARAM_KEY_BUILDER);
-        } else {
-            builder = HttpClientBuilder.create();
-        }
-
-        // default request config
-        RequestConfig defaultConfig = RequestConfig.custom().setConnectTimeout((int) config
-                .getConnectionTimeoutMillis()).setSocketTimeout((int) config.getReadTimeoutMillis())
-                .setConnectionRequestTimeout((int) config.getWriteTimeoutMillis()).build();
-        builder.setDefaultRequestConfig(defaultConfig);
-
+    private void initConnectionManager() throws ClientException {
         // http
         RegistryBuilder<ConnectionSocketFactory> socketFactoryRegistryBuilder = RegistryBuilder.create();
         socketFactoryRegistryBuilder.register("http", new PlainConnectionSocketFactory());
@@ -139,18 +136,56 @@ public class ApacheHttpClient extends IHttpClient {
 
         // connPool
         connectionManager = new PoolingHttpClientConnectionManager(socketFactoryRegistryBuilder.build());
-        connectionManager.setMaxTotal(config.getMaxRequests());
-        connectionManager.setDefaultMaxPerRoute(config.getMaxRequestsPerHost());
+        connectionManager.setMaxTotal(clientConfig.getMaxRequests());
+        connectionManager.setDefaultMaxPerRoute(clientConfig.getMaxRequestsPerHost());
+    }
+
+    private HttpClientBuilder initHttpClientBuilder() {
+        HttpClientBuilder builder;
+        if (clientConfig.containsExtParam(EXT_PARAM_KEY_BUILDER)) {
+            builder = (HttpClientBuilder) clientConfig.getExtParam(EXT_PARAM_KEY_BUILDER);
+        } else {
+            builder = HttpClientBuilder.create();
+        }
+        return builder;
+    }
+
+    private void initExecutor() {
+        // async
+        if (clientConfig.getExecutorService() == null) {
+            executorService = new ThreadPoolExecutor(0, clientConfig.getMaxRequests(), DEFAULT_THREAD_KEEP_ALIVE_TIME,
+                    TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), new DefaultAsyncThreadFactory());
+        } else {
+            executorService = clientConfig.getExecutorService();
+        }
+    }
+
+    @Override
+    protected void init(final HttpClientConfig config0) throws ClientException {
+        if (!initialized.compareAndSet(false, true)) {
+            try {
+                latch.await();
+            } catch (InterruptedException e) {
+                throw new ClientException("SDK.InitFailed", "Init apacheHttpClient failed", e);
+            }
+            return;
+        }
+        final HttpClientConfig config = (config0 != null ? config0 : HttpClientConfig.getDefault());
+        this.clientConfig = config;
+
+        HttpClientBuilder builder = initHttpClientBuilder();
+
+        // default request config
+        RequestConfig defaultConfig = RequestConfig.custom().setConnectTimeout((int) config
+                .getConnectionTimeoutMillis()).setSocketTimeout((int) config.getReadTimeoutMillis())
+                .setConnectionRequestTimeout((int) config.getWriteTimeoutMillis()).build();
+        builder.setDefaultRequestConfig(defaultConfig);
+
+        initConnectionManager();
         builder.setConnectionManager(connectionManager);
         ApacheIdleConnectionCleaner.registerConnectionManager(connectionManager, config.getMaxIdleTimeMillis());
 
-        // async
-        if (config.getExecutorService() == null) {
-            executorService = new ThreadPoolExecutor(0, config.getMaxRequests(), DEFAULT_THREAD_KEEP_ALIVE_TIME,
-                    TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), new DefaultAsyncThreadFactory());
-        } else {
-            executorService = config.getExecutorService();
-        }
+        initExecutor();
 
         // keepAlive
         if (config.getKeepAliveDurationMillis() > 0) {
@@ -169,6 +204,7 @@ public class ApacheHttpClient extends IHttpClient {
         }
 
         httpClient = builder.build();
+        latch.countDown();
     }
 
     private HttpUriRequest parseToHttpRequest(HttpRequest apiReq) throws IOException, ClientException {
@@ -324,10 +360,12 @@ public class ApacheHttpClient extends IHttpClient {
     @Override
     public void close() throws IOException {
         client = null;
-        executorService.shutdown();
-        ApacheIdleConnectionCleaner.removeConnectionManager(connectionManager);
-        connectionManager.shutdown();
-        IOUtils.closeQuietly(httpClient);
+        if (initialized.compareAndSet(true, false)) {
+            executorService.shutdown();
+            ApacheIdleConnectionCleaner.removeConnectionManager(connectionManager);
+            connectionManager.shutdown();
+            IOUtils.closeQuietly(httpClient);
+        }
     }
 
     private class DefaultAsyncThreadFactory implements ThreadFactory {

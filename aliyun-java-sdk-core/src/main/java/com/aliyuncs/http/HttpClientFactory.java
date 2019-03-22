@@ -37,7 +37,9 @@ public class HttpClientFactory {
                 throw new IllegalStateException(String.format("%s is not assignable from com.aliyuncs.http.IHttpClient", customClientClassName));
             }
             if (ApacheHttpClient.class.equals(httpClientClass)) {
-                return ApacheHttpClient.getInstance(clientConfig);
+                IHttpClient client = ApacheHttpClient.getInstance();
+                client.init(clientConfig);
+                return client;
             }
             Constructor<? extends IHttpClient> constructor = httpClientClass.getConstructor(HttpClientConfig.class);
             return constructor.newInstance(clientConfig);
