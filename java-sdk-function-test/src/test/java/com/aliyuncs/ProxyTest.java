@@ -21,7 +21,7 @@ public class ProxyTest extends BaseTest {
     public ExpectedException thrown = ExpectedException.none();
 
     private DefaultAcsClient getRightApacheProxyClientWithRegionId(String regionId) throws ClientException, IOException {
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+        ApacheHttpClient.getInstance().close();
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setHttpProxy("http://test:test@localhost:8989");
@@ -31,7 +31,7 @@ public class ProxyTest extends BaseTest {
     }
 
     private DefaultAcsClient getWrongApacheProxyClientWithRegionId(String regionId) throws ClientException, IOException {
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+        ApacheHttpClient.getInstance().close();
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setHttpProxy("http://localhost:9898");
@@ -61,7 +61,7 @@ public class ProxyTest extends BaseTest {
     }
 
     private DefaultAcsClient getIgnoreWrongApacheProxyClientWithRegionId(String regionId) throws ClientException, IOException {
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+        ApacheHttpClient.getInstance().close();
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setHttpProxy("http://localhost:9898");
@@ -72,7 +72,7 @@ public class ProxyTest extends BaseTest {
     }
 
     private DefaultAcsClient getRightAuthProxyApacheClientWithRegionId(String regionId) throws ClientException, IOException {
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+        ApacheHttpClient.getInstance().close();
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setHttpProxy("http://username:right@localhost:3000");
@@ -82,7 +82,7 @@ public class ProxyTest extends BaseTest {
     }
 
     private DefaultAcsClient getWrongAuthProxyApacheClientWithRegionId(String regionId) throws ClientException, IOException {
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+        ApacheHttpClient.getInstance().close();
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setHttpProxy("http://username:wrong@localhost:3000");

@@ -21,7 +21,7 @@ public class TimeoutTest extends BaseTest {
         request.setSysVersion("2014-05-26");
         request.setSysAction("DescribeAccessPoints");
         this.client.getCommonResponse(request);
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+        ApacheHttpClient.getInstance().close();
         thrown.expect(ClientException.class);
         thrown.expectMessage("SDK.ServerUnreachable : SocketTimeoutException has occurred on a socket read or accept.");
         this.getReadTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
@@ -36,7 +36,7 @@ public class TimeoutTest extends BaseTest {
         request.setSysVersion("2014-05-26");
         request.setSysAction("DescribeAccessPoints");
         this.getClientWithRegionId(regionId).getCommonResponse(request);
-        ApacheHttpClient.getInstance(HttpClientConfig.getDefault()).close();
+        ApacheHttpClient.getInstance().close();
         thrown.expect(ClientException.class);
         thrown.expectMessage(
                 "SDK.ServerUnreachable : Server unreachable: org.apache.http.conn.ConnectTimeoutException");
