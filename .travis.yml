@@ -13,12 +13,13 @@ branches: # build only on these branches
 
 install:
   # Install Proxy
-  - sudo rm -rf ~/.nvm - curl -sL "https://deb.nodesource.com/setup_7.x" | sudo -E bash -
+  - sudo rm -rf ~/.nvm - curl -sL "https://deb.nodesource.com/setup_11.x" | sudo -E bash -
   - sudo apt-get install -y nodejs
   - sudo ln -s /usr/bin/nodejs /usr/bin/node
   - sudo apt-get install -y npm
+  - sudo npm i -g n --force -g --registry=https://registry.npm.taobao.org
+  - sudo n latest
   - sudo npm install o_o -g --registry=https://registry.npm.taobao.org
-
 script:
   # Start Proxy
   - sudo o_o &
