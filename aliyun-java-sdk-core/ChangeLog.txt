@@ -1,3 +1,7 @@
+2019-03-25 Version: 4.3.8
+1. Support http proxy
+2. Update endpoint.json file
+
 2019-03-21 Version: 4.3.7
 1. Fix content has not bean provided
 2. Support https cert
