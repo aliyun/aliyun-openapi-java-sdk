@@ -266,9 +266,11 @@ public class DefaultAcsClient implements IAcsClient {
                 return response;
             } catch (SocketTimeoutException exp) {
                 throw new ClientException("SDK.ServerUnreachable",
-                        "SocketTimeoutException has occurred on a socket read or accept.", exp);
+                        "SocketTimeoutException has occurred on a socket read or accept.The url is " +
+                                request.getSysUrl(), exp);
             } catch (IOException exp) {
-                throw new ClientException("SDK.ServerUnreachable", "Server unreachable: " + exp.toString(), exp);
+                throw new ClientException("SDK.ServerUnreachable",
+                        "Server unreachable: connection " + request.getSysUrl() + " failed", exp);
             }
         } catch (InvalidKeyException exp) {
             throw new ClientException("SDK.InvalidAccessSecret", "Specified access secret is not valid.", exp);

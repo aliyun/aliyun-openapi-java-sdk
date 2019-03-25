@@ -409,8 +409,10 @@ public class DefaultAcsClientTest {
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
         Mockito.doThrow(new SocketTimeoutException()).when(getHttpClient(client)).syncInvoke(Mockito.any(
                 HttpRequest.class));
+        Mockito.doReturn("test").when(request).getSysUrl();
         thrown.expect(ClientException.class);
-        thrown.expectMessage("SDK.ServerUnreachable : SocketTimeoutException has occurred on a socket read or accept.");
+        thrown.expectMessage("SDK.ServerUnreachable : " +
+                "SocketTimeoutException has occurred on a socket read or accept.The url is test");
         client.doAction(request);
     }
 
@@ -425,8 +427,9 @@ public class DefaultAcsClientTest {
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
         Mockito.doReturn(ProtocolType.HTTP).when(request).getSysProtocol();
         Mockito.doThrow(new IOException()).when(getHttpClient(client)).syncInvoke(Mockito.any(HttpRequest.class));
+        Mockito.doReturn("test").when(request).getSysUrl();
         thrown.expect(ClientException.class);
-        thrown.expectMessage("SDK.ServerUnreachable : Server unreachable: " + new IOException().toString());
+        thrown.expectMessage("SDK.ServerUnreachable : Server unreachable: connection test failed");
         client.doAction(request);
     }
 
