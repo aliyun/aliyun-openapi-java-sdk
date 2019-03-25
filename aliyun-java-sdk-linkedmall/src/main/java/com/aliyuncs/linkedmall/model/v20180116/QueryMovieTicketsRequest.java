@@ -26,22 +26,22 @@ public class QueryMovieTicketsRequest extends RpcAcsRequest<QueryMovieTicketsRes
 		super("linkedmall", "2018-01-16", "QueryMovieTickets", "linkedmall");
 	}
 
-	private String bizId;
+	private String orderId;
 
 	private String bizUid;
 
-	private String orderId;
-
 	private String extJson;
 
-	public String getBizId() {
-		return this.bizId;
+	private String bizId;
+
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 
@@ -56,17 +56,6 @@ public class QueryMovieTicketsRequest extends RpcAcsRequest<QueryMovieTicketsRes
 		}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
 	public String getExtJson() {
 		return this.extJson;
 	}
@@ -75,6 +64,17 @@ public class QueryMovieTicketsRequest extends RpcAcsRequest<QueryMovieTicketsRes
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

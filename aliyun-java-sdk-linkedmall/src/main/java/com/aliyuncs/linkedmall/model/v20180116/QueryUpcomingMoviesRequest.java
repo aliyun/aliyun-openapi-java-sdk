@@ -26,22 +26,11 @@ public class QueryUpcomingMoviesRequest extends RpcAcsRequest<QueryUpcomingMovie
 		super("linkedmall", "2018-01-16", "QueryUpcomingMovies", "linkedmall");
 	}
 
-	private String bizId;
-
 	private Long cityCode;
 
 	private String extJson;
 
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
+	private String bizId;
 
 	public Long getCityCode() {
 		return this.cityCode;
@@ -62,6 +51,17 @@ public class QueryUpcomingMoviesRequest extends RpcAcsRequest<QueryUpcomingMovie
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

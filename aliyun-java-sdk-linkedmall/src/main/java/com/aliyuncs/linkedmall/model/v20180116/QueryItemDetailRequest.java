@@ -26,20 +26,9 @@ public class QueryItemDetailRequest extends RpcAcsRequest<QueryItemDetailRespons
 		super("linkedmall", "2018-01-16", "QueryItemDetail", "linkedmall");
 	}
 
-	private String bizId;
-
 	private Long itemId;
 
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
+	private String bizId;
 
 	public Long getItemId() {
 		return this.itemId;
@@ -49,6 +38,17 @@ public class QueryItemDetailRequest extends RpcAcsRequest<QueryItemDetailRespons
 		this.itemId = itemId;
 		if(itemId != null){
 			putQueryParameter("ItemId", itemId.toString());
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

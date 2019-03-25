@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkedmall.model.v20180116.QueryAllCitiesResponse;
 import com.aliyuncs.linkedmall.model.v20180116.QueryAllCitiesResponse.City;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

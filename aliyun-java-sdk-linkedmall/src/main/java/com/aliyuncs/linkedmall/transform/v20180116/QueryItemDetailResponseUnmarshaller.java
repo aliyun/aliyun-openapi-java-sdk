@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkedmall.model.v20180116.QueryItemDetailResponse;
 import com.aliyuncs.linkedmall.model.v20180116.QueryItemDetailResponse.Item;
 import com.aliyuncs.linkedmall.model.v20180116.QueryItemDetailResponse.Item.Sku;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +47,12 @@ public class QueryItemDetailResponseUnmarshaller {
 		item.setIsCanSell(context.booleanValue("QueryItemDetailResponse.Item.IsCanSell"));
 		item.setTotalSoldQuantity(context.integerValue("QueryItemDetailResponse.Item.TotalSoldQuantity"));
 		item.setProperties(context.stringValue("QueryItemDetailResponse.Item.Properties"));
+		item.setCanSell(context.booleanValue("QueryItemDetailResponse.Item.CanSell"));
+		item.setSellerPayPostfee(context.booleanValue("QueryItemDetailResponse.Item.SellerPayPostfee"));
+		item.setCategoryId(context.longValue("QueryItemDetailResponse.Item.CategoryId"));
+		item.setExtJson(context.stringValue("QueryItemDetailResponse.Item.ExtJson"));
+		item.setPropertiesJson(context.stringValue("QueryItemDetailResponse.Item.PropertiesJson"));
+		item.setIforestPropsJson(context.stringValue("QueryItemDetailResponse.Item.IforestPropsJson"));
 
 		List<String> iforestProps = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QueryItemDetailResponse.Item.IforestProps.Length"); i++) {
@@ -75,6 +80,7 @@ public class QueryItemDetailResponseUnmarshaller {
 			sku.setPoints(context.longValue("QueryItemDetailResponse.Item.Skus["+ i +"].Points"));
 			sku.setPointsAmount(context.longValue("QueryItemDetailResponse.Item.Skus["+ i +"].PointsAmount"));
 			sku.setPointPrice(context.longValue("QueryItemDetailResponse.Item.Skus["+ i +"].PointPrice"));
+			sku.setSkuPropertiesJson(context.stringValue("QueryItemDetailResponse.Item.Skus["+ i +"].SkuPropertiesJson"));
 
 			skus.add(sku);
 		}

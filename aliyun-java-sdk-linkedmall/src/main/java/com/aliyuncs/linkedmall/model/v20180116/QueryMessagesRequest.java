@@ -26,11 +26,22 @@ public class QueryMessagesRequest extends RpcAcsRequest<QueryMessagesResponse> {
 		super("linkedmall", "2018-01-16", "QueryMessages", "linkedmall");
 	}
 
+	private String extJson;
+
 	private String bizId;
 
 	private String topic;
 
-	private String extJson;
+	public String getExtJson() {
+		return this.extJson;
+	}
+
+	public void setExtJson(String extJson) {
+		this.extJson = extJson;
+		if(extJson != null){
+			putQueryParameter("ExtJson", extJson);
+		}
+	}
 
 	public String getBizId() {
 		return this.bizId;
@@ -51,17 +62,6 @@ public class QueryMessagesRequest extends RpcAcsRequest<QueryMessagesResponse> {
 		this.topic = topic;
 		if(topic != null){
 			putQueryParameter("Topic", topic);
-		}
-	}
-
-	public String getExtJson() {
-		return this.extJson;
-	}
-
-	public void setExtJson(String extJson) {
-		this.extJson = extJson;
-		if(extJson != null){
-			putQueryParameter("ExtJson", extJson);
 		}
 	}
 

@@ -28,11 +28,22 @@ public class RemoveMessagesRequest extends RpcAcsRequest<RemoveMessagesResponse>
 		setMethod(MethodType.POST);
 	}
 
+	private String extJson;
+
 	private String bizId;
 
 	private String messageIds;
 
-	private String extJson;
+	public String getExtJson() {
+		return this.extJson;
+	}
+
+	public void setExtJson(String extJson) {
+		this.extJson = extJson;
+		if(extJson != null){
+			putQueryParameter("ExtJson", extJson);
+		}
+	}
 
 	public String getBizId() {
 		return this.bizId;
@@ -53,17 +64,6 @@ public class RemoveMessagesRequest extends RpcAcsRequest<RemoveMessagesResponse>
 		this.messageIds = messageIds;
 		if(messageIds != null){
 			putQueryParameter("MessageIds", messageIds);
-		}
-	}
-
-	public String getExtJson() {
-		return this.extJson;
-	}
-
-	public void setExtJson(String extJson) {
-		this.extJson = extJson;
-		if(extJson != null){
-			putQueryParameter("ExtJson", extJson);
 		}
 	}
 

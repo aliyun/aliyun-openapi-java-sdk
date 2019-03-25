@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.linkedmall.model.v20180116.QueryMovieSeatsResponse;
 import com.aliyuncs.linkedmall.model.v20180116.QueryMovieSeatsResponse.SeatMap;
 import com.aliyuncs.linkedmall.model.v20180116.QueryMovieSeatsResponse.SeatMap.Seat;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

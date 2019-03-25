@@ -26,11 +26,22 @@ public class QueryMovieSeatsRequest extends RpcAcsRequest<QueryMovieSeatsRespons
 		super("linkedmall", "2018-01-16", "QueryMovieSeats", "linkedmall");
 	}
 
+	private String extJson;
+
 	private String bizId;
 
 	private Long scheduleId;
 
-	private String extJson;
+	public String getExtJson() {
+		return this.extJson;
+	}
+
+	public void setExtJson(String extJson) {
+		this.extJson = extJson;
+		if(extJson != null){
+			putQueryParameter("ExtJson", extJson);
+		}
+	}
 
 	public String getBizId() {
 		return this.bizId;
@@ -51,17 +62,6 @@ public class QueryMovieSeatsRequest extends RpcAcsRequest<QueryMovieSeatsRespons
 		this.scheduleId = scheduleId;
 		if(scheduleId != null){
 			putQueryParameter("ScheduleId", scheduleId.toString());
-		}
-	}
-
-	public String getExtJson() {
-		return this.extJson;
-	}
-
-	public void setExtJson(String extJson) {
-		this.extJson = extJson;
-		if(extJson != null){
-			putQueryParameter("ExtJson", extJson);
 		}
 	}
 

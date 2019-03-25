@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkedmall.model.v20180116.QueryMovieSchedulesResponse;
 import com.aliyuncs.linkedmall.model.v20180116.QueryMovieSchedulesResponse.Schedule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

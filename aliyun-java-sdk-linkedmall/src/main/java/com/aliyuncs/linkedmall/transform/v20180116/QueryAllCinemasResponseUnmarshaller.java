@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkedmall.model.v20180116.QueryAllCinemasResponse;
 import com.aliyuncs.linkedmall.model.v20180116.QueryAllCinemasResponse.Cinema;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

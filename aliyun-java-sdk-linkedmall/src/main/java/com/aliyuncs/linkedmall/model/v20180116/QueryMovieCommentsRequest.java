@@ -26,13 +26,24 @@ public class QueryMovieCommentsRequest extends RpcAcsRequest<QueryMovieCommentsR
 		super("linkedmall", "2018-01-16", "QueryMovieComments", "linkedmall");
 	}
 
+	private String extJson;
+
 	private String bizId;
 
 	private Long movieId;
 
 	private Long pageNumber;
 
-	private String extJson;
+	public String getExtJson() {
+		return this.extJson;
+	}
+
+	public void setExtJson(String extJson) {
+		this.extJson = extJson;
+		if(extJson != null){
+			putQueryParameter("ExtJson", extJson);
+		}
+	}
 
 	public String getBizId() {
 		return this.bizId;
@@ -64,17 +75,6 @@ public class QueryMovieCommentsRequest extends RpcAcsRequest<QueryMovieCommentsR
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getExtJson() {
-		return this.extJson;
-	}
-
-	public void setExtJson(String extJson) {
-		this.extJson = extJson;
-		if(extJson != null){
-			putQueryParameter("ExtJson", extJson);
 		}
 	}
 

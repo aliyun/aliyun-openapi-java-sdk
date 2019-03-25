@@ -28,13 +28,13 @@ public class QueryBizItemsRequest extends RpcAcsRequest<QueryBizItemsResponse> {
 
 	private String bizId;
 
-	private String subBizId;
-
 	private Integer pageSize;
+
+	private String userId;
 
 	private Integer pageNumber;
 
-	private Integer userId;
+	private String subBizId;
 
 	public String getBizId() {
 		return this.bizId;
@@ -44,17 +44,6 @@ public class QueryBizItemsRequest extends RpcAcsRequest<QueryBizItemsResponse> {
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public String getSubBizId() {
-		return this.subBizId;
-	}
-
-	public void setSubBizId(String subBizId) {
-		this.subBizId = subBizId;
-		if(subBizId != null){
-			putQueryParameter("SubBizId", subBizId);
 		}
 	}
 
@@ -69,6 +58,17 @@ public class QueryBizItemsRequest extends RpcAcsRequest<QueryBizItemsResponse> {
 		}
 	}
 
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -80,14 +80,14 @@ public class QueryBizItemsRequest extends RpcAcsRequest<QueryBizItemsResponse> {
 		}
 	}
 
-	public Integer getUserId() {
-		return this.userId;
+	public String getSubBizId() {
+		return this.subBizId;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId.toString());
+	public void setSubBizId(String subBizId) {
+		this.subBizId = subBizId;
+		if(subBizId != null){
+			putQueryParameter("SubBizId", subBizId);
 		}
 	}
 

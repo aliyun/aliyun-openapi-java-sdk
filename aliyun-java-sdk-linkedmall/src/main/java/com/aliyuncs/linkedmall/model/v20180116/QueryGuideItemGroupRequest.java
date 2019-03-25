@@ -26,24 +26,13 @@ public class QueryGuideItemGroupRequest extends RpcAcsRequest<QueryGuideItemGrou
 		super("linkedmall", "2018-01-16", "QueryGuideItemGroup", "linkedmall");
 	}
 
-	private String bizId;
-
 	private String groupId;
 
-	private Long pageNumber;
+	private String bizId;
 
 	private Long pageSize;
 
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
+	private Long pageNumber;
 
 	public String getGroupId() {
 		return this.groupId;
@@ -56,14 +45,14 @@ public class QueryGuideItemGroupRequest extends RpcAcsRequest<QueryGuideItemGrou
 		}
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public String getBizId() {
+		return this.bizId;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 
@@ -75,6 +64,17 @@ public class QueryGuideItemGroupRequest extends RpcAcsRequest<QueryGuideItemGrou
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -15,7 +15,6 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkedmall.transform.v20180116.CreateOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -124,6 +123,8 @@ public class CreateOrderResponse extends AcsResponse {
 
 		private List<String> payTradeIds;
 
+		private List<String> lmOrderList;
+
 		public String getRedirectUrl() {
 			return this.redirectUrl;
 		}
@@ -146,6 +147,14 @@ public class CreateOrderResponse extends AcsResponse {
 
 		public void setPayTradeIds(List<String> payTradeIds) {
 			this.payTradeIds = payTradeIds;
+		}
+
+		public List<String> getLmOrderList() {
+			return this.lmOrderList;
+		}
+
+		public void setLmOrderList(List<String> lmOrderList) {
+			this.lmOrderList = lmOrderList;
 		}
 	}
 

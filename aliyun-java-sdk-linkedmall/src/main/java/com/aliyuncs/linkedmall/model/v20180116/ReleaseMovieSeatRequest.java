@@ -26,35 +26,13 @@ public class ReleaseMovieSeatRequest extends RpcAcsRequest<ReleaseMovieSeatRespo
 		super("linkedmall", "2018-01-16", "ReleaseMovieSeat", "linkedmall");
 	}
 
-	private String bizId;
-
-	private String lockSeatApplyKey;
-
 	private String bizUid;
 
 	private String extJson;
 
-	public String getBizId() {
-		return this.bizId;
-	}
+	private String bizId;
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public String getLockSeatApplyKey() {
-		return this.lockSeatApplyKey;
-	}
-
-	public void setLockSeatApplyKey(String lockSeatApplyKey) {
-		this.lockSeatApplyKey = lockSeatApplyKey;
-		if(lockSeatApplyKey != null){
-			putQueryParameter("LockSeatApplyKey", lockSeatApplyKey);
-		}
-	}
+	private String lockSeatApplyKey;
 
 	public String getBizUid() {
 		return this.bizUid;
@@ -75,6 +53,28 @@ public class ReleaseMovieSeatRequest extends RpcAcsRequest<ReleaseMovieSeatRespo
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getLockSeatApplyKey() {
+		return this.lockSeatApplyKey;
+	}
+
+	public void setLockSeatApplyKey(String lockSeatApplyKey) {
+		this.lockSeatApplyKey = lockSeatApplyKey;
+		if(lockSeatApplyKey != null){
+			putQueryParameter("LockSeatApplyKey", lockSeatApplyKey);
 		}
 	}
 

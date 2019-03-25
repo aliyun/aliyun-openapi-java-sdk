@@ -26,24 +26,13 @@ public class QueryAllCinemasRequest extends RpcAcsRequest<QueryAllCinemasRespons
 		super("linkedmall", "2018-01-16", "QueryAllCinemas", "linkedmall");
 	}
 
-	private String bizId;
-
 	private Long cityCode;
-
-	private Long pageNumber;
 
 	private String extJson;
 
-	public String getBizId() {
-		return this.bizId;
-	}
+	private String bizId;
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
+	private Long pageNumber;
 
 	public Long getCityCode() {
 		return this.cityCode;
@@ -56,17 +45,6 @@ public class QueryAllCinemasRequest extends RpcAcsRequest<QueryAllCinemasRespons
 		}
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getExtJson() {
 		return this.extJson;
 	}
@@ -75,6 +53,28 @@ public class QueryAllCinemasRequest extends RpcAcsRequest<QueryAllCinemasRespons
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkedmall.model.v20180116.QueryMovieCommentsResponse;
 import com.aliyuncs.linkedmall.model.v20180116.QueryMovieCommentsResponse.Comment;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

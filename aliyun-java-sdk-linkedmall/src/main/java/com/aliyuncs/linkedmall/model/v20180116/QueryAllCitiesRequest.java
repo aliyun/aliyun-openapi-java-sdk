@@ -26,20 +26,9 @@ public class QueryAllCitiesRequest extends RpcAcsRequest<QueryAllCitiesResponse>
 		super("linkedmall", "2018-01-16", "QueryAllCities", "linkedmall");
 	}
 
-	private String bizId;
-
 	private String extJson;
 
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
+	private String bizId;
 
 	public String getExtJson() {
 		return this.extJson;
@@ -49,6 +38,17 @@ public class QueryAllCitiesRequest extends RpcAcsRequest<QueryAllCitiesResponse>
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

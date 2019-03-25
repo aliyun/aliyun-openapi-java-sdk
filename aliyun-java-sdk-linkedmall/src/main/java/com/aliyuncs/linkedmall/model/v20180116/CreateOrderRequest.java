@@ -15,6 +15,7 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -26,52 +27,25 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		super("linkedmall", "2018-01-16", "CreateOrder", "linkedmall");
 	}
 
-	private String bizId;
-
-	private String bizUid;
-
-	private String outTradeId;
-
 	private Long itemId;
 
 	private Long quantity;
 
 	private Long totalAmount;
 
+	private String bizUid;
+
 	private String extJson;
 
-	public String getBizId() {
-		return this.bizId;
-	}
+	private String bizId;
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
+	private String outTradeId;
 
-	public String getBizUid() {
-		return this.bizUid;
-	}
+	private Long orderExpireTime;
 
-	public void setBizUid(String bizUid) {
-		this.bizUid = bizUid;
-		if(bizUid != null){
-			putQueryParameter("BizUid", bizUid);
-		}
-	}
+	private List<ItemList> itemLists;
 
-	public String getOutTradeId() {
-		return this.outTradeId;
-	}
-
-	public void setOutTradeId(String outTradeId) {
-		this.outTradeId = outTradeId;
-		if(outTradeId != null){
-			putQueryParameter("OutTradeId", outTradeId);
-		}
-	}
+	private String deliveryAddress;
 
 	public Long getItemId() {
 		return this.itemId;
@@ -106,6 +80,17 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		}
 	}
 
+	public String getBizUid() {
+		return this.bizUid;
+	}
+
+	public void setBizUid(String bizUid) {
+		this.bizUid = bizUid;
+		if(bizUid != null){
+			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
 	public String getExtJson() {
 		return this.extJson;
 	}
@@ -114,6 +99,98 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getOutTradeId() {
+		return this.outTradeId;
+	}
+
+	public void setOutTradeId(String outTradeId) {
+		this.outTradeId = outTradeId;
+		if(outTradeId != null){
+			putQueryParameter("OutTradeId", outTradeId);
+		}
+	}
+
+	public Long getOrderExpireTime() {
+		return this.orderExpireTime;
+	}
+
+	public void setOrderExpireTime(Long orderExpireTime) {
+		this.orderExpireTime = orderExpireTime;
+		if(orderExpireTime != null){
+			putQueryParameter("OrderExpireTime", orderExpireTime.toString());
+		}
+	}
+
+	public List<ItemList> getItemLists() {
+		return this.itemLists;
+	}
+
+	public void setItemLists(List<ItemList> itemLists) {
+		this.itemLists = itemLists;	
+		if (itemLists != null) {
+			for (int depth1 = 0; depth1 < itemLists.size(); depth1++) {
+				putQueryParameter("ItemList." + (depth1 + 1) + ".ItemId" , itemLists.get(depth1).getItemId());
+				putQueryParameter("ItemList." + (depth1 + 1) + ".Quantity" , itemLists.get(depth1).getQuantity());
+				putQueryParameter("ItemList." + (depth1 + 1) + ".SkuId" , itemLists.get(depth1).getSkuId());
+			}
+		}	
+	}
+
+	public String getDeliveryAddress() {
+		return this.deliveryAddress;
+	}
+
+	public void setDeliveryAddress(String deliveryAddress) {
+		this.deliveryAddress = deliveryAddress;
+		if(deliveryAddress != null){
+			putQueryParameter("DeliveryAddress", deliveryAddress);
+		}
+	}
+
+	public static class ItemList {
+
+		private Long itemId;
+
+		private Integer quantity;
+
+		private Long skuId;
+
+		public Long getItemId() {
+			return this.itemId;
+		}
+
+		public void setItemId(Long itemId) {
+			this.itemId = itemId;
+		}
+
+		public Integer getQuantity() {
+			return this.quantity;
+		}
+
+		public void setQuantity(Integer quantity) {
+			this.quantity = quantity;
+		}
+
+		public Long getSkuId() {
+			return this.skuId;
+		}
+
+		public void setSkuId(Long skuId) {
+			this.skuId = skuId;
 		}
 	}
 

@@ -15,7 +15,6 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkedmall.transform.v20180116.QueryItemDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -122,6 +121,18 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 		private String properties;
 
+		private Boolean canSell;
+
+		private Boolean sellerPayPostfee;
+
+		private Long categoryId;
+
+		private String extJson;
+
+		private String propertiesJson;
+
+		private String iforestPropsJson;
+
 		private List<Sku> skus;
 
 		private List<String> iforestProps;
@@ -224,6 +235,54 @@ public class QueryItemDetailResponse extends AcsResponse {
 			this.properties = properties;
 		}
 
+		public Boolean getCanSell() {
+			return this.canSell;
+		}
+
+		public void setCanSell(Boolean canSell) {
+			this.canSell = canSell;
+		}
+
+		public Boolean getSellerPayPostfee() {
+			return this.sellerPayPostfee;
+		}
+
+		public void setSellerPayPostfee(Boolean sellerPayPostfee) {
+			this.sellerPayPostfee = sellerPayPostfee;
+		}
+
+		public Long getCategoryId() {
+			return this.categoryId;
+		}
+
+		public void setCategoryId(Long categoryId) {
+			this.categoryId = categoryId;
+		}
+
+		public String getExtJson() {
+			return this.extJson;
+		}
+
+		public void setExtJson(String extJson) {
+			this.extJson = extJson;
+		}
+
+		public String getPropertiesJson() {
+			return this.propertiesJson;
+		}
+
+		public void setPropertiesJson(String propertiesJson) {
+			this.propertiesJson = propertiesJson;
+		}
+
+		public String getIforestPropsJson() {
+			return this.iforestPropsJson;
+		}
+
+		public void setIforestPropsJson(String iforestPropsJson) {
+			this.iforestPropsJson = iforestPropsJson;
+		}
+
 		public List<Sku> getSkus() {
 			return this.skus;
 		}
@@ -271,6 +330,8 @@ public class QueryItemDetailResponse extends AcsResponse {
 			private Long pointsAmount;
 
 			private Long pointPrice;
+
+			private String skuPropertiesJson;
 
 			public String getExtJson() {
 				return this.extJson;
@@ -358,6 +419,14 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 			public void setPointPrice(Long pointPrice) {
 				this.pointPrice = pointPrice;
+			}
+
+			public String getSkuPropertiesJson() {
+				return this.skuPropertiesJson;
+			}
+
+			public void setSkuPropertiesJson(String skuPropertiesJson) {
+				this.skuPropertiesJson = skuPropertiesJson;
 			}
 		}
 	}

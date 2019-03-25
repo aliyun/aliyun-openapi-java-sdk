@@ -26,41 +26,19 @@ public class ReserveMovieSeatRequest extends RpcAcsRequest<ReserveMovieSeatRespo
 		super("linkedmall", "2018-01-16", "ReserveMovieSeat", "linkedmall");
 	}
 
-	private String bizId;
-
-	private Long scheduleId;
-
 	private String seatIds;
-
-	private String seatNames;
 
 	private String bizUid;
 
-	private String mobile;
-
 	private String extJson;
 
-	public String getBizId() {
-		return this.bizId;
-	}
+	private String bizId;
 
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
+	private String mobile;
 
-	public Long getScheduleId() {
-		return this.scheduleId;
-	}
+	private String seatNames;
 
-	public void setScheduleId(Long scheduleId) {
-		this.scheduleId = scheduleId;
-		if(scheduleId != null){
-			putQueryParameter("ScheduleId", scheduleId.toString());
-		}
-	}
+	private Long scheduleId;
 
 	public String getSeatIds() {
 		return this.seatIds;
@@ -70,17 +48,6 @@ public class ReserveMovieSeatRequest extends RpcAcsRequest<ReserveMovieSeatRespo
 		this.seatIds = seatIds;
 		if(seatIds != null){
 			putQueryParameter("SeatIds", seatIds);
-		}
-	}
-
-	public String getSeatNames() {
-		return this.seatNames;
-	}
-
-	public void setSeatNames(String seatNames) {
-		this.seatNames = seatNames;
-		if(seatNames != null){
-			putQueryParameter("SeatNames", seatNames);
 		}
 	}
 
@@ -95,6 +62,28 @@ public class ReserveMovieSeatRequest extends RpcAcsRequest<ReserveMovieSeatRespo
 		}
 	}
 
+	public String getExtJson() {
+		return this.extJson;
+	}
+
+	public void setExtJson(String extJson) {
+		this.extJson = extJson;
+		if(extJson != null){
+			putQueryParameter("ExtJson", extJson);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
 	public String getMobile() {
 		return this.mobile;
 	}
@@ -106,14 +95,25 @@ public class ReserveMovieSeatRequest extends RpcAcsRequest<ReserveMovieSeatRespo
 		}
 	}
 
-	public String getExtJson() {
-		return this.extJson;
+	public String getSeatNames() {
+		return this.seatNames;
 	}
 
-	public void setExtJson(String extJson) {
-		this.extJson = extJson;
-		if(extJson != null){
-			putQueryParameter("ExtJson", extJson);
+	public void setSeatNames(String seatNames) {
+		this.seatNames = seatNames;
+		if(seatNames != null){
+			putQueryParameter("SeatNames", seatNames);
+		}
+	}
+
+	public Long getScheduleId() {
+		return this.scheduleId;
+	}
+
+	public void setScheduleId(Long scheduleId) {
+		this.scheduleId = scheduleId;
+		if(scheduleId != null){
+			putQueryParameter("ScheduleId", scheduleId.toString());
 		}
 	}
 

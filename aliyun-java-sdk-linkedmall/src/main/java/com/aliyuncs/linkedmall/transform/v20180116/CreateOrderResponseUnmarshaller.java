@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.linkedmall.model.v20180116.CreateOrderResponse;
 import com.aliyuncs.linkedmall.model.v20180116.CreateOrderResponse.Model;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +49,12 @@ public class CreateOrderResponseUnmarshaller {
 			payTradeIds.add(context.stringValue("CreateOrderResponse.Model.PayTradeIds["+ i +"]"));
 		}
 		model.setPayTradeIds(payTradeIds);
+
+		List<String> lmOrderList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("CreateOrderResponse.Model.LmOrderList.Length"); i++) {
+			lmOrderList.add(context.stringValue("CreateOrderResponse.Model.LmOrderList["+ i +"]"));
+		}
+		model.setLmOrderList(lmOrderList);
 		createOrderResponse.setModel(model);
 	 
 	 	return createOrderResponse;
