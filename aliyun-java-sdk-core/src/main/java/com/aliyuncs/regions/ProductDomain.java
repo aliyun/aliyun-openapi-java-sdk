@@ -3,11 +3,11 @@ package com.aliyuncs.regions;
 public class ProductDomain {
 
     private String productName;
-    private String domianName;
+    private String domainName;
 
     public ProductDomain(String product, String domain) {
         this.productName = product;
-        this.domianName = domain;
+        this.domainName = domain;
     }
 
     public String getProductName() {
@@ -18,12 +18,12 @@ public class ProductDomain {
         this.productName = productName;
     }
 
-    public String getDomianName() {
-        return domianName;
+    public String getDomainName() {
+        return domainName;
     }
 
-    public void setDomianName(String domianName) {
-        this.domianName = domianName;
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
     }
 
 }
