@@ -39,7 +39,7 @@ public class TimeoutTest extends BaseTest {
         ApacheHttpClient.getInstance().close();
         thrown.expect(ClientException.class);
         thrown.expectMessage(
-                "SDK.ServerUnreachable : Server unreachable: org.apache.http.conn.ConnectTimeoutException");
+                "SDK.ServerUnreachable : Server unreachable");
         this.getConnectTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
 
         request.setSysConnectTimeout(5000);
