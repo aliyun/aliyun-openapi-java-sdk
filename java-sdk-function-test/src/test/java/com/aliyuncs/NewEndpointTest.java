@@ -442,7 +442,8 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
-            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: java.net.UnknownHostException: add.endpoint"));
+            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: connection"));
+            Assert.assertTrue(e.getErrMsg().contains("failed"));
             }
 
         request.setSysEndpoint("request.set.error.endpoint");
@@ -452,7 +453,8 @@ public class NewEndpointTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
-            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: java.net.UnknownHostException: request.set.error.endpoint"));
+            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: connection"));
+            Assert.assertTrue(e.getErrMsg().contains("failed"));
 
         }
     }
