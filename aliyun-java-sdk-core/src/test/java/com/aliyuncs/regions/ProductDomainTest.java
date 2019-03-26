@@ -9,9 +9,9 @@ public class ProductDomainTest {
     public void constructorTest() {
         ProductDomain pd = new ProductDomain("product", "domain");
         // domain name
-        Assert.assertEquals(pd.getDomianName(), "domain");
-        pd.setDomianName("newdomain");
-        Assert.assertEquals(pd.getDomianName(), "newdomain");
+        Assert.assertEquals(pd.getDomainName(), "domain");
+        pd.setDomainName("newdomain");
+        Assert.assertEquals(pd.getDomainName(), "newdomain");
         // product name
         Assert.assertEquals(pd.getProductName(), "product");
         pd.setProductName("newproduct");

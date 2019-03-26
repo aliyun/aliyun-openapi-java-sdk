@@ -215,7 +215,7 @@ public class CommonRpcRequestTest {
         AcsRequest commonRpcRequest = new CommonRpcRequest("test");
         commonRpcRequest.setSysProtocol(ProtocolType.HTTP);
         ProductDomain domain = mock(ProductDomain.class);
-        when(domain.getDomianName()).thenReturn("testDomain");
+        when(domain.getDomainName()).thenReturn("testDomain");
         Signer signer = mock(Signer.class);
         BasicSessionCredentials credentials = mock(BasicSessionCredentials.class);
         commonRpcRequest.signRequest(null, null, FormatType.JSON, domain);

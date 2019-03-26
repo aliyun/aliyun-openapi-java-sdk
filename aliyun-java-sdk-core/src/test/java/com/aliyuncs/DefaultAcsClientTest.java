@@ -247,7 +247,7 @@ public class DefaultAcsClientTest {
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
         Mockito.when(request.getSysAcceptFormat()).thenReturn(FormatType.JSON);
-        Mockito.when(request.getSysProductDomain()).thenReturn(new ProductDomain("productName", "domianName"));
+        Mockito.when(request.getSysProductDomain()).thenReturn(new ProductDomain("productName", "domainName"));
         Mockito.when(request.getSysProtocol()).thenReturn(null);
 
         Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
