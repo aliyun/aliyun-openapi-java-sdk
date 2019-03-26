@@ -50,7 +50,7 @@
     </developers>
     <properties>
         <powermock.version>1.7.4</powermock.version>
-        <mockito.version>1.10.19</mockito.version>
+        <mockito.version>2.25.1</mockito.version>
     </properties>
     <dependencies>
         <dependency>
