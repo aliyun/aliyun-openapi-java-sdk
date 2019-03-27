@@ -39,7 +39,7 @@ public class InstanceProfileCredentialsProviderTest {
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
-                String roleNameAgru = invocationOnMock.getArgumentAt(0, String.class);
+                String roleNameAgru = invocationOnMock.getArgument(0, String.class);
                 Assert.assertEquals(roleName, roleNameAgru);
                 return null;
             }
