@@ -1,28 +1,34 @@
-# Alibaba Cloud Java Software Development Kit
+English | [简体中文](./README_zh.md)
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.aliyun/aliyun-java-sdk-core.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.aliyun%22%20AND%20a:%22aliyun-java-sdk-core%22)
-[![Build Status](https://travis-ci.org/aliyun/aliyun-openapi-java-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-java-sdk)
-[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/aef3826e57ca444fb217bab8edaed195)](https://www.codacy.com/app/aliyun/aliyun-openapi-java-sdk?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aliyun/aliyun-openapi-java-sdk&amp;utm_campaign=Badge_Grade)
-[![Appveyor Badge](https://ci.appveyor.com/api/projects/status/bymi868y6443gwdp?svg=true)](https://ci.appveyor.com/project/aliyun/aliyun-openapi-java-sdk)
+<p align="center">
+<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
+</p>
 
-[中文文档](./README_zh.md)
+<h1 align="center">Alibaba Cloud SDK for Java</h1>
 
-The Alibaba Cloud Software Development Kit Java (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
+<p align="center">
+<a href="https://search.maven.org/search?q=g:%22com.aliyun%22%20AND%20a:%22aliyun-java-sdk-core%22"><img src="https://img.shields.io/maven-central/v/com.aliyun/aliyun-java-sdk-core.svg?label=Maven%20Central" alt="Latest Stable Version"/></a>
+<a href="https://travis-ci.org/aliyun/aliyun-openapi-java-sdk"><img src="https://travis-ci.org/aliyun/aliyun-openapi-java-sdk.svg?branch=master"/></a>
+<a href="https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-java-sdk/branch/master/graph/badge.svg"/></a>
+<a href="https://www.codacy.com/app/aliyun/aliyun-openapi-java-sdk?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aliyun/aliyun-openapi-java-sdk&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/aef3826e57ca444fb217bab8edaed195"/></a>
+<a href="https://ci.appveyor.com/project/aliyun/aliyun-openapi-java-sdk"><img src="https://ci.appveyor.com/api/projects/status/bymi868y6443gwdp?svg=true"/></a>
+</p>
 
-This document introduces how to obtain and call Alibaba Cloud Java SDK.
+The Alibaba Cloud SDK for Java allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
-If you have any problem while using Java SDK, please [submit an issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new).
+This document introduces how to obtain and call Alibaba Cloud SDK for Java.
 
-## Prerequisites
+If you have any problem while using Alibaba Cloud SDK for Java, please [submit an issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new).
 
--  To use Alibaba Cloud Java SDK, you must have an Alibaba Cloud account as well as an `AccessKey ID` and an `AccessKey Secret`. Create and view your AccessKey on the [RAM console](https://ram.console.aliyun.com "RAM console") or contact your system administrator.
+## Requirements
 
-- To use an Alibaba Cloud Java SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
+-  To use Alibaba Cloud SDK for Java, you must have an Alibaba Cloud account as well as an `AccessKey ID` and an `AccessKey Secret`. Create and view your AccessKey on the [RAM console](https://ram.console.aliyun.com "RAM console") or contact your system administrator.
+
+- To use an Alibaba Cloud SDK for Java to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
 -  Alibaba Cloud Java SDK requires JDK 1.6 or later.
 
-## Install Java SDK
+## Installation
 
 If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the pom.xml files of the projects. You can download the Maven dependencies of different cloud products in [Alibaba Cloud SDK](https://www.alibabacloud.com/support/developer-resources?spm=a3c0i.7911826.675768.dnavresources1.32a0737buJ2Rr4).
 
@@ -51,8 +57,8 @@ If maven is not downloading jar packages from a central repository, you need to 
     <version>2.8.5</version>
 </dependency>
 ```
-## Initiate a call
 
+## Quick Examples
 
 The following code example shows the three main steps to use Alibaba Cloud Java SDK:
 
@@ -61,8 +67,6 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
 2. Create an API request and set parameters.
 
 3. Initiate the request and handle the response or exceptions.
-
-### Using AccessKey call
 
 ```java
  package com.testprogram;
@@ -99,211 +103,31 @@ The following code example shows the three main steps to use Alibaba Cloud Java 
  }
 ```
 
-### Use the default credential provider chain
+## Documentation
+* [Requirements](./docs/0-Requirements-EN.md)
+* [Installation](./docs/1-Installation-EN.md)
+* [Client](./docs/2-Client-EN.md)
+* [Connection Pool](./docs/3-Pool-EN.md)
+* [Timeout](./docs/4-Timeout-EN.md)
+* [HTTPS Configurations](./docs/5-HTTPS-EN.md)
+* [Proxy Configurations](./docs/6-Proxy-EN.md)
+* [Debug](./docs/7-Debug-EN.md)
 
-The default credential provider chain looks for available credentials, with following order:
+## Issues
+[Opening an Issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new), Issues not conforming to the guidelines may be closed immediately.
 
-1.System Properties
+## Changelog
+Detailed changes for each release are documented in the [release notes](./aliyun-java-sdk-core/ChangeLog.txt).
 
-Look for environment credentials in system properties. If the `alibabacloud.accessKeyId` and `alibabacloud.accessKeyIdSecret` system properties are defined and not empty, the program will use them to create default credentials.
+## Contribution
+Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making a pull request.
 
-2.Environment Credentials
+## References
+* [Alibaba Cloud Regions & Endpoints](https://developer.aliyun.com/endpoints)
+* [OpenAPI Explorer](https://api.aliyun.com/)
+* [Latest Release](https://github.com/aliyun/aliyun-openapi-java-sdk)
 
-Look for environment credentials in environment variable. If the `ALIBABA_CLOUD_ACCESS_KEY_ID` and `ALIBABA_CLOUD_ACCESS_KEY_SECRET` environment variables are defined and are not empty, the program will use them to create default credentials.
+## License
+[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-3.Credentials File
-
-If there is `~/.alibabacloud/credentials default file (Windows shows C:\Users\USER_NAME\.alibabacloud\credentials)`, the program automatically creates credentials with the specified type and name. The default file is not necessarily exist, but a parse error will throw an exception. The name of configuration item is lowercase.This configuration file can be shared between different projects and between different tools. Because it is outside of the project and will not be accidentally committed to the version control. The path to the default file can be modified by defining the `ALIBABA_CLOUD_CREDENTIALS_FILE` environment variable. If not configured, use the default configuration `default`. You can also set the environment variables `ALIBABA_CLOUD_PROFILE` to use the configuration.
-
-```ini
-[default]                          # default setting
-enable = true                      # Enable，Enabled by default if this option is not present
-type = access_key                  # Certification type: access_key
-access_key_id = foo                # Key
-access_key_secret = bar            # Secret
-
-[client1]                          # configuration that is named as `client1`
-type = ecs_ram_role                # Certification type: ecs_ram_role
-role_name = EcsRamRoleTest         # Role Name
-
-[client2]                          # configuration that is named as `client2`
-enable = false                     # Disable
-type = ram_role_arn                # Certification type: ram_role_arn
-region_id = cn-test                # required 
-access_key_id = foo
-access_key_secret = bar
-role_arn = role_arn
-role_session_name = session_name
-
-[client3]                          # configuration that is named as `client3`
-type = rsa_key_pair                # Certification type: rsa_key_pair
-public_key_id = publicKeyId        # Public Key ID
-private_key_file = /your/pk.pem    # Private Key file
-```
-4.Instance RAM Role
-
-If the environment variable `ALIBABA_CLOUD_ECS_METADATA` is defined and not empty, the program will take the value of the environment variable as the role name and request <http://100.100.100.200/latest/meta-data/ram/security-credentials/> to get the temporary Security credentials.
-
-```java
- package com.testprogram;
- import com.aliyuncs.DefaultAcsClient;
- import com.aliyuncs.IAcsClient;
- import com.aliyuncs.exceptions.ClientException;
- import com.aliyuncs.exceptions.ServerException;
- import com.aliyuncs.ecs.model.v20140526.*;
- public class Main {
-     public static void main(String[] args) {
-         IAcsClient client = new DefaultAcsClient("your-region-id");
-         // Create an API request and set parameters
-         DescribeInstancesRequest request = new DescribeInstancesRequest();
-         request.setPageSize(10);
-         // Initiate the request and handle the response or exceptions
-         DescribeInstancesResponse response;
-         try {
-             response = client.getAcsResponse(request);
-             for (DescribeInstancesResponse.Instance instance:response.getInstances()) {
-                 System.out.println(instance.getPublicIpAddress());
-             }
-         } catch (ServerException e) {
-             e.printStackTrace();
-         } catch (ClientException e) {
-             e.printStackTrace();
-         }
-     }
- }
-
-```
-
-### Using BearerToken call
-
-Only CCC supports this method
-
-```java
- package com.testprogram;
- import com.aliyuncs.profile.DefaultProfile;
- import com.aliyuncs.DefaultAcsClient;
- import com.aliyuncs.IAcsClient;
- import com.aliyuncs.exceptions.ClientException;
- import com.aliyuncs.exceptions.ServerException;
- import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersRequest;
- import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersResponse;
- public class Main {
-     public static void main(String[] args) {
-         // Create and initialize a DefaultAcsClient instance
-         DefaultProfile profile = DefaultProfile.getProfile(
-             "<your-region-id>"         // The region ID
-         ); 
-         BearerTokenCredentials bearerTokenCredential = new BearerTokenCredentials("<your-bearer-token>");
-         DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
-         // Create an API request and set parameters
-         ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
-         request.getInstanceId("yourId");
-         request.setOutboundOnly(true);
-         // Initiate the request and handle the response or exceptions
-         ListPhoneNumbersResponse response; 
-         try {
-             response = client.getAcsResponse(request);
-         } catch (ServerException e) {
-             e.printStackTrace();
-         } catch (ClientException e) {
-             e.printStackTrace();
-         }
-     }
- }
-```
-
-## Debugging
-If there is an environment variable DEBUG=sdk , all http request/response will work in debug mode.
-
-## Configure the connection pool
-Multiple SDK clients share the same connection pool, configure the pool in the initialization phase of the client
-```java
-// Create and initialize a DefaultAcsClient instance
-DefaultProfile profile = DefaultProfile.getProfile(
-"<your-region-id>",          // The region ID
-"<your-access-key-id>",      // The AccessKey ID of the RAM account
-"<your-access-key-secret>"); // The AccessKey Secret of the RAM account
-
-// Multiple SDK clients share the same connection pool, set the
-// parameters for this pool here such as maxRequestsPerHost, timeout, etc.
-HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-clientConfig.setMaxRequestsPerHost(6);
-clientConfig.setMaxRequests(60);
-
-profile.setHttpClientConfig(clientConfig);
-IAcsClient client = new DefaultAcsClient(profile);
-```
-
-## Timeout
-Request Settings -> Client Settings -> Default Settings, priority from high to low;
-The default ConnectTimeout is 5 seconds and the ReadTimeout is 10 seconds.
-
-```java
-//The client setting is valid for all requests
-HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-clientConfig.setReadTimeoutMillis(readTimeoutMillis);
-clientConfig.setConnectionTimeoutMillis(connectionTimeoutMillis);
-IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
-profile.setHttpClientConfig(clientConfig);
-DefaultAcsClient client = new DefaultAcsClient(profile);
-
-//The request setting, valid only for the current request
-request.setSysReadTimeout(readTimeoutMillis);
-request.setConnectionTimeoutMillis(connectionTimeoutMillis);
-```
-
-## HTTPS Configurations
-Priority: Request > Client > Default
-
-Support below configurations:
-
-1.  Whether to verify the server certificates
-
-2.  Configure X509TrustManagers(trusted server certificates)
-
-3.  Configure KeyManagers(client certificates)
-
-```java
-// Client HTTPS configurations
-HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-// Configure not to verify the server certificates
-clientConfig.setIgnoreSSLCerts(true);
-// Configure user-defined TrustManagers
-clientConfig.setX509TrustManagers(clientTrustManagers);
-// Configure user-defined KeyManagers
-clientConfig.setKeyManagers(clientKeyManagers);
-
-IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
-profile.setHttpClientConfig(clientConfig);
-DefaultAcsClient client = new DefaultAcsClient(profile);
- 
-// Request HTTPS configurations(ApacheHttpClient will ignore the HTTPS configurations at the Request level)
-request.setIgnoreSSLCerts(true);
-request.setX509TrustManagers(requestTrustManagers);
-request.setKeyManagers(requestKeyManagers);
-
-client.getAcsResponse(request)
-```
-
-## Proxy Configurations
-Priority: Client > Environment variable
-
-Support below environment variable:
-1.  HTTP_PROXY or http_proxy
-2.  HTTPS_PROXY
-3.  NO_PROXY
-
-```java
-// Client proxy configurations
-HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-// Configure HTTP proxy
-clientConfig.setHttpProxy("http://127.0.0.1:9898");
-// Configure HTTPS proxy
-clientConfig.setHttpsProxy("http://user:password@127.0.0.1:8989");
-// Configure host addresses bypass the proxy
-clientConfig.setNoProxy("127.0.0.1,localhost");
-
-IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
-profile.setHttpClientConfig(clientConfig);
-DefaultAcsClient client = new DefaultAcsClient(profile);
-```
+Copyright 1999-2019 Alibaba Group Holding Ltd.
