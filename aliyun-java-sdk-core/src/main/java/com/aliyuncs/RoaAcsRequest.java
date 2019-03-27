@@ -169,7 +169,7 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             String signature = signer.signString(strToSign, credentials);
             imutableMap.put("Authorization", "acs " + accessKeyId + ":" + signature);
         }
-        this.setSysUrl(this.composeUrl(domain.getDomianName(), this.getSysQueryParameters()));
+        this.setSysUrl(this.composeUrl(domain.getDomainName(), this.getSysQueryParameters()));
         this.headers = imutableMap;
         return this;
     }

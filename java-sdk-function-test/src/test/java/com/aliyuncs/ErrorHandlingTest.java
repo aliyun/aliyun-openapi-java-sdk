@@ -44,7 +44,7 @@ public class ErrorHandlingTest extends BaseTest {
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
-            Assert.assertEquals("SocketTimeoutException has occurred on a socket read or accept.", e.getErrMsg());
+            Assert.assertTrue( e.getErrMsg().contains("SocketTimeoutException has occurred on a socket read or accept."));
         }
     }
 

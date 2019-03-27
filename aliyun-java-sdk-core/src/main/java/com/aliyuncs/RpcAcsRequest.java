@@ -160,7 +160,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
             imutableMap.put("Signature", signature);
             this.strToSign = strToSign;
         }
-        setSysUrl(this.composeUrl(domain.getDomianName(), imutableMap));
+        setSysUrl(this.composeUrl(domain.getDomainName(), imutableMap));
         return this;
     }
 }

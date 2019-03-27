@@ -1,3 +1,12 @@
+2019-03-25 Version: 2.4.3
+1, add tag object list for SearchTraces
+
+2019-03-25 Version: 2.4.3
+1, add tag object list for SearchTraces
+
+2019-03-25 Version: 2.4.2
+1, add tag object list for api SearchTraces
+
 2019-03-21 Version: 2.4.1
 1, Add three api for xtrace search(GetSpanNames,GetTagKey,GetTagVal)
 

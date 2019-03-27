@@ -81,7 +81,7 @@ public class RpcDubboApiRequest extends RpcAcsRequest<RpcDubboApiResponse> {
             String signature = signer.signString(strToSign, credentials.getAccessKeySecret());
             imutableMap.put("Signature", signature);
         }
-        setSysUrl(this.composeUrl(domain.getDomianName(), imutableMap));
+        setSysUrl(this.composeUrl(domain.getDomainName(), imutableMap));
         return this;
     }
 

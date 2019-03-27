@@ -37,7 +37,7 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 
 	private Long startTime;
 
-	private List<String> tagMaps;
+	private List<Tag> tags;
 
 	private Long minDuration;
 
@@ -96,15 +96,16 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		}
 	}
 
-	public List<String> getTagMaps() {
-		return this.tagMaps;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setTagMaps(List<String> tagMaps) {
-		this.tagMaps = tagMaps;	
-		if (tagMaps != null) {
-			for (int i = 0; i < tagMaps.size(); i++) {
-				putQueryParameter("TagMap." + (i + 1) , tagMaps.get(i));
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
 	}
@@ -117,6 +118,29 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		this.minDuration = minDuration;
 		if(minDuration != null){
 			putQueryParameter("MinDuration", minDuration.toString());
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -94,7 +94,8 @@ public class CoreTest extends BaseTest {
             Assert.fail("No exceptions thrown");
         } catch (ClientException e) {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
-            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: java.net.UnknownHostException: www.serverUnreachableTest.com"));
+            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: connection"));
+            Assert.assertTrue(e.getErrMsg().contains("failed"));
         }
     }
 
