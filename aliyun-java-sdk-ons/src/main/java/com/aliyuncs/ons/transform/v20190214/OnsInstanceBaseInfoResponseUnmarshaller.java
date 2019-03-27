@@ -33,6 +33,7 @@ public class OnsInstanceBaseInfoResponseUnmarshaller {
 		instanceBaseInfo.setReleaseTime(context.longValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.ReleaseTime"));
 		instanceBaseInfo.setInstanceType(context.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceType"));
 		instanceBaseInfo.setInstanceName(context.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceName"));
+		instanceBaseInfo.setIndependentNaming(context.booleanValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.IndependentNaming"));
 
 		Endpoints endpoints = new Endpoints();
 		endpoints.setTcpEndpoint(context.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.TcpEndpoint"));

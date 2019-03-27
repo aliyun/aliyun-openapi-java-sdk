@@ -67,6 +67,8 @@ public class OnsInstanceInServiceListResponse extends AcsResponse {
 
 		private String instanceName;
 
+		private Boolean independentNaming;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -105,6 +107,14 @@ public class OnsInstanceInServiceListResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public Boolean getIndependentNaming() {
+			return this.independentNaming;
+		}
+
+		public void setIndependentNaming(Boolean independentNaming) {
+			this.independentNaming = independentNaming;
 		}
 	}
 

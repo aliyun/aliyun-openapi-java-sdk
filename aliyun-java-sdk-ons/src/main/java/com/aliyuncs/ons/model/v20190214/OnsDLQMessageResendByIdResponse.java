@@ -14,21 +14,22 @@
 
 package com.aliyuncs.ons.model.v20190214;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ons.transform.v20190214.OnsTopicStatusResponseUnmarshaller;
+import com.aliyuncs.ons.transform.v20190214.OnsDLQMessageResendByIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class OnsTopicStatusResponse extends AcsResponse {
+public class OnsDLQMessageResendByIdResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String helpUrl;
 
-	private Data data;
+	private List<String> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,49 +47,16 @@ public class OnsTopicStatusResponse extends AcsResponse {
 		this.helpUrl = helpUrl;
 	}
 
-	public Data getData() {
+	public List<String> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<String> data) {
 		this.data = data;
 	}
 
-	public static class Data {
-
-		private Long totalCount;
-
-		private Long lastTimeStamp;
-
-		private Integer perm;
-
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Long getLastTimeStamp() {
-			return this.lastTimeStamp;
-		}
-
-		public void setLastTimeStamp(Long lastTimeStamp) {
-			this.lastTimeStamp = lastTimeStamp;
-		}
-
-		public Integer getPerm() {
-			return this.perm;
-		}
-
-		public void setPerm(Integer perm) {
-			this.perm = perm;
-		}
-	}
-
 	@Override
-	public OnsTopicStatusResponse getInstance(UnmarshallerContext context) {
-		return	OnsTopicStatusResponseUnmarshaller.unmarshall(this, context);
+	public OnsDLQMessageResendByIdResponse getInstance(UnmarshallerContext context) {
+		return	OnsDLQMessageResendByIdResponseUnmarshaller.unmarshall(this, context);
 	}
 }

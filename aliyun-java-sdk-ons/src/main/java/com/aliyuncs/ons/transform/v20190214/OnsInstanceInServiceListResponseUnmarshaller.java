@@ -37,6 +37,7 @@ public class OnsInstanceInServiceListResponseUnmarshaller {
 			instanceVO.setReleaseTime(context.longValue("OnsInstanceInServiceListResponse.Data["+ i +"].ReleaseTime"));
 			instanceVO.setInstanceType(context.integerValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceType"));
 			instanceVO.setInstanceName(context.stringValue("OnsInstanceInServiceListResponse.Data["+ i +"].InstanceName"));
+			instanceVO.setIndependentNaming(context.booleanValue("OnsInstanceInServiceListResponse.Data["+ i +"].IndependentNaming"));
 
 			data.add(instanceVO);
 		}

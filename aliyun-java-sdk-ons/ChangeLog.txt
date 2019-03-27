@@ -1,3 +1,8 @@
+2019-03-27 Version: 3.1.1
+1, Add DLQ message openAPI.
+2, Add Query the subscription relational openAPI.
+3, Remove white list restrictions.
+
 2019-02-15 Version: 3.1.0
 1, Instantiation: adding the property of instance.
 2, Replace the "ProducerId" and "ConsumerId" properties with "GROUP_ID".

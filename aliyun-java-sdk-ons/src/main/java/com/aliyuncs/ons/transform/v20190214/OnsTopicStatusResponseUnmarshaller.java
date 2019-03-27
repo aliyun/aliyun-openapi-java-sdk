@@ -29,6 +29,7 @@ public class OnsTopicStatusResponseUnmarshaller {
 		Data data = new Data();
 		data.setTotalCount(context.longValue("OnsTopicStatusResponse.Data.TotalCount"));
 		data.setLastTimeStamp(context.longValue("OnsTopicStatusResponse.Data.LastTimeStamp"));
+		data.setPerm(context.integerValue("OnsTopicStatusResponse.Data.Perm"));
 		onsTopicStatusResponse.setData(data);
 	 
 	 	return onsTopicStatusResponse;
