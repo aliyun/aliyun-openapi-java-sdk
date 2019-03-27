@@ -38,6 +38,8 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
+import static org.mockito.ArgumentMatchers.isNotNull;
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
@@ -555,9 +557,9 @@ public class ApacheHttpClientTest {
     @Test
     public void calcHttpProxyTest() throws Exception {
         PowerMockito.mockStatic(HttpUtil.class);
-        BDDMockito.given(HttpUtil.needProxy(anyString(), anyString(), anyString())).willReturn(true);
+        BDDMockito.given(HttpUtil.needProxy((String) isNotNull(), (String) isNull(), (String) isNull())).willReturn(true);
         HttpHost proxy0 = mock(HttpHost.class);
-        BDDMockito.given(HttpUtil.getApacheProxy(anyString(), anyString(), any(HttpRequest.class))).willReturn(proxy0);
+        BDDMockito.given(HttpUtil.getApacheProxy((String) isNull(), (String) isNull(), (HttpRequest) isNotNull())).willReturn(proxy0);
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
         ApacheHttpClient client = ApacheHttpClient.getInstance();
         client.init(config);
@@ -570,9 +572,9 @@ public class ApacheHttpClientTest {
     @Test
     public void calcHttpsProxyTest() throws Exception {
         PowerMockito.mockStatic(HttpUtil.class);
-        BDDMockito.given(HttpUtil.needProxy(anyString(), anyString(), anyString())).willReturn(true);
+        BDDMockito.given(HttpUtil.needProxy((String) isNotNull(), (String) isNull(), (String) isNull())).willReturn(true);
         HttpHost proxy0 = mock(HttpHost.class);
-        BDDMockito.given(HttpUtil.getApacheProxy(anyString(), anyString(), any(HttpRequest.class))).willReturn(proxy0);
+        BDDMockito.given(HttpUtil.getApacheProxy((String) isNull(), (String) isNull(), any(HttpRequest.class))).willReturn(proxy0);
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
         ApacheHttpClient client = ApacheHttpClient.getInstance();
         client.init(config);

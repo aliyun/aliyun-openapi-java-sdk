@@ -325,7 +325,7 @@ public class CompatibleUrlConnClientTest {
         OutputStream outputStream = mock(OutputStream.class);
         doNothing().when(outputStream).write("http content".getBytes());
         when(connection.getOutputStream()).thenReturn(outputStream);
-        when(connection.getInputStream()).thenReturn(null);
+        when(connection.getInputStream()).thenReturn(mock(InputStream.class));
         PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
                 any(InputStream.class));
         HttpResponse response = client.syncInvoke(request);
@@ -354,7 +354,7 @@ public class CompatibleUrlConnClientTest {
         OutputStream outputStream = mock(OutputStream.class);
         doNothing().when(outputStream).write("http content".getBytes());
         when(connection.getOutputStream()).thenReturn(outputStream);
-        when(connection.getInputStream()).thenReturn(null);
+        when(connection.getInputStream()).thenReturn(mock(InputStream.class));
         PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
                 any(InputStream.class));
         HttpResponse response = client.syncInvoke(request);
@@ -379,7 +379,7 @@ public class CompatibleUrlConnClientTest {
         URL url = PowerMockito.mock(URL.class);
         when(url.toString()).thenReturn("http://www.aliyun.com");
         when(connection.getURL()).thenReturn(url);
-        when(connection.getInputStream()).thenReturn(null);
+        when(connection.getInputStream()).thenReturn(mock(InputStream.class));
         PowerMockito.doNothing().when(client, "parseHttpConn", any(HttpResponse.class), any(HttpURLConnection.class),
                 any(InputStream.class));
         HttpResponse response = client.syncInvoke(request);
@@ -403,9 +403,9 @@ public class CompatibleUrlConnClientTest {
     public void calcHttpProxyNeedProxyTest() throws Exception {
         URL url = new URL("http://www.aliyun.com");
         PowerMockito.mockStatic(HttpUtil.class);
-        BDDMockito.given(HttpUtil.needProxy(anyString(), anyString(), anyString())).willReturn(true);
+        BDDMockito.given(HttpUtil.needProxy(anyString(), (String) isNull(), (String) isNull())).willReturn(true);
         Proxy proxy0 = mock(Proxy.class);
-        BDDMockito.given(HttpUtil.getJDKProxy(anyString(), anyString(), any(HttpRequest.class))).willReturn(proxy0);
+        BDDMockito.given(HttpUtil.getJDKProxy((String) isNull(), (String) isNull(), any(HttpRequest.class))).willReturn(proxy0);
         HttpClientConfig config = mock(HttpClientConfig.class);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         Proxy proxy = Whitebox.invokeMethod(client, "calcProxy", url, mock(HttpRequest.class));
@@ -416,9 +416,9 @@ public class CompatibleUrlConnClientTest {
     public void calcHttpsProxyNeedProxyTest() throws Exception {
         URL url = new URL("https://www.aliyun.com");
         PowerMockito.mockStatic(HttpUtil.class);
-        BDDMockito.given(HttpUtil.needProxy(anyString(), anyString(), anyString())).willReturn(true);
+        BDDMockito.given(HttpUtil.needProxy(anyString(), (String) isNull(), (String) isNull())).willReturn(true);
         Proxy proxy0 = mock(Proxy.class);
-        BDDMockito.given(HttpUtil.getJDKProxy(anyString(), anyString(), any(HttpRequest.class))).willReturn(proxy0);
+        BDDMockito.given(HttpUtil.getJDKProxy((String) isNull(), (String) isNull(), any(HttpRequest.class))).willReturn(proxy0);
         HttpClientConfig config = mock(HttpClientConfig.class);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         Proxy proxy = Whitebox.invokeMethod(client, "calcProxy", url, mock(HttpRequest.class));
