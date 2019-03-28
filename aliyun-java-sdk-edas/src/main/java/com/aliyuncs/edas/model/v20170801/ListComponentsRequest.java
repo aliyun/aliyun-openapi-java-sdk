@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListComponentsRequest extends RoaAcsRequest<ListComponentsResponse> {
 	
 	public ListComponentsRequest() {
-		super("Edas", "2017-08-01", "ListComponents", "edas");
+		super("Edas", "2017-08-01", "ListComponents");
 		setUriPattern("/pop/v5/resource/components");
 		setMethod(MethodType.GET);
 	}

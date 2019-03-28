@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListFlowControlsRequest extends RoaAcsRequest<ListFlowControlsResponse> {
 	
 	public ListFlowControlsRequest() {
-		super("Edas", "2017-08-01", "ListFlowControls", "edas");
+		super("Edas", "2017-08-01", "ListFlowControls");
 		setUriPattern("/pop/v5/app/flowControls");
 		setMethod(MethodType.GET);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InsertServerlessApplicationRequest extends RoaAcsRequest<InsertServerlessApplicationResponse> {
 	
 	public InsertServerlessApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertServerlessApplication", "edas");
+		super("Edas", "2017-08-01", "InsertServerlessApplication");
 		setUriPattern("/pop/v5/k8s/pop/pop_serverless_app_create_without_deploy");
 		setMethod(MethodType.POST);
 	}
@@ -34,6 +34,8 @@ public class InsertServerlessApplicationRequest extends RoaAcsRequest<InsertServ
 	private String jarStartArgs;
 
 	private Integer memory;
+
+	private Integer buildPackId;
 
 	private String commandArgs;
 
@@ -105,6 +107,17 @@ public class InsertServerlessApplicationRequest extends RoaAcsRequest<InsertServ
 		this.memory = memory;
 		if(memory != null){
 			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
+	public Integer getBuildPackId() {
+		return this.buildPackId;
+	}
+
+	public void setBuildPackId(Integer buildPackId) {
+		this.buildPackId = buildPackId;
+		if(buildPackId != null){
+			putQueryParameter("BuildPackId", buildPackId.toString());
 		}
 	}
 

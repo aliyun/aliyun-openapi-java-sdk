@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteServerlessApplicationRequest extends RoaAcsRequest<DeleteServerlessApplicationResponse> {
 	
 	public DeleteServerlessApplicationRequest() {
-		super("Edas", "2017-08-01", "DeleteServerlessApplication", "edas");
+		super("Edas", "2017-08-01", "DeleteServerlessApplication");
 		setUriPattern("/pop/v5/k8s/pop/pop_serverless_app_delete");
 		setMethod(MethodType.DELETE);
 	}

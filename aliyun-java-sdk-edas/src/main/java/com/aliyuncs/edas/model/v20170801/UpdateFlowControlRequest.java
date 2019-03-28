@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateFlowControlRequest extends RoaAcsRequest<UpdateFlowControlResponse> {
 	
 	public UpdateFlowControlRequest() {
-		super("Edas", "2017-08-01", "UpdateFlowControl", "edas");
+		super("Edas", "2017-08-01", "UpdateFlowControl");
 		setUriPattern("/pop/v5/flowControl");
 		setMethod(MethodType.PUT);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteServiceGroupRequest extends RoaAcsRequest<DeleteServiceGroupResponse> {
 	
 	public DeleteServiceGroupRequest() {
-		super("Edas", "2017-08-01", "DeleteServiceGroup", "edas");
+		super("Edas", "2017-08-01", "DeleteServiceGroup");
 		setUriPattern("/pop/v5/service/serviceGroups");
 		setMethod(MethodType.DELETE);
 	}

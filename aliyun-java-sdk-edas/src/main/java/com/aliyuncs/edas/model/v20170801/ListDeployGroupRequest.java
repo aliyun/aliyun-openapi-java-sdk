@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListDeployGroupRequest extends RoaAcsRequest<ListDeployGroupResponse> {
 	
 	public ListDeployGroupRequest() {
-		super("Edas", "2017-08-01", "ListDeployGroup", "edas");
+		super("Edas", "2017-08-01", "ListDeployGroup");
 		setUriPattern("/pop/v5/app/deploy_group_list");
 		setMethod(MethodType.POST);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListRecentChangeOrderRequest extends RoaAcsRequest<ListRecentChangeOrderResponse> {
 	
 	public ListRecentChangeOrderRequest() {
-		super("Edas", "2017-08-01", "ListRecentChangeOrder", "edas");
+		super("Edas", "2017-08-01", "ListRecentChangeOrder");
 		setUriPattern("/pop/v5/changeorder/change_order_list");
 		setMethod(MethodType.POST);
 	}

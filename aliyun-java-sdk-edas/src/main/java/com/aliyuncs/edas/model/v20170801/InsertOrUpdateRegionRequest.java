@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InsertOrUpdateRegionRequest extends RoaAcsRequest<InsertOrUpdateRegionResponse> {
 	
 	public InsertOrUpdateRegionRequest() {
-		super("Edas", "2017-08-01", "InsertOrUpdateRegion", "edas");
+		super("Edas", "2017-08-01", "InsertOrUpdateRegion");
 		setUriPattern("/pop/v5/user_region_def");
 		setMethod(MethodType.POST);
 	}

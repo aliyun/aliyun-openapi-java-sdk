@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationResponse> {
 	
 	public DeployApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployApplication", "edas");
+		super("Edas", "2017-08-01", "DeployApplication");
 		setUriPattern("/pop/v5/changeorder/co_deploy");
 		setMethod(MethodType.POST);
 	}

@@ -1,3 +1,6 @@
+2019-03-28 Version: 2.43.0
+1, EDAS serverless support Pandora application deployment in war/jar mode
+
 2019-03-12 Version: 2.42.1
 1, Add application name support for config center APIs.
 2, Add GetCluster API.
