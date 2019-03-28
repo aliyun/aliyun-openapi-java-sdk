@@ -57,6 +57,8 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private String kMSKeyId;
 
+	private String advancedFeatures;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -222,6 +224,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.kMSKeyId = kMSKeyId;
 		if(kMSKeyId != null){
 			putQueryParameter("KMSKeyId", kMSKeyId);
+		}
+	}
+
+	public String getAdvancedFeatures() {
+		return this.advancedFeatures;
+	}
+
+	public void setAdvancedFeatures(String advancedFeatures) {
+		this.advancedFeatures = advancedFeatures;
+		if(advancedFeatures != null){
+			putQueryParameter("AdvancedFeatures", advancedFeatures);
 		}
 	}
 
