@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class QueryConfigCenterRequest extends RoaAcsRequest<QueryConfigCenterResponse> {
 	
 	public QueryConfigCenterRequest() {
-		super("Edas", "2017-08-01", "QueryConfigCenter", "edas");
+		super("Edas", "2017-08-01", "QueryConfigCenter");
 		setUriPattern("/pop/v5/configCenter");
 		setMethod(MethodType.GET);
 	}

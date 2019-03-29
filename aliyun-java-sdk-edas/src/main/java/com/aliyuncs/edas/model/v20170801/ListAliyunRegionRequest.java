@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListAliyunRegionRequest extends RoaAcsRequest<ListAliyunRegionResponse> {
 	
 	public ListAliyunRegionRequest() {
-		super("Edas", "2017-08-01", "ListAliyunRegion", "edas");
+		super("Edas", "2017-08-01", "ListAliyunRegion");
 		setUriPattern("/pop/v5/resource/region_list");
 		setMethod(MethodType.POST);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class TransformClusterMemberRequest extends RoaAcsRequest<TransformClusterMemberResponse> {
 	
 	public TransformClusterMemberRequest() {
-		super("Edas", "2017-08-01", "TransformClusterMember", "edas");
+		super("Edas", "2017-08-01", "TransformClusterMember");
 		setUriPattern("/pop/v5/resource/transform_cluster_member");
 		setMethod(MethodType.POST);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListRoleRequest extends RoaAcsRequest<ListRoleResponse> {
 	
 	public ListRoleRequest() {
-		super("Edas", "2017-08-01", "ListRole", "edas");
+		super("Edas", "2017-08-01", "ListRole");
 		setUriPattern("/pop/v5/account/role_list");
 		setMethod(MethodType.POST);
 	}

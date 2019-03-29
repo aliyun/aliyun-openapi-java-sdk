@@ -33,8 +33,6 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private String resourceOwnerAccount;
 
-	private String imageName;
-
 	private String roleName;
 
 	private String description;
@@ -44,6 +42,8 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	private Long ownerId;
 
 	private String platform;
+
+	private String imageName;
 
 	private String architecture;
 
@@ -84,17 +84,6 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getImageName() {
-		return this.imageName;
-	}
-
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-		if(imageName != null){
-			putQueryParameter("ImageName", imageName);
 		}
 	}
 
@@ -150,6 +139,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.platform = platform;
 		if(platform != null){
 			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public String getImageName() {
+		return this.imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
 		}
 	}
 

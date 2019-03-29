@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateContainerRequest extends RoaAcsRequest<UpdateContainerResponse> {
 	
 	public UpdateContainerRequest() {
-		super("Edas", "2017-08-01", "UpdateContainer", "edas");
+		super("Edas", "2017-08-01", "UpdateContainer");
 		setUriPattern("/pop/v5/changeorder/co_update_container");
 		setMethod(MethodType.POST);
 	}

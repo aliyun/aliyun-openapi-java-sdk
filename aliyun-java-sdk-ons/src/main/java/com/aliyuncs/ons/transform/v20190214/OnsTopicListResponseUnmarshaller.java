@@ -36,7 +36,7 @@ public class OnsTopicListResponseUnmarshaller {
 			publishInfoDo.setOwner(context.stringValue("OnsTopicListResponse.Data["+ i +"].Owner"));
 			publishInfoDo.setRelation(context.integerValue("OnsTopicListResponse.Data["+ i +"].Relation"));
 			publishInfoDo.setRelationName(context.stringValue("OnsTopicListResponse.Data["+ i +"].RelationName"));
-			publishInfoDo.setUpdateTime(context.longValue("OnsTopicListResponse.Data["+ i +"].UpdateTime"));
+			publishInfoDo.setCreateTime(context.longValue("OnsTopicListResponse.Data["+ i +"].CreateTime"));
 			publishInfoDo.setRemark(context.stringValue("OnsTopicListResponse.Data["+ i +"].Remark"));
 			publishInfoDo.setMessageType(context.integerValue("OnsTopicListResponse.Data["+ i +"].MessageType"));
 			publishInfoDo.setInstanceId(context.stringValue("OnsTopicListResponse.Data["+ i +"].InstanceId"));

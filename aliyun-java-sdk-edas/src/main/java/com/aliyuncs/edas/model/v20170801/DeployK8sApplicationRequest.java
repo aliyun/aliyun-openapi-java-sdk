@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicationResponse> {
 	
 	public DeployK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
+		super("Edas", "2017-08-01", "DeployK8sApplication");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.POST);
 	}

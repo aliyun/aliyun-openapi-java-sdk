@@ -1,7 +1,9 @@
 package com.aliyuncs;
 
+import com.aliyuncs.auth.AlibabaCloudCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.LegacyCredentials;
+import com.aliyuncs.auth.Signer;
 import com.aliyuncs.ecs.v20140526.model.DescribeRegionsResponse;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
@@ -33,7 +35,9 @@ import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
 
 @PowerMockIgnore("javax.net.ssl.*")
 @RunWith(PowerMockRunner.class)
@@ -57,9 +61,9 @@ public class DefaultAcsClientTest {
     @SuppressWarnings("deprecation")
     @Test
     public void testConstructorWithProfile() throws ClientException, IOException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         Assert.assertTrue(profile == client.getProfile());
@@ -69,7 +73,7 @@ public class DefaultAcsClientTest {
     @SuppressWarnings("deprecation")
     @Test
     public void testConstructorWithProfileAndCredentials() throws ClientException, IOException {
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         LegacyCredentials legacyCredentials = new LegacyCredentials(new Credential());
         DefaultAcsClient client = new DefaultAcsClient(profile, legacyCredentials);
         Assert.assertTrue(profile == client.getProfile());
@@ -78,9 +82,9 @@ public class DefaultAcsClientTest {
     @SuppressWarnings("deprecation")
     @Test
     public void testGetSetHttpClient() throws ClientException, IOException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         Assert.assertNotNull(client.getHttpClient());
@@ -91,9 +95,9 @@ public class DefaultAcsClientTest {
     @SuppressWarnings("deprecation")
     @Test
     public void testIsAutoRetry() {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         Assert.assertTrue(client.isAutoRetry());
@@ -104,9 +108,9 @@ public class DefaultAcsClientTest {
     @SuppressWarnings("deprecation")
     @Test
     public void testMaxRetryNumber() {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         Assert.assertTrue(3 == client.getMaxRetryNumber());
@@ -117,9 +121,9 @@ public class DefaultAcsClientTest {
     @SuppressWarnings("deprecation")
     @Test
     public void testShutdownWithApacheHttpClient() {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
@@ -130,9 +134,9 @@ public class DefaultAcsClientTest {
     @SuppressWarnings("deprecation")
     @Test
     public void testShutdownWithCompatibleHttpClient() {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setCompatibleMode(true);
@@ -149,16 +153,16 @@ public class DefaultAcsClientTest {
     @SuppressWarnings("deprecation")
     private DefaultAcsClient initDefaultAcsClient() throws NoSuchFieldException, SecurityException,
             IllegalArgumentException, IllegalAccessException, ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         Field httpClient = client.getClass().getDeclaredField("httpClient");
         httpClient.setAccessible(true);
-        CompatibleUrlConnClient compatibleUrlConnClient = Mockito.mock(CompatibleUrlConnClient.class);
+        CompatibleUrlConnClient compatibleUrlConnClient = mock(CompatibleUrlConnClient.class);
         httpClient.set(client, compatibleUrlConnClient);
-        HttpClientConfig httpClientConfig = Mockito.mock(HttpClientConfig.class);
+        HttpClientConfig httpClientConfig = mock(HttpClientConfig.class);
         Mockito.when(httpClientConfig.getProtocolType()).thenReturn(ProtocolType.HTTP);
         Mockito.when(profile.getHttpClientConfig()).thenReturn(httpClientConfig);
         PowerMockito.mockStatic(HttpUtil.class);
@@ -176,17 +180,18 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings("rawtypes")
     private AcsRequest initRequest(Class<? extends AcsResponse> responseClass) {
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         Mockito.when(request.getSysProduct()).thenReturn("product");
         Mockito.when(request.getSysLocationProduct()).thenReturn("locationProduct");
         Mockito.when(request.getSysEndpointType()).thenReturn("endpointType");
         Mockito.doReturn(ProtocolType.HTTP).when(request).getSysProtocol();
+        Mockito.when(request.getSysAcceptFormat()).thenReturn(FormatType.JSON);
         Mockito.when(request.getResponseClass()).thenReturn(responseClass);
         return request;
     }
 
     private HttpResponse initHttpResponse() throws ClientException {
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         Mockito.when(response.isSuccess()).thenReturn(true);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         String httpContentString = "<?xml version=\"1.0\" encoding=\"utf-8\"?><DescribeRegionsResponse>"
@@ -212,11 +217,11 @@ public class DefaultAcsClientTest {
     public void testGetAcsResponse() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
             IllegalAccessException, ClientException, IOException {
         DefaultAcsClient client = initDefaultAcsClient();
-        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
         HttpResponse response = initHttpResponse();
-        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke(Mockito.any(HttpRequest.class));
+        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
         Mockito.doReturn("http://test.domain").when(response).getSysUrl();
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
 
@@ -239,17 +244,16 @@ public class DefaultAcsClientTest {
     public void testDoActionBranch() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
         DefaultAcsClient client = initDefaultAcsClient();
-        HttpResponse response = Mockito.mock(HttpResponse.class);
-        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke(Mockito.any(HttpRequest.class));
+        HttpResponse response = mock(HttpResponse.class);
+        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
         Mockito.doReturn("http://test.domain").when(response).getSysUrl();
-        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
         Mockito.when(request.getSysAcceptFormat()).thenReturn(FormatType.JSON);
         Mockito.when(request.getSysProductDomain()).thenReturn(new ProductDomain("productName", "domainName"));
         Mockito.when(request.getSysProtocol()).thenReturn(null);
-
         Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
     }
 
@@ -261,7 +265,7 @@ public class DefaultAcsClientTest {
         Field clientProfile = client.getClass().getDeclaredField("clientProfile");
         clientProfile.setAccessible(true);
         clientProfile.set(client, null);
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         thrown.expect(ClientException.class);
         thrown.expectMessage("SDK.InvalidProfile : No active profile found.");
         client.getAcsResponse(request);
@@ -271,16 +275,16 @@ public class DefaultAcsClientTest {
     @Test
     public void testReadResponseUnmarshaller() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
         Field field = client.getClass().getDeclaredField("clientProfile");
         field.setAccessible(true);
         field.set(spyClient, profile);
-        HttpClientConfig httpClientConfig = Mockito.mock(HttpClientConfig.class);
+        HttpClientConfig httpClientConfig = mock(HttpClientConfig.class);
         Mockito.when(profile.getHttpClientConfig()).thenReturn(httpClientConfig);
         AcsRequest request = initRequest(DescribeRegionsResponse.class);
         HttpResponse response = initHttpResponse();
@@ -302,9 +306,9 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"deprecation", "rawtypes", "unchecked"})
     @Test
     public void testReadResponseClientException() throws ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
@@ -328,9 +332,9 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testReadResponseForHideArrayItem() throws ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
@@ -347,15 +351,15 @@ public class DefaultAcsClientTest {
             IllegalArgumentException, IllegalAccessException, ClientException, IOException {
         DefaultAcsClient client = initDefaultAcsClient();
 
-        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         Mockito.when(response.isSuccess()).thenReturn(true);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         Mockito.when(response.getHttpContentString()).thenReturn(null);
         Mockito.doReturn("http://test.domain").when(response).getSysUrl();
-        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke(Mockito.any(HttpRequest.class));
+        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
 
         thrown.expect(ClientException.class);
@@ -368,12 +372,12 @@ public class DefaultAcsClientTest {
     @Test
     public void testDoActionEndpointTestabilityException() throws ClientException, IOException,
             IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
-        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         String endPoint = "endpoint-test.exception.com";
         Mockito.doReturn(endPoint).when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
@@ -388,7 +392,7 @@ public class DefaultAcsClientTest {
         System.setProperty("alibabacloud.accessKeyId", "test");
         System.setProperty("alibabacloud.accessKeyIdSecret", "test");
         DefaultAcsClient client = new DefaultAcsClient("test");
-        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         String endPoint = "endpoint-test.exception.com";
         Mockito.doReturn(endPoint).when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
@@ -404,11 +408,10 @@ public class DefaultAcsClientTest {
             IllegalAccessException, NoSuchFieldException, SecurityException {
         DefaultAcsClient client = initDefaultAcsClient();
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
-        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
-        Mockito.doThrow(new SocketTimeoutException()).when(getHttpClient(client)).syncInvoke(Mockito.any(
-                HttpRequest.class));
+        Mockito.doThrow(new SocketTimeoutException()).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
         Mockito.doReturn("test").when(request).getSysUrl();
         thrown.expect(ClientException.class);
         thrown.expectMessage("SDK.ServerUnreachable : " +
@@ -422,11 +425,11 @@ public class DefaultAcsClientTest {
             IllegalAccessException, NoSuchFieldException, SecurityException {
         DefaultAcsClient client = initDefaultAcsClient();
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
-        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
         Mockito.doReturn(ProtocolType.HTTP).when(request).getSysProtocol();
-        Mockito.doThrow(new IOException()).when(getHttpClient(client)).syncInvoke(Mockito.any(HttpRequest.class));
+        Mockito.doThrow(new IOException()).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
         Mockito.doReturn("test").when(request).getSysUrl();
         thrown.expect(ClientException.class);
         thrown.expectMessage("SDK.ServerUnreachable : Server unreachable: connection test failed");
@@ -436,14 +439,13 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testDoActionInvalidKeyException() throws ClientException, IOException, IllegalArgumentException,
-            IllegalAccessException, NoSuchFieldException, SecurityException {
+            IllegalAccessException, NoSuchFieldException, SecurityException, NoSuchAlgorithmException, InvalidKeyException {
         DefaultAcsClient client = initDefaultAcsClient();
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
-        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        Mockito.doThrow(InvalidKeyException.class).when(request).signRequest(any(Signer.class), any(AlibabaCloudCredentials.class), any(FormatType.class), any(ProductDomain.class));
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
-        Mockito.doThrow(InvalidKeyException.class).when(getHttpClient(client)).syncInvoke(Mockito.any(
-                HttpRequest.class));
         thrown.expect(ClientException.class);
         thrown.expectMessage("SDK.InvalidAccessSecret : Specified access secret is not valid.");
         client.doAction(request);
@@ -452,14 +454,13 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"unchecked", "rawtypes"})
     @Test
     public void testDoActionNoSuchAlgorithmException() throws ClientException, IOException, IllegalArgumentException,
-            IllegalAccessException, NoSuchFieldException, SecurityException {
+            IllegalAccessException, NoSuchFieldException, SecurityException, NoSuchAlgorithmException, InvalidKeyException {
         DefaultAcsClient client = initDefaultAcsClient();
         AcsRequest request = initRequest(DescribeEndpointsResponse.class);
-        DefaultEndpointResolver endpointResolver = Mockito.mock(DefaultEndpointResolver.class);
+        Mockito.doThrow(NoSuchAlgorithmException.class).when(request).signRequest(any(Signer.class), any(AlibabaCloudCredentials.class), any(FormatType.class), any(ProductDomain.class));
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);
         Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
-        Mockito.doThrow(NoSuchAlgorithmException.class).when(getHttpClient(client)).syncInvoke(Mockito.any(
-                HttpRequest.class));
         thrown.expect(ClientException.class);
         thrown.expectMessage("SDK.InvalidMD5Algorithm : MD5 hash is not supported by client side.");
         client.doAction(request);
@@ -467,17 +468,16 @@ public class DefaultAcsClientTest {
 
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
-    public void testGetCommonResponse() throws ClientException, IOException, IllegalArgumentException,
-            IllegalAccessException, NoSuchFieldException, SecurityException {
-        Credential credential = Mockito.mock(Credential.class);
+    public void testGetCommonResponse() throws ClientException, IllegalArgumentException, SecurityException {
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
-        CommonRequest commonRequest = Mockito.mock(CommonRequest.class);
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        HttpResponse response = mock(HttpResponse.class);
+        CommonRequest commonRequest = mock(CommonRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         Mockito.when(commonRequest.buildRequest()).thenReturn(request);
         Mockito.doReturn(response).when(spyClient).doAction(request);
         Mockito.when(response.isSuccess()).thenReturn(true);
@@ -488,15 +488,15 @@ public class DefaultAcsClientTest {
     @Test
     public void testGetCommonResponseServerException() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
-        CommonRequest commonRequest = Mockito.mock(CommonRequest.class);
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        HttpResponse response = mock(HttpResponse.class);
+        CommonRequest commonRequest = mock(CommonRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         Mockito.when(commonRequest.buildRequest()).thenReturn(request);
         Mockito.doReturn(response).when(spyClient).doAction(request);
         Mockito.when(response.isSuccess()).thenReturn(false);
@@ -511,15 +511,15 @@ public class DefaultAcsClientTest {
     @Test
     public void testGetCommonResponseClientException() throws ClientException, IOException, IllegalArgumentException,
             IllegalAccessException, NoSuchFieldException, SecurityException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
-        CommonRequest commonRequest = Mockito.mock(CommonRequest.class);
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        HttpResponse response = mock(HttpResponse.class);
+        CommonRequest commonRequest = mock(CommonRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         Mockito.when(commonRequest.buildRequest()).thenReturn(request);
         Mockito.doReturn(response).when(spyClient).doAction(request);
 
@@ -540,17 +540,17 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseServerExceptionError() throws ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         Mockito.when(response.getStatus()).thenReturn(500);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         Mockito.when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "500", "ServerException", ""));
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         Mockito.doReturn(response).when(spyClient).doAction(request);
         thrown.expect(ServerException.class);
         thrown.expectMessage("500 : ServerException");
@@ -560,18 +560,18 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseNotIncompleteSignatureError() throws ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
         Mockito.when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "Not IncompleteSignature",
                 "ClientException", ""));
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         Mockito.doReturn(response).when(spyClient).doAction(request);
         thrown.expect(ClientException.class);
         thrown.expectMessage("Not IncompleteSignature : ClientException");
@@ -581,16 +581,16 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseInvalidAccessKeySecretError() throws ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         request.strToSign = "GET&%2F%3DDescriat%3DXML%26";
         String errorMessage = "signature does not conform to standards. server string to sign is:" + request.strToSign;
         Mockito.when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "IncompleteSignature",
@@ -604,16 +604,16 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseSignatureNullError() throws ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultAcsClient spyClient = Mockito.spy(client);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         request.strToSign = "GET&%2F&scribeInstancesDXML%26";
         String errorMessage = "signature does not conform to standards. server sgn is:" + request.strToSign;
         Mockito.when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "IncompleteSignature",
@@ -627,16 +627,16 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseSignatureError() throws ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         DefaultAcsClient spyClient = Mockito.spy(client);
         Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         request.strToSign = "GET&%2F&Action%3DDescribeInances%26Format%3DXML%26";
         String errorMessage = "signature does not conform to standards. server string to sign is:Error Signature";
         Mockito.when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "IncompleteSignature",
@@ -649,16 +649,16 @@ public class DefaultAcsClientTest {
 
     @Test
     public void testResponseSignatureDoesNotMatch() throws ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         DefaultAcsClient spyClient = Mockito.spy(client);
         Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         request.strToSign = "GET&%2F&Action%3DDescribeInances%26Format%3DXML%26";
         String errorMessage = "signature does not conform to standards. server string to sign is:Error Signature";
         Mockito.when(response.getHttpContentString()).thenReturn(makeAcsErrorXML("", "", "SignatureDoesNotMatch",
@@ -672,16 +672,16 @@ public class DefaultAcsClientTest {
     @SuppressWarnings({"unchecked", "rawtypes", "deprecation"})
     @Test
     public void testResponseStringContentNull() throws ClientException {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
-        HttpResponse response = Mockito.mock(HttpResponse.class);
+        HttpResponse response = mock(HttpResponse.class);
         DefaultAcsClient spyClient = Mockito.spy(client);
         Mockito.when(response.getStatus()).thenReturn(400);
         Mockito.when(response.getHttpContentType()).thenReturn(FormatType.XML);
-        AcsRequest request = Mockito.mock(AcsRequest.class);
+        AcsRequest request = mock(AcsRequest.class);
         request.strToSign = "GET&%2F&ssddddfgfK";
         Mockito.when(response.getHttpContentString()).thenReturn(null);
         Mockito.doReturn(response).when(spyClient).doAction(request);
@@ -692,9 +692,9 @@ public class DefaultAcsClientTest {
 
     @Test
     public void userAgentConfigTest() {
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(credential.getSecurityToken()).thenReturn(null);
-        DefaultProfile profile = Mockito.mock(DefaultProfile.class);
+        DefaultProfile profile = mock(DefaultProfile.class);
         Mockito.when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
         client.appendUserAgent("test", "1.2.2");

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetClusterRequest extends RoaAcsRequest<GetClusterResponse> {
 	
 	public GetClusterRequest() {
-		super("Edas", "2017-08-01", "GetCluster", "edas");
+		super("Edas", "2017-08-01", "GetCluster");
 		setUriPattern("/pop/v5/resource/cluster");
 		setMethod(MethodType.GET);
 	}

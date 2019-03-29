@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteClusterMemberRequest extends RoaAcsRequest<DeleteClusterMemberResponse> {
 	
 	public DeleteClusterMemberRequest() {
-		super("Edas", "2017-08-01", "DeleteClusterMember", "edas");
+		super("Edas", "2017-08-01", "DeleteClusterMember");
 		setUriPattern("/pop/v5/resource/cluster_member");
 		setMethod(MethodType.DELETE);
 	}

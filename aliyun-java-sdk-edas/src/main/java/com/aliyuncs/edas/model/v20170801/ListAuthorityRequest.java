@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListAuthorityRequest extends RoaAcsRequest<ListAuthorityResponse> {
 	
 	public ListAuthorityRequest() {
-		super("Edas", "2017-08-01", "ListAuthority", "edas");
+		super("Edas", "2017-08-01", "ListAuthority");
 		setUriPattern("/pop/v5/account/authority_list");
 		setMethod(MethodType.POST);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListApplicationRequest extends RoaAcsRequest<ListApplicationResponse> {
 	
 	public ListApplicationRequest() {
-		super("Edas", "2017-08-01", "ListApplication", "edas");
+		super("Edas", "2017-08-01", "ListApplication");
 		setUriPattern("/pop/v5/app/app_list");
 		setMethod(MethodType.POST);
 	}

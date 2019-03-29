@@ -48,6 +48,8 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private String modelId;
 
+	private Integer displayDpi;
+
 	private Long maxSheetRow;
 
 	private Long maxSheetCount;
@@ -190,6 +192,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.modelId = modelId;
 		if(modelId != null){
 			putQueryParameter("ModelId", modelId);
+		}
+	}
+
+	public Integer getDisplayDpi() {
+		return this.displayDpi;
+	}
+
+	public void setDisplayDpi(Integer displayDpi) {
+		this.displayDpi = displayDpi;
+		if(displayDpi != null){
+			putQueryParameter("DisplayDpi", displayDpi.toString());
 		}
 	}
 

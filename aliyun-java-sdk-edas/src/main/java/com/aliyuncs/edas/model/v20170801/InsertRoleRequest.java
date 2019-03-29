@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InsertRoleRequest extends RoaAcsRequest<InsertRoleResponse> {
 	
 	public InsertRoleRequest() {
-		super("Edas", "2017-08-01", "InsertRole", "edas");
+		super("Edas", "2017-08-01", "InsertRole");
 		setUriPattern("/pop/v5/account/create_role");
 		setMethod(MethodType.POST);
 	}

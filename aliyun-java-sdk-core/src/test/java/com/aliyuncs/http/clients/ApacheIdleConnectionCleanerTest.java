@@ -33,7 +33,7 @@ public class ApacheIdleConnectionCleanerTest {
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
-                long idleTime = invocationOnMock.getArgumentAt(0, long.class);
+                long idleTime = invocationOnMock.getArgument(0, Long.class);
                 Assert.assertEquals(idleTime, idleTime, 30 * 1000L);
                 return null;
             }
@@ -87,7 +87,7 @@ public class ApacheIdleConnectionCleanerTest {
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
-                long idleTime = invocationOnMock.getArgumentAt(0, long.class);
+                long idleTime = invocationOnMock.getArgument(0, long.class);
                 Assert.assertEquals(idleTime, idleTime, 30 * 1000L);
                 return null;
             }
@@ -96,7 +96,7 @@ public class ApacheIdleConnectionCleanerTest {
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
-                long idleTime = invocationOnMock.getArgumentAt(0, long.class);
+                long idleTime = invocationOnMock.getArgument(0, long.class);
                 Assert.assertEquals(idleTime, idleTime, 30 * 1000L);
                 return null;
             }
@@ -126,7 +126,7 @@ public class ApacheIdleConnectionCleanerTest {
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
-                long idleTime = invocationOnMock.getArgumentAt(0, long.class);
+                long idleTime = invocationOnMock.getArgument(0, long.class);
                 Assert.assertEquals(idleTime, idleTime, 30 * 1000L);
                 return null;
             }
@@ -156,7 +156,7 @@ public class ApacheIdleConnectionCleanerTest {
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
-                long idleTime = invocationOnMock.getArgumentAt(0, long.class);
+                long idleTime = invocationOnMock.getArgument(0, long.class);
                 Assert.assertEquals(idleTime, idleTime, 30 * 1000L);
                 return null;
             }
@@ -164,7 +164,7 @@ public class ApacheIdleConnectionCleanerTest {
         doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) {
-                long idleTime = invocationOnMock.getArgumentAt(0, long.class);
+                long idleTime = invocationOnMock.getArgument(0, long.class);
                 Assert.assertEquals(idleTime, idleTime, 30 * 1000L);
                 return null;
             }

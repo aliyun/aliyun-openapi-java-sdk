@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListEcsNotInClusterRequest extends RoaAcsRequest<ListEcsNotInClusterResponse> {
 	
 	public ListEcsNotInClusterRequest() {
-		super("Edas", "2017-08-01", "ListEcsNotInCluster", "edas");
+		super("Edas", "2017-08-01", "ListEcsNotInCluster");
 		setUriPattern("/pop/v5/resource/ecs_not_in_cluster");
 		setMethod(MethodType.GET);
 	}

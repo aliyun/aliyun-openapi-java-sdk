@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetServerlessAppConfigDetailRequest extends RoaAcsRequest<GetServerlessAppConfigDetailResponse> {
 	
 	public GetServerlessAppConfigDetailRequest() {
-		super("Edas", "2017-08-01", "GetServerlessAppConfigDetail", "edas");
+		super("Edas", "2017-08-01", "GetServerlessAppConfigDetail");
 		setUriPattern("/pop/v5/k8s/pop/pop_serverless_app_config_detail");
 		setMethod(MethodType.GET);
 	}

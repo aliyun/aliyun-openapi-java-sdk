@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InsertConfigCenterRequest extends RoaAcsRequest<InsertConfigCenterResponse> {
 	
 	public InsertConfigCenterRequest() {
-		super("Edas", "2017-08-01", "InsertConfigCenter", "edas");
+		super("Edas", "2017-08-01", "InsertConfigCenter");
 		setUriPattern("/pop/v5/configCenter");
 		setMethod(MethodType.POST);
 	}

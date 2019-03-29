@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListPublishedServicesRequest extends RoaAcsRequest<ListPublishedServicesResponse> {
 	
 	public ListPublishedServicesRequest() {
-		super("Edas", "2017-08-01", "ListPublishedServices", "edas");
+		super("Edas", "2017-08-01", "ListPublishedServices");
 		setUriPattern("/pop/v5/service/listPublishedServices");
 		setMethod(MethodType.GET);
 	}

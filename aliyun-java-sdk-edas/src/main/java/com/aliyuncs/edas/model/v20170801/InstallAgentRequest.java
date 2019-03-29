@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InstallAgentRequest extends RoaAcsRequest<InstallAgentResponse> {
 	
 	public InstallAgentRequest() {
-		super("Edas", "2017-08-01", "InstallAgent", "edas");
+		super("Edas", "2017-08-01", "InstallAgent");
 		setUriPattern("/pop/v5/ecss/install_agent");
 		setMethod(MethodType.POST);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteK8sApplicationRequest extends RoaAcsRequest<DeleteK8sApplicationResponse> {
 	
 	public DeleteK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeleteK8sApplication", "edas");
+		super("Edas", "2017-08-01", "DeleteK8sApplication");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.DELETE);
 	}

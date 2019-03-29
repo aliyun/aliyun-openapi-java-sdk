@@ -65,7 +65,7 @@ public class OnsTopicListResponse extends AcsResponse {
 
 		private String relationName;
 
-		private Long updateTime;
+		private Long createTime;
 
 		private String remark;
 
@@ -107,12 +107,12 @@ public class OnsTopicListResponse extends AcsResponse {
 			this.relationName = relationName;
 		}
 
-		public Long getUpdateTime() {
-			return this.updateTime;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getRemark() {

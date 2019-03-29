@@ -60,6 +60,8 @@ public class OnsTopicStatusResponse extends AcsResponse {
 
 		private Long lastTimeStamp;
 
+		private Integer perm;
+
 		public Long getTotalCount() {
 			return this.totalCount;
 		}
@@ -74,6 +76,14 @@ public class OnsTopicStatusResponse extends AcsResponse {
 
 		public void setLastTimeStamp(Long lastTimeStamp) {
 			this.lastTimeStamp = lastTimeStamp;
+		}
+
+		public Integer getPerm() {
+			return this.perm;
+		}
+
+		public void setPerm(Integer perm) {
+			this.perm = perm;
 		}
 	}
 

@@ -34,6 +34,8 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	private String ownerAccount;
 
+	private String acceptLanguage;
+
 	private Long ownerId;
 
 	private String instanceChargeType;
@@ -81,6 +83,17 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

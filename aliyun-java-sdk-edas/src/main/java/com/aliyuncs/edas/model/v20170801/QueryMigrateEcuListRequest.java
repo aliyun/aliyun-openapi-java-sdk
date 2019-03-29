@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class QueryMigrateEcuListRequest extends RoaAcsRequest<QueryMigrateEcuListResponse> {
 	
 	public QueryMigrateEcuListRequest() {
-		super("Edas", "2017-08-01", "QueryMigrateEcuList", "edas");
+		super("Edas", "2017-08-01", "QueryMigrateEcuList");
 		setUriPattern("/pop/v5/resource/migrate_ecu_list");
 		setMethod(MethodType.GET);
 	}
