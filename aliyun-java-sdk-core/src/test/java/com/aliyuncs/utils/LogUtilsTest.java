@@ -64,7 +64,7 @@ public class LogUtilsTest {
     }
 
     @Test
-    public void LogUnitConstructorWithCompleteURL() throws ClientException {
+    public void logUnitConstructorWithCompleteURL() throws ClientException {
         Map<String, String> reqHeaders = new HashMap<String, String>();
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
         Map<String, String> resHeaders = new HashMap<String, String>();
@@ -82,7 +82,7 @@ public class LogUtilsTest {
     }
 
     @Test
-    public void LogUnitConstructorWithCompleteURLAndNonePhrase() throws ClientException {
+    public void logUnitConstructorWithCompleteURLAndNonePhrase() throws ClientException {
         Map<String, String> reqHeaders = new HashMap<String, String>();
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
         Map<String, String> resHeaders = new HashMap<String, String>();
@@ -100,7 +100,7 @@ public class LogUtilsTest {
     }
 
     @Test
-    public void LogUnitConstructorWithUnCompleteURLAndNonePhrase() throws ClientException {
+    public void logUnitConstructorWithUnCompleteURLAndNonePhrase() throws ClientException {
         Map<String, String> reqHeaders = new HashMap<String, String>();
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
         Map<String, String> resHeaders = new HashMap<String, String>();
@@ -118,7 +118,7 @@ public class LogUtilsTest {
     }
 
     @Test
-    public void LogUnitConstructorWithErrorURL() throws ClientException {
+    public void logUnitConstructorWithErrorURL() throws ClientException {
         Map<String, String> reqHeaders = new HashMap<String, String>();
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
         Map<String, String> resHeaders = new HashMap<String, String>();
@@ -136,7 +136,7 @@ public class LogUtilsTest {
     }
 
     @Test
-    public void LogUnitConstructorWithExceptionBody() throws ClientException {
+    public void logUnitConstructorWithExceptionBody() throws ClientException {
         Map<String, String> reqHeaders = new HashMap<String, String>();
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
         Map<String, String> resHeaders = new HashMap<String, String>();
@@ -156,7 +156,7 @@ public class LogUtilsTest {
     }
 
     @Test
-    public void LogUnitGetSetTest() throws ClientException {
+    public void logUnitGetSetTest() throws ClientException {
         Map<String, String> reqHeaders = new HashMap<String, String>();
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
         Map<String, String> resHeaders = new HashMap<String, String>();
@@ -226,7 +226,7 @@ public class LogUtilsTest {
     }
 
     @Test
-    public void LogUtilsConstructor() {
+    public void logUtilsConstructor() {
         Assert.assertNotNull(new LogUtils());
     }
 

@@ -28,7 +28,7 @@ public class BaseTest {
     protected String roleArn = null;
     protected String regionId = null;
 
-    Logger logger = LoggerFactory.getLogger(BaseTest.class);
+    protected Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
 
     public DefaultAcsClient getClientWithRegionIdAndLogger(String regionId) throws ClientException, IOException {

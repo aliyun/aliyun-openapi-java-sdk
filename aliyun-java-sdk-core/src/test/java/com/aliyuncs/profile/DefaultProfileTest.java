@@ -7,7 +7,6 @@ import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpClientConfig;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -80,7 +79,7 @@ public class DefaultProfileTest {
         assertNull(profile.getLogger());
         Logger logger = mock(Logger.class);
         profile.setLogger(logger);
-        Assert.assertEquals(logger, profile.getLogger());
+        assertEquals(logger, profile.getLogger());
     }
 
     @Test
@@ -88,7 +87,7 @@ public class DefaultProfileTest {
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
         assertEquals(DEFAULT_LOG_FORMAT, profile.getLogFormat());
         profile.setLogFormat("{uri} {request}");
-        Assert.assertEquals("{uri} {request}", profile.getLogFormat());
+        assertEquals("{uri} {request}", profile.getLogFormat());
     }
 
     @Test
