@@ -1,4 +1,4 @@
-[← 首页](../README_zh.md) | 环境要求[(English)](0-Requirements-EN.md) | [安装 →](1-Installation-CN.md)
+[← 首页](../README-CN.md) | 环境要求[(English)](0-Requirements-EN.md) | [安装 →](1-Installation-CN.md)
 ***
 
 ## 要求
@@ -8,4 +8,4 @@
 
 
 ***
-[← 首页](../README_zh.md) | 环境要求[(English)](0-Requirements-EN.md) | [安装 →](1-Installation-CN.md)
+[← 首页](../README-CN.md) | 环境要求[(English)](0-Requirements-EN.md) | [安装 →](1-Installation-CN.md)
