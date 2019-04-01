@@ -96,6 +96,7 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         String roleSessionName = clientConfig.get(AuthConstant.INI_ROLE_SESSION_NAME);
         String roleArn = clientConfig.get(AuthConstant.INI_ROLE_ARN);
         String regionId = clientConfig.get(AuthConstant.DEFAULT_REGION);
+        String policy = clientConfig.get(AuthConstant.INI_POLICY);
         if (StringUtils.isEmpty(accessKeyId) || StringUtils.isEmpty(accessKeySecret)) {
             throw new ClientException("The configured access_key_id or access_key_secret is empty");
         }
@@ -104,7 +105,7 @@ public class ProfileCredentialsProvider implements AlibabaCloudCredentialsProvid
         }
         STSAssumeRoleSessionCredentialsProvider provider =
                 factory.createCredentialsProvider(new STSAssumeRoleSessionCredentialsProvider(accessKeyId,
-                        accessKeySecret, roleSessionName, roleArn, regionId));
+                        accessKeySecret, roleSessionName, roleArn, regionId, policy));
         return provider.getCredentials();
     }
 

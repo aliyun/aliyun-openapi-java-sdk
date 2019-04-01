@@ -18,7 +18,7 @@ public class AuthConstant {
     public static final String INI_ROLE_NAME = "role_name";
     public static final String INI_ROLE_SESSION_NAME = "role_session_name";
     public static final String INI_ROLE_ARN = "role_arn";
-
+    public static final String INI_POLICY = "policy";
     public static final long TSC_VALID_TIME_SECONDS = 3600L;
     public static final String DEFAULT_REGION = "region_id";
     public static final String INI_ENABLE = "enable";

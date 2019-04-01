@@ -1,27 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-
 package com.aliyuncs.auth;
-
-/**
- * Created by haowei.yao on 2017/9/12.
- */
 
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
@@ -63,6 +40,8 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
      * The Duration for assume role sessions.
      */
     private long roleSessionDurationSeconds;
+
+    private String policy;
     private BasicSessionCredentials credentials = null;
 
 
@@ -82,13 +61,20 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
         this.stsClient = new DefaultAcsClient(clientProfile, longLivedCredentialsProvider);
         this.roleSessionDurationSeconds = DEFAULT_DURATION_SECONDS;
     }
+
     public STSAssumeRoleSessionCredentialsProvider(String accessKeyId, String accessKeySecret, String roleSessionName,
-                                                   String roleArn,String regionId) {
+                                                   String roleArn, String regionId) {
         this.roleArn = roleArn;
         this.roleSessionName = roleSessionName;
         DefaultProfile profile = DefaultProfile.getProfile(regionId, accessKeyId, accessKeySecret);
         this.stsClient = new DefaultAcsClient(profile);
         this.roleSessionDurationSeconds = AuthConstant.TSC_VALID_TIME_SECONDS;
+    }
+
+    public STSAssumeRoleSessionCredentialsProvider(String accessKeyId, String accessKeySecret, String roleSessionName,
+                                                   String roleArn, String regionId, String policy) {
+        this(accessKeyId, accessKeySecret, roleSessionName, roleArn, regionId);
+        this.policy = policy;
     }
 
     public static String getNewRoleSessionName() {
@@ -130,7 +116,9 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
         assumeRoleRequest.setRoleArn(roleArn);
         assumeRoleRequest.setRoleSessionName(roleSessionName);
         assumeRoleRequest.setDurationSeconds(roleSessionDurationSeconds);
-
+        if (null != policy){
+            assumeRoleRequest.setPolicy(policy);
+        }
         AssumeRoleResponse response = stsClient.getAcsResponse(assumeRoleRequest);
         return new BasicSessionCredentials(
                 response.getCredentials().getAccessKeyId(),
