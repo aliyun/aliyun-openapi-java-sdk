@@ -1,10 +1,5 @@
 package com.aliyuncs;
 
-import java.io.IOException;
-
-import org.junit.After;
-import org.junit.Before;
-
 import com.aliyuncs.auth.BasicSessionCredentials;
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.sts.AssumeRoleRequest;
@@ -15,6 +10,12 @@ import com.aliyuncs.http.HttpClientType;
 import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import org.junit.After;
+import org.junit.Before;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 @SuppressWarnings("deprecation")
 public class BaseTest {
@@ -26,6 +27,40 @@ public class BaseTest {
     protected String tokenAccesskeySecret = null;
     protected String roleArn = null;
     protected String regionId = null;
+
+    Logger logger = LoggerFactory.getLogger(BaseTest.class);
+
+
+    public DefaultAcsClient getClientWithRegionIdAndLogger(String regionId) throws ClientException, IOException {
+        IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
+        profile.setLogger(logger);
+        profile.setLogFormat("{request} \n" +
+                "{response} \n" +
+                "{ts} \n" +
+                "{date_iso_8601} \n" +
+                "{date_common_log}\n" +
+                "{host}\n" +
+                "{method} \n" +
+                "{uri}\n" +
+                "{version}\n" +
+                "{target} \n" +
+                "{hostname}\n" +
+                "{code}\n" +
+                "{phrase} \n" +
+                "{req_header_Accept}\n" +
+                "{res_header_Access-Control-Allow-Methods}\n" +
+                "{req_headers} \n" +
+                "{res_headers}\n" +
+                "{req_body}\n" +
+                "{res_body}\n" +
+                "{pid}\n" +
+                "{cost}\n" +
+                "{start_time}\n" +
+                "{time}\n" +
+                "");
+
+        return new DefaultAcsClient(profile);
+    }
 
     public DefaultAcsClient getClientWithRegionId(String regionId) throws ClientException, IOException {
         IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);

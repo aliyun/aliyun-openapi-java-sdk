@@ -1,8 +1,13 @@
 package com.aliyuncs.http;
 
+import lombok.ToString;
+
+@ToString(callSuper = true)
 public class HttpResponse extends HttpMessage {
 
     private int status;
+
+    private String reasonPhrase;
 
     public HttpResponse(String strUrl) {
         super(strUrl);
@@ -40,5 +45,13 @@ public class HttpResponse extends HttpMessage {
             return true;
         }
         return false;
+    }
+
+    public String getReasonPhrase() {
+        return reasonPhrase;
+    }
+
+    public void setReasonPhrase(String reasonPhrase) {
+        this.reasonPhrase = reasonPhrase;
     }
 }

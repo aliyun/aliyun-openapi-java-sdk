@@ -267,6 +267,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
             throws IOException {
         byte[] buff = readContent(content);
         response.setStatus(httpConn.getResponseCode());
+        response.setReasonPhrase(httpConn.getResponseMessage());
         Map<String, List<String>> headers = httpConn.getHeaderFields();
         for (Entry<String, List<String>> entry : headers.entrySet()) {
             String key = entry.getKey();

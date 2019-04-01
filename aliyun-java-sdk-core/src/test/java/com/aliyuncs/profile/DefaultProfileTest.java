@@ -1,14 +1,5 @@
 package com.aliyuncs.profile;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mockito;
-
 import com.aliyuncs.auth.Credential;
 import com.aliyuncs.auth.ICredentialProvider;
 import com.aliyuncs.auth.StaticCredentialsProvider;
@@ -16,6 +7,15 @@ import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.endpoint.ResolveEndpointRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.HttpClientConfig;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
+import org.slf4j.Logger;
+
+import static com.aliyuncs.utils.LogUtils.DEFAULT_LOG_FORMAT;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
 
 public class DefaultProfileTest {
 
@@ -31,13 +31,13 @@ public class DefaultProfileTest {
     public void testGetCredential() {
         DefaultProfile profile = DefaultProfile.getProfile("regionId");
         assertNull(profile.getCredential());
-        StaticCredentialsProvider credentialsProvider = Mockito.mock(StaticCredentialsProvider.class);
+        StaticCredentialsProvider credentialsProvider = mock(StaticCredentialsProvider.class);
         profile.setCredentialsProvider(credentialsProvider);
         assertTrue(profile.getCredential() instanceof Credential);
 
-        ICredentialProvider iCredentialProvider = Mockito.mock(ICredentialProvider.class);
+        ICredentialProvider iCredentialProvider = mock(ICredentialProvider.class);
         profile = DefaultProfile.getProfile("regionId", iCredentialProvider);
-        Credential credential = Mockito.mock(Credential.class);
+        Credential credential = mock(Credential.class);
         Mockito.when(iCredentialProvider.fresh()).thenReturn(credential);
         assertTrue(profile.getCredential() == credential);
         profile.setCredentialsProvider(credentialsProvider);
@@ -75,6 +75,23 @@ public class DefaultProfileTest {
     }
 
     @Test
+    public void testGetSetLogger() {
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
+        assertNull(profile.getLogger());
+        Logger logger = mock(Logger.class);
+        profile.setLogger(logger);
+        Assert.assertEquals(logger, profile.getLogger());
+    }
+
+    @Test
+    public void testGetSetLogFormat() {
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
+        assertEquals(DEFAULT_LOG_FORMAT, profile.getLogFormat());
+        profile.setLogFormat("{uri} {request}");
+        Assert.assertEquals("{uri} {request}", profile.getLogFormat());
+    }
+
+    @Test
     public void testIsUsingInternalLocationService() {
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
         assertFalse(profile.isUsingInternalLocationService());
@@ -97,7 +114,7 @@ public class DefaultProfileTest {
         assertEquals("cn-hangzhou", profile1.getRegionId());
         assertNull(profile1.getCredential());
 
-        ICredentialProvider icredential = Mockito.mock(ICredentialProvider.class);
+        ICredentialProvider icredential = mock(ICredentialProvider.class);
         DefaultProfile profile2 = DefaultProfile.getProfile("cn-shanghai", icredential);
         assertEquals("cn-shanghai", profile2.getRegionId());
         assertTrue(profile1 != profile2);
@@ -127,7 +144,7 @@ public class DefaultProfileTest {
     @Test
     public void testAddEndpoint() throws ClientException {
         DefaultProfile.addEndpoint("endpointName", "regionId", "product", "domain");
-        ResolveEndpointRequest request = Mockito.mock(ResolveEndpointRequest.class);
+        ResolveEndpointRequest request = mock(ResolveEndpointRequest.class);
         request.regionId = "regionId";
         assertTrue(DefaultEndpointResolver.predefinedEndpointResolver.isRegionIdValid(request));
     }

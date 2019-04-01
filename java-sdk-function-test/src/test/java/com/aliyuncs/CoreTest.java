@@ -5,8 +5,12 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.clients.ApacheHttpClient;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import java.io.IOException;
 
 public class CoreTest extends BaseTest {
 
@@ -132,6 +136,17 @@ public class CoreTest extends BaseTest {
         } catch (Exception e) {
             Assert.fail();
         }
+    }
+
+    // only test logger in local environment
+    @Ignore
+    @Test
+    public void loggerTest() throws ClientException, IOException {
+        DescribeInstancesRequest request = new DescribeInstancesRequest();
+        DescribeInstancesResponse response = getClientWithRegionIdAndLogger(this.regionId).getAcsResponse(request);
+        Assert.assertNotNull(response);
+        Assert.assertTrue(0 <= response.getTotalCount());
+        ApacheHttpClient.getInstance().close();
     }
 
 }

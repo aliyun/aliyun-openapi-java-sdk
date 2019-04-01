@@ -17,6 +17,7 @@ import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.utils.LogUtils;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -28,6 +29,7 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -37,11 +39,11 @@ import java.security.NoSuchAlgorithmException;
 
 import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 @PowerMockIgnore("javax.net.ssl.*")
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(HttpUtil.class)
+@PrepareForTest({HttpUtil.class, LogUtils.class})
 public class DefaultAcsClientTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -171,6 +173,32 @@ public class DefaultAcsClientTest {
         return client;
     }
 
+    private DefaultAcsClient initDefaultAcsClientWithLogger(Logger logger) throws NoSuchFieldException, SecurityException,
+            IllegalArgumentException, IllegalAccessException, ClientException {
+        Credential credential = mock(Credential.class);
+        Mockito.when(credential.getSecurityToken()).thenReturn(null);
+        DefaultProfile profile = mock(DefaultProfile.class);
+        Mockito.when(profile.getCredential()).thenReturn(credential);
+        Mockito.when(profile.getLogFormat()).thenReturn(LogUtils.DEFAULT_LOG_FORMAT);
+        Mockito.when(profile.getLogger()).thenReturn(logger);
+        LogUtils.LogUnit logUnit = mock(LogUtils.LogUnit.class);
+        PowerMockito.mockStatic(LogUtils.class);
+        BDDMockito.given(LogUtils.createLogUnit(any(HttpRequest.class), any(HttpResponse.class))).willReturn(logUnit);
+        BDDMockito.given(LogUtils.fillContent(LogUtils.DEFAULT_LOG_FORMAT, logUnit)).willReturn("log content");
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        Field httpClient = client.getClass().getDeclaredField("httpClient");
+        httpClient.setAccessible(true);
+        CompatibleUrlConnClient compatibleUrlConnClient = mock(CompatibleUrlConnClient.class);
+        httpClient.set(client, compatibleUrlConnClient);
+        HttpClientConfig httpClientConfig = mock(HttpClientConfig.class);
+        Mockito.when(httpClientConfig.getProtocolType()).thenReturn(ProtocolType.HTTP);
+        Mockito.when(profile.getHttpClientConfig()).thenReturn(httpClientConfig);
+        PowerMockito.mockStatic(HttpUtil.class);
+        BDDMockito.given(HttpUtil.debugHttpRequest(any(HttpRequest.class))).willReturn(null);
+        BDDMockito.given(HttpUtil.debugHttpResponse(any(HttpResponse.class))).willReturn(null);
+        return client;
+    }
+
     private IHttpClient getHttpClient(DefaultAcsClient client) throws NoSuchFieldException, SecurityException,
             IllegalArgumentException, IllegalAccessException {
         Field httpClient = client.getClass().getDeclaredField("httpClient");
@@ -255,6 +283,50 @@ public class DefaultAcsClientTest {
         Mockito.when(request.getSysProductDomain()).thenReturn(new ProductDomain("productName", "domainName"));
         Mockito.when(request.getSysProtocol()).thenReturn(null);
         Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @Test
+    public void testDoActionWithLoggerBranch() throws ClientException, IOException, IllegalArgumentException,
+            IllegalAccessException, NoSuchFieldException, SecurityException {
+        Logger logger = mock(Logger.class);
+        String logContent = "log content";
+        doNothing().when(logger).info(logContent);
+        DefaultAcsClient client = initDefaultAcsClientWithLogger(logger);
+        HttpResponse response = mock(HttpResponse.class);
+        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        Mockito.doReturn("http://test.domain").when(response).getSysUrl();
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
+        client.setEndpointResolver(endpointResolver);
+        Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
+        AcsRequest request = initRequest(DescribeEndpointsResponse.class);
+        Mockito.when(request.getSysAcceptFormat()).thenReturn(FormatType.JSON);
+        Mockito.when(request.getSysProductDomain()).thenReturn(new ProductDomain("productName", "domainName"));
+        Mockito.when(request.getSysProtocol()).thenReturn(null);
+        Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
+        Mockito.verify(logger, Mockito.times(1)).info(logContent);
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @Test
+    public void testDoActionWithLoggerExceptionBranch() throws ClientException, IOException, IllegalArgumentException,
+            IllegalAccessException, NoSuchFieldException, SecurityException {
+        Logger logger = mock(Logger.class);
+        String logContent = "log content";
+        doThrow(new RuntimeException("mock exception")).when(logger).info(logContent);
+        DefaultAcsClient client = initDefaultAcsClientWithLogger(logger);
+        HttpResponse response = mock(HttpResponse.class);
+        Mockito.doReturn(response).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
+        Mockito.doReturn("http://test.domain").when(response).getSysUrl();
+        DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
+        client.setEndpointResolver(endpointResolver);
+        Mockito.doReturn("endpoint").when(endpointResolver).resolve(Mockito.any(ResolveEndpointRequest.class));
+        AcsRequest request = initRequest(DescribeEndpointsResponse.class);
+        Mockito.when(request.getSysAcceptFormat()).thenReturn(FormatType.JSON);
+        Mockito.when(request.getSysProductDomain()).thenReturn(new ProductDomain("productName", "domainName"));
+        Mockito.when(request.getSysProtocol()).thenReturn(null);
+        Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
+        Mockito.verify(logger, Mockito.times(1)).info(logContent);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -705,4 +777,5 @@ public class DefaultAcsClientTest {
                 + " HTTPClient/ApacheHttpClient test/1.2.3 order/1.2.2";
         Assert.assertEquals(resultStr, userAgent);
     }
+
 }

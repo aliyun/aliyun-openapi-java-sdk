@@ -18,12 +18,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
 import com.aliyuncs.utils.IOUtils;
+import com.aliyuncs.utils.LogUtils;
+import org.slf4j.Logger;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -258,10 +261,27 @@ public class DefaultAcsClient implements IAcsClient {
             request.putHeaderParameter("User-Agent", UserAgentConfig.resolve(request.getSysUserAgentConfig(),
                     this.userAgentConfig));
             try {
+                Logger logger = clientProfile.getLogger();
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
+
                 HttpUtil.debugHttpRequest(request);
+                String startTime = LogUtils.localeNow();
+                long start = System.nanoTime();
                 HttpResponse response;
                 response = this.httpClient.syncInvoke(httpRequest);
+                long end = System.nanoTime();
+                String timeCost = TimeUnit.NANOSECONDS.toMillis(end - start) + "ms";
+                if (null != logger) {
+                    try {
+                        LogUtils.LogUnit logUnit = LogUtils.createLogUnit(request, response);
+                        logUnit.setStartTime(startTime);
+                        logUnit.setCost(timeCost);
+                        String logContent = LogUtils.fillContent(clientProfile.getLogFormat(), logUnit);
+                        logger.info(logContent);
+                    } catch (Throwable e) {
+                        e.printStackTrace();
+                    }
+                }
                 HttpUtil.debugHttpResponse(response);
                 return response;
             } catch (SocketTimeoutException exp) {
