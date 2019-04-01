@@ -1,4 +1,4 @@
-English | [简体中文](./README_zh.md)
+English | [简体中文](./README-CN.md)
 
 <p align="center">
 <a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
