@@ -1,7 +1,7 @@
 [English](./README.md) | 简体中文
 
 <p align="center">
-<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
+<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/Aliyun.svg"></a>
 </p>
 
 <h1 align="center">Alibaba Cloud SDK for Java</h1>
@@ -24,10 +24,10 @@
 3.  Alibaba Cloud SDK for Java 需要1.6以上的JDK。
 
 ## 安装依赖
-无论您要使用哪个产品的开发工具包，都必须安装`SDK核心库`。比如，对云服务器SDK的调用，您需要安装`SDK核心库`和`云服务器`的SDK。
+无论您要使用哪个产品的开发工具包，都必须安装`aliyun-java-sdk-core`。比如，对云服务器SDK的调用，您需要安装`aliyun-java-sdk-core`和`aliyun-java-sdk-ecs`。
 #### 通过Maven来管理项目依赖(推荐)
-如果您使用Apache Maven来管理Java项目，只需在项目的`pom.xml`文件加入相应的依赖项即可。您可以在[阿里云开发工具包](https://develop.aliyun.com/tools/sdk#/java)中下载各云产品的Maven依赖。
-以最新版本的SDK核心库和最新版本的Ecs SDK为例，您只需在`pom.xml`中声明这两个开发工具包，如下所示：
+如果您使用Apache Maven来管理Java项目，只需在项目的`pom.xml`文件加入相应的依赖项即可。您可以在[阿里云开发者资源](https://help.aliyun.com/learn/developer.html)中下载各云产品的Maven依赖。
+以使用Ecs SDK为例，您只需在`pom.xml`中声明以下两个依赖：
 ```xml
 <dependency>
     <groupId>com.aliyun</groupId>
@@ -57,39 +57,38 @@
 3. 发起请求并处理应答或异常。
 
 ```java
- package com.testprogram;
- import com.aliyuncs.profile.DefaultProfile;
- import com.aliyuncs.DefaultAcsClient;
- import com.aliyuncs.IAcsClient;
- import com.aliyuncs.exceptions.ClientException;
- import com.aliyuncs.exceptions.ServerException;
- import com.aliyuncs.ecs.model.v20140526.*;
- public class Main {
-     public static void main(String[] args) {
+package com.testprogram;
+import com.aliyuncs.profile.DefaultProfile;
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.IAcsClient;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.exceptions.ServerException;
+import com.aliyuncs.ecs.model.v20140526.*;
+public class Main {
+    public static void main(String[] args) {
          // 创建DefaultAcsClient实例并初始化
-         DefaultProfile profile = DefaultProfile.getProfile(
-             "<your-region-id>",          // 地域ID
-             "<your-access-key-id>",      // RAM账号的AccessKey ID
-             "<your-access-key-secret>"); // RAM账号Access Key Secret
-         IAcsClient client = new DefaultAcsClient(profile);
+        DefaultProfile profile = DefaultProfile.getProfile(
+            "<your-region-id>",          // 地域ID
+            "<your-access-key-id>",      // RAM账号的AccessKey ID
+            "<your-access-key-secret>"); // RAM账号Access Key Secret
+        IAcsClient client = new DefaultAcsClient(profile);
          // 创建API请求并设置参数
-         DescribeInstancesRequest request = new DescribeInstancesRequest();
-         request.setPageSize(10);
-         // 发起请求并处理应答或异常
-         DescribeInstancesResponse response;
-         try {
-             response = client.getAcsResponse(request);
-             for (DescribeInstancesResponse.Instance instance:response.getInstances()) {
-                 System.out.println(instance.getPublicIpAddress());
-             }
-         } catch (ServerException e) {
-             e.printStackTrace();
+        DescribeInstancesRequest request = new DescribeInstancesRequest();
+        request.setPageSize(10);
+        // 发起请求并处理应答或异常
+        DescribeInstancesResponse response;
+        try {
+            response = client.getAcsResponse(request);
+            for (DescribeInstancesResponse.Instance instance:response.getInstances()) {
+                System.out.println(instance.getPublicIpAddress());
+            }
+        } catch (ServerException e) {
+            e.printStackTrace();
          } catch (ClientException e) {
-             e.printStackTrace();
-         }
-     }
- }
-```
+            e.printStackTrace();
+        }
+    }
+}
 
 ## 文档
 * [环境要求](./docs/0-Requirements-CN.md)
