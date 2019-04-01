@@ -57,12 +57,19 @@ public class HttpRequestTest {
         try {
             request = new HttpRequest("test");
             request.setHttpContent(new byte[]{-1}, "hgbkjhkjh", null);
-            content = request.getHttpContentString();
+            request.getHttpContentString();
             Assert.fail();
         } catch (ClientException e) {
             Assert.assertEquals("SDK.UnsupportedEncoding", e.getErrCode());
             Assert.assertEquals("Can not parse response due to unsupported encoding.", e.getErrMsg());
         }
 
+    }
+
+    @Test
+    public void toStringTest() {
+        HttpRequest request = new HttpRequest("testURL");
+        String res = request.toString();
+        Assert.assertTrue(res.contains("testURL"));
     }
 }

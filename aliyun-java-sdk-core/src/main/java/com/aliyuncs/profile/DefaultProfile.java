@@ -1,14 +1,13 @@
 package com.aliyuncs.profile;
 
-import com.aliyuncs.auth.AlibabaCloudCredentialsProvider;
-import com.aliyuncs.auth.Credential;
-import com.aliyuncs.auth.CredentialsBackupCompatibilityAdaptor;
-import com.aliyuncs.auth.ICredentialProvider;
-import com.aliyuncs.auth.ISigner;
+import com.aliyuncs.auth.*;
 import com.aliyuncs.endpoint.DefaultEndpointResolver;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpClientConfig;
+import org.slf4j.Logger;
+
+import static com.aliyuncs.utils.LogUtils.DEFAULT_LOG_FORMAT;
 
 @SuppressWarnings("deprecation")
 public class DefaultProfile implements IClientProfile {
@@ -21,6 +20,8 @@ public class DefaultProfile implements IClientProfile {
     private HttpClientConfig httpClientConfig = HttpClientConfig.getDefault();
     private boolean usingInternalLocationService = false;
     private boolean usingVpcEndpoint = false;
+    private Logger logger;
+    private String logFormat = DEFAULT_LOG_FORMAT;
 
     private DefaultProfile() {
     }
@@ -58,7 +59,7 @@ public class DefaultProfile implements IClientProfile {
     }
 
     public synchronized static DefaultProfile getProfile(String regionId, String accessKeyId, String secret,
-            String stsToken) {
+                                                         String stsToken) {
         Credential creden = new Credential(accessKeyId, secret, stsToken);
         profile = new DefaultProfile(regionId, creden);
         return profile;
@@ -82,7 +83,7 @@ public class DefaultProfile implements IClientProfile {
      */
     @Deprecated
     public synchronized static void addEndpoint(String endpointName, String regionId, String product, String domain,
-            boolean isNeverExpire) {
+                                                boolean isNeverExpire) {
         // endpointName, isNeverExpire take no effect
         addEndpoint(regionId, product, domain);
     }
@@ -170,5 +171,25 @@ public class DefaultProfile implements IClientProfile {
     @Deprecated
     public void setUsingInternalLocationService() {
         enableUsingInternalLocationService();
+    }
+
+    @Override
+    public Logger getLogger() {
+        return logger;
+    }
+
+    @Override
+    public void setLogger(Logger logger) {
+        this.logger = logger;
+    }
+
+    @Override
+    public String getLogFormat() {
+        return logFormat;
+    }
+
+    @Override
+    public void setLogFormat(String logFormat) {
+        this.logFormat = logFormat;
     }
 }

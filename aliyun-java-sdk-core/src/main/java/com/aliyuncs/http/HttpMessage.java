@@ -2,6 +2,7 @@ package com.aliyuncs.http;
 
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.utils.ParameterHelper;
+import lombok.ToString;
 
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.X509TrustManager;
@@ -10,6 +11,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+@ToString
 public abstract class HttpMessage {
 
     protected static final String CONTENT_TYPE = "Content-Type";
