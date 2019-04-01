@@ -22,19 +22,19 @@ If you have any problem while using Alibaba Cloud SDK for Java, please [submit a
 
 ## Requirements
 
--  To use Alibaba Cloud SDK for Java, you must have an Alibaba Cloud account as well as an `AccessKey ID` and an `AccessKey Secret`. Create and view your AccessKey on the [RAM console](https://ram.console.aliyun.com "RAM console") or contact your system administrator.
+- To use Alibaba Cloud SDK for Java, you must have an Alibaba Cloud account as well as an `AccessKey ID` and an `AccessKey Secret`. Create and view your AccessKey on the [RAM console](https://ram.console.aliyun.com "RAM console") or contact your system administrator.
 
--  To use the Alibaba Cloud SDK for Java to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
+- To use the Alibaba Cloud SDK for Java to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
--  The Alibaba Cloud Java SDK requires JDK 1.6 or later.
+- The Alibaba Cloud Java SDK requires JDK 1.6 or later.
 
 ## Installation
 
-If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the pom.xml files of the projects. You can download the Maven dependencies of different cloud products in [Alibaba Cloud SDK](https://www.alibabacloud.com/support/developer-resources?spm=a3c0i.7911826.675768.dnavresources1.32a0737buJ2Rr4).
+If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the pom.xml files of the projects. You can download the Maven dependencies of different cloud products in [Alibaba Cloud developer resources](https://help.aliyun.com/learn/developer.html).
 
-You must install the SDK core library for any SDK you use. For example, to call the ECS SDK, you must install both the ECS SDK and the Alibaba Cloud SDK for Java core library.
+You must install `aliyun-java-sdk-core` library no matter which product development kit you want to use. For example, to call the ECS SDK, you need to install `aliyun-java-sdk-core` library  and `aliyun-java-sdk-ecs` library .
 
-For example, with Alibaba Cloud SDK for Java core library latest version and ECS SDK latest version, you need to declare the two SDKs in the pom.xml file.
+To use the Ecs SDK as an example, you only need to declare the following two dependencies in the `pom.xml` file.
 
 ```xml
 <dependency>
@@ -69,38 +69,38 @@ The following code example shows the three main steps to use Alibaba Cloud SDK f
 3. Initiate the request and handle the response or exceptions.
 
 ```java
- package com.testprogram;
- import com.aliyuncs.profile.DefaultProfile;
- import com.aliyuncs.DefaultAcsClient;
- import com.aliyuncs.IAcsClient;
- import com.aliyuncs.exceptions.ClientException;
- import com.aliyuncs.exceptions.ServerException;
- import com.aliyuncs.ecs.model.v20140526.*;
- public class Main {
-     public static void main(String[] args) {
-         // Create and initialize a DefaultAcsClient instance
-         DefaultProfile profile = DefaultProfile.getProfile(
-             "<your-region-id>",          // The region ID
-             "<your-access-key-id>",      // The AccessKey ID of the RAM account
-             "<your-access-key-secret>"); // The AccessKey Secret of the RAM account
-         IAcsClient client = new DefaultAcsClient(profile);
-         // Create an API request and set parameters
-         DescribeInstancesRequest request = new DescribeInstancesRequest();
-         request.setPageSize(10);
-         // Initiate the request and handle the response or exceptions
-         DescribeInstancesResponse response;
-         try {
-             response = client.getAcsResponse(request);
-             for (DescribeInstancesResponse.Instance instance:response.getInstances()) {
-                 System.out.println(instance.getPublicIpAddress());
-             }
-         } catch (ServerException e) {
-             e.printStackTrace();
-         } catch (ClientException e) {
-             e.printStackTrace();
-         }
-     }
- }
+package com.testprogram;
+import com.aliyuncs.profile.DefaultProfile;
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.IAcsClient;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.exceptions.ServerException;
+import com.aliyuncs.ecs.model.v20140526.*;
+public class Main {
+    public static void main(String[] args) {
+        // Create and initialize a DefaultAcsClient instance
+        DefaultProfile profile = DefaultProfile.getProfile(
+            "<your-region-id>",          // The region ID
+            "<your-access-key-id>",      // The AccessKey ID of the RAM account
+            "<your-access-key-secret>"); // The AccessKey Secret of the RAM account
+        IAcsClient client = new DefaultAcsClient(profile);
+        // Create an API request and set parameters
+        DescribeInstancesRequest request = new DescribeInstancesRequest();
+        request.setPageSize(10);
+        // Initiate the request and handle the response or exceptions
+        DescribeInstancesResponse response;
+        try {
+            response = client.getAcsResponse(request);
+            for (DescribeInstancesResponse.Instance instance:response.getInstances()) {
+                System.out.println(instance.getPublicIpAddress());
+            }
+        } catch (ServerException e) {
+            e.printStackTrace();
+        } catch (ClientException e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
 ## Documentation

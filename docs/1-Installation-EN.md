@@ -1,12 +1,11 @@
 [← Requirements](0-Requirements-EN.md) | Installation[(中文)](1-Installation-CN.md) | [Client →](2-Client-EN.md)
 ***
 
-If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the pom.xml files of the projects. You can download the Maven dependencies of different cloud products in [Alibaba Cloud SDK](https://www.alibabacloud.com/support/developer-resources?spm=a3c0i.7911826.675768.dnavresources1.32a0737buJ2Rr4).
+If you use Apache Maven to manage Java projects, you only need to add corresponding dependencies to the `pom.xml` files of the projects. You can download the Maven dependencies of different cloud products in [Alibaba Cloud developer resources](https://help.aliyun.com/learn/developer.html).
 
-You must install the Alibaba Cloud SDK for Java core library for any SDK you use. For example, to call the ECS SDK, you must install both the ECS SDK and the Alibaba Cloud SDK for Java core library.
+You must install `aliyun-java-sdk-core` library no matter which product development kit you want to use. For example, to call the ECS SDK, you need to install `aliyun-java-sdk-core` library  and `aliyun-java-sdk-ecs` library.
 
-For example, with SDK core library latest version and ECS SDK latest version, you need to declare the two SDKs in the pom.xml file.
-
+To use the Ecs SDK as an example, you only need to declare the following two dependencies in the `pom.xml` file:
 ```xml
 <dependency>
     <groupId>com.aliyun</groupId>
@@ -20,7 +19,7 @@ For example, with SDK core library latest version and ECS SDK latest version, yo
 </dependency>
 ```
 
-If maven is not downloading jar packages from a central repository, you need to add this dependency in the pom.xml file, or a NoClassDefFoundError exception will be reported
+If maven is not downloading jar packages from a central repository, you need to add this dependency in the `pom.xml` file, or a NoClassDefFoundError exception will be reported
 ```xml
 <dependency>
     <groupId>com.google.code.gson</groupId>
