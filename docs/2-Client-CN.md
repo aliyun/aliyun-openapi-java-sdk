@@ -67,11 +67,12 @@ role_name = EcsRamRoleTest         # Role Name
 [client2]                          # 命名为 `client2` 的配置
 enable = false                     # 不启用
 type = ram_role_arn                # 认证方式为 ram_role_arn
-region_id = cn-test                # 必填，获取session用的region
+region_id = cn-test                # 获取session用的region
+policy = test                      # 选填 指定权限
 access_key_id = foo
 access_key_secret = bar
 role_arn = role_arn
-role_session_name = session_name
+role_session_name = session_name   # 选填
 
 [client3]                          # 命名为 `client4` 的配置
 type = rsa_key_pair                # 认证方式为 rsa_key_pair

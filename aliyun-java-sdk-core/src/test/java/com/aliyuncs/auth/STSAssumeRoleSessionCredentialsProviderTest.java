@@ -1,5 +1,6 @@
 package com.aliyuncs.auth;
 
+import com.aliyuncs.AcsRequest;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.auth.sts.AssumeRoleRequest;
 import com.aliyuncs.auth.sts.AssumeRoleResponse;
@@ -9,6 +10,8 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import java.lang.reflect.Field;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
@@ -29,6 +32,30 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
     }
 
     @Test
+    public void policyCredentialTest() throws NoSuchFieldException, IllegalAccessException, ClientException {
+        STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(
+                "test", "test", "test", "test", "test",
+                "test");
+        IAcsClient client = mock(IAcsClient.class);
+        AssumeRoleResponse response = mock(AssumeRoleResponse.class);
+        AssumeRoleResponse.Credentials credentials = mock(AssumeRoleResponse.Credentials.class);
+        when(credentials.getAccessKeyId()).thenReturn("ak");
+        when(credentials.getAccessKeySecret()).thenReturn("sk");
+        when(credentials.getSecurityToken()).thenReturn("token");
+        when(response.getCredentials()).thenReturn(credentials);
+        when(client.getAcsResponse(any(AcsRequest.class))).thenReturn(response);
+        Class providerClass = provider.getClass();
+        Field policy = providerClass.getDeclaredField("policy");
+        Field stsClient = providerClass.getDeclaredField("stsClient");
+        policy.setAccessible(true);
+        stsClient.setAccessible(true);
+        stsClient.set(provider, client);
+        String policyResult = (String) policy.get(provider);
+        Assert.assertEquals("test", policyResult);
+        Assert.assertTrue(provider.getCredentials() instanceof BasicSessionCredentials);
+    }
+
+    @Test
     public void constructorNormalTest2() {
         AlibabaCloudCredentialsProvider mockProvider = mock(AlibabaCloudCredentialsProvider.class);
         String roleArn = "roleArn";
@@ -39,9 +66,9 @@ public class STSAssumeRoleSessionCredentialsProviderTest {
     }
 
     @Test
-    public void constructorNormalTest3(){
+    public void constructorNormalTest3() {
         STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(
-                "","","","","");
+                "", "", "", "", "");
         Assert.assertNotNull(provider);
     }
 

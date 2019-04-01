@@ -68,11 +68,12 @@ role_name = EcsRamRoleTest         # Role Name
 [client2]                          # configuration that is named as `client2`
 enable = false                     # Disable
 type = ram_role_arn                # Certification type: ram_role_arn
-region_id = cn-test                # required 
-access_key_id = foo
-access_key_secret = bar
-role_arn = role_arn
-role_session_name = session_name
+region_id = cn-test                 
+policy = test                      # optional Specify permissions
+access_key_id = foo                
+access_key_secret = bar            
+role_arn = role_arn                
+role_session_name = session_name   # optional
 
 [client3]                          # configuration that is named as `client3`
 type = rsa_key_pair                # Certification type: rsa_key_pair
