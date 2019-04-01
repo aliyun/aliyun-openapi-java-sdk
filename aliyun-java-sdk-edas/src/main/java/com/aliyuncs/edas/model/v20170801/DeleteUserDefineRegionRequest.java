@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteUserDefineRegionRequest extends RoaAcsRequest<DeleteUserDefineRegionResponse> {
 	
 	public DeleteUserDefineRegionRequest() {
-		super("Edas", "2017-08-01", "DeleteUserDefineRegion", "edas");
+		super("Edas", "2017-08-01", "DeleteUserDefineRegion");
 		setUriPattern("/pop/v5/user_region_def");
 		setMethod(MethodType.DELETE);
 	}

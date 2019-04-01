@@ -106,6 +106,8 @@ public class GetServerlessAppConfigDetailResponse extends AcsResponse {
 
 		private Integer batchWaitTime;
 
+		private Integer buildPackId;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -304,6 +306,14 @@ public class GetServerlessAppConfigDetailResponse extends AcsResponse {
 
 		public void setBatchWaitTime(Integer batchWaitTime) {
 			this.batchWaitTime = batchWaitTime;
+		}
+
+		public Integer getBuildPackId() {
+			return this.buildPackId;
+		}
+
+		public void setBuildPackId(Integer buildPackId) {
+			this.buildPackId = buildPackId;
 		}
 	}
 

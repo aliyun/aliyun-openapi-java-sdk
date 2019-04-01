@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InsertServiceGroupRequest extends RoaAcsRequest<InsertServiceGroupResponse> {
 	
 	public InsertServiceGroupRequest() {
-		super("Edas", "2017-08-01", "InsertServiceGroup", "edas");
+		super("Edas", "2017-08-01", "InsertServiceGroup");
 		setUriPattern("/pop/v5/service/serviceGroups");
 		setMethod(MethodType.POST);
 	}

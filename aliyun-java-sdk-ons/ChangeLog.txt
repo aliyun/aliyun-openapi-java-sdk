@@ -1,3 +1,8 @@
+2019-03-29 Version: 3.1.1
+1, Add DLQ message openAPI.
+2, Add Query the subscription relational openAPI.
+3, Remove white list restrictions.
+
 2019-03-27 Version: 3.1.1
 1, Add DLQ message openAPI.
 2, Add Query the subscription relational openAPI.

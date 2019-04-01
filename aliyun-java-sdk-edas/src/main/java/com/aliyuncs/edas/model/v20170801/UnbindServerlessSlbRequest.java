@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UnbindServerlessSlbRequest extends RoaAcsRequest<UnbindServerlessSlbResponse> {
 	
 	public UnbindServerlessSlbRequest() {
-		super("Edas", "2017-08-01", "UnbindServerlessSlb", "edas");
+		super("Edas", "2017-08-01", "UnbindServerlessSlb");
 		setUriPattern("/pop/v5/k8s/acs/serverless_slb_binding");
 		setMethod(MethodType.DELETE);
 	}

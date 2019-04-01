@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListVpcRequest extends RoaAcsRequest<ListVpcResponse> {
 	
 	public ListVpcRequest() {
-		super("Edas", "2017-08-01", "ListVpc", "edas");
+		super("Edas", "2017-08-01", "ListVpc");
 		setUriPattern("/pop/v5/vpc_list");
 		setMethod(MethodType.GET);
 	}

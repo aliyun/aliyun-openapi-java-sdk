@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteDegradeControlRequest extends RoaAcsRequest<DeleteDegradeControlResponse> {
 	
 	public DeleteDegradeControlRequest() {
-		super("Edas", "2017-08-01", "DeleteDegradeControl", "edas");
+		super("Edas", "2017-08-01", "DeleteDegradeControl");
 		setUriPattern("/pop/v5/degradeControl");
 		setMethod(MethodType.DELETE);
 	}

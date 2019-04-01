@@ -1,3 +1,8 @@
+2019-03-29 Version: 4.3.9
+1. Optimize dependency
+2. Update the version of mock framework
+3. Fix bad words
+
 2019-03-25 Version: 4.3.8
 1. Support http proxy
 2. Update endpoint.json file

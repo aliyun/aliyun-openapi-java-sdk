@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateRoleRequest extends RoaAcsRequest<UpdateRoleResponse> {
 	
 	public UpdateRoleRequest() {
-		super("Edas", "2017-08-01", "UpdateRole", "edas");
+		super("Edas", "2017-08-01", "UpdateRole");
 		setUriPattern("/pop/v5/account/edit_role");
 		setMethod(MethodType.POST);
 	}

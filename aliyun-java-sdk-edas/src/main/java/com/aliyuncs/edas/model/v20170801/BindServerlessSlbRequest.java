@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class BindServerlessSlbRequest extends RoaAcsRequest<BindServerlessSlbResponse> {
 	
 	public BindServerlessSlbRequest() {
-		super("Edas", "2017-08-01", "BindServerlessSlb", "edas");
+		super("Edas", "2017-08-01", "BindServerlessSlb");
 		setUriPattern("/pop/v5/k8s/acs/serverless_slb_binding");
 		setMethod(MethodType.POST);
 	}

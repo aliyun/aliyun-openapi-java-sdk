@@ -52,6 +52,7 @@ public class GetServerlessAppConfigDetailResponseUnmarshaller {
 		data.setReadiness(context.stringValue("GetServerlessAppConfigDetailResponse.Data.Readiness"));
 		data.setMinReadyInstances(context.integerValue("GetServerlessAppConfigDetailResponse.Data.MinReadyInstances"));
 		data.setBatchWaitTime(context.integerValue("GetServerlessAppConfigDetailResponse.Data.BatchWaitTime"));
+		data.setBuildPackId(context.integerValue("GetServerlessAppConfigDetailResponse.Data.BuildPackId"));
 		getServerlessAppConfigDetailResponse.setData(data);
 	 
 	 	return getServerlessAppConfigDetailResponse;

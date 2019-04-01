@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteRoleRequest extends RoaAcsRequest<DeleteRoleResponse> {
 	
 	public DeleteRoleRequest() {
-		super("Edas", "2017-08-01", "DeleteRole", "edas");
+		super("Edas", "2017-08-01", "DeleteRole");
 		setUriPattern("/pop/v5/account/delete_role");
 		setMethod(MethodType.POST);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class InsertDegradeControlRequest extends RoaAcsRequest<InsertDegradeControlResponse> {
 	
 	public InsertDegradeControlRequest() {
-		super("Edas", "2017-08-01", "InsertDegradeControl", "edas");
+		super("Edas", "2017-08-01", "InsertDegradeControl");
 		setUriPattern("/pop/v5/degradeControl");
 		setMethod(MethodType.POST);
 	}
