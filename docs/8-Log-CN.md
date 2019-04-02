@@ -1,6 +1,7 @@
 [← 调试](7-Debug-CN.md) | 日志[(English)](8-Log-EN.md) | [首页 →](../README-CN.md)
-
 ***
+
+
 
 # 日志
 ## 设置Logger
@@ -24,8 +25,11 @@ client.getAcsResponse(request);
 ```java
 clientConfig.setLogFormat(format)
 ```
+
 ### 变量
-日志内容支持以下变量替换:
+
+日志内容支持以下变量替换：
+
 | 变量      |   描述       |
 |----------|-------------|
 | {request}     | 完整的HTTP请求消息 |
