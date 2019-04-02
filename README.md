@@ -112,6 +112,7 @@ public class Main {
 * [HTTPS Configurations](./docs/5-HTTPS-EN.md)
 * [Proxy Configurations](./docs/6-Proxy-EN.md)
 * [Debug](./docs/7-Debug-EN.md)
+* [Log](./docs/8-Log-EN.md)
 
 ## Issues
 [Opening an Issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new), Issues not conforming to the guidelines may be closed immediately.

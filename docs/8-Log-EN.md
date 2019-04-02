@@ -24,8 +24,11 @@ client.getAcsResponse(request);
 ```java
 clientConfig.setLogFormat(format)
 ```
+
 ### Variables
+
 The following variable substitutions are supported:
+
 | Variable |   Describe  |
 |----------|-------------|
 | {request}     | Full HTTP request message |
@@ -41,7 +44,6 @@ The following variable substitutions are supported:
 | {hostname}     | Hostname of the machine that sent the request |
 | {code}     | Status code of the response (if available) |
 | {phrase}     | Reason phrase of the response  (if available) |
-| {error}     | Any error messages (if available) |
 | {req_header_*}     | Replace `*` with the lowercased name of a request header to add to the message |
 | {res_header_*}     | Replace `*` with the lowercased name of a response header to add to the message |
 | {req_headers}     | Request headers |
