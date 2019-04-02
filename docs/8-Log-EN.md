@@ -20,7 +20,7 @@ client.getAcsResponse(request);
 ## Log format
 ### Default format
 `{method} {uri} HTTP/{version} {code} {cost} {hostname} {pid}`
-### configure format
+### Configure format
 ```java
 clientConfig.setLogFormat(format)
 ```
