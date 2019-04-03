@@ -189,6 +189,7 @@ public class APIEncapsulateTest extends BaseTest {
         try {
             this.client.getAcsResponse(request);
             Assert.fail();
+
         } catch (IllegalStateException e) {
             Assert.assertEquals("Server response has a bad format type: null", e.getMessage());
         }
