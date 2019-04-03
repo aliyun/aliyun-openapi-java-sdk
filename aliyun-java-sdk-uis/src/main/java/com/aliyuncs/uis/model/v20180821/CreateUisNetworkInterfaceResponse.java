@@ -15,16 +15,18 @@
 package com.aliyuncs.uis.model.v20180821;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.uis.transform.v20180821.ModifyHighPriorityIpResponseUnmarshaller;
+import com.aliyuncs.uis.transform.v20180821.CreateUisNetworkInterfaceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyHighPriorityIpResponse extends AcsResponse {
+public class CreateUisNetworkInterfaceResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String uisEniId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class ModifyHighPriorityIpResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getUisEniId() {
+		return this.uisEniId;
+	}
+
+	public void setUisEniId(String uisEniId) {
+		this.uisEniId = uisEniId;
+	}
+
 	@Override
-	public ModifyHighPriorityIpResponse getInstance(UnmarshallerContext context) {
-		return	ModifyHighPriorityIpResponseUnmarshaller.unmarshall(this, context);
+	public CreateUisNetworkInterfaceResponse getInstance(UnmarshallerContext context) {
+		return	CreateUisNetworkInterfaceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

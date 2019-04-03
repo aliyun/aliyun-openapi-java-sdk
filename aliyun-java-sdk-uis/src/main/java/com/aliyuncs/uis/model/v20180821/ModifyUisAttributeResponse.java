@@ -14,7 +14,6 @@
 
 package com.aliyuncs.uis.model.v20180821;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.uis.transform.v20180821.ModifyUisAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

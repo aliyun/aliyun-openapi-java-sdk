@@ -12,30 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.uis.model.v20180821;
+package com.aliyuncs.uis.transform.v20180821;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.uis.transform.v20180821.AddUisNodeIpResponseUnmarshaller;
+import com.aliyuncs.uis.model.v20180821.ModifyDnatEntryResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class AddUisNodeIpResponse extends AcsResponse {
 
-	private String requestId;
+public class ModifyDnatEntryResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public AddUisNodeIpResponse getInstance(UnmarshallerContext context) {
-		return	AddUisNodeIpResponseUnmarshaller.unmarshall(this, context);
+	public static ModifyDnatEntryResponse unmarshall(ModifyDnatEntryResponse modifyDnatEntryResponse, UnmarshallerContext context) {
+		
+		modifyDnatEntryResponse.setRequestId(context.stringValue("ModifyDnatEntryResponse.RequestId"));
+	 
+	 	return modifyDnatEntryResponse;
 	}
 }

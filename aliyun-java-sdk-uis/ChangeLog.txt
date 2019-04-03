@@ -1,3 +1,7 @@
+2019-04-03 Version: 1.2.0
+1, Support DNAT/ENI/Online user count features.
+
+
 2018-12-28 Version: 1.1.0
 1, Support Add/Delete Node IP
 2, Support Describe Uis block ip list.

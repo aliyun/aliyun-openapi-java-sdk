@@ -15,16 +15,18 @@
 package com.aliyuncs.uis.model.v20180821;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.uis.transform.v20180821.ModifyHighPriorityIpResponseUnmarshaller;
+import com.aliyuncs.uis.transform.v20180821.CreateDnatEntryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyHighPriorityIpResponse extends AcsResponse {
+public class CreateDnatEntryResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String uisDnatId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class ModifyHighPriorityIpResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getUisDnatId() {
+		return this.uisDnatId;
+	}
+
+	public void setUisDnatId(String uisDnatId) {
+		this.uisDnatId = uisDnatId;
+	}
+
 	@Override
-	public ModifyHighPriorityIpResponse getInstance(UnmarshallerContext context) {
-		return	ModifyHighPriorityIpResponseUnmarshaller.unmarshall(this, context);
+	public CreateDnatEntryResponse getInstance(UnmarshallerContext context) {
+		return	CreateDnatEntryResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -15,7 +15,6 @@
 package com.aliyuncs.uis.model.v20180821;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.uis.transform.v20180821.DescribeHighPriorityIpResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -90,10 +89,26 @@ public class DescribeHighPriorityIpResponse extends AcsResponse {
 
 		private String boardAreaId;
 
+		public String getBizDomain() {
+			return this.domain;
+		}
+
+		public void setBizDomain(String domain) {
+			this.domain = domain;
+		}
+
+		/**
+		 * @deprecated use getBizDomain instead of this.
+		 */
+		@Deprecated
 		public String getDomain() {
 			return this.domain;
 		}
 
+		/**
+		 * @deprecated use setBizDomain instead of this.
+		 */
+		@Deprecated
 		public void setDomain(String domain) {
 			this.domain = domain;
 		}

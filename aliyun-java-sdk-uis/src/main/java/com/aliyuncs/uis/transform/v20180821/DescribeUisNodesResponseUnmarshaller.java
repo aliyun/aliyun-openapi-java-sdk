@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.uis.model.v20180821.DescribeUisNodesResponse;
 import com.aliyuncs.uis.model.v20180821.DescribeUisNodesResponse.UisNode;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +45,7 @@ public class DescribeUisNodesResponseUnmarshaller {
 			uisNode.setUisNodeIps(context.stringValue("DescribeUisNodesResponse.UisNodeList["+ i +"].UisNodeIps"));
 			uisNode.setUisNodeActiveIp(context.stringValue("DescribeUisNodesResponse.UisNodeList["+ i +"].UisNodeActiveIp"));
 			uisNode.setCreateTime(context.longValue("DescribeUisNodesResponse.UisNodeList["+ i +"].CreateTime"));
+			uisNode.setUisEniIps(context.stringValue("DescribeUisNodesResponse.UisNodeList["+ i +"].UisEniIps"));
 
 			uisNodeList.add(uisNode);
 		}

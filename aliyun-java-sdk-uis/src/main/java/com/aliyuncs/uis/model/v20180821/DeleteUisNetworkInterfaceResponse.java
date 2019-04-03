@@ -15,14 +15,14 @@
 package com.aliyuncs.uis.model.v20180821;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.uis.transform.v20180821.ModifyHighPriorityIpResponseUnmarshaller;
+import com.aliyuncs.uis.transform.v20180821.DeleteUisNetworkInterfaceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyHighPriorityIpResponse extends AcsResponse {
+public class DeleteUisNetworkInterfaceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class ModifyHighPriorityIpResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyHighPriorityIpResponse getInstance(UnmarshallerContext context) {
-		return	ModifyHighPriorityIpResponseUnmarshaller.unmarshall(this, context);
+	public DeleteUisNetworkInterfaceResponse getInstance(UnmarshallerContext context) {
+		return	DeleteUisNetworkInterfaceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.uis.model.v20180821.DescribeUisesResponse;
 import com.aliyuncs.uis.model.v20180821.DescribeUisesResponse.Uis;
 import com.aliyuncs.uis.model.v20180821.DescribeUisesResponse.Uis.UserInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

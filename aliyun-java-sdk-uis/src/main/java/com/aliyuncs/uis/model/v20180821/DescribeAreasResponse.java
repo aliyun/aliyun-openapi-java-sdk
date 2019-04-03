@@ -14,17 +14,20 @@
 
 package com.aliyuncs.uis.model.v20180821;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.uis.transform.v20180821.ModifyHighPriorityIpResponseUnmarshaller;
+import com.aliyuncs.uis.transform.v20180821.DescribeAreasResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyHighPriorityIpResponse extends AcsResponse {
+public class DescribeAreasResponse extends AcsResponse {
 
 	private String requestId;
+
+	private List<Area> areas;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +37,39 @@ public class ModifyHighPriorityIpResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<Area> getAreas() {
+		return this.areas;
+	}
+
+	public void setAreas(List<Area> areas) {
+		this.areas = areas;
+	}
+
+	public static class Area {
+
+		private String areaId;
+
+		private String localName;
+
+		public String getAreaId() {
+			return this.areaId;
+		}
+
+		public void setAreaId(String areaId) {
+			this.areaId = areaId;
+		}
+
+		public String getLocalName() {
+			return this.localName;
+		}
+
+		public void setLocalName(String localName) {
+			this.localName = localName;
+		}
+	}
+
 	@Override
-	public ModifyHighPriorityIpResponse getInstance(UnmarshallerContext context) {
-		return	ModifyHighPriorityIpResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAreasResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAreasResponseUnmarshaller.unmarshall(this, context);
 	}
 }

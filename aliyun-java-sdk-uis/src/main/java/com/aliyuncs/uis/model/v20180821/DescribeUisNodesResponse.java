@@ -15,7 +15,6 @@
 package com.aliyuncs.uis.model.v20180821;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.uis.transform.v20180821.DescribeUisNodesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -99,6 +98,8 @@ public class DescribeUisNodesResponse extends AcsResponse {
 		private String uisNodeActiveIp;
 
 		private Long createTime;
+
+		private String uisEniIps;
 
 		public String getUisId() {
 			return this.uisId;
@@ -186,6 +187,14 @@ public class DescribeUisNodesResponse extends AcsResponse {
 
 		public void setCreateTime(Long createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getUisEniIps() {
+			return this.uisEniIps;
+		}
+
+		public void setUisEniIps(String uisEniIps) {
+			this.uisEniIps = uisEniIps;
 		}
 	}
 

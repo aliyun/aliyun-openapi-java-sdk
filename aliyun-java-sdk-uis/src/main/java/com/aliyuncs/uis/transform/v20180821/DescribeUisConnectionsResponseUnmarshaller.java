@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.uis.model.v20180821.DescribeUisConnectionsResponse;
 import com.aliyuncs.uis.model.v20180821.DescribeUisConnectionsResponse.UisConnection;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
