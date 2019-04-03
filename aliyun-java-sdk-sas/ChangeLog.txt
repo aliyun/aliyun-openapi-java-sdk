@@ -1,0 +1,6 @@
+2019-04-03 Version: 1.0.1
+1, Add interfaces related to vulnerability whitelist
+2, Add interfaces related to vulnerability auto-del configuration
+3, Add interfaces related to vulnerability fix advise
+4, Add interfaces searching and operating vulnerability
+
