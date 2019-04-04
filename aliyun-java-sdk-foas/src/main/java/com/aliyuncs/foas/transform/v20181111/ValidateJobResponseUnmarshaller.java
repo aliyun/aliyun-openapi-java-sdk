@@ -21,6 +21,7 @@ import com.aliyuncs.foas.model.v20181111.ValidateJobResponse;
 import com.aliyuncs.foas.model.v20181111.ValidateJobResponse.JobInOut;
 import com.aliyuncs.foas.model.v20181111.ValidateJobResponse.JobInOut.Input;
 import com.aliyuncs.foas.model.v20181111.ValidateJobResponse.JobInOut.Output;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

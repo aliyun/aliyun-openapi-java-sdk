@@ -105,6 +105,8 @@ public class ListProjectResponse extends AcsResponse {
 
 		private String clusterId;
 
+		private String managerIds;
+
 		public String getName() {
 			return this.name;
 		}
@@ -175,6 +177,14 @@ public class ListProjectResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
+		}
+
+		public String getManagerIds() {
+			return this.managerIds;
+		}
+
+		public void setManagerIds(String managerIds) {
+			this.managerIds = managerIds;
 		}
 	}
 

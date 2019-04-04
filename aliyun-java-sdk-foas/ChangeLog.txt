@@ -1,3 +1,7 @@
+2019-04-04 Version: 2.0.0
+1, add api of cluster operation.
+2, add api of project operation.
+
 2019-03-05 Version: 1.1.0
 1, add ListProject api.
 2, GetRefPackageJobRequest api add pageSize and pageIndex parameter.
