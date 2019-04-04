@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse.ScalingRule;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse.ScalingRule.Alarm;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse.ScalingRule.StepAdjustment;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +40,7 @@ public class DescribeScalingRulesResponseUnmarshaller {
 			scalingRule.setScalingGroupId(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingGroupId"));
 			scalingRule.setScalingRuleName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].ScalingRuleName"));
 			scalingRule.setCooldown(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Cooldown"));
+			scalingRule.setMinAdjustmentMagnitude(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MinAdjustmentMagnitude"));
 			scalingRule.setAdjustmentType(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].AdjustmentType"));
 			scalingRule.setAdjustmentValue(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].AdjustmentValue"));
 			scalingRule.setMinSize(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MinSize"));
@@ -59,6 +61,17 @@ public class DescribeScalingRulesResponseUnmarshaller {
 				alarms.add(alarm);
 			}
 			scalingRule.setAlarms(alarms);
+
+			List<StepAdjustment> stepAdjustments = new ArrayList<StepAdjustment>();
+			for (int j = 0; j < context.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments.Length"); j++) {
+				StepAdjustment stepAdjustment = new StepAdjustment();
+				stepAdjustment.setMetricIntervalLowerBound(context.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments["+ j +"].MetricIntervalLowerBound"));
+				stepAdjustment.setMetricIntervalUpperBound(context.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments["+ j +"].MetricIntervalUpperBound"));
+				stepAdjustment.setScalingAdjustment(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].StepAdjustments["+ j +"].ScalingAdjustment"));
+
+				stepAdjustments.add(stepAdjustment);
+			}
+			scalingRule.setStepAdjustments(stepAdjustments);
 
 			scalingRules.add(scalingRule);
 		}

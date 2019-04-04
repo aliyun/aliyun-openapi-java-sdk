@@ -90,6 +90,8 @@ public class DescribeScalingRulesRequest extends RpcAcsRequest<DescribeScalingRu
 
 	private String scalingRuleId4;
 
+	private Boolean showAlarmRules;
+
 	private String scalingRuleId5;
 
 	private String scalingRuleId6;
@@ -451,6 +453,17 @@ public class DescribeScalingRulesRequest extends RpcAcsRequest<DescribeScalingRu
 		this.scalingRuleId4 = scalingRuleId4;
 		if(scalingRuleId4 != null){
 			putQueryParameter("ScalingRuleId.4", scalingRuleId4);
+		}
+	}
+
+	public Boolean getShowAlarmRules() {
+		return this.showAlarmRules;
+	}
+
+	public void setShowAlarmRules(Boolean showAlarmRules) {
+		this.showAlarmRules = showAlarmRules;
+		if(showAlarmRules != null){
+			putQueryParameter("ShowAlarmRules", showAlarmRules.toString());
 		}
 	}
 

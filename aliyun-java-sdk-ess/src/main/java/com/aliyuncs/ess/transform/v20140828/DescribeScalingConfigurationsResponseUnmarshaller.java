@@ -55,6 +55,8 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setInternetMaxBandwidthOut(context.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InternetMaxBandwidthOut"));
 			scalingConfiguration.setSystemDiskCategory(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskCategory"));
 			scalingConfiguration.setSystemDiskSize(context.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskSize"));
+			scalingConfiguration.setSystemDiskName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskName"));
+			scalingConfiguration.setSystemDiskDescription(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SystemDiskDescription"));
 			scalingConfiguration.setLifecycleState(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LifecycleState"));
 			scalingConfiguration.setCreationTime(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].CreationTime"));
 			scalingConfiguration.setLoadBalancerWeight(context.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].LoadBalancerWeight"));
@@ -81,6 +83,10 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				dataDisk.setSnapshotId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].SnapshotId"));
 				dataDisk.setDevice(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Device"));
 				dataDisk.setDeleteWithInstance(context.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DeleteWithInstance"));
+				dataDisk.setEncrypted(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Encrypted"));
+				dataDisk.setKMSKeyId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].KMSKeyId"));
+				dataDisk.setDiskName(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DiskName"));
+				dataDisk.setDescription(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Description"));
 
 				dataDisks.add(dataDisk);
 			}

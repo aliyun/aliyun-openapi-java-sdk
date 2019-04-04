@@ -113,6 +113,10 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private Integer systemDiskSize;
 
+		private String systemDiskName;
+
+		private String systemDiskDescription;
+
 		private String lifecycleState;
 
 		private String creationTime;
@@ -287,6 +291,22 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.systemDiskSize = systemDiskSize;
 		}
 
+		public String getSystemDiskName() {
+			return this.systemDiskName;
+		}
+
+		public void setSystemDiskName(String systemDiskName) {
+			this.systemDiskName = systemDiskName;
+		}
+
+		public String getSystemDiskDescription() {
+			return this.systemDiskDescription;
+		}
+
+		public void setSystemDiskDescription(String systemDiskDescription) {
+			this.systemDiskDescription = systemDiskDescription;
+		}
+
 		public String getLifecycleState() {
 			return this.lifecycleState;
 		}
@@ -419,6 +439,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			private Boolean deleteWithInstance;
 
+			private String encrypted;
+
+			private String kMSKeyId;
+
+			private String diskName;
+
+			private String description;
+
 			public Integer getSize() {
 				return this.size;
 			}
@@ -457,6 +485,38 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setDeleteWithInstance(Boolean deleteWithInstance) {
 				this.deleteWithInstance = deleteWithInstance;
+			}
+
+			public String getEncrypted() {
+				return this.encrypted;
+			}
+
+			public void setEncrypted(String encrypted) {
+				this.encrypted = encrypted;
+			}
+
+			public String getKMSKeyId() {
+				return this.kMSKeyId;
+			}
+
+			public void setKMSKeyId(String kMSKeyId) {
+				this.kMSKeyId = kMSKeyId;
+			}
+
+			public String getDiskName() {
+				return this.diskName;
+			}
+
+			public void setDiskName(String diskName) {
+				this.diskName = diskName;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 		}
 

@@ -101,6 +101,8 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 
 		private String autoCreatedCapacity;
 
+		private Integer scalingInstanceNumber;
+
 		public String getScalingActivityId() {
 			return this.scalingActivityId;
 		}
@@ -195,6 +197,14 @@ public class DescribeScalingActivitiesResponse extends AcsResponse {
 
 		public void setAutoCreatedCapacity(String autoCreatedCapacity) {
 			this.autoCreatedCapacity = autoCreatedCapacity;
+		}
+
+		public Integer getScalingInstanceNumber() {
+			return this.scalingInstanceNumber;
+		}
+
+		public void setScalingInstanceNumber(Integer scalingInstanceNumber) {
+			this.scalingInstanceNumber = scalingInstanceNumber;
 		}
 	}
 

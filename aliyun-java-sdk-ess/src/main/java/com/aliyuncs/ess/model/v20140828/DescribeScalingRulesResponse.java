@@ -85,6 +85,8 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 		private Integer cooldown;
 
+		private Integer minAdjustmentMagnitude;
+
 		private String adjustmentType;
 
 		private Integer adjustmentValue;
@@ -106,6 +108,8 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 		private Boolean disableScaleIn;
 
 		private List<Alarm> alarms;
+
+		private List<StepAdjustment> stepAdjustments;
 
 		public String getScalingRuleId() {
 			return this.scalingRuleId;
@@ -137,6 +141,14 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 		public void setCooldown(Integer cooldown) {
 			this.cooldown = cooldown;
+		}
+
+		public Integer getMinAdjustmentMagnitude() {
+			return this.minAdjustmentMagnitude;
+		}
+
+		public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
+			this.minAdjustmentMagnitude = minAdjustmentMagnitude;
 		}
 
 		public String getAdjustmentType() {
@@ -227,6 +239,14 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 			this.alarms = alarms;
 		}
 
+		public List<StepAdjustment> getStepAdjustments() {
+			return this.stepAdjustments;
+		}
+
+		public void setStepAdjustments(List<StepAdjustment> stepAdjustments) {
+			this.stepAdjustments = stepAdjustments;
+		}
+
 		public static class Alarm {
 
 			private String alarmTaskName;
@@ -247,6 +267,39 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 			public void setAlarmTaskId(String alarmTaskId) {
 				this.alarmTaskId = alarmTaskId;
+			}
+		}
+
+		public static class StepAdjustment {
+
+			private Float metricIntervalLowerBound;
+
+			private Float metricIntervalUpperBound;
+
+			private Integer scalingAdjustment;
+
+			public Float getMetricIntervalLowerBound() {
+				return this.metricIntervalLowerBound;
+			}
+
+			public void setMetricIntervalLowerBound(Float metricIntervalLowerBound) {
+				this.metricIntervalLowerBound = metricIntervalLowerBound;
+			}
+
+			public Float getMetricIntervalUpperBound() {
+				return this.metricIntervalUpperBound;
+			}
+
+			public void setMetricIntervalUpperBound(Float metricIntervalUpperBound) {
+				this.metricIntervalUpperBound = metricIntervalUpperBound;
+			}
+
+			public Integer getScalingAdjustment() {
+				return this.scalingAdjustment;
+			}
+
+			public void setScalingAdjustment(Integer scalingAdjustment) {
+				this.scalingAdjustment = scalingAdjustment;
 			}
 		}
 	}

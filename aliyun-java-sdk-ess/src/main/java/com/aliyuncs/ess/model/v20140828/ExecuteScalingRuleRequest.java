@@ -34,9 +34,13 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 
 	private String clientToken;
 
+	private Float breachThreshold;
+
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private Float metricValue;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -82,6 +86,17 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 		}
 	}
 
+	public Float getBreachThreshold() {
+		return this.breachThreshold;
+	}
+
+	public void setBreachThreshold(Float breachThreshold) {
+		this.breachThreshold = breachThreshold;
+		if(breachThreshold != null){
+			putQueryParameter("BreachThreshold", breachThreshold.toString());
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -101,6 +116,17 @@ public class ExecuteScalingRuleRequest extends RpcAcsRequest<ExecuteScalingRuleR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Float getMetricValue() {
+		return this.metricValue;
+	}
+
+	public void setMetricValue(Float metricValue) {
+		this.metricValue = metricValue;
+		if(metricValue != null){
+			putQueryParameter("MetricValue", metricValue.toString());
 		}
 	}
 

@@ -1,3 +1,7 @@
+2019-04-04 Version: 2.3.0
+1, ScalingConf systemDisk add DiskName and Description  parameters.
+2, ScalingConf dataDisk add DiskName & Description & Encrypted & KMSKeyId  parameters.
+
 2019-01-28 Version: 2.2.9
 1, Support modify vSwitch of scalingGroup.
 2, Support new target tracking scaling rule.

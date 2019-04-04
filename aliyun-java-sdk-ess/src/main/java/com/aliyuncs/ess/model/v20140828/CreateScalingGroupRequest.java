@@ -41,6 +41,8 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private String scalingGroupName;
 
+	private String clientToken;
+
 	private List<String> vSwitchIds;
 
 	private String ownerAccount;
@@ -141,6 +143,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.scalingGroupName = scalingGroupName;
 		if(scalingGroupName != null){
 			putQueryParameter("ScalingGroupName", scalingGroupName);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.ess.model.v20140828;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -29,6 +30,8 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 	private String resourceOwnerAccount;
 
 	private Integer adjustmentValue;
+
+	private List<StepAdjustment> stepAdjustments;
 
 	private String scalingGroupId;
 
@@ -45,6 +48,8 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 	private String scalingRuleName;
 
 	private Integer cooldown;
+
+	private Integer minAdjustmentMagnitude;
 
 	private Float targetValue;
 
@@ -72,6 +77,21 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		if(adjustmentValue != null){
 			putQueryParameter("AdjustmentValue", adjustmentValue.toString());
 		}
+	}
+
+	public List<StepAdjustment> getStepAdjustments() {
+		return this.stepAdjustments;
+	}
+
+	public void setStepAdjustments(List<StepAdjustment> stepAdjustments) {
+		this.stepAdjustments = stepAdjustments;	
+		if (stepAdjustments != null) {
+			for (int depth1 = 0; depth1 < stepAdjustments.size(); depth1++) {
+				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".MetricIntervalLowerBound" , stepAdjustments.get(depth1).getMetricIntervalLowerBound());
+				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".MetricIntervalUpperBound" , stepAdjustments.get(depth1).getMetricIntervalUpperBound());
+				putQueryParameter("StepAdjustment." + (depth1 + 1) + ".ScalingAdjustment" , stepAdjustments.get(depth1).getScalingAdjustment());
+			}
+		}	
 	}
 
 	public String getScalingGroupId() {
@@ -162,6 +182,17 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		}
 	}
 
+	public Integer getMinAdjustmentMagnitude() {
+		return this.minAdjustmentMagnitude;
+	}
+
+	public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
+		this.minAdjustmentMagnitude = minAdjustmentMagnitude;
+		if(minAdjustmentMagnitude != null){
+			putQueryParameter("MinAdjustmentMagnitude", minAdjustmentMagnitude.toString());
+		}
+	}
+
 	public Float getTargetValue() {
 		return this.targetValue;
 	}
@@ -192,6 +223,39 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		this.metricName = metricName;
 		if(metricName != null){
 			putQueryParameter("MetricName", metricName);
+		}
+	}
+
+	public static class StepAdjustment {
+
+		private Float metricIntervalLowerBound;
+
+		private Float metricIntervalUpperBound;
+
+		private Integer scalingAdjustment;
+
+		public Float getMetricIntervalLowerBound() {
+			return this.metricIntervalLowerBound;
+		}
+
+		public void setMetricIntervalLowerBound(Float metricIntervalLowerBound) {
+			this.metricIntervalLowerBound = metricIntervalLowerBound;
+		}
+
+		public Float getMetricIntervalUpperBound() {
+			return this.metricIntervalUpperBound;
+		}
+
+		public void setMetricIntervalUpperBound(Float metricIntervalUpperBound) {
+			this.metricIntervalUpperBound = metricIntervalUpperBound;
+		}
+
+		public Integer getScalingAdjustment() {
+			return this.scalingAdjustment;
+		}
+
+		public void setScalingAdjustment(Integer scalingAdjustment) {
+			this.scalingAdjustment = scalingAdjustment;
 		}
 	}
 

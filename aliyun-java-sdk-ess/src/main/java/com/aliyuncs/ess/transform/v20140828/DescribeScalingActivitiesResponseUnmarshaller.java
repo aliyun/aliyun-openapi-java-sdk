@@ -46,6 +46,7 @@ public class DescribeScalingActivitiesResponseUnmarshaller {
 			scalingActivity.setTotalCapacity(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].TotalCapacity"));
 			scalingActivity.setAttachedCapacity(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].AttachedCapacity"));
 			scalingActivity.setAutoCreatedCapacity(context.stringValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].AutoCreatedCapacity"));
+			scalingActivity.setScalingInstanceNumber(context.integerValue("DescribeScalingActivitiesResponse.ScalingActivities["+ i +"].ScalingInstanceNumber"));
 
 			scalingActivities.add(scalingActivity);
 		}

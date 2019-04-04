@@ -65,6 +65,8 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 	private Integer cpu;
 
+	private String systemDiskDiskName;
+
 	private String ramRoleName;
 
 	private Long ownerId;
@@ -86,6 +88,8 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 	private Integer systemDiskSize;
 
 	private String internetChargeType;
+
+	private String systemDiskDescription;
 
 	public String getImageId() {
 		return this.imageId;
@@ -301,6 +305,17 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
+	public String getSystemDiskDiskName() {
+		return this.systemDiskDiskName;
+	}
+
+	public void setSystemDiskDiskName(String systemDiskDiskName) {
+		this.systemDiskDiskName = systemDiskDiskName;
+		if(systemDiskDiskName != null){
+			putQueryParameter("SystemDisk.DiskName", systemDiskDiskName);
+		}
+	}
+
 	public String getRamRoleName() {
 		return this.ramRoleName;
 	}
@@ -331,9 +346,13 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		this.dataDisks = dataDisks;	
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".DiskName" , dataDisks.get(depth1).getDiskName());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 			}
@@ -428,6 +447,17 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
+	public String getSystemDiskDescription() {
+		return this.systemDiskDescription;
+	}
+
+	public void setSystemDiskDescription(String systemDiskDescription) {
+		this.systemDiskDescription = systemDiskDescription;
+		if(systemDiskDescription != null){
+			putQueryParameter("SystemDisk.Description", systemDiskDescription);
+		}
+	}
+
 	public static class SpotPriceLimit {
 
 		private String instanceType;
@@ -453,15 +483,31 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 	public static class DataDisk {
 
+		private String diskName;
+
 		private String snapshotId;
 
 		private Integer size;
 
+		private String encrypted;
+
+		private String description;
+
 		private String category;
+
+		private String kMSKeyId;
 
 		private String device;
 
 		private Boolean deleteWithInstance;
+
+		public String getDiskName() {
+			return this.diskName;
+		}
+
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
+		}
 
 		public String getSnapshotId() {
 			return this.snapshotId;
@@ -479,12 +525,36 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 			this.size = size;
 		}
 
+		public String getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(String encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getCategory() {
 			return this.category;
 		}
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
 		}
 
 		public String getDevice() {
