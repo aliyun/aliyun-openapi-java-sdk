@@ -1,3 +1,8 @@
+2019-04-04 Version: 4.4.0
+1. Support Logging Capabilities
+2. Support tokens specify permissions
+
+
 2019-03-29 Version: 4.3.9
 1. Optimize dependency
 2. Update the version of mock framework
