@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.HttpClientConfig;
 import com.aliyuncs.http.clients.ApacheHttpClient;
 
 public class TimeoutTest extends BaseTest {
@@ -27,7 +26,7 @@ public class TimeoutTest extends BaseTest {
         this.getReadTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
         request.setSysReadTimeout(10000);
         this.getReadTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
-        }
+    }
 
     @Test
     public void testApacheHttpClientConnectTimeoutException() throws IOException, ClientException {
@@ -38,13 +37,12 @@ public class TimeoutTest extends BaseTest {
         this.getClientWithRegionId(regionId).getCommonResponse(request);
         ApacheHttpClient.getInstance().close();
         thrown.expect(ClientException.class);
-        thrown.expectMessage(
-                "SDK.ServerUnreachable : Server unreachable");
+        thrown.expectMessage("SDK.ServerUnreachable : Server unreachable");
         this.getConnectTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
 
         request.setSysConnectTimeout(5000);
         this.getConnectTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
-        }
+    }
 
     @Test
     public void testCompatibleUrlConnClientSocketTimeoutException() throws IOException, ClientException {
@@ -72,6 +70,9 @@ public class TimeoutTest extends BaseTest {
 
         thrown.expect(ClientException.class);
         thrown.expectMessage("SDK.ServerUnreachable : SocketTimeoutException has occurred on a socket read or accept.");
+        request.setSysDomain("rds.aliyuncs.com");
+        request.setSysVersion("2014-08-15");
+        request.setSysAction("DescribeRegions");
         this.getConnectTimeoutCompatibleUrlConnClient(regionId, 1L).getCommonResponse(request);
 
         request.setSysConnectTimeout(5000);
