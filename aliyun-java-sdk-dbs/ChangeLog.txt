@@ -1,0 +1,7 @@
+2019-04-08 Version: 1.0.1
+1, Add StopBackupPlan DBS interface.
+2, Add DescribeBackupPlanList DBS interface.
+3, Add DescribeFullBackupList DBS interface.
+4, Add DescribeIncrementBackupList DBS interface.
+5, Add DescribeBackupGatewayList DBS interface.
+
