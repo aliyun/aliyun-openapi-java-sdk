@@ -56,6 +56,7 @@ public class DescribeEipAddressesResponseUnmarshaller {
 			eipAddress.setDescritpion(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Descritpion"));
 			eipAddress.setBandwidthPackageId(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageId"));
 			eipAddress.setBandwidthPackageType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageType"));
+			eipAddress.setBandwidthPackageBandwidth(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].BandwidthPackageBandwidth"));
 			eipAddress.setResourceGroupId(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ResourceGroupId"));
 			eipAddress.setHasReservationData(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].HasReservationData"));
 			eipAddress.setReservationBandwidth(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationBandwidth"));
@@ -63,6 +64,7 @@ public class DescribeEipAddressesResponseUnmarshaller {
 			eipAddress.setReservationActiveTime(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationActiveTime"));
 			eipAddress.setReservationOrderType(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].ReservationOrderType"));
 			eipAddress.setMode(context.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Mode"));
+			eipAddress.setSecondLimited(context.booleanValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].SecondLimited"));
 
 			List<String> availableRegions = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {

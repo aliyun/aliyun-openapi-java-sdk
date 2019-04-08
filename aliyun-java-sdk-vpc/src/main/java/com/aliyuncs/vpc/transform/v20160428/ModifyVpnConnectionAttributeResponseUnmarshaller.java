@@ -17,6 +17,7 @@ package com.aliyuncs.vpc.transform.v20160428;
 import com.aliyuncs.vpc.model.v20160428.ModifyVpnConnectionAttributeResponse;
 import com.aliyuncs.vpc.model.v20160428.ModifyVpnConnectionAttributeResponse.IkeConfig;
 import com.aliyuncs.vpc.model.v20160428.ModifyVpnConnectionAttributeResponse.IpsecConfig;
+import com.aliyuncs.vpc.model.v20160428.ModifyVpnConnectionAttributeResponse.VcoHealthCheck;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,6 +54,14 @@ public class ModifyVpnConnectionAttributeResponseUnmarshaller {
 		ipsecConfig.setIpsecPfs(context.stringValue("ModifyVpnConnectionAttributeResponse.IpsecConfig.IpsecPfs"));
 		ipsecConfig.setIpsecLifetime(context.longValue("ModifyVpnConnectionAttributeResponse.IpsecConfig.IpsecLifetime"));
 		modifyVpnConnectionAttributeResponse.setIpsecConfig(ipsecConfig);
+
+		VcoHealthCheck vcoHealthCheck = new VcoHealthCheck();
+		vcoHealthCheck.setEnable(context.stringValue("ModifyVpnConnectionAttributeResponse.VcoHealthCheck.Enable"));
+		vcoHealthCheck.setSip(context.stringValue("ModifyVpnConnectionAttributeResponse.VcoHealthCheck.Sip"));
+		vcoHealthCheck.setDip(context.stringValue("ModifyVpnConnectionAttributeResponse.VcoHealthCheck.Dip"));
+		vcoHealthCheck.setInterval(context.integerValue("ModifyVpnConnectionAttributeResponse.VcoHealthCheck.Interval"));
+		vcoHealthCheck.setRetry(context.integerValue("ModifyVpnConnectionAttributeResponse.VcoHealthCheck.Retry"));
+		modifyVpnConnectionAttributeResponse.setVcoHealthCheck(vcoHealthCheck);
 	 
 	 	return modifyVpnConnectionAttributeResponse;
 	}

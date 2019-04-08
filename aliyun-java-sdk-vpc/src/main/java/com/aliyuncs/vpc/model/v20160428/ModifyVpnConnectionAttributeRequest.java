@@ -34,6 +34,8 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 
 	private Boolean effectImmediately;
 
+	private Boolean autoConfigRoute;
+
 	private String resourceOwnerAccount;
 
 	private String clientToken;
@@ -43,6 +45,8 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 	private String ipsecConfig;
 
 	private Long ownerId;
+
+	private String healthCheckConfig;
 
 	private String localSubnet;
 
@@ -91,6 +95,17 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 		this.effectImmediately = effectImmediately;
 		if(effectImmediately != null){
 			putQueryParameter("EffectImmediately", effectImmediately.toString());
+		}
+	}
+
+	public Boolean getAutoConfigRoute() {
+		return this.autoConfigRoute;
+	}
+
+	public void setAutoConfigRoute(Boolean autoConfigRoute) {
+		this.autoConfigRoute = autoConfigRoute;
+		if(autoConfigRoute != null){
+			putQueryParameter("AutoConfigRoute", autoConfigRoute.toString());
 		}
 	}
 
@@ -146,6 +161,17 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getHealthCheckConfig() {
+		return this.healthCheckConfig;
+	}
+
+	public void setHealthCheckConfig(String healthCheckConfig) {
+		this.healthCheckConfig = healthCheckConfig;
+		if(healthCheckConfig != null){
+			putQueryParameter("HealthCheckConfig", healthCheckConfig);
 		}
 	}
 

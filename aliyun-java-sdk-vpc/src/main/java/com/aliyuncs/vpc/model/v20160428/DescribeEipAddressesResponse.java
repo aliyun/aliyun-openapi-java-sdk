@@ -117,6 +117,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String bandwidthPackageType;
 
+		private String bandwidthPackageBandwidth;
+
 		private String resourceGroupId;
 
 		private String hasReservationData;
@@ -130,6 +132,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 		private String reservationOrderType;
 
 		private String mode;
+
+		private Boolean secondLimited;
 
 		private List<LockReason> operationLocks;
 
@@ -313,6 +317,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 			this.bandwidthPackageType = bandwidthPackageType;
 		}
 
+		public String getBandwidthPackageBandwidth() {
+			return this.bandwidthPackageBandwidth;
+		}
+
+		public void setBandwidthPackageBandwidth(String bandwidthPackageBandwidth) {
+			this.bandwidthPackageBandwidth = bandwidthPackageBandwidth;
+		}
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -367,6 +379,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setMode(String mode) {
 			this.mode = mode;
+		}
+
+		public Boolean getSecondLimited() {
+			return this.secondLimited;
+		}
+
+		public void setSecondLimited(Boolean secondLimited) {
+			this.secondLimited = secondLimited;
 		}
 
 		public List<LockReason> getOperationLocks() {

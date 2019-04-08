@@ -29,8 +29,6 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 
 	private Long resourceOwnerId;
 
-	private String routeEntryName;
-
 	private String resourceOwnerAccount;
 
 	private String clientToken;
@@ -57,17 +55,6 @@ public class CreateRouteEntryRequest extends RpcAcsRequest<CreateRouteEntryRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getRouteEntryName() {
-		return this.routeEntryName;
-	}
-
-	public void setRouteEntryName(String routeEntryName) {
-		this.routeEntryName = routeEntryName;
-		if(routeEntryName != null){
-			putQueryParameter("RouteEntryName", routeEntryName);
 		}
 	}
 

@@ -56,6 +56,8 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 
 	private Long sslMaxConnections;
 
+	private String tag;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -182,6 +184,14 @@ public class DescribeVpnGatewayResponse extends AcsResponse {
 
 	public void setSslMaxConnections(Long sslMaxConnections) {
 		this.sslMaxConnections = sslMaxConnections;
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
 	}
 
 	@Override

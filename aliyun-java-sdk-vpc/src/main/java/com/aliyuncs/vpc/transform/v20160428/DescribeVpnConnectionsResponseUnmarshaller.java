@@ -21,6 +21,7 @@ import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.IkeConfig;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.IpsecConfig;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpnConnectionsResponse.VpnConnection.VcoHealthCheck;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -64,6 +65,15 @@ public class DescribeVpnConnectionsResponseUnmarshaller {
 			ipsecConfig.setIpsecPfs(context.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].IpsecConfig.IpsecPfs"));
 			ipsecConfig.setIpsecLifetime(context.longValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].IpsecConfig.IpsecLifetime"));
 			vpnConnection.setIpsecConfig(ipsecConfig);
+
+			VcoHealthCheck vcoHealthCheck = new VcoHealthCheck();
+			vcoHealthCheck.setEnable(context.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VcoHealthCheck.Enable"));
+			vcoHealthCheck.setSip(context.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VcoHealthCheck.Sip"));
+			vcoHealthCheck.setDip(context.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VcoHealthCheck.Dip"));
+			vcoHealthCheck.setInterval(context.integerValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VcoHealthCheck.Interval"));
+			vcoHealthCheck.setRetry(context.integerValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VcoHealthCheck.Retry"));
+			vcoHealthCheck.setStatus(context.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].VcoHealthCheck.Status"));
+			vpnConnection.setVcoHealthCheck(vcoHealthCheck);
 
 			vpnConnections.add(vpnConnection);
 		}

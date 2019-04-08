@@ -15,53 +15,30 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePhysicalConnectionsResponse> {
+public class DescribeVpnPbrRouteEntriesRequest extends RpcAcsRequest<DescribeVpnPbrRouteEntriesResponse> {
 	
-	public DescribePhysicalConnectionsRequest() {
-		super("Vpc", "2016-04-28", "DescribePhysicalConnections", "vpc");
+	public DescribeVpnPbrRouteEntriesRequest() {
+		super("Vpc", "2016-04-28", "DescribeVpnPbrRouteEntries", "vpc");
 	}
-
-	private List<Filter> filters;
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
 	private Integer pageSize;
 
+	private String vpnGatewayId;
+
 	private Long ownerId;
 
-	private Boolean includeReservationData;
-
 	private Integer pageNumber;
-
-	public List<Filter> getFilters() {
-		return this.filters;
-	}
-
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		if (filters != null) {
-			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				if (filters.get(depth1).getValues() != null) {
-					for (int i = 0; i < filters.get(depth1).getValues().size(); i++) {
-						putQueryParameter("Filter." + (depth1 + 1) + ".Value." + (i + 1) , filters.get(depth1).getValues().get(i));
-					}
-				}
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
-			}
-		}	
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -82,17 +59,6 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -118,6 +84,17 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 		}
 	}
 
+	public String getVpnGatewayId() {
+		return this.vpnGatewayId;
+	}
+
+	public void setVpnGatewayId(String vpnGatewayId) {
+		this.vpnGatewayId = vpnGatewayId;
+		if(vpnGatewayId != null){
+			putQueryParameter("VpnGatewayId", vpnGatewayId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,17 +103,6 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Boolean getIncludeReservationData() {
-		return this.includeReservationData;
-	}
-
-	public void setIncludeReservationData(Boolean includeReservationData) {
-		this.includeReservationData = includeReservationData;
-		if(includeReservationData != null){
-			putQueryParameter("IncludeReservationData", includeReservationData.toString());
 		}
 	}
 
@@ -151,32 +117,9 @@ public class DescribePhysicalConnectionsRequest extends RpcAcsRequest<DescribePh
 		}
 	}
 
-	public static class Filter {
-
-		private List<String> values;
-
-		private String key;
-
-		public List<String> getValues() {
-			return this.values;
-		}
-
-		public void setValues(List<String> values) {
-			this.values = values;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
 	@Override
-	public Class<DescribePhysicalConnectionsResponse> getResponseClass() {
-		return DescribePhysicalConnectionsResponse.class;
+	public Class<DescribeVpnPbrRouteEntriesResponse> getResponseClass() {
+		return DescribeVpnPbrRouteEntriesResponse.class;
 	}
 
 }

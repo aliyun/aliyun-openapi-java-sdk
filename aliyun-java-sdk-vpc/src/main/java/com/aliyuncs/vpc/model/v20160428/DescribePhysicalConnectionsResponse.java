@@ -113,6 +113,22 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		private Long bandwidth;
 
+		private String loaStatus;
+
+		private String spec1;
+
+		private String hasReservationData;
+
+		private String reservationInternetChargeType;
+
+		private String reservationActiveTime;
+
+		private String reservationOrderType;
+
+		private String endTime;
+
+		private String chargeType;
+
 		public String getPhysicalConnectionId() {
 			return this.physicalConnectionId;
 		}
@@ -255,6 +271,70 @@ public class DescribePhysicalConnectionsResponse extends AcsResponse {
 
 		public void setBandwidth(Long bandwidth) {
 			this.bandwidth = bandwidth;
+		}
+
+		public String getLoaStatus() {
+			return this.loaStatus;
+		}
+
+		public void setLoaStatus(String loaStatus) {
+			this.loaStatus = loaStatus;
+		}
+
+		public String getSpec1() {
+			return this.spec1;
+		}
+
+		public void setSpec1(String spec1) {
+			this.spec1 = spec1;
+		}
+
+		public String getHasReservationData() {
+			return this.hasReservationData;
+		}
+
+		public void setHasReservationData(String hasReservationData) {
+			this.hasReservationData = hasReservationData;
+		}
+
+		public String getReservationInternetChargeType() {
+			return this.reservationInternetChargeType;
+		}
+
+		public void setReservationInternetChargeType(String reservationInternetChargeType) {
+			this.reservationInternetChargeType = reservationInternetChargeType;
+		}
+
+		public String getReservationActiveTime() {
+			return this.reservationActiveTime;
+		}
+
+		public void setReservationActiveTime(String reservationActiveTime) {
+			this.reservationActiveTime = reservationActiveTime;
+		}
+
+		public String getReservationOrderType() {
+			return this.reservationOrderType;
+		}
+
+		public void setReservationOrderType(String reservationOrderType) {
+			this.reservationOrderType = reservationOrderType;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
 		}
 	}
 

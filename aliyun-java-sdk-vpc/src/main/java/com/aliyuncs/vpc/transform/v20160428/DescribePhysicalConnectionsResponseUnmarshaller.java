@@ -52,6 +52,14 @@ public class DescribePhysicalConnectionsResponseUnmarshaller {
 			physicalConnectionType.setPortNumber(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].PortNumber"));
 			physicalConnectionType.setCircuitCode(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].CircuitCode"));
 			physicalConnectionType.setBandwidth(context.longValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].Bandwidth"));
+			physicalConnectionType.setLoaStatus(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].LoaStatus"));
+			physicalConnectionType.setSpec1(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].Spec"));
+			physicalConnectionType.setHasReservationData(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].HasReservationData"));
+			physicalConnectionType.setReservationInternetChargeType(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].ReservationInternetChargeType"));
+			physicalConnectionType.setReservationActiveTime(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].ReservationActiveTime"));
+			physicalConnectionType.setReservationOrderType(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].ReservationOrderType"));
+			physicalConnectionType.setEndTime(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].EndTime"));
+			physicalConnectionType.setChargeType(context.stringValue("DescribePhysicalConnectionsResponse.PhysicalConnectionSet["+ i +"].ChargeType"));
 
 			physicalConnectionSet.add(physicalConnectionType);
 		}

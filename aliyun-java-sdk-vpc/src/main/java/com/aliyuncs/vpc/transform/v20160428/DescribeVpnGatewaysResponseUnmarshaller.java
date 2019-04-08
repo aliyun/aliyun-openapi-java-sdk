@@ -49,6 +49,7 @@ public class DescribeVpnGatewaysResponseUnmarshaller {
 			vpnGateway.setIpsecVpn(context.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].IpsecVpn"));
 			vpnGateway.setSslVpn(context.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].SslVpn"));
 			vpnGateway.setSslMaxConnections(context.longValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].SslMaxConnections"));
+			vpnGateway.setTag(context.stringValue("DescribeVpnGatewaysResponse.VpnGateways["+ i +"].Tag"));
 
 			vpnGateways.add(vpnGateway);
 		}
