@@ -43,7 +43,7 @@ public class DescribeBackupGatewayListResponse extends AcsResponse {
 
 	private Integer totalElements;
 
-	private List<String> items;
+	private List<BackupGateway> items;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -117,12 +117,115 @@ public class DescribeBackupGatewayListResponse extends AcsResponse {
 		this.totalElements = totalElements;
 	}
 
-	public List<String> getItems() {
+	public List<BackupGateway> getItems() {
 		return this.items;
 	}
 
-	public void setItems(List<String> items) {
+	public void setItems(List<BackupGateway> items) {
 		this.items = items;
+	}
+
+	public static class BackupGateway {
+
+		private String backupGatewayId;
+
+		private String sourceEndpointInternetIP;
+
+		private String sourceEndpointIntranetIP;
+
+		private String sourceEndpointHostname;
+
+		private String backupGatewayStatus;
+
+		private Long lastHeartbeatTime;
+
+		private Long backupGatewayCreateTime;
+
+		private String region;
+
+		private String displayName;
+
+		private String identifier;
+
+		public String getBackupGatewayId() {
+			return this.backupGatewayId;
+		}
+
+		public void setBackupGatewayId(String backupGatewayId) {
+			this.backupGatewayId = backupGatewayId;
+		}
+
+		public String getSourceEndpointInternetIP() {
+			return this.sourceEndpointInternetIP;
+		}
+
+		public void setSourceEndpointInternetIP(String sourceEndpointInternetIP) {
+			this.sourceEndpointInternetIP = sourceEndpointInternetIP;
+		}
+
+		public String getSourceEndpointIntranetIP() {
+			return this.sourceEndpointIntranetIP;
+		}
+
+		public void setSourceEndpointIntranetIP(String sourceEndpointIntranetIP) {
+			this.sourceEndpointIntranetIP = sourceEndpointIntranetIP;
+		}
+
+		public String getSourceEndpointHostname() {
+			return this.sourceEndpointHostname;
+		}
+
+		public void setSourceEndpointHostname(String sourceEndpointHostname) {
+			this.sourceEndpointHostname = sourceEndpointHostname;
+		}
+
+		public String getBackupGatewayStatus() {
+			return this.backupGatewayStatus;
+		}
+
+		public void setBackupGatewayStatus(String backupGatewayStatus) {
+			this.backupGatewayStatus = backupGatewayStatus;
+		}
+
+		public Long getLastHeartbeatTime() {
+			return this.lastHeartbeatTime;
+		}
+
+		public void setLastHeartbeatTime(Long lastHeartbeatTime) {
+			this.lastHeartbeatTime = lastHeartbeatTime;
+		}
+
+		public Long getBackupGatewayCreateTime() {
+			return this.backupGatewayCreateTime;
+		}
+
+		public void setBackupGatewayCreateTime(Long backupGatewayCreateTime) {
+			this.backupGatewayCreateTime = backupGatewayCreateTime;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public String getIdentifier() {
+			return this.identifier;
+		}
+
+		public void setIdentifier(String identifier) {
+			this.identifier = identifier;
+		}
 	}
 
 	@Override

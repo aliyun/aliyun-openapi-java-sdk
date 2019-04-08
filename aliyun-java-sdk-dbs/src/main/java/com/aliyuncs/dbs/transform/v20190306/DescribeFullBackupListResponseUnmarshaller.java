@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dbs.model.v20190306.DescribeFullBackupListResponse;
+import com.aliyuncs.dbs.model.v20190306.DescribeFullBackupListResponse.FullBackupFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,9 +36,19 @@ public class DescribeFullBackupListResponseUnmarshaller {
 		describeFullBackupListResponse.setPageNum(context.integerValue("DescribeFullBackupListResponse.PageNum"));
 		describeFullBackupListResponse.setTotalElements(context.integerValue("DescribeFullBackupListResponse.TotalElements"));
 
-		List<String> items = new ArrayList<String>();
+		List<FullBackupFile> items = new ArrayList<FullBackupFile>();
 		for (int i = 0; i < context.lengthValue("DescribeFullBackupListResponse.Items.Length"); i++) {
-			items.add(context.stringValue("DescribeFullBackupListResponse.Items["+ i +"]"));
+			FullBackupFile fullBackupFile = new FullBackupFile();
+			fullBackupFile.setBackupSetId(context.stringValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSetId"));
+			fullBackupFile.setSourceEndpointIpPort(context.stringValue("DescribeFullBackupListResponse.Items["+ i +"].SourceEndpointIpPort"));
+			fullBackupFile.setStartTime(context.longValue("DescribeFullBackupListResponse.Items["+ i +"].StartTime"));
+			fullBackupFile.setEndTime(context.longValue("DescribeFullBackupListResponse.Items["+ i +"].EndTime"));
+			fullBackupFile.setBackupStatus(context.stringValue("DescribeFullBackupListResponse.Items["+ i +"].BackupStatus"));
+			fullBackupFile.setBackupSetExpiredTime(context.longValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSetExpiredTime"));
+			fullBackupFile.setBackupSize(context.longValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSize"));
+			fullBackupFile.setStorageMethod(context.stringValue("DescribeFullBackupListResponse.Items["+ i +"].StorageMethod"));
+
+			items.add(fullBackupFile);
 		}
 		describeFullBackupListResponse.setItems(items);
 	 

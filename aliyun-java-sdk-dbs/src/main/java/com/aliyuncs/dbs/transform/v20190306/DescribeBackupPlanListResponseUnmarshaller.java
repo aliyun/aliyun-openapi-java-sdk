@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dbs.model.v20190306.DescribeBackupPlanListResponse;
+import com.aliyuncs.dbs.model.v20190306.DescribeBackupPlanListResponse.BackupPlanDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,9 +36,34 @@ public class DescribeBackupPlanListResponseUnmarshaller {
 		describeBackupPlanListResponse.setPageNum(context.integerValue("DescribeBackupPlanListResponse.PageNum"));
 		describeBackupPlanListResponse.setTotalElements(context.integerValue("DescribeBackupPlanListResponse.TotalElements"));
 
-		List<String> items = new ArrayList<String>();
+		List<BackupPlanDetail> items = new ArrayList<BackupPlanDetail>();
 		for (int i = 0; i < context.lengthValue("DescribeBackupPlanListResponse.Items.Length"); i++) {
-			items.add(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"]"));
+			BackupPlanDetail backupPlanDetail = new BackupPlanDetail();
+			backupPlanDetail.setBackupPlanId(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanId"));
+			backupPlanDetail.setSourceEndpointInstanceType(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointInstanceType"));
+			backupPlanDetail.setSourceEndpointRegion(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointRegion"));
+			backupPlanDetail.setSourceEndpointInstanceID(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointInstanceID"));
+			backupPlanDetail.setSourceEndpointIpPort(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointIpPort"));
+			backupPlanDetail.setSourceEndpointDatabaseName(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointDatabaseName"));
+			backupPlanDetail.setSourceEndpointUserName(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointUserName"));
+			backupPlanDetail.setBackupObjects(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupObjects"));
+			backupPlanDetail.setBackupGatewayId(context.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupGatewayId"));
+			backupPlanDetail.setOSSBucketRegion(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].OSSBucketRegion"));
+			backupPlanDetail.setOSSBucketName(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].OSSBucketName"));
+			backupPlanDetail.setBackupPeriod(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPeriod"));
+			backupPlanDetail.setBackupStartTime(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupStartTime"));
+			backupPlanDetail.setEnableBackupLog(context.booleanValue("DescribeBackupPlanListResponse.Items["+ i +"].EnableBackupLog"));
+			backupPlanDetail.setBackupRetentionPeriod(context.integerValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupRetentionPeriod"));
+			backupPlanDetail.setDuplicationInfrequentAccessPeriod(context.integerValue("DescribeBackupPlanListResponse.Items["+ i +"].DuplicationInfrequentAccessPeriod"));
+			backupPlanDetail.setDuplicationArchivePeriod(context.integerValue("DescribeBackupPlanListResponse.Items["+ i +"].DuplicationArchivePeriod"));
+			backupPlanDetail.setBackupPlanName(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanName"));
+			backupPlanDetail.setSourceEndpointOracleSID(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointOracleSID"));
+			backupPlanDetail.setInstanceClass(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].InstanceClass"));
+			backupPlanDetail.setBackupMethod(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupMethod"));
+			backupPlanDetail.setBackupPlanCreateTime(context.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanCreateTime"));
+			backupPlanDetail.setBackupPlanStatus(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanStatus"));
+
+			items.add(backupPlanDetail);
 		}
 		describeBackupPlanListResponse.setItems(items);
 	 

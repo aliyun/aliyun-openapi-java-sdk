@@ -43,7 +43,7 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 
 	private Integer totalElements;
 
-	private List<String> items;
+	private List<IncrementBackupFile> items;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -117,12 +117,95 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 		this.totalElements = totalElements;
 	}
 
-	public List<String> getItems() {
+	public List<IncrementBackupFile> getItems() {
 		return this.items;
 	}
 
-	public void setItems(List<String> items) {
+	public void setItems(List<IncrementBackupFile> items) {
 		this.items = items;
+	}
+
+	public static class IncrementBackupFile {
+
+		private String backupSetId;
+
+		private String sourceEndpointIpPort;
+
+		private Long startTime;
+
+		private Long endTime;
+
+		private String backupStatus;
+
+		private Long backupSetExpiredTime;
+
+		private Long backupSize;
+
+		private String storageMethod;
+
+		public String getBackupSetId() {
+			return this.backupSetId;
+		}
+
+		public void setBackupSetId(String backupSetId) {
+			this.backupSetId = backupSetId;
+		}
+
+		public String getSourceEndpointIpPort() {
+			return this.sourceEndpointIpPort;
+		}
+
+		public void setSourceEndpointIpPort(String sourceEndpointIpPort) {
+			this.sourceEndpointIpPort = sourceEndpointIpPort;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getBackupStatus() {
+			return this.backupStatus;
+		}
+
+		public void setBackupStatus(String backupStatus) {
+			this.backupStatus = backupStatus;
+		}
+
+		public Long getBackupSetExpiredTime() {
+			return this.backupSetExpiredTime;
+		}
+
+		public void setBackupSetExpiredTime(Long backupSetExpiredTime) {
+			this.backupSetExpiredTime = backupSetExpiredTime;
+		}
+
+		public Long getBackupSize() {
+			return this.backupSize;
+		}
+
+		public void setBackupSize(Long backupSize) {
+			this.backupSize = backupSize;
+		}
+
+		public String getStorageMethod() {
+			return this.storageMethod;
+		}
+
+		public void setStorageMethod(String storageMethod) {
+			this.storageMethod = storageMethod;
+		}
 	}
 
 	@Override

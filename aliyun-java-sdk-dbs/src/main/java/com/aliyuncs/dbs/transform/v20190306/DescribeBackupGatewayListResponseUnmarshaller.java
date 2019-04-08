@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dbs.model.v20190306.DescribeBackupGatewayListResponse;
+import com.aliyuncs.dbs.model.v20190306.DescribeBackupGatewayListResponse.BackupGateway;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,9 +36,21 @@ public class DescribeBackupGatewayListResponseUnmarshaller {
 		describeBackupGatewayListResponse.setPageNum(context.integerValue("DescribeBackupGatewayListResponse.PageNum"));
 		describeBackupGatewayListResponse.setTotalElements(context.integerValue("DescribeBackupGatewayListResponse.TotalElements"));
 
-		List<String> items = new ArrayList<String>();
+		List<BackupGateway> items = new ArrayList<BackupGateway>();
 		for (int i = 0; i < context.lengthValue("DescribeBackupGatewayListResponse.Items.Length"); i++) {
-			items.add(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"]"));
+			BackupGateway backupGateway = new BackupGateway();
+			backupGateway.setBackupGatewayId(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayId"));
+			backupGateway.setSourceEndpointInternetIP(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointInternetIP"));
+			backupGateway.setSourceEndpointIntranetIP(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointIntranetIP"));
+			backupGateway.setSourceEndpointHostname(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointHostname"));
+			backupGateway.setBackupGatewayStatus(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayStatus"));
+			backupGateway.setLastHeartbeatTime(context.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].LastHeartbeatTime"));
+			backupGateway.setBackupGatewayCreateTime(context.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayCreateTime"));
+			backupGateway.setRegion(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].Region"));
+			backupGateway.setDisplayName(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].DisplayName"));
+			backupGateway.setIdentifier(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].Identifier"));
+
+			items.add(backupGateway);
 		}
 		describeBackupGatewayListResponse.setItems(items);
 	 

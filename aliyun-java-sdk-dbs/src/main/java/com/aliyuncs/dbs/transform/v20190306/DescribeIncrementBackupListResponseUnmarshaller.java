@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dbs.model.v20190306.DescribeIncrementBackupListResponse;
+import com.aliyuncs.dbs.model.v20190306.DescribeIncrementBackupListResponse.IncrementBackupFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,9 +36,19 @@ public class DescribeIncrementBackupListResponseUnmarshaller {
 		describeIncrementBackupListResponse.setPageNum(context.integerValue("DescribeIncrementBackupListResponse.PageNum"));
 		describeIncrementBackupListResponse.setTotalElements(context.integerValue("DescribeIncrementBackupListResponse.TotalElements"));
 
-		List<String> items = new ArrayList<String>();
+		List<IncrementBackupFile> items = new ArrayList<IncrementBackupFile>();
 		for (int i = 0; i < context.lengthValue("DescribeIncrementBackupListResponse.Items.Length"); i++) {
-			items.add(context.stringValue("DescribeIncrementBackupListResponse.Items["+ i +"]"));
+			IncrementBackupFile incrementBackupFile = new IncrementBackupFile();
+			incrementBackupFile.setBackupSetId(context.stringValue("DescribeIncrementBackupListResponse.Items["+ i +"].BackupSetId"));
+			incrementBackupFile.setSourceEndpointIpPort(context.stringValue("DescribeIncrementBackupListResponse.Items["+ i +"].SourceEndpointIpPort"));
+			incrementBackupFile.setStartTime(context.longValue("DescribeIncrementBackupListResponse.Items["+ i +"].StartTime"));
+			incrementBackupFile.setEndTime(context.longValue("DescribeIncrementBackupListResponse.Items["+ i +"].EndTime"));
+			incrementBackupFile.setBackupStatus(context.stringValue("DescribeIncrementBackupListResponse.Items["+ i +"].BackupStatus"));
+			incrementBackupFile.setBackupSetExpiredTime(context.longValue("DescribeIncrementBackupListResponse.Items["+ i +"].BackupSetExpiredTime"));
+			incrementBackupFile.setBackupSize(context.longValue("DescribeIncrementBackupListResponse.Items["+ i +"].BackupSize"));
+			incrementBackupFile.setStorageMethod(context.stringValue("DescribeIncrementBackupListResponse.Items["+ i +"].StorageMethod"));
+
+			items.add(incrementBackupFile);
 		}
 		describeIncrementBackupListResponse.setItems(items);
 	 
