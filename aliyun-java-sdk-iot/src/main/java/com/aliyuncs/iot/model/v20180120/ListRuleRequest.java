@@ -26,11 +26,24 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 		super("Iot", "2018-01-20", "ListRule", "iot");
 	}
 
+	private String searchName;
+
 	private String iotInstanceId;
 
 	private Integer pageSize;
 
 	private Integer currentPage;
+
+	public String getSearchName() {
+		return this.searchName;
+	}
+
+	public void setSearchName(String searchName) {
+		this.searchName = searchName;
+		if(searchName != null){
+			putQueryParameter("SearchName", searchName);
+		}
+	}
 
 	public String getIotInstanceId() {
 		return this.iotInstanceId;

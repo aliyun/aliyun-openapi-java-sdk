@@ -49,6 +49,7 @@ public class QueryDeviceResponseUnmarshaller {
 			deviceInfo.setUtcCreate(context.stringValue("QueryDeviceResponse.Data["+ i +"].UtcCreate"));
 			deviceInfo.setUtcModified(context.stringValue("QueryDeviceResponse.Data["+ i +"].UtcModified"));
 			deviceInfo.setIotId(context.stringValue("QueryDeviceResponse.Data["+ i +"].IotId"));
+			deviceInfo.setNickname(context.stringValue("QueryDeviceResponse.Data["+ i +"].Nickname"));
 
 			data.add(deviceInfo);
 		}

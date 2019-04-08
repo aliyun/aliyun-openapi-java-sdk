@@ -20,32 +20,32 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse> {
+public class QueryDeviceFileListRequest extends RpcAcsRequest<QueryDeviceFileListResponse> {
 	
-	public RegisterDeviceRequest() {
-		super("Iot", "2018-01-20", "RegisterDevice", "iot");
+	public QueryDeviceFileListRequest() {
+		super("Iot", "2018-01-20", "QueryDeviceFileList", "iot");
 	}
 
-	private String pinCode;
+	private String iotId;
 
 	private String iotInstanceId;
 
-	private String nickname;
+	private Integer pageSize;
 
 	private String deviceName;
 
+	private Integer currentPage;
+
 	private String productKey;
 
-	private String devEui;
-
-	public String getPinCode() {
-		return this.pinCode;
+	public String getIotId() {
+		return this.iotId;
 	}
 
-	public void setPinCode(String pinCode) {
-		this.pinCode = pinCode;
-		if(pinCode != null){
-			putQueryParameter("PinCode", pinCode);
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
 		}
 	}
 
@@ -60,14 +60,14 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		}
 	}
 
-	public String getNickname() {
-		return this.nickname;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-		if(nickname != null){
-			putQueryParameter("Nickname", nickname);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -82,6 +82,17 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		}
 	}
 
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -93,20 +104,9 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		}
 	}
 
-	public String getDevEui() {
-		return this.devEui;
-	}
-
-	public void setDevEui(String devEui) {
-		this.devEui = devEui;
-		if(devEui != null){
-			putQueryParameter("DevEui", devEui);
-		}
-	}
-
 	@Override
-	public Class<RegisterDeviceResponse> getResponseClass() {
-		return RegisterDeviceResponse.class;
+	public Class<QueryDeviceFileListResponse> getResponseClass() {
+		return QueryDeviceFileListResponse.class;
 	}
 
 }

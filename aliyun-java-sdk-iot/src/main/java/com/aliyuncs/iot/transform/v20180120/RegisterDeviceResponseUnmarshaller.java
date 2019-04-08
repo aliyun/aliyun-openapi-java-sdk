@@ -35,6 +35,7 @@ public class RegisterDeviceResponseUnmarshaller {
 		data.setDeviceSecret(context.stringValue("RegisterDeviceResponse.Data.DeviceSecret"));
 		data.setDevEui(context.stringValue("RegisterDeviceResponse.Data.DevEui"));
 		data.setJoinEui(context.stringValue("RegisterDeviceResponse.Data.JoinEui"));
+		data.setNickname(context.stringValue("RegisterDeviceResponse.Data.Nickname"));
 		registerDeviceResponse.setData(data);
 	 
 	 	return registerDeviceResponse;

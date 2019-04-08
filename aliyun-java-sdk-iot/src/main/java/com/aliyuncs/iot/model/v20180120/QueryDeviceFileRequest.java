@@ -20,32 +20,30 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse> {
+public class QueryDeviceFileRequest extends RpcAcsRequest<QueryDeviceFileResponse> {
 	
-	public RegisterDeviceRequest() {
-		super("Iot", "2018-01-20", "RegisterDevice", "iot");
+	public QueryDeviceFileRequest() {
+		super("Iot", "2018-01-20", "QueryDeviceFile", "iot");
 	}
 
-	private String pinCode;
+	private String iotId;
 
 	private String iotInstanceId;
-
-	private String nickname;
 
 	private String deviceName;
 
 	private String productKey;
 
-	private String devEui;
+	private String fileId;
 
-	public String getPinCode() {
-		return this.pinCode;
+	public String getIotId() {
+		return this.iotId;
 	}
 
-	public void setPinCode(String pinCode) {
-		this.pinCode = pinCode;
-		if(pinCode != null){
-			putQueryParameter("PinCode", pinCode);
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
 		}
 	}
 
@@ -57,17 +55,6 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getNickname() {
-		return this.nickname;
-	}
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-		if(nickname != null){
-			putQueryParameter("Nickname", nickname);
 		}
 	}
 
@@ -93,20 +80,20 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		}
 	}
 
-	public String getDevEui() {
-		return this.devEui;
+	public String getFileId() {
+		return this.fileId;
 	}
 
-	public void setDevEui(String devEui) {
-		this.devEui = devEui;
-		if(devEui != null){
-			putQueryParameter("DevEui", devEui);
+	public void setFileId(String fileId) {
+		this.fileId = fileId;
+		if(fileId != null){
+			putQueryParameter("FileId", fileId);
 		}
 	}
 
 	@Override
-	public Class<RegisterDeviceResponse> getResponseClass() {
-		return RegisterDeviceResponse.class;
+	public Class<QueryDeviceFileResponse> getResponseClass() {
+		return QueryDeviceFileResponse.class;
 	}
 
 }

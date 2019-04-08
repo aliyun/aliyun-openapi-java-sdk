@@ -15,14 +15,14 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.RegisterDeviceResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.QueryDeviceFileResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RegisterDeviceResponse extends AcsResponse {
+public class QueryDeviceFileResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -76,79 +76,59 @@ public class RegisterDeviceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String iotId;
+		private String fileId;
 
-		private String productKey;
+		private String name;
 
-		private String deviceName;
+		private String size;
 
-		private String deviceSecret;
+		private String utcCreatedOn;
 
-		private String devEui;
+		private String downloadUrl;
 
-		private String joinEui;
-
-		private String nickname;
-
-		public String getIotId() {
-			return this.iotId;
+		public String getFileId() {
+			return this.fileId;
 		}
 
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
 		}
 
-		public String getProductKey() {
-			return this.productKey;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setProductKey(String productKey) {
-			this.productKey = productKey;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getDeviceName() {
-			return this.deviceName;
+		public String getSize() {
+			return this.size;
 		}
 
-		public void setDeviceName(String deviceName) {
-			this.deviceName = deviceName;
+		public void setSize(String size) {
+			this.size = size;
 		}
 
-		public String getDeviceSecret() {
-			return this.deviceSecret;
+		public String getUtcCreatedOn() {
+			return this.utcCreatedOn;
 		}
 
-		public void setDeviceSecret(String deviceSecret) {
-			this.deviceSecret = deviceSecret;
+		public void setUtcCreatedOn(String utcCreatedOn) {
+			this.utcCreatedOn = utcCreatedOn;
 		}
 
-		public String getDevEui() {
-			return this.devEui;
+		public String getDownloadUrl() {
+			return this.downloadUrl;
 		}
 
-		public void setDevEui(String devEui) {
-			this.devEui = devEui;
-		}
-
-		public String getJoinEui() {
-			return this.joinEui;
-		}
-
-		public void setJoinEui(String joinEui) {
-			this.joinEui = joinEui;
-		}
-
-		public String getNickname() {
-			return this.nickname;
-		}
-
-		public void setNickname(String nickname) {
-			this.nickname = nickname;
+		public void setDownloadUrl(String downloadUrl) {
+			this.downloadUrl = downloadUrl;
 		}
 	}
 
 	@Override
-	public RegisterDeviceResponse getInstance(UnmarshallerContext context) {
-		return	RegisterDeviceResponseUnmarshaller.unmarshall(this, context);
+	public QueryDeviceFileResponse getInstance(UnmarshallerContext context) {
+		return	QueryDeviceFileResponseUnmarshaller.unmarshall(this, context);
 	}
 }

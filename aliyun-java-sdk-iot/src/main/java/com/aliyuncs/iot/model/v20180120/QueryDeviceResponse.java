@@ -139,6 +139,8 @@ public class QueryDeviceResponse extends AcsResponse {
 
 		private String iotId;
 
+		private String nickname;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -225,6 +227,14 @@ public class QueryDeviceResponse extends AcsResponse {
 
 		public void setIotId(String iotId) {
 			this.iotId = iotId;
+		}
+
+		public String getNickname() {
+			return this.nickname;
+		}
+
+		public void setNickname(String nickname) {
+			this.nickname = nickname;
 		}
 	}
 
