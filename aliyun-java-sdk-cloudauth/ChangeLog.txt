@@ -1,3 +1,6 @@
+2019-04-09 Version: 1.3.0
+1, Add Apis for offline VerifySDK.
+
 2019-01-15 Version: 1.2.0
 1, Add SubmitVerification API for RPMin solution.
 2, Return authority comparison score in GetStatus, SubmitMaterials and SubmitVerification.

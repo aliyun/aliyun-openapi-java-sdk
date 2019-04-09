@@ -26,7 +26,7 @@ import com.aliyuncs.http.MethodType;
 public class SubmitMaterialsRequest extends RpcAcsRequest<SubmitMaterialsResponse> {
 	
 	public SubmitMaterialsRequest() {
-		super("Cloudauth", "2018-09-16", "SubmitMaterials", "CloudAuth");
+		super("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

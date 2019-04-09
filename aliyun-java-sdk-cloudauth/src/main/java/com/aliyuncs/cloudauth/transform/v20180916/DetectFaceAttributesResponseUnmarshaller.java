@@ -25,7 +25,6 @@ import com.aliyuncs.cloudauth.model.v20180916.DetectFaceAttributesResponse.Data.
 import com.aliyuncs.cloudauth.model.v20180916.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes.Headpose;
 import com.aliyuncs.cloudauth.model.v20180916.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceAttributes.Smiling;
 import com.aliyuncs.cloudauth.model.v20180916.DetectFaceAttributesResponse.Data.FaceAttributesDetectInfo.FaceRect;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse> {
 	
 	public GetVerifyTokenRequest() {
-		super("Cloudauth", "2018-09-16", "GetVerifyToken", "CloudAuth");
+		super("Cloudauth", "2018-09-16", "GetVerifyToken", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

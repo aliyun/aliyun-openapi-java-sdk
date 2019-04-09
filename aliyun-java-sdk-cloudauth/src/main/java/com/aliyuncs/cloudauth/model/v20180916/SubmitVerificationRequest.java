@@ -26,7 +26,7 @@ import com.aliyuncs.http.MethodType;
 public class SubmitVerificationRequest extends RpcAcsRequest<SubmitVerificationResponse> {
 	
 	public SubmitVerificationRequest() {
-		super("Cloudauth", "2018-09-16", "SubmitVerification", "CloudAuth");
+		super("Cloudauth", "2018-09-16", "SubmitVerification", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
