@@ -1,3 +1,10 @@
+2019-04-09 Version: 7.0.0
+1, Optimizing the naming inconsistency of the old version of openAPI
+2, The problem of inaccurate parameter description in the old version is optimized.
+3, Adding API additions, deletions, modifications and checks of alarm contact group
+4, Increased query and alarm rules Association resources and the number of alarm rules
+5, This SDK is not compatible with the old version of SDK
+
 2019-03-20 Version: 6.0.14
 1, Update the Dependency
 
