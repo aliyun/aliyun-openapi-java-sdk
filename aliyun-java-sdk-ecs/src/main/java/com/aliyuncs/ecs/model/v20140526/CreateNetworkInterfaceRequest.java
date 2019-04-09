@@ -35,11 +35,15 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private String description;
 
+	private String businessType;
+
 	private String resourceGroupId;
 
 	private List<Tag> tags;
 
 	private String networkInterfaceName;
+
+	private Boolean visible;
 
 	private String resourceOwnerAccount;
 
@@ -95,6 +99,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
+	public String getBusinessType() {
+		return this.businessType;
+	}
+
+	public void setBusinessType(String businessType) {
+		this.businessType = businessType;
+		if(businessType != null){
+			putQueryParameter("BusinessType", businessType);
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -128,6 +143,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		this.networkInterfaceName = networkInterfaceName;
 		if(networkInterfaceName != null){
 			putQueryParameter("NetworkInterfaceName", networkInterfaceName);
+		}
+	}
+
+	public Boolean getVisible() {
+		return this.visible;
+	}
+
+	public void setVisible(Boolean visible) {
+		this.visible = visible;
+		if(visible != null){
+			putQueryParameter("Visible", visible.toString());
 		}
 	}
 

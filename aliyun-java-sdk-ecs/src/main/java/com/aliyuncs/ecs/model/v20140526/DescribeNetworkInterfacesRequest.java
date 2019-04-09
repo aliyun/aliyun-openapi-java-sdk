@@ -29,6 +29,8 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 
 	private Long resourceOwnerId;
 
+	private Boolean serviceManaged;
+
 	private String securityGroupId;
 
 	private String type;
@@ -67,6 +69,17 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+		if(serviceManaged != null){
+			putQueryParameter("ServiceManaged", serviceManaged.toString());
 		}
 	}
 

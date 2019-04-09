@@ -52,6 +52,8 @@ public class DescribeNetworkInterfacesResponseUnmarshaller {
 			networkInterfaceSet.setInstanceId(context.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].InstanceId"));
 			networkInterfaceSet.setCreationTime(context.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].CreationTime"));
 			networkInterfaceSet.setResourceGroupId(context.stringValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ResourceGroupId"));
+			networkInterfaceSet.setServiceID(context.longValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ServiceID"));
+			networkInterfaceSet.setServiceManaged(context.booleanValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].ServiceManaged"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeNetworkInterfacesResponse.NetworkInterfaceSets["+ i +"].SecurityGroupIds.Length"); j++) {
