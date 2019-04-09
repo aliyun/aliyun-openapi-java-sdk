@@ -28,19 +28,6 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String sTSToken;
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
-		}
-	}
-
 	@Override
 	public Class<DescribeRegionsResponse> getResponseClass() {
 		return DescribeRegionsResponse.class;

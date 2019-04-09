@@ -30,8 +30,6 @@ public class DeleteAliasRequest extends RpcAcsRequest<DeleteAliasResponse> {
 
 	private String aliasName;
 
-	private String sTSToken;
-
 	public String getAliasName() {
 		return this.aliasName;
 	}
@@ -40,17 +38,6 @@ public class DeleteAliasRequest extends RpcAcsRequest<DeleteAliasResponse> {
 		this.aliasName = aliasName;
 		if(aliasName != null){
 			putQueryParameter("AliasName", aliasName);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

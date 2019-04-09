@@ -30,8 +30,6 @@ public class GetParametersForImportRequest extends RpcAcsRequest<GetParametersFo
 
 	private String keyId;
 
-	private String sTSToken;
-
 	private String wrappingAlgorithm;
 
 	private String wrappingKeySpec;
@@ -44,17 +42,6 @@ public class GetParametersForImportRequest extends RpcAcsRequest<GetParametersFo
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

@@ -32,8 +32,6 @@ public class UntagResourceRequest extends RpcAcsRequest<UntagResourceResponse> {
 
 	private String keyId;
 
-	private String sTSToken;
-
 	public String getTagKeys() {
 		return this.tagKeys;
 	}
@@ -53,17 +51,6 @@ public class UntagResourceRequest extends RpcAcsRequest<UntagResourceResponse> {
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

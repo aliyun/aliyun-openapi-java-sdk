@@ -1,3 +1,7 @@
+2019-04-09 Version: 2.6.0
+1, Add APIs: TagResource, UntagResource, ListResourceTags.
+2, Remove the optional parameter 'STSToken'  and replace it with 'SecurityToken'.
+
 2019-03-21 Version: 2.5.1
 1, Update Dependency
 

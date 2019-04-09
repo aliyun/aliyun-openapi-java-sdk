@@ -32,8 +32,6 @@ public class ListAliasesByKeyIdRequest extends RpcAcsRequest<ListAliasesByKeyIdR
 
 	private String keyId;
 
-	private String sTSToken;
-
 	private Integer pageNumber;
 
 	public Integer getPageSize() {
@@ -55,17 +53,6 @@ public class ListAliasesByKeyIdRequest extends RpcAcsRequest<ListAliasesByKeyIdR
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

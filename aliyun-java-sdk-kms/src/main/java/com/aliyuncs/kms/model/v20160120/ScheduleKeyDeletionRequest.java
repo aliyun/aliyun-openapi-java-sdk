@@ -32,8 +32,6 @@ public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletio
 
 	private String keyId;
 
-	private String sTSToken;
-
 	public Integer getPendingWindowInDays() {
 		return this.pendingWindowInDays;
 	}
@@ -53,17 +51,6 @@ public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletio
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

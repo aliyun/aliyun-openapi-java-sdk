@@ -32,8 +32,6 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 
 	private String keyId;
 
-	private String sTSToken;
-
 	private String plaintext;
 
 	public String getEncryptionContext() {
@@ -55,17 +53,6 @@ public class EncryptRequest extends RpcAcsRequest<EncryptResponse> {
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

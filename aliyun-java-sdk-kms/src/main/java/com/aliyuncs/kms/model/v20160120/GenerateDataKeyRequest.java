@@ -34,8 +34,6 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 
 	private String keySpec;
 
-	private String sTSToken;
-
 	private Integer numberOfBytes;
 
 	public String getEncryptionContext() {
@@ -68,17 +66,6 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 		this.keySpec = keySpec;
 		if(keySpec != null){
 			putQueryParameter("KeySpec", keySpec);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

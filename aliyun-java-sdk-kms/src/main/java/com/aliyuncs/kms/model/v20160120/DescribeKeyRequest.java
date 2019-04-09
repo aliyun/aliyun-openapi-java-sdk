@@ -30,8 +30,6 @@ public class DescribeKeyRequest extends RpcAcsRequest<DescribeKeyResponse> {
 
 	private String keyId;
 
-	private String sTSToken;
-
 	public String getKeyId() {
 		return this.keyId;
 	}
@@ -40,17 +38,6 @@ public class DescribeKeyRequest extends RpcAcsRequest<DescribeKeyResponse> {
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

@@ -30,8 +30,6 @@ public class ListAliasesRequest extends RpcAcsRequest<ListAliasesResponse> {
 
 	private Integer pageSize;
 
-	private String sTSToken;
-
 	private Integer pageNumber;
 
 	public Integer getPageSize() {
@@ -42,17 +40,6 @@ public class ListAliasesRequest extends RpcAcsRequest<ListAliasesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

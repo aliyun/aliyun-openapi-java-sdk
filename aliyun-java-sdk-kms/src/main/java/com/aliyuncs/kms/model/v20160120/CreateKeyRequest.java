@@ -34,8 +34,6 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 
 	private String description;
 
-	private String sTSToken;
-
 	public String getKeyUsage() {
 		return this.keyUsage;
 	}
@@ -66,17 +64,6 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

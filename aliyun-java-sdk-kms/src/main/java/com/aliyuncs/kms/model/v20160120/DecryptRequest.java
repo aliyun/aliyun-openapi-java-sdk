@@ -30,8 +30,6 @@ public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 
 	private String encryptionContext;
 
-	private String sTSToken;
-
 	private String ciphertextBlob;
 
 	public String getEncryptionContext() {
@@ -42,17 +40,6 @@ public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 		this.encryptionContext = encryptionContext;
 		if(encryptionContext != null){
 			putQueryParameter("EncryptionContext", encryptionContext);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

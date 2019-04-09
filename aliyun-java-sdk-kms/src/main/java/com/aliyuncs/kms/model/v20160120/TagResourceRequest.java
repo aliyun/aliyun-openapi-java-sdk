@@ -30,8 +30,6 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 
 	private String keyId;
 
-	private String sTSToken;
-
 	private String tags;
 
 	public String getKeyId() {
@@ -42,17 +40,6 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 

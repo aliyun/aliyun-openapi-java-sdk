@@ -36,8 +36,6 @@ public class ImportKeyMaterialRequest extends RpcAcsRequest<ImportKeyMaterialRes
 
 	private String keyId;
 
-	private String sTSToken;
-
 	public String getImportToken() {
 		return this.importToken;
 	}
@@ -79,17 +77,6 @@ public class ImportKeyMaterialRequest extends RpcAcsRequest<ImportKeyMaterialRes
 		this.keyId = keyId;
 		if(keyId != null){
 			putQueryParameter("KeyId", keyId);
-		}
-	}
-
-	public String getSTSToken() {
-		return this.sTSToken;
-	}
-
-	public void setSTSToken(String sTSToken) {
-		this.sTSToken = sTSToken;
-		if(sTSToken != null){
-			putQueryParameter("STSToken", sTSToken);
 		}
 	}
 
