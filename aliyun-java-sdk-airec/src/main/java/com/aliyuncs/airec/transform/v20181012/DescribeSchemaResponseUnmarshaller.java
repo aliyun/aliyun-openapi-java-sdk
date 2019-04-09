@@ -21,7 +21,6 @@ import com.aliyuncs.airec.model.v20181012.DescribeSchemaResponse;
 import com.aliyuncs.airec.model.v20181012.DescribeSchemaResponse.Result;
 import com.aliyuncs.airec.model.v20181012.DescribeSchemaResponse.Result.MetaItem;
 import com.aliyuncs.airec.model.v20181012.DescribeSchemaResponse.Result.MetaItem.FieldsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

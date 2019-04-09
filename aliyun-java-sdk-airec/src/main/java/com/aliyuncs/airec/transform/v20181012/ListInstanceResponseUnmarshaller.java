@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.airec.model.v20181012.ListInstanceResponse;
 import com.aliyuncs.airec.model.v20181012.ListInstanceResponse.ResultItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

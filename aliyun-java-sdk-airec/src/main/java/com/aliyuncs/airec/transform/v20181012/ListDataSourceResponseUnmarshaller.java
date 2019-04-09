@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.airec.model.v20181012.ListDataSourceResponse;
 import com.aliyuncs.airec.model.v20181012.ListDataSourceResponse.ResultItem;
 import com.aliyuncs.airec.model.v20181012.ListDataSourceResponse.ResultItem.Meta;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

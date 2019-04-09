@@ -15,7 +15,6 @@
 package com.aliyuncs.airec.model.v20181012;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.airec.transform.v20181012.RecommendResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -70,7 +69,7 @@ public class RecommendResponse extends AcsResponse {
 
 		private String traceId;
 
-		private Long itemId;
+		private String itemId;
 
 		private String itemType;
 
@@ -90,11 +89,11 @@ public class RecommendResponse extends AcsResponse {
 			this.traceId = traceId;
 		}
 
-		public Long getItemId() {
+		public String getItemId() {
 			return this.itemId;
 		}
 
-		public void setItemId(Long itemId) {
+		public void setItemId(String itemId) {
 			this.itemId = itemId;
 		}
 

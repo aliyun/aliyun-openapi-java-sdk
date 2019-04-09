@@ -21,7 +21,6 @@ import com.aliyuncs.airec.model.v20181012.DeleteMixResponse;
 import com.aliyuncs.airec.model.v20181012.DeleteMixResponse.Result;
 import com.aliyuncs.airec.model.v20181012.DeleteMixResponse.Result.Parameter;
 import com.aliyuncs.airec.model.v20181012.DeleteMixResponse.Result.Parameter.SettingsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

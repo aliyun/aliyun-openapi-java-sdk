@@ -14,7 +14,6 @@
 
 package com.aliyuncs.airec.model.v20181012;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.airec.transform.v20181012.ModifyInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -111,10 +110,26 @@ public class ModifyInstanceResponse extends AcsResponse {
 			this.chargeType = chargeType;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}

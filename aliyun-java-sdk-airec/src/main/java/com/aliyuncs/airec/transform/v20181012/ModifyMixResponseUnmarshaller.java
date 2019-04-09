@@ -21,7 +21,6 @@ import com.aliyuncs.airec.model.v20181012.ModifyMixResponse;
 import com.aliyuncs.airec.model.v20181012.ModifyMixResponse.Result;
 import com.aliyuncs.airec.model.v20181012.ModifyMixResponse.Result.Parameter;
 import com.aliyuncs.airec.model.v20181012.ModifyMixResponse.Result.Parameter.SettingsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.airec.model.v20181012.DescribeDataSetMessageResponse;
 import com.aliyuncs.airec.model.v20181012.DescribeDataSetMessageResponse.ResultItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

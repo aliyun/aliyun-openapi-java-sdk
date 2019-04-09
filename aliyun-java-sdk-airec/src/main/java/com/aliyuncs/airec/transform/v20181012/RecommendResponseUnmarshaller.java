@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.airec.model.v20181012.RecommendResponse;
 import com.aliyuncs.airec.model.v20181012.RecommendResponse.ResultItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,7 +34,7 @@ public class RecommendResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("RecommendResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setTraceId(context.stringValue("RecommendResponse.Result["+ i +"].TraceId"));
-			resultItem.setItemId(context.longValue("RecommendResponse.Result["+ i +"].ItemId"));
+			resultItem.setItemId(context.stringValue("RecommendResponse.Result["+ i +"].ItemId"));
 			resultItem.setItemType(context.stringValue("RecommendResponse.Result["+ i +"].ItemType"));
 			resultItem.setMatchInfo(context.stringValue("RecommendResponse.Result["+ i +"].MatchInfo"));
 			resultItem.setWeight(context.floatValue("RecommendResponse.Result["+ i +"].Weight"));

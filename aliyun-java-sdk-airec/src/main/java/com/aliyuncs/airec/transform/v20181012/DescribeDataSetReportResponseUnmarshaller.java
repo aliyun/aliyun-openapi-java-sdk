@@ -21,7 +21,6 @@ import com.aliyuncs.airec.model.v20181012.DescribeDataSetReportResponse;
 import com.aliyuncs.airec.model.v20181012.DescribeDataSetReportResponse.Result;
 import com.aliyuncs.airec.model.v20181012.DescribeDataSetReportResponse.Result.DetailItem;
 import com.aliyuncs.airec.model.v20181012.DescribeDataSetReportResponse.Result.Overall;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

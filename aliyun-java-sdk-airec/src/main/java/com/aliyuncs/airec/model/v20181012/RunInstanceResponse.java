@@ -14,7 +14,6 @@
 
 package com.aliyuncs.airec.model.v20181012;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.airec.transform.v20181012.RunInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
