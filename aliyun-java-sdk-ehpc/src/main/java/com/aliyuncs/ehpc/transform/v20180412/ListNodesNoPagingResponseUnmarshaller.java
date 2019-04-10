@@ -21,7 +21,6 @@ import com.aliyuncs.ehpc.model.v20180412.ListNodesNoPagingResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListNodesNoPagingResponse.NodeInfo;
 import com.aliyuncs.ehpc.model.v20180412.ListNodesNoPagingResponse.NodeInfo.TotalResources;
 import com.aliyuncs.ehpc.model.v20180412.ListNodesNoPagingResponse.NodeInfo.UsedResources;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

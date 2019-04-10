@@ -25,7 +25,6 @@ import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.Ecs
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo.Login;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.EcsInfo.Manager;
 import com.aliyuncs.ehpc.model.v20180412.DescribeClusterResponse.ClusterInfo.PostInstallScriptInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

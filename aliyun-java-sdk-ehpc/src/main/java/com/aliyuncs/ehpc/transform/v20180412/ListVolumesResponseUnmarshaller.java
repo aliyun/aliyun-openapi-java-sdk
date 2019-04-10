@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ehpc.model.v20180412.ListVolumesResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListVolumesResponse.VolumeInfo;
-import java.util.Map;
+import com.aliyuncs.ehpc.model.v20180412.ListVolumesResponse.VolumeInfo.VolumeInfo1;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +43,23 @@ public class ListVolumesResponseUnmarshaller {
 			volumeInfo.setVolumeProtocol(context.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeProtocol"));
 			volumeInfo.setVolumeMountpoint(context.stringValue("ListVolumesResponse.Volumes["+ i +"].VolumeMountpoint"));
 			volumeInfo.setRemoteDirectory(context.stringValue("ListVolumesResponse.Volumes["+ i +"].RemoteDirectory"));
+
+			List<VolumeInfo1> additionalVolumes = new ArrayList<VolumeInfo1>();
+			for (int j = 0; j < context.lengthValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes.Length"); j++) {
+				VolumeInfo1 volumeInfo1 = new VolumeInfo1();
+				volumeInfo1.setVolumeType(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeType"));
+				volumeInfo1.setVolumeId(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeId"));
+				volumeInfo1.setVolumeProtocol(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeProtocol"));
+				volumeInfo1.setVolumeMountpoint(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].VolumeMountpoint"));
+				volumeInfo1.setRemoteDirectory(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].RemoteDirectory"));
+				volumeInfo1.setLocalDirectory(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].LocalDirectory"));
+				volumeInfo1.setRole(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].Role"));
+				volumeInfo1.setLocation(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].Location"));
+				volumeInfo1.setJobQueue(context.stringValue("ListVolumesResponse.Volumes["+ i +"].AdditionalVolumes["+ j +"].JobQueue"));
+
+				additionalVolumes.add(volumeInfo1);
+			}
+			volumeInfo.setAdditionalVolumes(additionalVolumes);
 
 			volumes.add(volumeInfo);
 		}

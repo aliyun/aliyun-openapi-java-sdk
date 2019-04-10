@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ehpc.model.v20180412.ListJobTemplatesResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListJobTemplatesResponse.JobTemplates;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ehpc.model.v20180412.GetAutoScaleConfigResponse;
 import com.aliyuncs.ehpc.model.v20180412.GetAutoScaleConfigResponse.QueueInfo;
-import java.util.Map;
+import com.aliyuncs.ehpc.model.v20180412.GetAutoScaleConfigResponse.QueueInfo.InstanceTypeInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,6 +53,17 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 			queueInfo.setSpotPriceLimit(context.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].SpotPriceLimit"));
 			queueInfo.setEnableAutoGrow(context.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoGrow"));
 			queueInfo.setEnableAutoShrink(context.booleanValue("GetAutoScaleConfigResponse.Queues["+ i +"].EnableAutoShrink"));
+
+			List<InstanceTypeInfo> instanceTypes = new ArrayList<InstanceTypeInfo>();
+			for (int j = 0; j < context.lengthValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes.Length"); j++) {
+				InstanceTypeInfo instanceTypeInfo = new InstanceTypeInfo();
+				instanceTypeInfo.setInstanceType(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].InstanceType"));
+				instanceTypeInfo.setSpotStrategy(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotStrategy"));
+				instanceTypeInfo.setSpotPriceLimit(context.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotPriceLimit"));
+
+				instanceTypes.add(instanceTypeInfo);
+			}
+			queueInfo.setInstanceTypes(instanceTypes);
 
 			queues.add(queueInfo);
 		}

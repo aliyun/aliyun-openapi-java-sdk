@@ -31,6 +31,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String imageId;
 
+	private List<AdditionalVolumes> additionalVolumess;
+
 	private String ecsOrderManagerInstanceType;
 
 	private String ehpcVersion;
@@ -57,9 +59,13 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private Integer ecsOrderManagerCount;
 
+	private String resourceGroupId;
+
 	private String password;
 
 	private Integer ecsOrderLoginCount;
+
+	private String remoteVisEnable;
 
 	private Integer systemDiskSize;
 
@@ -131,6 +137,31 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
 		}
+	}
+
+	public List<AdditionalVolumes> getAdditionalVolumess() {
+		return this.additionalVolumess;
+	}
+
+	public void setAdditionalVolumess(List<AdditionalVolumes> additionalVolumess) {
+		this.additionalVolumess = additionalVolumess;	
+		if (additionalVolumess != null) {
+			for (int depth1 = 0; depth1 < additionalVolumess.size(); depth1++) {
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeType" , additionalVolumess.get(depth1).getVolumeType());
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeProtocol" , additionalVolumess.get(depth1).getVolumeProtocol());
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".LocalDirectory" , additionalVolumess.get(depth1).getLocalDirectory());
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".RemoteDirectory" , additionalVolumess.get(depth1).getRemoteDirectory());
+				if (additionalVolumess.get(depth1).getRoless() != null) {
+					for (int depth2 = 0; depth2 < additionalVolumess.get(depth1).getRoless().size(); depth2++) {
+						putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".Roles." + (depth2 + 1) + ".Name" , additionalVolumess.get(depth1).getRoless().get(depth2).getName());
+					}
+				}
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeId" , additionalVolumess.get(depth1).getVolumeId());
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".VolumeMountpoint" , additionalVolumess.get(depth1).getVolumeMountpoint());
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".Location" , additionalVolumess.get(depth1).getLocation());
+				putQueryParameter("AdditionalVolumes." + (depth1 + 1) + ".JobQueue" , additionalVolumess.get(depth1).getJobQueue());
+			}
+		}	
 	}
 
 	public String getEcsOrderManagerInstanceType() {
@@ -276,6 +307,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getPassword() {
 		return this.password;
 	}
@@ -295,6 +337,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.ecsOrderLoginCount = ecsOrderLoginCount;
 		if(ecsOrderLoginCount != null){
 			putQueryParameter("EcsOrder.Login.Count", ecsOrderLoginCount.toString());
+		}
+	}
+
+	public String getRemoteVisEnable() {
+		return this.remoteVisEnable;
+	}
+
+	public void setRemoteVisEnable(String remoteVisEnable) {
+		this.remoteVisEnable = remoteVisEnable;
+		if(remoteVisEnable != null){
+			putQueryParameter("RemoteVisEnable", remoteVisEnable);
 		}
 	}
 
@@ -578,6 +631,112 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public static class AdditionalVolumes {
+
+		private String volumeType;
+
+		private String volumeProtocol;
+
+		private String localDirectory;
+
+		private String remoteDirectory;
+
+		private List<Roles> roless;
+
+		private String volumeId;
+
+		private String volumeMountpoint;
+
+		private String location;
+
+		private String jobQueue;
+
+		public String getVolumeType() {
+			return this.volumeType;
+		}
+
+		public void setVolumeType(String volumeType) {
+			this.volumeType = volumeType;
+		}
+
+		public String getVolumeProtocol() {
+			return this.volumeProtocol;
+		}
+
+		public void setVolumeProtocol(String volumeProtocol) {
+			this.volumeProtocol = volumeProtocol;
+		}
+
+		public String getLocalDirectory() {
+			return this.localDirectory;
+		}
+
+		public void setLocalDirectory(String localDirectory) {
+			this.localDirectory = localDirectory;
+		}
+
+		public String getRemoteDirectory() {
+			return this.remoteDirectory;
+		}
+
+		public void setRemoteDirectory(String remoteDirectory) {
+			this.remoteDirectory = remoteDirectory;
+		}
+
+		public List<Roles> getRoless() {
+			return this.roless;
+		}
+
+		public void setRoless(List<Roles> roless) {
+			this.roless = roless;
+		}
+
+		public String getVolumeId() {
+			return this.volumeId;
+		}
+
+		public void setVolumeId(String volumeId) {
+			this.volumeId = volumeId;
+		}
+
+		public String getVolumeMountpoint() {
+			return this.volumeMountpoint;
+		}
+
+		public void setVolumeMountpoint(String volumeMountpoint) {
+			this.volumeMountpoint = volumeMountpoint;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public String getJobQueue() {
+			return this.jobQueue;
+		}
+
+		public void setJobQueue(String jobQueue) {
+			this.jobQueue = jobQueue;
+		}
+
+		public static class Roles {
+
+			private String name;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+		}
+	}
+
 	public static class PostInstallScript {
 
 		private String args;
@@ -592,10 +751,26 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 			this.args = args;
 		}
 
+		public String getBizUrl() {
+			return this.url;
+		}
+
+		public void setBizUrl(String url) {
+			this.url = url;
+		}
+
+		/**
+		 * @deprecated use getBizUrl instead of this.
+		 */
+		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
+		/**
+		 * @deprecated use setBizUrl instead of this.
+		 */
+		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
 		}

@@ -175,6 +175,13 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 			for (int depth1 = 0; depth1 < queuess.size(); depth1++) {
 				putQueryParameter("Queues." + (depth1 + 1) + ".SpotStrategy" , queuess.get(depth1).getSpotStrategy());
 				putQueryParameter("Queues." + (depth1 + 1) + ".QueueName" , queuess.get(depth1).getQueueName());
+				if (queuess.get(depth1).getInstanceTypess() != null) {
+					for (int depth2 = 0; depth2 < queuess.get(depth1).getInstanceTypess().size(); depth2++) {
+						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotStrategy" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotStrategy());
+						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".InstanceType" , queuess.get(depth1).getInstanceTypess().get(depth2).getInstanceType());
+						putQueryParameter("Queues." + (depth1 + 1) + ".InstanceTypes." + (depth2 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getInstanceTypess().get(depth2).getSpotPriceLimit());
+					}
+				}
 				putQueryParameter("Queues." + (depth1 + 1) + ".InstanceType" , queuess.get(depth1).getInstanceType());
 				putQueryParameter("Queues." + (depth1 + 1) + ".EnableAutoGrow" , queuess.get(depth1).getEnableAutoGrow());
 				putQueryParameter("Queues." + (depth1 + 1) + ".SpotPriceLimit" , queuess.get(depth1).getSpotPriceLimit());
@@ -222,6 +229,8 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		private String queueName;
 
+		private List<InstanceTypes> instanceTypess;
+
 		private String instanceType;
 
 		private Boolean enableAutoGrow;
@@ -244,6 +253,14 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		public void setQueueName(String queueName) {
 			this.queueName = queueName;
+		}
+
+		public List<InstanceTypes> getInstanceTypess() {
+			return this.instanceTypess;
+		}
+
+		public void setInstanceTypess(List<InstanceTypes> instanceTypess) {
+			this.instanceTypess = instanceTypess;
 		}
 
 		public String getInstanceType() {
@@ -276,6 +293,39 @@ public class SetAutoScaleConfigRequest extends RpcAcsRequest<SetAutoScaleConfigR
 
 		public void setEnableAutoShrink(Boolean enableAutoShrink) {
 			this.enableAutoShrink = enableAutoShrink;
+		}
+
+		public static class InstanceTypes {
+
+			private String spotStrategy;
+
+			private String instanceType;
+
+			private Float spotPriceLimit;
+
+			public String getSpotStrategy() {
+				return this.spotStrategy;
+			}
+
+			public void setSpotStrategy(String spotStrategy) {
+				this.spotStrategy = spotStrategy;
+			}
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public Float getSpotPriceLimit() {
+				return this.spotPriceLimit;
+			}
+
+			public void setSpotPriceLimit(Float spotPriceLimit) {
+				this.spotPriceLimit = spotPriceLimit;
+			}
 		}
 	}
 

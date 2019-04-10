@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ehpc.model.v20180412.ListInvocationStatusResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListInvocationStatusResponse.InvokeInstance;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

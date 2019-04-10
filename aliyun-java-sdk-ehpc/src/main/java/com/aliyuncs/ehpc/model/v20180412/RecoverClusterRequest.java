@@ -30,6 +30,8 @@ public class RecoverClusterRequest extends RpcAcsRequest<RecoverClusterResponse>
 
 	private String osTag;
 
+	private String clientVersion;
+
 	private String accountType;
 
 	private String schedulerType;
@@ -57,6 +59,17 @@ public class RecoverClusterRequest extends RpcAcsRequest<RecoverClusterResponse>
 		this.osTag = osTag;
 		if(osTag != null){
 			putQueryParameter("OsTag", osTag);
+		}
+	}
+
+	public String getClientVersion() {
+		return this.clientVersion;
+	}
+
+	public void setClientVersion(String clientVersion) {
+		this.clientVersion = clientVersion;
+		if(clientVersion != null){
+			putQueryParameter("ClientVersion", clientVersion);
 		}
 	}
 

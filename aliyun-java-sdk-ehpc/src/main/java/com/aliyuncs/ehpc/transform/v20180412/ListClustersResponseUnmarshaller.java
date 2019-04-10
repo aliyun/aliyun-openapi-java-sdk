@@ -23,7 +23,6 @@ import com.aliyuncs.ehpc.model.v20180412.ListClustersResponse.ClusterInfoSimple.
 import com.aliyuncs.ehpc.model.v20180412.ListClustersResponse.ClusterInfoSimple.Managers;
 import com.aliyuncs.ehpc.model.v20180412.ListClustersResponse.ClusterInfoSimple.TotalResources;
 import com.aliyuncs.ehpc.model.v20180412.ListClustersResponse.ClusterInfoSimple.UsedResources;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +41,8 @@ public class ListClustersResponseUnmarshaller {
 			clusterInfoSimple.setId(context.stringValue("ListClustersResponse.Clusters["+ i +"].Id"));
 			clusterInfoSimple.setRegionId(context.stringValue("ListClustersResponse.Clusters["+ i +"].RegionId"));
 			clusterInfoSimple.setZoneId(context.stringValue("ListClustersResponse.Clusters["+ i +"].ZoneId"));
+			clusterInfoSimple.setVSwitchId(context.stringValue("ListClustersResponse.Clusters["+ i +"].VSwitchId"));
+			clusterInfoSimple.setVpcId(context.stringValue("ListClustersResponse.Clusters["+ i +"].VpcId"));
 			clusterInfoSimple.setName(context.stringValue("ListClustersResponse.Clusters["+ i +"].Name"));
 			clusterInfoSimple.setDescription(context.stringValue("ListClustersResponse.Clusters["+ i +"].Description"));
 			clusterInfoSimple.setStatus(context.stringValue("ListClustersResponse.Clusters["+ i +"].Status"));

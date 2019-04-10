@@ -45,6 +45,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String volumeType;
 
+	private String resourceGroupId;
+
 	private String password;
 
 	private String onPremiseVolumeMountPoint;
@@ -179,6 +181,17 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		this.volumeType = volumeType;
 		if(volumeType != null){
 			putQueryParameter("VolumeType", volumeType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -319,10 +332,29 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		}	
 	}
 
+	public String getBizDomain() {
+		return this.domain;
+	}
+
+	public void setBizDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizDomain instead of this.
+	 */
+	@Deprecated
 	public String getDomain() {
 		return this.domain;
 	}
 
+	/**
+	 * @deprecated use setBizDomain instead of this.
+	 */
+	@Deprecated
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){
@@ -410,10 +442,26 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 			this.args = args;
 		}
 
+		public String getBizUrl() {
+			return this.url;
+		}
+
+		public void setBizUrl(String url) {
+			this.url = url;
+		}
+
+		/**
+		 * @deprecated use getBizUrl instead of this.
+		 */
+		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
+		/**
+		 * @deprecated use setBizUrl instead of this.
+		 */
+		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
 		}

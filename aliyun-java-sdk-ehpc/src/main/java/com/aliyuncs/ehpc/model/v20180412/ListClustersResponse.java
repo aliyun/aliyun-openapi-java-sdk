@@ -15,7 +15,6 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ehpc.transform.v20180412.ListClustersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -84,6 +83,10 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private String vSwitchId;
+
+		private String vpcId;
+
 		private String name;
 
 		private String description;
@@ -130,10 +133,26 @@ public class ListClustersResponse extends AcsResponse {
 			this.id = id;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -144,6 +163,22 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
 		}
 
 		public String getName() {

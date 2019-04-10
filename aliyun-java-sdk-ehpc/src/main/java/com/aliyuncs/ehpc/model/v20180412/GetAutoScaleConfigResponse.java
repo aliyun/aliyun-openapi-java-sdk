@@ -15,7 +15,6 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ehpc.transform.v20180412.GetAutoScaleConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -210,6 +209,8 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		private Boolean enableAutoShrink;
 
+		private List<InstanceTypeInfo> instanceTypes;
+
 		public String getQueueName() {
 			return this.queueName;
 		}
@@ -256,6 +257,47 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 		public void setEnableAutoShrink(Boolean enableAutoShrink) {
 			this.enableAutoShrink = enableAutoShrink;
+		}
+
+		public List<InstanceTypeInfo> getInstanceTypes() {
+			return this.instanceTypes;
+		}
+
+		public void setInstanceTypes(List<InstanceTypeInfo> instanceTypes) {
+			this.instanceTypes = instanceTypes;
+		}
+
+		public static class InstanceTypeInfo {
+
+			private String instanceType;
+
+			private String spotStrategy;
+
+			private Float spotPriceLimit;
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public String getSpotStrategy() {
+				return this.spotStrategy;
+			}
+
+			public void setSpotStrategy(String spotStrategy) {
+				this.spotStrategy = spotStrategy;
+			}
+
+			public Float getSpotPriceLimit() {
+				return this.spotPriceLimit;
+			}
+
+			public void setSpotPriceLimit(Float spotPriceLimit) {
+				this.spotPriceLimit = spotPriceLimit;
+			}
 		}
 	}
 

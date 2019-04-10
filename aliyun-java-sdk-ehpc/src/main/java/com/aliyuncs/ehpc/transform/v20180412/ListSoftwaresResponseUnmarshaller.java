@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ehpc.model.v20180412.ListSoftwaresResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListSoftwaresResponse.SoftwareInfo;
 import com.aliyuncs.ehpc.model.v20180412.ListSoftwaresResponse.SoftwareInfo.ApplicationInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

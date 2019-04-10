@@ -15,7 +15,6 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ehpc.transform.v20180412.GetCloudMetricProfilingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -72,10 +71,26 @@ public class GetCloudMetricProfilingResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getBizUrl() {
+			return this.url;
+		}
+
+		public void setBizUrl(String url) {
+			this.url = url;
+		}
+
+		/**
+		 * @deprecated use getBizUrl instead of this.
+		 */
+		@Deprecated
 		public String getUrl() {
 			return this.url;
 		}
 
+		/**
+		 * @deprecated use setBizUrl instead of this.
+		 */
+		@Deprecated
 		public void setUrl(String url) {
 			this.url = url;
 		}

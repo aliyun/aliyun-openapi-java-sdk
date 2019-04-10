@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ehpc.model.v20180412.ListInvocationResultsResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListInvocationResultsResponse.InvocationResult;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse.ImageInfo;
 import com.aliyuncs.ehpc.model.v20180412.ListCustomImagesResponse.ImageInfo.BaseOsTag;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +42,7 @@ public class ListCustomImagesResponseUnmarshaller {
 			imageInfo.setSkuCode(context.stringValue("ListCustomImagesResponse.Images["+ i +"].SkuCode"));
 			imageInfo.setPricingCycle(context.stringValue("ListCustomImagesResponse.Images["+ i +"].PricingCycle"));
 			imageInfo.setPostInstallScript(context.stringValue("ListCustomImagesResponse.Images["+ i +"].PostInstallScript"));
+			imageInfo.setSize(context.integerValue("ListCustomImagesResponse.Images["+ i +"].Size"));
 
 			BaseOsTag baseOsTag = new BaseOsTag();
 			baseOsTag.setOsTag(context.stringValue("ListCustomImagesResponse.Images["+ i +"].BaseOsTag.OsTag"));

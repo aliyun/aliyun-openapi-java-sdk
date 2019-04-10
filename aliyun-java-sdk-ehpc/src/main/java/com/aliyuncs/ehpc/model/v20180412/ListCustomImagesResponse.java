@@ -15,7 +15,6 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ehpc.transform.v20180412.ListCustomImagesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -67,6 +66,8 @@ public class ListCustomImagesResponse extends AcsResponse {
 		private String pricingCycle;
 
 		private String postInstallScript;
+
+		private Integer size;
 
 		private BaseOsTag baseOsTag;
 
@@ -150,6 +151,14 @@ public class ListCustomImagesResponse extends AcsResponse {
 			this.postInstallScript = postInstallScript;
 		}
 
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+
 		public BaseOsTag getBaseOsTag() {
 			return this.baseOsTag;
 		}
@@ -184,10 +193,26 @@ public class ListCustomImagesResponse extends AcsResponse {
 				this.platform = platform;
 			}
 
+			public String getBizVersion() {
+				return this.version;
+			}
+
+			public void setBizVersion(String version) {
+				this.version = version;
+			}
+
+			/**
+			 * @deprecated use getBizVersion instead of this.
+			 */
+			@Deprecated
 			public String getVersion() {
 				return this.version;
 			}
 
+			/**
+			 * @deprecated use setBizVersion instead of this.
+			 */
+			@Deprecated
 			public void setVersion(String version) {
 				this.version = version;
 			}

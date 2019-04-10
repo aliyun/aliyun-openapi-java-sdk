@@ -1,3 +1,8 @@
+2019-04-10 Version: 1.11.0
+1, New APIs for visual service (VNC).
+2, New APIs for software management.
+3, New APIs for CPFS filesystem.
+
 2018-12-13 Version: 1.10.0
 1, Add SystemDiskSize in CreateCluster and AddNodes, add more parameters in RecoverCluster
 

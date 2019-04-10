@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ehpc.model.v20180412.ListPreferredEcsTypesResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListPreferredEcsTypesResponse.SeriesInfo;
 import com.aliyuncs.ehpc.model.v20180412.ListPreferredEcsTypesResponse.SeriesInfo.Roles;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

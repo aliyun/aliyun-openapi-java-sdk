@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ehpc.model.v20180412.DescribeImageGatewayConfigResponse;
 import com.aliyuncs.ehpc.model.v20180412.DescribeImageGatewayConfigResponse.Imagegw;
 import com.aliyuncs.ehpc.model.v20180412.DescribeImageGatewayConfigResponse.Imagegw.LocationInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

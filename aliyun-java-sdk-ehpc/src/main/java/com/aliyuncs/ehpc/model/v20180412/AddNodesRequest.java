@@ -42,6 +42,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String imageOwnerAlias;
 
+	private String vSwitchId;
+
 	private String periodUnit;
 
 	private String autoRenew;
@@ -53,6 +55,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 	private Integer systemDiskSize;
 
 	private String instanceType;
+
+	private String zoneId;
 
 	private String computeSpotPriceLimit;
 
@@ -144,6 +148,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		}
 	}
 
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
 	public String getPeriodUnit() {
 		return this.periodUnit;
 	}
@@ -207,6 +222,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
