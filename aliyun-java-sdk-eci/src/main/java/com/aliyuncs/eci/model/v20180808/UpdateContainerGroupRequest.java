@@ -314,6 +314,8 @@ public class UpdateContainerGroupRequest extends RpcAcsRequest<UpdateContainerGr
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.Path" , volumes.get(depth1).getNFSVolumePath());
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.ReadOnly" , volumes.get(depth1).getNFSVolumeReadOnly());
 
+				putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.Medium" , volumes.get(depth1).getEmptyDirVolumeMedium());
+
 				if (volumes.get(depth1).getConfigFileVolumeConfigFileToPaths() != null) {
 					for (int depth2 = 0; depth2 < volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().size(); depth2++) {
 						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Content" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getContent());

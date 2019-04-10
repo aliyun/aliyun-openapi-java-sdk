@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * @author liumi
- * @version 1.0.5
+ * @version 1.0.6
  */
 public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGroupResponse> {
 	
@@ -357,6 +357,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.Server" , volumes.get(depth1).getNFSVolumeServer());
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.Path" , volumes.get(depth1).getNFSVolumePath());
 				putQueryParameter("Volume." + (depth1 + 1) + ".NFSVolume.ReadOnly" , volumes.get(depth1).getNFSVolumeReadOnly());
+
+				putQueryParameter("Volume." + (depth1 + 1) + ".EmptyDirVolume.Medium" , volumes.get(depth1).getEmptyDirVolumeMedium());
 
 				if (volumes.get(depth1).getConfigFileVolumeConfigFileToPaths() != null) {
 					for (int depth2 = 0; depth2 < volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().size(); depth2++) {
@@ -907,6 +909,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
 
+		private String emptyDirVolumeMedium;
+
 		private String type;
 
 		public String getName() {
@@ -939,6 +943,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setNFSVolumeReadOnly(Boolean nFSVolumeReadOnly) {
 			this.nFSVolumeReadOnly = nFSVolumeReadOnly;
+		}
+
+		public String getEmptyDirVolumeMedium() {
+			return emptyDirVolumeMedium;
+		}
+
+		public void setEmptyDirVolumeMedium(String emptyDirVolumeMedium) {
+			this.emptyDirVolumeMedium = emptyDirVolumeMedium;
 		}
 
 		public List<ConfigFileVolumeConfigFileToPath> getConfigFileVolumeConfigFileToPaths() {
