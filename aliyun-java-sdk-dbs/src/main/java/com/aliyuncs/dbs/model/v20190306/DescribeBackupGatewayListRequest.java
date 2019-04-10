@@ -26,6 +26,8 @@ public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBack
 		super("Dbs", "2019-03-06", "DescribeBackupGatewayList", "cbs");
 	}
 
+	private String identifier;
+
 	private String clientToken;
 
 	private Integer pageSize;
@@ -35,6 +37,17 @@ public class DescribeBackupGatewayListRequest extends RpcAcsRequest<DescribeBack
 	private Integer pageNum;
 
 	private String ownerId;
+
+	public String getIdentifier() {
+		return this.identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+		if(identifier != null){
+			putQueryParameter("Identifier", identifier);
+		}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

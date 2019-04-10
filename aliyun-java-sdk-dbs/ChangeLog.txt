@@ -1,3 +1,6 @@
+2019-04-10 Version: 1.0.3
+1, Modify DescribeBackupGatewayList DBS interface.
+
 2019-04-08 Version: 1.0.2
 1, Modify DescribeBackupPlanList DBS interface.
 2, Modify DescribeFullBackupList DBS interface.
