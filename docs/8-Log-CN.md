@@ -1,4 +1,4 @@
-[← 调试](7-Debug-CN.md) | 日志[(English)](8-Log-EN.md) | [首页 →](../README-CN.md)
+[← 调试](7-Debug-CN.md) | 日志[(English)](8-Log-EN.md) | [异常 →](9-Exception-CN.md)
 ***
 
 
@@ -57,4 +57,4 @@ clientConfig.setLogFormat(format)
 | {time}     | 日志记录时间 |
 
 ***
-[← 调试](7-Debug-CN.md) | 日志[(English)](8-Log-EN.md) | [首页 →](../README-CN.md)
+[← 调试](7-Debug-CN.md) | 日志[(English)](8-Log-EN.md) | [异常 →](9-Exception-CN.md)
