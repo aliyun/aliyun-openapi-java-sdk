@@ -1,3 +1,7 @@
+2019-04-11 Version: 2.0.0
+1, Release AddImage/SearchImage/DeleteImage OpenApi.
+2, Add 'SearchByName' feature to SearchImage
+
 2019-03-18 Version: 1.0.1
 1, Update Dependency
 

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imagesearch.model.v20180120;
+package com.aliyuncs.imagesearch.model.v20190325;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -21,15 +21,19 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AddItemRequest extends RoaAcsRequest<AddItemResponse> {
+public class DeleteImageRequest extends RoaAcsRequest<DeleteImageResponse> {
 	
-	public AddItemRequest() {
-		super("ImageSearch", "2018-01-20", "AddItem", "imagesearch");
-		setUriPattern("/item/add");
+	public DeleteImageRequest() {
+		super("ImageSearch", "2019-03-25", "DeleteImage", "imagesearch");
+		setUriPattern("/v2/image/delete");
 		setMethod(MethodType.POST);
 	}
 
 	private String instanceName;
+
+	private String productId;
+
+	private String picName;
 
 	public String getInstanceName() {
 		return this.instanceName;
@@ -38,13 +42,35 @@ public class AddItemRequest extends RoaAcsRequest<AddItemResponse> {
 	public void setInstanceName(String instanceName) {
 		this.instanceName = instanceName;
 		if(instanceName != null){
-			putQueryParameter("instanceName", instanceName);
+			putBodyParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getProductId() {
+		return this.productId;
+	}
+
+	public void setProductId(String productId) {
+		this.productId = productId;
+		if(productId != null){
+			putBodyParameter("ProductId", productId);
+		}
+	}
+
+	public String getPicName() {
+		return this.picName;
+	}
+
+	public void setPicName(String picName) {
+		this.picName = picName;
+		if(picName != null){
+			putBodyParameter("PicName", picName);
 		}
 	}
 
 	@Override
-	public Class<AddItemResponse> getResponseClass() {
-		return AddItemResponse.class;
+	public Class<DeleteImageResponse> getResponseClass() {
+		return DeleteImageResponse.class;
 	}
 
 }

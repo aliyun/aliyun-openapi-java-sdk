@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imagesearch.model.v20180120;
+package com.aliyuncs.imagesearch.model.v20190325;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imagesearch.transform.v20180120.DeleteItemResponseUnmarshaller;
+import com.aliyuncs.imagesearch.transform.v20190325.DeleteImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteItemResponse extends AcsResponse {
+public class DeleteImageResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -65,7 +65,12 @@ public class DeleteItemResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteItemResponse getInstance(UnmarshallerContext context) {
-		return	DeleteItemResponseUnmarshaller.unmarshall(this, context);
+	public DeleteImageResponse getInstance(UnmarshallerContext context) {
+		return	DeleteImageResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

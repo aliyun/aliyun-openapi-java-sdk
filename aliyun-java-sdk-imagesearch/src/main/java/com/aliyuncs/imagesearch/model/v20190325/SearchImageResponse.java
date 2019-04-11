@@ -12,26 +12,26 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imagesearch.model.v20180120;
+package com.aliyuncs.imagesearch.model.v20190325;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imagesearch.transform.v20180120.SearchItemResponseUnmarshaller;
+import com.aliyuncs.imagesearch.transform.v20190325.SearchImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchItemResponse extends AcsResponse {
+public class SearchImageResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String message;
-
 	private Integer code;
+
+	private String msg;
 
 	private List<Auction> auctions;
 
@@ -55,20 +55,20 @@ public class SearchItemResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Integer getCode() {
 		return this.code;
 	}
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public String getMsg() {
+		return this.msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 
 	public List<Auction> getAuctions() {
@@ -97,30 +97,50 @@ public class SearchItemResponse extends AcsResponse {
 
 	public static class Auction {
 
-		private String custContent;
+		private Integer categoryId;
 
-		private String itemId;
-
-		private String sortExprValues;
-
-		private String catId;
+		private String productId;
 
 		private String picName;
 
-		public String getCustContent() {
-			return this.custContent;
+		private String customContent;
+
+		private String sortExprValues;
+
+		private Integer intAttr;
+
+		private String strAttr;
+
+		public Integer getCategoryId() {
+			return this.categoryId;
 		}
 
-		public void setCustContent(String custContent) {
-			this.custContent = custContent;
+		public void setCategoryId(Integer categoryId) {
+			this.categoryId = categoryId;
 		}
 
-		public String getItemId() {
-			return this.itemId;
+		public String getProductId() {
+			return this.productId;
 		}
 
-		public void setItemId(String itemId) {
-			this.itemId = itemId;
+		public void setProductId(String productId) {
+			this.productId = productId;
+		}
+
+		public String getPicName() {
+			return this.picName;
+		}
+
+		public void setPicName(String picName) {
+			this.picName = picName;
+		}
+
+		public String getCustomContent() {
+			return this.customContent;
+		}
+
+		public void setCustomContent(String customContent) {
+			this.customContent = customContent;
 		}
 
 		public String getSortExprValues() {
@@ -131,37 +151,37 @@ public class SearchItemResponse extends AcsResponse {
 			this.sortExprValues = sortExprValues;
 		}
 
-		public String getCatId() {
-			return this.catId;
+		public Integer getIntAttr() {
+			return this.intAttr;
 		}
 
-		public void setCatId(String catId) {
-			this.catId = catId;
+		public void setIntAttr(Integer intAttr) {
+			this.intAttr = intAttr;
 		}
 
-		public String getPicName() {
-			return this.picName;
+		public String getStrAttr() {
+			return this.strAttr;
 		}
 
-		public void setPicName(String picName) {
-			this.picName = picName;
+		public void setStrAttr(String strAttr) {
+			this.strAttr = strAttr;
 		}
 	}
 
 	public static class Head {
 
-		private Integer searchTime;
+		private Integer docsReturn;
 
 		private Integer docsFound;
 
-		private Integer docsReturn;
+		private Integer searchTime;
 
-		public Integer getSearchTime() {
-			return this.searchTime;
+		public Integer getDocsReturn() {
+			return this.docsReturn;
 		}
 
-		public void setSearchTime(Integer searchTime) {
-			this.searchTime = searchTime;
+		public void setDocsReturn(Integer docsReturn) {
+			this.docsReturn = docsReturn;
 		}
 
 		public Integer getDocsFound() {
@@ -172,29 +192,29 @@ public class SearchItemResponse extends AcsResponse {
 			this.docsFound = docsFound;
 		}
 
-		public Integer getDocsReturn() {
-			return this.docsReturn;
+		public Integer getSearchTime() {
+			return this.searchTime;
 		}
 
-		public void setDocsReturn(Integer docsReturn) {
-			this.docsReturn = docsReturn;
+		public void setSearchTime(Integer searchTime) {
+			this.searchTime = searchTime;
 		}
 	}
 
 	public static class PicInfo {
 
-		private String category;
+		private Integer categoryId;
 
 		private String region;
 
-		private List<Category> allCategory;
+		private List<Category> allCategories;
 
-		public String getCategory() {
-			return this.category;
+		public Integer getCategoryId() {
+			return this.categoryId;
 		}
 
-		public void setCategory(String category) {
-			this.category = category;
+		public void setCategoryId(Integer categoryId) {
+			this.categoryId = categoryId;
 		}
 
 		public String getRegion() {
@@ -205,19 +225,27 @@ public class SearchItemResponse extends AcsResponse {
 			this.region = region;
 		}
 
-		public List<Category> getAllCategory() {
-			return this.allCategory;
+		public List<Category> getAllCategories() {
+			return this.allCategories;
 		}
 
-		public void setAllCategory(List<Category> allCategory) {
-			this.allCategory = allCategory;
+		public void setAllCategories(List<Category> allCategories) {
+			this.allCategories = allCategories;
 		}
 
 		public static class Category {
 
+			private Integer id;
+
 			private String name;
 
-			private String id;
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
+			}
 
 			public String getName() {
 				return this.name;
@@ -226,19 +254,16 @@ public class SearchItemResponse extends AcsResponse {
 			public void setName(String name) {
 				this.name = name;
 			}
-
-			public String getId() {
-				return this.id;
-			}
-
-			public void setId(String id) {
-				this.id = id;
-			}
 		}
 	}
 
 	@Override
-	public SearchItemResponse getInstance(UnmarshallerContext context) {
-		return	SearchItemResponseUnmarshaller.unmarshall(this, context);
+	public SearchImageResponse getInstance(UnmarshallerContext context) {
+		return	SearchImageResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

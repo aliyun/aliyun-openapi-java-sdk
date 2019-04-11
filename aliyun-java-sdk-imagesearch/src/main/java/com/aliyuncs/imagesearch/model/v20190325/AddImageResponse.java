@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.imagesearch.model.v20180120;
+package com.aliyuncs.imagesearch.model.v20190325;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imagesearch.transform.v20180120.AddItemResponseUnmarshaller;
+import com.aliyuncs.imagesearch.transform.v20190325.AddImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddItemResponse extends AcsResponse {
+public class AddImageResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,6 +31,8 @@ public class AddItemResponse extends AcsResponse {
 	private String message;
 
 	private Integer code;
+
+	private PicInfo picInfo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,8 +66,44 @@ public class AddItemResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public PicInfo getPicInfo() {
+		return this.picInfo;
+	}
+
+	public void setPicInfo(PicInfo picInfo) {
+		this.picInfo = picInfo;
+	}
+
+	public static class PicInfo {
+
+		private Integer categoryId;
+
+		private String region;
+
+		public Integer getCategoryId() {
+			return this.categoryId;
+		}
+
+		public void setCategoryId(Integer categoryId) {
+			this.categoryId = categoryId;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
+		}
+	}
+
 	@Override
-	public AddItemResponse getInstance(UnmarshallerContext context) {
-		return	AddItemResponseUnmarshaller.unmarshall(this, context);
+	public AddImageResponse getInstance(UnmarshallerContext context) {
+		return	AddImageResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
