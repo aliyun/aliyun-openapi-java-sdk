@@ -1,3 +1,6 @@
+2019-04-11 Version: 1.0.1-SNAPSHOT
+1, Modified the field 'ItemId' type to String.
+
 2019-04-09 Version: 1.0.1-SNAPSHOT
 1, Modified the field 'ItemId' type to String.  
 
