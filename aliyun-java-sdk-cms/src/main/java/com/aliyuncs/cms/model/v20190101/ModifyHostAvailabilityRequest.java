@@ -31,6 +31,8 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 
 	private String taskOptionHttpMethod;
 
+	private List<AlertConfigEscalationList> alertConfigEscalationLists;
+
 	private Long groupId;
 
 	private String taskName;
@@ -54,8 +56,6 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 	private String taskOptionTelnetOrPingHost;
 
 	private String taskOptionHttpResponseMatchContent;
-
-	private List<AlertConfigEscalationList> alertConfigEscalationLists;
 
 	private Long id;
 
@@ -83,6 +83,23 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 		if(taskOptionHttpMethod != null){
 			putQueryParameter("TaskOption.HttpMethod", taskOptionHttpMethod);
 		}
+	}
+
+	public List<AlertConfigEscalationList> getAlertConfigEscalationLists() {
+		return this.alertConfigEscalationLists;
+	}
+
+	public void setAlertConfigEscalationLists(List<AlertConfigEscalationList> alertConfigEscalationLists) {
+		this.alertConfigEscalationLists = alertConfigEscalationLists;	
+		if (alertConfigEscalationLists != null) {
+			for (int depth1 = 0; depth1 < alertConfigEscalationLists.size(); depth1++) {
+				putQueryParameter("AlertConfigEscalationList." + (depth1 + 1) + ".Times" , alertConfigEscalationLists.get(depth1).getTimes());
+				putQueryParameter("AlertConfigEscalationList." + (depth1 + 1) + ".MetricName" , alertConfigEscalationLists.get(depth1).getMetricName());
+				putQueryParameter("AlertConfigEscalationList." + (depth1 + 1) + ".Value" , alertConfigEscalationLists.get(depth1).getValue());
+				putQueryParameter("AlertConfigEscalationList." + (depth1 + 1) + ".Operator" , alertConfigEscalationLists.get(depth1).getOperator());
+				putQueryParameter("AlertConfigEscalationList." + (depth1 + 1) + ".Aggregate" , alertConfigEscalationLists.get(depth1).getAggregate());
+			}
+		}	
 	}
 
 	public Long getGroupId() {
@@ -215,23 +232,6 @@ public class ModifyHostAvailabilityRequest extends RpcAcsRequest<ModifyHostAvail
 		if(taskOptionHttpResponseMatchContent != null){
 			putQueryParameter("TaskOption.HttpResponseMatchContent", taskOptionHttpResponseMatchContent);
 		}
-	}
-
-	public List<AlertConfigEscalationList> getAlertConfigEscalationLists() {
-		return this.alertConfigEscalationLists;
-	}
-
-	public void setAlertConfigEscalationLists(List<AlertConfigEscalationList> alertConfigEscalationLists) {
-		this.alertConfigEscalationLists = alertConfigEscalationLists;	
-		if (alertConfigEscalationLists != null) {
-			for (int depth1 = 0; depth1 < alertConfigEscalationLists.size(); depth1++) {
-				putQueryParameter("AlertConfig.EscalationList." + (depth1 + 1) + ".Times" , alertConfigEscalationLists.get(depth1).getTimes());
-				putQueryParameter("AlertConfig.EscalationList." + (depth1 + 1) + ".MetricName" , alertConfigEscalationLists.get(depth1).getMetricName());
-				putQueryParameter("AlertConfig.EscalationList." + (depth1 + 1) + ".Value" , alertConfigEscalationLists.get(depth1).getValue());
-				putQueryParameter("AlertConfig.EscalationList." + (depth1 + 1) + ".Operator" , alertConfigEscalationLists.get(depth1).getOperator());
-				putQueryParameter("AlertConfig.EscalationList." + (depth1 + 1) + ".Aggregate" , alertConfigEscalationLists.get(depth1).getAggregate());
-			}
-		}	
 	}
 
 	public Long getId() {

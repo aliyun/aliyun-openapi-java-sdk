@@ -101,9 +101,9 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		private String silenceTime;
 
-		private Boolean enable;
+		private Boolean enableState;
 
-		private String state;
+		private String alertState;
 
 		private String contactGroups;
 
@@ -179,20 +179,20 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 			this.silenceTime = silenceTime;
 		}
 
-		public Boolean getEnable() {
-			return this.enable;
+		public Boolean getEnableState() {
+			return this.enableState;
 		}
 
-		public void setEnable(Boolean enable) {
-			this.enable = enable;
+		public void setEnableState(Boolean enableState) {
+			this.enableState = enableState;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getAlertState() {
+			return this.alertState;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setAlertState(String alertState) {
+			this.alertState = alertState;
 		}
 
 		public String getContactGroups() {

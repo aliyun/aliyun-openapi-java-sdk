@@ -46,8 +46,8 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			alarm.setEffectiveInterval(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].EffectiveInterval"));
 			alarm.setNoEffectiveInterval(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].NoEffectiveInterval"));
 			alarm.setSilenceTime(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].SilenceTime"));
-			alarm.setEnable(context.booleanValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Enable"));
-			alarm.setState(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].State"));
+			alarm.setEnableState(context.booleanValue("DescribeMetricRuleListResponse.Alarms["+ i +"].EnableState"));
+			alarm.setAlertState(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].AlertState"));
 			alarm.setContactGroups(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].ContactGroups"));
 			alarm.setWebhook(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Webhook"));
 			alarm.setMailSubject(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].MailSubject"));

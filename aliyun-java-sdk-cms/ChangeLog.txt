@@ -1,3 +1,6 @@
+2019-04-11 Version: 7.0.1
+1, Fixed inconsistency between input and output parameters of alarm rule list interface.
+
 2019-04-09 Version: 7.0.0
 1, Optimizing the naming inconsistency of the old version of openAPI
 2, The problem of inaccurate parameter description in the old version is optimized.
