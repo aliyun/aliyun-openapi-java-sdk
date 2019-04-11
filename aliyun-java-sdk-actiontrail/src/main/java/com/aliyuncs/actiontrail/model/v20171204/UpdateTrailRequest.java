@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
 	
 	public UpdateTrailRequest() {
-		super("Actiontrail", "2017-12-04", "UpdateTrail");
+		super("Actiontrail", "2017-12-04", "UpdateTrail", "actiontrail");
 	}
 
 	private String slsProjectArn;

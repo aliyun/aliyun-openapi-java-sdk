@@ -14,7 +14,11 @@
 
 package com.aliyuncs.actiontrail.transform.v20171204;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.actiontrail.model.v20171204.LookupEventsResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,8 +31,8 @@ public class LookupEventsResponseUnmarshaller {
 		lookupEventsResponse.setStartTime(context.stringValue("LookupEventsResponse.StartTime"));
 		lookupEventsResponse.setEndTime(context.stringValue("LookupEventsResponse.EndTime"));
 
-		
-		lookupEventsResponse.setEvents(context.listMapValue("LookupEventsResponse.Events"));
+		List<Map<Object, Object>> events = context.listMapValue("LookupEventsResponse.Events");
+		lookupEventsResponse.setEvents(events);
 	 
 	 	return lookupEventsResponse;
 	}

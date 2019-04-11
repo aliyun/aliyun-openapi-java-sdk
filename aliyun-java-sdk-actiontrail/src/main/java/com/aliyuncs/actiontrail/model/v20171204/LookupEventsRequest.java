@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class LookupEventsRequest extends RpcAcsRequest<LookupEventsResponse> {
 	
 	public LookupEventsRequest() {
-		super("Actiontrail", "2017-12-04", "LookupEvents");
+		super("Actiontrail", "2017-12-04", "LookupEvents", "actiontrail");
 	}
 
 	private String request;

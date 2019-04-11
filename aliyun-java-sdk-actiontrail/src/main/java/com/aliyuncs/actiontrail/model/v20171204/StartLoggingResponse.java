@@ -26,6 +26,9 @@ public class StartLoggingResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String param;
+
+	private String result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,7 +38,22 @@ public class StartLoggingResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	
+	public String getParam() {
+		return this.param;
+	}
+
+	public void setParam(String param) {
+		this.param = param;
+	}
+
+	public String getResult() {
+		return this.result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
 	@Override
 	public StartLoggingResponse getInstance(UnmarshallerContext context) {
 		return	StartLoggingResponseUnmarshaller.unmarshall(this, context);

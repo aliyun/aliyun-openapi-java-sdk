@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StopLoggingRequest extends RpcAcsRequest<StopLoggingResponse> {
 	
 	public StopLoggingRequest() {
-		super("Actiontrail", "2017-12-04", "StopLogging");
+		super("Actiontrail", "2017-12-04", "StopLogging", "actiontrail");
 	}
 
 	private String name;

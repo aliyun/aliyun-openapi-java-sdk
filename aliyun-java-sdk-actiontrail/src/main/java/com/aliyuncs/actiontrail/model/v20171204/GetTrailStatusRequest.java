@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetTrailStatusRequest extends RpcAcsRequest<GetTrailStatusResponse> {
 	
 	public GetTrailStatusRequest() {
-		super("Actiontrail", "2017-12-04", "GetTrailStatus");
+		super("Actiontrail", "2017-12-04", "GetTrailStatus", "actiontrail");
 	}
 
 	private String name;

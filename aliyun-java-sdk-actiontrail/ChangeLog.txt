@@ -1,3 +1,6 @@
+2019-04-11 Version: 1.0.2
+1, Fix ClassCastException
+
 2019-03-06 Version: 1.0.0
 1, Release ActionTrail API
 

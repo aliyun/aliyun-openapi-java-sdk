@@ -17,24 +17,33 @@ package com.aliyuncs.actiontrail.model.v20171204;
 import java.util.List;
 import java.util.Map;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.actiontrail.transform.v20171204.LookupEventsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * @author auto create
  * @version 
  */
+@XmlRootElement
 public class LookupEventsResponse extends AcsResponse {
 
+    @SerializedName("RequestId")
 	private String requestId;
 
+    @SerializedName("NextToken")
 	private String nextToken;
 
+    @SerializedName("StartTime")
 	private String startTime;
 
+    @SerializedName("EndTime")
 	private String endTime;
 
+    @SerializedName("Events")
 	private List<Map<Object, Object>> events;
 
 	public String getRequestId() {

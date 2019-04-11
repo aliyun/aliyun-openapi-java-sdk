@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeTrailsRequest extends RpcAcsRequest<DescribeTrailsResponse> {
 	
 	public DescribeTrailsRequest() {
-		super("Actiontrail", "2017-12-04", "DescribeTrails");
+		super("Actiontrail", "2017-12-04", "DescribeTrails", "actiontrail");
 	}
 
 	private String nameList;

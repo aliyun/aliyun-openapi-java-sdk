@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTrailRequest extends RpcAcsRequest<DeleteTrailResponse> {
 	
 	public DeleteTrailRequest() {
-		super("Actiontrail", "2017-12-04", "DeleteTrail");
+		super("Actiontrail", "2017-12-04", "DeleteTrail", "actiontrail");
 	}
 
 	private String name;

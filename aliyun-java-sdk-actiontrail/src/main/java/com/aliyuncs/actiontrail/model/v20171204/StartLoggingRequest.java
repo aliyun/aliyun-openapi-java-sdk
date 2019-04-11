@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartLoggingRequest extends RpcAcsRequest<StartLoggingResponse> {
 	
 	public StartLoggingRequest() {
-		super("Actiontrail", "2017-12-04", "StartLogging");
+		super("Actiontrail", "2017-12-04", "StartLogging", "actiontrail");
 	}
 
 	private String name;
