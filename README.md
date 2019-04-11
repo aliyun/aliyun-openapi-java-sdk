@@ -114,6 +114,7 @@ public class Main {
 * [Proxy Configurations](./docs/6-Proxy-EN.md)
 * [Debug](./docs/7-Debug-EN.md)
 * [Log](./docs/8-Log-EN.md)
+* [Exception](./docs/9-Exception-EN.md)
 
 
 ## Issues

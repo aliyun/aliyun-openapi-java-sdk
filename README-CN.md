@@ -102,7 +102,7 @@ public class Main {
 * [代理配置](./docs/6-Proxy-CN.md)
 * [调试](./docs/7-Debug-CN.md)
 * [日志](./docs/8-Log-CN.md)
-
+* [异常](./docs/9-Exception-CN.md)
 
 ## 问题
 [提交 Issue](https://github.com/aliyun/aliyun-openapi-java-sdk/issues/new)，不符合指南的问题可能会立即关闭。

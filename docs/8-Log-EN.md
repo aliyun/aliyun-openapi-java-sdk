@@ -1,4 +1,4 @@
-[← Debug](7-Debug-EN.md) | Log[(中文)](8-Log-CN.md) |[Home →](../README.md)
+[← Debug](7-Debug-EN.md) | Log[(中文)](8-Log-CN.md) |[Exception →](9-Exception-EN.md)
 
 ***
 
@@ -56,4 +56,4 @@ The following variable substitutions are supported:
 | {time}     | Log Time |
 
 ***
-[← Debug](7-Debug-EN.md) | Log[(中文)](8-Log-CN.md) |[Home →](../README.md)
+[← Debug](7-Debug-EN.md) | Log[(中文)](8-Log-CN.md) |[Exception →](9-Exception-EN.md)

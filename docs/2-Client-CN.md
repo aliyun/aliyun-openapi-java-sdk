@@ -74,7 +74,7 @@ access_key_secret = bar
 role_arn = role_arn
 role_session_name = session_name   # 选填
 
-[client3]                          # 命名为 `client4` 的配置
+[client3]                          # 命名为 `client3` 的配置
 type = rsa_key_pair                # 认证方式为 rsa_key_pair
 public_key_id = publicKeyId        # Public Key ID
 private_key_file = /your/pk.pem    # Private Key 文件
