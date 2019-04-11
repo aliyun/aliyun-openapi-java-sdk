@@ -1,3 +1,15 @@
+2019-04-11 Version: 2.15.2
+1, Add some new apis to manage VoD's App, such as CreateAppInfo, GetAppInfos, ListAppInfos, UpdateAppInfo, DeleteAppInfo, AttachAppPolicyToIdentity, DetachAppPolicyFromIdentity, ListAppPoliciesForIdentity and MoveAppResource.
+2, Add new apis SetMessageCallback, GetMessageCallback and DeleteMessageCallback to manage message callback configuration.
+3, Add new apis GetAttachedMedia, UpdateAttachedMediaInfos and DeleteAttachedMedia to manage attached media information.
+4, Add a new api named DeleteMultipartUpload to clean up the fragmented files generated during the upload process.
+5, Add a new field named AppId to some apis supporting the VoD App feature, such as CreateUploadVideo, SearchMedia, GetVideoInfo, GetVideoInfos; Add new fields named NonExistVideoIds and ForbiddenVideoIds to DeleteVideo api response; Add a new field named ForbiddenVideoIds to UpdateVideoInfos api response.
+6, The Editing supports multi-region and multi-materials. Add new fields named StorageLocation and RegionId in Project struct to GetEditingProject api response; Add new fields named StorageLocation, RegionId and Duration in ProjectList struct to SearchEditingProject api response; Add a new field named MaterialType to GetEditingProjectMaterials api request.
+7, Add new fields named TranscodeFileRegular, Clip and Rotate to GetTranscodeTemplateGroup api response to support the custom file path feature.
+8, Add a new field named AttachedMedia to api response to support the attached media feature.
+9, Add a new field named SubTotal to GetCategories response to show the number of sub category.
+10, Add a new field named AdditionType to GetVideoInfo and GetVideoInfos api request to fetch the custom media info and the corresponding field is CustomMediaInfo.
+
 2019-02-28 Version: 2.15.1
 1, Add new apis named ListTranscodeTask, GetTranscodeTask, GetTranscodeSummary.
 2, Add the new field named TranscodeTemplateIds and ForceDelGroup to DeleteTranscodeTemplateGroup api request, and add a new field named NonExistTranscodeTemplateIds to the api response.

@@ -34,6 +34,8 @@ public class GetEditingProjectResponseUnmarshaller {
 		project.setTitle(context.stringValue("GetEditingProjectResponse.Project.Title"));
 		project.setTimeline(context.stringValue("GetEditingProjectResponse.Project.Timeline"));
 		project.setCoverURL(context.stringValue("GetEditingProjectResponse.Project.CoverURL"));
+		project.setStorageLocation(context.stringValue("GetEditingProjectResponse.Project.StorageLocation"));
+		project.setRegionId(context.stringValue("GetEditingProjectResponse.Project.RegionId"));
 		getEditingProjectResponse.setProject(project);
 	 
 	 	return getEditingProjectResponse;

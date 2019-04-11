@@ -30,6 +30,10 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 
 	private String resourceOwnerAccount;
 
+	private String cateIds;
+
+	private String icon;
+
 	private String description;
 
 	private String fileSize;
@@ -52,6 +56,8 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 
 	private Long cateId;
 
+	private String appId;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -71,6 +77,28 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getCateIds() {
+		return this.cateIds;
+	}
+
+	public void setCateIds(String cateIds) {
+		this.cateIds = cateIds;
+		if(cateIds != null){
+			putQueryParameter("CateIds", cateIds);
+		}
+	}
+
+	public String getIcon() {
+		return this.icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+		if(icon != null){
+			putQueryParameter("Icon", icon);
 		}
 	}
 
@@ -192,6 +220,17 @@ public class CreateUploadAttachedMediaRequest extends RpcAcsRequest<CreateUpload
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

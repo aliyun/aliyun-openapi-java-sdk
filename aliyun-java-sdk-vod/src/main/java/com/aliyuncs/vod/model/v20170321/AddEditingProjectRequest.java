@@ -28,6 +28,8 @@ public class AddEditingProjectRequest extends RpcAcsRequest<AddEditingProjectRes
 
 	private String coverURL;
 
+	private String division;
+
 	private String resourceOwnerId;
 
 	private String resourceOwnerAccount;
@@ -50,6 +52,17 @@ public class AddEditingProjectRequest extends RpcAcsRequest<AddEditingProjectRes
 		this.coverURL = coverURL;
 		if(coverURL != null){
 			putQueryParameter("CoverURL", coverURL);
+		}
+	}
+
+	public String getDivision() {
+		return this.division;
+	}
+
+	public void setDivision(String division) {
+		this.division = division;
+		if(division != null){
+			putQueryParameter("Division", division);
 		}
 	}
 

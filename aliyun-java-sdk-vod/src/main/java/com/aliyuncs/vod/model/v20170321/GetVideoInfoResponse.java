@@ -97,6 +97,10 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		private String customMediaInfo;
 
+		private String auditStatus;
+
+		private String appId;
+
 		private List<Thumbnail> thumbnailList;
 
 		private List<String> snapshots;
@@ -275,6 +279,22 @@ public class GetVideoInfoResponse extends AcsResponse {
 
 		public void setCustomMediaInfo(String customMediaInfo) {
 			this.customMediaInfo = customMediaInfo;
+		}
+
+		public String getAuditStatus() {
+			return this.auditStatus;
+		}
+
+		public void setAuditStatus(String auditStatus) {
+			this.auditStatus = auditStatus;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public List<Thumbnail> getThumbnailList() {

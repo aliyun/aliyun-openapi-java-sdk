@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.AttachedMedia;
+import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.AttachedMedia.Category;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Audio;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Audio.PlayInfo4;
 import com.aliyuncs.vod.model.v20170321.SearchMediaResponse.Media.Image;
@@ -68,6 +70,7 @@ public class SearchMediaResponseUnmarshaller {
 			video.setAuditAIResult(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditAIResult"));
 			video.setAuditTemplateId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditTemplateId"));
 			video.setCustomMediaInfo(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.CustomMediaInfo"));
+			video.setAppId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AppId"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].Video.Snapshots.Length"); j++) {
@@ -130,6 +133,7 @@ public class SearchMediaResponseUnmarshaller {
 			audio.setAuditAIResult(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.AuditAIResult"));
 			audio.setAuditTemplateId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.AuditTemplateId"));
 			audio.setCustomMediaInfo(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.CustomMediaInfo"));
+			audio.setAppId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Audio.AppId"));
 
 			List<String> snapshots1 = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].Audio.Snapshots.Length"); j++) {
@@ -182,7 +186,36 @@ public class SearchMediaResponseUnmarshaller {
 			image.setDescription(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.Description"));
 			image.setStorageLocation(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.StorageLocation"));
 			image.setRegionId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.RegionId"));
+			image.setAppId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].Image.AppId"));
 			media.setImage(image);
+
+			AttachedMedia attachedMedia = new AttachedMedia();
+			attachedMedia.setTitle(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Title"));
+			attachedMedia.setMediaId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.MediaId"));
+			attachedMedia.setExt(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Ext"));
+			attachedMedia.setCreationTime(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.CreationTime"));
+			attachedMedia.setModificationTime(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.ModificationTime"));
+			attachedMedia.setTags(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Tags"));
+			attachedMedia.setBusinessType(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.BusinessType"));
+			attachedMedia.setURL(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.URL"));
+			attachedMedia.setStatus(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Status"));
+			attachedMedia.setDescription(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Description"));
+			attachedMedia.setStorageLocation(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.StorageLocation"));
+			attachedMedia.setRegionId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.RegionId"));
+			attachedMedia.setAppId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.AppId"));
+
+			List<Category> categories = new ArrayList<Category>();
+			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Categories.Length"); j++) {
+				Category category = new Category();
+				category.setCateId(context.longValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Categories["+ j +"].CateId"));
+				category.setCateName(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Categories["+ j +"].CateName"));
+				category.setLevel(context.longValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Categories["+ j +"].Level"));
+				category.setParentId(context.longValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Categories["+ j +"].ParentId"));
+
+				categories.add(category);
+			}
+			attachedMedia.setCategories(categories);
+			media.setAttachedMedia(attachedMedia);
 
 			mediaList.add(media);
 		}

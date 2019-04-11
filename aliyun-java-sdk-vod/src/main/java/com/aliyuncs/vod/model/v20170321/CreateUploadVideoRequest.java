@@ -56,6 +56,8 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 
 	private Long cateId;
 
+	private String appId;
+
 	private String workflowId;
 
 	private String customMediaInfo;
@@ -222,6 +224,17 @@ public class CreateUploadVideoRequest extends RpcAcsRequest<CreateUploadVideoRes
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

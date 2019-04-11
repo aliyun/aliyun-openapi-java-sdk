@@ -14,6 +14,9 @@
 
 package com.aliyuncs.vod.transform.v20170321;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vod.model.v20170321.DeleteVideoResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,6 +26,18 @@ public class DeleteVideoResponseUnmarshaller {
 	public static DeleteVideoResponse unmarshall(DeleteVideoResponse deleteVideoResponse, UnmarshallerContext context) {
 		
 		deleteVideoResponse.setRequestId(context.stringValue("DeleteVideoResponse.RequestId"));
+
+		List<String> nonExistVideoIds = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DeleteVideoResponse.NonExistVideoIds.Length"); i++) {
+			nonExistVideoIds.add(context.stringValue("DeleteVideoResponse.NonExistVideoIds["+ i +"]"));
+		}
+		deleteVideoResponse.setNonExistVideoIds(nonExistVideoIds);
+
+		List<String> forbiddenVideoIds = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DeleteVideoResponse.ForbiddenVideoIds.Length"); i++) {
+			forbiddenVideoIds.add(context.stringValue("DeleteVideoResponse.ForbiddenVideoIds["+ i +"]"));
+		}
+		deleteVideoResponse.setForbiddenVideoIds(forbiddenVideoIds);
 	 
 	 	return deleteVideoResponse;
 	}

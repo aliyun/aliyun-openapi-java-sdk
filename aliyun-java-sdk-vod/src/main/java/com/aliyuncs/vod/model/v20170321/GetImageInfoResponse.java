@@ -68,6 +68,8 @@ public class GetImageInfoResponse extends AcsResponse {
 
 		private String status;
 
+		private String appId;
+
 		private Mezzanine mezzanine;
 
 		public String getImageId() {
@@ -156,6 +158,14 @@ public class GetImageInfoResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public Mezzanine getMezzanine() {

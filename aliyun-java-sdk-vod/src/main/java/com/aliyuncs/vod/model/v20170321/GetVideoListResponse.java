@@ -87,6 +87,8 @@ public class GetVideoListResponse extends AcsResponse {
 
 		private String storageLocation;
 
+		private String appId;
+
 		private List<String> snapshots;
 
 		public String getVideoId() {
@@ -207,6 +209,14 @@ public class GetVideoListResponse extends AcsResponse {
 
 		public void setStorageLocation(String storageLocation) {
 			this.storageLocation = storageLocation;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public List<String> getSnapshots() {

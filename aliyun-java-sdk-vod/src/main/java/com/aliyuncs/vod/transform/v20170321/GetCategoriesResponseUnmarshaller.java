@@ -35,6 +35,7 @@ public class GetCategoriesResponseUnmarshaller {
 		category1.setCateName(context.stringValue("GetCategoriesResponse.Category.CateName"));
 		category1.setLevel(context.longValue("GetCategoriesResponse.Category.Level"));
 		category1.setParentId(context.longValue("GetCategoriesResponse.Category.ParentId"));
+		category1.setType(context.stringValue("GetCategoriesResponse.Category.Type"));
 		getCategoriesResponse.setCategory1(category1);
 
 		List<Category> subCategories = new ArrayList<Category>();
@@ -44,6 +45,8 @@ public class GetCategoriesResponseUnmarshaller {
 			category.setCateName(context.stringValue("GetCategoriesResponse.SubCategories["+ i +"].CateName"));
 			category.setLevel(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].Level"));
 			category.setParentId(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].ParentId"));
+			category.setSubTotal(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].SubTotal"));
+			category.setType(context.stringValue("GetCategoriesResponse.SubCategories["+ i +"].Type"));
 
 			subCategories.add(category);
 		}

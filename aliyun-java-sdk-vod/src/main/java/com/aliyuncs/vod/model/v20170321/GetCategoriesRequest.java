@@ -40,6 +40,8 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 
 	private String ownerId;
 
+	private String type;
+
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -114,6 +116,17 @@ public class GetCategoriesRequest extends RpcAcsRequest<GetCategoriesResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

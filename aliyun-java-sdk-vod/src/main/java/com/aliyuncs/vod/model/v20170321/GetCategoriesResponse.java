@@ -75,6 +75,10 @@ public class GetCategoriesResponse extends AcsResponse {
 
 		private Long parentId;
 
+		private Long subTotal;
+
+		private String type;
+
 		public Long getCateId() {
 			return this.cateId;
 		}
@@ -105,6 +109,22 @@ public class GetCategoriesResponse extends AcsResponse {
 
 		public void setParentId(Long parentId) {
 			this.parentId = parentId;
+		}
+
+		public Long getSubTotal() {
+			return this.subTotal;
+		}
+
+		public void setSubTotal(Long subTotal) {
+			this.subTotal = subTotal;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 
@@ -118,6 +138,8 @@ public class GetCategoriesResponse extends AcsResponse {
 
 		private Long parentId;
 
+		private String type;
+
 		public Long getCateId() {
 			return this.cateId;
 		}
@@ -148,6 +170,14 @@ public class GetCategoriesResponse extends AcsResponse {
 
 		public void setParentId(Long parentId) {
 			this.parentId = parentId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

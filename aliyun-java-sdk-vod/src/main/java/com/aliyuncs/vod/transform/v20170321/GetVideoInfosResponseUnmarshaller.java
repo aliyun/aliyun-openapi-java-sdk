@@ -55,6 +55,8 @@ public class GetVideoInfosResponseUnmarshaller {
 			video.setPreprocessStatus(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].PreprocessStatus"));
 			video.setStorageLocation(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].StorageLocation"));
 			video.setRegionId(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].RegionId"));
+			video.setCustomMediaInfo(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CustomMediaInfo"));
+			video.setAppId(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].AppId"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("GetVideoInfosResponse.VideoList["+ i +"].Snapshots.Length"); j++) {

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vod.model.v20170321;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vod.transform.v20170321.DeleteVideoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,6 +27,10 @@ public class DeleteVideoResponse extends AcsResponse {
 
 	private String requestId;
 
+	private List<String> nonExistVideoIds;
+
+	private List<String> forbiddenVideoIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -34,8 +39,29 @@ public class DeleteVideoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<String> getNonExistVideoIds() {
+		return this.nonExistVideoIds;
+	}
+
+	public void setNonExistVideoIds(List<String> nonExistVideoIds) {
+		this.nonExistVideoIds = nonExistVideoIds;
+	}
+
+	public List<String> getForbiddenVideoIds() {
+		return this.forbiddenVideoIds;
+	}
+
+	public void setForbiddenVideoIds(List<String> forbiddenVideoIds) {
+		this.forbiddenVideoIds = forbiddenVideoIds;
+	}
+
 	@Override
 	public DeleteVideoResponse getInstance(UnmarshallerContext context) {
 		return	DeleteVideoResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

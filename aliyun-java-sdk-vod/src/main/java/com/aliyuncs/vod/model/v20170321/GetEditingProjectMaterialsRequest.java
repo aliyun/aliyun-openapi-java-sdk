@@ -28,6 +28,8 @@ public class GetEditingProjectMaterialsRequest extends RpcAcsRequest<GetEditingP
 
 	private String resourceOwnerId;
 
+	private String materialType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -46,6 +48,17 @@ public class GetEditingProjectMaterialsRequest extends RpcAcsRequest<GetEditingP
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getMaterialType() {
+		return this.materialType;
+	}
+
+	public void setMaterialType(String materialType) {
+		this.materialType = materialType;
+		if(materialType != null){
+			putQueryParameter("MaterialType", materialType);
 		}
 	}
 

@@ -145,6 +145,12 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 			private String templateName;
 
+			private String transcodeFileRegular;
+
+			private String clip;
+
+			private String rotate;
+
 			private List<String> watermarkIds;
 
 			public String getTranscodeTemplateId() {
@@ -249,6 +255,30 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 			public void setTemplateName(String templateName) {
 				this.templateName = templateName;
+			}
+
+			public String getTranscodeFileRegular() {
+				return this.transcodeFileRegular;
+			}
+
+			public void setTranscodeFileRegular(String transcodeFileRegular) {
+				this.transcodeFileRegular = transcodeFileRegular;
+			}
+
+			public String getClip() {
+				return this.clip;
+			}
+
+			public void setClip(String clip) {
+				this.clip = clip;
+			}
+
+			public String getRotate() {
+				return this.rotate;
+			}
+
+			public void setRotate(String rotate) {
+				this.rotate = rotate;
 			}
 
 			public List<String> getWatermarkIds() {

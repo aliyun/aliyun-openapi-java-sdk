@@ -71,6 +71,12 @@ public class SearchEditingProjectResponse extends AcsResponse {
 
 		private String coverURL;
 
+		private String storageLocation;
+
+		private String regionId;
+
+		private Float duration;
+
 		public String getProjectId() {
 			return this.projectId;
 		}
@@ -125,6 +131,46 @@ public class SearchEditingProjectResponse extends AcsResponse {
 
 		public void setCoverURL(String coverURL) {
 			this.coverURL = coverURL;
+		}
+
+		public String getStorageLocation() {
+			return this.storageLocation;
+		}
+
+		public void setStorageLocation(String storageLocation) {
+			this.storageLocation = storageLocation;
+		}
+
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Float getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(Float duration) {
+			this.duration = duration;
 		}
 	}
 

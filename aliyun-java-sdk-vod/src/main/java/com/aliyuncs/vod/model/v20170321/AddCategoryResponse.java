@@ -54,6 +54,8 @@ public class AddCategoryResponse extends AcsResponse {
 
 		private Long level;
 
+		private String type;
+
 		public Long getCateId() {
 			return this.cateId;
 		}
@@ -84,6 +86,14 @@ public class AddCategoryResponse extends AcsResponse {
 
 		public void setLevel(Long level) {
 			this.level = level;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

@@ -39,6 +39,9 @@ public class SearchEditingProjectResponseUnmarshaller {
 			project.setDescription(context.stringValue("SearchEditingProjectResponse.ProjectList["+ i +"].Description"));
 			project.setTitle(context.stringValue("SearchEditingProjectResponse.ProjectList["+ i +"].Title"));
 			project.setCoverURL(context.stringValue("SearchEditingProjectResponse.ProjectList["+ i +"].CoverURL"));
+			project.setStorageLocation(context.stringValue("SearchEditingProjectResponse.ProjectList["+ i +"].StorageLocation"));
+			project.setRegionId(context.stringValue("SearchEditingProjectResponse.ProjectList["+ i +"].RegionId"));
+			project.setDuration(context.floatValue("SearchEditingProjectResponse.ProjectList["+ i +"].Duration"));
 
 			projectList.add(project);
 		}

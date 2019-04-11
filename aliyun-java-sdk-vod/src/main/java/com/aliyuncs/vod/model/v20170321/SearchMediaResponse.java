@@ -79,6 +79,8 @@ public class SearchMediaResponse extends AcsResponse {
 
 		private Image image;
 
+		private AttachedMedia attachedMedia;
+
 		public String getMediaType() {
 			return this.mediaType;
 		}
@@ -125,6 +127,14 @@ public class SearchMediaResponse extends AcsResponse {
 
 		public void setImage(Image image) {
 			this.image = image;
+		}
+
+		public AttachedMedia getAttachedMedia() {
+			return this.attachedMedia;
+		}
+
+		public void setAttachedMedia(AttachedMedia attachedMedia) {
+			this.attachedMedia = attachedMedia;
 		}
 
 		public static class Video {
@@ -178,6 +188,8 @@ public class SearchMediaResponse extends AcsResponse {
 			private String auditTemplateId;
 
 			private String customMediaInfo;
+
+			private String appId;
 
 			private List<PlayInfo> playInfoList;
 
@@ -399,6 +411,14 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setCustomMediaInfo(String customMediaInfo) {
 				this.customMediaInfo = customMediaInfo;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
 			}
 
 			public List<PlayInfo> getPlayInfoList() {
@@ -629,6 +649,8 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String customMediaInfo;
 
+			private String appId;
+
 			private List<PlayInfo4> playInfoList3;
 
 			private List<String> snapshots1;
@@ -843,6 +865,14 @@ public class SearchMediaResponse extends AcsResponse {
 				this.customMediaInfo = customMediaInfo;
 			}
 
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
 			public List<PlayInfo4> getPlayInfoList3() {
 				return this.playInfoList3;
 			}
@@ -1051,6 +1081,8 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String regionId;
 
+			private String appId;
+
 			public String getTitle() {
 				return this.title;
 			}
@@ -1177,6 +1209,216 @@ public class SearchMediaResponse extends AcsResponse {
 			@Deprecated
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+		}
+
+		public static class AttachedMedia {
+
+			private String title;
+
+			private String mediaId;
+
+			private String ext;
+
+			private String creationTime;
+
+			private String modificationTime;
+
+			private String tags;
+
+			private String businessType;
+
+			private String uRL;
+
+			private String status;
+
+			private String description;
+
+			private String storageLocation;
+
+			private String regionId;
+
+			private String appId;
+
+			private List<Category> categories;
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getMediaId() {
+				return this.mediaId;
+			}
+
+			public void setMediaId(String mediaId) {
+				this.mediaId = mediaId;
+			}
+
+			public String getExt() {
+				return this.ext;
+			}
+
+			public void setExt(String ext) {
+				this.ext = ext;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getModificationTime() {
+				return this.modificationTime;
+			}
+
+			public void setModificationTime(String modificationTime) {
+				this.modificationTime = modificationTime;
+			}
+
+			public String getTags() {
+				return this.tags;
+			}
+
+			public void setTags(String tags) {
+				this.tags = tags;
+			}
+
+			public String getBusinessType() {
+				return this.businessType;
+			}
+
+			public void setBusinessType(String businessType) {
+				this.businessType = businessType;
+			}
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getStorageLocation() {
+				return this.storageLocation;
+			}
+
+			public void setStorageLocation(String storageLocation) {
+				this.storageLocation = storageLocation;
+			}
+
+			public String getBizRegionId() {
+				return this.regionId;
+			}
+
+			public void setBizRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			/**
+			 * @deprecated use getBizRegionId instead of this.
+			 */
+			@Deprecated
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			/**
+			 * @deprecated use setBizRegionId instead of this.
+			 */
+			@Deprecated
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getAppId() {
+				return this.appId;
+			}
+
+			public void setAppId(String appId) {
+				this.appId = appId;
+			}
+
+			public List<Category> getCategories() {
+				return this.categories;
+			}
+
+			public void setCategories(List<Category> categories) {
+				this.categories = categories;
+			}
+
+			public static class Category {
+
+				private Long cateId;
+
+				private String cateName;
+
+				private Long level;
+
+				private Long parentId;
+
+				public Long getCateId() {
+					return this.cateId;
+				}
+
+				public void setCateId(Long cateId) {
+					this.cateId = cateId;
+				}
+
+				public String getCateName() {
+					return this.cateName;
+				}
+
+				public void setCateName(String cateName) {
+					this.cateName = cateName;
+				}
+
+				public Long getLevel() {
+					return this.level;
+				}
+
+				public void setLevel(Long level) {
+					this.level = level;
+				}
+
+				public Long getParentId() {
+					return this.parentId;
+				}
+
+				public void setParentId(Long parentId) {
+					this.parentId = parentId;
+				}
 			}
 		}
 	}

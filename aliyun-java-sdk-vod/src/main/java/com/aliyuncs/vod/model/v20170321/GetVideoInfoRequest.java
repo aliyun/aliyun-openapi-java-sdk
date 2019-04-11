@@ -32,6 +32,8 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 
 	private String videoId;
 
+	private String additionType;
+
 	private Long ownerId;
 
 	public Long getResourceOwnerId() {
@@ -64,6 +66,17 @@ public class GetVideoInfoRequest extends RpcAcsRequest<GetVideoInfoResponse> {
 		this.videoId = videoId;
 		if(videoId != null){
 			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getAdditionType() {
+		return this.additionType;
+	}
+
+	public void setAdditionType(String additionType) {
+		this.additionType = additionType;
+		if(additionType != null){
+			putQueryParameter("AdditionType", additionType);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class GetImageInfoRequest extends RpcAcsRequest<GetImageInfoResponse> {
 
 	private String resourceOwnerAccount;
 
+	private String outputType;
+
 	private Long ownerId;
 
 	private Long authTimeout;
@@ -66,6 +68,17 @@ public class GetImageInfoRequest extends RpcAcsRequest<GetImageInfoResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOutputType() {
+		return this.outputType;
+	}
+
+	public void setOutputType(String outputType) {
+		this.outputType = outputType;
+		if(outputType != null){
+			putQueryParameter("OutputType", outputType);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 
 	private String ownerId;
 
+	private String type;
+
 	private Long parentId;
 
 	private String cateName;
@@ -66,6 +68,17 @@ public class AddCategoryRequest extends RpcAcsRequest<AddCategoryResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

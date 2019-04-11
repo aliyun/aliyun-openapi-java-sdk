@@ -32,6 +32,12 @@ public class UpdateVideoInfosResponseUnmarshaller {
 			nonExistVideoIds.add(context.stringValue("UpdateVideoInfosResponse.NonExistVideoIds["+ i +"]"));
 		}
 		updateVideoInfosResponse.setNonExistVideoIds(nonExistVideoIds);
+
+		List<String> forbiddenVideoIds = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("UpdateVideoInfosResponse.ForbiddenVideoIds.Length"); i++) {
+			forbiddenVideoIds.add(context.stringValue("UpdateVideoInfosResponse.ForbiddenVideoIds["+ i +"]"));
+		}
+		updateVideoInfosResponse.setForbiddenVideoIds(forbiddenVideoIds);
 	 
 	 	return updateVideoInfosResponse;
 	}

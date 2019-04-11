@@ -50,6 +50,8 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 
 	private Long cateId;
 
+	private String appId;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -179,6 +181,17 @@ public class CreateUploadImageRequest extends RpcAcsRequest<CreateUploadImageRes
 		this.cateId = cateId;
 		if(cateId != null){
 			putQueryParameter("CateId", cateId.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
