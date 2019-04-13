@@ -25,7 +25,6 @@ public class PutCustomEventResponseUnmarshaller {
 		putCustomEventResponse.setRequestId(context.stringValue("PutCustomEventResponse.RequestId"));
 		putCustomEventResponse.setCode(context.stringValue("PutCustomEventResponse.Code"));
 		putCustomEventResponse.setMessage(context.stringValue("PutCustomEventResponse.Message"));
-		putCustomEventResponse.setData(context.stringValue("PutCustomEventResponse.Data"));
 	 
 	 	return putCustomEventResponse;
 	}

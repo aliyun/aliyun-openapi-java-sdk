@@ -1,3 +1,6 @@
+2019-04-13 Version: 7.0.2
+1, Adding Modified Instance Management Interface.
+
 2019-04-11 Version: 7.0.1
 1, Fixed inconsistency between input and output parameters of alarm rule list interface.
 

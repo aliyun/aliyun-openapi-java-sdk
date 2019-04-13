@@ -32,15 +32,11 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 
 	private Integer pageSize;
 
-	private String type;
-
 	private String keyword;
 
 	private String groupName;
 
 	private Integer pageNumber;
-
-	private String bindUrls;
 
 	public Boolean getSelectContactGroups() {
 		return this.selectContactGroups;
@@ -75,17 +71,6 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	public String getKeyword() {
 		return this.keyword;
 	}
@@ -116,17 +101,6 @@ public class DescribeMonitorGroupsRequest extends RpcAcsRequest<DescribeMonitorG
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getBindUrls() {
-		return this.bindUrls;
-	}
-
-	public void setBindUrls(String bindUrls) {
-		this.bindUrls = bindUrls;
-		if(bindUrls != null){
-			putQueryParameter("BindUrls", bindUrls);
 		}
 	}
 

@@ -15,28 +15,24 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20190101.PutCustomEventResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20190101.CreateMonitorAgentProcessResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PutCustomEventResponse extends AcsResponse {
-
-	private String requestId;
+public class CreateMonitorAgentProcessResponse extends AcsResponse {
 
 	private String code;
 
 	private String message;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Boolean success;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
+
+	private Long id;
 
 	public String getCode() {
 		return this.code;
@@ -54,8 +50,32 @@ public class PutCustomEventResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	@Override
-	public PutCustomEventResponse getInstance(UnmarshallerContext context) {
-		return	PutCustomEventResponseUnmarshaller.unmarshall(this, context);
+	public CreateMonitorAgentProcessResponse getInstance(UnmarshallerContext context) {
+		return	CreateMonitorAgentProcessResponseUnmarshaller.unmarshall(this, context);
 	}
 }

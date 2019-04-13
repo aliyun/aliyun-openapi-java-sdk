@@ -15,18 +15,20 @@
 package com.aliyuncs.cms.model.v20190101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cms.transform.v20190101.PutCustomEventResponseUnmarshaller;
+import com.aliyuncs.cms.transform.v20190101.ModifyMonitorGroupInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PutCustomEventResponse extends AcsResponse {
+public class ModifyMonitorGroupInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
+	private Boolean success;
+
+	private Integer code;
 
 	private String message;
 
@@ -38,11 +40,19 @@ public class PutCustomEventResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getCode() {
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(Integer code) {
 		this.code = code;
 	}
 
@@ -55,7 +65,7 @@ public class PutCustomEventResponse extends AcsResponse {
 	}
 
 	@Override
-	public PutCustomEventResponse getInstance(UnmarshallerContext context) {
-		return	PutCustomEventResponseUnmarshaller.unmarshall(this, context);
+	public ModifyMonitorGroupInstancesResponse getInstance(UnmarshallerContext context) {
+		return	ModifyMonitorGroupInstancesResponseUnmarshaller.unmarshall(this, context);
 	}
 }
