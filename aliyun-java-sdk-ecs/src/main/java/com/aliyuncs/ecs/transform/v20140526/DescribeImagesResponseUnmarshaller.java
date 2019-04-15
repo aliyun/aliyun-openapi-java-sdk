@@ -47,6 +47,7 @@ public class DescribeImagesResponseUnmarshaller {
 			image.setIsSupportIoOptimized(context.booleanValue("DescribeImagesResponse.Images["+ i +"].IsSupportIoOptimized"));
 			image.setIsSupportCloudinit(context.booleanValue("DescribeImagesResponse.Images["+ i +"].IsSupportCloudinit"));
 			image.setOSName(context.stringValue("DescribeImagesResponse.Images["+ i +"].OSName"));
+			image.setOSNameEn(context.stringValue("DescribeImagesResponse.Images["+ i +"].OSNameEn"));
 			image.setArchitecture(context.stringValue("DescribeImagesResponse.Images["+ i +"].Architecture"));
 			image.setStatus(context.stringValue("DescribeImagesResponse.Images["+ i +"].Status"));
 			image.setProductCode(context.stringValue("DescribeImagesResponse.Images["+ i +"].ProductCode"));

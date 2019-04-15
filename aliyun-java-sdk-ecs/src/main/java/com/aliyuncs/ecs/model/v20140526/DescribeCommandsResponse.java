@@ -91,6 +91,8 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private Long timeout;
 
+		private String creationTime;
+
 		public String getCommandId() {
 			return this.commandId;
 		}
@@ -145,6 +147,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		public void setTimeout(Long timeout) {
 			this.timeout = timeout;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 	}
 

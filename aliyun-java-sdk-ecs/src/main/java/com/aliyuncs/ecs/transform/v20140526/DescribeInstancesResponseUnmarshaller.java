@@ -46,6 +46,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setDescription(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Description"));
 			instance.setImageId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ImageId"));
 			instance.setOSName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSName"));
+			instance.setOSNameEn(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSNameEn"));
 			instance.setOSType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSType"));
 			instance.setRegionId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].RegionId"));
 			instance.setZoneId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ZoneId"));

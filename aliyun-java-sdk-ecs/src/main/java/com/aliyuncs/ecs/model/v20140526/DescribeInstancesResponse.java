@@ -87,6 +87,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String oSName;
 
+		private String oSNameEn;
+
 		private String oSType;
 
 		private String regionId;
@@ -223,6 +225,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setOSName(String oSName) {
 			this.oSName = oSName;
+		}
+
+		public String getOSNameEn() {
+			return this.oSNameEn;
+		}
+
+		public void setOSNameEn(String oSNameEn) {
+			this.oSNameEn = oSNameEn;
 		}
 
 		public String getOSType() {

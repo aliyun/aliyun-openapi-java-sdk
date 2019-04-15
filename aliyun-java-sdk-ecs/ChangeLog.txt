@@ -1,3 +1,6 @@
+2019-04-15 Version: 4.16.6
+1, add arns parameter to CreateDisk/CreateInstance API in order to support disk encryption by performing a sts role play.
+
 2019-04-09 Version: 4.16.5
 1, support service account management networkInterface function.
 

@@ -123,6 +123,8 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		private String oSName;
 
+		private String oSNameEn;
+
 		private String architecture;
 
 		private String status;
@@ -227,6 +229,14 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setOSName(String oSName) {
 			this.oSName = oSName;
+		}
+
+		public String getOSNameEn() {
+			return this.oSNameEn;
+		}
+
+		public void setOSNameEn(String oSNameEn) {
+			this.oSNameEn = oSNameEn;
 		}
 
 		public String getArchitecture() {

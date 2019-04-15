@@ -41,6 +41,7 @@ public class DescribeCommandsResponseUnmarshaller {
 			command.setCommandContent(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandContent"));
 			command.setWorkingDir(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].WorkingDir"));
 			command.setTimeout(context.longValue("DescribeCommandsResponse.Commands["+ i +"].Timeout"));
+			command.setCreationTime(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].CreationTime"));
 
 			commands.add(command);
 		}

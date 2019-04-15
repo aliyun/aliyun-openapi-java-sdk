@@ -101,6 +101,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String instanceType;
 
+	private List<Arn> arns;
+
 	private String instanceChargeType;
 
 	private String deploymentSetId;
@@ -537,6 +539,21 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public List<Arn> getArns() {
+		return this.arns;
+	}
+
+	public void setArns(List<Arn> arns) {
+		this.arns = arns;	
+		if (arns != null) {
+			for (int depth1 = 0; depth1 < arns.size(); depth1++) {
+				putQueryParameter("Arn." + (depth1 + 1) + ".Rolearn" , arns.get(depth1).getRolearn());
+				putQueryParameter("Arn." + (depth1 + 1) + ".RoleType" , arns.get(depth1).getRoleType());
+				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
+			}
+		}	
+	}
+
 	public String getInstanceChargeType() {
 		return this.instanceChargeType;
 	}
@@ -710,6 +727,39 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 		public void setKey(String key) {
 			this.key = key;
+		}
+	}
+
+	public static class Arn {
+
+		private String rolearn;
+
+		private String roleType;
+
+		private Long assumeRoleFor;
+
+		public String getRolearn() {
+			return this.rolearn;
+		}
+
+		public void setRolearn(String rolearn) {
+			this.rolearn = rolearn;
+		}
+
+		public String getRoleType() {
+			return this.roleType;
+		}
+
+		public void setRoleType(String roleType) {
+			this.roleType = roleType;
+		}
+
+		public Long getAssumeRoleFor() {
+			return this.assumeRoleFor;
+		}
+
+		public void setAssumeRoleFor(Long assumeRoleFor) {
+			this.assumeRoleFor = assumeRoleFor;
 		}
 	}
 
