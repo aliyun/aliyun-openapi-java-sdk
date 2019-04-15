@@ -1,19 +1,22 @@
 package com.aliyuncs.http;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.utils.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.HttpHost;
-
-import javax.xml.bind.DatatypeConverter;
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.net.MalformedURLException;
 import java.net.Proxy;
 import java.net.SocketAddress;
 import java.net.URL;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import javax.xml.bind.DatatypeConverter;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.HttpHost;
+
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.utils.StringUtils;
 
 public class HttpUtil {
 
@@ -45,16 +48,32 @@ public class HttpUtil {
         HttpUtil.isHttpContentDebug = isHttpContentDebug;
     }
 
-    public static String debugHttpRequest(HttpRequest request) throws ClientException {
+    public static String debugHttpRequest(HttpRequest request) {
         if (isHttpDebug) {
-            String protocol = request.getSysUrl().split("://")[0].toUpperCase() + "/1.1";
-            StringBuilder debugString = new StringBuilder("> " + request.getSysMethod() + " " + protocol + "\n> ");
+            StringBuilder debugString = new StringBuilder();
+
+            String sysUrl = request.getSysUrl();
+            URL url = null;
+            try {
+                url = new URL(sysUrl);
+                debugString.append("> " + request.getSysMethod() + " " + url.getProtocol().toUpperCase() + "/1.1\n> ");
+                debugString.append("Host : " + url.getHost() + "\n> ");
+            } catch (MalformedURLException e) {
+                debugString.append("> " + request.getSysMethod() + " " + sysUrl + "\n> ");
+                debugString.append("Host : " + sysUrl + "\n> ");
+            }
             Map<String, String> requestHeaders = request.getSysHeaders();
             for (Entry<String, String> entry : requestHeaders.entrySet()) {
                 debugString.append(entry.getKey() + " : " + entry.getValue() + "\n> ");
             }
+            debugString.append("Request URL : " + sysUrl + "\n> ");
             if (isHttpContentDebug) {
-                debugString.append("\n" + request.getHttpContentString());
+                try {
+                    debugString.append("\n" + request.getHttpContentString());
+                } catch (ClientException e) {
+                    debugString.append("\n" + "Can not parse response due to unsupported encoding : " + request
+                            .getSysEncoding());
+                }
             }
             log.info("\n" + debugString);
             return debugString.toString();
@@ -63,16 +82,22 @@ public class HttpUtil {
         }
     }
 
-    public static String debugHttpResponse(HttpResponse response) throws ClientException {
+    public static String debugHttpResponse(HttpResponse response) {
         if (isHttpDebug) {
+            StringBuilder debugString = new StringBuilder();
             String protocol = "HTTP/1.1";
-            StringBuilder debugString = new StringBuilder("< " + protocol + " " + response.getStatus() + "\n< ");
+            debugString.append("< " + protocol + " " + response.getStatus() + "\n< ");
             Map<String, String> responseHeaders = response.getSysHeaders();
             for (Entry<String, String> entry : responseHeaders.entrySet()) {
                 debugString.append(entry.getKey() + " : " + entry.getValue() + "\n< ");
             }
             if (isHttpContentDebug) {
-                debugString.append("\n" + response.getHttpContentString());
+                try {
+                    debugString.append("\n" + response.getHttpContentString());
+                } catch (ClientException e) {
+                    debugString.append("\n" + "Can not parse response due to unsupported encoding : " + response
+                            .getSysEncoding());
+                }
             }
             log.info("\n" + debugString);
             return debugString.toString();
@@ -110,7 +135,8 @@ public class HttpUtil {
         return proxy;
     }
 
-    public static HttpHost getApacheProxy(String clientProxy, String envProxy, HttpRequest request) throws ClientException {
+    public static HttpHost getApacheProxy(String clientProxy, String envProxy, HttpRequest request)
+            throws ClientException {
         try {
             String proxyStr = (!StringUtils.isEmpty(clientProxy) ? clientProxy : envProxy);
             if (StringUtils.isEmpty(proxyStr)) {
