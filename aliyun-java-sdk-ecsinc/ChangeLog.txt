@@ -1,0 +1,3 @@
+2019-04-15 Version: 3.1.15
+1, add toEncrypted，kmsKeyId, arnsBase64 in copyImageAtTarget 
+
