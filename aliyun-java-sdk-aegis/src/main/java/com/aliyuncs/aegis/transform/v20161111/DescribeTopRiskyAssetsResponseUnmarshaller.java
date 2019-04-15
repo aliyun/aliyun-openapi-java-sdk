@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.aegis.model.v20161111.DescribeTopRiskyAssetsResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeTopRiskyAssetsResponse.TopRiskyAsset;
 import com.aliyuncs.aegis.model.v20161111.DescribeTopRiskyAssetsResponse.TopRiskyAsset.AssetInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -15,7 +15,6 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeSecurityStatInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -102,6 +101,12 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 
 		private List<String> levelsOn;
 
+		private List<String> seriousList;
+
+		private List<String> suspiciousList;
+
+		private List<String> remindList;
+
 		public Integer getSeriousCount() {
 			return this.seriousCount;
 		}
@@ -157,6 +162,30 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 		public void setLevelsOn(List<String> levelsOn) {
 			this.levelsOn = levelsOn;
 		}
+
+		public List<String> getSeriousList() {
+			return this.seriousList;
+		}
+
+		public void setSeriousList(List<String> seriousList) {
+			this.seriousList = seriousList;
+		}
+
+		public List<String> getSuspiciousList() {
+			return this.suspiciousList;
+		}
+
+		public void setSuspiciousList(List<String> suspiciousList) {
+			this.suspiciousList = suspiciousList;
+		}
+
+		public List<String> getRemindList() {
+			return this.remindList;
+		}
+
+		public void setRemindList(List<String> remindList) {
+			this.remindList = remindList;
+		}
 	}
 
 	public static class AttackEvent {
@@ -207,6 +236,12 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 		private List<String> valueArray4;
 
 		private List<String> levelsOn5;
+
+		private List<String> highList;
+
+		private List<String> mediumList;
+
+		private List<String> lowList;
 
 		public Integer getMediumCount() {
 			return this.mediumCount;
@@ -263,6 +298,30 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 		public void setLevelsOn5(List<String> levelsOn5) {
 			this.levelsOn5 = levelsOn5;
 		}
+
+		public List<String> getHighList() {
+			return this.highList;
+		}
+
+		public void setHighList(List<String> highList) {
+			this.highList = highList;
+		}
+
+		public List<String> getMediumList() {
+			return this.mediumList;
+		}
+
+		public void setMediumList(List<String> mediumList) {
+			this.mediumList = mediumList;
+		}
+
+		public List<String> getLowList() {
+			return this.lowList;
+		}
+
+		public void setLowList(List<String> lowList) {
+			this.lowList = lowList;
+		}
 	}
 
 	public static class Vulnerability {
@@ -280,6 +339,12 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 		private List<String> valueArray7;
 
 		private List<String> levelsOn8;
+
+		private List<String> nntfList;
+
+		private List<String> asapList;
+
+		private List<String> laterList;
 
 		public Integer getNntfCount() {
 			return this.nntfCount;
@@ -335,6 +400,30 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 
 		public void setLevelsOn8(List<String> levelsOn8) {
 			this.levelsOn8 = levelsOn8;
+		}
+
+		public List<String> getNntfList() {
+			return this.nntfList;
+		}
+
+		public void setNntfList(List<String> nntfList) {
+			this.nntfList = nntfList;
+		}
+
+		public List<String> getAsapList() {
+			return this.asapList;
+		}
+
+		public void setAsapList(List<String> asapList) {
+			this.asapList = asapList;
+		}
+
+		public List<String> getLaterList() {
+			return this.laterList;
+		}
+
+		public void setLaterList(List<String> laterList) {
+			this.laterList = laterList;
 		}
 	}
 

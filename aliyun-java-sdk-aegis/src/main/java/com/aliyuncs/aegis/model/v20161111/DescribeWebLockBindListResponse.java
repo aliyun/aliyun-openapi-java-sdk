@@ -15,7 +15,6 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeWebLockBindListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -154,10 +153,26 @@ public class DescribeWebLockBindListResponse extends AcsResponse {
 			this.serviceStatus = serviceStatus;
 		}
 
+		public String getBizServiceCode() {
+			return this.serviceCode;
+		}
+
+		public void setBizServiceCode(String serviceCode) {
+			this.serviceCode = serviceCode;
+		}
+
+		/**
+		 * @deprecated use getBizServiceCode instead of this.
+		 */
+		@Deprecated
 		public String getServiceCode() {
 			return this.serviceCode;
 		}
 
+		/**
+		 * @deprecated use setBizServiceCode instead of this.
+		 */
+		@Deprecated
 		public void setServiceCode(String serviceCode) {
 			this.serviceCode = serviceCode;
 		}

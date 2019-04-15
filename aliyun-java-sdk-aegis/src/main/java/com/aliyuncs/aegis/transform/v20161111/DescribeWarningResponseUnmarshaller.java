@@ -21,7 +21,6 @@ import com.aliyuncs.aegis.model.v20161111.DescribeWarningResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeWarningResponse.Warning;
 import com.aliyuncs.aegis.model.v20161111.DescribeWarningResponse.Warning.Detail;
 import com.aliyuncs.aegis.model.v20161111.DescribeWarningResponse.Warning.Detail.DetailItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

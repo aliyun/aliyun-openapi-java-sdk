@@ -29,6 +29,7 @@ public class DescribeLogShipperStatusResponseUnmarshaller {
 		logShipperStatus.setBuyStatus(context.stringValue("DescribeLogShipperStatusResponse.LogShipperStatus.BuyStatus"));
 		logShipperStatus.setAuthStatus(context.stringValue("DescribeLogShipperStatusResponse.LogShipperStatus.AuthStatus"));
 		logShipperStatus.setOpenStatus(context.stringValue("DescribeLogShipperStatusResponse.LogShipperStatus.OpenStatus"));
+		logShipperStatus.setSlsServiceStatus(context.stringValue("DescribeLogShipperStatusResponse.LogShipperStatus.SlsServiceStatus"));
 		describeLogShipperStatusResponse.setLogShipperStatus(logShipperStatus);
 	 
 	 	return describeLogShipperStatusResponse;

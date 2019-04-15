@@ -30,6 +30,8 @@ public class CreateOrUpdateRuleRequest extends RpcAcsRequest<CreateOrUpdateRuleR
 
 	private String sourceIp;
 
+	private String statisticsRules;
+
 	private Long dataSourceId;
 
 	private String description;
@@ -41,6 +43,8 @@ public class CreateOrUpdateRuleRequest extends RpcAcsRequest<CreateOrUpdateRuleR
 	private String lang;
 
 	private String expressions;
+
+	private String actions;
 
 	private String ruleGroupIds;
 
@@ -63,6 +67,17 @@ public class CreateOrUpdateRuleRequest extends RpcAcsRequest<CreateOrUpdateRuleR
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getStatisticsRules() {
+		return this.statisticsRules;
+	}
+
+	public void setStatisticsRules(String statisticsRules) {
+		this.statisticsRules = statisticsRules;
+		if(statisticsRules != null){
+			putQueryParameter("StatisticsRules", statisticsRules);
 		}
 	}
 
@@ -129,6 +144,17 @@ public class CreateOrUpdateRuleRequest extends RpcAcsRequest<CreateOrUpdateRuleR
 		this.expressions = expressions;
 		if(expressions != null){
 			putQueryParameter("Expressions", expressions);
+		}
+	}
+
+	public String getActions() {
+		return this.actions;
+	}
+
+	public void setActions(String actions) {
+		this.actions = actions;
+		if(actions != null){
+			putQueryParameter("Actions", actions);
 		}
 	}
 

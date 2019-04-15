@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.aegis.model.v20161111.DescribeSuspiciousEventsResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeSuspiciousEventsResponse.LogListItem;
 import com.aliyuncs.aegis.model.v20161111.DescribeSuspiciousEventsResponse.LogListItem.DetailListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

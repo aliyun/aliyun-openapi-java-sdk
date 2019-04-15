@@ -28,19 +28,33 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 
 	private String statusList;
 
-	private String sourceIp;
-
 	private String level;
 
-	private String name;
+	private String resource;
 
-	private Integer pageSize;
+	private String remark;
 
 	private String dealed;
 
 	private Integer currentPage;
 
 	private String type;
+
+	private Long createTsStart;
+
+	private String batchName;
+
+	private String aliasName;
+
+	private String sourceIp;
+
+	private String name;
+
+	private Integer pageSize;
+
+	private String lang;
+
+	private Long createTsEnd;
 
 	private String necessity;
 
@@ -57,17 +71,6 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 		}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
 	public String getLevel() {
 		return this.level;
 	}
@@ -79,25 +82,25 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getResource() {
+		return this.resource;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setResource(String resource) {
+		this.resource = resource;
+		if(resource != null){
+			putQueryParameter("Resource", resource);
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getRemark() {
+		return this.remark;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 
@@ -131,6 +134,94 @@ public class DescribeVulListRequest extends RpcAcsRequest<DescribeVulListRespons
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public Long getCreateTsStart() {
+		return this.createTsStart;
+	}
+
+	public void setCreateTsStart(Long createTsStart) {
+		this.createTsStart = createTsStart;
+		if(createTsStart != null){
+			putQueryParameter("CreateTsStart", createTsStart.toString());
+		}
+	}
+
+	public String getBatchName() {
+		return this.batchName;
+	}
+
+	public void setBatchName(String batchName) {
+		this.batchName = batchName;
+		if(batchName != null){
+			putQueryParameter("BatchName", batchName);
+		}
+	}
+
+	public String getAliasName() {
+		return this.aliasName;
+	}
+
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Long getCreateTsEnd() {
+		return this.createTsEnd;
+	}
+
+	public void setCreateTsEnd(Long createTsEnd) {
+		this.createTsEnd = createTsEnd;
+		if(createTsEnd != null){
+			putQueryParameter("CreateTsEnd", createTsEnd.toString());
 		}
 	}
 

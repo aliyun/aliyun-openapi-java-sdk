@@ -21,7 +21,6 @@ import com.aliyuncs.aegis.model.v20161111.DescribeDataSourceResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeDataSourceResponse.Data;
 import com.aliyuncs.aegis.model.v20161111.DescribeDataSourceResponse.Data.MetaDataField;
 import com.aliyuncs.aegis.model.v20161111.DescribeDataSourceResponse.Data.MetaDataField.Operator;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

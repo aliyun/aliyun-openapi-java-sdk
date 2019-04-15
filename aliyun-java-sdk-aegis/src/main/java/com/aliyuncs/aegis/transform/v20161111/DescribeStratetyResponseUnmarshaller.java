@@ -18,9 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeStratetyResponse;
-import com.aliyuncs.aegis.model.v20161111.DescribeStratetyResponse.StrategiesItem;
-import com.aliyuncs.aegis.model.v20161111.DescribeStratetyResponse.StrategiesItem.ConfigTarget;
-import java.util.Map;
+import com.aliyuncs.aegis.model.v20161111.DescribeStratetyResponse.Strategy;
+import com.aliyuncs.aegis.model.v20161111.DescribeStratetyResponse.Strategy.ConfigTarget;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,18 +29,19 @@ public class DescribeStratetyResponseUnmarshaller {
 		
 		describeStratetyResponse.setRequestId(context.stringValue("DescribeStratetyResponse.RequestId"));
 
-		List<StrategiesItem> strategies = new ArrayList<StrategiesItem>();
+		List<Strategy> strategies = new ArrayList<Strategy>();
 		for (int i = 0; i < context.lengthValue("DescribeStratetyResponse.Strategies.Length"); i++) {
-			StrategiesItem strategiesItem = new StrategiesItem();
-			strategiesItem.setCycleDays(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].CycleDays"));
-			strategiesItem.setId(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].Id"));
-			strategiesItem.setCycleStartTime(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].CycleStartTime"));
-			strategiesItem.setType(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].Type"));
-			strategiesItem.setName(context.stringValue("DescribeStratetyResponse.Strategies["+ i +"].Name"));
-			strategiesItem.setRiskCount(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].RiskCount"));
-			strategiesItem.setEcsCount(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].EcsCount"));
-			strategiesItem.setExecStatus(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].ExecStatus"));
-			strategiesItem.setProcessRate(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].ProcessRate"));
+			Strategy strategy = new Strategy();
+			strategy.setCycleDays(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].CycleDays"));
+			strategy.setId(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].Id"));
+			strategy.setCycleStartTime(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].CycleStartTime"));
+			strategy.setType(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].Type"));
+			strategy.setName(context.stringValue("DescribeStratetyResponse.Strategies["+ i +"].Name"));
+			strategy.setRiskCount(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].RiskCount"));
+			strategy.setEcsCount(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].EcsCount"));
+			strategy.setExecStatus(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].ExecStatus"));
+			strategy.setProcessRate(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].ProcessRate"));
+			strategy.setPassRate(context.integerValue("DescribeStratetyResponse.Strategies["+ i +"].PassRate"));
 
 			List<ConfigTarget> configTargets = new ArrayList<ConfigTarget>();
 			for (int j = 0; j < context.lengthValue("DescribeStratetyResponse.Strategies["+ i +"].ConfigTargets.Length"); j++) {
@@ -52,9 +52,9 @@ public class DescribeStratetyResponseUnmarshaller {
 
 				configTargets.add(configTarget);
 			}
-			strategiesItem.setConfigTargets(configTargets);
+			strategy.setConfigTargets(configTargets);
 
-			strategies.add(strategiesItem);
+			strategies.add(strategy);
 		}
 		describeStratetyResponse.setStrategies(strategies);
 	 

@@ -14,6 +14,9 @@
 
 package com.aliyuncs.aegis.transform.v20161111;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.aegis.model.v20161111.DescribeAssetDetailByUuidResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeAssetDetailByUuidResponse.AssetDetail;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -39,6 +42,31 @@ public class DescribeAssetDetailByUuidResponseUnmarshaller {
 		assetDetail.setRegionName(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.RegionName"));
 		assetDetail.setTag(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.Tag"));
 		assetDetail.setGroupTrace(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.GroupTrace"));
+		assetDetail.setCpu(context.integerValue("DescribeAssetDetailByUuidResponse.AssetDetail.Cpu"));
+		assetDetail.setCpuInfo(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.CpuInfo"));
+		assetDetail.setKernel(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.Kernel"));
+		assetDetail.setOsDetail(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.OsDetail"));
+		assetDetail.setMem(context.integerValue("DescribeAssetDetailByUuidResponse.AssetDetail.Mem"));
+		assetDetail.setSysInfo(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.SysInfo"));
+		assetDetail.setHostName(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.HostName"));
+
+		List<String> ipList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeAssetDetailByUuidResponse.AssetDetail.IpList.Length"); i++) {
+			ipList.add(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.IpList["+ i +"]"));
+		}
+		assetDetail.setIpList(ipList);
+
+		List<String> macList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeAssetDetailByUuidResponse.AssetDetail.MacList.Length"); i++) {
+			macList.add(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.MacList["+ i +"]"));
+		}
+		assetDetail.setMacList(macList);
+
+		List<String> diskInfoList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeAssetDetailByUuidResponse.AssetDetail.DiskInfoList.Length"); i++) {
+			diskInfoList.add(context.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.DiskInfoList["+ i +"]"));
+		}
+		assetDetail.setDiskInfoList(diskInfoList);
 		describeAssetDetailByUuidResponse.setAssetDetail(assetDetail);
 	 
 	 	return describeAssetDetailByUuidResponse;

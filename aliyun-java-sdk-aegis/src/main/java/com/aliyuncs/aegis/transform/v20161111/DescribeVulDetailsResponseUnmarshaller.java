@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.aegis.model.v20161111.DescribeVulDetailsResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeVulDetailsResponse.Cve;
 import com.aliyuncs.aegis.model.v20161111.DescribeVulDetailsResponse.Cve.Classify;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

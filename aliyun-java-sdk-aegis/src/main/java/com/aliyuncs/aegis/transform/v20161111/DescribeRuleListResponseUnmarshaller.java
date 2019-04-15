@@ -21,7 +21,6 @@ import com.aliyuncs.aegis.model.v20161111.DescribeRuleListResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeRuleListResponse.PageInfo;
 import com.aliyuncs.aegis.model.v20161111.DescribeRuleListResponse.RulesItem;
 import com.aliyuncs.aegis.model.v20161111.DescribeRuleListResponse.RulesItem.RuleGroup;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +48,10 @@ public class DescribeRuleListResponseUnmarshaller {
 			rulesItem.setId(context.integerValue("DescribeRuleListResponse.Rules["+ i +"].Id"));
 			rulesItem.setDataSourceId(context.integerValue("DescribeRuleListResponse.Rules["+ i +"].DataSourceId"));
 			rulesItem.setExpressions(context.stringValue("DescribeRuleListResponse.Rules["+ i +"].Expressions"));
+			rulesItem.setActions(context.stringValue("DescribeRuleListResponse.Rules["+ i +"].Actions"));
+			rulesItem.setStatisticsRules(context.stringValue("DescribeRuleListResponse.Rules["+ i +"].StatisticsRules"));
+			rulesItem.setNeedGroup(context.booleanValue("DescribeRuleListResponse.Rules["+ i +"].NeedGroup"));
+			rulesItem.setStatusCode(context.stringValue("DescribeRuleListResponse.Rules["+ i +"].StatusCode"));
 
 			List<RuleGroup> ruleGroups = new ArrayList<RuleGroup>();
 			for (int j = 0; j < context.lengthValue("DescribeRuleListResponse.Rules["+ i +"].RuleGroups.Length"); j++) {

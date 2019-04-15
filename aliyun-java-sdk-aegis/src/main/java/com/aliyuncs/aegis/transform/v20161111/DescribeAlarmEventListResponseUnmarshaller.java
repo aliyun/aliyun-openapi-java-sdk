@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.aegis.model.v20161111.DescribeAlarmEventListResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeAlarmEventListResponse.PageInfo;
 import com.aliyuncs.aegis.model.v20161111.DescribeAlarmEventListResponse.SuspEventsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +56,9 @@ public class DescribeAlarmEventListResponseUnmarshaller {
 			suspEventsItem.setSaleVersion(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].SaleVersion"));
 			suspEventsItem.setDataSource(context.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].DataSource"));
 			suspEventsItem.setCanCancelFault(context.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].CanCancelFault"));
+			suspEventsItem.setDealed(context.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Dealed"));
+			suspEventsItem.setGmtModified(context.longValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].GmtModified"));
+			suspEventsItem.setHasTraceInfo(context.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].HasTraceInfo"));
 
 			suspEvents.add(suspEventsItem);
 		}

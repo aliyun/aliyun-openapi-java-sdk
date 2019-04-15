@@ -21,7 +21,6 @@ import com.aliyuncs.aegis.model.v20161111.DescribeAlarmEventDetailResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeAlarmEventDetailResponse.Data;
 import com.aliyuncs.aegis.model.v20161111.DescribeAlarmEventDetailResponse.Data.CauseDetail;
 import com.aliyuncs.aegis.model.v20161111.DescribeAlarmEventDetailResponse.Data.CauseDetail.ValueItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +46,7 @@ public class DescribeAlarmEventDetailResponseUnmarshaller {
 		data.setAlarmUniqueInfo(context.stringValue("DescribeAlarmEventDetailResponse.Data.AlarmUniqueInfo"));
 		data.setDataSource(context.stringValue("DescribeAlarmEventDetailResponse.Data.DataSource"));
 		data.setCanCancelFault(context.booleanValue("DescribeAlarmEventDetailResponse.Data.CanCancelFault"));
+		data.setHasTraceInfo(context.booleanValue("DescribeAlarmEventDetailResponse.Data.HasTraceInfo"));
 
 		List<CauseDetail> causeDetails = new ArrayList<CauseDetail>();
 		for (int i = 0; i < context.lengthValue("DescribeAlarmEventDetailResponse.Data.CauseDetails.Length"); i++) {

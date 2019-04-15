@@ -21,7 +21,6 @@ import com.aliyuncs.aegis.model.v20161111.QueryLoginEventResponse;
 import com.aliyuncs.aegis.model.v20161111.QueryLoginEventResponse.Data;
 import com.aliyuncs.aegis.model.v20161111.QueryLoginEventResponse.Data.Entity;
 import com.aliyuncs.aegis.model.v20161111.QueryLoginEventResponse.Data.PageInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

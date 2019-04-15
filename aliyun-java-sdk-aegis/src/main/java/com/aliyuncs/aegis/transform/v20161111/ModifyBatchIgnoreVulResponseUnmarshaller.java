@@ -23,8 +23,6 @@ public class ModifyBatchIgnoreVulResponseUnmarshaller {
 	public static ModifyBatchIgnoreVulResponse unmarshall(ModifyBatchIgnoreVulResponse modifyBatchIgnoreVulResponse, UnmarshallerContext context) {
 		
 		modifyBatchIgnoreVulResponse.setRequestId(context.stringValue("ModifyBatchIgnoreVulResponse.RequestId"));
-		modifyBatchIgnoreVulResponse.setSuccess(context.booleanValue("ModifyBatchIgnoreVulResponse.Success"));
-		modifyBatchIgnoreVulResponse.setHttpStatusCode(context.integerValue("ModifyBatchIgnoreVulResponse.HttpStatusCode"));
 	 
 	 	return modifyBatchIgnoreVulResponse;
 	}

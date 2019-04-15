@@ -15,7 +15,6 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeOperateInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -38,11 +37,17 @@ public class DescribeOperateInfoResponse extends AcsResponse {
 
 	private List<String> suspEventValueArray;
 
+	private List<String> suspEventAaggregatValueArray;
+
 	private List<String> vulValueArray;
+
+	private List<String> vulAaggregatValueArray;
 
 	private List<String> dateArray;
 
 	private List<String> healthCheckValueArray;
+
+	private List<String> healthCheckAaggregatValueArray;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -92,12 +97,28 @@ public class DescribeOperateInfoResponse extends AcsResponse {
 		this.suspEventValueArray = suspEventValueArray;
 	}
 
+	public List<String> getSuspEventAaggregatValueArray() {
+		return this.suspEventAaggregatValueArray;
+	}
+
+	public void setSuspEventAaggregatValueArray(List<String> suspEventAaggregatValueArray) {
+		this.suspEventAaggregatValueArray = suspEventAaggregatValueArray;
+	}
+
 	public List<String> getVulValueArray() {
 		return this.vulValueArray;
 	}
 
 	public void setVulValueArray(List<String> vulValueArray) {
 		this.vulValueArray = vulValueArray;
+	}
+
+	public List<String> getVulAaggregatValueArray() {
+		return this.vulAaggregatValueArray;
+	}
+
+	public void setVulAaggregatValueArray(List<String> vulAaggregatValueArray) {
+		this.vulAaggregatValueArray = vulAaggregatValueArray;
 	}
 
 	public List<String> getDateArray() {
@@ -114,6 +135,14 @@ public class DescribeOperateInfoResponse extends AcsResponse {
 
 	public void setHealthCheckValueArray(List<String> healthCheckValueArray) {
 		this.healthCheckValueArray = healthCheckValueArray;
+	}
+
+	public List<String> getHealthCheckAaggregatValueArray() {
+		return this.healthCheckAaggregatValueArray;
+	}
+
+	public void setHealthCheckAaggregatValueArray(List<String> healthCheckAaggregatValueArray) {
+		this.healthCheckAaggregatValueArray = healthCheckAaggregatValueArray;
 	}
 
 	@Override

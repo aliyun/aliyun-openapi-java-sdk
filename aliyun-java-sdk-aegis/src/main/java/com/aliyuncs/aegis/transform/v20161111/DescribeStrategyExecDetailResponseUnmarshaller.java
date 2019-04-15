@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeStrategyExecDetailResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeStrategyExecDetailResponse.FailedEcs;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

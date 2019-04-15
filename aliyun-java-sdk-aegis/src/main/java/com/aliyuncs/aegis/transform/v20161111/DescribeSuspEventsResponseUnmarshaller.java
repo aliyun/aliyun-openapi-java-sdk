@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeSuspEventsResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeSuspEventsResponse.WarningSummary;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

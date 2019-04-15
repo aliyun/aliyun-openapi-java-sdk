@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.aegis.model.v20161111.DescribeGroupListResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeGroupListResponse.PageInfo;
 import com.aliyuncs.aegis.model.v20161111.DescribeGroupListResponse.RuleGroupsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

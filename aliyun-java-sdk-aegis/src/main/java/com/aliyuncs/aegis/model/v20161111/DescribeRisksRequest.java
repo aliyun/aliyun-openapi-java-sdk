@@ -32,6 +32,8 @@ public class DescribeRisksRequest extends RpcAcsRequest<DescribeRisksResponse> {
 
 	private Integer limit;
 
+	private String lang;
+
 	private Long riskId;
 
 	public String getRiskName() {
@@ -64,6 +66,17 @@ public class DescribeRisksRequest extends RpcAcsRequest<DescribeRisksResponse> {
 		this.limit = limit;
 		if(limit != null){
 			putQueryParameter("Limit", limit.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

@@ -14,7 +14,7 @@
 
 package com.aliyuncs.aegis.model.v20161111;
 
-import java.util.Map;
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeAssetDetailByUuidResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -72,6 +72,26 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 		private String tag;
 
 		private String groupTrace;
+
+		private Integer cpu;
+
+		private String cpuInfo;
+
+		private String kernel;
+
+		private String osDetail;
+
+		private Integer mem;
+
+		private String sysInfo;
+
+		private String hostName;
+
+		private List<String> ipList;
+
+		private List<String> macList;
+
+		private List<String> diskInfoList;
 
 		public String getInternetIp() {
 			return this.internetIp;
@@ -175,6 +195,86 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 
 		public void setGroupTrace(String groupTrace) {
 			this.groupTrace = groupTrace;
+		}
+
+		public Integer getCpu() {
+			return this.cpu;
+		}
+
+		public void setCpu(Integer cpu) {
+			this.cpu = cpu;
+		}
+
+		public String getCpuInfo() {
+			return this.cpuInfo;
+		}
+
+		public void setCpuInfo(String cpuInfo) {
+			this.cpuInfo = cpuInfo;
+		}
+
+		public String getKernel() {
+			return this.kernel;
+		}
+
+		public void setKernel(String kernel) {
+			this.kernel = kernel;
+		}
+
+		public String getOsDetail() {
+			return this.osDetail;
+		}
+
+		public void setOsDetail(String osDetail) {
+			this.osDetail = osDetail;
+		}
+
+		public Integer getMem() {
+			return this.mem;
+		}
+
+		public void setMem(Integer mem) {
+			this.mem = mem;
+		}
+
+		public String getSysInfo() {
+			return this.sysInfo;
+		}
+
+		public void setSysInfo(String sysInfo) {
+			this.sysInfo = sysInfo;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
+		}
+
+		public List<String> getIpList() {
+			return this.ipList;
+		}
+
+		public void setIpList(List<String> ipList) {
+			this.ipList = ipList;
+		}
+
+		public List<String> getMacList() {
+			return this.macList;
+		}
+
+		public void setMacList(List<String> macList) {
+			this.macList = macList;
+		}
+
+		public List<String> getDiskInfoList() {
+			return this.diskInfoList;
+		}
+
+		public void setDiskInfoList(List<String> diskInfoList) {
+			this.diskInfoList = diskInfoList;
 		}
 	}
 

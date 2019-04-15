@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeMachineConfigResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeMachineConfigResponse.ConfigTarget;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

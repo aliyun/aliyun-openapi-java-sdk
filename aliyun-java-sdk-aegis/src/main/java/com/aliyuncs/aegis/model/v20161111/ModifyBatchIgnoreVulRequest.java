@@ -28,8 +28,6 @@ public class ModifyBatchIgnoreVulRequest extends RpcAcsRequest<ModifyBatchIgnore
 
 	private String reason;
 
-	private Long resourceOwnerId;
-
 	private String sourceIp;
 
 	private String info;
@@ -42,17 +40,6 @@ public class ModifyBatchIgnoreVulRequest extends RpcAcsRequest<ModifyBatchIgnore
 		this.reason = reason;
 		if(reason != null){
 			putQueryParameter("Reason", reason);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

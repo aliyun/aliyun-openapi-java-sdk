@@ -1,3 +1,6 @@
+2019-04-15 Version: 1.0.6
+1, Add apis, DescribeScreenHostStatistics、DescribeScreenSummaryInfo、DescribeScreenAttackAnalysisData、DescribeScreenAttackAnalysisData、DescribeScreenAttackAnalysisData
+
 2018-12-27 Version: 1.0.4
 1, Added interfaces related to suspicious event
 

@@ -22,7 +22,6 @@ import com.aliyuncs.aegis.model.v20161111.DescribeSecurityStatInfoResponse.Attac
 import com.aliyuncs.aegis.model.v20161111.DescribeSecurityStatInfoResponse.HealthCheck;
 import com.aliyuncs.aegis.model.v20161111.DescribeSecurityStatInfoResponse.SecurityEvent;
 import com.aliyuncs.aegis.model.v20161111.DescribeSecurityStatInfoResponse.Vulnerability;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +55,24 @@ public class DescribeSecurityStatInfoResponseUnmarshaller {
 			levelsOn.add(context.stringValue("DescribeSecurityStatInfoResponse.SecurityEvent.LevelsOn["+ i +"]"));
 		}
 		securityEvent.setLevelsOn(levelsOn);
+
+		List<String> seriousList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeSecurityStatInfoResponse.SecurityEvent.SeriousList.Length"); i++) {
+			seriousList.add(context.stringValue("DescribeSecurityStatInfoResponse.SecurityEvent.SeriousList["+ i +"]"));
+		}
+		securityEvent.setSeriousList(seriousList);
+
+		List<String> suspiciousList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeSecurityStatInfoResponse.SecurityEvent.SuspiciousList.Length"); i++) {
+			suspiciousList.add(context.stringValue("DescribeSecurityStatInfoResponse.SecurityEvent.SuspiciousList["+ i +"]"));
+		}
+		securityEvent.setSuspiciousList(suspiciousList);
+
+		List<String> remindList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeSecurityStatInfoResponse.SecurityEvent.RemindList.Length"); i++) {
+			remindList.add(context.stringValue("DescribeSecurityStatInfoResponse.SecurityEvent.RemindList["+ i +"]"));
+		}
+		securityEvent.setRemindList(remindList);
 		describeSecurityStatInfoResponse.setSecurityEvent(securityEvent);
 
 		AttackEvent attackEvent = new AttackEvent();
@@ -97,6 +114,24 @@ public class DescribeSecurityStatInfoResponseUnmarshaller {
 			levelsOn5.add(context.stringValue("DescribeSecurityStatInfoResponse.HealthCheck.LevelsOn["+ i +"]"));
 		}
 		healthCheck.setLevelsOn5(levelsOn5);
+
+		List<String> highList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeSecurityStatInfoResponse.HealthCheck.HighList.Length"); i++) {
+			highList.add(context.stringValue("DescribeSecurityStatInfoResponse.HealthCheck.HighList["+ i +"]"));
+		}
+		healthCheck.setHighList(highList);
+
+		List<String> mediumList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeSecurityStatInfoResponse.HealthCheck.MediumList.Length"); i++) {
+			mediumList.add(context.stringValue("DescribeSecurityStatInfoResponse.HealthCheck.MediumList["+ i +"]"));
+		}
+		healthCheck.setMediumList(mediumList);
+
+		List<String> lowList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeSecurityStatInfoResponse.HealthCheck.LowList.Length"); i++) {
+			lowList.add(context.stringValue("DescribeSecurityStatInfoResponse.HealthCheck.LowList["+ i +"]"));
+		}
+		healthCheck.setLowList(lowList);
 		describeSecurityStatInfoResponse.setHealthCheck(healthCheck);
 
 		Vulnerability vulnerability = new Vulnerability();
@@ -122,6 +157,24 @@ public class DescribeSecurityStatInfoResponseUnmarshaller {
 			levelsOn8.add(context.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.LevelsOn["+ i +"]"));
 		}
 		vulnerability.setLevelsOn8(levelsOn8);
+
+		List<String> nntfList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeSecurityStatInfoResponse.Vulnerability.NntfList.Length"); i++) {
+			nntfList.add(context.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.NntfList["+ i +"]"));
+		}
+		vulnerability.setNntfList(nntfList);
+
+		List<String> asapList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeSecurityStatInfoResponse.Vulnerability.AsapList.Length"); i++) {
+			asapList.add(context.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.AsapList["+ i +"]"));
+		}
+		vulnerability.setAsapList(asapList);
+
+		List<String> laterList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeSecurityStatInfoResponse.Vulnerability.LaterList.Length"); i++) {
+			laterList.add(context.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.LaterList["+ i +"]"));
+		}
+		vulnerability.setLaterList(laterList);
 		describeSecurityStatInfoResponse.setVulnerability(vulnerability);
 	 
 	 	return describeSecurityStatInfoResponse;

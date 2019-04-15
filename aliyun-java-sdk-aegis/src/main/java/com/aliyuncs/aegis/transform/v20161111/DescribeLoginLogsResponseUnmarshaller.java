@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeLoginLogsResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeLoginLogsResponse.LogListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

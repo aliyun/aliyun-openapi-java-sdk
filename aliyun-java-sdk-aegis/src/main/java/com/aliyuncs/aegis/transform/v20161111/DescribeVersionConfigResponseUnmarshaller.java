@@ -36,6 +36,12 @@ public class DescribeVersionConfigResponseUnmarshaller {
 		describeVersionConfigResponse.setSasLog(context.integerValue("DescribeVersionConfigResponse.SasLog"));
 		describeVersionConfigResponse.setSasScreen(context.integerValue("DescribeVersionConfigResponse.SasScreen"));
 		describeVersionConfigResponse.setVersion(context.integerValue("DescribeVersionConfigResponse.Version"));
+		describeVersionConfigResponse.setUserDefinedAlarms(context.integerValue("DescribeVersionConfigResponse.UserDefinedAlarms"));
+		describeVersionConfigResponse.setWebLock(context.integerValue("DescribeVersionConfigResponse.WebLock"));
+		describeVersionConfigResponse.setWebLockAuthCount(context.longValue("DescribeVersionConfigResponse.WebLockAuthCount"));
+		describeVersionConfigResponse.setAppWhiteListAuthCount(context.longValue("DescribeVersionConfigResponse.AppWhiteListAuthCount"));
+		describeVersionConfigResponse.setAppWhiteList(context.integerValue("DescribeVersionConfigResponse.AppWhiteList"));
+		describeVersionConfigResponse.setSlsCapacity(context.longValue("DescribeVersionConfigResponse.SlsCapacity"));
 	 
 	 	return describeVersionConfigResponse;
 	}

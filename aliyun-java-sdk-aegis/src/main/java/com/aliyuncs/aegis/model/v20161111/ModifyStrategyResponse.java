@@ -14,7 +14,6 @@
 
 package com.aliyuncs.aegis.model.v20161111;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.ModifyStrategyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

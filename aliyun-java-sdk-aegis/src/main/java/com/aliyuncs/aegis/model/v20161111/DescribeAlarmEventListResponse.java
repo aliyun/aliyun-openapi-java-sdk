@@ -15,7 +15,6 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeAlarmEventListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -91,6 +90,12 @@ public class DescribeAlarmEventListResponse extends AcsResponse {
 		private String dataSource;
 
 		private Boolean canCancelFault;
+
+		private Boolean dealed;
+
+		private Long gmtModified;
+
+		private Boolean hasTraceInfo;
 
 		public String getAlarmUniqueInfo() {
 			return this.alarmUniqueInfo;
@@ -226,6 +231,30 @@ public class DescribeAlarmEventListResponse extends AcsResponse {
 
 		public void setCanCancelFault(Boolean canCancelFault) {
 			this.canCancelFault = canCancelFault;
+		}
+
+		public Boolean getDealed() {
+			return this.dealed;
+		}
+
+		public void setDealed(Boolean dealed) {
+			this.dealed = dealed;
+		}
+
+		public Long getGmtModified() {
+			return this.gmtModified;
+		}
+
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
+		}
+
+		public Boolean getHasTraceInfo() {
+			return this.hasTraceInfo;
+		}
+
+		public void setHasTraceInfo(Boolean hasTraceInfo) {
+			this.hasTraceInfo = hasTraceInfo;
 		}
 	}
 

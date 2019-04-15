@@ -15,7 +15,6 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeRuleListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -84,6 +83,14 @@ public class DescribeRuleListResponse extends AcsResponse {
 
 		private String expressions;
 
+		private String actions;
+
+		private String statisticsRules;
+
+		private Boolean needGroup;
+
+		private String statusCode;
+
 		private List<RuleGroup> ruleGroups;
 
 		public String getWarnLevel() {
@@ -148,6 +155,38 @@ public class DescribeRuleListResponse extends AcsResponse {
 
 		public void setExpressions(String expressions) {
 			this.expressions = expressions;
+		}
+
+		public String getActions() {
+			return this.actions;
+		}
+
+		public void setActions(String actions) {
+			this.actions = actions;
+		}
+
+		public String getStatisticsRules() {
+			return this.statisticsRules;
+		}
+
+		public void setStatisticsRules(String statisticsRules) {
+			this.statisticsRules = statisticsRules;
+		}
+
+		public Boolean getNeedGroup() {
+			return this.needGroup;
+		}
+
+		public void setNeedGroup(Boolean needGroup) {
+			this.needGroup = needGroup;
+		}
+
+		public String getStatusCode() {
+			return this.statusCode;
+		}
+
+		public void setStatusCode(String statusCode) {
+			this.statusCode = statusCode;
 		}
 
 		public List<RuleGroup> getRuleGroups() {

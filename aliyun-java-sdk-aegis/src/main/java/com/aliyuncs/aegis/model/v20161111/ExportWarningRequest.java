@@ -26,25 +26,77 @@ public class ExportWarningRequest extends RpcAcsRequest<ExportWarningResponse> {
 		super("aegis", "2016-11-11", "ExportWarning", "vipaegis");
 	}
 
+	private String statusList;
+
+	private String riskLevels;
+
+	private String exportType;
+
+	private String dealed;
+
 	private String typeNames;
 
 	private Integer isSummaryExport;
 
 	private String riskName;
 
-	private String statusList;
+	private String riskIds;
 
 	private String sourceIp;
 
-	private String riskLevels;
+	private Long strategyId;
 
-	private String dealed;
+	private String lang;
 
-	private Integer strategyId;
+	private String typeName;
 
 	private String subTypeNames;
 
 	private String uuids;
+
+	public String getStatusList() {
+		return this.statusList;
+	}
+
+	public void setStatusList(String statusList) {
+		this.statusList = statusList;
+		if(statusList != null){
+			putQueryParameter("StatusList", statusList);
+		}
+	}
+
+	public String getRiskLevels() {
+		return this.riskLevels;
+	}
+
+	public void setRiskLevels(String riskLevels) {
+		this.riskLevels = riskLevels;
+		if(riskLevels != null){
+			putQueryParameter("RiskLevels", riskLevels);
+		}
+	}
+
+	public String getExportType() {
+		return this.exportType;
+	}
+
+	public void setExportType(String exportType) {
+		this.exportType = exportType;
+		if(exportType != null){
+			putQueryParameter("ExportType", exportType);
+		}
+	}
+
+	public String getDealed() {
+		return this.dealed;
+	}
+
+	public void setDealed(String dealed) {
+		this.dealed = dealed;
+		if(dealed != null){
+			putQueryParameter("Dealed", dealed);
+		}
+	}
 
 	public String getTypeNames() {
 		return this.typeNames;
@@ -79,14 +131,14 @@ public class ExportWarningRequest extends RpcAcsRequest<ExportWarningResponse> {
 		}
 	}
 
-	public String getStatusList() {
-		return this.statusList;
+	public String getRiskIds() {
+		return this.riskIds;
 	}
 
-	public void setStatusList(String statusList) {
-		this.statusList = statusList;
-		if(statusList != null){
-			putQueryParameter("StatusList", statusList);
+	public void setRiskIds(String riskIds) {
+		this.riskIds = riskIds;
+		if(riskIds != null){
+			putQueryParameter("RiskIds", riskIds);
 		}
 	}
 
@@ -101,36 +153,36 @@ public class ExportWarningRequest extends RpcAcsRequest<ExportWarningResponse> {
 		}
 	}
 
-	public String getRiskLevels() {
-		return this.riskLevels;
-	}
-
-	public void setRiskLevels(String riskLevels) {
-		this.riskLevels = riskLevels;
-		if(riskLevels != null){
-			putQueryParameter("RiskLevels", riskLevels);
-		}
-	}
-
-	public String getDealed() {
-		return this.dealed;
-	}
-
-	public void setDealed(String dealed) {
-		this.dealed = dealed;
-		if(dealed != null){
-			putQueryParameter("Dealed", dealed);
-		}
-	}
-
-	public Integer getStrategyId() {
+	public Long getStrategyId() {
 		return this.strategyId;
 	}
 
-	public void setStrategyId(Integer strategyId) {
+	public void setStrategyId(Long strategyId) {
 		this.strategyId = strategyId;
 		if(strategyId != null){
 			putQueryParameter("StrategyId", strategyId.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getTypeName() {
+		return this.typeName;
+	}
+
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+		if(typeName != null){
+			putQueryParameter("TypeName", typeName);
 		}
 	}
 

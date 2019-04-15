@@ -26,11 +26,26 @@ public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsR
 		super("aegis", "2016-11-11", "DescribeVulDetails", "vipaegis");
 	}
 
+	private String aliasName;
+
 	private String sourceIp;
 
 	private String name;
 
+	private String lang;
+
 	private String type;
+
+	public String getAliasName() {
+		return this.aliasName;
+	}
+
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -51,6 +66,17 @@ public class DescribeVulDetailsRequest extends RpcAcsRequest<DescribeVulDetailsR
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

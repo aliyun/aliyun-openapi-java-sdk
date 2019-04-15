@@ -15,7 +15,6 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeStratetyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,7 +27,7 @@ public class DescribeStratetyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<StrategiesItem> strategies;
+	private List<Strategy> strategies;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,15 +37,15 @@ public class DescribeStratetyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<StrategiesItem> getStrategies() {
+	public List<Strategy> getStrategies() {
 		return this.strategies;
 	}
 
-	public void setStrategies(List<StrategiesItem> strategies) {
+	public void setStrategies(List<Strategy> strategies) {
 		this.strategies = strategies;
 	}
 
-	public static class StrategiesItem {
+	public static class Strategy {
 
 		private Integer cycleDays;
 
@@ -65,6 +64,8 @@ public class DescribeStratetyResponse extends AcsResponse {
 		private Integer execStatus;
 
 		private Integer processRate;
+
+		private Integer passRate;
 
 		private List<ConfigTarget> configTargets;
 
@@ -138,6 +139,14 @@ public class DescribeStratetyResponse extends AcsResponse {
 
 		public void setProcessRate(Integer processRate) {
 			this.processRate = processRate;
+		}
+
+		public Integer getPassRate() {
+			return this.passRate;
+		}
+
+		public void setPassRate(Integer passRate) {
+			this.passRate = passRate;
 		}
 
 		public List<ConfigTarget> getConfigTargets() {

@@ -22,7 +22,6 @@ import com.aliyuncs.aegis.model.v20161111.DescribeVulListResponse.VulRecord;
 import com.aliyuncs.aegis.model.v20161111.DescribeVulListResponse.VulRecord.ExtendContentJson;
 import com.aliyuncs.aegis.model.v20161111.DescribeVulListResponse.VulRecord.ExtendContentJson.Necessity;
 import com.aliyuncs.aegis.model.v20161111.DescribeVulListResponse.VulRecord.ExtendContentJson.RpmEntityListItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -56,6 +55,14 @@ public class DescribeVulListResponseUnmarshaller {
 			vulRecord.setResultMessage(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ResultMessage"));
 			vulRecord.setModifyTs(context.longValue("DescribeVulListResponse.VulRecords["+ i +"].ModifyTs"));
 			vulRecord.setNecessity(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Necessity"));
+			vulRecord.setGroupId(context.integerValue("DescribeVulListResponse.VulRecords["+ i +"].GroupId"));
+			vulRecord.setInstanceId(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].InstanceId"));
+			vulRecord.setInstanceName(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].InstanceName"));
+			vulRecord.setInternetIp(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].InternetIp"));
+			vulRecord.setIntranetIp(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].IntranetIp"));
+			vulRecord.setIp(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].Ip"));
+			vulRecord.setOsVersion(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].OsVersion"));
+			vulRecord.setNeedReboot(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].NeedReboot"));
 
 			ExtendContentJson extendContentJson = new ExtendContentJson();
 			extendContentJson.setOs(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Os"));
@@ -66,6 +73,10 @@ public class DescribeVulListResponseUnmarshaller {
 			extendContentJson.setTag(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Tag"));
 			extendContentJson.setPrimaryId(context.longValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.PrimaryId"));
 			extendContentJson.setLevel(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Level"));
+			extendContentJson.setAbsolutePath(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.AbsolutePath"));
+			extendContentJson.setTarget(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Target"));
+			extendContentJson.setProof(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Proof"));
+			extendContentJson.setReason(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Reason"));
 
 			List<String> cveList = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.cveList.Length"); j++) {

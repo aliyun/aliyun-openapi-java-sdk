@@ -28,6 +28,8 @@ public class DescribeStratetyRequest extends RpcAcsRequest<DescribeStratetyRespo
 
 	private String sourceIp;
 
+	private String strategyIds;
+
 	private String lang;
 
 	public String getSourceIp() {
@@ -38,6 +40,17 @@ public class DescribeStratetyRequest extends RpcAcsRequest<DescribeStratetyRespo
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getStrategyIds() {
+		return this.strategyIds;
+	}
+
+	public void setStrategyIds(String strategyIds) {
+		this.strategyIds = strategyIds;
+		if(strategyIds != null){
+			putQueryParameter("StrategyIds", strategyIds);
 		}
 	}
 

@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.aegis.model.v20161111.DescribeOperateInfoResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,11 +37,23 @@ public class DescribeOperateInfoResponseUnmarshaller {
 		}
 		describeOperateInfoResponse.setSuspEventValueArray(suspEventValueArray);
 
+		List<String> suspEventAaggregatValueArray = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeOperateInfoResponse.SuspEventAaggregatValueArray.Length"); i++) {
+			suspEventAaggregatValueArray.add(context.stringValue("DescribeOperateInfoResponse.SuspEventAaggregatValueArray["+ i +"]"));
+		}
+		describeOperateInfoResponse.setSuspEventAaggregatValueArray(suspEventAaggregatValueArray);
+
 		List<String> vulValueArray = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeOperateInfoResponse.VulValueArray.Length"); i++) {
 			vulValueArray.add(context.stringValue("DescribeOperateInfoResponse.VulValueArray["+ i +"]"));
 		}
 		describeOperateInfoResponse.setVulValueArray(vulValueArray);
+
+		List<String> vulAaggregatValueArray = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeOperateInfoResponse.VulAaggregatValueArray.Length"); i++) {
+			vulAaggregatValueArray.add(context.stringValue("DescribeOperateInfoResponse.VulAaggregatValueArray["+ i +"]"));
+		}
+		describeOperateInfoResponse.setVulAaggregatValueArray(vulAaggregatValueArray);
 
 		List<String> dateArray = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeOperateInfoResponse.DateArray.Length"); i++) {
@@ -55,6 +66,12 @@ public class DescribeOperateInfoResponseUnmarshaller {
 			healthCheckValueArray.add(context.stringValue("DescribeOperateInfoResponse.HealthCheckValueArray["+ i +"]"));
 		}
 		describeOperateInfoResponse.setHealthCheckValueArray(healthCheckValueArray);
+
+		List<String> healthCheckAaggregatValueArray = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("DescribeOperateInfoResponse.HealthCheckAaggregatValueArray.Length"); i++) {
+			healthCheckAaggregatValueArray.add(context.stringValue("DescribeOperateInfoResponse.HealthCheckAaggregatValueArray["+ i +"]"));
+		}
+		describeOperateInfoResponse.setHealthCheckAaggregatValueArray(healthCheckAaggregatValueArray);
 	 
 	 	return describeOperateInfoResponse;
 	}

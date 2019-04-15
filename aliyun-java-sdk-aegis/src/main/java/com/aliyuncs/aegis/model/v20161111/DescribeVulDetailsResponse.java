@@ -15,7 +15,6 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeVulDetailsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -208,10 +207,26 @@ public class DescribeVulDetailsResponse extends AcsResponse {
 			this.vendor = vendor;
 		}
 
+		public String getBizProduct() {
+			return this.product;
+		}
+
+		public void setBizProduct(String product) {
+			this.product = product;
+		}
+
+		/**
+		 * @deprecated use getBizProduct instead of this.
+		 */
+		@Deprecated
 		public String getProduct() {
 			return this.product;
 		}
 
+		/**
+		 * @deprecated use setBizProduct instead of this.
+		 */
+		@Deprecated
 		public void setProduct(String product) {
 			this.product = product;
 		}

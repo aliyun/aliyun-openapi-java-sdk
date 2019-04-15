@@ -15,7 +15,6 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeVulListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -114,6 +113,22 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		private String necessity;
 
+		private Integer groupId;
+
+		private String instanceId;
+
+		private String instanceName;
+
+		private String internetIp;
+
+		private String intranetIp;
+
+		private String ip;
+
+		private String osVersion;
+
+		private String needReboot;
+
 		private ExtendContentJson extendContentJson;
 
 		public Long getPrimaryId() {
@@ -180,10 +195,26 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.level = level;
 		}
 
+		public String getBizProduct() {
+			return this.product;
+		}
+
+		public void setBizProduct(String product) {
+			this.product = product;
+		}
+
+		/**
+		 * @deprecated use getBizProduct instead of this.
+		 */
+		@Deprecated
 		public String getProduct() {
 			return this.product;
 		}
 
+		/**
+		 * @deprecated use setBizProduct instead of this.
+		 */
+		@Deprecated
 		public void setProduct(String product) {
 			this.product = product;
 		}
@@ -260,6 +291,70 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.necessity = necessity;
 		}
 
+		public Integer getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Integer groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInternetIp() {
+			return this.internetIp;
+		}
+
+		public void setInternetIp(String internetIp) {
+			this.internetIp = internetIp;
+		}
+
+		public String getIntranetIp() {
+			return this.intranetIp;
+		}
+
+		public void setIntranetIp(String intranetIp) {
+			this.intranetIp = intranetIp;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
+		}
+
+		public String getOsVersion() {
+			return this.osVersion;
+		}
+
+		public void setOsVersion(String osVersion) {
+			this.osVersion = osVersion;
+		}
+
+		public String getNeedReboot() {
+			return this.needReboot;
+		}
+
+		public void setNeedReboot(String needReboot) {
+			this.needReboot = needReboot;
+		}
+
 		public ExtendContentJson getExtendContentJson() {
 			return this.extendContentJson;
 		}
@@ -285,6 +380,14 @@ public class DescribeVulListResponse extends AcsResponse {
 			private Long primaryId;
 
 			private String level;
+
+			private String absolutePath;
+
+			private String target;
+
+			private String proof;
+
+			private String reason;
 
 			private List<RpmEntityListItem> rpmEntityList;
 
@@ -354,6 +457,38 @@ public class DescribeVulListResponse extends AcsResponse {
 
 			public void setLevel(String level) {
 				this.level = level;
+			}
+
+			public String getAbsolutePath() {
+				return this.absolutePath;
+			}
+
+			public void setAbsolutePath(String absolutePath) {
+				this.absolutePath = absolutePath;
+			}
+
+			public String getTarget() {
+				return this.target;
+			}
+
+			public void setTarget(String target) {
+				this.target = target;
+			}
+
+			public String getProof() {
+				return this.proof;
+			}
+
+			public void setProof(String proof) {
+				this.proof = proof;
+			}
+
+			public String getReason() {
+				return this.reason;
+			}
+
+			public void setReason(String reason) {
+				this.reason = reason;
 			}
 
 			public List<RpmEntityListItem> getRpmEntityList() {
@@ -434,10 +569,26 @@ public class DescribeVulListResponse extends AcsResponse {
 					this.updateCmd = updateCmd;
 				}
 
+				public String getBizVersion() {
+					return this.version;
+				}
+
+				public void setBizVersion(String version) {
+					this.version = version;
+				}
+
+				/**
+				 * @deprecated use getBizVersion instead of this.
+				 */
+				@Deprecated
 				public String getVersion() {
 					return this.version;
 				}
 
+				/**
+				 * @deprecated use setBizVersion instead of this.
+				 */
+				@Deprecated
 				public void setVersion(String version) {
 					this.version = version;
 				}

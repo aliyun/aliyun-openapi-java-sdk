@@ -21,7 +21,6 @@ import com.aliyuncs.aegis.model.v20161111.DescribeStratetyDetailResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeStratetyDetailResponse.Strategy;
 import com.aliyuncs.aegis.model.v20161111.DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResult;
 import com.aliyuncs.aegis.model.v20161111.DescribeStratetyDetailResponse.Strategy.RiskTypeWhiteListQueryResult.SubType;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

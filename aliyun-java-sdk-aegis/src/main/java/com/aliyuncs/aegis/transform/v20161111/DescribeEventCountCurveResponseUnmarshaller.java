@@ -22,7 +22,6 @@ import com.aliyuncs.aegis.model.v20161111.DescribeEventCountCurveResponse.CurveD
 import com.aliyuncs.aegis.model.v20161111.DescribeEventCountCurveResponse.CurveData.Item;
 import com.aliyuncs.aegis.model.v20161111.DescribeEventCountCurveResponse.CurveData.Item.DataItem;
 import com.aliyuncs.aegis.model.v20161111.DescribeEventCountCurveResponse.CurveData.TimeScope;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

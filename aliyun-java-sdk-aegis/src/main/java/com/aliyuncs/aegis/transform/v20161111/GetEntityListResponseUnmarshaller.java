@@ -21,7 +21,6 @@ import com.aliyuncs.aegis.model.v20161111.GetEntityListResponse;
 import com.aliyuncs.aegis.model.v20161111.GetEntityListResponse.Data;
 import com.aliyuncs.aegis.model.v20161111.GetEntityListResponse.Data.Entity;
 import com.aliyuncs.aegis.model.v20161111.GetEntityListResponse.Data.PageInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

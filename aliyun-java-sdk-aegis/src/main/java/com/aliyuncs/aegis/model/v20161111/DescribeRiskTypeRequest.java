@@ -30,6 +30,8 @@ public class DescribeRiskTypeRequest extends RpcAcsRequest<DescribeRiskTypeRespo
 
 	private Long strategyId;
 
+	private String lang;
+
 	private String uuids;
 
 	public String getSourceIp() {
@@ -51,6 +53,17 @@ public class DescribeRiskTypeRequest extends RpcAcsRequest<DescribeRiskTypeRespo
 		this.strategyId = strategyId;
 		if(strategyId != null){
 			putQueryParameter("StrategyId", strategyId.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

@@ -14,7 +14,6 @@
 
 package com.aliyuncs.aegis.model.v20161111;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeVersionConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -52,6 +51,18 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 	private Integer sasScreen;
 
 	private Integer version;
+
+	private Integer userDefinedAlarms;
+
+	private Integer webLock;
+
+	private Long webLockAuthCount;
+
+	private Long appWhiteListAuthCount;
+
+	private Integer appWhiteList;
+
+	private Long slsCapacity;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -157,12 +168,76 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 		this.sasScreen = sasScreen;
 	}
 
+	public Integer getBizVersion() {
+		return this.version;
+	}
+
+	public void setBizVersion(Integer version) {
+		this.version = version;
+	}
+
+	/**
+	 * @deprecated use getBizVersion instead of this.
+	 */
+	@Deprecated
 	public Integer getVersion() {
 		return this.version;
 	}
 
+	/**
+	 * @deprecated use setBizVersion instead of this.
+	 */
+	@Deprecated
 	public void setVersion(Integer version) {
 		this.version = version;
+	}
+
+	public Integer getUserDefinedAlarms() {
+		return this.userDefinedAlarms;
+	}
+
+	public void setUserDefinedAlarms(Integer userDefinedAlarms) {
+		this.userDefinedAlarms = userDefinedAlarms;
+	}
+
+	public Integer getWebLock() {
+		return this.webLock;
+	}
+
+	public void setWebLock(Integer webLock) {
+		this.webLock = webLock;
+	}
+
+	public Long getWebLockAuthCount() {
+		return this.webLockAuthCount;
+	}
+
+	public void setWebLockAuthCount(Long webLockAuthCount) {
+		this.webLockAuthCount = webLockAuthCount;
+	}
+
+	public Long getAppWhiteListAuthCount() {
+		return this.appWhiteListAuthCount;
+	}
+
+	public void setAppWhiteListAuthCount(Long appWhiteListAuthCount) {
+		this.appWhiteListAuthCount = appWhiteListAuthCount;
+	}
+
+	public Integer getAppWhiteList() {
+		return this.appWhiteList;
+	}
+
+	public void setAppWhiteList(Integer appWhiteList) {
+		this.appWhiteList = appWhiteList;
+	}
+
+	public Long getSlsCapacity() {
+		return this.slsCapacity;
+	}
+
+	public void setSlsCapacity(Long slsCapacity) {
+		this.slsCapacity = slsCapacity;
 	}
 
 	@Override

@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.aegis.model.v20161111.DescribeMacConfigResponse;
 import com.aliyuncs.aegis.model.v20161111.DescribeMacConfigResponse.Config;
 import com.aliyuncs.aegis.model.v20161111.DescribeMacConfigResponse.Config.Target;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

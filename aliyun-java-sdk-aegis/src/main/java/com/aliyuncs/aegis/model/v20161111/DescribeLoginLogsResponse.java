@@ -15,7 +15,6 @@
 package com.aliyuncs.aegis.model.v20161111;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.aegis.transform.v20161111.DescribeLoginLogsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -168,10 +167,26 @@ public class DescribeLoginLogsResponse extends AcsResponse {
 			this.uuid = uuid;
 		}
 
+		public Integer getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(Integer protocol) {
+			this.protocol = protocol;
+		}
+
+		/**
+		 * @deprecated use getBizProtocol instead of this.
+		 */
+		@Deprecated
 		public Integer getProtocol() {
 			return this.protocol;
 		}
 
+		/**
+		 * @deprecated use setBizProtocol instead of this.
+		 */
+		@Deprecated
 		public void setProtocol(Integer protocol) {
 			this.protocol = protocol;
 		}
