@@ -28,19 +28,11 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 
 	private String notifyTopicName;
 
-	private String grabType;
-
 	private String project;
-
-	private String endTime;
-
-	private String startTime;
 
 	private String videoUri;
 
 	private String notifyEndpoint;
-
-	private String interval;
 
 	private String tgtUri;
 
@@ -55,17 +47,6 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 		}
 	}
 
-	public String getGrabType() {
-		return this.grabType;
-	}
-
-	public void setGrabType(String grabType) {
-		this.grabType = grabType;
-		if(grabType != null){
-			putQueryParameter("GrabType", grabType);
-		}
-	}
-
 	public String getProject() {
 		return this.project;
 	}
@@ -74,28 +55,6 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -118,17 +77,6 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 		this.notifyEndpoint = notifyEndpoint;
 		if(notifyEndpoint != null){
 			putQueryParameter("NotifyEndpoint", notifyEndpoint);
-		}
-	}
-
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
 		}
 	}
 

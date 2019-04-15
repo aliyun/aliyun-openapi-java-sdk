@@ -26,19 +26,13 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 		super("imm", "2017-09-06", "IndexVideo", "imm");
 	}
 
-	private String grabType;
-
 	private String remarksB;
 
 	private String project;
 
 	private String remarksA;
 
-	private String endTime;
-
 	private String externalId;
-
-	private String startTime;
 
 	private String videoUri;
 
@@ -48,20 +42,7 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 
 	private String setId;
 
-	private String interval;
-
 	private String tgtUri;
-
-	public String getGrabType() {
-		return this.grabType;
-	}
-
-	public void setGrabType(String grabType) {
-		this.grabType = grabType;
-		if(grabType != null){
-			putQueryParameter("GrabType", grabType);
-		}
-	}
 
 	public String getRemarksB() {
 		return this.remarksB;
@@ -96,17 +77,6 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getExternalId() {
 		return this.externalId;
 	}
@@ -115,17 +85,6 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 		this.externalId = externalId;
 		if(externalId != null){
 			putQueryParameter("ExternalId", externalId);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -170,17 +129,6 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 		this.setId = setId;
 		if(setId != null){
 			putQueryParameter("SetId", setId);
-		}
-	}
-
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
 		}
 	}
 
