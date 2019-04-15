@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ActivateLicenseRequest extends RpcAcsRequest<ActivateLicenseResponse> {
 	
 	public ActivateLicenseRequest() {
-		super("Market", "2015-11-01", "ActivateLicense", "market");
+		super("Market", "2015-11-01", "ActivateLicense");
 	}
 
 	private String identification;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeOrderRequest extends RpcAcsRequest<DescribeOrderResponse> {
 	
 	public DescribeOrderRequest() {
-		super("Market", "2015-11-01", "DescribeOrder", "market");
+		super("Market", "2015-11-01", "DescribeOrder");
 	}
 
 	private String orderId;

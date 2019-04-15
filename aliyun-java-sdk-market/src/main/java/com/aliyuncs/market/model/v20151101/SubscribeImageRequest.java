@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubscribeImageRequest extends RpcAcsRequest<SubscribeImageResponse> {
 	
 	public SubscribeImageRequest() {
-		super("Market", "2015-11-01", "SubscribeImage", "market");
+		super("Market", "2015-11-01", "SubscribeImage");
 	}
 
 	private String productCode;

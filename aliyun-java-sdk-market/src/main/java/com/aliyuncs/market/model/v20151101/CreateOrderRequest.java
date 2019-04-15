@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 	
 	public CreateOrderRequest() {
-		super("Market", "2015-11-01", "CreateOrder", "market");
+		super("Market", "2015-11-01", "CreateOrder");
 	}
 
 	private String orderSouce;

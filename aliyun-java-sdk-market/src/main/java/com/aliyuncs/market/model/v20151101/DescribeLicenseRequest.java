@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLicenseRequest extends RpcAcsRequest<DescribeLicenseResponse> {
 	
 	public DescribeLicenseRequest() {
-		super("Market", "2015-11-01", "DescribeLicense", "market");
+		super("Market", "2015-11-01", "DescribeLicense");
 	}
 
 	private String licenseCode;

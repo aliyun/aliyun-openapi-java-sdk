@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryMarketImagesRequest extends RpcAcsRequest<QueryMarketImagesResponse> {
 	
 	public QueryMarketImagesRequest() {
-		super("Market", "2015-11-01", "QueryMarketImages", "market");
+		super("Market", "2015-11-01", "QueryMarketImages");
 	}
 
 	private String param;

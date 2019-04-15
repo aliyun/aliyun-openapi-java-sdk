@@ -23,10 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceResponse> {
 	
 	public DescribeInstanceRequest() {
-		super("Market", "2015-11-01", "DescribeInstance", "market");
+		super("Market", "2015-11-01", "DescribeInstance");
 	}
 
 	private String instanceId;
+
+	private String orderType;
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -36,6 +38,17 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 
