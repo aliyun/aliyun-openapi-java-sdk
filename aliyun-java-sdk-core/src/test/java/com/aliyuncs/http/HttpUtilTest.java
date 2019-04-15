@@ -1,6 +1,11 @@
 package com.aliyuncs.http;
 
-import com.aliyuncs.exceptions.ClientException;
+import static org.mockito.Mockito.mock;
+
+import java.net.Proxy;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.http.HttpHost;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -8,11 +13,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.mockito.Mockito;
 
-import java.net.Proxy;
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.mockito.Mockito.mock;
+import com.aliyuncs.exceptions.ClientException;
 
 public class HttpUtilTest {
 
@@ -52,14 +53,16 @@ public class HttpUtilTest {
         requestHeaders.put("test1", "test1");
         requestHeaders.put("test2", "test2");
         Mockito.when(request.getSysHeaders()).thenReturn(requestHeaders);
-        String exceptString = "> GET HTTP/1.1\n> test2 : test2\n> test1 : test1\n> \nrequest body";
+        String exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> test1 : test1\n> "
+                + "Request URL : http://test.domain\n> \nrequest body";
 
         HttpUtil.setIsHttpDebug(true);
         HttpUtil.setIsHttpContentDebug(true);
         Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
 
         HttpUtil.setIsHttpContentDebug(false);
-        exceptString = "> GET HTTP/1.1\n> test2 : test2\n> test1 : test1\n> ";
+        exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> test2 : test2\n> test1 : test1\n> "
+                + "Request URL : http://test.domain\n> ";
         Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
 
         HttpUtil.setIsHttpDebug(false);
@@ -98,6 +101,52 @@ public class HttpUtilTest {
         HttpUtil.setIsHttpContentDebug(true);
         Assert.assertNull(HttpUtil.debugHttpResponse(response));
 
+        HttpUtil.setIsHttpDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
+        HttpUtil.setIsHttpContentDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
+    }
+
+    @Test
+    public void testDebugHttpRquestException() throws ClientException {
+        HttpRequest request = mock(HttpRequest.class);
+        Mockito.when(request.getSysMethod()).thenReturn(MethodType.GET);
+        Mockito.when(request.getSysUrl()).thenReturn("httpss://test.domain/jdj");
+        Map<String, String> requestHeaders = new HashMap<String, String>();
+        Mockito.when(request.getHttpContentString()).thenReturn("request body");
+        requestHeaders.put("test1", "test1");
+        requestHeaders.put("test2", "test2");
+        Mockito.when(request.getSysHeaders()).thenReturn(requestHeaders);
+        String exceptString = "> GET httpss://test.domain/jdj\n> Host : httpss://test.domain/jdj\n> "
+                + "test2 : test2\n> test1 : test1\n> Request URL : httpss://test.domain/jdj\n> \nrequest body";
+        HttpUtil.setIsHttpDebug(true);
+        HttpUtil.setIsHttpContentDebug(true);
+        Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
+        
+        Mockito.when(request.getSysUrl()).thenReturn("http://test.domain/jdj");
+        Mockito.doThrow(ClientException.class).when(request).getHttpContentString();
+        Mockito.when(request.getSysEncoding()).thenReturn("HHH");
+        exceptString = "> GET HTTP/1.1\n> Host : test.domain\n> "
+                + "test2 : test2\n> test1 : test1\n> Request URL : http://test.domain/jdj\n> \n"
+                + "Can not parse response due to unsupported encoding : HHH";
+        Assert.assertEquals(HttpUtil.debugHttpRequest(request), exceptString);
+        HttpUtil.setIsHttpDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
+        HttpUtil.setIsHttpContentDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
+    }
+
+    @Test
+    public void testDebugHttpResponseException() throws ClientException {
+        HttpResponse response = mock(HttpResponse.class);
+        Mockito.when(response.getStatus()).thenReturn(200);
+        Mockito.doThrow(ClientException.class).when(response).getHttpContentString();
+        Mockito.when(response.getSysEncoding()).thenReturn("HHH");
+        Map<String, String> reasponseHeaders = new HashMap<String, String>();
+        reasponseHeaders.put("test1", "test1");
+        reasponseHeaders.put("test2", "test2");
+        Mockito.when(response.getSysHeaders()).thenReturn(reasponseHeaders);
+        String exceptString = "< HTTP/1.1 200\n< test2 : test2\n< test1 : test1\n< \n"
+                + "Can not parse response due to unsupported encoding : HHH";
+        HttpUtil.setIsHttpDebug(true);
+        HttpUtil.setIsHttpContentDebug(true);
+        Assert.assertEquals(HttpUtil.debugHttpResponse(response), exceptString);
         HttpUtil.setIsHttpDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
         HttpUtil.setIsHttpContentDebug("sdk".equalsIgnoreCase(System.getenv("DEBUG")));
     }
@@ -157,5 +206,4 @@ public class HttpUtilTest {
         boolean need = HttpUtil.needProxy("http://targethost.com", "", "http://www.aliyun.com,http://targethost.com");
         Assert.assertFalse(need);
     }
-
 }
