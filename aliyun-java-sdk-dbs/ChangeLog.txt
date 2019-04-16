@@ -1,3 +1,7 @@
+2019-04-17 Version: 1.0.5
+1, Add DescribeRestoreTaskList DBS interface.
+2, Add DescribeNodeCidrList DBS interface.
+
 2019-04-15 Version: 1.0.4
 1, Add CreateRestoreTask DBS interface.
 2, Add StartRestoreTask DBS interface.
