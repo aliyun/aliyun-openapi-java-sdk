@@ -53,7 +53,6 @@ public class DefaultAcsClientTest {
     public void testConstructor() throws ClientException, IOException {
         DefaultAcsClient client = new DefaultAcsClient();
         Assert.assertTrue(DefaultProfile.getProfile() == client.getProfile());
-
         client = new DefaultAcsClient("cn-test");
         Assert.assertEquals("cn-test", client.getProfile().getRegionId());
         Assert.assertEquals("ApacheHttpClient",

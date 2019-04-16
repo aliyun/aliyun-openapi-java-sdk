@@ -233,7 +233,11 @@ public class DefaultAcsClient implements IAcsClient {
     private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
                                                           String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
-
+        Logger logger = clientProfile.getLogger();
+        String startTime = "";
+        String timeCost = "";
+        HttpResponse response = null;
+        String errorMessage = "";
         try {
             FormatType requestFormatType = request.getSysAcceptFormat();
             if (null != requestFormatType) {
@@ -254,48 +258,51 @@ public class DefaultAcsClient implements IAcsClient {
                     throw new ClientException(ErrorCodeConstant.SDK_ENDPOINT_TESTABILITY, endpoint);
                 }
             }
-
             if (request.getSysProtocol() == null) {
                 request.setSysProtocol(this.clientProfile.getHttpClientConfig().getProtocolType());
             }
             request.putHeaderParameter("User-Agent", UserAgentConfig.resolve(request.getSysUserAgentConfig(),
                     this.userAgentConfig));
             try {
-                Logger logger = clientProfile.getLogger();
-                HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
 
+                HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
                 HttpUtil.debugHttpRequest(request);
-                String startTime = LogUtils.localeNow();
+                startTime = LogUtils.localeNow();
                 long start = System.nanoTime();
-                HttpResponse response;
                 response = this.httpClient.syncInvoke(httpRequest);
                 long end = System.nanoTime();
-                String timeCost = TimeUnit.NANOSECONDS.toMillis(end - start) + "ms";
-                if (null != logger) {
-                    try {
-                        LogUtils.LogUnit logUnit = LogUtils.createLogUnit(request, response);
-                        logUnit.setStartTime(startTime);
-                        logUnit.setCost(timeCost);
-                        String logContent = LogUtils.fillContent(clientProfile.getLogFormat(), logUnit);
-                        logger.info(logContent);
-                    } catch (Throwable e) {
-                        e.printStackTrace();
-                    }
-                }
+                timeCost = TimeUnit.NANOSECONDS.toMillis(end - start) + "ms";
                 HttpUtil.debugHttpResponse(response);
                 return response;
             } catch (SocketTimeoutException exp) {
+                errorMessage = exp.getMessage();
                 throw new ClientException("SDK.ServerUnreachable",
                         "SocketTimeoutException has occurred on a socket read or accept.The url is " +
                                 request.getSysUrl(), exp);
             } catch (IOException exp) {
+                errorMessage = exp.getMessage();
                 throw new ClientException("SDK.ServerUnreachable",
                         "Server unreachable: connection " + request.getSysUrl() + " failed", exp);
             }
         } catch (InvalidKeyException exp) {
+            errorMessage = exp.getMessage();
             throw new ClientException("SDK.InvalidAccessSecret", "Specified access secret is not valid.", exp);
         } catch (NoSuchAlgorithmException exp) {
+            errorMessage = exp.getMessage();
             throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.", exp);
+        } finally {
+            if (null != logger) {
+                try {
+                    LogUtils.LogUnit logUnit = LogUtils.createLogUnit(request, response);
+                    logUnit.setStartTime(startTime);
+                    logUnit.setCost(timeCost);
+                    logUnit.setError(errorMessage);
+                    String logContent = LogUtils.fillContent(clientProfile.getLogFormat(), logUnit);
+                    logger.info(logContent);
+                } catch (Throwable e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 

@@ -8,13 +8,11 @@
 若要启动日志功能，请传入实现了`org.slf4j.Logger`接口的对象
 
 ```java
-HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-// Client Logger配置
-clientConfig.setLogger(logger);
-// Client 日志格式配置
-clientConfig.setLogFormat(format)
 IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
-profile.setHttpClientConfig(clientConfig);
+// Client Logger配置
+profile.setLogger(logger);
+// Client 日志格式配置
+profile.setLogFormat(format);
 DefaultAcsClient client = new DefaultAcsClient(profile);
 client.getAcsResponse(request);
 ```
@@ -23,7 +21,7 @@ client.getAcsResponse(request);
 `{method} {uri} HTTP/{version} {code} {cost} {hostname} {pid}`
 ### 设置格式
 ```java
-clientConfig.setLogFormat(format)
+profile.setLogFormat(format)
 ```
 
 ### 变量

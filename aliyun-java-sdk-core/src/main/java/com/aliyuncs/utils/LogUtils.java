@@ -39,13 +39,14 @@ public class LogUtils {
     public final static String COST = "{cost}";
     public final static String START_TIME = "{start_time}";
     public final static String TIME = "{time}";
-    public final static String DEFAULT_LOG_FORMAT = "{method} {uri} HTTP/{version} {code} {cost} {hostname} {pid}";
+    public final static String ERROR = "{error}";
+    public final static String DEFAULT_LOG_FORMAT =
+            "{method} {uri} HTTP/{version} {code} {cost} {hostname} {pid} {error}";
     public final static Pattern reqHeaderPattern = Pattern.compile("\\{req_header_(.*?)\\}");
     public final static Pattern resHeaderPattern = Pattern.compile("\\{res_header_(.*?)\\}");
 
     public static String fillContent(String format, LogUnit logUnit) {
         String content = format.replace(REQUEST, logUnit.getHttpRequest().toString())
-                .replace(RESPONSE, logUnit.getHttpResponse().toString())
                 .replace(TS, logUnit.getTs())
                 .replace(DATE_ISO_8601, logUnit.getTs())
                 .replace(DATE_COMMON_LOG, logUnit.getTs())
@@ -55,17 +56,20 @@ public class LogUtils {
                 .replace(VERSION, logUnit.getVersion())
                 .replace(TARGET, logUnit.getTarget())
                 .replace(HOSTNAME, logUnit.getHostname())
-                .replace(CODE, logUnit.getCode())
-                .replace(PHRASE, logUnit.getPhrase())
+                .replace(ERROR, logUnit.getError())
                 .replace(REQ_HEADERS, logUnit.getReqHeaders())
                 .replace(RES_HEADERS, logUnit.getResHeaders())
                 .replace(REQ_BODY, logUnit.getReqBody())
-                .replace(RES_BODY, logUnit.getResBody())
                 .replace(PID, logUnit.getPid())
                 .replace(COST, logUnit.getCost())
                 .replace(START_TIME, logUnit.getStartTime())
                 .replace(TIME, logUnit.getTime());
-
+        if (null != logUnit.getHttpResponse()) {
+            content = content.replace(RESPONSE, logUnit.getHttpResponse().toString()).
+                    replace(RES_BODY, logUnit.getResBody()).
+                    replace(PHRASE, logUnit.getPhrase()).
+                    replace(CODE, logUnit.getCode());
+        }
         Matcher m = reqHeaderPattern.matcher(content);
         while (m.find()) {
             String headerKey = m.group(1);
@@ -138,6 +142,7 @@ public class LogUtils {
         private String cost;
         private String startTime;
         private String time;
+        private String error;
 
         public LogUnit(HttpRequest httpRequest, HttpResponse httpResponse) {
             this.httpRequest = httpRequest;
@@ -165,13 +170,15 @@ public class LogUtils {
             this.method = httpRequest.getSysMethod().name();
             this.url = httpRequest.getSysUrl();
             this.hostname = getLocalHostName();
-            this.code = String.valueOf(httpResponse.getStatus());
-            this.phrase = (httpResponse.getReasonPhrase() != null ? httpResponse.getReasonPhrase() : "");
             this.reqHeaders = httpRequest.getSysHeaders().toString();
-            this.resHeaders = httpResponse.getSysHeaders().toString();
             try {
                 this.reqBody = httpRequest.getHttpContentString();
-                this.resBody = httpResponse.getHttpContentString();
+                if (null != httpResponse) {
+                    this.resHeaders = httpResponse.getSysHeaders().toString();
+                    this.code = String.valueOf(httpResponse.getStatus());
+                    this.phrase = (httpResponse.getReasonPhrase() != null ? httpResponse.getReasonPhrase() : "");
+                    this.resBody = httpResponse.getHttpContentString();
+                }
             } catch (ClientException e) {
                 e.printStackTrace();
             }

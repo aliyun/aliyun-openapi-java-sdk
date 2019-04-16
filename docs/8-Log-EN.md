@@ -7,13 +7,11 @@
 To start the logging function, pass in an object that implements the `org.slf4j.Logger` interface
 
 ```java
-HttpClientConfig clientConfig = HttpClientConfig.getDefault();
-// configure logger
-clientConfig.setLogger(logger);
-// configure log format
-clientConfig.setLogFormat(format)
 IClientProfile profile = DefaultProfile.getProfile(regionId, accesskeyId, accesskeySecret);
-profile.setHttpClientConfig(clientConfig);
+// configure logger
+profile.setLogger(logger);
+// configure log format
+profile.setLogFormat(format);
 DefaultAcsClient client = new DefaultAcsClient(profile);
 client.getAcsResponse(request);
 ```
@@ -22,7 +20,7 @@ client.getAcsResponse(request);
 `{method} {uri} HTTP/{version} {code} {cost} {hostname} {pid}`
 ### Configure format
 ```java
-clientConfig.setLogFormat(format)
+profile.setLogFormat(format)
 ```
 
 ### Variables
