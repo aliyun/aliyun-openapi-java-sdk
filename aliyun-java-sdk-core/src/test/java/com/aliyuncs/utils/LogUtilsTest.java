@@ -123,8 +123,10 @@ public class LogUtilsTest {
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
         Map<String, String> resHeaders = new HashMap<String, String>();
         reqHeaders.put("resHeaderKey1", "resHeaderValue1");
-        HttpRequest httpRequest = createMockHttpRequest("mock exception://www.aliyun.com/path?query=ecs#ref", MethodType.POST, "req body", null, reqHeaders);
-        HttpResponse httpResponse = createMockHttpResponse(200, "OK", "res body", null, resHeaders);
+        HttpRequest httpRequest = createMockHttpRequest("mock exception://www.aliyun.com/path?query=ecs#ref",
+                MethodType.POST, "req body", null, reqHeaders);
+        HttpResponse httpResponse = createMockHttpResponse(200, "OK", "res body",
+                null, resHeaders);
         mockLogUtils();
         LogUtils.LogUnit logUnit = new LogUtils.LogUnit(httpRequest, httpResponse);
         Assert.assertEquals("utc now time", logUnit.getTs());
@@ -139,19 +141,14 @@ public class LogUtilsTest {
     public void logUnitConstructorWithExceptionBody() throws ClientException {
         Map<String, String> reqHeaders = new HashMap<String, String>();
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
-        Map<String, String> resHeaders = new HashMap<String, String>();
-        reqHeaders.put("resHeaderKey1", "resHeaderValue1");
         ClientException exception = mock(ClientException.class);
-        HttpRequest httpRequest = createMockHttpRequest("http://www.aliyun.com/path?query=ecs#ref", MethodType.POST, "req body", exception, reqHeaders);
-        HttpResponse httpResponse = createMockHttpResponse(200, "OK", "res body", null, resHeaders);
+        HttpRequest httpRequest = createMockHttpRequest("http://www.aliyun.com/path?query=ecs#ref",
+                MethodType.POST, "req body", exception, reqHeaders);
         mockLogUtils();
-        LogUtils.LogUnit logUnit = new LogUtils.LogUnit(httpRequest, httpResponse);
+        LogUtils.LogUnit logUnit = new LogUtils.LogUnit(httpRequest, null);
         Assert.assertEquals("utc now time", logUnit.getTs());
         Assert.assertEquals("www.aliyun.com", logUnit.getHost());
         Assert.assertEquals("/path?query=ecs#ref", logUnit.getTarget());
-        Assert.assertEquals("200", logUnit.getCode());
-        Assert.assertEquals("OK", logUnit.getPhrase());
-        Assert.assertEquals(null, logUnit.getReqBody());
         Assert.assertEquals("locale now time", logUnit.getTime());
     }
 
@@ -161,8 +158,10 @@ public class LogUtilsTest {
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
         Map<String, String> resHeaders = new HashMap<String, String>();
         reqHeaders.put("resHeaderKey1", "resHeaderValue1");
-        HttpRequest httpRequest = createMockHttpRequest("http://www.aliyun.com/path?query=ecs#ref", MethodType.POST, "req body", null, reqHeaders);
-        HttpResponse httpResponse = createMockHttpResponse(200, "OK", "res body", null, resHeaders);
+        HttpRequest httpRequest = createMockHttpRequest("http://www.aliyun.com/path?query=ecs#ref",
+                MethodType.POST, "req body", null, reqHeaders);
+        HttpResponse httpResponse = createMockHttpResponse(200, "OK", "res body",
+                null, resHeaders);
         mockLogUtils();
         LogUtils.LogUnit logUnit = new LogUtils.LogUnit(httpRequest, httpResponse);
         HttpRequest request = mock(HttpRequest.class);
@@ -259,14 +258,17 @@ public class LogUtilsTest {
         reqHeaders.put("reqHeaderKey1", "reqHeaderValue1");
         Map<String, String> resHeaders = new HashMap<String, String>();
         reqHeaders.put("resHeaderKey1", "resHeaderValue1");
-        HttpRequest httpRequest = createMockHttpRequest("http://www.aliyun.com/path?query=ecs#ref", MethodType.POST, "req body", null, reqHeaders);
-        HttpResponse httpResponse = createMockHttpResponse(200, "OK", "res body", null, resHeaders);
+        HttpRequest httpRequest = createMockHttpRequest("http://www.aliyun.com/path?query=ecs#ref",
+                MethodType.POST, "req body", null, reqHeaders);
+        HttpResponse httpResponse = createMockHttpResponse(200, "OK", "res body",
+                null, resHeaders);
         Assert.assertNotNull(LogUtils.createLogUnit(httpRequest, httpResponse));
     }
 
     @Test
     public void fillContentTest() throws ClientException {
-        String format = DEFAULT_LOG_FORMAT + " {req_header_exist} {req_header_nonExist} {res_header_exist} {res_header_nonExist}";
+        String format = DEFAULT_LOG_FORMAT +
+                " {req_header_exist} {req_header_nonExist} {res_header_exist} {res_header_nonExist}";
         Map<String, String> reqHeaders = new HashMap<String, String>();
         reqHeaders.put("reqHeader", "reqValue");
         Map<String, String> resHeaders = new HashMap<String, String>();
@@ -275,6 +277,7 @@ public class LogUtilsTest {
         when(logUnit.getMethod()).thenReturn("POST");
         when(logUnit.getUrl()).thenReturn("https://www.aliyun.com/path#ref");
         when(logUnit.getVersion()).thenReturn("1.1");
+        when(logUnit.getError()).thenReturn("testError");
         when(logUnit.getCode()).thenReturn("200");
         when(logUnit.getCost()).thenReturn("100ms");
         when(logUnit.getHostname()).thenReturn("host name");
@@ -297,7 +300,9 @@ public class LogUtilsTest {
         when(logUnit.getResBody()).thenReturn("res body");
         when(logUnit.getStartTime()).thenReturn("start time");
         when(logUnit.getTime()).thenReturn("time");
-        Assert.assertEquals("POST https://www.aliyun.com/path#ref HTTP/1.1 200 100ms host name pid req_header_exist {req_header_nonExist} res_header_exist {res_header_nonExist}", LogUtils.fillContent(format, logUnit));
+        Assert.assertEquals("POST https://www.aliyun.com/path#ref HTTP/1.1 200 100ms host name pid testError" +
+                " req_header_exist {req_header_nonExist} res_header_exist {res_header_nonExist}",
+                LogUtils.fillContent(format, logUnit));
     }
 
 }
