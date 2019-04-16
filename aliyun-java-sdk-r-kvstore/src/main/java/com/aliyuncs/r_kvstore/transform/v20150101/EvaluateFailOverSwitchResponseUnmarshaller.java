@@ -21,7 +21,6 @@ import com.aliyuncs.r_kvstore.model.v20150101.EvaluateFailOverSwitchResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.EvaluateFailOverSwitchResponse.ItemsItem;
 import com.aliyuncs.r_kvstore.model.v20150101.EvaluateFailOverSwitchResponse.ItemsItem.AccountsItem;
 import com.aliyuncs.r_kvstore.model.v20150101.EvaluateFailOverSwitchResponse.ReportsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

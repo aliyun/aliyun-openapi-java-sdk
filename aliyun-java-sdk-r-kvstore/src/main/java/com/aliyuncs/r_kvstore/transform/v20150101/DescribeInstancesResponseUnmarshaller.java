@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeInstancesResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeInstancesResponse.KVStoreInstance;
-import java.util.Map;
+import com.aliyuncs.r_kvstore.model.v20150101.DescribeInstancesResponse.KVStoreInstance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -67,6 +67,16 @@ public class DescribeInstancesResponseUnmarshaller {
 			kVStoreInstance.setEngineVersion(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EngineVersion"));
 			kVStoreInstance.setDestroyTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].DestroyTime"));
 			kVStoreInstance.setConnectionMode(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectionMode"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			kVStoreInstance.setTags(tags);
 
 			instances.add(kVStoreInstance);
 		}

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeDBInstanceNetInfoResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeDBInstanceNetInfoResponse.InstanceNetInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +38,7 @@ public class DescribeDBInstanceNetInfoResponseUnmarshaller {
 			instanceNetInfo.setVPCId(context.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].VPCId"));
 			instanceNetInfo.setVSwitchId(context.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].VSwitchId"));
 			instanceNetInfo.setDBInstanceNetType(context.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].DBInstanceNetType"));
+			instanceNetInfo.setVPCInstanceId(context.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].VPCInstanceId"));
 			instanceNetInfo.setIPType(context.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].IPType"));
 			instanceNetInfo.setExpiredTime(context.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].ExpiredTime"));
 			instanceNetInfo.setUpgradeable(context.stringValue("DescribeDBInstanceNetInfoResponse.NetInfoItems["+ i +"].Upgradeable"));

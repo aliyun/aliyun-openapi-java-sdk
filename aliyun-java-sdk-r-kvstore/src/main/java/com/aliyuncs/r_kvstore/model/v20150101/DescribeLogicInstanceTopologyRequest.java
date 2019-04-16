@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLogicInstanceTopologyRequest extends RpcAcsRequest<DescribeLogicInstanceTopologyResponse> {
 	
 	public DescribeLogicInstanceTopologyRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "redisa");
+		super("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;
@@ -60,10 +60,29 @@ public class DescribeLogicInstanceTopologyRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

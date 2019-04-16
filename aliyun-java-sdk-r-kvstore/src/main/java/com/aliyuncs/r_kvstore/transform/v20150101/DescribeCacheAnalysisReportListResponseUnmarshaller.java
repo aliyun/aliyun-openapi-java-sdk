@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeCacheAnalysisReportListResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeCacheAnalysisReportListResponse.DailyTask;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeCacheAnalysisReportListResponse.DailyTask.Task;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

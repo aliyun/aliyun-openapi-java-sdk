@@ -15,7 +15,6 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.DescribeInstanceAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -122,6 +121,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String replicationMode;
 
+		private List<Tag> tags;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -162,10 +163,26 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 			this.instanceStatus = instanceStatus;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -416,6 +433,37 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setReplicationMode(String replicationMode) {
 			this.replicationMode = replicationMode;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeParametersResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeParametersResponse.Parameter;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

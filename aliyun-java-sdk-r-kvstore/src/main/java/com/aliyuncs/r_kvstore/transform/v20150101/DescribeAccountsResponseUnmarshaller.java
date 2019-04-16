@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeAccountsResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeAccountsResponse.Account;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeAccountsResponse.Account.DatabasePrivilege;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,7 +32,7 @@ public class DescribeAccountsResponseUnmarshaller {
 		List<Account> accounts = new ArrayList<Account>();
 		for (int i = 0; i < context.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {
 			Account account = new Account();
-			account.setInstanceId(context.integerValue("DescribeAccountsResponse.Accounts["+ i +"].InstanceId"));
+			account.setInstanceId(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].InstanceId"));
 			account.setAccountName(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountName"));
 			account.setAccountStatus(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
 			account.setAccountType(context.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));

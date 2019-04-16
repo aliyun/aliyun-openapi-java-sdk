@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse> {
 	
 	public ModifyInstanceAutoRenewalAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "R-kvstore");
 	}
 
 	private String duration;
@@ -75,10 +75,29 @@ public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<Mod
 		}
 	}
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

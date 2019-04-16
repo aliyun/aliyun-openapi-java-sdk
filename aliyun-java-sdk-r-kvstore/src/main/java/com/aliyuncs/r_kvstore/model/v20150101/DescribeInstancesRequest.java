@@ -15,6 +15,7 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -23,7 +24,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	
 	public DescribeInstancesRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstances", "redisa");
+		super("R-kvstore", "2015-01-01", "DescribeInstances", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;
@@ -65,6 +66,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 	private String zoneId;
 
 	private String chargeType;
+
+	private List<Tag> tags;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -198,10 +201,29 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
@@ -283,6 +305,43 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.ModifyInstanceNetExpireTimeResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.ModifyInstanceNetExpireTimeResponse.NetInfoItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

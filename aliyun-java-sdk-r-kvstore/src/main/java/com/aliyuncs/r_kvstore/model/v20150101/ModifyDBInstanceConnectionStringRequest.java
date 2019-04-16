@@ -23,24 +23,28 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<ModifyDBInstanceConnectionStringResponse> {
 	
 	public ModifyDBInstanceConnectionStringRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;
-
-	private String securityToken;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
-
 	private String newConnectionString;
 
 	private Long ownerId;
 
+	private String iPType;
+
 	private String currentConnectionString;
+
+	private String securityToken;
+
+	private String port;
+
+	private String dBInstanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,17 +54,6 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -86,17 +79,6 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public String getNewConnectionString() {
 		return this.newConnectionString;
 	}
@@ -104,7 +86,7 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 	public void setNewConnectionString(String newConnectionString) {
 		this.newConnectionString = newConnectionString;
 		if(newConnectionString != null){
-			putQueryParameter("newConnectionString", newConnectionString);
+			putQueryParameter("NewConnectionString", newConnectionString);
 		}
 	}
 
@@ -119,6 +101,17 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 		}
 	}
 
+	public String getIPType() {
+		return this.iPType;
+	}
+
+	public void setIPType(String iPType) {
+		this.iPType = iPType;
+		if(iPType != null){
+			putQueryParameter("IPType", iPType);
+		}
+	}
+
 	public String getCurrentConnectionString() {
 		return this.currentConnectionString;
 	}
@@ -126,7 +119,59 @@ public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<Modif
 	public void setCurrentConnectionString(String currentConnectionString) {
 		this.currentConnectionString = currentConnectionString;
 		if(currentConnectionString != null){
-			putQueryParameter("currentConnectionString", currentConnectionString);
+			putQueryParameter("CurrentConnectionString", currentConnectionString);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeZonesResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeZonesResponse.KVStoreZone;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,6 +36,7 @@ public class DescribeZonesResponseUnmarshaller {
 			kVStoreZone.setZoneName(context.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneName"));
 			kVStoreZone.setSwitchNetwork(context.booleanValue("DescribeZonesResponse.Zones["+ i +"].SwitchNetwork"));
 			kVStoreZone.setIsRds(context.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsRds"));
+			kVStoreZone.setDisabled(context.booleanValue("DescribeZonesResponse.Zones["+ i +"].Disabled"));
 
 			zones.add(kVStoreZone);
 		}

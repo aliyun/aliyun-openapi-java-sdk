@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SwitchTempInstanceRequest extends RpcAcsRequest<SwitchTempInstanceResponse> {
 	
 	public SwitchTempInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "SwitchTempInstance", "redisa");
+		super("R-kvstore", "2015-01-01", "SwitchTempInstance", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;

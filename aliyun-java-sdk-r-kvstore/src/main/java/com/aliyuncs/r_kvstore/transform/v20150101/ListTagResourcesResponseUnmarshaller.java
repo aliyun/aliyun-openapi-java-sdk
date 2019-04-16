@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.ListTagResourcesResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.ListTagResourcesResponse.TagResource;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,6 +27,7 @@ public class ListTagResourcesResponseUnmarshaller {
 	public static ListTagResourcesResponse unmarshall(ListTagResourcesResponse listTagResourcesResponse, UnmarshallerContext context) {
 		
 		listTagResourcesResponse.setRequestId(context.stringValue("ListTagResourcesResponse.RequestId"));
+		listTagResourcesResponse.setNextToken(context.stringValue("ListTagResourcesResponse.NextToken"));
 
 		List<TagResource> tagResources = new ArrayList<TagResource>();
 		for (int i = 0; i < context.lengthValue("ListTagResourcesResponse.TagResources.Length"); i++) {

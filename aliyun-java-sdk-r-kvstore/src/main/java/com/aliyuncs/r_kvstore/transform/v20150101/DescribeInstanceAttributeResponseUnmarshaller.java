@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeInstanceAttributeResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeInstanceAttributeResponse.DBInstanceAttribute;
-import java.util.Map;
+import com.aliyuncs.r_kvstore.model.v20150101.DescribeInstanceAttributeResponse.DBInstanceAttribute.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -69,6 +69,16 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setVpcAuthMode(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcAuthMode"));
 			dBInstanceAttribute.setAuditLogRetention(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AuditLogRetention"));
 			dBInstanceAttribute.setReplicationMode(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicationMode"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			dBInstanceAttribute.setTags(tags);
 
 			instances.add(dBInstanceAttribute);
 		}

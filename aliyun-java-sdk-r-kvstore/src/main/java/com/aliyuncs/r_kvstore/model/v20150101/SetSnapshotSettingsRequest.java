@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetSnapshotSettingsRequest extends RpcAcsRequest<SetSnapshotSettingsResponse> {
 	
 	public SetSnapshotSettingsRequest() {
-		super("R-kvstore", "2015-01-01", "SetSnapshotSettings", "redisa");
+		super("R-kvstore", "2015-01-01", "SetSnapshotSettings", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;

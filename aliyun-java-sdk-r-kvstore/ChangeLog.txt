@@ -1,3 +1,6 @@
+2019-04-16 Version: 2.0.6
+1, Fixed describeAccounts response type error
+
 2018-12-27 Version: 2.0.5
 1, Add DescribeZones Api.
 

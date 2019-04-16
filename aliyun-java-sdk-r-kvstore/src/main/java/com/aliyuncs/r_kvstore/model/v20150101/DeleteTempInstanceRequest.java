@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTempInstanceRequest extends RpcAcsRequest<DeleteTempInstanceResponse> {
 	
 	public DeleteTempInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteTempInstance", "redisa");
+		super("R-kvstore", "2015-01-01", "DeleteTempInstance", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;

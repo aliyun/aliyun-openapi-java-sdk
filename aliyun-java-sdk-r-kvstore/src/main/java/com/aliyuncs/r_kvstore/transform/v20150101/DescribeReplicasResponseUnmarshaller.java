@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeReplicasResponse;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeReplicasResponse.Items;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeReplicasResponse.Items.Items1;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

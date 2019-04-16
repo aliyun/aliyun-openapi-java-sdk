@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteSnapshotSettingsRequest extends RpcAcsRequest<DeleteSnapshotSettingsResponse> {
 	
 	public DeleteSnapshotSettingsRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteSnapshotSettings", "redisa");
+		super("R-kvstore", "2015-01-01", "DeleteSnapshotSettings", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeTempInstanceRequest extends RpcAcsRequest<DescribeTempInstanceResponse> {
 	
 	public DescribeTempInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeTempInstance", "redisa");
+		super("R-kvstore", "2015-01-01", "DescribeTempInstance", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;

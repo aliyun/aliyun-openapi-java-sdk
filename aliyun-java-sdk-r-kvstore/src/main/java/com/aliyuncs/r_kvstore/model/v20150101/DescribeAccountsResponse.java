@@ -15,7 +15,6 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.DescribeAccountsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -48,7 +47,7 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public static class Account {
 
-		private Integer instanceId;
+		private String instanceId;
 
 		private String accountName;
 
@@ -62,11 +61,11 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private List<DatabasePrivilege> databasePrivileges;
 
-		public Integer getInstanceId() {
+		public String getInstanceId() {
 			return this.instanceId;
 		}
 
-		public void setInstanceId(Integer instanceId) {
+		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
 		}
 

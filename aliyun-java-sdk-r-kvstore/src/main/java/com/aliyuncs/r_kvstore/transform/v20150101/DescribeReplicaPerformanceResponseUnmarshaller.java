@@ -22,7 +22,6 @@ import com.aliyuncs.r_kvstore.model.v20150101.DescribeReplicaPerformanceResponse
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeReplicaPerformanceResponse.PerformanceKeys.PerformanceKeyItem;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeReplicaPerformanceResponse.PerformanceKeys.PerformanceKeyItem.PerformanceValues;
 import com.aliyuncs.r_kvstore.model.v20150101.DescribeReplicaPerformanceResponse.PerformanceKeys.PerformanceKeyItem.PerformanceValues.PerformanceValueItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryTaskRequest extends RpcAcsRequest<QueryTaskResponse> {
 	
 	public QueryTaskRequest() {
-		super("R-kvstore", "2015-01-01", "QueryTask", "redisa");
+		super("R-kvstore", "2015-01-01", "QueryTask", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;

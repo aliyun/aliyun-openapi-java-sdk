@@ -15,7 +15,6 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.DescribeDBInstanceNetInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -70,6 +69,8 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		private String dBInstanceNetType;
 
+		private String vPCInstanceId;
+
 		private String iPType;
 
 		private String expiredTime;
@@ -122,6 +123,14 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		public void setDBInstanceNetType(String dBInstanceNetType) {
 			this.dBInstanceNetType = dBInstanceNetType;
+		}
+
+		public String getVPCInstanceId() {
+			return this.vPCInstanceId;
+		}
+
+		public void setVPCInstanceId(String vPCInstanceId) {
+			this.vPCInstanceId = vPCInstanceId;
 		}
 
 		public String getIPType() {

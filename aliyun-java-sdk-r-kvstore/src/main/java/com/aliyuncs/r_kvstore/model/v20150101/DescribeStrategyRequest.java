@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyResponse> {
 	
 	public DescribeStrategyRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeStrategy", "redisa");
+		super("R-kvstore", "2015-01-01", "DescribeStrategy", "R-kvstore");
 	}
 
 	private Long resourceOwnerId;
@@ -49,10 +49,29 @@ public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyRespo
 		}
 	}
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

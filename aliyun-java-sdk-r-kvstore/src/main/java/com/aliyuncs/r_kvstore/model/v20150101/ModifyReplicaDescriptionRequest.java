@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplicaDescriptionResponse> {
 	
 	public ModifyReplicaDescriptionRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "R-kvstore");
 	}
 
 	private String replicaDescription;
@@ -62,10 +62,29 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 		}
 	}
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
 
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){

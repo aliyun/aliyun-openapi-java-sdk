@@ -15,7 +15,6 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.ListTagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,6 +27,8 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String nextToken;
+
 	private List<TagResource> tagResources;
 
 	public String getRequestId() {
@@ -36,6 +37,14 @@ public class ListTagResourcesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<TagResource> getTagResources() {

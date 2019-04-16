@@ -14,7 +14,6 @@
 
 package com.aliyuncs.r_kvstore.model.v20150101;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.r_kvstore.transform.v20150101.UntagResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -38,5 +37,10 @@ public class UntagResourcesResponse extends AcsResponse {
 	@Override
 	public UntagResourcesResponse getInstance(UnmarshallerContext context) {
 		return	UntagResourcesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
