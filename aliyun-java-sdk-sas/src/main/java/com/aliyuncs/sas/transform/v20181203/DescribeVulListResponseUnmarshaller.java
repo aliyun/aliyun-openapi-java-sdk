@@ -21,7 +21,7 @@ import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ExtendContentJson;
 import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ExtendContentJson.Necessity;
-import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ExtendContentJson.RpmEntityListItem;
+import com.aliyuncs.sas.model.v20181203.DescribeVulListResponse.VulRecord.ExtendContentJson.RpmEntity;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -88,17 +88,17 @@ public class DescribeVulListResponseUnmarshaller {
 			necessity.setTime_factor(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Necessity.Time_factor"));
 			extendContentJson.setNecessity(necessity);
 
-			List<RpmEntityListItem> rpmEntityList = new ArrayList<RpmEntityListItem>();
+			List<RpmEntity> rpmEntityList = new ArrayList<RpmEntity>();
 			for (int j = 0; j < context.lengthValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList.Length"); j++) {
-				RpmEntityListItem rpmEntityListItem = new RpmEntityListItem();
-				rpmEntityListItem.setFullVersion(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].FullVersion"));
-				rpmEntityListItem.setMatchDetail(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].MatchDetail"));
-				rpmEntityListItem.setName(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Name"));
-				rpmEntityListItem.setPath(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Path"));
-				rpmEntityListItem.setUpdateCmd(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].UpdateCmd"));
-				rpmEntityListItem.setVersion(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Version"));
+				RpmEntity rpmEntity = new RpmEntity();
+				rpmEntity.setFullVersion(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].FullVersion"));
+				rpmEntity.setMatchDetail(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].MatchDetail"));
+				rpmEntity.setName(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Name"));
+				rpmEntity.setPath(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Path"));
+				rpmEntity.setUpdateCmd(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].UpdateCmd"));
+				rpmEntity.setVersion(context.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Version"));
 
-				rpmEntityList.add(rpmEntityListItem);
+				rpmEntityList.add(rpmEntity);
 			}
 			extendContentJson.setRpmEntityList(rpmEntityList);
 			vulRecord.setExtendContentJson(extendContentJson);

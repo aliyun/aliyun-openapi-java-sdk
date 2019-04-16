@@ -335,7 +335,7 @@ public class DescribeVulListResponse extends AcsResponse {
 
 			private String absolutePath;
 
-			private List<RpmEntityListItem> rpmEntityList;
+			private List<RpmEntity> rpmEntityList;
 
 			private List<String> cveList;
 
@@ -405,11 +405,11 @@ public class DescribeVulListResponse extends AcsResponse {
 				this.absolutePath = absolutePath;
 			}
 
-			public List<RpmEntityListItem> getRpmEntityList() {
+			public List<RpmEntity> getRpmEntityList() {
 				return this.rpmEntityList;
 			}
 
-			public void setRpmEntityList(List<RpmEntityListItem> rpmEntityList) {
+			public void setRpmEntityList(List<RpmEntity> rpmEntityList) {
 				this.rpmEntityList = rpmEntityList;
 			}
 
@@ -429,7 +429,7 @@ public class DescribeVulListResponse extends AcsResponse {
 				this.necessity = necessity;
 			}
 
-			public static class RpmEntityListItem {
+			public static class RpmEntity {
 
 				private String fullVersion;
 
