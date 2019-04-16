@@ -37,6 +37,7 @@ public class DescribeBackupTasksResponseUnmarshaller {
 			backupJob.setProcess(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].Process"));
 			backupJob.setTaskAction(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].TaskAction"));
 			backupJob.setBackupJobId(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupJobId"));
+			backupJob.setBackupId(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupId"));
 
 			items.add(backupJob);
 		}

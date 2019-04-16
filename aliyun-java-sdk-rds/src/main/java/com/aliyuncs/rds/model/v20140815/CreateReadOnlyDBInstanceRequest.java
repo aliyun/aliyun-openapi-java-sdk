@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnlyDBInstanceResponse> {
 	
 	public CreateReadOnlyDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds");
+		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "Rds");
 	}
 
 	private Long resourceOwnerId;
@@ -55,6 +55,10 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 	private String dBInstanceId;
 
 	private String dBInstanceDescription;
+
+	private String dBInstanceStorageType;
+
+	private String category;
 
 	private String payType;
 
@@ -222,6 +226,28 @@ public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnl
 		this.dBInstanceDescription = dBInstanceDescription;
 		if(dBInstanceDescription != null){
 			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
+		}
+	}
+
+	public String getDBInstanceStorageType() {
+		return this.dBInstanceStorageType;
+	}
+
+	public void setDBInstanceStorageType(String dBInstanceStorageType) {
+		this.dBInstanceStorageType = dBInstanceStorageType;
+		if(dBInstanceStorageType != null){
+			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

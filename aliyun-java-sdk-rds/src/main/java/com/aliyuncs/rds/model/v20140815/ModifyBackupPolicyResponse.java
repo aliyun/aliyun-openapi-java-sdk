@@ -36,6 +36,8 @@ public class ModifyBackupPolicyResponse extends AcsResponse {
 
 	private String highSpaceUsageProtection;
 
+	private String compressType;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +84,14 @@ public class ModifyBackupPolicyResponse extends AcsResponse {
 
 	public void setHighSpaceUsageProtection(String highSpaceUsageProtection) {
 		this.highSpaceUsageProtection = highSpaceUsageProtection;
+	}
+
+	public String getCompressType() {
+		return this.compressType;
+	}
+
+	public void setCompressType(String compressType) {
+		this.compressType = compressType;
 	}
 
 	@Override

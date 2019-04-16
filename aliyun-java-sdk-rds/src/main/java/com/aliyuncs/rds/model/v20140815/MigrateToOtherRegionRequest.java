@@ -23,26 +23,30 @@ import com.aliyuncs.RpcAcsRequest;
 public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherRegionResponse> {
 	
 	public MigrateToOtherRegionRequest() {
-		super("Rds", "2014-08-15", "MigrateToOtherRegion", "rds");
+		super("Rds", "2014-08-15", "MigrateToOtherRegion", "Rds");
 	}
 
 	private Long resourceOwnerId;
 
-	private String targetZoneId;
-
 	private String resourceOwnerAccount;
 
-	private String effectiveTime;
-
 	private String ownerAccount;
+
+	private String targetVSwitchId;
+
+	private Long ownerId;
+
+	private String targetVpcId;
+
+	private String targetZoneId;
+
+	private String effectiveTime;
 
 	private String dBInstanceId;
 
 	private String targetRegionId;
 
 	private String switchTime;
-
-	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,17 +56,6 @@ public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherReg
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getTargetZoneId() {
-		return this.targetZoneId;
-	}
-
-	public void setTargetZoneId(String targetZoneId) {
-		this.targetZoneId = targetZoneId;
-		if(targetZoneId != null){
-			putQueryParameter("TargetZoneId", targetZoneId);
 		}
 	}
 
@@ -77,17 +70,6 @@ public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherReg
 		}
 	}
 
-	public String getEffectiveTime() {
-		return this.effectiveTime;
-	}
-
-	public void setEffectiveTime(String effectiveTime) {
-		this.effectiveTime = effectiveTime;
-		if(effectiveTime != null){
-			putQueryParameter("EffectiveTime", effectiveTime);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -96,6 +78,61 @@ public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherReg
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getTargetVSwitchId() {
+		return this.targetVSwitchId;
+	}
+
+	public void setTargetVSwitchId(String targetVSwitchId) {
+		this.targetVSwitchId = targetVSwitchId;
+		if(targetVSwitchId != null){
+			putQueryParameter("TargetVSwitchId", targetVSwitchId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTargetVpcId() {
+		return this.targetVpcId;
+	}
+
+	public void setTargetVpcId(String targetVpcId) {
+		this.targetVpcId = targetVpcId;
+		if(targetVpcId != null){
+			putQueryParameter("TargetVpcId", targetVpcId);
+		}
+	}
+
+	public String getTargetZoneId() {
+		return this.targetZoneId;
+	}
+
+	public void setTargetZoneId(String targetZoneId) {
+		this.targetZoneId = targetZoneId;
+		if(targetZoneId != null){
+			putQueryParameter("TargetZoneId", targetZoneId);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 
@@ -129,17 +166,6 @@ public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherReg
 		this.switchTime = switchTime;
 		if(switchTime != null){
 			putQueryParameter("SwitchTime", switchTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

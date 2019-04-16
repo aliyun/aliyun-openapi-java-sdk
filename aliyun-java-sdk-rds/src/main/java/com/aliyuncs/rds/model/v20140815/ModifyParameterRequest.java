@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyParameterRequest extends RpcAcsRequest<ModifyParameterResponse> {
 	
 	public ModifyParameterRequest() {
-		super("Rds", "2014-08-15", "ModifyParameter", "rds");
+		super("Rds", "2014-08-15", "ModifyParameter", "Rds");
 	}
 
 	private Long resourceOwnerId;

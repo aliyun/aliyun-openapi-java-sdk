@@ -59,6 +59,8 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		private String backupJobId;
 
+		private String backupId;
+
 		public String getBackupProgressStatus() {
 			return this.backupProgressStatus;
 		}
@@ -105,6 +107,14 @@ public class DescribeBackupTasksResponse extends AcsResponse {
 
 		public void setBackupJobId(String backupJobId) {
 			this.backupJobId = backupJobId;
+		}
+
+		public String getBackupId() {
+			return this.backupId;
+		}
+
+		public void setBackupId(String backupId) {
+			this.backupId = backupId;
 		}
 	}
 

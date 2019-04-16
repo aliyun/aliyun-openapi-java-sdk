@@ -21,7 +21,7 @@ import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.Extra;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.ReadOnlyDBInstanceId;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.SlaveRegion;
+import com.aliyuncs.rds.model.v20140815.DescribeDBInstanceAttributeResponse.DBInstanceAttribute.SlaveZone;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -100,7 +100,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setTimeZone(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TimeZone"));
 			dBInstanceAttribute.setCollation(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Collation"));
 			dBInstanceAttribute.setDispenseMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DispenseMode"));
-			dBInstanceAttribute.setMasterRegion(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MasterRegion"));
+			dBInstanceAttribute.setMasterZone(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MasterZone"));
 
 			Extra extra = new Extra();
 			extra.setReplicaGroupID(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupID"));
@@ -114,14 +114,14 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			extra.setDBInstanceId(dBInstanceId);
 			dBInstanceAttribute.setExtra(extra);
 
-			List<SlaveRegion> slaveRegions = new ArrayList<SlaveRegion>();
-			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SlaveRegions.Length"); j++) {
-				SlaveRegion slaveRegion = new SlaveRegion();
-				slaveRegion.setRegionId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SlaveRegions["+ j +"].RegionId"));
+			List<SlaveZone> slaveZones = new ArrayList<SlaveZone>();
+			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SlaveZones.Length"); j++) {
+				SlaveZone slaveZone = new SlaveZone();
+				slaveZone.setZoneId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SlaveZones["+ j +"].ZoneId"));
 
-				slaveRegions.add(slaveRegion);
+				slaveZones.add(slaveZone);
 			}
-			dBInstanceAttribute.setSlaveRegions(slaveRegions);
+			dBInstanceAttribute.setSlaveZones(slaveZones);
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

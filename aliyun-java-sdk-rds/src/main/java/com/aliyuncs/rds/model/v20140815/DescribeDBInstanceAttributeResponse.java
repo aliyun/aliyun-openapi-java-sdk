@@ -179,9 +179,9 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String dispenseMode;
 
-		private String masterRegion;
+		private String masterZone;
 
-		private List<SlaveRegion> slaveRegions;
+		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
@@ -731,20 +731,20 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.dispenseMode = dispenseMode;
 		}
 
-		public String getMasterRegion() {
-			return this.masterRegion;
+		public String getMasterZone() {
+			return this.masterZone;
 		}
 
-		public void setMasterRegion(String masterRegion) {
-			this.masterRegion = masterRegion;
+		public void setMasterZone(String masterZone) {
+			this.masterZone = masterZone;
 		}
 
-		public List<SlaveRegion> getSlaveRegions() {
-			return this.slaveRegions;
+		public List<SlaveZone> getSlaveZones() {
+			return this.slaveZones;
 		}
 
-		public void setSlaveRegions(List<SlaveRegion> slaveRegions) {
-			this.slaveRegions = slaveRegions;
+		public void setSlaveZones(List<SlaveZone> slaveZones) {
+			this.slaveZones = slaveZones;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {
@@ -763,32 +763,16 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.extra = extra;
 		}
 
-		public static class SlaveRegion {
+		public static class SlaveZone {
 
-			private String regionId;
+			private String zoneId;
 
-			public String getBizRegionId() {
-				return this.regionId;
+			public String getZoneId() {
+				return this.zoneId;
 			}
 
-			public void setBizRegionId(String regionId) {
-				this.regionId = regionId;
-			}
-
-			/**
-			 * @deprecated use getBizRegionId instead of this.
-			 */
-			@Deprecated
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			/**
-			 * @deprecated use setBizRegionId instead of this.
-			 */
-			@Deprecated
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 		}
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
 	
 	public ModifyBackupPolicyRequest() {
-		super("Rds", "2014-08-15", "ModifyBackupPolicy", "rds");
+		super("Rds", "2014-08-15", "ModifyBackupPolicy", "Rds");
 	}
 
 	private String preferredBackupPeriod;
@@ -37,6 +37,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private String ownerAccount;
 
 	private String logBackupFrequency;
+
+	private String compressType;
 
 	private String backupLog;
 
@@ -127,6 +129,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.logBackupFrequency = logBackupFrequency;
 		if(logBackupFrequency != null){
 			putQueryParameter("LogBackupFrequency", logBackupFrequency);
+		}
+	}
+
+	public String getCompressType() {
+		return this.compressType;
+	}
+
+	public void setCompressType(String compressType) {
+		this.compressType = compressType;
+		if(compressType != null){
+			putQueryParameter("CompressType", compressType);
 		}
 	}
 

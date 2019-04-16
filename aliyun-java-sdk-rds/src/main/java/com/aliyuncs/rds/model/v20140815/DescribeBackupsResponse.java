@@ -125,6 +125,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String metaStatus;
 
+		private String slaveStatus;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -275,6 +277,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setMetaStatus(String metaStatus) {
 			this.metaStatus = metaStatus;
+		}
+
+		public String getSlaveStatus() {
+			return this.slaveStatus;
+		}
+
+		public void setSlaveStatus(String slaveStatus) {
+			this.slaveStatus = slaveStatus;
 		}
 	}
 

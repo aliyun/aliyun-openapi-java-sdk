@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptionResponse> {
 	
 	public ModifyDBDescriptionRequest() {
-		super("Rds", "2014-08-15", "ModifyDBDescription", "rds");
+		super("Rds", "2014-08-15", "ModifyDBDescription", "Rds");
 	}
 
 	private Long resourceOwnerId;

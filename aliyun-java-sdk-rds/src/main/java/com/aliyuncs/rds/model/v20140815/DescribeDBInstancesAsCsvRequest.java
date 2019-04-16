@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstancesAsCsvRequest extends RpcAcsRequest<DescribeDBInstancesAsCsvResponse> {
 	
 	public DescribeDBInstancesAsCsvRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "Rds");
 	}
 
 	private Long resourceOwnerId;

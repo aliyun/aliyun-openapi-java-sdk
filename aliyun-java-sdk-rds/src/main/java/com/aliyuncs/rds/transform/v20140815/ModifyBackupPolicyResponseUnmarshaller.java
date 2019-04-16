@@ -28,6 +28,7 @@ public class ModifyBackupPolicyResponseUnmarshaller {
 		modifyBackupPolicyResponse.setLocalLogRetentionHours(context.integerValue("ModifyBackupPolicyResponse.LocalLogRetentionHours"));
 		modifyBackupPolicyResponse.setLocalLogRetentionSpace(context.stringValue("ModifyBackupPolicyResponse.LocalLogRetentionSpace"));
 		modifyBackupPolicyResponse.setHighSpaceUsageProtection(context.stringValue("ModifyBackupPolicyResponse.HighSpaceUsageProtection"));
+		modifyBackupPolicyResponse.setCompressType(context.stringValue("ModifyBackupPolicyResponse.CompressType"));
 	 
 	 	return modifyBackupPolicyResponse;
 	}

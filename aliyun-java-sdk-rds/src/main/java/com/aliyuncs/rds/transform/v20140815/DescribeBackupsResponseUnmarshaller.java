@@ -54,6 +54,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setHostInstanceID(context.stringValue("DescribeBackupsResponse.Items["+ i +"].HostInstanceID"));
 			backup.setStoreStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].StoreStatus"));
 			backup.setMetaStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].MetaStatus"));
+			backup.setSlaveStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].SlaveStatus"));
 
 			items.add(backup);
 		}

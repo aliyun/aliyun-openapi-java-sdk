@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckResourceRequest extends RpcAcsRequest<CheckResourceResponse> {
 	
 	public CheckResourceRequest() {
-		super("Rds", "2014-08-15", "CheckResource", "rds");
+		super("Rds", "2014-08-15", "CheckResource", "Rds");
 	}
 
 	private Long resourceOwnerId;

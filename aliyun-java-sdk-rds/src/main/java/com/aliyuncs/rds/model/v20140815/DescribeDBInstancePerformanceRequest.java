@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstancePerformanceRequest extends RpcAcsRequest<DescribeDBInstancePerformanceResponse> {
 	
 	public DescribeDBInstancePerformanceRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancePerformance", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstancePerformance", "Rds");
 	}
 
 	private Long resourceOwnerId;

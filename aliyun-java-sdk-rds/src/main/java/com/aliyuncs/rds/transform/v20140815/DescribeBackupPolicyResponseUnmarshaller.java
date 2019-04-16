@@ -38,6 +38,7 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 		describeBackupPolicyResponse.setDuplicationContent(context.stringValue("DescribeBackupPolicyResponse.DuplicationContent"));
 		describeBackupPolicyResponse.setHighSpaceUsageProtection(context.stringValue("DescribeBackupPolicyResponse.HighSpaceUsageProtection"));
 		describeBackupPolicyResponse.setLogBackupFrequency(context.stringValue("DescribeBackupPolicyResponse.LogBackupFrequency"));
+		describeBackupPolicyResponse.setCompressType(context.stringValue("DescribeBackupPolicyResponse.CompressType"));
 
 		DuplicationLocation duplicationLocation = new DuplicationLocation();
 		duplicationLocation.setSotrage(context.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Sotrage"));

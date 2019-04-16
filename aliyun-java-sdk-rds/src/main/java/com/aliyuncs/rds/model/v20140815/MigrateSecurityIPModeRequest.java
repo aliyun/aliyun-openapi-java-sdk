@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MigrateSecurityIPModeRequest extends RpcAcsRequest<MigrateSecurityIPModeResponse> {
 	
 	public MigrateSecurityIPModeRequest() {
-		super("Rds", "2014-08-15", "MigrateSecurityIPMode", "rds");
+		super("Rds", "2014-08-15", "MigrateSecurityIPMode", "Rds");
 	}
 
 	private Long resourceOwnerId;

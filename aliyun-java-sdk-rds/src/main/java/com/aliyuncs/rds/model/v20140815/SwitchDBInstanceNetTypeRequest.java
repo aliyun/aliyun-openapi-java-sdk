@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SwitchDBInstanceNetTypeRequest extends RpcAcsRequest<SwitchDBInstanceNetTypeResponse> {
 	
 	public SwitchDBInstanceNetTypeRequest() {
-		super("Rds", "2014-08-15", "SwitchDBInstanceNetType", "rds");
+		super("Rds", "2014-08-15", "SwitchDBInstanceNetType", "Rds");
 	}
 
 	private Long resourceOwnerId;

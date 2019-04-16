@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance;
 import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.ReadOnlyDBInstanceId;
-import com.aliyuncs.rds.model.v20140815.DescribeDBInstancesResponse.DBInstance.SlaveRegion;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -66,8 +65,6 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setVSwitchId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].VSwitchId"));
 			dBInstance.setReplicateId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ReplicateId"));
 			dBInstance.setResourceGroupId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ResourceGroupId"));
-			dBInstance.setDispenseMode(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DispenseMode"));
-			dBInstance.setMasterRegion(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].MasterRegion"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < context.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
@@ -77,15 +74,6 @@ public class DescribeDBInstancesResponseUnmarshaller {
 				readOnlyDBInstanceIds.add(readOnlyDBInstanceId);
 			}
 			dBInstance.setReadOnlyDBInstanceIds(readOnlyDBInstanceIds);
-
-			List<SlaveRegion> slaveRegions = new ArrayList<SlaveRegion>();
-			for (int j = 0; j < context.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].SlaveRegions.Length"); j++) {
-				SlaveRegion slaveRegion = new SlaveRegion();
-				slaveRegion.setRegionId(context.stringValue("DescribeDBInstancesResponse.Items["+ i +"].SlaveRegions["+ j +"].RegionId"));
-
-				slaveRegions.add(slaveRegion);
-			}
-			dBInstance.setSlaveRegions(slaveRegions);
 
 			items.add(dBInstance);
 		}

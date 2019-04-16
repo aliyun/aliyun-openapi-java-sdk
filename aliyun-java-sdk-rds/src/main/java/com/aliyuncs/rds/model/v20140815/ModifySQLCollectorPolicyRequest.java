@@ -23,16 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySQLCollectorPolicyRequest extends RpcAcsRequest<ModifySQLCollectorPolicyResponse> {
 	
 	public ModifySQLCollectorPolicyRequest() {
-		super("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "rds");
+		super("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "Rds");
 	}
 
 	private Long resourceOwnerId;
 
-	private Integer storagePeriod;
-
 	private String resourceOwnerAccount;
-
-	private String clientToken;
 
 	private String sQLCollectorStatus;
 
@@ -53,17 +49,6 @@ public class ModifySQLCollectorPolicyRequest extends RpcAcsRequest<ModifySQLColl
 		}
 	}
 
-	public Integer getStoragePeriod() {
-		return this.storagePeriod;
-	}
-
-	public void setStoragePeriod(Integer storagePeriod) {
-		this.storagePeriod = storagePeriod;
-		if(storagePeriod != null){
-			putQueryParameter("StoragePeriod", storagePeriod.toString());
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -72,17 +57,6 @@ public class ModifySQLCollectorPolicyRequest extends RpcAcsRequest<ModifySQLColl
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

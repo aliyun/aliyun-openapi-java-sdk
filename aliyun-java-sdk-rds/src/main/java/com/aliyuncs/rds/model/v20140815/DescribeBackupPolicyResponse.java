@@ -52,6 +52,8 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String logBackupFrequency;
 
+	private String compressType;
+
 	private DuplicationLocation duplicationLocation;
 
 	public String getRequestId() {
@@ -164,6 +166,14 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setLogBackupFrequency(String logBackupFrequency) {
 		this.logBackupFrequency = logBackupFrequency;
+	}
+
+	public String getCompressType() {
+		return this.compressType;
+	}
+
+	public void setCompressType(String compressType) {
+		this.compressType = compressType;
 	}
 
 	public DuplicationLocation getDuplicationLocation() {

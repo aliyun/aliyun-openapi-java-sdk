@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CalculateDBInstanceWeightRequest extends RpcAcsRequest<CalculateDBInstanceWeightResponse> {
 	
 	public CalculateDBInstanceWeightRequest() {
-		super("Rds", "2014-08-15", "CalculateDBInstanceWeight", "rds");
+		super("Rds", "2014-08-15", "CalculateDBInstanceWeight", "Rds");
 	}
 
 	private Long resourceOwnerId;

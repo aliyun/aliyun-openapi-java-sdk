@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckRecoveryConditionsRequest extends RpcAcsRequest<CheckRecoveryConditionsResponse> {
 	
 	public CheckRecoveryConditionsRequest() {
-		super("Rds", "2014-08-15", "CheckRecoveryConditions", "rds");
+		super("Rds", "2014-08-15", "CheckRecoveryConditions", "Rds");
 	}
 
 	private Long resourceOwnerId;

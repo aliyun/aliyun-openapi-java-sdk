@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstancesByExpireTimeRequest extends RpcAcsRequest<DescribeDBInstancesByExpireTimeResponse> {
 	
 	public DescribeDBInstancesByExpireTimeRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "rds");
+		super("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "Rds");
 	}
 
 	private Long resourceOwnerId;

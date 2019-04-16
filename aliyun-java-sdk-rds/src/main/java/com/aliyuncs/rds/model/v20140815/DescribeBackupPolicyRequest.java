@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPolicyResponse> {
 	
 	public DescribeBackupPolicyRequest() {
-		super("Rds", "2014-08-15", "DescribeBackupPolicy", "rds");
+		super("Rds", "2014-08-15", "DescribeBackupPolicy", "Rds");
 	}
 
 	private Long resourceOwnerId;
@@ -31,6 +31,8 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String compressType;
 
 	private String dBInstanceId;
 
@@ -68,6 +70,17 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getCompressType() {
+		return this.compressType;
+	}
+
+	public void setCompressType(String compressType) {
+		this.compressType = compressType;
+		if(compressType != null){
+			putQueryParameter("CompressType", compressType);
 		}
 	}
 

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateOnlineDatabaseTaskRequest extends RpcAcsRequest<CreateOnlineDatabaseTaskResponse> {
 	
 	public CreateOnlineDatabaseTaskRequest() {
-		super("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds");
+		super("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "Rds");
 	}
 
 	private Long resourceOwnerId;
