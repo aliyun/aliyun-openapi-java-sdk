@@ -1,3 +1,6 @@
+2019-04-16 Version: 2.0.1
+1, add output parameters for ListCluster api.
+
 2019-04-04 Version: 2.0.0
 1, add api of cluster operation.
 2, add api of project operation.

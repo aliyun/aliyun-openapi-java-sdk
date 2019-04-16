@@ -27,6 +27,14 @@ public class ListClusterResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long totalCount;
+
+	private Integer totalPage;
+
+	private Integer pageIndex;
+
+	private Integer pageSize;
+
 	private List<Cluster> clusters;
 
 	public String getRequestId() {
@@ -35,6 +43,38 @@ public class ListClusterResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
+	}
+
+	public Integer getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<Cluster> getClusters() {

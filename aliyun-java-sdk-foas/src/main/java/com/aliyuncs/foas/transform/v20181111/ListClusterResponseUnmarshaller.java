@@ -27,6 +27,10 @@ public class ListClusterResponseUnmarshaller {
 	public static ListClusterResponse unmarshall(ListClusterResponse listClusterResponse, UnmarshallerContext context) {
 		
 		listClusterResponse.setRequestId(context.stringValue("ListClusterResponse.RequestId"));
+		listClusterResponse.setTotalCount(context.longValue("ListClusterResponse.TotalCount"));
+		listClusterResponse.setTotalPage(context.integerValue("ListClusterResponse.TotalPage"));
+		listClusterResponse.setPageIndex(context.integerValue("ListClusterResponse.PageIndex"));
+		listClusterResponse.setPageSize(context.integerValue("ListClusterResponse.PageSize"));
 
 		List<Cluster> clusters = new ArrayList<Cluster>();
 		for (int i = 0; i < context.lengthValue("ListClusterResponse.Clusters.Length"); i++) {
