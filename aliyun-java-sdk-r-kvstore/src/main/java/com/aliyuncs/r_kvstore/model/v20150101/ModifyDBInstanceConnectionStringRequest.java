@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<ModifyDBInstanceConnectionStringResponse> {
 	
 	public ModifyDBInstanceConnectionStringRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "redisa");
 	}
 
 	private Long resourceOwnerId;

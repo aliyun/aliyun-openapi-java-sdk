@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeMonitorItemsRequest extends RpcAcsRequest<DescribeMonitorItemsResponse> {
 	
 	public DescribeMonitorItemsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeMonitorItems", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeMonitorItems", "redisa");
 	}
 
 	private Long resourceOwnerId;

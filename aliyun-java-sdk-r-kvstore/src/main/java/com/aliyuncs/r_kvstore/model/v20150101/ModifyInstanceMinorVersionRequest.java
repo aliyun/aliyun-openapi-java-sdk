@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceMinorVersionRequest extends RpcAcsRequest<ModifyInstanceMinorVersionResponse> {
 	
 	public ModifyInstanceMinorVersionRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa");
 	}
 
 	private Long resourceOwnerId;

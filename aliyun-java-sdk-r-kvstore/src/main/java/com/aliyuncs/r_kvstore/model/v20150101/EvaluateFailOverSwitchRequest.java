@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EvaluateFailOverSwitchRequest extends RpcAcsRequest<EvaluateFailOverSwitchResponse> {
 	
 	public EvaluateFailOverSwitchRequest() {
-		super("R-kvstore", "2015-01-01", "EvaluateFailOverSwitch", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "EvaluateFailOverSwitch", "redisa");
 	}
 
 	private Long resourceOwnerId;

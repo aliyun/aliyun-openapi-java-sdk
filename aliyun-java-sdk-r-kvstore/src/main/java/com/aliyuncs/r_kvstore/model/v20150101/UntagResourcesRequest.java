@@ -24,7 +24,7 @@ import java.util.List;
 public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	
 	public UntagResourcesRequest() {
-		super("R-kvstore", "2015-01-01", "UntagResources", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "UntagResources", "redisa");
 	}
 
 	private Boolean all;

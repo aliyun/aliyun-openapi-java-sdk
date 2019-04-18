@@ -23,10 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAnalysisTaskResponse> {
 	
 	public CreateCacheAnalysisTaskRequest() {
-		super("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "redisa");
 	}
 
 	private Long resourceOwnerId;
+
+	private String instanceId;
 
 	private String securityToken;
 
@@ -44,6 +46,17 @@ public class CreateCacheAnalysisTaskRequest extends RpcAcsRequest<CreateCacheAna
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

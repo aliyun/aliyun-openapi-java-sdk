@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UnlinkReplicaInstanceRequest extends RpcAcsRequest<UnlinkReplicaInstanceResponse> {
 	
 	public UnlinkReplicaInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "UnlinkReplicaInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "UnlinkReplicaInstance", "redisa");
 	}
 
 	private Long resourceOwnerId;

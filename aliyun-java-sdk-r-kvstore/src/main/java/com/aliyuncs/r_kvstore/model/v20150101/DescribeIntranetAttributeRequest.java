@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeIntranetAttributeRequest extends RpcAcsRequest<DescribeIntranetAttributeResponse> {
 	
 	public DescribeIntranetAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "redisa");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse> {
 	
 	public ModifyInstanceAutoRenewalAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa");
 	}
 
 	private String duration;

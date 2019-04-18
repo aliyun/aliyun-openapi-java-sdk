@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	
 	public CreateInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "CreateInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "CreateInstance", "redisa");
 	}
 
 	private Long resourceOwnerId;

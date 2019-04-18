@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SwitchNetworkRequest extends RpcAcsRequest<SwitchNetworkResponse> {
 	
 	public SwitchNetworkRequest() {
-		super("R-kvstore", "2015-01-01", "SwitchNetwork", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "SwitchNetwork", "redisa");
 	}
 
 	private Long resourceOwnerId;

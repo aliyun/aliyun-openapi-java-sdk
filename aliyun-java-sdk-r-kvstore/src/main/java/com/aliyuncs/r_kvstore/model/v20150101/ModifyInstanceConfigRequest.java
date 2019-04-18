@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceConfigRequest extends RpcAcsRequest<ModifyInstanceConfigResponse> {
 	
 	public ModifyInstanceConfigRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceConfig", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceConfig", "redisa");
 	}
 
 	private Long resourceOwnerId;

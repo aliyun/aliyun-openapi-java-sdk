@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<ReleaseInstancePublicConnectionResponse> {
 	
 	public ReleaseInstancePublicConnectionRequest() {
-		super("R-kvstore", "2015-01-01", "ReleaseInstancePublicConnection", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ReleaseInstancePublicConnection", "redisa");
 	}
 
 	private Long resourceOwnerId;

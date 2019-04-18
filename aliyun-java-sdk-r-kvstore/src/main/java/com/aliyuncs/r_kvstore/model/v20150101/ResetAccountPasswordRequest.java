@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPasswordResponse> {
 	
 	public ResetAccountPasswordRequest() {
-		super("R-kvstore", "2015-01-01", "ResetAccountPassword", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ResetAccountPassword", "redisa");
 	}
 
 	private Long resourceOwnerId;

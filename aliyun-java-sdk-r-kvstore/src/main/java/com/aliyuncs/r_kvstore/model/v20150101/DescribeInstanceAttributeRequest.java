@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceAttributeRequest extends RpcAcsRequest<DescribeInstanceAttributeResponse> {
 	
 	public DescribeInstanceAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "redisa");
 	}
 
 	private Long resourceOwnerId;

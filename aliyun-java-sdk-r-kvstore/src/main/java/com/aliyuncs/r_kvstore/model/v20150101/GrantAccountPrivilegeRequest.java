@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPrivilegeResponse> {
 	
 	public GrantAccountPrivilegeRequest() {
-		super("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RenewMultiInstanceRequest extends RpcAcsRequest<RenewMultiInstanceResponse> {
 	
 	public RenewMultiInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "RenewMultiInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "RenewMultiInstance", "redisa");
 	}
 
 	private Long resourceOwnerId;

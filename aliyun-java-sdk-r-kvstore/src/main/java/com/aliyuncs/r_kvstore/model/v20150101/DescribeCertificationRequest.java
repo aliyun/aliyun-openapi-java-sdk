@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCertificationRequest extends RpcAcsRequest<DescribeCertificationResponse> {
 	
 	public DescribeCertificationRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeCertification", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeCertification", "redisa");
 	}
 
 	private Long resourceOwnerId;

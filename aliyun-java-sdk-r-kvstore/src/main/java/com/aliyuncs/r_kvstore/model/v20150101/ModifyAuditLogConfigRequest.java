@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogConfigResponse> {
 	
 	public ModifyAuditLogConfigRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa");
 	}
 
 	private Long resourceOwnerId;

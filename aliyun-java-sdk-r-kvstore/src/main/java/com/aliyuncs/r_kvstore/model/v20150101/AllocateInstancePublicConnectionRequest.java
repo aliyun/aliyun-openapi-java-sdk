@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<AllocateInstancePublicConnectionResponse> {
 	
 	public AllocateInstancePublicConnectionRequest() {
-		super("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "redisa");
 	}
 
 	private Long resourceOwnerId;

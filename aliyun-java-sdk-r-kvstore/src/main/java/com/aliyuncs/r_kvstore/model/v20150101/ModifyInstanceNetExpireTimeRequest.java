@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyInstanceNetExpireTimeResponse> {
 	
 	public ModifyInstanceNetExpireTimeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "redisa");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FlushInstanceRequest extends RpcAcsRequest<FlushInstanceResponse> {
 	
 	public FlushInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "FlushInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "FlushInstance", "redisa");
 	}
 
 	private Long resourceOwnerId;

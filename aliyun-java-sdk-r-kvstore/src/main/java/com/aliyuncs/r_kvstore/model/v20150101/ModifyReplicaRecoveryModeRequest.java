@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReplicaRecoveryModeRequest extends RpcAcsRequest<ModifyReplicaRecoveryModeResponse> {
 	
 	public ModifyReplicaRecoveryModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyReplicaRecoveryMode", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyReplicaRecoveryMode", "redisa");
 	}
 
 	private Long resourceOwnerId;

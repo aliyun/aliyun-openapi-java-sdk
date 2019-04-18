@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplicaDescriptionResponse> {
 	
 	public ModifyReplicaDescriptionRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "redisa");
 	}
 
 	private String replicaDescription;

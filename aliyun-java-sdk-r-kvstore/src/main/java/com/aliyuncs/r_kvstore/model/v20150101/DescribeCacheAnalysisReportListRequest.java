@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCacheAnalysisReportListRequest extends RpcAcsRequest<DescribeCacheAnalysisReportListResponse> {
 	
 	public DescribeCacheAnalysisReportListRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReportList", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReportList", "redisa");
 	}
 
 	private Long resourceOwnerId;

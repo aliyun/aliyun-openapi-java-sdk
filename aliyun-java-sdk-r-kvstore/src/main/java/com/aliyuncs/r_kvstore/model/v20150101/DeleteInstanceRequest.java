@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
 	
 	public DeleteInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DeleteInstance", "redisa");
 	}
 
 	private Long resourceOwnerId;

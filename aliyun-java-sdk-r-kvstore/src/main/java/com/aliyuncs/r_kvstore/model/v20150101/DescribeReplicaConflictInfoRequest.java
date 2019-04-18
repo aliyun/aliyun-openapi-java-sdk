@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeReplicaConflictInfoRequest extends RpcAcsRequest<DescribeReplicaConflictInfoResponse> {
 	
 	public DescribeReplicaConflictInfoRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeReplicaConflictInfo", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeReplicaConflictInfo", "redisa");
 	}
 
 	private Long resourceOwnerId;

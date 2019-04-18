@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPrivilegeResponse> {
 	
 	public RevokeAccountPrivilegeRequest() {
-		super("R-kvstore", "2015-01-01", "RevokeAccountPrivilege", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "RevokeAccountPrivilege", "redisa");
 	}
 
 	private Long resourceOwnerId;

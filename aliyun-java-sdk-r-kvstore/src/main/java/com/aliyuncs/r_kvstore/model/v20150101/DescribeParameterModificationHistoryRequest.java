@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<DescribeParameterModificationHistoryResponse> {
 	
 	public DescribeParameterModificationHistoryRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeParameterModificationHistory", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeParameterModificationHistory", "redisa");
 	}
 
 	private Long resourceOwnerId;

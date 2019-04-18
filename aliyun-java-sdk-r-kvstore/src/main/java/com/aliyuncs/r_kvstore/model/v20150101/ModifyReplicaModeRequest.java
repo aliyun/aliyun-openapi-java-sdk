@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeResponse> {
 	
 	public ModifyReplicaModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyReplicaMode", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyReplicaMode", "redisa");
 	}
 
 	private String domainMode;

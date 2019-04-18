@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceMonitorRequest extends RpcAcsRequest<ModifyDBInstanceMonitorResponse> {
 	
 	public ModifyDBInstanceMonitorRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyDBInstanceMonitor", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyDBInstanceMonitor", "redisa");
 	}
 
 	private Long resourceOwnerId;

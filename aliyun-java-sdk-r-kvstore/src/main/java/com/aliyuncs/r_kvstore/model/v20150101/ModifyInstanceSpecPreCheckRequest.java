@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceSpecPreCheckRequest extends RpcAcsRequest<ModifyInstanceSpecPreCheckResponse> {
 	
 	public ModifyInstanceSpecPreCheckRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceSpecPreCheck", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceSpecPreCheck", "redisa");
 	}
 
 	private Long resourceOwnerId;

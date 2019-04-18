@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class VerifyPasswordRequest extends RpcAcsRequest<VerifyPasswordResponse> {
 	
 	public VerifyPasswordRequest() {
-		super("R-kvstore", "2015-01-01", "VerifyPassword", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "VerifyPassword", "redisa");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeMonthlyServiceStatusDetailRequest extends RpcAcsRequest<DescribeMonthlyServiceStatusDetailResponse> {
 	
 	public DescribeMonthlyServiceStatusDetailRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatusDetail", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatusDetail", "redisa");
 	}
 
 	private Long resourceOwnerId;

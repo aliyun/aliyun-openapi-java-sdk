@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceVpcAuthModeRequest extends RpcAcsRequest<ModifyInstanceVpcAuthModeResponse> {
 	
 	public ModifyInstanceVpcAuthModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode", "redisa");
 	}
 
 	private Long resourceOwnerId;

@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	
 	public DescribeInstancesRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstances", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeInstances", "redisa");
 	}
 
 	private Long resourceOwnerId;

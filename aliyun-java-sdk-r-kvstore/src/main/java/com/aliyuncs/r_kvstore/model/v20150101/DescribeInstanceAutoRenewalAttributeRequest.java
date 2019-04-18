@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<DescribeInstanceAutoRenewalAttributeResponse> {
 	
 	public DescribeInstanceAutoRenewalAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "redisa");
 	}
 
 	private Long resourceOwnerId;

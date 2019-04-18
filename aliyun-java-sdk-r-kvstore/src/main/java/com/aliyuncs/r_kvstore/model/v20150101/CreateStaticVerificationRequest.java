@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateStaticVerificationRequest extends RpcAcsRequest<CreateStaticVerificationResponse> {
 	
 	public CreateStaticVerificationRequest() {
-		super("R-kvstore", "2015-01-01", "CreateStaticVerification", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "CreateStaticVerification", "redisa");
 	}
 
 	private Long resourceOwnerId;

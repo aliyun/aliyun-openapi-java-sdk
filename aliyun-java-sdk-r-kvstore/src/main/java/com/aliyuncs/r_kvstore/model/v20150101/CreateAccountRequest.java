@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 	
 	public CreateAccountRequest() {
-		super("R-kvstore", "2015-01-01", "CreateAccount", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "CreateAccount", "redisa");
 	}
 
 	private Long resourceOwnerId;

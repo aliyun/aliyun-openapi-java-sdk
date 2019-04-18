@@ -24,7 +24,7 @@ import java.util.List;
 public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	
 	public ListTagResourcesRequest() {
-		super("R-kvstore", "2015-01-01", "ListTagResources", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ListTagResources", "redisa");
 	}
 
 	private Long resourceOwnerId;

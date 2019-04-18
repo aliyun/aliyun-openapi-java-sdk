@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLogicInstanceTopologyRequest extends RpcAcsRequest<DescribeLogicInstanceTopologyResponse> {
 	
 	public DescribeLogicInstanceTopologyRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "redisa");
 	}
 
 	private Long resourceOwnerId;

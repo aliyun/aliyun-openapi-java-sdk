@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsResponse> {
 	
 	public ModifySecurityIpsRequest() {
-		super("R-kvstore", "2015-01-01", "ModifySecurityIps", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifySecurityIps", "redisa");
 	}
 
 	private Long resourceOwnerId;

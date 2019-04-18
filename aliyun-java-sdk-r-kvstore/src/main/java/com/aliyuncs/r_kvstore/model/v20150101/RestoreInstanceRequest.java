@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RestoreInstanceRequest extends RpcAcsRequest<RestoreInstanceResponse> {
 	
 	public RestoreInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "RestoreInstance", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "RestoreInstance", "redisa");
 	}
 
 	private Long resourceOwnerId;

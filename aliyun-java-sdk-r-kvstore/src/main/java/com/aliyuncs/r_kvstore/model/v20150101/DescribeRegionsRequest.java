@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	
 	public DescribeRegionsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeRegions", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeRegions", "redisa");
 	}
 
 	private Long resourceOwnerId;

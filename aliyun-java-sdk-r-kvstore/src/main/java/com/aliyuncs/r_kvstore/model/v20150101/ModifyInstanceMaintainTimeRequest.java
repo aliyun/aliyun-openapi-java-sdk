@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceMaintainTimeRequest extends RpcAcsRequest<ModifyInstanceMaintainTimeResponse> {
 	
 	public ModifyInstanceMaintainTimeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime", "redisa");
 	}
 
 	private Long resourceOwnerId;

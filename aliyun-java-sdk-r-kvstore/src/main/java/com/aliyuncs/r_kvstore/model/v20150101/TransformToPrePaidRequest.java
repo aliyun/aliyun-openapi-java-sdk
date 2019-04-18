@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidResponse> {
 	
 	public TransformToPrePaidRequest() {
-		super("R-kvstore", "2015-01-01", "TransformToPrePaid", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "TransformToPrePaid", "redisa");
 	}
 
 	private Long resourceOwnerId;

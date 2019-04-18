@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstancesByExpireTimeRequest extends RpcAcsRequest<DescribeInstancesByExpireTimeResponse> {
 	
 	public DescribeInstancesByExpireTimeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstancesByExpireTime", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeInstancesByExpireTime", "redisa");
 	}
 
 	private Long resourceOwnerId;

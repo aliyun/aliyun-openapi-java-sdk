@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstanceAttributeResponse> {
 	
 	public ModifyInstanceAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceAttribute", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceAttribute", "redisa");
 	}
 
 	private Long resourceOwnerId;

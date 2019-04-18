@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeActiveOperationTaskRegionRequest extends RpcAcsRequest<DescribeActiveOperationTaskRegionResponse> {
 	
 	public DescribeActiveOperationTaskRegionRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeActiveOperationTaskRegion", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeActiveOperationTaskRegion", "redisa");
 	}
 
 	private Long resourceOwnerId;

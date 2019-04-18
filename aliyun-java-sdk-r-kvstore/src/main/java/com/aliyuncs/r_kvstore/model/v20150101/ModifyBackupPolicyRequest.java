@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
 	
 	public ModifyBackupPolicyRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyBackupPolicy", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyBackupPolicy", "redisa");
 	}
 
 	private String preferredBackupTime;

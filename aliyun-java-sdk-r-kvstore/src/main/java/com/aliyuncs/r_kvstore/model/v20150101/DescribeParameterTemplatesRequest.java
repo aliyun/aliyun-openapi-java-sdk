@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribeParameterTemplatesResponse> {
 	
 	public DescribeParameterTemplatesRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeParameterTemplates", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeParameterTemplates", "redisa");
 	}
 
 	private Long resourceOwnerId;

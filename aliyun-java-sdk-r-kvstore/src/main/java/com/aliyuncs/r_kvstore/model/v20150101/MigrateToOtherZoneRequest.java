@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneResponse> {
 	
 	public MigrateToOtherZoneRequest() {
-		super("R-kvstore", "2015-01-01", "MigrateToOtherZone", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa");
 	}
 
 	private String vSwitchId;

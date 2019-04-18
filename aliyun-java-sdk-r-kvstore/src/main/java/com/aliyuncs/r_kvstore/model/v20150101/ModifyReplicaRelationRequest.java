@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReplicaRelationRequest extends RpcAcsRequest<ModifyReplicaRelationResponse> {
 	
 	public ModifyReplicaRelationRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyReplicaRelation", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyReplicaRelation", "redisa");
 	}
 
 	private Long resourceOwnerId;

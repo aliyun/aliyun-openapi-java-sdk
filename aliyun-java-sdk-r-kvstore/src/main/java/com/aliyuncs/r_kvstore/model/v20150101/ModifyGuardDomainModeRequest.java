@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyGuardDomainModeRequest extends RpcAcsRequest<ModifyGuardDomainModeResponse> {
 	
 	public ModifyGuardDomainModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyGuardDomainMode", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "ModifyGuardDomainMode", "redisa");
 	}
 
 	private String domainMode;

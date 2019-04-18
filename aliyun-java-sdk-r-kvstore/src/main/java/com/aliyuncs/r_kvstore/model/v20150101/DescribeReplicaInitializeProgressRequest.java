@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeReplicaInitializeProgressRequest extends RpcAcsRequest<DescribeReplicaInitializeProgressResponse> {
 	
 	public DescribeReplicaInitializeProgressRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeReplicaInitializeProgress", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeReplicaInitializeProgress", "redisa");
 	}
 
 	private Long resourceOwnerId;

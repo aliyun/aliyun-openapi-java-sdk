@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBInstanceNetInfoResponse> {
 	
 	public DescribeDBInstanceNetInfoRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeDBInstanceNetInfo", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeDBInstanceNetInfo", "redisa");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunningLogRecordsResponse> {
 	
 	public DescribeRunningLogRecordsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "redisa");
 	}
 
 	private Long sQLId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeActiveOperationTaskRequest extends RpcAcsRequest<DescribeActiveOperationTaskResponse> {
 	
 	public DescribeActiveOperationTaskRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeActiveOperationTask", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeActiveOperationTask", "redisa");
 	}
 
 	private Long resourceOwnerId;

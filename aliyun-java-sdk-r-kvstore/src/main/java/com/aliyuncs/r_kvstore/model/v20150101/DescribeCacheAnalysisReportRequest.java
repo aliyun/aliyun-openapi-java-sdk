@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCacheAnalysisReportRequest extends RpcAcsRequest<DescribeCacheAnalysisReportResponse> {
 	
 	public DescribeCacheAnalysisReportRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport", "redisa");
 	}
 
 	private String date;

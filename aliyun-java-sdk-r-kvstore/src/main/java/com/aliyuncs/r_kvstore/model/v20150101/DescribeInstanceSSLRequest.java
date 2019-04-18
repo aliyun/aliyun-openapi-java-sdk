@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceSSLRequest extends RpcAcsRequest<DescribeInstanceSSLResponse> {
 	
 	public DescribeInstanceSSLRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstanceSSL", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeInstanceSSL", "redisa");
 	}
 
 	private Long resourceOwnerId;

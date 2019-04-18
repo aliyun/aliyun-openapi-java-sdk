@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPolicyResponse> {
 	
 	public DescribeBackupPolicyRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeBackupPolicy", "R-kvstore");
+		super("R-kvstore", "2015-01-01", "DescribeBackupPolicy", "redisa");
 	}
 
 	private Long resourceOwnerId;
