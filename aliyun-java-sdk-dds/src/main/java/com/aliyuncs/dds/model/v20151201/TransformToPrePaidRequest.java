@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class TransformToPrePaidRequest extends RpcAcsRequest<TransformToPrePaidResponse> {
 	
 	public TransformToPrePaidRequest() {
-		super("Dds", "2015-12-01", "TransformToPrePaid", "dds");
+		super("Dds", "2015-12-01", "TransformToPrePaid", "Dds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeParameterModificationHistoryRequest extends RpcAcsRequest<DescribeParameterModificationHistoryResponse> {
 	
 	public DescribeParameterModificationHistoryRequest() {
-		super("Dds", "2015-12-01", "DescribeParameterModificationHistory", "dds");
+		super("Dds", "2015-12-01", "DescribeParameterModificationHistory", "Dds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<UpgradeDBInstanceKernelVersionResponse> {
 	
 	public UpgradeDBInstanceKernelVersionRequest() {
-		super("Dds", "2015-12-01", "UpgradeDBInstanceKernelVersion", "dds");
+		super("Dds", "2015-12-01", "UpgradeDBInstanceKernelVersion", "Dds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SwithcDBInstanceHARequest extends RpcAcsRequest<SwithcDBInstanceHAResponse> {
 	
 	public SwithcDBInstanceHARequest() {
-		super("Dds", "2015-12-01", "SwithcDBInstanceHA", "dds");
+		super("Dds", "2015-12-01", "SwithcDBInstanceHA", "Dds");
 	}
 
 	private Long resourceOwnerId;

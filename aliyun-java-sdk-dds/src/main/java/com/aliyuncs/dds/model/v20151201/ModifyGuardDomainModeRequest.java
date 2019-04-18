@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyGuardDomainModeRequest extends RpcAcsRequest<ModifyGuardDomainModeResponse> {
 	
 	public ModifyGuardDomainModeRequest() {
-		super("Dds", "2015-12-01", "ModifyGuardDomainMode", "dds");
+		super("Dds", "2015-12-01", "ModifyGuardDomainMode", "Dds");
 	}
 
 	private String domainMode;

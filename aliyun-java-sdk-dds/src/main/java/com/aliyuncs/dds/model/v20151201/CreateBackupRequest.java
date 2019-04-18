@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 	
 	public CreateBackupRequest() {
-		super("Dds", "2015-12-01", "CreateBackup", "dds");
+		super("Dds", "2015-12-01", "CreateBackup", "Dds");
 	}
 
 	private String backupMethod;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRdsVSwitchsRequest extends RpcAcsRequest<DescribeRdsVSwitchsResponse> {
 	
 	public DescribeRdsVSwitchsRequest() {
-		super("Dds", "2015-12-01", "DescribeRdsVSwitchs", "dds");
+		super("Dds", "2015-12-01", "DescribeRdsVSwitchs", "Dds");
 	}
 
 	private Long resourceOwnerId;

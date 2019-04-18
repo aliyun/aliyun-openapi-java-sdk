@@ -111,6 +111,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private List<ReplicaSet> replicaSets;
 
+		private List<Tag> tags;
+
 		public String getResourceGroupId() {
 			return this.resourceGroupId;
 		}
@@ -383,6 +385,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.replicaSets = replicaSets;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public static class MongosAttribute {
 
 			private String nodeId;
@@ -619,6 +629,29 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 			public void setNetworkType(String networkType) {
 				this.networkType = networkType;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

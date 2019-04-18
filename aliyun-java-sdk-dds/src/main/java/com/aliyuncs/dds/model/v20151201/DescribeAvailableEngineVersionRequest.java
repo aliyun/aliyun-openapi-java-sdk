@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAvailableEngineVersionRequest extends RpcAcsRequest<DescribeAvailableEngineVersionResponse> {
 	
 	public DescribeAvailableEngineVersionRequest() {
-		super("Dds", "2015-12-01", "DescribeAvailableEngineVersion", "dds");
+		super("Dds", "2015-12-01", "DescribeAvailableEngineVersion", "Dds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceMaintainTimeRequest extends RpcAcsRequest<ModifyDBInstanceMaintainTimeResponse> {
 	
 	public ModifyDBInstanceMaintainTimeRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceMaintainTime", "dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceMaintainTime", "Dds");
 	}
 
 	private Long resourceOwnerId;

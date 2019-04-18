@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse> {
 	
 	public ModifyInstanceAutoRenewalAttributeRequest() {
-		super("Dds", "2015-12-01", "ModifyInstanceAutoRenewalAttribute", "dds");
+		super("Dds", "2015-12-01", "ModifyInstanceAutoRenewalAttribute", "Dds");
 	}
 
 	private String duration;

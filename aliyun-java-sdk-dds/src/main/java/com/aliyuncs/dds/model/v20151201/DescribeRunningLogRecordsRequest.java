@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunningLogRecordsResponse> {
 	
 	public DescribeRunningLogRecordsRequest() {
-		super("Dds", "2015-12-01", "DescribeRunningLogRecords", "dds");
+		super("Dds", "2015-12-01", "DescribeRunningLogRecords", "Dds");
 	}
 
 	private Long sQLId;

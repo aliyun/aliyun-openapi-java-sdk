@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeIndexRecommendationRequest extends RpcAcsRequest<DescribeIndexRecommendationResponse> {
 	
 	public DescribeIndexRecommendationRequest() {
-		super("Dds", "2015-12-01", "DescribeIndexRecommendation", "dds");
+		super("Dds", "2015-12-01", "DescribeIndexRecommendation", "Dds");
 	}
 
 	private Long resourceOwnerId;

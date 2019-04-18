@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SampleRequest extends RpcAcsRequest<SampleResponse> {
 	
 	public SampleRequest() {
-		super("Dds", "2015-12-01", "Sample", "dds");
+		super("Dds", "2015-12-01", "Sample", "Dds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteNodeRequest extends RpcAcsRequest<DeleteNodeResponse> {
 	
 	public DeleteNodeRequest() {
-		super("Dds", "2015-12-01", "DeleteNode", "dds");
+		super("Dds", "2015-12-01", "DeleteNode", "Dds");
 	}
 
 	private Long resourceOwnerId;

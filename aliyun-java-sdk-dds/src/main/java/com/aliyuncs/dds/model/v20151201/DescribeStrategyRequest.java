@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeStrategyRequest extends RpcAcsRequest<DescribeStrategyResponse> {
 	
 	public DescribeStrategyRequest() {
-		super("Dds", "2015-12-01", "DescribeStrategy", "dds");
+		super("Dds", "2015-12-01", "DescribeStrategy", "Dds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DestroyInstanceRequest extends RpcAcsRequest<DestroyInstanceResponse> {
 	
 	public DestroyInstanceRequest() {
-		super("Dds", "2015-12-01", "DestroyInstance", "dds");
+		super("Dds", "2015-12-01", "DestroyInstance", "Dds");
 	}
 
 	private Long resourceOwnerId;
@@ -37,6 +37,8 @@ public class DestroyInstanceRequest extends RpcAcsRequest<DestroyInstanceRespons
 	private String clientToken;
 
 	private String ownerAccount;
+
+	private String dBInstanceId;
 
 	private Long ownerId;
 
@@ -122,6 +124,17 @@ public class DestroyInstanceRequest extends RpcAcsRequest<DestroyInstanceRespons
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

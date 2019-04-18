@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeStaticVerificationListRequest extends RpcAcsRequest<DescribeStaticVerificationListResponse> {
 	
 	public DescribeStaticVerificationListRequest() {
-		super("Dds", "2015-12-01", "DescribeStaticVerificationList", "dds");
+		super("Dds", "2015-12-01", "DescribeStaticVerificationList", "Dds");
 	}
 
 	private Long resourceOwnerId;

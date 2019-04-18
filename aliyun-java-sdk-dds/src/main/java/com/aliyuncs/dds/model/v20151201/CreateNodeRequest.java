@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 	
 	public CreateNodeRequest() {
-		super("Dds", "2015-12-01", "CreateNode", "dds");
+		super("Dds", "2015-12-01", "CreateNode", "Dds");
 	}
 
 	private Long resourceOwnerId;

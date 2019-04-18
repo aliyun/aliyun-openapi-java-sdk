@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAuditPolicyRequest extends RpcAcsRequest<ModifyAuditPolicyResponse> {
 	
 	public ModifyAuditPolicyRequest() {
-		super("Dds", "2015-12-01", "ModifyAuditPolicy", "dds");
+		super("Dds", "2015-12-01", "ModifyAuditPolicy", "Dds");
 	}
 
 	private Long resourceOwnerId;

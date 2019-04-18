@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstanceSSLRequest extends RpcAcsRequest<DescribeDBInstanceSSLResponse> {
 	
 	public DescribeDBInstanceSSLRequest() {
-		super("Dds", "2015-12-01", "DescribeDBInstanceSSL", "dds");
+		super("Dds", "2015-12-01", "DescribeDBInstanceSSL", "Dds");
 	}
 
 	private Long resourceOwnerId;

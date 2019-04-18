@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyActiveOperationTaskRequest extends RpcAcsRequest<ModifyActiveOperationTaskResponse> {
 	
 	public ModifyActiveOperationTaskRequest() {
-		super("Dds", "2015-12-01", "ModifyActiveOperationTask", "dds");
+		super("Dds", "2015-12-01", "ModifyActiveOperationTask", "Dds");
 	}
 
 	private Long resourceOwnerId;

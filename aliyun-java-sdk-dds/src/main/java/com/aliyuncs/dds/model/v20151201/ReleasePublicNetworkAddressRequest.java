@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReleasePublicNetworkAddressRequest extends RpcAcsRequest<ReleasePublicNetworkAddressResponse> {
 	
 	public ReleasePublicNetworkAddressRequest() {
-		super("Dds", "2015-12-01", "ReleasePublicNetworkAddress", "dds");
+		super("Dds", "2015-12-01", "ReleasePublicNetworkAddress", "Dds");
 	}
 
 	private Long resourceOwnerId;

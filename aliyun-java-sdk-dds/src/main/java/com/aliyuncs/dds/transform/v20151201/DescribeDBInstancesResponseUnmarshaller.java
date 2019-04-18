@@ -21,6 +21,7 @@ import com.aliyuncs.dds.model.v20151201.DescribeDBInstancesResponse;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstancesResponse.DBInstance;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstancesResponse.DBInstance.MongosAttribute;
 import com.aliyuncs.dds.model.v20151201.DescribeDBInstancesResponse.DBInstance.ShardAttribute;
+import com.aliyuncs.dds.model.v20151201.DescribeDBInstancesResponse.DBInstance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -80,6 +81,16 @@ public class DescribeDBInstancesResponseUnmarshaller {
 				shardList.add(shardAttribute);
 			}
 			dBInstance.setShardList(shardList);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			dBInstance.setTags(tags);
 
 			dBInstances.add(dBInstance);
 		}

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeShardingNetworkAddressRequest extends RpcAcsRequest<DescribeShardingNetworkAddressResponse> {
 	
 	public DescribeShardingNetworkAddressRequest() {
-		super("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds");
+		super("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "Dds");
 	}
 
 	private Long resourceOwnerId;

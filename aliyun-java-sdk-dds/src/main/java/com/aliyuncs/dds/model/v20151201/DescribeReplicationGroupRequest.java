@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeReplicationGroupRequest extends RpcAcsRequest<DescribeReplicationGroupResponse> {
 	
 	public DescribeReplicationGroupRequest() {
-		super("Dds", "2015-12-01", "DescribeReplicationGroup", "dds");
+		super("Dds", "2015-12-01", "DescribeReplicationGroup", "Dds");
 	}
 
 	private String destinationInstanceIds;

@@ -15,6 +15,7 @@
 package com.aliyuncs.dds.model.v20151201;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -23,7 +24,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
 	
 	public DescribeDBInstancesRequest() {
-		super("Dds", "2015-12-01", "DescribeDBInstances", "dds");
+		super("Dds", "2015-12-01", "DescribeDBInstances", "Dds");
 	}
 
 	private Long resourceOwnerId;
@@ -49,6 +50,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	private String dBInstanceDescription;
 
 	private String dBInstanceStatus;
+
+	private List<Tag> tags;
 
 	private String expireTime;
 
@@ -221,6 +224,20 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getExpireTime() {
 		return this.expireTime;
 	}
@@ -328,6 +345,29 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

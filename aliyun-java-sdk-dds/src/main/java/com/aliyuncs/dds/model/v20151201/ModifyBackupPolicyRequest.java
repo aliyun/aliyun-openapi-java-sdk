@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
 	
 	public ModifyBackupPolicyRequest() {
-		super("Dds", "2015-12-01", "ModifyBackupPolicy", "dds");
+		super("Dds", "2015-12-01", "ModifyBackupPolicy", "Dds");
 	}
 
 	private String preferredBackupTime;

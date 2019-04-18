@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceSpecResponse> {
 	
 	public ModifyDBInstanceSpecRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceSpec", "dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceSpec", "Dds");
 	}
 
 	private Long resourceOwnerId;
@@ -31,8 +31,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 	private String dBInstanceStorage;
 
 	private Boolean autoPay;
-
-	private String fromApp;
 
 	private String resourceOwnerAccount;
 
@@ -86,17 +84,6 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
-	public String getFromApp() {
-		return this.fromApp;
-	}
-
-	public void setFromApp(String fromApp) {
-		this.fromApp = fromApp;
-		if(fromApp != null){
-			putQueryParameter("FromApp", fromApp);
 		}
 	}
 

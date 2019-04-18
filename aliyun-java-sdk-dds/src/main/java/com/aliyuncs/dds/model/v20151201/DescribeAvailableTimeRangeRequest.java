@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAvailableTimeRangeRequest extends RpcAcsRequest<DescribeAvailableTimeRangeResponse> {
 	
 	public DescribeAvailableTimeRangeRequest() {
-		super("Dds", "2015-12-01", "DescribeAvailableTimeRange", "dds");
+		super("Dds", "2015-12-01", "DescribeAvailableTimeRange", "Dds");
 	}
 
 	private Long resourceOwnerId;

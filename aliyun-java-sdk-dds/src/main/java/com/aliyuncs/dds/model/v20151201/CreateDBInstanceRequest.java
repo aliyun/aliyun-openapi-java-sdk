@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
 	
 	public CreateDBInstanceRequest() {
-		super("Dds", "2015-12-01", "CreateDBInstance", "dds");
+		super("Dds", "2015-12-01", "CreateDBInstance", "Dds");
 	}
 
 	private Long resourceOwnerId;
@@ -43,6 +43,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String storageEngine;
 
 	private String resourceGroupId;
+
+	private String databaseNames;
 
 	private String securityToken;
 
@@ -178,6 +180,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDatabaseNames() {
+		return this.databaseNames;
+	}
+
+	public void setDatabaseNames(String databaseNames) {
+		this.databaseNames = databaseNames;
+		if(databaseNames != null){
+			putQueryParameter("DatabaseNames", databaseNames);
 		}
 	}
 

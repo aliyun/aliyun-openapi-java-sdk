@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAuditLogFilterRequest extends RpcAcsRequest<ModifyAuditLogFilterResponse> {
 	
 	public ModifyAuditLogFilterRequest() {
-		super("Dds", "2015-12-01", "ModifyAuditLogFilter", "dds");
+		super("Dds", "2015-12-01", "ModifyAuditLogFilter", "Dds");
 	}
 
 	private String filter;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAuditLogFilterRequest extends RpcAcsRequest<DescribeAuditLogFilterResponse> {
 	
 	public DescribeAuditLogFilterRequest() {
-		super("Dds", "2015-12-01", "DescribeAuditLogFilter", "dds");
+		super("Dds", "2015-12-01", "DescribeAuditLogFilter", "Dds");
 	}
 
 	private Long resourceOwnerId;

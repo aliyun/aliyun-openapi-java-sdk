@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeActiveOperationTaskCountRequest extends RpcAcsRequest<DescribeActiveOperationTaskCountResponse> {
 	
 	public DescribeActiveOperationTaskCountRequest() {
-		super("Dds", "2015-12-01", "DescribeActiveOperationTaskCount", "dds");
+		super("Dds", "2015-12-01", "DescribeActiveOperationTaskCount", "Dds");
 	}
 
 	private Long resourceOwnerId;

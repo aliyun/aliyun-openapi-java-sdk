@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSecurityIpsRequest extends RpcAcsRequest<DescribeSecurityIpsResponse> {
 	
 	public DescribeSecurityIpsRequest() {
-		super("Dds", "2015-12-01", "DescribeSecurityIps", "dds");
+		super("Dds", "2015-12-01", "DescribeSecurityIps", "Dds");
 	}
 
 	private Long resourceOwnerId;

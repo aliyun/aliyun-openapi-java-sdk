@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribeParameterTemplatesResponse> {
 	
 	public DescribeParameterTemplatesRequest() {
-		super("Dds", "2015-12-01", "DescribeParameterTemplates", "dds");
+		super("Dds", "2015-12-01", "DescribeParameterTemplates", "Dds");
 	}
 
 	private Long resourceOwnerId;

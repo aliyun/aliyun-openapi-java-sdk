@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceNetworkTypeRequest extends RpcAcsRequest<ModifyDBInstanceNetworkTypeResponse> {
 	
 	public ModifyDBInstanceNetworkTypeRequest() {
-		super("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "dds");
+		super("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "Dds");
 	}
 
 	private Long resourceOwnerId;

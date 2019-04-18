@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardingDBInstanceResponse> {
 	
 	public CreateShardingDBInstanceRequest() {
-		super("Dds", "2015-12-01", "CreateShardingDBInstance", "dds");
+		super("Dds", "2015-12-01", "CreateShardingDBInstance", "Dds");
 	}
 
 	private Long resourceOwnerId;

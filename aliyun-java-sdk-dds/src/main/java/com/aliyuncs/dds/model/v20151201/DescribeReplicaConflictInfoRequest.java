@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeReplicaConflictInfoRequest extends RpcAcsRequest<DescribeReplicaConflictInfoResponse> {
 	
 	public DescribeReplicaConflictInfoRequest() {
-		super("Dds", "2015-12-01", "DescribeReplicaConflictInfo", "dds");
+		super("Dds", "2015-12-01", "DescribeReplicaConflictInfo", "Dds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneResponse> {
 	
 	public MigrateToOtherZoneRequest() {
-		super("Dds", "2015-12-01", "MigrateToOtherZone", "dds");
+		super("Dds", "2015-12-01", "MigrateToOtherZone", "Dds");
 	}
 
 	private String vSwitchId;

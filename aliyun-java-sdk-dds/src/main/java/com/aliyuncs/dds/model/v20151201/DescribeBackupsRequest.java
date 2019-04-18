@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsResponse> {
 	
 	public DescribeBackupsRequest() {
-		super("Dds", "2015-12-01", "DescribeBackups", "dds");
+		super("Dds", "2015-12-01", "DescribeBackups", "Dds");
 	}
 
 	private Long resourceOwnerId;

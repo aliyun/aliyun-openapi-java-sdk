@@ -43,6 +43,7 @@ public class DescribeBackupsResponseUnmarshaller {
 			backup.setBackupMode(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMode"));
 			backup.setBackupMethod(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMethod"));
 			backup.setBackupDownloadURL(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDownloadURL"));
+			backup.setBackupIntranetDownloadURL(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupIntranetDownloadURL"));
 			backup.setBackupSize(context.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupSize"));
 
 			backups.add(backup);

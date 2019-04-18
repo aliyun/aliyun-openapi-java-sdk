@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateRecommendationTaskRequest extends RpcAcsRequest<CreateRecommendationTaskResponse> {
 	
 	public CreateRecommendationTaskRequest() {
-		super("Dds", "2015-12-01", "CreateRecommendationTask", "dds");
+		super("Dds", "2015-12-01", "CreateRecommendationTask", "Dds");
 	}
 
 	private Long resourceOwnerId;

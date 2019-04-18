@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPasswordResponse> {
 	
 	public ResetAccountPasswordRequest() {
-		super("Dds", "2015-12-01", "ResetAccountPassword", "dds");
+		super("Dds", "2015-12-01", "ResetAccountPassword", "Dds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeReplicaSetRoleRequest extends RpcAcsRequest<DescribeReplicaSetRoleResponse> {
 	
 	public DescribeReplicaSetRoleRequest() {
-		super("Dds", "2015-12-01", "DescribeReplicaSetRole", "dds");
+		super("Dds", "2015-12-01", "DescribeReplicaSetRole", "Dds");
 	}
 
 	private Long resourceOwnerId;

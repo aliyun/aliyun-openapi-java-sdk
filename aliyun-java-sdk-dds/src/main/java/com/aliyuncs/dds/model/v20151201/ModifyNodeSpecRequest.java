@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse> {
 	
 	public ModifyNodeSpecRequest() {
-		super("Dds", "2015-12-01", "ModifyNodeSpec", "dds");
+		super("Dds", "2015-12-01", "ModifyNodeSpec", "Dds");
 	}
 
 	private Long resourceOwnerId;

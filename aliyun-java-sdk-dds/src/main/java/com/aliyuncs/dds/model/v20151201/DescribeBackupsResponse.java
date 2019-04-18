@@ -95,6 +95,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String backupDownloadURL;
 
+		private String backupIntranetDownloadURL;
+
 		private Long backupSize;
 
 		public String getBackupDBNames() {
@@ -167,6 +169,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setBackupDownloadURL(String backupDownloadURL) {
 			this.backupDownloadURL = backupDownloadURL;
+		}
+
+		public String getBackupIntranetDownloadURL() {
+			return this.backupIntranetDownloadURL;
+		}
+
+		public void setBackupIntranetDownloadURL(String backupIntranetDownloadURL) {
+			this.backupIntranetDownloadURL = backupIntranetDownloadURL;
 		}
 
 		public Long getBackupSize() {
