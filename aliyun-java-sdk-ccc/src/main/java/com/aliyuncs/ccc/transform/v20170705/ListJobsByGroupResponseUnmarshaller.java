@@ -23,7 +23,6 @@ import com.aliyuncs.ccc.model.v20170705.ListJobsByGroupResponse.Jobs.Job;
 import com.aliyuncs.ccc.model.v20170705.ListJobsByGroupResponse.Jobs.Job.Contact;
 import com.aliyuncs.ccc.model.v20170705.ListJobsByGroupResponse.Jobs.Job.KeyValuePair;
 import com.aliyuncs.ccc.model.v20170705.ListJobsByGroupResponse.Jobs.Job.SummaryItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

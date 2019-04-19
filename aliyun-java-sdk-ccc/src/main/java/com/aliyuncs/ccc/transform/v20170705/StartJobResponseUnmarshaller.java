@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.StartJobResponse;
 import com.aliyuncs.ccc.model.v20170705.StartJobResponse.KeyValuePair;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

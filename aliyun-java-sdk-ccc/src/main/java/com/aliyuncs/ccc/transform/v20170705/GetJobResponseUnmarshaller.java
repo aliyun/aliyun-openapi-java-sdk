@@ -26,7 +26,6 @@ import com.aliyuncs.ccc.model.v20170705.GetJobResponse.Job.Task;
 import com.aliyuncs.ccc.model.v20170705.GetJobResponse.Job.Task.Contact2;
 import com.aliyuncs.ccc.model.v20170705.GetJobResponse.Job.Task.ConversationDetail;
 import com.aliyuncs.ccc.model.v20170705.GetJobResponse.Job.Task.ConversationDetail.SummaryItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

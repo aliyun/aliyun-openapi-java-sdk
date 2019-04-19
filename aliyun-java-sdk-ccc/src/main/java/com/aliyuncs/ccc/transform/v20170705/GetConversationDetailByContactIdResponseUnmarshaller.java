@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.GetConversationDetailByContactIdResponse;
 import com.aliyuncs.ccc.model.v20170705.GetConversationDetailByContactIdResponse.DataList;
 import com.aliyuncs.ccc.model.v20170705.GetConversationDetailByContactIdResponse.DataList.QualityCheckPhrase;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

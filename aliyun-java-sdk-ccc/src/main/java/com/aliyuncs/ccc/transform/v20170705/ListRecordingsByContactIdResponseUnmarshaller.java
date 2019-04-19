@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.ListRecordingsByContactIdResponse;
 import com.aliyuncs.ccc.model.v20170705.ListRecordingsByContactIdResponse.Recording;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

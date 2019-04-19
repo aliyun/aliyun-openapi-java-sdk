@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.ListConfigResponse;
 import com.aliyuncs.ccc.model.v20170705.ListConfigResponse.ConfigItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20170705.CreateInstanceResponse.Instance;
 import com.aliyuncs.ccc.model.v20170705.CreateInstanceResponse.Instance.PhoneNumber;
 import com.aliyuncs.ccc.model.v20170705.CreateInstanceResponse.Instance.User;
 import com.aliyuncs.ccc.model.v20170705.CreateInstanceResponse.Instance.User.Detail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +50,30 @@ public class CreateInstanceResponseUnmarshaller {
 		instance.setDirectoryId(context.stringValue("CreateInstanceResponse.Instance.DirectoryId"));
 		instance.setCreatedTime(context.longValue("CreateInstanceResponse.Instance.CreatedTime"));
 		instance.setOwner(context.stringValue("CreateInstanceResponse.Instance.Owner"));
+
+		List<String> successPhoneNumbers = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("CreateInstanceResponse.Instance.SuccessPhoneNumbers.Length"); i++) {
+			successPhoneNumbers.add(context.stringValue("CreateInstanceResponse.Instance.SuccessPhoneNumbers["+ i +"]"));
+		}
+		instance.setSuccessPhoneNumbers(successPhoneNumbers);
+
+		List<String> failPhoneNumbers = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("CreateInstanceResponse.Instance.FailPhoneNumbers.Length"); i++) {
+			failPhoneNumbers.add(context.stringValue("CreateInstanceResponse.Instance.FailPhoneNumbers["+ i +"]"));
+		}
+		instance.setFailPhoneNumbers(failPhoneNumbers);
+
+		List<String> successLoginNames = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("CreateInstanceResponse.Instance.SuccessLoginNames.Length"); i++) {
+			successLoginNames.add(context.stringValue("CreateInstanceResponse.Instance.SuccessLoginNames["+ i +"]"));
+		}
+		instance.setSuccessLoginNames(successLoginNames);
+
+		List<String> failLoginNames = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("CreateInstanceResponse.Instance.FailLoginNames.Length"); i++) {
+			failLoginNames.add(context.stringValue("CreateInstanceResponse.Instance.FailLoginNames["+ i +"]"));
+		}
+		instance.setFailLoginNames(failLoginNames);
 
 		List<User> admin = new ArrayList<User>();
 		for (int i = 0; i < context.lengthValue("CreateInstanceResponse.Instance.Admin.Length"); i++) {

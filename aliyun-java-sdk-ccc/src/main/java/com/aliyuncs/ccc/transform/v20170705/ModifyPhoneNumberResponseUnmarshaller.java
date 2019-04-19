@@ -14,9 +14,13 @@
 
 package com.aliyuncs.ccc.transform.v20170705;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ccc.model.v20170705.ModifyPhoneNumberResponse;
 import com.aliyuncs.ccc.model.v20170705.ModifyPhoneNumberResponse.PhoneNumber;
 import com.aliyuncs.ccc.model.v20170705.ModifyPhoneNumberResponse.PhoneNumber.ContactFlow;
+import com.aliyuncs.ccc.model.v20170705.ModifyPhoneNumberResponse.PhoneNumber.SkillGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +52,16 @@ public class ModifyPhoneNumberResponseUnmarshaller {
 		contactFlow.setContactFlowDescription(context.stringValue("ModifyPhoneNumberResponse.PhoneNumber.ContactFlow.ContactFlowDescription"));
 		contactFlow.setType(context.stringValue("ModifyPhoneNumberResponse.PhoneNumber.ContactFlow.Type"));
 		phoneNumber.setContactFlow(contactFlow);
+
+		List<SkillGroup> skillGroups = new ArrayList<SkillGroup>();
+		for (int i = 0; i < context.lengthValue("ModifyPhoneNumberResponse.PhoneNumber.SkillGroups.Length"); i++) {
+			SkillGroup skillGroup = new SkillGroup();
+			skillGroup.setSkillGroupId(context.stringValue("ModifyPhoneNumberResponse.PhoneNumber.SkillGroups["+ i +"].SkillGroupId"));
+			skillGroup.setSkillGroupName(context.stringValue("ModifyPhoneNumberResponse.PhoneNumber.SkillGroups["+ i +"].SkillGroupName"));
+
+			skillGroups.add(skillGroup);
+		}
+		phoneNumber.setSkillGroups(skillGroups);
 		modifyPhoneNumberResponse.setPhoneNumber(phoneNumber);
 	 
 	 	return modifyPhoneNumberResponse;

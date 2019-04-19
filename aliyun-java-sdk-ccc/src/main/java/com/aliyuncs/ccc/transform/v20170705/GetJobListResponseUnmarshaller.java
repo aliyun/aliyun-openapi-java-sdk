@@ -23,7 +23,6 @@ import com.aliyuncs.ccc.model.v20170705.GetJobListResponse.Jobs.Job;
 import com.aliyuncs.ccc.model.v20170705.GetJobListResponse.Jobs.Job.Contact;
 import com.aliyuncs.ccc.model.v20170705.GetJobListResponse.Jobs.Job.KeyValuePair;
 import com.aliyuncs.ccc.model.v20170705.GetJobListResponse.Jobs.Job.SummaryItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

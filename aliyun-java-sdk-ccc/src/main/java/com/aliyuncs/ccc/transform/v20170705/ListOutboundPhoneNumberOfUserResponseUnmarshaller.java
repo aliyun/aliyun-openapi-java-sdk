@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.ListOutboundPhoneNumberOfUserResponse;
 import com.aliyuncs.ccc.model.v20170705.ListOutboundPhoneNumberOfUserResponse.PhoneNumber;
 import com.aliyuncs.ccc.model.v20170705.ListOutboundPhoneNumberOfUserResponse.PhoneNumber.PrivacyNumber;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

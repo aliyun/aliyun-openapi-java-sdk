@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.ListRolesResponse;
 import com.aliyuncs.ccc.model.v20170705.ListRolesResponse.Role;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

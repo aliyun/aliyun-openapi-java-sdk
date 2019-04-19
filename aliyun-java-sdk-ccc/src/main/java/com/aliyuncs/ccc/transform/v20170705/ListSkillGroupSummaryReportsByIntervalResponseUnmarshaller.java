@@ -24,7 +24,6 @@ import com.aliyuncs.ccc.model.v20170705.ListSkillGroupSummaryReportsByIntervalRe
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.SkillGroupTimeIntervalReport.SkillGroupSummaryReport.Inbound;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.SkillGroupTimeIntervalReport.SkillGroupSummaryReport.Outbound;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.SkillGroupTimeIntervalReport.SkillGroupSummaryReport.Overall;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -92,6 +91,15 @@ public class ListSkillGroupSummaryReportsByIntervalResponseUnmarshaller {
 				inbound.setSatisfactionIndex(context.floatValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.SatisfactionIndex"));
 				inbound.setSatisfactionSurveysOffered(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.SatisfactionSurveysOffered"));
 				inbound.setSatisfactionSurveysResponded(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.SatisfactionSurveysResponded"));
+				inbound.setInComingQueueOfQueueCount(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.InComingQueueOfQueueCount"));
+				inbound.setAnsweredByAgentOfQueueCount(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AnsweredByAgentOfQueueCount"));
+				inbound.setGiveUpByAgentOfQueueCount(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.GiveUpByAgentOfQueueCount"));
+				inbound.setAbandonedInQueueOfQueueCount(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AbandonedInQueueOfQueueCount"));
+				inbound.setOverFlowInQueueOfQueueCount(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.OverFlowInQueueOfQueueCount"));
+				inbound.setQueueWaitTimeDuration(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.QueueWaitTimeDuration"));
+				inbound.setAnsweredByAgentOfQueueWaitTimeDuration(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AnsweredByAgentOfQueueWaitTimeDuration"));
+				inbound.setQueueMaxWaitTimeDuration(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.QueueMaxWaitTimeDuration"));
+				inbound.setAnsweredByAgentOfQueueMaxWaitTimeDuration(context.longValue("ListSkillGroupSummaryReportsByIntervalResponse.PagedSkillGroupSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AnsweredByAgentOfQueueMaxWaitTimeDuration"));
 				skillGroupSummaryReport.setInbound(inbound);
 
 				Outbound outbound = new Outbound();

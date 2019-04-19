@@ -30,6 +30,8 @@ public class PublishContactFlowVersionRequest extends RpcAcsRequest<PublishConta
 
 	private String contactFlowVersionId;
 
+	private Boolean useTianGong;
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -49,6 +51,17 @@ public class PublishContactFlowVersionRequest extends RpcAcsRequest<PublishConta
 		this.contactFlowVersionId = contactFlowVersionId;
 		if(contactFlowVersionId != null){
 			putQueryParameter("ContactFlowVersionId", contactFlowVersionId);
+		}
+	}
+
+	public Boolean getUseTianGong() {
+		return this.useTianGong;
+	}
+
+	public void setUseTianGong(Boolean useTianGong) {
+		this.useTianGong = useTianGong;
+		if(useTianGong != null){
+			putQueryParameter("UseTianGong", useTianGong.toString());
 		}
 	}
 

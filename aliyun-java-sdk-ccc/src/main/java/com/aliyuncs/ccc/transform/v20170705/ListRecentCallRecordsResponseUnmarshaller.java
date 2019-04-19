@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20170705.ListRecentCallRecordsResponse.CallDetail
 import com.aliyuncs.ccc.model.v20170705.ListRecentCallRecordsResponse.CallDetailRecords.CallDetailRecord;
 import com.aliyuncs.ccc.model.v20170705.ListRecentCallRecordsResponse.CallDetailRecords.CallDetailRecord.CallDetailAgent;
 import com.aliyuncs.ccc.model.v20170705.ListRecentCallRecordsResponse.CallDetailRecords.CallDetailRecord.Recording;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

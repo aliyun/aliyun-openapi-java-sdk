@@ -21,7 +21,6 @@ import com.aliyuncs.ccc.model.v20170705.CreateContactFlowResponse;
 import com.aliyuncs.ccc.model.v20170705.CreateContactFlowResponse.ContactFlow;
 import com.aliyuncs.ccc.model.v20170705.CreateContactFlowResponse.ContactFlow.ContactFlowVersion;
 import com.aliyuncs.ccc.model.v20170705.CreateContactFlowResponse.ContactFlow.PhoneNumber;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

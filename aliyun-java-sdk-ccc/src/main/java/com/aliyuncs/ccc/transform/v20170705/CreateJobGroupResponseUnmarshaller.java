@@ -21,7 +21,6 @@ import com.aliyuncs.ccc.model.v20170705.CreateJobGroupResponse;
 import com.aliyuncs.ccc.model.v20170705.CreateJobGroupResponse.JobGroup;
 import com.aliyuncs.ccc.model.v20170705.CreateJobGroupResponse.JobGroup.Strategy;
 import com.aliyuncs.ccc.model.v20170705.CreateJobGroupResponse.JobGroup.Strategy.TimeFrame;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

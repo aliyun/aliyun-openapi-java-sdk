@@ -31,11 +31,15 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 
 	private String instanceId;
 
+	private Boolean allowPrivateOutboundNumber;
+
 	private List<String> outboundPhoneNumberIds;
 
 	private String name;
 
 	private String description;
+
+	private String routingStrategy;
 
 	private List<String> userIds;
 
@@ -60,6 +64,17 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getAllowPrivateOutboundNumber() {
+		return this.allowPrivateOutboundNumber;
+	}
+
+	public void setAllowPrivateOutboundNumber(Boolean allowPrivateOutboundNumber) {
+		this.allowPrivateOutboundNumber = allowPrivateOutboundNumber;
+		if(allowPrivateOutboundNumber != null){
+			putQueryParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber.toString());
 		}
 	}
 
@@ -95,6 +110,17 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getRoutingStrategy() {
+		return this.routingStrategy;
+	}
+
+	public void setRoutingStrategy(String routingStrategy) {
+		this.routingStrategy = routingStrategy;
+		if(routingStrategy != null){
+			putQueryParameter("RoutingStrategy", routingStrategy);
 		}
 	}
 

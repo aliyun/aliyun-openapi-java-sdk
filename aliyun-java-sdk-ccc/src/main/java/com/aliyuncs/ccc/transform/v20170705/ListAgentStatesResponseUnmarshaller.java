@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.ListAgentStatesResponse;
 import com.aliyuncs.ccc.model.v20170705.ListAgentStatesResponse.Data;
 import com.aliyuncs.ccc.model.v20170705.ListAgentStatesResponse.Data.RealTimeAgentState;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

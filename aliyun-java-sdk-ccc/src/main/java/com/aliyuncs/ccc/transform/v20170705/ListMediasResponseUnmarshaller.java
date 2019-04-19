@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.ListMediasResponse;
 import com.aliyuncs.ccc.model.v20170705.ListMediasResponse.Medias;
 import com.aliyuncs.ccc.model.v20170705.ListMediasResponse.Medias.Media;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -27,11 +27,13 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		super("CCC", "2017-07-05", "CreateInstance");
 	}
 
+	private List<String> userObjects;
+
 	private String name;
 
 	private String domainName;
 
-	private String phoneNumber;
+	private List<String> phoneNumbers;
 
 	private String description;
 
@@ -42,6 +44,19 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String directoryId;
 
 	private List<String> adminRamIds;
+
+	public List<String> getUserObjects() {
+		return this.userObjects;
+	}
+
+	public void setUserObjects(List<String> userObjects) {
+		this.userObjects = userObjects;	
+		if (userObjects != null) {
+			for (int i = 0; i < userObjects.size(); i++) {
+				putQueryParameter("UserObject." + (i + 1) , userObjects.get(i));
+			}
+		}	
+	}
 
 	public String getName() {
 		return this.name;
@@ -65,15 +80,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getPhoneNumber() {
-		return this.phoneNumber;
+	public List<String> getPhoneNumbers() {
+		return this.phoneNumbers;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-		if(phoneNumber != null){
-			putQueryParameter("PhoneNumber", phoneNumber);
-		}
+	public void setPhoneNumbers(List<String> phoneNumbers) {
+		this.phoneNumbers = phoneNumbers;	
+		if (phoneNumbers != null) {
+			for (int i = 0; i < phoneNumbers.size(); i++) {
+				putQueryParameter("PhoneNumber." + (i + 1) , phoneNumbers.get(i));
+			}
+		}	
 	}
 
 	public String getDescription() {

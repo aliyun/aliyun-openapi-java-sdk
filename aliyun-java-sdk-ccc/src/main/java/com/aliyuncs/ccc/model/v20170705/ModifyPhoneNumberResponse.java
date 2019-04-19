@@ -14,7 +14,7 @@
 
 package com.aliyuncs.ccc.model.v20170705;
 
-import java.util.Map;
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20170705.ModifyPhoneNumberResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -105,6 +105,8 @@ public class ModifyPhoneNumberResponse extends AcsResponse {
 
 		private Integer trunks;
 
+		private List<SkillGroup> skillGroups;
+
 		private ContactFlow contactFlow;
 
 		public String getPhoneNumberId() {
@@ -179,12 +181,43 @@ public class ModifyPhoneNumberResponse extends AcsResponse {
 			this.trunks = trunks;
 		}
 
+		public List<SkillGroup> getSkillGroups() {
+			return this.skillGroups;
+		}
+
+		public void setSkillGroups(List<SkillGroup> skillGroups) {
+			this.skillGroups = skillGroups;
+		}
+
 		public ContactFlow getContactFlow() {
 			return this.contactFlow;
 		}
 
 		public void setContactFlow(ContactFlow contactFlow) {
 			this.contactFlow = contactFlow;
+		}
+
+		public static class SkillGroup {
+
+			private String skillGroupId;
+
+			private String skillGroupName;
+
+			public String getSkillGroupId() {
+				return this.skillGroupId;
+			}
+
+			public void setSkillGroupId(String skillGroupId) {
+				this.skillGroupId = skillGroupId;
+			}
+
+			public String getSkillGroupName() {
+				return this.skillGroupName;
+			}
+
+			public void setSkillGroupName(String skillGroupName) {
+				this.skillGroupName = skillGroupName;
+			}
 		}
 
 		public static class ContactFlow {

@@ -21,7 +21,6 @@ import com.aliyuncs.ccc.model.v20170705.GetCallMeasureSummaryReportResponse;
 import com.aliyuncs.ccc.model.v20170705.GetCallMeasureSummaryReportResponse.NumberReports;
 import com.aliyuncs.ccc.model.v20170705.GetCallMeasureSummaryReportResponse.NumberReports.NumberReport;
 import com.aliyuncs.ccc.model.v20170705.GetCallMeasureSummaryReportResponse.SummaryReport;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -23,7 +23,6 @@ import com.aliyuncs.ccc.model.v20170705.GetInstanceSummaryReportByIntervalRespon
 import com.aliyuncs.ccc.model.v20170705.GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.InstanceSummaryReport.Inbound;
 import com.aliyuncs.ccc.model.v20170705.GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.InstanceSummaryReport.Outbound;
 import com.aliyuncs.ccc.model.v20170705.GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.InstanceSummaryReport.Overall;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -41,6 +41,8 @@ public class ModifySkillGroupRequest extends RpcAcsRequest<ModifySkillGroupRespo
 
 	private String description;
 
+	private String routingStrategy;
+
 	private List<String> userIds;
 
 	public List<Integer> getSkillLevels() {
@@ -121,6 +123,17 @@ public class ModifySkillGroupRequest extends RpcAcsRequest<ModifySkillGroupRespo
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getRoutingStrategy() {
+		return this.routingStrategy;
+	}
+
+	public void setRoutingStrategy(String routingStrategy) {
+		this.routingStrategy = routingStrategy;
+		if(routingStrategy != null){
+			putQueryParameter("RoutingStrategy", routingStrategy);
 		}
 	}
 

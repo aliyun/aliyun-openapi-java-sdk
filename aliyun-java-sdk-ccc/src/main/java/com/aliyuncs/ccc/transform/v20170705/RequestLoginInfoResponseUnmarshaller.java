@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.RequestLoginInfoResponse;
 import com.aliyuncs.ccc.model.v20170705.RequestLoginInfoResponse.LoginInfo;
 import com.aliyuncs.ccc.model.v20170705.RequestLoginInfoResponse.LoginInfo.Role;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

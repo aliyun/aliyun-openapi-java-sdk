@@ -25,7 +25,6 @@ import com.aliyuncs.ccc.model.v20170705.ListJobStatusResponse.Jobs.Job.KeyValueP
 import com.aliyuncs.ccc.model.v20170705.ListJobStatusResponse.Jobs.Job.SummaryItem;
 import com.aliyuncs.ccc.model.v20170705.ListJobStatusResponse.Jobs.Job.Task;
 import com.aliyuncs.ccc.model.v20170705.ListJobStatusResponse.Jobs.Job.Task.Contact1;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

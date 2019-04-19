@@ -24,7 +24,6 @@ import com.aliyuncs.ccc.model.v20170705.FindUsersResponse.Users.User.Detail;
 import com.aliyuncs.ccc.model.v20170705.FindUsersResponse.Users.User.Role;
 import com.aliyuncs.ccc.model.v20170705.FindUsersResponse.Users.User.SkillLevel;
 import com.aliyuncs.ccc.model.v20170705.FindUsersResponse.Users.User.SkillLevel.Skill;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

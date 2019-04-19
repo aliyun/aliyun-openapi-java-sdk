@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupStatesResponse;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupStatesResponse.Data;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupStatesResponse.Data.RealTimeSkillGroupState;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

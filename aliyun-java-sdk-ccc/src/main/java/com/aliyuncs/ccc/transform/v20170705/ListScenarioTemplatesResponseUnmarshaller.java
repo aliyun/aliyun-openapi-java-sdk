@@ -23,7 +23,6 @@ import com.aliyuncs.ccc.model.v20170705.ListScenarioTemplatesResponse.Scenario.K
 import com.aliyuncs.ccc.model.v20170705.ListScenarioTemplatesResponse.Scenario.Survey;
 import com.aliyuncs.ccc.model.v20170705.ListScenarioTemplatesResponse.Scenario.Survey.Flow;
 import com.aliyuncs.ccc.model.v20170705.ListScenarioTemplatesResponse.Scenario.Survey.IntentNode;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -21,7 +21,6 @@ import com.aliyuncs.ccc.model.v20170705.ListRealTimeAgentResponse;
 import com.aliyuncs.ccc.model.v20170705.ListRealTimeAgentResponse.User;
 import com.aliyuncs.ccc.model.v20170705.ListRealTimeAgentResponse.User.SkillLevel;
 import com.aliyuncs.ccc.model.v20170705.ListRealTimeAgentResponse.User.SkillLevel.Skill;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

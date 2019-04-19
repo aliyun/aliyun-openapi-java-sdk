@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.ModifyNotificationConfigResponse;
 import com.aliyuncs.ccc.model.v20170705.ModifyNotificationConfigResponse.SubscriptionsItem;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

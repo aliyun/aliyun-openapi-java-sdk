@@ -14,7 +14,6 @@
 
 package com.aliyuncs.ccc.model.v20170705;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20170705.DeleteSkillGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

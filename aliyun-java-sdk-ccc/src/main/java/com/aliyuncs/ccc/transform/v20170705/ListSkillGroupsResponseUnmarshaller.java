@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsResponse;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsResponse.SkillGroup;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsResponse.SkillGroup.PhoneNumber;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +42,7 @@ public class ListSkillGroupsResponseUnmarshaller {
 			skillGroup.setAccSkillGroupName(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].AccSkillGroupName"));
 			skillGroup.setAccQueueName(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].AccQueueName"));
 			skillGroup.setSkillGroupDescription(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].SkillGroupDescription"));
+			skillGroup.setRoutingStrategy(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].RoutingStrategy"));
 			skillGroup.setUserCount(context.integerValue("ListSkillGroupsResponse.SkillGroups["+ i +"].UserCount"));
 
 			List<PhoneNumber> outboundPhoneNumbers = new ArrayList<PhoneNumber>();

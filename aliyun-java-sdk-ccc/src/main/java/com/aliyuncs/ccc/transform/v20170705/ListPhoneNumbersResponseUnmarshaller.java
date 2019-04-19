@@ -20,7 +20,8 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersResponse;
 import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersResponse.PhoneNumber;
 import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersResponse.PhoneNumber.ContactFlow;
-import java.util.Map;
+import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersResponse.PhoneNumber.PrivacyNumber;
+import com.aliyuncs.ccc.model.v20170705.ListPhoneNumbersResponse.PhoneNumber.SkillGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +58,28 @@ public class ListPhoneNumbersResponseUnmarshaller {
 			contactFlow.setContactFlowDescription(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].ContactFlow.ContactFlowDescription"));
 			contactFlow.setType(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].ContactFlow.Type"));
 			phoneNumber.setContactFlow(contactFlow);
+
+			PrivacyNumber privacyNumber = new PrivacyNumber();
+			privacyNumber.setPoolId(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].PrivacyNumber.PoolId"));
+			privacyNumber.setType(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].PrivacyNumber.Type"));
+			privacyNumber.setTelX(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].PrivacyNumber.TelX"));
+			privacyNumber.setPoolName(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].PrivacyNumber.PoolName"));
+			privacyNumber.setPhoneNumber(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].PrivacyNumber.PhoneNumber"));
+			privacyNumber.setExtra(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].PrivacyNumber.Extra"));
+			privacyNumber.setBizId(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].PrivacyNumber.BizId"));
+			privacyNumber.setSubId(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].PrivacyNumber.SubId"));
+			privacyNumber.setRegionNameCity(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].PrivacyNumber.RegionNameCity"));
+			phoneNumber.setPrivacyNumber(privacyNumber);
+
+			List<SkillGroup> skillGroups = new ArrayList<SkillGroup>();
+			for (int j = 0; j < context.lengthValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].SkillGroups.Length"); j++) {
+				SkillGroup skillGroup = new SkillGroup();
+				skillGroup.setSkillGroupId(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].SkillGroups["+ j +"].SkillGroupId"));
+				skillGroup.setSkillGroupName(context.stringValue("ListPhoneNumbersResponse.PhoneNumbers["+ i +"].SkillGroups["+ j +"].SkillGroupName"));
+
+				skillGroups.add(skillGroup);
+			}
+			phoneNumber.setSkillGroups(skillGroups);
 
 			phoneNumbers.add(phoneNumber);
 		}

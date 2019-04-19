@@ -15,7 +15,6 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20170705.CreateInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -119,6 +118,14 @@ public class CreateInstanceResponse extends AcsResponse {
 		private List<User> admin;
 
 		private List<PhoneNumber> phoneNumbers;
+
+		private List<String> successPhoneNumbers;
+
+		private List<String> failPhoneNumbers;
+
+		private List<String> successLoginNames;
+
+		private List<String> failLoginNames;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -246,6 +253,38 @@ public class CreateInstanceResponse extends AcsResponse {
 
 		public void setPhoneNumbers(List<PhoneNumber> phoneNumbers) {
 			this.phoneNumbers = phoneNumbers;
+		}
+
+		public List<String> getSuccessPhoneNumbers() {
+			return this.successPhoneNumbers;
+		}
+
+		public void setSuccessPhoneNumbers(List<String> successPhoneNumbers) {
+			this.successPhoneNumbers = successPhoneNumbers;
+		}
+
+		public List<String> getFailPhoneNumbers() {
+			return this.failPhoneNumbers;
+		}
+
+		public void setFailPhoneNumbers(List<String> failPhoneNumbers) {
+			this.failPhoneNumbers = failPhoneNumbers;
+		}
+
+		public List<String> getSuccessLoginNames() {
+			return this.successLoginNames;
+		}
+
+		public void setSuccessLoginNames(List<String> successLoginNames) {
+			this.successLoginNames = successLoginNames;
+		}
+
+		public List<String> getFailLoginNames() {
+			return this.failLoginNames;
+		}
+
+		public void setFailLoginNames(List<String> failLoginNames) {
+			this.failLoginNames = failLoginNames;
 		}
 
 		public static class User {

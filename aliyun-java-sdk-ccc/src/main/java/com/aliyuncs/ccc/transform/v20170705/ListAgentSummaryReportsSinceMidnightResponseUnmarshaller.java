@@ -23,7 +23,6 @@ import com.aliyuncs.ccc.model.v20170705.ListAgentSummaryReportsSinceMidnightResp
 import com.aliyuncs.ccc.model.v20170705.ListAgentSummaryReportsSinceMidnightResponse.PagedAgentSummaryReport.AgentSummaryReport.Inbound;
 import com.aliyuncs.ccc.model.v20170705.ListAgentSummaryReportsSinceMidnightResponse.PagedAgentSummaryReport.AgentSummaryReport.Outbound;
 import com.aliyuncs.ccc.model.v20170705.ListAgentSummaryReportsSinceMidnightResponse.PagedAgentSummaryReport.AgentSummaryReport.Overall;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

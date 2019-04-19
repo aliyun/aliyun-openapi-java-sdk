@@ -15,7 +15,6 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20170705.ListSkillGroupSummaryReportsSinceMidnightResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -397,6 +396,24 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 
 				private Long satisfactionSurveysResponded;
 
+				private Long inComingQueueOfQueueCount;
+
+				private Long answeredByAgentOfQueueCount;
+
+				private Long giveUpByAgentOfQueueCount;
+
+				private Long abandonedInQueueOfQueueCount;
+
+				private Long overFlowInQueueOfQueueCount;
+
+				private Long queueWaitTimeDuration;
+
+				private Long answeredByAgentOfQueueWaitTimeDuration;
+
+				private Long queueMaxWaitTimeDuration;
+
+				private Long answeredByAgentOfQueueMaxWaitTimeDuration;
+
 				public Long getCallsOffered() {
 					return this.callsOffered;
 				}
@@ -523,6 +540,78 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponse extends AcsRespon
 
 				public void setSatisfactionSurveysResponded(Long satisfactionSurveysResponded) {
 					this.satisfactionSurveysResponded = satisfactionSurveysResponded;
+				}
+
+				public Long getInComingQueueOfQueueCount() {
+					return this.inComingQueueOfQueueCount;
+				}
+
+				public void setInComingQueueOfQueueCount(Long inComingQueueOfQueueCount) {
+					this.inComingQueueOfQueueCount = inComingQueueOfQueueCount;
+				}
+
+				public Long getAnsweredByAgentOfQueueCount() {
+					return this.answeredByAgentOfQueueCount;
+				}
+
+				public void setAnsweredByAgentOfQueueCount(Long answeredByAgentOfQueueCount) {
+					this.answeredByAgentOfQueueCount = answeredByAgentOfQueueCount;
+				}
+
+				public Long getGiveUpByAgentOfQueueCount() {
+					return this.giveUpByAgentOfQueueCount;
+				}
+
+				public void setGiveUpByAgentOfQueueCount(Long giveUpByAgentOfQueueCount) {
+					this.giveUpByAgentOfQueueCount = giveUpByAgentOfQueueCount;
+				}
+
+				public Long getAbandonedInQueueOfQueueCount() {
+					return this.abandonedInQueueOfQueueCount;
+				}
+
+				public void setAbandonedInQueueOfQueueCount(Long abandonedInQueueOfQueueCount) {
+					this.abandonedInQueueOfQueueCount = abandonedInQueueOfQueueCount;
+				}
+
+				public Long getOverFlowInQueueOfQueueCount() {
+					return this.overFlowInQueueOfQueueCount;
+				}
+
+				public void setOverFlowInQueueOfQueueCount(Long overFlowInQueueOfQueueCount) {
+					this.overFlowInQueueOfQueueCount = overFlowInQueueOfQueueCount;
+				}
+
+				public Long getQueueWaitTimeDuration() {
+					return this.queueWaitTimeDuration;
+				}
+
+				public void setQueueWaitTimeDuration(Long queueWaitTimeDuration) {
+					this.queueWaitTimeDuration = queueWaitTimeDuration;
+				}
+
+				public Long getAnsweredByAgentOfQueueWaitTimeDuration() {
+					return this.answeredByAgentOfQueueWaitTimeDuration;
+				}
+
+				public void setAnsweredByAgentOfQueueWaitTimeDuration(Long answeredByAgentOfQueueWaitTimeDuration) {
+					this.answeredByAgentOfQueueWaitTimeDuration = answeredByAgentOfQueueWaitTimeDuration;
+				}
+
+				public Long getQueueMaxWaitTimeDuration() {
+					return this.queueMaxWaitTimeDuration;
+				}
+
+				public void setQueueMaxWaitTimeDuration(Long queueMaxWaitTimeDuration) {
+					this.queueMaxWaitTimeDuration = queueMaxWaitTimeDuration;
+				}
+
+				public Long getAnsweredByAgentOfQueueMaxWaitTimeDuration() {
+					return this.answeredByAgentOfQueueMaxWaitTimeDuration;
+				}
+
+				public void setAnsweredByAgentOfQueueMaxWaitTimeDuration(Long answeredByAgentOfQueueMaxWaitTimeDuration) {
+					this.answeredByAgentOfQueueMaxWaitTimeDuration = answeredByAgentOfQueueMaxWaitTimeDuration;
 				}
 			}
 

@@ -1,3 +1,6 @@
+2019-04-19 Version: 1.0.13
+1, Add new API.
+
 2019-01-04 Version: 1.0.12
 1, Add new open API.
 

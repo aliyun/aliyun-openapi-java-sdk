@@ -23,7 +23,6 @@ import com.aliyuncs.ccc.model.v20170705.GenerateAgentStatisticReportResponse.Dat
 import com.aliyuncs.ccc.model.v20170705.GenerateAgentStatisticReportResponse.DataList.GenerateAgentStatistic.Inbound;
 import com.aliyuncs.ccc.model.v20170705.GenerateAgentStatisticReportResponse.DataList.GenerateAgentStatistic.Outbound;
 import com.aliyuncs.ccc.model.v20170705.GenerateAgentStatisticReportResponse.DataList.GenerateAgentStatistic.Overall;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

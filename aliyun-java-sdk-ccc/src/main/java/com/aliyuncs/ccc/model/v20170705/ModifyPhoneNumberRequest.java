@@ -15,6 +15,7 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -33,6 +34,8 @@ public class ModifyPhoneNumberRequest extends RpcAcsRequest<ModifyPhoneNumberRes
 	private String phoneNumberId;
 
 	private String usage;
+
+	private List<String> skillGroupIds;
 
 	public String getContactFlowId() {
 		return this.contactFlowId;
@@ -76,6 +79,19 @@ public class ModifyPhoneNumberRequest extends RpcAcsRequest<ModifyPhoneNumberRes
 		if(usage != null){
 			putQueryParameter("Usage", usage);
 		}
+	}
+
+	public List<String> getSkillGroupIds() {
+		return this.skillGroupIds;
+	}
+
+	public void setSkillGroupIds(List<String> skillGroupIds) {
+		this.skillGroupIds = skillGroupIds;	
+		if (skillGroupIds != null) {
+			for (int i = 0; i < skillGroupIds.size(); i++) {
+				putQueryParameter("SkillGroupId." + (i + 1) , skillGroupIds.get(i));
+			}
+		}	
 	}
 
 	@Override

@@ -21,7 +21,6 @@ import com.aliyuncs.ccc.model.v20170705.ListSurveysResponse;
 import com.aliyuncs.ccc.model.v20170705.ListSurveysResponse.Survey;
 import com.aliyuncs.ccc.model.v20170705.ListSurveysResponse.Survey.AsrCustomModel;
 import com.aliyuncs.ccc.model.v20170705.ListSurveysResponse.Survey.Flow;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

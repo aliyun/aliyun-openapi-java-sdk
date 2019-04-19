@@ -22,7 +22,6 @@ import com.aliyuncs.ccc.model.v20170705.GetInstanceResponse.Instance;
 import com.aliyuncs.ccc.model.v20170705.GetInstanceResponse.Instance.PhoneNumber;
 import com.aliyuncs.ccc.model.v20170705.GetInstanceResponse.Instance.User;
 import com.aliyuncs.ccc.model.v20170705.GetInstanceResponse.Instance.User.Detail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

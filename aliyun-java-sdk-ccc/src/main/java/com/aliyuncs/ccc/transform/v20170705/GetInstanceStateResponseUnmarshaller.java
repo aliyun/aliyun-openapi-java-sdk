@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.GetInstanceStateResponse;
 import com.aliyuncs.ccc.model.v20170705.GetInstanceStateResponse.RealTimeInstanceState;
 import com.aliyuncs.ccc.model.v20170705.GetInstanceStateResponse.RealTimeInstanceState.AgentStateCount;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

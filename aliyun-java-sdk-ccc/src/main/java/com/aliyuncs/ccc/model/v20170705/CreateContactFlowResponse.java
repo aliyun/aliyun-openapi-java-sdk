@@ -15,7 +15,6 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20170705.CreateContactFlowResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -196,10 +195,26 @@ public class CreateContactFlowResponse extends AcsResponse {
 				this.contactFlowVersionId = contactFlowVersionId;
 			}
 
+			public String getBizVersion() {
+				return this.version;
+			}
+
+			public void setBizVersion(String version) {
+				this.version = version;
+			}
+
+			/**
+			 * @deprecated use getBizVersion instead of this.
+			 */
+			@Deprecated
 			public String getVersion() {
 				return this.version;
 			}
 
+			/**
+			 * @deprecated use setBizVersion instead of this.
+			 */
+			@Deprecated
 			public void setVersion(String version) {
 				this.version = version;
 			}

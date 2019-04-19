@@ -15,7 +15,6 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ccc.transform.v20170705.ListCallDetailRecordsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -138,6 +137,10 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			private Integer satisfaction;
 
+			private String satisfactionDesc;
+
+			private String feedback;
+
 			private String contactType;
 
 			private String contactDisposition;
@@ -151,8 +154,6 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 			private String skillGroupNames;
 
 			private String instanceId;
-
-			private String extraAttr;
 
 			private List<CallDetailAgent> agents;
 
@@ -188,6 +189,22 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public void setSatisfaction(Integer satisfaction) {
 				this.satisfaction = satisfaction;
+			}
+
+			public String getSatisfactionDesc() {
+				return this.satisfactionDesc;
+			}
+
+			public void setSatisfactionDesc(String satisfactionDesc) {
+				this.satisfactionDesc = satisfactionDesc;
+			}
+
+			public String getFeedback() {
+				return this.feedback;
+			}
+
+			public void setFeedback(String feedback) {
+				this.feedback = feedback;
 			}
 
 			public String getContactType() {
@@ -246,14 +263,6 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public String getExtraAttr() {
-				return this.extraAttr;
-			}
-
-			public void setExtraAttr(String extraAttr) {
-				this.extraAttr = extraAttr;
-			}
-
 			public List<CallDetailAgent> getAgents() {
 				return this.agents;
 			}
@@ -272,37 +281,11 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 			public static class CallDetailAgent {
 
-				private String contactId;
-
 				private String agentId;
-
-				private String agentName;
-
-				private String skillGroupName;
-
-				private Integer queueTime;
-
-				private Integer ringTime;
-
-				private Long startTime;
-
-				private Integer talkTime;
-
-				private Integer holdTime;
-
-				private Integer workTime;
 
 				private String satisfaction;
 
 				private String feedback;
-
-				public String getContactId() {
-					return this.contactId;
-				}
-
-				public void setContactId(String contactId) {
-					this.contactId = contactId;
-				}
 
 				public String getAgentId() {
 					return this.agentId;
@@ -310,70 +293,6 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 				public void setAgentId(String agentId) {
 					this.agentId = agentId;
-				}
-
-				public String getAgentName() {
-					return this.agentName;
-				}
-
-				public void setAgentName(String agentName) {
-					this.agentName = agentName;
-				}
-
-				public String getSkillGroupName() {
-					return this.skillGroupName;
-				}
-
-				public void setSkillGroupName(String skillGroupName) {
-					this.skillGroupName = skillGroupName;
-				}
-
-				public Integer getQueueTime() {
-					return this.queueTime;
-				}
-
-				public void setQueueTime(Integer queueTime) {
-					this.queueTime = queueTime;
-				}
-
-				public Integer getRingTime() {
-					return this.ringTime;
-				}
-
-				public void setRingTime(Integer ringTime) {
-					this.ringTime = ringTime;
-				}
-
-				public Long getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(Long startTime) {
-					this.startTime = startTime;
-				}
-
-				public Integer getTalkTime() {
-					return this.talkTime;
-				}
-
-				public void setTalkTime(Integer talkTime) {
-					this.talkTime = talkTime;
-				}
-
-				public Integer getHoldTime() {
-					return this.holdTime;
-				}
-
-				public void setHoldTime(Integer holdTime) {
-					this.holdTime = holdTime;
-				}
-
-				public Integer getWorkTime() {
-					return this.workTime;
-				}
-
-				public void setWorkTime(Integer workTime) {
-					this.workTime = workTime;
 				}
 
 				public String getSatisfaction() {
@@ -397,15 +316,9 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 				private String contactId;
 
-				private String contactType;
-
 				private String agentId;
 
 				private String agentName;
-
-				private String callingNumber;
-
-				private String calledNumber;
 
 				private Long startTime;
 
@@ -413,13 +326,11 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 				private String fileName;
 
-				private String filePath;
-
 				private String fileDescription;
 
-				private String channel;
+				private String qualityCheckTid;
 
-				private String instanceId;
+				private String qualityCheckTaskId;
 
 				public String getContactId() {
 					return this.contactId;
@@ -427,14 +338,6 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 				public void setContactId(String contactId) {
 					this.contactId = contactId;
-				}
-
-				public String getContactType() {
-					return this.contactType;
-				}
-
-				public void setContactType(String contactType) {
-					this.contactType = contactType;
 				}
 
 				public String getAgentId() {
@@ -451,22 +354,6 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 
 				public void setAgentName(String agentName) {
 					this.agentName = agentName;
-				}
-
-				public String getCallingNumber() {
-					return this.callingNumber;
-				}
-
-				public void setCallingNumber(String callingNumber) {
-					this.callingNumber = callingNumber;
-				}
-
-				public String getCalledNumber() {
-					return this.calledNumber;
-				}
-
-				public void setCalledNumber(String calledNumber) {
-					this.calledNumber = calledNumber;
 				}
 
 				public Long getStartTime() {
@@ -493,14 +380,6 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 					this.fileName = fileName;
 				}
 
-				public String getFilePath() {
-					return this.filePath;
-				}
-
-				public void setFilePath(String filePath) {
-					this.filePath = filePath;
-				}
-
 				public String getFileDescription() {
 					return this.fileDescription;
 				}
@@ -509,20 +388,20 @@ public class ListCallDetailRecordsResponse extends AcsResponse {
 					this.fileDescription = fileDescription;
 				}
 
-				public String getChannel() {
-					return this.channel;
+				public String getQualityCheckTid() {
+					return this.qualityCheckTid;
 				}
 
-				public void setChannel(String channel) {
-					this.channel = channel;
+				public void setQualityCheckTid(String qualityCheckTid) {
+					this.qualityCheckTid = qualityCheckTid;
 				}
 
-				public String getInstanceId() {
-					return this.instanceId;
+				public String getQualityCheckTaskId() {
+					return this.qualityCheckTaskId;
 				}
 
-				public void setInstanceId(String instanceId) {
-					this.instanceId = instanceId;
+				public void setQualityCheckTaskId(String qualityCheckTaskId) {
+					this.qualityCheckTaskId = qualityCheckTaskId;
 				}
 			}
 		}

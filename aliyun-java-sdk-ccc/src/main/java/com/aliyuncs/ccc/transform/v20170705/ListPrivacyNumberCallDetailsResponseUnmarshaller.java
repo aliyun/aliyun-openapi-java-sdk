@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.ListPrivacyNumberCallDetailsResponse;
 import com.aliyuncs.ccc.model.v20170705.ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails;
 import com.aliyuncs.ccc.model.v20170705.ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.PrivacyNumberCallDetail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

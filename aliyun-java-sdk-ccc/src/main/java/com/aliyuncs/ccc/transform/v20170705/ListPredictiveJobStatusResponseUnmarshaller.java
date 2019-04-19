@@ -21,7 +21,6 @@ import com.aliyuncs.ccc.model.v20170705.ListPredictiveJobStatusResponse;
 import com.aliyuncs.ccc.model.v20170705.ListPredictiveJobStatusResponse.Jobs;
 import com.aliyuncs.ccc.model.v20170705.ListPredictiveJobStatusResponse.Jobs.Job;
 import com.aliyuncs.ccc.model.v20170705.ListPredictiveJobStatusResponse.Jobs.Job.Contact;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -23,7 +23,6 @@ import com.aliyuncs.ccc.model.v20170705.ListAgentSummaryReportsResponse.PagedAge
 import com.aliyuncs.ccc.model.v20170705.ListAgentSummaryReportsResponse.PagedAgentSummaryReport.AgentSummaryReport.Inbound;
 import com.aliyuncs.ccc.model.v20170705.ListAgentSummaryReportsResponse.PagedAgentSummaryReport.AgentSummaryReport.Outbound;
 import com.aliyuncs.ccc.model.v20170705.ListAgentSummaryReportsResponse.PagedAgentSummaryReport.AgentSummaryReport.Overall;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

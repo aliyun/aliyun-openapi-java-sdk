@@ -21,7 +21,6 @@ import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsOfUserResponse;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsOfUserResponse.SkillLevel;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsOfUserResponse.SkillLevel.Skill;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupsOfUserResponse.SkillLevel.Skill.PhoneNumber;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +45,7 @@ public class ListSkillGroupsOfUserResponseUnmarshaller {
 			skill.setInstanceId(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.InstanceId"));
 			skill.setSkillGroupName(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.SkillGroupName"));
 			skill.setSkillGroupDescription(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.SkillGroupDescription"));
+			skill.setRoutingStrategy(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.RoutingStrategy"));
 
 			List<PhoneNumber> outboundPhoneNumbers = new ArrayList<PhoneNumber>();
 			for (int j = 0; j < context.lengthValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers.Length"); j++) {

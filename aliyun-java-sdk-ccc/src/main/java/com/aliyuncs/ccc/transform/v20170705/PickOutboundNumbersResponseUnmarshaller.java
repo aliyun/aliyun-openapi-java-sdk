@@ -21,7 +21,6 @@ import com.aliyuncs.ccc.model.v20170705.PickOutboundNumbersResponse;
 import com.aliyuncs.ccc.model.v20170705.PickOutboundNumbersResponse.DialNumberPair;
 import com.aliyuncs.ccc.model.v20170705.PickOutboundNumbersResponse.DialNumberPair.Callee;
 import com.aliyuncs.ccc.model.v20170705.PickOutboundNumbersResponse.DialNumberPair.Caller;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

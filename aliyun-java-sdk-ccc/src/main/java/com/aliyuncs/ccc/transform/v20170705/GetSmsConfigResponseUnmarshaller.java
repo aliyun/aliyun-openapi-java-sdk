@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.GetSmsConfigResponse;
 import com.aliyuncs.ccc.model.v20170705.GetSmsConfigResponse.SmsConfig;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

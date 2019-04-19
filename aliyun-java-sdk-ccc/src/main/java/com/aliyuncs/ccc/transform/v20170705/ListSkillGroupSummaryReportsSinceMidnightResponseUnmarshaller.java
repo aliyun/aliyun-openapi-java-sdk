@@ -23,7 +23,6 @@ import com.aliyuncs.ccc.model.v20170705.ListSkillGroupSummaryReportsSinceMidnigh
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.SkillGroupSummaryReport.Inbound;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.SkillGroupSummaryReport.Outbound;
 import com.aliyuncs.ccc.model.v20170705.ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.SkillGroupSummaryReport.Overall;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -86,6 +85,15 @@ public class ListSkillGroupSummaryReportsSinceMidnightResponseUnmarshaller {
 			inbound.setSatisfactionIndex(context.floatValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.SatisfactionIndex"));
 			inbound.setSatisfactionSurveysOffered(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.SatisfactionSurveysOffered"));
 			inbound.setSatisfactionSurveysResponded(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.SatisfactionSurveysResponded"));
+			inbound.setInComingQueueOfQueueCount(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.InComingQueueOfQueueCount"));
+			inbound.setAnsweredByAgentOfQueueCount(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.AnsweredByAgentOfQueueCount"));
+			inbound.setGiveUpByAgentOfQueueCount(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.GiveUpByAgentOfQueueCount"));
+			inbound.setAbandonedInQueueOfQueueCount(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.AbandonedInQueueOfQueueCount"));
+			inbound.setOverFlowInQueueOfQueueCount(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.OverFlowInQueueOfQueueCount"));
+			inbound.setQueueWaitTimeDuration(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.QueueWaitTimeDuration"));
+			inbound.setAnsweredByAgentOfQueueWaitTimeDuration(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.AnsweredByAgentOfQueueWaitTimeDuration"));
+			inbound.setQueueMaxWaitTimeDuration(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.QueueMaxWaitTimeDuration"));
+			inbound.setAnsweredByAgentOfQueueMaxWaitTimeDuration(context.longValue("ListSkillGroupSummaryReportsSinceMidnightResponse.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.AnsweredByAgentOfQueueMaxWaitTimeDuration"));
 			skillGroupSummaryReport.setInbound(inbound);
 
 			Outbound outbound = new Outbound();

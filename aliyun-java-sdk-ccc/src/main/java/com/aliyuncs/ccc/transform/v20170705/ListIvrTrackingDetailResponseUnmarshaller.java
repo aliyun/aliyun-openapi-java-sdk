@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.ccc.model.v20170705.ListIvrTrackingDetailResponse;
 import com.aliyuncs.ccc.model.v20170705.ListIvrTrackingDetailResponse.IvrTrackingDetails;
 import com.aliyuncs.ccc.model.v20170705.ListIvrTrackingDetailResponse.IvrTrackingDetails.IvrTrackingDetail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

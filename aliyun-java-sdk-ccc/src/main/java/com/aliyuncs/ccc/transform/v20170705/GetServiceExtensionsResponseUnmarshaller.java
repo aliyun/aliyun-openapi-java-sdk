@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20170705.GetServiceExtensionsResponse;
 import com.aliyuncs.ccc.model.v20170705.GetServiceExtensionsResponse.ServiceExtension;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
