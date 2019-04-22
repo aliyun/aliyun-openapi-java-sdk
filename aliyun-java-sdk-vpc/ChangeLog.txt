@@ -1,3 +1,8 @@
+2019-04-22 Version: 3.0.6
+1, 3.0.6 release.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
 2019-04-22 Version: 3.0.5
 1, vpc release.
 2, new version.
