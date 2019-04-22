@@ -1,3 +1,8 @@
+2019-04-22 Version: 1.2.4
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
 2019-03-19 Version: 1.2.2
 1, add query user oms data api
 

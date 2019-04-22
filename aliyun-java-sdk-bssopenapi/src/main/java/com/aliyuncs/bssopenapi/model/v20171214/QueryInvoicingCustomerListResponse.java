@@ -129,6 +129,8 @@ public class QueryInvoicingCustomerListResponse extends AcsResponse {
 
 			private Long type;
 
+			private String defaultRemark;
+
 			public Long getId() {
 				return this.id;
 			}
@@ -287,6 +289,14 @@ public class QueryInvoicingCustomerListResponse extends AcsResponse {
 
 			public void setType(Long type) {
 				this.type = type;
+			}
+
+			public String getDefaultRemark() {
+				return this.defaultRemark;
+			}
+
+			public void setDefaultRemark(String defaultRemark) {
+				this.defaultRemark = defaultRemark;
 			}
 		}
 	}

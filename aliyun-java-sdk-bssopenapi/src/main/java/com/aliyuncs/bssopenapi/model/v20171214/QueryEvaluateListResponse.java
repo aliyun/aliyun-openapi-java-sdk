@@ -85,6 +85,10 @@ public class QueryEvaluateListResponse extends AcsResponse {
 
 		private Integer totalCount;
 
+		private Long totalInvoiceAmount;
+
+		private Long totalUnAppliedInvoiceAmount;
+
 		private List<Evaluate> evaluateList;
 
 		public String getHostId() {
@@ -117,6 +121,22 @@ public class QueryEvaluateListResponse extends AcsResponse {
 
 		public void setTotalCount(Integer totalCount) {
 			this.totalCount = totalCount;
+		}
+
+		public Long getTotalInvoiceAmount() {
+			return this.totalInvoiceAmount;
+		}
+
+		public void setTotalInvoiceAmount(Long totalInvoiceAmount) {
+			this.totalInvoiceAmount = totalInvoiceAmount;
+		}
+
+		public Long getTotalUnAppliedInvoiceAmount() {
+			return this.totalUnAppliedInvoiceAmount;
+		}
+
+		public void setTotalUnAppliedInvoiceAmount(Long totalUnAppliedInvoiceAmount) {
+			this.totalUnAppliedInvoiceAmount = totalUnAppliedInvoiceAmount;
 		}
 
 		public List<Evaluate> getEvaluateList() {

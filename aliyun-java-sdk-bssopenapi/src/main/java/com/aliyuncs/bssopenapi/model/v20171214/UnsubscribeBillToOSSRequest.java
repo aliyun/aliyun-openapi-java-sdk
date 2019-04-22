@@ -20,28 +20,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryInvoicingCustomerListRequest extends RpcAcsRequest<QueryInvoicingCustomerListResponse> {
+public class UnsubscribeBillToOSSRequest extends RpcAcsRequest<UnsubscribeBillToOSSResponse> {
 	
-	public QueryInvoicingCustomerListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryInvoicingCustomerList");
+	public UnsubscribeBillToOSSRequest() {
+		super("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS");
 	}
 
-	private Long ownerId;
+	private String subscribeType;
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getSubscribeType() {
+		return this.subscribeType;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setSubscribeType(String subscribeType) {
+		this.subscribeType = subscribeType;
+		if(subscribeType != null){
+			putQueryParameter("SubscribeType", subscribeType);
 		}
 	}
 
 	@Override
-	public Class<QueryInvoicingCustomerListResponse> getResponseClass() {
-		return QueryInvoicingCustomerListResponse.class;
+	public Class<UnsubscribeBillToOSSResponse> getResponseClass() {
+		return UnsubscribeBillToOSSResponse.class;
 	}
 
 }

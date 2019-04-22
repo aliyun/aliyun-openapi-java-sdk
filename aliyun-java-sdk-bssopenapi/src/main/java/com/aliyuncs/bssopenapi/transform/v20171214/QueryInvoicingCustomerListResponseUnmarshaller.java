@@ -57,6 +57,7 @@ public class QueryInvoicingCustomerListResponseUnmarshaller {
 			customerInvoice.setTitleChangeInstructions(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].TitleChangeInstructions"));
 			customerInvoice.setIssueType(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].IssueType"));
 			customerInvoice.setType(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].Type"));
+			customerInvoice.setDefaultRemark(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].DefaultRemark"));
 
 			customerInvoiceList.add(customerInvoice);
 		}

@@ -35,8 +35,6 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 
 	private List<String> bizTypeLists;
 
-	private Long callerBid;
-
 	private Integer type;
 
 	private Long ownerId;
@@ -56,8 +54,6 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 	private Long startAmount;
 
 	private String startBizTime;
-
-	private Long callerUid;
 
 	public String getEndSearchTime() {
 		return this.endSearchTime;
@@ -103,17 +99,6 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 				putQueryParameter("BizTypeList." + (i + 1) , bizTypeLists.get(i));
 			}
 		}	
-	}
-
-	public Long getCallerBid() {
-		return this.callerBid;
-	}
-
-	public void setCallerBid(Long callerBid) {
-		this.callerBid = callerBid;
-		if(callerBid != null){
-			putQueryParameter("callerBid", callerBid.toString());
-		}
 	}
 
 	public Integer getType() {
@@ -223,17 +208,6 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 		this.startBizTime = startBizTime;
 		if(startBizTime != null){
 			putQueryParameter("StartBizTime", startBizTime);
-		}
-	}
-
-	public Long getCallerUid() {
-		return this.callerUid;
-	}
-
-	public void setCallerUid(Long callerUid) {
-		this.callerUid = callerUid;
-		if(callerUid != null){
-			putQueryParameter("callerUid", callerUid.toString());
 		}
 	}
 

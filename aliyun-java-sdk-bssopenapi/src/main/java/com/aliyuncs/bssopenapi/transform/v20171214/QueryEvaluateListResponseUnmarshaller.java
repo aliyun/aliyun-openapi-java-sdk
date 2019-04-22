@@ -37,6 +37,8 @@ public class QueryEvaluateListResponseUnmarshaller {
 		data.setPageNum(context.integerValue("QueryEvaluateListResponse.Data.PageNum"));
 		data.setPageSize(context.integerValue("QueryEvaluateListResponse.Data.PageSize"));
 		data.setTotalCount(context.integerValue("QueryEvaluateListResponse.Data.TotalCount"));
+		data.setTotalInvoiceAmount(context.longValue("QueryEvaluateListResponse.Data.TotalInvoiceAmount"));
+		data.setTotalUnAppliedInvoiceAmount(context.longValue("QueryEvaluateListResponse.Data.TotalUnAppliedInvoiceAmount"));
 
 		List<Evaluate> evaluateList = new ArrayList<Evaluate>();
 		for (int i = 0; i < context.lengthValue("QueryEvaluateListResponse.Data.EvaluateList.Length"); i++) {
