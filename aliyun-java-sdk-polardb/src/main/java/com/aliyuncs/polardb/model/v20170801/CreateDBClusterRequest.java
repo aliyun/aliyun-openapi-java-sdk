@@ -48,6 +48,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBNodeClass;
 
+	private Boolean autoRenew;
+
 	private String engine;
 
 	private String vPCId;
@@ -178,6 +180,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBNodeClass = dBNodeClass;
 		if(dBNodeClass != null){
 			putQueryParameter("DBNodeClass", dBNodeClass);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 
