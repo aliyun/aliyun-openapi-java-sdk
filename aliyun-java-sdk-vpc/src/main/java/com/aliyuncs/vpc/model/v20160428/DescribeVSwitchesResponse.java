@@ -101,6 +101,8 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String networkAclId;
+
 		private List<Tag> tags;
 
 		private RouteTable routeTable;
@@ -199,6 +201,14 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getNetworkAclId() {
+			return this.networkAclId;
+		}
+
+		public void setNetworkAclId(String networkAclId) {
+			this.networkAclId = networkAclId;
 		}
 
 		public List<Tag> getTags() {

@@ -40,6 +40,7 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 		describeVpcAttributeResponse.setIsDefault(context.booleanValue("DescribeVpcAttributeResponse.IsDefault"));
 		describeVpcAttributeResponse.setClassicLinkEnabled(context.booleanValue("DescribeVpcAttributeResponse.ClassicLinkEnabled"));
 		describeVpcAttributeResponse.setResourceGroupId(context.stringValue("DescribeVpcAttributeResponse.ResourceGroupId"));
+		describeVpcAttributeResponse.setNetworkAclNum(context.stringValue("DescribeVpcAttributeResponse.NetworkAclNum"));
 
 		List<String> vSwitchIds = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeVpcAttributeResponse.VSwitchIds.Length"); i++) {

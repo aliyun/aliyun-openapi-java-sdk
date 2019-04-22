@@ -97,6 +97,8 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private Boolean isDefault;
 
+		private String networkAclNum;
+
 		private String resourceGroupId;
 
 		private List<Tag> tags;
@@ -203,6 +205,14 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		public void setIsDefault(Boolean isDefault) {
 			this.isDefault = isDefault;
+		}
+
+		public String getNetworkAclNum() {
+			return this.networkAclNum;
+		}
+
+		public void setNetworkAclNum(String networkAclNum) {
+			this.networkAclNum = networkAclNum;
 		}
 
 		public String getResourceGroupId() {

@@ -45,6 +45,7 @@ public class DescribeVpcsResponseUnmarshaller {
 			vpc.setVRouterId(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VRouterId"));
 			vpc.setDescription(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Description"));
 			vpc.setIsDefault(context.booleanValue("DescribeVpcsResponse.Vpcs["+ i +"].IsDefault"));
+			vpc.setNetworkAclNum(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].NetworkAclNum"));
 			vpc.setResourceGroupId(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].ResourceGroupId"));
 
 			List<String> vSwitchIds = new ArrayList<String>();

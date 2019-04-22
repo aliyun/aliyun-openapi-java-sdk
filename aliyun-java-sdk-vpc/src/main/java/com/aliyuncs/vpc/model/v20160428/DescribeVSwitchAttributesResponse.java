@@ -51,6 +51,8 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String networkAclId;
+
 	private List<CloudResourceSetType> cloudResources;
 
 	private RouteTable routeTable;
@@ -157,6 +159,14 @@ public class DescribeVSwitchAttributesResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getNetworkAclId() {
+		return this.networkAclId;
+	}
+
+	public void setNetworkAclId(String networkAclId) {
+		this.networkAclId = networkAclId;
 	}
 
 	public List<CloudResourceSetType> getCloudResources() {

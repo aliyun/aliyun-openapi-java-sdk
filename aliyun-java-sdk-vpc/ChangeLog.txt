@@ -1,3 +1,8 @@
+2019-04-22 Version: 3.0.5
+1, vpc release.
+2, new version.
+3, api params.
+
 2019-04-08 Version: 3.0.5
 1, update openapi for physical connection.
 

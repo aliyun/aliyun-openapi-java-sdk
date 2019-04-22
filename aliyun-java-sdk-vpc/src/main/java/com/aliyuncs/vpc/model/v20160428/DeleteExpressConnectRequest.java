@@ -20,53 +20,25 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddressResponse> {
+public class DeleteExpressConnectRequest extends RpcAcsRequest<DeleteExpressConnectResponse> {
 	
-	public AssociateEipAddressRequest() {
-		super("Vpc", "2016-04-28", "AssociateEipAddress", "vpc");
+	public DeleteExpressConnectRequest() {
+		super("Vpc", "2016-04-28", "DeleteExpressConnect", "vpc");
 	}
-
-	private String privateIpAddress;
-
-	private String mode;
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
 	private String resourceOwnerAccount;
 
-	private String instanceRegionId;
+	private String clientToken;
 
 	private String ownerAccount;
 
-	private String instanceType;
+	private Boolean force;
 
-	private String allocationId;
+	private String routerInterfaceId;
 
 	private Long ownerId;
-
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
-
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-		if(privateIpAddress != null){
-			putQueryParameter("PrivateIpAddress", privateIpAddress);
-		}
-	}
-
-	public String getMode() {
-		return this.mode;
-	}
-
-	public void setMode(String mode) {
-		this.mode = mode;
-		if(mode != null){
-			putQueryParameter("Mode", mode);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -76,17 +48,6 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -101,14 +62,14 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 		}
 	}
 
-	public String getInstanceRegionId() {
-		return this.instanceRegionId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setInstanceRegionId(String instanceRegionId) {
-		this.instanceRegionId = instanceRegionId;
-		if(instanceRegionId != null){
-			putQueryParameter("InstanceRegionId", instanceRegionId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -123,25 +84,25 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public Boolean getForce() {
+		return this.force;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 
-	public String getAllocationId() {
-		return this.allocationId;
+	public String getRouterInterfaceId() {
+		return this.routerInterfaceId;
 	}
 
-	public void setAllocationId(String allocationId) {
-		this.allocationId = allocationId;
-		if(allocationId != null){
-			putQueryParameter("AllocationId", allocationId);
+	public void setRouterInterfaceId(String routerInterfaceId) {
+		this.routerInterfaceId = routerInterfaceId;
+		if(routerInterfaceId != null){
+			putQueryParameter("RouterInterfaceId", routerInterfaceId);
 		}
 	}
 
@@ -157,8 +118,8 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 	}
 
 	@Override
-	public Class<AssociateEipAddressResponse> getResponseClass() {
-		return AssociateEipAddressResponse.class;
+	public Class<DeleteExpressConnectResponse> getResponseClass() {
+		return DeleteExpressConnectResponse.class;
 	}
 
 }

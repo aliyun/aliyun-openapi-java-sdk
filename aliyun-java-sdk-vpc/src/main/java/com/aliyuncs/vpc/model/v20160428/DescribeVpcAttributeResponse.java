@@ -51,6 +51,8 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private String networkAclNum;
+
 	private List<AssociatedCen> associatedCens;
 
 	private List<CloudResourceSetType> cloudResources;
@@ -177,6 +179,14 @@ public class DescribeVpcAttributeResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public String getNetworkAclNum() {
+		return this.networkAclNum;
+	}
+
+	public void setNetworkAclNum(String networkAclNum) {
+		this.networkAclNum = networkAclNum;
 	}
 
 	public List<AssociatedCen> getAssociatedCens() {

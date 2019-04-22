@@ -40,6 +40,7 @@ public class DescribeVSwitchAttributesResponseUnmarshaller {
 		describeVSwitchAttributesResponse.setCreationTime(context.stringValue("DescribeVSwitchAttributesResponse.CreationTime"));
 		describeVSwitchAttributesResponse.setIsDefault(context.booleanValue("DescribeVSwitchAttributesResponse.IsDefault"));
 		describeVSwitchAttributesResponse.setResourceGroupId(context.stringValue("DescribeVSwitchAttributesResponse.ResourceGroupId"));
+		describeVSwitchAttributesResponse.setNetworkAclId(context.stringValue("DescribeVSwitchAttributesResponse.NetworkAclId"));
 
 		RouteTable routeTable = new RouteTable();
 		routeTable.setRouteTableId(context.stringValue("DescribeVSwitchAttributesResponse.RouteTable.RouteTableId"));
