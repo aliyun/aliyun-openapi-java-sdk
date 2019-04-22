@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.ListServerLockResponse;
 import com.aliyuncs.domain.model.v20180129.ListServerLockResponse.QueryTransferInResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

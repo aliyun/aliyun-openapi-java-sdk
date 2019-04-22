@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.QueryFailingReasonListForQualificationResponse;
 import com.aliyuncs.domain.model.v20180129.QueryFailingReasonListForQualificationResponse.FailRecord;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

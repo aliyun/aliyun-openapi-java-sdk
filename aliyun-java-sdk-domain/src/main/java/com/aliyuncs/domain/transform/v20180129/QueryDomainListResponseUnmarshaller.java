@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.QueryDomainListResponse;
 import com.aliyuncs.domain.model.v20180129.QueryDomainListResponse.Domain;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -40,6 +40,8 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 
 	private String registrantType;
 
+	private String registrantProfileType;
+
 	private String telephone;
 
 	private Boolean defaultRegistrantProfile;
@@ -142,6 +144,17 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 		this.registrantType = registrantType;
 		if(registrantType != null){
 			putQueryParameter("RegistrantType", registrantType);
+		}
+	}
+
+	public String getRegistrantProfileType() {
+		return this.registrantProfileType;
+	}
+
+	public void setRegistrantProfileType(String registrantProfileType) {
+		this.registrantProfileType = registrantProfileType;
+		if(registrantProfileType != null){
+			putQueryParameter("RegistrantProfileType", registrantProfileType);
 		}
 	}
 

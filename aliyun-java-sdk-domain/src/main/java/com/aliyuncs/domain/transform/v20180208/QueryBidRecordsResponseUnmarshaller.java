@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180208.QueryBidRecordsResponse;
 import com.aliyuncs.domain.model.v20180208.QueryBidRecordsResponse.BidRecord;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

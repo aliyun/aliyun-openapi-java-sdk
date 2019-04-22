@@ -25,7 +25,6 @@ import com.aliyuncs.domain.model.v20180129.LookupTmchNoticeResponse.Claim.Contac
 import com.aliyuncs.domain.model.v20180129.LookupTmchNoticeResponse.Claim.Holder;
 import com.aliyuncs.domain.model.v20180129.LookupTmchNoticeResponse.Claim.Holder.Addr;
 import com.aliyuncs.domain.model.v20180129.LookupTmchNoticeResponse.Claim.JurDesc;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

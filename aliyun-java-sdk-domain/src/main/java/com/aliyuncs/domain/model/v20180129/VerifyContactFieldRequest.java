@@ -38,6 +38,8 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 
 	private String registrantType;
 
+	private String domainName;
+
 	private String telephone;
 
 	private String zhCity;
@@ -127,6 +129,17 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 		this.registrantType = registrantType;
 		if(registrantType != null){
 			putQueryParameter("RegistrantType", registrantType);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 

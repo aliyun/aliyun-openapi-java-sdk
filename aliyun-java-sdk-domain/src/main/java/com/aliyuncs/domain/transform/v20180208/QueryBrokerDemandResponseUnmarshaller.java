@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180208.QueryBrokerDemandResponse;
 import com.aliyuncs.domain.model.v20180208.QueryBrokerDemandResponse.Demand;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
