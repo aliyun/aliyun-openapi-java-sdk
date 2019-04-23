@@ -34,6 +34,10 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 
 	private String city;
 
+	private String domainName;
+
+	private String registrantType;
+
 	private String telephone;
 
 	private String registrantOrganization;
@@ -93,6 +97,28 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 		this.city = city;
 		if(city != null){
 			putQueryParameter("City", city);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getRegistrantType() {
+		return this.registrantType;
+	}
+
+	public void setRegistrantType(String registrantType) {
+		this.registrantType = registrantType;
+		if(registrantType != null){
+			putQueryParameter("RegistrantType", registrantType);
 		}
 	}
 

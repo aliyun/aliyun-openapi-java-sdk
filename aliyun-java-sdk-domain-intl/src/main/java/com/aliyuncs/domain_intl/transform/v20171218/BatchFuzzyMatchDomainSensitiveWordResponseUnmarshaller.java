@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.domain_intl.model.v20171218.BatchFuzzyMatchDomainSensitiveWordResponse;
 import com.aliyuncs.domain_intl.model.v20171218.BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResult;
 import com.aliyuncs.domain_intl.model.v20171218.BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResult.MatchedSensitiveWord;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

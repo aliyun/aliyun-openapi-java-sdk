@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain_intl.model.v20171218.QueryDSRecordResponse;
 import com.aliyuncs.domain_intl.model.v20171218.QueryDSRecordResponse.DSRecord;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

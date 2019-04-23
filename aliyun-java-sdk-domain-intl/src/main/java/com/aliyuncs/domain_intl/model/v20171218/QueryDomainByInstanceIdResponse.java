@@ -15,7 +15,6 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.domain_intl.transform.v20171218.QueryDomainByInstanceIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -53,6 +52,22 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 	private Integer emailVerificationStatus;
 
 	private Boolean emailVerificationClientHold;
+
+	private String realNameStatus;
+
+	private String registrantUpdatingStatus;
+
+	private String transferOutStatus;
+
+	private String registrantType;
+
+	private String domainNameVerificationStatus;
+
+	private String requestId;
+
+	private Long registrationDateLong;
+
+	private Long expirationDateLong;
 
 	private List<String> dnsList;
 
@@ -166,6 +181,70 @@ public class QueryDomainByInstanceIdResponse extends AcsResponse {
 
 	public void setEmailVerificationClientHold(Boolean emailVerificationClientHold) {
 		this.emailVerificationClientHold = emailVerificationClientHold;
+	}
+
+	public String getRealNameStatus() {
+		return this.realNameStatus;
+	}
+
+	public void setRealNameStatus(String realNameStatus) {
+		this.realNameStatus = realNameStatus;
+	}
+
+	public String getRegistrantUpdatingStatus() {
+		return this.registrantUpdatingStatus;
+	}
+
+	public void setRegistrantUpdatingStatus(String registrantUpdatingStatus) {
+		this.registrantUpdatingStatus = registrantUpdatingStatus;
+	}
+
+	public String getTransferOutStatus() {
+		return this.transferOutStatus;
+	}
+
+	public void setTransferOutStatus(String transferOutStatus) {
+		this.transferOutStatus = transferOutStatus;
+	}
+
+	public String getRegistrantType() {
+		return this.registrantType;
+	}
+
+	public void setRegistrantType(String registrantType) {
+		this.registrantType = registrantType;
+	}
+
+	public String getDomainNameVerificationStatus() {
+		return this.domainNameVerificationStatus;
+	}
+
+	public void setDomainNameVerificationStatus(String domainNameVerificationStatus) {
+		this.domainNameVerificationStatus = domainNameVerificationStatus;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getRegistrationDateLong() {
+		return this.registrationDateLong;
+	}
+
+	public void setRegistrationDateLong(Long registrationDateLong) {
+		this.registrationDateLong = registrationDateLong;
+	}
+
+	public Long getExpirationDateLong() {
+		return this.expirationDateLong;
+	}
+
+	public void setExpirationDateLong(Long expirationDateLong) {
+		this.expirationDateLong = expirationDateLong;
 	}
 
 	public List<String> getDnsList() {

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain_intl.model.v20171218.QueryRegistrantProfilesResponse;
 import com.aliyuncs.domain_intl.model.v20171218.QueryRegistrantProfilesResponse.RegistrantProfile;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,6 +53,9 @@ public class QueryRegistrantProfilesResponseUnmarshaller {
 			registrantProfile.setTelephone(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Telephone"));
 			registrantProfile.setTelExt(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].TelExt"));
 			registrantProfile.setEmailVerificationStatus(context.integerValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].EmailVerificationStatus"));
+			registrantProfile.setRegistrantType(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantType"));
+			registrantProfile.setRealNameStatus(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RealNameStatus"));
+			registrantProfile.setRegistrantProfileType(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantProfileType"));
 
 			registrantProfiles.add(registrantProfile);
 		}

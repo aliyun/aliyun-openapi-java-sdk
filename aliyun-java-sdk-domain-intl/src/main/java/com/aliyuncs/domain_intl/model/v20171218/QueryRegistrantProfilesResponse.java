@@ -15,7 +15,6 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.domain_intl.transform.v20171218.QueryRegistrantProfilesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -139,6 +138,12 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 		private String telExt;
 
 		private Integer emailVerificationStatus;
+
+		private String registrantType;
+
+		private String realNameStatus;
+
+		private String registrantProfileType;
 
 		public Long getRegistrantProfileId() {
 			return this.registrantProfileId;
@@ -266,6 +271,30 @@ public class QueryRegistrantProfilesResponse extends AcsResponse {
 
 		public void setEmailVerificationStatus(Integer emailVerificationStatus) {
 			this.emailVerificationStatus = emailVerificationStatus;
+		}
+
+		public String getRegistrantType() {
+			return this.registrantType;
+		}
+
+		public void setRegistrantType(String registrantType) {
+			this.registrantType = registrantType;
+		}
+
+		public String getRealNameStatus() {
+			return this.realNameStatus;
+		}
+
+		public void setRealNameStatus(String realNameStatus) {
+			this.realNameStatus = realNameStatus;
+		}
+
+		public String getRegistrantProfileType() {
+			return this.registrantProfileType;
+		}
+
+		public void setRegistrantProfileType(String registrantProfileType) {
+			this.registrantProfileType = registrantProfileType;
 		}
 	}
 

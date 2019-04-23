@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.domain_intl.model.v20171218.QueryDomainByInstanceIdResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,6 +25,7 @@ public class QueryDomainByInstanceIdResponseUnmarshaller {
 
 	public static QueryDomainByInstanceIdResponse unmarshall(QueryDomainByInstanceIdResponse queryDomainByInstanceIdResponse, UnmarshallerContext context) {
 		
+		queryDomainByInstanceIdResponse.setRequestId(context.stringValue("QueryDomainByInstanceIdResponse.RequestId"));
 		queryDomainByInstanceIdResponse.setUserId(context.stringValue("QueryDomainByInstanceIdResponse.UserId"));
 		queryDomainByInstanceIdResponse.setDomainName(context.stringValue("QueryDomainByInstanceIdResponse.DomainName"));
 		queryDomainByInstanceIdResponse.setInstanceId(context.stringValue("QueryDomainByInstanceIdResponse.InstanceId"));
@@ -40,6 +40,13 @@ public class QueryDomainByInstanceIdResponseUnmarshaller {
 		queryDomainByInstanceIdResponse.setPremium(context.booleanValue("QueryDomainByInstanceIdResponse.Premium"));
 		queryDomainByInstanceIdResponse.setEmailVerificationStatus(context.integerValue("QueryDomainByInstanceIdResponse.EmailVerificationStatus"));
 		queryDomainByInstanceIdResponse.setEmailVerificationClientHold(context.booleanValue("QueryDomainByInstanceIdResponse.EmailVerificationClientHold"));
+		queryDomainByInstanceIdResponse.setRealNameStatus(context.stringValue("QueryDomainByInstanceIdResponse.RealNameStatus"));
+		queryDomainByInstanceIdResponse.setRegistrantUpdatingStatus(context.stringValue("QueryDomainByInstanceIdResponse.RegistrantUpdatingStatus"));
+		queryDomainByInstanceIdResponse.setTransferOutStatus(context.stringValue("QueryDomainByInstanceIdResponse.TransferOutStatus"));
+		queryDomainByInstanceIdResponse.setRegistrantType(context.stringValue("QueryDomainByInstanceIdResponse.RegistrantType"));
+		queryDomainByInstanceIdResponse.setDomainNameVerificationStatus(context.stringValue("QueryDomainByInstanceIdResponse.DomainNameVerificationStatus"));
+		queryDomainByInstanceIdResponse.setRegistrationDateLong(context.longValue("QueryDomainByInstanceIdResponse.RegistrationDateLong"));
+		queryDomainByInstanceIdResponse.setExpirationDateLong(context.longValue("QueryDomainByInstanceIdResponse.ExpirationDateLong"));
 
 		List<String> dnsList = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QueryDomainByInstanceIdResponse.DnsList.Length"); i++) {

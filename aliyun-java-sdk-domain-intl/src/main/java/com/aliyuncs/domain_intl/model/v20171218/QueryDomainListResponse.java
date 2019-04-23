@@ -15,7 +15,6 @@
 package com.aliyuncs.domain_intl.model.v20171218;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.domain_intl.transform.v20171218.QueryDomainListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -128,6 +127,16 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		private Boolean premium;
 
+		private String domainAuditStatus;
+
+		private String expirationDateStatus;
+
+		private String registrantType;
+
+		private String remark;
+
+		private Integer expirationCurrDateDiff;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -206,6 +215,46 @@ public class QueryDomainListResponse extends AcsResponse {
 
 		public void setPremium(Boolean premium) {
 			this.premium = premium;
+		}
+
+		public String getDomainAuditStatus() {
+			return this.domainAuditStatus;
+		}
+
+		public void setDomainAuditStatus(String domainAuditStatus) {
+			this.domainAuditStatus = domainAuditStatus;
+		}
+
+		public String getExpirationDateStatus() {
+			return this.expirationDateStatus;
+		}
+
+		public void setExpirationDateStatus(String expirationDateStatus) {
+			this.expirationDateStatus = expirationDateStatus;
+		}
+
+		public String getRegistrantType() {
+			return this.registrantType;
+		}
+
+		public void setRegistrantType(String registrantType) {
+			this.registrantType = registrantType;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
+		}
+
+		public Integer getExpirationCurrDateDiff() {
+			return this.expirationCurrDateDiff;
+		}
+
+		public void setExpirationCurrDateDiff(Integer expirationCurrDateDiff) {
+			this.expirationCurrDateDiff = expirationCurrDateDiff;
 		}
 	}
 

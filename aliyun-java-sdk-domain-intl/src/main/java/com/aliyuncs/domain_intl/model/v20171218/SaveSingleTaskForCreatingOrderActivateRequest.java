@@ -60,6 +60,8 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 
 	private String domainName;
 
+	private String registrantType;
+
 	private String telephone;
 
 	private Boolean trademarkDomainActivation;
@@ -262,6 +264,17 @@ public class SaveSingleTaskForCreatingOrderActivateRequest extends RpcAcsRequest
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getRegistrantType() {
+		return this.registrantType;
+	}
+
+	public void setRegistrantType(String registrantType) {
+		this.registrantType = registrantType;
+		if(registrantType != null){
+			putQueryParameter("RegistrantType", registrantType);
 		}
 	}
 

@@ -34,6 +34,12 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 
 	private Integer pageSize;
 
+	private String registrantType;
+
+	private String registrantProfileType;
+
+	private String realNameStatus;
+
 	private String lang;
 
 	private Integer pageNum;
@@ -83,6 +89,39 @@ public class QueryRegistrantProfilesRequest extends RpcAcsRequest<QueryRegistran
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getRegistrantType() {
+		return this.registrantType;
+	}
+
+	public void setRegistrantType(String registrantType) {
+		this.registrantType = registrantType;
+		if(registrantType != null){
+			putQueryParameter("RegistrantType", registrantType);
+		}
+	}
+
+	public String getRegistrantProfileType() {
+		return this.registrantProfileType;
+	}
+
+	public void setRegistrantProfileType(String registrantProfileType) {
+		this.registrantProfileType = registrantProfileType;
+		if(registrantProfileType != null){
+			putQueryParameter("RegistrantProfileType", registrantProfileType);
+		}
+	}
+
+	public String getRealNameStatus() {
+		return this.realNameStatus;
+	}
+
+	public void setRealNameStatus(String realNameStatus) {
+		this.realNameStatus = realNameStatus;
+		if(realNameStatus != null){
+			putQueryParameter("RealNameStatus", realNameStatus);
 		}
 	}
 

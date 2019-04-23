@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain_intl.model.v20171218.QueryDomainListResponse;
 import com.aliyuncs.domain_intl.model.v20171218.QueryDomainListResponse.Domain;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +47,11 @@ public class QueryDomainListResponseUnmarshaller {
 			domain.setExpirationDateLong(context.longValue("QueryDomainListResponse.Data["+ i +"].ExpirationDateLong"));
 			domain.setRegistrationDateLong(context.longValue("QueryDomainListResponse.Data["+ i +"].RegistrationDateLong"));
 			domain.setPremium(context.booleanValue("QueryDomainListResponse.Data["+ i +"].Premium"));
+			domain.setDomainAuditStatus(context.stringValue("QueryDomainListResponse.Data["+ i +"].DomainAuditStatus"));
+			domain.setExpirationDateStatus(context.stringValue("QueryDomainListResponse.Data["+ i +"].ExpirationDateStatus"));
+			domain.setRegistrantType(context.stringValue("QueryDomainListResponse.Data["+ i +"].RegistrantType"));
+			domain.setRemark(context.stringValue("QueryDomainListResponse.Data["+ i +"].Remark"));
+			domain.setExpirationCurrDateDiff(context.integerValue("QueryDomainListResponse.Data["+ i +"].ExpirationCurrDateDiff"));
 
 			data.add(domain);
 		}

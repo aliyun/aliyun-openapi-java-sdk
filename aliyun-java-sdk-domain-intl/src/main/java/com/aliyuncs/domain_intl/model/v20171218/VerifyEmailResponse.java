@@ -14,7 +14,6 @@
 
 package com.aliyuncs.domain_intl.model.v20171218;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.domain_intl.transform.v20171218.VerifyEmailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain_intl.model.v20171218.PollTaskResultResponse;
 import com.aliyuncs.domain_intl.model.v20171218.PollTaskResultResponse.TaskDetail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
