@@ -364,8 +364,10 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 					for (int depth2 = 0; depth2 < volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().size(); depth2++) {
 						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Content" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getContent());
 						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Path" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getPath());
+						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Mode" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getMode());
 					}
 				}
+				putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.DefaultModel" , volumes.get(depth1).getConfigFileVolumeDefaultModel());
 				putQueryParameter("Volume." + (depth1 + 1) + ".Type" , volumes.get(depth1).getType());
 			}
 		}	
@@ -909,6 +911,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
 
+		private Integer configFileVolumeDefaultModel;
+
 		private String emptyDirVolumeMedium;
 
 		private String type;
@@ -961,6 +965,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			this.configFileVolumeConfigFileToPaths = configFileVolumeConfigFileToPaths;
 		}
 
+		public Integer getConfigFileVolumeDefaultModel() {
+			return configFileVolumeDefaultModel;
+		}
+
+		public void setConfigFileVolumeDefaultModel(Integer configFileVolumeDefaultModel) {
+			this.configFileVolumeDefaultModel = configFileVolumeDefaultModel;
+		}
+
 		public String getType() {
 			return this.type;
 		}
@@ -974,6 +986,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			private String content;
 
 			private String path;
+
+			private Integer mode;
 
 			public String getContent() {
 				return this.content;
@@ -989,6 +1003,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 			public void setPath(String path) {
 				this.path = path;
+			}
+
+			public Integer getMode() {
+				return mode;
+			}
+
+			public void setMode(Integer mode) {
+				this.mode = mode;
 			}
 		}
 	}

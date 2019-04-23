@@ -1,3 +1,6 @@
+2019-04-23 Version: 1.0.6
+1, support mode of configFileVolume
+
 2019-04-10 Version: 1.0.6
 1, support metric
 2, support emptyDirVolume memory medium

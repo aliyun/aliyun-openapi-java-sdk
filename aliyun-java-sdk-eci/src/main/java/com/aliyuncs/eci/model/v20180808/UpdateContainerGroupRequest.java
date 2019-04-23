@@ -320,8 +320,10 @@ public class UpdateContainerGroupRequest extends RpcAcsRequest<UpdateContainerGr
 					for (int depth2 = 0; depth2 < volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().size(); depth2++) {
 						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Content" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getContent());
 						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Path" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getPath());
+						putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.ConfigFileToPath." + (depth2 + 1) + ".Mode" , volumes.get(depth1).getConfigFileVolumeConfigFileToPaths().get(depth2).getMode());
 					}
 				}
+				putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.DefaultModel" , volumes.get(depth1).getConfigFileVolumeDefaultModel());
 				putQueryParameter("Volume." + (depth1 + 1) + ".Type" , volumes.get(depth1).getType());
 			}
 		}
