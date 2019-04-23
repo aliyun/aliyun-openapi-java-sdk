@@ -1,3 +1,7 @@
+2019-04-23 Version: 1.0.2
+1, add getCouponFullTemplatePage one new api.
+
+
 2019-04-17 Version: 1.0.0
 1, publish first
 2, add one new api name getUidsByTemplateId
