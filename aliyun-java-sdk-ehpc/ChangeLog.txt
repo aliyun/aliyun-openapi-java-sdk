@@ -1,3 +1,7 @@
+2019-04-23 Version: 1.11.1
+1, Support mounting multiple volumes using different protocol
+2, Support scaling out cross AZ
+
 2019-04-10 Version: 1.11.0
 1, New APIs for visual service (VNC).
 2, New APIs for software management.

@@ -275,6 +275,10 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 			private Float spotPriceLimit;
 
+			private String zoneId;
+
+			private String vSwitchId;
+
 			public String getInstanceType() {
 				return this.instanceType;
 			}
@@ -297,6 +301,22 @@ public class GetAutoScaleConfigResponse extends AcsResponse {
 
 			public void setSpotPriceLimit(Float spotPriceLimit) {
 				this.spotPriceLimit = spotPriceLimit;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
 			}
 		}
 	}

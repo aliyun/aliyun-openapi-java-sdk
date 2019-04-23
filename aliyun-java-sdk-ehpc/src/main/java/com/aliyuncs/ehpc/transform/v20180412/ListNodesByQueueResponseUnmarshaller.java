@@ -51,6 +51,9 @@ public class ListNodesByQueueResponseUnmarshaller {
 			nodeInfo.setImageId(context.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].ImageId"));
 			nodeInfo.setLocation(context.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].Location"));
 			nodeInfo.setCreateMode(context.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].CreateMode"));
+			nodeInfo.setVpcId(context.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].VpcId"));
+			nodeInfo.setZoneId(context.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].ZoneId"));
+			nodeInfo.setVSwitchId(context.stringValue("ListNodesByQueueResponse.Nodes["+ i +"].VSwitchId"));
 
 			TotalResources totalResources = new TotalResources();
 			totalResources.setCpu(context.integerValue("ListNodesByQueueResponse.Nodes["+ i +"].TotalResources.Cpu"));

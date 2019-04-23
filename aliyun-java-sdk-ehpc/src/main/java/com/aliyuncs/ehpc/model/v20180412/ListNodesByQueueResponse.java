@@ -107,6 +107,12 @@ public class ListNodesByQueueResponse extends AcsResponse {
 
 		private String createMode;
 
+		private String vpcId;
+
+		private String zoneId;
+
+		private String vSwitchId;
+
 		private TotalResources totalResources;
 
 		private UsedResources usedResources;
@@ -261,6 +267,30 @@ public class ListNodesByQueueResponse extends AcsResponse {
 
 		public void setCreateMode(String createMode) {
 			this.createMode = createMode;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
 		public TotalResources getTotalResources() {

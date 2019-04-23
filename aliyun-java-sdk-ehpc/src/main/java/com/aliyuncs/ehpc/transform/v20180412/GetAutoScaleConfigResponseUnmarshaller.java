@@ -60,6 +60,8 @@ public class GetAutoScaleConfigResponseUnmarshaller {
 				instanceTypeInfo.setInstanceType(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].InstanceType"));
 				instanceTypeInfo.setSpotStrategy(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotStrategy"));
 				instanceTypeInfo.setSpotPriceLimit(context.floatValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].SpotPriceLimit"));
+				instanceTypeInfo.setZoneId(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].ZoneId"));
+				instanceTypeInfo.setVSwitchId(context.stringValue("GetAutoScaleConfigResponse.Queues["+ i +"].InstanceTypes["+ j +"].VSwitchId"));
 
 				instanceTypes.add(instanceTypeInfo);
 			}
