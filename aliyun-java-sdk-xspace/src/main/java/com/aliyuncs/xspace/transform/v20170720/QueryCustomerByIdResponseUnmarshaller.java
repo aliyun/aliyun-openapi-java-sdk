@@ -51,6 +51,10 @@ public class QueryCustomerByIdResponseUnmarshaller {
 		CustomizeFields customizeFields = new CustomizeFields();
 		customizeFields.setCid(context.stringValue("QueryCustomerByIdResponse.Data.CustomizeFields.Cid"));
 		customizeFields.setAbcUrl(context.stringValue("QueryCustomerByIdResponse.Data.CustomizeFields.AbcUrl"));
+		customizeFields.setDistributionLevel(context.stringValue("QueryCustomerByIdResponse.Data.CustomizeFields.DistributionLevel"));
+		customizeFields.setMainAccountUid(context.stringValue("QueryCustomerByIdResponse.Data.CustomizeFields.MainAccountUid"));
+		customizeFields.setAssociatePerson(context.stringValue("QueryCustomerByIdResponse.Data.CustomizeFields.AssociatePerson"));
+		customizeFields.setTag(context.stringValue("QueryCustomerByIdResponse.Data.CustomizeFields.Tag"));
 
 		List<String> associatePersonList = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QueryCustomerByIdResponse.Data.CustomizeFields.AssociatePersonList.Length"); i++) {
