@@ -28,7 +28,7 @@ public class DescribeMetricListResponseUnmarshaller {
 		describeMetricListResponse.setNextToken(context.stringValue("DescribeMetricListResponse.NextToken"));
 		describeMetricListResponse.setDatapoints(context.stringValue("DescribeMetricListResponse.Datapoints"));
 		describeMetricListResponse.setPeriod(context.stringValue("DescribeMetricListResponse.Period"));
-		describeMetricListResponse.setSuccess(context.stringValue("DescribeMetricListResponse.Success"));
+		describeMetricListResponse.setSuccess(context.booleanValue("DescribeMetricListResponse.Success"));
 	 
 	 	return describeMetricListResponse;
 	}

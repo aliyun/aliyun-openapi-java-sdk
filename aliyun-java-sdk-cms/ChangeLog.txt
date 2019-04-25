@@ -1,3 +1,6 @@
+2019-04-25 Version: 7.0.3
+1, The alarm contact interface increases paging parameters
+
 2019-04-13 Version: 7.0.2
 1, Adding Modified Instance Management Interface.
 

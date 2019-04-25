@@ -30,6 +30,8 @@ public class DescribeContactListRequest extends RpcAcsRequest<DescribeContactLis
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	public String getContactName() {
 		return this.contactName;
 	}
@@ -49,6 +51,17 @@ public class DescribeContactListRequest extends RpcAcsRequest<DescribeContactLis
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
