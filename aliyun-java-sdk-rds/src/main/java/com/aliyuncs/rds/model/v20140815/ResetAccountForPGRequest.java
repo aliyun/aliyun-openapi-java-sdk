@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResetAccountForPGRequest extends RpcAcsRequest<ResetAccountForPGResponse> {
 	
 	public ResetAccountForPGRequest() {
-		super("Rds", "2014-08-15", "ResetAccountForPG", "Rds");
+		super("Rds", "2014-08-15", "ResetAccountForPG", "rds");
 	}
 
 	private Long resourceOwnerId;

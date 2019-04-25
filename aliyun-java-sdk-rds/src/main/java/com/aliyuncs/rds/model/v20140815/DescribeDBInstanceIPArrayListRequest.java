@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<DescribeDBInstanceIPArrayListResponse> {
 	
 	public DescribeDBInstanceIPArrayListRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "Rds");
+		super("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "rds");
 	}
 
 	private Long resourceOwnerId;

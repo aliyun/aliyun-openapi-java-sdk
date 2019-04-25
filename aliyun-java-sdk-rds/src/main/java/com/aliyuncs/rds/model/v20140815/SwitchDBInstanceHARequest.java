@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SwitchDBInstanceHARequest extends RpcAcsRequest<SwitchDBInstanceHAResponse> {
 	
 	public SwitchDBInstanceHARequest() {
-		super("Rds", "2014-08-15", "SwitchDBInstanceHA", "Rds");
+		super("Rds", "2014-08-15", "SwitchDBInstanceHA", "rds");
 	}
 
 	private Long resourceOwnerId;

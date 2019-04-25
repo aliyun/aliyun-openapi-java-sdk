@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AllocateInstanceVpcNetworkTypeRequest extends RpcAcsRequest<AllocateInstanceVpcNetworkTypeResponse> {
 	
 	public AllocateInstanceVpcNetworkTypeRequest() {
-		super("Rds", "2014-08-15", "AllocateInstanceVpcNetworkType", "Rds");
+		super("Rds", "2014-08-15", "AllocateInstanceVpcNetworkType", "rds");
 	}
 
 	private String targetVpcId;

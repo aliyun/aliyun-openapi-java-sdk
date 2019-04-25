@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PurgeDBInstanceLogRequest extends RpcAcsRequest<PurgeDBInstanceLogResponse> {
 	
 	public PurgeDBInstanceLogRequest() {
-		super("Rds", "2014-08-15", "PurgeDBInstanceLog", "Rds");
+		super("Rds", "2014-08-15", "PurgeDBInstanceLog", "rds");
 	}
 
 	private Long resourceOwnerId;

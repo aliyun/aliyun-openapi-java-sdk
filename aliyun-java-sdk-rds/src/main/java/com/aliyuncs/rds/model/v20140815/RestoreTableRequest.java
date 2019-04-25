@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RestoreTableRequest extends RpcAcsRequest<RestoreTableResponse> {
 	
 	public RestoreTableRequest() {
-		super("Rds", "2014-08-15", "RestoreTable", "Rds");
+		super("Rds", "2014-08-15", "RestoreTable", "rds");
 	}
 
 	private Long resourceOwnerId;

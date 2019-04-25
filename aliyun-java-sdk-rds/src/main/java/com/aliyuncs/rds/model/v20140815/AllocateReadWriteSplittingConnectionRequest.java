@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<AllocateReadWriteSplittingConnectionResponse> {
 	
 	public AllocateReadWriteSplittingConnectionRequest() {
-		super("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "Rds");
+		super("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "rds");
 	}
 
 	private Long resourceOwnerId;

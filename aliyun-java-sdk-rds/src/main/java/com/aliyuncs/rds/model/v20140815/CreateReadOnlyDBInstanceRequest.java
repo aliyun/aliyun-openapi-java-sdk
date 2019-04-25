@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateReadOnlyDBInstanceRequest extends RpcAcsRequest<CreateReadOnlyDBInstanceResponse> {
 	
 	public CreateReadOnlyDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "Rds");
+		super("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds");
 	}
 
 	private Long resourceOwnerId;
