@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListsResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListsResponse.Acl;
-import java.util.Map;
+import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListsResponse.Acl.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,6 +35,17 @@ public class DescribeAccessControlListsResponseUnmarshaller {
 			acl.setAclId(context.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].AclId"));
 			acl.setAclName(context.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].AclName"));
 			acl.setAddressIPVersion(context.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].AddressIPVersion"));
+			acl.setResourceGroupId(context.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].ResourceGroupId"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeAccessControlListsResponse.Acls["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeAccessControlListsResponse.Acls["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			acl.setTags(tags);
 
 			acls.add(acl);
 		}

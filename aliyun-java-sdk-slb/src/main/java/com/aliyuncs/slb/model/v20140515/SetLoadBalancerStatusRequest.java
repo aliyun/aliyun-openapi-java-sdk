@@ -38,8 +38,6 @@ public class SetLoadBalancerStatusRequest extends RpcAcsRequest<SetLoadBalancerS
 
 	private String loadBalancerStatus;
 
-	private String tags;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -103,17 +101,6 @@ public class SetLoadBalancerStatusRequest extends RpcAcsRequest<SetLoadBalancerS
 		this.loadBalancerStatus = loadBalancerStatus;
 		if(loadBalancerStatus != null){
 			putQueryParameter("LoadBalancerStatus", loadBalancerStatus);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

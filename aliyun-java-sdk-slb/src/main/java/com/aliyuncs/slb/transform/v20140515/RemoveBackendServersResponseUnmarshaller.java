@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.RemoveBackendServersResponse;
 import com.aliyuncs.slb.model.v20140515.RemoveBackendServersResponse.BackendServer;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +37,7 @@ public class RemoveBackendServersResponseUnmarshaller {
 			backendServer.setServerIp(context.stringValue("RemoveBackendServersResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setVpcId(context.stringValue("RemoveBackendServersResponse.BackendServers["+ i +"].VpcId"));
 			backendServer.setType(context.stringValue("RemoveBackendServersResponse.BackendServers["+ i +"].Type"));
+			backendServer.setDescription(context.stringValue("RemoveBackendServersResponse.BackendServers["+ i +"].Description"));
 
 			backendServers.add(backendServer);
 		}

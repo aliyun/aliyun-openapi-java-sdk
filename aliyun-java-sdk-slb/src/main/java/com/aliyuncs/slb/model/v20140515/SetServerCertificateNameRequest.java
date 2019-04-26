@@ -38,8 +38,6 @@ public class SetServerCertificateNameRequest extends RpcAcsRequest<SetServerCert
 
 	private String serverCertificateName;
 
-	private String tags;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -103,17 +101,6 @@ public class SetServerCertificateNameRequest extends RpcAcsRequest<SetServerCert
 		this.serverCertificateName = serverCertificateName;
 		if(serverCertificateName != null){
 			putQueryParameter("ServerCertificateName", serverCertificateName);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

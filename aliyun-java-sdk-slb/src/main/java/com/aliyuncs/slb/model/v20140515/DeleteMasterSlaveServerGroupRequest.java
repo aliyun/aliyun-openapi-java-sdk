@@ -36,8 +36,6 @@ public class DeleteMasterSlaveServerGroupRequest extends RpcAcsRequest<DeleteMas
 
 	private Long ownerId;
 
-	private String tags;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -90,17 +88,6 @@ public class DeleteMasterSlaveServerGroupRequest extends RpcAcsRequest<DeleteMas
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

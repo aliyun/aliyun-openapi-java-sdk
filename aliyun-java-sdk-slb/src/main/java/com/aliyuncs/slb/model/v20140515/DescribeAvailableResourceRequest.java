@@ -20,23 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class DescribeLoadBalancerAutoReleaseTimeRequest extends RpcAcsRequest<DescribeLoadBalancerAutoReleaseTimeResponse> {
+public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvailableResourceResponse> {
 	
-	public DescribeLoadBalancerAutoReleaseTimeRequest() {
-		super("Slb", "2014-05-15", "DescribeLoadBalancerAutoReleaseTime", "slb");
+	public DescribeAvailableResourceRequest() {
+		super("Slb", "2014-05-15", "DescribeAvailableResource", "slb");
 	}
 
 	private Long resourceOwnerId;
-
-	private String loadBalancerId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String addressType;
+
 	private Long ownerId;
 
-	private String tags;
+	private String addressIPVersion;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,17 +46,6 @@ public class DescribeLoadBalancerAutoReleaseTimeRequest extends RpcAcsRequest<De
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
@@ -82,6 +71,17 @@ public class DescribeLoadBalancerAutoReleaseTimeRequest extends RpcAcsRequest<De
 		}
 	}
 
+	public String getAddressType() {
+		return this.addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+		if(addressType != null){
+			putQueryParameter("AddressType", addressType);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -93,20 +93,20 @@ public class DescribeLoadBalancerAutoReleaseTimeRequest extends RpcAcsRequest<De
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
+	public String getAddressIPVersion() {
+		return this.addressIPVersion;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
+	public void setAddressIPVersion(String addressIPVersion) {
+		this.addressIPVersion = addressIPVersion;
+		if(addressIPVersion != null){
+			putQueryParameter("AddressIPVersion", addressIPVersion);
 		}
 	}
 
 	@Override
-	public Class<DescribeLoadBalancerAutoReleaseTimeResponse> getResponseClass() {
-		return DescribeLoadBalancerAutoReleaseTimeResponse.class;
+	public Class<DescribeAvailableResourceResponse> getResponseClass() {
+		return DescribeAvailableResourceResponse.class;
 	}
 
 }

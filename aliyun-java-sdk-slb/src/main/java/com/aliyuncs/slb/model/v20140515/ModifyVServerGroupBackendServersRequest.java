@@ -40,8 +40,6 @@ public class ModifyVServerGroupBackendServersRequest extends RpcAcsRequest<Modif
 
 	private Long ownerId;
 
-	private String tags;
-
 	public String getVServerGroupId() {
 		return this.vServerGroupId;
 	}
@@ -116,17 +114,6 @@ public class ModifyVServerGroupBackendServersRequest extends RpcAcsRequest<Modif
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

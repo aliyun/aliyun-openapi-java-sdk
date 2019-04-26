@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeDomainExtensionsResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeDomainExtensionsResponse.DomainExtension;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

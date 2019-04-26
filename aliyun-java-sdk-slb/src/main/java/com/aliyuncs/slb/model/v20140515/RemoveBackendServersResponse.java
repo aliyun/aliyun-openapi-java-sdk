@@ -67,6 +67,8 @@ public class RemoveBackendServersResponse extends AcsResponse {
 
 		private String type;
 
+		private String description;
+
 		public String getServerId() {
 			return this.serverId;
 		}
@@ -105,6 +107,14 @@ public class RemoveBackendServersResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

@@ -113,6 +113,8 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String addressIPVersion;
 
+		private List<Tag> tags;
+
 		public String getLoadBalancerId() {
 			return this.loadBalancerId;
 		}
@@ -153,10 +155,26 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 			this.addressType = addressType;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -255,6 +273,37 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setAddressIPVersion(String addressIPVersion) {
 			this.addressIPVersion = addressIPVersion;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

@@ -52,13 +52,9 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 
 	private Integer forwardPort;
 
-	private Integer maxConnection;
-
 	private Integer cookieTimeout;
 
 	private String stickySessionType;
-
-	private String vpcIds;
 
 	private String vServerGroupId;
 
@@ -83,8 +79,6 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 	private String gzip;
 
 	private Long ownerId;
-
-	private String tags;
 
 	private Integer idleTimeout;
 
@@ -247,17 +241,6 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		}
 	}
 
-	public Integer getMaxConnection() {
-		return this.maxConnection;
-	}
-
-	public void setMaxConnection(Integer maxConnection) {
-		this.maxConnection = maxConnection;
-		if(maxConnection != null){
-			putQueryParameter("MaxConnection", maxConnection.toString());
-		}
-	}
-
 	public Integer getCookieTimeout() {
 		return this.cookieTimeout;
 	}
@@ -277,17 +260,6 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		this.stickySessionType = stickySessionType;
 		if(stickySessionType != null){
 			putQueryParameter("StickySessionType", stickySessionType);
-		}
-	}
-
-	public String getVpcIds() {
-		return this.vpcIds;
-	}
-
-	public void setVpcIds(String vpcIds) {
-		this.vpcIds = vpcIds;
-		if(vpcIds != null){
-			putQueryParameter("VpcIds", vpcIds);
 		}
 	}
 
@@ -420,17 +392,6 @@ public class CreateLoadBalancerHTTPListenerRequest extends RpcAcsRequest<CreateL
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

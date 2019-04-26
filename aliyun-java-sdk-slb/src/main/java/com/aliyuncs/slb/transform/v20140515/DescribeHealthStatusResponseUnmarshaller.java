@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeHealthStatusResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeHealthStatusResponse.BackendServer;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +37,7 @@ public class DescribeHealthStatusResponseUnmarshaller {
 			backendServer.setServerHealthStatus(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerHealthStatus"));
 			backendServer.setServerIp(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerIp"));
 			backendServer.setEniHost(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].EniHost"));
+			backendServer.setProtocol(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Protocol"));
 			backendServer.setType(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Type"));
 
 			backendServers.add(backendServer);

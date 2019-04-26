@@ -21,7 +21,6 @@ import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup;
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup.AssociatedObjects;
 import com.aliyuncs.slb.model.v20140515.DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroup.AssociatedObjects.Listener;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

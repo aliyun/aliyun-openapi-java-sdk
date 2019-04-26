@@ -36,8 +36,6 @@ public class DescribeRuleAttributeRequest extends RpcAcsRequest<DescribeRuleAttr
 
 	private String ruleId;
 
-	private String tags;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -90,17 +88,6 @@ public class DescribeRuleAttributeRequest extends RpcAcsRequest<DescribeRuleAttr
 		this.ruleId = ruleId;
 		if(ruleId != null){
 			putQueryParameter("RuleId", ruleId);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

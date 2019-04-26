@@ -73,6 +73,8 @@ public class CreateMasterSlaveVServerGroupResponse extends AcsResponse {
 
 		private String vpcId;
 
+		private String description;
+
 		public String getServerId() {
 			return this.serverId;
 		}
@@ -135,6 +137,14 @@ public class CreateMasterSlaveVServerGroupResponse extends AcsResponse {
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

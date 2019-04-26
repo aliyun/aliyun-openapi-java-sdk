@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeServerCertificatesResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeServerCertificatesResponse.ServerCertificate;
-import java.util.Map;
+import com.aliyuncs.slb.model.v20140515.DescribeServerCertificatesResponse.ServerCertificate.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -52,6 +52,16 @@ public class DescribeServerCertificatesResponseUnmarshaller {
 				subjectAlternativeNames.add(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].SubjectAlternativeNames["+ j +"]"));
 			}
 			serverCertificate.setSubjectAlternativeNames(subjectAlternativeNames);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeServerCertificatesResponse.ServerCertificates["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			serverCertificate.setTags(tags);
 
 			serverCertificates.add(serverCertificate);
 		}

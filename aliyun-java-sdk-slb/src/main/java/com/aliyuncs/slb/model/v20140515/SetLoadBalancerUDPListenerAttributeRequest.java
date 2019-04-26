@@ -44,12 +44,6 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private String masterSlaveServerGroup;
 
-	private Integer maxConnection;
-
-	private Integer persistenceTimeout;
-
-	private String vpcIds;
-
 	private String vServerGroupId;
 
 	private String aclId;
@@ -63,8 +57,6 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String tags;
 
 	private String loadBalancerId;
 
@@ -179,39 +171,6 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		}
 	}
 
-	public Integer getMaxConnection() {
-		return this.maxConnection;
-	}
-
-	public void setMaxConnection(Integer maxConnection) {
-		this.maxConnection = maxConnection;
-		if(maxConnection != null){
-			putQueryParameter("MaxConnection", maxConnection.toString());
-		}
-	}
-
-	public Integer getPersistenceTimeout() {
-		return this.persistenceTimeout;
-	}
-
-	public void setPersistenceTimeout(Integer persistenceTimeout) {
-		this.persistenceTimeout = persistenceTimeout;
-		if(persistenceTimeout != null){
-			putQueryParameter("PersistenceTimeout", persistenceTimeout.toString());
-		}
-	}
-
-	public String getVpcIds() {
-		return this.vpcIds;
-	}
-
-	public void setVpcIds(String vpcIds) {
-		this.vpcIds = vpcIds;
-		if(vpcIds != null){
-			putQueryParameter("VpcIds", vpcIds);
-		}
-	}
-
 	public String getVServerGroupId() {
 		return this.vServerGroupId;
 	}
@@ -286,17 +245,6 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

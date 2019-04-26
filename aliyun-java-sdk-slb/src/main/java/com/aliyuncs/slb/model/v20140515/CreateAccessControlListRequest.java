@@ -26,7 +26,7 @@ public class CreateAccessControlListRequest extends RpcAcsRequest<CreateAccessCo
 		super("Slb", "2014-05-15", "CreateAccessControlList", "slb");
 	}
 
-	private String access_key_id;
+	private String resourceGroupId;
 
 	private Long resourceOwnerId;
 
@@ -40,16 +40,14 @@ public class CreateAccessControlListRequest extends RpcAcsRequest<CreateAccessCo
 
 	private String addressIPVersion;
 
-	private String tags;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -116,17 +114,6 @@ public class CreateAccessControlListRequest extends RpcAcsRequest<CreateAccessCo
 		this.addressIPVersion = addressIPVersion;
 		if(addressIPVersion != null){
 			putQueryParameter("AddressIPVersion", addressIPVersion);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

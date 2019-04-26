@@ -26,8 +26,6 @@ public class DescribeAccessControlListsRequest extends RpcAcsRequest<DescribeAcc
 		super("Slb", "2014-05-15", "DescribeAccessControlLists", "slb");
 	}
 
-	private String access_key_id;
-
 	private Long resourceOwnerId;
 
 	private String aclName;
@@ -42,20 +40,9 @@ public class DescribeAccessControlListsRequest extends RpcAcsRequest<DescribeAcc
 
 	private Integer pageNumber;
 
-	private String tags;
+	private String resourceGroupId;
 
 	private Integer pageSize;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -134,14 +121,14 @@ public class DescribeAccessControlListsRequest extends RpcAcsRequest<DescribeAcc
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

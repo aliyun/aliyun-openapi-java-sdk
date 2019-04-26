@@ -40,7 +40,7 @@ public class SetListenerAccessControlStatusRequest extends RpcAcsRequest<SetList
 
 	private Long ownerId;
 
-	private String tags;
+	private String listenerProtocol;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -119,14 +119,14 @@ public class SetListenerAccessControlStatusRequest extends RpcAcsRequest<SetList
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
+	public String getListenerProtocol() {
+		return this.listenerProtocol;
 	}
 
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
+	public void setListenerProtocol(String listenerProtocol) {
+		this.listenerProtocol = listenerProtocol;
+		if(listenerProtocol != null){
+			putQueryParameter("ListenerProtocol", listenerProtocol);
 		}
 	}
 

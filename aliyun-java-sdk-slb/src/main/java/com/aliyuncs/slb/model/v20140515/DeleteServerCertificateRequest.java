@@ -36,8 +36,6 @@ public class DeleteServerCertificateRequest extends RpcAcsRequest<DeleteServerCe
 
 	private String serverCertificateId;
 
-	private String tags;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -90,17 +88,6 @@ public class DeleteServerCertificateRequest extends RpcAcsRequest<DeleteServerCe
 		this.serverCertificateId = serverCertificateId;
 		if(serverCertificateId != null){
 			putQueryParameter("ServerCertificateId", serverCertificateId);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

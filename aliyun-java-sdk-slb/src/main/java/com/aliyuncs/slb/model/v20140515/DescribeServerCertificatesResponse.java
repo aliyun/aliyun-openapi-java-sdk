@@ -75,6 +75,8 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 
 		private String commonName;
 
+		private List<Tag> tags;
+
 		private List<String> subjectAlternativeNames;
 
 		public String getServerCertificateId() {
@@ -101,10 +103,26 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 			this.serverCertificateName = serverCertificateName;
 		}
 
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -189,12 +207,43 @@ public class DescribeServerCertificatesResponse extends AcsResponse {
 			this.commonName = commonName;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getSubjectAlternativeNames() {
 			return this.subjectAlternativeNames;
 		}
 
 		public void setSubjectAlternativeNames(List<String> subjectAlternativeNames) {
 			this.subjectAlternativeNames = subjectAlternativeNames;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 	}
 

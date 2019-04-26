@@ -38,8 +38,6 @@ public class SetLoadBalancerNameRequest extends RpcAcsRequest<SetLoadBalancerNam
 
 	private Long ownerId;
 
-	private String tags;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -103,17 +101,6 @@ public class SetLoadBalancerNameRequest extends RpcAcsRequest<SetLoadBalancerNam
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

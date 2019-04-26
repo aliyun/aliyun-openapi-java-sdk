@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.CreateMasterSlaveVServerGroupResponse;
 import com.aliyuncs.slb.model.v20140515.CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServer;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +40,7 @@ public class CreateMasterSlaveVServerGroupResponseUnmarshaller {
 			masterSlaveBackendServer.setServerIp(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
 			masterSlaveBackendServer.setEniHost(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].EniHost"));
 			masterSlaveBackendServer.setVpcId(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].VpcId"));
+			masterSlaveBackendServer.setDescription(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Description"));
 
 			masterSlaveBackendServers.add(masterSlaveBackendServer);
 		}

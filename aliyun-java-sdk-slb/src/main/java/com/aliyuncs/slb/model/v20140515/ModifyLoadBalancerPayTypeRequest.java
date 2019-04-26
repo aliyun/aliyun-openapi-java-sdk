@@ -36,8 +36,6 @@ public class ModifyLoadBalancerPayTypeRequest extends RpcAcsRequest<ModifyLoadBa
 
 	private Long ownerId;
 
-	private String tags;
-
 	private Integer duration;
 
 	private String loadBalancerId;
@@ -98,17 +96,6 @@ public class ModifyLoadBalancerPayTypeRequest extends RpcAcsRequest<ModifyLoadBa
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

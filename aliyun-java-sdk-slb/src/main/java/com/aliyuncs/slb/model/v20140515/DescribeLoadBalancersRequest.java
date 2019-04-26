@@ -46,8 +46,6 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 
 	private String slaveZoneId;
 
-	private String fuzzy;
-
 	private String address;
 
 	private String resourceOwnerAccount;
@@ -181,17 +179,6 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		this.slaveZoneId = slaveZoneId;
 		if(slaveZoneId != null){
 			putQueryParameter("SlaveZoneId", slaveZoneId);
-		}
-	}
-
-	public String getFuzzy() {
-		return this.fuzzy;
-	}
-
-	public void setFuzzy(String fuzzy) {
-		this.fuzzy = fuzzy;
-		if(fuzzy != null){
-			putQueryParameter("Fuzzy", fuzzy);
 		}
 	}
 

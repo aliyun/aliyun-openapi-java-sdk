@@ -36,8 +36,6 @@ public class SetDomainExtensionAttributeRequest extends RpcAcsRequest<SetDomainE
 
 	private String serverCertificateId;
 
-	private String tags;
-
 	private String domainExtensionId;
 
 	public Long getResourceOwnerId() {
@@ -92,17 +90,6 @@ public class SetDomainExtensionAttributeRequest extends RpcAcsRequest<SetDomainE
 		this.serverCertificateId = serverCertificateId;
 		if(serverCertificateId != null){
 			putQueryParameter("ServerCertificateId", serverCertificateId);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

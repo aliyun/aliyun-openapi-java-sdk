@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupAttributeResponse.BackendServer;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,6 +29,7 @@ public class DescribeVServerGroupAttributeResponseUnmarshaller {
 		describeVServerGroupAttributeResponse.setRequestId(context.stringValue("DescribeVServerGroupAttributeResponse.RequestId"));
 		describeVServerGroupAttributeResponse.setVServerGroupId(context.stringValue("DescribeVServerGroupAttributeResponse.VServerGroupId"));
 		describeVServerGroupAttributeResponse.setVServerGroupName(context.stringValue("DescribeVServerGroupAttributeResponse.VServerGroupName"));
+		describeVServerGroupAttributeResponse.setLoadBalancerId(context.stringValue("DescribeVServerGroupAttributeResponse.LoadBalancerId"));
 
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
 		for (int i = 0; i < context.lengthValue("DescribeVServerGroupAttributeResponse.BackendServers.Length"); i++) {
@@ -39,8 +39,8 @@ public class DescribeVServerGroupAttributeResponseUnmarshaller {
 			backendServer.setWeight(context.integerValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setType(context.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Type"));
 			backendServer.setServerIp(context.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerIp"));
-			backendServer.setEniHost(context.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].EniHost"));
 			backendServer.setVpcId(context.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].VpcId"));
+			backendServer.setDescription(context.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Description"));
 
 			backendServers.add(backendServer);
 		}

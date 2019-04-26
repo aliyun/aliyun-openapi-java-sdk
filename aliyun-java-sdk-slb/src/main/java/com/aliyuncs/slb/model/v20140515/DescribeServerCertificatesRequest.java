@@ -38,8 +38,6 @@ public class DescribeServerCertificatesRequest extends RpcAcsRequest<DescribeSer
 
 	private String serverCertificateId;
 
-	private String tags;
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -103,17 +101,6 @@ public class DescribeServerCertificatesRequest extends RpcAcsRequest<DescribeSer
 		this.serverCertificateId = serverCertificateId;
 		if(serverCertificateId != null){
 			putQueryParameter("ServerCertificateId", serverCertificateId);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

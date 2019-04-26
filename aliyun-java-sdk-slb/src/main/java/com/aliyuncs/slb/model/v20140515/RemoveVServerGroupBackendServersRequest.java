@@ -38,8 +38,6 @@ public class RemoveVServerGroupBackendServersRequest extends RpcAcsRequest<Remov
 
 	private String backendServers;
 
-	private String tags;
-
 	public String getVServerGroupId() {
 		return this.vServerGroupId;
 	}
@@ -103,17 +101,6 @@ public class RemoveVServerGroupBackendServersRequest extends RpcAcsRequest<Remov
 		this.backendServers = backendServers;
 		if(backendServers != null){
 			putQueryParameter("BackendServers", backendServers);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

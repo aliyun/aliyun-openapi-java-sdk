@@ -34,8 +34,6 @@ public class DeleteDomainExtensionRequest extends RpcAcsRequest<DeleteDomainExte
 
 	private Long ownerId;
 
-	private String tags;
-
 	private String domainExtensionId;
 
 	public Long getResourceOwnerId() {
@@ -79,17 +77,6 @@ public class DeleteDomainExtensionRequest extends RpcAcsRequest<DeleteDomainExte
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

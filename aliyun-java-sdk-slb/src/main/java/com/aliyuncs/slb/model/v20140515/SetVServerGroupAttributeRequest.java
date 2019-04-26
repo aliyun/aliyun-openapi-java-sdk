@@ -38,8 +38,6 @@ public class SetVServerGroupAttributeRequest extends RpcAcsRequest<SetVServerGro
 
 	private String backendServers;
 
-	private String tags;
-
 	private String vServerGroupName;
 
 	public String getVServerGroupId() {
@@ -105,17 +103,6 @@ public class SetVServerGroupAttributeRequest extends RpcAcsRequest<SetVServerGro
 		this.backendServers = backendServers;
 		if(backendServers != null){
 			putQueryParameter("BackendServers", backendServers);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

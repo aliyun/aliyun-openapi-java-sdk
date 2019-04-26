@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListAttributeResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListAttributeResponse.AclEntry;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListAttributeResponse.RelatedListener;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,6 +31,7 @@ public class DescribeAccessControlListAttributeResponseUnmarshaller {
 		describeAccessControlListAttributeResponse.setAclId(context.stringValue("DescribeAccessControlListAttributeResponse.AclId"));
 		describeAccessControlListAttributeResponse.setAclName(context.stringValue("DescribeAccessControlListAttributeResponse.AclName"));
 		describeAccessControlListAttributeResponse.setAddressIPVersion(context.stringValue("DescribeAccessControlListAttributeResponse.AddressIPVersion"));
+		describeAccessControlListAttributeResponse.setResourceGroupId(context.stringValue("DescribeAccessControlListAttributeResponse.ResourceGroupId"));
 
 		List<AclEntry> aclEntrys = new ArrayList<AclEntry>();
 		for (int i = 0; i < context.lengthValue("DescribeAccessControlListAttributeResponse.AclEntrys.Length"); i++) {

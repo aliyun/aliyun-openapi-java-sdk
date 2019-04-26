@@ -26,8 +26,6 @@ public class DeleteAccessControlListRequest extends RpcAcsRequest<DeleteAccessCo
 		super("Slb", "2014-05-15", "DeleteAccessControlList", "slb");
 	}
 
-	private String access_key_id;
-
 	private String aclId;
 
 	private Long resourceOwnerId;
@@ -37,19 +35,6 @@ public class DeleteAccessControlListRequest extends RpcAcsRequest<DeleteAccessCo
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String tags;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
 
 	public String getAclId() {
 		return this.aclId;
@@ -103,17 +88,6 @@ public class DeleteAccessControlListRequest extends RpcAcsRequest<DeleteAccessCo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

@@ -22,7 +22,6 @@ import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGro
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.AssociatedObjects;
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.AssociatedObjects.Listener;
 import com.aliyuncs.slb.model.v20140515.DescribeVServerGroupsResponse.VServerGroup.AssociatedObjects.Rule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

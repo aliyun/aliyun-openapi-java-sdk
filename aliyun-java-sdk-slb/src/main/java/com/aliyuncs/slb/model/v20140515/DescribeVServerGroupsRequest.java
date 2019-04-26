@@ -40,8 +40,6 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 
 	private Long ownerId;
 
-	private String tags;
-
 	public Boolean getIncludeRule() {
 		return this.includeRule;
 	}
@@ -116,17 +114,6 @@ public class DescribeVServerGroupsRequest extends RpcAcsRequest<DescribeVServerG
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

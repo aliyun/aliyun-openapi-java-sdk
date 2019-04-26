@@ -48,6 +48,8 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private Boolean autoPay;
 
+	private String address;
+
 	private String resourceOwnerAccount;
 
 	private Integer bandwidth;
@@ -56,11 +58,7 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private Long ownerId;
 
-	private String tags;
-
 	private String vSwitchId;
-
-	private String enableVpcVipFlow;
 
 	private String internetChargeType;
 
@@ -191,6 +189,17 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+		if(address != null){
+			putQueryParameter("Address", address);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -235,17 +244,6 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		}
 	}
 
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -254,17 +252,6 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getEnableVpcVipFlow() {
-		return this.enableVpcVipFlow;
-	}
-
-	public void setEnableVpcVipFlow(String enableVpcVipFlow) {
-		this.enableVpcVipFlow = enableVpcVipFlow;
-		if(enableVpcVipFlow != null){
-			putQueryParameter("EnableVpcVipFlow", enableVpcVipFlow);
 		}
 	}
 

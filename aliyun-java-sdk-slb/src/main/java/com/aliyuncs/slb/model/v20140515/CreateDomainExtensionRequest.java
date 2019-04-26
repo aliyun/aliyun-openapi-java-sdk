@@ -42,8 +42,6 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 
 	private String serverCertificateId;
 
-	private String tags;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -99,10 +97,29 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		}
 	}
 
+	public String getBizDomain() {
+		return this.domain;
+	}
+
+	public void setBizDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizDomain instead of this.
+	 */
+	@Deprecated
 	public String getDomain() {
 		return this.domain;
 	}
 
+	/**
+	 * @deprecated use setBizDomain instead of this.
+	 */
+	@Deprecated
 	public void setDomain(String domain) {
 		this.domain = domain;
 		if(domain != null){
@@ -129,17 +146,6 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		this.serverCertificateId = serverCertificateId;
 		if(serverCertificateId != null){
 			putQueryParameter("ServerCertificateId", serverCertificateId);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeCACertificatesResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeCACertificatesResponse.CACertificate;
-import java.util.Map;
+import com.aliyuncs.slb.model.v20140515.DescribeCACertificatesResponse.CACertificate.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +42,16 @@ public class DescribeCACertificatesResponseUnmarshaller {
 			cACertificate.setExpireTime(context.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].ExpireTime"));
 			cACertificate.setExpireTimeStamp(context.longValue("DescribeCACertificatesResponse.CACertificates["+ i +"].ExpireTimeStamp"));
 			cACertificate.setCommonName(context.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].CommonName"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeCACertificatesResponse.CACertificates["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			cACertificate.setTags(tags);
 
 			cACertificates.add(cACertificate);
 		}

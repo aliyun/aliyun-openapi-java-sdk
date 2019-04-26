@@ -36,8 +36,6 @@ public class DeleteVServerGroupRequest extends RpcAcsRequest<DeleteVServerGroupR
 
 	private Long ownerId;
 
-	private String tags;
-
 	public String getVServerGroupId() {
 		return this.vServerGroupId;
 	}
@@ -90,17 +88,6 @@ public class DeleteVServerGroupRequest extends RpcAcsRequest<DeleteVServerGroupR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

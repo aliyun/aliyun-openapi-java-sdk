@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.CreateVServerGroupResponse;
 import com.aliyuncs.slb.model.v20140515.CreateVServerGroupResponse.BackendServer;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,8 +37,8 @@ public class CreateVServerGroupResponseUnmarshaller {
 			backendServer.setWeight(context.integerValue("CreateVServerGroupResponse.BackendServers["+ i +"].Weight"));
 			backendServer.setType(context.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].Type"));
 			backendServer.setServerIp(context.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].ServerIp"));
-			backendServer.setEniHost(context.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].EniHost"));
 			backendServer.setVpcId(context.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].VpcId"));
+			backendServer.setDescription(context.stringValue("CreateVServerGroupResponse.BackendServers["+ i +"].Description"));
 
 			backendServers.add(backendServer);
 		}

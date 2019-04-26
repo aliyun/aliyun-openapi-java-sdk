@@ -38,8 +38,6 @@ public class RemoveBackendServersRequest extends RpcAcsRequest<RemoveBackendServ
 
 	private String backendServers;
 
-	private String tags;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -103,17 +101,6 @@ public class RemoveBackendServersRequest extends RpcAcsRequest<RemoveBackendServ
 		this.backendServers = backendServers;
 		if(backendServers != null){
 			putQueryParameter("BackendServers", backendServers);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 

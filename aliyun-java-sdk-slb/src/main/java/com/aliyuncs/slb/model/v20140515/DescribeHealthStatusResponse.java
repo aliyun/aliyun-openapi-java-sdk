@@ -59,6 +59,8 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 		private String eniHost;
 
+		private String protocol;
+
 		private String type;
 
 		public Integer getListenerPort() {
@@ -107,6 +109,30 @@ public class DescribeHealthStatusResponse extends AcsResponse {
 
 		public void setEniHost(String eniHost) {
 			this.eniHost = eniHost;
+		}
+
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		/**
+		 * @deprecated use getBizProtocol instead of this.
+		 */
+		@Deprecated
+		public String getProtocol() {
+			return this.protocol;
+		}
+
+		/**
+		 * @deprecated use setBizProtocol instead of this.
+		 */
+		@Deprecated
+		public void setProtocol(String protocol) {
+			this.protocol = protocol;
 		}
 
 		public String getType() {

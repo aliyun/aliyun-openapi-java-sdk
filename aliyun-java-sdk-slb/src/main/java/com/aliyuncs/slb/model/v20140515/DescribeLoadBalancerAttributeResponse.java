@@ -81,6 +81,16 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String renewalCycUnit;
 
+	private String hasReservedInfo;
+
+	private String reservedInfoOrderType;
+
+	private String reservedInfoInternetChargeType;
+
+	private String reservedInfoBandwidth;
+
+	private String reservedInfoActiveTime;
+
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 	private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -129,10 +139,26 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		this.loadBalancerStatus = loadBalancerStatus;
 	}
 
+	public String getBizRegionId() {
+		return this.regionId;
+	}
+
+	public void setBizRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	/**
+	 * @deprecated use getBizRegionId instead of this.
+	 */
+	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
+	/**
+	 * @deprecated use setBizRegionId instead of this.
+	 */
+	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
 	}
@@ -313,6 +339,46 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		this.renewalCycUnit = renewalCycUnit;
 	}
 
+	public String getHasReservedInfo() {
+		return this.hasReservedInfo;
+	}
+
+	public void setHasReservedInfo(String hasReservedInfo) {
+		this.hasReservedInfo = hasReservedInfo;
+	}
+
+	public String getReservedInfoOrderType() {
+		return this.reservedInfoOrderType;
+	}
+
+	public void setReservedInfoOrderType(String reservedInfoOrderType) {
+		this.reservedInfoOrderType = reservedInfoOrderType;
+	}
+
+	public String getReservedInfoInternetChargeType() {
+		return this.reservedInfoInternetChargeType;
+	}
+
+	public void setReservedInfoInternetChargeType(String reservedInfoInternetChargeType) {
+		this.reservedInfoInternetChargeType = reservedInfoInternetChargeType;
+	}
+
+	public String getReservedInfoBandwidth() {
+		return this.reservedInfoBandwidth;
+	}
+
+	public void setReservedInfoBandwidth(String reservedInfoBandwidth) {
+		this.reservedInfoBandwidth = reservedInfoBandwidth;
+	}
+
+	public String getReservedInfoActiveTime() {
+		return this.reservedInfoActiveTime;
+	}
+
+	public void setReservedInfoActiveTime(String reservedInfoActiveTime) {
+		this.reservedInfoActiveTime = reservedInfoActiveTime;
+	}
+
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {
 		return this.listenerPortsAndProtocal;
 	}
@@ -378,6 +444,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 		private Integer forwardPort;
 
+		private String description;
+
 		public Integer getListenerPort() {
 			return this.listenerPort;
 		}
@@ -409,6 +477,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		public void setForwardPort(Integer forwardPort) {
 			this.forwardPort = forwardPort;
 		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
 	}
 
 	public static class BackendServer {
@@ -421,9 +497,9 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 		private String serverIp;
 
-		private String eniHost;
-
 		private String vpcId;
+
+		private String description;
 
 		public String getServerId() {
 			return this.serverId;
@@ -457,20 +533,20 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 			this.serverIp = serverIp;
 		}
 
-		public String getEniHost() {
-			return this.eniHost;
-		}
-
-		public void setEniHost(String eniHost) {
-			this.eniHost = eniHost;
-		}
-
 		public String getVpcId() {
 			return this.vpcId;
 		}
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

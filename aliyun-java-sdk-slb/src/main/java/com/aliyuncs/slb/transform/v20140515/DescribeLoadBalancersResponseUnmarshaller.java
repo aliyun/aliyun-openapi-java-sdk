@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancersResponse;
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancersResponse.LoadBalancer;
-import java.util.Map;
+import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancersResponse.LoadBalancer.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,6 +53,16 @@ public class DescribeLoadBalancersResponseUnmarshaller {
 			loadBalancer.setPayType(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].PayType"));
 			loadBalancer.setResourceGroupId(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].ResourceGroupId"));
 			loadBalancer.setAddressIPVersion(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].AddressIPVersion"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(context.stringValue("DescribeLoadBalancersResponse.LoadBalancers["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			loadBalancer.setTags(tags);
 
 			loadBalancers.add(loadBalancer);
 		}

@@ -83,6 +83,8 @@ public class DescribeMasterSlaveVServerGroupAttributeResponse extends AcsRespons
 
 		private String vpcId;
 
+		private String description;
+
 		public String getServerId() {
 			return this.serverId;
 		}
@@ -145,6 +147,14 @@ public class DescribeMasterSlaveVServerGroupAttributeResponse extends AcsRespons
 
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

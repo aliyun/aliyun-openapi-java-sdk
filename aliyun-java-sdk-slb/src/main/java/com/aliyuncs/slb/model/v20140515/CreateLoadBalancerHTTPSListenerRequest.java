@@ -48,15 +48,11 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 
 	private String healthCheck;
 
-	private Integer maxConnection;
-
 	private String enableHttp2;
 
 	private Integer cookieTimeout;
 
 	private String stickySessionType;
-
-	private String vpcIds;
 
 	private String vServerGroupId;
 
@@ -87,8 +83,6 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 	private String serverCertificateId;
 
 	private String cACertificateId;
-
-	private String tags;
 
 	private Integer idleTimeout;
 
@@ -229,17 +223,6 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 		}
 	}
 
-	public Integer getMaxConnection() {
-		return this.maxConnection;
-	}
-
-	public void setMaxConnection(Integer maxConnection) {
-		this.maxConnection = maxConnection;
-		if(maxConnection != null){
-			putQueryParameter("MaxConnection", maxConnection.toString());
-		}
-	}
-
 	public String getEnableHttp2() {
 		return this.enableHttp2;
 	}
@@ -270,17 +253,6 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 		this.stickySessionType = stickySessionType;
 		if(stickySessionType != null){
 			putQueryParameter("StickySessionType", stickySessionType);
-		}
-	}
-
-	public String getVpcIds() {
-		return this.vpcIds;
-	}
-
-	public void setVpcIds(String vpcIds) {
-		this.vpcIds = vpcIds;
-		if(vpcIds != null){
-			putQueryParameter("VpcIds", vpcIds);
 		}
 	}
 
@@ -446,17 +418,6 @@ public class CreateLoadBalancerHTTPSListenerRequest extends RpcAcsRequest<Create
 		this.cACertificateId = cACertificateId;
 		if(cACertificateId != null){
 			putQueryParameter("CACertificateId", cACertificateId);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 
