@@ -1,3 +1,6 @@
+2019-04-28 Version: 2.0.8
+1, Publish DescribeAvailableResource.
+
 2019-04-18 Version: 2.0.7
 1, CreateCacheAnalysisTask prop modify
 
