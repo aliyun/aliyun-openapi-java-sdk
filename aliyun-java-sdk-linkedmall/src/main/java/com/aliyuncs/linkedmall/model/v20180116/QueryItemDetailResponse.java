@@ -133,9 +133,15 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 		private String iforestPropsJson;
 
-		private List<Sku> skus;
+		private String descOption;
 
-		private List<String> iforestProps;
+		private String iforestProps;
+
+		private Long sellerId;
+
+		private String tbShopName;
+
+		private List<Sku> skus;
 
 		private List<String> itemImages;
 
@@ -283,20 +289,44 @@ public class QueryItemDetailResponse extends AcsResponse {
 			this.iforestPropsJson = iforestPropsJson;
 		}
 
+		public String getDescOption() {
+			return this.descOption;
+		}
+
+		public void setDescOption(String descOption) {
+			this.descOption = descOption;
+		}
+
+		public String getIforestProps() {
+			return this.iforestProps;
+		}
+
+		public void setIforestProps(String iforestProps) {
+			this.iforestProps = iforestProps;
+		}
+
+		public Long getSellerId() {
+			return this.sellerId;
+		}
+
+		public void setSellerId(Long sellerId) {
+			this.sellerId = sellerId;
+		}
+
+		public String getTbShopName() {
+			return this.tbShopName;
+		}
+
+		public void setTbShopName(String tbShopName) {
+			this.tbShopName = tbShopName;
+		}
+
 		public List<Sku> getSkus() {
 			return this.skus;
 		}
 
 		public void setSkus(List<Sku> skus) {
 			this.skus = skus;
-		}
-
-		public List<String> getIforestProps() {
-			return this.iforestProps;
-		}
-
-		public void setIforestProps(List<String> iforestProps) {
-			this.iforestProps = iforestProps;
 		}
 
 		public List<String> getItemImages() {

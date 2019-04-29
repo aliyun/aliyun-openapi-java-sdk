@@ -119,11 +119,11 @@ public class CreateOrderResponse extends AcsResponse {
 
 		private String redirectUrl;
 
+		private List<LmOrderListItem> lmOrderList;
+
 		private List<String> orderIds;
 
 		private List<String> payTradeIds;
-
-		private List<String> lmOrderList;
 
 		public String getRedirectUrl() {
 			return this.redirectUrl;
@@ -131,6 +131,14 @@ public class CreateOrderResponse extends AcsResponse {
 
 		public void setRedirectUrl(String redirectUrl) {
 			this.redirectUrl = redirectUrl;
+		}
+
+		public List<LmOrderListItem> getLmOrderList() {
+			return this.lmOrderList;
+		}
+
+		public void setLmOrderList(List<LmOrderListItem> lmOrderList) {
+			this.lmOrderList = lmOrderList;
 		}
 
 		public List<String> getOrderIds() {
@@ -149,12 +157,17 @@ public class CreateOrderResponse extends AcsResponse {
 			this.payTradeIds = payTradeIds;
 		}
 
-		public List<String> getLmOrderList() {
-			return this.lmOrderList;
-		}
+		public static class LmOrderListItem {
 
-		public void setLmOrderList(List<String> lmOrderList) {
-			this.lmOrderList = lmOrderList;
+			private String lmOrderId;
+
+			public String getLmOrderId() {
+				return this.lmOrderId;
+			}
+
+			public void setLmOrderId(String lmOrderId) {
+				this.lmOrderId = lmOrderId;
+			}
 		}
 	}
 

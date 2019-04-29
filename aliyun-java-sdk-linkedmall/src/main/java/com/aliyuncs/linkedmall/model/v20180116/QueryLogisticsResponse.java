@@ -15,7 +15,6 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkedmall.transform.v20180116.QueryLogisticsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,7 +31,7 @@ public class QueryLogisticsResponse extends AcsResponse {
 
 	private String message;
 
-	private List<Map<Object,Object>> data;
+	private List<DataItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,12 +57,121 @@ public class QueryLogisticsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<Map<Object,Object>> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<Map<Object,Object>> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String mailNo;
+
+		private String dataProvider;
+
+		private String dataProviderTitle;
+
+		private String logisticsCompanyName;
+
+		private List<LogisticsDetailListItem> logisticsDetailList;
+
+		private List<GoodsItem> goods;
+
+		public String getMailNo() {
+			return this.mailNo;
+		}
+
+		public void setMailNo(String mailNo) {
+			this.mailNo = mailNo;
+		}
+
+		public String getDataProvider() {
+			return this.dataProvider;
+		}
+
+		public void setDataProvider(String dataProvider) {
+			this.dataProvider = dataProvider;
+		}
+
+		public String getDataProviderTitle() {
+			return this.dataProviderTitle;
+		}
+
+		public void setDataProviderTitle(String dataProviderTitle) {
+			this.dataProviderTitle = dataProviderTitle;
+		}
+
+		public String getLogisticsCompanyName() {
+			return this.logisticsCompanyName;
+		}
+
+		public void setLogisticsCompanyName(String logisticsCompanyName) {
+			this.logisticsCompanyName = logisticsCompanyName;
+		}
+
+		public List<LogisticsDetailListItem> getLogisticsDetailList() {
+			return this.logisticsDetailList;
+		}
+
+		public void setLogisticsDetailList(List<LogisticsDetailListItem> logisticsDetailList) {
+			this.logisticsDetailList = logisticsDetailList;
+		}
+
+		public List<GoodsItem> getGoods() {
+			return this.goods;
+		}
+
+		public void setGoods(List<GoodsItem> goods) {
+			this.goods = goods;
+		}
+
+		public static class LogisticsDetailListItem {
+
+			private String standerdDesc;
+
+			private String ocurrTimeStr;
+
+			public String getStanderdDesc() {
+				return this.standerdDesc;
+			}
+
+			public void setStanderdDesc(String standerdDesc) {
+				this.standerdDesc = standerdDesc;
+			}
+
+			public String getOcurrTimeStr() {
+				return this.ocurrTimeStr;
+			}
+
+			public void setOcurrTimeStr(String ocurrTimeStr) {
+				this.ocurrTimeStr = ocurrTimeStr;
+			}
+		}
+
+		public static class GoodsItem {
+
+			private String goodName;
+
+			private Integer quantity;
+
+			public String getGoodName() {
+				return this.goodName;
+			}
+
+			public void setGoodName(String goodName) {
+				this.goodName = goodName;
+			}
+
+			public Integer getQuantity() {
+				return this.quantity;
+			}
+
+			public void setQuantity(Integer quantity) {
+				this.quantity = quantity;
+			}
+		}
 	}
 
 	@Override

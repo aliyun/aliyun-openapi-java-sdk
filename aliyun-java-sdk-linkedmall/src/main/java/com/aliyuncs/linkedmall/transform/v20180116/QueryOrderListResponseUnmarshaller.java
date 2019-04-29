@@ -22,6 +22,7 @@ import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.LmOrderLis
 import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.LmOrderListItem.FundStructureModelsItem;
 import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.LmOrderListItem.SubOrderListItem;
 import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.LmOrderListItem.SubOrderListItem.ItemPriceListItem;
+import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.PostFee;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +34,14 @@ public class QueryOrderListResponseUnmarshaller {
 		queryOrderListResponse.setCode(context.stringValue("QueryOrderListResponse.Code"));
 		queryOrderListResponse.setMessage(context.stringValue("QueryOrderListResponse.Message"));
 		queryOrderListResponse.setTotalCount(context.longValue("QueryOrderListResponse.TotalCount"));
+		queryOrderListResponse.setPageSize(context.integerValue("QueryOrderListResponse.PageSize"));
+		queryOrderListResponse.setPageNumber(context.integerValue("QueryOrderListResponse.PageNumber"));
+
+		PostFee postFee = new PostFee();
+		postFee.setFundAmount(context.longValue("QueryOrderListResponse.PostFee.FundAmount"));
+		postFee.setFundAmountMoney(context.longValue("QueryOrderListResponse.PostFee.FundAmountMoney"));
+		postFee.setFundType(context.stringValue("QueryOrderListResponse.PostFee.FundType"));
+		queryOrderListResponse.setPostFee(postFee);
 
 		List<LmOrderListItem> lmOrderList = new ArrayList<LmOrderListItem>();
 		for (int i = 0; i < context.lengthValue("QueryOrderListResponse.LmOrderList.Length"); i++) {
@@ -43,6 +52,7 @@ public class QueryOrderListResponseUnmarshaller {
 			lmOrderListItem.setOrderStatus(context.integerValue("QueryOrderListResponse.LmOrderList["+ i +"].OrderStatus"));
 			lmOrderListItem.setExtJson(context.stringValue("QueryOrderListResponse.LmOrderList["+ i +"].ExtJson"));
 			lmOrderListItem.setShopName(context.stringValue("QueryOrderListResponse.LmOrderList["+ i +"].ShopName"));
+			lmOrderListItem.setLogisticsStatus(context.integerValue("QueryOrderListResponse.LmOrderList["+ i +"].LogisticsStatus"));
 
 			List<FundStructureModelsItem> fundStructureModels = new ArrayList<FundStructureModelsItem>();
 			for (int j = 0; j < context.lengthValue("QueryOrderListResponse.LmOrderList["+ i +"].FundStructureModels.Length"); j++) {
@@ -71,7 +81,7 @@ public class QueryOrderListResponseUnmarshaller {
 					ItemPriceListItem itemPriceListItem = new ItemPriceListItem();
 					itemPriceListItem.setFundAmount(context.longValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].ItemPriceList["+ k +"].FundAmount"));
 					itemPriceListItem.setFundAmountMoney(context.longValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].ItemPriceList["+ k +"].FundAmountMoney"));
-					itemPriceListItem.setFundType(context.integerValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].ItemPriceList["+ k +"].FundType"));
+					itemPriceListItem.setFundType(context.stringValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].ItemPriceList["+ k +"].FundType"));
 
 					itemPriceList.add(itemPriceListItem);
 				}

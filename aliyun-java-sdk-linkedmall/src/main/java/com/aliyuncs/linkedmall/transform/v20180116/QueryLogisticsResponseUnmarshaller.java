@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.linkedmall.model.v20180116.QueryLogisticsResponse;
-import java.util.Map;
+import com.aliyuncs.linkedmall.model.v20180116.QueryLogisticsResponse.DataItem;
+import com.aliyuncs.linkedmall.model.v20180116.QueryLogisticsResponse.DataItem.GoodsItem;
+import com.aliyuncs.linkedmall.model.v20180116.QueryLogisticsResponse.DataItem.LogisticsDetailListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,7 +32,36 @@ public class QueryLogisticsResponseUnmarshaller {
 		queryLogisticsResponse.setCode(context.stringValue("QueryLogisticsResponse.Code"));
 		queryLogisticsResponse.setMessage(context.stringValue("QueryLogisticsResponse.Message"));
 
-		List<Map<Object, Object>> data = context.listMapValue("QueryLogisticsResponse.Data");
+		List<DataItem> data = new ArrayList<DataItem>();
+		for (int i = 0; i < context.lengthValue("QueryLogisticsResponse.Data.Length"); i++) {
+			DataItem dataItem = new DataItem();
+			dataItem.setMailNo(context.stringValue("QueryLogisticsResponse.Data["+ i +"].MailNo"));
+			dataItem.setDataProvider(context.stringValue("QueryLogisticsResponse.Data["+ i +"].DataProvider"));
+			dataItem.setDataProviderTitle(context.stringValue("QueryLogisticsResponse.Data["+ i +"].DataProviderTitle"));
+			dataItem.setLogisticsCompanyName(context.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsCompanyName"));
+
+			List<LogisticsDetailListItem> logisticsDetailList = new ArrayList<LogisticsDetailListItem>();
+			for (int j = 0; j < context.lengthValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList.Length"); j++) {
+				LogisticsDetailListItem logisticsDetailListItem = new LogisticsDetailListItem();
+				logisticsDetailListItem.setStanderdDesc(context.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList["+ j +"].StanderdDesc"));
+				logisticsDetailListItem.setOcurrTimeStr(context.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList["+ j +"].OcurrTimeStr"));
+
+				logisticsDetailList.add(logisticsDetailListItem);
+			}
+			dataItem.setLogisticsDetailList(logisticsDetailList);
+
+			List<GoodsItem> goods = new ArrayList<GoodsItem>();
+			for (int j = 0; j < context.lengthValue("QueryLogisticsResponse.Data["+ i +"].Goods.Length"); j++) {
+				GoodsItem goodsItem = new GoodsItem();
+				goodsItem.setGoodName(context.stringValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].GoodName"));
+				goodsItem.setQuantity(context.integerValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].Quantity"));
+
+				goods.add(goodsItem);
+			}
+			dataItem.setGoods(goods);
+
+			data.add(dataItem);
+		}
 		queryLogisticsResponse.setData(data);
 	 
 	 	return queryLogisticsResponse;

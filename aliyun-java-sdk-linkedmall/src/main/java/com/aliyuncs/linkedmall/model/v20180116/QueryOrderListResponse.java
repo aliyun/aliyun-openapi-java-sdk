@@ -33,7 +33,13 @@ public class QueryOrderListResponse extends AcsResponse {
 
 	private Long totalCount;
 
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private List<LmOrderListItem> lmOrderList;
+
+	private PostFee postFee;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,12 +73,36 @@ public class QueryOrderListResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<LmOrderListItem> getLmOrderList() {
 		return this.lmOrderList;
 	}
 
 	public void setLmOrderList(List<LmOrderListItem> lmOrderList) {
 		this.lmOrderList = lmOrderList;
+	}
+
+	public PostFee getPostFee() {
+		return this.postFee;
+	}
+
+	public void setPostFee(PostFee postFee) {
+		this.postFee = postFee;
 	}
 
 	public static class LmOrderListItem {
@@ -88,6 +118,8 @@ public class QueryOrderListResponse extends AcsResponse {
 		private String extJson;
 
 		private String shopName;
+
+		private Integer logisticsStatus;
 
 		private List<FundStructureModelsItem> fundStructureModels;
 
@@ -139,6 +171,14 @@ public class QueryOrderListResponse extends AcsResponse {
 
 		public void setShopName(String shopName) {
 			this.shopName = shopName;
+		}
+
+		public Integer getLogisticsStatus() {
+			return this.logisticsStatus;
+		}
+
+		public void setLogisticsStatus(Integer logisticsStatus) {
+			this.logisticsStatus = logisticsStatus;
 		}
 
 		public List<FundStructureModelsItem> getFundStructureModels() {
@@ -278,7 +318,7 @@ public class QueryOrderListResponse extends AcsResponse {
 
 				private Long fundAmountMoney;
 
-				private Integer fundType;
+				private String fundType;
 
 				public Long getFundAmount() {
 					return this.fundAmount;
@@ -296,14 +336,47 @@ public class QueryOrderListResponse extends AcsResponse {
 					this.fundAmountMoney = fundAmountMoney;
 				}
 
-				public Integer getFundType() {
+				public String getFundType() {
 					return this.fundType;
 				}
 
-				public void setFundType(Integer fundType) {
+				public void setFundType(String fundType) {
 					this.fundType = fundType;
 				}
 			}
+		}
+	}
+
+	public static class PostFee {
+
+		private Long fundAmount;
+
+		private Long fundAmountMoney;
+
+		private String fundType;
+
+		public Long getFundAmount() {
+			return this.fundAmount;
+		}
+
+		public void setFundAmount(Long fundAmount) {
+			this.fundAmount = fundAmount;
+		}
+
+		public Long getFundAmountMoney() {
+			return this.fundAmountMoney;
+		}
+
+		public void setFundAmountMoney(Long fundAmountMoney) {
+			this.fundAmountMoney = fundAmountMoney;
+		}
+
+		public String getFundType() {
+			return this.fundType;
+		}
+
+		public void setFundType(String fundType) {
+			this.fundType = fundType;
 		}
 	}
 

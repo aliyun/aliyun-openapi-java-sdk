@@ -53,12 +53,10 @@ public class QueryItemDetailResponseUnmarshaller {
 		item.setExtJson(context.stringValue("QueryItemDetailResponse.Item.ExtJson"));
 		item.setPropertiesJson(context.stringValue("QueryItemDetailResponse.Item.PropertiesJson"));
 		item.setIforestPropsJson(context.stringValue("QueryItemDetailResponse.Item.IforestPropsJson"));
-
-		List<String> iforestProps = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryItemDetailResponse.Item.IforestProps.Length"); i++) {
-			iforestProps.add(context.stringValue("QueryItemDetailResponse.Item.IforestProps["+ i +"]"));
-		}
-		item.setIforestProps(iforestProps);
+		item.setDescOption(context.stringValue("QueryItemDetailResponse.Item.DescOption"));
+		item.setIforestProps(context.stringValue("QueryItemDetailResponse.Item.IforestProps"));
+		item.setSellerId(context.longValue("QueryItemDetailResponse.Item.SellerId"));
+		item.setTbShopName(context.stringValue("QueryItemDetailResponse.Item.TbShopName"));
 
 		List<String> itemImages = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QueryItemDetailResponse.Item.ItemImages.Length"); i++) {
