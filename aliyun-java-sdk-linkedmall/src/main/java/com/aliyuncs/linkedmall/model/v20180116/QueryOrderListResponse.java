@@ -125,6 +125,8 @@ public class QueryOrderListResponse extends AcsResponse {
 
 		private List<SubOrderListItem> subOrderList;
 
+		private PostFee1 postFee1;
+
 		public String getCreateDate() {
 			return this.createDate;
 		}
@@ -197,6 +199,14 @@ public class QueryOrderListResponse extends AcsResponse {
 			this.subOrderList = subOrderList;
 		}
 
+		public PostFee1 getPostFee1() {
+			return this.postFee1;
+		}
+
+		public void setPostFee1(PostFee1 postFee1) {
+			this.postFee1 = postFee1;
+		}
+
 		public static class FundStructureModelsItem {
 
 			private Long fundAmount;
@@ -245,6 +255,8 @@ public class QueryOrderListResponse extends AcsResponse {
 			private String skuName;
 
 			private Long lmOrderId;
+
+			private Integer orderStatus;
 
 			private List<ItemPriceListItem> itemPriceList;
 
@@ -304,6 +316,14 @@ public class QueryOrderListResponse extends AcsResponse {
 				this.lmOrderId = lmOrderId;
 			}
 
+			public Integer getOrderStatus() {
+				return this.orderStatus;
+			}
+
+			public void setOrderStatus(Integer orderStatus) {
+				this.orderStatus = orderStatus;
+			}
+
 			public List<ItemPriceListItem> getItemPriceList() {
 				return this.itemPriceList;
 			}
@@ -343,6 +363,39 @@ public class QueryOrderListResponse extends AcsResponse {
 				public void setFundType(String fundType) {
 					this.fundType = fundType;
 				}
+			}
+		}
+
+		public static class PostFee1 {
+
+			private Long fundAmount;
+
+			private Long fundAmountMoney;
+
+			private String fundType;
+
+			public Long getFundAmount() {
+				return this.fundAmount;
+			}
+
+			public void setFundAmount(Long fundAmount) {
+				this.fundAmount = fundAmount;
+			}
+
+			public Long getFundAmountMoney() {
+				return this.fundAmountMoney;
+			}
+
+			public void setFundAmountMoney(Long fundAmountMoney) {
+				this.fundAmountMoney = fundAmountMoney;
+			}
+
+			public String getFundType() {
+				return this.fundType;
+			}
+
+			public void setFundType(String fundType) {
+				this.fundType = fundType;
 			}
 		}
 	}

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse;
 import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.LmOrderListItem;
 import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.LmOrderListItem.FundStructureModelsItem;
+import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.LmOrderListItem.PostFee1;
 import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.LmOrderListItem.SubOrderListItem;
 import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.LmOrderListItem.SubOrderListItem.ItemPriceListItem;
 import com.aliyuncs.linkedmall.model.v20180116.QueryOrderListResponse.PostFee;
@@ -54,6 +55,12 @@ public class QueryOrderListResponseUnmarshaller {
 			lmOrderListItem.setShopName(context.stringValue("QueryOrderListResponse.LmOrderList["+ i +"].ShopName"));
 			lmOrderListItem.setLogisticsStatus(context.integerValue("QueryOrderListResponse.LmOrderList["+ i +"].LogisticsStatus"));
 
+			PostFee1 postFee1 = new PostFee1();
+			postFee1.setFundAmount(context.longValue("QueryOrderListResponse.LmOrderList["+ i +"].PostFee.FundAmount"));
+			postFee1.setFundAmountMoney(context.longValue("QueryOrderListResponse.LmOrderList["+ i +"].PostFee.FundAmountMoney"));
+			postFee1.setFundType(context.stringValue("QueryOrderListResponse.LmOrderList["+ i +"].PostFee.FundType"));
+			lmOrderListItem.setPostFee1(postFee1);
+
 			List<FundStructureModelsItem> fundStructureModels = new ArrayList<FundStructureModelsItem>();
 			for (int j = 0; j < context.lengthValue("QueryOrderListResponse.LmOrderList["+ i +"].FundStructureModels.Length"); j++) {
 				FundStructureModelsItem fundStructureModelsItem = new FundStructureModelsItem();
@@ -75,6 +82,7 @@ public class QueryOrderListResponseUnmarshaller {
 				subOrderListItem.setSkuId(context.longValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].SkuId"));
 				subOrderListItem.setSkuName(context.stringValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].SkuName"));
 				subOrderListItem.setLmOrderId(context.longValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].LmOrderId"));
+				subOrderListItem.setOrderStatus(context.integerValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].OrderStatus"));
 
 				List<ItemPriceListItem> itemPriceList = new ArrayList<ItemPriceListItem>();
 				for (int k = 0; k < context.lengthValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].ItemPriceList.Length"); k++) {
