@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.qualitycheck.model.v20190115.GetRecognizeResultResponse;
 import com.aliyuncs.qualitycheck.model.v20190115.GetRecognizeResultResponse.Data;
-import com.aliyuncs.qualitycheck.model.v20190115.GetRecognizeResultResponse.Data.SentenceResult;
+import com.aliyuncs.qualitycheck.model.v20190115.GetRecognizeResultResponse.Data.Dialogue;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,22 +33,25 @@ public class GetRecognizeResultResponseUnmarshaller {
 		getRecognizeResultResponse.setMessage(context.stringValue("GetRecognizeResultResponse.Message"));
 
 		Data data = new Data();
-		data.setTaskAsrResqusetId(context.longValue("GetRecognizeResultResponse.Data.TaskAsrResqusetId"));
+		data.setTaskAsrRequestId(context.longValue("GetRecognizeResultResponse.Data.TaskAsrRequestId"));
 
-		List<SentenceResult> sentenceResultList = new ArrayList<SentenceResult>();
-		for (int i = 0; i < context.lengthValue("GetRecognizeResultResponse.Data.SentenceResultList.Length"); i++) {
-			SentenceResult sentenceResult = new SentenceResult();
-			sentenceResult.setBeginTime(context.longValue("GetRecognizeResultResponse.Data.SentenceResultList["+ i +"].BeginTime"));
-			sentenceResult.setChannelId(context.longValue("GetRecognizeResultResponse.Data.SentenceResultList["+ i +"].ChannelId"));
-			sentenceResult.setEndTime(context.longValue("GetRecognizeResultResponse.Data.SentenceResultList["+ i +"].EndTime"));
-			sentenceResult.setEmotionValue(context.integerValue("GetRecognizeResultResponse.Data.SentenceResultList["+ i +"].EmotionValue"));
-			sentenceResult.setSilenceDuration(context.integerValue("GetRecognizeResultResponse.Data.SentenceResultList["+ i +"].SilenceDuration"));
-			sentenceResult.setSpeechRate(context.integerValue("GetRecognizeResultResponse.Data.SentenceResultList["+ i +"].SpeechRate"));
-			sentenceResult.setText(context.stringValue("GetRecognizeResultResponse.Data.SentenceResultList["+ i +"].Text"));
+		List<Dialogue> dialogues = new ArrayList<Dialogue>();
+		for (int i = 0; i < context.lengthValue("GetRecognizeResultResponse.Data.Dialogues.Length"); i++) {
+			Dialogue dialogue = new Dialogue();
+			dialogue.setBegin(context.longValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Begin"));
+			dialogue.setBeginTime(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].BeginTime"));
+			dialogue.setEmotionValue(context.integerValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].EmotionValue"));
+			dialogue.setEnd(context.longValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].End"));
+			dialogue.setHourMinSec(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].HourMinSec"));
+			dialogue.setIdentity(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Identity"));
+			dialogue.setRole(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Role"));
+			dialogue.setSilenceDuration(context.integerValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].SilenceDuration"));
+			dialogue.setSpeechRate(context.integerValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].SpeechRate"));
+			dialogue.setWords(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Words"));
 
-			sentenceResultList.add(sentenceResult);
+			dialogues.add(dialogue);
 		}
-		data.setSentenceResultList(sentenceResultList);
+		data.setDialogues(dialogues);
 		getRecognizeResultResponse.setData(data);
 	 
 	 	return getRecognizeResultResponse;

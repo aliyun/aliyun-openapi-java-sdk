@@ -44,6 +44,7 @@ public class GetResultResponseUnmarshaller {
 			resultInfo.setScore(context.integerValue("GetResultResponse.Data["+ i +"].Score"));
 			resultInfo.setStatus(context.integerValue("GetResultResponse.Data["+ i +"].Status"));
 			resultInfo.setTaskId(context.stringValue("GetResultResponse.Data["+ i +"].TaskId"));
+			resultInfo.setComments(context.stringValue("GetResultResponse.Data["+ i +"].Comments"));
 
 			Recording recording = new Recording();
 			recording.setId(context.stringValue("GetResultResponse.Data["+ i +"].Recording.Id"));

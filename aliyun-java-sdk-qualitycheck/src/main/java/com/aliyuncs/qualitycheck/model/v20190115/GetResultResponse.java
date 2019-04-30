@@ -93,6 +93,8 @@ public class GetResultResponse extends AcsResponse {
 
 		private String taskId;
 
+		private String comments;
+
 		private List<AsrResultItem> asrResult;
 
 		private List<HitResultItem> hitResult;
@@ -121,6 +123,14 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getComments() {
+			return this.comments;
+		}
+
+		public void setComments(String comments) {
+			this.comments = comments;
 		}
 
 		public List<AsrResultItem> getAsrResult() {

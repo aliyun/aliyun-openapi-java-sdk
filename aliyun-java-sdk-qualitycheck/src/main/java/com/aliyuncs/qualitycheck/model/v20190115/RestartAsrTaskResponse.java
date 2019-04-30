@@ -16,14 +16,14 @@ package com.aliyuncs.qualitycheck.model.v20190115;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20190115.GetAsrVocabResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20190115.RestartAsrTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAsrVocabResponse extends AcsResponse {
+public class RestartAsrTaskResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class GetAsrVocabResponse extends AcsResponse {
 
 	private String message;
 
-	private Data data;
+	private List<RestartResult> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,62 +67,49 @@ public class GetAsrVocabResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Data getData() {
+	public List<RestartResult> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<RestartResult> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class RestartResult {
 
-		private String name;
+		private Boolean success;
 
-		private List<Word> words;
+		private String data;
 
-		public String getName() {
-			return this.name;
+		private String message;
+
+		public Boolean getSuccess() {
+			return this.success;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setSuccess(Boolean success) {
+			this.success = success;
 		}
 
-		public List<Word> getWords() {
-			return this.words;
+		public String getData() {
+			return this.data;
 		}
 
-		public void setWords(List<Word> words) {
-			this.words = words;
+		public void setData(String data) {
+			this.data = data;
 		}
 
-		public static class Word {
+		public String getMessage() {
+			return this.message;
+		}
 
-			private String word;
-
-			private Integer weight;
-
-			public String getWord() {
-				return this.word;
-			}
-
-			public void setWord(String word) {
-				this.word = word;
-			}
-
-			public Integer getWeight() {
-				return this.weight;
-			}
-
-			public void setWeight(Integer weight) {
-				this.weight = weight;
-			}
+		public void setMessage(String message) {
+			this.message = message;
 		}
 	}
 
 	@Override
-	public GetAsrVocabResponse getInstance(UnmarshallerContext context) {
-		return	GetAsrVocabResponseUnmarshaller.unmarshall(this, context);
+	public RestartAsrTaskResponse getInstance(UnmarshallerContext context) {
+		return	RestartAsrTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

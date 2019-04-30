@@ -14,7 +14,12 @@
 
 package com.aliyuncs.qualitycheck.transform.v20190115;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.qualitycheck.model.v20190115.GetAsrVocabResponse;
+import com.aliyuncs.qualitycheck.model.v20190115.GetAsrVocabResponse.Data;
+import com.aliyuncs.qualitycheck.model.v20190115.GetAsrVocabResponse.Data.Word;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,7 +31,20 @@ public class GetAsrVocabResponseUnmarshaller {
 		getAsrVocabResponse.setSuccess(context.booleanValue("GetAsrVocabResponse.Success"));
 		getAsrVocabResponse.setCode(context.stringValue("GetAsrVocabResponse.Code"));
 		getAsrVocabResponse.setMessage(context.stringValue("GetAsrVocabResponse.Message"));
-		getAsrVocabResponse.setData(context.stringValue("GetAsrVocabResponse.Data"));
+
+		Data data = new Data();
+		data.setName(context.stringValue("GetAsrVocabResponse.Data.Name"));
+
+		List<Word> words = new ArrayList<Word>();
+		for (int i = 0; i < context.lengthValue("GetAsrVocabResponse.Data.Words.Length"); i++) {
+			Word word = new Word();
+			word.setWord(context.stringValue("GetAsrVocabResponse.Data.Words["+ i +"].Word"));
+			word.setWeight(context.integerValue("GetAsrVocabResponse.Data.Words["+ i +"].Weight"));
+
+			words.add(word);
+		}
+		data.setWords(words);
+		getAsrVocabResponse.setData(data);
 	 
 	 	return getAsrVocabResponse;
 	}

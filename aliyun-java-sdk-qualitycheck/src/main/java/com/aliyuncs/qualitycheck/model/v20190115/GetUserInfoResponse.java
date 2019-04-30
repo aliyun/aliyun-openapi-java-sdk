@@ -14,16 +14,15 @@
 
 package com.aliyuncs.qualitycheck.model.v20190115;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20190115.GetAsrVocabResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20190115.GetUserInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAsrVocabResponse extends AcsResponse {
+public class GetUserInfoResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -77,52 +76,39 @@ public class GetAsrVocabResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String name;
+		private Integer currentStatus;
 
-		private List<Word> words;
+		private Integer accountType;
 
-		public String getName() {
-			return this.name;
+		private String productType;
+
+		public Integer getCurrentStatus() {
+			return this.currentStatus;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setCurrentStatus(Integer currentStatus) {
+			this.currentStatus = currentStatus;
 		}
 
-		public List<Word> getWords() {
-			return this.words;
+		public Integer getAccountType() {
+			return this.accountType;
 		}
 
-		public void setWords(List<Word> words) {
-			this.words = words;
+		public void setAccountType(Integer accountType) {
+			this.accountType = accountType;
 		}
 
-		public static class Word {
+		public String getProductType() {
+			return this.productType;
+		}
 
-			private String word;
-
-			private Integer weight;
-
-			public String getWord() {
-				return this.word;
-			}
-
-			public void setWord(String word) {
-				this.word = word;
-			}
-
-			public Integer getWeight() {
-				return this.weight;
-			}
-
-			public void setWeight(Integer weight) {
-				this.weight = weight;
-			}
+		public void setProductType(String productType) {
+			this.productType = productType;
 		}
 	}
 
 	@Override
-	public GetAsrVocabResponse getInstance(UnmarshallerContext context) {
-		return	GetAsrVocabResponseUnmarshaller.unmarshall(this, context);
+	public GetUserInfoResponse getInstance(UnmarshallerContext context) {
+		return	GetUserInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 }

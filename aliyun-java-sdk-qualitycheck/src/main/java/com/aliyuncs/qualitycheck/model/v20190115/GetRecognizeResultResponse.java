@@ -77,64 +77,62 @@ public class GetRecognizeResultResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long taskAsrResqusetId;
+		private Long taskAsrRequestId;
 
-		private List<SentenceResult> sentenceResultList;
+		private List<Dialogue> dialogues;
 
-		public Long getTaskAsrResqusetId() {
-			return this.taskAsrResqusetId;
+		public Long getTaskAsrRequestId() {
+			return this.taskAsrRequestId;
 		}
 
-		public void setTaskAsrResqusetId(Long taskAsrResqusetId) {
-			this.taskAsrResqusetId = taskAsrResqusetId;
+		public void setTaskAsrRequestId(Long taskAsrRequestId) {
+			this.taskAsrRequestId = taskAsrRequestId;
 		}
 
-		public List<SentenceResult> getSentenceResultList() {
-			return this.sentenceResultList;
+		public List<Dialogue> getDialogues() {
+			return this.dialogues;
 		}
 
-		public void setSentenceResultList(List<SentenceResult> sentenceResultList) {
-			this.sentenceResultList = sentenceResultList;
+		public void setDialogues(List<Dialogue> dialogues) {
+			this.dialogues = dialogues;
 		}
 
-		public static class SentenceResult {
+		public static class Dialogue {
 
-			private Long beginTime;
+			private Long begin;
 
-			private Long channelId;
-
-			private Long endTime;
+			private String beginTime;
 
 			private Integer emotionValue;
+
+			private Long end;
+
+			private String hourMinSec;
+
+			private String identity;
+
+			private String role;
 
 			private Integer silenceDuration;
 
 			private Integer speechRate;
 
-			private String text;
+			private String words;
 
-			public Long getBeginTime() {
+			public Long getBegin() {
+				return this.begin;
+			}
+
+			public void setBegin(Long begin) {
+				this.begin = begin;
+			}
+
+			public String getBeginTime() {
 				return this.beginTime;
 			}
 
-			public void setBeginTime(Long beginTime) {
+			public void setBeginTime(String beginTime) {
 				this.beginTime = beginTime;
-			}
-
-			public Long getChannelId() {
-				return this.channelId;
-			}
-
-			public void setChannelId(Long channelId) {
-				this.channelId = channelId;
-			}
-
-			public Long getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(Long endTime) {
-				this.endTime = endTime;
 			}
 
 			public Integer getEmotionValue() {
@@ -143,6 +141,38 @@ public class GetRecognizeResultResponse extends AcsResponse {
 
 			public void setEmotionValue(Integer emotionValue) {
 				this.emotionValue = emotionValue;
+			}
+
+			public Long getEnd() {
+				return this.end;
+			}
+
+			public void setEnd(Long end) {
+				this.end = end;
+			}
+
+			public String getHourMinSec() {
+				return this.hourMinSec;
+			}
+
+			public void setHourMinSec(String hourMinSec) {
+				this.hourMinSec = hourMinSec;
+			}
+
+			public String getIdentity() {
+				return this.identity;
+			}
+
+			public void setIdentity(String identity) {
+				this.identity = identity;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
 			}
 
 			public Integer getSilenceDuration() {
@@ -161,12 +191,12 @@ public class GetRecognizeResultResponse extends AcsResponse {
 				this.speechRate = speechRate;
 			}
 
-			public String getText() {
-				return this.text;
+			public String getWords() {
+				return this.words;
 			}
 
-			public void setText(String text) {
-				this.text = text;
+			public void setWords(String words) {
+				this.words = words;
 			}
 		}
 	}

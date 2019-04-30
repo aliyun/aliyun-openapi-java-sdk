@@ -16,14 +16,14 @@ package com.aliyuncs.qualitycheck.model.v20190115;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.qualitycheck.transform.v20190115.GetAsrVocabResponseUnmarshaller;
+import com.aliyuncs.qualitycheck.transform.v20190115.ListAsrVocabResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAsrVocabResponse extends AcsResponse {
+public class ListAsrVocabResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class GetAsrVocabResponse extends AcsResponse {
 
 	private String message;
 
-	private Data data;
+	private List<AsrVocab> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,19 +67,23 @@ public class GetAsrVocabResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Data getData() {
+	public List<AsrVocab> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<AsrVocab> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class AsrVocab {
 
 		private String name;
 
-		private List<Word> words;
+		private String createTime;
+
+		private String updateTime;
+
+		private String vocabularyId;
 
 		public String getName() {
 			return this.name;
@@ -89,40 +93,33 @@ public class GetAsrVocabResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public List<Word> getWords() {
-			return this.words;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setWords(List<Word> words) {
-			this.words = words;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public static class Word {
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
 
-			private String word;
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
 
-			private Integer weight;
+		public String getVocabularyId() {
+			return this.vocabularyId;
+		}
 
-			public String getWord() {
-				return this.word;
-			}
-
-			public void setWord(String word) {
-				this.word = word;
-			}
-
-			public Integer getWeight() {
-				return this.weight;
-			}
-
-			public void setWeight(Integer weight) {
-				this.weight = weight;
-			}
+		public void setVocabularyId(String vocabularyId) {
+			this.vocabularyId = vocabularyId;
 		}
 	}
 
 	@Override
-	public GetAsrVocabResponse getInstance(UnmarshallerContext context) {
-		return	GetAsrVocabResponseUnmarshaller.unmarshall(this, context);
+	public ListAsrVocabResponse getInstance(UnmarshallerContext context) {
+		return	ListAsrVocabResponseUnmarshaller.unmarshall(this, context);
 	}
 }
