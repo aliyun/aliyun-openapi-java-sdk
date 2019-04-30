@@ -34,6 +34,8 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 
 	private String calledNumber;
 
+	private Long instanceOwnerId;
+
 	private String actionKey;
 
 	private String actionParams;
@@ -87,6 +89,17 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		this.calledNumber = calledNumber;
 		if(calledNumber != null){
 			putQueryParameter("CalledNumber", calledNumber);
+		}
+	}
+
+	public Long getInstanceOwnerId() {
+		return this.instanceOwnerId;
+	}
+
+	public void setInstanceOwnerId(Long instanceOwnerId) {
+		this.instanceOwnerId = instanceOwnerId;
+		if(instanceOwnerId != null){
+			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 
