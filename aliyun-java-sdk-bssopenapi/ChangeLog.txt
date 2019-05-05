@@ -1,3 +1,6 @@
+2019-05-05 Version: 1.2.5
+1, CreateInstance add ClientToken parameter.
+
 2019-04-22 Version: 1.2.4
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.

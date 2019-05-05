@@ -31,6 +31,8 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 
 	private String instanceId;
 
+	private String clientToken;
+
 	private String subscriptionType;
 
 	private String modifyType;
@@ -60,6 +62,17 @@ public class ModifyInstanceRequest extends RpcAcsRequest<ModifyInstanceResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

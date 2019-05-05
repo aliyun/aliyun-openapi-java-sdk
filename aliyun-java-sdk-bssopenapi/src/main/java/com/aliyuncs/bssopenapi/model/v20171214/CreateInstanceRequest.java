@@ -31,6 +31,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Integer period;
 
+	private String clientToken;
+
 	private String subscriptionType;
 
 	private Integer renewPeriod;
@@ -62,6 +64,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
