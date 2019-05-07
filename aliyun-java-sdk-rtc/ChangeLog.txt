@@ -1,3 +1,6 @@
+2019-05-07 Version: 1.0.3
+1, Add TaskProfile to specify the capability of mpu task. Also the TaskProfile is related to cost
+
 2019-03-15 Version: 1.0.2
 1,  Update Dependency
 

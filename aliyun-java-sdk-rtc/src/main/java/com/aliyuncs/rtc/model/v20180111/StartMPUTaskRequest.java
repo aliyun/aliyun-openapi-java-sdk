@@ -31,6 +31,8 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private Integer backgroundColor;
 
+	private String taskProfile;
+
 	private List<Long> layoutIdss;
 
 	private String taskId;
@@ -68,6 +70,17 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		this.backgroundColor = backgroundColor;
 		if(backgroundColor != null){
 			putQueryParameter("BackgroundColor", backgroundColor.toString());
+		}
+	}
+
+	public String getTaskProfile() {
+		return this.taskProfile;
+	}
+
+	public void setTaskProfile(String taskProfile) {
+		this.taskProfile = taskProfile;
+		if(taskProfile != null){
+			putQueryParameter("TaskProfile", taskProfile);
 		}
 	}
 
