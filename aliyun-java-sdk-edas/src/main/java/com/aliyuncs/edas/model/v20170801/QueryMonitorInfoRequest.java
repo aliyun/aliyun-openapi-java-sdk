@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class QueryMonitorInfoRequest extends RoaAcsRequest<QueryMonitorInfoResponse> {
 	
 	public QueryMonitorInfoRequest() {
-		super("Edas", "2017-08-01", "QueryMonitorInfo");
+		super("Edas", "2017-08-01", "QueryMonitorInfo", "edas");
 		setUriPattern("/pop/v5/monitor/queryMonitorInfo");
 		setMethod(MethodType.GET);
 	}

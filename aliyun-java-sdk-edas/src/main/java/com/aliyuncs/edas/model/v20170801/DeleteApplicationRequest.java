@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteApplicationRequest extends RoaAcsRequest<DeleteApplicationResponse> {
 	
 	public DeleteApplicationRequest() {
-		super("Edas", "2017-08-01", "DeleteApplication");
+		super("Edas", "2017-08-01", "DeleteApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_delete_app");
 		setMethod(MethodType.DELETE);
 	}

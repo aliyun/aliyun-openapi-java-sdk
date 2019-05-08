@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class UnbindK8sSlbRequest extends RoaAcsRequest<UnbindK8sSlbResponse> {
 	
 	public UnbindK8sSlbRequest() {
-		super("Edas", "2017-08-01", "UnbindK8sSlb");
+		super("Edas", "2017-08-01", "UnbindK8sSlb", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_slb_binding");
 		setMethod(MethodType.DELETE);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListSlbRequest extends RoaAcsRequest<ListSlbResponse> {
 	
 	public ListSlbRequest() {
-		super("Edas", "2017-08-01", "ListSlb");
+		super("Edas", "2017-08-01", "ListSlb", "edas");
 		setUriPattern("/pop/v5/slb_list");
 		setMethod(MethodType.GET);
 	}

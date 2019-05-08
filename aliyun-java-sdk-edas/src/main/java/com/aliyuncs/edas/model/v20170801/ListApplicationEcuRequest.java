@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuResponse> {
 	
 	public ListApplicationEcuRequest() {
-		super("Edas", "2017-08-01", "ListApplicationEcu");
+		super("Edas", "2017-08-01", "ListApplicationEcu", "edas");
 		setUriPattern("/pop/v5/resource/ecu_list");
 		setMethod(MethodType.POST);
 	}

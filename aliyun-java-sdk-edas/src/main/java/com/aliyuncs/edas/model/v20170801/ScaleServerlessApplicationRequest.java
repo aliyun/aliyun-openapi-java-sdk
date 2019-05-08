@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ScaleServerlessApplicationRequest extends RoaAcsRequest<ScaleServerlessApplicationResponse> {
 	
 	public ScaleServerlessApplicationRequest() {
-		super("Edas", "2017-08-01", "ScaleServerlessApplication");
+		super("Edas", "2017-08-01", "ScaleServerlessApplication", "edas");
 		setUriPattern("/pop/v5/k8s/pop/pop_serverless_app_rescale");
 		setMethod(MethodType.PUT);
 	}

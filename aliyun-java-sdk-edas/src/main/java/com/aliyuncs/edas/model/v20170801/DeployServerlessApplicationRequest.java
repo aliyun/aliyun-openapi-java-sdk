@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeployServerlessApplicationRequest extends RoaAcsRequest<DeployServerlessApplicationResponse> {
 	
 	public DeployServerlessApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployServerlessApplication");
+		super("Edas", "2017-08-01", "DeployServerlessApplication", "edas");
 		setUriPattern("/pop/v5/k8s/pop/pop_serverless_app_deploy");
 		setMethod(MethodType.POST);
 	}
@@ -32,8 +32,6 @@ public class DeployServerlessApplicationRequest extends RoaAcsRequest<DeployServ
 	private String webContainer;
 
 	private String jarStartArgs;
-
-	private Integer buildPackId;
 
 	private String commandArgs;
 
@@ -56,6 +54,8 @@ public class DeployServerlessApplicationRequest extends RoaAcsRequest<DeployServ
 	private String jarStartOptions;
 
 	private Integer minReadyInstances;
+
+	private String edasContainerVersion;
 
 	private String packageUrl;
 
@@ -82,17 +82,6 @@ public class DeployServerlessApplicationRequest extends RoaAcsRequest<DeployServ
 		this.jarStartArgs = jarStartArgs;
 		if(jarStartArgs != null){
 			putQueryParameter("JarStartArgs", jarStartArgs);
-		}
-	}
-
-	public Integer getBuildPackId() {
-		return this.buildPackId;
-	}
-
-	public void setBuildPackId(Integer buildPackId) {
-		this.buildPackId = buildPackId;
-		if(buildPackId != null){
-			putQueryParameter("BuildPackId", buildPackId.toString());
 		}
 	}
 
@@ -214,6 +203,17 @@ public class DeployServerlessApplicationRequest extends RoaAcsRequest<DeployServ
 		this.minReadyInstances = minReadyInstances;
 		if(minReadyInstances != null){
 			putQueryParameter("MinReadyInstances", minReadyInstances.toString());
+		}
+	}
+
+	public String getEdasContainerVersion() {
+		return this.edasContainerVersion;
+	}
+
+	public void setEdasContainerVersion(String edasContainerVersion) {
+		this.edasContainerVersion = edasContainerVersion;
+		if(edasContainerVersion != null){
+			putQueryParameter("EdasContainerVersion", edasContainerVersion);
 		}
 	}
 

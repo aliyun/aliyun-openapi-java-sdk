@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class SynchronizeResourceRequest extends RoaAcsRequest<SynchronizeResourceResponse> {
 	
 	public SynchronizeResourceRequest() {
-		super("Edas", "2017-08-01", "SynchronizeResource");
+		super("Edas", "2017-08-01", "SynchronizeResource", "edas");
 		setUriPattern("/pop/v5/resource/pop_sync_resource");
 		setMethod(MethodType.GET);
 	}

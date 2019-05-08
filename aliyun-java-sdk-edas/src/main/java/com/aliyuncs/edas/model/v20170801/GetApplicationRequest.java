@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class GetApplicationRequest extends RoaAcsRequest<GetApplicationResponse> {
 	
 	public GetApplicationRequest() {
-		super("Edas", "2017-08-01", "GetApplication");
+		super("Edas", "2017-08-01", "GetApplication", "edas");
 		setUriPattern("/pop/v5/app/app_info");
 		setMethod(MethodType.POST);
 	}

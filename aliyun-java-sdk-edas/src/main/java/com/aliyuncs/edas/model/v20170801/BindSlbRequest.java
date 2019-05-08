@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 	
 	public BindSlbRequest() {
-		super("Edas", "2017-08-01", "BindSlb");
+		super("Edas", "2017-08-01", "BindSlb", "edas");
 		setUriPattern("/pop/app/bind_slb_json");
 		setMethod(MethodType.POST);
 	}

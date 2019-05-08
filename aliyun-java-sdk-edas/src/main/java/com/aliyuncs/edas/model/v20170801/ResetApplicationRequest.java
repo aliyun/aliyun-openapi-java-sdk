@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ResetApplicationRequest extends RoaAcsRequest<ResetApplicationResponse> {
 	
 	public ResetApplicationRequest() {
-		super("Edas", "2017-08-01", "ResetApplication");
+		super("Edas", "2017-08-01", "ResetApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_reset");
 		setMethod(MethodType.POST);
 	}

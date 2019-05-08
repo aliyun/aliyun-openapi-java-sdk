@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListBuildPackRequest extends RoaAcsRequest<ListBuildPackResponse> {
 	
 	public ListBuildPackRequest() {
-		super("Edas", "2017-08-01", "ListBuildPack");
+		super("Edas", "2017-08-01", "ListBuildPack", "edas");
 		setUriPattern("/pop/v5/app/build_pack_list");
 		setMethod(MethodType.POST);
 	}

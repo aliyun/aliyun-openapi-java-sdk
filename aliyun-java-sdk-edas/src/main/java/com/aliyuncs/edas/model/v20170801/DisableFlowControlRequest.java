@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DisableFlowControlRequest extends RoaAcsRequest<DisableFlowControlResponse> {
 	
 	public DisableFlowControlRequest() {
-		super("Edas", "2017-08-01", "DisableFlowControl");
+		super("Edas", "2017-08-01", "DisableFlowControl", "edas");
 		setUriPattern("/pop/v5/flowcontrol/disable");
 		setMethod(MethodType.PUT);
 	}

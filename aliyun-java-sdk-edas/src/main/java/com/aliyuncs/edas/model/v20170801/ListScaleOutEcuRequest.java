@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListScaleOutEcuRequest extends RoaAcsRequest<ListScaleOutEcuResponse> {
 	
 	public ListScaleOutEcuRequest() {
-		super("Edas", "2017-08-01", "ListScaleOutEcu");
+		super("Edas", "2017-08-01", "ListScaleOutEcu", "edas");
 		setUriPattern("/pop/v5/resource/scale_out_ecu_list");
 		setMethod(MethodType.POST);
 	}

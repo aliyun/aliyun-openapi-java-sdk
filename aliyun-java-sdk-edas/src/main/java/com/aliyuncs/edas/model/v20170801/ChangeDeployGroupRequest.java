@@ -21,11 +21,11 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ScaleInApplicationRequest extends RoaAcsRequest<ScaleInApplicationResponse> {
+public class ChangeDeployGroupRequest extends RoaAcsRequest<ChangeDeployGroupResponse> {
 	
-	public ScaleInApplicationRequest() {
-		super("Edas", "2017-08-01", "ScaleInApplication", "edas");
-		setUriPattern("/pop/v5/changeorder/co_scale_in");
+	public ChangeDeployGroupRequest() {
+		super("Edas", "2017-08-01", "ChangeDeployGroup", "edas");
+		setUriPattern("/pop/v5/changeorder/co_change_group");
 		setMethod(MethodType.POST);
 	}
 
@@ -34,6 +34,8 @@ public class ScaleInApplicationRequest extends RoaAcsRequest<ScaleInApplicationR
 	private String appId;
 
 	private String eccInfo;
+
+	private String groupName;
 
 	public Boolean getForceStatus() {
 		return this.forceStatus;
@@ -68,9 +70,20 @@ public class ScaleInApplicationRequest extends RoaAcsRequest<ScaleInApplicationR
 		}
 	}
 
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
 	@Override
-	public Class<ScaleInApplicationResponse> getResponseClass() {
-		return ScaleInApplicationResponse.class;
+	public Class<ChangeDeployGroupResponse> getResponseClass() {
+		return ChangeDeployGroupResponse.class;
 	}
 
 }

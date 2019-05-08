@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ListEcuByRegionRequest extends RoaAcsRequest<ListEcuByRegionResponse> {
 	
 	public ListEcuByRegionRequest() {
-		super("Edas", "2017-08-01", "ListEcuByRegion");
+		super("Edas", "2017-08-01", "ListEcuByRegion", "edas");
 		setUriPattern("/pop/v5/resource/ecu_list");
 		setMethod(MethodType.GET);
 	}
