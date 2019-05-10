@@ -60,6 +60,8 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 
 	private String restoreTaskName;
 
+	private String duplicateConflict;
+
 	private String destinationEndpointPassword;
 
 	public Long getBackupGatewayId() {
@@ -246,6 +248,17 @@ public class CreateRestoreTaskRequest extends RpcAcsRequest<CreateRestoreTaskRes
 		this.restoreTaskName = restoreTaskName;
 		if(restoreTaskName != null){
 			putQueryParameter("RestoreTaskName", restoreTaskName);
+		}
+	}
+
+	public String getDuplicateConflict() {
+		return this.duplicateConflict;
+	}
+
+	public void setDuplicateConflict(String duplicateConflict) {
+		this.duplicateConflict = duplicateConflict;
+		if(duplicateConflict != null){
+			putQueryParameter("DuplicateConflict", duplicateConflict);
 		}
 	}
 
