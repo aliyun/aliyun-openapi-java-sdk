@@ -33,21 +33,23 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String componentIds;
 
-	private String appId;
-
-	private String imageUrl;
-
 	private String groupId;
 
 	private Integer batchWaitTime;
+
+	private Long releaseType;
 
 	private Integer batch;
 
 	private String appEnv;
 
-	private String warUrl;
-
 	private String packageVersion;
+
+	private String appId;
+
+	private String imageUrl;
+
+	private String warUrl;
 
 	private String desc;
 
@@ -75,28 +77,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getImageUrl() {
-		return this.imageUrl;
-	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-		if(imageUrl != null){
-			putQueryParameter("ImageUrl", imageUrl);
-		}
-	}
-
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -116,6 +96,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.batchWaitTime = batchWaitTime;
 		if(batchWaitTime != null){
 			putQueryParameter("BatchWaitTime", batchWaitTime.toString());
+		}
+	}
+
+	public Long getReleaseType() {
+		return this.releaseType;
+	}
+
+	public void setReleaseType(Long releaseType) {
+		this.releaseType = releaseType;
+		if(releaseType != null){
+			putQueryParameter("ReleaseType", releaseType.toString());
 		}
 	}
 
@@ -141,17 +132,6 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
-	public String getWarUrl() {
-		return this.warUrl;
-	}
-
-	public void setWarUrl(String warUrl) {
-		this.warUrl = warUrl;
-		if(warUrl != null){
-			putQueryParameter("WarUrl", warUrl);
-		}
-	}
-
 	public String getPackageVersion() {
 		return this.packageVersion;
 	}
@@ -160,6 +140,39 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.packageVersion = packageVersion;
 		if(packageVersion != null){
 			putQueryParameter("PackageVersion", packageVersion);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putQueryParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public String getWarUrl() {
+		return this.warUrl;
+	}
+
+	public void setWarUrl(String warUrl) {
+		this.warUrl = warUrl;
+		if(warUrl != null){
+			putQueryParameter("WarUrl", warUrl);
 		}
 	}
 
