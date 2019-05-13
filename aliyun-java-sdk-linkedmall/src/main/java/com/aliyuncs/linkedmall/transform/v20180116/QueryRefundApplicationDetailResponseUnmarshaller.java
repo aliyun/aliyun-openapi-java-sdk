@@ -47,6 +47,10 @@ public class QueryRefundApplicationDetailResponseUnmarshaller {
 		refundApplicationDetail.setDisputeCreateTime(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeCreateTime"));
 		refundApplicationDetail.setDisputeEndTime(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeEndTime"));
 		refundApplicationDetail.setDisputeId(context.longValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeId"));
+		refundApplicationDetail.setRefunderAddress(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderAddress"));
+		refundApplicationDetail.setRefunderName(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderName"));
+		refundApplicationDetail.setRefunderTel(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderTel"));
+		refundApplicationDetail.setRefunderZipCode(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderZipCode"));
 
 		MaxRefundFeeData maxRefundFeeData = new MaxRefundFeeData();
 		maxRefundFeeData.setMaxRefundFee(context.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.MaxRefundFeeData.MaxRefundFee"));

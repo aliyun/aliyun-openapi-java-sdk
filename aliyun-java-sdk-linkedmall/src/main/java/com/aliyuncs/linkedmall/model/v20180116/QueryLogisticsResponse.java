@@ -156,6 +156,8 @@ public class QueryLogisticsResponse extends AcsResponse {
 
 			private Integer quantity;
 
+			private Long itemId;
+
 			public String getGoodName() {
 				return this.goodName;
 			}
@@ -170,6 +172,14 @@ public class QueryLogisticsResponse extends AcsResponse {
 
 			public void setQuantity(Integer quantity) {
 				this.quantity = quantity;
+			}
+
+			public Long getItemId() {
+				return this.itemId;
+			}
+
+			public void setItemId(Long itemId) {
+				this.itemId = itemId;
 			}
 		}
 	}

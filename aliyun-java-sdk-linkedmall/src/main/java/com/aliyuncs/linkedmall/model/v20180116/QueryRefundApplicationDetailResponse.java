@@ -100,6 +100,14 @@ public class QueryRefundApplicationDetailResponse extends AcsResponse {
 
 		private Long disputeId;
 
+		private String refunderAddress;
+
+		private String refunderName;
+
+		private String refunderTel;
+
+		private String refunderZipCode;
+
 		private MaxRefundFeeData maxRefundFeeData;
 
 		private ApplyReasonText applyReasonText;
@@ -238,6 +246,38 @@ public class QueryRefundApplicationDetailResponse extends AcsResponse {
 
 		public void setDisputeId(Long disputeId) {
 			this.disputeId = disputeId;
+		}
+
+		public String getRefunderAddress() {
+			return this.refunderAddress;
+		}
+
+		public void setRefunderAddress(String refunderAddress) {
+			this.refunderAddress = refunderAddress;
+		}
+
+		public String getRefunderName() {
+			return this.refunderName;
+		}
+
+		public void setRefunderName(String refunderName) {
+			this.refunderName = refunderName;
+		}
+
+		public String getRefunderTel() {
+			return this.refunderTel;
+		}
+
+		public void setRefunderTel(String refunderTel) {
+			this.refunderTel = refunderTel;
+		}
+
+		public String getRefunderZipCode() {
+			return this.refunderZipCode;
+		}
+
+		public void setRefunderZipCode(String refunderZipCode) {
+			this.refunderZipCode = refunderZipCode;
 		}
 
 		public MaxRefundFeeData getMaxRefundFeeData() {

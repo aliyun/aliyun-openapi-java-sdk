@@ -55,6 +55,7 @@ public class QueryLogisticsResponseUnmarshaller {
 				GoodsItem goodsItem = new GoodsItem();
 				goodsItem.setGoodName(context.stringValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].GoodName"));
 				goodsItem.setQuantity(context.integerValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].Quantity"));
+				goodsItem.setItemId(context.longValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].ItemId"));
 
 				goods.add(goodsItem);
 			}
