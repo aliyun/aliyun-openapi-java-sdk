@@ -1,6 +1,9 @@
 2019-05-13 Version: 2.46.4
 1, Add 'ReleaseType' field into DeployApplication API
 
+2019-05-13 Version: 2.46.4
+1, Add 'ReleaseType' field into DeployApplication API
+
 2019-05-13 Version: 2.46.2
 1, Release ContinuePipeline API.
 
