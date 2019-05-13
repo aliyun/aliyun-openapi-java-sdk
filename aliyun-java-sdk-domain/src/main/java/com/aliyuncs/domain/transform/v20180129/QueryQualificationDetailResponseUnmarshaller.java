@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.domain.model.v20180129.QueryQualificationDetailResponse;
 import com.aliyuncs.domain.model.v20180129.QueryQualificationDetailResponse.QualificationCredential;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,7 +36,6 @@ public class QueryQualificationDetailResponseUnmarshaller {
 			qualificationCredential.setCredentialNo(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialNo"));
 			qualificationCredential.setCredentialType(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialType"));
 			qualificationCredential.setCredentialUrl(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialUrl"));
-			qualificationCredential.setParams(context.mapValue("QueryQualificationDetailResponse.Credentials["+ i +"].Params"));
 
 			credentials.add(qualificationCredential);
 		}

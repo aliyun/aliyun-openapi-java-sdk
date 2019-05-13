@@ -1,3 +1,6 @@
+2019-05-13 Version: 3.14.0
+1, Add three new apis, SaveSingleTaskForSaveArtExtension, QueryArtExtension and CancelTask.
+
 2019-04-22 Version: 3.13.0
 1, Add a new api, QueryDomainByDomainName.
 
