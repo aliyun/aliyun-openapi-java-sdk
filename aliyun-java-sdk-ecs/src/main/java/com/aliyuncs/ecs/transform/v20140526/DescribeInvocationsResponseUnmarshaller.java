@@ -42,6 +42,8 @@ public class DescribeInvocationsResponseUnmarshaller {
 			invocation.setFrequency(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].Frequency"));
 			invocation.setTimed(context.booleanValue("DescribeInvocationsResponse.Invocations["+ i +"].Timed"));
 			invocation.setInvokeStatus(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeStatus"));
+			invocation.setParameters(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].Parameters"));
+			invocation.setCommandContent(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].CommandContent"));
 
 			List<InvokeInstance> invokeInstances = new ArrayList<InvokeInstance>();
 			for (int j = 0; j < context.lengthValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances.Length"); j++) {

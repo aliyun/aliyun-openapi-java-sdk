@@ -41,6 +41,8 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 
 	private String securityGroupName;
 
+	private String securityGroupType;
+
 	private String resourceGroupId;
 
 	private String vpcId;
@@ -121,6 +123,17 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		this.securityGroupName = securityGroupName;
 		if(securityGroupName != null){
 			putQueryParameter("SecurityGroupName", securityGroupName);
+		}
+	}
+
+	public String getSecurityGroupType() {
+		return this.securityGroupType;
+	}
+
+	public void setSecurityGroupType(String securityGroupType) {
+		this.securityGroupType = securityGroupType;
+		if(securityGroupType != null){
+			putQueryParameter("SecurityGroupType", securityGroupType);
 		}
 	}
 

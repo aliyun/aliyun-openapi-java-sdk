@@ -15,27 +15,20 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import java.util.Map;
-import com.google.gson.Gson;
 
 /**
  * @author auto create
  * @version 
  */
-public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
+public class ModifyReservedInstanceAttributeRequest extends RpcAcsRequest<ModifyReservedInstanceAttributeResponse> {
 	
-	public InvokeCommandRequest() {
-		super("Ecs", "2014-05-26", "InvokeCommand", "ecs");
+	public ModifyReservedInstanceAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyReservedInstanceAttribute", "ecs");
 	}
 
 	private Long resourceOwnerId;
 
-	private String commandId;
-
-	private String frequency;
-
-	private Boolean timed;
+	private String description;
 
 	private String resourceOwnerAccount;
 
@@ -43,9 +36,9 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private Long ownerId;
 
-	private List<String> instanceIds;
+	private String reservedInstanceId;
 
-	private Map<Object,Object> parameters;
+	private String reservedInstanceName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,36 +51,14 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
-	public String getCommandId() {
-		return this.commandId;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setCommandId(String commandId) {
-		this.commandId = commandId;
-		if(commandId != null){
-			putQueryParameter("CommandId", commandId);
-		}
-	}
-
-	public String getFrequency() {
-		return this.frequency;
-	}
-
-	public void setFrequency(String frequency) {
-		this.frequency = frequency;
-		if(frequency != null){
-			putQueryParameter("Frequency", frequency);
-		}
-	}
-
-	public Boolean getTimed() {
-		return this.timed;
-	}
-
-	public void setTimed(Boolean timed) {
-		this.timed = timed;
-		if(timed != null){
-			putQueryParameter("Timed", timed.toString());
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -124,33 +95,31 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		}
 	}
 
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
+	public String getReservedInstanceId() {
+		return this.reservedInstanceId;
 	}
 
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			for (int i = 0; i < instanceIds.size(); i++) {
-				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
-			}
-		}	
+	public void setReservedInstanceId(String reservedInstanceId) {
+		this.reservedInstanceId = reservedInstanceId;
+		if(reservedInstanceId != null){
+			putQueryParameter("ReservedInstanceId", reservedInstanceId);
+		}
 	}
 
-	public Map<Object,Object> getParameters() {
-		return this.parameters;
+	public String getReservedInstanceName() {
+		return this.reservedInstanceName;
 	}
 
-	public void setParameters(Map<Object,Object> parameters) {
-		this.parameters = parameters;
-		if(parameters != null){
-			putQueryParameter("Parameters", new Gson().toJson(parameters));
+	public void setReservedInstanceName(String reservedInstanceName) {
+		this.reservedInstanceName = reservedInstanceName;
+		if(reservedInstanceName != null){
+			putQueryParameter("ReservedInstanceName", reservedInstanceName);
 		}
 	}
 
 	@Override
-	public Class<InvokeCommandResponse> getResponseClass() {
-		return InvokeCommandResponse.class;
+	public Class<ModifyReservedInstanceAttributeResponse> getResponseClass() {
+		return ModifyReservedInstanceAttributeResponse.class;
 	}
 
 }

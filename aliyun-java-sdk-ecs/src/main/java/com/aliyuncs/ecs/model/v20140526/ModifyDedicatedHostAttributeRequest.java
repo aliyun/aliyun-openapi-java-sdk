@@ -44,6 +44,8 @@ public class ModifyDedicatedHostAttributeRequest extends RpcAcsRequest<ModifyDed
 
 	private Integer networkAttributesSlbUdpTimeout;
 
+	private String autoPlacement;
+
 	private Integer networkAttributesUdpTimeout;
 
 	public Long getResourceOwnerId() {
@@ -142,6 +144,17 @@ public class ModifyDedicatedHostAttributeRequest extends RpcAcsRequest<ModifyDed
 		this.networkAttributesSlbUdpTimeout = networkAttributesSlbUdpTimeout;
 		if(networkAttributesSlbUdpTimeout != null){
 			putQueryParameter("NetworkAttributes.SlbUdpTimeout", networkAttributesSlbUdpTimeout.toString());
+		}
+	}
+
+	public String getAutoPlacement() {
+		return this.autoPlacement;
+	}
+
+	public void setAutoPlacement(String autoPlacement) {
+		this.autoPlacement = autoPlacement;
+		if(autoPlacement != null){
+			putQueryParameter("AutoPlacement", autoPlacement);
 		}
 	}
 

@@ -141,6 +141,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String kMSKeyId;
 
+		private String bdfId;
+
 		private List<OperationLock> operationLocks;
 
 		private List<MountInstance> mountInstances;
@@ -417,6 +419,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setKMSKeyId(String kMSKeyId) {
 			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getBdfId() {
+			return this.bdfId;
+		}
+
+		public void setBdfId(String bdfId) {
+			this.bdfId = bdfId;
 		}
 
 		public List<OperationLock> getOperationLocks() {

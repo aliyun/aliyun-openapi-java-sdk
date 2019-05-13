@@ -1,3 +1,6 @@
+2019-05-13 Version: 4.16.8
+1, Support for creating instances and joining multiple security groups at the same time.
+
 2019-04-18 Version: 4.16.7
 1, add ReservedInstance API.
 

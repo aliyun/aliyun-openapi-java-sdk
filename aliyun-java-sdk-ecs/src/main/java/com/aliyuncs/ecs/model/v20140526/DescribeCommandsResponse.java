@@ -93,6 +93,10 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private Boolean enableParameter;
+
+		private List<String> parameterNames;
+
 		public String getCommandId() {
 			return this.commandId;
 		}
@@ -155,6 +159,22 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public Boolean getEnableParameter() {
+			return this.enableParameter;
+		}
+
+		public void setEnableParameter(Boolean enableParameter) {
+			this.enableParameter = enableParameter;
+		}
+
+		public List<String> getParameterNames() {
+			return this.parameterNames;
+		}
+
+		public void setParameterNames(List<String> parameterNames) {
+			this.parameterNames = parameterNames;
 		}
 	}
 

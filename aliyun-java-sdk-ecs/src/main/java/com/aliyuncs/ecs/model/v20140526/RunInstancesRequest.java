@@ -129,6 +129,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String creditSpecification;
 
+	private List<String> securityGroupIdss;
+
 	private List<DataDisk> dataDisks;
 
 	private Long launchTemplateVersion;
@@ -707,6 +709,19 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		if(creditSpecification != null){
 			putQueryParameter("CreditSpecification", creditSpecification);
 		}
+	}
+
+	public List<String> getSecurityGroupIdss() {
+		return this.securityGroupIdss;
+	}
+
+	public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+		this.securityGroupIdss = securityGroupIdss;	
+		if (securityGroupIdss != null) {
+			for (int i = 0; i < securityGroupIdss.size(); i++) {
+				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
+			}
+		}	
 	}
 
 	public List<DataDisk> getDataDisks() {

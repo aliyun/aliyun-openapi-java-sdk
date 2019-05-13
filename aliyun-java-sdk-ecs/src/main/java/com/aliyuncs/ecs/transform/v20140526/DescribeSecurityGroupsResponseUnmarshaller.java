@@ -41,6 +41,7 @@ public class DescribeSecurityGroupsResponseUnmarshaller {
 			securityGroup.setSecurityGroupName(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupName"));
 			securityGroup.setVpcId(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].VpcId"));
 			securityGroup.setCreationTime(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].CreationTime"));
+			securityGroup.setSecurityGroupType(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].SecurityGroupType"));
 			securityGroup.setAvailableInstanceAmount(context.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].AvailableInstanceAmount"));
 			securityGroup.setEcsCount(context.integerValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].EcsCount"));
 			securityGroup.setResourceGroupId(context.stringValue("DescribeSecurityGroupsResponse.SecurityGroups["+ i +"].ResourceGroupId"));

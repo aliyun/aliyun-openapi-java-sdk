@@ -65,6 +65,8 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 
 	private String zoneId;
 
+	private String autoPlacement;
+
 	private String chargeType;
 
 	private Integer networkAttributesUdpTimeout;
@@ -278,6 +280,17 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getAutoPlacement() {
+		return this.autoPlacement;
+	}
+
+	public void setAutoPlacement(String autoPlacement) {
+		this.autoPlacement = autoPlacement;
+		if(autoPlacement != null){
+			putQueryParameter("AutoPlacement", autoPlacement);
 		}
 	}
 

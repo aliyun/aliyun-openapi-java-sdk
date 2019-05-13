@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.DedicatedHostAttribute;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.DedicatedInstanceAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EcsCapacityReservationAttr;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EipAddress;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.LockReason;
@@ -139,6 +140,11 @@ public class DescribeInstancesResponseUnmarshaller {
 			ecsCapacityReservationAttr.setCapacityReservationId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EcsCapacityReservationAttr.CapacityReservationId"));
 			ecsCapacityReservationAttr.setCapacityReservationPreference(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EcsCapacityReservationAttr.CapacityReservationPreference"));
 			instance.setEcsCapacityReservationAttr(ecsCapacityReservationAttr);
+
+			DedicatedInstanceAttribute dedicatedInstanceAttribute = new DedicatedInstanceAttribute();
+			dedicatedInstanceAttribute.setTenancy(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedInstanceAttribute.Tenancy"));
+			dedicatedInstanceAttribute.setAffinity(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedInstanceAttribute.Affinity"));
+			instance.setDedicatedInstanceAttribute(dedicatedInstanceAttribute);
 
 			List<NetworkInterface> networkInterfaces = new ArrayList<NetworkInterface>();
 			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkInterfaces.Length"); j++) {

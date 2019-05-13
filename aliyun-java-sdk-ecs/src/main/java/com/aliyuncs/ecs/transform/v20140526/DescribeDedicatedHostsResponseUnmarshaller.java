@@ -40,6 +40,7 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts.Length"); i++) {
 			DedicatedHost dedicatedHost = new DedicatedHost();
 			dedicatedHost.setDedicatedHostId(context.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostId"));
+			dedicatedHost.setAutoPlacement(context.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].AutoPlacement"));
 			dedicatedHost.setRegionId(context.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].RegionId"));
 			dedicatedHost.setZoneId(context.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ZoneId"));
 			dedicatedHost.setDedicatedHostName(context.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostName"));

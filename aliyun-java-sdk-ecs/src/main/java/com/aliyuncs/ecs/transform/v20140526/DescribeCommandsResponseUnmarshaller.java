@@ -42,6 +42,13 @@ public class DescribeCommandsResponseUnmarshaller {
 			command.setWorkingDir(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].WorkingDir"));
 			command.setTimeout(context.longValue("DescribeCommandsResponse.Commands["+ i +"].Timeout"));
 			command.setCreationTime(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].CreationTime"));
+			command.setEnableParameter(context.booleanValue("DescribeCommandsResponse.Commands["+ i +"].EnableParameter"));
+
+			List<String> parameterNames = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeCommandsResponse.Commands["+ i +"].ParameterNames.Length"); j++) {
+				parameterNames.add(context.stringValue("DescribeCommandsResponse.Commands["+ i +"].ParameterNames["+ j +"]"));
+			}
+			command.setParameterNames(parameterNames);
 
 			commands.add(command);
 		}

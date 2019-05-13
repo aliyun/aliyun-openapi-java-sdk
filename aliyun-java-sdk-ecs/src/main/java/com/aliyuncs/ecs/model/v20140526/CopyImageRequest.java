@@ -45,6 +45,8 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 
 	private List<Tag> tags;
 
+	private String kMSKeyId;
+
 	private String destinationDescription;
 
 	public Long getResourceOwnerId() {
@@ -147,6 +149,17 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+		if(kMSKeyId != null){
+			putQueryParameter("KMSKeyId", kMSKeyId);
+		}
 	}
 
 	public String getDestinationDescription() {

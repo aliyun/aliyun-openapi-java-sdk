@@ -113,6 +113,8 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String securityGroupType;
+
 		private Integer availableInstanceAmount;
 
 		private Integer ecsCount;
@@ -159,6 +161,14 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getSecurityGroupType() {
+			return this.securityGroupType;
+		}
+
+		public void setSecurityGroupType(String securityGroupType) {
+			this.securityGroupType = securityGroupType;
 		}
 
 		public Integer getAvailableInstanceAmount() {

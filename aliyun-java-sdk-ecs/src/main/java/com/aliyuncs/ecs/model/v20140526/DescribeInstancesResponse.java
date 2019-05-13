@@ -187,6 +187,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private EcsCapacityReservationAttr ecsCapacityReservationAttr;
 
+		private DedicatedInstanceAttribute dedicatedInstanceAttribute;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -643,6 +645,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.ecsCapacityReservationAttr = ecsCapacityReservationAttr;
 		}
 
+		public DedicatedInstanceAttribute getDedicatedInstanceAttribute() {
+			return this.dedicatedInstanceAttribute;
+		}
+
+		public void setDedicatedInstanceAttribute(DedicatedInstanceAttribute dedicatedInstanceAttribute) {
+			this.dedicatedInstanceAttribute = dedicatedInstanceAttribute;
+		}
+
 		public static class NetworkInterface {
 
 			private String networkInterfaceId;
@@ -861,6 +871,29 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setCapacityReservationPreference(String capacityReservationPreference) {
 				this.capacityReservationPreference = capacityReservationPreference;
+			}
+		}
+
+		public static class DedicatedInstanceAttribute {
+
+			private String tenancy;
+
+			private String affinity;
+
+			public String getTenancy() {
+				return this.tenancy;
+			}
+
+			public void setTenancy(String tenancy) {
+				this.tenancy = tenancy;
+			}
+
+			public String getAffinity() {
+				return this.affinity;
+			}
+
+			public void setAffinity(String affinity) {
+				this.affinity = affinity;
 			}
 		}
 	}

@@ -79,6 +79,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private String dedicatedHostId;
 
+		private String autoPlacement;
+
 		private String regionId;
 
 		private String zoneId;
@@ -135,6 +137,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public void setDedicatedHostId(String dedicatedHostId) {
 			this.dedicatedHostId = dedicatedHostId;
+		}
+
+		public String getAutoPlacement() {
+			return this.autoPlacement;
+		}
+
+		public void setAutoPlacement(String autoPlacement) {
+			this.autoPlacement = autoPlacement;
 		}
 
 		public String getBizRegionId() {

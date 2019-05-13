@@ -46,6 +46,8 @@ public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 
 	private String name;
 
+	private Boolean enableParameter;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -153,6 +155,17 @@ public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Boolean getEnableParameter() {
+		return this.enableParameter;
+	}
+
+	public void setEnableParameter(Boolean enableParameter) {
+		this.enableParameter = enableParameter;
+		if(enableParameter != null){
+			putQueryParameter("EnableParameter", enableParameter.toString());
 		}
 	}
 
