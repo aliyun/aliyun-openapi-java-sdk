@@ -1,3 +1,7 @@
+2019-05-14 Version: 1.0.17
+1, Change the implementation of some API
+ 
+
 2019-05-07 Version: 1.0.16
 1, Add new interface
 
