@@ -4,6 +4,9 @@
 2019-05-14 Version: 1.14.1
 1, Support body detect.
 
+2019-05-14 Version: 1.14.1
+1, Support body detect.
+
 2019-04-16 Version: 1.14.0
 1, Add group api.
 
