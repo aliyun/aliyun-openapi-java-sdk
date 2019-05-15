@@ -45,6 +45,8 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private String resourceGroupId;
 
+	private String instanceId;
+
 	private Integer size;
 
 	private Boolean encrypted;
@@ -157,6 +159,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

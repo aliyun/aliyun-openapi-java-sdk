@@ -1,3 +1,8 @@
+2019-05-15 Version: 4.16.9
+1, Add InstanceId parameter to api CreateDisk
+2, Add parameter Affinity and Tenancy in ECS instance DedicatedHost related apis.
+3, Add SecurityGroupIds parameter to Instance creation apis.
+
 2019-05-13 Version: 4.16.8
 1, Support for creating instances and joining multiple security groups at the same time.
 

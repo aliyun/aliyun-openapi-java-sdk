@@ -85,6 +85,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Integer internetMaxBandwidthIn;
 
+	private String affinity;
+
 	private String imageId;
 
 	private String spotInterruptionBehavior;
@@ -118,6 +120,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String tenancy;
 
 	private String systemDiskDiskName;
 
@@ -463,6 +467,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getAffinity() {
+		return this.affinity;
+	}
+
+	public void setAffinity(String affinity) {
+		this.affinity = affinity;
+		if(affinity != null){
+			putQueryParameter("Affinity", affinity);
+		}
+	}
+
 	public String getImageId() {
 		return this.imageId;
 	}
@@ -653,6 +668,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getTenancy() {
+		return this.tenancy;
+	}
+
+	public void setTenancy(String tenancy) {
+		this.tenancy = tenancy;
+		if(tenancy != null){
+			putQueryParameter("Tenancy", tenancy);
 		}
 	}
 

@@ -77,6 +77,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Boolean useAdditionalService;
 
+	private String affinity;
+
 	private String imageId;
 
 	private String clientToken;
@@ -112,6 +114,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String tenancy;
 
 	private String systemDiskDiskName;
 
@@ -407,6 +411,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getAffinity() {
+		return this.affinity;
+	}
+
+	public void setAffinity(String affinity) {
+		this.affinity = affinity;
+		if(affinity != null){
+			putQueryParameter("Affinity", affinity);
+		}
+	}
+
 	public String getImageId() {
 		return this.imageId;
 	}
@@ -606,6 +621,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getTenancy() {
+		return this.tenancy;
+	}
+
+	public void setTenancy(String tenancy) {
+		this.tenancy = tenancy;
+		if(tenancy != null){
+			putQueryParameter("Tenancy", tenancy);
 		}
 	}
 

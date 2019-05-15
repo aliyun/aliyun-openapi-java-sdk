@@ -34,6 +34,8 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 
 	private String ownerAccount;
 
+	private String tenancy;
+
 	private String dedicatedHostId;
 
 	private Long ownerId;
@@ -41,6 +43,8 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 	private String instanceId;
 
 	private Boolean force;
+
+	private String affinity;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -86,6 +90,17 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 		}
 	}
 
+	public String getTenancy() {
+		return this.tenancy;
+	}
+
+	public void setTenancy(String tenancy) {
+		this.tenancy = tenancy;
+		if(tenancy != null){
+			putQueryParameter("Tenancy", tenancy);
+		}
+	}
+
 	public String getDedicatedHostId() {
 		return this.dedicatedHostId;
 	}
@@ -127,6 +142,17 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 		this.force = force;
 		if(force != null){
 			putQueryParameter("Force", force.toString());
+		}
+	}
+
+	public String getAffinity() {
+		return this.affinity;
+	}
+
+	public void setAffinity(String affinity) {
+		this.affinity = affinity;
+		if(affinity != null){
+			putQueryParameter("Affinity", affinity);
 		}
 	}
 
