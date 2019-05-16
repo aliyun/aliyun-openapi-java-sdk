@@ -1248,6 +1248,10 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String appId;
 
+			private String icon;
+
+			private String onlineStatus;
+
 			private List<Category> categories;
 
 			public String getTitle() {
@@ -1368,6 +1372,22 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setAppId(String appId) {
 				this.appId = appId;
+			}
+
+			public String getIcon() {
+				return this.icon;
+			}
+
+			public void setIcon(String icon) {
+				this.icon = icon;
+			}
+
+			public String getOnlineStatus() {
+				return this.onlineStatus;
+			}
+
+			public void setOnlineStatus(String onlineStatus) {
+				this.onlineStatus = onlineStatus;
 			}
 
 			public List<Category> getCategories() {

@@ -101,6 +101,8 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		private String narrowBandType;
 
+		private String specification;
+
 		public Long getWidth() {
 			return this.width;
 		}
@@ -275,6 +277,14 @@ public class GetPlayInfoResponse extends AcsResponse {
 
 		public void setNarrowBandType(String narrowBandType) {
 			this.narrowBandType = narrowBandType;
+		}
+
+		public String getSpecification() {
+			return this.specification;
+		}
+
+		public void setSpecification(String specification) {
+			this.specification = specification;
 		}
 	}
 

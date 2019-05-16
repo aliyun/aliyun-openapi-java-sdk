@@ -34,6 +34,8 @@ public class CreateUploadImageResponse extends AcsResponse {
 
 	private String uploadAuth;
 
+	private String fileURL;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +74,14 @@ public class CreateUploadImageResponse extends AcsResponse {
 
 	public void setUploadAuth(String uploadAuth) {
 		this.uploadAuth = uploadAuth;
+	}
+
+	public String getFileURL() {
+		return this.fileURL;
+	}
+
+	public void setFileURL(String fileURL) {
+		this.fileURL = fileURL;
 	}
 
 	@Override

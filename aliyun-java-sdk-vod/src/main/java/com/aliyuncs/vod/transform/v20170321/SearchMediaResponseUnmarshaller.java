@@ -203,6 +203,8 @@ public class SearchMediaResponseUnmarshaller {
 			attachedMedia.setStorageLocation(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.StorageLocation"));
 			attachedMedia.setRegionId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.RegionId"));
 			attachedMedia.setAppId(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.AppId"));
+			attachedMedia.setIcon(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Icon"));
+			attachedMedia.setOnlineStatus(context.stringValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.OnlineStatus"));
 
 			List<Category> categories = new ArrayList<Category>();
 			for (int j = 0; j < context.lengthValue("SearchMediaResponse.MediaList["+ i +"].AttachedMedia.Categories.Length"); j++) {

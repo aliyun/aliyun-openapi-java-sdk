@@ -27,6 +27,7 @@ public class CreateUploadImageResponseUnmarshaller {
 		createUploadImageResponse.setImageURL(context.stringValue("CreateUploadImageResponse.ImageURL"));
 		createUploadImageResponse.setUploadAddress(context.stringValue("CreateUploadImageResponse.UploadAddress"));
 		createUploadImageResponse.setUploadAuth(context.stringValue("CreateUploadImageResponse.UploadAuth"));
+		createUploadImageResponse.setFileURL(context.stringValue("CreateUploadImageResponse.FileURL"));
 	 
 	 	return createUploadImageResponse;
 	}

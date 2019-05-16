@@ -83,6 +83,10 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 
 		private String onlineStatus;
 
+		private String icon;
+
+		private String regionId;
+
 		private List<Category> categories;
 
 		public String getMediaId() {
@@ -187,6 +191,38 @@ public class GetAttachedMediaInfoResponse extends AcsResponse {
 
 		public void setOnlineStatus(String onlineStatus) {
 			this.onlineStatus = onlineStatus;
+		}
+
+		public String getIcon() {
+			return this.icon;
+		}
+
+		public void setIcon(String icon) {
+			this.icon = icon;
+		}
+
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<Category> getCategories() {

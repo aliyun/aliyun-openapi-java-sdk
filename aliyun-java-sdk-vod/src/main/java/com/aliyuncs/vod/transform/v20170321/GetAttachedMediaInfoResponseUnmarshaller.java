@@ -51,6 +51,8 @@ public class GetAttachedMediaInfoResponseUnmarshaller {
 			attachedMedia.setAppId(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].AppId"));
 			attachedMedia.setStatus(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Status"));
 			attachedMedia.setOnlineStatus(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].OnlineStatus"));
+			attachedMedia.setIcon(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Icon"));
+			attachedMedia.setRegionId(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].RegionId"));
 
 			List<Category> categories = new ArrayList<Category>();
 			for (int j = 0; j < context.lengthValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories.Length"); j++) {

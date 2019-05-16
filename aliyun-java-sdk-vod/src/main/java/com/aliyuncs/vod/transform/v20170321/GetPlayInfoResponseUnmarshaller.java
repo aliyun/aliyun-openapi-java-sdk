@@ -76,6 +76,7 @@ public class GetPlayInfoResponseUnmarshaller {
 			playInfo.setModificationTime(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].ModificationTime"));
 			playInfo.setEncryptType(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].EncryptType"));
 			playInfo.setNarrowBandType(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].NarrowBandType"));
+			playInfo.setSpecification(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Specification"));
 
 			playInfoList.add(playInfo);
 		}
