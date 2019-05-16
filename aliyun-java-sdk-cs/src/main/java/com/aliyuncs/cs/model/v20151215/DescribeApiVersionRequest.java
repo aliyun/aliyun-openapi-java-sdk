@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeApiVersionRequest extends RoaAcsRequest<DescribeApiVersionResponse> {
 	
 	public DescribeApiVersionRequest() {
-		super("CS", "2015-12-15", "DescribeApiVersion", "cs");
+		super("CS", "2015-12-15", "DescribeApiVersion");
 		setUriPattern("/version");
 		setMethod(MethodType.GET);
 	}

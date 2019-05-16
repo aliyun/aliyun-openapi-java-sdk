@@ -24,6 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ScaleClusterResponse extends AcsResponse {
 
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	@Override
 	public ScaleClusterResponse getInstance(UnmarshallerContext context) {
 		return	ScaleClusterResponseUnmarshaller.unmarshall(this, context);

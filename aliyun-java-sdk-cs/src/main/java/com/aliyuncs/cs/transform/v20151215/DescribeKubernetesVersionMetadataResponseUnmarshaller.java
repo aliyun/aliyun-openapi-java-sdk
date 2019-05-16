@@ -14,16 +14,16 @@
 
 package com.aliyuncs.cs.transform.v20151215;
 
-import com.aliyuncs.cs.model.v20151215.ScaleClusterResponse;
+import com.aliyuncs.cs.model.v20151215.DescribeKubernetesVersionMetadataResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ScaleClusterResponseUnmarshaller {
+public class DescribeKubernetesVersionMetadataResponseUnmarshaller {
 
-	public static ScaleClusterResponse unmarshall(ScaleClusterResponse scaleClusterResponse, UnmarshallerContext context) {
+	public static DescribeKubernetesVersionMetadataResponse unmarshall(DescribeKubernetesVersionMetadataResponse describeKubernetesVersionMetadataResponse, UnmarshallerContext context) {
 		
-		scaleClusterResponse.setRequestId(context.stringValue("ScaleClusterResponse.RequestId"));
+		describeKubernetesVersionMetadataResponse.setRequestId(context.stringValue("DescribeKubernetesVersionMetadataResponse.RequestId"));
 	 
-	 	return scaleClusterResponse;
+	 	return describeKubernetesVersionMetadataResponse;
 	}
 }

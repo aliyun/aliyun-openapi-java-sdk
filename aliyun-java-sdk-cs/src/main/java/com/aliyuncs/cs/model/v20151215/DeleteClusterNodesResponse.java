@@ -15,14 +15,14 @@
 package com.aliyuncs.cs.model.v20151215;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cs.transform.v20151215.DescribeClusterUserKubeconfigResponseUnmarshaller;
+import com.aliyuncs.cs.transform.v20151215.DeleteClusterNodesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeClusterUserKubeconfigResponse extends AcsResponse {
+public class DeleteClusterNodesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DescribeClusterUserKubeconfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeClusterUserKubeconfigResponse getInstance(UnmarshallerContext context) {
-		return	DescribeClusterUserKubeconfigResponseUnmarshaller.unmarshall(this, context);
+	public DeleteClusterNodesResponse getInstance(UnmarshallerContext context) {
+		return	DeleteClusterNodesResponseUnmarshaller.unmarshall(this, context);
 	}
 }

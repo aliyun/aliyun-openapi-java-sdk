@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 	
 	public CreateClusterRequest() {
-		super("CS", "2015-12-15", "CreateCluster", "cs");
+		super("CS", "2015-12-15", "CreateCluster");
 		setUriPattern("/clusters");
 		setMethod(MethodType.POST);
 	}

@@ -22,6 +22,7 @@ public class DescribeClusterUserKubeconfigResponseUnmarshaller {
 
 	public static DescribeClusterUserKubeconfigResponse unmarshall(DescribeClusterUserKubeconfigResponse describeClusterUserKubeconfigResponse, UnmarshallerContext context) {
 		
+		describeClusterUserKubeconfigResponse.setRequestId(context.stringValue("DescribeClusterUserKubeconfigResponse.RequestId"));
 	 
 	 	return describeClusterUserKubeconfigResponse;
 	}

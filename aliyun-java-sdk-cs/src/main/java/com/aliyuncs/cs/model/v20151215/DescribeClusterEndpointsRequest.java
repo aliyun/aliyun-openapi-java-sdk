@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeClusterEndpointsRequest extends RoaAcsRequest<DescribeClusterEndpointsResponse> {
 	
 	public DescribeClusterEndpointsRequest() {
-		super("CS", "2015-12-15", "DescribeClusterEndpoints", "cs");
+		super("CS", "2015-12-15", "DescribeClusterEndpoints");
 		setUriPattern("/clusters/[ClusterId]/endpoints");
 		setMethod(MethodType.GET);
 	}

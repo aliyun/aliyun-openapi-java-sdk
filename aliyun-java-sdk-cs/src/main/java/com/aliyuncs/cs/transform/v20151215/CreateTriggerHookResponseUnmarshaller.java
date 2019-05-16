@@ -14,16 +14,16 @@
 
 package com.aliyuncs.cs.transform.v20151215;
 
-import com.aliyuncs.cs.model.v20151215.ScaleClusterResponse;
+import com.aliyuncs.cs.model.v20151215.CreateTriggerHookResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ScaleClusterResponseUnmarshaller {
+public class CreateTriggerHookResponseUnmarshaller {
 
-	public static ScaleClusterResponse unmarshall(ScaleClusterResponse scaleClusterResponse, UnmarshallerContext context) {
+	public static CreateTriggerHookResponse unmarshall(CreateTriggerHookResponse createTriggerHookResponse, UnmarshallerContext context) {
 		
-		scaleClusterResponse.setRequestId(context.stringValue("ScaleClusterResponse.RequestId"));
+		createTriggerHookResponse.setRequestId(context.stringValue("CreateTriggerHookResponse.RequestId"));
 	 
-	 	return scaleClusterResponse;
+	 	return createTriggerHookResponse;
 	}
 }

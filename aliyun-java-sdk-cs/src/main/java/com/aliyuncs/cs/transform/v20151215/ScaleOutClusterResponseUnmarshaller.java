@@ -14,16 +14,16 @@
 
 package com.aliyuncs.cs.transform.v20151215;
 
-import com.aliyuncs.cs.model.v20151215.ScaleClusterResponse;
+import com.aliyuncs.cs.model.v20151215.ScaleOutClusterResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ScaleClusterResponseUnmarshaller {
+public class ScaleOutClusterResponseUnmarshaller {
 
-	public static ScaleClusterResponse unmarshall(ScaleClusterResponse scaleClusterResponse, UnmarshallerContext context) {
+	public static ScaleOutClusterResponse unmarshall(ScaleOutClusterResponse scaleOutClusterResponse, UnmarshallerContext context) {
 		
-		scaleClusterResponse.setRequestId(context.stringValue("ScaleClusterResponse.RequestId"));
+		scaleOutClusterResponse.setRequestId(context.stringValue("ScaleOutClusterResponse.RequestId"));
 	 
-	 	return scaleClusterResponse;
+	 	return scaleOutClusterResponse;
 	}
 }

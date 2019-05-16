@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeClusterCertsRequest extends RoaAcsRequest<DescribeClusterCertsResponse> {
 	
 	public DescribeClusterCertsRequest() {
-		super("CS", "2015-12-15", "DescribeClusterCerts", "cs");
+		super("CS", "2015-12-15", "DescribeClusterCerts");
 		setUriPattern("/clusters/[ClusterId]/certs");
 		setMethod(MethodType.GET);
 	}

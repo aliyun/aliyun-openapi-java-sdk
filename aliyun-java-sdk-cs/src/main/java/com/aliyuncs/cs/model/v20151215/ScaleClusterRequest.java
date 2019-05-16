@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ScaleClusterRequest extends RoaAcsRequest<ScaleClusterResponse> {
 	
 	public ScaleClusterRequest() {
-		super("CS", "2015-12-15", "ScaleCluster", "cs");
+		super("CS", "2015-12-15", "ScaleCluster");
 		setUriPattern("/clusters/[ClusterId]");
 		setMethod(MethodType.PUT);
 	}

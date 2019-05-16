@@ -21,11 +21,11 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesResponse> {
+public class ScaleOutClusterRequest extends RoaAcsRequest<ScaleOutClusterResponse> {
 	
-	public AttachInstancesRequest() {
-		super("CS", "2015-12-15", "AttachInstances");
-		setUriPattern("/clusters/[ClusterId]/attach");
+	public ScaleOutClusterRequest() {
+		super("CS", "2015-12-15", "ScaleOutCluster");
+		setUriPattern("/api/v2/clusters/[ClusterId]");
 		setMethod(MethodType.POST);
 	}
 
@@ -43,8 +43,8 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 	}
 
 	@Override
-	public Class<AttachInstancesResponse> getResponseClass() {
-		return AttachInstancesResponse.class;
+	public Class<ScaleOutClusterResponse> getResponseClass() {
+		return ScaleOutClusterResponse.class;
 	}
 
 }

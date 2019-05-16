@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeClusterLogsRequest extends RoaAcsRequest<DescribeClusterLogsResponse> {
 	
 	public DescribeClusterLogsRequest() {
-		super("CS", "2015-12-15", "DescribeClusterLogs", "cs");
+		super("CS", "2015-12-15", "DescribeClusterLogs");
 		setUriPattern("/clusters/[ClusterId]/logs");
 		setMethod(MethodType.GET);
 	}

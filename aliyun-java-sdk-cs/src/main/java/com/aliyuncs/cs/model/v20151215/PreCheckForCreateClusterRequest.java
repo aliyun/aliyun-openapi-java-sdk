@@ -21,30 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesResponse> {
+public class PreCheckForCreateClusterRequest extends RoaAcsRequest<PreCheckForCreateClusterResponse> {
 	
-	public AttachInstancesRequest() {
-		super("CS", "2015-12-15", "AttachInstances");
-		setUriPattern("/clusters/[ClusterId]/attach");
+	public PreCheckForCreateClusterRequest() {
+		super("CS", "2015-12-15", "PreCheckForCreateCluster");
+		setUriPattern("/api/v1/ess/precheck");
 		setMethod(MethodType.POST);
 	}
 
-	private String clusterId;
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putPathParameter("ClusterId", clusterId);
-		}
-	}
-
 	@Override
-	public Class<AttachInstancesResponse> getResponseClass() {
-		return AttachInstancesResponse.class;
+	public Class<PreCheckForCreateClusterResponse> getResponseClass() {
+		return PreCheckForCreateClusterResponse.class;
 	}
 
 }

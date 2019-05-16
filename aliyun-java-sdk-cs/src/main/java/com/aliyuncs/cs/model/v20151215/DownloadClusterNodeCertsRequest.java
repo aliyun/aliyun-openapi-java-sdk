@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DownloadClusterNodeCertsRequest extends RoaAcsRequest<DownloadClusterNodeCertsResponse> {
 	
 	public DownloadClusterNodeCertsRequest() {
-		super("CS", "2015-12-15", "DownloadClusterNodeCerts", "cs");
+		super("CS", "2015-12-15", "DownloadClusterNodeCerts");
 		setUriPattern("/token/[Token]/nodes/[NodeId]/certs");
 		setMethod(MethodType.GET);
 	}

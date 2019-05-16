@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DeleteClusterNodeRequest extends RoaAcsRequest<DeleteClusterNodeResponse> {
 	
 	public DeleteClusterNodeRequest() {
-		super("CS", "2015-12-15", "DeleteClusterNode", "cs");
+		super("CS", "2015-12-15", "DeleteClusterNode");
 		setUriPattern("/clusters/[ClusterId]/ip/[Ip]");
 		setMethod(MethodType.DELETE);
 	}

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class ResetClusterNodeRequest extends RoaAcsRequest<ResetClusterNodeResponse> {
 	
 	public ResetClusterNodeRequest() {
-		super("CS", "2015-12-15", "ResetClusterNode", "cs");
+		super("CS", "2015-12-15", "ResetClusterNode");
 		setUriPattern("/clusters/[ClusterId]/instances/[InstanceId]/reset");
 		setMethod(MethodType.POST);
 	}

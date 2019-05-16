@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DescribeClusterUserKubeconfigRequest extends RoaAcsRequest<DescribeClusterUserKubeconfigResponse> {
 	
 	public DescribeClusterUserKubeconfigRequest() {
-		super("CS", "2015-12-15", "DescribeClusterUserKubeconfig", "cs");
+		super("CS", "2015-12-15", "DescribeClusterUserKubeconfig");
 		setUriPattern("/k8s/[ClusterId]/user_config");
 		setMethod(MethodType.GET);
 	}
 
+	private Boolean privateIpAddress;
+
 	private String clusterId;
+
+	public Boolean getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(Boolean privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress.toString());
+		}
+	}
 
 	public String getClusterId() {
 		return this.clusterId;

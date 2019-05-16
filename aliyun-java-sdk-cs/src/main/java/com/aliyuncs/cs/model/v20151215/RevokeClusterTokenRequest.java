@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class RevokeClusterTokenRequest extends RoaAcsRequest<RevokeClusterTokenResponse> {
 	
 	public RevokeClusterTokenRequest() {
-		super("CS", "2015-12-15", "RevokeClusterToken", "cs");
+		super("CS", "2015-12-15", "RevokeClusterToken");
 		setUriPattern("/token/[Token]/revoke");
 		setMethod(MethodType.DELETE);
 	}

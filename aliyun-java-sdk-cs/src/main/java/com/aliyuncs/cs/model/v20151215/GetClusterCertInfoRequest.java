@@ -21,12 +21,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesResponse> {
+public class GetClusterCertInfoRequest extends RoaAcsRequest<GetClusterCertInfoResponse> {
 	
-	public AttachInstancesRequest() {
-		super("CS", "2015-12-15", "AttachInstances");
-		setUriPattern("/clusters/[ClusterId]/attach");
-		setMethod(MethodType.POST);
+	public GetClusterCertInfoRequest() {
+		super("CS", "2015-12-15", "GetClusterCertInfo");
+		setUriPattern("/clusters/[ClusterId]/hosts/certs");
+		setMethod(MethodType.GET);
 	}
 
 	private String clusterId;
@@ -43,8 +43,8 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 	}
 
 	@Override
-	public Class<AttachInstancesResponse> getResponseClass() {
-		return AttachInstancesResponse.class;
+	public Class<GetClusterCertInfoResponse> getResponseClass() {
+		return GetClusterCertInfoResponse.class;
 	}
 
 }

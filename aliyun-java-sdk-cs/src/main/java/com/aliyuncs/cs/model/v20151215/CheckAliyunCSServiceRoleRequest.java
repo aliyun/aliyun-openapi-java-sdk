@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class CheckAliyunCSServiceRoleRequest extends RoaAcsRequest<CheckAliyunCSServiceRoleResponse> {
 	
 	public CheckAliyunCSServiceRoleRequest() {
-		super("CS", "2015-12-15", "CheckAliyunCSServiceRole", "cs");
+		super("CS", "2015-12-15", "CheckAliyunCSServiceRole");
 		setUriPattern("/aliyuncsrole/status");
 		setMethod(MethodType.GET);
 	}

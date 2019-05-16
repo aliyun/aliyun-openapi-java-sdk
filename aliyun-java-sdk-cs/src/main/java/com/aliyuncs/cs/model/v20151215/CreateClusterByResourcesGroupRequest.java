@@ -21,30 +21,30 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesResponse> {
+public class CreateClusterByResourcesGroupRequest extends RoaAcsRequest<CreateClusterByResourcesGroupResponse> {
 	
-	public AttachInstancesRequest() {
-		super("CS", "2015-12-15", "AttachInstances");
-		setUriPattern("/clusters/[ClusterId]/attach");
+	public CreateClusterByResourcesGroupRequest() {
+		super("CS", "2015-12-15", "CreateClusterByResourcesGroup");
+		setUriPattern("/resource_groups/[ResourceGroupId]/clusters");
 		setMethod(MethodType.POST);
 	}
 
-	private String clusterId;
+	private String resourceGroupId;
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putPathParameter("ClusterId", clusterId);
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putPathParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
 	@Override
-	public Class<AttachInstancesResponse> getResponseClass() {
-		return AttachInstancesResponse.class;
+	public Class<CreateClusterByResourcesGroupResponse> getResponseClass() {
+		return CreateClusterByResourcesGroupResponse.class;
 	}
 
 }

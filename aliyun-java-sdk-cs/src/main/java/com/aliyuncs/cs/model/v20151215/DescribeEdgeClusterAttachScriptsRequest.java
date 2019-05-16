@@ -21,15 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesResponse> {
+public class DescribeEdgeClusterAttachScriptsRequest extends RoaAcsRequest<DescribeEdgeClusterAttachScriptsResponse> {
 	
-	public AttachInstancesRequest() {
-		super("CS", "2015-12-15", "AttachInstances");
-		setUriPattern("/clusters/[ClusterId]/attach");
-		setMethod(MethodType.POST);
+	public DescribeEdgeClusterAttachScriptsRequest() {
+		super("CS", "2015-12-15", "DescribeEdgeClusterAttachScripts");
+		setUriPattern("/clusters/[ClusterId]/attachscript");
+		setMethod(MethodType.GET);
 	}
 
 	private String clusterId;
+
+	private String namePrefix;
 
 	public String getClusterId() {
 		return this.clusterId;
@@ -42,9 +44,20 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 		}
 	}
 
+	public String getNamePrefix() {
+		return this.namePrefix;
+	}
+
+	public void setNamePrefix(String namePrefix) {
+		this.namePrefix = namePrefix;
+		if(namePrefix != null){
+			putQueryParameter("NamePrefix", namePrefix);
+		}
+	}
+
 	@Override
-	public Class<AttachInstancesResponse> getResponseClass() {
-		return AttachInstancesResponse.class;
+	public Class<DescribeEdgeClusterAttachScriptsResponse> getResponseClass() {
+		return DescribeEdgeClusterAttachScriptsResponse.class;
 	}
 
 }

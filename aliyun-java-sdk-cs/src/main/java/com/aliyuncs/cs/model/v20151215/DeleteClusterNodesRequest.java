@@ -21,11 +21,11 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesResponse> {
+public class DeleteClusterNodesRequest extends RoaAcsRequest<DeleteClusterNodesResponse> {
 	
-	public AttachInstancesRequest() {
-		super("CS", "2015-12-15", "AttachInstances");
-		setUriPattern("/clusters/[ClusterId]/attach");
+	public DeleteClusterNodesRequest() {
+		super("CS", "2015-12-15", "DeleteClusterNodes");
+		setUriPattern("/clusters/[ClusterId]/nodes");
 		setMethod(MethodType.POST);
 	}
 
@@ -43,8 +43,8 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 	}
 
 	@Override
-	public Class<AttachInstancesResponse> getResponseClass() {
-		return AttachInstancesResponse.class;
+	public Class<DeleteClusterNodesResponse> getResponseClass() {
+		return DeleteClusterNodesResponse.class;
 	}
 
 }
