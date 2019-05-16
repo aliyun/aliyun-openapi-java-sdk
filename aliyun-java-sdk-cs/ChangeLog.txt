@@ -1,3 +1,8 @@
+2019-05-16 Version: 4.7.12
+1, Update SDK version
+2, Add api DescribeClusterAddonsVersion
+
+
 2019-05-16 Version: 4.7.11
 1, Add new api,DescribeClusterAddonsVersion
 
