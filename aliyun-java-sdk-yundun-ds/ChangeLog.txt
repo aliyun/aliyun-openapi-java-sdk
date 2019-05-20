@@ -1,0 +1,3 @@
+2019-05-20 Version: 1.0.0
+1, Initial release of api, including data management api, rule configuration api and system configuration api.
+
