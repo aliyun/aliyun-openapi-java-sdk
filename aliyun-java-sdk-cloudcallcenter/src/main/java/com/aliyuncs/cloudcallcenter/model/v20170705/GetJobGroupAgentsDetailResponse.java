@@ -1,0 +1,169 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.cloudcallcenter.model.v20170705;
+
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.cloudcallcenter.transform.v20170705.GetJobGroupAgentsDetailResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+/**
+ * @author auto create
+ * @version 
+ */
+public class GetJobGroupAgentsDetailResponse extends AcsResponse {
+
+	private String requestId;
+
+	private Boolean success;
+
+	private String code;
+
+	private String message;
+
+	private Integer httpStatusCode;
+
+	private Detail detail;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public Detail getDetail() {
+		return this.detail;
+	}
+
+	public void setDetail(Detail detail) {
+		this.detail = detail;
+	}
+
+	public static class Detail {
+
+		private String totalAgentsNumber;
+
+		private String offlineAgentsNumber;
+
+		private String loggedInAgentsNumber;
+
+		private String readyAgentsNumber;
+
+		private String talkAgentsNumber;
+
+		private String acwAgentsNumber;
+
+		private String notReadyAgentsNumber;
+
+		public String getTotalAgentsNumber() {
+			return this.totalAgentsNumber;
+		}
+
+		public void setTotalAgentsNumber(String totalAgentsNumber) {
+			this.totalAgentsNumber = totalAgentsNumber;
+		}
+
+		public String getOfflineAgentsNumber() {
+			return this.offlineAgentsNumber;
+		}
+
+		public void setOfflineAgentsNumber(String offlineAgentsNumber) {
+			this.offlineAgentsNumber = offlineAgentsNumber;
+		}
+
+		public String getLoggedInAgentsNumber() {
+			return this.loggedInAgentsNumber;
+		}
+
+		public void setLoggedInAgentsNumber(String loggedInAgentsNumber) {
+			this.loggedInAgentsNumber = loggedInAgentsNumber;
+		}
+
+		public String getReadyAgentsNumber() {
+			return this.readyAgentsNumber;
+		}
+
+		public void setReadyAgentsNumber(String readyAgentsNumber) {
+			this.readyAgentsNumber = readyAgentsNumber;
+		}
+
+		public String getTalkAgentsNumber() {
+			return this.talkAgentsNumber;
+		}
+
+		public void setTalkAgentsNumber(String talkAgentsNumber) {
+			this.talkAgentsNumber = talkAgentsNumber;
+		}
+
+		public String getAcwAgentsNumber() {
+			return this.acwAgentsNumber;
+		}
+
+		public void setAcwAgentsNumber(String acwAgentsNumber) {
+			this.acwAgentsNumber = acwAgentsNumber;
+		}
+
+		public String getNotReadyAgentsNumber() {
+			return this.notReadyAgentsNumber;
+		}
+
+		public void setNotReadyAgentsNumber(String notReadyAgentsNumber) {
+			this.notReadyAgentsNumber = notReadyAgentsNumber;
+		}
+	}
+
+	@Override
+	public GetJobGroupAgentsDetailResponse getInstance(UnmarshallerContext context) {
+		return	GetJobGroupAgentsDetailResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
+}
