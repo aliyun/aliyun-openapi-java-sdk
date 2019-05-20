@@ -35,6 +35,7 @@ public class QueryTradeMarkApplicationLogsResponseUnmarshaller {
 			dataItem.setNote(context.stringValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].Note"));
 			dataItem.setOperateType(context.integerValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].OperateType"));
 			dataItem.setOperateTime(context.longValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].OperateTime"));
+			dataItem.setBizStatus(context.integerValue("QueryTradeMarkApplicationLogsResponse.Data["+ i +"].BizStatus"));
 
 			data.add(dataItem);
 		}

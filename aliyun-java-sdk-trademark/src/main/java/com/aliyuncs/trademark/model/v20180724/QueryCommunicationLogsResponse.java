@@ -16,18 +16,18 @@ package com.aliyuncs.trademark.model.v20180724;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.trademark.transform.v20180724.QueryTradeMarkApplicationLogsResponseUnmarshaller;
+import com.aliyuncs.trademark.transform.v20180724.QueryCommunicationLogsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryTradeMarkApplicationLogsResponse extends AcsResponse {
+public class QueryCommunicationLogsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DataItem> data;
+	private List<TaskList> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,25 +37,25 @@ public class QueryTradeMarkApplicationLogsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DataItem> getData() {
+	public List<TaskList> getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(List<TaskList> data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
+	public static class TaskList {
 
 		private String bizId;
 
 		private String note;
 
-		private Integer operateType;
+		private String partnerCode;
 
-		private Long operateTime;
+		private Long updateTime;
 
-		private Integer bizStatus;
+		private Long createTime;
 
 		public String getBizId() {
 			return this.bizId;
@@ -73,33 +73,33 @@ public class QueryTradeMarkApplicationLogsResponse extends AcsResponse {
 			this.note = note;
 		}
 
-		public Integer getOperateType() {
-			return this.operateType;
+		public String getPartnerCode() {
+			return this.partnerCode;
 		}
 
-		public void setOperateType(Integer operateType) {
-			this.operateType = operateType;
+		public void setPartnerCode(String partnerCode) {
+			this.partnerCode = partnerCode;
 		}
 
-		public Long getOperateTime() {
-			return this.operateTime;
+		public Long getUpdateTime() {
+			return this.updateTime;
 		}
 
-		public void setOperateTime(Long operateTime) {
-			this.operateTime = operateTime;
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
 		}
 
-		public Integer getBizStatus() {
-			return this.bizStatus;
+		public Long getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setBizStatus(Integer bizStatus) {
-			this.bizStatus = bizStatus;
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 	}
 
 	@Override
-	public QueryTradeMarkApplicationLogsResponse getInstance(UnmarshallerContext context) {
-		return	QueryTradeMarkApplicationLogsResponseUnmarshaller.unmarshall(this, context);
+	public QueryCommunicationLogsResponse getInstance(UnmarshallerContext context) {
+		return	QueryCommunicationLogsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

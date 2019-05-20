@@ -20,24 +20,26 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploadFilePolicyResponse> {
+public class UpdateSendMaterialNumRequest extends RpcAcsRequest<UpdateSendMaterialNumResponse> {
 	
-	public GenerateUploadFilePolicyRequest() {
-		super("Trademark", "2018-07-24", "GenerateUploadFilePolicy", "trademark");
+	public UpdateSendMaterialNumRequest() {
+		super("Trademark", "2018-07-24", "UpdateSendMaterialNum", "trademark");
 	}
 
-	private String fileType;
+	private String num;
 
 	private String bizId;
 
-	public String getFileType() {
-		return this.fileType;
+	private Integer operateType;
+
+	public String getNum() {
+		return this.num;
 	}
 
-	public void setFileType(String fileType) {
-		this.fileType = fileType;
-		if(fileType != null){
-			putQueryParameter("FileType", fileType);
+	public void setNum(String num) {
+		this.num = num;
+		if(num != null){
+			putQueryParameter("Num", num);
 		}
 	}
 
@@ -52,9 +54,20 @@ public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploa
 		}
 	}
 
+	public Integer getOperateType() {
+		return this.operateType;
+	}
+
+	public void setOperateType(Integer operateType) {
+		this.operateType = operateType;
+		if(operateType != null){
+			putQueryParameter("OperateType", operateType.toString());
+		}
+	}
+
 	@Override
-	public Class<GenerateUploadFilePolicyResponse> getResponseClass() {
-		return GenerateUploadFilePolicyResponse.class;
+	public Class<UpdateSendMaterialNumResponse> getResponseClass() {
+		return UpdateSendMaterialNumResponse.class;
 	}
 
 }

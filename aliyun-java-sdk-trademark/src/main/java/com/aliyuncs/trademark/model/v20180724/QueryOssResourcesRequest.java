@@ -20,26 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploadFilePolicyResponse> {
+public class QueryOssResourcesRequest extends RpcAcsRequest<QueryOssResourcesResponse> {
 	
-	public GenerateUploadFilePolicyRequest() {
-		super("Trademark", "2018-07-24", "GenerateUploadFilePolicy", "trademark");
+	public QueryOssResourcesRequest() {
+		super("Trademark", "2018-07-24", "QueryOssResources", "trademark");
 	}
-
-	private String fileType;
 
 	private String bizId;
-
-	public String getFileType() {
-		return this.fileType;
-	}
-
-	public void setFileType(String fileType) {
-		this.fileType = fileType;
-		if(fileType != null){
-			putQueryParameter("FileType", fileType);
-		}
-	}
 
 	public String getBizId() {
 		return this.bizId;
@@ -53,8 +40,8 @@ public class GenerateUploadFilePolicyRequest extends RpcAcsRequest<GenerateUploa
 	}
 
 	@Override
-	public Class<GenerateUploadFilePolicyResponse> getResponseClass() {
-		return GenerateUploadFilePolicyResponse.class;
+	public Class<QueryOssResourcesResponse> getResponseClass() {
+		return QueryOssResourcesResponse.class;
 	}
 
 }
