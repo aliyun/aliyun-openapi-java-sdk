@@ -388,7 +388,7 @@ public class NewEndpointTest extends BaseTest {
         DescribeInstancesRequest request = new DescribeInstancesRequest();
         request.setSysEndpoint("ecs-cn-hangzhou.aliyuncs.com");
         DescribeInstancesResponse response = this.client.getAcsResponse(request);
-        Assert.assertTrue(response.getInstances().size() >= 0);
+        Assert.assertTrue(response.getInstances().size() > 0);
     }
 
     @Test
