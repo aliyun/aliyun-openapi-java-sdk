@@ -15,20 +15,18 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.CreateInstanceResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.CreateFleetResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateInstanceResponse extends AcsResponse {
+public class CreateFleetResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String instanceId;
-
-	private Float tradePrice;
+	private String fleetId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +36,16 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getFleetId() {
+		return this.fleetId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public Float getTradePrice() {
-		return this.tradePrice;
-	}
-
-	public void setTradePrice(Float tradePrice) {
-		this.tradePrice = tradePrice;
+	public void setFleetId(String fleetId) {
+		this.fleetId = fleetId;
 	}
 
 	@Override
-	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);
+	public CreateFleetResponse getInstance(UnmarshallerContext context) {
+		return	CreateFleetResponseUnmarshaller.unmarshall(this, context);
 	}
 }

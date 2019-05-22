@@ -39,6 +39,8 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	private Long ownerId;
 
+	private String category;
+
 	private String resourceType;
 
 	private Integer pageNumber;
@@ -109,6 +111,17 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

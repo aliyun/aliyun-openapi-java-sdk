@@ -26,6 +26,7 @@ public class RunInstancesResponseUnmarshaller {
 	public static RunInstancesResponse unmarshall(RunInstancesResponse runInstancesResponse, UnmarshallerContext context) {
 		
 		runInstancesResponse.setRequestId(context.stringValue("RunInstancesResponse.RequestId"));
+		runInstancesResponse.setTradePrice(context.floatValue("RunInstancesResponse.TradePrice"));
 
 		List<String> instanceIdSets = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("RunInstancesResponse.InstanceIdSets.Length"); i++) {

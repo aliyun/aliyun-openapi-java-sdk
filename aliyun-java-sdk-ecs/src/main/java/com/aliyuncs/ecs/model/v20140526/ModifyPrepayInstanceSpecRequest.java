@@ -36,11 +36,15 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 
 	private String ownerAccount;
 
+	private String endTime;
+
 	private Long ownerId;
 
 	private String operatorType;
 
 	private String systemDiskCategory;
+
+	private String rebootTime;
 
 	private String instanceId;
 
@@ -103,6 +107,17 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -133,6 +148,17 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		this.systemDiskCategory = systemDiskCategory;
 		if(systemDiskCategory != null){
 			putQueryParameter("SystemDisk.Category", systemDiskCategory);
+		}
+	}
+
+	public String getRebootTime() {
+		return this.rebootTime;
+	}
+
+	public void setRebootTime(String rebootTime) {
+		this.rebootTime = rebootTime;
+		if(rebootTime != null){
+			putQueryParameter("RebootTime", rebootTime);
 		}
 	}
 

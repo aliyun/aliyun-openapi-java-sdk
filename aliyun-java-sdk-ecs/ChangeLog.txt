@@ -1,3 +1,7 @@
+2019-05-22 Version: 4.16.10
+1, Add EndTime parameter to api ModifyPrepayInstanceSpec
+2, Add RebootTime parameter to api ModifyPrepayInstanceSpec
+
 2019-05-15 Version: 4.16.9
 1, Add InstanceId parameter to api CreateDisk
 2, Add parameter Affinity and Tenancy in ECS instance DedicatedHost related apis.

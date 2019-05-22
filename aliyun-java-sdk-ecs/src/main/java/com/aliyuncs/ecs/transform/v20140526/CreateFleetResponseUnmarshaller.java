@@ -14,18 +14,17 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.CreateInstanceResponse;
+import com.aliyuncs.ecs.model.v20140526.CreateFleetResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateInstanceResponseUnmarshaller {
+public class CreateFleetResponseUnmarshaller {
 
-	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext context) {
+	public static CreateFleetResponse unmarshall(CreateFleetResponse createFleetResponse, UnmarshallerContext context) {
 		
-		createInstanceResponse.setRequestId(context.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setInstanceId(context.stringValue("CreateInstanceResponse.InstanceId"));
-		createInstanceResponse.setTradePrice(context.floatValue("CreateInstanceResponse.TradePrice"));
+		createFleetResponse.setRequestId(context.stringValue("CreateFleetResponse.RequestId"));
+		createFleetResponse.setFleetId(context.stringValue("CreateFleetResponse.FleetId"));
 	 
-	 	return createInstanceResponse;
+	 	return createFleetResponse;
 	}
 }
