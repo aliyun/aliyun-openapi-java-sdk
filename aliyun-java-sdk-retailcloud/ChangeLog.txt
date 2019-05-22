@@ -1,3 +1,8 @@
+2019-05-22 Version: 1.0.2
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
 2019-05-14 Version: 1.0.0
 1, Add StartWithNoSecret interface，Support without secret to start.
 2, Support for multiple instances of batch creation and deletion.
