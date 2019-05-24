@@ -1,3 +1,7 @@
+2019-05-24 Version: 7.0.4
+1, The list of site monitoring probes adds ISP and city fields in English.
+2, Fixed the capitalization problem of Describe MetricData and Describe Site Monitor Statistics API metricName.
+
 2019-04-25 Version: 7.0.3
 1, The alarm contact interface increases paging parameters
 

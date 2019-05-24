@@ -121,6 +121,8 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		private String dimensions;
 
+		private String sourceType;
+
 		private Escalations escalations;
 
 		public String getRuleId() {
@@ -257,6 +259,14 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		public void setDimensions(String dimensions) {
 			this.dimensions = dimensions;
+		}
+
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
 		}
 
 		public Escalations getEscalations() {

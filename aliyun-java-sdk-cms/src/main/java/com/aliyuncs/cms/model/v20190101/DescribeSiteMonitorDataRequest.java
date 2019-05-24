@@ -115,7 +115,7 @@ public class DescribeSiteMonitorDataRequest extends RpcAcsRequest<DescribeSiteMo
 	public void setMetricName(String metricName) {
 		this.metricName = metricName;
 		if(metricName != null){
-			putQueryParameter("metricName", metricName);
+			putQueryParameter("MetricName", metricName);
 		}
 	}
 

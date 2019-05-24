@@ -40,6 +40,12 @@ public class DescribeSiteMonitorISPCityListResponseUnmarshaller {
 			ispCity.setCityNamezh_CN(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.zh_CN"));
 			ispCity.setRegionzh_CN(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
 			ispCity.setCountryzh_CN(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.zh_CN"));
+			ispCity.setIspNameen(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IspName.en"));
+			ispCity.setCityNameen(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].CityName.en"));
+			ispCity.setRegionzh_CN1(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
+			ispCity.setCountryzh_CN2(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.zh_CN"));
+			ispCity.setRegionen(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.en"));
+			ispCity.setCountryen(context.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.en"));
 
 			ispCityList.add(ispCity);
 		}

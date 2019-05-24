@@ -28,6 +28,8 @@ public class DescribeSiteMonitorStatisticsRequest extends RpcAcsRequest<Describe
 
 	private String timeRange;
 
+	private String startTime;
+
 	private String metricName;
 
 	private String taskId;
@@ -40,6 +42,17 @@ public class DescribeSiteMonitorStatisticsRequest extends RpcAcsRequest<Describe
 		this.timeRange = timeRange;
 		if(timeRange != null){
 			putQueryParameter("TimeRange", timeRange);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 

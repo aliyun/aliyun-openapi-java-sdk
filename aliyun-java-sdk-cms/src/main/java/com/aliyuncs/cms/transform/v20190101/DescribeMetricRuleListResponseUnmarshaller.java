@@ -56,6 +56,7 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			alarm.setGroupId(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupId"));
 			alarm.setGroupName(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupName"));
 			alarm.setDimensions(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Dimensions"));
+			alarm.setSourceType(context.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].SourceType"));
 
 			Escalations escalations = new Escalations();
 
