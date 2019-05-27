@@ -1,7 +1,12 @@
 package com.aliyuncs.endpoint;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class LocalConfigGlobalEndpointResolver extends LocalConfigRegionalEndpointResolver {
 
@@ -27,7 +32,11 @@ public class LocalConfigGlobalEndpointResolver extends LocalConfigRegionalEndpoi
             return;
         }
         JsonObject globalEndpoints = obj.get("global_endpoints").getAsJsonObject();
-        for (String locationServiceCode : globalEndpoints.keySet()) {
+        Set<String> globalEndpointsKeySet = new HashSet<String>();
+        for(Map.Entry<String, JsonElement> entry:globalEndpoints.entrySet()) {
+            globalEndpointsKeySet.add(entry.getKey());
+        }
+        for (String locationServiceCode : globalEndpointsKeySet) {
             String endpoint = globalEndpoints.get(locationServiceCode).getAsString();
             putEndpointEntry(makeEndpointKey(locationServiceCode), endpoint);
         }

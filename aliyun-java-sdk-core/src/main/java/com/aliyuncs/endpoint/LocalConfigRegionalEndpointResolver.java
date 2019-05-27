@@ -38,9 +38,17 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
         }
         regionalEndpointData = obj.get("regional_endpoints").getAsJsonObject();
         JsonObject regionalEndpoints = obj.get("regional_endpoints").getAsJsonObject();
-        for (String normalizedProductCode : regionalEndpoints.keySet()) {
+        Set<String> regionalEndpointsKeySet = new HashSet<String>();
+        for(Map.Entry<String,JsonElement> entry:regionalEndpoints.entrySet()) {
+            regionalEndpointsKeySet.add(entry.getKey());
+        }
+        for (String normalizedProductCode : regionalEndpointsKeySet) {
             JsonObject productData = regionalEndpoints.get(normalizedProductCode).getAsJsonObject();
-            for (String regionId : productData.keySet()) {
+            Set<String> productDataKeySet = new HashSet<String>();
+            for(Map.Entry<String,JsonElement> entry:productData.entrySet()) {
+                productDataKeySet.add(entry.getKey());
+            }
+            for (String regionId : productDataKeySet) {
                 String endpoint = productData.get(regionId).getAsString();
                 putEndpointEntry(makeEndpointKey(normalizedProductCode, regionId), endpoint);
             }
@@ -62,7 +70,11 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
             return;
         }
         JsonObject mappingData = obj.get("location_code_mapping").getAsJsonObject();
-        for (String productCode : mappingData.keySet()) {
+        Set<String> keySet = new HashSet<String>();
+        for(Map.Entry<String,JsonElement> entry:mappingData.entrySet()) {
+            keySet.add(entry.getKey());
+        }
+        for (String productCode : keySet) {
             String locationServiceCode = mappingData.get(productCode).getAsString();
             locationCodeMapping.put(productCode, locationServiceCode);
         }
@@ -114,7 +126,11 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
     public Set<String> getValidRegionIdsByProduct(String productCodeLower) {
         String code = getNormalizedProductCode(productCodeLower);
         if (regionalEndpointData != null && regionalEndpointData.has(code)) {
-            Set<String> validRegionIdsByProduct = regionalEndpointData.get(code).getAsJsonObject().keySet();
+            JsonObject regionalEndpoints = regionalEndpointData.get(code).getAsJsonObject();
+            Set<String> validRegionIdsByProduct = new HashSet<String>();
+            for(Map.Entry<String,JsonElement> entry:regionalEndpoints.entrySet()) {
+                validRegionIdsByProduct.add(entry.getKey());
+            }
             return validRegionIdsByProduct;
         }
         return null;
