@@ -33,7 +33,7 @@ public class LocalConfigGlobalEndpointResolver extends LocalConfigRegionalEndpoi
         }
         JsonObject globalEndpoints = obj.get("global_endpoints").getAsJsonObject();
         Set<String> globalEndpointsKeySet = new HashSet<String>();
-        for(Map.Entry<String, JsonElement> entry:globalEndpoints.entrySet()) {
+        for (Map.Entry<String, JsonElement> entry : globalEndpoints.entrySet()) {
             globalEndpointsKeySet.add(entry.getKey());
         }
         for (String locationServiceCode : globalEndpointsKeySet) {

@@ -39,13 +39,13 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
         regionalEndpointData = obj.get("regional_endpoints").getAsJsonObject();
         JsonObject regionalEndpoints = obj.get("regional_endpoints").getAsJsonObject();
         Set<String> regionalEndpointsKeySet = new HashSet<String>();
-        for(Map.Entry<String,JsonElement> entry:regionalEndpoints.entrySet()) {
+        for (Map.Entry<String, JsonElement> entry : regionalEndpoints.entrySet()) {
             regionalEndpointsKeySet.add(entry.getKey());
         }
         for (String normalizedProductCode : regionalEndpointsKeySet) {
             JsonObject productData = regionalEndpoints.get(normalizedProductCode).getAsJsonObject();
             Set<String> productDataKeySet = new HashSet<String>();
-            for(Map.Entry<String,JsonElement> entry:productData.entrySet()) {
+            for (Map.Entry<String, JsonElement> entry : productData.entrySet()) {
                 productDataKeySet.add(entry.getKey());
             }
             for (String regionId : productDataKeySet) {
@@ -71,7 +71,7 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
         }
         JsonObject mappingData = obj.get("location_code_mapping").getAsJsonObject();
         Set<String> keySet = new HashSet<String>();
-        for(Map.Entry<String,JsonElement> entry:mappingData.entrySet()) {
+        for (Map.Entry<String, JsonElement> entry : mappingData.entrySet()) {
             keySet.add(entry.getKey());
         }
         for (String productCode : keySet) {
@@ -128,7 +128,7 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
         if (regionalEndpointData != null && regionalEndpointData.has(code)) {
             JsonObject regionalEndpoints = regionalEndpointData.get(code).getAsJsonObject();
             Set<String> validRegionIdsByProduct = new HashSet<String>();
-            for(Map.Entry<String,JsonElement> entry:regionalEndpoints.entrySet()) {
+            for (Map.Entry<String, JsonElement> entry : regionalEndpoints.entrySet()) {
                 validRegionIdsByProduct.add(entry.getKey());
             }
             return validRegionIdsByProduct;
