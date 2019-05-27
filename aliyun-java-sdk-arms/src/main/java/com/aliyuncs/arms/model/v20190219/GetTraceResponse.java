@@ -51,7 +51,7 @@ public class GetTraceResponse extends AcsResponse {
 
 		private String operationName;
 
-		private Integer duration;
+		private Long duration;
 
 		private String serviceName;
 
@@ -85,11 +85,11 @@ public class GetTraceResponse extends AcsResponse {
 			this.operationName = operationName;
 		}
 
-		public Integer getDuration() {
+		public Long getDuration() {
 			return this.duration;
 		}
 
-		public void setDuration(Integer duration) {
+		public void setDuration(Long duration) {
 			this.duration = duration;
 		}
 

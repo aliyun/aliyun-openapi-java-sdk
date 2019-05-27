@@ -15,26 +15,18 @@
 package com.aliyuncs.arms.model.v20190219;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.arms.transform.v20190219.ARMSQueryDataSetResponseUnmarshaller;
+import com.aliyuncs.arms.transform.v20190219.SearchTraceCountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ARMSQueryDataSetResponse extends AcsResponse {
-
-	private String data;
+public class SearchTraceCountResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +36,29 @@ public class ARMSQueryDataSetResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Long count;
+
+		public Long getCount() {
+			return this.count;
+		}
+
+		public void setCount(Long count) {
+			this.count = count;
+		}
+	}
+
 	@Override
-	public ARMSQueryDataSetResponse getInstance(UnmarshallerContext context) {
-		return	ARMSQueryDataSetResponseUnmarshaller.unmarshall(this, context);
+	public SearchTraceCountResponse getInstance(UnmarshallerContext context) {
+		return	SearchTraceCountResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -21,42 +21,36 @@ import java.util.List;
  * @author auto create
  * @version 
  */
-public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
+public class SearchTraceCountRequest extends RpcAcsRequest<SearchTraceCountResponse> {
 	
-	public SearchTracesRequest() {
-		super("ARMS", "2019-02-19", "SearchTraces");
+	public SearchTraceCountRequest() {
+		super("ARMS", "2019-02-19", "SearchTraceCount");
 	}
 
-	private String serviceIp;
+	private String instanceId;
 
 	private String operationName;
 
 	private String appType;
 
-	private Integer pageSize;
-
 	private Long endTime;
 
 	private String serviceName;
-
-	private Integer pageIndex;
 
 	private Long startTime;
 
 	private List<Tag> tags;
 
-	private Boolean reverse;
-
 	private Long minDuration;
 
-	public String getServiceIp() {
-		return this.serviceIp;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setServiceIp(String serviceIp) {
-		this.serviceIp = serviceIp;
-		if(serviceIp != null){
-			putQueryParameter("ServiceIp", serviceIp);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -82,17 +76,6 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getEndTime() {
 		return this.endTime;
 	}
@@ -112,17 +95,6 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 		this.serviceName = serviceName;
 		if(serviceName != null){
 			putQueryParameter("ServiceName", serviceName);
-		}
-	}
-
-	public Integer getPageIndex() {
-		return this.pageIndex;
-	}
-
-	public void setPageIndex(Integer pageIndex) {
-		this.pageIndex = pageIndex;
-		if(pageIndex != null){
-			putQueryParameter("PageIndex", pageIndex.toString());
 		}
 	}
 
@@ -149,17 +121,6 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public Boolean getReverse() {
-		return this.reverse;
-	}
-
-	public void setReverse(Boolean reverse) {
-		this.reverse = reverse;
-		if(reverse != null){
-			putQueryParameter("Reverse", reverse.toString());
-		}
 	}
 
 	public Long getMinDuration() {
@@ -197,8 +158,8 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 	}
 
 	@Override
-	public Class<SearchTracesResponse> getResponseClass() {
-		return SearchTracesResponse.class;
+	public Class<SearchTraceCountResponse> getResponseClass() {
+		return SearchTraceCountResponse.class;
 	}
 
 }

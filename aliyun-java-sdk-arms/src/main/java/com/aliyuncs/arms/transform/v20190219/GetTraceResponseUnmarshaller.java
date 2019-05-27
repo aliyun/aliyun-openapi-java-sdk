@@ -36,7 +36,7 @@ public class GetTraceResponseUnmarshaller {
 			CallChainInfo callChainInfo = new CallChainInfo();
 			callChainInfo.setTraceID(context.stringValue("GetTraceResponse.Data["+ i +"].TraceID"));
 			callChainInfo.setOperationName(context.stringValue("GetTraceResponse.Data["+ i +"].OperationName"));
-			callChainInfo.setDuration(context.integerValue("GetTraceResponse.Data["+ i +"].Duration"));
+			callChainInfo.setDuration(context.longValue("GetTraceResponse.Data["+ i +"].Duration"));
 			callChainInfo.setServiceName(context.stringValue("GetTraceResponse.Data["+ i +"].ServiceName"));
 			callChainInfo.setServiceIp(context.stringValue("GetTraceResponse.Data["+ i +"].ServiceIp"));
 			callChainInfo.setTimestamp(context.longValue("GetTraceResponse.Data["+ i +"].Timestamp"));

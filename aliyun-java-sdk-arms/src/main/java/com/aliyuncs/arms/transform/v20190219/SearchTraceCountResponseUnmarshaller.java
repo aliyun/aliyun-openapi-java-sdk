@@ -14,25 +14,21 @@
 
 package com.aliyuncs.arms.transform.v20190219;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.aliyuncs.arms.model.v20190219.GetTagValResponse;
+import com.aliyuncs.arms.model.v20190219.SearchTraceCountResponse;
+import com.aliyuncs.arms.model.v20190219.SearchTraceCountResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetTagValResponseUnmarshaller {
+public class SearchTraceCountResponseUnmarshaller {
 
-	public static GetTagValResponse unmarshall(GetTagValResponse getTagValResponse, UnmarshallerContext context) {
+	public static SearchTraceCountResponse unmarshall(SearchTraceCountResponse searchTraceCountResponse, UnmarshallerContext context) {
 		
-		getTagValResponse.setRequestId(context.stringValue("GetTagValResponse.RequestId"));
+		searchTraceCountResponse.setRequestId(context.stringValue("SearchTraceCountResponse.RequestId"));
 
-		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetTagValResponse.Data.Length"); i++) {
-			data.add(context.stringValue("GetTagValResponse.Data["+ i +"]"));
-		}
-		getTagValResponse.setData(data);
+		Data data = new Data();
+		data.setCount(context.longValue("SearchTraceCountResponse.Data.Count"));
+		searchTraceCountResponse.setData(data);
 	 
-	 	return getTagValResponse;
+	 	return searchTraceCountResponse;
 	}
 }
