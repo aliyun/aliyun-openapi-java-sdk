@@ -43,7 +43,7 @@ public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
 	public void setDbName(String dbName) {
 		this.dbName = dbName;
 		if(dbName != null){
-			putQueryParameter("DbName", dbName);
+			putBodyParameter("DbName", dbName);
 		}
 	}
 
@@ -54,7 +54,7 @@ public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
 	public void setMainUserId(Integer mainUserId) {
 		this.mainUserId = mainUserId;
 		if(mainUserId != null){
-			putQueryParameter("MainUserId", mainUserId.toString());
+			putBodyParameter("MainUserId", mainUserId.toString());
 		}
 	}
 
@@ -65,7 +65,7 @@ public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
 	public void setDbInstanceId(String dbInstanceId) {
 		this.dbInstanceId = dbInstanceId;
 		if(dbInstanceId != null){
-			putQueryParameter("DbInstanceId", dbInstanceId);
+			putBodyParameter("DbInstanceId", dbInstanceId);
 		}
 	}
 
@@ -76,7 +76,7 @@ public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
 	public void setDbDescription(String dbDescription) {
 		this.dbDescription = dbDescription;
 		if(dbDescription != null){
-			putQueryParameter("DbDescription", dbDescription);
+			putBodyParameter("DbDescription", dbDescription);
 		}
 	}
 
@@ -87,7 +87,7 @@ public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
 	public void setCharacterSetName(String characterSetName) {
 		this.characterSetName = characterSetName;
 		if(characterSetName != null){
-			putQueryParameter("CharacterSetName", characterSetName);
+			putBodyParameter("CharacterSetName", characterSetName);
 		}
 	}
 

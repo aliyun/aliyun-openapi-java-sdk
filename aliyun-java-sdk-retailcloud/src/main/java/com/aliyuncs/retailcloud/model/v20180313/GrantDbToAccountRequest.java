@@ -15,6 +15,7 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,6 +25,7 @@ public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountRespo
 	
 	public GrantDbToAccountRequest() {
 		super("retailcloud", "2018-03-13", "GrantDbToAccount");
+		setMethod(MethodType.POST);
 	}
 
 	private String accountName;
@@ -43,7 +45,7 @@ public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountRespo
 	public void setAccountName(String accountName) {
 		this.accountName = accountName;
 		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
+			putBodyParameter("AccountName", accountName);
 		}
 	}
 
@@ -54,7 +56,7 @@ public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountRespo
 	public void setDbName(String dbName) {
 		this.dbName = dbName;
 		if(dbName != null){
-			putQueryParameter("DbName", dbName);
+			putBodyParameter("DbName", dbName);
 		}
 	}
 
@@ -65,7 +67,7 @@ public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountRespo
 	public void setMainUserId(Integer mainUserId) {
 		this.mainUserId = mainUserId;
 		if(mainUserId != null){
-			putQueryParameter("MainUserId", mainUserId.toString());
+			putBodyParameter("MainUserId", mainUserId.toString());
 		}
 	}
 
@@ -76,7 +78,7 @@ public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountRespo
 	public void setDbInstanceId(String dbInstanceId) {
 		this.dbInstanceId = dbInstanceId;
 		if(dbInstanceId != null){
-			putQueryParameter("DbInstanceId", dbInstanceId);
+			putBodyParameter("DbInstanceId", dbInstanceId);
 		}
 	}
 
@@ -87,7 +89,7 @@ public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountRespo
 	public void setAccountPrivilege(String accountPrivilege) {
 		this.accountPrivilege = accountPrivilege;
 		if(accountPrivilege != null){
-			putQueryParameter("AccountPrivilege", accountPrivilege);
+			putBodyParameter("AccountPrivilege", accountPrivilege);
 		}
 	}
 

@@ -35,7 +35,7 @@ public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesRes
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
