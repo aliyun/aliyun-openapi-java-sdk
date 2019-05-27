@@ -20,19 +20,32 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJobResponse> {
+public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCompressTaskResponse> {
 	
-	public CreateGroupFacesJobRequest() {
-		super("imm", "2017-09-06", "CreateGroupFacesJob", "imm");
+	public CreateVideoCompressTaskRequest() {
+		super("imm", "2017-09-06", "CreateVideoCompressTask", "imm");
 	}
 
+	private String videoUri;
+
 	private String notifyTopicName;
+
+	private String targetList;
 
 	private String notifyEndpoint;
 
 	private String project;
 
-	private String setId;
+	public String getVideoUri() {
+		return this.videoUri;
+	}
+
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
+		if(videoUri != null){
+			putQueryParameter("VideoUri", videoUri);
+		}
+	}
 
 	public String getNotifyTopicName() {
 		return this.notifyTopicName;
@@ -42,6 +55,17 @@ public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJo
 		this.notifyTopicName = notifyTopicName;
 		if(notifyTopicName != null){
 			putQueryParameter("NotifyTopicName", notifyTopicName);
+		}
+	}
+
+	public String getTargetList() {
+		return this.targetList;
+	}
+
+	public void setTargetList(String targetList) {
+		this.targetList = targetList;
+		if(targetList != null){
+			putQueryParameter("TargetList", targetList);
 		}
 	}
 
@@ -67,20 +91,9 @@ public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJo
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
-		}
-	}
-
 	@Override
-	public Class<CreateGroupFacesJobResponse> getResponseClass() {
-		return CreateGroupFacesJobResponse.class;
+	public Class<CreateVideoCompressTaskResponse> getResponseClass() {
+		return CreateVideoCompressTaskResponse.class;
 	}
 
 }

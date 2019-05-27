@@ -14,16 +14,18 @@
 
 package com.aliyuncs.imm.transform.v20170906;
 
-import com.aliyuncs.imm.model.v20170906.DeleteOfficeConversionTaskResponse;
+import com.aliyuncs.imm.model.v20170906.CreateVideoCompressTaskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteOfficeConversionTaskResponseUnmarshaller {
+public class CreateVideoCompressTaskResponseUnmarshaller {
 
-	public static DeleteOfficeConversionTaskResponse unmarshall(DeleteOfficeConversionTaskResponse deleteOfficeConversionTaskResponse, UnmarshallerContext context) {
+	public static CreateVideoCompressTaskResponse unmarshall(CreateVideoCompressTaskResponse createVideoCompressTaskResponse, UnmarshallerContext context) {
 		
-		deleteOfficeConversionTaskResponse.setRequestId(context.stringValue("DeleteOfficeConversionTaskResponse.RequestId"));
+		createVideoCompressTaskResponse.setRequestId(context.stringValue("CreateVideoCompressTaskResponse.RequestId"));
+		createVideoCompressTaskResponse.setTaskId(context.stringValue("CreateVideoCompressTaskResponse.TaskId"));
+		createVideoCompressTaskResponse.setTaskType(context.stringValue("CreateVideoCompressTaskResponse.TaskType"));
 	 
-	 	return deleteOfficeConversionTaskResponse;
+	 	return createVideoCompressTaskResponse;
 	}
 }

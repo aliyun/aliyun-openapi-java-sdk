@@ -1,3 +1,6 @@
+2019-05-27 Version: 1.14.3
+1, Support video transcode.
+
 2019-05-14 Version: 1.14.1
 1, Support body detect.
 

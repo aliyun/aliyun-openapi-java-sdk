@@ -15,20 +15,20 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.UpdateFaceGroupResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.CreateVideoCompressTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateFaceGroupResponse extends AcsResponse {
+public class CreateVideoCompressTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String setId;
+	private String taskId;
 
-	private String groupId;
+	private String taskType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +38,25 @@ public class UpdateFaceGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSetId() {
-		return this.setId;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getTaskType() {
+		return this.taskType;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
 	}
 
 	@Override
-	public UpdateFaceGroupResponse getInstance(UnmarshallerContext context) {
-		return	UpdateFaceGroupResponseUnmarshaller.unmarshall(this, context);
+	public CreateVideoCompressTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateVideoCompressTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
