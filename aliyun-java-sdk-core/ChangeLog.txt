@@ -1,4 +1,7 @@
-﻿2019-04-19 Version: 4.4.1
+﻿2019-05-27 Version: 4.4.2
+1, keep compatible with old gson version
+
+2019-04-19 Version: 4.4.1
 1, add http debug info.
 2, change logger.
 
