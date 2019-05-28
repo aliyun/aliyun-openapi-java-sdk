@@ -23,14 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceResponse> {
 	
 	public DeleteDBInstanceRequest() {
-		super("Rds", "2014-08-15", "DeleteDBInstance", "rds");
+		super("Rds", "2014-08-15", "DeleteDBInstance", "Rds");
 	}
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
-
-	private String clientToken;
 
 	private String ownerAccount;
 
@@ -57,17 +55,6 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

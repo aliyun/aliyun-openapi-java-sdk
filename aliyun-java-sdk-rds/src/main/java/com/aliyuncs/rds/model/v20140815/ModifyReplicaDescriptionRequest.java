@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplicaDescriptionResponse> {
 	
 	public ModifyReplicaDescriptionRequest() {
-		super("Rds", "2014-08-15", "ModifyReplicaDescription", "rds");
+		super("Rds", "2014-08-15", "ModifyReplicaDescription", "Rds");
 	}
 
 	private String replicaDescription;

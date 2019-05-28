@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceResponse> {
 	
 	public CloneDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CloneDBInstance", "rds");
+		super("Rds", "2014-08-15", "CloneDBInstance", "Rds");
 	}
 
 	private Long resourceOwnerId;

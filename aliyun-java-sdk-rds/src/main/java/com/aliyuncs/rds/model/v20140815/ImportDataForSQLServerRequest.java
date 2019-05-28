@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ImportDataForSQLServerRequest extends RpcAcsRequest<ImportDataForSQLServerResponse> {
 	
 	public ImportDataForSQLServerRequest() {
-		super("Rds", "2014-08-15", "ImportDataForSQLServer", "rds");
+		super("Rds", "2014-08-15", "ImportDataForSQLServer", "Rds");
 	}
 
 	private Long resourceOwnerId;

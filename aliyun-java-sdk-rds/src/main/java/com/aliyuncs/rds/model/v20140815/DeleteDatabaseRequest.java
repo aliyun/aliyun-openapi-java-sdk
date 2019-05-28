@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse> {
 	
 	public DeleteDatabaseRequest() {
-		super("Rds", "2014-08-15", "DeleteDatabase", "rds");
+		super("Rds", "2014-08-15", "DeleteDatabase", "Rds");
 	}
 
 	private Long resourceOwnerId;

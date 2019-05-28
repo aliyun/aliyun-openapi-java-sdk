@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<UpgradeDBInstanceEngineVersionResponse> {
 	
 	public UpgradeDBInstanceEngineVersionRequest() {
-		super("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "rds");
+		super("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "Rds");
 	}
 
 	private Long resourceOwnerId;

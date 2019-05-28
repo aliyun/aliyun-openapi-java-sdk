@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeProxyFunctionSupportRequest extends RpcAcsRequest<DescribeProxyFunctionSupportResponse> {
 	
 	public DescribeProxyFunctionSupportRequest() {
-		super("Rds", "2014-08-15", "DescribeProxyFunctionSupport", "rds");
+		super("Rds", "2014-08-15", "DescribeProxyFunctionSupport", "Rds");
 	}
 
 	private Long resourceOwnerId;

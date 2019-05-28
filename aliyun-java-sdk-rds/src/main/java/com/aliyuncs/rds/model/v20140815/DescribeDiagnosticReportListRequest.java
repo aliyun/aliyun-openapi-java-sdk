@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeDiagnosticReportListResponse> {
 	
 	public DescribeDiagnosticReportListRequest() {
-		super("Rds", "2014-08-15", "DescribeDiagnosticReportList", "rds");
+		super("Rds", "2014-08-15", "DescribeDiagnosticReportList", "Rds");
 	}
 
 	private String dBInstanceId;

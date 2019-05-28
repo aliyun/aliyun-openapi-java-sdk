@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeReadDBInstanceDelayRequest extends RpcAcsRequest<DescribeReadDBInstanceDelayResponse> {
 	
 	public DescribeReadDBInstanceDelayRequest() {
-		super("Rds", "2014-08-15", "DescribeReadDBInstanceDelay", "rds");
+		super("Rds", "2014-08-15", "DescribeReadDBInstanceDelay", "Rds");
 	}
 
 	private Long resourceOwnerId;

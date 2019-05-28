@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsResponse> {
 	
 	public ModifySecurityIpsRequest() {
-		super("Rds", "2014-08-15", "ModifySecurityIps", "rds");
+		super("Rds", "2014-08-15", "ModifySecurityIps", "Rds");
 	}
 
 	private String dBInstanceIPArrayName;

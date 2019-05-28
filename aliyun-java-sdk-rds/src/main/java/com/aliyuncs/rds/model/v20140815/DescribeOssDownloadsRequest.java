@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeOssDownloadsRequest extends RpcAcsRequest<DescribeOssDownloadsResponse> {
 	
 	public DescribeOssDownloadsRequest() {
-		super("Rds", "2014-08-15", "DescribeOssDownloads", "rds");
+		super("Rds", "2014-08-15", "DescribeOssDownloads", "Rds");
 	}
 
 	private Long resourceOwnerId;

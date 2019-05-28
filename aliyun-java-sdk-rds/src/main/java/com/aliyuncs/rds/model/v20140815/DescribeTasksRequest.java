@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 	
 	public DescribeTasksRequest() {
-		super("Rds", "2014-08-15", "DescribeTasks", "rds");
+		super("Rds", "2014-08-15", "DescribeTasks", "Rds");
 	}
 
 	private Long resourceOwnerId;

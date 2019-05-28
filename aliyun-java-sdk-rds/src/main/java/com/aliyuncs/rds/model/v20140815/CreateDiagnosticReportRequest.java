@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosticReportResponse> {
 	
 	public CreateDiagnosticReportRequest() {
-		super("Rds", "2014-08-15", "CreateDiagnosticReport", "rds");
+		super("Rds", "2014-08-15", "CreateDiagnosticReport", "Rds");
 	}
 
 	private String endTime;

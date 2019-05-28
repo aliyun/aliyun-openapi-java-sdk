@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListResponse> {
 	
 	public DescribeMetaListRequest() {
-		super("Rds", "2014-08-15", "DescribeMetaList", "rds");
+		super("Rds", "2014-08-15", "DescribeMetaList", "Rds");
 	}
 
 	private Long resourceOwnerId;

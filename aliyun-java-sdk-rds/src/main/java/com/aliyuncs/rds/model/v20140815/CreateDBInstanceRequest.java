@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
 	
 	public CreateDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstance", "rds");
+		super("Rds", "2014-08-15", "CreateDBInstance", "Rds");
 	}
 
 	private String connectionMode;
@@ -59,6 +59,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String vSwitchId;
 
 	private String privateIpAddress;
+
+	private String autoRenew;
 
 	private String vPCId;
 
@@ -252,6 +254,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.privateIpAddress = privateIpAddress;
 		if(privateIpAddress != null){
 			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
+	public String getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(String autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew);
 		}
 	}
 

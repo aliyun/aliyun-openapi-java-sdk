@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceHAConfigRequest extends RpcAcsRequest<ModifyDBInstanceHAConfigResponse> {
 	
 	public ModifyDBInstanceHAConfigRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "Rds");
 	}
 
 	private Long resourceOwnerId;
