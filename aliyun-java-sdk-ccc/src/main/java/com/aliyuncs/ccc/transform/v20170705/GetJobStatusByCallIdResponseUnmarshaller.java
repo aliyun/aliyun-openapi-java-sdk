@@ -90,6 +90,7 @@ public class GetJobStatusByCallIdResponseUnmarshaller {
 			task.setChatbotId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].ChatbotId"));
 			task.setPlanedTime(context.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].PlanedTime"));
 			task.setActualTime(context.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].ActualTime"));
+			task.setEndTime(context.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].EndTime"));
 			task.setCallingNumber(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].CallingNumber"));
 			task.setCalledNumber(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].CalledNumber"));
 			task.setCallId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].CallId"));
