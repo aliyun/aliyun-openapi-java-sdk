@@ -47,6 +47,7 @@ public class DescribeFullBackupListResponseUnmarshaller {
 			fullBackupFile.setBackupSetExpiredTime(context.longValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSetExpiredTime"));
 			fullBackupFile.setBackupSize(context.longValue("DescribeFullBackupListResponse.Items["+ i +"].BackupSize"));
 			fullBackupFile.setStorageMethod(context.stringValue("DescribeFullBackupListResponse.Items["+ i +"].StorageMethod"));
+			fullBackupFile.setErrMessage(context.stringValue("DescribeFullBackupListResponse.Items["+ i +"].ErrMessage"));
 
 			items.add(fullBackupFile);
 		}

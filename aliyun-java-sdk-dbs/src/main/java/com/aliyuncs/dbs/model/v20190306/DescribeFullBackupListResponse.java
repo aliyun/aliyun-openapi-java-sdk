@@ -143,6 +143,8 @@ public class DescribeFullBackupListResponse extends AcsResponse {
 
 		private String storageMethod;
 
+		private String errMessage;
+
 		public String getBackupSetId() {
 			return this.backupSetId;
 		}
@@ -205,6 +207,14 @@ public class DescribeFullBackupListResponse extends AcsResponse {
 
 		public void setStorageMethod(String storageMethod) {
 			this.storageMethod = storageMethod;
+		}
+
+		public String getErrMessage() {
+			return this.errMessage;
+		}
+
+		public void setErrMessage(String errMessage) {
+			this.errMessage = errMessage;
 		}
 	}
 

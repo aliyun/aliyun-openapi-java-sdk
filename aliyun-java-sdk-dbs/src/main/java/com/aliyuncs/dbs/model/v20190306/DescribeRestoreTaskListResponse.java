@@ -169,6 +169,8 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 		private Integer fullStruAfterRestoreProgress;
 
+		private String errMessage;
+
 		public String getBackupPlanId() {
 			return this.backupPlanId;
 		}
@@ -335,6 +337,14 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 		public void setFullStruAfterRestoreProgress(Integer fullStruAfterRestoreProgress) {
 			this.fullStruAfterRestoreProgress = fullStruAfterRestoreProgress;
+		}
+
+		public String getErrMessage() {
+			return this.errMessage;
+		}
+
+		public void setErrMessage(String errMessage) {
+			this.errMessage = errMessage;
 		}
 	}
 

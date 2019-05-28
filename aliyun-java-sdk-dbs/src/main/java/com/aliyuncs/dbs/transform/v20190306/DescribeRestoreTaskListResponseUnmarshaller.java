@@ -60,6 +60,7 @@ public class DescribeRestoreTaskListResponseUnmarshaller {
 			restoreTaskDetail.setFullDataRestoreProgress(context.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].FullDataRestoreProgress"));
 			restoreTaskDetail.setContinuousRestoreProgress(context.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].ContinuousRestoreProgress"));
 			restoreTaskDetail.setFullStruAfterRestoreProgress(context.integerValue("DescribeRestoreTaskListResponse.Items["+ i +"].FullStruAfterRestoreProgress"));
+			restoreTaskDetail.setErrMessage(context.stringValue("DescribeRestoreTaskListResponse.Items["+ i +"].ErrMessage"));
 
 			items.add(restoreTaskDetail);
 		}
