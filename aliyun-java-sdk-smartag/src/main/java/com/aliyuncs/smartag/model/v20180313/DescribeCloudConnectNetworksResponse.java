@@ -15,7 +15,6 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.smartag.transform.v20180313.DescribeCloudConnectNetworksResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -96,6 +95,12 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 
 		private Boolean isDefault;
 
+		private String cidrBlock;
+
+		private String snatCidrBlock;
+
+		private List<Tag> tags;
+
 		public String getCcnId() {
 			return this.ccnId;
 		}
@@ -166,6 +171,53 @@ public class DescribeCloudConnectNetworksResponse extends AcsResponse {
 
 		public void setIsDefault(Boolean isDefault) {
 			this.isDefault = isDefault;
+		}
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
+		public String getSnatCidrBlock() {
+			return this.snatCidrBlock;
+		}
+
+		public void setSnatCidrBlock(String snatCidrBlock) {
+			this.snatCidrBlock = snatCidrBlock;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

@@ -36,7 +36,11 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 
 	private String receiverDistrict;
 
+	private Integer userCount;
+
 	private String receiverAddress;
+
+	private String instanceType;
 
 	private String buyerMessage;
 
@@ -71,6 +75,8 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 	private String receiverCountry;
 
 	private String chargeType;
+
+	private Long dataPlan;
 
 	private String receiverZip;
 
@@ -129,6 +135,17 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		}
 	}
 
+	public Integer getUserCount() {
+		return this.userCount;
+	}
+
+	public void setUserCount(Integer userCount) {
+		this.userCount = userCount;
+		if(userCount != null){
+			putQueryParameter("UserCount", userCount.toString());
+		}
+	}
+
 	public String getReceiverAddress() {
 		return this.receiverAddress;
 	}
@@ -137,6 +154,17 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		this.receiverAddress = receiverAddress;
 		if(receiverAddress != null){
 			putQueryParameter("ReceiverAddress", receiverAddress);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -324,6 +352,17 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public Long getDataPlan() {
+		return this.dataPlan;
+	}
+
+	public void setDataPlan(Long dataPlan) {
+		this.dataPlan = dataPlan;
+		if(dataPlan != null){
+			putQueryParameter("DataPlan", dataPlan.toString());
 		}
 	}
 

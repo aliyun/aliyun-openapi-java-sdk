@@ -28,17 +28,21 @@ public class CreateCloudConnectNetworkRequest extends RpcAcsRequest<CreateCloudC
 
 	private Long resourceOwnerId;
 
+	private String description;
+
+	private String snatCidrBlock;
+
+	private Boolean isDefault;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private Long ownerId;
+
 	private String name;
 
-	private String description;
-
-	private Boolean isDefault;
-
-	private Long ownerId;
+	private String cidrBlock;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +52,39 @@ public class CreateCloudConnectNetworkRequest extends RpcAcsRequest<CreateCloudC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSnatCidrBlock() {
+		return this.snatCidrBlock;
+	}
+
+	public void setSnatCidrBlock(String snatCidrBlock) {
+		this.snatCidrBlock = snatCidrBlock;
+		if(snatCidrBlock != null){
+			putQueryParameter("SnatCidrBlock", snatCidrBlock);
+		}
+	}
+
+	public Boolean getIsDefault() {
+		return this.isDefault;
+	}
+
+	public void setIsDefault(Boolean isDefault) {
+		this.isDefault = isDefault;
+		if(isDefault != null){
+			putQueryParameter("IsDefault", isDefault.toString());
 		}
 	}
 
@@ -73,6 +110,17 @@ public class CreateCloudConnectNetworkRequest extends RpcAcsRequest<CreateCloudC
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -84,36 +132,14 @@ public class CreateCloudConnectNetworkRequest extends RpcAcsRequest<CreateCloudC
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getCidrBlock() {
+		return this.cidrBlock;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public Boolean getIsDefault() {
-		return this.isDefault;
-	}
-
-	public void setIsDefault(Boolean isDefault) {
-		this.isDefault = isDefault;
-		if(isDefault != null){
-			putQueryParameter("IsDefault", isDefault.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
 		}
 	}
 

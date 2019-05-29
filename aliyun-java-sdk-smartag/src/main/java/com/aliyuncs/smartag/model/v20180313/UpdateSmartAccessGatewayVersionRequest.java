@@ -28,17 +28,17 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 
 	private Long resourceOwnerId;
 
+	private String versionCode;
+
 	private String serialNumber;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String smartAGId;
-
 	private Long ownerId;
 
-	private String versionCode;
+	private String smartAGId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +48,17 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getVersionCode() {
+		return this.versionCode;
+	}
+
+	public void setVersionCode(String versionCode) {
+		this.versionCode = versionCode;
+		if(versionCode != null){
+			putQueryParameter("VersionCode", versionCode);
 		}
 	}
 
@@ -84,17 +95,6 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -106,14 +106,14 @@ public class UpdateSmartAccessGatewayVersionRequest extends RpcAcsRequest<Update
 		}
 	}
 
-	public String getVersionCode() {
-		return this.versionCode;
+	public String getSmartAGId() {
+		return this.smartAGId;
 	}
 
-	public void setVersionCode(String versionCode) {
-		this.versionCode = versionCode;
-		if(versionCode != null){
-			putQueryParameter("VersionCode", versionCode);
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

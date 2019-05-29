@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.smartag.model.v20180313.DescribeSmartAccessGatewaysResponse;
 import com.aliyuncs.smartag.model.v20180313.DescribeSmartAccessGatewaysResponse.SmartAccessGateway;
-import java.util.Map;
+import com.aliyuncs.smartag.model.v20180313.DescribeSmartAccessGatewaysResponse.SmartAccessGateway.SnatEntry;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +50,19 @@ public class DescribeSmartAccessGatewaysResponseUnmarshaller {
 			smartAccessGateway.setHardwareVersion(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].HardwareVersion"));
 			smartAccessGateway.setSerialNumber(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SerialNumber"));
 			smartAccessGateway.setSecurityLockThreshold(context.integerValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SecurityLockThreshold"));
+			smartAccessGateway.setAclIds(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].AclIds"));
+			smartAccessGateway.setDataPlan(context.longValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].DataPlan"));
+			smartAccessGateway.setUserCount(context.integerValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].UserCount"));
+
+			List<SnatEntry> snatEntries = new ArrayList<SnatEntry>();
+			for (int j = 0; j < context.lengthValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SnatEntries.Length"); j++) {
+				SnatEntry snatEntry = new SnatEntry();
+				snatEntry.setCidrBlock(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SnatEntries["+ j +"].CidrBlock"));
+				snatEntry.setSnatIp(context.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SnatEntries["+ j +"].SnatIp"));
+
+				snatEntries.add(snatEntry);
+			}
+			smartAccessGateway.setSnatEntries(snatEntries);
 
 			smartAccessGateways.add(smartAccessGateway);
 		}

@@ -28,17 +28,21 @@ public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmart
 
 	private Long resourceOwnerId;
 
-	private Boolean autoPay;
-
 	private Long bandWidthSpec;
+
+	private Integer userCount;
+
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private Long ownerId;
+
 	private String smartAGId;
 
-	private Long ownerId;
+	private Long dataPlan;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,17 +55,6 @@ public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmart
 		}
 	}
 
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
 	public Long getBandWidthSpec() {
 		return this.bandWidthSpec;
 	}
@@ -70,6 +63,28 @@ public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmart
 		this.bandWidthSpec = bandWidthSpec;
 		if(bandWidthSpec != null){
 			putQueryParameter("BandWidthSpec", bandWidthSpec.toString());
+		}
+	}
+
+	public Integer getUserCount() {
+		return this.userCount;
+	}
+
+	public void setUserCount(Integer userCount) {
+		this.userCount = userCount;
+		if(userCount != null){
+			putQueryParameter("UserCount", userCount.toString());
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -95,6 +110,17 @@ public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmart
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getSmartAGId() {
 		return this.smartAGId;
 	}
@@ -106,14 +132,14 @@ public class UpgradeSmartAccessGatewayRequest extends RpcAcsRequest<UpgradeSmart
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Long getDataPlan() {
+		return this.dataPlan;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setDataPlan(Long dataPlan) {
+		this.dataPlan = dataPlan;
+		if(dataPlan != null){
+			putQueryParameter("DataPlan", dataPlan.toString());
 		}
 	}
 

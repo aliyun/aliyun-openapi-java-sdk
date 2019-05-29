@@ -15,7 +15,6 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.smartag.transform.v20180313.DescribeSmartAccessGatewaysResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -107,6 +106,14 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 		private String serialNumber;
 
 		private Integer securityLockThreshold;
+
+		private String aclIds;
+
+		private Long dataPlan;
+
+		private Integer userCount;
+
+		private List<SnatEntry> snatEntries;
 
 		public String getSmartAGId() {
 			return this.smartAGId;
@@ -226,6 +233,61 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 		public void setSecurityLockThreshold(Integer securityLockThreshold) {
 			this.securityLockThreshold = securityLockThreshold;
+		}
+
+		public String getAclIds() {
+			return this.aclIds;
+		}
+
+		public void setAclIds(String aclIds) {
+			this.aclIds = aclIds;
+		}
+
+		public Long getDataPlan() {
+			return this.dataPlan;
+		}
+
+		public void setDataPlan(Long dataPlan) {
+			this.dataPlan = dataPlan;
+		}
+
+		public Integer getUserCount() {
+			return this.userCount;
+		}
+
+		public void setUserCount(Integer userCount) {
+			this.userCount = userCount;
+		}
+
+		public List<SnatEntry> getSnatEntries() {
+			return this.snatEntries;
+		}
+
+		public void setSnatEntries(List<SnatEntry> snatEntries) {
+			this.snatEntries = snatEntries;
+		}
+
+		public static class SnatEntry {
+
+			private String cidrBlock;
+
+			private String snatIp;
+
+			public String getCidrBlock() {
+				return this.cidrBlock;
+			}
+
+			public void setCidrBlock(String cidrBlock) {
+				this.cidrBlock = cidrBlock;
+			}
+
+			public String getSnatIp() {
+				return this.snatIp;
+			}
+
+			public void setSnatIp(String snatIp) {
+				this.snatIp = snatIp;
+			}
 		}
 	}
 

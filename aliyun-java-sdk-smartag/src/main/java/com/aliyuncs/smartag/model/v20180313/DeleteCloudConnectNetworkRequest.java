@@ -28,11 +28,11 @@ public class DeleteCloudConnectNetworkRequest extends RpcAcsRequest<DeleteCloudC
 
 	private Long resourceOwnerId;
 
+	private String ccnId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String ccnId;
 
 	private Long ownerId;
 
@@ -44,6 +44,17 @@ public class DeleteCloudConnectNetworkRequest extends RpcAcsRequest<DeleteCloudC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCcnId() {
+		return this.ccnId;
+	}
+
+	public void setCcnId(String ccnId) {
+		this.ccnId = ccnId;
+		if(ccnId != null){
+			putQueryParameter("CcnId", ccnId);
 		}
 	}
 
@@ -66,17 +77,6 @@ public class DeleteCloudConnectNetworkRequest extends RpcAcsRequest<DeleteCloudC
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getCcnId() {
-		return this.ccnId;
-	}
-
-	public void setCcnId(String ccnId) {
-		this.ccnId = ccnId;
-		if(ccnId != null){
-			putQueryParameter("CcnId", ccnId);
 		}
 	}
 

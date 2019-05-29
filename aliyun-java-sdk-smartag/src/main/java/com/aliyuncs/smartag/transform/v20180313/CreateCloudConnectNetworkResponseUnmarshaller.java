@@ -27,6 +27,8 @@ public class CreateCloudConnectNetworkResponseUnmarshaller {
 		createCloudConnectNetworkResponse.setName(context.stringValue("CreateCloudConnectNetworkResponse.Name"));
 		createCloudConnectNetworkResponse.setStatus(context.stringValue("CreateCloudConnectNetworkResponse.Status"));
 		createCloudConnectNetworkResponse.setDescription(context.stringValue("CreateCloudConnectNetworkResponse.Description"));
+		createCloudConnectNetworkResponse.setSnatCidrBlock(context.stringValue("CreateCloudConnectNetworkResponse.SnatCidrBlock"));
+		createCloudConnectNetworkResponse.setCidrBlock(context.stringValue("CreateCloudConnectNetworkResponse.CidrBlock"));
 	 
 	 	return createCloudConnectNetworkResponse;
 	}

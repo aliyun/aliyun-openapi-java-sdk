@@ -30,13 +30,13 @@ public class SwitchSAGHaStateRequest extends RpcAcsRequest<SwitchSAGHaStateRespo
 
 	private String resourceOwnerAccount;
 
-	private String haType;
-
 	private String ownerAccount;
 
-	private String smartAGId;
-
 	private Long ownerId;
+
+	private String haType;
+
+	private String smartAGId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,17 +60,6 @@ public class SwitchSAGHaStateRequest extends RpcAcsRequest<SwitchSAGHaStateRespo
 		}
 	}
 
-	public String getHaType() {
-		return this.haType;
-	}
-
-	public void setHaType(String haType) {
-		this.haType = haType;
-		if(haType != null){
-			putQueryParameter("HaType", haType);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -82,17 +71,6 @@ public class SwitchSAGHaStateRequest extends RpcAcsRequest<SwitchSAGHaStateRespo
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +79,28 @@ public class SwitchSAGHaStateRequest extends RpcAcsRequest<SwitchSAGHaStateRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getHaType() {
+		return this.haType;
+	}
+
+	public void setHaType(String haType) {
+		this.haType = haType;
+		if(haType != null){
+			putQueryParameter("HaType", haType);
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

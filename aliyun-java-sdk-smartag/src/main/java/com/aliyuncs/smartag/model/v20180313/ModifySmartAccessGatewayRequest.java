@@ -15,6 +15,7 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 
 /**
  * @author auto create
@@ -28,21 +29,23 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 
 	private Long resourceOwnerId;
 
+	private String description;
+
+	private Integer securityLockThreshold;
+
+	private List<SnatEntries> snatEntriess;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private Long ownerId;
 
 	private String name;
 
 	private String cidrBlock;
 
 	private String smartAGId;
-
-	private String description;
-
-	private Long ownerId;
-
-	private Integer securityLockThreshold;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,6 +56,42 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getSecurityLockThreshold() {
+		return this.securityLockThreshold;
+	}
+
+	public void setSecurityLockThreshold(Integer securityLockThreshold) {
+		this.securityLockThreshold = securityLockThreshold;
+		if(securityLockThreshold != null){
+			putQueryParameter("SecurityLockThreshold", securityLockThreshold.toString());
+		}
+	}
+
+	public List<SnatEntries> getSnatEntriess() {
+		return this.snatEntriess;
+	}
+
+	public void setSnatEntriess(List<SnatEntries> snatEntriess) {
+		this.snatEntriess = snatEntriess;	
+		if (snatEntriess != null) {
+			for (int depth1 = 0; depth1 < snatEntriess.size(); depth1++) {
+				putQueryParameter("SnatEntries." + (depth1 + 1) + ".CidrBlock" , snatEntriess.get(depth1).getCidrBlock());
+				putQueryParameter("SnatEntries." + (depth1 + 1) + ".SnatIp" , snatEntriess.get(depth1).getSnatIp());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -74,6 +113,17 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -110,36 +160,26 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
+	public static class SnatEntries {
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+		private String cidrBlock;
+
+		private String snatIp;
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
 		}
-	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
 		}
-	}
 
-	public Integer getSecurityLockThreshold() {
-		return this.securityLockThreshold;
-	}
+		public String getSnatIp() {
+			return this.snatIp;
+		}
 
-	public void setSecurityLockThreshold(Integer securityLockThreshold) {
-		this.securityLockThreshold = securityLockThreshold;
-		if(securityLockThreshold != null){
-			putQueryParameter("SecurityLockThreshold", securityLockThreshold.toString());
+		public void setSnatIp(String snatIp) {
+			this.snatIp = snatIp;
 		}
 	}
 

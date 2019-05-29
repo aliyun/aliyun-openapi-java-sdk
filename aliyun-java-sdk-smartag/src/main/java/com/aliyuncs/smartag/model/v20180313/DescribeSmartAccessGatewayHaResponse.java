@@ -14,7 +14,7 @@
 
 package com.aliyuncs.smartag.model.v20180313;
 
-import java.util.Map;
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.smartag.transform.v20180313.DescribeSmartAccessGatewayHaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -35,19 +35,9 @@ public class DescribeSmartAccessGatewayHaResponse extends AcsResponse {
 
 	private String backupDeviceId;
 
-	private String linkLevelBackupState;
-
-	private String linkLevelBackupType;
-
-	private String mainLinkId;
-
-	private String backupLinkId;
-
 	private String smartAGId;
 
-	private String mainLinkState;
-
-	private String backupLinkState;
+	private List<LinkBackupInfoListItem> linkBackupInfoList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -89,38 +79,6 @@ public class DescribeSmartAccessGatewayHaResponse extends AcsResponse {
 		this.backupDeviceId = backupDeviceId;
 	}
 
-	public String getLinkLevelBackupState() {
-		return this.linkLevelBackupState;
-	}
-
-	public void setLinkLevelBackupState(String linkLevelBackupState) {
-		this.linkLevelBackupState = linkLevelBackupState;
-	}
-
-	public String getLinkLevelBackupType() {
-		return this.linkLevelBackupType;
-	}
-
-	public void setLinkLevelBackupType(String linkLevelBackupType) {
-		this.linkLevelBackupType = linkLevelBackupType;
-	}
-
-	public String getMainLinkId() {
-		return this.mainLinkId;
-	}
-
-	public void setMainLinkId(String mainLinkId) {
-		this.mainLinkId = mainLinkId;
-	}
-
-	public String getBackupLinkId() {
-		return this.backupLinkId;
-	}
-
-	public void setBackupLinkId(String backupLinkId) {
-		this.backupLinkId = backupLinkId;
-	}
-
 	public String getSmartAGId() {
 		return this.smartAGId;
 	}
@@ -129,20 +87,75 @@ public class DescribeSmartAccessGatewayHaResponse extends AcsResponse {
 		this.smartAGId = smartAGId;
 	}
 
-	public String getMainLinkState() {
-		return this.mainLinkState;
+	public List<LinkBackupInfoListItem> getLinkBackupInfoList() {
+		return this.linkBackupInfoList;
 	}
 
-	public void setMainLinkState(String mainLinkState) {
-		this.mainLinkState = mainLinkState;
+	public void setLinkBackupInfoList(List<LinkBackupInfoListItem> linkBackupInfoList) {
+		this.linkBackupInfoList = linkBackupInfoList;
 	}
 
-	public String getBackupLinkState() {
-		return this.backupLinkState;
-	}
+	public static class LinkBackupInfoListItem {
 
-	public void setBackupLinkState(String backupLinkState) {
-		this.backupLinkState = backupLinkState;
+		private String linkLevelBackupState;
+
+		private String linkLevelBackupType;
+
+		private String mainLinkId;
+
+		private String mainLinkState;
+
+		private String backupLinkId;
+
+		private String backupLinkState;
+
+		public String getLinkLevelBackupState() {
+			return this.linkLevelBackupState;
+		}
+
+		public void setLinkLevelBackupState(String linkLevelBackupState) {
+			this.linkLevelBackupState = linkLevelBackupState;
+		}
+
+		public String getLinkLevelBackupType() {
+			return this.linkLevelBackupType;
+		}
+
+		public void setLinkLevelBackupType(String linkLevelBackupType) {
+			this.linkLevelBackupType = linkLevelBackupType;
+		}
+
+		public String getMainLinkId() {
+			return this.mainLinkId;
+		}
+
+		public void setMainLinkId(String mainLinkId) {
+			this.mainLinkId = mainLinkId;
+		}
+
+		public String getMainLinkState() {
+			return this.mainLinkState;
+		}
+
+		public void setMainLinkState(String mainLinkState) {
+			this.mainLinkState = mainLinkState;
+		}
+
+		public String getBackupLinkId() {
+			return this.backupLinkId;
+		}
+
+		public void setBackupLinkId(String backupLinkId) {
+			this.backupLinkId = backupLinkId;
+		}
+
+		public String getBackupLinkState() {
+			return this.backupLinkState;
+		}
+
+		public void setBackupLinkState(String backupLinkState) {
+			this.backupLinkState = backupLinkState;
+		}
 	}
 
 	@Override

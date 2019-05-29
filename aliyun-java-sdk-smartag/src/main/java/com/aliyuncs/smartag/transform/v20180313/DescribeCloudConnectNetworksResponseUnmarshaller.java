@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.smartag.model.v20180313.DescribeCloudConnectNetworksResponse;
 import com.aliyuncs.smartag.model.v20180313.DescribeCloudConnectNetworksResponse.CloudConnectNetwork;
-import java.util.Map;
+import com.aliyuncs.smartag.model.v20180313.DescribeCloudConnectNetworksResponse.CloudConnectNetwork.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +44,18 @@ public class DescribeCloudConnectNetworksResponseUnmarshaller {
 			cloudConnectNetwork.setDescription(context.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Description"));
 			cloudConnectNetwork.setCreateTime(context.longValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].CreateTime"));
 			cloudConnectNetwork.setIsDefault(context.booleanValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].IsDefault"));
+			cloudConnectNetwork.setCidrBlock(context.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].CidrBlock"));
+			cloudConnectNetwork.setSnatCidrBlock(context.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].SnatCidrBlock"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < context.lengthValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(context.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(context.stringValue("DescribeCloudConnectNetworksResponse.CloudConnectNetworks["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			cloudConnectNetwork.setTags(tags);
 
 			cloudConnectNetworks.add(cloudConnectNetwork);
 		}

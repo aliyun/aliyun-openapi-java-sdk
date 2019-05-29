@@ -14,7 +14,11 @@
 
 package com.aliyuncs.smartag.transform.v20180313;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.smartag.model.v20180313.DescribeSmartAccessGatewayHaResponse;
+import com.aliyuncs.smartag.model.v20180313.DescribeSmartAccessGatewayHaResponse.LinkBackupInfoListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,13 +31,21 @@ public class DescribeSmartAccessGatewayHaResponseUnmarshaller {
 		describeSmartAccessGatewayHaResponse.setDeviceLevelBackupType(context.stringValue("DescribeSmartAccessGatewayHaResponse.DeviceLevelBackupType"));
 		describeSmartAccessGatewayHaResponse.setMainDeviceId(context.stringValue("DescribeSmartAccessGatewayHaResponse.MainDeviceId"));
 		describeSmartAccessGatewayHaResponse.setBackupDeviceId(context.stringValue("DescribeSmartAccessGatewayHaResponse.BackupDeviceId"));
-		describeSmartAccessGatewayHaResponse.setLinkLevelBackupState(context.stringValue("DescribeSmartAccessGatewayHaResponse.LinkLevelBackupState"));
-		describeSmartAccessGatewayHaResponse.setLinkLevelBackupType(context.stringValue("DescribeSmartAccessGatewayHaResponse.LinkLevelBackupType"));
-		describeSmartAccessGatewayHaResponse.setMainLinkId(context.stringValue("DescribeSmartAccessGatewayHaResponse.MainLinkId"));
-		describeSmartAccessGatewayHaResponse.setBackupLinkId(context.stringValue("DescribeSmartAccessGatewayHaResponse.BackupLinkId"));
 		describeSmartAccessGatewayHaResponse.setSmartAGId(context.stringValue("DescribeSmartAccessGatewayHaResponse.SmartAGId"));
-		describeSmartAccessGatewayHaResponse.setMainLinkState(context.stringValue("DescribeSmartAccessGatewayHaResponse.MainLinkState"));
-		describeSmartAccessGatewayHaResponse.setBackupLinkState(context.stringValue("DescribeSmartAccessGatewayHaResponse.BackupLinkState"));
+
+		List<LinkBackupInfoListItem> linkBackupInfoList = new ArrayList<LinkBackupInfoListItem>();
+		for (int i = 0; i < context.lengthValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList.Length"); i++) {
+			LinkBackupInfoListItem linkBackupInfoListItem = new LinkBackupInfoListItem();
+			linkBackupInfoListItem.setLinkLevelBackupState(context.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].LinkLevelBackupState"));
+			linkBackupInfoListItem.setLinkLevelBackupType(context.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].LinkLevelBackupType"));
+			linkBackupInfoListItem.setMainLinkId(context.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].MainLinkId"));
+			linkBackupInfoListItem.setMainLinkState(context.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].MainLinkState"));
+			linkBackupInfoListItem.setBackupLinkId(context.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].BackupLinkId"));
+			linkBackupInfoListItem.setBackupLinkState(context.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].BackupLinkState"));
+
+			linkBackupInfoList.add(linkBackupInfoListItem);
+		}
+		describeSmartAccessGatewayHaResponse.setLinkBackupInfoList(linkBackupInfoList);
 	 
 	 	return describeSmartAccessGatewayHaResponse;
 	}

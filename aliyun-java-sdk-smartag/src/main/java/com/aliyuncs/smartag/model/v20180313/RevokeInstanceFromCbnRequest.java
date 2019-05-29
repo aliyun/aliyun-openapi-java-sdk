@@ -28,15 +28,15 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String ccnInstanceId;
 
-	private String cenInstanceId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String ccnInstanceId;
-
 	private Long ownerId;
+
+	private String cenInstanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,39 +46,6 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getCenInstanceId() {
-		return this.cenInstanceId;
-	}
-
-	public void setCenInstanceId(String cenInstanceId) {
-		this.cenInstanceId = cenInstanceId;
-		if(cenInstanceId != null){
-			putQueryParameter("CenInstanceId", cenInstanceId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -93,6 +60,28 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +90,17 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCenInstanceId() {
+		return this.cenInstanceId;
+	}
+
+	public void setCenInstanceId(String cenInstanceId) {
+		this.cenInstanceId = cenInstanceId;
+		if(cenInstanceId != null){
+			putQueryParameter("CenInstanceId", cenInstanceId);
 		}
 	}
 

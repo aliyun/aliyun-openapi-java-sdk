@@ -28,17 +28,21 @@ public class ModifyCloudConnectNetworkRequest extends RpcAcsRequest<ModifyCloudC
 
 	private Long resourceOwnerId;
 
+	private String ccnId;
+
+	private String description;
+
+	private String snatCidrBlock;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String ccnId;
+	private Long ownerId;
 
 	private String name;
 
-	private String description;
-
-	private Long ownerId;
+	private String cidrBlock;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +52,39 @@ public class ModifyCloudConnectNetworkRequest extends RpcAcsRequest<ModifyCloudC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCcnId() {
+		return this.ccnId;
+	}
+
+	public void setCcnId(String ccnId) {
+		this.ccnId = ccnId;
+		if(ccnId != null){
+			putQueryParameter("CcnId", ccnId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSnatCidrBlock() {
+		return this.snatCidrBlock;
+	}
+
+	public void setSnatCidrBlock(String snatCidrBlock) {
+		this.snatCidrBlock = snatCidrBlock;
+		if(snatCidrBlock != null){
+			putQueryParameter("SnatCidrBlock", snatCidrBlock);
 		}
 	}
 
@@ -73,14 +110,14 @@ public class ModifyCloudConnectNetworkRequest extends RpcAcsRequest<ModifyCloudC
 		}
 	}
 
-	public String getCcnId() {
-		return this.ccnId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setCcnId(String ccnId) {
-		this.ccnId = ccnId;
-		if(ccnId != null){
-			putQueryParameter("CcnId", ccnId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -95,25 +132,14 @@ public class ModifyCloudConnectNetworkRequest extends RpcAcsRequest<ModifyCloudC
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getCidrBlock() {
+		return this.cidrBlock;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
 		}
 	}
 

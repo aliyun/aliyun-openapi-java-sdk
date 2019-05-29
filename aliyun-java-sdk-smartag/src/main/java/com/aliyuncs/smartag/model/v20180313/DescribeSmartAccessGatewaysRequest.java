@@ -28,6 +28,16 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 
 	private Long resourceOwnerId;
 
+	private String aclIds;
+
+	private String unboundAclIds;
+
+	private String pageNumber;
+
+	private String pageSize;
+
+	private String instanceType;
+
 	private String serialNumber;
 
 	private String resourceOwnerAccount;
@@ -38,11 +48,7 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 
 	private Long ownerId;
 
-	private String pageNumber;
-
 	private String name;
-
-	private String pageSize;
 
 	private String smartAGId;
 
@@ -56,6 +62,61 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAclIds() {
+		return this.aclIds;
+	}
+
+	public void setAclIds(String aclIds) {
+		this.aclIds = aclIds;
+		if(aclIds != null){
+			putQueryParameter("AclIds", aclIds);
+		}
+	}
+
+	public String getUnboundAclIds() {
+		return this.unboundAclIds;
+	}
+
+	public void setUnboundAclIds(String unboundAclIds) {
+		this.unboundAclIds = unboundAclIds;
+		if(unboundAclIds != null){
+			putQueryParameter("UnboundAclIds", unboundAclIds);
+		}
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -114,17 +175,6 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		}
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -133,17 +183,6 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
 		}
 	}
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.smartag.model.v20180313.DescribeRegionsResponse;
 import com.aliyuncs.smartag.model.v20180313.DescribeRegionsResponse.Region;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

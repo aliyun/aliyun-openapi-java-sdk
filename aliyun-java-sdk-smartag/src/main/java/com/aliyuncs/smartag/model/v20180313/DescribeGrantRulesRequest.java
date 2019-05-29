@@ -28,17 +28,17 @@ public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesR
 
 	private Long resourceOwnerId;
 
+	private String pageNumber;
+
+	private String pageSize;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String pageSize;
-
 	private String associatedCcnId;
 
 	private Long ownerId;
-
-	private String pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +48,28 @@ public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 
@@ -73,17 +95,6 @@ public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesR
 		}
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
 	public String getAssociatedCcnId() {
 		return this.associatedCcnId;
 	}
@@ -103,17 +114,6 @@ public class DescribeGrantRulesRequest extends RpcAcsRequest<DescribeGrantRulesR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 
