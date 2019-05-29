@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GrantOperatorPermissionRequest extends RpcAcsRequest<GrantOperatorPermissionResponse> {
 	
 	public GrantOperatorPermissionRequest() {
-		super("Rds", "2014-08-15", "GrantOperatorPermission", "Rds");
+		super("Rds", "2014-08-15", "GrantOperatorPermission", "rds");
 	}
 
 	private String privileges;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CopyDatabaseRequest extends RpcAcsRequest<CopyDatabaseResponse> {
 	
 	public CopyDatabaseRequest() {
-		super("Rds", "2014-08-15", "CopyDatabase", "Rds");
+		super("Rds", "2014-08-15", "CopyDatabase", "rds");
 	}
 
 	private Long resourceOwnerId;

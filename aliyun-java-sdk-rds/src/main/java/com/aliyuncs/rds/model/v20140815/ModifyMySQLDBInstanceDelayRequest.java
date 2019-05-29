@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyMySQLDBInstanceDelayRequest extends RpcAcsRequest<ModifyMySQLDBInstanceDelayResponse> {
 	
 	public ModifyMySQLDBInstanceDelayRequest() {
-		super("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "Rds");
+		super("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "rds");
 	}
 
 	private Long resourceOwnerId;

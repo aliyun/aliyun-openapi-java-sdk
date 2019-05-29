@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBInstanceNetInfoResponse> {
 	
 	public DescribeDBInstanceNetInfoRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceNetInfo", "Rds");
+		super("Rds", "2014-08-15", "DescribeDBInstanceNetInfo", "rds");
 	}
 
 	private Long resourceOwnerId;

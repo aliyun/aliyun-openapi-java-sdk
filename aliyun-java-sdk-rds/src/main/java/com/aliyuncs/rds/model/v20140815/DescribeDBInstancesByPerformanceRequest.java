@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<DescribeDBInstancesByPerformanceResponse> {
 	
 	public DescribeDBInstancesByPerformanceRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "Rds");
+		super("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds");
 	}
 
 	private String tag4value;

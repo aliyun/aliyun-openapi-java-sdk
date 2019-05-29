@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceConnectionStringRequest extends RpcAcsRequest<ModifyDBInstanceConnectionStringResponse> {
 	
 	public ModifyDBInstanceConnectionStringRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "Rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds");
 	}
 
 	private Long resourceOwnerId;

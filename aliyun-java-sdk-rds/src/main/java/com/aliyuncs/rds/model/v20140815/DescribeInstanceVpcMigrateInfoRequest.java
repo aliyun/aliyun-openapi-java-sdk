@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceVpcMigrateInfoRequest extends RpcAcsRequest<DescribeInstanceVpcMigrateInfoResponse> {
 	
 	public DescribeInstanceVpcMigrateInfoRequest() {
-		super("Rds", "2014-08-15", "DescribeInstanceVpcMigrateInfo", "Rds");
+		super("Rds", "2014-08-15", "DescribeInstanceVpcMigrateInfo", "rds");
 	}
 
 	private Long resourceOwnerId;

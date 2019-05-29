@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceResponse> {
 	
 	public RestoreDBInstanceRequest() {
-		super("Rds", "2014-08-15", "RestoreDBInstance", "Rds");
+		super("Rds", "2014-08-15", "RestoreDBInstance", "rds");
 	}
 
 	private Long resourceOwnerId;

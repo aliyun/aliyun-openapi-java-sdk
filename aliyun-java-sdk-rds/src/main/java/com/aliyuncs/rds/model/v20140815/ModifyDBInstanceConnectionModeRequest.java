@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDBInstanceConnectionModeRequest extends RpcAcsRequest<ModifyDBInstanceConnectionModeResponse> {
 	
 	public ModifyDBInstanceConnectionModeRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "Rds");
+		super("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "rds");
 	}
 
 	private String connectionMode;

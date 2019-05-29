@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyCollationTimeZoneRequest extends RpcAcsRequest<ModifyCollationTimeZoneResponse> {
 	
 	public ModifyCollationTimeZoneRequest() {
-		super("Rds", "2014-08-15", "ModifyCollationTimeZone", "Rds");
+		super("Rds", "2014-08-15", "ModifyCollationTimeZone", "rds");
 	}
 
 	private Long resourceOwnerId;

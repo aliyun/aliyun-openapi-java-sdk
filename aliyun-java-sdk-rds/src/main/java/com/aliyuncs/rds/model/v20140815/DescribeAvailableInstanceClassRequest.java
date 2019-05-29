@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAvailableInstanceClassRequest extends RpcAcsRequest<DescribeAvailableInstanceClassResponse> {
 	
 	public DescribeAvailableInstanceClassRequest() {
-		super("Rds", "2014-08-15", "DescribeAvailableInstanceClass", "Rds");
+		super("Rds", "2014-08-15", "DescribeAvailableInstanceClass", "rds");
 	}
 
 	private Long resourceOwnerId;

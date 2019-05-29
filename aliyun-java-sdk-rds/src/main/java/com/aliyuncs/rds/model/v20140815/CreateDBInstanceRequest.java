@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
 	
 	public CreateDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstance", "Rds");
+		super("Rds", "2014-08-15", "CreateDBInstance", "rds");
 	}
 
 	private String connectionMode;

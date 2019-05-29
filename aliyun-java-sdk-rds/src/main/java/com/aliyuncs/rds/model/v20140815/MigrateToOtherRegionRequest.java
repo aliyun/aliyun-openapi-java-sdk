@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherRegionResponse> {
 	
 	public MigrateToOtherRegionRequest() {
-		super("Rds", "2014-08-15", "MigrateToOtherRegion", "Rds");
+		super("Rds", "2014-08-15", "MigrateToOtherRegion", "rds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccountDescriptionResponse> {
 	
 	public ModifyAccountDescriptionRequest() {
-		super("Rds", "2014-08-15", "ModifyAccountDescription", "Rds");
+		super("Rds", "2014-08-15", "ModifyAccountDescription", "rds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCloudDbExpertServiceRequest extends RpcAcsRequest<DescribeCloudDbExpertServiceResponse> {
 	
 	public DescribeCloudDbExpertServiceRequest() {
-		super("Rds", "2014-08-15", "DescribeCloudDbExpertService", "Rds");
+		super("Rds", "2014-08-15", "DescribeCloudDbExpertService", "rds");
 	}
 
 	private String serviceRequestParam;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTasksResponse> {
 	
 	public DescribeBackupTasksRequest() {
-		super("Rds", "2014-08-15", "DescribeBackupTasks", "Rds");
+		super("Rds", "2014-08-15", "DescribeBackupTasks", "rds");
 	}
 
 	private String backupJobId;

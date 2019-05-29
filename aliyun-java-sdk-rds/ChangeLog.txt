@@ -1,3 +1,6 @@
+2019-05-29 Version: 2.3.7
+1, Fix ServiceCode typo in request
+
 2019-05-28 Version: 2.3.6
 1, CreateDBInstance now support autoRenew
 

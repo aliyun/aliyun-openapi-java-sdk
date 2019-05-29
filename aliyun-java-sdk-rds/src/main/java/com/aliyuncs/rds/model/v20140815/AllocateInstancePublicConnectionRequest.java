@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<AllocateInstancePublicConnectionResponse> {
 	
 	public AllocateInstancePublicConnectionRequest() {
-		super("Rds", "2014-08-15", "AllocateInstancePublicConnection", "Rds");
+		super("Rds", "2014-08-15", "AllocateInstancePublicConnection", "rds");
 	}
 
 	private Long resourceOwnerId;

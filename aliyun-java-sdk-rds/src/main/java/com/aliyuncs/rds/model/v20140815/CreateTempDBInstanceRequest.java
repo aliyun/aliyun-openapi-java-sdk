@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateTempDBInstanceRequest extends RpcAcsRequest<CreateTempDBInstanceResponse> {
 	
 	public CreateTempDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateTempDBInstance", "Rds");
+		super("Rds", "2014-08-15", "CreateTempDBInstance", "rds");
 	}
 
 	private Long resourceOwnerId;

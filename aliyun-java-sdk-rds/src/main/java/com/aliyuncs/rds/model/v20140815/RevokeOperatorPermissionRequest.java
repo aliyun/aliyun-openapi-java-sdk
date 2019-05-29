@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RevokeOperatorPermissionRequest extends RpcAcsRequest<RevokeOperatorPermissionResponse> {
 	
 	public RevokeOperatorPermissionRequest() {
-		super("Rds", "2014-08-15", "RevokeOperatorPermission", "Rds");
+		super("Rds", "2014-08-15", "RevokeOperatorPermission", "rds");
 	}
 
 	private Long resourceOwnerId;

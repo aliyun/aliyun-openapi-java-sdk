@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EvaluateSupportByokShowRequest extends RpcAcsRequest<EvaluateSupportByokShowResponse> {
 	
 	public EvaluateSupportByokShowRequest() {
-		super("Rds", "2014-08-15", "EvaluateSupportByokShow", "Rds");
+		super("Rds", "2014-08-15", "EvaluateSupportByokShow", "rds");
 	}
 
 	private Long resourceOwnerId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifySecurityGroupConfigurationRequest extends RpcAcsRequest<ModifySecurityGroupConfigurationResponse> {
 	
 	public ModifySecurityGroupConfigurationRequest() {
-		super("Rds", "2014-08-15", "ModifySecurityGroupConfiguration", "Rds");
+		super("Rds", "2014-08-15", "ModifySecurityGroupConfiguration", "rds");
 	}
 
 	private Long resourceOwnerId;

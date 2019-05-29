@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeErrorLogsRequest extends RpcAcsRequest<DescribeErrorLogsResponse> {
 	
 	public DescribeErrorLogsRequest() {
-		super("Rds", "2014-08-15", "DescribeErrorLogs", "Rds");
+		super("Rds", "2014-08-15", "DescribeErrorLogs", "rds");
 	}
 
 	private Long resourceOwnerId;

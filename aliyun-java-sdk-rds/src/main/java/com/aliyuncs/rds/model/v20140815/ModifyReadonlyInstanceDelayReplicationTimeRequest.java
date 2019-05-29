@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReadonlyInstanceDelayReplicationTimeRequest extends RpcAcsRequest<ModifyReadonlyInstanceDelayReplicationTimeResponse> {
 	
 	public ModifyReadonlyInstanceDelayReplicationTimeRequest() {
-		super("Rds", "2014-08-15", "ModifyReadonlyInstanceDelayReplicationTime", "Rds");
+		super("Rds", "2014-08-15", "ModifyReadonlyInstanceDelayReplicationTime", "rds");
 	}
 
 	private Long resourceOwnerId;
