@@ -98,6 +98,8 @@ public class GetMaterialsResponse extends AcsResponse {
 
 		private String ethnicGroup;
 
+		private String authority;
+
 		public String getName() {
 			return this.name;
 		}
@@ -184,6 +186,14 @@ public class GetMaterialsResponse extends AcsResponse {
 
 		public void setEthnicGroup(String ethnicGroup) {
 			this.ethnicGroup = ethnicGroup;
+		}
+
+		public String getAuthority() {
+			return this.authority;
+		}
+
+		public void setAuthority(String authority) {
+			this.authority = authority;
 		}
 	}
 

@@ -1,3 +1,6 @@
+2019-05-31 Version: 1.3.1
+1, Add authority in GetMaterials API.
+
 2019-04-09 Version: 1.3.0
 1, Add Apis for offline VerifySDK.
 

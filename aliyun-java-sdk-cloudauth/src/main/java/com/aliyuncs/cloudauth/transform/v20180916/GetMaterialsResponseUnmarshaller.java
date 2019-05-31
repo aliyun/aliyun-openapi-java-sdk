@@ -40,6 +40,7 @@ public class GetMaterialsResponseUnmarshaller {
 		data.setIdCardBackPic(context.stringValue("GetMaterialsResponse.Data.IdCardBackPic"));
 		data.setFacePic(context.stringValue("GetMaterialsResponse.Data.FacePic"));
 		data.setEthnicGroup(context.stringValue("GetMaterialsResponse.Data.EthnicGroup"));
+		data.setAuthority(context.stringValue("GetMaterialsResponse.Data.Authority"));
 		getMaterialsResponse.setData(data);
 	 
 	 	return getMaterialsResponse;
