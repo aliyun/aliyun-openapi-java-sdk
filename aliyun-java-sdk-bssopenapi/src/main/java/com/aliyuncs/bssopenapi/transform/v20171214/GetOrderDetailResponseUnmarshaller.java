@@ -64,6 +64,7 @@ public class GetOrderDetailResponseUnmarshaller {
 			order.setAfterTaxAmount(context.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].AfterTaxAmount"));
 			order.setPaymentCurrency(context.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PaymentCurrency"));
 			order.setOperator(context.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Operator"));
+			order.setRelatedOrderId(context.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].RelatedOrderId"));
 
 			orderList.add(order);
 		}

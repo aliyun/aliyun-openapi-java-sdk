@@ -159,6 +159,8 @@ public class QueryOrdersResponse extends AcsResponse {
 
 			private String paymentCurrency;
 
+			private String relatedOrderId;
+
 			public String getOrderId() {
 				return this.orderId;
 			}
@@ -277,6 +279,14 @@ public class QueryOrdersResponse extends AcsResponse {
 
 			public void setPaymentCurrency(String paymentCurrency) {
 				this.paymentCurrency = paymentCurrency;
+			}
+
+			public String getRelatedOrderId() {
+				return this.relatedOrderId;
+			}
+
+			public void setRelatedOrderId(String relatedOrderId) {
+				this.relatedOrderId = relatedOrderId;
 			}
 		}
 	}

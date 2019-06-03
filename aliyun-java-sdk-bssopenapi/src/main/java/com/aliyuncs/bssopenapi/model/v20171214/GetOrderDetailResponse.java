@@ -175,6 +175,8 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 			private String operator;
 
+			private String relatedOrderId;
+
 			public String getOrderId() {
 				return this.orderId;
 			}
@@ -357,6 +359,14 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 			public void setOperator(String operator) {
 				this.operator = operator;
+			}
+
+			public String getRelatedOrderId() {
+				return this.relatedOrderId;
+			}
+
+			public void setRelatedOrderId(String relatedOrderId) {
+				this.relatedOrderId = relatedOrderId;
 			}
 		}
 	}

@@ -151,8 +151,6 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			private String instanceID;
 
-			private Float servicePeriod;
-
 			private String billingType;
 
 			private String costUnit;
@@ -199,20 +197,30 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			private String currency;
 
+			private String nickName;
+
+			private String resourceGroup;
+
+			private String tag;
+
+			private String instanceConfig;
+
+			private String instanceSpec;
+
+			private String internetIP;
+
+			private String intranetIP;
+
+			private String region;
+
+			private String zone;
+
 			public String getInstanceID() {
 				return this.instanceID;
 			}
 
 			public void setInstanceID(String instanceID) {
 				this.instanceID = instanceID;
-			}
-
-			public Float getServicePeriod() {
-				return this.servicePeriod;
-			}
-
-			public void setServicePeriod(Float servicePeriod) {
-				this.servicePeriod = servicePeriod;
 			}
 
 			public String getBillingType() {
@@ -397,6 +405,78 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			public void setCurrency(String currency) {
 				this.currency = currency;
+			}
+
+			public String getNickName() {
+				return this.nickName;
+			}
+
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
+			}
+
+			public String getResourceGroup() {
+				return this.resourceGroup;
+			}
+
+			public void setResourceGroup(String resourceGroup) {
+				this.resourceGroup = resourceGroup;
+			}
+
+			public String getTag() {
+				return this.tag;
+			}
+
+			public void setTag(String tag) {
+				this.tag = tag;
+			}
+
+			public String getInstanceConfig() {
+				return this.instanceConfig;
+			}
+
+			public void setInstanceConfig(String instanceConfig) {
+				this.instanceConfig = instanceConfig;
+			}
+
+			public String getInstanceSpec() {
+				return this.instanceSpec;
+			}
+
+			public void setInstanceSpec(String instanceSpec) {
+				this.instanceSpec = instanceSpec;
+			}
+
+			public String getInternetIP() {
+				return this.internetIP;
+			}
+
+			public void setInternetIP(String internetIP) {
+				this.internetIP = internetIP;
+			}
+
+			public String getIntranetIP() {
+				return this.intranetIP;
+			}
+
+			public void setIntranetIP(String intranetIP) {
+				this.intranetIP = intranetIP;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getZone() {
+				return this.zone;
+			}
+
+			public void setZone(String zone) {
+				this.zone = zone;
 			}
 		}
 	}

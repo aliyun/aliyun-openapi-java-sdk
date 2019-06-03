@@ -1,3 +1,6 @@
+2019-06-03 Version: 1.2.8
+1, Order info add relatedOrderId.
+
 2019-05-05 Version: 1.2.5
 1, CreateInstance add ClientToken parameter.
 

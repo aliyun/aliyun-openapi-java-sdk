@@ -44,7 +44,6 @@ public class QueryInstanceBillResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("QueryInstanceBillResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
 			item.setInstanceID(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].InstanceID"));
-			item.setServicePeriod(context.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].ServicePeriod"));
 			item.setBillingType(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].BillingType"));
 			item.setCostUnit(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].CostUnit"));
 			item.setProductCode(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ProductCode"));
@@ -68,6 +67,15 @@ public class QueryInstanceBillResponseUnmarshaller {
 			item.setPaymentAmount(context.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].PaymentAmount"));
 			item.setOutstandingAmount(context.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].OutstandingAmount"));
 			item.setCurrency(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].Currency"));
+			item.setNickName(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].NickName"));
+			item.setResourceGroup(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ResourceGroup"));
+			item.setTag(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].Tag"));
+			item.setInstanceConfig(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].InstanceConfig"));
+			item.setInstanceSpec(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].InstanceSpec"));
+			item.setInternetIP(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].InternetIP"));
+			item.setIntranetIP(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].IntranetIP"));
+			item.setRegion(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].Region"));
+			item.setZone(context.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].Zone"));
 
 			items.add(item);
 		}
