@@ -34,12 +34,9 @@ public class DescribeSmartAccessGatewayClientUsersResponseUnmarshaller {
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < context.lengthValue("DescribeSmartAccessGatewayClientUsersResponse.Users.Length"); i++) {
 			User user = new User();
-			user.setSmartAccessGatewayId(context.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].SmartAccessGatewayId"));
 			user.setClientIp(context.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].ClientIp"));
 			user.setUserMail(context.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].UserMail"));
 			user.setUserName(context.stringValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].UserName"));
-			user.setIsStaticIp(context.booleanValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].IsStaticIp"));
-			user.setIsSharedUser(context.booleanValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].IsSharedUser"));
 			user.setBandwidth(context.integerValue("DescribeSmartAccessGatewayClientUsersResponse.Users["+ i +"].Bandwidth"));
 
 			users.add(user);

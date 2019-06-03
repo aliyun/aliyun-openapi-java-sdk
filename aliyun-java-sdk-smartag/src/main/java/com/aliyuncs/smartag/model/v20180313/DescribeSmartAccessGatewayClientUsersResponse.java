@@ -77,27 +77,13 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 
 	public static class User {
 
-		private String smartAccessGatewayId;
-
 		private String clientIp;
 
 		private String userMail;
 
 		private String userName;
 
-		private Boolean isStaticIp;
-
-		private Boolean isSharedUser;
-
 		private Integer bandwidth;
-
-		public String getSmartAccessGatewayId() {
-			return this.smartAccessGatewayId;
-		}
-
-		public void setSmartAccessGatewayId(String smartAccessGatewayId) {
-			this.smartAccessGatewayId = smartAccessGatewayId;
-		}
 
 		public String getClientIp() {
 			return this.clientIp;
@@ -121,22 +107,6 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
-		}
-
-		public Boolean getIsStaticIp() {
-			return this.isStaticIp;
-		}
-
-		public void setIsStaticIp(Boolean isStaticIp) {
-			this.isStaticIp = isStaticIp;
-		}
-
-		public Boolean getIsSharedUser() {
-			return this.isSharedUser;
-		}
-
-		public void setIsSharedUser(Boolean isSharedUser) {
-			this.isSharedUser = isSharedUser;
 		}
 
 		public Integer getBandwidth() {

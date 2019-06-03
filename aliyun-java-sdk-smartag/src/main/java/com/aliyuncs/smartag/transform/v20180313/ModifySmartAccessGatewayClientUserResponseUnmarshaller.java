@@ -23,12 +23,9 @@ public class ModifySmartAccessGatewayClientUserResponseUnmarshaller {
 	public static ModifySmartAccessGatewayClientUserResponse unmarshall(ModifySmartAccessGatewayClientUserResponse modifySmartAccessGatewayClientUserResponse, UnmarshallerContext context) {
 		
 		modifySmartAccessGatewayClientUserResponse.setRequestId(context.stringValue("ModifySmartAccessGatewayClientUserResponse.RequestId"));
-		modifySmartAccessGatewayClientUserResponse.setSmartAGId(context.stringValue("ModifySmartAccessGatewayClientUserResponse.SmartAGId"));
 		modifySmartAccessGatewayClientUserResponse.setClientIp(context.stringValue("ModifySmartAccessGatewayClientUserResponse.ClientIp"));
 		modifySmartAccessGatewayClientUserResponse.setUserMail(context.stringValue("ModifySmartAccessGatewayClientUserResponse.UserMail"));
 		modifySmartAccessGatewayClientUserResponse.setUserName(context.stringValue("ModifySmartAccessGatewayClientUserResponse.UserName"));
-		modifySmartAccessGatewayClientUserResponse.setIsStaticIp(context.booleanValue("ModifySmartAccessGatewayClientUserResponse.IsStaticIp"));
-		modifySmartAccessGatewayClientUserResponse.setIsSharedUser(context.booleanValue("ModifySmartAccessGatewayClientUserResponse.IsSharedUser"));
 		modifySmartAccessGatewayClientUserResponse.setBandwidth(context.integerValue("ModifySmartAccessGatewayClientUserResponse.Bandwidth"));
 	 
 	 	return modifySmartAccessGatewayClientUserResponse;

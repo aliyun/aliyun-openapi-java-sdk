@@ -23,11 +23,9 @@ public class CreateSmartAccessGatewayClientUserResponseUnmarshaller {
 	public static CreateSmartAccessGatewayClientUserResponse unmarshall(CreateSmartAccessGatewayClientUserResponse createSmartAccessGatewayClientUserResponse, UnmarshallerContext context) {
 		
 		createSmartAccessGatewayClientUserResponse.setRequestId(context.stringValue("CreateSmartAccessGatewayClientUserResponse.RequestId"));
-		createSmartAccessGatewayClientUserResponse.setSmartAGId(context.stringValue("CreateSmartAccessGatewayClientUserResponse.SmartAGId"));
 		createSmartAccessGatewayClientUserResponse.setClientIp(context.stringValue("CreateSmartAccessGatewayClientUserResponse.ClientIp"));
 		createSmartAccessGatewayClientUserResponse.setUserMail(context.stringValue("CreateSmartAccessGatewayClientUserResponse.UserMail"));
 		createSmartAccessGatewayClientUserResponse.setUserName(context.stringValue("CreateSmartAccessGatewayClientUserResponse.UserName"));
-		createSmartAccessGatewayClientUserResponse.setIsStaticIp(context.booleanValue("CreateSmartAccessGatewayClientUserResponse.IsStaticIp"));
 		createSmartAccessGatewayClientUserResponse.setBandwidth(context.integerValue("CreateSmartAccessGatewayClientUserResponse.Bandwidth"));
 	 
 	 	return createSmartAccessGatewayClientUserResponse;

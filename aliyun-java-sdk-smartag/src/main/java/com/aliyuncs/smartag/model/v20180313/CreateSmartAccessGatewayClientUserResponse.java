@@ -26,15 +26,11 @@ public class CreateSmartAccessGatewayClientUserResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String smartAGId;
-
 	private String clientIp;
 
 	private String userMail;
 
 	private String userName;
-
-	private Boolean isStaticIp;
 
 	private Integer bandwidth;
 
@@ -44,14 +40,6 @@ public class CreateSmartAccessGatewayClientUserResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
 	}
 
 	public String getClientIp() {
@@ -76,14 +64,6 @@ public class CreateSmartAccessGatewayClientUserResponse extends AcsResponse {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
-
-	public Boolean getIsStaticIp() {
-		return this.isStaticIp;
-	}
-
-	public void setIsStaticIp(Boolean isStaticIp) {
-		this.isStaticIp = isStaticIp;
 	}
 
 	public Integer getBandwidth() {

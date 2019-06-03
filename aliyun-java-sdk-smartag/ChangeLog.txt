@@ -1,3 +1,6 @@
+2019-06-03 Version: 1.4.3
+- Generated 2018-03-13 for `Smartag`
+
 2019-05-29 Version: 1.4.2
 update  Smartag
 
