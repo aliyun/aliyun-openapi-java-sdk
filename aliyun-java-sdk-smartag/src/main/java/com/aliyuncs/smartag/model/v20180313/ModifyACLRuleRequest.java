@@ -26,21 +26,11 @@ public class ModifyACLRuleRequest extends RpcAcsRequest<ModifyACLRuleResponse> {
 		super("Smartag", "2018-03-13", "ModifyACLRule", "smartag");
 	}
 
+	private String aclId;
+
 	private Long resourceOwnerId;
 
 	private String sourcePortRange;
-
-	private String sourceCidr;
-
-	private String description;
-
-	private String destCidr;
-
-	private String direction;
-
-	private String policy;
-
-	private String aclId;
 
 	private String resourceOwnerAccount;
 
@@ -48,13 +38,34 @@ public class ModifyACLRuleRequest extends RpcAcsRequest<ModifyACLRuleResponse> {
 
 	private String ownerAccount;
 
+	private String sourceCidr;
+
+	private String description;
+
 	private Long ownerId;
 
 	private Integer priority;
 
 	private String acrId;
 
+	private String destCidr;
+
 	private String destPortRange;
+
+	private String direction;
+
+	private String policy;
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -75,72 +86,6 @@ public class ModifyACLRuleRequest extends RpcAcsRequest<ModifyACLRuleResponse> {
 		this.sourcePortRange = sourcePortRange;
 		if(sourcePortRange != null){
 			putQueryParameter("SourcePortRange", sourcePortRange);
-		}
-	}
-
-	public String getSourceCidr() {
-		return this.sourceCidr;
-	}
-
-	public void setSourceCidr(String sourceCidr) {
-		this.sourceCidr = sourceCidr;
-		if(sourceCidr != null){
-			putQueryParameter("SourceCidr", sourceCidr);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getDestCidr() {
-		return this.destCidr;
-	}
-
-	public void setDestCidr(String destCidr) {
-		this.destCidr = destCidr;
-		if(destCidr != null){
-			putQueryParameter("DestCidr", destCidr);
-		}
-	}
-
-	public String getDirection() {
-		return this.direction;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
-		if(direction != null){
-			putQueryParameter("Direction", direction);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
-		}
-	}
-
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
 		}
 	}
 
@@ -177,6 +122,28 @@ public class ModifyACLRuleRequest extends RpcAcsRequest<ModifyACLRuleResponse> {
 		}
 	}
 
+	public String getSourceCidr() {
+		return this.sourceCidr;
+	}
+
+	public void setSourceCidr(String sourceCidr) {
+		this.sourceCidr = sourceCidr;
+		if(sourceCidr != null){
+			putQueryParameter("SourceCidr", sourceCidr);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -210,6 +177,17 @@ public class ModifyACLRuleRequest extends RpcAcsRequest<ModifyACLRuleResponse> {
 		}
 	}
 
+	public String getDestCidr() {
+		return this.destCidr;
+	}
+
+	public void setDestCidr(String destCidr) {
+		this.destCidr = destCidr;
+		if(destCidr != null){
+			putQueryParameter("DestCidr", destCidr);
+		}
+	}
+
 	public String getDestPortRange() {
 		return this.destPortRange;
 	}
@@ -218,6 +196,28 @@ public class ModifyACLRuleRequest extends RpcAcsRequest<ModifyACLRuleResponse> {
 		this.destPortRange = destPortRange;
 		if(destPortRange != null){
 			putQueryParameter("DestPortRange", destPortRange);
+		}
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		if(direction != null){
+			putQueryParameter("Direction", direction);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
 		}
 	}
 

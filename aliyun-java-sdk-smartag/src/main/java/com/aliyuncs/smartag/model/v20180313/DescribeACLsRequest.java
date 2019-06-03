@@ -28,19 +28,19 @@ public class DescribeACLsRequest extends RpcAcsRequest<DescribeACLsResponse> {
 
 	private Long resourceOwnerId;
 
-	private String aclIds;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
 	private String resourceOwnerAccount;
+
+	private String aclIds;
 
 	private String ownerAccount;
 
+	private String name;
+
+	private Integer pageSize;
+
 	private Long ownerId;
 
-	private String name;
+	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,39 +50,6 @@ public class DescribeACLsRequest extends RpcAcsRequest<DescribeACLsResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getAclIds() {
-		return this.aclIds;
-	}
-
-	public void setAclIds(String aclIds) {
-		this.aclIds = aclIds;
-		if(aclIds != null){
-			putQueryParameter("AclIds", aclIds);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -97,6 +64,17 @@ public class DescribeACLsRequest extends RpcAcsRequest<DescribeACLsResponse> {
 		}
 	}
 
+	public String getAclIds() {
+		return this.aclIds;
+	}
+
+	public void setAclIds(String aclIds) {
+		this.aclIds = aclIds;
+		if(aclIds != null){
+			putQueryParameter("AclIds", aclIds);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -105,6 +83,28 @@ public class DescribeACLsRequest extends RpcAcsRequest<DescribeACLsResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -119,14 +119,14 @@ public class DescribeACLsRequest extends RpcAcsRequest<DescribeACLsResponse> {
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

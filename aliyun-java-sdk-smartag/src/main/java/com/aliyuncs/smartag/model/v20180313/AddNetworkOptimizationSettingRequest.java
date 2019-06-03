@@ -28,17 +28,17 @@ public class AddNetworkOptimizationSettingRequest extends RpcAcsRequest<AddNetwo
 
 	private Long resourceOwnerId;
 
-	private String type;
+	private String resourceOwnerAccount;
 
 	private String networkOptId;
 
-	private String resourceOwnerAccount;
-
 	private String ownerAccount;
+
+	private String domain;
 
 	private Long ownerId;
 
-	private String domain;
+	private String type;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,28 +48,6 @@ public class AddNetworkOptimizationSettingRequest extends RpcAcsRequest<AddNetwo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getNetworkOptId() {
-		return this.networkOptId;
-	}
-
-	public void setNetworkOptId(String networkOptId) {
-		this.networkOptId = networkOptId;
-		if(networkOptId != null){
-			putQueryParameter("NetworkOptId", networkOptId);
 		}
 	}
 
@@ -84,6 +62,17 @@ public class AddNetworkOptimizationSettingRequest extends RpcAcsRequest<AddNetwo
 		}
 	}
 
+	public String getNetworkOptId() {
+		return this.networkOptId;
+	}
+
+	public void setNetworkOptId(String networkOptId) {
+		this.networkOptId = networkOptId;
+		if(networkOptId != null){
+			putQueryParameter("NetworkOptId", networkOptId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -92,17 +81,6 @@ public class AddNetworkOptimizationSettingRequest extends RpcAcsRequest<AddNetwo
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -133,6 +111,28 @@ public class AddNetworkOptimizationSettingRequest extends RpcAcsRequest<AddNetwo
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 

@@ -27,58 +27,25 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		super("Smartag", "2018-03-13", "ModifySmartAccessGateway", "smartag");
 	}
 
-	private Long resourceOwnerId;
-
-	private String description;
-
-	private Integer securityLockThreshold;
-
 	private List<SnatEntries> snatEntriess;
+
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String description;
+
 	private Long ownerId;
+
+	private Integer securityLockThreshold;
 
 	private String name;
 
 	private String cidrBlock;
 
 	private String smartAGId;
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public Integer getSecurityLockThreshold() {
-		return this.securityLockThreshold;
-	}
-
-	public void setSecurityLockThreshold(Integer securityLockThreshold) {
-		this.securityLockThreshold = securityLockThreshold;
-		if(securityLockThreshold != null){
-			putQueryParameter("SecurityLockThreshold", securityLockThreshold.toString());
-		}
-	}
 
 	public List<SnatEntries> getSnatEntriess() {
 		return this.snatEntriess;
@@ -92,6 +59,17 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 				putQueryParameter("SnatEntries." + (depth1 + 1) + ".SnatIp" , snatEntriess.get(depth1).getSnatIp());
 			}
 		}	
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -116,6 +94,17 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		}
 	}
 
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -124,6 +113,17 @@ public class ModifySmartAccessGatewayRequest extends RpcAcsRequest<ModifySmartAc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getSecurityLockThreshold() {
+		return this.securityLockThreshold;
+	}
+
+	public void setSecurityLockThreshold(Integer securityLockThreshold) {
+		this.securityLockThreshold = securityLockThreshold;
+		if(securityLockThreshold != null){
+			putQueryParameter("SecurityLockThreshold", securityLockThreshold.toString());
 		}
 	}
 

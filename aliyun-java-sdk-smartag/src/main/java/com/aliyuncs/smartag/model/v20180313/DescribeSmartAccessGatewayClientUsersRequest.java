@@ -28,17 +28,17 @@ public class DescribeSmartAccessGatewayClientUsersRequest extends RpcAcsRequest<
 
 	private Long resourceOwnerId;
 
-	private Integer pageSize;
-
 	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private Long ownerId;
 
 	private Integer pageNo;
 
+	private String ownerAccount;
+
+	private Integer pageSize;
+
 	private String smartAGId;
+
+	private Long ownerId;
 
 	private String userName;
 
@@ -53,17 +53,6 @@ public class DescribeSmartAccessGatewayClientUsersRequest extends RpcAcsRequest<
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -72,28 +61,6 @@ public class DescribeSmartAccessGatewayClientUsersRequest extends RpcAcsRequest<
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -108,6 +75,28 @@ public class DescribeSmartAccessGatewayClientUsersRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getSmartAGId() {
 		return this.smartAGId;
 	}
@@ -116,6 +105,17 @@ public class DescribeSmartAccessGatewayClientUsersRequest extends RpcAcsRequest<
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

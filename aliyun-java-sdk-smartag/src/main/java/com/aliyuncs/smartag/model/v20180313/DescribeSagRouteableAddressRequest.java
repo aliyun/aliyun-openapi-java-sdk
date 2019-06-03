@@ -30,11 +30,11 @@ public class DescribeSagRouteableAddressRequest extends RpcAcsRequest<DescribeSa
 
 	private String resourceOwnerAccount;
 
+	private String sagId;
+
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String sagId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,6 +58,17 @@ public class DescribeSagRouteableAddressRequest extends RpcAcsRequest<DescribeSa
 		}
 	}
 
+	public String getSagId() {
+		return this.sagId;
+	}
+
+	public void setSagId(String sagId) {
+		this.sagId = sagId;
+		if(sagId != null){
+			putQueryParameter("SagId", sagId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -77,17 +88,6 @@ public class DescribeSagRouteableAddressRequest extends RpcAcsRequest<DescribeSa
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSagId() {
-		return this.sagId;
-	}
-
-	public void setSagId(String sagId) {
-		this.sagId = sagId;
-		if(sagId != null){
-			putQueryParameter("SagId", sagId);
 		}
 	}
 

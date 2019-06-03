@@ -32,9 +32,9 @@ public class SwitchCloudBoxHaStateRequest extends RpcAcsRequest<SwitchCloudBoxHa
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String smartAGId;
+
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,17 +69,6 @@ public class SwitchCloudBoxHaStateRequest extends RpcAcsRequest<SwitchCloudBoxHa
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSmartAGId() {
 		return this.smartAGId;
 	}
@@ -88,6 +77,17 @@ public class SwitchCloudBoxHaStateRequest extends RpcAcsRequest<SwitchCloudBoxHa
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

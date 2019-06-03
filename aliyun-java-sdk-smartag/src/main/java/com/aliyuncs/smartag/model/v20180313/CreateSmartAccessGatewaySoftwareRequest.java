@@ -28,8 +28,6 @@ public class CreateSmartAccessGatewaySoftwareRequest extends RpcAcsRequest<Creat
 
 	private Long resourceOwnerId;
 
-	private Integer userCount;
-
 	private Integer period;
 
 	private Boolean autoPay;
@@ -38,9 +36,11 @@ public class CreateSmartAccessGatewaySoftwareRequest extends RpcAcsRequest<Creat
 
 	private String ownerAccount;
 
-	private Long ownerId;
+	private Integer userCount;
 
 	private String chargeType;
+
+	private Long ownerId;
 
 	private Long dataPlan;
 
@@ -52,17 +52,6 @@ public class CreateSmartAccessGatewaySoftwareRequest extends RpcAcsRequest<Creat
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getUserCount() {
-		return this.userCount;
-	}
-
-	public void setUserCount(Integer userCount) {
-		this.userCount = userCount;
-		if(userCount != null){
-			putQueryParameter("UserCount", userCount.toString());
 		}
 	}
 
@@ -110,14 +99,14 @@ public class CreateSmartAccessGatewaySoftwareRequest extends RpcAcsRequest<Creat
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Integer getUserCount() {
+		return this.userCount;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setUserCount(Integer userCount) {
+		this.userCount = userCount;
+		if(userCount != null){
+			putQueryParameter("UserCount", userCount.toString());
 		}
 	}
 
@@ -129,6 +118,17 @@ public class CreateSmartAccessGatewaySoftwareRequest extends RpcAcsRequest<Creat
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -32,9 +32,9 @@ public class CreateACLRequest extends RpcAcsRequest<CreateACLResponse> {
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String name;
+
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,17 +69,6 @@ public class CreateACLRequest extends RpcAcsRequest<CreateACLResponse> {
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -88,6 +77,17 @@ public class CreateACLRequest extends RpcAcsRequest<CreateACLResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

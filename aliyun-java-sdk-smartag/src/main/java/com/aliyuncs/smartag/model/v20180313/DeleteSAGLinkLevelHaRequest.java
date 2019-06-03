@@ -30,13 +30,13 @@ public class DeleteSAGLinkLevelHaRequest extends RpcAcsRequest<DeleteSAGLinkLeve
 
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
-
-	private Long ownerId;
-
 	private String haType;
 
+	private String ownerAccount;
+
 	private String smartAGId;
+
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,28 +60,6 @@ public class DeleteSAGLinkLevelHaRequest extends RpcAcsRequest<DeleteSAGLinkLeve
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getHaType() {
 		return this.haType;
 	}
@@ -93,6 +71,17 @@ public class DeleteSAGLinkLevelHaRequest extends RpcAcsRequest<DeleteSAGLinkLeve
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public String getSmartAGId() {
 		return this.smartAGId;
 	}
@@ -101,6 +90,17 @@ public class DeleteSAGLinkLevelHaRequest extends RpcAcsRequest<DeleteSAGLinkLeve
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

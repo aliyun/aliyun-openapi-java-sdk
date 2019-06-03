@@ -26,9 +26,9 @@ public class DeleteACLRuleRequest extends RpcAcsRequest<DeleteACLRuleResponse> {
 		super("Smartag", "2018-03-13", "DeleteACLRule", "smartag");
 	}
 
-	private Long resourceOwnerId;
-
 	private String aclId;
+
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
@@ -38,17 +38,6 @@ public class DeleteACLRuleRequest extends RpcAcsRequest<DeleteACLRuleResponse> {
 
 	private String acrId;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getAclId() {
 		return this.aclId;
 	}
@@ -57,6 +46,17 @@ public class DeleteACLRuleRequest extends RpcAcsRequest<DeleteACLRuleResponse> {
 		this.aclId = aclId;
 		if(aclId != null){
 			putQueryParameter("AclId", aclId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 

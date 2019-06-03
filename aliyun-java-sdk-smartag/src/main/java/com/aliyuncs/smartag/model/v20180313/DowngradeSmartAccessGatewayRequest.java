@@ -28,19 +28,19 @@ public class DowngradeSmartAccessGatewayRequest extends RpcAcsRequest<DowngradeS
 
 	private Long resourceOwnerId;
 
-	private Long bandWidthSpec;
-
-	private Integer userCount;
-
 	private Boolean autoPay;
+
+	private Long bandWidthSpec;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Long ownerId;
+	private Integer userCount;
 
 	private String smartAGId;
+
+	private Long ownerId;
 
 	private Long dataPlan;
 
@@ -55,28 +55,6 @@ public class DowngradeSmartAccessGatewayRequest extends RpcAcsRequest<DowngradeS
 		}
 	}
 
-	public Long getBandWidthSpec() {
-		return this.bandWidthSpec;
-	}
-
-	public void setBandWidthSpec(Long bandWidthSpec) {
-		this.bandWidthSpec = bandWidthSpec;
-		if(bandWidthSpec != null){
-			putQueryParameter("BandWidthSpec", bandWidthSpec.toString());
-		}
-	}
-
-	public Integer getUserCount() {
-		return this.userCount;
-	}
-
-	public void setUserCount(Integer userCount) {
-		this.userCount = userCount;
-		if(userCount != null){
-			putQueryParameter("UserCount", userCount.toString());
-		}
-	}
-
 	public Boolean getAutoPay() {
 		return this.autoPay;
 	}
@@ -85,6 +63,17 @@ public class DowngradeSmartAccessGatewayRequest extends RpcAcsRequest<DowngradeS
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public Long getBandWidthSpec() {
+		return this.bandWidthSpec;
+	}
+
+	public void setBandWidthSpec(Long bandWidthSpec) {
+		this.bandWidthSpec = bandWidthSpec;
+		if(bandWidthSpec != null){
+			putQueryParameter("BandWidthSpec", bandWidthSpec.toString());
 		}
 	}
 
@@ -110,14 +99,14 @@ public class DowngradeSmartAccessGatewayRequest extends RpcAcsRequest<DowngradeS
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public Integer getUserCount() {
+		return this.userCount;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setUserCount(Integer userCount) {
+		this.userCount = userCount;
+		if(userCount != null){
+			putQueryParameter("UserCount", userCount.toString());
 		}
 	}
 
@@ -129,6 +118,17 @@ public class DowngradeSmartAccessGatewayRequest extends RpcAcsRequest<DowngradeS
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

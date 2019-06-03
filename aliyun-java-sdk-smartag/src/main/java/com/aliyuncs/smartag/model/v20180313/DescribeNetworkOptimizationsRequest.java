@@ -28,21 +28,21 @@ public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeN
 
 	private Long resourceOwnerId;
 
-	private String ccnId;
+	private String resourceOwnerAccount;
 
 	private String networkOptId;
 
-	private Integer pageSize;
-
-	private String resourceOwnerAccount;
+	private Integer pageNo;
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
-	private Integer pageNo;
+	private String ccnId;
 
 	private String name;
+
+	private Integer pageSize;
+
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,39 +52,6 @@ public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeN
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getCcnId() {
-		return this.ccnId;
-	}
-
-	public void setCcnId(String ccnId) {
-		this.ccnId = ccnId;
-		if(ccnId != null){
-			putQueryParameter("CcnId", ccnId);
-		}
-	}
-
-	public String getNetworkOptId() {
-		return this.networkOptId;
-	}
-
-	public void setNetworkOptId(String networkOptId) {
-		this.networkOptId = networkOptId;
-		if(networkOptId != null){
-			putQueryParameter("NetworkOptId", networkOptId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -99,25 +66,14 @@ public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeN
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getNetworkOptId() {
+		return this.networkOptId;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setNetworkOptId(String networkOptId) {
+		this.networkOptId = networkOptId;
+		if(networkOptId != null){
+			putQueryParameter("NetworkOptId", networkOptId);
 		}
 	}
 
@@ -132,6 +88,28 @@ public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeN
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getCcnId() {
+		return this.ccnId;
+	}
+
+	public void setCcnId(String ccnId) {
+		this.ccnId = ccnId;
+		if(ccnId != null){
+			putQueryParameter("CcnId", ccnId);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -140,6 +118,28 @@ public class DescribeNetworkOptimizationsRequest extends RpcAcsRequest<DescribeN
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

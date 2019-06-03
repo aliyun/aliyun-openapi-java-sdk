@@ -26,78 +26,23 @@ public class DescribeACLAttributeRequest extends RpcAcsRequest<DescribeACLAttrib
 		super("Smartag", "2018-03-13", "DescribeACLAttribute", "smartag");
 	}
 
-	private Long resourceOwnerId;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private String direction;
-
-	private String order;
-
 	private String aclId;
+
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private Integer pageSize;
+
 	private Long ownerId;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+	private Integer pageNumber;
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
+	private String direction;
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getDirection() {
-		return this.direction;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
-		if(direction != null){
-			putQueryParameter("Direction", direction);
-		}
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
-		}
-	}
+	private String order;
 
 	public String getAclId() {
 		return this.aclId;
@@ -107,6 +52,17 @@ public class DescribeACLAttributeRequest extends RpcAcsRequest<DescribeACLAttrib
 		this.aclId = aclId;
 		if(aclId != null){
 			putQueryParameter("AclId", aclId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -132,6 +88,17 @@ public class DescribeACLAttributeRequest extends RpcAcsRequest<DescribeACLAttrib
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -140,6 +107,39 @@ public class DescribeACLAttributeRequest extends RpcAcsRequest<DescribeACLAttrib
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDirection() {
+		return this.direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+		if(direction != null){
+			putQueryParameter("Direction", direction);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 

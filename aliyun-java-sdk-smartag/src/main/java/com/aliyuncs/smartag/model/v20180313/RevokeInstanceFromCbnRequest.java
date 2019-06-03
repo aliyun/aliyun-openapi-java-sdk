@@ -28,15 +28,15 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 
 	private Long resourceOwnerId;
 
-	private String ccnInstanceId;
-
 	private String resourceOwnerAccount;
+
+	private String cenInstanceId;
 
 	private String ownerAccount;
 
-	private Long ownerId;
+	private String ccnInstanceId;
 
-	private String cenInstanceId;
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,17 +46,6 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getCcnInstanceId() {
-		return this.ccnInstanceId;
-	}
-
-	public void setCcnInstanceId(String ccnInstanceId) {
-		this.ccnInstanceId = ccnInstanceId;
-		if(ccnInstanceId != null){
-			putQueryParameter("CcnInstanceId", ccnInstanceId);
 		}
 	}
 
@@ -71,6 +60,17 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 		}
 	}
 
+	public String getCenInstanceId() {
+		return this.cenInstanceId;
+	}
+
+	public void setCenInstanceId(String cenInstanceId) {
+		this.cenInstanceId = cenInstanceId;
+		if(cenInstanceId != null){
+			putQueryParameter("CenInstanceId", cenInstanceId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -82,6 +82,17 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 		}
 	}
 
+	public String getCcnInstanceId() {
+		return this.ccnInstanceId;
+	}
+
+	public void setCcnInstanceId(String ccnInstanceId) {
+		this.ccnInstanceId = ccnInstanceId;
+		if(ccnInstanceId != null){
+			putQueryParameter("CcnInstanceId", ccnInstanceId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -90,17 +101,6 @@ public class RevokeInstanceFromCbnRequest extends RpcAcsRequest<RevokeInstanceFr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getCenInstanceId() {
-		return this.cenInstanceId;
-	}
-
-	public void setCenInstanceId(String cenInstanceId) {
-		this.cenInstanceId = cenInstanceId;
-		if(cenInstanceId != null){
-			putQueryParameter("CenInstanceId", cenInstanceId);
 		}
 	}
 

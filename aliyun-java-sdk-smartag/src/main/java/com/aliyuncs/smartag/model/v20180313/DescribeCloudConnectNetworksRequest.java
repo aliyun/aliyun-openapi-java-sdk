@@ -29,21 +29,21 @@ public class DescribeCloudConnectNetworksRequest extends RpcAcsRequest<DescribeC
 
 	private Long resourceOwnerId;
 
-	private String ccnId;
+	private String resourceOwnerAccount;
 
-	private String pageNumber;
+	private String ownerAccount;
+
+	private String name;
+
+	private String ccnId;
 
 	private String pageSize;
 
 	private List<Tag> tags;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private Long ownerId;
 
-	private String name;
+	private String pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,6 +56,39 @@ public class DescribeCloudConnectNetworksRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public String getCcnId() {
 		return this.ccnId;
 	}
@@ -64,17 +97,6 @@ public class DescribeCloudConnectNetworksRequest extends RpcAcsRequest<DescribeC
 		this.ccnId = ccnId;
 		if(ccnId != null){
 			putQueryParameter("CcnId", ccnId);
-		}
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 
@@ -103,28 +125,6 @@ public class DescribeCloudConnectNetworksRequest extends RpcAcsRequest<DescribeC
 		}	
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -136,14 +136,14 @@ public class DescribeCloudConnectNetworksRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 

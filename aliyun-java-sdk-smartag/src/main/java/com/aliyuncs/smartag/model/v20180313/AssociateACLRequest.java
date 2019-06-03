@@ -26,28 +26,17 @@ public class AssociateACLRequest extends RpcAcsRequest<AssociateACLResponse> {
 		super("Smartag", "2018-03-13", "AssociateACL", "smartag");
 	}
 
-	private Long resourceOwnerId;
-
 	private String aclId;
+
+	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String smartAGId;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
+	private Long ownerId;
 
 	public String getAclId() {
 		return this.aclId;
@@ -57,6 +46,17 @@ public class AssociateACLRequest extends RpcAcsRequest<AssociateACLResponse> {
 		this.aclId = aclId;
 		if(aclId != null){
 			putQueryParameter("AclId", aclId);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -82,17 +82,6 @@ public class AssociateACLRequest extends RpcAcsRequest<AssociateACLResponse> {
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSmartAGId() {
 		return this.smartAGId;
 	}
@@ -101,6 +90,17 @@ public class AssociateACLRequest extends RpcAcsRequest<AssociateACLResponse> {
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

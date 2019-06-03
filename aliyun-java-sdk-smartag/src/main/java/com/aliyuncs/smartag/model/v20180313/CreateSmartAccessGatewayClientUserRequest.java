@@ -28,19 +28,19 @@ public class CreateSmartAccessGatewayClientUserRequest extends RpcAcsRequest<Cre
 
 	private Long resourceOwnerId;
 
-	private String clientIp;
-
 	private String resourceOwnerAccount;
 
 	private Long bandwidth;
 
 	private String ownerAccount;
 
+	private String clientIp;
+
+	private String smartAGId;
+
 	private String userMail;
 
 	private Long ownerId;
-
-	private String smartAGId;
 
 	private String userName;
 
@@ -52,17 +52,6 @@ public class CreateSmartAccessGatewayClientUserRequest extends RpcAcsRequest<Cre
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClientIp() {
-		return this.clientIp;
-	}
-
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
-		if(clientIp != null){
-			putQueryParameter("ClientIp", clientIp);
 		}
 	}
 
@@ -99,6 +88,28 @@ public class CreateSmartAccessGatewayClientUserRequest extends RpcAcsRequest<Cre
 		}
 	}
 
+	public String getClientIp() {
+		return this.clientIp;
+	}
+
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
+		if(clientIp != null){
+			putQueryParameter("ClientIp", clientIp);
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
 	public String getUserMail() {
 		return this.userMail;
 	}
@@ -118,17 +129,6 @@ public class CreateSmartAccessGatewayClientUserRequest extends RpcAcsRequest<Cre
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

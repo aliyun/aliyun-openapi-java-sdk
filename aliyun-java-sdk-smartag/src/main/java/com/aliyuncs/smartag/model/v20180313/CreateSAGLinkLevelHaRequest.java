@@ -30,21 +30,21 @@ public class CreateSAGLinkLevelHaRequest extends RpcAcsRequest<CreateSAGLinkLeve
 
 	private String backupLinkId;
 
+	private String resourceOwnerAccount;
+
+	private String haType;
+
+	private String ownerAccount;
+
 	private String mainLinkRegionId;
+
+	private String smartAGId;
+
+	private Long ownerId;
 
 	private String mainLinkId;
 
 	private String backupLinkRegionId;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private Long ownerId;
-
-	private String haType;
-
-	private String smartAGId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -68,6 +68,39 @@ public class CreateSAGLinkLevelHaRequest extends RpcAcsRequest<CreateSAGLinkLeve
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getHaType() {
+		return this.haType;
+	}
+
+	public void setHaType(String haType) {
+		this.haType = haType;
+		if(haType != null){
+			putQueryParameter("HaType", haType);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public String getMainLinkRegionId() {
 		return this.mainLinkRegionId;
 	}
@@ -76,6 +109,28 @@ public class CreateSAGLinkLevelHaRequest extends RpcAcsRequest<CreateSAGLinkLeve
 		this.mainLinkRegionId = mainLinkRegionId;
 		if(mainLinkRegionId != null){
 			putQueryParameter("MainLinkRegionId", mainLinkRegionId);
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -98,61 +153,6 @@ public class CreateSAGLinkLevelHaRequest extends RpcAcsRequest<CreateSAGLinkLeve
 		this.backupLinkRegionId = backupLinkRegionId;
 		if(backupLinkRegionId != null){
 			putQueryParameter("BackupLinkRegionId", backupLinkRegionId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getHaType() {
-		return this.haType;
-	}
-
-	public void setHaType(String haType) {
-		this.haType = haType;
-		if(haType != null){
-			putQueryParameter("HaType", haType);
-		}
-	}
-
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

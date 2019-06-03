@@ -28,15 +28,15 @@ public class SetSagRouteableAddressRequest extends RpcAcsRequest<SetSagRouteable
 
 	private Long resourceOwnerId;
 
-	private String routeableAddress;
-
 	private String resourceOwnerAccount;
+
+	private String sagId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String sagId;
+	private String routeableAddress;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +49,6 @@ public class SetSagRouteableAddressRequest extends RpcAcsRequest<SetSagRouteable
 		}
 	}
 
-	public String getRouteableAddress() {
-		return this.routeableAddress;
-	}
-
-	public void setRouteableAddress(String routeableAddress) {
-		this.routeableAddress = routeableAddress;
-		if(routeableAddress != null){
-			putQueryParameter("RouteableAddress", routeableAddress);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -68,6 +57,17 @@ public class SetSagRouteableAddressRequest extends RpcAcsRequest<SetSagRouteable
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getSagId() {
+		return this.sagId;
+	}
+
+	public void setSagId(String sagId) {
+		this.sagId = sagId;
+		if(sagId != null){
+			putQueryParameter("SagId", sagId);
 		}
 	}
 
@@ -93,14 +93,14 @@ public class SetSagRouteableAddressRequest extends RpcAcsRequest<SetSagRouteable
 		}
 	}
 
-	public String getSagId() {
-		return this.sagId;
+	public String getRouteableAddress() {
+		return this.routeableAddress;
 	}
 
-	public void setSagId(String sagId) {
-		this.sagId = sagId;
-		if(sagId != null){
-			putQueryParameter("SagId", sagId);
+	public void setRouteableAddress(String routeableAddress) {
+		this.routeableAddress = routeableAddress;
+		if(routeableAddress != null){
+			putQueryParameter("RouteableAddress", routeableAddress);
 		}
 	}
 

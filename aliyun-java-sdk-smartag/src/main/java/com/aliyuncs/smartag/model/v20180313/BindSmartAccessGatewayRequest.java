@@ -28,15 +28,15 @@ public class BindSmartAccessGatewayRequest extends RpcAcsRequest<BindSmartAccess
 
 	private Long resourceOwnerId;
 
-	private String ccnId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Long ownerId;
+	private String ccnId;
 
 	private String smartAGId;
+
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,17 +46,6 @@ public class BindSmartAccessGatewayRequest extends RpcAcsRequest<BindSmartAccess
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getCcnId() {
-		return this.ccnId;
-	}
-
-	public void setCcnId(String ccnId) {
-		this.ccnId = ccnId;
-		if(ccnId != null){
-			putQueryParameter("CcnId", ccnId);
 		}
 	}
 
@@ -82,14 +71,14 @@ public class BindSmartAccessGatewayRequest extends RpcAcsRequest<BindSmartAccess
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getCcnId() {
+		return this.ccnId;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setCcnId(String ccnId) {
+		this.ccnId = ccnId;
+		if(ccnId != null){
+			putQueryParameter("CcnId", ccnId);
 		}
 	}
 
@@ -101,6 +90,17 @@ public class BindSmartAccessGatewayRequest extends RpcAcsRequest<BindSmartAccess
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -29,13 +29,13 @@ public class DetachNetworkOptimizationSagsRequest extends RpcAcsRequest<DetachNe
 
 	private Long resourceOwnerId;
 
-	private String networkOptId;
-
-	private List<String> smartAGIdss;
-
 	private String resourceOwnerAccount;
 
+	private String networkOptId;
+
 	private String ownerAccount;
+
+	private List<String> smartAGIdss;
 
 	private Long ownerId;
 
@@ -50,6 +50,17 @@ public class DetachNetworkOptimizationSagsRequest extends RpcAcsRequest<DetachNe
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getNetworkOptId() {
 		return this.networkOptId;
 	}
@@ -58,6 +69,17 @@ public class DetachNetworkOptimizationSagsRequest extends RpcAcsRequest<DetachNe
 		this.networkOptId = networkOptId;
 		if(networkOptId != null){
 			putQueryParameter("NetworkOptId", networkOptId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -72,28 +94,6 @@ public class DetachNetworkOptimizationSagsRequest extends RpcAcsRequest<DetachNe
 				putQueryParameter("SmartAGIds." + (i + 1) , smartAGIdss.get(i));
 			}
 		}	
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
 	}
 
 	public Long getOwnerId() {

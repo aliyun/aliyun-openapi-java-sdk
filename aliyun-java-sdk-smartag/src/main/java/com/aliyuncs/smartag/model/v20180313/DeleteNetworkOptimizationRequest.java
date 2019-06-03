@@ -28,9 +28,9 @@ public class DeleteNetworkOptimizationRequest extends RpcAcsRequest<DeleteNetwor
 
 	private Long resourceOwnerId;
 
-	private String networkOptId;
-
 	private String resourceOwnerAccount;
+
+	private String networkOptId;
 
 	private String ownerAccount;
 
@@ -47,17 +47,6 @@ public class DeleteNetworkOptimizationRequest extends RpcAcsRequest<DeleteNetwor
 		}
 	}
 
-	public String getNetworkOptId() {
-		return this.networkOptId;
-	}
-
-	public void setNetworkOptId(String networkOptId) {
-		this.networkOptId = networkOptId;
-		if(networkOptId != null){
-			putQueryParameter("NetworkOptId", networkOptId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -66,6 +55,17 @@ public class DeleteNetworkOptimizationRequest extends RpcAcsRequest<DeleteNetwor
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getNetworkOptId() {
+		return this.networkOptId;
+	}
+
+	public void setNetworkOptId(String networkOptId) {
+		this.networkOptId = networkOptId;
+		if(networkOptId != null){
+			putQueryParameter("NetworkOptId", networkOptId);
 		}
 	}
 

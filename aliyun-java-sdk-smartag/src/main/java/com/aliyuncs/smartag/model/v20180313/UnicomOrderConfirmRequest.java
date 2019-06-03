@@ -27,15 +27,11 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 		super("Smartag", "2018-03-13", "UnicomOrderConfirm", "smartag");
 	}
 
-	private Long resourceOwnerId;
-
 	private String tmsCode;
 
+	private Long resourceOwnerId;
+
 	private List<OrderItem> orderItems;
-
-	private Long orderPostFee;
-
-	private String tradeId;
 
 	private String ownerUserId;
 
@@ -43,20 +39,13 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 
 	private String ownerAccount;
 
+	private Long orderPostFee;
+
 	private Long ownerId;
 
 	private String tmsOrderCode;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
+	private String tradeId;
 
 	public String getTmsCode() {
 		return this.tmsCode;
@@ -66,6 +55,17 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 		this.tmsCode = tmsCode;
 		if(tmsCode != null){
 			putQueryParameter("TmsCode", tmsCode);
+		}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -91,28 +91,6 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 				putQueryParameter("OrderItem." + (depth1 + 1) + ".TradeItemId" , orderItems.get(depth1).getTradeItemId());
 			}
 		}	
-	}
-
-	public Long getOrderPostFee() {
-		return this.orderPostFee;
-	}
-
-	public void setOrderPostFee(Long orderPostFee) {
-		this.orderPostFee = orderPostFee;
-		if(orderPostFee != null){
-			putQueryParameter("OrderPostFee", orderPostFee.toString());
-		}
-	}
-
-	public String getTradeId() {
-		return this.tradeId;
-	}
-
-	public void setTradeId(String tradeId) {
-		this.tradeId = tradeId;
-		if(tradeId != null){
-			putQueryParameter("TradeId", tradeId);
-		}
 	}
 
 	public String getOwnerUserId() {
@@ -148,6 +126,17 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 		}
 	}
 
+	public Long getOrderPostFee() {
+		return this.orderPostFee;
+	}
+
+	public void setOrderPostFee(Long orderPostFee) {
+		this.orderPostFee = orderPostFee;
+		if(orderPostFee != null){
+			putQueryParameter("OrderPostFee", orderPostFee.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -167,6 +156,17 @@ public class UnicomOrderConfirmRequest extends RpcAcsRequest<UnicomOrderConfirmR
 		this.tmsOrderCode = tmsOrderCode;
 		if(tmsOrderCode != null){
 			putQueryParameter("TmsOrderCode", tmsOrderCode);
+		}
+	}
+
+	public String getTradeId() {
+		return this.tradeId;
+	}
+
+	public void setTradeId(String tradeId) {
+		this.tradeId = tradeId;
+		if(tradeId != null){
+			putQueryParameter("TradeId", tradeId);
 		}
 	}
 

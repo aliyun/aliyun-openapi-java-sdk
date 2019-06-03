@@ -28,17 +28,17 @@ public class CreateDedicatedLineBackupRequest extends RpcAcsRequest<CreateDedica
 
 	private Long resourceOwnerId;
 
-	private String vbrId;
-
-	private String vbrRegionId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String smartAGId;
+
 	private Long ownerId;
 
-	private String smartAGId;
+	private String vbrId;
+
+	private String vbrRegionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,28 +48,6 @@ public class CreateDedicatedLineBackupRequest extends RpcAcsRequest<CreateDedica
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getVbrId() {
-		return this.vbrId;
-	}
-
-	public void setVbrId(String vbrId) {
-		this.vbrId = vbrId;
-		if(vbrId != null){
-			putQueryParameter("VbrId", vbrId);
-		}
-	}
-
-	public String getVbrRegionId() {
-		return this.vbrRegionId;
-	}
-
-	public void setVbrRegionId(String vbrRegionId) {
-		this.vbrRegionId = vbrRegionId;
-		if(vbrRegionId != null){
-			putQueryParameter("VbrRegionId", vbrRegionId);
 		}
 	}
 
@@ -95,6 +73,17 @@ public class CreateDedicatedLineBackupRequest extends RpcAcsRequest<CreateDedica
 		}
 	}
 
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -106,14 +95,25 @@ public class CreateDedicatedLineBackupRequest extends RpcAcsRequest<CreateDedica
 		}
 	}
 
-	public String getSmartAGId() {
-		return this.smartAGId;
+	public String getVbrId() {
+		return this.vbrId;
 	}
 
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
+	public void setVbrId(String vbrId) {
+		this.vbrId = vbrId;
+		if(vbrId != null){
+			putQueryParameter("VbrId", vbrId);
+		}
+	}
+
+	public String getVbrRegionId() {
+		return this.vbrRegionId;
+	}
+
+	public void setVbrRegionId(String vbrRegionId) {
+		this.vbrRegionId = vbrRegionId;
+		if(vbrRegionId != null){
+			putQueryParameter("VbrRegionId", vbrRegionId);
 		}
 	}
 

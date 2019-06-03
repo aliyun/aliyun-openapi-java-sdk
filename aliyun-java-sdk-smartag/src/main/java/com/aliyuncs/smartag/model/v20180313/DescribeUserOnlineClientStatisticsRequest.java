@@ -29,15 +29,15 @@ public class DescribeUserOnlineClientStatisticsRequest extends RpcAcsRequest<Des
 
 	private Long resourceOwnerId;
 
-	private List<String> userNamess;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String smartAGId;
+
+	private List<String> userNamess;
+
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,19 +48,6 @@ public class DescribeUserOnlineClientStatisticsRequest extends RpcAcsRequest<Des
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
-	}
-
-	public List<String> getUserNamess() {
-		return this.userNamess;
-	}
-
-	public void setUserNamess(List<String> userNamess) {
-		this.userNamess = userNamess;	
-		if (userNamess != null) {
-			for (int i = 0; i < userNamess.size(); i++) {
-				putQueryParameter("UserNames." + (i + 1) , userNamess.get(i));
-			}
-		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -85,17 +72,6 @@ public class DescribeUserOnlineClientStatisticsRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSmartAGId() {
 		return this.smartAGId;
 	}
@@ -104,6 +80,30 @@ public class DescribeUserOnlineClientStatisticsRequest extends RpcAcsRequest<Des
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
+	public List<String> getUserNamess() {
+		return this.userNamess;
+	}
+
+	public void setUserNamess(List<String> userNamess) {
+		this.userNamess = userNamess;	
+		if (userNamess != null) {
+			for (int i = 0; i < userNamess.size(); i++) {
+				putQueryParameter("UserNames." + (i + 1) , userNamess.get(i));
+			}
+		}	
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

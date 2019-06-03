@@ -29,11 +29,11 @@ public class DescribeSagOnlineClientStatisticsRequest extends RpcAcsRequest<Desc
 
 	private Long resourceOwnerId;
 
-	private List<String> smartAGIdss;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private List<String> smartAGIdss;
 
 	private Long ownerId;
 
@@ -46,19 +46,6 @@ public class DescribeSagOnlineClientStatisticsRequest extends RpcAcsRequest<Desc
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
-	}
-
-	public List<String> getSmartAGIdss() {
-		return this.smartAGIdss;
-	}
-
-	public void setSmartAGIdss(List<String> smartAGIdss) {
-		this.smartAGIdss = smartAGIdss;	
-		if (smartAGIdss != null) {
-			for (int i = 0; i < smartAGIdss.size(); i++) {
-				putQueryParameter("SmartAGIds." + (i + 1) , smartAGIdss.get(i));
-			}
-		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -81,6 +68,19 @@ public class DescribeSagOnlineClientStatisticsRequest extends RpcAcsRequest<Desc
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
 		}
+	}
+
+	public List<String> getSmartAGIdss() {
+		return this.smartAGIdss;
+	}
+
+	public void setSmartAGIdss(List<String> smartAGIdss) {
+		this.smartAGIdss = smartAGIdss;	
+		if (smartAGIdss != null) {
+			for (int i = 0; i < smartAGIdss.size(); i++) {
+				putQueryParameter("SmartAGIds." + (i + 1) , smartAGIdss.get(i));
+			}
+		}	
 	}
 
 	public Long getOwnerId() {

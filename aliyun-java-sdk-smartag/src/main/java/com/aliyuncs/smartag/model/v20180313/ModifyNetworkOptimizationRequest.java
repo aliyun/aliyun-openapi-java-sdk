@@ -28,15 +28,15 @@ public class ModifyNetworkOptimizationRequest extends RpcAcsRequest<ModifyNetwor
 
 	private Long resourceOwnerId;
 
-	private String networkOptId;
-
 	private String resourceOwnerAccount;
+
+	private String networkOptId;
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String name;
+
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,17 +46,6 @@ public class ModifyNetworkOptimizationRequest extends RpcAcsRequest<ModifyNetwor
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getNetworkOptId() {
-		return this.networkOptId;
-	}
-
-	public void setNetworkOptId(String networkOptId) {
-		this.networkOptId = networkOptId;
-		if(networkOptId != null){
-			putQueryParameter("NetworkOptId", networkOptId);
 		}
 	}
 
@@ -71,6 +60,17 @@ public class ModifyNetworkOptimizationRequest extends RpcAcsRequest<ModifyNetwor
 		}
 	}
 
+	public String getNetworkOptId() {
+		return this.networkOptId;
+	}
+
+	public void setNetworkOptId(String networkOptId) {
+		this.networkOptId = networkOptId;
+		if(networkOptId != null){
+			putQueryParameter("NetworkOptId", networkOptId);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -82,17 +82,6 @@ public class ModifyNetworkOptimizationRequest extends RpcAcsRequest<ModifyNetwor
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -101,6 +90,17 @@ public class ModifyNetworkOptimizationRequest extends RpcAcsRequest<ModifyNetwor
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

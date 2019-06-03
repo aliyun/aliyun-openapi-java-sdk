@@ -32,9 +32,9 @@ public class DeleteSmartAccessGatewayClientUserRequest extends RpcAcsRequest<Del
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String smartAGId;
+
+	private Long ownerId;
 
 	private String userName;
 
@@ -71,17 +71,6 @@ public class DeleteSmartAccessGatewayClientUserRequest extends RpcAcsRequest<Del
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getSmartAGId() {
 		return this.smartAGId;
 	}
@@ -90,6 +79,17 @@ public class DeleteSmartAccessGatewayClientUserRequest extends RpcAcsRequest<Del
 		this.smartAGId = smartAGId;
 		if(smartAGId != null){
 			putQueryParameter("SmartAGId", smartAGId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
