@@ -29,6 +29,12 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 
 	private String ossBucket;
 
+	private String appName;
+
+	private String securityToken;
+
+	private List<RecordFormat> recordFormats;
+
 	private String domainName;
 
 	private String ossEndpoint;
@@ -38,12 +44,6 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 	private String startTime;
 
 	private Long ownerId;
-
-	private String appName;
-
-	private String securityToken;
-
-	private List<RecordFormat> recordFormats;
 
 	private Integer onDemand;
 
@@ -58,6 +58,63 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		if(ossBucket != null){
 			putQueryParameter("OssBucket", ossBucket);
 		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public List<RecordFormat> getRecordFormats() {
+		return this.recordFormats;
+	}
+
+	public void setRecordFormats(List<RecordFormat> recordFormats) {
+		this.recordFormats = recordFormats;	
+		if (recordFormats != null) {
+			for (int depth1 = 0; depth1 < recordFormats.size(); depth1++) {
+				putQueryParameter("RecordFormat." + (depth1 + 1) + ".SliceOssObjectPrefix" , recordFormats.get(depth1).getSliceOssObjectPrefix());
+				putQueryParameter("RecordFormat." + (depth1 + 1) + ".Format" , recordFormats.get(depth1).getFormat());
+				putQueryParameter("RecordFormat." + (depth1 + 1) + ".OssObjectPrefix" , recordFormats.get(depth1).getOssObjectPrefix());
+				putQueryParameter("RecordFormat." + (depth1 + 1) + ".CycleDuration" , recordFormats.get(depth1).getCycleDuration());
+			}
+		}	
 	}
 
 	public String getDomainName() {
@@ -113,44 +170,6 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public List<RecordFormat> getRecordFormats() {
-		return this.recordFormats;
-	}
-
-	public void setRecordFormats(List<RecordFormat> recordFormats) {
-		this.recordFormats = recordFormats;	
-		if (recordFormats != null) {
-			for (int depth1 = 0; depth1 < recordFormats.size(); depth1++) {
-				putQueryParameter("RecordFormat." + (depth1 + 1) + ".SliceOssObjectPrefix" , recordFormats.get(depth1).getSliceOssObjectPrefix());
-				putQueryParameter("RecordFormat." + (depth1 + 1) + ".Format" , recordFormats.get(depth1).getFormat());
-				putQueryParameter("RecordFormat." + (depth1 + 1) + ".OssObjectPrefix" , recordFormats.get(depth1).getOssObjectPrefix());
-				putQueryParameter("RecordFormat." + (depth1 + 1) + ".CycleDuration" , recordFormats.get(depth1).getCycleDuration());
-			}
-		}	
 	}
 
 	public Integer getOnDemand() {

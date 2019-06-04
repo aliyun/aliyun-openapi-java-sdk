@@ -21,7 +21,6 @@ import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.RecordConfig;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.RecordConfig.RecordFormatItem;
 import com.aliyuncs.live.model.v20161101.DescribeCasterConfigResponse.TranscodeConfig;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

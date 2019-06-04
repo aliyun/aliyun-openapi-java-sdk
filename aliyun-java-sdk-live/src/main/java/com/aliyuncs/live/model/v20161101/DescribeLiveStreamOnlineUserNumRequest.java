@@ -30,8 +30,6 @@ public class DescribeLiveStreamOnlineUserNumRequest extends RpcAcsRequest<Descri
 
 	private String securityToken;
 
-	private String hlsSwitch;
-
 	private String domainName;
 
 	private String endTime;
@@ -53,25 +51,33 @@ public class DescribeLiveStreamOnlineUserNumRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getSecurityToken() {
+	public String getBizSecurityToken() {
 		return this.securityToken;
 	}
 
-	public void setSecurityToken(String securityToken) {
+	public void setBizSecurityToken(String securityToken) {
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
-	public String getHlsSwitch() {
-		return this.hlsSwitch;
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setHlsSwitch(String hlsSwitch) {
-		this.hlsSwitch = hlsSwitch;
-		if(hlsSwitch != null){
-			putQueryParameter("HlsSwitch", hlsSwitch);
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

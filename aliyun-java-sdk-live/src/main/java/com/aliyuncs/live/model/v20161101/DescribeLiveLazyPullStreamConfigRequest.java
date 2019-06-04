@@ -26,11 +26,22 @@ public class DescribeLiveLazyPullStreamConfigRequest extends RpcAcsRequest<Descr
 		super("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig", "live");
 	}
 
+	private String appName;
+
 	private String domainName;
 
 	private Long ownerId;
 
-	private String appName;
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
 
 	public String getDomainName() {
 		return this.domainName;
@@ -51,17 +62,6 @@ public class DescribeLiveLazyPullStreamConfigRequest extends RpcAcsRequest<Descr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
 		}
 	}
 

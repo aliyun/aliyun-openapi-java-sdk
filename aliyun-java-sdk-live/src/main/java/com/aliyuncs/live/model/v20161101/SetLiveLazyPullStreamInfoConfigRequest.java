@@ -26,6 +26,8 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		super("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig", "live");
 	}
 
+	private String pullArgs;
+
 	private String appName;
 
 	private String pullAuthKey;
@@ -41,6 +43,17 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 	private String pullAppName;
 
 	private String pullProtocol;
+
+	public String getPullArgs() {
+		return this.pullArgs;
+	}
+
+	public void setPullArgs(String pullArgs) {
+		this.pullArgs = pullArgs;
+		if(pullArgs != null){
+			putQueryParameter("PullArgs", pullArgs);
+		}
+	}
 
 	public String getAppName() {
 		return this.appName;

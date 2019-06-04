@@ -26,13 +26,28 @@ public class CreateRoomRequest extends RpcAcsRequest<CreateRoomResponse> {
 		super("live", "2016-11-01", "CreateRoom", "live");
 	}
 
+	private String templateIds;
+
 	private String anchorId;
+
+	private Boolean useAppTranscode;
 
 	private Long ownerId;
 
 	private String roomId;
 
 	private String appId;
+
+	public String getTemplateIds() {
+		return this.templateIds;
+	}
+
+	public void setTemplateIds(String templateIds) {
+		this.templateIds = templateIds;
+		if(templateIds != null){
+			putQueryParameter("TemplateIds", templateIds);
+		}
+	}
 
 	public String getAnchorId() {
 		return this.anchorId;
@@ -42,6 +57,17 @@ public class CreateRoomRequest extends RpcAcsRequest<CreateRoomResponse> {
 		this.anchorId = anchorId;
 		if(anchorId != null){
 			putQueryParameter("AnchorId", anchorId);
+		}
+	}
+
+	public Boolean getUseAppTranscode() {
+		return this.useAppTranscode;
+	}
+
+	public void setUseAppTranscode(Boolean useAppTranscode) {
+		this.useAppTranscode = useAppTranscode;
+		if(useAppTranscode != null){
+			putQueryParameter("UseAppTranscode", useAppTranscode.toString());
 		}
 	}
 

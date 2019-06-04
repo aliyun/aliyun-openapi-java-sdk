@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamsOnlineListResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamsOnlineListResponse.LiveStreamOnlineInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +44,15 @@ public class DescribeLiveStreamsOnlineListResponseUnmarshaller {
 			liveStreamOnlineInfo.setPublishType(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishType"));
 			liveStreamOnlineInfo.setTranscoded(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].Transcoded"));
 			liveStreamOnlineInfo.setTranscodeId(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].TranscodeId"));
+			liveStreamOnlineInfo.setServerIp(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].ServerIp"));
+			liveStreamOnlineInfo.setClientIp(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].ClientIp"));
+			liveStreamOnlineInfo.setVideoCodecId(context.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].VideoCodecId"));
+			liveStreamOnlineInfo.setVideoDataRate(context.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].VideoDataRate"));
+			liveStreamOnlineInfo.setFrameRate(context.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].FrameRate"));
+			liveStreamOnlineInfo.setWidth(context.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].Width"));
+			liveStreamOnlineInfo.setHeight(context.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].Height"));
+			liveStreamOnlineInfo.setAudioCodecId(context.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].AudioCodecId"));
+			liveStreamOnlineInfo.setAudioDataRate(context.integerValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].AudioDataRate"));
 
 			onlineInfo.add(liveStreamOnlineInfo);
 		}

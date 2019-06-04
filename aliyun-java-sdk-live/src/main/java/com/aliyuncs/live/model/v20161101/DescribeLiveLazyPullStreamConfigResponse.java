@@ -15,7 +15,6 @@
 package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.live.transform.v20161101.DescribeLiveLazyPullStreamConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -61,6 +60,8 @@ public class DescribeLiveLazyPullStreamConfigResponse extends AcsResponse {
 		private String pullAuthType;
 
 		private String pullAuthKey;
+
+		private String pullArgs;
 
 		public String getDomainName() {
 			return this.domainName;
@@ -116,6 +117,14 @@ public class DescribeLiveLazyPullStreamConfigResponse extends AcsResponse {
 
 		public void setPullAuthKey(String pullAuthKey) {
 			this.pullAuthKey = pullAuthKey;
+		}
+
+		public String getPullArgs() {
+			return this.pullArgs;
+		}
+
+		public void setPullArgs(String pullArgs) {
+			this.pullArgs = pullArgs;
 		}
 	}
 

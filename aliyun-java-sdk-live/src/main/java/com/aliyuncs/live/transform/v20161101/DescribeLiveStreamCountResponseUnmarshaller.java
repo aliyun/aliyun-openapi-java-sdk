@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamCountResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamCountResponse.StreamCountInfo;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamCountResponse.StreamCountInfo.StreamCountDetail;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -14,7 +14,6 @@
 
 package com.aliyuncs.live.model.v20161101;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.live.transform.v20161101.RealTimeRecordCommandResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

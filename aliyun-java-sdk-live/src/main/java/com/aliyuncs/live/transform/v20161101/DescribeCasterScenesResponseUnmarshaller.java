@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.live.model.v20161101.DescribeCasterScenesResponse;
 import com.aliyuncs.live.model.v20161101.DescribeCasterScenesResponse.Scene;
 import com.aliyuncs.live.model.v20161101.DescribeCasterScenesResponse.Scene.StreamInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

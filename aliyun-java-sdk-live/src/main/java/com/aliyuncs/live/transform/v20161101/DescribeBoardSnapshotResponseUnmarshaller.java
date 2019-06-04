@@ -23,7 +23,6 @@ import com.aliyuncs.live.model.v20161101.DescribeBoardSnapshotResponse.Snapshot.
 import com.aliyuncs.live.model.v20161101.DescribeBoardSnapshotResponse.Snapshot.Board.Config;
 import com.aliyuncs.live.model.v20161101.DescribeBoardSnapshotResponse.Snapshot.Board.Page;
 import com.aliyuncs.live.model.v20161101.DescribeBoardSnapshotResponse.Snapshot.Board.Page.Element;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

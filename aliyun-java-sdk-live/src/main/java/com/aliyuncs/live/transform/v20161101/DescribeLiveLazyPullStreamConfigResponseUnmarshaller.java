@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeLiveLazyPullStreamConfigResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfig;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -39,6 +38,7 @@ public class DescribeLiveLazyPullStreamConfigResponseUnmarshaller {
 			liveLazyPullConfig.setPullProtocol(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullProtocol"));
 			liveLazyPullConfig.setPullAuthType(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthType"));
 			liveLazyPullConfig.setPullAuthKey(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthKey"));
+			liveLazyPullConfig.setPullArgs(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullArgs"));
 
 			liveLazyPullConfigList.add(liveLazyPullConfig);
 		}

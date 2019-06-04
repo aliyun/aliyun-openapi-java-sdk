@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeUpPeakPublishStreamDataResponse;
 import com.aliyuncs.live.model.v20161101.DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamData;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

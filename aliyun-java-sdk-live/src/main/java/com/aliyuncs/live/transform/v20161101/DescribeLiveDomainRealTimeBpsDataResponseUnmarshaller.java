@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeLiveDomainRealTimeBpsDataResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveDomainRealTimeBpsDataResponse.DataModule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

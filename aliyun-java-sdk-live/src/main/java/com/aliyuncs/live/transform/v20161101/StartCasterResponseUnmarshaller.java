@@ -21,7 +21,6 @@ import com.aliyuncs.live.model.v20161101.StartCasterResponse;
 import com.aliyuncs.live.model.v20161101.StartCasterResponse.SceneInfo;
 import com.aliyuncs.live.model.v20161101.StartCasterResponse.SceneInfo1;
 import com.aliyuncs.live.model.v20161101.StartCasterResponse.SceneInfo1.StreamInfo;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

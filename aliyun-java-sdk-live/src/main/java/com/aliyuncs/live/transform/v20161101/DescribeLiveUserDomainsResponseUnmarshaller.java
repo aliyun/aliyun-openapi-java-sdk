@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeLiveUserDomainsResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveUserDomainsResponse.PageData;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

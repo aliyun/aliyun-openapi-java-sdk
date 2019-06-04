@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeCastersResponse;
 import com.aliyuncs.live.model.v20161101.DescribeCastersResponse.Caster;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeCasterChannelsResponse;
 import com.aliyuncs.live.model.v20161101.DescribeCasterChannelsResponse.Channel;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

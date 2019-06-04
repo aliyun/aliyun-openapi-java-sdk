@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.live.model.v20161101.DescribeLiveCertificateListResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveCertificateListResponse.CertificateListModel;
 import com.aliyuncs.live.model.v20161101.DescribeLiveCertificateListResponse.CertificateListModel.Cert;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

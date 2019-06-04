@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.live.model.v20161101.DescribeLivePullStreamConfigResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLivePullStreamConfigResponse.LiveAppRecord;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

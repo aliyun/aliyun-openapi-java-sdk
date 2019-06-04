@@ -15,7 +15,6 @@
 package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.live.transform.v20161101.DescribeLiveDomainBpsDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

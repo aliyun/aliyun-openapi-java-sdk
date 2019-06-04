@@ -20,7 +20,6 @@ import java.util.List;
 import com.aliyuncs.live.model.v20161101.DescribeLiveDomainConfigsResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveDomainConfigsResponse.DomainConfig;
 import com.aliyuncs.live.model.v20161101.DescribeLiveDomainConfigsResponse.DomainConfig.FunctionArg;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

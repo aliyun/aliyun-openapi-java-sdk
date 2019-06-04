@@ -15,7 +15,6 @@
 package com.aliyuncs.live.model.v20161101;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.live.transform.v20161101.DescribeLiveStreamsOnlineListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -106,6 +105,24 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		private String transcodeId;
 
+		private String serverIp;
+
+		private String clientIp;
+
+		private Integer videoCodecId;
+
+		private Integer videoDataRate;
+
+		private Integer frameRate;
+
+		private Integer width;
+
+		private Integer height;
+
+		private Integer audioCodecId;
+
+		private Integer audioDataRate;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -176,6 +193,78 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		public void setTranscodeId(String transcodeId) {
 			this.transcodeId = transcodeId;
+		}
+
+		public String getServerIp() {
+			return this.serverIp;
+		}
+
+		public void setServerIp(String serverIp) {
+			this.serverIp = serverIp;
+		}
+
+		public String getClientIp() {
+			return this.clientIp;
+		}
+
+		public void setClientIp(String clientIp) {
+			this.clientIp = clientIp;
+		}
+
+		public Integer getVideoCodecId() {
+			return this.videoCodecId;
+		}
+
+		public void setVideoCodecId(Integer videoCodecId) {
+			this.videoCodecId = videoCodecId;
+		}
+
+		public Integer getVideoDataRate() {
+			return this.videoDataRate;
+		}
+
+		public void setVideoDataRate(Integer videoDataRate) {
+			this.videoDataRate = videoDataRate;
+		}
+
+		public Integer getFrameRate() {
+			return this.frameRate;
+		}
+
+		public void setFrameRate(Integer frameRate) {
+			this.frameRate = frameRate;
+		}
+
+		public Integer getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Integer width) {
+			this.width = width;
+		}
+
+		public Integer getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Integer height) {
+			this.height = height;
+		}
+
+		public Integer getAudioCodecId() {
+			return this.audioCodecId;
+		}
+
+		public void setAudioCodecId(Integer audioCodecId) {
+			this.audioCodecId = audioCodecId;
+		}
+
+		public Integer getAudioDataRate() {
+			return this.audioDataRate;
+		}
+
+		public void setAudioDataRate(Integer audioDataRate) {
+			this.audioDataRate = audioDataRate;
 		}
 	}
 
