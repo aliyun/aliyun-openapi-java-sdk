@@ -56,6 +56,8 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 
 		private String userName;
 
+		private String password;
+
 		private Long gmtCreate;
 
 		private String connector;
@@ -118,6 +120,14 @@ public class DescribeDataLimitDetailResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
 		}
 
 		public Long getGmtCreate() {

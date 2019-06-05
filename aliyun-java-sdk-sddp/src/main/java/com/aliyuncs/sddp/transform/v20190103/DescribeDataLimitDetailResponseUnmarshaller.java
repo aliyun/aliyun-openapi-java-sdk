@@ -31,6 +31,7 @@ public class DescribeDataLimitDetailResponseUnmarshaller {
 		dataLimit.setParentId(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.ParentId"));
 		dataLimit.setId(context.longValue("DescribeDataLimitDetailResponse.DataLimit.Id"));
 		dataLimit.setUserName(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.UserName"));
+		dataLimit.setPassword(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.Password"));
 		dataLimit.setGmtCreate(context.longValue("DescribeDataLimitDetailResponse.DataLimit.GmtCreate"));
 		dataLimit.setConnector(context.stringValue("DescribeDataLimitDetailResponse.DataLimit.Connector"));
 		dataLimit.setCheckStatus(context.integerValue("DescribeDataLimitDetailResponse.DataLimit.CheckStatus"));

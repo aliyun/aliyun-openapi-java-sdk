@@ -1,3 +1,6 @@
+2019-06-05 Version: 1.0.1
+1, Update DescribeDataLimitDetail interface, add password for response
+
 2019-05-27 Version: 1.0.0
 1, Initial release of api, including data management api, rule configuration api and system configuration api.
 
