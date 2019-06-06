@@ -62,6 +62,8 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	private String healthCheckType;
 
+	private String healthCheckMethod;
+
 	private Integer maxConnection;
 
 	private String vServerGroupId;
@@ -228,6 +230,14 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	public void setHealthCheckType(String healthCheckType) {
 		this.healthCheckType = healthCheckType;
+	}
+
+	public String getHealthCheckMethod() {
+		return this.healthCheckMethod;
+	}
+
+	public void setHealthCheckMethod(String healthCheckMethod) {
+		this.healthCheckMethod = healthCheckMethod;
 	}
 
 	public Integer getMaxConnection() {

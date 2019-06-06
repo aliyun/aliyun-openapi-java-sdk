@@ -24,6 +24,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRuleAttributeResponse extends AcsResponse {
 
+	private String ruleId;
+
 	private String requestId;
 
 	private String ruleName;
@@ -67,6 +69,14 @@ public class DescribeRuleAttributeResponse extends AcsResponse {
 	private Integer healthCheckConnectPort;
 
 	private String healthCheckHttpCode;
+
+	public String getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;

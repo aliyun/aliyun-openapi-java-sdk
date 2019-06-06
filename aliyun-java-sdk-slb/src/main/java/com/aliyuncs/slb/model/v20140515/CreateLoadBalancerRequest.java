@@ -44,6 +44,8 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 
 	private String slaveZoneId;
 
+	private String deleteProtection;
+
 	private String loadBalancerSpec;
 
 	private Boolean autoPay;
@@ -164,6 +166,17 @@ public class CreateLoadBalancerRequest extends RpcAcsRequest<CreateLoadBalancerR
 		this.slaveZoneId = slaveZoneId;
 		if(slaveZoneId != null){
 			putQueryParameter("SlaveZoneId", slaveZoneId);
+		}
+	}
+
+	public String getDeleteProtection() {
+		return this.deleteProtection;
+	}
+
+	public void setDeleteProtection(String deleteProtection) {
+		this.deleteProtection = deleteProtection;
+		if(deleteProtection != null){
+			putQueryParameter("DeleteProtection", deleteProtection);
 		}
 	}
 

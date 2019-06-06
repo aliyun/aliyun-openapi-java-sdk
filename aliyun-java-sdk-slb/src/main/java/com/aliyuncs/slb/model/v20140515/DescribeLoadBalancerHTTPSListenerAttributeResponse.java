@@ -31,6 +31,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private Integer backendServerPort;
 
+	private Integer backendProtocol;
+
 	private Integer bandwidth;
 
 	private String status;
@@ -51,6 +53,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private String healthCheck;
 
+	private String healthCheckType;
+
 	private String healthCheckDomain;
 
 	private String healthCheckURI;
@@ -70,6 +74,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 	private String serverCertificateId;
 
 	private String cACertificateId;
+
+	private String healthCheckMethod;
 
 	private Integer maxConnection;
 
@@ -127,6 +133,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setBackendServerPort(Integer backendServerPort) {
 		this.backendServerPort = backendServerPort;
+	}
+
+	public Integer getBackendProtocol() {
+		return this.backendProtocol;
+	}
+
+	public void setBackendProtocol(Integer backendProtocol) {
+		this.backendProtocol = backendProtocol;
 	}
 
 	public Integer getBandwidth() {
@@ -209,6 +223,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 		this.healthCheck = healthCheck;
 	}
 
+	public String getHealthCheckType() {
+		return this.healthCheckType;
+	}
+
+	public void setHealthCheckType(String healthCheckType) {
+		this.healthCheckType = healthCheckType;
+	}
+
 	public String getHealthCheckDomain() {
 		return this.healthCheckDomain;
 	}
@@ -287,6 +309,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setCACertificateId(String cACertificateId) {
 		this.cACertificateId = cACertificateId;
+	}
+
+	public String getHealthCheckMethod() {
+		return this.healthCheckMethod;
+	}
+
+	public void setHealthCheckMethod(String healthCheckMethod) {
+		this.healthCheckMethod = healthCheckMethod;
 	}
 
 	public Integer getMaxConnection() {

@@ -91,6 +91,8 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String reservedInfoActiveTime;
 
+	private String deleteProtection;
+
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 	private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -377,6 +379,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setReservedInfoActiveTime(String reservedInfoActiveTime) {
 		this.reservedInfoActiveTime = reservedInfoActiveTime;
+	}
+
+	public String getDeleteProtection() {
+		return this.deleteProtection;
+	}
+
+	public void setDeleteProtection(String deleteProtection) {
+		this.deleteProtection = deleteProtection;
 	}
 
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {

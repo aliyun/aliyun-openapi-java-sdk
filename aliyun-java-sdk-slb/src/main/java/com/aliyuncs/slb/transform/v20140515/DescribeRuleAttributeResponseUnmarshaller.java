@@ -23,6 +23,7 @@ public class DescribeRuleAttributeResponseUnmarshaller {
 	public static DescribeRuleAttributeResponse unmarshall(DescribeRuleAttributeResponse describeRuleAttributeResponse, UnmarshallerContext context) {
 		
 		describeRuleAttributeResponse.setRequestId(context.stringValue("DescribeRuleAttributeResponse.RequestId"));
+		describeRuleAttributeResponse.setRuleId(context.stringValue("DescribeRuleAttributeResponse.RuleId"));
 		describeRuleAttributeResponse.setRuleName(context.stringValue("DescribeRuleAttributeResponse.RuleName"));
 		describeRuleAttributeResponse.setLoadBalancerId(context.stringValue("DescribeRuleAttributeResponse.LoadBalancerId"));
 		describeRuleAttributeResponse.setListenerPort(context.stringValue("DescribeRuleAttributeResponse.ListenerPort"));

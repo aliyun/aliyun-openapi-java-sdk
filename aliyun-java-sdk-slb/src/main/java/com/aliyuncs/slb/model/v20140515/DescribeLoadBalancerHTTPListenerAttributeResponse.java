@@ -51,6 +51,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	private String healthCheck;
 
+	private String healthCheckType;
+
 	private String healthCheckDomain;
 
 	private String healthCheckURI;
@@ -66,6 +68,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 	private Integer healthCheckConnectPort;
 
 	private String healthCheckHttpCode;
+
+	private String healthCheckMethod;
 
 	private Integer maxConnection;
 
@@ -203,6 +207,14 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 		this.healthCheck = healthCheck;
 	}
 
+	public String getHealthCheckType() {
+		return this.healthCheckType;
+	}
+
+	public void setHealthCheckType(String healthCheckType) {
+		this.healthCheckType = healthCheckType;
+	}
+
 	public String getHealthCheckDomain() {
 		return this.healthCheckDomain;
 	}
@@ -265,6 +277,14 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setHealthCheckHttpCode(String healthCheckHttpCode) {
 		this.healthCheckHttpCode = healthCheckHttpCode;
+	}
+
+	public String getHealthCheckMethod() {
+		return this.healthCheckMethod;
+	}
+
+	public void setHealthCheckMethod(String healthCheckMethod) {
+		this.healthCheckMethod = healthCheckMethod;
 	}
 
 	public Integer getMaxConnection() {

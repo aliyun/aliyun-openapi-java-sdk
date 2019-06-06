@@ -61,6 +61,7 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setReservedInfoInternetChargeType(context.stringValue("DescribeLoadBalancerAttributeResponse.ReservedInfoInternetChargeType"));
 		describeLoadBalancerAttributeResponse.setReservedInfoBandwidth(context.stringValue("DescribeLoadBalancerAttributeResponse.ReservedInfoBandwidth"));
 		describeLoadBalancerAttributeResponse.setReservedInfoActiveTime(context.stringValue("DescribeLoadBalancerAttributeResponse.ReservedInfoActiveTime"));
+		describeLoadBalancerAttributeResponse.setDeleteProtection(context.stringValue("DescribeLoadBalancerAttributeResponse.DeleteProtection"));
 
 		List<String> listenerPorts = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPorts.Length"); i++) {
