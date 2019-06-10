@@ -66,6 +66,8 @@ public class GetProjectResponse extends AcsResponse {
 
 		private String managerIds;
 
+		private String region;
+
 		public String getName() {
 			return this.name;
 		}
@@ -144,6 +146,14 @@ public class GetProjectResponse extends AcsResponse {
 
 		public void setManagerIds(String managerIds) {
 			this.managerIds = managerIds;
+		}
+
+		public String getRegion() {
+			return this.region;
+		}
+
+		public void setRegion(String region) {
+			this.region = region;
 		}
 	}
 

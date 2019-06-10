@@ -45,6 +45,7 @@ public class ListProjectResponseUnmarshaller {
 			project.setDeployType(context.stringValue("ListProjectResponse.Projects["+ i +"].DeployType"));
 			project.setClusterId(context.stringValue("ListProjectResponse.Projects["+ i +"].ClusterId"));
 			project.setManagerIds(context.stringValue("ListProjectResponse.Projects["+ i +"].ManagerIds"));
+			project.setRegion(context.stringValue("ListProjectResponse.Projects["+ i +"].Region"));
 
 			projects.add(project);
 		}

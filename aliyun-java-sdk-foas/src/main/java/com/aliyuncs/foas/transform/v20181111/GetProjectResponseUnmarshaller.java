@@ -36,6 +36,7 @@ public class GetProjectResponseUnmarshaller {
 		project.setDeployType(context.stringValue("GetProjectResponse.Project.DeployType"));
 		project.setClusterId(context.stringValue("GetProjectResponse.Project.ClusterId"));
 		project.setManagerIds(context.stringValue("GetProjectResponse.Project.ManagerIds"));
+		project.setRegion(context.stringValue("GetProjectResponse.Project.Region"));
 		getProjectResponse.setProject(project);
 	 
 	 	return getProjectResponse;
