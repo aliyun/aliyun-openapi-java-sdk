@@ -29,6 +29,10 @@ public class SearchWorkitemResponseUnmarshaller {
 		searchWorkitemResponse.setRequestId(context.stringValue("SearchWorkitemResponse.RequestId"));
 		searchWorkitemResponse.setCode(context.integerValue("SearchWorkitemResponse.Code"));
 		searchWorkitemResponse.setSuccess(context.booleanValue("SearchWorkitemResponse.Success"));
+		searchWorkitemResponse.setTotalCount(context.integerValue("SearchWorkitemResponse.TotalCount"));
+		searchWorkitemResponse.setTotalPages(context.integerValue("SearchWorkitemResponse.TotalPages"));
+		searchWorkitemResponse.setToPage(context.integerValue("SearchWorkitemResponse.ToPage"));
+		searchWorkitemResponse.setPageSize(context.integerValue("SearchWorkitemResponse.PageSize"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < context.lengthValue("SearchWorkitemResponse.Data.Length"); i++) {

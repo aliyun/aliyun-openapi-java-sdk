@@ -1,3 +1,6 @@
+2019-06-11 Version: 1.8.0
+- Generated 2018-08-21 for `Rdc`
+
 2019-03-05 Version: 1.5.0
 1, Add both api, Workitem and Project
 

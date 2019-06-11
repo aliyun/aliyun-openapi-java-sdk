@@ -16,14 +16,14 @@ package com.aliyuncs.rdc.model.v20180821;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rdc.transform.v20180821.SearchWorkitemResponseUnmarshaller;
+import com.aliyuncs.rdc.transform.v20180821.SearchWorkitemWithTotalCountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchWorkitemResponse extends AcsResponse {
+public class SearchWorkitemWithTotalCountResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -849,8 +849,8 @@ public class SearchWorkitemResponse extends AcsResponse {
 	}
 
 	@Override
-	public SearchWorkitemResponse getInstance(UnmarshallerContext context) {
-		return	SearchWorkitemResponseUnmarshaller.unmarshall(this, context);
+	public SearchWorkitemWithTotalCountResponse getInstance(UnmarshallerContext context) {
+		return	SearchWorkitemWithTotalCountResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
