@@ -1,3 +1,6 @@
+2019-06-11 Version: 1.8.1
+Enable add new user in rdc company via sdk
+
 2019-06-11 Version: 1.6.1
 Add SyncUserToRdc, GetJoinCode, JoinCompany, ApproveJoinCompany for add new user into rdc
 
