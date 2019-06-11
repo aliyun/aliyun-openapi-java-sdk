@@ -1,0 +1,3 @@
+2019-06-11 Version: 1.0.5
+- Generated 2019-06-04 for `StaffSchedule`
+
