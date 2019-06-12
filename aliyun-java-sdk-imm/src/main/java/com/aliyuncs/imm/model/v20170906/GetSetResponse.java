@@ -30,9 +30,9 @@ public class GetSetResponse extends AcsResponse {
 
 	private String setName;
 
-	private Long createTime;
+	private String createTime;
 
-	private Long modifyTime;
+	private String modifyTime;
 
 	private Integer faceCount;
 
@@ -66,19 +66,19 @@ public class GetSetResponse extends AcsResponse {
 		this.setName = setName;
 	}
 
-	public Long getCreateTime() {
+	public String getCreateTime() {
 		return this.createTime;
 	}
 
-	public void setCreateTime(Long createTime) {
+	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 	}
 
-	public Long getModifyTime() {
+	public String getModifyTime() {
 		return this.modifyTime;
 	}
 
-	public void setModifyTime(Long modifyTime) {
+	public void setModifyTime(String modifyTime) {
 		this.modifyTime = modifyTime;
 	}
 

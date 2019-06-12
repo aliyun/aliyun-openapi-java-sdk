@@ -25,8 +25,8 @@ public class GetSetResponseUnmarshaller {
 		getSetResponse.setRequestId(context.stringValue("GetSetResponse.RequestId"));
 		getSetResponse.setSetId(context.stringValue("GetSetResponse.SetId"));
 		getSetResponse.setSetName(context.stringValue("GetSetResponse.SetName"));
-		getSetResponse.setCreateTime(context.longValue("GetSetResponse.CreateTime"));
-		getSetResponse.setModifyTime(context.longValue("GetSetResponse.ModifyTime"));
+		getSetResponse.setCreateTime(context.stringValue("GetSetResponse.CreateTime"));
+		getSetResponse.setModifyTime(context.stringValue("GetSetResponse.ModifyTime"));
 		getSetResponse.setFaceCount(context.integerValue("GetSetResponse.FaceCount"));
 		getSetResponse.setImageCount(context.integerValue("GetSetResponse.ImageCount"));
 		getSetResponse.setVideoCount(context.integerValue("GetSetResponse.VideoCount"));
