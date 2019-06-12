@@ -20,17 +20,32 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanResponse> {
+public class RenewBackupPlanRequest extends RpcAcsRequest<RenewBackupPlanResponse> {
 	
-	public StartBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "StartBackupPlan", "cbs");
+	public RenewBackupPlanRequest() {
+		super("Dbs", "2019-03-06", "RenewBackupPlan", "cbs");
 	}
+
+	private String period;
 
 	private String clientToken;
 
 	private String backupPlanId;
 
 	private String ownerId;
+
+	private Integer usedTime;
+
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -65,9 +80,20 @@ public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanRespons
 		}
 	}
 
+	public Integer getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(Integer usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
 	@Override
-	public Class<StartBackupPlanResponse> getResponseClass() {
-		return StartBackupPlanResponse.class;
+	public Class<RenewBackupPlanResponse> getResponseClass() {
+		return RenewBackupPlanResponse.class;
 	}
 
 }
