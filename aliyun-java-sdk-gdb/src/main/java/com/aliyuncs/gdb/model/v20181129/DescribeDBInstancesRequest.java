@@ -28,15 +28,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String skipAuth;
 
-	private String currentPage;
-
 	private String vpcId;
 
 	private String pageSize;
 
 	private String instanceDescription;
 
+	private String currentPage;
+
 	private String dbInstanceId;
+
+	private String __userId;
 
 	public String getSkipAuth() {
 		return this.skipAuth;
@@ -46,17 +48,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.skipAuth = skipAuth;
 		if(skipAuth != null){
 			putQueryParameter("skipAuth", skipAuth);
-		}
-	}
-
-	public String getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(String currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage);
 		}
 	}
 
@@ -93,6 +84,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
+	public String getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(String currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage);
+		}
+	}
+
 	public String getDbInstanceId() {
 		return this.dbInstanceId;
 	}
@@ -101,6 +103,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.dbInstanceId = dbInstanceId;
 		if(dbInstanceId != null){
 			putQueryParameter("DbInstanceId", dbInstanceId);
+		}
+	}
+
+	public String get__UserId() {
+		return this.__userId;
+	}
+
+	public void set__UserId(String __userId) {
+		this.__userId = __userId;
+		if(__userId != null){
+			putQueryParameter("__userId", __userId);
 		}
 	}
 
