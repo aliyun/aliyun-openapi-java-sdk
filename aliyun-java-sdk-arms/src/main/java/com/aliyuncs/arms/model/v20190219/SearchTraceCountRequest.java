@@ -24,10 +24,10 @@ import java.util.List;
 public class SearchTraceCountRequest extends RpcAcsRequest<SearchTraceCountResponse> {
 	
 	public SearchTraceCountRequest() {
-		super("ARMS", "2019-02-19", "SearchTraceCount");
+		super("ARMS", "2019-02-19", "SearchTraceCount", "arms");
 	}
 
-	private String instanceId;
+	private String serviceIp;
 
 	private String operationName;
 
@@ -43,14 +43,14 @@ public class SearchTraceCountRequest extends RpcAcsRequest<SearchTraceCountRespo
 
 	private Long minDuration;
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getServiceIp() {
+		return this.serviceIp;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setServiceIp(String serviceIp) {
+		this.serviceIp = serviceIp;
+		if(serviceIp != null){
+			putQueryParameter("ServiceIp", serviceIp);
 		}
 	}
 

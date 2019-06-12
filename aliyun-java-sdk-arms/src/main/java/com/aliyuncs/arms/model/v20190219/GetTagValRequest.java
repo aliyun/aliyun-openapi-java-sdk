@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetTagValRequest extends RpcAcsRequest<GetTagValResponse> {
 	
 	public GetTagValRequest() {
-		super("ARMS", "2019-02-19", "GetTagVal");
+		super("ARMS", "2019-02-19", "GetTagVal", "arms");
 	}
 
 	private Long endTime;

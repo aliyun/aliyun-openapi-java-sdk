@@ -14,21 +14,25 @@
 
 package com.aliyuncs.arms.transform.v20190219;
 
-import com.aliyuncs.arms.model.v20190219.SearchTraceCountResponse;
-import com.aliyuncs.arms.model.v20190219.SearchTraceCountResponse.Data;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aliyuncs.arms.model.v20190219.GetIpOrHostsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SearchTraceCountResponseUnmarshaller {
+public class GetIpOrHostsResponseUnmarshaller {
 
-	public static SearchTraceCountResponse unmarshall(SearchTraceCountResponse searchTraceCountResponse, UnmarshallerContext context) {
+	public static GetIpOrHostsResponse unmarshall(GetIpOrHostsResponse getIpOrHostsResponse, UnmarshallerContext context) {
 		
-		searchTraceCountResponse.setRequestId(context.stringValue("SearchTraceCountResponse.RequestId"));
+		getIpOrHostsResponse.setRequestId(context.stringValue("GetIpOrHostsResponse.RequestId"));
 
-		Data data = new Data();
-		data.setCount(context.longValue("SearchTraceCountResponse.Data.Count"));
-		searchTraceCountResponse.setData(data);
+		List<String> data = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("GetIpOrHostsResponse.Data.Length"); i++) {
+			data.add(context.stringValue("GetIpOrHostsResponse.Data["+ i +"]"));
+		}
+		getIpOrHostsResponse.setData(data);
 	 
-	 	return searchTraceCountResponse;
+	 	return getIpOrHostsResponse;
 	}
 }

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetServicesRequest extends RpcAcsRequest<GetServicesResponse> {
 	
 	public GetServicesRequest() {
-		super("ARMS", "2019-02-19", "GetServices");
+		super("ARMS", "2019-02-19", "GetServices", "arms");
 	}
 
 	private String appType;

@@ -24,7 +24,7 @@ import java.util.List;
 public class MetricQueryRequest extends RpcAcsRequest<MetricQueryResponse> {
 	
 	public MetricQueryRequest() {
-		super("ARMS", "2019-02-19", "MetricQuery");
+		super("ARMS", "2019-02-19", "MetricQuery", "arms");
 	}
 
 	private Long endTime;

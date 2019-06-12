@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 	
 	public GetTraceRequest() {
-		super("ARMS", "2019-02-19", "GetTrace");
+		super("ARMS", "2019-02-19", "GetTrace", "arms");
 	}
 
 	private String traceID;

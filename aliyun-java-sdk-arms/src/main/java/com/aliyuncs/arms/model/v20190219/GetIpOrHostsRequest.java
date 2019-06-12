@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetSpanNamesRequest extends RpcAcsRequest<GetSpanNamesResponse> {
+public class GetIpOrHostsRequest extends RpcAcsRequest<GetIpOrHostsResponse> {
 	
-	public GetSpanNamesRequest() {
-		super("ARMS", "2019-02-19", "GetSpanNames", "arms");
+	public GetIpOrHostsRequest() {
+		super("ARMS", "2019-02-19", "GetIpOrHosts", "arms");
 	}
 
 	private Long endTime;
@@ -66,8 +66,8 @@ public class GetSpanNamesRequest extends RpcAcsRequest<GetSpanNamesResponse> {
 	}
 
 	@Override
-	public Class<GetSpanNamesResponse> getResponseClass() {
-		return GetSpanNamesResponse.class;
+	public Class<GetIpOrHostsResponse> getResponseClass() {
+		return GetIpOrHostsResponse.class;
 	}
 
 }
