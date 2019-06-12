@@ -1,3 +1,8 @@
+2019-06-12 Version: 6.10.0
+1, Add InvokeDataAPIService interface, support invoke service of data api to get sql query result.
+2, Add GetDataAPIServiceDetail interface, support get data api's detail information.
+3, Add CreateDataAPIService interface, support create data api with sql statement.
+
 2019-05-09 Version: 6.9.0
 1, Add LoRa's API GetNodesAddingTask, QueryLoRaJoinPermissions, GetLoraNodesTask, CreateLoRaNodesTask
 
