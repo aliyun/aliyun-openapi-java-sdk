@@ -20,11 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
+public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingInstanceResponse> {
 	
-	public CreateInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "CreateInstance", "redisa");
+	public CreateShardingInstanceRequest() {
+		super("R-kvstore", "2015-01-01", "CreateShardingInstance", "redisa");
 	}
+
+	private Integer shardStorageQuantity;
 
 	private Long resourceOwnerId;
 
@@ -36,21 +38,21 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String engineVersion;
 
-	private String autoUseCoupon;
-
 	private String instanceClass;
 
 	private Long capacity;
 
 	private String password;
 
+	private String shardReplicaClass;
+
 	private String securityToken;
+
+	private String incrementalBackupMode;
 
 	private String instanceType;
 
 	private String businessInfo;
-
-	private String autoRenewPeriod;
 
 	private String period;
 
@@ -66,21 +68,44 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String token;
 
+	private Integer shardQuantity;
+
 	private String vSwitchId;
 
 	private String privateIpAddress;
 
+	private String securityIPList;
+
 	private String instanceName;
 
-	private String autoRenew;
+	private Integer shardReplicaQuantity;
+
+	private String architectureType;
 
 	private String vpcId;
+
+	private String redisManagerClass;
 
 	private String zoneId;
 
 	private String chargeType;
 
+	private Integer proxyQuantity;
+
 	private String config;
+
+	private String proxyMode;
+
+	public Integer getShardStorageQuantity() {
+		return this.shardStorageQuantity;
+	}
+
+	public void setShardStorageQuantity(Integer shardStorageQuantity) {
+		this.shardStorageQuantity = shardStorageQuantity;
+		if(shardStorageQuantity != null){
+			putQueryParameter("ShardStorageQuantity", shardStorageQuantity.toString());
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -137,17 +162,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getAutoUseCoupon() {
-		return this.autoUseCoupon;
-	}
-
-	public void setAutoUseCoupon(String autoUseCoupon) {
-		this.autoUseCoupon = autoUseCoupon;
-		if(autoUseCoupon != null){
-			putQueryParameter("AutoUseCoupon", autoUseCoupon);
-		}
-	}
-
 	public String getInstanceClass() {
 		return this.instanceClass;
 	}
@@ -181,6 +195,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getShardReplicaClass() {
+		return this.shardReplicaClass;
+	}
+
+	public void setShardReplicaClass(String shardReplicaClass) {
+		this.shardReplicaClass = shardReplicaClass;
+		if(shardReplicaClass != null){
+			putQueryParameter("ShardReplicaClass", shardReplicaClass);
+		}
+	}
+
 	public String getBizSecurityToken() {
 		return this.securityToken;
 	}
@@ -211,6 +236,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getIncrementalBackupMode() {
+		return this.incrementalBackupMode;
+	}
+
+	public void setIncrementalBackupMode(String incrementalBackupMode) {
+		this.incrementalBackupMode = incrementalBackupMode;
+		if(incrementalBackupMode != null){
+			putQueryParameter("IncrementalBackupMode", incrementalBackupMode);
+		}
+	}
+
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -230,17 +266,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.businessInfo = businessInfo;
 		if(businessInfo != null){
 			putQueryParameter("BusinessInfo", businessInfo);
-		}
-	}
-
-	public String getAutoRenewPeriod() {
-		return this.autoRenewPeriod;
-	}
-
-	public void setAutoRenewPeriod(String autoRenewPeriod) {
-		this.autoRenewPeriod = autoRenewPeriod;
-		if(autoRenewPeriod != null){
-			putQueryParameter("AutoRenewPeriod", autoRenewPeriod);
 		}
 	}
 
@@ -321,6 +346,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public Integer getShardQuantity() {
+		return this.shardQuantity;
+	}
+
+	public void setShardQuantity(Integer shardQuantity) {
+		this.shardQuantity = shardQuantity;
+		if(shardQuantity != null){
+			putQueryParameter("ShardQuantity", shardQuantity.toString());
+		}
+	}
+
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -343,6 +379,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getSecurityIPList() {
+		return this.securityIPList;
+	}
+
+	public void setSecurityIPList(String securityIPList) {
+		this.securityIPList = securityIPList;
+		if(securityIPList != null){
+			putQueryParameter("SecurityIPList", securityIPList);
+		}
+	}
+
 	public String getInstanceName() {
 		return this.instanceName;
 	}
@@ -354,14 +401,25 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getAutoRenew() {
-		return this.autoRenew;
+	public Integer getShardReplicaQuantity() {
+		return this.shardReplicaQuantity;
 	}
 
-	public void setAutoRenew(String autoRenew) {
-		this.autoRenew = autoRenew;
-		if(autoRenew != null){
-			putQueryParameter("AutoRenew", autoRenew);
+	public void setShardReplicaQuantity(Integer shardReplicaQuantity) {
+		this.shardReplicaQuantity = shardReplicaQuantity;
+		if(shardReplicaQuantity != null){
+			putQueryParameter("ShardReplicaQuantity", shardReplicaQuantity.toString());
+		}
+	}
+
+	public String getArchitectureType() {
+		return this.architectureType;
+	}
+
+	public void setArchitectureType(String architectureType) {
+		this.architectureType = architectureType;
+		if(architectureType != null){
+			putQueryParameter("ArchitectureType", architectureType);
 		}
 	}
 
@@ -373,6 +431,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getRedisManagerClass() {
+		return this.redisManagerClass;
+	}
+
+	public void setRedisManagerClass(String redisManagerClass) {
+		this.redisManagerClass = redisManagerClass;
+		if(redisManagerClass != null){
+			putQueryParameter("RedisManagerClass", redisManagerClass);
 		}
 	}
 
@@ -398,6 +467,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public Integer getProxyQuantity() {
+		return this.proxyQuantity;
+	}
+
+	public void setProxyQuantity(Integer proxyQuantity) {
+		this.proxyQuantity = proxyQuantity;
+		if(proxyQuantity != null){
+			putQueryParameter("ProxyQuantity", proxyQuantity.toString());
+		}
+	}
+
 	public String getConfig() {
 		return this.config;
 	}
@@ -409,9 +489,20 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getProxyMode() {
+		return this.proxyMode;
+	}
+
+	public void setProxyMode(String proxyMode) {
+		this.proxyMode = proxyMode;
+		if(proxyMode != null){
+			putQueryParameter("ProxyMode", proxyMode);
+		}
+	}
+
 	@Override
-	public Class<CreateInstanceResponse> getResponseClass() {
-		return CreateInstanceResponse.class;
+	public Class<CreateShardingInstanceResponse> getResponseClass() {
+		return CreateShardingInstanceResponse.class;
 	}
 
 }
