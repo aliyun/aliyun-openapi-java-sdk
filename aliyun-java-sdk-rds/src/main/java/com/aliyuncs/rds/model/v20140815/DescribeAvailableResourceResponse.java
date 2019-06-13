@@ -223,6 +223,8 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 							private String storageRange;
 
+							private DBInstanceStorageRange dBInstanceStorageRange;
+
 							public String getDBInstanceClass() {
 								return this.dBInstanceClass;
 							}
@@ -237,6 +239,47 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 							public void setStorageRange(String storageRange) {
 								this.storageRange = storageRange;
+							}
+
+							public DBInstanceStorageRange getDBInstanceStorageRange() {
+								return this.dBInstanceStorageRange;
+							}
+
+							public void setDBInstanceStorageRange(DBInstanceStorageRange dBInstanceStorageRange) {
+								this.dBInstanceStorageRange = dBInstanceStorageRange;
+							}
+
+							public static class DBInstanceStorageRange {
+
+								private Integer max;
+
+								private Integer min;
+
+								private Integer step;
+
+								public Integer getMax() {
+									return this.max;
+								}
+
+								public void setMax(Integer max) {
+									this.max = max;
+								}
+
+								public Integer getMin() {
+									return this.min;
+								}
+
+								public void setMin(Integer min) {
+									this.min = min;
+								}
+
+								public Integer getStep() {
+									return this.step;
+								}
+
+								public void setStep(Integer step) {
+									this.step = step;
+								}
 							}
 						}
 					}

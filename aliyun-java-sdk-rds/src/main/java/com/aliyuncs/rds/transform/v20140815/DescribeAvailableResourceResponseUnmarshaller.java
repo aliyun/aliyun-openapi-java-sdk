@@ -24,6 +24,7 @@ import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.Availa
 import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys;
 import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys.SupportedStorageTypes;
 import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys.SupportedStorageTypes.AvailableResources;
+import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys.SupportedStorageTypes.AvailableResources.DBInstanceStorageRange;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -66,6 +67,12 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 								AvailableResources availableResources = new AvailableResources();
 								availableResources.setDBInstanceClass(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].DBInstanceClass"));
 								availableResources.setStorageRange(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].StorageRange"));
+
+								DBInstanceStorageRange dBInstanceStorageRange = new DBInstanceStorageRange();
+								dBInstanceStorageRange.setMax(context.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].DBInstanceStorageRange.Max"));
+								dBInstanceStorageRange.setMin(context.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].DBInstanceStorageRange.Min"));
+								dBInstanceStorageRange.setStep(context.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].DBInstanceStorageRange.Step"));
+								availableResources.setDBInstanceStorageRange(dBInstanceStorageRange);
 
 								availableResource.add(availableResources);
 							}
