@@ -19,12 +19,12 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone;
-import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines;
-import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines.SupportedEngineVersions;
-import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys;
-import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys.SupportedStorageTypes;
-import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys.SupportedStorageTypes.AvailableResources;
-import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngines.SupportedEngineVersions.SupportedCategorys.SupportedStorageTypes.AvailableResources.DBInstanceStorageRange;
+import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngine;
+import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngine.SupportedEngineVersion;
+import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngine.SupportedEngineVersion.SupportedCategory;
+import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngine.SupportedEngineVersion.SupportedCategory.SupportedStorageType;
+import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngine.SupportedEngineVersion.SupportedCategory.SupportedStorageType.AvailableResource;
+import com.aliyuncs.rds.model.v20140815.DescribeAvailableResourceResponse.AvailableZone.SupportedEngine.SupportedEngineVersion.SupportedCategory.SupportedStorageType.AvailableResource.DBInstanceStorageRange;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,57 +42,57 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 			availableZone.setStatus(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].Status"));
 			availableZone.setNetworkTypes(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].NetworkTypes"));
 
-			List<SupportedEngines> supportedEngine = new ArrayList<SupportedEngines>();
-			for (int j = 0; j < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine.Length"); j++) {
-				SupportedEngines supportedEngines = new SupportedEngines();
-				supportedEngines.setEngine(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].Engine"));
+			List<SupportedEngine> supportedEngines = new ArrayList<SupportedEngine>();
+			for (int j = 0; j < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {
+				SupportedEngine supportedEngine = new SupportedEngine();
+				supportedEngine.setEngine(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].Engine"));
 
-				List<SupportedEngineVersions> supportedEngineVersion = new ArrayList<SupportedEngineVersions>();
-				for (int k = 0; k < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion.Length"); k++) {
-					SupportedEngineVersions supportedEngineVersions = new SupportedEngineVersions();
-					supportedEngineVersions.setVersion(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].Version"));
+				List<SupportedEngineVersion> supportedEngineVersions = new ArrayList<SupportedEngineVersion>();
+				for (int k = 0; k < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions.Length"); k++) {
+					SupportedEngineVersion supportedEngineVersion = new SupportedEngineVersion();
+					supportedEngineVersion.setVersion(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].Version"));
 
-					List<SupportedCategorys> supportedCategory = new ArrayList<SupportedCategorys>();
-					for (int l = 0; l < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory.Length"); l++) {
-						SupportedCategorys supportedCategorys = new SupportedCategorys();
-						supportedCategorys.setCategory(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].Category"));
+					List<SupportedCategory> supportedCategorys = new ArrayList<SupportedCategory>();
+					for (int l = 0; l < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys.Length"); l++) {
+						SupportedCategory supportedCategory = new SupportedCategory();
+						supportedCategory.setCategory(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys["+ l +"].Category"));
 
-						List<SupportedStorageTypes> supportedStorageType = new ArrayList<SupportedStorageTypes>();
-						for (int m = 0; m < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType.Length"); m++) {
-							SupportedStorageTypes supportedStorageTypes = new SupportedStorageTypes();
-							supportedStorageTypes.setStorageType(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].StorageType"));
+						List<SupportedStorageType> supportedStorageTypes = new ArrayList<SupportedStorageType>();
+						for (int m = 0; m < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys["+ l +"].SupportedStorageTypes.Length"); m++) {
+							SupportedStorageType supportedStorageType = new SupportedStorageType();
+							supportedStorageType.setStorageType(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys["+ l +"].SupportedStorageTypes["+ m +"].StorageType"));
 
-							List<AvailableResources> availableResource = new ArrayList<AvailableResources>();
-							for (int n = 0; n < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource.Length"); n++) {
-								AvailableResources availableResources = new AvailableResources();
-								availableResources.setDBInstanceClass(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].DBInstanceClass"));
-								availableResources.setStorageRange(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].StorageRange"));
+							List<AvailableResource> availableResources = new ArrayList<AvailableResource>();
+							for (int n = 0; n < context.lengthValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys["+ l +"].SupportedStorageTypes["+ m +"].AvailableResources.Length"); n++) {
+								AvailableResource availableResource = new AvailableResource();
+								availableResource.setDBInstanceClass(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys["+ l +"].SupportedStorageTypes["+ m +"].AvailableResources["+ n +"].DBInstanceClass"));
+								availableResource.setStorageRange(context.stringValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys["+ l +"].SupportedStorageTypes["+ m +"].AvailableResources["+ n +"].StorageRange"));
 
 								DBInstanceStorageRange dBInstanceStorageRange = new DBInstanceStorageRange();
-								dBInstanceStorageRange.setMax(context.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].DBInstanceStorageRange.Max"));
-								dBInstanceStorageRange.setMin(context.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].DBInstanceStorageRange.Min"));
-								dBInstanceStorageRange.setStep(context.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngine["+ j +"].SupportedEngineVersion["+ k +"].SupportedCategory["+ l +"].SupportedStorageType["+ m +"].AvailableResource["+ n +"].DBInstanceStorageRange.Step"));
-								availableResources.setDBInstanceStorageRange(dBInstanceStorageRange);
+								dBInstanceStorageRange.setMax(context.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys["+ l +"].SupportedStorageTypes["+ m +"].AvailableResources["+ n +"].DBInstanceStorageRange.Max"));
+								dBInstanceStorageRange.setMin(context.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys["+ l +"].SupportedStorageTypes["+ m +"].AvailableResources["+ n +"].DBInstanceStorageRange.Min"));
+								dBInstanceStorageRange.setStep(context.integerValue("DescribeAvailableResourceResponse.AvailableZones["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersions["+ k +"].SupportedCategorys["+ l +"].SupportedStorageTypes["+ m +"].AvailableResources["+ n +"].DBInstanceStorageRange.Step"));
+								availableResource.setDBInstanceStorageRange(dBInstanceStorageRange);
 
-								availableResource.add(availableResources);
+								availableResources.add(availableResource);
 							}
-							supportedStorageTypes.setAvailableResource(availableResource);
+							supportedStorageType.setAvailableResources(availableResources);
 
-							supportedStorageType.add(supportedStorageTypes);
+							supportedStorageTypes.add(supportedStorageType);
 						}
-						supportedCategorys.setSupportedStorageType(supportedStorageType);
+						supportedCategory.setSupportedStorageTypes(supportedStorageTypes);
 
-						supportedCategory.add(supportedCategorys);
+						supportedCategorys.add(supportedCategory);
 					}
-					supportedEngineVersions.setSupportedCategory(supportedCategory);
+					supportedEngineVersion.setSupportedCategorys(supportedCategorys);
 
-					supportedEngineVersion.add(supportedEngineVersions);
+					supportedEngineVersions.add(supportedEngineVersion);
 				}
-				supportedEngines.setSupportedEngineVersion(supportedEngineVersion);
+				supportedEngine.setSupportedEngineVersions(supportedEngineVersions);
 
-				supportedEngine.add(supportedEngines);
+				supportedEngines.add(supportedEngine);
 			}
-			availableZone.setSupportedEngine(supportedEngine);
+			availableZone.setSupportedEngines(supportedEngines);
 
 			availableZones.add(availableZone);
 		}

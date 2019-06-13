@@ -55,7 +55,7 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		private String networkTypes;
 
-		private List<SupportedEngines> supportedEngine;
+		private List<SupportedEngine> supportedEngines;
 
 		public String getBizRegionId() {
 			return this.regionId;
@@ -105,19 +105,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 			this.networkTypes = networkTypes;
 		}
 
-		public List<SupportedEngines> getSupportedEngine() {
-			return this.supportedEngine;
+		public List<SupportedEngine> getSupportedEngines() {
+			return this.supportedEngines;
 		}
 
-		public void setSupportedEngine(List<SupportedEngines> supportedEngine) {
-			this.supportedEngine = supportedEngine;
+		public void setSupportedEngines(List<SupportedEngine> supportedEngines) {
+			this.supportedEngines = supportedEngines;
 		}
 
-		public static class SupportedEngines {
+		public static class SupportedEngine {
 
 			private String engine;
 
-			private List<SupportedEngineVersions> supportedEngineVersion;
+			private List<SupportedEngineVersion> supportedEngineVersions;
 
 			public String getEngine() {
 				return this.engine;
@@ -127,19 +127,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 				this.engine = engine;
 			}
 
-			public List<SupportedEngineVersions> getSupportedEngineVersion() {
-				return this.supportedEngineVersion;
+			public List<SupportedEngineVersion> getSupportedEngineVersions() {
+				return this.supportedEngineVersions;
 			}
 
-			public void setSupportedEngineVersion(List<SupportedEngineVersions> supportedEngineVersion) {
-				this.supportedEngineVersion = supportedEngineVersion;
+			public void setSupportedEngineVersions(List<SupportedEngineVersion> supportedEngineVersions) {
+				this.supportedEngineVersions = supportedEngineVersions;
 			}
 
-			public static class SupportedEngineVersions {
+			public static class SupportedEngineVersion {
 
 				private String version;
 
-				private List<SupportedCategorys> supportedCategory;
+				private List<SupportedCategory> supportedCategorys;
 
 				public String getBizVersion() {
 					return this.version;
@@ -165,19 +165,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 					this.version = version;
 				}
 
-				public List<SupportedCategorys> getSupportedCategory() {
-					return this.supportedCategory;
+				public List<SupportedCategory> getSupportedCategorys() {
+					return this.supportedCategorys;
 				}
 
-				public void setSupportedCategory(List<SupportedCategorys> supportedCategory) {
-					this.supportedCategory = supportedCategory;
+				public void setSupportedCategorys(List<SupportedCategory> supportedCategorys) {
+					this.supportedCategorys = supportedCategorys;
 				}
 
-				public static class SupportedCategorys {
+				public static class SupportedCategory {
 
 					private String category;
 
-					private List<SupportedStorageTypes> supportedStorageType;
+					private List<SupportedStorageType> supportedStorageTypes;
 
 					public String getCategory() {
 						return this.category;
@@ -187,19 +187,19 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 						this.category = category;
 					}
 
-					public List<SupportedStorageTypes> getSupportedStorageType() {
-						return this.supportedStorageType;
+					public List<SupportedStorageType> getSupportedStorageTypes() {
+						return this.supportedStorageTypes;
 					}
 
-					public void setSupportedStorageType(List<SupportedStorageTypes> supportedStorageType) {
-						this.supportedStorageType = supportedStorageType;
+					public void setSupportedStorageTypes(List<SupportedStorageType> supportedStorageTypes) {
+						this.supportedStorageTypes = supportedStorageTypes;
 					}
 
-					public static class SupportedStorageTypes {
+					public static class SupportedStorageType {
 
 						private String storageType;
 
-						private List<AvailableResources> availableResource;
+						private List<AvailableResource> availableResources;
 
 						public String getStorageType() {
 							return this.storageType;
@@ -209,15 +209,15 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 							this.storageType = storageType;
 						}
 
-						public List<AvailableResources> getAvailableResource() {
-							return this.availableResource;
+						public List<AvailableResource> getAvailableResources() {
+							return this.availableResources;
 						}
 
-						public void setAvailableResource(List<AvailableResources> availableResource) {
-							this.availableResource = availableResource;
+						public void setAvailableResources(List<AvailableResource> availableResources) {
+							this.availableResources = availableResources;
 						}
 
-						public static class AvailableResources {
+						public static class AvailableResource {
 
 							private String dBInstanceClass;
 
