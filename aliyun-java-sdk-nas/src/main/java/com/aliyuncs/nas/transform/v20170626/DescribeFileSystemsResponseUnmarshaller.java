@@ -21,7 +21,6 @@ import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem._Package;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,17 +37,26 @@ public class DescribeFileSystemsResponseUnmarshaller {
 		for (int i = 0; i < context.lengthValue("DescribeFileSystemsResponse.FileSystems.Length"); i++) {
 			FileSystem fileSystem = new FileSystem();
 			fileSystem.setFileSystemId(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].FileSystemId"));
-			fileSystem.setDestription(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Destription"));
+			fileSystem.setDescription(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Description"));
 			fileSystem.setCreateTime(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].CreateTime"));
 			fileSystem.setRegionId(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].RegionId"));
 			fileSystem.setProtocolType(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ProtocolType"));
 			fileSystem.setStorageType(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].StorageType"));
 			fileSystem.setMeteredSize(context.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MeteredSize"));
+			fileSystem.setZoneId(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ZoneId"));
+			fileSystem.setBandwidth(context.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Bandwidth"));
+			fileSystem.setCapacity(context.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Capacity"));
+			fileSystem.setDestription(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Destription"));
 
 			List<MountTarget> mountTargets = new ArrayList<MountTarget>();
 			for (int j = 0; j < context.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets.Length"); j++) {
 				MountTarget mountTarget = new MountTarget();
 				mountTarget.setMountTargetDomain(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].MountTargetDomain"));
+				mountTarget.setNetworkType(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].NetworkType"));
+				mountTarget.setVpcId(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].VpcId"));
+				mountTarget.setVswId(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].VswId"));
+				mountTarget.setAccessGroupName(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].AccessGroupName"));
+				mountTarget.setStatus(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Status"));
 
 				mountTargets.add(mountTarget);
 			}

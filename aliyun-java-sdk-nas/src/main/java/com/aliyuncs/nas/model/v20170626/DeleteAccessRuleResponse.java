@@ -14,7 +14,6 @@
 
 package com.aliyuncs.nas.model.v20170626;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.nas.transform.v20170626.DeleteAccessRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

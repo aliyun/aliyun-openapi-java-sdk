@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeTieringPoliciesResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeTieringPoliciesResponse.TieringPolicy;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

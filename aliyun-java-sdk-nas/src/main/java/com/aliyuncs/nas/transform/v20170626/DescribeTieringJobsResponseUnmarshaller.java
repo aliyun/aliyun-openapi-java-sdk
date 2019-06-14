@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeTieringJobsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeTieringJobsResponse.TieringJob;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

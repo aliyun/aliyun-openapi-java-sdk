@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeZonesResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeZonesResponse.Zone;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

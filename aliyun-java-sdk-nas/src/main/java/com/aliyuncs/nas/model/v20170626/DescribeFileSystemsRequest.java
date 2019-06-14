@@ -26,11 +26,26 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 		super("NAS", "2017-06-26", "DescribeFileSystems", "nas");
 	}
 
+	private String vpcId;
+
 	private Integer pageSize;
+
+	private String fileSystemType;
 
 	private Integer pageNumber;
 
 	private String fileSystemId;
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -40,6 +55,17 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 

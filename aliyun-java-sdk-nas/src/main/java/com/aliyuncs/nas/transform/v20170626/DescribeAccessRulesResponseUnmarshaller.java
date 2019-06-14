@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeAccessRulesResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeAccessRulesResponse.AccessRule;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

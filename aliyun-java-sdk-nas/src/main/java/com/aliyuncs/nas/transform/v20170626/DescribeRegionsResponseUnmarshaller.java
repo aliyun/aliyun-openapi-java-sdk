@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeRegionsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeRegionsResponse.Region;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
