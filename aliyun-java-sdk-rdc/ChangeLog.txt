@@ -1,3 +1,6 @@
+2019-06-17 Version: 1.8.5
+- Add addRamMember api
+
 2019-06-13 Version: 1.8.4
 - Generated 2018-01-04, 2018-04-26, 2018-08-16, 2018-08-21 for `Rdc`
 
