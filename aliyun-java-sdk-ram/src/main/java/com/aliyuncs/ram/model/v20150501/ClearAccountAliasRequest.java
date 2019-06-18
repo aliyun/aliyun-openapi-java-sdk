@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class ClearAccountAliasRequest extends RpcAcsRequest<ClearAccountAliasResponse> {
 	
 	public ClearAccountAliasRequest() {
-		super("Ram", "2015-05-01", "ClearAccountAlias", "ram");
+		super("Ram", "2015-05-01", "ClearAccountAlias");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class AddUserToGroupRequest extends RpcAcsRequest<AddUserToGroupResponse> {
 	
 	public AddUserToGroupRequest() {
-		super("Ram", "2015-05-01", "AddUserToGroup", "ram");
+		super("Ram", "2015-05-01", "AddUserToGroup");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

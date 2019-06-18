@@ -28,6 +28,8 @@ public class GetPolicyResponse extends AcsResponse {
 
 	private Policy policy;
 
+	private DefaultPolicyVersion defaultPolicyVersion;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class GetPolicyResponse extends AcsResponse {
 
 	public void setPolicy(Policy policy) {
 		this.policy = policy;
+	}
+
+	public DefaultPolicyVersion getDefaultPolicyVersion() {
+		return this.defaultPolicyVersion;
+	}
+
+	public void setDefaultPolicyVersion(DefaultPolicyVersion defaultPolicyVersion) {
+		this.defaultPolicyVersion = defaultPolicyVersion;
 	}
 
 	public static class Policy {
@@ -124,6 +134,49 @@ public class GetPolicyResponse extends AcsResponse {
 
 		public void setAttachmentCount(Integer attachmentCount) {
 			this.attachmentCount = attachmentCount;
+		}
+	}
+
+	public static class DefaultPolicyVersion {
+
+		private String versionId;
+
+		private Boolean isDefaultVersion;
+
+		private String policyDocument;
+
+		private String createDate;
+
+		public String getVersionId() {
+			return this.versionId;
+		}
+
+		public void setVersionId(String versionId) {
+			this.versionId = versionId;
+		}
+
+		public Boolean getIsDefaultVersion() {
+			return this.isDefaultVersion;
+		}
+
+		public void setIsDefaultVersion(Boolean isDefaultVersion) {
+			this.isDefaultVersion = isDefaultVersion;
+		}
+
+		public String getPolicyDocument() {
+			return this.policyDocument;
+		}
+
+		public void setPolicyDocument(String policyDocument) {
+			this.policyDocument = policyDocument;
+		}
+
+		public String getCreateDate() {
+			return this.createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
 		}
 	}
 

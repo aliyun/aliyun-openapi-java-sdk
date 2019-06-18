@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 	
 	public CreateRoleRequest() {
-		super("Ram", "2015-05-01", "CreateRole", "ram");
+		super("Ram", "2015-05-01", "CreateRole");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

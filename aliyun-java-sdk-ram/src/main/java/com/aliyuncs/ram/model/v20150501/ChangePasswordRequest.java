@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class ChangePasswordRequest extends RpcAcsRequest<ChangePasswordResponse> {
 	
 	public ChangePasswordRequest() {
-		super("Ram", "2015-05-01", "ChangePassword", "ram");
+		super("Ram", "2015-05-01", "ChangePassword");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

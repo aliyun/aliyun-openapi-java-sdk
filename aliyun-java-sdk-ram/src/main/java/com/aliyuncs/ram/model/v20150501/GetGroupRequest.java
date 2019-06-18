@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetGroupRequest extends RpcAcsRequest<GetGroupResponse> {
 	
 	public GetGroupRequest() {
-		super("Ram", "2015-05-01", "GetGroup", "ram");
+		super("Ram", "2015-05-01", "GetGroup");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

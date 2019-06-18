@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class CreateAccessKeyRequest extends RpcAcsRequest<CreateAccessKeyResponse> {
 	
 	public CreateAccessKeyRequest() {
-		super("Ram", "2015-05-01", "CreateAccessKey", "ram");
+		super("Ram", "2015-05-01", "CreateAccessKey");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

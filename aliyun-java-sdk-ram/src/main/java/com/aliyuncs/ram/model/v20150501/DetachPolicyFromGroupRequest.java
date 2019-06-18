@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class DetachPolicyFromGroupRequest extends RpcAcsRequest<DetachPolicyFromGroupResponse> {
 	
 	public DetachPolicyFromGroupRequest() {
-		super("Ram", "2015-05-01", "DetachPolicyFromGroup", "ram");
+		super("Ram", "2015-05-01", "DetachPolicyFromGroup");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 	
 	public CreateUserRequest() {
-		super("Ram", "2015-05-01", "CreateUser", "ram");
+		super("Ram", "2015-05-01", "CreateUser");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

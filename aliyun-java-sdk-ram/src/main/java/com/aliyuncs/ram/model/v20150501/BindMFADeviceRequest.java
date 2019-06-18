@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class BindMFADeviceRequest extends RpcAcsRequest<BindMFADeviceResponse> {
 	
 	public BindMFADeviceRequest() {
-		super("Ram", "2015-05-01", "BindMFADevice", "ram");
+		super("Ram", "2015-05-01", "BindMFADevice");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersionResponse> {
 	
 	public CreatePolicyVersionRequest() {
-		super("Ram", "2015-05-01", "CreatePolicyVersion", "ram");
+		super("Ram", "2015-05-01", "CreatePolicyVersion");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
@@ -33,6 +33,8 @@ public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersio
 	private String policyName;
 
 	private String policyDocument;
+
+	private String rotateStrategy;
 
 	public Boolean getSetAsDefault() {
 		return this.setAsDefault;
@@ -64,6 +66,17 @@ public class CreatePolicyVersionRequest extends RpcAcsRequest<CreatePolicyVersio
 		this.policyDocument = policyDocument;
 		if(policyDocument != null){
 			putQueryParameter("PolicyDocument", policyDocument);
+		}
+	}
+
+	public String getRotateStrategy() {
+		return this.rotateStrategy;
+	}
+
+	public void setRotateStrategy(String rotateStrategy) {
+		this.rotateStrategy = rotateStrategy;
+		if(rotateStrategy != null){
+			putQueryParameter("RotateStrategy", rotateStrategy);
 		}
 	}
 

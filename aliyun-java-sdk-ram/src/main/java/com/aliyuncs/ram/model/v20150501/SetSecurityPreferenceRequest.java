@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class SetSecurityPreferenceRequest extends RpcAcsRequest<SetSecurityPreferenceResponse> {
 	
 	public SetSecurityPreferenceRequest() {
-		super("Ram", "2015-05-01", "SetSecurityPreference", "ram");
+		super("Ram", "2015-05-01", "SetSecurityPreference");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class RemoveUserFromGroupRequest extends RpcAcsRequest<RemoveUserFromGroupResponse> {
 	
 	public RemoveUserFromGroupRequest() {
-		super("Ram", "2015-05-01", "RemoveUserFromGroup", "ram");
+		super("Ram", "2015-05-01", "RemoveUserFromGroup");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

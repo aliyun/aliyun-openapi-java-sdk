@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetPolicyRequest extends RpcAcsRequest<GetPolicyResponse> {
 	
 	public GetPolicyRequest() {
-		super("Ram", "2015-05-01", "GetPolicy", "ram");
+		super("Ram", "2015-05-01", "GetPolicy");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

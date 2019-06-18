@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetLoginProfileRequest extends RpcAcsRequest<GetLoginProfileResponse> {
 	
 	public GetLoginProfileRequest() {
-		super("Ram", "2015-05-01", "GetLoginProfile", "ram");
+		super("Ram", "2015-05-01", "GetLoginProfile");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

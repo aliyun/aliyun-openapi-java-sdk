@@ -1,3 +1,7 @@
+2019-06-18 Version: 3.1.0
+1, Add DefaultPolicyVersion as return field to GetPolicy interface, Facilitating to get policy document from this interface.
+2, Add RotateStrategy as input field to CreatePolicyVersion interface for rotate policy version when reaching policy version limit
+
 2019-03-14 Version: 3.0.1
 1, Update Dependency
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetAccessKeyLastUsedRequest extends RpcAcsRequest<GetAccessKeyLastUsedResponse> {
 	
 	public GetAccessKeyLastUsedRequest() {
-		super("Ram", "2015-05-01", "GetAccessKeyLastUsed", "ram");
+		super("Ram", "2015-05-01", "GetAccessKeyLastUsed");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

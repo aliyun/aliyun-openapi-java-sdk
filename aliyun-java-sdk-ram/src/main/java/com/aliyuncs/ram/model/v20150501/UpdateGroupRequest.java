@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class UpdateGroupRequest extends RpcAcsRequest<UpdateGroupResponse> {
 	
 	public UpdateGroupRequest() {
-		super("Ram", "2015-05-01", "UpdateGroup", "ram");
+		super("Ram", "2015-05-01", "UpdateGroup");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetUserMFAInfoRequest extends RpcAcsRequest<GetUserMFAInfoResponse> {
 	
 	public GetUserMFAInfoRequest() {
-		super("Ram", "2015-05-01", "GetUserMFAInfo", "ram");
+		super("Ram", "2015-05-01", "GetUserMFAInfo");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

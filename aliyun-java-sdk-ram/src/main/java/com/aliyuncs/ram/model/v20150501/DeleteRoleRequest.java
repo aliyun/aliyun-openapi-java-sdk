@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class DeleteRoleRequest extends RpcAcsRequest<DeleteRoleResponse> {
 	
 	public DeleteRoleRequest() {
-		super("Ram", "2015-05-01", "DeleteRole", "ram");
+		super("Ram", "2015-05-01", "DeleteRole");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class SetAccountAliasRequest extends RpcAcsRequest<SetAccountAliasResponse> {
 	
 	public SetAccountAliasRequest() {
-		super("Ram", "2015-05-01", "SetAccountAlias", "ram");
+		super("Ram", "2015-05-01", "SetAccountAlias");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

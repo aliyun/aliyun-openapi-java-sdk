@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	
 	public ListUsersRequest() {
-		super("Ram", "2015-05-01", "ListUsers", "ram");
+		super("Ram", "2015-05-01", "ListUsers");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

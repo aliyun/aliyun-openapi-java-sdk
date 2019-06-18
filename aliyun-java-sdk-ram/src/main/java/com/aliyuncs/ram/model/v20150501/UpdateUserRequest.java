@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 	
 	public UpdateUserRequest() {
-		super("Ram", "2015-05-01", "UpdateUser", "ram");
+		super("Ram", "2015-05-01", "UpdateUser");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

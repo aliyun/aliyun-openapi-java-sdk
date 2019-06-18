@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class ListPublicKeysRequest extends RpcAcsRequest<ListPublicKeysResponse> {
 	
 	public ListPublicKeysRequest() {
-		super("Ram", "2015-05-01", "ListPublicKeys", "ram");
+		super("Ram", "2015-05-01", "ListPublicKeys");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

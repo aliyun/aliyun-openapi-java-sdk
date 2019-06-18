@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class CreateVirtualMFADeviceRequest extends RpcAcsRequest<CreateVirtualMFADeviceResponse> {
 	
 	public CreateVirtualMFADeviceRequest() {
-		super("Ram", "2015-05-01", "CreateVirtualMFADevice", "ram");
+		super("Ram", "2015-05-01", "CreateVirtualMFADevice");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

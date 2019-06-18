@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class DeleteGroupRequest extends RpcAcsRequest<DeleteGroupResponse> {
 	
 	public DeleteGroupRequest() {
-		super("Ram", "2015-05-01", "DeleteGroup", "ram");
+		super("Ram", "2015-05-01", "DeleteGroup");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

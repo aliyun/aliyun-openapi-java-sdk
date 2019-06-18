@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class DeletePublicKeyRequest extends RpcAcsRequest<DeletePublicKeyResponse> {
 	
 	public DeletePublicKeyRequest() {
-		super("Ram", "2015-05-01", "DeletePublicKey", "ram");
+		super("Ram", "2015-05-01", "DeletePublicKey");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

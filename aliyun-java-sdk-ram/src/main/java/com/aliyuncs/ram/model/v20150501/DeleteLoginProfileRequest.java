@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class DeleteLoginProfileRequest extends RpcAcsRequest<DeleteLoginProfileResponse> {
 	
 	public DeleteLoginProfileRequest() {
-		super("Ram", "2015-05-01", "DeleteLoginProfile", "ram");
+		super("Ram", "2015-05-01", "DeleteLoginProfile");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

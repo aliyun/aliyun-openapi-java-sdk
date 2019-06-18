@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class ListPoliciesForRoleRequest extends RpcAcsRequest<ListPoliciesForRoleResponse> {
 	
 	public ListPoliciesForRoleRequest() {
-		super("Ram", "2015-05-01", "ListPoliciesForRole", "ram");
+		super("Ram", "2015-05-01", "ListPoliciesForRole");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

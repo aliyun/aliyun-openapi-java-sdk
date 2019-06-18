@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class DeleteVirtualMFADeviceRequest extends RpcAcsRequest<DeleteVirtualMFADeviceResponse> {
 	
 	public DeleteVirtualMFADeviceRequest() {
-		super("Ram", "2015-05-01", "DeleteVirtualMFADevice", "ram");
+		super("Ram", "2015-05-01", "DeleteVirtualMFADevice");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

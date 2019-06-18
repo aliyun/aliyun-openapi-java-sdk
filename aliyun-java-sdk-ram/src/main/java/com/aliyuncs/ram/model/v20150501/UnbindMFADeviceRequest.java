@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class UnbindMFADeviceRequest extends RpcAcsRequest<UnbindMFADeviceResponse> {
 	
 	public UnbindMFADeviceRequest() {
-		super("Ram", "2015-05-01", "UnbindMFADevice", "ram");
+		super("Ram", "2015-05-01", "UnbindMFADevice");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

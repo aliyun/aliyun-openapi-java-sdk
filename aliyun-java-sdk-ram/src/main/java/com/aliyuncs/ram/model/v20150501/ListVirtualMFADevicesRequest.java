@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class ListVirtualMFADevicesRequest extends RpcAcsRequest<ListVirtualMFADevicesResponse> {
 	
 	public ListVirtualMFADevicesRequest() {
-		super("Ram", "2015-05-01", "ListVirtualMFADevices", "ram");
+		super("Ram", "2015-05-01", "ListVirtualMFADevices");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

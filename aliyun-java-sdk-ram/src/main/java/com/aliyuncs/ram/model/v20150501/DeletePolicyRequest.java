@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class DeletePolicyRequest extends RpcAcsRequest<DeletePolicyResponse> {
 	
 	public DeletePolicyRequest() {
-		super("Ram", "2015-05-01", "DeletePolicy", "ram");
+		super("Ram", "2015-05-01", "DeletePolicy");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

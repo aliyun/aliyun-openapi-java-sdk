@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class UpdateAccessKeyRequest extends RpcAcsRequest<UpdateAccessKeyResponse> {
 	
 	public UpdateAccessKeyRequest() {
-		super("Ram", "2015-05-01", "UpdateAccessKey", "ram");
+		super("Ram", "2015-05-01", "UpdateAccessKey");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

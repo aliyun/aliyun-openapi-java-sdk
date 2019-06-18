@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class SetPasswordPolicyRequest extends RpcAcsRequest<SetPasswordPolicyResponse> {
 	
 	public SetPasswordPolicyRequest() {
-		super("Ram", "2015-05-01", "SetPasswordPolicy", "ram");
+		super("Ram", "2015-05-01", "SetPasswordPolicy");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

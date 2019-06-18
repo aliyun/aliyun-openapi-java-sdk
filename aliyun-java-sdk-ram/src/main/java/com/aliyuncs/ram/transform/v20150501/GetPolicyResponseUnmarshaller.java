@@ -15,6 +15,7 @@
 package com.aliyuncs.ram.transform.v20150501;
 
 import com.aliyuncs.ram.model.v20150501.GetPolicyResponse;
+import com.aliyuncs.ram.model.v20150501.GetPolicyResponse.DefaultPolicyVersion;
 import com.aliyuncs.ram.model.v20150501.GetPolicyResponse.Policy;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -35,6 +36,13 @@ public class GetPolicyResponseUnmarshaller {
 		policy.setUpdateDate(context.stringValue("GetPolicyResponse.Policy.UpdateDate"));
 		policy.setAttachmentCount(context.integerValue("GetPolicyResponse.Policy.AttachmentCount"));
 		getPolicyResponse.setPolicy(policy);
+
+		DefaultPolicyVersion defaultPolicyVersion = new DefaultPolicyVersion();
+		defaultPolicyVersion.setVersionId(context.stringValue("GetPolicyResponse.DefaultPolicyVersion.VersionId"));
+		defaultPolicyVersion.setIsDefaultVersion(context.booleanValue("GetPolicyResponse.DefaultPolicyVersion.IsDefaultVersion"));
+		defaultPolicyVersion.setPolicyDocument(context.stringValue("GetPolicyResponse.DefaultPolicyVersion.PolicyDocument"));
+		defaultPolicyVersion.setCreateDate(context.stringValue("GetPolicyResponse.DefaultPolicyVersion.CreateDate"));
+		getPolicyResponse.setDefaultPolicyVersion(defaultPolicyVersion);
 	 
 	 	return getPolicyResponse;
 	}

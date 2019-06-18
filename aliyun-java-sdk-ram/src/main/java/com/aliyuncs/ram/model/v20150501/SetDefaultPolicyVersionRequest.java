@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class SetDefaultPolicyVersionRequest extends RpcAcsRequest<SetDefaultPolicyVersionResponse> {
 	
 	public SetDefaultPolicyVersionRequest() {
-		super("Ram", "2015-05-01", "SetDefaultPolicyVersion", "ram");
+		super("Ram", "2015-05-01", "SetDefaultPolicyVersion");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

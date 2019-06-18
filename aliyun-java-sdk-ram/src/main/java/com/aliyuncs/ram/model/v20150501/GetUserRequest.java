@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 	
 	public GetUserRequest() {
-		super("Ram", "2015-05-01", "GetUser", "ram");
+		super("Ram", "2015-05-01", "GetUser");
 		setProtocol(ProtocolType.HTTPS);
 	}
 
