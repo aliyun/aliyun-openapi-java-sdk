@@ -41,6 +41,8 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 
 	private String userId;
 
+	private String items;
+
 	public Integer getReturnCount() {
 		return this.returnCount;
 	}
@@ -104,6 +106,17 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getItems() {
+		return this.items;
+	}
+
+	public void setItems(String items) {
+		this.items = items;
+		if(items != null){
+			putQueryParameter("Items", items);
 		}
 	}
 

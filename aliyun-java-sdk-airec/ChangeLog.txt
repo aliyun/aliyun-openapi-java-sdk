@@ -1,3 +1,7 @@
+2019-06-18 Version: 1.1.1
+1. Supported the related recommend.
+2. Supported exposure time controll and exposure filter by scene.
+
 2019-04-16 Version: 1.1.0
 1, Modified the field ItemId's type.
 
