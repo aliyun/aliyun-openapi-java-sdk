@@ -233,6 +233,11 @@ public class DefaultAcsClient implements IAcsClient {
     private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
                                                           String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
+
+        doActionWithProxy(request.getSysProtocol(),
+                System.getenv("HTTPS_PROXY"), System.getenv("HTTP_PROXY"));
+        doActionWithIgnoreSSL(request, X509TrustAll.ignoreSSLCerts);
+
         Logger logger = clientProfile.getLogger();
         String startTime = "";
         String timeCost = "";
@@ -366,6 +371,31 @@ public class DefaultAcsClient implements IAcsClient {
             return error.getInstance(context);
         }
     }
+
+    /**
+     * Compatible with previous versions of proxy Settings
+     */
+    public void doActionWithProxy(ProtocolType protocolType, String httpsProxy, String httpProxy) {
+        HttpClientConfig config = this.clientProfile.getHttpClientConfig();
+        if (protocolType == ProtocolType.HTTP && httpProxy != null) {
+            config.setHttpProxy(httpProxy);
+            return;
+        }
+        if (protocolType == ProtocolType.HTTPS && httpsProxy != null) {
+            config.setHttpsProxy(httpsProxy);
+            return;
+        }
+    }
+
+    /**
+     * Compatible with previous versions of SSL Settings
+     */
+    public void doActionWithIgnoreSSL(AcsRequest request, boolean isIgnore) {
+        if (isIgnore) {
+            request.setIgnoreSSLCerts(true);
+        }
+    }
+
 
     @Deprecated
     public boolean isAutoRetry() {

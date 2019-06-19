@@ -350,7 +350,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
          */
         @Deprecated
         public static void restoreSSLCertificate() {
-            throw new IllegalStateException("use HttpClientConfig.setIgnoreSSLCerts(false) instead");
+            X509TrustAll.ignoreSSLCerts = false;
         }
 
         /**
@@ -358,7 +358,7 @@ public class CompatibleUrlConnClient extends IHttpClient {
          */
         @Deprecated
         public static void ignoreSSLCertificate() {
-            throw new IllegalStateException("use HttpClientConfig.setIgnoreSSLCerts(true) instead");
+            X509TrustAll.ignoreSSLCerts = true;
         }
     }
 }
