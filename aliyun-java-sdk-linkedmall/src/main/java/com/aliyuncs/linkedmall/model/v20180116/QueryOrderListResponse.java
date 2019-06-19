@@ -121,6 +121,8 @@ public class QueryOrderListResponse extends AcsResponse {
 
 		private Integer logisticsStatus;
 
+		private Integer enableStatus;
+
 		private List<FundStructureModelsItem> fundStructureModels;
 
 		private List<SubOrderListItem> subOrderList;
@@ -181,6 +183,14 @@ public class QueryOrderListResponse extends AcsResponse {
 
 		public void setLogisticsStatus(Integer logisticsStatus) {
 			this.logisticsStatus = logisticsStatus;
+		}
+
+		public Integer getEnableStatus() {
+			return this.enableStatus;
+		}
+
+		public void setEnableStatus(Integer enableStatus) {
+			this.enableStatus = enableStatus;
 		}
 
 		public List<FundStructureModelsItem> getFundStructureModels() {

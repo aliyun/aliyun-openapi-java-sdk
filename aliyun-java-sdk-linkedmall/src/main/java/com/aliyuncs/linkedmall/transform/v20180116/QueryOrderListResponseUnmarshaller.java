@@ -54,6 +54,7 @@ public class QueryOrderListResponseUnmarshaller {
 			lmOrderListItem.setExtJson(context.stringValue("QueryOrderListResponse.LmOrderList["+ i +"].ExtJson"));
 			lmOrderListItem.setShopName(context.stringValue("QueryOrderListResponse.LmOrderList["+ i +"].ShopName"));
 			lmOrderListItem.setLogisticsStatus(context.integerValue("QueryOrderListResponse.LmOrderList["+ i +"].LogisticsStatus"));
+			lmOrderListItem.setEnableStatus(context.integerValue("QueryOrderListResponse.LmOrderList["+ i +"].EnableStatus"));
 
 			PostFee1 postFee1 = new PostFee1();
 			postFee1.setFundAmount(context.longValue("QueryOrderListResponse.LmOrderList["+ i +"].PostFee.FundAmount"));
