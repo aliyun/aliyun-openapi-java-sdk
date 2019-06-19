@@ -34,6 +34,14 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 
 	private String remark;
 
+	private String compactTopic;
+
+	private String partitionNum;
+
+	private String replicationFactor;
+
+	private String localTopic;
+
 	private Integer orderType;
 
 	public String getInstanceId() {
@@ -66,6 +74,50 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		this.remark = remark;
 		if(remark != null){
 			putQueryParameter("Remark", remark);
+		}
+	}
+
+	public String getCompactTopic() {
+		return this.compactTopic;
+	}
+
+	public void setCompactTopic(String compactTopic) {
+		this.compactTopic = compactTopic;
+		if(compactTopic != null){
+			putQueryParameter("CompactTopic", compactTopic);
+		}
+	}
+
+	public String getPartitionNum() {
+		return this.partitionNum;
+	}
+
+	public void setPartitionNum(String partitionNum) {
+		this.partitionNum = partitionNum;
+		if(partitionNum != null){
+			putQueryParameter("PartitionNum", partitionNum);
+		}
+	}
+
+	public String getReplicationFactor() {
+		return this.replicationFactor;
+	}
+
+	public void setReplicationFactor(String replicationFactor) {
+		this.replicationFactor = replicationFactor;
+		if(replicationFactor != null){
+			putQueryParameter("ReplicationFactor", replicationFactor);
+		}
+	}
+
+	public String getLocalTopic() {
+		return this.localTopic;
+	}
+
+	public void setLocalTopic(String localTopic) {
+		this.localTopic = localTopic;
+		if(localTopic != null){
+			putQueryParameter("LocalTopic", localTopic);
 		}
 	}
 
