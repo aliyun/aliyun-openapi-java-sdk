@@ -258,6 +258,8 @@ public class QueryOrderListResponse extends AcsResponse {
 
 			private Integer orderStatus;
 
+			private Integer enableStatus;
+
 			private List<ItemPriceListItem> itemPriceList;
 
 			public Long getItemId() {
@@ -322,6 +324,14 @@ public class QueryOrderListResponse extends AcsResponse {
 
 			public void setOrderStatus(Integer orderStatus) {
 				this.orderStatus = orderStatus;
+			}
+
+			public Integer getEnableStatus() {
+				return this.enableStatus;
+			}
+
+			public void setEnableStatus(Integer enableStatus) {
+				this.enableStatus = enableStatus;
 			}
 
 			public List<ItemPriceListItem> getItemPriceList() {

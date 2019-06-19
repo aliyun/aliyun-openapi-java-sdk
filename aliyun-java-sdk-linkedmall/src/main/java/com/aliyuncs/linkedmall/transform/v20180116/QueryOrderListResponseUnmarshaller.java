@@ -83,6 +83,7 @@ public class QueryOrderListResponseUnmarshaller {
 				subOrderListItem.setSkuName(context.stringValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].SkuName"));
 				subOrderListItem.setLmOrderId(context.longValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].LmOrderId"));
 				subOrderListItem.setOrderStatus(context.integerValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].OrderStatus"));
+				subOrderListItem.setEnableStatus(context.integerValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].EnableStatus"));
 
 				List<ItemPriceListItem> itemPriceList = new ArrayList<ItemPriceListItem>();
 				for (int k = 0; k < context.lengthValue("QueryOrderListResponse.LmOrderList["+ i +"].SubOrderList["+ j +"].ItemPriceList.Length"); k++) {
