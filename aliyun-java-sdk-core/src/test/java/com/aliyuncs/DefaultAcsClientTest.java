@@ -777,4 +777,35 @@ public class DefaultAcsClientTest {
         Assert.assertEquals(resultStr, userAgent);
     }
 
+    @Test
+    public void doActionWithProxyTest() throws ClientException {
+        HttpClientConfig config = new HttpClientConfig();
+        config.setCompatibleMode(true);
+        DefaultProfile profile = DefaultProfile.getProfile("test", "test", "test");
+        profile.setHttpClientConfig(config);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        client.doActionWithProxy(ProtocolType.HTTP, "test", null);
+        Assert.assertNull(config.getHttpProxy());
+
+        client.doActionWithProxy(ProtocolType.HTTP, "test", "test");
+        Assert.assertEquals(config.getHttpProxy(), "test");
+
+        client.doActionWithProxy(ProtocolType.HTTPS, null, null);
+        Assert.assertNull(config.getHttpsProxy());
+
+        client.doActionWithProxy(ProtocolType.HTTPS, "test", null);
+        Assert.assertEquals(config.getHttpsProxy(), "test");
+    }
+
+    @Test
+    public void doActionWithIgnoreSSL() throws ClientException {
+        DefaultAcsClient client = new DefaultAcsClient("test");
+        CommonRpcRequest request = new CommonRpcRequest("test");
+        client.doActionWithIgnoreSSL(request, false);
+        Assert.assertFalse(request.isIgnoreSSLCerts());
+
+        client.doActionWithIgnoreSSL(request, true);
+        Assert.assertTrue(request.isIgnoreSSLCerts());
+    }
+
 }

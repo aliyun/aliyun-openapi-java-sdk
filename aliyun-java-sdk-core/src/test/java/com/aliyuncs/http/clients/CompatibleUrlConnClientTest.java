@@ -78,21 +78,27 @@ public class CompatibleUrlConnClientTest {
     }
 
     @Test
-    public void ignoreSSLCertificateTest() throws Exception {
+    public void ignoreSSLCertificateTest() throws ClientException {
         HttpClientConfig config = mock(HttpClientConfig.class);
         when(config.isIgnoreSSLCerts()).thenReturn(true);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
-        thrown.expect(IllegalStateException.class);
-        client.ignoreSSLCertificate();
+        try {
+            client.ignoreSSLCertificate();
+        } catch (IllegalStateException e) {
+            Assert.assertEquals("use HttpClientConfig.setIgnoreSSLCerts(true) instead", e.getMessage());
+        }
     }
 
     @Test
-    public void restoreSSLCertificateTest() throws Exception {
+    public void restoreSSLCertificateTest() throws ClientException {
         HttpClientConfig config = mock(HttpClientConfig.class);
         when(config.isIgnoreSSLCerts()).thenReturn(false);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
-        thrown.expect(IllegalStateException.class);
-        client.restoreSSLCertificate();
+        try {
+            client.restoreSSLCertificate();
+        } catch (IllegalStateException e) {
+            Assert.assertEquals("use HttpClientConfig.setIgnoreSSLCerts(false) instead", e.getMessage());
+        }
 
     }
 
@@ -790,13 +796,13 @@ public class CompatibleUrlConnClientTest {
 
     @Test
     public void testHttpsCertIgnoreHelperIgnore() {
-        thrown.expect(IllegalStateException.class);
         CompatibleUrlConnClient.HttpsCertIgnoreHelper.ignoreSSLCertificate();
+        Assert.assertTrue(X509TrustAll.ignoreSSLCerts);
     }
 
     @Test
     public void testHttpsCertIgnoreHelperRestore() {
-        thrown.expect(IllegalStateException.class);
         CompatibleUrlConnClient.HttpsCertIgnoreHelper.restoreSSLCertificate();
+        Assert.assertFalse(X509TrustAll.ignoreSSLCerts);
     }
 }
