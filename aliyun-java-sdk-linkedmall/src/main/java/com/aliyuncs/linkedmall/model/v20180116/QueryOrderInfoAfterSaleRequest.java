@@ -26,20 +26,20 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		super("linkedmall", "2018-01-16", "QueryOrderInfoAfterSale", "linkedmall");
 	}
 
-	private Long lmOrderId;
+	private String lmOrderId;
 
 	private String bizId;
 
 	private String channelUserId;
 
-	public Long getLmOrderId() {
+	public String getLmOrderId() {
 		return this.lmOrderId;
 	}
 
-	public void setLmOrderId(Long lmOrderId) {
+	public void setLmOrderId(String lmOrderId) {
 		this.lmOrderId = lmOrderId;
 		if(lmOrderId != null){
-			putQueryParameter("LmOrderId", lmOrderId.toString());
+			putQueryParameter("LmOrderId", lmOrderId);
 		}
 	}
 

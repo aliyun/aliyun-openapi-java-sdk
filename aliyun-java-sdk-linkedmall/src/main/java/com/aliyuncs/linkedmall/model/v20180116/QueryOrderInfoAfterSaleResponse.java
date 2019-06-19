@@ -95,6 +95,8 @@ public class QueryOrderInfoAfterSaleResponse extends AcsResponse {
 
 		private String extJson;
 
+		private Long refundPoints;
+
 		private List<Logistics> logisticsList;
 
 		public Long getLmOrderId() {
@@ -207,6 +209,14 @@ public class QueryOrderInfoAfterSaleResponse extends AcsResponse {
 
 		public void setExtJson(String extJson) {
 			this.extJson = extJson;
+		}
+
+		public Long getRefundPoints() {
+			return this.refundPoints;
+		}
+
+		public void setRefundPoints(Long refundPoints) {
+			this.refundPoints = refundPoints;
 		}
 
 		public List<Logistics> getLogisticsList() {

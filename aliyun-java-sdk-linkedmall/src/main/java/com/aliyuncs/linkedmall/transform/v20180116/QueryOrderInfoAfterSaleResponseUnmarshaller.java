@@ -46,6 +46,7 @@ public class QueryOrderInfoAfterSaleResponseUnmarshaller {
 		model.setXiaomiCode(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.XiaomiCode"));
 		model.setShopServiceTelephone(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.ShopServiceTelephone"));
 		model.setExtJson(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.ExtJson"));
+		model.setRefundPoints(context.longValue("QueryOrderInfoAfterSaleResponse.Model.RefundPoints"));
 
 		List<Logistics> logisticsList = new ArrayList<Logistics>();
 		for (int i = 0; i < context.lengthValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList.Length"); i++) {
