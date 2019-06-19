@@ -1,0 +1,3 @@
+2019-06-19 Version: 4.1.0-SNAPSHOT
+1. Add support for create hbaseue instance
+

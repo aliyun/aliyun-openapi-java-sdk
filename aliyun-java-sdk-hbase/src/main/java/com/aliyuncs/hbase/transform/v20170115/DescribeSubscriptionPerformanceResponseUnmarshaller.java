@@ -1,0 +1,66 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.hbase.transform.v20170115;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aliyuncs.hbase.model.v20170115.DescribeSubscriptionPerformanceResponse;
+import com.aliyuncs.hbase.model.v20170115.DescribeSubscriptionPerformanceResponse.PerformanceKeys;
+import com.aliyuncs.hbase.model.v20170115.DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKeyItem;
+import com.aliyuncs.hbase.model.v20170115.DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKeyItem.PerformanceValues;
+import com.aliyuncs.hbase.model.v20170115.DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKeyItem.PerformanceValues.PerformanceValueItem;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class DescribeSubscriptionPerformanceResponseUnmarshaller {
+
+	public static DescribeSubscriptionPerformanceResponse unmarshall(DescribeSubscriptionPerformanceResponse describeSubscriptionPerformanceResponse, UnmarshallerContext context) {
+		
+		describeSubscriptionPerformanceResponse.setRequestId(context.stringValue("DescribeSubscriptionPerformanceResponse.RequestId"));
+		describeSubscriptionPerformanceResponse.setStartTime(context.stringValue("DescribeSubscriptionPerformanceResponse.StartTime"));
+		describeSubscriptionPerformanceResponse.setEndTime(context.stringValue("DescribeSubscriptionPerformanceResponse.EndTime"));
+		describeSubscriptionPerformanceResponse.setReplicaId(context.stringValue("DescribeSubscriptionPerformanceResponse.ReplicaId"));
+
+		PerformanceKeys performanceKeys = new PerformanceKeys();
+
+		List<PerformanceKeyItem> performanceKey = new ArrayList<PerformanceKeyItem>();
+		for (int i = 0; i < context.lengthValue("DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKey.Length"); i++) {
+			PerformanceKeyItem performanceKeyItem = new PerformanceKeyItem();
+			performanceKeyItem.setKey(context.stringValue("DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKey["+ i +"].Key"));
+			performanceKeyItem.setUnit(context.stringValue("DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKey["+ i +"].Unit"));
+			performanceKeyItem.setValueFormat(context.stringValue("DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKey["+ i +"].ValueFormat"));
+
+			PerformanceValues performanceValues = new PerformanceValues();
+
+			List<PerformanceValueItem> performanceValue = new ArrayList<PerformanceValueItem>();
+			for (int j = 0; j < context.lengthValue("DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKey["+ i +"].PerformanceValues.PerformanceValue.Length"); j++) {
+				PerformanceValueItem performanceValueItem = new PerformanceValueItem();
+				performanceValueItem.setValue(context.stringValue("DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKey["+ i +"].PerformanceValues.PerformanceValue["+ j +"].Value"));
+				performanceValueItem.setDate(context.stringValue("DescribeSubscriptionPerformanceResponse.PerformanceKeys.PerformanceKey["+ i +"].PerformanceValues.PerformanceValue["+ j +"].Date"));
+
+				performanceValue.add(performanceValueItem);
+			}
+			performanceValues.setPerformanceValue(performanceValue);
+			performanceKeyItem.setPerformanceValues(performanceValues);
+
+			performanceKey.add(performanceKeyItem);
+		}
+		performanceKeys.setPerformanceKey(performanceKey);
+		describeSubscriptionPerformanceResponse.setPerformanceKeys(performanceKeys);
+	 
+	 	return describeSubscriptionPerformanceResponse;
+	}
+}
