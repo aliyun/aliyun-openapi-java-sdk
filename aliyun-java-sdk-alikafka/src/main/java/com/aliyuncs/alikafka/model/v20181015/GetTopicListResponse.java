@@ -121,6 +121,12 @@ public class GetTopicListResponse extends AcsResponse {
 
 		private String statusName;
 
+		private Boolean compactTopic;
+
+		private Boolean localTopic;
+
+		private Integer partitionNum;
+
 		public String getTopic() {
 			return this.topic;
 		}
@@ -191,6 +197,30 @@ public class GetTopicListResponse extends AcsResponse {
 
 		public void setStatusName(String statusName) {
 			this.statusName = statusName;
+		}
+
+		public Boolean getCompactTopic() {
+			return this.compactTopic;
+		}
+
+		public void setCompactTopic(Boolean compactTopic) {
+			this.compactTopic = compactTopic;
+		}
+
+		public Boolean getLocalTopic() {
+			return this.localTopic;
+		}
+
+		public void setLocalTopic(Boolean localTopic) {
+			this.localTopic = localTopic;
+		}
+
+		public Integer getPartitionNum() {
+			return this.partitionNum;
+		}
+
+		public void setPartitionNum(Integer partitionNum) {
+			this.partitionNum = partitionNum;
 		}
 	}
 

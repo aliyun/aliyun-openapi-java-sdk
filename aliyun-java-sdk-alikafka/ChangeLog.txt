@@ -1,3 +1,6 @@
+2019-06-20 Version: 1.0.8
+- Support more return values when invoke GetTopicList.
+
 2019-06-20 Version: 1.0.7
 - Support more return values when invoke GetTopicList.
 

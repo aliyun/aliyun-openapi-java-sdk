@@ -44,6 +44,9 @@ public class GetTopicListResponseUnmarshaller {
 			topicListItem.setInstanceId(context.stringValue("GetTopicListResponse.TopicList["+ i +"].InstanceId"));
 			topicListItem.setRegionId(context.stringValue("GetTopicListResponse.TopicList["+ i +"].RegionId"));
 			topicListItem.setStatusName(context.stringValue("GetTopicListResponse.TopicList["+ i +"].StatusName"));
+			topicListItem.setCompactTopic(context.booleanValue("GetTopicListResponse.TopicList["+ i +"].CompactTopic"));
+			topicListItem.setLocalTopic(context.booleanValue("GetTopicListResponse.TopicList["+ i +"].LocalTopic"));
+			topicListItem.setPartitionNum(context.integerValue("GetTopicListResponse.TopicList["+ i +"].PartitionNum"));
 
 			topicList.add(topicListItem);
 		}
