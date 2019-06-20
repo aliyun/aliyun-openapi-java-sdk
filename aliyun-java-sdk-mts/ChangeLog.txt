@@ -1,3 +1,6 @@
+2019-06-20 Version: 2.6.2
+- Support audio media info for audio dna compare.
+
 2019-03-15 Version: 2.6.1
 1, Update Dependency
 

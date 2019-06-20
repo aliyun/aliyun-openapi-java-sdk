@@ -16,22 +16,18 @@ package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mts.transform.v20140618.QueryCoverJobListResponseUnmarshaller;
+import com.aliyuncs.mts.transform.v20140618.SubmitBeautifyJobsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryCoverJobListResponse extends AcsResponse {
+public class SubmitBeautifyJobsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String nextPageToken;
-
-	private List<CoverJob> coverJobList;
-
-	private List<String> nonExistIds;
+	private List<Job> jobList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,31 +37,15 @@ public class QueryCoverJobListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNextPageToken() {
-		return this.nextPageToken;
+	public List<Job> getJobList() {
+		return this.jobList;
 	}
 
-	public void setNextPageToken(String nextPageToken) {
-		this.nextPageToken = nextPageToken;
+	public void setJobList(List<Job> jobList) {
+		this.jobList = jobList;
 	}
 
-	public List<CoverJob> getCoverJobList() {
-		return this.coverJobList;
-	}
-
-	public void setCoverJobList(List<CoverJob> coverJobList) {
-		this.coverJobList = coverJobList;
-	}
-
-	public List<String> getNonExistIds() {
-		return this.nonExistIds;
-	}
-
-	public void setNonExistIds(List<String> nonExistIds) {
-		this.nonExistIds = nonExistIds;
-	}
-
-	public static class CoverJob {
+	public static class Job {
 
 		private String id;
 
@@ -81,11 +61,11 @@ public class QueryCoverJobListResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private List<CoverImage> coverImageList;
-
 		private Input input;
 
-		private CoverConfig coverConfig;
+		private BeautifyConfig beautifyConfig;
+
+		private MNSMessageResult mNSMessageResult;
 
 		public String getId() {
 			return this.id;
@@ -143,14 +123,6 @@ public class QueryCoverJobListResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public List<CoverImage> getCoverImageList() {
-			return this.coverImageList;
-		}
-
-		public void setCoverImageList(List<CoverImage> coverImageList) {
-			this.coverImageList = coverImageList;
-		}
-
 		public Input getInput() {
 			return this.input;
 		}
@@ -159,61 +131,20 @@ public class QueryCoverJobListResponse extends AcsResponse {
 			this.input = input;
 		}
 
-		public CoverConfig getCoverConfig() {
-			return this.coverConfig;
+		public BeautifyConfig getBeautifyConfig() {
+			return this.beautifyConfig;
 		}
 
-		public void setCoverConfig(CoverConfig coverConfig) {
-			this.coverConfig = coverConfig;
+		public void setBeautifyConfig(BeautifyConfig beautifyConfig) {
+			this.beautifyConfig = beautifyConfig;
 		}
 
-		public static class CoverImage {
+		public MNSMessageResult getMNSMessageResult() {
+			return this.mNSMessageResult;
+		}
 
-			private String score;
-
-			private String url;
-
-			private String time;
-
-			public String getScore() {
-				return this.score;
-			}
-
-			public void setScore(String score) {
-				this.score = score;
-			}
-
-			public String getBizUrl() {
-				return this.url;
-			}
-
-			public void setBizUrl(String url) {
-				this.url = url;
-			}
-
-			/**
-			 * @deprecated use getBizUrl instead of this.
-			 */
-			@Deprecated
-			public String getUrl() {
-				return this.url;
-			}
-
-			/**
-			 * @deprecated use setBizUrl instead of this.
-			 */
-			@Deprecated
-			public void setUrl(String url) {
-				this.url = url;
-			}
-
-			public String getTime() {
-				return this.time;
-			}
-
-			public void setTime(String time) {
-				this.time = time;
-			}
+		public void setMNSMessageResult(MNSMessageResult mNSMessageResult) {
+			this.mNSMessageResult = mNSMessageResult;
 		}
 
 		public static class Input {
@@ -223,6 +154,8 @@ public class QueryCoverJobListResponse extends AcsResponse {
 			private String location;
 
 			private String object;
+
+			private String roleArn;
 
 			public String getBucket() {
 				return this.bucket;
@@ -247,9 +180,17 @@ public class QueryCoverJobListResponse extends AcsResponse {
 			public void setObject(String object) {
 				this.object = object;
 			}
+
+			public String getRoleArn() {
+				return this.roleArn;
+			}
+
+			public void setRoleArn(String roleArn) {
+				this.roleArn = roleArn;
+			}
 		}
 
-		public static class CoverConfig {
+		public static class BeautifyConfig {
 
 			private OutputFile outputFile;
 
@@ -268,6 +209,8 @@ public class QueryCoverJobListResponse extends AcsResponse {
 				private String location;
 
 				private String object;
+
+				private String roleArn;
 
 				public String getBucket() {
 					return this.bucket;
@@ -292,12 +235,53 @@ public class QueryCoverJobListResponse extends AcsResponse {
 				public void setObject(String object) {
 					this.object = object;
 				}
+
+				public String getRoleArn() {
+					return this.roleArn;
+				}
+
+				public void setRoleArn(String roleArn) {
+					this.roleArn = roleArn;
+				}
+			}
+		}
+
+		public static class MNSMessageResult {
+
+			private String messageId;
+
+			private String errorMessage;
+
+			private String errorCode;
+
+			public String getMessageId() {
+				return this.messageId;
+			}
+
+			public void setMessageId(String messageId) {
+				this.messageId = messageId;
+			}
+
+			public String getErrorMessage() {
+				return this.errorMessage;
+			}
+
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
+			}
+
+			public String getErrorCode() {
+				return this.errorCode;
+			}
+
+			public void setErrorCode(String errorCode) {
+				this.errorCode = errorCode;
 			}
 		}
 	}
 
 	@Override
-	public QueryCoverJobListResponse getInstance(UnmarshallerContext context) {
-		return	QueryCoverJobListResponseUnmarshaller.unmarshall(this, context);
+	public SubmitBeautifyJobsResponse getInstance(UnmarshallerContext context) {
+		return	SubmitBeautifyJobsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -33,6 +33,7 @@ public class QuerySnapshotJobListResponseUnmarshaller {
 	public static QuerySnapshotJobListResponse unmarshall(QuerySnapshotJobListResponse querySnapshotJobListResponse, UnmarshallerContext context) {
 		
 		querySnapshotJobListResponse.setRequestId(context.stringValue("QuerySnapshotJobListResponse.RequestId"));
+		querySnapshotJobListResponse.setNextPageToken(context.stringValue("QuerySnapshotJobListResponse.NextPageToken"));
 
 		List<String> nonExistSnapshotJobIds = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QuerySnapshotJobListResponse.NonExistSnapshotJobIds.Length"); i++) {

@@ -41,7 +41,7 @@ public class QueryMediaCensorJobDetailResponseUnmarshaller {
 		queryMediaCensorJobDetailResponse.setRequestId(context.stringValue("QueryMediaCensorJobDetailResponse.RequestId"));
 
 		MediaCensorJobDetail mediaCensorJobDetail = new MediaCensorJobDetail();
-		mediaCensorJobDetail.setId(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Id"));
+		mediaCensorJobDetail.setJobId(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.JobId"));
 		mediaCensorJobDetail.setUserData(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.UserData"));
 		mediaCensorJobDetail.setPipelineId(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.PipelineId"));
 		mediaCensorJobDetail.setState(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.State"));
@@ -49,6 +49,7 @@ public class QueryMediaCensorJobDetailResponseUnmarshaller {
 		mediaCensorJobDetail.setSuggestion(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Suggestion"));
 		mediaCensorJobDetail.setMessage(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.Message"));
 		mediaCensorJobDetail.setCreationTime(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.CreationTime"));
+		mediaCensorJobDetail.setFinishTime(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.FinishTime"));
 
 		TitleCensorResult titleCensorResult = new TitleCensorResult();
 		titleCensorResult.setRate(context.stringValue("QueryMediaCensorJobDetailResponse.MediaCensorJobDetail.TitleCensorResult.Rate"));

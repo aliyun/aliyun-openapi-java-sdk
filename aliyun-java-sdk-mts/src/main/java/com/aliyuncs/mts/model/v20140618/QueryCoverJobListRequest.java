@@ -30,11 +30,23 @@ public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListRes
 
 	private String resourceOwnerAccount;
 
+	private String nextPageToken;
+
+	private String startOfJobCreatedTimeRange;
+
 	private String ownerAccount;
+
+	private Long maximumPageSize;
 
 	private Long ownerId;
 
 	private String coverJobIds;
+
+	private String pipelineId;
+
+	private String state;
+
+	private String endOfJobCreatedTimeRange;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,6 +70,28 @@ public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListRes
 		}
 	}
 
+	public String getNextPageToken() {
+		return this.nextPageToken;
+	}
+
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
+		if(nextPageToken != null){
+			putQueryParameter("NextPageToken", nextPageToken);
+		}
+	}
+
+	public String getStartOfJobCreatedTimeRange() {
+		return this.startOfJobCreatedTimeRange;
+	}
+
+	public void setStartOfJobCreatedTimeRange(String startOfJobCreatedTimeRange) {
+		this.startOfJobCreatedTimeRange = startOfJobCreatedTimeRange;
+		if(startOfJobCreatedTimeRange != null){
+			putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -66,6 +100,17 @@ public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListRes
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getMaximumPageSize() {
+		return this.maximumPageSize;
+	}
+
+	public void setMaximumPageSize(Long maximumPageSize) {
+		this.maximumPageSize = maximumPageSize;
+		if(maximumPageSize != null){
+			putQueryParameter("MaximumPageSize", maximumPageSize.toString());
 		}
 	}
 
@@ -88,6 +133,39 @@ public class QueryCoverJobListRequest extends RpcAcsRequest<QueryCoverJobListRes
 		this.coverJobIds = coverJobIds;
 		if(coverJobIds != null){
 			putQueryParameter("CoverJobIds", coverJobIds);
+		}
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public String getEndOfJobCreatedTimeRange() {
+		return this.endOfJobCreatedTimeRange;
+	}
+
+	public void setEndOfJobCreatedTimeRange(String endOfJobCreatedTimeRange) {
+		this.endOfJobCreatedTimeRange = endOfJobCreatedTimeRange;
+		if(endOfJobCreatedTimeRange != null){
+			putQueryParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 		}
 	}
 

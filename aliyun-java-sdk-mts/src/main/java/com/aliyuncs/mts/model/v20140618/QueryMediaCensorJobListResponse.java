@@ -16,18 +16,22 @@ package com.aliyuncs.mts.model.v20140618;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mts.transform.v20140618.QueryMediaCensorJobDetailResponseUnmarshaller;
+import com.aliyuncs.mts.transform.v20140618.QueryMediaCensorJobListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryMediaCensorJobDetailResponse extends AcsResponse {
+public class QueryMediaCensorJobListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private MediaCensorJobDetail mediaCensorJobDetail;
+	private String nextPageToken;
+
+	private List<MediaCensorJob> mediaCensorJobList;
+
+	private List<String> nonExistIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +41,31 @@ public class QueryMediaCensorJobDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public MediaCensorJobDetail getMediaCensorJobDetail() {
-		return this.mediaCensorJobDetail;
+	public String getNextPageToken() {
+		return this.nextPageToken;
 	}
 
-	public void setMediaCensorJobDetail(MediaCensorJobDetail mediaCensorJobDetail) {
-		this.mediaCensorJobDetail = mediaCensorJobDetail;
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
 	}
 
-	public static class MediaCensorJobDetail {
+	public List<MediaCensorJob> getMediaCensorJobList() {
+		return this.mediaCensorJobList;
+	}
+
+	public void setMediaCensorJobList(List<MediaCensorJob> mediaCensorJobList) {
+		this.mediaCensorJobList = mediaCensorJobList;
+	}
+
+	public List<String> getNonExistIds() {
+		return this.nonExistIds;
+	}
+
+	public void setNonExistIds(List<String> nonExistIds) {
+		this.nonExistIds = nonExistIds;
+	}
+
+	public static class MediaCensorJob {
 
 		private String jobId;
 
@@ -675,7 +695,7 @@ public class QueryMediaCensorJobDetailResponse extends AcsResponse {
 	}
 
 	@Override
-	public QueryMediaCensorJobDetailResponse getInstance(UnmarshallerContext context) {
-		return	QueryMediaCensorJobDetailResponseUnmarshaller.unmarshall(this, context);
+	public QueryMediaCensorJobListResponse getInstance(UnmarshallerContext context) {
+		return	QueryMediaCensorJobListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

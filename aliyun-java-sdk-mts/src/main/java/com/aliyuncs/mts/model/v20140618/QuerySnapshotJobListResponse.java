@@ -27,6 +27,8 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String nextPageToken;
+
 	private List<SnapshotJob> snapshotJobList;
 
 	private List<String> nonExistSnapshotJobIds;
@@ -37,6 +39,14 @@ public class QuerySnapshotJobListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNextPageToken() {
+		return this.nextPageToken;
+	}
+
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
 	}
 
 	public List<SnapshotJob> getSnapshotJobList() {

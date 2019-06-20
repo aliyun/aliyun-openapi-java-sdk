@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QuerySnapshotJobListRequest extends RpcAcsRequest<QuerySnapshotJobListResponse> {
+public class QueryMediaCensorJobListRequest extends RpcAcsRequest<QueryMediaCensorJobListResponse> {
 	
-	public QuerySnapshotJobListRequest() {
-		super("Mts", "2014-06-18", "QuerySnapshotJobList", "mts");
+	public QueryMediaCensorJobListRequest() {
+		super("Mts", "2014-06-18", "QueryMediaCensorJobList", "mts");
 	}
 
 	private Long resourceOwnerId;
@@ -32,17 +32,17 @@ public class QuerySnapshotJobListRequest extends RpcAcsRequest<QuerySnapshotJobL
 
 	private String nextPageToken;
 
-	private String snapshotJobIds;
+	private String ownerAccount;
 
 	private String startOfJobCreatedTimeRange;
-
-	private String ownerAccount;
 
 	private Long maximumPageSize;
 
 	private Long ownerId;
 
 	private String pipelineId;
+
+	private String jobId;
 
 	private String state;
 
@@ -81,14 +81,14 @@ public class QuerySnapshotJobListRequest extends RpcAcsRequest<QuerySnapshotJobL
 		}
 	}
 
-	public String getSnapshotJobIds() {
-		return this.snapshotJobIds;
+	public String getOwnerAccount() {
+		return this.ownerAccount;
 	}
 
-	public void setSnapshotJobIds(String snapshotJobIds) {
-		this.snapshotJobIds = snapshotJobIds;
-		if(snapshotJobIds != null){
-			putQueryParameter("SnapshotJobIds", snapshotJobIds);
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -100,17 +100,6 @@ public class QuerySnapshotJobListRequest extends RpcAcsRequest<QuerySnapshotJobL
 		this.startOfJobCreatedTimeRange = startOfJobCreatedTimeRange;
 		if(startOfJobCreatedTimeRange != null){
 			putQueryParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -147,6 +136,17 @@ public class QuerySnapshotJobListRequest extends RpcAcsRequest<QuerySnapshotJobL
 		}
 	}
 
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
+	}
+
 	public String getState() {
 		return this.state;
 	}
@@ -170,8 +170,8 @@ public class QuerySnapshotJobListRequest extends RpcAcsRequest<QuerySnapshotJobL
 	}
 
 	@Override
-	public Class<QuerySnapshotJobListResponse> getResponseClass() {
-		return QuerySnapshotJobListResponse.class;
+	public Class<QueryMediaCensorJobListResponse> getResponseClass() {
+		return QueryMediaCensorJobListResponse.class;
 	}
 
 }

@@ -31,6 +31,7 @@ public class QueryCoverJobListResponseUnmarshaller {
 	public static QueryCoverJobListResponse unmarshall(QueryCoverJobListResponse queryCoverJobListResponse, UnmarshallerContext context) {
 		
 		queryCoverJobListResponse.setRequestId(context.stringValue("QueryCoverJobListResponse.RequestId"));
+		queryCoverJobListResponse.setNextPageToken(context.stringValue("QueryCoverJobListResponse.NextPageToken"));
 
 		List<String> nonExistIds = new ArrayList<String>();
 		for (int i = 0; i < context.lengthValue("QueryCoverJobListResponse.NonExistIds.Length"); i++) {
