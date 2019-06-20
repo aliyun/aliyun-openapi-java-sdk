@@ -15,14 +15,14 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.slb.transform.v20140515.DeleteServerCertificateResponseUnmarshaller;
+import com.aliyuncs.slb.transform.v20140515.SetLoadBalancerDeleteProtectionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteServerCertificateResponse extends AcsResponse {
+public class SetLoadBalancerDeleteProtectionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DeleteServerCertificateResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteServerCertificateResponse getInstance(UnmarshallerContext context) {
-		return	DeleteServerCertificateResponseUnmarshaller.unmarshall(this, context);
+	public SetLoadBalancerDeleteProtectionResponse getInstance(UnmarshallerContext context) {
+		return	SetLoadBalancerDeleteProtectionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

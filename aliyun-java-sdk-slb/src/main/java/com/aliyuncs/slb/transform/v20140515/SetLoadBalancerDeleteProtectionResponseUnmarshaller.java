@@ -14,18 +14,16 @@
 
 package com.aliyuncs.slb.transform.v20140515;
 
-import com.aliyuncs.slb.model.v20140515.CreateDomainExtensionResponse;
+import com.aliyuncs.slb.model.v20140515.SetLoadBalancerDeleteProtectionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateDomainExtensionResponseUnmarshaller {
+public class SetLoadBalancerDeleteProtectionResponseUnmarshaller {
 
-	public static CreateDomainExtensionResponse unmarshall(CreateDomainExtensionResponse createDomainExtensionResponse, UnmarshallerContext context) {
+	public static SetLoadBalancerDeleteProtectionResponse unmarshall(SetLoadBalancerDeleteProtectionResponse setLoadBalancerDeleteProtectionResponse, UnmarshallerContext context) {
 		
-		createDomainExtensionResponse.setRequestId(context.stringValue("CreateDomainExtensionResponse.RequestId"));
-		createDomainExtensionResponse.setListenerPort(context.integerValue("CreateDomainExtensionResponse.ListenerPort"));
-		createDomainExtensionResponse.setDomainExtensionId(context.stringValue("CreateDomainExtensionResponse.DomainExtensionId"));
+		setLoadBalancerDeleteProtectionResponse.setRequestId(context.stringValue("SetLoadBalancerDeleteProtectionResponse.RequestId"));
 	 
-	 	return createDomainExtensionResponse;
+	 	return setLoadBalancerDeleteProtectionResponse;
 	}
 }

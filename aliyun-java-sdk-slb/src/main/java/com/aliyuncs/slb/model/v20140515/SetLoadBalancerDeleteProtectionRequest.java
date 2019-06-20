@@ -20,15 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExtensionResponse> {
+public class SetLoadBalancerDeleteProtectionRequest extends RpcAcsRequest<SetLoadBalancerDeleteProtectionResponse> {
 	
-	public CreateDomainExtensionRequest() {
-		super("Slb", "2014-05-15", "CreateDomainExtension", "slb");
+	public SetLoadBalancerDeleteProtectionRequest() {
+		super("Slb", "2014-05-15", "SetLoadBalancerDeleteProtection", "slb");
 	}
 
 	private Long resourceOwnerId;
-
-	private Integer listenerPort;
 
 	private String loadBalancerId;
 
@@ -36,11 +34,9 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 
 	private String ownerAccount;
 
-	private String domain;
-
 	private Long ownerId;
 
-	private String serverCertificateId;
+	private String deleteProtection;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,17 +46,6 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getListenerPort() {
-		return this.listenerPort;
-	}
-
-	public void setListenerPort(Integer listenerPort) {
-		this.listenerPort = listenerPort;
-		if(listenerPort != null){
-			putQueryParameter("ListenerPort", listenerPort.toString());
 		}
 	}
 
@@ -97,36 +82,6 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		}
 	}
 
-	public String getBizDomain() {
-		return this.domain;
-	}
-
-	public void setBizDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizDomain instead of this.
-	 */
-	@Deprecated
-	public String getDomain() {
-		return this.domain;
-	}
-
-	/**
-	 * @deprecated use setBizDomain instead of this.
-	 */
-	@Deprecated
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -138,20 +93,20 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		}
 	}
 
-	public String getServerCertificateId() {
-		return this.serverCertificateId;
+	public String getDeleteProtection() {
+		return this.deleteProtection;
 	}
 
-	public void setServerCertificateId(String serverCertificateId) {
-		this.serverCertificateId = serverCertificateId;
-		if(serverCertificateId != null){
-			putQueryParameter("ServerCertificateId", serverCertificateId);
+	public void setDeleteProtection(String deleteProtection) {
+		this.deleteProtection = deleteProtection;
+		if(deleteProtection != null){
+			putQueryParameter("DeleteProtection", deleteProtection);
 		}
 	}
 
 	@Override
-	public Class<CreateDomainExtensionResponse> getResponseClass() {
-		return CreateDomainExtensionResponse.class;
+	public Class<SetLoadBalancerDeleteProtectionResponse> getResponseClass() {
+		return SetLoadBalancerDeleteProtectionResponse.class;
 	}
 
 }

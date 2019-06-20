@@ -1,3 +1,6 @@
+2019-06-21 Version: 3.2.10
+- Support DeleteProtection api.
+
 2019-06-06 Version: 3.2.9
 1, Add RuleId in DescribeRuleAttribute.
 
