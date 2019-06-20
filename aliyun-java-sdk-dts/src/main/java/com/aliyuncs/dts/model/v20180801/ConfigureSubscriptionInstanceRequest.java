@@ -30,17 +30,17 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 
 	private String sourceEndpointInstanceID;
 
+	private String sourceEndpointPort;
+
 	private String sourceEndpointOwnerID;
 
-	private String sourceEndpointPassword;
+	private String sourceEndpointIP;
+
+	private String subscriptionInstanceVPCId;
+
+	private String subscriptionInstanceNetworkType;
 
 	private Boolean subscriptionDataTypeDML;
-
-	private String subscriptionObject;
-
-	private String subscriptionInstanceName;
-
-	private String sourceEndpointUserName;
 
 	private String subscriptionInstanceId;
 
@@ -52,6 +52,16 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 
 	private Boolean subscriptionDataTypeDDL;
 
+	private String sourceEndpointPassword;
+
+	private String subscriptionObject;
+
+	private String subscriptionInstanceVSwitchId;
+
+	private String subscriptionInstanceName;
+
+	private String sourceEndpointUserName;
+
 	public String getSourceEndpointInstanceID() {
 		return this.sourceEndpointInstanceID;
 	}
@@ -60,6 +70,17 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		this.sourceEndpointInstanceID = sourceEndpointInstanceID;
 		if(sourceEndpointInstanceID != null){
 			putQueryParameter("SourceEndpoint.InstanceID", sourceEndpointInstanceID);
+		}
+	}
+
+	public String getSourceEndpointPort() {
+		return this.sourceEndpointPort;
+	}
+
+	public void setSourceEndpointPort(String sourceEndpointPort) {
+		this.sourceEndpointPort = sourceEndpointPort;
+		if(sourceEndpointPort != null){
+			putQueryParameter("SourceEndpoint.Port", sourceEndpointPort);
 		}
 	}
 
@@ -74,14 +95,36 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		}
 	}
 
-	public String getSourceEndpointPassword() {
-		return this.sourceEndpointPassword;
+	public String getSourceEndpointIP() {
+		return this.sourceEndpointIP;
 	}
 
-	public void setSourceEndpointPassword(String sourceEndpointPassword) {
-		this.sourceEndpointPassword = sourceEndpointPassword;
-		if(sourceEndpointPassword != null){
-			putQueryParameter("SourceEndpoint.Password", sourceEndpointPassword);
+	public void setSourceEndpointIP(String sourceEndpointIP) {
+		this.sourceEndpointIP = sourceEndpointIP;
+		if(sourceEndpointIP != null){
+			putQueryParameter("SourceEndpoint.IP", sourceEndpointIP);
+		}
+	}
+
+	public String getSubscriptionInstanceVPCId() {
+		return this.subscriptionInstanceVPCId;
+	}
+
+	public void setSubscriptionInstanceVPCId(String subscriptionInstanceVPCId) {
+		this.subscriptionInstanceVPCId = subscriptionInstanceVPCId;
+		if(subscriptionInstanceVPCId != null){
+			putQueryParameter("SubscriptionInstance.VPCId", subscriptionInstanceVPCId);
+		}
+	}
+
+	public String getSubscriptionInstanceNetworkType() {
+		return this.subscriptionInstanceNetworkType;
+	}
+
+	public void setSubscriptionInstanceNetworkType(String subscriptionInstanceNetworkType) {
+		this.subscriptionInstanceNetworkType = subscriptionInstanceNetworkType;
+		if(subscriptionInstanceNetworkType != null){
+			putQueryParameter("SubscriptionInstanceNetworkType", subscriptionInstanceNetworkType);
 		}
 	}
 
@@ -93,39 +136,6 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		this.subscriptionDataTypeDML = subscriptionDataTypeDML;
 		if(subscriptionDataTypeDML != null){
 			putQueryParameter("SubscriptionDataType.DML", subscriptionDataTypeDML.toString());
-		}
-	}
-
-	public String getSubscriptionObject() {
-		return this.subscriptionObject;
-	}
-
-	public void setSubscriptionObject(String subscriptionObject) {
-		this.subscriptionObject = subscriptionObject;
-		if(subscriptionObject != null){
-			putQueryParameter("SubscriptionObject", subscriptionObject);
-		}
-	}
-
-	public String getSubscriptionInstanceName() {
-		return this.subscriptionInstanceName;
-	}
-
-	public void setSubscriptionInstanceName(String subscriptionInstanceName) {
-		this.subscriptionInstanceName = subscriptionInstanceName;
-		if(subscriptionInstanceName != null){
-			putQueryParameter("SubscriptionInstanceName", subscriptionInstanceName);
-		}
-	}
-
-	public String getSourceEndpointUserName() {
-		return this.sourceEndpointUserName;
-	}
-
-	public void setSourceEndpointUserName(String sourceEndpointUserName) {
-		this.sourceEndpointUserName = sourceEndpointUserName;
-		if(sourceEndpointUserName != null){
-			putQueryParameter("SourceEndpoint.UserName", sourceEndpointUserName);
 		}
 	}
 
@@ -181,6 +191,61 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		this.subscriptionDataTypeDDL = subscriptionDataTypeDDL;
 		if(subscriptionDataTypeDDL != null){
 			putQueryParameter("SubscriptionDataType.DDL", subscriptionDataTypeDDL.toString());
+		}
+	}
+
+	public String getSourceEndpointPassword() {
+		return this.sourceEndpointPassword;
+	}
+
+	public void setSourceEndpointPassword(String sourceEndpointPassword) {
+		this.sourceEndpointPassword = sourceEndpointPassword;
+		if(sourceEndpointPassword != null){
+			putQueryParameter("SourceEndpoint.Password", sourceEndpointPassword);
+		}
+	}
+
+	public String getSubscriptionObject() {
+		return this.subscriptionObject;
+	}
+
+	public void setSubscriptionObject(String subscriptionObject) {
+		this.subscriptionObject = subscriptionObject;
+		if(subscriptionObject != null){
+			putQueryParameter("SubscriptionObject", subscriptionObject);
+		}
+	}
+
+	public String getSubscriptionInstanceVSwitchId() {
+		return this.subscriptionInstanceVSwitchId;
+	}
+
+	public void setSubscriptionInstanceVSwitchId(String subscriptionInstanceVSwitchId) {
+		this.subscriptionInstanceVSwitchId = subscriptionInstanceVSwitchId;
+		if(subscriptionInstanceVSwitchId != null){
+			putQueryParameter("SubscriptionInstance.VSwitchId", subscriptionInstanceVSwitchId);
+		}
+	}
+
+	public String getSubscriptionInstanceName() {
+		return this.subscriptionInstanceName;
+	}
+
+	public void setSubscriptionInstanceName(String subscriptionInstanceName) {
+		this.subscriptionInstanceName = subscriptionInstanceName;
+		if(subscriptionInstanceName != null){
+			putQueryParameter("SubscriptionInstanceName", subscriptionInstanceName);
+		}
+	}
+
+	public String getSourceEndpointUserName() {
+		return this.sourceEndpointUserName;
+	}
+
+	public void setSourceEndpointUserName(String sourceEndpointUserName) {
+		this.sourceEndpointUserName = sourceEndpointUserName;
+		if(sourceEndpointUserName != null){
+			putQueryParameter("SourceEndpoint.UserName", sourceEndpointUserName);
 		}
 	}
 
