@@ -1,0 +1,3 @@
+2019-06-20 Version: 1.0.0
+- OOS SDK first release for managing of templates, executions and actions.
+
