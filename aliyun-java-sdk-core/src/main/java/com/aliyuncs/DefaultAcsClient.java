@@ -247,8 +247,12 @@ public class DefaultAcsClient implements IAcsClient {
             if (request.getSysProductDomain() != null) {
                 domain = request.getSysProductDomain();
             } else {
-                ResolveEndpointRequest resolveEndpointRequest = new ResolveEndpointRequest(regionId, request
-                        .getSysProduct(), request.getSysLocationProduct(), request.getSysEndpointType());
+                ResolveEndpointRequest resolveEndpointRequest = new ResolveEndpointRequest(regionId,
+                        request.getSysProduct(), request.getSysLocationProduct(), request.getSysEndpointType());
+                resolveEndpointRequest.setProductEndpointMap(request.productEndpointMap);
+                resolveEndpointRequest.setProductEndpointRegional(request.productEndpointRegional);
+                resolveEndpointRequest.setProductNetwork(request.productNetwork);
+                resolveEndpointRequest.setProductSuffix(request.productSuffix);
                 String endpoint = endpointResolver.resolve(resolveEndpointRequest);
                 domain = new ProductDomain(request.getSysProduct(), endpoint);
 
