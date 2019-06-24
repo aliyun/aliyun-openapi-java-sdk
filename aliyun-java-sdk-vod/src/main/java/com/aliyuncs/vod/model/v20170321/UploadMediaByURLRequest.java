@@ -38,6 +38,8 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 
 	private String uploadURLs;
 
+	private String appId;
+
 	private String messageCallback;
 
 	private Long ownerId;
@@ -109,6 +111,17 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		this.uploadURLs = uploadURLs;
 		if(uploadURLs != null){
 			putQueryParameter("UploadURLs", uploadURLs);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

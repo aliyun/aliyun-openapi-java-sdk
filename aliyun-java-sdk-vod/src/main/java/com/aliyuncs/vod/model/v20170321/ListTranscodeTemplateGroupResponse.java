@@ -59,6 +59,10 @@ public class ListTranscodeTemplateGroupResponse extends AcsResponse {
 
 		private String transcodeTemplateGroupId;
 
+		private String transcodeMode;
+
+		private String appId;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -105,6 +109,22 @@ public class ListTranscodeTemplateGroupResponse extends AcsResponse {
 
 		public void setTranscodeTemplateGroupId(String transcodeTemplateGroupId) {
 			this.transcodeTemplateGroupId = transcodeTemplateGroupId;
+		}
+
+		public String getTranscodeMode() {
+			return this.transcodeMode;
+		}
+
+		public void setTranscodeMode(String transcodeMode) {
+			this.transcodeMode = transcodeMode;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 	}
 

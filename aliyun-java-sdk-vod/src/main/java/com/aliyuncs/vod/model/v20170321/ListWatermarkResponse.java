@@ -61,6 +61,8 @@ public class ListWatermarkResponse extends AcsResponse {
 
 		private String watermarkConfig;
 
+		private String appId;
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -115,6 +117,14 @@ public class ListWatermarkResponse extends AcsResponse {
 
 		public void setWatermarkConfig(String watermarkConfig) {
 			this.watermarkConfig = watermarkConfig;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 	}
 

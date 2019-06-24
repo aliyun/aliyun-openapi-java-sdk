@@ -27,6 +27,7 @@ public class SubmitTranscodeJobsResponseUnmarshaller {
 	public static SubmitTranscodeJobsResponse unmarshall(SubmitTranscodeJobsResponse submitTranscodeJobsResponse, UnmarshallerContext context) {
 		
 		submitTranscodeJobsResponse.setRequestId(context.stringValue("SubmitTranscodeJobsResponse.RequestId"));
+		submitTranscodeJobsResponse.setTranscodeTaskId(context.stringValue("SubmitTranscodeJobsResponse.TranscodeTaskId"));
 
 		List<TranscodeJob> transcodeJobs = new ArrayList<TranscodeJob>();
 		for (int i = 0; i < context.lengthValue("SubmitTranscodeJobsResponse.TranscodeJobs.Length"); i++) {

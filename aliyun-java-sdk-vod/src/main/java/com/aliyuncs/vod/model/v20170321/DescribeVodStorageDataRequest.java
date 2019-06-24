@@ -28,6 +28,8 @@ public class DescribeVodStorageDataRequest extends RpcAcsRequest<DescribeVodStor
 
 	private String startTime;
 
+	private String storage;
+
 	private String storageType;
 
 	private String endTime;
@@ -44,6 +46,17 @@ public class DescribeVodStorageDataRequest extends RpcAcsRequest<DescribeVodStor
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getStorage() {
+		return this.storage;
+	}
+
+	public void setStorage(String storage) {
+		this.storage = storage;
+		if(storage != null){
+			putQueryParameter("Storage", storage);
 		}
 	}
 

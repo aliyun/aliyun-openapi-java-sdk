@@ -32,6 +32,8 @@ public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscode
 
 	private String resourceOwnerAccount;
 
+	private String appId;
+
 	private String name;
 
 	private Long ownerId;
@@ -68,6 +70,17 @@ public class AddTranscodeTemplateGroupRequest extends RpcAcsRequest<AddTranscode
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

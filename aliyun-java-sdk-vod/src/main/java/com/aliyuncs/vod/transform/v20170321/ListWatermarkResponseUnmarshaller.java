@@ -38,6 +38,7 @@ public class ListWatermarkResponseUnmarshaller {
 			watermarkInfo.setName(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].Name"));
 			watermarkInfo.setFileUrl(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].FileUrl"));
 			watermarkInfo.setWatermarkConfig(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].WatermarkConfig"));
+			watermarkInfo.setAppId(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].AppId"));
 
 			watermarkInfos.add(watermarkInfo);
 		}

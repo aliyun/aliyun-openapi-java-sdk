@@ -30,6 +30,8 @@ public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 
 	private String resourceOwnerAccount;
 
+	private String appId;
+
 	private String name;
 
 	private String fileUrl;
@@ -59,6 +61,17 @@ public class AddWatermarkRequest extends RpcAcsRequest<AddWatermarkResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 

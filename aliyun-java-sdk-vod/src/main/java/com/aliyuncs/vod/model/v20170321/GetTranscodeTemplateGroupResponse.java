@@ -57,6 +57,10 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 		private String locked;
 
+		private String transcodeMode;
+
+		private String appId;
+
 		private String transcodeTemplateGroupId;
 
 		private List<TranscodeTemplate> transcodeTemplateList;
@@ -99,6 +103,22 @@ public class GetTranscodeTemplateGroupResponse extends AcsResponse {
 
 		public void setLocked(String locked) {
 			this.locked = locked;
+		}
+
+		public String getTranscodeMode() {
+			return this.transcodeMode;
+		}
+
+		public void setTranscodeMode(String transcodeMode) {
+			this.transcodeMode = transcodeMode;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 
 		public String getTranscodeTemplateGroupId() {

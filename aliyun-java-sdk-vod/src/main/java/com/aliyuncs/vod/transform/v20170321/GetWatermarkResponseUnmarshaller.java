@@ -33,6 +33,7 @@ public class GetWatermarkResponseUnmarshaller {
 		watermarkInfo.setName(context.stringValue("GetWatermarkResponse.WatermarkInfo.Name"));
 		watermarkInfo.setFileUrl(context.stringValue("GetWatermarkResponse.WatermarkInfo.FileUrl"));
 		watermarkInfo.setWatermarkConfig(context.stringValue("GetWatermarkResponse.WatermarkInfo.WatermarkConfig"));
+		watermarkInfo.setAppId(context.stringValue("GetWatermarkResponse.WatermarkInfo.AppId"));
 		getWatermarkResponse.setWatermarkInfo(watermarkInfo);
 	 
 	 	return getWatermarkResponse;

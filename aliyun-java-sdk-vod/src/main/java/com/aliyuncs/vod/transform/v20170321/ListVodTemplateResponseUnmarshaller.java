@@ -40,6 +40,7 @@ public class ListVodTemplateResponseUnmarshaller {
 			vodTemplateInfo.setTemplateConfig(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].TemplateConfig"));
 			vodTemplateInfo.setCreationTime(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].CreationTime"));
 			vodTemplateInfo.setModifyTime(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].ModifyTime"));
+			vodTemplateInfo.setAppId(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].AppId"));
 
 			vodTemplateInfoList.add(vodTemplateInfo);
 		}

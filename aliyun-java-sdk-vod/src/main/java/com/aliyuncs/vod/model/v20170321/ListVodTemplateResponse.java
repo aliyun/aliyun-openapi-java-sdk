@@ -65,6 +65,8 @@ public class ListVodTemplateResponse extends AcsResponse {
 
 		private String modifyTime;
 
+		private String appId;
+
 		public String getName() {
 			return this.name;
 		}
@@ -135,6 +137,14 @@ public class ListVodTemplateResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 	}
 

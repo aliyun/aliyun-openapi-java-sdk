@@ -28,7 +28,11 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 
 	private String startTime;
 
+	private String storage;
+
 	private String endTime;
+
+	private String specification;
 
 	private Long ownerId;
 
@@ -45,6 +49,17 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 		}
 	}
 
+	public String getStorage() {
+		return this.storage;
+	}
+
+	public void setStorage(String storage) {
+		this.storage = storage;
+		if(storage != null){
+			putQueryParameter("Storage", storage);
+		}
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -53,6 +68,17 @@ public class DescribeVodTranscodeDataRequest extends RpcAcsRequest<DescribeVodTr
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getSpecification() {
+		return this.specification;
+	}
+
+	public void setSpecification(String specification) {
+		this.specification = specification;
+		if(specification != null){
+			putQueryParameter("Specification", specification);
 		}
 	}
 

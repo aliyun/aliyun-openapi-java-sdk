@@ -35,6 +35,8 @@ public class GetTranscodeTemplateGroupResponseUnmarshaller {
 		transcodeTemplateGroup.setName(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.Name"));
 		transcodeTemplateGroup.setIsDefault(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.IsDefault"));
 		transcodeTemplateGroup.setLocked(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.Locked"));
+		transcodeTemplateGroup.setTranscodeMode(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeMode"));
+		transcodeTemplateGroup.setAppId(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.AppId"));
 		transcodeTemplateGroup.setTranscodeTemplateGroupId(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateGroupId"));
 
 		List<TranscodeTemplate> transcodeTemplateList = new ArrayList<TranscodeTemplate>();

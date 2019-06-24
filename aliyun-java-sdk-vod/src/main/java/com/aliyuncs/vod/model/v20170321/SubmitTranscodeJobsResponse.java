@@ -27,6 +27,8 @@ public class SubmitTranscodeJobsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String transcodeTaskId;
+
 	private List<TranscodeJob> transcodeJobs;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class SubmitTranscodeJobsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTranscodeTaskId() {
+		return this.transcodeTaskId;
+	}
+
+	public void setTranscodeTaskId(String transcodeTaskId) {
+		this.transcodeTaskId = transcodeTaskId;
 	}
 
 	public List<TranscodeJob> getTranscodeJobs() {

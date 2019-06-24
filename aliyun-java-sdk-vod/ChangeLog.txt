@@ -1,3 +1,9 @@
+2019-06-24 Version: 2.15.4
+- Add some new apis to manage VoD domain, such as AddVodDomain, UpdateVodDomain, DeleteVodDomain, BatchStartVodDomain, BatchStopVodDomain, DescribeVodUserDomains, DescribeVodDomainDetail.
+- Add some new apis to manage VoD domain config, such as BatchSetVodDomainConfigs, DescribeVodDomainConfigs, DeleteVodSpecificConfig, SetVodDomainCertificate, DescribeVodCertificateList, DescribeVodDomainCertificateInfo.
+- Add a new field named AppId to some apis supporting the VoD App feature, such as AddWorkFlow, GetWorkFlow, ListWorkFlow, AddVodTemplate, GetVodTemplate, ListVodTemplate, AddTranscodeTemplateGroup, GetTranscodeTemplateGroup, ListTranscodeTemplateGroup, AddWatermark, GetWatermark, ListWatermark, UploadMediaByURL.
+- Add a new field named UserData to SubmitTranscodeJobs api request to support user-defined extension fields, which can be used for transparent return when callbacks.
+
 2019-05-16 Version: 2.15.3
 1, Add some new apis to fetch the usage data from VoD, such as DescribeVodDomainUsageData, DescribeVodStorageData, DescribeVodTranscodeData, DescribeVodAIData.
 2, Add a new api named GetUploadDetails to describe the upload detail, such as uploading time and uploading source.

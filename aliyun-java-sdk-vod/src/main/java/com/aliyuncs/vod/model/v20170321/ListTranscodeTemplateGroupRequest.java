@@ -30,6 +30,12 @@ public class ListTranscodeTemplateGroupRequest extends RpcAcsRequest<ListTransco
 
 	private String resourceOwnerAccount;
 
+	private Integer pageNo;
+
+	private String appId;
+
+	private Integer pageSize;
+
 	private Long ownerId;
 
 	public Long getResourceOwnerId() {
@@ -51,6 +57,39 @@ public class ListTranscodeTemplateGroupRequest extends RpcAcsRequest<ListTransco
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

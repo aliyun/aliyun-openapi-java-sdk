@@ -28,6 +28,8 @@ public class DescribeVodAIDataRequest extends RpcAcsRequest<DescribeVodAIDataRes
 
 	private String startTime;
 
+	private String aIType;
+
 	private String endTime;
 
 	private Long ownerId;
@@ -42,6 +44,17 @@ public class DescribeVodAIDataRequest extends RpcAcsRequest<DescribeVodAIDataRes
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getAIType() {
+		return this.aIType;
+	}
+
+	public void setAIType(String aIType) {
+		this.aIType = aIType;
+		if(aIType != null){
+			putQueryParameter("AIType", aIType);
 		}
 	}
 

@@ -32,6 +32,8 @@ public class ListVodTemplateRequest extends RpcAcsRequest<ListVodTemplateRespons
 
 	private String templateType;
 
+	private String appId;
+
 	private Long ownerId;
 
 	public Long getResourceOwnerId() {
@@ -64,6 +66,17 @@ public class ListVodTemplateRequest extends RpcAcsRequest<ListVodTemplateRespons
 		this.templateType = templateType;
 		if(templateType != null){
 			putQueryParameter("TemplateType", templateType);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
