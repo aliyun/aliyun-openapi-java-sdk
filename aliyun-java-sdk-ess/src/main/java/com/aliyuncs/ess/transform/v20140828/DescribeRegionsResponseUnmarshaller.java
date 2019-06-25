@@ -26,6 +26,7 @@ public class DescribeRegionsResponseUnmarshaller {
 
 	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext context) {
 		
+		describeRegionsResponse.setRequestId(context.stringValue("DescribeRegionsResponse.RequestId"));
 
 		List<Region> regions = new ArrayList<Region>();
 		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
@@ -33,6 +34,8 @@ public class DescribeRegionsResponseUnmarshaller {
 			region.setRegionId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
 			region.setClassicUnavailable(context.booleanValue("DescribeRegionsResponse.Regions["+ i +"].ClassicUnavailable"));
 			region.setVpcUnavailable(context.booleanValue("DescribeRegionsResponse.Regions["+ i +"].VpcUnavailable"));
+			region.setRegionEndpoint(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
+			region.setLocalName(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
 
 			regions.add(region);
 		}

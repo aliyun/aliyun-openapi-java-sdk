@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse.ScalingRule;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse.ScalingRule.Alarm;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse.ScalingRule.Alarm.Dimension;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingRulesResponse.ScalingRule.StepAdjustment;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -51,12 +52,32 @@ public class DescribeScalingRulesResponseUnmarshaller {
 			scalingRule.setMetricName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].MetricName"));
 			scalingRule.setTargetValue(context.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].TargetValue"));
 			scalingRule.setDisableScaleIn(context.booleanValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].DisableScaleIn"));
+			scalingRule.setPredictiveScalingMode(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveScalingMode"));
+			scalingRule.setPredictiveValueBehavior(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveValueBehavior"));
+			scalingRule.setPredictiveValueBuffer(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveValueBuffer"));
+			scalingRule.setPredictiveTaskBufferTime(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].PredictiveTaskBufferTime"));
+			scalingRule.setInitialMaxSize(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].InitialMaxSize"));
 
 			List<Alarm> alarms = new ArrayList<Alarm>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms.Length"); j++) {
 				Alarm alarm = new Alarm();
 				alarm.setAlarmTaskName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskName"));
 				alarm.setAlarmTaskId(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskId"));
+				alarm.setComparisonOperator(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].ComparisonOperator"));
+				alarm.setStatistics(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Statistics"));
+				alarm.setMetricName(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].MetricName"));
+				alarm.setThreshold(context.floatValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Threshold"));
+				alarm.setEvaluationCount(context.integerValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].EvaluationCount"));
+
+				List<Dimension> dimensions = new ArrayList<Dimension>();
+				for (int k = 0; k < context.lengthValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions.Length"); k++) {
+					Dimension dimension = new Dimension();
+					dimension.setDimensionKey(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions["+ k +"].DimensionKey"));
+					dimension.setDimensionValue(context.stringValue("DescribeScalingRulesResponse.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions["+ k +"].DimensionValue"));
+
+					dimensions.add(dimension);
+				}
+				alarm.setDimensions(dimensions);
 
 				alarms.add(alarm);
 			}

@@ -97,6 +97,10 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 
 		private Boolean taskEnabled;
 
+		private Integer maxValue;
+
+		private Integer minValue;
+
 		public String getScheduledTaskId() {
 			return this.scheduledTaskId;
 		}
@@ -175,6 +179,22 @@ public class DescribeScheduledTasksResponse extends AcsResponse {
 
 		public void setTaskEnabled(Boolean taskEnabled) {
 			this.taskEnabled = taskEnabled;
+		}
+
+		public Integer getMaxValue() {
+			return this.maxValue;
+		}
+
+		public void setMaxValue(Integer maxValue) {
+			this.maxValue = maxValue;
+		}
+
+		public Integer getMinValue() {
+			return this.minValue;
+		}
+
+		public void setMinValue(Integer minValue) {
+			this.minValue = minValue;
 		}
 	}
 

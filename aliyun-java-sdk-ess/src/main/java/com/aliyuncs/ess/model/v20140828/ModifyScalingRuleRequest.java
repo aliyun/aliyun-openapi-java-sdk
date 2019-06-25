@@ -39,6 +39,8 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	private String ownerAccount;
 
+	private Integer predictiveTaskBufferTime;
+
 	private String adjustmentType;
 
 	private Boolean disableScaleIn;
@@ -47,15 +49,23 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 
 	private String scalingRuleId;
 
+	private Integer initialMaxSize;
+
+	private Integer predictiveValueBuffer;
+
 	private String scalingRuleName;
 
 	private Integer cooldown;
 
 	private Integer minAdjustmentMagnitude;
 
+	private String predictiveValueBehavior;
+
 	private Float targetValue;
 
 	private String metricName;
+
+	private String predictiveScalingMode;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -127,6 +137,17 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
+	public Integer getPredictiveTaskBufferTime() {
+		return this.predictiveTaskBufferTime;
+	}
+
+	public void setPredictiveTaskBufferTime(Integer predictiveTaskBufferTime) {
+		this.predictiveTaskBufferTime = predictiveTaskBufferTime;
+		if(predictiveTaskBufferTime != null){
+			putQueryParameter("PredictiveTaskBufferTime", predictiveTaskBufferTime.toString());
+		}
+	}
+
 	public String getAdjustmentType() {
 		return this.adjustmentType;
 	}
@@ -171,6 +192,28 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
+	public Integer getInitialMaxSize() {
+		return this.initialMaxSize;
+	}
+
+	public void setInitialMaxSize(Integer initialMaxSize) {
+		this.initialMaxSize = initialMaxSize;
+		if(initialMaxSize != null){
+			putQueryParameter("InitialMaxSize", initialMaxSize.toString());
+		}
+	}
+
+	public Integer getPredictiveValueBuffer() {
+		return this.predictiveValueBuffer;
+	}
+
+	public void setPredictiveValueBuffer(Integer predictiveValueBuffer) {
+		this.predictiveValueBuffer = predictiveValueBuffer;
+		if(predictiveValueBuffer != null){
+			putQueryParameter("PredictiveValueBuffer", predictiveValueBuffer.toString());
+		}
+	}
+
 	public String getScalingRuleName() {
 		return this.scalingRuleName;
 	}
@@ -204,6 +247,17 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
+	public String getPredictiveValueBehavior() {
+		return this.predictiveValueBehavior;
+	}
+
+	public void setPredictiveValueBehavior(String predictiveValueBehavior) {
+		this.predictiveValueBehavior = predictiveValueBehavior;
+		if(predictiveValueBehavior != null){
+			putQueryParameter("PredictiveValueBehavior", predictiveValueBehavior);
+		}
+	}
+
 	public Float getTargetValue() {
 		return this.targetValue;
 	}
@@ -223,6 +277,17 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.metricName = metricName;
 		if(metricName != null){
 			putQueryParameter("MetricName", metricName);
+		}
+	}
+
+	public String getPredictiveScalingMode() {
+		return this.predictiveScalingMode;
+	}
+
+	public void setPredictiveScalingMode(String predictiveScalingMode) {
+		this.predictiveScalingMode = predictiveScalingMode;
+		if(predictiveScalingMode != null){
+			putQueryParameter("PredictiveScalingMode", predictiveScalingMode);
 		}
 	}
 

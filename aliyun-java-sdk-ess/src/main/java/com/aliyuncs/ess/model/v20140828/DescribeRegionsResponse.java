@@ -25,7 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRegionsResponse extends AcsResponse {
 
+	private String requestId;
+
 	private List<Region> regions;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public List<Region> getRegions() {
 		return this.regions;
@@ -42,6 +52,10 @@ public class DescribeRegionsResponse extends AcsResponse {
 		private Boolean classicUnavailable;
 
 		private Boolean vpcUnavailable;
+
+		private String regionEndpoint;
+
+		private String localName;
 
 		public String getBizRegionId() {
 			return this.regionId;
@@ -81,6 +95,22 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setVpcUnavailable(Boolean vpcUnavailable) {
 			this.vpcUnavailable = vpcUnavailable;
+		}
+
+		public String getRegionEndpoint() {
+			return this.regionEndpoint;
+		}
+
+		public void setRegionEndpoint(String regionEndpoint) {
+			this.regionEndpoint = regionEndpoint;
+		}
+
+		public String getLocalName() {
+			return this.localName;
+		}
+
+		public void setLocalName(String localName) {
+			this.localName = localName;
 		}
 	}
 

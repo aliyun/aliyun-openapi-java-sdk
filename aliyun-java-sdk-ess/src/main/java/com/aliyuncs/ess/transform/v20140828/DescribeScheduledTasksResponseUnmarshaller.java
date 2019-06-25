@@ -44,6 +44,8 @@ public class DescribeScheduledTasksResponseUnmarshaller {
 			scheduledTask.setRecurrenceValue(context.stringValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].RecurrenceValue"));
 			scheduledTask.setLaunchExpirationTime(context.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].LaunchExpirationTime"));
 			scheduledTask.setTaskEnabled(context.booleanValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].TaskEnabled"));
+			scheduledTask.setMaxValue(context.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MaxValue"));
+			scheduledTask.setMinValue(context.integerValue("DescribeScheduledTasksResponse.ScheduledTasks["+ i +"].MinValue"));
 
 			scheduledTasks.add(scheduledTask);
 		}
