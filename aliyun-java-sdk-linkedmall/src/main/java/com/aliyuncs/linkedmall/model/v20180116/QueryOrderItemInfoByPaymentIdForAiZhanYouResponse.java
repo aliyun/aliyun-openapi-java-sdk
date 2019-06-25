@@ -75,6 +75,8 @@ public class QueryOrderItemInfoByPaymentIdForAiZhanYouResponse extends AcsRespon
 
 		private String skuName;
 
+		private Long itemId;
+
 		public String getItemName() {
 			return this.itemName;
 		}
@@ -105,6 +107,14 @@ public class QueryOrderItemInfoByPaymentIdForAiZhanYouResponse extends AcsRespon
 
 		public void setSkuName(String skuName) {
 			this.skuName = skuName;
+		}
+
+		public Long getItemId() {
+			return this.itemId;
+		}
+
+		public void setItemId(Long itemId) {
+			this.itemId = itemId;
 		}
 	}
 

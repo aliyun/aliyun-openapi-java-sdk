@@ -37,6 +37,7 @@ public class QueryOrderItemInfoByPaymentIdForAiZhanYouResponseUnmarshaller {
 			lmOrderListItem.setLmOrderId(context.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].LmOrderId"));
 			lmOrderListItem.setSkuId(context.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].SkuId"));
 			lmOrderListItem.setSkuName(context.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].SkuName"));
+			lmOrderListItem.setItemId(context.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].ItemId"));
 
 			lmOrderList.add(lmOrderListItem);
 		}
