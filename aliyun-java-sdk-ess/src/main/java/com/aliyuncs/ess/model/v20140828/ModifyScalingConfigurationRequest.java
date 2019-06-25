@@ -31,6 +31,8 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 	private Integer memory;
 
+	private String hpcClusterId;
+
 	private String ioOptimized;
 
 	private List<String> instanceTypes;
@@ -55,6 +57,8 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 
 	private String imageName;
 
+	private String instanceDescription;
+
 	private Boolean override;
 
 	private String deploymentSetId;
@@ -70,6 +74,8 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 	private String ramRoleName;
 
 	private Long ownerId;
+
+	private List<String> securityGroupIds;
 
 	private List<DataDisk> dataDisks;
 
@@ -110,6 +116,17 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		this.memory = memory;
 		if(memory != null){
 			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
+	public String getHpcClusterId() {
+		return this.hpcClusterId;
+	}
+
+	public void setHpcClusterId(String hpcClusterId) {
+		this.hpcClusterId = hpcClusterId;
+		if(hpcClusterId != null){
+			putQueryParameter("HpcClusterId", hpcClusterId);
 		}
 	}
 
@@ -250,6 +267,17 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		}
 	}
 
+	public String getInstanceDescription() {
+		return this.instanceDescription;
+	}
+
+	public void setInstanceDescription(String instanceDescription) {
+		this.instanceDescription = instanceDescription;
+		if(instanceDescription != null){
+			putQueryParameter("InstanceDescription", instanceDescription);
+		}
+	}
+
 	public Boolean getOverride() {
 		return this.override;
 	}
@@ -336,6 +364,19 @@ public class ModifyScalingConfigurationRequest extends RpcAcsRequest<ModifyScali
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getSecurityGroupIds() {
+		return this.securityGroupIds;
+	}
+
+	public void setSecurityGroupIds(List<String> securityGroupIds) {
+		this.securityGroupIds = securityGroupIds;
+		if (securityGroupIds != null) {
+			for (int i = 0; i < securityGroupIds.size(); i++) {
+				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIds.get(i));
+			}
+		}	
 	}
 
 	public List<DataDisk> getDataDisks() {

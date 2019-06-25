@@ -30,6 +30,8 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private String resourceOwnerAccount;
 
+	private String acceptLanguage;
+
 	private Long ownerId;
 
 	public Long getResourceOwnerId() {
@@ -51,6 +53,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

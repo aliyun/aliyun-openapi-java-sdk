@@ -32,6 +32,8 @@ public class ModifyScheduledTaskRequest extends RpcAcsRequest<ModifyScheduledTas
 
 	private String scheduledAction;
 
+	private Integer maxValue;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -45,6 +47,8 @@ public class ModifyScheduledTaskRequest extends RpcAcsRequest<ModifyScheduledTas
 	private Integer launchExpirationTime;
 
 	private String recurrenceEndTime;
+
+	private Integer minValue;
 
 	private String scheduledTaskName;
 
@@ -84,6 +88,17 @@ public class ModifyScheduledTaskRequest extends RpcAcsRequest<ModifyScheduledTas
 		this.scheduledAction = scheduledAction;
 		if(scheduledAction != null){
 			putQueryParameter("ScheduledAction", scheduledAction);
+		}
+	}
+
+	public Integer getMaxValue() {
+		return this.maxValue;
+	}
+
+	public void setMaxValue(Integer maxValue) {
+		this.maxValue = maxValue;
+		if(maxValue != null){
+			putQueryParameter("MaxValue", maxValue.toString());
 		}
 	}
 
@@ -161,6 +176,17 @@ public class ModifyScheduledTaskRequest extends RpcAcsRequest<ModifyScheduledTas
 		this.recurrenceEndTime = recurrenceEndTime;
 		if(recurrenceEndTime != null){
 			putQueryParameter("RecurrenceEndTime", recurrenceEndTime);
+		}
+	}
+
+	public Integer getMinValue() {
+		return this.minValue;
+	}
+
+	public void setMinValue(Integer minValue) {
+		this.minValue = minValue;
+		if(minValue != null){
+			putQueryParameter("MinValue", minValue.toString());
 		}
 	}
 

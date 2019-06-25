@@ -107,6 +107,16 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 		private Boolean disableScaleIn;
 
+		private String predictiveScalingMode;
+
+		private String predictiveValueBehavior;
+
+		private Integer predictiveValueBuffer;
+
+		private Integer predictiveTaskBufferTime;
+
+		private Integer initialMaxSize;
+
 		private List<Alarm> alarms;
 
 		private List<StepAdjustment> stepAdjustments;
@@ -231,6 +241,46 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 			this.disableScaleIn = disableScaleIn;
 		}
 
+		public String getPredictiveScalingMode() {
+			return this.predictiveScalingMode;
+		}
+
+		public void setPredictiveScalingMode(String predictiveScalingMode) {
+			this.predictiveScalingMode = predictiveScalingMode;
+		}
+
+		public String getPredictiveValueBehavior() {
+			return this.predictiveValueBehavior;
+		}
+
+		public void setPredictiveValueBehavior(String predictiveValueBehavior) {
+			this.predictiveValueBehavior = predictiveValueBehavior;
+		}
+
+		public Integer getPredictiveValueBuffer() {
+			return this.predictiveValueBuffer;
+		}
+
+		public void setPredictiveValueBuffer(Integer predictiveValueBuffer) {
+			this.predictiveValueBuffer = predictiveValueBuffer;
+		}
+
+		public Integer getPredictiveTaskBufferTime() {
+			return this.predictiveTaskBufferTime;
+		}
+
+		public void setPredictiveTaskBufferTime(Integer predictiveTaskBufferTime) {
+			this.predictiveTaskBufferTime = predictiveTaskBufferTime;
+		}
+
+		public Integer getInitialMaxSize() {
+			return this.initialMaxSize;
+		}
+
+		public void setInitialMaxSize(Integer initialMaxSize) {
+			this.initialMaxSize = initialMaxSize;
+		}
+
 		public List<Alarm> getAlarms() {
 			return this.alarms;
 		}
@@ -253,6 +303,18 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 			private String alarmTaskId;
 
+			private String comparisonOperator;
+
+			private String statistics;
+
+			private String metricName;
+
+			private Float threshold;
+
+			private Integer evaluationCount;
+
+			private List<Dimension> dimensions;
+
 			public String getAlarmTaskName() {
 				return this.alarmTaskName;
 			}
@@ -267,6 +329,77 @@ public class DescribeScalingRulesResponse extends AcsResponse {
 
 			public void setAlarmTaskId(String alarmTaskId) {
 				this.alarmTaskId = alarmTaskId;
+			}
+
+			public String getComparisonOperator() {
+				return this.comparisonOperator;
+			}
+
+			public void setComparisonOperator(String comparisonOperator) {
+				this.comparisonOperator = comparisonOperator;
+			}
+
+			public String getStatistics() {
+				return this.statistics;
+			}
+
+			public void setStatistics(String statistics) {
+				this.statistics = statistics;
+			}
+
+			public String getMetricName() {
+				return this.metricName;
+			}
+
+			public void setMetricName(String metricName) {
+				this.metricName = metricName;
+			}
+
+			public Float getThreshold() {
+				return this.threshold;
+			}
+
+			public void setThreshold(Float threshold) {
+				this.threshold = threshold;
+			}
+
+			public Integer getEvaluationCount() {
+				return this.evaluationCount;
+			}
+
+			public void setEvaluationCount(Integer evaluationCount) {
+				this.evaluationCount = evaluationCount;
+			}
+
+			public List<Dimension> getDimensions() {
+				return this.dimensions;
+			}
+
+			public void setDimensions(List<Dimension> dimensions) {
+				this.dimensions = dimensions;
+			}
+
+			public static class Dimension {
+
+				private String dimensionKey;
+
+				private String dimensionValue;
+
+				public String getDimensionKey() {
+					return this.dimensionKey;
+				}
+
+				public void setDimensionKey(String dimensionKey) {
+					this.dimensionKey = dimensionKey;
+				}
+
+				public String getDimensionValue() {
+					return this.dimensionValue;
+				}
+
+				public void setDimensionValue(String dimensionValue) {
+					this.dimensionValue = dimensionValue;
+				}
 			}
 		}
 

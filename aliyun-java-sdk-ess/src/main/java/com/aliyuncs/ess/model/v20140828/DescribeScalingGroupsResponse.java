@@ -129,6 +129,14 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		private Integer stoppedCapacity;
 
+		private Integer onDemandBaseCapacity;
+
+		private Integer onDemandPercentageAboveBaseCapacity;
+
+		private Boolean spotInstanceRemedy;
+
+		private Integer spotInstancePools;
+
 		private List<VServerGroup> vServerGroups;
 
 		private List<String> vSwitchIds;
@@ -361,6 +369,38 @@ public class DescribeScalingGroupsResponse extends AcsResponse {
 
 		public void setStoppedCapacity(Integer stoppedCapacity) {
 			this.stoppedCapacity = stoppedCapacity;
+		}
+
+		public Integer getOnDemandBaseCapacity() {
+			return this.onDemandBaseCapacity;
+		}
+
+		public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
+			this.onDemandBaseCapacity = onDemandBaseCapacity;
+		}
+
+		public Integer getOnDemandPercentageAboveBaseCapacity() {
+			return this.onDemandPercentageAboveBaseCapacity;
+		}
+
+		public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
+			this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
+		}
+
+		public Boolean getSpotInstanceRemedy() {
+			return this.spotInstanceRemedy;
+		}
+
+		public void setSpotInstanceRemedy(Boolean spotInstanceRemedy) {
+			this.spotInstanceRemedy = spotInstanceRemedy;
+		}
+
+		public Integer getSpotInstancePools() {
+			return this.spotInstancePools;
+		}
+
+		public void setSpotInstancePools(Integer spotInstancePools) {
+			this.spotInstancePools = spotInstancePools;
 		}
 
 		public List<VServerGroup> getVServerGroups() {

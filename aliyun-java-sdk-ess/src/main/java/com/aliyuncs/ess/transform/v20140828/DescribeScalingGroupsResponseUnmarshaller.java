@@ -62,6 +62,10 @@ public class DescribeScalingGroupsResponseUnmarshaller {
 			scalingGroup.setHealthCheckType(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].HealthCheckType"));
 			scalingGroup.setScalingPolicy(context.stringValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].ScalingPolicy"));
 			scalingGroup.setStoppedCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].StoppedCapacity"));
+			scalingGroup.setOnDemandBaseCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].OnDemandBaseCapacity"));
+			scalingGroup.setOnDemandPercentageAboveBaseCapacity(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].OnDemandPercentageAboveBaseCapacity"));
+			scalingGroup.setSpotInstanceRemedy(context.booleanValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotInstanceRemedy"));
+			scalingGroup.setSpotInstancePools(context.integerValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].SpotInstancePools"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingGroupsResponse.ScalingGroups["+ i +"].VSwitchIds.Length"); j++) {

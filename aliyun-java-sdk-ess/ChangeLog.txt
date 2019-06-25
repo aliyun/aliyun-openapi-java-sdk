@@ -1,3 +1,9 @@
+2019-06-25 Version: 2.3.2
+1, Enhencement for CostOptimized scaling group.
+
+2019-06-19 Version: 2.3.1
+1, Support predict scaling rule.
+
 2019-04-04 Version: 2.3.0
 1, ScalingConf systemDisk add DiskName and Description  parameters.
 2, ScalingConf dataDisk add DiskName & Description & Encrypted & KMSKeyId  parameters.

@@ -43,6 +43,8 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 
 	private String ownerAccount;
 
+	private Integer spotInstancePools;
+
 	private String activeScalingConfigurationId;
 
 	private Integer minSize;
@@ -50,6 +52,12 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 	private Long ownerId;
 
 	private String launchTemplateVersion;
+
+	private Integer onDemandBaseCapacity;
+
+	private Integer onDemandPercentageAboveBaseCapacity;
+
+	private Boolean spotInstanceRemedy;
 
 	private Integer maxSize;
 
@@ -149,6 +157,17 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		}
 	}
 
+	public Integer getSpotInstancePools() {
+		return this.spotInstancePools;
+	}
+
+	public void setSpotInstancePools(Integer spotInstancePools) {
+		this.spotInstancePools = spotInstancePools;
+		if(spotInstancePools != null){
+			putQueryParameter("SpotInstancePools", spotInstancePools.toString());
+		}
+	}
+
 	public String getActiveScalingConfigurationId() {
 		return this.activeScalingConfigurationId;
 	}
@@ -190,6 +209,39 @@ public class ModifyScalingGroupRequest extends RpcAcsRequest<ModifyScalingGroupR
 		this.launchTemplateVersion = launchTemplateVersion;
 		if(launchTemplateVersion != null){
 			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
+		}
+	}
+
+	public Integer getOnDemandBaseCapacity() {
+		return this.onDemandBaseCapacity;
+	}
+
+	public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
+		this.onDemandBaseCapacity = onDemandBaseCapacity;
+		if(onDemandBaseCapacity != null){
+			putQueryParameter("OnDemandBaseCapacity", onDemandBaseCapacity.toString());
+		}
+	}
+
+	public Integer getOnDemandPercentageAboveBaseCapacity() {
+		return this.onDemandPercentageAboveBaseCapacity;
+	}
+
+	public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
+		this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
+		if(onDemandPercentageAboveBaseCapacity != null){
+			putQueryParameter("OnDemandPercentageAboveBaseCapacity", onDemandPercentageAboveBaseCapacity.toString());
+		}
+	}
+
+	public Boolean getSpotInstanceRemedy() {
+		return this.spotInstanceRemedy;
+	}
+
+	public void setSpotInstanceRemedy(Boolean spotInstanceRemedy) {
+		this.spotInstanceRemedy = spotInstanceRemedy;
+		if(spotInstanceRemedy != null){
+			putQueryParameter("SpotInstanceRemedy", spotInstanceRemedy.toString());
 		}
 	}
 

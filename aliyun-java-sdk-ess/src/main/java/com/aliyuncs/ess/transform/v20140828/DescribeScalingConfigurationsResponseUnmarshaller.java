@@ -68,12 +68,20 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setSpotStrategy(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SpotStrategy"));
 			scalingConfiguration.setPasswordInherit(context.booleanValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PasswordInherit"));
 			scalingConfiguration.setResourceGroupId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].ResourceGroupId"));
+			scalingConfiguration.setHpcClusterId(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].HpcClusterId"));
+			scalingConfiguration.setInstanceDescription(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceDescription"));
 
 			List<String> instanceTypes = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {
 				instanceTypes.add(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].InstanceTypes["+ j +"]"));
 			}
 			scalingConfiguration.setInstanceTypes(instanceTypes);
+
+			List<String> securityGroupIds = new ArrayList<String>();
+			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupIds.Length"); j++) {
+				securityGroupIds.add(context.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupIds["+ j +"]"));
+			}
+			scalingConfiguration.setSecurityGroupIds(securityGroupIds);
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < context.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {

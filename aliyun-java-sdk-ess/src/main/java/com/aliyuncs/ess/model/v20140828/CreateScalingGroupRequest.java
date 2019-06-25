@@ -27,13 +27,29 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		super("Ess", "2014-08-28", "CreateScalingGroup", "ess");
 	}
 
+	private String loadBalancerIds;
+
+	private String clientToken;
+
+	private List<String> vSwitchIds;
+
+	private Integer onDemandBaseCapacity;
+
+	private Integer onDemandPercentageAboveBaseCapacity;
+
+	private Boolean spotInstanceRemedy;
+
+	private Integer defaultCooldown;
+
+	private String removalPolicy1;
+
+	private String removalPolicy2;
+
 	private String multiAZPolicy;
 
 	private String dBInstanceIds;
 
 	private String launchTemplateId;
-
-	private String loadBalancerIds;
 
 	private String healthCheckType;
 
@@ -41,11 +57,9 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private String scalingGroupName;
 
-	private String clientToken;
-
-	private List<String> vSwitchIds;
-
 	private String ownerAccount;
+
+	private Integer spotInstancePools;
 
 	private Integer minSize;
 
@@ -61,13 +75,108 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 
 	private List<LifecycleHook> lifecycleHooks;
 
-	private Integer defaultCooldown;
-
-	private String removalPolicy1;
-
 	private List<VServerGroup> vServerGroups;
 
-	private String removalPolicy2;
+	public String getLoadBalancerIds() {
+		return this.loadBalancerIds;
+	}
+
+	public void setLoadBalancerIds(String loadBalancerIds) {
+		this.loadBalancerIds = loadBalancerIds;
+		if(loadBalancerIds != null){
+			putQueryParameter("LoadBalancerIds", loadBalancerIds);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public List<String> getVSwitchIds() {
+		return this.vSwitchIds;
+	}
+
+	public void setVSwitchIds(List<String> vSwitchIds) {
+		this.vSwitchIds = vSwitchIds;
+		if (vSwitchIds != null) {
+			for (int i = 0; i < vSwitchIds.size(); i++) {
+				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
+			}
+		}	
+	}
+
+	public Integer getOnDemandBaseCapacity() {
+		return this.onDemandBaseCapacity;
+	}
+
+	public void setOnDemandBaseCapacity(Integer onDemandBaseCapacity) {
+		this.onDemandBaseCapacity = onDemandBaseCapacity;
+		if(onDemandBaseCapacity != null){
+			putQueryParameter("OnDemandBaseCapacity", onDemandBaseCapacity.toString());
+		}
+	}
+
+	public Integer getOnDemandPercentageAboveBaseCapacity() {
+		return this.onDemandPercentageAboveBaseCapacity;
+	}
+
+	public void setOnDemandPercentageAboveBaseCapacity(Integer onDemandPercentageAboveBaseCapacity) {
+		this.onDemandPercentageAboveBaseCapacity = onDemandPercentageAboveBaseCapacity;
+		if(onDemandPercentageAboveBaseCapacity != null){
+			putQueryParameter("OnDemandPercentageAboveBaseCapacity", onDemandPercentageAboveBaseCapacity.toString());
+		}
+	}
+
+	public Boolean getSpotInstanceRemedy() {
+		return this.spotInstanceRemedy;
+	}
+
+	public void setSpotInstanceRemedy(Boolean spotInstanceRemedy) {
+		this.spotInstanceRemedy = spotInstanceRemedy;
+		if(spotInstanceRemedy != null){
+			putQueryParameter("SpotInstanceRemedy", spotInstanceRemedy.toString());
+		}
+	}
+
+	public Integer getDefaultCooldown() {
+		return this.defaultCooldown;
+	}
+
+	public void setDefaultCooldown(Integer defaultCooldown) {
+		this.defaultCooldown = defaultCooldown;
+		if(defaultCooldown != null){
+			putQueryParameter("DefaultCooldown", defaultCooldown.toString());
+		}
+	}
+
+	public String getRemovalPolicy1() {
+		return this.removalPolicy1;
+	}
+
+	public void setRemovalPolicy1(String removalPolicy1) {
+		this.removalPolicy1 = removalPolicy1;
+		if(removalPolicy1 != null){
+			putQueryParameter("RemovalPolicy.1", removalPolicy1);
+		}
+	}
+
+	public String getRemovalPolicy2() {
+		return this.removalPolicy2;
+	}
+
+	public void setRemovalPolicy2(String removalPolicy2) {
+		this.removalPolicy2 = removalPolicy2;
+		if(removalPolicy2 != null){
+			putQueryParameter("RemovalPolicy.2", removalPolicy2);
+		}
+	}
 
 	public String getMultiAZPolicy() {
 		return this.multiAZPolicy;
@@ -99,17 +208,6 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.launchTemplateId = launchTemplateId;
 		if(launchTemplateId != null){
 			putQueryParameter("LaunchTemplateId", launchTemplateId);
-		}
-	}
-
-	public String getLoadBalancerIds() {
-		return this.loadBalancerIds;
-	}
-
-	public void setLoadBalancerIds(String loadBalancerIds) {
-		this.loadBalancerIds = loadBalancerIds;
-		if(loadBalancerIds != null){
-			putQueryParameter("LoadBalancerIds", loadBalancerIds);
 		}
 	}
 
@@ -146,30 +244,6 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public List<String> getVSwitchIds() {
-		return this.vSwitchIds;
-	}
-
-	public void setVSwitchIds(List<String> vSwitchIds) {
-		this.vSwitchIds = vSwitchIds;
-		if (vSwitchIds != null) {
-			for (int i = 0; i < vSwitchIds.size(); i++) {
-				putQueryParameter("VSwitchIds." + (i + 1) , vSwitchIds.get(i));
-			}
-		}	
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -178,6 +252,17 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getSpotInstancePools() {
+		return this.spotInstancePools;
+	}
+
+	public void setSpotInstancePools(Integer spotInstancePools) {
+		this.spotInstancePools = spotInstancePools;
+		if(spotInstancePools != null){
+			putQueryParameter("SpotInstancePools", spotInstancePools.toString());
 		}
 	}
 
@@ -265,28 +350,6 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 		}	
 	}
 
-	public Integer getDefaultCooldown() {
-		return this.defaultCooldown;
-	}
-
-	public void setDefaultCooldown(Integer defaultCooldown) {
-		this.defaultCooldown = defaultCooldown;
-		if(defaultCooldown != null){
-			putQueryParameter("DefaultCooldown", defaultCooldown.toString());
-		}
-	}
-
-	public String getRemovalPolicy1() {
-		return this.removalPolicy1;
-	}
-
-	public void setRemovalPolicy1(String removalPolicy1) {
-		this.removalPolicy1 = removalPolicy1;
-		if(removalPolicy1 != null){
-			putQueryParameter("RemovalPolicy.1", removalPolicy1);
-		}
-	}
-
 	public List<VServerGroup> getVServerGroups() {
 		return this.vServerGroups;
 	}
@@ -305,17 +368,6 @@ public class CreateScalingGroupRequest extends RpcAcsRequest<CreateScalingGroupR
 				}
 			}
 		}	
-	}
-
-	public String getRemovalPolicy2() {
-		return this.removalPolicy2;
-	}
-
-	public void setRemovalPolicy2(String removalPolicy2) {
-		this.removalPolicy2 = removalPolicy2;
-		if(removalPolicy2 != null){
-			putQueryParameter("RemovalPolicy.2", removalPolicy2);
-		}
 	}
 
 	public static class LifecycleHook {

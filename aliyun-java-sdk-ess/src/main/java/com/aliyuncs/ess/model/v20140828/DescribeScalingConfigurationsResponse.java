@@ -139,6 +139,10 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String hpcClusterId;
+
+		private String instanceDescription;
+
 		private List<DataDisk> dataDisks;
 
 		private List<Tag> tags;
@@ -146,6 +150,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 		private List<SpotPriceModel> spotPriceLimit;
 
 		private List<String> instanceTypes;
+
+		private List<String> securityGroupIds;
 
 		public String getScalingConfigurationId() {
 			return this.scalingConfigurationId;
@@ -395,6 +401,22 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getHpcClusterId() {
+			return this.hpcClusterId;
+		}
+
+		public void setHpcClusterId(String hpcClusterId) {
+			this.hpcClusterId = hpcClusterId;
+		}
+
+		public String getInstanceDescription() {
+			return this.instanceDescription;
+		}
+
+		public void setInstanceDescription(String instanceDescription) {
+			this.instanceDescription = instanceDescription;
+		}
+
 		public List<DataDisk> getDataDisks() {
 			return this.dataDisks;
 		}
@@ -425,6 +447,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setInstanceTypes(List<String> instanceTypes) {
 			this.instanceTypes = instanceTypes;
+		}
+
+		public List<String> getSecurityGroupIds() {
+			return this.securityGroupIds;
+		}
+
+		public void setSecurityGroupIds(List<String> securityGroupIds) {
+			this.securityGroupIds = securityGroupIds;
 		}
 
 		public static class DataDisk {
