@@ -21,6 +21,7 @@ import com.aliyuncs.dts.model.v20180801.DescribeSubscriptionInstancesResponse;
 import com.aliyuncs.dts.model.v20180801.DescribeSubscriptionInstancesResponse.SubscriptionInstance;
 import com.aliyuncs.dts.model.v20180801.DescribeSubscriptionInstancesResponse.SubscriptionInstance.SourceEndpoint;
 import com.aliyuncs.dts.model.v20180801.DescribeSubscriptionInstancesResponse.SubscriptionInstance.SubscriptionDataType;
+import com.aliyuncs.dts.model.v20180801.DescribeSubscriptionInstancesResponse.SubscriptionInstance.SubscriptionHost;
 import com.aliyuncs.dts.model.v20180801.DescribeSubscriptionInstancesResponse.SubscriptionInstance.SynchronousObject;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -45,6 +46,7 @@ public class DescribeSubscriptionInstancesResponseUnmarshaller {
 			subscriptionInstance.setBeginTimestamp(context.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].BeginTimestamp"));
 			subscriptionInstance.setEndTimestamp(context.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].EndTimestamp"));
 			subscriptionInstance.setConsumptionClient(context.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].ConsumptionClient"));
+			subscriptionInstance.setSubscribeTopic(context.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscribeTopic"));
 
 			SourceEndpoint sourceEndpoint = new SourceEndpoint();
 			sourceEndpoint.setInstanceID(context.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SourceEndpoint.InstanceID"));
@@ -55,6 +57,12 @@ public class DescribeSubscriptionInstancesResponseUnmarshaller {
 			subscriptionDataType.setDDL(context.booleanValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscriptionDataType.DDL"));
 			subscriptionDataType.setDML(context.booleanValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscriptionDataType.DML"));
 			subscriptionInstance.setSubscriptionDataType(subscriptionDataType);
+
+			SubscriptionHost subscriptionHost = new SubscriptionHost();
+			subscriptionHost.setPublicHost(context.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscriptionHost.PublicHost"));
+			subscriptionHost.setPrivateHost(context.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscriptionHost.PrivateHost"));
+			subscriptionHost.setVPCHost(context.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscriptionHost.VPCHost"));
+			subscriptionInstance.setSubscriptionHost(subscriptionHost);
 
 			List<SynchronousObject> subscriptionObject = new ArrayList<SynchronousObject>();
 			for (int j = 0; j < context.lengthValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].SubscriptionObject.Length"); j++) {

@@ -43,11 +43,15 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	private String consumptionClient;
 
+	private String subscribeTopic;
+
 	private List<SynchronousObject> subscriptionObject;
 
 	private SourceEndpoint sourceEndpoint;
 
 	private SubscriptionDataType subscriptionDataType;
+
+	private SubscriptionHost subscriptionHost;
 
 	public String getSubscriptionInstanceID() {
 		return this.subscriptionInstanceID;
@@ -121,6 +125,14 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		this.consumptionClient = consumptionClient;
 	}
 
+	public String getSubscribeTopic() {
+		return this.subscribeTopic;
+	}
+
+	public void setSubscribeTopic(String subscribeTopic) {
+		this.subscribeTopic = subscribeTopic;
+	}
+
 	public List<SynchronousObject> getSubscriptionObject() {
 		return this.subscriptionObject;
 	}
@@ -143,6 +155,14 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	public void setSubscriptionDataType(SubscriptionDataType subscriptionDataType) {
 		this.subscriptionDataType = subscriptionDataType;
+	}
+
+	public SubscriptionHost getSubscriptionHost() {
+		return this.subscriptionHost;
+	}
+
+	public void setSubscriptionHost(SubscriptionHost subscriptionHost) {
+		this.subscriptionHost = subscriptionHost;
 	}
 
 	public static class SynchronousObject {
@@ -221,6 +241,39 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 		public void setDML(Boolean dML) {
 			this.dML = dML;
+		}
+	}
+
+	public static class SubscriptionHost {
+
+		private String publicHost;
+
+		private String privateHost;
+
+		private String vPCHost;
+
+		public String getPublicHost() {
+			return this.publicHost;
+		}
+
+		public void setPublicHost(String publicHost) {
+			this.publicHost = publicHost;
+		}
+
+		public String getPrivateHost() {
+			return this.privateHost;
+		}
+
+		public void setPrivateHost(String privateHost) {
+			this.privateHost = privateHost;
+		}
+
+		public String getVPCHost() {
+			return this.vPCHost;
+		}
+
+		public void setVPCHost(String vPCHost) {
+			this.vPCHost = vPCHost;
 		}
 	}
 
