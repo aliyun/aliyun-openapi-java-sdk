@@ -28,6 +28,8 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 
 	private String instanceId;
 
+	private Long ownerId;
+
 	private String orderType;
 
 	public String getInstanceId() {
@@ -38,6 +40,17 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
