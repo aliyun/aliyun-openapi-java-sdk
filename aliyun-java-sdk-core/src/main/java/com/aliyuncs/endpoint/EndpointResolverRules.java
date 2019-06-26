@@ -21,7 +21,11 @@ public class EndpointResolverRules extends EndpointResolverBase {
 
     @Override
     public String makeEndpointKey(ResolveEndpointRequest request) {
-        return null;
+        return makeEndpointKey(request.productCode, request.regionId);
+    }
+
+    public String makeEndpointKey(String productCode, String regionId) {
+        return productCode.toLowerCase() + "." + regionId.toLowerCase();
     }
 
     private String getEndpoint(String productCode, String regionId) {
