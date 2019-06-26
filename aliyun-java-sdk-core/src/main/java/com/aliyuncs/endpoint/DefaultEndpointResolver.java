@@ -13,14 +13,13 @@ public class DefaultEndpointResolver implements EndpointResolver {
     public static UserCustomizedEndpointResolver predefinedEndpointResolver = new UserCustomizedEndpointResolver();
     private UserCustomizedEndpointResolver userCustomizedEndpointResolver;
     private EndpointResolver insideEndpointResolver;
-    private EndpointResolverRules endpointResolverRules;
 
     public DefaultEndpointResolver(
             DefaultAcsClient client,
             String userConfig,
             IClientProfile profile) {
         userCustomizedEndpointResolver = new UserCustomizedEndpointResolver();
-        endpointResolverRules = new EndpointResolverRules();
+        EndpointResolverRules endpointResolverRules = new EndpointResolverRules();
         List<EndpointResolverBase> resolverChain = new ArrayList<EndpointResolverBase>();
 
         // The order is very IMPORTANT!

@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public class EndpointResolverRules extends EndpointResolverBase {
     private Boolean validRegionId = false;
+    private Boolean validProductId = false;
     private HashMap<String, String> productEndpointMap = null;
     private String productEndpointRegional = null;
     private String productNetwork = "public";
@@ -38,7 +39,7 @@ public class EndpointResolverRules extends EndpointResolverBase {
                 }
             }
             String endpoint = "";
-            if (this.productEndpointRegional == "regional") {
+            if (this.productEndpointRegional.equals("regional")) {
                 endpoint = "<product_id><suffix><network>.<region_id>.aliyuncs.com";
                 endpoint = endpoint.replace("<region_id>", regionId.toLowerCase());
             } else {
@@ -49,7 +50,7 @@ public class EndpointResolverRules extends EndpointResolverBase {
             } else {
                 endpoint = endpoint.replace("<suffix>", "-" + this.productSuffix.toLowerCase());
             }
-            if (this.productNetwork == "public" || this.productNetwork == "") {
+            if ("public".equals(this.productNetwork) || "".equals(productNetwork)) {
                 endpoint = endpoint.replace("<network>", "");
             } else {
                 endpoint = endpoint.replace("<network>", "-" + this.productNetwork.toLowerCase());
@@ -57,9 +58,15 @@ public class EndpointResolverRules extends EndpointResolverBase {
 
             endpoint = endpoint.replace("<product_id>", productCode.toLowerCase());
             this.validRegionId = true;
+            this.validProductId = true;
             return endpoint;
         }
         return null;
+    }
+
+    @Override
+    public boolean isProductCodeValid(ResolveEndpointRequest request) {
+        return this.validProductId;
     }
 
     @Override
