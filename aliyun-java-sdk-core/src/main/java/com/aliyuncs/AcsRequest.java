@@ -34,6 +34,10 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     private String endpointType;
     private ProductDomain productDomain = null;
     protected String strToSign;
+    public HashMap<String, String> productEndpointMap = null;
+    public String productEndpointRegional = null;
+    public String productNetwork = "public";
+    public String productSuffix = "";
 
     public AcsRequest(String product) {
         super(null);
