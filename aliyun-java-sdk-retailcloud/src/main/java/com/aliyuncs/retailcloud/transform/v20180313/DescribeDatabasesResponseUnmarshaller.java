@@ -30,13 +30,9 @@ public class DescribeDatabasesResponseUnmarshaller {
 		
 		describeDatabasesResponse.setRequestId(context.stringValue("DescribeDatabasesResponse.RequestId"));
 		describeDatabasesResponse.setCode(context.integerValue("DescribeDatabasesResponse.Code"));
-		describeDatabasesResponse.setSuccess(context.booleanValue("DescribeDatabasesResponse.Success"));
 		describeDatabasesResponse.setErrMsg(context.stringValue("DescribeDatabasesResponse.ErrMsg"));
-		describeDatabasesResponse.set_Class(context.stringValue("DescribeDatabasesResponse.Class"));
-		describeDatabasesResponse.setTransmitAliyun(context.booleanValue("DescribeDatabasesResponse.TransmitAliyun"));
 
 		Result result = new Result();
-		result.set_Class(context.stringValue("DescribeDatabasesResponse.Result.Class"));
 
 		List<DatabasesItem> databases = new ArrayList<DatabasesItem>();
 		for (int i = 0; i < context.lengthValue("DescribeDatabasesResponse.Result.Databases.Length"); i++) {
@@ -46,7 +42,6 @@ public class DescribeDatabasesResponseUnmarshaller {
 			databasesItem.setDBDescription(context.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].DBDescription"));
 			databasesItem.setEngine(context.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Engine"));
 			databasesItem.setCharacterSetName(context.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].CharacterSetName"));
-			databasesItem.set_Class(context.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Class"));
 			databasesItem.setDBInstanceId(context.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].DBInstanceId"));
 
 			List<AccountsItem> accounts = new ArrayList<AccountsItem>();
@@ -54,7 +49,6 @@ public class DescribeDatabasesResponseUnmarshaller {
 				AccountsItem accountsItem = new AccountsItem();
 				accountsItem.setAccountPrivilegeDetail(context.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Accounts["+ j +"].AccountPrivilegeDetail"));
 				accountsItem.setAccountPrivilege(context.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Accounts["+ j +"].AccountPrivilege"));
-				accountsItem.set_Class(context.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Accounts["+ j +"].Class"));
 				accountsItem.setAccount(context.stringValue("DescribeDatabasesResponse.Result.Databases["+ i +"].Accounts["+ j +"].Account"));
 
 				accounts.add(accountsItem);

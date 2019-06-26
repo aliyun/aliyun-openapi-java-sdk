@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetInstTransInfoRequest extends RpcAcsRequest<GetInstTransInfoResponse> {
 	
 	public GetInstTransInfoRequest() {
-		super("retailcloud", "2018-03-13", "GetInstTransInfo");
+		super("retailcloud", "2018-03-13", "GetInstTransInfo", "retailcloud");
 	}
 
 	private String aliyunUid;

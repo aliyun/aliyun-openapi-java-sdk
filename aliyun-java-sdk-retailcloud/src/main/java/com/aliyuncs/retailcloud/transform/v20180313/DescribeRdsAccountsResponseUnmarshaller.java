@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.retailcloud.model.v20180313.DescribeRdsAccountsResponse;
 import com.aliyuncs.retailcloud.model.v20180313.DescribeRdsAccountsResponse.Result;
 import com.aliyuncs.retailcloud.model.v20180313.DescribeRdsAccountsResponse.Result.AccountsItem;
+import com.aliyuncs.retailcloud.model.v20180313.DescribeRdsAccountsResponse.Result.AccountsItem.DatabasePrivilegesItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,25 +30,30 @@ public class DescribeRdsAccountsResponseUnmarshaller {
 		
 		describeRdsAccountsResponse.setRequestId(context.stringValue("DescribeRdsAccountsResponse.RequestId"));
 		describeRdsAccountsResponse.setCode(context.integerValue("DescribeRdsAccountsResponse.Code"));
-		describeRdsAccountsResponse.setSuccess(context.booleanValue("DescribeRdsAccountsResponse.Success"));
 		describeRdsAccountsResponse.setErrMsg(context.stringValue("DescribeRdsAccountsResponse.ErrMsg"));
-		describeRdsAccountsResponse.set_Class(context.stringValue("DescribeRdsAccountsResponse.Class"));
-		describeRdsAccountsResponse.setTransmitAliyun(context.booleanValue("DescribeRdsAccountsResponse.TransmitAliyun"));
 
 		Result result = new Result();
-		result.set_Class(context.stringValue("DescribeRdsAccountsResponse.Result.Class"));
 
 		List<AccountsItem> accounts = new ArrayList<AccountsItem>();
 		for (int i = 0; i < context.lengthValue("DescribeRdsAccountsResponse.Result.Accounts.Length"); i++) {
 			AccountsItem accountsItem = new AccountsItem();
 			accountsItem.setAccountStatus(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountStatus"));
-			accountsItem.setDatabasePrivileges(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].DatabasePrivileges"));
 			accountsItem.setAccountDescription(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountDescription"));
 			accountsItem.setAccountName(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountName"));
 			accountsItem.setAccountType(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].AccountType"));
 			accountsItem.setPrivExceeded(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].PrivExceeded"));
-			accountsItem.set_Class(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].Class"));
 			accountsItem.setDBInstanceId(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].DBInstanceId"));
+
+			List<DatabasePrivilegesItem> databasePrivileges = new ArrayList<DatabasePrivilegesItem>();
+			for (int j = 0; j < context.lengthValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {
+				DatabasePrivilegesItem databasePrivilegesItem = new DatabasePrivilegesItem();
+				databasePrivilegesItem.setDBName(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].DatabasePrivileges["+ j +"].DBName"));
+				databasePrivilegesItem.setAccountPrivilege(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege"));
+				databasePrivilegesItem.setAccountPrivilegeDetail(context.stringValue("DescribeRdsAccountsResponse.Result.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilegeDetail"));
+
+				databasePrivileges.add(databasePrivilegesItem);
+			}
+			accountsItem.setDatabasePrivileges(databasePrivileges);
 
 			accounts.add(accountsItem);
 		}

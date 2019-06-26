@@ -27,15 +27,9 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Boolean success;
-
 	private String requestId;
 
 	private String errMsg;
-
-	private String _class;
-
-	private Boolean transmitAliyun;
 
 	private Result result;
 
@@ -45,14 +39,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getRequestId() {
@@ -71,22 +57,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 		this.errMsg = errMsg;
 	}
 
-	public String get_Class() {
-		return this._class;
-	}
-
-	public void set_Class(String _class) {
-		this._class = _class;
-	}
-
-	public Boolean getTransmitAliyun() {
-		return this.transmitAliyun;
-	}
-
-	public void setTransmitAliyun(Boolean transmitAliyun) {
-		this.transmitAliyun = transmitAliyun;
-	}
-
 	public Result getResult() {
 		return this.result;
 	}
@@ -97,17 +67,7 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String _class;
-
 		private List<DatabasesItem> databases;
-
-		public String get_Class() {
-			return this._class;
-		}
-
-		public void set_Class(String _class) {
-			this._class = _class;
-		}
 
 		public List<DatabasesItem> getDatabases() {
 			return this.databases;
@@ -128,8 +88,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 			private String engine;
 
 			private String characterSetName;
-
-			private String _class;
 
 			private String dBInstanceId;
 
@@ -175,14 +133,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 				this.characterSetName = characterSetName;
 			}
 
-			public String get_Class() {
-				return this._class;
-			}
-
-			public void set_Class(String _class) {
-				this._class = _class;
-			}
-
 			public String getDBInstanceId() {
 				return this.dBInstanceId;
 			}
@@ -205,8 +155,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 				private String accountPrivilege;
 
-				private String _class;
-
 				private String account;
 
 				public String getAccountPrivilegeDetail() {
@@ -223,14 +171,6 @@ public class DescribeDatabasesResponse extends AcsResponse {
 
 				public void setAccountPrivilege(String accountPrivilege) {
 					this.accountPrivilege = accountPrivilege;
-				}
-
-				public String get_Class() {
-					return this._class;
-				}
-
-				public void set_Class(String _class) {
-					this._class = _class;
 				}
 
 				public String getAccount() {

@@ -14,15 +14,18 @@
 
 package com.aliyuncs.retailcloud.transform.v20180313;
 
-import com.aliyuncs.retailcloud.model.v20180313.ResourceStatusNotifyResponse;
+import com.aliyuncs.retailcloud.model.v20180313.DeleteDatabaseResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ResourceStatusNotifyResponseUnmarshaller {
+public class DeleteDatabaseResponseUnmarshaller {
 
-	public static ResourceStatusNotifyResponse unmarshall(ResourceStatusNotifyResponse resourceStatusNotifyResponse, UnmarshallerContext context) {
+	public static DeleteDatabaseResponse unmarshall(DeleteDatabaseResponse deleteDatabaseResponse, UnmarshallerContext context) {
 		
+		deleteDatabaseResponse.setRequestId(context.stringValue("DeleteDatabaseResponse.RequestId"));
+		deleteDatabaseResponse.setCode(context.integerValue("DeleteDatabaseResponse.Code"));
+		deleteDatabaseResponse.setErrMsg(context.stringValue("DeleteDatabaseResponse.ErrMsg"));
 	 
-	 	return resourceStatusNotifyResponse;
+	 	return deleteDatabaseResponse;
 	}
 }

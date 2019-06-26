@@ -15,7 +15,6 @@
 package com.aliyuncs.retailcloud.transform.v20180313;
 
 import com.aliyuncs.retailcloud.model.v20180313.CreateDbResponse;
-import com.aliyuncs.retailcloud.model.v20180313.CreateDbResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,14 +24,7 @@ public class CreateDbResponseUnmarshaller {
 		
 		createDbResponse.setRequestId(context.stringValue("CreateDbResponse.RequestId"));
 		createDbResponse.setCode(context.integerValue("CreateDbResponse.Code"));
-		createDbResponse.setSuccess(context.booleanValue("CreateDbResponse.Success"));
 		createDbResponse.setErrMsg(context.stringValue("CreateDbResponse.ErrMsg"));
-		createDbResponse.set_Class(context.stringValue("CreateDbResponse.Class"));
-		createDbResponse.setTransmitAliyun(context.booleanValue("CreateDbResponse.TransmitAliyun"));
-
-		Result result = new Result();
-		result.set_Class(context.stringValue("CreateDbResponse.Result.Class"));
-		createDbResponse.setResult(result);
 	 
 	 	return createDbResponse;
 	}

@@ -15,28 +15,22 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.retailcloud.transform.v20180313.CreateDbResponseUnmarshaller;
+import com.aliyuncs.retailcloud.transform.v20180313.DeleteRdsAccountResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDbResponse extends AcsResponse {
-
-	private Integer code;
+public class DeleteRdsAccountResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String errMsg;
 
-	public Integer getCode() {
-		return this.code;
-	}
+	private Integer code;
 
-	public void setCode(Integer code) {
-		this.code = code;
-	}
+	private Result result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,9 +48,38 @@ public class CreateDbResponse extends AcsResponse {
 		this.errMsg = errMsg;
 	}
 
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public Result getResult() {
+		return this.result;
+	}
+
+	public void setResult(Result result) {
+		this.result = result;
+	}
+
+	public static class Result {
+
+		private String requestId;
+
+		public String getRequestId() {
+			return this.requestId;
+		}
+
+		public void setRequestId(String requestId) {
+			this.requestId = requestId;
+		}
+	}
+
 	@Override
-	public CreateDbResponse getInstance(UnmarshallerContext context) {
-		return	CreateDbResponseUnmarshaller.unmarshall(this, context);
+	public DeleteRdsAccountResponse getInstance(UnmarshallerContext context) {
+		return	DeleteRdsAccountResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

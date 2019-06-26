@@ -27,15 +27,9 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Boolean success;
-
 	private String requestId;
 
 	private String errMsg;
-
-	private String _class;
-
-	private Boolean transmitAliyun;
 
 	private Result result;
 
@@ -45,14 +39,6 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getRequestId() {
@@ -71,22 +57,6 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 		this.errMsg = errMsg;
 	}
 
-	public String get_Class() {
-		return this._class;
-	}
-
-	public void set_Class(String _class) {
-		this._class = _class;
-	}
-
-	public Boolean getTransmitAliyun() {
-		return this.transmitAliyun;
-	}
-
-	public void setTransmitAliyun(Boolean transmitAliyun) {
-		this.transmitAliyun = transmitAliyun;
-	}
-
 	public Result getResult() {
 		return this.result;
 	}
@@ -97,17 +67,7 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String _class;
-
 		private List<AccountsItem> accounts;
-
-		public String get_Class() {
-			return this._class;
-		}
-
-		public void set_Class(String _class) {
-			this._class = _class;
-		}
 
 		public List<AccountsItem> getAccounts() {
 			return this.accounts;
@@ -121,8 +81,6 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 
 			private String accountStatus;
 
-			private String databasePrivileges;
-
 			private String accountDescription;
 
 			private String accountName;
@@ -131,9 +89,9 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 
 			private String privExceeded;
 
-			private String _class;
-
 			private String dBInstanceId;
+
+			private List<DatabasePrivilegesItem> databasePrivileges;
 
 			public String getAccountStatus() {
 				return this.accountStatus;
@@ -141,14 +99,6 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 
 			public void setAccountStatus(String accountStatus) {
 				this.accountStatus = accountStatus;
-			}
-
-			public String getDatabasePrivileges() {
-				return this.databasePrivileges;
-			}
-
-			public void setDatabasePrivileges(String databasePrivileges) {
-				this.databasePrivileges = databasePrivileges;
 			}
 
 			public String getAccountDescription() {
@@ -183,20 +133,53 @@ public class DescribeRdsAccountsResponse extends AcsResponse {
 				this.privExceeded = privExceeded;
 			}
 
-			public String get_Class() {
-				return this._class;
-			}
-
-			public void set_Class(String _class) {
-				this._class = _class;
-			}
-
 			public String getDBInstanceId() {
 				return this.dBInstanceId;
 			}
 
 			public void setDBInstanceId(String dBInstanceId) {
 				this.dBInstanceId = dBInstanceId;
+			}
+
+			public List<DatabasePrivilegesItem> getDatabasePrivileges() {
+				return this.databasePrivileges;
+			}
+
+			public void setDatabasePrivileges(List<DatabasePrivilegesItem> databasePrivileges) {
+				this.databasePrivileges = databasePrivileges;
+			}
+
+			public static class DatabasePrivilegesItem {
+
+				private String dBName;
+
+				private String accountPrivilege;
+
+				private String accountPrivilegeDetail;
+
+				public String getDBName() {
+					return this.dBName;
+				}
+
+				public void setDBName(String dBName) {
+					this.dBName = dBName;
+				}
+
+				public String getAccountPrivilege() {
+					return this.accountPrivilege;
+				}
+
+				public void setAccountPrivilege(String accountPrivilege) {
+					this.accountPrivilege = accountPrivilege;
+				}
+
+				public String getAccountPrivilegeDetail() {
+					return this.accountPrivilegeDetail;
+				}
+
+				public void setAccountPrivilegeDetail(String accountPrivilegeDetail) {
+					this.accountPrivilegeDetail = accountPrivilegeDetail;
+				}
 			}
 		}
 	}

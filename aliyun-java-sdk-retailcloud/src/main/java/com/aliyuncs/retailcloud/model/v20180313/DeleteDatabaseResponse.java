@@ -15,14 +15,14 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.retailcloud.transform.v20180313.CreateDbResponseUnmarshaller;
+import com.aliyuncs.retailcloud.transform.v20180313.DeleteDatabaseResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDbResponse extends AcsResponse {
+public class DeleteDatabaseResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -55,8 +55,8 @@ public class CreateDbResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateDbResponse getInstance(UnmarshallerContext context) {
-		return	CreateDbResponseUnmarshaller.unmarshall(this, context);
+	public DeleteDatabaseResponse getInstance(UnmarshallerContext context) {
+		return	DeleteDatabaseResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

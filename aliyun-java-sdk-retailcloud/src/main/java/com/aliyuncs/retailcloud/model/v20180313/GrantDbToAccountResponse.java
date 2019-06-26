@@ -26,17 +26,9 @@ public class GrantDbToAccountResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Boolean success;
-
 	private String requestId;
 
 	private String errMsg;
-
-	private String _class;
-
-	private Boolean transmitAliyun;
-
-	private Result result;
 
 	public Integer getCode() {
 		return this.code;
@@ -44,14 +36,6 @@ public class GrantDbToAccountResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getRequestId() {
@@ -68,43 +52,6 @@ public class GrantDbToAccountResponse extends AcsResponse {
 
 	public void setErrMsg(String errMsg) {
 		this.errMsg = errMsg;
-	}
-
-	public String get_Class() {
-		return this._class;
-	}
-
-	public void set_Class(String _class) {
-		this._class = _class;
-	}
-
-	public Boolean getTransmitAliyun() {
-		return this.transmitAliyun;
-	}
-
-	public void setTransmitAliyun(Boolean transmitAliyun) {
-		this.transmitAliyun = transmitAliyun;
-	}
-
-	public Result getResult() {
-		return this.result;
-	}
-
-	public void setResult(Result result) {
-		this.result = result;
-	}
-
-	public static class Result {
-
-		private String _class;
-
-		public String get_Class() {
-			return this._class;
-		}
-
-		public void set_Class(String _class) {
-			this._class = _class;
-		}
 	}
 
 	@Override

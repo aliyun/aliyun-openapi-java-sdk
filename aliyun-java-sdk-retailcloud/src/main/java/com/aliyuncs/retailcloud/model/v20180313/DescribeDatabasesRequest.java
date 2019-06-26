@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDatabasesRequest extends RpcAcsRequest<DescribeDatabasesResponse> {
 	
 	public DescribeDatabasesRequest() {
-		super("retailcloud", "2018-03-13", "DescribeDatabases");
+		super("retailcloud", "2018-03-13", "DescribeDatabases", "retailcloud");
 	}
 
 	private String instanceId;

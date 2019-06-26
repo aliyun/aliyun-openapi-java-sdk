@@ -23,12 +23,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRdsAccountsRequest extends RpcAcsRequest<DescribeRdsAccountsResponse> {
 	
 	public DescribeRdsAccountsRequest() {
-		super("retailcloud", "2018-03-13", "DescribeRdsAccounts");
+		super("retailcloud", "2018-03-13", "DescribeRdsAccounts", "retailcloud");
 	}
 
 	private String accountName;
-
-	private Integer mainUserId;
 
 	private String dbInstanceId;
 
@@ -40,17 +38,6 @@ public class DescribeRdsAccountsRequest extends RpcAcsRequest<DescribeRdsAccount
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public Integer getMainUserId() {
-		return this.mainUserId;
-	}
-
-	public void setMainUserId(Integer mainUserId) {
-		this.mainUserId = mainUserId;
-		if(mainUserId != null){
-			putQueryParameter("MainUserId", mainUserId.toString());
 		}
 	}
 

@@ -24,15 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountResponse> {
 	
 	public GrantDbToAccountRequest() {
-		super("retailcloud", "2018-03-13", "GrantDbToAccount");
+		super("retailcloud", "2018-03-13", "GrantDbToAccount", "retailcloud");
 		setMethod(MethodType.POST);
 	}
 
 	private String accountName;
 
 	private String dbName;
-
-	private Integer mainUserId;
 
 	private String dbInstanceId;
 
@@ -57,17 +55,6 @@ public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountRespo
 		this.dbName = dbName;
 		if(dbName != null){
 			putBodyParameter("DbName", dbName);
-		}
-	}
-
-	public Integer getMainUserId() {
-		return this.mainUserId;
-	}
-
-	public void setMainUserId(Integer mainUserId) {
-		this.mainUserId = mainUserId;
-		if(mainUserId != null){
-			putBodyParameter("MainUserId", mainUserId.toString());
 		}
 	}
 

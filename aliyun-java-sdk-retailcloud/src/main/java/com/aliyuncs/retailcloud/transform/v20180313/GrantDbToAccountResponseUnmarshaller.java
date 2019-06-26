@@ -15,7 +15,6 @@
 package com.aliyuncs.retailcloud.transform.v20180313;
 
 import com.aliyuncs.retailcloud.model.v20180313.GrantDbToAccountResponse;
-import com.aliyuncs.retailcloud.model.v20180313.GrantDbToAccountResponse.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,14 +24,7 @@ public class GrantDbToAccountResponseUnmarshaller {
 		
 		grantDbToAccountResponse.setRequestId(context.stringValue("GrantDbToAccountResponse.RequestId"));
 		grantDbToAccountResponse.setCode(context.integerValue("GrantDbToAccountResponse.Code"));
-		grantDbToAccountResponse.setSuccess(context.booleanValue("GrantDbToAccountResponse.Success"));
 		grantDbToAccountResponse.setErrMsg(context.stringValue("GrantDbToAccountResponse.ErrMsg"));
-		grantDbToAccountResponse.set_Class(context.stringValue("GrantDbToAccountResponse.Class"));
-		grantDbToAccountResponse.setTransmitAliyun(context.booleanValue("GrantDbToAccountResponse.TransmitAliyun"));
-
-		Result result = new Result();
-		result.set_Class(context.stringValue("GrantDbToAccountResponse.Result.Class"));
-		grantDbToAccountResponse.setResult(result);
 	 
 	 	return grantDbToAccountResponse;
 	}

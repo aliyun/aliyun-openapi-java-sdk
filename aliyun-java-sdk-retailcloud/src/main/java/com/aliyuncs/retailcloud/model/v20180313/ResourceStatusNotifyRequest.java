@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResourceStatusNotifyRequest extends RpcAcsRequest<ResourceStatusNotifyResponse> {
 	
 	public ResourceStatusNotifyRequest() {
-		super("retailcloud", "2018-03-13", "ResourceStatusNotify");
+		super("retailcloud", "2018-03-13", "ResourceStatusNotify", "retailcloud");
 	}
 
 	private String data;

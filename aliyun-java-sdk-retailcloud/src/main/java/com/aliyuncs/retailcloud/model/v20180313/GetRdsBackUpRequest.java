@@ -24,15 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class GetRdsBackUpRequest extends RpcAcsRequest<GetRdsBackUpResponse> {
 	
 	public GetRdsBackUpRequest() {
-		super("retailcloud", "2018-03-13", "GetRdsBackUp");
+		super("retailcloud", "2018-03-13", "GetRdsBackUp", "retailcloud");
 		setMethod(MethodType.POST);
 	}
 
 	private String backupId;
 
 	private Integer pageSize;
-
-	private Long mainUserId;
 
 	private String dbInstanceId;
 
@@ -59,17 +57,6 @@ public class GetRdsBackUpRequest extends RpcAcsRequest<GetRdsBackUpResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getMainUserId() {
-		return this.mainUserId;
-	}
-
-	public void setMainUserId(Long mainUserId) {
-		this.mainUserId = mainUserId;
-		if(mainUserId != null){
-			putBodyParameter("MainUserId", mainUserId.toString());
 		}
 	}
 

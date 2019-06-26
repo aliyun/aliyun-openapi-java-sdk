@@ -21,29 +21,25 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
+public class DeleteRdsAccountRequest extends RpcAcsRequest<DeleteRdsAccountResponse> {
 	
-	public CreateDbRequest() {
-		super("retailcloud", "2018-03-13", "CreateDb", "retailcloud");
+	public DeleteRdsAccountRequest() {
+		super("retailcloud", "2018-03-13", "DeleteRdsAccount", "retailcloud");
 		setMethod(MethodType.POST);
 	}
 
-	private String dbName;
+	private String accountName;
 
 	private String dbInstanceId;
 
-	private String dbDescription;
-
-	private String characterSetName;
-
-	public String getDbName() {
-		return this.dbName;
+	public String getAccountName() {
+		return this.accountName;
 	}
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putBodyParameter("DbName", dbName);
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putBodyParameter("AccountName", accountName);
 		}
 	}
 
@@ -58,31 +54,9 @@ public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
 		}
 	}
 
-	public String getDbDescription() {
-		return this.dbDescription;
-	}
-
-	public void setDbDescription(String dbDescription) {
-		this.dbDescription = dbDescription;
-		if(dbDescription != null){
-			putBodyParameter("DbDescription", dbDescription);
-		}
-	}
-
-	public String getCharacterSetName() {
-		return this.characterSetName;
-	}
-
-	public void setCharacterSetName(String characterSetName) {
-		this.characterSetName = characterSetName;
-		if(characterSetName != null){
-			putBodyParameter("CharacterSetName", characterSetName);
-		}
-	}
-
 	@Override
-	public Class<CreateDbResponse> getResponseClass() {
-		return CreateDbResponse.class;
+	public Class<DeleteRdsAccountResponse> getResponseClass() {
+		return DeleteRdsAccountResponse.class;
 	}
 
 }
