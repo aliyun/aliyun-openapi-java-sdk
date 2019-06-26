@@ -26,7 +26,20 @@ public class DeleteFileSystemRequest extends RpcAcsRequest<DeleteFileSystemRespo
 		super("NAS", "2017-06-26", "DeleteFileSystem", "nas");
 	}
 
+	private String fileSystemType;
+
 	private String fileSystemId;
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
+		}
+	}
 
 	public String getFileSystemId() {
 		return this.fileSystemId;
