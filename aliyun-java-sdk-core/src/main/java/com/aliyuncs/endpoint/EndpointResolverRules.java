@@ -17,6 +17,9 @@ public class EndpointResolverRules extends EndpointResolverBase {
         this.productEndpointRegional = request.productEndpointRegional;
         this.productNetwork = request.productNetwork;
         this.productSuffix = request.productSuffix;
+        if (this.productEndpointMap == null || this.productEndpointRegional == null) {
+            return null;
+        }
         return getEndpoint(request.productCode, request.regionId);
     }
 
@@ -50,7 +53,7 @@ public class EndpointResolverRules extends EndpointResolverBase {
             } else {
                 endpoint = endpoint.replace("<suffix>", "-" + this.productSuffix.toLowerCase());
             }
-            if ("public".equals(this.productNetwork) || "".equals(productNetwork)) {
+            if ("public".equals(this.productNetwork) || "".equals(this.productNetwork)) {
                 endpoint = endpoint.replace("<network>", "");
             } else {
                 endpoint = endpoint.replace("<network>", "-" + this.productNetwork.toLowerCase());
