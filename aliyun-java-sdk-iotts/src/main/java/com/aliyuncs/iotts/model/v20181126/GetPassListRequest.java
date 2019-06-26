@@ -49,8 +49,6 @@ public class GetPassListRequest extends RpcAcsRequest<GetPassListResponse> {
 
 	private List<Long> terminalTypeLists;
 
-	private String protocol;
-
 	private Long endVerifyDate;
 
 	private String model;
@@ -222,36 +220,6 @@ public class GetPassListRequest extends RpcAcsRequest<GetPassListResponse> {
 				putQueryParameter("TerminalTypeList." + (i + 1) , terminalTypeLists.get(i));
 			}
 		}	
-	}
-
-	public String getBizProtocol() {
-		return this.protocol;
-	}
-
-	public void setBizProtocol(String protocol) {
-		this.protocol = protocol;
-		if(protocol != null){
-			putQueryParameter("Protocol", protocol);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProtocol instead of this.
-	 */
-	@Deprecated
-	public String getProtocol() {
-		return this.protocol;
-	}
-
-	/**
-	 * @deprecated use setBizProtocol instead of this.
-	 */
-	@Deprecated
-	public void setProtocol(String protocol) {
-		this.protocol = protocol;
-		if(protocol != null){
-			putQueryParameter("Protocol", protocol);
-		}
 	}
 
 	public Long getEndVerifyDate() {
