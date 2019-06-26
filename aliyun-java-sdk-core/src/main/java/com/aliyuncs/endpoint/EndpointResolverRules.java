@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.HashMap;
 
 public class EndpointResolverRules extends EndpointResolverBase {
-    private Boolean validRegionId = false;
-    private Boolean validProductId = false;
+    // private Boolean validRegionId = false;
+    // private Boolean validProductId = false;
     private HashMap<String, String> productEndpointMap = null;
     private String productEndpointRegional = null;
     private String productNetwork = "public";
@@ -57,8 +57,8 @@ public class EndpointResolverRules extends EndpointResolverBase {
             }
 
             endpoint = endpoint.replace("<product_id>", productCode.toLowerCase());
-            this.validRegionId = true;
-            this.validProductId = true;
+            // this.validRegionId = true;
+            // this.validProductId = true;
             return endpoint;
         }
         return null;
@@ -66,11 +66,11 @@ public class EndpointResolverRules extends EndpointResolverBase {
 
     @Override
     public boolean isProductCodeValid(ResolveEndpointRequest request) {
-        return this.validProductId;
+        return false;
     }
 
     @Override
     public boolean isRegionIdValid(ResolveEndpointRequest request) {
-        return this.validRegionId;
+        return false;
     }
 }
