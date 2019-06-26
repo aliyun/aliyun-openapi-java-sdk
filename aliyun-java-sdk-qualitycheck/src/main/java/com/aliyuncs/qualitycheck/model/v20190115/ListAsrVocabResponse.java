@@ -77,6 +77,8 @@ public class ListAsrVocabResponse extends AcsResponse {
 
 	public static class AsrVocab {
 
+		private String id;
+
 		private String name;
 
 		private String createTime;
@@ -84,6 +86,14 @@ public class ListAsrVocabResponse extends AcsResponse {
 		private String updateTime;
 
 		private String vocabularyId;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
 
 		public String getName() {
 			return this.name;

@@ -34,6 +34,7 @@ public class ListAsrVocabResponseUnmarshaller {
 		List<AsrVocab> data = new ArrayList<AsrVocab>();
 		for (int i = 0; i < context.lengthValue("ListAsrVocabResponse.Data.Length"); i++) {
 			AsrVocab asrVocab = new AsrVocab();
+			asrVocab.setId(context.stringValue("ListAsrVocabResponse.Data["+ i +"].Id"));
 			asrVocab.setName(context.stringValue("ListAsrVocabResponse.Data["+ i +"].Name"));
 			asrVocab.setCreateTime(context.stringValue("ListAsrVocabResponse.Data["+ i +"].CreateTime"));
 			asrVocab.setUpdateTime(context.stringValue("ListAsrVocabResponse.Data["+ i +"].UpdateTime"));

@@ -115,6 +115,9 @@ public class GetResultToReviewResponseUnmarshaller {
 			ReviewInfo reviewInfo = new ReviewInfo();
 			reviewInfo.setHitId(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.HitId"));
 			reviewInfo.setRid(context.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.Rid"));
+			reviewInfo.setReviewResult(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.ReviewResult"));
+			reviewInfo.setReviewer(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.Reviewer"));
+			reviewInfo.setReviewTime(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.ReviewTime"));
 			hitRuleReviewInfo.setReviewInfo(reviewInfo);
 
 			List<ConditionHitInfo> conditionHitInfoList = new ArrayList<ConditionHitInfo>();

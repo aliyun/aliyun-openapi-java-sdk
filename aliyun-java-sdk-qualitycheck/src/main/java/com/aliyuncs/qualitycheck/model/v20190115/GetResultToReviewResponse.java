@@ -693,6 +693,12 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 				private Long rid;
 
+				private Integer reviewResult;
+
+				private String reviewer;
+
+				private String reviewTime;
+
 				public String getHitId() {
 					return this.hitId;
 				}
@@ -707,6 +713,30 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 				public void setRid(Long rid) {
 					this.rid = rid;
+				}
+
+				public Integer getReviewResult() {
+					return this.reviewResult;
+				}
+
+				public void setReviewResult(Integer reviewResult) {
+					this.reviewResult = reviewResult;
+				}
+
+				public String getReviewer() {
+					return this.reviewer;
+				}
+
+				public void setReviewer(String reviewer) {
+					this.reviewer = reviewer;
+				}
+
+				public String getReviewTime() {
+					return this.reviewTime;
+				}
+
+				public void setReviewTime(String reviewTime) {
+					this.reviewTime = reviewTime;
 				}
 			}
 		}

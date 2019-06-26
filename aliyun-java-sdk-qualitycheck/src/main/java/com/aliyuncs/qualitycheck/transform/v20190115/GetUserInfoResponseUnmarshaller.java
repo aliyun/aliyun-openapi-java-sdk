@@ -32,6 +32,10 @@ public class GetUserInfoResponseUnmarshaller {
 		data.setCurrentStatus(context.integerValue("GetUserInfoResponse.Data.CurrentStatus"));
 		data.setAccountType(context.integerValue("GetUserInfoResponse.Data.AccountType"));
 		data.setProductType(context.stringValue("GetUserInfoResponse.Data.ProductType"));
+		data.setShowNewbieTask(context.booleanValue("GetUserInfoResponse.Data.ShowNewbieTask"));
+		data.setPoc(context.booleanValue("GetUserInfoResponse.Data.Poc"));
+		data.setRoleName(context.stringValue("GetUserInfoResponse.Data.RoleName"));
+		data.setLoginUserType(context.integerValue("GetUserInfoResponse.Data.LoginUserType"));
 		getUserInfoResponse.setData(data);
 	 
 	 	return getUserInfoResponse;

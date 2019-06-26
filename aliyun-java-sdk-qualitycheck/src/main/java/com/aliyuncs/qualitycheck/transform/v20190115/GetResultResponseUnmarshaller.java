@@ -37,19 +37,30 @@ public class GetResultResponseUnmarshaller {
 		getResultResponse.setCode(context.stringValue("GetResultResponse.Code"));
 		getResultResponse.setMessage(context.stringValue("GetResultResponse.Message"));
 		getResultResponse.setCount(context.integerValue("GetResultResponse.Count"));
+		getResultResponse.setPageSize(context.integerValue("GetResultResponse.PageSize"));
+		getResultResponse.setPageNumber(context.integerValue("GetResultResponse.PageNumber"));
 
 		List<ResultInfo> data = new ArrayList<ResultInfo>();
 		for (int i = 0; i < context.lengthValue("GetResultResponse.Data.Length"); i++) {
 			ResultInfo resultInfo = new ResultInfo();
 			resultInfo.setScore(context.integerValue("GetResultResponse.Data["+ i +"].Score"));
-			resultInfo.setStatus(context.integerValue("GetResultResponse.Data["+ i +"].Status"));
-			resultInfo.setTaskId(context.stringValue("GetResultResponse.Data["+ i +"].TaskId"));
 			resultInfo.setComments(context.stringValue("GetResultResponse.Data["+ i +"].Comments"));
+			resultInfo.setStatus(context.integerValue("GetResultResponse.Data["+ i +"].Status"));
+			resultInfo.setReviewStatus(context.integerValue("GetResultResponse.Data["+ i +"].ReviewStatus"));
+			resultInfo.setTaskId(context.stringValue("GetResultResponse.Data["+ i +"].TaskId"));
+			resultInfo.setTaskName(context.stringValue("GetResultResponse.Data["+ i +"].TaskName"));
+			resultInfo.setCreateTime(context.stringValue("GetResultResponse.Data["+ i +"].CreateTime"));
+			resultInfo.setReviewer(context.stringValue("GetResultResponse.Data["+ i +"].Reviewer"));
+			resultInfo.setResolver(context.stringValue("GetResultResponse.Data["+ i +"].Resolver"));
+			resultInfo.setReviewResult(context.integerValue("GetResultResponse.Data["+ i +"].ReviewResult"));
 
 			Recording recording = new Recording();
 			recording.setId(context.stringValue("GetResultResponse.Data["+ i +"].Recording.Id"));
+			recording.setPrimaryId(context.stringValue("GetResultResponse.Data["+ i +"].Recording.PrimaryId"));
 			recording.setName(context.stringValue("GetResultResponse.Data["+ i +"].Recording.Name"));
 			recording.setUrl(context.stringValue("GetResultResponse.Data["+ i +"].Recording.Url"));
+			recording.setDataSetName(context.stringValue("GetResultResponse.Data["+ i +"].Recording.DataSetName"));
+			recording.setDuration(context.longValue("GetResultResponse.Data["+ i +"].Recording.Duration"));
 			resultInfo.setRecording(recording);
 
 			List<AsrResultItem> asrResult = new ArrayList<AsrResultItem>();
@@ -73,6 +84,7 @@ public class GetResultResponseUnmarshaller {
 				hitResultItem.setRid(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Rid"));
 				hitResultItem.setName(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Name"));
 				hitResultItem.setType(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Type"));
+				hitResultItem.setReviewResult(context.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].ReviewResult"));
 
 				List<Hit> hits = new ArrayList<Hit>();
 				for (int k = 0; k < context.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits.Length"); k++) {

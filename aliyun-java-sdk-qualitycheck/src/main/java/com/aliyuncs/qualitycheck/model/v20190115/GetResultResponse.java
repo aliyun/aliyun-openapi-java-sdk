@@ -35,6 +35,10 @@ public class GetResultResponse extends AcsResponse {
 
 	private Integer count;
 
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private List<ResultInfo> data;
 
 	public String getRequestId() {
@@ -77,6 +81,22 @@ public class GetResultResponse extends AcsResponse {
 		this.count = count;
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<ResultInfo> getData() {
 		return this.data;
 	}
@@ -89,11 +109,23 @@ public class GetResultResponse extends AcsResponse {
 
 		private Integer score;
 
+		private String comments;
+
 		private Integer status;
+
+		private Integer reviewStatus;
 
 		private String taskId;
 
-		private String comments;
+		private String taskName;
+
+		private String createTime;
+
+		private String reviewer;
+
+		private String resolver;
+
+		private Integer reviewResult;
 
 		private List<AsrResultItem> asrResult;
 
@@ -109,12 +141,28 @@ public class GetResultResponse extends AcsResponse {
 			this.score = score;
 		}
 
+		public String getComments() {
+			return this.comments;
+		}
+
+		public void setComments(String comments) {
+			this.comments = comments;
+		}
+
 		public Integer getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public Integer getReviewStatus() {
+			return this.reviewStatus;
+		}
+
+		public void setReviewStatus(Integer reviewStatus) {
+			this.reviewStatus = reviewStatus;
 		}
 
 		public String getTaskId() {
@@ -125,12 +173,44 @@ public class GetResultResponse extends AcsResponse {
 			this.taskId = taskId;
 		}
 
-		public String getComments() {
-			return this.comments;
+		public String getTaskName() {
+			return this.taskName;
 		}
 
-		public void setComments(String comments) {
-			this.comments = comments;
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getReviewer() {
+			return this.reviewer;
+		}
+
+		public void setReviewer(String reviewer) {
+			this.reviewer = reviewer;
+		}
+
+		public String getResolver() {
+			return this.resolver;
+		}
+
+		public void setResolver(String resolver) {
+			this.resolver = resolver;
+		}
+
+		public Integer getReviewResult() {
+			return this.reviewResult;
+		}
+
+		public void setReviewResult(Integer reviewResult) {
+			this.reviewResult = reviewResult;
 		}
 
 		public List<AsrResultItem> getAsrResult() {
@@ -238,6 +318,8 @@ public class GetResultResponse extends AcsResponse {
 
 			private String type;
 
+			private Integer reviewResult;
+
 			private List<Hit> hits;
 
 			public String getRid() {
@@ -262,6 +344,14 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public Integer getReviewResult() {
+				return this.reviewResult;
+			}
+
+			public void setReviewResult(Integer reviewResult) {
+				this.reviewResult = reviewResult;
 			}
 
 			public List<Hit> getHits() {
@@ -426,9 +516,15 @@ public class GetResultResponse extends AcsResponse {
 
 			private String id;
 
+			private String primaryId;
+
 			private String name;
 
 			private String url;
+
+			private String dataSetName;
+
+			private Long duration;
 
 			public String getId() {
 				return this.id;
@@ -436,6 +532,14 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setId(String id) {
 				this.id = id;
+			}
+
+			public String getPrimaryId() {
+				return this.primaryId;
+			}
+
+			public void setPrimaryId(String primaryId) {
+				this.primaryId = primaryId;
 			}
 
 			public String getName() {
@@ -468,6 +572,22 @@ public class GetResultResponse extends AcsResponse {
 			@Deprecated
 			public void setUrl(String url) {
 				this.url = url;
+			}
+
+			public String getDataSetName() {
+				return this.dataSetName;
+			}
+
+			public void setDataSetName(String dataSetName) {
+				this.dataSetName = dataSetName;
+			}
+
+			public Long getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(Long duration) {
+				this.duration = duration;
 			}
 		}
 	}

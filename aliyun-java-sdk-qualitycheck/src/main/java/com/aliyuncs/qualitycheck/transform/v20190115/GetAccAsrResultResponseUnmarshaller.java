@@ -45,6 +45,8 @@ public class GetAccAsrResultResponseUnmarshaller {
 			accAsrSentenceResult.setStatusCode(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].StatusCode"));
 			accAsrSentenceResult.setErrorMessage(context.stringValue("GetAccAsrResultResponse.Data["+ i +"].ErrorMessage"));
 			accAsrSentenceResult.setDuration(context.longValue("GetAccAsrResultResponse.Data["+ i +"].Duration"));
+			accAsrSentenceResult.setClientDuration(context.longValue("GetAccAsrResultResponse.Data["+ i +"].ClientDuration"));
+			accAsrSentenceResult.setServiceDuration(context.longValue("GetAccAsrResultResponse.Data["+ i +"].ServiceDuration"));
 			accAsrSentenceResult.setInteractiveCount(context.integerValue("GetAccAsrResultResponse.Data["+ i +"].InteractiveCount"));
 
 			ServiceEvStat serviceEvStat = new ServiceEvStat();

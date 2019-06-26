@@ -97,6 +97,10 @@ public class GetAccAsrResultResponse extends AcsResponse {
 
 		private Long duration;
 
+		private Long clientDuration;
+
+		private Long serviceDuration;
+
 		private Integer interactiveCount;
 
 		private List<SentenceResult> results;
@@ -147,6 +151,22 @@ public class GetAccAsrResultResponse extends AcsResponse {
 
 		public void setDuration(Long duration) {
 			this.duration = duration;
+		}
+
+		public Long getClientDuration() {
+			return this.clientDuration;
+		}
+
+		public void setClientDuration(Long clientDuration) {
+			this.clientDuration = clientDuration;
+		}
+
+		public Long getServiceDuration() {
+			return this.serviceDuration;
+		}
+
+		public void setServiceDuration(Long serviceDuration) {
+			this.serviceDuration = serviceDuration;
 		}
 
 		public Integer getInteractiveCount() {

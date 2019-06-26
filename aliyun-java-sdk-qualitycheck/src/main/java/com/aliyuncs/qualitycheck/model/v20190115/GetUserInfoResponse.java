@@ -82,6 +82,14 @@ public class GetUserInfoResponse extends AcsResponse {
 
 		private String productType;
 
+		private Boolean showNewbieTask;
+
+		private Boolean poc;
+
+		private String roleName;
+
+		private Integer loginUserType;
+
 		public Integer getCurrentStatus() {
 			return this.currentStatus;
 		}
@@ -104,6 +112,38 @@ public class GetUserInfoResponse extends AcsResponse {
 
 		public void setProductType(String productType) {
 			this.productType = productType;
+		}
+
+		public Boolean getShowNewbieTask() {
+			return this.showNewbieTask;
+		}
+
+		public void setShowNewbieTask(Boolean showNewbieTask) {
+			this.showNewbieTask = showNewbieTask;
+		}
+
+		public Boolean getPoc() {
+			return this.poc;
+		}
+
+		public void setPoc(Boolean poc) {
+			this.poc = poc;
+		}
+
+		public String getRoleName() {
+			return this.roleName;
+		}
+
+		public void setRoleName(String roleName) {
+			this.roleName = roleName;
+		}
+
+		public Integer getLoginUserType() {
+			return this.loginUserType;
+		}
+
+		public void setLoginUserType(Integer loginUserType) {
+			this.loginUserType = loginUserType;
 		}
 	}
 
