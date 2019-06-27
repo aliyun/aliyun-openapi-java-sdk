@@ -1,5 +1,7 @@
 package com.aliyuncs.endpoint;
 
+import java.util.HashMap;
+
 public class ResolveEndpointRequest {
 
     public static final String ENDPOINT_TYPE_INNER = "innerAPI";
@@ -10,6 +12,10 @@ public class ResolveEndpointRequest {
     public String endpointType = null;
     public String locationServiceCode = null;
     public String productCodeLower = null;
+    public HashMap<String, String> productEndpointMap = null;
+    public String productEndpointRegional = null;
+    public String productNetwork = "public";
+    public String productSuffix = "";
 
     public ResolveEndpointRequest(String regionId, String productCode,
                                   String locationServiceCode, String endpointType) {
@@ -29,5 +35,21 @@ public class ResolveEndpointRequest {
 
     public boolean isOpenApiEndpoint() {
         return ENDPOINT_TYPE_OPEN.equals(endpointType);
+    }
+
+    public void setProductEndpointMap(HashMap<String, String> productEndpointMap) {
+        this.productEndpointMap = productEndpointMap;
+    }
+
+    public void setProductEndpointRegional(String productEndpointRegional) {
+        this.productEndpointRegional = productEndpointRegional;
+    }
+
+    public void setProductNetwork(String productNetwork) {
+        this.productNetwork = productNetwork;
+    }
+
+    public void setProductSuffix(String suffix) {
+        this.productSuffix = suffix;
     }
 }
