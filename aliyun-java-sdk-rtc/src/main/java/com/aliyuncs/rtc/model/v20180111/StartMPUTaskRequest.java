@@ -31,6 +31,8 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private Integer backgroundColor;
 
+	private Integer cropMode;
+
 	private String taskProfile;
 
 	private List<Long> layoutIdss;
@@ -70,6 +72,17 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		this.backgroundColor = backgroundColor;
 		if(backgroundColor != null){
 			putQueryParameter("BackgroundColor", backgroundColor.toString());
+		}
+	}
+
+	public Integer getCropMode() {
+		return this.cropMode;
+	}
+
+	public void setCropMode(Integer cropMode) {
+		this.cropMode = cropMode;
+		if(cropMode != null){
+			putQueryParameter("CropMode", cropMode.toString());
 		}
 	}
 
