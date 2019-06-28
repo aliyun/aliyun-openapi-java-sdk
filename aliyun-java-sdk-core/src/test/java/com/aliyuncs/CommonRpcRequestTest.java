@@ -51,10 +51,8 @@ public class CommonRpcRequestTest {
 
         Map<String, String> param = new HashMap<String, String>();
         acsRequest.setParameter(null, null, null);
-        acsRequest.setParameter(param, null, null);
-        acsRequest.setParameter(param, null, "value");
         acsRequest.setParameter(param, "name", null);
-        Assert.assertNull(param.get("name"));
+        Assert.assertEquals("null", param.get("name"));
 
         acsRequest.setSysRegionId("hangzhou");
         Assert.assertEquals("hangzhou", acsRequest.getSysRegionId());
@@ -78,7 +76,7 @@ public class CommonRpcRequestTest {
         Map<String, String> map = acsRequest.getSysQueryParameters();
         Assert.assertEquals("test", map.get("test"));
         Assert.assertEquals("8", map.get("objectTest"));
-        Assert.assertNull(map.get("nullTest"));
+        Assert.assertEquals("null", map.get("nullTest"));
 
         acsRequest.putDomainParameter("test", "test");
         acsRequest.putDomainParameter("objectTest", 8);
@@ -120,7 +118,7 @@ public class CommonRpcRequestTest {
         Map<String, String> map = acsRequest.getQueryParameters();
         Assert.assertEquals("test", map.get("test"));
         Assert.assertEquals("8", map.get("objectTest"));
-        Assert.assertNull(map.get("nullTest"));
+        Assert.assertEquals("null", map.get("nullTest"));
 
         acsRequest.putDomainParameter("test", "test");
         acsRequest.putDomainParameter("objectTest", 8);
