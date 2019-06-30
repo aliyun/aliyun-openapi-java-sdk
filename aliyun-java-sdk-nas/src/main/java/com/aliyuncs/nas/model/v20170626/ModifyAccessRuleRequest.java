@@ -38,6 +38,8 @@ public class ModifyAccessRuleRequest extends RpcAcsRequest<ModifyAccessRuleRespo
 
 	private String accessRuleId;
 
+	private String fileSystemType;
+
 	public String getRWAccessType() {
 		return this.rWAccessType;
 	}
@@ -101,6 +103,17 @@ public class ModifyAccessRuleRequest extends RpcAcsRequest<ModifyAccessRuleRespo
 		this.accessRuleId = accessRuleId;
 		if(accessRuleId != null){
 			putQueryParameter("AccessRuleId", accessRuleId);
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 

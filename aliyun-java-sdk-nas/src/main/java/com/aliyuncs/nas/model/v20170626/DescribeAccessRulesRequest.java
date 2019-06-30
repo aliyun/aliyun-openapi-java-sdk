@@ -32,6 +32,8 @@ public class DescribeAccessRulesRequest extends RpcAcsRequest<DescribeAccessRule
 
 	private String accessRuleId;
 
+	private String fileSystemType;
+
 	private Integer pageNumber;
 
 	public Integer getPageSize() {
@@ -64,6 +66,17 @@ public class DescribeAccessRulesRequest extends RpcAcsRequest<DescribeAccessRule
 		this.accessRuleId = accessRuleId;
 		if(accessRuleId != null){
 			putQueryParameter("AccessRuleId", accessRuleId);
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 

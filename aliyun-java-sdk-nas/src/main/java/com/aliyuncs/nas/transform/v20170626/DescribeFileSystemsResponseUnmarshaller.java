@@ -47,6 +47,7 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			fileSystem.setBandwidth(context.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Bandwidth"));
 			fileSystem.setCapacity(context.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Capacity"));
 			fileSystem.setDestription(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Destription"));
+			fileSystem.setStatus(context.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Status"));
 
 			List<MountTarget> mountTargets = new ArrayList<MountTarget>();
 			for (int j = 0; j < context.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets.Length"); j++) {

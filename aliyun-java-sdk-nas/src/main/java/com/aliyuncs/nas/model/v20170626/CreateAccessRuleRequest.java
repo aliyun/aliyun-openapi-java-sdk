@@ -36,6 +36,8 @@ public class CreateAccessRuleRequest extends RpcAcsRequest<CreateAccessRuleRespo
 
 	private String accessGroupName;
 
+	private String fileSystemType;
+
 	public String getRWAccessType() {
 		return this.rWAccessType;
 	}
@@ -88,6 +90,17 @@ public class CreateAccessRuleRequest extends RpcAcsRequest<CreateAccessRuleRespo
 		this.accessGroupName = accessGroupName;
 		if(accessGroupName != null){
 			putQueryParameter("AccessGroupName", accessGroupName);
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 

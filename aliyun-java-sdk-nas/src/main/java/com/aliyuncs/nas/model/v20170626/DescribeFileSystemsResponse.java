@@ -99,6 +99,8 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private String destription;
 
+		private String status;
+
 		private List<MountTarget> mountTargets;
 
 		private List<_Package> packages;
@@ -205,6 +207,14 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		public void setDestription(String destription) {
 			this.destription = destription;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<MountTarget> getMountTargets() {

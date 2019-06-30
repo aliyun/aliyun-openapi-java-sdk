@@ -32,6 +32,8 @@ public class CreateAccessGroupRequest extends RpcAcsRequest<CreateAccessGroupRes
 
 	private String accessGroupName;
 
+	private String fileSystemType;
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -62,6 +64,17 @@ public class CreateAccessGroupRequest extends RpcAcsRequest<CreateAccessGroupRes
 		this.accessGroupName = accessGroupName;
 		if(accessGroupName != null){
 			putQueryParameter("AccessGroupName", accessGroupName);
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 

@@ -30,6 +30,8 @@ public class DescribeAccessGroupsRequest extends RpcAcsRequest<DescribeAccessGro
 
 	private String accessGroupName;
 
+	private String fileSystemType;
+
 	private Integer pageNumber;
 
 	public Integer getPageSize() {
@@ -51,6 +53,17 @@ public class DescribeAccessGroupsRequest extends RpcAcsRequest<DescribeAccessGro
 		this.accessGroupName = accessGroupName;
 		if(accessGroupName != null){
 			putQueryParameter("AccessGroupName", accessGroupName);
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 

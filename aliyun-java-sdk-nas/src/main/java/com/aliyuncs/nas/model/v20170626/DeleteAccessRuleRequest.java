@@ -30,6 +30,8 @@ public class DeleteAccessRuleRequest extends RpcAcsRequest<DeleteAccessRuleRespo
 
 	private String accessRuleId;
 
+	private String fileSystemType;
+
 	public String getAccessGroupName() {
 		return this.accessGroupName;
 	}
@@ -49,6 +51,17 @@ public class DeleteAccessRuleRequest extends RpcAcsRequest<DeleteAccessRuleRespo
 		this.accessRuleId = accessRuleId;
 		if(accessRuleId != null){
 			putQueryParameter("AccessRuleId", accessRuleId);
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 

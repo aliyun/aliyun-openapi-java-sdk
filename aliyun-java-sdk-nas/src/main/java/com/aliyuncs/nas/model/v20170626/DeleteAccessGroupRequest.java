@@ -28,6 +28,8 @@ public class DeleteAccessGroupRequest extends RpcAcsRequest<DeleteAccessGroupRes
 
 	private String accessGroupName;
 
+	private String fileSystemType;
+
 	public String getAccessGroupName() {
 		return this.accessGroupName;
 	}
@@ -36,6 +38,17 @@ public class DeleteAccessGroupRequest extends RpcAcsRequest<DeleteAccessGroupRes
 		this.accessGroupName = accessGroupName;
 		if(accessGroupName != null){
 			putQueryParameter("AccessGroupName", accessGroupName);
+		}
+	}
+
+	public String getFileSystemType() {
+		return this.fileSystemType;
+	}
+
+	public void setFileSystemType(String fileSystemType) {
+		this.fileSystemType = fileSystemType;
+		if(fileSystemType != null){
+			putQueryParameter("FileSystemType", fileSystemType);
 		}
 	}
 
