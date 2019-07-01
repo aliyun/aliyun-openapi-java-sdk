@@ -22,22 +22,20 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
+public class UpdateAutoScaleConfigRequest extends RoaAcsRequest<UpdateAutoScaleConfigResponse> {
 	
-	public CommitJobRequest() {
-		super("foas", "2018-11-11", "CommitJob", "foas");
+	public UpdateAutoScaleConfigRequest() {
+		super("foas", "2018-11-11", "UpdateAutoScaleConfig", "foas");
 		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/commit");
+		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/config");
 		setMethod(MethodType.PUT);
 	}
 
 	private String projectName;
 
-	private Integer maxCU;
+	private Long instanceId;
 
-	private String configure;
-
-	private Boolean isOnOff;
+	private String configJson;
 
 	private String jobName;
 
@@ -52,36 +50,25 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 		}
 	}
 
-	public Integer getMaxCU() {
-		return this.maxCU;
+	public Long getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setMaxCU(Integer maxCU) {
-		this.maxCU = maxCU;
-		if(maxCU != null){
-			putBodyParameter("maxCU", maxCU.toString());
+	public void setInstanceId(Long instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putPathParameter("instanceId", instanceId.toString());
 		}
 	}
 
-	public String getConfigure() {
-		return this.configure;
+	public String getConfigJson() {
+		return this.configJson;
 	}
 
-	public void setConfigure(String configure) {
-		this.configure = configure;
-		if(configure != null){
-			putBodyParameter("configure", configure);
-		}
-	}
-
-	public Boolean getIsOnOff() {
-		return this.isOnOff;
-	}
-
-	public void setIsOnOff(Boolean isOnOff) {
-		this.isOnOff = isOnOff;
-		if(isOnOff != null){
-			putBodyParameter("isOnOff", isOnOff.toString());
+	public void setConfigJson(String configJson) {
+		this.configJson = configJson;
+		if(configJson != null){
+			putBodyParameter("configJson", configJson);
 		}
 	}
 
@@ -97,8 +84,8 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 	}
 
 	@Override
-	public Class<CommitJobResponse> getResponseClass() {
-		return CommitJobResponse.class;
+	public Class<UpdateAutoScaleConfigResponse> getResponseClass() {
+		return UpdateAutoScaleConfigResponse.class;
 	}
 
 }

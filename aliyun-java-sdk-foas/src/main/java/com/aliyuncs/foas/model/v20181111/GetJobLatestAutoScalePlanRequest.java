@@ -22,22 +22,16 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
+public class GetJobLatestAutoScalePlanRequest extends RoaAcsRequest<GetJobLatestAutoScalePlanResponse> {
 	
-	public CommitJobRequest() {
-		super("foas", "2018-11-11", "CommitJob", "foas");
+	public GetJobLatestAutoScalePlanRequest() {
+		super("foas", "2018-11-11", "GetJobLatestAutoScalePlan", "foas");
 		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/commit");
-		setMethod(MethodType.PUT);
+		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/autoscale/latestplanjson");
+		setMethod(MethodType.GET);
 	}
 
 	private String projectName;
-
-	private Integer maxCU;
-
-	private String configure;
-
-	private Boolean isOnOff;
 
 	private String jobName;
 
@@ -49,39 +43,6 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 		this.projectName = projectName;
 		if(projectName != null){
 			putPathParameter("projectName", projectName);
-		}
-	}
-
-	public Integer getMaxCU() {
-		return this.maxCU;
-	}
-
-	public void setMaxCU(Integer maxCU) {
-		this.maxCU = maxCU;
-		if(maxCU != null){
-			putBodyParameter("maxCU", maxCU.toString());
-		}
-	}
-
-	public String getConfigure() {
-		return this.configure;
-	}
-
-	public void setConfigure(String configure) {
-		this.configure = configure;
-		if(configure != null){
-			putBodyParameter("configure", configure);
-		}
-	}
-
-	public Boolean getIsOnOff() {
-		return this.isOnOff;
-	}
-
-	public void setIsOnOff(Boolean isOnOff) {
-		this.isOnOff = isOnOff;
-		if(isOnOff != null){
-			putBodyParameter("isOnOff", isOnOff.toString());
 		}
 	}
 
@@ -97,8 +58,8 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 	}
 
 	@Override
-	public Class<CommitJobResponse> getResponseClass() {
-		return CommitJobResponse.class;
+	public Class<GetJobLatestAutoScalePlanResponse> getResponseClass() {
+		return GetJobLatestAutoScalePlanResponse.class;
 	}
 
 }

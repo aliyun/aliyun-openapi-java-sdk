@@ -37,6 +37,8 @@ public class ListJobRequest extends RoaAcsRequest<ListJobResponse> {
 
 	private Integer pageSize;
 
+	private Boolean isShowFullField;
+
 	private Integer pageIndex;
 
 	private String engineVersion;
@@ -81,6 +83,17 @@ public class ListJobRequest extends RoaAcsRequest<ListJobResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("pageSize", pageSize.toString());
+		}
+	}
+
+	public Boolean getIsShowFullField() {
+		return this.isShowFullField;
+	}
+
+	public void setIsShowFullField(Boolean isShowFullField) {
+		this.isShowFullField = isShowFullField;
+		if(isShowFullField != null){
+			putQueryParameter("isShowFullField", isShowFullField.toString());
 		}
 	}
 
