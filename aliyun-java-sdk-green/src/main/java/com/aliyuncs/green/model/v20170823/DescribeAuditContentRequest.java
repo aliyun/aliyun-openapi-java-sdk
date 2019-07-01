@@ -28,6 +28,10 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 
 	private Integer totalCount;
 
+	private String keywordId;
+
+	private String imageId;
+
 	private String suggestion;
 
 	private Integer currentPage;
@@ -48,6 +52,8 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 
 	private String dataId;
 
+	private String libType;
+
 	private String auditResult;
 
 	private Integer pageSize;
@@ -64,6 +70,28 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 		this.totalCount = totalCount;
 		if(totalCount != null){
 			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public String getKeywordId() {
+		return this.keywordId;
+	}
+
+	public void setKeywordId(String keywordId) {
+		this.keywordId = keywordId;
+		if(keywordId != null){
+			putQueryParameter("KeywordId", keywordId);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
 		}
 	}
 
@@ -174,6 +202,17 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 		this.dataId = dataId;
 		if(dataId != null){
 			putQueryParameter("DataId", dataId);
+		}
+	}
+
+	public String getLibType() {
+		return this.libType;
+	}
+
+	public void setLibType(String libType) {
+		this.libType = libType;
+		if(libType != null){
+			putQueryParameter("LibType", libType);
 		}
 	}
 

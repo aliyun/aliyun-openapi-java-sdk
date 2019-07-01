@@ -56,6 +56,8 @@ public class DescribeOssResultItemsRequest extends RpcAcsRequest<DescribeOssResu
 
 	private Boolean stock;
 
+	private String object;
+
 	public Integer getTotalCount() {
 		return this.totalCount;
 	}
@@ -218,6 +220,17 @@ public class DescribeOssResultItemsRequest extends RpcAcsRequest<DescribeOssResu
 		this.stock = stock;
 		if(stock != null){
 			putQueryParameter("Stock", stock.toString());
+		}
+	}
+
+	public String getObject() {
+		return this.object;
+	}
+
+	public void setObject(String object) {
+		this.object = object;
+		if(object != null){
+			putQueryParameter("Object", object);
 		}
 	}
 

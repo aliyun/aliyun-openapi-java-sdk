@@ -28,6 +28,8 @@ public class DescribeImageFromLibRequest extends RpcAcsRequest<DescribeImageFrom
 
 	private Integer totalCount;
 
+	private String endDate;
+
 	private String sourceIp;
 
 	private Integer imageLibId;
@@ -35,6 +37,10 @@ public class DescribeImageFromLibRequest extends RpcAcsRequest<DescribeImageFrom
 	private Integer pageSize;
 
 	private Integer currentPage;
+
+	private Long id;
+
+	private String startDate;
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -44,6 +50,17 @@ public class DescribeImageFromLibRequest extends RpcAcsRequest<DescribeImageFrom
 		this.totalCount = totalCount;
 		if(totalCount != null){
 			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
 		}
 	}
 
@@ -88,6 +105,28 @@ public class DescribeImageFromLibRequest extends RpcAcsRequest<DescribeImageFrom
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
 		}
 	}
 

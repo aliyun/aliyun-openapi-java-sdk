@@ -14,7 +14,6 @@
 
 package com.aliyuncs.green.model.v20170823;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.green.transform.v20170823.CreateKeywordLibResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,12 +26,22 @@ public class CreateKeywordLibResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String id;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	@Override

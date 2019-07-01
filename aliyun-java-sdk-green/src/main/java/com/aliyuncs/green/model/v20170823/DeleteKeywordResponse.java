@@ -14,7 +14,6 @@
 
 package com.aliyuncs.green.model.v20170823;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.green.transform.v20170823.DeleteKeywordResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

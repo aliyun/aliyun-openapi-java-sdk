@@ -30,15 +30,21 @@ public class CreateKeywordLibRequest extends RpcAcsRequest<CreateKeywordLibRespo
 
 	private String libType;
 
+	private Boolean enable;
+
 	private String name;
 
 	private String bizTypes;
+
+	private String language;
 
 	private String serviceModule;
 
 	private String lang;
 
 	private String category;
+
+	private String matchMode;
 
 	private String resourceType;
 
@@ -64,6 +70,17 @@ public class CreateKeywordLibRequest extends RpcAcsRequest<CreateKeywordLibRespo
 		}
 	}
 
+	public Boolean getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable.toString());
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -83,6 +100,17 @@ public class CreateKeywordLibRequest extends RpcAcsRequest<CreateKeywordLibRespo
 		this.bizTypes = bizTypes;
 		if(bizTypes != null){
 			putQueryParameter("BizTypes", bizTypes);
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 
@@ -116,6 +144,17 @@ public class CreateKeywordLibRequest extends RpcAcsRequest<CreateKeywordLibRespo
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category);
+		}
+	}
+
+	public String getMatchMode() {
+		return this.matchMode;
+	}
+
+	public void setMatchMode(String matchMode) {
+		this.matchMode = matchMode;
+		if(matchMode != null){
+			putQueryParameter("MatchMode", matchMode);
 		}
 	}
 

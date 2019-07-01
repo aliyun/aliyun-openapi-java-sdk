@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.green.model.v20170823.DescribeImageLibResponse;
 import com.aliyuncs.green.model.v20170823.DescribeImageLibResponse.ImageLib;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +41,7 @@ public class DescribeImageLibResponseUnmarshaller {
 			imageLib.setCategory(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Category"));
 			imageLib.setServiceModule(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].ServiceModule"));
 			imageLib.setScene(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Scene"));
+			imageLib.setEnable(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Enable"));
 
 			List<String> bizTypes = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeImageLibResponse.ImageLibList["+ i +"].BizTypes.Length"); j++) {

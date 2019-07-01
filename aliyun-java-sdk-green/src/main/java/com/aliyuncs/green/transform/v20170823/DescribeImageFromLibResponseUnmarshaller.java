@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.green.model.v20170823.DescribeImageFromLibResponse;
 import com.aliyuncs.green.model.v20170823.DescribeImageFromLibResponse.ImageFromLib;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,7 +36,10 @@ public class DescribeImageFromLibResponseUnmarshaller {
 			ImageFromLib imageFromLib = new ImageFromLib();
 			imageFromLib.setImage(context.stringValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Image"));
 			imageFromLib.setThumbnail(context.stringValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Thumbnail"));
-			imageFromLib.setId(context.integerValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Id"));
+			imageFromLib.setId(context.longValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Id"));
+			imageFromLib.setImageHitCount(context.longValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].ImageHitCount"));
+			imageFromLib.setVideoHitCount(context.longValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].VideoHitCount"));
+			imageFromLib.setCreateTime(context.stringValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].CreateTime"));
 
 			imageFromLibList.add(imageFromLib);
 		}

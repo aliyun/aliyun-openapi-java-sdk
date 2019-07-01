@@ -72,6 +72,7 @@ public class DescribeAuditContentResponseUnmarshaller {
 				FrameResult frameResult = new FrameResult();
 				frameResult.setUrl(context.stringValue("DescribeAuditContentResponse.AuditContentList["+ i +"].FrameResults["+ j +"].Url"));
 				frameResult.setOffset(context.integerValue("DescribeAuditContentResponse.AuditContentList["+ i +"].FrameResults["+ j +"].Offset"));
+				frameResult.setLabel(context.stringValue("DescribeAuditContentResponse.AuditContentList["+ i +"].FrameResults["+ j +"].Label"));
 
 				frameResults.add(frameResult);
 			}

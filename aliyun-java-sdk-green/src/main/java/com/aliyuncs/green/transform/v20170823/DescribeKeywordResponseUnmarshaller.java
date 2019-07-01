@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.green.model.v20170823.DescribeKeywordResponse;
 import com.aliyuncs.green.model.v20170823.DescribeKeywordResponse.Keyword;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

@@ -15,7 +15,6 @@
 package com.aliyuncs.green.model.v20170823;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.green.transform.v20170823.DescribeImageLibResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -75,6 +74,8 @@ public class DescribeImageLibResponse extends AcsResponse {
 		private String serviceModule;
 
 		private String scene;
+
+		private String enable;
 
 		private List<String> bizTypes;
 
@@ -148,6 +149,14 @@ public class DescribeImageLibResponse extends AcsResponse {
 
 		public void setScene(String scene) {
 			this.scene = scene;
+		}
+
+		public String getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(String enable) {
+			this.enable = enable;
 		}
 
 		public List<String> getBizTypes() {

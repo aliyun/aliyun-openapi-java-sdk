@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.green.model.v20170823.CreateKeywordResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,6 +33,12 @@ public class CreateKeywordResponseUnmarshaller {
 			invalidKeywordList.add(context.stringValue("CreateKeywordResponse.InvalidKeywordList["+ i +"]"));
 		}
 		createKeywordResponse.setInvalidKeywordList(invalidKeywordList);
+
+		List<String> validKeywordList = new ArrayList<String>();
+		for (int i = 0; i < context.lengthValue("CreateKeywordResponse.validKeywordList.Length"); i++) {
+			validKeywordList.add(context.stringValue("CreateKeywordResponse.validKeywordList["+ i +"]"));
+		}
+		createKeywordResponse.setValidKeywordList(validKeywordList);
 	 
 	 	return createKeywordResponse;
 	}

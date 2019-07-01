@@ -15,7 +15,6 @@
 package com.aliyuncs.green.model.v20170823;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.green.transform.v20170823.CreateKeywordResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -31,6 +30,8 @@ public class CreateKeywordResponse extends AcsResponse {
 	private Integer successCount;
 
 	private List<String> invalidKeywordList;
+
+	private List<String> validKeywordList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,6 +55,14 @@ public class CreateKeywordResponse extends AcsResponse {
 
 	public void setInvalidKeywordList(List<String> invalidKeywordList) {
 		this.invalidKeywordList = invalidKeywordList;
+	}
+
+	public List<String> getValidKeywordList() {
+		return this.validKeywordList;
+	}
+
+	public void setValidKeywordList(List<String> validKeywordList) {
+		this.validKeywordList = validKeywordList;
 	}
 
 	@Override

@@ -14,7 +14,6 @@
 
 package com.aliyuncs.green.model.v20180509;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.green.transform.v20180509.VoiceCancelScanResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

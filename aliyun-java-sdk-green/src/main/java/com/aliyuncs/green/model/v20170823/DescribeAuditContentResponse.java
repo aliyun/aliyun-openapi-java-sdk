@@ -292,6 +292,8 @@ public class DescribeAuditContentResponse extends AcsResponse {
 
 			private Integer offset;
 
+			private String label;
+
 			public String getBizUrl() {
 				return this.url;
 			}
@@ -322,6 +324,14 @@ public class DescribeAuditContentResponse extends AcsResponse {
 
 			public void setOffset(Integer offset) {
 				this.offset = offset;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
 			}
 		}
 	}

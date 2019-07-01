@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.green.model.v20170823.DescribeKeywordLibResponse;
 import com.aliyuncs.green.model.v20170823.DescribeKeywordLibResponse.KeywordLib;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +42,9 @@ public class DescribeKeywordLibResponseUnmarshaller {
 			keywordLib.setLibType(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].LibType"));
 			keywordLib.setSource(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Source"));
 			keywordLib.setServiceModule(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].ServiceModule"));
+			keywordLib.setLanguage(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Language"));
+			keywordLib.setMatchMode(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].MatchMode"));
+			keywordLib.setEnable(context.booleanValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Enable"));
 
 			List<String> bizTypes = new ArrayList<String>();
 			for (int j = 0; j < context.lengthValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].BizTypes.Length"); j++) {

@@ -15,7 +15,6 @@
 package com.aliyuncs.green.model.v20170823;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.green.transform.v20170823.DescribeImageFromLibResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -82,7 +81,13 @@ public class DescribeImageFromLibResponse extends AcsResponse {
 
 		private String thumbnail;
 
-		private Integer id;
+		private Long id;
+
+		private Long imageHitCount;
+
+		private Long videoHitCount;
+
+		private String createTime;
 
 		public String getImage() {
 			return this.image;
@@ -100,12 +105,36 @@ public class DescribeImageFromLibResponse extends AcsResponse {
 			this.thumbnail = thumbnail;
 		}
 
-		public Integer getId() {
+		public Long getId() {
 			return this.id;
 		}
 
-		public void setId(Integer id) {
+		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public Long getImageHitCount() {
+			return this.imageHitCount;
+		}
+
+		public void setImageHitCount(Long imageHitCount) {
+			this.imageHitCount = imageHitCount;
+		}
+
+		public Long getVideoHitCount() {
+			return this.videoHitCount;
+		}
+
+		public void setVideoHitCount(Long videoHitCount) {
+			this.videoHitCount = videoHitCount;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 	}
 

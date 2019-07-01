@@ -28,6 +28,8 @@ public class CreateImageLibRequest extends RpcAcsRequest<CreateImageLibResponse>
 
 	private String sourceIp;
 
+	private Boolean enable;
+
 	private String name;
 
 	private String bizTypes;
@@ -46,6 +48,17 @@ public class CreateImageLibRequest extends RpcAcsRequest<CreateImageLibResponse>
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public Boolean getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable.toString());
 		}
 	}
 

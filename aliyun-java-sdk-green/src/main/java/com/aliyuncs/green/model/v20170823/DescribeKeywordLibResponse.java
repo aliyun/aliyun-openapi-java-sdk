@@ -15,7 +15,6 @@
 package com.aliyuncs.green.model.v20170823;
 
 import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.green.transform.v20170823.DescribeKeywordLibResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -77,6 +76,12 @@ public class DescribeKeywordLibResponse extends AcsResponse {
 		private String source;
 
 		private String serviceModule;
+
+		private String language;
+
+		private String matchMode;
+
+		private Boolean enable;
 
 		private List<String> bizTypes;
 
@@ -158,6 +163,30 @@ public class DescribeKeywordLibResponse extends AcsResponse {
 
 		public void setServiceModule(String serviceModule) {
 			this.serviceModule = serviceModule;
+		}
+
+		public String getLanguage() {
+			return this.language;
+		}
+
+		public void setLanguage(String language) {
+			this.language = language;
+		}
+
+		public String getMatchMode() {
+			return this.matchMode;
+		}
+
+		public void setMatchMode(String matchMode) {
+			this.matchMode = matchMode;
+		}
+
+		public Boolean getEnable() {
+			return this.enable;
+		}
+
+		public void setEnable(Boolean enable) {
+			this.enable = enable;
 		}
 
 		public List<String> getBizTypes() {

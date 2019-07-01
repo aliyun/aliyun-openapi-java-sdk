@@ -28,6 +28,8 @@ public class DeleteKeywordRequest extends RpcAcsRequest<DeleteKeywordResponse> {
 
 	private String sourceIp;
 
+	private String keywords;
+
 	private String keywordLibId;
 
 	private String ids;
@@ -42,6 +44,17 @@ public class DeleteKeywordRequest extends RpcAcsRequest<DeleteKeywordResponse> {
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getKeywords() {
+		return this.keywords;
+	}
+
+	public void setKeywords(String keywords) {
+		this.keywords = keywords;
+		if(keywords != null){
+			putQueryParameter("Keywords", keywords);
 		}
 	}
 

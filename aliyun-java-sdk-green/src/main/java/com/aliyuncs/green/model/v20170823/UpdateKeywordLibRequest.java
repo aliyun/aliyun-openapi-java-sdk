@@ -28,6 +28,8 @@ public class UpdateKeywordLibRequest extends RpcAcsRequest<UpdateKeywordLibRespo
 
 	private String sourceIp;
 
+	private Boolean enable;
+
 	private String name;
 
 	private String bizTypes;
@@ -35,6 +37,8 @@ public class UpdateKeywordLibRequest extends RpcAcsRequest<UpdateKeywordLibRespo
 	private Integer id;
 
 	private String lang;
+
+	private String matchMode;
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -44,6 +48,17 @@ public class UpdateKeywordLibRequest extends RpcAcsRequest<UpdateKeywordLibRespo
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public Boolean getEnable() {
+		return this.enable;
+	}
+
+	public void setEnable(Boolean enable) {
+		this.enable = enable;
+		if(enable != null){
+			putQueryParameter("Enable", enable.toString());
 		}
 	}
 
@@ -88,6 +103,17 @@ public class UpdateKeywordLibRequest extends RpcAcsRequest<UpdateKeywordLibRespo
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getMatchMode() {
+		return this.matchMode;
+	}
+
+	public void setMatchMode(String matchMode) {
+		this.matchMode = matchMode;
+		if(matchMode != null){
+			putQueryParameter("MatchMode", matchMode);
 		}
 	}
 

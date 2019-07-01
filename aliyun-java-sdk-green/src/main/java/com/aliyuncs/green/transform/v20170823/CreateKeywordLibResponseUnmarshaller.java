@@ -23,6 +23,7 @@ public class CreateKeywordLibResponseUnmarshaller {
 	public static CreateKeywordLibResponse unmarshall(CreateKeywordLibResponse createKeywordLibResponse, UnmarshallerContext context) {
 		
 		createKeywordLibResponse.setRequestId(context.stringValue("CreateKeywordLibResponse.RequestId"));
+		createKeywordLibResponse.setId(context.stringValue("CreateKeywordLibResponse.Id"));
 	 
 	 	return createKeywordLibResponse;
 	}
