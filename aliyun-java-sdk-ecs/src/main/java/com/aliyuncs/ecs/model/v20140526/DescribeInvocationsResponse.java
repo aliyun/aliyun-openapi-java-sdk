@@ -183,6 +183,12 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			private String instanceInvokeStatus;
 
+			private String creationTime;
+
+			private String startTime;
+
+			private String finishTime;
+
 			public String getInstanceId() {
 				return this.instanceId;
 			}
@@ -197,6 +203,30 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			public void setInstanceInvokeStatus(String instanceInvokeStatus) {
 				this.instanceInvokeStatus = instanceInvokeStatus;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getFinishTime() {
+				return this.finishTime;
+			}
+
+			public void setFinishTime(String finishTime) {
+				this.finishTime = finishTime;
 			}
 		}
 	}

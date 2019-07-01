@@ -99,6 +99,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String lastModifiedTime;
+
 		private String status;
 
 		private String usage;
@@ -199,6 +201,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getLastModifiedTime() {
+			return this.lastModifiedTime;
+		}
+
+		public void setLastModifiedTime(String lastModifiedTime) {
+			this.lastModifiedTime = lastModifiedTime;
 		}
 
 		public String getStatus() {

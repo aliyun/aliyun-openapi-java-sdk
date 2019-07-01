@@ -41,6 +41,8 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 
 	private String snapshotName;
 
+	private Integer retentionDays;
+
 	private List<Tag> tags;
 
 	private Long ownerId;
@@ -119,6 +121,17 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		this.snapshotName = snapshotName;
 		if(snapshotName != null){
 			putQueryParameter("SnapshotName", snapshotName);
+		}
+	}
+
+	public Integer getRetentionDays() {
+		return this.retentionDays;
+	}
+
+	public void setRetentionDays(Integer retentionDays) {
+		this.retentionDays = retentionDays;
+		if(retentionDays != null){
+			putQueryParameter("RetentionDays", retentionDays.toString());
 		}
 	}
 

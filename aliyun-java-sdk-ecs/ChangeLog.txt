@@ -1,3 +1,9 @@
+2019-07-01 Version: 4.16.11
+- Support cloud_essd disk category for API CreateDisk, CreateInstance and RunInstances, and support configurating PerformanceLevel when choose cloud_essd.
+- Add ModifyDiskSpec API to support cloud_essd PerformanceLevel modification.
+- Add AutoProvisioningGroup interfaces, provide AutoProvisioningGroup function.
+- Add RetentionDays to snapshot creating.
+
 2019-05-22 Version: 4.16.10
 1, Add EndTime parameter to api ModifyPrepayInstanceSpec
 2, Add RebootTime parameter to api ModifyPrepayInstanceSpec

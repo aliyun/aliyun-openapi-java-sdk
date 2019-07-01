@@ -95,6 +95,8 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String instanceId;
 
+			private String startTime;
+
 			private String finishedTime;
 
 			private String output;
@@ -125,6 +127,14 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 
 			public String getFinishedTime() {

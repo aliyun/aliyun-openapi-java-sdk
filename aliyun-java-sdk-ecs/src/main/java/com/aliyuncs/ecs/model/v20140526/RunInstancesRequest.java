@@ -103,6 +103,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String systemDiskCategory;
 
+	private String systemDiskPerformanceLevel;
+
 	private String userData;
 
 	private Boolean passwordInherit;
@@ -566,6 +568,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public String getSystemDiskPerformanceLevel() {
+		return this.systemDiskPerformanceLevel;
+	}
+
+	public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
+		this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+		if(systemDiskPerformanceLevel != null){
+			putQueryParameter("SystemDisk.PerformanceLevel", systemDiskPerformanceLevel);
+		}
+	}
+
 	public String getUserData() {
 		return this.userData;
 	}
@@ -767,6 +780,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
 			}
 		}	
 	}
@@ -900,6 +914,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private Boolean deleteWithInstance;
 
+		private String performanceLevel;
+
 		public Integer getSize() {
 			return this.size;
 		}
@@ -970,6 +986,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setDeleteWithInstance(Boolean deleteWithInstance) {
 			this.deleteWithInstance = deleteWithInstance;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
 		}
 	}
 

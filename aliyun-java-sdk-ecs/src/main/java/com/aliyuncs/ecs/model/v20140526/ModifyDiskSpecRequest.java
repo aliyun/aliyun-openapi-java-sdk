@@ -20,40 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressResponse> {
+public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse> {
 	
-	public AllocateEipAddressRequest() {
-		super("Ecs", "2014-05-26", "AllocateEipAddress", "ecs");
+	public ModifyDiskSpecRequest() {
+		super("Ecs", "2014-05-26", "ModifyDiskSpec", "ecs");
 	}
-
-	private Long activityId;
 
 	private Long resourceOwnerId;
 
+	private String diskId;
+
 	private String resourceOwnerAccount;
 
-	private String bandwidth;
-
-	private String clientToken;
-
-	private String internetChargeType;
-
-	private String iSP;
+	private String performanceLevel;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	public Long getActivityId() {
-		return this.activityId;
-	}
-
-	public void setActivityId(Long activityId) {
-		this.activityId = activityId;
-		if(activityId != null){
-			putQueryParameter("ActivityId", activityId.toString());
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,6 +46,17 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
 		}
 	}
 
@@ -77,47 +71,14 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		}
 	}
 
-	public String getBandwidth() {
-		return this.bandwidth;
+	public String getPerformanceLevel() {
+		return this.performanceLevel;
 	}
 
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
-	public String getISP() {
-		return this.iSP;
-	}
-
-	public void setISP(String iSP) {
-		this.iSP = iSP;
-		if(iSP != null){
-			putQueryParameter("ISP", iSP);
+	public void setPerformanceLevel(String performanceLevel) {
+		this.performanceLevel = performanceLevel;
+		if(performanceLevel != null){
+			putQueryParameter("PerformanceLevel", performanceLevel);
 		}
 	}
 
@@ -144,8 +105,8 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	}
 
 	@Override
-	public Class<AllocateEipAddressResponse> getResponseClass() {
-		return AllocateEipAddressResponse.class;
+	public Class<ModifyDiskSpecResponse> getResponseClass() {
+		return ModifyDiskSpecResponse.class;
 	}
 
 }

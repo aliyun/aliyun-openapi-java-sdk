@@ -40,6 +40,7 @@ public class DescribeInvocationResultsResponseUnmarshaller {
 			invocationResult.setCommandId(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].CommandId"));
 			invocationResult.setInvokeId(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvokeId"));
 			invocationResult.setInstanceId(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InstanceId"));
+			invocationResult.setStartTime(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].StartTime"));
 			invocationResult.setFinishedTime(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].FinishedTime"));
 			invocationResult.setOutput(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Output"));
 			invocationResult.setInvokeRecordStatus(context.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].InvokeRecordStatus"));

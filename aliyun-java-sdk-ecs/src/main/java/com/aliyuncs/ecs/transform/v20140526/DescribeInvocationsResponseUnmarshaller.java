@@ -50,6 +50,9 @@ public class DescribeInvocationsResponseUnmarshaller {
 				InvokeInstance invokeInstance = new InvokeInstance();
 				invokeInstance.setInstanceId(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceId"));
 				invokeInstance.setInstanceInvokeStatus(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceInvokeStatus"));
+				invokeInstance.setCreationTime(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].CreationTime"));
+				invokeInstance.setStartTime(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].StartTime"));
+				invokeInstance.setFinishTime(context.stringValue("DescribeInvocationsResponse.Invocations["+ i +"].InvokeInstances["+ j +"].FinishTime"));
 
 				invokeInstances.add(invokeInstance);
 			}

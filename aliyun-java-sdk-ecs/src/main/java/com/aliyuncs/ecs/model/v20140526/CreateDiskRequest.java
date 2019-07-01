@@ -35,6 +35,8 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private String clientToken;
 
+	private String performanceLevel;
+
 	private String ownerAccount;
 
 	private String description;
@@ -104,6 +106,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getPerformanceLevel() {
+		return this.performanceLevel;
+	}
+
+	public void setPerformanceLevel(String performanceLevel) {
+		this.performanceLevel = performanceLevel;
+		if(performanceLevel != null){
+			putQueryParameter("PerformanceLevel", performanceLevel);
 		}
 	}
 

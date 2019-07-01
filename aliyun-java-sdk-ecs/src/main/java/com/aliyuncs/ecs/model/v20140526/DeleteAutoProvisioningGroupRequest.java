@@ -20,40 +20,23 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressResponse> {
+public class DeleteAutoProvisioningGroupRequest extends RpcAcsRequest<DeleteAutoProvisioningGroupResponse> {
 	
-	public AllocateEipAddressRequest() {
-		super("Ecs", "2014-05-26", "AllocateEipAddress", "ecs");
+	public DeleteAutoProvisioningGroupRequest() {
+		super("Ecs", "2014-05-26", "DeleteAutoProvisioningGroup", "ecs");
 	}
-
-	private Long activityId;
 
 	private Long resourceOwnerId;
 
+	private Boolean terminateInstances;
+
 	private String resourceOwnerAccount;
-
-	private String bandwidth;
-
-	private String clientToken;
-
-	private String internetChargeType;
-
-	private String iSP;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	public Long getActivityId() {
-		return this.activityId;
-	}
-
-	public void setActivityId(Long activityId) {
-		this.activityId = activityId;
-		if(activityId != null){
-			putQueryParameter("ActivityId", activityId.toString());
-		}
-	}
+	private String autoProvisioningGroupId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,6 +49,17 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		}
 	}
 
+	public Boolean getTerminateInstances() {
+		return this.terminateInstances;
+	}
+
+	public void setTerminateInstances(Boolean terminateInstances) {
+		this.terminateInstances = terminateInstances;
+		if(terminateInstances != null){
+			putQueryParameter("TerminateInstances", terminateInstances.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -74,50 +68,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
-	public String getISP() {
-		return this.iSP;
-	}
-
-	public void setISP(String iSP) {
-		this.iSP = iSP;
-		if(iSP != null){
-			putQueryParameter("ISP", iSP);
 		}
 	}
 
@@ -143,9 +93,20 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		}
 	}
 
+	public String getAutoProvisioningGroupId() {
+		return this.autoProvisioningGroupId;
+	}
+
+	public void setAutoProvisioningGroupId(String autoProvisioningGroupId) {
+		this.autoProvisioningGroupId = autoProvisioningGroupId;
+		if(autoProvisioningGroupId != null){
+			putQueryParameter("AutoProvisioningGroupId", autoProvisioningGroupId);
+		}
+	}
+
 	@Override
-	public Class<AllocateEipAddressResponse> getResponseClass() {
-		return AllocateEipAddressResponse.class;
+	public Class<DeleteAutoProvisioningGroupResponse> getResponseClass() {
+		return DeleteAutoProvisioningGroupResponse.class;
 	}
 
 }

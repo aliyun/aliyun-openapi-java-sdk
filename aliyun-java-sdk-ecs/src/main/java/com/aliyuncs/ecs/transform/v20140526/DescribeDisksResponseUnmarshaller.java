@@ -69,6 +69,7 @@ public class DescribeDisksResponseUnmarshaller {
 			disk.setIOPSRead(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSRead"));
 			disk.setIOPSWrite(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSWrite"));
 			disk.setKMSKeyId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].KMSKeyId"));
+			disk.setPerformanceLevel(context.stringValue("DescribeDisksResponse.Disks["+ i +"].PerformanceLevel"));
 			disk.setBdfId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].BdfId"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();

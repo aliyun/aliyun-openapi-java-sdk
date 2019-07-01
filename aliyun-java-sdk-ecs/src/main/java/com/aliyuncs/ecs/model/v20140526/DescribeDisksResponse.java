@@ -141,6 +141,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String kMSKeyId;
 
+		private String performanceLevel;
+
 		private String bdfId;
 
 		private List<OperationLock> operationLocks;
@@ -419,6 +421,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setKMSKeyId(String kMSKeyId) {
 			this.kMSKeyId = kMSKeyId;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
 		}
 
 		public String getBdfId() {

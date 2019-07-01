@@ -97,6 +97,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String systemDiskCategory;
 
+	private String systemDiskPerformanceLevel;
+
 	private String userData;
 
 	private Boolean passwordInherit;
@@ -521,6 +523,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getSystemDiskPerformanceLevel() {
+		return this.systemDiskPerformanceLevel;
+	}
+
+	public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
+		this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+		if(systemDiskPerformanceLevel != null){
+			putQueryParameter("SystemDisk.PerformanceLevel", systemDiskPerformanceLevel);
+		}
+	}
+
 	public String getUserData() {
 		return this.userData;
 	}
@@ -702,6 +715,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".SnapshotId" , dataDisks.get(depth1).getSnapshotId());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Encrypted" , dataDisks.get(depth1).getEncrypted());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".KMSKeyId" , dataDisks.get(depth1).getKMSKeyId());
@@ -799,6 +813,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 		private Boolean encrypted;
 
+		private String performanceLevel;
+
 		private String description;
 
 		private String category;
@@ -839,6 +855,14 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 		public void setEncrypted(Boolean encrypted) {
 			this.encrypted = encrypted;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
 		}
 
 		public String getDescription() {

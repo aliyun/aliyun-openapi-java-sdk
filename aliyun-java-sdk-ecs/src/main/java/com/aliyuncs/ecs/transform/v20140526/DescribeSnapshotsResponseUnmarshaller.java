@@ -46,6 +46,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setSourceDiskSize(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceDiskSize"));
 			snapshot.setDescription(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Description"));
 			snapshot.setCreationTime(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].CreationTime"));
+			snapshot.setLastModifiedTime(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].LastModifiedTime"));
 			snapshot.setStatus(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Status"));
 			snapshot.setUsage(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Usage"));
 			snapshot.setSourceStorageType(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SourceStorageType"));
