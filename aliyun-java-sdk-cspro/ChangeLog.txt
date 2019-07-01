@@ -1,0 +1,3 @@
+2019-07-01 Version: 1.2.8
+- Add sample lib query interface.
+
