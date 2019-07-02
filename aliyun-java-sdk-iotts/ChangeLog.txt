@@ -1,3 +1,6 @@
+2019-07-02 Version: 1.8.1
+- Generated 2018-11-26 for `iotts`.
+
 2019-06-26 Version: 1.0.0
 - Generated 2018-11-26 for `iotts`.
 

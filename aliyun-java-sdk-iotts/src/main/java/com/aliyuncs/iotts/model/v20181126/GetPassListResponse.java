@@ -173,7 +173,7 @@ public class GetPassListResponse extends AcsResponse {
 
 			private Long jobId;
 
-			private Long certifyId;
+			private String certifyId;
 
 			private Long gmtCreate;
 
@@ -343,11 +343,11 @@ public class GetPassListResponse extends AcsResponse {
 				this.jobId = jobId;
 			}
 
-			public Long getCertifyId() {
+			public String getCertifyId() {
 				return this.certifyId;
 			}
 
-			public void setCertifyId(Long certifyId) {
+			public void setCertifyId(String certifyId) {
 				this.certifyId = certifyId;
 			}
 
