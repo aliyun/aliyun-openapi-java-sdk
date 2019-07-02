@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitPlanningResultResponseUnmarshaller {
 
-	public static SubmitPlanningResultResponse unmarshall(SubmitPlanningResultResponse submitPlanningResultResponse, UnmarshallerContext context) {
+	public static SubmitPlanningResultResponse unmarshall(SubmitPlanningResultResponse submitPlanningResultResponse, UnmarshallerContext _ctx) {
 		
-		submitPlanningResultResponse.setRequestId(context.stringValue("SubmitPlanningResultResponse.RequestId"));
-		submitPlanningResultResponse.setCode(context.stringValue("SubmitPlanningResultResponse.Code"));
-		submitPlanningResultResponse.setMessage(context.stringValue("SubmitPlanningResultResponse.Message"));
-		submitPlanningResultResponse.setSuccess(context.booleanValue("SubmitPlanningResultResponse.Success"));
+		submitPlanningResultResponse.setRequestId(_ctx.stringValue("SubmitPlanningResultResponse.RequestId"));
+		submitPlanningResultResponse.setCode(_ctx.stringValue("SubmitPlanningResultResponse.Code"));
+		submitPlanningResultResponse.setMessage(_ctx.stringValue("SubmitPlanningResultResponse.Message"));
+		submitPlanningResultResponse.setSuccess(_ctx.booleanValue("SubmitPlanningResultResponse.Success"));
 	 
 	 	return submitPlanningResultResponse;
 	}
