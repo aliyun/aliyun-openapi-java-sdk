@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceListByDeviceGroupResponseUnmarshaller {
 
-	public static QueryDeviceListByDeviceGroupResponse unmarshall(QueryDeviceListByDeviceGroupResponse queryDeviceListByDeviceGroupResponse, UnmarshallerContext context) {
+	public static QueryDeviceListByDeviceGroupResponse unmarshall(QueryDeviceListByDeviceGroupResponse queryDeviceListByDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceListByDeviceGroupResponse.setRequestId(context.stringValue("QueryDeviceListByDeviceGroupResponse.RequestId"));
-		queryDeviceListByDeviceGroupResponse.setSuccess(context.booleanValue("QueryDeviceListByDeviceGroupResponse.Success"));
-		queryDeviceListByDeviceGroupResponse.setCode(context.stringValue("QueryDeviceListByDeviceGroupResponse.Code"));
-		queryDeviceListByDeviceGroupResponse.setErrorMessage(context.stringValue("QueryDeviceListByDeviceGroupResponse.ErrorMessage"));
-		queryDeviceListByDeviceGroupResponse.setPage(context.integerValue("QueryDeviceListByDeviceGroupResponse.Page"));
-		queryDeviceListByDeviceGroupResponse.setPageSize(context.integerValue("QueryDeviceListByDeviceGroupResponse.PageSize"));
-		queryDeviceListByDeviceGroupResponse.setPageCount(context.integerValue("QueryDeviceListByDeviceGroupResponse.PageCount"));
-		queryDeviceListByDeviceGroupResponse.setTotal(context.integerValue("QueryDeviceListByDeviceGroupResponse.Total"));
+		queryDeviceListByDeviceGroupResponse.setRequestId(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.RequestId"));
+		queryDeviceListByDeviceGroupResponse.setSuccess(_ctx.booleanValue("QueryDeviceListByDeviceGroupResponse.Success"));
+		queryDeviceListByDeviceGroupResponse.setCode(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Code"));
+		queryDeviceListByDeviceGroupResponse.setErrorMessage(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.ErrorMessage"));
+		queryDeviceListByDeviceGroupResponse.setPage(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.Page"));
+		queryDeviceListByDeviceGroupResponse.setPageSize(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.PageSize"));
+		queryDeviceListByDeviceGroupResponse.setPageCount(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.PageCount"));
+		queryDeviceListByDeviceGroupResponse.setTotal(_ctx.integerValue("QueryDeviceListByDeviceGroupResponse.Total"));
 
 		List<SimpleDeviceInfo> data = new ArrayList<SimpleDeviceInfo>();
-		for (int i = 0; i < context.lengthValue("QueryDeviceListByDeviceGroupResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDeviceListByDeviceGroupResponse.Data.Length"); i++) {
 			SimpleDeviceInfo simpleDeviceInfo = new SimpleDeviceInfo();
-			simpleDeviceInfo.setProductName(context.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].ProductName"));
-			simpleDeviceInfo.setProductKey(context.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].ProductKey"));
-			simpleDeviceInfo.setDeviceName(context.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].DeviceName"));
-			simpleDeviceInfo.setIotId(context.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].IotId"));
+			simpleDeviceInfo.setProductName(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].ProductName"));
+			simpleDeviceInfo.setProductKey(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].ProductKey"));
+			simpleDeviceInfo.setDeviceName(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].DeviceName"));
+			simpleDeviceInfo.setIotId(_ctx.stringValue("QueryDeviceListByDeviceGroupResponse.Data["+ i +"].IotId"));
 
 			data.add(simpleDeviceInfo);
 		}

@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListRuleActionsResponseUnmarshaller {
 
-	public static ListRuleActionsResponse unmarshall(ListRuleActionsResponse listRuleActionsResponse, UnmarshallerContext context) {
+	public static ListRuleActionsResponse unmarshall(ListRuleActionsResponse listRuleActionsResponse, UnmarshallerContext _ctx) {
 		
-		listRuleActionsResponse.setRequestId(context.stringValue("ListRuleActionsResponse.RequestId"));
-		listRuleActionsResponse.setSuccess(context.booleanValue("ListRuleActionsResponse.Success"));
-		listRuleActionsResponse.setCode(context.stringValue("ListRuleActionsResponse.Code"));
-		listRuleActionsResponse.setErrorMessage(context.stringValue("ListRuleActionsResponse.ErrorMessage"));
+		listRuleActionsResponse.setRequestId(_ctx.stringValue("ListRuleActionsResponse.RequestId"));
+		listRuleActionsResponse.setSuccess(_ctx.booleanValue("ListRuleActionsResponse.Success"));
+		listRuleActionsResponse.setCode(_ctx.stringValue("ListRuleActionsResponse.Code"));
+		listRuleActionsResponse.setErrorMessage(_ctx.stringValue("ListRuleActionsResponse.ErrorMessage"));
 
 		List<RuleActionInfo> ruleActionList = new ArrayList<RuleActionInfo>();
-		for (int i = 0; i < context.lengthValue("ListRuleActionsResponse.RuleActionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListRuleActionsResponse.RuleActionList.Length"); i++) {
 			RuleActionInfo ruleActionInfo = new RuleActionInfo();
-			ruleActionInfo.setId(context.longValue("ListRuleActionsResponse.RuleActionList["+ i +"].Id"));
-			ruleActionInfo.setRuleId(context.longValue("ListRuleActionsResponse.RuleActionList["+ i +"].RuleId"));
-			ruleActionInfo.setType(context.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Type"));
-			ruleActionInfo.setConfiguration(context.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Configuration"));
-			ruleActionInfo.setErrorActionFlag(context.booleanValue("ListRuleActionsResponse.RuleActionList["+ i +"].ErrorActionFlag"));
+			ruleActionInfo.setId(_ctx.longValue("ListRuleActionsResponse.RuleActionList["+ i +"].Id"));
+			ruleActionInfo.setRuleId(_ctx.longValue("ListRuleActionsResponse.RuleActionList["+ i +"].RuleId"));
+			ruleActionInfo.setType(_ctx.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Type"));
+			ruleActionInfo.setConfiguration(_ctx.stringValue("ListRuleActionsResponse.RuleActionList["+ i +"].Configuration"));
+			ruleActionInfo.setErrorActionFlag(_ctx.booleanValue("ListRuleActionsResponse.RuleActionList["+ i +"].ErrorActionFlag"));
 
 			ruleActionList.add(ruleActionInfo);
 		}

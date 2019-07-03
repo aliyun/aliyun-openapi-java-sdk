@@ -23,16 +23,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTopicRouteTableResponseUnmarshaller {
 
-	public static QueryTopicRouteTableResponse unmarshall(QueryTopicRouteTableResponse queryTopicRouteTableResponse, UnmarshallerContext context) {
+	public static QueryTopicRouteTableResponse unmarshall(QueryTopicRouteTableResponse queryTopicRouteTableResponse, UnmarshallerContext _ctx) {
 		
-		queryTopicRouteTableResponse.setRequestId(context.stringValue("QueryTopicRouteTableResponse.RequestId"));
-		queryTopicRouteTableResponse.setSuccess(context.booleanValue("QueryTopicRouteTableResponse.Success"));
-		queryTopicRouteTableResponse.setCode(context.stringValue("QueryTopicRouteTableResponse.Code"));
-		queryTopicRouteTableResponse.setErrorMessage(context.stringValue("QueryTopicRouteTableResponse.ErrorMessage"));
+		queryTopicRouteTableResponse.setRequestId(_ctx.stringValue("QueryTopicRouteTableResponse.RequestId"));
+		queryTopicRouteTableResponse.setSuccess(_ctx.booleanValue("QueryTopicRouteTableResponse.Success"));
+		queryTopicRouteTableResponse.setCode(_ctx.stringValue("QueryTopicRouteTableResponse.Code"));
+		queryTopicRouteTableResponse.setErrorMessage(_ctx.stringValue("QueryTopicRouteTableResponse.ErrorMessage"));
 
 		List<String> dstTopics = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryTopicRouteTableResponse.DstTopics.Length"); i++) {
-			dstTopics.add(context.stringValue("QueryTopicRouteTableResponse.DstTopics["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryTopicRouteTableResponse.DstTopics.Length"); i++) {
+			dstTopics.add(_ctx.stringValue("QueryTopicRouteTableResponse.DstTopics["+ i +"]"));
 		}
 		queryTopicRouteTableResponse.setDstTopics(dstTopics);
 	 

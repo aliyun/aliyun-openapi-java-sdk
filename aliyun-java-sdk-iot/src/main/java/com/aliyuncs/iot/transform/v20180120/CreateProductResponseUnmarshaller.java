@@ -21,23 +21,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateProductResponseUnmarshaller {
 
-	public static CreateProductResponse unmarshall(CreateProductResponse createProductResponse, UnmarshallerContext context) {
+	public static CreateProductResponse unmarshall(CreateProductResponse createProductResponse, UnmarshallerContext _ctx) {
 		
-		createProductResponse.setRequestId(context.stringValue("CreateProductResponse.RequestId"));
-		createProductResponse.setSuccess(context.booleanValue("CreateProductResponse.Success"));
-		createProductResponse.setCode(context.stringValue("CreateProductResponse.Code"));
-		createProductResponse.setErrorMessage(context.stringValue("CreateProductResponse.ErrorMessage"));
-		createProductResponse.setProductKey(context.stringValue("CreateProductResponse.ProductKey"));
+		createProductResponse.setRequestId(_ctx.stringValue("CreateProductResponse.RequestId"));
+		createProductResponse.setSuccess(_ctx.booleanValue("CreateProductResponse.Success"));
+		createProductResponse.setCode(_ctx.stringValue("CreateProductResponse.Code"));
+		createProductResponse.setErrorMessage(_ctx.stringValue("CreateProductResponse.ErrorMessage"));
+		createProductResponse.setProductKey(_ctx.stringValue("CreateProductResponse.ProductKey"));
 
 		Data data = new Data();
-		data.setDataFormat(context.integerValue("CreateProductResponse.Data.DataFormat"));
-		data.setDescription(context.stringValue("CreateProductResponse.Data.Description"));
-		data.setNodeType(context.integerValue("CreateProductResponse.Data.NodeType"));
-		data.setProductKey(context.stringValue("CreateProductResponse.Data.ProductKey"));
-		data.setProductName(context.stringValue("CreateProductResponse.Data.ProductName"));
-		data.setAliyunCommodityCode(context.stringValue("CreateProductResponse.Data.AliyunCommodityCode"));
-		data.setId2(context.booleanValue("CreateProductResponse.Data.Id2"));
-		data.setProtocolType(context.stringValue("CreateProductResponse.Data.ProtocolType"));
+		data.setDataFormat(_ctx.integerValue("CreateProductResponse.Data.DataFormat"));
+		data.setDescription(_ctx.stringValue("CreateProductResponse.Data.Description"));
+		data.setNodeType(_ctx.integerValue("CreateProductResponse.Data.NodeType"));
+		data.setProductKey(_ctx.stringValue("CreateProductResponse.Data.ProductKey"));
+		data.setProductName(_ctx.stringValue("CreateProductResponse.Data.ProductName"));
+		data.setAliyunCommodityCode(_ctx.stringValue("CreateProductResponse.Data.AliyunCommodityCode"));
+		data.setId2(_ctx.booleanValue("CreateProductResponse.Data.Id2"));
+		data.setProtocolType(_ctx.stringValue("CreateProductResponse.Data.ProtocolType"));
 		createProductResponse.setData(data);
 	 
 	 	return createProductResponse;

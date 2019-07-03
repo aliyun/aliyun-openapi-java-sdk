@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDataAPIServiceResponseUnmarshaller {
 
-	public static CreateDataAPIServiceResponse unmarshall(CreateDataAPIServiceResponse createDataAPIServiceResponse, UnmarshallerContext context) {
+	public static CreateDataAPIServiceResponse unmarshall(CreateDataAPIServiceResponse createDataAPIServiceResponse, UnmarshallerContext _ctx) {
 		
-		createDataAPIServiceResponse.setRequestId(context.stringValue("CreateDataAPIServiceResponse.RequestId"));
-		createDataAPIServiceResponse.setSuccess(context.booleanValue("CreateDataAPIServiceResponse.Success"));
-		createDataAPIServiceResponse.setErrorMessage(context.stringValue("CreateDataAPIServiceResponse.ErrorMessage"));
-		createDataAPIServiceResponse.setCode(context.stringValue("CreateDataAPIServiceResponse.Code"));
+		createDataAPIServiceResponse.setRequestId(_ctx.stringValue("CreateDataAPIServiceResponse.RequestId"));
+		createDataAPIServiceResponse.setSuccess(_ctx.booleanValue("CreateDataAPIServiceResponse.Success"));
+		createDataAPIServiceResponse.setErrorMessage(_ctx.stringValue("CreateDataAPIServiceResponse.ErrorMessage"));
+		createDataAPIServiceResponse.setCode(_ctx.stringValue("CreateDataAPIServiceResponse.Code"));
 
 		Data data = new Data();
-		data.setApiSrn(context.stringValue("CreateDataAPIServiceResponse.Data.ApiSrn"));
-		data.setCreateTime(context.longValue("CreateDataAPIServiceResponse.Data.CreateTime"));
-		data.setLastUpdateTime(context.longValue("CreateDataAPIServiceResponse.Data.LastUpdateTime"));
+		data.setApiSrn(_ctx.stringValue("CreateDataAPIServiceResponse.Data.ApiSrn"));
+		data.setCreateTime(_ctx.longValue("CreateDataAPIServiceResponse.Data.CreateTime"));
+		data.setLastUpdateTime(_ctx.longValue("CreateDataAPIServiceResponse.Data.LastUpdateTime"));
 		createDataAPIServiceResponse.setData(data);
 	 
 	 	return createDataAPIServiceResponse;

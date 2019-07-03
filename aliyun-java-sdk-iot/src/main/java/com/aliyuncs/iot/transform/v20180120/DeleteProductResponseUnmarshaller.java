@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteProductResponseUnmarshaller {
 
-	public static DeleteProductResponse unmarshall(DeleteProductResponse deleteProductResponse, UnmarshallerContext context) {
+	public static DeleteProductResponse unmarshall(DeleteProductResponse deleteProductResponse, UnmarshallerContext _ctx) {
 		
-		deleteProductResponse.setRequestId(context.stringValue("DeleteProductResponse.RequestId"));
-		deleteProductResponse.setSuccess(context.booleanValue("DeleteProductResponse.Success"));
-		deleteProductResponse.setCode(context.stringValue("DeleteProductResponse.Code"));
-		deleteProductResponse.setErrorMessage(context.stringValue("DeleteProductResponse.ErrorMessage"));
+		deleteProductResponse.setRequestId(_ctx.stringValue("DeleteProductResponse.RequestId"));
+		deleteProductResponse.setSuccess(_ctx.booleanValue("DeleteProductResponse.Success"));
+		deleteProductResponse.setCode(_ctx.stringValue("DeleteProductResponse.Code"));
+		deleteProductResponse.setErrorMessage(_ctx.stringValue("DeleteProductResponse.ErrorMessage"));
 	 
 	 	return deleteProductResponse;
 	}

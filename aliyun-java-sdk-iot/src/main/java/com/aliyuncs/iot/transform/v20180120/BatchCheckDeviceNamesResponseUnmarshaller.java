@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchCheckDeviceNamesResponseUnmarshaller {
 
-	public static BatchCheckDeviceNamesResponse unmarshall(BatchCheckDeviceNamesResponse batchCheckDeviceNamesResponse, UnmarshallerContext context) {
+	public static BatchCheckDeviceNamesResponse unmarshall(BatchCheckDeviceNamesResponse batchCheckDeviceNamesResponse, UnmarshallerContext _ctx) {
 		
-		batchCheckDeviceNamesResponse.setRequestId(context.stringValue("BatchCheckDeviceNamesResponse.RequestId"));
-		batchCheckDeviceNamesResponse.setSuccess(context.booleanValue("BatchCheckDeviceNamesResponse.Success"));
-		batchCheckDeviceNamesResponse.setCode(context.stringValue("BatchCheckDeviceNamesResponse.Code"));
-		batchCheckDeviceNamesResponse.setErrorMessage(context.stringValue("BatchCheckDeviceNamesResponse.ErrorMessage"));
+		batchCheckDeviceNamesResponse.setRequestId(_ctx.stringValue("BatchCheckDeviceNamesResponse.RequestId"));
+		batchCheckDeviceNamesResponse.setSuccess(_ctx.booleanValue("BatchCheckDeviceNamesResponse.Success"));
+		batchCheckDeviceNamesResponse.setCode(_ctx.stringValue("BatchCheckDeviceNamesResponse.Code"));
+		batchCheckDeviceNamesResponse.setErrorMessage(_ctx.stringValue("BatchCheckDeviceNamesResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setApplyId(context.longValue("BatchCheckDeviceNamesResponse.Data.ApplyId"));
+		data.setApplyId(_ctx.longValue("BatchCheckDeviceNamesResponse.Data.ApplyId"));
 
 		List<String> invalidDeviceNameList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("BatchCheckDeviceNamesResponse.Data.InvalidDeviceNameList.Length"); i++) {
-			invalidDeviceNameList.add(context.stringValue("BatchCheckDeviceNamesResponse.Data.InvalidDeviceNameList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("BatchCheckDeviceNamesResponse.Data.InvalidDeviceNameList.Length"); i++) {
+			invalidDeviceNameList.add(_ctx.stringValue("BatchCheckDeviceNamesResponse.Data.InvalidDeviceNameList["+ i +"]"));
 		}
 		data.setInvalidDeviceNameList(invalidDeviceNameList);
 		batchCheckDeviceNamesResponse.setData(data);

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DisableThingResponseUnmarshaller {
 
-	public static DisableThingResponse unmarshall(DisableThingResponse disableThingResponse, UnmarshallerContext context) {
+	public static DisableThingResponse unmarshall(DisableThingResponse disableThingResponse, UnmarshallerContext _ctx) {
 		
-		disableThingResponse.setRequestId(context.stringValue("DisableThingResponse.RequestId"));
-		disableThingResponse.setSuccess(context.booleanValue("DisableThingResponse.Success"));
-		disableThingResponse.setCode(context.stringValue("DisableThingResponse.Code"));
-		disableThingResponse.setErrorMessage(context.stringValue("DisableThingResponse.ErrorMessage"));
+		disableThingResponse.setRequestId(_ctx.stringValue("DisableThingResponse.RequestId"));
+		disableThingResponse.setSuccess(_ctx.booleanValue("DisableThingResponse.Success"));
+		disableThingResponse.setCode(_ctx.stringValue("DisableThingResponse.Code"));
+		disableThingResponse.setErrorMessage(_ctx.stringValue("DisableThingResponse.ErrorMessage"));
 	 
 	 	return disableThingResponse;
 	}

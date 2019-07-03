@@ -27,50 +27,50 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetDataAPIServiceDetailResponseUnmarshaller {
 
-	public static GetDataAPIServiceDetailResponse unmarshall(GetDataAPIServiceDetailResponse getDataAPIServiceDetailResponse, UnmarshallerContext context) {
+	public static GetDataAPIServiceDetailResponse unmarshall(GetDataAPIServiceDetailResponse getDataAPIServiceDetailResponse, UnmarshallerContext _ctx) {
 		
-		getDataAPIServiceDetailResponse.setRequestId(context.stringValue("GetDataAPIServiceDetailResponse.RequestId"));
-		getDataAPIServiceDetailResponse.setSuccess(context.booleanValue("GetDataAPIServiceDetailResponse.Success"));
-		getDataAPIServiceDetailResponse.setErrorMessage(context.stringValue("GetDataAPIServiceDetailResponse.ErrorMessage"));
-		getDataAPIServiceDetailResponse.setCode(context.stringValue("GetDataAPIServiceDetailResponse.Code"));
+		getDataAPIServiceDetailResponse.setRequestId(_ctx.stringValue("GetDataAPIServiceDetailResponse.RequestId"));
+		getDataAPIServiceDetailResponse.setSuccess(_ctx.booleanValue("GetDataAPIServiceDetailResponse.Success"));
+		getDataAPIServiceDetailResponse.setErrorMessage(_ctx.stringValue("GetDataAPIServiceDetailResponse.ErrorMessage"));
+		getDataAPIServiceDetailResponse.setCode(_ctx.stringValue("GetDataAPIServiceDetailResponse.Code"));
 
 		Data data = new Data();
-		data.setApiSrn(context.stringValue("GetDataAPIServiceDetailResponse.Data.ApiSrn"));
-		data.setStatus(context.integerValue("GetDataAPIServiceDetailResponse.Data.Status"));
-		data.setDisplayName(context.stringValue("GetDataAPIServiceDetailResponse.Data.DisplayName"));
-		data.setApiPath(context.stringValue("GetDataAPIServiceDetailResponse.Data.ApiPath"));
-		data.setCreateTime(context.longValue("GetDataAPIServiceDetailResponse.Data.CreateTime"));
-		data.setLastUpdateTime(context.longValue("GetDataAPIServiceDetailResponse.Data.LastUpdateTime"));
-		data.setDateFormat(context.stringValue("GetDataAPIServiceDetailResponse.Data.DateFormat"));
-		data.setRequestMethod(context.stringValue("GetDataAPIServiceDetailResponse.Data.RequestMethod"));
-		data.setRequestProtocol(context.stringValue("GetDataAPIServiceDetailResponse.Data.RequestProtocol"));
-		data.setDescription(context.stringValue("GetDataAPIServiceDetailResponse.Data.Description"));
+		data.setApiSrn(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.ApiSrn"));
+		data.setStatus(_ctx.integerValue("GetDataAPIServiceDetailResponse.Data.Status"));
+		data.setDisplayName(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.DisplayName"));
+		data.setApiPath(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.ApiPath"));
+		data.setCreateTime(_ctx.longValue("GetDataAPIServiceDetailResponse.Data.CreateTime"));
+		data.setLastUpdateTime(_ctx.longValue("GetDataAPIServiceDetailResponse.Data.LastUpdateTime"));
+		data.setDateFormat(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.DateFormat"));
+		data.setRequestMethod(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.RequestMethod"));
+		data.setRequestProtocol(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.RequestProtocol"));
+		data.setDescription(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.Description"));
 
 		SqlTemplateDTO sqlTemplateDTO = new SqlTemplateDTO();
-		sqlTemplateDTO.setOriginSql(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.OriginSql"));
-		sqlTemplateDTO.setTemplateSql(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.TemplateSql"));
+		sqlTemplateDTO.setOriginSql(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.OriginSql"));
+		sqlTemplateDTO.setTemplateSql(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.TemplateSql"));
 
 		List<RequestParamsItem> requestParams = new ArrayList<RequestParamsItem>();
-		for (int i = 0; i < context.lengthValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams.Length"); i++) {
 			RequestParamsItem requestParamsItem = new RequestParamsItem();
-			requestParamsItem.setName(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Name"));
-			requestParamsItem.setType(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Type"));
-			requestParamsItem.setDesc(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Desc"));
-			requestParamsItem.setExample(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Example"));
-			requestParamsItem.setRequired(context.booleanValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Required"));
+			requestParamsItem.setName(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Name"));
+			requestParamsItem.setType(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Type"));
+			requestParamsItem.setDesc(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Desc"));
+			requestParamsItem.setExample(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Example"));
+			requestParamsItem.setRequired(_ctx.booleanValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.RequestParams["+ i +"].Required"));
 
 			requestParams.add(requestParamsItem);
 		}
 		sqlTemplateDTO.setRequestParams(requestParams);
 
 		List<ResponseParamsItem> responseParams = new ArrayList<ResponseParamsItem>();
-		for (int i = 0; i < context.lengthValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams.Length"); i++) {
 			ResponseParamsItem responseParamsItem = new ResponseParamsItem();
-			responseParamsItem.setName(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Name"));
-			responseParamsItem.setType(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Type"));
-			responseParamsItem.setDesc(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Desc"));
-			responseParamsItem.setExample(context.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Example"));
-			responseParamsItem.setRequired(context.booleanValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Required"));
+			responseParamsItem.setName(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Name"));
+			responseParamsItem.setType(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Type"));
+			responseParamsItem.setDesc(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Desc"));
+			responseParamsItem.setExample(_ctx.stringValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Example"));
+			responseParamsItem.setRequired(_ctx.booleanValue("GetDataAPIServiceDetailResponse.Data.SqlTemplateDTO.ResponseParams["+ i +"].Required"));
 
 			responseParams.add(responseParamsItem);
 		}

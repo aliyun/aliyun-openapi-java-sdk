@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateLoRaNodesTaskResponseUnmarshaller {
 
-	public static CreateLoRaNodesTaskResponse unmarshall(CreateLoRaNodesTaskResponse createLoRaNodesTaskResponse, UnmarshallerContext context) {
+	public static CreateLoRaNodesTaskResponse unmarshall(CreateLoRaNodesTaskResponse createLoRaNodesTaskResponse, UnmarshallerContext _ctx) {
 		
-		createLoRaNodesTaskResponse.setRequestId(context.stringValue("CreateLoRaNodesTaskResponse.RequestId"));
-		createLoRaNodesTaskResponse.setSuccess(context.booleanValue("CreateLoRaNodesTaskResponse.Success"));
-		createLoRaNodesTaskResponse.setCode(context.stringValue("CreateLoRaNodesTaskResponse.Code"));
-		createLoRaNodesTaskResponse.setErrorMessage(context.stringValue("CreateLoRaNodesTaskResponse.ErrorMessage"));
-		createLoRaNodesTaskResponse.setTaskId(context.stringValue("CreateLoRaNodesTaskResponse.TaskId"));
+		createLoRaNodesTaskResponse.setRequestId(_ctx.stringValue("CreateLoRaNodesTaskResponse.RequestId"));
+		createLoRaNodesTaskResponse.setSuccess(_ctx.booleanValue("CreateLoRaNodesTaskResponse.Success"));
+		createLoRaNodesTaskResponse.setCode(_ctx.stringValue("CreateLoRaNodesTaskResponse.Code"));
+		createLoRaNodesTaskResponse.setErrorMessage(_ctx.stringValue("CreateLoRaNodesTaskResponse.ErrorMessage"));
+		createLoRaNodesTaskResponse.setTaskId(_ctx.stringValue("CreateLoRaNodesTaskResponse.TaskId"));
 	 
 	 	return createLoRaNodesTaskResponse;
 	}

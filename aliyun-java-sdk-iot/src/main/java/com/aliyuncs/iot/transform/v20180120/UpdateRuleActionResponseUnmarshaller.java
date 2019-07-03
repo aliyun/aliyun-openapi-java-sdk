@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateRuleActionResponseUnmarshaller {
 
-	public static UpdateRuleActionResponse unmarshall(UpdateRuleActionResponse updateRuleActionResponse, UnmarshallerContext context) {
+	public static UpdateRuleActionResponse unmarshall(UpdateRuleActionResponse updateRuleActionResponse, UnmarshallerContext _ctx) {
 		
-		updateRuleActionResponse.setRequestId(context.stringValue("UpdateRuleActionResponse.RequestId"));
-		updateRuleActionResponse.setCode(context.stringValue("UpdateRuleActionResponse.Code"));
-		updateRuleActionResponse.setSuccess(context.booleanValue("UpdateRuleActionResponse.Success"));
-		updateRuleActionResponse.setErrorMessage(context.stringValue("UpdateRuleActionResponse.ErrorMessage"));
+		updateRuleActionResponse.setRequestId(_ctx.stringValue("UpdateRuleActionResponse.RequestId"));
+		updateRuleActionResponse.setCode(_ctx.stringValue("UpdateRuleActionResponse.Code"));
+		updateRuleActionResponse.setSuccess(_ctx.booleanValue("UpdateRuleActionResponse.Success"));
+		updateRuleActionResponse.setErrorMessage(_ctx.stringValue("UpdateRuleActionResponse.ErrorMessage"));
 	 
 	 	return updateRuleActionResponse;
 	}

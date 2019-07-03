@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchRegisterDeviceWithApplyIdResponseUnmarshaller {
 
-	public static BatchRegisterDeviceWithApplyIdResponse unmarshall(BatchRegisterDeviceWithApplyIdResponse batchRegisterDeviceWithApplyIdResponse, UnmarshallerContext context) {
+	public static BatchRegisterDeviceWithApplyIdResponse unmarshall(BatchRegisterDeviceWithApplyIdResponse batchRegisterDeviceWithApplyIdResponse, UnmarshallerContext _ctx) {
 		
-		batchRegisterDeviceWithApplyIdResponse.setRequestId(context.stringValue("BatchRegisterDeviceWithApplyIdResponse.RequestId"));
-		batchRegisterDeviceWithApplyIdResponse.setSuccess(context.booleanValue("BatchRegisterDeviceWithApplyIdResponse.Success"));
-		batchRegisterDeviceWithApplyIdResponse.setCode(context.stringValue("BatchRegisterDeviceWithApplyIdResponse.Code"));
-		batchRegisterDeviceWithApplyIdResponse.setErrorMessage(context.stringValue("BatchRegisterDeviceWithApplyIdResponse.ErrorMessage"));
+		batchRegisterDeviceWithApplyIdResponse.setRequestId(_ctx.stringValue("BatchRegisterDeviceWithApplyIdResponse.RequestId"));
+		batchRegisterDeviceWithApplyIdResponse.setSuccess(_ctx.booleanValue("BatchRegisterDeviceWithApplyIdResponse.Success"));
+		batchRegisterDeviceWithApplyIdResponse.setCode(_ctx.stringValue("BatchRegisterDeviceWithApplyIdResponse.Code"));
+		batchRegisterDeviceWithApplyIdResponse.setErrorMessage(_ctx.stringValue("BatchRegisterDeviceWithApplyIdResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setApplyId(context.longValue("BatchRegisterDeviceWithApplyIdResponse.Data.ApplyId"));
+		data.setApplyId(_ctx.longValue("BatchRegisterDeviceWithApplyIdResponse.Data.ApplyId"));
 		batchRegisterDeviceWithApplyIdResponse.setData(data);
 	 
 	 	return batchRegisterDeviceWithApplyIdResponse;

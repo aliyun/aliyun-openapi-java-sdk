@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateDeviceGroupResponseUnmarshaller {
 
-	public static UpdateDeviceGroupResponse unmarshall(UpdateDeviceGroupResponse updateDeviceGroupResponse, UnmarshallerContext context) {
+	public static UpdateDeviceGroupResponse unmarshall(UpdateDeviceGroupResponse updateDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
-		updateDeviceGroupResponse.setRequestId(context.stringValue("UpdateDeviceGroupResponse.RequestId"));
-		updateDeviceGroupResponse.setSuccess(context.booleanValue("UpdateDeviceGroupResponse.Success"));
-		updateDeviceGroupResponse.setCode(context.stringValue("UpdateDeviceGroupResponse.Code"));
-		updateDeviceGroupResponse.setErrorMessage(context.stringValue("UpdateDeviceGroupResponse.ErrorMessage"));
+		updateDeviceGroupResponse.setRequestId(_ctx.stringValue("UpdateDeviceGroupResponse.RequestId"));
+		updateDeviceGroupResponse.setSuccess(_ctx.booleanValue("UpdateDeviceGroupResponse.Success"));
+		updateDeviceGroupResponse.setCode(_ctx.stringValue("UpdateDeviceGroupResponse.Code"));
+		updateDeviceGroupResponse.setErrorMessage(_ctx.stringValue("UpdateDeviceGroupResponse.ErrorMessage"));
 	 
 	 	return updateDeviceGroupResponse;
 	}

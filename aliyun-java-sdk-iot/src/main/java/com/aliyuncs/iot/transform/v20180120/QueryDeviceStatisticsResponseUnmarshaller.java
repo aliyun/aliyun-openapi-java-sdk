@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceStatisticsResponseUnmarshaller {
 
-	public static QueryDeviceStatisticsResponse unmarshall(QueryDeviceStatisticsResponse queryDeviceStatisticsResponse, UnmarshallerContext context) {
+	public static QueryDeviceStatisticsResponse unmarshall(QueryDeviceStatisticsResponse queryDeviceStatisticsResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceStatisticsResponse.setRequestId(context.stringValue("QueryDeviceStatisticsResponse.RequestId"));
-		queryDeviceStatisticsResponse.setSuccess(context.booleanValue("QueryDeviceStatisticsResponse.Success"));
-		queryDeviceStatisticsResponse.setCode(context.stringValue("QueryDeviceStatisticsResponse.Code"));
-		queryDeviceStatisticsResponse.setErrorMessage(context.stringValue("QueryDeviceStatisticsResponse.ErrorMessage"));
+		queryDeviceStatisticsResponse.setRequestId(_ctx.stringValue("QueryDeviceStatisticsResponse.RequestId"));
+		queryDeviceStatisticsResponse.setSuccess(_ctx.booleanValue("QueryDeviceStatisticsResponse.Success"));
+		queryDeviceStatisticsResponse.setCode(_ctx.stringValue("QueryDeviceStatisticsResponse.Code"));
+		queryDeviceStatisticsResponse.setErrorMessage(_ctx.stringValue("QueryDeviceStatisticsResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setDeviceCount(context.longValue("QueryDeviceStatisticsResponse.Data.deviceCount"));
-		data.setOnlineCount(context.longValue("QueryDeviceStatisticsResponse.Data.onlineCount"));
-		data.setActiveCount(context.longValue("QueryDeviceStatisticsResponse.Data.activeCount"));
+		data.setDeviceCount(_ctx.longValue("QueryDeviceStatisticsResponse.Data.deviceCount"));
+		data.setOnlineCount(_ctx.longValue("QueryDeviceStatisticsResponse.Data.onlineCount"));
+		data.setActiveCount(_ctx.longValue("QueryDeviceStatisticsResponse.Data.activeCount"));
 		queryDeviceStatisticsResponse.setData(data);
 	 
 	 	return queryDeviceStatisticsResponse;

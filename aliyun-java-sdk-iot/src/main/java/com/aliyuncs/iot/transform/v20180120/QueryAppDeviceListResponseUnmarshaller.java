@@ -24,32 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAppDeviceListResponseUnmarshaller {
 
-	public static QueryAppDeviceListResponse unmarshall(QueryAppDeviceListResponse queryAppDeviceListResponse, UnmarshallerContext context) {
+	public static QueryAppDeviceListResponse unmarshall(QueryAppDeviceListResponse queryAppDeviceListResponse, UnmarshallerContext _ctx) {
 		
-		queryAppDeviceListResponse.setRequestId(context.stringValue("QueryAppDeviceListResponse.RequestId"));
-		queryAppDeviceListResponse.setSuccess(context.booleanValue("QueryAppDeviceListResponse.Success"));
-		queryAppDeviceListResponse.setErrorMessage(context.stringValue("QueryAppDeviceListResponse.ErrorMessage"));
-		queryAppDeviceListResponse.setCode(context.stringValue("QueryAppDeviceListResponse.Code"));
-		queryAppDeviceListResponse.setPage(context.integerValue("QueryAppDeviceListResponse.Page"));
-		queryAppDeviceListResponse.setPageSize(context.integerValue("QueryAppDeviceListResponse.PageSize"));
-		queryAppDeviceListResponse.setPageCount(context.integerValue("QueryAppDeviceListResponse.PageCount"));
-		queryAppDeviceListResponse.setTotal(context.integerValue("QueryAppDeviceListResponse.Total"));
+		queryAppDeviceListResponse.setRequestId(_ctx.stringValue("QueryAppDeviceListResponse.RequestId"));
+		queryAppDeviceListResponse.setSuccess(_ctx.booleanValue("QueryAppDeviceListResponse.Success"));
+		queryAppDeviceListResponse.setErrorMessage(_ctx.stringValue("QueryAppDeviceListResponse.ErrorMessage"));
+		queryAppDeviceListResponse.setCode(_ctx.stringValue("QueryAppDeviceListResponse.Code"));
+		queryAppDeviceListResponse.setPage(_ctx.integerValue("QueryAppDeviceListResponse.Page"));
+		queryAppDeviceListResponse.setPageSize(_ctx.integerValue("QueryAppDeviceListResponse.PageSize"));
+		queryAppDeviceListResponse.setPageCount(_ctx.integerValue("QueryAppDeviceListResponse.PageCount"));
+		queryAppDeviceListResponse.setTotal(_ctx.integerValue("QueryAppDeviceListResponse.Total"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < context.lengthValue("QueryAppDeviceListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAppDeviceListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setProductName(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].ProductName"));
-			dataItem.setProductKey(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].ProductKey"));
-			dataItem.setDeviceName(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].DeviceName"));
-			dataItem.setNodeType(context.integerValue("QueryAppDeviceListResponse.Data["+ i +"].NodeType"));
-			dataItem.setStatus(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].Status"));
-			dataItem.setActiveTime(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].ActiveTime"));
-			dataItem.setLastOnlineTime(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].LastOnlineTime"));
-			dataItem.setCreateTime(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].CreateTime"));
-			dataItem.setChildDeviceCount(context.longValue("QueryAppDeviceListResponse.Data["+ i +"].ChildDeviceCount"));
-			dataItem.setUtcActiveTime(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].UtcActiveTime"));
-			dataItem.setUtcLastOnlineTime(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].UtcLastOnlineTime"));
-			dataItem.setUtcCreateTime(context.stringValue("QueryAppDeviceListResponse.Data["+ i +"].UtcCreateTime"));
+			dataItem.setProductName(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].ProductName"));
+			dataItem.setProductKey(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].ProductKey"));
+			dataItem.setDeviceName(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].DeviceName"));
+			dataItem.setNodeType(_ctx.integerValue("QueryAppDeviceListResponse.Data["+ i +"].NodeType"));
+			dataItem.setStatus(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].Status"));
+			dataItem.setActiveTime(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].ActiveTime"));
+			dataItem.setLastOnlineTime(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].LastOnlineTime"));
+			dataItem.setCreateTime(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].CreateTime"));
+			dataItem.setChildDeviceCount(_ctx.longValue("QueryAppDeviceListResponse.Data["+ i +"].ChildDeviceCount"));
+			dataItem.setUtcActiveTime(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].UtcActiveTime"));
+			dataItem.setUtcLastOnlineTime(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].UtcLastOnlineTime"));
+			dataItem.setUtcCreateTime(_ctx.stringValue("QueryAppDeviceListResponse.Data["+ i +"].UtcCreateTime"));
 
 			data.add(dataItem);
 		}

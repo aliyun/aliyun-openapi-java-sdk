@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceFileResponseUnmarshaller {
 
-	public static QueryDeviceFileResponse unmarshall(QueryDeviceFileResponse queryDeviceFileResponse, UnmarshallerContext context) {
+	public static QueryDeviceFileResponse unmarshall(QueryDeviceFileResponse queryDeviceFileResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceFileResponse.setRequestId(context.stringValue("QueryDeviceFileResponse.RequestId"));
-		queryDeviceFileResponse.setSuccess(context.booleanValue("QueryDeviceFileResponse.Success"));
-		queryDeviceFileResponse.setCode(context.stringValue("QueryDeviceFileResponse.Code"));
-		queryDeviceFileResponse.setErrorMessage(context.stringValue("QueryDeviceFileResponse.ErrorMessage"));
+		queryDeviceFileResponse.setRequestId(_ctx.stringValue("QueryDeviceFileResponse.RequestId"));
+		queryDeviceFileResponse.setSuccess(_ctx.booleanValue("QueryDeviceFileResponse.Success"));
+		queryDeviceFileResponse.setCode(_ctx.stringValue("QueryDeviceFileResponse.Code"));
+		queryDeviceFileResponse.setErrorMessage(_ctx.stringValue("QueryDeviceFileResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setFileId(context.stringValue("QueryDeviceFileResponse.Data.FileId"));
-		data.setName(context.stringValue("QueryDeviceFileResponse.Data.Name"));
-		data.setSize(context.stringValue("QueryDeviceFileResponse.Data.Size"));
-		data.setUtcCreatedOn(context.stringValue("QueryDeviceFileResponse.Data.UtcCreatedOn"));
-		data.setDownloadUrl(context.stringValue("QueryDeviceFileResponse.Data.DownloadUrl"));
+		data.setFileId(_ctx.stringValue("QueryDeviceFileResponse.Data.FileId"));
+		data.setName(_ctx.stringValue("QueryDeviceFileResponse.Data.Name"));
+		data.setSize(_ctx.stringValue("QueryDeviceFileResponse.Data.Size"));
+		data.setUtcCreatedOn(_ctx.stringValue("QueryDeviceFileResponse.Data.UtcCreatedOn"));
+		data.setDownloadUrl(_ctx.stringValue("QueryDeviceFileResponse.Data.DownloadUrl"));
 		queryDeviceFileResponse.setData(data);
 	 
 	 	return queryDeviceFileResponse;

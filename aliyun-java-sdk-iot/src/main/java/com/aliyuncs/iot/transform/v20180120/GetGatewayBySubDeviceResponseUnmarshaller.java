@@ -21,30 +21,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetGatewayBySubDeviceResponseUnmarshaller {
 
-	public static GetGatewayBySubDeviceResponse unmarshall(GetGatewayBySubDeviceResponse getGatewayBySubDeviceResponse, UnmarshallerContext context) {
+	public static GetGatewayBySubDeviceResponse unmarshall(GetGatewayBySubDeviceResponse getGatewayBySubDeviceResponse, UnmarshallerContext _ctx) {
 		
-		getGatewayBySubDeviceResponse.setRequestId(context.stringValue("GetGatewayBySubDeviceResponse.RequestId"));
-		getGatewayBySubDeviceResponse.setSuccess(context.booleanValue("GetGatewayBySubDeviceResponse.Success"));
-		getGatewayBySubDeviceResponse.setCode(context.stringValue("GetGatewayBySubDeviceResponse.Code"));
-		getGatewayBySubDeviceResponse.setErrorMessage(context.stringValue("GetGatewayBySubDeviceResponse.ErrorMessage"));
+		getGatewayBySubDeviceResponse.setRequestId(_ctx.stringValue("GetGatewayBySubDeviceResponse.RequestId"));
+		getGatewayBySubDeviceResponse.setSuccess(_ctx.booleanValue("GetGatewayBySubDeviceResponse.Success"));
+		getGatewayBySubDeviceResponse.setCode(_ctx.stringValue("GetGatewayBySubDeviceResponse.Code"));
+		getGatewayBySubDeviceResponse.setErrorMessage(_ctx.stringValue("GetGatewayBySubDeviceResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setProductKey(context.stringValue("GetGatewayBySubDeviceResponse.Data.ProductKey"));
-		data.setProductName(context.stringValue("GetGatewayBySubDeviceResponse.Data.ProductName"));
-		data.setDeviceSecret(context.stringValue("GetGatewayBySubDeviceResponse.Data.DeviceSecret"));
-		data.setDeviceName(context.stringValue("GetGatewayBySubDeviceResponse.Data.DeviceName"));
-		data.setFirmwareVersion(context.stringValue("GetGatewayBySubDeviceResponse.Data.FirmwareVersion"));
-		data.setGmtCreate(context.stringValue("GetGatewayBySubDeviceResponse.Data.GmtCreate"));
-		data.setUtcCreate(context.stringValue("GetGatewayBySubDeviceResponse.Data.UtcCreate"));
-		data.setGmtActive(context.stringValue("GetGatewayBySubDeviceResponse.Data.GmtActive"));
-		data.setUtcActive(context.stringValue("GetGatewayBySubDeviceResponse.Data.UtcActive"));
-		data.setGmtOnline(context.stringValue("GetGatewayBySubDeviceResponse.Data.GmtOnline"));
-		data.setUtcOnline(context.stringValue("GetGatewayBySubDeviceResponse.Data.UtcOnline"));
-		data.setStatus(context.stringValue("GetGatewayBySubDeviceResponse.Data.Status"));
-		data.setIpAddress(context.stringValue("GetGatewayBySubDeviceResponse.Data.IpAddress"));
-		data.setNodeType(context.stringValue("GetGatewayBySubDeviceResponse.Data.NodeType"));
-		data.setRegion(context.stringValue("GetGatewayBySubDeviceResponse.Data.region"));
-		data.setIotId(context.stringValue("GetGatewayBySubDeviceResponse.Data.iotId"));
+		data.setProductKey(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.ProductKey"));
+		data.setProductName(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.ProductName"));
+		data.setDeviceSecret(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.DeviceSecret"));
+		data.setDeviceName(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.DeviceName"));
+		data.setFirmwareVersion(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.FirmwareVersion"));
+		data.setGmtCreate(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.GmtCreate"));
+		data.setUtcCreate(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.UtcCreate"));
+		data.setGmtActive(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.GmtActive"));
+		data.setUtcActive(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.UtcActive"));
+		data.setGmtOnline(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.GmtOnline"));
+		data.setUtcOnline(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.UtcOnline"));
+		data.setStatus(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.Status"));
+		data.setIpAddress(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.IpAddress"));
+		data.setNodeType(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.NodeType"));
+		data.setRegion(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.region"));
+		data.setIotId(_ctx.stringValue("GetGatewayBySubDeviceResponse.Data.iotId"));
 		getGatewayBySubDeviceResponse.setData(data);
 	 
 	 	return getGatewayBySubDeviceResponse;

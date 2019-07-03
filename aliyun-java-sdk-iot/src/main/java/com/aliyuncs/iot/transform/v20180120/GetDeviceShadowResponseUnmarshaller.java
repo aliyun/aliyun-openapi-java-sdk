@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetDeviceShadowResponseUnmarshaller {
 
-	public static GetDeviceShadowResponse unmarshall(GetDeviceShadowResponse getDeviceShadowResponse, UnmarshallerContext context) {
+	public static GetDeviceShadowResponse unmarshall(GetDeviceShadowResponse getDeviceShadowResponse, UnmarshallerContext _ctx) {
 		
-		getDeviceShadowResponse.setRequestId(context.stringValue("GetDeviceShadowResponse.RequestId"));
-		getDeviceShadowResponse.setSuccess(context.booleanValue("GetDeviceShadowResponse.Success"));
-		getDeviceShadowResponse.setCode(context.stringValue("GetDeviceShadowResponse.Code"));
-		getDeviceShadowResponse.setErrorMessage(context.stringValue("GetDeviceShadowResponse.ErrorMessage"));
-		getDeviceShadowResponse.setShadowMessage(context.stringValue("GetDeviceShadowResponse.ShadowMessage"));
+		getDeviceShadowResponse.setRequestId(_ctx.stringValue("GetDeviceShadowResponse.RequestId"));
+		getDeviceShadowResponse.setSuccess(_ctx.booleanValue("GetDeviceShadowResponse.Success"));
+		getDeviceShadowResponse.setCode(_ctx.stringValue("GetDeviceShadowResponse.Code"));
+		getDeviceShadowResponse.setErrorMessage(_ctx.stringValue("GetDeviceShadowResponse.ErrorMessage"));
+		getDeviceShadowResponse.setShadowMessage(_ctx.stringValue("GetDeviceShadowResponse.ShadowMessage"));
 	 
 	 	return getDeviceShadowResponse;
 	}

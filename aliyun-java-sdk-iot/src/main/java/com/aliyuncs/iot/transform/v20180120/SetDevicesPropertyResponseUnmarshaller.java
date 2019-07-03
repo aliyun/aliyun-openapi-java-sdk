@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetDevicesPropertyResponseUnmarshaller {
 
-	public static SetDevicesPropertyResponse unmarshall(SetDevicesPropertyResponse setDevicesPropertyResponse, UnmarshallerContext context) {
+	public static SetDevicesPropertyResponse unmarshall(SetDevicesPropertyResponse setDevicesPropertyResponse, UnmarshallerContext _ctx) {
 		
-		setDevicesPropertyResponse.setRequestId(context.stringValue("SetDevicesPropertyResponse.RequestId"));
-		setDevicesPropertyResponse.setSuccess(context.booleanValue("SetDevicesPropertyResponse.Success"));
-		setDevicesPropertyResponse.setErrorMessage(context.stringValue("SetDevicesPropertyResponse.ErrorMessage"));
-		setDevicesPropertyResponse.setCode(context.stringValue("SetDevicesPropertyResponse.Code"));
+		setDevicesPropertyResponse.setRequestId(_ctx.stringValue("SetDevicesPropertyResponse.RequestId"));
+		setDevicesPropertyResponse.setSuccess(_ctx.booleanValue("SetDevicesPropertyResponse.Success"));
+		setDevicesPropertyResponse.setErrorMessage(_ctx.stringValue("SetDevicesPropertyResponse.ErrorMessage"));
+		setDevicesPropertyResponse.setCode(_ctx.stringValue("SetDevicesPropertyResponse.Code"));
 	 
 	 	return setDevicesPropertyResponse;
 	}

@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDeviceGroupResponseUnmarshaller {
 
-	public static CreateDeviceGroupResponse unmarshall(CreateDeviceGroupResponse createDeviceGroupResponse, UnmarshallerContext context) {
+	public static CreateDeviceGroupResponse unmarshall(CreateDeviceGroupResponse createDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
-		createDeviceGroupResponse.setRequestId(context.stringValue("CreateDeviceGroupResponse.RequestId"));
-		createDeviceGroupResponse.setSuccess(context.booleanValue("CreateDeviceGroupResponse.Success"));
-		createDeviceGroupResponse.setCode(context.stringValue("CreateDeviceGroupResponse.Code"));
-		createDeviceGroupResponse.setErrorMessage(context.stringValue("CreateDeviceGroupResponse.ErrorMessage"));
+		createDeviceGroupResponse.setRequestId(_ctx.stringValue("CreateDeviceGroupResponse.RequestId"));
+		createDeviceGroupResponse.setSuccess(_ctx.booleanValue("CreateDeviceGroupResponse.Success"));
+		createDeviceGroupResponse.setCode(_ctx.stringValue("CreateDeviceGroupResponse.Code"));
+		createDeviceGroupResponse.setErrorMessage(_ctx.stringValue("CreateDeviceGroupResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setGroupId(context.stringValue("CreateDeviceGroupResponse.Data.GroupId"));
-		data.setUtcCreate(context.stringValue("CreateDeviceGroupResponse.Data.UtcCreate"));
-		data.setGroupName(context.stringValue("CreateDeviceGroupResponse.Data.GroupName"));
-		data.setGroupDesc(context.stringValue("CreateDeviceGroupResponse.Data.GroupDesc"));
+		data.setGroupId(_ctx.stringValue("CreateDeviceGroupResponse.Data.GroupId"));
+		data.setUtcCreate(_ctx.stringValue("CreateDeviceGroupResponse.Data.UtcCreate"));
+		data.setGroupName(_ctx.stringValue("CreateDeviceGroupResponse.Data.GroupName"));
+		data.setGroupDesc(_ctx.stringValue("CreateDeviceGroupResponse.Data.GroupDesc"));
 		createDeviceGroupResponse.setData(data);
 	 
 	 	return createDeviceGroupResponse;

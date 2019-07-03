@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RegisterDeviceResponseUnmarshaller {
 
-	public static RegisterDeviceResponse unmarshall(RegisterDeviceResponse registerDeviceResponse, UnmarshallerContext context) {
+	public static RegisterDeviceResponse unmarshall(RegisterDeviceResponse registerDeviceResponse, UnmarshallerContext _ctx) {
 		
-		registerDeviceResponse.setRequestId(context.stringValue("RegisterDeviceResponse.RequestId"));
-		registerDeviceResponse.setSuccess(context.booleanValue("RegisterDeviceResponse.Success"));
-		registerDeviceResponse.setCode(context.stringValue("RegisterDeviceResponse.Code"));
-		registerDeviceResponse.setErrorMessage(context.stringValue("RegisterDeviceResponse.ErrorMessage"));
+		registerDeviceResponse.setRequestId(_ctx.stringValue("RegisterDeviceResponse.RequestId"));
+		registerDeviceResponse.setSuccess(_ctx.booleanValue("RegisterDeviceResponse.Success"));
+		registerDeviceResponse.setCode(_ctx.stringValue("RegisterDeviceResponse.Code"));
+		registerDeviceResponse.setErrorMessage(_ctx.stringValue("RegisterDeviceResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setIotId(context.stringValue("RegisterDeviceResponse.Data.IotId"));
-		data.setProductKey(context.stringValue("RegisterDeviceResponse.Data.ProductKey"));
-		data.setDeviceName(context.stringValue("RegisterDeviceResponse.Data.DeviceName"));
-		data.setDeviceSecret(context.stringValue("RegisterDeviceResponse.Data.DeviceSecret"));
-		data.setDevEui(context.stringValue("RegisterDeviceResponse.Data.DevEui"));
-		data.setJoinEui(context.stringValue("RegisterDeviceResponse.Data.JoinEui"));
-		data.setNickname(context.stringValue("RegisterDeviceResponse.Data.Nickname"));
+		data.setIotId(_ctx.stringValue("RegisterDeviceResponse.Data.IotId"));
+		data.setProductKey(_ctx.stringValue("RegisterDeviceResponse.Data.ProductKey"));
+		data.setDeviceName(_ctx.stringValue("RegisterDeviceResponse.Data.DeviceName"));
+		data.setDeviceSecret(_ctx.stringValue("RegisterDeviceResponse.Data.DeviceSecret"));
+		data.setDevEui(_ctx.stringValue("RegisterDeviceResponse.Data.DevEui"));
+		data.setJoinEui(_ctx.stringValue("RegisterDeviceResponse.Data.JoinEui"));
+		data.setNickname(_ctx.stringValue("RegisterDeviceResponse.Data.Nickname"));
 		registerDeviceResponse.setData(data);
 	 
 	 	return registerDeviceResponse;

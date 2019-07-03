@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PubBroadcastResponseUnmarshaller {
 
-	public static PubBroadcastResponse unmarshall(PubBroadcastResponse pubBroadcastResponse, UnmarshallerContext context) {
+	public static PubBroadcastResponse unmarshall(PubBroadcastResponse pubBroadcastResponse, UnmarshallerContext _ctx) {
 		
-		pubBroadcastResponse.setRequestId(context.stringValue("PubBroadcastResponse.RequestId"));
-		pubBroadcastResponse.setSuccess(context.booleanValue("PubBroadcastResponse.Success"));
-		pubBroadcastResponse.setCode(context.stringValue("PubBroadcastResponse.Code"));
-		pubBroadcastResponse.setErrorMessage(context.stringValue("PubBroadcastResponse.ErrorMessage"));
+		pubBroadcastResponse.setRequestId(_ctx.stringValue("PubBroadcastResponse.RequestId"));
+		pubBroadcastResponse.setSuccess(_ctx.booleanValue("PubBroadcastResponse.Success"));
+		pubBroadcastResponse.setCode(_ctx.stringValue("PubBroadcastResponse.Code"));
+		pubBroadcastResponse.setErrorMessage(_ctx.stringValue("PubBroadcastResponse.ErrorMessage"));
 	 
 	 	return pubBroadcastResponse;
 	}

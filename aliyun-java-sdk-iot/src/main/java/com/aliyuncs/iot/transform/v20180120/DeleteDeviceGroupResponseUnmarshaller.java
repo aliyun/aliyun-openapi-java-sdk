@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteDeviceGroupResponseUnmarshaller {
 
-	public static DeleteDeviceGroupResponse unmarshall(DeleteDeviceGroupResponse deleteDeviceGroupResponse, UnmarshallerContext context) {
+	public static DeleteDeviceGroupResponse unmarshall(DeleteDeviceGroupResponse deleteDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteDeviceGroupResponse.setRequestId(context.stringValue("DeleteDeviceGroupResponse.RequestId"));
-		deleteDeviceGroupResponse.setSuccess(context.booleanValue("DeleteDeviceGroupResponse.Success"));
-		deleteDeviceGroupResponse.setCode(context.stringValue("DeleteDeviceGroupResponse.Code"));
-		deleteDeviceGroupResponse.setErrorMessage(context.stringValue("DeleteDeviceGroupResponse.ErrorMessage"));
+		deleteDeviceGroupResponse.setRequestId(_ctx.stringValue("DeleteDeviceGroupResponse.RequestId"));
+		deleteDeviceGroupResponse.setSuccess(_ctx.booleanValue("DeleteDeviceGroupResponse.Success"));
+		deleteDeviceGroupResponse.setCode(_ctx.stringValue("DeleteDeviceGroupResponse.Code"));
+		deleteDeviceGroupResponse.setErrorMessage(_ctx.stringValue("DeleteDeviceGroupResponse.ErrorMessage"));
 	 
 	 	return deleteDeviceGroupResponse;
 	}

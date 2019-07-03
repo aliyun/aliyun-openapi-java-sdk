@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopRuleResponseUnmarshaller {
 
-	public static StopRuleResponse unmarshall(StopRuleResponse stopRuleResponse, UnmarshallerContext context) {
+	public static StopRuleResponse unmarshall(StopRuleResponse stopRuleResponse, UnmarshallerContext _ctx) {
 		
-		stopRuleResponse.setRequestId(context.stringValue("StopRuleResponse.RequestId"));
-		stopRuleResponse.setSuccess(context.booleanValue("StopRuleResponse.Success"));
-		stopRuleResponse.setCode(context.stringValue("StopRuleResponse.Code"));
-		stopRuleResponse.setErrorMessage(context.stringValue("StopRuleResponse.ErrorMessage"));
+		stopRuleResponse.setRequestId(_ctx.stringValue("StopRuleResponse.RequestId"));
+		stopRuleResponse.setSuccess(_ctx.booleanValue("StopRuleResponse.Success"));
+		stopRuleResponse.setCode(_ctx.stringValue("StopRuleResponse.Code"));
+		stopRuleResponse.setErrorMessage(_ctx.stringValue("StopRuleResponse.ErrorMessage"));
 	 
 	 	return stopRuleResponse;
 	}

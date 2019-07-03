@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDevicePropertyDataResponseUnmarshaller {
 
-	public static QueryDevicePropertyDataResponse unmarshall(QueryDevicePropertyDataResponse queryDevicePropertyDataResponse, UnmarshallerContext context) {
+	public static QueryDevicePropertyDataResponse unmarshall(QueryDevicePropertyDataResponse queryDevicePropertyDataResponse, UnmarshallerContext _ctx) {
 		
-		queryDevicePropertyDataResponse.setRequestId(context.stringValue("QueryDevicePropertyDataResponse.RequestId"));
-		queryDevicePropertyDataResponse.setSuccess(context.booleanValue("QueryDevicePropertyDataResponse.Success"));
-		queryDevicePropertyDataResponse.setCode(context.stringValue("QueryDevicePropertyDataResponse.Code"));
-		queryDevicePropertyDataResponse.setErrorMessage(context.stringValue("QueryDevicePropertyDataResponse.ErrorMessage"));
+		queryDevicePropertyDataResponse.setRequestId(_ctx.stringValue("QueryDevicePropertyDataResponse.RequestId"));
+		queryDevicePropertyDataResponse.setSuccess(_ctx.booleanValue("QueryDevicePropertyDataResponse.Success"));
+		queryDevicePropertyDataResponse.setCode(_ctx.stringValue("QueryDevicePropertyDataResponse.Code"));
+		queryDevicePropertyDataResponse.setErrorMessage(_ctx.stringValue("QueryDevicePropertyDataResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setNextValid(context.booleanValue("QueryDevicePropertyDataResponse.Data.NextValid"));
-		data.setNextTime(context.longValue("QueryDevicePropertyDataResponse.Data.NextTime"));
+		data.setNextValid(_ctx.booleanValue("QueryDevicePropertyDataResponse.Data.NextValid"));
+		data.setNextTime(_ctx.longValue("QueryDevicePropertyDataResponse.Data.NextTime"));
 
 		List<PropertyInfo> list = new ArrayList<PropertyInfo>();
-		for (int i = 0; i < context.lengthValue("QueryDevicePropertyDataResponse.Data.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDevicePropertyDataResponse.Data.List.Length"); i++) {
 			PropertyInfo propertyInfo = new PropertyInfo();
-			propertyInfo.setTime(context.stringValue("QueryDevicePropertyDataResponse.Data.List["+ i +"].Time"));
-			propertyInfo.setValue(context.stringValue("QueryDevicePropertyDataResponse.Data.List["+ i +"].Value"));
+			propertyInfo.setTime(_ctx.stringValue("QueryDevicePropertyDataResponse.Data.List["+ i +"].Time"));
+			propertyInfo.setValue(_ctx.stringValue("QueryDevicePropertyDataResponse.Data.List["+ i +"].Value"));
 
 			list.add(propertyInfo);
 		}

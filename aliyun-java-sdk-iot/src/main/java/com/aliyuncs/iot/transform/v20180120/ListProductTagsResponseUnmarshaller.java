@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListProductTagsResponseUnmarshaller {
 
-	public static ListProductTagsResponse unmarshall(ListProductTagsResponse listProductTagsResponse, UnmarshallerContext context) {
+	public static ListProductTagsResponse unmarshall(ListProductTagsResponse listProductTagsResponse, UnmarshallerContext _ctx) {
 		
-		listProductTagsResponse.setRequestId(context.stringValue("ListProductTagsResponse.RequestId"));
-		listProductTagsResponse.setSuccess(context.booleanValue("ListProductTagsResponse.Success"));
-		listProductTagsResponse.setErrorMessage(context.stringValue("ListProductTagsResponse.ErrorMessage"));
-		listProductTagsResponse.setCode(context.stringValue("ListProductTagsResponse.Code"));
+		listProductTagsResponse.setRequestId(_ctx.stringValue("ListProductTagsResponse.RequestId"));
+		listProductTagsResponse.setSuccess(_ctx.booleanValue("ListProductTagsResponse.Success"));
+		listProductTagsResponse.setErrorMessage(_ctx.stringValue("ListProductTagsResponse.ErrorMessage"));
+		listProductTagsResponse.setCode(_ctx.stringValue("ListProductTagsResponse.Code"));
 
 		List<ProductTag> data = new ArrayList<ProductTag>();
-		for (int i = 0; i < context.lengthValue("ListProductTagsResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListProductTagsResponse.Data.Length"); i++) {
 			ProductTag productTag = new ProductTag();
-			productTag.setTagKey(context.stringValue("ListProductTagsResponse.Data["+ i +"].TagKey"));
-			productTag.setTagValue(context.stringValue("ListProductTagsResponse.Data["+ i +"].TagValue"));
+			productTag.setTagKey(_ctx.stringValue("ListProductTagsResponse.Data["+ i +"].TagKey"));
+			productTag.setTagValue(_ctx.stringValue("ListProductTagsResponse.Data["+ i +"].TagValue"));
 
 			data.add(productTag);
 		}

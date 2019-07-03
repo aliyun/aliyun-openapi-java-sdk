@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateProductTopicResponseUnmarshaller {
 
-	public static CreateProductTopicResponse unmarshall(CreateProductTopicResponse createProductTopicResponse, UnmarshallerContext context) {
+	public static CreateProductTopicResponse unmarshall(CreateProductTopicResponse createProductTopicResponse, UnmarshallerContext _ctx) {
 		
-		createProductTopicResponse.setRequestId(context.stringValue("CreateProductTopicResponse.RequestId"));
-		createProductTopicResponse.setSuccess(context.booleanValue("CreateProductTopicResponse.Success"));
-		createProductTopicResponse.setCode(context.stringValue("CreateProductTopicResponse.Code"));
-		createProductTopicResponse.setErrorMessage(context.stringValue("CreateProductTopicResponse.ErrorMessage"));
-		createProductTopicResponse.setTopicId(context.longValue("CreateProductTopicResponse.TopicId"));
+		createProductTopicResponse.setRequestId(_ctx.stringValue("CreateProductTopicResponse.RequestId"));
+		createProductTopicResponse.setSuccess(_ctx.booleanValue("CreateProductTopicResponse.Success"));
+		createProductTopicResponse.setCode(_ctx.stringValue("CreateProductTopicResponse.Code"));
+		createProductTopicResponse.setErrorMessage(_ctx.stringValue("CreateProductTopicResponse.ErrorMessage"));
+		createProductTopicResponse.setTopicId(_ctx.longValue("CreateProductTopicResponse.TopicId"));
 	 
 	 	return createProductTopicResponse;
 	}

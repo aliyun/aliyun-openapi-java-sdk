@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceGroupTagListResponseUnmarshaller {
 
-	public static QueryDeviceGroupTagListResponse unmarshall(QueryDeviceGroupTagListResponse queryDeviceGroupTagListResponse, UnmarshallerContext context) {
+	public static QueryDeviceGroupTagListResponse unmarshall(QueryDeviceGroupTagListResponse queryDeviceGroupTagListResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceGroupTagListResponse.setRequestId(context.stringValue("QueryDeviceGroupTagListResponse.RequestId"));
-		queryDeviceGroupTagListResponse.setSuccess(context.booleanValue("QueryDeviceGroupTagListResponse.Success"));
-		queryDeviceGroupTagListResponse.setCode(context.stringValue("QueryDeviceGroupTagListResponse.Code"));
-		queryDeviceGroupTagListResponse.setErrorMessage(context.stringValue("QueryDeviceGroupTagListResponse.ErrorMessage"));
+		queryDeviceGroupTagListResponse.setRequestId(_ctx.stringValue("QueryDeviceGroupTagListResponse.RequestId"));
+		queryDeviceGroupTagListResponse.setSuccess(_ctx.booleanValue("QueryDeviceGroupTagListResponse.Success"));
+		queryDeviceGroupTagListResponse.setCode(_ctx.stringValue("QueryDeviceGroupTagListResponse.Code"));
+		queryDeviceGroupTagListResponse.setErrorMessage(_ctx.stringValue("QueryDeviceGroupTagListResponse.ErrorMessage"));
 
 		List<GroupTagInfo> data = new ArrayList<GroupTagInfo>();
-		for (int i = 0; i < context.lengthValue("QueryDeviceGroupTagListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDeviceGroupTagListResponse.Data.Length"); i++) {
 			GroupTagInfo groupTagInfo = new GroupTagInfo();
-			groupTagInfo.setTagKey(context.stringValue("QueryDeviceGroupTagListResponse.Data["+ i +"].TagKey"));
-			groupTagInfo.setTagValue(context.stringValue("QueryDeviceGroupTagListResponse.Data["+ i +"].TagValue"));
+			groupTagInfo.setTagKey(_ctx.stringValue("QueryDeviceGroupTagListResponse.Data["+ i +"].TagKey"));
+			groupTagInfo.setTagValue(_ctx.stringValue("QueryDeviceGroupTagListResponse.Data["+ i +"].TagValue"));
 
 			data.add(groupTagInfo);
 		}

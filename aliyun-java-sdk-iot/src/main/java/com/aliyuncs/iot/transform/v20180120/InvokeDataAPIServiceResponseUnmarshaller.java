@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InvokeDataAPIServiceResponseUnmarshaller {
 
-	public static InvokeDataAPIServiceResponse unmarshall(InvokeDataAPIServiceResponse invokeDataAPIServiceResponse, UnmarshallerContext context) {
+	public static InvokeDataAPIServiceResponse unmarshall(InvokeDataAPIServiceResponse invokeDataAPIServiceResponse, UnmarshallerContext _ctx) {
 		
-		invokeDataAPIServiceResponse.setRequestId(context.stringValue("InvokeDataAPIServiceResponse.RequestId"));
-		invokeDataAPIServiceResponse.setSuccess(context.booleanValue("InvokeDataAPIServiceResponse.Success"));
-		invokeDataAPIServiceResponse.setErrorMessage(context.stringValue("InvokeDataAPIServiceResponse.ErrorMessage"));
-		invokeDataAPIServiceResponse.setCode(context.stringValue("InvokeDataAPIServiceResponse.Code"));
+		invokeDataAPIServiceResponse.setRequestId(_ctx.stringValue("InvokeDataAPIServiceResponse.RequestId"));
+		invokeDataAPIServiceResponse.setSuccess(_ctx.booleanValue("InvokeDataAPIServiceResponse.Success"));
+		invokeDataAPIServiceResponse.setErrorMessage(_ctx.stringValue("InvokeDataAPIServiceResponse.ErrorMessage"));
+		invokeDataAPIServiceResponse.setCode(_ctx.stringValue("InvokeDataAPIServiceResponse.Code"));
 
 		Data data = new Data();
-		data.setPageNo(context.integerValue("InvokeDataAPIServiceResponse.Data.PageNo"));
-		data.setPageSize(context.integerValue("InvokeDataAPIServiceResponse.Data.PageSize"));
-		data.setApiSrn(context.stringValue("InvokeDataAPIServiceResponse.Data.ApiSrn"));
+		data.setPageNo(_ctx.integerValue("InvokeDataAPIServiceResponse.Data.PageNo"));
+		data.setPageSize(_ctx.integerValue("InvokeDataAPIServiceResponse.Data.PageSize"));
+		data.setApiSrn(_ctx.stringValue("InvokeDataAPIServiceResponse.Data.ApiSrn"));
 
 		List<String> fieldNameList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("InvokeDataAPIServiceResponse.Data.FieldNameList.Length"); i++) {
-			fieldNameList.add(context.stringValue("InvokeDataAPIServiceResponse.Data.FieldNameList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("InvokeDataAPIServiceResponse.Data.FieldNameList.Length"); i++) {
+			fieldNameList.add(_ctx.stringValue("InvokeDataAPIServiceResponse.Data.FieldNameList["+ i +"]"));
 		}
 		data.setFieldNameList(fieldNameList);
 
-		List<Map<Object, Object>> resultList = context.listMapValue("InvokeDataAPIServiceResponse.Data.ResultList");
+		List<Map<Object, Object>> resultList = _ctx.listMapValue("InvokeDataAPIServiceResponse.Data.ResultList");
 		data.setResultList(resultList);
 		invokeDataAPIServiceResponse.setData(data);
 	 

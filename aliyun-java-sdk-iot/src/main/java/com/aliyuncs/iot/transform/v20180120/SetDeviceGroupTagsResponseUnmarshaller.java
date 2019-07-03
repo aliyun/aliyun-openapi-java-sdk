@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetDeviceGroupTagsResponseUnmarshaller {
 
-	public static SetDeviceGroupTagsResponse unmarshall(SetDeviceGroupTagsResponse setDeviceGroupTagsResponse, UnmarshallerContext context) {
+	public static SetDeviceGroupTagsResponse unmarshall(SetDeviceGroupTagsResponse setDeviceGroupTagsResponse, UnmarshallerContext _ctx) {
 		
-		setDeviceGroupTagsResponse.setRequestId(context.stringValue("SetDeviceGroupTagsResponse.RequestId"));
-		setDeviceGroupTagsResponse.setSuccess(context.booleanValue("SetDeviceGroupTagsResponse.Success"));
-		setDeviceGroupTagsResponse.setCode(context.stringValue("SetDeviceGroupTagsResponse.Code"));
-		setDeviceGroupTagsResponse.setErrorMessage(context.stringValue("SetDeviceGroupTagsResponse.ErrorMessage"));
+		setDeviceGroupTagsResponse.setRequestId(_ctx.stringValue("SetDeviceGroupTagsResponse.RequestId"));
+		setDeviceGroupTagsResponse.setSuccess(_ctx.booleanValue("SetDeviceGroupTagsResponse.Success"));
+		setDeviceGroupTagsResponse.setCode(_ctx.stringValue("SetDeviceGroupTagsResponse.Code"));
+		setDeviceGroupTagsResponse.setErrorMessage(_ctx.stringValue("SetDeviceGroupTagsResponse.ErrorMessage"));
 	 
 	 	return setDeviceGroupTagsResponse;
 	}

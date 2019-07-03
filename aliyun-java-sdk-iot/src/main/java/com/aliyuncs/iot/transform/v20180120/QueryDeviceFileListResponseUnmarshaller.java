@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceFileListResponseUnmarshaller {
 
-	public static QueryDeviceFileListResponse unmarshall(QueryDeviceFileListResponse queryDeviceFileListResponse, UnmarshallerContext context) {
+	public static QueryDeviceFileListResponse unmarshall(QueryDeviceFileListResponse queryDeviceFileListResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceFileListResponse.setRequestId(context.stringValue("QueryDeviceFileListResponse.RequestId"));
-		queryDeviceFileListResponse.setSuccess(context.booleanValue("QueryDeviceFileListResponse.Success"));
-		queryDeviceFileListResponse.setCode(context.stringValue("QueryDeviceFileListResponse.Code"));
-		queryDeviceFileListResponse.setErrorMessage(context.stringValue("QueryDeviceFileListResponse.ErrorMessage"));
-		queryDeviceFileListResponse.setCurrentPage(context.integerValue("QueryDeviceFileListResponse.CurrentPage"));
-		queryDeviceFileListResponse.setPageCount(context.integerValue("QueryDeviceFileListResponse.PageCount"));
-		queryDeviceFileListResponse.setPageSize(context.integerValue("QueryDeviceFileListResponse.PageSize"));
-		queryDeviceFileListResponse.setTotal(context.integerValue("QueryDeviceFileListResponse.Total"));
+		queryDeviceFileListResponse.setRequestId(_ctx.stringValue("QueryDeviceFileListResponse.RequestId"));
+		queryDeviceFileListResponse.setSuccess(_ctx.booleanValue("QueryDeviceFileListResponse.Success"));
+		queryDeviceFileListResponse.setCode(_ctx.stringValue("QueryDeviceFileListResponse.Code"));
+		queryDeviceFileListResponse.setErrorMessage(_ctx.stringValue("QueryDeviceFileListResponse.ErrorMessage"));
+		queryDeviceFileListResponse.setCurrentPage(_ctx.integerValue("QueryDeviceFileListResponse.CurrentPage"));
+		queryDeviceFileListResponse.setPageCount(_ctx.integerValue("QueryDeviceFileListResponse.PageCount"));
+		queryDeviceFileListResponse.setPageSize(_ctx.integerValue("QueryDeviceFileListResponse.PageSize"));
+		queryDeviceFileListResponse.setTotal(_ctx.integerValue("QueryDeviceFileListResponse.Total"));
 
 		List<FileSummary> data = new ArrayList<FileSummary>();
-		for (int i = 0; i < context.lengthValue("QueryDeviceFileListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDeviceFileListResponse.Data.Length"); i++) {
 			FileSummary fileSummary = new FileSummary();
-			fileSummary.setFileId(context.stringValue("QueryDeviceFileListResponse.Data["+ i +"].FileId"));
-			fileSummary.setName(context.stringValue("QueryDeviceFileListResponse.Data["+ i +"].Name"));
-			fileSummary.setSize(context.stringValue("QueryDeviceFileListResponse.Data["+ i +"].Size"));
-			fileSummary.setUtcCreatedOn(context.stringValue("QueryDeviceFileListResponse.Data["+ i +"].UtcCreatedOn"));
+			fileSummary.setFileId(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].FileId"));
+			fileSummary.setName(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].Name"));
+			fileSummary.setSize(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].Size"));
+			fileSummary.setUtcCreatedOn(_ctx.stringValue("QueryDeviceFileListResponse.Data["+ i +"].UtcCreatedOn"));
 
 			data.add(fileSummary);
 		}

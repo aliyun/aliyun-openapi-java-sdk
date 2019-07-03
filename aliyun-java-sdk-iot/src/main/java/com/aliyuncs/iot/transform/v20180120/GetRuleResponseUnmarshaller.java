@@ -21,30 +21,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRuleResponseUnmarshaller {
 
-	public static GetRuleResponse unmarshall(GetRuleResponse getRuleResponse, UnmarshallerContext context) {
+	public static GetRuleResponse unmarshall(GetRuleResponse getRuleResponse, UnmarshallerContext _ctx) {
 		
-		getRuleResponse.setRequestId(context.stringValue("GetRuleResponse.RequestId"));
-		getRuleResponse.setSuccess(context.booleanValue("GetRuleResponse.Success"));
-		getRuleResponse.setCode(context.stringValue("GetRuleResponse.Code"));
-		getRuleResponse.setErrorMessage(context.stringValue("GetRuleResponse.ErrorMessage"));
+		getRuleResponse.setRequestId(_ctx.stringValue("GetRuleResponse.RequestId"));
+		getRuleResponse.setSuccess(_ctx.booleanValue("GetRuleResponse.Success"));
+		getRuleResponse.setCode(_ctx.stringValue("GetRuleResponse.Code"));
+		getRuleResponse.setErrorMessage(_ctx.stringValue("GetRuleResponse.ErrorMessage"));
 
 		RuleInfo ruleInfo = new RuleInfo();
-		ruleInfo.setId(context.longValue("GetRuleResponse.RuleInfo.Id"));
-		ruleInfo.setSelect(context.stringValue("GetRuleResponse.RuleInfo.Select"));
-		ruleInfo.setTopic(context.stringValue("GetRuleResponse.RuleInfo.Topic"));
-		ruleInfo.setShortTopic(context.stringValue("GetRuleResponse.RuleInfo.ShortTopic"));
-		ruleInfo.setWhere(context.stringValue("GetRuleResponse.RuleInfo.Where"));
-		ruleInfo.setStatus(context.stringValue("GetRuleResponse.RuleInfo.Status"));
-		ruleInfo.setCreateUserId(context.longValue("GetRuleResponse.RuleInfo.CreateUserId"));
-		ruleInfo.setProductKey(context.stringValue("GetRuleResponse.RuleInfo.ProductKey"));
-		ruleInfo.setName(context.stringValue("GetRuleResponse.RuleInfo.Name"));
-		ruleInfo.setRuleDesc(context.stringValue("GetRuleResponse.RuleInfo.RuleDesc"));
-		ruleInfo.setDataType(context.stringValue("GetRuleResponse.RuleInfo.DataType"));
-		ruleInfo.setCreated(context.stringValue("GetRuleResponse.RuleInfo.Created"));
-		ruleInfo.setUtcCreated(context.stringValue("GetRuleResponse.RuleInfo.UtcCreated"));
-		ruleInfo.setModified(context.stringValue("GetRuleResponse.RuleInfo.Modified"));
-		ruleInfo.setUtcModified(context.stringValue("GetRuleResponse.RuleInfo.UtcModified"));
-		ruleInfo.setTopicType(context.integerValue("GetRuleResponse.RuleInfo.TopicType"));
+		ruleInfo.setId(_ctx.longValue("GetRuleResponse.RuleInfo.Id"));
+		ruleInfo.setSelect(_ctx.stringValue("GetRuleResponse.RuleInfo.Select"));
+		ruleInfo.setTopic(_ctx.stringValue("GetRuleResponse.RuleInfo.Topic"));
+		ruleInfo.setShortTopic(_ctx.stringValue("GetRuleResponse.RuleInfo.ShortTopic"));
+		ruleInfo.setWhere(_ctx.stringValue("GetRuleResponse.RuleInfo.Where"));
+		ruleInfo.setStatus(_ctx.stringValue("GetRuleResponse.RuleInfo.Status"));
+		ruleInfo.setCreateUserId(_ctx.longValue("GetRuleResponse.RuleInfo.CreateUserId"));
+		ruleInfo.setProductKey(_ctx.stringValue("GetRuleResponse.RuleInfo.ProductKey"));
+		ruleInfo.setName(_ctx.stringValue("GetRuleResponse.RuleInfo.Name"));
+		ruleInfo.setRuleDesc(_ctx.stringValue("GetRuleResponse.RuleInfo.RuleDesc"));
+		ruleInfo.setDataType(_ctx.stringValue("GetRuleResponse.RuleInfo.DataType"));
+		ruleInfo.setCreated(_ctx.stringValue("GetRuleResponse.RuleInfo.Created"));
+		ruleInfo.setUtcCreated(_ctx.stringValue("GetRuleResponse.RuleInfo.UtcCreated"));
+		ruleInfo.setModified(_ctx.stringValue("GetRuleResponse.RuleInfo.Modified"));
+		ruleInfo.setUtcModified(_ctx.stringValue("GetRuleResponse.RuleInfo.UtcModified"));
+		ruleInfo.setTopicType(_ctx.integerValue("GetRuleResponse.RuleInfo.TopicType"));
 		getRuleResponse.setRuleInfo(ruleInfo);
 	 
 	 	return getRuleResponse;

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchUpdateDeviceNicknameResponseUnmarshaller {
 
-	public static BatchUpdateDeviceNicknameResponse unmarshall(BatchUpdateDeviceNicknameResponse batchUpdateDeviceNicknameResponse, UnmarshallerContext context) {
+	public static BatchUpdateDeviceNicknameResponse unmarshall(BatchUpdateDeviceNicknameResponse batchUpdateDeviceNicknameResponse, UnmarshallerContext _ctx) {
 		
-		batchUpdateDeviceNicknameResponse.setRequestId(context.stringValue("BatchUpdateDeviceNicknameResponse.RequestId"));
-		batchUpdateDeviceNicknameResponse.setSuccess(context.booleanValue("BatchUpdateDeviceNicknameResponse.Success"));
-		batchUpdateDeviceNicknameResponse.setCode(context.stringValue("BatchUpdateDeviceNicknameResponse.Code"));
-		batchUpdateDeviceNicknameResponse.setErrorMessage(context.stringValue("BatchUpdateDeviceNicknameResponse.ErrorMessage"));
+		batchUpdateDeviceNicknameResponse.setRequestId(_ctx.stringValue("BatchUpdateDeviceNicknameResponse.RequestId"));
+		batchUpdateDeviceNicknameResponse.setSuccess(_ctx.booleanValue("BatchUpdateDeviceNicknameResponse.Success"));
+		batchUpdateDeviceNicknameResponse.setCode(_ctx.stringValue("BatchUpdateDeviceNicknameResponse.Code"));
+		batchUpdateDeviceNicknameResponse.setErrorMessage(_ctx.stringValue("BatchUpdateDeviceNicknameResponse.ErrorMessage"));
 	 
 	 	return batchUpdateDeviceNicknameResponse;
 	}

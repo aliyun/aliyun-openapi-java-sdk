@@ -23,17 +23,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateTopicRouteTableResponseUnmarshaller {
 
-	public static CreateTopicRouteTableResponse unmarshall(CreateTopicRouteTableResponse createTopicRouteTableResponse, UnmarshallerContext context) {
+	public static CreateTopicRouteTableResponse unmarshall(CreateTopicRouteTableResponse createTopicRouteTableResponse, UnmarshallerContext _ctx) {
 		
-		createTopicRouteTableResponse.setRequestId(context.stringValue("CreateTopicRouteTableResponse.RequestId"));
-		createTopicRouteTableResponse.setSuccess(context.booleanValue("CreateTopicRouteTableResponse.Success"));
-		createTopicRouteTableResponse.setCode(context.stringValue("CreateTopicRouteTableResponse.Code"));
-		createTopicRouteTableResponse.setIsAllSucceed(context.booleanValue("CreateTopicRouteTableResponse.IsAllSucceed"));
-		createTopicRouteTableResponse.setErrorMessage(context.stringValue("CreateTopicRouteTableResponse.ErrorMessage"));
+		createTopicRouteTableResponse.setRequestId(_ctx.stringValue("CreateTopicRouteTableResponse.RequestId"));
+		createTopicRouteTableResponse.setSuccess(_ctx.booleanValue("CreateTopicRouteTableResponse.Success"));
+		createTopicRouteTableResponse.setCode(_ctx.stringValue("CreateTopicRouteTableResponse.Code"));
+		createTopicRouteTableResponse.setIsAllSucceed(_ctx.booleanValue("CreateTopicRouteTableResponse.IsAllSucceed"));
+		createTopicRouteTableResponse.setErrorMessage(_ctx.stringValue("CreateTopicRouteTableResponse.ErrorMessage"));
 
 		List<String> failureTopics = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateTopicRouteTableResponse.FailureTopics.Length"); i++) {
-			failureTopics.add(context.stringValue("CreateTopicRouteTableResponse.FailureTopics["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateTopicRouteTableResponse.FailureTopics.Length"); i++) {
+			failureTopics.add(_ctx.stringValue("CreateTopicRouteTableResponse.FailureTopics["+ i +"]"));
 		}
 		createTopicRouteTableResponse.setFailureTopics(failureTopics);
 	 

@@ -21,30 +21,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryProductResponseUnmarshaller {
 
-	public static QueryProductResponse unmarshall(QueryProductResponse queryProductResponse, UnmarshallerContext context) {
+	public static QueryProductResponse unmarshall(QueryProductResponse queryProductResponse, UnmarshallerContext _ctx) {
 		
-		queryProductResponse.setRequestId(context.stringValue("QueryProductResponse.RequestId"));
-		queryProductResponse.setSuccess(context.booleanValue("QueryProductResponse.Success"));
-		queryProductResponse.setCode(context.stringValue("QueryProductResponse.Code"));
-		queryProductResponse.setErrorMessage(context.stringValue("QueryProductResponse.ErrorMessage"));
+		queryProductResponse.setRequestId(_ctx.stringValue("QueryProductResponse.RequestId"));
+		queryProductResponse.setSuccess(_ctx.booleanValue("QueryProductResponse.Success"));
+		queryProductResponse.setCode(_ctx.stringValue("QueryProductResponse.Code"));
+		queryProductResponse.setErrorMessage(_ctx.stringValue("QueryProductResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setGmtCreate(context.longValue("QueryProductResponse.Data.GmtCreate"));
-		data.setDataFormat(context.integerValue("QueryProductResponse.Data.DataFormat"));
-		data.setDescription(context.stringValue("QueryProductResponse.Data.Description"));
-		data.setDeviceCount(context.integerValue("QueryProductResponse.Data.DeviceCount"));
-		data.setNodeType(context.integerValue("QueryProductResponse.Data.NodeType"));
-		data.setProductKey(context.stringValue("QueryProductResponse.Data.ProductKey"));
-		data.setProductName(context.stringValue("QueryProductResponse.Data.ProductName"));
-		data.setProductSecret(context.stringValue("QueryProductResponse.Data.ProductSecret"));
-		data.setCategoryName(context.stringValue("QueryProductResponse.Data.CategoryName"));
-		data.setCategoryKey(context.stringValue("QueryProductResponse.Data.CategoryKey"));
-		data.setAliyunCommodityCode(context.stringValue("QueryProductResponse.Data.AliyunCommodityCode"));
-		data.setId2(context.booleanValue("QueryProductResponse.Data.Id2"));
-		data.setProtocolType(context.stringValue("QueryProductResponse.Data.ProtocolType"));
-		data.setProductStatus(context.stringValue("QueryProductResponse.Data.ProductStatus"));
-		data.setOwner(context.booleanValue("QueryProductResponse.Data.Owner"));
-		data.setNetType(context.integerValue("QueryProductResponse.Data.NetType"));
+		data.setGmtCreate(_ctx.longValue("QueryProductResponse.Data.GmtCreate"));
+		data.setDataFormat(_ctx.integerValue("QueryProductResponse.Data.DataFormat"));
+		data.setDescription(_ctx.stringValue("QueryProductResponse.Data.Description"));
+		data.setDeviceCount(_ctx.integerValue("QueryProductResponse.Data.DeviceCount"));
+		data.setNodeType(_ctx.integerValue("QueryProductResponse.Data.NodeType"));
+		data.setProductKey(_ctx.stringValue("QueryProductResponse.Data.ProductKey"));
+		data.setProductName(_ctx.stringValue("QueryProductResponse.Data.ProductName"));
+		data.setProductSecret(_ctx.stringValue("QueryProductResponse.Data.ProductSecret"));
+		data.setCategoryName(_ctx.stringValue("QueryProductResponse.Data.CategoryName"));
+		data.setCategoryKey(_ctx.stringValue("QueryProductResponse.Data.CategoryKey"));
+		data.setAliyunCommodityCode(_ctx.stringValue("QueryProductResponse.Data.AliyunCommodityCode"));
+		data.setId2(_ctx.booleanValue("QueryProductResponse.Data.Id2"));
+		data.setProtocolType(_ctx.stringValue("QueryProductResponse.Data.ProtocolType"));
+		data.setProductStatus(_ctx.stringValue("QueryProductResponse.Data.ProductStatus"));
+		data.setOwner(_ctx.booleanValue("QueryProductResponse.Data.Owner"));
+		data.setNetType(_ctx.integerValue("QueryProductResponse.Data.NetType"));
 		queryProductResponse.setData(data);
 	 
 	 	return queryProductResponse;

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateDeviceShadowResponseUnmarshaller {
 
-	public static UpdateDeviceShadowResponse unmarshall(UpdateDeviceShadowResponse updateDeviceShadowResponse, UnmarshallerContext context) {
+	public static UpdateDeviceShadowResponse unmarshall(UpdateDeviceShadowResponse updateDeviceShadowResponse, UnmarshallerContext _ctx) {
 		
-		updateDeviceShadowResponse.setRequestId(context.stringValue("UpdateDeviceShadowResponse.RequestId"));
-		updateDeviceShadowResponse.setSuccess(context.booleanValue("UpdateDeviceShadowResponse.Success"));
-		updateDeviceShadowResponse.setCode(context.stringValue("UpdateDeviceShadowResponse.Code"));
-		updateDeviceShadowResponse.setErrorMessage(context.stringValue("UpdateDeviceShadowResponse.ErrorMessage"));
+		updateDeviceShadowResponse.setRequestId(_ctx.stringValue("UpdateDeviceShadowResponse.RequestId"));
+		updateDeviceShadowResponse.setSuccess(_ctx.booleanValue("UpdateDeviceShadowResponse.Success"));
+		updateDeviceShadowResponse.setCode(_ctx.stringValue("UpdateDeviceShadowResponse.Code"));
+		updateDeviceShadowResponse.setErrorMessage(_ctx.stringValue("UpdateDeviceShadowResponse.ErrorMessage"));
 	 
 	 	return updateDeviceShadowResponse;
 	}

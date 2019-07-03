@@ -24,34 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListRuleResponseUnmarshaller {
 
-	public static ListRuleResponse unmarshall(ListRuleResponse listRuleResponse, UnmarshallerContext context) {
+	public static ListRuleResponse unmarshall(ListRuleResponse listRuleResponse, UnmarshallerContext _ctx) {
 		
-		listRuleResponse.setRequestId(context.stringValue("ListRuleResponse.RequestId"));
-		listRuleResponse.setSuccess(context.booleanValue("ListRuleResponse.Success"));
-		listRuleResponse.setCode(context.stringValue("ListRuleResponse.Code"));
-		listRuleResponse.setErrorMessage(context.stringValue("ListRuleResponse.ErrorMessage"));
-		listRuleResponse.setPageSize(context.integerValue("ListRuleResponse.PageSize"));
-		listRuleResponse.setPage(context.integerValue("ListRuleResponse.Page"));
-		listRuleResponse.setTotal(context.integerValue("ListRuleResponse.Total"));
+		listRuleResponse.setRequestId(_ctx.stringValue("ListRuleResponse.RequestId"));
+		listRuleResponse.setSuccess(_ctx.booleanValue("ListRuleResponse.Success"));
+		listRuleResponse.setCode(_ctx.stringValue("ListRuleResponse.Code"));
+		listRuleResponse.setErrorMessage(_ctx.stringValue("ListRuleResponse.ErrorMessage"));
+		listRuleResponse.setPageSize(_ctx.integerValue("ListRuleResponse.PageSize"));
+		listRuleResponse.setPage(_ctx.integerValue("ListRuleResponse.Page"));
+		listRuleResponse.setTotal(_ctx.integerValue("ListRuleResponse.Total"));
 
 		List<RuleInfo> data = new ArrayList<RuleInfo>();
-		for (int i = 0; i < context.lengthValue("ListRuleResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListRuleResponse.Data.Length"); i++) {
 			RuleInfo ruleInfo = new RuleInfo();
-			ruleInfo.setId(context.longValue("ListRuleResponse.Data["+ i +"].Id"));
-			ruleInfo.setSelect(context.stringValue("ListRuleResponse.Data["+ i +"].Select"));
-			ruleInfo.setTopic(context.stringValue("ListRuleResponse.Data["+ i +"].Topic"));
-			ruleInfo.setShortTopic(context.stringValue("ListRuleResponse.Data["+ i +"].ShortTopic"));
-			ruleInfo.setWhere(context.stringValue("ListRuleResponse.Data["+ i +"].Where"));
-			ruleInfo.setStatus(context.stringValue("ListRuleResponse.Data["+ i +"].Status"));
-			ruleInfo.setCreateUserId(context.longValue("ListRuleResponse.Data["+ i +"].CreateUserId"));
-			ruleInfo.setProductKey(context.stringValue("ListRuleResponse.Data["+ i +"].ProductKey"));
-			ruleInfo.setName(context.stringValue("ListRuleResponse.Data["+ i +"].Name"));
-			ruleInfo.setDataType(context.stringValue("ListRuleResponse.Data["+ i +"].DataType"));
-			ruleInfo.setRuleDesc(context.stringValue("ListRuleResponse.Data["+ i +"].RuleDesc"));
-			ruleInfo.setCreated(context.stringValue("ListRuleResponse.Data["+ i +"].Created"));
-			ruleInfo.setUtcCreated(context.stringValue("ListRuleResponse.Data["+ i +"].UtcCreated"));
-			ruleInfo.setModified(context.stringValue("ListRuleResponse.Data["+ i +"].Modified"));
-			ruleInfo.setUtcModified(context.stringValue("ListRuleResponse.Data["+ i +"].UtcModified"));
+			ruleInfo.setId(_ctx.longValue("ListRuleResponse.Data["+ i +"].Id"));
+			ruleInfo.setSelect(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Select"));
+			ruleInfo.setTopic(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Topic"));
+			ruleInfo.setShortTopic(_ctx.stringValue("ListRuleResponse.Data["+ i +"].ShortTopic"));
+			ruleInfo.setWhere(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Where"));
+			ruleInfo.setStatus(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Status"));
+			ruleInfo.setCreateUserId(_ctx.longValue("ListRuleResponse.Data["+ i +"].CreateUserId"));
+			ruleInfo.setProductKey(_ctx.stringValue("ListRuleResponse.Data["+ i +"].ProductKey"));
+			ruleInfo.setName(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Name"));
+			ruleInfo.setDataType(_ctx.stringValue("ListRuleResponse.Data["+ i +"].DataType"));
+			ruleInfo.setRuleDesc(_ctx.stringValue("ListRuleResponse.Data["+ i +"].RuleDesc"));
+			ruleInfo.setCreated(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Created"));
+			ruleInfo.setUtcCreated(_ctx.stringValue("ListRuleResponse.Data["+ i +"].UtcCreated"));
+			ruleInfo.setModified(_ctx.stringValue("ListRuleResponse.Data["+ i +"].Modified"));
+			ruleInfo.setUtcModified(_ctx.stringValue("ListRuleResponse.Data["+ i +"].UtcModified"));
 
 			data.add(ruleInfo);
 		}

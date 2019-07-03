@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDevicePropertiesDataResponseUnmarshaller {
 
-	public static QueryDevicePropertiesDataResponse unmarshall(QueryDevicePropertiesDataResponse queryDevicePropertiesDataResponse, UnmarshallerContext context) {
+	public static QueryDevicePropertiesDataResponse unmarshall(QueryDevicePropertiesDataResponse queryDevicePropertiesDataResponse, UnmarshallerContext _ctx) {
 		
-		queryDevicePropertiesDataResponse.setRequestId(context.stringValue("QueryDevicePropertiesDataResponse.RequestId"));
-		queryDevicePropertiesDataResponse.setSuccess(context.booleanValue("QueryDevicePropertiesDataResponse.Success"));
-		queryDevicePropertiesDataResponse.setCode(context.stringValue("QueryDevicePropertiesDataResponse.Code"));
-		queryDevicePropertiesDataResponse.setErrorMessage(context.stringValue("QueryDevicePropertiesDataResponse.ErrorMessage"));
-		queryDevicePropertiesDataResponse.setNextValid(context.booleanValue("QueryDevicePropertiesDataResponse.NextValid"));
-		queryDevicePropertiesDataResponse.setNextTime(context.longValue("QueryDevicePropertiesDataResponse.NextTime"));
+		queryDevicePropertiesDataResponse.setRequestId(_ctx.stringValue("QueryDevicePropertiesDataResponse.RequestId"));
+		queryDevicePropertiesDataResponse.setSuccess(_ctx.booleanValue("QueryDevicePropertiesDataResponse.Success"));
+		queryDevicePropertiesDataResponse.setCode(_ctx.stringValue("QueryDevicePropertiesDataResponse.Code"));
+		queryDevicePropertiesDataResponse.setErrorMessage(_ctx.stringValue("QueryDevicePropertiesDataResponse.ErrorMessage"));
+		queryDevicePropertiesDataResponse.setNextValid(_ctx.booleanValue("QueryDevicePropertiesDataResponse.NextValid"));
+		queryDevicePropertiesDataResponse.setNextTime(_ctx.longValue("QueryDevicePropertiesDataResponse.NextTime"));
 
 		List<PropertyDataInfo> propertyDataInfos = new ArrayList<PropertyDataInfo>();
-		for (int i = 0; i < context.lengthValue("QueryDevicePropertiesDataResponse.PropertyDataInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDevicePropertiesDataResponse.PropertyDataInfos.Length"); i++) {
 			PropertyDataInfo propertyDataInfo = new PropertyDataInfo();
-			propertyDataInfo.setIdentifier(context.stringValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].Identifier"));
+			propertyDataInfo.setIdentifier(_ctx.stringValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].Identifier"));
 
 			List<PropertyInfo> list = new ArrayList<PropertyInfo>();
-			for (int j = 0; j < context.lengthValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List.Length"); j++) {
 				PropertyInfo propertyInfo = new PropertyInfo();
-				propertyInfo.setTime(context.longValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List["+ j +"].Time"));
-				propertyInfo.setValue(context.stringValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List["+ j +"].Value"));
+				propertyInfo.setTime(_ctx.longValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List["+ j +"].Time"));
+				propertyInfo.setValue(_ctx.stringValue("QueryDevicePropertiesDataResponse.PropertyDataInfos["+ i +"].List["+ j +"].Value"));
 
 				list.add(propertyInfo);
 			}

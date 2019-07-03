@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InvokeThingsServiceResponseUnmarshaller {
 
-	public static InvokeThingsServiceResponse unmarshall(InvokeThingsServiceResponse invokeThingsServiceResponse, UnmarshallerContext context) {
+	public static InvokeThingsServiceResponse unmarshall(InvokeThingsServiceResponse invokeThingsServiceResponse, UnmarshallerContext _ctx) {
 		
-		invokeThingsServiceResponse.setRequestId(context.stringValue("InvokeThingsServiceResponse.RequestId"));
-		invokeThingsServiceResponse.setSuccess(context.booleanValue("InvokeThingsServiceResponse.Success"));
-		invokeThingsServiceResponse.setErrorMessage(context.stringValue("InvokeThingsServiceResponse.ErrorMessage"));
-		invokeThingsServiceResponse.setCode(context.stringValue("InvokeThingsServiceResponse.Code"));
+		invokeThingsServiceResponse.setRequestId(_ctx.stringValue("InvokeThingsServiceResponse.RequestId"));
+		invokeThingsServiceResponse.setSuccess(_ctx.booleanValue("InvokeThingsServiceResponse.Success"));
+		invokeThingsServiceResponse.setErrorMessage(_ctx.stringValue("InvokeThingsServiceResponse.ErrorMessage"));
+		invokeThingsServiceResponse.setCode(_ctx.stringValue("InvokeThingsServiceResponse.Code"));
 	 
 	 	return invokeThingsServiceResponse;
 	}

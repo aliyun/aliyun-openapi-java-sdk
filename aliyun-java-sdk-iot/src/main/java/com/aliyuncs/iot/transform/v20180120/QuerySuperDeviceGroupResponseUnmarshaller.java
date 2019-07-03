@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QuerySuperDeviceGroupResponseUnmarshaller {
 
-	public static QuerySuperDeviceGroupResponse unmarshall(QuerySuperDeviceGroupResponse querySuperDeviceGroupResponse, UnmarshallerContext context) {
+	public static QuerySuperDeviceGroupResponse unmarshall(QuerySuperDeviceGroupResponse querySuperDeviceGroupResponse, UnmarshallerContext _ctx) {
 		
-		querySuperDeviceGroupResponse.setRequestId(context.stringValue("QuerySuperDeviceGroupResponse.RequestId"));
-		querySuperDeviceGroupResponse.setSuccess(context.booleanValue("QuerySuperDeviceGroupResponse.Success"));
-		querySuperDeviceGroupResponse.setCode(context.stringValue("QuerySuperDeviceGroupResponse.Code"));
-		querySuperDeviceGroupResponse.setErrorMessage(context.stringValue("QuerySuperDeviceGroupResponse.ErrorMessage"));
+		querySuperDeviceGroupResponse.setRequestId(_ctx.stringValue("QuerySuperDeviceGroupResponse.RequestId"));
+		querySuperDeviceGroupResponse.setSuccess(_ctx.booleanValue("QuerySuperDeviceGroupResponse.Success"));
+		querySuperDeviceGroupResponse.setCode(_ctx.stringValue("QuerySuperDeviceGroupResponse.Code"));
+		querySuperDeviceGroupResponse.setErrorMessage(_ctx.stringValue("QuerySuperDeviceGroupResponse.ErrorMessage"));
 
 		List<GroupInfo> data = new ArrayList<GroupInfo>();
-		for (int i = 0; i < context.lengthValue("QuerySuperDeviceGroupResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QuerySuperDeviceGroupResponse.Data.Length"); i++) {
 			GroupInfo groupInfo = new GroupInfo();
-			groupInfo.setGroupId(context.stringValue("QuerySuperDeviceGroupResponse.Data["+ i +"].GroupId"));
-			groupInfo.setGroupName(context.stringValue("QuerySuperDeviceGroupResponse.Data["+ i +"].GroupName"));
-			groupInfo.setGroupDesc(context.stringValue("QuerySuperDeviceGroupResponse.Data["+ i +"].GroupDesc"));
+			groupInfo.setGroupId(_ctx.stringValue("QuerySuperDeviceGroupResponse.Data["+ i +"].GroupId"));
+			groupInfo.setGroupName(_ctx.stringValue("QuerySuperDeviceGroupResponse.Data["+ i +"].GroupName"));
+			groupInfo.setGroupDesc(_ctx.stringValue("QuerySuperDeviceGroupResponse.Data["+ i +"].GroupDesc"));
 
 			data.add(groupInfo);
 		}

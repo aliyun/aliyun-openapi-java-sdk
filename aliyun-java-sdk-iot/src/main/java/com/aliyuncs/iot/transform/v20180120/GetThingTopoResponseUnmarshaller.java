@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetThingTopoResponseUnmarshaller {
 
-	public static GetThingTopoResponse unmarshall(GetThingTopoResponse getThingTopoResponse, UnmarshallerContext context) {
+	public static GetThingTopoResponse unmarshall(GetThingTopoResponse getThingTopoResponse, UnmarshallerContext _ctx) {
 		
-		getThingTopoResponse.setRequestId(context.stringValue("GetThingTopoResponse.RequestId"));
-		getThingTopoResponse.setSuccess(context.booleanValue("GetThingTopoResponse.Success"));
-		getThingTopoResponse.setCode(context.stringValue("GetThingTopoResponse.Code"));
-		getThingTopoResponse.setErrorMessage(context.stringValue("GetThingTopoResponse.ErrorMessage"));
+		getThingTopoResponse.setRequestId(_ctx.stringValue("GetThingTopoResponse.RequestId"));
+		getThingTopoResponse.setSuccess(_ctx.booleanValue("GetThingTopoResponse.Success"));
+		getThingTopoResponse.setCode(_ctx.stringValue("GetThingTopoResponse.Code"));
+		getThingTopoResponse.setErrorMessage(_ctx.stringValue("GetThingTopoResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setTotal(context.longValue("GetThingTopoResponse.Data.Total"));
-		data.setCurrentPage(context.integerValue("GetThingTopoResponse.Data.CurrentPage"));
-		data.setPageSize(context.integerValue("GetThingTopoResponse.Data.PageSize"));
-		data.setPageCount(context.longValue("GetThingTopoResponse.Data.PageCount"));
+		data.setTotal(_ctx.longValue("GetThingTopoResponse.Data.Total"));
+		data.setCurrentPage(_ctx.integerValue("GetThingTopoResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("GetThingTopoResponse.Data.PageSize"));
+		data.setPageCount(_ctx.longValue("GetThingTopoResponse.Data.PageCount"));
 
 		List<DeviceInfo> list = new ArrayList<DeviceInfo>();
-		for (int i = 0; i < context.lengthValue("GetThingTopoResponse.Data.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetThingTopoResponse.Data.List.Length"); i++) {
 			DeviceInfo deviceInfo = new DeviceInfo();
-			deviceInfo.setIotId(context.stringValue("GetThingTopoResponse.Data.List["+ i +"].IotId"));
-			deviceInfo.setProductKey(context.stringValue("GetThingTopoResponse.Data.List["+ i +"].ProductKey"));
-			deviceInfo.setDeviceName(context.stringValue("GetThingTopoResponse.Data.List["+ i +"].DeviceName"));
+			deviceInfo.setIotId(_ctx.stringValue("GetThingTopoResponse.Data.List["+ i +"].IotId"));
+			deviceInfo.setProductKey(_ctx.stringValue("GetThingTopoResponse.Data.List["+ i +"].ProductKey"));
+			deviceInfo.setDeviceName(_ctx.stringValue("GetThingTopoResponse.Data.List["+ i +"].DeviceName"));
 
 			list.add(deviceInfo);
 		}

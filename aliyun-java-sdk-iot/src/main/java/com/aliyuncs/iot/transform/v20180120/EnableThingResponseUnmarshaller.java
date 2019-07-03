@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnableThingResponseUnmarshaller {
 
-	public static EnableThingResponse unmarshall(EnableThingResponse enableThingResponse, UnmarshallerContext context) {
+	public static EnableThingResponse unmarshall(EnableThingResponse enableThingResponse, UnmarshallerContext _ctx) {
 		
-		enableThingResponse.setRequestId(context.stringValue("EnableThingResponse.RequestId"));
-		enableThingResponse.setSuccess(context.booleanValue("EnableThingResponse.Success"));
-		enableThingResponse.setCode(context.stringValue("EnableThingResponse.Code"));
-		enableThingResponse.setErrorMessage(context.stringValue("EnableThingResponse.ErrorMessage"));
+		enableThingResponse.setRequestId(_ctx.stringValue("EnableThingResponse.RequestId"));
+		enableThingResponse.setSuccess(_ctx.booleanValue("EnableThingResponse.Success"));
+		enableThingResponse.setCode(_ctx.stringValue("EnableThingResponse.Code"));
+		enableThingResponse.setErrorMessage(_ctx.stringValue("EnableThingResponse.ErrorMessage"));
 	 
 	 	return enableThingResponse;
 	}

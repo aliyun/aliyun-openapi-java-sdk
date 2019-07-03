@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceGroupByTagsResponseUnmarshaller {
 
-	public static QueryDeviceGroupByTagsResponse unmarshall(QueryDeviceGroupByTagsResponse queryDeviceGroupByTagsResponse, UnmarshallerContext context) {
+	public static QueryDeviceGroupByTagsResponse unmarshall(QueryDeviceGroupByTagsResponse queryDeviceGroupByTagsResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceGroupByTagsResponse.setRequestId(context.stringValue("QueryDeviceGroupByTagsResponse.RequestId"));
-		queryDeviceGroupByTagsResponse.setSuccess(context.booleanValue("QueryDeviceGroupByTagsResponse.Success"));
-		queryDeviceGroupByTagsResponse.setCode(context.stringValue("QueryDeviceGroupByTagsResponse.Code"));
-		queryDeviceGroupByTagsResponse.setErrorMessage(context.stringValue("QueryDeviceGroupByTagsResponse.ErrorMessage"));
-		queryDeviceGroupByTagsResponse.setPage(context.integerValue("QueryDeviceGroupByTagsResponse.Page"));
-		queryDeviceGroupByTagsResponse.setPageSize(context.integerValue("QueryDeviceGroupByTagsResponse.PageSize"));
-		queryDeviceGroupByTagsResponse.setPageCount(context.integerValue("QueryDeviceGroupByTagsResponse.PageCount"));
-		queryDeviceGroupByTagsResponse.setTotal(context.integerValue("QueryDeviceGroupByTagsResponse.Total"));
+		queryDeviceGroupByTagsResponse.setRequestId(_ctx.stringValue("QueryDeviceGroupByTagsResponse.RequestId"));
+		queryDeviceGroupByTagsResponse.setSuccess(_ctx.booleanValue("QueryDeviceGroupByTagsResponse.Success"));
+		queryDeviceGroupByTagsResponse.setCode(_ctx.stringValue("QueryDeviceGroupByTagsResponse.Code"));
+		queryDeviceGroupByTagsResponse.setErrorMessage(_ctx.stringValue("QueryDeviceGroupByTagsResponse.ErrorMessage"));
+		queryDeviceGroupByTagsResponse.setPage(_ctx.integerValue("QueryDeviceGroupByTagsResponse.Page"));
+		queryDeviceGroupByTagsResponse.setPageSize(_ctx.integerValue("QueryDeviceGroupByTagsResponse.PageSize"));
+		queryDeviceGroupByTagsResponse.setPageCount(_ctx.integerValue("QueryDeviceGroupByTagsResponse.PageCount"));
+		queryDeviceGroupByTagsResponse.setTotal(_ctx.integerValue("QueryDeviceGroupByTagsResponse.Total"));
 
 		List<DeviceGroup> data = new ArrayList<DeviceGroup>();
-		for (int i = 0; i < context.lengthValue("QueryDeviceGroupByTagsResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDeviceGroupByTagsResponse.Data.Length"); i++) {
 			DeviceGroup deviceGroup = new DeviceGroup();
-			deviceGroup.setGroupId(context.stringValue("QueryDeviceGroupByTagsResponse.Data["+ i +"].GroupId"));
-			deviceGroup.setGroupName(context.stringValue("QueryDeviceGroupByTagsResponse.Data["+ i +"].GroupName"));
+			deviceGroup.setGroupId(_ctx.stringValue("QueryDeviceGroupByTagsResponse.Data["+ i +"].GroupId"));
+			deviceGroup.setGroupName(_ctx.stringValue("QueryDeviceGroupByTagsResponse.Data["+ i +"].GroupName"));
 
 			data.add(deviceGroup);
 		}

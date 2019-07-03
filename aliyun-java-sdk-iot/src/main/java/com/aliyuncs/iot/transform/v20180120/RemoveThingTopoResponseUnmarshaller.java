@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveThingTopoResponseUnmarshaller {
 
-	public static RemoveThingTopoResponse unmarshall(RemoveThingTopoResponse removeThingTopoResponse, UnmarshallerContext context) {
+	public static RemoveThingTopoResponse unmarshall(RemoveThingTopoResponse removeThingTopoResponse, UnmarshallerContext _ctx) {
 		
-		removeThingTopoResponse.setRequestId(context.stringValue("RemoveThingTopoResponse.RequestId"));
-		removeThingTopoResponse.setSuccess(context.booleanValue("RemoveThingTopoResponse.Success"));
-		removeThingTopoResponse.setCode(context.stringValue("RemoveThingTopoResponse.Code"));
-		removeThingTopoResponse.setErrorMessage(context.stringValue("RemoveThingTopoResponse.ErrorMessage"));
-		removeThingTopoResponse.setData(context.booleanValue("RemoveThingTopoResponse.Data"));
+		removeThingTopoResponse.setRequestId(_ctx.stringValue("RemoveThingTopoResponse.RequestId"));
+		removeThingTopoResponse.setSuccess(_ctx.booleanValue("RemoveThingTopoResponse.Success"));
+		removeThingTopoResponse.setCode(_ctx.stringValue("RemoveThingTopoResponse.Code"));
+		removeThingTopoResponse.setErrorMessage(_ctx.stringValue("RemoveThingTopoResponse.ErrorMessage"));
+		removeThingTopoResponse.setData(_ctx.booleanValue("RemoveThingTopoResponse.Data"));
 	 
 	 	return removeThingTopoResponse;
 	}

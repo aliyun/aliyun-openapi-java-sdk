@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDevicePropResponseUnmarshaller {
 
-	public static QueryDevicePropResponse unmarshall(QueryDevicePropResponse queryDevicePropResponse, UnmarshallerContext context) {
+	public static QueryDevicePropResponse unmarshall(QueryDevicePropResponse queryDevicePropResponse, UnmarshallerContext _ctx) {
 		
-		queryDevicePropResponse.setRequestId(context.stringValue("QueryDevicePropResponse.RequestId"));
-		queryDevicePropResponse.setSuccess(context.booleanValue("QueryDevicePropResponse.Success"));
-		queryDevicePropResponse.setCode(context.stringValue("QueryDevicePropResponse.Code"));
-		queryDevicePropResponse.setErrorMessage(context.stringValue("QueryDevicePropResponse.ErrorMessage"));
-		queryDevicePropResponse.setProps(context.stringValue("QueryDevicePropResponse.Props"));
+		queryDevicePropResponse.setRequestId(_ctx.stringValue("QueryDevicePropResponse.RequestId"));
+		queryDevicePropResponse.setSuccess(_ctx.booleanValue("QueryDevicePropResponse.Success"));
+		queryDevicePropResponse.setCode(_ctx.stringValue("QueryDevicePropResponse.Code"));
+		queryDevicePropResponse.setErrorMessage(_ctx.stringValue("QueryDevicePropResponse.ErrorMessage"));
+		queryDevicePropResponse.setProps(_ctx.stringValue("QueryDevicePropResponse.Props"));
 	 
 	 	return queryDevicePropResponse;
 	}

@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InvokeThingServiceResponseUnmarshaller {
 
-	public static InvokeThingServiceResponse unmarshall(InvokeThingServiceResponse invokeThingServiceResponse, UnmarshallerContext context) {
+	public static InvokeThingServiceResponse unmarshall(InvokeThingServiceResponse invokeThingServiceResponse, UnmarshallerContext _ctx) {
 		
-		invokeThingServiceResponse.setRequestId(context.stringValue("InvokeThingServiceResponse.RequestId"));
-		invokeThingServiceResponse.setSuccess(context.booleanValue("InvokeThingServiceResponse.Success"));
-		invokeThingServiceResponse.setErrorMessage(context.stringValue("InvokeThingServiceResponse.ErrorMessage"));
-		invokeThingServiceResponse.setCode(context.stringValue("InvokeThingServiceResponse.Code"));
+		invokeThingServiceResponse.setRequestId(_ctx.stringValue("InvokeThingServiceResponse.RequestId"));
+		invokeThingServiceResponse.setSuccess(_ctx.booleanValue("InvokeThingServiceResponse.Success"));
+		invokeThingServiceResponse.setErrorMessage(_ctx.stringValue("InvokeThingServiceResponse.ErrorMessage"));
+		invokeThingServiceResponse.setCode(_ctx.stringValue("InvokeThingServiceResponse.Code"));
 
 		Data data = new Data();
-		data.setResult(context.stringValue("InvokeThingServiceResponse.Data.Result"));
-		data.setMessageId(context.stringValue("InvokeThingServiceResponse.Data.MessageId"));
+		data.setResult(_ctx.stringValue("InvokeThingServiceResponse.Data.Result"));
+		data.setMessageId(_ctx.stringValue("InvokeThingServiceResponse.Data.MessageId"));
 		invokeThingServiceResponse.setData(data);
 	 
 	 	return invokeThingServiceResponse;

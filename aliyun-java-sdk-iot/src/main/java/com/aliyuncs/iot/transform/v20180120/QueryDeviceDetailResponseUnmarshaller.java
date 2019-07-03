@@ -21,32 +21,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceDetailResponseUnmarshaller {
 
-	public static QueryDeviceDetailResponse unmarshall(QueryDeviceDetailResponse queryDeviceDetailResponse, UnmarshallerContext context) {
+	public static QueryDeviceDetailResponse unmarshall(QueryDeviceDetailResponse queryDeviceDetailResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceDetailResponse.setRequestId(context.stringValue("QueryDeviceDetailResponse.RequestId"));
-		queryDeviceDetailResponse.setSuccess(context.booleanValue("QueryDeviceDetailResponse.Success"));
-		queryDeviceDetailResponse.setCode(context.stringValue("QueryDeviceDetailResponse.Code"));
-		queryDeviceDetailResponse.setErrorMessage(context.stringValue("QueryDeviceDetailResponse.ErrorMessage"));
+		queryDeviceDetailResponse.setRequestId(_ctx.stringValue("QueryDeviceDetailResponse.RequestId"));
+		queryDeviceDetailResponse.setSuccess(_ctx.booleanValue("QueryDeviceDetailResponse.Success"));
+		queryDeviceDetailResponse.setCode(_ctx.stringValue("QueryDeviceDetailResponse.Code"));
+		queryDeviceDetailResponse.setErrorMessage(_ctx.stringValue("QueryDeviceDetailResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setIotId(context.stringValue("QueryDeviceDetailResponse.Data.IotId"));
-		data.setProductKey(context.stringValue("QueryDeviceDetailResponse.Data.ProductKey"));
-		data.setProductName(context.stringValue("QueryDeviceDetailResponse.Data.ProductName"));
-		data.setDeviceName(context.stringValue("QueryDeviceDetailResponse.Data.DeviceName"));
-		data.setDeviceSecret(context.stringValue("QueryDeviceDetailResponse.Data.DeviceSecret"));
-		data.setFirmwareVersion(context.stringValue("QueryDeviceDetailResponse.Data.FirmwareVersion"));
-		data.setGmtCreate(context.stringValue("QueryDeviceDetailResponse.Data.GmtCreate"));
-		data.setUtcCreate(context.stringValue("QueryDeviceDetailResponse.Data.UtcCreate"));
-		data.setGmtActive(context.stringValue("QueryDeviceDetailResponse.Data.GmtActive"));
-		data.setUtcActive(context.stringValue("QueryDeviceDetailResponse.Data.UtcActive"));
-		data.setGmtOnline(context.stringValue("QueryDeviceDetailResponse.Data.GmtOnline"));
-		data.setUtcOnline(context.stringValue("QueryDeviceDetailResponse.Data.UtcOnline"));
-		data.setStatus(context.stringValue("QueryDeviceDetailResponse.Data.Status"));
-		data.setIpAddress(context.stringValue("QueryDeviceDetailResponse.Data.IpAddress"));
-		data.setNodeType(context.integerValue("QueryDeviceDetailResponse.Data.NodeType"));
-		data.setRegion(context.stringValue("QueryDeviceDetailResponse.Data.Region"));
-		data.setOwner(context.booleanValue("QueryDeviceDetailResponse.Data.Owner"));
-		data.setNickname(context.stringValue("QueryDeviceDetailResponse.Data.Nickname"));
+		data.setIotId(_ctx.stringValue("QueryDeviceDetailResponse.Data.IotId"));
+		data.setProductKey(_ctx.stringValue("QueryDeviceDetailResponse.Data.ProductKey"));
+		data.setProductName(_ctx.stringValue("QueryDeviceDetailResponse.Data.ProductName"));
+		data.setDeviceName(_ctx.stringValue("QueryDeviceDetailResponse.Data.DeviceName"));
+		data.setDeviceSecret(_ctx.stringValue("QueryDeviceDetailResponse.Data.DeviceSecret"));
+		data.setFirmwareVersion(_ctx.stringValue("QueryDeviceDetailResponse.Data.FirmwareVersion"));
+		data.setGmtCreate(_ctx.stringValue("QueryDeviceDetailResponse.Data.GmtCreate"));
+		data.setUtcCreate(_ctx.stringValue("QueryDeviceDetailResponse.Data.UtcCreate"));
+		data.setGmtActive(_ctx.stringValue("QueryDeviceDetailResponse.Data.GmtActive"));
+		data.setUtcActive(_ctx.stringValue("QueryDeviceDetailResponse.Data.UtcActive"));
+		data.setGmtOnline(_ctx.stringValue("QueryDeviceDetailResponse.Data.GmtOnline"));
+		data.setUtcOnline(_ctx.stringValue("QueryDeviceDetailResponse.Data.UtcOnline"));
+		data.setStatus(_ctx.stringValue("QueryDeviceDetailResponse.Data.Status"));
+		data.setIpAddress(_ctx.stringValue("QueryDeviceDetailResponse.Data.IpAddress"));
+		data.setNodeType(_ctx.integerValue("QueryDeviceDetailResponse.Data.NodeType"));
+		data.setRegion(_ctx.stringValue("QueryDeviceDetailResponse.Data.Region"));
+		data.setOwner(_ctx.booleanValue("QueryDeviceDetailResponse.Data.Owner"));
+		data.setNickname(_ctx.stringValue("QueryDeviceDetailResponse.Data.Nickname"));
 		queryDeviceDetailResponse.setData(data);
 	 
 	 	return queryDeviceDetailResponse;

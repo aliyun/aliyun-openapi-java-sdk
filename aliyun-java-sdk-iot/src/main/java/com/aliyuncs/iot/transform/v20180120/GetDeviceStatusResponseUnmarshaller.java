@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetDeviceStatusResponseUnmarshaller {
 
-	public static GetDeviceStatusResponse unmarshall(GetDeviceStatusResponse getDeviceStatusResponse, UnmarshallerContext context) {
+	public static GetDeviceStatusResponse unmarshall(GetDeviceStatusResponse getDeviceStatusResponse, UnmarshallerContext _ctx) {
 		
-		getDeviceStatusResponse.setRequestId(context.stringValue("GetDeviceStatusResponse.RequestId"));
-		getDeviceStatusResponse.setSuccess(context.booleanValue("GetDeviceStatusResponse.Success"));
-		getDeviceStatusResponse.setCode(context.stringValue("GetDeviceStatusResponse.Code"));
-		getDeviceStatusResponse.setErrorMessage(context.stringValue("GetDeviceStatusResponse.ErrorMessage"));
+		getDeviceStatusResponse.setRequestId(_ctx.stringValue("GetDeviceStatusResponse.RequestId"));
+		getDeviceStatusResponse.setSuccess(_ctx.booleanValue("GetDeviceStatusResponse.Success"));
+		getDeviceStatusResponse.setCode(_ctx.stringValue("GetDeviceStatusResponse.Code"));
+		getDeviceStatusResponse.setErrorMessage(_ctx.stringValue("GetDeviceStatusResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setStatus(context.stringValue("GetDeviceStatusResponse.Data.Status"));
+		data.setStatus(_ctx.stringValue("GetDeviceStatusResponse.Data.Status"));
 		getDeviceStatusResponse.setData(data);
 	 
 	 	return getDeviceStatusResponse;

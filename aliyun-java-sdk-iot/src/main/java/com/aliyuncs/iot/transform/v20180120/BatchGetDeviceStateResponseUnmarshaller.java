@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchGetDeviceStateResponseUnmarshaller {
 
-	public static BatchGetDeviceStateResponse unmarshall(BatchGetDeviceStateResponse batchGetDeviceStateResponse, UnmarshallerContext context) {
+	public static BatchGetDeviceStateResponse unmarshall(BatchGetDeviceStateResponse batchGetDeviceStateResponse, UnmarshallerContext _ctx) {
 		
-		batchGetDeviceStateResponse.setRequestId(context.stringValue("BatchGetDeviceStateResponse.RequestId"));
-		batchGetDeviceStateResponse.setSuccess(context.booleanValue("BatchGetDeviceStateResponse.Success"));
-		batchGetDeviceStateResponse.setCode(context.stringValue("BatchGetDeviceStateResponse.Code"));
-		batchGetDeviceStateResponse.setErrorMessage(context.stringValue("BatchGetDeviceStateResponse.ErrorMessage"));
+		batchGetDeviceStateResponse.setRequestId(_ctx.stringValue("BatchGetDeviceStateResponse.RequestId"));
+		batchGetDeviceStateResponse.setSuccess(_ctx.booleanValue("BatchGetDeviceStateResponse.Success"));
+		batchGetDeviceStateResponse.setCode(_ctx.stringValue("BatchGetDeviceStateResponse.Code"));
+		batchGetDeviceStateResponse.setErrorMessage(_ctx.stringValue("BatchGetDeviceStateResponse.ErrorMessage"));
 
 		List<DeviceStatus> deviceStatusList = new ArrayList<DeviceStatus>();
-		for (int i = 0; i < context.lengthValue("BatchGetDeviceStateResponse.DeviceStatusList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("BatchGetDeviceStateResponse.DeviceStatusList.Length"); i++) {
 			DeviceStatus deviceStatus = new DeviceStatus();
-			deviceStatus.setDeviceId(context.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].DeviceId"));
-			deviceStatus.setDeviceName(context.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].DeviceName"));
-			deviceStatus.setStatus(context.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].Status"));
-			deviceStatus.setAsAddress(context.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].AsAddress"));
-			deviceStatus.setLastOnlineTime(context.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].LastOnlineTime"));
-			deviceStatus.setIotId(context.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].IotId"));
+			deviceStatus.setDeviceId(_ctx.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].DeviceId"));
+			deviceStatus.setDeviceName(_ctx.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].DeviceName"));
+			deviceStatus.setStatus(_ctx.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].Status"));
+			deviceStatus.setAsAddress(_ctx.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].AsAddress"));
+			deviceStatus.setLastOnlineTime(_ctx.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].LastOnlineTime"));
+			deviceStatus.setIotId(_ctx.stringValue("BatchGetDeviceStateResponse.DeviceStatusList["+ i +"].IotId"));
 
 			deviceStatusList.add(deviceStatus);
 		}

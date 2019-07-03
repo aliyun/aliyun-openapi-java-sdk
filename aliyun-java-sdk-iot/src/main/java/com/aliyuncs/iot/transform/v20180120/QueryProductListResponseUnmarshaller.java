@@ -25,29 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryProductListResponseUnmarshaller {
 
-	public static QueryProductListResponse unmarshall(QueryProductListResponse queryProductListResponse, UnmarshallerContext context) {
+	public static QueryProductListResponse unmarshall(QueryProductListResponse queryProductListResponse, UnmarshallerContext _ctx) {
 		
-		queryProductListResponse.setRequestId(context.stringValue("QueryProductListResponse.RequestId"));
-		queryProductListResponse.setSuccess(context.booleanValue("QueryProductListResponse.Success"));
-		queryProductListResponse.setCode(context.stringValue("QueryProductListResponse.Code"));
-		queryProductListResponse.setErrorMessage(context.stringValue("QueryProductListResponse.ErrorMessage"));
+		queryProductListResponse.setRequestId(_ctx.stringValue("QueryProductListResponse.RequestId"));
+		queryProductListResponse.setSuccess(_ctx.booleanValue("QueryProductListResponse.Success"));
+		queryProductListResponse.setCode(_ctx.stringValue("QueryProductListResponse.Code"));
+		queryProductListResponse.setErrorMessage(_ctx.stringValue("QueryProductListResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setCurrentPage(context.integerValue("QueryProductListResponse.Data.CurrentPage"));
-		data.setPageCount(context.integerValue("QueryProductListResponse.Data.PageCount"));
-		data.setPageSize(context.integerValue("QueryProductListResponse.Data.PageSize"));
-		data.setTotal(context.integerValue("QueryProductListResponse.Data.Total"));
+		data.setCurrentPage(_ctx.integerValue("QueryProductListResponse.Data.CurrentPage"));
+		data.setPageCount(_ctx.integerValue("QueryProductListResponse.Data.PageCount"));
+		data.setPageSize(_ctx.integerValue("QueryProductListResponse.Data.PageSize"));
+		data.setTotal(_ctx.integerValue("QueryProductListResponse.Data.Total"));
 
 		List<ProductInfo> list = new ArrayList<ProductInfo>();
-		for (int i = 0; i < context.lengthValue("QueryProductListResponse.Data.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryProductListResponse.Data.List.Length"); i++) {
 			ProductInfo productInfo = new ProductInfo();
-			productInfo.setGmtCreate(context.longValue("QueryProductListResponse.Data.List["+ i +"].GmtCreate"));
-			productInfo.setDataFormat(context.integerValue("QueryProductListResponse.Data.List["+ i +"].DataFormat"));
-			productInfo.setDescription(context.stringValue("QueryProductListResponse.Data.List["+ i +"].Description"));
-			productInfo.setDeviceCount(context.integerValue("QueryProductListResponse.Data.List["+ i +"].DeviceCount"));
-			productInfo.setNodeType(context.integerValue("QueryProductListResponse.Data.List["+ i +"].NodeType"));
-			productInfo.setProductKey(context.stringValue("QueryProductListResponse.Data.List["+ i +"].ProductKey"));
-			productInfo.setProductName(context.stringValue("QueryProductListResponse.Data.List["+ i +"].ProductName"));
+			productInfo.setGmtCreate(_ctx.longValue("QueryProductListResponse.Data.List["+ i +"].GmtCreate"));
+			productInfo.setDataFormat(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].DataFormat"));
+			productInfo.setDescription(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].Description"));
+			productInfo.setDeviceCount(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].DeviceCount"));
+			productInfo.setNodeType(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].NodeType"));
+			productInfo.setProductKey(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].ProductKey"));
+			productInfo.setProductName(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].ProductName"));
 
 			list.add(productInfo);
 		}

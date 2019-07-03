@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceGroupInfoResponseUnmarshaller {
 
-	public static QueryDeviceGroupInfoResponse unmarshall(QueryDeviceGroupInfoResponse queryDeviceGroupInfoResponse, UnmarshallerContext context) {
+	public static QueryDeviceGroupInfoResponse unmarshall(QueryDeviceGroupInfoResponse queryDeviceGroupInfoResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceGroupInfoResponse.setRequestId(context.stringValue("QueryDeviceGroupInfoResponse.RequestId"));
-		queryDeviceGroupInfoResponse.setSuccess(context.booleanValue("QueryDeviceGroupInfoResponse.Success"));
-		queryDeviceGroupInfoResponse.setCode(context.stringValue("QueryDeviceGroupInfoResponse.Code"));
-		queryDeviceGroupInfoResponse.setErrorMessage(context.stringValue("QueryDeviceGroupInfoResponse.ErrorMessage"));
+		queryDeviceGroupInfoResponse.setRequestId(_ctx.stringValue("QueryDeviceGroupInfoResponse.RequestId"));
+		queryDeviceGroupInfoResponse.setSuccess(_ctx.booleanValue("QueryDeviceGroupInfoResponse.Success"));
+		queryDeviceGroupInfoResponse.setCode(_ctx.stringValue("QueryDeviceGroupInfoResponse.Code"));
+		queryDeviceGroupInfoResponse.setErrorMessage(_ctx.stringValue("QueryDeviceGroupInfoResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setGroupId(context.stringValue("QueryDeviceGroupInfoResponse.Data.GroupId"));
-		data.setUtcCreate(context.stringValue("QueryDeviceGroupInfoResponse.Data.UtcCreate"));
-		data.setGroupName(context.stringValue("QueryDeviceGroupInfoResponse.Data.GroupName"));
-		data.setGroupDesc(context.stringValue("QueryDeviceGroupInfoResponse.Data.GroupDesc"));
-		data.setDeviceCount(context.integerValue("QueryDeviceGroupInfoResponse.Data.DeviceCount"));
-		data.setDeviceActive(context.integerValue("QueryDeviceGroupInfoResponse.Data.DeviceActive"));
-		data.setDeviceOnline(context.integerValue("QueryDeviceGroupInfoResponse.Data.DeviceOnline"));
+		data.setGroupId(_ctx.stringValue("QueryDeviceGroupInfoResponse.Data.GroupId"));
+		data.setUtcCreate(_ctx.stringValue("QueryDeviceGroupInfoResponse.Data.UtcCreate"));
+		data.setGroupName(_ctx.stringValue("QueryDeviceGroupInfoResponse.Data.GroupName"));
+		data.setGroupDesc(_ctx.stringValue("QueryDeviceGroupInfoResponse.Data.GroupDesc"));
+		data.setDeviceCount(_ctx.integerValue("QueryDeviceGroupInfoResponse.Data.DeviceCount"));
+		data.setDeviceActive(_ctx.integerValue("QueryDeviceGroupInfoResponse.Data.DeviceActive"));
+		data.setDeviceOnline(_ctx.integerValue("QueryDeviceGroupInfoResponse.Data.DeviceOnline"));
 		queryDeviceGroupInfoResponse.setData(data);
 	 
 	 	return queryDeviceGroupInfoResponse;

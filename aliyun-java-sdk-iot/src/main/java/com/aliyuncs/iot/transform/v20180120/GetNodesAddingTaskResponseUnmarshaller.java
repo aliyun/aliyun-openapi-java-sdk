@@ -23,20 +23,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetNodesAddingTaskResponseUnmarshaller {
 
-	public static GetNodesAddingTaskResponse unmarshall(GetNodesAddingTaskResponse getNodesAddingTaskResponse, UnmarshallerContext context) {
+	public static GetNodesAddingTaskResponse unmarshall(GetNodesAddingTaskResponse getNodesAddingTaskResponse, UnmarshallerContext _ctx) {
 		
-		getNodesAddingTaskResponse.setRequestId(context.stringValue("GetNodesAddingTaskResponse.RequestId"));
-		getNodesAddingTaskResponse.setSuccess(context.booleanValue("GetNodesAddingTaskResponse.Success"));
-		getNodesAddingTaskResponse.setCode(context.stringValue("GetNodesAddingTaskResponse.Code"));
-		getNodesAddingTaskResponse.setErrorMessage(context.stringValue("GetNodesAddingTaskResponse.ErrorMessage"));
-		getNodesAddingTaskResponse.setTaskId(context.stringValue("GetNodesAddingTaskResponse.TaskId"));
-		getNodesAddingTaskResponse.setTaskState(context.stringValue("GetNodesAddingTaskResponse.TaskState"));
-		getNodesAddingTaskResponse.setTotalCount(context.longValue("GetNodesAddingTaskResponse.TotalCount"));
-		getNodesAddingTaskResponse.setSuccessCount(context.longValue("GetNodesAddingTaskResponse.SuccessCount"));
+		getNodesAddingTaskResponse.setRequestId(_ctx.stringValue("GetNodesAddingTaskResponse.RequestId"));
+		getNodesAddingTaskResponse.setSuccess(_ctx.booleanValue("GetNodesAddingTaskResponse.Success"));
+		getNodesAddingTaskResponse.setCode(_ctx.stringValue("GetNodesAddingTaskResponse.Code"));
+		getNodesAddingTaskResponse.setErrorMessage(_ctx.stringValue("GetNodesAddingTaskResponse.ErrorMessage"));
+		getNodesAddingTaskResponse.setTaskId(_ctx.stringValue("GetNodesAddingTaskResponse.TaskId"));
+		getNodesAddingTaskResponse.setTaskState(_ctx.stringValue("GetNodesAddingTaskResponse.TaskState"));
+		getNodesAddingTaskResponse.setTotalCount(_ctx.longValue("GetNodesAddingTaskResponse.TotalCount"));
+		getNodesAddingTaskResponse.setSuccessCount(_ctx.longValue("GetNodesAddingTaskResponse.SuccessCount"));
 
 		List<String> successDevEuis = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetNodesAddingTaskResponse.SuccessDevEuis.Length"); i++) {
-			successDevEuis.add(context.stringValue("GetNodesAddingTaskResponse.SuccessDevEuis["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetNodesAddingTaskResponse.SuccessDevEuis.Length"); i++) {
+			successDevEuis.add(_ctx.stringValue("GetNodesAddingTaskResponse.SuccessDevEuis["+ i +"]"));
 		}
 		getNodesAddingTaskResponse.setSuccessDevEuis(successDevEuis);
 	 

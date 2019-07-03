@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetDevicePropertyResponseUnmarshaller {
 
-	public static SetDevicePropertyResponse unmarshall(SetDevicePropertyResponse setDevicePropertyResponse, UnmarshallerContext context) {
+	public static SetDevicePropertyResponse unmarshall(SetDevicePropertyResponse setDevicePropertyResponse, UnmarshallerContext _ctx) {
 		
-		setDevicePropertyResponse.setRequestId(context.stringValue("SetDevicePropertyResponse.RequestId"));
-		setDevicePropertyResponse.setSuccess(context.booleanValue("SetDevicePropertyResponse.Success"));
-		setDevicePropertyResponse.setErrorMessage(context.stringValue("SetDevicePropertyResponse.ErrorMessage"));
-		setDevicePropertyResponse.setCode(context.stringValue("SetDevicePropertyResponse.Code"));
+		setDevicePropertyResponse.setRequestId(_ctx.stringValue("SetDevicePropertyResponse.RequestId"));
+		setDevicePropertyResponse.setSuccess(_ctx.booleanValue("SetDevicePropertyResponse.Success"));
+		setDevicePropertyResponse.setErrorMessage(_ctx.stringValue("SetDevicePropertyResponse.ErrorMessage"));
+		setDevicePropertyResponse.setCode(_ctx.stringValue("SetDevicePropertyResponse.Code"));
 
 		Data data = new Data();
-		data.setMessageId(context.stringValue("SetDevicePropertyResponse.Data.MessageId"));
+		data.setMessageId(_ctx.stringValue("SetDevicePropertyResponse.Data.MessageId"));
 		setDevicePropertyResponse.setData(data);
 	 
 	 	return setDevicePropertyResponse;

@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class NotifyAddThingTopoResponseUnmarshaller {
 
-	public static NotifyAddThingTopoResponse unmarshall(NotifyAddThingTopoResponse notifyAddThingTopoResponse, UnmarshallerContext context) {
+	public static NotifyAddThingTopoResponse unmarshall(NotifyAddThingTopoResponse notifyAddThingTopoResponse, UnmarshallerContext _ctx) {
 		
-		notifyAddThingTopoResponse.setRequestId(context.stringValue("NotifyAddThingTopoResponse.RequestId"));
-		notifyAddThingTopoResponse.setSuccess(context.booleanValue("NotifyAddThingTopoResponse.Success"));
-		notifyAddThingTopoResponse.setErrorMessage(context.stringValue("NotifyAddThingTopoResponse.ErrorMessage"));
-		notifyAddThingTopoResponse.setCode(context.stringValue("NotifyAddThingTopoResponse.Code"));
+		notifyAddThingTopoResponse.setRequestId(_ctx.stringValue("NotifyAddThingTopoResponse.RequestId"));
+		notifyAddThingTopoResponse.setSuccess(_ctx.booleanValue("NotifyAddThingTopoResponse.Success"));
+		notifyAddThingTopoResponse.setErrorMessage(_ctx.stringValue("NotifyAddThingTopoResponse.ErrorMessage"));
+		notifyAddThingTopoResponse.setCode(_ctx.stringValue("NotifyAddThingTopoResponse.Code"));
 
 		Data data = new Data();
-		data.setMessageId(context.stringValue("NotifyAddThingTopoResponse.Data.MessageId"));
+		data.setMessageId(_ctx.stringValue("NotifyAddThingTopoResponse.Data.MessageId"));
 		notifyAddThingTopoResponse.setData(data);
 	 
 	 	return notifyAddThingTopoResponse;

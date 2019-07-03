@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceServiceDataResponseUnmarshaller {
 
-	public static QueryDeviceServiceDataResponse unmarshall(QueryDeviceServiceDataResponse queryDeviceServiceDataResponse, UnmarshallerContext context) {
+	public static QueryDeviceServiceDataResponse unmarshall(QueryDeviceServiceDataResponse queryDeviceServiceDataResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceServiceDataResponse.setRequestId(context.stringValue("QueryDeviceServiceDataResponse.RequestId"));
-		queryDeviceServiceDataResponse.setSuccess(context.booleanValue("QueryDeviceServiceDataResponse.Success"));
-		queryDeviceServiceDataResponse.setCode(context.stringValue("QueryDeviceServiceDataResponse.Code"));
-		queryDeviceServiceDataResponse.setErrorMessage(context.stringValue("QueryDeviceServiceDataResponse.ErrorMessage"));
+		queryDeviceServiceDataResponse.setRequestId(_ctx.stringValue("QueryDeviceServiceDataResponse.RequestId"));
+		queryDeviceServiceDataResponse.setSuccess(_ctx.booleanValue("QueryDeviceServiceDataResponse.Success"));
+		queryDeviceServiceDataResponse.setCode(_ctx.stringValue("QueryDeviceServiceDataResponse.Code"));
+		queryDeviceServiceDataResponse.setErrorMessage(_ctx.stringValue("QueryDeviceServiceDataResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setNextTime(context.longValue("QueryDeviceServiceDataResponse.Data.NextTime"));
-		data.setNextValid(context.booleanValue("QueryDeviceServiceDataResponse.Data.NextValid"));
+		data.setNextTime(_ctx.longValue("QueryDeviceServiceDataResponse.Data.NextTime"));
+		data.setNextValid(_ctx.booleanValue("QueryDeviceServiceDataResponse.Data.NextValid"));
 
 		List<ServiceInfo> list = new ArrayList<ServiceInfo>();
-		for (int i = 0; i < context.lengthValue("QueryDeviceServiceDataResponse.Data.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDeviceServiceDataResponse.Data.List.Length"); i++) {
 			ServiceInfo serviceInfo = new ServiceInfo();
-			serviceInfo.setTime(context.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].Time"));
-			serviceInfo.setIdentifier(context.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].Identifier"));
-			serviceInfo.setName(context.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].Name"));
-			serviceInfo.setInputData(context.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].InputData"));
-			serviceInfo.setOutputData(context.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].OutputData"));
+			serviceInfo.setTime(_ctx.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].Time"));
+			serviceInfo.setIdentifier(_ctx.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].Identifier"));
+			serviceInfo.setName(_ctx.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].Name"));
+			serviceInfo.setInputData(_ctx.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].InputData"));
+			serviceInfo.setOutputData(_ctx.stringValue("QueryDeviceServiceDataResponse.Data.List["+ i +"].OutputData"));
 
 			list.add(serviceInfo);
 		}

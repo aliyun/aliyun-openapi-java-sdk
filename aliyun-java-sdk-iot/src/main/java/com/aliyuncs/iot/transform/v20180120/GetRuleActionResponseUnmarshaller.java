@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRuleActionResponseUnmarshaller {
 
-	public static GetRuleActionResponse unmarshall(GetRuleActionResponse getRuleActionResponse, UnmarshallerContext context) {
+	public static GetRuleActionResponse unmarshall(GetRuleActionResponse getRuleActionResponse, UnmarshallerContext _ctx) {
 		
-		getRuleActionResponse.setRequestId(context.stringValue("GetRuleActionResponse.RequestId"));
-		getRuleActionResponse.setSuccess(context.booleanValue("GetRuleActionResponse.Success"));
-		getRuleActionResponse.setCode(context.stringValue("GetRuleActionResponse.Code"));
-		getRuleActionResponse.setErrorMessage(context.stringValue("GetRuleActionResponse.ErrorMessage"));
+		getRuleActionResponse.setRequestId(_ctx.stringValue("GetRuleActionResponse.RequestId"));
+		getRuleActionResponse.setSuccess(_ctx.booleanValue("GetRuleActionResponse.Success"));
+		getRuleActionResponse.setCode(_ctx.stringValue("GetRuleActionResponse.Code"));
+		getRuleActionResponse.setErrorMessage(_ctx.stringValue("GetRuleActionResponse.ErrorMessage"));
 
 		RuleActionInfo ruleActionInfo = new RuleActionInfo();
-		ruleActionInfo.setId(context.longValue("GetRuleActionResponse.RuleActionInfo.Id"));
-		ruleActionInfo.setRuleId(context.longValue("GetRuleActionResponse.RuleActionInfo.RuleId"));
-		ruleActionInfo.setType(context.stringValue("GetRuleActionResponse.RuleActionInfo.Type"));
-		ruleActionInfo.setConfiguration(context.stringValue("GetRuleActionResponse.RuleActionInfo.Configuration"));
-		ruleActionInfo.setErrorActionFlag(context.booleanValue("GetRuleActionResponse.RuleActionInfo.ErrorActionFlag"));
+		ruleActionInfo.setId(_ctx.longValue("GetRuleActionResponse.RuleActionInfo.Id"));
+		ruleActionInfo.setRuleId(_ctx.longValue("GetRuleActionResponse.RuleActionInfo.RuleId"));
+		ruleActionInfo.setType(_ctx.stringValue("GetRuleActionResponse.RuleActionInfo.Type"));
+		ruleActionInfo.setConfiguration(_ctx.stringValue("GetRuleActionResponse.RuleActionInfo.Configuration"));
+		ruleActionInfo.setErrorActionFlag(_ctx.booleanValue("GetRuleActionResponse.RuleActionInfo.ErrorActionFlag"));
 		getRuleActionResponse.setRuleActionInfo(ruleActionInfo);
 	 
 	 	return getRuleActionResponse;

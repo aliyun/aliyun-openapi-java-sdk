@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryBatchRegisterDeviceStatusResponseUnmarshaller {
 
-	public static QueryBatchRegisterDeviceStatusResponse unmarshall(QueryBatchRegisterDeviceStatusResponse queryBatchRegisterDeviceStatusResponse, UnmarshallerContext context) {
+	public static QueryBatchRegisterDeviceStatusResponse unmarshall(QueryBatchRegisterDeviceStatusResponse queryBatchRegisterDeviceStatusResponse, UnmarshallerContext _ctx) {
 		
-		queryBatchRegisterDeviceStatusResponse.setRequestId(context.stringValue("QueryBatchRegisterDeviceStatusResponse.RequestId"));
-		queryBatchRegisterDeviceStatusResponse.setSuccess(context.booleanValue("QueryBatchRegisterDeviceStatusResponse.Success"));
-		queryBatchRegisterDeviceStatusResponse.setCode(context.stringValue("QueryBatchRegisterDeviceStatusResponse.Code"));
-		queryBatchRegisterDeviceStatusResponse.setErrorMessage(context.stringValue("QueryBatchRegisterDeviceStatusResponse.ErrorMessage"));
+		queryBatchRegisterDeviceStatusResponse.setRequestId(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.RequestId"));
+		queryBatchRegisterDeviceStatusResponse.setSuccess(_ctx.booleanValue("QueryBatchRegisterDeviceStatusResponse.Success"));
+		queryBatchRegisterDeviceStatusResponse.setCode(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Code"));
+		queryBatchRegisterDeviceStatusResponse.setErrorMessage(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.ErrorMessage"));
 
 		Data data = new Data();
-		data.setStatus(context.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.Status"));
+		data.setStatus(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.Status"));
 
 		List<String> validList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryBatchRegisterDeviceStatusResponse.Data.ValidList.Length"); i++) {
-			validList.add(context.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.ValidList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryBatchRegisterDeviceStatusResponse.Data.ValidList.Length"); i++) {
+			validList.add(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.ValidList["+ i +"]"));
 		}
 		data.setValidList(validList);
 
 		List<String> invalidList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidList.Length"); i++) {
-			invalidList.add(context.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidList.Length"); i++) {
+			invalidList.add(_ctx.stringValue("QueryBatchRegisterDeviceStatusResponse.Data.InvalidList["+ i +"]"));
 		}
 		data.setInvalidList(invalidList);
 		queryBatchRegisterDeviceStatusResponse.setData(data);

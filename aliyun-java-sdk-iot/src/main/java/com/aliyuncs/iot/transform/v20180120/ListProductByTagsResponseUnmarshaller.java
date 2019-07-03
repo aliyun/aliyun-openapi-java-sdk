@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListProductByTagsResponseUnmarshaller {
 
-	public static ListProductByTagsResponse unmarshall(ListProductByTagsResponse listProductByTagsResponse, UnmarshallerContext context) {
+	public static ListProductByTagsResponse unmarshall(ListProductByTagsResponse listProductByTagsResponse, UnmarshallerContext _ctx) {
 		
-		listProductByTagsResponse.setRequestId(context.stringValue("ListProductByTagsResponse.RequestId"));
-		listProductByTagsResponse.setSuccess(context.booleanValue("ListProductByTagsResponse.Success"));
-		listProductByTagsResponse.setErrorMessage(context.stringValue("ListProductByTagsResponse.ErrorMessage"));
-		listProductByTagsResponse.setCode(context.stringValue("ListProductByTagsResponse.Code"));
+		listProductByTagsResponse.setRequestId(_ctx.stringValue("ListProductByTagsResponse.RequestId"));
+		listProductByTagsResponse.setSuccess(_ctx.booleanValue("ListProductByTagsResponse.Success"));
+		listProductByTagsResponse.setErrorMessage(_ctx.stringValue("ListProductByTagsResponse.ErrorMessage"));
+		listProductByTagsResponse.setCode(_ctx.stringValue("ListProductByTagsResponse.Code"));
 
 		List<ProductInfo> productInfos = new ArrayList<ProductInfo>();
-		for (int i = 0; i < context.lengthValue("ListProductByTagsResponse.ProductInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListProductByTagsResponse.ProductInfos.Length"); i++) {
 			ProductInfo productInfo = new ProductInfo();
-			productInfo.setProductName(context.stringValue("ListProductByTagsResponse.ProductInfos["+ i +"].ProductName"));
-			productInfo.setProductKey(context.stringValue("ListProductByTagsResponse.ProductInfos["+ i +"].ProductKey"));
-			productInfo.setCreateTime(context.longValue("ListProductByTagsResponse.ProductInfos["+ i +"].CreateTime"));
-			productInfo.setDescription(context.stringValue("ListProductByTagsResponse.ProductInfos["+ i +"].Description"));
-			productInfo.setNodeType(context.integerValue("ListProductByTagsResponse.ProductInfos["+ i +"].NodeType"));
+			productInfo.setProductName(_ctx.stringValue("ListProductByTagsResponse.ProductInfos["+ i +"].ProductName"));
+			productInfo.setProductKey(_ctx.stringValue("ListProductByTagsResponse.ProductInfos["+ i +"].ProductKey"));
+			productInfo.setCreateTime(_ctx.longValue("ListProductByTagsResponse.ProductInfos["+ i +"].CreateTime"));
+			productInfo.setDescription(_ctx.stringValue("ListProductByTagsResponse.ProductInfos["+ i +"].Description"));
+			productInfo.setNodeType(_ctx.integerValue("ListProductByTagsResponse.ProductInfos["+ i +"].NodeType"));
 
 			productInfos.add(productInfo);
 		}

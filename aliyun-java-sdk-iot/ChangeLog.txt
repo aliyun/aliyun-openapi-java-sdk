@@ -1,3 +1,6 @@
+2019-07-04 Version: 6.11.0
+- Supported batch querying for device detail.
+
 2019-06-12 Version: 6.10.0
 1, Add InvokeDataAPIService interface, support invoke service of data api to get sql query result.
 2, Add GetDataAPIServiceDetail interface, support get data api's detail information.

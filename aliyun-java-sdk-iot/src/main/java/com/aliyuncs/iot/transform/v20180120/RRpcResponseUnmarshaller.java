@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RRpcResponseUnmarshaller {
 
-	public static RRpcResponse unmarshall(RRpcResponse rRpcResponse, UnmarshallerContext context) {
+	public static RRpcResponse unmarshall(RRpcResponse rRpcResponse, UnmarshallerContext _ctx) {
 		
-		rRpcResponse.setRequestId(context.stringValue("RRpcResponse.RequestId"));
-		rRpcResponse.setSuccess(context.booleanValue("RRpcResponse.Success"));
-		rRpcResponse.setCode(context.stringValue("RRpcResponse.Code"));
-		rRpcResponse.setErrorMessage(context.stringValue("RRpcResponse.ErrorMessage"));
-		rRpcResponse.setRrpcCode(context.stringValue("RRpcResponse.RrpcCode"));
-		rRpcResponse.setPayloadBase64Byte(context.stringValue("RRpcResponse.PayloadBase64Byte"));
-		rRpcResponse.setMessageId(context.longValue("RRpcResponse.MessageId"));
+		rRpcResponse.setRequestId(_ctx.stringValue("RRpcResponse.RequestId"));
+		rRpcResponse.setSuccess(_ctx.booleanValue("RRpcResponse.Success"));
+		rRpcResponse.setCode(_ctx.stringValue("RRpcResponse.Code"));
+		rRpcResponse.setErrorMessage(_ctx.stringValue("RRpcResponse.ErrorMessage"));
+		rRpcResponse.setRrpcCode(_ctx.stringValue("RRpcResponse.RrpcCode"));
+		rRpcResponse.setPayloadBase64Byte(_ctx.stringValue("RRpcResponse.PayloadBase64Byte"));
+		rRpcResponse.setMessageId(_ctx.longValue("RRpcResponse.MessageId"));
 	 
 	 	return rRpcResponse;
 	}
