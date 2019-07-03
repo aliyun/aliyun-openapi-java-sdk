@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeConsumerGroupResponseUnmarshaller {
 
-	public static DescribeConsumerGroupResponse unmarshall(DescribeConsumerGroupResponse describeConsumerGroupResponse, UnmarshallerContext context) {
+	public static DescribeConsumerGroupResponse unmarshall(DescribeConsumerGroupResponse describeConsumerGroupResponse, UnmarshallerContext _ctx) {
 		
-		describeConsumerGroupResponse.setPageNumber(context.integerValue("DescribeConsumerGroupResponse.PageNumber"));
-		describeConsumerGroupResponse.setTotalRecordCount(context.integerValue("DescribeConsumerGroupResponse.TotalRecordCount"));
-		describeConsumerGroupResponse.setPageRecordCount(context.integerValue("DescribeConsumerGroupResponse.PageRecordCount"));
+		describeConsumerGroupResponse.setPageNumber(_ctx.integerValue("DescribeConsumerGroupResponse.PageNumber"));
+		describeConsumerGroupResponse.setTotalRecordCount(_ctx.integerValue("DescribeConsumerGroupResponse.TotalRecordCount"));
+		describeConsumerGroupResponse.setPageRecordCount(_ctx.integerValue("DescribeConsumerGroupResponse.PageRecordCount"));
 
 		List<DescribeConsumerChannel> consumerChannels = new ArrayList<DescribeConsumerChannel>();
-		for (int i = 0; i < context.lengthValue("DescribeConsumerGroupResponse.ConsumerChannels.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeConsumerGroupResponse.ConsumerChannels.Length"); i++) {
 			DescribeConsumerChannel describeConsumerChannel = new DescribeConsumerChannel();
-			describeConsumerChannel.setConsumerGroupID(context.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumerGroupID"));
-			describeConsumerChannel.setConsumerGroupName(context.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumerGroupName"));
-			describeConsumerChannel.setConsumptionCheckpoint(context.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumptionCheckpoint"));
-			describeConsumerChannel.setUnconsumedData(context.longValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].UnconsumedData"));
-			describeConsumerChannel.setMessageDelay(context.longValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].MessageDelay"));
-			describeConsumerChannel.setConsumerGroupUserName(context.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumerGroupUserName"));
+			describeConsumerChannel.setConsumerGroupID(_ctx.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumerGroupID"));
+			describeConsumerChannel.setConsumerGroupName(_ctx.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumerGroupName"));
+			describeConsumerChannel.setConsumptionCheckpoint(_ctx.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumptionCheckpoint"));
+			describeConsumerChannel.setUnconsumedData(_ctx.longValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].UnconsumedData"));
+			describeConsumerChannel.setMessageDelay(_ctx.longValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].MessageDelay"));
+			describeConsumerChannel.setConsumerGroupUserName(_ctx.stringValue("DescribeConsumerGroupResponse.ConsumerChannels["+ i +"].ConsumerGroupUserName"));
 
 			consumerChannels.add(describeConsumerChannel);
 		}

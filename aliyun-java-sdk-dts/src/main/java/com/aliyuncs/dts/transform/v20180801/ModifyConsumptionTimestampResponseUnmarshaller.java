@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyConsumptionTimestampResponseUnmarshaller {
 
-	public static ModifyConsumptionTimestampResponse unmarshall(ModifyConsumptionTimestampResponse modifyConsumptionTimestampResponse, UnmarshallerContext context) {
+	public static ModifyConsumptionTimestampResponse unmarshall(ModifyConsumptionTimestampResponse modifyConsumptionTimestampResponse, UnmarshallerContext _ctx) {
 		
-		modifyConsumptionTimestampResponse.setRequestId(context.stringValue("ModifyConsumptionTimestampResponse.RequestId"));
-		modifyConsumptionTimestampResponse.setSuccess(context.stringValue("ModifyConsumptionTimestampResponse.Success"));
-		modifyConsumptionTimestampResponse.setErrCode(context.stringValue("ModifyConsumptionTimestampResponse.ErrCode"));
-		modifyConsumptionTimestampResponse.setErrMessage(context.stringValue("ModifyConsumptionTimestampResponse.ErrMessage"));
+		modifyConsumptionTimestampResponse.setRequestId(_ctx.stringValue("ModifyConsumptionTimestampResponse.RequestId"));
+		modifyConsumptionTimestampResponse.setSuccess(_ctx.stringValue("ModifyConsumptionTimestampResponse.Success"));
+		modifyConsumptionTimestampResponse.setErrCode(_ctx.stringValue("ModifyConsumptionTimestampResponse.ErrCode"));
+		modifyConsumptionTimestampResponse.setErrMessage(_ctx.stringValue("ModifyConsumptionTimestampResponse.ErrMessage"));
 	 
 	 	return modifyConsumptionTimestampResponse;
 	}

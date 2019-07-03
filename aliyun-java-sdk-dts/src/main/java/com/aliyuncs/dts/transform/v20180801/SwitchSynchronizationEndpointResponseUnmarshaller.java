@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SwitchSynchronizationEndpointResponseUnmarshaller {
 
-	public static SwitchSynchronizationEndpointResponse unmarshall(SwitchSynchronizationEndpointResponse switchSynchronizationEndpointResponse, UnmarshallerContext context) {
+	public static SwitchSynchronizationEndpointResponse unmarshall(SwitchSynchronizationEndpointResponse switchSynchronizationEndpointResponse, UnmarshallerContext _ctx) {
 		
-		switchSynchronizationEndpointResponse.setRequestId(context.stringValue("SwitchSynchronizationEndpointResponse.RequestId"));
-		switchSynchronizationEndpointResponse.setSuccess(context.stringValue("SwitchSynchronizationEndpointResponse.Success"));
-		switchSynchronizationEndpointResponse.setErrCode(context.stringValue("SwitchSynchronizationEndpointResponse.ErrCode"));
-		switchSynchronizationEndpointResponse.setErrMessage(context.stringValue("SwitchSynchronizationEndpointResponse.ErrMessage"));
-		switchSynchronizationEndpointResponse.setTaskId(context.stringValue("SwitchSynchronizationEndpointResponse.TaskId"));
+		switchSynchronizationEndpointResponse.setRequestId(_ctx.stringValue("SwitchSynchronizationEndpointResponse.RequestId"));
+		switchSynchronizationEndpointResponse.setSuccess(_ctx.stringValue("SwitchSynchronizationEndpointResponse.Success"));
+		switchSynchronizationEndpointResponse.setErrCode(_ctx.stringValue("SwitchSynchronizationEndpointResponse.ErrCode"));
+		switchSynchronizationEndpointResponse.setErrMessage(_ctx.stringValue("SwitchSynchronizationEndpointResponse.ErrMessage"));
+		switchSynchronizationEndpointResponse.setTaskId(_ctx.stringValue("SwitchSynchronizationEndpointResponse.TaskId"));
 	 
 	 	return switchSynchronizationEndpointResponse;
 	}

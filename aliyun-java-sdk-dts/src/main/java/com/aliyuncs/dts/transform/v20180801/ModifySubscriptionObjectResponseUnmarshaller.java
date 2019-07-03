@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySubscriptionObjectResponseUnmarshaller {
 
-	public static ModifySubscriptionObjectResponse unmarshall(ModifySubscriptionObjectResponse modifySubscriptionObjectResponse, UnmarshallerContext context) {
+	public static ModifySubscriptionObjectResponse unmarshall(ModifySubscriptionObjectResponse modifySubscriptionObjectResponse, UnmarshallerContext _ctx) {
 		
-		modifySubscriptionObjectResponse.setRequestId(context.stringValue("ModifySubscriptionObjectResponse.RequestId"));
-		modifySubscriptionObjectResponse.setSuccess(context.stringValue("ModifySubscriptionObjectResponse.Success"));
-		modifySubscriptionObjectResponse.setErrCode(context.stringValue("ModifySubscriptionObjectResponse.ErrCode"));
-		modifySubscriptionObjectResponse.setErrMessage(context.stringValue("ModifySubscriptionObjectResponse.ErrMessage"));
+		modifySubscriptionObjectResponse.setRequestId(_ctx.stringValue("ModifySubscriptionObjectResponse.RequestId"));
+		modifySubscriptionObjectResponse.setSuccess(_ctx.stringValue("ModifySubscriptionObjectResponse.Success"));
+		modifySubscriptionObjectResponse.setErrCode(_ctx.stringValue("ModifySubscriptionObjectResponse.ErrCode"));
+		modifySubscriptionObjectResponse.setErrMessage(_ctx.stringValue("ModifySubscriptionObjectResponse.ErrMessage"));
 	 
 	 	return modifySubscriptionObjectResponse;
 	}

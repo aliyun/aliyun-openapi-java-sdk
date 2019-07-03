@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopMigrationJobResponseUnmarshaller {
 
-	public static StopMigrationJobResponse unmarshall(StopMigrationJobResponse stopMigrationJobResponse, UnmarshallerContext context) {
+	public static StopMigrationJobResponse unmarshall(StopMigrationJobResponse stopMigrationJobResponse, UnmarshallerContext _ctx) {
 		
-		stopMigrationJobResponse.setRequestId(context.stringValue("StopMigrationJobResponse.RequestId"));
-		stopMigrationJobResponse.setSuccess(context.stringValue("StopMigrationJobResponse.Success"));
-		stopMigrationJobResponse.setErrCode(context.stringValue("StopMigrationJobResponse.ErrCode"));
-		stopMigrationJobResponse.setErrMessage(context.stringValue("StopMigrationJobResponse.ErrMessage"));
+		stopMigrationJobResponse.setRequestId(_ctx.stringValue("StopMigrationJobResponse.RequestId"));
+		stopMigrationJobResponse.setSuccess(_ctx.stringValue("StopMigrationJobResponse.Success"));
+		stopMigrationJobResponse.setErrCode(_ctx.stringValue("StopMigrationJobResponse.ErrCode"));
+		stopMigrationJobResponse.setErrMessage(_ctx.stringValue("StopMigrationJobResponse.ErrMessage"));
 	 
 	 	return stopMigrationJobResponse;
 	}

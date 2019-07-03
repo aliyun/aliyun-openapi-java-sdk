@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResetSynchronizationJobResponseUnmarshaller {
 
-	public static ResetSynchronizationJobResponse unmarshall(ResetSynchronizationJobResponse resetSynchronizationJobResponse, UnmarshallerContext context) {
+	public static ResetSynchronizationJobResponse unmarshall(ResetSynchronizationJobResponse resetSynchronizationJobResponse, UnmarshallerContext _ctx) {
 		
-		resetSynchronizationJobResponse.setRequestId(context.stringValue("ResetSynchronizationJobResponse.RequestId"));
-		resetSynchronizationJobResponse.setSuccess(context.stringValue("ResetSynchronizationJobResponse.Success"));
-		resetSynchronizationJobResponse.setErrCode(context.stringValue("ResetSynchronizationJobResponse.ErrCode"));
-		resetSynchronizationJobResponse.setErrMessage(context.stringValue("ResetSynchronizationJobResponse.ErrMessage"));
+		resetSynchronizationJobResponse.setRequestId(_ctx.stringValue("ResetSynchronizationJobResponse.RequestId"));
+		resetSynchronizationJobResponse.setSuccess(_ctx.stringValue("ResetSynchronizationJobResponse.Success"));
+		resetSynchronizationJobResponse.setErrCode(_ctx.stringValue("ResetSynchronizationJobResponse.ErrCode"));
+		resetSynchronizationJobResponse.setErrMessage(_ctx.stringValue("ResetSynchronizationJobResponse.ErrMessage"));
 	 
 	 	return resetSynchronizationJobResponse;
 	}

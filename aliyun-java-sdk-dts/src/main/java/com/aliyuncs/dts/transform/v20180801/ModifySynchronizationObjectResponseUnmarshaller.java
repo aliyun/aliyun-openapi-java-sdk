@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySynchronizationObjectResponseUnmarshaller {
 
-	public static ModifySynchronizationObjectResponse unmarshall(ModifySynchronizationObjectResponse modifySynchronizationObjectResponse, UnmarshallerContext context) {
+	public static ModifySynchronizationObjectResponse unmarshall(ModifySynchronizationObjectResponse modifySynchronizationObjectResponse, UnmarshallerContext _ctx) {
 		
-		modifySynchronizationObjectResponse.setRequestId(context.stringValue("ModifySynchronizationObjectResponse.RequestId"));
-		modifySynchronizationObjectResponse.setSuccess(context.stringValue("ModifySynchronizationObjectResponse.Success"));
-		modifySynchronizationObjectResponse.setErrCode(context.stringValue("ModifySynchronizationObjectResponse.ErrCode"));
-		modifySynchronizationObjectResponse.setErrMessage(context.stringValue("ModifySynchronizationObjectResponse.ErrMessage"));
-		modifySynchronizationObjectResponse.setTaskId(context.stringValue("ModifySynchronizationObjectResponse.TaskId"));
+		modifySynchronizationObjectResponse.setRequestId(_ctx.stringValue("ModifySynchronizationObjectResponse.RequestId"));
+		modifySynchronizationObjectResponse.setSuccess(_ctx.stringValue("ModifySynchronizationObjectResponse.Success"));
+		modifySynchronizationObjectResponse.setErrCode(_ctx.stringValue("ModifySynchronizationObjectResponse.ErrCode"));
+		modifySynchronizationObjectResponse.setErrMessage(_ctx.stringValue("ModifySynchronizationObjectResponse.ErrMessage"));
+		modifySynchronizationObjectResponse.setTaskId(_ctx.stringValue("ModifySynchronizationObjectResponse.TaskId"));
 	 
 	 	return modifySynchronizationObjectResponse;
 	}

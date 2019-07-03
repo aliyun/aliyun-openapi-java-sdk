@@ -34,51 +34,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSynchronizationJobStatusResponseUnmarshaller {
 
-	public static DescribeSynchronizationJobStatusResponse unmarshall(DescribeSynchronizationJobStatusResponse describeSynchronizationJobStatusResponse, UnmarshallerContext context) {
+	public static DescribeSynchronizationJobStatusResponse unmarshall(DescribeSynchronizationJobStatusResponse describeSynchronizationJobStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeSynchronizationJobStatusResponse.setRequestId(context.stringValue("DescribeSynchronizationJobStatusResponse.RequestId"));
-		describeSynchronizationJobStatusResponse.setSynchronizationJobId(context.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobId"));
-		describeSynchronizationJobStatusResponse.setSynchronizationJobName(context.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobName"));
-		describeSynchronizationJobStatusResponse.setSynchronizationDirection(context.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationDirection"));
-		describeSynchronizationJobStatusResponse.setSynchronizationJobClass(context.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobClass"));
-		describeSynchronizationJobStatusResponse.setPayType(context.stringValue("DescribeSynchronizationJobStatusResponse.PayType"));
-		describeSynchronizationJobStatusResponse.setExpireTime(context.stringValue("DescribeSynchronizationJobStatusResponse.ExpireTime"));
-		describeSynchronizationJobStatusResponse.setStructureInitialization(context.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitialization"));
-		describeSynchronizationJobStatusResponse.setDataInitialization(context.stringValue("DescribeSynchronizationJobStatusResponse.DataInitialization"));
-		describeSynchronizationJobStatusResponse.setStatus(context.stringValue("DescribeSynchronizationJobStatusResponse.Status"));
-		describeSynchronizationJobStatusResponse.setErrorMessage(context.stringValue("DescribeSynchronizationJobStatusResponse.ErrorMessage"));
-		describeSynchronizationJobStatusResponse.setDelay(context.stringValue("DescribeSynchronizationJobStatusResponse.Delay"));
-		describeSynchronizationJobStatusResponse.setCheckpoint(context.stringValue("DescribeSynchronizationJobStatusResponse.Checkpoint"));
+		describeSynchronizationJobStatusResponse.setRequestId(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.RequestId"));
+		describeSynchronizationJobStatusResponse.setSynchronizationJobId(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobId"));
+		describeSynchronizationJobStatusResponse.setSynchronizationJobName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobName"));
+		describeSynchronizationJobStatusResponse.setSynchronizationDirection(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationDirection"));
+		describeSynchronizationJobStatusResponse.setSynchronizationJobClass(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobClass"));
+		describeSynchronizationJobStatusResponse.setPayType(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.PayType"));
+		describeSynchronizationJobStatusResponse.setExpireTime(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.ExpireTime"));
+		describeSynchronizationJobStatusResponse.setStructureInitialization(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitialization"));
+		describeSynchronizationJobStatusResponse.setDataInitialization(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataInitialization"));
+		describeSynchronizationJobStatusResponse.setStatus(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Status"));
+		describeSynchronizationJobStatusResponse.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.ErrorMessage"));
+		describeSynchronizationJobStatusResponse.setDelay(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Delay"));
+		describeSynchronizationJobStatusResponse.setCheckpoint(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Checkpoint"));
 
 		SourceEndpoint sourceEndpoint = new SourceEndpoint();
-		sourceEndpoint.setInstanceType(context.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.InstanceType"));
-		sourceEndpoint.setInstanceId(context.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.InstanceId"));
-		sourceEndpoint.setEngineName(context.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.EngineName"));
-		sourceEndpoint.setIP(context.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.IP"));
-		sourceEndpoint.setPort(context.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.Port"));
-		sourceEndpoint.setUserName(context.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.UserName"));
+		sourceEndpoint.setInstanceType(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.InstanceType"));
+		sourceEndpoint.setInstanceId(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.InstanceId"));
+		sourceEndpoint.setEngineName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.EngineName"));
+		sourceEndpoint.setIP(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.IP"));
+		sourceEndpoint.setPort(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.Port"));
+		sourceEndpoint.setUserName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SourceEndpoint.UserName"));
 		describeSynchronizationJobStatusResponse.setSourceEndpoint(sourceEndpoint);
 
 		DestinationEndpoint destinationEndpoint = new DestinationEndpoint();
-		destinationEndpoint.setInstanceType(context.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.InstanceType"));
-		destinationEndpoint.setInstanceId(context.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.InstanceId"));
-		destinationEndpoint.setEngineName(context.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.EngineName"));
-		destinationEndpoint.setIP(context.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.IP"));
-		destinationEndpoint.setPort(context.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.Port"));
-		destinationEndpoint.setUserName(context.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.UserName"));
+		destinationEndpoint.setInstanceType(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.InstanceType"));
+		destinationEndpoint.setInstanceId(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.InstanceId"));
+		destinationEndpoint.setEngineName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.EngineName"));
+		destinationEndpoint.setIP(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.IP"));
+		destinationEndpoint.setPort(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.Port"));
+		destinationEndpoint.setUserName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DestinationEndpoint.UserName"));
 		describeSynchronizationJobStatusResponse.setDestinationEndpoint(destinationEndpoint);
 
 		PrecheckStatus precheckStatus = new PrecheckStatus();
-		precheckStatus.setStatus(context.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Status"));
-		precheckStatus.setPercent(context.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Percent"));
+		precheckStatus.setStatus(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Status"));
+		precheckStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Percent"));
 
 		List<CheckItem> detail = new ArrayList<CheckItem>();
-		for (int i = 0; i < context.lengthValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail.Length"); i++) {
 			CheckItem checkItem = new CheckItem();
-			checkItem.setItemName(context.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail["+ i +"].ItemName"));
-			checkItem.setCheckStatus(context.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail["+ i +"].CheckStatus"));
-			checkItem.setErrorMessage(context.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail["+ i +"].ErrorMessage"));
-			checkItem.setRepairMethod(context.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail["+ i +"].RepairMethod"));
+			checkItem.setItemName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail["+ i +"].ItemName"));
+			checkItem.setCheckStatus(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail["+ i +"].CheckStatus"));
+			checkItem.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail["+ i +"].ErrorMessage"));
+			checkItem.setRepairMethod(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.PrecheckStatus.Detail["+ i +"].RepairMethod"));
 
 			detail.add(checkItem);
 		}
@@ -86,51 +86,51 @@ public class DescribeSynchronizationJobStatusResponseUnmarshaller {
 		describeSynchronizationJobStatusResponse.setPrecheckStatus(precheckStatus);
 
 		StructureInitializationStatus structureInitializationStatus = new StructureInitializationStatus();
-		structureInitializationStatus.setStatus(context.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitializationStatus.Status"));
-		structureInitializationStatus.setPercent(context.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitializationStatus.Percent"));
-		structureInitializationStatus.setErrorMessage(context.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitializationStatus.ErrorMessage"));
-		structureInitializationStatus.setProgress(context.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitializationStatus.Progress"));
+		structureInitializationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitializationStatus.Status"));
+		structureInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitializationStatus.Percent"));
+		structureInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitializationStatus.ErrorMessage"));
+		structureInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitializationStatus.Progress"));
 		describeSynchronizationJobStatusResponse.setStructureInitializationStatus(structureInitializationStatus);
 
 		DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
-		dataInitializationStatus.setStatus(context.stringValue("DescribeSynchronizationJobStatusResponse.DataInitializationStatus.Status"));
-		dataInitializationStatus.setPercent(context.stringValue("DescribeSynchronizationJobStatusResponse.DataInitializationStatus.Percent"));
-		dataInitializationStatus.setErrorMessage(context.stringValue("DescribeSynchronizationJobStatusResponse.DataInitializationStatus.ErrorMessage"));
-		dataInitializationStatus.setProgress(context.stringValue("DescribeSynchronizationJobStatusResponse.DataInitializationStatus.Progress"));
+		dataInitializationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataInitializationStatus.Status"));
+		dataInitializationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataInitializationStatus.Percent"));
+		dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataInitializationStatus.ErrorMessage"));
+		dataInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataInitializationStatus.Progress"));
 		describeSynchronizationJobStatusResponse.setDataInitializationStatus(dataInitializationStatus);
 
 		DataSynchronizationStatus dataSynchronizationStatus = new DataSynchronizationStatus();
-		dataSynchronizationStatus.setStatus(context.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Status"));
-		dataSynchronizationStatus.setPercent(context.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Percent"));
-		dataSynchronizationStatus.setErrorMessage(context.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.ErrorMessage"));
-		dataSynchronizationStatus.setDelay(context.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Delay"));
-		dataSynchronizationStatus.setCheckpoint(context.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Checkpoint"));
+		dataSynchronizationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Status"));
+		dataSynchronizationStatus.setPercent(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Percent"));
+		dataSynchronizationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.ErrorMessage"));
+		dataSynchronizationStatus.setDelay(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Delay"));
+		dataSynchronizationStatus.setCheckpoint(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataSynchronizationStatus.Checkpoint"));
 		describeSynchronizationJobStatusResponse.setDataSynchronizationStatus(dataSynchronizationStatus);
 
 		Performance performance = new Performance();
-		performance.setRPS(context.stringValue("DescribeSynchronizationJobStatusResponse.Performance.RPS"));
-		performance.setFLOW(context.stringValue("DescribeSynchronizationJobStatusResponse.Performance.FLOW"));
+		performance.setRPS(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Performance.RPS"));
+		performance.setFLOW(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Performance.FLOW"));
 		describeSynchronizationJobStatusResponse.setPerformance(performance);
 
 		List<SynchronizationObject> synchronizationObjects = new ArrayList<SynchronizationObject>();
-		for (int i = 0; i < context.lengthValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects.Length"); i++) {
 			SynchronizationObject synchronizationObject = new SynchronizationObject();
-			synchronizationObject.setSchemaName(context.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].SchemaName"));
-			synchronizationObject.setNewSchemaName(context.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].NewSchemaName"));
+			synchronizationObject.setSchemaName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].SchemaName"));
+			synchronizationObject.setNewSchemaName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].NewSchemaName"));
 
 			List<TableInclude> tableIncludes = new ArrayList<TableInclude>();
-			for (int j = 0; j < context.lengthValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].TableIncludes.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].TableIncludes.Length"); j++) {
 				TableInclude tableInclude = new TableInclude();
-				tableInclude.setTableName(context.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].TableIncludes["+ j +"].TableName"));
+				tableInclude.setTableName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].TableIncludes["+ j +"].TableName"));
 
 				tableIncludes.add(tableInclude);
 			}
 			synchronizationObject.setTableIncludes(tableIncludes);
 
 			List<TableExclude> tableExcludes = new ArrayList<TableExclude>();
-			for (int j = 0; j < context.lengthValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].TableExcludes.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].TableExcludes.Length"); j++) {
 				TableExclude tableExclude = new TableExclude();
-				tableExclude.setTableName(context.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].TableExcludes["+ j +"].TableName"));
+				tableExclude.setTableName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationObjects["+ i +"].TableExcludes["+ j +"].TableName"));
 
 				tableExcludes.add(tableExclude);
 			}

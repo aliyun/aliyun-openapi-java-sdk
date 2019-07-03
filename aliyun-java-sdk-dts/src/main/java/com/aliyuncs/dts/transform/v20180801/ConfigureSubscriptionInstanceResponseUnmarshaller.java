@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ConfigureSubscriptionInstanceResponseUnmarshaller {
 
-	public static ConfigureSubscriptionInstanceResponse unmarshall(ConfigureSubscriptionInstanceResponse configureSubscriptionInstanceResponse, UnmarshallerContext context) {
+	public static ConfigureSubscriptionInstanceResponse unmarshall(ConfigureSubscriptionInstanceResponse configureSubscriptionInstanceResponse, UnmarshallerContext _ctx) {
 		
-		configureSubscriptionInstanceResponse.setRequestId(context.stringValue("ConfigureSubscriptionInstanceResponse.RequestId"));
-		configureSubscriptionInstanceResponse.setSuccess(context.stringValue("ConfigureSubscriptionInstanceResponse.Success"));
-		configureSubscriptionInstanceResponse.setErrCode(context.stringValue("ConfigureSubscriptionInstanceResponse.ErrCode"));
-		configureSubscriptionInstanceResponse.setErrMessage(context.stringValue("ConfigureSubscriptionInstanceResponse.ErrMessage"));
+		configureSubscriptionInstanceResponse.setRequestId(_ctx.stringValue("ConfigureSubscriptionInstanceResponse.RequestId"));
+		configureSubscriptionInstanceResponse.setSuccess(_ctx.stringValue("ConfigureSubscriptionInstanceResponse.Success"));
+		configureSubscriptionInstanceResponse.setErrCode(_ctx.stringValue("ConfigureSubscriptionInstanceResponse.ErrCode"));
+		configureSubscriptionInstanceResponse.setErrMessage(_ctx.stringValue("ConfigureSubscriptionInstanceResponse.ErrMessage"));
 	 
 	 	return configureSubscriptionInstanceResponse;
 	}

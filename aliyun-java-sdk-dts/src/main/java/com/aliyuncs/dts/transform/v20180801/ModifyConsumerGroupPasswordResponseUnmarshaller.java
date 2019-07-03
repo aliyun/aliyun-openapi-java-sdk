@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyConsumerGroupPasswordResponseUnmarshaller {
 
-	public static ModifyConsumerGroupPasswordResponse unmarshall(ModifyConsumerGroupPasswordResponse modifyConsumerGroupPasswordResponse, UnmarshallerContext context) {
+	public static ModifyConsumerGroupPasswordResponse unmarshall(ModifyConsumerGroupPasswordResponse modifyConsumerGroupPasswordResponse, UnmarshallerContext _ctx) {
 		
-		modifyConsumerGroupPasswordResponse.setRequestId(context.stringValue("ModifyConsumerGroupPasswordResponse.RequestId"));
-		modifyConsumerGroupPasswordResponse.setSuccess(context.stringValue("ModifyConsumerGroupPasswordResponse.Success"));
-		modifyConsumerGroupPasswordResponse.setErrCode(context.stringValue("ModifyConsumerGroupPasswordResponse.ErrCode"));
-		modifyConsumerGroupPasswordResponse.setErrMessage(context.stringValue("ModifyConsumerGroupPasswordResponse.ErrMessage"));
+		modifyConsumerGroupPasswordResponse.setRequestId(_ctx.stringValue("ModifyConsumerGroupPasswordResponse.RequestId"));
+		modifyConsumerGroupPasswordResponse.setSuccess(_ctx.stringValue("ModifyConsumerGroupPasswordResponse.Success"));
+		modifyConsumerGroupPasswordResponse.setErrCode(_ctx.stringValue("ModifyConsumerGroupPasswordResponse.ErrCode"));
+		modifyConsumerGroupPasswordResponse.setErrMessage(_ctx.stringValue("ModifyConsumerGroupPasswordResponse.ErrMessage"));
 	 
 	 	return modifyConsumerGroupPasswordResponse;
 	}

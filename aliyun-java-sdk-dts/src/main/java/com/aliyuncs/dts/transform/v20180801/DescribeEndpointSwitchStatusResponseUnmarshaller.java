@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeEndpointSwitchStatusResponseUnmarshaller {
 
-	public static DescribeEndpointSwitchStatusResponse unmarshall(DescribeEndpointSwitchStatusResponse describeEndpointSwitchStatusResponse, UnmarshallerContext context) {
+	public static DescribeEndpointSwitchStatusResponse unmarshall(DescribeEndpointSwitchStatusResponse describeEndpointSwitchStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeEndpointSwitchStatusResponse.setRequestId(context.stringValue("DescribeEndpointSwitchStatusResponse.RequestId"));
-		describeEndpointSwitchStatusResponse.setStatus(context.stringValue("DescribeEndpointSwitchStatusResponse.Status"));
-		describeEndpointSwitchStatusResponse.setErrorMessage(context.stringValue("DescribeEndpointSwitchStatusResponse.ErrorMessage"));
+		describeEndpointSwitchStatusResponse.setRequestId(_ctx.stringValue("DescribeEndpointSwitchStatusResponse.RequestId"));
+		describeEndpointSwitchStatusResponse.setStatus(_ctx.stringValue("DescribeEndpointSwitchStatusResponse.Status"));
+		describeEndpointSwitchStatusResponse.setErrorMessage(_ctx.stringValue("DescribeEndpointSwitchStatusResponse.ErrorMessage"));
 	 
 	 	return describeEndpointSwitchStatusResponse;
 	}

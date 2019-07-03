@@ -40,6 +40,8 @@ public class CreateSubscriptionInstanceRequest extends RpcAcsRequest<CreateSubsc
 
 	private Integer usedTime;
 
+	private String sourceEndpointInstanceType;
+
 	public String getPeriod() {
 		return this.period;
 	}
@@ -103,6 +105,17 @@ public class CreateSubscriptionInstanceRequest extends RpcAcsRequest<CreateSubsc
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public String getSourceEndpointInstanceType() {
+		return this.sourceEndpointInstanceType;
+	}
+
+	public void setSourceEndpointInstanceType(String sourceEndpointInstanceType) {
+		this.sourceEndpointInstanceType = sourceEndpointInstanceType;
+		if(sourceEndpointInstanceType != null){
+			putQueryParameter("SourceEndpoint.InstanceType", sourceEndpointInstanceType);
 		}
 	}
 

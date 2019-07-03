@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteSynchronizationJobResponseUnmarshaller {
 
-	public static DeleteSynchronizationJobResponse unmarshall(DeleteSynchronizationJobResponse deleteSynchronizationJobResponse, UnmarshallerContext context) {
+	public static DeleteSynchronizationJobResponse unmarshall(DeleteSynchronizationJobResponse deleteSynchronizationJobResponse, UnmarshallerContext _ctx) {
 		
-		deleteSynchronizationJobResponse.setRequestId(context.stringValue("DeleteSynchronizationJobResponse.RequestId"));
-		deleteSynchronizationJobResponse.setSuccess(context.stringValue("DeleteSynchronizationJobResponse.Success"));
-		deleteSynchronizationJobResponse.setErrCode(context.stringValue("DeleteSynchronizationJobResponse.ErrCode"));
-		deleteSynchronizationJobResponse.setErrMessage(context.stringValue("DeleteSynchronizationJobResponse.ErrMessage"));
+		deleteSynchronizationJobResponse.setRequestId(_ctx.stringValue("DeleteSynchronizationJobResponse.RequestId"));
+		deleteSynchronizationJobResponse.setSuccess(_ctx.stringValue("DeleteSynchronizationJobResponse.Success"));
+		deleteSynchronizationJobResponse.setErrCode(_ctx.stringValue("DeleteSynchronizationJobResponse.ErrCode"));
+		deleteSynchronizationJobResponse.setErrMessage(_ctx.stringValue("DeleteSynchronizationJobResponse.ErrMessage"));
 	 
 	 	return deleteSynchronizationJobResponse;
 	}

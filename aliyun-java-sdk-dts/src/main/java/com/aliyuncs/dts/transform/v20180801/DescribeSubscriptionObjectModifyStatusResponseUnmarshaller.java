@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSubscriptionObjectModifyStatusResponseUnmarshaller {
 
-	public static DescribeSubscriptionObjectModifyStatusResponse unmarshall(DescribeSubscriptionObjectModifyStatusResponse describeSubscriptionObjectModifyStatusResponse, UnmarshallerContext context) {
+	public static DescribeSubscriptionObjectModifyStatusResponse unmarshall(DescribeSubscriptionObjectModifyStatusResponse describeSubscriptionObjectModifyStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeSubscriptionObjectModifyStatusResponse.setRequestId(context.stringValue("DescribeSubscriptionObjectModifyStatusResponse.RequestId"));
-		describeSubscriptionObjectModifyStatusResponse.setStatus(context.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Status"));
-		describeSubscriptionObjectModifyStatusResponse.setPercent(context.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Percent"));
+		describeSubscriptionObjectModifyStatusResponse.setRequestId(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.RequestId"));
+		describeSubscriptionObjectModifyStatusResponse.setStatus(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Status"));
+		describeSubscriptionObjectModifyStatusResponse.setPercent(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Percent"));
 
 		List<CheckItem> detail = new ArrayList<CheckItem>();
-		for (int i = 0; i < context.lengthValue("DescribeSubscriptionObjectModifyStatusResponse.Detail.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSubscriptionObjectModifyStatusResponse.Detail.Length"); i++) {
 			CheckItem checkItem = new CheckItem();
-			checkItem.setItemName(context.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].ItemName"));
-			checkItem.setCheckStatus(context.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].CheckStatus"));
-			checkItem.setErrorMessage(context.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].ErrorMessage"));
-			checkItem.setRepairMethod(context.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].RepairMethod"));
+			checkItem.setItemName(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].ItemName"));
+			checkItem.setCheckStatus(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].CheckStatus"));
+			checkItem.setErrorMessage(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].ErrorMessage"));
+			checkItem.setRepairMethod(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Detail["+ i +"].RepairMethod"));
 
 			detail.add(checkItem);
 		}
