@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetGtmAccessModeRequest extends RpcAcsRequest<SetGtmAccessModeResponse> {
 	
 	public SetGtmAccessModeRequest() {
-		super("Alidns", "2015-01-09", "SetGtmAccessMode", "alidns");
+		super("Alidns", "2015-01-09", "SetGtmAccessMode", "Alidns");
 	}
 
 	private String strategyId;

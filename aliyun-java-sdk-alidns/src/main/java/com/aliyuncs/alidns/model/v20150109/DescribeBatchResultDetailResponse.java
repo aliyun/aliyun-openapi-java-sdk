@@ -99,9 +99,9 @@ public class DescribeBatchResultDetailResponse extends AcsResponse {
 
 		private String line;
 
-		private Integer priority;
+		private String priority;
 
-		private Integer ttl;
+		private String ttl;
 
 		private String recordId;
 
@@ -213,19 +213,19 @@ public class DescribeBatchResultDetailResponse extends AcsResponse {
 			this.line = line;
 		}
 
-		public Integer getPriority() {
+		public String getPriority() {
 			return this.priority;
 		}
 
-		public void setPriority(Integer priority) {
+		public void setPriority(String priority) {
 			this.priority = priority;
 		}
 
-		public Integer getTtl() {
+		public String getTtl() {
 			return this.ttl;
 		}
 
-		public void setTtl(Integer ttl) {
+		public void setTtl(String ttl) {
 			this.ttl = ttl;
 		}
 

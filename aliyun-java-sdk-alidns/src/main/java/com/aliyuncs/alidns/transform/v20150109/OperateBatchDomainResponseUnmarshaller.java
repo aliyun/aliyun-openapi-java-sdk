@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OperateBatchDomainResponseUnmarshaller {
 
-	public static OperateBatchDomainResponse unmarshall(OperateBatchDomainResponse operateBatchDomainResponse, UnmarshallerContext context) {
+	public static OperateBatchDomainResponse unmarshall(OperateBatchDomainResponse operateBatchDomainResponse, UnmarshallerContext _ctx) {
 		
-		operateBatchDomainResponse.setRequestId(context.stringValue("OperateBatchDomainResponse.RequestId"));
-		operateBatchDomainResponse.setTaskId(context.longValue("OperateBatchDomainResponse.TaskId"));
+		operateBatchDomainResponse.setRequestId(_ctx.stringValue("OperateBatchDomainResponse.RequestId"));
+		operateBatchDomainResponse.setTaskId(_ctx.longValue("OperateBatchDomainResponse.TaskId"));
 	 
 	 	return operateBatchDomainResponse;
 	}

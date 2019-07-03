@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateDNSSLBWeightRequest extends RpcAcsRequest<UpdateDNSSLBWeightResponse> {
 	
 	public UpdateDNSSLBWeightRequest() {
-		super("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "alidns");
+		super("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "Alidns");
 	}
 
 	private String recordId;

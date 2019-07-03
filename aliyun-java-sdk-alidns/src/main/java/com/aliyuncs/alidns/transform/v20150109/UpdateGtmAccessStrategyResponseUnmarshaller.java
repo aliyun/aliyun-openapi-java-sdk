@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateGtmAccessStrategyResponseUnmarshaller {
 
-	public static UpdateGtmAccessStrategyResponse unmarshall(UpdateGtmAccessStrategyResponse updateGtmAccessStrategyResponse, UnmarshallerContext context) {
+	public static UpdateGtmAccessStrategyResponse unmarshall(UpdateGtmAccessStrategyResponse updateGtmAccessStrategyResponse, UnmarshallerContext _ctx) {
 		
-		updateGtmAccessStrategyResponse.setRequestId(context.stringValue("UpdateGtmAccessStrategyResponse.RequestId"));
+		updateGtmAccessStrategyResponse.setRequestId(_ctx.stringValue("UpdateGtmAccessStrategyResponse.RequestId"));
 	 
 	 	return updateGtmAccessStrategyResponse;
 	}

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateDomainRecordResponseUnmarshaller {
 
-	public static UpdateDomainRecordResponse unmarshall(UpdateDomainRecordResponse updateDomainRecordResponse, UnmarshallerContext context) {
+	public static UpdateDomainRecordResponse unmarshall(UpdateDomainRecordResponse updateDomainRecordResponse, UnmarshallerContext _ctx) {
 		
-		updateDomainRecordResponse.setRequestId(context.stringValue("UpdateDomainRecordResponse.RequestId"));
-		updateDomainRecordResponse.setRecordId(context.stringValue("UpdateDomainRecordResponse.RecordId"));
+		updateDomainRecordResponse.setRequestId(_ctx.stringValue("UpdateDomainRecordResponse.RequestId"));
+		updateDomainRecordResponse.setRecordId(_ctx.stringValue("UpdateDomainRecordResponse.RecordId"));
 	 
 	 	return updateDomainRecordResponse;
 	}

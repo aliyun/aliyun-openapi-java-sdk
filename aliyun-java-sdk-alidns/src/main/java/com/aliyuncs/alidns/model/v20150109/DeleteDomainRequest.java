@@ -23,25 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
 	
 	public DeleteDomainRequest() {
-		super("Alidns", "2015-01-09", "DeleteDomain", "alidns");
+		super("Alidns", "2015-01-09", "DeleteDomain", "Alidns");
 	}
-
-	private String userClientIp;
 
 	private String domainName;
 
 	private String lang;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
 
 	public String getDomainName() {
 		return this.domainName;

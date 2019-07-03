@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSLBSubDomainsResponse> {
 	
 	public DescribeDNSSLBSubDomainsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "Alidns");
 	}
 
 	private String userClientIp;

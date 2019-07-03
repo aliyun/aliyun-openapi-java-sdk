@@ -23,8 +23,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsResponse> {
 	
 	public DescribeDomainsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomains", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDomains", "Alidns");
 	}
+
+	private String resourceGroupId;
 
 	private String groupId;
 
@@ -37,6 +39,17 @@ public class DescribeDomainsRequest extends RpcAcsRequest<DescribeDomainsRespons
 	private String keyWord;
 
 	private Long pageNumber;
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
 
 	public String getGroupId() {
 		return this.groupId;

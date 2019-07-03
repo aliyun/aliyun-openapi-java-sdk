@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteGtmAddressPoolRequest extends RpcAcsRequest<DeleteGtmAddressPoolResponse> {
 	
 	public DeleteGtmAddressPoolRequest() {
-		super("Alidns", "2015-01-09", "DeleteGtmAddressPool", "alidns");
+		super("Alidns", "2015-01-09", "DeleteGtmAddressPool", "Alidns");
 	}
 
 	private String addrPoolId;

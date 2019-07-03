@@ -23,18 +23,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddDomainResponseUnmarshaller {
 
-	public static AddDomainResponse unmarshall(AddDomainResponse addDomainResponse, UnmarshallerContext context) {
+	public static AddDomainResponse unmarshall(AddDomainResponse addDomainResponse, UnmarshallerContext _ctx) {
 		
-		addDomainResponse.setRequestId(context.stringValue("AddDomainResponse.RequestId"));
-		addDomainResponse.setDomainId(context.stringValue("AddDomainResponse.DomainId"));
-		addDomainResponse.setDomainName(context.stringValue("AddDomainResponse.DomainName"));
-		addDomainResponse.setPunyCode(context.stringValue("AddDomainResponse.PunyCode"));
-		addDomainResponse.setGroupId(context.stringValue("AddDomainResponse.GroupId"));
-		addDomainResponse.setGroupName(context.stringValue("AddDomainResponse.GroupName"));
+		addDomainResponse.setRequestId(_ctx.stringValue("AddDomainResponse.RequestId"));
+		addDomainResponse.setDomainId(_ctx.stringValue("AddDomainResponse.DomainId"));
+		addDomainResponse.setDomainName(_ctx.stringValue("AddDomainResponse.DomainName"));
+		addDomainResponse.setPunyCode(_ctx.stringValue("AddDomainResponse.PunyCode"));
+		addDomainResponse.setGroupId(_ctx.stringValue("AddDomainResponse.GroupId"));
+		addDomainResponse.setGroupName(_ctx.stringValue("AddDomainResponse.GroupName"));
 
 		List<String> dnsServers = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("AddDomainResponse.DnsServers.Length"); i++) {
-			dnsServers.add(context.stringValue("AddDomainResponse.DnsServers["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("AddDomainResponse.DnsServers.Length"); i++) {
+			dnsServers.add(_ctx.stringValue("AddDomainResponse.DnsServers["+ i +"]"));
 		}
 		addDomainResponse.setDnsServers(dnsServers);
 	 

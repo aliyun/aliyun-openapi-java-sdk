@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddDomainRecordRequest extends RpcAcsRequest<AddDomainRecordResponse> {
 	
 	public AddDomainRecordRequest() {
-		super("Alidns", "2015-01-09", "AddDomainRecord", "alidns");
+		super("Alidns", "2015-01-09", "AddDomainRecord", "Alidns");
 	}
 
 	private String rR;

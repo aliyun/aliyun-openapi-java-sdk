@@ -24,34 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainsResponseUnmarshaller {
 
-	public static DescribeDomainsResponse unmarshall(DescribeDomainsResponse describeDomainsResponse, UnmarshallerContext context) {
+	public static DescribeDomainsResponse unmarshall(DescribeDomainsResponse describeDomainsResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainsResponse.setRequestId(context.stringValue("DescribeDomainsResponse.RequestId"));
-		describeDomainsResponse.setTotalCount(context.longValue("DescribeDomainsResponse.TotalCount"));
-		describeDomainsResponse.setPageNumber(context.longValue("DescribeDomainsResponse.PageNumber"));
-		describeDomainsResponse.setPageSize(context.longValue("DescribeDomainsResponse.PageSize"));
+		describeDomainsResponse.setRequestId(_ctx.stringValue("DescribeDomainsResponse.RequestId"));
+		describeDomainsResponse.setTotalCount(_ctx.longValue("DescribeDomainsResponse.TotalCount"));
+		describeDomainsResponse.setPageNumber(_ctx.longValue("DescribeDomainsResponse.PageNumber"));
+		describeDomainsResponse.setPageSize(_ctx.longValue("DescribeDomainsResponse.PageSize"));
 
 		List<Domain> domains = new ArrayList<Domain>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainsResponse.Domains.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainsResponse.Domains.Length"); i++) {
 			Domain domain = new Domain();
-			domain.setDomainId(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainId"));
-			domain.setDomainName(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainName"));
-			domain.setPunyCode(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].PunyCode"));
-			domain.setAliDomain(context.booleanValue("DescribeDomainsResponse.Domains["+ i +"].AliDomain"));
-			domain.setRecordCount(context.longValue("DescribeDomainsResponse.Domains["+ i +"].RecordCount"));
-			domain.setRegistrantEmail(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].RegistrantEmail"));
-			domain.setRemark(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].Remark"));
-			domain.setGroupId(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].GroupId"));
-			domain.setGroupName(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].GroupName"));
-			domain.setInstanceId(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].InstanceId"));
-			domain.setVersionCode(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].VersionCode"));
-			domain.setVersionName(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].VersionName"));
-			domain.setInstanceEndTime(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].InstanceEndTime"));
-			domain.setInstanceExpired(context.booleanValue("DescribeDomainsResponse.Domains["+ i +"].InstanceExpired"));
+			domain.setDomainId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainId"));
+			domain.setDomainName(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainName"));
+			domain.setPunyCode(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].PunyCode"));
+			domain.setAliDomain(_ctx.booleanValue("DescribeDomainsResponse.Domains["+ i +"].AliDomain"));
+			domain.setRecordCount(_ctx.longValue("DescribeDomainsResponse.Domains["+ i +"].RecordCount"));
+			domain.setRegistrantEmail(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].RegistrantEmail"));
+			domain.setRemark(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].Remark"));
+			domain.setGroupId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].GroupId"));
+			domain.setGroupName(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].GroupName"));
+			domain.setInstanceId(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].InstanceId"));
+			domain.setVersionCode(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].VersionCode"));
+			domain.setVersionName(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].VersionName"));
+			domain.setInstanceEndTime(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].InstanceEndTime"));
+			domain.setInstanceExpired(_ctx.booleanValue("DescribeDomainsResponse.Domains["+ i +"].InstanceExpired"));
 
 			List<String> dnsServers = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeDomainsResponse.Domains["+ i +"].DnsServers.Length"); j++) {
-				dnsServers.add(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].DnsServers["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainsResponse.Domains["+ i +"].DnsServers.Length"); j++) {
+				dnsServers.add(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].DnsServers["+ j +"]"));
 			}
 			domain.setDnsServers(dnsServers);
 

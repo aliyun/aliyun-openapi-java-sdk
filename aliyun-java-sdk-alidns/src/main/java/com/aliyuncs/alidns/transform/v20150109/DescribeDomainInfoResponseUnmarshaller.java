@@ -24,46 +24,46 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainInfoResponseUnmarshaller {
 
-	public static DescribeDomainInfoResponse unmarshall(DescribeDomainInfoResponse describeDomainInfoResponse, UnmarshallerContext context) {
+	public static DescribeDomainInfoResponse unmarshall(DescribeDomainInfoResponse describeDomainInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainInfoResponse.setRequestId(context.stringValue("DescribeDomainInfoResponse.RequestId"));
-		describeDomainInfoResponse.setDomainId(context.stringValue("DescribeDomainInfoResponse.DomainId"));
-		describeDomainInfoResponse.setDomainName(context.stringValue("DescribeDomainInfoResponse.DomainName"));
-		describeDomainInfoResponse.setPunyCode(context.stringValue("DescribeDomainInfoResponse.PunyCode"));
-		describeDomainInfoResponse.setAliDomain(context.booleanValue("DescribeDomainInfoResponse.AliDomain"));
-		describeDomainInfoResponse.setRemark(context.stringValue("DescribeDomainInfoResponse.Remark"));
-		describeDomainInfoResponse.setGroupId(context.stringValue("DescribeDomainInfoResponse.GroupId"));
-		describeDomainInfoResponse.setGroupName(context.stringValue("DescribeDomainInfoResponse.GroupName"));
-		describeDomainInfoResponse.setInstanceId(context.stringValue("DescribeDomainInfoResponse.InstanceId"));
-		describeDomainInfoResponse.setVersionCode(context.stringValue("DescribeDomainInfoResponse.VersionCode"));
-		describeDomainInfoResponse.setVersionName(context.stringValue("DescribeDomainInfoResponse.VersionName"));
-		describeDomainInfoResponse.setMinTtl(context.longValue("DescribeDomainInfoResponse.MinTtl"));
-		describeDomainInfoResponse.setRecordLineTreeJson(context.stringValue("DescribeDomainInfoResponse.RecordLineTreeJson"));
-		describeDomainInfoResponse.setLineType(context.stringValue("DescribeDomainInfoResponse.LineType"));
-		describeDomainInfoResponse.setRegionLines(context.booleanValue("DescribeDomainInfoResponse.RegionLines"));
-		describeDomainInfoResponse.setInBlackHole(context.booleanValue("DescribeDomainInfoResponse.InBlackHole"));
-		describeDomainInfoResponse.setInClean(context.booleanValue("DescribeDomainInfoResponse.InClean"));
-		describeDomainInfoResponse.setSlaveDns(context.booleanValue("DescribeDomainInfoResponse.SlaveDns"));
+		describeDomainInfoResponse.setRequestId(_ctx.stringValue("DescribeDomainInfoResponse.RequestId"));
+		describeDomainInfoResponse.setDomainId(_ctx.stringValue("DescribeDomainInfoResponse.DomainId"));
+		describeDomainInfoResponse.setDomainName(_ctx.stringValue("DescribeDomainInfoResponse.DomainName"));
+		describeDomainInfoResponse.setPunyCode(_ctx.stringValue("DescribeDomainInfoResponse.PunyCode"));
+		describeDomainInfoResponse.setAliDomain(_ctx.booleanValue("DescribeDomainInfoResponse.AliDomain"));
+		describeDomainInfoResponse.setRemark(_ctx.stringValue("DescribeDomainInfoResponse.Remark"));
+		describeDomainInfoResponse.setGroupId(_ctx.stringValue("DescribeDomainInfoResponse.GroupId"));
+		describeDomainInfoResponse.setGroupName(_ctx.stringValue("DescribeDomainInfoResponse.GroupName"));
+		describeDomainInfoResponse.setInstanceId(_ctx.stringValue("DescribeDomainInfoResponse.InstanceId"));
+		describeDomainInfoResponse.setVersionCode(_ctx.stringValue("DescribeDomainInfoResponse.VersionCode"));
+		describeDomainInfoResponse.setVersionName(_ctx.stringValue("DescribeDomainInfoResponse.VersionName"));
+		describeDomainInfoResponse.setMinTtl(_ctx.longValue("DescribeDomainInfoResponse.MinTtl"));
+		describeDomainInfoResponse.setRecordLineTreeJson(_ctx.stringValue("DescribeDomainInfoResponse.RecordLineTreeJson"));
+		describeDomainInfoResponse.setLineType(_ctx.stringValue("DescribeDomainInfoResponse.LineType"));
+		describeDomainInfoResponse.setRegionLines(_ctx.booleanValue("DescribeDomainInfoResponse.RegionLines"));
+		describeDomainInfoResponse.setInBlackHole(_ctx.booleanValue("DescribeDomainInfoResponse.InBlackHole"));
+		describeDomainInfoResponse.setInClean(_ctx.booleanValue("DescribeDomainInfoResponse.InClean"));
+		describeDomainInfoResponse.setSlaveDns(_ctx.booleanValue("DescribeDomainInfoResponse.SlaveDns"));
 
 		List<String> dnsServers = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainInfoResponse.DnsServers.Length"); i++) {
-			dnsServers.add(context.stringValue("DescribeDomainInfoResponse.DnsServers["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainInfoResponse.DnsServers.Length"); i++) {
+			dnsServers.add(_ctx.stringValue("DescribeDomainInfoResponse.DnsServers["+ i +"]"));
 		}
 		describeDomainInfoResponse.setDnsServers(dnsServers);
 
 		List<String> availableTtls = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainInfoResponse.AvailableTtls.Length"); i++) {
-			availableTtls.add(context.stringValue("DescribeDomainInfoResponse.AvailableTtls["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainInfoResponse.AvailableTtls.Length"); i++) {
+			availableTtls.add(_ctx.stringValue("DescribeDomainInfoResponse.AvailableTtls["+ i +"]"));
 		}
 		describeDomainInfoResponse.setAvailableTtls(availableTtls);
 
 		List<RecordLine> recordLines = new ArrayList<RecordLine>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainInfoResponse.RecordLines.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainInfoResponse.RecordLines.Length"); i++) {
 			RecordLine recordLine = new RecordLine();
-			recordLine.setLineCode(context.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineCode"));
-			recordLine.setFatherCode(context.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].FatherCode"));
-			recordLine.setLineName(context.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineName"));
-			recordLine.setLineDisplayName(context.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineDisplayName"));
+			recordLine.setLineCode(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineCode"));
+			recordLine.setFatherCode(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].FatherCode"));
+			recordLine.setLineName(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineName"));
+			recordLine.setLineDisplayName(_ctx.stringValue("DescribeDomainInfoResponse.RecordLines["+ i +"].LineDisplayName"));
 
 			recordLines.add(recordLine);
 		}

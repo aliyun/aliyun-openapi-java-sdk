@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGtmAvailableAlertGroupResponseUnmarshaller {
 
-	public static DescribeGtmAvailableAlertGroupResponse unmarshall(DescribeGtmAvailableAlertGroupResponse describeGtmAvailableAlertGroupResponse, UnmarshallerContext context) {
+	public static DescribeGtmAvailableAlertGroupResponse unmarshall(DescribeGtmAvailableAlertGroupResponse describeGtmAvailableAlertGroupResponse, UnmarshallerContext _ctx) {
 		
-		describeGtmAvailableAlertGroupResponse.setRequestId(context.stringValue("DescribeGtmAvailableAlertGroupResponse.RequestId"));
-		describeGtmAvailableAlertGroupResponse.setAvailableAlertGroup(context.stringValue("DescribeGtmAvailableAlertGroupResponse.AvailableAlertGroup"));
+		describeGtmAvailableAlertGroupResponse.setRequestId(_ctx.stringValue("DescribeGtmAvailableAlertGroupResponse.RequestId"));
+		describeGtmAvailableAlertGroupResponse.setAvailableAlertGroup(_ctx.stringValue("DescribeGtmAvailableAlertGroupResponse.AvailableAlertGroup"));
 	 
 	 	return describeGtmAvailableAlertGroupResponse;
 	}

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainRecordInfoRequest extends RpcAcsRequest<DescribeDomainRecordInfoResponse> {
 	
 	public DescribeDomainRecordInfoRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainRecordInfo", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDomainRecordInfo", "Alidns");
 	}
 
 	private String recordId;

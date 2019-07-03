@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class QueryCreateInstancePriceRequest extends RpcAcsRequest<QueryCreateInstancePriceResponse> {
 	
 	public QueryCreateInstancePriceRequest() {
-		super("Alidns", "2015-01-09", "QueryCreateInstancePrice", "alidns");
+		super("Alidns", "2015-01-09", "QueryCreateInstancePrice", "Alidns");
 	}
 
 	private Integer month;

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteGtmAddressPoolResponseUnmarshaller {
 
-	public static DeleteGtmAddressPoolResponse unmarshall(DeleteGtmAddressPoolResponse deleteGtmAddressPoolResponse, UnmarshallerContext context) {
+	public static DeleteGtmAddressPoolResponse unmarshall(DeleteGtmAddressPoolResponse deleteGtmAddressPoolResponse, UnmarshallerContext _ctx) {
 		
-		deleteGtmAddressPoolResponse.setRequestId(context.stringValue("DeleteGtmAddressPoolResponse.RequestId"));
+		deleteGtmAddressPoolResponse.setRequestId(_ctx.stringValue("DeleteGtmAddressPoolResponse.RequestId"));
 	 
 	 	return deleteGtmAddressPoolResponse;
 	}

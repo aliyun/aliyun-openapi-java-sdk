@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusResponse> {
 	
 	public SetDNSSLBStatusRequest() {
-		super("Alidns", "2015-01-09", "SetDNSSLBStatus", "alidns");
+		super("Alidns", "2015-01-09", "SetDNSSLBStatus", "Alidns");
 	}
 
 	private String userClientIp;

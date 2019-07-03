@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateInstanceResponseUnmarshaller {
 
-	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext context) {
+	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createInstanceResponse.setRequestId(context.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setOrderId(context.stringValue("CreateInstanceResponse.OrderId"));
-		createInstanceResponse.setInstanceId(context.stringValue("CreateInstanceResponse.InstanceId"));
+		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
+		createInstanceResponse.setOrderId(_ctx.stringValue("CreateInstanceResponse.OrderId"));
+		createInstanceResponse.setInstanceId(_ctx.stringValue("CreateInstanceResponse.InstanceId"));
 	 
 	 	return createInstanceResponse;
 	}

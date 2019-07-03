@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetMainDomainNameRequest extends RpcAcsRequest<GetMainDomainNameResponse> {
 	
 	public GetMainDomainNameRequest() {
-		super("Alidns", "2015-01-09", "GetMainDomainName", "alidns");
+		super("Alidns", "2015-01-09", "GetMainDomainName", "Alidns");
 	}
 
 	private String inputString;

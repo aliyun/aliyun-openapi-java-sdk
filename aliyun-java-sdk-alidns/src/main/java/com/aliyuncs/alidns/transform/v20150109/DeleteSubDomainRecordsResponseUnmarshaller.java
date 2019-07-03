@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteSubDomainRecordsResponseUnmarshaller {
 
-	public static DeleteSubDomainRecordsResponse unmarshall(DeleteSubDomainRecordsResponse deleteSubDomainRecordsResponse, UnmarshallerContext context) {
+	public static DeleteSubDomainRecordsResponse unmarshall(DeleteSubDomainRecordsResponse deleteSubDomainRecordsResponse, UnmarshallerContext _ctx) {
 		
-		deleteSubDomainRecordsResponse.setRequestId(context.stringValue("DeleteSubDomainRecordsResponse.RequestId"));
-		deleteSubDomainRecordsResponse.setRR(context.stringValue("DeleteSubDomainRecordsResponse.RR"));
-		deleteSubDomainRecordsResponse.setTotalCount(context.stringValue("DeleteSubDomainRecordsResponse.TotalCount"));
+		deleteSubDomainRecordsResponse.setRequestId(_ctx.stringValue("DeleteSubDomainRecordsResponse.RequestId"));
+		deleteSubDomainRecordsResponse.setRR(_ctx.stringValue("DeleteSubDomainRecordsResponse.RR"));
+		deleteSubDomainRecordsResponse.setTotalCount(_ctx.stringValue("DeleteSubDomainRecordsResponse.TotalCount"));
 	 
 	 	return deleteSubDomainRecordsResponse;
 	}

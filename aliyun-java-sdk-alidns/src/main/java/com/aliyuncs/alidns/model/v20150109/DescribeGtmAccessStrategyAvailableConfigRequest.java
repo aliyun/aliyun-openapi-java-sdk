@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeGtmAccessStrategyAvailableConfigRequest extends RpcAcsRequest<DescribeGtmAccessStrategyAvailableConfigResponse> {
 	
 	public DescribeGtmAccessStrategyAvailableConfigRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmAccessStrategyAvailableConfig", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmAccessStrategyAvailableConfig", "Alidns");
 	}
 
 	private String instanceId;

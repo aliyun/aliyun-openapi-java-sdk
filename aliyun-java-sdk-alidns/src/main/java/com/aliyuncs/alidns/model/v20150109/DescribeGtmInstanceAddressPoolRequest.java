@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeGtmInstanceAddressPoolRequest extends RpcAcsRequest<DescribeGtmInstanceAddressPoolResponse> {
 	
 	public DescribeGtmInstanceAddressPoolRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPool", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPool", "Alidns");
 	}
 
 	private String addrPoolId;

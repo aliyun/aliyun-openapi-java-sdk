@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBatchResultCountResponseUnmarshaller {
 
-	public static DescribeBatchResultCountResponse unmarshall(DescribeBatchResultCountResponse describeBatchResultCountResponse, UnmarshallerContext context) {
+	public static DescribeBatchResultCountResponse unmarshall(DescribeBatchResultCountResponse describeBatchResultCountResponse, UnmarshallerContext _ctx) {
 		
-		describeBatchResultCountResponse.setRequestId(context.stringValue("DescribeBatchResultCountResponse.RequestId"));
-		describeBatchResultCountResponse.setStatus(context.integerValue("DescribeBatchResultCountResponse.Status"));
-		describeBatchResultCountResponse.setTotalCount(context.integerValue("DescribeBatchResultCountResponse.TotalCount"));
-		describeBatchResultCountResponse.setSuccessCount(context.integerValue("DescribeBatchResultCountResponse.SuccessCount"));
-		describeBatchResultCountResponse.setFailedCount(context.integerValue("DescribeBatchResultCountResponse.FailedCount"));
-		describeBatchResultCountResponse.setReason(context.stringValue("DescribeBatchResultCountResponse.Reason"));
-		describeBatchResultCountResponse.setBatchType(context.stringValue("DescribeBatchResultCountResponse.BatchType"));
-		describeBatchResultCountResponse.setTaskId(context.longValue("DescribeBatchResultCountResponse.TaskId"));
+		describeBatchResultCountResponse.setRequestId(_ctx.stringValue("DescribeBatchResultCountResponse.RequestId"));
+		describeBatchResultCountResponse.setStatus(_ctx.integerValue("DescribeBatchResultCountResponse.Status"));
+		describeBatchResultCountResponse.setTotalCount(_ctx.integerValue("DescribeBatchResultCountResponse.TotalCount"));
+		describeBatchResultCountResponse.setSuccessCount(_ctx.integerValue("DescribeBatchResultCountResponse.SuccessCount"));
+		describeBatchResultCountResponse.setFailedCount(_ctx.integerValue("DescribeBatchResultCountResponse.FailedCount"));
+		describeBatchResultCountResponse.setReason(_ctx.stringValue("DescribeBatchResultCountResponse.Reason"));
+		describeBatchResultCountResponse.setBatchType(_ctx.stringValue("DescribeBatchResultCountResponse.BatchType"));
+		describeBatchResultCountResponse.setTaskId(_ctx.longValue("DescribeBatchResultCountResponse.TaskId"));
 	 
 	 	return describeBatchResultCountResponse;
 	}

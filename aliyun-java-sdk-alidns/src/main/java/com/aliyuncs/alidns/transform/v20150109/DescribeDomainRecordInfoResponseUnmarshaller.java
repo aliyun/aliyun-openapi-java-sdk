@@ -20,23 +20,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainRecordInfoResponseUnmarshaller {
 
-	public static DescribeDomainRecordInfoResponse unmarshall(DescribeDomainRecordInfoResponse describeDomainRecordInfoResponse, UnmarshallerContext context) {
+	public static DescribeDomainRecordInfoResponse unmarshall(DescribeDomainRecordInfoResponse describeDomainRecordInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainRecordInfoResponse.setRequestId(context.stringValue("DescribeDomainRecordInfoResponse.RequestId"));
-		describeDomainRecordInfoResponse.setDomainId(context.stringValue("DescribeDomainRecordInfoResponse.DomainId"));
-		describeDomainRecordInfoResponse.setDomainName(context.stringValue("DescribeDomainRecordInfoResponse.DomainName"));
-		describeDomainRecordInfoResponse.setPunyCode(context.stringValue("DescribeDomainRecordInfoResponse.PunyCode"));
-		describeDomainRecordInfoResponse.setGroupId(context.stringValue("DescribeDomainRecordInfoResponse.GroupId"));
-		describeDomainRecordInfoResponse.setGroupName(context.stringValue("DescribeDomainRecordInfoResponse.GroupName"));
-		describeDomainRecordInfoResponse.setRecordId(context.stringValue("DescribeDomainRecordInfoResponse.RecordId"));
-		describeDomainRecordInfoResponse.setRR(context.stringValue("DescribeDomainRecordInfoResponse.RR"));
-		describeDomainRecordInfoResponse.setType(context.stringValue("DescribeDomainRecordInfoResponse.Type"));
-		describeDomainRecordInfoResponse.setValue(context.stringValue("DescribeDomainRecordInfoResponse.Value"));
-		describeDomainRecordInfoResponse.setTTL(context.longValue("DescribeDomainRecordInfoResponse.TTL"));
-		describeDomainRecordInfoResponse.setPriority(context.longValue("DescribeDomainRecordInfoResponse.Priority"));
-		describeDomainRecordInfoResponse.setLine(context.stringValue("DescribeDomainRecordInfoResponse.Line"));
-		describeDomainRecordInfoResponse.setStatus(context.stringValue("DescribeDomainRecordInfoResponse.Status"));
-		describeDomainRecordInfoResponse.setLocked(context.booleanValue("DescribeDomainRecordInfoResponse.Locked"));
+		describeDomainRecordInfoResponse.setRequestId(_ctx.stringValue("DescribeDomainRecordInfoResponse.RequestId"));
+		describeDomainRecordInfoResponse.setDomainId(_ctx.stringValue("DescribeDomainRecordInfoResponse.DomainId"));
+		describeDomainRecordInfoResponse.setDomainName(_ctx.stringValue("DescribeDomainRecordInfoResponse.DomainName"));
+		describeDomainRecordInfoResponse.setPunyCode(_ctx.stringValue("DescribeDomainRecordInfoResponse.PunyCode"));
+		describeDomainRecordInfoResponse.setGroupId(_ctx.stringValue("DescribeDomainRecordInfoResponse.GroupId"));
+		describeDomainRecordInfoResponse.setGroupName(_ctx.stringValue("DescribeDomainRecordInfoResponse.GroupName"));
+		describeDomainRecordInfoResponse.setRecordId(_ctx.stringValue("DescribeDomainRecordInfoResponse.RecordId"));
+		describeDomainRecordInfoResponse.setRR(_ctx.stringValue("DescribeDomainRecordInfoResponse.RR"));
+		describeDomainRecordInfoResponse.setType(_ctx.stringValue("DescribeDomainRecordInfoResponse.Type"));
+		describeDomainRecordInfoResponse.setValue(_ctx.stringValue("DescribeDomainRecordInfoResponse.Value"));
+		describeDomainRecordInfoResponse.setTTL(_ctx.longValue("DescribeDomainRecordInfoResponse.TTL"));
+		describeDomainRecordInfoResponse.setPriority(_ctx.longValue("DescribeDomainRecordInfoResponse.Priority"));
+		describeDomainRecordInfoResponse.setLine(_ctx.stringValue("DescribeDomainRecordInfoResponse.Line"));
+		describeDomainRecordInfoResponse.setStatus(_ctx.stringValue("DescribeDomainRecordInfoResponse.Status"));
+		describeDomainRecordInfoResponse.setLocked(_ctx.booleanValue("DescribeDomainRecordInfoResponse.Locked"));
 	 
 	 	return describeDomainRecordInfoResponse;
 	}

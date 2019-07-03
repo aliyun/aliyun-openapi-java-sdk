@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddGtmAccessStrategyResponseUnmarshaller {
 
-	public static AddGtmAccessStrategyResponse unmarshall(AddGtmAccessStrategyResponse addGtmAccessStrategyResponse, UnmarshallerContext context) {
+	public static AddGtmAccessStrategyResponse unmarshall(AddGtmAccessStrategyResponse addGtmAccessStrategyResponse, UnmarshallerContext _ctx) {
 		
-		addGtmAccessStrategyResponse.setRequestId(context.stringValue("AddGtmAccessStrategyResponse.RequestId"));
-		addGtmAccessStrategyResponse.setStrategyId(context.stringValue("AddGtmAccessStrategyResponse.StrategyId"));
+		addGtmAccessStrategyResponse.setRequestId(_ctx.stringValue("AddGtmAccessStrategyResponse.RequestId"));
+		addGtmAccessStrategyResponse.setStrategyId(_ctx.stringValue("AddGtmAccessStrategyResponse.StrategyId"));
 	 
 	 	return addGtmAccessStrategyResponse;
 	}

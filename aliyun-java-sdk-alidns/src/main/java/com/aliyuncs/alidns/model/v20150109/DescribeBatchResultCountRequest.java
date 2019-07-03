@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBatchResultCountRequest extends RpcAcsRequest<DescribeBatchResultCountResponse> {
 	
 	public DescribeBatchResultCountRequest() {
-		super("Alidns", "2015-01-09", "DescribeBatchResultCount", "alidns");
+		super("Alidns", "2015-01-09", "DescribeBatchResultCount", "Alidns");
 	}
 
 	private String batchType;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeGtmMonitorAvailableConfigRequest extends RpcAcsRequest<DescribeGtmMonitorAvailableConfigResponse> {
 	
 	public DescribeGtmMonitorAvailableConfigRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmMonitorAvailableConfig", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmMonitorAvailableConfig", "Alidns");
 	}
 
 	private String lang;

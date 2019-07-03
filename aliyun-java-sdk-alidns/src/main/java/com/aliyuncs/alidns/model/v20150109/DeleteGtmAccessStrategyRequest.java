@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteGtmAccessStrategyRequest extends RpcAcsRequest<DeleteGtmAccessStrategyResponse> {
 	
 	public DeleteGtmAccessStrategyRequest() {
-		super("Alidns", "2015-01-09", "DeleteGtmAccessStrategy", "alidns");
+		super("Alidns", "2015-01-09", "DeleteGtmAccessStrategy", "Alidns");
 	}
 
 	private String strategyId;

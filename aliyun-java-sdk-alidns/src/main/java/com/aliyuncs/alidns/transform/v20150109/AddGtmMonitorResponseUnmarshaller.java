@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddGtmMonitorResponseUnmarshaller {
 
-	public static AddGtmMonitorResponse unmarshall(AddGtmMonitorResponse addGtmMonitorResponse, UnmarshallerContext context) {
+	public static AddGtmMonitorResponse unmarshall(AddGtmMonitorResponse addGtmMonitorResponse, UnmarshallerContext _ctx) {
 		
-		addGtmMonitorResponse.setRequestId(context.stringValue("AddGtmMonitorResponse.RequestId"));
-		addGtmMonitorResponse.setMonitorConfigId(context.stringValue("AddGtmMonitorResponse.MonitorConfigId"));
+		addGtmMonitorResponse.setRequestId(_ctx.stringValue("AddGtmMonitorResponse.RequestId"));
+		addGtmMonitorResponse.setMonitorConfigId(_ctx.stringValue("AddGtmMonitorResponse.MonitorConfigId"));
 	 
 	 	return addGtmMonitorResponse;
 	}

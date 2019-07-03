@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateGtmInstanceGlobalConfigResponseUnmarshaller {
 
-	public static UpdateGtmInstanceGlobalConfigResponse unmarshall(UpdateGtmInstanceGlobalConfigResponse updateGtmInstanceGlobalConfigResponse, UnmarshallerContext context) {
+	public static UpdateGtmInstanceGlobalConfigResponse unmarshall(UpdateGtmInstanceGlobalConfigResponse updateGtmInstanceGlobalConfigResponse, UnmarshallerContext _ctx) {
 		
-		updateGtmInstanceGlobalConfigResponse.setRequestId(context.stringValue("UpdateGtmInstanceGlobalConfigResponse.RequestId"));
+		updateGtmInstanceGlobalConfigResponse.setRequestId(_ctx.stringValue("UpdateGtmInstanceGlobalConfigResponse.RequestId"));
 	 
 	 	return updateGtmInstanceGlobalConfigResponse;
 	}

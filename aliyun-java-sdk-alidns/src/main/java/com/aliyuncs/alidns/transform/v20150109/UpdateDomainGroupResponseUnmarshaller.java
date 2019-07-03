@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateDomainGroupResponseUnmarshaller {
 
-	public static UpdateDomainGroupResponse unmarshall(UpdateDomainGroupResponse updateDomainGroupResponse, UnmarshallerContext context) {
+	public static UpdateDomainGroupResponse unmarshall(UpdateDomainGroupResponse updateDomainGroupResponse, UnmarshallerContext _ctx) {
 		
-		updateDomainGroupResponse.setRequestId(context.stringValue("UpdateDomainGroupResponse.RequestId"));
-		updateDomainGroupResponse.setGroupId(context.stringValue("UpdateDomainGroupResponse.GroupId"));
-		updateDomainGroupResponse.setGroupName(context.stringValue("UpdateDomainGroupResponse.GroupName"));
+		updateDomainGroupResponse.setRequestId(_ctx.stringValue("UpdateDomainGroupResponse.RequestId"));
+		updateDomainGroupResponse.setGroupId(_ctx.stringValue("UpdateDomainGroupResponse.GroupId"));
+		updateDomainGroupResponse.setGroupName(_ctx.stringValue("UpdateDomainGroupResponse.GroupName"));
 	 
 	 	return updateDomainGroupResponse;
 	}

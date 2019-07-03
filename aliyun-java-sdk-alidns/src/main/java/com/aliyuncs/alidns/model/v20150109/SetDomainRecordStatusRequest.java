@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDomainRecordStatusRequest extends RpcAcsRequest<SetDomainRecordStatusResponse> {
 	
 	public SetDomainRecordStatusRequest() {
-		super("Alidns", "2015-01-09", "SetDomainRecordStatus", "alidns");
+		super("Alidns", "2015-01-09", "SetDomainRecordStatus", "Alidns");
 	}
 
 	private String recordId;

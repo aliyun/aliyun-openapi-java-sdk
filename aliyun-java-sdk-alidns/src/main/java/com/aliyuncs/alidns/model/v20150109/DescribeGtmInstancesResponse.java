@@ -111,6 +111,8 @@ public class DescribeGtmInstancesResponse extends AcsResponse {
 
 		private String alertGroup;
 
+		private String cnameMode;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -205,6 +207,14 @@ public class DescribeGtmInstancesResponse extends AcsResponse {
 
 		public void setAlertGroup(String alertGroup) {
 			this.alertGroup = alertGroup;
+		}
+
+		public String getCnameMode() {
+			return this.cnameMode;
+		}
+
+		public void setCnameMode(String cnameMode) {
+			this.cnameMode = cnameMode;
 		}
 	}
 

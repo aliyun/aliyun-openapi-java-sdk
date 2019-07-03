@@ -23,12 +23,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class ChangeDomainGroupRequest extends RpcAcsRequest<ChangeDomainGroupResponse> {
 	
 	public ChangeDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "ChangeDomainGroup", "alidns");
+		super("Alidns", "2015-01-09", "ChangeDomainGroup", "Alidns");
 	}
 
 	private String groupId;
-
-	private String userClientIp;
 
 	private String domainName;
 
@@ -42,17 +40,6 @@ public class ChangeDomainGroupRequest extends RpcAcsRequest<ChangeDomainGroupRes
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

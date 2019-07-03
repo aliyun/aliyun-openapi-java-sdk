@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainGroupsResponseUnmarshaller {
 
-	public static DescribeDomainGroupsResponse unmarshall(DescribeDomainGroupsResponse describeDomainGroupsResponse, UnmarshallerContext context) {
+	public static DescribeDomainGroupsResponse unmarshall(DescribeDomainGroupsResponse describeDomainGroupsResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainGroupsResponse.setRequestId(context.stringValue("DescribeDomainGroupsResponse.RequestId"));
-		describeDomainGroupsResponse.setTotalCount(context.longValue("DescribeDomainGroupsResponse.TotalCount"));
-		describeDomainGroupsResponse.setPageNumber(context.longValue("DescribeDomainGroupsResponse.PageNumber"));
-		describeDomainGroupsResponse.setPageSize(context.longValue("DescribeDomainGroupsResponse.PageSize"));
+		describeDomainGroupsResponse.setRequestId(_ctx.stringValue("DescribeDomainGroupsResponse.RequestId"));
+		describeDomainGroupsResponse.setTotalCount(_ctx.longValue("DescribeDomainGroupsResponse.TotalCount"));
+		describeDomainGroupsResponse.setPageNumber(_ctx.longValue("DescribeDomainGroupsResponse.PageNumber"));
+		describeDomainGroupsResponse.setPageSize(_ctx.longValue("DescribeDomainGroupsResponse.PageSize"));
 
 		List<DomainGroup> domainGroups = new ArrayList<DomainGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainGroupsResponse.DomainGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainGroupsResponse.DomainGroups.Length"); i++) {
 			DomainGroup domainGroup = new DomainGroup();
-			domainGroup.setGroupId(context.stringValue("DescribeDomainGroupsResponse.DomainGroups["+ i +"].GroupId"));
-			domainGroup.setGroupName(context.stringValue("DescribeDomainGroupsResponse.DomainGroups["+ i +"].GroupName"));
-			domainGroup.setDomainCount(context.longValue("DescribeDomainGroupsResponse.DomainGroups["+ i +"].DomainCount"));
+			domainGroup.setGroupId(_ctx.stringValue("DescribeDomainGroupsResponse.DomainGroups["+ i +"].GroupId"));
+			domainGroup.setGroupName(_ctx.stringValue("DescribeDomainGroupsResponse.DomainGroups["+ i +"].GroupName"));
+			domainGroup.setDomainCount(_ctx.longValue("DescribeDomainGroupsResponse.DomainGroups["+ i +"].DomainCount"));
 
 			domainGroups.add(domainGroup);
 		}

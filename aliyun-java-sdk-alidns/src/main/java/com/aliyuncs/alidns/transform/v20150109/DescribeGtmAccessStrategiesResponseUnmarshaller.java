@@ -25,37 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGtmAccessStrategiesResponseUnmarshaller {
 
-	public static DescribeGtmAccessStrategiesResponse unmarshall(DescribeGtmAccessStrategiesResponse describeGtmAccessStrategiesResponse, UnmarshallerContext context) {
+	public static DescribeGtmAccessStrategiesResponse unmarshall(DescribeGtmAccessStrategiesResponse describeGtmAccessStrategiesResponse, UnmarshallerContext _ctx) {
 		
-		describeGtmAccessStrategiesResponse.setRequestId(context.stringValue("DescribeGtmAccessStrategiesResponse.RequestId"));
-		describeGtmAccessStrategiesResponse.setTotalItems(context.integerValue("DescribeGtmAccessStrategiesResponse.TotalItems"));
-		describeGtmAccessStrategiesResponse.setTotalPages(context.integerValue("DescribeGtmAccessStrategiesResponse.TotalPages"));
-		describeGtmAccessStrategiesResponse.setPageNumber(context.integerValue("DescribeGtmAccessStrategiesResponse.PageNumber"));
-		describeGtmAccessStrategiesResponse.setPageSize(context.integerValue("DescribeGtmAccessStrategiesResponse.PageSize"));
+		describeGtmAccessStrategiesResponse.setRequestId(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.RequestId"));
+		describeGtmAccessStrategiesResponse.setTotalItems(_ctx.integerValue("DescribeGtmAccessStrategiesResponse.TotalItems"));
+		describeGtmAccessStrategiesResponse.setTotalPages(_ctx.integerValue("DescribeGtmAccessStrategiesResponse.TotalPages"));
+		describeGtmAccessStrategiesResponse.setPageNumber(_ctx.integerValue("DescribeGtmAccessStrategiesResponse.PageNumber"));
+		describeGtmAccessStrategiesResponse.setPageSize(_ctx.integerValue("DescribeGtmAccessStrategiesResponse.PageSize"));
 
 		List<Strategy> strategies = new ArrayList<Strategy>();
-		for (int i = 0; i < context.lengthValue("DescribeGtmAccessStrategiesResponse.Strategies.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeGtmAccessStrategiesResponse.Strategies.Length"); i++) {
 			Strategy strategy = new Strategy();
-			strategy.setStrategyId(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].StrategyId"));
-			strategy.setStrategyName(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].StrategyName"));
-			strategy.setCreateTime(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].CreateTime"));
-			strategy.setCreateTimestamp(context.longValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].CreateTimestamp"));
-			strategy.setDefaultAddrPoolId(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].DefaultAddrPoolId"));
-			strategy.setDefaultAddrPoolName(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].DefaultAddrPoolName"));
-			strategy.setFailoverAddrPoolId(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].FailoverAddrPoolId"));
-			strategy.setFailoverAddrPoolName(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].FailoverAddrPoolName"));
-			strategy.setAccessMode(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].AccessMode"));
-			strategy.setAccessStatus(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].AccessStatus"));
-			strategy.setStrategyMode(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].StrategyMode"));
-			strategy.setInstanceId(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].InstanceId"));
+			strategy.setStrategyId(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].StrategyId"));
+			strategy.setStrategyName(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].StrategyName"));
+			strategy.setCreateTime(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].CreateTime"));
+			strategy.setCreateTimestamp(_ctx.longValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].CreateTimestamp"));
+			strategy.setDefaultAddrPoolId(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].DefaultAddrPoolId"));
+			strategy.setDefaultAddrPoolName(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].DefaultAddrPoolName"));
+			strategy.setFailoverAddrPoolId(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].FailoverAddrPoolId"));
+			strategy.setFailoverAddrPoolName(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].FailoverAddrPoolName"));
+			strategy.setAccessMode(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].AccessMode"));
+			strategy.setAccessStatus(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].AccessStatus"));
+			strategy.setStrategyMode(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].StrategyMode"));
+			strategy.setInstanceId(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].InstanceId"));
 
 			List<Line> lines = new ArrayList<Line>();
-			for (int j = 0; j < context.lengthValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines.Length"); j++) {
 				Line line = new Line();
-				line.setLineCode(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].LineCode"));
-				line.setLineName(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].LineName"));
-				line.setGroupCode(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].GroupCode"));
-				line.setGroupName(context.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].GroupName"));
+				line.setLineCode(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].LineCode"));
+				line.setLineName(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].LineName"));
+				line.setGroupCode(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].GroupCode"));
+				line.setGroupName(_ctx.stringValue("DescribeGtmAccessStrategiesResponse.Strategies["+ i +"].Lines["+ j +"].GroupName"));
 
 				lines.add(line);
 			}

@@ -23,12 +23,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteDomainGroupRequest extends RpcAcsRequest<DeleteDomainGroupResponse> {
 	
 	public DeleteDomainGroupRequest() {
-		super("Alidns", "2015-01-09", "DeleteDomainGroup", "alidns");
+		super("Alidns", "2015-01-09", "DeleteDomainGroup", "Alidns");
 	}
 
 	private String groupId;
-
-	private String userClientIp;
 
 	private String lang;
 
@@ -40,17 +38,6 @@ public class DeleteDomainGroupRequest extends RpcAcsRequest<DeleteDomainGroupRes
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
 		}
 	}
 

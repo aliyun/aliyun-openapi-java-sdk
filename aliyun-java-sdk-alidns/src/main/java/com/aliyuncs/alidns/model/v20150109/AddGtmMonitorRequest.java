@@ -24,7 +24,7 @@ import java.util.List;
 public class AddGtmMonitorRequest extends RpcAcsRequest<AddGtmMonitorResponse> {
 	
 	public AddGtmMonitorRequest() {
-		super("Alidns", "2015-01-09", "AddGtmMonitor", "alidns");
+		super("Alidns", "2015-01-09", "AddGtmMonitor", "Alidns");
 	}
 
 	private String monitorExtendInfo;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeGtmInstanceStatusRequest extends RpcAcsRequest<DescribeGtmInstanceStatusResponse> {
 	
 	public DescribeGtmInstanceStatusRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmInstanceStatus", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmInstanceStatus", "Alidns");
 	}
 
 	private String instanceId;

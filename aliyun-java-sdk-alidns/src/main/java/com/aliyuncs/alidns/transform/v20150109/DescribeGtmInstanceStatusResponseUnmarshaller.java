@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGtmInstanceStatusResponseUnmarshaller {
 
-	public static DescribeGtmInstanceStatusResponse unmarshall(DescribeGtmInstanceStatusResponse describeGtmInstanceStatusResponse, UnmarshallerContext context) {
+	public static DescribeGtmInstanceStatusResponse unmarshall(DescribeGtmInstanceStatusResponse describeGtmInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeGtmInstanceStatusResponse.setRequestId(context.stringValue("DescribeGtmInstanceStatusResponse.RequestId"));
-		describeGtmInstanceStatusResponse.setAccessStatus(context.stringValue("DescribeGtmInstanceStatusResponse.AccessStatus"));
-		describeGtmInstanceStatusResponse.setAlertStatus(context.stringValue("DescribeGtmInstanceStatusResponse.AlertStatus"));
+		describeGtmInstanceStatusResponse.setRequestId(_ctx.stringValue("DescribeGtmInstanceStatusResponse.RequestId"));
+		describeGtmInstanceStatusResponse.setAccessStatus(_ctx.stringValue("DescribeGtmInstanceStatusResponse.AccessStatus"));
+		describeGtmInstanceStatusResponse.setAlertStatus(_ctx.stringValue("DescribeGtmInstanceStatusResponse.AlertStatus"));
 	 
 	 	return describeGtmInstanceStatusResponse;
 	}

@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainRecordsResponseUnmarshaller {
 
-	public static DescribeDomainRecordsResponse unmarshall(DescribeDomainRecordsResponse describeDomainRecordsResponse, UnmarshallerContext context) {
+	public static DescribeDomainRecordsResponse unmarshall(DescribeDomainRecordsResponse describeDomainRecordsResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainRecordsResponse.setRequestId(context.stringValue("DescribeDomainRecordsResponse.RequestId"));
-		describeDomainRecordsResponse.setTotalCount(context.longValue("DescribeDomainRecordsResponse.TotalCount"));
-		describeDomainRecordsResponse.setPageNumber(context.longValue("DescribeDomainRecordsResponse.PageNumber"));
-		describeDomainRecordsResponse.setPageSize(context.longValue("DescribeDomainRecordsResponse.PageSize"));
+		describeDomainRecordsResponse.setRequestId(_ctx.stringValue("DescribeDomainRecordsResponse.RequestId"));
+		describeDomainRecordsResponse.setTotalCount(_ctx.longValue("DescribeDomainRecordsResponse.TotalCount"));
+		describeDomainRecordsResponse.setPageNumber(_ctx.longValue("DescribeDomainRecordsResponse.PageNumber"));
+		describeDomainRecordsResponse.setPageSize(_ctx.longValue("DescribeDomainRecordsResponse.PageSize"));
 
 		List<Record> domainRecords = new ArrayList<Record>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainRecordsResponse.DomainRecords.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainRecordsResponse.DomainRecords.Length"); i++) {
 			Record record = new Record();
-			record.setDomainName(context.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].DomainName"));
-			record.setRecordId(context.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].RecordId"));
-			record.setRR(context.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].RR"));
-			record.setType(context.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Type"));
-			record.setValue(context.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Value"));
-			record.setTTL(context.longValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].TTL"));
-			record.setPriority(context.longValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Priority"));
-			record.setLine(context.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Line"));
-			record.setStatus(context.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Status"));
-			record.setLocked(context.booleanValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Locked"));
-			record.setWeight(context.integerValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Weight"));
-			record.setRemark(context.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Remark"));
+			record.setDomainName(_ctx.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].DomainName"));
+			record.setRecordId(_ctx.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].RecordId"));
+			record.setRR(_ctx.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].RR"));
+			record.setType(_ctx.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Type"));
+			record.setValue(_ctx.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Value"));
+			record.setTTL(_ctx.longValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].TTL"));
+			record.setPriority(_ctx.longValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Priority"));
+			record.setLine(_ctx.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Line"));
+			record.setStatus(_ctx.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Status"));
+			record.setLocked(_ctx.booleanValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Locked"));
+			record.setWeight(_ctx.integerValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Weight"));
+			record.setRemark(_ctx.stringValue("DescribeDomainRecordsResponse.DomainRecords["+ i +"].Remark"));
 
 			domainRecords.add(record);
 		}

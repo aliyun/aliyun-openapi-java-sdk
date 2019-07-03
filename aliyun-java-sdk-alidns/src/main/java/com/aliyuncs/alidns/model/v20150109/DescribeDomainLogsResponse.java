@@ -89,6 +89,8 @@ public class DescribeDomainLogsResponse extends AcsResponse {
 
 		private String clientIp;
 
+		private String zoneId;
+
 		public String getActionTime() {
 			return this.actionTime;
 		}
@@ -151,6 +153,14 @@ public class DescribeDomainLogsResponse extends AcsResponse {
 
 		public void setClientIp(String clientIp) {
 			this.clientIp = clientIp;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 	}
 

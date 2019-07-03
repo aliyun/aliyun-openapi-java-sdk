@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRecordLogsResponseUnmarshaller {
 
-	public static DescribeRecordLogsResponse unmarshall(DescribeRecordLogsResponse describeRecordLogsResponse, UnmarshallerContext context) {
+	public static DescribeRecordLogsResponse unmarshall(DescribeRecordLogsResponse describeRecordLogsResponse, UnmarshallerContext _ctx) {
 		
-		describeRecordLogsResponse.setRequestId(context.stringValue("DescribeRecordLogsResponse.RequestId"));
-		describeRecordLogsResponse.setTotalCount(context.longValue("DescribeRecordLogsResponse.TotalCount"));
-		describeRecordLogsResponse.setPageNumber(context.longValue("DescribeRecordLogsResponse.PageNumber"));
-		describeRecordLogsResponse.setPageSize(context.longValue("DescribeRecordLogsResponse.PageSize"));
+		describeRecordLogsResponse.setRequestId(_ctx.stringValue("DescribeRecordLogsResponse.RequestId"));
+		describeRecordLogsResponse.setTotalCount(_ctx.longValue("DescribeRecordLogsResponse.TotalCount"));
+		describeRecordLogsResponse.setPageNumber(_ctx.longValue("DescribeRecordLogsResponse.PageNumber"));
+		describeRecordLogsResponse.setPageSize(_ctx.longValue("DescribeRecordLogsResponse.PageSize"));
 
 		List<RecordLog> recordLogs = new ArrayList<RecordLog>();
-		for (int i = 0; i < context.lengthValue("DescribeRecordLogsResponse.RecordLogs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRecordLogsResponse.RecordLogs.Length"); i++) {
 			RecordLog recordLog = new RecordLog();
-			recordLog.setActionTime(context.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTime"));
-			recordLog.setActionTimestamp(context.longValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTimestamp"));
-			recordLog.setAction(context.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].Action"));
-			recordLog.setMessage(context.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].Message"));
-			recordLog.setClientIp(context.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ClientIp"));
+			recordLog.setActionTime(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTime"));
+			recordLog.setActionTimestamp(_ctx.longValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ActionTimestamp"));
+			recordLog.setAction(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].Action"));
+			recordLog.setMessage(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].Message"));
+			recordLog.setClientIp(_ctx.stringValue("DescribeRecordLogsResponse.RecordLogs["+ i +"].ClientIp"));
 
 			recordLogs.add(recordLog);
 		}

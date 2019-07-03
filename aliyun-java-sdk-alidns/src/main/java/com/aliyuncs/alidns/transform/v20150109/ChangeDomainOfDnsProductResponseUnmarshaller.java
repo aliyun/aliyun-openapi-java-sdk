@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ChangeDomainOfDnsProductResponseUnmarshaller {
 
-	public static ChangeDomainOfDnsProductResponse unmarshall(ChangeDomainOfDnsProductResponse changeDomainOfDnsProductResponse, UnmarshallerContext context) {
+	public static ChangeDomainOfDnsProductResponse unmarshall(ChangeDomainOfDnsProductResponse changeDomainOfDnsProductResponse, UnmarshallerContext _ctx) {
 		
-		changeDomainOfDnsProductResponse.setRequestId(context.stringValue("ChangeDomainOfDnsProductResponse.RequestId"));
-		changeDomainOfDnsProductResponse.setOriginalDomain(context.stringValue("ChangeDomainOfDnsProductResponse.OriginalDomain"));
+		changeDomainOfDnsProductResponse.setRequestId(_ctx.stringValue("ChangeDomainOfDnsProductResponse.RequestId"));
+		changeDomainOfDnsProductResponse.setOriginalDomain(_ctx.stringValue("ChangeDomainOfDnsProductResponse.OriginalDomain"));
 	 
 	 	return changeDomainOfDnsProductResponse;
 	}

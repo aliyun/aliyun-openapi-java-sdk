@@ -24,29 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGtmInstancesResponseUnmarshaller {
 
-	public static DescribeGtmInstancesResponse unmarshall(DescribeGtmInstancesResponse describeGtmInstancesResponse, UnmarshallerContext context) {
+	public static DescribeGtmInstancesResponse unmarshall(DescribeGtmInstancesResponse describeGtmInstancesResponse, UnmarshallerContext _ctx) {
 		
-		describeGtmInstancesResponse.setRequestId(context.stringValue("DescribeGtmInstancesResponse.RequestId"));
-		describeGtmInstancesResponse.setPageNumber(context.integerValue("DescribeGtmInstancesResponse.PageNumber"));
-		describeGtmInstancesResponse.setPageSize(context.integerValue("DescribeGtmInstancesResponse.PageSize"));
-		describeGtmInstancesResponse.setTotalItems(context.integerValue("DescribeGtmInstancesResponse.TotalItems"));
-		describeGtmInstancesResponse.setTotalPages(context.integerValue("DescribeGtmInstancesResponse.TotalPages"));
+		describeGtmInstancesResponse.setRequestId(_ctx.stringValue("DescribeGtmInstancesResponse.RequestId"));
+		describeGtmInstancesResponse.setPageNumber(_ctx.integerValue("DescribeGtmInstancesResponse.PageNumber"));
+		describeGtmInstancesResponse.setPageSize(_ctx.integerValue("DescribeGtmInstancesResponse.PageSize"));
+		describeGtmInstancesResponse.setTotalItems(_ctx.integerValue("DescribeGtmInstancesResponse.TotalItems"));
+		describeGtmInstancesResponse.setTotalPages(_ctx.integerValue("DescribeGtmInstancesResponse.TotalPages"));
 
 		List<GtmInstance> gtmInstances = new ArrayList<GtmInstance>();
-		for (int i = 0; i < context.lengthValue("DescribeGtmInstancesResponse.GtmInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeGtmInstancesResponse.GtmInstances.Length"); i++) {
 			GtmInstance gtmInstance = new GtmInstance();
-			gtmInstance.setInstanceId(context.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].InstanceId"));
-			gtmInstance.setInstanceName(context.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].InstanceName"));
-			gtmInstance.setCname(context.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].Cname"));
-			gtmInstance.setUserDomainName(context.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].UserDomainName"));
-			gtmInstance.setVersionCode(context.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].VersionCode"));
-			gtmInstance.setTtl(context.integerValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].Ttl"));
-			gtmInstance.setLbaStrategy(context.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].LbaStrategy"));
-			gtmInstance.setCreateTime(context.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CreateTime"));
-			gtmInstance.setCreateTimestamp(context.longValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CreateTimestamp"));
-			gtmInstance.setExpireTime(context.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].ExpireTime"));
-			gtmInstance.setExpireTimestamp(context.longValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].ExpireTimestamp"));
-			gtmInstance.setAlertGroup(context.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].AlertGroup"));
+			gtmInstance.setInstanceId(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].InstanceId"));
+			gtmInstance.setInstanceName(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].InstanceName"));
+			gtmInstance.setCname(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].Cname"));
+			gtmInstance.setUserDomainName(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].UserDomainName"));
+			gtmInstance.setVersionCode(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].VersionCode"));
+			gtmInstance.setTtl(_ctx.integerValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].Ttl"));
+			gtmInstance.setLbaStrategy(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].LbaStrategy"));
+			gtmInstance.setCreateTime(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CreateTime"));
+			gtmInstance.setCreateTimestamp(_ctx.longValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CreateTimestamp"));
+			gtmInstance.setExpireTime(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].ExpireTime"));
+			gtmInstance.setExpireTimestamp(_ctx.longValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].ExpireTimestamp"));
+			gtmInstance.setAlertGroup(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].AlertGroup"));
+			gtmInstance.setCnameMode(_ctx.stringValue("DescribeGtmInstancesResponse.GtmInstances["+ i +"].CnameMode"));
 
 			gtmInstances.add(gtmInstance);
 		}

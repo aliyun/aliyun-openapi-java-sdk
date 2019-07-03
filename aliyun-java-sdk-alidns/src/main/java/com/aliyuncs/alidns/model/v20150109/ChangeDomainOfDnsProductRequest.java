@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ChangeDomainOfDnsProductRequest extends RpcAcsRequest<ChangeDomainOfDnsProductResponse> {
 	
 	public ChangeDomainOfDnsProductRequest() {
-		super("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "alidns");
+		super("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "Alidns");
 	}
 
 	private String instanceId;

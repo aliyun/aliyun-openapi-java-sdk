@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetGtmMonitorStatusRequest extends RpcAcsRequest<SetGtmMonitorStatusResponse> {
 	
 	public SetGtmMonitorStatusRequest() {
-		super("Alidns", "2015-01-09", "SetGtmMonitorStatus", "alidns");
+		super("Alidns", "2015-01-09", "SetGtmMonitorStatus", "Alidns");
 	}
 
 	private String monitorConfigId;

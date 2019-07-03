@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryCreateInstancePriceResponseUnmarshaller {
 
-	public static QueryCreateInstancePriceResponse unmarshall(QueryCreateInstancePriceResponse queryCreateInstancePriceResponse, UnmarshallerContext context) {
+	public static QueryCreateInstancePriceResponse unmarshall(QueryCreateInstancePriceResponse queryCreateInstancePriceResponse, UnmarshallerContext _ctx) {
 		
-		queryCreateInstancePriceResponse.setRequestId(context.stringValue("QueryCreateInstancePriceResponse.RequestId"));
-		queryCreateInstancePriceResponse.setOrigin(context.stringValue("QueryCreateInstancePriceResponse.Origin"));
-		queryCreateInstancePriceResponse.setDiscount(context.stringValue("QueryCreateInstancePriceResponse.Discount"));
-		queryCreateInstancePriceResponse.setAmount(context.stringValue("QueryCreateInstancePriceResponse.Amount"));
-		queryCreateInstancePriceResponse.setCurrency(context.stringValue("QueryCreateInstancePriceResponse.Currency"));
+		queryCreateInstancePriceResponse.setRequestId(_ctx.stringValue("QueryCreateInstancePriceResponse.RequestId"));
+		queryCreateInstancePriceResponse.setOrigin(_ctx.stringValue("QueryCreateInstancePriceResponse.Origin"));
+		queryCreateInstancePriceResponse.setDiscount(_ctx.stringValue("QueryCreateInstancePriceResponse.Discount"));
+		queryCreateInstancePriceResponse.setAmount(_ctx.stringValue("QueryCreateInstancePriceResponse.Amount"));
+		queryCreateInstancePriceResponse.setCurrency(_ctx.stringValue("QueryCreateInstancePriceResponse.Currency"));
 
 		List<Rule> rules = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("QueryCreateInstancePriceResponse.Rules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryCreateInstancePriceResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(context.longValue("QueryCreateInstancePriceResponse.Rules["+ i +"].RuleId"));
-			rule.setName(context.stringValue("QueryCreateInstancePriceResponse.Rules["+ i +"].Name"));
-			rule.setTitle(context.stringValue("QueryCreateInstancePriceResponse.Rules["+ i +"].Title"));
+			rule.setRuleId(_ctx.longValue("QueryCreateInstancePriceResponse.Rules["+ i +"].RuleId"));
+			rule.setName(_ctx.stringValue("QueryCreateInstancePriceResponse.Rules["+ i +"].Name"));
+			rule.setTitle(_ctx.stringValue("QueryCreateInstancePriceResponse.Rules["+ i +"].Title"));
 
 			rules.add(rule);
 		}

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDNSSLBSubDomainsResponseUnmarshaller {
 
-	public static DescribeDNSSLBSubDomainsResponse unmarshall(DescribeDNSSLBSubDomainsResponse describeDNSSLBSubDomainsResponse, UnmarshallerContext context) {
+	public static DescribeDNSSLBSubDomainsResponse unmarshall(DescribeDNSSLBSubDomainsResponse describeDNSSLBSubDomainsResponse, UnmarshallerContext _ctx) {
 		
-		describeDNSSLBSubDomainsResponse.setRequestId(context.stringValue("DescribeDNSSLBSubDomainsResponse.RequestId"));
-		describeDNSSLBSubDomainsResponse.setTotalCount(context.longValue("DescribeDNSSLBSubDomainsResponse.TotalCount"));
-		describeDNSSLBSubDomainsResponse.setPageNumber(context.longValue("DescribeDNSSLBSubDomainsResponse.PageNumber"));
-		describeDNSSLBSubDomainsResponse.setPageSize(context.longValue("DescribeDNSSLBSubDomainsResponse.PageSize"));
+		describeDNSSLBSubDomainsResponse.setRequestId(_ctx.stringValue("DescribeDNSSLBSubDomainsResponse.RequestId"));
+		describeDNSSLBSubDomainsResponse.setTotalCount(_ctx.longValue("DescribeDNSSLBSubDomainsResponse.TotalCount"));
+		describeDNSSLBSubDomainsResponse.setPageNumber(_ctx.longValue("DescribeDNSSLBSubDomainsResponse.PageNumber"));
+		describeDNSSLBSubDomainsResponse.setPageSize(_ctx.longValue("DescribeDNSSLBSubDomainsResponse.PageSize"));
 
 		List<SlbSubDomain> slbSubDomains = new ArrayList<SlbSubDomain>();
-		for (int i = 0; i < context.lengthValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains.Length"); i++) {
 			SlbSubDomain slbSubDomain = new SlbSubDomain();
-			slbSubDomain.setSubDomain(context.stringValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].SubDomain"));
-			slbSubDomain.setRecordCount(context.longValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].RecordCount"));
-			slbSubDomain.setOpen(context.booleanValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].Open"));
-			slbSubDomain.setType(context.stringValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].Type"));
+			slbSubDomain.setSubDomain(_ctx.stringValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].SubDomain"));
+			slbSubDomain.setRecordCount(_ctx.longValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].RecordCount"));
+			slbSubDomain.setOpen(_ctx.booleanValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].Open"));
+			slbSubDomain.setType(_ctx.stringValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].Type"));
 
 			slbSubDomains.add(slbSubDomain);
 		}

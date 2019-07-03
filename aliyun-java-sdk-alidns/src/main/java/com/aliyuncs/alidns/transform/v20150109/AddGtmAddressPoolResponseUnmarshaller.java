@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddGtmAddressPoolResponseUnmarshaller {
 
-	public static AddGtmAddressPoolResponse unmarshall(AddGtmAddressPoolResponse addGtmAddressPoolResponse, UnmarshallerContext context) {
+	public static AddGtmAddressPoolResponse unmarshall(AddGtmAddressPoolResponse addGtmAddressPoolResponse, UnmarshallerContext _ctx) {
 		
-		addGtmAddressPoolResponse.setRequestId(context.stringValue("AddGtmAddressPoolResponse.RequestId"));
-		addGtmAddressPoolResponse.setAddrPoolId(context.stringValue("AddGtmAddressPoolResponse.AddrPoolId"));
+		addGtmAddressPoolResponse.setRequestId(_ctx.stringValue("AddGtmAddressPoolResponse.RequestId"));
+		addGtmAddressPoolResponse.setAddrPoolId(_ctx.stringValue("AddGtmAddressPoolResponse.AddrPoolId"));
 	 
 	 	return addGtmAddressPoolResponse;
 	}

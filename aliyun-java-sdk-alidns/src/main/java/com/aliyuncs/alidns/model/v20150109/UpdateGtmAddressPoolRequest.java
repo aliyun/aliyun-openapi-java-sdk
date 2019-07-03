@@ -24,7 +24,7 @@ import java.util.List;
 public class UpdateGtmAddressPoolRequest extends RpcAcsRequest<UpdateGtmAddressPoolResponse> {
 	
 	public UpdateGtmAddressPoolRequest() {
-		super("Alidns", "2015-01-09", "UpdateGtmAddressPool", "alidns");
+		super("Alidns", "2015-01-09", "UpdateGtmAddressPool", "Alidns");
 	}
 
 	private String addrPoolId;

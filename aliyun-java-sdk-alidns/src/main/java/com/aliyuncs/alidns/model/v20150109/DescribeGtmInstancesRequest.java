@@ -23,8 +23,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeGtmInstancesRequest extends RpcAcsRequest<DescribeGtmInstancesResponse> {
 	
 	public DescribeGtmInstancesRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmInstances", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmInstances", "Alidns");
 	}
+
+	private String resourceGroupId;
 
 	private Integer pageSize;
 
@@ -33,6 +35,17 @@ public class DescribeGtmInstancesRequest extends RpcAcsRequest<DescribeGtmInstan
 	private String keyword;
 
 	private Integer pageNumber;
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

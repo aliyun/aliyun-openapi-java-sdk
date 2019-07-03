@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddGtmAccessStrategyRequest extends RpcAcsRequest<AddGtmAccessStrategyResponse> {
 	
 	public AddGtmAccessStrategyRequest() {
-		super("Alidns", "2015-01-09", "AddGtmAccessStrategy", "alidns");
+		super("Alidns", "2015-01-09", "AddGtmAccessStrategy", "Alidns");
 	}
 
 	private String strategyName;

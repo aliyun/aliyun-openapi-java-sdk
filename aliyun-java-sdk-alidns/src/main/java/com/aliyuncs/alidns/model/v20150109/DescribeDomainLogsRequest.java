@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainLogsRequest extends RpcAcsRequest<DescribeDomainLogsResponse> {
 	
 	public DescribeDomainLogsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainLogs", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDomainLogs", "Alidns");
 	}
 
 	private String endDate;

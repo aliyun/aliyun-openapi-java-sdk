@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteSubDomainRecordsRequest extends RpcAcsRequest<DeleteSubDomainRecordsResponse> {
 	
 	public DeleteSubDomainRecordsRequest() {
-		super("Alidns", "2015-01-09", "DeleteSubDomainRecords", "alidns");
+		super("Alidns", "2015-01-09", "DeleteSubDomainRecords", "Alidns");
 	}
 
 	private String rR;

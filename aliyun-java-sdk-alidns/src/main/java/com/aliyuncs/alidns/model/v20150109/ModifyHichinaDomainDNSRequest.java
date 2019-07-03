@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyHichinaDomainDNSRequest extends RpcAcsRequest<ModifyHichinaDomainDNSResponse> {
 	
 	public ModifyHichinaDomainDNSRequest() {
-		super("Alidns", "2015-01-09", "ModifyHichinaDomainDNS", "alidns");
+		super("Alidns", "2015-01-09", "ModifyHichinaDomainDNS", "Alidns");
 	}
 
 	private String userClientIp;

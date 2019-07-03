@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGtmInstanceGlobalConfigResponse> {
 	
 	public UpdateGtmInstanceGlobalConfigRequest() {
-		super("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "alidns");
+		super("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "Alidns");
 	}
 
 	private String alertGroup;
@@ -34,11 +34,15 @@ public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGt
 
 	private String userDomainName;
 
+	private String cnameMode;
+
 	private String lbaStrategy;
 
 	private String lang;
 
 	private Integer ttl;
+
+	private String cnameCustomDomainName;
 
 	public String getAlertGroup() {
 		return this.alertGroup;
@@ -84,6 +88,17 @@ public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGt
 		}
 	}
 
+	public String getCnameMode() {
+		return this.cnameMode;
+	}
+
+	public void setCnameMode(String cnameMode) {
+		this.cnameMode = cnameMode;
+		if(cnameMode != null){
+			putQueryParameter("CnameMode", cnameMode);
+		}
+	}
+
 	public String getLbaStrategy() {
 		return this.lbaStrategy;
 	}
@@ -114,6 +129,17 @@ public class UpdateGtmInstanceGlobalConfigRequest extends RpcAcsRequest<UpdateGt
 		this.ttl = ttl;
 		if(ttl != null){
 			putQueryParameter("Ttl", ttl.toString());
+		}
+	}
+
+	public String getCnameCustomDomainName() {
+		return this.cnameCustomDomainName;
+	}
+
+	public void setCnameCustomDomainName(String cnameCustomDomainName) {
+		this.cnameCustomDomainName = cnameCustomDomainName;
+		if(cnameCustomDomainName != null){
+			putQueryParameter("CnameCustomDomainName", cnameCustomDomainName);
 		}
 	}
 

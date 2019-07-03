@@ -23,16 +23,20 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRecordsResponse> {
 	
 	public DescribeDomainRecordsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainRecords", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDomainRecords", "Alidns");
 	}
 
 	private String valueKeyWord;
+
+	private String line;
 
 	private Long groupId;
 
 	private String domainName;
 
 	private String orderBy;
+
+	private String type;
 
 	private Long pageNumber;
 
@@ -50,6 +54,8 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 
 	private String direction;
 
+	private String status;
+
 	public String getValueKeyWord() {
 		return this.valueKeyWord;
 	}
@@ -58,6 +64,17 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 		this.valueKeyWord = valueKeyWord;
 		if(valueKeyWord != null){
 			putQueryParameter("ValueKeyWord", valueKeyWord);
+		}
+	}
+
+	public String getLine() {
+		return this.line;
+	}
+
+	public void setLine(String line) {
+		this.line = line;
+		if(line != null){
+			putQueryParameter("Line", line);
 		}
 	}
 
@@ -91,6 +108,17 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 		this.orderBy = orderBy;
 		if(orderBy != null){
 			putQueryParameter("OrderBy", orderBy);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -179,6 +207,17 @@ public class DescribeDomainRecordsRequest extends RpcAcsRequest<DescribeDomainRe
 		this.direction = direction;
 		if(direction != null){
 			putQueryParameter("Direction", direction);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

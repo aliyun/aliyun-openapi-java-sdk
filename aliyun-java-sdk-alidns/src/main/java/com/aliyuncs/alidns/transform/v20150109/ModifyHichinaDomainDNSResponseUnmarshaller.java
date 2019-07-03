@@ -23,19 +23,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyHichinaDomainDNSResponseUnmarshaller {
 
-	public static ModifyHichinaDomainDNSResponse unmarshall(ModifyHichinaDomainDNSResponse modifyHichinaDomainDNSResponse, UnmarshallerContext context) {
+	public static ModifyHichinaDomainDNSResponse unmarshall(ModifyHichinaDomainDNSResponse modifyHichinaDomainDNSResponse, UnmarshallerContext _ctx) {
 		
-		modifyHichinaDomainDNSResponse.setRequestId(context.stringValue("ModifyHichinaDomainDNSResponse.RequestId"));
+		modifyHichinaDomainDNSResponse.setRequestId(_ctx.stringValue("ModifyHichinaDomainDNSResponse.RequestId"));
 
 		List<String> originalDnsServers = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ModifyHichinaDomainDNSResponse.OriginalDnsServers.Length"); i++) {
-			originalDnsServers.add(context.stringValue("ModifyHichinaDomainDNSResponse.OriginalDnsServers["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ModifyHichinaDomainDNSResponse.OriginalDnsServers.Length"); i++) {
+			originalDnsServers.add(_ctx.stringValue("ModifyHichinaDomainDNSResponse.OriginalDnsServers["+ i +"]"));
 		}
 		modifyHichinaDomainDNSResponse.setOriginalDnsServers(originalDnsServers);
 
 		List<String> newDnsServers = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ModifyHichinaDomainDNSResponse.NewDnsServers.Length"); i++) {
-			newDnsServers.add(context.stringValue("ModifyHichinaDomainDNSResponse.NewDnsServers["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ModifyHichinaDomainDNSResponse.NewDnsServers.Length"); i++) {
+			newDnsServers.add(_ctx.stringValue("ModifyHichinaDomainDNSResponse.NewDnsServers["+ i +"]"));
 		}
 		modifyHichinaDomainDNSResponse.setNewDnsServers(newDnsServers);
 	 

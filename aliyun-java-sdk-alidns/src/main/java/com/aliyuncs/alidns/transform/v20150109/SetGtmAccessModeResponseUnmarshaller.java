@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetGtmAccessModeResponseUnmarshaller {
 
-	public static SetGtmAccessModeResponse unmarshall(SetGtmAccessModeResponse setGtmAccessModeResponse, UnmarshallerContext context) {
+	public static SetGtmAccessModeResponse unmarshall(SetGtmAccessModeResponse setGtmAccessModeResponse, UnmarshallerContext _ctx) {
 		
-		setGtmAccessModeResponse.setRequestId(context.stringValue("SetGtmAccessModeResponse.RequestId"));
+		setGtmAccessModeResponse.setRequestId(_ctx.stringValue("SetGtmAccessModeResponse.RequestId"));
 	 
 	 	return setGtmAccessModeResponse;
 	}

@@ -25,28 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGtmAccessStrategyAvailableConfigResponseUnmarshaller {
 
-	public static DescribeGtmAccessStrategyAvailableConfigResponse unmarshall(DescribeGtmAccessStrategyAvailableConfigResponse describeGtmAccessStrategyAvailableConfigResponse, UnmarshallerContext context) {
+	public static DescribeGtmAccessStrategyAvailableConfigResponse unmarshall(DescribeGtmAccessStrategyAvailableConfigResponse describeGtmAccessStrategyAvailableConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeGtmAccessStrategyAvailableConfigResponse.setRequestId(context.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.RequestId"));
+		describeGtmAccessStrategyAvailableConfigResponse.setRequestId(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.RequestId"));
 
 		List<AddrPool> addrPools = new ArrayList<AddrPool>();
-		for (int i = 0; i < context.lengthValue("DescribeGtmAccessStrategyAvailableConfigResponse.AddrPools.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeGtmAccessStrategyAvailableConfigResponse.AddrPools.Length"); i++) {
 			AddrPool addrPool = new AddrPool();
-			addrPool.setAddrPoolId(context.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.AddrPools["+ i +"].AddrPoolId"));
-			addrPool.setAddrPoolName(context.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.AddrPools["+ i +"].AddrPoolName"));
+			addrPool.setAddrPoolId(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.AddrPools["+ i +"].AddrPoolId"));
+			addrPool.setAddrPoolName(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.AddrPools["+ i +"].AddrPoolName"));
 
 			addrPools.add(addrPool);
 		}
 		describeGtmAccessStrategyAvailableConfigResponse.setAddrPools(addrPools);
 
 		List<Line> lines = new ArrayList<Line>();
-		for (int i = 0; i < context.lengthValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines.Length"); i++) {
 			Line line = new Line();
-			line.setLineCode(context.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].LineCode"));
-			line.setLineName(context.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].LineName"));
-			line.setGroupCode(context.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupCode"));
-			line.setGroupName(context.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupName"));
-			line.setStatus(context.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].Status"));
+			line.setLineCode(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].LineCode"));
+			line.setLineName(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].LineName"));
+			line.setGroupCode(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupCode"));
+			line.setGroupName(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].GroupName"));
+			line.setStatus(_ctx.stringValue("DescribeGtmAccessStrategyAvailableConfigResponse.Lines["+ i +"].Status"));
 
 			lines.add(line);
 		}

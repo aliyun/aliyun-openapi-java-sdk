@@ -24,7 +24,7 @@ import java.util.List;
 public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainResponse> {
 	
 	public OperateBatchDomainRequest() {
-		super("Alidns", "2015-01-09", "OperateBatchDomain", "alidns");
+		super("Alidns", "2015-01-09", "OperateBatchDomain", "Alidns");
 	}
 
 	private String userClientIp;
@@ -55,12 +55,15 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 		if (domainRecordInfos != null) {
 			for (int depth1 = 0; depth1 < domainRecordInfos.size(); depth1++) {
 				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".Rr" , domainRecordInfos.get(depth1).getRr());
+				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".NewType" , domainRecordInfos.get(depth1).getNewType());
+				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".NewValue" , domainRecordInfos.get(depth1).getNewValue());
 				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".Line" , domainRecordInfos.get(depth1).getLine());
 				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".Domain" , domainRecordInfos.get(depth1).getDomain());
 				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".Type" , domainRecordInfos.get(depth1).getType());
 				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".Priority" , domainRecordInfos.get(depth1).getPriority());
 				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".Value" , domainRecordInfos.get(depth1).getValue());
 				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".Ttl" , domainRecordInfos.get(depth1).getTtl());
+				putQueryParameter("DomainRecordInfo." + (depth1 + 1) + ".NewRr" , domainRecordInfos.get(depth1).getNewRr());
 			}
 		}	
 	}
@@ -91,6 +94,10 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 
 		private String rr;
 
+		private String newType;
+
+		private String newValue;
+
 		private String line;
 
 		private String domain;
@@ -103,12 +110,30 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 
 		private Integer ttl;
 
+		private String newRr;
+
 		public String getRr() {
 			return this.rr;
 		}
 
 		public void setRr(String rr) {
 			this.rr = rr;
+		}
+
+		public String getNewType() {
+			return this.newType;
+		}
+
+		public void setNewType(String newType) {
+			this.newType = newType;
+		}
+
+		public String getNewValue() {
+			return this.newValue;
+		}
+
+		public void setNewValue(String newValue) {
+			this.newValue = newValue;
 		}
 
 		public String getLine() {
@@ -173,6 +198,14 @@ public class OperateBatchDomainRequest extends RpcAcsRequest<OperateBatchDomainR
 
 		public void setTtl(Integer ttl) {
 			this.ttl = ttl;
+		}
+
+		public String getNewRr() {
+			return this.newRr;
+		}
+
+		public void setNewRr(String newRr) {
+			this.newRr = newRr;
 		}
 	}
 

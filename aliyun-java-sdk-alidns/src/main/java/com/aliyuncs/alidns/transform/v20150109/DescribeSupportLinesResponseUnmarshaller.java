@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSupportLinesResponseUnmarshaller {
 
-	public static DescribeSupportLinesResponse unmarshall(DescribeSupportLinesResponse describeSupportLinesResponse, UnmarshallerContext context) {
+	public static DescribeSupportLinesResponse unmarshall(DescribeSupportLinesResponse describeSupportLinesResponse, UnmarshallerContext _ctx) {
 		
-		describeSupportLinesResponse.setRequestId(context.stringValue("DescribeSupportLinesResponse.RequestId"));
+		describeSupportLinesResponse.setRequestId(_ctx.stringValue("DescribeSupportLinesResponse.RequestId"));
 
 		List<RecordLine> recordLines = new ArrayList<RecordLine>();
-		for (int i = 0; i < context.lengthValue("DescribeSupportLinesResponse.RecordLines.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSupportLinesResponse.RecordLines.Length"); i++) {
 			RecordLine recordLine = new RecordLine();
-			recordLine.setLineCode(context.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineCode"));
-			recordLine.setFatherCode(context.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].FatherCode"));
-			recordLine.setLineName(context.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineName"));
-			recordLine.setLineDisplayName(context.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineDisplayName"));
+			recordLine.setLineCode(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineCode"));
+			recordLine.setFatherCode(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].FatherCode"));
+			recordLine.setLineName(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineName"));
+			recordLine.setLineDisplayName(_ctx.stringValue("DescribeSupportLinesResponse.RecordLines["+ i +"].LineDisplayName"));
 
 			recordLines.add(recordLine);
 		}

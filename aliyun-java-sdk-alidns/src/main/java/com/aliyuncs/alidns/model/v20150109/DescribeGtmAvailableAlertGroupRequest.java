@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeGtmAvailableAlertGroupRequest extends RpcAcsRequest<DescribeGtmAvailableAlertGroupResponse> {
 	
 	public DescribeGtmAvailableAlertGroupRequest() {
-		super("Alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup", "alidns");
+		super("Alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup", "Alidns");
 	}
 
 	private String lang;

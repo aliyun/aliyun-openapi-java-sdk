@@ -23,10 +23,8 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainGroupsRequest extends RpcAcsRequest<DescribeDomainGroupsResponse> {
 	
 	public DescribeDomainGroupsRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainGroups", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDomainGroups", "Alidns");
 	}
-
-	private String userClientIp;
 
 	private Long pageSize;
 
@@ -35,17 +33,6 @@ public class DescribeDomainGroupsRequest extends RpcAcsRequest<DescribeDomainGro
 	private String keyWord;
 
 	private Long pageNumber;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
 
 	public Long getPageSize() {
 		return this.pageSize;

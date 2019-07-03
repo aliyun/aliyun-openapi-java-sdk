@@ -23,27 +23,14 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainInfoRequest extends RpcAcsRequest<DescribeDomainInfoResponse> {
 	
 	public DescribeDomainInfoRequest() {
-		super("Alidns", "2015-01-09", "DescribeDomainInfo", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDomainInfo", "Alidns");
 	}
-
-	private String userClientIp;
 
 	private String domainName;
 
 	private String lang;
 
 	private Boolean needDetailAttributes;
-
-	public String getUserClientIp() {
-		return this.userClientIp;
-	}
-
-	public void setUserClientIp(String userClientIp) {
-		this.userClientIp = userClientIp;
-		if(userClientIp != null){
-			putQueryParameter("UserClientIp", userClientIp);
-		}
-	}
 
 	public String getDomainName() {
 		return this.domainName;

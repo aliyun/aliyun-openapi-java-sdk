@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetGtmMonitorStatusResponseUnmarshaller {
 
-	public static SetGtmMonitorStatusResponse unmarshall(SetGtmMonitorStatusResponse setGtmMonitorStatusResponse, UnmarshallerContext context) {
+	public static SetGtmMonitorStatusResponse unmarshall(SetGtmMonitorStatusResponse setGtmMonitorStatusResponse, UnmarshallerContext _ctx) {
 		
-		setGtmMonitorStatusResponse.setRequestId(context.stringValue("SetGtmMonitorStatusResponse.RequestId"));
+		setGtmMonitorStatusResponse.setRequestId(_ctx.stringValue("SetGtmMonitorStatusResponse.RequestId"));
 	 
 	 	return setGtmMonitorStatusResponse;
 	}

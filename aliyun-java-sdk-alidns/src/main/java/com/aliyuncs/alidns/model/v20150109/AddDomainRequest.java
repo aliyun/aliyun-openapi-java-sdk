@@ -23,14 +23,27 @@ import com.aliyuncs.RpcAcsRequest;
 public class AddDomainRequest extends RpcAcsRequest<AddDomainResponse> {
 	
 	public AddDomainRequest() {
-		super("Alidns", "2015-01-09", "AddDomain", "alidns");
+		super("Alidns", "2015-01-09", "AddDomain", "Alidns");
 	}
+
+	private String resourceGroupId;
 
 	private String groupId;
 
 	private String domainName;
 
 	private String lang;
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
 
 	public String getGroupId() {
 		return this.groupId;

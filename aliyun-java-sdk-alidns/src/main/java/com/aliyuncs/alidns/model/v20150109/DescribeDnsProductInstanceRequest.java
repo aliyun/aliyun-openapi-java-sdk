@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDnsProductInstanceRequest extends RpcAcsRequest<DescribeDnsProductInstanceResponse> {
 	
 	public DescribeDnsProductInstanceRequest() {
-		super("Alidns", "2015-01-09", "DescribeDnsProductInstance", "alidns");
+		super("Alidns", "2015-01-09", "DescribeDnsProductInstance", "Alidns");
 	}
 
 	private String instanceId;

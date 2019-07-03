@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse> {
 	
 	public CreateInstanceRequest() {
-		super("Alidns", "2015-01-09", "CreateInstance", "alidns");
+		super("Alidns", "2015-01-09", "CreateInstance", "Alidns");
 	}
 
 	private Integer month;

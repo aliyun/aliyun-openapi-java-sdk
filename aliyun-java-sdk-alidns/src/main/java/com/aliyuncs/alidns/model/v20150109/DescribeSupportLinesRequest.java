@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSupportLinesRequest extends RpcAcsRequest<DescribeSupportLinesResponse> {
 	
 	public DescribeSupportLinesRequest() {
-		super("Alidns", "2015-01-09", "DescribeSupportLines", "alidns");
+		super("Alidns", "2015-01-09", "DescribeSupportLines", "Alidns");
 	}
 
 	private String userClientIp;

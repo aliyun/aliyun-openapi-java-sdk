@@ -24,7 +24,7 @@ import java.util.List;
 public class UpdateGtmMonitorRequest extends RpcAcsRequest<UpdateGtmMonitorResponse> {
 	
 	public UpdateGtmMonitorRequest() {
-		super("Alidns", "2015-01-09", "UpdateGtmMonitor", "alidns");
+		super("Alidns", "2015-01-09", "UpdateGtmMonitor", "Alidns");
 	}
 
 	private String monitorExtendInfo;
