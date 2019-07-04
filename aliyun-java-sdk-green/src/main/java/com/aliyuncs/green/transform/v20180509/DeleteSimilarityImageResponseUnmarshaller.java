@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteSimilarityImageResponseUnmarshaller {
 
-	public static DeleteSimilarityImageResponse unmarshall(DeleteSimilarityImageResponse deleteSimilarityImageResponse, UnmarshallerContext context) {
+	public static DeleteSimilarityImageResponse unmarshall(DeleteSimilarityImageResponse deleteSimilarityImageResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return deleteSimilarityImageResponse;

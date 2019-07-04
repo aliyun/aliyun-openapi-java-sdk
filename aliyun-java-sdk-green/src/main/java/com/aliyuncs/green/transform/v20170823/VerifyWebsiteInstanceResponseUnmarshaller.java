@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VerifyWebsiteInstanceResponseUnmarshaller {
 
-	public static VerifyWebsiteInstanceResponse unmarshall(VerifyWebsiteInstanceResponse verifyWebsiteInstanceResponse, UnmarshallerContext context) {
+	public static VerifyWebsiteInstanceResponse unmarshall(VerifyWebsiteInstanceResponse verifyWebsiteInstanceResponse, UnmarshallerContext _ctx) {
 		
-		verifyWebsiteInstanceResponse.setRequestId(context.stringValue("VerifyWebsiteInstanceResponse.RequestId"));
+		verifyWebsiteInstanceResponse.setRequestId(_ctx.stringValue("VerifyWebsiteInstanceResponse.RequestId"));
 	 
 	 	return verifyWebsiteInstanceResponse;
 	}

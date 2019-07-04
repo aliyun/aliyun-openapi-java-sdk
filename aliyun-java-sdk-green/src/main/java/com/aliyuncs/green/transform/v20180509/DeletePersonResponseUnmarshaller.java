@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeletePersonResponseUnmarshaller {
 
-	public static DeletePersonResponse unmarshall(DeletePersonResponse deletePersonResponse, UnmarshallerContext context) {
+	public static DeletePersonResponse unmarshall(DeletePersonResponse deletePersonResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return deletePersonResponse;

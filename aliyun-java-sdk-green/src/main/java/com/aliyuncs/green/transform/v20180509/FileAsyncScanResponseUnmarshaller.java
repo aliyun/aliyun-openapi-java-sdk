@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FileAsyncScanResponseUnmarshaller {
 
-	public static FileAsyncScanResponse unmarshall(FileAsyncScanResponse fileAsyncScanResponse, UnmarshallerContext context) {
+	public static FileAsyncScanResponse unmarshall(FileAsyncScanResponse fileAsyncScanResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return fileAsyncScanResponse;

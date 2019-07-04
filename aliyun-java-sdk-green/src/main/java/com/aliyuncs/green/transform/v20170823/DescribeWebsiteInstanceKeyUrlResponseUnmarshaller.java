@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeWebsiteInstanceKeyUrlResponseUnmarshaller {
 
-	public static DescribeWebsiteInstanceKeyUrlResponse unmarshall(DescribeWebsiteInstanceKeyUrlResponse describeWebsiteInstanceKeyUrlResponse, UnmarshallerContext context) {
+	public static DescribeWebsiteInstanceKeyUrlResponse unmarshall(DescribeWebsiteInstanceKeyUrlResponse describeWebsiteInstanceKeyUrlResponse, UnmarshallerContext _ctx) {
 		
-		describeWebsiteInstanceKeyUrlResponse.setRequestId(context.stringValue("DescribeWebsiteInstanceKeyUrlResponse.RequestId"));
-		describeWebsiteInstanceKeyUrlResponse.setTotalCount(context.integerValue("DescribeWebsiteInstanceKeyUrlResponse.TotalCount"));
+		describeWebsiteInstanceKeyUrlResponse.setRequestId(_ctx.stringValue("DescribeWebsiteInstanceKeyUrlResponse.RequestId"));
+		describeWebsiteInstanceKeyUrlResponse.setTotalCount(_ctx.integerValue("DescribeWebsiteInstanceKeyUrlResponse.TotalCount"));
 
 		List<String> websiteInstanceKeyUrlList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeWebsiteInstanceKeyUrlResponse.WebsiteInstanceKeyUrlList.Length"); i++) {
-			websiteInstanceKeyUrlList.add(context.stringValue("DescribeWebsiteInstanceKeyUrlResponse.WebsiteInstanceKeyUrlList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeWebsiteInstanceKeyUrlResponse.WebsiteInstanceKeyUrlList.Length"); i++) {
+			websiteInstanceKeyUrlList.add(_ctx.stringValue("DescribeWebsiteInstanceKeyUrlResponse.WebsiteInstanceKeyUrlList["+ i +"]"));
 		}
 		describeWebsiteInstanceKeyUrlResponse.setWebsiteInstanceKeyUrlList(websiteInstanceKeyUrlList);
 	 

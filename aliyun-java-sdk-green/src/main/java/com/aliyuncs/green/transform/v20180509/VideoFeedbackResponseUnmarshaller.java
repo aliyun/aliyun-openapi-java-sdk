@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VideoFeedbackResponseUnmarshaller {
 
-	public static VideoFeedbackResponse unmarshall(VideoFeedbackResponse videoFeedbackResponse, UnmarshallerContext context) {
+	public static VideoFeedbackResponse unmarshall(VideoFeedbackResponse videoFeedbackResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return videoFeedbackResponse;

@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssIncrementStatsResponseUnmarshaller {
 
-	public static DescribeOssIncrementStatsResponse unmarshall(DescribeOssIncrementStatsResponse describeOssIncrementStatsResponse, UnmarshallerContext context) {
+	public static DescribeOssIncrementStatsResponse unmarshall(DescribeOssIncrementStatsResponse describeOssIncrementStatsResponse, UnmarshallerContext _ctx) {
 		
-		describeOssIncrementStatsResponse.setRequestId(context.stringValue("DescribeOssIncrementStatsResponse.RequestId"));
-		describeOssIncrementStatsResponse.setTotalCount(context.integerValue("DescribeOssIncrementStatsResponse.TotalCount"));
+		describeOssIncrementStatsResponse.setRequestId(_ctx.stringValue("DescribeOssIncrementStatsResponse.RequestId"));
+		describeOssIncrementStatsResponse.setTotalCount(_ctx.integerValue("DescribeOssIncrementStatsResponse.TotalCount"));
 
 		List<Stat> statList = new ArrayList<Stat>();
-		for (int i = 0; i < context.lengthValue("DescribeOssIncrementStatsResponse.StatList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssIncrementStatsResponse.StatList.Length"); i++) {
 			Stat stat = new Stat();
-			stat.setResourceType(context.stringValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].ResourceType"));
-			stat.setScene(context.stringValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].Scene"));
-			stat.setDate(context.stringValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].Date"));
-			stat.setTotalCount(context.integerValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].TotalCount"));
-			stat.setPassCount(context.integerValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].PassCount"));
-			stat.setReviewCount(context.integerValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].ReviewCount"));
-			stat.setBlockCount(context.integerValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].BlockCount"));
+			stat.setResourceType(_ctx.stringValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].ResourceType"));
+			stat.setScene(_ctx.stringValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].Scene"));
+			stat.setDate(_ctx.stringValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].Date"));
+			stat.setTotalCount(_ctx.integerValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].TotalCount"));
+			stat.setPassCount(_ctx.integerValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].PassCount"));
+			stat.setReviewCount(_ctx.integerValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].ReviewCount"));
+			stat.setBlockCount(_ctx.integerValue("DescribeOssIncrementStatsResponse.StatList["+ i +"].BlockCount"));
 
 			statList.add(stat);
 		}

@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SearchPersonResponseUnmarshaller {
 
-	public static SearchPersonResponse unmarshall(SearchPersonResponse searchPersonResponse, UnmarshallerContext context) {
+	public static SearchPersonResponse unmarshall(SearchPersonResponse searchPersonResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return searchPersonResponse;

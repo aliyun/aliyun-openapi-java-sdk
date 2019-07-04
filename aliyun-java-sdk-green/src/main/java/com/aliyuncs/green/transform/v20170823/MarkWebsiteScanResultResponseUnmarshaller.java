@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MarkWebsiteScanResultResponseUnmarshaller {
 
-	public static MarkWebsiteScanResultResponse unmarshall(MarkWebsiteScanResultResponse markWebsiteScanResultResponse, UnmarshallerContext context) {
+	public static MarkWebsiteScanResultResponse unmarshall(MarkWebsiteScanResultResponse markWebsiteScanResultResponse, UnmarshallerContext _ctx) {
 		
-		markWebsiteScanResultResponse.setRequestId(context.stringValue("MarkWebsiteScanResultResponse.RequestId"));
+		markWebsiteScanResultResponse.setRequestId(_ctx.stringValue("MarkWebsiteScanResultResponse.RequestId"));
 	 
 	 	return markWebsiteScanResultResponse;
 	}

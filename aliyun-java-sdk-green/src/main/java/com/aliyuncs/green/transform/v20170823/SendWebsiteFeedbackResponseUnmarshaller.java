@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SendWebsiteFeedbackResponseUnmarshaller {
 
-	public static SendWebsiteFeedbackResponse unmarshall(SendWebsiteFeedbackResponse sendWebsiteFeedbackResponse, UnmarshallerContext context) {
+	public static SendWebsiteFeedbackResponse unmarshall(SendWebsiteFeedbackResponse sendWebsiteFeedbackResponse, UnmarshallerContext _ctx) {
 		
-		sendWebsiteFeedbackResponse.setRequestId(context.stringValue("SendWebsiteFeedbackResponse.RequestId"));
+		sendWebsiteFeedbackResponse.setRequestId(_ctx.stringValue("SendWebsiteFeedbackResponse.RequestId"));
 	 
 	 	return sendWebsiteFeedbackResponse;
 	}

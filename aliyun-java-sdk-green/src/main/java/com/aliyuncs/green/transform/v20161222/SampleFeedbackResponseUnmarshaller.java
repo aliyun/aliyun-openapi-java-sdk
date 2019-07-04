@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SampleFeedbackResponseUnmarshaller {
 
-	public static SampleFeedbackResponse unmarshall(SampleFeedbackResponse sampleFeedbackResponse, UnmarshallerContext context) {
+	public static SampleFeedbackResponse unmarshall(SampleFeedbackResponse sampleFeedbackResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return sampleFeedbackResponse;

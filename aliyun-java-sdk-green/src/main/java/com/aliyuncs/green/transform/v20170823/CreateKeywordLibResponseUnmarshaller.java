@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateKeywordLibResponseUnmarshaller {
 
-	public static CreateKeywordLibResponse unmarshall(CreateKeywordLibResponse createKeywordLibResponse, UnmarshallerContext context) {
+	public static CreateKeywordLibResponse unmarshall(CreateKeywordLibResponse createKeywordLibResponse, UnmarshallerContext _ctx) {
 		
-		createKeywordLibResponse.setRequestId(context.stringValue("CreateKeywordLibResponse.RequestId"));
-		createKeywordLibResponse.setId(context.stringValue("CreateKeywordLibResponse.Id"));
+		createKeywordLibResponse.setRequestId(_ctx.stringValue("CreateKeywordLibResponse.RequestId"));
+		createKeywordLibResponse.setId(_ctx.stringValue("CreateKeywordLibResponse.Id"));
 	 
 	 	return createKeywordLibResponse;
 	}

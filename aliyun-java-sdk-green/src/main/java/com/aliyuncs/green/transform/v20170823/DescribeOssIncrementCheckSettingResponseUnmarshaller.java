@@ -25,49 +25,49 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssIncrementCheckSettingResponseUnmarshaller {
 
-	public static DescribeOssIncrementCheckSettingResponse unmarshall(DescribeOssIncrementCheckSettingResponse describeOssIncrementCheckSettingResponse, UnmarshallerContext context) {
+	public static DescribeOssIncrementCheckSettingResponse unmarshall(DescribeOssIncrementCheckSettingResponse describeOssIncrementCheckSettingResponse, UnmarshallerContext _ctx) {
 		
-		describeOssIncrementCheckSettingResponse.setRequestId(context.stringValue("DescribeOssIncrementCheckSettingResponse.RequestId"));
-		describeOssIncrementCheckSettingResponse.setImageEnableLimit(context.booleanValue("DescribeOssIncrementCheckSettingResponse.ImageEnableLimit"));
-		describeOssIncrementCheckSettingResponse.setImageScanLimit(context.longValue("DescribeOssIncrementCheckSettingResponse.ImageScanLimit"));
-		describeOssIncrementCheckSettingResponse.setVideoFrameInterval(context.integerValue("DescribeOssIncrementCheckSettingResponse.VideoFrameInterval"));
-		describeOssIncrementCheckSettingResponse.setVideoMaxFrames(context.integerValue("DescribeOssIncrementCheckSettingResponse.VideoMaxFrames"));
-		describeOssIncrementCheckSettingResponse.setVideoMaxSize(context.integerValue("DescribeOssIncrementCheckSettingResponse.VideoMaxSize"));
-		describeOssIncrementCheckSettingResponse.setAutoFreezeType(context.stringValue("DescribeOssIncrementCheckSettingResponse.AutoFreezeType"));
+		describeOssIncrementCheckSettingResponse.setRequestId(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.RequestId"));
+		describeOssIncrementCheckSettingResponse.setImageEnableLimit(_ctx.booleanValue("DescribeOssIncrementCheckSettingResponse.ImageEnableLimit"));
+		describeOssIncrementCheckSettingResponse.setImageScanLimit(_ctx.longValue("DescribeOssIncrementCheckSettingResponse.ImageScanLimit"));
+		describeOssIncrementCheckSettingResponse.setVideoFrameInterval(_ctx.integerValue("DescribeOssIncrementCheckSettingResponse.VideoFrameInterval"));
+		describeOssIncrementCheckSettingResponse.setVideoMaxFrames(_ctx.integerValue("DescribeOssIncrementCheckSettingResponse.VideoMaxFrames"));
+		describeOssIncrementCheckSettingResponse.setVideoMaxSize(_ctx.integerValue("DescribeOssIncrementCheckSettingResponse.VideoMaxSize"));
+		describeOssIncrementCheckSettingResponse.setAutoFreezeType(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.AutoFreezeType"));
 
 		List<String> imageSceneList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeOssIncrementCheckSettingResponse.ImageSceneList.Length"); i++) {
-			imageSceneList.add(context.stringValue("DescribeOssIncrementCheckSettingResponse.ImageSceneList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssIncrementCheckSettingResponse.ImageSceneList.Length"); i++) {
+			imageSceneList.add(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.ImageSceneList["+ i +"]"));
 		}
 		describeOssIncrementCheckSettingResponse.setImageSceneList(imageSceneList);
 
 		List<String> videoSceneList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeOssIncrementCheckSettingResponse.VideoSceneList.Length"); i++) {
-			videoSceneList.add(context.stringValue("DescribeOssIncrementCheckSettingResponse.VideoSceneList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssIncrementCheckSettingResponse.VideoSceneList.Length"); i++) {
+			videoSceneList.add(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.VideoSceneList["+ i +"]"));
 		}
 		describeOssIncrementCheckSettingResponse.setVideoSceneList(videoSceneList);
 
 		List<String> videoAutoFreezeSceneList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeOssIncrementCheckSettingResponse.VideoAutoFreezeSceneList.Length"); i++) {
-			videoAutoFreezeSceneList.add(context.stringValue("DescribeOssIncrementCheckSettingResponse.VideoAutoFreezeSceneList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssIncrementCheckSettingResponse.VideoAutoFreezeSceneList.Length"); i++) {
+			videoAutoFreezeSceneList.add(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.VideoAutoFreezeSceneList["+ i +"]"));
 		}
 		describeOssIncrementCheckSettingResponse.setVideoAutoFreezeSceneList(videoAutoFreezeSceneList);
 
 		ImageAutoFreeze imageAutoFreeze = new ImageAutoFreeze();
-		imageAutoFreeze.setEnabled(context.booleanValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Enabled"));
-		imageAutoFreeze.setPorn(context.stringValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Porn"));
-		imageAutoFreeze.setTerrorism(context.stringValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Terrorism"));
+		imageAutoFreeze.setEnabled(_ctx.booleanValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Enabled"));
+		imageAutoFreeze.setPorn(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Porn"));
+		imageAutoFreeze.setTerrorism(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.ImageAutoFreeze.Terrorism"));
 		describeOssIncrementCheckSettingResponse.setImageAutoFreeze(imageAutoFreeze);
 
 		List<BucketConfig> bucketConfigList = new ArrayList<BucketConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList.Length"); i++) {
 			BucketConfig bucketConfig = new BucketConfig();
-			bucketConfig.setSelected(context.booleanValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList["+ i +"].Selected"));
-			bucketConfig.setBucket(context.stringValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList["+ i +"].Bucket"));
+			bucketConfig.setSelected(_ctx.booleanValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList["+ i +"].Selected"));
+			bucketConfig.setBucket(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList["+ i +"].Bucket"));
 
 			List<String> prefixes = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList["+ i +"].Prefixes.Length"); j++) {
-				prefixes.add(context.stringValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList["+ i +"].Prefixes["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList["+ i +"].Prefixes.Length"); j++) {
+				prefixes.add(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.BucketConfigList["+ i +"].Prefixes["+ j +"]"));
 			}
 			bucketConfig.setPrefixes(prefixes);
 

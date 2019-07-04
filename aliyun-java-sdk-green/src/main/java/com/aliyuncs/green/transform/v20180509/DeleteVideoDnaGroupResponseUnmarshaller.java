@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteVideoDnaGroupResponseUnmarshaller {
 
-	public static DeleteVideoDnaGroupResponse unmarshall(DeleteVideoDnaGroupResponse deleteVideoDnaGroupResponse, UnmarshallerContext context) {
+	public static DeleteVideoDnaGroupResponse unmarshall(DeleteVideoDnaGroupResponse deleteVideoDnaGroupResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return deleteVideoDnaGroupResponse;

@@ -26,30 +26,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAppInfoResponseUnmarshaller {
 
-	public static DescribeAppInfoResponse unmarshall(DescribeAppInfoResponse describeAppInfoResponse, UnmarshallerContext context) {
+	public static DescribeAppInfoResponse unmarshall(DescribeAppInfoResponse describeAppInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeAppInfoResponse.setRequestId(context.stringValue("DescribeAppInfoResponse.RequestId"));
-		describeAppInfoResponse.setPageSize(context.integerValue("DescribeAppInfoResponse.PageSize"));
-		describeAppInfoResponse.setCurrentPage(context.integerValue("DescribeAppInfoResponse.CurrentPage"));
-		describeAppInfoResponse.setTotalCount(context.integerValue("DescribeAppInfoResponse.TotalCount"));
+		describeAppInfoResponse.setRequestId(_ctx.stringValue("DescribeAppInfoResponse.RequestId"));
+		describeAppInfoResponse.setPageSize(_ctx.integerValue("DescribeAppInfoResponse.PageSize"));
+		describeAppInfoResponse.setCurrentPage(_ctx.integerValue("DescribeAppInfoResponse.CurrentPage"));
+		describeAppInfoResponse.setTotalCount(_ctx.integerValue("DescribeAppInfoResponse.TotalCount"));
 
 		List<AppInfo> appInfoList = new ArrayList<AppInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeAppInfoResponse.AppInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppInfoResponse.AppInfoList.Length"); i++) {
 			AppInfo appInfo = new AppInfo();
-			appInfo.setId(context.longValue("DescribeAppInfoResponse.AppInfoList["+ i +"].Id"));
-			appInfo.setName(context.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].Name"));
-			appInfo.setPackageName(context.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].PackageName"));
-			appInfo.setIcon(context.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].Icon"));
-			appInfo.setStartDate(context.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].StartDate"));
-			appInfo.setEndDate(context.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].EndDate"));
-			appInfo.setType(context.integerValue("DescribeAppInfoResponse.AppInfoList["+ i +"].Type"));
+			appInfo.setId(_ctx.longValue("DescribeAppInfoResponse.AppInfoList["+ i +"].Id"));
+			appInfo.setName(_ctx.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].Name"));
+			appInfo.setPackageName(_ctx.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].PackageName"));
+			appInfo.setIcon(_ctx.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].Icon"));
+			appInfo.setStartDate(_ctx.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].StartDate"));
+			appInfo.setEndDate(_ctx.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].EndDate"));
+			appInfo.setType(_ctx.integerValue("DescribeAppInfoResponse.AppInfoList["+ i +"].Type"));
 
 			PackageInfo packageInfo = new PackageInfo();
-			packageInfo.setVersion(context.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].PackageInfo.Version"));
+			packageInfo.setVersion(_ctx.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].PackageInfo.Version"));
 			appInfo.setPackageInfo(packageInfo);
 
 			DebugPackageInfo debugPackageInfo = new DebugPackageInfo();
-			debugPackageInfo.setVersion(context.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].DebugPackageInfo.Version"));
+			debugPackageInfo.setVersion(_ctx.stringValue("DescribeAppInfoResponse.AppInfoList["+ i +"].DebugPackageInfo.Version"));
 			appInfo.setDebugPackageInfo(debugPackageInfo);
 
 			appInfoList.add(appInfo);

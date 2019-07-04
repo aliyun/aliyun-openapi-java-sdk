@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateOssStockStatusResponseUnmarshaller {
 
-	public static UpdateOssStockStatusResponse unmarshall(UpdateOssStockStatusResponse updateOssStockStatusResponse, UnmarshallerContext context) {
+	public static UpdateOssStockStatusResponse unmarshall(UpdateOssStockStatusResponse updateOssStockStatusResponse, UnmarshallerContext _ctx) {
 		
-		updateOssStockStatusResponse.setRequestId(context.stringValue("UpdateOssStockStatusResponse.RequestId"));
+		updateOssStockStatusResponse.setRequestId(_ctx.stringValue("UpdateOssStockStatusResponse.RequestId"));
 	 
 	 	return updateOssStockStatusResponse;
 	}

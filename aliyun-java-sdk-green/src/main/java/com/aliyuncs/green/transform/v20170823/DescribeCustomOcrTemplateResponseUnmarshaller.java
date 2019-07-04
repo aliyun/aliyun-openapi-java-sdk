@@ -25,40 +25,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCustomOcrTemplateResponseUnmarshaller {
 
-	public static DescribeCustomOcrTemplateResponse unmarshall(DescribeCustomOcrTemplateResponse describeCustomOcrTemplateResponse, UnmarshallerContext context) {
+	public static DescribeCustomOcrTemplateResponse unmarshall(DescribeCustomOcrTemplateResponse describeCustomOcrTemplateResponse, UnmarshallerContext _ctx) {
 		
-		describeCustomOcrTemplateResponse.setRequestId(context.stringValue("DescribeCustomOcrTemplateResponse.RequestId"));
-		describeCustomOcrTemplateResponse.setTotalCount(context.integerValue("DescribeCustomOcrTemplateResponse.TotalCount"));
+		describeCustomOcrTemplateResponse.setRequestId(_ctx.stringValue("DescribeCustomOcrTemplateResponse.RequestId"));
+		describeCustomOcrTemplateResponse.setTotalCount(_ctx.integerValue("DescribeCustomOcrTemplateResponse.TotalCount"));
 
 		List<OcrTemplate> ocrTemplateList = new ArrayList<OcrTemplate>();
-		for (int i = 0; i < context.lengthValue("DescribeCustomOcrTemplateResponse.OcrTemplateList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCustomOcrTemplateResponse.OcrTemplateList.Length"); i++) {
 			OcrTemplate ocrTemplate = new OcrTemplate();
-			ocrTemplate.setId(context.longValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].Id"));
-			ocrTemplate.setName(context.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].Name"));
-			ocrTemplate.setImgUrl(context.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ImgUrl"));
-			ocrTemplate.setStatus(context.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].Status"));
+			ocrTemplate.setId(_ctx.longValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].Id"));
+			ocrTemplate.setName(_ctx.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].Name"));
+			ocrTemplate.setImgUrl(_ctx.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ImgUrl"));
+			ocrTemplate.setStatus(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].Status"));
 
 			List<Item> referArea = new ArrayList<Item>();
-			for (int j = 0; j < context.lengthValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea.Length"); j++) {
 				Item item = new Item();
-				item.setName(context.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].Name"));
-				item.setX(context.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].X"));
-				item.setY(context.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].Y"));
-				item.setWidth(context.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].Width"));
-				item.setHeight(context.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].Height"));
+				item.setName(_ctx.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].Name"));
+				item.setX(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].X"));
+				item.setY(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].Y"));
+				item.setWidth(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].Width"));
+				item.setHeight(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].ReferArea["+ j +"].Height"));
 
 				referArea.add(item);
 			}
 			ocrTemplate.setReferArea(referArea);
 
 			List<Item> recognizeArea = new ArrayList<Item>();
-			for (int j = 0; j < context.lengthValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea.Length"); j++) {
 				Item item = new Item();
-				item.setName(context.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Name"));
-				item.setX(context.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].X"));
-				item.setY(context.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Y"));
-				item.setWidth(context.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Width"));
-				item.setHeight(context.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Height"));
+				item.setName(_ctx.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Name"));
+				item.setX(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].X"));
+				item.setY(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Y"));
+				item.setWidth(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Width"));
+				item.setHeight(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Height"));
 
 				recognizeArea.add(item);
 			}

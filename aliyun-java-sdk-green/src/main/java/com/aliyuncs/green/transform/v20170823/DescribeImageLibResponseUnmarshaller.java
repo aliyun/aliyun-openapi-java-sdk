@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeImageLibResponseUnmarshaller {
 
-	public static DescribeImageLibResponse unmarshall(DescribeImageLibResponse describeImageLibResponse, UnmarshallerContext context) {
+	public static DescribeImageLibResponse unmarshall(DescribeImageLibResponse describeImageLibResponse, UnmarshallerContext _ctx) {
 		
-		describeImageLibResponse.setRequestId(context.stringValue("DescribeImageLibResponse.RequestId"));
-		describeImageLibResponse.setTotalCount(context.integerValue("DescribeImageLibResponse.TotalCount"));
+		describeImageLibResponse.setRequestId(_ctx.stringValue("DescribeImageLibResponse.RequestId"));
+		describeImageLibResponse.setTotalCount(_ctx.integerValue("DescribeImageLibResponse.TotalCount"));
 
 		List<ImageLib> imageLibList = new ArrayList<ImageLib>();
-		for (int i = 0; i < context.lengthValue("DescribeImageLibResponse.ImageLibList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeImageLibResponse.ImageLibList.Length"); i++) {
 			ImageLib imageLib = new ImageLib();
-			imageLib.setImageCount(context.integerValue("DescribeImageLibResponse.ImageLibList["+ i +"].ImageCount"));
-			imageLib.setModifiedTime(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].ModifiedTime"));
-			imageLib.setCode(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Code"));
-			imageLib.setName(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Name"));
-			imageLib.setId(context.integerValue("DescribeImageLibResponse.ImageLibList["+ i +"].Id"));
-			imageLib.setSource(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Source"));
-			imageLib.setCategory(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Category"));
-			imageLib.setServiceModule(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].ServiceModule"));
-			imageLib.setScene(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Scene"));
-			imageLib.setEnable(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Enable"));
+			imageLib.setImageCount(_ctx.integerValue("DescribeImageLibResponse.ImageLibList["+ i +"].ImageCount"));
+			imageLib.setModifiedTime(_ctx.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].ModifiedTime"));
+			imageLib.setCode(_ctx.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Code"));
+			imageLib.setName(_ctx.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Name"));
+			imageLib.setId(_ctx.integerValue("DescribeImageLibResponse.ImageLibList["+ i +"].Id"));
+			imageLib.setSource(_ctx.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Source"));
+			imageLib.setCategory(_ctx.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Category"));
+			imageLib.setServiceModule(_ctx.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].ServiceModule"));
+			imageLib.setScene(_ctx.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Scene"));
+			imageLib.setEnable(_ctx.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].Enable"));
 
 			List<String> bizTypes = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeImageLibResponse.ImageLibList["+ i +"].BizTypes.Length"); j++) {
-				bizTypes.add(context.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].BizTypes["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeImageLibResponse.ImageLibList["+ i +"].BizTypes.Length"); j++) {
+				bizTypes.add(_ctx.stringValue("DescribeImageLibResponse.ImageLibList["+ i +"].BizTypes["+ j +"]"));
 			}
 			imageLib.setBizTypes(bizTypes);
 

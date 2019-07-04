@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateBizTypeSettingResponseUnmarshaller {
 
-	public static UpdateBizTypeSettingResponse unmarshall(UpdateBizTypeSettingResponse updateBizTypeSettingResponse, UnmarshallerContext context) {
+	public static UpdateBizTypeSettingResponse unmarshall(UpdateBizTypeSettingResponse updateBizTypeSettingResponse, UnmarshallerContext _ctx) {
 		
-		updateBizTypeSettingResponse.setRequestId(context.stringValue("UpdateBizTypeSettingResponse.RequestId"));
+		updateBizTypeSettingResponse.setRequestId(_ctx.stringValue("UpdateBizTypeSettingResponse.RequestId"));
 	 
 	 	return updateBizTypeSettingResponse;
 	}

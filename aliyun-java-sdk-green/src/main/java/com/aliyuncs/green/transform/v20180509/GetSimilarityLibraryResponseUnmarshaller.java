@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSimilarityLibraryResponseUnmarshaller {
 
-	public static GetSimilarityLibraryResponse unmarshall(GetSimilarityLibraryResponse getSimilarityLibraryResponse, UnmarshallerContext context) {
+	public static GetSimilarityLibraryResponse unmarshall(GetSimilarityLibraryResponse getSimilarityLibraryResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return getSimilarityLibraryResponse;

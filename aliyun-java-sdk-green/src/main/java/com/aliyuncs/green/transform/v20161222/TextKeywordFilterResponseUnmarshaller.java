@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TextKeywordFilterResponseUnmarshaller {
 
-	public static TextKeywordFilterResponse unmarshall(TextKeywordFilterResponse textKeywordFilterResponse, UnmarshallerContext context) {
+	public static TextKeywordFilterResponse unmarshall(TextKeywordFilterResponse textKeywordFilterResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return textKeywordFilterResponse;

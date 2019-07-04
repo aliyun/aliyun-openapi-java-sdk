@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RefundCdiBagResponseUnmarshaller {
 
-	public static RefundCdiBagResponse unmarshall(RefundCdiBagResponse refundCdiBagResponse, UnmarshallerContext context) {
+	public static RefundCdiBagResponse unmarshall(RefundCdiBagResponse refundCdiBagResponse, UnmarshallerContext _ctx) {
 		
-		refundCdiBagResponse.setRequestId(context.stringValue("RefundCdiBagResponse.RequestId"));
+		refundCdiBagResponse.setRequestId(_ctx.stringValue("RefundCdiBagResponse.RequestId"));
 	 
 	 	return refundCdiBagResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetFacesResponseUnmarshaller {
 
-	public static GetFacesResponse unmarshall(GetFacesResponse getFacesResponse, UnmarshallerContext context) {
+	public static GetFacesResponse unmarshall(GetFacesResponse getFacesResponse, UnmarshallerContext _ctx) {
 		
-		getFacesResponse.setRequestId(context.stringValue("GetFacesResponse.RequestId"));
+		getFacesResponse.setRequestId(_ctx.stringValue("GetFacesResponse.RequestId"));
 	 
 	 	return getFacesResponse;
 	}

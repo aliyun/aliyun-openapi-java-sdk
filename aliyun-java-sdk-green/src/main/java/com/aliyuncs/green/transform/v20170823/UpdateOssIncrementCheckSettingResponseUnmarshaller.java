@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateOssIncrementCheckSettingResponseUnmarshaller {
 
-	public static UpdateOssIncrementCheckSettingResponse unmarshall(UpdateOssIncrementCheckSettingResponse updateOssIncrementCheckSettingResponse, UnmarshallerContext context) {
+	public static UpdateOssIncrementCheckSettingResponse unmarshall(UpdateOssIncrementCheckSettingResponse updateOssIncrementCheckSettingResponse, UnmarshallerContext _ctx) {
 		
-		updateOssIncrementCheckSettingResponse.setRequestId(context.stringValue("UpdateOssIncrementCheckSettingResponse.RequestId"));
+		updateOssIncrementCheckSettingResponse.setRequestId(_ctx.stringValue("UpdateOssIncrementCheckSettingResponse.RequestId"));
 	 
 	 	return updateOssIncrementCheckSettingResponse;
 	}

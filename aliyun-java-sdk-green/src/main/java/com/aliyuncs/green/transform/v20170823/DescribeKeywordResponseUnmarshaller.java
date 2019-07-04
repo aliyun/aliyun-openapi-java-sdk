@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeKeywordResponseUnmarshaller {
 
-	public static DescribeKeywordResponse unmarshall(DescribeKeywordResponse describeKeywordResponse, UnmarshallerContext context) {
+	public static DescribeKeywordResponse unmarshall(DescribeKeywordResponse describeKeywordResponse, UnmarshallerContext _ctx) {
 		
-		describeKeywordResponse.setRequestId(context.stringValue("DescribeKeywordResponse.RequestId"));
-		describeKeywordResponse.setTotalCount(context.integerValue("DescribeKeywordResponse.TotalCount"));
-		describeKeywordResponse.setPageSize(context.integerValue("DescribeKeywordResponse.PageSize"));
-		describeKeywordResponse.setCurrentPage(context.integerValue("DescribeKeywordResponse.CurrentPage"));
+		describeKeywordResponse.setRequestId(_ctx.stringValue("DescribeKeywordResponse.RequestId"));
+		describeKeywordResponse.setTotalCount(_ctx.integerValue("DescribeKeywordResponse.TotalCount"));
+		describeKeywordResponse.setPageSize(_ctx.integerValue("DescribeKeywordResponse.PageSize"));
+		describeKeywordResponse.setCurrentPage(_ctx.integerValue("DescribeKeywordResponse.CurrentPage"));
 
 		List<Keyword> keywordList = new ArrayList<Keyword>();
-		for (int i = 0; i < context.lengthValue("DescribeKeywordResponse.KeywordList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeKeywordResponse.KeywordList.Length"); i++) {
 			Keyword keyword = new Keyword();
-			keyword.setId(context.integerValue("DescribeKeywordResponse.KeywordList["+ i +"].Id"));
-			keyword.setCreateTime(context.stringValue("DescribeKeywordResponse.KeywordList["+ i +"].CreateTime"));
-			keyword.setKeyword(context.stringValue("DescribeKeywordResponse.KeywordList["+ i +"].Keyword"));
-			keyword.setHitCount(context.integerValue("DescribeKeywordResponse.KeywordList["+ i +"].HitCount"));
+			keyword.setId(_ctx.integerValue("DescribeKeywordResponse.KeywordList["+ i +"].Id"));
+			keyword.setCreateTime(_ctx.stringValue("DescribeKeywordResponse.KeywordList["+ i +"].CreateTime"));
+			keyword.setKeyword(_ctx.stringValue("DescribeKeywordResponse.KeywordList["+ i +"].Keyword"));
+			keyword.setHitCount(_ctx.integerValue("DescribeKeywordResponse.KeywordList["+ i +"].HitCount"));
 
 			keywordList.add(keyword);
 		}

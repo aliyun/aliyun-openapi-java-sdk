@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSdkUrlResponseUnmarshaller {
 
-	public static DescribeSdkUrlResponse unmarshall(DescribeSdkUrlResponse describeSdkUrlResponse, UnmarshallerContext context) {
+	public static DescribeSdkUrlResponse unmarshall(DescribeSdkUrlResponse describeSdkUrlResponse, UnmarshallerContext _ctx) {
 		
-		describeSdkUrlResponse.setRequestId(context.stringValue("DescribeSdkUrlResponse.RequestId"));
-		describeSdkUrlResponse.setSdkUrl(context.stringValue("DescribeSdkUrlResponse.SdkUrl"));
+		describeSdkUrlResponse.setRequestId(_ctx.stringValue("DescribeSdkUrlResponse.RequestId"));
+		describeSdkUrlResponse.setSdkUrl(_ctx.stringValue("DescribeSdkUrlResponse.SdkUrl"));
 	 
 	 	return describeSdkUrlResponse;
 	}

@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VoiceIdentityStartCheckResponseUnmarshaller {
 
-	public static VoiceIdentityStartCheckResponse unmarshall(VoiceIdentityStartCheckResponse voiceIdentityStartCheckResponse, UnmarshallerContext context) {
+	public static VoiceIdentityStartCheckResponse unmarshall(VoiceIdentityStartCheckResponse voiceIdentityStartCheckResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return voiceIdentityStartCheckResponse;

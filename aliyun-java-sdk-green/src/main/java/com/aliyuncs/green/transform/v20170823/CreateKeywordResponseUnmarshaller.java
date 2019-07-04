@@ -23,20 +23,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateKeywordResponseUnmarshaller {
 
-	public static CreateKeywordResponse unmarshall(CreateKeywordResponse createKeywordResponse, UnmarshallerContext context) {
+	public static CreateKeywordResponse unmarshall(CreateKeywordResponse createKeywordResponse, UnmarshallerContext _ctx) {
 		
-		createKeywordResponse.setRequestId(context.stringValue("CreateKeywordResponse.RequestId"));
-		createKeywordResponse.setSuccessCount(context.integerValue("CreateKeywordResponse.SuccessCount"));
+		createKeywordResponse.setRequestId(_ctx.stringValue("CreateKeywordResponse.RequestId"));
+		createKeywordResponse.setSuccessCount(_ctx.integerValue("CreateKeywordResponse.SuccessCount"));
 
 		List<String> invalidKeywordList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateKeywordResponse.InvalidKeywordList.Length"); i++) {
-			invalidKeywordList.add(context.stringValue("CreateKeywordResponse.InvalidKeywordList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateKeywordResponse.InvalidKeywordList.Length"); i++) {
+			invalidKeywordList.add(_ctx.stringValue("CreateKeywordResponse.InvalidKeywordList["+ i +"]"));
 		}
 		createKeywordResponse.setInvalidKeywordList(invalidKeywordList);
 
 		List<String> validKeywordList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateKeywordResponse.validKeywordList.Length"); i++) {
-			validKeywordList.add(context.stringValue("CreateKeywordResponse.validKeywordList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateKeywordResponse.validKeywordList.Length"); i++) {
+			validKeywordList.add(_ctx.stringValue("CreateKeywordResponse.validKeywordList["+ i +"]"));
 		}
 		createKeywordResponse.setValidKeywordList(validKeywordList);
 	 

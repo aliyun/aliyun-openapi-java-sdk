@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateWebsiteInstanceKeyUrlResponseUnmarshaller {
 
-	public static UpdateWebsiteInstanceKeyUrlResponse unmarshall(UpdateWebsiteInstanceKeyUrlResponse updateWebsiteInstanceKeyUrlResponse, UnmarshallerContext context) {
+	public static UpdateWebsiteInstanceKeyUrlResponse unmarshall(UpdateWebsiteInstanceKeyUrlResponse updateWebsiteInstanceKeyUrlResponse, UnmarshallerContext _ctx) {
 		
-		updateWebsiteInstanceKeyUrlResponse.setRequestId(context.stringValue("UpdateWebsiteInstanceKeyUrlResponse.RequestId"));
+		updateWebsiteInstanceKeyUrlResponse.setRequestId(_ctx.stringValue("UpdateWebsiteInstanceKeyUrlResponse.RequestId"));
 	 
 	 	return updateWebsiteInstanceKeyUrlResponse;
 	}

@@ -24,30 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeWebsiteScanResultResponseUnmarshaller {
 
-	public static DescribeWebsiteScanResultResponse unmarshall(DescribeWebsiteScanResultResponse describeWebsiteScanResultResponse, UnmarshallerContext context) {
+	public static DescribeWebsiteScanResultResponse unmarshall(DescribeWebsiteScanResultResponse describeWebsiteScanResultResponse, UnmarshallerContext _ctx) {
 		
-		describeWebsiteScanResultResponse.setRequestId(context.stringValue("DescribeWebsiteScanResultResponse.RequestId"));
-		describeWebsiteScanResultResponse.setPageSize(context.integerValue("DescribeWebsiteScanResultResponse.PageSize"));
-		describeWebsiteScanResultResponse.setCurrentPage(context.integerValue("DescribeWebsiteScanResultResponse.CurrentPage"));
-		describeWebsiteScanResultResponse.setTotalCount(context.integerValue("DescribeWebsiteScanResultResponse.TotalCount"));
+		describeWebsiteScanResultResponse.setRequestId(_ctx.stringValue("DescribeWebsiteScanResultResponse.RequestId"));
+		describeWebsiteScanResultResponse.setPageSize(_ctx.integerValue("DescribeWebsiteScanResultResponse.PageSize"));
+		describeWebsiteScanResultResponse.setCurrentPage(_ctx.integerValue("DescribeWebsiteScanResultResponse.CurrentPage"));
+		describeWebsiteScanResultResponse.setTotalCount(_ctx.integerValue("DescribeWebsiteScanResultResponse.TotalCount"));
 
 		List<WebsiteScanResult> websiteScanResultList = new ArrayList<WebsiteScanResult>();
-		for (int i = 0; i < context.lengthValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList.Length"); i++) {
 			WebsiteScanResult websiteScanResult = new WebsiteScanResult();
-			websiteScanResult.setInstanceId(context.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].InstanceId"));
-			websiteScanResult.setScanTime(context.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].ScanTime"));
-			websiteScanResult.setDomain(context.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Domain"));
-			websiteScanResult.setSourceRiskCount(context.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].SourceRiskCount"));
-			websiteScanResult.setImageRiskCount(context.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].ImageRiskCount"));
-			websiteScanResult.setHandleStatus(context.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].HandleStatus"));
-			websiteScanResult.setId(context.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Id"));
-			websiteScanResult.setTextRiskCount(context.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].TextRiskCount"));
-			websiteScanResult.setTaskId(context.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].TaskId"));
-			websiteScanResult.setUrl(context.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Url"));
+			websiteScanResult.setInstanceId(_ctx.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].InstanceId"));
+			websiteScanResult.setScanTime(_ctx.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].ScanTime"));
+			websiteScanResult.setDomain(_ctx.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Domain"));
+			websiteScanResult.setSourceRiskCount(_ctx.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].SourceRiskCount"));
+			websiteScanResult.setImageRiskCount(_ctx.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].ImageRiskCount"));
+			websiteScanResult.setHandleStatus(_ctx.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].HandleStatus"));
+			websiteScanResult.setId(_ctx.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Id"));
+			websiteScanResult.setTextRiskCount(_ctx.integerValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].TextRiskCount"));
+			websiteScanResult.setTaskId(_ctx.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].TaskId"));
+			websiteScanResult.setUrl(_ctx.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Url"));
 
 			List<String> labels = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Labels.Length"); j++) {
-				labels.add(context.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Labels["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Labels.Length"); j++) {
+				labels.add(_ctx.stringValue("DescribeWebsiteScanResultResponse.WebsiteScanResultList["+ i +"].Labels["+ j +"]"));
 			}
 			websiteScanResult.setLabels(labels);
 

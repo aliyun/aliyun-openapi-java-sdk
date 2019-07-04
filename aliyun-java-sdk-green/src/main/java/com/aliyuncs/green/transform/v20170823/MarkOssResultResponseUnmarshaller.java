@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MarkOssResultResponseUnmarshaller {
 
-	public static MarkOssResultResponse unmarshall(MarkOssResultResponse markOssResultResponse, UnmarshallerContext context) {
+	public static MarkOssResultResponse unmarshall(MarkOssResultResponse markOssResultResponse, UnmarshallerContext _ctx) {
 		
-		markOssResultResponse.setRequestId(context.stringValue("MarkOssResultResponse.RequestId"));
+		markOssResultResponse.setRequestId(_ctx.stringValue("MarkOssResultResponse.RequestId"));
 	 
 	 	return markOssResultResponse;
 	}

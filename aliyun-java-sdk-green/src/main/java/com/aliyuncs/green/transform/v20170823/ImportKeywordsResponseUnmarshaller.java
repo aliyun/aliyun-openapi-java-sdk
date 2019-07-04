@@ -23,20 +23,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ImportKeywordsResponseUnmarshaller {
 
-	public static ImportKeywordsResponse unmarshall(ImportKeywordsResponse importKeywordsResponse, UnmarshallerContext context) {
+	public static ImportKeywordsResponse unmarshall(ImportKeywordsResponse importKeywordsResponse, UnmarshallerContext _ctx) {
 		
-		importKeywordsResponse.setRequestId(context.stringValue("ImportKeywordsResponse.RequestId"));
-		importKeywordsResponse.setSuccessCount(context.integerValue("ImportKeywordsResponse.SuccessCount"));
+		importKeywordsResponse.setRequestId(_ctx.stringValue("ImportKeywordsResponse.RequestId"));
+		importKeywordsResponse.setSuccessCount(_ctx.integerValue("ImportKeywordsResponse.SuccessCount"));
 
 		List<String> invalidKeywordList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ImportKeywordsResponse.InvalidKeywordList.Length"); i++) {
-			invalidKeywordList.add(context.stringValue("ImportKeywordsResponse.InvalidKeywordList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ImportKeywordsResponse.InvalidKeywordList.Length"); i++) {
+			invalidKeywordList.add(_ctx.stringValue("ImportKeywordsResponse.InvalidKeywordList["+ i +"]"));
 		}
 		importKeywordsResponse.setInvalidKeywordList(invalidKeywordList);
 
 		List<String> validKeywordList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ImportKeywordsResponse.validKeywordList.Length"); i++) {
-			validKeywordList.add(context.stringValue("ImportKeywordsResponse.validKeywordList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ImportKeywordsResponse.validKeywordList.Length"); i++) {
+			validKeywordList.add(_ctx.stringValue("ImportKeywordsResponse.validKeywordList["+ i +"]"));
 		}
 		importKeywordsResponse.setValidKeywordList(validKeywordList);
 	 

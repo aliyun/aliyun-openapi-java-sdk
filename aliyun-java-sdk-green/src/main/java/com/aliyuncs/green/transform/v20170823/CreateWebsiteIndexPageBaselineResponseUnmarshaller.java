@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateWebsiteIndexPageBaselineResponseUnmarshaller {
 
-	public static CreateWebsiteIndexPageBaselineResponse unmarshall(CreateWebsiteIndexPageBaselineResponse createWebsiteIndexPageBaselineResponse, UnmarshallerContext context) {
+	public static CreateWebsiteIndexPageBaselineResponse unmarshall(CreateWebsiteIndexPageBaselineResponse createWebsiteIndexPageBaselineResponse, UnmarshallerContext _ctx) {
 		
-		createWebsiteIndexPageBaselineResponse.setRequestId(context.stringValue("CreateWebsiteIndexPageBaselineResponse.RequestId"));
+		createWebsiteIndexPageBaselineResponse.setRequestId(_ctx.stringValue("CreateWebsiteIndexPageBaselineResponse.RequestId"));
 	 
 	 	return createWebsiteIndexPageBaselineResponse;
 	}

@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TextScanResponseUnmarshaller {
 
-	public static TextScanResponse unmarshall(TextScanResponse textScanResponse, UnmarshallerContext context) {
+	public static TextScanResponse unmarshall(TextScanResponse textScanResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return textScanResponse;

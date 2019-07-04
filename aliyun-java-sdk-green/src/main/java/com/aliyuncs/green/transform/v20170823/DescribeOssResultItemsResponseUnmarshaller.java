@@ -25,38 +25,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssResultItemsResponseUnmarshaller {
 
-	public static DescribeOssResultItemsResponse unmarshall(DescribeOssResultItemsResponse describeOssResultItemsResponse, UnmarshallerContext context) {
+	public static DescribeOssResultItemsResponse unmarshall(DescribeOssResultItemsResponse describeOssResultItemsResponse, UnmarshallerContext _ctx) {
 		
-		describeOssResultItemsResponse.setRequestId(context.stringValue("DescribeOssResultItemsResponse.RequestId"));
-		describeOssResultItemsResponse.setPageSize(context.integerValue("DescribeOssResultItemsResponse.PageSize"));
-		describeOssResultItemsResponse.setCurrentPage(context.integerValue("DescribeOssResultItemsResponse.CurrentPage"));
-		describeOssResultItemsResponse.setTotalCount(context.integerValue("DescribeOssResultItemsResponse.TotalCount"));
-		describeOssResultItemsResponse.setQueryId(context.stringValue("DescribeOssResultItemsResponse.QueryId"));
+		describeOssResultItemsResponse.setRequestId(_ctx.stringValue("DescribeOssResultItemsResponse.RequestId"));
+		describeOssResultItemsResponse.setPageSize(_ctx.integerValue("DescribeOssResultItemsResponse.PageSize"));
+		describeOssResultItemsResponse.setCurrentPage(_ctx.integerValue("DescribeOssResultItemsResponse.CurrentPage"));
+		describeOssResultItemsResponse.setTotalCount(_ctx.integerValue("DescribeOssResultItemsResponse.TotalCount"));
+		describeOssResultItemsResponse.setQueryId(_ctx.stringValue("DescribeOssResultItemsResponse.QueryId"));
 
 		List<ScanResult> scanResultList = new ArrayList<ScanResult>();
-		for (int i = 0; i < context.lengthValue("DescribeOssResultItemsResponse.ScanResultList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssResultItemsResponse.ScanResultList.Length"); i++) {
 			ScanResult scanResult = new ScanResult();
-			scanResult.setTaskId(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].TaskId"));
-			scanResult.setDataId(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].DataId"));
-			scanResult.setNewUrl(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].NewUrl"));
-			scanResult.setThumbnail(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Thumbnail"));
-			scanResult.setRequestTime(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].RequestTime"));
-			scanResult.setScanFinishedTime(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].ScanFinishedTime"));
-			scanResult.setCreateTime(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].CreateTime"));
-			scanResult.setSuggestion(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Suggestion"));
-			scanResult.setId(context.longValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Id"));
-			scanResult.setBucket(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Bucket"));
-			scanResult.setObject(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Object"));
-			scanResult.setScore(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Score"));
-			scanResult.setHandleStatus(context.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].HandleStatus"));
-			scanResult.setResourceStatus(context.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].ResourceStatus"));
+			scanResult.setTaskId(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].TaskId"));
+			scanResult.setDataId(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].DataId"));
+			scanResult.setNewUrl(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].NewUrl"));
+			scanResult.setThumbnail(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Thumbnail"));
+			scanResult.setRequestTime(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].RequestTime"));
+			scanResult.setScanFinishedTime(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].ScanFinishedTime"));
+			scanResult.setCreateTime(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].CreateTime"));
+			scanResult.setSuggestion(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Suggestion"));
+			scanResult.setId(_ctx.longValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Id"));
+			scanResult.setBucket(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Bucket"));
+			scanResult.setObject(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Object"));
+			scanResult.setScore(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Score"));
+			scanResult.setHandleStatus(_ctx.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].HandleStatus"));
+			scanResult.setResourceStatus(_ctx.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].ResourceStatus"));
 
 			List<FrameResult> frameResults = new ArrayList<FrameResult>();
-			for (int j = 0; j < context.lengthValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].FrameResults.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].FrameResults.Length"); j++) {
 				FrameResult frameResult = new FrameResult();
-				frameResult.setThumbnail(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].FrameResults["+ j +"].Thumbnail"));
-				frameResult.setOffset(context.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].FrameResults["+ j +"].Offset"));
-				frameResult.setUrl(context.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].FrameResults["+ j +"].Url"));
+				frameResult.setThumbnail(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].FrameResults["+ j +"].Thumbnail"));
+				frameResult.setOffset(_ctx.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].FrameResults["+ j +"].Offset"));
+				frameResult.setUrl(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].FrameResults["+ j +"].Url"));
 
 				frameResults.add(frameResult);
 			}

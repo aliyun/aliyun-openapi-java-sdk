@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VerifyCustomOcrTemplateResponseUnmarshaller {
 
-	public static VerifyCustomOcrTemplateResponse unmarshall(VerifyCustomOcrTemplateResponse verifyCustomOcrTemplateResponse, UnmarshallerContext context) {
+	public static VerifyCustomOcrTemplateResponse unmarshall(VerifyCustomOcrTemplateResponse verifyCustomOcrTemplateResponse, UnmarshallerContext _ctx) {
 		
-		verifyCustomOcrTemplateResponse.setRequestId(context.stringValue("VerifyCustomOcrTemplateResponse.RequestId"));
-		verifyCustomOcrTemplateResponse.setRecognizeInfo(context.stringValue("VerifyCustomOcrTemplateResponse.RecognizeInfo"));
-		verifyCustomOcrTemplateResponse.setImageUrl(context.stringValue("VerifyCustomOcrTemplateResponse.ImageUrl"));
+		verifyCustomOcrTemplateResponse.setRequestId(_ctx.stringValue("VerifyCustomOcrTemplateResponse.RequestId"));
+		verifyCustomOcrTemplateResponse.setRecognizeInfo(_ctx.stringValue("VerifyCustomOcrTemplateResponse.RecognizeInfo"));
+		verifyCustomOcrTemplateResponse.setImageUrl(_ctx.stringValue("VerifyCustomOcrTemplateResponse.ImageUrl"));
 	 
 	 	return verifyCustomOcrTemplateResponse;
 	}

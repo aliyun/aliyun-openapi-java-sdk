@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SendVerifyCodeToEmailResponseUnmarshaller {
 
-	public static SendVerifyCodeToEmailResponse unmarshall(SendVerifyCodeToEmailResponse sendVerifyCodeToEmailResponse, UnmarshallerContext context) {
+	public static SendVerifyCodeToEmailResponse unmarshall(SendVerifyCodeToEmailResponse sendVerifyCodeToEmailResponse, UnmarshallerContext _ctx) {
 		
-		sendVerifyCodeToEmailResponse.setRequestId(context.stringValue("SendVerifyCodeToEmailResponse.RequestId"));
+		sendVerifyCodeToEmailResponse.setRequestId(_ctx.stringValue("SendVerifyCodeToEmailResponse.RequestId"));
 	 
 	 	return sendVerifyCodeToEmailResponse;
 	}

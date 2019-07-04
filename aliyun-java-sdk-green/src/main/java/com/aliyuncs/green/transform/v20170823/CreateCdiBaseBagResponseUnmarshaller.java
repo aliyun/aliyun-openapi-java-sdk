@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCdiBaseBagResponseUnmarshaller {
 
-	public static CreateCdiBaseBagResponse unmarshall(CreateCdiBaseBagResponse createCdiBaseBagResponse, UnmarshallerContext context) {
+	public static CreateCdiBaseBagResponse unmarshall(CreateCdiBaseBagResponse createCdiBaseBagResponse, UnmarshallerContext _ctx) {
 		
-		createCdiBaseBagResponse.setRequestId(context.stringValue("CreateCdiBaseBagResponse.RequestId"));
-		createCdiBaseBagResponse.setCode(context.stringValue("CreateCdiBaseBagResponse.Code"));
-		createCdiBaseBagResponse.setMessage(context.stringValue("CreateCdiBaseBagResponse.Message"));
-		createCdiBaseBagResponse.setOrderId(context.stringValue("CreateCdiBaseBagResponse.OrderId"));
-		createCdiBaseBagResponse.setInstanceId(context.stringValue("CreateCdiBaseBagResponse.InstanceId"));
+		createCdiBaseBagResponse.setRequestId(_ctx.stringValue("CreateCdiBaseBagResponse.RequestId"));
+		createCdiBaseBagResponse.setCode(_ctx.stringValue("CreateCdiBaseBagResponse.Code"));
+		createCdiBaseBagResponse.setMessage(_ctx.stringValue("CreateCdiBaseBagResponse.Message"));
+		createCdiBaseBagResponse.setOrderId(_ctx.stringValue("CreateCdiBaseBagResponse.OrderId"));
+		createCdiBaseBagResponse.setInstanceId(_ctx.stringValue("CreateCdiBaseBagResponse.InstanceId"));
 	 
 	 	return createCdiBaseBagResponse;
 	}

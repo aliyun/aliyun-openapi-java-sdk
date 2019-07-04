@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ExportKeywordsResponseUnmarshaller {
 
-	public static ExportKeywordsResponse unmarshall(ExportKeywordsResponse exportKeywordsResponse, UnmarshallerContext context) {
+	public static ExportKeywordsResponse unmarshall(ExportKeywordsResponse exportKeywordsResponse, UnmarshallerContext _ctx) {
 		
-		exportKeywordsResponse.setRequestId(context.stringValue("ExportKeywordsResponse.RequestId"));
-		exportKeywordsResponse.setDownloadUrl(context.stringValue("ExportKeywordsResponse.DownloadUrl"));
+		exportKeywordsResponse.setRequestId(_ctx.stringValue("ExportKeywordsResponse.RequestId"));
+		exportKeywordsResponse.setDownloadUrl(_ctx.stringValue("ExportKeywordsResponse.DownloadUrl"));
 	 
 	 	return exportKeywordsResponse;
 	}

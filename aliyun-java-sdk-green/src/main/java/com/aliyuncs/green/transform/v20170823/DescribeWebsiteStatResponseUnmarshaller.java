@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeWebsiteStatResponseUnmarshaller {
 
-	public static DescribeWebsiteStatResponse unmarshall(DescribeWebsiteStatResponse describeWebsiteStatResponse, UnmarshallerContext context) {
+	public static DescribeWebsiteStatResponse unmarshall(DescribeWebsiteStatResponse describeWebsiteStatResponse, UnmarshallerContext _ctx) {
 		
-		describeWebsiteStatResponse.setRequestId(context.stringValue("DescribeWebsiteStatResponse.RequestId"));
-		describeWebsiteStatResponse.setTotalCount(context.integerValue("DescribeWebsiteStatResponse.TotalCount"));
+		describeWebsiteStatResponse.setRequestId(_ctx.stringValue("DescribeWebsiteStatResponse.RequestId"));
+		describeWebsiteStatResponse.setTotalCount(_ctx.integerValue("DescribeWebsiteStatResponse.TotalCount"));
 
 		List<WebsiteStat> websiteStatList = new ArrayList<WebsiteStat>();
-		for (int i = 0; i < context.lengthValue("DescribeWebsiteStatResponse.WebsiteStatList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeWebsiteStatResponse.WebsiteStatList.Length"); i++) {
 			WebsiteStat websiteStat = new WebsiteStat();
-			websiteStat.setSubServiceModule(context.stringValue("DescribeWebsiteStatResponse.WebsiteStatList["+ i +"].SubServiceModule"));
-			websiteStat.setInstanceCount(context.integerValue("DescribeWebsiteStatResponse.WebsiteStatList["+ i +"].InstanceCount"));
-			websiteStat.setScanCount(context.integerValue("DescribeWebsiteStatResponse.WebsiteStatList["+ i +"].ScanCount"));
-			websiteStat.setRiskCount(context.integerValue("DescribeWebsiteStatResponse.WebsiteStatList["+ i +"].RiskCount"));
+			websiteStat.setSubServiceModule(_ctx.stringValue("DescribeWebsiteStatResponse.WebsiteStatList["+ i +"].SubServiceModule"));
+			websiteStat.setInstanceCount(_ctx.integerValue("DescribeWebsiteStatResponse.WebsiteStatList["+ i +"].InstanceCount"));
+			websiteStat.setScanCount(_ctx.integerValue("DescribeWebsiteStatResponse.WebsiteStatList["+ i +"].ScanCount"));
+			websiteStat.setRiskCount(_ctx.integerValue("DescribeWebsiteStatResponse.WebsiteStatList["+ i +"].RiskCount"));
 
 			websiteStatList.add(websiteStat);
 		}

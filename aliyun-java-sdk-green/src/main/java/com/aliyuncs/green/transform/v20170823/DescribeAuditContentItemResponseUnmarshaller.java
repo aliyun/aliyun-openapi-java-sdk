@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAuditContentItemResponseUnmarshaller {
 
-	public static DescribeAuditContentItemResponse unmarshall(DescribeAuditContentItemResponse describeAuditContentItemResponse, UnmarshallerContext context) {
+	public static DescribeAuditContentItemResponse unmarshall(DescribeAuditContentItemResponse describeAuditContentItemResponse, UnmarshallerContext _ctx) {
 		
-		describeAuditContentItemResponse.setRequestId(context.stringValue("DescribeAuditContentItemResponse.RequestId"));
-		describeAuditContentItemResponse.setPageSize(context.integerValue("DescribeAuditContentItemResponse.PageSize"));
-		describeAuditContentItemResponse.setCurrentPage(context.integerValue("DescribeAuditContentItemResponse.CurrentPage"));
-		describeAuditContentItemResponse.setTotalCount(context.integerValue("DescribeAuditContentItemResponse.TotalCount"));
+		describeAuditContentItemResponse.setRequestId(_ctx.stringValue("DescribeAuditContentItemResponse.RequestId"));
+		describeAuditContentItemResponse.setPageSize(_ctx.integerValue("DescribeAuditContentItemResponse.PageSize"));
+		describeAuditContentItemResponse.setCurrentPage(_ctx.integerValue("DescribeAuditContentItemResponse.CurrentPage"));
+		describeAuditContentItemResponse.setTotalCount(_ctx.integerValue("DescribeAuditContentItemResponse.TotalCount"));
 
 		List<AuditContentItem> auditContentItemList = new ArrayList<AuditContentItem>();
-		for (int i = 0; i < context.lengthValue("DescribeAuditContentItemResponse.AuditContentItemList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAuditContentItemResponse.AuditContentItemList.Length"); i++) {
 			AuditContentItem auditContentItem = new AuditContentItem();
-			auditContentItem.setParentTaskId(context.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].ParentTaskId"));
-			auditContentItem.setContent(context.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Content"));
-			auditContentItem.setSn(context.integerValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Sn"));
-			auditContentItem.setStartTime(context.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].StartTime"));
-			auditContentItem.setEndTime(context.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].EndTime"));
-			auditContentItem.setAudit(context.integerValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Audit"));
-			auditContentItem.setAuditResult(context.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].AuditResult"));
-			auditContentItem.setSuggestion(context.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Suggestion"));
-			auditContentItem.setId(context.longValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Id"));
+			auditContentItem.setParentTaskId(_ctx.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].ParentTaskId"));
+			auditContentItem.setContent(_ctx.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Content"));
+			auditContentItem.setSn(_ctx.integerValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Sn"));
+			auditContentItem.setStartTime(_ctx.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].StartTime"));
+			auditContentItem.setEndTime(_ctx.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].EndTime"));
+			auditContentItem.setAudit(_ctx.integerValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Audit"));
+			auditContentItem.setAuditResult(_ctx.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].AuditResult"));
+			auditContentItem.setSuggestion(_ctx.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Suggestion"));
+			auditContentItem.setId(_ctx.longValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].Id"));
 
 			List<String> auditIllegalReasons = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].AuditIllegalReasons.Length"); j++) {
-				auditIllegalReasons.add(context.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].AuditIllegalReasons["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].AuditIllegalReasons.Length"); j++) {
+				auditIllegalReasons.add(_ctx.stringValue("DescribeAuditContentItemResponse.AuditContentItemList["+ i +"].AuditIllegalReasons["+ j +"]"));
 			}
 			auditContentItem.setAuditIllegalReasons(auditIllegalReasons);
 

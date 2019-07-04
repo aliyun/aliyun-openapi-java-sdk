@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteKeywordLibResponseUnmarshaller {
 
-	public static DeleteKeywordLibResponse unmarshall(DeleteKeywordLibResponse deleteKeywordLibResponse, UnmarshallerContext context) {
+	public static DeleteKeywordLibResponse unmarshall(DeleteKeywordLibResponse deleteKeywordLibResponse, UnmarshallerContext _ctx) {
 		
-		deleteKeywordLibResponse.setRequestId(context.stringValue("DeleteKeywordLibResponse.RequestId"));
+		deleteKeywordLibResponse.setRequestId(_ctx.stringValue("DeleteKeywordLibResponse.RequestId"));
 	 
 	 	return deleteKeywordLibResponse;
 	}

@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOpenApiUsageResponseUnmarshaller {
 
-	public static DescribeOpenApiUsageResponse unmarshall(DescribeOpenApiUsageResponse describeOpenApiUsageResponse, UnmarshallerContext context) {
+	public static DescribeOpenApiUsageResponse unmarshall(DescribeOpenApiUsageResponse describeOpenApiUsageResponse, UnmarshallerContext _ctx) {
 		
-		describeOpenApiUsageResponse.setRequestId(context.stringValue("DescribeOpenApiUsageResponse.RequestId"));
-		describeOpenApiUsageResponse.setTotalCount(context.integerValue("DescribeOpenApiUsageResponse.TotalCount"));
+		describeOpenApiUsageResponse.setRequestId(_ctx.stringValue("DescribeOpenApiUsageResponse.RequestId"));
+		describeOpenApiUsageResponse.setTotalCount(_ctx.integerValue("DescribeOpenApiUsageResponse.TotalCount"));
 
 		List<OpenApiUsage> openApiUsageList = new ArrayList<OpenApiUsage>();
-		for (int i = 0; i < context.lengthValue("DescribeOpenApiUsageResponse.OpenApiUsageList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeOpenApiUsageResponse.OpenApiUsageList.Length"); i++) {
 			OpenApiUsage openApiUsage = new OpenApiUsage();
-			openApiUsage.setDate(context.stringValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].Date"));
-			openApiUsage.setResourceType(context.stringValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].ResourceType"));
-			openApiUsage.setScene(context.stringValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].Scene"));
-			openApiUsage.setTotalCount(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].TotalCount"));
-			openApiUsage.setPassCount(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].PassCount"));
-			openApiUsage.setReviewCount(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].ReviewCount"));
-			openApiUsage.setBlockCount(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].BlockCount"));
-			openApiUsage.setInnerTotalCount(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].InnerTotalCount"));
-			openApiUsage.setOuterTotalCount(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].OuterTotalCount"));
-			openApiUsage.setTotalDuration(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].TotalDuration"));
-			openApiUsage.setPassDuration(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].PassDuration"));
-			openApiUsage.setReviewDuration(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].ReviewDuration"));
-			openApiUsage.setBlockDuration(context.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].BlockDuration"));
+			openApiUsage.setDate(_ctx.stringValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].Date"));
+			openApiUsage.setResourceType(_ctx.stringValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].ResourceType"));
+			openApiUsage.setScene(_ctx.stringValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].Scene"));
+			openApiUsage.setTotalCount(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].TotalCount"));
+			openApiUsage.setPassCount(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].PassCount"));
+			openApiUsage.setReviewCount(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].ReviewCount"));
+			openApiUsage.setBlockCount(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].BlockCount"));
+			openApiUsage.setInnerTotalCount(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].InnerTotalCount"));
+			openApiUsage.setOuterTotalCount(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].OuterTotalCount"));
+			openApiUsage.setTotalDuration(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].TotalDuration"));
+			openApiUsage.setPassDuration(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].PassDuration"));
+			openApiUsage.setReviewDuration(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].ReviewDuration"));
+			openApiUsage.setBlockDuration(_ctx.integerValue("DescribeOpenApiUsageResponse.OpenApiUsageList["+ i +"].BlockDuration"));
 
 			openApiUsageList.add(openApiUsage);
 		}

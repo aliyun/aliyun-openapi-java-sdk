@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeWebsiteInstanceIdResponseUnmarshaller {
 
-	public static DescribeWebsiteInstanceIdResponse unmarshall(DescribeWebsiteInstanceIdResponse describeWebsiteInstanceIdResponse, UnmarshallerContext context) {
+	public static DescribeWebsiteInstanceIdResponse unmarshall(DescribeWebsiteInstanceIdResponse describeWebsiteInstanceIdResponse, UnmarshallerContext _ctx) {
 		
-		describeWebsiteInstanceIdResponse.setRequestId(context.stringValue("DescribeWebsiteInstanceIdResponse.RequestId"));
-		describeWebsiteInstanceIdResponse.setTotalCount(context.integerValue("DescribeWebsiteInstanceIdResponse.TotalCount"));
+		describeWebsiteInstanceIdResponse.setRequestId(_ctx.stringValue("DescribeWebsiteInstanceIdResponse.RequestId"));
+		describeWebsiteInstanceIdResponse.setTotalCount(_ctx.integerValue("DescribeWebsiteInstanceIdResponse.TotalCount"));
 
 		List<String> websiteInstanceIdList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeWebsiteInstanceIdResponse.WebsiteInstanceIdList.Length"); i++) {
-			websiteInstanceIdList.add(context.stringValue("DescribeWebsiteInstanceIdResponse.WebsiteInstanceIdList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeWebsiteInstanceIdResponse.WebsiteInstanceIdList.Length"); i++) {
+			websiteInstanceIdList.add(_ctx.stringValue("DescribeWebsiteInstanceIdResponse.WebsiteInstanceIdList["+ i +"]"));
 		}
 		describeWebsiteInstanceIdResponse.setWebsiteInstanceIdList(websiteInstanceIdList);
 	 

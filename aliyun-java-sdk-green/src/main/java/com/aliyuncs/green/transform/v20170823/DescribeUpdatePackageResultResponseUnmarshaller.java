@@ -23,25 +23,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUpdatePackageResultResponseUnmarshaller {
 
-	public static DescribeUpdatePackageResultResponse unmarshall(DescribeUpdatePackageResultResponse describeUpdatePackageResultResponse, UnmarshallerContext context) {
+	public static DescribeUpdatePackageResultResponse unmarshall(DescribeUpdatePackageResultResponse describeUpdatePackageResultResponse, UnmarshallerContext _ctx) {
 		
-		describeUpdatePackageResultResponse.setRequestId(context.stringValue("DescribeUpdatePackageResultResponse.RequestId"));
+		describeUpdatePackageResultResponse.setRequestId(_ctx.stringValue("DescribeUpdatePackageResultResponse.RequestId"));
 
 		AppInfo appInfo = new AppInfo();
-		appInfo.setId(context.longValue("DescribeUpdatePackageResultResponse.AppInfo.Id"));
-		appInfo.setName(context.stringValue("DescribeUpdatePackageResultResponse.AppInfo.Name"));
-		appInfo.setPackageName(context.stringValue("DescribeUpdatePackageResultResponse.AppInfo.PackageName"));
-		appInfo.setIcon(context.stringValue("DescribeUpdatePackageResultResponse.AppInfo.Icon"));
-		appInfo.setStartDate(context.stringValue("DescribeUpdatePackageResultResponse.AppInfo.StartDate"));
-		appInfo.setEndDate(context.stringValue("DescribeUpdatePackageResultResponse.AppInfo.EndDate"));
-		appInfo.setType(context.integerValue("DescribeUpdatePackageResultResponse.AppInfo.Type"));
+		appInfo.setId(_ctx.longValue("DescribeUpdatePackageResultResponse.AppInfo.Id"));
+		appInfo.setName(_ctx.stringValue("DescribeUpdatePackageResultResponse.AppInfo.Name"));
+		appInfo.setPackageName(_ctx.stringValue("DescribeUpdatePackageResultResponse.AppInfo.PackageName"));
+		appInfo.setIcon(_ctx.stringValue("DescribeUpdatePackageResultResponse.AppInfo.Icon"));
+		appInfo.setStartDate(_ctx.stringValue("DescribeUpdatePackageResultResponse.AppInfo.StartDate"));
+		appInfo.setEndDate(_ctx.stringValue("DescribeUpdatePackageResultResponse.AppInfo.EndDate"));
+		appInfo.setType(_ctx.integerValue("DescribeUpdatePackageResultResponse.AppInfo.Type"));
 
 		PackageInfo packageInfo = new PackageInfo();
-		packageInfo.setVersion(context.stringValue("DescribeUpdatePackageResultResponse.AppInfo.PackageInfo.Version"));
+		packageInfo.setVersion(_ctx.stringValue("DescribeUpdatePackageResultResponse.AppInfo.PackageInfo.Version"));
 		appInfo.setPackageInfo(packageInfo);
 
 		DebugPackageInfo debugPackageInfo = new DebugPackageInfo();
-		debugPackageInfo.setVersion(context.stringValue("DescribeUpdatePackageResultResponse.AppInfo.DebugPackageInfo.Version"));
+		debugPackageInfo.setVersion(_ctx.stringValue("DescribeUpdatePackageResultResponse.AppInfo.DebugPackageInfo.Version"));
 		appInfo.setDebugPackageInfo(debugPackageInfo);
 		describeUpdatePackageResultResponse.setAppInfo(appInfo);
 	 

@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssIncrementOverviewResponseUnmarshaller {
 
-	public static DescribeOssIncrementOverviewResponse unmarshall(DescribeOssIncrementOverviewResponse describeOssIncrementOverviewResponse, UnmarshallerContext context) {
+	public static DescribeOssIncrementOverviewResponse unmarshall(DescribeOssIncrementOverviewResponse describeOssIncrementOverviewResponse, UnmarshallerContext _ctx) {
 		
-		describeOssIncrementOverviewResponse.setRequestId(context.stringValue("DescribeOssIncrementOverviewResponse.RequestId"));
-		describeOssIncrementOverviewResponse.setImageCount(context.integerValue("DescribeOssIncrementOverviewResponse.ImageCount"));
-		describeOssIncrementOverviewResponse.setVideoCount(context.integerValue("DescribeOssIncrementOverviewResponse.VideoCount"));
-		describeOssIncrementOverviewResponse.setVideoFrameCount(context.integerValue("DescribeOssIncrementOverviewResponse.VideoFrameCount"));
-		describeOssIncrementOverviewResponse.setPornUnhandleCount(context.integerValue("DescribeOssIncrementOverviewResponse.PornUnhandleCount"));
-		describeOssIncrementOverviewResponse.setTerrorismUnhandleCount(context.integerValue("DescribeOssIncrementOverviewResponse.TerrorismUnhandleCount"));
+		describeOssIncrementOverviewResponse.setRequestId(_ctx.stringValue("DescribeOssIncrementOverviewResponse.RequestId"));
+		describeOssIncrementOverviewResponse.setImageCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.ImageCount"));
+		describeOssIncrementOverviewResponse.setVideoCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.VideoCount"));
+		describeOssIncrementOverviewResponse.setVideoFrameCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.VideoFrameCount"));
+		describeOssIncrementOverviewResponse.setPornUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.PornUnhandleCount"));
+		describeOssIncrementOverviewResponse.setTerrorismUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.TerrorismUnhandleCount"));
 	 
 	 	return describeOssIncrementOverviewResponse;
 	}

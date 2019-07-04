@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateCustomOcrTemplateResponseUnmarshaller {
 
-	public static UpdateCustomOcrTemplateResponse unmarshall(UpdateCustomOcrTemplateResponse updateCustomOcrTemplateResponse, UnmarshallerContext context) {
+	public static UpdateCustomOcrTemplateResponse unmarshall(UpdateCustomOcrTemplateResponse updateCustomOcrTemplateResponse, UnmarshallerContext _ctx) {
 		
-		updateCustomOcrTemplateResponse.setRequestId(context.stringValue("UpdateCustomOcrTemplateResponse.RequestId"));
+		updateCustomOcrTemplateResponse.setRequestId(_ctx.stringValue("UpdateCustomOcrTemplateResponse.RequestId"));
 	 
 	 	return updateCustomOcrTemplateResponse;
 	}

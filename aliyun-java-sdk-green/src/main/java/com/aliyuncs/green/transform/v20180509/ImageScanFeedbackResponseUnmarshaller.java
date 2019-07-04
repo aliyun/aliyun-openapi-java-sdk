@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ImageScanFeedbackResponseUnmarshaller {
 
-	public static ImageScanFeedbackResponse unmarshall(ImageScanFeedbackResponse imageScanFeedbackResponse, UnmarshallerContext context) {
+	public static ImageScanFeedbackResponse unmarshall(ImageScanFeedbackResponse imageScanFeedbackResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return imageScanFeedbackResponse;

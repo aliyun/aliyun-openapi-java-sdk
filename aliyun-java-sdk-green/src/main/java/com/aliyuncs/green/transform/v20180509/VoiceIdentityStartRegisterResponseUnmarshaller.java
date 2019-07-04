@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VoiceIdentityStartRegisterResponseUnmarshaller {
 
-	public static VoiceIdentityStartRegisterResponse unmarshall(VoiceIdentityStartRegisterResponse voiceIdentityStartRegisterResponse, UnmarshallerContext context) {
+	public static VoiceIdentityStartRegisterResponse unmarshall(VoiceIdentityStartRegisterResponse voiceIdentityStartRegisterResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return voiceIdentityStartRegisterResponse;

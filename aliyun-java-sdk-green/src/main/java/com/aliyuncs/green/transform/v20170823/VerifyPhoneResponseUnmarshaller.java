@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VerifyPhoneResponseUnmarshaller {
 
-	public static VerifyPhoneResponse unmarshall(VerifyPhoneResponse verifyPhoneResponse, UnmarshallerContext context) {
+	public static VerifyPhoneResponse unmarshall(VerifyPhoneResponse verifyPhoneResponse, UnmarshallerContext _ctx) {
 		
-		verifyPhoneResponse.setRequestId(context.stringValue("VerifyPhoneResponse.RequestId"));
+		verifyPhoneResponse.setRequestId(_ctx.stringValue("VerifyPhoneResponse.RequestId"));
 	 
 	 	return verifyPhoneResponse;
 	}

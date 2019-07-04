@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpgradeCdiBaseBagResponseUnmarshaller {
 
-	public static UpgradeCdiBaseBagResponse unmarshall(UpgradeCdiBaseBagResponse upgradeCdiBaseBagResponse, UnmarshallerContext context) {
+	public static UpgradeCdiBaseBagResponse unmarshall(UpgradeCdiBaseBagResponse upgradeCdiBaseBagResponse, UnmarshallerContext _ctx) {
 		
-		upgradeCdiBaseBagResponse.setRequestId(context.stringValue("UpgradeCdiBaseBagResponse.RequestId"));
-		upgradeCdiBaseBagResponse.setCode(context.stringValue("UpgradeCdiBaseBagResponse.Code"));
-		upgradeCdiBaseBagResponse.setMessage(context.stringValue("UpgradeCdiBaseBagResponse.Message"));
-		upgradeCdiBaseBagResponse.setOrderId(context.stringValue("UpgradeCdiBaseBagResponse.OrderId"));
-		upgradeCdiBaseBagResponse.setInstanceId(context.stringValue("UpgradeCdiBaseBagResponse.InstanceId"));
+		upgradeCdiBaseBagResponse.setRequestId(_ctx.stringValue("UpgradeCdiBaseBagResponse.RequestId"));
+		upgradeCdiBaseBagResponse.setCode(_ctx.stringValue("UpgradeCdiBaseBagResponse.Code"));
+		upgradeCdiBaseBagResponse.setMessage(_ctx.stringValue("UpgradeCdiBaseBagResponse.Message"));
+		upgradeCdiBaseBagResponse.setOrderId(_ctx.stringValue("UpgradeCdiBaseBagResponse.OrderId"));
+		upgradeCdiBaseBagResponse.setInstanceId(_ctx.stringValue("UpgradeCdiBaseBagResponse.InstanceId"));
 	 
 	 	return upgradeCdiBaseBagResponse;
 	}

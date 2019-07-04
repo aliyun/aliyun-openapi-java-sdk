@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeKeywordLibResponseUnmarshaller {
 
-	public static DescribeKeywordLibResponse unmarshall(DescribeKeywordLibResponse describeKeywordLibResponse, UnmarshallerContext context) {
+	public static DescribeKeywordLibResponse unmarshall(DescribeKeywordLibResponse describeKeywordLibResponse, UnmarshallerContext _ctx) {
 		
-		describeKeywordLibResponse.setRequestId(context.stringValue("DescribeKeywordLibResponse.RequestId"));
-		describeKeywordLibResponse.setTotalCount(context.integerValue("DescribeKeywordLibResponse.TotalCount"));
+		describeKeywordLibResponse.setRequestId(_ctx.stringValue("DescribeKeywordLibResponse.RequestId"));
+		describeKeywordLibResponse.setTotalCount(_ctx.integerValue("DescribeKeywordLibResponse.TotalCount"));
 
 		List<KeywordLib> keywordLibList = new ArrayList<KeywordLib>();
-		for (int i = 0; i < context.lengthValue("DescribeKeywordLibResponse.KeywordLibList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeKeywordLibResponse.KeywordLibList.Length"); i++) {
 			KeywordLib keywordLib = new KeywordLib();
-			keywordLib.setId(context.integerValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Id"));
-			keywordLib.setModifiedTime(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].ModifiedTime"));
-			keywordLib.setName(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Name"));
-			keywordLib.setCode(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Code"));
-			keywordLib.setCount(context.integerValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Count"));
-			keywordLib.setCategory(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Category"));
-			keywordLib.setResourceType(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].ResourceType"));
-			keywordLib.setLibType(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].LibType"));
-			keywordLib.setSource(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Source"));
-			keywordLib.setServiceModule(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].ServiceModule"));
-			keywordLib.setLanguage(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Language"));
-			keywordLib.setMatchMode(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].MatchMode"));
-			keywordLib.setEnable(context.booleanValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Enable"));
+			keywordLib.setId(_ctx.integerValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Id"));
+			keywordLib.setModifiedTime(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].ModifiedTime"));
+			keywordLib.setName(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Name"));
+			keywordLib.setCode(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Code"));
+			keywordLib.setCount(_ctx.integerValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Count"));
+			keywordLib.setCategory(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Category"));
+			keywordLib.setResourceType(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].ResourceType"));
+			keywordLib.setLibType(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].LibType"));
+			keywordLib.setSource(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Source"));
+			keywordLib.setServiceModule(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].ServiceModule"));
+			keywordLib.setLanguage(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Language"));
+			keywordLib.setMatchMode(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].MatchMode"));
+			keywordLib.setEnable(_ctx.booleanValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].Enable"));
 
 			List<String> bizTypes = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].BizTypes.Length"); j++) {
-				bizTypes.add(context.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].BizTypes["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].BizTypes.Length"); j++) {
+				bizTypes.add(_ctx.stringValue("DescribeKeywordLibResponse.KeywordLibList["+ i +"].BizTypes["+ j +"]"));
 			}
 			keywordLib.setBizTypes(bizTypes);
 

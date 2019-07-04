@@ -25,15 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBizTypeSettingResponseUnmarshaller {
 
-	public static DescribeBizTypeSettingResponse unmarshall(DescribeBizTypeSettingResponse describeBizTypeSettingResponse, UnmarshallerContext context) {
+	public static DescribeBizTypeSettingResponse unmarshall(DescribeBizTypeSettingResponse describeBizTypeSettingResponse, UnmarshallerContext _ctx) {
 		
-		describeBizTypeSettingResponse.setRequestId(context.stringValue("DescribeBizTypeSettingResponse.RequestId"));
+		describeBizTypeSettingResponse.setRequestId(_ctx.stringValue("DescribeBizTypeSettingResponse.RequestId"));
 
 		Terrorism terrorism = new Terrorism();
 
 		List<String> categories = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeBizTypeSettingResponse.Terrorism.Categories.Length"); i++) {
-			categories.add(context.stringValue("DescribeBizTypeSettingResponse.Terrorism.Categories["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeBizTypeSettingResponse.Terrorism.Categories.Length"); i++) {
+			categories.add(_ctx.stringValue("DescribeBizTypeSettingResponse.Terrorism.Categories["+ i +"]"));
 		}
 		terrorism.setCategories(categories);
 		describeBizTypeSettingResponse.setTerrorism(terrorism);
@@ -41,8 +41,8 @@ public class DescribeBizTypeSettingResponseUnmarshaller {
 		Porn porn = new Porn();
 
 		List<String> categories1 = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeBizTypeSettingResponse.Porn.Categories.Length"); i++) {
-			categories1.add(context.stringValue("DescribeBizTypeSettingResponse.Porn.Categories["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeBizTypeSettingResponse.Porn.Categories.Length"); i++) {
+			categories1.add(_ctx.stringValue("DescribeBizTypeSettingResponse.Porn.Categories["+ i +"]"));
 		}
 		porn.setCategories1(categories1);
 		describeBizTypeSettingResponse.setPorn(porn);

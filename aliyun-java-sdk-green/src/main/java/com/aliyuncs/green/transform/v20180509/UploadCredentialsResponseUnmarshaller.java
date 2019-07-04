@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadCredentialsResponseUnmarshaller {
 
-	public static UploadCredentialsResponse unmarshall(UploadCredentialsResponse uploadCredentialsResponse, UnmarshallerContext context) {
+	public static UploadCredentialsResponse unmarshall(UploadCredentialsResponse uploadCredentialsResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return uploadCredentialsResponse;

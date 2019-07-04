@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserStatusResponseUnmarshaller {
 
-	public static DescribeUserStatusResponse unmarshall(DescribeUserStatusResponse describeUserStatusResponse, UnmarshallerContext context) {
+	public static DescribeUserStatusResponse unmarshall(DescribeUserStatusResponse describeUserStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeUserStatusResponse.setRequestId(context.stringValue("DescribeUserStatusResponse.RequestId"));
-		describeUserStatusResponse.setBuyed(context.booleanValue("DescribeUserStatusResponse.Buyed"));
-		describeUserStatusResponse.setInDept(context.booleanValue("DescribeUserStatusResponse.InDept"));
-		describeUserStatusResponse.setOpenApiUsed(context.booleanValue("DescribeUserStatusResponse.OpenApiUsed"));
-		describeUserStatusResponse.setOpenApiBeginTime(context.stringValue("DescribeUserStatusResponse.OpenApiBeginTime"));
-		describeUserStatusResponse.setOssCheckStatus(context.stringValue("DescribeUserStatusResponse.OssCheckStatus"));
-		describeUserStatusResponse.setOssVideoSizeLimit(context.integerValue("DescribeUserStatusResponse.OssVideoSizeLimit"));
+		describeUserStatusResponse.setRequestId(_ctx.stringValue("DescribeUserStatusResponse.RequestId"));
+		describeUserStatusResponse.setBuyed(_ctx.booleanValue("DescribeUserStatusResponse.Buyed"));
+		describeUserStatusResponse.setInDept(_ctx.booleanValue("DescribeUserStatusResponse.InDept"));
+		describeUserStatusResponse.setOpenApiUsed(_ctx.booleanValue("DescribeUserStatusResponse.OpenApiUsed"));
+		describeUserStatusResponse.setOpenApiBeginTime(_ctx.stringValue("DescribeUserStatusResponse.OpenApiBeginTime"));
+		describeUserStatusResponse.setOssCheckStatus(_ctx.stringValue("DescribeUserStatusResponse.OssCheckStatus"));
+		describeUserStatusResponse.setOssVideoSizeLimit(_ctx.integerValue("DescribeUserStatusResponse.OssVideoSizeLimit"));
 	 
 	 	return describeUserStatusResponse;
 	}

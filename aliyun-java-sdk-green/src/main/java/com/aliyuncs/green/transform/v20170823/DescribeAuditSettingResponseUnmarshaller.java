@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAuditSettingResponseUnmarshaller {
 
-	public static DescribeAuditSettingResponse unmarshall(DescribeAuditSettingResponse describeAuditSettingResponse, UnmarshallerContext context) {
+	public static DescribeAuditSettingResponse unmarshall(DescribeAuditSettingResponse describeAuditSettingResponse, UnmarshallerContext _ctx) {
 		
-		describeAuditSettingResponse.setRequestId(context.stringValue("DescribeAuditSettingResponse.RequestId"));
-		describeAuditSettingResponse.setSeed(context.stringValue("DescribeAuditSettingResponse.Seed"));
-		describeAuditSettingResponse.setCallback(context.stringValue("DescribeAuditSettingResponse.Callback"));
+		describeAuditSettingResponse.setRequestId(_ctx.stringValue("DescribeAuditSettingResponse.RequestId"));
+		describeAuditSettingResponse.setSeed(_ctx.stringValue("DescribeAuditSettingResponse.Seed"));
+		describeAuditSettingResponse.setCallback(_ctx.stringValue("DescribeAuditSettingResponse.Callback"));
 
 		AuditRange auditRange = new AuditRange();
-		auditRange.setBlock(context.booleanValue("DescribeAuditSettingResponse.AuditRange.block"));
-		auditRange.setReview(context.booleanValue("DescribeAuditSettingResponse.AuditRange.review"));
-		auditRange.setPass(context.booleanValue("DescribeAuditSettingResponse.AuditRange.pass"));
+		auditRange.setBlock(_ctx.booleanValue("DescribeAuditSettingResponse.AuditRange.block"));
+		auditRange.setReview(_ctx.booleanValue("DescribeAuditSettingResponse.AuditRange.review"));
+		auditRange.setPass(_ctx.booleanValue("DescribeAuditSettingResponse.AuditRange.pass"));
 		describeAuditSettingResponse.setAuditRange(auditRange);
 	 
 	 	return describeAuditSettingResponse;

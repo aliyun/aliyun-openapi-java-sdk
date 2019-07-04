@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeWebsiteInstanceResponseUnmarshaller {
 
-	public static DescribeWebsiteInstanceResponse unmarshall(DescribeWebsiteInstanceResponse describeWebsiteInstanceResponse, UnmarshallerContext context) {
+	public static DescribeWebsiteInstanceResponse unmarshall(DescribeWebsiteInstanceResponse describeWebsiteInstanceResponse, UnmarshallerContext _ctx) {
 		
-		describeWebsiteInstanceResponse.setRequestId(context.stringValue("DescribeWebsiteInstanceResponse.RequestId"));
-		describeWebsiteInstanceResponse.setPageSize(context.integerValue("DescribeWebsiteInstanceResponse.PageSize"));
-		describeWebsiteInstanceResponse.setCurrentPage(context.integerValue("DescribeWebsiteInstanceResponse.CurrentPage"));
-		describeWebsiteInstanceResponse.setTotalCount(context.integerValue("DescribeWebsiteInstanceResponse.TotalCount"));
+		describeWebsiteInstanceResponse.setRequestId(_ctx.stringValue("DescribeWebsiteInstanceResponse.RequestId"));
+		describeWebsiteInstanceResponse.setPageSize(_ctx.integerValue("DescribeWebsiteInstanceResponse.PageSize"));
+		describeWebsiteInstanceResponse.setCurrentPage(_ctx.integerValue("DescribeWebsiteInstanceResponse.CurrentPage"));
+		describeWebsiteInstanceResponse.setTotalCount(_ctx.integerValue("DescribeWebsiteInstanceResponse.TotalCount"));
 
 		List<WebsiteInstance> websiteInstanceList = new ArrayList<WebsiteInstance>();
-		for (int i = 0; i < context.lengthValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList.Length"); i++) {
 			WebsiteInstance websiteInstance = new WebsiteInstance();
-			websiteInstance.setProtocol(context.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].Protocol"));
-			websiteInstance.setInstanceId(context.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].InstanceId"));
-			websiteInstance.setWebsiteScanInterval(context.integerValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].WebsiteScanInterval"));
-			websiteInstance.setDomain(context.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].Domain"));
-			websiteInstance.setBuyTime(context.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].BuyTime"));
-			websiteInstance.setIndexPageScanInterval(context.integerValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].IndexPageScanInterval"));
-			websiteInstance.setIndexPage(context.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].IndexPage"));
-			websiteInstance.setExpiredTime(context.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].ExpiredTime"));
-			websiteInstance.setStatus(context.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].Status"));
+			websiteInstance.setProtocol(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].Protocol"));
+			websiteInstance.setInstanceId(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].InstanceId"));
+			websiteInstance.setWebsiteScanInterval(_ctx.integerValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].WebsiteScanInterval"));
+			websiteInstance.setDomain(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].Domain"));
+			websiteInstance.setBuyTime(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].BuyTime"));
+			websiteInstance.setIndexPageScanInterval(_ctx.integerValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].IndexPageScanInterval"));
+			websiteInstance.setIndexPage(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].IndexPage"));
+			websiteInstance.setExpiredTime(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].ExpiredTime"));
+			websiteInstance.setStatus(_ctx.stringValue("DescribeWebsiteInstanceResponse.WebsiteInstanceList["+ i +"].Status"));
 
 			websiteInstanceList.add(websiteInstance);
 		}

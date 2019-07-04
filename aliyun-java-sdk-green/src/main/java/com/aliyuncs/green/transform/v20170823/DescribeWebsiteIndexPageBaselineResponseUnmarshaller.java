@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeWebsiteIndexPageBaselineResponseUnmarshaller {
 
-	public static DescribeWebsiteIndexPageBaselineResponse unmarshall(DescribeWebsiteIndexPageBaselineResponse describeWebsiteIndexPageBaselineResponse, UnmarshallerContext context) {
+	public static DescribeWebsiteIndexPageBaselineResponse unmarshall(DescribeWebsiteIndexPageBaselineResponse describeWebsiteIndexPageBaselineResponse, UnmarshallerContext _ctx) {
 		
-		describeWebsiteIndexPageBaselineResponse.setRequestId(context.stringValue("DescribeWebsiteIndexPageBaselineResponse.RequestId"));
-		describeWebsiteIndexPageBaselineResponse.setCreateTime(context.stringValue("DescribeWebsiteIndexPageBaselineResponse.CreateTime"));
-		describeWebsiteIndexPageBaselineResponse.setSnapshot(context.stringValue("DescribeWebsiteIndexPageBaselineResponse.Snapshot"));
-		describeWebsiteIndexPageBaselineResponse.setBaseLineStatus(context.stringValue("DescribeWebsiteIndexPageBaselineResponse.BaseLineStatus"));
+		describeWebsiteIndexPageBaselineResponse.setRequestId(_ctx.stringValue("DescribeWebsiteIndexPageBaselineResponse.RequestId"));
+		describeWebsiteIndexPageBaselineResponse.setCreateTime(_ctx.stringValue("DescribeWebsiteIndexPageBaselineResponse.CreateTime"));
+		describeWebsiteIndexPageBaselineResponse.setSnapshot(_ctx.stringValue("DescribeWebsiteIndexPageBaselineResponse.Snapshot"));
+		describeWebsiteIndexPageBaselineResponse.setBaseLineStatus(_ctx.stringValue("DescribeWebsiteIndexPageBaselineResponse.BaseLineStatus"));
 	 
 	 	return describeWebsiteIndexPageBaselineResponse;
 	}

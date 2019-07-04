@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeImageFromLibResponseUnmarshaller {
 
-	public static DescribeImageFromLibResponse unmarshall(DescribeImageFromLibResponse describeImageFromLibResponse, UnmarshallerContext context) {
+	public static DescribeImageFromLibResponse unmarshall(DescribeImageFromLibResponse describeImageFromLibResponse, UnmarshallerContext _ctx) {
 		
-		describeImageFromLibResponse.setRequestId(context.stringValue("DescribeImageFromLibResponse.RequestId"));
-		describeImageFromLibResponse.setPageSize(context.integerValue("DescribeImageFromLibResponse.PageSize"));
-		describeImageFromLibResponse.setCurrentPage(context.integerValue("DescribeImageFromLibResponse.CurrentPage"));
-		describeImageFromLibResponse.setTotalCount(context.integerValue("DescribeImageFromLibResponse.TotalCount"));
+		describeImageFromLibResponse.setRequestId(_ctx.stringValue("DescribeImageFromLibResponse.RequestId"));
+		describeImageFromLibResponse.setPageSize(_ctx.integerValue("DescribeImageFromLibResponse.PageSize"));
+		describeImageFromLibResponse.setCurrentPage(_ctx.integerValue("DescribeImageFromLibResponse.CurrentPage"));
+		describeImageFromLibResponse.setTotalCount(_ctx.integerValue("DescribeImageFromLibResponse.TotalCount"));
 
 		List<ImageFromLib> imageFromLibList = new ArrayList<ImageFromLib>();
-		for (int i = 0; i < context.lengthValue("DescribeImageFromLibResponse.ImageFromLibList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeImageFromLibResponse.ImageFromLibList.Length"); i++) {
 			ImageFromLib imageFromLib = new ImageFromLib();
-			imageFromLib.setImage(context.stringValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Image"));
-			imageFromLib.setThumbnail(context.stringValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Thumbnail"));
-			imageFromLib.setId(context.longValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Id"));
-			imageFromLib.setImageHitCount(context.longValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].ImageHitCount"));
-			imageFromLib.setVideoHitCount(context.longValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].VideoHitCount"));
-			imageFromLib.setCreateTime(context.stringValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].CreateTime"));
+			imageFromLib.setImage(_ctx.stringValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Image"));
+			imageFromLib.setThumbnail(_ctx.stringValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Thumbnail"));
+			imageFromLib.setId(_ctx.longValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].Id"));
+			imageFromLib.setImageHitCount(_ctx.longValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].ImageHitCount"));
+			imageFromLib.setVideoHitCount(_ctx.longValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].VideoHitCount"));
+			imageFromLib.setCreateTime(_ctx.stringValue("DescribeImageFromLibResponse.ImageFromLibList["+ i +"].CreateTime"));
 
 			imageFromLibList.add(imageFromLib);
 		}

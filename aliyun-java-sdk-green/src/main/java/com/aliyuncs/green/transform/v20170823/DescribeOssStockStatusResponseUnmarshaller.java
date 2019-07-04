@@ -24,39 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssStockStatusResponseUnmarshaller {
 
-	public static DescribeOssStockStatusResponse unmarshall(DescribeOssStockStatusResponse describeOssStockStatusResponse, UnmarshallerContext context) {
+	public static DescribeOssStockStatusResponse unmarshall(DescribeOssStockStatusResponse describeOssStockStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeOssStockStatusResponse.setRequestId(context.stringValue("DescribeOssStockStatusResponse.RequestId"));
-		describeOssStockStatusResponse.setStockStatus(context.integerValue("DescribeOssStockStatusResponse.StockStatus"));
-		describeOssStockStatusResponse.setFinishedTime(context.stringValue("DescribeOssStockStatusResponse.FinishedTime"));
-		describeOssStockStatusResponse.setImageTotalCount(context.integerValue("DescribeOssStockStatusResponse.ImageTotalCount"));
-		describeOssStockStatusResponse.setImagePornCount(context.integerValue("DescribeOssStockStatusResponse.ImagePornCount"));
-		describeOssStockStatusResponse.setImageTerrorismCount(context.integerValue("DescribeOssStockStatusResponse.ImageTerrorismCount"));
-		describeOssStockStatusResponse.setVideoTotalCount(context.integerValue("DescribeOssStockStatusResponse.VideoTotalCount"));
-		describeOssStockStatusResponse.setVideoPornCount(context.integerValue("DescribeOssStockStatusResponse.VideoPornCount"));
-		describeOssStockStatusResponse.setVideoTerrorismCount(context.integerValue("DescribeOssStockStatusResponse.VideoTerrorismCount"));
+		describeOssStockStatusResponse.setRequestId(_ctx.stringValue("DescribeOssStockStatusResponse.RequestId"));
+		describeOssStockStatusResponse.setStockStatus(_ctx.integerValue("DescribeOssStockStatusResponse.StockStatus"));
+		describeOssStockStatusResponse.setFinishedTime(_ctx.stringValue("DescribeOssStockStatusResponse.FinishedTime"));
+		describeOssStockStatusResponse.setImageTotalCount(_ctx.integerValue("DescribeOssStockStatusResponse.ImageTotalCount"));
+		describeOssStockStatusResponse.setImagePornCount(_ctx.integerValue("DescribeOssStockStatusResponse.ImagePornCount"));
+		describeOssStockStatusResponse.setImageTerrorismCount(_ctx.integerValue("DescribeOssStockStatusResponse.ImageTerrorismCount"));
+		describeOssStockStatusResponse.setVideoTotalCount(_ctx.integerValue("DescribeOssStockStatusResponse.VideoTotalCount"));
+		describeOssStockStatusResponse.setVideoPornCount(_ctx.integerValue("DescribeOssStockStatusResponse.VideoPornCount"));
+		describeOssStockStatusResponse.setVideoTerrorismCount(_ctx.integerValue("DescribeOssStockStatusResponse.VideoTerrorismCount"));
 
 		List<String> sceneList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeOssStockStatusResponse.SceneList.Length"); i++) {
-			sceneList.add(context.stringValue("DescribeOssStockStatusResponse.SceneList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssStockStatusResponse.SceneList.Length"); i++) {
+			sceneList.add(_ctx.stringValue("DescribeOssStockStatusResponse.SceneList["+ i +"]"));
 		}
 		describeOssStockStatusResponse.setSceneList(sceneList);
 
 		List<String> resouceTypeList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeOssStockStatusResponse.ResouceTypeList.Length"); i++) {
-			resouceTypeList.add(context.stringValue("DescribeOssStockStatusResponse.ResouceTypeList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssStockStatusResponse.ResouceTypeList.Length"); i++) {
+			resouceTypeList.add(_ctx.stringValue("DescribeOssStockStatusResponse.ResouceTypeList["+ i +"]"));
 		}
 		describeOssStockStatusResponse.setResouceTypeList(resouceTypeList);
 
 		List<Bucket> bucketList = new ArrayList<Bucket>();
-		for (int i = 0; i < context.lengthValue("DescribeOssStockStatusResponse.BucketList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssStockStatusResponse.BucketList.Length"); i++) {
 			Bucket bucket = new Bucket();
-			bucket.setSelected(context.booleanValue("DescribeOssStockStatusResponse.BucketList["+ i +"].Selected"));
-			bucket.setBucket(context.stringValue("DescribeOssStockStatusResponse.BucketList["+ i +"].Bucket"));
+			bucket.setSelected(_ctx.booleanValue("DescribeOssStockStatusResponse.BucketList["+ i +"].Selected"));
+			bucket.setBucket(_ctx.stringValue("DescribeOssStockStatusResponse.BucketList["+ i +"].Bucket"));
 
 			List<String> prefixes = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeOssStockStatusResponse.BucketList["+ i +"].Prefixes.Length"); j++) {
-				prefixes.add(context.stringValue("DescribeOssStockStatusResponse.BucketList["+ i +"].Prefixes["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeOssStockStatusResponse.BucketList["+ i +"].Prefixes.Length"); j++) {
+				prefixes.add(_ctx.stringValue("DescribeOssStockStatusResponse.BucketList["+ i +"].Prefixes["+ j +"]"));
 			}
 			bucket.setPrefixes(prefixes);
 

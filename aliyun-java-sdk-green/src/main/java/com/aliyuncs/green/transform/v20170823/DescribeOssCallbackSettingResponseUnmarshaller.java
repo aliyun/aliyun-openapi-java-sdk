@@ -23,23 +23,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssCallbackSettingResponseUnmarshaller {
 
-	public static DescribeOssCallbackSettingResponse unmarshall(DescribeOssCallbackSettingResponse describeOssCallbackSettingResponse, UnmarshallerContext context) {
+	public static DescribeOssCallbackSettingResponse unmarshall(DescribeOssCallbackSettingResponse describeOssCallbackSettingResponse, UnmarshallerContext _ctx) {
 		
-		describeOssCallbackSettingResponse.setRequestId(context.stringValue("DescribeOssCallbackSettingResponse.RequestId"));
-		describeOssCallbackSettingResponse.setCallbackUrl(context.stringValue("DescribeOssCallbackSettingResponse.CallbackUrl"));
-		describeOssCallbackSettingResponse.setScanCallback(context.booleanValue("DescribeOssCallbackSettingResponse.ScanCallback"));
-		describeOssCallbackSettingResponse.setAuditCallback(context.booleanValue("DescribeOssCallbackSettingResponse.AuditCallback"));
-		describeOssCallbackSettingResponse.setCallbackSeed(context.stringValue("DescribeOssCallbackSettingResponse.CallbackSeed"));
+		describeOssCallbackSettingResponse.setRequestId(_ctx.stringValue("DescribeOssCallbackSettingResponse.RequestId"));
+		describeOssCallbackSettingResponse.setCallbackUrl(_ctx.stringValue("DescribeOssCallbackSettingResponse.CallbackUrl"));
+		describeOssCallbackSettingResponse.setScanCallback(_ctx.booleanValue("DescribeOssCallbackSettingResponse.ScanCallback"));
+		describeOssCallbackSettingResponse.setAuditCallback(_ctx.booleanValue("DescribeOssCallbackSettingResponse.AuditCallback"));
+		describeOssCallbackSettingResponse.setCallbackSeed(_ctx.stringValue("DescribeOssCallbackSettingResponse.CallbackSeed"));
 
 		List<String> scanCallbackSuggestions = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeOssCallbackSettingResponse.ScanCallbackSuggestions.Length"); i++) {
-			scanCallbackSuggestions.add(context.stringValue("DescribeOssCallbackSettingResponse.ScanCallbackSuggestions["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssCallbackSettingResponse.ScanCallbackSuggestions.Length"); i++) {
+			scanCallbackSuggestions.add(_ctx.stringValue("DescribeOssCallbackSettingResponse.ScanCallbackSuggestions["+ i +"]"));
 		}
 		describeOssCallbackSettingResponse.setScanCallbackSuggestions(scanCallbackSuggestions);
 
 		List<String> serviceModules = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeOssCallbackSettingResponse.ServiceModules.Length"); i++) {
-			serviceModules.add(context.stringValue("DescribeOssCallbackSettingResponse.ServiceModules["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssCallbackSettingResponse.ServiceModules.Length"); i++) {
+			serviceModules.add(_ctx.stringValue("DescribeOssCallbackSettingResponse.ServiceModules["+ i +"]"));
 		}
 		describeOssCallbackSettingResponse.setServiceModules(serviceModules);
 	 

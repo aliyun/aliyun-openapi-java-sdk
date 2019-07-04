@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MarkAuditContentResponseUnmarshaller {
 
-	public static MarkAuditContentResponse unmarshall(MarkAuditContentResponse markAuditContentResponse, UnmarshallerContext context) {
+	public static MarkAuditContentResponse unmarshall(MarkAuditContentResponse markAuditContentResponse, UnmarshallerContext _ctx) {
 		
-		markAuditContentResponse.setRequestId(context.stringValue("MarkAuditContentResponse.RequestId"));
+		markAuditContentResponse.setRequestId(_ctx.stringValue("MarkAuditContentResponse.RequestId"));
 	 
 	 	return markAuditContentResponse;
 	}

@@ -23,16 +23,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCdiBagResponseUnmarshaller {
 
-	public static CreateCdiBagResponse unmarshall(CreateCdiBagResponse createCdiBagResponse, UnmarshallerContext context) {
+	public static CreateCdiBagResponse unmarshall(CreateCdiBagResponse createCdiBagResponse, UnmarshallerContext _ctx) {
 		
-		createCdiBagResponse.setRequestId(context.stringValue("CreateCdiBagResponse.RequestId"));
-		createCdiBagResponse.setCode(context.stringValue("CreateCdiBagResponse.Code"));
-		createCdiBagResponse.setMessage(context.stringValue("CreateCdiBagResponse.Message"));
-		createCdiBagResponse.setOrderId(context.stringValue("CreateCdiBagResponse.OrderId"));
+		createCdiBagResponse.setRequestId(_ctx.stringValue("CreateCdiBagResponse.RequestId"));
+		createCdiBagResponse.setCode(_ctx.stringValue("CreateCdiBagResponse.Code"));
+		createCdiBagResponse.setMessage(_ctx.stringValue("CreateCdiBagResponse.Message"));
+		createCdiBagResponse.setOrderId(_ctx.stringValue("CreateCdiBagResponse.OrderId"));
 
 		List<String> instanceIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateCdiBagResponse.InstanceIds.Length"); i++) {
-			instanceIds.add(context.stringValue("CreateCdiBagResponse.InstanceIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateCdiBagResponse.InstanceIds.Length"); i++) {
+			instanceIds.add(_ctx.stringValue("CreateCdiBagResponse.InstanceIds["+ i +"]"));
 		}
 		createCdiBagResponse.setInstanceIds(instanceIds);
 	 

@@ -23,23 +23,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNotificationSettingResponseUnmarshaller {
 
-	public static DescribeNotificationSettingResponse unmarshall(DescribeNotificationSettingResponse describeNotificationSettingResponse, UnmarshallerContext context) {
+	public static DescribeNotificationSettingResponse unmarshall(DescribeNotificationSettingResponse describeNotificationSettingResponse, UnmarshallerContext _ctx) {
 		
-		describeNotificationSettingResponse.setRequestId(context.stringValue("DescribeNotificationSettingResponse.RequestId"));
-		describeNotificationSettingResponse.setEmail(context.stringValue("DescribeNotificationSettingResponse.Email"));
-		describeNotificationSettingResponse.setPhone(context.stringValue("DescribeNotificationSettingResponse.Phone"));
-		describeNotificationSettingResponse.setScheduleMessageTime(context.integerValue("DescribeNotificationSettingResponse.ScheduleMessageTime"));
-		describeNotificationSettingResponse.setScheduleMessageTimeZone(context.integerValue("DescribeNotificationSettingResponse.ScheduleMessageTimeZone"));
+		describeNotificationSettingResponse.setRequestId(_ctx.stringValue("DescribeNotificationSettingResponse.RequestId"));
+		describeNotificationSettingResponse.setEmail(_ctx.stringValue("DescribeNotificationSettingResponse.Email"));
+		describeNotificationSettingResponse.setPhone(_ctx.stringValue("DescribeNotificationSettingResponse.Phone"));
+		describeNotificationSettingResponse.setScheduleMessageTime(_ctx.integerValue("DescribeNotificationSettingResponse.ScheduleMessageTime"));
+		describeNotificationSettingResponse.setScheduleMessageTimeZone(_ctx.integerValue("DescribeNotificationSettingResponse.ScheduleMessageTimeZone"));
 
 		List<String> realtimeMessageList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeNotificationSettingResponse.RealtimeMessageList.Length"); i++) {
-			realtimeMessageList.add(context.stringValue("DescribeNotificationSettingResponse.RealtimeMessageList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeNotificationSettingResponse.RealtimeMessageList.Length"); i++) {
+			realtimeMessageList.add(_ctx.stringValue("DescribeNotificationSettingResponse.RealtimeMessageList["+ i +"]"));
 		}
 		describeNotificationSettingResponse.setRealtimeMessageList(realtimeMessageList);
 
 		List<String> reminderModeList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeNotificationSettingResponse.ReminderModeList.Length"); i++) {
-			reminderModeList.add(context.stringValue("DescribeNotificationSettingResponse.ReminderModeList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeNotificationSettingResponse.ReminderModeList.Length"); i++) {
+			reminderModeList.add(_ctx.stringValue("DescribeNotificationSettingResponse.ReminderModeList["+ i +"]"));
 		}
 		describeNotificationSettingResponse.setReminderModeList(reminderModeList);
 	 

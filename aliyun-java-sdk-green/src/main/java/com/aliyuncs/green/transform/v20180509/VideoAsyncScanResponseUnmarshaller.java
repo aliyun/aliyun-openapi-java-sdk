@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VideoAsyncScanResponseUnmarshaller {
 
-	public static VideoAsyncScanResponse unmarshall(VideoAsyncScanResponse videoAsyncScanResponse, UnmarshallerContext context) {
+	public static VideoAsyncScanResponse unmarshall(VideoAsyncScanResponse videoAsyncScanResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return videoAsyncScanResponse;

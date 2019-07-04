@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ExportOssResultResponseUnmarshaller {
 
-	public static ExportOssResultResponse unmarshall(ExportOssResultResponse exportOssResultResponse, UnmarshallerContext context) {
+	public static ExportOssResultResponse unmarshall(ExportOssResultResponse exportOssResultResponse, UnmarshallerContext _ctx) {
 		
-		exportOssResultResponse.setRequestId(context.stringValue("ExportOssResultResponse.RequestId"));
-		exportOssResultResponse.setFileUrl(context.stringValue("ExportOssResultResponse.FileUrl"));
+		exportOssResultResponse.setRequestId(_ctx.stringValue("ExportOssResultResponse.RequestId"));
+		exportOssResultResponse.setFileUrl(_ctx.stringValue("ExportOssResultResponse.FileUrl"));
 	 
 	 	return exportOssResultResponse;
 	}

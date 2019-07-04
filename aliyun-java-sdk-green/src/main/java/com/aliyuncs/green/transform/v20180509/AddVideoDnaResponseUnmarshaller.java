@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddVideoDnaResponseUnmarshaller {
 
-	public static AddVideoDnaResponse unmarshall(AddVideoDnaResponse addVideoDnaResponse, UnmarshallerContext context) {
+	public static AddVideoDnaResponse unmarshall(AddVideoDnaResponse addVideoDnaResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return addVideoDnaResponse;

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RefundWebSiteInstanceResponseUnmarshaller {
 
-	public static RefundWebSiteInstanceResponse unmarshall(RefundWebSiteInstanceResponse refundWebSiteInstanceResponse, UnmarshallerContext context) {
+	public static RefundWebSiteInstanceResponse unmarshall(RefundWebSiteInstanceResponse refundWebSiteInstanceResponse, UnmarshallerContext _ctx) {
 		
-		refundWebSiteInstanceResponse.setRequestId(context.stringValue("RefundWebSiteInstanceResponse.RequestId"));
+		refundWebSiteInstanceResponse.setRequestId(_ctx.stringValue("RefundWebSiteInstanceResponse.RequestId"));
 	 
 	 	return refundWebSiteInstanceResponse;
 	}

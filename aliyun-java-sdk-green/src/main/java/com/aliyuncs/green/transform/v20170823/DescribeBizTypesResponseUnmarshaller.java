@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBizTypesResponseUnmarshaller {
 
-	public static DescribeBizTypesResponse unmarshall(DescribeBizTypesResponse describeBizTypesResponse, UnmarshallerContext context) {
+	public static DescribeBizTypesResponse unmarshall(DescribeBizTypesResponse describeBizTypesResponse, UnmarshallerContext _ctx) {
 		
-		describeBizTypesResponse.setRequestId(context.stringValue("DescribeBizTypesResponse.RequestId"));
-		describeBizTypesResponse.setTotalCount(context.integerValue("DescribeBizTypesResponse.TotalCount"));
+		describeBizTypesResponse.setRequestId(_ctx.stringValue("DescribeBizTypesResponse.RequestId"));
+		describeBizTypesResponse.setTotalCount(_ctx.integerValue("DescribeBizTypesResponse.TotalCount"));
 
 		List<String> bizTypeList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeBizTypesResponse.BizTypeList.Length"); i++) {
-			bizTypeList.add(context.stringValue("DescribeBizTypesResponse.BizTypeList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeBizTypesResponse.BizTypeList.Length"); i++) {
+			bizTypeList.add(_ctx.stringValue("DescribeBizTypesResponse.BizTypeList["+ i +"]"));
 		}
 		describeBizTypesResponse.setBizTypeList(bizTypeList);
 	 

@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeWebsiteVerifyInfoResponseUnmarshaller {
 
-	public static DescribeWebsiteVerifyInfoResponse unmarshall(DescribeWebsiteVerifyInfoResponse describeWebsiteVerifyInfoResponse, UnmarshallerContext context) {
+	public static DescribeWebsiteVerifyInfoResponse unmarshall(DescribeWebsiteVerifyInfoResponse describeWebsiteVerifyInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeWebsiteVerifyInfoResponse.setRequestId(context.stringValue("DescribeWebsiteVerifyInfoResponse.RequestId"));
-		describeWebsiteVerifyInfoResponse.setCname(context.stringValue("DescribeWebsiteVerifyInfoResponse.Cname"));
-		describeWebsiteVerifyInfoResponse.setHostFile(context.stringValue("DescribeWebsiteVerifyInfoResponse.HostFile"));
-		describeWebsiteVerifyInfoResponse.setIndexPage(context.stringValue("DescribeWebsiteVerifyInfoResponse.IndexPage"));
-		describeWebsiteVerifyInfoResponse.setDomain(context.stringValue("DescribeWebsiteVerifyInfoResponse.Domain"));
-		describeWebsiteVerifyInfoResponse.setVerifyMethod(context.stringValue("DescribeWebsiteVerifyInfoResponse.VerifyMethod"));
-		describeWebsiteVerifyInfoResponse.setProtocol(context.stringValue("DescribeWebsiteVerifyInfoResponse.Protocol"));
+		describeWebsiteVerifyInfoResponse.setRequestId(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.RequestId"));
+		describeWebsiteVerifyInfoResponse.setCname(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.Cname"));
+		describeWebsiteVerifyInfoResponse.setHostFile(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.HostFile"));
+		describeWebsiteVerifyInfoResponse.setIndexPage(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.IndexPage"));
+		describeWebsiteVerifyInfoResponse.setDomain(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.Domain"));
+		describeWebsiteVerifyInfoResponse.setVerifyMethod(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.VerifyMethod"));
+		describeWebsiteVerifyInfoResponse.setProtocol(_ctx.stringValue("DescribeWebsiteVerifyInfoResponse.Protocol"));
 	 
 	 	return describeWebsiteVerifyInfoResponse;
 	}

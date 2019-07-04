@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateAppPackageResponseUnmarshaller {
 
-	public static UpdateAppPackageResponse unmarshall(UpdateAppPackageResponse updateAppPackageResponse, UnmarshallerContext context) {
+	public static UpdateAppPackageResponse unmarshall(UpdateAppPackageResponse updateAppPackageResponse, UnmarshallerContext _ctx) {
 		
-		updateAppPackageResponse.setRequestId(context.stringValue("UpdateAppPackageResponse.RequestId"));
-		updateAppPackageResponse.setTaskId(context.stringValue("UpdateAppPackageResponse.TaskId"));
+		updateAppPackageResponse.setRequestId(_ctx.stringValue("UpdateAppPackageResponse.RequestId"));
+		updateAppPackageResponse.setTaskId(_ctx.stringValue("UpdateAppPackageResponse.TaskId"));
 	 
 	 	return updateAppPackageResponse;
 	}

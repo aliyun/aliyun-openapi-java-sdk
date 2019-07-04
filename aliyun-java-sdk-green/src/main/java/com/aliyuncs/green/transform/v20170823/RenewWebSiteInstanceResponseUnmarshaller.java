@@ -23,17 +23,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RenewWebSiteInstanceResponseUnmarshaller {
 
-	public static RenewWebSiteInstanceResponse unmarshall(RenewWebSiteInstanceResponse renewWebSiteInstanceResponse, UnmarshallerContext context) {
+	public static RenewWebSiteInstanceResponse unmarshall(RenewWebSiteInstanceResponse renewWebSiteInstanceResponse, UnmarshallerContext _ctx) {
 		
-		renewWebSiteInstanceResponse.setRequestId(context.stringValue("RenewWebSiteInstanceResponse.RequestId"));
-		renewWebSiteInstanceResponse.setCode(context.stringValue("RenewWebSiteInstanceResponse.Code"));
-		renewWebSiteInstanceResponse.setMessage(context.stringValue("RenewWebSiteInstanceResponse.Message"));
-		renewWebSiteInstanceResponse.setOrderId(context.stringValue("RenewWebSiteInstanceResponse.OrderId"));
-		renewWebSiteInstanceResponse.setInstanceId(context.stringValue("RenewWebSiteInstanceResponse.InstanceId"));
+		renewWebSiteInstanceResponse.setRequestId(_ctx.stringValue("RenewWebSiteInstanceResponse.RequestId"));
+		renewWebSiteInstanceResponse.setCode(_ctx.stringValue("RenewWebSiteInstanceResponse.Code"));
+		renewWebSiteInstanceResponse.setMessage(_ctx.stringValue("RenewWebSiteInstanceResponse.Message"));
+		renewWebSiteInstanceResponse.setOrderId(_ctx.stringValue("RenewWebSiteInstanceResponse.OrderId"));
+		renewWebSiteInstanceResponse.setInstanceId(_ctx.stringValue("RenewWebSiteInstanceResponse.InstanceId"));
 
 		List<String> instanceIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("RenewWebSiteInstanceResponse.InstanceIds.Length"); i++) {
-			instanceIds.add(context.stringValue("RenewWebSiteInstanceResponse.InstanceIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("RenewWebSiteInstanceResponse.InstanceIds.Length"); i++) {
+			instanceIds.add(_ctx.stringValue("RenewWebSiteInstanceResponse.InstanceIds["+ i +"]"));
 		}
 		renewWebSiteInstanceResponse.setInstanceIds(instanceIds);
 	 

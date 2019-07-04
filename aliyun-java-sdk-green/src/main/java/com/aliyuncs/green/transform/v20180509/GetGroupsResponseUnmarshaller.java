@@ -20,7 +20,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetGroupsResponseUnmarshaller {
 
-	public static GetGroupsResponse unmarshall(GetGroupsResponse getGroupsResponse, UnmarshallerContext context) {
+	public static GetGroupsResponse unmarshall(GetGroupsResponse getGroupsResponse, UnmarshallerContext _ctx) {
 		
 	 
 	 	return getGroupsResponse;

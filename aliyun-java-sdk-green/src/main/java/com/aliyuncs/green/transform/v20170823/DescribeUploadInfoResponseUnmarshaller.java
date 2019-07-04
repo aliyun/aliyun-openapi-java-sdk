@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUploadInfoResponseUnmarshaller {
 
-	public static DescribeUploadInfoResponse unmarshall(DescribeUploadInfoResponse describeUploadInfoResponse, UnmarshallerContext context) {
+	public static DescribeUploadInfoResponse unmarshall(DescribeUploadInfoResponse describeUploadInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeUploadInfoResponse.setRequestId(context.stringValue("DescribeUploadInfoResponse.RequestId"));
-		describeUploadInfoResponse.setAccessid(context.stringValue("DescribeUploadInfoResponse.Accessid"));
-		describeUploadInfoResponse.setPolicy(context.stringValue("DescribeUploadInfoResponse.Policy"));
-		describeUploadInfoResponse.setSignature(context.stringValue("DescribeUploadInfoResponse.Signature"));
-		describeUploadInfoResponse.setFolder(context.stringValue("DescribeUploadInfoResponse.Folder"));
-		describeUploadInfoResponse.setHost(context.stringValue("DescribeUploadInfoResponse.Host"));
-		describeUploadInfoResponse.setExpire(context.integerValue("DescribeUploadInfoResponse.Expire"));
+		describeUploadInfoResponse.setRequestId(_ctx.stringValue("DescribeUploadInfoResponse.RequestId"));
+		describeUploadInfoResponse.setAccessid(_ctx.stringValue("DescribeUploadInfoResponse.Accessid"));
+		describeUploadInfoResponse.setPolicy(_ctx.stringValue("DescribeUploadInfoResponse.Policy"));
+		describeUploadInfoResponse.setSignature(_ctx.stringValue("DescribeUploadInfoResponse.Signature"));
+		describeUploadInfoResponse.setFolder(_ctx.stringValue("DescribeUploadInfoResponse.Folder"));
+		describeUploadInfoResponse.setHost(_ctx.stringValue("DescribeUploadInfoResponse.Host"));
+		describeUploadInfoResponse.setExpire(_ctx.integerValue("DescribeUploadInfoResponse.Expire"));
 	 
 	 	return describeUploadInfoResponse;
 	}
