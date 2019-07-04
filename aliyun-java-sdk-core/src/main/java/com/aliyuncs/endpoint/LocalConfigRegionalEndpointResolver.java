@@ -1,5 +1,6 @@
 package com.aliyuncs.endpoint;
 
+import com.aliyuncs.utils.IOUtils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -89,12 +90,7 @@ public class LocalConfigRegionalEndpointResolver extends EndpointResolverBase {
     }
 
     protected JsonObject readLocalConfigAsJsonObject() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        InputStream is = classLoader.getResourceAsStream(ENDPOINT_JSON);
-        Scanner scanner = new Scanner(is, "UTF-8");
-        scanner.useDelimiter("\0");
-        String jsonStr = scanner.hasNext() ? scanner.next() : "";
-        scanner.close();
+        String jsonStr = IOUtils.readFiles(ENDPOINT_JSON);
         JsonObject endpointData = (new JsonParser()).parse(jsonStr).getAsJsonObject();
         return endpointData;
     }

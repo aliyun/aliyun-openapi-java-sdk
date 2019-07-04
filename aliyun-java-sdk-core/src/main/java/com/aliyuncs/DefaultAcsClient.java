@@ -14,6 +14,10 @@ import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.reader.Reader;
 import com.aliyuncs.reader.ReaderFactory;
 import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.retry.DefaultRetryPolicy;
+import com.aliyuncs.retry.NoRetryPolicy;
+import com.aliyuncs.retry.RetryContext;
+import com.aliyuncs.retry.RetryPolicy;
 import com.aliyuncs.transform.UnmarshallerContext;
 import com.aliyuncs.unmarshaller.Unmarshaller;
 import com.aliyuncs.unmarshaller.UnmarshallerFactory;
@@ -35,10 +39,11 @@ public class DefaultAcsClient implements IAcsClient {
 
     // Now maxRetryNumber and autoRetry has no effect.
     private int maxRetryNumber = 3;
-    private boolean autoRetry = true;
+    private boolean autoRetry = false;
     private IClientProfile clientProfile = null;
     private AlibabaCloudCredentialsProvider credentialsProvider;
     private DefaultCredentialsProvider defaultCredentialsProvider;
+    private RetryPolicy retryPolicy = new NoRetryPolicy();
 
     private IHttpClient httpClient;
     private EndpointResolver endpointResolver;
@@ -243,12 +248,13 @@ public class DefaultAcsClient implements IAcsClient {
         String timeCost = "";
         HttpResponse response = null;
         String errorMessage = "";
+        ProductDomain domain = null;
+        RetryContext retryContext = new RetryContext(maxRetryNumber);
         try {
             FormatType requestFormatType = request.getSysAcceptFormat();
             if (null != requestFormatType) {
                 format = requestFormatType;
             }
-            ProductDomain domain = null;
             if (request.getSysProductDomain() != null) {
                 domain = request.getSysProductDomain();
             } else {
@@ -269,6 +275,10 @@ public class DefaultAcsClient implements IAcsClient {
             request.putHeaderParameter("User-Agent", UserAgentConfig.resolve(request.getSysUserAgentConfig(),
                     this.userAgentConfig));
             try {
+                retryContext.setOriginalRequest(request);
+                retryContext.setActionName(request.getSysActionName());
+                retryContext.setVersion(request.getSysVersion());
+                retryContext.setProductCode(request.getSysProduct());
 
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
                 HttpUtil.debugHttpRequest(request);
@@ -278,24 +288,33 @@ public class DefaultAcsClient implements IAcsClient {
                 long end = System.nanoTime();
                 timeCost = TimeUnit.NANOSECONDS.toMillis(end - start) + "ms";
                 HttpUtil.debugHttpResponse(response);
+                retryContext.setHttpStatusCode(String.valueOf(response.getStatus()));
                 return response;
             } catch (SocketTimeoutException exp) {
+                retryContext.setException(exp);
                 errorMessage = exp.getMessage();
                 throw new ClientException("SDK.ServerUnreachable",
                         "SocketTimeoutException has occurred on a socket read or accept.The url is " +
                                 request.getSysUrl(), exp);
             } catch (IOException exp) {
+                retryContext.setException(exp);
                 errorMessage = exp.getMessage();
                 throw new ClientException("SDK.ServerUnreachable",
                         "Server unreachable: connection " + request.getSysUrl() + " failed", exp);
             }
         } catch (InvalidKeyException exp) {
+            retryContext.setException(exp);
             errorMessage = exp.getMessage();
             throw new ClientException("SDK.InvalidAccessSecret", "Specified access secret is not valid.", exp);
         } catch (NoSuchAlgorithmException exp) {
+            retryContext.setException(exp);
             errorMessage = exp.getMessage();
             throw new ClientException("SDK.InvalidMD5Algorithm", "MD5 hash is not supported by client side.", exp);
         } finally {
+            HttpResponse retry = doActionWithRetry(retryContext, signer, format, domain, credentials, logger);
+            if (retry != null){
+                response = retry;
+            }
             if (null != logger) {
                 try {
                     LogUtils.LogUnit logUnit = LogUtils.createLogUnit(request, response);
@@ -309,6 +328,37 @@ public class DefaultAcsClient implements IAcsClient {
                 }
             }
         }
+    }
+    public <T extends AcsResponse> HttpResponse doActionWithRetry(RetryContext retryContext, Signer signer,
+                                                                  FormatType format, ProductDomain domain,
+                                                                   AlibabaCloudCredentials credentials, Logger logger) {
+        HttpResponse response = null;
+        HttpRequest httpRequest;
+        while (this.autoRetry) {
+            retryContext.autoIncrement();
+            if (logger != null){
+                logger.debug(String.format("Retry needed. Request:%s Retries :%d",
+                        retryContext.getOriginalRequest().getSysActionName(), retryContext.getRetriesAttempted()));
+            }
+            if (this.retryPolicy.shouldRetry(retryContext)) {
+                try {
+                    TimeUnit.MILLISECONDS.sleep(this.retryPolicy.computeDelayBeforeNextRetry(retryContext));
+                    httpRequest = retryContext.getOriginalRequest().signRequest(signer, credentials, format, domain);
+                    response = this.httpClient.syncInvoke(httpRequest);
+                    String httpStatusCode = String.valueOf(response.getStatus());
+                    if ("200".equals(httpStatusCode)) {
+                        return response;
+                    }
+                    retryContext.setHttpStatusCode(httpStatusCode);
+                } catch (Exception e) {
+                    retryContext.setException(e);
+                    e.printStackTrace();
+                }
+            } else {
+                break;
+            }
+        }
+        return response;
     }
 
     /**
@@ -404,7 +454,22 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Deprecated
     public void setAutoRetry(boolean autoRetry) {
-        this.autoRetry = autoRetry;
+        if (autoRetry) {
+            enableRetry();
+        } else {
+            disableRetry();
+        }
+    }
+
+    public void enableRetry() {
+        if (this.retryPolicy instanceof NoRetryPolicy) {
+            this.retryPolicy = new DefaultRetryPolicy(this.maxRetryNumber);
+        }
+        this.autoRetry = true;
+    }
+
+    public void disableRetry() {
+        this.autoRetry = false;
     }
 
     @Deprecated

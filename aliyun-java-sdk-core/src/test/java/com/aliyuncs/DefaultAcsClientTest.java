@@ -17,6 +17,7 @@ import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
+import com.aliyuncs.retry.RetryContext;
 import com.aliyuncs.utils.LogUtils;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -30,6 +31,7 @@ import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -101,9 +103,9 @@ public class DefaultAcsClientTest {
         DefaultProfile profile = mock(DefaultProfile.class);
         when(profile.getCredential()).thenReturn(credential);
         DefaultAcsClient client = new DefaultAcsClient(profile);
-        Assert.assertTrue(client.isAutoRetry());
-        client.setAutoRetry(false);
         Assert.assertFalse(client.isAutoRetry());
+        client.setAutoRetry(true);
+        Assert.assertTrue(client.isAutoRetry());
     }
 
     @SuppressWarnings("deprecation")
@@ -806,6 +808,47 @@ public class DefaultAcsClientTest {
 
         client.doActionWithIgnoreSSL(request, true);
         Assert.assertTrue(request.isIgnoreSSLCerts());
+    }
+
+    @Test
+    public void doActionWithRetryTest() throws IOException, ClientException, NoSuchAlgorithmException, InvalidKeyException {
+        HttpClientConfig config = new HttpClientConfig();
+        config.setCompatibleMode(true);
+        DefaultProfile profile = DefaultProfile.getProfile("test", "test", "test");
+        profile.setHttpClientConfig(config);
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        client.enableRetry();
+        IHttpClient httpClient = mock(IHttpClient.class);
+        HttpResponse httpResponse = new HttpResponse();
+        httpResponse.setStatus(500);
+        when(httpClient.syncInvoke(null)).thenReturn(null);
+        client.setHttpClient(httpClient);
+        RetryContext retryContext = new RetryContext(3);
+        retryContext.setProductCode("ecs");
+        retryContext.setVersion("2014-05-26");
+        retryContext.setActionName("DescribeAccessPoints");
+        retryContext.setHttpStatusCode("200");
+        AcsRequest acsRequest = mock(AcsRequest.class);
+        when(acsRequest.getSysActionName()).thenReturn("test");
+        when(acsRequest.signRequest(null, null, null, null)).thenReturn(null);
+        retryContext.setOriginalRequest(acsRequest);
+        HttpResponse resault = client.doActionWithRetry(retryContext,
+                null, null, null, null, null);
+        Assert.assertNull(resault);
+
+        Logger logger = LoggerFactory.getLogger(DefaultAcsClientTest.class);
+        httpResponse.setStatus(200);
+        retryContext.setHttpStatusCode("500");
+        when(httpClient.syncInvoke(null)).thenReturn(httpResponse);
+        resault = client.doActionWithRetry(retryContext,
+                null, null, null, null, logger);
+        Assert.assertTrue(resault.equals(httpResponse));
+
+        httpResponse.setStatus(500);
+        retryContext.setHttpStatusCode("500");
+        resault = client.doActionWithRetry(retryContext,
+                null, null, null, null, null);
+        Assert.assertTrue(resault.equals(httpResponse));
     }
 
 }
