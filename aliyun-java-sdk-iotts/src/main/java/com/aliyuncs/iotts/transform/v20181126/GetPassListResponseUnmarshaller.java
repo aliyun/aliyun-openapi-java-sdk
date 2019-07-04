@@ -48,8 +48,8 @@ public class GetPassListResponseUnmarshaller {
 			listItem.setId(_ctx.longValue("GetPassListResponse.Data.List["+ i +"].Id"));
 			listItem.setJobId(_ctx.longValue("GetPassListResponse.Data.List["+ i +"].JobId"));
 			listItem.setCertifyId(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].CertifyId"));
-			listItem.setGmtCreate(_ctx.longValue("GetPassListResponse.Data.List["+ i +"].GmtCreate"));
-			listItem.setGmtModified(_ctx.longValue("GetPassListResponse.Data.List["+ i +"].GmtModified"));
+			listItem.setGmtCreate(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].GmtCreate"));
+			listItem.setGmtModified(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].GmtModified"));
 			listItem.setCompany(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].Company"));
 			listItem.setBrand(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].Brand"));
 			listItem.setModel(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].Model"));
@@ -90,7 +90,7 @@ public class GetPassListResponseUnmarshaller {
 			listItem.setUrlPhotoBack(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].UrlPhotoBack"));
 			listItem.setUrlPhotoLink(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].UrlPhotoLink"));
 			listItem.setRoutineKey(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].RoutineKey"));
-			listItem.setGmtPass(_ctx.longValue("GetPassListResponse.Data.List["+ i +"].GmtPass"));
+			listItem.setGmtPass(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].GmtPass"));
 			listItem.setBuyLink(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].BuyLink"));
 			listItem.setHwVersion(_ctx.stringValue("GetPassListResponse.Data.List["+ i +"].HwVersion"));
 			listItem.setChipType(_ctx.integerValue("GetPassListResponse.Data.List["+ i +"].ChipType"));

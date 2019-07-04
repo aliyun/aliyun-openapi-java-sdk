@@ -175,9 +175,9 @@ public class GetPassListResponse extends AcsResponse {
 
 			private String certifyId;
 
-			private Long gmtCreate;
+			private String gmtCreate;
 
-			private Long gmtModified;
+			private String gmtModified;
 
 			private String company;
 
@@ -259,7 +259,7 @@ public class GetPassListResponse extends AcsResponse {
 
 			private String routineKey;
 
-			private Long gmtPass;
+			private String gmtPass;
 
 			private String buyLink;
 
@@ -351,19 +351,19 @@ public class GetPassListResponse extends AcsResponse {
 				this.certifyId = certifyId;
 			}
 
-			public Long getGmtCreate() {
+			public String getGmtCreate() {
 				return this.gmtCreate;
 			}
 
-			public void setGmtCreate(Long gmtCreate) {
+			public void setGmtCreate(String gmtCreate) {
 				this.gmtCreate = gmtCreate;
 			}
 
-			public Long getGmtModified() {
+			public String getGmtModified() {
 				return this.gmtModified;
 			}
 
-			public void setGmtModified(Long gmtModified) {
+			public void setGmtModified(String gmtModified) {
 				this.gmtModified = gmtModified;
 			}
 
@@ -687,11 +687,11 @@ public class GetPassListResponse extends AcsResponse {
 				this.routineKey = routineKey;
 			}
 
-			public Long getGmtPass() {
+			public String getGmtPass() {
 				return this.gmtPass;
 			}
 
-			public void setGmtPass(Long gmtPass) {
+			public void setGmtPass(String gmtPass) {
 				this.gmtPass = gmtPass;
 			}
 
