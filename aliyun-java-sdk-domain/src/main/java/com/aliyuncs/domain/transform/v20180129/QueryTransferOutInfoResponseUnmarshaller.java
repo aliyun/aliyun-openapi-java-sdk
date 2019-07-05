@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTransferOutInfoResponseUnmarshaller {
 
-	public static QueryTransferOutInfoResponse unmarshall(QueryTransferOutInfoResponse queryTransferOutInfoResponse, UnmarshallerContext context) {
+	public static QueryTransferOutInfoResponse unmarshall(QueryTransferOutInfoResponse queryTransferOutInfoResponse, UnmarshallerContext _ctx) {
 		
-		queryTransferOutInfoResponse.setRequestId(context.stringValue("QueryTransferOutInfoResponse.RequestId"));
-		queryTransferOutInfoResponse.setStatus(context.integerValue("QueryTransferOutInfoResponse.Status"));
-		queryTransferOutInfoResponse.setEmail(context.stringValue("QueryTransferOutInfoResponse.Email"));
-		queryTransferOutInfoResponse.setTransferAuthorizationCodeSendDate(context.stringValue("QueryTransferOutInfoResponse.TransferAuthorizationCodeSendDate"));
-		queryTransferOutInfoResponse.setExpirationDate(context.stringValue("QueryTransferOutInfoResponse.ExpirationDate"));
-		queryTransferOutInfoResponse.setPendingRequestDate(context.stringValue("QueryTransferOutInfoResponse.PendingRequestDate"));
-		queryTransferOutInfoResponse.setResultCode(context.stringValue("QueryTransferOutInfoResponse.ResultCode"));
-		queryTransferOutInfoResponse.setResultMsg(context.stringValue("QueryTransferOutInfoResponse.ResultMsg"));
+		queryTransferOutInfoResponse.setRequestId(_ctx.stringValue("QueryTransferOutInfoResponse.RequestId"));
+		queryTransferOutInfoResponse.setStatus(_ctx.integerValue("QueryTransferOutInfoResponse.Status"));
+		queryTransferOutInfoResponse.setEmail(_ctx.stringValue("QueryTransferOutInfoResponse.Email"));
+		queryTransferOutInfoResponse.setTransferAuthorizationCodeSendDate(_ctx.stringValue("QueryTransferOutInfoResponse.TransferAuthorizationCodeSendDate"));
+		queryTransferOutInfoResponse.setExpirationDate(_ctx.stringValue("QueryTransferOutInfoResponse.ExpirationDate"));
+		queryTransferOutInfoResponse.setPendingRequestDate(_ctx.stringValue("QueryTransferOutInfoResponse.PendingRequestDate"));
+		queryTransferOutInfoResponse.setResultCode(_ctx.stringValue("QueryTransferOutInfoResponse.ResultCode"));
+		queryTransferOutInfoResponse.setResultMsg(_ctx.stringValue("QueryTransferOutInfoResponse.ResultMsg"));
 	 
 	 	return queryTransferOutInfoResponse;
 	}

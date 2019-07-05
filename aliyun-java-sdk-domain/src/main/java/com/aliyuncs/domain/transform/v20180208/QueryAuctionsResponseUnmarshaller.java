@@ -24,39 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAuctionsResponseUnmarshaller {
 
-	public static QueryAuctionsResponse unmarshall(QueryAuctionsResponse queryAuctionsResponse, UnmarshallerContext context) {
+	public static QueryAuctionsResponse unmarshall(QueryAuctionsResponse queryAuctionsResponse, UnmarshallerContext _ctx) {
 		
-		queryAuctionsResponse.setRequestId(context.stringValue("QueryAuctionsResponse.RequestId"));
-		queryAuctionsResponse.setTotalItemNum(context.integerValue("QueryAuctionsResponse.TotalItemNum"));
-		queryAuctionsResponse.setCurrentPageNum(context.integerValue("QueryAuctionsResponse.CurrentPageNum"));
-		queryAuctionsResponse.setPageSize(context.integerValue("QueryAuctionsResponse.PageSize"));
-		queryAuctionsResponse.setTotalPageNum(context.integerValue("QueryAuctionsResponse.TotalPageNum"));
+		queryAuctionsResponse.setRequestId(_ctx.stringValue("QueryAuctionsResponse.RequestId"));
+		queryAuctionsResponse.setTotalItemNum(_ctx.integerValue("QueryAuctionsResponse.TotalItemNum"));
+		queryAuctionsResponse.setCurrentPageNum(_ctx.integerValue("QueryAuctionsResponse.CurrentPageNum"));
+		queryAuctionsResponse.setPageSize(_ctx.integerValue("QueryAuctionsResponse.PageSize"));
+		queryAuctionsResponse.setTotalPageNum(_ctx.integerValue("QueryAuctionsResponse.TotalPageNum"));
 
 		List<AuctionDetail> data = new ArrayList<AuctionDetail>();
-		for (int i = 0; i < context.lengthValue("QueryAuctionsResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAuctionsResponse.Data.Length"); i++) {
 			AuctionDetail auctionDetail = new AuctionDetail();
-			auctionDetail.setDomainName(context.stringValue("QueryAuctionsResponse.Data["+ i +"].DomainName"));
-			auctionDetail.setAuctionId(context.stringValue("QueryAuctionsResponse.Data["+ i +"].AuctionId"));
-			auctionDetail.setDomainType(context.stringValue("QueryAuctionsResponse.Data["+ i +"].DomainType"));
-			auctionDetail.setBookedPartner(context.stringValue("QueryAuctionsResponse.Data["+ i +"].BookedPartner"));
-			auctionDetail.setPartnerType(context.stringValue("QueryAuctionsResponse.Data["+ i +"].PartnerType"));
-			auctionDetail.setCurrency(context.stringValue("QueryAuctionsResponse.Data["+ i +"].Currency"));
-			auctionDetail.setYourCurrentBid(context.floatValue("QueryAuctionsResponse.Data["+ i +"].YourCurrentBid"));
-			auctionDetail.setYourMaxBid(context.floatValue("QueryAuctionsResponse.Data["+ i +"].YourMaxBid"));
-			auctionDetail.setHighBid(context.floatValue("QueryAuctionsResponse.Data["+ i +"].HighBid"));
-			auctionDetail.setNextValidBid(context.floatValue("QueryAuctionsResponse.Data["+ i +"].NextValidBid"));
-			auctionDetail.setReserveMet(context.booleanValue("QueryAuctionsResponse.Data["+ i +"].ReserveMet"));
-			auctionDetail.setTransferInPrice(context.floatValue("QueryAuctionsResponse.Data["+ i +"].TransferInPrice"));
-			auctionDetail.setPayPrice(context.floatValue("QueryAuctionsResponse.Data["+ i +"].PayPrice"));
-			auctionDetail.setHighBidder(context.stringValue("QueryAuctionsResponse.Data["+ i +"].HighBidder"));
-			auctionDetail.setStatus(context.stringValue("QueryAuctionsResponse.Data["+ i +"].Status"));
-			auctionDetail.setPayStatus(context.stringValue("QueryAuctionsResponse.Data["+ i +"].PayStatus"));
-			auctionDetail.setProduceStatus(context.stringValue("QueryAuctionsResponse.Data["+ i +"].ProduceStatus"));
-			auctionDetail.setAuctionEndTime(context.longValue("QueryAuctionsResponse.Data["+ i +"].AuctionEndTime"));
-			auctionDetail.setBookEndTime(context.longValue("QueryAuctionsResponse.Data["+ i +"].BookEndTime"));
-			auctionDetail.setPayEndTime(context.longValue("QueryAuctionsResponse.Data["+ i +"].PayEndTime"));
-			auctionDetail.setDeliveryTime(context.longValue("QueryAuctionsResponse.Data["+ i +"].DeliveryTime"));
-			auctionDetail.setFailCode(context.stringValue("QueryAuctionsResponse.Data["+ i +"].FailCode"));
+			auctionDetail.setDomainName(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].DomainName"));
+			auctionDetail.setAuctionId(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].AuctionId"));
+			auctionDetail.setDomainType(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].DomainType"));
+			auctionDetail.setBookedPartner(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].BookedPartner"));
+			auctionDetail.setPartnerType(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].PartnerType"));
+			auctionDetail.setCurrency(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].Currency"));
+			auctionDetail.setYourCurrentBid(_ctx.floatValue("QueryAuctionsResponse.Data["+ i +"].YourCurrentBid"));
+			auctionDetail.setYourMaxBid(_ctx.floatValue("QueryAuctionsResponse.Data["+ i +"].YourMaxBid"));
+			auctionDetail.setHighBid(_ctx.floatValue("QueryAuctionsResponse.Data["+ i +"].HighBid"));
+			auctionDetail.setNextValidBid(_ctx.floatValue("QueryAuctionsResponse.Data["+ i +"].NextValidBid"));
+			auctionDetail.setReserveMet(_ctx.booleanValue("QueryAuctionsResponse.Data["+ i +"].ReserveMet"));
+			auctionDetail.setTransferInPrice(_ctx.floatValue("QueryAuctionsResponse.Data["+ i +"].TransferInPrice"));
+			auctionDetail.setPayPrice(_ctx.floatValue("QueryAuctionsResponse.Data["+ i +"].PayPrice"));
+			auctionDetail.setHighBidder(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].HighBidder"));
+			auctionDetail.setStatus(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].Status"));
+			auctionDetail.setPayStatus(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].PayStatus"));
+			auctionDetail.setProduceStatus(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].ProduceStatus"));
+			auctionDetail.setAuctionEndTime(_ctx.longValue("QueryAuctionsResponse.Data["+ i +"].AuctionEndTime"));
+			auctionDetail.setBookEndTime(_ctx.longValue("QueryAuctionsResponse.Data["+ i +"].BookEndTime"));
+			auctionDetail.setPayEndTime(_ctx.longValue("QueryAuctionsResponse.Data["+ i +"].PayEndTime"));
+			auctionDetail.setDeliveryTime(_ctx.longValue("QueryAuctionsResponse.Data["+ i +"].DeliveryTime"));
+			auctionDetail.setFailCode(_ctx.stringValue("QueryAuctionsResponse.Data["+ i +"].FailCode"));
 
 			data.add(auctionDetail);
 		}

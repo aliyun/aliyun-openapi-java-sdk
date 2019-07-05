@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDomainSuffixResponseUnmarshaller {
 
-	public static QueryDomainSuffixResponse unmarshall(QueryDomainSuffixResponse queryDomainSuffixResponse, UnmarshallerContext context) {
+	public static QueryDomainSuffixResponse unmarshall(QueryDomainSuffixResponse queryDomainSuffixResponse, UnmarshallerContext _ctx) {
 		
-		queryDomainSuffixResponse.setRequestId(context.stringValue("QueryDomainSuffixResponse.RequestId"));
+		queryDomainSuffixResponse.setRequestId(_ctx.stringValue("QueryDomainSuffixResponse.RequestId"));
 
 		List<String> suffixList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryDomainSuffixResponse.SuffixList.Length"); i++) {
-			suffixList.add(context.stringValue("QueryDomainSuffixResponse.SuffixList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryDomainSuffixResponse.SuffixList.Length"); i++) {
+			suffixList.add(_ctx.stringValue("QueryDomainSuffixResponse.SuffixList["+ i +"]"));
 		}
 		queryDomainSuffixResponse.setSuffixList(suffixList);
 	 

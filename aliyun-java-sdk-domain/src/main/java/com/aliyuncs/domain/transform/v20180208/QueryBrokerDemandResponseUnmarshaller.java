@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryBrokerDemandResponseUnmarshaller {
 
-	public static QueryBrokerDemandResponse unmarshall(QueryBrokerDemandResponse queryBrokerDemandResponse, UnmarshallerContext context) {
+	public static QueryBrokerDemandResponse unmarshall(QueryBrokerDemandResponse queryBrokerDemandResponse, UnmarshallerContext _ctx) {
 		
-		queryBrokerDemandResponse.setRequestId(context.stringValue("QueryBrokerDemandResponse.RequestId"));
-		queryBrokerDemandResponse.setTotalItemNum(context.integerValue("QueryBrokerDemandResponse.TotalItemNum"));
-		queryBrokerDemandResponse.setCurrentPageNum(context.integerValue("QueryBrokerDemandResponse.CurrentPageNum"));
-		queryBrokerDemandResponse.setPageSize(context.integerValue("QueryBrokerDemandResponse.PageSize"));
-		queryBrokerDemandResponse.setTotalPageNum(context.integerValue("QueryBrokerDemandResponse.TotalPageNum"));
+		queryBrokerDemandResponse.setRequestId(_ctx.stringValue("QueryBrokerDemandResponse.RequestId"));
+		queryBrokerDemandResponse.setTotalItemNum(_ctx.integerValue("QueryBrokerDemandResponse.TotalItemNum"));
+		queryBrokerDemandResponse.setCurrentPageNum(_ctx.integerValue("QueryBrokerDemandResponse.CurrentPageNum"));
+		queryBrokerDemandResponse.setPageSize(_ctx.integerValue("QueryBrokerDemandResponse.PageSize"));
+		queryBrokerDemandResponse.setTotalPageNum(_ctx.integerValue("QueryBrokerDemandResponse.TotalPageNum"));
 
 		List<Demand> data = new ArrayList<Demand>();
-		for (int i = 0; i < context.lengthValue("QueryBrokerDemandResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryBrokerDemandResponse.Data.Length"); i++) {
 			Demand demand = new Demand();
-			demand.setBizId(context.stringValue("QueryBrokerDemandResponse.Data["+ i +"].BizId"));
-			demand.setStatus(context.stringValue("QueryBrokerDemandResponse.Data["+ i +"].Status"));
-			demand.setDemandDomain(context.stringValue("QueryBrokerDemandResponse.Data["+ i +"].DemandDomain"));
-			demand.setDemandPrice(context.floatValue("QueryBrokerDemandResponse.Data["+ i +"].DemandPrice"));
-			demand.setMobile(context.stringValue("QueryBrokerDemandResponse.Data["+ i +"].Mobile"));
-			demand.setDescription(context.stringValue("QueryBrokerDemandResponse.Data["+ i +"].Description"));
-			demand.setPublishTime(context.longValue("QueryBrokerDemandResponse.Data["+ i +"].PublishTime"));
-			demand.setPayDomain(context.stringValue("QueryBrokerDemandResponse.Data["+ i +"].PayDomain"));
-			demand.setPayPrice(context.floatValue("QueryBrokerDemandResponse.Data["+ i +"].PayPrice"));
-			demand.setPayTime(context.longValue("QueryBrokerDemandResponse.Data["+ i +"].PayTime"));
-			demand.setProduceType(context.integerValue("QueryBrokerDemandResponse.Data["+ i +"].ProduceType"));
-			demand.setBargainSellerPrice(context.floatValue("QueryBrokerDemandResponse.Data["+ i +"].BargainSellerPrice"));
-			demand.setBargainSellerMobile(context.stringValue("QueryBrokerDemandResponse.Data["+ i +"].BargainSellerMobile"));
-			demand.setServicePayPrice(context.floatValue("QueryBrokerDemandResponse.Data["+ i +"].ServicePayPrice"));
+			demand.setBizId(_ctx.stringValue("QueryBrokerDemandResponse.Data["+ i +"].BizId"));
+			demand.setStatus(_ctx.stringValue("QueryBrokerDemandResponse.Data["+ i +"].Status"));
+			demand.setDemandDomain(_ctx.stringValue("QueryBrokerDemandResponse.Data["+ i +"].DemandDomain"));
+			demand.setDemandPrice(_ctx.floatValue("QueryBrokerDemandResponse.Data["+ i +"].DemandPrice"));
+			demand.setMobile(_ctx.stringValue("QueryBrokerDemandResponse.Data["+ i +"].Mobile"));
+			demand.setDescription(_ctx.stringValue("QueryBrokerDemandResponse.Data["+ i +"].Description"));
+			demand.setPublishTime(_ctx.longValue("QueryBrokerDemandResponse.Data["+ i +"].PublishTime"));
+			demand.setPayDomain(_ctx.stringValue("QueryBrokerDemandResponse.Data["+ i +"].PayDomain"));
+			demand.setPayPrice(_ctx.floatValue("QueryBrokerDemandResponse.Data["+ i +"].PayPrice"));
+			demand.setPayTime(_ctx.longValue("QueryBrokerDemandResponse.Data["+ i +"].PayTime"));
+			demand.setProduceType(_ctx.integerValue("QueryBrokerDemandResponse.Data["+ i +"].ProduceType"));
+			demand.setBargainSellerPrice(_ctx.floatValue("QueryBrokerDemandResponse.Data["+ i +"].BargainSellerPrice"));
+			demand.setBargainSellerMobile(_ctx.stringValue("QueryBrokerDemandResponse.Data["+ i +"].BargainSellerMobile"));
+			demand.setServicePayPrice(_ctx.floatValue("QueryBrokerDemandResponse.Data["+ i +"].ServicePayPrice"));
 
 			data.add(demand);
 		}

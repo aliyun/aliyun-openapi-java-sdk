@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetQualificationUploadPolicyResponseUnmarshaller {
 
-	public static GetQualificationUploadPolicyResponse unmarshall(GetQualificationUploadPolicyResponse getQualificationUploadPolicyResponse, UnmarshallerContext context) {
+	public static GetQualificationUploadPolicyResponse unmarshall(GetQualificationUploadPolicyResponse getQualificationUploadPolicyResponse, UnmarshallerContext _ctx) {
 		
-		getQualificationUploadPolicyResponse.setRequestId(context.stringValue("GetQualificationUploadPolicyResponse.RequestId"));
-		getQualificationUploadPolicyResponse.setAccessid(context.stringValue("GetQualificationUploadPolicyResponse.Accessid"));
-		getQualificationUploadPolicyResponse.setPolicy(context.stringValue("GetQualificationUploadPolicyResponse.Policy"));
-		getQualificationUploadPolicyResponse.setSignature(context.stringValue("GetQualificationUploadPolicyResponse.Signature"));
-		getQualificationUploadPolicyResponse.setDir(context.stringValue("GetQualificationUploadPolicyResponse.Dir"));
-		getQualificationUploadPolicyResponse.setPrefix(context.stringValue("GetQualificationUploadPolicyResponse.Prefix"));
-		getQualificationUploadPolicyResponse.setHost(context.stringValue("GetQualificationUploadPolicyResponse.Host"));
-		getQualificationUploadPolicyResponse.setExpire(context.stringValue("GetQualificationUploadPolicyResponse.Expire"));
+		getQualificationUploadPolicyResponse.setRequestId(_ctx.stringValue("GetQualificationUploadPolicyResponse.RequestId"));
+		getQualificationUploadPolicyResponse.setAccessid(_ctx.stringValue("GetQualificationUploadPolicyResponse.Accessid"));
+		getQualificationUploadPolicyResponse.setPolicy(_ctx.stringValue("GetQualificationUploadPolicyResponse.Policy"));
+		getQualificationUploadPolicyResponse.setSignature(_ctx.stringValue("GetQualificationUploadPolicyResponse.Signature"));
+		getQualificationUploadPolicyResponse.setDir(_ctx.stringValue("GetQualificationUploadPolicyResponse.Dir"));
+		getQualificationUploadPolicyResponse.setPrefix(_ctx.stringValue("GetQualificationUploadPolicyResponse.Prefix"));
+		getQualificationUploadPolicyResponse.setHost(_ctx.stringValue("GetQualificationUploadPolicyResponse.Host"));
+		getQualificationUploadPolicyResponse.setExpire(_ctx.stringValue("GetQualificationUploadPolicyResponse.Expire"));
 	 
 	 	return getQualificationUploadPolicyResponse;
 	}

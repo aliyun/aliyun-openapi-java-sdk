@@ -24,40 +24,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ScrollDomainListResponseUnmarshaller {
 
-	public static ScrollDomainListResponse unmarshall(ScrollDomainListResponse scrollDomainListResponse, UnmarshallerContext context) {
+	public static ScrollDomainListResponse unmarshall(ScrollDomainListResponse scrollDomainListResponse, UnmarshallerContext _ctx) {
 		
-		scrollDomainListResponse.setRequestId(context.stringValue("ScrollDomainListResponse.RequestId"));
-		scrollDomainListResponse.setTotalItemNum(context.integerValue("ScrollDomainListResponse.TotalItemNum"));
-		scrollDomainListResponse.setPageSize(context.integerValue("ScrollDomainListResponse.PageSize"));
-		scrollDomainListResponse.setScrollId(context.stringValue("ScrollDomainListResponse.ScrollId"));
+		scrollDomainListResponse.setRequestId(_ctx.stringValue("ScrollDomainListResponse.RequestId"));
+		scrollDomainListResponse.setTotalItemNum(_ctx.integerValue("ScrollDomainListResponse.TotalItemNum"));
+		scrollDomainListResponse.setPageSize(_ctx.integerValue("ScrollDomainListResponse.PageSize"));
+		scrollDomainListResponse.setScrollId(_ctx.stringValue("ScrollDomainListResponse.ScrollId"));
 
 		List<Domain> data = new ArrayList<Domain>();
-		for (int i = 0; i < context.lengthValue("ScrollDomainListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ScrollDomainListResponse.Data.Length"); i++) {
 			Domain domain = new Domain();
-			domain.setDomainName(context.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainName"));
-			domain.setInstanceId(context.stringValue("ScrollDomainListResponse.Data["+ i +"].InstanceId"));
-			domain.setExpirationDate(context.stringValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDate"));
-			domain.setRegistrationDate(context.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrationDate"));
-			domain.setDomainType(context.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainType"));
-			domain.setDomainStatus(context.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainStatus"));
-			domain.setProductId(context.stringValue("ScrollDomainListResponse.Data["+ i +"].ProductId"));
-			domain.setExpirationDateLong(context.longValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDateLong"));
-			domain.setRegistrationDateLong(context.longValue("ScrollDomainListResponse.Data["+ i +"].RegistrationDateLong"));
-			domain.setPremium(context.booleanValue("ScrollDomainListResponse.Data["+ i +"].Premium"));
-			domain.setDomainAuditStatus(context.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainAuditStatus"));
-			domain.setExpirationDateStatus(context.stringValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDateStatus"));
-			domain.setRegistrantType(context.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrantType"));
-			domain.setDomainGroupId(context.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainGroupId"));
-			domain.setRemark(context.stringValue("ScrollDomainListResponse.Data["+ i +"].Remark"));
-			domain.setDomainGroupName(context.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainGroupName"));
-			domain.setExpirationCurrDateDiff(context.integerValue("ScrollDomainListResponse.Data["+ i +"].ExpirationCurrDateDiff"));
-			domain.setEmail(context.stringValue("ScrollDomainListResponse.Data["+ i +"].Email"));
-			domain.setZhRegistrantOrganization(context.stringValue("ScrollDomainListResponse.Data["+ i +"].ZhRegistrantOrganization"));
-			domain.setRegistrantOrganization(context.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrantOrganization"));
+			domain.setDomainName(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainName"));
+			domain.setInstanceId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].InstanceId"));
+			domain.setExpirationDate(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDate"));
+			domain.setRegistrationDate(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrationDate"));
+			domain.setDomainType(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainType"));
+			domain.setDomainStatus(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainStatus"));
+			domain.setProductId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ProductId"));
+			domain.setExpirationDateLong(_ctx.longValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDateLong"));
+			domain.setRegistrationDateLong(_ctx.longValue("ScrollDomainListResponse.Data["+ i +"].RegistrationDateLong"));
+			domain.setPremium(_ctx.booleanValue("ScrollDomainListResponse.Data["+ i +"].Premium"));
+			domain.setDomainAuditStatus(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainAuditStatus"));
+			domain.setExpirationDateStatus(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ExpirationDateStatus"));
+			domain.setRegistrantType(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrantType"));
+			domain.setDomainGroupId(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainGroupId"));
+			domain.setRemark(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].Remark"));
+			domain.setDomainGroupName(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DomainGroupName"));
+			domain.setExpirationCurrDateDiff(_ctx.integerValue("ScrollDomainListResponse.Data["+ i +"].ExpirationCurrDateDiff"));
+			domain.setEmail(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].Email"));
+			domain.setZhRegistrantOrganization(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].ZhRegistrantOrganization"));
+			domain.setRegistrantOrganization(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].RegistrantOrganization"));
 
 			List<String> dnsList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ScrollDomainListResponse.Data["+ i +"].DnsList.Length"); j++) {
-				dnsList.add(context.stringValue("ScrollDomainListResponse.Data["+ i +"].DnsList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ScrollDomainListResponse.Data["+ i +"].DnsList.Length"); j++) {
+				dnsList.add(_ctx.stringValue("ScrollDomainListResponse.Data["+ i +"].DnsList["+ j +"]"));
 			}
 			domain.setDnsList(dnsList);
 

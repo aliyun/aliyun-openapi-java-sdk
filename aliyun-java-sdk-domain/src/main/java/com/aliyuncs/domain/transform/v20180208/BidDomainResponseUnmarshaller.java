@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BidDomainResponseUnmarshaller {
 
-	public static BidDomainResponse unmarshall(BidDomainResponse bidDomainResponse, UnmarshallerContext context) {
+	public static BidDomainResponse unmarshall(BidDomainResponse bidDomainResponse, UnmarshallerContext _ctx) {
 		
-		bidDomainResponse.setRequestId(context.stringValue("BidDomainResponse.RequestId"));
-		bidDomainResponse.setAuctionId(context.stringValue("BidDomainResponse.AuctionId"));
+		bidDomainResponse.setRequestId(_ctx.stringValue("BidDomainResponse.RequestId"));
+		bidDomainResponse.setAuctionId(_ctx.stringValue("BidDomainResponse.AuctionId"));
 	 
 	 	return bidDomainResponse;
 	}

@@ -20,30 +20,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTransferInByInstanceIdResponseUnmarshaller {
 
-	public static QueryTransferInByInstanceIdResponse unmarshall(QueryTransferInByInstanceIdResponse queryTransferInByInstanceIdResponse, UnmarshallerContext context) {
+	public static QueryTransferInByInstanceIdResponse unmarshall(QueryTransferInByInstanceIdResponse queryTransferInByInstanceIdResponse, UnmarshallerContext _ctx) {
 		
-		queryTransferInByInstanceIdResponse.setRequestId(context.stringValue("QueryTransferInByInstanceIdResponse.RequestId"));
-		queryTransferInByInstanceIdResponse.setSubmissionDate(context.stringValue("QueryTransferInByInstanceIdResponse.SubmissionDate"));
-		queryTransferInByInstanceIdResponse.setModificationDate(context.stringValue("QueryTransferInByInstanceIdResponse.ModificationDate"));
-		queryTransferInByInstanceIdResponse.setUserId(context.stringValue("QueryTransferInByInstanceIdResponse.UserId"));
-		queryTransferInByInstanceIdResponse.setInstanceId(context.stringValue("QueryTransferInByInstanceIdResponse.InstanceId"));
-		queryTransferInByInstanceIdResponse.setDomainName(context.stringValue("QueryTransferInByInstanceIdResponse.DomainName"));
-		queryTransferInByInstanceIdResponse.setStatus(context.integerValue("QueryTransferInByInstanceIdResponse.Status"));
-		queryTransferInByInstanceIdResponse.setSimpleTransferInStatus(context.stringValue("QueryTransferInByInstanceIdResponse.SimpleTransferInStatus"));
-		queryTransferInByInstanceIdResponse.setResultCode(context.stringValue("QueryTransferInByInstanceIdResponse.ResultCode"));
-		queryTransferInByInstanceIdResponse.setResultDate(context.stringValue("QueryTransferInByInstanceIdResponse.ResultDate"));
-		queryTransferInByInstanceIdResponse.setResultMsg(context.stringValue("QueryTransferInByInstanceIdResponse.ResultMsg"));
-		queryTransferInByInstanceIdResponse.setTransferAuthorizationCodeSubmissionDate(context.stringValue("QueryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDate"));
-		queryTransferInByInstanceIdResponse.setNeedMailCheck(context.booleanValue("QueryTransferInByInstanceIdResponse.NeedMailCheck"));
-		queryTransferInByInstanceIdResponse.setEmail(context.stringValue("QueryTransferInByInstanceIdResponse.Email"));
-		queryTransferInByInstanceIdResponse.setWhoisMailStatus(context.booleanValue("QueryTransferInByInstanceIdResponse.WhoisMailStatus"));
-		queryTransferInByInstanceIdResponse.setExpirationDate(context.stringValue("QueryTransferInByInstanceIdResponse.ExpirationDate"));
-		queryTransferInByInstanceIdResponse.setProgressBarType(context.integerValue("QueryTransferInByInstanceIdResponse.ProgressBarType"));
-		queryTransferInByInstanceIdResponse.setSubmissionDateLong(context.longValue("QueryTransferInByInstanceIdResponse.SubmissionDateLong"));
-		queryTransferInByInstanceIdResponse.setModificationDateLong(context.longValue("QueryTransferInByInstanceIdResponse.ModificationDateLong"));
-		queryTransferInByInstanceIdResponse.setResultDateLong(context.longValue("QueryTransferInByInstanceIdResponse.ResultDateLong"));
-		queryTransferInByInstanceIdResponse.setExpirationDateLong(context.longValue("QueryTransferInByInstanceIdResponse.ExpirationDateLong"));
-		queryTransferInByInstanceIdResponse.setTransferAuthorizationCodeSubmissionDateLong(context.longValue("QueryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDateLong"));
+		queryTransferInByInstanceIdResponse.setRequestId(_ctx.stringValue("QueryTransferInByInstanceIdResponse.RequestId"));
+		queryTransferInByInstanceIdResponse.setSubmissionDate(_ctx.stringValue("QueryTransferInByInstanceIdResponse.SubmissionDate"));
+		queryTransferInByInstanceIdResponse.setModificationDate(_ctx.stringValue("QueryTransferInByInstanceIdResponse.ModificationDate"));
+		queryTransferInByInstanceIdResponse.setUserId(_ctx.stringValue("QueryTransferInByInstanceIdResponse.UserId"));
+		queryTransferInByInstanceIdResponse.setInstanceId(_ctx.stringValue("QueryTransferInByInstanceIdResponse.InstanceId"));
+		queryTransferInByInstanceIdResponse.setDomainName(_ctx.stringValue("QueryTransferInByInstanceIdResponse.DomainName"));
+		queryTransferInByInstanceIdResponse.setStatus(_ctx.integerValue("QueryTransferInByInstanceIdResponse.Status"));
+		queryTransferInByInstanceIdResponse.setSimpleTransferInStatus(_ctx.stringValue("QueryTransferInByInstanceIdResponse.SimpleTransferInStatus"));
+		queryTransferInByInstanceIdResponse.setResultCode(_ctx.stringValue("QueryTransferInByInstanceIdResponse.ResultCode"));
+		queryTransferInByInstanceIdResponse.setResultDate(_ctx.stringValue("QueryTransferInByInstanceIdResponse.ResultDate"));
+		queryTransferInByInstanceIdResponse.setResultMsg(_ctx.stringValue("QueryTransferInByInstanceIdResponse.ResultMsg"));
+		queryTransferInByInstanceIdResponse.setTransferAuthorizationCodeSubmissionDate(_ctx.stringValue("QueryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDate"));
+		queryTransferInByInstanceIdResponse.setNeedMailCheck(_ctx.booleanValue("QueryTransferInByInstanceIdResponse.NeedMailCheck"));
+		queryTransferInByInstanceIdResponse.setEmail(_ctx.stringValue("QueryTransferInByInstanceIdResponse.Email"));
+		queryTransferInByInstanceIdResponse.setWhoisMailStatus(_ctx.booleanValue("QueryTransferInByInstanceIdResponse.WhoisMailStatus"));
+		queryTransferInByInstanceIdResponse.setExpirationDate(_ctx.stringValue("QueryTransferInByInstanceIdResponse.ExpirationDate"));
+		queryTransferInByInstanceIdResponse.setProgressBarType(_ctx.integerValue("QueryTransferInByInstanceIdResponse.ProgressBarType"));
+		queryTransferInByInstanceIdResponse.setSubmissionDateLong(_ctx.longValue("QueryTransferInByInstanceIdResponse.SubmissionDateLong"));
+		queryTransferInByInstanceIdResponse.setModificationDateLong(_ctx.longValue("QueryTransferInByInstanceIdResponse.ModificationDateLong"));
+		queryTransferInByInstanceIdResponse.setResultDateLong(_ctx.longValue("QueryTransferInByInstanceIdResponse.ResultDateLong"));
+		queryTransferInByInstanceIdResponse.setExpirationDateLong(_ctx.longValue("QueryTransferInByInstanceIdResponse.ExpirationDateLong"));
+		queryTransferInByInstanceIdResponse.setTransferAuthorizationCodeSubmissionDateLong(_ctx.longValue("QueryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDateLong"));
 	 
 	 	return queryTransferInByInstanceIdResponse;
 	}

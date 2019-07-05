@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryBookingDomainInfoResponseUnmarshaller {
 
-	public static QueryBookingDomainInfoResponse unmarshall(QueryBookingDomainInfoResponse queryBookingDomainInfoResponse, UnmarshallerContext context) {
+	public static QueryBookingDomainInfoResponse unmarshall(QueryBookingDomainInfoResponse queryBookingDomainInfoResponse, UnmarshallerContext _ctx) {
 		
-		queryBookingDomainInfoResponse.setRequestId(context.stringValue("QueryBookingDomainInfoResponse.RequestId"));
-		queryBookingDomainInfoResponse.setAuctionId(context.integerValue("QueryBookingDomainInfoResponse.AuctionId"));
-		queryBookingDomainInfoResponse.setPartnerType(context.stringValue("QueryBookingDomainInfoResponse.PartnerType"));
-		queryBookingDomainInfoResponse.setMaxBid(context.floatValue("QueryBookingDomainInfoResponse.MaxBid"));
-		queryBookingDomainInfoResponse.setTransferInPrice(context.floatValue("QueryBookingDomainInfoResponse.TransferInPrice"));
-		queryBookingDomainInfoResponse.setCurrency(context.stringValue("QueryBookingDomainInfoResponse.Currency"));
-		queryBookingDomainInfoResponse.setBookEndTime(context.longValue("QueryBookingDomainInfoResponse.BookEndTime"));
+		queryBookingDomainInfoResponse.setRequestId(_ctx.stringValue("QueryBookingDomainInfoResponse.RequestId"));
+		queryBookingDomainInfoResponse.setAuctionId(_ctx.integerValue("QueryBookingDomainInfoResponse.AuctionId"));
+		queryBookingDomainInfoResponse.setPartnerType(_ctx.stringValue("QueryBookingDomainInfoResponse.PartnerType"));
+		queryBookingDomainInfoResponse.setMaxBid(_ctx.floatValue("QueryBookingDomainInfoResponse.MaxBid"));
+		queryBookingDomainInfoResponse.setTransferInPrice(_ctx.floatValue("QueryBookingDomainInfoResponse.TransferInPrice"));
+		queryBookingDomainInfoResponse.setCurrency(_ctx.stringValue("QueryBookingDomainInfoResponse.Currency"));
+		queryBookingDomainInfoResponse.setBookEndTime(_ctx.longValue("QueryBookingDomainInfoResponse.BookEndTime"));
 	 
 	 	return queryBookingDomainInfoResponse;
 	}

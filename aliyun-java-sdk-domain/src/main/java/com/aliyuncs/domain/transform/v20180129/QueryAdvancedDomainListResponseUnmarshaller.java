@@ -24,43 +24,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAdvancedDomainListResponseUnmarshaller {
 
-	public static QueryAdvancedDomainListResponse unmarshall(QueryAdvancedDomainListResponse queryAdvancedDomainListResponse, UnmarshallerContext context) {
+	public static QueryAdvancedDomainListResponse unmarshall(QueryAdvancedDomainListResponse queryAdvancedDomainListResponse, UnmarshallerContext _ctx) {
 		
-		queryAdvancedDomainListResponse.setRequestId(context.stringValue("QueryAdvancedDomainListResponse.RequestId"));
-		queryAdvancedDomainListResponse.setTotalItemNum(context.integerValue("QueryAdvancedDomainListResponse.TotalItemNum"));
-		queryAdvancedDomainListResponse.setCurrentPageNum(context.integerValue("QueryAdvancedDomainListResponse.CurrentPageNum"));
-		queryAdvancedDomainListResponse.setTotalPageNum(context.integerValue("QueryAdvancedDomainListResponse.TotalPageNum"));
-		queryAdvancedDomainListResponse.setPageSize(context.integerValue("QueryAdvancedDomainListResponse.PageSize"));
-		queryAdvancedDomainListResponse.setPrePage(context.booleanValue("QueryAdvancedDomainListResponse.PrePage"));
-		queryAdvancedDomainListResponse.setNextPage(context.booleanValue("QueryAdvancedDomainListResponse.NextPage"));
+		queryAdvancedDomainListResponse.setRequestId(_ctx.stringValue("QueryAdvancedDomainListResponse.RequestId"));
+		queryAdvancedDomainListResponse.setTotalItemNum(_ctx.integerValue("QueryAdvancedDomainListResponse.TotalItemNum"));
+		queryAdvancedDomainListResponse.setCurrentPageNum(_ctx.integerValue("QueryAdvancedDomainListResponse.CurrentPageNum"));
+		queryAdvancedDomainListResponse.setTotalPageNum(_ctx.integerValue("QueryAdvancedDomainListResponse.TotalPageNum"));
+		queryAdvancedDomainListResponse.setPageSize(_ctx.integerValue("QueryAdvancedDomainListResponse.PageSize"));
+		queryAdvancedDomainListResponse.setPrePage(_ctx.booleanValue("QueryAdvancedDomainListResponse.PrePage"));
+		queryAdvancedDomainListResponse.setNextPage(_ctx.booleanValue("QueryAdvancedDomainListResponse.NextPage"));
 
 		List<Domain> data = new ArrayList<Domain>();
-		for (int i = 0; i < context.lengthValue("QueryAdvancedDomainListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAdvancedDomainListResponse.Data.Length"); i++) {
 			Domain domain = new Domain();
-			domain.setDomainName(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainName"));
-			domain.setInstanceId(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].InstanceId"));
-			domain.setExpirationDate(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ExpirationDate"));
-			domain.setRegistrationDate(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].RegistrationDate"));
-			domain.setDomainType(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainType"));
-			domain.setDomainStatus(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainStatus"));
-			domain.setProductId(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ProductId"));
-			domain.setExpirationDateLong(context.longValue("QueryAdvancedDomainListResponse.Data["+ i +"].ExpirationDateLong"));
-			domain.setRegistrationDateLong(context.longValue("QueryAdvancedDomainListResponse.Data["+ i +"].RegistrationDateLong"));
-			domain.setPremium(context.booleanValue("QueryAdvancedDomainListResponse.Data["+ i +"].Premium"));
-			domain.setDomainAuditStatus(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainAuditStatus"));
-			domain.setExpirationDateStatus(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ExpirationDateStatus"));
-			domain.setRegistrantType(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].RegistrantType"));
-			domain.setDomainGroupId(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainGroupId"));
-			domain.setRemark(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Remark"));
-			domain.setDomainGroupName(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainGroupName"));
-			domain.setExpirationCurrDateDiff(context.integerValue("QueryAdvancedDomainListResponse.Data["+ i +"].ExpirationCurrDateDiff"));
-			domain.setEmail(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Email"));
-			domain.setZhRegistrantOrganization(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ZhRegistrantOrganization"));
-			domain.setRegistrantOrganization(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].RegistrantOrganization"));
+			domain.setDomainName(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainName"));
+			domain.setInstanceId(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].InstanceId"));
+			domain.setExpirationDate(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ExpirationDate"));
+			domain.setRegistrationDate(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].RegistrationDate"));
+			domain.setDomainType(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainType"));
+			domain.setDomainStatus(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainStatus"));
+			domain.setProductId(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ProductId"));
+			domain.setExpirationDateLong(_ctx.longValue("QueryAdvancedDomainListResponse.Data["+ i +"].ExpirationDateLong"));
+			domain.setRegistrationDateLong(_ctx.longValue("QueryAdvancedDomainListResponse.Data["+ i +"].RegistrationDateLong"));
+			domain.setPremium(_ctx.booleanValue("QueryAdvancedDomainListResponse.Data["+ i +"].Premium"));
+			domain.setDomainAuditStatus(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainAuditStatus"));
+			domain.setExpirationDateStatus(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ExpirationDateStatus"));
+			domain.setRegistrantType(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].RegistrantType"));
+			domain.setDomainGroupId(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainGroupId"));
+			domain.setRemark(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Remark"));
+			domain.setDomainGroupName(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DomainGroupName"));
+			domain.setExpirationCurrDateDiff(_ctx.integerValue("QueryAdvancedDomainListResponse.Data["+ i +"].ExpirationCurrDateDiff"));
+			domain.setEmail(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].Email"));
+			domain.setZhRegistrantOrganization(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].ZhRegistrantOrganization"));
+			domain.setRegistrantOrganization(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].RegistrantOrganization"));
 
 			List<String> dnsList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList.Length"); j++) {
-				dnsList.add(context.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList.Length"); j++) {
+				dnsList.add(_ctx.stringValue("QueryAdvancedDomainListResponse.Data["+ i +"].DnsList["+ j +"]"));
 			}
 			domain.setDnsList(dnsList);
 

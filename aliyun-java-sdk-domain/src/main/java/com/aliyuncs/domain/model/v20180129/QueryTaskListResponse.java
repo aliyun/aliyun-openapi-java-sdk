@@ -123,6 +123,10 @@ public class QueryTaskListResponse extends AcsResponse {
 
 		private String taskTypeDescription;
 
+		private String taskCancelStatus;
+
+		private Integer taskCancelStatusCode;
+
 		public String getTaskType() {
 			return this.taskType;
 		}
@@ -185,6 +189,22 @@ public class QueryTaskListResponse extends AcsResponse {
 
 		public void setTaskTypeDescription(String taskTypeDescription) {
 			this.taskTypeDescription = taskTypeDescription;
+		}
+
+		public String getTaskCancelStatus() {
+			return this.taskCancelStatus;
+		}
+
+		public void setTaskCancelStatus(String taskCancelStatus) {
+			this.taskCancelStatus = taskCancelStatus;
+		}
+
+		public Integer getTaskCancelStatusCode() {
+			return this.taskCancelStatusCode;
+		}
+
+		public void setTaskCancelStatusCode(Integer taskCancelStatusCode) {
+			this.taskCancelStatusCode = taskCancelStatusCode;
 		}
 	}
 

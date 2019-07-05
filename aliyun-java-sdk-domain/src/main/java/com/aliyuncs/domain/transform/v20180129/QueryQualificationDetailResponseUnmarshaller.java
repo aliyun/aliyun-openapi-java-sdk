@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryQualificationDetailResponseUnmarshaller {
 
-	public static QueryQualificationDetailResponse unmarshall(QueryQualificationDetailResponse queryQualificationDetailResponse, UnmarshallerContext context) {
+	public static QueryQualificationDetailResponse unmarshall(QueryQualificationDetailResponse queryQualificationDetailResponse, UnmarshallerContext _ctx) {
 		
-		queryQualificationDetailResponse.setRequestId(context.stringValue("QueryQualificationDetailResponse.RequestId"));
-		queryQualificationDetailResponse.setTrackId(context.stringValue("QueryQualificationDetailResponse.TrackId"));
-		queryQualificationDetailResponse.setAuditStatus(context.integerValue("QueryQualificationDetailResponse.AuditStatus"));
+		queryQualificationDetailResponse.setRequestId(_ctx.stringValue("QueryQualificationDetailResponse.RequestId"));
+		queryQualificationDetailResponse.setTrackId(_ctx.stringValue("QueryQualificationDetailResponse.TrackId"));
+		queryQualificationDetailResponse.setAuditStatus(_ctx.integerValue("QueryQualificationDetailResponse.AuditStatus"));
 
 		List<QualificationCredential> credentials = new ArrayList<QualificationCredential>();
-		for (int i = 0; i < context.lengthValue("QueryQualificationDetailResponse.Credentials.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryQualificationDetailResponse.Credentials.Length"); i++) {
 			QualificationCredential qualificationCredential = new QualificationCredential();
-			qualificationCredential.setCredentialNo(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialNo"));
-			qualificationCredential.setCredentialType(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialType"));
-			qualificationCredential.setCredentialUrl(context.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialUrl"));
+			qualificationCredential.setCredentialNo(_ctx.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialNo"));
+			qualificationCredential.setCredentialType(_ctx.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialType"));
+			qualificationCredential.setCredentialUrl(_ctx.stringValue("QueryQualificationDetailResponse.Credentials["+ i +"].CredentialUrl"));
 
 			credentials.add(qualificationCredential);
 		}

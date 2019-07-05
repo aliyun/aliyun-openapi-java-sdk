@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveBatchTaskForTransferProhibitionLockResponseUnmarshaller {
 
-	public static SaveBatchTaskForTransferProhibitionLockResponse unmarshall(SaveBatchTaskForTransferProhibitionLockResponse saveBatchTaskForTransferProhibitionLockResponse, UnmarshallerContext context) {
+	public static SaveBatchTaskForTransferProhibitionLockResponse unmarshall(SaveBatchTaskForTransferProhibitionLockResponse saveBatchTaskForTransferProhibitionLockResponse, UnmarshallerContext _ctx) {
 		
-		saveBatchTaskForTransferProhibitionLockResponse.setRequestId(context.stringValue("SaveBatchTaskForTransferProhibitionLockResponse.RequestId"));
-		saveBatchTaskForTransferProhibitionLockResponse.setTaskNo(context.stringValue("SaveBatchTaskForTransferProhibitionLockResponse.TaskNo"));
+		saveBatchTaskForTransferProhibitionLockResponse.setRequestId(_ctx.stringValue("SaveBatchTaskForTransferProhibitionLockResponse.RequestId"));
+		saveBatchTaskForTransferProhibitionLockResponse.setTaskNo(_ctx.stringValue("SaveBatchTaskForTransferProhibitionLockResponse.TaskNo"));
 	 
 	 	return saveBatchTaskForTransferProhibitionLockResponse;
 	}

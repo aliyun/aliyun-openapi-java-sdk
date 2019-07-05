@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckProcessingServerLockApplyResponseUnmarshaller {
 
-	public static CheckProcessingServerLockApplyResponse unmarshall(CheckProcessingServerLockApplyResponse checkProcessingServerLockApplyResponse, UnmarshallerContext context) {
+	public static CheckProcessingServerLockApplyResponse unmarshall(CheckProcessingServerLockApplyResponse checkProcessingServerLockApplyResponse, UnmarshallerContext _ctx) {
 		
-		checkProcessingServerLockApplyResponse.setRequestId(context.stringValue("CheckProcessingServerLockApplyResponse.RequestId"));
-		checkProcessingServerLockApplyResponse.setExists(context.booleanValue("CheckProcessingServerLockApplyResponse.Exists"));
+		checkProcessingServerLockApplyResponse.setRequestId(_ctx.stringValue("CheckProcessingServerLockApplyResponse.RequestId"));
+		checkProcessingServerLockApplyResponse.setExists(_ctx.booleanValue("CheckProcessingServerLockApplyResponse.Exists"));
 	 
 	 	return checkProcessingServerLockApplyResponse;
 	}

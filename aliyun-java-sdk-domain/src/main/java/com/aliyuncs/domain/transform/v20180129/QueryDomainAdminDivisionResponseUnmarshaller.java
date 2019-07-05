@@ -25,19 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDomainAdminDivisionResponseUnmarshaller {
 
-	public static QueryDomainAdminDivisionResponse unmarshall(QueryDomainAdminDivisionResponse queryDomainAdminDivisionResponse, UnmarshallerContext context) {
+	public static QueryDomainAdminDivisionResponse unmarshall(QueryDomainAdminDivisionResponse queryDomainAdminDivisionResponse, UnmarshallerContext _ctx) {
 		
-		queryDomainAdminDivisionResponse.setRequestId(context.stringValue("QueryDomainAdminDivisionResponse.RequestId"));
+		queryDomainAdminDivisionResponse.setRequestId(_ctx.stringValue("QueryDomainAdminDivisionResponse.RequestId"));
 
 		List<AdminDivision> adminDivisions = new ArrayList<AdminDivision>();
-		for (int i = 0; i < context.lengthValue("QueryDomainAdminDivisionResponse.AdminDivisions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDomainAdminDivisionResponse.AdminDivisions.Length"); i++) {
 			AdminDivision adminDivision = new AdminDivision();
-			adminDivision.setDivisionName(context.stringValue("QueryDomainAdminDivisionResponse.AdminDivisions["+ i +"].DivisionName"));
+			adminDivision.setDivisionName(_ctx.stringValue("QueryDomainAdminDivisionResponse.AdminDivisions["+ i +"].DivisionName"));
 
 			List<ChildrenItem> children = new ArrayList<ChildrenItem>();
-			for (int j = 0; j < context.lengthValue("QueryDomainAdminDivisionResponse.AdminDivisions["+ i +"].Children.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryDomainAdminDivisionResponse.AdminDivisions["+ i +"].Children.Length"); j++) {
 				ChildrenItem childrenItem = new ChildrenItem();
-				childrenItem.setChildDivisionName(context.stringValue("QueryDomainAdminDivisionResponse.AdminDivisions["+ i +"].Children["+ j +"].ChildDivisionName"));
+				childrenItem.setChildDivisionName(_ctx.stringValue("QueryDomainAdminDivisionResponse.AdminDivisions["+ i +"].Children["+ j +"].ChildDivisionName"));
 
 				children.add(childrenItem);
 			}

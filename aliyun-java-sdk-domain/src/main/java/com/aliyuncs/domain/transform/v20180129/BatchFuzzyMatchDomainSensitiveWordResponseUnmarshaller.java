@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchFuzzyMatchDomainSensitiveWordResponseUnmarshaller {
 
-	public static BatchFuzzyMatchDomainSensitiveWordResponse unmarshall(BatchFuzzyMatchDomainSensitiveWordResponse batchFuzzyMatchDomainSensitiveWordResponse, UnmarshallerContext context) {
+	public static BatchFuzzyMatchDomainSensitiveWordResponse unmarshall(BatchFuzzyMatchDomainSensitiveWordResponse batchFuzzyMatchDomainSensitiveWordResponse, UnmarshallerContext _ctx) {
 		
-		batchFuzzyMatchDomainSensitiveWordResponse.setRequestId(context.stringValue("BatchFuzzyMatchDomainSensitiveWordResponse.RequestId"));
+		batchFuzzyMatchDomainSensitiveWordResponse.setRequestId(_ctx.stringValue("BatchFuzzyMatchDomainSensitiveWordResponse.RequestId"));
 
 		List<SensitiveWordMatchResult> sensitiveWordMatchResultList = new ArrayList<SensitiveWordMatchResult>();
-		for (int i = 0; i < context.lengthValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList.Length"); i++) {
 			SensitiveWordMatchResult sensitiveWordMatchResult = new SensitiveWordMatchResult();
-			sensitiveWordMatchResult.setKeyword(context.stringValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList["+ i +"].Keyword"));
-			sensitiveWordMatchResult.setExist(context.booleanValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList["+ i +"].Exist"));
+			sensitiveWordMatchResult.setKeyword(_ctx.stringValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList["+ i +"].Keyword"));
+			sensitiveWordMatchResult.setExist(_ctx.booleanValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList["+ i +"].Exist"));
 
 			List<MatchedSensitiveWord> matchedSentiveWords = new ArrayList<MatchedSensitiveWord>();
-			for (int j = 0; j < context.lengthValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList["+ i +"].MatchedSentiveWords.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList["+ i +"].MatchedSentiveWords.Length"); j++) {
 				MatchedSensitiveWord matchedSensitiveWord = new MatchedSensitiveWord();
-				matchedSensitiveWord.setWord(context.stringValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList["+ i +"].MatchedSentiveWords["+ j +"].Word"));
+				matchedSensitiveWord.setWord(_ctx.stringValue("BatchFuzzyMatchDomainSensitiveWordResponse.SensitiveWordMatchResultList["+ i +"].MatchedSentiveWords["+ j +"].Word"));
 
 				matchedSentiveWords.add(matchedSensitiveWord);
 			}

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckTransferInFeasibilityResponseUnmarshaller {
 
-	public static CheckTransferInFeasibilityResponse unmarshall(CheckTransferInFeasibilityResponse checkTransferInFeasibilityResponse, UnmarshallerContext context) {
+	public static CheckTransferInFeasibilityResponse unmarshall(CheckTransferInFeasibilityResponse checkTransferInFeasibilityResponse, UnmarshallerContext _ctx) {
 		
-		checkTransferInFeasibilityResponse.setRequestId(context.stringValue("CheckTransferInFeasibilityResponse.RequestId"));
-		checkTransferInFeasibilityResponse.setCanTransfer(context.booleanValue("CheckTransferInFeasibilityResponse.CanTransfer"));
-		checkTransferInFeasibilityResponse.setCode(context.stringValue("CheckTransferInFeasibilityResponse.Code"));
-		checkTransferInFeasibilityResponse.setMessage(context.stringValue("CheckTransferInFeasibilityResponse.Message"));
-		checkTransferInFeasibilityResponse.setProductId(context.stringValue("CheckTransferInFeasibilityResponse.ProductId"));
+		checkTransferInFeasibilityResponse.setRequestId(_ctx.stringValue("CheckTransferInFeasibilityResponse.RequestId"));
+		checkTransferInFeasibilityResponse.setCanTransfer(_ctx.booleanValue("CheckTransferInFeasibilityResponse.CanTransfer"));
+		checkTransferInFeasibilityResponse.setCode(_ctx.stringValue("CheckTransferInFeasibilityResponse.Code"));
+		checkTransferInFeasibilityResponse.setMessage(_ctx.stringValue("CheckTransferInFeasibilityResponse.Message"));
+		checkTransferInFeasibilityResponse.setProductId(_ctx.stringValue("CheckTransferInFeasibilityResponse.ProductId"));
 	 
 	 	return checkTransferInFeasibilityResponse;
 	}

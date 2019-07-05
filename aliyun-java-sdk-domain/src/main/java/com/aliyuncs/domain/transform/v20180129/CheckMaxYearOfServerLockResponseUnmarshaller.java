@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckMaxYearOfServerLockResponseUnmarshaller {
 
-	public static CheckMaxYearOfServerLockResponse unmarshall(CheckMaxYearOfServerLockResponse checkMaxYearOfServerLockResponse, UnmarshallerContext context) {
+	public static CheckMaxYearOfServerLockResponse unmarshall(CheckMaxYearOfServerLockResponse checkMaxYearOfServerLockResponse, UnmarshallerContext _ctx) {
 		
-		checkMaxYearOfServerLockResponse.setRequestId(context.stringValue("CheckMaxYearOfServerLockResponse.RequestId"));
-		checkMaxYearOfServerLockResponse.setMaxYear(context.integerValue("CheckMaxYearOfServerLockResponse.MaxYear"));
+		checkMaxYearOfServerLockResponse.setRequestId(_ctx.stringValue("CheckMaxYearOfServerLockResponse.RequestId"));
+		checkMaxYearOfServerLockResponse.setMaxYear(_ctx.integerValue("CheckMaxYearOfServerLockResponse.MaxYear"));
 	 
 	 	return checkMaxYearOfServerLockResponse;
 	}

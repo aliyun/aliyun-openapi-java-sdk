@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryBidRecordsResponseUnmarshaller {
 
-	public static QueryBidRecordsResponse unmarshall(QueryBidRecordsResponse queryBidRecordsResponse, UnmarshallerContext context) {
+	public static QueryBidRecordsResponse unmarshall(QueryBidRecordsResponse queryBidRecordsResponse, UnmarshallerContext _ctx) {
 		
-		queryBidRecordsResponse.setRequestId(context.stringValue("QueryBidRecordsResponse.RequestId"));
-		queryBidRecordsResponse.setTotalItemNum(context.integerValue("QueryBidRecordsResponse.TotalItemNum"));
-		queryBidRecordsResponse.setCurrentPageNum(context.integerValue("QueryBidRecordsResponse.CurrentPageNum"));
-		queryBidRecordsResponse.setPageSize(context.integerValue("QueryBidRecordsResponse.PageSize"));
-		queryBidRecordsResponse.setTotalPageNum(context.integerValue("QueryBidRecordsResponse.TotalPageNum"));
+		queryBidRecordsResponse.setRequestId(_ctx.stringValue("QueryBidRecordsResponse.RequestId"));
+		queryBidRecordsResponse.setTotalItemNum(_ctx.integerValue("QueryBidRecordsResponse.TotalItemNum"));
+		queryBidRecordsResponse.setCurrentPageNum(_ctx.integerValue("QueryBidRecordsResponse.CurrentPageNum"));
+		queryBidRecordsResponse.setPageSize(_ctx.integerValue("QueryBidRecordsResponse.PageSize"));
+		queryBidRecordsResponse.setTotalPageNum(_ctx.integerValue("QueryBidRecordsResponse.TotalPageNum"));
 
 		List<BidRecord> data = new ArrayList<BidRecord>();
-		for (int i = 0; i < context.lengthValue("QueryBidRecordsResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryBidRecordsResponse.Data.Length"); i++) {
 			BidRecord bidRecord = new BidRecord();
-			bidRecord.setDomainName(context.stringValue("QueryBidRecordsResponse.Data["+ i +"].DomainName"));
-			bidRecord.setCurrency(context.stringValue("QueryBidRecordsResponse.Data["+ i +"].Currency"));
-			bidRecord.setBid(context.floatValue("QueryBidRecordsResponse.Data["+ i +"].Bid"));
-			bidRecord.setBidTime(context.longValue("QueryBidRecordsResponse.Data["+ i +"].BidTime"));
-			bidRecord.setBidder(context.stringValue("QueryBidRecordsResponse.Data["+ i +"].Bidder"));
+			bidRecord.setDomainName(_ctx.stringValue("QueryBidRecordsResponse.Data["+ i +"].DomainName"));
+			bidRecord.setCurrency(_ctx.stringValue("QueryBidRecordsResponse.Data["+ i +"].Currency"));
+			bidRecord.setBid(_ctx.floatValue("QueryBidRecordsResponse.Data["+ i +"].Bid"));
+			bidRecord.setBidTime(_ctx.longValue("QueryBidRecordsResponse.Data["+ i +"].BidTime"));
+			bidRecord.setBidder(_ctx.stringValue("QueryBidRecordsResponse.Data["+ i +"].Bidder"));
 
 			data.add(bidRecord);
 		}

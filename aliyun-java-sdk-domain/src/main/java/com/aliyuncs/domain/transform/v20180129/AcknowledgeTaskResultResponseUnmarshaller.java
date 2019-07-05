@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AcknowledgeTaskResultResponseUnmarshaller {
 
-	public static AcknowledgeTaskResultResponse unmarshall(AcknowledgeTaskResultResponse acknowledgeTaskResultResponse, UnmarshallerContext context) {
+	public static AcknowledgeTaskResultResponse unmarshall(AcknowledgeTaskResultResponse acknowledgeTaskResultResponse, UnmarshallerContext _ctx) {
 		
-		acknowledgeTaskResultResponse.setRequestId(context.stringValue("AcknowledgeTaskResultResponse.RequestId"));
-		acknowledgeTaskResultResponse.setResult(context.integerValue("AcknowledgeTaskResultResponse.Result"));
+		acknowledgeTaskResultResponse.setRequestId(_ctx.stringValue("AcknowledgeTaskResultResponse.RequestId"));
+		acknowledgeTaskResultResponse.setResult(_ctx.integerValue("AcknowledgeTaskResultResponse.Result"));
 	 
 	 	return acknowledgeTaskResultResponse;
 	}

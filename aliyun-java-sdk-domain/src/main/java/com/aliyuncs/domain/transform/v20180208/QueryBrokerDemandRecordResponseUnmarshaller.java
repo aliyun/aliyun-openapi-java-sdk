@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryBrokerDemandRecordResponseUnmarshaller {
 
-	public static QueryBrokerDemandRecordResponse unmarshall(QueryBrokerDemandRecordResponse queryBrokerDemandRecordResponse, UnmarshallerContext context) {
+	public static QueryBrokerDemandRecordResponse unmarshall(QueryBrokerDemandRecordResponse queryBrokerDemandRecordResponse, UnmarshallerContext _ctx) {
 		
-		queryBrokerDemandRecordResponse.setRequestId(context.stringValue("QueryBrokerDemandRecordResponse.RequestId"));
-		queryBrokerDemandRecordResponse.setTotalItemNum(context.integerValue("QueryBrokerDemandRecordResponse.TotalItemNum"));
-		queryBrokerDemandRecordResponse.setCurrentPageNum(context.integerValue("QueryBrokerDemandRecordResponse.CurrentPageNum"));
-		queryBrokerDemandRecordResponse.setPageSize(context.integerValue("QueryBrokerDemandRecordResponse.PageSize"));
-		queryBrokerDemandRecordResponse.setTotalPageNum(context.integerValue("QueryBrokerDemandRecordResponse.TotalPageNum"));
+		queryBrokerDemandRecordResponse.setRequestId(_ctx.stringValue("QueryBrokerDemandRecordResponse.RequestId"));
+		queryBrokerDemandRecordResponse.setTotalItemNum(_ctx.integerValue("QueryBrokerDemandRecordResponse.TotalItemNum"));
+		queryBrokerDemandRecordResponse.setCurrentPageNum(_ctx.integerValue("QueryBrokerDemandRecordResponse.CurrentPageNum"));
+		queryBrokerDemandRecordResponse.setPageSize(_ctx.integerValue("QueryBrokerDemandRecordResponse.PageSize"));
+		queryBrokerDemandRecordResponse.setTotalPageNum(_ctx.integerValue("QueryBrokerDemandRecordResponse.TotalPageNum"));
 
 		List<BrokerDemandRecord> data = new ArrayList<BrokerDemandRecord>();
-		for (int i = 0; i < context.lengthValue("QueryBrokerDemandRecordResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryBrokerDemandRecordResponse.Data.Length"); i++) {
 			BrokerDemandRecord brokerDemandRecord = new BrokerDemandRecord();
-			brokerDemandRecord.setBizId(context.stringValue("QueryBrokerDemandRecordResponse.Data["+ i +"].BizId"));
-			brokerDemandRecord.setDescription(context.stringValue("QueryBrokerDemandRecordResponse.Data["+ i +"].Description"));
-			brokerDemandRecord.setCreateTime(context.longValue("QueryBrokerDemandRecordResponse.Data["+ i +"].CreateTime"));
+			brokerDemandRecord.setBizId(_ctx.stringValue("QueryBrokerDemandRecordResponse.Data["+ i +"].BizId"));
+			brokerDemandRecord.setDescription(_ctx.stringValue("QueryBrokerDemandRecordResponse.Data["+ i +"].Description"));
+			brokerDemandRecord.setCreateTime(_ctx.longValue("QueryBrokerDemandRecordResponse.Data["+ i +"].CreateTime"));
 
 			data.add(brokerDemandRecord);
 		}

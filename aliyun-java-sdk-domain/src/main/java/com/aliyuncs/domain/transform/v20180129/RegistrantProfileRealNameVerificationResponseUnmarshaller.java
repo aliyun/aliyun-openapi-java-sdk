@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RegistrantProfileRealNameVerificationResponseUnmarshaller {
 
-	public static RegistrantProfileRealNameVerificationResponse unmarshall(RegistrantProfileRealNameVerificationResponse registrantProfileRealNameVerificationResponse, UnmarshallerContext context) {
+	public static RegistrantProfileRealNameVerificationResponse unmarshall(RegistrantProfileRealNameVerificationResponse registrantProfileRealNameVerificationResponse, UnmarshallerContext _ctx) {
 		
-		registrantProfileRealNameVerificationResponse.setRequestId(context.stringValue("RegistrantProfileRealNameVerificationResponse.RequestId"));
+		registrantProfileRealNameVerificationResponse.setRequestId(_ctx.stringValue("RegistrantProfileRealNameVerificationResponse.RequestId"));
 	 
 	 	return registrantProfileRealNameVerificationResponse;
 	}

@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveDomainGroupResponseUnmarshaller {
 
-	public static SaveDomainGroupResponse unmarshall(SaveDomainGroupResponse saveDomainGroupResponse, UnmarshallerContext context) {
+	public static SaveDomainGroupResponse unmarshall(SaveDomainGroupResponse saveDomainGroupResponse, UnmarshallerContext _ctx) {
 		
-		saveDomainGroupResponse.setRequestId(context.stringValue("SaveDomainGroupResponse.RequestId"));
-		saveDomainGroupResponse.setDomainGroupId(context.longValue("SaveDomainGroupResponse.DomainGroupId"));
-		saveDomainGroupResponse.setDomainGroupName(context.stringValue("SaveDomainGroupResponse.DomainGroupName"));
-		saveDomainGroupResponse.setTotalNumber(context.integerValue("SaveDomainGroupResponse.TotalNumber"));
-		saveDomainGroupResponse.setCreationDate(context.stringValue("SaveDomainGroupResponse.CreationDate"));
-		saveDomainGroupResponse.setModificationDate(context.stringValue("SaveDomainGroupResponse.ModificationDate"));
-		saveDomainGroupResponse.setDomainGroupStatus(context.stringValue("SaveDomainGroupResponse.DomainGroupStatus"));
-		saveDomainGroupResponse.setBeingDeleted(context.booleanValue("SaveDomainGroupResponse.BeingDeleted"));
+		saveDomainGroupResponse.setRequestId(_ctx.stringValue("SaveDomainGroupResponse.RequestId"));
+		saveDomainGroupResponse.setDomainGroupId(_ctx.longValue("SaveDomainGroupResponse.DomainGroupId"));
+		saveDomainGroupResponse.setDomainGroupName(_ctx.stringValue("SaveDomainGroupResponse.DomainGroupName"));
+		saveDomainGroupResponse.setTotalNumber(_ctx.integerValue("SaveDomainGroupResponse.TotalNumber"));
+		saveDomainGroupResponse.setCreationDate(_ctx.stringValue("SaveDomainGroupResponse.CreationDate"));
+		saveDomainGroupResponse.setModificationDate(_ctx.stringValue("SaveDomainGroupResponse.ModificationDate"));
+		saveDomainGroupResponse.setDomainGroupStatus(_ctx.stringValue("SaveDomainGroupResponse.DomainGroupStatus"));
+		saveDomainGroupResponse.setBeingDeleted(_ctx.booleanValue("SaveDomainGroupResponse.BeingDeleted"));
 	 
 	 	return saveDomainGroupResponse;
 	}

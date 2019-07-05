@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelQualificationVerificationResponseUnmarshaller {
 
-	public static CancelQualificationVerificationResponse unmarshall(CancelQualificationVerificationResponse cancelQualificationVerificationResponse, UnmarshallerContext context) {
+	public static CancelQualificationVerificationResponse unmarshall(CancelQualificationVerificationResponse cancelQualificationVerificationResponse, UnmarshallerContext _ctx) {
 		
-		cancelQualificationVerificationResponse.setRequestId(context.stringValue("CancelQualificationVerificationResponse.RequestId"));
+		cancelQualificationVerificationResponse.setRequestId(_ctx.stringValue("CancelQualificationVerificationResponse.RequestId"));
 	 
 	 	return cancelQualificationVerificationResponse;
 	}

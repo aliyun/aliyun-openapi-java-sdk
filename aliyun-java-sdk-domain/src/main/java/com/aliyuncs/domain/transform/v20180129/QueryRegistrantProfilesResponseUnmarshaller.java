@@ -24,43 +24,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryRegistrantProfilesResponseUnmarshaller {
 
-	public static QueryRegistrantProfilesResponse unmarshall(QueryRegistrantProfilesResponse queryRegistrantProfilesResponse, UnmarshallerContext context) {
+	public static QueryRegistrantProfilesResponse unmarshall(QueryRegistrantProfilesResponse queryRegistrantProfilesResponse, UnmarshallerContext _ctx) {
 		
-		queryRegistrantProfilesResponse.setRequestId(context.stringValue("QueryRegistrantProfilesResponse.RequestId"));
-		queryRegistrantProfilesResponse.setTotalItemNum(context.integerValue("QueryRegistrantProfilesResponse.TotalItemNum"));
-		queryRegistrantProfilesResponse.setCurrentPageNum(context.integerValue("QueryRegistrantProfilesResponse.CurrentPageNum"));
-		queryRegistrantProfilesResponse.setTotalPageNum(context.integerValue("QueryRegistrantProfilesResponse.TotalPageNum"));
-		queryRegistrantProfilesResponse.setPageSize(context.integerValue("QueryRegistrantProfilesResponse.PageSize"));
-		queryRegistrantProfilesResponse.setPrePage(context.booleanValue("QueryRegistrantProfilesResponse.PrePage"));
-		queryRegistrantProfilesResponse.setNextPage(context.booleanValue("QueryRegistrantProfilesResponse.NextPage"));
+		queryRegistrantProfilesResponse.setRequestId(_ctx.stringValue("QueryRegistrantProfilesResponse.RequestId"));
+		queryRegistrantProfilesResponse.setTotalItemNum(_ctx.integerValue("QueryRegistrantProfilesResponse.TotalItemNum"));
+		queryRegistrantProfilesResponse.setCurrentPageNum(_ctx.integerValue("QueryRegistrantProfilesResponse.CurrentPageNum"));
+		queryRegistrantProfilesResponse.setTotalPageNum(_ctx.integerValue("QueryRegistrantProfilesResponse.TotalPageNum"));
+		queryRegistrantProfilesResponse.setPageSize(_ctx.integerValue("QueryRegistrantProfilesResponse.PageSize"));
+		queryRegistrantProfilesResponse.setPrePage(_ctx.booleanValue("QueryRegistrantProfilesResponse.PrePage"));
+		queryRegistrantProfilesResponse.setNextPage(_ctx.booleanValue("QueryRegistrantProfilesResponse.NextPage"));
 
 		List<RegistrantProfile> registrantProfiles = new ArrayList<RegistrantProfile>();
-		for (int i = 0; i < context.lengthValue("QueryRegistrantProfilesResponse.RegistrantProfiles.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryRegistrantProfilesResponse.RegistrantProfiles.Length"); i++) {
 			RegistrantProfile registrantProfile = new RegistrantProfile();
-			registrantProfile.setRegistrantProfileId(context.longValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantProfileId"));
-			registrantProfile.setCreateTime(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].CreateTime"));
-			registrantProfile.setUpdateTime(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].UpdateTime"));
-			registrantProfile.setDefaultRegistrantProfile(context.booleanValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].DefaultRegistrantProfile"));
-			registrantProfile.setRegistrantName(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantName"));
-			registrantProfile.setRegistrantOrganization(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantOrganization"));
-			registrantProfile.setCountry(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Country"));
-			registrantProfile.setProvince(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Province"));
-			registrantProfile.setCity(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].City"));
-			registrantProfile.setAddress(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Address"));
-			registrantProfile.setEmail(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Email"));
-			registrantProfile.setPostalCode(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].PostalCode"));
-			registrantProfile.setTelArea(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].TelArea"));
-			registrantProfile.setTelephone(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Telephone"));
-			registrantProfile.setTelExt(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].TelExt"));
-			registrantProfile.setEmailVerificationStatus(context.integerValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].EmailVerificationStatus"));
-			registrantProfile.setZhRegistrantName(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhRegistrantName"));
-			registrantProfile.setZhRegistrantOrganization(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhRegistrantOrganization"));
-			registrantProfile.setZhProvince(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhProvince"));
-			registrantProfile.setZhCity(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhCity"));
-			registrantProfile.setZhAddress(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhAddress"));
-			registrantProfile.setRegistrantType(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantType"));
-			registrantProfile.setRealNameStatus(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RealNameStatus"));
-			registrantProfile.setRegistrantProfileType(context.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantProfileType"));
+			registrantProfile.setRegistrantProfileId(_ctx.longValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantProfileId"));
+			registrantProfile.setCreateTime(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].CreateTime"));
+			registrantProfile.setUpdateTime(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].UpdateTime"));
+			registrantProfile.setDefaultRegistrantProfile(_ctx.booleanValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].DefaultRegistrantProfile"));
+			registrantProfile.setRegistrantName(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantName"));
+			registrantProfile.setRegistrantOrganization(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantOrganization"));
+			registrantProfile.setCountry(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Country"));
+			registrantProfile.setProvince(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Province"));
+			registrantProfile.setCity(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].City"));
+			registrantProfile.setAddress(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Address"));
+			registrantProfile.setEmail(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Email"));
+			registrantProfile.setPostalCode(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].PostalCode"));
+			registrantProfile.setTelArea(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].TelArea"));
+			registrantProfile.setTelephone(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].Telephone"));
+			registrantProfile.setTelExt(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].TelExt"));
+			registrantProfile.setEmailVerificationStatus(_ctx.integerValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].EmailVerificationStatus"));
+			registrantProfile.setZhRegistrantName(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhRegistrantName"));
+			registrantProfile.setZhRegistrantOrganization(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhRegistrantOrganization"));
+			registrantProfile.setZhProvince(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhProvince"));
+			registrantProfile.setZhCity(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhCity"));
+			registrantProfile.setZhAddress(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].ZhAddress"));
+			registrantProfile.setRegistrantType(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantType"));
+			registrantProfile.setRealNameStatus(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RealNameStatus"));
+			registrantProfile.setRegistrantProfileType(_ctx.stringValue("QueryRegistrantProfilesResponse.RegistrantProfiles["+ i +"].RegistrantProfileType"));
 
 			registrantProfiles.add(registrantProfile);
 		}

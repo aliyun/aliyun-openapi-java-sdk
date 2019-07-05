@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDSRecordResponseUnmarshaller {
 
-	public static QueryDSRecordResponse unmarshall(QueryDSRecordResponse queryDSRecordResponse, UnmarshallerContext context) {
+	public static QueryDSRecordResponse unmarshall(QueryDSRecordResponse queryDSRecordResponse, UnmarshallerContext _ctx) {
 		
-		queryDSRecordResponse.setRequestId(context.stringValue("QueryDSRecordResponse.RequestId"));
+		queryDSRecordResponse.setRequestId(_ctx.stringValue("QueryDSRecordResponse.RequestId"));
 
 		List<DSRecord> dSRecordList = new ArrayList<DSRecord>();
-		for (int i = 0; i < context.lengthValue("QueryDSRecordResponse.DSRecordList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDSRecordResponse.DSRecordList.Length"); i++) {
 			DSRecord dSRecord = new DSRecord();
-			dSRecord.setKeyTag(context.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].KeyTag"));
-			dSRecord.setAlgorithm(context.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].Algorithm"));
-			dSRecord.setDigestType(context.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].DigestType"));
-			dSRecord.setDigest(context.stringValue("QueryDSRecordResponse.DSRecordList["+ i +"].Digest"));
+			dSRecord.setKeyTag(_ctx.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].KeyTag"));
+			dSRecord.setAlgorithm(_ctx.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].Algorithm"));
+			dSRecord.setDigestType(_ctx.integerValue("QueryDSRecordResponse.DSRecordList["+ i +"].DigestType"));
+			dSRecord.setDigest(_ctx.stringValue("QueryDSRecordResponse.DSRecordList["+ i +"].Digest"));
 
 			dSRecordList.add(dSRecord);
 		}

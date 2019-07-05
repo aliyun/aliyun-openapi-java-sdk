@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListServerLockResponseUnmarshaller {
 
-	public static ListServerLockResponse unmarshall(ListServerLockResponse listServerLockResponse, UnmarshallerContext context) {
+	public static ListServerLockResponse unmarshall(ListServerLockResponse listServerLockResponse, UnmarshallerContext _ctx) {
 		
-		listServerLockResponse.setRequestId(context.stringValue("ListServerLockResponse.RequestId"));
-		listServerLockResponse.setTotalItemNum(context.integerValue("ListServerLockResponse.TotalItemNum"));
-		listServerLockResponse.setCurrentPageNum(context.integerValue("ListServerLockResponse.CurrentPageNum"));
-		listServerLockResponse.setTotalPageNum(context.integerValue("ListServerLockResponse.TotalPageNum"));
-		listServerLockResponse.setPageSize(context.integerValue("ListServerLockResponse.PageSize"));
-		listServerLockResponse.setPrePage(context.booleanValue("ListServerLockResponse.PrePage"));
-		listServerLockResponse.setNextPage(context.booleanValue("ListServerLockResponse.NextPage"));
+		listServerLockResponse.setRequestId(_ctx.stringValue("ListServerLockResponse.RequestId"));
+		listServerLockResponse.setTotalItemNum(_ctx.integerValue("ListServerLockResponse.TotalItemNum"));
+		listServerLockResponse.setCurrentPageNum(_ctx.integerValue("ListServerLockResponse.CurrentPageNum"));
+		listServerLockResponse.setTotalPageNum(_ctx.integerValue("ListServerLockResponse.TotalPageNum"));
+		listServerLockResponse.setPageSize(_ctx.integerValue("ListServerLockResponse.PageSize"));
+		listServerLockResponse.setPrePage(_ctx.booleanValue("ListServerLockResponse.PrePage"));
+		listServerLockResponse.setNextPage(_ctx.booleanValue("ListServerLockResponse.NextPage"));
 
 		List<QueryTransferInResponse> data = new ArrayList<QueryTransferInResponse>();
-		for (int i = 0; i < context.lengthValue("ListServerLockResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListServerLockResponse.Data.Length"); i++) {
 			QueryTransferInResponse queryTransferInResponse = new QueryTransferInResponse();
-			queryTransferInResponse.setGmtCreate(context.stringValue("ListServerLockResponse.Data["+ i +"].GmtCreate"));
-			queryTransferInResponse.setGmtModified(context.stringValue("ListServerLockResponse.Data["+ i +"].GmtModified"));
-			queryTransferInResponse.setUserId(context.stringValue("ListServerLockResponse.Data["+ i +"].UserId"));
-			queryTransferInResponse.setDomainName(context.stringValue("ListServerLockResponse.Data["+ i +"].DomainName"));
-			queryTransferInResponse.setDomainInstanceId(context.stringValue("ListServerLockResponse.Data["+ i +"].DomainInstanceId"));
-			queryTransferInResponse.setLockProductId(context.stringValue("ListServerLockResponse.Data["+ i +"].LockProductId"));
-			queryTransferInResponse.setStartDate(context.stringValue("ListServerLockResponse.Data["+ i +"].StartDate"));
-			queryTransferInResponse.setExpireDate(context.stringValue("ListServerLockResponse.Data["+ i +"].ExpireDate"));
-			queryTransferInResponse.setLockInstanceId(context.stringValue("ListServerLockResponse.Data["+ i +"].LockInstanceId"));
-			queryTransferInResponse.setServerLockStatus(context.stringValue("ListServerLockResponse.Data["+ i +"].ServerLockStatus"));
+			queryTransferInResponse.setGmtCreate(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].GmtCreate"));
+			queryTransferInResponse.setGmtModified(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].GmtModified"));
+			queryTransferInResponse.setUserId(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].UserId"));
+			queryTransferInResponse.setDomainName(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].DomainName"));
+			queryTransferInResponse.setDomainInstanceId(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].DomainInstanceId"));
+			queryTransferInResponse.setLockProductId(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].LockProductId"));
+			queryTransferInResponse.setStartDate(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].StartDate"));
+			queryTransferInResponse.setExpireDate(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].ExpireDate"));
+			queryTransferInResponse.setLockInstanceId(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].LockInstanceId"));
+			queryTransferInResponse.setServerLockStatus(_ctx.stringValue("ListServerLockResponse.Data["+ i +"].ServerLockStatus"));
 
 			data.add(queryTransferInResponse);
 		}

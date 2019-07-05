@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateDomainToDomainGroupResponseUnmarshaller {
 
-	public static UpdateDomainToDomainGroupResponse unmarshall(UpdateDomainToDomainGroupResponse updateDomainToDomainGroupResponse, UnmarshallerContext context) {
+	public static UpdateDomainToDomainGroupResponse unmarshall(UpdateDomainToDomainGroupResponse updateDomainToDomainGroupResponse, UnmarshallerContext _ctx) {
 		
-		updateDomainToDomainGroupResponse.setRequestId(context.stringValue("UpdateDomainToDomainGroupResponse.RequestId"));
+		updateDomainToDomainGroupResponse.setRequestId(_ctx.stringValue("UpdateDomainToDomainGroupResponse.RequestId"));
 	 
 	 	return updateDomainToDomainGroupResponse;
 	}

@@ -20,31 +20,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAuctionDetailResponseUnmarshaller {
 
-	public static QueryAuctionDetailResponse unmarshall(QueryAuctionDetailResponse queryAuctionDetailResponse, UnmarshallerContext context) {
+	public static QueryAuctionDetailResponse unmarshall(QueryAuctionDetailResponse queryAuctionDetailResponse, UnmarshallerContext _ctx) {
 		
-		queryAuctionDetailResponse.setRequestId(context.stringValue("QueryAuctionDetailResponse.RequestId"));
-		queryAuctionDetailResponse.setDomainName(context.stringValue("QueryAuctionDetailResponse.DomainName"));
-		queryAuctionDetailResponse.setAuctionId(context.stringValue("QueryAuctionDetailResponse.AuctionId"));
-		queryAuctionDetailResponse.setDomainType(context.stringValue("QueryAuctionDetailResponse.DomainType"));
-		queryAuctionDetailResponse.setBookedPartner(context.stringValue("QueryAuctionDetailResponse.BookedPartner"));
-		queryAuctionDetailResponse.setPartnerType(context.stringValue("QueryAuctionDetailResponse.PartnerType"));
-		queryAuctionDetailResponse.setCurrency(context.stringValue("QueryAuctionDetailResponse.Currency"));
-		queryAuctionDetailResponse.setYourCurrentBid(context.floatValue("QueryAuctionDetailResponse.YourCurrentBid"));
-		queryAuctionDetailResponse.setYourMaxBid(context.floatValue("QueryAuctionDetailResponse.YourMaxBid"));
-		queryAuctionDetailResponse.setHighBid(context.floatValue("QueryAuctionDetailResponse.HighBid"));
-		queryAuctionDetailResponse.setNextValidBid(context.floatValue("QueryAuctionDetailResponse.NextValidBid"));
-		queryAuctionDetailResponse.setReserveMet(context.booleanValue("QueryAuctionDetailResponse.ReserveMet"));
-		queryAuctionDetailResponse.setTransferInPrice(context.floatValue("QueryAuctionDetailResponse.TransferInPrice"));
-		queryAuctionDetailResponse.setPayPrice(context.floatValue("QueryAuctionDetailResponse.PayPrice"));
-		queryAuctionDetailResponse.setHighBidder(context.stringValue("QueryAuctionDetailResponse.HighBidder"));
-		queryAuctionDetailResponse.setStatus(context.stringValue("QueryAuctionDetailResponse.Status"));
-		queryAuctionDetailResponse.setPayStatus(context.stringValue("QueryAuctionDetailResponse.PayStatus"));
-		queryAuctionDetailResponse.setProduceStatus(context.stringValue("QueryAuctionDetailResponse.ProduceStatus"));
-		queryAuctionDetailResponse.setAuctionEndTime(context.longValue("QueryAuctionDetailResponse.AuctionEndTime"));
-		queryAuctionDetailResponse.setBookEndTime(context.longValue("QueryAuctionDetailResponse.BookEndTime"));
-		queryAuctionDetailResponse.setPayEndTime(context.longValue("QueryAuctionDetailResponse.PayEndTime"));
-		queryAuctionDetailResponse.setDeliveryTime(context.longValue("QueryAuctionDetailResponse.DeliveryTime"));
-		queryAuctionDetailResponse.setFailCode(context.stringValue("QueryAuctionDetailResponse.FailCode"));
+		queryAuctionDetailResponse.setRequestId(_ctx.stringValue("QueryAuctionDetailResponse.RequestId"));
+		queryAuctionDetailResponse.setDomainName(_ctx.stringValue("QueryAuctionDetailResponse.DomainName"));
+		queryAuctionDetailResponse.setAuctionId(_ctx.stringValue("QueryAuctionDetailResponse.AuctionId"));
+		queryAuctionDetailResponse.setDomainType(_ctx.stringValue("QueryAuctionDetailResponse.DomainType"));
+		queryAuctionDetailResponse.setBookedPartner(_ctx.stringValue("QueryAuctionDetailResponse.BookedPartner"));
+		queryAuctionDetailResponse.setPartnerType(_ctx.stringValue("QueryAuctionDetailResponse.PartnerType"));
+		queryAuctionDetailResponse.setCurrency(_ctx.stringValue("QueryAuctionDetailResponse.Currency"));
+		queryAuctionDetailResponse.setYourCurrentBid(_ctx.floatValue("QueryAuctionDetailResponse.YourCurrentBid"));
+		queryAuctionDetailResponse.setYourMaxBid(_ctx.floatValue("QueryAuctionDetailResponse.YourMaxBid"));
+		queryAuctionDetailResponse.setHighBid(_ctx.floatValue("QueryAuctionDetailResponse.HighBid"));
+		queryAuctionDetailResponse.setNextValidBid(_ctx.floatValue("QueryAuctionDetailResponse.NextValidBid"));
+		queryAuctionDetailResponse.setReserveMet(_ctx.booleanValue("QueryAuctionDetailResponse.ReserveMet"));
+		queryAuctionDetailResponse.setTransferInPrice(_ctx.floatValue("QueryAuctionDetailResponse.TransferInPrice"));
+		queryAuctionDetailResponse.setPayPrice(_ctx.floatValue("QueryAuctionDetailResponse.PayPrice"));
+		queryAuctionDetailResponse.setHighBidder(_ctx.stringValue("QueryAuctionDetailResponse.HighBidder"));
+		queryAuctionDetailResponse.setStatus(_ctx.stringValue("QueryAuctionDetailResponse.Status"));
+		queryAuctionDetailResponse.setPayStatus(_ctx.stringValue("QueryAuctionDetailResponse.PayStatus"));
+		queryAuctionDetailResponse.setProduceStatus(_ctx.stringValue("QueryAuctionDetailResponse.ProduceStatus"));
+		queryAuctionDetailResponse.setAuctionEndTime(_ctx.longValue("QueryAuctionDetailResponse.AuctionEndTime"));
+		queryAuctionDetailResponse.setBookEndTime(_ctx.longValue("QueryAuctionDetailResponse.BookEndTime"));
+		queryAuctionDetailResponse.setPayEndTime(_ctx.longValue("QueryAuctionDetailResponse.PayEndTime"));
+		queryAuctionDetailResponse.setDeliveryTime(_ctx.longValue("QueryAuctionDetailResponse.DeliveryTime"));
+		queryAuctionDetailResponse.setFailCode(_ctx.stringValue("QueryAuctionDetailResponse.FailCode"));
 	 
 	 	return queryAuctionDetailResponse;
 	}

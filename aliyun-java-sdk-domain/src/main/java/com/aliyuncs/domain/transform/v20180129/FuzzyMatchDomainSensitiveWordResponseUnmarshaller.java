@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FuzzyMatchDomainSensitiveWordResponseUnmarshaller {
 
-	public static FuzzyMatchDomainSensitiveWordResponse unmarshall(FuzzyMatchDomainSensitiveWordResponse fuzzyMatchDomainSensitiveWordResponse, UnmarshallerContext context) {
+	public static FuzzyMatchDomainSensitiveWordResponse unmarshall(FuzzyMatchDomainSensitiveWordResponse fuzzyMatchDomainSensitiveWordResponse, UnmarshallerContext _ctx) {
 		
-		fuzzyMatchDomainSensitiveWordResponse.setRequestId(context.stringValue("FuzzyMatchDomainSensitiveWordResponse.RequestId"));
-		fuzzyMatchDomainSensitiveWordResponse.setKeyword(context.stringValue("FuzzyMatchDomainSensitiveWordResponse.Keyword"));
-		fuzzyMatchDomainSensitiveWordResponse.setExist(context.booleanValue("FuzzyMatchDomainSensitiveWordResponse.Exist"));
+		fuzzyMatchDomainSensitiveWordResponse.setRequestId(_ctx.stringValue("FuzzyMatchDomainSensitiveWordResponse.RequestId"));
+		fuzzyMatchDomainSensitiveWordResponse.setKeyword(_ctx.stringValue("FuzzyMatchDomainSensitiveWordResponse.Keyword"));
+		fuzzyMatchDomainSensitiveWordResponse.setExist(_ctx.booleanValue("FuzzyMatchDomainSensitiveWordResponse.Exist"));
 
 		List<MatchedSensitiveWord> matchedSentiveWords = new ArrayList<MatchedSensitiveWord>();
-		for (int i = 0; i < context.lengthValue("FuzzyMatchDomainSensitiveWordResponse.MatchedSentiveWords.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("FuzzyMatchDomainSensitiveWordResponse.MatchedSentiveWords.Length"); i++) {
 			MatchedSensitiveWord matchedSensitiveWord = new MatchedSensitiveWord();
-			matchedSensitiveWord.setWord(context.stringValue("FuzzyMatchDomainSensitiveWordResponse.MatchedSentiveWords["+ i +"].Word"));
+			matchedSensitiveWord.setWord(_ctx.stringValue("FuzzyMatchDomainSensitiveWordResponse.MatchedSentiveWords["+ i +"].Word"));
 
 			matchedSentiveWords.add(matchedSensitiveWord);
 		}

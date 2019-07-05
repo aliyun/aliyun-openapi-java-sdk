@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FailDemandResponseUnmarshaller {
 
-	public static FailDemandResponse unmarshall(FailDemandResponse failDemandResponse, UnmarshallerContext context) {
+	public static FailDemandResponse unmarshall(FailDemandResponse failDemandResponse, UnmarshallerContext _ctx) {
 		
-		failDemandResponse.setRequestId(context.stringValue("FailDemandResponse.RequestId"));
+		failDemandResponse.setRequestId(_ctx.stringValue("FailDemandResponse.RequestId"));
 	 
 	 	return failDemandResponse;
 	}

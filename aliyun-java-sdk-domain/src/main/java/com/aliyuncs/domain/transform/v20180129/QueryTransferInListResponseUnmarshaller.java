@@ -24,40 +24,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTransferInListResponseUnmarshaller {
 
-	public static QueryTransferInListResponse unmarshall(QueryTransferInListResponse queryTransferInListResponse, UnmarshallerContext context) {
+	public static QueryTransferInListResponse unmarshall(QueryTransferInListResponse queryTransferInListResponse, UnmarshallerContext _ctx) {
 		
-		queryTransferInListResponse.setRequestId(context.stringValue("QueryTransferInListResponse.RequestId"));
-		queryTransferInListResponse.setTotalItemNum(context.integerValue("QueryTransferInListResponse.TotalItemNum"));
-		queryTransferInListResponse.setCurrentPageNum(context.integerValue("QueryTransferInListResponse.CurrentPageNum"));
-		queryTransferInListResponse.setTotalPageNum(context.integerValue("QueryTransferInListResponse.TotalPageNum"));
-		queryTransferInListResponse.setPageSize(context.integerValue("QueryTransferInListResponse.PageSize"));
-		queryTransferInListResponse.setPrePage(context.booleanValue("QueryTransferInListResponse.PrePage"));
-		queryTransferInListResponse.setNextPage(context.booleanValue("QueryTransferInListResponse.NextPage"));
+		queryTransferInListResponse.setRequestId(_ctx.stringValue("QueryTransferInListResponse.RequestId"));
+		queryTransferInListResponse.setTotalItemNum(_ctx.integerValue("QueryTransferInListResponse.TotalItemNum"));
+		queryTransferInListResponse.setCurrentPageNum(_ctx.integerValue("QueryTransferInListResponse.CurrentPageNum"));
+		queryTransferInListResponse.setTotalPageNum(_ctx.integerValue("QueryTransferInListResponse.TotalPageNum"));
+		queryTransferInListResponse.setPageSize(_ctx.integerValue("QueryTransferInListResponse.PageSize"));
+		queryTransferInListResponse.setPrePage(_ctx.booleanValue("QueryTransferInListResponse.PrePage"));
+		queryTransferInListResponse.setNextPage(_ctx.booleanValue("QueryTransferInListResponse.NextPage"));
 
 		List<TransferInInfo> data = new ArrayList<TransferInInfo>();
-		for (int i = 0; i < context.lengthValue("QueryTransferInListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTransferInListResponse.Data.Length"); i++) {
 			TransferInInfo transferInInfo = new TransferInInfo();
-			transferInInfo.setSubmissionDate(context.stringValue("QueryTransferInListResponse.Data["+ i +"].SubmissionDate"));
-			transferInInfo.setModificationDate(context.stringValue("QueryTransferInListResponse.Data["+ i +"].ModificationDate"));
-			transferInInfo.setUserId(context.stringValue("QueryTransferInListResponse.Data["+ i +"].UserId"));
-			transferInInfo.setInstanceId(context.stringValue("QueryTransferInListResponse.Data["+ i +"].InstanceId"));
-			transferInInfo.setDomainName(context.stringValue("QueryTransferInListResponse.Data["+ i +"].DomainName"));
-			transferInInfo.setStatus(context.integerValue("QueryTransferInListResponse.Data["+ i +"].Status"));
-			transferInInfo.setSimpleTransferInStatus(context.stringValue("QueryTransferInListResponse.Data["+ i +"].SimpleTransferInStatus"));
-			transferInInfo.setResultCode(context.stringValue("QueryTransferInListResponse.Data["+ i +"].ResultCode"));
-			transferInInfo.setResultDate(context.stringValue("QueryTransferInListResponse.Data["+ i +"].ResultDate"));
-			transferInInfo.setResultMsg(context.stringValue("QueryTransferInListResponse.Data["+ i +"].ResultMsg"));
-			transferInInfo.setTransferAuthorizationCodeSubmissionDate(context.stringValue("QueryTransferInListResponse.Data["+ i +"].TransferAuthorizationCodeSubmissionDate"));
-			transferInInfo.setNeedMailCheck(context.booleanValue("QueryTransferInListResponse.Data["+ i +"].NeedMailCheck"));
-			transferInInfo.setEmail(context.stringValue("QueryTransferInListResponse.Data["+ i +"].Email"));
-			transferInInfo.setWhoisMailStatus(context.booleanValue("QueryTransferInListResponse.Data["+ i +"].WhoisMailStatus"));
-			transferInInfo.setExpirationDate(context.stringValue("QueryTransferInListResponse.Data["+ i +"].ExpirationDate"));
-			transferInInfo.setProgressBarType(context.integerValue("QueryTransferInListResponse.Data["+ i +"].ProgressBarType"));
-			transferInInfo.setSubmissionDateLong(context.longValue("QueryTransferInListResponse.Data["+ i +"].SubmissionDateLong"));
-			transferInInfo.setModificationDateLong(context.longValue("QueryTransferInListResponse.Data["+ i +"].ModificationDateLong"));
-			transferInInfo.setResultDateLong(context.longValue("QueryTransferInListResponse.Data["+ i +"].ResultDateLong"));
-			transferInInfo.setExpirationDateLong(context.longValue("QueryTransferInListResponse.Data["+ i +"].ExpirationDateLong"));
-			transferInInfo.setTransferAuthorizationCodeSubmissionDateLong(context.longValue("QueryTransferInListResponse.Data["+ i +"].TransferAuthorizationCodeSubmissionDateLong"));
+			transferInInfo.setSubmissionDate(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].SubmissionDate"));
+			transferInInfo.setModificationDate(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].ModificationDate"));
+			transferInInfo.setUserId(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].UserId"));
+			transferInInfo.setInstanceId(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].InstanceId"));
+			transferInInfo.setDomainName(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].DomainName"));
+			transferInInfo.setStatus(_ctx.integerValue("QueryTransferInListResponse.Data["+ i +"].Status"));
+			transferInInfo.setSimpleTransferInStatus(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].SimpleTransferInStatus"));
+			transferInInfo.setResultCode(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].ResultCode"));
+			transferInInfo.setResultDate(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].ResultDate"));
+			transferInInfo.setResultMsg(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].ResultMsg"));
+			transferInInfo.setTransferAuthorizationCodeSubmissionDate(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].TransferAuthorizationCodeSubmissionDate"));
+			transferInInfo.setNeedMailCheck(_ctx.booleanValue("QueryTransferInListResponse.Data["+ i +"].NeedMailCheck"));
+			transferInInfo.setEmail(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].Email"));
+			transferInInfo.setWhoisMailStatus(_ctx.booleanValue("QueryTransferInListResponse.Data["+ i +"].WhoisMailStatus"));
+			transferInInfo.setExpirationDate(_ctx.stringValue("QueryTransferInListResponse.Data["+ i +"].ExpirationDate"));
+			transferInInfo.setProgressBarType(_ctx.integerValue("QueryTransferInListResponse.Data["+ i +"].ProgressBarType"));
+			transferInInfo.setSubmissionDateLong(_ctx.longValue("QueryTransferInListResponse.Data["+ i +"].SubmissionDateLong"));
+			transferInInfo.setModificationDateLong(_ctx.longValue("QueryTransferInListResponse.Data["+ i +"].ModificationDateLong"));
+			transferInInfo.setResultDateLong(_ctx.longValue("QueryTransferInListResponse.Data["+ i +"].ResultDateLong"));
+			transferInInfo.setExpirationDateLong(_ctx.longValue("QueryTransferInListResponse.Data["+ i +"].ExpirationDateLong"));
+			transferInInfo.setTransferAuthorizationCodeSubmissionDateLong(_ctx.longValue("QueryTransferInListResponse.Data["+ i +"].TransferAuthorizationCodeSubmissionDateLong"));
 
 			data.add(transferInInfo);
 		}

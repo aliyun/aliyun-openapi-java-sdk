@@ -20,19 +20,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryArtExtensionResponseUnmarshaller {
 
-	public static QueryArtExtensionResponse unmarshall(QueryArtExtensionResponse queryArtExtensionResponse, UnmarshallerContext context) {
+	public static QueryArtExtensionResponse unmarshall(QueryArtExtensionResponse queryArtExtensionResponse, UnmarshallerContext _ctx) {
 		
-		queryArtExtensionResponse.setRequestId(context.stringValue("QueryArtExtensionResponse.RequestId"));
-		queryArtExtensionResponse.setObjectType(context.stringValue("QueryArtExtensionResponse.ObjectType"));
-		queryArtExtensionResponse.setMaterialsAndTechniques(context.stringValue("QueryArtExtensionResponse.MaterialsAndTechniques"));
-		queryArtExtensionResponse.setDimensions(context.stringValue("QueryArtExtensionResponse.Dimensions"));
-		queryArtExtensionResponse.setTitle(context.stringValue("QueryArtExtensionResponse.Title"));
-		queryArtExtensionResponse.setDateOrPeriod(context.stringValue("QueryArtExtensionResponse.DateOrPeriod"));
-		queryArtExtensionResponse.setMaker(context.stringValue("QueryArtExtensionResponse.Maker"));
-		queryArtExtensionResponse.setInscriptionsAndMarkings(context.stringValue("QueryArtExtensionResponse.InscriptionsAndMarkings"));
-		queryArtExtensionResponse.setSubject(context.stringValue("QueryArtExtensionResponse.Subject"));
-		queryArtExtensionResponse.setFeatures(context.stringValue("QueryArtExtensionResponse.Features"));
-		queryArtExtensionResponse.setReference(context.stringValue("QueryArtExtensionResponse.Reference"));
+		queryArtExtensionResponse.setRequestId(_ctx.stringValue("QueryArtExtensionResponse.RequestId"));
+		queryArtExtensionResponse.setObjectType(_ctx.stringValue("QueryArtExtensionResponse.ObjectType"));
+		queryArtExtensionResponse.setMaterialsAndTechniques(_ctx.stringValue("QueryArtExtensionResponse.MaterialsAndTechniques"));
+		queryArtExtensionResponse.setDimensions(_ctx.stringValue("QueryArtExtensionResponse.Dimensions"));
+		queryArtExtensionResponse.setTitle(_ctx.stringValue("QueryArtExtensionResponse.Title"));
+		queryArtExtensionResponse.setDateOrPeriod(_ctx.stringValue("QueryArtExtensionResponse.DateOrPeriod"));
+		queryArtExtensionResponse.setMaker(_ctx.stringValue("QueryArtExtensionResponse.Maker"));
+		queryArtExtensionResponse.setInscriptionsAndMarkings(_ctx.stringValue("QueryArtExtensionResponse.InscriptionsAndMarkings"));
+		queryArtExtensionResponse.setSubject(_ctx.stringValue("QueryArtExtensionResponse.Subject"));
+		queryArtExtensionResponse.setFeatures(_ctx.stringValue("QueryArtExtensionResponse.Features"));
+		queryArtExtensionResponse.setReference(_ctx.stringValue("QueryArtExtensionResponse.Reference"));
 	 
 	 	return queryArtExtensionResponse;
 	}

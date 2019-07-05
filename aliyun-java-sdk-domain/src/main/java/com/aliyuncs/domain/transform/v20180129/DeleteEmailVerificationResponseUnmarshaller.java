@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteEmailVerificationResponseUnmarshaller {
 
-	public static DeleteEmailVerificationResponse unmarshall(DeleteEmailVerificationResponse deleteEmailVerificationResponse, UnmarshallerContext context) {
+	public static DeleteEmailVerificationResponse unmarshall(DeleteEmailVerificationResponse deleteEmailVerificationResponse, UnmarshallerContext _ctx) {
 		
-		deleteEmailVerificationResponse.setRequestId(context.stringValue("DeleteEmailVerificationResponse.RequestId"));
+		deleteEmailVerificationResponse.setRequestId(_ctx.stringValue("DeleteEmailVerificationResponse.RequestId"));
 
 		List<SendResult> successList = new ArrayList<SendResult>();
-		for (int i = 0; i < context.lengthValue("DeleteEmailVerificationResponse.SuccessList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DeleteEmailVerificationResponse.SuccessList.Length"); i++) {
 			SendResult sendResult = new SendResult();
-			sendResult.setEmail(context.stringValue("DeleteEmailVerificationResponse.SuccessList["+ i +"].Email"));
-			sendResult.setCode(context.stringValue("DeleteEmailVerificationResponse.SuccessList["+ i +"].Code"));
-			sendResult.setMessage(context.stringValue("DeleteEmailVerificationResponse.SuccessList["+ i +"].Message"));
+			sendResult.setEmail(_ctx.stringValue("DeleteEmailVerificationResponse.SuccessList["+ i +"].Email"));
+			sendResult.setCode(_ctx.stringValue("DeleteEmailVerificationResponse.SuccessList["+ i +"].Code"));
+			sendResult.setMessage(_ctx.stringValue("DeleteEmailVerificationResponse.SuccessList["+ i +"].Message"));
 
 			successList.add(sendResult);
 		}
 		deleteEmailVerificationResponse.setSuccessList(successList);
 
 		List<SendResult> failList = new ArrayList<SendResult>();
-		for (int i = 0; i < context.lengthValue("DeleteEmailVerificationResponse.FailList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DeleteEmailVerificationResponse.FailList.Length"); i++) {
 			SendResult sendResult = new SendResult();
-			sendResult.setEmail(context.stringValue("DeleteEmailVerificationResponse.FailList["+ i +"].Email"));
-			sendResult.setCode(context.stringValue("DeleteEmailVerificationResponse.FailList["+ i +"].Code"));
-			sendResult.setMessage(context.stringValue("DeleteEmailVerificationResponse.FailList["+ i +"].Message"));
+			sendResult.setEmail(_ctx.stringValue("DeleteEmailVerificationResponse.FailList["+ i +"].Email"));
+			sendResult.setCode(_ctx.stringValue("DeleteEmailVerificationResponse.FailList["+ i +"].Code"));
+			sendResult.setMessage(_ctx.stringValue("DeleteEmailVerificationResponse.FailList["+ i +"].Message"));
 
 			failList.add(sendResult);
 		}

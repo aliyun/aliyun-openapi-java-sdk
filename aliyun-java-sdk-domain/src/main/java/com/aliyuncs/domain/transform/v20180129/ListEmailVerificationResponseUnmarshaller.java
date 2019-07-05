@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListEmailVerificationResponseUnmarshaller {
 
-	public static ListEmailVerificationResponse unmarshall(ListEmailVerificationResponse listEmailVerificationResponse, UnmarshallerContext context) {
+	public static ListEmailVerificationResponse unmarshall(ListEmailVerificationResponse listEmailVerificationResponse, UnmarshallerContext _ctx) {
 		
-		listEmailVerificationResponse.setRequestId(context.stringValue("ListEmailVerificationResponse.RequestId"));
-		listEmailVerificationResponse.setTotalItemNum(context.integerValue("ListEmailVerificationResponse.TotalItemNum"));
-		listEmailVerificationResponse.setCurrentPageNum(context.integerValue("ListEmailVerificationResponse.CurrentPageNum"));
-		listEmailVerificationResponse.setTotalPageNum(context.integerValue("ListEmailVerificationResponse.TotalPageNum"));
-		listEmailVerificationResponse.setPageSize(context.integerValue("ListEmailVerificationResponse.PageSize"));
-		listEmailVerificationResponse.setPrePage(context.booleanValue("ListEmailVerificationResponse.PrePage"));
-		listEmailVerificationResponse.setNextPage(context.booleanValue("ListEmailVerificationResponse.NextPage"));
+		listEmailVerificationResponse.setRequestId(_ctx.stringValue("ListEmailVerificationResponse.RequestId"));
+		listEmailVerificationResponse.setTotalItemNum(_ctx.integerValue("ListEmailVerificationResponse.TotalItemNum"));
+		listEmailVerificationResponse.setCurrentPageNum(_ctx.integerValue("ListEmailVerificationResponse.CurrentPageNum"));
+		listEmailVerificationResponse.setTotalPageNum(_ctx.integerValue("ListEmailVerificationResponse.TotalPageNum"));
+		listEmailVerificationResponse.setPageSize(_ctx.integerValue("ListEmailVerificationResponse.PageSize"));
+		listEmailVerificationResponse.setPrePage(_ctx.booleanValue("ListEmailVerificationResponse.PrePage"));
+		listEmailVerificationResponse.setNextPage(_ctx.booleanValue("ListEmailVerificationResponse.NextPage"));
 
 		List<EmailVerification> data = new ArrayList<EmailVerification>();
-		for (int i = 0; i < context.lengthValue("ListEmailVerificationResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListEmailVerificationResponse.Data.Length"); i++) {
 			EmailVerification emailVerification = new EmailVerification();
-			emailVerification.setGmtCreate(context.stringValue("ListEmailVerificationResponse.Data["+ i +"].GmtCreate"));
-			emailVerification.setGmtModified(context.stringValue("ListEmailVerificationResponse.Data["+ i +"].GmtModified"));
-			emailVerification.setEmail(context.stringValue("ListEmailVerificationResponse.Data["+ i +"].Email"));
-			emailVerification.setUserId(context.stringValue("ListEmailVerificationResponse.Data["+ i +"].UserId"));
-			emailVerification.setEmailVerificationNo(context.stringValue("ListEmailVerificationResponse.Data["+ i +"].EmailVerificationNo"));
-			emailVerification.setTokenSendTime(context.stringValue("ListEmailVerificationResponse.Data["+ i +"].TokenSendTime"));
-			emailVerification.setVerificationStatus(context.integerValue("ListEmailVerificationResponse.Data["+ i +"].VerificationStatus"));
-			emailVerification.setVerificationTime(context.stringValue("ListEmailVerificationResponse.Data["+ i +"].VerificationTime"));
-			emailVerification.setSendIp(context.stringValue("ListEmailVerificationResponse.Data["+ i +"].SendIp"));
-			emailVerification.setConfirmIp(context.stringValue("ListEmailVerificationResponse.Data["+ i +"].ConfirmIp"));
+			emailVerification.setGmtCreate(_ctx.stringValue("ListEmailVerificationResponse.Data["+ i +"].GmtCreate"));
+			emailVerification.setGmtModified(_ctx.stringValue("ListEmailVerificationResponse.Data["+ i +"].GmtModified"));
+			emailVerification.setEmail(_ctx.stringValue("ListEmailVerificationResponse.Data["+ i +"].Email"));
+			emailVerification.setUserId(_ctx.stringValue("ListEmailVerificationResponse.Data["+ i +"].UserId"));
+			emailVerification.setEmailVerificationNo(_ctx.stringValue("ListEmailVerificationResponse.Data["+ i +"].EmailVerificationNo"));
+			emailVerification.setTokenSendTime(_ctx.stringValue("ListEmailVerificationResponse.Data["+ i +"].TokenSendTime"));
+			emailVerification.setVerificationStatus(_ctx.integerValue("ListEmailVerificationResponse.Data["+ i +"].VerificationStatus"));
+			emailVerification.setVerificationTime(_ctx.stringValue("ListEmailVerificationResponse.Data["+ i +"].VerificationTime"));
+			emailVerification.setSendIp(_ctx.stringValue("ListEmailVerificationResponse.Data["+ i +"].SendIp"));
+			emailVerification.setConfirmIp(_ctx.stringValue("ListEmailVerificationResponse.Data["+ i +"].ConfirmIp"));
 
 			data.add(emailVerification);
 		}

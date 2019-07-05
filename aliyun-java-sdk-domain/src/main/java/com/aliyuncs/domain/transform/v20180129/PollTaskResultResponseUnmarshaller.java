@@ -24,32 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PollTaskResultResponseUnmarshaller {
 
-	public static PollTaskResultResponse unmarshall(PollTaskResultResponse pollTaskResultResponse, UnmarshallerContext context) {
+	public static PollTaskResultResponse unmarshall(PollTaskResultResponse pollTaskResultResponse, UnmarshallerContext _ctx) {
 		
-		pollTaskResultResponse.setRequestId(context.stringValue("PollTaskResultResponse.RequestId"));
-		pollTaskResultResponse.setTotalItemNum(context.integerValue("PollTaskResultResponse.TotalItemNum"));
-		pollTaskResultResponse.setCurrentPageNum(context.integerValue("PollTaskResultResponse.CurrentPageNum"));
-		pollTaskResultResponse.setTotalPageNum(context.integerValue("PollTaskResultResponse.TotalPageNum"));
-		pollTaskResultResponse.setPageSize(context.integerValue("PollTaskResultResponse.PageSize"));
-		pollTaskResultResponse.setPrePage(context.booleanValue("PollTaskResultResponse.PrePage"));
-		pollTaskResultResponse.setNextPage(context.booleanValue("PollTaskResultResponse.NextPage"));
+		pollTaskResultResponse.setRequestId(_ctx.stringValue("PollTaskResultResponse.RequestId"));
+		pollTaskResultResponse.setTotalItemNum(_ctx.integerValue("PollTaskResultResponse.TotalItemNum"));
+		pollTaskResultResponse.setCurrentPageNum(_ctx.integerValue("PollTaskResultResponse.CurrentPageNum"));
+		pollTaskResultResponse.setTotalPageNum(_ctx.integerValue("PollTaskResultResponse.TotalPageNum"));
+		pollTaskResultResponse.setPageSize(_ctx.integerValue("PollTaskResultResponse.PageSize"));
+		pollTaskResultResponse.setPrePage(_ctx.booleanValue("PollTaskResultResponse.PrePage"));
+		pollTaskResultResponse.setNextPage(_ctx.booleanValue("PollTaskResultResponse.NextPage"));
 
 		List<TaskDetail> data = new ArrayList<TaskDetail>();
-		for (int i = 0; i < context.lengthValue("PollTaskResultResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("PollTaskResultResponse.Data.Length"); i++) {
 			TaskDetail taskDetail = new TaskDetail();
-			taskDetail.setTaskNo(context.stringValue("PollTaskResultResponse.Data["+ i +"].TaskNo"));
-			taskDetail.setTaskDetailNo(context.stringValue("PollTaskResultResponse.Data["+ i +"].TaskDetailNo"));
-			taskDetail.setTaskType(context.stringValue("PollTaskResultResponse.Data["+ i +"].TaskType"));
-			taskDetail.setInstanceId(context.stringValue("PollTaskResultResponse.Data["+ i +"].InstanceId"));
-			taskDetail.setDomainName(context.stringValue("PollTaskResultResponse.Data["+ i +"].DomainName"));
-			taskDetail.setTaskStatus(context.stringValue("PollTaskResultResponse.Data["+ i +"].TaskStatus"));
-			taskDetail.setUpdateTime(context.stringValue("PollTaskResultResponse.Data["+ i +"].UpdateTime"));
-			taskDetail.setCreateTime(context.stringValue("PollTaskResultResponse.Data["+ i +"].CreateTime"));
-			taskDetail.setTryCount(context.integerValue("PollTaskResultResponse.Data["+ i +"].TryCount"));
-			taskDetail.setErrorMsg(context.stringValue("PollTaskResultResponse.Data["+ i +"].ErrorMsg"));
-			taskDetail.setTaskStatusCode(context.integerValue("PollTaskResultResponse.Data["+ i +"].TaskStatusCode"));
-			taskDetail.setTaskResult(context.stringValue("PollTaskResultResponse.Data["+ i +"].TaskResult"));
-			taskDetail.setTaskTypeDescription(context.stringValue("PollTaskResultResponse.Data["+ i +"].TaskTypeDescription"));
+			taskDetail.setTaskNo(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskNo"));
+			taskDetail.setTaskDetailNo(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskDetailNo"));
+			taskDetail.setTaskType(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskType"));
+			taskDetail.setInstanceId(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].InstanceId"));
+			taskDetail.setDomainName(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].DomainName"));
+			taskDetail.setTaskStatus(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskStatus"));
+			taskDetail.setUpdateTime(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].UpdateTime"));
+			taskDetail.setCreateTime(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].CreateTime"));
+			taskDetail.setTryCount(_ctx.integerValue("PollTaskResultResponse.Data["+ i +"].TryCount"));
+			taskDetail.setErrorMsg(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].ErrorMsg"));
+			taskDetail.setTaskStatusCode(_ctx.integerValue("PollTaskResultResponse.Data["+ i +"].TaskStatusCode"));
+			taskDetail.setTaskResult(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskResult"));
+			taskDetail.setTaskTypeDescription(_ctx.stringValue("PollTaskResultResponse.Data["+ i +"].TaskTypeDescription"));
 
 			data.add(taskDetail);
 		}

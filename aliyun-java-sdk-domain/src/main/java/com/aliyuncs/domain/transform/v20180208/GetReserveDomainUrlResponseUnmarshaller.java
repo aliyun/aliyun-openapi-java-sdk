@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetReserveDomainUrlResponseUnmarshaller {
 
-	public static GetReserveDomainUrlResponse unmarshall(GetReserveDomainUrlResponse getReserveDomainUrlResponse, UnmarshallerContext context) {
+	public static GetReserveDomainUrlResponse unmarshall(GetReserveDomainUrlResponse getReserveDomainUrlResponse, UnmarshallerContext _ctx) {
 		
-		getReserveDomainUrlResponse.setRequestId(context.stringValue("GetReserveDomainUrlResponse.RequestId"));
-		getReserveDomainUrlResponse.setUrl(context.stringValue("GetReserveDomainUrlResponse.Url"));
+		getReserveDomainUrlResponse.setRequestId(_ctx.stringValue("GetReserveDomainUrlResponse.RequestId"));
+		getReserveDomainUrlResponse.setUrl(_ctx.stringValue("GetReserveDomainUrlResponse.Url"));
 	 
 	 	return getReserveDomainUrlResponse;
 	}

@@ -27,59 +27,59 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTaskInfoHistoryResponseUnmarshaller {
 
-	public static QueryTaskInfoHistoryResponse unmarshall(QueryTaskInfoHistoryResponse queryTaskInfoHistoryResponse, UnmarshallerContext context) {
+	public static QueryTaskInfoHistoryResponse unmarshall(QueryTaskInfoHistoryResponse queryTaskInfoHistoryResponse, UnmarshallerContext _ctx) {
 		
-		queryTaskInfoHistoryResponse.setRequestId(context.stringValue("QueryTaskInfoHistoryResponse.RequestId"));
-		queryTaskInfoHistoryResponse.setPageSize(context.integerValue("QueryTaskInfoHistoryResponse.PageSize"));
+		queryTaskInfoHistoryResponse.setRequestId(_ctx.stringValue("QueryTaskInfoHistoryResponse.RequestId"));
+		queryTaskInfoHistoryResponse.setPageSize(_ctx.integerValue("QueryTaskInfoHistoryResponse.PageSize"));
 
 		CurrentPageCursor currentPageCursor = new CurrentPageCursor();
-		currentPageCursor.setTaskType(context.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskType"));
-		currentPageCursor.setTaskNum(context.integerValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskNum"));
-		currentPageCursor.setTaskStatus(context.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskStatus"));
-		currentPageCursor.setCreateTime(context.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.CreateTime"));
-		currentPageCursor.setClientip(context.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.Clientip"));
-		currentPageCursor.setTaskNo(context.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskNo"));
-		currentPageCursor.setCreateTimeLong(context.longValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.CreateTimeLong"));
-		currentPageCursor.setTaskStatusCode(context.integerValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskStatusCode"));
-		currentPageCursor.setTaskTypeDescription(context.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskTypeDescription"));
+		currentPageCursor.setTaskType(_ctx.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskType"));
+		currentPageCursor.setTaskNum(_ctx.integerValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskNum"));
+		currentPageCursor.setTaskStatus(_ctx.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskStatus"));
+		currentPageCursor.setCreateTime(_ctx.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.CreateTime"));
+		currentPageCursor.setClientip(_ctx.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.Clientip"));
+		currentPageCursor.setTaskNo(_ctx.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskNo"));
+		currentPageCursor.setCreateTimeLong(_ctx.longValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.CreateTimeLong"));
+		currentPageCursor.setTaskStatusCode(_ctx.integerValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskStatusCode"));
+		currentPageCursor.setTaskTypeDescription(_ctx.stringValue("QueryTaskInfoHistoryResponse.CurrentPageCursor.TaskTypeDescription"));
 		queryTaskInfoHistoryResponse.setCurrentPageCursor(currentPageCursor);
 
 		NextPageCursor nextPageCursor = new NextPageCursor();
-		nextPageCursor.setTaskType(context.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskType"));
-		nextPageCursor.setTaskNum(context.integerValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskNum"));
-		nextPageCursor.setTaskStatus(context.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskStatus"));
-		nextPageCursor.setCreateTime(context.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.CreateTime"));
-		nextPageCursor.setClientip(context.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.Clientip"));
-		nextPageCursor.setTaskNo(context.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskNo"));
-		nextPageCursor.setCreateTimeLong(context.longValue("QueryTaskInfoHistoryResponse.NextPageCursor.CreateTimeLong"));
-		nextPageCursor.setTaskStatusCode(context.integerValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskStatusCode"));
-		nextPageCursor.setTaskTypeDescription(context.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskTypeDescription"));
+		nextPageCursor.setTaskType(_ctx.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskType"));
+		nextPageCursor.setTaskNum(_ctx.integerValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskNum"));
+		nextPageCursor.setTaskStatus(_ctx.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskStatus"));
+		nextPageCursor.setCreateTime(_ctx.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.CreateTime"));
+		nextPageCursor.setClientip(_ctx.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.Clientip"));
+		nextPageCursor.setTaskNo(_ctx.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskNo"));
+		nextPageCursor.setCreateTimeLong(_ctx.longValue("QueryTaskInfoHistoryResponse.NextPageCursor.CreateTimeLong"));
+		nextPageCursor.setTaskStatusCode(_ctx.integerValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskStatusCode"));
+		nextPageCursor.setTaskTypeDescription(_ctx.stringValue("QueryTaskInfoHistoryResponse.NextPageCursor.TaskTypeDescription"));
 		queryTaskInfoHistoryResponse.setNextPageCursor(nextPageCursor);
 
 		PrePageCursor prePageCursor = new PrePageCursor();
-		prePageCursor.setTaskType(context.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskType"));
-		prePageCursor.setTaskNum(context.integerValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskNum"));
-		prePageCursor.setTaskStatus(context.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskStatus"));
-		prePageCursor.setCreateTime(context.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.CreateTime"));
-		prePageCursor.setClientip(context.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.Clientip"));
-		prePageCursor.setTaskNo(context.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskNo"));
-		prePageCursor.setCreateTimeLong(context.longValue("QueryTaskInfoHistoryResponse.PrePageCursor.CreateTimeLong"));
-		prePageCursor.setTaskStatusCode(context.integerValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskStatusCode"));
-		prePageCursor.setTaskTypeDescription(context.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskTypeDescription"));
+		prePageCursor.setTaskType(_ctx.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskType"));
+		prePageCursor.setTaskNum(_ctx.integerValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskNum"));
+		prePageCursor.setTaskStatus(_ctx.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskStatus"));
+		prePageCursor.setCreateTime(_ctx.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.CreateTime"));
+		prePageCursor.setClientip(_ctx.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.Clientip"));
+		prePageCursor.setTaskNo(_ctx.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskNo"));
+		prePageCursor.setCreateTimeLong(_ctx.longValue("QueryTaskInfoHistoryResponse.PrePageCursor.CreateTimeLong"));
+		prePageCursor.setTaskStatusCode(_ctx.integerValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskStatusCode"));
+		prePageCursor.setTaskTypeDescription(_ctx.stringValue("QueryTaskInfoHistoryResponse.PrePageCursor.TaskTypeDescription"));
 		queryTaskInfoHistoryResponse.setPrePageCursor(prePageCursor);
 
 		List<TaskInfoHistory> objects = new ArrayList<TaskInfoHistory>();
-		for (int i = 0; i < context.lengthValue("QueryTaskInfoHistoryResponse.Objects.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryTaskInfoHistoryResponse.Objects.Length"); i++) {
 			TaskInfoHistory taskInfoHistory = new TaskInfoHistory();
-			taskInfoHistory.setTaskType(context.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskType"));
-			taskInfoHistory.setTaskNum(context.integerValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskNum"));
-			taskInfoHistory.setTaskStatus(context.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskStatus"));
-			taskInfoHistory.setCreateTime(context.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].CreateTime"));
-			taskInfoHistory.setClientip(context.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].Clientip"));
-			taskInfoHistory.setTaskNo(context.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskNo"));
-			taskInfoHistory.setCreateTimeLong(context.longValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].CreateTimeLong"));
-			taskInfoHistory.setTaskStatusCode(context.integerValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskStatusCode"));
-			taskInfoHistory.setTaskTypeDescription(context.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskTypeDescription"));
+			taskInfoHistory.setTaskType(_ctx.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskType"));
+			taskInfoHistory.setTaskNum(_ctx.integerValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskNum"));
+			taskInfoHistory.setTaskStatus(_ctx.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskStatus"));
+			taskInfoHistory.setCreateTime(_ctx.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].CreateTime"));
+			taskInfoHistory.setClientip(_ctx.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].Clientip"));
+			taskInfoHistory.setTaskNo(_ctx.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskNo"));
+			taskInfoHistory.setCreateTimeLong(_ctx.longValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].CreateTimeLong"));
+			taskInfoHistory.setTaskStatusCode(_ctx.integerValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskStatusCode"));
+			taskInfoHistory.setTaskTypeDescription(_ctx.stringValue("QueryTaskInfoHistoryResponse.Objects["+ i +"].TaskTypeDescription"));
 
 			objects.add(taskInfoHistory);
 		}

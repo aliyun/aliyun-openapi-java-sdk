@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDomainGroupListResponseUnmarshaller {
 
-	public static QueryDomainGroupListResponse unmarshall(QueryDomainGroupListResponse queryDomainGroupListResponse, UnmarshallerContext context) {
+	public static QueryDomainGroupListResponse unmarshall(QueryDomainGroupListResponse queryDomainGroupListResponse, UnmarshallerContext _ctx) {
 		
-		queryDomainGroupListResponse.setRequestId(context.stringValue("QueryDomainGroupListResponse.RequestId"));
+		queryDomainGroupListResponse.setRequestId(_ctx.stringValue("QueryDomainGroupListResponse.RequestId"));
 
 		List<DomainGroup> data = new ArrayList<DomainGroup>();
-		for (int i = 0; i < context.lengthValue("QueryDomainGroupListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryDomainGroupListResponse.Data.Length"); i++) {
 			DomainGroup domainGroup = new DomainGroup();
-			domainGroup.setDomainGroupId(context.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupId"));
-			domainGroup.setDomainGroupName(context.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupName"));
-			domainGroup.setTotalNumber(context.integerValue("QueryDomainGroupListResponse.Data["+ i +"].TotalNumber"));
-			domainGroup.setCreationDate(context.stringValue("QueryDomainGroupListResponse.Data["+ i +"].CreationDate"));
-			domainGroup.setModificationDate(context.stringValue("QueryDomainGroupListResponse.Data["+ i +"].ModificationDate"));
-			domainGroup.setDomainGroupStatus(context.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupStatus"));
-			domainGroup.setBeingDeleted(context.booleanValue("QueryDomainGroupListResponse.Data["+ i +"].BeingDeleted"));
+			domainGroup.setDomainGroupId(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupId"));
+			domainGroup.setDomainGroupName(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupName"));
+			domainGroup.setTotalNumber(_ctx.integerValue("QueryDomainGroupListResponse.Data["+ i +"].TotalNumber"));
+			domainGroup.setCreationDate(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].CreationDate"));
+			domainGroup.setModificationDate(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].ModificationDate"));
+			domainGroup.setDomainGroupStatus(_ctx.stringValue("QueryDomainGroupListResponse.Data["+ i +"].DomainGroupStatus"));
+			domainGroup.setBeingDeleted(_ctx.booleanValue("QueryDomainGroupListResponse.Data["+ i +"].BeingDeleted"));
 
 			data.add(domainGroup);
 		}

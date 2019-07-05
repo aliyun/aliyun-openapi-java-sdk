@@ -20,26 +20,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryContactInfoResponseUnmarshaller {
 
-	public static QueryContactInfoResponse unmarshall(QueryContactInfoResponse queryContactInfoResponse, UnmarshallerContext context) {
+	public static QueryContactInfoResponse unmarshall(QueryContactInfoResponse queryContactInfoResponse, UnmarshallerContext _ctx) {
 		
-		queryContactInfoResponse.setRequestId(context.stringValue("QueryContactInfoResponse.RequestId"));
-		queryContactInfoResponse.setCreateDate(context.stringValue("QueryContactInfoResponse.CreateDate"));
-		queryContactInfoResponse.setRegistrantName(context.stringValue("QueryContactInfoResponse.RegistrantName"));
-		queryContactInfoResponse.setRegistrantOrganization(context.stringValue("QueryContactInfoResponse.RegistrantOrganization"));
-		queryContactInfoResponse.setCountry(context.stringValue("QueryContactInfoResponse.Country"));
-		queryContactInfoResponse.setProvince(context.stringValue("QueryContactInfoResponse.Province"));
-		queryContactInfoResponse.setCity(context.stringValue("QueryContactInfoResponse.City"));
-		queryContactInfoResponse.setAddress(context.stringValue("QueryContactInfoResponse.Address"));
-		queryContactInfoResponse.setEmail(context.stringValue("QueryContactInfoResponse.Email"));
-		queryContactInfoResponse.setPostalCode(context.stringValue("QueryContactInfoResponse.PostalCode"));
-		queryContactInfoResponse.setTelArea(context.stringValue("QueryContactInfoResponse.TelArea"));
-		queryContactInfoResponse.setTelephone(context.stringValue("QueryContactInfoResponse.Telephone"));
-		queryContactInfoResponse.setTelExt(context.stringValue("QueryContactInfoResponse.TelExt"));
-		queryContactInfoResponse.setZhRegistrantName(context.stringValue("QueryContactInfoResponse.ZhRegistrantName"));
-		queryContactInfoResponse.setZhRegistrantOrganization(context.stringValue("QueryContactInfoResponse.ZhRegistrantOrganization"));
-		queryContactInfoResponse.setZhProvince(context.stringValue("QueryContactInfoResponse.ZhProvince"));
-		queryContactInfoResponse.setZhCity(context.stringValue("QueryContactInfoResponse.ZhCity"));
-		queryContactInfoResponse.setZhAddress(context.stringValue("QueryContactInfoResponse.ZhAddress"));
+		queryContactInfoResponse.setRequestId(_ctx.stringValue("QueryContactInfoResponse.RequestId"));
+		queryContactInfoResponse.setCreateDate(_ctx.stringValue("QueryContactInfoResponse.CreateDate"));
+		queryContactInfoResponse.setRegistrantName(_ctx.stringValue("QueryContactInfoResponse.RegistrantName"));
+		queryContactInfoResponse.setRegistrantOrganization(_ctx.stringValue("QueryContactInfoResponse.RegistrantOrganization"));
+		queryContactInfoResponse.setCountry(_ctx.stringValue("QueryContactInfoResponse.Country"));
+		queryContactInfoResponse.setProvince(_ctx.stringValue("QueryContactInfoResponse.Province"));
+		queryContactInfoResponse.setCity(_ctx.stringValue("QueryContactInfoResponse.City"));
+		queryContactInfoResponse.setAddress(_ctx.stringValue("QueryContactInfoResponse.Address"));
+		queryContactInfoResponse.setEmail(_ctx.stringValue("QueryContactInfoResponse.Email"));
+		queryContactInfoResponse.setPostalCode(_ctx.stringValue("QueryContactInfoResponse.PostalCode"));
+		queryContactInfoResponse.setTelArea(_ctx.stringValue("QueryContactInfoResponse.TelArea"));
+		queryContactInfoResponse.setTelephone(_ctx.stringValue("QueryContactInfoResponse.Telephone"));
+		queryContactInfoResponse.setTelExt(_ctx.stringValue("QueryContactInfoResponse.TelExt"));
+		queryContactInfoResponse.setZhRegistrantName(_ctx.stringValue("QueryContactInfoResponse.ZhRegistrantName"));
+		queryContactInfoResponse.setZhRegistrantOrganization(_ctx.stringValue("QueryContactInfoResponse.ZhRegistrantOrganization"));
+		queryContactInfoResponse.setZhProvince(_ctx.stringValue("QueryContactInfoResponse.ZhProvince"));
+		queryContactInfoResponse.setZhCity(_ctx.stringValue("QueryContactInfoResponse.ZhCity"));
+		queryContactInfoResponse.setZhAddress(_ctx.stringValue("QueryContactInfoResponse.ZhAddress"));
 	 
 	 	return queryContactInfoResponse;
 	}

@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryFailingReasonListForQualificationResponseUnmarshaller {
 
-	public static QueryFailingReasonListForQualificationResponse unmarshall(QueryFailingReasonListForQualificationResponse queryFailingReasonListForQualificationResponse, UnmarshallerContext context) {
+	public static QueryFailingReasonListForQualificationResponse unmarshall(QueryFailingReasonListForQualificationResponse queryFailingReasonListForQualificationResponse, UnmarshallerContext _ctx) {
 		
-		queryFailingReasonListForQualificationResponse.setRequestId(context.stringValue("QueryFailingReasonListForQualificationResponse.RequestId"));
+		queryFailingReasonListForQualificationResponse.setRequestId(_ctx.stringValue("QueryFailingReasonListForQualificationResponse.RequestId"));
 
 		List<FailRecord> data = new ArrayList<FailRecord>();
-		for (int i = 0; i < context.lengthValue("QueryFailingReasonListForQualificationResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryFailingReasonListForQualificationResponse.Data.Length"); i++) {
 			FailRecord failRecord = new FailRecord();
-			failRecord.setDate(context.stringValue("QueryFailingReasonListForQualificationResponse.Data["+ i +"].Date"));
-			failRecord.setFailReason(context.stringValue("QueryFailingReasonListForQualificationResponse.Data["+ i +"].FailReason"));
+			failRecord.setDate(_ctx.stringValue("QueryFailingReasonListForQualificationResponse.Data["+ i +"].Date"));
+			failRecord.setFailReason(_ctx.stringValue("QueryFailingReasonListForQualificationResponse.Data["+ i +"].FailReason"));
 
 			data.add(failRecord);
 		}
