@@ -21,7 +21,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author liumi
- * @version 1.0.3
+ * @version 1.0.5
  */
 public class DescribeContainerGroupsResponse extends AcsResponse {
 
@@ -108,6 +108,8 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 		private List<Container> initContainers;
 
 		private DnsConfig dnsConfig;
+
+		private List<HostAliase> hostAliases;
 
 		public String getContainerGroupId() {
 			return this.containerGroupId;
@@ -275,6 +277,14 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
 		public void setDnsConfig(DnsConfig dnsConfig) {
 			this.dnsConfig = dnsConfig;
+		}
+
+		public List<HostAliase> getHostAliases() {
+			return hostAliases;
+		}
+
+		public void setHostAliases(List<HostAliase> hostAliases) {
+			this.hostAliases = hostAliases;
 		}
 
 		public static class Label {
@@ -545,38 +555,49 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 				this.securityContext = securityContext;
 			}
 
-			public static class VolumeMount {
+            public static class VolumeMount {
 
-				private String name;
+                private String mountPath;
 
-				private String mountPath;
+                private Boolean readOnly;
 
-				private Boolean readOnly;
+                private String name;
 
-				public String getName() {
-					return this.name;
-				}
+                private String subPath;
 
-				public void setName(String name) {
-					this.name = name;
-				}
+                public String getMountPath() {
+                    return this.mountPath;
+                }
 
-				public String getMountPath() {
-					return this.mountPath;
-				}
+                public void setMountPath(String mountPath) {
+                    this.mountPath = mountPath;
+                }
 
-				public void setMountPath(String mountPath) {
-					this.mountPath = mountPath;
-				}
+                public Boolean getReadOnly() {
+                    return this.readOnly;
+                }
 
-				public Boolean getReadOnly() {
-					return this.readOnly;
-				}
+                public void setReadOnly(Boolean readOnly) {
+                    this.readOnly = readOnly;
+                }
 
-				public void setReadOnly(Boolean readOnly) {
-					this.readOnly = readOnly;
-				}
-			}
+                public String getName() {
+                    return this.name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public String getSubPath() {
+                    return subPath;
+                }
+
+                public void setSubPath(String subPath) {
+                    this.subPath = subPath;
+                }
+
+            }
 
 			public static class Port {
 
@@ -1003,6 +1024,29 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 				public void setValue(String value) {
 					this.value = value;
 				}
+			}
+		}
+
+		public static class HostAliase {
+
+			private String ip;
+
+			private List<String> hostnames;
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public List<String> getHostnames() {
+				return this.hostnames;
+			}
+
+			public void setHostnames(List<String> hostnames) {
+				this.hostnames = hostnames;
 			}
 		}
 	}
