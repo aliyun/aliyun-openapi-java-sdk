@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetIpOrHostsResponseUnmarshaller {
 
-	public static GetIpOrHostsResponse unmarshall(GetIpOrHostsResponse getIpOrHostsResponse, UnmarshallerContext context) {
+	public static GetIpOrHostsResponse unmarshall(GetIpOrHostsResponse getIpOrHostsResponse, UnmarshallerContext _ctx) {
 		
-		getIpOrHostsResponse.setRequestId(context.stringValue("GetIpOrHostsResponse.RequestId"));
+		getIpOrHostsResponse.setRequestId(_ctx.stringValue("GetIpOrHostsResponse.RequestId"));
 
 		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetIpOrHostsResponse.Data.Length"); i++) {
-			data.add(context.stringValue("GetIpOrHostsResponse.Data["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetIpOrHostsResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("GetIpOrHostsResponse.Data["+ i +"]"));
 		}
 		getIpOrHostsResponse.setData(data);
 	 

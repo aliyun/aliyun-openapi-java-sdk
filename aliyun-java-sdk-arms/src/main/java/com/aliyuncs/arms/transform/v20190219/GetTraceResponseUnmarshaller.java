@@ -27,43 +27,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTraceResponseUnmarshaller {
 
-	public static GetTraceResponse unmarshall(GetTraceResponse getTraceResponse, UnmarshallerContext context) {
+	public static GetTraceResponse unmarshall(GetTraceResponse getTraceResponse, UnmarshallerContext _ctx) {
 		
-		getTraceResponse.setRequestId(context.stringValue("GetTraceResponse.RequestId"));
+		getTraceResponse.setRequestId(_ctx.stringValue("GetTraceResponse.RequestId"));
 
 		List<CallChainInfo> data = new ArrayList<CallChainInfo>();
-		for (int i = 0; i < context.lengthValue("GetTraceResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetTraceResponse.Data.Length"); i++) {
 			CallChainInfo callChainInfo = new CallChainInfo();
-			callChainInfo.setTraceID(context.stringValue("GetTraceResponse.Data["+ i +"].TraceID"));
-			callChainInfo.setOperationName(context.stringValue("GetTraceResponse.Data["+ i +"].OperationName"));
-			callChainInfo.setDuration(context.longValue("GetTraceResponse.Data["+ i +"].Duration"));
-			callChainInfo.setServiceName(context.stringValue("GetTraceResponse.Data["+ i +"].ServiceName"));
-			callChainInfo.setServiceIp(context.stringValue("GetTraceResponse.Data["+ i +"].ServiceIp"));
-			callChainInfo.setTimestamp(context.longValue("GetTraceResponse.Data["+ i +"].Timestamp"));
-			callChainInfo.setRpcId(context.stringValue("GetTraceResponse.Data["+ i +"].RpcId"));
-			callChainInfo.setResultCode(context.stringValue("GetTraceResponse.Data["+ i +"].ResultCode"));
-			callChainInfo.setHaveStack(context.booleanValue("GetTraceResponse.Data["+ i +"].HaveStack"));
+			callChainInfo.setTraceID(_ctx.stringValue("GetTraceResponse.Data["+ i +"].TraceID"));
+			callChainInfo.setOperationName(_ctx.stringValue("GetTraceResponse.Data["+ i +"].OperationName"));
+			callChainInfo.setDuration(_ctx.longValue("GetTraceResponse.Data["+ i +"].Duration"));
+			callChainInfo.setServiceName(_ctx.stringValue("GetTraceResponse.Data["+ i +"].ServiceName"));
+			callChainInfo.setServiceIp(_ctx.stringValue("GetTraceResponse.Data["+ i +"].ServiceIp"));
+			callChainInfo.setTimestamp(_ctx.longValue("GetTraceResponse.Data["+ i +"].Timestamp"));
+			callChainInfo.setRpcId(_ctx.stringValue("GetTraceResponse.Data["+ i +"].RpcId"));
+			callChainInfo.setResultCode(_ctx.stringValue("GetTraceResponse.Data["+ i +"].ResultCode"));
+			callChainInfo.setHaveStack(_ctx.booleanValue("GetTraceResponse.Data["+ i +"].HaveStack"));
 
 			List<TagEntry> tagEntryList = new ArrayList<TagEntry>();
-			for (int j = 0; j < context.lengthValue("GetTraceResponse.Data["+ i +"].TagEntryList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetTraceResponse.Data["+ i +"].TagEntryList.Length"); j++) {
 				TagEntry tagEntry = new TagEntry();
-				tagEntry.setKey(context.stringValue("GetTraceResponse.Data["+ i +"].TagEntryList["+ j +"].Key"));
-				tagEntry.setValue(context.stringValue("GetTraceResponse.Data["+ i +"].TagEntryList["+ j +"].Value"));
+				tagEntry.setKey(_ctx.stringValue("GetTraceResponse.Data["+ i +"].TagEntryList["+ j +"].Key"));
+				tagEntry.setValue(_ctx.stringValue("GetTraceResponse.Data["+ i +"].TagEntryList["+ j +"].Value"));
 
 				tagEntryList.add(tagEntry);
 			}
 			callChainInfo.setTagEntryList(tagEntryList);
 
 			List<LogEvent> logEventList = new ArrayList<LogEvent>();
-			for (int j = 0; j < context.lengthValue("GetTraceResponse.Data["+ i +"].LogEventList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetTraceResponse.Data["+ i +"].LogEventList.Length"); j++) {
 				LogEvent logEvent = new LogEvent();
-				logEvent.setTimestamp(context.longValue("GetTraceResponse.Data["+ i +"].LogEventList["+ j +"].Timestamp"));
+				logEvent.setTimestamp(_ctx.longValue("GetTraceResponse.Data["+ i +"].LogEventList["+ j +"].Timestamp"));
 
 				List<TagEntry2> tagEntryList1 = new ArrayList<TagEntry2>();
-				for (int k = 0; k < context.lengthValue("GetTraceResponse.Data["+ i +"].LogEventList["+ j +"].TagEntryList.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("GetTraceResponse.Data["+ i +"].LogEventList["+ j +"].TagEntryList.Length"); k++) {
 					TagEntry2 tagEntry2 = new TagEntry2();
-					tagEntry2.setKey(context.stringValue("GetTraceResponse.Data["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Key"));
-					tagEntry2.setValue(context.stringValue("GetTraceResponse.Data["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Value"));
+					tagEntry2.setKey(_ctx.stringValue("GetTraceResponse.Data["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Key"));
+					tagEntry2.setValue(_ctx.stringValue("GetTraceResponse.Data["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Value"));
 
 					tagEntryList1.add(tagEntry2);
 				}

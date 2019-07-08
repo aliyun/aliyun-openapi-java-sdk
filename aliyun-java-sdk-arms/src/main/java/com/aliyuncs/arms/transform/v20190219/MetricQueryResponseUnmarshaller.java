@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetricQueryResponseUnmarshaller {
 
-	public static MetricQueryResponse unmarshall(MetricQueryResponse metricQueryResponse, UnmarshallerContext context) {
+	public static MetricQueryResponse unmarshall(MetricQueryResponse metricQueryResponse, UnmarshallerContext _ctx) {
 		
-		metricQueryResponse.setRequestId(context.stringValue("MetricQueryResponse.RequestId"));
-		metricQueryResponse.setData(context.stringValue("MetricQueryResponse.Data"));
+		metricQueryResponse.setRequestId(_ctx.stringValue("MetricQueryResponse.RequestId"));
+		metricQueryResponse.setData(_ctx.stringValue("MetricQueryResponse.Data"));
 	 
 	 	return metricQueryResponse;
 	}

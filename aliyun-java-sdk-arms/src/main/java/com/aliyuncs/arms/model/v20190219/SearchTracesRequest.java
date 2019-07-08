@@ -24,7 +24,7 @@ import java.util.List;
 public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 	
 	public SearchTracesRequest() {
-		super("ARMS", "2019-02-19", "SearchTraces", "arms");
+		super("ARMS", "2019-02-19", "SearchTraces");
 	}
 
 	private String serviceIp;

@@ -1,3 +1,6 @@
+2019-07-08 Version: 2.4.8
+- Add api `get token`.
+
 2019-06-12 Version: 2.4.7
 add serviceip for ‘SearchTracesCount’
 

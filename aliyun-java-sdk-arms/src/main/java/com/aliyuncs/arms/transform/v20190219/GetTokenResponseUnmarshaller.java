@@ -14,17 +14,23 @@
 
 package com.aliyuncs.arms.transform.v20190219;
 
-import com.aliyuncs.arms.model.v20190219.ARMSQueryDataSetResponse;
+import com.aliyuncs.arms.model.v20190219.GetTokenResponse;
+import com.aliyuncs.arms.model.v20190219.GetTokenResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ARMSQueryDataSetResponseUnmarshaller {
+public class GetTokenResponseUnmarshaller {
 
-	public static ARMSQueryDataSetResponse unmarshall(ARMSQueryDataSetResponse aRMSQueryDataSetResponse, UnmarshallerContext _ctx) {
+	public static GetTokenResponse unmarshall(GetTokenResponse getTokenResponse, UnmarshallerContext _ctx) {
 		
-		aRMSQueryDataSetResponse.setRequestId(_ctx.stringValue("ARMSQueryDataSetResponse.RequestId"));
-		aRMSQueryDataSetResponse.setData(_ctx.stringValue("ARMSQueryDataSetResponse.Data"));
+		getTokenResponse.setRequestId(_ctx.stringValue("GetTokenResponse.RequestId"));
+
+		Data data = new Data();
+		data.setDomain(_ctx.stringValue("GetTokenResponse.Data.Domain"));
+		data.setLicenseKey(_ctx.stringValue("GetTokenResponse.Data.LicenseKey"));
+		data.setPid(_ctx.stringValue("GetTokenResponse.Data.Pid"));
+		getTokenResponse.setData(data);
 	 
-	 	return aRMSQueryDataSetResponse;
+	 	return getTokenResponse;
 	}
 }

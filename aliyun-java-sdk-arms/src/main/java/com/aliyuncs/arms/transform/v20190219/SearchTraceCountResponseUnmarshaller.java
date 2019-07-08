@@ -21,12 +21,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SearchTraceCountResponseUnmarshaller {
 
-	public static SearchTraceCountResponse unmarshall(SearchTraceCountResponse searchTraceCountResponse, UnmarshallerContext context) {
+	public static SearchTraceCountResponse unmarshall(SearchTraceCountResponse searchTraceCountResponse, UnmarshallerContext _ctx) {
 		
-		searchTraceCountResponse.setRequestId(context.stringValue("SearchTraceCountResponse.RequestId"));
+		searchTraceCountResponse.setRequestId(_ctx.stringValue("SearchTraceCountResponse.RequestId"));
 
 		Data data = new Data();
-		data.setCount(context.longValue("SearchTraceCountResponse.Data.Count"));
+		data.setCount(_ctx.longValue("SearchTraceCountResponse.Data.Count"));
 		searchTraceCountResponse.setData(data);
 	 
 	 	return searchTraceCountResponse;

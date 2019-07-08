@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SearchTracesResponseUnmarshaller {
 
-	public static SearchTracesResponse unmarshall(SearchTracesResponse searchTracesResponse, UnmarshallerContext context) {
+	public static SearchTracesResponse unmarshall(SearchTracesResponse searchTracesResponse, UnmarshallerContext _ctx) {
 		
-		searchTracesResponse.setRequestId(context.stringValue("SearchTracesResponse.RequestId"));
+		searchTracesResponse.setRequestId(_ctx.stringValue("SearchTracesResponse.RequestId"));
 
 		List<TraceInfo> data = new ArrayList<TraceInfo>();
-		for (int i = 0; i < context.lengthValue("SearchTracesResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SearchTracesResponse.Data.Length"); i++) {
 			TraceInfo traceInfo = new TraceInfo();
-			traceInfo.setTraceID(context.stringValue("SearchTracesResponse.Data["+ i +"].TraceID"));
-			traceInfo.setOperationName(context.stringValue("SearchTracesResponse.Data["+ i +"].OperationName"));
-			traceInfo.setDuration(context.integerValue("SearchTracesResponse.Data["+ i +"].Duration"));
-			traceInfo.setServiceName(context.stringValue("SearchTracesResponse.Data["+ i +"].ServiceName"));
-			traceInfo.setServiceIp(context.stringValue("SearchTracesResponse.Data["+ i +"].ServiceIp"));
-			traceInfo.setTimestamp(context.longValue("SearchTracesResponse.Data["+ i +"].Timestamp"));
+			traceInfo.setTraceID(_ctx.stringValue("SearchTracesResponse.Data["+ i +"].TraceID"));
+			traceInfo.setOperationName(_ctx.stringValue("SearchTracesResponse.Data["+ i +"].OperationName"));
+			traceInfo.setDuration(_ctx.integerValue("SearchTracesResponse.Data["+ i +"].Duration"));
+			traceInfo.setServiceName(_ctx.stringValue("SearchTracesResponse.Data["+ i +"].ServiceName"));
+			traceInfo.setServiceIp(_ctx.stringValue("SearchTracesResponse.Data["+ i +"].ServiceIp"));
+			traceInfo.setTimestamp(_ctx.longValue("SearchTracesResponse.Data["+ i +"].Timestamp"));
 
 			data.add(traceInfo);
 		}

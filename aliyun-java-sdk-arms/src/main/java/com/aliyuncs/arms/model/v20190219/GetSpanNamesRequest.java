@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetSpanNamesRequest extends RpcAcsRequest<GetSpanNamesResponse> {
 	
 	public GetSpanNamesRequest() {
-		super("ARMS", "2019-02-19", "GetSpanNames", "arms");
+		super("ARMS", "2019-02-19", "GetSpanNames");
 	}
 
 	private Long endTime;

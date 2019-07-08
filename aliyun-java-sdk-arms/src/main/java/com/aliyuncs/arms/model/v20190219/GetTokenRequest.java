@@ -20,26 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
+public class GetTokenRequest extends RpcAcsRequest<GetTokenResponse> {
 	
-	public GetTraceRequest() {
-		super("ARMS", "2019-02-19", "GetTrace");
+	public GetTokenRequest() {
+		super("ARMS", "2019-02-19", "GetToken");
 	}
-
-	private String traceID;
 
 	private String appType;
-
-	public String getTraceID() {
-		return this.traceID;
-	}
-
-	public void setTraceID(String traceID) {
-		this.traceID = traceID;
-		if(traceID != null){
-			putQueryParameter("TraceID", traceID);
-		}
-	}
 
 	public String getAppType() {
 		return this.appType;
@@ -53,8 +40,8 @@ public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 	}
 
 	@Override
-	public Class<GetTraceResponse> getResponseClass() {
-		return GetTraceResponse.class;
+	public Class<GetTokenResponse> getResponseClass() {
+		return GetTokenResponse.class;
 	}
 
 }

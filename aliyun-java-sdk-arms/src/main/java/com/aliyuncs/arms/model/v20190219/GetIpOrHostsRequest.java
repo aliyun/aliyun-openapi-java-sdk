@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetIpOrHostsRequest extends RpcAcsRequest<GetIpOrHostsResponse> {
 	
 	public GetIpOrHostsRequest() {
-		super("ARMS", "2019-02-19", "GetIpOrHosts", "arms");
+		super("ARMS", "2019-02-19", "GetIpOrHosts");
 	}
 
 	private Long endTime;

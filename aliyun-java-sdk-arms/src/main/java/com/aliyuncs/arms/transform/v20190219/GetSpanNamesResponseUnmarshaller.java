@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSpanNamesResponseUnmarshaller {
 
-	public static GetSpanNamesResponse unmarshall(GetSpanNamesResponse getSpanNamesResponse, UnmarshallerContext context) {
+	public static GetSpanNamesResponse unmarshall(GetSpanNamesResponse getSpanNamesResponse, UnmarshallerContext _ctx) {
 		
-		getSpanNamesResponse.setRequestId(context.stringValue("GetSpanNamesResponse.RequestId"));
+		getSpanNamesResponse.setRequestId(_ctx.stringValue("GetSpanNamesResponse.RequestId"));
 
 		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetSpanNamesResponse.Data.Length"); i++) {
-			data.add(context.stringValue("GetSpanNamesResponse.Data["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetSpanNamesResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("GetSpanNamesResponse.Data["+ i +"]"));
 		}
 		getSpanNamesResponse.setData(data);
 	 

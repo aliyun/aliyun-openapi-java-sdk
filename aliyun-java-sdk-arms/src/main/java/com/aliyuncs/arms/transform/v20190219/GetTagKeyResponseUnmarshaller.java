@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTagKeyResponseUnmarshaller {
 
-	public static GetTagKeyResponse unmarshall(GetTagKeyResponse getTagKeyResponse, UnmarshallerContext context) {
+	public static GetTagKeyResponse unmarshall(GetTagKeyResponse getTagKeyResponse, UnmarshallerContext _ctx) {
 		
-		getTagKeyResponse.setRequestId(context.stringValue("GetTagKeyResponse.RequestId"));
+		getTagKeyResponse.setRequestId(_ctx.stringValue("GetTagKeyResponse.RequestId"));
 
 		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetTagKeyResponse.Data.Length"); i++) {
-			data.add(context.stringValue("GetTagKeyResponse.Data["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetTagKeyResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("GetTagKeyResponse.Data["+ i +"]"));
 		}
 		getTagKeyResponse.setData(data);
 	 
