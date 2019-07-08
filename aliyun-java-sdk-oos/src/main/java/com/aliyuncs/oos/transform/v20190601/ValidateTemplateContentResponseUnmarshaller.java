@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ValidateTemplateContentResponseUnmarshaller {
 
-	public static ValidateTemplateContentResponse unmarshall(ValidateTemplateContentResponse validateTemplateContentResponse, UnmarshallerContext context) {
+	public static ValidateTemplateContentResponse unmarshall(ValidateTemplateContentResponse validateTemplateContentResponse, UnmarshallerContext _ctx) {
 		
-		validateTemplateContentResponse.setRequestId(context.stringValue("ValidateTemplateContentResponse.RequestId"));
-		validateTemplateContentResponse.setParameters(context.stringValue("ValidateTemplateContentResponse.Parameters"));
-		validateTemplateContentResponse.setRamRole(context.stringValue("ValidateTemplateContentResponse.RamRole"));
-		validateTemplateContentResponse.setOutputs(context.stringValue("ValidateTemplateContentResponse.Outputs"));
+		validateTemplateContentResponse.setRequestId(_ctx.stringValue("ValidateTemplateContentResponse.RequestId"));
+		validateTemplateContentResponse.setParameters(_ctx.stringValue("ValidateTemplateContentResponse.Parameters"));
+		validateTemplateContentResponse.setRamRole(_ctx.stringValue("ValidateTemplateContentResponse.RamRole"));
+		validateTemplateContentResponse.setOutputs(_ctx.stringValue("ValidateTemplateContentResponse.Outputs"));
 
 		List<Task> tasks = new ArrayList<Task>();
-		for (int i = 0; i < context.lengthValue("ValidateTemplateContentResponse.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ValidateTemplateContentResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setName(context.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Name"));
-			task.setType(context.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Type"));
-			task.setDescription(context.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Description"));
-			task.setProperties(context.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Properties"));
-			task.setOutputs(context.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Outputs"));
+			task.setName(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Name"));
+			task.setType(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Type"));
+			task.setDescription(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Description"));
+			task.setProperties(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Properties"));
+			task.setOutputs(_ctx.stringValue("ValidateTemplateContentResponse.Tasks["+ i +"].Outputs"));
 
 			tasks.add(task);
 		}

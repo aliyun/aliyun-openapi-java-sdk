@@ -24,33 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTaskExecutionsResponseUnmarshaller {
 
-	public static ListTaskExecutionsResponse unmarshall(ListTaskExecutionsResponse listTaskExecutionsResponse, UnmarshallerContext context) {
+	public static ListTaskExecutionsResponse unmarshall(ListTaskExecutionsResponse listTaskExecutionsResponse, UnmarshallerContext _ctx) {
 		
-		listTaskExecutionsResponse.setRequestId(context.stringValue("ListTaskExecutionsResponse.RequestId"));
-		listTaskExecutionsResponse.setMaxResults(context.integerValue("ListTaskExecutionsResponse.MaxResults"));
-		listTaskExecutionsResponse.setNextToken(context.stringValue("ListTaskExecutionsResponse.NextToken"));
+		listTaskExecutionsResponse.setRequestId(_ctx.stringValue("ListTaskExecutionsResponse.RequestId"));
+		listTaskExecutionsResponse.setMaxResults(_ctx.integerValue("ListTaskExecutionsResponse.MaxResults"));
+		listTaskExecutionsResponse.setNextToken(_ctx.stringValue("ListTaskExecutionsResponse.NextToken"));
 
 		List<TaskExecution> taskExecutions = new ArrayList<TaskExecution>();
-		for (int i = 0; i < context.lengthValue("ListTaskExecutionsResponse.TaskExecutions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTaskExecutionsResponse.TaskExecutions.Length"); i++) {
 			TaskExecution taskExecution = new TaskExecution();
-			taskExecution.setExecutionId(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ExecutionId"));
-			taskExecution.setTaskExecutionId(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].TaskExecutionId"));
-			taskExecution.setTemplateId(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].TemplateId"));
-			taskExecution.setStartDate(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].StartDate"));
-			taskExecution.setEndDate(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].EndDate"));
-			taskExecution.setCreateDate(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].CreateDate"));
-			taskExecution.setUpdateDate(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].UpdateDate"));
-			taskExecution.setStatus(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Status"));
-			taskExecution.setProperties(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Properties"));
-			taskExecution.setOutputs(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Outputs"));
-			taskExecution.setTaskAction(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].TaskAction"));
-			taskExecution.setTaskName(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].TaskName"));
-			taskExecution.setStatusMessage(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].StatusMessage"));
-			taskExecution.setChildExecutionId(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ChildExecutionId"));
-			taskExecution.setParentTaskExecutionId(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ParentTaskExecutionId"));
-			taskExecution.setLoopItem(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].LoopItem"));
-			taskExecution.setLoop(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Loop"));
-			taskExecution.setExtraData(context.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ExtraData"));
+			taskExecution.setExecutionId(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ExecutionId"));
+			taskExecution.setTaskExecutionId(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].TaskExecutionId"));
+			taskExecution.setTemplateId(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].TemplateId"));
+			taskExecution.setStartDate(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].StartDate"));
+			taskExecution.setEndDate(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].EndDate"));
+			taskExecution.setCreateDate(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].CreateDate"));
+			taskExecution.setUpdateDate(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].UpdateDate"));
+			taskExecution.setStatus(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Status"));
+			taskExecution.setProperties(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Properties"));
+			taskExecution.setOutputs(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Outputs"));
+			taskExecution.setTaskAction(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].TaskAction"));
+			taskExecution.setTaskName(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].TaskName"));
+			taskExecution.setStatusMessage(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].StatusMessage"));
+			taskExecution.setChildExecutionId(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ChildExecutionId"));
+			taskExecution.setParentTaskExecutionId(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ParentTaskExecutionId"));
+			taskExecution.setLoopItem(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].LoopItem"));
+			taskExecution.setLoop(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Loop"));
+			taskExecution.setExtraData(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ExtraData"));
 
 			taskExecutions.add(taskExecution);
 		}

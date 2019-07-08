@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListExecutionLogsResponseUnmarshaller {
 
-	public static ListExecutionLogsResponse unmarshall(ListExecutionLogsResponse listExecutionLogsResponse, UnmarshallerContext context) {
+	public static ListExecutionLogsResponse unmarshall(ListExecutionLogsResponse listExecutionLogsResponse, UnmarshallerContext _ctx) {
 		
-		listExecutionLogsResponse.setRequestId(context.stringValue("ListExecutionLogsResponse.RequestId"));
-		listExecutionLogsResponse.setMaxResults(context.integerValue("ListExecutionLogsResponse.MaxResults"));
-		listExecutionLogsResponse.setNextToken(context.stringValue("ListExecutionLogsResponse.NextToken"));
+		listExecutionLogsResponse.setRequestId(_ctx.stringValue("ListExecutionLogsResponse.RequestId"));
+		listExecutionLogsResponse.setMaxResults(_ctx.integerValue("ListExecutionLogsResponse.MaxResults"));
+		listExecutionLogsResponse.setNextToken(_ctx.stringValue("ListExecutionLogsResponse.NextToken"));
 
 		List<ExecutionLog> executionLogs = new ArrayList<ExecutionLog>();
-		for (int i = 0; i < context.lengthValue("ListExecutionLogsResponse.ExecutionLogs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListExecutionLogsResponse.ExecutionLogs.Length"); i++) {
 			ExecutionLog executionLog = new ExecutionLog();
-			executionLog.setTimestamp(context.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Timestamp"));
-			executionLog.setMessage(context.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Message"));
+			executionLog.setTimestamp(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Timestamp"));
+			executionLog.setMessage(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Message"));
 
 			executionLogs.add(executionLog);
 		}

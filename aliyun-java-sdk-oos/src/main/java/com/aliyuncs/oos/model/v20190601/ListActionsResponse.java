@@ -67,7 +67,7 @@ public class ListActionsResponse extends AcsResponse {
 
 	public static class Action {
 
-		private String actionName;
+		private String oOSActionName;
 
 		private String description;
 
@@ -79,28 +79,12 @@ public class ListActionsResponse extends AcsResponse {
 
 		private String templateVersion;
 
-		public String getBizActionName() {
-			return this.actionName;
+		public String getOOSActionName() {
+			return this.oOSActionName;
 		}
 
-		public void setBizActionName(String actionName) {
-			this.actionName = actionName;
-		}
-
-		/**
-		 * @deprecated use getBizActionName instead of this.
-		 */
-		@Deprecated
-		public String getActionName() {
-			return this.actionName;
-		}
-
-		/**
-		 * @deprecated use setBizActionName instead of this.
-		 */
-		@Deprecated
-		public void setActionName(String actionName) {
-			this.actionName = actionName;
+		public void setOOSActionName(String oOSActionName) {
+			this.oOSActionName = oOSActionName;
 		}
 
 		public String getDescription() {

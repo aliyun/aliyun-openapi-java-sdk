@@ -30,7 +30,7 @@ public class ListActionsRequest extends RpcAcsRequest<ListActionsResponse> {
 
 	private Integer maxResults;
 
-	private String actionName;
+	private String oOSActionName;
 
 	public String getNextToken() {
 		return this.nextToken;
@@ -54,33 +54,14 @@ public class ListActionsRequest extends RpcAcsRequest<ListActionsResponse> {
 		}
 	}
 
-	public String getBizActionName() {
-		return this.actionName;
+	public String getOOSActionName() {
+		return this.oOSActionName;
 	}
 
-	public void setBizActionName(String actionName) {
-		this.actionName = actionName;
-		if(actionName != null){
-			putQueryParameter("ActionName", actionName);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizActionName instead of this.
-	 */
-	@Deprecated
-	public String getActionName() {
-		return this.actionName;
-	}
-
-	/**
-	 * @deprecated use setBizActionName instead of this.
-	 */
-	@Deprecated
-	public void setActionName(String actionName) {
-		this.actionName = actionName;
-		if(actionName != null){
-			putQueryParameter("ActionName", actionName);
+	public void setOOSActionName(String oOSActionName) {
+		this.oOSActionName = oOSActionName;
+		if(oOSActionName != null){
+			putQueryParameter("OOSActionName", oOSActionName);
 		}
 	}
 

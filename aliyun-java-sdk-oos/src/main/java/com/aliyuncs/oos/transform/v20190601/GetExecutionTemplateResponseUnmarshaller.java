@@ -21,23 +21,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetExecutionTemplateResponseUnmarshaller {
 
-	public static GetExecutionTemplateResponse unmarshall(GetExecutionTemplateResponse getExecutionTemplateResponse, UnmarshallerContext context) {
+	public static GetExecutionTemplateResponse unmarshall(GetExecutionTemplateResponse getExecutionTemplateResponse, UnmarshallerContext _ctx) {
 		
-		getExecutionTemplateResponse.setRequestId(context.stringValue("GetExecutionTemplateResponse.RequestId"));
-		getExecutionTemplateResponse.setContent(context.stringValue("GetExecutionTemplateResponse.Content"));
+		getExecutionTemplateResponse.setRequestId(_ctx.stringValue("GetExecutionTemplateResponse.RequestId"));
+		getExecutionTemplateResponse.setContent(_ctx.stringValue("GetExecutionTemplateResponse.Content"));
 
 		Template template = new Template();
-		template.setTemplateName(context.stringValue("GetExecutionTemplateResponse.Template.TemplateName"));
-		template.setTemplateId(context.stringValue("GetExecutionTemplateResponse.Template.TemplateId"));
-		template.setCreatedDate(context.stringValue("GetExecutionTemplateResponse.Template.CreatedDate"));
-		template.setCreatedBy(context.stringValue("GetExecutionTemplateResponse.Template.CreatedBy"));
-		template.setUpdatedDate(context.stringValue("GetExecutionTemplateResponse.Template.UpdatedDate"));
-		template.setUpdatedBy(context.stringValue("GetExecutionTemplateResponse.Template.UpdatedBy"));
-		template.setHash(context.stringValue("GetExecutionTemplateResponse.Template.Hash"));
-		template.setDescription(context.stringValue("GetExecutionTemplateResponse.Template.Description"));
-		template.setShareType(context.stringValue("GetExecutionTemplateResponse.Template.ShareType"));
-		template.setTemplateFormat(context.stringValue("GetExecutionTemplateResponse.Template.TemplateFormat"));
-		template.setTemplateVersion(context.stringValue("GetExecutionTemplateResponse.Template.TemplateVersion"));
+		template.setTemplateName(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateName"));
+		template.setTemplateId(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateId"));
+		template.setCreatedDate(_ctx.stringValue("GetExecutionTemplateResponse.Template.CreatedDate"));
+		template.setCreatedBy(_ctx.stringValue("GetExecutionTemplateResponse.Template.CreatedBy"));
+		template.setUpdatedDate(_ctx.stringValue("GetExecutionTemplateResponse.Template.UpdatedDate"));
+		template.setUpdatedBy(_ctx.stringValue("GetExecutionTemplateResponse.Template.UpdatedBy"));
+		template.setHash(_ctx.stringValue("GetExecutionTemplateResponse.Template.Hash"));
+		template.setDescription(_ctx.stringValue("GetExecutionTemplateResponse.Template.Description"));
+		template.setShareType(_ctx.stringValue("GetExecutionTemplateResponse.Template.ShareType"));
+		template.setTemplateFormat(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateFormat"));
+		template.setTemplateVersion(_ctx.stringValue("GetExecutionTemplateResponse.Template.TemplateVersion"));
 		getExecutionTemplateResponse.setTemplate(template);
 	 
 	 	return getExecutionTemplateResponse;

@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTemplatesResponseUnmarshaller {
 
-	public static ListTemplatesResponse unmarshall(ListTemplatesResponse listTemplatesResponse, UnmarshallerContext context) {
+	public static ListTemplatesResponse unmarshall(ListTemplatesResponse listTemplatesResponse, UnmarshallerContext _ctx) {
 		
-		listTemplatesResponse.setRequestId(context.stringValue("ListTemplatesResponse.RequestId"));
-		listTemplatesResponse.setMaxResults(context.integerValue("ListTemplatesResponse.MaxResults"));
-		listTemplatesResponse.setNextToken(context.stringValue("ListTemplatesResponse.NextToken"));
+		listTemplatesResponse.setRequestId(_ctx.stringValue("ListTemplatesResponse.RequestId"));
+		listTemplatesResponse.setMaxResults(_ctx.integerValue("ListTemplatesResponse.MaxResults"));
+		listTemplatesResponse.setNextToken(_ctx.stringValue("ListTemplatesResponse.NextToken"));
 
 		List<Template> templates = new ArrayList<Template>();
-		for (int i = 0; i < context.lengthValue("ListTemplatesResponse.Templates.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTemplatesResponse.Templates.Length"); i++) {
 			Template template = new Template();
-			template.setTemplateName(context.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateName"));
-			template.setTemplateId(context.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateId"));
-			template.setCreatedDate(context.stringValue("ListTemplatesResponse.Templates["+ i +"].CreatedDate"));
-			template.setCreatedBy(context.stringValue("ListTemplatesResponse.Templates["+ i +"].CreatedBy"));
-			template.setUpdatedDate(context.stringValue("ListTemplatesResponse.Templates["+ i +"].UpdatedDate"));
-			template.setUpdatedBy(context.stringValue("ListTemplatesResponse.Templates["+ i +"].UpdatedBy"));
-			template.setHash(context.stringValue("ListTemplatesResponse.Templates["+ i +"].Hash"));
-			template.setDescription(context.stringValue("ListTemplatesResponse.Templates["+ i +"].Description"));
-			template.setShareType(context.stringValue("ListTemplatesResponse.Templates["+ i +"].ShareType"));
-			template.setTemplateFormat(context.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateFormat"));
-			template.setTemplateVersion(context.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateVersion"));
-			template.setTotalExecutionCount(context.integerValue("ListTemplatesResponse.Templates["+ i +"].TotalExecutionCount"));
-			template.setPopularity(context.integerValue("ListTemplatesResponse.Templates["+ i +"].Popularity"));
+			template.setTemplateName(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateName"));
+			template.setTemplateId(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateId"));
+			template.setCreatedDate(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].CreatedDate"));
+			template.setCreatedBy(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].CreatedBy"));
+			template.setUpdatedDate(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].UpdatedDate"));
+			template.setUpdatedBy(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].UpdatedBy"));
+			template.setHash(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Hash"));
+			template.setDescription(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].Description"));
+			template.setShareType(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].ShareType"));
+			template.setTemplateFormat(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateFormat"));
+			template.setTemplateVersion(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateVersion"));
+			template.setTotalExecutionCount(_ctx.integerValue("ListTemplatesResponse.Templates["+ i +"].TotalExecutionCount"));
+			template.setPopularity(_ctx.integerValue("ListTemplatesResponse.Templates["+ i +"].Popularity"));
 
 			templates.add(template);
 		}

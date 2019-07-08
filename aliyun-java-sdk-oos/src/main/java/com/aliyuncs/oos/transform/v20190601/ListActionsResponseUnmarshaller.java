@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListActionsResponseUnmarshaller {
 
-	public static ListActionsResponse unmarshall(ListActionsResponse listActionsResponse, UnmarshallerContext context) {
+	public static ListActionsResponse unmarshall(ListActionsResponse listActionsResponse, UnmarshallerContext _ctx) {
 		
-		listActionsResponse.setRequestId(context.stringValue("ListActionsResponse.RequestId"));
-		listActionsResponse.setMaxResults(context.integerValue("ListActionsResponse.MaxResults"));
-		listActionsResponse.setNextToken(context.stringValue("ListActionsResponse.NextToken"));
+		listActionsResponse.setRequestId(_ctx.stringValue("ListActionsResponse.RequestId"));
+		listActionsResponse.setMaxResults(_ctx.integerValue("ListActionsResponse.MaxResults"));
+		listActionsResponse.setNextToken(_ctx.stringValue("ListActionsResponse.NextToken"));
 
 		List<Action> actions = new ArrayList<Action>();
-		for (int i = 0; i < context.lengthValue("ListActionsResponse.Actions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListActionsResponse.Actions.Length"); i++) {
 			Action action = new Action();
-			action.setActionName(context.stringValue("ListActionsResponse.Actions["+ i +"].ActionName"));
-			action.setDescription(context.stringValue("ListActionsResponse.Actions["+ i +"].Description"));
-			action.setActionType(context.stringValue("ListActionsResponse.Actions["+ i +"].ActionType"));
-			action.setCreatedDate(context.stringValue("ListActionsResponse.Actions["+ i +"].CreatedDate"));
-			action.setProperties(context.stringValue("ListActionsResponse.Actions["+ i +"].Properties"));
-			action.setTemplateVersion(context.stringValue("ListActionsResponse.Actions["+ i +"].TemplateVersion"));
+			action.setOOSActionName(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].OOSActionName"));
+			action.setDescription(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].Description"));
+			action.setActionType(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].ActionType"));
+			action.setCreatedDate(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].CreatedDate"));
+			action.setProperties(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].Properties"));
+			action.setTemplateVersion(_ctx.stringValue("ListActionsResponse.Actions["+ i +"].TemplateVersion"));
 
 			actions.add(action);
 		}

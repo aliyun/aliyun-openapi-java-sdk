@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GenerateExecutionPolicyResponseUnmarshaller {
 
-	public static GenerateExecutionPolicyResponse unmarshall(GenerateExecutionPolicyResponse generateExecutionPolicyResponse, UnmarshallerContext context) {
+	public static GenerateExecutionPolicyResponse unmarshall(GenerateExecutionPolicyResponse generateExecutionPolicyResponse, UnmarshallerContext _ctx) {
 		
-		generateExecutionPolicyResponse.setRequestId(context.stringValue("GenerateExecutionPolicyResponse.RequestId"));
-		generateExecutionPolicyResponse.setPolicy(context.stringValue("GenerateExecutionPolicyResponse.Policy"));
+		generateExecutionPolicyResponse.setRequestId(_ctx.stringValue("GenerateExecutionPolicyResponse.RequestId"));
+		generateExecutionPolicyResponse.setPolicy(_ctx.stringValue("GenerateExecutionPolicyResponse.Policy"));
 	 
 	 	return generateExecutionPolicyResponse;
 	}

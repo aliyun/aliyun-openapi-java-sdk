@@ -21,22 +21,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateTemplateResponseUnmarshaller {
 
-	public static UpdateTemplateResponse unmarshall(UpdateTemplateResponse updateTemplateResponse, UnmarshallerContext context) {
+	public static UpdateTemplateResponse unmarshall(UpdateTemplateResponse updateTemplateResponse, UnmarshallerContext _ctx) {
 		
-		updateTemplateResponse.setRequestId(context.stringValue("UpdateTemplateResponse.RequestId"));
+		updateTemplateResponse.setRequestId(_ctx.stringValue("UpdateTemplateResponse.RequestId"));
 
 		Template template = new Template();
-		template.setTemplateName(context.stringValue("UpdateTemplateResponse.Template.TemplateName"));
-		template.setTemplateId(context.stringValue("UpdateTemplateResponse.Template.TemplateId"));
-		template.setCreatedDate(context.stringValue("UpdateTemplateResponse.Template.CreatedDate"));
-		template.setCreatedBy(context.stringValue("UpdateTemplateResponse.Template.CreatedBy"));
-		template.setUpdatedDate(context.stringValue("UpdateTemplateResponse.Template.UpdatedDate"));
-		template.setUpdatedBy(context.stringValue("UpdateTemplateResponse.Template.UpdatedBy"));
-		template.setHash(context.stringValue("UpdateTemplateResponse.Template.Hash"));
-		template.setDescription(context.stringValue("UpdateTemplateResponse.Template.Description"));
-		template.setShareType(context.stringValue("UpdateTemplateResponse.Template.ShareType"));
-		template.setTemplateFormat(context.stringValue("UpdateTemplateResponse.Template.TemplateFormat"));
-		template.setTemplateVersion(context.stringValue("UpdateTemplateResponse.Template.TemplateVersion"));
+		template.setTemplateName(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateName"));
+		template.setTemplateId(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateId"));
+		template.setCreatedDate(_ctx.stringValue("UpdateTemplateResponse.Template.CreatedDate"));
+		template.setCreatedBy(_ctx.stringValue("UpdateTemplateResponse.Template.CreatedBy"));
+		template.setUpdatedDate(_ctx.stringValue("UpdateTemplateResponse.Template.UpdatedDate"));
+		template.setUpdatedBy(_ctx.stringValue("UpdateTemplateResponse.Template.UpdatedBy"));
+		template.setHash(_ctx.stringValue("UpdateTemplateResponse.Template.Hash"));
+		template.setDescription(_ctx.stringValue("UpdateTemplateResponse.Template.Description"));
+		template.setShareType(_ctx.stringValue("UpdateTemplateResponse.Template.ShareType"));
+		template.setTemplateFormat(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateFormat"));
+		template.setTemplateVersion(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateVersion"));
 		updateTemplateResponse.setTemplate(template);
 	 
 	 	return updateTemplateResponse;
