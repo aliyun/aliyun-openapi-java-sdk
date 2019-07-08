@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * @author liumi
- * @version 1.0.6
+ * @version 1.0.8
  */
 public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGroupResponse> {
 	
@@ -60,6 +60,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	private DnsConfig dnsConfig;
 
 	private List<HostAliase> hostAliases;
+
+	private Boolean slsEnable;
 
 	private String clientToken;
 
@@ -105,6 +107,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 					for (int depth2 = 0; depth2 < containers.get(depth1).getEnvironmentVars().size(); depth2++) {
 						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Key" , containers.get(depth1).getEnvironmentVars().get(depth2).getKey());
 						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Value" , containers.get(depth1).getEnvironmentVars().get(depth2).getValue());
+						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".FieldRef.FieldPath" , containers.get(depth1).getEnvironmentVars().get(depth2).getFieldRefFieldPath());
 					}
 				}
 
@@ -448,6 +451,18 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		}
 	}
 
+	public Boolean getSlsEnable() {
+		return slsEnable;
+	}
+
+	public void setSlsEnable(Boolean slsEnable) {
+		this.slsEnable = slsEnable;
+		if (slsEnable != null) {
+			putQueryParameter("SlsEnable", slsEnable);
+		}
+
+	}
+
 	public static class Container {
 
 		private String image;
@@ -663,6 +678,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 			private String value;
 
+			private String fieldRefFieldPath;
+
 			public String getKey() {
 				return this.key;
 			}
@@ -677,6 +694,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getFieldRefFieldPath() {
+				return fieldRefFieldPath;
+			}
+
+			public void setFieldRefFieldPath(String fieldRefFieldPath) {
+				this.fieldRefFieldPath = fieldRefFieldPath;
 			}
 		}
 

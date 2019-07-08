@@ -20,7 +20,7 @@ import com.aliyuncs.eci.model.v20180808.CreateContainerGroupRequest.*;
 
 /**
  * @author lm
- * @version 1.0.4
+ * @version 1.0.8
  */
 public class UpdateContainerGroupRequest extends RpcAcsRequest<UpdateContainerGroupResponse> {
 	
@@ -94,6 +94,7 @@ public class UpdateContainerGroupRequest extends RpcAcsRequest<UpdateContainerGr
 					for (int depth2 = 0; depth2 < containers.get(depth1).getEnvironmentVars().size(); depth2++) {
 						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Key" , containers.get(depth1).getEnvironmentVars().get(depth2).getKey());
 						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".Value" , containers.get(depth1).getEnvironmentVars().get(depth2).getValue());
+						putQueryParameter("Container." + (depth1 + 1) + ".EnvironmentVar." + (depth2 + 1) + ".FieldRef.FieldPath" , containers.get(depth1).getEnvironmentVars().get(depth2).getFieldRefFieldPath());
 					}
 				}
 
