@@ -3,7 +3,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-eci</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.7</version>
+  <version>1.0.8</version>
     <name>aliyun-java-sdk-eci</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
@@ -31,8 +31,13 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>4.2.5</version>
+  		<version>[4.3.2,5.0.0)</version>
   	</dependency>
+  	<dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.8.5</version>
+    </dependency>
   </dependencies>
 	<licenses>
 		<license>
