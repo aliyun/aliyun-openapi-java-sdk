@@ -29,129 +29,13 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 		setProtocol(ProtocolType.HTTPS);
 	}
 
-	private String cluster;
-
-	private String replaceAzone;
-
-	private Integer bufferCnt;
-
-	private Integer pickCnt;
-
-	private List<OpsDemandBatch> opsDemandBatchs;
-
-	private String machineType;
-
-	private Integer requireCnt;
-
-	private Long itemId;
-
 	private Long demandId;
 
-	private String roomCode;
+	private Long subDemandId;
 
-	private String region;
+	private Integer demandCount;
 
-	private String azone;
-
-	private String info;
-
-	public String getCluster() {
-		return this.cluster;
-	}
-
-	public void setCluster(String cluster) {
-		this.cluster = cluster;
-		if(cluster != null){
-			putQueryParameter("Cluster", cluster);
-		}
-	}
-
-	public String getReplaceAzone() {
-		return this.replaceAzone;
-	}
-
-	public void setReplaceAzone(String replaceAzone) {
-		this.replaceAzone = replaceAzone;
-		if(replaceAzone != null){
-			putQueryParameter("ReplaceAzone", replaceAzone);
-		}
-	}
-
-	public Integer getBufferCnt() {
-		return this.bufferCnt;
-	}
-
-	public void setBufferCnt(Integer bufferCnt) {
-		this.bufferCnt = bufferCnt;
-		if(bufferCnt != null){
-			putQueryParameter("BufferCnt", bufferCnt.toString());
-		}
-	}
-
-	public Integer getPickCnt() {
-		return this.pickCnt;
-	}
-
-	public void setPickCnt(Integer pickCnt) {
-		this.pickCnt = pickCnt;
-		if(pickCnt != null){
-			putQueryParameter("PickCnt", pickCnt.toString());
-		}
-	}
-
-	public List<OpsDemandBatch> getOpsDemandBatchs() {
-		return this.opsDemandBatchs;
-	}
-
-	public void setOpsDemandBatchs(List<OpsDemandBatch> opsDemandBatchs) {
-		this.opsDemandBatchs = opsDemandBatchs;	
-		if (opsDemandBatchs != null) {
-			for (int depth1 = 0; depth1 < opsDemandBatchs.size(); depth1++) {
-				putQueryParameter("OpsDemandBatch." + (depth1 + 1) + ".Amount" , opsDemandBatchs.get(depth1).getAmount());
-				putQueryParameter("OpsDemandBatch." + (depth1 + 1) + ".SafeZone" , opsDemandBatchs.get(depth1).getSafeZone());
-				putQueryParameter("OpsDemandBatch." + (depth1 + 1) + ".SupplyType" , opsDemandBatchs.get(depth1).getSupplyType());
-				putQueryParameter("OpsDemandBatch." + (depth1 + 1) + ".NetArch" , opsDemandBatchs.get(depth1).getNetArch());
-				putQueryParameter("OpsDemandBatch." + (depth1 + 1) + ".LogicZone" , opsDemandBatchs.get(depth1).getLogicZone());
-				putQueryParameter("OpsDemandBatch." + (depth1 + 1) + ".Nic" , opsDemandBatchs.get(depth1).getNic());
-				putQueryParameter("OpsDemandBatch." + (depth1 + 1) + ".ClassZone" , opsDemandBatchs.get(depth1).getClassZone());
-				putQueryParameter("OpsDemandBatch." + (depth1 + 1) + ".Model" , opsDemandBatchs.get(depth1).getModel());
-				putQueryParameter("OpsDemandBatch." + (depth1 + 1) + ".ExpectDate" , opsDemandBatchs.get(depth1).getExpectDate());
-			}
-		}	
-	}
-
-	public String getMachineType() {
-		return this.machineType;
-	}
-
-	public void setMachineType(String machineType) {
-		this.machineType = machineType;
-		if(machineType != null){
-			putQueryParameter("MachineType", machineType);
-		}
-	}
-
-	public Integer getRequireCnt() {
-		return this.requireCnt;
-	}
-
-	public void setRequireCnt(Integer requireCnt) {
-		this.requireCnt = requireCnt;
-		if(requireCnt != null){
-			putQueryParameter("RequireCnt", requireCnt.toString());
-		}
-	}
-
-	public Long getItemId() {
-		return this.itemId;
-	}
-
-	public void setItemId(Long itemId) {
-		this.itemId = itemId;
-		if(itemId != null){
-			putQueryParameter("ItemId", itemId.toString());
-		}
-	}
+	private List<ResourceMethod> resourceMethods;
 
 	public Long getDemandId() {
 		return this.demandId;
@@ -164,140 +48,266 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 		}
 	}
 
-	public String getRoomCode() {
-		return this.roomCode;
+	public Long getSubDemandId() {
+		return this.subDemandId;
 	}
 
-	public void setRoomCode(String roomCode) {
-		this.roomCode = roomCode;
-		if(roomCode != null){
-			putQueryParameter("RoomCode", roomCode);
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
+	public void setSubDemandId(Long subDemandId) {
+		this.subDemandId = subDemandId;
+		if(subDemandId != null){
+			putQueryParameter("SubDemandId", subDemandId.toString());
 		}
 	}
 
-	public String getAzone() {
-		return this.azone;
+	public Integer getDemandCount() {
+		return this.demandCount;
 	}
 
-	public void setAzone(String azone) {
-		this.azone = azone;
-		if(azone != null){
-			putQueryParameter("Azone", azone);
-		}
-	}
-
-	public String getInfo() {
-		return this.info;
-	}
-
-	public void setInfo(String info) {
-		this.info = info;
-		if(info != null){
-			putQueryParameter("Info", info);
+	public void setDemandCount(Integer demandCount) {
+		this.demandCount = demandCount;
+		if(demandCount != null){
+			putQueryParameter("DemandCount", demandCount.toString());
 		}
 	}
 
-	public static class OpsDemandBatch {
+	public List<ResourceMethod> getResourceMethods() {
+		return this.resourceMethods;
+	}
 
-		private Integer amount;
+	public void setResourceMethods(List<ResourceMethod> resourceMethods) {
+		this.resourceMethods = resourceMethods;	
+		if (resourceMethods != null) {
+			for (int depth1 = 0; depth1 < resourceMethods.size(); depth1++) {
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".FinalAvzone" , resourceMethods.get(depth1).getFinalAvzone());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Cluster" , resourceMethods.get(depth1).getCluster());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".ConvertHostCnt" , resourceMethods.get(depth1).getConvertHostCnt());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".BufferCnt" , resourceMethods.get(depth1).getBufferCnt());
+				if (resourceMethods.get(depth1).getSupplyPlans() != null) {
+					for (int depth2 = 0; depth2 < resourceMethods.get(depth1).getSupplyPlans().size(); depth2++) {
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".SafeZone" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getSafeZone());
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".NetArch" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getNetArch());
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".SupplyType" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getSupplyType());
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".LogicZone" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getLogicZone());
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".SupplyAmount" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getSupplyAmount());
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".SupplyDate" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getSupplyDate());
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".Nic" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getNic());
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".ClassZone" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getClassZone());
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".ConvertHostType" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getConvertHostType());
+						putQueryParameter("ResourceMethod." + (depth1 + 1) + ".SupplyPlan." + (depth2 + 1) + ".Product3" , resourceMethods.get(depth1).getSupplyPlans().get(depth2).getProduct3());
+					}
+				}
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".RoomCode" , resourceMethods.get(depth1).getRoomCode());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Comment" , resourceMethods.get(depth1).getComment());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Region" , resourceMethods.get(depth1).getRegion());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".ConvertHostType" , resourceMethods.get(depth1).getConvertHostType());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Azone" , resourceMethods.get(depth1).getAzone());
+			}
+		}	
+	}
 
-		private String safeZone;
+	public static class ResourceMethod {
 
-		private Integer supplyType;
+		private String finalAvzone;
 
-		private String netArch;
+		private String cluster;
 
-		private String logicZone;
+		private Integer convertHostCnt;
 
-		private String nic;
+		private Integer bufferCnt;
 
-		private String classZone;
+		private List<SupplyPlan> supplyPlans;
 
-		private String model;
+		private String roomCode;
 
-		private String expectDate;
+		private String comment;
 
-		public Integer getAmount() {
-			return this.amount;
+		private String region;
+
+		private String convertHostType;
+
+		private String azone;
+
+		public String getFinalAvzone() {
+			return this.finalAvzone;
 		}
 
-		public void setAmount(Integer amount) {
-			this.amount = amount;
+		public void setFinalAvzone(String finalAvzone) {
+			this.finalAvzone = finalAvzone;
 		}
 
-		public String getSafeZone() {
-			return this.safeZone;
+		public String getCluster() {
+			return this.cluster;
 		}
 
-		public void setSafeZone(String safeZone) {
-			this.safeZone = safeZone;
+		public void setCluster(String cluster) {
+			this.cluster = cluster;
 		}
 
-		public Integer getSupplyType() {
-			return this.supplyType;
+		public Integer getConvertHostCnt() {
+			return this.convertHostCnt;
 		}
 
-		public void setSupplyType(Integer supplyType) {
-			this.supplyType = supplyType;
+		public void setConvertHostCnt(Integer convertHostCnt) {
+			this.convertHostCnt = convertHostCnt;
 		}
 
-		public String getNetArch() {
-			return this.netArch;
+		public Integer getBufferCnt() {
+			return this.bufferCnt;
 		}
 
-		public void setNetArch(String netArch) {
-			this.netArch = netArch;
+		public void setBufferCnt(Integer bufferCnt) {
+			this.bufferCnt = bufferCnt;
 		}
 
-		public String getLogicZone() {
-			return this.logicZone;
+		public List<SupplyPlan> getSupplyPlans() {
+			return this.supplyPlans;
 		}
 
-		public void setLogicZone(String logicZone) {
-			this.logicZone = logicZone;
+		public void setSupplyPlans(List<SupplyPlan> supplyPlans) {
+			this.supplyPlans = supplyPlans;
 		}
 
-		public String getNic() {
-			return this.nic;
+		public String getRoomCode() {
+			return this.roomCode;
 		}
 
-		public void setNic(String nic) {
-			this.nic = nic;
+		public void setRoomCode(String roomCode) {
+			this.roomCode = roomCode;
 		}
 
-		public String getClassZone() {
-			return this.classZone;
+		public String getComment() {
+			return this.comment;
 		}
 
-		public void setClassZone(String classZone) {
-			this.classZone = classZone;
+		public void setComment(String comment) {
+			this.comment = comment;
 		}
 
-		public String getModel() {
-			return this.model;
+		public String getRegion() {
+			return this.region;
 		}
 
-		public void setModel(String model) {
-			this.model = model;
+		public void setRegion(String region) {
+			this.region = region;
 		}
 
-		public String getExpectDate() {
-			return this.expectDate;
+		public String getConvertHostType() {
+			return this.convertHostType;
 		}
 
-		public void setExpectDate(String expectDate) {
-			this.expectDate = expectDate;
+		public void setConvertHostType(String convertHostType) {
+			this.convertHostType = convertHostType;
+		}
+
+		public String getAzone() {
+			return this.azone;
+		}
+
+		public void setAzone(String azone) {
+			this.azone = azone;
+		}
+
+		public static class SupplyPlan {
+
+			private String safeZone;
+
+			private String netArch;
+
+			private Integer supplyType;
+
+			private String logicZone;
+
+			private Integer supplyAmount;
+
+			private String supplyDate;
+
+			private String nic;
+
+			private String classZone;
+
+			private String convertHostType;
+
+			private String product3;
+
+			public String getSafeZone() {
+				return this.safeZone;
+			}
+
+			public void setSafeZone(String safeZone) {
+				this.safeZone = safeZone;
+			}
+
+			public String getNetArch() {
+				return this.netArch;
+			}
+
+			public void setNetArch(String netArch) {
+				this.netArch = netArch;
+			}
+
+			public Integer getSupplyType() {
+				return this.supplyType;
+			}
+
+			public void setSupplyType(Integer supplyType) {
+				this.supplyType = supplyType;
+			}
+
+			public String getLogicZone() {
+				return this.logicZone;
+			}
+
+			public void setLogicZone(String logicZone) {
+				this.logicZone = logicZone;
+			}
+
+			public Integer getSupplyAmount() {
+				return this.supplyAmount;
+			}
+
+			public void setSupplyAmount(Integer supplyAmount) {
+				this.supplyAmount = supplyAmount;
+			}
+
+			public String getSupplyDate() {
+				return this.supplyDate;
+			}
+
+			public void setSupplyDate(String supplyDate) {
+				this.supplyDate = supplyDate;
+			}
+
+			public String getNic() {
+				return this.nic;
+			}
+
+			public void setNic(String nic) {
+				this.nic = nic;
+			}
+
+			public String getClassZone() {
+				return this.classZone;
+			}
+
+			public void setClassZone(String classZone) {
+				this.classZone = classZone;
+			}
+
+			public String getConvertHostType() {
+				return this.convertHostType;
+			}
+
+			public void setConvertHostType(String convertHostType) {
+				this.convertHostType = convertHostType;
+			}
+
+			public String getProduct3() {
+				return this.product3;
+			}
+
+			public void setProduct3(String product3) {
+				this.product3 = product3;
+			}
 		}
 	}
 
