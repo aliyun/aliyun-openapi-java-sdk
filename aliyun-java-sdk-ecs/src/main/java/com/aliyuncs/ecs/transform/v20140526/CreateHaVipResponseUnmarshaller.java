@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateHaVipResponseUnmarshaller {
 
-	public static CreateHaVipResponse unmarshall(CreateHaVipResponse createHaVipResponse, UnmarshallerContext context) {
+	public static CreateHaVipResponse unmarshall(CreateHaVipResponse createHaVipResponse, UnmarshallerContext _ctx) {
 		
-		createHaVipResponse.setRequestId(context.stringValue("CreateHaVipResponse.RequestId"));
-		createHaVipResponse.setHaVipId(context.stringValue("CreateHaVipResponse.HaVipId"));
+		createHaVipResponse.setRequestId(_ctx.stringValue("CreateHaVipResponse.RequestId"));
+		createHaVipResponse.setHaVipId(_ctx.stringValue("CreateHaVipResponse.HaVipId"));
 	 
 	 	return createHaVipResponse;
 	}

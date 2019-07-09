@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteAutoProvisioningGroupResponseUnmarshaller {
 
-	public static DeleteAutoProvisioningGroupResponse unmarshall(DeleteAutoProvisioningGroupResponse deleteAutoProvisioningGroupResponse, UnmarshallerContext context) {
+	public static DeleteAutoProvisioningGroupResponse unmarshall(DeleteAutoProvisioningGroupResponse deleteAutoProvisioningGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteAutoProvisioningGroupResponse.setRequestId(context.stringValue("DeleteAutoProvisioningGroupResponse.RequestId"));
+		deleteAutoProvisioningGroupResponse.setRequestId(_ctx.stringValue("DeleteAutoProvisioningGroupResponse.RequestId"));
 	 
 	 	return deleteAutoProvisioningGroupResponse;
 	}

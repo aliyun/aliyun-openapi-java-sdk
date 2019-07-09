@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RunInstancesResponseUnmarshaller {
 
-	public static RunInstancesResponse unmarshall(RunInstancesResponse runInstancesResponse, UnmarshallerContext context) {
+	public static RunInstancesResponse unmarshall(RunInstancesResponse runInstancesResponse, UnmarshallerContext _ctx) {
 		
-		runInstancesResponse.setRequestId(context.stringValue("RunInstancesResponse.RequestId"));
-		runInstancesResponse.setTradePrice(context.floatValue("RunInstancesResponse.TradePrice"));
+		runInstancesResponse.setRequestId(_ctx.stringValue("RunInstancesResponse.RequestId"));
+		runInstancesResponse.setTradePrice(_ctx.floatValue("RunInstancesResponse.TradePrice"));
 
 		List<String> instanceIdSets = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("RunInstancesResponse.InstanceIdSets.Length"); i++) {
-			instanceIdSets.add(context.stringValue("RunInstancesResponse.InstanceIdSets["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("RunInstancesResponse.InstanceIdSets.Length"); i++) {
+			instanceIdSets.add(_ctx.stringValue("RunInstancesResponse.InstanceIdSets["+ i +"]"));
 		}
 		runInstancesResponse.setInstanceIdSets(instanceIdSets);
 	 

@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSnapshotMonitorDataResponseUnmarshaller {
 
-	public static DescribeSnapshotMonitorDataResponse unmarshall(DescribeSnapshotMonitorDataResponse describeSnapshotMonitorDataResponse, UnmarshallerContext context) {
+	public static DescribeSnapshotMonitorDataResponse unmarshall(DescribeSnapshotMonitorDataResponse describeSnapshotMonitorDataResponse, UnmarshallerContext _ctx) {
 		
-		describeSnapshotMonitorDataResponse.setRequestId(context.stringValue("DescribeSnapshotMonitorDataResponse.RequestId"));
+		describeSnapshotMonitorDataResponse.setRequestId(_ctx.stringValue("DescribeSnapshotMonitorDataResponse.RequestId"));
 
 		List<DataPoint> monitorData = new ArrayList<DataPoint>();
-		for (int i = 0; i < context.lengthValue("DescribeSnapshotMonitorDataResponse.MonitorData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotMonitorDataResponse.MonitorData.Length"); i++) {
 			DataPoint dataPoint = new DataPoint();
-			dataPoint.setTimeStamp(context.stringValue("DescribeSnapshotMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
-			dataPoint.setSize(context.longValue("DescribeSnapshotMonitorDataResponse.MonitorData["+ i +"].Size"));
+			dataPoint.setTimeStamp(_ctx.stringValue("DescribeSnapshotMonitorDataResponse.MonitorData["+ i +"].TimeStamp"));
+			dataPoint.setSize(_ctx.longValue("DescribeSnapshotMonitorDataResponse.MonitorData["+ i +"].Size"));
 
 			monitorData.add(dataPoint);
 		}

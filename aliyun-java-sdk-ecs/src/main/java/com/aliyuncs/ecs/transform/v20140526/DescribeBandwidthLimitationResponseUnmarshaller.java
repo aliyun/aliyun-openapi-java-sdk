@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBandwidthLimitationResponseUnmarshaller {
 
-	public static DescribeBandwidthLimitationResponse unmarshall(DescribeBandwidthLimitationResponse describeBandwidthLimitationResponse, UnmarshallerContext context) {
+	public static DescribeBandwidthLimitationResponse unmarshall(DescribeBandwidthLimitationResponse describeBandwidthLimitationResponse, UnmarshallerContext _ctx) {
 		
-		describeBandwidthLimitationResponse.setRequestId(context.stringValue("DescribeBandwidthLimitationResponse.RequestId"));
+		describeBandwidthLimitationResponse.setRequestId(_ctx.stringValue("DescribeBandwidthLimitationResponse.RequestId"));
 
 		List<Bandwidth> bandwidths = new ArrayList<Bandwidth>();
-		for (int i = 0; i < context.lengthValue("DescribeBandwidthLimitationResponse.Bandwidths.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBandwidthLimitationResponse.Bandwidths.Length"); i++) {
 			Bandwidth bandwidth = new Bandwidth();
-			bandwidth.setInternetChargeType(context.stringValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].InternetChargeType"));
-			bandwidth.setMin(context.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Min"));
-			bandwidth.setMax(context.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Max"));
-			bandwidth.setUnit(context.stringValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Unit"));
+			bandwidth.setInternetChargeType(_ctx.stringValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].InternetChargeType"));
+			bandwidth.setMin(_ctx.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Min"));
+			bandwidth.setMax(_ctx.integerValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Max"));
+			bandwidth.setUnit(_ctx.stringValue("DescribeBandwidthLimitationResponse.Bandwidths["+ i +"].Unit"));
 
 			bandwidths.add(bandwidth);
 		}

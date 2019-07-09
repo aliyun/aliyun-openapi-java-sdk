@@ -25,28 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeImageSharePermissionResponseUnmarshaller {
 
-	public static DescribeImageSharePermissionResponse unmarshall(DescribeImageSharePermissionResponse describeImageSharePermissionResponse, UnmarshallerContext context) {
+	public static DescribeImageSharePermissionResponse unmarshall(DescribeImageSharePermissionResponse describeImageSharePermissionResponse, UnmarshallerContext _ctx) {
 		
-		describeImageSharePermissionResponse.setRequestId(context.stringValue("DescribeImageSharePermissionResponse.RequestId"));
-		describeImageSharePermissionResponse.setRegionId(context.stringValue("DescribeImageSharePermissionResponse.RegionId"));
-		describeImageSharePermissionResponse.setTotalCount(context.integerValue("DescribeImageSharePermissionResponse.TotalCount"));
-		describeImageSharePermissionResponse.setPageNumber(context.integerValue("DescribeImageSharePermissionResponse.PageNumber"));
-		describeImageSharePermissionResponse.setPageSize(context.integerValue("DescribeImageSharePermissionResponse.PageSize"));
-		describeImageSharePermissionResponse.setImageId(context.stringValue("DescribeImageSharePermissionResponse.ImageId"));
+		describeImageSharePermissionResponse.setRequestId(_ctx.stringValue("DescribeImageSharePermissionResponse.RequestId"));
+		describeImageSharePermissionResponse.setRegionId(_ctx.stringValue("DescribeImageSharePermissionResponse.RegionId"));
+		describeImageSharePermissionResponse.setTotalCount(_ctx.integerValue("DescribeImageSharePermissionResponse.TotalCount"));
+		describeImageSharePermissionResponse.setPageNumber(_ctx.integerValue("DescribeImageSharePermissionResponse.PageNumber"));
+		describeImageSharePermissionResponse.setPageSize(_ctx.integerValue("DescribeImageSharePermissionResponse.PageSize"));
+		describeImageSharePermissionResponse.setImageId(_ctx.stringValue("DescribeImageSharePermissionResponse.ImageId"));
 
 		List<ShareGroup> shareGroups = new ArrayList<ShareGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeImageSharePermissionResponse.ShareGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeImageSharePermissionResponse.ShareGroups.Length"); i++) {
 			ShareGroup shareGroup = new ShareGroup();
-			shareGroup.setGroup(context.stringValue("DescribeImageSharePermissionResponse.ShareGroups["+ i +"].Group"));
+			shareGroup.setGroup(_ctx.stringValue("DescribeImageSharePermissionResponse.ShareGroups["+ i +"].Group"));
 
 			shareGroups.add(shareGroup);
 		}
 		describeImageSharePermissionResponse.setShareGroups(shareGroups);
 
 		List<Account> accounts = new ArrayList<Account>();
-		for (int i = 0; i < context.lengthValue("DescribeImageSharePermissionResponse.Accounts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeImageSharePermissionResponse.Accounts.Length"); i++) {
 			Account account = new Account();
-			account.setAliyunId(context.stringValue("DescribeImageSharePermissionResponse.Accounts["+ i +"].AliyunId"));
+			account.setAliyunId(_ctx.stringValue("DescribeImageSharePermissionResponse.Accounts["+ i +"].AliyunId"));
 
 			accounts.add(account);
 		}

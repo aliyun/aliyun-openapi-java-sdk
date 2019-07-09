@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceRamRoleResponseUnmarshaller {
 
-	public static DescribeInstanceRamRoleResponse unmarshall(DescribeInstanceRamRoleResponse describeInstanceRamRoleResponse, UnmarshallerContext context) {
+	public static DescribeInstanceRamRoleResponse unmarshall(DescribeInstanceRamRoleResponse describeInstanceRamRoleResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceRamRoleResponse.setRequestId(context.stringValue("DescribeInstanceRamRoleResponse.RequestId"));
-		describeInstanceRamRoleResponse.setRegionId(context.stringValue("DescribeInstanceRamRoleResponse.RegionId"));
-		describeInstanceRamRoleResponse.setTotalCount(context.integerValue("DescribeInstanceRamRoleResponse.TotalCount"));
+		describeInstanceRamRoleResponse.setRequestId(_ctx.stringValue("DescribeInstanceRamRoleResponse.RequestId"));
+		describeInstanceRamRoleResponse.setRegionId(_ctx.stringValue("DescribeInstanceRamRoleResponse.RegionId"));
+		describeInstanceRamRoleResponse.setTotalCount(_ctx.integerValue("DescribeInstanceRamRoleResponse.TotalCount"));
 
 		List<InstanceRamRoleSet> instanceRamRoleSets = new ArrayList<InstanceRamRoleSet>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets.Length"); i++) {
 			InstanceRamRoleSet instanceRamRoleSet = new InstanceRamRoleSet();
-			instanceRamRoleSet.setInstanceId(context.stringValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets["+ i +"].InstanceId"));
-			instanceRamRoleSet.setRamRoleName(context.stringValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets["+ i +"].RamRoleName"));
+			instanceRamRoleSet.setInstanceId(_ctx.stringValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets["+ i +"].InstanceId"));
+			instanceRamRoleSet.setRamRoleName(_ctx.stringValue("DescribeInstanceRamRoleResponse.InstanceRamRoleSets["+ i +"].RamRoleName"));
 
 			instanceRamRoleSets.add(instanceRamRoleSet);
 		}

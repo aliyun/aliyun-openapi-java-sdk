@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveBandwidthPackageIpsResponseUnmarshaller {
 
-	public static RemoveBandwidthPackageIpsResponse unmarshall(RemoveBandwidthPackageIpsResponse removeBandwidthPackageIpsResponse, UnmarshallerContext context) {
+	public static RemoveBandwidthPackageIpsResponse unmarshall(RemoveBandwidthPackageIpsResponse removeBandwidthPackageIpsResponse, UnmarshallerContext _ctx) {
 		
-		removeBandwidthPackageIpsResponse.setRequestId(context.stringValue("RemoveBandwidthPackageIpsResponse.RequestId"));
+		removeBandwidthPackageIpsResponse.setRequestId(_ctx.stringValue("RemoveBandwidthPackageIpsResponse.RequestId"));
 	 
 	 	return removeBandwidthPackageIpsResponse;
 	}

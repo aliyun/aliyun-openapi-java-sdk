@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceVncUrlResponseUnmarshaller {
 
-	public static DescribeInstanceVncUrlResponse unmarshall(DescribeInstanceVncUrlResponse describeInstanceVncUrlResponse, UnmarshallerContext context) {
+	public static DescribeInstanceVncUrlResponse unmarshall(DescribeInstanceVncUrlResponse describeInstanceVncUrlResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceVncUrlResponse.setRequestId(context.stringValue("DescribeInstanceVncUrlResponse.RequestId"));
-		describeInstanceVncUrlResponse.setVncUrl(context.stringValue("DescribeInstanceVncUrlResponse.VncUrl"));
+		describeInstanceVncUrlResponse.setRequestId(_ctx.stringValue("DescribeInstanceVncUrlResponse.RequestId"));
+		describeInstanceVncUrlResponse.setVncUrl(_ctx.stringValue("DescribeInstanceVncUrlResponse.VncUrl"));
 	 
 	 	return describeInstanceVncUrlResponse;
 	}

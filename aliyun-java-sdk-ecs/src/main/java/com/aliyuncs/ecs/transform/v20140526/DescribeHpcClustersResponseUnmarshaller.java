@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeHpcClustersResponseUnmarshaller {
 
-	public static DescribeHpcClustersResponse unmarshall(DescribeHpcClustersResponse describeHpcClustersResponse, UnmarshallerContext context) {
+	public static DescribeHpcClustersResponse unmarshall(DescribeHpcClustersResponse describeHpcClustersResponse, UnmarshallerContext _ctx) {
 		
-		describeHpcClustersResponse.setRequestId(context.stringValue("DescribeHpcClustersResponse.RequestId"));
-		describeHpcClustersResponse.setTotalCount(context.integerValue("DescribeHpcClustersResponse.TotalCount"));
-		describeHpcClustersResponse.setPageNumber(context.integerValue("DescribeHpcClustersResponse.PageNumber"));
-		describeHpcClustersResponse.setPageSize(context.integerValue("DescribeHpcClustersResponse.PageSize"));
+		describeHpcClustersResponse.setRequestId(_ctx.stringValue("DescribeHpcClustersResponse.RequestId"));
+		describeHpcClustersResponse.setTotalCount(_ctx.integerValue("DescribeHpcClustersResponse.TotalCount"));
+		describeHpcClustersResponse.setPageNumber(_ctx.integerValue("DescribeHpcClustersResponse.PageNumber"));
+		describeHpcClustersResponse.setPageSize(_ctx.integerValue("DescribeHpcClustersResponse.PageSize"));
 
 		List<HpcCluster> hpcClusters = new ArrayList<HpcCluster>();
-		for (int i = 0; i < context.lengthValue("DescribeHpcClustersResponse.HpcClusters.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeHpcClustersResponse.HpcClusters.Length"); i++) {
 			HpcCluster hpcCluster = new HpcCluster();
-			hpcCluster.setHpcClusterId(context.stringValue("DescribeHpcClustersResponse.HpcClusters["+ i +"].HpcClusterId"));
-			hpcCluster.setName(context.stringValue("DescribeHpcClustersResponse.HpcClusters["+ i +"].Name"));
-			hpcCluster.setDescription(context.stringValue("DescribeHpcClustersResponse.HpcClusters["+ i +"].Description"));
+			hpcCluster.setHpcClusterId(_ctx.stringValue("DescribeHpcClustersResponse.HpcClusters["+ i +"].HpcClusterId"));
+			hpcCluster.setName(_ctx.stringValue("DescribeHpcClustersResponse.HpcClusters["+ i +"].Name"));
+			hpcCluster.setDescription(_ctx.stringValue("DescribeHpcClustersResponse.HpcClusters["+ i +"].Description"));
 
 			hpcClusters.add(hpcCluster);
 		}

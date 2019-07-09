@@ -27,76 +27,78 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDisksResponseUnmarshaller {
 
-	public static DescribeDisksResponse unmarshall(DescribeDisksResponse describeDisksResponse, UnmarshallerContext context) {
+	public static DescribeDisksResponse unmarshall(DescribeDisksResponse describeDisksResponse, UnmarshallerContext _ctx) {
 		
-		describeDisksResponse.setRequestId(context.stringValue("DescribeDisksResponse.RequestId"));
-		describeDisksResponse.setTotalCount(context.integerValue("DescribeDisksResponse.TotalCount"));
-		describeDisksResponse.setPageNumber(context.integerValue("DescribeDisksResponse.PageNumber"));
-		describeDisksResponse.setPageSize(context.integerValue("DescribeDisksResponse.PageSize"));
+		describeDisksResponse.setRequestId(_ctx.stringValue("DescribeDisksResponse.RequestId"));
+		describeDisksResponse.setTotalCount(_ctx.integerValue("DescribeDisksResponse.TotalCount"));
+		describeDisksResponse.setPageNumber(_ctx.integerValue("DescribeDisksResponse.PageNumber"));
+		describeDisksResponse.setPageSize(_ctx.integerValue("DescribeDisksResponse.PageSize"));
 
 		List<Disk> disks = new ArrayList<Disk>();
-		for (int i = 0; i < context.lengthValue("DescribeDisksResponse.Disks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDisksResponse.Disks.Length"); i++) {
 			Disk disk = new Disk();
-			disk.setDiskId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskId"));
-			disk.setRegionId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].RegionId"));
-			disk.setZoneId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ZoneId"));
-			disk.setDiskName(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskName"));
-			disk.setDescription(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Description"));
-			disk.setType(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Type"));
-			disk.setCategory(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Category"));
-			disk.setSize(context.integerValue("DescribeDisksResponse.Disks["+ i +"].Size"));
-			disk.setImageId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ImageId"));
-			disk.setSourceSnapshotId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].SourceSnapshotId"));
-			disk.setAutoSnapshotPolicyId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].AutoSnapshotPolicyId"));
-			disk.setProductCode(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ProductCode"));
-			disk.setPortable(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].Portable"));
-			disk.setStatus(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Status"));
-			disk.setInstanceId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].InstanceId"));
-			disk.setDevice(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Device"));
-			disk.setDeleteWithInstance(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].DeleteWithInstance"));
-			disk.setDeleteAutoSnapshot(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].DeleteAutoSnapshot"));
-			disk.setEnableAutoSnapshot(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].EnableAutoSnapshot"));
-			disk.setEnableAutomatedSnapshotPolicy(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].EnableAutomatedSnapshotPolicy"));
-			disk.setCreationTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].CreationTime"));
-			disk.setAttachedTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].AttachedTime"));
-			disk.setDetachedTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DetachedTime"));
-			disk.setDiskChargeType(context.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskChargeType"));
-			disk.setExpiredTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ExpiredTime"));
-			disk.setResourceGroupId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].ResourceGroupId"));
-			disk.setEncrypted(context.booleanValue("DescribeDisksResponse.Disks["+ i +"].Encrypted"));
-			disk.setMountInstanceNum(context.integerValue("DescribeDisksResponse.Disks["+ i +"].MountInstanceNum"));
-			disk.setIOPS(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPS"));
-			disk.setIOPSRead(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSRead"));
-			disk.setIOPSWrite(context.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSWrite"));
-			disk.setKMSKeyId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].KMSKeyId"));
-			disk.setPerformanceLevel(context.stringValue("DescribeDisksResponse.Disks["+ i +"].PerformanceLevel"));
-			disk.setBdfId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].BdfId"));
+			disk.setDiskId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskId"));
+			disk.setRegionId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].RegionId"));
+			disk.setZoneId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].ZoneId"));
+			disk.setDiskName(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskName"));
+			disk.setDescription(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Description"));
+			disk.setType(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Type"));
+			disk.setCategory(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Category"));
+			disk.setSize(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].Size"));
+			disk.setImageId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].ImageId"));
+			disk.setSourceSnapshotId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].SourceSnapshotId"));
+			disk.setAutoSnapshotPolicyId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].AutoSnapshotPolicyId"));
+			disk.setProductCode(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].ProductCode"));
+			disk.setPortable(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].Portable"));
+			disk.setStatus(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Status"));
+			disk.setInstanceId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].InstanceId"));
+			disk.setDevice(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Device"));
+			disk.setDeleteWithInstance(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].DeleteWithInstance"));
+			disk.setDeleteAutoSnapshot(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].DeleteAutoSnapshot"));
+			disk.setEnableAutoSnapshot(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].EnableAutoSnapshot"));
+			disk.setEnableAutomatedSnapshotPolicy(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].EnableAutomatedSnapshotPolicy"));
+			disk.setCreationTime(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].CreationTime"));
+			disk.setAttachedTime(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].AttachedTime"));
+			disk.setDetachedTime(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].DetachedTime"));
+			disk.setDiskChargeType(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].DiskChargeType"));
+			disk.setExpiredTime(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].ExpiredTime"));
+			disk.setResourceGroupId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].ResourceGroupId"));
+			disk.setEncrypted(_ctx.booleanValue("DescribeDisksResponse.Disks["+ i +"].Encrypted"));
+			disk.setStorageSetId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].StorageSetId"));
+			disk.setStorageSetPartitionNumber(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].StorageSetPartitionNumber"));
+			disk.setMountInstanceNum(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].MountInstanceNum"));
+			disk.setIOPS(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPS"));
+			disk.setIOPSRead(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSRead"));
+			disk.setIOPSWrite(_ctx.integerValue("DescribeDisksResponse.Disks["+ i +"].IOPSWrite"));
+			disk.setKMSKeyId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].KMSKeyId"));
+			disk.setPerformanceLevel(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].PerformanceLevel"));
+			disk.setBdfId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].BdfId"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
-			for (int j = 0; j < context.lengthValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks.Length"); j++) {
 				OperationLock operationLock = new OperationLock();
-				operationLock.setLockReason(context.stringValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks["+ j +"].LockReason"));
+				operationLock.setLockReason(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].OperationLocks["+ j +"].LockReason"));
 
 				operationLocks.add(operationLock);
 			}
 			disk.setOperationLocks(operationLocks);
 
 			List<MountInstance> mountInstances = new ArrayList<MountInstance>();
-			for (int j = 0; j < context.lengthValue("DescribeDisksResponse.Disks["+ i +"].MountInstances.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDisksResponse.Disks["+ i +"].MountInstances.Length"); j++) {
 				MountInstance mountInstance = new MountInstance();
-				mountInstance.setInstanceId(context.stringValue("DescribeDisksResponse.Disks["+ i +"].MountInstances["+ j +"].InstanceId"));
-				mountInstance.setDevice(context.stringValue("DescribeDisksResponse.Disks["+ i +"].MountInstances["+ j +"].Device"));
-				mountInstance.setAttachedTime(context.stringValue("DescribeDisksResponse.Disks["+ i +"].MountInstances["+ j +"].AttachedTime"));
+				mountInstance.setInstanceId(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].MountInstances["+ j +"].InstanceId"));
+				mountInstance.setDevice(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].MountInstances["+ j +"].Device"));
+				mountInstance.setAttachedTime(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].MountInstances["+ j +"].AttachedTime"));
 
 				mountInstances.add(mountInstance);
 			}
 			disk.setMountInstances(mountInstances);
 
 			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < context.lengthValue("DescribeDisksResponse.Disks["+ i +"].Tags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDisksResponse.Disks["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Tags["+ j +"].TagKey"));
-				tag.setTagValue(context.stringValue("DescribeDisksResponse.Disks["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeDisksResponse.Disks["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}

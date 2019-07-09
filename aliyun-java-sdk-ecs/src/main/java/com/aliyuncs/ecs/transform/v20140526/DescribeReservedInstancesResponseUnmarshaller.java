@@ -25,35 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeReservedInstancesResponseUnmarshaller {
 
-	public static DescribeReservedInstancesResponse unmarshall(DescribeReservedInstancesResponse describeReservedInstancesResponse, UnmarshallerContext context) {
+	public static DescribeReservedInstancesResponse unmarshall(DescribeReservedInstancesResponse describeReservedInstancesResponse, UnmarshallerContext _ctx) {
 		
-		describeReservedInstancesResponse.setRequestId(context.stringValue("DescribeReservedInstancesResponse.RequestId"));
-		describeReservedInstancesResponse.setTotalCount(context.integerValue("DescribeReservedInstancesResponse.TotalCount"));
-		describeReservedInstancesResponse.setPageNumber(context.integerValue("DescribeReservedInstancesResponse.PageNumber"));
-		describeReservedInstancesResponse.setPageSize(context.integerValue("DescribeReservedInstancesResponse.PageSize"));
+		describeReservedInstancesResponse.setRequestId(_ctx.stringValue("DescribeReservedInstancesResponse.RequestId"));
+		describeReservedInstancesResponse.setTotalCount(_ctx.integerValue("DescribeReservedInstancesResponse.TotalCount"));
+		describeReservedInstancesResponse.setPageNumber(_ctx.integerValue("DescribeReservedInstancesResponse.PageNumber"));
+		describeReservedInstancesResponse.setPageSize(_ctx.integerValue("DescribeReservedInstancesResponse.PageSize"));
 
 		List<ReservedInstance> reservedInstances = new ArrayList<ReservedInstance>();
-		for (int i = 0; i < context.lengthValue("DescribeReservedInstancesResponse.ReservedInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeReservedInstancesResponse.ReservedInstances.Length"); i++) {
 			ReservedInstance reservedInstance = new ReservedInstance();
-			reservedInstance.setReservedInstanceId(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceId"));
-			reservedInstance.setRegionId(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].RegionId"));
-			reservedInstance.setZoneId(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ZoneId"));
-			reservedInstance.setReservedInstanceName(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceName"));
-			reservedInstance.setDescription(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Description"));
-			reservedInstance.setInstanceType(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceType"));
-			reservedInstance.setScope(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Scope"));
-			reservedInstance.setOfferingType(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OfferingType"));
-			reservedInstance.setInstanceAmount(context.integerValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceAmount"));
-			reservedInstance.setStatus(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Status"));
-			reservedInstance.setCreationTime(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].CreationTime"));
-			reservedInstance.setExpiredTime(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ExpiredTime"));
-			reservedInstance.setStartTime(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].StartTime"));
-			reservedInstance.setResourceGroupId(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ResourceGroupId"));
+			reservedInstance.setReservedInstanceId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceId"));
+			reservedInstance.setRegionId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].RegionId"));
+			reservedInstance.setZoneId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ZoneId"));
+			reservedInstance.setReservedInstanceName(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ReservedInstanceName"));
+			reservedInstance.setDescription(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Description"));
+			reservedInstance.setInstanceType(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceType"));
+			reservedInstance.setScope(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Scope"));
+			reservedInstance.setOfferingType(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OfferingType"));
+			reservedInstance.setInstanceAmount(_ctx.integerValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceAmount"));
+			reservedInstance.setStatus(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Status"));
+			reservedInstance.setCreationTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].CreationTime"));
+			reservedInstance.setExpiredTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ExpiredTime"));
+			reservedInstance.setStartTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].StartTime"));
+			reservedInstance.setResourceGroupId(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].ResourceGroupId"));
 
 			List<OperationLock> operationLocks = new ArrayList<OperationLock>();
-			for (int j = 0; j < context.lengthValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OperationLocks.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OperationLocks.Length"); j++) {
 				OperationLock operationLock = new OperationLock();
-				operationLock.setLockReason(context.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OperationLocks["+ j +"].LockReason"));
+				operationLock.setLockReason(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OperationLocks["+ j +"].LockReason"));
 
 				operationLocks.add(operationLock);
 			}

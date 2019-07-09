@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateNetworkInterfaceResponseUnmarshaller {
 
-	public static CreateNetworkInterfaceResponse unmarshall(CreateNetworkInterfaceResponse createNetworkInterfaceResponse, UnmarshallerContext context) {
+	public static CreateNetworkInterfaceResponse unmarshall(CreateNetworkInterfaceResponse createNetworkInterfaceResponse, UnmarshallerContext _ctx) {
 		
-		createNetworkInterfaceResponse.setRequestId(context.stringValue("CreateNetworkInterfaceResponse.RequestId"));
-		createNetworkInterfaceResponse.setNetworkInterfaceId(context.stringValue("CreateNetworkInterfaceResponse.NetworkInterfaceId"));
+		createNetworkInterfaceResponse.setRequestId(_ctx.stringValue("CreateNetworkInterfaceResponse.RequestId"));
+		createNetworkInterfaceResponse.setNetworkInterfaceId(_ctx.stringValue("CreateNetworkInterfaceResponse.NetworkInterfaceId"));
 	 
 	 	return createNetworkInterfaceResponse;
 	}

@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PurchaseReservedInstancesOfferingResponseUnmarshaller {
 
-	public static PurchaseReservedInstancesOfferingResponse unmarshall(PurchaseReservedInstancesOfferingResponse purchaseReservedInstancesOfferingResponse, UnmarshallerContext context) {
+	public static PurchaseReservedInstancesOfferingResponse unmarshall(PurchaseReservedInstancesOfferingResponse purchaseReservedInstancesOfferingResponse, UnmarshallerContext _ctx) {
 		
-		purchaseReservedInstancesOfferingResponse.setRequestId(context.stringValue("PurchaseReservedInstancesOfferingResponse.RequestId"));
+		purchaseReservedInstancesOfferingResponse.setRequestId(_ctx.stringValue("PurchaseReservedInstancesOfferingResponse.RequestId"));
 
 		List<String> reservedInstanceIdSets = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("PurchaseReservedInstancesOfferingResponse.ReservedInstanceIdSets.Length"); i++) {
-			reservedInstanceIdSets.add(context.stringValue("PurchaseReservedInstancesOfferingResponse.ReservedInstanceIdSets["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("PurchaseReservedInstancesOfferingResponse.ReservedInstanceIdSets.Length"); i++) {
+			reservedInstanceIdSets.add(_ctx.stringValue("PurchaseReservedInstancesOfferingResponse.ReservedInstanceIdSets["+ i +"]"));
 		}
 		purchaseReservedInstancesOfferingResponse.setReservedInstanceIdSets(reservedInstanceIdSets);
 	 

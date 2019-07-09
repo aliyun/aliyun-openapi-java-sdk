@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelSimulatedSystemEventsResponseUnmarshaller {
 
-	public static CancelSimulatedSystemEventsResponse unmarshall(CancelSimulatedSystemEventsResponse cancelSimulatedSystemEventsResponse, UnmarshallerContext context) {
+	public static CancelSimulatedSystemEventsResponse unmarshall(CancelSimulatedSystemEventsResponse cancelSimulatedSystemEventsResponse, UnmarshallerContext _ctx) {
 		
-		cancelSimulatedSystemEventsResponse.setRequestId(context.stringValue("CancelSimulatedSystemEventsResponse.RequestId"));
+		cancelSimulatedSystemEventsResponse.setRequestId(_ctx.stringValue("CancelSimulatedSystemEventsResponse.RequestId"));
 	 
 	 	return cancelSimulatedSystemEventsResponse;
 	}

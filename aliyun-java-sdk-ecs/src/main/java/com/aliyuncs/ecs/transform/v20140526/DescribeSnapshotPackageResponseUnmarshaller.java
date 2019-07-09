@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSnapshotPackageResponseUnmarshaller {
 
-	public static DescribeSnapshotPackageResponse unmarshall(DescribeSnapshotPackageResponse describeSnapshotPackageResponse, UnmarshallerContext context) {
+	public static DescribeSnapshotPackageResponse unmarshall(DescribeSnapshotPackageResponse describeSnapshotPackageResponse, UnmarshallerContext _ctx) {
 		
-		describeSnapshotPackageResponse.setRequestId(context.stringValue("DescribeSnapshotPackageResponse.RequestId"));
-		describeSnapshotPackageResponse.setTotalCount(context.integerValue("DescribeSnapshotPackageResponse.TotalCount"));
-		describeSnapshotPackageResponse.setPageNumber(context.integerValue("DescribeSnapshotPackageResponse.PageNumber"));
-		describeSnapshotPackageResponse.setPageSize(context.integerValue("DescribeSnapshotPackageResponse.PageSize"));
+		describeSnapshotPackageResponse.setRequestId(_ctx.stringValue("DescribeSnapshotPackageResponse.RequestId"));
+		describeSnapshotPackageResponse.setTotalCount(_ctx.integerValue("DescribeSnapshotPackageResponse.TotalCount"));
+		describeSnapshotPackageResponse.setPageNumber(_ctx.integerValue("DescribeSnapshotPackageResponse.PageNumber"));
+		describeSnapshotPackageResponse.setPageSize(_ctx.integerValue("DescribeSnapshotPackageResponse.PageSize"));
 
 		List<SnapshotPackage> snapshotPackages = new ArrayList<SnapshotPackage>();
-		for (int i = 0; i < context.lengthValue("DescribeSnapshotPackageResponse.SnapshotPackages.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotPackageResponse.SnapshotPackages.Length"); i++) {
 			SnapshotPackage snapshotPackage = new SnapshotPackage();
-			snapshotPackage.setStartTime(context.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].StartTime"));
-			snapshotPackage.setEndTime(context.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].EndTime"));
-			snapshotPackage.setInitCapacity(context.longValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].InitCapacity"));
-			snapshotPackage.setDisplayName(context.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].DisplayName"));
+			snapshotPackage.setStartTime(_ctx.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].StartTime"));
+			snapshotPackage.setEndTime(_ctx.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].EndTime"));
+			snapshotPackage.setInitCapacity(_ctx.longValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].InitCapacity"));
+			snapshotPackage.setDisplayName(_ctx.stringValue("DescribeSnapshotPackageResponse.SnapshotPackages["+ i +"].DisplayName"));
 
 			snapshotPackages.add(snapshotPackage);
 		}

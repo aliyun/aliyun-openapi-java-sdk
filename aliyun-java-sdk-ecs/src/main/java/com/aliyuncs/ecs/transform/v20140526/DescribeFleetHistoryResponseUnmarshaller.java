@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeFleetHistoryResponseUnmarshaller {
 
-	public static DescribeFleetHistoryResponse unmarshall(DescribeFleetHistoryResponse describeFleetHistoryResponse, UnmarshallerContext context) {
+	public static DescribeFleetHistoryResponse unmarshall(DescribeFleetHistoryResponse describeFleetHistoryResponse, UnmarshallerContext _ctx) {
 		
-		describeFleetHistoryResponse.setRequestId(context.stringValue("DescribeFleetHistoryResponse.RequestId"));
-		describeFleetHistoryResponse.setTotalCount(context.integerValue("DescribeFleetHistoryResponse.TotalCount"));
-		describeFleetHistoryResponse.setPageNumber(context.integerValue("DescribeFleetHistoryResponse.PageNumber"));
-		describeFleetHistoryResponse.setPageSize(context.integerValue("DescribeFleetHistoryResponse.PageSize"));
+		describeFleetHistoryResponse.setRequestId(_ctx.stringValue("DescribeFleetHistoryResponse.RequestId"));
+		describeFleetHistoryResponse.setTotalCount(_ctx.integerValue("DescribeFleetHistoryResponse.TotalCount"));
+		describeFleetHistoryResponse.setPageNumber(_ctx.integerValue("DescribeFleetHistoryResponse.PageNumber"));
+		describeFleetHistoryResponse.setPageSize(_ctx.integerValue("DescribeFleetHistoryResponse.PageSize"));
 
 		List<FleetHistory> fleetHistorys = new ArrayList<FleetHistory>();
-		for (int i = 0; i < context.lengthValue("DescribeFleetHistoryResponse.FleetHistorys.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeFleetHistoryResponse.FleetHistorys.Length"); i++) {
 			FleetHistory fleetHistory = new FleetHistory();
-			fleetHistory.setTaskId(context.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].TaskId"));
-			fleetHistory.setStatus(context.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].Status"));
-			fleetHistory.setLastEventTime(context.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].LastEventTime"));
-			fleetHistory.setStartTime(context.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].StartTime"));
+			fleetHistory.setTaskId(_ctx.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].TaskId"));
+			fleetHistory.setStatus(_ctx.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].Status"));
+			fleetHistory.setLastEventTime(_ctx.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].LastEventTime"));
+			fleetHistory.setStartTime(_ctx.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].StartTime"));
 
 			List<ActivityDetail> activityDetails = new ArrayList<ActivityDetail>();
-			for (int j = 0; j < context.lengthValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].ActivityDetails.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].ActivityDetails.Length"); j++) {
 				ActivityDetail activityDetail = new ActivityDetail();
-				activityDetail.setDetail(context.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].ActivityDetails["+ j +"].Detail"));
-				activityDetail.setStatus(context.floatValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].ActivityDetails["+ j +"].Status"));
+				activityDetail.setDetail(_ctx.stringValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].ActivityDetails["+ j +"].Detail"));
+				activityDetail.setStatus(_ctx.floatValue("DescribeFleetHistoryResponse.FleetHistorys["+ i +"].ActivityDetails["+ j +"].Status"));
 
 				activityDetails.add(activityDetail);
 			}

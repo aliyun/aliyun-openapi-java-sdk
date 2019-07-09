@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ConvertNatPublicIpToEipResponseUnmarshaller {
 
-	public static ConvertNatPublicIpToEipResponse unmarshall(ConvertNatPublicIpToEipResponse convertNatPublicIpToEipResponse, UnmarshallerContext context) {
+	public static ConvertNatPublicIpToEipResponse unmarshall(ConvertNatPublicIpToEipResponse convertNatPublicIpToEipResponse, UnmarshallerContext _ctx) {
 		
-		convertNatPublicIpToEipResponse.setRequestId(context.stringValue("ConvertNatPublicIpToEipResponse.RequestId"));
+		convertNatPublicIpToEipResponse.setRequestId(_ctx.stringValue("ConvertNatPublicIpToEipResponse.RequestId"));
 	 
 	 	return convertNatPublicIpToEipResponse;
 	}

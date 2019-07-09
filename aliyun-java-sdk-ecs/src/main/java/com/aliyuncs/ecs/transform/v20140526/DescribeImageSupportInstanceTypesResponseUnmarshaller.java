@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeImageSupportInstanceTypesResponseUnmarshaller {
 
-	public static DescribeImageSupportInstanceTypesResponse unmarshall(DescribeImageSupportInstanceTypesResponse describeImageSupportInstanceTypesResponse, UnmarshallerContext context) {
+	public static DescribeImageSupportInstanceTypesResponse unmarshall(DescribeImageSupportInstanceTypesResponse describeImageSupportInstanceTypesResponse, UnmarshallerContext _ctx) {
 		
-		describeImageSupportInstanceTypesResponse.setRequestId(context.stringValue("DescribeImageSupportInstanceTypesResponse.RequestId"));
-		describeImageSupportInstanceTypesResponse.setRegionId(context.stringValue("DescribeImageSupportInstanceTypesResponse.RegionId"));
-		describeImageSupportInstanceTypesResponse.setImageId(context.stringValue("DescribeImageSupportInstanceTypesResponse.ImageId"));
+		describeImageSupportInstanceTypesResponse.setRequestId(_ctx.stringValue("DescribeImageSupportInstanceTypesResponse.RequestId"));
+		describeImageSupportInstanceTypesResponse.setRegionId(_ctx.stringValue("DescribeImageSupportInstanceTypesResponse.RegionId"));
+		describeImageSupportInstanceTypesResponse.setImageId(_ctx.stringValue("DescribeImageSupportInstanceTypesResponse.ImageId"));
 
 		List<InstanceType> instanceTypes = new ArrayList<InstanceType>();
-		for (int i = 0; i < context.lengthValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes.Length"); i++) {
 			InstanceType instanceType = new InstanceType();
-			instanceType.setInstanceTypeId(context.stringValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeId"));
-			instanceType.setCpuCoreCount(context.integerValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].CpuCoreCount"));
-			instanceType.setMemorySize(context.floatValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].MemorySize"));
-			instanceType.setInstanceTypeFamily(context.stringValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
+			instanceType.setInstanceTypeId(_ctx.stringValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeId"));
+			instanceType.setCpuCoreCount(_ctx.integerValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].CpuCoreCount"));
+			instanceType.setMemorySize(_ctx.floatValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].MemorySize"));
+			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeImageSupportInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeFamily"));
 
 			instanceTypes.add(instanceType);
 		}

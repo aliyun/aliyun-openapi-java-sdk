@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UnassociateEipAddressResponseUnmarshaller {
 
-	public static UnassociateEipAddressResponse unmarshall(UnassociateEipAddressResponse unassociateEipAddressResponse, UnmarshallerContext context) {
+	public static UnassociateEipAddressResponse unmarshall(UnassociateEipAddressResponse unassociateEipAddressResponse, UnmarshallerContext _ctx) {
 		
-		unassociateEipAddressResponse.setRequestId(context.stringValue("UnassociateEipAddressResponse.RequestId"));
+		unassociateEipAddressResponse.setRequestId(_ctx.stringValue("UnassociateEipAddressResponse.RequestId"));
 	 
 	 	return unassociateEipAddressResponse;
 	}

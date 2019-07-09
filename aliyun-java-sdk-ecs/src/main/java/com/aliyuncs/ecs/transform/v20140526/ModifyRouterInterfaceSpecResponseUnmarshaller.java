@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyRouterInterfaceSpecResponseUnmarshaller {
 
-	public static ModifyRouterInterfaceSpecResponse unmarshall(ModifyRouterInterfaceSpecResponse modifyRouterInterfaceSpecResponse, UnmarshallerContext context) {
+	public static ModifyRouterInterfaceSpecResponse unmarshall(ModifyRouterInterfaceSpecResponse modifyRouterInterfaceSpecResponse, UnmarshallerContext _ctx) {
 		
-		modifyRouterInterfaceSpecResponse.setRequestId(context.stringValue("ModifyRouterInterfaceSpecResponse.RequestId"));
-		modifyRouterInterfaceSpecResponse.setSpec(context.stringValue("ModifyRouterInterfaceSpecResponse.Spec"));
+		modifyRouterInterfaceSpecResponse.setRequestId(_ctx.stringValue("ModifyRouterInterfaceSpecResponse.RequestId"));
+		modifyRouterInterfaceSpecResponse.setSpec(_ctx.stringValue("ModifyRouterInterfaceSpecResponse.Spec"));
 	 
 	 	return modifyRouterInterfaceSpecResponse;
 	}

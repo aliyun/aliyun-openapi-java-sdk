@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSpotPriceHistoryResponseUnmarshaller {
 
-	public static DescribeSpotPriceHistoryResponse unmarshall(DescribeSpotPriceHistoryResponse describeSpotPriceHistoryResponse, UnmarshallerContext context) {
+	public static DescribeSpotPriceHistoryResponse unmarshall(DescribeSpotPriceHistoryResponse describeSpotPriceHistoryResponse, UnmarshallerContext _ctx) {
 		
-		describeSpotPriceHistoryResponse.setRequestId(context.stringValue("DescribeSpotPriceHistoryResponse.RequestId"));
-		describeSpotPriceHistoryResponse.setNextOffset(context.integerValue("DescribeSpotPriceHistoryResponse.NextOffset"));
-		describeSpotPriceHistoryResponse.setCurrency(context.stringValue("DescribeSpotPriceHistoryResponse.Currency"));
+		describeSpotPriceHistoryResponse.setRequestId(_ctx.stringValue("DescribeSpotPriceHistoryResponse.RequestId"));
+		describeSpotPriceHistoryResponse.setNextOffset(_ctx.integerValue("DescribeSpotPriceHistoryResponse.NextOffset"));
+		describeSpotPriceHistoryResponse.setCurrency(_ctx.stringValue("DescribeSpotPriceHistoryResponse.Currency"));
 
 		List<SpotPriceType> spotPrices = new ArrayList<SpotPriceType>();
-		for (int i = 0; i < context.lengthValue("DescribeSpotPriceHistoryResponse.SpotPrices.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSpotPriceHistoryResponse.SpotPrices.Length"); i++) {
 			SpotPriceType spotPriceType = new SpotPriceType();
-			spotPriceType.setZoneId(context.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].ZoneId"));
-			spotPriceType.setInstanceType(context.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].InstanceType"));
-			spotPriceType.setIoOptimized(context.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].IoOptimized"));
-			spotPriceType.setTimestamp(context.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].Timestamp"));
-			spotPriceType.setNetworkType(context.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].NetworkType"));
-			spotPriceType.setSpotPrice(context.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].SpotPrice"));
-			spotPriceType.setOriginPrice(context.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].OriginPrice"));
+			spotPriceType.setZoneId(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].ZoneId"));
+			spotPriceType.setInstanceType(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].InstanceType"));
+			spotPriceType.setIoOptimized(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].IoOptimized"));
+			spotPriceType.setTimestamp(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].Timestamp"));
+			spotPriceType.setNetworkType(_ctx.stringValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].NetworkType"));
+			spotPriceType.setSpotPrice(_ctx.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].SpotPrice"));
+			spotPriceType.setOriginPrice(_ctx.floatValue("DescribeSpotPriceHistoryResponse.SpotPrices["+ i +"].OriginPrice"));
 
 			spotPrices.add(spotPriceType);
 		}

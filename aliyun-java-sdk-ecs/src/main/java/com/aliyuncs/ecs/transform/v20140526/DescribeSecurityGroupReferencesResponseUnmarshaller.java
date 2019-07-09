@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSecurityGroupReferencesResponseUnmarshaller {
 
-	public static DescribeSecurityGroupReferencesResponse unmarshall(DescribeSecurityGroupReferencesResponse describeSecurityGroupReferencesResponse, UnmarshallerContext context) {
+	public static DescribeSecurityGroupReferencesResponse unmarshall(DescribeSecurityGroupReferencesResponse describeSecurityGroupReferencesResponse, UnmarshallerContext _ctx) {
 		
-		describeSecurityGroupReferencesResponse.setRequestId(context.stringValue("DescribeSecurityGroupReferencesResponse.RequestId"));
+		describeSecurityGroupReferencesResponse.setRequestId(_ctx.stringValue("DescribeSecurityGroupReferencesResponse.RequestId"));
 
 		List<SecurityGroupReference> securityGroupReferences = new ArrayList<SecurityGroupReference>();
-		for (int i = 0; i < context.lengthValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences.Length"); i++) {
 			SecurityGroupReference securityGroupReference = new SecurityGroupReference();
-			securityGroupReference.setSecurityGroupId(context.stringValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].SecurityGroupId"));
+			securityGroupReference.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].SecurityGroupId"));
 
 			List<ReferencingSecurityGroup> referencingSecurityGroups = new ArrayList<ReferencingSecurityGroup>();
-			for (int j = 0; j < context.lengthValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups.Length"); j++) {
 				ReferencingSecurityGroup referencingSecurityGroup = new ReferencingSecurityGroup();
-				referencingSecurityGroup.setAliUid(context.stringValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].AliUid"));
-				referencingSecurityGroup.setSecurityGroupId(context.stringValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].SecurityGroupId"));
+				referencingSecurityGroup.setAliUid(_ctx.stringValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].AliUid"));
+				referencingSecurityGroup.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupReferencesResponse.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].SecurityGroupId"));
 
 				referencingSecurityGroups.add(referencingSecurityGroup);
 			}

@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeClassicLinkInstancesResponseUnmarshaller {
 
-	public static DescribeClassicLinkInstancesResponse unmarshall(DescribeClassicLinkInstancesResponse describeClassicLinkInstancesResponse, UnmarshallerContext context) {
+	public static DescribeClassicLinkInstancesResponse unmarshall(DescribeClassicLinkInstancesResponse describeClassicLinkInstancesResponse, UnmarshallerContext _ctx) {
 		
-		describeClassicLinkInstancesResponse.setRequestId(context.stringValue("DescribeClassicLinkInstancesResponse.RequestId"));
-		describeClassicLinkInstancesResponse.setTotalCount(context.integerValue("DescribeClassicLinkInstancesResponse.TotalCount"));
-		describeClassicLinkInstancesResponse.setPageNumber(context.integerValue("DescribeClassicLinkInstancesResponse.PageNumber"));
-		describeClassicLinkInstancesResponse.setPageSize(context.integerValue("DescribeClassicLinkInstancesResponse.PageSize"));
+		describeClassicLinkInstancesResponse.setRequestId(_ctx.stringValue("DescribeClassicLinkInstancesResponse.RequestId"));
+		describeClassicLinkInstancesResponse.setTotalCount(_ctx.integerValue("DescribeClassicLinkInstancesResponse.TotalCount"));
+		describeClassicLinkInstancesResponse.setPageNumber(_ctx.integerValue("DescribeClassicLinkInstancesResponse.PageNumber"));
+		describeClassicLinkInstancesResponse.setPageSize(_ctx.integerValue("DescribeClassicLinkInstancesResponse.PageSize"));
 
 		List<Link> links = new ArrayList<Link>();
-		for (int i = 0; i < context.lengthValue("DescribeClassicLinkInstancesResponse.Links.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeClassicLinkInstancesResponse.Links.Length"); i++) {
 			Link link = new Link();
-			link.setInstanceId(context.stringValue("DescribeClassicLinkInstancesResponse.Links["+ i +"].InstanceId"));
-			link.setVpcId(context.stringValue("DescribeClassicLinkInstancesResponse.Links["+ i +"].VpcId"));
+			link.setInstanceId(_ctx.stringValue("DescribeClassicLinkInstancesResponse.Links["+ i +"].InstanceId"));
+			link.setVpcId(_ctx.stringValue("DescribeClassicLinkInstancesResponse.Links["+ i +"].VpcId"));
 
 			links.add(link);
 		}

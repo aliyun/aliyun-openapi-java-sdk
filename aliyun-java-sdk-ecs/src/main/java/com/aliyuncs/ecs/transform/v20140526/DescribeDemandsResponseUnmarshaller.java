@@ -25,39 +25,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDemandsResponseUnmarshaller {
 
-	public static DescribeDemandsResponse unmarshall(DescribeDemandsResponse describeDemandsResponse, UnmarshallerContext context) {
+	public static DescribeDemandsResponse unmarshall(DescribeDemandsResponse describeDemandsResponse, UnmarshallerContext _ctx) {
 		
-		describeDemandsResponse.setRequestId(context.stringValue("DescribeDemandsResponse.RequestId"));
-		describeDemandsResponse.setTotalCount(context.integerValue("DescribeDemandsResponse.TotalCount"));
-		describeDemandsResponse.setPageNumber(context.integerValue("DescribeDemandsResponse.PageNumber"));
-		describeDemandsResponse.setPageSize(context.integerValue("DescribeDemandsResponse.PageSize"));
-		describeDemandsResponse.setRegionId(context.stringValue("DescribeDemandsResponse.RegionId"));
+		describeDemandsResponse.setRequestId(_ctx.stringValue("DescribeDemandsResponse.RequestId"));
+		describeDemandsResponse.setTotalCount(_ctx.integerValue("DescribeDemandsResponse.TotalCount"));
+		describeDemandsResponse.setPageNumber(_ctx.integerValue("DescribeDemandsResponse.PageNumber"));
+		describeDemandsResponse.setPageSize(_ctx.integerValue("DescribeDemandsResponse.PageSize"));
+		describeDemandsResponse.setRegionId(_ctx.stringValue("DescribeDemandsResponse.RegionId"));
 
 		List<Demand> demands = new ArrayList<Demand>();
-		for (int i = 0; i < context.lengthValue("DescribeDemandsResponse.Demands.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDemandsResponse.Demands.Length"); i++) {
 			Demand demand = new Demand();
-			demand.setZoneId(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].ZoneId"));
-			demand.setDemandTime(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandTime"));
-			demand.setInstanceTypeFamily(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceTypeFamily"));
-			demand.setInstanceType(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceType"));
-			demand.setInstanceChargeType(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceChargeType"));
-			demand.setPeriod(context.integerValue("DescribeDemandsResponse.Demands["+ i +"].Period"));
-			demand.setPeriodUnit(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].PeriodUnit"));
-			demand.setStartTime(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].StartTime"));
-			demand.setEndTime(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].EndTime"));
-			demand.setDemandStatus(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandStatus"));
-			demand.setTotalAmount(context.integerValue("DescribeDemandsResponse.Demands["+ i +"].TotalAmount"));
-			demand.setAvailableAmount(context.integerValue("DescribeDemandsResponse.Demands["+ i +"].AvailableAmount"));
-			demand.setUsedAmount(context.integerValue("DescribeDemandsResponse.Demands["+ i +"].UsedAmount"));
-			demand.setDeliveringAmount(context.integerValue("DescribeDemandsResponse.Demands["+ i +"].DeliveringAmount"));
+			demand.setZoneId(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].ZoneId"));
+			demand.setDemandTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandTime"));
+			demand.setInstanceTypeFamily(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceTypeFamily"));
+			demand.setInstanceType(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceType"));
+			demand.setInstanceChargeType(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].InstanceChargeType"));
+			demand.setPeriod(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].Period"));
+			demand.setPeriodUnit(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].PeriodUnit"));
+			demand.setStartTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].StartTime"));
+			demand.setEndTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].EndTime"));
+			demand.setDemandStatus(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].DemandStatus"));
+			demand.setTotalAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].TotalAmount"));
+			demand.setAvailableAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].AvailableAmount"));
+			demand.setUsedAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].UsedAmount"));
+			demand.setDeliveringAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].DeliveringAmount"));
 
 			List<SupplyInfo> supplyInfos = new ArrayList<SupplyInfo>();
-			for (int j = 0; j < context.lengthValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos.Length"); j++) {
 				SupplyInfo supplyInfo = new SupplyInfo();
-				supplyInfo.setAmount(context.integerValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos["+ j +"].Amount"));
-				supplyInfo.setSupplyStatus(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos["+ j +"].SupplyStatus"));
-				supplyInfo.setSupplyStartTime(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos["+ j +"].SupplyStartTime"));
-				supplyInfo.setSupplyEndTime(context.stringValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos["+ j +"].SupplyEndTime"));
+				supplyInfo.setAmount(_ctx.integerValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos["+ j +"].Amount"));
+				supplyInfo.setSupplyStatus(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos["+ j +"].SupplyStatus"));
+				supplyInfo.setSupplyStartTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos["+ j +"].SupplyStartTime"));
+				supplyInfo.setSupplyEndTime(_ctx.stringValue("DescribeDemandsResponse.Demands["+ i +"].SupplyInfos["+ j +"].SupplyEndTime"));
 
 				supplyInfos.add(supplyInfo);
 			}

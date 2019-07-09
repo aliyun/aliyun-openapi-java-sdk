@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateLaunchTemplateResponseUnmarshaller {
 
-	public static CreateLaunchTemplateResponse unmarshall(CreateLaunchTemplateResponse createLaunchTemplateResponse, UnmarshallerContext context) {
+	public static CreateLaunchTemplateResponse unmarshall(CreateLaunchTemplateResponse createLaunchTemplateResponse, UnmarshallerContext _ctx) {
 		
-		createLaunchTemplateResponse.setRequestId(context.stringValue("CreateLaunchTemplateResponse.RequestId"));
-		createLaunchTemplateResponse.setLaunchTemplateId(context.stringValue("CreateLaunchTemplateResponse.LaunchTemplateId"));
+		createLaunchTemplateResponse.setRequestId(_ctx.stringValue("CreateLaunchTemplateResponse.RequestId"));
+		createLaunchTemplateResponse.setLaunchTemplateId(_ctx.stringValue("CreateLaunchTemplateResponse.LaunchTemplateId"));
 	 
 	 	return createLaunchTemplateResponse;
 	}

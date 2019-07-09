@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateVpcResponseUnmarshaller {
 
-	public static CreateVpcResponse unmarshall(CreateVpcResponse createVpcResponse, UnmarshallerContext context) {
+	public static CreateVpcResponse unmarshall(CreateVpcResponse createVpcResponse, UnmarshallerContext _ctx) {
 		
-		createVpcResponse.setRequestId(context.stringValue("CreateVpcResponse.RequestId"));
-		createVpcResponse.setVpcId(context.stringValue("CreateVpcResponse.VpcId"));
-		createVpcResponse.setVRouterId(context.stringValue("CreateVpcResponse.VRouterId"));
-		createVpcResponse.setRouteTableId(context.stringValue("CreateVpcResponse.RouteTableId"));
+		createVpcResponse.setRequestId(_ctx.stringValue("CreateVpcResponse.RequestId"));
+		createVpcResponse.setVpcId(_ctx.stringValue("CreateVpcResponse.VpcId"));
+		createVpcResponse.setVRouterId(_ctx.stringValue("CreateVpcResponse.VRouterId"));
+		createVpcResponse.setRouteTableId(_ctx.stringValue("CreateVpcResponse.RouteTableId"));
 	 
 	 	return createVpcResponse;
 	}

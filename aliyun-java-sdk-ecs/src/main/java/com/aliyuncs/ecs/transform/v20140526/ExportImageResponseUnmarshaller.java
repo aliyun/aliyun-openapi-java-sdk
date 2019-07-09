@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ExportImageResponseUnmarshaller {
 
-	public static ExportImageResponse unmarshall(ExportImageResponse exportImageResponse, UnmarshallerContext context) {
+	public static ExportImageResponse unmarshall(ExportImageResponse exportImageResponse, UnmarshallerContext _ctx) {
 		
-		exportImageResponse.setRequestId(context.stringValue("ExportImageResponse.RequestId"));
-		exportImageResponse.setTaskId(context.stringValue("ExportImageResponse.TaskId"));
-		exportImageResponse.setRegionId(context.stringValue("ExportImageResponse.RegionId"));
+		exportImageResponse.setRequestId(_ctx.stringValue("ExportImageResponse.RequestId"));
+		exportImageResponse.setTaskId(_ctx.stringValue("ExportImageResponse.TaskId"));
+		exportImageResponse.setRegionId(_ctx.stringValue("ExportImageResponse.RegionId"));
 	 
 	 	return exportImageResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteForwardEntryResponseUnmarshaller {
 
-	public static DeleteForwardEntryResponse unmarshall(DeleteForwardEntryResponse deleteForwardEntryResponse, UnmarshallerContext context) {
+	public static DeleteForwardEntryResponse unmarshall(DeleteForwardEntryResponse deleteForwardEntryResponse, UnmarshallerContext _ctx) {
 		
-		deleteForwardEntryResponse.setRequestId(context.stringValue("DeleteForwardEntryResponse.RequestId"));
+		deleteForwardEntryResponse.setRequestId(_ctx.stringValue("DeleteForwardEntryResponse.RequestId"));
 	 
 	 	return deleteForwardEntryResponse;
 	}

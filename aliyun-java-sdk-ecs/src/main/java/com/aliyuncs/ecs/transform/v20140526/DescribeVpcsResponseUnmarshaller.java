@@ -24,35 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVpcsResponseUnmarshaller {
 
-	public static DescribeVpcsResponse unmarshall(DescribeVpcsResponse describeVpcsResponse, UnmarshallerContext context) {
+	public static DescribeVpcsResponse unmarshall(DescribeVpcsResponse describeVpcsResponse, UnmarshallerContext _ctx) {
 		
-		describeVpcsResponse.setRequestId(context.stringValue("DescribeVpcsResponse.RequestId"));
-		describeVpcsResponse.setTotalCount(context.integerValue("DescribeVpcsResponse.TotalCount"));
-		describeVpcsResponse.setPageNumber(context.integerValue("DescribeVpcsResponse.PageNumber"));
-		describeVpcsResponse.setPageSize(context.integerValue("DescribeVpcsResponse.PageSize"));
+		describeVpcsResponse.setRequestId(_ctx.stringValue("DescribeVpcsResponse.RequestId"));
+		describeVpcsResponse.setTotalCount(_ctx.integerValue("DescribeVpcsResponse.TotalCount"));
+		describeVpcsResponse.setPageNumber(_ctx.integerValue("DescribeVpcsResponse.PageNumber"));
+		describeVpcsResponse.setPageSize(_ctx.integerValue("DescribeVpcsResponse.PageSize"));
 
 		List<Vpc> vpcs = new ArrayList<Vpc>();
-		for (int i = 0; i < context.lengthValue("DescribeVpcsResponse.Vpcs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpcsResponse.Vpcs.Length"); i++) {
 			Vpc vpc = new Vpc();
-			vpc.setVpcId(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcId"));
-			vpc.setRegionId(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].RegionId"));
-			vpc.setStatus(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Status"));
-			vpc.setVpcName(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcName"));
-			vpc.setCreationTime(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CreationTime"));
-			vpc.setCidrBlock(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CidrBlock"));
-			vpc.setVRouterId(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VRouterId"));
-			vpc.setDescription(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Description"));
-			vpc.setIsDefault(context.booleanValue("DescribeVpcsResponse.Vpcs["+ i +"].IsDefault"));
+			vpc.setVpcId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcId"));
+			vpc.setRegionId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].RegionId"));
+			vpc.setStatus(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Status"));
+			vpc.setVpcName(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VpcName"));
+			vpc.setCreationTime(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CreationTime"));
+			vpc.setCidrBlock(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].CidrBlock"));
+			vpc.setVRouterId(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VRouterId"));
+			vpc.setDescription(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Description"));
+			vpc.setIsDefault(_ctx.booleanValue("DescribeVpcsResponse.Vpcs["+ i +"].IsDefault"));
 
 			List<String> vSwitchIds = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].VSwitchIds.Length"); j++) {
-				vSwitchIds.add(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VSwitchIds["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].VSwitchIds.Length"); j++) {
+				vSwitchIds.add(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].VSwitchIds["+ j +"]"));
 			}
 			vpc.setVSwitchIds(vSwitchIds);
 
 			List<String> userCidrs = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].UserCidrs.Length"); j++) {
-				userCidrs.add(context.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].UserCidrs["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].UserCidrs.Length"); j++) {
+				userCidrs.add(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].UserCidrs["+ j +"]"));
 			}
 			vpc.setUserCidrs(userCidrs);
 

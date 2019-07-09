@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResetDiskResponseUnmarshaller {
 
-	public static ResetDiskResponse unmarshall(ResetDiskResponse resetDiskResponse, UnmarshallerContext context) {
+	public static ResetDiskResponse unmarshall(ResetDiskResponse resetDiskResponse, UnmarshallerContext _ctx) {
 		
-		resetDiskResponse.setRequestId(context.stringValue("ResetDiskResponse.RequestId"));
+		resetDiskResponse.setRequestId(_ctx.stringValue("ResetDiskResponse.RequestId"));
 	 
 	 	return resetDiskResponse;
 	}

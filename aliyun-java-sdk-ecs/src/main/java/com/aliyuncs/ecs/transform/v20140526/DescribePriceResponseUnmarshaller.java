@@ -28,31 +28,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePriceResponseUnmarshaller {
 
-	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext context) {
+	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext _ctx) {
 		
-		describePriceResponse.setRequestId(context.stringValue("DescribePriceResponse.RequestId"));
+		describePriceResponse.setRequestId(_ctx.stringValue("DescribePriceResponse.RequestId"));
 
 		PriceInfo priceInfo = new PriceInfo();
 
 		Price price = new Price();
-		price.setOriginalPrice(context.floatValue("DescribePriceResponse.PriceInfo.Price.OriginalPrice"));
-		price.setDiscountPrice(context.floatValue("DescribePriceResponse.PriceInfo.Price.DiscountPrice"));
-		price.setTradePrice(context.floatValue("DescribePriceResponse.PriceInfo.Price.TradePrice"));
-		price.setCurrency(context.stringValue("DescribePriceResponse.PriceInfo.Price.Currency"));
+		price.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.OriginalPrice"));
+		price.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DiscountPrice"));
+		price.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.TradePrice"));
+		price.setCurrency(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Currency"));
 
 		List<ResourcePriceModel> detailInfos = new ArrayList<ResourcePriceModel>();
-		for (int i = 0; i < context.lengthValue("DescribePriceResponse.PriceInfo.Price.DetailInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.DetailInfos.Length"); i++) {
 			ResourcePriceModel resourcePriceModel = new ResourcePriceModel();
-			resourcePriceModel.setResource(context.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Resource"));
-			resourcePriceModel.setOriginalPrice(context.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].OriginalPrice"));
-			resourcePriceModel.setDiscountPrice(context.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DiscountPrice"));
-			resourcePriceModel.setTradePrice(context.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].TradePrice"));
+			resourcePriceModel.setResource(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].Resource"));
+			resourcePriceModel.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].OriginalPrice"));
+			resourcePriceModel.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].DiscountPrice"));
+			resourcePriceModel.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].TradePrice"));
 
 			List<Rule1> subRules = new ArrayList<Rule1>();
-			for (int j = 0; j < context.lengthValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules.Length"); j++) {
 				Rule1 rule1 = new Rule1();
-				rule1.setRuleId(context.longValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId"));
-				rule1.setDescription(context.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description"));
+				rule1.setRuleId(_ctx.longValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId"));
+				rule1.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description"));
 
 				subRules.add(rule1);
 			}
@@ -64,10 +64,10 @@ public class DescribePriceResponseUnmarshaller {
 		priceInfo.setPrice(price);
 
 		List<Rule> rules = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("DescribePriceResponse.PriceInfo.Rules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(context.longValue("DescribePriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
-			rule.setDescription(context.stringValue("DescribePriceResponse.PriceInfo.Rules["+ i +"].Description"));
+			rule.setRuleId(_ctx.longValue("DescribePriceResponse.PriceInfo.Rules["+ i +"].RuleId"));
+			rule.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.Rules["+ i +"].Description"));
 
 			rules.add(rule);
 		}

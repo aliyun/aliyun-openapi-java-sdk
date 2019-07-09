@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ImportKeyPairResponseUnmarshaller {
 
-	public static ImportKeyPairResponse unmarshall(ImportKeyPairResponse importKeyPairResponse, UnmarshallerContext context) {
+	public static ImportKeyPairResponse unmarshall(ImportKeyPairResponse importKeyPairResponse, UnmarshallerContext _ctx) {
 		
-		importKeyPairResponse.setRequestId(context.stringValue("ImportKeyPairResponse.RequestId"));
-		importKeyPairResponse.setKeyPairName(context.stringValue("ImportKeyPairResponse.KeyPairName"));
-		importKeyPairResponse.setKeyPairFingerPrint(context.stringValue("ImportKeyPairResponse.KeyPairFingerPrint"));
+		importKeyPairResponse.setRequestId(_ctx.stringValue("ImportKeyPairResponse.RequestId"));
+		importKeyPairResponse.setKeyPairName(_ctx.stringValue("ImportKeyPairResponse.KeyPairName"));
+		importKeyPairResponse.setKeyPairFingerPrint(_ctx.stringValue("ImportKeyPairResponse.KeyPairFingerPrint"));
 	 
 	 	return importKeyPairResponse;
 	}

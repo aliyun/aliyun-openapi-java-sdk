@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AllocatePublicIpAddressResponseUnmarshaller {
 
-	public static AllocatePublicIpAddressResponse unmarshall(AllocatePublicIpAddressResponse allocatePublicIpAddressResponse, UnmarshallerContext context) {
+	public static AllocatePublicIpAddressResponse unmarshall(AllocatePublicIpAddressResponse allocatePublicIpAddressResponse, UnmarshallerContext _ctx) {
 		
-		allocatePublicIpAddressResponse.setRequestId(context.stringValue("AllocatePublicIpAddressResponse.RequestId"));
-		allocatePublicIpAddressResponse.setIpAddress(context.stringValue("AllocatePublicIpAddressResponse.IpAddress"));
+		allocatePublicIpAddressResponse.setRequestId(_ctx.stringValue("AllocatePublicIpAddressResponse.RequestId"));
+		allocatePublicIpAddressResponse.setIpAddress(_ctx.stringValue("AllocatePublicIpAddressResponse.IpAddress"));
 	 
 	 	return allocatePublicIpAddressResponse;
 	}

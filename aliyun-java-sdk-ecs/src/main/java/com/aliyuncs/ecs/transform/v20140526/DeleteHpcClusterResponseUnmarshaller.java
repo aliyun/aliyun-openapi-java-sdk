@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteHpcClusterResponseUnmarshaller {
 
-	public static DeleteHpcClusterResponse unmarshall(DeleteHpcClusterResponse deleteHpcClusterResponse, UnmarshallerContext context) {
+	public static DeleteHpcClusterResponse unmarshall(DeleteHpcClusterResponse deleteHpcClusterResponse, UnmarshallerContext _ctx) {
 		
-		deleteHpcClusterResponse.setRequestId(context.stringValue("DeleteHpcClusterResponse.RequestId"));
+		deleteHpcClusterResponse.setRequestId(_ctx.stringValue("DeleteHpcClusterResponse.RequestId"));
 	 
 	 	return deleteHpcClusterResponse;
 	}

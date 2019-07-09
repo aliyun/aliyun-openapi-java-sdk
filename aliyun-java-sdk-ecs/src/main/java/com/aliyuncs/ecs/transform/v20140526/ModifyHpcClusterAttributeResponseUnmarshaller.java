@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyHpcClusterAttributeResponseUnmarshaller {
 
-	public static ModifyHpcClusterAttributeResponse unmarshall(ModifyHpcClusterAttributeResponse modifyHpcClusterAttributeResponse, UnmarshallerContext context) {
+	public static ModifyHpcClusterAttributeResponse unmarshall(ModifyHpcClusterAttributeResponse modifyHpcClusterAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyHpcClusterAttributeResponse.setRequestId(context.stringValue("ModifyHpcClusterAttributeResponse.RequestId"));
+		modifyHpcClusterAttributeResponse.setRequestId(_ctx.stringValue("ModifyHpcClusterAttributeResponse.RequestId"));
 	 
 	 	return modifyHpcClusterAttributeResponse;
 	}

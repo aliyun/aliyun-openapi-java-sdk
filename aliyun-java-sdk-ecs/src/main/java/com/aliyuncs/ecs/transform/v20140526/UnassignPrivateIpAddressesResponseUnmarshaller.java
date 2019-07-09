@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UnassignPrivateIpAddressesResponseUnmarshaller {
 
-	public static UnassignPrivateIpAddressesResponse unmarshall(UnassignPrivateIpAddressesResponse unassignPrivateIpAddressesResponse, UnmarshallerContext context) {
+	public static UnassignPrivateIpAddressesResponse unmarshall(UnassignPrivateIpAddressesResponse unassignPrivateIpAddressesResponse, UnmarshallerContext _ctx) {
 		
-		unassignPrivateIpAddressesResponse.setRequestId(context.stringValue("UnassignPrivateIpAddressesResponse.RequestId"));
+		unassignPrivateIpAddressesResponse.setRequestId(_ctx.stringValue("UnassignPrivateIpAddressesResponse.RequestId"));
 	 
 	 	return unassignPrivateIpAddressesResponse;
 	}

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceScreenshotResponseUnmarshaller {
 
-	public static GetInstanceScreenshotResponse unmarshall(GetInstanceScreenshotResponse getInstanceScreenshotResponse, UnmarshallerContext context) {
+	public static GetInstanceScreenshotResponse unmarshall(GetInstanceScreenshotResponse getInstanceScreenshotResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceScreenshotResponse.setRequestId(context.stringValue("GetInstanceScreenshotResponse.RequestId"));
-		getInstanceScreenshotResponse.setInstanceId(context.stringValue("GetInstanceScreenshotResponse.InstanceId"));
-		getInstanceScreenshotResponse.setScreenshot(context.stringValue("GetInstanceScreenshotResponse.Screenshot"));
+		getInstanceScreenshotResponse.setRequestId(_ctx.stringValue("GetInstanceScreenshotResponse.RequestId"));
+		getInstanceScreenshotResponse.setInstanceId(_ctx.stringValue("GetInstanceScreenshotResponse.InstanceId"));
+		getInstanceScreenshotResponse.setScreenshot(_ctx.stringValue("GetInstanceScreenshotResponse.Screenshot"));
 	 
 	 	return getInstanceScreenshotResponse;
 	}

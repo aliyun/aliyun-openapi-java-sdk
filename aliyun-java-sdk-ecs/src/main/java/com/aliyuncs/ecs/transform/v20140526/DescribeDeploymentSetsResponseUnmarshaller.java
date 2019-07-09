@@ -24,30 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDeploymentSetsResponseUnmarshaller {
 
-	public static DescribeDeploymentSetsResponse unmarshall(DescribeDeploymentSetsResponse describeDeploymentSetsResponse, UnmarshallerContext context) {
+	public static DescribeDeploymentSetsResponse unmarshall(DescribeDeploymentSetsResponse describeDeploymentSetsResponse, UnmarshallerContext _ctx) {
 		
-		describeDeploymentSetsResponse.setRequestId(context.stringValue("DescribeDeploymentSetsResponse.RequestId"));
-		describeDeploymentSetsResponse.setRegionId(context.stringValue("DescribeDeploymentSetsResponse.RegionId"));
-		describeDeploymentSetsResponse.setTotalCount(context.integerValue("DescribeDeploymentSetsResponse.TotalCount"));
-		describeDeploymentSetsResponse.setPageNumber(context.integerValue("DescribeDeploymentSetsResponse.PageNumber"));
-		describeDeploymentSetsResponse.setPageSize(context.integerValue("DescribeDeploymentSetsResponse.PageSize"));
+		describeDeploymentSetsResponse.setRequestId(_ctx.stringValue("DescribeDeploymentSetsResponse.RequestId"));
+		describeDeploymentSetsResponse.setRegionId(_ctx.stringValue("DescribeDeploymentSetsResponse.RegionId"));
+		describeDeploymentSetsResponse.setTotalCount(_ctx.integerValue("DescribeDeploymentSetsResponse.TotalCount"));
+		describeDeploymentSetsResponse.setPageNumber(_ctx.integerValue("DescribeDeploymentSetsResponse.PageNumber"));
+		describeDeploymentSetsResponse.setPageSize(_ctx.integerValue("DescribeDeploymentSetsResponse.PageSize"));
 
 		List<DeploymentSet> deploymentSets = new ArrayList<DeploymentSet>();
-		for (int i = 0; i < context.lengthValue("DescribeDeploymentSetsResponse.DeploymentSets.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDeploymentSetsResponse.DeploymentSets.Length"); i++) {
 			DeploymentSet deploymentSet = new DeploymentSet();
-			deploymentSet.setDeploymentSetId(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetId"));
-			deploymentSet.setDeploymentSetDescription(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetDescription"));
-			deploymentSet.setDeploymentSetName(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetName"));
-			deploymentSet.setStrategy(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Strategy"));
-			deploymentSet.setDeploymentStrategy(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentStrategy"));
-			deploymentSet.setDomain(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Domain"));
-			deploymentSet.setGranularity(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Granularity"));
-			deploymentSet.setInstanceAmount(context.integerValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceAmount"));
-			deploymentSet.setCreationTime(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].CreationTime"));
+			deploymentSet.setDeploymentSetId(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetId"));
+			deploymentSet.setDeploymentSetDescription(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetDescription"));
+			deploymentSet.setDeploymentSetName(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentSetName"));
+			deploymentSet.setStrategy(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Strategy"));
+			deploymentSet.setDeploymentStrategy(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].DeploymentStrategy"));
+			deploymentSet.setDomain(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Domain"));
+			deploymentSet.setGranularity(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].Granularity"));
+			deploymentSet.setInstanceAmount(_ctx.integerValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceAmount"));
+			deploymentSet.setCreationTime(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].CreationTime"));
 
 			List<String> instanceIds = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceIds.Length"); j++) {
-				instanceIds.add(context.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceIds["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceIds.Length"); j++) {
+				instanceIds.add(_ctx.stringValue("DescribeDeploymentSetsResponse.DeploymentSets["+ i +"].InstanceIds["+ j +"]"));
 			}
 			deploymentSet.setInstanceIds(instanceIds);
 

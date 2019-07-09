@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyLaunchTemplateDefaultVersionResponseUnmarshaller {
 
-	public static ModifyLaunchTemplateDefaultVersionResponse unmarshall(ModifyLaunchTemplateDefaultVersionResponse modifyLaunchTemplateDefaultVersionResponse, UnmarshallerContext context) {
+	public static ModifyLaunchTemplateDefaultVersionResponse unmarshall(ModifyLaunchTemplateDefaultVersionResponse modifyLaunchTemplateDefaultVersionResponse, UnmarshallerContext _ctx) {
 		
-		modifyLaunchTemplateDefaultVersionResponse.setRequestId(context.stringValue("ModifyLaunchTemplateDefaultVersionResponse.RequestId"));
+		modifyLaunchTemplateDefaultVersionResponse.setRequestId(_ctx.stringValue("ModifyLaunchTemplateDefaultVersionResponse.RequestId"));
 	 
 	 	return modifyLaunchTemplateDefaultVersionResponse;
 	}

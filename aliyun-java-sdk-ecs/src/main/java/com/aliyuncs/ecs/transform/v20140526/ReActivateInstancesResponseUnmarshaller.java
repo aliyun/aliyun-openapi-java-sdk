@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReActivateInstancesResponseUnmarshaller {
 
-	public static ReActivateInstancesResponse unmarshall(ReActivateInstancesResponse reActivateInstancesResponse, UnmarshallerContext context) {
+	public static ReActivateInstancesResponse unmarshall(ReActivateInstancesResponse reActivateInstancesResponse, UnmarshallerContext _ctx) {
 		
-		reActivateInstancesResponse.setRequestId(context.stringValue("ReActivateInstancesResponse.RequestId"));
+		reActivateInstancesResponse.setRequestId(_ctx.stringValue("ReActivateInstancesResponse.RequestId"));
 	 
 	 	return reActivateInstancesResponse;
 	}

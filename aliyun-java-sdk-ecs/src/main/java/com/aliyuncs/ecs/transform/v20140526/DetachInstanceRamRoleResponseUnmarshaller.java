@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetachInstanceRamRoleResponseUnmarshaller {
 
-	public static DetachInstanceRamRoleResponse unmarshall(DetachInstanceRamRoleResponse detachInstanceRamRoleResponse, UnmarshallerContext context) {
+	public static DetachInstanceRamRoleResponse unmarshall(DetachInstanceRamRoleResponse detachInstanceRamRoleResponse, UnmarshallerContext _ctx) {
 		
-		detachInstanceRamRoleResponse.setRequestId(context.stringValue("DetachInstanceRamRoleResponse.RequestId"));
-		detachInstanceRamRoleResponse.setTotalCount(context.integerValue("DetachInstanceRamRoleResponse.TotalCount"));
-		detachInstanceRamRoleResponse.setFailCount(context.integerValue("DetachInstanceRamRoleResponse.FailCount"));
-		detachInstanceRamRoleResponse.setRamRoleName(context.stringValue("DetachInstanceRamRoleResponse.RamRoleName"));
+		detachInstanceRamRoleResponse.setRequestId(_ctx.stringValue("DetachInstanceRamRoleResponse.RequestId"));
+		detachInstanceRamRoleResponse.setTotalCount(_ctx.integerValue("DetachInstanceRamRoleResponse.TotalCount"));
+		detachInstanceRamRoleResponse.setFailCount(_ctx.integerValue("DetachInstanceRamRoleResponse.FailCount"));
+		detachInstanceRamRoleResponse.setRamRoleName(_ctx.stringValue("DetachInstanceRamRoleResponse.RamRoleName"));
 
 		List<DetachInstanceRamRoleResult> detachInstanceRamRoleResults = new ArrayList<DetachInstanceRamRoleResult>();
-		for (int i = 0; i < context.lengthValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults.Length"); i++) {
 			DetachInstanceRamRoleResult detachInstanceRamRoleResult = new DetachInstanceRamRoleResult();
-			detachInstanceRamRoleResult.setInstanceId(context.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceId"));
-			detachInstanceRamRoleResult.setSuccess(context.booleanValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].Success"));
-			detachInstanceRamRoleResult.setCode(context.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].Code"));
-			detachInstanceRamRoleResult.setMessage(context.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].Message"));
+			detachInstanceRamRoleResult.setInstanceId(_ctx.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceId"));
+			detachInstanceRamRoleResult.setSuccess(_ctx.booleanValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].Success"));
+			detachInstanceRamRoleResult.setCode(_ctx.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].Code"));
+			detachInstanceRamRoleResult.setMessage(_ctx.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].Message"));
 
 			List<InstanceRamRoleSet> instanceRamRoleSets = new ArrayList<InstanceRamRoleSet>();
-			for (int j = 0; j < context.lengthValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets.Length"); j++) {
 				InstanceRamRoleSet instanceRamRoleSet = new InstanceRamRoleSet();
-				instanceRamRoleSet.setInstanceId(context.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets["+ j +"].InstanceId"));
-				instanceRamRoleSet.setRamRoleName(context.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets["+ j +"].RamRoleName"));
+				instanceRamRoleSet.setInstanceId(_ctx.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets["+ j +"].InstanceId"));
+				instanceRamRoleSet.setRamRoleName(_ctx.stringValue("DetachInstanceRamRoleResponse.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets["+ j +"].RamRoleName"));
 
 				instanceRamRoleSets.add(instanceRamRoleSet);
 			}

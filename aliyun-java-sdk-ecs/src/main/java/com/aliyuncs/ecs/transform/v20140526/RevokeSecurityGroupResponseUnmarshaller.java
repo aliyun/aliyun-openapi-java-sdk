@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RevokeSecurityGroupResponseUnmarshaller {
 
-	public static RevokeSecurityGroupResponse unmarshall(RevokeSecurityGroupResponse revokeSecurityGroupResponse, UnmarshallerContext context) {
+	public static RevokeSecurityGroupResponse unmarshall(RevokeSecurityGroupResponse revokeSecurityGroupResponse, UnmarshallerContext _ctx) {
 		
-		revokeSecurityGroupResponse.setRequestId(context.stringValue("RevokeSecurityGroupResponse.RequestId"));
+		revokeSecurityGroupResponse.setRequestId(_ctx.stringValue("RevokeSecurityGroupResponse.RequestId"));
 	 
 	 	return revokeSecurityGroupResponse;
 	}

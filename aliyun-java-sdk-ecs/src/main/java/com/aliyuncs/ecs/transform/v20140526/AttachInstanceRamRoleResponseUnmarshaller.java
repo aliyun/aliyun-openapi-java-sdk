@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AttachInstanceRamRoleResponseUnmarshaller {
 
-	public static AttachInstanceRamRoleResponse unmarshall(AttachInstanceRamRoleResponse attachInstanceRamRoleResponse, UnmarshallerContext context) {
+	public static AttachInstanceRamRoleResponse unmarshall(AttachInstanceRamRoleResponse attachInstanceRamRoleResponse, UnmarshallerContext _ctx) {
 		
-		attachInstanceRamRoleResponse.setRequestId(context.stringValue("AttachInstanceRamRoleResponse.RequestId"));
-		attachInstanceRamRoleResponse.setTotalCount(context.integerValue("AttachInstanceRamRoleResponse.TotalCount"));
-		attachInstanceRamRoleResponse.setFailCount(context.integerValue("AttachInstanceRamRoleResponse.FailCount"));
-		attachInstanceRamRoleResponse.setRamRoleName(context.stringValue("AttachInstanceRamRoleResponse.RamRoleName"));
+		attachInstanceRamRoleResponse.setRequestId(_ctx.stringValue("AttachInstanceRamRoleResponse.RequestId"));
+		attachInstanceRamRoleResponse.setTotalCount(_ctx.integerValue("AttachInstanceRamRoleResponse.TotalCount"));
+		attachInstanceRamRoleResponse.setFailCount(_ctx.integerValue("AttachInstanceRamRoleResponse.FailCount"));
+		attachInstanceRamRoleResponse.setRamRoleName(_ctx.stringValue("AttachInstanceRamRoleResponse.RamRoleName"));
 
 		List<AttachInstanceRamRoleResult> attachInstanceRamRoleResults = new ArrayList<AttachInstanceRamRoleResult>();
-		for (int i = 0; i < context.lengthValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults.Length"); i++) {
 			AttachInstanceRamRoleResult attachInstanceRamRoleResult = new AttachInstanceRamRoleResult();
-			attachInstanceRamRoleResult.setInstanceId(context.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].InstanceId"));
-			attachInstanceRamRoleResult.setSuccess(context.booleanValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Success"));
-			attachInstanceRamRoleResult.setCode(context.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Code"));
-			attachInstanceRamRoleResult.setMessage(context.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Message"));
+			attachInstanceRamRoleResult.setInstanceId(_ctx.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].InstanceId"));
+			attachInstanceRamRoleResult.setSuccess(_ctx.booleanValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Success"));
+			attachInstanceRamRoleResult.setCode(_ctx.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Code"));
+			attachInstanceRamRoleResult.setMessage(_ctx.stringValue("AttachInstanceRamRoleResponse.AttachInstanceRamRoleResults["+ i +"].Message"));
 
 			attachInstanceRamRoleResults.add(attachInstanceRamRoleResult);
 		}

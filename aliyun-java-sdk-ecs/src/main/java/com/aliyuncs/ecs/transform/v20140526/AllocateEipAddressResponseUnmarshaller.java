@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AllocateEipAddressResponseUnmarshaller {
 
-	public static AllocateEipAddressResponse unmarshall(AllocateEipAddressResponse allocateEipAddressResponse, UnmarshallerContext context) {
+	public static AllocateEipAddressResponse unmarshall(AllocateEipAddressResponse allocateEipAddressResponse, UnmarshallerContext _ctx) {
 		
-		allocateEipAddressResponse.setRequestId(context.stringValue("AllocateEipAddressResponse.RequestId"));
-		allocateEipAddressResponse.setAllocationId(context.stringValue("AllocateEipAddressResponse.AllocationId"));
-		allocateEipAddressResponse.setEipAddress(context.stringValue("AllocateEipAddressResponse.EipAddress"));
+		allocateEipAddressResponse.setRequestId(_ctx.stringValue("AllocateEipAddressResponse.RequestId"));
+		allocateEipAddressResponse.setAllocationId(_ctx.stringValue("AllocateEipAddressResponse.AllocationId"));
+		allocateEipAddressResponse.setEipAddress(_ctx.stringValue("AllocateEipAddressResponse.EipAddress"));
 	 
 	 	return allocateEipAddressResponse;
 	}

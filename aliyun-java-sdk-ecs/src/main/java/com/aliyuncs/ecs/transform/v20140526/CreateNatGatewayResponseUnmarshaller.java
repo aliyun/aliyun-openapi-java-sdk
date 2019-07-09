@@ -23,20 +23,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateNatGatewayResponseUnmarshaller {
 
-	public static CreateNatGatewayResponse unmarshall(CreateNatGatewayResponse createNatGatewayResponse, UnmarshallerContext context) {
+	public static CreateNatGatewayResponse unmarshall(CreateNatGatewayResponse createNatGatewayResponse, UnmarshallerContext _ctx) {
 		
-		createNatGatewayResponse.setRequestId(context.stringValue("CreateNatGatewayResponse.RequestId"));
-		createNatGatewayResponse.setNatGatewayId(context.stringValue("CreateNatGatewayResponse.NatGatewayId"));
+		createNatGatewayResponse.setRequestId(_ctx.stringValue("CreateNatGatewayResponse.RequestId"));
+		createNatGatewayResponse.setNatGatewayId(_ctx.stringValue("CreateNatGatewayResponse.NatGatewayId"));
 
 		List<String> forwardTableIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateNatGatewayResponse.ForwardTableIds.Length"); i++) {
-			forwardTableIds.add(context.stringValue("CreateNatGatewayResponse.ForwardTableIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateNatGatewayResponse.ForwardTableIds.Length"); i++) {
+			forwardTableIds.add(_ctx.stringValue("CreateNatGatewayResponse.ForwardTableIds["+ i +"]"));
 		}
 		createNatGatewayResponse.setForwardTableIds(forwardTableIds);
 
 		List<String> bandwidthPackageIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateNatGatewayResponse.BandwidthPackageIds.Length"); i++) {
-			bandwidthPackageIds.add(context.stringValue("CreateNatGatewayResponse.BandwidthPackageIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateNatGatewayResponse.BandwidthPackageIds.Length"); i++) {
+			bandwidthPackageIds.add(_ctx.stringValue("CreateNatGatewayResponse.BandwidthPackageIds["+ i +"]"));
 		}
 		createNatGatewayResponse.setBandwidthPackageIds(bandwidthPackageIds);
 	 

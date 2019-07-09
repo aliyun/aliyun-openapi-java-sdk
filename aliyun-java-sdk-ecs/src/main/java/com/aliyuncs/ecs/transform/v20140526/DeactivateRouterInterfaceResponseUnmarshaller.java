@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeactivateRouterInterfaceResponseUnmarshaller {
 
-	public static DeactivateRouterInterfaceResponse unmarshall(DeactivateRouterInterfaceResponse deactivateRouterInterfaceResponse, UnmarshallerContext context) {
+	public static DeactivateRouterInterfaceResponse unmarshall(DeactivateRouterInterfaceResponse deactivateRouterInterfaceResponse, UnmarshallerContext _ctx) {
 		
-		deactivateRouterInterfaceResponse.setRequestId(context.stringValue("DeactivateRouterInterfaceResponse.RequestId"));
+		deactivateRouterInterfaceResponse.setRequestId(_ctx.stringValue("DeactivateRouterInterfaceResponse.RequestId"));
 	 
 	 	return deactivateRouterInterfaceResponse;
 	}

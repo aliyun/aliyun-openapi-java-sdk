@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ExportSnapshotResponseUnmarshaller {
 
-	public static ExportSnapshotResponse unmarshall(ExportSnapshotResponse exportSnapshotResponse, UnmarshallerContext context) {
+	public static ExportSnapshotResponse unmarshall(ExportSnapshotResponse exportSnapshotResponse, UnmarshallerContext _ctx) {
 		
-		exportSnapshotResponse.setRequestId(context.stringValue("ExportSnapshotResponse.RequestId"));
-		exportSnapshotResponse.setTaskId(context.stringValue("ExportSnapshotResponse.TaskId"));
+		exportSnapshotResponse.setRequestId(_ctx.stringValue("ExportSnapshotResponse.RequestId"));
+		exportSnapshotResponse.setTaskId(_ctx.stringValue("ExportSnapshotResponse.TaskId"));
 	 
 	 	return exportSnapshotResponse;
 	}

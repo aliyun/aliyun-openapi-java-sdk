@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AcceptInquiredSystemEventResponseUnmarshaller {
 
-	public static AcceptInquiredSystemEventResponse unmarshall(AcceptInquiredSystemEventResponse acceptInquiredSystemEventResponse, UnmarshallerContext context) {
+	public static AcceptInquiredSystemEventResponse unmarshall(AcceptInquiredSystemEventResponse acceptInquiredSystemEventResponse, UnmarshallerContext _ctx) {
 		
-		acceptInquiredSystemEventResponse.setRequestId(context.stringValue("AcceptInquiredSystemEventResponse.RequestId"));
+		acceptInquiredSystemEventResponse.setRequestId(_ctx.stringValue("AcceptInquiredSystemEventResponse.RequestId"));
 	 
 	 	return acceptInquiredSystemEventResponse;
 	}

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateKeyPairResponseUnmarshaller {
 
-	public static CreateKeyPairResponse unmarshall(CreateKeyPairResponse createKeyPairResponse, UnmarshallerContext context) {
+	public static CreateKeyPairResponse unmarshall(CreateKeyPairResponse createKeyPairResponse, UnmarshallerContext _ctx) {
 		
-		createKeyPairResponse.setRequestId(context.stringValue("CreateKeyPairResponse.RequestId"));
-		createKeyPairResponse.setKeyPairId(context.stringValue("CreateKeyPairResponse.KeyPairId"));
-		createKeyPairResponse.setKeyPairName(context.stringValue("CreateKeyPairResponse.KeyPairName"));
-		createKeyPairResponse.setKeyPairFingerPrint(context.stringValue("CreateKeyPairResponse.KeyPairFingerPrint"));
-		createKeyPairResponse.setPrivateKeyBody(context.stringValue("CreateKeyPairResponse.PrivateKeyBody"));
+		createKeyPairResponse.setRequestId(_ctx.stringValue("CreateKeyPairResponse.RequestId"));
+		createKeyPairResponse.setKeyPairId(_ctx.stringValue("CreateKeyPairResponse.KeyPairId"));
+		createKeyPairResponse.setKeyPairName(_ctx.stringValue("CreateKeyPairResponse.KeyPairName"));
+		createKeyPairResponse.setKeyPairFingerPrint(_ctx.stringValue("CreateKeyPairResponse.KeyPairFingerPrint"));
+		createKeyPairResponse.setPrivateKeyBody(_ctx.stringValue("CreateKeyPairResponse.PrivateKeyBody"));
 	 
 	 	return createKeyPairResponse;
 	}

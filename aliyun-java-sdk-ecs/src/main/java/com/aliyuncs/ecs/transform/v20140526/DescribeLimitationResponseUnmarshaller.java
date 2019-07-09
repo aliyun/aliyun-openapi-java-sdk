@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLimitationResponseUnmarshaller {
 
-	public static DescribeLimitationResponse unmarshall(DescribeLimitationResponse describeLimitationResponse, UnmarshallerContext context) {
+	public static DescribeLimitationResponse unmarshall(DescribeLimitationResponse describeLimitationResponse, UnmarshallerContext _ctx) {
 		
-		describeLimitationResponse.setRequestId(context.stringValue("DescribeLimitationResponse.RequestId"));
-		describeLimitationResponse.setLimitation(context.stringValue("DescribeLimitationResponse.Limitation"));
-		describeLimitationResponse.setValue(context.stringValue("DescribeLimitationResponse.Value"));
+		describeLimitationResponse.setRequestId(_ctx.stringValue("DescribeLimitationResponse.RequestId"));
+		describeLimitationResponse.setLimitation(_ctx.stringValue("DescribeLimitationResponse.Limitation"));
+		describeLimitationResponse.setValue(_ctx.stringValue("DescribeLimitationResponse.Value"));
 	 
 	 	return describeLimitationResponse;
 	}

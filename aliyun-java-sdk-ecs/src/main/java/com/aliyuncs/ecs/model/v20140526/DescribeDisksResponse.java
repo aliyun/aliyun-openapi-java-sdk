@@ -131,6 +131,10 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private Boolean encrypted;
 
+		private String storageSetId;
+
+		private Integer storageSetPartitionNumber;
+
 		private Integer mountInstanceNum;
 
 		private Integer iOPS;
@@ -381,6 +385,22 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setEncrypted(Boolean encrypted) {
 			this.encrypted = encrypted;
+		}
+
+		public String getStorageSetId() {
+			return this.storageSetId;
+		}
+
+		public void setStorageSetId(String storageSetId) {
+			this.storageSetId = storageSetId;
+		}
+
+		public Integer getStorageSetPartitionNumber() {
+			return this.storageSetPartitionNumber;
+		}
+
+		public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
+			this.storageSetPartitionNumber = storageSetPartitionNumber;
 		}
 
 		public Integer getMountInstanceNum() {

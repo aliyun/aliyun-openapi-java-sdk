@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RecoverVirtualBorderRouterResponseUnmarshaller {
 
-	public static RecoverVirtualBorderRouterResponse unmarshall(RecoverVirtualBorderRouterResponse recoverVirtualBorderRouterResponse, UnmarshallerContext context) {
+	public static RecoverVirtualBorderRouterResponse unmarshall(RecoverVirtualBorderRouterResponse recoverVirtualBorderRouterResponse, UnmarshallerContext _ctx) {
 		
-		recoverVirtualBorderRouterResponse.setRequestId(context.stringValue("RecoverVirtualBorderRouterResponse.RequestId"));
+		recoverVirtualBorderRouterResponse.setRequestId(_ctx.stringValue("RecoverVirtualBorderRouterResponse.RequestId"));
 	 
 	 	return recoverVirtualBorderRouterResponse;
 	}

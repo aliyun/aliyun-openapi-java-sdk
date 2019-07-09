@@ -25,33 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTaskAttributeResponseUnmarshaller {
 
-	public static DescribeTaskAttributeResponse unmarshall(DescribeTaskAttributeResponse describeTaskAttributeResponse, UnmarshallerContext context) {
+	public static DescribeTaskAttributeResponse unmarshall(DescribeTaskAttributeResponse describeTaskAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeTaskAttributeResponse.setRequestId(context.stringValue("DescribeTaskAttributeResponse.RequestId"));
-		describeTaskAttributeResponse.setTaskId(context.stringValue("DescribeTaskAttributeResponse.TaskId"));
-		describeTaskAttributeResponse.setRegionId(context.stringValue("DescribeTaskAttributeResponse.RegionId"));
-		describeTaskAttributeResponse.setTaskAction(context.stringValue("DescribeTaskAttributeResponse.TaskAction"));
-		describeTaskAttributeResponse.setTaskStatus(context.stringValue("DescribeTaskAttributeResponse.TaskStatus"));
-		describeTaskAttributeResponse.setTaskProcess(context.stringValue("DescribeTaskAttributeResponse.TaskProcess"));
-		describeTaskAttributeResponse.setSupportCancel(context.stringValue("DescribeTaskAttributeResponse.SupportCancel"));
-		describeTaskAttributeResponse.setTotalCount(context.integerValue("DescribeTaskAttributeResponse.TotalCount"));
-		describeTaskAttributeResponse.setSuccessCount(context.integerValue("DescribeTaskAttributeResponse.SuccessCount"));
-		describeTaskAttributeResponse.setFailedCount(context.integerValue("DescribeTaskAttributeResponse.FailedCount"));
-		describeTaskAttributeResponse.setCreationTime(context.stringValue("DescribeTaskAttributeResponse.CreationTime"));
-		describeTaskAttributeResponse.setFinishedTime(context.stringValue("DescribeTaskAttributeResponse.FinishedTime"));
+		describeTaskAttributeResponse.setRequestId(_ctx.stringValue("DescribeTaskAttributeResponse.RequestId"));
+		describeTaskAttributeResponse.setTaskId(_ctx.stringValue("DescribeTaskAttributeResponse.TaskId"));
+		describeTaskAttributeResponse.setRegionId(_ctx.stringValue("DescribeTaskAttributeResponse.RegionId"));
+		describeTaskAttributeResponse.setTaskAction(_ctx.stringValue("DescribeTaskAttributeResponse.TaskAction"));
+		describeTaskAttributeResponse.setTaskStatus(_ctx.stringValue("DescribeTaskAttributeResponse.TaskStatus"));
+		describeTaskAttributeResponse.setTaskProcess(_ctx.stringValue("DescribeTaskAttributeResponse.TaskProcess"));
+		describeTaskAttributeResponse.setSupportCancel(_ctx.stringValue("DescribeTaskAttributeResponse.SupportCancel"));
+		describeTaskAttributeResponse.setTotalCount(_ctx.integerValue("DescribeTaskAttributeResponse.TotalCount"));
+		describeTaskAttributeResponse.setSuccessCount(_ctx.integerValue("DescribeTaskAttributeResponse.SuccessCount"));
+		describeTaskAttributeResponse.setFailedCount(_ctx.integerValue("DescribeTaskAttributeResponse.FailedCount"));
+		describeTaskAttributeResponse.setCreationTime(_ctx.stringValue("DescribeTaskAttributeResponse.CreationTime"));
+		describeTaskAttributeResponse.setFinishedTime(_ctx.stringValue("DescribeTaskAttributeResponse.FinishedTime"));
 
 		List<OperationProgress> operationProgressSet = new ArrayList<OperationProgress>();
-		for (int i = 0; i < context.lengthValue("DescribeTaskAttributeResponse.OperationProgressSet.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTaskAttributeResponse.OperationProgressSet.Length"); i++) {
 			OperationProgress operationProgress = new OperationProgress();
-			operationProgress.setOperationStatus(context.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].OperationStatus"));
-			operationProgress.setErrorCode(context.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].ErrorCode"));
-			operationProgress.setErrorMsg(context.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].ErrorMsg"));
+			operationProgress.setOperationStatus(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].OperationStatus"));
+			operationProgress.setErrorCode(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].ErrorCode"));
+			operationProgress.setErrorMsg(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].ErrorMsg"));
 
 			List<RelatedItem> relatedItemSet = new ArrayList<RelatedItem>();
-			for (int j = 0; j < context.lengthValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet.Length"); j++) {
 				RelatedItem relatedItem = new RelatedItem();
-				relatedItem.setName(context.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Name"));
-				relatedItem.setValue(context.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Value"));
+				relatedItem.setName(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Name"));
+				relatedItem.setValue(_ctx.stringValue("DescribeTaskAttributeResponse.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Value"));
 
 				relatedItemSet.add(relatedItem);
 			}

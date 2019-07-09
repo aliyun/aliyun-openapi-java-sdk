@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ImportImageResponseUnmarshaller {
 
-	public static ImportImageResponse unmarshall(ImportImageResponse importImageResponse, UnmarshallerContext context) {
+	public static ImportImageResponse unmarshall(ImportImageResponse importImageResponse, UnmarshallerContext _ctx) {
 		
-		importImageResponse.setRequestId(context.stringValue("ImportImageResponse.RequestId"));
-		importImageResponse.setTaskId(context.stringValue("ImportImageResponse.TaskId"));
-		importImageResponse.setRegionId(context.stringValue("ImportImageResponse.RegionId"));
-		importImageResponse.setImageId(context.stringValue("ImportImageResponse.ImageId"));
+		importImageResponse.setRequestId(_ctx.stringValue("ImportImageResponse.RequestId"));
+		importImageResponse.setTaskId(_ctx.stringValue("ImportImageResponse.TaskId"));
+		importImageResponse.setRegionId(_ctx.stringValue("ImportImageResponse.RegionId"));
+		importImageResponse.setImageId(_ctx.stringValue("ImportImageResponse.ImageId"));
 	 
 	 	return importImageResponse;
 	}

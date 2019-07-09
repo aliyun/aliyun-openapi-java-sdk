@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySecurityGroupPolicyResponseUnmarshaller {
 
-	public static ModifySecurityGroupPolicyResponse unmarshall(ModifySecurityGroupPolicyResponse modifySecurityGroupPolicyResponse, UnmarshallerContext context) {
+	public static ModifySecurityGroupPolicyResponse unmarshall(ModifySecurityGroupPolicyResponse modifySecurityGroupPolicyResponse, UnmarshallerContext _ctx) {
 		
-		modifySecurityGroupPolicyResponse.setRequestId(context.stringValue("ModifySecurityGroupPolicyResponse.RequestId"));
+		modifySecurityGroupPolicyResponse.setRequestId(_ctx.stringValue("ModifySecurityGroupPolicyResponse.RequestId"));
 	 
 	 	return modifySecurityGroupPolicyResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDedicatedHostAttributeResponseUnmarshaller {
 
-	public static ModifyDedicatedHostAttributeResponse unmarshall(ModifyDedicatedHostAttributeResponse modifyDedicatedHostAttributeResponse, UnmarshallerContext context) {
+	public static ModifyDedicatedHostAttributeResponse unmarshall(ModifyDedicatedHostAttributeResponse modifyDedicatedHostAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyDedicatedHostAttributeResponse.setRequestId(context.stringValue("ModifyDedicatedHostAttributeResponse.RequestId"));
+		modifyDedicatedHostAttributeResponse.setRequestId(_ctx.stringValue("ModifyDedicatedHostAttributeResponse.RequestId"));
 	 
 	 	return modifyDedicatedHostAttributeResponse;
 	}

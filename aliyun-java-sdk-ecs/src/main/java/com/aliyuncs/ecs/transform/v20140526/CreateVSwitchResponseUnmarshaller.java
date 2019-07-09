@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateVSwitchResponseUnmarshaller {
 
-	public static CreateVSwitchResponse unmarshall(CreateVSwitchResponse createVSwitchResponse, UnmarshallerContext context) {
+	public static CreateVSwitchResponse unmarshall(CreateVSwitchResponse createVSwitchResponse, UnmarshallerContext _ctx) {
 		
-		createVSwitchResponse.setRequestId(context.stringValue("CreateVSwitchResponse.RequestId"));
-		createVSwitchResponse.setVSwitchId(context.stringValue("CreateVSwitchResponse.VSwitchId"));
+		createVSwitchResponse.setRequestId(_ctx.stringValue("CreateVSwitchResponse.RequestId"));
+		createVSwitchResponse.setVSwitchId(_ctx.stringValue("CreateVSwitchResponse.VSwitchId"));
 	 
 	 	return createVSwitchResponse;
 	}

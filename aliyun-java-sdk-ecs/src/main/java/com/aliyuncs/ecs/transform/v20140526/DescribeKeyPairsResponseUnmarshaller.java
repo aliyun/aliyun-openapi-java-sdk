@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeKeyPairsResponseUnmarshaller {
 
-	public static DescribeKeyPairsResponse unmarshall(DescribeKeyPairsResponse describeKeyPairsResponse, UnmarshallerContext context) {
+	public static DescribeKeyPairsResponse unmarshall(DescribeKeyPairsResponse describeKeyPairsResponse, UnmarshallerContext _ctx) {
 		
-		describeKeyPairsResponse.setRequestId(context.stringValue("DescribeKeyPairsResponse.RequestId"));
-		describeKeyPairsResponse.setTotalCount(context.integerValue("DescribeKeyPairsResponse.TotalCount"));
-		describeKeyPairsResponse.setPageNumber(context.integerValue("DescribeKeyPairsResponse.PageNumber"));
-		describeKeyPairsResponse.setPageSize(context.integerValue("DescribeKeyPairsResponse.PageSize"));
+		describeKeyPairsResponse.setRequestId(_ctx.stringValue("DescribeKeyPairsResponse.RequestId"));
+		describeKeyPairsResponse.setTotalCount(_ctx.integerValue("DescribeKeyPairsResponse.TotalCount"));
+		describeKeyPairsResponse.setPageNumber(_ctx.integerValue("DescribeKeyPairsResponse.PageNumber"));
+		describeKeyPairsResponse.setPageSize(_ctx.integerValue("DescribeKeyPairsResponse.PageSize"));
 
 		List<KeyPair> keyPairs = new ArrayList<KeyPair>();
-		for (int i = 0; i < context.lengthValue("DescribeKeyPairsResponse.KeyPairs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeKeyPairsResponse.KeyPairs.Length"); i++) {
 			KeyPair keyPair = new KeyPair();
-			keyPair.setKeyPairName(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairName"));
-			keyPair.setKeyPairFingerPrint(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairFingerPrint"));
-			keyPair.setResourceGroupId(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].ResourceGroupId"));
+			keyPair.setKeyPairName(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairName"));
+			keyPair.setKeyPairFingerPrint(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairFingerPrint"));
+			keyPair.setResourceGroupId(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < context.lengthValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags["+ j +"].TagKey"));
-				tag.setTagValue(context.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}

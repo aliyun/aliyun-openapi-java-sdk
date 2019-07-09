@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceTypeFamiliesResponseUnmarshaller {
 
-	public static DescribeInstanceTypeFamiliesResponse unmarshall(DescribeInstanceTypeFamiliesResponse describeInstanceTypeFamiliesResponse, UnmarshallerContext context) {
+	public static DescribeInstanceTypeFamiliesResponse unmarshall(DescribeInstanceTypeFamiliesResponse describeInstanceTypeFamiliesResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceTypeFamiliesResponse.setRequestId(context.stringValue("DescribeInstanceTypeFamiliesResponse.RequestId"));
+		describeInstanceTypeFamiliesResponse.setRequestId(_ctx.stringValue("DescribeInstanceTypeFamiliesResponse.RequestId"));
 
 		List<InstanceTypeFamily> instanceTypeFamilies = new ArrayList<InstanceTypeFamily>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies.Length"); i++) {
 			InstanceTypeFamily instanceTypeFamily = new InstanceTypeFamily();
-			instanceTypeFamily.setInstanceTypeFamilyId(context.stringValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId"));
-			instanceTypeFamily.setGeneration(context.stringValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies["+ i +"].Generation"));
+			instanceTypeFamily.setInstanceTypeFamilyId(_ctx.stringValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId"));
+			instanceTypeFamily.setGeneration(_ctx.stringValue("DescribeInstanceTypeFamiliesResponse.InstanceTypeFamilies["+ i +"].Generation"));
 
 			instanceTypeFamilies.add(instanceTypeFamily);
 		}

@@ -49,6 +49,8 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private String instanceId;
 
+	private String storageSetId;
+
 	private Integer size;
 
 	private Boolean encrypted;
@@ -56,6 +58,8 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 	private String diskCategory;
 
 	private String zoneId;
+
+	private Integer storageSetPartitionNumber;
 
 	private List<Tag> tags;
 
@@ -186,6 +190,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
+	public String getStorageSetId() {
+		return this.storageSetId;
+	}
+
+	public void setStorageSetId(String storageSetId) {
+		this.storageSetId = storageSetId;
+		if(storageSetId != null){
+			putQueryParameter("StorageSetId", storageSetId);
+		}
+	}
+
 	public Integer getSize() {
 		return this.size;
 	}
@@ -227,6 +242,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Integer getStorageSetPartitionNumber() {
+		return this.storageSetPartitionNumber;
+	}
+
+	public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
+		this.storageSetPartitionNumber = storageSetPartitionNumber;
+		if(storageSetPartitionNumber != null){
+			putQueryParameter("StorageSetPartitionNumber", storageSetPartitionNumber.toString());
 		}
 	}
 

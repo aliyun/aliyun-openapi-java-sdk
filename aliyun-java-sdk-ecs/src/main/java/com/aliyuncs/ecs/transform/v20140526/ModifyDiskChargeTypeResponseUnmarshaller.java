@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDiskChargeTypeResponseUnmarshaller {
 
-	public static ModifyDiskChargeTypeResponse unmarshall(ModifyDiskChargeTypeResponse modifyDiskChargeTypeResponse, UnmarshallerContext context) {
+	public static ModifyDiskChargeTypeResponse unmarshall(ModifyDiskChargeTypeResponse modifyDiskChargeTypeResponse, UnmarshallerContext _ctx) {
 		
-		modifyDiskChargeTypeResponse.setRequestId(context.stringValue("ModifyDiskChargeTypeResponse.RequestId"));
-		modifyDiskChargeTypeResponse.setOrderId(context.stringValue("ModifyDiskChargeTypeResponse.OrderId"));
+		modifyDiskChargeTypeResponse.setRequestId(_ctx.stringValue("ModifyDiskChargeTypeResponse.RequestId"));
+		modifyDiskChargeTypeResponse.setOrderId(_ctx.stringValue("ModifyDiskChargeTypeResponse.OrderId"));
 	 
 	 	return modifyDiskChargeTypeResponse;
 	}

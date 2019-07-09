@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserDataResponseUnmarshaller {
 
-	public static DescribeUserDataResponse unmarshall(DescribeUserDataResponse describeUserDataResponse, UnmarshallerContext context) {
+	public static DescribeUserDataResponse unmarshall(DescribeUserDataResponse describeUserDataResponse, UnmarshallerContext _ctx) {
 		
-		describeUserDataResponse.setRequestId(context.stringValue("DescribeUserDataResponse.RequestId"));
-		describeUserDataResponse.setRegionId(context.stringValue("DescribeUserDataResponse.RegionId"));
-		describeUserDataResponse.setInstanceId(context.stringValue("DescribeUserDataResponse.InstanceId"));
-		describeUserDataResponse.setUserData(context.stringValue("DescribeUserDataResponse.UserData"));
+		describeUserDataResponse.setRequestId(_ctx.stringValue("DescribeUserDataResponse.RequestId"));
+		describeUserDataResponse.setRegionId(_ctx.stringValue("DescribeUserDataResponse.RegionId"));
+		describeUserDataResponse.setInstanceId(_ctx.stringValue("DescribeUserDataResponse.InstanceId"));
+		describeUserDataResponse.setUserData(_ctx.stringValue("DescribeUserDataResponse.UserData"));
 	 
 	 	return describeUserDataResponse;
 	}

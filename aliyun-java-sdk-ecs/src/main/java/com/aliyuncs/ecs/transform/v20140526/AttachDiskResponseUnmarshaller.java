@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AttachDiskResponseUnmarshaller {
 
-	public static AttachDiskResponse unmarshall(AttachDiskResponse attachDiskResponse, UnmarshallerContext context) {
+	public static AttachDiskResponse unmarshall(AttachDiskResponse attachDiskResponse, UnmarshallerContext _ctx) {
 		
-		attachDiskResponse.setRequestId(context.stringValue("AttachDiskResponse.RequestId"));
+		attachDiskResponse.setRequestId(_ctx.stringValue("AttachDiskResponse.RequestId"));
 	 
 	 	return attachDiskResponse;
 	}

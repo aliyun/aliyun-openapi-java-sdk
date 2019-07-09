@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyImageAttributeResponseUnmarshaller {
 
-	public static ModifyImageAttributeResponse unmarshall(ModifyImageAttributeResponse modifyImageAttributeResponse, UnmarshallerContext context) {
+	public static ModifyImageAttributeResponse unmarshall(ModifyImageAttributeResponse modifyImageAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyImageAttributeResponse.setRequestId(context.stringValue("ModifyImageAttributeResponse.RequestId"));
+		modifyImageAttributeResponse.setRequestId(_ctx.stringValue("ModifyImageAttributeResponse.RequestId"));
 	 
 	 	return modifyImageAttributeResponse;
 	}

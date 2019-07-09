@@ -24,14 +24,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeClustersResponseUnmarshaller {
 
-	public static DescribeClustersResponse unmarshall(DescribeClustersResponse describeClustersResponse, UnmarshallerContext context) {
+	public static DescribeClustersResponse unmarshall(DescribeClustersResponse describeClustersResponse, UnmarshallerContext _ctx) {
 		
-		describeClustersResponse.setRequestId(context.stringValue("DescribeClustersResponse.RequestId"));
+		describeClustersResponse.setRequestId(_ctx.stringValue("DescribeClustersResponse.RequestId"));
 
 		List<Cluster> clusters = new ArrayList<Cluster>();
-		for (int i = 0; i < context.lengthValue("DescribeClustersResponse.Clusters.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeClustersResponse.Clusters.Length"); i++) {
 			Cluster cluster = new Cluster();
-			cluster.setClusterId(context.stringValue("DescribeClustersResponse.Clusters["+ i +"].ClusterId"));
+			cluster.setClusterId(_ctx.stringValue("DescribeClustersResponse.Clusters["+ i +"].ClusterId"));
 
 			clusters.add(cluster);
 		}

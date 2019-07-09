@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateHpcClusterResponseUnmarshaller {
 
-	public static CreateHpcClusterResponse unmarshall(CreateHpcClusterResponse createHpcClusterResponse, UnmarshallerContext context) {
+	public static CreateHpcClusterResponse unmarshall(CreateHpcClusterResponse createHpcClusterResponse, UnmarshallerContext _ctx) {
 		
-		createHpcClusterResponse.setRequestId(context.stringValue("CreateHpcClusterResponse.RequestId"));
-		createHpcClusterResponse.setHpcClusterId(context.stringValue("CreateHpcClusterResponse.HpcClusterId"));
+		createHpcClusterResponse.setRequestId(_ctx.stringValue("CreateHpcClusterResponse.RequestId"));
+		createHpcClusterResponse.setHpcClusterId(_ctx.stringValue("CreateHpcClusterResponse.HpcClusterId"));
 	 
 	 	return createHpcClusterResponse;
 	}

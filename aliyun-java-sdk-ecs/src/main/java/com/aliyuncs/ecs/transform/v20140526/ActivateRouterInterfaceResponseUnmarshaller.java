@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ActivateRouterInterfaceResponseUnmarshaller {
 
-	public static ActivateRouterInterfaceResponse unmarshall(ActivateRouterInterfaceResponse activateRouterInterfaceResponse, UnmarshallerContext context) {
+	public static ActivateRouterInterfaceResponse unmarshall(ActivateRouterInterfaceResponse activateRouterInterfaceResponse, UnmarshallerContext _ctx) {
 		
-		activateRouterInterfaceResponse.setRequestId(context.stringValue("ActivateRouterInterfaceResponse.RequestId"));
+		activateRouterInterfaceResponse.setRequestId(_ctx.stringValue("ActivateRouterInterfaceResponse.RequestId"));
 	 
 	 	return activateRouterInterfaceResponse;
 	}

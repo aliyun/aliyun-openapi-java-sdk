@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceTopologyResponseUnmarshaller {
 
-	public static DescribeInstanceTopologyResponse unmarshall(DescribeInstanceTopologyResponse describeInstanceTopologyResponse, UnmarshallerContext context) {
+	public static DescribeInstanceTopologyResponse unmarshall(DescribeInstanceTopologyResponse describeInstanceTopologyResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceTopologyResponse.setRequestId(context.stringValue("DescribeInstanceTopologyResponse.RequestId"));
+		describeInstanceTopologyResponse.setRequestId(_ctx.stringValue("DescribeInstanceTopologyResponse.RequestId"));
 
 		List<Topology> topologys = new ArrayList<Topology>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceTopologyResponse.Topologys.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceTopologyResponse.Topologys.Length"); i++) {
 			Topology topology = new Topology();
-			topology.setInstanceId(context.stringValue("DescribeInstanceTopologyResponse.Topologys["+ i +"].InstanceId"));
-			topology.setHostId(context.stringValue("DescribeInstanceTopologyResponse.Topologys["+ i +"].HostId"));
+			topology.setInstanceId(_ctx.stringValue("DescribeInstanceTopologyResponse.Topologys["+ i +"].InstanceId"));
+			topology.setHostId(_ctx.stringValue("DescribeInstanceTopologyResponse.Topologys["+ i +"].HostId"));
 
 			topologys.add(topology);
 		}

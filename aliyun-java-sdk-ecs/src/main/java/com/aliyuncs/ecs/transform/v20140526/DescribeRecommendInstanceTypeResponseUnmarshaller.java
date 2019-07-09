@@ -26,34 +26,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRecommendInstanceTypeResponseUnmarshaller {
 
-	public static DescribeRecommendInstanceTypeResponse unmarshall(DescribeRecommendInstanceTypeResponse describeRecommendInstanceTypeResponse, UnmarshallerContext context) {
+	public static DescribeRecommendInstanceTypeResponse unmarshall(DescribeRecommendInstanceTypeResponse describeRecommendInstanceTypeResponse, UnmarshallerContext _ctx) {
 		
-		describeRecommendInstanceTypeResponse.setRequestId(context.stringValue("DescribeRecommendInstanceTypeResponse.RequestId"));
+		describeRecommendInstanceTypeResponse.setRequestId(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.RequestId"));
 
 		List<RecommendInstanceType> data = new ArrayList<RecommendInstanceType>();
-		for (int i = 0; i < context.lengthValue("DescribeRecommendInstanceTypeResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRecommendInstanceTypeResponse.Data.Length"); i++) {
 			RecommendInstanceType recommendInstanceType = new RecommendInstanceType();
-			recommendInstanceType.setRegionNo(context.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].RegionNo"));
-			recommendInstanceType.setCommodityCode(context.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].CommodityCode"));
-			recommendInstanceType.setScene(context.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Scene"));
+			recommendInstanceType.setRegionNo(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].RegionNo"));
+			recommendInstanceType.setCommodityCode(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].CommodityCode"));
+			recommendInstanceType.setScene(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Scene"));
 
 			InstanceType instanceType = new InstanceType();
-			instanceType.setGeneration(context.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Generation"));
-			instanceType.setInstanceTypeFamily(context.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.InstanceTypeFamily"));
-			instanceType.setInstanceType(context.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.InstanceType"));
-			instanceType.setSupportIoOptimized(context.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.SupportIoOptimized"));
-			instanceType.setCores(context.integerValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Cores"));
-			instanceType.setMemory(context.integerValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Memory"));
+			instanceType.setGeneration(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Generation"));
+			instanceType.setInstanceTypeFamily(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.InstanceTypeFamily"));
+			instanceType.setInstanceType(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.InstanceType"));
+			instanceType.setSupportIoOptimized(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.SupportIoOptimized"));
+			instanceType.setCores(_ctx.integerValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Cores"));
+			instanceType.setMemory(_ctx.integerValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Memory"));
 			recommendInstanceType.setInstanceType(instanceType);
 
 			List<Zone> zones = new ArrayList<Zone>();
-			for (int j = 0; j < context.lengthValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Zones.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Zones.Length"); j++) {
 				Zone zone = new Zone();
-				zone.setZoneNo(context.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Zones["+ j +"].ZoneNo"));
+				zone.setZoneNo(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Zones["+ j +"].ZoneNo"));
 
 				List<String> networkTypes = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Zones["+ j +"].NetworkTypes.Length"); k++) {
-					networkTypes.add(context.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Zones["+ j +"].NetworkTypes["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Zones["+ j +"].NetworkTypes.Length"); k++) {
+					networkTypes.add(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Zones["+ j +"].NetworkTypes["+ k +"]"));
 				}
 				zone.setNetworkTypes(networkTypes);
 

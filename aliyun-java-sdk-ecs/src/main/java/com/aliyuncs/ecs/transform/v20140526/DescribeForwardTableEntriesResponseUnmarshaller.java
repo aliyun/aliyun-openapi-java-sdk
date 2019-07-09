@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeForwardTableEntriesResponseUnmarshaller {
 
-	public static DescribeForwardTableEntriesResponse unmarshall(DescribeForwardTableEntriesResponse describeForwardTableEntriesResponse, UnmarshallerContext context) {
+	public static DescribeForwardTableEntriesResponse unmarshall(DescribeForwardTableEntriesResponse describeForwardTableEntriesResponse, UnmarshallerContext _ctx) {
 		
-		describeForwardTableEntriesResponse.setRequestId(context.stringValue("DescribeForwardTableEntriesResponse.RequestId"));
-		describeForwardTableEntriesResponse.setTotalCount(context.integerValue("DescribeForwardTableEntriesResponse.TotalCount"));
-		describeForwardTableEntriesResponse.setPageNumber(context.integerValue("DescribeForwardTableEntriesResponse.PageNumber"));
-		describeForwardTableEntriesResponse.setPageSize(context.integerValue("DescribeForwardTableEntriesResponse.PageSize"));
+		describeForwardTableEntriesResponse.setRequestId(_ctx.stringValue("DescribeForwardTableEntriesResponse.RequestId"));
+		describeForwardTableEntriesResponse.setTotalCount(_ctx.integerValue("DescribeForwardTableEntriesResponse.TotalCount"));
+		describeForwardTableEntriesResponse.setPageNumber(_ctx.integerValue("DescribeForwardTableEntriesResponse.PageNumber"));
+		describeForwardTableEntriesResponse.setPageSize(_ctx.integerValue("DescribeForwardTableEntriesResponse.PageSize"));
 
 		List<ForwardTableEntry> forwardTableEntries = new ArrayList<ForwardTableEntry>();
-		for (int i = 0; i < context.lengthValue("DescribeForwardTableEntriesResponse.ForwardTableEntries.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeForwardTableEntriesResponse.ForwardTableEntries.Length"); i++) {
 			ForwardTableEntry forwardTableEntry = new ForwardTableEntry();
-			forwardTableEntry.setForwardTableId(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ForwardTableId"));
-			forwardTableEntry.setForwardEntryId(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ForwardEntryId"));
-			forwardTableEntry.setExternalIp(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ExternalIp"));
-			forwardTableEntry.setExternalPort(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ExternalPort"));
-			forwardTableEntry.setIpProtocol(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].IpProtocol"));
-			forwardTableEntry.setInternalIp(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].InternalIp"));
-			forwardTableEntry.setInternalPort(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].InternalPort"));
-			forwardTableEntry.setStatus(context.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].Status"));
+			forwardTableEntry.setForwardTableId(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ForwardTableId"));
+			forwardTableEntry.setForwardEntryId(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ForwardEntryId"));
+			forwardTableEntry.setExternalIp(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ExternalIp"));
+			forwardTableEntry.setExternalPort(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].ExternalPort"));
+			forwardTableEntry.setIpProtocol(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].IpProtocol"));
+			forwardTableEntry.setInternalIp(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].InternalIp"));
+			forwardTableEntry.setInternalPort(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].InternalPort"));
+			forwardTableEntry.setStatus(_ctx.stringValue("DescribeForwardTableEntriesResponse.ForwardTableEntries["+ i +"].Status"));
 
 			forwardTableEntries.add(forwardTableEntry);
 		}

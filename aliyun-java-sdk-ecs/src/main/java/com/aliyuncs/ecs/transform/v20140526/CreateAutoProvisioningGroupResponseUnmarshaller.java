@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateAutoProvisioningGroupResponseUnmarshaller {
 
-	public static CreateAutoProvisioningGroupResponse unmarshall(CreateAutoProvisioningGroupResponse createAutoProvisioningGroupResponse, UnmarshallerContext context) {
+	public static CreateAutoProvisioningGroupResponse unmarshall(CreateAutoProvisioningGroupResponse createAutoProvisioningGroupResponse, UnmarshallerContext _ctx) {
 		
-		createAutoProvisioningGroupResponse.setRequestId(context.stringValue("CreateAutoProvisioningGroupResponse.RequestId"));
-		createAutoProvisioningGroupResponse.setAutoProvisioningGroupId(context.stringValue("CreateAutoProvisioningGroupResponse.AutoProvisioningGroupId"));
+		createAutoProvisioningGroupResponse.setRequestId(_ctx.stringValue("CreateAutoProvisioningGroupResponse.RequestId"));
+		createAutoProvisioningGroupResponse.setAutoProvisioningGroupId(_ctx.stringValue("CreateAutoProvisioningGroupResponse.AutoProvisioningGroupId"));
 	 
 	 	return createAutoProvisioningGroupResponse;
 	}

@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNetworkInterfacePermissionsResponseUnmarshaller {
 
-	public static DescribeNetworkInterfacePermissionsResponse unmarshall(DescribeNetworkInterfacePermissionsResponse describeNetworkInterfacePermissionsResponse, UnmarshallerContext context) {
+	public static DescribeNetworkInterfacePermissionsResponse unmarshall(DescribeNetworkInterfacePermissionsResponse describeNetworkInterfacePermissionsResponse, UnmarshallerContext _ctx) {
 		
-		describeNetworkInterfacePermissionsResponse.setRequestId(context.stringValue("DescribeNetworkInterfacePermissionsResponse.RequestId"));
-		describeNetworkInterfacePermissionsResponse.setTotalCount(context.integerValue("DescribeNetworkInterfacePermissionsResponse.TotalCount"));
-		describeNetworkInterfacePermissionsResponse.setPageNumber(context.integerValue("DescribeNetworkInterfacePermissionsResponse.PageNumber"));
-		describeNetworkInterfacePermissionsResponse.setPageSize(context.integerValue("DescribeNetworkInterfacePermissionsResponse.PageSize"));
+		describeNetworkInterfacePermissionsResponse.setRequestId(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.RequestId"));
+		describeNetworkInterfacePermissionsResponse.setTotalCount(_ctx.integerValue("DescribeNetworkInterfacePermissionsResponse.TotalCount"));
+		describeNetworkInterfacePermissionsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkInterfacePermissionsResponse.PageNumber"));
+		describeNetworkInterfacePermissionsResponse.setPageSize(_ctx.integerValue("DescribeNetworkInterfacePermissionsResponse.PageSize"));
 
 		List<NetworkInterfacePermission> networkInterfacePermissions = new ArrayList<NetworkInterfacePermission>();
-		for (int i = 0; i < context.lengthValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions.Length"); i++) {
 			NetworkInterfacePermission networkInterfacePermission = new NetworkInterfacePermission();
-			networkInterfacePermission.setAccountId(context.longValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].AccountId"));
-			networkInterfacePermission.setServiceName(context.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].ServiceName"));
-			networkInterfacePermission.setNetworkInterfaceId(context.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].NetworkInterfaceId"));
-			networkInterfacePermission.setNetworkInterfacePermissionId(context.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].NetworkInterfacePermissionId"));
-			networkInterfacePermission.setPermission(context.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].Permission"));
-			networkInterfacePermission.setPermissionState(context.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].PermissionState"));
+			networkInterfacePermission.setAccountId(_ctx.longValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].AccountId"));
+			networkInterfacePermission.setServiceName(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].ServiceName"));
+			networkInterfacePermission.setNetworkInterfaceId(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].NetworkInterfaceId"));
+			networkInterfacePermission.setNetworkInterfacePermissionId(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].NetworkInterfacePermissionId"));
+			networkInterfacePermission.setPermission(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].Permission"));
+			networkInterfacePermission.setPermissionState(_ctx.stringValue("DescribeNetworkInterfacePermissionsResponse.NetworkInterfacePermissions["+ i +"].PermissionState"));
 
 			networkInterfacePermissions.add(networkInterfacePermission);
 		}

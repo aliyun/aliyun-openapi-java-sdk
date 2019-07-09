@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyImageSharePermissionResponseUnmarshaller {
 
-	public static ModifyImageSharePermissionResponse unmarshall(ModifyImageSharePermissionResponse modifyImageSharePermissionResponse, UnmarshallerContext context) {
+	public static ModifyImageSharePermissionResponse unmarshall(ModifyImageSharePermissionResponse modifyImageSharePermissionResponse, UnmarshallerContext _ctx) {
 		
-		modifyImageSharePermissionResponse.setRequestId(context.stringValue("ModifyImageSharePermissionResponse.RequestId"));
+		modifyImageSharePermissionResponse.setRequestId(_ctx.stringValue("ModifyImageSharePermissionResponse.RequestId"));
 	 
 	 	return modifyImageSharePermissionResponse;
 	}

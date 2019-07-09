@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReplaceSystemDiskResponseUnmarshaller {
 
-	public static ReplaceSystemDiskResponse unmarshall(ReplaceSystemDiskResponse replaceSystemDiskResponse, UnmarshallerContext context) {
+	public static ReplaceSystemDiskResponse unmarshall(ReplaceSystemDiskResponse replaceSystemDiskResponse, UnmarshallerContext _ctx) {
 		
-		replaceSystemDiskResponse.setRequestId(context.stringValue("ReplaceSystemDiskResponse.RequestId"));
-		replaceSystemDiskResponse.setDiskId(context.stringValue("ReplaceSystemDiskResponse.DiskId"));
+		replaceSystemDiskResponse.setRequestId(_ctx.stringValue("ReplaceSystemDiskResponse.RequestId"));
+		replaceSystemDiskResponse.setDiskId(_ctx.stringValue("ReplaceSystemDiskResponse.DiskId"));
 	 
 	 	return replaceSystemDiskResponse;
 	}

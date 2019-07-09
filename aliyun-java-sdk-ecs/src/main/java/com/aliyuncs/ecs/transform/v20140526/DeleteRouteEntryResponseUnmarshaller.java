@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteRouteEntryResponseUnmarshaller {
 
-	public static DeleteRouteEntryResponse unmarshall(DeleteRouteEntryResponse deleteRouteEntryResponse, UnmarshallerContext context) {
+	public static DeleteRouteEntryResponse unmarshall(DeleteRouteEntryResponse deleteRouteEntryResponse, UnmarshallerContext _ctx) {
 		
-		deleteRouteEntryResponse.setRequestId(context.stringValue("DeleteRouteEntryResponse.RequestId"));
+		deleteRouteEntryResponse.setRequestId(_ctx.stringValue("DeleteRouteEntryResponse.RequestId"));
 	 
 	 	return deleteRouteEntryResponse;
 	}

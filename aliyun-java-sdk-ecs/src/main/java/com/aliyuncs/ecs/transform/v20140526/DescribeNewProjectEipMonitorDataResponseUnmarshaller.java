@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNewProjectEipMonitorDataResponseUnmarshaller {
 
-	public static DescribeNewProjectEipMonitorDataResponse unmarshall(DescribeNewProjectEipMonitorDataResponse describeNewProjectEipMonitorDataResponse, UnmarshallerContext context) {
+	public static DescribeNewProjectEipMonitorDataResponse unmarshall(DescribeNewProjectEipMonitorDataResponse describeNewProjectEipMonitorDataResponse, UnmarshallerContext _ctx) {
 		
-		describeNewProjectEipMonitorDataResponse.setRequestId(context.stringValue("DescribeNewProjectEipMonitorDataResponse.RequestId"));
+		describeNewProjectEipMonitorDataResponse.setRequestId(_ctx.stringValue("DescribeNewProjectEipMonitorDataResponse.RequestId"));
 
 		List<EipMonitorData> eipMonitorDatas = new ArrayList<EipMonitorData>();
-		for (int i = 0; i < context.lengthValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas.Length"); i++) {
 			EipMonitorData eipMonitorData = new EipMonitorData();
-			eipMonitorData.setEipRX(context.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipRX"));
-			eipMonitorData.setEipTX(context.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipTX"));
-			eipMonitorData.setEipFlow(context.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipFlow"));
-			eipMonitorData.setEipBandwidth(context.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipBandwidth"));
-			eipMonitorData.setEipPackets(context.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipPackets"));
-			eipMonitorData.setTimeStamp(context.stringValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].TimeStamp"));
+			eipMonitorData.setEipRX(_ctx.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipRX"));
+			eipMonitorData.setEipTX(_ctx.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipTX"));
+			eipMonitorData.setEipFlow(_ctx.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipFlow"));
+			eipMonitorData.setEipBandwidth(_ctx.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipBandwidth"));
+			eipMonitorData.setEipPackets(_ctx.integerValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].EipPackets"));
+			eipMonitorData.setTimeStamp(_ctx.stringValue("DescribeNewProjectEipMonitorDataResponse.EipMonitorDatas["+ i +"].TimeStamp"));
 
 			eipMonitorDatas.add(eipMonitorData);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteVSwitchResponseUnmarshaller {
 
-	public static DeleteVSwitchResponse unmarshall(DeleteVSwitchResponse deleteVSwitchResponse, UnmarshallerContext context) {
+	public static DeleteVSwitchResponse unmarshall(DeleteVSwitchResponse deleteVSwitchResponse, UnmarshallerContext _ctx) {
 		
-		deleteVSwitchResponse.setRequestId(context.stringValue("DeleteVSwitchResponse.RequestId"));
+		deleteVSwitchResponse.setRequestId(_ctx.stringValue("DeleteVSwitchResponse.RequestId"));
 	 
 	 	return deleteVSwitchResponse;
 	}

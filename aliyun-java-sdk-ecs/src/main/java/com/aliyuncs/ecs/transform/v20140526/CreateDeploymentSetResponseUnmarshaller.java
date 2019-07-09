@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDeploymentSetResponseUnmarshaller {
 
-	public static CreateDeploymentSetResponse unmarshall(CreateDeploymentSetResponse createDeploymentSetResponse, UnmarshallerContext context) {
+	public static CreateDeploymentSetResponse unmarshall(CreateDeploymentSetResponse createDeploymentSetResponse, UnmarshallerContext _ctx) {
 		
-		createDeploymentSetResponse.setRequestId(context.stringValue("CreateDeploymentSetResponse.RequestId"));
-		createDeploymentSetResponse.setDeploymentSetId(context.stringValue("CreateDeploymentSetResponse.DeploymentSetId"));
+		createDeploymentSetResponse.setRequestId(_ctx.stringValue("CreateDeploymentSetResponse.RequestId"));
+		createDeploymentSetResponse.setDeploymentSetId(_ctx.stringValue("CreateDeploymentSetResponse.DeploymentSetId"));
 	 
 	 	return createDeploymentSetResponse;
 	}

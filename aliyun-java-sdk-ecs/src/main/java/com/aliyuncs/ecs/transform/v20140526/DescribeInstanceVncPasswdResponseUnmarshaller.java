@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceVncPasswdResponseUnmarshaller {
 
-	public static DescribeInstanceVncPasswdResponse unmarshall(DescribeInstanceVncPasswdResponse describeInstanceVncPasswdResponse, UnmarshallerContext context) {
+	public static DescribeInstanceVncPasswdResponse unmarshall(DescribeInstanceVncPasswdResponse describeInstanceVncPasswdResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceVncPasswdResponse.setRequestId(context.stringValue("DescribeInstanceVncPasswdResponse.RequestId"));
-		describeInstanceVncPasswdResponse.setVncPasswd(context.stringValue("DescribeInstanceVncPasswdResponse.VncPasswd"));
+		describeInstanceVncPasswdResponse.setRequestId(_ctx.stringValue("DescribeInstanceVncPasswdResponse.RequestId"));
+		describeInstanceVncPasswdResponse.setVncPasswd(_ctx.stringValue("DescribeInstanceVncPasswdResponse.VncPasswd"));
 	 
 	 	return describeInstanceVncPasswdResponse;
 	}

@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceAutoRenewAttributeResponseUnmarshaller {
 
-	public static DescribeInstanceAutoRenewAttributeResponse unmarshall(DescribeInstanceAutoRenewAttributeResponse describeInstanceAutoRenewAttributeResponse, UnmarshallerContext context) {
+	public static DescribeInstanceAutoRenewAttributeResponse unmarshall(DescribeInstanceAutoRenewAttributeResponse describeInstanceAutoRenewAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceAutoRenewAttributeResponse.setRequestId(context.stringValue("DescribeInstanceAutoRenewAttributeResponse.RequestId"));
-		describeInstanceAutoRenewAttributeResponse.setPageNumber(context.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageNumber"));
-		describeInstanceAutoRenewAttributeResponse.setPageSize(context.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageSize"));
-		describeInstanceAutoRenewAttributeResponse.setTotalCount(context.integerValue("DescribeInstanceAutoRenewAttributeResponse.TotalCount"));
+		describeInstanceAutoRenewAttributeResponse.setRequestId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.RequestId"));
+		describeInstanceAutoRenewAttributeResponse.setPageNumber(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageNumber"));
+		describeInstanceAutoRenewAttributeResponse.setPageSize(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.PageSize"));
+		describeInstanceAutoRenewAttributeResponse.setTotalCount(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.TotalCount"));
 
 		List<InstanceRenewAttribute> instanceRenewAttributes = new ArrayList<InstanceRenewAttribute>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes.Length"); i++) {
 			InstanceRenewAttribute instanceRenewAttribute = new InstanceRenewAttribute();
-			instanceRenewAttribute.setInstanceId(context.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].InstanceId"));
-			instanceRenewAttribute.setAutoRenewEnabled(context.booleanValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].AutoRenewEnabled"));
-			instanceRenewAttribute.setDuration(context.integerValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].Duration"));
-			instanceRenewAttribute.setPeriodUnit(context.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].PeriodUnit"));
-			instanceRenewAttribute.setRenewalStatus(context.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].RenewalStatus"));
+			instanceRenewAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].InstanceId"));
+			instanceRenewAttribute.setAutoRenewEnabled(_ctx.booleanValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].AutoRenewEnabled"));
+			instanceRenewAttribute.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].Duration"));
+			instanceRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].PeriodUnit"));
+			instanceRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].RenewalStatus"));
 
 			instanceRenewAttributes.add(instanceRenewAttribute);
 		}

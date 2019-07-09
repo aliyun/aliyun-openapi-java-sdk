@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyReservedInstanceAttributeResponseUnmarshaller {
 
-	public static ModifyReservedInstanceAttributeResponse unmarshall(ModifyReservedInstanceAttributeResponse modifyReservedInstanceAttributeResponse, UnmarshallerContext context) {
+	public static ModifyReservedInstanceAttributeResponse unmarshall(ModifyReservedInstanceAttributeResponse modifyReservedInstanceAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyReservedInstanceAttributeResponse.setRequestId(context.stringValue("ModifyReservedInstanceAttributeResponse.RequestId"));
-		modifyReservedInstanceAttributeResponse.setCode(context.stringValue("ModifyReservedInstanceAttributeResponse.Code"));
-		modifyReservedInstanceAttributeResponse.setMessage(context.stringValue("ModifyReservedInstanceAttributeResponse.Message"));
-		modifyReservedInstanceAttributeResponse.setHttpStatusCode(context.integerValue("ModifyReservedInstanceAttributeResponse.HttpStatusCode"));
+		modifyReservedInstanceAttributeResponse.setRequestId(_ctx.stringValue("ModifyReservedInstanceAttributeResponse.RequestId"));
+		modifyReservedInstanceAttributeResponse.setCode(_ctx.stringValue("ModifyReservedInstanceAttributeResponse.Code"));
+		modifyReservedInstanceAttributeResponse.setMessage(_ctx.stringValue("ModifyReservedInstanceAttributeResponse.Message"));
+		modifyReservedInstanceAttributeResponse.setHttpStatusCode(_ctx.integerValue("ModifyReservedInstanceAttributeResponse.HttpStatusCode"));
 	 
 	 	return modifyReservedInstanceAttributeResponse;
 	}

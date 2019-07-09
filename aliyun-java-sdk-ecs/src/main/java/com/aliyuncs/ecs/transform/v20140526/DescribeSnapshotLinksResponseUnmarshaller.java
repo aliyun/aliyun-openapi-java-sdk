@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSnapshotLinksResponseUnmarshaller {
 
-	public static DescribeSnapshotLinksResponse unmarshall(DescribeSnapshotLinksResponse describeSnapshotLinksResponse, UnmarshallerContext context) {
+	public static DescribeSnapshotLinksResponse unmarshall(DescribeSnapshotLinksResponse describeSnapshotLinksResponse, UnmarshallerContext _ctx) {
 		
-		describeSnapshotLinksResponse.setRequestId(context.stringValue("DescribeSnapshotLinksResponse.RequestId"));
-		describeSnapshotLinksResponse.setTotalCount(context.integerValue("DescribeSnapshotLinksResponse.TotalCount"));
-		describeSnapshotLinksResponse.setPageNumber(context.integerValue("DescribeSnapshotLinksResponse.PageNumber"));
-		describeSnapshotLinksResponse.setPageSize(context.integerValue("DescribeSnapshotLinksResponse.PageSize"));
+		describeSnapshotLinksResponse.setRequestId(_ctx.stringValue("DescribeSnapshotLinksResponse.RequestId"));
+		describeSnapshotLinksResponse.setTotalCount(_ctx.integerValue("DescribeSnapshotLinksResponse.TotalCount"));
+		describeSnapshotLinksResponse.setPageNumber(_ctx.integerValue("DescribeSnapshotLinksResponse.PageNumber"));
+		describeSnapshotLinksResponse.setPageSize(_ctx.integerValue("DescribeSnapshotLinksResponse.PageSize"));
 
 		List<SnapshotLink> snapshotLinks = new ArrayList<SnapshotLink>();
-		for (int i = 0; i < context.lengthValue("DescribeSnapshotLinksResponse.SnapshotLinks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotLinksResponse.SnapshotLinks.Length"); i++) {
 			SnapshotLink snapshotLink = new SnapshotLink();
-			snapshotLink.setSnapshotLinkId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SnapshotLinkId"));
-			snapshotLink.setRegionId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].RegionId"));
-			snapshotLink.setInstanceId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceId"));
-			snapshotLink.setInstanceName(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceName"));
-			snapshotLink.setSourceDiskId(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskId"));
-			snapshotLink.setSourceDiskName(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskName"));
-			snapshotLink.setSourceDiskSize(context.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskSize"));
-			snapshotLink.setSourceDiskType(context.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskType"));
-			snapshotLink.setTotalSize(context.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalSize"));
-			snapshotLink.setTotalCount(context.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalCount"));
+			snapshotLink.setSnapshotLinkId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SnapshotLinkId"));
+			snapshotLink.setRegionId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].RegionId"));
+			snapshotLink.setInstanceId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceId"));
+			snapshotLink.setInstanceName(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].InstanceName"));
+			snapshotLink.setSourceDiskId(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskId"));
+			snapshotLink.setSourceDiskName(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskName"));
+			snapshotLink.setSourceDiskSize(_ctx.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskSize"));
+			snapshotLink.setSourceDiskType(_ctx.stringValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].SourceDiskType"));
+			snapshotLink.setTotalSize(_ctx.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalSize"));
+			snapshotLink.setTotalCount(_ctx.integerValue("DescribeSnapshotLinksResponse.SnapshotLinks["+ i +"].TotalCount"));
 
 			snapshotLinks.add(snapshotLink);
 		}

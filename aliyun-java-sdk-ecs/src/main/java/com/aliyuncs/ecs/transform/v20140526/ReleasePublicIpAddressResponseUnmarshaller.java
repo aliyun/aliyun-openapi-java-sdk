@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReleasePublicIpAddressResponseUnmarshaller {
 
-	public static ReleasePublicIpAddressResponse unmarshall(ReleasePublicIpAddressResponse releasePublicIpAddressResponse, UnmarshallerContext context) {
+	public static ReleasePublicIpAddressResponse unmarshall(ReleasePublicIpAddressResponse releasePublicIpAddressResponse, UnmarshallerContext _ctx) {
 		
-		releasePublicIpAddressResponse.setRequestId(context.stringValue("ReleasePublicIpAddressResponse.RequestId"));
+		releasePublicIpAddressResponse.setRequestId(_ctx.stringValue("ReleasePublicIpAddressResponse.RequestId"));
 	 
 	 	return releasePublicIpAddressResponse;
 	}

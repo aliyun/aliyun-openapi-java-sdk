@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteNatGatewayResponseUnmarshaller {
 
-	public static DeleteNatGatewayResponse unmarshall(DeleteNatGatewayResponse deleteNatGatewayResponse, UnmarshallerContext context) {
+	public static DeleteNatGatewayResponse unmarshall(DeleteNatGatewayResponse deleteNatGatewayResponse, UnmarshallerContext _ctx) {
 		
-		deleteNatGatewayResponse.setRequestId(context.stringValue("DeleteNatGatewayResponse.RequestId"));
+		deleteNatGatewayResponse.setRequestId(_ctx.stringValue("DeleteNatGatewayResponse.RequestId"));
 	 
 	 	return deleteNatGatewayResponse;
 	}

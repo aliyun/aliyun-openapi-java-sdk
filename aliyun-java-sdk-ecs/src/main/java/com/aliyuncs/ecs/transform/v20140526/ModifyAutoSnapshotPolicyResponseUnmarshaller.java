@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyAutoSnapshotPolicyResponseUnmarshaller {
 
-	public static ModifyAutoSnapshotPolicyResponse unmarshall(ModifyAutoSnapshotPolicyResponse modifyAutoSnapshotPolicyResponse, UnmarshallerContext context) {
+	public static ModifyAutoSnapshotPolicyResponse unmarshall(ModifyAutoSnapshotPolicyResponse modifyAutoSnapshotPolicyResponse, UnmarshallerContext _ctx) {
 		
-		modifyAutoSnapshotPolicyResponse.setRequestId(context.stringValue("ModifyAutoSnapshotPolicyResponse.RequestId"));
+		modifyAutoSnapshotPolicyResponse.setRequestId(_ctx.stringValue("ModifyAutoSnapshotPolicyResponse.RequestId"));
 	 
 	 	return modifyAutoSnapshotPolicyResponse;
 	}

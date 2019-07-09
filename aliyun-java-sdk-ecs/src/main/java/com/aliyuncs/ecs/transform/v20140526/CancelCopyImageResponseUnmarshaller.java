@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelCopyImageResponseUnmarshaller {
 
-	public static CancelCopyImageResponse unmarshall(CancelCopyImageResponse cancelCopyImageResponse, UnmarshallerContext context) {
+	public static CancelCopyImageResponse unmarshall(CancelCopyImageResponse cancelCopyImageResponse, UnmarshallerContext _ctx) {
 		
-		cancelCopyImageResponse.setRequestId(context.stringValue("CancelCopyImageResponse.RequestId"));
+		cancelCopyImageResponse.setRequestId(_ctx.stringValue("CancelCopyImageResponse.RequestId"));
 	 
 	 	return cancelCopyImageResponse;
 	}

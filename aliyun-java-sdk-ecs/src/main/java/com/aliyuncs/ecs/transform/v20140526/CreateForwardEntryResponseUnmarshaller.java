@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateForwardEntryResponseUnmarshaller {
 
-	public static CreateForwardEntryResponse unmarshall(CreateForwardEntryResponse createForwardEntryResponse, UnmarshallerContext context) {
+	public static CreateForwardEntryResponse unmarshall(CreateForwardEntryResponse createForwardEntryResponse, UnmarshallerContext _ctx) {
 		
-		createForwardEntryResponse.setRequestId(context.stringValue("CreateForwardEntryResponse.RequestId"));
-		createForwardEntryResponse.setForwardEntryId(context.stringValue("CreateForwardEntryResponse.ForwardEntryId"));
+		createForwardEntryResponse.setRequestId(_ctx.stringValue("CreateForwardEntryResponse.RequestId"));
+		createForwardEntryResponse.setForwardEntryId(_ctx.stringValue("CreateForwardEntryResponse.ForwardEntryId"));
 	 
 	 	return createForwardEntryResponse;
 	}

@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceStatusResponseUnmarshaller {
 
-	public static DescribeInstanceStatusResponse unmarshall(DescribeInstanceStatusResponse describeInstanceStatusResponse, UnmarshallerContext context) {
+	public static DescribeInstanceStatusResponse unmarshall(DescribeInstanceStatusResponse describeInstanceStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceStatusResponse.setRequestId(context.stringValue("DescribeInstanceStatusResponse.RequestId"));
-		describeInstanceStatusResponse.setTotalCount(context.integerValue("DescribeInstanceStatusResponse.TotalCount"));
-		describeInstanceStatusResponse.setPageNumber(context.integerValue("DescribeInstanceStatusResponse.PageNumber"));
-		describeInstanceStatusResponse.setPageSize(context.integerValue("DescribeInstanceStatusResponse.PageSize"));
+		describeInstanceStatusResponse.setRequestId(_ctx.stringValue("DescribeInstanceStatusResponse.RequestId"));
+		describeInstanceStatusResponse.setTotalCount(_ctx.integerValue("DescribeInstanceStatusResponse.TotalCount"));
+		describeInstanceStatusResponse.setPageNumber(_ctx.integerValue("DescribeInstanceStatusResponse.PageNumber"));
+		describeInstanceStatusResponse.setPageSize(_ctx.integerValue("DescribeInstanceStatusResponse.PageSize"));
 
 		List<InstanceStatus> instanceStatuses = new ArrayList<InstanceStatus>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceStatusResponse.InstanceStatuses.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceStatusResponse.InstanceStatuses.Length"); i++) {
 			InstanceStatus instanceStatus = new InstanceStatus();
-			instanceStatus.setInstanceId(context.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].InstanceId"));
-			instanceStatus.setStatus(context.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].Status"));
+			instanceStatus.setInstanceId(_ctx.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].InstanceId"));
+			instanceStatus.setStatus(_ctx.stringValue("DescribeInstanceStatusResponse.InstanceStatuses["+ i +"].Status"));
 
 			instanceStatuses.add(instanceStatus);
 		}

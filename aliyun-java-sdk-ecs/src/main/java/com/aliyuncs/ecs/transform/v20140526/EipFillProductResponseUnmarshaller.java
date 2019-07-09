@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EipFillProductResponseUnmarshaller {
 
-	public static EipFillProductResponse unmarshall(EipFillProductResponse eipFillProductResponse, UnmarshallerContext context) {
+	public static EipFillProductResponse unmarshall(EipFillProductResponse eipFillProductResponse, UnmarshallerContext _ctx) {
 		
-		eipFillProductResponse.setRequestId(context.stringValue("EipFillProductResponse.requestId"));
-		eipFillProductResponse.setData(context.stringValue("EipFillProductResponse.data"));
-		eipFillProductResponse.setCode(context.stringValue("EipFillProductResponse.code"));
-		eipFillProductResponse.setSuccess(context.booleanValue("EipFillProductResponse.success"));
-		eipFillProductResponse.setMessage(context.stringValue("EipFillProductResponse.message"));
+		eipFillProductResponse.setRequestId(_ctx.stringValue("EipFillProductResponse.requestId"));
+		eipFillProductResponse.setData(_ctx.stringValue("EipFillProductResponse.data"));
+		eipFillProductResponse.setCode(_ctx.stringValue("EipFillProductResponse.code"));
+		eipFillProductResponse.setSuccess(_ctx.booleanValue("EipFillProductResponse.success"));
+		eipFillProductResponse.setMessage(_ctx.stringValue("EipFillProductResponse.message"));
 	 
 	 	return eipFillProductResponse;
 	}

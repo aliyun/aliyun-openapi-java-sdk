@@ -51,6 +51,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String password;
 
+	private Integer storageSetPartitionNumber;
+
 	private List<Tag> tags;
 
 	private Integer autoRenewPeriod;
@@ -140,6 +142,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private List<DataDisk> dataDisks;
 
 	private Long launchTemplateVersion;
+
+	private String storageSetId;
 
 	private String systemDiskSize;
 
@@ -274,6 +278,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.password = password;
 		if(password != null){
 			putQueryParameter("Password", password);
+		}
+	}
+
+	public Integer getStorageSetPartitionNumber() {
+		return this.storageSetPartitionNumber;
+	}
+
+	public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
+		this.storageSetPartitionNumber = storageSetPartitionNumber;
+		if(storageSetPartitionNumber != null){
+			putQueryParameter("StorageSetPartitionNumber", storageSetPartitionNumber.toString());
 		}
 	}
 
@@ -793,6 +808,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.launchTemplateVersion = launchTemplateVersion;
 		if(launchTemplateVersion != null){
 			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion.toString());
+		}
+	}
+
+	public String getStorageSetId() {
+		return this.storageSetId;
+	}
+
+	public void setStorageSetId(String storageSetId) {
+		this.storageSetId = storageSetId;
+		if(storageSetId != null){
+			putQueryParameter("StorageSetId", storageSetId);
 		}
 	}
 

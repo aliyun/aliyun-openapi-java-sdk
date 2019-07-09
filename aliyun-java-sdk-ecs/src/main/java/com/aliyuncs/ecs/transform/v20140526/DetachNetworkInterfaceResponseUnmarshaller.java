@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetachNetworkInterfaceResponseUnmarshaller {
 
-	public static DetachNetworkInterfaceResponse unmarshall(DetachNetworkInterfaceResponse detachNetworkInterfaceResponse, UnmarshallerContext context) {
+	public static DetachNetworkInterfaceResponse unmarshall(DetachNetworkInterfaceResponse detachNetworkInterfaceResponse, UnmarshallerContext _ctx) {
 		
-		detachNetworkInterfaceResponse.setRequestId(context.stringValue("DetachNetworkInterfaceResponse.RequestId"));
+		detachNetworkInterfaceResponse.setRequestId(_ctx.stringValue("DetachNetworkInterfaceResponse.RequestId"));
 	 
 	 	return detachNetworkInterfaceResponse;
 	}

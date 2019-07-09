@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InstallCloudAssistantResponseUnmarshaller {
 
-	public static InstallCloudAssistantResponse unmarshall(InstallCloudAssistantResponse installCloudAssistantResponse, UnmarshallerContext context) {
+	public static InstallCloudAssistantResponse unmarshall(InstallCloudAssistantResponse installCloudAssistantResponse, UnmarshallerContext _ctx) {
 		
-		installCloudAssistantResponse.setRequestId(context.stringValue("InstallCloudAssistantResponse.RequestId"));
+		installCloudAssistantResponse.setRequestId(_ctx.stringValue("InstallCloudAssistantResponse.RequestId"));
 	 
 	 	return installCloudAssistantResponse;
 	}

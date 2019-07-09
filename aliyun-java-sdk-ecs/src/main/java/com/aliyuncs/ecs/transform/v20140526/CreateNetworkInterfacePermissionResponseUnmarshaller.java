@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateNetworkInterfacePermissionResponseUnmarshaller {
 
-	public static CreateNetworkInterfacePermissionResponse unmarshall(CreateNetworkInterfacePermissionResponse createNetworkInterfacePermissionResponse, UnmarshallerContext context) {
+	public static CreateNetworkInterfacePermissionResponse unmarshall(CreateNetworkInterfacePermissionResponse createNetworkInterfacePermissionResponse, UnmarshallerContext _ctx) {
 		
-		createNetworkInterfacePermissionResponse.setRequestId(context.stringValue("CreateNetworkInterfacePermissionResponse.RequestId"));
+		createNetworkInterfacePermissionResponse.setRequestId(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.RequestId"));
 
 		NetworkInterfacePermission networkInterfacePermission = new NetworkInterfacePermission();
-		networkInterfacePermission.setAccountId(context.longValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.AccountId"));
-		networkInterfacePermission.setServiceName(context.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.ServiceName"));
-		networkInterfacePermission.setNetworkInterfaceId(context.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.NetworkInterfaceId"));
-		networkInterfacePermission.setNetworkInterfacePermissionId(context.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.NetworkInterfacePermissionId"));
-		networkInterfacePermission.setPermission(context.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.Permission"));
-		networkInterfacePermission.setPermissionState(context.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.PermissionState"));
+		networkInterfacePermission.setAccountId(_ctx.longValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.AccountId"));
+		networkInterfacePermission.setServiceName(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.ServiceName"));
+		networkInterfacePermission.setNetworkInterfaceId(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.NetworkInterfaceId"));
+		networkInterfacePermission.setNetworkInterfacePermissionId(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.NetworkInterfacePermissionId"));
+		networkInterfacePermission.setPermission(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.Permission"));
+		networkInterfacePermission.setPermissionState(_ctx.stringValue("CreateNetworkInterfacePermissionResponse.NetworkInterfacePermission.PermissionState"));
 		createNetworkInterfacePermissionResponse.setNetworkInterfacePermission(networkInterfacePermission);
 	 
 	 	return createNetworkInterfacePermissionResponse;

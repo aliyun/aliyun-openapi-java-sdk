@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyInstanceNetworkSpecResponseUnmarshaller {
 
-	public static ModifyInstanceNetworkSpecResponse unmarshall(ModifyInstanceNetworkSpecResponse modifyInstanceNetworkSpecResponse, UnmarshallerContext context) {
+	public static ModifyInstanceNetworkSpecResponse unmarshall(ModifyInstanceNetworkSpecResponse modifyInstanceNetworkSpecResponse, UnmarshallerContext _ctx) {
 		
-		modifyInstanceNetworkSpecResponse.setRequestId(context.stringValue("ModifyInstanceNetworkSpecResponse.RequestId"));
-		modifyInstanceNetworkSpecResponse.setOrderId(context.stringValue("ModifyInstanceNetworkSpecResponse.OrderId"));
+		modifyInstanceNetworkSpecResponse.setRequestId(_ctx.stringValue("ModifyInstanceNetworkSpecResponse.RequestId"));
+		modifyInstanceNetworkSpecResponse.setOrderId(_ctx.stringValue("ModifyInstanceNetworkSpecResponse.OrderId"));
 	 
 	 	return modifyInstanceNetworkSpecResponse;
 	}

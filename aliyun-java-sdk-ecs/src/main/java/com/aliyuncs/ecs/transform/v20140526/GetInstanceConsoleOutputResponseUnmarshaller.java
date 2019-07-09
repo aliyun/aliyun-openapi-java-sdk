@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceConsoleOutputResponseUnmarshaller {
 
-	public static GetInstanceConsoleOutputResponse unmarshall(GetInstanceConsoleOutputResponse getInstanceConsoleOutputResponse, UnmarshallerContext context) {
+	public static GetInstanceConsoleOutputResponse unmarshall(GetInstanceConsoleOutputResponse getInstanceConsoleOutputResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceConsoleOutputResponse.setRequestId(context.stringValue("GetInstanceConsoleOutputResponse.RequestId"));
-		getInstanceConsoleOutputResponse.setInstanceId(context.stringValue("GetInstanceConsoleOutputResponse.InstanceId"));
-		getInstanceConsoleOutputResponse.setConsoleOutput(context.stringValue("GetInstanceConsoleOutputResponse.ConsoleOutput"));
-		getInstanceConsoleOutputResponse.setLastUpdateTime(context.stringValue("GetInstanceConsoleOutputResponse.LastUpdateTime"));
+		getInstanceConsoleOutputResponse.setRequestId(_ctx.stringValue("GetInstanceConsoleOutputResponse.RequestId"));
+		getInstanceConsoleOutputResponse.setInstanceId(_ctx.stringValue("GetInstanceConsoleOutputResponse.InstanceId"));
+		getInstanceConsoleOutputResponse.setConsoleOutput(_ctx.stringValue("GetInstanceConsoleOutputResponse.ConsoleOutput"));
+		getInstanceConsoleOutputResponse.setLastUpdateTime(_ctx.stringValue("GetInstanceConsoleOutputResponse.LastUpdateTime"));
 	 
 	 	return getInstanceConsoleOutputResponse;
 	}

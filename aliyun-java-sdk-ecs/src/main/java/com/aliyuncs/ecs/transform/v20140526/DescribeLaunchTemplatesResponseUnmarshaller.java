@@ -25,30 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLaunchTemplatesResponseUnmarshaller {
 
-	public static DescribeLaunchTemplatesResponse unmarshall(DescribeLaunchTemplatesResponse describeLaunchTemplatesResponse, UnmarshallerContext context) {
+	public static DescribeLaunchTemplatesResponse unmarshall(DescribeLaunchTemplatesResponse describeLaunchTemplatesResponse, UnmarshallerContext _ctx) {
 		
-		describeLaunchTemplatesResponse.setRequestId(context.stringValue("DescribeLaunchTemplatesResponse.RequestId"));
-		describeLaunchTemplatesResponse.setTotalCount(context.integerValue("DescribeLaunchTemplatesResponse.TotalCount"));
-		describeLaunchTemplatesResponse.setPageNumber(context.integerValue("DescribeLaunchTemplatesResponse.PageNumber"));
-		describeLaunchTemplatesResponse.setPageSize(context.integerValue("DescribeLaunchTemplatesResponse.PageSize"));
+		describeLaunchTemplatesResponse.setRequestId(_ctx.stringValue("DescribeLaunchTemplatesResponse.RequestId"));
+		describeLaunchTemplatesResponse.setTotalCount(_ctx.integerValue("DescribeLaunchTemplatesResponse.TotalCount"));
+		describeLaunchTemplatesResponse.setPageNumber(_ctx.integerValue("DescribeLaunchTemplatesResponse.PageNumber"));
+		describeLaunchTemplatesResponse.setPageSize(_ctx.integerValue("DescribeLaunchTemplatesResponse.PageSize"));
 
 		List<LaunchTemplateSet> launchTemplateSets = new ArrayList<LaunchTemplateSet>();
-		for (int i = 0; i < context.lengthValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets.Length"); i++) {
 			LaunchTemplateSet launchTemplateSet = new LaunchTemplateSet();
-			launchTemplateSet.setCreateTime(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].CreateTime"));
-			launchTemplateSet.setModifiedTime(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].ModifiedTime"));
-			launchTemplateSet.setLaunchTemplateId(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].LaunchTemplateId"));
-			launchTemplateSet.setLaunchTemplateName(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].LaunchTemplateName"));
-			launchTemplateSet.setDefaultVersionNumber(context.longValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].DefaultVersionNumber"));
-			launchTemplateSet.setLatestVersionNumber(context.longValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].LatestVersionNumber"));
-			launchTemplateSet.setCreatedBy(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].CreatedBy"));
-			launchTemplateSet.setResourceGroupId(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].ResourceGroupId"));
+			launchTemplateSet.setCreateTime(_ctx.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].CreateTime"));
+			launchTemplateSet.setModifiedTime(_ctx.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].ModifiedTime"));
+			launchTemplateSet.setLaunchTemplateId(_ctx.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].LaunchTemplateId"));
+			launchTemplateSet.setLaunchTemplateName(_ctx.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].LaunchTemplateName"));
+			launchTemplateSet.setDefaultVersionNumber(_ctx.longValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].DefaultVersionNumber"));
+			launchTemplateSet.setLatestVersionNumber(_ctx.longValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].LatestVersionNumber"));
+			launchTemplateSet.setCreatedBy(_ctx.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].CreatedBy"));
+			launchTemplateSet.setResourceGroupId(_ctx.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < context.lengthValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].Tags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setTagKey(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].Tags["+ j +"].TagKey"));
-				tag.setTagValue(context.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].Tags["+ j +"].TagValue"));
+				tag.setTagKey(_ctx.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeLaunchTemplatesResponse.LaunchTemplateSets["+ i +"].Tags["+ j +"].TagValue"));
 
 				tags.add(tag);
 			}
