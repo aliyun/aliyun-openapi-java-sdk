@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitComplaintResponseUnmarshaller {
 
-	public static SubmitComplaintResponse unmarshall(SubmitComplaintResponse submitComplaintResponse, UnmarshallerContext context) {
+	public static SubmitComplaintResponse unmarshall(SubmitComplaintResponse submitComplaintResponse, UnmarshallerContext _ctx) {
 		
-		submitComplaintResponse.setRequestId(context.stringValue("SubmitComplaintResponse.RequestId"));
-		submitComplaintResponse.setSuccess(context.booleanValue("SubmitComplaintResponse.Success"));
-		submitComplaintResponse.setCode(context.stringValue("SubmitComplaintResponse.Code"));
-		submitComplaintResponse.setMessage(context.stringValue("SubmitComplaintResponse.Message"));
-		submitComplaintResponse.setData(context.stringValue("SubmitComplaintResponse.Data"));
+		submitComplaintResponse.setRequestId(_ctx.stringValue("SubmitComplaintResponse.RequestId"));
+		submitComplaintResponse.setSuccess(_ctx.booleanValue("SubmitComplaintResponse.Success"));
+		submitComplaintResponse.setCode(_ctx.stringValue("SubmitComplaintResponse.Code"));
+		submitComplaintResponse.setMessage(_ctx.stringValue("SubmitComplaintResponse.Message"));
+		submitComplaintResponse.setData(_ctx.stringValue("SubmitComplaintResponse.Data"));
 	 
 	 	return submitComplaintResponse;
 	}

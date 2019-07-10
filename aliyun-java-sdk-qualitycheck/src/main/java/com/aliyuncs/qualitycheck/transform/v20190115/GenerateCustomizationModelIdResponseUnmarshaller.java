@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GenerateCustomizationModelIdResponseUnmarshaller {
 
-	public static GenerateCustomizationModelIdResponse unmarshall(GenerateCustomizationModelIdResponse generateCustomizationModelIdResponse, UnmarshallerContext context) {
+	public static GenerateCustomizationModelIdResponse unmarshall(GenerateCustomizationModelIdResponse generateCustomizationModelIdResponse, UnmarshallerContext _ctx) {
 		
-		generateCustomizationModelIdResponse.setRequestId(context.stringValue("GenerateCustomizationModelIdResponse.RequestId"));
-		generateCustomizationModelIdResponse.setSuccess(context.booleanValue("GenerateCustomizationModelIdResponse.Success"));
-		generateCustomizationModelIdResponse.setCode(context.stringValue("GenerateCustomizationModelIdResponse.Code"));
-		generateCustomizationModelIdResponse.setMessage(context.stringValue("GenerateCustomizationModelIdResponse.Message"));
-		generateCustomizationModelIdResponse.setData(context.stringValue("GenerateCustomizationModelIdResponse.Data"));
+		generateCustomizationModelIdResponse.setRequestId(_ctx.stringValue("GenerateCustomizationModelIdResponse.RequestId"));
+		generateCustomizationModelIdResponse.setSuccess(_ctx.booleanValue("GenerateCustomizationModelIdResponse.Success"));
+		generateCustomizationModelIdResponse.setCode(_ctx.stringValue("GenerateCustomizationModelIdResponse.Code"));
+		generateCustomizationModelIdResponse.setMessage(_ctx.stringValue("GenerateCustomizationModelIdResponse.Message"));
+		generateCustomizationModelIdResponse.setData(_ctx.stringValue("GenerateCustomizationModelIdResponse.Data"));
 	 
 	 	return generateCustomizationModelIdResponse;
 	}

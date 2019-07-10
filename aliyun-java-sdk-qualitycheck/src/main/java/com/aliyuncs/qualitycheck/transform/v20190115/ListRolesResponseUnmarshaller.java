@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListRolesResponseUnmarshaller {
 
-	public static ListRolesResponse unmarshall(ListRolesResponse listRolesResponse, UnmarshallerContext context) {
+	public static ListRolesResponse unmarshall(ListRolesResponse listRolesResponse, UnmarshallerContext _ctx) {
 		
-		listRolesResponse.setRequestId(context.stringValue("ListRolesResponse.RequestId"));
-		listRolesResponse.setSuccess(context.booleanValue("ListRolesResponse.Success"));
-		listRolesResponse.setCode(context.stringValue("ListRolesResponse.Code"));
-		listRolesResponse.setMessage(context.stringValue("ListRolesResponse.Message"));
+		listRolesResponse.setRequestId(_ctx.stringValue("ListRolesResponse.RequestId"));
+		listRolesResponse.setSuccess(_ctx.booleanValue("ListRolesResponse.Success"));
+		listRolesResponse.setCode(_ctx.stringValue("ListRolesResponse.Code"));
+		listRolesResponse.setMessage(_ctx.stringValue("ListRolesResponse.Message"));
 
 		List<Role> data = new ArrayList<Role>();
-		for (int i = 0; i < context.lengthValue("ListRolesResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListRolesResponse.Data.Length"); i++) {
 			Role role = new Role();
-			role.setId(context.longValue("ListRolesResponse.Data["+ i +"].Id"));
-			role.setName(context.stringValue("ListRolesResponse.Data["+ i +"].Name"));
-			role.setDisplayName(context.stringValue("ListRolesResponse.Data["+ i +"].DisplayName"));
-			role.setLevel(context.integerValue("ListRolesResponse.Data["+ i +"].Level"));
-			role.setCreateTime(context.stringValue("ListRolesResponse.Data["+ i +"].CreateTime"));
-			role.setUpdateTime(context.stringValue("ListRolesResponse.Data["+ i +"].UpdateTime"));
+			role.setId(_ctx.longValue("ListRolesResponse.Data["+ i +"].Id"));
+			role.setName(_ctx.stringValue("ListRolesResponse.Data["+ i +"].Name"));
+			role.setDisplayName(_ctx.stringValue("ListRolesResponse.Data["+ i +"].DisplayName"));
+			role.setLevel(_ctx.integerValue("ListRolesResponse.Data["+ i +"].Level"));
+			role.setCreateTime(_ctx.stringValue("ListRolesResponse.Data["+ i +"].CreateTime"));
+			role.setUpdateTime(_ctx.stringValue("ListRolesResponse.Data["+ i +"].UpdateTime"));
 
 			data.add(role);
 		}

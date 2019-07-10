@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CloseServiceResponseUnmarshaller {
 
-	public static CloseServiceResponse unmarshall(CloseServiceResponse closeServiceResponse, UnmarshallerContext context) {
+	public static CloseServiceResponse unmarshall(CloseServiceResponse closeServiceResponse, UnmarshallerContext _ctx) {
 		
-		closeServiceResponse.setRequestId(context.stringValue("CloseServiceResponse.RequestId"));
-		closeServiceResponse.setSuccess(context.booleanValue("CloseServiceResponse.Success"));
-		closeServiceResponse.setCode(context.stringValue("CloseServiceResponse.Code"));
-		closeServiceResponse.setMessage(context.stringValue("CloseServiceResponse.Message"));
+		closeServiceResponse.setRequestId(_ctx.stringValue("CloseServiceResponse.RequestId"));
+		closeServiceResponse.setSuccess(_ctx.booleanValue("CloseServiceResponse.Success"));
+		closeServiceResponse.setCode(_ctx.stringValue("CloseServiceResponse.Code"));
+		closeServiceResponse.setMessage(_ctx.stringValue("CloseServiceResponse.Message"));
 	 
 	 	return closeServiceResponse;
 	}

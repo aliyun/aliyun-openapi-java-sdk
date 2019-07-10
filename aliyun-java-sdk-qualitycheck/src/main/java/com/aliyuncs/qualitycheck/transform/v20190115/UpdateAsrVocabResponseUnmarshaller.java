@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateAsrVocabResponseUnmarshaller {
 
-	public static UpdateAsrVocabResponse unmarshall(UpdateAsrVocabResponse updateAsrVocabResponse, UnmarshallerContext context) {
+	public static UpdateAsrVocabResponse unmarshall(UpdateAsrVocabResponse updateAsrVocabResponse, UnmarshallerContext _ctx) {
 		
-		updateAsrVocabResponse.setRequestId(context.stringValue("UpdateAsrVocabResponse.RequestId"));
-		updateAsrVocabResponse.setSuccess(context.booleanValue("UpdateAsrVocabResponse.Success"));
-		updateAsrVocabResponse.setCode(context.stringValue("UpdateAsrVocabResponse.Code"));
-		updateAsrVocabResponse.setMessage(context.stringValue("UpdateAsrVocabResponse.Message"));
-		updateAsrVocabResponse.setData(context.stringValue("UpdateAsrVocabResponse.Data"));
+		updateAsrVocabResponse.setRequestId(_ctx.stringValue("UpdateAsrVocabResponse.RequestId"));
+		updateAsrVocabResponse.setSuccess(_ctx.booleanValue("UpdateAsrVocabResponse.Success"));
+		updateAsrVocabResponse.setCode(_ctx.stringValue("UpdateAsrVocabResponse.Code"));
+		updateAsrVocabResponse.setMessage(_ctx.stringValue("UpdateAsrVocabResponse.Message"));
+		updateAsrVocabResponse.setData(_ctx.stringValue("UpdateAsrVocabResponse.Data"));
 	 
 	 	return updateAsrVocabResponse;
 	}

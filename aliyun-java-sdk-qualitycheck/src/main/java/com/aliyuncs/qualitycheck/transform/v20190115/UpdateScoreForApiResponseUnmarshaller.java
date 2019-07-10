@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateScoreForApiResponseUnmarshaller {
 
-	public static UpdateScoreForApiResponse unmarshall(UpdateScoreForApiResponse updateScoreForApiResponse, UnmarshallerContext context) {
+	public static UpdateScoreForApiResponse unmarshall(UpdateScoreForApiResponse updateScoreForApiResponse, UnmarshallerContext _ctx) {
 		
-		updateScoreForApiResponse.setRequestId(context.stringValue("UpdateScoreForApiResponse.RequestId"));
-		updateScoreForApiResponse.setSuccess(context.booleanValue("UpdateScoreForApiResponse.Success"));
-		updateScoreForApiResponse.setCode(context.stringValue("UpdateScoreForApiResponse.Code"));
-		updateScoreForApiResponse.setMessage(context.stringValue("UpdateScoreForApiResponse.Message"));
+		updateScoreForApiResponse.setRequestId(_ctx.stringValue("UpdateScoreForApiResponse.RequestId"));
+		updateScoreForApiResponse.setSuccess(_ctx.booleanValue("UpdateScoreForApiResponse.Success"));
+		updateScoreForApiResponse.setCode(_ctx.stringValue("UpdateScoreForApiResponse.Code"));
+		updateScoreForApiResponse.setMessage(_ctx.stringValue("UpdateScoreForApiResponse.Message"));
 	 
 	 	return updateScoreForApiResponse;
 	}

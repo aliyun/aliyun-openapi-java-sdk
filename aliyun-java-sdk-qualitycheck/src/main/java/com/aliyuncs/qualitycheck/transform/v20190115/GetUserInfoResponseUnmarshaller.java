@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetUserInfoResponseUnmarshaller {
 
-	public static GetUserInfoResponse unmarshall(GetUserInfoResponse getUserInfoResponse, UnmarshallerContext context) {
+	public static GetUserInfoResponse unmarshall(GetUserInfoResponse getUserInfoResponse, UnmarshallerContext _ctx) {
 		
-		getUserInfoResponse.setRequestId(context.stringValue("GetUserInfoResponse.RequestId"));
-		getUserInfoResponse.setSuccess(context.booleanValue("GetUserInfoResponse.Success"));
-		getUserInfoResponse.setCode(context.stringValue("GetUserInfoResponse.Code"));
-		getUserInfoResponse.setMessage(context.stringValue("GetUserInfoResponse.Message"));
+		getUserInfoResponse.setRequestId(_ctx.stringValue("GetUserInfoResponse.RequestId"));
+		getUserInfoResponse.setSuccess(_ctx.booleanValue("GetUserInfoResponse.Success"));
+		getUserInfoResponse.setCode(_ctx.stringValue("GetUserInfoResponse.Code"));
+		getUserInfoResponse.setMessage(_ctx.stringValue("GetUserInfoResponse.Message"));
 
 		Data data = new Data();
-		data.setCurrentStatus(context.integerValue("GetUserInfoResponse.Data.CurrentStatus"));
-		data.setAccountType(context.integerValue("GetUserInfoResponse.Data.AccountType"));
-		data.setProductType(context.stringValue("GetUserInfoResponse.Data.ProductType"));
-		data.setShowNewbieTask(context.booleanValue("GetUserInfoResponse.Data.ShowNewbieTask"));
-		data.setPoc(context.booleanValue("GetUserInfoResponse.Data.Poc"));
-		data.setRoleName(context.stringValue("GetUserInfoResponse.Data.RoleName"));
-		data.setLoginUserType(context.integerValue("GetUserInfoResponse.Data.LoginUserType"));
+		data.setCurrentStatus(_ctx.integerValue("GetUserInfoResponse.Data.CurrentStatus"));
+		data.setAccountType(_ctx.integerValue("GetUserInfoResponse.Data.AccountType"));
+		data.setProductType(_ctx.stringValue("GetUserInfoResponse.Data.ProductType"));
+		data.setShowNewbieTask(_ctx.booleanValue("GetUserInfoResponse.Data.ShowNewbieTask"));
+		data.setPoc(_ctx.booleanValue("GetUserInfoResponse.Data.Poc"));
+		data.setRoleName(_ctx.stringValue("GetUserInfoResponse.Data.RoleName"));
+		data.setLoginUserType(_ctx.integerValue("GetUserInfoResponse.Data.LoginUserType"));
 		getUserInfoResponse.setData(data);
 	 
 	 	return getUserInfoResponse;

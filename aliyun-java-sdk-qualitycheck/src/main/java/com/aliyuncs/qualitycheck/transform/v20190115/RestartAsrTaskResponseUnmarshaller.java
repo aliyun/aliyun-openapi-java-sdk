@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RestartAsrTaskResponseUnmarshaller {
 
-	public static RestartAsrTaskResponse unmarshall(RestartAsrTaskResponse restartAsrTaskResponse, UnmarshallerContext context) {
+	public static RestartAsrTaskResponse unmarshall(RestartAsrTaskResponse restartAsrTaskResponse, UnmarshallerContext _ctx) {
 		
-		restartAsrTaskResponse.setRequestId(context.stringValue("RestartAsrTaskResponse.RequestId"));
-		restartAsrTaskResponse.setSuccess(context.booleanValue("RestartAsrTaskResponse.Success"));
-		restartAsrTaskResponse.setCode(context.stringValue("RestartAsrTaskResponse.Code"));
-		restartAsrTaskResponse.setMessage(context.stringValue("RestartAsrTaskResponse.Message"));
+		restartAsrTaskResponse.setRequestId(_ctx.stringValue("RestartAsrTaskResponse.RequestId"));
+		restartAsrTaskResponse.setSuccess(_ctx.booleanValue("RestartAsrTaskResponse.Success"));
+		restartAsrTaskResponse.setCode(_ctx.stringValue("RestartAsrTaskResponse.Code"));
+		restartAsrTaskResponse.setMessage(_ctx.stringValue("RestartAsrTaskResponse.Message"));
 
 		List<RestartResult> data = new ArrayList<RestartResult>();
-		for (int i = 0; i < context.lengthValue("RestartAsrTaskResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("RestartAsrTaskResponse.Data.Length"); i++) {
 			RestartResult restartResult = new RestartResult();
-			restartResult.setSuccess(context.booleanValue("RestartAsrTaskResponse.Data["+ i +"].Success"));
-			restartResult.setData(context.stringValue("RestartAsrTaskResponse.Data["+ i +"].Data"));
-			restartResult.setMessage(context.stringValue("RestartAsrTaskResponse.Data["+ i +"].Message"));
+			restartResult.setSuccess(_ctx.booleanValue("RestartAsrTaskResponse.Data["+ i +"].Success"));
+			restartResult.setData(_ctx.stringValue("RestartAsrTaskResponse.Data["+ i +"].Data"));
+			restartResult.setMessage(_ctx.stringValue("RestartAsrTaskResponse.Data["+ i +"].Message"));
 
 			data.add(restartResult);
 		}

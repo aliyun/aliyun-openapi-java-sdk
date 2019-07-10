@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ValidateRoleSetResponseUnmarshaller {
 
-	public static ValidateRoleSetResponse unmarshall(ValidateRoleSetResponse validateRoleSetResponse, UnmarshallerContext context) {
+	public static ValidateRoleSetResponse unmarshall(ValidateRoleSetResponse validateRoleSetResponse, UnmarshallerContext _ctx) {
 		
-		validateRoleSetResponse.setRequestId(context.stringValue("ValidateRoleSetResponse.RequestId"));
-		validateRoleSetResponse.setSuccess(context.booleanValue("ValidateRoleSetResponse.Success"));
-		validateRoleSetResponse.setCode(context.stringValue("ValidateRoleSetResponse.Code"));
-		validateRoleSetResponse.setMessage(context.stringValue("ValidateRoleSetResponse.Message"));
+		validateRoleSetResponse.setRequestId(_ctx.stringValue("ValidateRoleSetResponse.RequestId"));
+		validateRoleSetResponse.setSuccess(_ctx.booleanValue("ValidateRoleSetResponse.Success"));
+		validateRoleSetResponse.setCode(_ctx.stringValue("ValidateRoleSetResponse.Code"));
+		validateRoleSetResponse.setMessage(_ctx.stringValue("ValidateRoleSetResponse.Message"));
 
 		List<SentenceResult> data = new ArrayList<SentenceResult>();
-		for (int i = 0; i < context.lengthValue("ValidateRoleSetResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ValidateRoleSetResponse.Data.Length"); i++) {
 			SentenceResult sentenceResult = new SentenceResult();
-			sentenceResult.setBeginTime(context.longValue("ValidateRoleSetResponse.Data["+ i +"].BeginTime"));
-			sentenceResult.setChannelId(context.integerValue("ValidateRoleSetResponse.Data["+ i +"].ChannelId"));
-			sentenceResult.setEndTime(context.longValue("ValidateRoleSetResponse.Data["+ i +"].EndTime"));
-			sentenceResult.setText(context.stringValue("ValidateRoleSetResponse.Data["+ i +"].Text"));
-			sentenceResult.setEmotionValue(context.integerValue("ValidateRoleSetResponse.Data["+ i +"].EmotionValue"));
-			sentenceResult.setSilenceDuration(context.integerValue("ValidateRoleSetResponse.Data["+ i +"].SilenceDuration"));
-			sentenceResult.setSpeechRate(context.integerValue("ValidateRoleSetResponse.Data["+ i +"].SpeechRate"));
+			sentenceResult.setBeginTime(_ctx.longValue("ValidateRoleSetResponse.Data["+ i +"].BeginTime"));
+			sentenceResult.setChannelId(_ctx.integerValue("ValidateRoleSetResponse.Data["+ i +"].ChannelId"));
+			sentenceResult.setEndTime(_ctx.longValue("ValidateRoleSetResponse.Data["+ i +"].EndTime"));
+			sentenceResult.setText(_ctx.stringValue("ValidateRoleSetResponse.Data["+ i +"].Text"));
+			sentenceResult.setEmotionValue(_ctx.integerValue("ValidateRoleSetResponse.Data["+ i +"].EmotionValue"));
+			sentenceResult.setSilenceDuration(_ctx.integerValue("ValidateRoleSetResponse.Data["+ i +"].SilenceDuration"));
+			sentenceResult.setSpeechRate(_ctx.integerValue("ValidateRoleSetResponse.Data["+ i +"].SpeechRate"));
 
 			data.add(sentenceResult);
 		}

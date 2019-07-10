@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadAudioDataResponseUnmarshaller {
 
-	public static UploadAudioDataResponse unmarshall(UploadAudioDataResponse uploadAudioDataResponse, UnmarshallerContext context) {
+	public static UploadAudioDataResponse unmarshall(UploadAudioDataResponse uploadAudioDataResponse, UnmarshallerContext _ctx) {
 		
-		uploadAudioDataResponse.setRequestId(context.stringValue("UploadAudioDataResponse.RequestId"));
-		uploadAudioDataResponse.setSuccess(context.booleanValue("UploadAudioDataResponse.Success"));
-		uploadAudioDataResponse.setCode(context.stringValue("UploadAudioDataResponse.Code"));
-		uploadAudioDataResponse.setMessage(context.stringValue("UploadAudioDataResponse.Message"));
-		uploadAudioDataResponse.setData(context.stringValue("UploadAudioDataResponse.Data"));
+		uploadAudioDataResponse.setRequestId(_ctx.stringValue("UploadAudioDataResponse.RequestId"));
+		uploadAudioDataResponse.setSuccess(_ctx.booleanValue("UploadAudioDataResponse.Success"));
+		uploadAudioDataResponse.setCode(_ctx.stringValue("UploadAudioDataResponse.Code"));
+		uploadAudioDataResponse.setMessage(_ctx.stringValue("UploadAudioDataResponse.Message"));
+		uploadAudioDataResponse.setData(_ctx.stringValue("UploadAudioDataResponse.Data"));
 	 
 	 	return uploadAudioDataResponse;
 	}

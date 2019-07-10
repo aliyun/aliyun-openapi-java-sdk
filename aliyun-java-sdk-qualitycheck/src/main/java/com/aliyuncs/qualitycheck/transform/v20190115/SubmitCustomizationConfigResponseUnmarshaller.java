@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitCustomizationConfigResponseUnmarshaller {
 
-	public static SubmitCustomizationConfigResponse unmarshall(SubmitCustomizationConfigResponse submitCustomizationConfigResponse, UnmarshallerContext context) {
+	public static SubmitCustomizationConfigResponse unmarshall(SubmitCustomizationConfigResponse submitCustomizationConfigResponse, UnmarshallerContext _ctx) {
 		
-		submitCustomizationConfigResponse.setRequestId(context.stringValue("SubmitCustomizationConfigResponse.RequestId"));
-		submitCustomizationConfigResponse.setSuccess(context.booleanValue("SubmitCustomizationConfigResponse.Success"));
-		submitCustomizationConfigResponse.setCode(context.stringValue("SubmitCustomizationConfigResponse.Code"));
-		submitCustomizationConfigResponse.setMessage(context.stringValue("SubmitCustomizationConfigResponse.Message"));
+		submitCustomizationConfigResponse.setRequestId(_ctx.stringValue("SubmitCustomizationConfigResponse.RequestId"));
+		submitCustomizationConfigResponse.setSuccess(_ctx.booleanValue("SubmitCustomizationConfigResponse.Success"));
+		submitCustomizationConfigResponse.setCode(_ctx.stringValue("SubmitCustomizationConfigResponse.Code"));
+		submitCustomizationConfigResponse.setMessage(_ctx.stringValue("SubmitCustomizationConfigResponse.Message"));
 
 		Data data = new Data();
-		data.setModelId(context.longValue("SubmitCustomizationConfigResponse.Data.ModelId"));
-		data.setModeCustomizationId(context.stringValue("SubmitCustomizationConfigResponse.Data.ModeCustomizationId"));
-		data.setModelName(context.stringValue("SubmitCustomizationConfigResponse.Data.ModelName"));
-		data.setModelStatus(context.integerValue("SubmitCustomizationConfigResponse.Data.ModelStatus"));
+		data.setModelId(_ctx.longValue("SubmitCustomizationConfigResponse.Data.ModelId"));
+		data.setModeCustomizationId(_ctx.stringValue("SubmitCustomizationConfigResponse.Data.ModeCustomizationId"));
+		data.setModelName(_ctx.stringValue("SubmitCustomizationConfigResponse.Data.ModelName"));
+		data.setModelStatus(_ctx.integerValue("SubmitCustomizationConfigResponse.Data.ModelStatus"));
 		submitCustomizationConfigResponse.setData(data);
 	 
 	 	return submitCustomizationConfigResponse;

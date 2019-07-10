@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadAudioDataWithRulesResponseUnmarshaller {
 
-	public static UploadAudioDataWithRulesResponse unmarshall(UploadAudioDataWithRulesResponse uploadAudioDataWithRulesResponse, UnmarshallerContext context) {
+	public static UploadAudioDataWithRulesResponse unmarshall(UploadAudioDataWithRulesResponse uploadAudioDataWithRulesResponse, UnmarshallerContext _ctx) {
 		
-		uploadAudioDataWithRulesResponse.setRequestId(context.stringValue("UploadAudioDataWithRulesResponse.RequestId"));
-		uploadAudioDataWithRulesResponse.setSuccess(context.booleanValue("UploadAudioDataWithRulesResponse.Success"));
-		uploadAudioDataWithRulesResponse.setCode(context.stringValue("UploadAudioDataWithRulesResponse.Code"));
-		uploadAudioDataWithRulesResponse.setMessage(context.stringValue("UploadAudioDataWithRulesResponse.Message"));
-		uploadAudioDataWithRulesResponse.setData(context.stringValue("UploadAudioDataWithRulesResponse.Data"));
+		uploadAudioDataWithRulesResponse.setRequestId(_ctx.stringValue("UploadAudioDataWithRulesResponse.RequestId"));
+		uploadAudioDataWithRulesResponse.setSuccess(_ctx.booleanValue("UploadAudioDataWithRulesResponse.Success"));
+		uploadAudioDataWithRulesResponse.setCode(_ctx.stringValue("UploadAudioDataWithRulesResponse.Code"));
+		uploadAudioDataWithRulesResponse.setMessage(_ctx.stringValue("UploadAudioDataWithRulesResponse.Message"));
+		uploadAudioDataWithRulesResponse.setData(_ctx.stringValue("UploadAudioDataWithRulesResponse.Data"));
 	 
 	 	return uploadAudioDataWithRulesResponse;
 	}

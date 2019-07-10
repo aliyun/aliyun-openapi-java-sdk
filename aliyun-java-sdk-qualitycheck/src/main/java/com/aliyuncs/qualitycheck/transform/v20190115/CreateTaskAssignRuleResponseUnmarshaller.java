@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateTaskAssignRuleResponseUnmarshaller {
 
-	public static CreateTaskAssignRuleResponse unmarshall(CreateTaskAssignRuleResponse createTaskAssignRuleResponse, UnmarshallerContext context) {
+	public static CreateTaskAssignRuleResponse unmarshall(CreateTaskAssignRuleResponse createTaskAssignRuleResponse, UnmarshallerContext _ctx) {
 		
-		createTaskAssignRuleResponse.setRequestId(context.stringValue("CreateTaskAssignRuleResponse.RequestId"));
-		createTaskAssignRuleResponse.setSuccess(context.booleanValue("CreateTaskAssignRuleResponse.Success"));
-		createTaskAssignRuleResponse.setCode(context.stringValue("CreateTaskAssignRuleResponse.Code"));
-		createTaskAssignRuleResponse.setMessage(context.stringValue("CreateTaskAssignRuleResponse.Message"));
-		createTaskAssignRuleResponse.setData(context.stringValue("CreateTaskAssignRuleResponse.Data"));
+		createTaskAssignRuleResponse.setRequestId(_ctx.stringValue("CreateTaskAssignRuleResponse.RequestId"));
+		createTaskAssignRuleResponse.setSuccess(_ctx.booleanValue("CreateTaskAssignRuleResponse.Success"));
+		createTaskAssignRuleResponse.setCode(_ctx.stringValue("CreateTaskAssignRuleResponse.Code"));
+		createTaskAssignRuleResponse.setMessage(_ctx.stringValue("CreateTaskAssignRuleResponse.Message"));
+		createTaskAssignRuleResponse.setData(_ctx.stringValue("CreateTaskAssignRuleResponse.Data"));
 	 
 	 	return createTaskAssignRuleResponse;
 	}

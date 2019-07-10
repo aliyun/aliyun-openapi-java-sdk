@@ -23,16 +23,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadRuleResponseUnmarshaller {
 
-	public static UploadRuleResponse unmarshall(UploadRuleResponse uploadRuleResponse, UnmarshallerContext context) {
+	public static UploadRuleResponse unmarshall(UploadRuleResponse uploadRuleResponse, UnmarshallerContext _ctx) {
 		
-		uploadRuleResponse.setRequestId(context.stringValue("UploadRuleResponse.RequestId"));
-		uploadRuleResponse.setSuccess(context.booleanValue("UploadRuleResponse.Success"));
-		uploadRuleResponse.setCode(context.stringValue("UploadRuleResponse.Code"));
-		uploadRuleResponse.setMessage(context.stringValue("UploadRuleResponse.Message"));
+		uploadRuleResponse.setRequestId(_ctx.stringValue("UploadRuleResponse.RequestId"));
+		uploadRuleResponse.setSuccess(_ctx.booleanValue("UploadRuleResponse.Success"));
+		uploadRuleResponse.setCode(_ctx.stringValue("UploadRuleResponse.Code"));
+		uploadRuleResponse.setMessage(_ctx.stringValue("UploadRuleResponse.Message"));
 
 		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UploadRuleResponse.Data.Length"); i++) {
-			data.add(context.stringValue("UploadRuleResponse.Data["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UploadRuleResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("UploadRuleResponse.Data["+ i +"]"));
 		}
 		uploadRuleResponse.setData(data);
 	 

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateSkillGroupConfigResponseUnmarshaller {
 
-	public static UpdateSkillGroupConfigResponse unmarshall(UpdateSkillGroupConfigResponse updateSkillGroupConfigResponse, UnmarshallerContext context) {
+	public static UpdateSkillGroupConfigResponse unmarshall(UpdateSkillGroupConfigResponse updateSkillGroupConfigResponse, UnmarshallerContext _ctx) {
 		
-		updateSkillGroupConfigResponse.setRequestId(context.stringValue("UpdateSkillGroupConfigResponse.RequestId"));
-		updateSkillGroupConfigResponse.setSuccess(context.booleanValue("UpdateSkillGroupConfigResponse.Success"));
-		updateSkillGroupConfigResponse.setCode(context.stringValue("UpdateSkillGroupConfigResponse.Code"));
-		updateSkillGroupConfigResponse.setMessage(context.stringValue("UpdateSkillGroupConfigResponse.Message"));
+		updateSkillGroupConfigResponse.setRequestId(_ctx.stringValue("UpdateSkillGroupConfigResponse.RequestId"));
+		updateSkillGroupConfigResponse.setSuccess(_ctx.booleanValue("UpdateSkillGroupConfigResponse.Success"));
+		updateSkillGroupConfigResponse.setCode(_ctx.stringValue("UpdateSkillGroupConfigResponse.Code"));
+		updateSkillGroupConfigResponse.setMessage(_ctx.stringValue("UpdateSkillGroupConfigResponse.Message"));
 	 
 	 	return updateSkillGroupConfigResponse;
 	}

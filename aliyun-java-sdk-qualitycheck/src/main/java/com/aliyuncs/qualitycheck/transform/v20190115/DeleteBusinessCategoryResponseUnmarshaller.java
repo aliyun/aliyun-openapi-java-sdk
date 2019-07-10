@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteBusinessCategoryResponseUnmarshaller {
 
-	public static DeleteBusinessCategoryResponse unmarshall(DeleteBusinessCategoryResponse deleteBusinessCategoryResponse, UnmarshallerContext context) {
+	public static DeleteBusinessCategoryResponse unmarshall(DeleteBusinessCategoryResponse deleteBusinessCategoryResponse, UnmarshallerContext _ctx) {
 		
-		deleteBusinessCategoryResponse.setRequestId(context.stringValue("DeleteBusinessCategoryResponse.RequestId"));
-		deleteBusinessCategoryResponse.setSuccess(context.booleanValue("DeleteBusinessCategoryResponse.Success"));
-		deleteBusinessCategoryResponse.setCode(context.stringValue("DeleteBusinessCategoryResponse.Code"));
-		deleteBusinessCategoryResponse.setMessage(context.stringValue("DeleteBusinessCategoryResponse.Message"));
-		deleteBusinessCategoryResponse.setData(context.stringValue("DeleteBusinessCategoryResponse.Data"));
+		deleteBusinessCategoryResponse.setRequestId(_ctx.stringValue("DeleteBusinessCategoryResponse.RequestId"));
+		deleteBusinessCategoryResponse.setSuccess(_ctx.booleanValue("DeleteBusinessCategoryResponse.Success"));
+		deleteBusinessCategoryResponse.setCode(_ctx.stringValue("DeleteBusinessCategoryResponse.Code"));
+		deleteBusinessCategoryResponse.setMessage(_ctx.stringValue("DeleteBusinessCategoryResponse.Message"));
+		deleteBusinessCategoryResponse.setData(_ctx.stringValue("DeleteBusinessCategoryResponse.Data"));
 	 
 	 	return deleteBusinessCategoryResponse;
 	}

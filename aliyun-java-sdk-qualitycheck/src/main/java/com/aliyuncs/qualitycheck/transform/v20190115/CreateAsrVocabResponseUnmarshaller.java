@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateAsrVocabResponseUnmarshaller {
 
-	public static CreateAsrVocabResponse unmarshall(CreateAsrVocabResponse createAsrVocabResponse, UnmarshallerContext context) {
+	public static CreateAsrVocabResponse unmarshall(CreateAsrVocabResponse createAsrVocabResponse, UnmarshallerContext _ctx) {
 		
-		createAsrVocabResponse.setRequestId(context.stringValue("CreateAsrVocabResponse.RequestId"));
-		createAsrVocabResponse.setSuccess(context.booleanValue("CreateAsrVocabResponse.Success"));
-		createAsrVocabResponse.setCode(context.stringValue("CreateAsrVocabResponse.Code"));
-		createAsrVocabResponse.setMessage(context.stringValue("CreateAsrVocabResponse.Message"));
-		createAsrVocabResponse.setData(context.stringValue("CreateAsrVocabResponse.Data"));
+		createAsrVocabResponse.setRequestId(_ctx.stringValue("CreateAsrVocabResponse.RequestId"));
+		createAsrVocabResponse.setSuccess(_ctx.booleanValue("CreateAsrVocabResponse.Success"));
+		createAsrVocabResponse.setCode(_ctx.stringValue("CreateAsrVocabResponse.Code"));
+		createAsrVocabResponse.setMessage(_ctx.stringValue("CreateAsrVocabResponse.Message"));
+		createAsrVocabResponse.setData(_ctx.stringValue("CreateAsrVocabResponse.Data"));
 	 
 	 	return createAsrVocabResponse;
 	}

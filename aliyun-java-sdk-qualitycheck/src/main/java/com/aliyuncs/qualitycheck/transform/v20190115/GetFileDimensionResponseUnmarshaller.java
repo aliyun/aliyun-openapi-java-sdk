@@ -24,40 +24,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetFileDimensionResponseUnmarshaller {
 
-	public static GetFileDimensionResponse unmarshall(GetFileDimensionResponse getFileDimensionResponse, UnmarshallerContext context) {
+	public static GetFileDimensionResponse unmarshall(GetFileDimensionResponse getFileDimensionResponse, UnmarshallerContext _ctx) {
 		
-		getFileDimensionResponse.setRequestId(context.stringValue("GetFileDimensionResponse.RequestId"));
-		getFileDimensionResponse.setSuccess(context.booleanValue("GetFileDimensionResponse.Success"));
-		getFileDimensionResponse.setCode(context.stringValue("GetFileDimensionResponse.Code"));
-		getFileDimensionResponse.setMessage(context.stringValue("GetFileDimensionResponse.Message"));
-		getFileDimensionResponse.setPageSize(context.integerValue("GetFileDimensionResponse.PageSize"));
-		getFileDimensionResponse.setDataSize(context.integerValue("GetFileDimensionResponse.DataSize"));
-		getFileDimensionResponse.setTotalCount(context.integerValue("GetFileDimensionResponse.TotalCount"));
+		getFileDimensionResponse.setRequestId(_ctx.stringValue("GetFileDimensionResponse.RequestId"));
+		getFileDimensionResponse.setSuccess(_ctx.booleanValue("GetFileDimensionResponse.Success"));
+		getFileDimensionResponse.setCode(_ctx.stringValue("GetFileDimensionResponse.Code"));
+		getFileDimensionResponse.setMessage(_ctx.stringValue("GetFileDimensionResponse.Message"));
+		getFileDimensionResponse.setPageSize(_ctx.integerValue("GetFileDimensionResponse.PageSize"));
+		getFileDimensionResponse.setDataSize(_ctx.integerValue("GetFileDimensionResponse.DataSize"));
+		getFileDimensionResponse.setTotalCount(_ctx.integerValue("GetFileDimensionResponse.TotalCount"));
 
 		List<TaskResultReviewInfo> data = new ArrayList<TaskResultReviewInfo>();
-		for (int i = 0; i < context.lengthValue("GetFileDimensionResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetFileDimensionResponse.Data.Length"); i++) {
 			TaskResultReviewInfo taskResultReviewInfo = new TaskResultReviewInfo();
-			taskResultReviewInfo.setBucketName(context.stringValue("GetFileDimensionResponse.Data["+ i +"].BucketName"));
-			taskResultReviewInfo.setFileName(context.stringValue("GetFileDimensionResponse.Data["+ i +"].FileName"));
-			taskResultReviewInfo.setHitNumber(context.integerValue("GetFileDimensionResponse.Data["+ i +"].HitNumber"));
-			taskResultReviewInfo.setNextVid(context.stringValue("GetFileDimensionResponse.Data["+ i +"].NextVid"));
-			taskResultReviewInfo.setIsHitRule(context.booleanValue("GetFileDimensionResponse.Data["+ i +"].IsHitRule"));
-			taskResultReviewInfo.setVid(context.stringValue("GetFileDimensionResponse.Data["+ i +"].Vid"));
-			taskResultReviewInfo.setHitRule(context.booleanValue("GetFileDimensionResponse.Data["+ i +"].HitRule"));
-			taskResultReviewInfo.setFileMergeName(context.stringValue("GetFileDimensionResponse.Data["+ i +"].FileMergeName"));
-			taskResultReviewInfo.setStatus(context.integerValue("GetFileDimensionResponse.Data["+ i +"].Status"));
-			taskResultReviewInfo.setRealViolationNumber(context.integerValue("GetFileDimensionResponse.Data["+ i +"].RealViolationNumber"));
-			taskResultReviewInfo.setHandTaskFile(context.booleanValue("GetFileDimensionResponse.Data["+ i +"].HandTaskFile"));
-			taskResultReviewInfo.setReviewAccuracyRate(context.floatValue("GetFileDimensionResponse.Data["+ i +"].ReviewAccuracyRate"));
-			taskResultReviewInfo.setTotalScore(context.integerValue("GetFileDimensionResponse.Data["+ i +"].TotalScore"));
-			taskResultReviewInfo.setPreVid(context.stringValue("GetFileDimensionResponse.Data["+ i +"].PreVid"));
-			taskResultReviewInfo.setTaskId(context.stringValue("GetFileDimensionResponse.Data["+ i +"].TaskId"));
-			taskResultReviewInfo.setCheckNumber(context.integerValue("GetFileDimensionResponse.Data["+ i +"].CheckNumber"));
-			taskResultReviewInfo.setDataType(context.integerValue("GetFileDimensionResponse.Data["+ i +"].DataType"));
+			taskResultReviewInfo.setBucketName(_ctx.stringValue("GetFileDimensionResponse.Data["+ i +"].BucketName"));
+			taskResultReviewInfo.setFileName(_ctx.stringValue("GetFileDimensionResponse.Data["+ i +"].FileName"));
+			taskResultReviewInfo.setHitNumber(_ctx.integerValue("GetFileDimensionResponse.Data["+ i +"].HitNumber"));
+			taskResultReviewInfo.setNextVid(_ctx.stringValue("GetFileDimensionResponse.Data["+ i +"].NextVid"));
+			taskResultReviewInfo.setIsHitRule(_ctx.booleanValue("GetFileDimensionResponse.Data["+ i +"].IsHitRule"));
+			taskResultReviewInfo.setVid(_ctx.stringValue("GetFileDimensionResponse.Data["+ i +"].Vid"));
+			taskResultReviewInfo.setHitRule(_ctx.booleanValue("GetFileDimensionResponse.Data["+ i +"].HitRule"));
+			taskResultReviewInfo.setFileMergeName(_ctx.stringValue("GetFileDimensionResponse.Data["+ i +"].FileMergeName"));
+			taskResultReviewInfo.setStatus(_ctx.integerValue("GetFileDimensionResponse.Data["+ i +"].Status"));
+			taskResultReviewInfo.setRealViolationNumber(_ctx.integerValue("GetFileDimensionResponse.Data["+ i +"].RealViolationNumber"));
+			taskResultReviewInfo.setHandTaskFile(_ctx.booleanValue("GetFileDimensionResponse.Data["+ i +"].HandTaskFile"));
+			taskResultReviewInfo.setReviewAccuracyRate(_ctx.floatValue("GetFileDimensionResponse.Data["+ i +"].ReviewAccuracyRate"));
+			taskResultReviewInfo.setTotalScore(_ctx.integerValue("GetFileDimensionResponse.Data["+ i +"].TotalScore"));
+			taskResultReviewInfo.setPreVid(_ctx.stringValue("GetFileDimensionResponse.Data["+ i +"].PreVid"));
+			taskResultReviewInfo.setTaskId(_ctx.stringValue("GetFileDimensionResponse.Data["+ i +"].TaskId"));
+			taskResultReviewInfo.setCheckNumber(_ctx.integerValue("GetFileDimensionResponse.Data["+ i +"].CheckNumber"));
+			taskResultReviewInfo.setDataType(_ctx.integerValue("GetFileDimensionResponse.Data["+ i +"].DataType"));
 
 			List<String> hitRuleSet = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("GetFileDimensionResponse.Data["+ i +"].HitRuleSet.Length"); j++) {
-				hitRuleSet.add(context.stringValue("GetFileDimensionResponse.Data["+ i +"].HitRuleSet["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("GetFileDimensionResponse.Data["+ i +"].HitRuleSet.Length"); j++) {
+				hitRuleSet.add(_ctx.stringValue("GetFileDimensionResponse.Data["+ i +"].HitRuleSet["+ j +"]"));
 			}
 			taskResultReviewInfo.setHitRuleSet(hitRuleSet);
 

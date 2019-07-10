@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveConfigDataSetResponseUnmarshaller {
 
-	public static SaveConfigDataSetResponse unmarshall(SaveConfigDataSetResponse saveConfigDataSetResponse, UnmarshallerContext context) {
+	public static SaveConfigDataSetResponse unmarshall(SaveConfigDataSetResponse saveConfigDataSetResponse, UnmarshallerContext _ctx) {
 		
-		saveConfigDataSetResponse.setRequestId(context.stringValue("SaveConfigDataSetResponse.RequestId"));
-		saveConfigDataSetResponse.setSuccess(context.booleanValue("SaveConfigDataSetResponse.Success"));
-		saveConfigDataSetResponse.setCode(context.stringValue("SaveConfigDataSetResponse.Code"));
-		saveConfigDataSetResponse.setMessage(context.stringValue("SaveConfigDataSetResponse.Message"));
+		saveConfigDataSetResponse.setRequestId(_ctx.stringValue("SaveConfigDataSetResponse.RequestId"));
+		saveConfigDataSetResponse.setSuccess(_ctx.booleanValue("SaveConfigDataSetResponse.Success"));
+		saveConfigDataSetResponse.setCode(_ctx.stringValue("SaveConfigDataSetResponse.Code"));
+		saveConfigDataSetResponse.setMessage(_ctx.stringValue("SaveConfigDataSetResponse.Message"));
 	 
 	 	return saveConfigDataSetResponse;
 	}

@@ -28,66 +28,66 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetNextResultToVerifyResponseUnmarshaller {
 
-	public static GetNextResultToVerifyResponse unmarshall(GetNextResultToVerifyResponse getNextResultToVerifyResponse, UnmarshallerContext context) {
+	public static GetNextResultToVerifyResponse unmarshall(GetNextResultToVerifyResponse getNextResultToVerifyResponse, UnmarshallerContext _ctx) {
 		
-		getNextResultToVerifyResponse.setRequestId(context.stringValue("GetNextResultToVerifyResponse.RequestId"));
-		getNextResultToVerifyResponse.setSuccess(context.booleanValue("GetNextResultToVerifyResponse.Success"));
-		getNextResultToVerifyResponse.setCode(context.stringValue("GetNextResultToVerifyResponse.Code"));
-		getNextResultToVerifyResponse.setMessage(context.stringValue("GetNextResultToVerifyResponse.Message"));
+		getNextResultToVerifyResponse.setRequestId(_ctx.stringValue("GetNextResultToVerifyResponse.RequestId"));
+		getNextResultToVerifyResponse.setSuccess(_ctx.booleanValue("GetNextResultToVerifyResponse.Success"));
+		getNextResultToVerifyResponse.setCode(_ctx.stringValue("GetNextResultToVerifyResponse.Code"));
+		getNextResultToVerifyResponse.setMessage(_ctx.stringValue("GetNextResultToVerifyResponse.Message"));
 
 		Data data = new Data();
-		data.setStatus(context.integerValue("GetNextResultToVerifyResponse.Data.Status"));
-		data.setAudioURL(context.stringValue("GetNextResultToVerifyResponse.Data.AudioURL"));
-		data.setAudioScheme(context.stringValue("GetNextResultToVerifyResponse.Data.AudioScheme"));
-		data.setFileName(context.stringValue("GetNextResultToVerifyResponse.Data.FileName"));
-		data.setFileId(context.stringValue("GetNextResultToVerifyResponse.Data.FileId"));
-		data.setVerified(context.booleanValue("GetNextResultToVerifyResponse.Data.Verified"));
-		data.setTotalCount(context.integerValue("GetNextResultToVerifyResponse.Data.TotalCount"));
-		data.setVerifiedCount(context.integerValue("GetNextResultToVerifyResponse.Data.VerifiedCount"));
-		data.setIncorrectWords(context.integerValue("GetNextResultToVerifyResponse.Data.IncorrectWords"));
-		data.setPrecision(context.floatValue("GetNextResultToVerifyResponse.Data.Precision"));
-		data.setUpdateTime(context.stringValue("GetNextResultToVerifyResponse.Data.UpdateTime"));
-		data.setDuration(context.integerValue("GetNextResultToVerifyResponse.Data.Duration"));
-		data.setIndex(context.integerValue("GetNextResultToVerifyResponse.Data.Index"));
+		data.setStatus(_ctx.integerValue("GetNextResultToVerifyResponse.Data.Status"));
+		data.setAudioURL(_ctx.stringValue("GetNextResultToVerifyResponse.Data.AudioURL"));
+		data.setAudioScheme(_ctx.stringValue("GetNextResultToVerifyResponse.Data.AudioScheme"));
+		data.setFileName(_ctx.stringValue("GetNextResultToVerifyResponse.Data.FileName"));
+		data.setFileId(_ctx.stringValue("GetNextResultToVerifyResponse.Data.FileId"));
+		data.setVerified(_ctx.booleanValue("GetNextResultToVerifyResponse.Data.Verified"));
+		data.setTotalCount(_ctx.integerValue("GetNextResultToVerifyResponse.Data.TotalCount"));
+		data.setVerifiedCount(_ctx.integerValue("GetNextResultToVerifyResponse.Data.VerifiedCount"));
+		data.setIncorrectWords(_ctx.integerValue("GetNextResultToVerifyResponse.Data.IncorrectWords"));
+		data.setPrecision(_ctx.floatValue("GetNextResultToVerifyResponse.Data.Precision"));
+		data.setUpdateTime(_ctx.stringValue("GetNextResultToVerifyResponse.Data.UpdateTime"));
+		data.setDuration(_ctx.integerValue("GetNextResultToVerifyResponse.Data.Duration"));
+		data.setIndex(_ctx.integerValue("GetNextResultToVerifyResponse.Data.Index"));
 
 		List<Dialogue> dialogues = new ArrayList<Dialogue>();
-		for (int i = 0; i < context.lengthValue("GetNextResultToVerifyResponse.Data.Dialogues.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetNextResultToVerifyResponse.Data.Dialogues.Length"); i++) {
 			Dialogue dialogue = new Dialogue();
-			dialogue.setBegin(context.longValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Begin"));
-			dialogue.setBeginTime(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].BeginTime"));
-			dialogue.setEmotionValue(context.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].EmotionValue"));
-			dialogue.setEnd(context.longValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].End"));
-			dialogue.setHourMinSec(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].HourMinSec"));
-			dialogue.setIdentity(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Identity"));
-			dialogue.setRole(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Role"));
-			dialogue.setSourceRole(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].SourceRole"));
-			dialogue.setSilenceDuration(context.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].SilenceDuration"));
-			dialogue.setSpeechRate(context.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].SpeechRate"));
-			dialogue.setWords(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Words"));
-			dialogue.setSourceWords(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].SourceWords"));
-			dialogue.setIncorrectWords(context.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].IncorrectWords"));
+			dialogue.setBegin(_ctx.longValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Begin"));
+			dialogue.setBeginTime(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].BeginTime"));
+			dialogue.setEmotionValue(_ctx.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].EmotionValue"));
+			dialogue.setEnd(_ctx.longValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].End"));
+			dialogue.setHourMinSec(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].HourMinSec"));
+			dialogue.setIdentity(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Identity"));
+			dialogue.setRole(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Role"));
+			dialogue.setSourceRole(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].SourceRole"));
+			dialogue.setSilenceDuration(_ctx.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].SilenceDuration"));
+			dialogue.setSpeechRate(_ctx.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].SpeechRate"));
+			dialogue.setWords(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Words"));
+			dialogue.setSourceWords(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].SourceWords"));
+			dialogue.setIncorrectWords(_ctx.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].IncorrectWords"));
 
 			List<Delta> deltas = new ArrayList<Delta>();
-			for (int j = 0; j < context.lengthValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas.Length"); j++) {
 				Delta delta = new Delta();
-				delta.setType(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Type"));
+				delta.setType(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Type"));
 
 				Source source = new Source();
-				source.setPosition(context.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Source.Position"));
+				source.setPosition(_ctx.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Source.Position"));
 
 				List<String> line = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Source.Line.Length"); k++) {
-					line.add(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Source.Line["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Source.Line.Length"); k++) {
+					line.add(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Source.Line["+ k +"]"));
 				}
 				source.setLine(line);
 				delta.setSource(source);
 
 				Target target = new Target();
-				target.setPosition(context.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Target.Position"));
+				target.setPosition(_ctx.integerValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Target.Position"));
 
 				List<String> line1 = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Target.Line.Length"); k++) {
-					line1.add(context.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Target.Line["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Target.Line.Length"); k++) {
+					line1.add(_ctx.stringValue("GetNextResultToVerifyResponse.Data.Dialogues["+ i +"].Deltas["+ j +"].Target.Line["+ k +"]"));
 				}
 				target.setLine1(line1);
 				delta.setTarget(target);

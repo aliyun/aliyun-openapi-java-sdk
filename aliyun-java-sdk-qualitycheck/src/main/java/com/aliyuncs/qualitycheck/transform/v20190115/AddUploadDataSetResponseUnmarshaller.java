@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddUploadDataSetResponseUnmarshaller {
 
-	public static AddUploadDataSetResponse unmarshall(AddUploadDataSetResponse addUploadDataSetResponse, UnmarshallerContext context) {
+	public static AddUploadDataSetResponse unmarshall(AddUploadDataSetResponse addUploadDataSetResponse, UnmarshallerContext _ctx) {
 		
-		addUploadDataSetResponse.setRequestId(context.stringValue("AddUploadDataSetResponse.RequestId"));
-		addUploadDataSetResponse.setSuccess(context.booleanValue("AddUploadDataSetResponse.Success"));
-		addUploadDataSetResponse.setCode(context.stringValue("AddUploadDataSetResponse.Code"));
-		addUploadDataSetResponse.setMessage(context.stringValue("AddUploadDataSetResponse.Message"));
-		addUploadDataSetResponse.setData(context.longValue("AddUploadDataSetResponse.Data"));
+		addUploadDataSetResponse.setRequestId(_ctx.stringValue("AddUploadDataSetResponse.RequestId"));
+		addUploadDataSetResponse.setSuccess(_ctx.booleanValue("AddUploadDataSetResponse.Success"));
+		addUploadDataSetResponse.setCode(_ctx.stringValue("AddUploadDataSetResponse.Code"));
+		addUploadDataSetResponse.setMessage(_ctx.stringValue("AddUploadDataSetResponse.Message"));
+		addUploadDataSetResponse.setData(_ctx.longValue("AddUploadDataSetResponse.Data"));
 	 
 	 	return addUploadDataSetResponse;
 	}

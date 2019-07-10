@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetOssHeaderResponseUnmarshaller {
 
-	public static GetOssHeaderResponse unmarshall(GetOssHeaderResponse getOssHeaderResponse, UnmarshallerContext context) {
+	public static GetOssHeaderResponse unmarshall(GetOssHeaderResponse getOssHeaderResponse, UnmarshallerContext _ctx) {
 		
-		getOssHeaderResponse.setRequestId(context.stringValue("GetOssHeaderResponse.RequestId"));
-		getOssHeaderResponse.setSuccess(context.booleanValue("GetOssHeaderResponse.Success"));
-		getOssHeaderResponse.setCode(context.stringValue("GetOssHeaderResponse.Code"));
-		getOssHeaderResponse.setMessage(context.stringValue("GetOssHeaderResponse.Message"));
+		getOssHeaderResponse.setRequestId(_ctx.stringValue("GetOssHeaderResponse.RequestId"));
+		getOssHeaderResponse.setSuccess(_ctx.booleanValue("GetOssHeaderResponse.Success"));
+		getOssHeaderResponse.setCode(_ctx.stringValue("GetOssHeaderResponse.Code"));
+		getOssHeaderResponse.setMessage(_ctx.stringValue("GetOssHeaderResponse.Message"));
 
 		Data data = new Data();
-		data.setOSSAccessKeyId(context.stringValue("GetOssHeaderResponse.Data.OSSAccessKeyId"));
-		data.setPolicy(context.stringValue("GetOssHeaderResponse.Data.Policy"));
-		data.setSignature(context.stringValue("GetOssHeaderResponse.Data.Signature"));
-		data.setKey(context.stringValue("GetOssHeaderResponse.Data.Key"));
-		data.setSubDir(context.stringValue("GetOssHeaderResponse.Data.SubDir"));
-		data.setPostUrl(context.stringValue("GetOssHeaderResponse.Data.PostUrl"));
+		data.setOSSAccessKeyId(_ctx.stringValue("GetOssHeaderResponse.Data.OSSAccessKeyId"));
+		data.setPolicy(_ctx.stringValue("GetOssHeaderResponse.Data.Policy"));
+		data.setSignature(_ctx.stringValue("GetOssHeaderResponse.Data.Signature"));
+		data.setKey(_ctx.stringValue("GetOssHeaderResponse.Data.Key"));
+		data.setSubDir(_ctx.stringValue("GetOssHeaderResponse.Data.SubDir"));
+		data.setPostUrl(_ctx.stringValue("GetOssHeaderResponse.Data.PostUrl"));
 		getOssHeaderResponse.setData(data);
 	 
 	 	return getOssHeaderResponse;

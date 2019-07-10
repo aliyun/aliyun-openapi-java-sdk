@@ -24,40 +24,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetResultReviewListResponseUnmarshaller {
 
-	public static GetResultReviewListResponse unmarshall(GetResultReviewListResponse getResultReviewListResponse, UnmarshallerContext context) {
+	public static GetResultReviewListResponse unmarshall(GetResultReviewListResponse getResultReviewListResponse, UnmarshallerContext _ctx) {
 		
-		getResultReviewListResponse.setRequestId(context.stringValue("GetResultReviewListResponse.RequestId"));
-		getResultReviewListResponse.setSuccess(context.booleanValue("GetResultReviewListResponse.Success"));
-		getResultReviewListResponse.setCode(context.stringValue("GetResultReviewListResponse.Code"));
-		getResultReviewListResponse.setMessage(context.stringValue("GetResultReviewListResponse.Message"));
-		getResultReviewListResponse.setPageSize(context.integerValue("GetResultReviewListResponse.PageSize"));
-		getResultReviewListResponse.setDataSize(context.integerValue("GetResultReviewListResponse.DataSize"));
-		getResultReviewListResponse.setTotalCount(context.integerValue("GetResultReviewListResponse.TotalCount"));
+		getResultReviewListResponse.setRequestId(_ctx.stringValue("GetResultReviewListResponse.RequestId"));
+		getResultReviewListResponse.setSuccess(_ctx.booleanValue("GetResultReviewListResponse.Success"));
+		getResultReviewListResponse.setCode(_ctx.stringValue("GetResultReviewListResponse.Code"));
+		getResultReviewListResponse.setMessage(_ctx.stringValue("GetResultReviewListResponse.Message"));
+		getResultReviewListResponse.setPageSize(_ctx.integerValue("GetResultReviewListResponse.PageSize"));
+		getResultReviewListResponse.setDataSize(_ctx.integerValue("GetResultReviewListResponse.DataSize"));
+		getResultReviewListResponse.setTotalCount(_ctx.integerValue("GetResultReviewListResponse.TotalCount"));
 
 		List<TaskResultReviewInfo> data = new ArrayList<TaskResultReviewInfo>();
-		for (int i = 0; i < context.lengthValue("GetResultReviewListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetResultReviewListResponse.Data.Length"); i++) {
 			TaskResultReviewInfo taskResultReviewInfo = new TaskResultReviewInfo();
-			taskResultReviewInfo.setBucketName(context.stringValue("GetResultReviewListResponse.Data["+ i +"].BucketName"));
-			taskResultReviewInfo.setFileName(context.stringValue("GetResultReviewListResponse.Data["+ i +"].FileName"));
-			taskResultReviewInfo.setHitNumber(context.integerValue("GetResultReviewListResponse.Data["+ i +"].HitNumber"));
-			taskResultReviewInfo.setNextVid(context.stringValue("GetResultReviewListResponse.Data["+ i +"].NextVid"));
-			taskResultReviewInfo.setIsHitRule(context.booleanValue("GetResultReviewListResponse.Data["+ i +"].IsHitRule"));
-			taskResultReviewInfo.setVid(context.stringValue("GetResultReviewListResponse.Data["+ i +"].Vid"));
-			taskResultReviewInfo.setHitRule(context.booleanValue("GetResultReviewListResponse.Data["+ i +"].HitRule"));
-			taskResultReviewInfo.setFileMergeName(context.stringValue("GetResultReviewListResponse.Data["+ i +"].FileMergeName"));
-			taskResultReviewInfo.setStatus(context.integerValue("GetResultReviewListResponse.Data["+ i +"].Status"));
-			taskResultReviewInfo.setRealViolationNumber(context.integerValue("GetResultReviewListResponse.Data["+ i +"].RealViolationNumber"));
-			taskResultReviewInfo.setHandTaskFile(context.booleanValue("GetResultReviewListResponse.Data["+ i +"].HandTaskFile"));
-			taskResultReviewInfo.setReviewAccuracyRate(context.floatValue("GetResultReviewListResponse.Data["+ i +"].ReviewAccuracyRate"));
-			taskResultReviewInfo.setTotalScore(context.integerValue("GetResultReviewListResponse.Data["+ i +"].TotalScore"));
-			taskResultReviewInfo.setPreVid(context.stringValue("GetResultReviewListResponse.Data["+ i +"].PreVid"));
-			taskResultReviewInfo.setTaskId(context.stringValue("GetResultReviewListResponse.Data["+ i +"].TaskId"));
-			taskResultReviewInfo.setCheckNumber(context.integerValue("GetResultReviewListResponse.Data["+ i +"].CheckNumber"));
-			taskResultReviewInfo.setDataType(context.integerValue("GetResultReviewListResponse.Data["+ i +"].DataType"));
+			taskResultReviewInfo.setBucketName(_ctx.stringValue("GetResultReviewListResponse.Data["+ i +"].BucketName"));
+			taskResultReviewInfo.setFileName(_ctx.stringValue("GetResultReviewListResponse.Data["+ i +"].FileName"));
+			taskResultReviewInfo.setHitNumber(_ctx.integerValue("GetResultReviewListResponse.Data["+ i +"].HitNumber"));
+			taskResultReviewInfo.setNextVid(_ctx.stringValue("GetResultReviewListResponse.Data["+ i +"].NextVid"));
+			taskResultReviewInfo.setIsHitRule(_ctx.booleanValue("GetResultReviewListResponse.Data["+ i +"].IsHitRule"));
+			taskResultReviewInfo.setVid(_ctx.stringValue("GetResultReviewListResponse.Data["+ i +"].Vid"));
+			taskResultReviewInfo.setHitRule(_ctx.booleanValue("GetResultReviewListResponse.Data["+ i +"].HitRule"));
+			taskResultReviewInfo.setFileMergeName(_ctx.stringValue("GetResultReviewListResponse.Data["+ i +"].FileMergeName"));
+			taskResultReviewInfo.setStatus(_ctx.integerValue("GetResultReviewListResponse.Data["+ i +"].Status"));
+			taskResultReviewInfo.setRealViolationNumber(_ctx.integerValue("GetResultReviewListResponse.Data["+ i +"].RealViolationNumber"));
+			taskResultReviewInfo.setHandTaskFile(_ctx.booleanValue("GetResultReviewListResponse.Data["+ i +"].HandTaskFile"));
+			taskResultReviewInfo.setReviewAccuracyRate(_ctx.floatValue("GetResultReviewListResponse.Data["+ i +"].ReviewAccuracyRate"));
+			taskResultReviewInfo.setTotalScore(_ctx.integerValue("GetResultReviewListResponse.Data["+ i +"].TotalScore"));
+			taskResultReviewInfo.setPreVid(_ctx.stringValue("GetResultReviewListResponse.Data["+ i +"].PreVid"));
+			taskResultReviewInfo.setTaskId(_ctx.stringValue("GetResultReviewListResponse.Data["+ i +"].TaskId"));
+			taskResultReviewInfo.setCheckNumber(_ctx.integerValue("GetResultReviewListResponse.Data["+ i +"].CheckNumber"));
+			taskResultReviewInfo.setDataType(_ctx.integerValue("GetResultReviewListResponse.Data["+ i +"].DataType"));
 
 			List<String> hitRuleSet = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("GetResultReviewListResponse.Data["+ i +"].HitRuleSet.Length"); j++) {
-				hitRuleSet.add(context.stringValue("GetResultReviewListResponse.Data["+ i +"].HitRuleSet["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("GetResultReviewListResponse.Data["+ i +"].HitRuleSet.Length"); j++) {
+				hitRuleSet.add(_ctx.stringValue("GetResultReviewListResponse.Data["+ i +"].HitRuleSet["+ j +"]"));
 			}
 			taskResultReviewInfo.setHitRuleSet(hitRuleSet);
 

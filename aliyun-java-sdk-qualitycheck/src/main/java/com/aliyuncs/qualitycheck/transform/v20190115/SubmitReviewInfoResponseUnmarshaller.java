@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitReviewInfoResponseUnmarshaller {
 
-	public static SubmitReviewInfoResponse unmarshall(SubmitReviewInfoResponse submitReviewInfoResponse, UnmarshallerContext context) {
+	public static SubmitReviewInfoResponse unmarshall(SubmitReviewInfoResponse submitReviewInfoResponse, UnmarshallerContext _ctx) {
 		
-		submitReviewInfoResponse.setRequestId(context.stringValue("SubmitReviewInfoResponse.RequestId"));
-		submitReviewInfoResponse.setSuccess(context.booleanValue("SubmitReviewInfoResponse.Success"));
-		submitReviewInfoResponse.setCode(context.stringValue("SubmitReviewInfoResponse.Code"));
-		submitReviewInfoResponse.setMessage(context.stringValue("SubmitReviewInfoResponse.Message"));
-		submitReviewInfoResponse.setData(context.stringValue("SubmitReviewInfoResponse.Data"));
+		submitReviewInfoResponse.setRequestId(_ctx.stringValue("SubmitReviewInfoResponse.RequestId"));
+		submitReviewInfoResponse.setSuccess(_ctx.booleanValue("SubmitReviewInfoResponse.Success"));
+		submitReviewInfoResponse.setCode(_ctx.stringValue("SubmitReviewInfoResponse.Code"));
+		submitReviewInfoResponse.setMessage(_ctx.stringValue("SubmitReviewInfoResponse.Message"));
+		submitReviewInfoResponse.setData(_ctx.stringValue("SubmitReviewInfoResponse.Data"));
 	 
 	 	return submitReviewInfoResponse;
 	}

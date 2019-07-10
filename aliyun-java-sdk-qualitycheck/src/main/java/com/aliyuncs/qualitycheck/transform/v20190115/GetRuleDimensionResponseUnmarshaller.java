@@ -24,41 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRuleDimensionResponseUnmarshaller {
 
-	public static GetRuleDimensionResponse unmarshall(GetRuleDimensionResponse getRuleDimensionResponse, UnmarshallerContext context) {
+	public static GetRuleDimensionResponse unmarshall(GetRuleDimensionResponse getRuleDimensionResponse, UnmarshallerContext _ctx) {
 		
-		getRuleDimensionResponse.setRequestId(context.stringValue("GetRuleDimensionResponse.RequestId"));
-		getRuleDimensionResponse.setSuccess(context.booleanValue("GetRuleDimensionResponse.Success"));
-		getRuleDimensionResponse.setCode(context.stringValue("GetRuleDimensionResponse.Code"));
-		getRuleDimensionResponse.setMessage(context.stringValue("GetRuleDimensionResponse.Message"));
-		getRuleDimensionResponse.setPageSize(context.integerValue("GetRuleDimensionResponse.PageSize"));
-		getRuleDimensionResponse.setDataSize(context.integerValue("GetRuleDimensionResponse.DataSize"));
-		getRuleDimensionResponse.setTotalCount(context.integerValue("GetRuleDimensionResponse.TotalCount"));
-		getRuleDimensionResponse.setReviewStatus(context.integerValue("GetRuleDimensionResponse.ReviewStatus"));
-		getRuleDimensionResponse.setTotalSubTaskCount(context.integerValue("GetRuleDimensionResponse.TotalSubTaskCount"));
-		getRuleDimensionResponse.setCompSubTaskCount(context.integerValue("GetRuleDimensionResponse.CompSubTaskCount"));
-		getRuleDimensionResponse.setCurrentPage(context.integerValue("GetRuleDimensionResponse.CurrentPage"));
+		getRuleDimensionResponse.setRequestId(_ctx.stringValue("GetRuleDimensionResponse.RequestId"));
+		getRuleDimensionResponse.setSuccess(_ctx.booleanValue("GetRuleDimensionResponse.Success"));
+		getRuleDimensionResponse.setCode(_ctx.stringValue("GetRuleDimensionResponse.Code"));
+		getRuleDimensionResponse.setMessage(_ctx.stringValue("GetRuleDimensionResponse.Message"));
+		getRuleDimensionResponse.setPageSize(_ctx.integerValue("GetRuleDimensionResponse.PageSize"));
+		getRuleDimensionResponse.setDataSize(_ctx.integerValue("GetRuleDimensionResponse.DataSize"));
+		getRuleDimensionResponse.setTotalCount(_ctx.integerValue("GetRuleDimensionResponse.TotalCount"));
+		getRuleDimensionResponse.setReviewStatus(_ctx.integerValue("GetRuleDimensionResponse.ReviewStatus"));
+		getRuleDimensionResponse.setTotalSubTaskCount(_ctx.integerValue("GetRuleDimensionResponse.TotalSubTaskCount"));
+		getRuleDimensionResponse.setCompSubTaskCount(_ctx.integerValue("GetRuleDimensionResponse.CompSubTaskCount"));
+		getRuleDimensionResponse.setCurrentPage(_ctx.integerValue("GetRuleDimensionResponse.CurrentPage"));
 
 		List<RuleCountInfo> data = new ArrayList<RuleCountInfo>();
-		for (int i = 0; i < context.lengthValue("GetRuleDimensionResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetRuleDimensionResponse.Data.Length"); i++) {
 			RuleCountInfo ruleCountInfo = new RuleCountInfo();
-			ruleCountInfo.setCheckNumber(context.integerValue("GetRuleDimensionResponse.Data["+ i +"].CheckNumber"));
-			ruleCountInfo.setCreateEmpid(context.stringValue("GetRuleDimensionResponse.Data["+ i +"].CreateEmpid"));
-			ruleCountInfo.setCreateTime(context.stringValue("GetRuleDimensionResponse.Data["+ i +"].CreateTime"));
-			ruleCountInfo.setHitNumber(context.integerValue("GetRuleDimensionResponse.Data["+ i +"].HitNumber"));
-			ruleCountInfo.setHitRate(context.floatValue("GetRuleDimensionResponse.Data["+ i +"].HitRate"));
-			ruleCountInfo.setHitRealViolationRate(context.floatValue("GetRuleDimensionResponse.Data["+ i +"].HitRealViolationRate"));
-			ruleCountInfo.setIsDelete(context.integerValue("GetRuleDimensionResponse.Data["+ i +"].IsDelete"));
-			ruleCountInfo.setLastUpdateEmpid(context.stringValue("GetRuleDimensionResponse.Data["+ i +"].LastUpdateEmpid"));
-			ruleCountInfo.setLastUpdateTime(context.stringValue("GetRuleDimensionResponse.Data["+ i +"].LastUpdateTime"));
-			ruleCountInfo.setName(context.stringValue("GetRuleDimensionResponse.Data["+ i +"].Name"));
-			ruleCountInfo.setPreReviewNumber(context.integerValue("GetRuleDimensionResponse.Data["+ i +"].PreReviewNumber"));
-			ruleCountInfo.setRealViolationNumber(context.integerValue("GetRuleDimensionResponse.Data["+ i +"].RealViolationNumber"));
-			ruleCountInfo.setReviewNumber(context.integerValue("GetRuleDimensionResponse.Data["+ i +"].ReviewNumber"));
-			ruleCountInfo.setRid(context.stringValue("GetRuleDimensionResponse.Data["+ i +"].Rid"));
-			ruleCountInfo.setSelect(context.booleanValue("GetRuleDimensionResponse.Data["+ i +"].Select"));
-			ruleCountInfo.setStatus(context.integerValue("GetRuleDimensionResponse.Data["+ i +"].Status"));
-			ruleCountInfo.setType(context.integerValue("GetRuleDimensionResponse.Data["+ i +"].Type"));
-			ruleCountInfo.setTypeName(context.stringValue("GetRuleDimensionResponse.Data["+ i +"].TypeName"));
+			ruleCountInfo.setCheckNumber(_ctx.integerValue("GetRuleDimensionResponse.Data["+ i +"].CheckNumber"));
+			ruleCountInfo.setCreateEmpid(_ctx.stringValue("GetRuleDimensionResponse.Data["+ i +"].CreateEmpid"));
+			ruleCountInfo.setCreateTime(_ctx.stringValue("GetRuleDimensionResponse.Data["+ i +"].CreateTime"));
+			ruleCountInfo.setHitNumber(_ctx.integerValue("GetRuleDimensionResponse.Data["+ i +"].HitNumber"));
+			ruleCountInfo.setHitRate(_ctx.floatValue("GetRuleDimensionResponse.Data["+ i +"].HitRate"));
+			ruleCountInfo.setHitRealViolationRate(_ctx.floatValue("GetRuleDimensionResponse.Data["+ i +"].HitRealViolationRate"));
+			ruleCountInfo.setIsDelete(_ctx.integerValue("GetRuleDimensionResponse.Data["+ i +"].IsDelete"));
+			ruleCountInfo.setLastUpdateEmpid(_ctx.stringValue("GetRuleDimensionResponse.Data["+ i +"].LastUpdateEmpid"));
+			ruleCountInfo.setLastUpdateTime(_ctx.stringValue("GetRuleDimensionResponse.Data["+ i +"].LastUpdateTime"));
+			ruleCountInfo.setName(_ctx.stringValue("GetRuleDimensionResponse.Data["+ i +"].Name"));
+			ruleCountInfo.setPreReviewNumber(_ctx.integerValue("GetRuleDimensionResponse.Data["+ i +"].PreReviewNumber"));
+			ruleCountInfo.setRealViolationNumber(_ctx.integerValue("GetRuleDimensionResponse.Data["+ i +"].RealViolationNumber"));
+			ruleCountInfo.setReviewNumber(_ctx.integerValue("GetRuleDimensionResponse.Data["+ i +"].ReviewNumber"));
+			ruleCountInfo.setRid(_ctx.stringValue("GetRuleDimensionResponse.Data["+ i +"].Rid"));
+			ruleCountInfo.setSelect(_ctx.booleanValue("GetRuleDimensionResponse.Data["+ i +"].Select"));
+			ruleCountInfo.setStatus(_ctx.integerValue("GetRuleDimensionResponse.Data["+ i +"].Status"));
+			ruleCountInfo.setType(_ctx.integerValue("GetRuleDimensionResponse.Data["+ i +"].Type"));
+			ruleCountInfo.setTypeName(_ctx.stringValue("GetRuleDimensionResponse.Data["+ i +"].TypeName"));
 
 			data.add(ruleCountInfo);
 		}

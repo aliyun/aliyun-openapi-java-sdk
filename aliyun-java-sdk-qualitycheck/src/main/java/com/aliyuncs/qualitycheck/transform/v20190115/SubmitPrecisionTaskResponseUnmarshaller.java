@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitPrecisionTaskResponseUnmarshaller {
 
-	public static SubmitPrecisionTaskResponse unmarshall(SubmitPrecisionTaskResponse submitPrecisionTaskResponse, UnmarshallerContext context) {
+	public static SubmitPrecisionTaskResponse unmarshall(SubmitPrecisionTaskResponse submitPrecisionTaskResponse, UnmarshallerContext _ctx) {
 		
-		submitPrecisionTaskResponse.setRequestId(context.stringValue("SubmitPrecisionTaskResponse.RequestId"));
-		submitPrecisionTaskResponse.setSuccess(context.booleanValue("SubmitPrecisionTaskResponse.Success"));
-		submitPrecisionTaskResponse.setCode(context.stringValue("SubmitPrecisionTaskResponse.Code"));
-		submitPrecisionTaskResponse.setMessage(context.stringValue("SubmitPrecisionTaskResponse.Message"));
-		submitPrecisionTaskResponse.setData(context.stringValue("SubmitPrecisionTaskResponse.Data"));
+		submitPrecisionTaskResponse.setRequestId(_ctx.stringValue("SubmitPrecisionTaskResponse.RequestId"));
+		submitPrecisionTaskResponse.setSuccess(_ctx.booleanValue("SubmitPrecisionTaskResponse.Success"));
+		submitPrecisionTaskResponse.setCode(_ctx.stringValue("SubmitPrecisionTaskResponse.Code"));
+		submitPrecisionTaskResponse.setMessage(_ctx.stringValue("SubmitPrecisionTaskResponse.Message"));
+		submitPrecisionTaskResponse.setData(_ctx.stringValue("SubmitPrecisionTaskResponse.Data"));
 	 
 	 	return submitPrecisionTaskResponse;
 	}

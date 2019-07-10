@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DelRuleCategoryResponseUnmarshaller {
 
-	public static DelRuleCategoryResponse unmarshall(DelRuleCategoryResponse delRuleCategoryResponse, UnmarshallerContext context) {
+	public static DelRuleCategoryResponse unmarshall(DelRuleCategoryResponse delRuleCategoryResponse, UnmarshallerContext _ctx) {
 		
-		delRuleCategoryResponse.setRequestId(context.stringValue("DelRuleCategoryResponse.RequestId"));
-		delRuleCategoryResponse.setSuccess(context.booleanValue("DelRuleCategoryResponse.Success"));
-		delRuleCategoryResponse.setCode(context.stringValue("DelRuleCategoryResponse.Code"));
-		delRuleCategoryResponse.setMessage(context.stringValue("DelRuleCategoryResponse.Message"));
+		delRuleCategoryResponse.setRequestId(_ctx.stringValue("DelRuleCategoryResponse.RequestId"));
+		delRuleCategoryResponse.setSuccess(_ctx.booleanValue("DelRuleCategoryResponse.Success"));
+		delRuleCategoryResponse.setCode(_ctx.stringValue("DelRuleCategoryResponse.Code"));
+		delRuleCategoryResponse.setMessage(_ctx.stringValue("DelRuleCategoryResponse.Message"));
 
 		Data data = new Data();
-		data.setSelect(context.booleanValue("DelRuleCategoryResponse.Data.Select"));
+		data.setSelect(_ctx.booleanValue("DelRuleCategoryResponse.Data.Select"));
 		delRuleCategoryResponse.setData(data);
 	 
 	 	return delRuleCategoryResponse;

@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetThesaurusBySynonymForApiResponseUnmarshaller {
 
-	public static GetThesaurusBySynonymForApiResponse unmarshall(GetThesaurusBySynonymForApiResponse getThesaurusBySynonymForApiResponse, UnmarshallerContext context) {
+	public static GetThesaurusBySynonymForApiResponse unmarshall(GetThesaurusBySynonymForApiResponse getThesaurusBySynonymForApiResponse, UnmarshallerContext _ctx) {
 		
-		getThesaurusBySynonymForApiResponse.setRequestId(context.stringValue("GetThesaurusBySynonymForApiResponse.RequestId"));
-		getThesaurusBySynonymForApiResponse.setSuccess(context.booleanValue("GetThesaurusBySynonymForApiResponse.Success"));
-		getThesaurusBySynonymForApiResponse.setCode(context.stringValue("GetThesaurusBySynonymForApiResponse.Code"));
-		getThesaurusBySynonymForApiResponse.setMessage(context.stringValue("GetThesaurusBySynonymForApiResponse.Message"));
+		getThesaurusBySynonymForApiResponse.setRequestId(_ctx.stringValue("GetThesaurusBySynonymForApiResponse.RequestId"));
+		getThesaurusBySynonymForApiResponse.setSuccess(_ctx.booleanValue("GetThesaurusBySynonymForApiResponse.Success"));
+		getThesaurusBySynonymForApiResponse.setCode(_ctx.stringValue("GetThesaurusBySynonymForApiResponse.Code"));
+		getThesaurusBySynonymForApiResponse.setMessage(_ctx.stringValue("GetThesaurusBySynonymForApiResponse.Message"));
 
 		List<ThesaurusPo> data = new ArrayList<ThesaurusPo>();
-		for (int i = 0; i < context.lengthValue("GetThesaurusBySynonymForApiResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetThesaurusBySynonymForApiResponse.Data.Length"); i++) {
 			ThesaurusPo thesaurusPo = new ThesaurusPo();
-			thesaurusPo.setId(context.longValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].Id"));
-			thesaurusPo.setBusiness(context.stringValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].Business"));
+			thesaurusPo.setId(_ctx.longValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].Id"));
+			thesaurusPo.setBusiness(_ctx.stringValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].Business"));
 
 			List<String> synonymList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].SynonymList.Length"); j++) {
-				synonymList.add(context.stringValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].SynonymList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].SynonymList.Length"); j++) {
+				synonymList.add(_ctx.stringValue("GetThesaurusBySynonymForApiResponse.Data["+ i +"].SynonymList["+ j +"]"));
 			}
 			thesaurusPo.setSynonymList(synonymList);
 

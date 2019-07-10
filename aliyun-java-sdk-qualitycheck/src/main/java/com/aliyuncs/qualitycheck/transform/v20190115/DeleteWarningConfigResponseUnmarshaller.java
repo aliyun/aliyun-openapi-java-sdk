@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteWarningConfigResponseUnmarshaller {
 
-	public static DeleteWarningConfigResponse unmarshall(DeleteWarningConfigResponse deleteWarningConfigResponse, UnmarshallerContext context) {
+	public static DeleteWarningConfigResponse unmarshall(DeleteWarningConfigResponse deleteWarningConfigResponse, UnmarshallerContext _ctx) {
 		
-		deleteWarningConfigResponse.setRequestId(context.stringValue("DeleteWarningConfigResponse.RequestId"));
-		deleteWarningConfigResponse.setSuccess(context.booleanValue("DeleteWarningConfigResponse.Success"));
-		deleteWarningConfigResponse.setCode(context.stringValue("DeleteWarningConfigResponse.Code"));
-		deleteWarningConfigResponse.setMessage(context.stringValue("DeleteWarningConfigResponse.Message"));
+		deleteWarningConfigResponse.setRequestId(_ctx.stringValue("DeleteWarningConfigResponse.RequestId"));
+		deleteWarningConfigResponse.setSuccess(_ctx.booleanValue("DeleteWarningConfigResponse.Success"));
+		deleteWarningConfigResponse.setCode(_ctx.stringValue("DeleteWarningConfigResponse.Code"));
+		deleteWarningConfigResponse.setMessage(_ctx.stringValue("DeleteWarningConfigResponse.Message"));
 	 
 	 	return deleteWarningConfigResponse;
 	}

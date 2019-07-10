@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeletePrecisionTaskResponseUnmarshaller {
 
-	public static DeletePrecisionTaskResponse unmarshall(DeletePrecisionTaskResponse deletePrecisionTaskResponse, UnmarshallerContext context) {
+	public static DeletePrecisionTaskResponse unmarshall(DeletePrecisionTaskResponse deletePrecisionTaskResponse, UnmarshallerContext _ctx) {
 		
-		deletePrecisionTaskResponse.setRequestId(context.stringValue("DeletePrecisionTaskResponse.RequestId"));
-		deletePrecisionTaskResponse.setSuccess(context.booleanValue("DeletePrecisionTaskResponse.Success"));
-		deletePrecisionTaskResponse.setCode(context.stringValue("DeletePrecisionTaskResponse.Code"));
-		deletePrecisionTaskResponse.setMessage(context.stringValue("DeletePrecisionTaskResponse.Message"));
+		deletePrecisionTaskResponse.setRequestId(_ctx.stringValue("DeletePrecisionTaskResponse.RequestId"));
+		deletePrecisionTaskResponse.setSuccess(_ctx.booleanValue("DeletePrecisionTaskResponse.Success"));
+		deletePrecisionTaskResponse.setCode(_ctx.stringValue("DeletePrecisionTaskResponse.Code"));
+		deletePrecisionTaskResponse.setMessage(_ctx.stringValue("DeletePrecisionTaskResponse.Message"));
 	 
 	 	return deletePrecisionTaskResponse;
 	}

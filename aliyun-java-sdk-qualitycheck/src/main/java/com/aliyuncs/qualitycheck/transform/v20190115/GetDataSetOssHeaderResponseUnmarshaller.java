@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetDataSetOssHeaderResponseUnmarshaller {
 
-	public static GetDataSetOssHeaderResponse unmarshall(GetDataSetOssHeaderResponse getDataSetOssHeaderResponse, UnmarshallerContext context) {
+	public static GetDataSetOssHeaderResponse unmarshall(GetDataSetOssHeaderResponse getDataSetOssHeaderResponse, UnmarshallerContext _ctx) {
 		
-		getDataSetOssHeaderResponse.setRequestId(context.stringValue("GetDataSetOssHeaderResponse.RequestId"));
-		getDataSetOssHeaderResponse.setSuccess(context.booleanValue("GetDataSetOssHeaderResponse.Success"));
-		getDataSetOssHeaderResponse.setCode(context.stringValue("GetDataSetOssHeaderResponse.Code"));
-		getDataSetOssHeaderResponse.setMessage(context.stringValue("GetDataSetOssHeaderResponse.Message"));
+		getDataSetOssHeaderResponse.setRequestId(_ctx.stringValue("GetDataSetOssHeaderResponse.RequestId"));
+		getDataSetOssHeaderResponse.setSuccess(_ctx.booleanValue("GetDataSetOssHeaderResponse.Success"));
+		getDataSetOssHeaderResponse.setCode(_ctx.stringValue("GetDataSetOssHeaderResponse.Code"));
+		getDataSetOssHeaderResponse.setMessage(_ctx.stringValue("GetDataSetOssHeaderResponse.Message"));
 
 		Data data = new Data();
-		data.setOSSAccessKeyId(context.stringValue("GetDataSetOssHeaderResponse.Data.OSSAccessKeyId"));
-		data.setPolicy(context.stringValue("GetDataSetOssHeaderResponse.Data.Policy"));
-		data.setSignature(context.stringValue("GetDataSetOssHeaderResponse.Data.Signature"));
-		data.setKey(context.stringValue("GetDataSetOssHeaderResponse.Data.Key"));
-		data.setSubDir(context.stringValue("GetDataSetOssHeaderResponse.Data.SubDir"));
-		data.setPostUrl(context.stringValue("GetDataSetOssHeaderResponse.Data.PostUrl"));
+		data.setOSSAccessKeyId(_ctx.stringValue("GetDataSetOssHeaderResponse.Data.OSSAccessKeyId"));
+		data.setPolicy(_ctx.stringValue("GetDataSetOssHeaderResponse.Data.Policy"));
+		data.setSignature(_ctx.stringValue("GetDataSetOssHeaderResponse.Data.Signature"));
+		data.setKey(_ctx.stringValue("GetDataSetOssHeaderResponse.Data.Key"));
+		data.setSubDir(_ctx.stringValue("GetDataSetOssHeaderResponse.Data.SubDir"));
+		data.setPostUrl(_ctx.stringValue("GetDataSetOssHeaderResponse.Data.PostUrl"));
 		getDataSetOssHeaderResponse.setData(data);
 	 
 	 	return getDataSetOssHeaderResponse;

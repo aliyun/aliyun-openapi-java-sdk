@@ -20,21 +20,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DoPhysicalDeleteResourceResponseUnmarshaller {
 
-	public static DoPhysicalDeleteResourceResponse unmarshall(DoPhysicalDeleteResourceResponse doPhysicalDeleteResourceResponse, UnmarshallerContext context) {
+	public static DoPhysicalDeleteResourceResponse unmarshall(DoPhysicalDeleteResourceResponse doPhysicalDeleteResourceResponse, UnmarshallerContext _ctx) {
 		
-		doPhysicalDeleteResourceResponse.setInterrupt(context.stringValue("DoPhysicalDeleteResourceResponse.Interrupt"));
-		doPhysicalDeleteResourceResponse.setInvoker(context.longValue("DoPhysicalDeleteResourceResponse.Invoker"));
-		doPhysicalDeleteResourceResponse.setPk(context.stringValue("DoPhysicalDeleteResourceResponse.Pk"));
-		doPhysicalDeleteResourceResponse.setBid(context.stringValue("DoPhysicalDeleteResourceResponse.Bid"));
-		doPhysicalDeleteResourceResponse.setHid(context.longValue("DoPhysicalDeleteResourceResponse.Hid"));
-		doPhysicalDeleteResourceResponse.setCountry(context.stringValue("DoPhysicalDeleteResourceResponse.Country"));
-		doPhysicalDeleteResourceResponse.setTaskIdentifier(context.stringValue("DoPhysicalDeleteResourceResponse.TaskIdentifier"));
-		doPhysicalDeleteResourceResponse.setTaskIdentifier1(context.stringValue("DoPhysicalDeleteResourceResponse.TaskIdentifier"));
-		doPhysicalDeleteResourceResponse.setGmtWakeup(context.stringValue("DoPhysicalDeleteResourceResponse.GmtWakeup"));
-		doPhysicalDeleteResourceResponse.setSuccess(context.booleanValue("DoPhysicalDeleteResourceResponse.Success"));
-		doPhysicalDeleteResourceResponse.setMessage(context.stringValue("DoPhysicalDeleteResourceResponse.Message"));
-		doPhysicalDeleteResourceResponse.setLevel(context.longValue("DoPhysicalDeleteResourceResponse.Level"));
-		doPhysicalDeleteResourceResponse.setPrompt(context.stringValue("DoPhysicalDeleteResourceResponse.Prompt"));
+		doPhysicalDeleteResourceResponse.setInterrupt(_ctx.stringValue("DoPhysicalDeleteResourceResponse.Interrupt"));
+		doPhysicalDeleteResourceResponse.setInvoker(_ctx.longValue("DoPhysicalDeleteResourceResponse.Invoker"));
+		doPhysicalDeleteResourceResponse.setPk(_ctx.stringValue("DoPhysicalDeleteResourceResponse.Pk"));
+		doPhysicalDeleteResourceResponse.setBid(_ctx.stringValue("DoPhysicalDeleteResourceResponse.Bid"));
+		doPhysicalDeleteResourceResponse.setHid(_ctx.longValue("DoPhysicalDeleteResourceResponse.Hid"));
+		doPhysicalDeleteResourceResponse.setCountry(_ctx.stringValue("DoPhysicalDeleteResourceResponse.Country"));
+		doPhysicalDeleteResourceResponse.setTaskIdentifier(_ctx.stringValue("DoPhysicalDeleteResourceResponse.TaskIdentifier"));
+		doPhysicalDeleteResourceResponse.setTaskIdentifier1(_ctx.stringValue("DoPhysicalDeleteResourceResponse.TaskIdentifier"));
+		doPhysicalDeleteResourceResponse.setGmtWakeup(_ctx.stringValue("DoPhysicalDeleteResourceResponse.GmtWakeup"));
+		doPhysicalDeleteResourceResponse.setSuccess(_ctx.booleanValue("DoPhysicalDeleteResourceResponse.Success"));
+		doPhysicalDeleteResourceResponse.setMessage(_ctx.stringValue("DoPhysicalDeleteResourceResponse.Message"));
+		doPhysicalDeleteResourceResponse.setLevel(_ctx.longValue("DoPhysicalDeleteResourceResponse.Level"));
+		doPhysicalDeleteResourceResponse.setPrompt(_ctx.stringValue("DoPhysicalDeleteResourceResponse.Prompt"));
 	 
 	 	return doPhysicalDeleteResourceResponse;
 	}

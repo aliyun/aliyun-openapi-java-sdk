@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAsrVocabResponseUnmarshaller {
 
-	public static GetAsrVocabResponse unmarshall(GetAsrVocabResponse getAsrVocabResponse, UnmarshallerContext context) {
+	public static GetAsrVocabResponse unmarshall(GetAsrVocabResponse getAsrVocabResponse, UnmarshallerContext _ctx) {
 		
-		getAsrVocabResponse.setRequestId(context.stringValue("GetAsrVocabResponse.RequestId"));
-		getAsrVocabResponse.setSuccess(context.booleanValue("GetAsrVocabResponse.Success"));
-		getAsrVocabResponse.setCode(context.stringValue("GetAsrVocabResponse.Code"));
-		getAsrVocabResponse.setMessage(context.stringValue("GetAsrVocabResponse.Message"));
+		getAsrVocabResponse.setRequestId(_ctx.stringValue("GetAsrVocabResponse.RequestId"));
+		getAsrVocabResponse.setSuccess(_ctx.booleanValue("GetAsrVocabResponse.Success"));
+		getAsrVocabResponse.setCode(_ctx.stringValue("GetAsrVocabResponse.Code"));
+		getAsrVocabResponse.setMessage(_ctx.stringValue("GetAsrVocabResponse.Message"));
 
 		Data data = new Data();
-		data.setName(context.stringValue("GetAsrVocabResponse.Data.Name"));
+		data.setName(_ctx.stringValue("GetAsrVocabResponse.Data.Name"));
 
 		List<Word> words = new ArrayList<Word>();
-		for (int i = 0; i < context.lengthValue("GetAsrVocabResponse.Data.Words.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetAsrVocabResponse.Data.Words.Length"); i++) {
 			Word word = new Word();
-			word.setWord(context.stringValue("GetAsrVocabResponse.Data.Words["+ i +"].Word"));
-			word.setWeight(context.integerValue("GetAsrVocabResponse.Data.Words["+ i +"].Weight"));
+			word.setWord(_ctx.stringValue("GetAsrVocabResponse.Data.Words["+ i +"].Word"));
+			word.setWeight(_ctx.integerValue("GetAsrVocabResponse.Data.Words["+ i +"].Weight"));
 
 			words.add(word);
 		}

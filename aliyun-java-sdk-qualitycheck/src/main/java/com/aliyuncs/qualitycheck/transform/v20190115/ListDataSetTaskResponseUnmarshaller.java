@@ -25,41 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDataSetTaskResponseUnmarshaller {
 
-	public static ListDataSetTaskResponse unmarshall(ListDataSetTaskResponse listDataSetTaskResponse, UnmarshallerContext context) {
+	public static ListDataSetTaskResponse unmarshall(ListDataSetTaskResponse listDataSetTaskResponse, UnmarshallerContext _ctx) {
 		
-		listDataSetTaskResponse.setRequestId(context.stringValue("ListDataSetTaskResponse.RequestId"));
-		listDataSetTaskResponse.setSuccess(context.booleanValue("ListDataSetTaskResponse.Success"));
-		listDataSetTaskResponse.setCode(context.stringValue("ListDataSetTaskResponse.Code"));
-		listDataSetTaskResponse.setMessage(context.stringValue("ListDataSetTaskResponse.Message"));
-		listDataSetTaskResponse.setDataSize(context.integerValue("ListDataSetTaskResponse.DataSize"));
-		listDataSetTaskResponse.setPageSize(context.integerValue("ListDataSetTaskResponse.PageSize"));
-		listDataSetTaskResponse.setCurrentPage(context.integerValue("ListDataSetTaskResponse.CurrentPage"));
-		listDataSetTaskResponse.setTotalCount(context.integerValue("ListDataSetTaskResponse.TotalCount"));
-		listDataSetTaskResponse.setIsAllcomplete(context.integerValue("ListDataSetTaskResponse.IsAllcomplete"));
+		listDataSetTaskResponse.setRequestId(_ctx.stringValue("ListDataSetTaskResponse.RequestId"));
+		listDataSetTaskResponse.setSuccess(_ctx.booleanValue("ListDataSetTaskResponse.Success"));
+		listDataSetTaskResponse.setCode(_ctx.stringValue("ListDataSetTaskResponse.Code"));
+		listDataSetTaskResponse.setMessage(_ctx.stringValue("ListDataSetTaskResponse.Message"));
+		listDataSetTaskResponse.setDataSize(_ctx.integerValue("ListDataSetTaskResponse.DataSize"));
+		listDataSetTaskResponse.setPageSize(_ctx.integerValue("ListDataSetTaskResponse.PageSize"));
+		listDataSetTaskResponse.setCurrentPage(_ctx.integerValue("ListDataSetTaskResponse.CurrentPage"));
+		listDataSetTaskResponse.setTotalCount(_ctx.integerValue("ListDataSetTaskResponse.TotalCount"));
+		listDataSetTaskResponse.setIsAllcomplete(_ctx.integerValue("ListDataSetTaskResponse.IsAllcomplete"));
 
 		List<PageTaskInfo> data = new ArrayList<PageTaskInfo>();
-		for (int i = 0; i < context.lengthValue("ListDataSetTaskResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDataSetTaskResponse.Data.Length"); i++) {
 			PageTaskInfo pageTaskInfo = new PageTaskInfo();
-			pageTaskInfo.setJobName(context.stringValue("ListDataSetTaskResponse.Data["+ i +"].JobName"));
-			pageTaskInfo.setScheduleRatio(context.floatValue("ListDataSetTaskResponse.Data["+ i +"].ScheduleRatio"));
-			pageTaskInfo.setTaskId(context.stringValue("ListDataSetTaskResponse.Data["+ i +"].TaskId"));
-			pageTaskInfo.setTaskComplete(context.booleanValue("ListDataSetTaskResponse.Data["+ i +"].TaskComplete"));
-			pageTaskInfo.setStatus(context.integerValue("ListDataSetTaskResponse.Data["+ i +"].Status"));
-			pageTaskInfo.setIsTaskComplete(context.booleanValue("ListDataSetTaskResponse.Data["+ i +"].IsTaskComplete"));
-			pageTaskInfo.setRuleSize(context.integerValue("ListDataSetTaskResponse.Data["+ i +"].RuleSize"));
-			pageTaskInfo.setDataSetSize(context.integerValue("ListDataSetTaskResponse.Data["+ i +"].DataSetSize"));
+			pageTaskInfo.setJobName(_ctx.stringValue("ListDataSetTaskResponse.Data["+ i +"].JobName"));
+			pageTaskInfo.setScheduleRatio(_ctx.floatValue("ListDataSetTaskResponse.Data["+ i +"].ScheduleRatio"));
+			pageTaskInfo.setTaskId(_ctx.stringValue("ListDataSetTaskResponse.Data["+ i +"].TaskId"));
+			pageTaskInfo.setTaskComplete(_ctx.booleanValue("ListDataSetTaskResponse.Data["+ i +"].TaskComplete"));
+			pageTaskInfo.setStatus(_ctx.integerValue("ListDataSetTaskResponse.Data["+ i +"].Status"));
+			pageTaskInfo.setIsTaskComplete(_ctx.booleanValue("ListDataSetTaskResponse.Data["+ i +"].IsTaskComplete"));
+			pageTaskInfo.setRuleSize(_ctx.integerValue("ListDataSetTaskResponse.Data["+ i +"].RuleSize"));
+			pageTaskInfo.setDataSetSize(_ctx.integerValue("ListDataSetTaskResponse.Data["+ i +"].DataSetSize"));
 
 			List<String> dataSets = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListDataSetTaskResponse.Data["+ i +"].DataSets.Length"); j++) {
-				dataSets.add(context.stringValue("ListDataSetTaskResponse.Data["+ i +"].DataSets["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListDataSetTaskResponse.Data["+ i +"].DataSets.Length"); j++) {
+				dataSets.add(_ctx.stringValue("ListDataSetTaskResponse.Data["+ i +"].DataSets["+ j +"]"));
 			}
 			pageTaskInfo.setDataSets(dataSets);
 
 			List<RuleNameInfo> ruleNameInfoList = new ArrayList<RuleNameInfo>();
-			for (int j = 0; j < context.lengthValue("ListDataSetTaskResponse.Data["+ i +"].RuleNameInfoList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListDataSetTaskResponse.Data["+ i +"].RuleNameInfoList.Length"); j++) {
 				RuleNameInfo ruleNameInfo = new RuleNameInfo();
-				ruleNameInfo.setRid(context.integerValue("ListDataSetTaskResponse.Data["+ i +"].RuleNameInfoList["+ j +"].Rid"));
-				ruleNameInfo.setRuleName(context.stringValue("ListDataSetTaskResponse.Data["+ i +"].RuleNameInfoList["+ j +"].RuleName"));
+				ruleNameInfo.setRid(_ctx.integerValue("ListDataSetTaskResponse.Data["+ i +"].RuleNameInfoList["+ j +"].Rid"));
+				ruleNameInfo.setRuleName(_ctx.stringValue("ListDataSetTaskResponse.Data["+ i +"].RuleNameInfoList["+ j +"].RuleName"));
 
 				ruleNameInfoList.add(ruleNameInfo);
 			}

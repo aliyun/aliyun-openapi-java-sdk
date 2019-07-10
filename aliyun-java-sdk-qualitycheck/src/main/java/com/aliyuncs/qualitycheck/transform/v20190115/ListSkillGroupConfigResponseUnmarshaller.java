@@ -25,36 +25,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSkillGroupConfigResponseUnmarshaller {
 
-	public static ListSkillGroupConfigResponse unmarshall(ListSkillGroupConfigResponse listSkillGroupConfigResponse, UnmarshallerContext context) {
+	public static ListSkillGroupConfigResponse unmarshall(ListSkillGroupConfigResponse listSkillGroupConfigResponse, UnmarshallerContext _ctx) {
 		
-		listSkillGroupConfigResponse.setRequestId(context.stringValue("ListSkillGroupConfigResponse.RequestId"));
-		listSkillGroupConfigResponse.setSuccess(context.booleanValue("ListSkillGroupConfigResponse.Success"));
-		listSkillGroupConfigResponse.setCode(context.stringValue("ListSkillGroupConfigResponse.Code"));
-		listSkillGroupConfigResponse.setMessage(context.stringValue("ListSkillGroupConfigResponse.Message"));
+		listSkillGroupConfigResponse.setRequestId(_ctx.stringValue("ListSkillGroupConfigResponse.RequestId"));
+		listSkillGroupConfigResponse.setSuccess(_ctx.booleanValue("ListSkillGroupConfigResponse.Success"));
+		listSkillGroupConfigResponse.setCode(_ctx.stringValue("ListSkillGroupConfigResponse.Code"));
+		listSkillGroupConfigResponse.setMessage(_ctx.stringValue("ListSkillGroupConfigResponse.Message"));
 
 		List<SkillGroupConfig> data = new ArrayList<SkillGroupConfig>();
-		for (int i = 0; i < context.lengthValue("ListSkillGroupConfigResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSkillGroupConfigResponse.Data.Length"); i++) {
 			SkillGroupConfig skillGroupConfig = new SkillGroupConfig();
-			skillGroupConfig.setId(context.longValue("ListSkillGroupConfigResponse.Data["+ i +"].Id"));
-			skillGroupConfig.setInstanceId(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].InstanceId"));
-			skillGroupConfig.setModelId(context.longValue("ListSkillGroupConfigResponse.Data["+ i +"].ModelId"));
-			skillGroupConfig.setModelName(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].ModelName"));
-			skillGroupConfig.setName(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].Name"));
-			skillGroupConfig.setRid(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].Rid"));
-			skillGroupConfig.setSkillGroupId(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupId"));
-			skillGroupConfig.setSkillGroupName(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupName"));
-			skillGroupConfig.setStatus(context.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].Status"));
-			skillGroupConfig.setType(context.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].Type"));
-			skillGroupConfig.setVocabId(context.longValue("ListSkillGroupConfigResponse.Data["+ i +"].VocabId"));
-			skillGroupConfig.setVocabName(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].VocabName"));
-			skillGroupConfig.setCreateTime(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].CreateTime"));
-			skillGroupConfig.setUpdateTime(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].UpdateTime"));
+			skillGroupConfig.setId(_ctx.longValue("ListSkillGroupConfigResponse.Data["+ i +"].Id"));
+			skillGroupConfig.setInstanceId(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].InstanceId"));
+			skillGroupConfig.setModelId(_ctx.longValue("ListSkillGroupConfigResponse.Data["+ i +"].ModelId"));
+			skillGroupConfig.setModelName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].ModelName"));
+			skillGroupConfig.setName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].Name"));
+			skillGroupConfig.setRid(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].Rid"));
+			skillGroupConfig.setSkillGroupId(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupId"));
+			skillGroupConfig.setSkillGroupName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupName"));
+			skillGroupConfig.setStatus(_ctx.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].Status"));
+			skillGroupConfig.setType(_ctx.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].Type"));
+			skillGroupConfig.setVocabId(_ctx.longValue("ListSkillGroupConfigResponse.Data["+ i +"].VocabId"));
+			skillGroupConfig.setVocabName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].VocabName"));
+			skillGroupConfig.setCreateTime(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].CreateTime"));
+			skillGroupConfig.setUpdateTime(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].UpdateTime"));
 
 			List<RuleNameInfo> ruleList = new ArrayList<RuleNameInfo>();
-			for (int j = 0; j < context.lengthValue("ListSkillGroupConfigResponse.Data["+ i +"].RuleList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListSkillGroupConfigResponse.Data["+ i +"].RuleList.Length"); j++) {
 				RuleNameInfo ruleNameInfo = new RuleNameInfo();
-				ruleNameInfo.setRid(context.longValue("ListSkillGroupConfigResponse.Data["+ i +"].RuleList["+ j +"].Rid"));
-				ruleNameInfo.setRuleName(context.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].RuleList["+ j +"].RuleName"));
+				ruleNameInfo.setRid(_ctx.longValue("ListSkillGroupConfigResponse.Data["+ i +"].RuleList["+ j +"].Rid"));
+				ruleNameInfo.setRuleName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].RuleList["+ j +"].RuleName"));
 
 				ruleList.add(ruleNameInfo);
 			}

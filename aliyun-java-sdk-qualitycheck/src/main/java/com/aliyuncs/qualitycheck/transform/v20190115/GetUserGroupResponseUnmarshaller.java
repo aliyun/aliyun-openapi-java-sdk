@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetUserGroupResponseUnmarshaller {
 
-	public static GetUserGroupResponse unmarshall(GetUserGroupResponse getUserGroupResponse, UnmarshallerContext context) {
+	public static GetUserGroupResponse unmarshall(GetUserGroupResponse getUserGroupResponse, UnmarshallerContext _ctx) {
 		
-		getUserGroupResponse.setRequestId(context.stringValue("GetUserGroupResponse.RequestId"));
-		getUserGroupResponse.setSuccess(context.booleanValue("GetUserGroupResponse.Success"));
-		getUserGroupResponse.setCode(context.stringValue("GetUserGroupResponse.Code"));
-		getUserGroupResponse.setMessage(context.stringValue("GetUserGroupResponse.Message"));
-		getUserGroupResponse.setData(context.stringValue("GetUserGroupResponse.Data"));
+		getUserGroupResponse.setRequestId(_ctx.stringValue("GetUserGroupResponse.RequestId"));
+		getUserGroupResponse.setSuccess(_ctx.booleanValue("GetUserGroupResponse.Success"));
+		getUserGroupResponse.setCode(_ctx.stringValue("GetUserGroupResponse.Code"));
+		getUserGroupResponse.setMessage(_ctx.stringValue("GetUserGroupResponse.Message"));
+		getUserGroupResponse.setData(_ctx.stringValue("GetUserGroupResponse.Data"));
 	 
 	 	return getUserGroupResponse;
 	}

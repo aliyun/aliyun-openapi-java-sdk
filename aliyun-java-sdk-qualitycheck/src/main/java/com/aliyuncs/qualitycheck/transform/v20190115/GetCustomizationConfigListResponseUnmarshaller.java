@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCustomizationConfigListResponseUnmarshaller {
 
-	public static GetCustomizationConfigListResponse unmarshall(GetCustomizationConfigListResponse getCustomizationConfigListResponse, UnmarshallerContext context) {
+	public static GetCustomizationConfigListResponse unmarshall(GetCustomizationConfigListResponse getCustomizationConfigListResponse, UnmarshallerContext _ctx) {
 		
-		getCustomizationConfigListResponse.setRequestId(context.stringValue("GetCustomizationConfigListResponse.RequestId"));
-		getCustomizationConfigListResponse.setSuccess(context.booleanValue("GetCustomizationConfigListResponse.Success"));
-		getCustomizationConfigListResponse.setCode(context.stringValue("GetCustomizationConfigListResponse.Code"));
-		getCustomizationConfigListResponse.setMessage(context.stringValue("GetCustomizationConfigListResponse.Message"));
+		getCustomizationConfigListResponse.setRequestId(_ctx.stringValue("GetCustomizationConfigListResponse.RequestId"));
+		getCustomizationConfigListResponse.setSuccess(_ctx.booleanValue("GetCustomizationConfigListResponse.Success"));
+		getCustomizationConfigListResponse.setCode(_ctx.stringValue("GetCustomizationConfigListResponse.Code"));
+		getCustomizationConfigListResponse.setMessage(_ctx.stringValue("GetCustomizationConfigListResponse.Message"));
 
 		List<ModelCustomizationDataSetPo> data = new ArrayList<ModelCustomizationDataSetPo>();
-		for (int i = 0; i < context.lengthValue("GetCustomizationConfigListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetCustomizationConfigListResponse.Data.Length"); i++) {
 			ModelCustomizationDataSetPo modelCustomizationDataSetPo = new ModelCustomizationDataSetPo();
-			modelCustomizationDataSetPo.setModelId(context.longValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelId"));
-			modelCustomizationDataSetPo.setModeCustomizationId(context.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModeCustomizationId"));
-			modelCustomizationDataSetPo.setModelName(context.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelName"));
-			modelCustomizationDataSetPo.setModelStatus(context.integerValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelStatus"));
-			modelCustomizationDataSetPo.setTaskType(context.integerValue("GetCustomizationConfigListResponse.Data["+ i +"].TaskType"));
-			modelCustomizationDataSetPo.setCreateTime(context.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].CreateTime"));
+			modelCustomizationDataSetPo.setModelId(_ctx.longValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelId"));
+			modelCustomizationDataSetPo.setModeCustomizationId(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModeCustomizationId"));
+			modelCustomizationDataSetPo.setModelName(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelName"));
+			modelCustomizationDataSetPo.setModelStatus(_ctx.integerValue("GetCustomizationConfigListResponse.Data["+ i +"].ModelStatus"));
+			modelCustomizationDataSetPo.setTaskType(_ctx.integerValue("GetCustomizationConfigListResponse.Data["+ i +"].TaskType"));
+			modelCustomizationDataSetPo.setCreateTime(_ctx.stringValue("GetCustomizationConfigListResponse.Data["+ i +"].CreateTime"));
 
 			data.add(modelCustomizationDataSetPo);
 		}

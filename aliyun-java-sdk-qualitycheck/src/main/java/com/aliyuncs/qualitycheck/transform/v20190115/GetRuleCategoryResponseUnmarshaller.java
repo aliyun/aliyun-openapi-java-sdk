@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRuleCategoryResponseUnmarshaller {
 
-	public static GetRuleCategoryResponse unmarshall(GetRuleCategoryResponse getRuleCategoryResponse, UnmarshallerContext context) {
+	public static GetRuleCategoryResponse unmarshall(GetRuleCategoryResponse getRuleCategoryResponse, UnmarshallerContext _ctx) {
 		
-		getRuleCategoryResponse.setRequestId(context.stringValue("GetRuleCategoryResponse.RequestId"));
-		getRuleCategoryResponse.setSuccess(context.booleanValue("GetRuleCategoryResponse.Success"));
-		getRuleCategoryResponse.setCode(context.stringValue("GetRuleCategoryResponse.Code"));
-		getRuleCategoryResponse.setMessage(context.stringValue("GetRuleCategoryResponse.Message"));
+		getRuleCategoryResponse.setRequestId(_ctx.stringValue("GetRuleCategoryResponse.RequestId"));
+		getRuleCategoryResponse.setSuccess(_ctx.booleanValue("GetRuleCategoryResponse.Success"));
+		getRuleCategoryResponse.setCode(_ctx.stringValue("GetRuleCategoryResponse.Code"));
+		getRuleCategoryResponse.setMessage(_ctx.stringValue("GetRuleCategoryResponse.Message"));
 
 		List<RuleCountInfo> data = new ArrayList<RuleCountInfo>();
-		for (int i = 0; i < context.lengthValue("GetRuleCategoryResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetRuleCategoryResponse.Data.Length"); i++) {
 			RuleCountInfo ruleCountInfo = new RuleCountInfo();
-			ruleCountInfo.setType(context.integerValue("GetRuleCategoryResponse.Data["+ i +"].Type"));
-			ruleCountInfo.setTypeName(context.stringValue("GetRuleCategoryResponse.Data["+ i +"].TypeName"));
-			ruleCountInfo.setSelect(context.booleanValue("GetRuleCategoryResponse.Data["+ i +"].Select"));
+			ruleCountInfo.setType(_ctx.integerValue("GetRuleCategoryResponse.Data["+ i +"].Type"));
+			ruleCountInfo.setTypeName(_ctx.stringValue("GetRuleCategoryResponse.Data["+ i +"].TypeName"));
+			ruleCountInfo.setSelect(_ctx.booleanValue("GetRuleCategoryResponse.Data["+ i +"].Select"));
 
 			data.add(ruleCountInfo);
 		}

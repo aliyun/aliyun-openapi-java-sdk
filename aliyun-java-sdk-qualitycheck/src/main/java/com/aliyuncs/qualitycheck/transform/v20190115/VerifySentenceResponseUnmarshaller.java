@@ -26,37 +26,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VerifySentenceResponseUnmarshaller {
 
-	public static VerifySentenceResponse unmarshall(VerifySentenceResponse verifySentenceResponse, UnmarshallerContext context) {
+	public static VerifySentenceResponse unmarshall(VerifySentenceResponse verifySentenceResponse, UnmarshallerContext _ctx) {
 		
-		verifySentenceResponse.setRequestId(context.stringValue("VerifySentenceResponse.RequestId"));
-		verifySentenceResponse.setSuccess(context.booleanValue("VerifySentenceResponse.Success"));
-		verifySentenceResponse.setCode(context.stringValue("VerifySentenceResponse.Code"));
-		verifySentenceResponse.setMessage(context.stringValue("VerifySentenceResponse.Message"));
-		verifySentenceResponse.setSourceRole(context.integerValue("VerifySentenceResponse.SourceRole"));
-		verifySentenceResponse.setTargetRole(context.integerValue("VerifySentenceResponse.TargetRole"));
-		verifySentenceResponse.setIncorrectWords(context.integerValue("VerifySentenceResponse.IncorrectWords"));
+		verifySentenceResponse.setRequestId(_ctx.stringValue("VerifySentenceResponse.RequestId"));
+		verifySentenceResponse.setSuccess(_ctx.booleanValue("VerifySentenceResponse.Success"));
+		verifySentenceResponse.setCode(_ctx.stringValue("VerifySentenceResponse.Code"));
+		verifySentenceResponse.setMessage(_ctx.stringValue("VerifySentenceResponse.Message"));
+		verifySentenceResponse.setSourceRole(_ctx.integerValue("VerifySentenceResponse.SourceRole"));
+		verifySentenceResponse.setTargetRole(_ctx.integerValue("VerifySentenceResponse.TargetRole"));
+		verifySentenceResponse.setIncorrectWords(_ctx.integerValue("VerifySentenceResponse.IncorrectWords"));
 
 		List<Delta> data = new ArrayList<Delta>();
-		for (int i = 0; i < context.lengthValue("VerifySentenceResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("VerifySentenceResponse.Data.Length"); i++) {
 			Delta delta = new Delta();
-			delta.setType(context.stringValue("VerifySentenceResponse.Data["+ i +"].Type"));
+			delta.setType(_ctx.stringValue("VerifySentenceResponse.Data["+ i +"].Type"));
 
 			Source source = new Source();
-			source.setPosition(context.integerValue("VerifySentenceResponse.Data["+ i +"].Source.Position"));
+			source.setPosition(_ctx.integerValue("VerifySentenceResponse.Data["+ i +"].Source.Position"));
 
 			List<String> line = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("VerifySentenceResponse.Data["+ i +"].Source.Line.Length"); j++) {
-				line.add(context.stringValue("VerifySentenceResponse.Data["+ i +"].Source.Line["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("VerifySentenceResponse.Data["+ i +"].Source.Line.Length"); j++) {
+				line.add(_ctx.stringValue("VerifySentenceResponse.Data["+ i +"].Source.Line["+ j +"]"));
 			}
 			source.setLine(line);
 			delta.setSource(source);
 
 			Target target = new Target();
-			target.setPosition(context.integerValue("VerifySentenceResponse.Data["+ i +"].Target.Position"));
+			target.setPosition(_ctx.integerValue("VerifySentenceResponse.Data["+ i +"].Target.Position"));
 
 			List<String> line1 = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("VerifySentenceResponse.Data["+ i +"].Target.Line.Length"); j++) {
-				line1.add(context.stringValue("VerifySentenceResponse.Data["+ i +"].Target.Line["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("VerifySentenceResponse.Data["+ i +"].Target.Line.Length"); j++) {
+				line1.add(_ctx.stringValue("VerifySentenceResponse.Data["+ i +"].Target.Line["+ j +"]"));
 			}
 			target.setLine1(line1);
 			delta.setTarget(target);

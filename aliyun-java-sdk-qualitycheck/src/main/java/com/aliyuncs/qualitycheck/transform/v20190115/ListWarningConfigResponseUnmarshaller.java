@@ -26,43 +26,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListWarningConfigResponseUnmarshaller {
 
-	public static ListWarningConfigResponse unmarshall(ListWarningConfigResponse listWarningConfigResponse, UnmarshallerContext context) {
+	public static ListWarningConfigResponse unmarshall(ListWarningConfigResponse listWarningConfigResponse, UnmarshallerContext _ctx) {
 		
-		listWarningConfigResponse.setRequestId(context.stringValue("ListWarningConfigResponse.RequestId"));
-		listWarningConfigResponse.setSuccess(context.booleanValue("ListWarningConfigResponse.Success"));
-		listWarningConfigResponse.setCode(context.stringValue("ListWarningConfigResponse.Code"));
-		listWarningConfigResponse.setMessage(context.stringValue("ListWarningConfigResponse.Message"));
+		listWarningConfigResponse.setRequestId(_ctx.stringValue("ListWarningConfigResponse.RequestId"));
+		listWarningConfigResponse.setSuccess(_ctx.booleanValue("ListWarningConfigResponse.Success"));
+		listWarningConfigResponse.setCode(_ctx.stringValue("ListWarningConfigResponse.Code"));
+		listWarningConfigResponse.setMessage(_ctx.stringValue("ListWarningConfigResponse.Message"));
 
 		List<WarningConfigInfo> data = new ArrayList<WarningConfigInfo>();
-		for (int i = 0; i < context.lengthValue("ListWarningConfigResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListWarningConfigResponse.Data.Length"); i++) {
 			WarningConfigInfo warningConfigInfo = new WarningConfigInfo();
-			warningConfigInfo.setConfigId(context.longValue("ListWarningConfigResponse.Data["+ i +"].ConfigId"));
-			warningConfigInfo.setConfigName(context.stringValue("ListWarningConfigResponse.Data["+ i +"].ConfigName"));
-			warningConfigInfo.setStatus(context.integerValue("ListWarningConfigResponse.Data["+ i +"].Status"));
-			warningConfigInfo.setCreateTime(context.stringValue("ListWarningConfigResponse.Data["+ i +"].CreateTime"));
-			warningConfigInfo.setUpdateTime(context.stringValue("ListWarningConfigResponse.Data["+ i +"].UpdateTime"));
+			warningConfigInfo.setConfigId(_ctx.longValue("ListWarningConfigResponse.Data["+ i +"].ConfigId"));
+			warningConfigInfo.setConfigName(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].ConfigName"));
+			warningConfigInfo.setStatus(_ctx.integerValue("ListWarningConfigResponse.Data["+ i +"].Status"));
+			warningConfigInfo.setCreateTime(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].CreateTime"));
+			warningConfigInfo.setUpdateTime(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].UpdateTime"));
 
 			List<String> ridList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListWarningConfigResponse.Data["+ i +"].RidList.Length"); j++) {
-				ridList.add(context.stringValue("ListWarningConfigResponse.Data["+ i +"].RidList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListWarningConfigResponse.Data["+ i +"].RidList.Length"); j++) {
+				ridList.add(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].RidList["+ j +"]"));
 			}
 			warningConfigInfo.setRidList(ridList);
 
 			List<WarningRule> ruleList = new ArrayList<WarningRule>();
-			for (int j = 0; j < context.lengthValue("ListWarningConfigResponse.Data["+ i +"].RuleList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListWarningConfigResponse.Data["+ i +"].RuleList.Length"); j++) {
 				WarningRule warningRule = new WarningRule();
-				warningRule.setRid(context.longValue("ListWarningConfigResponse.Data["+ i +"].RuleList["+ j +"].Rid"));
-				warningRule.setRuleName(context.stringValue("ListWarningConfigResponse.Data["+ i +"].RuleList["+ j +"].RuleName"));
+				warningRule.setRid(_ctx.longValue("ListWarningConfigResponse.Data["+ i +"].RuleList["+ j +"].Rid"));
+				warningRule.setRuleName(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].RuleList["+ j +"].RuleName"));
 
 				ruleList.add(warningRule);
 			}
 			warningConfigInfo.setRuleList(ruleList);
 
 			List<Channel> channels = new ArrayList<Channel>();
-			for (int j = 0; j < context.lengthValue("ListWarningConfigResponse.Data["+ i +"].Channels.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListWarningConfigResponse.Data["+ i +"].Channels.Length"); j++) {
 				Channel channel = new Channel();
-				channel.setType(context.integerValue("ListWarningConfigResponse.Data["+ i +"].Channels["+ j +"].Type"));
-				channel.setUrl(context.stringValue("ListWarningConfigResponse.Data["+ i +"].Channels["+ j +"].Url"));
+				channel.setType(_ctx.integerValue("ListWarningConfigResponse.Data["+ i +"].Channels["+ j +"].Type"));
+				channel.setUrl(_ctx.stringValue("ListWarningConfigResponse.Data["+ i +"].Channels["+ j +"].Url"));
 
 				channels.add(channel);
 			}

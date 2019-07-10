@@ -27,52 +27,55 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTaskAssignRulesResponseUnmarshaller {
 
-	public static ListTaskAssignRulesResponse unmarshall(ListTaskAssignRulesResponse listTaskAssignRulesResponse, UnmarshallerContext context) {
+	public static ListTaskAssignRulesResponse unmarshall(ListTaskAssignRulesResponse listTaskAssignRulesResponse, UnmarshallerContext _ctx) {
 		
-		listTaskAssignRulesResponse.setRequestId(context.stringValue("ListTaskAssignRulesResponse.RequestId"));
-		listTaskAssignRulesResponse.setSuccess(context.booleanValue("ListTaskAssignRulesResponse.Success"));
-		listTaskAssignRulesResponse.setCode(context.stringValue("ListTaskAssignRulesResponse.Code"));
-		listTaskAssignRulesResponse.setMessage(context.stringValue("ListTaskAssignRulesResponse.Message"));
+		listTaskAssignRulesResponse.setRequestId(_ctx.stringValue("ListTaskAssignRulesResponse.RequestId"));
+		listTaskAssignRulesResponse.setSuccess(_ctx.booleanValue("ListTaskAssignRulesResponse.Success"));
+		listTaskAssignRulesResponse.setCode(_ctx.stringValue("ListTaskAssignRulesResponse.Code"));
+		listTaskAssignRulesResponse.setMessage(_ctx.stringValue("ListTaskAssignRulesResponse.Message"));
+		listTaskAssignRulesResponse.setPageNumber(_ctx.integerValue("ListTaskAssignRulesResponse.PageNumber"));
+		listTaskAssignRulesResponse.setPageSize(_ctx.integerValue("ListTaskAssignRulesResponse.PageSize"));
+		listTaskAssignRulesResponse.setCount(_ctx.integerValue("ListTaskAssignRulesResponse.Count"));
 
 		List<TaskAssignRuleInfo> data = new ArrayList<TaskAssignRuleInfo>();
-		for (int i = 0; i < context.lengthValue("ListTaskAssignRulesResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTaskAssignRulesResponse.Data.Length"); i++) {
 			TaskAssignRuleInfo taskAssignRuleInfo = new TaskAssignRuleInfo();
-			taskAssignRuleInfo.setRuleId(context.longValue("ListTaskAssignRulesResponse.Data["+ i +"].RuleId"));
-			taskAssignRuleInfo.setEnabled(context.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].Enabled"));
-			taskAssignRuleInfo.setCallType(context.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].CallType"));
-			taskAssignRuleInfo.setPriority(context.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].Priority"));
-			taskAssignRuleInfo.setDurationMin(context.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].DurationMin"));
-			taskAssignRuleInfo.setDurationMax(context.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].DurationMax"));
-			taskAssignRuleInfo.setCreateTime(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].CreateTime"));
-			taskAssignRuleInfo.setUpdateTime(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].UpdateTime"));
-			taskAssignRuleInfo.setAgentsStr(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].AgentsStr"));
-			taskAssignRuleInfo.setSkillGroupsStr(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroupsStr"));
+			taskAssignRuleInfo.setRuleId(_ctx.longValue("ListTaskAssignRulesResponse.Data["+ i +"].RuleId"));
+			taskAssignRuleInfo.setEnabled(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].Enabled"));
+			taskAssignRuleInfo.setCallType(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].CallType"));
+			taskAssignRuleInfo.setPriority(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].Priority"));
+			taskAssignRuleInfo.setDurationMin(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].DurationMin"));
+			taskAssignRuleInfo.setDurationMax(_ctx.integerValue("ListTaskAssignRulesResponse.Data["+ i +"].DurationMax"));
+			taskAssignRuleInfo.setCreateTime(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].CreateTime"));
+			taskAssignRuleInfo.setUpdateTime(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].UpdateTime"));
+			taskAssignRuleInfo.setAgentsStr(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].AgentsStr"));
+			taskAssignRuleInfo.setSkillGroupsStr(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroupsStr"));
 
 			List<Agent> agents = new ArrayList<Agent>();
-			for (int j = 0; j < context.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents.Length"); j++) {
 				Agent agent = new Agent();
-				agent.setAgentId(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents["+ j +"].AgentId"));
-				agent.setAgentName(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents["+ j +"].AgentName"));
+				agent.setAgentId(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents["+ j +"].AgentId"));
+				agent.setAgentName(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Agents["+ j +"].AgentName"));
 
 				agents.add(agent);
 			}
 			taskAssignRuleInfo.setAgents(agents);
 
 			List<SkillGroup> skillGroups = new ArrayList<SkillGroup>();
-			for (int j = 0; j < context.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups.Length"); j++) {
 				SkillGroup skillGroup = new SkillGroup();
-				skillGroup.setSkillId(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups["+ j +"].SkillId"));
-				skillGroup.setSkillName(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups["+ j +"].SkillName"));
+				skillGroup.setSkillId(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups["+ j +"].SkillId"));
+				skillGroup.setSkillName(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].SkillGroups["+ j +"].SkillName"));
 
 				skillGroups.add(skillGroup);
 			}
 			taskAssignRuleInfo.setSkillGroups(skillGroups);
 
 			List<Reviewer> reviewers = new ArrayList<Reviewer>();
-			for (int j = 0; j < context.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].Reviewers.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].Reviewers.Length"); j++) {
 				Reviewer reviewer = new Reviewer();
-				reviewer.setReviewerId(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Reviewers["+ j +"].ReviewerId"));
-				reviewer.setReviewerName(context.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Reviewers["+ j +"].ReviewerName"));
+				reviewer.setReviewerId(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Reviewers["+ j +"].ReviewerId"));
+				reviewer.setReviewerName(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Reviewers["+ j +"].ReviewerName"));
 
 				reviewers.add(reviewer);
 			}

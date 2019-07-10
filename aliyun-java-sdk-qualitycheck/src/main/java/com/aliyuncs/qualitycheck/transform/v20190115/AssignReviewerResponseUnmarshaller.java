@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AssignReviewerResponseUnmarshaller {
 
-	public static AssignReviewerResponse unmarshall(AssignReviewerResponse assignReviewerResponse, UnmarshallerContext context) {
+	public static AssignReviewerResponse unmarshall(AssignReviewerResponse assignReviewerResponse, UnmarshallerContext _ctx) {
 		
-		assignReviewerResponse.setRequestId(context.stringValue("AssignReviewerResponse.RequestId"));
-		assignReviewerResponse.setSuccess(context.booleanValue("AssignReviewerResponse.Success"));
-		assignReviewerResponse.setCode(context.stringValue("AssignReviewerResponse.Code"));
-		assignReviewerResponse.setMessage(context.stringValue("AssignReviewerResponse.Message"));
+		assignReviewerResponse.setRequestId(_ctx.stringValue("AssignReviewerResponse.RequestId"));
+		assignReviewerResponse.setSuccess(_ctx.booleanValue("AssignReviewerResponse.Success"));
+		assignReviewerResponse.setCode(_ctx.stringValue("AssignReviewerResponse.Code"));
+		assignReviewerResponse.setMessage(_ctx.stringValue("AssignReviewerResponse.Message"));
 	 
 	 	return assignReviewerResponse;
 	}

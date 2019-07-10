@@ -25,29 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRecognizeResultResponseUnmarshaller {
 
-	public static GetRecognizeResultResponse unmarshall(GetRecognizeResultResponse getRecognizeResultResponse, UnmarshallerContext context) {
+	public static GetRecognizeResultResponse unmarshall(GetRecognizeResultResponse getRecognizeResultResponse, UnmarshallerContext _ctx) {
 		
-		getRecognizeResultResponse.setRequestId(context.stringValue("GetRecognizeResultResponse.RequestId"));
-		getRecognizeResultResponse.setSuccess(context.booleanValue("GetRecognizeResultResponse.Success"));
-		getRecognizeResultResponse.setCode(context.stringValue("GetRecognizeResultResponse.Code"));
-		getRecognizeResultResponse.setMessage(context.stringValue("GetRecognizeResultResponse.Message"));
+		getRecognizeResultResponse.setRequestId(_ctx.stringValue("GetRecognizeResultResponse.RequestId"));
+		getRecognizeResultResponse.setSuccess(_ctx.booleanValue("GetRecognizeResultResponse.Success"));
+		getRecognizeResultResponse.setCode(_ctx.stringValue("GetRecognizeResultResponse.Code"));
+		getRecognizeResultResponse.setMessage(_ctx.stringValue("GetRecognizeResultResponse.Message"));
 
 		Data data = new Data();
-		data.setTaskAsrRequestId(context.longValue("GetRecognizeResultResponse.Data.TaskAsrRequestId"));
+		data.setTaskAsrRequestId(_ctx.longValue("GetRecognizeResultResponse.Data.TaskAsrRequestId"));
 
 		List<Dialogue> dialogues = new ArrayList<Dialogue>();
-		for (int i = 0; i < context.lengthValue("GetRecognizeResultResponse.Data.Dialogues.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetRecognizeResultResponse.Data.Dialogues.Length"); i++) {
 			Dialogue dialogue = new Dialogue();
-			dialogue.setBegin(context.longValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Begin"));
-			dialogue.setBeginTime(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].BeginTime"));
-			dialogue.setEmotionValue(context.integerValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].EmotionValue"));
-			dialogue.setEnd(context.longValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].End"));
-			dialogue.setHourMinSec(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].HourMinSec"));
-			dialogue.setIdentity(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Identity"));
-			dialogue.setRole(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Role"));
-			dialogue.setSilenceDuration(context.integerValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].SilenceDuration"));
-			dialogue.setSpeechRate(context.integerValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].SpeechRate"));
-			dialogue.setWords(context.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Words"));
+			dialogue.setBegin(_ctx.longValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Begin"));
+			dialogue.setBeginTime(_ctx.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].BeginTime"));
+			dialogue.setEmotionValue(_ctx.integerValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].EmotionValue"));
+			dialogue.setEnd(_ctx.longValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].End"));
+			dialogue.setHourMinSec(_ctx.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].HourMinSec"));
+			dialogue.setIdentity(_ctx.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Identity"));
+			dialogue.setRole(_ctx.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Role"));
+			dialogue.setSilenceDuration(_ctx.integerValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].SilenceDuration"));
+			dialogue.setSpeechRate(_ctx.integerValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].SpeechRate"));
+			dialogue.setWords(_ctx.stringValue("GetRecognizeResultResponse.Data.Dialogues["+ i +"].Words"));
 
 			dialogues.add(dialogue);
 		}

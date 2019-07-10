@@ -23,16 +23,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadRuleForAntResponseUnmarshaller {
 
-	public static UploadRuleForAntResponse unmarshall(UploadRuleForAntResponse uploadRuleForAntResponse, UnmarshallerContext context) {
+	public static UploadRuleForAntResponse unmarshall(UploadRuleForAntResponse uploadRuleForAntResponse, UnmarshallerContext _ctx) {
 		
-		uploadRuleForAntResponse.setRequestId(context.stringValue("UploadRuleForAntResponse.RequestId"));
-		uploadRuleForAntResponse.setSuccess(context.booleanValue("UploadRuleForAntResponse.Success"));
-		uploadRuleForAntResponse.setCode(context.stringValue("UploadRuleForAntResponse.Code"));
-		uploadRuleForAntResponse.setMessage(context.stringValue("UploadRuleForAntResponse.Message"));
+		uploadRuleForAntResponse.setRequestId(_ctx.stringValue("UploadRuleForAntResponse.RequestId"));
+		uploadRuleForAntResponse.setSuccess(_ctx.booleanValue("UploadRuleForAntResponse.Success"));
+		uploadRuleForAntResponse.setCode(_ctx.stringValue("UploadRuleForAntResponse.Code"));
+		uploadRuleForAntResponse.setMessage(_ctx.stringValue("UploadRuleForAntResponse.Message"));
 
 		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UploadRuleForAntResponse.Data.Length"); i++) {
-			data.add(context.stringValue("UploadRuleForAntResponse.Data["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UploadRuleForAntResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("UploadRuleForAntResponse.Data["+ i +"]"));
 		}
 		uploadRuleForAntResponse.setData(data);
 	 

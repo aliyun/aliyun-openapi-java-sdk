@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteSubScoreForApiResponseUnmarshaller {
 
-	public static DeleteSubScoreForApiResponse unmarshall(DeleteSubScoreForApiResponse deleteSubScoreForApiResponse, UnmarshallerContext context) {
+	public static DeleteSubScoreForApiResponse unmarshall(DeleteSubScoreForApiResponse deleteSubScoreForApiResponse, UnmarshallerContext _ctx) {
 		
-		deleteSubScoreForApiResponse.setRequestId(context.stringValue("DeleteSubScoreForApiResponse.RequestId"));
-		deleteSubScoreForApiResponse.setSuccess(context.booleanValue("DeleteSubScoreForApiResponse.Success"));
-		deleteSubScoreForApiResponse.setCode(context.stringValue("DeleteSubScoreForApiResponse.Code"));
-		deleteSubScoreForApiResponse.setMessage(context.stringValue("DeleteSubScoreForApiResponse.Message"));
+		deleteSubScoreForApiResponse.setRequestId(_ctx.stringValue("DeleteSubScoreForApiResponse.RequestId"));
+		deleteSubScoreForApiResponse.setSuccess(_ctx.booleanValue("DeleteSubScoreForApiResponse.Success"));
+		deleteSubScoreForApiResponse.setCode(_ctx.stringValue("DeleteSubScoreForApiResponse.Code"));
+		deleteSubScoreForApiResponse.setMessage(_ctx.stringValue("DeleteSubScoreForApiResponse.Message"));
 	 
 	 	return deleteSubScoreForApiResponse;
 	}

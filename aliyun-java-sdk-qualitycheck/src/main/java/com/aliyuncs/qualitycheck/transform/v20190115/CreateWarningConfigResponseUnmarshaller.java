@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateWarningConfigResponseUnmarshaller {
 
-	public static CreateWarningConfigResponse unmarshall(CreateWarningConfigResponse createWarningConfigResponse, UnmarshallerContext context) {
+	public static CreateWarningConfigResponse unmarshall(CreateWarningConfigResponse createWarningConfigResponse, UnmarshallerContext _ctx) {
 		
-		createWarningConfigResponse.setRequestId(context.stringValue("CreateWarningConfigResponse.RequestId"));
-		createWarningConfigResponse.setSuccess(context.booleanValue("CreateWarningConfigResponse.Success"));
-		createWarningConfigResponse.setCode(context.stringValue("CreateWarningConfigResponse.Code"));
-		createWarningConfigResponse.setMessage(context.stringValue("CreateWarningConfigResponse.Message"));
-		createWarningConfigResponse.setData(context.stringValue("CreateWarningConfigResponse.Data"));
+		createWarningConfigResponse.setRequestId(_ctx.stringValue("CreateWarningConfigResponse.RequestId"));
+		createWarningConfigResponse.setSuccess(_ctx.booleanValue("CreateWarningConfigResponse.Success"));
+		createWarningConfigResponse.setCode(_ctx.stringValue("CreateWarningConfigResponse.Code"));
+		createWarningConfigResponse.setMessage(_ctx.stringValue("CreateWarningConfigResponse.Message"));
+		createWarningConfigResponse.setData(_ctx.stringValue("CreateWarningConfigResponse.Data"));
 	 
 	 	return createWarningConfigResponse;
 	}

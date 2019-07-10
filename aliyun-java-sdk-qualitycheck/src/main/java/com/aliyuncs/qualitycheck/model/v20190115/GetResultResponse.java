@@ -111,9 +111,13 @@ public class GetResultResponse extends AcsResponse {
 
 		private String comments;
 
+		private String errorMessage;
+
 		private Integer status;
 
 		private Integer reviewStatus;
+
+		private Integer reviewResult;
 
 		private String taskId;
 
@@ -124,8 +128,6 @@ public class GetResultResponse extends AcsResponse {
 		private String reviewer;
 
 		private String resolver;
-
-		private Integer reviewResult;
 
 		private List<AsrResultItem> asrResult;
 
@@ -149,6 +151,14 @@ public class GetResultResponse extends AcsResponse {
 			this.comments = comments;
 		}
 
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
 		public Integer getStatus() {
 			return this.status;
 		}
@@ -163,6 +173,14 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setReviewStatus(Integer reviewStatus) {
 			this.reviewStatus = reviewStatus;
+		}
+
+		public Integer getReviewResult() {
+			return this.reviewResult;
+		}
+
+		public void setReviewResult(Integer reviewResult) {
+			this.reviewResult = reviewResult;
 		}
 
 		public String getTaskId() {
@@ -203,14 +221,6 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setResolver(String resolver) {
 			this.resolver = resolver;
-		}
-
-		public Integer getReviewResult() {
-			return this.reviewResult;
-		}
-
-		public void setReviewResult(Integer reviewResult) {
-			this.reviewResult = reviewResult;
 		}
 
 		public List<AsrResultItem> getAsrResult() {

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateTaskAssignRuleResponseUnmarshaller {
 
-	public static UpdateTaskAssignRuleResponse unmarshall(UpdateTaskAssignRuleResponse updateTaskAssignRuleResponse, UnmarshallerContext context) {
+	public static UpdateTaskAssignRuleResponse unmarshall(UpdateTaskAssignRuleResponse updateTaskAssignRuleResponse, UnmarshallerContext _ctx) {
 		
-		updateTaskAssignRuleResponse.setRequestId(context.stringValue("UpdateTaskAssignRuleResponse.RequestId"));
-		updateTaskAssignRuleResponse.setSuccess(context.booleanValue("UpdateTaskAssignRuleResponse.Success"));
-		updateTaskAssignRuleResponse.setCode(context.stringValue("UpdateTaskAssignRuleResponse.Code"));
-		updateTaskAssignRuleResponse.setMessage(context.stringValue("UpdateTaskAssignRuleResponse.Message"));
+		updateTaskAssignRuleResponse.setRequestId(_ctx.stringValue("UpdateTaskAssignRuleResponse.RequestId"));
+		updateTaskAssignRuleResponse.setSuccess(_ctx.booleanValue("UpdateTaskAssignRuleResponse.Success"));
+		updateTaskAssignRuleResponse.setCode(_ctx.stringValue("UpdateTaskAssignRuleResponse.Code"));
+		updateTaskAssignRuleResponse.setMessage(_ctx.stringValue("UpdateTaskAssignRuleResponse.Message"));
 	 
 	 	return updateTaskAssignRuleResponse;
 	}

@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetScoreInfoResponseUnmarshaller {
 
-	public static GetScoreInfoResponse unmarshall(GetScoreInfoResponse getScoreInfoResponse, UnmarshallerContext context) {
+	public static GetScoreInfoResponse unmarshall(GetScoreInfoResponse getScoreInfoResponse, UnmarshallerContext _ctx) {
 		
-		getScoreInfoResponse.setRequestId(context.stringValue("GetScoreInfoResponse.RequestId"));
-		getScoreInfoResponse.setSuccess(context.booleanValue("GetScoreInfoResponse.Success"));
-		getScoreInfoResponse.setCode(context.stringValue("GetScoreInfoResponse.Code"));
-		getScoreInfoResponse.setMessage(context.stringValue("GetScoreInfoResponse.Message"));
+		getScoreInfoResponse.setRequestId(_ctx.stringValue("GetScoreInfoResponse.RequestId"));
+		getScoreInfoResponse.setSuccess(_ctx.booleanValue("GetScoreInfoResponse.Success"));
+		getScoreInfoResponse.setCode(_ctx.stringValue("GetScoreInfoResponse.Code"));
+		getScoreInfoResponse.setMessage(_ctx.stringValue("GetScoreInfoResponse.Message"));
 
 		List<ScorePo> data = new ArrayList<ScorePo>();
-		for (int i = 0; i < context.lengthValue("GetScoreInfoResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetScoreInfoResponse.Data.Length"); i++) {
 			ScorePo scorePo = new ScorePo();
-			scorePo.setScoreId(context.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreId"));
-			scorePo.setScoreName(context.stringValue("GetScoreInfoResponse.Data["+ i +"].ScoreName"));
+			scorePo.setScoreId(_ctx.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreId"));
+			scorePo.setScoreName(_ctx.stringValue("GetScoreInfoResponse.Data["+ i +"].ScoreName"));
 
 			List<ScoreParam> scoreInfos = new ArrayList<ScoreParam>();
-			for (int j = 0; j < context.lengthValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos.Length"); j++) {
 				ScoreParam scoreParam = new ScoreParam();
-				scoreParam.setScoreNum(context.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreNum"));
-				scoreParam.setScoreSubId(context.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubId"));
-				scoreParam.setScoreSubName(context.stringValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubName"));
-				scoreParam.setScoreType(context.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreType"));
+				scoreParam.setScoreNum(_ctx.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreNum"));
+				scoreParam.setScoreSubId(_ctx.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubId"));
+				scoreParam.setScoreSubName(_ctx.stringValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubName"));
+				scoreParam.setScoreType(_ctx.integerValue("GetScoreInfoResponse.Data["+ i +"].ScoreInfos["+ j +"].ScoreType"));
 
 				scoreInfos.add(scoreParam);
 			}

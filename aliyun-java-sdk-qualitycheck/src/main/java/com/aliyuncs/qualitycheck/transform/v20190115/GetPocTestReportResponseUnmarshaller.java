@@ -21,28 +21,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPocTestReportResponseUnmarshaller {
 
-	public static GetPocTestReportResponse unmarshall(GetPocTestReportResponse getPocTestReportResponse, UnmarshallerContext context) {
+	public static GetPocTestReportResponse unmarshall(GetPocTestReportResponse getPocTestReportResponse, UnmarshallerContext _ctx) {
 		
-		getPocTestReportResponse.setRequestId(context.stringValue("GetPocTestReportResponse.RequestId"));
-		getPocTestReportResponse.setSuccess(context.booleanValue("GetPocTestReportResponse.Success"));
-		getPocTestReportResponse.setCode(context.stringValue("GetPocTestReportResponse.Code"));
-		getPocTestReportResponse.setMessage(context.stringValue("GetPocTestReportResponse.Message"));
+		getPocTestReportResponse.setRequestId(_ctx.stringValue("GetPocTestReportResponse.RequestId"));
+		getPocTestReportResponse.setSuccess(_ctx.booleanValue("GetPocTestReportResponse.Success"));
+		getPocTestReportResponse.setCode(_ctx.stringValue("GetPocTestReportResponse.Code"));
+		getPocTestReportResponse.setMessage(_ctx.stringValue("GetPocTestReportResponse.Message"));
 
 		Data data = new Data();
-		data.setAsrAccuracyRate(context.stringValue("GetPocTestReportResponse.Data.AsrAccuracyRate"));
-		data.setLabelNum(context.integerValue("GetPocTestReportResponse.Data.LabelNum"));
-		data.setPoc(context.booleanValue("GetPocTestReportResponse.Data.Poc"));
-		data.setAudioBit(context.stringValue("GetPocTestReportResponse.Data.AudioBit"));
-		data.setAudioNum(context.integerValue("GetPocTestReportResponse.Data.AudioNum"));
-		data.setAudioSampleRate(context.stringValue("GetPocTestReportResponse.Data.AudioSampleRate"));
-		data.setAudioTrack(context.stringValue("GetPocTestReportResponse.Data.AudioTrack"));
-		data.setCharacterNum(context.integerValue("GetPocTestReportResponse.Data.CharacterNum"));
-		data.setCheckCost(context.stringValue("GetPocTestReportResponse.Data.CheckCost"));
-		data.setModelName(context.stringValue("GetPocTestReportResponse.Data.ModelName"));
-		data.setPocTime(context.stringValue("GetPocTestReportResponse.Data.PocTime"));
-		data.setRuleInfo(context.stringValue("GetPocTestReportResponse.Data.RuleInfo"));
-		data.setRuleNum(context.integerValue("GetPocTestReportResponse.Data.RuleNum"));
-		data.setRuleRealRate(context.stringValue("GetPocTestReportResponse.Data.RuleRealRate"));
+		data.setAsrAccuracyRate(_ctx.stringValue("GetPocTestReportResponse.Data.AsrAccuracyRate"));
+		data.setLabelNum(_ctx.integerValue("GetPocTestReportResponse.Data.LabelNum"));
+		data.setPoc(_ctx.booleanValue("GetPocTestReportResponse.Data.Poc"));
+		data.setAudioBit(_ctx.stringValue("GetPocTestReportResponse.Data.AudioBit"));
+		data.setAudioNum(_ctx.integerValue("GetPocTestReportResponse.Data.AudioNum"));
+		data.setAudioSampleRate(_ctx.stringValue("GetPocTestReportResponse.Data.AudioSampleRate"));
+		data.setAudioTrack(_ctx.stringValue("GetPocTestReportResponse.Data.AudioTrack"));
+		data.setCharacterNum(_ctx.integerValue("GetPocTestReportResponse.Data.CharacterNum"));
+		data.setCheckCost(_ctx.stringValue("GetPocTestReportResponse.Data.CheckCost"));
+		data.setModelName(_ctx.stringValue("GetPocTestReportResponse.Data.ModelName"));
+		data.setPocTime(_ctx.stringValue("GetPocTestReportResponse.Data.PocTime"));
+		data.setRuleInfo(_ctx.stringValue("GetPocTestReportResponse.Data.RuleInfo"));
+		data.setRuleNum(_ctx.integerValue("GetPocTestReportResponse.Data.RuleNum"));
+		data.setRuleRealRate(_ctx.stringValue("GetPocTestReportResponse.Data.RuleRealRate"));
 		getPocTestReportResponse.setData(data);
 	 
 	 	return getPocTestReportResponse;

@@ -20,19 +20,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DoLogicalDeleteResourceResponseUnmarshaller {
 
-	public static DoLogicalDeleteResourceResponse unmarshall(DoLogicalDeleteResourceResponse doLogicalDeleteResourceResponse, UnmarshallerContext context) {
+	public static DoLogicalDeleteResourceResponse unmarshall(DoLogicalDeleteResourceResponse doLogicalDeleteResourceResponse, UnmarshallerContext _ctx) {
 		
-		doLogicalDeleteResourceResponse.setInterrupt(context.stringValue("DoLogicalDeleteResourceResponse.Interrupt"));
-		doLogicalDeleteResourceResponse.setInvoker(context.longValue("DoLogicalDeleteResourceResponse.Invoker"));
-		doLogicalDeleteResourceResponse.setPk(context.stringValue("DoLogicalDeleteResourceResponse.Pk"));
-		doLogicalDeleteResourceResponse.setBid(context.stringValue("DoLogicalDeleteResourceResponse.Bid"));
-		doLogicalDeleteResourceResponse.setHid(context.longValue("DoLogicalDeleteResourceResponse.Hid"));
-		doLogicalDeleteResourceResponse.setCountry(context.stringValue("DoLogicalDeleteResourceResponse.Country"));
-		doLogicalDeleteResourceResponse.setTaskIdentifier(context.stringValue("DoLogicalDeleteResourceResponse.TaskIdentifier"));
-		doLogicalDeleteResourceResponse.setTaskIdentifier1(context.stringValue("DoLogicalDeleteResourceResponse.TaskIdentifier"));
-		doLogicalDeleteResourceResponse.setGmtWakeup(context.stringValue("DoLogicalDeleteResourceResponse.GmtWakeup"));
-		doLogicalDeleteResourceResponse.setSuccess(context.booleanValue("DoLogicalDeleteResourceResponse.Success"));
-		doLogicalDeleteResourceResponse.setMessage(context.stringValue("DoLogicalDeleteResourceResponse.Message"));
+		doLogicalDeleteResourceResponse.setInterrupt(_ctx.stringValue("DoLogicalDeleteResourceResponse.Interrupt"));
+		doLogicalDeleteResourceResponse.setInvoker(_ctx.longValue("DoLogicalDeleteResourceResponse.Invoker"));
+		doLogicalDeleteResourceResponse.setPk(_ctx.stringValue("DoLogicalDeleteResourceResponse.Pk"));
+		doLogicalDeleteResourceResponse.setBid(_ctx.stringValue("DoLogicalDeleteResourceResponse.Bid"));
+		doLogicalDeleteResourceResponse.setHid(_ctx.longValue("DoLogicalDeleteResourceResponse.Hid"));
+		doLogicalDeleteResourceResponse.setCountry(_ctx.stringValue("DoLogicalDeleteResourceResponse.Country"));
+		doLogicalDeleteResourceResponse.setTaskIdentifier(_ctx.stringValue("DoLogicalDeleteResourceResponse.TaskIdentifier"));
+		doLogicalDeleteResourceResponse.setTaskIdentifier1(_ctx.stringValue("DoLogicalDeleteResourceResponse.TaskIdentifier"));
+		doLogicalDeleteResourceResponse.setGmtWakeup(_ctx.stringValue("DoLogicalDeleteResourceResponse.GmtWakeup"));
+		doLogicalDeleteResourceResponse.setSuccess(_ctx.booleanValue("DoLogicalDeleteResourceResponse.Success"));
+		doLogicalDeleteResourceResponse.setMessage(_ctx.stringValue("DoLogicalDeleteResourceResponse.Message"));
 	 
 	 	return doLogicalDeleteResourceResponse;
 	}

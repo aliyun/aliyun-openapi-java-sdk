@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateOnPurchaseSuccessResponseUnmarshaller {
 
-	public static UpdateOnPurchaseSuccessResponse unmarshall(UpdateOnPurchaseSuccessResponse updateOnPurchaseSuccessResponse, UnmarshallerContext context) {
+	public static UpdateOnPurchaseSuccessResponse unmarshall(UpdateOnPurchaseSuccessResponse updateOnPurchaseSuccessResponse, UnmarshallerContext _ctx) {
 		
-		updateOnPurchaseSuccessResponse.setRequestId(context.stringValue("UpdateOnPurchaseSuccessResponse.RequestId"));
-		updateOnPurchaseSuccessResponse.setData(context.stringValue("UpdateOnPurchaseSuccessResponse.Data"));
-		updateOnPurchaseSuccessResponse.setSuccess(context.booleanValue("UpdateOnPurchaseSuccessResponse.Success"));
-		updateOnPurchaseSuccessResponse.setCode(context.stringValue("UpdateOnPurchaseSuccessResponse.Code"));
-		updateOnPurchaseSuccessResponse.setMessage(context.stringValue("UpdateOnPurchaseSuccessResponse.Message"));
+		updateOnPurchaseSuccessResponse.setRequestId(_ctx.stringValue("UpdateOnPurchaseSuccessResponse.RequestId"));
+		updateOnPurchaseSuccessResponse.setData(_ctx.stringValue("UpdateOnPurchaseSuccessResponse.Data"));
+		updateOnPurchaseSuccessResponse.setSuccess(_ctx.booleanValue("UpdateOnPurchaseSuccessResponse.Success"));
+		updateOnPurchaseSuccessResponse.setCode(_ctx.stringValue("UpdateOnPurchaseSuccessResponse.Code"));
+		updateOnPurchaseSuccessResponse.setMessage(_ctx.stringValue("UpdateOnPurchaseSuccessResponse.Message"));
 	 
 	 	return updateOnPurchaseSuccessResponse;
 	}

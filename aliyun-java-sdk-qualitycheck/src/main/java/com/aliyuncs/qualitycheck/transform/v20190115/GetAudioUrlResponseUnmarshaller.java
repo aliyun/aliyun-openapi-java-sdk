@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAudioUrlResponseUnmarshaller {
 
-	public static GetAudioUrlResponse unmarshall(GetAudioUrlResponse getAudioUrlResponse, UnmarshallerContext context) {
+	public static GetAudioUrlResponse unmarshall(GetAudioUrlResponse getAudioUrlResponse, UnmarshallerContext _ctx) {
 		
-		getAudioUrlResponse.setRequestId(context.stringValue("GetAudioUrlResponse.RequestId"));
-		getAudioUrlResponse.setSuccess(context.booleanValue("GetAudioUrlResponse.Success"));
-		getAudioUrlResponse.setCode(context.stringValue("GetAudioUrlResponse.Code"));
-		getAudioUrlResponse.setMessage(context.stringValue("GetAudioUrlResponse.Message"));
+		getAudioUrlResponse.setRequestId(_ctx.stringValue("GetAudioUrlResponse.RequestId"));
+		getAudioUrlResponse.setSuccess(_ctx.booleanValue("GetAudioUrlResponse.Success"));
+		getAudioUrlResponse.setCode(_ctx.stringValue("GetAudioUrlResponse.Code"));
+		getAudioUrlResponse.setMessage(_ctx.stringValue("GetAudioUrlResponse.Message"));
 
 		Data data = new Data();
-		data.setAudioUrl(context.stringValue("GetAudioUrlResponse.Data.AudioUrl"));
+		data.setAudioUrl(_ctx.stringValue("GetAudioUrlResponse.Data.AudioUrl"));
 		getAudioUrlResponse.setData(data);
 	 
 	 	return getAudioUrlResponse;

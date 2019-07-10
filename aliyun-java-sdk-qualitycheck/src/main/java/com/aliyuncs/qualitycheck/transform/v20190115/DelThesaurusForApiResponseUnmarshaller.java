@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DelThesaurusForApiResponseUnmarshaller {
 
-	public static DelThesaurusForApiResponse unmarshall(DelThesaurusForApiResponse delThesaurusForApiResponse, UnmarshallerContext context) {
+	public static DelThesaurusForApiResponse unmarshall(DelThesaurusForApiResponse delThesaurusForApiResponse, UnmarshallerContext _ctx) {
 		
-		delThesaurusForApiResponse.setRequestId(context.stringValue("DelThesaurusForApiResponse.RequestId"));
-		delThesaurusForApiResponse.setSuccess(context.booleanValue("DelThesaurusForApiResponse.Success"));
-		delThesaurusForApiResponse.setCode(context.stringValue("DelThesaurusForApiResponse.Code"));
-		delThesaurusForApiResponse.setMessage(context.stringValue("DelThesaurusForApiResponse.Message"));
+		delThesaurusForApiResponse.setRequestId(_ctx.stringValue("DelThesaurusForApiResponse.RequestId"));
+		delThesaurusForApiResponse.setSuccess(_ctx.booleanValue("DelThesaurusForApiResponse.Success"));
+		delThesaurusForApiResponse.setCode(_ctx.stringValue("DelThesaurusForApiResponse.Code"));
+		delThesaurusForApiResponse.setMessage(_ctx.stringValue("DelThesaurusForApiResponse.Message"));
 	 
 	 	return delThesaurusForApiResponse;
 	}

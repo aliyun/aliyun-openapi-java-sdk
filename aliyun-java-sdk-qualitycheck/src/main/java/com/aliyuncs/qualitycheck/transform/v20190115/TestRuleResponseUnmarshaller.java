@@ -28,49 +28,49 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TestRuleResponseUnmarshaller {
 
-	public static TestRuleResponse unmarshall(TestRuleResponse testRuleResponse, UnmarshallerContext context) {
+	public static TestRuleResponse unmarshall(TestRuleResponse testRuleResponse, UnmarshallerContext _ctx) {
 		
-		testRuleResponse.setRequestId(context.stringValue("TestRuleResponse.RequestId"));
-		testRuleResponse.setSuccess(context.booleanValue("TestRuleResponse.Success"));
-		testRuleResponse.setCode(context.stringValue("TestRuleResponse.Code"));
-		testRuleResponse.setMessage(context.stringValue("TestRuleResponse.Message"));
+		testRuleResponse.setRequestId(_ctx.stringValue("TestRuleResponse.RequestId"));
+		testRuleResponse.setSuccess(_ctx.booleanValue("TestRuleResponse.Success"));
+		testRuleResponse.setCode(_ctx.stringValue("TestRuleResponse.Code"));
+		testRuleResponse.setMessage(_ctx.stringValue("TestRuleResponse.Message"));
 
 		Data data = new Data();
-		data.setPoc(context.booleanValue("TestRuleResponse.Data.Poc"));
+		data.setPoc(_ctx.booleanValue("TestRuleResponse.Data.Poc"));
 
 		List<HitRuleReviewInfo> hitRuleReviewInfoList = new ArrayList<HitRuleReviewInfo>();
-		for (int i = 0; i < context.lengthValue("TestRuleResponse.Data.HitRuleReviewInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("TestRuleResponse.Data.HitRuleReviewInfoList.Length"); i++) {
 			HitRuleReviewInfo hitRuleReviewInfo = new HitRuleReviewInfo();
-			hitRuleReviewInfo.setRid(context.longValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].Rid"));
+			hitRuleReviewInfo.setRid(_ctx.longValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].Rid"));
 
 			List<ConditionHitInfo> conditionHitInfoList = new ArrayList<ConditionHitInfo>();
-			for (int j = 0; j < context.lengthValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList.Length"); j++) {
 				ConditionHitInfo conditionHitInfo = new ConditionHitInfo();
 
 				List<String> cid = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid.Length"); k++) {
-					cid.add(context.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid.Length"); k++) {
+					cid.add(_ctx.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid["+ k +"]"));
 				}
 				conditionHitInfo.setCid(cid);
 
 				Phrase phrase = new Phrase();
-				phrase.setRole(context.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Role"));
-				phrase.setIdentity(context.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Identity"));
-				phrase.setEmotionValue(context.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.EmotionValue"));
-				phrase.setWords(context.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Words"));
-				phrase.setEnd(context.longValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.End"));
-				phrase.setPid(context.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Pid"));
-				phrase.setBegin(context.longValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Begin"));
+				phrase.setRole(_ctx.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Role"));
+				phrase.setIdentity(_ctx.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Identity"));
+				phrase.setEmotionValue(_ctx.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.EmotionValue"));
+				phrase.setWords(_ctx.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Words"));
+				phrase.setEnd(_ctx.longValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.End"));
+				phrase.setPid(_ctx.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Pid"));
+				phrase.setBegin(_ctx.longValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Begin"));
 				conditionHitInfo.setPhrase(phrase);
 
 				List<KeyWord> keyWords = new ArrayList<KeyWord>();
-				for (int k = 0; k < context.lengthValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords.Length"); k++) {
 					KeyWord keyWord = new KeyWord();
-					keyWord.setVal(context.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Val"));
-					keyWord.setPid(context.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Pid"));
-					keyWord.setFrom(context.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].From"));
-					keyWord.setTo(context.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].To"));
-					keyWord.setTid(context.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Tid"));
+					keyWord.setVal(_ctx.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Val"));
+					keyWord.setPid(_ctx.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Pid"));
+					keyWord.setFrom(_ctx.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].From"));
+					keyWord.setTo(_ctx.integerValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].To"));
+					keyWord.setTid(_ctx.stringValue("TestRuleResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Tid"));
 
 					keyWords.add(keyWord);
 				}

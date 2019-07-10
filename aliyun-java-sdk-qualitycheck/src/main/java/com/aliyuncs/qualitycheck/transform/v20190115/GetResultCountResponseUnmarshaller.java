@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetResultCountResponseUnmarshaller {
 
-	public static GetResultCountResponse unmarshall(GetResultCountResponse getResultCountResponse, UnmarshallerContext context) {
+	public static GetResultCountResponse unmarshall(GetResultCountResponse getResultCountResponse, UnmarshallerContext _ctx) {
 		
-		getResultCountResponse.setRequestId(context.stringValue("GetResultCountResponse.RequestId"));
-		getResultCountResponse.setSuccess(context.booleanValue("GetResultCountResponse.Success"));
-		getResultCountResponse.setCode(context.stringValue("GetResultCountResponse.Code"));
-		getResultCountResponse.setMessage(context.stringValue("GetResultCountResponse.Message"));
-		getResultCountResponse.setData(context.integerValue("GetResultCountResponse.Data"));
+		getResultCountResponse.setRequestId(_ctx.stringValue("GetResultCountResponse.RequestId"));
+		getResultCountResponse.setSuccess(_ctx.booleanValue("GetResultCountResponse.Success"));
+		getResultCountResponse.setCode(_ctx.stringValue("GetResultCountResponse.Code"));
+		getResultCountResponse.setMessage(_ctx.stringValue("GetResultCountResponse.Message"));
+		getResultCountResponse.setData(_ctx.integerValue("GetResultCountResponse.Data"));
 	 
 	 	return getResultCountResponse;
 	}

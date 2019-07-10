@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadDataWithRulesResponseUnmarshaller {
 
-	public static UploadDataWithRulesResponse unmarshall(UploadDataWithRulesResponse uploadDataWithRulesResponse, UnmarshallerContext context) {
+	public static UploadDataWithRulesResponse unmarshall(UploadDataWithRulesResponse uploadDataWithRulesResponse, UnmarshallerContext _ctx) {
 		
-		uploadDataWithRulesResponse.setRequestId(context.stringValue("UploadDataWithRulesResponse.RequestId"));
-		uploadDataWithRulesResponse.setSuccess(context.booleanValue("UploadDataWithRulesResponse.Success"));
-		uploadDataWithRulesResponse.setCode(context.stringValue("UploadDataWithRulesResponse.Code"));
-		uploadDataWithRulesResponse.setMessage(context.stringValue("UploadDataWithRulesResponse.Message"));
-		uploadDataWithRulesResponse.setData(context.stringValue("UploadDataWithRulesResponse.Data"));
+		uploadDataWithRulesResponse.setRequestId(_ctx.stringValue("UploadDataWithRulesResponse.RequestId"));
+		uploadDataWithRulesResponse.setSuccess(_ctx.booleanValue("UploadDataWithRulesResponse.Success"));
+		uploadDataWithRulesResponse.setCode(_ctx.stringValue("UploadDataWithRulesResponse.Code"));
+		uploadDataWithRulesResponse.setMessage(_ctx.stringValue("UploadDataWithRulesResponse.Message"));
+		uploadDataWithRulesResponse.setData(_ctx.stringValue("UploadDataWithRulesResponse.Data"));
 	 
 	 	return uploadDataWithRulesResponse;
 	}

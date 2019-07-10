@@ -30,89 +30,90 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetResultResponseUnmarshaller {
 
-	public static GetResultResponse unmarshall(GetResultResponse getResultResponse, UnmarshallerContext context) {
+	public static GetResultResponse unmarshall(GetResultResponse getResultResponse, UnmarshallerContext _ctx) {
 		
-		getResultResponse.setRequestId(context.stringValue("GetResultResponse.RequestId"));
-		getResultResponse.setSuccess(context.booleanValue("GetResultResponse.Success"));
-		getResultResponse.setCode(context.stringValue("GetResultResponse.Code"));
-		getResultResponse.setMessage(context.stringValue("GetResultResponse.Message"));
-		getResultResponse.setCount(context.integerValue("GetResultResponse.Count"));
-		getResultResponse.setPageSize(context.integerValue("GetResultResponse.PageSize"));
-		getResultResponse.setPageNumber(context.integerValue("GetResultResponse.PageNumber"));
+		getResultResponse.setRequestId(_ctx.stringValue("GetResultResponse.RequestId"));
+		getResultResponse.setSuccess(_ctx.booleanValue("GetResultResponse.Success"));
+		getResultResponse.setCode(_ctx.stringValue("GetResultResponse.Code"));
+		getResultResponse.setMessage(_ctx.stringValue("GetResultResponse.Message"));
+		getResultResponse.setCount(_ctx.integerValue("GetResultResponse.Count"));
+		getResultResponse.setPageSize(_ctx.integerValue("GetResultResponse.PageSize"));
+		getResultResponse.setPageNumber(_ctx.integerValue("GetResultResponse.PageNumber"));
 
 		List<ResultInfo> data = new ArrayList<ResultInfo>();
-		for (int i = 0; i < context.lengthValue("GetResultResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetResultResponse.Data.Length"); i++) {
 			ResultInfo resultInfo = new ResultInfo();
-			resultInfo.setScore(context.integerValue("GetResultResponse.Data["+ i +"].Score"));
-			resultInfo.setComments(context.stringValue("GetResultResponse.Data["+ i +"].Comments"));
-			resultInfo.setStatus(context.integerValue("GetResultResponse.Data["+ i +"].Status"));
-			resultInfo.setReviewStatus(context.integerValue("GetResultResponse.Data["+ i +"].ReviewStatus"));
-			resultInfo.setTaskId(context.stringValue("GetResultResponse.Data["+ i +"].TaskId"));
-			resultInfo.setTaskName(context.stringValue("GetResultResponse.Data["+ i +"].TaskName"));
-			resultInfo.setCreateTime(context.stringValue("GetResultResponse.Data["+ i +"].CreateTime"));
-			resultInfo.setReviewer(context.stringValue("GetResultResponse.Data["+ i +"].Reviewer"));
-			resultInfo.setResolver(context.stringValue("GetResultResponse.Data["+ i +"].Resolver"));
-			resultInfo.setReviewResult(context.integerValue("GetResultResponse.Data["+ i +"].ReviewResult"));
+			resultInfo.setScore(_ctx.integerValue("GetResultResponse.Data["+ i +"].Score"));
+			resultInfo.setComments(_ctx.stringValue("GetResultResponse.Data["+ i +"].Comments"));
+			resultInfo.setErrorMessage(_ctx.stringValue("GetResultResponse.Data["+ i +"].ErrorMessage"));
+			resultInfo.setStatus(_ctx.integerValue("GetResultResponse.Data["+ i +"].Status"));
+			resultInfo.setReviewStatus(_ctx.integerValue("GetResultResponse.Data["+ i +"].ReviewStatus"));
+			resultInfo.setReviewResult(_ctx.integerValue("GetResultResponse.Data["+ i +"].ReviewResult"));
+			resultInfo.setTaskId(_ctx.stringValue("GetResultResponse.Data["+ i +"].TaskId"));
+			resultInfo.setTaskName(_ctx.stringValue("GetResultResponse.Data["+ i +"].TaskName"));
+			resultInfo.setCreateTime(_ctx.stringValue("GetResultResponse.Data["+ i +"].CreateTime"));
+			resultInfo.setReviewer(_ctx.stringValue("GetResultResponse.Data["+ i +"].Reviewer"));
+			resultInfo.setResolver(_ctx.stringValue("GetResultResponse.Data["+ i +"].Resolver"));
 
 			Recording recording = new Recording();
-			recording.setId(context.stringValue("GetResultResponse.Data["+ i +"].Recording.Id"));
-			recording.setPrimaryId(context.stringValue("GetResultResponse.Data["+ i +"].Recording.PrimaryId"));
-			recording.setName(context.stringValue("GetResultResponse.Data["+ i +"].Recording.Name"));
-			recording.setUrl(context.stringValue("GetResultResponse.Data["+ i +"].Recording.Url"));
-			recording.setDataSetName(context.stringValue("GetResultResponse.Data["+ i +"].Recording.DataSetName"));
-			recording.setDuration(context.longValue("GetResultResponse.Data["+ i +"].Recording.Duration"));
+			recording.setId(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Id"));
+			recording.setPrimaryId(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.PrimaryId"));
+			recording.setName(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Name"));
+			recording.setUrl(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Url"));
+			recording.setDataSetName(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.DataSetName"));
+			recording.setDuration(_ctx.longValue("GetResultResponse.Data["+ i +"].Recording.Duration"));
 			resultInfo.setRecording(recording);
 
 			List<AsrResultItem> asrResult = new ArrayList<AsrResultItem>();
-			for (int j = 0; j < context.lengthValue("GetResultResponse.Data["+ i +"].AsrResult.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetResultResponse.Data["+ i +"].AsrResult.Length"); j++) {
 				AsrResultItem asrResultItem = new AsrResultItem();
-				asrResultItem.setRole(context.stringValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].Role"));
-				asrResultItem.setWords(context.stringValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].Words"));
-				asrResultItem.setBegin(context.longValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].Begin"));
-				asrResultItem.setEnd(context.longValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].End"));
-				asrResultItem.setEmotionValue(context.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].EmotionValue"));
-				asrResultItem.setSilenceDuration(context.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].SilenceDuration"));
-				asrResultItem.setSpeechRate(context.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].SpeechRate"));
+				asrResultItem.setRole(_ctx.stringValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].Role"));
+				asrResultItem.setWords(_ctx.stringValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].Words"));
+				asrResultItem.setBegin(_ctx.longValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].Begin"));
+				asrResultItem.setEnd(_ctx.longValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].End"));
+				asrResultItem.setEmotionValue(_ctx.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].EmotionValue"));
+				asrResultItem.setSilenceDuration(_ctx.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].SilenceDuration"));
+				asrResultItem.setSpeechRate(_ctx.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].SpeechRate"));
 
 				asrResult.add(asrResultItem);
 			}
 			resultInfo.setAsrResult(asrResult);
 
 			List<HitResultItem> hitResult = new ArrayList<HitResultItem>();
-			for (int j = 0; j < context.lengthValue("GetResultResponse.Data["+ i +"].HitResult.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult.Length"); j++) {
 				HitResultItem hitResultItem = new HitResultItem();
-				hitResultItem.setRid(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Rid"));
-				hitResultItem.setName(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Name"));
-				hitResultItem.setType(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Type"));
-				hitResultItem.setReviewResult(context.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].ReviewResult"));
+				hitResultItem.setRid(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Rid"));
+				hitResultItem.setName(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Name"));
+				hitResultItem.setType(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Type"));
+				hitResultItem.setReviewResult(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].ReviewResult"));
 
 				List<Hit> hits = new ArrayList<Hit>();
-				for (int k = 0; k < context.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits.Length"); k++) {
 					Hit hit = new Hit();
 
 					List<String> cid = new ArrayList<String>();
-					for (int l = 0; l < context.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Cid.Length"); l++) {
-						cid.add(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Cid["+ l +"]"));
+					for (int l = 0; l < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Cid.Length"); l++) {
+						cid.add(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Cid["+ l +"]"));
 					}
 					hit.setCid(cid);
 
 					Phrase phrase = new Phrase();
-					phrase.setRole(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Role"));
-					phrase.setWords(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Words"));
-					phrase.setBegin(context.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Begin"));
-					phrase.setEnd(context.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.End"));
-					phrase.setEmotionValue(context.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.EmotionValue"));
-					phrase.setSilenceDuration(context.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.SilenceDuration"));
-					phrase.setSpeechRate(context.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.SpeechRate"));
+					phrase.setRole(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Role"));
+					phrase.setWords(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Words"));
+					phrase.setBegin(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Begin"));
+					phrase.setEnd(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.End"));
+					phrase.setEmotionValue(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.EmotionValue"));
+					phrase.setSilenceDuration(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.SilenceDuration"));
+					phrase.setSpeechRate(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.SpeechRate"));
 					hit.setPhrase(phrase);
 
 					List<KeyWord> keyWords = new ArrayList<KeyWord>();
-					for (int l = 0; l < context.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords.Length"); l++) {
+					for (int l = 0; l < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords.Length"); l++) {
 						KeyWord keyWord = new KeyWord();
-						keyWord.setCid(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Cid"));
-						keyWord.setFrom(context.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].From"));
-						keyWord.setTo(context.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].To"));
-						keyWord.setVal(context.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Val"));
+						keyWord.setCid(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Cid"));
+						keyWord.setFrom(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].From"));
+						keyWord.setTo(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].To"));
+						keyWord.setVal(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Val"));
 
 						keyWords.add(keyWord);
 					}

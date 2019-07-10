@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteAsrVocabResponseUnmarshaller {
 
-	public static DeleteAsrVocabResponse unmarshall(DeleteAsrVocabResponse deleteAsrVocabResponse, UnmarshallerContext context) {
+	public static DeleteAsrVocabResponse unmarshall(DeleteAsrVocabResponse deleteAsrVocabResponse, UnmarshallerContext _ctx) {
 		
-		deleteAsrVocabResponse.setRequestId(context.stringValue("DeleteAsrVocabResponse.RequestId"));
-		deleteAsrVocabResponse.setSuccess(context.booleanValue("DeleteAsrVocabResponse.Success"));
-		deleteAsrVocabResponse.setCode(context.stringValue("DeleteAsrVocabResponse.Code"));
-		deleteAsrVocabResponse.setMessage(context.stringValue("DeleteAsrVocabResponse.Message"));
-		deleteAsrVocabResponse.setData(context.stringValue("DeleteAsrVocabResponse.Data"));
+		deleteAsrVocabResponse.setRequestId(_ctx.stringValue("DeleteAsrVocabResponse.RequestId"));
+		deleteAsrVocabResponse.setSuccess(_ctx.booleanValue("DeleteAsrVocabResponse.Success"));
+		deleteAsrVocabResponse.setCode(_ctx.stringValue("DeleteAsrVocabResponse.Code"));
+		deleteAsrVocabResponse.setMessage(_ctx.stringValue("DeleteAsrVocabResponse.Message"));
+		deleteAsrVocabResponse.setData(_ctx.stringValue("DeleteAsrVocabResponse.Data"));
 	 
 	 	return deleteAsrVocabResponse;
 	}

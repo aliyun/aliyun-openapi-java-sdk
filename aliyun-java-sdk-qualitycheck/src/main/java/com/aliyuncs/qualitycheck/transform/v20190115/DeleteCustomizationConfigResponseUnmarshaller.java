@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteCustomizationConfigResponseUnmarshaller {
 
-	public static DeleteCustomizationConfigResponse unmarshall(DeleteCustomizationConfigResponse deleteCustomizationConfigResponse, UnmarshallerContext context) {
+	public static DeleteCustomizationConfigResponse unmarshall(DeleteCustomizationConfigResponse deleteCustomizationConfigResponse, UnmarshallerContext _ctx) {
 		
-		deleteCustomizationConfigResponse.setRequestId(context.stringValue("DeleteCustomizationConfigResponse.RequestId"));
-		deleteCustomizationConfigResponse.setSuccess(context.booleanValue("DeleteCustomizationConfigResponse.Success"));
-		deleteCustomizationConfigResponse.setCode(context.stringValue("DeleteCustomizationConfigResponse.Code"));
-		deleteCustomizationConfigResponse.setMessage(context.stringValue("DeleteCustomizationConfigResponse.Message"));
-		deleteCustomizationConfigResponse.setData(context.stringValue("DeleteCustomizationConfigResponse.Data"));
+		deleteCustomizationConfigResponse.setRequestId(_ctx.stringValue("DeleteCustomizationConfigResponse.RequestId"));
+		deleteCustomizationConfigResponse.setSuccess(_ctx.booleanValue("DeleteCustomizationConfigResponse.Success"));
+		deleteCustomizationConfigResponse.setCode(_ctx.stringValue("DeleteCustomizationConfigResponse.Code"));
+		deleteCustomizationConfigResponse.setMessage(_ctx.stringValue("DeleteCustomizationConfigResponse.Message"));
+		deleteCustomizationConfigResponse.setData(_ctx.stringValue("DeleteCustomizationConfigResponse.Data"));
 	 
 	 	return deleteCustomizationConfigResponse;
 	}

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveReviewResultResponseUnmarshaller {
 
-	public static SaveReviewResultResponse unmarshall(SaveReviewResultResponse saveReviewResultResponse, UnmarshallerContext context) {
+	public static SaveReviewResultResponse unmarshall(SaveReviewResultResponse saveReviewResultResponse, UnmarshallerContext _ctx) {
 		
-		saveReviewResultResponse.setRequestId(context.stringValue("SaveReviewResultResponse.RequestId"));
-		saveReviewResultResponse.setSuccess(context.booleanValue("SaveReviewResultResponse.Success"));
-		saveReviewResultResponse.setCode(context.stringValue("SaveReviewResultResponse.Code"));
-		saveReviewResultResponse.setMessage(context.stringValue("SaveReviewResultResponse.Message"));
-		saveReviewResultResponse.setData(context.stringValue("SaveReviewResultResponse.Data"));
+		saveReviewResultResponse.setRequestId(_ctx.stringValue("SaveReviewResultResponse.RequestId"));
+		saveReviewResultResponse.setSuccess(_ctx.booleanValue("SaveReviewResultResponse.Success"));
+		saveReviewResultResponse.setCode(_ctx.stringValue("SaveReviewResultResponse.Code"));
+		saveReviewResultResponse.setMessage(_ctx.stringValue("SaveReviewResultResponse.Message"));
+		saveReviewResultResponse.setData(_ctx.stringValue("SaveReviewResultResponse.Data"));
 	 
 	 	return saveReviewResultResponse;
 	}

@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAsrVocabResponseUnmarshaller {
 
-	public static ListAsrVocabResponse unmarshall(ListAsrVocabResponse listAsrVocabResponse, UnmarshallerContext context) {
+	public static ListAsrVocabResponse unmarshall(ListAsrVocabResponse listAsrVocabResponse, UnmarshallerContext _ctx) {
 		
-		listAsrVocabResponse.setRequestId(context.stringValue("ListAsrVocabResponse.RequestId"));
-		listAsrVocabResponse.setSuccess(context.booleanValue("ListAsrVocabResponse.Success"));
-		listAsrVocabResponse.setCode(context.stringValue("ListAsrVocabResponse.Code"));
-		listAsrVocabResponse.setMessage(context.stringValue("ListAsrVocabResponse.Message"));
+		listAsrVocabResponse.setRequestId(_ctx.stringValue("ListAsrVocabResponse.RequestId"));
+		listAsrVocabResponse.setSuccess(_ctx.booleanValue("ListAsrVocabResponse.Success"));
+		listAsrVocabResponse.setCode(_ctx.stringValue("ListAsrVocabResponse.Code"));
+		listAsrVocabResponse.setMessage(_ctx.stringValue("ListAsrVocabResponse.Message"));
 
 		List<AsrVocab> data = new ArrayList<AsrVocab>();
-		for (int i = 0; i < context.lengthValue("ListAsrVocabResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAsrVocabResponse.Data.Length"); i++) {
 			AsrVocab asrVocab = new AsrVocab();
-			asrVocab.setId(context.stringValue("ListAsrVocabResponse.Data["+ i +"].Id"));
-			asrVocab.setName(context.stringValue("ListAsrVocabResponse.Data["+ i +"].Name"));
-			asrVocab.setCreateTime(context.stringValue("ListAsrVocabResponse.Data["+ i +"].CreateTime"));
-			asrVocab.setUpdateTime(context.stringValue("ListAsrVocabResponse.Data["+ i +"].UpdateTime"));
-			asrVocab.setVocabularyId(context.stringValue("ListAsrVocabResponse.Data["+ i +"].VocabularyId"));
+			asrVocab.setId(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].Id"));
+			asrVocab.setName(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].Name"));
+			asrVocab.setCreateTime(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].CreateTime"));
+			asrVocab.setUpdateTime(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].UpdateTime"));
+			asrVocab.setVocabularyId(_ctx.stringValue("ListAsrVocabResponse.Data["+ i +"].VocabularyId"));
 
 			data.add(asrVocab);
 		}

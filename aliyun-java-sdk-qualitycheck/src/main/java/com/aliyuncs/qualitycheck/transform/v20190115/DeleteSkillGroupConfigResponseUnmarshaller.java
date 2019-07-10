@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteSkillGroupConfigResponseUnmarshaller {
 
-	public static DeleteSkillGroupConfigResponse unmarshall(DeleteSkillGroupConfigResponse deleteSkillGroupConfigResponse, UnmarshallerContext context) {
+	public static DeleteSkillGroupConfigResponse unmarshall(DeleteSkillGroupConfigResponse deleteSkillGroupConfigResponse, UnmarshallerContext _ctx) {
 		
-		deleteSkillGroupConfigResponse.setRequestId(context.stringValue("DeleteSkillGroupConfigResponse.RequestId"));
-		deleteSkillGroupConfigResponse.setSuccess(context.booleanValue("DeleteSkillGroupConfigResponse.Success"));
-		deleteSkillGroupConfigResponse.setCode(context.stringValue("DeleteSkillGroupConfigResponse.Code"));
-		deleteSkillGroupConfigResponse.setMessage(context.stringValue("DeleteSkillGroupConfigResponse.Message"));
+		deleteSkillGroupConfigResponse.setRequestId(_ctx.stringValue("DeleteSkillGroupConfigResponse.RequestId"));
+		deleteSkillGroupConfigResponse.setSuccess(_ctx.booleanValue("DeleteSkillGroupConfigResponse.Success"));
+		deleteSkillGroupConfigResponse.setCode(_ctx.stringValue("DeleteSkillGroupConfigResponse.Code"));
+		deleteSkillGroupConfigResponse.setMessage(_ctx.stringValue("DeleteSkillGroupConfigResponse.Message"));
 	 
 	 	return deleteSkillGroupConfigResponse;
 	}

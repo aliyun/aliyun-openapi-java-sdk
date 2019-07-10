@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ExchangeAudioResponseUnmarshaller {
 
-	public static ExchangeAudioResponse unmarshall(ExchangeAudioResponse exchangeAudioResponse, UnmarshallerContext context) {
+	public static ExchangeAudioResponse unmarshall(ExchangeAudioResponse exchangeAudioResponse, UnmarshallerContext _ctx) {
 		
-		exchangeAudioResponse.setRequestId(context.stringValue("ExchangeAudioResponse.RequestId"));
-		exchangeAudioResponse.setSuccess(context.booleanValue("ExchangeAudioResponse.Success"));
-		exchangeAudioResponse.setCode(context.stringValue("ExchangeAudioResponse.Code"));
-		exchangeAudioResponse.setMessage(context.stringValue("ExchangeAudioResponse.Message"));
+		exchangeAudioResponse.setRequestId(_ctx.stringValue("ExchangeAudioResponse.RequestId"));
+		exchangeAudioResponse.setSuccess(_ctx.booleanValue("ExchangeAudioResponse.Success"));
+		exchangeAudioResponse.setCode(_ctx.stringValue("ExchangeAudioResponse.Code"));
+		exchangeAudioResponse.setMessage(_ctx.stringValue("ExchangeAudioResponse.Message"));
 
 		Data data = new Data();
-		data.setAudioName(context.stringValue("ExchangeAudioResponse.Data.AudioName"));
-		data.setIsCovertContext(context.booleanValue("ExchangeAudioResponse.Data.IsCovertContext"));
-		data.setIsOnlyFile(context.booleanValue("ExchangeAudioResponse.Data.IsOnlyFile"));
-		data.setSetId(context.longValue("ExchangeAudioResponse.Data.SetId"));
-		data.setTaskAsrResqusetId(context.stringValue("ExchangeAudioResponse.Data.TaskAsrResqusetId"));
+		data.setAudioName(_ctx.stringValue("ExchangeAudioResponse.Data.AudioName"));
+		data.setIsCovertContext(_ctx.booleanValue("ExchangeAudioResponse.Data.IsCovertContext"));
+		data.setIsOnlyFile(_ctx.booleanValue("ExchangeAudioResponse.Data.IsOnlyFile"));
+		data.setSetId(_ctx.longValue("ExchangeAudioResponse.Data.SetId"));
+		data.setTaskAsrResqusetId(_ctx.stringValue("ExchangeAudioResponse.Data.TaskAsrResqusetId"));
 		exchangeAudioResponse.setData(data);
 	 
 	 	return exchangeAudioResponse;

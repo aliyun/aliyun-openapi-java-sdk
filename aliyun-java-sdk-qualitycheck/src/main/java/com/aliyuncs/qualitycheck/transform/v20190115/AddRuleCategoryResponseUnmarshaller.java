@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddRuleCategoryResponseUnmarshaller {
 
-	public static AddRuleCategoryResponse unmarshall(AddRuleCategoryResponse addRuleCategoryResponse, UnmarshallerContext context) {
+	public static AddRuleCategoryResponse unmarshall(AddRuleCategoryResponse addRuleCategoryResponse, UnmarshallerContext _ctx) {
 		
-		addRuleCategoryResponse.setRequestId(context.stringValue("AddRuleCategoryResponse.RequestId"));
-		addRuleCategoryResponse.setSuccess(context.booleanValue("AddRuleCategoryResponse.Success"));
-		addRuleCategoryResponse.setCode(context.stringValue("AddRuleCategoryResponse.Code"));
-		addRuleCategoryResponse.setMessage(context.stringValue("AddRuleCategoryResponse.Message"));
+		addRuleCategoryResponse.setRequestId(_ctx.stringValue("AddRuleCategoryResponse.RequestId"));
+		addRuleCategoryResponse.setSuccess(_ctx.booleanValue("AddRuleCategoryResponse.Success"));
+		addRuleCategoryResponse.setCode(_ctx.stringValue("AddRuleCategoryResponse.Code"));
+		addRuleCategoryResponse.setMessage(_ctx.stringValue("AddRuleCategoryResponse.Message"));
 
 		Data data = new Data();
-		data.setSelect(context.booleanValue("AddRuleCategoryResponse.Data.Select"));
+		data.setSelect(_ctx.booleanValue("AddRuleCategoryResponse.Data.Select"));
 		addRuleCategoryResponse.setData(data);
 	 
 	 	return addRuleCategoryResponse;

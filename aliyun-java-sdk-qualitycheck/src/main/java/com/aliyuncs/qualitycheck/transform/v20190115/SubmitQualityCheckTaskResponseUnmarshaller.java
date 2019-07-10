@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitQualityCheckTaskResponseUnmarshaller {
 
-	public static SubmitQualityCheckTaskResponse unmarshall(SubmitQualityCheckTaskResponse submitQualityCheckTaskResponse, UnmarshallerContext context) {
+	public static SubmitQualityCheckTaskResponse unmarshall(SubmitQualityCheckTaskResponse submitQualityCheckTaskResponse, UnmarshallerContext _ctx) {
 		
-		submitQualityCheckTaskResponse.setRequestId(context.stringValue("SubmitQualityCheckTaskResponse.RequestId"));
-		submitQualityCheckTaskResponse.setSuccess(context.booleanValue("SubmitQualityCheckTaskResponse.Success"));
-		submitQualityCheckTaskResponse.setCode(context.stringValue("SubmitQualityCheckTaskResponse.Code"));
-		submitQualityCheckTaskResponse.setMessage(context.stringValue("SubmitQualityCheckTaskResponse.Message"));
-		submitQualityCheckTaskResponse.setData(context.stringValue("SubmitQualityCheckTaskResponse.Data"));
+		submitQualityCheckTaskResponse.setRequestId(_ctx.stringValue("SubmitQualityCheckTaskResponse.RequestId"));
+		submitQualityCheckTaskResponse.setSuccess(_ctx.booleanValue("SubmitQualityCheckTaskResponse.Success"));
+		submitQualityCheckTaskResponse.setCode(_ctx.stringValue("SubmitQualityCheckTaskResponse.Code"));
+		submitQualityCheckTaskResponse.setMessage(_ctx.stringValue("SubmitQualityCheckTaskResponse.Message"));
+		submitQualityCheckTaskResponse.setData(_ctx.stringValue("SubmitQualityCheckTaskResponse.Data"));
 	 
 	 	return submitQualityCheckTaskResponse;
 	}

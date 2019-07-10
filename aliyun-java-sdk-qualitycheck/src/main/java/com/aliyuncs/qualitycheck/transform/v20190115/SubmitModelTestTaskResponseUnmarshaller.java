@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitModelTestTaskResponseUnmarshaller {
 
-	public static SubmitModelTestTaskResponse unmarshall(SubmitModelTestTaskResponse submitModelTestTaskResponse, UnmarshallerContext context) {
+	public static SubmitModelTestTaskResponse unmarshall(SubmitModelTestTaskResponse submitModelTestTaskResponse, UnmarshallerContext _ctx) {
 		
-		submitModelTestTaskResponse.setRequestId(context.stringValue("SubmitModelTestTaskResponse.RequestId"));
-		submitModelTestTaskResponse.setSuccess(context.booleanValue("SubmitModelTestTaskResponse.Success"));
-		submitModelTestTaskResponse.setCode(context.stringValue("SubmitModelTestTaskResponse.Code"));
-		submitModelTestTaskResponse.setMessage(context.stringValue("SubmitModelTestTaskResponse.Message"));
+		submitModelTestTaskResponse.setRequestId(_ctx.stringValue("SubmitModelTestTaskResponse.RequestId"));
+		submitModelTestTaskResponse.setSuccess(_ctx.booleanValue("SubmitModelTestTaskResponse.Success"));
+		submitModelTestTaskResponse.setCode(_ctx.stringValue("SubmitModelTestTaskResponse.Code"));
+		submitModelTestTaskResponse.setMessage(_ctx.stringValue("SubmitModelTestTaskResponse.Message"));
 
 		Data data = new Data();
-		data.setTaskId(context.stringValue("SubmitModelTestTaskResponse.Data.TaskId"));
-		data.setTaskType(context.integerValue("SubmitModelTestTaskResponse.Data.TaskType"));
+		data.setTaskId(_ctx.stringValue("SubmitModelTestTaskResponse.Data.TaskId"));
+		data.setTaskType(_ctx.integerValue("SubmitModelTestTaskResponse.Data.TaskType"));
 		submitModelTestTaskResponse.setData(data);
 	 
 	 	return submitModelTestTaskResponse;

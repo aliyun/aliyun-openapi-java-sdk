@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveAndGetTaskRulesResponseUnmarshaller {
 
-	public static RemoveAndGetTaskRulesResponse unmarshall(RemoveAndGetTaskRulesResponse removeAndGetTaskRulesResponse, UnmarshallerContext context) {
+	public static RemoveAndGetTaskRulesResponse unmarshall(RemoveAndGetTaskRulesResponse removeAndGetTaskRulesResponse, UnmarshallerContext _ctx) {
 		
-		removeAndGetTaskRulesResponse.setRequestId(context.stringValue("RemoveAndGetTaskRulesResponse.RequestId"));
-		removeAndGetTaskRulesResponse.setSuccess(context.booleanValue("RemoveAndGetTaskRulesResponse.Success"));
-		removeAndGetTaskRulesResponse.setCode(context.stringValue("RemoveAndGetTaskRulesResponse.Code"));
-		removeAndGetTaskRulesResponse.setMessage(context.stringValue("RemoveAndGetTaskRulesResponse.Message"));
+		removeAndGetTaskRulesResponse.setRequestId(_ctx.stringValue("RemoveAndGetTaskRulesResponse.RequestId"));
+		removeAndGetTaskRulesResponse.setSuccess(_ctx.booleanValue("RemoveAndGetTaskRulesResponse.Success"));
+		removeAndGetTaskRulesResponse.setCode(_ctx.stringValue("RemoveAndGetTaskRulesResponse.Code"));
+		removeAndGetTaskRulesResponse.setMessage(_ctx.stringValue("RemoveAndGetTaskRulesResponse.Message"));
 	 
 	 	return removeAndGetTaskRulesResponse;
 	}

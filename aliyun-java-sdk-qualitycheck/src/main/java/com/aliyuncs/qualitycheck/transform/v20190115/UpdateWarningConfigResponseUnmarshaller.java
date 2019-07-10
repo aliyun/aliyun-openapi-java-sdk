@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateWarningConfigResponseUnmarshaller {
 
-	public static UpdateWarningConfigResponse unmarshall(UpdateWarningConfigResponse updateWarningConfigResponse, UnmarshallerContext context) {
+	public static UpdateWarningConfigResponse unmarshall(UpdateWarningConfigResponse updateWarningConfigResponse, UnmarshallerContext _ctx) {
 		
-		updateWarningConfigResponse.setRequestId(context.stringValue("UpdateWarningConfigResponse.RequestId"));
-		updateWarningConfigResponse.setSuccess(context.booleanValue("UpdateWarningConfigResponse.Success"));
-		updateWarningConfigResponse.setCode(context.stringValue("UpdateWarningConfigResponse.Code"));
-		updateWarningConfigResponse.setMessage(context.stringValue("UpdateWarningConfigResponse.Message"));
+		updateWarningConfigResponse.setRequestId(_ctx.stringValue("UpdateWarningConfigResponse.RequestId"));
+		updateWarningConfigResponse.setSuccess(_ctx.booleanValue("UpdateWarningConfigResponse.Success"));
+		updateWarningConfigResponse.setCode(_ctx.stringValue("UpdateWarningConfigResponse.Code"));
+		updateWarningConfigResponse.setMessage(_ctx.stringValue("UpdateWarningConfigResponse.Message"));
 	 
 	 	return updateWarningConfigResponse;
 	}

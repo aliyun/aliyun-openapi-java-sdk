@@ -30,70 +30,70 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAudioDataStatusResponseUnmarshaller {
 
-	public static GetAudioDataStatusResponse unmarshall(GetAudioDataStatusResponse getAudioDataStatusResponse, UnmarshallerContext context) {
+	public static GetAudioDataStatusResponse unmarshall(GetAudioDataStatusResponse getAudioDataStatusResponse, UnmarshallerContext _ctx) {
 		
-		getAudioDataStatusResponse.setRequestId(context.stringValue("GetAudioDataStatusResponse.RequestId"));
-		getAudioDataStatusResponse.setSuccess(context.booleanValue("GetAudioDataStatusResponse.Success"));
-		getAudioDataStatusResponse.setCode(context.stringValue("GetAudioDataStatusResponse.Code"));
-		getAudioDataStatusResponse.setMessage(context.stringValue("GetAudioDataStatusResponse.Message"));
-		getAudioDataStatusResponse.setCount(context.integerValue("GetAudioDataStatusResponse.Count"));
-		getAudioDataStatusResponse.setOverallStatus(context.integerValue("GetAudioDataStatusResponse.OverallStatus"));
+		getAudioDataStatusResponse.setRequestId(_ctx.stringValue("GetAudioDataStatusResponse.RequestId"));
+		getAudioDataStatusResponse.setSuccess(_ctx.booleanValue("GetAudioDataStatusResponse.Success"));
+		getAudioDataStatusResponse.setCode(_ctx.stringValue("GetAudioDataStatusResponse.Code"));
+		getAudioDataStatusResponse.setMessage(_ctx.stringValue("GetAudioDataStatusResponse.Message"));
+		getAudioDataStatusResponse.setCount(_ctx.integerValue("GetAudioDataStatusResponse.Count"));
+		getAudioDataStatusResponse.setOverallStatus(_ctx.integerValue("GetAudioDataStatusResponse.OverallStatus"));
 
 		List<TaskAsrResult> data = new ArrayList<TaskAsrResult>();
-		for (int i = 0; i < context.lengthValue("GetAudioDataStatusResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetAudioDataStatusResponse.Data.Length"); i++) {
 			TaskAsrResult taskAsrResult = new TaskAsrResult();
-			taskAsrResult.setTid(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].Tid"));
-			taskAsrResult.setStatusCode(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].StatusCode"));
-			taskAsrResult.setStatusMsg(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].StatusMsg"));
+			taskAsrResult.setTid(_ctx.stringValue("GetAudioDataStatusResponse.Data["+ i +"].Tid"));
+			taskAsrResult.setStatusCode(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].StatusCode"));
+			taskAsrResult.setStatusMsg(_ctx.stringValue("GetAudioDataStatusResponse.Data["+ i +"].StatusMsg"));
 
 			AsrResult asrResult = new AsrResult();
-			asrResult.setAsrstatus(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.Asrstatus"));
-			asrResult.setAsrStatusCode(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.AsrStatusCode"));
-			asrResult.setErrorMessage(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ErrorMessage"));
-			asrResult.setDuration(context.longValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.Duration"));
-			asrResult.setInteractiveCount(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.InteractiveCount"));
+			asrResult.setAsrstatus(_ctx.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.Asrstatus"));
+			asrResult.setAsrStatusCode(_ctx.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.AsrStatusCode"));
+			asrResult.setErrorMessage(_ctx.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ErrorMessage"));
+			asrResult.setDuration(_ctx.longValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.Duration"));
+			asrResult.setInteractiveCount(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.InteractiveCount"));
 
 			ServiceEvStat serviceEvStat = new ServiceEvStat();
-			serviceEvStat.setSrole(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceEvStat.Srole"));
-			serviceEvStat.setSmaxEmotionValue(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceEvStat.SmaxEmotionValue"));
-			serviceEvStat.setSminEmotionValue(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceEvStat.SminEmotionValue"));
-			serviceEvStat.setSavgEmotionValue(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceEvStat.SavgEmotionValue"));
+			serviceEvStat.setSrole(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceEvStat.Srole"));
+			serviceEvStat.setSmaxEmotionValue(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceEvStat.SmaxEmotionValue"));
+			serviceEvStat.setSminEmotionValue(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceEvStat.SminEmotionValue"));
+			serviceEvStat.setSavgEmotionValue(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceEvStat.SavgEmotionValue"));
 			asrResult.setServiceEvStat(serviceEvStat);
 
 			ClientEvStat clientEvStat = new ClientEvStat();
-			clientEvStat.setCrole(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientEvStat.Crole"));
-			clientEvStat.setCmaxEmotionValue(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientEvStat.CmaxEmotionValue"));
-			clientEvStat.setCminEmotionValue(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientEvStat.CminEmotionValue"));
-			clientEvStat.setCavgEmotionValue(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientEvStat.CavgEmotionValue"));
+			clientEvStat.setCrole(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientEvStat.Crole"));
+			clientEvStat.setCmaxEmotionValue(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientEvStat.CmaxEmotionValue"));
+			clientEvStat.setCminEmotionValue(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientEvStat.CminEmotionValue"));
+			clientEvStat.setCavgEmotionValue(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientEvStat.CavgEmotionValue"));
 			asrResult.setClientEvStat(clientEvStat);
 
 			ServiceSrStat serviceSrStat = new ServiceSrStat();
-			serviceSrStat.setSrole(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceSrStat.Srole"));
-			serviceSrStat.setSmaxSpeechRate(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceSrStat.SmaxSpeechRate"));
-			serviceSrStat.setSminSpeechRate(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceSrStat.SminSpeechRate"));
-			serviceSrStat.setSavgSpeechRate(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceSrStat.SavgSpeechRate"));
+			serviceSrStat.setSrole(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceSrStat.Srole"));
+			serviceSrStat.setSmaxSpeechRate(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceSrStat.SmaxSpeechRate"));
+			serviceSrStat.setSminSpeechRate(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceSrStat.SminSpeechRate"));
+			serviceSrStat.setSavgSpeechRate(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ServiceSrStat.SavgSpeechRate"));
 			asrResult.setServiceSrStat(serviceSrStat);
 
 			ClientSrStat clientSrStat = new ClientSrStat();
-			clientSrStat.setCrole(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientSrStat.Crole"));
-			clientSrStat.setCmaxSpeechRate(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientSrStat.CmaxSpeechRate"));
-			clientSrStat.setCminSpeechRate(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientSrStat.CminSpeechRate"));
-			clientSrStat.setCavgSpeechRate(context.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientSrStat.CavgSpeechRate"));
+			clientSrStat.setCrole(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientSrStat.Crole"));
+			clientSrStat.setCmaxSpeechRate(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientSrStat.CmaxSpeechRate"));
+			clientSrStat.setCminSpeechRate(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientSrStat.CminSpeechRate"));
+			clientSrStat.setCavgSpeechRate(_ctx.floatValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.ClientSrStat.CavgSpeechRate"));
 			asrResult.setClientSrStat(clientSrStat);
 
 			List<SentenceResult> sentenceResults = new ArrayList<SentenceResult>();
-			for (int j = 0; j < context.lengthValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults.Length"); j++) {
 				SentenceResult sentenceResult = new SentenceResult();
-				sentenceResult.setBeginTime(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].BeginTime"));
-				sentenceResult.setEndTime(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].EndTime"));
-				sentenceResult.setChannelId(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].ChannelId"));
-				sentenceResult.setText(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].Text"));
-				sentenceResult.setEmotionValue(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].EmotionValue"));
-				sentenceResult.setSilenceDuration(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].SilenceDuration"));
-				sentenceResult.setSpeechRate(context.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].SpeechRate"));
-				sentenceResult.setSpeakerId(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].SpeakerId"));
-				sentenceResult.setAgentId(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].AgentId"));
-				sentenceResult.setChannelKey(context.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].ChannelKey"));
+				sentenceResult.setBeginTime(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].BeginTime"));
+				sentenceResult.setEndTime(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].EndTime"));
+				sentenceResult.setChannelId(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].ChannelId"));
+				sentenceResult.setText(_ctx.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].Text"));
+				sentenceResult.setEmotionValue(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].EmotionValue"));
+				sentenceResult.setSilenceDuration(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].SilenceDuration"));
+				sentenceResult.setSpeechRate(_ctx.integerValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].SpeechRate"));
+				sentenceResult.setSpeakerId(_ctx.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].SpeakerId"));
+				sentenceResult.setAgentId(_ctx.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].AgentId"));
+				sentenceResult.setChannelKey(_ctx.stringValue("GetAudioDataStatusResponse.Data["+ i +"].AsrResult.SentenceResults["+ j +"].ChannelKey"));
 
 				sentenceResults.add(sentenceResult);
 			}

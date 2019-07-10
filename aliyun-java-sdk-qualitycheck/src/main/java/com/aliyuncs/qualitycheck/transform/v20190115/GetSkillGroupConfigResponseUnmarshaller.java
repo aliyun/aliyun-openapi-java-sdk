@@ -25,34 +25,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSkillGroupConfigResponseUnmarshaller {
 
-	public static GetSkillGroupConfigResponse unmarshall(GetSkillGroupConfigResponse getSkillGroupConfigResponse, UnmarshallerContext context) {
+	public static GetSkillGroupConfigResponse unmarshall(GetSkillGroupConfigResponse getSkillGroupConfigResponse, UnmarshallerContext _ctx) {
 		
-		getSkillGroupConfigResponse.setRequestId(context.stringValue("GetSkillGroupConfigResponse.RequestId"));
-		getSkillGroupConfigResponse.setSuccess(context.booleanValue("GetSkillGroupConfigResponse.Success"));
-		getSkillGroupConfigResponse.setCode(context.stringValue("GetSkillGroupConfigResponse.Code"));
-		getSkillGroupConfigResponse.setMessage(context.stringValue("GetSkillGroupConfigResponse.Message"));
+		getSkillGroupConfigResponse.setRequestId(_ctx.stringValue("GetSkillGroupConfigResponse.RequestId"));
+		getSkillGroupConfigResponse.setSuccess(_ctx.booleanValue("GetSkillGroupConfigResponse.Success"));
+		getSkillGroupConfigResponse.setCode(_ctx.stringValue("GetSkillGroupConfigResponse.Code"));
+		getSkillGroupConfigResponse.setMessage(_ctx.stringValue("GetSkillGroupConfigResponse.Message"));
 
 		Data data = new Data();
-		data.setId(context.longValue("GetSkillGroupConfigResponse.Data.Id"));
-		data.setInstanceId(context.stringValue("GetSkillGroupConfigResponse.Data.InstanceId"));
-		data.setModelId(context.longValue("GetSkillGroupConfigResponse.Data.ModelId"));
-		data.setModelName(context.stringValue("GetSkillGroupConfigResponse.Data.ModelName"));
-		data.setName(context.stringValue("GetSkillGroupConfigResponse.Data.Name"));
-		data.setRid(context.stringValue("GetSkillGroupConfigResponse.Data.Rid"));
-		data.setSkillGroupId(context.stringValue("GetSkillGroupConfigResponse.Data.SkillGroupId"));
-		data.setSkillGroupName(context.stringValue("GetSkillGroupConfigResponse.Data.SkillGroupName"));
-		data.setStatus(context.integerValue("GetSkillGroupConfigResponse.Data.Status"));
-		data.setType(context.integerValue("GetSkillGroupConfigResponse.Data.Type"));
-		data.setVocabId(context.longValue("GetSkillGroupConfigResponse.Data.VocabId"));
-		data.setVocabName(context.stringValue("GetSkillGroupConfigResponse.Data.VocabName"));
-		data.setCreateTime(context.stringValue("GetSkillGroupConfigResponse.Data.CreateTime"));
-		data.setUpdateTime(context.stringValue("GetSkillGroupConfigResponse.Data.UpdateTime"));
+		data.setId(_ctx.longValue("GetSkillGroupConfigResponse.Data.Id"));
+		data.setInstanceId(_ctx.stringValue("GetSkillGroupConfigResponse.Data.InstanceId"));
+		data.setModelId(_ctx.longValue("GetSkillGroupConfigResponse.Data.ModelId"));
+		data.setModelName(_ctx.stringValue("GetSkillGroupConfigResponse.Data.ModelName"));
+		data.setName(_ctx.stringValue("GetSkillGroupConfigResponse.Data.Name"));
+		data.setRid(_ctx.stringValue("GetSkillGroupConfigResponse.Data.Rid"));
+		data.setSkillGroupId(_ctx.stringValue("GetSkillGroupConfigResponse.Data.SkillGroupId"));
+		data.setSkillGroupName(_ctx.stringValue("GetSkillGroupConfigResponse.Data.SkillGroupName"));
+		data.setStatus(_ctx.integerValue("GetSkillGroupConfigResponse.Data.Status"));
+		data.setType(_ctx.integerValue("GetSkillGroupConfigResponse.Data.Type"));
+		data.setVocabId(_ctx.longValue("GetSkillGroupConfigResponse.Data.VocabId"));
+		data.setVocabName(_ctx.stringValue("GetSkillGroupConfigResponse.Data.VocabName"));
+		data.setCreateTime(_ctx.stringValue("GetSkillGroupConfigResponse.Data.CreateTime"));
+		data.setUpdateTime(_ctx.stringValue("GetSkillGroupConfigResponse.Data.UpdateTime"));
 
 		List<RuleNameInfo> ruleList = new ArrayList<RuleNameInfo>();
-		for (int i = 0; i < context.lengthValue("GetSkillGroupConfigResponse.Data.RuleList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetSkillGroupConfigResponse.Data.RuleList.Length"); i++) {
 			RuleNameInfo ruleNameInfo = new RuleNameInfo();
-			ruleNameInfo.setRid(context.longValue("GetSkillGroupConfigResponse.Data.RuleList["+ i +"].Rid"));
-			ruleNameInfo.setRuleName(context.stringValue("GetSkillGroupConfigResponse.Data.RuleList["+ i +"].RuleName"));
+			ruleNameInfo.setRid(_ctx.longValue("GetSkillGroupConfigResponse.Data.RuleList["+ i +"].Rid"));
+			ruleNameInfo.setRuleName(_ctx.stringValue("GetSkillGroupConfigResponse.Data.RuleList["+ i +"].RuleName"));
 
 			ruleList.add(ruleNameInfo);
 		}

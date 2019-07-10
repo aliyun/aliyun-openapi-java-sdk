@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetDataSetListResponseUnmarshaller {
 
-	public static GetDataSetListResponse unmarshall(GetDataSetListResponse getDataSetListResponse, UnmarshallerContext context) {
+	public static GetDataSetListResponse unmarshall(GetDataSetListResponse getDataSetListResponse, UnmarshallerContext _ctx) {
 		
-		getDataSetListResponse.setRequestId(context.stringValue("GetDataSetListResponse.RequestId"));
-		getDataSetListResponse.setSuccess(context.booleanValue("GetDataSetListResponse.Success"));
-		getDataSetListResponse.setCode(context.stringValue("GetDataSetListResponse.Code"));
-		getDataSetListResponse.setMessage(context.stringValue("GetDataSetListResponse.Message"));
-		getDataSetListResponse.setCount(context.integerValue("GetDataSetListResponse.Count"));
+		getDataSetListResponse.setRequestId(_ctx.stringValue("GetDataSetListResponse.RequestId"));
+		getDataSetListResponse.setSuccess(_ctx.booleanValue("GetDataSetListResponse.Success"));
+		getDataSetListResponse.setCode(_ctx.stringValue("GetDataSetListResponse.Code"));
+		getDataSetListResponse.setMessage(_ctx.stringValue("GetDataSetListResponse.Message"));
+		getDataSetListResponse.setCount(_ctx.integerValue("GetDataSetListResponse.Count"));
 
 		List<DataSet> data = new ArrayList<DataSet>();
-		for (int i = 0; i < context.lengthValue("GetDataSetListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetDataSetListResponse.Data.Length"); i++) {
 			DataSet dataSet = new DataSet();
-			dataSet.setSetId(context.longValue("GetDataSetListResponse.Data["+ i +"].SetId"));
-			dataSet.setSetName(context.stringValue("GetDataSetListResponse.Data["+ i +"].SetName"));
-			dataSet.setSetDomain(context.stringValue("GetDataSetListResponse.Data["+ i +"].SetDomain"));
-			dataSet.setSetRoleArn(context.stringValue("GetDataSetListResponse.Data["+ i +"].SetRoleArn"));
-			dataSet.setSetBucketName(context.stringValue("GetDataSetListResponse.Data["+ i +"].SetBucketName"));
-			dataSet.setSetFolderName(context.stringValue("GetDataSetListResponse.Data["+ i +"].SetFolderName"));
-			dataSet.setChannelType(context.integerValue("GetDataSetListResponse.Data["+ i +"].ChannelType"));
-			dataSet.setCreateType(context.integerValue("GetDataSetListResponse.Data["+ i +"].CreateType"));
+			dataSet.setSetId(_ctx.longValue("GetDataSetListResponse.Data["+ i +"].SetId"));
+			dataSet.setSetName(_ctx.stringValue("GetDataSetListResponse.Data["+ i +"].SetName"));
+			dataSet.setSetDomain(_ctx.stringValue("GetDataSetListResponse.Data["+ i +"].SetDomain"));
+			dataSet.setSetRoleArn(_ctx.stringValue("GetDataSetListResponse.Data["+ i +"].SetRoleArn"));
+			dataSet.setSetBucketName(_ctx.stringValue("GetDataSetListResponse.Data["+ i +"].SetBucketName"));
+			dataSet.setSetFolderName(_ctx.stringValue("GetDataSetListResponse.Data["+ i +"].SetFolderName"));
+			dataSet.setChannelType(_ctx.integerValue("GetDataSetListResponse.Data["+ i +"].ChannelType"));
+			dataSet.setCreateType(_ctx.integerValue("GetDataSetListResponse.Data["+ i +"].CreateType"));
 
 			data.add(dataSet);
 		}

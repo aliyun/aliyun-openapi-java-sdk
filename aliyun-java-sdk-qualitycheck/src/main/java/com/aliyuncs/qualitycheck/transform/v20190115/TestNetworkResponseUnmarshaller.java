@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TestNetworkResponseUnmarshaller {
 
-	public static TestNetworkResponse unmarshall(TestNetworkResponse testNetworkResponse, UnmarshallerContext context) {
+	public static TestNetworkResponse unmarshall(TestNetworkResponse testNetworkResponse, UnmarshallerContext _ctx) {
 		
-		testNetworkResponse.setRequestId(context.stringValue("TestNetworkResponse.RequestId"));
-		testNetworkResponse.setSuccess(context.booleanValue("TestNetworkResponse.Success"));
-		testNetworkResponse.setCode(context.stringValue("TestNetworkResponse.Code"));
-		testNetworkResponse.setMessage(context.stringValue("TestNetworkResponse.Message"));
-		testNetworkResponse.setData(context.stringValue("TestNetworkResponse.Data"));
+		testNetworkResponse.setRequestId(_ctx.stringValue("TestNetworkResponse.RequestId"));
+		testNetworkResponse.setSuccess(_ctx.booleanValue("TestNetworkResponse.Success"));
+		testNetworkResponse.setCode(_ctx.stringValue("TestNetworkResponse.Code"));
+		testNetworkResponse.setMessage(_ctx.stringValue("TestNetworkResponse.Message"));
+		testNetworkResponse.setData(_ctx.stringValue("TestNetworkResponse.Data"));
 	 
 	 	return testNetworkResponse;
 	}

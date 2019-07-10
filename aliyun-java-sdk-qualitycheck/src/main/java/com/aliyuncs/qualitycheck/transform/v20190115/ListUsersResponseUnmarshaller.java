@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListUsersResponseUnmarshaller {
 
-	public static ListUsersResponse unmarshall(ListUsersResponse listUsersResponse, UnmarshallerContext context) {
+	public static ListUsersResponse unmarshall(ListUsersResponse listUsersResponse, UnmarshallerContext _ctx) {
 		
-		listUsersResponse.setRequestId(context.stringValue("ListUsersResponse.RequestId"));
-		listUsersResponse.setSuccess(context.booleanValue("ListUsersResponse.Success"));
-		listUsersResponse.setCode(context.stringValue("ListUsersResponse.Code"));
-		listUsersResponse.setMessage(context.stringValue("ListUsersResponse.Message"));
-		listUsersResponse.setPageNumber(context.integerValue("ListUsersResponse.PageNumber"));
-		listUsersResponse.setPageSize(context.integerValue("ListUsersResponse.PageSize"));
-		listUsersResponse.setCount(context.integerValue("ListUsersResponse.Count"));
+		listUsersResponse.setRequestId(_ctx.stringValue("ListUsersResponse.RequestId"));
+		listUsersResponse.setSuccess(_ctx.booleanValue("ListUsersResponse.Success"));
+		listUsersResponse.setCode(_ctx.stringValue("ListUsersResponse.Code"));
+		listUsersResponse.setMessage(_ctx.stringValue("ListUsersResponse.Message"));
+		listUsersResponse.setPageNumber(_ctx.integerValue("ListUsersResponse.PageNumber"));
+		listUsersResponse.setPageSize(_ctx.integerValue("ListUsersResponse.PageSize"));
+		listUsersResponse.setCount(_ctx.integerValue("ListUsersResponse.Count"));
 
 		List<User> data = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("ListUsersResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.Data.Length"); i++) {
 			User user = new User();
-			user.setId(context.longValue("ListUsersResponse.Data["+ i +"].Id"));
-			user.setUserName(context.stringValue("ListUsersResponse.Data["+ i +"].UserName"));
-			user.setDisplayName(context.stringValue("ListUsersResponse.Data["+ i +"].DisplayName"));
-			user.setCreateTime(context.stringValue("ListUsersResponse.Data["+ i +"].CreateTime"));
-			user.setUpdateTime(context.stringValue("ListUsersResponse.Data["+ i +"].UpdateTime"));
-			user.setDescription(context.stringValue("ListUsersResponse.Data["+ i +"].Description"));
-			user.setAliUid(context.stringValue("ListUsersResponse.Data["+ i +"].AliUid"));
-			user.setRoleName(context.stringValue("ListUsersResponse.Data["+ i +"].RoleName"));
-			user.setLoginUserType(context.integerValue("ListUsersResponse.Data["+ i +"].LoginUserType"));
+			user.setId(_ctx.longValue("ListUsersResponse.Data["+ i +"].Id"));
+			user.setUserName(_ctx.stringValue("ListUsersResponse.Data["+ i +"].UserName"));
+			user.setDisplayName(_ctx.stringValue("ListUsersResponse.Data["+ i +"].DisplayName"));
+			user.setCreateTime(_ctx.stringValue("ListUsersResponse.Data["+ i +"].CreateTime"));
+			user.setUpdateTime(_ctx.stringValue("ListUsersResponse.Data["+ i +"].UpdateTime"));
+			user.setDescription(_ctx.stringValue("ListUsersResponse.Data["+ i +"].Description"));
+			user.setAliUid(_ctx.stringValue("ListUsersResponse.Data["+ i +"].AliUid"));
+			user.setRoleName(_ctx.stringValue("ListUsersResponse.Data["+ i +"].RoleName"));
+			user.setLoginUserType(_ctx.integerValue("ListUsersResponse.Data["+ i +"].LoginUserType"));
 
 			data.add(user);
 		}

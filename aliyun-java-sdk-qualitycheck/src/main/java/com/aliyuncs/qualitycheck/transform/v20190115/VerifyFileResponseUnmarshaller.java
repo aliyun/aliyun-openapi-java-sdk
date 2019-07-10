@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VerifyFileResponseUnmarshaller {
 
-	public static VerifyFileResponse unmarshall(VerifyFileResponse verifyFileResponse, UnmarshallerContext context) {
+	public static VerifyFileResponse unmarshall(VerifyFileResponse verifyFileResponse, UnmarshallerContext _ctx) {
 		
-		verifyFileResponse.setRequestId(context.stringValue("VerifyFileResponse.RequestId"));
-		verifyFileResponse.setSuccess(context.booleanValue("VerifyFileResponse.Success"));
-		verifyFileResponse.setCode(context.stringValue("VerifyFileResponse.Code"));
-		verifyFileResponse.setMessage(context.stringValue("VerifyFileResponse.Message"));
-		verifyFileResponse.setData(context.floatValue("VerifyFileResponse.Data"));
+		verifyFileResponse.setRequestId(_ctx.stringValue("VerifyFileResponse.RequestId"));
+		verifyFileResponse.setSuccess(_ctx.booleanValue("VerifyFileResponse.Success"));
+		verifyFileResponse.setCode(_ctx.stringValue("VerifyFileResponse.Code"));
+		verifyFileResponse.setMessage(_ctx.stringValue("VerifyFileResponse.Message"));
+		verifyFileResponse.setData(_ctx.floatValue("VerifyFileResponse.Data"));
 	 
 	 	return verifyFileResponse;
 	}

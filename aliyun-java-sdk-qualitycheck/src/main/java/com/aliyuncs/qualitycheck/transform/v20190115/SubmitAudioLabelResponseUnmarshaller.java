@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitAudioLabelResponseUnmarshaller {
 
-	public static SubmitAudioLabelResponse unmarshall(SubmitAudioLabelResponse submitAudioLabelResponse, UnmarshallerContext context) {
+	public static SubmitAudioLabelResponse unmarshall(SubmitAudioLabelResponse submitAudioLabelResponse, UnmarshallerContext _ctx) {
 		
-		submitAudioLabelResponse.setRequestId(context.stringValue("SubmitAudioLabelResponse.RequestId"));
-		submitAudioLabelResponse.setSuccess(context.booleanValue("SubmitAudioLabelResponse.Success"));
-		submitAudioLabelResponse.setCode(context.stringValue("SubmitAudioLabelResponse.Code"));
-		submitAudioLabelResponse.setMessage(context.stringValue("SubmitAudioLabelResponse.Message"));
+		submitAudioLabelResponse.setRequestId(_ctx.stringValue("SubmitAudioLabelResponse.RequestId"));
+		submitAudioLabelResponse.setSuccess(_ctx.booleanValue("SubmitAudioLabelResponse.Success"));
+		submitAudioLabelResponse.setCode(_ctx.stringValue("SubmitAudioLabelResponse.Code"));
+		submitAudioLabelResponse.setMessage(_ctx.stringValue("SubmitAudioLabelResponse.Message"));
 
 		Data data = new Data();
-		data.setAsrAccuracyRate(context.stringValue("SubmitAudioLabelResponse.Data.AsrAccuracyRate"));
-		data.setLabelNum(context.integerValue("SubmitAudioLabelResponse.Data.LabelNum"));
-		data.setPoc(context.booleanValue("SubmitAudioLabelResponse.Data.Poc"));
+		data.setAsrAccuracyRate(_ctx.stringValue("SubmitAudioLabelResponse.Data.AsrAccuracyRate"));
+		data.setLabelNum(_ctx.integerValue("SubmitAudioLabelResponse.Data.LabelNum"));
+		data.setPoc(_ctx.booleanValue("SubmitAudioLabelResponse.Data.Poc"));
 		submitAudioLabelResponse.setData(data);
 	 
 	 	return submitAudioLabelResponse;

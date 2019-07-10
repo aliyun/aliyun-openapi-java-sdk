@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateSkillGroupConfigResponseUnmarshaller {
 
-	public static CreateSkillGroupConfigResponse unmarshall(CreateSkillGroupConfigResponse createSkillGroupConfigResponse, UnmarshallerContext context) {
+	public static CreateSkillGroupConfigResponse unmarshall(CreateSkillGroupConfigResponse createSkillGroupConfigResponse, UnmarshallerContext _ctx) {
 		
-		createSkillGroupConfigResponse.setRequestId(context.stringValue("CreateSkillGroupConfigResponse.RequestId"));
-		createSkillGroupConfigResponse.setSuccess(context.booleanValue("CreateSkillGroupConfigResponse.Success"));
-		createSkillGroupConfigResponse.setCode(context.stringValue("CreateSkillGroupConfigResponse.Code"));
-		createSkillGroupConfigResponse.setMessage(context.stringValue("CreateSkillGroupConfigResponse.Message"));
-		createSkillGroupConfigResponse.setData(context.longValue("CreateSkillGroupConfigResponse.Data"));
+		createSkillGroupConfigResponse.setRequestId(_ctx.stringValue("CreateSkillGroupConfigResponse.RequestId"));
+		createSkillGroupConfigResponse.setSuccess(_ctx.booleanValue("CreateSkillGroupConfigResponse.Success"));
+		createSkillGroupConfigResponse.setCode(_ctx.stringValue("CreateSkillGroupConfigResponse.Code"));
+		createSkillGroupConfigResponse.setMessage(_ctx.stringValue("CreateSkillGroupConfigResponse.Message"));
+		createSkillGroupConfigResponse.setData(_ctx.longValue("CreateSkillGroupConfigResponse.Data"));
 	 
 	 	return createSkillGroupConfigResponse;
 	}

@@ -32,65 +32,65 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetResultToReviewResponseUnmarshaller {
 
-	public static GetResultToReviewResponse unmarshall(GetResultToReviewResponse getResultToReviewResponse, UnmarshallerContext context) {
+	public static GetResultToReviewResponse unmarshall(GetResultToReviewResponse getResultToReviewResponse, UnmarshallerContext _ctx) {
 		
-		getResultToReviewResponse.setRequestId(context.stringValue("GetResultToReviewResponse.RequestId"));
-		getResultToReviewResponse.setSuccess(context.booleanValue("GetResultToReviewResponse.Success"));
-		getResultToReviewResponse.setCode(context.stringValue("GetResultToReviewResponse.Code"));
-		getResultToReviewResponse.setMessage(context.stringValue("GetResultToReviewResponse.Message"));
+		getResultToReviewResponse.setRequestId(_ctx.stringValue("GetResultToReviewResponse.RequestId"));
+		getResultToReviewResponse.setSuccess(_ctx.booleanValue("GetResultToReviewResponse.Success"));
+		getResultToReviewResponse.setCode(_ctx.stringValue("GetResultToReviewResponse.Code"));
+		getResultToReviewResponse.setMessage(_ctx.stringValue("GetResultToReviewResponse.Message"));
 
 		Data data = new Data();
-		data.setAudio(context.booleanValue("GetResultToReviewResponse.Data.Audio"));
-		data.setAudioScheme(context.stringValue("GetResultToReviewResponse.Data.AudioScheme"));
-		data.setAudioURL(context.stringValue("GetResultToReviewResponse.Data.AudioURL"));
-		data.setBusinessType(context.integerValue("GetResultToReviewResponse.Data.BusinessType"));
-		data.setDeleted(context.booleanValue("GetResultToReviewResponse.Data.Deleted"));
-		data.setFileMergeName(context.stringValue("GetResultToReviewResponse.Data.FileMergeName"));
-		data.setHitNumber(context.integerValue("GetResultToReviewResponse.Data.HitNumber"));
-		data.setReviewNumber(context.integerValue("GetResultToReviewResponse.Data.ReviewNumber"));
-		data.setTotalScore(context.integerValue("GetResultToReviewResponse.Data.TotalScore"));
-		data.setVid(context.stringValue("GetResultToReviewResponse.Data.Vid"));
-		data.setComments(context.stringValue("GetResultToReviewResponse.Data.Comments"));
-		data.setFileId(context.stringValue("GetResultToReviewResponse.Data.FileId"));
+		data.setAudio(_ctx.booleanValue("GetResultToReviewResponse.Data.Audio"));
+		data.setAudioScheme(_ctx.stringValue("GetResultToReviewResponse.Data.AudioScheme"));
+		data.setAudioURL(_ctx.stringValue("GetResultToReviewResponse.Data.AudioURL"));
+		data.setBusinessType(_ctx.integerValue("GetResultToReviewResponse.Data.BusinessType"));
+		data.setDeleted(_ctx.booleanValue("GetResultToReviewResponse.Data.Deleted"));
+		data.setFileMergeName(_ctx.stringValue("GetResultToReviewResponse.Data.FileMergeName"));
+		data.setHitNumber(_ctx.integerValue("GetResultToReviewResponse.Data.HitNumber"));
+		data.setReviewNumber(_ctx.integerValue("GetResultToReviewResponse.Data.ReviewNumber"));
+		data.setTotalScore(_ctx.integerValue("GetResultToReviewResponse.Data.TotalScore"));
+		data.setVid(_ctx.stringValue("GetResultToReviewResponse.Data.Vid"));
+		data.setComments(_ctx.stringValue("GetResultToReviewResponse.Data.Comments"));
+		data.setFileId(_ctx.stringValue("GetResultToReviewResponse.Data.FileId"));
 
 		List<String> manualScoreMappingList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetResultToReviewResponse.Data.ManualScoreMappingList.Length"); i++) {
-			manualScoreMappingList.add(context.stringValue("GetResultToReviewResponse.Data.ManualScoreMappingList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetResultToReviewResponse.Data.ManualScoreMappingList.Length"); i++) {
+			manualScoreMappingList.add(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreMappingList["+ i +"]"));
 		}
 		data.setManualScoreMappingList(manualScoreMappingList);
 
 		List<Dialogue> dialogues = new ArrayList<Dialogue>();
-		for (int i = 0; i < context.lengthValue("GetResultToReviewResponse.Data.Dialogues.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetResultToReviewResponse.Data.Dialogues.Length"); i++) {
 			Dialogue dialogue = new Dialogue();
-			dialogue.setBegin(context.longValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].Begin"));
-			dialogue.setBeginTime(context.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].BeginTime"));
-			dialogue.setEmotionValue(context.integerValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].EmotionValue"));
-			dialogue.setEnd(context.longValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].End"));
-			dialogue.setHourMinSec(context.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].HourMinSec"));
-			dialogue.setIdentity(context.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].Identity"));
-			dialogue.setRole(context.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].Role"));
-			dialogue.setSilenceDuration(context.integerValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].SilenceDuration"));
-			dialogue.setSpeechRate(context.integerValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].SpeechRate"));
-			dialogue.setWords(context.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].Words"));
+			dialogue.setBegin(_ctx.longValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].Begin"));
+			dialogue.setBeginTime(_ctx.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].BeginTime"));
+			dialogue.setEmotionValue(_ctx.integerValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].EmotionValue"));
+			dialogue.setEnd(_ctx.longValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].End"));
+			dialogue.setHourMinSec(_ctx.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].HourMinSec"));
+			dialogue.setIdentity(_ctx.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].Identity"));
+			dialogue.setRole(_ctx.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].Role"));
+			dialogue.setSilenceDuration(_ctx.integerValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].SilenceDuration"));
+			dialogue.setSpeechRate(_ctx.integerValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].SpeechRate"));
+			dialogue.setWords(_ctx.stringValue("GetResultToReviewResponse.Data.Dialogues["+ i +"].Words"));
 
 			dialogues.add(dialogue);
 		}
 		data.setDialogues(dialogues);
 
 		List<ScorePo> handScoreInfoList = new ArrayList<ScorePo>();
-		for (int i = 0; i < context.lengthValue("GetResultToReviewResponse.Data.HandScoreInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetResultToReviewResponse.Data.HandScoreInfoList.Length"); i++) {
 			ScorePo scorePo = new ScorePo();
-			scorePo.setScoreId(context.longValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreId"));
-			scorePo.setScoreName(context.stringValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreName"));
+			scorePo.setScoreId(_ctx.longValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreId"));
+			scorePo.setScoreName(_ctx.stringValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreName"));
 
 			List<ScoreParam> scoreInfos = new ArrayList<ScoreParam>();
-			for (int j = 0; j < context.lengthValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos.Length"); j++) {
 				ScoreParam scoreParam = new ScoreParam();
-				scoreParam.setHit(context.integerValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].Hit"));
-				scoreParam.setScoreNum(context.integerValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].ScoreNum"));
-				scoreParam.setScoreSubId(context.longValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].ScoreSubId"));
-				scoreParam.setScoreSubName(context.stringValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].ScoreSubName"));
-				scoreParam.setScoreType(context.integerValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].ScoreType"));
+				scoreParam.setHit(_ctx.integerValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].Hit"));
+				scoreParam.setScoreNum(_ctx.integerValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].ScoreNum"));
+				scoreParam.setScoreSubId(_ctx.longValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].ScoreSubId"));
+				scoreParam.setScoreSubName(_ctx.stringValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].ScoreSubName"));
+				scoreParam.setScoreType(_ctx.integerValue("GetResultToReviewResponse.Data.HandScoreInfoList["+ i +"].ScoreInfos["+ j +"].ScoreType"));
 
 				scoreInfos.add(scoreParam);
 			}
@@ -101,53 +101,53 @@ public class GetResultToReviewResponseUnmarshaller {
 		data.setHandScoreInfoList(handScoreInfoList);
 
 		List<HitRuleReviewInfo> hitRuleReviewInfoList = new ArrayList<HitRuleReviewInfo>();
-		for (int i = 0; i < context.lengthValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList.Length"); i++) {
 			HitRuleReviewInfo hitRuleReviewInfo = new HitRuleReviewInfo();
-			hitRuleReviewInfo.setAutoReview(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].AutoReview"));
-			hitRuleReviewInfo.setRid(context.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].Rid"));
-			hitRuleReviewInfo.setRuleName(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].RuleName"));
-			hitRuleReviewInfo.setRuleScoreType(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].RuleScoreType"));
-			hitRuleReviewInfo.setRuleType(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].RuleType"));
-			hitRuleReviewInfo.setScoreId(context.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ScoreId"));
-			hitRuleReviewInfo.setScoreSubId(context.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ScoreSubId"));
-			hitRuleReviewInfo.setTotalNumber(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].TotalNumber"));
+			hitRuleReviewInfo.setAutoReview(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].AutoReview"));
+			hitRuleReviewInfo.setRid(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].Rid"));
+			hitRuleReviewInfo.setRuleName(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].RuleName"));
+			hitRuleReviewInfo.setRuleScoreType(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].RuleScoreType"));
+			hitRuleReviewInfo.setRuleType(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].RuleType"));
+			hitRuleReviewInfo.setScoreId(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ScoreId"));
+			hitRuleReviewInfo.setScoreSubId(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ScoreSubId"));
+			hitRuleReviewInfo.setTotalNumber(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].TotalNumber"));
 
 			ReviewInfo reviewInfo = new ReviewInfo();
-			reviewInfo.setHitId(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.HitId"));
-			reviewInfo.setRid(context.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.Rid"));
-			reviewInfo.setReviewResult(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.ReviewResult"));
-			reviewInfo.setReviewer(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.Reviewer"));
-			reviewInfo.setReviewTime(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.ReviewTime"));
+			reviewInfo.setHitId(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.HitId"));
+			reviewInfo.setRid(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.Rid"));
+			reviewInfo.setReviewResult(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.ReviewResult"));
+			reviewInfo.setReviewer(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.Reviewer"));
+			reviewInfo.setReviewTime(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.ReviewTime"));
 			hitRuleReviewInfo.setReviewInfo(reviewInfo);
 
 			List<ConditionHitInfo> conditionHitInfoList = new ArrayList<ConditionHitInfo>();
-			for (int j = 0; j < context.lengthValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList.Length"); j++) {
 				ConditionHitInfo conditionHitInfo = new ConditionHitInfo();
 
 				List<String> cid = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid.Length"); k++) {
-					cid.add(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid.Length"); k++) {
+					cid.add(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid["+ k +"]"));
 				}
 				conditionHitInfo.setCid(cid);
 
 				Phrase phrase = new Phrase();
-				phrase.setRole(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Role"));
-				phrase.setIdentity(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Identity"));
-				phrase.setEmotionValue(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.EmotionValue"));
-				phrase.setWords(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Words"));
-				phrase.setEnd(context.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.End"));
-				phrase.setPid(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Pid"));
-				phrase.setBegin(context.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Begin"));
+				phrase.setRole(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Role"));
+				phrase.setIdentity(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Identity"));
+				phrase.setEmotionValue(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.EmotionValue"));
+				phrase.setWords(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Words"));
+				phrase.setEnd(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.End"));
+				phrase.setPid(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Pid"));
+				phrase.setBegin(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Begin"));
 				conditionHitInfo.setPhrase(phrase);
 
 				List<KeyWord> keyWords = new ArrayList<KeyWord>();
-				for (int k = 0; k < context.lengthValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords.Length"); k++) {
 					KeyWord keyWord = new KeyWord();
-					keyWord.setVal(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Val"));
-					keyWord.setPid(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Pid"));
-					keyWord.setFrom(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].From"));
-					keyWord.setTo(context.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].To"));
-					keyWord.setTid(context.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Tid"));
+					keyWord.setVal(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Val"));
+					keyWord.setPid(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Pid"));
+					keyWord.setFrom(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].From"));
+					keyWord.setTo(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].To"));
+					keyWord.setTid(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Tid"));
 
 					keyWords.add(keyWord);
 				}

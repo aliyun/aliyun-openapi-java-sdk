@@ -32,55 +32,55 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ConfigDataSetResponseUnmarshaller {
 
-	public static ConfigDataSetResponse unmarshall(ConfigDataSetResponse configDataSetResponse, UnmarshallerContext context) {
+	public static ConfigDataSetResponse unmarshall(ConfigDataSetResponse configDataSetResponse, UnmarshallerContext _ctx) {
 		
-		configDataSetResponse.setRequestId(context.stringValue("ConfigDataSetResponse.RequestId"));
-		configDataSetResponse.setSuccess(context.booleanValue("ConfigDataSetResponse.Success"));
-		configDataSetResponse.setCode(context.stringValue("ConfigDataSetResponse.Code"));
-		configDataSetResponse.setMessage(context.stringValue("ConfigDataSetResponse.Message"));
+		configDataSetResponse.setRequestId(_ctx.stringValue("ConfigDataSetResponse.RequestId"));
+		configDataSetResponse.setSuccess(_ctx.booleanValue("ConfigDataSetResponse.Success"));
+		configDataSetResponse.setCode(_ctx.stringValue("ConfigDataSetResponse.Code"));
+		configDataSetResponse.setMessage(_ctx.stringValue("ConfigDataSetResponse.Message"));
 
 		Data data = new Data();
-		data.setRoleConfigStatus(context.integerValue("ConfigDataSetResponse.Data.RoleConfigStatus"));
-		data.setJudgeType(context.integerValue("ConfigDataSetResponse.Data.JudgeType"));
-		data.setSetId(context.longValue("ConfigDataSetResponse.Data.SetId"));
-		data.setChannelType(context.integerValue("ConfigDataSetResponse.Data.ChannelType"));
+		data.setRoleConfigStatus(_ctx.integerValue("ConfigDataSetResponse.Data.RoleConfigStatus"));
+		data.setJudgeType(_ctx.integerValue("ConfigDataSetResponse.Data.JudgeType"));
+		data.setSetId(_ctx.longValue("ConfigDataSetResponse.Data.SetId"));
+		data.setChannelType(_ctx.integerValue("ConfigDataSetResponse.Data.ChannelType"));
 
 		RuleInfo ruleInfo = new RuleInfo();
 
 		List<ConditionBasicInfo> conditions = new ArrayList<ConditionBasicInfo>();
-		for (int i = 0; i < context.lengthValue("ConfigDataSetResponse.Data.RuleInfo.Conditions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ConfigDataSetResponse.Data.RuleInfo.Conditions.Length"); i++) {
 			ConditionBasicInfo conditionBasicInfo = new ConditionBasicInfo();
-			conditionBasicInfo.setCid(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Cid"));
-			conditionBasicInfo.setLambda(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Lambda"));
+			conditionBasicInfo.setCid(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Cid"));
+			conditionBasicInfo.setLambda(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Lambda"));
 
 			CheckRange checkRange = new CheckRange();
-			checkRange.setRoleId(context.integerValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.RoleId"));
-			checkRange.setRole(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Role"));
+			checkRange.setRoleId(_ctx.integerValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.RoleId"));
+			checkRange.setRole(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Role"));
 
 			Anchor anchor = new Anchor();
-			anchor.setCid(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Anchor.Cid"));
-			anchor.setLocation(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Anchor.Location"));
-			anchor.setHitTime(context.integerValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Anchor.HitTime"));
+			anchor.setCid(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Anchor.Cid"));
+			anchor.setLocation(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Anchor.Location"));
+			anchor.setHitTime(_ctx.integerValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Anchor.HitTime"));
 			checkRange.setAnchor(anchor);
 
 			Range range = new Range();
-			range.setFrom(context.integerValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Range.From"));
-			range.setTo(context.integerValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Range.To"));
+			range.setFrom(_ctx.integerValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Range.From"));
+			range.setTo(_ctx.integerValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].CheckRange.Range.To"));
 			checkRange.setRange(range);
 			conditionBasicInfo.setCheckRange(checkRange);
 
 			List<OperatorBasicInfo> operators = new ArrayList<OperatorBasicInfo>();
-			for (int j = 0; j < context.lengthValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators.Length"); j++) {
 				OperatorBasicInfo operatorBasicInfo = new OperatorBasicInfo();
-				operatorBasicInfo.setOid(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Oid"));
-				operatorBasicInfo.setType(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Type"));
+				operatorBasicInfo.setOid(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Oid"));
+				operatorBasicInfo.setType(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Type"));
 
 				Param param = new Param();
-				param.setInSentence(context.booleanValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Param.InSentence"));
+				param.setInSentence(_ctx.booleanValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Param.InSentence"));
 
 				List<String> keywords = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Param.Keywords.Length"); k++) {
-					keywords.add(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Param.Keywords["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Param.Keywords.Length"); k++) {
+					keywords.add(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Conditions["+ i +"].Operators["+ j +"].Param.Keywords["+ k +"]"));
 				}
 				param.setKeywords(keywords);
 				operatorBasicInfo.setParam(param);
@@ -94,11 +94,11 @@ public class ConfigDataSetResponseUnmarshaller {
 		ruleInfo.setConditions(conditions);
 
 		List<RuleBasicInfo> rules = new ArrayList<RuleBasicInfo>();
-		for (int i = 0; i < context.lengthValue("ConfigDataSetResponse.Data.RuleInfo.Rules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ConfigDataSetResponse.Data.RuleInfo.Rules.Length"); i++) {
 			RuleBasicInfo ruleBasicInfo = new RuleBasicInfo();
-			ruleBasicInfo.setExternalProperty(context.integerValue("ConfigDataSetResponse.Data.RuleInfo.Rules["+ i +"].ExternalProperty"));
-			ruleBasicInfo.setLambda(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Rules["+ i +"].Lambda"));
-			ruleBasicInfo.setRid(context.stringValue("ConfigDataSetResponse.Data.RuleInfo.Rules["+ i +"].Rid"));
+			ruleBasicInfo.setExternalProperty(_ctx.integerValue("ConfigDataSetResponse.Data.RuleInfo.Rules["+ i +"].ExternalProperty"));
+			ruleBasicInfo.setLambda(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Rules["+ i +"].Lambda"));
+			ruleBasicInfo.setRid(_ctx.stringValue("ConfigDataSetResponse.Data.RuleInfo.Rules["+ i +"].Rid"));
 
 			rules.add(ruleBasicInfo);
 		}

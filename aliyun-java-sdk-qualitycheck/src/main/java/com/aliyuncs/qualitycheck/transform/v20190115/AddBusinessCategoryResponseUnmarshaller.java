@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddBusinessCategoryResponseUnmarshaller {
 
-	public static AddBusinessCategoryResponse unmarshall(AddBusinessCategoryResponse addBusinessCategoryResponse, UnmarshallerContext context) {
+	public static AddBusinessCategoryResponse unmarshall(AddBusinessCategoryResponse addBusinessCategoryResponse, UnmarshallerContext _ctx) {
 		
-		addBusinessCategoryResponse.setRequestId(context.stringValue("AddBusinessCategoryResponse.RequestId"));
-		addBusinessCategoryResponse.setSuccess(context.booleanValue("AddBusinessCategoryResponse.Success"));
-		addBusinessCategoryResponse.setCode(context.stringValue("AddBusinessCategoryResponse.Code"));
-		addBusinessCategoryResponse.setMessage(context.stringValue("AddBusinessCategoryResponse.Message"));
-		addBusinessCategoryResponse.setData(context.stringValue("AddBusinessCategoryResponse.Data"));
+		addBusinessCategoryResponse.setRequestId(_ctx.stringValue("AddBusinessCategoryResponse.RequestId"));
+		addBusinessCategoryResponse.setSuccess(_ctx.booleanValue("AddBusinessCategoryResponse.Success"));
+		addBusinessCategoryResponse.setCode(_ctx.stringValue("AddBusinessCategoryResponse.Code"));
+		addBusinessCategoryResponse.setMessage(_ctx.stringValue("AddBusinessCategoryResponse.Message"));
+		addBusinessCategoryResponse.setData(_ctx.stringValue("AddBusinessCategoryResponse.Data"));
 	 
 	 	return addBusinessCategoryResponse;
 	}

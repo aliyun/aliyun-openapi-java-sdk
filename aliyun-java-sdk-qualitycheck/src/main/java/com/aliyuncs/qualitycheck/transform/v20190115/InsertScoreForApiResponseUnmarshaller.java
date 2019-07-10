@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InsertScoreForApiResponseUnmarshaller {
 
-	public static InsertScoreForApiResponse unmarshall(InsertScoreForApiResponse insertScoreForApiResponse, UnmarshallerContext context) {
+	public static InsertScoreForApiResponse unmarshall(InsertScoreForApiResponse insertScoreForApiResponse, UnmarshallerContext _ctx) {
 		
-		insertScoreForApiResponse.setRequestId(context.stringValue("InsertScoreForApiResponse.RequestId"));
-		insertScoreForApiResponse.setSuccess(context.booleanValue("InsertScoreForApiResponse.Success"));
-		insertScoreForApiResponse.setCode(context.stringValue("InsertScoreForApiResponse.Code"));
-		insertScoreForApiResponse.setMessage(context.stringValue("InsertScoreForApiResponse.Message"));
+		insertScoreForApiResponse.setRequestId(_ctx.stringValue("InsertScoreForApiResponse.RequestId"));
+		insertScoreForApiResponse.setSuccess(_ctx.booleanValue("InsertScoreForApiResponse.Success"));
+		insertScoreForApiResponse.setCode(_ctx.stringValue("InsertScoreForApiResponse.Code"));
+		insertScoreForApiResponse.setMessage(_ctx.stringValue("InsertScoreForApiResponse.Message"));
 
 		Data data = new Data();
-		data.setScoreId(context.longValue("InsertScoreForApiResponse.Data.ScoreId"));
-		data.setScoreName(context.stringValue("InsertScoreForApiResponse.Data.ScoreName"));
+		data.setScoreId(_ctx.longValue("InsertScoreForApiResponse.Data.ScoreId"));
+		data.setScoreName(_ctx.stringValue("InsertScoreForApiResponse.Data.ScoreName"));
 		insertScoreForApiResponse.setData(data);
 	 
 	 	return insertScoreForApiResponse;

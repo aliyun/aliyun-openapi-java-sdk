@@ -20,22 +20,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DoCheckResourceResponseUnmarshaller {
 
-	public static DoCheckResourceResponse unmarshall(DoCheckResourceResponse doCheckResourceResponse, UnmarshallerContext context) {
+	public static DoCheckResourceResponse unmarshall(DoCheckResourceResponse doCheckResourceResponse, UnmarshallerContext _ctx) {
 		
-		doCheckResourceResponse.setInterrupt(context.stringValue("DoCheckResourceResponse.Interrupt"));
-		doCheckResourceResponse.setInvoker(context.longValue("DoCheckResourceResponse.Invoker"));
-		doCheckResourceResponse.setPk(context.stringValue("DoCheckResourceResponse.Pk"));
-		doCheckResourceResponse.setBid(context.stringValue("DoCheckResourceResponse.Bid"));
-		doCheckResourceResponse.setHid(context.longValue("DoCheckResourceResponse.Hid"));
-		doCheckResourceResponse.setCountry(context.stringValue("DoCheckResourceResponse.Country"));
-		doCheckResourceResponse.setTaskIdentifier(context.stringValue("DoCheckResourceResponse.TaskIdentifier"));
-		doCheckResourceResponse.setTaskIdentifier1(context.stringValue("DoCheckResourceResponse.TaskIdentifier"));
-		doCheckResourceResponse.setGmtWakeup(context.stringValue("DoCheckResourceResponse.GmtWakeup"));
-		doCheckResourceResponse.setSuccess(context.booleanValue("DoCheckResourceResponse.Success"));
-		doCheckResourceResponse.setMessage(context.stringValue("DoCheckResourceResponse.Message"));
-		doCheckResourceResponse.setLevel(context.longValue("DoCheckResourceResponse.Level"));
-		doCheckResourceResponse.setUrl(context.stringValue("DoCheckResourceResponse.Url"));
-		doCheckResourceResponse.setPrompt(context.stringValue("DoCheckResourceResponse.Prompt"));
+		doCheckResourceResponse.setInterrupt(_ctx.stringValue("DoCheckResourceResponse.Interrupt"));
+		doCheckResourceResponse.setInvoker(_ctx.longValue("DoCheckResourceResponse.Invoker"));
+		doCheckResourceResponse.setPk(_ctx.stringValue("DoCheckResourceResponse.Pk"));
+		doCheckResourceResponse.setBid(_ctx.stringValue("DoCheckResourceResponse.Bid"));
+		doCheckResourceResponse.setHid(_ctx.longValue("DoCheckResourceResponse.Hid"));
+		doCheckResourceResponse.setCountry(_ctx.stringValue("DoCheckResourceResponse.Country"));
+		doCheckResourceResponse.setTaskIdentifier(_ctx.stringValue("DoCheckResourceResponse.TaskIdentifier"));
+		doCheckResourceResponse.setTaskIdentifier1(_ctx.stringValue("DoCheckResourceResponse.TaskIdentifier"));
+		doCheckResourceResponse.setGmtWakeup(_ctx.stringValue("DoCheckResourceResponse.GmtWakeup"));
+		doCheckResourceResponse.setSuccess(_ctx.booleanValue("DoCheckResourceResponse.Success"));
+		doCheckResourceResponse.setMessage(_ctx.stringValue("DoCheckResourceResponse.Message"));
+		doCheckResourceResponse.setLevel(_ctx.longValue("DoCheckResourceResponse.Level"));
+		doCheckResourceResponse.setUrl(_ctx.stringValue("DoCheckResourceResponse.Url"));
+		doCheckResourceResponse.setPrompt(_ctx.stringValue("DoCheckResourceResponse.Prompt"));
 	 
 	 	return doCheckResourceResponse;
 	}

@@ -23,16 +23,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateRuleForAntResponseUnmarshaller {
 
-	public static UpdateRuleForAntResponse unmarshall(UpdateRuleForAntResponse updateRuleForAntResponse, UnmarshallerContext context) {
+	public static UpdateRuleForAntResponse unmarshall(UpdateRuleForAntResponse updateRuleForAntResponse, UnmarshallerContext _ctx) {
 		
-		updateRuleForAntResponse.setRequestId(context.stringValue("UpdateRuleForAntResponse.RequestId"));
-		updateRuleForAntResponse.setSuccess(context.booleanValue("UpdateRuleForAntResponse.Success"));
-		updateRuleForAntResponse.setCode(context.stringValue("UpdateRuleForAntResponse.Code"));
-		updateRuleForAntResponse.setMessage(context.stringValue("UpdateRuleForAntResponse.Message"));
+		updateRuleForAntResponse.setRequestId(_ctx.stringValue("UpdateRuleForAntResponse.RequestId"));
+		updateRuleForAntResponse.setSuccess(_ctx.booleanValue("UpdateRuleForAntResponse.Success"));
+		updateRuleForAntResponse.setCode(_ctx.stringValue("UpdateRuleForAntResponse.Code"));
+		updateRuleForAntResponse.setMessage(_ctx.stringValue("UpdateRuleForAntResponse.Message"));
 
 		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UpdateRuleForAntResponse.Data.Length"); i++) {
-			data.add(context.stringValue("UpdateRuleForAntResponse.Data["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UpdateRuleForAntResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("UpdateRuleForAntResponse.Data["+ i +"]"));
 		}
 		updateRuleForAntResponse.setData(data);
 	 

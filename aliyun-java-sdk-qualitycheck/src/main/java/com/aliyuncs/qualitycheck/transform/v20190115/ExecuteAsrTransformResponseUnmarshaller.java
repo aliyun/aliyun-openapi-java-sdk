@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ExecuteAsrTransformResponseUnmarshaller {
 
-	public static ExecuteAsrTransformResponse unmarshall(ExecuteAsrTransformResponse executeAsrTransformResponse, UnmarshallerContext context) {
+	public static ExecuteAsrTransformResponse unmarshall(ExecuteAsrTransformResponse executeAsrTransformResponse, UnmarshallerContext _ctx) {
 		
-		executeAsrTransformResponse.setRequestId(context.stringValue("ExecuteAsrTransformResponse.RequestId"));
-		executeAsrTransformResponse.setSuccess(context.booleanValue("ExecuteAsrTransformResponse.Success"));
-		executeAsrTransformResponse.setCode(context.stringValue("ExecuteAsrTransformResponse.Code"));
-		executeAsrTransformResponse.setMessage(context.stringValue("ExecuteAsrTransformResponse.Message"));
-		executeAsrTransformResponse.setData(context.stringValue("ExecuteAsrTransformResponse.Data"));
+		executeAsrTransformResponse.setRequestId(_ctx.stringValue("ExecuteAsrTransformResponse.RequestId"));
+		executeAsrTransformResponse.setSuccess(_ctx.booleanValue("ExecuteAsrTransformResponse.Success"));
+		executeAsrTransformResponse.setCode(_ctx.stringValue("ExecuteAsrTransformResponse.Code"));
+		executeAsrTransformResponse.setMessage(_ctx.stringValue("ExecuteAsrTransformResponse.Message"));
+		executeAsrTransformResponse.setData(_ctx.stringValue("ExecuteAsrTransformResponse.Data"));
 	 
 	 	return executeAsrTransformResponse;
 	}

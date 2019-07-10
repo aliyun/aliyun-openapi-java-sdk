@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EditThesaurusForApiResponseUnmarshaller {
 
-	public static EditThesaurusForApiResponse unmarshall(EditThesaurusForApiResponse editThesaurusForApiResponse, UnmarshallerContext context) {
+	public static EditThesaurusForApiResponse unmarshall(EditThesaurusForApiResponse editThesaurusForApiResponse, UnmarshallerContext _ctx) {
 		
-		editThesaurusForApiResponse.setRequestId(context.stringValue("EditThesaurusForApiResponse.RequestId"));
-		editThesaurusForApiResponse.setSuccess(context.booleanValue("EditThesaurusForApiResponse.Success"));
-		editThesaurusForApiResponse.setCode(context.stringValue("EditThesaurusForApiResponse.Code"));
-		editThesaurusForApiResponse.setMessage(context.stringValue("EditThesaurusForApiResponse.Message"));
-		editThesaurusForApiResponse.setData(context.longValue("EditThesaurusForApiResponse.Data"));
+		editThesaurusForApiResponse.setRequestId(_ctx.stringValue("EditThesaurusForApiResponse.RequestId"));
+		editThesaurusForApiResponse.setSuccess(_ctx.booleanValue("EditThesaurusForApiResponse.Success"));
+		editThesaurusForApiResponse.setCode(_ctx.stringValue("EditThesaurusForApiResponse.Code"));
+		editThesaurusForApiResponse.setMessage(_ctx.stringValue("EditThesaurusForApiResponse.Message"));
+		editThesaurusForApiResponse.setData(_ctx.longValue("EditThesaurusForApiResponse.Data"));
 	 
 	 	return editThesaurusForApiResponse;
 	}

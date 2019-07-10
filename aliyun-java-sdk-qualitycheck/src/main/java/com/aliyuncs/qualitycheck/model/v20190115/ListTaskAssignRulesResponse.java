@@ -33,6 +33,12 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 	private String message;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Integer count;
+
 	private List<TaskAssignRuleInfo> data;
 
 	public String getRequestId() {
@@ -65,6 +71,30 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public List<TaskAssignRuleInfo> getData() {
