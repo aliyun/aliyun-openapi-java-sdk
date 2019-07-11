@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteK8sApplicationResponseUnmarshaller {
 
-	public static DeleteK8sApplicationResponse unmarshall(DeleteK8sApplicationResponse deleteK8sApplicationResponse, UnmarshallerContext context) {
+	public static DeleteK8sApplicationResponse unmarshall(DeleteK8sApplicationResponse deleteK8sApplicationResponse, UnmarshallerContext _ctx) {
 		
-		deleteK8sApplicationResponse.setRequestId(context.stringValue("DeleteK8sApplicationResponse.RequestId"));
-		deleteK8sApplicationResponse.setCode(context.integerValue("DeleteK8sApplicationResponse.Code"));
-		deleteK8sApplicationResponse.setMessage(context.stringValue("DeleteK8sApplicationResponse.Message"));
-		deleteK8sApplicationResponse.setChangeOrderId(context.stringValue("DeleteK8sApplicationResponse.ChangeOrderId"));
+		deleteK8sApplicationResponse.setRequestId(_ctx.stringValue("DeleteK8sApplicationResponse.RequestId"));
+		deleteK8sApplicationResponse.setCode(_ctx.integerValue("DeleteK8sApplicationResponse.Code"));
+		deleteK8sApplicationResponse.setMessage(_ctx.stringValue("DeleteK8sApplicationResponse.Message"));
+		deleteK8sApplicationResponse.setChangeOrderId(_ctx.stringValue("DeleteK8sApplicationResponse.ChangeOrderId"));
 	 
 	 	return deleteK8sApplicationResponse;
 	}

@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListServiceGroupsResponseUnmarshaller {
 
-	public static ListServiceGroupsResponse unmarshall(ListServiceGroupsResponse listServiceGroupsResponse, UnmarshallerContext context) {
+	public static ListServiceGroupsResponse unmarshall(ListServiceGroupsResponse listServiceGroupsResponse, UnmarshallerContext _ctx) {
 		
-		listServiceGroupsResponse.setRequestId(context.stringValue("ListServiceGroupsResponse.RequestId"));
-		listServiceGroupsResponse.setCode(context.integerValue("ListServiceGroupsResponse.Code"));
-		listServiceGroupsResponse.setMessage(context.stringValue("ListServiceGroupsResponse.Message"));
+		listServiceGroupsResponse.setRequestId(_ctx.stringValue("ListServiceGroupsResponse.RequestId"));
+		listServiceGroupsResponse.setCode(_ctx.integerValue("ListServiceGroupsResponse.Code"));
+		listServiceGroupsResponse.setMessage(_ctx.stringValue("ListServiceGroupsResponse.Message"));
 
 		List<ListServiceGroups> serviceGroupsList = new ArrayList<ListServiceGroups>();
-		for (int i = 0; i < context.lengthValue("ListServiceGroupsResponse.ServiceGroupsList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListServiceGroupsResponse.ServiceGroupsList.Length"); i++) {
 			ListServiceGroups listServiceGroups = new ListServiceGroups();
-			listServiceGroups.setCreateTime(context.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].CreateTime"));
-			listServiceGroups.setGroupId(context.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].GroupId"));
-			listServiceGroups.setGroupName(context.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].GroupName"));
+			listServiceGroups.setCreateTime(_ctx.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].CreateTime"));
+			listServiceGroups.setGroupId(_ctx.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].GroupId"));
+			listServiceGroups.setGroupName(_ctx.stringValue("ListServiceGroupsResponse.ServiceGroupsList["+ i +"].GroupName"));
 
 			serviceGroupsList.add(listServiceGroups);
 		}

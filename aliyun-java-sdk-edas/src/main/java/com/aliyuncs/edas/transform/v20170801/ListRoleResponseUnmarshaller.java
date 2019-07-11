@@ -26,32 +26,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListRoleResponseUnmarshaller {
 
-	public static ListRoleResponse unmarshall(ListRoleResponse listRoleResponse, UnmarshallerContext context) {
+	public static ListRoleResponse unmarshall(ListRoleResponse listRoleResponse, UnmarshallerContext _ctx) {
 		
-		listRoleResponse.setRequestId(context.stringValue("ListRoleResponse.RequestId"));
-		listRoleResponse.setCode(context.integerValue("ListRoleResponse.Code"));
-		listRoleResponse.setMessage(context.stringValue("ListRoleResponse.Message"));
+		listRoleResponse.setRequestId(_ctx.stringValue("ListRoleResponse.RequestId"));
+		listRoleResponse.setCode(_ctx.integerValue("ListRoleResponse.Code"));
+		listRoleResponse.setMessage(_ctx.stringValue("ListRoleResponse.Message"));
 
 		List<RoleItem> roleList = new ArrayList<RoleItem>();
-		for (int i = 0; i < context.lengthValue("ListRoleResponse.RoleList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListRoleResponse.RoleList.Length"); i++) {
 			RoleItem roleItem = new RoleItem();
 
 			Role role = new Role();
-			role.setId(context.integerValue("ListRoleResponse.RoleList["+ i +"].Role.Id"));
-			role.setAdminUserId(context.stringValue("ListRoleResponse.RoleList["+ i +"].Role.AdminUserId"));
-			role.setName(context.stringValue("ListRoleResponse.RoleList["+ i +"].Role.Name"));
-			role.setCreateTime(context.longValue("ListRoleResponse.RoleList["+ i +"].Role.CreateTime"));
-			role.setUpdateTime(context.longValue("ListRoleResponse.RoleList["+ i +"].Role.UpdateTime"));
-			role.setIsDefault(context.booleanValue("ListRoleResponse.RoleList["+ i +"].Role.IsDefault"));
+			role.setId(_ctx.integerValue("ListRoleResponse.RoleList["+ i +"].Role.Id"));
+			role.setAdminUserId(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].Role.AdminUserId"));
+			role.setName(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].Role.Name"));
+			role.setCreateTime(_ctx.longValue("ListRoleResponse.RoleList["+ i +"].Role.CreateTime"));
+			role.setUpdateTime(_ctx.longValue("ListRoleResponse.RoleList["+ i +"].Role.UpdateTime"));
+			role.setIsDefault(_ctx.booleanValue("ListRoleResponse.RoleList["+ i +"].Role.IsDefault"));
 			roleItem.setRole(role);
 
 			List<Action> actionList = new ArrayList<Action>();
-			for (int j = 0; j < context.lengthValue("ListRoleResponse.RoleList["+ i +"].ActionList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListRoleResponse.RoleList["+ i +"].ActionList.Length"); j++) {
 				Action action = new Action();
-				action.setGroupId(context.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].GroupId"));
-				action.setCode(context.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Code"));
-				action.setName(context.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Name"));
-				action.setDescription(context.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Description"));
+				action.setGroupId(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].GroupId"));
+				action.setCode(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Code"));
+				action.setName(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Name"));
+				action.setDescription(_ctx.stringValue("ListRoleResponse.RoleList["+ i +"].ActionList["+ j +"].Description"));
 
 				actionList.add(action);
 			}

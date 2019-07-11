@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InsertClusterResponseUnmarshaller {
 
-	public static InsertClusterResponse unmarshall(InsertClusterResponse insertClusterResponse, UnmarshallerContext context) {
+	public static InsertClusterResponse unmarshall(InsertClusterResponse insertClusterResponse, UnmarshallerContext _ctx) {
 		
-		insertClusterResponse.setRequestId(context.stringValue("InsertClusterResponse.RequestId"));
-		insertClusterResponse.setCode(context.integerValue("InsertClusterResponse.Code"));
-		insertClusterResponse.setMessage(context.stringValue("InsertClusterResponse.Message"));
+		insertClusterResponse.setRequestId(_ctx.stringValue("InsertClusterResponse.RequestId"));
+		insertClusterResponse.setCode(_ctx.integerValue("InsertClusterResponse.Code"));
+		insertClusterResponse.setMessage(_ctx.stringValue("InsertClusterResponse.Message"));
 
 		Cluster cluster = new Cluster();
-		cluster.setClusterId(context.stringValue("InsertClusterResponse.Cluster.ClusterId"));
-		cluster.setRegionId(context.stringValue("InsertClusterResponse.Cluster.RegionId"));
-		cluster.setClusterName(context.stringValue("InsertClusterResponse.Cluster.ClusterName"));
-		cluster.setClusterType(context.integerValue("InsertClusterResponse.Cluster.ClusterType"));
-		cluster.setOversoldFactor(context.integerValue("InsertClusterResponse.Cluster.OversoldFactor"));
-		cluster.setNetworkMode(context.integerValue("InsertClusterResponse.Cluster.NetworkMode"));
-		cluster.setVpcId(context.stringValue("InsertClusterResponse.Cluster.VpcId"));
-		cluster.setIaasProvider(context.stringValue("InsertClusterResponse.Cluster.IaasProvider"));
+		cluster.setClusterId(_ctx.stringValue("InsertClusterResponse.Cluster.ClusterId"));
+		cluster.setRegionId(_ctx.stringValue("InsertClusterResponse.Cluster.RegionId"));
+		cluster.setClusterName(_ctx.stringValue("InsertClusterResponse.Cluster.ClusterName"));
+		cluster.setClusterType(_ctx.integerValue("InsertClusterResponse.Cluster.ClusterType"));
+		cluster.setOversoldFactor(_ctx.integerValue("InsertClusterResponse.Cluster.OversoldFactor"));
+		cluster.setNetworkMode(_ctx.integerValue("InsertClusterResponse.Cluster.NetworkMode"));
+		cluster.setVpcId(_ctx.stringValue("InsertClusterResponse.Cluster.VpcId"));
+		cluster.setIaasProvider(_ctx.stringValue("InsertClusterResponse.Cluster.IaasProvider"));
 		insertClusterResponse.setCluster(cluster);
 	 
 	 	return insertClusterResponse;

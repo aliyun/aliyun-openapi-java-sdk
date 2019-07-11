@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMonitorInfoResponseUnmarshaller {
 
-	public static QueryMonitorInfoResponse unmarshall(QueryMonitorInfoResponse queryMonitorInfoResponse, UnmarshallerContext context) {
+	public static QueryMonitorInfoResponse unmarshall(QueryMonitorInfoResponse queryMonitorInfoResponse, UnmarshallerContext _ctx) {
 		
-		queryMonitorInfoResponse.setRequestId(context.stringValue("QueryMonitorInfoResponse.RequestId"));
-		queryMonitorInfoResponse.setCode(context.integerValue("QueryMonitorInfoResponse.Code"));
-		queryMonitorInfoResponse.setMessage(context.stringValue("QueryMonitorInfoResponse.Message"));
-		queryMonitorInfoResponse.setMonitorInfo(context.stringValue("QueryMonitorInfoResponse.MonitorInfo"));
+		queryMonitorInfoResponse.setRequestId(_ctx.stringValue("QueryMonitorInfoResponse.RequestId"));
+		queryMonitorInfoResponse.setCode(_ctx.integerValue("QueryMonitorInfoResponse.Code"));
+		queryMonitorInfoResponse.setMessage(_ctx.stringValue("QueryMonitorInfoResponse.Message"));
+		queryMonitorInfoResponse.setMonitorInfo(_ctx.stringValue("QueryMonitorInfoResponse.MonitorInfo"));
 	 
 	 	return queryMonitorInfoResponse;
 	}

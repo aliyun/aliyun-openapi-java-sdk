@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AuthorizeRoleResponseUnmarshaller {
 
-	public static AuthorizeRoleResponse unmarshall(AuthorizeRoleResponse authorizeRoleResponse, UnmarshallerContext context) {
+	public static AuthorizeRoleResponse unmarshall(AuthorizeRoleResponse authorizeRoleResponse, UnmarshallerContext _ctx) {
 		
-		authorizeRoleResponse.setRequestId(context.stringValue("AuthorizeRoleResponse.RequestId"));
-		authorizeRoleResponse.setCode(context.integerValue("AuthorizeRoleResponse.Code"));
-		authorizeRoleResponse.setMessage(context.stringValue("AuthorizeRoleResponse.Message"));
+		authorizeRoleResponse.setRequestId(_ctx.stringValue("AuthorizeRoleResponse.RequestId"));
+		authorizeRoleResponse.setCode(_ctx.integerValue("AuthorizeRoleResponse.Code"));
+		authorizeRoleResponse.setMessage(_ctx.stringValue("AuthorizeRoleResponse.Message"));
 	 
 	 	return authorizeRoleResponse;
 	}

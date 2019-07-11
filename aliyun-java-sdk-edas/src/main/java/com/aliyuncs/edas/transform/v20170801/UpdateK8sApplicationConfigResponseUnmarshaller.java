@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateK8sApplicationConfigResponseUnmarshaller {
 
-	public static UpdateK8sApplicationConfigResponse unmarshall(UpdateK8sApplicationConfigResponse updateK8sApplicationConfigResponse, UnmarshallerContext context) {
+	public static UpdateK8sApplicationConfigResponse unmarshall(UpdateK8sApplicationConfigResponse updateK8sApplicationConfigResponse, UnmarshallerContext _ctx) {
 		
-		updateK8sApplicationConfigResponse.setRequestId(context.stringValue("UpdateK8sApplicationConfigResponse.RequestId"));
-		updateK8sApplicationConfigResponse.setCode(context.integerValue("UpdateK8sApplicationConfigResponse.Code"));
-		updateK8sApplicationConfigResponse.setMessage(context.stringValue("UpdateK8sApplicationConfigResponse.Message"));
-		updateK8sApplicationConfigResponse.setChangeOrderId(context.stringValue("UpdateK8sApplicationConfigResponse.ChangeOrderId"));
+		updateK8sApplicationConfigResponse.setRequestId(_ctx.stringValue("UpdateK8sApplicationConfigResponse.RequestId"));
+		updateK8sApplicationConfigResponse.setCode(_ctx.integerValue("UpdateK8sApplicationConfigResponse.Code"));
+		updateK8sApplicationConfigResponse.setMessage(_ctx.stringValue("UpdateK8sApplicationConfigResponse.Message"));
+		updateK8sApplicationConfigResponse.setChangeOrderId(_ctx.stringValue("UpdateK8sApplicationConfigResponse.ChangeOrderId"));
 	 
 	 	return updateK8sApplicationConfigResponse;
 	}

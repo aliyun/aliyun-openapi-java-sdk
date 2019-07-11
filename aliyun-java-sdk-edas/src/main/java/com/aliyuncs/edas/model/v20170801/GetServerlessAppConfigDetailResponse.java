@@ -106,7 +106,7 @@ public class GetServerlessAppConfigDetailResponse extends AcsResponse {
 
 		private Integer batchWaitTime;
 
-		private Integer buildPackId;
+		private String edasContainerVersion;
 
 		public String getAppId() {
 			return this.appId;
@@ -308,12 +308,12 @@ public class GetServerlessAppConfigDetailResponse extends AcsResponse {
 			this.batchWaitTime = batchWaitTime;
 		}
 
-		public Integer getBuildPackId() {
-			return this.buildPackId;
+		public String getEdasContainerVersion() {
+			return this.edasContainerVersion;
 		}
 
-		public void setBuildPackId(Integer buildPackId) {
-			this.buildPackId = buildPackId;
+		public void setEdasContainerVersion(String edasContainerVersion) {
+			this.edasContainerVersion = edasContainerVersion;
 		}
 	}
 

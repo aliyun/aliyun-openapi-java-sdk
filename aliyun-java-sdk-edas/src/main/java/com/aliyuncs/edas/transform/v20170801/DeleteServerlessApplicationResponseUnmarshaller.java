@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteServerlessApplicationResponseUnmarshaller {
 
-	public static DeleteServerlessApplicationResponse unmarshall(DeleteServerlessApplicationResponse deleteServerlessApplicationResponse, UnmarshallerContext context) {
+	public static DeleteServerlessApplicationResponse unmarshall(DeleteServerlessApplicationResponse deleteServerlessApplicationResponse, UnmarshallerContext _ctx) {
 		
-		deleteServerlessApplicationResponse.setCode(context.integerValue("DeleteServerlessApplicationResponse.Code"));
-		deleteServerlessApplicationResponse.setMessage(context.stringValue("DeleteServerlessApplicationResponse.Message"));
-		deleteServerlessApplicationResponse.setChangeOrderId(context.stringValue("DeleteServerlessApplicationResponse.ChangeOrderId"));
+		deleteServerlessApplicationResponse.setCode(_ctx.integerValue("DeleteServerlessApplicationResponse.Code"));
+		deleteServerlessApplicationResponse.setMessage(_ctx.stringValue("DeleteServerlessApplicationResponse.Message"));
+		deleteServerlessApplicationResponse.setChangeOrderId(_ctx.stringValue("DeleteServerlessApplicationResponse.ChangeOrderId"));
 	 
 	 	return deleteServerlessApplicationResponse;
 	}

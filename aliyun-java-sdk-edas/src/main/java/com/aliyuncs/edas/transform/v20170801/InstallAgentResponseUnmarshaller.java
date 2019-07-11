@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InstallAgentResponseUnmarshaller {
 
-	public static InstallAgentResponse unmarshall(InstallAgentResponse installAgentResponse, UnmarshallerContext context) {
+	public static InstallAgentResponse unmarshall(InstallAgentResponse installAgentResponse, UnmarshallerContext _ctx) {
 		
-		installAgentResponse.setRequestId(context.stringValue("InstallAgentResponse.RequestId"));
-		installAgentResponse.setCode(context.integerValue("InstallAgentResponse.Code"));
-		installAgentResponse.setMessage(context.stringValue("InstallAgentResponse.Message"));
+		installAgentResponse.setRequestId(_ctx.stringValue("InstallAgentResponse.RequestId"));
+		installAgentResponse.setCode(_ctx.integerValue("InstallAgentResponse.Code"));
+		installAgentResponse.setMessage(_ctx.stringValue("InstallAgentResponse.Message"));
 
 		List<ExecutionResult> executionResultList = new ArrayList<ExecutionResult>();
-		for (int i = 0; i < context.lengthValue("InstallAgentResponse.ExecutionResultList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("InstallAgentResponse.ExecutionResultList.Length"); i++) {
 			ExecutionResult executionResult = new ExecutionResult();
-			executionResult.setInstanceId(context.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].InstanceId"));
-			executionResult.setStatus(context.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].Status"));
-			executionResult.setFinishedTime(context.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].FinishedTime"));
-			executionResult.setInvokeRecordStatus(context.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].InvokeRecordStatus"));
-			executionResult.setSuccess(context.booleanValue("InstallAgentResponse.ExecutionResultList["+ i +"].Success"));
+			executionResult.setInstanceId(_ctx.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].InstanceId"));
+			executionResult.setStatus(_ctx.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].Status"));
+			executionResult.setFinishedTime(_ctx.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].FinishedTime"));
+			executionResult.setInvokeRecordStatus(_ctx.stringValue("InstallAgentResponse.ExecutionResultList["+ i +"].InvokeRecordStatus"));
+			executionResult.setSuccess(_ctx.booleanValue("InstallAgentResponse.ExecutionResultList["+ i +"].Success"));
 
 			executionResultList.add(executionResult);
 		}

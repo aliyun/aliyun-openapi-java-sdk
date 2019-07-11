@@ -22,27 +22,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryRegionConfigResponseUnmarshaller {
 
-	public static QueryRegionConfigResponse unmarshall(QueryRegionConfigResponse queryRegionConfigResponse, UnmarshallerContext context) {
+	public static QueryRegionConfigResponse unmarshall(QueryRegionConfigResponse queryRegionConfigResponse, UnmarshallerContext _ctx) {
 		
-		queryRegionConfigResponse.setRequestId(context.stringValue("QueryRegionConfigResponse.RequestId"));
-		queryRegionConfigResponse.setCode(context.integerValue("QueryRegionConfigResponse.Code"));
-		queryRegionConfigResponse.setMessage(context.stringValue("QueryRegionConfigResponse.Message"));
+		queryRegionConfigResponse.setRequestId(_ctx.stringValue("QueryRegionConfigResponse.RequestId"));
+		queryRegionConfigResponse.setCode(_ctx.integerValue("QueryRegionConfigResponse.Code"));
+		queryRegionConfigResponse.setMessage(_ctx.stringValue("QueryRegionConfigResponse.Message"));
 
 		RegionConfig regionConfig = new RegionConfig();
-		regionConfig.setAddressServerHost(context.stringValue("QueryRegionConfigResponse.RegionConfig.AddressServerHost"));
-		regionConfig.setAgentInstallScript(context.stringValue("QueryRegionConfigResponse.RegionConfig.AgentInstallScript"));
-		regionConfig.setFileServerType(context.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerType"));
-		regionConfig.setId(context.stringValue("QueryRegionConfigResponse.RegionConfig.Id"));
-		regionConfig.setImageId(context.stringValue("QueryRegionConfigResponse.RegionConfig.ImageId"));
-		regionConfig.setName(context.stringValue("QueryRegionConfigResponse.RegionConfig.Name"));
-		regionConfig.setNo(context.integerValue("QueryRegionConfigResponse.RegionConfig.No"));
-		regionConfig.setTag(context.stringValue("QueryRegionConfigResponse.RegionConfig.Tag"));
+		regionConfig.setAddressServerHost(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.AddressServerHost"));
+		regionConfig.setAgentInstallScript(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.AgentInstallScript"));
+		regionConfig.setFileServerType(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerType"));
+		regionConfig.setId(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.Id"));
+		regionConfig.setImageId(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.ImageId"));
+		regionConfig.setName(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.Name"));
+		regionConfig.setNo(_ctx.integerValue("QueryRegionConfigResponse.RegionConfig.No"));
+		regionConfig.setTag(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.Tag"));
 
 		FileServerConfig fileServerConfig = new FileServerConfig();
-		fileServerConfig.setBucket(context.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.Bucket"));
-		fileServerConfig.setInternalUrl(context.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.InternalUrl"));
-		fileServerConfig.setPublicUrl(context.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.PublicUrl"));
-		fileServerConfig.setVpcUrl(context.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.VpcUrl"));
+		fileServerConfig.setBucket(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.Bucket"));
+		fileServerConfig.setInternalUrl(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.InternalUrl"));
+		fileServerConfig.setPublicUrl(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.PublicUrl"));
+		fileServerConfig.setVpcUrl(_ctx.stringValue("QueryRegionConfigResponse.RegionConfig.FileServerConfig.VpcUrl"));
 		regionConfig.setFileServerConfig(fileServerConfig);
 		queryRegionConfigResponse.setRegionConfig(regionConfig);
 	 

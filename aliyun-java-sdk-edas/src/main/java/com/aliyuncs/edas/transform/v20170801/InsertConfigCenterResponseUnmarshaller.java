@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InsertConfigCenterResponseUnmarshaller {
 
-	public static InsertConfigCenterResponse unmarshall(InsertConfigCenterResponse insertConfigCenterResponse, UnmarshallerContext context) {
+	public static InsertConfigCenterResponse unmarshall(InsertConfigCenterResponse insertConfigCenterResponse, UnmarshallerContext _ctx) {
 		
-		insertConfigCenterResponse.setRequestId(context.stringValue("InsertConfigCenterResponse.RequestId"));
-		insertConfigCenterResponse.setCode(context.integerValue("InsertConfigCenterResponse.Code"));
-		insertConfigCenterResponse.setMessage(context.stringValue("InsertConfigCenterResponse.Message"));
+		insertConfigCenterResponse.setRequestId(_ctx.stringValue("InsertConfigCenterResponse.RequestId"));
+		insertConfigCenterResponse.setCode(_ctx.integerValue("InsertConfigCenterResponse.Code"));
+		insertConfigCenterResponse.setMessage(_ctx.stringValue("InsertConfigCenterResponse.Message"));
 	 
 	 	return insertConfigCenterResponse;
 	}

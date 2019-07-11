@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryConfigCenterResponseUnmarshaller {
 
-	public static QueryConfigCenterResponse unmarshall(QueryConfigCenterResponse queryConfigCenterResponse, UnmarshallerContext context) {
+	public static QueryConfigCenterResponse unmarshall(QueryConfigCenterResponse queryConfigCenterResponse, UnmarshallerContext _ctx) {
 		
-		queryConfigCenterResponse.setRequestId(context.stringValue("QueryConfigCenterResponse.RequestId"));
-		queryConfigCenterResponse.setCode(context.integerValue("QueryConfigCenterResponse.Code"));
-		queryConfigCenterResponse.setMessage(context.stringValue("QueryConfigCenterResponse.Message"));
+		queryConfigCenterResponse.setRequestId(_ctx.stringValue("QueryConfigCenterResponse.RequestId"));
+		queryConfigCenterResponse.setCode(_ctx.integerValue("QueryConfigCenterResponse.Code"));
+		queryConfigCenterResponse.setMessage(_ctx.stringValue("QueryConfigCenterResponse.Message"));
 
 		ConfigCenterInfo configCenterInfo = new ConfigCenterInfo();
-		configCenterInfo.setContent(context.stringValue("QueryConfigCenterResponse.configCenterInfo.Content"));
-		configCenterInfo.setDataId(context.stringValue("QueryConfigCenterResponse.configCenterInfo.DataId"));
-		configCenterInfo.setGroup(context.stringValue("QueryConfigCenterResponse.configCenterInfo.Group"));
-		configCenterInfo.setId(context.stringValue("QueryConfigCenterResponse.configCenterInfo.Id"));
-		configCenterInfo.setAppName(context.stringValue("QueryConfigCenterResponse.configCenterInfo.AppName"));
+		configCenterInfo.setContent(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.Content"));
+		configCenterInfo.setDataId(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.DataId"));
+		configCenterInfo.setGroup(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.Group"));
+		configCenterInfo.setId(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.Id"));
+		configCenterInfo.setAppName(_ctx.stringValue("QueryConfigCenterResponse.configCenterInfo.AppName"));
 		queryConfigCenterResponse.setConfigCenterInfo(configCenterInfo);
 	 
 	 	return queryConfigCenterResponse;

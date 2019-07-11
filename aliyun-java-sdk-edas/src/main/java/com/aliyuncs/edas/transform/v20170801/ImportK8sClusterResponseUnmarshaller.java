@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ImportK8sClusterResponseUnmarshaller {
 
-	public static ImportK8sClusterResponse unmarshall(ImportK8sClusterResponse importK8sClusterResponse, UnmarshallerContext context) {
+	public static ImportK8sClusterResponse unmarshall(ImportK8sClusterResponse importK8sClusterResponse, UnmarshallerContext _ctx) {
 		
-		importK8sClusterResponse.setRequestId(context.stringValue("ImportK8sClusterResponse.RequestId"));
-		importK8sClusterResponse.setCode(context.integerValue("ImportK8sClusterResponse.Code"));
-		importK8sClusterResponse.setMessage(context.stringValue("ImportK8sClusterResponse.Message"));
-		importK8sClusterResponse.setData(context.stringValue("ImportK8sClusterResponse.Data"));
+		importK8sClusterResponse.setRequestId(_ctx.stringValue("ImportK8sClusterResponse.RequestId"));
+		importK8sClusterResponse.setCode(_ctx.integerValue("ImportK8sClusterResponse.Code"));
+		importK8sClusterResponse.setMessage(_ctx.stringValue("ImportK8sClusterResponse.Message"));
+		importK8sClusterResponse.setData(_ctx.stringValue("ImportK8sClusterResponse.Data"));
 	 
 	 	return importK8sClusterResponse;
 	}

@@ -24,38 +24,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListApplicationResponseUnmarshaller {
 
-	public static ListApplicationResponse unmarshall(ListApplicationResponse listApplicationResponse, UnmarshallerContext context) {
+	public static ListApplicationResponse unmarshall(ListApplicationResponse listApplicationResponse, UnmarshallerContext _ctx) {
 		
-		listApplicationResponse.setRequestId(context.stringValue("ListApplicationResponse.RequestId"));
-		listApplicationResponse.setCode(context.integerValue("ListApplicationResponse.Code"));
-		listApplicationResponse.setMessage(context.stringValue("ListApplicationResponse.Message"));
+		listApplicationResponse.setRequestId(_ctx.stringValue("ListApplicationResponse.RequestId"));
+		listApplicationResponse.setCode(_ctx.integerValue("ListApplicationResponse.Code"));
+		listApplicationResponse.setMessage(_ctx.stringValue("ListApplicationResponse.Message"));
 
 		List<Application> applicationList = new ArrayList<Application>();
-		for (int i = 0; i < context.lengthValue("ListApplicationResponse.ApplicationList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListApplicationResponse.ApplicationList.Length"); i++) {
 			Application application = new Application();
-			application.setAppId(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].AppId"));
-			application.setName(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Name"));
-			application.setRegionId(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].RegionId"));
-			application.setDescription(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Description"));
-			application.setOwner(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Owner"));
-			application.setInstanceCount(context.integerValue("ListApplicationResponse.ApplicationList["+ i +"].InstanceCount"));
-			application.setRunningInstanceCount(context.integerValue("ListApplicationResponse.ApplicationList["+ i +"].RunningInstanceCount"));
-			application.setPort(context.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Port"));
-			application.setUserId(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].UserId"));
-			application.setSlbId(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].SlbId"));
-			application.setSlbIp(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].SlbIp"));
-			application.setSlbPort(context.integerValue("ListApplicationResponse.ApplicationList["+ i +"].SlbPort"));
-			application.setExtSlbId(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ExtSlbId"));
-			application.setExtSlbIp(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ExtSlbIp"));
-			application.setApplicationType(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ApplicationType"));
-			application.setClusterType(context.integerValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterType"));
-			application.setClusterId(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterId"));
-			application.setDockerize(context.booleanValue("ListApplicationResponse.ApplicationList["+ i +"].Dockerize"));
-			application.setCpu(context.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Cpu"));
-			application.setMemory(context.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Memory"));
-			application.setHealthCheckUrl(context.stringValue("ListApplicationResponse.ApplicationList["+ i +"].HealthCheckUrl"));
-			application.setBuildPackageId(context.longValue("ListApplicationResponse.ApplicationList["+ i +"].BuildPackageId"));
-			application.setCreateTime(context.longValue("ListApplicationResponse.ApplicationList["+ i +"].CreateTime"));
+			application.setAppId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].AppId"));
+			application.setName(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Name"));
+			application.setRegionId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].RegionId"));
+			application.setDescription(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Description"));
+			application.setOwner(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Owner"));
+			application.setInstanceCount(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].InstanceCount"));
+			application.setRunningInstanceCount(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].RunningInstanceCount"));
+			application.setPort(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Port"));
+			application.setUserId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].UserId"));
+			application.setSlbId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].SlbId"));
+			application.setSlbIp(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].SlbIp"));
+			application.setSlbPort(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].SlbPort"));
+			application.setExtSlbId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ExtSlbId"));
+			application.setExtSlbIp(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ExtSlbIp"));
+			application.setApplicationType(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ApplicationType"));
+			application.setClusterType(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterType"));
+			application.setClusterId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterId"));
+			application.setDockerize(_ctx.booleanValue("ListApplicationResponse.ApplicationList["+ i +"].Dockerize"));
+			application.setCpu(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Cpu"));
+			application.setMemory(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Memory"));
+			application.setHealthCheckUrl(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].HealthCheckUrl"));
+			application.setBuildPackageId(_ctx.longValue("ListApplicationResponse.ApplicationList["+ i +"].BuildPackageId"));
+			application.setCreateTime(_ctx.longValue("ListApplicationResponse.ApplicationList["+ i +"].CreateTime"));
 
 			applicationList.add(application);
 		}

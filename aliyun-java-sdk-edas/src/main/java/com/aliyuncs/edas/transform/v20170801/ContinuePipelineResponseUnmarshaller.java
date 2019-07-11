@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ContinuePipelineResponseUnmarshaller {
 
-	public static ContinuePipelineResponse unmarshall(ContinuePipelineResponse continuePipelineResponse, UnmarshallerContext context) {
+	public static ContinuePipelineResponse unmarshall(ContinuePipelineResponse continuePipelineResponse, UnmarshallerContext _ctx) {
 		
-		continuePipelineResponse.setRequestId(context.stringValue("ContinuePipelineResponse.RequestId"));
-		continuePipelineResponse.setCode(context.integerValue("ContinuePipelineResponse.Code"));
-		continuePipelineResponse.setMessage(context.stringValue("ContinuePipelineResponse.Message"));
+		continuePipelineResponse.setRequestId(_ctx.stringValue("ContinuePipelineResponse.RequestId"));
+		continuePipelineResponse.setCode(_ctx.integerValue("ContinuePipelineResponse.Code"));
+		continuePipelineResponse.setMessage(_ctx.stringValue("ContinuePipelineResponse.Message"));
 	 
 	 	return continuePipelineResponse;
 	}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteClusterMemberResponseUnmarshaller {
 
-	public static DeleteClusterMemberResponse unmarshall(DeleteClusterMemberResponse deleteClusterMemberResponse, UnmarshallerContext context) {
+	public static DeleteClusterMemberResponse unmarshall(DeleteClusterMemberResponse deleteClusterMemberResponse, UnmarshallerContext _ctx) {
 		
-		deleteClusterMemberResponse.setRequestId(context.stringValue("DeleteClusterMemberResponse.RequestId"));
-		deleteClusterMemberResponse.setCode(context.integerValue("DeleteClusterMemberResponse.Code"));
-		deleteClusterMemberResponse.setMessage(context.stringValue("DeleteClusterMemberResponse.Message"));
-		deleteClusterMemberResponse.setData(context.booleanValue("DeleteClusterMemberResponse.Data"));
+		deleteClusterMemberResponse.setRequestId(_ctx.stringValue("DeleteClusterMemberResponse.RequestId"));
+		deleteClusterMemberResponse.setCode(_ctx.integerValue("DeleteClusterMemberResponse.Code"));
+		deleteClusterMemberResponse.setMessage(_ctx.stringValue("DeleteClusterMemberResponse.Message"));
+		deleteClusterMemberResponse.setData(_ctx.booleanValue("DeleteClusterMemberResponse.Data"));
 	 
 	 	return deleteClusterMemberResponse;
 	}

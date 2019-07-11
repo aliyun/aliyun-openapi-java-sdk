@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InsertRoleResponseUnmarshaller {
 
-	public static InsertRoleResponse unmarshall(InsertRoleResponse insertRoleResponse, UnmarshallerContext context) {
+	public static InsertRoleResponse unmarshall(InsertRoleResponse insertRoleResponse, UnmarshallerContext _ctx) {
 		
-		insertRoleResponse.setRequestId(context.stringValue("InsertRoleResponse.RequestId"));
-		insertRoleResponse.setCode(context.integerValue("InsertRoleResponse.Code"));
-		insertRoleResponse.setMessage(context.stringValue("InsertRoleResponse.Message"));
-		insertRoleResponse.setRoleId(context.integerValue("InsertRoleResponse.RoleId"));
+		insertRoleResponse.setRequestId(_ctx.stringValue("InsertRoleResponse.RequestId"));
+		insertRoleResponse.setCode(_ctx.integerValue("InsertRoleResponse.Code"));
+		insertRoleResponse.setMessage(_ctx.stringValue("InsertRoleResponse.Message"));
+		insertRoleResponse.setRoleId(_ctx.integerValue("InsertRoleResponse.RoleId"));
 	 
 	 	return insertRoleResponse;
 	}

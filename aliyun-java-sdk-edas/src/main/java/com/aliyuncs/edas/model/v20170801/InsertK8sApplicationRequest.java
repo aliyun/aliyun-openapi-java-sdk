@@ -35,6 +35,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private Integer internetTargetPort;
 
+	private String webContainer;
+
 	private String intranetSlbId;
 
 	private String commandArgs;
@@ -49,15 +51,21 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private Integer requestsMem;
 
+	private String packageVersion;
+
 	private String storageType;
 
 	private Integer limitMem;
+
+	private String edasContainerVersion;
 
 	private String appName;
 
 	private String internetSlbId;
 
 	private String logicalRegionId;
+
+	private String packageUrl;
 
 	private String internetSlbProtocol;
 
@@ -79,6 +87,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String command;
 
+	private String jDK;
+
 	private String intranetSlbProtocol;
 
 	private String imageUrl;
@@ -86,6 +96,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private String namespace;
 
 	private String applicationDescription;
+
+	private String packageType;
 
 	private Integer requestsCpu;
 
@@ -121,6 +133,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.internetTargetPort = internetTargetPort;
 		if(internetTargetPort != null){
 			putQueryParameter("InternetTargetPort", internetTargetPort.toString());
+		}
+	}
+
+	public String getWebContainer() {
+		return this.webContainer;
+	}
+
+	public void setWebContainer(String webContainer) {
+		this.webContainer = webContainer;
+		if(webContainer != null){
+			putQueryParameter("WebContainer", webContainer);
 		}
 	}
 
@@ -201,6 +224,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getPackageVersion() {
+		return this.packageVersion;
+	}
+
+	public void setPackageVersion(String packageVersion) {
+		this.packageVersion = packageVersion;
+		if(packageVersion != null){
+			putQueryParameter("PackageVersion", packageVersion);
+		}
+	}
+
 	public String getStorageType() {
 		return this.storageType;
 	}
@@ -220,6 +254,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.limitMem = limitMem;
 		if(limitMem != null){
 			putQueryParameter("LimitMem", limitMem.toString());
+		}
+	}
+
+	public String getEdasContainerVersion() {
+		return this.edasContainerVersion;
+	}
+
+	public void setEdasContainerVersion(String edasContainerVersion) {
+		this.edasContainerVersion = edasContainerVersion;
+		if(edasContainerVersion != null){
+			putQueryParameter("EdasContainerVersion", edasContainerVersion);
 		}
 	}
 
@@ -253,6 +298,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.logicalRegionId = logicalRegionId;
 		if(logicalRegionId != null){
 			putQueryParameter("LogicalRegionId", logicalRegionId);
+		}
+	}
+
+	public String getPackageUrl() {
+		return this.packageUrl;
+	}
+
+	public void setPackageUrl(String packageUrl) {
+		this.packageUrl = packageUrl;
+		if(packageUrl != null){
+			putQueryParameter("PackageUrl", packageUrl);
 		}
 	}
 
@@ -366,6 +422,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public String getJDK() {
+		return this.jDK;
+	}
+
+	public void setJDK(String jDK) {
+		this.jDK = jDK;
+		if(jDK != null){
+			putQueryParameter("JDK", jDK);
+		}
+	}
+
 	public String getIntranetSlbProtocol() {
 		return this.intranetSlbProtocol;
 	}
@@ -407,6 +474,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.applicationDescription = applicationDescription;
 		if(applicationDescription != null){
 			putQueryParameter("ApplicationDescription", applicationDescription);
+		}
+	}
+
+	public String getPackageType() {
+		return this.packageType;
+	}
+
+	public void setPackageType(String packageType) {
+		this.packageType = packageType;
+		if(packageType != null){
+			putQueryParameter("PackageType", packageType);
 		}
 	}
 

@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMigrateRegionListResponseUnmarshaller {
 
-	public static QueryMigrateRegionListResponse unmarshall(QueryMigrateRegionListResponse queryMigrateRegionListResponse, UnmarshallerContext context) {
+	public static QueryMigrateRegionListResponse unmarshall(QueryMigrateRegionListResponse queryMigrateRegionListResponse, UnmarshallerContext _ctx) {
 		
-		queryMigrateRegionListResponse.setRequestId(context.stringValue("QueryMigrateRegionListResponse.RequestId"));
-		queryMigrateRegionListResponse.setCode(context.integerValue("QueryMigrateRegionListResponse.Code"));
-		queryMigrateRegionListResponse.setMessage(context.stringValue("QueryMigrateRegionListResponse.Message"));
+		queryMigrateRegionListResponse.setRequestId(_ctx.stringValue("QueryMigrateRegionListResponse.RequestId"));
+		queryMigrateRegionListResponse.setCode(_ctx.integerValue("QueryMigrateRegionListResponse.Code"));
+		queryMigrateRegionListResponse.setMessage(_ctx.stringValue("QueryMigrateRegionListResponse.Message"));
 
 		List<RegionEntity> regionEntityList = new ArrayList<RegionEntity>();
-		for (int i = 0; i < context.lengthValue("QueryMigrateRegionListResponse.RegionEntityList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMigrateRegionListResponse.RegionEntityList.Length"); i++) {
 			RegionEntity regionEntity = new RegionEntity();
-			regionEntity.setRegionNo(context.stringValue("QueryMigrateRegionListResponse.RegionEntityList["+ i +"].RegionNo"));
-			regionEntity.setRegionName(context.stringValue("QueryMigrateRegionListResponse.RegionEntityList["+ i +"].RegionName"));
+			regionEntity.setRegionNo(_ctx.stringValue("QueryMigrateRegionListResponse.RegionEntityList["+ i +"].RegionNo"));
+			regionEntity.setRegionName(_ctx.stringValue("QueryMigrateRegionListResponse.RegionEntityList["+ i +"].RegionName"));
 
 			regionEntityList.add(regionEntity);
 		}

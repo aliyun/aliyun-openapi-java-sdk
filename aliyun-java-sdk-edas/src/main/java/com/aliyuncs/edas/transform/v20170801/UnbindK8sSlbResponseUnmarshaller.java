@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UnbindK8sSlbResponseUnmarshaller {
 
-	public static UnbindK8sSlbResponse unmarshall(UnbindK8sSlbResponse unbindK8sSlbResponse, UnmarshallerContext context) {
+	public static UnbindK8sSlbResponse unmarshall(UnbindK8sSlbResponse unbindK8sSlbResponse, UnmarshallerContext _ctx) {
 		
-		unbindK8sSlbResponse.setRequestId(context.stringValue("UnbindK8sSlbResponse.RequestId"));
-		unbindK8sSlbResponse.setCode(context.integerValue("UnbindK8sSlbResponse.Code"));
-		unbindK8sSlbResponse.setMessage(context.stringValue("UnbindK8sSlbResponse.Message"));
-		unbindK8sSlbResponse.setChangeOrderId(context.stringValue("UnbindK8sSlbResponse.ChangeOrderId"));
+		unbindK8sSlbResponse.setRequestId(_ctx.stringValue("UnbindK8sSlbResponse.RequestId"));
+		unbindK8sSlbResponse.setCode(_ctx.integerValue("UnbindK8sSlbResponse.Code"));
+		unbindK8sSlbResponse.setMessage(_ctx.stringValue("UnbindK8sSlbResponse.Message"));
+		unbindK8sSlbResponse.setChangeOrderId(_ctx.stringValue("UnbindK8sSlbResponse.ChangeOrderId"));
 	 
 	 	return unbindK8sSlbResponse;
 	}

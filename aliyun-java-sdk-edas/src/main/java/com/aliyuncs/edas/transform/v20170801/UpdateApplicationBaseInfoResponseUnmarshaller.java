@@ -21,38 +21,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateApplicationBaseInfoResponseUnmarshaller {
 
-	public static UpdateApplicationBaseInfoResponse unmarshall(UpdateApplicationBaseInfoResponse updateApplicationBaseInfoResponse, UnmarshallerContext context) {
+	public static UpdateApplicationBaseInfoResponse unmarshall(UpdateApplicationBaseInfoResponse updateApplicationBaseInfoResponse, UnmarshallerContext _ctx) {
 		
-		updateApplicationBaseInfoResponse.setRequestId(context.stringValue("UpdateApplicationBaseInfoResponse.RequestId"));
-		updateApplicationBaseInfoResponse.setCode(context.integerValue("UpdateApplicationBaseInfoResponse.Code"));
-		updateApplicationBaseInfoResponse.setMessage(context.stringValue("UpdateApplicationBaseInfoResponse.Message"));
+		updateApplicationBaseInfoResponse.setRequestId(_ctx.stringValue("UpdateApplicationBaseInfoResponse.RequestId"));
+		updateApplicationBaseInfoResponse.setCode(_ctx.integerValue("UpdateApplicationBaseInfoResponse.Code"));
+		updateApplicationBaseInfoResponse.setMessage(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Message"));
 
 		Applcation applcation = new Applcation();
-		applcation.setAppId(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.AppId"));
-		applcation.setName(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.Name"));
-		applcation.setRegionId(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.RegionId"));
-		applcation.setDescription(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.Description"));
-		applcation.setOwner(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.Owner"));
-		applcation.setInstanceCount(context.integerValue("UpdateApplicationBaseInfoResponse.Applcation.InstanceCount"));
-		applcation.setRunningInstanceCount(context.integerValue("UpdateApplicationBaseInfoResponse.Applcation.RunningInstanceCount"));
-		applcation.setPort(context.integerValue("UpdateApplicationBaseInfoResponse.Applcation.Port"));
-		applcation.setUserId(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.UserId"));
-		applcation.setSlbId(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.SlbId"));
-		applcation.setSlbIp(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.SlbIp"));
-		applcation.setSlbPort(context.integerValue("UpdateApplicationBaseInfoResponse.Applcation.SlbPort"));
-		applcation.setExtSlbId(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ExtSlbId"));
-		applcation.setExtSlbIp(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ExtSlbIp"));
-		applcation.setSlbName(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.SlbName"));
-		applcation.setExtSlbName(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ExtSlbName"));
-		applcation.setApplicationType(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ApplicationType"));
-		applcation.setClusterType(context.integerValue("UpdateApplicationBaseInfoResponse.Applcation.ClusterType"));
-		applcation.setClusterId(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ClusterId"));
-		applcation.setDockerize(context.booleanValue("UpdateApplicationBaseInfoResponse.Applcation.Dockerize"));
-		applcation.setCpu(context.integerValue("UpdateApplicationBaseInfoResponse.Applcation.Cpu"));
-		applcation.setMemory(context.integerValue("UpdateApplicationBaseInfoResponse.Applcation.Memory"));
-		applcation.setHealthCheckUrl(context.stringValue("UpdateApplicationBaseInfoResponse.Applcation.HealthCheckUrl"));
-		applcation.setBuildPackageId(context.longValue("UpdateApplicationBaseInfoResponse.Applcation.BuildPackageId"));
-		applcation.setCreateTime(context.longValue("UpdateApplicationBaseInfoResponse.Applcation.CreateTime"));
+		applcation.setAppId(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.AppId"));
+		applcation.setName(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.Name"));
+		applcation.setRegionId(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.RegionId"));
+		applcation.setDescription(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.Description"));
+		applcation.setOwner(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.Owner"));
+		applcation.setInstanceCount(_ctx.integerValue("UpdateApplicationBaseInfoResponse.Applcation.InstanceCount"));
+		applcation.setRunningInstanceCount(_ctx.integerValue("UpdateApplicationBaseInfoResponse.Applcation.RunningInstanceCount"));
+		applcation.setPort(_ctx.integerValue("UpdateApplicationBaseInfoResponse.Applcation.Port"));
+		applcation.setUserId(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.UserId"));
+		applcation.setSlbId(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.SlbId"));
+		applcation.setSlbIp(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.SlbIp"));
+		applcation.setSlbPort(_ctx.integerValue("UpdateApplicationBaseInfoResponse.Applcation.SlbPort"));
+		applcation.setExtSlbId(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ExtSlbId"));
+		applcation.setExtSlbIp(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ExtSlbIp"));
+		applcation.setSlbName(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.SlbName"));
+		applcation.setExtSlbName(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ExtSlbName"));
+		applcation.setApplicationType(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ApplicationType"));
+		applcation.setClusterType(_ctx.integerValue("UpdateApplicationBaseInfoResponse.Applcation.ClusterType"));
+		applcation.setClusterId(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.ClusterId"));
+		applcation.setDockerize(_ctx.booleanValue("UpdateApplicationBaseInfoResponse.Applcation.Dockerize"));
+		applcation.setCpu(_ctx.integerValue("UpdateApplicationBaseInfoResponse.Applcation.Cpu"));
+		applcation.setMemory(_ctx.integerValue("UpdateApplicationBaseInfoResponse.Applcation.Memory"));
+		applcation.setHealthCheckUrl(_ctx.stringValue("UpdateApplicationBaseInfoResponse.Applcation.HealthCheckUrl"));
+		applcation.setBuildPackageId(_ctx.longValue("UpdateApplicationBaseInfoResponse.Applcation.BuildPackageId"));
+		applcation.setCreateTime(_ctx.longValue("UpdateApplicationBaseInfoResponse.Applcation.CreateTime"));
 		updateApplicationBaseInfoResponse.setApplcation(applcation);
 	 
 	 	return updateApplicationBaseInfoResponse;

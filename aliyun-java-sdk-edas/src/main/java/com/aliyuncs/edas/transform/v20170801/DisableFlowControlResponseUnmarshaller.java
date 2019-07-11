@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DisableFlowControlResponseUnmarshaller {
 
-	public static DisableFlowControlResponse unmarshall(DisableFlowControlResponse disableFlowControlResponse, UnmarshallerContext context) {
+	public static DisableFlowControlResponse unmarshall(DisableFlowControlResponse disableFlowControlResponse, UnmarshallerContext _ctx) {
 		
-		disableFlowControlResponse.setRequestId(context.stringValue("DisableFlowControlResponse.RequestId"));
-		disableFlowControlResponse.setCode(context.integerValue("DisableFlowControlResponse.Code"));
-		disableFlowControlResponse.setMessage(context.stringValue("DisableFlowControlResponse.Message"));
+		disableFlowControlResponse.setRequestId(_ctx.stringValue("DisableFlowControlResponse.RequestId"));
+		disableFlowControlResponse.setCode(_ctx.integerValue("DisableFlowControlResponse.Code"));
+		disableFlowControlResponse.setMessage(_ctx.stringValue("DisableFlowControlResponse.Message"));
 	 
 	 	return disableFlowControlResponse;
 	}

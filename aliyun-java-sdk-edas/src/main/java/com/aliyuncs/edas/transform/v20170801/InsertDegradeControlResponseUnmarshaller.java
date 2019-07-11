@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InsertDegradeControlResponseUnmarshaller {
 
-	public static InsertDegradeControlResponse unmarshall(InsertDegradeControlResponse insertDegradeControlResponse, UnmarshallerContext context) {
+	public static InsertDegradeControlResponse unmarshall(InsertDegradeControlResponse insertDegradeControlResponse, UnmarshallerContext _ctx) {
 		
-		insertDegradeControlResponse.setRequestId(context.stringValue("InsertDegradeControlResponse.RequestId"));
-		insertDegradeControlResponse.setCode(context.integerValue("InsertDegradeControlResponse.Code"));
-		insertDegradeControlResponse.setMessage(context.stringValue("InsertDegradeControlResponse.Message"));
+		insertDegradeControlResponse.setRequestId(_ctx.stringValue("InsertDegradeControlResponse.RequestId"));
+		insertDegradeControlResponse.setCode(_ctx.integerValue("InsertDegradeControlResponse.Code"));
+		insertDegradeControlResponse.setMessage(_ctx.stringValue("InsertDegradeControlResponse.Message"));
 	 
 	 	return insertDegradeControlResponse;
 	}

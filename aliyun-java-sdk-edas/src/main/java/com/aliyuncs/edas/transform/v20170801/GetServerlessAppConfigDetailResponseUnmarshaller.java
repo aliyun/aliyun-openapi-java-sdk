@@ -21,38 +21,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetServerlessAppConfigDetailResponseUnmarshaller {
 
-	public static GetServerlessAppConfigDetailResponse unmarshall(GetServerlessAppConfigDetailResponse getServerlessAppConfigDetailResponse, UnmarshallerContext context) {
+	public static GetServerlessAppConfigDetailResponse unmarshall(GetServerlessAppConfigDetailResponse getServerlessAppConfigDetailResponse, UnmarshallerContext _ctx) {
 		
-		getServerlessAppConfigDetailResponse.setCode(context.integerValue("GetServerlessAppConfigDetailResponse.Code"));
-		getServerlessAppConfigDetailResponse.setMessage(context.stringValue("GetServerlessAppConfigDetailResponse.Message"));
+		getServerlessAppConfigDetailResponse.setCode(_ctx.integerValue("GetServerlessAppConfigDetailResponse.Code"));
+		getServerlessAppConfigDetailResponse.setMessage(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Message"));
 
 		Data data = new Data();
-		data.setAppId(context.stringValue("GetServerlessAppConfigDetailResponse.Data.AppId"));
-		data.setAppName(context.stringValue("GetServerlessAppConfigDetailResponse.Data.AppName"));
-		data.setNamespaceId(context.stringValue("GetServerlessAppConfigDetailResponse.Data.NamespaceId"));
-		data.setAppDescription(context.stringValue("GetServerlessAppConfigDetailResponse.Data.AppDescription"));
-		data.setVpcId(context.stringValue("GetServerlessAppConfigDetailResponse.Data.VpcId"));
-		data.setVSwitchId(context.stringValue("GetServerlessAppConfigDetailResponse.Data.VSwitchId"));
-		data.setPackageType(context.stringValue("GetServerlessAppConfigDetailResponse.Data.PackageType"));
-		data.setPackageVersion(context.stringValue("GetServerlessAppConfigDetailResponse.Data.PackageVersion"));
-		data.setPackageUrl(context.stringValue("GetServerlessAppConfigDetailResponse.Data.PackageUrl"));
-		data.setImageUrl(context.stringValue("GetServerlessAppConfigDetailResponse.Data.ImageUrl"));
-		data.setJdk(context.stringValue("GetServerlessAppConfigDetailResponse.Data.Jdk"));
-		data.setWebContainer(context.stringValue("GetServerlessAppConfigDetailResponse.Data.WebContainer"));
-		data.setCpu(context.integerValue("GetServerlessAppConfigDetailResponse.Data.Cpu"));
-		data.setMemory(context.integerValue("GetServerlessAppConfigDetailResponse.Data.Memory"));
-		data.setReplicas(context.integerValue("GetServerlessAppConfigDetailResponse.Data.Replicas"));
-		data.setCommand(context.stringValue("GetServerlessAppConfigDetailResponse.Data.Command"));
-		data.setCommandArgs(context.stringValue("GetServerlessAppConfigDetailResponse.Data.CommandArgs"));
-		data.setEnvs(context.stringValue("GetServerlessAppConfigDetailResponse.Data.Envs"));
-		data.setCustomHostAlias(context.stringValue("GetServerlessAppConfigDetailResponse.Data.CustomHostAlias"));
-		data.setJarStartOptions(context.stringValue("GetServerlessAppConfigDetailResponse.Data.JarStartOptions"));
-		data.setJarStartArgs(context.stringValue("GetServerlessAppConfigDetailResponse.Data.JarStartArgs"));
-		data.setLiveness(context.stringValue("GetServerlessAppConfigDetailResponse.Data.Liveness"));
-		data.setReadiness(context.stringValue("GetServerlessAppConfigDetailResponse.Data.Readiness"));
-		data.setMinReadyInstances(context.integerValue("GetServerlessAppConfigDetailResponse.Data.MinReadyInstances"));
-		data.setBatchWaitTime(context.integerValue("GetServerlessAppConfigDetailResponse.Data.BatchWaitTime"));
-		data.setBuildPackId(context.integerValue("GetServerlessAppConfigDetailResponse.Data.BuildPackId"));
+		data.setAppId(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.AppId"));
+		data.setAppName(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.AppName"));
+		data.setNamespaceId(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.NamespaceId"));
+		data.setAppDescription(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.AppDescription"));
+		data.setVpcId(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.VpcId"));
+		data.setVSwitchId(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.VSwitchId"));
+		data.setPackageType(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.PackageType"));
+		data.setPackageVersion(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.PackageVersion"));
+		data.setPackageUrl(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.PackageUrl"));
+		data.setImageUrl(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.ImageUrl"));
+		data.setJdk(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.Jdk"));
+		data.setWebContainer(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.WebContainer"));
+		data.setCpu(_ctx.integerValue("GetServerlessAppConfigDetailResponse.Data.Cpu"));
+		data.setMemory(_ctx.integerValue("GetServerlessAppConfigDetailResponse.Data.Memory"));
+		data.setReplicas(_ctx.integerValue("GetServerlessAppConfigDetailResponse.Data.Replicas"));
+		data.setCommand(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.Command"));
+		data.setCommandArgs(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.CommandArgs"));
+		data.setEnvs(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.Envs"));
+		data.setCustomHostAlias(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.CustomHostAlias"));
+		data.setJarStartOptions(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.JarStartOptions"));
+		data.setJarStartArgs(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.JarStartArgs"));
+		data.setLiveness(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.Liveness"));
+		data.setReadiness(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.Readiness"));
+		data.setMinReadyInstances(_ctx.integerValue("GetServerlessAppConfigDetailResponse.Data.MinReadyInstances"));
+		data.setBatchWaitTime(_ctx.integerValue("GetServerlessAppConfigDetailResponse.Data.BatchWaitTime"));
+		data.setEdasContainerVersion(_ctx.stringValue("GetServerlessAppConfigDetailResponse.Data.EdasContainerVersion"));
 		getServerlessAppConfigDetailResponse.setData(data);
 	 
 	 	return getServerlessAppConfigDetailResponse;

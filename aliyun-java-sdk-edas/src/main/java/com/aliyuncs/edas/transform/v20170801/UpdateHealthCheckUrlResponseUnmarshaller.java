@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateHealthCheckUrlResponseUnmarshaller {
 
-	public static UpdateHealthCheckUrlResponse unmarshall(UpdateHealthCheckUrlResponse updateHealthCheckUrlResponse, UnmarshallerContext context) {
+	public static UpdateHealthCheckUrlResponse unmarshall(UpdateHealthCheckUrlResponse updateHealthCheckUrlResponse, UnmarshallerContext _ctx) {
 		
-		updateHealthCheckUrlResponse.setRequestId(context.stringValue("UpdateHealthCheckUrlResponse.RequestId"));
-		updateHealthCheckUrlResponse.setCode(context.integerValue("UpdateHealthCheckUrlResponse.Code"));
-		updateHealthCheckUrlResponse.setMessage(context.stringValue("UpdateHealthCheckUrlResponse.Message"));
-		updateHealthCheckUrlResponse.setHealthCheckURL(context.stringValue("UpdateHealthCheckUrlResponse.HealthCheckURL"));
+		updateHealthCheckUrlResponse.setRequestId(_ctx.stringValue("UpdateHealthCheckUrlResponse.RequestId"));
+		updateHealthCheckUrlResponse.setCode(_ctx.integerValue("UpdateHealthCheckUrlResponse.Code"));
+		updateHealthCheckUrlResponse.setMessage(_ctx.stringValue("UpdateHealthCheckUrlResponse.Message"));
+		updateHealthCheckUrlResponse.setHealthCheckURL(_ctx.stringValue("UpdateHealthCheckUrlResponse.HealthCheckURL"));
 	 
 	 	return updateHealthCheckUrlResponse;
 	}

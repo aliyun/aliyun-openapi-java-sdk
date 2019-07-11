@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListConfigCentersResponseUnmarshaller {
 
-	public static ListConfigCentersResponse unmarshall(ListConfigCentersResponse listConfigCentersResponse, UnmarshallerContext context) {
+	public static ListConfigCentersResponse unmarshall(ListConfigCentersResponse listConfigCentersResponse, UnmarshallerContext _ctx) {
 		
-		listConfigCentersResponse.setRequestId(context.stringValue("ListConfigCentersResponse.RequestId"));
-		listConfigCentersResponse.setCode(context.integerValue("ListConfigCentersResponse.Code"));
-		listConfigCentersResponse.setMessage(context.stringValue("ListConfigCentersResponse.Message"));
+		listConfigCentersResponse.setRequestId(_ctx.stringValue("ListConfigCentersResponse.RequestId"));
+		listConfigCentersResponse.setCode(_ctx.integerValue("ListConfigCentersResponse.Code"));
+		listConfigCentersResponse.setMessage(_ctx.stringValue("ListConfigCentersResponse.Message"));
 
 		List<ListConfigCenters> configCentersList = new ArrayList<ListConfigCenters>();
-		for (int i = 0; i < context.lengthValue("ListConfigCentersResponse.ConfigCentersList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListConfigCentersResponse.ConfigCentersList.Length"); i++) {
 			ListConfigCenters listConfigCenters = new ListConfigCenters();
-			listConfigCenters.setDataId(context.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].DataId"));
-			listConfigCenters.setGroup(context.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].Group"));
-			listConfigCenters.setId(context.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].Id"));
-			listConfigCenters.setAppName(context.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].AppName"));
+			listConfigCenters.setDataId(_ctx.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].DataId"));
+			listConfigCenters.setGroup(_ctx.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].Group"));
+			listConfigCenters.setId(_ctx.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].Id"));
+			listConfigCenters.setAppName(_ctx.stringValue("ListConfigCentersResponse.ConfigCentersList["+ i +"].AppName"));
 
 			configCentersList.add(listConfigCenters);
 		}

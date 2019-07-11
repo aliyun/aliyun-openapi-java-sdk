@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListComponentsResponseUnmarshaller {
 
-	public static ListComponentsResponse unmarshall(ListComponentsResponse listComponentsResponse, UnmarshallerContext context) {
+	public static ListComponentsResponse unmarshall(ListComponentsResponse listComponentsResponse, UnmarshallerContext _ctx) {
 		
-		listComponentsResponse.setCode(context.integerValue("ListComponentsResponse.Code"));
-		listComponentsResponse.setMessage(context.stringValue("ListComponentsResponse.Message"));
+		listComponentsResponse.setCode(_ctx.integerValue("ListComponentsResponse.Code"));
+		listComponentsResponse.setMessage(_ctx.stringValue("ListComponentsResponse.Message"));
 
 		List<Component> componentList = new ArrayList<Component>();
-		for (int i = 0; i < context.lengthValue("ListComponentsResponse.ComponentList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListComponentsResponse.ComponentList.Length"); i++) {
 			Component component = new Component();
-			component.setComponentId(context.stringValue("ListComponentsResponse.ComponentList["+ i +"].ComponentId"));
-			component.setType(context.stringValue("ListComponentsResponse.ComponentList["+ i +"].Type"));
-			component.setVersion(context.stringValue("ListComponentsResponse.ComponentList["+ i +"].Version"));
-			component.setExpired(context.booleanValue("ListComponentsResponse.ComponentList["+ i +"].Expired"));
+			component.setComponentId(_ctx.stringValue("ListComponentsResponse.ComponentList["+ i +"].ComponentId"));
+			component.setType(_ctx.stringValue("ListComponentsResponse.ComponentList["+ i +"].Type"));
+			component.setVersion(_ctx.stringValue("ListComponentsResponse.ComponentList["+ i +"].Version"));
+			component.setExpired(_ctx.booleanValue("ListComponentsResponse.ComponentList["+ i +"].Expired"));
 
 			componentList.add(component);
 		}

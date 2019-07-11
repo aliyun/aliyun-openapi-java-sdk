@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteUserDefineRegionResponseUnmarshaller {
 
-	public static DeleteUserDefineRegionResponse unmarshall(DeleteUserDefineRegionResponse deleteUserDefineRegionResponse, UnmarshallerContext context) {
+	public static DeleteUserDefineRegionResponse unmarshall(DeleteUserDefineRegionResponse deleteUserDefineRegionResponse, UnmarshallerContext _ctx) {
 		
-		deleteUserDefineRegionResponse.setRequestId(context.stringValue("DeleteUserDefineRegionResponse.RequestId"));
-		deleteUserDefineRegionResponse.setCode(context.integerValue("DeleteUserDefineRegionResponse.Code"));
-		deleteUserDefineRegionResponse.setMessage(context.stringValue("DeleteUserDefineRegionResponse.Message"));
+		deleteUserDefineRegionResponse.setRequestId(_ctx.stringValue("DeleteUserDefineRegionResponse.RequestId"));
+		deleteUserDefineRegionResponse.setCode(_ctx.integerValue("DeleteUserDefineRegionResponse.Code"));
+		deleteUserDefineRegionResponse.setMessage(_ctx.stringValue("DeleteUserDefineRegionResponse.Message"));
 
 		RegionDefine regionDefine = new RegionDefine();
-		regionDefine.setId(context.longValue("DeleteUserDefineRegionResponse.RegionDefine.Id"));
-		regionDefine.setUserId(context.stringValue("DeleteUserDefineRegionResponse.RegionDefine.UserId"));
-		regionDefine.setRegionId(context.stringValue("DeleteUserDefineRegionResponse.RegionDefine.RegionId"));
-		regionDefine.setRegionName(context.stringValue("DeleteUserDefineRegionResponse.RegionDefine.RegionName"));
-		regionDefine.setDescription(context.stringValue("DeleteUserDefineRegionResponse.RegionDefine.Description"));
-		regionDefine.setBelongRegion(context.stringValue("DeleteUserDefineRegionResponse.RegionDefine.BelongRegion"));
+		regionDefine.setId(_ctx.longValue("DeleteUserDefineRegionResponse.RegionDefine.Id"));
+		regionDefine.setUserId(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.UserId"));
+		regionDefine.setRegionId(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.RegionId"));
+		regionDefine.setRegionName(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.RegionName"));
+		regionDefine.setDescription(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.Description"));
+		regionDefine.setBelongRegion(_ctx.stringValue("DeleteUserDefineRegionResponse.RegionDefine.BelongRegion"));
 		deleteUserDefineRegionResponse.setRegionDefine(regionDefine);
 	 
 	 	return deleteUserDefineRegionResponse;

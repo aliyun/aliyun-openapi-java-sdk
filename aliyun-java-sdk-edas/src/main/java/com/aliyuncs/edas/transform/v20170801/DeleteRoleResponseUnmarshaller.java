@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteRoleResponseUnmarshaller {
 
-	public static DeleteRoleResponse unmarshall(DeleteRoleResponse deleteRoleResponse, UnmarshallerContext context) {
+	public static DeleteRoleResponse unmarshall(DeleteRoleResponse deleteRoleResponse, UnmarshallerContext _ctx) {
 		
-		deleteRoleResponse.setRequestId(context.stringValue("DeleteRoleResponse.RequestId"));
-		deleteRoleResponse.setCode(context.integerValue("DeleteRoleResponse.Code"));
-		deleteRoleResponse.setMessage(context.stringValue("DeleteRoleResponse.Message"));
+		deleteRoleResponse.setRequestId(_ctx.stringValue("DeleteRoleResponse.RequestId"));
+		deleteRoleResponse.setCode(_ctx.integerValue("DeleteRoleResponse.Code"));
+		deleteRoleResponse.setMessage(_ctx.stringValue("DeleteRoleResponse.Message"));
 	 
 	 	return deleteRoleResponse;
 	}

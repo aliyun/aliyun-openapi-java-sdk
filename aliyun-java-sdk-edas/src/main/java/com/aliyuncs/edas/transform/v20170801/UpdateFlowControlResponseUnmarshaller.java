@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateFlowControlResponseUnmarshaller {
 
-	public static UpdateFlowControlResponse unmarshall(UpdateFlowControlResponse updateFlowControlResponse, UnmarshallerContext context) {
+	public static UpdateFlowControlResponse unmarshall(UpdateFlowControlResponse updateFlowControlResponse, UnmarshallerContext _ctx) {
 		
-		updateFlowControlResponse.setRequestId(context.stringValue("UpdateFlowControlResponse.RequestId"));
-		updateFlowControlResponse.setCode(context.integerValue("UpdateFlowControlResponse.Code"));
-		updateFlowControlResponse.setMessage(context.stringValue("UpdateFlowControlResponse.Message"));
+		updateFlowControlResponse.setRequestId(_ctx.stringValue("UpdateFlowControlResponse.RequestId"));
+		updateFlowControlResponse.setCode(_ctx.integerValue("UpdateFlowControlResponse.Code"));
+		updateFlowControlResponse.setMessage(_ctx.stringValue("UpdateFlowControlResponse.Message"));
 	 
 	 	return updateFlowControlResponse;
 	}

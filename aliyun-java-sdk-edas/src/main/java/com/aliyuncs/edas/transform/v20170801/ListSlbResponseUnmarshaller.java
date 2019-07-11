@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSlbResponseUnmarshaller {
 
-	public static ListSlbResponse unmarshall(ListSlbResponse listSlbResponse, UnmarshallerContext context) {
+	public static ListSlbResponse unmarshall(ListSlbResponse listSlbResponse, UnmarshallerContext _ctx) {
 		
-		listSlbResponse.setRequestId(context.stringValue("ListSlbResponse.RequestId"));
-		listSlbResponse.setCode(context.integerValue("ListSlbResponse.Code"));
-		listSlbResponse.setMessage(context.stringValue("ListSlbResponse.Message"));
+		listSlbResponse.setRequestId(_ctx.stringValue("ListSlbResponse.RequestId"));
+		listSlbResponse.setCode(_ctx.integerValue("ListSlbResponse.Code"));
+		listSlbResponse.setMessage(_ctx.stringValue("ListSlbResponse.Message"));
 
 		List<SlbEntity> slbList = new ArrayList<SlbEntity>();
-		for (int i = 0; i < context.lengthValue("ListSlbResponse.SlbList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSlbResponse.SlbList.Length"); i++) {
 			SlbEntity slbEntity = new SlbEntity();
-			slbEntity.setSlbId(context.stringValue("ListSlbResponse.SlbList["+ i +"].SlbId"));
-			slbEntity.setSlbName(context.stringValue("ListSlbResponse.SlbList["+ i +"].SlbName"));
-			slbEntity.setRegionId(context.stringValue("ListSlbResponse.SlbList["+ i +"].RegionId"));
-			slbEntity.setUserId(context.stringValue("ListSlbResponse.SlbList["+ i +"].UserId"));
-			slbEntity.setAddress(context.stringValue("ListSlbResponse.SlbList["+ i +"].Address"));
-			slbEntity.setSlbStatus(context.stringValue("ListSlbResponse.SlbList["+ i +"].SlbStatus"));
-			slbEntity.setAddressType(context.stringValue("ListSlbResponse.SlbList["+ i +"].AddressType"));
-			slbEntity.setVswitchId(context.stringValue("ListSlbResponse.SlbList["+ i +"].VswitchId"));
-			slbEntity.setVpcId(context.stringValue("ListSlbResponse.SlbList["+ i +"].VpcId"));
-			slbEntity.setNetworkType(context.stringValue("ListSlbResponse.SlbList["+ i +"].NetworkType"));
-			slbEntity.setGroupId(context.integerValue("ListSlbResponse.SlbList["+ i +"].GroupId"));
-			slbEntity.setExpired(context.booleanValue("ListSlbResponse.SlbList["+ i +"].Expired"));
+			slbEntity.setSlbId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbId"));
+			slbEntity.setSlbName(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbName"));
+			slbEntity.setRegionId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].RegionId"));
+			slbEntity.setUserId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].UserId"));
+			slbEntity.setAddress(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].Address"));
+			slbEntity.setSlbStatus(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].SlbStatus"));
+			slbEntity.setAddressType(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].AddressType"));
+			slbEntity.setVswitchId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].VswitchId"));
+			slbEntity.setVpcId(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].VpcId"));
+			slbEntity.setNetworkType(_ctx.stringValue("ListSlbResponse.SlbList["+ i +"].NetworkType"));
+			slbEntity.setGroupId(_ctx.integerValue("ListSlbResponse.SlbList["+ i +"].GroupId"));
+			slbEntity.setExpired(_ctx.booleanValue("ListSlbResponse.SlbList["+ i +"].Expired"));
 
 			slbList.add(slbEntity);
 		}

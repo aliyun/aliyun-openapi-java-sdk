@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeployApplicationResponseUnmarshaller {
 
-	public static DeployApplicationResponse unmarshall(DeployApplicationResponse deployApplicationResponse, UnmarshallerContext context) {
+	public static DeployApplicationResponse unmarshall(DeployApplicationResponse deployApplicationResponse, UnmarshallerContext _ctx) {
 		
-		deployApplicationResponse.setRequestId(context.stringValue("DeployApplicationResponse.RequestId"));
-		deployApplicationResponse.setCode(context.integerValue("DeployApplicationResponse.Code"));
-		deployApplicationResponse.setMessage(context.stringValue("DeployApplicationResponse.Message"));
-		deployApplicationResponse.setChangeOrderId(context.stringValue("DeployApplicationResponse.ChangeOrderId"));
+		deployApplicationResponse.setRequestId(_ctx.stringValue("DeployApplicationResponse.RequestId"));
+		deployApplicationResponse.setCode(_ctx.integerValue("DeployApplicationResponse.Code"));
+		deployApplicationResponse.setMessage(_ctx.stringValue("DeployApplicationResponse.Message"));
+		deployApplicationResponse.setChangeOrderId(_ctx.stringValue("DeployApplicationResponse.ChangeOrderId"));
 	 
 	 	return deployApplicationResponse;
 	}

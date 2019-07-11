@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DisableDegradeControlResponseUnmarshaller {
 
-	public static DisableDegradeControlResponse unmarshall(DisableDegradeControlResponse disableDegradeControlResponse, UnmarshallerContext context) {
+	public static DisableDegradeControlResponse unmarshall(DisableDegradeControlResponse disableDegradeControlResponse, UnmarshallerContext _ctx) {
 		
-		disableDegradeControlResponse.setRequestId(context.stringValue("DisableDegradeControlResponse.RequestId"));
-		disableDegradeControlResponse.setCode(context.integerValue("DisableDegradeControlResponse.Code"));
-		disableDegradeControlResponse.setMessage(context.stringValue("DisableDegradeControlResponse.Message"));
+		disableDegradeControlResponse.setRequestId(_ctx.stringValue("DisableDegradeControlResponse.RequestId"));
+		disableDegradeControlResponse.setCode(_ctx.integerValue("DisableDegradeControlResponse.Code"));
+		disableDegradeControlResponse.setMessage(_ctx.stringValue("DisableDegradeControlResponse.Message"));
 	 
 	 	return disableDegradeControlResponse;
 	}

@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAuthorityResponseUnmarshaller {
 
-	public static ListAuthorityResponse unmarshall(ListAuthorityResponse listAuthorityResponse, UnmarshallerContext context) {
+	public static ListAuthorityResponse unmarshall(ListAuthorityResponse listAuthorityResponse, UnmarshallerContext _ctx) {
 		
-		listAuthorityResponse.setRequestId(context.stringValue("ListAuthorityResponse.RequestId"));
-		listAuthorityResponse.setCode(context.integerValue("ListAuthorityResponse.Code"));
-		listAuthorityResponse.setMessage(context.stringValue("ListAuthorityResponse.Message"));
+		listAuthorityResponse.setRequestId(_ctx.stringValue("ListAuthorityResponse.RequestId"));
+		listAuthorityResponse.setCode(_ctx.integerValue("ListAuthorityResponse.Code"));
+		listAuthorityResponse.setMessage(_ctx.stringValue("ListAuthorityResponse.Message"));
 
 		List<Authority> authorityList = new ArrayList<Authority>();
-		for (int i = 0; i < context.lengthValue("ListAuthorityResponse.AuthorityList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAuthorityResponse.AuthorityList.Length"); i++) {
 			Authority authority = new Authority();
-			authority.setGroupId(context.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].GroupId"));
-			authority.setName(context.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].Name"));
-			authority.setDescription(context.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].Description"));
+			authority.setGroupId(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].GroupId"));
+			authority.setName(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].Name"));
+			authority.setDescription(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].Description"));
 
 			List<Action> actionList = new ArrayList<Action>();
-			for (int j = 0; j < context.lengthValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList.Length"); j++) {
 				Action action = new Action();
-				action.setGroupId(context.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].GroupId"));
-				action.setCode(context.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Code"));
-				action.setName(context.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Name"));
-				action.setDescription(context.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Description"));
+				action.setGroupId(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].GroupId"));
+				action.setCode(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Code"));
+				action.setName(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Name"));
+				action.setDescription(_ctx.stringValue("ListAuthorityResponse.AuthorityList["+ i +"].ActionList["+ j +"].Description"));
 
 				actionList.add(action);
 			}

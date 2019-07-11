@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterResponseUnmarshaller {
 
-	public static ListClusterResponse unmarshall(ListClusterResponse listClusterResponse, UnmarshallerContext context) {
+	public static ListClusterResponse unmarshall(ListClusterResponse listClusterResponse, UnmarshallerContext _ctx) {
 		
-		listClusterResponse.setRequestId(context.stringValue("ListClusterResponse.RequestId"));
-		listClusterResponse.setCode(context.integerValue("ListClusterResponse.Code"));
-		listClusterResponse.setMessage(context.stringValue("ListClusterResponse.Message"));
+		listClusterResponse.setRequestId(_ctx.stringValue("ListClusterResponse.RequestId"));
+		listClusterResponse.setCode(_ctx.integerValue("ListClusterResponse.Code"));
+		listClusterResponse.setMessage(_ctx.stringValue("ListClusterResponse.Message"));
 
 		List<Cluster> clusterList = new ArrayList<Cluster>();
-		for (int i = 0; i < context.lengthValue("ListClusterResponse.ClusterList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterResponse.ClusterList.Length"); i++) {
 			Cluster cluster = new Cluster();
-			cluster.setClusterId(context.stringValue("ListClusterResponse.ClusterList["+ i +"].ClusterId"));
-			cluster.setRegionId(context.stringValue("ListClusterResponse.ClusterList["+ i +"].RegionId"));
-			cluster.setDescription(context.stringValue("ListClusterResponse.ClusterList["+ i +"].Description"));
-			cluster.setClusterName(context.stringValue("ListClusterResponse.ClusterList["+ i +"].ClusterName"));
-			cluster.setClusterType(context.integerValue("ListClusterResponse.ClusterList["+ i +"].ClusterType"));
-			cluster.setOversoldFactor(context.integerValue("ListClusterResponse.ClusterList["+ i +"].OversoldFactor"));
-			cluster.setNetworkMode(context.integerValue("ListClusterResponse.ClusterList["+ i +"].NetworkMode"));
-			cluster.setVpcId(context.stringValue("ListClusterResponse.ClusterList["+ i +"].VpcId"));
-			cluster.setNodeNum(context.integerValue("ListClusterResponse.ClusterList["+ i +"].NodeNum"));
-			cluster.setCpu(context.integerValue("ListClusterResponse.ClusterList["+ i +"].Cpu"));
-			cluster.setMem(context.integerValue("ListClusterResponse.ClusterList["+ i +"].Mem"));
-			cluster.setCpuUsed(context.integerValue("ListClusterResponse.ClusterList["+ i +"].CpuUsed"));
-			cluster.setMemUsed(context.integerValue("ListClusterResponse.ClusterList["+ i +"].MemUsed"));
-			cluster.setCreateTime(context.longValue("ListClusterResponse.ClusterList["+ i +"].CreateTime"));
-			cluster.setUpdateTime(context.longValue("ListClusterResponse.ClusterList["+ i +"].UpdateTime"));
-			cluster.setIaasProvider(context.stringValue("ListClusterResponse.ClusterList["+ i +"].IaasProvider"));
+			cluster.setClusterId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].ClusterId"));
+			cluster.setRegionId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].RegionId"));
+			cluster.setDescription(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].Description"));
+			cluster.setClusterName(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].ClusterName"));
+			cluster.setClusterType(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].ClusterType"));
+			cluster.setOversoldFactor(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].OversoldFactor"));
+			cluster.setNetworkMode(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].NetworkMode"));
+			cluster.setVpcId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].VpcId"));
+			cluster.setNodeNum(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].NodeNum"));
+			cluster.setCpu(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].Cpu"));
+			cluster.setMem(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].Mem"));
+			cluster.setCpuUsed(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].CpuUsed"));
+			cluster.setMemUsed(_ctx.integerValue("ListClusterResponse.ClusterList["+ i +"].MemUsed"));
+			cluster.setCreateTime(_ctx.longValue("ListClusterResponse.ClusterList["+ i +"].CreateTime"));
+			cluster.setUpdateTime(_ctx.longValue("ListClusterResponse.ClusterList["+ i +"].UpdateTime"));
+			cluster.setIaasProvider(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].IaasProvider"));
 
 			clusterList.add(cluster);
 		}

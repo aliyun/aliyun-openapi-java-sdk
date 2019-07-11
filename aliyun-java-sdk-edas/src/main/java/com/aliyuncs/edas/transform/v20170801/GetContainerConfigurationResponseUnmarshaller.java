@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetContainerConfigurationResponseUnmarshaller {
 
-	public static GetContainerConfigurationResponse unmarshall(GetContainerConfigurationResponse getContainerConfigurationResponse, UnmarshallerContext context) {
+	public static GetContainerConfigurationResponse unmarshall(GetContainerConfigurationResponse getContainerConfigurationResponse, UnmarshallerContext _ctx) {
 		
-		getContainerConfigurationResponse.setRequestId(context.stringValue("GetContainerConfigurationResponse.RequestId"));
-		getContainerConfigurationResponse.setCode(context.integerValue("GetContainerConfigurationResponse.Code"));
-		getContainerConfigurationResponse.setMessage(context.stringValue("GetContainerConfigurationResponse.Message"));
+		getContainerConfigurationResponse.setRequestId(_ctx.stringValue("GetContainerConfigurationResponse.RequestId"));
+		getContainerConfigurationResponse.setCode(_ctx.integerValue("GetContainerConfigurationResponse.Code"));
+		getContainerConfigurationResponse.setMessage(_ctx.stringValue("GetContainerConfigurationResponse.Message"));
 
 		ContainerConfiguration containerConfiguration = new ContainerConfiguration();
-		containerConfiguration.setContextPath(context.stringValue("GetContainerConfigurationResponse.ContainerConfiguration.ContextPath"));
-		containerConfiguration.setHttpPort(context.integerValue("GetContainerConfigurationResponse.ContainerConfiguration.HttpPort"));
-		containerConfiguration.setMaxThreads(context.integerValue("GetContainerConfigurationResponse.ContainerConfiguration.MaxThreads"));
-		containerConfiguration.setURIEncoding(context.stringValue("GetContainerConfigurationResponse.ContainerConfiguration.URIEncoding"));
-		containerConfiguration.setUseBodyEncoding(context.booleanValue("GetContainerConfigurationResponse.ContainerConfiguration.UseBodyEncoding"));
+		containerConfiguration.setContextPath(_ctx.stringValue("GetContainerConfigurationResponse.ContainerConfiguration.ContextPath"));
+		containerConfiguration.setHttpPort(_ctx.integerValue("GetContainerConfigurationResponse.ContainerConfiguration.HttpPort"));
+		containerConfiguration.setMaxThreads(_ctx.integerValue("GetContainerConfigurationResponse.ContainerConfiguration.MaxThreads"));
+		containerConfiguration.setURIEncoding(_ctx.stringValue("GetContainerConfigurationResponse.ContainerConfiguration.URIEncoding"));
+		containerConfiguration.setUseBodyEncoding(_ctx.booleanValue("GetContainerConfigurationResponse.ContainerConfiguration.UseBodyEncoding"));
 		getContainerConfigurationResponse.setContainerConfiguration(containerConfiguration);
 	 
 	 	return getContainerConfigurationResponse;

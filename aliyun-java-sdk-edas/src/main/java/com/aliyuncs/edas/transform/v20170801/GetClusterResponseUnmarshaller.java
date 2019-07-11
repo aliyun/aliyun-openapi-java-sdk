@@ -21,29 +21,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetClusterResponseUnmarshaller {
 
-	public static GetClusterResponse unmarshall(GetClusterResponse getClusterResponse, UnmarshallerContext context) {
+	public static GetClusterResponse unmarshall(GetClusterResponse getClusterResponse, UnmarshallerContext _ctx) {
 		
-		getClusterResponse.setRequestId(context.stringValue("GetClusterResponse.RequestId"));
-		getClusterResponse.setCode(context.integerValue("GetClusterResponse.Code"));
-		getClusterResponse.setMessage(context.stringValue("GetClusterResponse.Message"));
+		getClusterResponse.setRequestId(_ctx.stringValue("GetClusterResponse.RequestId"));
+		getClusterResponse.setCode(_ctx.integerValue("GetClusterResponse.Code"));
+		getClusterResponse.setMessage(_ctx.stringValue("GetClusterResponse.Message"));
 
 		Cluster cluster = new Cluster();
-		cluster.setClusterId(context.stringValue("GetClusterResponse.Cluster.ClusterId"));
-		cluster.setRegionId(context.stringValue("GetClusterResponse.Cluster.RegionId"));
-		cluster.setDescription(context.stringValue("GetClusterResponse.Cluster.Description"));
-		cluster.setClusterName(context.stringValue("GetClusterResponse.Cluster.ClusterName"));
-		cluster.setClusterType(context.integerValue("GetClusterResponse.Cluster.ClusterType"));
-		cluster.setOversoldFactor(context.integerValue("GetClusterResponse.Cluster.OversoldFactor"));
-		cluster.setNetworkMode(context.integerValue("GetClusterResponse.Cluster.NetworkMode"));
-		cluster.setVpcId(context.stringValue("GetClusterResponse.Cluster.VpcId"));
-		cluster.setNodeNum(context.integerValue("GetClusterResponse.Cluster.NodeNum"));
-		cluster.setCpu(context.integerValue("GetClusterResponse.Cluster.Cpu"));
-		cluster.setMem(context.integerValue("GetClusterResponse.Cluster.Mem"));
-		cluster.setCpuUsed(context.integerValue("GetClusterResponse.Cluster.CpuUsed"));
-		cluster.setMemUsed(context.integerValue("GetClusterResponse.Cluster.MemUsed"));
-		cluster.setCreateTime(context.longValue("GetClusterResponse.Cluster.CreateTime"));
-		cluster.setUpdateTime(context.longValue("GetClusterResponse.Cluster.UpdateTime"));
-		cluster.setIaasProvider(context.stringValue("GetClusterResponse.Cluster.IaasProvider"));
+		cluster.setClusterId(_ctx.stringValue("GetClusterResponse.Cluster.ClusterId"));
+		cluster.setRegionId(_ctx.stringValue("GetClusterResponse.Cluster.RegionId"));
+		cluster.setDescription(_ctx.stringValue("GetClusterResponse.Cluster.Description"));
+		cluster.setClusterName(_ctx.stringValue("GetClusterResponse.Cluster.ClusterName"));
+		cluster.setClusterType(_ctx.integerValue("GetClusterResponse.Cluster.ClusterType"));
+		cluster.setOversoldFactor(_ctx.integerValue("GetClusterResponse.Cluster.OversoldFactor"));
+		cluster.setNetworkMode(_ctx.integerValue("GetClusterResponse.Cluster.NetworkMode"));
+		cluster.setVpcId(_ctx.stringValue("GetClusterResponse.Cluster.VpcId"));
+		cluster.setNodeNum(_ctx.integerValue("GetClusterResponse.Cluster.NodeNum"));
+		cluster.setCpu(_ctx.integerValue("GetClusterResponse.Cluster.Cpu"));
+		cluster.setMem(_ctx.integerValue("GetClusterResponse.Cluster.Mem"));
+		cluster.setCpuUsed(_ctx.integerValue("GetClusterResponse.Cluster.CpuUsed"));
+		cluster.setMemUsed(_ctx.integerValue("GetClusterResponse.Cluster.MemUsed"));
+		cluster.setCreateTime(_ctx.longValue("GetClusterResponse.Cluster.CreateTime"));
+		cluster.setUpdateTime(_ctx.longValue("GetClusterResponse.Cluster.UpdateTime"));
+		cluster.setIaasProvider(_ctx.stringValue("GetClusterResponse.Cluster.IaasProvider"));
 		getClusterResponse.setCluster(cluster);
 	 
 	 	return getClusterResponse;

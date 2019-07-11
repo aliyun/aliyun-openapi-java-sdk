@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeployServerlessApplicationResponseUnmarshaller {
 
-	public static DeployServerlessApplicationResponse unmarshall(DeployServerlessApplicationResponse deployServerlessApplicationResponse, UnmarshallerContext context) {
+	public static DeployServerlessApplicationResponse unmarshall(DeployServerlessApplicationResponse deployServerlessApplicationResponse, UnmarshallerContext _ctx) {
 		
-		deployServerlessApplicationResponse.setCode(context.integerValue("DeployServerlessApplicationResponse.Code"));
-		deployServerlessApplicationResponse.setMessage(context.stringValue("DeployServerlessApplicationResponse.Message"));
+		deployServerlessApplicationResponse.setCode(_ctx.integerValue("DeployServerlessApplicationResponse.Code"));
+		deployServerlessApplicationResponse.setMessage(_ctx.stringValue("DeployServerlessApplicationResponse.Message"));
 
 		Data data = new Data();
-		data.setAppId(context.stringValue("DeployServerlessApplicationResponse.Data.AppId"));
-		data.setChangeOrderId(context.stringValue("DeployServerlessApplicationResponse.Data.ChangeOrderId"));
+		data.setAppId(_ctx.stringValue("DeployServerlessApplicationResponse.Data.AppId"));
+		data.setChangeOrderId(_ctx.stringValue("DeployServerlessApplicationResponse.Data.ChangeOrderId"));
 		deployServerlessApplicationResponse.setData(data);
 	 
 	 	return deployServerlessApplicationResponse;

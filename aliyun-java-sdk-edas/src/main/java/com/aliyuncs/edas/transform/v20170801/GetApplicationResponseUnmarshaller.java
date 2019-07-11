@@ -21,38 +21,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetApplicationResponseUnmarshaller {
 
-	public static GetApplicationResponse unmarshall(GetApplicationResponse getApplicationResponse, UnmarshallerContext context) {
+	public static GetApplicationResponse unmarshall(GetApplicationResponse getApplicationResponse, UnmarshallerContext _ctx) {
 		
-		getApplicationResponse.setRequestId(context.stringValue("GetApplicationResponse.RequestId"));
-		getApplicationResponse.setCode(context.integerValue("GetApplicationResponse.Code"));
-		getApplicationResponse.setMessage(context.stringValue("GetApplicationResponse.Message"));
+		getApplicationResponse.setRequestId(_ctx.stringValue("GetApplicationResponse.RequestId"));
+		getApplicationResponse.setCode(_ctx.integerValue("GetApplicationResponse.Code"));
+		getApplicationResponse.setMessage(_ctx.stringValue("GetApplicationResponse.Message"));
 
 		Applcation applcation = new Applcation();
-		applcation.setAppId(context.stringValue("GetApplicationResponse.Applcation.AppId"));
-		applcation.setName(context.stringValue("GetApplicationResponse.Applcation.Name"));
-		applcation.setRegionId(context.stringValue("GetApplicationResponse.Applcation.RegionId"));
-		applcation.setDescription(context.stringValue("GetApplicationResponse.Applcation.Description"));
-		applcation.setOwner(context.stringValue("GetApplicationResponse.Applcation.Owner"));
-		applcation.setInstanceCount(context.integerValue("GetApplicationResponse.Applcation.InstanceCount"));
-		applcation.setRunningInstanceCount(context.integerValue("GetApplicationResponse.Applcation.RunningInstanceCount"));
-		applcation.setPort(context.integerValue("GetApplicationResponse.Applcation.Port"));
-		applcation.setUserId(context.stringValue("GetApplicationResponse.Applcation.UserId"));
-		applcation.setSlbId(context.stringValue("GetApplicationResponse.Applcation.SlbId"));
-		applcation.setSlbIp(context.stringValue("GetApplicationResponse.Applcation.SlbIp"));
-		applcation.setSlbPort(context.integerValue("GetApplicationResponse.Applcation.SlbPort"));
-		applcation.setExtSlbId(context.stringValue("GetApplicationResponse.Applcation.ExtSlbId"));
-		applcation.setExtSlbIp(context.stringValue("GetApplicationResponse.Applcation.ExtSlbIp"));
-		applcation.setSlbName(context.stringValue("GetApplicationResponse.Applcation.SlbName"));
-		applcation.setExtSlbName(context.stringValue("GetApplicationResponse.Applcation.ExtSlbName"));
-		applcation.setApplicationType(context.stringValue("GetApplicationResponse.Applcation.ApplicationType"));
-		applcation.setClusterType(context.integerValue("GetApplicationResponse.Applcation.ClusterType"));
-		applcation.setClusterId(context.stringValue("GetApplicationResponse.Applcation.ClusterId"));
-		applcation.setDockerize(context.booleanValue("GetApplicationResponse.Applcation.Dockerize"));
-		applcation.setCpu(context.integerValue("GetApplicationResponse.Applcation.Cpu"));
-		applcation.setMemory(context.integerValue("GetApplicationResponse.Applcation.Memory"));
-		applcation.setHealthCheckUrl(context.stringValue("GetApplicationResponse.Applcation.HealthCheckUrl"));
-		applcation.setBuildPackageId(context.longValue("GetApplicationResponse.Applcation.BuildPackageId"));
-		applcation.setCreateTime(context.longValue("GetApplicationResponse.Applcation.CreateTime"));
+		applcation.setAppId(_ctx.stringValue("GetApplicationResponse.Applcation.AppId"));
+		applcation.setName(_ctx.stringValue("GetApplicationResponse.Applcation.Name"));
+		applcation.setRegionId(_ctx.stringValue("GetApplicationResponse.Applcation.RegionId"));
+		applcation.setDescription(_ctx.stringValue("GetApplicationResponse.Applcation.Description"));
+		applcation.setOwner(_ctx.stringValue("GetApplicationResponse.Applcation.Owner"));
+		applcation.setInstanceCount(_ctx.integerValue("GetApplicationResponse.Applcation.InstanceCount"));
+		applcation.setRunningInstanceCount(_ctx.integerValue("GetApplicationResponse.Applcation.RunningInstanceCount"));
+		applcation.setPort(_ctx.integerValue("GetApplicationResponse.Applcation.Port"));
+		applcation.setUserId(_ctx.stringValue("GetApplicationResponse.Applcation.UserId"));
+		applcation.setSlbId(_ctx.stringValue("GetApplicationResponse.Applcation.SlbId"));
+		applcation.setSlbIp(_ctx.stringValue("GetApplicationResponse.Applcation.SlbIp"));
+		applcation.setSlbPort(_ctx.integerValue("GetApplicationResponse.Applcation.SlbPort"));
+		applcation.setExtSlbId(_ctx.stringValue("GetApplicationResponse.Applcation.ExtSlbId"));
+		applcation.setExtSlbIp(_ctx.stringValue("GetApplicationResponse.Applcation.ExtSlbIp"));
+		applcation.setSlbName(_ctx.stringValue("GetApplicationResponse.Applcation.SlbName"));
+		applcation.setExtSlbName(_ctx.stringValue("GetApplicationResponse.Applcation.ExtSlbName"));
+		applcation.setApplicationType(_ctx.stringValue("GetApplicationResponse.Applcation.ApplicationType"));
+		applcation.setClusterType(_ctx.integerValue("GetApplicationResponse.Applcation.ClusterType"));
+		applcation.setClusterId(_ctx.stringValue("GetApplicationResponse.Applcation.ClusterId"));
+		applcation.setDockerize(_ctx.booleanValue("GetApplicationResponse.Applcation.Dockerize"));
+		applcation.setCpu(_ctx.integerValue("GetApplicationResponse.Applcation.Cpu"));
+		applcation.setMemory(_ctx.integerValue("GetApplicationResponse.Applcation.Memory"));
+		applcation.setHealthCheckUrl(_ctx.stringValue("GetApplicationResponse.Applcation.HealthCheckUrl"));
+		applcation.setBuildPackageId(_ctx.longValue("GetApplicationResponse.Applcation.BuildPackageId"));
+		applcation.setCreateTime(_ctx.longValue("GetApplicationResponse.Applcation.CreateTime"));
 		getApplicationResponse.setApplcation(applcation);
 	 
 	 	return getApplicationResponse;

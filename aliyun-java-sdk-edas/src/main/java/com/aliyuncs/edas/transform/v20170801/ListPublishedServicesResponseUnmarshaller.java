@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPublishedServicesResponseUnmarshaller {
 
-	public static ListPublishedServicesResponse unmarshall(ListPublishedServicesResponse listPublishedServicesResponse, UnmarshallerContext context) {
+	public static ListPublishedServicesResponse unmarshall(ListPublishedServicesResponse listPublishedServicesResponse, UnmarshallerContext _ctx) {
 		
-		listPublishedServicesResponse.setRequestId(context.stringValue("ListPublishedServicesResponse.RequestId"));
-		listPublishedServicesResponse.setCode(context.integerValue("ListPublishedServicesResponse.Code"));
-		listPublishedServicesResponse.setMessage(context.stringValue("ListPublishedServicesResponse.Message"));
+		listPublishedServicesResponse.setRequestId(_ctx.stringValue("ListPublishedServicesResponse.RequestId"));
+		listPublishedServicesResponse.setCode(_ctx.integerValue("ListPublishedServicesResponse.Code"));
+		listPublishedServicesResponse.setMessage(_ctx.stringValue("ListPublishedServicesResponse.Message"));
 
 		List<ListPublishedServices> publishedServicesList = new ArrayList<ListPublishedServices>();
-		for (int i = 0; i < context.lengthValue("ListPublishedServicesResponse.PublishedServicesList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPublishedServicesResponse.PublishedServicesList.Length"); i++) {
 			ListPublishedServices listPublishedServices = new ListPublishedServices();
-			listPublishedServices.setAppId(context.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].AppId"));
-			listPublishedServices.setDockerApplication(context.booleanValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].DockerApplication"));
-			listPublishedServices.setGroup2Ip(context.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Group2Ip"));
-			listPublishedServices.setName(context.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Name"));
-			listPublishedServices.setType(context.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Type"));
-			listPublishedServices.setVersion(context.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Version"));
+			listPublishedServices.setAppId(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].AppId"));
+			listPublishedServices.setDockerApplication(_ctx.booleanValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].DockerApplication"));
+			listPublishedServices.setGroup2Ip(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Group2Ip"));
+			listPublishedServices.setName(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Name"));
+			listPublishedServices.setType(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Type"));
+			listPublishedServices.setVersion(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Version"));
 
 			List<String> groups = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Groups.Length"); j++) {
-				groups.add(context.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Groups["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Groups.Length"); j++) {
+				groups.add(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Groups["+ j +"]"));
 			}
 			listPublishedServices.setGroups(groups);
 
 			List<String> ips = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Ips.Length"); j++) {
-				ips.add(context.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Ips["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Ips.Length"); j++) {
+				ips.add(_ctx.stringValue("ListPublishedServicesResponse.PublishedServicesList["+ i +"].Ips["+ j +"]"));
 			}
 			listPublishedServices.setIps(ips);
 

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BindServerlessSlbResponseUnmarshaller {
 
-	public static BindServerlessSlbResponse unmarshall(BindServerlessSlbResponse bindServerlessSlbResponse, UnmarshallerContext context) {
+	public static BindServerlessSlbResponse unmarshall(BindServerlessSlbResponse bindServerlessSlbResponse, UnmarshallerContext _ctx) {
 		
-		bindServerlessSlbResponse.setCode(context.integerValue("BindServerlessSlbResponse.Code"));
-		bindServerlessSlbResponse.setMessage(context.stringValue("BindServerlessSlbResponse.Message"));
-		bindServerlessSlbResponse.setChangeOrderId(context.stringValue("BindServerlessSlbResponse.ChangeOrderId"));
+		bindServerlessSlbResponse.setCode(_ctx.integerValue("BindServerlessSlbResponse.Code"));
+		bindServerlessSlbResponse.setMessage(_ctx.stringValue("BindServerlessSlbResponse.Message"));
+		bindServerlessSlbResponse.setChangeOrderId(_ctx.stringValue("BindServerlessSlbResponse.ChangeOrderId"));
 	 
 	 	return bindServerlessSlbResponse;
 	}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ChangeDeployGroupResponseUnmarshaller {
 
-	public static ChangeDeployGroupResponse unmarshall(ChangeDeployGroupResponse changeDeployGroupResponse, UnmarshallerContext context) {
+	public static ChangeDeployGroupResponse unmarshall(ChangeDeployGroupResponse changeDeployGroupResponse, UnmarshallerContext _ctx) {
 		
-		changeDeployGroupResponse.setRequestId(context.stringValue("ChangeDeployGroupResponse.RequestId"));
-		changeDeployGroupResponse.setCode(context.integerValue("ChangeDeployGroupResponse.Code"));
-		changeDeployGroupResponse.setMessage(context.stringValue("ChangeDeployGroupResponse.Message"));
-		changeDeployGroupResponse.setChangeOrderId(context.stringValue("ChangeDeployGroupResponse.ChangeOrderId"));
+		changeDeployGroupResponse.setRequestId(_ctx.stringValue("ChangeDeployGroupResponse.RequestId"));
+		changeDeployGroupResponse.setCode(_ctx.integerValue("ChangeDeployGroupResponse.Code"));
+		changeDeployGroupResponse.setMessage(_ctx.stringValue("ChangeDeployGroupResponse.Message"));
+		changeDeployGroupResponse.setChangeOrderId(_ctx.stringValue("ChangeDeployGroupResponse.ChangeOrderId"));
 	 
 	 	return changeDeployGroupResponse;
 	}

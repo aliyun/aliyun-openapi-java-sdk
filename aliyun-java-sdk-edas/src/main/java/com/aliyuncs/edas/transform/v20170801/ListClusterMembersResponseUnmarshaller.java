@@ -25,27 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterMembersResponseUnmarshaller {
 
-	public static ListClusterMembersResponse unmarshall(ListClusterMembersResponse listClusterMembersResponse, UnmarshallerContext context) {
+	public static ListClusterMembersResponse unmarshall(ListClusterMembersResponse listClusterMembersResponse, UnmarshallerContext _ctx) {
 		
-		listClusterMembersResponse.setRequestId(context.stringValue("ListClusterMembersResponse.RequestId"));
-		listClusterMembersResponse.setCode(context.integerValue("ListClusterMembersResponse.Code"));
-		listClusterMembersResponse.setMessage(context.stringValue("ListClusterMembersResponse.Message"));
+		listClusterMembersResponse.setRequestId(_ctx.stringValue("ListClusterMembersResponse.RequestId"));
+		listClusterMembersResponse.setCode(_ctx.integerValue("ListClusterMembersResponse.Code"));
+		listClusterMembersResponse.setMessage(_ctx.stringValue("ListClusterMembersResponse.Message"));
 
 		ClusterMemberPage clusterMemberPage = new ClusterMemberPage();
-		clusterMemberPage.setCurrentPage(context.integerValue("ListClusterMembersResponse.ClusterMemberPage.CurrentPage"));
-		clusterMemberPage.setPageSize(context.integerValue("ListClusterMembersResponse.ClusterMemberPage.PageSize"));
-		clusterMemberPage.setTotalSize(context.integerValue("ListClusterMembersResponse.ClusterMemberPage.TotalSize"));
+		clusterMemberPage.setCurrentPage(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.CurrentPage"));
+		clusterMemberPage.setPageSize(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.PageSize"));
+		clusterMemberPage.setTotalSize(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.TotalSize"));
 
 		List<ClusterMember> clusterMemberList = new ArrayList<ClusterMember>();
-		for (int i = 0; i < context.lengthValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList.Length"); i++) {
 			ClusterMember clusterMember = new ClusterMember();
-			clusterMember.setClusterMemberId(context.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterMemberId"));
-			clusterMember.setClusterId(context.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterId"));
-			clusterMember.setEcuId(context.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].EcuId"));
-			clusterMember.setEcsId(context.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].EcsId"));
-			clusterMember.setStatus(context.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].Status"));
-			clusterMember.setCreateTime(context.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].CreateTime"));
-			clusterMember.setUpdateTime(context.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].UpdateTime"));
+			clusterMember.setClusterMemberId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterMemberId"));
+			clusterMember.setClusterId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].ClusterId"));
+			clusterMember.setEcuId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].EcuId"));
+			clusterMember.setEcsId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].EcsId"));
+			clusterMember.setStatus(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].Status"));
+			clusterMember.setCreateTime(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].CreateTime"));
+			clusterMember.setUpdateTime(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].UpdateTime"));
 
 			clusterMemberList.add(clusterMember);
 		}

@@ -27,33 +27,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDegradeControlsResponseUnmarshaller {
 
-	public static ListDegradeControlsResponse unmarshall(ListDegradeControlsResponse listDegradeControlsResponse, UnmarshallerContext context) {
+	public static ListDegradeControlsResponse unmarshall(ListDegradeControlsResponse listDegradeControlsResponse, UnmarshallerContext _ctx) {
 		
-		listDegradeControlsResponse.setRequestId(context.stringValue("ListDegradeControlsResponse.RequestId"));
-		listDegradeControlsResponse.setCode(context.integerValue("ListDegradeControlsResponse.Code"));
-		listDegradeControlsResponse.setMessage(context.stringValue("ListDegradeControlsResponse.Message"));
+		listDegradeControlsResponse.setRequestId(_ctx.stringValue("ListDegradeControlsResponse.RequestId"));
+		listDegradeControlsResponse.setCode(_ctx.integerValue("ListDegradeControlsResponse.Code"));
+		listDegradeControlsResponse.setMessage(_ctx.stringValue("ListDegradeControlsResponse.Message"));
 
 		FlowControlsMap flowControlsMap = new FlowControlsMap();
-		flowControlsMap.setAppId(context.stringValue("ListDegradeControlsResponse.FlowControlsMap.AppId"));
-		flowControlsMap.setAppName(context.stringValue("ListDegradeControlsResponse.FlowControlsMap.AppName"));
+		flowControlsMap.setAppId(_ctx.stringValue("ListDegradeControlsResponse.FlowControlsMap.AppId"));
+		flowControlsMap.setAppName(_ctx.stringValue("ListDegradeControlsResponse.FlowControlsMap.AppName"));
 
 		RuleList ruleList = new RuleList();
-		ruleList.setCurrentPage(context.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.CurrentPage"));
-		ruleList.setPageSize(context.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.pageSize"));
-		ruleList.setTotalSize(context.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.TotalSize"));
+		ruleList.setCurrentPage(_ctx.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.CurrentPage"));
+		ruleList.setPageSize(_ctx.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.pageSize"));
+		ruleList.setTotalSize(_ctx.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.TotalSize"));
 
 		List<Rule> ruleResultList = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setAppId(context.stringValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].AppId"));
-			rule.setRuleId(context.stringValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].RuleId"));
-			rule.setCreateTime(context.longValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].CreateTime"));
-			rule.setUpdateTime(context.longValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].UpdateTime"));
-			rule.setResource(context.stringValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].Resource"));
-			rule.setRtThreshold(context.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].RtThreshold"));
-			rule.setDuration(context.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].Duration"));
-			rule.setState(context.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].State"));
-			rule.setRuleType(context.stringValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].RuleType"));
+			rule.setAppId(_ctx.stringValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].AppId"));
+			rule.setRuleId(_ctx.stringValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].RuleId"));
+			rule.setCreateTime(_ctx.longValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].CreateTime"));
+			rule.setUpdateTime(_ctx.longValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].UpdateTime"));
+			rule.setResource(_ctx.stringValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].Resource"));
+			rule.setRtThreshold(_ctx.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].RtThreshold"));
+			rule.setDuration(_ctx.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].Duration"));
+			rule.setState(_ctx.integerValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].State"));
+			rule.setRuleType(_ctx.stringValue("ListDegradeControlsResponse.FlowControlsMap.RuleList.RuleResultList["+ i +"].RuleType"));
 
 			ruleResultList.add(rule);
 		}
@@ -61,14 +61,14 @@ public class ListDegradeControlsResponseUnmarshaller {
 		flowControlsMap.setRuleList(ruleList);
 
 		List<InterfaceMethod> interfaceMethods = new ArrayList<InterfaceMethod>();
-		for (int i = 0; i < context.lengthValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods.Length"); i++) {
 			InterfaceMethod interfaceMethod = new InterfaceMethod();
-			interfaceMethod.setName(context.stringValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods["+ i +"].name"));
-			interfaceMethod.setVersion(context.stringValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods["+ i +"].Version"));
+			interfaceMethod.setName(_ctx.stringValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods["+ i +"].name"));
+			interfaceMethod.setVersion(_ctx.stringValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods["+ i +"].Version"));
 
 			List<String> methods = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods["+ i +"].Methods.Length"); j++) {
-				methods.add(context.stringValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods["+ i +"].Methods["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods["+ i +"].Methods.Length"); j++) {
+				methods.add(_ctx.stringValue("ListDegradeControlsResponse.FlowControlsMap.InterfaceMethods["+ i +"].Methods["+ j +"]"));
 			}
 			interfaceMethod.setMethods(methods);
 

@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateJvmConfigurationResponseUnmarshaller {
 
-	public static UpdateJvmConfigurationResponse unmarshall(UpdateJvmConfigurationResponse updateJvmConfigurationResponse, UnmarshallerContext context) {
+	public static UpdateJvmConfigurationResponse unmarshall(UpdateJvmConfigurationResponse updateJvmConfigurationResponse, UnmarshallerContext _ctx) {
 		
-		updateJvmConfigurationResponse.setRequestId(context.stringValue("UpdateJvmConfigurationResponse.RequestId"));
-		updateJvmConfigurationResponse.setCode(context.integerValue("UpdateJvmConfigurationResponse.Code"));
-		updateJvmConfigurationResponse.setMessage(context.stringValue("UpdateJvmConfigurationResponse.Message"));
+		updateJvmConfigurationResponse.setRequestId(_ctx.stringValue("UpdateJvmConfigurationResponse.RequestId"));
+		updateJvmConfigurationResponse.setCode(_ctx.integerValue("UpdateJvmConfigurationResponse.Code"));
+		updateJvmConfigurationResponse.setMessage(_ctx.stringValue("UpdateJvmConfigurationResponse.Message"));
 
 		JvmConfiguration jvmConfiguration = new JvmConfiguration();
-		jvmConfiguration.setOptions(context.stringValue("UpdateJvmConfigurationResponse.JvmConfiguration.Options"));
-		jvmConfiguration.setMinHeapSize(context.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MinHeapSize"));
-		jvmConfiguration.setMaxPermSize(context.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MaxPermSize"));
-		jvmConfiguration.setMaxHeapSize(context.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MaxHeapSize"));
+		jvmConfiguration.setOptions(_ctx.stringValue("UpdateJvmConfigurationResponse.JvmConfiguration.Options"));
+		jvmConfiguration.setMinHeapSize(_ctx.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MinHeapSize"));
+		jvmConfiguration.setMaxPermSize(_ctx.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MaxPermSize"));
+		jvmConfiguration.setMaxHeapSize(_ctx.integerValue("UpdateJvmConfigurationResponse.JvmConfiguration.MaxHeapSize"));
 		updateJvmConfigurationResponse.setJvmConfiguration(jvmConfiguration);
 	 
 	 	return updateJvmConfigurationResponse;

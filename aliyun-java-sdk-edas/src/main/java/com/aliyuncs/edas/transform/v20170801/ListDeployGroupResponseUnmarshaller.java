@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDeployGroupResponseUnmarshaller {
 
-	public static ListDeployGroupResponse unmarshall(ListDeployGroupResponse listDeployGroupResponse, UnmarshallerContext context) {
+	public static ListDeployGroupResponse unmarshall(ListDeployGroupResponse listDeployGroupResponse, UnmarshallerContext _ctx) {
 		
-		listDeployGroupResponse.setRequestId(context.stringValue("ListDeployGroupResponse.RequestId"));
-		listDeployGroupResponse.setCode(context.integerValue("ListDeployGroupResponse.Code"));
-		listDeployGroupResponse.setMessage(context.stringValue("ListDeployGroupResponse.Message"));
+		listDeployGroupResponse.setRequestId(_ctx.stringValue("ListDeployGroupResponse.RequestId"));
+		listDeployGroupResponse.setCode(_ctx.integerValue("ListDeployGroupResponse.Code"));
+		listDeployGroupResponse.setMessage(_ctx.stringValue("ListDeployGroupResponse.Message"));
 
 		List<DeployGroup> deployGroupList = new ArrayList<DeployGroup>();
-		for (int i = 0; i < context.lengthValue("ListDeployGroupResponse.DeployGroupList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDeployGroupResponse.DeployGroupList.Length"); i++) {
 			DeployGroup deployGroup = new DeployGroup();
-			deployGroup.setGroupId(context.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].GroupId"));
-			deployGroup.setGroupName(context.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].GroupName"));
-			deployGroup.setAppId(context.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].AppId"));
-			deployGroup.setPackageVersionId(context.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PackageVersionId"));
-			deployGroup.setAppVersionId(context.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].AppVersionId"));
-			deployGroup.setGroupType(context.integerValue("ListDeployGroupResponse.DeployGroupList["+ i +"].GroupType"));
-			deployGroup.setClusterId(context.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].ClusterId"));
-			deployGroup.setCreateTime(context.longValue("ListDeployGroupResponse.DeployGroupList["+ i +"].CreateTime"));
-			deployGroup.setUpdateTime(context.longValue("ListDeployGroupResponse.DeployGroupList["+ i +"].UpdateTime"));
+			deployGroup.setGroupId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].GroupId"));
+			deployGroup.setGroupName(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].GroupName"));
+			deployGroup.setAppId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].AppId"));
+			deployGroup.setPackageVersionId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PackageVersionId"));
+			deployGroup.setAppVersionId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].AppVersionId"));
+			deployGroup.setGroupType(_ctx.integerValue("ListDeployGroupResponse.DeployGroupList["+ i +"].GroupType"));
+			deployGroup.setClusterId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].ClusterId"));
+			deployGroup.setCreateTime(_ctx.longValue("ListDeployGroupResponse.DeployGroupList["+ i +"].CreateTime"));
+			deployGroup.setUpdateTime(_ctx.longValue("ListDeployGroupResponse.DeployGroupList["+ i +"].UpdateTime"));
 
 			deployGroupList.add(deployGroup);
 		}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InsertClusterMemberResponseUnmarshaller {
 
-	public static InsertClusterMemberResponse unmarshall(InsertClusterMemberResponse insertClusterMemberResponse, UnmarshallerContext context) {
+	public static InsertClusterMemberResponse unmarshall(InsertClusterMemberResponse insertClusterMemberResponse, UnmarshallerContext _ctx) {
 		
-		insertClusterMemberResponse.setRequestId(context.stringValue("InsertClusterMemberResponse.RequestId"));
-		insertClusterMemberResponse.setCode(context.integerValue("InsertClusterMemberResponse.Code"));
-		insertClusterMemberResponse.setMessage(context.stringValue("InsertClusterMemberResponse.Message"));
-		insertClusterMemberResponse.setData(context.stringValue("InsertClusterMemberResponse.Data"));
+		insertClusterMemberResponse.setRequestId(_ctx.stringValue("InsertClusterMemberResponse.RequestId"));
+		insertClusterMemberResponse.setCode(_ctx.integerValue("InsertClusterMemberResponse.Code"));
+		insertClusterMemberResponse.setMessage(_ctx.stringValue("InsertClusterMemberResponse.Message"));
+		insertClusterMemberResponse.setData(_ctx.stringValue("InsertClusterMemberResponse.Data"));
 	 
 	 	return insertClusterMemberResponse;
 	}

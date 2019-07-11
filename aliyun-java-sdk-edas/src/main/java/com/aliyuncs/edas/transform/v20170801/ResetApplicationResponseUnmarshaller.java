@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResetApplicationResponseUnmarshaller {
 
-	public static ResetApplicationResponse unmarshall(ResetApplicationResponse resetApplicationResponse, UnmarshallerContext context) {
+	public static ResetApplicationResponse unmarshall(ResetApplicationResponse resetApplicationResponse, UnmarshallerContext _ctx) {
 		
-		resetApplicationResponse.setRequestId(context.stringValue("ResetApplicationResponse.RequestId"));
-		resetApplicationResponse.setCode(context.integerValue("ResetApplicationResponse.Code"));
-		resetApplicationResponse.setMessage(context.stringValue("ResetApplicationResponse.Message"));
-		resetApplicationResponse.setChangeOrderId(context.stringValue("ResetApplicationResponse.ChangeOrderId"));
+		resetApplicationResponse.setRequestId(_ctx.stringValue("ResetApplicationResponse.RequestId"));
+		resetApplicationResponse.setCode(_ctx.integerValue("ResetApplicationResponse.Code"));
+		resetApplicationResponse.setMessage(_ctx.stringValue("ResetApplicationResponse.Message"));
+		resetApplicationResponse.setChangeOrderId(_ctx.stringValue("ResetApplicationResponse.ChangeOrderId"));
 	 
 	 	return resetApplicationResponse;
 	}

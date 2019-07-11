@@ -21,24 +21,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSecureTokenResponseUnmarshaller {
 
-	public static GetSecureTokenResponse unmarshall(GetSecureTokenResponse getSecureTokenResponse, UnmarshallerContext context) {
+	public static GetSecureTokenResponse unmarshall(GetSecureTokenResponse getSecureTokenResponse, UnmarshallerContext _ctx) {
 		
-		getSecureTokenResponse.setRequestId(context.stringValue("GetSecureTokenResponse.RequestId"));
-		getSecureTokenResponse.setCode(context.integerValue("GetSecureTokenResponse.Code"));
-		getSecureTokenResponse.setMessage(context.stringValue("GetSecureTokenResponse.Message"));
+		getSecureTokenResponse.setRequestId(_ctx.stringValue("GetSecureTokenResponse.RequestId"));
+		getSecureTokenResponse.setCode(_ctx.integerValue("GetSecureTokenResponse.Code"));
+		getSecureTokenResponse.setMessage(_ctx.stringValue("GetSecureTokenResponse.Message"));
 
 		SecureToken secureToken = new SecureToken();
-		secureToken.setId(context.longValue("GetSecureTokenResponse.SecureToken.Id"));
-		secureToken.setUserId(context.stringValue("GetSecureTokenResponse.SecureToken.UserId"));
-		secureToken.setEdasId(context.stringValue("GetSecureTokenResponse.SecureToken.EdasId"));
-		secureToken.setRegionId(context.stringValue("GetSecureTokenResponse.SecureToken.RegionId"));
-		secureToken.setRegionName(context.stringValue("GetSecureTokenResponse.SecureToken.RegionName"));
-		secureToken.setDescription(context.stringValue("GetSecureTokenResponse.SecureToken.Description"));
-		secureToken.setBelongRegion(context.stringValue("GetSecureTokenResponse.SecureToken.BelongRegion"));
-		secureToken.setAccessKey(context.stringValue("GetSecureTokenResponse.SecureToken.AccessKey"));
-		secureToken.setSecretKey(context.stringValue("GetSecureTokenResponse.SecureToken.SecretKey"));
-		secureToken.setTenantId(context.stringValue("GetSecureTokenResponse.SecureToken.TenantId"));
-		secureToken.setAddressServerHost(context.stringValue("GetSecureTokenResponse.SecureToken.AddressServerHost"));
+		secureToken.setId(_ctx.longValue("GetSecureTokenResponse.SecureToken.Id"));
+		secureToken.setUserId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.UserId"));
+		secureToken.setEdasId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.EdasId"));
+		secureToken.setRegionId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.RegionId"));
+		secureToken.setRegionName(_ctx.stringValue("GetSecureTokenResponse.SecureToken.RegionName"));
+		secureToken.setDescription(_ctx.stringValue("GetSecureTokenResponse.SecureToken.Description"));
+		secureToken.setBelongRegion(_ctx.stringValue("GetSecureTokenResponse.SecureToken.BelongRegion"));
+		secureToken.setAccessKey(_ctx.stringValue("GetSecureTokenResponse.SecureToken.AccessKey"));
+		secureToken.setSecretKey(_ctx.stringValue("GetSecureTokenResponse.SecureToken.SecretKey"));
+		secureToken.setTenantId(_ctx.stringValue("GetSecureTokenResponse.SecureToken.TenantId"));
+		secureToken.setAddressServerHost(_ctx.stringValue("GetSecureTokenResponse.SecureToken.AddressServerHost"));
 		getSecureTokenResponse.setSecureToken(secureToken);
 	 
 	 	return getSecureTokenResponse;

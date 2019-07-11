@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPackageStorageCredentialResponseUnmarshaller {
 
-	public static GetPackageStorageCredentialResponse unmarshall(GetPackageStorageCredentialResponse getPackageStorageCredentialResponse, UnmarshallerContext context) {
+	public static GetPackageStorageCredentialResponse unmarshall(GetPackageStorageCredentialResponse getPackageStorageCredentialResponse, UnmarshallerContext _ctx) {
 		
-		getPackageStorageCredentialResponse.setRequestId(context.stringValue("GetPackageStorageCredentialResponse.RequestId"));
-		getPackageStorageCredentialResponse.setCode(context.integerValue("GetPackageStorageCredentialResponse.Code"));
-		getPackageStorageCredentialResponse.setMessage(context.stringValue("GetPackageStorageCredentialResponse.Message"));
+		getPackageStorageCredentialResponse.setRequestId(_ctx.stringValue("GetPackageStorageCredentialResponse.RequestId"));
+		getPackageStorageCredentialResponse.setCode(_ctx.integerValue("GetPackageStorageCredentialResponse.Code"));
+		getPackageStorageCredentialResponse.setMessage(_ctx.stringValue("GetPackageStorageCredentialResponse.Message"));
 
 		Credential credential = new Credential();
-		credential.setAccessKeyId(context.stringValue("GetPackageStorageCredentialResponse.Credential.AccessKeyId"));
-		credential.setAccessKeySecret(context.stringValue("GetPackageStorageCredentialResponse.Credential.AccessKeySecret"));
-		credential.setBucket(context.stringValue("GetPackageStorageCredentialResponse.Credential.Bucket"));
-		credential.setExpiration(context.stringValue("GetPackageStorageCredentialResponse.Credential.Expiration"));
-		credential.setKeyPrefix(context.stringValue("GetPackageStorageCredentialResponse.Credential.KeyPrefix"));
-		credential.setRegionId(context.stringValue("GetPackageStorageCredentialResponse.Credential.RegionId"));
-		credential.setSecurityToken(context.stringValue("GetPackageStorageCredentialResponse.Credential.SecurityToken"));
+		credential.setAccessKeyId(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.AccessKeyId"));
+		credential.setAccessKeySecret(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.AccessKeySecret"));
+		credential.setBucket(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.Bucket"));
+		credential.setExpiration(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.Expiration"));
+		credential.setKeyPrefix(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.KeyPrefix"));
+		credential.setRegionId(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.RegionId"));
+		credential.setSecurityToken(_ctx.stringValue("GetPackageStorageCredentialResponse.Credential.SecurityToken"));
 		getPackageStorageCredentialResponse.setCredential(credential);
 	 
 	 	return getPackageStorageCredentialResponse;

@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InsertOrUpdateRegionResponseUnmarshaller {
 
-	public static InsertOrUpdateRegionResponse unmarshall(InsertOrUpdateRegionResponse insertOrUpdateRegionResponse, UnmarshallerContext context) {
+	public static InsertOrUpdateRegionResponse unmarshall(InsertOrUpdateRegionResponse insertOrUpdateRegionResponse, UnmarshallerContext _ctx) {
 		
-		insertOrUpdateRegionResponse.setRequestId(context.stringValue("InsertOrUpdateRegionResponse.RequestId"));
-		insertOrUpdateRegionResponse.setCode(context.integerValue("InsertOrUpdateRegionResponse.Code"));
-		insertOrUpdateRegionResponse.setMessage(context.stringValue("InsertOrUpdateRegionResponse.Message"));
+		insertOrUpdateRegionResponse.setRequestId(_ctx.stringValue("InsertOrUpdateRegionResponse.RequestId"));
+		insertOrUpdateRegionResponse.setCode(_ctx.integerValue("InsertOrUpdateRegionResponse.Code"));
+		insertOrUpdateRegionResponse.setMessage(_ctx.stringValue("InsertOrUpdateRegionResponse.Message"));
 
 		UserDefineRegionEntity userDefineRegionEntity = new UserDefineRegionEntity();
-		userDefineRegionEntity.setId(context.longValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.Id"));
-		userDefineRegionEntity.setUserId(context.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.UserId"));
-		userDefineRegionEntity.setRegionId(context.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.RegionId"));
-		userDefineRegionEntity.setRegionName(context.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.RegionName"));
-		userDefineRegionEntity.setDescription(context.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.Description"));
-		userDefineRegionEntity.setBelongRegion(context.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.BelongRegion"));
-		userDefineRegionEntity.setDebugEnable(context.booleanValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.DebugEnable"));
+		userDefineRegionEntity.setId(_ctx.longValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.Id"));
+		userDefineRegionEntity.setUserId(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.UserId"));
+		userDefineRegionEntity.setRegionId(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.RegionId"));
+		userDefineRegionEntity.setRegionName(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.RegionName"));
+		userDefineRegionEntity.setDescription(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.Description"));
+		userDefineRegionEntity.setBelongRegion(_ctx.stringValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.BelongRegion"));
+		userDefineRegionEntity.setDebugEnable(_ctx.booleanValue("InsertOrUpdateRegionResponse.UserDefineRegionEntity.DebugEnable"));
 		insertOrUpdateRegionResponse.setUserDefineRegionEntity(userDefineRegionEntity);
 	 
 	 	return insertOrUpdateRegionResponse;

@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListHistoryDeployVersionResponseUnmarshaller {
 
-	public static ListHistoryDeployVersionResponse unmarshall(ListHistoryDeployVersionResponse listHistoryDeployVersionResponse, UnmarshallerContext context) {
+	public static ListHistoryDeployVersionResponse unmarshall(ListHistoryDeployVersionResponse listHistoryDeployVersionResponse, UnmarshallerContext _ctx) {
 		
-		listHistoryDeployVersionResponse.setRequestId(context.stringValue("ListHistoryDeployVersionResponse.RequestId"));
-		listHistoryDeployVersionResponse.setCode(context.integerValue("ListHistoryDeployVersionResponse.Code"));
-		listHistoryDeployVersionResponse.setMessage(context.stringValue("ListHistoryDeployVersionResponse.Message"));
+		listHistoryDeployVersionResponse.setRequestId(_ctx.stringValue("ListHistoryDeployVersionResponse.RequestId"));
+		listHistoryDeployVersionResponse.setCode(_ctx.integerValue("ListHistoryDeployVersionResponse.Code"));
+		listHistoryDeployVersionResponse.setMessage(_ctx.stringValue("ListHistoryDeployVersionResponse.Message"));
 
 		List<PackageVersion> packageVersionList = new ArrayList<PackageVersion>();
-		for (int i = 0; i < context.lengthValue("ListHistoryDeployVersionResponse.PackageVersionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListHistoryDeployVersionResponse.PackageVersionList.Length"); i++) {
 			PackageVersion packageVersion = new PackageVersion();
-			packageVersion.setId(context.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Id"));
-			packageVersion.setPackageVersion(context.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].PackageVersion"));
-			packageVersion.setAppId(context.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].AppId"));
-			packageVersion.setDescription(context.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Description"));
-			packageVersion.setWarUrl(context.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].WarUrl"));
-			packageVersion.setCreateTime(context.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].CreateTime"));
-			packageVersion.setUpdateTime(context.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].UpdateTime"));
-			packageVersion.setType(context.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Type"));
+			packageVersion.setId(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Id"));
+			packageVersion.setPackageVersion(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].PackageVersion"));
+			packageVersion.setAppId(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].AppId"));
+			packageVersion.setDescription(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Description"));
+			packageVersion.setWarUrl(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].WarUrl"));
+			packageVersion.setCreateTime(_ctx.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].CreateTime"));
+			packageVersion.setUpdateTime(_ctx.longValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].UpdateTime"));
+			packageVersion.setType(_ctx.stringValue("ListHistoryDeployVersionResponse.PackageVersionList["+ i +"].Type"));
 
 			packageVersionList.add(packageVersion);
 		}

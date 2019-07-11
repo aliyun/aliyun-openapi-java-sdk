@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopApplicationResponseUnmarshaller {
 
-	public static StopApplicationResponse unmarshall(StopApplicationResponse stopApplicationResponse, UnmarshallerContext context) {
+	public static StopApplicationResponse unmarshall(StopApplicationResponse stopApplicationResponse, UnmarshallerContext _ctx) {
 		
-		stopApplicationResponse.setRequestId(context.stringValue("StopApplicationResponse.RequestId"));
-		stopApplicationResponse.setCode(context.integerValue("StopApplicationResponse.Code"));
-		stopApplicationResponse.setMessage(context.stringValue("StopApplicationResponse.Message"));
-		stopApplicationResponse.setChangeOrderId(context.stringValue("StopApplicationResponse.ChangeOrderId"));
+		stopApplicationResponse.setRequestId(_ctx.stringValue("StopApplicationResponse.RequestId"));
+		stopApplicationResponse.setCode(_ctx.integerValue("StopApplicationResponse.Code"));
+		stopApplicationResponse.setMessage(_ctx.stringValue("StopApplicationResponse.Message"));
+		stopApplicationResponse.setChangeOrderId(_ctx.stringValue("StopApplicationResponse.ChangeOrderId"));
 	 
 	 	return stopApplicationResponse;
 	}

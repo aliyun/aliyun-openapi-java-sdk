@@ -24,30 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListScaleOutEcuResponseUnmarshaller {
 
-	public static ListScaleOutEcuResponse unmarshall(ListScaleOutEcuResponse listScaleOutEcuResponse, UnmarshallerContext context) {
+	public static ListScaleOutEcuResponse unmarshall(ListScaleOutEcuResponse listScaleOutEcuResponse, UnmarshallerContext _ctx) {
 		
-		listScaleOutEcuResponse.setRequestId(context.stringValue("ListScaleOutEcuResponse.RequestId"));
-		listScaleOutEcuResponse.setCode(context.integerValue("ListScaleOutEcuResponse.Code"));
-		listScaleOutEcuResponse.setMessage(context.stringValue("ListScaleOutEcuResponse.Message"));
+		listScaleOutEcuResponse.setRequestId(_ctx.stringValue("ListScaleOutEcuResponse.RequestId"));
+		listScaleOutEcuResponse.setCode(_ctx.integerValue("ListScaleOutEcuResponse.Code"));
+		listScaleOutEcuResponse.setMessage(_ctx.stringValue("ListScaleOutEcuResponse.Message"));
 
 		List<EcuInfo> ecuInfoList = new ArrayList<EcuInfo>();
-		for (int i = 0; i < context.lengthValue("ListScaleOutEcuResponse.EcuInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListScaleOutEcuResponse.EcuInfoList.Length"); i++) {
 			EcuInfo ecuInfo = new EcuInfo();
-			ecuInfo.setEcuId(context.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].EcuId"));
-			ecuInfo.setOnline(context.booleanValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].Online"));
-			ecuInfo.setDockerEnv(context.booleanValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].DockerEnv"));
-			ecuInfo.setCreateTime(context.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].CreateTime"));
-			ecuInfo.setUpdateTime(context.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].UpdateTime"));
-			ecuInfo.setIpAddr(context.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].IpAddr"));
-			ecuInfo.setHeartbeatTime(context.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].HeartbeatTime"));
-			ecuInfo.setUserId(context.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].UserId"));
-			ecuInfo.setName(context.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].Name"));
-			ecuInfo.setZoneId(context.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].ZoneId"));
-			ecuInfo.setRegionId(context.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].RegionId"));
-			ecuInfo.setInstanceId(context.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].InstanceId"));
-			ecuInfo.setVpcId(context.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].VpcId"));
-			ecuInfo.setAvailableCpu(context.integerValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].AvailableCpu"));
-			ecuInfo.setAvailableMem(context.integerValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].AvailableMem"));
+			ecuInfo.setEcuId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].EcuId"));
+			ecuInfo.setOnline(_ctx.booleanValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].Online"));
+			ecuInfo.setDockerEnv(_ctx.booleanValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].DockerEnv"));
+			ecuInfo.setCreateTime(_ctx.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].CreateTime"));
+			ecuInfo.setUpdateTime(_ctx.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].UpdateTime"));
+			ecuInfo.setIpAddr(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].IpAddr"));
+			ecuInfo.setHeartbeatTime(_ctx.longValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].HeartbeatTime"));
+			ecuInfo.setUserId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].UserId"));
+			ecuInfo.setName(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].Name"));
+			ecuInfo.setZoneId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].ZoneId"));
+			ecuInfo.setRegionId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].RegionId"));
+			ecuInfo.setInstanceId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].InstanceId"));
+			ecuInfo.setVpcId(_ctx.stringValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].VpcId"));
+			ecuInfo.setAvailableCpu(_ctx.integerValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].AvailableCpu"));
+			ecuInfo.setAvailableMem(_ctx.integerValue("ListScaleOutEcuResponse.EcuInfoList["+ i +"].AvailableMem"));
 
 			ecuInfoList.add(ecuInfo);
 		}

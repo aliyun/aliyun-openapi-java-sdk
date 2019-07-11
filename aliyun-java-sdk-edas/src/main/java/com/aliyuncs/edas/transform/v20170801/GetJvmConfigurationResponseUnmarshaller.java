@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJvmConfigurationResponseUnmarshaller {
 
-	public static GetJvmConfigurationResponse unmarshall(GetJvmConfigurationResponse getJvmConfigurationResponse, UnmarshallerContext context) {
+	public static GetJvmConfigurationResponse unmarshall(GetJvmConfigurationResponse getJvmConfigurationResponse, UnmarshallerContext _ctx) {
 		
-		getJvmConfigurationResponse.setRequestId(context.stringValue("GetJvmConfigurationResponse.RequestId"));
-		getJvmConfigurationResponse.setCode(context.integerValue("GetJvmConfigurationResponse.Code"));
-		getJvmConfigurationResponse.setMessage(context.stringValue("GetJvmConfigurationResponse.Message"));
+		getJvmConfigurationResponse.setRequestId(_ctx.stringValue("GetJvmConfigurationResponse.RequestId"));
+		getJvmConfigurationResponse.setCode(_ctx.integerValue("GetJvmConfigurationResponse.Code"));
+		getJvmConfigurationResponse.setMessage(_ctx.stringValue("GetJvmConfigurationResponse.Message"));
 
 		JvmConfiguration jvmConfiguration = new JvmConfiguration();
-		jvmConfiguration.setOptions(context.stringValue("GetJvmConfigurationResponse.JvmConfiguration.Options"));
-		jvmConfiguration.setMinHeapSize(context.integerValue("GetJvmConfigurationResponse.JvmConfiguration.MinHeapSize"));
-		jvmConfiguration.setMaxPermSize(context.integerValue("GetJvmConfigurationResponse.JvmConfiguration.MaxPermSize"));
-		jvmConfiguration.setMaxHeapSize(context.integerValue("GetJvmConfigurationResponse.JvmConfiguration.MaxHeapSize"));
+		jvmConfiguration.setOptions(_ctx.stringValue("GetJvmConfigurationResponse.JvmConfiguration.Options"));
+		jvmConfiguration.setMinHeapSize(_ctx.integerValue("GetJvmConfigurationResponse.JvmConfiguration.MinHeapSize"));
+		jvmConfiguration.setMaxPermSize(_ctx.integerValue("GetJvmConfigurationResponse.JvmConfiguration.MaxPermSize"));
+		jvmConfiguration.setMaxHeapSize(_ctx.integerValue("GetJvmConfigurationResponse.JvmConfiguration.MaxHeapSize"));
 		getJvmConfigurationResponse.setJvmConfiguration(jvmConfiguration);
 	 
 	 	return getJvmConfigurationResponse;

@@ -24,32 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMigrateEcuListResponseUnmarshaller {
 
-	public static QueryMigrateEcuListResponse unmarshall(QueryMigrateEcuListResponse queryMigrateEcuListResponse, UnmarshallerContext context) {
+	public static QueryMigrateEcuListResponse unmarshall(QueryMigrateEcuListResponse queryMigrateEcuListResponse, UnmarshallerContext _ctx) {
 		
-		queryMigrateEcuListResponse.setRequestId(context.stringValue("QueryMigrateEcuListResponse.RequestId"));
-		queryMigrateEcuListResponse.setCode(context.integerValue("QueryMigrateEcuListResponse.Code"));
-		queryMigrateEcuListResponse.setMessage(context.stringValue("QueryMigrateEcuListResponse.Message"));
+		queryMigrateEcuListResponse.setRequestId(_ctx.stringValue("QueryMigrateEcuListResponse.RequestId"));
+		queryMigrateEcuListResponse.setCode(_ctx.integerValue("QueryMigrateEcuListResponse.Code"));
+		queryMigrateEcuListResponse.setMessage(_ctx.stringValue("QueryMigrateEcuListResponse.Message"));
 
 		List<EcuEntity> ecuEntityList = new ArrayList<EcuEntity>();
-		for (int i = 0; i < context.lengthValue("QueryMigrateEcuListResponse.EcuEntityList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMigrateEcuListResponse.EcuEntityList.Length"); i++) {
 			EcuEntity ecuEntity = new EcuEntity();
-			ecuEntity.setEcuId(context.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].EcuId"));
-			ecuEntity.setOnline(context.booleanValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].Online"));
-			ecuEntity.setDockerEnv(context.booleanValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].DockerEnv"));
-			ecuEntity.setCreateTime(context.longValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].CreateTime"));
-			ecuEntity.setUpdateTime(context.longValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].UpdateTime"));
-			ecuEntity.setIpAddr(context.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].IpAddr"));
-			ecuEntity.setHeartbeatTime(context.longValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].HeartbeatTime"));
-			ecuEntity.setUserId(context.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].UserId"));
-			ecuEntity.setName(context.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].Name"));
-			ecuEntity.setZoneId(context.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].ZoneId"));
-			ecuEntity.setRegionId(context.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].RegionId"));
-			ecuEntity.setInstanceId(context.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].InstanceId"));
-			ecuEntity.setVpcId(context.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].VpcId"));
-			ecuEntity.setAvailableCpu(context.integerValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].AvailableCpu"));
-			ecuEntity.setAvailableMem(context.integerValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].AvailableMem"));
-			ecuEntity.setCpu(context.integerValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].Cpu"));
-			ecuEntity.setMem(context.integerValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].Mem"));
+			ecuEntity.setEcuId(_ctx.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].EcuId"));
+			ecuEntity.setOnline(_ctx.booleanValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].Online"));
+			ecuEntity.setDockerEnv(_ctx.booleanValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].DockerEnv"));
+			ecuEntity.setCreateTime(_ctx.longValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].CreateTime"));
+			ecuEntity.setUpdateTime(_ctx.longValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].UpdateTime"));
+			ecuEntity.setIpAddr(_ctx.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].IpAddr"));
+			ecuEntity.setHeartbeatTime(_ctx.longValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].HeartbeatTime"));
+			ecuEntity.setUserId(_ctx.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].UserId"));
+			ecuEntity.setName(_ctx.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].Name"));
+			ecuEntity.setZoneId(_ctx.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].ZoneId"));
+			ecuEntity.setRegionId(_ctx.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].RegionId"));
+			ecuEntity.setInstanceId(_ctx.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].InstanceId"));
+			ecuEntity.setVpcId(_ctx.stringValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].VpcId"));
+			ecuEntity.setAvailableCpu(_ctx.integerValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].AvailableCpu"));
+			ecuEntity.setAvailableMem(_ctx.integerValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].AvailableMem"));
+			ecuEntity.setCpu(_ctx.integerValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].Cpu"));
+			ecuEntity.setMem(_ctx.integerValue("QueryMigrateEcuListResponse.EcuEntityList["+ i +"].Mem"));
 
 			ecuEntityList.add(ecuEntity);
 		}

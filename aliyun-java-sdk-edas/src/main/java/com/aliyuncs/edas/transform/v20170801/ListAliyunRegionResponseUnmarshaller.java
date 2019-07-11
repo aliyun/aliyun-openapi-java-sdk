@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAliyunRegionResponseUnmarshaller {
 
-	public static ListAliyunRegionResponse unmarshall(ListAliyunRegionResponse listAliyunRegionResponse, UnmarshallerContext context) {
+	public static ListAliyunRegionResponse unmarshall(ListAliyunRegionResponse listAliyunRegionResponse, UnmarshallerContext _ctx) {
 		
-		listAliyunRegionResponse.setRequestId(context.stringValue("ListAliyunRegionResponse.RequestId"));
-		listAliyunRegionResponse.setCode(context.integerValue("ListAliyunRegionResponse.Code"));
-		listAliyunRegionResponse.setMessage(context.stringValue("ListAliyunRegionResponse.Message"));
+		listAliyunRegionResponse.setRequestId(_ctx.stringValue("ListAliyunRegionResponse.RequestId"));
+		listAliyunRegionResponse.setCode(_ctx.integerValue("ListAliyunRegionResponse.Code"));
+		listAliyunRegionResponse.setMessage(_ctx.stringValue("ListAliyunRegionResponse.Message"));
 
 		List<RegionEntity> regionEntityList = new ArrayList<RegionEntity>();
-		for (int i = 0; i < context.lengthValue("ListAliyunRegionResponse.RegionEntityList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAliyunRegionResponse.RegionEntityList.Length"); i++) {
 			RegionEntity regionEntity = new RegionEntity();
-			regionEntity.setId(context.stringValue("ListAliyunRegionResponse.RegionEntityList["+ i +"].Id"));
-			regionEntity.setName(context.stringValue("ListAliyunRegionResponse.RegionEntityList["+ i +"].Name"));
+			regionEntity.setId(_ctx.stringValue("ListAliyunRegionResponse.RegionEntityList["+ i +"].Id"));
+			regionEntity.setName(_ctx.stringValue("ListAliyunRegionResponse.RegionEntityList["+ i +"].Name"));
 
 			regionEntityList.add(regionEntity);
 		}

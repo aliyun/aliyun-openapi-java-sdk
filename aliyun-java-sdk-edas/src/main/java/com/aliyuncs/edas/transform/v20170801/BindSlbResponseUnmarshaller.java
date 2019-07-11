@@ -21,22 +21,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BindSlbResponseUnmarshaller {
 
-	public static BindSlbResponse unmarshall(BindSlbResponse bindSlbResponse, UnmarshallerContext context) {
+	public static BindSlbResponse unmarshall(BindSlbResponse bindSlbResponse, UnmarshallerContext _ctx) {
 		
-		bindSlbResponse.setRequestId(context.stringValue("BindSlbResponse.RequestId"));
-		bindSlbResponse.setCode(context.integerValue("BindSlbResponse.Code"));
-		bindSlbResponse.setMessage(context.stringValue("BindSlbResponse.Message"));
+		bindSlbResponse.setRequestId(_ctx.stringValue("BindSlbResponse.RequestId"));
+		bindSlbResponse.setCode(_ctx.integerValue("BindSlbResponse.Code"));
+		bindSlbResponse.setMessage(_ctx.stringValue("BindSlbResponse.Message"));
 
 		Data data = new Data();
-		data.setSlbName(context.stringValue("BindSlbResponse.Data.SlbName"));
-		data.setSlbId(context.stringValue("BindSlbResponse.Data.SlbId"));
-		data.setSlbIp(context.stringValue("BindSlbResponse.Data.SlbIp"));
-		data.setExtSlbName(context.stringValue("BindSlbResponse.Data.ExtSlbName"));
-		data.setExtSlbId(context.stringValue("BindSlbResponse.Data.ExtSlbId"));
-		data.setExtSlbIp(context.stringValue("BindSlbResponse.Data.ExtSlbIp"));
-		data.setSlbPort(context.integerValue("BindSlbResponse.Data.SlbPort"));
-		data.setVServerGroupId(context.stringValue("BindSlbResponse.Data.VServerGroupId"));
-		data.setExtVServerGroupId(context.stringValue("BindSlbResponse.Data.ExtVServerGroupId"));
+		data.setSlbName(_ctx.stringValue("BindSlbResponse.Data.SlbName"));
+		data.setSlbId(_ctx.stringValue("BindSlbResponse.Data.SlbId"));
+		data.setSlbIp(_ctx.stringValue("BindSlbResponse.Data.SlbIp"));
+		data.setExtSlbName(_ctx.stringValue("BindSlbResponse.Data.ExtSlbName"));
+		data.setExtSlbId(_ctx.stringValue("BindSlbResponse.Data.ExtSlbId"));
+		data.setExtSlbIp(_ctx.stringValue("BindSlbResponse.Data.ExtSlbIp"));
+		data.setSlbPort(_ctx.integerValue("BindSlbResponse.Data.SlbPort"));
+		data.setVServerGroupId(_ctx.stringValue("BindSlbResponse.Data.VServerGroupId"));
+		data.setExtVServerGroupId(_ctx.stringValue("BindSlbResponse.Data.ExtVServerGroupId"));
 		bindSlbResponse.setData(data);
 	 
 	 	return bindSlbResponse;

@@ -1,3 +1,6 @@
+2019-07-11 Version: 2.46.6
+- Generated 2017-08-01 for `Edas`.
+
 2019-05-13 Version: 2.46.4
 1, Add 'ReleaseType' field into DeployApplication API
 

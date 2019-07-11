@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TransformClusterMemberResponseUnmarshaller {
 
-	public static TransformClusterMemberResponse unmarshall(TransformClusterMemberResponse transformClusterMemberResponse, UnmarshallerContext context) {
+	public static TransformClusterMemberResponse unmarshall(TransformClusterMemberResponse transformClusterMemberResponse, UnmarshallerContext _ctx) {
 		
-		transformClusterMemberResponse.setRequestId(context.stringValue("TransformClusterMemberResponse.RequestId"));
-		transformClusterMemberResponse.setCode(context.integerValue("TransformClusterMemberResponse.Code"));
-		transformClusterMemberResponse.setMessage(context.stringValue("TransformClusterMemberResponse.Message"));
-		transformClusterMemberResponse.setData(context.stringValue("TransformClusterMemberResponse.Data"));
+		transformClusterMemberResponse.setRequestId(_ctx.stringValue("TransformClusterMemberResponse.RequestId"));
+		transformClusterMemberResponse.setCode(_ctx.integerValue("TransformClusterMemberResponse.Code"));
+		transformClusterMemberResponse.setMessage(_ctx.stringValue("TransformClusterMemberResponse.Message"));
+		transformClusterMemberResponse.setData(_ctx.stringValue("TransformClusterMemberResponse.Data"));
 	 
 	 	return transformClusterMemberResponse;
 	}

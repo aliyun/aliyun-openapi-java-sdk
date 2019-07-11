@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SynchronizeResourceResponseUnmarshaller {
 
-	public static SynchronizeResourceResponse unmarshall(SynchronizeResourceResponse synchronizeResourceResponse, UnmarshallerContext context) {
+	public static SynchronizeResourceResponse unmarshall(SynchronizeResourceResponse synchronizeResourceResponse, UnmarshallerContext _ctx) {
 		
-		synchronizeResourceResponse.setRequestId(context.stringValue("SynchronizeResourceResponse.RequestId"));
-		synchronizeResourceResponse.setCode(context.integerValue("SynchronizeResourceResponse.Code"));
-		synchronizeResourceResponse.setMessage(context.stringValue("SynchronizeResourceResponse.Message"));
-		synchronizeResourceResponse.setSuccess(context.booleanValue("SynchronizeResourceResponse.Success"));
-		synchronizeResourceResponse.setData(context.stringValue("SynchronizeResourceResponse.Data"));
+		synchronizeResourceResponse.setRequestId(_ctx.stringValue("SynchronizeResourceResponse.RequestId"));
+		synchronizeResourceResponse.setCode(_ctx.integerValue("SynchronizeResourceResponse.Code"));
+		synchronizeResourceResponse.setMessage(_ctx.stringValue("SynchronizeResourceResponse.Message"));
+		synchronizeResourceResponse.setSuccess(_ctx.booleanValue("SynchronizeResourceResponse.Success"));
+		synchronizeResourceResponse.setData(_ctx.stringValue("SynchronizeResourceResponse.Data"));
 	 
 	 	return synchronizeResourceResponse;
 	}

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ScaleServerlessApplicationResponseUnmarshaller {
 
-	public static ScaleServerlessApplicationResponse unmarshall(ScaleServerlessApplicationResponse scaleServerlessApplicationResponse, UnmarshallerContext context) {
+	public static ScaleServerlessApplicationResponse unmarshall(ScaleServerlessApplicationResponse scaleServerlessApplicationResponse, UnmarshallerContext _ctx) {
 		
-		scaleServerlessApplicationResponse.setCode(context.integerValue("ScaleServerlessApplicationResponse.Code"));
-		scaleServerlessApplicationResponse.setMessage(context.stringValue("ScaleServerlessApplicationResponse.Message"));
-		scaleServerlessApplicationResponse.setChangeOrderId(context.stringValue("ScaleServerlessApplicationResponse.ChangeOrderId"));
+		scaleServerlessApplicationResponse.setCode(_ctx.integerValue("ScaleServerlessApplicationResponse.Code"));
+		scaleServerlessApplicationResponse.setMessage(_ctx.stringValue("ScaleServerlessApplicationResponse.Message"));
+		scaleServerlessApplicationResponse.setChangeOrderId(_ctx.stringValue("ScaleServerlessApplicationResponse.ChangeOrderId"));
 	 
 	 	return scaleServerlessApplicationResponse;
 	}

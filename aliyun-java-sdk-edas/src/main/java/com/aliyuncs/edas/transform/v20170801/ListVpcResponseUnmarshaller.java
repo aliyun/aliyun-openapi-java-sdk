@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListVpcResponseUnmarshaller {
 
-	public static ListVpcResponse unmarshall(ListVpcResponse listVpcResponse, UnmarshallerContext context) {
+	public static ListVpcResponse unmarshall(ListVpcResponse listVpcResponse, UnmarshallerContext _ctx) {
 		
-		listVpcResponse.setRequestId(context.stringValue("ListVpcResponse.RequestId"));
-		listVpcResponse.setCode(context.integerValue("ListVpcResponse.Code"));
-		listVpcResponse.setMessage(context.stringValue("ListVpcResponse.Message"));
+		listVpcResponse.setRequestId(_ctx.stringValue("ListVpcResponse.RequestId"));
+		listVpcResponse.setCode(_ctx.integerValue("ListVpcResponse.Code"));
+		listVpcResponse.setMessage(_ctx.stringValue("ListVpcResponse.Message"));
 
 		List<VpcEntity> vpcList = new ArrayList<VpcEntity>();
-		for (int i = 0; i < context.lengthValue("ListVpcResponse.VpcList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListVpcResponse.VpcList.Length"); i++) {
 			VpcEntity vpcEntity = new VpcEntity();
-			vpcEntity.setVpcId(context.stringValue("ListVpcResponse.VpcList["+ i +"].VpcId"));
-			vpcEntity.setVpcName(context.stringValue("ListVpcResponse.VpcList["+ i +"].VpcName"));
-			vpcEntity.setRegionId(context.stringValue("ListVpcResponse.VpcList["+ i +"].RegionId"));
-			vpcEntity.setUserId(context.stringValue("ListVpcResponse.VpcList["+ i +"].UserId"));
-			vpcEntity.setExpired(context.booleanValue("ListVpcResponse.VpcList["+ i +"].Expired"));
-			vpcEntity.setEcsNum(context.integerValue("ListVpcResponse.VpcList["+ i +"].EcsNum"));
+			vpcEntity.setVpcId(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].VpcId"));
+			vpcEntity.setVpcName(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].VpcName"));
+			vpcEntity.setRegionId(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].RegionId"));
+			vpcEntity.setUserId(_ctx.stringValue("ListVpcResponse.VpcList["+ i +"].UserId"));
+			vpcEntity.setExpired(_ctx.booleanValue("ListVpcResponse.VpcList["+ i +"].Expired"));
+			vpcEntity.setEcsNum(_ctx.integerValue("ListVpcResponse.VpcList["+ i +"].EcsNum"));
 
 			vpcList.add(vpcEntity);
 		}

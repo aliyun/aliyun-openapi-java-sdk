@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AuthorizeResourceGroupResponseUnmarshaller {
 
-	public static AuthorizeResourceGroupResponse unmarshall(AuthorizeResourceGroupResponse authorizeResourceGroupResponse, UnmarshallerContext context) {
+	public static AuthorizeResourceGroupResponse unmarshall(AuthorizeResourceGroupResponse authorizeResourceGroupResponse, UnmarshallerContext _ctx) {
 		
-		authorizeResourceGroupResponse.setRequestId(context.stringValue("AuthorizeResourceGroupResponse.RequestId"));
-		authorizeResourceGroupResponse.setCode(context.integerValue("AuthorizeResourceGroupResponse.Code"));
-		authorizeResourceGroupResponse.setMessage(context.stringValue("AuthorizeResourceGroupResponse.Message"));
+		authorizeResourceGroupResponse.setRequestId(_ctx.stringValue("AuthorizeResourceGroupResponse.RequestId"));
+		authorizeResourceGroupResponse.setCode(_ctx.integerValue("AuthorizeResourceGroupResponse.Code"));
+		authorizeResourceGroupResponse.setMessage(_ctx.stringValue("AuthorizeResourceGroupResponse.Message"));
 	 
 	 	return authorizeResourceGroupResponse;
 	}

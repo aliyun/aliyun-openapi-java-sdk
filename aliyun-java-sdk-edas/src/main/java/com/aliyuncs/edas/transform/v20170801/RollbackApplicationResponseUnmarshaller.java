@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RollbackApplicationResponseUnmarshaller {
 
-	public static RollbackApplicationResponse unmarshall(RollbackApplicationResponse rollbackApplicationResponse, UnmarshallerContext context) {
+	public static RollbackApplicationResponse unmarshall(RollbackApplicationResponse rollbackApplicationResponse, UnmarshallerContext _ctx) {
 		
-		rollbackApplicationResponse.setRequestId(context.stringValue("RollbackApplicationResponse.RequestId"));
-		rollbackApplicationResponse.setCode(context.integerValue("RollbackApplicationResponse.Code"));
-		rollbackApplicationResponse.setMessage(context.stringValue("RollbackApplicationResponse.Message"));
-		rollbackApplicationResponse.setChangeOrderId(context.stringValue("RollbackApplicationResponse.ChangeOrderId"));
+		rollbackApplicationResponse.setRequestId(_ctx.stringValue("RollbackApplicationResponse.RequestId"));
+		rollbackApplicationResponse.setCode(_ctx.integerValue("RollbackApplicationResponse.Code"));
+		rollbackApplicationResponse.setMessage(_ctx.stringValue("RollbackApplicationResponse.Message"));
+		rollbackApplicationResponse.setChangeOrderId(_ctx.stringValue("RollbackApplicationResponse.ChangeOrderId"));
 	 
 	 	return rollbackApplicationResponse;
 	}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteDeployGroupResponseUnmarshaller {
 
-	public static DeleteDeployGroupResponse unmarshall(DeleteDeployGroupResponse deleteDeployGroupResponse, UnmarshallerContext context) {
+	public static DeleteDeployGroupResponse unmarshall(DeleteDeployGroupResponse deleteDeployGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteDeployGroupResponse.setRequestId(context.stringValue("DeleteDeployGroupResponse.RequestId"));
-		deleteDeployGroupResponse.setCode(context.integerValue("DeleteDeployGroupResponse.Code"));
-		deleteDeployGroupResponse.setMessage(context.stringValue("DeleteDeployGroupResponse.Message"));
-		deleteDeployGroupResponse.setData(context.stringValue("DeleteDeployGroupResponse.Data"));
+		deleteDeployGroupResponse.setRequestId(_ctx.stringValue("DeleteDeployGroupResponse.RequestId"));
+		deleteDeployGroupResponse.setCode(_ctx.integerValue("DeleteDeployGroupResponse.Code"));
+		deleteDeployGroupResponse.setMessage(_ctx.stringValue("DeleteDeployGroupResponse.Message"));
+		deleteDeployGroupResponse.setData(_ctx.stringValue("DeleteDeployGroupResponse.Data"));
 	 
 	 	return deleteDeployGroupResponse;
 	}
