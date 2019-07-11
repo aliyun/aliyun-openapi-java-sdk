@@ -26,15 +26,11 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		super("Dbs", "2019-03-06", "CreateBackupPlan", "cbs");
 	}
 
-	private String backupMethod;
-
 	private String databaseType;
 
 	private String period;
 
 	private String clientToken;
-
-	private String region;
 
 	private String ownerId;
 
@@ -42,16 +38,19 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 
 	private String instanceClass;
 
-	public String getBackupMethod() {
-		return this.backupMethod;
-	}
+	private String storageType;
 
-	public void setBackupMethod(String backupMethod) {
-		this.backupMethod = backupMethod;
-		if(backupMethod != null){
-			putQueryParameter("BackupMethod", backupMethod);
-		}
-	}
+	private String backupMethod;
+
+	private String databaseRegion;
+
+	private String storageRegion;
+
+	private String instanceType;
+
+	private String region;
+
+	private String payType;
 
 	public String getDatabaseType() {
 		return this.databaseType;
@@ -86,17 +85,6 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +115,83 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 		this.instanceClass = instanceClass;
 		if(instanceClass != null){
 			putQueryParameter("InstanceClass", instanceClass);
+		}
+	}
+
+	public String getStorageType() {
+		return this.storageType;
+	}
+
+	public void setStorageType(String storageType) {
+		this.storageType = storageType;
+		if(storageType != null){
+			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public String getBackupMethod() {
+		return this.backupMethod;
+	}
+
+	public void setBackupMethod(String backupMethod) {
+		this.backupMethod = backupMethod;
+		if(backupMethod != null){
+			putQueryParameter("BackupMethod", backupMethod);
+		}
+	}
+
+	public String getDatabaseRegion() {
+		return this.databaseRegion;
+	}
+
+	public void setDatabaseRegion(String databaseRegion) {
+		this.databaseRegion = databaseRegion;
+		if(databaseRegion != null){
+			putQueryParameter("DatabaseRegion", databaseRegion);
+		}
+	}
+
+	public String getStorageRegion() {
+		return this.storageRegion;
+	}
+
+	public void setStorageRegion(String storageRegion) {
+		this.storageRegion = storageRegion;
+		if(storageRegion != null){
+			putQueryParameter("StorageRegion", storageRegion);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

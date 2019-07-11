@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RenewBackupPlanResponseUnmarshaller {
 
-	public static RenewBackupPlanResponse unmarshall(RenewBackupPlanResponse renewBackupPlanResponse, UnmarshallerContext context) {
+	public static RenewBackupPlanResponse unmarshall(RenewBackupPlanResponse renewBackupPlanResponse, UnmarshallerContext _ctx) {
 		
-		renewBackupPlanResponse.setRequestId(context.stringValue("RenewBackupPlanResponse.RequestId"));
-		renewBackupPlanResponse.setSuccess(context.booleanValue("RenewBackupPlanResponse.Success"));
-		renewBackupPlanResponse.setErrCode(context.stringValue("RenewBackupPlanResponse.ErrCode"));
-		renewBackupPlanResponse.setErrMessage(context.stringValue("RenewBackupPlanResponse.ErrMessage"));
-		renewBackupPlanResponse.setHttpStatusCode(context.integerValue("RenewBackupPlanResponse.HttpStatusCode"));
-		renewBackupPlanResponse.setBackupPlanId(context.stringValue("RenewBackupPlanResponse.BackupPlanId"));
-		renewBackupPlanResponse.setOrderId(context.stringValue("RenewBackupPlanResponse.OrderId"));
+		renewBackupPlanResponse.setRequestId(_ctx.stringValue("RenewBackupPlanResponse.RequestId"));
+		renewBackupPlanResponse.setSuccess(_ctx.booleanValue("RenewBackupPlanResponse.Success"));
+		renewBackupPlanResponse.setErrCode(_ctx.stringValue("RenewBackupPlanResponse.ErrCode"));
+		renewBackupPlanResponse.setErrMessage(_ctx.stringValue("RenewBackupPlanResponse.ErrMessage"));
+		renewBackupPlanResponse.setHttpStatusCode(_ctx.integerValue("RenewBackupPlanResponse.HttpStatusCode"));
+		renewBackupPlanResponse.setBackupPlanId(_ctx.stringValue("RenewBackupPlanResponse.BackupPlanId"));
+		renewBackupPlanResponse.setOrderId(_ctx.stringValue("RenewBackupPlanResponse.OrderId"));
 	 
 	 	return renewBackupPlanResponse;
 	}

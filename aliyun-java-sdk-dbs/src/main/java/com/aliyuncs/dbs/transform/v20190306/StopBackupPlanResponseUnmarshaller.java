@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopBackupPlanResponseUnmarshaller {
 
-	public static StopBackupPlanResponse unmarshall(StopBackupPlanResponse stopBackupPlanResponse, UnmarshallerContext context) {
+	public static StopBackupPlanResponse unmarshall(StopBackupPlanResponse stopBackupPlanResponse, UnmarshallerContext _ctx) {
 		
-		stopBackupPlanResponse.setRequestId(context.stringValue("StopBackupPlanResponse.RequestId"));
-		stopBackupPlanResponse.setSuccess(context.booleanValue("StopBackupPlanResponse.Success"));
-		stopBackupPlanResponse.setErrCode(context.stringValue("StopBackupPlanResponse.ErrCode"));
-		stopBackupPlanResponse.setErrMessage(context.stringValue("StopBackupPlanResponse.ErrMessage"));
-		stopBackupPlanResponse.setHttpStatusCode(context.integerValue("StopBackupPlanResponse.HttpStatusCode"));
-		stopBackupPlanResponse.setBackupPlanId(context.stringValue("StopBackupPlanResponse.BackupPlanId"));
+		stopBackupPlanResponse.setRequestId(_ctx.stringValue("StopBackupPlanResponse.RequestId"));
+		stopBackupPlanResponse.setSuccess(_ctx.booleanValue("StopBackupPlanResponse.Success"));
+		stopBackupPlanResponse.setErrCode(_ctx.stringValue("StopBackupPlanResponse.ErrCode"));
+		stopBackupPlanResponse.setErrMessage(_ctx.stringValue("StopBackupPlanResponse.ErrMessage"));
+		stopBackupPlanResponse.setHttpStatusCode(_ctx.integerValue("StopBackupPlanResponse.HttpStatusCode"));
+		stopBackupPlanResponse.setBackupPlanId(_ctx.stringValue("StopBackupPlanResponse.BackupPlanId"));
 	 
 	 	return stopBackupPlanResponse;
 	}

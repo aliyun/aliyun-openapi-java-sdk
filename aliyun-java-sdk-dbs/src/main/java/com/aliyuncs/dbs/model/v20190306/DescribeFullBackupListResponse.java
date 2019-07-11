@@ -145,6 +145,8 @@ public class DescribeFullBackupListResponse extends AcsResponse {
 
 		private String errMessage;
 
+		private String backupObjects;
+
 		public String getBackupSetId() {
 			return this.backupSetId;
 		}
@@ -215,6 +217,14 @@ public class DescribeFullBackupListResponse extends AcsResponse {
 
 		public void setErrMessage(String errMessage) {
 			this.errMessage = errMessage;
+		}
+
+		public String getBackupObjects() {
+			return this.backupObjects;
+		}
+
+		public void setBackupObjects(String backupObjects) {
+			this.backupObjects = backupObjects;
 		}
 	}
 

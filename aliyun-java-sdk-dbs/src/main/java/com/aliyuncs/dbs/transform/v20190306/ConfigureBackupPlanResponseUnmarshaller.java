@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ConfigureBackupPlanResponseUnmarshaller {
 
-	public static ConfigureBackupPlanResponse unmarshall(ConfigureBackupPlanResponse configureBackupPlanResponse, UnmarshallerContext context) {
+	public static ConfigureBackupPlanResponse unmarshall(ConfigureBackupPlanResponse configureBackupPlanResponse, UnmarshallerContext _ctx) {
 		
-		configureBackupPlanResponse.setRequestId(context.stringValue("ConfigureBackupPlanResponse.RequestId"));
-		configureBackupPlanResponse.setSuccess(context.booleanValue("ConfigureBackupPlanResponse.Success"));
-		configureBackupPlanResponse.setErrCode(context.stringValue("ConfigureBackupPlanResponse.ErrCode"));
-		configureBackupPlanResponse.setErrMessage(context.stringValue("ConfigureBackupPlanResponse.ErrMessage"));
-		configureBackupPlanResponse.setHttpStatusCode(context.integerValue("ConfigureBackupPlanResponse.HttpStatusCode"));
-		configureBackupPlanResponse.setBackupPlanId(context.stringValue("ConfigureBackupPlanResponse.BackupPlanId"));
+		configureBackupPlanResponse.setRequestId(_ctx.stringValue("ConfigureBackupPlanResponse.RequestId"));
+		configureBackupPlanResponse.setSuccess(_ctx.booleanValue("ConfigureBackupPlanResponse.Success"));
+		configureBackupPlanResponse.setErrCode(_ctx.stringValue("ConfigureBackupPlanResponse.ErrCode"));
+		configureBackupPlanResponse.setErrMessage(_ctx.stringValue("ConfigureBackupPlanResponse.ErrMessage"));
+		configureBackupPlanResponse.setHttpStatusCode(_ctx.integerValue("ConfigureBackupPlanResponse.HttpStatusCode"));
+		configureBackupPlanResponse.setBackupPlanId(_ctx.stringValue("ConfigureBackupPlanResponse.BackupPlanId"));
 	 
 	 	return configureBackupPlanResponse;
 	}

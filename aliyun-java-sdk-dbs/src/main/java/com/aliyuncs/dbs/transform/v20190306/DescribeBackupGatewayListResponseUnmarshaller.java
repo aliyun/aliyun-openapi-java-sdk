@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupGatewayListResponseUnmarshaller {
 
-	public static DescribeBackupGatewayListResponse unmarshall(DescribeBackupGatewayListResponse describeBackupGatewayListResponse, UnmarshallerContext context) {
+	public static DescribeBackupGatewayListResponse unmarshall(DescribeBackupGatewayListResponse describeBackupGatewayListResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupGatewayListResponse.setRequestId(context.stringValue("DescribeBackupGatewayListResponse.RequestId"));
-		describeBackupGatewayListResponse.setSuccess(context.booleanValue("DescribeBackupGatewayListResponse.Success"));
-		describeBackupGatewayListResponse.setErrCode(context.stringValue("DescribeBackupGatewayListResponse.ErrCode"));
-		describeBackupGatewayListResponse.setErrMessage(context.stringValue("DescribeBackupGatewayListResponse.ErrMessage"));
-		describeBackupGatewayListResponse.setHttpStatusCode(context.integerValue("DescribeBackupGatewayListResponse.HttpStatusCode"));
-		describeBackupGatewayListResponse.setTotalPages(context.integerValue("DescribeBackupGatewayListResponse.TotalPages"));
-		describeBackupGatewayListResponse.setPageSize(context.integerValue("DescribeBackupGatewayListResponse.PageSize"));
-		describeBackupGatewayListResponse.setPageNum(context.integerValue("DescribeBackupGatewayListResponse.PageNum"));
-		describeBackupGatewayListResponse.setTotalElements(context.integerValue("DescribeBackupGatewayListResponse.TotalElements"));
+		describeBackupGatewayListResponse.setRequestId(_ctx.stringValue("DescribeBackupGatewayListResponse.RequestId"));
+		describeBackupGatewayListResponse.setSuccess(_ctx.booleanValue("DescribeBackupGatewayListResponse.Success"));
+		describeBackupGatewayListResponse.setErrCode(_ctx.stringValue("DescribeBackupGatewayListResponse.ErrCode"));
+		describeBackupGatewayListResponse.setErrMessage(_ctx.stringValue("DescribeBackupGatewayListResponse.ErrMessage"));
+		describeBackupGatewayListResponse.setHttpStatusCode(_ctx.integerValue("DescribeBackupGatewayListResponse.HttpStatusCode"));
+		describeBackupGatewayListResponse.setTotalPages(_ctx.integerValue("DescribeBackupGatewayListResponse.TotalPages"));
+		describeBackupGatewayListResponse.setPageSize(_ctx.integerValue("DescribeBackupGatewayListResponse.PageSize"));
+		describeBackupGatewayListResponse.setPageNum(_ctx.integerValue("DescribeBackupGatewayListResponse.PageNum"));
+		describeBackupGatewayListResponse.setTotalElements(_ctx.integerValue("DescribeBackupGatewayListResponse.TotalElements"));
 
 		List<BackupGateway> items = new ArrayList<BackupGateway>();
-		for (int i = 0; i < context.lengthValue("DescribeBackupGatewayListResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBackupGatewayListResponse.Items.Length"); i++) {
 			BackupGateway backupGateway = new BackupGateway();
-			backupGateway.setBackupGatewayId(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayId"));
-			backupGateway.setSourceEndpointInternetIP(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointInternetIP"));
-			backupGateway.setSourceEndpointIntranetIP(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointIntranetIP"));
-			backupGateway.setSourceEndpointHostname(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointHostname"));
-			backupGateway.setBackupGatewayStatus(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayStatus"));
-			backupGateway.setLastHeartbeatTime(context.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].LastHeartbeatTime"));
-			backupGateway.setBackupGatewayCreateTime(context.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayCreateTime"));
-			backupGateway.setRegion(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].Region"));
-			backupGateway.setDisplayName(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].DisplayName"));
-			backupGateway.setIdentifier(context.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].Identifier"));
+			backupGateway.setBackupGatewayId(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayId"));
+			backupGateway.setSourceEndpointInternetIP(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointInternetIP"));
+			backupGateway.setSourceEndpointIntranetIP(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointIntranetIP"));
+			backupGateway.setSourceEndpointHostname(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].SourceEndpointHostname"));
+			backupGateway.setBackupGatewayStatus(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayStatus"));
+			backupGateway.setLastHeartbeatTime(_ctx.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].LastHeartbeatTime"));
+			backupGateway.setBackupGatewayCreateTime(_ctx.longValue("DescribeBackupGatewayListResponse.Items["+ i +"].BackupGatewayCreateTime"));
+			backupGateway.setRegion(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].Region"));
+			backupGateway.setDisplayName(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].DisplayName"));
+			backupGateway.setIdentifier(_ctx.stringValue("DescribeBackupGatewayListResponse.Items["+ i +"].Identifier"));
 
 			items.add(backupGateway);
 		}

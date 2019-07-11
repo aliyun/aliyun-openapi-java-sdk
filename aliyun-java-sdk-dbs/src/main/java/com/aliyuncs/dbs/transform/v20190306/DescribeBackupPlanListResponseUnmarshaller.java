@@ -24,44 +24,44 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupPlanListResponseUnmarshaller {
 
-	public static DescribeBackupPlanListResponse unmarshall(DescribeBackupPlanListResponse describeBackupPlanListResponse, UnmarshallerContext context) {
+	public static DescribeBackupPlanListResponse unmarshall(DescribeBackupPlanListResponse describeBackupPlanListResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupPlanListResponse.setRequestId(context.stringValue("DescribeBackupPlanListResponse.RequestId"));
-		describeBackupPlanListResponse.setSuccess(context.booleanValue("DescribeBackupPlanListResponse.Success"));
-		describeBackupPlanListResponse.setErrCode(context.stringValue("DescribeBackupPlanListResponse.ErrCode"));
-		describeBackupPlanListResponse.setErrMessage(context.stringValue("DescribeBackupPlanListResponse.ErrMessage"));
-		describeBackupPlanListResponse.setHttpStatusCode(context.integerValue("DescribeBackupPlanListResponse.HttpStatusCode"));
-		describeBackupPlanListResponse.setTotalPages(context.integerValue("DescribeBackupPlanListResponse.TotalPages"));
-		describeBackupPlanListResponse.setPageSize(context.integerValue("DescribeBackupPlanListResponse.PageSize"));
-		describeBackupPlanListResponse.setPageNum(context.integerValue("DescribeBackupPlanListResponse.PageNum"));
-		describeBackupPlanListResponse.setTotalElements(context.integerValue("DescribeBackupPlanListResponse.TotalElements"));
+		describeBackupPlanListResponse.setRequestId(_ctx.stringValue("DescribeBackupPlanListResponse.RequestId"));
+		describeBackupPlanListResponse.setSuccess(_ctx.booleanValue("DescribeBackupPlanListResponse.Success"));
+		describeBackupPlanListResponse.setErrCode(_ctx.stringValue("DescribeBackupPlanListResponse.ErrCode"));
+		describeBackupPlanListResponse.setErrMessage(_ctx.stringValue("DescribeBackupPlanListResponse.ErrMessage"));
+		describeBackupPlanListResponse.setHttpStatusCode(_ctx.integerValue("DescribeBackupPlanListResponse.HttpStatusCode"));
+		describeBackupPlanListResponse.setTotalPages(_ctx.integerValue("DescribeBackupPlanListResponse.TotalPages"));
+		describeBackupPlanListResponse.setPageSize(_ctx.integerValue("DescribeBackupPlanListResponse.PageSize"));
+		describeBackupPlanListResponse.setPageNum(_ctx.integerValue("DescribeBackupPlanListResponse.PageNum"));
+		describeBackupPlanListResponse.setTotalElements(_ctx.integerValue("DescribeBackupPlanListResponse.TotalElements"));
 
 		List<BackupPlanDetail> items = new ArrayList<BackupPlanDetail>();
-		for (int i = 0; i < context.lengthValue("DescribeBackupPlanListResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBackupPlanListResponse.Items.Length"); i++) {
 			BackupPlanDetail backupPlanDetail = new BackupPlanDetail();
-			backupPlanDetail.setBackupPlanId(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanId"));
-			backupPlanDetail.setSourceEndpointInstanceType(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointInstanceType"));
-			backupPlanDetail.setSourceEndpointRegion(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointRegion"));
-			backupPlanDetail.setSourceEndpointInstanceID(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointInstanceID"));
-			backupPlanDetail.setSourceEndpointIpPort(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointIpPort"));
-			backupPlanDetail.setSourceEndpointDatabaseName(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointDatabaseName"));
-			backupPlanDetail.setSourceEndpointUserName(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointUserName"));
-			backupPlanDetail.setBackupObjects(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupObjects"));
-			backupPlanDetail.setBackupGatewayId(context.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupGatewayId"));
-			backupPlanDetail.setOSSBucketRegion(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].OSSBucketRegion"));
-			backupPlanDetail.setOSSBucketName(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].OSSBucketName"));
-			backupPlanDetail.setBackupPeriod(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPeriod"));
-			backupPlanDetail.setBackupStartTime(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupStartTime"));
-			backupPlanDetail.setEnableBackupLog(context.booleanValue("DescribeBackupPlanListResponse.Items["+ i +"].EnableBackupLog"));
-			backupPlanDetail.setBackupRetentionPeriod(context.integerValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupRetentionPeriod"));
-			backupPlanDetail.setDuplicationInfrequentAccessPeriod(context.integerValue("DescribeBackupPlanListResponse.Items["+ i +"].DuplicationInfrequentAccessPeriod"));
-			backupPlanDetail.setDuplicationArchivePeriod(context.integerValue("DescribeBackupPlanListResponse.Items["+ i +"].DuplicationArchivePeriod"));
-			backupPlanDetail.setBackupPlanName(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanName"));
-			backupPlanDetail.setSourceEndpointOracleSID(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointOracleSID"));
-			backupPlanDetail.setInstanceClass(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].InstanceClass"));
-			backupPlanDetail.setBackupMethod(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupMethod"));
-			backupPlanDetail.setBackupPlanCreateTime(context.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanCreateTime"));
-			backupPlanDetail.setBackupPlanStatus(context.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanStatus"));
+			backupPlanDetail.setBackupPlanId(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanId"));
+			backupPlanDetail.setSourceEndpointInstanceType(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointInstanceType"));
+			backupPlanDetail.setSourceEndpointRegion(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointRegion"));
+			backupPlanDetail.setSourceEndpointInstanceID(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointInstanceID"));
+			backupPlanDetail.setSourceEndpointIpPort(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointIpPort"));
+			backupPlanDetail.setSourceEndpointDatabaseName(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointDatabaseName"));
+			backupPlanDetail.setSourceEndpointUserName(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointUserName"));
+			backupPlanDetail.setBackupObjects(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupObjects"));
+			backupPlanDetail.setBackupGatewayId(_ctx.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupGatewayId"));
+			backupPlanDetail.setOSSBucketRegion(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].OSSBucketRegion"));
+			backupPlanDetail.setOSSBucketName(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].OSSBucketName"));
+			backupPlanDetail.setBackupPeriod(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPeriod"));
+			backupPlanDetail.setBackupStartTime(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupStartTime"));
+			backupPlanDetail.setEnableBackupLog(_ctx.booleanValue("DescribeBackupPlanListResponse.Items["+ i +"].EnableBackupLog"));
+			backupPlanDetail.setBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupRetentionPeriod"));
+			backupPlanDetail.setDuplicationInfrequentAccessPeriod(_ctx.integerValue("DescribeBackupPlanListResponse.Items["+ i +"].DuplicationInfrequentAccessPeriod"));
+			backupPlanDetail.setDuplicationArchivePeriod(_ctx.integerValue("DescribeBackupPlanListResponse.Items["+ i +"].DuplicationArchivePeriod"));
+			backupPlanDetail.setBackupPlanName(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanName"));
+			backupPlanDetail.setSourceEndpointOracleSID(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].SourceEndpointOracleSID"));
+			backupPlanDetail.setInstanceClass(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].InstanceClass"));
+			backupPlanDetail.setBackupMethod(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupMethod"));
+			backupPlanDetail.setBackupPlanCreateTime(_ctx.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanCreateTime"));
+			backupPlanDetail.setBackupPlanStatus(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanStatus"));
 
 			items.add(backupPlanDetail);
 		}

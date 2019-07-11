@@ -23,23 +23,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNodeCidrListResponseUnmarshaller {
 
-	public static DescribeNodeCidrListResponse unmarshall(DescribeNodeCidrListResponse describeNodeCidrListResponse, UnmarshallerContext context) {
+	public static DescribeNodeCidrListResponse unmarshall(DescribeNodeCidrListResponse describeNodeCidrListResponse, UnmarshallerContext _ctx) {
 		
-		describeNodeCidrListResponse.setRequestId(context.stringValue("DescribeNodeCidrListResponse.RequestId"));
-		describeNodeCidrListResponse.setSuccess(context.booleanValue("DescribeNodeCidrListResponse.Success"));
-		describeNodeCidrListResponse.setErrCode(context.stringValue("DescribeNodeCidrListResponse.ErrCode"));
-		describeNodeCidrListResponse.setErrMessage(context.stringValue("DescribeNodeCidrListResponse.ErrMessage"));
-		describeNodeCidrListResponse.setHttpStatusCode(context.integerValue("DescribeNodeCidrListResponse.HttpStatusCode"));
+		describeNodeCidrListResponse.setRequestId(_ctx.stringValue("DescribeNodeCidrListResponse.RequestId"));
+		describeNodeCidrListResponse.setSuccess(_ctx.booleanValue("DescribeNodeCidrListResponse.Success"));
+		describeNodeCidrListResponse.setErrCode(_ctx.stringValue("DescribeNodeCidrListResponse.ErrCode"));
+		describeNodeCidrListResponse.setErrMessage(_ctx.stringValue("DescribeNodeCidrListResponse.ErrMessage"));
+		describeNodeCidrListResponse.setHttpStatusCode(_ctx.integerValue("DescribeNodeCidrListResponse.HttpStatusCode"));
 
 		List<String> internetIPs = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeNodeCidrListResponse.InternetIPs.Length"); i++) {
-			internetIPs.add(context.stringValue("DescribeNodeCidrListResponse.InternetIPs["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeNodeCidrListResponse.InternetIPs.Length"); i++) {
+			internetIPs.add(_ctx.stringValue("DescribeNodeCidrListResponse.InternetIPs["+ i +"]"));
 		}
 		describeNodeCidrListResponse.setInternetIPs(internetIPs);
 
 		List<String> intranetIPs = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeNodeCidrListResponse.IntranetIPs.Length"); i++) {
-			intranetIPs.add(context.stringValue("DescribeNodeCidrListResponse.IntranetIPs["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeNodeCidrListResponse.IntranetIPs.Length"); i++) {
+			intranetIPs.add(_ctx.stringValue("DescribeNodeCidrListResponse.IntranetIPs["+ i +"]"));
 		}
 		describeNodeCidrListResponse.setIntranetIPs(intranetIPs);
 	 

@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyBackupObjectsResponseUnmarshaller {
 
-	public static ModifyBackupObjectsResponse unmarshall(ModifyBackupObjectsResponse modifyBackupObjectsResponse, UnmarshallerContext context) {
+	public static ModifyBackupObjectsResponse unmarshall(ModifyBackupObjectsResponse modifyBackupObjectsResponse, UnmarshallerContext _ctx) {
 		
-		modifyBackupObjectsResponse.setRequestId(context.stringValue("ModifyBackupObjectsResponse.RequestId"));
-		modifyBackupObjectsResponse.setSuccess(context.booleanValue("ModifyBackupObjectsResponse.Success"));
-		modifyBackupObjectsResponse.setErrCode(context.stringValue("ModifyBackupObjectsResponse.ErrCode"));
-		modifyBackupObjectsResponse.setErrMessage(context.stringValue("ModifyBackupObjectsResponse.ErrMessage"));
-		modifyBackupObjectsResponse.setHttpStatusCode(context.integerValue("ModifyBackupObjectsResponse.HttpStatusCode"));
-		modifyBackupObjectsResponse.setBackupPlanId(context.stringValue("ModifyBackupObjectsResponse.BackupPlanId"));
-		modifyBackupObjectsResponse.setNeedPrecheck(context.booleanValue("ModifyBackupObjectsResponse.NeedPrecheck"));
+		modifyBackupObjectsResponse.setRequestId(_ctx.stringValue("ModifyBackupObjectsResponse.RequestId"));
+		modifyBackupObjectsResponse.setSuccess(_ctx.booleanValue("ModifyBackupObjectsResponse.Success"));
+		modifyBackupObjectsResponse.setErrCode(_ctx.stringValue("ModifyBackupObjectsResponse.ErrCode"));
+		modifyBackupObjectsResponse.setErrMessage(_ctx.stringValue("ModifyBackupObjectsResponse.ErrMessage"));
+		modifyBackupObjectsResponse.setHttpStatusCode(_ctx.integerValue("ModifyBackupObjectsResponse.HttpStatusCode"));
+		modifyBackupObjectsResponse.setBackupPlanId(_ctx.stringValue("ModifyBackupObjectsResponse.BackupPlanId"));
+		modifyBackupObjectsResponse.setNeedPrecheck(_ctx.booleanValue("ModifyBackupObjectsResponse.NeedPrecheck"));
 	 
 	 	return modifyBackupObjectsResponse;
 	}

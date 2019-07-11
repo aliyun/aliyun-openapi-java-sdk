@@ -157,6 +157,8 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 		private Long restoreTaskCreateTime;
 
+		private Long restoreTaskFinishTime;
+
 		private String restoreStatus;
 
 		private String restoreTaskId;
@@ -289,6 +291,14 @@ public class DescribeRestoreTaskListResponse extends AcsResponse {
 
 		public void setRestoreTaskCreateTime(Long restoreTaskCreateTime) {
 			this.restoreTaskCreateTime = restoreTaskCreateTime;
+		}
+
+		public Long getRestoreTaskFinishTime() {
+			return this.restoreTaskFinishTime;
+		}
+
+		public void setRestoreTaskFinishTime(Long restoreTaskFinishTime) {
+			this.restoreTaskFinishTime = restoreTaskFinishTime;
 		}
 
 		public String getRestoreStatus() {

@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartRestoreTaskResponseUnmarshaller {
 
-	public static StartRestoreTaskResponse unmarshall(StartRestoreTaskResponse startRestoreTaskResponse, UnmarshallerContext context) {
+	public static StartRestoreTaskResponse unmarshall(StartRestoreTaskResponse startRestoreTaskResponse, UnmarshallerContext _ctx) {
 		
-		startRestoreTaskResponse.setRequestId(context.stringValue("StartRestoreTaskResponse.RequestId"));
-		startRestoreTaskResponse.setSuccess(context.booleanValue("StartRestoreTaskResponse.Success"));
-		startRestoreTaskResponse.setErrCode(context.stringValue("StartRestoreTaskResponse.ErrCode"));
-		startRestoreTaskResponse.setErrMessage(context.stringValue("StartRestoreTaskResponse.ErrMessage"));
-		startRestoreTaskResponse.setHttpStatusCode(context.integerValue("StartRestoreTaskResponse.HttpStatusCode"));
-		startRestoreTaskResponse.setRestoreTaskId(context.stringValue("StartRestoreTaskResponse.RestoreTaskId"));
+		startRestoreTaskResponse.setRequestId(_ctx.stringValue("StartRestoreTaskResponse.RequestId"));
+		startRestoreTaskResponse.setSuccess(_ctx.booleanValue("StartRestoreTaskResponse.Success"));
+		startRestoreTaskResponse.setErrCode(_ctx.stringValue("StartRestoreTaskResponse.ErrCode"));
+		startRestoreTaskResponse.setErrMessage(_ctx.stringValue("StartRestoreTaskResponse.ErrMessage"));
+		startRestoreTaskResponse.setHttpStatusCode(_ctx.integerValue("StartRestoreTaskResponse.HttpStatusCode"));
+		startRestoreTaskResponse.setRestoreTaskId(_ctx.stringValue("StartRestoreTaskResponse.RestoreTaskId"));
 	 
 	 	return startRestoreTaskResponse;
 	}

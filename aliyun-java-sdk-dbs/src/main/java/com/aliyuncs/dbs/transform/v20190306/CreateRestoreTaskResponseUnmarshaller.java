@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateRestoreTaskResponseUnmarshaller {
 
-	public static CreateRestoreTaskResponse unmarshall(CreateRestoreTaskResponse createRestoreTaskResponse, UnmarshallerContext context) {
+	public static CreateRestoreTaskResponse unmarshall(CreateRestoreTaskResponse createRestoreTaskResponse, UnmarshallerContext _ctx) {
 		
-		createRestoreTaskResponse.setRequestId(context.stringValue("CreateRestoreTaskResponse.RequestId"));
-		createRestoreTaskResponse.setSuccess(context.booleanValue("CreateRestoreTaskResponse.Success"));
-		createRestoreTaskResponse.setErrCode(context.stringValue("CreateRestoreTaskResponse.ErrCode"));
-		createRestoreTaskResponse.setErrMessage(context.stringValue("CreateRestoreTaskResponse.ErrMessage"));
-		createRestoreTaskResponse.setHttpStatusCode(context.integerValue("CreateRestoreTaskResponse.HttpStatusCode"));
-		createRestoreTaskResponse.setRestoreTaskId(context.stringValue("CreateRestoreTaskResponse.RestoreTaskId"));
+		createRestoreTaskResponse.setRequestId(_ctx.stringValue("CreateRestoreTaskResponse.RequestId"));
+		createRestoreTaskResponse.setSuccess(_ctx.booleanValue("CreateRestoreTaskResponse.Success"));
+		createRestoreTaskResponse.setErrCode(_ctx.stringValue("CreateRestoreTaskResponse.ErrCode"));
+		createRestoreTaskResponse.setErrMessage(_ctx.stringValue("CreateRestoreTaskResponse.ErrMessage"));
+		createRestoreTaskResponse.setHttpStatusCode(_ctx.integerValue("CreateRestoreTaskResponse.HttpStatusCode"));
+		createRestoreTaskResponse.setRestoreTaskId(_ctx.stringValue("CreateRestoreTaskResponse.RestoreTaskId"));
 	 
 	 	return createRestoreTaskResponse;
 	}
