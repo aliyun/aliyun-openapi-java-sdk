@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteCasterSceneConfigResponseUnmarshaller {
 
-	public static DeleteCasterSceneConfigResponse unmarshall(DeleteCasterSceneConfigResponse deleteCasterSceneConfigResponse, UnmarshallerContext context) {
+	public static DeleteCasterSceneConfigResponse unmarshall(DeleteCasterSceneConfigResponse deleteCasterSceneConfigResponse, UnmarshallerContext _ctx) {
 		
-		deleteCasterSceneConfigResponse.setRequestId(context.stringValue("DeleteCasterSceneConfigResponse.RequestId"));
+		deleteCasterSceneConfigResponse.setRequestId(_ctx.stringValue("DeleteCasterSceneConfigResponse.RequestId"));
 	 
 	 	return deleteCasterSceneConfigResponse;
 	}

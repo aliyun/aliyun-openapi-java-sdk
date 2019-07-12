@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveDomainRealTimeBpsDataResponseUnmarshaller {
 
-	public static DescribeLiveDomainRealTimeBpsDataResponse unmarshall(DescribeLiveDomainRealTimeBpsDataResponse describeLiveDomainRealTimeBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeLiveDomainRealTimeBpsDataResponse unmarshall(DescribeLiveDomainRealTimeBpsDataResponse describeLiveDomainRealTimeBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveDomainRealTimeBpsDataResponse.setRequestId(context.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.RequestId"));
-		describeLiveDomainRealTimeBpsDataResponse.setDomainName(context.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.DomainName"));
-		describeLiveDomainRealTimeBpsDataResponse.setStartTime(context.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.StartTime"));
-		describeLiveDomainRealTimeBpsDataResponse.setEndTime(context.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.EndTime"));
-		describeLiveDomainRealTimeBpsDataResponse.setDataInterval(context.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.DataInterval"));
+		describeLiveDomainRealTimeBpsDataResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.RequestId"));
+		describeLiveDomainRealTimeBpsDataResponse.setDomainName(_ctx.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.DomainName"));
+		describeLiveDomainRealTimeBpsDataResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.StartTime"));
+		describeLiveDomainRealTimeBpsDataResponse.setEndTime(_ctx.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.EndTime"));
+		describeLiveDomainRealTimeBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.DataInterval"));
 
 		List<DataModule> realTimeBpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveDomainRealTimeBpsDataResponse.RealTimeBpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainRealTimeBpsDataResponse.RealTimeBpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.RealTimeBpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.RealTimeBpsDataPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.RealTimeBpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeLiveDomainRealTimeBpsDataResponse.RealTimeBpsDataPerInterval["+ i +"].Value"));
 
 			realTimeBpsDataPerInterval.add(dataModule);
 		}

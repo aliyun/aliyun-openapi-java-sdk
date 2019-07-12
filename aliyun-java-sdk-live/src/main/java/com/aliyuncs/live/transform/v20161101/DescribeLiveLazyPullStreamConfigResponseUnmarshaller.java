@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveLazyPullStreamConfigResponseUnmarshaller {
 
-	public static DescribeLiveLazyPullStreamConfigResponse unmarshall(DescribeLiveLazyPullStreamConfigResponse describeLiveLazyPullStreamConfigResponse, UnmarshallerContext context) {
+	public static DescribeLiveLazyPullStreamConfigResponse unmarshall(DescribeLiveLazyPullStreamConfigResponse describeLiveLazyPullStreamConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveLazyPullStreamConfigResponse.setRequestId(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.RequestId"));
+		describeLiveLazyPullStreamConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.RequestId"));
 
 		List<LiveLazyPullConfig> liveLazyPullConfigList = new ArrayList<LiveLazyPullConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList.Length"); i++) {
 			LiveLazyPullConfig liveLazyPullConfig = new LiveLazyPullConfig();
-			liveLazyPullConfig.setDomainName(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].DomainName"));
-			liveLazyPullConfig.setAppName(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].AppName"));
-			liveLazyPullConfig.setPullDomainName(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullDomainName"));
-			liveLazyPullConfig.setPullAppName(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAppName"));
-			liveLazyPullConfig.setPullProtocol(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullProtocol"));
-			liveLazyPullConfig.setPullAuthType(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthType"));
-			liveLazyPullConfig.setPullAuthKey(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthKey"));
-			liveLazyPullConfig.setPullArgs(context.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullArgs"));
+			liveLazyPullConfig.setDomainName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].DomainName"));
+			liveLazyPullConfig.setAppName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].AppName"));
+			liveLazyPullConfig.setPullDomainName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullDomainName"));
+			liveLazyPullConfig.setPullAppName(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAppName"));
+			liveLazyPullConfig.setPullProtocol(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullProtocol"));
+			liveLazyPullConfig.setPullAuthType(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthType"));
+			liveLazyPullConfig.setPullAuthKey(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullAuthKey"));
+			liveLazyPullConfig.setPullArgs(_ctx.stringValue("DescribeLiveLazyPullStreamConfigResponse.LiveLazyPullConfigList["+ i +"].PullArgs"));
 
 			liveLazyPullConfigList.add(liveLazyPullConfig);
 		}

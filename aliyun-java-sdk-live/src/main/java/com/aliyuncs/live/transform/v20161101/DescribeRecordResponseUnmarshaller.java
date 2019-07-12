@@ -20,19 +20,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRecordResponseUnmarshaller {
 
-	public static DescribeRecordResponse unmarshall(DescribeRecordResponse describeRecordResponse, UnmarshallerContext context) {
+	public static DescribeRecordResponse unmarshall(DescribeRecordResponse describeRecordResponse, UnmarshallerContext _ctx) {
 		
-		describeRecordResponse.setRequestId(context.stringValue("DescribeRecordResponse.RequestId"));
-		describeRecordResponse.setRecordId(context.stringValue("DescribeRecordResponse.RecordId"));
-		describeRecordResponse.setAppId(context.stringValue("DescribeRecordResponse.AppId"));
-		describeRecordResponse.setBoardId(context.integerValue("DescribeRecordResponse.BoardId"));
-		describeRecordResponse.setRecordStartTime(context.longValue("DescribeRecordResponse.RecordStartTime"));
-		describeRecordResponse.setStartTime(context.longValue("DescribeRecordResponse.StartTime"));
-		describeRecordResponse.setEndTime(context.longValue("DescribeRecordResponse.EndTime"));
-		describeRecordResponse.setState(context.integerValue("DescribeRecordResponse.State"));
-		describeRecordResponse.setOssPath(context.stringValue("DescribeRecordResponse.OssPath"));
-		describeRecordResponse.setOssBucket(context.stringValue("DescribeRecordResponse.OssBucket"));
-		describeRecordResponse.setOssEndpoint(context.stringValue("DescribeRecordResponse.OssEndpoint"));
+		describeRecordResponse.setRequestId(_ctx.stringValue("DescribeRecordResponse.RequestId"));
+		describeRecordResponse.setRecordId(_ctx.stringValue("DescribeRecordResponse.RecordId"));
+		describeRecordResponse.setAppId(_ctx.stringValue("DescribeRecordResponse.AppId"));
+		describeRecordResponse.setBoardId(_ctx.integerValue("DescribeRecordResponse.BoardId"));
+		describeRecordResponse.setRecordStartTime(_ctx.longValue("DescribeRecordResponse.RecordStartTime"));
+		describeRecordResponse.setStartTime(_ctx.longValue("DescribeRecordResponse.StartTime"));
+		describeRecordResponse.setEndTime(_ctx.longValue("DescribeRecordResponse.EndTime"));
+		describeRecordResponse.setState(_ctx.integerValue("DescribeRecordResponse.State"));
+		describeRecordResponse.setOssPath(_ctx.stringValue("DescribeRecordResponse.OssPath"));
+		describeRecordResponse.setOssBucket(_ctx.stringValue("DescribeRecordResponse.OssBucket"));
+		describeRecordResponse.setOssEndpoint(_ctx.stringValue("DescribeRecordResponse.OssEndpoint"));
 	 
 	 	return describeRecordResponse;
 	}

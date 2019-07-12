@@ -21,13 +21,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveDetectNotifyConfigResponseUnmarshaller {
 
-	public static DescribeLiveDetectNotifyConfigResponse unmarshall(DescribeLiveDetectNotifyConfigResponse describeLiveDetectNotifyConfigResponse, UnmarshallerContext context) {
+	public static DescribeLiveDetectNotifyConfigResponse unmarshall(DescribeLiveDetectNotifyConfigResponse describeLiveDetectNotifyConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveDetectNotifyConfigResponse.setRequestId(context.stringValue("DescribeLiveDetectNotifyConfigResponse.RequestId"));
+		describeLiveDetectNotifyConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveDetectNotifyConfigResponse.RequestId"));
 
 		LiveDetectNotifyConfig liveDetectNotifyConfig = new LiveDetectNotifyConfig();
-		liveDetectNotifyConfig.setDomainName(context.stringValue("DescribeLiveDetectNotifyConfigResponse.LiveDetectNotifyConfig.DomainName"));
-		liveDetectNotifyConfig.setNotifyUrl(context.stringValue("DescribeLiveDetectNotifyConfigResponse.LiveDetectNotifyConfig.NotifyUrl"));
+		liveDetectNotifyConfig.setDomainName(_ctx.stringValue("DescribeLiveDetectNotifyConfigResponse.LiveDetectNotifyConfig.DomainName"));
+		liveDetectNotifyConfig.setNotifyUrl(_ctx.stringValue("DescribeLiveDetectNotifyConfigResponse.LiveDetectNotifyConfig.NotifyUrl"));
 		describeLiveDetectNotifyConfigResponse.setLiveDetectNotifyConfig(liveDetectNotifyConfig);
 	 
 	 	return describeLiveDetectNotifyConfigResponse;

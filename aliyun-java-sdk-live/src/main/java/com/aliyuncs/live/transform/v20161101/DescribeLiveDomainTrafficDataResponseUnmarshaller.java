@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveDomainTrafficDataResponseUnmarshaller {
 
-	public static DescribeLiveDomainTrafficDataResponse unmarshall(DescribeLiveDomainTrafficDataResponse describeLiveDomainTrafficDataResponse, UnmarshallerContext context) {
+	public static DescribeLiveDomainTrafficDataResponse unmarshall(DescribeLiveDomainTrafficDataResponse describeLiveDomainTrafficDataResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveDomainTrafficDataResponse.setRequestId(context.stringValue("DescribeLiveDomainTrafficDataResponse.RequestId"));
-		describeLiveDomainTrafficDataResponse.setDomainName(context.stringValue("DescribeLiveDomainTrafficDataResponse.DomainName"));
-		describeLiveDomainTrafficDataResponse.setStartTime(context.stringValue("DescribeLiveDomainTrafficDataResponse.StartTime"));
-		describeLiveDomainTrafficDataResponse.setEndTime(context.stringValue("DescribeLiveDomainTrafficDataResponse.EndTime"));
-		describeLiveDomainTrafficDataResponse.setDataInterval(context.stringValue("DescribeLiveDomainTrafficDataResponse.DataInterval"));
+		describeLiveDomainTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainTrafficDataResponse.RequestId"));
+		describeLiveDomainTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeLiveDomainTrafficDataResponse.DomainName"));
+		describeLiveDomainTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeLiveDomainTrafficDataResponse.StartTime"));
+		describeLiveDomainTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeLiveDomainTrafficDataResponse.EndTime"));
+		describeLiveDomainTrafficDataResponse.setDataInterval(_ctx.stringValue("DescribeLiveDomainTrafficDataResponse.DataInterval"));
 
 		List<DataModule> trafficDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setTrafficValue(context.stringValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TrafficValue"));
-			dataModule.setHttpTrafficValue(context.stringValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpTrafficValue"));
-			dataModule.setHttpsTrafficValue(context.stringValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpsTrafficValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setTrafficValue(_ctx.stringValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].TrafficValue"));
+			dataModule.setHttpTrafficValue(_ctx.stringValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpTrafficValue"));
+			dataModule.setHttpsTrafficValue(_ctx.stringValue("DescribeLiveDomainTrafficDataResponse.TrafficDataPerInterval["+ i +"].HttpsTrafficValue"));
 
 			trafficDataPerInterval.add(dataModule);
 		}

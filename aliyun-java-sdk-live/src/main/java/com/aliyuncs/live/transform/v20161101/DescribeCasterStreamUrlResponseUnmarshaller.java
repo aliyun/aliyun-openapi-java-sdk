@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCasterStreamUrlResponseUnmarshaller {
 
-	public static DescribeCasterStreamUrlResponse unmarshall(DescribeCasterStreamUrlResponse describeCasterStreamUrlResponse, UnmarshallerContext context) {
+	public static DescribeCasterStreamUrlResponse unmarshall(DescribeCasterStreamUrlResponse describeCasterStreamUrlResponse, UnmarshallerContext _ctx) {
 		
-		describeCasterStreamUrlResponse.setRequestId(context.stringValue("DescribeCasterStreamUrlResponse.RequestId"));
-		describeCasterStreamUrlResponse.setCasterId(context.stringValue("DescribeCasterStreamUrlResponse.CasterId"));
-		describeCasterStreamUrlResponse.setTotal(context.integerValue("DescribeCasterStreamUrlResponse.Total"));
+		describeCasterStreamUrlResponse.setRequestId(_ctx.stringValue("DescribeCasterStreamUrlResponse.RequestId"));
+		describeCasterStreamUrlResponse.setCasterId(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterId"));
+		describeCasterStreamUrlResponse.setTotal(_ctx.integerValue("DescribeCasterStreamUrlResponse.Total"));
 
 		List<CasterStream> casterStreams = new ArrayList<CasterStream>();
-		for (int i = 0; i < context.lengthValue("DescribeCasterStreamUrlResponse.CasterStreams.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterStreamUrlResponse.CasterStreams.Length"); i++) {
 			CasterStream casterStream = new CasterStream();
-			casterStream.setSceneId(context.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].SceneId"));
-			casterStream.setStreamUrl(context.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamUrl"));
-			casterStream.setRtmpUrl(context.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].RtmpUrl"));
-			casterStream.setOutputType(context.integerValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].OutputType"));
+			casterStream.setSceneId(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].SceneId"));
+			casterStream.setStreamUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamUrl"));
+			casterStream.setRtmpUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].RtmpUrl"));
+			casterStream.setOutputType(_ctx.integerValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].OutputType"));
 
 			List<StreamInfo> streamInfos = new ArrayList<StreamInfo>();
-			for (int j = 0; j < context.lengthValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos.Length"); j++) {
 				StreamInfo streamInfo = new StreamInfo();
-				streamInfo.setTranscodeConfig(context.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
-				streamInfo.setVideoFormat(context.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].VideoFormat"));
-				streamInfo.setOutputStreamUrl(context.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].OutputStreamUrl"));
+				streamInfo.setTranscodeConfig(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
+				streamInfo.setVideoFormat(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].VideoFormat"));
+				streamInfo.setOutputStreamUrl(_ctx.stringValue("DescribeCasterStreamUrlResponse.CasterStreams["+ i +"].StreamInfos["+ j +"].OutputStreamUrl"));
 
 				streamInfos.add(streamInfo);
 			}

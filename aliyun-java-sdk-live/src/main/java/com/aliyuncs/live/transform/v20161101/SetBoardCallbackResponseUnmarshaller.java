@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetBoardCallbackResponseUnmarshaller {
 
-	public static SetBoardCallbackResponse unmarshall(SetBoardCallbackResponse setBoardCallbackResponse, UnmarshallerContext context) {
+	public static SetBoardCallbackResponse unmarshall(SetBoardCallbackResponse setBoardCallbackResponse, UnmarshallerContext _ctx) {
 		
-		setBoardCallbackResponse.setRequestId(context.stringValue("SetBoardCallbackResponse.RequestId"));
+		setBoardCallbackResponse.setRequestId(_ctx.stringValue("SetBoardCallbackResponse.RequestId"));
 	 
 	 	return setBoardCallbackResponse;
 	}

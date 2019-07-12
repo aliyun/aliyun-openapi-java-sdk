@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamOptimizedFeatureConfigResponseUnmarshaller {
 
-	public static DescribeLiveStreamOptimizedFeatureConfigResponse unmarshall(DescribeLiveStreamOptimizedFeatureConfigResponse describeLiveStreamOptimizedFeatureConfigResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamOptimizedFeatureConfigResponse unmarshall(DescribeLiveStreamOptimizedFeatureConfigResponse describeLiveStreamOptimizedFeatureConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamOptimizedFeatureConfigResponse.setRequestId(context.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.RequestId"));
+		describeLiveStreamOptimizedFeatureConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.RequestId"));
 
 		List<LiveStreamOptimizedFeatureConfig> liveStreamOptimizedFeatureConfigList = new ArrayList<LiveStreamOptimizedFeatureConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList.Length"); i++) {
 			LiveStreamOptimizedFeatureConfig liveStreamOptimizedFeatureConfig = new LiveStreamOptimizedFeatureConfig();
-			liveStreamOptimizedFeatureConfig.setDomainName(context.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].DomainName"));
-			liveStreamOptimizedFeatureConfig.setConfigName(context.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigName"));
-			liveStreamOptimizedFeatureConfig.setConfigStatus(context.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigStatus"));
-			liveStreamOptimizedFeatureConfig.setConfigValue(context.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigValue"));
+			liveStreamOptimizedFeatureConfig.setDomainName(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].DomainName"));
+			liveStreamOptimizedFeatureConfig.setConfigName(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigName"));
+			liveStreamOptimizedFeatureConfig.setConfigStatus(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigStatus"));
+			liveStreamOptimizedFeatureConfig.setConfigValue(_ctx.stringValue("DescribeLiveStreamOptimizedFeatureConfigResponse.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigValue"));
 
 			liveStreamOptimizedFeatureConfigList.add(liveStreamOptimizedFeatureConfig);
 		}

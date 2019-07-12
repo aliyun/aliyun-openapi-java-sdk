@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateBoardResponseUnmarshaller {
 
-	public static CreateBoardResponse unmarshall(CreateBoardResponse createBoardResponse, UnmarshallerContext context) {
+	public static CreateBoardResponse unmarshall(CreateBoardResponse createBoardResponse, UnmarshallerContext _ctx) {
 		
-		createBoardResponse.setRequestId(context.stringValue("CreateBoardResponse.RequestId"));
-		createBoardResponse.setBoardId(context.stringValue("CreateBoardResponse.BoardId"));
+		createBoardResponse.setRequestId(_ctx.stringValue("CreateBoardResponse.RequestId"));
+		createBoardResponse.setBoardId(_ctx.stringValue("CreateBoardResponse.BoardId"));
 	 
 	 	return createBoardResponse;
 	}

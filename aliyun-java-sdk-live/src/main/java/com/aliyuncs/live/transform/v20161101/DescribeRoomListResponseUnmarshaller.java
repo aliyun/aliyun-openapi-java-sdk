@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRoomListResponseUnmarshaller {
 
-	public static DescribeRoomListResponse unmarshall(DescribeRoomListResponse describeRoomListResponse, UnmarshallerContext context) {
+	public static DescribeRoomListResponse unmarshall(DescribeRoomListResponse describeRoomListResponse, UnmarshallerContext _ctx) {
 		
-		describeRoomListResponse.setRequestId(context.stringValue("DescribeRoomListResponse.RequestId"));
-		describeRoomListResponse.setTotalNum(context.integerValue("DescribeRoomListResponse.TotalNum"));
-		describeRoomListResponse.setTotalPage(context.integerValue("DescribeRoomListResponse.TotalPage"));
+		describeRoomListResponse.setRequestId(_ctx.stringValue("DescribeRoomListResponse.RequestId"));
+		describeRoomListResponse.setTotalNum(_ctx.integerValue("DescribeRoomListResponse.TotalNum"));
+		describeRoomListResponse.setTotalPage(_ctx.integerValue("DescribeRoomListResponse.TotalPage"));
 
 		List<Room> roomList = new ArrayList<Room>();
-		for (int i = 0; i < context.lengthValue("DescribeRoomListResponse.RoomList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRoomListResponse.RoomList.Length"); i++) {
 			Room room = new Room();
-			room.setRoomId(context.stringValue("DescribeRoomListResponse.RoomList["+ i +"].RoomId"));
-			room.setAnchorId(context.stringValue("DescribeRoomListResponse.RoomList["+ i +"].AnchorId"));
-			room.setRoomStatus(context.integerValue("DescribeRoomListResponse.RoomList["+ i +"].RoomStatus"));
-			room.setForbidStream(context.stringValue("DescribeRoomListResponse.RoomList["+ i +"].ForbidStream"));
-			room.setCreateTime(context.stringValue("DescribeRoomListResponse.RoomList["+ i +"].CreateTime"));
+			room.setRoomId(_ctx.stringValue("DescribeRoomListResponse.RoomList["+ i +"].RoomId"));
+			room.setAnchorId(_ctx.stringValue("DescribeRoomListResponse.RoomList["+ i +"].AnchorId"));
+			room.setRoomStatus(_ctx.integerValue("DescribeRoomListResponse.RoomList["+ i +"].RoomStatus"));
+			room.setForbidStream(_ctx.stringValue("DescribeRoomListResponse.RoomList["+ i +"].ForbidStream"));
+			room.setCreateTime(_ctx.stringValue("DescribeRoomListResponse.RoomList["+ i +"].CreateTime"));
 
 			roomList.add(room);
 		}

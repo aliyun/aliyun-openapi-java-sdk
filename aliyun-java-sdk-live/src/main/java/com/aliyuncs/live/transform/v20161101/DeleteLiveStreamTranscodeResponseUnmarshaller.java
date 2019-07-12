@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteLiveStreamTranscodeResponseUnmarshaller {
 
-	public static DeleteLiveStreamTranscodeResponse unmarshall(DeleteLiveStreamTranscodeResponse deleteLiveStreamTranscodeResponse, UnmarshallerContext context) {
+	public static DeleteLiveStreamTranscodeResponse unmarshall(DeleteLiveStreamTranscodeResponse deleteLiveStreamTranscodeResponse, UnmarshallerContext _ctx) {
 		
-		deleteLiveStreamTranscodeResponse.setRequestId(context.stringValue("DeleteLiveStreamTranscodeResponse.RequestId"));
+		deleteLiveStreamTranscodeResponse.setRequestId(_ctx.stringValue("DeleteLiveStreamTranscodeResponse.RequestId"));
 	 
 	 	return deleteLiveStreamTranscodeResponse;
 	}

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartLiveIndexResponseUnmarshaller {
 
-	public static StartLiveIndexResponse unmarshall(StartLiveIndexResponse startLiveIndexResponse, UnmarshallerContext context) {
+	public static StartLiveIndexResponse unmarshall(StartLiveIndexResponse startLiveIndexResponse, UnmarshallerContext _ctx) {
 		
-		startLiveIndexResponse.setRequestId(context.stringValue("StartLiveIndexResponse.RequestId"));
-		startLiveIndexResponse.setTaskId(context.stringValue("StartLiveIndexResponse.TaskId"));
+		startLiveIndexResponse.setRequestId(_ctx.stringValue("StartLiveIndexResponse.RequestId"));
+		startLiveIndexResponse.setTaskId(_ctx.stringValue("StartLiveIndexResponse.TaskId"));
 	 
 	 	return startLiveIndexResponse;
 	}

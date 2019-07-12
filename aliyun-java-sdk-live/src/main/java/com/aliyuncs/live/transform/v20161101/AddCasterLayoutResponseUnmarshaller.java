@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddCasterLayoutResponseUnmarshaller {
 
-	public static AddCasterLayoutResponse unmarshall(AddCasterLayoutResponse addCasterLayoutResponse, UnmarshallerContext context) {
+	public static AddCasterLayoutResponse unmarshall(AddCasterLayoutResponse addCasterLayoutResponse, UnmarshallerContext _ctx) {
 		
-		addCasterLayoutResponse.setRequestId(context.stringValue("AddCasterLayoutResponse.RequestId"));
-		addCasterLayoutResponse.setLayoutId(context.stringValue("AddCasterLayoutResponse.LayoutId"));
+		addCasterLayoutResponse.setRequestId(_ctx.stringValue("AddCasterLayoutResponse.RequestId"));
+		addCasterLayoutResponse.setLayoutId(_ctx.stringValue("AddCasterLayoutResponse.LayoutId"));
 	 
 	 	return addCasterLayoutResponse;
 	}

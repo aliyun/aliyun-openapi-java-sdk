@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteBoardResponseUnmarshaller {
 
-	public static DeleteBoardResponse unmarshall(DeleteBoardResponse deleteBoardResponse, UnmarshallerContext context) {
+	public static DeleteBoardResponse unmarshall(DeleteBoardResponse deleteBoardResponse, UnmarshallerContext _ctx) {
 		
-		deleteBoardResponse.setRequestId(context.stringValue("DeleteBoardResponse.RequestId"));
+		deleteBoardResponse.setRequestId(_ctx.stringValue("DeleteBoardResponse.RequestId"));
 	 
 	 	return deleteBoardResponse;
 	}

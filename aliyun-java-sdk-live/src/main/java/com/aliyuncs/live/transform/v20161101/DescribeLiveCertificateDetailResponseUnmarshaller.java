@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveCertificateDetailResponseUnmarshaller {
 
-	public static DescribeLiveCertificateDetailResponse unmarshall(DescribeLiveCertificateDetailResponse describeLiveCertificateDetailResponse, UnmarshallerContext context) {
+	public static DescribeLiveCertificateDetailResponse unmarshall(DescribeLiveCertificateDetailResponse describeLiveCertificateDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveCertificateDetailResponse.setRequestId(context.stringValue("DescribeLiveCertificateDetailResponse.RequestId"));
-		describeLiveCertificateDetailResponse.setCert(context.stringValue("DescribeLiveCertificateDetailResponse.Cert"));
-		describeLiveCertificateDetailResponse.setKey(context.stringValue("DescribeLiveCertificateDetailResponse.Key"));
-		describeLiveCertificateDetailResponse.setCertId(context.longValue("DescribeLiveCertificateDetailResponse.CertId"));
-		describeLiveCertificateDetailResponse.setCertName(context.stringValue("DescribeLiveCertificateDetailResponse.CertName"));
+		describeLiveCertificateDetailResponse.setRequestId(_ctx.stringValue("DescribeLiveCertificateDetailResponse.RequestId"));
+		describeLiveCertificateDetailResponse.setCert(_ctx.stringValue("DescribeLiveCertificateDetailResponse.Cert"));
+		describeLiveCertificateDetailResponse.setKey(_ctx.stringValue("DescribeLiveCertificateDetailResponse.Key"));
+		describeLiveCertificateDetailResponse.setCertId(_ctx.longValue("DescribeLiveCertificateDetailResponse.CertId"));
+		describeLiveCertificateDetailResponse.setCertName(_ctx.stringValue("DescribeLiveCertificateDetailResponse.CertName"));
 	 
 	 	return describeLiveCertificateDetailResponse;
 	}

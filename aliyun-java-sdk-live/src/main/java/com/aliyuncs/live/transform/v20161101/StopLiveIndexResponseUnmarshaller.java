@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopLiveIndexResponseUnmarshaller {
 
-	public static StopLiveIndexResponse unmarshall(StopLiveIndexResponse stopLiveIndexResponse, UnmarshallerContext context) {
+	public static StopLiveIndexResponse unmarshall(StopLiveIndexResponse stopLiveIndexResponse, UnmarshallerContext _ctx) {
 		
-		stopLiveIndexResponse.setRequestId(context.stringValue("StopLiveIndexResponse.RequestId"));
+		stopLiveIndexResponse.setRequestId(_ctx.stringValue("StopLiveIndexResponse.RequestId"));
 	 
 	 	return stopLiveIndexResponse;
 	}

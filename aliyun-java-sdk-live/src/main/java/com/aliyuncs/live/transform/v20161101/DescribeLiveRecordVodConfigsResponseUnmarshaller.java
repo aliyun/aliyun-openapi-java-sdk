@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveRecordVodConfigsResponseUnmarshaller {
 
-	public static DescribeLiveRecordVodConfigsResponse unmarshall(DescribeLiveRecordVodConfigsResponse describeLiveRecordVodConfigsResponse, UnmarshallerContext context) {
+	public static DescribeLiveRecordVodConfigsResponse unmarshall(DescribeLiveRecordVodConfigsResponse describeLiveRecordVodConfigsResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveRecordVodConfigsResponse.setRequestId(context.stringValue("DescribeLiveRecordVodConfigsResponse.RequestId"));
-		describeLiveRecordVodConfigsResponse.setPageNum(context.integerValue("DescribeLiveRecordVodConfigsResponse.PageNum"));
-		describeLiveRecordVodConfigsResponse.setPageSize(context.integerValue("DescribeLiveRecordVodConfigsResponse.PageSize"));
-		describeLiveRecordVodConfigsResponse.setTotal(context.stringValue("DescribeLiveRecordVodConfigsResponse.Total"));
+		describeLiveRecordVodConfigsResponse.setRequestId(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.RequestId"));
+		describeLiveRecordVodConfigsResponse.setPageNum(_ctx.integerValue("DescribeLiveRecordVodConfigsResponse.PageNum"));
+		describeLiveRecordVodConfigsResponse.setPageSize(_ctx.integerValue("DescribeLiveRecordVodConfigsResponse.PageSize"));
+		describeLiveRecordVodConfigsResponse.setTotal(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.Total"));
 
 		List<LiveRecordVodConfig> liveRecordVodConfigs = new ArrayList<LiveRecordVodConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs.Length"); i++) {
 			LiveRecordVodConfig liveRecordVodConfig = new LiveRecordVodConfig();
-			liveRecordVodConfig.setCreateTime(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CreateTime"));
-			liveRecordVodConfig.setDomainName(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].DomainName"));
-			liveRecordVodConfig.setAppName(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AppName"));
-			liveRecordVodConfig.setStreamName(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].StreamName"));
-			liveRecordVodConfig.setVodTranscodeGroupId(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].VodTranscodeGroupId"));
-			liveRecordVodConfig.setCycleDuration(context.integerValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CycleDuration"));
-			liveRecordVodConfig.setAutoCompose(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AutoCompose"));
-			liveRecordVodConfig.setComposeVodTranscodeGroupId(context.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].ComposeVodTranscodeGroupId"));
+			liveRecordVodConfig.setCreateTime(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CreateTime"));
+			liveRecordVodConfig.setDomainName(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].DomainName"));
+			liveRecordVodConfig.setAppName(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AppName"));
+			liveRecordVodConfig.setStreamName(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].StreamName"));
+			liveRecordVodConfig.setVodTranscodeGroupId(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].VodTranscodeGroupId"));
+			liveRecordVodConfig.setCycleDuration(_ctx.integerValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].CycleDuration"));
+			liveRecordVodConfig.setAutoCompose(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].AutoCompose"));
+			liveRecordVodConfig.setComposeVodTranscodeGroupId(_ctx.stringValue("DescribeLiveRecordVodConfigsResponse.LiveRecordVodConfigs["+ i +"].ComposeVodTranscodeGroupId"));
 
 			liveRecordVodConfigs.add(liveRecordVodConfig);
 		}

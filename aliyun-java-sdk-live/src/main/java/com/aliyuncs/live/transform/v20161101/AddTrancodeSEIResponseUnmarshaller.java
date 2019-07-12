@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddTrancodeSEIResponseUnmarshaller {
 
-	public static AddTrancodeSEIResponse unmarshall(AddTrancodeSEIResponse addTrancodeSEIResponse, UnmarshallerContext context) {
+	public static AddTrancodeSEIResponse unmarshall(AddTrancodeSEIResponse addTrancodeSEIResponse, UnmarshallerContext _ctx) {
 		
-		addTrancodeSEIResponse.setRequestId(context.stringValue("AddTrancodeSEIResponse.RequestId"));
+		addTrancodeSEIResponse.setRequestId(_ctx.stringValue("AddTrancodeSEIResponse.RequestId"));
 	 
 	 	return addTrancodeSEIResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AllowPushStreamResponseUnmarshaller {
 
-	public static AllowPushStreamResponse unmarshall(AllowPushStreamResponse allowPushStreamResponse, UnmarshallerContext context) {
+	public static AllowPushStreamResponse unmarshall(AllowPushStreamResponse allowPushStreamResponse, UnmarshallerContext _ctx) {
 		
-		allowPushStreamResponse.setRequestId(context.stringValue("AllowPushStreamResponse.RequestId"));
+		allowPushStreamResponse.setRequestId(_ctx.stringValue("AllowPushStreamResponse.RequestId"));
 	 
 	 	return allowPushStreamResponse;
 	}

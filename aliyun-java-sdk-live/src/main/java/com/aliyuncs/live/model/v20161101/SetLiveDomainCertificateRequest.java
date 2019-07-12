@@ -26,7 +26,11 @@ public class SetLiveDomainCertificateRequest extends RpcAcsRequest<SetLiveDomain
 		super("live", "2016-11-01", "SetLiveDomainCertificate", "live");
 	}
 
+	private String forceSet;
+
 	private String securityToken;
+
+	private String certType;
 
 	private String sSLPub;
 
@@ -39,6 +43,17 @@ public class SetLiveDomainCertificateRequest extends RpcAcsRequest<SetLiveDomain
 	private Long ownerId;
 
 	private String sSLPri;
+
+	public String getForceSet() {
+		return this.forceSet;
+	}
+
+	public void setForceSet(String forceSet) {
+		this.forceSet = forceSet;
+		if(forceSet != null){
+			putQueryParameter("ForceSet", forceSet);
+		}
+	}
 
 	public String getBizSecurityToken() {
 		return this.securityToken;
@@ -67,6 +82,17 @@ public class SetLiveDomainCertificateRequest extends RpcAcsRequest<SetLiveDomain
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getCertType() {
+		return this.certType;
+	}
+
+	public void setCertType(String certType) {
+		this.certType = certType;
+		if(certType != null){
+			putQueryParameter("CertType", certType);
 		}
 	}
 

@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUpPeakPublishStreamDataResponseUnmarshaller {
 
-	public static DescribeUpPeakPublishStreamDataResponse unmarshall(DescribeUpPeakPublishStreamDataResponse describeUpPeakPublishStreamDataResponse, UnmarshallerContext context) {
+	public static DescribeUpPeakPublishStreamDataResponse unmarshall(DescribeUpPeakPublishStreamDataResponse describeUpPeakPublishStreamDataResponse, UnmarshallerContext _ctx) {
 		
-		describeUpPeakPublishStreamDataResponse.setRequestId(context.stringValue("DescribeUpPeakPublishStreamDataResponse.RequestId"));
+		describeUpPeakPublishStreamDataResponse.setRequestId(_ctx.stringValue("DescribeUpPeakPublishStreamDataResponse.RequestId"));
 
 		List<DescribeUpPeakPublishStreamData> describeUpPeakPublishStreamDatas = new ArrayList<DescribeUpPeakPublishStreamData>();
-		for (int i = 0; i < context.lengthValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas.Length"); i++) {
 			DescribeUpPeakPublishStreamData describeUpPeakPublishStreamData = new DescribeUpPeakPublishStreamData();
-			describeUpPeakPublishStreamData.setPublishStreamNum(context.integerValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].PublishStreamNum"));
-			describeUpPeakPublishStreamData.setPeakTime(context.stringValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].PeakTime"));
-			describeUpPeakPublishStreamData.setQueryTime(context.stringValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].QueryTime"));
-			describeUpPeakPublishStreamData.setStatName(context.stringValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].StatName"));
-			describeUpPeakPublishStreamData.setBandWidth(context.stringValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].BandWidth"));
+			describeUpPeakPublishStreamData.setPublishStreamNum(_ctx.integerValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].PublishStreamNum"));
+			describeUpPeakPublishStreamData.setPeakTime(_ctx.stringValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].PeakTime"));
+			describeUpPeakPublishStreamData.setQueryTime(_ctx.stringValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].QueryTime"));
+			describeUpPeakPublishStreamData.setStatName(_ctx.stringValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].StatName"));
+			describeUpPeakPublishStreamData.setBandWidth(_ctx.stringValue("DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamDatas["+ i +"].BandWidth"));
 
 			describeUpPeakPublishStreamDatas.add(describeUpPeakPublishStreamData);
 		}

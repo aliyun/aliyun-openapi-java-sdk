@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamSnapshotInfoResponseUnmarshaller {
 
-	public static DescribeLiveStreamSnapshotInfoResponse unmarshall(DescribeLiveStreamSnapshotInfoResponse describeLiveStreamSnapshotInfoResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamSnapshotInfoResponse unmarshall(DescribeLiveStreamSnapshotInfoResponse describeLiveStreamSnapshotInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamSnapshotInfoResponse.setRequestId(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.RequestId"));
-		describeLiveStreamSnapshotInfoResponse.setNextStartTime(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.NextStartTime"));
+		describeLiveStreamSnapshotInfoResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.RequestId"));
+		describeLiveStreamSnapshotInfoResponse.setNextStartTime(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.NextStartTime"));
 
 		List<LiveStreamSnapshotInfo> liveStreamSnapshotInfoList = new ArrayList<LiveStreamSnapshotInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList.Length"); i++) {
 			LiveStreamSnapshotInfo liveStreamSnapshotInfo = new LiveStreamSnapshotInfo();
-			liveStreamSnapshotInfo.setOssEndpoint(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssEndpoint"));
-			liveStreamSnapshotInfo.setOssBucket(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssBucket"));
-			liveStreamSnapshotInfo.setOssObject(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssObject"));
-			liveStreamSnapshotInfo.setCreateTime(context.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].CreateTime"));
+			liveStreamSnapshotInfo.setOssEndpoint(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssEndpoint"));
+			liveStreamSnapshotInfo.setOssBucket(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssBucket"));
+			liveStreamSnapshotInfo.setOssObject(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].OssObject"));
+			liveStreamSnapshotInfo.setCreateTime(_ctx.stringValue("DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList["+ i +"].CreateTime"));
 
 			liveStreamSnapshotInfoList.add(liveStreamSnapshotInfo);
 		}

@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveSnapshotDetectPornConfigResponseUnmarshaller {
 
-	public static DescribeLiveSnapshotDetectPornConfigResponse unmarshall(DescribeLiveSnapshotDetectPornConfigResponse describeLiveSnapshotDetectPornConfigResponse, UnmarshallerContext context) {
+	public static DescribeLiveSnapshotDetectPornConfigResponse unmarshall(DescribeLiveSnapshotDetectPornConfigResponse describeLiveSnapshotDetectPornConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveSnapshotDetectPornConfigResponse.setRequestId(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.RequestId"));
-		describeLiveSnapshotDetectPornConfigResponse.setPageNum(context.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.PageNum"));
-		describeLiveSnapshotDetectPornConfigResponse.setPageSize(context.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.PageSize"));
-		describeLiveSnapshotDetectPornConfigResponse.setOrder(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.Order"));
-		describeLiveSnapshotDetectPornConfigResponse.setTotalNum(context.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.TotalNum"));
-		describeLiveSnapshotDetectPornConfigResponse.setTotalPage(context.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.TotalPage"));
+		describeLiveSnapshotDetectPornConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.RequestId"));
+		describeLiveSnapshotDetectPornConfigResponse.setPageNum(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.PageNum"));
+		describeLiveSnapshotDetectPornConfigResponse.setPageSize(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.PageSize"));
+		describeLiveSnapshotDetectPornConfigResponse.setOrder(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.Order"));
+		describeLiveSnapshotDetectPornConfigResponse.setTotalNum(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.TotalNum"));
+		describeLiveSnapshotDetectPornConfigResponse.setTotalPage(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.TotalPage"));
 
 		List<LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList = new ArrayList<LiveSnapshotDetectPornConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList.Length"); i++) {
 			LiveSnapshotDetectPornConfig liveSnapshotDetectPornConfig = new LiveSnapshotDetectPornConfig();
-			liveSnapshotDetectPornConfig.setDomainName(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].DomainName"));
-			liveSnapshotDetectPornConfig.setAppName(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].AppName"));
-			liveSnapshotDetectPornConfig.setOssEndpoint(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssEndpoint"));
-			liveSnapshotDetectPornConfig.setOssBucket(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssBucket"));
-			liveSnapshotDetectPornConfig.setOssObject(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssObject"));
-			liveSnapshotDetectPornConfig.setInterval(context.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Interval"));
+			liveSnapshotDetectPornConfig.setDomainName(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].DomainName"));
+			liveSnapshotDetectPornConfig.setAppName(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].AppName"));
+			liveSnapshotDetectPornConfig.setOssEndpoint(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssEndpoint"));
+			liveSnapshotDetectPornConfig.setOssBucket(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssBucket"));
+			liveSnapshotDetectPornConfig.setOssObject(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].OssObject"));
+			liveSnapshotDetectPornConfig.setInterval(_ctx.integerValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Interval"));
 
 			List<String> scenes = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Scenes.Length"); j++) {
-				scenes.add(context.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Scenes["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Scenes.Length"); j++) {
+				scenes.add(_ctx.stringValue("DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList["+ i +"].Scenes["+ j +"]"));
 			}
 			liveSnapshotDetectPornConfig.setScenes(scenes);
 

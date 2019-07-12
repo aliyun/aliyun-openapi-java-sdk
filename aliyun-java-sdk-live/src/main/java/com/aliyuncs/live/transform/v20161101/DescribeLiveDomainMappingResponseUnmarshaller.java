@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveDomainMappingResponseUnmarshaller {
 
-	public static DescribeLiveDomainMappingResponse unmarshall(DescribeLiveDomainMappingResponse describeLiveDomainMappingResponse, UnmarshallerContext context) {
+	public static DescribeLiveDomainMappingResponse unmarshall(DescribeLiveDomainMappingResponse describeLiveDomainMappingResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveDomainMappingResponse.setRequestId(context.stringValue("DescribeLiveDomainMappingResponse.RequestId"));
+		describeLiveDomainMappingResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainMappingResponse.RequestId"));
 
 		List<LiveDomainModel> liveDomainModels = new ArrayList<LiveDomainModel>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveDomainMappingResponse.LiveDomainModels.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainMappingResponse.LiveDomainModels.Length"); i++) {
 			LiveDomainModel liveDomainModel = new LiveDomainModel();
-			liveDomainModel.setDomainName(context.stringValue("DescribeLiveDomainMappingResponse.LiveDomainModels["+ i +"].DomainName"));
-			liveDomainModel.setType(context.stringValue("DescribeLiveDomainMappingResponse.LiveDomainModels["+ i +"].Type"));
+			liveDomainModel.setDomainName(_ctx.stringValue("DescribeLiveDomainMappingResponse.LiveDomainModels["+ i +"].DomainName"));
+			liveDomainModel.setType(_ctx.stringValue("DescribeLiveDomainMappingResponse.LiveDomainModels["+ i +"].Type"));
 
 			liveDomainModels.add(liveDomainModel);
 		}

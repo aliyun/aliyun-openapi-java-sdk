@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamsNotifyUrlConfigResponseUnmarshaller {
 
-	public static DescribeLiveStreamsNotifyUrlConfigResponse unmarshall(DescribeLiveStreamsNotifyUrlConfigResponse describeLiveStreamsNotifyUrlConfigResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamsNotifyUrlConfigResponse unmarshall(DescribeLiveStreamsNotifyUrlConfigResponse describeLiveStreamsNotifyUrlConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamsNotifyUrlConfigResponse.setRequestId(context.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.RequestId"));
+		describeLiveStreamsNotifyUrlConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.RequestId"));
 
 		LiveStreamsNotifyConfig liveStreamsNotifyConfig = new LiveStreamsNotifyConfig();
-		liveStreamsNotifyConfig.setDomainName(context.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.DomainName"));
-		liveStreamsNotifyConfig.setNotifyUrl(context.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyUrl"));
-		liveStreamsNotifyConfig.setAuthType(context.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthType"));
-		liveStreamsNotifyConfig.setAuthKey(context.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthKey"));
+		liveStreamsNotifyConfig.setDomainName(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.DomainName"));
+		liveStreamsNotifyConfig.setNotifyUrl(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.NotifyUrl"));
+		liveStreamsNotifyConfig.setAuthType(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthType"));
+		liveStreamsNotifyConfig.setAuthKey(_ctx.stringValue("DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig.AuthKey"));
 		describeLiveStreamsNotifyUrlConfigResponse.setLiveStreamsNotifyConfig(liveStreamsNotifyConfig);
 	 
 	 	return describeLiveStreamsNotifyUrlConfigResponse;

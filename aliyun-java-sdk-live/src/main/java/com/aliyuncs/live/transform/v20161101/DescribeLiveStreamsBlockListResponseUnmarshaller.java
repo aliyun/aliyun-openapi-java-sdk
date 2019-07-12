@@ -23,18 +23,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamsBlockListResponseUnmarshaller {
 
-	public static DescribeLiveStreamsBlockListResponse unmarshall(DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamsBlockListResponse unmarshall(DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamsBlockListResponse.setRequestId(context.stringValue("DescribeLiveStreamsBlockListResponse.RequestId"));
-		describeLiveStreamsBlockListResponse.setDomainName(context.stringValue("DescribeLiveStreamsBlockListResponse.DomainName"));
-		describeLiveStreamsBlockListResponse.setPageNum(context.integerValue("DescribeLiveStreamsBlockListResponse.PageNum"));
-		describeLiveStreamsBlockListResponse.setPageSize(context.integerValue("DescribeLiveStreamsBlockListResponse.PageSize"));
-		describeLiveStreamsBlockListResponse.setTotalNum(context.integerValue("DescribeLiveStreamsBlockListResponse.TotalNum"));
-		describeLiveStreamsBlockListResponse.setTotalPage(context.integerValue("DescribeLiveStreamsBlockListResponse.TotalPage"));
+		describeLiveStreamsBlockListResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamsBlockListResponse.RequestId"));
+		describeLiveStreamsBlockListResponse.setDomainName(_ctx.stringValue("DescribeLiveStreamsBlockListResponse.DomainName"));
+		describeLiveStreamsBlockListResponse.setPageNum(_ctx.integerValue("DescribeLiveStreamsBlockListResponse.PageNum"));
+		describeLiveStreamsBlockListResponse.setPageSize(_ctx.integerValue("DescribeLiveStreamsBlockListResponse.PageSize"));
+		describeLiveStreamsBlockListResponse.setTotalNum(_ctx.integerValue("DescribeLiveStreamsBlockListResponse.TotalNum"));
+		describeLiveStreamsBlockListResponse.setTotalPage(_ctx.integerValue("DescribeLiveStreamsBlockListResponse.TotalPage"));
 
 		List<String> streamUrls = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsBlockListResponse.StreamUrls.Length"); i++) {
-			streamUrls.add(context.stringValue("DescribeLiveStreamsBlockListResponse.StreamUrls["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamsBlockListResponse.StreamUrls.Length"); i++) {
+			streamUrls.add(_ctx.stringValue("DescribeLiveStreamsBlockListResponse.StreamUrls["+ i +"]"));
 		}
 		describeLiveStreamsBlockListResponse.setStreamUrls(streamUrls);
 	 

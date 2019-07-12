@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBoardEventsResponseUnmarshaller {
 
-	public static DescribeBoardEventsResponse unmarshall(DescribeBoardEventsResponse describeBoardEventsResponse, UnmarshallerContext context) {
+	public static DescribeBoardEventsResponse unmarshall(DescribeBoardEventsResponse describeBoardEventsResponse, UnmarshallerContext _ctx) {
 		
-		describeBoardEventsResponse.setRequestId(context.stringValue("DescribeBoardEventsResponse.RequestId"));
+		describeBoardEventsResponse.setRequestId(_ctx.stringValue("DescribeBoardEventsResponse.RequestId"));
 
 		List<Event> events = new ArrayList<Event>();
-		for (int i = 0; i < context.lengthValue("DescribeBoardEventsResponse.Events.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBoardEventsResponse.Events.Length"); i++) {
 			Event event = new Event();
-			event.setEventId(context.longValue("DescribeBoardEventsResponse.Events["+ i +"].EventId"));
-			event.setEventType(context.integerValue("DescribeBoardEventsResponse.Events["+ i +"].EventType"));
-			event.setUserId(context.integerValue("DescribeBoardEventsResponse.Events["+ i +"].UserId"));
-			event.setData(context.stringValue("DescribeBoardEventsResponse.Events["+ i +"].Data"));
-			event.setTimestamp(context.longValue("DescribeBoardEventsResponse.Events["+ i +"].Timestamp"));
+			event.setEventId(_ctx.longValue("DescribeBoardEventsResponse.Events["+ i +"].EventId"));
+			event.setEventType(_ctx.integerValue("DescribeBoardEventsResponse.Events["+ i +"].EventType"));
+			event.setUserId(_ctx.integerValue("DescribeBoardEventsResponse.Events["+ i +"].UserId"));
+			event.setData(_ctx.stringValue("DescribeBoardEventsResponse.Events["+ i +"].Data"));
+			event.setTimestamp(_ctx.longValue("DescribeBoardEventsResponse.Events["+ i +"].Timestamp"));
 
 			events.add(event);
 		}

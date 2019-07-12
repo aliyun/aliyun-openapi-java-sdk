@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyLiveDomainSchdmByPropertyResponseUnmarshaller {
 
-	public static ModifyLiveDomainSchdmByPropertyResponse unmarshall(ModifyLiveDomainSchdmByPropertyResponse modifyLiveDomainSchdmByPropertyResponse, UnmarshallerContext context) {
+	public static ModifyLiveDomainSchdmByPropertyResponse unmarshall(ModifyLiveDomainSchdmByPropertyResponse modifyLiveDomainSchdmByPropertyResponse, UnmarshallerContext _ctx) {
 		
-		modifyLiveDomainSchdmByPropertyResponse.setRequestId(context.stringValue("ModifyLiveDomainSchdmByPropertyResponse.RequestId"));
+		modifyLiveDomainSchdmByPropertyResponse.setRequestId(_ctx.stringValue("ModifyLiveDomainSchdmByPropertyResponse.RequestId"));
 	 
 	 	return modifyLiveDomainSchdmByPropertyResponse;
 	}

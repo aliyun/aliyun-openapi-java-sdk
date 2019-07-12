@@ -26,17 +26,7 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		super("live", "2016-11-01", "DescribeLiveStreamsPublishList", "live");
 	}
 
-	private String streamType;
-
-	private String domainName;
-
-	private String endTime;
-
-	private String orderBy;
-
 	private String startTime;
-
-	private Long ownerId;
 
 	private Integer pageNumber;
 
@@ -48,49 +38,15 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 
 	private String queryType;
 
-	public String getStreamType() {
-		return this.streamType;
-	}
+	private String streamType;
 
-	public void setStreamType(String streamType) {
-		this.streamType = streamType;
-		if(streamType != null){
-			putQueryParameter("StreamType", streamType);
-		}
-	}
+	private String domainName;
 
-	public String getDomainName() {
-		return this.domainName;
-	}
+	private String endTime;
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
+	private String orderBy;
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getOrderBy() {
-		return this.orderBy;
-	}
-
-	public void setOrderBy(String orderBy) {
-		this.orderBy = orderBy;
-		if(orderBy != null){
-			putQueryParameter("OrderBy", orderBy);
-		}
-	}
+	private Long ownerId;
 
 	public String getStartTime() {
 		return this.startTime;
@@ -100,17 +56,6 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -166,6 +111,61 @@ public class DescribeLiveStreamsPublishListRequest extends RpcAcsRequest<Describ
 		this.queryType = queryType;
 		if(queryType != null){
 			putQueryParameter("QueryType", queryType);
+		}
+	}
+
+	public String getStreamType() {
+		return this.streamType;
+	}
+
+	public void setStreamType(String streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

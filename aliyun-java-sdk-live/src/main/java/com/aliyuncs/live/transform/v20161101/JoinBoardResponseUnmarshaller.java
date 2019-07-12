@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class JoinBoardResponseUnmarshaller {
 
-	public static JoinBoardResponse unmarshall(JoinBoardResponse joinBoardResponse, UnmarshallerContext context) {
+	public static JoinBoardResponse unmarshall(JoinBoardResponse joinBoardResponse, UnmarshallerContext _ctx) {
 		
-		joinBoardResponse.setRequestId(context.stringValue("JoinBoardResponse.RequestId"));
-		joinBoardResponse.setToken(context.stringValue("JoinBoardResponse.Token"));
-		joinBoardResponse.setBoardId(context.stringValue("JoinBoardResponse.BoardId"));
-		joinBoardResponse.setTopicId(context.stringValue("JoinBoardResponse.TopicId"));
-		joinBoardResponse.setKeepaliveTopic(context.stringValue("JoinBoardResponse.KeepaliveTopic"));
-		joinBoardResponse.setKeepaliveInterval(context.integerValue("JoinBoardResponse.KeepaliveInterval"));
+		joinBoardResponse.setRequestId(_ctx.stringValue("JoinBoardResponse.RequestId"));
+		joinBoardResponse.setToken(_ctx.stringValue("JoinBoardResponse.Token"));
+		joinBoardResponse.setBoardId(_ctx.stringValue("JoinBoardResponse.BoardId"));
+		joinBoardResponse.setTopicId(_ctx.stringValue("JoinBoardResponse.TopicId"));
+		joinBoardResponse.setKeepaliveTopic(_ctx.stringValue("JoinBoardResponse.KeepaliveTopic"));
+		joinBoardResponse.setKeepaliveInterval(_ctx.integerValue("JoinBoardResponse.KeepaliveInterval"));
 	 
 	 	return joinBoardResponse;
 	}

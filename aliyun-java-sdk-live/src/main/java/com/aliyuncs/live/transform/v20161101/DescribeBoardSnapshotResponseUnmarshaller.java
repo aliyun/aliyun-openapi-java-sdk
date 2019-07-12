@@ -28,32 +28,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBoardSnapshotResponseUnmarshaller {
 
-	public static DescribeBoardSnapshotResponse unmarshall(DescribeBoardSnapshotResponse describeBoardSnapshotResponse, UnmarshallerContext context) {
+	public static DescribeBoardSnapshotResponse unmarshall(DescribeBoardSnapshotResponse describeBoardSnapshotResponse, UnmarshallerContext _ctx) {
 		
-		describeBoardSnapshotResponse.setRequestId(context.stringValue("DescribeBoardSnapshotResponse.RequestId"));
+		describeBoardSnapshotResponse.setRequestId(_ctx.stringValue("DescribeBoardSnapshotResponse.RequestId"));
 
 		Snapshot snapshot = new Snapshot();
 
 		Board board = new Board();
-		board.setBoardId(context.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.BoardId"));
-		board.setAppUid(context.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.AppUid"));
-		board.setEventTimestamp(context.longValue("DescribeBoardSnapshotResponse.Snapshot.Board.EventTimestamp"));
-		board.setCreateTimestamp(context.longValue("DescribeBoardSnapshotResponse.Snapshot.Board.CreateTimestamp"));
-		board.setUpdateTimestamp(context.longValue("DescribeBoardSnapshotResponse.Snapshot.Board.UpdateTimestamp"));
+		board.setBoardId(_ctx.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.BoardId"));
+		board.setAppUid(_ctx.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.AppUid"));
+		board.setEventTimestamp(_ctx.longValue("DescribeBoardSnapshotResponse.Snapshot.Board.EventTimestamp"));
+		board.setCreateTimestamp(_ctx.longValue("DescribeBoardSnapshotResponse.Snapshot.Board.CreateTimestamp"));
+		board.setUpdateTimestamp(_ctx.longValue("DescribeBoardSnapshotResponse.Snapshot.Board.UpdateTimestamp"));
 
 		List<Page> pages = new ArrayList<Page>();
-		for (int i = 0; i < context.lengthValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages.Length"); i++) {
 			Page page = new Page();
-			page.setPageIndex(context.integerValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].PageIndex"));
+			page.setPageIndex(_ctx.integerValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].PageIndex"));
 
 			List<Element> elements = new ArrayList<Element>();
-			for (int j = 0; j < context.lengthValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements.Length"); j++) {
 				Element element = new Element();
-				element.setElementIndex(context.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].ElementIndex"));
-				element.setOwnerId(context.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].OwnerId"));
-				element.setElementType(context.integerValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].ElementType"));
-				element.setUpdateTimestamp(context.longValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].UpdateTimestamp"));
-				element.setData(context.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].Data"));
+				element.setElementIndex(_ctx.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].ElementIndex"));
+				element.setOwnerId(_ctx.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].OwnerId"));
+				element.setElementType(_ctx.integerValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].ElementType"));
+				element.setUpdateTimestamp(_ctx.longValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].UpdateTimestamp"));
+				element.setData(_ctx.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].Data"));
 
 				elements.add(element);
 			}
@@ -64,10 +64,10 @@ public class DescribeBoardSnapshotResponseUnmarshaller {
 		board.setPages(pages);
 
 		List<Config> configs = new ArrayList<Config>();
-		for (int i = 0; i < context.lengthValue("DescribeBoardSnapshotResponse.Snapshot.Board.Configs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBoardSnapshotResponse.Snapshot.Board.Configs.Length"); i++) {
 			Config config = new Config();
-			config.setAppUid(context.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Configs["+ i +"].AppUid"));
-			config.setData(context.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Configs["+ i +"].Data"));
+			config.setAppUid(_ctx.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Configs["+ i +"].AppUid"));
+			config.setData(_ctx.stringValue("DescribeBoardSnapshotResponse.Snapshot.Board.Configs["+ i +"].Data"));
 
 			configs.add(config);
 		}

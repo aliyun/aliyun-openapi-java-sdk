@@ -25,35 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveRecordConfigResponseUnmarshaller {
 
-	public static DescribeLiveRecordConfigResponse unmarshall(DescribeLiveRecordConfigResponse describeLiveRecordConfigResponse, UnmarshallerContext context) {
+	public static DescribeLiveRecordConfigResponse unmarshall(DescribeLiveRecordConfigResponse describeLiveRecordConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveRecordConfigResponse.setRequestId(context.stringValue("DescribeLiveRecordConfigResponse.RequestId"));
-		describeLiveRecordConfigResponse.setPageNum(context.integerValue("DescribeLiveRecordConfigResponse.PageNum"));
-		describeLiveRecordConfigResponse.setPageSize(context.integerValue("DescribeLiveRecordConfigResponse.PageSize"));
-		describeLiveRecordConfigResponse.setOrder(context.stringValue("DescribeLiveRecordConfigResponse.Order"));
-		describeLiveRecordConfigResponse.setTotalNum(context.integerValue("DescribeLiveRecordConfigResponse.TotalNum"));
-		describeLiveRecordConfigResponse.setTotalPage(context.integerValue("DescribeLiveRecordConfigResponse.TotalPage"));
+		describeLiveRecordConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveRecordConfigResponse.RequestId"));
+		describeLiveRecordConfigResponse.setPageNum(_ctx.integerValue("DescribeLiveRecordConfigResponse.PageNum"));
+		describeLiveRecordConfigResponse.setPageSize(_ctx.integerValue("DescribeLiveRecordConfigResponse.PageSize"));
+		describeLiveRecordConfigResponse.setOrder(_ctx.stringValue("DescribeLiveRecordConfigResponse.Order"));
+		describeLiveRecordConfigResponse.setTotalNum(_ctx.integerValue("DescribeLiveRecordConfigResponse.TotalNum"));
+		describeLiveRecordConfigResponse.setTotalPage(_ctx.integerValue("DescribeLiveRecordConfigResponse.TotalPage"));
 
 		List<LiveAppRecord> liveAppRecordList = new ArrayList<LiveAppRecord>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList.Length"); i++) {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
-			liveAppRecord.setDomainName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
-			liveAppRecord.setAppName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].AppName"));
-			liveAppRecord.setStreamName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
-			liveAppRecord.setOssEndpoint(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssEndpoint"));
-			liveAppRecord.setOssBucket(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssBucket"));
-			liveAppRecord.setCreateTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].CreateTime"));
-			liveAppRecord.setStartTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
-			liveAppRecord.setEndTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
-			liveAppRecord.setOnDemond(context.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OnDemond"));
+			liveAppRecord.setDomainName(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
+			liveAppRecord.setAppName(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].AppName"));
+			liveAppRecord.setStreamName(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
+			liveAppRecord.setOssEndpoint(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssEndpoint"));
+			liveAppRecord.setOssBucket(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssBucket"));
+			liveAppRecord.setCreateTime(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].CreateTime"));
+			liveAppRecord.setStartTime(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
+			liveAppRecord.setEndTime(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
+			liveAppRecord.setOnDemond(_ctx.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OnDemond"));
 
 			List<RecordFormat> recordFormatList = new ArrayList<RecordFormat>();
-			for (int j = 0; j < context.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList.Length"); j++) {
 				RecordFormat recordFormat = new RecordFormat();
-				recordFormat.setFormat(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].Format"));
-				recordFormat.setOssObjectPrefix(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].OssObjectPrefix"));
-				recordFormat.setSliceOssObjectPrefix(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceOssObjectPrefix"));
-				recordFormat.setCycleDuration(context.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].CycleDuration"));
+				recordFormat.setFormat(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].Format"));
+				recordFormat.setOssObjectPrefix(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].OssObjectPrefix"));
+				recordFormat.setSliceOssObjectPrefix(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceOssObjectPrefix"));
+				recordFormat.setCycleDuration(_ctx.integerValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].CycleDuration"));
 
 				recordFormatList.add(recordFormat);
 			}

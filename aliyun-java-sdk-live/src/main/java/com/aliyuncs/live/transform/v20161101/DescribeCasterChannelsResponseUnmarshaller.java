@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCasterChannelsResponseUnmarshaller {
 
-	public static DescribeCasterChannelsResponse unmarshall(DescribeCasterChannelsResponse describeCasterChannelsResponse, UnmarshallerContext context) {
+	public static DescribeCasterChannelsResponse unmarshall(DescribeCasterChannelsResponse describeCasterChannelsResponse, UnmarshallerContext _ctx) {
 		
-		describeCasterChannelsResponse.setRequestId(context.stringValue("DescribeCasterChannelsResponse.RequestId"));
-		describeCasterChannelsResponse.setTotal(context.integerValue("DescribeCasterChannelsResponse.Total"));
+		describeCasterChannelsResponse.setRequestId(_ctx.stringValue("DescribeCasterChannelsResponse.RequestId"));
+		describeCasterChannelsResponse.setTotal(_ctx.integerValue("DescribeCasterChannelsResponse.Total"));
 
 		List<Channel> channels = new ArrayList<Channel>();
-		for (int i = 0; i < context.lengthValue("DescribeCasterChannelsResponse.Channels.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterChannelsResponse.Channels.Length"); i++) {
 			Channel channel = new Channel();
-			channel.setChannelId(context.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].ChannelId"));
-			channel.setResourceId(context.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].ResourceId"));
-			channel.setStreamUrl(context.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].StreamUrl"));
-			channel.setRtmpUrl(context.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].RtmpUrl"));
+			channel.setChannelId(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].ChannelId"));
+			channel.setResourceId(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].ResourceId"));
+			channel.setStreamUrl(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].StreamUrl"));
+			channel.setRtmpUrl(_ctx.stringValue("DescribeCasterChannelsResponse.Channels["+ i +"].RtmpUrl"));
 
 			channels.add(channel);
 		}

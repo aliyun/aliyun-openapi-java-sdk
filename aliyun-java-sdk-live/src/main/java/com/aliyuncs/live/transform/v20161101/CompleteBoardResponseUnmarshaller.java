@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CompleteBoardResponseUnmarshaller {
 
-	public static CompleteBoardResponse unmarshall(CompleteBoardResponse completeBoardResponse, UnmarshallerContext context) {
+	public static CompleteBoardResponse unmarshall(CompleteBoardResponse completeBoardResponse, UnmarshallerContext _ctx) {
 		
-		completeBoardResponse.setRequestId(context.stringValue("CompleteBoardResponse.RequestId"));
+		completeBoardResponse.setRequestId(_ctx.stringValue("CompleteBoardResponse.RequestId"));
 	 
 	 	return completeBoardResponse;
 	}

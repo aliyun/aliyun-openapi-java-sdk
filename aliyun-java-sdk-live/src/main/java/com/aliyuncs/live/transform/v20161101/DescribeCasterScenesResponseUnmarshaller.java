@@ -25,33 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCasterScenesResponseUnmarshaller {
 
-	public static DescribeCasterScenesResponse unmarshall(DescribeCasterScenesResponse describeCasterScenesResponse, UnmarshallerContext context) {
+	public static DescribeCasterScenesResponse unmarshall(DescribeCasterScenesResponse describeCasterScenesResponse, UnmarshallerContext _ctx) {
 		
-		describeCasterScenesResponse.setRequestId(context.stringValue("DescribeCasterScenesResponse.RequestId"));
-		describeCasterScenesResponse.setTotal(context.integerValue("DescribeCasterScenesResponse.Total"));
+		describeCasterScenesResponse.setRequestId(_ctx.stringValue("DescribeCasterScenesResponse.RequestId"));
+		describeCasterScenesResponse.setTotal(_ctx.integerValue("DescribeCasterScenesResponse.Total"));
 
 		List<Scene> sceneList = new ArrayList<Scene>();
-		for (int i = 0; i < context.lengthValue("DescribeCasterScenesResponse.SceneList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterScenesResponse.SceneList.Length"); i++) {
 			Scene scene = new Scene();
-			scene.setSceneId(context.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].SceneId"));
-			scene.setSceneName(context.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].SceneName"));
-			scene.setOutputType(context.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].OutputType"));
-			scene.setLayoutId(context.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].LayoutId"));
-			scene.setStreamUrl(context.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamUrl"));
-			scene.setStatus(context.integerValue("DescribeCasterScenesResponse.SceneList["+ i +"].Status"));
+			scene.setSceneId(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].SceneId"));
+			scene.setSceneName(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].SceneName"));
+			scene.setOutputType(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].OutputType"));
+			scene.setLayoutId(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].LayoutId"));
+			scene.setStreamUrl(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamUrl"));
+			scene.setStatus(_ctx.integerValue("DescribeCasterScenesResponse.SceneList["+ i +"].Status"));
 
 			List<String> componentIds = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeCasterScenesResponse.SceneList["+ i +"].ComponentIds.Length"); j++) {
-				componentIds.add(context.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].ComponentIds["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterScenesResponse.SceneList["+ i +"].ComponentIds.Length"); j++) {
+				componentIds.add(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].ComponentIds["+ j +"]"));
 			}
 			scene.setComponentIds(componentIds);
 
 			List<StreamInfo> streamInfos = new ArrayList<StreamInfo>();
-			for (int j = 0; j < context.lengthValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos.Length"); j++) {
 				StreamInfo streamInfo = new StreamInfo();
-				streamInfo.setTranscodeConfig(context.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
-				streamInfo.setVideoFormat(context.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].VideoFormat"));
-				streamInfo.setOutputStreamUrl(context.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].OutputStreamUrl"));
+				streamInfo.setTranscodeConfig(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
+				streamInfo.setVideoFormat(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].VideoFormat"));
+				streamInfo.setOutputStreamUrl(_ctx.stringValue("DescribeCasterScenesResponse.SceneList["+ i +"].StreamInfos["+ j +"].OutputStreamUrl"));
 
 				streamInfos.add(streamInfo);
 			}

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ApplyBoardTokenResponseUnmarshaller {
 
-	public static ApplyBoardTokenResponse unmarshall(ApplyBoardTokenResponse applyBoardTokenResponse, UnmarshallerContext context) {
+	public static ApplyBoardTokenResponse unmarshall(ApplyBoardTokenResponse applyBoardTokenResponse, UnmarshallerContext _ctx) {
 		
-		applyBoardTokenResponse.setRequestId(context.stringValue("ApplyBoardTokenResponse.RequestId"));
-		applyBoardTokenResponse.setToken(context.stringValue("ApplyBoardTokenResponse.Token"));
-		applyBoardTokenResponse.setExpired(context.stringValue("ApplyBoardTokenResponse.Expired"));
+		applyBoardTokenResponse.setRequestId(_ctx.stringValue("ApplyBoardTokenResponse.RequestId"));
+		applyBoardTokenResponse.setToken(_ctx.stringValue("ApplyBoardTokenResponse.Token"));
+		applyBoardTokenResponse.setExpired(_ctx.stringValue("ApplyBoardTokenResponse.Expired"));
 	 
 	 	return applyBoardTokenResponse;
 	}

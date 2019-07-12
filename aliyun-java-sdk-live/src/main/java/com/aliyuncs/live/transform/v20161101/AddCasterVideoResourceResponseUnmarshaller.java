@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddCasterVideoResourceResponseUnmarshaller {
 
-	public static AddCasterVideoResourceResponse unmarshall(AddCasterVideoResourceResponse addCasterVideoResourceResponse, UnmarshallerContext context) {
+	public static AddCasterVideoResourceResponse unmarshall(AddCasterVideoResourceResponse addCasterVideoResourceResponse, UnmarshallerContext _ctx) {
 		
-		addCasterVideoResourceResponse.setRequestId(context.stringValue("AddCasterVideoResourceResponse.RequestId"));
-		addCasterVideoResourceResponse.setResourceId(context.stringValue("AddCasterVideoResourceResponse.ResourceId"));
+		addCasterVideoResourceResponse.setRequestId(_ctx.stringValue("AddCasterVideoResourceResponse.RequestId"));
+		addCasterVideoResourceResponse.setResourceId(_ctx.stringValue("AddCasterVideoResourceResponse.ResourceId"));
 	 
 	 	return addCasterVideoResourceResponse;
 	}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateRoomResponseUnmarshaller {
 
-	public static CreateRoomResponse unmarshall(CreateRoomResponse createRoomResponse, UnmarshallerContext context) {
+	public static CreateRoomResponse unmarshall(CreateRoomResponse createRoomResponse, UnmarshallerContext _ctx) {
 		
-		createRoomResponse.setRequestId(context.stringValue("CreateRoomResponse.RequestId"));
-		createRoomResponse.setAppId(context.stringValue("CreateRoomResponse.AppId"));
-		createRoomResponse.setRoomId(context.stringValue("CreateRoomResponse.RoomId"));
-		createRoomResponse.setAnchorId(context.stringValue("CreateRoomResponse.AnchorId"));
+		createRoomResponse.setRequestId(_ctx.stringValue("CreateRoomResponse.RequestId"));
+		createRoomResponse.setAppId(_ctx.stringValue("CreateRoomResponse.AppId"));
+		createRoomResponse.setRoomId(_ctx.stringValue("CreateRoomResponse.RoomId"));
+		createRoomResponse.setAnchorId(_ctx.stringValue("CreateRoomResponse.AnchorId"));
 	 
 	 	return createRoomResponse;
 	}

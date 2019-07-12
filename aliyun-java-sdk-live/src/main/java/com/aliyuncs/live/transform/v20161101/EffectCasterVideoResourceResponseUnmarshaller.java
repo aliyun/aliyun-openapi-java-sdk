@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EffectCasterVideoResourceResponseUnmarshaller {
 
-	public static EffectCasterVideoResourceResponse unmarshall(EffectCasterVideoResourceResponse effectCasterVideoResourceResponse, UnmarshallerContext context) {
+	public static EffectCasterVideoResourceResponse unmarshall(EffectCasterVideoResourceResponse effectCasterVideoResourceResponse, UnmarshallerContext _ctx) {
 		
-		effectCasterVideoResourceResponse.setRequestId(context.stringValue("EffectCasterVideoResourceResponse.RequestId"));
+		effectCasterVideoResourceResponse.setRequestId(_ctx.stringValue("EffectCasterVideoResourceResponse.RequestId"));
 	 
 	 	return effectCasterVideoResourceResponse;
 	}

@@ -30,6 +30,8 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 
 	private String template;
 
+	private Integer audioChannelNum;
+
 	private Integer profile;
 
 	private Integer fPS;
@@ -37,6 +39,10 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 	private String gop;
 
 	private Long ownerId;
+
+	private String audioCodec;
+
+	private Integer audioRate;
 
 	private String templateType;
 
@@ -47,6 +53,8 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 	private Integer width;
 
 	private Integer videoBitrate;
+
+	private String audioProfile;
 
 	private Integer height;
 
@@ -69,6 +77,17 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.template = template;
 		if(template != null){
 			putQueryParameter("Template", template);
+		}
+	}
+
+	public Integer getAudioChannelNum() {
+		return this.audioChannelNum;
+	}
+
+	public void setAudioChannelNum(Integer audioChannelNum) {
+		this.audioChannelNum = audioChannelNum;
+		if(audioChannelNum != null){
+			putQueryParameter("AudioChannelNum", audioChannelNum.toString());
 		}
 	}
 
@@ -113,6 +132,28 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAudioCodec() {
+		return this.audioCodec;
+	}
+
+	public void setAudioCodec(String audioCodec) {
+		this.audioCodec = audioCodec;
+		if(audioCodec != null){
+			putQueryParameter("AudioCodec", audioCodec);
+		}
+	}
+
+	public Integer getAudioRate() {
+		return this.audioRate;
+	}
+
+	public void setAudioRate(Integer audioRate) {
+		this.audioRate = audioRate;
+		if(audioRate != null){
+			putQueryParameter("AudioRate", audioRate.toString());
 		}
 	}
 
@@ -187,6 +228,17 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.videoBitrate = videoBitrate;
 		if(videoBitrate != null){
 			putQueryParameter("VideoBitrate", videoBitrate.toString());
+		}
+	}
+
+	public String getAudioProfile() {
+		return this.audioProfile;
+	}
+
+	public void setAudioProfile(String audioProfile) {
+		this.audioProfile = audioProfile;
+		if(audioProfile != null){
+			putQueryParameter("AudioProfile", audioProfile);
 		}
 	}
 

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetLiveLazyPullStreamInfoConfigResponseUnmarshaller {
 
-	public static SetLiveLazyPullStreamInfoConfigResponse unmarshall(SetLiveLazyPullStreamInfoConfigResponse setLiveLazyPullStreamInfoConfigResponse, UnmarshallerContext context) {
+	public static SetLiveLazyPullStreamInfoConfigResponse unmarshall(SetLiveLazyPullStreamInfoConfigResponse setLiveLazyPullStreamInfoConfigResponse, UnmarshallerContext _ctx) {
 		
-		setLiveLazyPullStreamInfoConfigResponse.setRequestId(context.stringValue("SetLiveLazyPullStreamInfoConfigResponse.RequestId"));
+		setLiveLazyPullStreamInfoConfigResponse.setRequestId(_ctx.stringValue("SetLiveLazyPullStreamInfoConfigResponse.RequestId"));
 	 
 	 	return setLiveLazyPullStreamInfoConfigResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetLiveStreamOptimizedFeatureConfigResponseUnmarshaller {
 
-	public static SetLiveStreamOptimizedFeatureConfigResponse unmarshall(SetLiveStreamOptimizedFeatureConfigResponse setLiveStreamOptimizedFeatureConfigResponse, UnmarshallerContext context) {
+	public static SetLiveStreamOptimizedFeatureConfigResponse unmarshall(SetLiveStreamOptimizedFeatureConfigResponse setLiveStreamOptimizedFeatureConfigResponse, UnmarshallerContext _ctx) {
 		
-		setLiveStreamOptimizedFeatureConfigResponse.setRequestId(context.stringValue("SetLiveStreamOptimizedFeatureConfigResponse.RequestId"));
+		setLiveStreamOptimizedFeatureConfigResponse.setRequestId(_ctx.stringValue("SetLiveStreamOptimizedFeatureConfigResponse.RequestId"));
 	 
 	 	return setLiveStreamOptimizedFeatureConfigResponse;
 	}

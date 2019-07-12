@@ -26,32 +26,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartCasterResponseUnmarshaller {
 
-	public static StartCasterResponse unmarshall(StartCasterResponse startCasterResponse, UnmarshallerContext context) {
+	public static StartCasterResponse unmarshall(StartCasterResponse startCasterResponse, UnmarshallerContext _ctx) {
 		
-		startCasterResponse.setRequestId(context.stringValue("StartCasterResponse.RequestId"));
+		startCasterResponse.setRequestId(_ctx.stringValue("StartCasterResponse.RequestId"));
 
 		List<SceneInfo> pvwSceneInfos = new ArrayList<SceneInfo>();
-		for (int i = 0; i < context.lengthValue("StartCasterResponse.PvwSceneInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("StartCasterResponse.PvwSceneInfos.Length"); i++) {
 			SceneInfo sceneInfo = new SceneInfo();
-			sceneInfo.setSceneId(context.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].SceneId"));
-			sceneInfo.setStreamUrl(context.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].StreamUrl"));
+			sceneInfo.setSceneId(_ctx.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].SceneId"));
+			sceneInfo.setStreamUrl(_ctx.stringValue("StartCasterResponse.PvwSceneInfos["+ i +"].StreamUrl"));
 
 			pvwSceneInfos.add(sceneInfo);
 		}
 		startCasterResponse.setPvwSceneInfos(pvwSceneInfos);
 
 		List<SceneInfo1> pgmSceneInfos = new ArrayList<SceneInfo1>();
-		for (int i = 0; i < context.lengthValue("StartCasterResponse.PgmSceneInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("StartCasterResponse.PgmSceneInfos.Length"); i++) {
 			SceneInfo1 sceneInfo1 = new SceneInfo1();
-			sceneInfo1.setSceneId(context.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].SceneId"));
-			sceneInfo1.setStreamUrl(context.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamUrl"));
+			sceneInfo1.setSceneId(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].SceneId"));
+			sceneInfo1.setStreamUrl(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamUrl"));
 
 			List<StreamInfo> streamInfos = new ArrayList<StreamInfo>();
-			for (int j = 0; j < context.lengthValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos.Length"); j++) {
 				StreamInfo streamInfo = new StreamInfo();
-				streamInfo.setTranscodeConfig(context.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
-				streamInfo.setVideoFormat(context.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].VideoFormat"));
-				streamInfo.setOutputStreamUrl(context.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].OutputStreamUrl"));
+				streamInfo.setTranscodeConfig(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].TranscodeConfig"));
+				streamInfo.setVideoFormat(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].VideoFormat"));
+				streamInfo.setOutputStreamUrl(_ctx.stringValue("StartCasterResponse.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].OutputStreamUrl"));
 
 				streamInfos.add(streamInfo);
 			}

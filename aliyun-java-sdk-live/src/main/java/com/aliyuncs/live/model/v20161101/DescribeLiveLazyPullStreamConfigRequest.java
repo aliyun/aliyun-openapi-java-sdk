@@ -28,6 +28,8 @@ public class DescribeLiveLazyPullStreamConfigRequest extends RpcAcsRequest<Descr
 
 	private String appName;
 
+	private String liveapiRequestFrom;
+
 	private String domainName;
 
 	private Long ownerId;
@@ -40,6 +42,17 @@ public class DescribeLiveLazyPullStreamConfigRequest extends RpcAcsRequest<Descr
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getLiveapiRequestFrom() {
+		return this.liveapiRequestFrom;
+	}
+
+	public void setLiveapiRequestFrom(String liveapiRequestFrom) {
+		this.liveapiRequestFrom = liveapiRequestFrom;
+		if(liveapiRequestFrom != null){
+			putQueryParameter("LiveapiRequestFrom", liveapiRequestFrom);
 		}
 	}
 

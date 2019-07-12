@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLivePullStreamConfigResponseUnmarshaller {
 
-	public static DescribeLivePullStreamConfigResponse unmarshall(DescribeLivePullStreamConfigResponse describeLivePullStreamConfigResponse, UnmarshallerContext context) {
+	public static DescribeLivePullStreamConfigResponse unmarshall(DescribeLivePullStreamConfigResponse describeLivePullStreamConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLivePullStreamConfigResponse.setRequestId(context.stringValue("DescribeLivePullStreamConfigResponse.RequestId"));
+		describeLivePullStreamConfigResponse.setRequestId(_ctx.stringValue("DescribeLivePullStreamConfigResponse.RequestId"));
 
 		List<LiveAppRecord> liveAppRecordList = new ArrayList<LiveAppRecord>();
-		for (int i = 0; i < context.lengthValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList.Length"); i++) {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
-			liveAppRecord.setDomainName(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
-			liveAppRecord.setAppName(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].AppName"));
-			liveAppRecord.setStreamName(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
-			liveAppRecord.setSourceUrl(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].SourceUrl"));
-			liveAppRecord.setStartTime(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
-			liveAppRecord.setEndTime(context.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
+			liveAppRecord.setDomainName(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
+			liveAppRecord.setAppName(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].AppName"));
+			liveAppRecord.setStreamName(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StreamName"));
+			liveAppRecord.setSourceUrl(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].SourceUrl"));
+			liveAppRecord.setStartTime(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].StartTime"));
+			liveAppRecord.setEndTime(_ctx.stringValue("DescribeLivePullStreamConfigResponse.LiveAppRecordList["+ i +"].EndTime"));
 
 			liveAppRecordList.add(liveAppRecord);
 		}

@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRecordsResponseUnmarshaller {
 
-	public static DescribeRecordsResponse unmarshall(DescribeRecordsResponse describeRecordsResponse, UnmarshallerContext context) {
+	public static DescribeRecordsResponse unmarshall(DescribeRecordsResponse describeRecordsResponse, UnmarshallerContext _ctx) {
 		
-		describeRecordsResponse.setRequestId(context.stringValue("DescribeRecordsResponse.RequestId"));
+		describeRecordsResponse.setRequestId(_ctx.stringValue("DescribeRecordsResponse.RequestId"));
 
 		List<Record> records = new ArrayList<Record>();
-		for (int i = 0; i < context.lengthValue("DescribeRecordsResponse.Records.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRecordsResponse.Records.Length"); i++) {
 			Record record = new Record();
-			record.setRecordId(context.stringValue("DescribeRecordsResponse.Records["+ i +"].RecordId"));
-			record.setAppId(context.stringValue("DescribeRecordsResponse.Records["+ i +"].AppId"));
-			record.setBoardId(context.integerValue("DescribeRecordsResponse.Records["+ i +"].BoardId"));
-			record.setRecordStartTime(context.longValue("DescribeRecordsResponse.Records["+ i +"].RecordStartTime"));
-			record.setStartTime(context.longValue("DescribeRecordsResponse.Records["+ i +"].StartTime"));
-			record.setEndTime(context.longValue("DescribeRecordsResponse.Records["+ i +"].EndTime"));
-			record.setState(context.integerValue("DescribeRecordsResponse.Records["+ i +"].State"));
-			record.setOssPath(context.stringValue("DescribeRecordsResponse.Records["+ i +"].OssPath"));
-			record.setOssBucket(context.stringValue("DescribeRecordsResponse.Records["+ i +"].OssBucket"));
-			record.setOssEndpoint(context.stringValue("DescribeRecordsResponse.Records["+ i +"].OssEndpoint"));
+			record.setRecordId(_ctx.stringValue("DescribeRecordsResponse.Records["+ i +"].RecordId"));
+			record.setAppId(_ctx.stringValue("DescribeRecordsResponse.Records["+ i +"].AppId"));
+			record.setBoardId(_ctx.integerValue("DescribeRecordsResponse.Records["+ i +"].BoardId"));
+			record.setRecordStartTime(_ctx.longValue("DescribeRecordsResponse.Records["+ i +"].RecordStartTime"));
+			record.setStartTime(_ctx.longValue("DescribeRecordsResponse.Records["+ i +"].StartTime"));
+			record.setEndTime(_ctx.longValue("DescribeRecordsResponse.Records["+ i +"].EndTime"));
+			record.setState(_ctx.integerValue("DescribeRecordsResponse.Records["+ i +"].State"));
+			record.setOssPath(_ctx.stringValue("DescribeRecordsResponse.Records["+ i +"].OssPath"));
+			record.setOssBucket(_ctx.stringValue("DescribeRecordsResponse.Records["+ i +"].OssBucket"));
+			record.setOssEndpoint(_ctx.stringValue("DescribeRecordsResponse.Records["+ i +"].OssEndpoint"));
 
 			records.add(record);
 		}

@@ -99,6 +99,20 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 			private String templateType;
 
+			private String videoProfile;
+
+			private String gop;
+
+			private Integer audioBitrate;
+
+			private String audioProfile;
+
+			private String audioCodec;
+
+			private Integer audioRate;
+
+			private Integer audioChannelNum;
+
 			public Integer getVideoBitrate() {
 				return this.videoBitrate;
 			}
@@ -137,6 +151,62 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 			public void setTemplateType(String templateType) {
 				this.templateType = templateType;
+			}
+
+			public String getVideoProfile() {
+				return this.videoProfile;
+			}
+
+			public void setVideoProfile(String videoProfile) {
+				this.videoProfile = videoProfile;
+			}
+
+			public String getGop() {
+				return this.gop;
+			}
+
+			public void setGop(String gop) {
+				this.gop = gop;
+			}
+
+			public Integer getAudioBitrate() {
+				return this.audioBitrate;
+			}
+
+			public void setAudioBitrate(Integer audioBitrate) {
+				this.audioBitrate = audioBitrate;
+			}
+
+			public String getAudioProfile() {
+				return this.audioProfile;
+			}
+
+			public void setAudioProfile(String audioProfile) {
+				this.audioProfile = audioProfile;
+			}
+
+			public String getAudioCodec() {
+				return this.audioCodec;
+			}
+
+			public void setAudioCodec(String audioCodec) {
+				this.audioCodec = audioCodec;
+			}
+
+			public Integer getAudioRate() {
+				return this.audioRate;
+			}
+
+			public void setAudioRate(Integer audioRate) {
+				this.audioRate = audioRate;
+			}
+
+			public Integer getAudioChannelNum() {
+				return this.audioChannelNum;
+			}
+
+			public void setAudioChannelNum(Integer audioChannelNum) {
+				this.audioChannelNum = audioChannelNum;
 			}
 		}
 	}

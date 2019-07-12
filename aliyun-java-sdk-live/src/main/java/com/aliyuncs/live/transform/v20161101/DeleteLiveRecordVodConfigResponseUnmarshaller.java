@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteLiveRecordVodConfigResponseUnmarshaller {
 
-	public static DeleteLiveRecordVodConfigResponse unmarshall(DeleteLiveRecordVodConfigResponse deleteLiveRecordVodConfigResponse, UnmarshallerContext context) {
+	public static DeleteLiveRecordVodConfigResponse unmarshall(DeleteLiveRecordVodConfigResponse deleteLiveRecordVodConfigResponse, UnmarshallerContext _ctx) {
 		
-		deleteLiveRecordVodConfigResponse.setRequestId(context.stringValue("DeleteLiveRecordVodConfigResponse.RequestId"));
+		deleteLiveRecordVodConfigResponse.setRequestId(_ctx.stringValue("DeleteLiveRecordVodConfigResponse.RequestId"));
 	 
 	 	return deleteLiveRecordVodConfigResponse;
 	}

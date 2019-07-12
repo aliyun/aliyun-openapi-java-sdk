@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddCasterComponentResponseUnmarshaller {
 
-	public static AddCasterComponentResponse unmarshall(AddCasterComponentResponse addCasterComponentResponse, UnmarshallerContext context) {
+	public static AddCasterComponentResponse unmarshall(AddCasterComponentResponse addCasterComponentResponse, UnmarshallerContext _ctx) {
 		
-		addCasterComponentResponse.setRequestId(context.stringValue("AddCasterComponentResponse.RequestId"));
-		addCasterComponentResponse.setComponentId(context.stringValue("AddCasterComponentResponse.ComponentId"));
+		addCasterComponentResponse.setRequestId(_ctx.stringValue("AddCasterComponentResponse.RequestId"));
+		addCasterComponentResponse.setComponentId(_ctx.stringValue("AddCasterComponentResponse.ComponentId"));
 	 
 	 	return addCasterComponentResponse;
 	}

@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCastersResponseUnmarshaller {
 
-	public static DescribeCastersResponse unmarshall(DescribeCastersResponse describeCastersResponse, UnmarshallerContext context) {
+	public static DescribeCastersResponse unmarshall(DescribeCastersResponse describeCastersResponse, UnmarshallerContext _ctx) {
 		
-		describeCastersResponse.setRequestId(context.stringValue("DescribeCastersResponse.RequestId"));
-		describeCastersResponse.setTotal(context.integerValue("DescribeCastersResponse.Total"));
+		describeCastersResponse.setRequestId(_ctx.stringValue("DescribeCastersResponse.RequestId"));
+		describeCastersResponse.setTotal(_ctx.integerValue("DescribeCastersResponse.Total"));
 
 		List<Caster> casterList = new ArrayList<Caster>();
-		for (int i = 0; i < context.lengthValue("DescribeCastersResponse.CasterList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCastersResponse.CasterList.Length"); i++) {
 			Caster caster = new Caster();
-			caster.setStatus(context.integerValue("DescribeCastersResponse.CasterList["+ i +"].Status"));
-			caster.setNormType(context.integerValue("DescribeCastersResponse.CasterList["+ i +"].NormType"));
-			caster.setCasterId(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterId"));
-			caster.setCasterName(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterName"));
-			caster.setCreateTime(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].CreateTime"));
-			caster.setStartTime(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].StartTime"));
-			caster.setPurchaseTime(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].PurchaseTime"));
-			caster.setExpireTime(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].ExpireTime"));
-			caster.setChargeType(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].ChargeType"));
-			caster.setCasterTemplate(context.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterTemplate"));
-			caster.setChannelEnable(context.integerValue("DescribeCastersResponse.CasterList["+ i +"].ChannelEnable"));
+			caster.setStatus(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].Status"));
+			caster.setNormType(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].NormType"));
+			caster.setCasterId(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterId"));
+			caster.setCasterName(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterName"));
+			caster.setCreateTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CreateTime"));
+			caster.setStartTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].StartTime"));
+			caster.setPurchaseTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].PurchaseTime"));
+			caster.setExpireTime(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ExpireTime"));
+			caster.setChargeType(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].ChargeType"));
+			caster.setCasterTemplate(_ctx.stringValue("DescribeCastersResponse.CasterList["+ i +"].CasterTemplate"));
+			caster.setChannelEnable(_ctx.integerValue("DescribeCastersResponse.CasterList["+ i +"].ChannelEnable"));
 
 			casterList.add(caster);
 		}

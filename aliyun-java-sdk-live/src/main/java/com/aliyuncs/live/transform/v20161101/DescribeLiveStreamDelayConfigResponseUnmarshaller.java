@@ -23,23 +23,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamDelayConfigResponseUnmarshaller {
 
-	public static DescribeLiveStreamDelayConfigResponse unmarshall(DescribeLiveStreamDelayConfigResponse describeLiveStreamDelayConfigResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamDelayConfigResponse unmarshall(DescribeLiveStreamDelayConfigResponse describeLiveStreamDelayConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamDelayConfigResponse.setRequestId(context.stringValue("DescribeLiveStreamDelayConfigResponse.RequestId"));
+		describeLiveStreamDelayConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.RequestId"));
 
 		LiveStreamHlsDelayConfig liveStreamHlsDelayConfig = new LiveStreamHlsDelayConfig();
-		liveStreamHlsDelayConfig.setLevel(context.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamHlsDelayConfig.Level"));
-		liveStreamHlsDelayConfig.setDelay(context.integerValue("DescribeLiveStreamDelayConfigResponse.LiveStreamHlsDelayConfig.Delay"));
+		liveStreamHlsDelayConfig.setLevel(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamHlsDelayConfig.Level"));
+		liveStreamHlsDelayConfig.setDelay(_ctx.integerValue("DescribeLiveStreamDelayConfigResponse.LiveStreamHlsDelayConfig.Delay"));
 		describeLiveStreamDelayConfigResponse.setLiveStreamHlsDelayConfig(liveStreamHlsDelayConfig);
 
 		LiveStreamFlvDelayConfig liveStreamFlvDelayConfig = new LiveStreamFlvDelayConfig();
-		liveStreamFlvDelayConfig.setLevel(context.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamFlvDelayConfig.Level"));
-		liveStreamFlvDelayConfig.setDelay(context.integerValue("DescribeLiveStreamDelayConfigResponse.LiveStreamFlvDelayConfig.Delay"));
+		liveStreamFlvDelayConfig.setLevel(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamFlvDelayConfig.Level"));
+		liveStreamFlvDelayConfig.setDelay(_ctx.integerValue("DescribeLiveStreamDelayConfigResponse.LiveStreamFlvDelayConfig.Delay"));
 		describeLiveStreamDelayConfigResponse.setLiveStreamFlvDelayConfig(liveStreamFlvDelayConfig);
 
 		LiveStreamRtmpDelayConfig liveStreamRtmpDelayConfig = new LiveStreamRtmpDelayConfig();
-		liveStreamRtmpDelayConfig.setLevel(context.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamRtmpDelayConfig.Level"));
-		liveStreamRtmpDelayConfig.setDelay(context.integerValue("DescribeLiveStreamDelayConfigResponse.LiveStreamRtmpDelayConfig.Delay"));
+		liveStreamRtmpDelayConfig.setLevel(_ctx.stringValue("DescribeLiveStreamDelayConfigResponse.LiveStreamRtmpDelayConfig.Level"));
+		liveStreamRtmpDelayConfig.setDelay(_ctx.integerValue("DescribeLiveStreamDelayConfigResponse.LiveStreamRtmpDelayConfig.Delay"));
 		describeLiveStreamDelayConfigResponse.setLiveStreamRtmpDelayConfig(liveStreamRtmpDelayConfig);
 	 
 	 	return describeLiveStreamDelayConfigResponse;

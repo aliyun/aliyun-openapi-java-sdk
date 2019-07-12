@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SendRoomNotificationResponseUnmarshaller {
 
-	public static SendRoomNotificationResponse unmarshall(SendRoomNotificationResponse sendRoomNotificationResponse, UnmarshallerContext context) {
+	public static SendRoomNotificationResponse unmarshall(SendRoomNotificationResponse sendRoomNotificationResponse, UnmarshallerContext _ctx) {
 		
-		sendRoomNotificationResponse.setRequestId(context.stringValue("SendRoomNotificationResponse.RequestId"));
-		sendRoomNotificationResponse.setMessageId(context.stringValue("SendRoomNotificationResponse.MessageId"));
+		sendRoomNotificationResponse.setRequestId(_ctx.stringValue("SendRoomNotificationResponse.RequestId"));
+		sendRoomNotificationResponse.setMessageId(_ctx.stringValue("SendRoomNotificationResponse.MessageId"));
 	 
 	 	return sendRoomNotificationResponse;
 	}

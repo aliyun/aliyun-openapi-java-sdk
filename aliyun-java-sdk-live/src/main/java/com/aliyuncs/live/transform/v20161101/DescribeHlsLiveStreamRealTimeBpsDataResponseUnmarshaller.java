@@ -26,27 +26,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeHlsLiveStreamRealTimeBpsDataResponseUnmarshaller {
 
-	public static DescribeHlsLiveStreamRealTimeBpsDataResponse unmarshall(DescribeHlsLiveStreamRealTimeBpsDataResponse describeHlsLiveStreamRealTimeBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeHlsLiveStreamRealTimeBpsDataResponse unmarshall(DescribeHlsLiveStreamRealTimeBpsDataResponse describeHlsLiveStreamRealTimeBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeHlsLiveStreamRealTimeBpsDataResponse.setRequestId(context.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.RequestId"));
-		describeHlsLiveStreamRealTimeBpsDataResponse.setTime(context.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.Time"));
+		describeHlsLiveStreamRealTimeBpsDataResponse.setRequestId(_ctx.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.RequestId"));
+		describeHlsLiveStreamRealTimeBpsDataResponse.setTime(_ctx.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.Time"));
 
 		List<UsageDataPerDomain> usageData = new ArrayList<UsageDataPerDomain>();
-		for (int i = 0; i < context.lengthValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData.Length"); i++) {
 			UsageDataPerDomain usageDataPerDomain = new UsageDataPerDomain();
-			usageDataPerDomain.setDomainName(context.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].DomainName"));
+			usageDataPerDomain.setDomainName(_ctx.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].DomainName"));
 
 			List<StreamInfo> streamInfos = new ArrayList<StreamInfo>();
-			for (int j = 0; j < context.lengthValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos.Length"); j++) {
 				StreamInfo streamInfo = new StreamInfo();
-				streamInfo.setStreamName(context.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].StreamName"));
+				streamInfo.setStreamName(_ctx.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].StreamName"));
 
 				List<Info> infos = new ArrayList<Info>();
-				for (int k = 0; k < context.lengthValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].Infos.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].Infos.Length"); k++) {
 					Info info = new Info();
-					info.setDownFlow(context.floatValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].DownFlow"));
-					info.setRate(context.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].Rate"));
-					info.setOnline(context.floatValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].Online"));
+					info.setDownFlow(_ctx.floatValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].DownFlow"));
+					info.setRate(_ctx.stringValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].Rate"));
+					info.setOnline(_ctx.floatValue("DescribeHlsLiveStreamRealTimeBpsDataResponse.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].Online"));
 
 					infos.add(info);
 				}

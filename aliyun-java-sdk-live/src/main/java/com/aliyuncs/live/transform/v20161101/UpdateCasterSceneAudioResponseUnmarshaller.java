@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateCasterSceneAudioResponseUnmarshaller {
 
-	public static UpdateCasterSceneAudioResponse unmarshall(UpdateCasterSceneAudioResponse updateCasterSceneAudioResponse, UnmarshallerContext context) {
+	public static UpdateCasterSceneAudioResponse unmarshall(UpdateCasterSceneAudioResponse updateCasterSceneAudioResponse, UnmarshallerContext _ctx) {
 		
-		updateCasterSceneAudioResponse.setRequestId(context.stringValue("UpdateCasterSceneAudioResponse.RequestId"));
+		updateCasterSceneAudioResponse.setRequestId(_ctx.stringValue("UpdateCasterSceneAudioResponse.RequestId"));
 	 
 	 	return updateCasterSceneAudioResponse;
 	}

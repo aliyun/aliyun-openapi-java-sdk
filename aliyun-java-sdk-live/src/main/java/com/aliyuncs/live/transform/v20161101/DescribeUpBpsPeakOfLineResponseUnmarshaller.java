@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUpBpsPeakOfLineResponseUnmarshaller {
 
-	public static DescribeUpBpsPeakOfLineResponse unmarshall(DescribeUpBpsPeakOfLineResponse describeUpBpsPeakOfLineResponse, UnmarshallerContext context) {
+	public static DescribeUpBpsPeakOfLineResponse unmarshall(DescribeUpBpsPeakOfLineResponse describeUpBpsPeakOfLineResponse, UnmarshallerContext _ctx) {
 		
-		describeUpBpsPeakOfLineResponse.setRequestId(context.stringValue("DescribeUpBpsPeakOfLineResponse.RequestId"));
+		describeUpBpsPeakOfLineResponse.setRequestId(_ctx.stringValue("DescribeUpBpsPeakOfLineResponse.RequestId"));
 
 		List<DescribeUpBpsPeakOfLine> describeUpBpsPeakOfLines = new ArrayList<DescribeUpBpsPeakOfLine>();
-		for (int i = 0; i < context.lengthValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines.Length"); i++) {
 			DescribeUpBpsPeakOfLine describeUpBpsPeakOfLine = new DescribeUpBpsPeakOfLine();
-			describeUpBpsPeakOfLine.setBandWidth(context.floatValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].BandWidth"));
-			describeUpBpsPeakOfLine.setPeakTime(context.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].PeakTime"));
-			describeUpBpsPeakOfLine.setQueryTime(context.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].QueryTime"));
-			describeUpBpsPeakOfLine.setStatName(context.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].StatName"));
+			describeUpBpsPeakOfLine.setBandWidth(_ctx.floatValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].BandWidth"));
+			describeUpBpsPeakOfLine.setPeakTime(_ctx.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].PeakTime"));
+			describeUpBpsPeakOfLine.setQueryTime(_ctx.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].QueryTime"));
+			describeUpBpsPeakOfLine.setStatName(_ctx.stringValue("DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLines["+ i +"].StatName"));
 
 			describeUpBpsPeakOfLines.add(describeUpBpsPeakOfLine);
 		}

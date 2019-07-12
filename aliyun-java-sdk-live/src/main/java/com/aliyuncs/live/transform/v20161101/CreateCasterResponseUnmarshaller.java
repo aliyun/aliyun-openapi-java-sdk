@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCasterResponseUnmarshaller {
 
-	public static CreateCasterResponse unmarshall(CreateCasterResponse createCasterResponse, UnmarshallerContext context) {
+	public static CreateCasterResponse unmarshall(CreateCasterResponse createCasterResponse, UnmarshallerContext _ctx) {
 		
-		createCasterResponse.setRequestId(context.stringValue("CreateCasterResponse.RequestId"));
-		createCasterResponse.setCasterId(context.stringValue("CreateCasterResponse.CasterId"));
+		createCasterResponse.setRequestId(_ctx.stringValue("CreateCasterResponse.RequestId"));
+		createCasterResponse.setCasterId(_ctx.stringValue("CreateCasterResponse.CasterId"));
 	 
 	 	return createCasterResponse;
 	}

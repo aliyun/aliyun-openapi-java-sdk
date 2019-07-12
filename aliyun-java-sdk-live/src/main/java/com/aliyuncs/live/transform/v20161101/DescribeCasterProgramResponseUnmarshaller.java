@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCasterProgramResponseUnmarshaller {
 
-	public static DescribeCasterProgramResponse unmarshall(DescribeCasterProgramResponse describeCasterProgramResponse, UnmarshallerContext context) {
+	public static DescribeCasterProgramResponse unmarshall(DescribeCasterProgramResponse describeCasterProgramResponse, UnmarshallerContext _ctx) {
 		
-		describeCasterProgramResponse.setRequestId(context.stringValue("DescribeCasterProgramResponse.RequestId"));
-		describeCasterProgramResponse.setCasterId(context.stringValue("DescribeCasterProgramResponse.CasterId"));
-		describeCasterProgramResponse.setProgramName(context.stringValue("DescribeCasterProgramResponse.ProgramName"));
-		describeCasterProgramResponse.setProgramEffect(context.integerValue("DescribeCasterProgramResponse.ProgramEffect"));
-		describeCasterProgramResponse.setTotal(context.integerValue("DescribeCasterProgramResponse.Total"));
+		describeCasterProgramResponse.setRequestId(_ctx.stringValue("DescribeCasterProgramResponse.RequestId"));
+		describeCasterProgramResponse.setCasterId(_ctx.stringValue("DescribeCasterProgramResponse.CasterId"));
+		describeCasterProgramResponse.setProgramName(_ctx.stringValue("DescribeCasterProgramResponse.ProgramName"));
+		describeCasterProgramResponse.setProgramEffect(_ctx.integerValue("DescribeCasterProgramResponse.ProgramEffect"));
+		describeCasterProgramResponse.setTotal(_ctx.integerValue("DescribeCasterProgramResponse.Total"));
 
 		List<Episode> episodes = new ArrayList<Episode>();
-		for (int i = 0; i < context.lengthValue("DescribeCasterProgramResponse.Episodes.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterProgramResponse.Episodes.Length"); i++) {
 			Episode episode = new Episode();
-			episode.setEpisodeId(context.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeId"));
-			episode.setEpisodeType(context.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeType"));
-			episode.setEpisodeName(context.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeName"));
-			episode.setResourceId(context.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].ResourceId"));
-			episode.setStartTime(context.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].StartTime"));
-			episode.setEndTime(context.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EndTime"));
-			episode.setSwitchType(context.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].SwitchType"));
-			episode.setStatus(context.integerValue("DescribeCasterProgramResponse.Episodes["+ i +"].Status"));
+			episode.setEpisodeId(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeId"));
+			episode.setEpisodeType(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeType"));
+			episode.setEpisodeName(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EpisodeName"));
+			episode.setResourceId(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].ResourceId"));
+			episode.setStartTime(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].StartTime"));
+			episode.setEndTime(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].EndTime"));
+			episode.setSwitchType(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].SwitchType"));
+			episode.setStatus(_ctx.integerValue("DescribeCasterProgramResponse.Episodes["+ i +"].Status"));
 
 			List<String> componentIds = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeCasterProgramResponse.Episodes["+ i +"].ComponentIds.Length"); j++) {
-				componentIds.add(context.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].ComponentIds["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterProgramResponse.Episodes["+ i +"].ComponentIds.Length"); j++) {
+				componentIds.add(_ctx.stringValue("DescribeCasterProgramResponse.Episodes["+ i +"].ComponentIds["+ j +"]"));
 			}
 			episode.setComponentIds(componentIds);
 

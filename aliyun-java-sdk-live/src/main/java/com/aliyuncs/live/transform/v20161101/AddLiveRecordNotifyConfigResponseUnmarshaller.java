@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddLiveRecordNotifyConfigResponseUnmarshaller {
 
-	public static AddLiveRecordNotifyConfigResponse unmarshall(AddLiveRecordNotifyConfigResponse addLiveRecordNotifyConfigResponse, UnmarshallerContext context) {
+	public static AddLiveRecordNotifyConfigResponse unmarshall(AddLiveRecordNotifyConfigResponse addLiveRecordNotifyConfigResponse, UnmarshallerContext _ctx) {
 		
-		addLiveRecordNotifyConfigResponse.setRequestId(context.stringValue("AddLiveRecordNotifyConfigResponse.RequestId"));
+		addLiveRecordNotifyConfigResponse.setRequestId(_ctx.stringValue("AddLiveRecordNotifyConfigResponse.RequestId"));
 	 
 	 	return addLiveRecordNotifyConfigResponse;
 	}

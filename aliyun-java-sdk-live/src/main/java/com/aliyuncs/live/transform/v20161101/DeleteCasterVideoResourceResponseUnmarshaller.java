@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteCasterVideoResourceResponseUnmarshaller {
 
-	public static DeleteCasterVideoResourceResponse unmarshall(DeleteCasterVideoResourceResponse deleteCasterVideoResourceResponse, UnmarshallerContext context) {
+	public static DeleteCasterVideoResourceResponse unmarshall(DeleteCasterVideoResourceResponse deleteCasterVideoResourceResponse, UnmarshallerContext _ctx) {
 		
-		deleteCasterVideoResourceResponse.setRequestId(context.stringValue("DeleteCasterVideoResourceResponse.RequestId"));
+		deleteCasterVideoResourceResponse.setRequestId(_ctx.stringValue("DeleteCasterVideoResourceResponse.RequestId"));
 	 
 	 	return deleteCasterVideoResourceResponse;
 	}

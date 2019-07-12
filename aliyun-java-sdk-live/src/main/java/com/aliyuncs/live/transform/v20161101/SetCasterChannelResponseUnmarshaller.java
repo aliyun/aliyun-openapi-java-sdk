@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetCasterChannelResponseUnmarshaller {
 
-	public static SetCasterChannelResponse unmarshall(SetCasterChannelResponse setCasterChannelResponse, UnmarshallerContext context) {
+	public static SetCasterChannelResponse unmarshall(SetCasterChannelResponse setCasterChannelResponse, UnmarshallerContext _ctx) {
 		
-		setCasterChannelResponse.setRequestId(context.stringValue("SetCasterChannelResponse.RequestId"));
+		setCasterChannelResponse.setRequestId(_ctx.stringValue("SetCasterChannelResponse.RequestId"));
 	 
 	 	return setCasterChannelResponse;
 	}

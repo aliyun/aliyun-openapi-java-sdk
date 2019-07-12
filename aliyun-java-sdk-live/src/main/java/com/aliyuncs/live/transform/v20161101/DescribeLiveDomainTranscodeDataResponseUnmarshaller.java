@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveDomainTranscodeDataResponseUnmarshaller {
 
-	public static DescribeLiveDomainTranscodeDataResponse unmarshall(DescribeLiveDomainTranscodeDataResponse describeLiveDomainTranscodeDataResponse, UnmarshallerContext context) {
+	public static DescribeLiveDomainTranscodeDataResponse unmarshall(DescribeLiveDomainTranscodeDataResponse describeLiveDomainTranscodeDataResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveDomainTranscodeDataResponse.setRequestId(context.stringValue("DescribeLiveDomainTranscodeDataResponse.RequestId"));
+		describeLiveDomainTranscodeDataResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainTranscodeDataResponse.RequestId"));
 
 		List<TranscodeDataInfo> transcodeDataInfos = new ArrayList<TranscodeDataInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveDomainTranscodeDataResponse.TranscodeDataInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainTranscodeDataResponse.TranscodeDataInfos.Length"); i++) {
 			TranscodeDataInfo transcodeDataInfo = new TranscodeDataInfo();
-			transcodeDataInfo.setDate(context.stringValue("DescribeLiveDomainTranscodeDataResponse.TranscodeDataInfos["+ i +"].Date"));
-			transcodeDataInfo.setTotal(context.integerValue("DescribeLiveDomainTranscodeDataResponse.TranscodeDataInfos["+ i +"].Total"));
-			transcodeDataInfo.setDetail(context.stringValue("DescribeLiveDomainTranscodeDataResponse.TranscodeDataInfos["+ i +"].Detail"));
+			transcodeDataInfo.setDate(_ctx.stringValue("DescribeLiveDomainTranscodeDataResponse.TranscodeDataInfos["+ i +"].Date"));
+			transcodeDataInfo.setTotal(_ctx.integerValue("DescribeLiveDomainTranscodeDataResponse.TranscodeDataInfos["+ i +"].Total"));
+			transcodeDataInfo.setDetail(_ctx.stringValue("DescribeLiveDomainTranscodeDataResponse.TranscodeDataInfos["+ i +"].Detail"));
 
 			transcodeDataInfos.add(transcodeDataInfo);
 		}

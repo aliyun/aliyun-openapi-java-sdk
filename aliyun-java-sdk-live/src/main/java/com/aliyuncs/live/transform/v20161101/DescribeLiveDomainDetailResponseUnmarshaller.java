@@ -21,23 +21,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveDomainDetailResponseUnmarshaller {
 
-	public static DescribeLiveDomainDetailResponse unmarshall(DescribeLiveDomainDetailResponse describeLiveDomainDetailResponse, UnmarshallerContext context) {
+	public static DescribeLiveDomainDetailResponse unmarshall(DescribeLiveDomainDetailResponse describeLiveDomainDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveDomainDetailResponse.setRequestId(context.stringValue("DescribeLiveDomainDetailResponse.RequestId"));
+		describeLiveDomainDetailResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainDetailResponse.RequestId"));
 
 		DomainDetail domainDetail = new DomainDetail();
-		domainDetail.setGmtCreated(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.GmtCreated"));
-		domainDetail.setGmtModified(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.GmtModified"));
-		domainDetail.setDomainStatus(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainStatus"));
-		domainDetail.setCname(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Cname"));
-		domainDetail.setDomainName(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainName"));
-		domainDetail.setLiveDomainType(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.LiveDomainType"));
-		domainDetail.setRegion(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Region"));
-		domainDetail.setDescription(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Description"));
-		domainDetail.setSSLProtocol(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLProtocol"));
-		domainDetail.setSSLPub(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLPub"));
-		domainDetail.setScope(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Scope"));
-		domainDetail.setCertName(context.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.CertName"));
+		domainDetail.setGmtCreated(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.GmtCreated"));
+		domainDetail.setGmtModified(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.GmtModified"));
+		domainDetail.setDomainStatus(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainStatus"));
+		domainDetail.setCname(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Cname"));
+		domainDetail.setDomainName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.DomainName"));
+		domainDetail.setLiveDomainType(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.LiveDomainType"));
+		domainDetail.setRegion(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Region"));
+		domainDetail.setDescription(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Description"));
+		domainDetail.setSSLProtocol(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLProtocol"));
+		domainDetail.setSSLPub(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.SSLPub"));
+		domainDetail.setScope(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.Scope"));
+		domainDetail.setCertName(_ctx.stringValue("DescribeLiveDomainDetailResponse.DomainDetail.CertName"));
 		describeLiveDomainDetailResponse.setDomainDetail(domainDetail);
 	 
 	 	return describeLiveDomainDetailResponse;

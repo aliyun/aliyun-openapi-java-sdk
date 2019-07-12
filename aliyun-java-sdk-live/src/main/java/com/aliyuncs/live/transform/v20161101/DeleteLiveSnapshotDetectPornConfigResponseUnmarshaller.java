@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteLiveSnapshotDetectPornConfigResponseUnmarshaller {
 
-	public static DeleteLiveSnapshotDetectPornConfigResponse unmarshall(DeleteLiveSnapshotDetectPornConfigResponse deleteLiveSnapshotDetectPornConfigResponse, UnmarshallerContext context) {
+	public static DeleteLiveSnapshotDetectPornConfigResponse unmarshall(DeleteLiveSnapshotDetectPornConfigResponse deleteLiveSnapshotDetectPornConfigResponse, UnmarshallerContext _ctx) {
 		
-		deleteLiveSnapshotDetectPornConfigResponse.setRequestId(context.stringValue("DeleteLiveSnapshotDetectPornConfigResponse.RequestId"));
+		deleteLiveSnapshotDetectPornConfigResponse.setRequestId(_ctx.stringValue("DeleteLiveSnapshotDetectPornConfigResponse.RequestId"));
 	 
 	 	return deleteLiveSnapshotDetectPornConfigResponse;
 	}

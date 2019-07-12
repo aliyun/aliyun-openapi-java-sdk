@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CopyCasterSceneConfigResponseUnmarshaller {
 
-	public static CopyCasterSceneConfigResponse unmarshall(CopyCasterSceneConfigResponse copyCasterSceneConfigResponse, UnmarshallerContext context) {
+	public static CopyCasterSceneConfigResponse unmarshall(CopyCasterSceneConfigResponse copyCasterSceneConfigResponse, UnmarshallerContext _ctx) {
 		
-		copyCasterSceneConfigResponse.setRequestId(context.stringValue("CopyCasterSceneConfigResponse.RequestId"));
+		copyCasterSceneConfigResponse.setRequestId(_ctx.stringValue("CopyCasterSceneConfigResponse.RequestId"));
 	 
 	 	return copyCasterSceneConfigResponse;
 	}

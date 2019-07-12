@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetLiveStreamDelayConfigResponseUnmarshaller {
 
-	public static SetLiveStreamDelayConfigResponse unmarshall(SetLiveStreamDelayConfigResponse setLiveStreamDelayConfigResponse, UnmarshallerContext context) {
+	public static SetLiveStreamDelayConfigResponse unmarshall(SetLiveStreamDelayConfigResponse setLiveStreamDelayConfigResponse, UnmarshallerContext _ctx) {
 		
-		setLiveStreamDelayConfigResponse.setRequestId(context.stringValue("SetLiveStreamDelayConfigResponse.RequestId"));
+		setLiveStreamDelayConfigResponse.setRequestId(_ctx.stringValue("SetLiveStreamDelayConfigResponse.RequestId"));
 	 
 	 	return setLiveStreamDelayConfigResponse;
 	}

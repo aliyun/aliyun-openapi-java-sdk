@@ -30,6 +30,8 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 
 	private String appName;
 
+	private String liveapiRequestFrom;
+
 	private String pullAuthKey;
 
 	private String pullAuthType;
@@ -63,6 +65,17 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getLiveapiRequestFrom() {
+		return this.liveapiRequestFrom;
+	}
+
+	public void setLiveapiRequestFrom(String liveapiRequestFrom) {
+		this.liveapiRequestFrom = liveapiRequestFrom;
+		if(liveapiRequestFrom != null){
+			putQueryParameter("LiveapiRequestFrom", liveapiRequestFrom);
 		}
 	}
 

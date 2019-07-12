@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCasterSceneAudioResponseUnmarshaller {
 
-	public static DescribeCasterSceneAudioResponse unmarshall(DescribeCasterSceneAudioResponse describeCasterSceneAudioResponse, UnmarshallerContext context) {
+	public static DescribeCasterSceneAudioResponse unmarshall(DescribeCasterSceneAudioResponse describeCasterSceneAudioResponse, UnmarshallerContext _ctx) {
 		
-		describeCasterSceneAudioResponse.setRequestId(context.stringValue("DescribeCasterSceneAudioResponse.RequestId"));
-		describeCasterSceneAudioResponse.setCasterId(context.stringValue("DescribeCasterSceneAudioResponse.CasterId"));
-		describeCasterSceneAudioResponse.setFollowEnable(context.integerValue("DescribeCasterSceneAudioResponse.FollowEnable"));
+		describeCasterSceneAudioResponse.setRequestId(_ctx.stringValue("DescribeCasterSceneAudioResponse.RequestId"));
+		describeCasterSceneAudioResponse.setCasterId(_ctx.stringValue("DescribeCasterSceneAudioResponse.CasterId"));
+		describeCasterSceneAudioResponse.setFollowEnable(_ctx.integerValue("DescribeCasterSceneAudioResponse.FollowEnable"));
 
 		List<String> mixList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeCasterSceneAudioResponse.MixList.Length"); i++) {
-			mixList.add(context.stringValue("DescribeCasterSceneAudioResponse.MixList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterSceneAudioResponse.MixList.Length"); i++) {
+			mixList.add(_ctx.stringValue("DescribeCasterSceneAudioResponse.MixList["+ i +"]"));
 		}
 		describeCasterSceneAudioResponse.setMixList(mixList);
 
 		List<AudioLayer> audioLayers = new ArrayList<AudioLayer>();
-		for (int i = 0; i < context.lengthValue("DescribeCasterSceneAudioResponse.AudioLayers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterSceneAudioResponse.AudioLayers.Length"); i++) {
 			AudioLayer audioLayer = new AudioLayer();
-			audioLayer.setVolumeRate(context.floatValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].VolumeRate"));
-			audioLayer.setValidChannel(context.stringValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].ValidChannel"));
-			audioLayer.setFixedDelayDuration(context.integerValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].FixedDelayDuration"));
+			audioLayer.setVolumeRate(_ctx.floatValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].VolumeRate"));
+			audioLayer.setValidChannel(_ctx.stringValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].ValidChannel"));
+			audioLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterSceneAudioResponse.AudioLayers["+ i +"].FixedDelayDuration"));
 
 			audioLayers.add(audioLayer);
 		}

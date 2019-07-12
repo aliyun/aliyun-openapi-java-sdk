@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRoomKickoutUserListResponseUnmarshaller {
 
-	public static DescribeRoomKickoutUserListResponse unmarshall(DescribeRoomKickoutUserListResponse describeRoomKickoutUserListResponse, UnmarshallerContext context) {
+	public static DescribeRoomKickoutUserListResponse unmarshall(DescribeRoomKickoutUserListResponse describeRoomKickoutUserListResponse, UnmarshallerContext _ctx) {
 		
-		describeRoomKickoutUserListResponse.setRequestId(context.stringValue("DescribeRoomKickoutUserListResponse.RequestId"));
-		describeRoomKickoutUserListResponse.setTotalNum(context.integerValue("DescribeRoomKickoutUserListResponse.TotalNum"));
-		describeRoomKickoutUserListResponse.setTotalPage(context.integerValue("DescribeRoomKickoutUserListResponse.TotalPage"));
+		describeRoomKickoutUserListResponse.setRequestId(_ctx.stringValue("DescribeRoomKickoutUserListResponse.RequestId"));
+		describeRoomKickoutUserListResponse.setTotalNum(_ctx.integerValue("DescribeRoomKickoutUserListResponse.TotalNum"));
+		describeRoomKickoutUserListResponse.setTotalPage(_ctx.integerValue("DescribeRoomKickoutUserListResponse.TotalPage"));
 
 		List<User> userList = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("DescribeRoomKickoutUserListResponse.UserList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRoomKickoutUserListResponse.UserList.Length"); i++) {
 			User user = new User();
-			user.setAppUid(context.stringValue("DescribeRoomKickoutUserListResponse.UserList["+ i +"].AppUid"));
-			user.setOpStartTime(context.stringValue("DescribeRoomKickoutUserListResponse.UserList["+ i +"].OpStartTime"));
-			user.setOpEndTime(context.stringValue("DescribeRoomKickoutUserListResponse.UserList["+ i +"].OpEndTime"));
+			user.setAppUid(_ctx.stringValue("DescribeRoomKickoutUserListResponse.UserList["+ i +"].AppUid"));
+			user.setOpStartTime(_ctx.stringValue("DescribeRoomKickoutUserListResponse.UserList["+ i +"].OpStartTime"));
+			user.setOpEndTime(_ctx.stringValue("DescribeRoomKickoutUserListResponse.UserList["+ i +"].OpEndTime"));
 
 			userList.add(user);
 		}

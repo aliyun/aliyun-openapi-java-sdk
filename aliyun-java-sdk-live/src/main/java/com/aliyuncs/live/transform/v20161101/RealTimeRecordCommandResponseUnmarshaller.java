@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RealTimeRecordCommandResponseUnmarshaller {
 
-	public static RealTimeRecordCommandResponse unmarshall(RealTimeRecordCommandResponse realTimeRecordCommandResponse, UnmarshallerContext context) {
+	public static RealTimeRecordCommandResponse unmarshall(RealTimeRecordCommandResponse realTimeRecordCommandResponse, UnmarshallerContext _ctx) {
 		
-		realTimeRecordCommandResponse.setRequestId(context.stringValue("RealTimeRecordCommandResponse.RequestId"));
+		realTimeRecordCommandResponse.setRequestId(_ctx.stringValue("RealTimeRecordCommandResponse.RequestId"));
 	 
 	 	return realTimeRecordCommandResponse;
 	}

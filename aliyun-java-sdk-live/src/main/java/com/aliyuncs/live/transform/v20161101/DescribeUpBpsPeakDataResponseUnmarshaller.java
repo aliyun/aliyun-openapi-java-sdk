@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUpBpsPeakDataResponseUnmarshaller {
 
-	public static DescribeUpBpsPeakDataResponse unmarshall(DescribeUpBpsPeakDataResponse describeUpBpsPeakDataResponse, UnmarshallerContext context) {
+	public static DescribeUpBpsPeakDataResponse unmarshall(DescribeUpBpsPeakDataResponse describeUpBpsPeakDataResponse, UnmarshallerContext _ctx) {
 		
-		describeUpBpsPeakDataResponse.setRequestId(context.stringValue("DescribeUpBpsPeakDataResponse.RequestId"));
+		describeUpBpsPeakDataResponse.setRequestId(_ctx.stringValue("DescribeUpBpsPeakDataResponse.RequestId"));
 
 		List<DescribeUpPeakTraffic> describeUpPeakTraffics = new ArrayList<DescribeUpPeakTraffic>();
-		for (int i = 0; i < context.lengthValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics.Length"); i++) {
 			DescribeUpPeakTraffic describeUpPeakTraffic = new DescribeUpPeakTraffic();
-			describeUpPeakTraffic.setPeakTime(context.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].PeakTime"));
-			describeUpPeakTraffic.setQueryTime(context.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].QueryTime"));
-			describeUpPeakTraffic.setStatName(context.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].StatName"));
-			describeUpPeakTraffic.setBandWidth(context.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].BandWidth"));
+			describeUpPeakTraffic.setPeakTime(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].PeakTime"));
+			describeUpPeakTraffic.setQueryTime(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].QueryTime"));
+			describeUpPeakTraffic.setStatName(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].StatName"));
+			describeUpPeakTraffic.setBandWidth(_ctx.stringValue("DescribeUpBpsPeakDataResponse.DescribeUpPeakTraffics["+ i +"].BandWidth"));
 
 			describeUpPeakTraffics.add(describeUpPeakTraffic);
 		}

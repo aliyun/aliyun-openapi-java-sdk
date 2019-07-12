@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveRecordNotifyConfigResponseUnmarshaller {
 
-	public static DescribeLiveRecordNotifyConfigResponse unmarshall(DescribeLiveRecordNotifyConfigResponse describeLiveRecordNotifyConfigResponse, UnmarshallerContext context) {
+	public static DescribeLiveRecordNotifyConfigResponse unmarshall(DescribeLiveRecordNotifyConfigResponse describeLiveRecordNotifyConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveRecordNotifyConfigResponse.setRequestId(context.stringValue("DescribeLiveRecordNotifyConfigResponse.RequestId"));
+		describeLiveRecordNotifyConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.RequestId"));
 
 		LiveRecordNotifyConfig liveRecordNotifyConfig = new LiveRecordNotifyConfig();
-		liveRecordNotifyConfig.setDomainName(context.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.DomainName"));
-		liveRecordNotifyConfig.setNotifyUrl(context.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NotifyUrl"));
-		liveRecordNotifyConfig.setOnDemandUrl(context.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.OnDemandUrl"));
-		liveRecordNotifyConfig.setNeedStatusNotify(context.booleanValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NeedStatusNotify"));
+		liveRecordNotifyConfig.setDomainName(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.DomainName"));
+		liveRecordNotifyConfig.setNotifyUrl(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NotifyUrl"));
+		liveRecordNotifyConfig.setOnDemandUrl(_ctx.stringValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.OnDemandUrl"));
+		liveRecordNotifyConfig.setNeedStatusNotify(_ctx.booleanValue("DescribeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig.NeedStatusNotify"));
 		describeLiveRecordNotifyConfigResponse.setLiveRecordNotifyConfig(liveRecordNotifyConfig);
 	 
 	 	return describeLiveRecordNotifyConfigResponse;

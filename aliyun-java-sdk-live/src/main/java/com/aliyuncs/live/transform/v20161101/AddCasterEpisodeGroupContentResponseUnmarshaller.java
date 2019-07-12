@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddCasterEpisodeGroupContentResponseUnmarshaller {
 
-	public static AddCasterEpisodeGroupContentResponse unmarshall(AddCasterEpisodeGroupContentResponse addCasterEpisodeGroupContentResponse, UnmarshallerContext context) {
+	public static AddCasterEpisodeGroupContentResponse unmarshall(AddCasterEpisodeGroupContentResponse addCasterEpisodeGroupContentResponse, UnmarshallerContext _ctx) {
 		
-		addCasterEpisodeGroupContentResponse.setRequestId(context.stringValue("AddCasterEpisodeGroupContentResponse.RequestId"));
-		addCasterEpisodeGroupContentResponse.setProgramId(context.stringValue("AddCasterEpisodeGroupContentResponse.ProgramId"));
+		addCasterEpisodeGroupContentResponse.setRequestId(_ctx.stringValue("AddCasterEpisodeGroupContentResponse.RequestId"));
+		addCasterEpisodeGroupContentResponse.setProgramId(_ctx.stringValue("AddCasterEpisodeGroupContentResponse.ProgramId"));
 
 		List<String> itemIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("AddCasterEpisodeGroupContentResponse.ItemIds.Length"); i++) {
-			itemIds.add(context.stringValue("AddCasterEpisodeGroupContentResponse.ItemIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("AddCasterEpisodeGroupContentResponse.ItemIds.Length"); i++) {
+			itemIds.add(_ctx.stringValue("AddCasterEpisodeGroupContentResponse.ItemIds["+ i +"]"));
 		}
 		addCasterEpisodeGroupContentResponse.setItemIds(itemIds);
 	 

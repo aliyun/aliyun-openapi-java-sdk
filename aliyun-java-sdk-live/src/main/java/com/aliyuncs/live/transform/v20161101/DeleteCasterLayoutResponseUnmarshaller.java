@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteCasterLayoutResponseUnmarshaller {
 
-	public static DeleteCasterLayoutResponse unmarshall(DeleteCasterLayoutResponse deleteCasterLayoutResponse, UnmarshallerContext context) {
+	public static DeleteCasterLayoutResponse unmarshall(DeleteCasterLayoutResponse deleteCasterLayoutResponse, UnmarshallerContext _ctx) {
 		
-		deleteCasterLayoutResponse.setRequestId(context.stringValue("DeleteCasterLayoutResponse.RequestId"));
-		deleteCasterLayoutResponse.setCasterId(context.stringValue("DeleteCasterLayoutResponse.CasterId"));
-		deleteCasterLayoutResponse.setLayoutId(context.stringValue("DeleteCasterLayoutResponse.LayoutId"));
+		deleteCasterLayoutResponse.setRequestId(_ctx.stringValue("DeleteCasterLayoutResponse.RequestId"));
+		deleteCasterLayoutResponse.setCasterId(_ctx.stringValue("DeleteCasterLayoutResponse.CasterId"));
+		deleteCasterLayoutResponse.setLayoutId(_ctx.stringValue("DeleteCasterLayoutResponse.LayoutId"));
 	 
 	 	return deleteCasterLayoutResponse;
 	}

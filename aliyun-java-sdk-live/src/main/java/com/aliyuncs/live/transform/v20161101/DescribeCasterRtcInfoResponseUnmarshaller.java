@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCasterRtcInfoResponseUnmarshaller {
 
-	public static DescribeCasterRtcInfoResponse unmarshall(DescribeCasterRtcInfoResponse describeCasterRtcInfoResponse, UnmarshallerContext context) {
+	public static DescribeCasterRtcInfoResponse unmarshall(DescribeCasterRtcInfoResponse describeCasterRtcInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeCasterRtcInfoResponse.setRequestId(context.stringValue("DescribeCasterRtcInfoResponse.RequestId"));
-		describeCasterRtcInfoResponse.setCasterId(context.stringValue("DescribeCasterRtcInfoResponse.CasterId"));
-		describeCasterRtcInfoResponse.setAuthToken(context.stringValue("DescribeCasterRtcInfoResponse.AuthToken"));
+		describeCasterRtcInfoResponse.setRequestId(_ctx.stringValue("DescribeCasterRtcInfoResponse.RequestId"));
+		describeCasterRtcInfoResponse.setCasterId(_ctx.stringValue("DescribeCasterRtcInfoResponse.CasterId"));
+		describeCasterRtcInfoResponse.setAuthToken(_ctx.stringValue("DescribeCasterRtcInfoResponse.AuthToken"));
 	 
 	 	return describeCasterRtcInfoResponse;
 	}

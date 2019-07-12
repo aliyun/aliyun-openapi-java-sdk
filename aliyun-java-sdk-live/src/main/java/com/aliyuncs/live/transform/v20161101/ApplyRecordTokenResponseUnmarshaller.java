@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ApplyRecordTokenResponseUnmarshaller {
 
-	public static ApplyRecordTokenResponse unmarshall(ApplyRecordTokenResponse applyRecordTokenResponse, UnmarshallerContext context) {
+	public static ApplyRecordTokenResponse unmarshall(ApplyRecordTokenResponse applyRecordTokenResponse, UnmarshallerContext _ctx) {
 		
-		applyRecordTokenResponse.setRequestId(context.stringValue("ApplyRecordTokenResponse.RequestId"));
-		applyRecordTokenResponse.setSecurityToken(context.stringValue("ApplyRecordTokenResponse.SecurityToken"));
-		applyRecordTokenResponse.setAccessKeySecret(context.stringValue("ApplyRecordTokenResponse.AccessKeySecret"));
-		applyRecordTokenResponse.setAccessKeyId(context.stringValue("ApplyRecordTokenResponse.AccessKeyId"));
-		applyRecordTokenResponse.setExpiration(context.stringValue("ApplyRecordTokenResponse.Expiration"));
+		applyRecordTokenResponse.setRequestId(_ctx.stringValue("ApplyRecordTokenResponse.RequestId"));
+		applyRecordTokenResponse.setSecurityToken(_ctx.stringValue("ApplyRecordTokenResponse.SecurityToken"));
+		applyRecordTokenResponse.setAccessKeySecret(_ctx.stringValue("ApplyRecordTokenResponse.AccessKeySecret"));
+		applyRecordTokenResponse.setAccessKeyId(_ctx.stringValue("ApplyRecordTokenResponse.AccessKeyId"));
+		applyRecordTokenResponse.setExpiration(_ctx.stringValue("ApplyRecordTokenResponse.Expiration"));
 	 
 	 	return applyRecordTokenResponse;
 	}

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyCasterEpisodeResponseUnmarshaller {
 
-	public static ModifyCasterEpisodeResponse unmarshall(ModifyCasterEpisodeResponse modifyCasterEpisodeResponse, UnmarshallerContext context) {
+	public static ModifyCasterEpisodeResponse unmarshall(ModifyCasterEpisodeResponse modifyCasterEpisodeResponse, UnmarshallerContext _ctx) {
 		
-		modifyCasterEpisodeResponse.setRequestId(context.stringValue("ModifyCasterEpisodeResponse.RequestId"));
-		modifyCasterEpisodeResponse.setCasterId(context.stringValue("ModifyCasterEpisodeResponse.CasterId"));
-		modifyCasterEpisodeResponse.setEpisodeId(context.stringValue("ModifyCasterEpisodeResponse.EpisodeId"));
+		modifyCasterEpisodeResponse.setRequestId(_ctx.stringValue("ModifyCasterEpisodeResponse.RequestId"));
+		modifyCasterEpisodeResponse.setCasterId(_ctx.stringValue("ModifyCasterEpisodeResponse.CasterId"));
+		modifyCasterEpisodeResponse.setEpisodeId(_ctx.stringValue("ModifyCasterEpisodeResponse.EpisodeId"));
 	 
 	 	return modifyCasterEpisodeResponse;
 	}

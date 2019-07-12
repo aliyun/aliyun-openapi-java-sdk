@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EffectCasterUrgentResponseUnmarshaller {
 
-	public static EffectCasterUrgentResponse unmarshall(EffectCasterUrgentResponse effectCasterUrgentResponse, UnmarshallerContext context) {
+	public static EffectCasterUrgentResponse unmarshall(EffectCasterUrgentResponse effectCasterUrgentResponse, UnmarshallerContext _ctx) {
 		
-		effectCasterUrgentResponse.setRequestId(context.stringValue("EffectCasterUrgentResponse.RequestId"));
+		effectCasterUrgentResponse.setRequestId(_ctx.stringValue("EffectCasterUrgentResponse.RequestId"));
 	 
 	 	return effectCasterUrgentResponse;
 	}

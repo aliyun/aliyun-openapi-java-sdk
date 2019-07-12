@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetLiveDomainCertificateResponseUnmarshaller {
 
-	public static SetLiveDomainCertificateResponse unmarshall(SetLiveDomainCertificateResponse setLiveDomainCertificateResponse, UnmarshallerContext context) {
+	public static SetLiveDomainCertificateResponse unmarshall(SetLiveDomainCertificateResponse setLiveDomainCertificateResponse, UnmarshallerContext _ctx) {
 		
-		setLiveDomainCertificateResponse.setRequestId(context.stringValue("SetLiveDomainCertificateResponse.RequestId"));
+		setLiveDomainCertificateResponse.setRequestId(_ctx.stringValue("SetLiveDomainCertificateResponse.RequestId"));
 	 
 	 	return setLiveDomainCertificateResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartLiveDomainResponseUnmarshaller {
 
-	public static StartLiveDomainResponse unmarshall(StartLiveDomainResponse startLiveDomainResponse, UnmarshallerContext context) {
+	public static StartLiveDomainResponse unmarshall(StartLiveDomainResponse startLiveDomainResponse, UnmarshallerContext _ctx) {
 		
-		startLiveDomainResponse.setRequestId(context.stringValue("StartLiveDomainResponse.RequestId"));
+		startLiveDomainResponse.setRequestId(_ctx.stringValue("StartLiveDomainResponse.RequestId"));
 	 
 	 	return startLiveDomainResponse;
 	}

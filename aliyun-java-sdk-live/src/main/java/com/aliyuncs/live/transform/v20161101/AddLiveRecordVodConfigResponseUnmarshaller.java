@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddLiveRecordVodConfigResponseUnmarshaller {
 
-	public static AddLiveRecordVodConfigResponse unmarshall(AddLiveRecordVodConfigResponse addLiveRecordVodConfigResponse, UnmarshallerContext context) {
+	public static AddLiveRecordVodConfigResponse unmarshall(AddLiveRecordVodConfigResponse addLiveRecordVodConfigResponse, UnmarshallerContext _ctx) {
 		
-		addLiveRecordVodConfigResponse.setRequestId(context.stringValue("AddLiveRecordVodConfigResponse.RequestId"));
+		addLiveRecordVodConfigResponse.setRequestId(_ctx.stringValue("AddLiveRecordVodConfigResponse.RequestId"));
 	 
 	 	return addLiveRecordVodConfigResponse;
 	}

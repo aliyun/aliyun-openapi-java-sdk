@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveDomainRecordDataResponseUnmarshaller {
 
-	public static DescribeLiveDomainRecordDataResponse unmarshall(DescribeLiveDomainRecordDataResponse describeLiveDomainRecordDataResponse, UnmarshallerContext context) {
+	public static DescribeLiveDomainRecordDataResponse unmarshall(DescribeLiveDomainRecordDataResponse describeLiveDomainRecordDataResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveDomainRecordDataResponse.setRequestId(context.stringValue("DescribeLiveDomainRecordDataResponse.RequestId"));
+		describeLiveDomainRecordDataResponse.setRequestId(_ctx.stringValue("DescribeLiveDomainRecordDataResponse.RequestId"));
 
 		List<RecordDataInfo> recordDataInfos = new ArrayList<RecordDataInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos.Length"); i++) {
 			RecordDataInfo recordDataInfo = new RecordDataInfo();
-			recordDataInfo.setDate(context.stringValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Date"));
-			recordDataInfo.setTotal(context.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Total"));
+			recordDataInfo.setDate(_ctx.stringValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Date"));
+			recordDataInfo.setTotal(_ctx.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Total"));
 
 			Detail detail = new Detail();
-			detail.setMP4(context.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.MP4"));
-			detail.setFLV(context.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.FLV"));
-			detail.setTS(context.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.TS"));
+			detail.setMP4(_ctx.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.MP4"));
+			detail.setFLV(_ctx.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.FLV"));
+			detail.setTS(_ctx.integerValue("DescribeLiveDomainRecordDataResponse.RecordDataInfos["+ i +"].Detail.TS"));
 			recordDataInfo.setDetail(detail);
 
 			recordDataInfos.add(recordDataInfo);

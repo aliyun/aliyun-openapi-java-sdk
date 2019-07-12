@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveCertificateListResponseUnmarshaller {
 
-	public static DescribeLiveCertificateListResponse unmarshall(DescribeLiveCertificateListResponse describeLiveCertificateListResponse, UnmarshallerContext context) {
+	public static DescribeLiveCertificateListResponse unmarshall(DescribeLiveCertificateListResponse describeLiveCertificateListResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveCertificateListResponse.setRequestId(context.stringValue("DescribeLiveCertificateListResponse.RequestId"));
+		describeLiveCertificateListResponse.setRequestId(_ctx.stringValue("DescribeLiveCertificateListResponse.RequestId"));
 
 		CertificateListModel certificateListModel = new CertificateListModel();
-		certificateListModel.setCount(context.integerValue("DescribeLiveCertificateListResponse.CertificateListModel.Count"));
+		certificateListModel.setCount(_ctx.integerValue("DescribeLiveCertificateListResponse.CertificateListModel.Count"));
 
 		List<Cert> certList = new ArrayList<Cert>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList.Length"); i++) {
 			Cert cert = new Cert();
-			cert.setCertName(context.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].CertName"));
-			cert.setCertId(context.longValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].CertId"));
-			cert.setFingerprint(context.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Fingerprint"));
-			cert.setCommon(context.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Common"));
-			cert.setIssuer(context.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Issuer"));
-			cert.setLastTime(context.longValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].LastTime"));
+			cert.setCertName(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].CertName"));
+			cert.setCertId(_ctx.longValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].CertId"));
+			cert.setFingerprint(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Fingerprint"));
+			cert.setCommon(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Common"));
+			cert.setIssuer(_ctx.stringValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].Issuer"));
+			cert.setLastTime(_ctx.longValue("DescribeLiveCertificateListResponse.CertificateListModel.CertList["+ i +"].LastTime"));
 
 			certList.add(cert);
 		}

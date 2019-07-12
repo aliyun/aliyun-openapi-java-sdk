@@ -28,54 +28,54 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCasterComponentsResponseUnmarshaller {
 
-	public static DescribeCasterComponentsResponse unmarshall(DescribeCasterComponentsResponse describeCasterComponentsResponse, UnmarshallerContext context) {
+	public static DescribeCasterComponentsResponse unmarshall(DescribeCasterComponentsResponse describeCasterComponentsResponse, UnmarshallerContext _ctx) {
 		
-		describeCasterComponentsResponse.setRequestId(context.stringValue("DescribeCasterComponentsResponse.RequestId"));
-		describeCasterComponentsResponse.setTotal(context.integerValue("DescribeCasterComponentsResponse.Total"));
+		describeCasterComponentsResponse.setRequestId(_ctx.stringValue("DescribeCasterComponentsResponse.RequestId"));
+		describeCasterComponentsResponse.setTotal(_ctx.integerValue("DescribeCasterComponentsResponse.Total"));
 
 		List<Component> components = new ArrayList<Component>();
-		for (int i = 0; i < context.lengthValue("DescribeCasterComponentsResponse.Components.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterComponentsResponse.Components.Length"); i++) {
 			Component component = new Component();
-			component.setComponentId(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentId"));
-			component.setComponentName(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentName"));
-			component.setLocationId(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].LocationId"));
-			component.setComponentType(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentType"));
-			component.setEffect(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].Effect"));
+			component.setComponentId(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentId"));
+			component.setComponentName(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentName"));
+			component.setLocationId(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].LocationId"));
+			component.setComponentType(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentType"));
+			component.setEffect(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].Effect"));
 
 			ComponentLayer componentLayer = new ComponentLayer();
-			componentLayer.setHeightNormalized(context.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.HeightNormalized"));
-			componentLayer.setWidthNormalized(context.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.WidthNormalized"));
-			componentLayer.setPositionRefer(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionRefer"));
+			componentLayer.setHeightNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.HeightNormalized"));
+			componentLayer.setWidthNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.WidthNormalized"));
+			componentLayer.setPositionRefer(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionRefer"));
 
 			List<String> positionNormalizeds = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionNormalizeds.Length"); j++) {
-				positionNormalizeds.add(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionNormalizeds["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionNormalizeds.Length"); j++) {
+				positionNormalizeds.add(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionNormalizeds["+ j +"]"));
 			}
 			componentLayer.setPositionNormalizeds(positionNormalizeds);
 			component.setComponentLayer(componentLayer);
 
 			TextLayerContent textLayerContent = new TextLayerContent();
-			textLayerContent.setText(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.Text"));
-			textLayerContent.setColor(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.Color"));
-			textLayerContent.setFontName(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.FontName"));
-			textLayerContent.setSizeNormalized(context.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.SizeNormalized"));
-			textLayerContent.setBorderWidthNormalized(context.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.BorderWidthNormalized"));
-			textLayerContent.setBorderColor(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.BorderColor"));
+			textLayerContent.setText(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.Text"));
+			textLayerContent.setColor(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.Color"));
+			textLayerContent.setFontName(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.FontName"));
+			textLayerContent.setSizeNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.SizeNormalized"));
+			textLayerContent.setBorderWidthNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.BorderWidthNormalized"));
+			textLayerContent.setBorderColor(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].TextLayerContent.BorderColor"));
 			component.setTextLayerContent(textLayerContent);
 
 			ImageLayerContent imageLayerContent = new ImageLayerContent();
-			imageLayerContent.setMaterialId(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ImageLayerContent.MaterialId"));
+			imageLayerContent.setMaterialId(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ImageLayerContent.MaterialId"));
 			component.setImageLayerContent(imageLayerContent);
 
 			CaptionLayerContent captionLayerContent = new CaptionLayerContent();
-			captionLayerContent.setLocationId(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.LocationId"));
-			captionLayerContent.setPtsOffset(context.integerValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.PtsOffset"));
-			captionLayerContent.setWordsCount(context.integerValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.WordsCount"));
-			captionLayerContent.setColor(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.Color"));
-			captionLayerContent.setFontName(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.FontName"));
-			captionLayerContent.setSizeNormalized(context.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.SizeNormalized"));
-			captionLayerContent.setBorderWidthNormalized(context.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderWidthNormalized"));
-			captionLayerContent.setBorderColor(context.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderColor"));
+			captionLayerContent.setLocationId(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.LocationId"));
+			captionLayerContent.setPtsOffset(_ctx.integerValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.PtsOffset"));
+			captionLayerContent.setWordsCount(_ctx.integerValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.WordsCount"));
+			captionLayerContent.setColor(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.Color"));
+			captionLayerContent.setFontName(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.FontName"));
+			captionLayerContent.setSizeNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.SizeNormalized"));
+			captionLayerContent.setBorderWidthNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderWidthNormalized"));
+			captionLayerContent.setBorderColor(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderColor"));
 			component.setCaptionLayerContent(captionLayerContent);
 
 			components.add(component);

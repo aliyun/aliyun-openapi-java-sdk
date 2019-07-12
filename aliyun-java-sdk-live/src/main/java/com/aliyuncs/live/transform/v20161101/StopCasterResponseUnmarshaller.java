@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopCasterResponseUnmarshaller {
 
-	public static StopCasterResponse unmarshall(StopCasterResponse stopCasterResponse, UnmarshallerContext context) {
+	public static StopCasterResponse unmarshall(StopCasterResponse stopCasterResponse, UnmarshallerContext _ctx) {
 		
-		stopCasterResponse.setRequestId(context.stringValue("StopCasterResponse.RequestId"));
+		stopCasterResponse.setRequestId(_ctx.stringValue("StopCasterResponse.RequestId"));
 	 
 	 	return stopCasterResponse;
 	}

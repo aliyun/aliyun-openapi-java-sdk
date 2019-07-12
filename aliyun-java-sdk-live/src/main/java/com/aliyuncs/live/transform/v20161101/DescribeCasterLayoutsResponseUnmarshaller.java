@@ -26,40 +26,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCasterLayoutsResponseUnmarshaller {
 
-	public static DescribeCasterLayoutsResponse unmarshall(DescribeCasterLayoutsResponse describeCasterLayoutsResponse, UnmarshallerContext context) {
+	public static DescribeCasterLayoutsResponse unmarshall(DescribeCasterLayoutsResponse describeCasterLayoutsResponse, UnmarshallerContext _ctx) {
 		
-		describeCasterLayoutsResponse.setRequestId(context.stringValue("DescribeCasterLayoutsResponse.RequestId"));
-		describeCasterLayoutsResponse.setTotal(context.integerValue("DescribeCasterLayoutsResponse.Total"));
+		describeCasterLayoutsResponse.setRequestId(_ctx.stringValue("DescribeCasterLayoutsResponse.RequestId"));
+		describeCasterLayoutsResponse.setTotal(_ctx.integerValue("DescribeCasterLayoutsResponse.Total"));
 
 		List<Layout> layouts = new ArrayList<Layout>();
-		for (int i = 0; i < context.lengthValue("DescribeCasterLayoutsResponse.Layouts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts.Length"); i++) {
 			Layout layout = new Layout();
-			layout.setLayoutId(context.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].LayoutId"));
+			layout.setLayoutId(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].LayoutId"));
 
 			List<String> blendList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].BlendList.Length"); j++) {
-				blendList.add(context.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].BlendList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].BlendList.Length"); j++) {
+				blendList.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].BlendList["+ j +"]"));
 			}
 			layout.setBlendList(blendList);
 
 			List<String> mixList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList.Length"); j++) {
-				mixList.add(context.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList.Length"); j++) {
+				mixList.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].MixList["+ j +"]"));
 			}
 			layout.setMixList(mixList);
 
 			List<VideoLayer> videoLayers = new ArrayList<VideoLayer>();
-			for (int j = 0; j < context.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers.Length"); j++) {
 				VideoLayer videoLayer = new VideoLayer();
-				videoLayer.setFillMode(context.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FillMode"));
-				videoLayer.setHeightNormalized(context.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized"));
-				videoLayer.setWidthNormalized(context.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized"));
-				videoLayer.setPositionRefer(context.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionRefer"));
-				videoLayer.setFixedDelayDuration(context.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FixedDelayDuration"));
+				videoLayer.setFillMode(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FillMode"));
+				videoLayer.setHeightNormalized(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized"));
+				videoLayer.setWidthNormalized(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized"));
+				videoLayer.setPositionRefer(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionRefer"));
+				videoLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FixedDelayDuration"));
 
 				List<String> positionNormalizeds = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds.Length"); k++) {
-					positionNormalizeds.add(context.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds.Length"); k++) {
+					positionNormalizeds.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds["+ k +"]"));
 				}
 				videoLayer.setPositionNormalizeds(positionNormalizeds);
 
@@ -68,11 +68,11 @@ public class DescribeCasterLayoutsResponseUnmarshaller {
 			layout.setVideoLayers(videoLayers);
 
 			List<AudioLayer> audioLayers = new ArrayList<AudioLayer>();
-			for (int j = 0; j < context.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers.Length"); j++) {
 				AudioLayer audioLayer = new AudioLayer();
-				audioLayer.setVolumeRate(context.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].VolumeRate"));
-				audioLayer.setValidChannel(context.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].ValidChannel"));
-				audioLayer.setFixedDelayDuration(context.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].FixedDelayDuration"));
+				audioLayer.setVolumeRate(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].VolumeRate"));
+				audioLayer.setValidChannel(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].ValidChannel"));
+				audioLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].AudioLayers["+ j +"].FixedDelayDuration"));
 
 				audioLayers.add(audioLayer);
 			}
