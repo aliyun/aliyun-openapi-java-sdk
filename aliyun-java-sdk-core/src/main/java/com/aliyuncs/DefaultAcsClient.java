@@ -44,6 +44,7 @@ public class DefaultAcsClient implements IAcsClient {
     private EndpointResolver endpointResolver;
     private static final String SIGNATURE_BEGIN = "string to sign is:";
     private final UserAgentConfig userAgentConfig = new UserAgentConfig();
+    private TimeoutResolve timeoutResolve = new TimeoutResolve();
 
     /**
      * @Deprecated : Use DefaultAcsClient(String regionId) instead of this
@@ -271,6 +272,8 @@ public class DefaultAcsClient implements IAcsClient {
             try {
 
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
+                timeoutResolve.resolveTimeout(httpRequest, clientProfile, request.getSysProduct(), request
+                        .getSysVersion(), request.getSysActionName());
                 HttpUtil.debugHttpRequest(request);
                 startTime = LogUtils.localeNow();
                 long start = System.nanoTime();

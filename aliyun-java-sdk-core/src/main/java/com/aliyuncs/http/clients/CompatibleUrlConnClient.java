@@ -213,17 +213,8 @@ public class CompatibleUrlConnClient extends IHttpClient {
     }
 
     private void setConnectionTimeout(HttpURLConnection httpConn, HttpRequest request) {
-        if (request.getSysConnectTimeout() != null) {
-            httpConn.setConnectTimeout(request.getSysConnectTimeout());
-        } else {
-            httpConn.setConnectTimeout((int) clientConfig.getConnectionTimeoutMillis());
-        }
-
-        if (request.getSysReadTimeout() != null) {
-            httpConn.setReadTimeout(request.getSysReadTimeout());
-        } else {
-            httpConn.setReadTimeout((int) clientConfig.getReadTimeoutMillis());
-        }
+        httpConn.setConnectTimeout(request.getSysConnectTimeout());
+        httpConn.setReadTimeout(request.getSysReadTimeout());
     }
 
     private void setConnectionRequestProperty(HttpURLConnection httpConn, HttpRequest request) {

@@ -68,11 +68,12 @@ public class TimeoutTest extends BaseTest {
         request.setSysAction("DescribeAccessPoints");
         this.getCompatibleUrlConnClient(regionId).getCommonResponse(request);
 
-        thrown.expect(ClientException.class);
-        thrown.expectMessage("SDK.ServerUnreachable : SocketTimeoutException has occurred on a socket read or accept.");
-        request.setSysDomain("rds.aliyuncs.com");
+        request = new CommonRequest();
+        request.setSysDomain("rds-cn-hangzhou.aliyuncs.com");
         request.setSysVersion("2014-08-15");
         request.setSysAction("DescribeRegions");
+        thrown.expect(ClientException.class);
+        thrown.expectMessage("SDK.ServerUnreachable : SocketTimeoutException has occurred on a socket read or accept.");
         this.getConnectTimeoutCompatibleUrlConnClient(regionId, 1L).getCommonResponse(request);
 
         request.setSysConnectTimeout(5000);

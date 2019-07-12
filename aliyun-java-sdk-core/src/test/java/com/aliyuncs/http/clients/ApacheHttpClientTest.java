@@ -1,7 +1,27 @@
 package com.aliyuncs.http.clients;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.isNotNull;
+import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.mock;
+
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.security.SecureRandom;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.X509TrustManager;
+
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
@@ -27,26 +47,18 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.reflect.Whitebox;
 
-import javax.net.ssl.*;
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-
-import static org.mockito.ArgumentMatchers.isNotNull;
-import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.mock;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.CallBack;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientConfig;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.HttpUtil;
+import com.aliyuncs.http.MethodType;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({FormatType.class, ContentType.class, HttpUtil.class, HttpHost.class})
-@PowerMockIgnore({"javax.net.ssl.*"})
+@PrepareForTest({ FormatType.class, ContentType.class, HttpUtil.class, HttpHost.class })
+@PowerMockIgnore({ "javax.net.ssl.*" })
 public class ApacheHttpClientTest {
 
     @Rule
@@ -334,7 +346,7 @@ public class ApacheHttpClientTest {
         apacheHttpClient.init(config);
         HttpRequest apiRequest = this.getMockHttpRequest();
         Mockito.when(apiRequest.getSysMethod()).thenReturn(MethodType.POST);
-        Mockito.when(apiRequest.getHttpContent()).thenReturn(new byte[]{1, 2, 3});
+        Mockito.when(apiRequest.getHttpContent()).thenReturn(new byte[] { 1, 2, 3 });
         Mockito.when(apiRequest.getHeaderValue(Mockito.anyString())).thenReturn("contentType");
         CloseableHttpResponse closeableHttpResponse = this.getMockHttpResponse();
 
@@ -385,8 +397,8 @@ public class ApacheHttpClientTest {
     }
 
     @Test
-    public void testSyncInvokeNotNullHttpResponseEntityIsChunked() throws ClientException, IOException, NoSuchFieldException,
-            SecurityException, IllegalArgumentException, IllegalAccessException {
+    public void testSyncInvokeNotNullHttpResponseEntityIsChunked() throws ClientException, IOException,
+            NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
         ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance();
         apacheHttpClient.init(config);
@@ -446,8 +458,8 @@ public class ApacheHttpClientTest {
     }
 
     @Test
-    public void testClientTimeout() throws ClientException, IOException, NoSuchFieldException, SecurityException,
-            IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    public void testRequestTimeout() throws IOException, ClientException, NoSuchMethodException, SecurityException,
+            IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         ApacheHttpClient.getInstance().close();
         HttpClientConfig config = HttpClientConfig.getDefault();
         ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance();
@@ -456,43 +468,11 @@ public class ApacheHttpClientTest {
         declaredMethod.setAccessible(true);
         HttpRequest apiReq = new HttpRequest("http://test.com");
         apiReq.setSysMethod(MethodType.GET);
+        apiReq.setSysConnectTimeout(3000);
+        apiReq.setSysReadTimeout(4000);
         HttpRequestBase httpRequest = (HttpRequestBase) declaredMethod.invoke(apacheHttpClient, apiReq);
-        Assert.assertEquals(5000, httpRequest.getConfig().getConnectTimeout());
-        Assert.assertEquals(10000, httpRequest.getConfig().getSocketTimeout());
-        apacheHttpClient.close();
-
-        config.setConnectionTimeoutMillis(5010);
-        config.setReadTimeoutMillis(10010);
-        apacheHttpClient = ApacheHttpClient.getInstance();
-        apacheHttpClient.init(config);
-        httpRequest = (HttpRequestBase) declaredMethod.invoke(apacheHttpClient, apiReq);
-        Assert.assertEquals(5010, httpRequest.getConfig().getConnectTimeout());
-        Assert.assertEquals(10010, httpRequest.getConfig().getSocketTimeout());
-        apacheHttpClient.close();
-    }
-
-    @Test
-    public void testRequestTimeout() throws ClientException, IOException, NoSuchFieldException, SecurityException,
-            IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-        ApacheHttpClient.getInstance().close();
-        HttpClientConfig config = HttpClientConfig.getDefault();
-        config.setConnectionTimeoutMillis(5020);
-        config.setReadTimeoutMillis(10020);
-        ApacheHttpClient apacheHttpClient = ApacheHttpClient.getInstance();
-        apacheHttpClient.init(config);
-        Method declaredMethod = ApacheHttpClient.class.getDeclaredMethod("parseToHttpRequest", HttpRequest.class);
-        declaredMethod.setAccessible(true);
-        HttpRequest apiReq = new HttpRequest("http://test.com");
-        apiReq.setSysMethod(MethodType.GET);
-        HttpRequestBase httpRequest = (HttpRequestBase) declaredMethod.invoke(apacheHttpClient, apiReq);
-        Assert.assertEquals(5020, httpRequest.getConfig().getConnectTimeout());
-        Assert.assertEquals(10020, httpRequest.getConfig().getSocketTimeout());
-
-        apiReq.setSysConnectTimeout(5030);
-        apiReq.setSysReadTimeout(10030);
-        httpRequest = (HttpRequestBase) declaredMethod.invoke(apacheHttpClient, apiReq);
-        Assert.assertEquals(5030, httpRequest.getConfig().getConnectTimeout());
-        Assert.assertEquals(10030, httpRequest.getConfig().getSocketTimeout());
+        Assert.assertEquals(3000, httpRequest.getConfig().getConnectTimeout());
+        Assert.assertEquals(4000, httpRequest.getConfig().getSocketTimeout());
         apacheHttpClient.close();
     }
 
@@ -501,8 +481,8 @@ public class ApacheHttpClientTest {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         X509TrustManager trustManager = mock(X509TrustManager.class);
         KeyManager keyManager = mock(KeyManager.class);
-        clientConfig.setX509TrustManagers(new X509TrustManager[]{trustManager});
-        clientConfig.setKeyManagers(new KeyManager[]{keyManager});
+        clientConfig.setX509TrustManagers(new X509TrustManager[] { trustManager });
+        clientConfig.setKeyManagers(new KeyManager[] { keyManager });
         ApacheHttpClient client = ApacheHttpClient.getInstance();
         client.init(clientConfig);
         SSLConnectionSocketFactory sslSocketFactory = Whitebox.invokeMethod(client, "createSSLConnectionSocketFactory");
@@ -518,6 +498,8 @@ public class ApacheHttpClientTest {
         client.init(clientConfig);
         HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
         request.setSysMethod(MethodType.GET);
+        request.setSysConnectTimeout(5000);
+        request.setSysReadTimeout(100000);
         client.syncInvoke(request);
         client.close();
     }
@@ -533,6 +515,8 @@ public class ApacheHttpClientTest {
             client.init(clientConfig);
             HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
             request.setSysMethod(MethodType.GET);
+            request.setSysConnectTimeout(5000);
+            request.setSysReadTimeout(100000);
             client.syncInvoke(request);
             client.close();
         } catch (Exception e) {
@@ -557,9 +541,11 @@ public class ApacheHttpClientTest {
     @Test
     public void calcHttpProxyTest() throws Exception {
         PowerMockito.mockStatic(HttpUtil.class);
-        BDDMockito.given(HttpUtil.needProxy((String) isNotNull(), (String) isNull(), (String) isNull())).willReturn(true);
+        BDDMockito.given(HttpUtil.needProxy((String) isNotNull(), (String) isNull(), (String) isNull())).willReturn(
+                true);
         HttpHost proxy0 = mock(HttpHost.class);
-        BDDMockito.given(HttpUtil.getApacheProxy((String) isNull(), (String) isNull(), (HttpRequest) isNotNull())).willReturn(proxy0);
+        BDDMockito.given(HttpUtil.getApacheProxy((String) isNull(), (String) isNull(), (HttpRequest) isNotNull()))
+                .willReturn(proxy0);
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
         ApacheHttpClient client = ApacheHttpClient.getInstance();
         client.init(config);
@@ -572,9 +558,11 @@ public class ApacheHttpClientTest {
     @Test
     public void calcHttpsProxyTest() throws Exception {
         PowerMockito.mockStatic(HttpUtil.class);
-        BDDMockito.given(HttpUtil.needProxy((String) isNotNull(), (String) isNull(), (String) isNull())).willReturn(true);
+        BDDMockito.given(HttpUtil.needProxy((String) isNotNull(), (String) isNull(), (String) isNull())).willReturn(
+                true);
         HttpHost proxy0 = mock(HttpHost.class);
-        BDDMockito.given(HttpUtil.getApacheProxy((String) isNull(), (String) isNull(), any(HttpRequest.class))).willReturn(proxy0);
+        BDDMockito.given(HttpUtil.getApacheProxy((String) isNull(), (String) isNull(), any(HttpRequest.class)))
+                .willReturn(proxy0);
         HttpClientConfig config = this.getMockHttpClientConfigWithFalseIgnoreSSLCerts();
         ApacheHttpClient client = ApacheHttpClient.getInstance();
         client.init(config);
@@ -589,6 +577,5 @@ public class ApacheHttpClientTest {
         thrown.expect(IllegalStateException.class);
         ApacheHttpClient.getInstance(HttpClientConfig.getDefault());
     }
-
 
 }

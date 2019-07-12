@@ -1,8 +1,37 @@
 package com.aliyuncs.http.clients;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ServerException;
-import com.aliyuncs.http.*;
+import static com.aliyuncs.http.clients.CompatibleUrlConnClient.CONTENT_TYPE;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.powermock.api.mockito.PowerMockito.verifyPrivate;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.HttpURLConnection;
+import java.net.Proxy;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.X509TrustManager;
+
 import org.apache.http.conn.ssl.DefaultHostnameVerifier;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.junit.Assert;
@@ -19,29 +48,21 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.reflect.Whitebox;
 
-import javax.net.ssl.*;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.net.HttpURLConnection;
-import java.net.Proxy;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static com.aliyuncs.http.clients.CompatibleUrlConnClient.CONTENT_TYPE;
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.*;
-import static org.powermock.api.mockito.PowerMockito.verifyPrivate;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.exceptions.ServerException;
+import com.aliyuncs.http.CallBack;
+import com.aliyuncs.http.FormatType;
+import com.aliyuncs.http.HttpClientConfig;
+import com.aliyuncs.http.HttpClientType;
+import com.aliyuncs.http.HttpRequest;
+import com.aliyuncs.http.HttpResponse;
+import com.aliyuncs.http.HttpUtil;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.http.X509TrustAll;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({CompatibleUrlConnClient.class, HttpUtil.class})
-@PowerMockIgnore({"javax.net.ssl.*"})
+@PrepareForTest({ CompatibleUrlConnClient.class, HttpUtil.class })
+@PowerMockIgnore({ "javax.net.ssl.*" })
 public class CompatibleUrlConnClientTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -202,10 +223,10 @@ public class CompatibleUrlConnClientTest {
         when(request.getSysMethod()).thenReturn(MethodType.POST);
         when(request.getSysUrl()).thenReturn("https://www.aliyun.com");
         when(request.getContentTypeValue(any(FormatType.class), anyString())).thenReturn(null);
-        when(request.getSysConnectTimeout()).thenReturn(null);
-        when(request.getSysReadTimeout()).thenReturn(null);
+        when(request.getSysConnectTimeout()).thenReturn(3000);
+        when(request.getSysReadTimeout()).thenReturn(4000);
         HttpURLConnection connection = Whitebox.invokeMethod(client, "buildHttpConnection", request);
-        Assert.assertEquals(0, connection.getConnectTimeout());
+        Assert.assertEquals(3000, connection.getConnectTimeout());
         Assert.assertEquals(null, connection.getRequestProperty("header1"));
     }
 
@@ -222,10 +243,10 @@ public class CompatibleUrlConnClientTest {
         when(request.getSysMethod()).thenReturn(MethodType.GET);
         when(request.getSysUrl()).thenReturn("http://www.aliyun.com");
         when(request.getContentTypeValue(any(FormatType.class), anyString())).thenReturn(null);
-        when(request.getSysConnectTimeout()).thenReturn(null);
-        when(request.getSysReadTimeout()).thenReturn(null);
+        when(request.getSysConnectTimeout()).thenReturn(3000);
+        when(request.getSysReadTimeout()).thenReturn(4000);
         HttpURLConnection connection = Whitebox.invokeMethod(client, "buildHttpConnection", request);
-        Assert.assertEquals(0, connection.getConnectTimeout());
+        Assert.assertEquals(3000, connection.getConnectTimeout());
         Assert.assertEquals(null, connection.getRequestProperty("header1"));
     }
 
@@ -411,7 +432,8 @@ public class CompatibleUrlConnClientTest {
         PowerMockito.mockStatic(HttpUtil.class);
         BDDMockito.given(HttpUtil.needProxy(anyString(), (String) isNull(), (String) isNull())).willReturn(true);
         Proxy proxy0 = mock(Proxy.class);
-        BDDMockito.given(HttpUtil.getJDKProxy((String) isNull(), (String) isNull(), any(HttpRequest.class))).willReturn(proxy0);
+        BDDMockito.given(HttpUtil.getJDKProxy((String) isNull(), (String) isNull(), any(HttpRequest.class))).willReturn(
+                proxy0);
         HttpClientConfig config = mock(HttpClientConfig.class);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         Proxy proxy = Whitebox.invokeMethod(client, "calcProxy", url, mock(HttpRequest.class));
@@ -424,7 +446,8 @@ public class CompatibleUrlConnClientTest {
         PowerMockito.mockStatic(HttpUtil.class);
         BDDMockito.given(HttpUtil.needProxy(anyString(), (String) isNull(), (String) isNull())).willReturn(true);
         Proxy proxy0 = mock(Proxy.class);
-        BDDMockito.given(HttpUtil.getJDKProxy((String) isNull(), (String) isNull(), any(HttpRequest.class))).willReturn(proxy0);
+        BDDMockito.given(HttpUtil.getJDKProxy((String) isNull(), (String) isNull(), any(HttpRequest.class))).willReturn(
+                proxy0);
         HttpClientConfig config = mock(HttpClientConfig.class);
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(config);
         Proxy proxy = Whitebox.invokeMethod(client, "calcProxy", url, mock(HttpRequest.class));
@@ -451,7 +474,7 @@ public class CompatibleUrlConnClientTest {
         });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn("application;encode=iso");
-        byte[] buff = new byte[]{'a', 'b', 'c'};
+        byte[] buff = new byte[] { 'a', 'b', 'c' };
         PowerMockito.doReturn(buff).when(client, "readContent", content);
         when(response.getSysEncoding()).thenReturn("ISO");
         when(response.getHttpContentType()).thenReturn(FormatType.RAW);
@@ -514,7 +537,7 @@ public class CompatibleUrlConnClientTest {
         });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn(null);
-        byte[] buff = new byte[]{'a', 'b', 'c'};
+        byte[] buff = new byte[] { 'a', 'b', 'c' };
         PowerMockito.doReturn(buff).when(client, "readContent", content);
         when(response.getSysEncoding()).thenReturn("ISO");
         when(response.getHttpContentType()).thenReturn(FormatType.RAW);
@@ -575,7 +598,7 @@ public class CompatibleUrlConnClientTest {
         });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn("application;json;utf8");
-        byte[] buff = new byte[]{'a', 'b', 'c'};
+        byte[] buff = new byte[] { 'a', 'b', 'c' };
         PowerMockito.doReturn(buff).when(client, "readContent", content);
         when(response.getSysEncoding()).thenReturn("ISO");
         when(response.getHttpContentType()).thenReturn(FormatType.RAW);
@@ -605,7 +628,7 @@ public class CompatibleUrlConnClientTest {
         });
         when(connection.getHeaderFields()).thenReturn(headers);
         when(response.getHeaderValue("Content-Type")).thenReturn("application");
-        byte[] buff = new byte[]{'a', 'b', 'c'};
+        byte[] buff = new byte[] { 'a', 'b', 'c' };
         PowerMockito.doReturn(buff).when(client, "readContent", content);
         when(response.getSysEncoding()).thenReturn("ISO");
         when(response.getHttpContentType()).thenReturn(FormatType.RAW);
@@ -622,7 +645,8 @@ public class CompatibleUrlConnClientTest {
         CompatibleUrlConnClient compatibleUrlConnClient = new CompatibleUrlConnClient(clientConfig);
         HttpRequest request = new HttpRequest("http://test.com");
         request.setSysMethod(MethodType.GET);
-
+        request.setSysConnectTimeout(5000);
+        request.setSysReadTimeout(10000);
         Method declaredMethod = CompatibleUrlConnClient.class.getDeclaredMethod("buildHttpConnection",
                 HttpRequest.class);
         declaredMethod.setAccessible(true);
@@ -634,13 +658,13 @@ public class CompatibleUrlConnClientTest {
         clientConfig.setReadTimeoutMillis(10010);
         compatibleUrlConnClient = new CompatibleUrlConnClient(clientConfig);
         httpConn = (HttpURLConnection) declaredMethod.invoke(compatibleUrlConnClient, request);
-        Assert.assertEquals(5010, httpConn.getConnectTimeout());
-        Assert.assertEquals(10010, httpConn.getReadTimeout());
+        Assert.assertEquals(5000, httpConn.getConnectTimeout());
+        Assert.assertEquals(10000, httpConn.getReadTimeout());
     }
 
     @Test
-    public void testRequestTimeout() throws ClientException, NoSuchMethodException,
-            SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public void testRequestTimeout() throws ClientException, NoSuchMethodException, SecurityException,
+            IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         clientConfig.setConnectionTimeoutMillis(5015);
         clientConfig.setReadTimeoutMillis(10015);
@@ -662,6 +686,8 @@ public class CompatibleUrlConnClientTest {
     public void testStaticCompatibleGetResponse() throws IOException, ClientException {
         HttpRequest httpRequest = new HttpRequest("http://www.aliyun.com");
         httpRequest.setSysMethod(MethodType.GET);
+        httpRequest.setSysConnectTimeout(5000);
+        httpRequest.setSysReadTimeout(10000);
         HttpResponse response = CompatibleUrlConnClient.compatibleGetResponse(httpRequest);
         Assert.assertNotNull(response);
 
@@ -672,14 +698,14 @@ public class CompatibleUrlConnClientTest {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         X509TrustManager trustManager = mock(X509TrustManager.class);
         KeyManager keyManager = mock(KeyManager.class);
-        clientConfig.setX509TrustManagers(new X509TrustManager[]{trustManager});
-        clientConfig.setKeyManagers(new KeyManager[]{keyManager});
+        clientConfig.setX509TrustManagers(new X509TrustManager[] { trustManager });
+        clientConfig.setKeyManagers(new KeyManager[] { keyManager });
 
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(clientConfig);
         HttpRequest request = new HttpRequest("http://test.com");
         request.setSysMethod(MethodType.GET);
-        request.setX509TrustManagers(new X509TrustManager[]{trustManager});
-        request.setKeyManagers(new KeyManager[]{keyManager});
+        request.setX509TrustManagers(new X509TrustManager[] { trustManager });
+        request.setKeyManagers(new KeyManager[] { keyManager });
         SSLSocketFactory sslSocketFactory = Whitebox.invokeMethod(client, "createSSLSocketFactory", request);
         Assert.assertNotNull(sslSocketFactory);
     }
@@ -689,14 +715,14 @@ public class CompatibleUrlConnClientTest {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         X509TrustManager trustManager = mock(X509TrustManager.class);
         KeyManager keyManager = mock(KeyManager.class);
-        clientConfig.setX509TrustManagers(new X509TrustManager[]{trustManager});
-        clientConfig.setKeyManagers(new KeyManager[]{keyManager});
+        clientConfig.setX509TrustManagers(new X509TrustManager[] { trustManager });
+        clientConfig.setKeyManagers(new KeyManager[] { keyManager });
 
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(clientConfig);
         HttpRequest request = new HttpRequest("http://test.com");
         request.setSysMethod(MethodType.GET);
-        request.setX509TrustManagers(new X509TrustManager[]{trustManager});
-        request.setKeyManagers(new KeyManager[]{keyManager});
+        request.setX509TrustManagers(new X509TrustManager[] { trustManager });
+        request.setKeyManagers(new KeyManager[] { keyManager });
         request.setIgnoreSSLCerts(true);
         SSLSocketFactory sslSocketFactory = Whitebox.invokeMethod(client, "createSSLSocketFactory", request);
         Assert.assertNotNull(sslSocketFactory);
@@ -741,6 +767,8 @@ public class CompatibleUrlConnClientTest {
         HttpClientConfig clientConfig = HttpClientConfig.getDefault();
         CompatibleUrlConnClient client = new CompatibleUrlConnClient(clientConfig);
         HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
+        request.setSysConnectTimeout(5000);
+        request.setSysReadTimeout(10000);
         request.setSysMethod(MethodType.GET);
         client.syncInvoke(request);
     }
@@ -753,6 +781,8 @@ public class CompatibleUrlConnClientTest {
             CompatibleUrlConnClient client = new CompatibleUrlConnClient(clientConfig);
             HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
             request.setSysMethod(MethodType.GET);
+            request.setSysConnectTimeout(5000);
+            request.setSysReadTimeout(10000);
             client.syncInvoke(request);
         } catch (Exception e) {
             Assert.fail();
@@ -769,6 +799,8 @@ public class CompatibleUrlConnClientTest {
         HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
         request.setSysMethod(MethodType.GET);
         request.setIgnoreSSLCerts(false);
+        request.setSysConnectTimeout(5000);
+        request.setSysReadTimeout(10000);
         client.syncInvoke(request);
     }
 
@@ -782,6 +814,8 @@ public class CompatibleUrlConnClientTest {
             HttpRequest request = new HttpRequest("https://self-signed.badssl.com");
             request.setSysMethod(MethodType.GET);
             request.setIgnoreSSLCerts(true);
+            request.setSysConnectTimeout(5000);
+            request.setSysReadTimeout(10000);
             client.syncInvoke(request);
         } catch (Exception e) {
             Assert.fail();

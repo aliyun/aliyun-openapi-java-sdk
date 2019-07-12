@@ -30,8 +30,8 @@ public class HttpClientConfig {
     /**
      * timeout
      **/
-    private long connectionTimeoutMillis = DEFAULT_CONNECTION_TIMEOUT;
-    private long readTimeoutMillis = DEFAULT_READ_TIMEOUT;
+    private long connectionTimeoutMillis;
+    private long readTimeoutMillis;
     private long writeTimeoutMillis = 15000L;
 
     /**

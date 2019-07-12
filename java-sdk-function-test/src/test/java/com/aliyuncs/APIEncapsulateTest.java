@@ -121,7 +121,8 @@ public class APIEncapsulateTest extends BaseTest {
             Assert.assertEquals("HTTPBadRequest", e.getErrCode());
             Assert.assertEquals(
                     "The server could not comply with the request since it is either malformed or otherwise incorrect. "
-                            + "The content type is application/x-www-form-urlencoded. Try use \"application/json\" instead.", e.getErrMsg());
+                            + "The content type is application/x-www-form-urlencoded. Try use \"application/json\" instead.",
+                    e.getErrMsg());
         }
     }
 

@@ -153,6 +153,7 @@
                     <include>project.properties</include>
                     <include>endpoints.json</include>
                     <include>regions.txt</include>
+                    <include>timeout_config.json</include>
                 </includes>
             </resource>
         </resources>

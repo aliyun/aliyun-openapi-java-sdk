@@ -235,18 +235,8 @@ public class ApacheHttpClient extends IHttpClient {
             }
             builder.addHeader(entry.getKey(), entry.getValue());
         }
-        int connectTimeout;
-        int readTimeout;
-        if (null != apiReq.getSysConnectTimeout()) {
-            connectTimeout = apiReq.getSysConnectTimeout();
-        } else {
-            connectTimeout = (int) clientConfig.getConnectionTimeoutMillis();
-        }
-        if (null != apiReq.getSysReadTimeout()) {
-            readTimeout = apiReq.getSysReadTimeout();
-        } else {
-            readTimeout = (int) clientConfig.getReadTimeoutMillis();
-        }
+        int connectTimeout = apiReq.getSysConnectTimeout();
+        int readTimeout = apiReq.getSysReadTimeout();
         RequestConfig requestConfig = RequestConfig.custom().setProxy(proxy).setConnectTimeout(connectTimeout).setSocketTimeout(
                 readTimeout).setConnectionRequestTimeout((int) clientConfig.getWriteTimeoutMillis()).build();
         builder.setConfig(requestConfig);
