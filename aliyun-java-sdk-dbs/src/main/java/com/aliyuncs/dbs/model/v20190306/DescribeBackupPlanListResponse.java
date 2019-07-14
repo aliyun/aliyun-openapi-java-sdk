@@ -173,6 +173,10 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 		private String backupPlanStatus;
 
+		private Long beginTimestampForRestore;
+
+		private Long endTimestampForRestore;
+
 		public String getBackupPlanId() {
 			return this.backupPlanId;
 		}
@@ -355,6 +359,22 @@ public class DescribeBackupPlanListResponse extends AcsResponse {
 
 		public void setBackupPlanStatus(String backupPlanStatus) {
 			this.backupPlanStatus = backupPlanStatus;
+		}
+
+		public Long getBeginTimestampForRestore() {
+			return this.beginTimestampForRestore;
+		}
+
+		public void setBeginTimestampForRestore(Long beginTimestampForRestore) {
+			this.beginTimestampForRestore = beginTimestampForRestore;
+		}
+
+		public Long getEndTimestampForRestore() {
+			return this.endTimestampForRestore;
+		}
+
+		public void setEndTimestampForRestore(Long endTimestampForRestore) {
+			this.endTimestampForRestore = endTimestampForRestore;
 		}
 	}
 

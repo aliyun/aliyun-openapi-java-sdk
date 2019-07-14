@@ -62,6 +62,8 @@ public class DescribeBackupPlanListResponseUnmarshaller {
 			backupPlanDetail.setBackupMethod(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupMethod"));
 			backupPlanDetail.setBackupPlanCreateTime(_ctx.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanCreateTime"));
 			backupPlanDetail.setBackupPlanStatus(_ctx.stringValue("DescribeBackupPlanListResponse.Items["+ i +"].BackupPlanStatus"));
+			backupPlanDetail.setBeginTimestampForRestore(_ctx.longValue("DescribeBackupPlanListResponse.Items["+ i +"].BeginTimestampForRestore"));
+			backupPlanDetail.setEndTimestampForRestore(_ctx.longValue("DescribeBackupPlanListResponse.Items["+ i +"].EndTimestampForRestore"));
 
 			items.add(backupPlanDetail);
 		}
