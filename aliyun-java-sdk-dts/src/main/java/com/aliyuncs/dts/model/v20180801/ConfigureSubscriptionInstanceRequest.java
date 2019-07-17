@@ -32,6 +32,8 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 
 	private String sourceEndpointPort;
 
+	private String sourceEndpointOracleSID;
+
 	private String sourceEndpointOwnerID;
 
 	private String sourceEndpointIP;
@@ -62,6 +64,8 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 
 	private String sourceEndpointUserName;
 
+	private String sourceEndpointDatabaseName;
+
 	public String getSourceEndpointInstanceID() {
 		return this.sourceEndpointInstanceID;
 	}
@@ -81,6 +85,17 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		this.sourceEndpointPort = sourceEndpointPort;
 		if(sourceEndpointPort != null){
 			putQueryParameter("SourceEndpoint.Port", sourceEndpointPort);
+		}
+	}
+
+	public String getSourceEndpointOracleSID() {
+		return this.sourceEndpointOracleSID;
+	}
+
+	public void setSourceEndpointOracleSID(String sourceEndpointOracleSID) {
+		this.sourceEndpointOracleSID = sourceEndpointOracleSID;
+		if(sourceEndpointOracleSID != null){
+			putQueryParameter("SourceEndpoint.OracleSID", sourceEndpointOracleSID);
 		}
 	}
 
@@ -246,6 +261,17 @@ public class ConfigureSubscriptionInstanceRequest extends RpcAcsRequest<Configur
 		this.sourceEndpointUserName = sourceEndpointUserName;
 		if(sourceEndpointUserName != null){
 			putQueryParameter("SourceEndpoint.UserName", sourceEndpointUserName);
+		}
+	}
+
+	public String getSourceEndpointDatabaseName() {
+		return this.sourceEndpointDatabaseName;
+	}
+
+	public void setSourceEndpointDatabaseName(String sourceEndpointDatabaseName) {
+		this.sourceEndpointDatabaseName = sourceEndpointDatabaseName;
+		if(sourceEndpointDatabaseName != null){
+			putQueryParameter("SourceEndpoint.DatabaseName", sourceEndpointDatabaseName);
 		}
 	}
 
