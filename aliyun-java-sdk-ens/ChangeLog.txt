@@ -1,0 +1,8 @@
+2019-07-18 Version: 1.0.0
+- Add CreateInstance.
+- Add DescribeEnsRegions.
+- Add ModifyImageAttribute.
+- Add StartInstance.
+- Add StopInstance.
+- Add RebootInstance.
+
