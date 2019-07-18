@@ -25,10 +25,10 @@ public class DefaultEndpointResolver implements EndpointResolver {
         // The order is very IMPORTANT!
         resolverChain.add(predefinedEndpointResolver);
         resolverChain.add(userCustomizedEndpointResolver);
-        resolverChain.add(endpointResolverRules);
         if (profile.isUsingVpcEndpoint()) {
             resolverChain.add(new UserVpcEndpointResolver());
         }
+        resolverChain.add(endpointResolverRules);
         if (userConfig == null) {
             resolverChain.add(new LocalConfigRegionalEndpointResolver());
             resolverChain.add(new LocalConfigGlobalEndpointResolver());
