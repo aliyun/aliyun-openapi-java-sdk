@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMessageCallbackResponseUnmarshaller {
 
-	public static DeleteMessageCallbackResponse unmarshall(DeleteMessageCallbackResponse deleteMessageCallbackResponse, UnmarshallerContext context) {
+	public static DeleteMessageCallbackResponse unmarshall(DeleteMessageCallbackResponse deleteMessageCallbackResponse, UnmarshallerContext _ctx) {
 		
-		deleteMessageCallbackResponse.setRequestId(context.stringValue("DeleteMessageCallbackResponse.RequestId"));
+		deleteMessageCallbackResponse.setRequestId(_ctx.stringValue("DeleteMessageCallbackResponse.RequestId"));
 	 
 	 	return deleteMessageCallbackResponse;
 	}

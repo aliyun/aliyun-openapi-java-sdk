@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListWatermarkResponseUnmarshaller {
 
-	public static ListWatermarkResponse unmarshall(ListWatermarkResponse listWatermarkResponse, UnmarshallerContext context) {
+	public static ListWatermarkResponse unmarshall(ListWatermarkResponse listWatermarkResponse, UnmarshallerContext _ctx) {
 		
-		listWatermarkResponse.setRequestId(context.stringValue("ListWatermarkResponse.RequestId"));
+		listWatermarkResponse.setRequestId(_ctx.stringValue("ListWatermarkResponse.RequestId"));
 
 		List<WatermarkInfo> watermarkInfos = new ArrayList<WatermarkInfo>();
-		for (int i = 0; i < context.lengthValue("ListWatermarkResponse.WatermarkInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListWatermarkResponse.WatermarkInfos.Length"); i++) {
 			WatermarkInfo watermarkInfo = new WatermarkInfo();
-			watermarkInfo.setCreationTime(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].CreationTime"));
-			watermarkInfo.setType(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].Type"));
-			watermarkInfo.setIsDefault(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].IsDefault"));
-			watermarkInfo.setWatermarkId(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].WatermarkId"));
-			watermarkInfo.setName(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].Name"));
-			watermarkInfo.setFileUrl(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].FileUrl"));
-			watermarkInfo.setWatermarkConfig(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].WatermarkConfig"));
-			watermarkInfo.setAppId(context.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].AppId"));
+			watermarkInfo.setCreationTime(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].CreationTime"));
+			watermarkInfo.setType(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].Type"));
+			watermarkInfo.setIsDefault(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].IsDefault"));
+			watermarkInfo.setWatermarkId(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].WatermarkId"));
+			watermarkInfo.setName(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].Name"));
+			watermarkInfo.setFileUrl(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].FileUrl"));
+			watermarkInfo.setWatermarkConfig(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].WatermarkConfig"));
+			watermarkInfo.setAppId(_ctx.stringValue("ListWatermarkResponse.WatermarkInfos["+ i +"].AppId"));
 
 			watermarkInfos.add(watermarkInfo);
 		}

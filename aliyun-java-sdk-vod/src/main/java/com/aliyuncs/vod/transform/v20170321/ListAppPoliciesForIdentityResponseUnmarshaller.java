@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAppPoliciesForIdentityResponseUnmarshaller {
 
-	public static ListAppPoliciesForIdentityResponse unmarshall(ListAppPoliciesForIdentityResponse listAppPoliciesForIdentityResponse, UnmarshallerContext context) {
+	public static ListAppPoliciesForIdentityResponse unmarshall(ListAppPoliciesForIdentityResponse listAppPoliciesForIdentityResponse, UnmarshallerContext _ctx) {
 		
-		listAppPoliciesForIdentityResponse.setRequestId(context.stringValue("ListAppPoliciesForIdentityResponse.RequestId"));
+		listAppPoliciesForIdentityResponse.setRequestId(_ctx.stringValue("ListAppPoliciesForIdentityResponse.RequestId"));
 
 		List<AppPolicy> appPolicyList = new ArrayList<AppPolicy>();
-		for (int i = 0; i < context.lengthValue("ListAppPoliciesForIdentityResponse.AppPolicyList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAppPoliciesForIdentityResponse.AppPolicyList.Length"); i++) {
 			AppPolicy appPolicy = new AppPolicy();
-			appPolicy.setAppId(context.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].AppId"));
-			appPolicy.setCreationTime(context.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].CreationTime"));
-			appPolicy.setPolicyName(context.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyName"));
-			appPolicy.setPolicyType(context.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyType"));
-			appPolicy.setPolicyValue(context.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyValue"));
-			appPolicy.setDescription(context.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].Description"));
-			appPolicy.setModificationTime(context.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].ModificationTime"));
+			appPolicy.setAppId(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].AppId"));
+			appPolicy.setCreationTime(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].CreationTime"));
+			appPolicy.setPolicyName(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyName"));
+			appPolicy.setPolicyType(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyType"));
+			appPolicy.setPolicyValue(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].PolicyValue"));
+			appPolicy.setDescription(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].Description"));
+			appPolicy.setModificationTime(_ctx.stringValue("ListAppPoliciesForIdentityResponse.AppPolicyList["+ i +"].ModificationTime"));
 
 			appPolicyList.add(appPolicy);
 		}

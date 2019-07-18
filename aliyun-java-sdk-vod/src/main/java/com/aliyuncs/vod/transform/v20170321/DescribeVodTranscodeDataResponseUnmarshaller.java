@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVodTranscodeDataResponseUnmarshaller {
 
-	public static DescribeVodTranscodeDataResponse unmarshall(DescribeVodTranscodeDataResponse describeVodTranscodeDataResponse, UnmarshallerContext context) {
+	public static DescribeVodTranscodeDataResponse unmarshall(DescribeVodTranscodeDataResponse describeVodTranscodeDataResponse, UnmarshallerContext _ctx) {
 		
-		describeVodTranscodeDataResponse.setRequestId(context.stringValue("DescribeVodTranscodeDataResponse.RequestId"));
-		describeVodTranscodeDataResponse.setDataInterval(context.stringValue("DescribeVodTranscodeDataResponse.DataInterval"));
+		describeVodTranscodeDataResponse.setRequestId(_ctx.stringValue("DescribeVodTranscodeDataResponse.RequestId"));
+		describeVodTranscodeDataResponse.setDataInterval(_ctx.stringValue("DescribeVodTranscodeDataResponse.DataInterval"));
 
 		List<TranscodeDataItem> transcodeData = new ArrayList<TranscodeDataItem>();
-		for (int i = 0; i < context.lengthValue("DescribeVodTranscodeDataResponse.TranscodeData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVodTranscodeDataResponse.TranscodeData.Length"); i++) {
 			TranscodeDataItem transcodeDataItem = new TranscodeDataItem();
-			transcodeDataItem.setTimeStamp(context.stringValue("DescribeVodTranscodeDataResponse.TranscodeData["+ i +"].TimeStamp"));
+			transcodeDataItem.setTimeStamp(_ctx.stringValue("DescribeVodTranscodeDataResponse.TranscodeData["+ i +"].TimeStamp"));
 
 			List<DataItem> data = new ArrayList<DataItem>();
-			for (int j = 0; j < context.lengthValue("DescribeVodTranscodeDataResponse.TranscodeData["+ i +"].Data.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeVodTranscodeDataResponse.TranscodeData["+ i +"].Data.Length"); j++) {
 				DataItem dataItem = new DataItem();
-				dataItem.setName(context.stringValue("DescribeVodTranscodeDataResponse.TranscodeData["+ i +"].Data["+ j +"].Name"));
-				dataItem.setValue(context.stringValue("DescribeVodTranscodeDataResponse.TranscodeData["+ i +"].Data["+ j +"].Value"));
+				dataItem.setName(_ctx.stringValue("DescribeVodTranscodeDataResponse.TranscodeData["+ i +"].Data["+ j +"].Name"));
+				dataItem.setValue(_ctx.stringValue("DescribeVodTranscodeDataResponse.TranscodeData["+ i +"].Data["+ j +"].Value"));
 
 				data.add(dataItem);
 			}

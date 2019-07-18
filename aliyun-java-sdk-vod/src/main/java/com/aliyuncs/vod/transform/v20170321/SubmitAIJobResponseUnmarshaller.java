@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitAIJobResponseUnmarshaller {
 
-	public static SubmitAIJobResponse unmarshall(SubmitAIJobResponse submitAIJobResponse, UnmarshallerContext context) {
+	public static SubmitAIJobResponse unmarshall(SubmitAIJobResponse submitAIJobResponse, UnmarshallerContext _ctx) {
 		
-		submitAIJobResponse.setRequestId(context.stringValue("SubmitAIJobResponse.RequestId"));
+		submitAIJobResponse.setRequestId(_ctx.stringValue("SubmitAIJobResponse.RequestId"));
 
 		List<AIJob> aIJobList = new ArrayList<AIJob>();
-		for (int i = 0; i < context.lengthValue("SubmitAIJobResponse.AIJobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SubmitAIJobResponse.AIJobList.Length"); i++) {
 			AIJob aIJob = new AIJob();
-			aIJob.setJobId(context.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].JobId"));
-			aIJob.setType(context.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Type"));
-			aIJob.setMediaId(context.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].MediaId"));
-			aIJob.setStatus(context.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Status"));
-			aIJob.setCode(context.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Code"));
-			aIJob.setMessage(context.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Message"));
-			aIJob.setCreationTime(context.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].CreationTime"));
-			aIJob.setData(context.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Data"));
+			aIJob.setJobId(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].JobId"));
+			aIJob.setType(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Type"));
+			aIJob.setMediaId(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].MediaId"));
+			aIJob.setStatus(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Status"));
+			aIJob.setCode(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Code"));
+			aIJob.setMessage(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Message"));
+			aIJob.setCreationTime(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].CreationTime"));
+			aIJob.setData(_ctx.stringValue("SubmitAIJobResponse.AIJobList["+ i +"].Data"));
 
 			aIJobList.add(aIJob);
 		}

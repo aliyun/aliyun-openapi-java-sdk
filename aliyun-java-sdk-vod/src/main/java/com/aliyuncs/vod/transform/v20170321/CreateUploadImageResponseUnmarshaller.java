@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateUploadImageResponseUnmarshaller {
 
-	public static CreateUploadImageResponse unmarshall(CreateUploadImageResponse createUploadImageResponse, UnmarshallerContext context) {
+	public static CreateUploadImageResponse unmarshall(CreateUploadImageResponse createUploadImageResponse, UnmarshallerContext _ctx) {
 		
-		createUploadImageResponse.setRequestId(context.stringValue("CreateUploadImageResponse.RequestId"));
-		createUploadImageResponse.setImageId(context.stringValue("CreateUploadImageResponse.ImageId"));
-		createUploadImageResponse.setImageURL(context.stringValue("CreateUploadImageResponse.ImageURL"));
-		createUploadImageResponse.setUploadAddress(context.stringValue("CreateUploadImageResponse.UploadAddress"));
-		createUploadImageResponse.setUploadAuth(context.stringValue("CreateUploadImageResponse.UploadAuth"));
-		createUploadImageResponse.setFileURL(context.stringValue("CreateUploadImageResponse.FileURL"));
+		createUploadImageResponse.setRequestId(_ctx.stringValue("CreateUploadImageResponse.RequestId"));
+		createUploadImageResponse.setImageId(_ctx.stringValue("CreateUploadImageResponse.ImageId"));
+		createUploadImageResponse.setImageURL(_ctx.stringValue("CreateUploadImageResponse.ImageURL"));
+		createUploadImageResponse.setUploadAddress(_ctx.stringValue("CreateUploadImageResponse.UploadAddress"));
+		createUploadImageResponse.setUploadAuth(_ctx.stringValue("CreateUploadImageResponse.UploadAuth"));
+		createUploadImageResponse.setFileURL(_ctx.stringValue("CreateUploadImageResponse.FileURL"));
 	 
 	 	return createUploadImageResponse;
 	}

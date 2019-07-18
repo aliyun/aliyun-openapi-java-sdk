@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateImageInfosResponseUnmarshaller {
 
-	public static UpdateImageInfosResponse unmarshall(UpdateImageInfosResponse updateImageInfosResponse, UnmarshallerContext context) {
+	public static UpdateImageInfosResponse unmarshall(UpdateImageInfosResponse updateImageInfosResponse, UnmarshallerContext _ctx) {
 		
-		updateImageInfosResponse.setRequestId(context.stringValue("UpdateImageInfosResponse.RequestId"));
+		updateImageInfosResponse.setRequestId(_ctx.stringValue("UpdateImageInfosResponse.RequestId"));
 
 		List<String> nonExistImageIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UpdateImageInfosResponse.NonExistImageIds.Length"); i++) {
-			nonExistImageIds.add(context.stringValue("UpdateImageInfosResponse.NonExistImageIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UpdateImageInfosResponse.NonExistImageIds.Length"); i++) {
+			nonExistImageIds.add(_ctx.stringValue("UpdateImageInfosResponse.NonExistImageIds["+ i +"]"));
 		}
 		updateImageInfosResponse.setNonExistImageIds(nonExistImageIds);
 	 

@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTranscodeTemplateGroupResponseUnmarshaller {
 
-	public static ListTranscodeTemplateGroupResponse unmarshall(ListTranscodeTemplateGroupResponse listTranscodeTemplateGroupResponse, UnmarshallerContext context) {
+	public static ListTranscodeTemplateGroupResponse unmarshall(ListTranscodeTemplateGroupResponse listTranscodeTemplateGroupResponse, UnmarshallerContext _ctx) {
 		
-		listTranscodeTemplateGroupResponse.setRequestId(context.stringValue("ListTranscodeTemplateGroupResponse.RequestId"));
+		listTranscodeTemplateGroupResponse.setRequestId(_ctx.stringValue("ListTranscodeTemplateGroupResponse.RequestId"));
 
 		List<TranscodeTemplateGroup> transcodeTemplateGroupList = new ArrayList<TranscodeTemplateGroup>();
-		for (int i = 0; i < context.lengthValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList.Length"); i++) {
 			TranscodeTemplateGroup transcodeTemplateGroup = new TranscodeTemplateGroup();
-			transcodeTemplateGroup.setCreationTime(context.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].CreationTime"));
-			transcodeTemplateGroup.setModifyTime(context.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].ModifyTime"));
-			transcodeTemplateGroup.setName(context.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].Name"));
-			transcodeTemplateGroup.setIsDefault(context.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].IsDefault"));
-			transcodeTemplateGroup.setLocked(context.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].Locked"));
-			transcodeTemplateGroup.setTranscodeTemplateGroupId(context.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].TranscodeTemplateGroupId"));
-			transcodeTemplateGroup.setTranscodeMode(context.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].TranscodeMode"));
-			transcodeTemplateGroup.setAppId(context.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].AppId"));
+			transcodeTemplateGroup.setCreationTime(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].CreationTime"));
+			transcodeTemplateGroup.setModifyTime(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].ModifyTime"));
+			transcodeTemplateGroup.setName(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].Name"));
+			transcodeTemplateGroup.setIsDefault(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].IsDefault"));
+			transcodeTemplateGroup.setLocked(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].Locked"));
+			transcodeTemplateGroup.setTranscodeTemplateGroupId(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].TranscodeTemplateGroupId"));
+			transcodeTemplateGroup.setTranscodeMode(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].TranscodeMode"));
+			transcodeTemplateGroup.setAppId(_ctx.stringValue("ListTranscodeTemplateGroupResponse.TranscodeTemplateGroupList["+ i +"].AppId"));
 
 			transcodeTemplateGroupList.add(transcodeTemplateGroup);
 		}

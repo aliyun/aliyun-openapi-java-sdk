@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAppInfosResponseUnmarshaller {
 
-	public static GetAppInfosResponse unmarshall(GetAppInfosResponse getAppInfosResponse, UnmarshallerContext context) {
+	public static GetAppInfosResponse unmarshall(GetAppInfosResponse getAppInfosResponse, UnmarshallerContext _ctx) {
 		
-		getAppInfosResponse.setRequestId(context.stringValue("GetAppInfosResponse.RequestId"));
+		getAppInfosResponse.setRequestId(_ctx.stringValue("GetAppInfosResponse.RequestId"));
 
 		List<String> nonExistAppIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetAppInfosResponse.NonExistAppIds.Length"); i++) {
-			nonExistAppIds.add(context.stringValue("GetAppInfosResponse.NonExistAppIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetAppInfosResponse.NonExistAppIds.Length"); i++) {
+			nonExistAppIds.add(_ctx.stringValue("GetAppInfosResponse.NonExistAppIds["+ i +"]"));
 		}
 		getAppInfosResponse.setNonExistAppIds(nonExistAppIds);
 
 		List<AppInfo> appInfoList = new ArrayList<AppInfo>();
-		for (int i = 0; i < context.lengthValue("GetAppInfosResponse.AppInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetAppInfosResponse.AppInfoList.Length"); i++) {
 			AppInfo appInfo = new AppInfo();
-			appInfo.setAppId(context.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].AppId"));
-			appInfo.setAppName(context.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].AppName"));
-			appInfo.setType(context.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].Type"));
-			appInfo.setDescription(context.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].Description"));
-			appInfo.setStatus(context.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].Status"));
-			appInfo.setCreationTime(context.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].CreationTime"));
-			appInfo.setModificationTime(context.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].ModificationTime"));
+			appInfo.setAppId(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].AppId"));
+			appInfo.setAppName(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].AppName"));
+			appInfo.setType(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].Type"));
+			appInfo.setDescription(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].Description"));
+			appInfo.setStatus(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].Status"));
+			appInfo.setCreationTime(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].CreationTime"));
+			appInfo.setModificationTime(_ctx.stringValue("GetAppInfosResponse.AppInfoList["+ i +"].ModificationTime"));
 
 			appInfoList.add(appInfo);
 		}

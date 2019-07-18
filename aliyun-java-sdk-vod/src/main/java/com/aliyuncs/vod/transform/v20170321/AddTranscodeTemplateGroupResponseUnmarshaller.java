@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddTranscodeTemplateGroupResponseUnmarshaller {
 
-	public static AddTranscodeTemplateGroupResponse unmarshall(AddTranscodeTemplateGroupResponse addTranscodeTemplateGroupResponse, UnmarshallerContext context) {
+	public static AddTranscodeTemplateGroupResponse unmarshall(AddTranscodeTemplateGroupResponse addTranscodeTemplateGroupResponse, UnmarshallerContext _ctx) {
 		
-		addTranscodeTemplateGroupResponse.setRequestId(context.stringValue("AddTranscodeTemplateGroupResponse.RequestId"));
-		addTranscodeTemplateGroupResponse.setTranscodeTemplateGroupId(context.stringValue("AddTranscodeTemplateGroupResponse.TranscodeTemplateGroupId"));
+		addTranscodeTemplateGroupResponse.setRequestId(_ctx.stringValue("AddTranscodeTemplateGroupResponse.RequestId"));
+		addTranscodeTemplateGroupResponse.setTranscodeTemplateGroupId(_ctx.stringValue("AddTranscodeTemplateGroupResponse.TranscodeTemplateGroupId"));
 	 
 	 	return addTranscodeTemplateGroupResponse;
 	}

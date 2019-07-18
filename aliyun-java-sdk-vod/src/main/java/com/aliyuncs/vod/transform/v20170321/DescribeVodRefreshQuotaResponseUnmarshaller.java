@@ -20,17 +20,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVodRefreshQuotaResponseUnmarshaller {
 
-	public static DescribeVodRefreshQuotaResponse unmarshall(DescribeVodRefreshQuotaResponse describeVodRefreshQuotaResponse, UnmarshallerContext context) {
+	public static DescribeVodRefreshQuotaResponse unmarshall(DescribeVodRefreshQuotaResponse describeVodRefreshQuotaResponse, UnmarshallerContext _ctx) {
 		
-		describeVodRefreshQuotaResponse.setRequestId(context.stringValue("DescribeVodRefreshQuotaResponse.RequestId"));
-		describeVodRefreshQuotaResponse.setUrlQuota(context.stringValue("DescribeVodRefreshQuotaResponse.UrlQuota"));
-		describeVodRefreshQuotaResponse.setDirQuota(context.stringValue("DescribeVodRefreshQuotaResponse.DirQuota"));
-		describeVodRefreshQuotaResponse.setUrlRemain(context.stringValue("DescribeVodRefreshQuotaResponse.UrlRemain"));
-		describeVodRefreshQuotaResponse.setDirRemain(context.stringValue("DescribeVodRefreshQuotaResponse.DirRemain"));
-		describeVodRefreshQuotaResponse.setPreloadQuota(context.stringValue("DescribeVodRefreshQuotaResponse.PreloadQuota"));
-		describeVodRefreshQuotaResponse.setBlockQuota(context.stringValue("DescribeVodRefreshQuotaResponse.BlockQuota"));
-		describeVodRefreshQuotaResponse.setPreloadRemain(context.stringValue("DescribeVodRefreshQuotaResponse.PreloadRemain"));
-		describeVodRefreshQuotaResponse.setBlockRemain(context.stringValue("DescribeVodRefreshQuotaResponse.blockRemain"));
+		describeVodRefreshQuotaResponse.setRequestId(_ctx.stringValue("DescribeVodRefreshQuotaResponse.RequestId"));
+		describeVodRefreshQuotaResponse.setUrlQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.UrlQuota"));
+		describeVodRefreshQuotaResponse.setDirQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.DirQuota"));
+		describeVodRefreshQuotaResponse.setUrlRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.UrlRemain"));
+		describeVodRefreshQuotaResponse.setDirRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.DirRemain"));
+		describeVodRefreshQuotaResponse.setPreloadQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.PreloadQuota"));
+		describeVodRefreshQuotaResponse.setBlockQuota(_ctx.stringValue("DescribeVodRefreshQuotaResponse.BlockQuota"));
+		describeVodRefreshQuotaResponse.setPreloadRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.PreloadRemain"));
+		describeVodRefreshQuotaResponse.setBlockRemain(_ctx.stringValue("DescribeVodRefreshQuotaResponse.blockRemain"));
 	 
 	 	return describeVodRefreshQuotaResponse;
 	}

@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddEditingProjectResponseUnmarshaller {
 
-	public static AddEditingProjectResponse unmarshall(AddEditingProjectResponse addEditingProjectResponse, UnmarshallerContext context) {
+	public static AddEditingProjectResponse unmarshall(AddEditingProjectResponse addEditingProjectResponse, UnmarshallerContext _ctx) {
 		
-		addEditingProjectResponse.setRequestId(context.stringValue("AddEditingProjectResponse.RequestId"));
+		addEditingProjectResponse.setRequestId(_ctx.stringValue("AddEditingProjectResponse.RequestId"));
 
 		Project project = new Project();
-		project.setProjectId(context.stringValue("AddEditingProjectResponse.Project.ProjectId"));
-		project.setCreationTime(context.stringValue("AddEditingProjectResponse.Project.CreationTime"));
-		project.setModifiedTime(context.stringValue("AddEditingProjectResponse.Project.ModifiedTime"));
-		project.setStatus(context.stringValue("AddEditingProjectResponse.Project.Status"));
-		project.setDescription(context.stringValue("AddEditingProjectResponse.Project.Description"));
-		project.setTitle(context.stringValue("AddEditingProjectResponse.Project.Title"));
+		project.setProjectId(_ctx.stringValue("AddEditingProjectResponse.Project.ProjectId"));
+		project.setCreationTime(_ctx.stringValue("AddEditingProjectResponse.Project.CreationTime"));
+		project.setModifiedTime(_ctx.stringValue("AddEditingProjectResponse.Project.ModifiedTime"));
+		project.setStatus(_ctx.stringValue("AddEditingProjectResponse.Project.Status"));
+		project.setDescription(_ctx.stringValue("AddEditingProjectResponse.Project.Description"));
+		project.setTitle(_ctx.stringValue("AddEditingProjectResponse.Project.Title"));
 		addEditingProjectResponse.setProject(project);
 	 
 	 	return addEditingProjectResponse;

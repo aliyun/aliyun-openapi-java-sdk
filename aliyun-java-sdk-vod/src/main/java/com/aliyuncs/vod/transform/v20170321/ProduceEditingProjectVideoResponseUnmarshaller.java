@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ProduceEditingProjectVideoResponseUnmarshaller {
 
-	public static ProduceEditingProjectVideoResponse unmarshall(ProduceEditingProjectVideoResponse produceEditingProjectVideoResponse, UnmarshallerContext context) {
+	public static ProduceEditingProjectVideoResponse unmarshall(ProduceEditingProjectVideoResponse produceEditingProjectVideoResponse, UnmarshallerContext _ctx) {
 		
-		produceEditingProjectVideoResponse.setRequestId(context.stringValue("ProduceEditingProjectVideoResponse.RequestId"));
-		produceEditingProjectVideoResponse.setMediaId(context.stringValue("ProduceEditingProjectVideoResponse.MediaId"));
-		produceEditingProjectVideoResponse.setProjectId(context.stringValue("ProduceEditingProjectVideoResponse.ProjectId"));
+		produceEditingProjectVideoResponse.setRequestId(_ctx.stringValue("ProduceEditingProjectVideoResponse.RequestId"));
+		produceEditingProjectVideoResponse.setMediaId(_ctx.stringValue("ProduceEditingProjectVideoResponse.MediaId"));
+		produceEditingProjectVideoResponse.setProjectId(_ctx.stringValue("ProduceEditingProjectVideoResponse.ProjectId"));
 	 
 	 	return produceEditingProjectVideoResponse;
 	}

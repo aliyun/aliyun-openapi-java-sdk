@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetVideoPlayAuthResponseUnmarshaller {
 
-	public static GetVideoPlayAuthResponse unmarshall(GetVideoPlayAuthResponse getVideoPlayAuthResponse, UnmarshallerContext context) {
+	public static GetVideoPlayAuthResponse unmarshall(GetVideoPlayAuthResponse getVideoPlayAuthResponse, UnmarshallerContext _ctx) {
 		
-		getVideoPlayAuthResponse.setRequestId(context.stringValue("GetVideoPlayAuthResponse.RequestId"));
-		getVideoPlayAuthResponse.setPlayAuth(context.stringValue("GetVideoPlayAuthResponse.PlayAuth"));
+		getVideoPlayAuthResponse.setRequestId(_ctx.stringValue("GetVideoPlayAuthResponse.RequestId"));
+		getVideoPlayAuthResponse.setPlayAuth(_ctx.stringValue("GetVideoPlayAuthResponse.PlayAuth"));
 
 		VideoMeta videoMeta = new VideoMeta();
-		videoMeta.setCoverURL(context.stringValue("GetVideoPlayAuthResponse.VideoMeta.CoverURL"));
-		videoMeta.setDuration(context.floatValue("GetVideoPlayAuthResponse.VideoMeta.Duration"));
-		videoMeta.setStatus(context.stringValue("GetVideoPlayAuthResponse.VideoMeta.Status"));
-		videoMeta.setTitle(context.stringValue("GetVideoPlayAuthResponse.VideoMeta.Title"));
-		videoMeta.setVideoId(context.stringValue("GetVideoPlayAuthResponse.VideoMeta.VideoId"));
+		videoMeta.setCoverURL(_ctx.stringValue("GetVideoPlayAuthResponse.VideoMeta.CoverURL"));
+		videoMeta.setDuration(_ctx.floatValue("GetVideoPlayAuthResponse.VideoMeta.Duration"));
+		videoMeta.setStatus(_ctx.stringValue("GetVideoPlayAuthResponse.VideoMeta.Status"));
+		videoMeta.setTitle(_ctx.stringValue("GetVideoPlayAuthResponse.VideoMeta.Title"));
+		videoMeta.setVideoId(_ctx.stringValue("GetVideoPlayAuthResponse.VideoMeta.VideoId"));
 		getVideoPlayAuthResponse.setVideoMeta(videoMeta);
 	 
 	 	return getVideoPlayAuthResponse;

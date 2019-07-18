@@ -28,6 +28,8 @@ public class SubmitAIJobRequest extends RpcAcsRequest<SubmitAIJobResponse> {
 
 	private String userData;
 
+	private String input;
+
 	private String resourceOwnerId;
 
 	private String types;
@@ -50,6 +52,17 @@ public class SubmitAIJobRequest extends RpcAcsRequest<SubmitAIJobResponse> {
 		this.userData = userData;
 		if(userData != null){
 			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

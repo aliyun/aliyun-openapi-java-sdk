@@ -25,34 +25,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVodUserDomainsResponseUnmarshaller {
 
-	public static DescribeVodUserDomainsResponse unmarshall(DescribeVodUserDomainsResponse describeVodUserDomainsResponse, UnmarshallerContext context) {
+	public static DescribeVodUserDomainsResponse unmarshall(DescribeVodUserDomainsResponse describeVodUserDomainsResponse, UnmarshallerContext _ctx) {
 		
-		describeVodUserDomainsResponse.setRequestId(context.stringValue("DescribeVodUserDomainsResponse.RequestId"));
-		describeVodUserDomainsResponse.setPageNumber(context.longValue("DescribeVodUserDomainsResponse.PageNumber"));
-		describeVodUserDomainsResponse.setPageSize(context.longValue("DescribeVodUserDomainsResponse.PageSize"));
-		describeVodUserDomainsResponse.setTotalCount(context.longValue("DescribeVodUserDomainsResponse.TotalCount"));
+		describeVodUserDomainsResponse.setRequestId(_ctx.stringValue("DescribeVodUserDomainsResponse.RequestId"));
+		describeVodUserDomainsResponse.setPageNumber(_ctx.longValue("DescribeVodUserDomainsResponse.PageNumber"));
+		describeVodUserDomainsResponse.setPageSize(_ctx.longValue("DescribeVodUserDomainsResponse.PageSize"));
+		describeVodUserDomainsResponse.setTotalCount(_ctx.longValue("DescribeVodUserDomainsResponse.TotalCount"));
 
 		List<PageData> domains = new ArrayList<PageData>();
-		for (int i = 0; i < context.lengthValue("DescribeVodUserDomainsResponse.Domains.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVodUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setDomainName(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].DomainName"));
-			pageData.setCname(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Cname"));
-			pageData.setCdnType(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].CdnType"));
-			pageData.setDomainStatus(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].DomainStatus"));
-			pageData.setGmtCreated(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].GmtCreated"));
-			pageData.setGmtModified(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].GmtModified"));
-			pageData.setDescription(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Description"));
-			pageData.setSslProtocol(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].SslProtocol"));
-			pageData.setWeight(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Weight"));
-			pageData.setSandbox(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sandbox"));
+			pageData.setDomainName(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].DomainName"));
+			pageData.setCname(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Cname"));
+			pageData.setCdnType(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].CdnType"));
+			pageData.setDomainStatus(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].DomainStatus"));
+			pageData.setGmtCreated(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].GmtCreated"));
+			pageData.setGmtModified(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].GmtModified"));
+			pageData.setDescription(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Description"));
+			pageData.setSslProtocol(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].SslProtocol"));
+			pageData.setWeight(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Weight"));
+			pageData.setSandbox(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sandbox"));
 
 			List<Source> sources = new ArrayList<Source>();
-			for (int j = 0; j < context.lengthValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
 				Source source = new Source();
-				source.setType(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Type"));
-				source.setContent(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Content"));
-				source.setPort(context.integerValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Port"));
-				source.setPriority(context.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
+				source.setType(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Type"));
+				source.setContent(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Content"));
+				source.setPort(_ctx.integerValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Port"));
+				source.setPriority(_ctx.stringValue("DescribeVodUserDomainsResponse.Domains["+ i +"].Sources["+ j +"].Priority"));
 
 				sources.add(source);
 			}

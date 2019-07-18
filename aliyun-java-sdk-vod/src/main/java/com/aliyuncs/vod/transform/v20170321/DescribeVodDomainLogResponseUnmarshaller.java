@@ -26,30 +26,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVodDomainLogResponseUnmarshaller {
 
-	public static DescribeVodDomainLogResponse unmarshall(DescribeVodDomainLogResponse describeVodDomainLogResponse, UnmarshallerContext context) {
+	public static DescribeVodDomainLogResponse unmarshall(DescribeVodDomainLogResponse describeVodDomainLogResponse, UnmarshallerContext _ctx) {
 		
-		describeVodDomainLogResponse.setRequestId(context.stringValue("DescribeVodDomainLogResponse.RequestId"));
+		describeVodDomainLogResponse.setRequestId(_ctx.stringValue("DescribeVodDomainLogResponse.RequestId"));
 
 		List<DomainLogDetail> domainLogDetails = new ArrayList<DomainLogDetail>();
-		for (int i = 0; i < context.lengthValue("DescribeVodDomainLogResponse.DomainLogDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVodDomainLogResponse.DomainLogDetails.Length"); i++) {
 			DomainLogDetail domainLogDetail = new DomainLogDetail();
-			domainLogDetail.setDomainName(context.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].DomainName"));
-			domainLogDetail.setLogCount(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogCount"));
+			domainLogDetail.setDomainName(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].DomainName"));
+			domainLogDetail.setLogCount(_ctx.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogCount"));
 
 			PageInfos pageInfos = new PageInfos();
-			pageInfos.setPageNumber(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageNumber"));
-			pageInfos.setPageSize(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageSize"));
-			pageInfos.setTotal(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.Total"));
+			pageInfos.setPageNumber(_ctx.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageNumber"));
+			pageInfos.setPageSize(_ctx.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.PageSize"));
+			pageInfos.setTotal(_ctx.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].PageInfos.Total"));
 			domainLogDetail.setPageInfos(pageInfos);
 
 			List<LogInfoDetail> logInfos = new ArrayList<LogInfoDetail>();
-			for (int j = 0; j < context.lengthValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 				LogInfoDetail logInfoDetail = new LogInfoDetail();
-				logInfoDetail.setLogName(context.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName"));
-				logInfoDetail.setLogPath(context.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath"));
-				logInfoDetail.setLogSize(context.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize"));
-				logInfoDetail.setStartTime(context.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime"));
-				logInfoDetail.setEndTime(context.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime"));
+				logInfoDetail.setLogName(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName"));
+				logInfoDetail.setLogPath(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath"));
+				logInfoDetail.setLogSize(_ctx.longValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize"));
+				logInfoDetail.setStartTime(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime"));
+				logInfoDetail.setEndTime(_ctx.stringValue("DescribeVodDomainLogResponse.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime"));
 
 				logInfos.add(logInfoDetail);
 			}

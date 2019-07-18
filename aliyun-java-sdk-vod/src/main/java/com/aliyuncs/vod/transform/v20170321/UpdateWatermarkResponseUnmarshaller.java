@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateWatermarkResponseUnmarshaller {
 
-	public static UpdateWatermarkResponse unmarshall(UpdateWatermarkResponse updateWatermarkResponse, UnmarshallerContext context) {
+	public static UpdateWatermarkResponse unmarshall(UpdateWatermarkResponse updateWatermarkResponse, UnmarshallerContext _ctx) {
 		
-		updateWatermarkResponse.setRequestId(context.stringValue("UpdateWatermarkResponse.RequestId"));
+		updateWatermarkResponse.setRequestId(_ctx.stringValue("UpdateWatermarkResponse.RequestId"));
 
 		WatermarkInfo watermarkInfo = new WatermarkInfo();
-		watermarkInfo.setCreationTime(context.stringValue("UpdateWatermarkResponse.WatermarkInfo.CreationTime"));
-		watermarkInfo.setType(context.stringValue("UpdateWatermarkResponse.WatermarkInfo.Type"));
-		watermarkInfo.setIsDefault(context.stringValue("UpdateWatermarkResponse.WatermarkInfo.IsDefault"));
-		watermarkInfo.setWatermarkId(context.stringValue("UpdateWatermarkResponse.WatermarkInfo.WatermarkId"));
-		watermarkInfo.setName(context.stringValue("UpdateWatermarkResponse.WatermarkInfo.Name"));
-		watermarkInfo.setFileUrl(context.stringValue("UpdateWatermarkResponse.WatermarkInfo.FileUrl"));
-		watermarkInfo.setWatermarkConfig(context.stringValue("UpdateWatermarkResponse.WatermarkInfo.WatermarkConfig"));
+		watermarkInfo.setCreationTime(_ctx.stringValue("UpdateWatermarkResponse.WatermarkInfo.CreationTime"));
+		watermarkInfo.setType(_ctx.stringValue("UpdateWatermarkResponse.WatermarkInfo.Type"));
+		watermarkInfo.setIsDefault(_ctx.stringValue("UpdateWatermarkResponse.WatermarkInfo.IsDefault"));
+		watermarkInfo.setWatermarkId(_ctx.stringValue("UpdateWatermarkResponse.WatermarkInfo.WatermarkId"));
+		watermarkInfo.setName(_ctx.stringValue("UpdateWatermarkResponse.WatermarkInfo.Name"));
+		watermarkInfo.setFileUrl(_ctx.stringValue("UpdateWatermarkResponse.WatermarkInfo.FileUrl"));
+		watermarkInfo.setWatermarkConfig(_ctx.stringValue("UpdateWatermarkResponse.WatermarkInfo.WatermarkConfig"));
 		updateWatermarkResponse.setWatermarkInfo(watermarkInfo);
 	 
 	 	return updateWatermarkResponse;

@@ -26,29 +26,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetMediaAuditResultTimelineResponseUnmarshaller {
 
-	public static GetMediaAuditResultTimelineResponse unmarshall(GetMediaAuditResultTimelineResponse getMediaAuditResultTimelineResponse, UnmarshallerContext context) {
+	public static GetMediaAuditResultTimelineResponse unmarshall(GetMediaAuditResultTimelineResponse getMediaAuditResultTimelineResponse, UnmarshallerContext _ctx) {
 		
-		getMediaAuditResultTimelineResponse.setRequestId(context.stringValue("GetMediaAuditResultTimelineResponse.RequestId"));
+		getMediaAuditResultTimelineResponse.setRequestId(_ctx.stringValue("GetMediaAuditResultTimelineResponse.RequestId"));
 
 		MediaAuditResultTimeline mediaAuditResultTimeline = new MediaAuditResultTimeline();
 
 		List<PornItem> porn = new ArrayList<PornItem>();
-		for (int i = 0; i < context.lengthValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn.Length"); i++) {
 			PornItem pornItem = new PornItem();
-			pornItem.setLabel(context.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Label"));
-			pornItem.setScore(context.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Score"));
-			pornItem.setTimestamp(context.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Timestamp"));
+			pornItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Label"));
+			pornItem.setScore(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Score"));
+			pornItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Porn["+ i +"].Timestamp"));
 
 			porn.add(pornItem);
 		}
 		mediaAuditResultTimeline.setPorn(porn);
 
 		List<TerrorismItem> terrorism = new ArrayList<TerrorismItem>();
-		for (int i = 0; i < context.lengthValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism.Length"); i++) {
 			TerrorismItem terrorismItem = new TerrorismItem();
-			terrorismItem.setLabel(context.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Label"));
-			terrorismItem.setScore(context.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Score"));
-			terrorismItem.setTimestamp(context.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Timestamp"));
+			terrorismItem.setLabel(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Label"));
+			terrorismItem.setScore(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Score"));
+			terrorismItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultTimelineResponse.MediaAuditResultTimeline.Terrorism["+ i +"].Timestamp"));
 
 			terrorism.add(terrorismItem);
 		}

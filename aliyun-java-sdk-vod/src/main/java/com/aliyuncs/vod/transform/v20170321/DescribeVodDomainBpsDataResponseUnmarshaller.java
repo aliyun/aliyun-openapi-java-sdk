@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVodDomainBpsDataResponseUnmarshaller {
 
-	public static DescribeVodDomainBpsDataResponse unmarshall(DescribeVodDomainBpsDataResponse describeVodDomainBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeVodDomainBpsDataResponse unmarshall(DescribeVodDomainBpsDataResponse describeVodDomainBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeVodDomainBpsDataResponse.setRequestId(context.stringValue("DescribeVodDomainBpsDataResponse.RequestId"));
-		describeVodDomainBpsDataResponse.setDomainName(context.stringValue("DescribeVodDomainBpsDataResponse.DomainName"));
-		describeVodDomainBpsDataResponse.setStartTime(context.stringValue("DescribeVodDomainBpsDataResponse.StartTime"));
-		describeVodDomainBpsDataResponse.setEndTime(context.stringValue("DescribeVodDomainBpsDataResponse.EndTime"));
-		describeVodDomainBpsDataResponse.setLocationNameEn(context.stringValue("DescribeVodDomainBpsDataResponse.LocationNameEn"));
-		describeVodDomainBpsDataResponse.setIspNameEn(context.stringValue("DescribeVodDomainBpsDataResponse.IspNameEn"));
-		describeVodDomainBpsDataResponse.setDataInterval(context.stringValue("DescribeVodDomainBpsDataResponse.DataInterval"));
+		describeVodDomainBpsDataResponse.setRequestId(_ctx.stringValue("DescribeVodDomainBpsDataResponse.RequestId"));
+		describeVodDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeVodDomainBpsDataResponse.DomainName"));
+		describeVodDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeVodDomainBpsDataResponse.StartTime"));
+		describeVodDomainBpsDataResponse.setEndTime(_ctx.stringValue("DescribeVodDomainBpsDataResponse.EndTime"));
+		describeVodDomainBpsDataResponse.setLocationNameEn(_ctx.stringValue("DescribeVodDomainBpsDataResponse.LocationNameEn"));
+		describeVodDomainBpsDataResponse.setIspNameEn(_ctx.stringValue("DescribeVodDomainBpsDataResponse.IspNameEn"));
+		describeVodDomainBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeVodDomainBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Value"));
-			dataModule.setDomesticValue(context.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticValue"));
-			dataModule.setOverseasValue(context.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasValue"));
-			dataModule.setHttpsValue(context.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsValue"));
-			dataModule.setHttpsDomesticValue(context.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsDomesticValue"));
-			dataModule.setHttpsOverseasValue(context.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsOverseasValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Value"));
+			dataModule.setDomesticValue(_ctx.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticValue"));
+			dataModule.setOverseasValue(_ctx.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasValue"));
+			dataModule.setHttpsValue(_ctx.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsValue"));
+			dataModule.setHttpsDomesticValue(_ctx.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsDomesticValue"));
+			dataModule.setHttpsOverseasValue(_ctx.stringValue("DescribeVodDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsOverseasValue"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetMediaAuditResultDetailResponseUnmarshaller {
 
-	public static GetMediaAuditResultDetailResponse unmarshall(GetMediaAuditResultDetailResponse getMediaAuditResultDetailResponse, UnmarshallerContext context) {
+	public static GetMediaAuditResultDetailResponse unmarshall(GetMediaAuditResultDetailResponse getMediaAuditResultDetailResponse, UnmarshallerContext _ctx) {
 		
-		getMediaAuditResultDetailResponse.setRequestId(context.stringValue("GetMediaAuditResultDetailResponse.RequestId"));
+		getMediaAuditResultDetailResponse.setRequestId(_ctx.stringValue("GetMediaAuditResultDetailResponse.RequestId"));
 
 		MediaAuditResultDetail mediaAuditResultDetail = new MediaAuditResultDetail();
-		mediaAuditResultDetail.setTotal(context.integerValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.Total"));
+		mediaAuditResultDetail.setTotal(_ctx.integerValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.Total"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
-		for (int i = 0; i < context.lengthValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setPornLabel(context.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].PornLabel"));
-			listItem.setPornScore(context.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].PornScore"));
-			listItem.setTerrorismLabel(context.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].TerrorismLabel"));
-			listItem.setTerrorismScore(context.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].TerrorismScore"));
-			listItem.setTimestamp(context.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Timestamp"));
-			listItem.setUrl(context.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Url"));
+			listItem.setPornLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].PornLabel"));
+			listItem.setPornScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].PornScore"));
+			listItem.setTerrorismLabel(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].TerrorismLabel"));
+			listItem.setTerrorismScore(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].TerrorismScore"));
+			listItem.setTimestamp(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Timestamp"));
+			listItem.setUrl(_ctx.stringValue("GetMediaAuditResultDetailResponse.MediaAuditResultDetail.List["+ i +"].Url"));
 
 			list.add(listItem);
 		}

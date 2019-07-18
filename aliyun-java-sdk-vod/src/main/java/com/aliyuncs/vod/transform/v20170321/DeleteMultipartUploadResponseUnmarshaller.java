@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMultipartUploadResponseUnmarshaller {
 
-	public static DeleteMultipartUploadResponse unmarshall(DeleteMultipartUploadResponse deleteMultipartUploadResponse, UnmarshallerContext context) {
+	public static DeleteMultipartUploadResponse unmarshall(DeleteMultipartUploadResponse deleteMultipartUploadResponse, UnmarshallerContext _ctx) {
 		
-		deleteMultipartUploadResponse.setRequestId(context.stringValue("DeleteMultipartUploadResponse.RequestId"));
+		deleteMultipartUploadResponse.setRequestId(_ctx.stringValue("DeleteMultipartUploadResponse.RequestId"));
 	 
 	 	return deleteMultipartUploadResponse;
 	}

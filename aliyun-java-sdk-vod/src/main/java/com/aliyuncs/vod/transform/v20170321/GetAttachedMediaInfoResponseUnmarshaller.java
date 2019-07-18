@@ -25,42 +25,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAttachedMediaInfoResponseUnmarshaller {
 
-	public static GetAttachedMediaInfoResponse unmarshall(GetAttachedMediaInfoResponse getAttachedMediaInfoResponse, UnmarshallerContext context) {
+	public static GetAttachedMediaInfoResponse unmarshall(GetAttachedMediaInfoResponse getAttachedMediaInfoResponse, UnmarshallerContext _ctx) {
 		
-		getAttachedMediaInfoResponse.setRequestId(context.stringValue("GetAttachedMediaInfoResponse.RequestId"));
+		getAttachedMediaInfoResponse.setRequestId(_ctx.stringValue("GetAttachedMediaInfoResponse.RequestId"));
 
 		List<String> nonExistMediaIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetAttachedMediaInfoResponse.NonExistMediaIds.Length"); i++) {
-			nonExistMediaIds.add(context.stringValue("GetAttachedMediaInfoResponse.NonExistMediaIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetAttachedMediaInfoResponse.NonExistMediaIds.Length"); i++) {
+			nonExistMediaIds.add(_ctx.stringValue("GetAttachedMediaInfoResponse.NonExistMediaIds["+ i +"]"));
 		}
 		getAttachedMediaInfoResponse.setNonExistMediaIds(nonExistMediaIds);
 
 		List<AttachedMedia> attachedMediaList = new ArrayList<AttachedMedia>();
-		for (int i = 0; i < context.lengthValue("GetAttachedMediaInfoResponse.AttachedMediaList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetAttachedMediaInfoResponse.AttachedMediaList.Length"); i++) {
 			AttachedMedia attachedMedia = new AttachedMedia();
-			attachedMedia.setMediaId(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].MediaId"));
-			attachedMedia.setTitle(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Title"));
-			attachedMedia.setType(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Type"));
-			attachedMedia.setTags(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Tags"));
-			attachedMedia.setURL(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].URL"));
-			attachedMedia.setDescription(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Description"));
-			attachedMedia.setFileSize(context.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].FileSize"));
-			attachedMedia.setStorageLocation(context.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].StorageLocation"));
-			attachedMedia.setCreationTime(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].CreationTime"));
-			attachedMedia.setModificationTime(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].ModificationTime"));
-			attachedMedia.setAppId(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].AppId"));
-			attachedMedia.setStatus(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Status"));
-			attachedMedia.setOnlineStatus(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].OnlineStatus"));
-			attachedMedia.setIcon(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Icon"));
-			attachedMedia.setRegionId(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].RegionId"));
+			attachedMedia.setMediaId(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].MediaId"));
+			attachedMedia.setTitle(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Title"));
+			attachedMedia.setType(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Type"));
+			attachedMedia.setTags(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Tags"));
+			attachedMedia.setURL(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].URL"));
+			attachedMedia.setDescription(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Description"));
+			attachedMedia.setFileSize(_ctx.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].FileSize"));
+			attachedMedia.setStorageLocation(_ctx.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].StorageLocation"));
+			attachedMedia.setCreationTime(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].CreationTime"));
+			attachedMedia.setModificationTime(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].ModificationTime"));
+			attachedMedia.setAppId(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].AppId"));
+			attachedMedia.setStatus(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Status"));
+			attachedMedia.setOnlineStatus(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].OnlineStatus"));
+			attachedMedia.setIcon(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Icon"));
+			attachedMedia.setRegionId(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].RegionId"));
 
 			List<Category> categories = new ArrayList<Category>();
-			for (int j = 0; j < context.lengthValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories.Length"); j++) {
 				Category category = new Category();
-				category.setCateId(context.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories["+ j +"].CateId"));
-				category.setCateName(context.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories["+ j +"].CateName"));
-				category.setLevel(context.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories["+ j +"].Level"));
-				category.setParentId(context.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories["+ j +"].ParentId"));
+				category.setCateId(_ctx.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories["+ j +"].CateId"));
+				category.setCateName(_ctx.stringValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories["+ j +"].CateName"));
+				category.setLevel(_ctx.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories["+ j +"].Level"));
+				category.setParentId(_ctx.longValue("GetAttachedMediaInfoResponse.AttachedMediaList["+ i +"].Categories["+ j +"].ParentId"));
 
 				categories.add(category);
 			}

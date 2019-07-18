@@ -28,30 +28,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetMediaDNAResultResponseUnmarshaller {
 
-	public static GetMediaDNAResultResponse unmarshall(GetMediaDNAResultResponse getMediaDNAResultResponse, UnmarshallerContext context) {
+	public static GetMediaDNAResultResponse unmarshall(GetMediaDNAResultResponse getMediaDNAResultResponse, UnmarshallerContext _ctx) {
 		
-		getMediaDNAResultResponse.setRequestId(context.stringValue("GetMediaDNAResultResponse.RequestId"));
+		getMediaDNAResultResponse.setRequestId(_ctx.stringValue("GetMediaDNAResultResponse.RequestId"));
 
 		DNAResult dNAResult = new DNAResult();
 
 		List<VideoDNAItem> videoDNA = new ArrayList<VideoDNAItem>();
-		for (int i = 0; i < context.lengthValue("GetMediaDNAResultResponse.DNAResult.VideoDNA.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetMediaDNAResultResponse.DNAResult.VideoDNA.Length"); i++) {
 			VideoDNAItem videoDNAItem = new VideoDNAItem();
-			videoDNAItem.setPrimaryKey(context.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].PrimaryKey"));
-			videoDNAItem.setSimilarity(context.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Similarity"));
+			videoDNAItem.setPrimaryKey(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].PrimaryKey"));
+			videoDNAItem.setSimilarity(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Similarity"));
 
 			List<DetailItem> detail = new ArrayList<DetailItem>();
-			for (int j = 0; j < context.lengthValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail.Length"); j++) {
 				DetailItem detailItem = new DetailItem();
 
 				Input input = new Input();
-				input.setStart(context.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Start"));
-				input.setDuration(context.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Duration"));
+				input.setStart(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Start"));
+				input.setDuration(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Duration"));
 				detailItem.setInput(input);
 
 				Duplication duplication = new Duplication();
-				duplication.setStart(context.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Start"));
-				duplication.setDuration(context.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Duration"));
+				duplication.setStart(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Start"));
+				duplication.setDuration(_ctx.stringValue("GetMediaDNAResultResponse.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Duration"));
 				detailItem.setDuplication(duplication);
 
 				detail.add(detailItem);

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateVodDomainResponseUnmarshaller {
 
-	public static UpdateVodDomainResponse unmarshall(UpdateVodDomainResponse updateVodDomainResponse, UnmarshallerContext context) {
+	public static UpdateVodDomainResponse unmarshall(UpdateVodDomainResponse updateVodDomainResponse, UnmarshallerContext _ctx) {
 		
-		updateVodDomainResponse.setRequestId(context.stringValue("UpdateVodDomainResponse.RequestId"));
+		updateVodDomainResponse.setRequestId(_ctx.stringValue("UpdateVodDomainResponse.RequestId"));
 	 
 	 	return updateVodDomainResponse;
 	}

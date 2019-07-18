@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVodDomainConfigsResponseUnmarshaller {
 
-	public static DescribeVodDomainConfigsResponse unmarshall(DescribeVodDomainConfigsResponse describeVodDomainConfigsResponse, UnmarshallerContext context) {
+	public static DescribeVodDomainConfigsResponse unmarshall(DescribeVodDomainConfigsResponse describeVodDomainConfigsResponse, UnmarshallerContext _ctx) {
 		
-		describeVodDomainConfigsResponse.setRequestId(context.stringValue("DescribeVodDomainConfigsResponse.RequestId"));
+		describeVodDomainConfigsResponse.setRequestId(_ctx.stringValue("DescribeVodDomainConfigsResponse.RequestId"));
 
 		List<DomainConfig> domainConfigs = new ArrayList<DomainConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeVodDomainConfigsResponse.DomainConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVodDomainConfigsResponse.DomainConfigs.Length"); i++) {
 			DomainConfig domainConfig = new DomainConfig();
-			domainConfig.setFunctionName(context.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].FunctionName"));
-			domainConfig.setConfigId(context.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].ConfigId"));
-			domainConfig.setStatus(context.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].Status"));
+			domainConfig.setFunctionName(_ctx.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].FunctionName"));
+			domainConfig.setConfigId(_ctx.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].ConfigId"));
+			domainConfig.setStatus(_ctx.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].Status"));
 
 			List<FunctionArg> functionArgs = new ArrayList<FunctionArg>();
-			for (int j = 0; j < context.lengthValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {
 				FunctionArg functionArg = new FunctionArg();
-				functionArg.setArgName(context.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgName"));
-				functionArg.setArgValue(context.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue"));
+				functionArg.setArgName(_ctx.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgName"));
+				functionArg.setArgValue(_ctx.stringValue("DescribeVodDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue"));
 
 				functionArgs.add(functionArg);
 			}

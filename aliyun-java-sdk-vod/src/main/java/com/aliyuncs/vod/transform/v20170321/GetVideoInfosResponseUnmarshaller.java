@@ -25,49 +25,49 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetVideoInfosResponseUnmarshaller {
 
-	public static GetVideoInfosResponse unmarshall(GetVideoInfosResponse getVideoInfosResponse, UnmarshallerContext context) {
+	public static GetVideoInfosResponse unmarshall(GetVideoInfosResponse getVideoInfosResponse, UnmarshallerContext _ctx) {
 		
-		getVideoInfosResponse.setRequestId(context.stringValue("GetVideoInfosResponse.RequestId"));
+		getVideoInfosResponse.setRequestId(_ctx.stringValue("GetVideoInfosResponse.RequestId"));
 
 		List<String> nonExistVideoIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetVideoInfosResponse.NonExistVideoIds.Length"); i++) {
-			nonExistVideoIds.add(context.stringValue("GetVideoInfosResponse.NonExistVideoIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetVideoInfosResponse.NonExistVideoIds.Length"); i++) {
+			nonExistVideoIds.add(_ctx.stringValue("GetVideoInfosResponse.NonExistVideoIds["+ i +"]"));
 		}
 		getVideoInfosResponse.setNonExistVideoIds(nonExistVideoIds);
 
 		List<Video> videoList = new ArrayList<Video>();
-		for (int i = 0; i < context.lengthValue("GetVideoInfosResponse.VideoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetVideoInfosResponse.VideoList.Length"); i++) {
 			Video video = new Video();
-			video.setVideoId(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].VideoId"));
-			video.setTitle(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Title"));
-			video.setTags(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Tags"));
-			video.setStatus(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Status"));
-			video.setSize(context.longValue("GetVideoInfosResponse.VideoList["+ i +"].Size"));
-			video.setDuration(context.floatValue("GetVideoInfosResponse.VideoList["+ i +"].Duration"));
-			video.setDescription(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Description"));
-			video.setModificationTime(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].ModificationTime"));
-			video.setCreationTime(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CreationTime"));
-			video.setCoverURL(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CoverURL"));
-			video.setCateId(context.longValue("GetVideoInfosResponse.VideoList["+ i +"].CateId"));
-			video.setCateName(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CateName"));
-			video.setDownloadSwitch(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].DownloadSwitch"));
-			video.setTemplateGroupId(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].TemplateGroupId"));
-			video.setPreprocessStatus(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].PreprocessStatus"));
-			video.setStorageLocation(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].StorageLocation"));
-			video.setRegionId(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].RegionId"));
-			video.setCustomMediaInfo(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CustomMediaInfo"));
-			video.setAppId(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].AppId"));
+			video.setVideoId(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].VideoId"));
+			video.setTitle(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Title"));
+			video.setTags(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Tags"));
+			video.setStatus(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Status"));
+			video.setSize(_ctx.longValue("GetVideoInfosResponse.VideoList["+ i +"].Size"));
+			video.setDuration(_ctx.floatValue("GetVideoInfosResponse.VideoList["+ i +"].Duration"));
+			video.setDescription(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Description"));
+			video.setModificationTime(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].ModificationTime"));
+			video.setCreationTime(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CreationTime"));
+			video.setCoverURL(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CoverURL"));
+			video.setCateId(_ctx.longValue("GetVideoInfosResponse.VideoList["+ i +"].CateId"));
+			video.setCateName(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CateName"));
+			video.setDownloadSwitch(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].DownloadSwitch"));
+			video.setTemplateGroupId(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].TemplateGroupId"));
+			video.setPreprocessStatus(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].PreprocessStatus"));
+			video.setStorageLocation(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].StorageLocation"));
+			video.setRegionId(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].RegionId"));
+			video.setCustomMediaInfo(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].CustomMediaInfo"));
+			video.setAppId(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].AppId"));
 
 			List<String> snapshots = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("GetVideoInfosResponse.VideoList["+ i +"].Snapshots.Length"); j++) {
-				snapshots.add(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Snapshots["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("GetVideoInfosResponse.VideoList["+ i +"].Snapshots.Length"); j++) {
+				snapshots.add(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].Snapshots["+ j +"]"));
 			}
 			video.setSnapshots(snapshots);
 
 			List<Thumbnail> thumbnailList = new ArrayList<Thumbnail>();
-			for (int j = 0; j < context.lengthValue("GetVideoInfosResponse.VideoList["+ i +"].ThumbnailList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetVideoInfosResponse.VideoList["+ i +"].ThumbnailList.Length"); j++) {
 				Thumbnail thumbnail = new Thumbnail();
-				thumbnail.setURL(context.stringValue("GetVideoInfosResponse.VideoList["+ i +"].ThumbnailList["+ j +"].URL"));
+				thumbnail.setURL(_ctx.stringValue("GetVideoInfosResponse.VideoList["+ i +"].ThumbnailList["+ j +"].URL"));
 
 				thumbnailList.add(thumbnail);
 			}

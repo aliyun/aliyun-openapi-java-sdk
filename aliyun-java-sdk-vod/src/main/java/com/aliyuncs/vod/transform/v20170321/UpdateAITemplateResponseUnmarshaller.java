@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateAITemplateResponseUnmarshaller {
 
-	public static UpdateAITemplateResponse unmarshall(UpdateAITemplateResponse updateAITemplateResponse, UnmarshallerContext context) {
+	public static UpdateAITemplateResponse unmarshall(UpdateAITemplateResponse updateAITemplateResponse, UnmarshallerContext _ctx) {
 		
-		updateAITemplateResponse.setRequestId(context.stringValue("UpdateAITemplateResponse.RequestId"));
-		updateAITemplateResponse.setTemplateId(context.stringValue("UpdateAITemplateResponse.TemplateId"));
+		updateAITemplateResponse.setRequestId(_ctx.stringValue("UpdateAITemplateResponse.RequestId"));
+		updateAITemplateResponse.setTemplateId(_ctx.stringValue("UpdateAITemplateResponse.TemplateId"));
 	 
 	 	return updateAITemplateResponse;
 	}

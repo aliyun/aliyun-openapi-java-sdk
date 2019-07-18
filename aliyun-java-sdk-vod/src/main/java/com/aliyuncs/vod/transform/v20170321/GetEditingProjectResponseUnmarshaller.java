@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetEditingProjectResponseUnmarshaller {
 
-	public static GetEditingProjectResponse unmarshall(GetEditingProjectResponse getEditingProjectResponse, UnmarshallerContext context) {
+	public static GetEditingProjectResponse unmarshall(GetEditingProjectResponse getEditingProjectResponse, UnmarshallerContext _ctx) {
 		
-		getEditingProjectResponse.setRequestId(context.stringValue("GetEditingProjectResponse.RequestId"));
+		getEditingProjectResponse.setRequestId(_ctx.stringValue("GetEditingProjectResponse.RequestId"));
 
 		Project project = new Project();
-		project.setProjectId(context.stringValue("GetEditingProjectResponse.Project.ProjectId"));
-		project.setCreationTime(context.stringValue("GetEditingProjectResponse.Project.CreationTime"));
-		project.setModifiedTime(context.stringValue("GetEditingProjectResponse.Project.ModifiedTime"));
-		project.setStatus(context.stringValue("GetEditingProjectResponse.Project.Status"));
-		project.setDescription(context.stringValue("GetEditingProjectResponse.Project.Description"));
-		project.setTitle(context.stringValue("GetEditingProjectResponse.Project.Title"));
-		project.setTimeline(context.stringValue("GetEditingProjectResponse.Project.Timeline"));
-		project.setCoverURL(context.stringValue("GetEditingProjectResponse.Project.CoverURL"));
-		project.setStorageLocation(context.stringValue("GetEditingProjectResponse.Project.StorageLocation"));
-		project.setRegionId(context.stringValue("GetEditingProjectResponse.Project.RegionId"));
+		project.setProjectId(_ctx.stringValue("GetEditingProjectResponse.Project.ProjectId"));
+		project.setCreationTime(_ctx.stringValue("GetEditingProjectResponse.Project.CreationTime"));
+		project.setModifiedTime(_ctx.stringValue("GetEditingProjectResponse.Project.ModifiedTime"));
+		project.setStatus(_ctx.stringValue("GetEditingProjectResponse.Project.Status"));
+		project.setDescription(_ctx.stringValue("GetEditingProjectResponse.Project.Description"));
+		project.setTitle(_ctx.stringValue("GetEditingProjectResponse.Project.Title"));
+		project.setTimeline(_ctx.stringValue("GetEditingProjectResponse.Project.Timeline"));
+		project.setCoverURL(_ctx.stringValue("GetEditingProjectResponse.Project.CoverURL"));
+		project.setStorageLocation(_ctx.stringValue("GetEditingProjectResponse.Project.StorageLocation"));
+		project.setRegionId(_ctx.stringValue("GetEditingProjectResponse.Project.RegionId"));
 		getEditingProjectResponse.setProject(project);
 	 
 	 	return getEditingProjectResponse;

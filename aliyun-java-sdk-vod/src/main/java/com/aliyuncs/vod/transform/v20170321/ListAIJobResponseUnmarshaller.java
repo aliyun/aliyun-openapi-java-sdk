@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAIJobResponseUnmarshaller {
 
-	public static ListAIJobResponse unmarshall(ListAIJobResponse listAIJobResponse, UnmarshallerContext context) {
+	public static ListAIJobResponse unmarshall(ListAIJobResponse listAIJobResponse, UnmarshallerContext _ctx) {
 		
-		listAIJobResponse.setRequestId(context.stringValue("ListAIJobResponse.RequestId"));
+		listAIJobResponse.setRequestId(_ctx.stringValue("ListAIJobResponse.RequestId"));
 
 		List<String> nonExistAIJobIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ListAIJobResponse.NonExistAIJobIds.Length"); i++) {
-			nonExistAIJobIds.add(context.stringValue("ListAIJobResponse.NonExistAIJobIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ListAIJobResponse.NonExistAIJobIds.Length"); i++) {
+			nonExistAIJobIds.add(_ctx.stringValue("ListAIJobResponse.NonExistAIJobIds["+ i +"]"));
 		}
 		listAIJobResponse.setNonExistAIJobIds(nonExistAIJobIds);
 
 		List<AIJob> aIJobList = new ArrayList<AIJob>();
-		for (int i = 0; i < context.lengthValue("ListAIJobResponse.AIJobList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAIJobResponse.AIJobList.Length"); i++) {
 			AIJob aIJob = new AIJob();
-			aIJob.setJobId(context.stringValue("ListAIJobResponse.AIJobList["+ i +"].JobId"));
-			aIJob.setMediaId(context.stringValue("ListAIJobResponse.AIJobList["+ i +"].MediaId"));
-			aIJob.setType(context.stringValue("ListAIJobResponse.AIJobList["+ i +"].Type"));
-			aIJob.setStatus(context.stringValue("ListAIJobResponse.AIJobList["+ i +"].Status"));
-			aIJob.setCode(context.stringValue("ListAIJobResponse.AIJobList["+ i +"].Code"));
-			aIJob.setMessage(context.stringValue("ListAIJobResponse.AIJobList["+ i +"].Message"));
-			aIJob.setCreationTime(context.stringValue("ListAIJobResponse.AIJobList["+ i +"].CreationTime"));
-			aIJob.setCompleteTime(context.stringValue("ListAIJobResponse.AIJobList["+ i +"].CompleteTime"));
-			aIJob.setData(context.stringValue("ListAIJobResponse.AIJobList["+ i +"].Data"));
+			aIJob.setJobId(_ctx.stringValue("ListAIJobResponse.AIJobList["+ i +"].JobId"));
+			aIJob.setMediaId(_ctx.stringValue("ListAIJobResponse.AIJobList["+ i +"].MediaId"));
+			aIJob.setType(_ctx.stringValue("ListAIJobResponse.AIJobList["+ i +"].Type"));
+			aIJob.setStatus(_ctx.stringValue("ListAIJobResponse.AIJobList["+ i +"].Status"));
+			aIJob.setCode(_ctx.stringValue("ListAIJobResponse.AIJobList["+ i +"].Code"));
+			aIJob.setMessage(_ctx.stringValue("ListAIJobResponse.AIJobList["+ i +"].Message"));
+			aIJob.setCreationTime(_ctx.stringValue("ListAIJobResponse.AIJobList["+ i +"].CreationTime"));
+			aIJob.setCompleteTime(_ctx.stringValue("ListAIJobResponse.AIJobList["+ i +"].CompleteTime"));
+			aIJob.setData(_ctx.stringValue("ListAIJobResponse.AIJobList["+ i +"].Data"));
 
 			aIJobList.add(aIJob);
 		}

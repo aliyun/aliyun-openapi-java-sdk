@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAuditHistoryResponseUnmarshaller {
 
-	public static GetAuditHistoryResponse unmarshall(GetAuditHistoryResponse getAuditHistoryResponse, UnmarshallerContext context) {
+	public static GetAuditHistoryResponse unmarshall(GetAuditHistoryResponse getAuditHistoryResponse, UnmarshallerContext _ctx) {
 		
-		getAuditHistoryResponse.setRequestId(context.stringValue("GetAuditHistoryResponse.RequestId"));
-		getAuditHistoryResponse.setStatus(context.stringValue("GetAuditHistoryResponse.Status"));
-		getAuditHistoryResponse.setTotal(context.longValue("GetAuditHistoryResponse.Total"));
+		getAuditHistoryResponse.setRequestId(_ctx.stringValue("GetAuditHistoryResponse.RequestId"));
+		getAuditHistoryResponse.setStatus(_ctx.stringValue("GetAuditHistoryResponse.Status"));
+		getAuditHistoryResponse.setTotal(_ctx.longValue("GetAuditHistoryResponse.Total"));
 
 		List<History> histories = new ArrayList<History>();
-		for (int i = 0; i < context.lengthValue("GetAuditHistoryResponse.Histories.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetAuditHistoryResponse.Histories.Length"); i++) {
 			History history = new History();
-			history.setCreationTime(context.stringValue("GetAuditHistoryResponse.Histories["+ i +"].CreationTime"));
-			history.setStatus(context.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Status"));
-			history.setReason(context.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Reason"));
-			history.setComment(context.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Comment"));
-			history.setAuditor(context.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Auditor"));
+			history.setCreationTime(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].CreationTime"));
+			history.setStatus(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Status"));
+			history.setReason(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Reason"));
+			history.setComment(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Comment"));
+			history.setAuditor(_ctx.stringValue("GetAuditHistoryResponse.Histories["+ i +"].Auditor"));
 
 			histories.add(history);
 		}

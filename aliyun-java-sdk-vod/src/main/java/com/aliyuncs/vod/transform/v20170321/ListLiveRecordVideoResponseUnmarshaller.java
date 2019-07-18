@@ -26,65 +26,65 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListLiveRecordVideoResponseUnmarshaller {
 
-	public static ListLiveRecordVideoResponse unmarshall(ListLiveRecordVideoResponse listLiveRecordVideoResponse, UnmarshallerContext context) {
+	public static ListLiveRecordVideoResponse unmarshall(ListLiveRecordVideoResponse listLiveRecordVideoResponse, UnmarshallerContext _ctx) {
 		
-		listLiveRecordVideoResponse.setRequestId(context.stringValue("ListLiveRecordVideoResponse.RequestId"));
-		listLiveRecordVideoResponse.setTotal(context.integerValue("ListLiveRecordVideoResponse.Total"));
+		listLiveRecordVideoResponse.setRequestId(_ctx.stringValue("ListLiveRecordVideoResponse.RequestId"));
+		listLiveRecordVideoResponse.setTotal(_ctx.integerValue("ListLiveRecordVideoResponse.Total"));
 
 		List<LiveRecordVideo> liveRecordVideoList = new ArrayList<LiveRecordVideo>();
-		for (int i = 0; i < context.lengthValue("ListLiveRecordVideoResponse.LiveRecordVideoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListLiveRecordVideoResponse.LiveRecordVideoList.Length"); i++) {
 			LiveRecordVideo liveRecordVideo = new LiveRecordVideo();
-			liveRecordVideo.setStreamName(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].StreamName"));
-			liveRecordVideo.setDomainName(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].DomainName"));
-			liveRecordVideo.setAppName(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].AppName"));
-			liveRecordVideo.setPlaylistId(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlaylistId"));
-			liveRecordVideo.setRecordStartTime(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].RecordStartTime"));
-			liveRecordVideo.setRecordEndTime(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].RecordEndTime"));
+			liveRecordVideo.setStreamName(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].StreamName"));
+			liveRecordVideo.setDomainName(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].DomainName"));
+			liveRecordVideo.setAppName(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].AppName"));
+			liveRecordVideo.setPlaylistId(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlaylistId"));
+			liveRecordVideo.setRecordStartTime(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].RecordStartTime"));
+			liveRecordVideo.setRecordEndTime(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].RecordEndTime"));
 
 			Video video = new Video();
-			video.setVideoId(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.VideoId"));
-			video.setTitle(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Title"));
-			video.setTags(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Tags"));
-			video.setStatus(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Status"));
-			video.setSize(context.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Size"));
-			video.setPrivilege(context.integerValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Privilege"));
-			video.setDuration(context.floatValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Duration"));
-			video.setDescription(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Description"));
-			video.setCustomerId(context.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CustomerId"));
-			video.setCreateTime(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CreateTime"));
-			video.setCreationTime(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CreationTime"));
-			video.setModifyTime(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.ModifyTime"));
-			video.setCoverURL(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CoverURL"));
-			video.setCateId(context.integerValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CateId"));
-			video.setCateName(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CateName"));
-			video.setDownloadSwitch(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.DownloadSwitch"));
-			video.setTemplateGroupId(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.TemplateGroupId"));
+			video.setVideoId(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.VideoId"));
+			video.setTitle(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Title"));
+			video.setTags(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Tags"));
+			video.setStatus(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Status"));
+			video.setSize(_ctx.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Size"));
+			video.setPrivilege(_ctx.integerValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Privilege"));
+			video.setDuration(_ctx.floatValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Duration"));
+			video.setDescription(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Description"));
+			video.setCustomerId(_ctx.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CustomerId"));
+			video.setCreateTime(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CreateTime"));
+			video.setCreationTime(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CreationTime"));
+			video.setModifyTime(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.ModifyTime"));
+			video.setCoverURL(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CoverURL"));
+			video.setCateId(_ctx.integerValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CateId"));
+			video.setCateName(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.CateName"));
+			video.setDownloadSwitch(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.DownloadSwitch"));
+			video.setTemplateGroupId(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.TemplateGroupId"));
 
 			List<String> snapshots = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Snapshots.Length"); j++) {
-				snapshots.add(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Snapshots["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Snapshots.Length"); j++) {
+				snapshots.add(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].Video.Snapshots["+ j +"]"));
 			}
 			video.setSnapshots(snapshots);
 			liveRecordVideo.setVideo(video);
 
 			List<PlayInfo> playInfoList = new ArrayList<PlayInfo>();
-			for (int j = 0; j < context.lengthValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList.Length"); j++) {
 				PlayInfo playInfo = new PlayInfo();
-				playInfo.setWidth(context.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Width"));
-				playInfo.setHeight(context.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Height"));
-				playInfo.setSize(context.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Size"));
-				playInfo.setPlayURL(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].PlayURL"));
-				playInfo.setBitrate(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Bitrate"));
-				playInfo.setDefinition(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Definition"));
-				playInfo.setDuration(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Duration"));
-				playInfo.setFormat(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Format"));
-				playInfo.setFps(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Fps"));
-				playInfo.setEncrypt(context.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Encrypt"));
-				playInfo.setPlaintext(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Plaintext"));
-				playInfo.setComplexity(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Complexity"));
-				playInfo.setStreamType(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].StreamType"));
-				playInfo.setRand(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Rand"));
-				playInfo.setJobId(context.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].JobId"));
+				playInfo.setWidth(_ctx.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Width"));
+				playInfo.setHeight(_ctx.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Height"));
+				playInfo.setSize(_ctx.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Size"));
+				playInfo.setPlayURL(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].PlayURL"));
+				playInfo.setBitrate(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Bitrate"));
+				playInfo.setDefinition(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Definition"));
+				playInfo.setDuration(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Duration"));
+				playInfo.setFormat(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Format"));
+				playInfo.setFps(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Fps"));
+				playInfo.setEncrypt(_ctx.longValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Encrypt"));
+				playInfo.setPlaintext(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Plaintext"));
+				playInfo.setComplexity(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Complexity"));
+				playInfo.setStreamType(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].StreamType"));
+				playInfo.setRand(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Rand"));
+				playInfo.setJobId(_ctx.stringValue("ListLiveRecordVideoResponse.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].JobId"));
 
 				playInfoList.add(playInfo);
 			}

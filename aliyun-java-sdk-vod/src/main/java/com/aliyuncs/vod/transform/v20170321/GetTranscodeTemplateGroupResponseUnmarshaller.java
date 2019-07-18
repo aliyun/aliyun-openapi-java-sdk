@@ -25,43 +25,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTranscodeTemplateGroupResponseUnmarshaller {
 
-	public static GetTranscodeTemplateGroupResponse unmarshall(GetTranscodeTemplateGroupResponse getTranscodeTemplateGroupResponse, UnmarshallerContext context) {
+	public static GetTranscodeTemplateGroupResponse unmarshall(GetTranscodeTemplateGroupResponse getTranscodeTemplateGroupResponse, UnmarshallerContext _ctx) {
 		
-		getTranscodeTemplateGroupResponse.setRequestId(context.stringValue("GetTranscodeTemplateGroupResponse.RequestId"));
+		getTranscodeTemplateGroupResponse.setRequestId(_ctx.stringValue("GetTranscodeTemplateGroupResponse.RequestId"));
 
 		TranscodeTemplateGroup transcodeTemplateGroup = new TranscodeTemplateGroup();
-		transcodeTemplateGroup.setCreationTime(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.CreationTime"));
-		transcodeTemplateGroup.setModifyTime(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.ModifyTime"));
-		transcodeTemplateGroup.setName(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.Name"));
-		transcodeTemplateGroup.setIsDefault(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.IsDefault"));
-		transcodeTemplateGroup.setLocked(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.Locked"));
-		transcodeTemplateGroup.setTranscodeMode(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeMode"));
-		transcodeTemplateGroup.setAppId(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.AppId"));
-		transcodeTemplateGroup.setTranscodeTemplateGroupId(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateGroupId"));
+		transcodeTemplateGroup.setCreationTime(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.CreationTime"));
+		transcodeTemplateGroup.setModifyTime(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.ModifyTime"));
+		transcodeTemplateGroup.setName(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.Name"));
+		transcodeTemplateGroup.setIsDefault(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.IsDefault"));
+		transcodeTemplateGroup.setLocked(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.Locked"));
+		transcodeTemplateGroup.setTranscodeMode(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeMode"));
+		transcodeTemplateGroup.setAppId(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.AppId"));
+		transcodeTemplateGroup.setTranscodeTemplateGroupId(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateGroupId"));
 
 		List<TranscodeTemplate> transcodeTemplateList = new ArrayList<TranscodeTemplate>();
-		for (int i = 0; i < context.lengthValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList.Length"); i++) {
 			TranscodeTemplate transcodeTemplate = new TranscodeTemplate();
-			transcodeTemplate.setTranscodeTemplateId(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TranscodeTemplateId"));
-			transcodeTemplate.setVideo(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Video"));
-			transcodeTemplate.setAudio(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Audio"));
-			transcodeTemplate.setContainer(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Container"));
-			transcodeTemplate.setMuxConfig(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].MuxConfig"));
-			transcodeTemplate.setTransConfig(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TransConfig"));
-			transcodeTemplate.setDefinition(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Definition"));
-			transcodeTemplate.setEncryptSetting(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].EncryptSetting"));
-			transcodeTemplate.setPackageSetting(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].PackageSetting"));
-			transcodeTemplate.setSubtitleList(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].SubtitleList"));
-			transcodeTemplate.setOpeningList(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].OpeningList"));
-			transcodeTemplate.setTailSlateList(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TailSlateList"));
-			transcodeTemplate.setTemplateName(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TemplateName"));
-			transcodeTemplate.setTranscodeFileRegular(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TranscodeFileRegular"));
-			transcodeTemplate.setClip(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Clip"));
-			transcodeTemplate.setRotate(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Rotate"));
+			transcodeTemplate.setTranscodeTemplateId(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TranscodeTemplateId"));
+			transcodeTemplate.setVideo(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Video"));
+			transcodeTemplate.setAudio(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Audio"));
+			transcodeTemplate.setContainer(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Container"));
+			transcodeTemplate.setMuxConfig(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].MuxConfig"));
+			transcodeTemplate.setTransConfig(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TransConfig"));
+			transcodeTemplate.setDefinition(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Definition"));
+			transcodeTemplate.setEncryptSetting(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].EncryptSetting"));
+			transcodeTemplate.setPackageSetting(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].PackageSetting"));
+			transcodeTemplate.setSubtitleList(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].SubtitleList"));
+			transcodeTemplate.setOpeningList(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].OpeningList"));
+			transcodeTemplate.setTailSlateList(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TailSlateList"));
+			transcodeTemplate.setTemplateName(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TemplateName"));
+			transcodeTemplate.setTranscodeFileRegular(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TranscodeFileRegular"));
+			transcodeTemplate.setClip(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Clip"));
+			transcodeTemplate.setRotate(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Rotate"));
 
 			List<String> watermarkIds = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds.Length"); j++) {
-				watermarkIds.add(context.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds.Length"); j++) {
+				watermarkIds.add(_ctx.stringValue("GetTranscodeTemplateGroupResponse.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds["+ j +"]"));
 			}
 			transcodeTemplate.setWatermarkIds(watermarkIds);
 

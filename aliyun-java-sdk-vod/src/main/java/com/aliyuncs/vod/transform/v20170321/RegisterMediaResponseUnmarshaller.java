@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RegisterMediaResponseUnmarshaller {
 
-	public static RegisterMediaResponse unmarshall(RegisterMediaResponse registerMediaResponse, UnmarshallerContext context) {
+	public static RegisterMediaResponse unmarshall(RegisterMediaResponse registerMediaResponse, UnmarshallerContext _ctx) {
 		
-		registerMediaResponse.setRequestId(context.stringValue("RegisterMediaResponse.RequestId"));
+		registerMediaResponse.setRequestId(_ctx.stringValue("RegisterMediaResponse.RequestId"));
 
 		List<String> failedFileURLs = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("RegisterMediaResponse.FailedFileURLs.Length"); i++) {
-			failedFileURLs.add(context.stringValue("RegisterMediaResponse.FailedFileURLs["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("RegisterMediaResponse.FailedFileURLs.Length"); i++) {
+			failedFileURLs.add(_ctx.stringValue("RegisterMediaResponse.FailedFileURLs["+ i +"]"));
 		}
 		registerMediaResponse.setFailedFileURLs(failedFileURLs);
 
 		List<RegisteredMedia> registeredMediaList = new ArrayList<RegisteredMedia>();
-		for (int i = 0; i < context.lengthValue("RegisterMediaResponse.RegisteredMediaList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("RegisterMediaResponse.RegisteredMediaList.Length"); i++) {
 			RegisteredMedia registeredMedia = new RegisteredMedia();
-			registeredMedia.setMediaId(context.stringValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].MediaId"));
-			registeredMedia.setFileURL(context.stringValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].FileURL"));
-			registeredMedia.setNewRegister(context.booleanValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].NewRegister"));
+			registeredMedia.setMediaId(_ctx.stringValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].MediaId"));
+			registeredMedia.setFileURL(_ctx.stringValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].FileURL"));
+			registeredMedia.setNewRegister(_ctx.booleanValue("RegisterMediaResponse.RegisteredMediaList["+ i +"].NewRegister"));
 
 			registeredMediaList.add(registeredMedia);
 		}

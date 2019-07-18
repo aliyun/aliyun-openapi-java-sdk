@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteAttachedMediaResponseUnmarshaller {
 
-	public static DeleteAttachedMediaResponse unmarshall(DeleteAttachedMediaResponse deleteAttachedMediaResponse, UnmarshallerContext context) {
+	public static DeleteAttachedMediaResponse unmarshall(DeleteAttachedMediaResponse deleteAttachedMediaResponse, UnmarshallerContext _ctx) {
 		
-		deleteAttachedMediaResponse.setRequestId(context.stringValue("DeleteAttachedMediaResponse.RequestId"));
+		deleteAttachedMediaResponse.setRequestId(_ctx.stringValue("DeleteAttachedMediaResponse.RequestId"));
 
 		List<String> nonExistMediaIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DeleteAttachedMediaResponse.NonExistMediaIds.Length"); i++) {
-			nonExistMediaIds.add(context.stringValue("DeleteAttachedMediaResponse.NonExistMediaIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DeleteAttachedMediaResponse.NonExistMediaIds.Length"); i++) {
+			nonExistMediaIds.add(_ctx.stringValue("DeleteAttachedMediaResponse.NonExistMediaIds["+ i +"]"));
 		}
 		deleteAttachedMediaResponse.setNonExistMediaIds(nonExistMediaIds);
 	 

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTranscodeTaskResponseUnmarshaller {
 
-	public static ListTranscodeTaskResponse unmarshall(ListTranscodeTaskResponse listTranscodeTaskResponse, UnmarshallerContext context) {
+	public static ListTranscodeTaskResponse unmarshall(ListTranscodeTaskResponse listTranscodeTaskResponse, UnmarshallerContext _ctx) {
 		
-		listTranscodeTaskResponse.setRequestId(context.stringValue("ListTranscodeTaskResponse.RequestId"));
+		listTranscodeTaskResponse.setRequestId(_ctx.stringValue("ListTranscodeTaskResponse.RequestId"));
 
 		List<TranscodeTask> transcodeTaskList = new ArrayList<TranscodeTask>();
-		for (int i = 0; i < context.lengthValue("ListTranscodeTaskResponse.TranscodeTaskList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTranscodeTaskResponse.TranscodeTaskList.Length"); i++) {
 			TranscodeTask transcodeTask = new TranscodeTask();
-			transcodeTask.setTranscodeTaskId(context.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TranscodeTaskId"));
-			transcodeTask.setVideoId(context.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].VideoId"));
-			transcodeTask.setTaskStatus(context.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TaskStatus"));
-			transcodeTask.setTranscodeTemplateGroupId(context.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TranscodeTemplateGroupId"));
-			transcodeTask.setCreationTime(context.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].CreationTime"));
-			transcodeTask.setCompleteTime(context.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].CompleteTime"));
-			transcodeTask.setTrigger(context.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].Trigger"));
+			transcodeTask.setTranscodeTaskId(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TranscodeTaskId"));
+			transcodeTask.setVideoId(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].VideoId"));
+			transcodeTask.setTaskStatus(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TaskStatus"));
+			transcodeTask.setTranscodeTemplateGroupId(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].TranscodeTemplateGroupId"));
+			transcodeTask.setCreationTime(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].CreationTime"));
+			transcodeTask.setCompleteTime(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].CompleteTime"));
+			transcodeTask.setTrigger(_ctx.stringValue("ListTranscodeTaskResponse.TranscodeTaskList["+ i +"].Trigger"));
 
 			transcodeTaskList.add(transcodeTask);
 		}

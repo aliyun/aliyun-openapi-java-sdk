@@ -24,34 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetVideoListResponseUnmarshaller {
 
-	public static GetVideoListResponse unmarshall(GetVideoListResponse getVideoListResponse, UnmarshallerContext context) {
+	public static GetVideoListResponse unmarshall(GetVideoListResponse getVideoListResponse, UnmarshallerContext _ctx) {
 		
-		getVideoListResponse.setRequestId(context.stringValue("GetVideoListResponse.RequestId"));
-		getVideoListResponse.setTotal(context.integerValue("GetVideoListResponse.Total"));
+		getVideoListResponse.setRequestId(_ctx.stringValue("GetVideoListResponse.RequestId"));
+		getVideoListResponse.setTotal(_ctx.integerValue("GetVideoListResponse.Total"));
 
 		List<Video> videoList = new ArrayList<Video>();
-		for (int i = 0; i < context.lengthValue("GetVideoListResponse.VideoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetVideoListResponse.VideoList.Length"); i++) {
 			Video video = new Video();
-			video.setVideoId(context.stringValue("GetVideoListResponse.VideoList["+ i +"].VideoId"));
-			video.setTitle(context.stringValue("GetVideoListResponse.VideoList["+ i +"].Title"));
-			video.setTags(context.stringValue("GetVideoListResponse.VideoList["+ i +"].Tags"));
-			video.setStatus(context.stringValue("GetVideoListResponse.VideoList["+ i +"].Status"));
-			video.setSize(context.longValue("GetVideoListResponse.VideoList["+ i +"].Size"));
-			video.setDuration(context.floatValue("GetVideoListResponse.VideoList["+ i +"].Duration"));
-			video.setDescription(context.stringValue("GetVideoListResponse.VideoList["+ i +"].Description"));
-			video.setCreateTime(context.stringValue("GetVideoListResponse.VideoList["+ i +"].CreateTime"));
-			video.setModifyTime(context.stringValue("GetVideoListResponse.VideoList["+ i +"].ModifyTime"));
-			video.setModificationTime(context.stringValue("GetVideoListResponse.VideoList["+ i +"].ModificationTime"));
-			video.setCreationTime(context.stringValue("GetVideoListResponse.VideoList["+ i +"].CreationTime"));
-			video.setCoverURL(context.stringValue("GetVideoListResponse.VideoList["+ i +"].CoverURL"));
-			video.setCateId(context.longValue("GetVideoListResponse.VideoList["+ i +"].CateId"));
-			video.setCateName(context.stringValue("GetVideoListResponse.VideoList["+ i +"].CateName"));
-			video.setStorageLocation(context.stringValue("GetVideoListResponse.VideoList["+ i +"].StorageLocation"));
-			video.setAppId(context.stringValue("GetVideoListResponse.VideoList["+ i +"].AppId"));
+			video.setVideoId(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].VideoId"));
+			video.setTitle(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Title"));
+			video.setTags(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Tags"));
+			video.setStatus(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Status"));
+			video.setSize(_ctx.longValue("GetVideoListResponse.VideoList["+ i +"].Size"));
+			video.setDuration(_ctx.floatValue("GetVideoListResponse.VideoList["+ i +"].Duration"));
+			video.setDescription(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Description"));
+			video.setCreateTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CreateTime"));
+			video.setModifyTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].ModifyTime"));
+			video.setModificationTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].ModificationTime"));
+			video.setCreationTime(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CreationTime"));
+			video.setCoverURL(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CoverURL"));
+			video.setCateId(_ctx.longValue("GetVideoListResponse.VideoList["+ i +"].CateId"));
+			video.setCateName(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].CateName"));
+			video.setStorageLocation(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].StorageLocation"));
+			video.setAppId(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].AppId"));
 
 			List<String> snapshots = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("GetVideoListResponse.VideoList["+ i +"].Snapshots.Length"); j++) {
-				snapshots.add(context.stringValue("GetVideoListResponse.VideoList["+ i +"].Snapshots["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("GetVideoListResponse.VideoList["+ i +"].Snapshots.Length"); j++) {
+				snapshots.add(_ctx.stringValue("GetVideoListResponse.VideoList["+ i +"].Snapshots["+ j +"]"));
 			}
 			video.setSnapshots(snapshots);
 

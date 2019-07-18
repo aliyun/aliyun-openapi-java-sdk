@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePlayVideoStatisResponseUnmarshaller {
 
-	public static DescribePlayVideoStatisResponse unmarshall(DescribePlayVideoStatisResponse describePlayVideoStatisResponse, UnmarshallerContext context) {
+	public static DescribePlayVideoStatisResponse unmarshall(DescribePlayVideoStatisResponse describePlayVideoStatisResponse, UnmarshallerContext _ctx) {
 		
-		describePlayVideoStatisResponse.setRequestId(context.stringValue("DescribePlayVideoStatisResponse.RequestId"));
+		describePlayVideoStatisResponse.setRequestId(_ctx.stringValue("DescribePlayVideoStatisResponse.RequestId"));
 
 		List<VideoPlayStatisDetail> videoPlayStatisDetails = new ArrayList<VideoPlayStatisDetail>();
-		for (int i = 0; i < context.lengthValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails.Length"); i++) {
 			VideoPlayStatisDetail videoPlayStatisDetail = new VideoPlayStatisDetail();
-			videoPlayStatisDetail.setDate(context.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].Date"));
-			videoPlayStatisDetail.setPlayDuration(context.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].PlayDuration"));
-			videoPlayStatisDetail.setVV(context.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].VV"));
-			videoPlayStatisDetail.setUV(context.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].UV"));
-			videoPlayStatisDetail.setPlayRange(context.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].PlayRange"));
-			videoPlayStatisDetail.setTitle(context.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].Title"));
+			videoPlayStatisDetail.setDate(_ctx.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].Date"));
+			videoPlayStatisDetail.setPlayDuration(_ctx.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].PlayDuration"));
+			videoPlayStatisDetail.setVV(_ctx.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].VV"));
+			videoPlayStatisDetail.setUV(_ctx.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].UV"));
+			videoPlayStatisDetail.setPlayRange(_ctx.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].PlayRange"));
+			videoPlayStatisDetail.setTitle(_ctx.stringValue("DescribePlayVideoStatisResponse.VideoPlayStatisDetails["+ i +"].Title"));
 
 			videoPlayStatisDetails.add(videoPlayStatisDetail);
 		}

@@ -1,3 +1,7 @@
+2019-07-18 Version: 2.15.6
+- Add a new field named Input to SubmitAIJob api request to set the input file of AI job.
+- Change the field MediaId of SubmitAIJob api to non-mandatory.
+
 2019-06-24 Version: 2.15.5
 - Add some new apis to manage VoD domain, such as AddVodDomain, UpdateVodDomain, DeleteVodDomain, BatchStartVodDomain, BatchStopVodDomain, DescribeVodUserDomains, DescribeVodDomainDetail.
 - Add some new apis to manage VoD domain config, such as BatchSetVodDomainConfigs, DescribeVodDomainConfigs, DeleteVodSpecificConfig, SetVodDomainCertificate, DescribeVodCertificateList, DescribeVodDomainCertificateInfo.

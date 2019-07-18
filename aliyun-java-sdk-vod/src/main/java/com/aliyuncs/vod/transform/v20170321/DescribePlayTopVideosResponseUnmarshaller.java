@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePlayTopVideosResponseUnmarshaller {
 
-	public static DescribePlayTopVideosResponse unmarshall(DescribePlayTopVideosResponse describePlayTopVideosResponse, UnmarshallerContext context) {
+	public static DescribePlayTopVideosResponse unmarshall(DescribePlayTopVideosResponse describePlayTopVideosResponse, UnmarshallerContext _ctx) {
 		
-		describePlayTopVideosResponse.setRequestId(context.stringValue("DescribePlayTopVideosResponse.RequestId"));
-		describePlayTopVideosResponse.setPageNo(context.longValue("DescribePlayTopVideosResponse.PageNo"));
-		describePlayTopVideosResponse.setPageSize(context.longValue("DescribePlayTopVideosResponse.PageSize"));
-		describePlayTopVideosResponse.setTotalNum(context.longValue("DescribePlayTopVideosResponse.TotalNum"));
+		describePlayTopVideosResponse.setRequestId(_ctx.stringValue("DescribePlayTopVideosResponse.RequestId"));
+		describePlayTopVideosResponse.setPageNo(_ctx.longValue("DescribePlayTopVideosResponse.PageNo"));
+		describePlayTopVideosResponse.setPageSize(_ctx.longValue("DescribePlayTopVideosResponse.PageSize"));
+		describePlayTopVideosResponse.setTotalNum(_ctx.longValue("DescribePlayTopVideosResponse.TotalNum"));
 
 		List<TopPlayVideoStatis> topPlayVideos = new ArrayList<TopPlayVideoStatis>();
-		for (int i = 0; i < context.lengthValue("DescribePlayTopVideosResponse.TopPlayVideos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePlayTopVideosResponse.TopPlayVideos.Length"); i++) {
 			TopPlayVideoStatis topPlayVideoStatis = new TopPlayVideoStatis();
-			topPlayVideoStatis.setPlayDuration(context.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].PlayDuration"));
-			topPlayVideoStatis.setVV(context.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].VV"));
-			topPlayVideoStatis.setUV(context.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].UV"));
-			topPlayVideoStatis.setVideoId(context.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].VideoId"));
-			topPlayVideoStatis.setTitle(context.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].Title"));
+			topPlayVideoStatis.setPlayDuration(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].PlayDuration"));
+			topPlayVideoStatis.setVV(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].VV"));
+			topPlayVideoStatis.setUV(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].UV"));
+			topPlayVideoStatis.setVideoId(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].VideoId"));
+			topPlayVideoStatis.setTitle(_ctx.stringValue("DescribePlayTopVideosResponse.TopPlayVideos["+ i +"].Title"));
 
 			topPlayVideos.add(topPlayVideoStatis);
 		}

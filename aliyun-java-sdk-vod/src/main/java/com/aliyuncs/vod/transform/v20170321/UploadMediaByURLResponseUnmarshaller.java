@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadMediaByURLResponseUnmarshaller {
 
-	public static UploadMediaByURLResponse unmarshall(UploadMediaByURLResponse uploadMediaByURLResponse, UnmarshallerContext context) {
+	public static UploadMediaByURLResponse unmarshall(UploadMediaByURLResponse uploadMediaByURLResponse, UnmarshallerContext _ctx) {
 		
-		uploadMediaByURLResponse.setRequestId(context.stringValue("UploadMediaByURLResponse.RequestId"));
+		uploadMediaByURLResponse.setRequestId(_ctx.stringValue("UploadMediaByURLResponse.RequestId"));
 
 		List<UploadJob> uploadJobs = new ArrayList<UploadJob>();
-		for (int i = 0; i < context.lengthValue("UploadMediaByURLResponse.UploadJobs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("UploadMediaByURLResponse.UploadJobs.Length"); i++) {
 			UploadJob uploadJob = new UploadJob();
-			uploadJob.setJobId(context.stringValue("UploadMediaByURLResponse.UploadJobs["+ i +"].JobId"));
-			uploadJob.setSourceURL(context.stringValue("UploadMediaByURLResponse.UploadJobs["+ i +"].SourceURL"));
+			uploadJob.setJobId(_ctx.stringValue("UploadMediaByURLResponse.UploadJobs["+ i +"].JobId"));
+			uploadJob.setSourceURL(_ctx.stringValue("UploadMediaByURLResponse.UploadJobs["+ i +"].SourceURL"));
 
 			uploadJobs.add(uploadJob);
 		}

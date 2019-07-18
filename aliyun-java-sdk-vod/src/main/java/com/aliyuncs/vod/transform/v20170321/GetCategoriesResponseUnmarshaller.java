@@ -25,28 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCategoriesResponseUnmarshaller {
 
-	public static GetCategoriesResponse unmarshall(GetCategoriesResponse getCategoriesResponse, UnmarshallerContext context) {
+	public static GetCategoriesResponse unmarshall(GetCategoriesResponse getCategoriesResponse, UnmarshallerContext _ctx) {
 		
-		getCategoriesResponse.setRequestId(context.stringValue("GetCategoriesResponse.RequestId"));
-		getCategoriesResponse.setSubTotal(context.longValue("GetCategoriesResponse.SubTotal"));
+		getCategoriesResponse.setRequestId(_ctx.stringValue("GetCategoriesResponse.RequestId"));
+		getCategoriesResponse.setSubTotal(_ctx.longValue("GetCategoriesResponse.SubTotal"));
 
 		Category1 category1 = new Category1();
-		category1.setCateId(context.longValue("GetCategoriesResponse.Category.CateId"));
-		category1.setCateName(context.stringValue("GetCategoriesResponse.Category.CateName"));
-		category1.setLevel(context.longValue("GetCategoriesResponse.Category.Level"));
-		category1.setParentId(context.longValue("GetCategoriesResponse.Category.ParentId"));
-		category1.setType(context.stringValue("GetCategoriesResponse.Category.Type"));
+		category1.setCateId(_ctx.longValue("GetCategoriesResponse.Category.CateId"));
+		category1.setCateName(_ctx.stringValue("GetCategoriesResponse.Category.CateName"));
+		category1.setLevel(_ctx.longValue("GetCategoriesResponse.Category.Level"));
+		category1.setParentId(_ctx.longValue("GetCategoriesResponse.Category.ParentId"));
+		category1.setType(_ctx.stringValue("GetCategoriesResponse.Category.Type"));
 		getCategoriesResponse.setCategory1(category1);
 
 		List<Category> subCategories = new ArrayList<Category>();
-		for (int i = 0; i < context.lengthValue("GetCategoriesResponse.SubCategories.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetCategoriesResponse.SubCategories.Length"); i++) {
 			Category category = new Category();
-			category.setCateId(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].CateId"));
-			category.setCateName(context.stringValue("GetCategoriesResponse.SubCategories["+ i +"].CateName"));
-			category.setLevel(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].Level"));
-			category.setParentId(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].ParentId"));
-			category.setSubTotal(context.longValue("GetCategoriesResponse.SubCategories["+ i +"].SubTotal"));
-			category.setType(context.stringValue("GetCategoriesResponse.SubCategories["+ i +"].Type"));
+			category.setCateId(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].CateId"));
+			category.setCateName(_ctx.stringValue("GetCategoriesResponse.SubCategories["+ i +"].CateName"));
+			category.setLevel(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].Level"));
+			category.setParentId(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].ParentId"));
+			category.setSubTotal(_ctx.longValue("GetCategoriesResponse.SubCategories["+ i +"].SubTotal"));
+			category.setType(_ctx.stringValue("GetCategoriesResponse.SubCategories["+ i +"].Type"));
 
 			subCategories.add(category);
 		}

@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVodStorageDataResponseUnmarshaller {
 
-	public static DescribeVodStorageDataResponse unmarshall(DescribeVodStorageDataResponse describeVodStorageDataResponse, UnmarshallerContext context) {
+	public static DescribeVodStorageDataResponse unmarshall(DescribeVodStorageDataResponse describeVodStorageDataResponse, UnmarshallerContext _ctx) {
 		
-		describeVodStorageDataResponse.setRequestId(context.stringValue("DescribeVodStorageDataResponse.RequestId"));
-		describeVodStorageDataResponse.setDataInterval(context.stringValue("DescribeVodStorageDataResponse.DataInterval"));
+		describeVodStorageDataResponse.setRequestId(_ctx.stringValue("DescribeVodStorageDataResponse.RequestId"));
+		describeVodStorageDataResponse.setDataInterval(_ctx.stringValue("DescribeVodStorageDataResponse.DataInterval"));
 
 		List<StorageDataItem> storageData = new ArrayList<StorageDataItem>();
-		for (int i = 0; i < context.lengthValue("DescribeVodStorageDataResponse.StorageData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVodStorageDataResponse.StorageData.Length"); i++) {
 			StorageDataItem storageDataItem = new StorageDataItem();
-			storageDataItem.setTimeStamp(context.stringValue("DescribeVodStorageDataResponse.StorageData["+ i +"].TimeStamp"));
-			storageDataItem.setStorageUtilization(context.stringValue("DescribeVodStorageDataResponse.StorageData["+ i +"].StorageUtilization"));
-			storageDataItem.setNetworkOut(context.stringValue("DescribeVodStorageDataResponse.StorageData["+ i +"].NetworkOut"));
+			storageDataItem.setTimeStamp(_ctx.stringValue("DescribeVodStorageDataResponse.StorageData["+ i +"].TimeStamp"));
+			storageDataItem.setStorageUtilization(_ctx.stringValue("DescribeVodStorageDataResponse.StorageData["+ i +"].StorageUtilization"));
+			storageDataItem.setNetworkOut(_ctx.stringValue("DescribeVodStorageDataResponse.StorageData["+ i +"].NetworkOut"));
 
 			storageData.add(storageDataItem);
 		}

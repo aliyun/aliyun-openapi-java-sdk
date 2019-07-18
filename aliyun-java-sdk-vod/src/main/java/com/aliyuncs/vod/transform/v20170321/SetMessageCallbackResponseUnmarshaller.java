@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetMessageCallbackResponseUnmarshaller {
 
-	public static SetMessageCallbackResponse unmarshall(SetMessageCallbackResponse setMessageCallbackResponse, UnmarshallerContext context) {
+	public static SetMessageCallbackResponse unmarshall(SetMessageCallbackResponse setMessageCallbackResponse, UnmarshallerContext _ctx) {
 		
-		setMessageCallbackResponse.setRequestId(context.stringValue("SetMessageCallbackResponse.RequestId"));
+		setMessageCallbackResponse.setRequestId(_ctx.stringValue("SetMessageCallbackResponse.RequestId"));
 	 
 	 	return setMessageCallbackResponse;
 	}

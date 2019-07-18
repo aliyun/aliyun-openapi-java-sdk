@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateVideoInfoResponseUnmarshaller {
 
-	public static UpdateVideoInfoResponse unmarshall(UpdateVideoInfoResponse updateVideoInfoResponse, UnmarshallerContext context) {
+	public static UpdateVideoInfoResponse unmarshall(UpdateVideoInfoResponse updateVideoInfoResponse, UnmarshallerContext _ctx) {
 		
-		updateVideoInfoResponse.setRequestId(context.stringValue("UpdateVideoInfoResponse.RequestId"));
+		updateVideoInfoResponse.setRequestId(_ctx.stringValue("UpdateVideoInfoResponse.RequestId"));
 	 
 	 	return updateVideoInfoResponse;
 	}

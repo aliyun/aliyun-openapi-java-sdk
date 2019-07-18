@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAITemplateResponseUnmarshaller {
 
-	public static ListAITemplateResponse unmarshall(ListAITemplateResponse listAITemplateResponse, UnmarshallerContext context) {
+	public static ListAITemplateResponse unmarshall(ListAITemplateResponse listAITemplateResponse, UnmarshallerContext _ctx) {
 		
-		listAITemplateResponse.setRequestId(context.stringValue("ListAITemplateResponse.RequestId"));
+		listAITemplateResponse.setRequestId(_ctx.stringValue("ListAITemplateResponse.RequestId"));
 
 		List<TemplateInfoListItem> templateInfoList = new ArrayList<TemplateInfoListItem>();
-		for (int i = 0; i < context.lengthValue("ListAITemplateResponse.TemplateInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAITemplateResponse.TemplateInfoList.Length"); i++) {
 			TemplateInfoListItem templateInfoListItem = new TemplateInfoListItem();
-			templateInfoListItem.setTemplateId(context.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateId"));
-			templateInfoListItem.setTemplateType(context.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateType"));
-			templateInfoListItem.setTemplateName(context.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateName"));
-			templateInfoListItem.setTemplateConfig(context.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateConfig"));
-			templateInfoListItem.setSource(context.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].Source"));
-			templateInfoListItem.setIsDefault(context.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].IsDefault"));
-			templateInfoListItem.setCreationTime(context.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].CreationTime"));
-			templateInfoListItem.setModifyTime(context.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].ModifyTime"));
+			templateInfoListItem.setTemplateId(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateId"));
+			templateInfoListItem.setTemplateType(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateType"));
+			templateInfoListItem.setTemplateName(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateName"));
+			templateInfoListItem.setTemplateConfig(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].TemplateConfig"));
+			templateInfoListItem.setSource(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].Source"));
+			templateInfoListItem.setIsDefault(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].IsDefault"));
+			templateInfoListItem.setCreationTime(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].CreationTime"));
+			templateInfoListItem.setModifyTime(_ctx.stringValue("ListAITemplateResponse.TemplateInfoList["+ i +"].ModifyTime"));
 
 			templateInfoList.add(templateInfoListItem);
 		}

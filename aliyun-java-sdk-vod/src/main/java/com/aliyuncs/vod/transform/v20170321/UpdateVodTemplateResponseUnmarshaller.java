@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateVodTemplateResponseUnmarshaller {
 
-	public static UpdateVodTemplateResponse unmarshall(UpdateVodTemplateResponse updateVodTemplateResponse, UnmarshallerContext context) {
+	public static UpdateVodTemplateResponse unmarshall(UpdateVodTemplateResponse updateVodTemplateResponse, UnmarshallerContext _ctx) {
 		
-		updateVodTemplateResponse.setRequestId(context.stringValue("UpdateVodTemplateResponse.RequestId"));
-		updateVodTemplateResponse.setVodTemplateId(context.stringValue("UpdateVodTemplateResponse.VodTemplateId"));
+		updateVodTemplateResponse.setRequestId(_ctx.stringValue("UpdateVodTemplateResponse.RequestId"));
+		updateVodTemplateResponse.setVodTemplateId(_ctx.stringValue("UpdateVodTemplateResponse.VodTemplateId"));
 	 
 	 	return updateVodTemplateResponse;
 	}

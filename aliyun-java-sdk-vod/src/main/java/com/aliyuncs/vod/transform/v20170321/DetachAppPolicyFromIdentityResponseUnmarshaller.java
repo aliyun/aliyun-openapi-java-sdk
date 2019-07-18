@@ -23,19 +23,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetachAppPolicyFromIdentityResponseUnmarshaller {
 
-	public static DetachAppPolicyFromIdentityResponse unmarshall(DetachAppPolicyFromIdentityResponse detachAppPolicyFromIdentityResponse, UnmarshallerContext context) {
+	public static DetachAppPolicyFromIdentityResponse unmarshall(DetachAppPolicyFromIdentityResponse detachAppPolicyFromIdentityResponse, UnmarshallerContext _ctx) {
 		
-		detachAppPolicyFromIdentityResponse.setRequestId(context.stringValue("DetachAppPolicyFromIdentityResponse.RequestId"));
+		detachAppPolicyFromIdentityResponse.setRequestId(_ctx.stringValue("DetachAppPolicyFromIdentityResponse.RequestId"));
 
 		List<String> nonExistPolicyNames = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DetachAppPolicyFromIdentityResponse.NonExistPolicyNames.Length"); i++) {
-			nonExistPolicyNames.add(context.stringValue("DetachAppPolicyFromIdentityResponse.NonExistPolicyNames["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DetachAppPolicyFromIdentityResponse.NonExistPolicyNames.Length"); i++) {
+			nonExistPolicyNames.add(_ctx.stringValue("DetachAppPolicyFromIdentityResponse.NonExistPolicyNames["+ i +"]"));
 		}
 		detachAppPolicyFromIdentityResponse.setNonExistPolicyNames(nonExistPolicyNames);
 
 		List<String> failedPolicyNames = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DetachAppPolicyFromIdentityResponse.FailedPolicyNames.Length"); i++) {
-			failedPolicyNames.add(context.stringValue("DetachAppPolicyFromIdentityResponse.FailedPolicyNames["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DetachAppPolicyFromIdentityResponse.FailedPolicyNames.Length"); i++) {
+			failedPolicyNames.add(_ctx.stringValue("DetachAppPolicyFromIdentityResponse.FailedPolicyNames["+ i +"]"));
 		}
 		detachAppPolicyFromIdentityResponse.setFailedPolicyNames(failedPolicyNames);
 	 

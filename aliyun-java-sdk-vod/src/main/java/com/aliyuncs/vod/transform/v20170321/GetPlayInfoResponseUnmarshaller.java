@@ -26,25 +26,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPlayInfoResponseUnmarshaller {
 
-	public static GetPlayInfoResponse unmarshall(GetPlayInfoResponse getPlayInfoResponse, UnmarshallerContext context) {
+	public static GetPlayInfoResponse unmarshall(GetPlayInfoResponse getPlayInfoResponse, UnmarshallerContext _ctx) {
 		
-		getPlayInfoResponse.setRequestId(context.stringValue("GetPlayInfoResponse.RequestId"));
+		getPlayInfoResponse.setRequestId(_ctx.stringValue("GetPlayInfoResponse.RequestId"));
 
 		VideoBase videoBase = new VideoBase();
-		videoBase.setOutputType(context.stringValue("GetPlayInfoResponse.VideoBase.OutputType"));
-		videoBase.setCoverURL(context.stringValue("GetPlayInfoResponse.VideoBase.CoverURL"));
-		videoBase.setDuration(context.stringValue("GetPlayInfoResponse.VideoBase.Duration"));
-		videoBase.setStatus(context.stringValue("GetPlayInfoResponse.VideoBase.Status"));
-		videoBase.setTitle(context.stringValue("GetPlayInfoResponse.VideoBase.Title"));
-		videoBase.setVideoId(context.stringValue("GetPlayInfoResponse.VideoBase.VideoId"));
-		videoBase.setMediaType(context.stringValue("GetPlayInfoResponse.VideoBase.MediaType"));
-		videoBase.setCreationTime(context.stringValue("GetPlayInfoResponse.VideoBase.CreationTime"));
-		videoBase.setTranscodeMode(context.stringValue("GetPlayInfoResponse.VideoBase.TranscodeMode"));
+		videoBase.setOutputType(_ctx.stringValue("GetPlayInfoResponse.VideoBase.OutputType"));
+		videoBase.setCoverURL(_ctx.stringValue("GetPlayInfoResponse.VideoBase.CoverURL"));
+		videoBase.setDuration(_ctx.stringValue("GetPlayInfoResponse.VideoBase.Duration"));
+		videoBase.setStatus(_ctx.stringValue("GetPlayInfoResponse.VideoBase.Status"));
+		videoBase.setTitle(_ctx.stringValue("GetPlayInfoResponse.VideoBase.Title"));
+		videoBase.setVideoId(_ctx.stringValue("GetPlayInfoResponse.VideoBase.VideoId"));
+		videoBase.setMediaType(_ctx.stringValue("GetPlayInfoResponse.VideoBase.MediaType"));
+		videoBase.setCreationTime(_ctx.stringValue("GetPlayInfoResponse.VideoBase.CreationTime"));
+		videoBase.setTranscodeMode(_ctx.stringValue("GetPlayInfoResponse.VideoBase.TranscodeMode"));
 
 		List<Thumbnail> thumbnailList = new ArrayList<Thumbnail>();
-		for (int i = 0; i < context.lengthValue("GetPlayInfoResponse.VideoBase.ThumbnailList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetPlayInfoResponse.VideoBase.ThumbnailList.Length"); i++) {
 			Thumbnail thumbnail = new Thumbnail();
-			thumbnail.setURL(context.stringValue("GetPlayInfoResponse.VideoBase.ThumbnailList["+ i +"].URL"));
+			thumbnail.setURL(_ctx.stringValue("GetPlayInfoResponse.VideoBase.ThumbnailList["+ i +"].URL"));
 
 			thumbnailList.add(thumbnail);
 		}
@@ -52,31 +52,31 @@ public class GetPlayInfoResponseUnmarshaller {
 		getPlayInfoResponse.setVideoBase(videoBase);
 
 		List<PlayInfo> playInfoList = new ArrayList<PlayInfo>();
-		for (int i = 0; i < context.lengthValue("GetPlayInfoResponse.PlayInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetPlayInfoResponse.PlayInfoList.Length"); i++) {
 			PlayInfo playInfo = new PlayInfo();
-			playInfo.setWidth(context.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Width"));
-			playInfo.setHeight(context.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Height"));
-			playInfo.setSize(context.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Size"));
-			playInfo.setPlayURL(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PlayURL"));
-			playInfo.setBitrate(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Bitrate"));
-			playInfo.setDefinition(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Definition"));
-			playInfo.setDuration(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Duration"));
-			playInfo.setFormat(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Format"));
-			playInfo.setFps(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Fps"));
-			playInfo.setEncrypt(context.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Encrypt"));
-			playInfo.setPlaintext(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Plaintext"));
-			playInfo.setComplexity(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Complexity"));
-			playInfo.setStreamType(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].StreamType"));
-			playInfo.setRand(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
-			playInfo.setJobId(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));
-			playInfo.setPreprocessStatus(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PreprocessStatus"));
-			playInfo.setWatermarkId(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].WatermarkId"));
-			playInfo.setStatus(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Status"));
-			playInfo.setCreationTime(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].CreationTime"));
-			playInfo.setModificationTime(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].ModificationTime"));
-			playInfo.setEncryptType(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].EncryptType"));
-			playInfo.setNarrowBandType(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].NarrowBandType"));
-			playInfo.setSpecification(context.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Specification"));
+			playInfo.setWidth(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Width"));
+			playInfo.setHeight(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Height"));
+			playInfo.setSize(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Size"));
+			playInfo.setPlayURL(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PlayURL"));
+			playInfo.setBitrate(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Bitrate"));
+			playInfo.setDefinition(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Definition"));
+			playInfo.setDuration(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Duration"));
+			playInfo.setFormat(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Format"));
+			playInfo.setFps(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Fps"));
+			playInfo.setEncrypt(_ctx.longValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Encrypt"));
+			playInfo.setPlaintext(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Plaintext"));
+			playInfo.setComplexity(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Complexity"));
+			playInfo.setStreamType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].StreamType"));
+			playInfo.setRand(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Rand"));
+			playInfo.setJobId(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].JobId"));
+			playInfo.setPreprocessStatus(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].PreprocessStatus"));
+			playInfo.setWatermarkId(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].WatermarkId"));
+			playInfo.setStatus(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Status"));
+			playInfo.setCreationTime(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].CreationTime"));
+			playInfo.setModificationTime(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].ModificationTime"));
+			playInfo.setEncryptType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].EncryptType"));
+			playInfo.setNarrowBandType(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].NarrowBandType"));
+			playInfo.setSpecification(_ctx.stringValue("GetPlayInfoResponse.PlayInfoList["+ i +"].Specification"));
 
 			playInfoList.add(playInfo);
 		}

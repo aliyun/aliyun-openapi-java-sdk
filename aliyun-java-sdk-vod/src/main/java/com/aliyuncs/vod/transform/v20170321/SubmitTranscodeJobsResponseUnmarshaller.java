@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitTranscodeJobsResponseUnmarshaller {
 
-	public static SubmitTranscodeJobsResponse unmarshall(SubmitTranscodeJobsResponse submitTranscodeJobsResponse, UnmarshallerContext context) {
+	public static SubmitTranscodeJobsResponse unmarshall(SubmitTranscodeJobsResponse submitTranscodeJobsResponse, UnmarshallerContext _ctx) {
 		
-		submitTranscodeJobsResponse.setRequestId(context.stringValue("SubmitTranscodeJobsResponse.RequestId"));
-		submitTranscodeJobsResponse.setTranscodeTaskId(context.stringValue("SubmitTranscodeJobsResponse.TranscodeTaskId"));
+		submitTranscodeJobsResponse.setRequestId(_ctx.stringValue("SubmitTranscodeJobsResponse.RequestId"));
+		submitTranscodeJobsResponse.setTranscodeTaskId(_ctx.stringValue("SubmitTranscodeJobsResponse.TranscodeTaskId"));
 
 		List<TranscodeJob> transcodeJobs = new ArrayList<TranscodeJob>();
-		for (int i = 0; i < context.lengthValue("SubmitTranscodeJobsResponse.TranscodeJobs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SubmitTranscodeJobsResponse.TranscodeJobs.Length"); i++) {
 			TranscodeJob transcodeJob = new TranscodeJob();
-			transcodeJob.setJobId(context.stringValue("SubmitTranscodeJobsResponse.TranscodeJobs["+ i +"].JobId"));
+			transcodeJob.setJobId(_ctx.stringValue("SubmitTranscodeJobsResponse.TranscodeJobs["+ i +"].JobId"));
 
 			transcodeJobs.add(transcodeJob);
 		}

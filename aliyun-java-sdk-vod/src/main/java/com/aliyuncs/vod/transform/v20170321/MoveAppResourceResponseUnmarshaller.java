@@ -23,19 +23,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MoveAppResourceResponseUnmarshaller {
 
-	public static MoveAppResourceResponse unmarshall(MoveAppResourceResponse moveAppResourceResponse, UnmarshallerContext context) {
+	public static MoveAppResourceResponse unmarshall(MoveAppResourceResponse moveAppResourceResponse, UnmarshallerContext _ctx) {
 		
-		moveAppResourceResponse.setRequestId(context.stringValue("MoveAppResourceResponse.RequestId"));
+		moveAppResourceResponse.setRequestId(_ctx.stringValue("MoveAppResourceResponse.RequestId"));
 
 		List<String> nonExistResourceIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("MoveAppResourceResponse.NonExistResourceIds.Length"); i++) {
-			nonExistResourceIds.add(context.stringValue("MoveAppResourceResponse.NonExistResourceIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("MoveAppResourceResponse.NonExistResourceIds.Length"); i++) {
+			nonExistResourceIds.add(_ctx.stringValue("MoveAppResourceResponse.NonExistResourceIds["+ i +"]"));
 		}
 		moveAppResourceResponse.setNonExistResourceIds(nonExistResourceIds);
 
 		List<String> failedResourceIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("MoveAppResourceResponse.FailedResourceIds.Length"); i++) {
-			failedResourceIds.add(context.stringValue("MoveAppResourceResponse.FailedResourceIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("MoveAppResourceResponse.FailedResourceIds.Length"); i++) {
+			failedResourceIds.add(_ctx.stringValue("MoveAppResourceResponse.FailedResourceIds["+ i +"]"));
 		}
 		moveAppResourceResponse.setFailedResourceIds(failedResourceIds);
 	 

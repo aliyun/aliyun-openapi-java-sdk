@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAppInfoResponseUnmarshaller {
 
-	public static ListAppInfoResponse unmarshall(ListAppInfoResponse listAppInfoResponse, UnmarshallerContext context) {
+	public static ListAppInfoResponse unmarshall(ListAppInfoResponse listAppInfoResponse, UnmarshallerContext _ctx) {
 		
-		listAppInfoResponse.setRequestId(context.stringValue("ListAppInfoResponse.RequestId"));
+		listAppInfoResponse.setRequestId(_ctx.stringValue("ListAppInfoResponse.RequestId"));
 
 		List<AppInfo> appInfoList = new ArrayList<AppInfo>();
-		for (int i = 0; i < context.lengthValue("ListAppInfoResponse.AppInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAppInfoResponse.AppInfoList.Length"); i++) {
 			AppInfo appInfo = new AppInfo();
-			appInfo.setAppId(context.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].AppId"));
-			appInfo.setAppName(context.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].AppName"));
-			appInfo.setType(context.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Type"));
-			appInfo.setDescription(context.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Description"));
-			appInfo.setStatus(context.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Status"));
-			appInfo.setCreationTime(context.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].CreationTime"));
-			appInfo.setModificationTime(context.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].ModificationTime"));
+			appInfo.setAppId(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].AppId"));
+			appInfo.setAppName(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].AppName"));
+			appInfo.setType(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Type"));
+			appInfo.setDescription(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Description"));
+			appInfo.setStatus(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].Status"));
+			appInfo.setCreationTime(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].CreationTime"));
+			appInfo.setModificationTime(_ctx.stringValue("ListAppInfoResponse.AppInfoList["+ i +"].ModificationTime"));
 
 			appInfoList.add(appInfo);
 		}

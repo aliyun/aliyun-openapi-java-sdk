@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddWatermarkResponseUnmarshaller {
 
-	public static AddWatermarkResponse unmarshall(AddWatermarkResponse addWatermarkResponse, UnmarshallerContext context) {
+	public static AddWatermarkResponse unmarshall(AddWatermarkResponse addWatermarkResponse, UnmarshallerContext _ctx) {
 		
-		addWatermarkResponse.setRequestId(context.stringValue("AddWatermarkResponse.RequestId"));
+		addWatermarkResponse.setRequestId(_ctx.stringValue("AddWatermarkResponse.RequestId"));
 
 		WatermarkInfo watermarkInfo = new WatermarkInfo();
-		watermarkInfo.setCreationTime(context.stringValue("AddWatermarkResponse.WatermarkInfo.CreationTime"));
-		watermarkInfo.setType(context.stringValue("AddWatermarkResponse.WatermarkInfo.Type"));
-		watermarkInfo.setIsDefault(context.stringValue("AddWatermarkResponse.WatermarkInfo.IsDefault"));
-		watermarkInfo.setWatermarkId(context.stringValue("AddWatermarkResponse.WatermarkInfo.WatermarkId"));
-		watermarkInfo.setName(context.stringValue("AddWatermarkResponse.WatermarkInfo.Name"));
-		watermarkInfo.setFileUrl(context.stringValue("AddWatermarkResponse.WatermarkInfo.FileUrl"));
-		watermarkInfo.setWatermarkConfig(context.stringValue("AddWatermarkResponse.WatermarkInfo.WatermarkConfig"));
+		watermarkInfo.setCreationTime(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.CreationTime"));
+		watermarkInfo.setType(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.Type"));
+		watermarkInfo.setIsDefault(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.IsDefault"));
+		watermarkInfo.setWatermarkId(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.WatermarkId"));
+		watermarkInfo.setName(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.Name"));
+		watermarkInfo.setFileUrl(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.FileUrl"));
+		watermarkInfo.setWatermarkConfig(_ctx.stringValue("AddWatermarkResponse.WatermarkInfo.WatermarkConfig"));
 		addWatermarkResponse.setWatermarkInfo(watermarkInfo);
 	 
 	 	return addWatermarkResponse;

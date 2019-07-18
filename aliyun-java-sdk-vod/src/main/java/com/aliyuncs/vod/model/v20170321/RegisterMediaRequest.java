@@ -38,7 +38,7 @@ public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
 
 	private String registerMetadatas;
 
-	private String workFlowId;
+	private String workflowId;
 
 	public String getUserData() {
 		return this.userData;
@@ -106,14 +106,14 @@ public class RegisterMediaRequest extends RpcAcsRequest<RegisterMediaResponse> {
 		}
 	}
 
-	public String getWorkFlowId() {
-		return this.workFlowId;
+	public String getWorkflowId() {
+		return this.workflowId;
 	}
 
-	public void setWorkFlowId(String workFlowId) {
-		this.workFlowId = workFlowId;
-		if(workFlowId != null){
-			putQueryParameter("WorkFlowId", workFlowId);
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId);
 		}
 	}
 

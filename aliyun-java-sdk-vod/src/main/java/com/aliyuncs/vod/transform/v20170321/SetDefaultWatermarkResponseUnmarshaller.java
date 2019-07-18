@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetDefaultWatermarkResponseUnmarshaller {
 
-	public static SetDefaultWatermarkResponse unmarshall(SetDefaultWatermarkResponse setDefaultWatermarkResponse, UnmarshallerContext context) {
+	public static SetDefaultWatermarkResponse unmarshall(SetDefaultWatermarkResponse setDefaultWatermarkResponse, UnmarshallerContext _ctx) {
 		
-		setDefaultWatermarkResponse.setRequestId(context.stringValue("SetDefaultWatermarkResponse.RequestId"));
+		setDefaultWatermarkResponse.setRequestId(_ctx.stringValue("SetDefaultWatermarkResponse.RequestId"));
 	 
 	 	return setDefaultWatermarkResponse;
 	}

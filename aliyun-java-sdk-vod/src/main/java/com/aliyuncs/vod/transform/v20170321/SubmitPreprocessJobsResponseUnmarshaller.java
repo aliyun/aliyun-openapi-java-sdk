@@ -24,14 +24,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitPreprocessJobsResponseUnmarshaller {
 
-	public static SubmitPreprocessJobsResponse unmarshall(SubmitPreprocessJobsResponse submitPreprocessJobsResponse, UnmarshallerContext context) {
+	public static SubmitPreprocessJobsResponse unmarshall(SubmitPreprocessJobsResponse submitPreprocessJobsResponse, UnmarshallerContext _ctx) {
 		
-		submitPreprocessJobsResponse.setRequestId(context.stringValue("SubmitPreprocessJobsResponse.RequestId"));
+		submitPreprocessJobsResponse.setRequestId(_ctx.stringValue("SubmitPreprocessJobsResponse.RequestId"));
 
 		List<PreprocessJob> preprocessJobs = new ArrayList<PreprocessJob>();
-		for (int i = 0; i < context.lengthValue("SubmitPreprocessJobsResponse.PreprocessJobs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SubmitPreprocessJobsResponse.PreprocessJobs.Length"); i++) {
 			PreprocessJob preprocessJob = new PreprocessJob();
-			preprocessJob.setJobId(context.stringValue("SubmitPreprocessJobsResponse.PreprocessJobs["+ i +"].JobId"));
+			preprocessJob.setJobId(_ctx.stringValue("SubmitPreprocessJobsResponse.PreprocessJobs["+ i +"].JobId"));
 
 			preprocessJobs.add(preprocessJob);
 		}

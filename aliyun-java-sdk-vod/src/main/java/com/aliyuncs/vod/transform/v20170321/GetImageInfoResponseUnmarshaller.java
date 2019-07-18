@@ -22,31 +22,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetImageInfoResponseUnmarshaller {
 
-	public static GetImageInfoResponse unmarshall(GetImageInfoResponse getImageInfoResponse, UnmarshallerContext context) {
+	public static GetImageInfoResponse unmarshall(GetImageInfoResponse getImageInfoResponse, UnmarshallerContext _ctx) {
 		
-		getImageInfoResponse.setRequestId(context.stringValue("GetImageInfoResponse.RequestId"));
+		getImageInfoResponse.setRequestId(_ctx.stringValue("GetImageInfoResponse.RequestId"));
 
 		ImageInfo imageInfo = new ImageInfo();
-		imageInfo.setImageId(context.stringValue("GetImageInfoResponse.ImageInfo.ImageId"));
-		imageInfo.setTitle(context.stringValue("GetImageInfoResponse.ImageInfo.Title"));
-		imageInfo.setCreationTime(context.stringValue("GetImageInfoResponse.ImageInfo.CreationTime"));
-		imageInfo.setImageType(context.stringValue("GetImageInfoResponse.ImageInfo.ImageType"));
-		imageInfo.setTags(context.stringValue("GetImageInfoResponse.ImageInfo.Tags"));
-		imageInfo.setURL(context.stringValue("GetImageInfoResponse.ImageInfo.URL"));
-		imageInfo.setCateId(context.longValue("GetImageInfoResponse.ImageInfo.CateId"));
-		imageInfo.setCateName(context.stringValue("GetImageInfoResponse.ImageInfo.CateName"));
-		imageInfo.setDescription(context.stringValue("GetImageInfoResponse.ImageInfo.Description"));
-		imageInfo.setStorageLocation(context.stringValue("GetImageInfoResponse.ImageInfo.StorageLocation"));
-		imageInfo.setStatus(context.stringValue("GetImageInfoResponse.ImageInfo.Status"));
-		imageInfo.setAppId(context.stringValue("GetImageInfoResponse.ImageInfo.AppId"));
-		imageInfo.setRegionId(context.stringValue("GetImageInfoResponse.ImageInfo.RegionId"));
+		imageInfo.setImageId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.ImageId"));
+		imageInfo.setTitle(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Title"));
+		imageInfo.setCreationTime(_ctx.stringValue("GetImageInfoResponse.ImageInfo.CreationTime"));
+		imageInfo.setImageType(_ctx.stringValue("GetImageInfoResponse.ImageInfo.ImageType"));
+		imageInfo.setTags(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Tags"));
+		imageInfo.setURL(_ctx.stringValue("GetImageInfoResponse.ImageInfo.URL"));
+		imageInfo.setCateId(_ctx.longValue("GetImageInfoResponse.ImageInfo.CateId"));
+		imageInfo.setCateName(_ctx.stringValue("GetImageInfoResponse.ImageInfo.CateName"));
+		imageInfo.setDescription(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Description"));
+		imageInfo.setStorageLocation(_ctx.stringValue("GetImageInfoResponse.ImageInfo.StorageLocation"));
+		imageInfo.setStatus(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Status"));
+		imageInfo.setAppId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.AppId"));
+		imageInfo.setRegionId(_ctx.stringValue("GetImageInfoResponse.ImageInfo.RegionId"));
 
 		Mezzanine mezzanine = new Mezzanine();
-		mezzanine.setOriginalFileName(context.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.OriginalFileName"));
-		mezzanine.setFileSize(context.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileSize"));
-		mezzanine.setWidth(context.integerValue("GetImageInfoResponse.ImageInfo.Mezzanine.Width"));
-		mezzanine.setHeight(context.integerValue("GetImageInfoResponse.ImageInfo.Mezzanine.Height"));
-		mezzanine.setFileURL(context.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileURL"));
+		mezzanine.setOriginalFileName(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.OriginalFileName"));
+		mezzanine.setFileSize(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileSize"));
+		mezzanine.setWidth(_ctx.integerValue("GetImageInfoResponse.ImageInfo.Mezzanine.Width"));
+		mezzanine.setHeight(_ctx.integerValue("GetImageInfoResponse.ImageInfo.Mezzanine.Height"));
+		mezzanine.setFileURL(_ctx.stringValue("GetImageInfoResponse.ImageInfo.Mezzanine.FileURL"));
 		imageInfo.setMezzanine(mezzanine);
 		getImageInfoResponse.setImageInfo(imageInfo);
 	 

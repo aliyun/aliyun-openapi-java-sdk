@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVodAIDataResponseUnmarshaller {
 
-	public static DescribeVodAIDataResponse unmarshall(DescribeVodAIDataResponse describeVodAIDataResponse, UnmarshallerContext context) {
+	public static DescribeVodAIDataResponse unmarshall(DescribeVodAIDataResponse describeVodAIDataResponse, UnmarshallerContext _ctx) {
 		
-		describeVodAIDataResponse.setRequestId(context.stringValue("DescribeVodAIDataResponse.RequestId"));
-		describeVodAIDataResponse.setDataInterval(context.stringValue("DescribeVodAIDataResponse.DataInterval"));
+		describeVodAIDataResponse.setRequestId(_ctx.stringValue("DescribeVodAIDataResponse.RequestId"));
+		describeVodAIDataResponse.setDataInterval(_ctx.stringValue("DescribeVodAIDataResponse.DataInterval"));
 
 		List<AIDataItem> aIData = new ArrayList<AIDataItem>();
-		for (int i = 0; i < context.lengthValue("DescribeVodAIDataResponse.AIData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVodAIDataResponse.AIData.Length"); i++) {
 			AIDataItem aIDataItem = new AIDataItem();
-			aIDataItem.setTimeStamp(context.stringValue("DescribeVodAIDataResponse.AIData["+ i +"].TimeStamp"));
+			aIDataItem.setTimeStamp(_ctx.stringValue("DescribeVodAIDataResponse.AIData["+ i +"].TimeStamp"));
 
 			List<DataItem> data = new ArrayList<DataItem>();
-			for (int j = 0; j < context.lengthValue("DescribeVodAIDataResponse.AIData["+ i +"].Data.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeVodAIDataResponse.AIData["+ i +"].Data.Length"); j++) {
 				DataItem dataItem = new DataItem();
-				dataItem.setName(context.stringValue("DescribeVodAIDataResponse.AIData["+ i +"].Data["+ j +"].Name"));
-				dataItem.setValue(context.stringValue("DescribeVodAIDataResponse.AIData["+ i +"].Data["+ j +"].Value"));
+				dataItem.setName(_ctx.stringValue("DescribeVodAIDataResponse.AIData["+ i +"].Data["+ j +"].Name"));
+				dataItem.setValue(_ctx.stringValue("DescribeVodAIDataResponse.AIData["+ i +"].Data["+ j +"].Value"));
 
 				data.add(dataItem);
 			}

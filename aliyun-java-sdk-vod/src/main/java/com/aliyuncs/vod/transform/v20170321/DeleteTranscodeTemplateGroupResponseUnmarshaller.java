@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteTranscodeTemplateGroupResponseUnmarshaller {
 
-	public static DeleteTranscodeTemplateGroupResponse unmarshall(DeleteTranscodeTemplateGroupResponse deleteTranscodeTemplateGroupResponse, UnmarshallerContext context) {
+	public static DeleteTranscodeTemplateGroupResponse unmarshall(DeleteTranscodeTemplateGroupResponse deleteTranscodeTemplateGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteTranscodeTemplateGroupResponse.setRequestId(context.stringValue("DeleteTranscodeTemplateGroupResponse.RequestId"));
+		deleteTranscodeTemplateGroupResponse.setRequestId(_ctx.stringValue("DeleteTranscodeTemplateGroupResponse.RequestId"));
 
 		List<String> nonExistTranscodeTemplateIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DeleteTranscodeTemplateGroupResponse.NonExistTranscodeTemplateIds.Length"); i++) {
-			nonExistTranscodeTemplateIds.add(context.stringValue("DeleteTranscodeTemplateGroupResponse.NonExistTranscodeTemplateIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DeleteTranscodeTemplateGroupResponse.NonExistTranscodeTemplateIds.Length"); i++) {
+			nonExistTranscodeTemplateIds.add(_ctx.stringValue("DeleteTranscodeTemplateGroupResponse.NonExistTranscodeTemplateIds["+ i +"]"));
 		}
 		deleteTranscodeTemplateGroupResponse.setNonExistTranscodeTemplateIds(nonExistTranscodeTemplateIds);
 	 

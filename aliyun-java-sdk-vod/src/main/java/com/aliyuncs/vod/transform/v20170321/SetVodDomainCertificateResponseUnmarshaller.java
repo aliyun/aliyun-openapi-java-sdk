@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetVodDomainCertificateResponseUnmarshaller {
 
-	public static SetVodDomainCertificateResponse unmarshall(SetVodDomainCertificateResponse setVodDomainCertificateResponse, UnmarshallerContext context) {
+	public static SetVodDomainCertificateResponse unmarshall(SetVodDomainCertificateResponse setVodDomainCertificateResponse, UnmarshallerContext _ctx) {
 		
-		setVodDomainCertificateResponse.setRequestId(context.stringValue("SetVodDomainCertificateResponse.RequestId"));
+		setVodDomainCertificateResponse.setRequestId(_ctx.stringValue("SetVodDomainCertificateResponse.RequestId"));
 	 
 	 	return setVodDomainCertificateResponse;
 	}

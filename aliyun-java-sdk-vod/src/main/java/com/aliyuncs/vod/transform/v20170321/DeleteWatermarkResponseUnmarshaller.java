@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteWatermarkResponseUnmarshaller {
 
-	public static DeleteWatermarkResponse unmarshall(DeleteWatermarkResponse deleteWatermarkResponse, UnmarshallerContext context) {
+	public static DeleteWatermarkResponse unmarshall(DeleteWatermarkResponse deleteWatermarkResponse, UnmarshallerContext _ctx) {
 		
-		deleteWatermarkResponse.setRequestId(context.stringValue("DeleteWatermarkResponse.RequestId"));
+		deleteWatermarkResponse.setRequestId(_ctx.stringValue("DeleteWatermarkResponse.RequestId"));
 	 
 	 	return deleteWatermarkResponse;
 	}

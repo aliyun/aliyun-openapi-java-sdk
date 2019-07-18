@@ -24,37 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetEditingProjectMaterialsResponseUnmarshaller {
 
-	public static GetEditingProjectMaterialsResponse unmarshall(GetEditingProjectMaterialsResponse getEditingProjectMaterialsResponse, UnmarshallerContext context) {
+	public static GetEditingProjectMaterialsResponse unmarshall(GetEditingProjectMaterialsResponse getEditingProjectMaterialsResponse, UnmarshallerContext _ctx) {
 		
-		getEditingProjectMaterialsResponse.setRequestId(context.stringValue("GetEditingProjectMaterialsResponse.RequestId"));
+		getEditingProjectMaterialsResponse.setRequestId(_ctx.stringValue("GetEditingProjectMaterialsResponse.RequestId"));
 
 		List<Material> materialList = new ArrayList<Material>();
-		for (int i = 0; i < context.lengthValue("GetEditingProjectMaterialsResponse.MaterialList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetEditingProjectMaterialsResponse.MaterialList.Length"); i++) {
 			Material material = new Material();
-			material.setMaterialId(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].MaterialId"));
-			material.setTitle(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Title"));
-			material.setTags(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Tags"));
-			material.setStatus(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Status"));
-			material.setSize(context.longValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Size"));
-			material.setDuration(context.floatValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Duration"));
-			material.setDescription(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Description"));
-			material.setCreationTime(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CreationTime"));
-			material.setModifiedTime(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].ModifiedTime"));
-			material.setCoverURL(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CoverURL"));
-			material.setCateId(context.integerValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateId"));
-			material.setCateName(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateName"));
-			material.setSource(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Source"));
-			material.setSpriteConfig(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].SpriteConfig"));
+			material.setMaterialId(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].MaterialId"));
+			material.setTitle(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Title"));
+			material.setTags(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Tags"));
+			material.setStatus(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Status"));
+			material.setSize(_ctx.longValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Size"));
+			material.setDuration(_ctx.floatValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Duration"));
+			material.setDescription(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Description"));
+			material.setCreationTime(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CreationTime"));
+			material.setModifiedTime(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].ModifiedTime"));
+			material.setCoverURL(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CoverURL"));
+			material.setCateId(_ctx.integerValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateId"));
+			material.setCateName(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].CateName"));
+			material.setSource(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Source"));
+			material.setSpriteConfig(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].SpriteConfig"));
 
 			List<String> snapshots = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots.Length"); j++) {
-				snapshots.add(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots.Length"); j++) {
+				snapshots.add(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Snapshots["+ j +"]"));
 			}
 			material.setSnapshots(snapshots);
 
 			List<String> sprites = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Sprites.Length"); j++) {
-				sprites.add(context.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Sprites["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Sprites.Length"); j++) {
+				sprites.add(_ctx.stringValue("GetEditingProjectMaterialsResponse.MaterialList["+ i +"].Sprites["+ j +"]"));
 			}
 			material.setSprites(sprites);
 

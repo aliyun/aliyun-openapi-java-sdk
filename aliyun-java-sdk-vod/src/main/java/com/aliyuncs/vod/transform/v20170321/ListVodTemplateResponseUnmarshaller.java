@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListVodTemplateResponseUnmarshaller {
 
-	public static ListVodTemplateResponse unmarshall(ListVodTemplateResponse listVodTemplateResponse, UnmarshallerContext context) {
+	public static ListVodTemplateResponse unmarshall(ListVodTemplateResponse listVodTemplateResponse, UnmarshallerContext _ctx) {
 		
-		listVodTemplateResponse.setRequestId(context.stringValue("ListVodTemplateResponse.RequestId"));
+		listVodTemplateResponse.setRequestId(_ctx.stringValue("ListVodTemplateResponse.RequestId"));
 
 		List<VodTemplateInfo> vodTemplateInfoList = new ArrayList<VodTemplateInfo>();
-		for (int i = 0; i < context.lengthValue("ListVodTemplateResponse.VodTemplateInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListVodTemplateResponse.VodTemplateInfoList.Length"); i++) {
 			VodTemplateInfo vodTemplateInfo = new VodTemplateInfo();
-			vodTemplateInfo.setName(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].Name"));
-			vodTemplateInfo.setVodTemplateId(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].VodTemplateId"));
-			vodTemplateInfo.setTemplateType(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].TemplateType"));
-			vodTemplateInfo.setSubTemplateType(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].SubTemplateType"));
-			vodTemplateInfo.setSource(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].Source"));
-			vodTemplateInfo.setIsDefault(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].IsDefault"));
-			vodTemplateInfo.setTemplateConfig(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].TemplateConfig"));
-			vodTemplateInfo.setCreationTime(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].CreationTime"));
-			vodTemplateInfo.setModifyTime(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].ModifyTime"));
-			vodTemplateInfo.setAppId(context.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].AppId"));
+			vodTemplateInfo.setName(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].Name"));
+			vodTemplateInfo.setVodTemplateId(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].VodTemplateId"));
+			vodTemplateInfo.setTemplateType(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].TemplateType"));
+			vodTemplateInfo.setSubTemplateType(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].SubTemplateType"));
+			vodTemplateInfo.setSource(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].Source"));
+			vodTemplateInfo.setIsDefault(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].IsDefault"));
+			vodTemplateInfo.setTemplateConfig(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].TemplateConfig"));
+			vodTemplateInfo.setCreationTime(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].CreationTime"));
+			vodTemplateInfo.setModifyTime(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].ModifyTime"));
+			vodTemplateInfo.setAppId(_ctx.stringValue("ListVodTemplateResponse.VodTemplateInfoList["+ i +"].AppId"));
 
 			vodTemplateInfoList.add(vodTemplateInfo);
 		}

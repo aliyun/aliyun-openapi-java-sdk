@@ -23,19 +23,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AttachAppPolicyToIdentityResponseUnmarshaller {
 
-	public static AttachAppPolicyToIdentityResponse unmarshall(AttachAppPolicyToIdentityResponse attachAppPolicyToIdentityResponse, UnmarshallerContext context) {
+	public static AttachAppPolicyToIdentityResponse unmarshall(AttachAppPolicyToIdentityResponse attachAppPolicyToIdentityResponse, UnmarshallerContext _ctx) {
 		
-		attachAppPolicyToIdentityResponse.setRequestId(context.stringValue("AttachAppPolicyToIdentityResponse.RequestId"));
+		attachAppPolicyToIdentityResponse.setRequestId(_ctx.stringValue("AttachAppPolicyToIdentityResponse.RequestId"));
 
 		List<String> nonExistPolicyNames = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("AttachAppPolicyToIdentityResponse.NonExistPolicyNames.Length"); i++) {
-			nonExistPolicyNames.add(context.stringValue("AttachAppPolicyToIdentityResponse.NonExistPolicyNames["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("AttachAppPolicyToIdentityResponse.NonExistPolicyNames.Length"); i++) {
+			nonExistPolicyNames.add(_ctx.stringValue("AttachAppPolicyToIdentityResponse.NonExistPolicyNames["+ i +"]"));
 		}
 		attachAppPolicyToIdentityResponse.setNonExistPolicyNames(nonExistPolicyNames);
 
 		List<String> failedPolicyNames = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("AttachAppPolicyToIdentityResponse.FailedPolicyNames.Length"); i++) {
-			failedPolicyNames.add(context.stringValue("AttachAppPolicyToIdentityResponse.FailedPolicyNames["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("AttachAppPolicyToIdentityResponse.FailedPolicyNames.Length"); i++) {
+			failedPolicyNames.add(_ctx.stringValue("AttachAppPolicyToIdentityResponse.FailedPolicyNames["+ i +"]"));
 		}
 		attachAppPolicyToIdentityResponse.setFailedPolicyNames(failedPolicyNames);
 	 

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetEditingProjectMaterialsResponseUnmarshaller {
 
-	public static SetEditingProjectMaterialsResponse unmarshall(SetEditingProjectMaterialsResponse setEditingProjectMaterialsResponse, UnmarshallerContext context) {
+	public static SetEditingProjectMaterialsResponse unmarshall(SetEditingProjectMaterialsResponse setEditingProjectMaterialsResponse, UnmarshallerContext _ctx) {
 		
-		setEditingProjectMaterialsResponse.setRequestId(context.stringValue("SetEditingProjectMaterialsResponse.RequestId"));
+		setEditingProjectMaterialsResponse.setRequestId(_ctx.stringValue("SetEditingProjectMaterialsResponse.RequestId"));
 	 
 	 	return setEditingProjectMaterialsResponse;
 	}

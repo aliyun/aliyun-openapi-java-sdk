@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchStopVodDomainResponseUnmarshaller {
 
-	public static BatchStopVodDomainResponse unmarshall(BatchStopVodDomainResponse batchStopVodDomainResponse, UnmarshallerContext context) {
+	public static BatchStopVodDomainResponse unmarshall(BatchStopVodDomainResponse batchStopVodDomainResponse, UnmarshallerContext _ctx) {
 		
-		batchStopVodDomainResponse.setRequestId(context.stringValue("BatchStopVodDomainResponse.RequestId"));
+		batchStopVodDomainResponse.setRequestId(_ctx.stringValue("BatchStopVodDomainResponse.RequestId"));
 	 
 	 	return batchStopVodDomainResponse;
 	}

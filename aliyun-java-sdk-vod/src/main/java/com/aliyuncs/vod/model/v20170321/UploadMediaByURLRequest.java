@@ -26,19 +26,9 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		super("vod", "2017-03-21", "UploadMediaByURL", "vod");
 	}
 
-	private String userData;
-
 	private Long resourceOwnerId;
 
-	private String templateGroupId;
-
-	private String uploadMetadatas;
-
 	private String resourceOwnerAccount;
-
-	private String uploadURLs;
-
-	private String appId;
 
 	private String messageCallback;
 
@@ -48,16 +38,17 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 
 	private String storageLocation;
 
-	public String getUserData() {
-		return this.userData;
-	}
+	private String userData;
 
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
+	private String templateGroupId;
+
+	private String uploadMetadatas;
+
+	private String uploadURLs;
+
+	private String appId;
+
+	private String workflowId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -70,28 +61,6 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		}
 	}
 
-	public String getTemplateGroupId() {
-		return this.templateGroupId;
-	}
-
-	public void setTemplateGroupId(String templateGroupId) {
-		this.templateGroupId = templateGroupId;
-		if(templateGroupId != null){
-			putQueryParameter("TemplateGroupId", templateGroupId);
-		}
-	}
-
-	public String getUploadMetadatas() {
-		return this.uploadMetadatas;
-	}
-
-	public void setUploadMetadatas(String uploadMetadatas) {
-		this.uploadMetadatas = uploadMetadatas;
-		if(uploadMetadatas != null){
-			putQueryParameter("UploadMetadatas", uploadMetadatas);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -100,28 +69,6 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getUploadURLs() {
-		return this.uploadURLs;
-	}
-
-	public void setUploadURLs(String uploadURLs) {
-		this.uploadURLs = uploadURLs;
-		if(uploadURLs != null){
-			putQueryParameter("UploadURLs", uploadURLs);
-		}
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
 		}
 	}
 
@@ -166,6 +113,72 @@ public class UploadMediaByURLRequest extends RpcAcsRequest<UploadMediaByURLRespo
 		this.storageLocation = storageLocation;
 		if(storageLocation != null){
 			putQueryParameter("StorageLocation", storageLocation);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getTemplateGroupId() {
+		return this.templateGroupId;
+	}
+
+	public void setTemplateGroupId(String templateGroupId) {
+		this.templateGroupId = templateGroupId;
+		if(templateGroupId != null){
+			putQueryParameter("TemplateGroupId", templateGroupId);
+		}
+	}
+
+	public String getUploadMetadatas() {
+		return this.uploadMetadatas;
+	}
+
+	public void setUploadMetadatas(String uploadMetadatas) {
+		this.uploadMetadatas = uploadMetadatas;
+		if(uploadMetadatas != null){
+			putQueryParameter("UploadMetadatas", uploadMetadatas);
+		}
+	}
+
+	public String getUploadURLs() {
+		return this.uploadURLs;
+	}
+
+	public void setUploadURLs(String uploadURLs) {
+		this.uploadURLs = uploadURLs;
+		if(uploadURLs != null){
+			putQueryParameter("UploadURLs", uploadURLs);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getWorkflowId() {
+		return this.workflowId;
+	}
+
+	public void setWorkflowId(String workflowId) {
+		this.workflowId = workflowId;
+		if(workflowId != null){
+			putQueryParameter("WorkflowId", workflowId);
 		}
 	}
 

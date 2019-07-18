@@ -25,31 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVodDomainDetailResponseUnmarshaller {
 
-	public static DescribeVodDomainDetailResponse unmarshall(DescribeVodDomainDetailResponse describeVodDomainDetailResponse, UnmarshallerContext context) {
+	public static DescribeVodDomainDetailResponse unmarshall(DescribeVodDomainDetailResponse describeVodDomainDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeVodDomainDetailResponse.setRequestId(context.stringValue("DescribeVodDomainDetailResponse.RequestId"));
+		describeVodDomainDetailResponse.setRequestId(_ctx.stringValue("DescribeVodDomainDetailResponse.RequestId"));
 
 		DomainDetail domainDetail = new DomainDetail();
-		domainDetail.setGmtCreated(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.GmtCreated"));
-		domainDetail.setGmtModified(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.GmtModified"));
-		domainDetail.setDomainStatus(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.DomainStatus"));
-		domainDetail.setCname(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Cname"));
-		domainDetail.setDomainName(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.DomainName"));
-		domainDetail.setDescription(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Description"));
-		domainDetail.setSSLProtocol(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.SSLProtocol"));
-		domainDetail.setSSLPub(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.SSLPub"));
-		domainDetail.setScope(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Scope"));
-		domainDetail.setCertName(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.CertName"));
-		domainDetail.setWeight(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Weight"));
+		domainDetail.setGmtCreated(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.GmtCreated"));
+		domainDetail.setGmtModified(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.GmtModified"));
+		domainDetail.setDomainStatus(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.DomainStatus"));
+		domainDetail.setCname(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Cname"));
+		domainDetail.setDomainName(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.DomainName"));
+		domainDetail.setDescription(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Description"));
+		domainDetail.setSSLProtocol(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.SSLProtocol"));
+		domainDetail.setSSLPub(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.SSLPub"));
+		domainDetail.setScope(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Scope"));
+		domainDetail.setCertName(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.CertName"));
+		domainDetail.setWeight(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Weight"));
 
 		List<Source> sources = new ArrayList<Source>();
-		for (int i = 0; i < context.lengthValue("DescribeVodDomainDetailResponse.DomainDetail.Sources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVodDomainDetailResponse.DomainDetail.Sources.Length"); i++) {
 			Source source = new Source();
-			source.setContent(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Content"));
-			source.setType(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Type"));
-			source.setPort(context.integerValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Port"));
-			source.setEnabled(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Enabled"));
-			source.setPriority(context.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Priority"));
+			source.setContent(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Content"));
+			source.setType(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Type"));
+			source.setPort(_ctx.integerValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Port"));
+			source.setEnabled(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Enabled"));
+			source.setPriority(_ctx.stringValue("DescribeVodDomainDetailResponse.DomainDetail.Sources["+ i +"].Priority"));
 
 			sources.add(source);
 		}

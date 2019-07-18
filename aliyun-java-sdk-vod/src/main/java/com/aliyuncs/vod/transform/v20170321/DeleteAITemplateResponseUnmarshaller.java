@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteAITemplateResponseUnmarshaller {
 
-	public static DeleteAITemplateResponse unmarshall(DeleteAITemplateResponse deleteAITemplateResponse, UnmarshallerContext context) {
+	public static DeleteAITemplateResponse unmarshall(DeleteAITemplateResponse deleteAITemplateResponse, UnmarshallerContext _ctx) {
 		
-		deleteAITemplateResponse.setRequestId(context.stringValue("DeleteAITemplateResponse.RequestId"));
-		deleteAITemplateResponse.setTemplateId(context.stringValue("DeleteAITemplateResponse.TemplateId"));
+		deleteAITemplateResponse.setRequestId(_ctx.stringValue("DeleteAITemplateResponse.RequestId"));
+		deleteAITemplateResponse.setTemplateId(_ctx.stringValue("DeleteAITemplateResponse.TemplateId"));
 	 
 	 	return deleteAITemplateResponse;
 	}

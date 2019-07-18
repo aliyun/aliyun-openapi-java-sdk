@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateUploadAttachedMediaResponseUnmarshaller {
 
-	public static CreateUploadAttachedMediaResponse unmarshall(CreateUploadAttachedMediaResponse createUploadAttachedMediaResponse, UnmarshallerContext context) {
+	public static CreateUploadAttachedMediaResponse unmarshall(CreateUploadAttachedMediaResponse createUploadAttachedMediaResponse, UnmarshallerContext _ctx) {
 		
-		createUploadAttachedMediaResponse.setRequestId(context.stringValue("CreateUploadAttachedMediaResponse.RequestId"));
-		createUploadAttachedMediaResponse.setMediaId(context.stringValue("CreateUploadAttachedMediaResponse.MediaId"));
-		createUploadAttachedMediaResponse.setMediaURL(context.stringValue("CreateUploadAttachedMediaResponse.MediaURL"));
-		createUploadAttachedMediaResponse.setUploadAddress(context.stringValue("CreateUploadAttachedMediaResponse.UploadAddress"));
-		createUploadAttachedMediaResponse.setUploadAuth(context.stringValue("CreateUploadAttachedMediaResponse.UploadAuth"));
-		createUploadAttachedMediaResponse.setFileURL(context.stringValue("CreateUploadAttachedMediaResponse.FileURL"));
+		createUploadAttachedMediaResponse.setRequestId(_ctx.stringValue("CreateUploadAttachedMediaResponse.RequestId"));
+		createUploadAttachedMediaResponse.setMediaId(_ctx.stringValue("CreateUploadAttachedMediaResponse.MediaId"));
+		createUploadAttachedMediaResponse.setMediaURL(_ctx.stringValue("CreateUploadAttachedMediaResponse.MediaURL"));
+		createUploadAttachedMediaResponse.setUploadAddress(_ctx.stringValue("CreateUploadAttachedMediaResponse.UploadAddress"));
+		createUploadAttachedMediaResponse.setUploadAuth(_ctx.stringValue("CreateUploadAttachedMediaResponse.UploadAuth"));
+		createUploadAttachedMediaResponse.setFileURL(_ctx.stringValue("CreateUploadAttachedMediaResponse.FileURL"));
 	 
 	 	return createUploadAttachedMediaResponse;
 	}

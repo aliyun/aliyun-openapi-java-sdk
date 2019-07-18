@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitAIMediaAuditJobResponseUnmarshaller {
 
-	public static SubmitAIMediaAuditJobResponse unmarshall(SubmitAIMediaAuditJobResponse submitAIMediaAuditJobResponse, UnmarshallerContext context) {
+	public static SubmitAIMediaAuditJobResponse unmarshall(SubmitAIMediaAuditJobResponse submitAIMediaAuditJobResponse, UnmarshallerContext _ctx) {
 		
-		submitAIMediaAuditJobResponse.setRequestId(context.stringValue("SubmitAIMediaAuditJobResponse.RequestId"));
-		submitAIMediaAuditJobResponse.setMediaId(context.stringValue("SubmitAIMediaAuditJobResponse.MediaId"));
-		submitAIMediaAuditJobResponse.setJobId(context.stringValue("SubmitAIMediaAuditJobResponse.JobId"));
+		submitAIMediaAuditJobResponse.setRequestId(_ctx.stringValue("SubmitAIMediaAuditJobResponse.RequestId"));
+		submitAIMediaAuditJobResponse.setMediaId(_ctx.stringValue("SubmitAIMediaAuditJobResponse.MediaId"));
+		submitAIMediaAuditJobResponse.setJobId(_ctx.stringValue("SubmitAIMediaAuditJobResponse.JobId"));
 	 
 	 	return submitAIMediaAuditJobResponse;
 	}

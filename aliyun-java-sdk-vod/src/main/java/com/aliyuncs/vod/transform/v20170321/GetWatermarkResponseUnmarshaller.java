@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetWatermarkResponseUnmarshaller {
 
-	public static GetWatermarkResponse unmarshall(GetWatermarkResponse getWatermarkResponse, UnmarshallerContext context) {
+	public static GetWatermarkResponse unmarshall(GetWatermarkResponse getWatermarkResponse, UnmarshallerContext _ctx) {
 		
-		getWatermarkResponse.setRequestId(context.stringValue("GetWatermarkResponse.RequestId"));
+		getWatermarkResponse.setRequestId(_ctx.stringValue("GetWatermarkResponse.RequestId"));
 
 		WatermarkInfo watermarkInfo = new WatermarkInfo();
-		watermarkInfo.setCreationTime(context.stringValue("GetWatermarkResponse.WatermarkInfo.CreationTime"));
-		watermarkInfo.setType(context.stringValue("GetWatermarkResponse.WatermarkInfo.Type"));
-		watermarkInfo.setIsDefault(context.stringValue("GetWatermarkResponse.WatermarkInfo.IsDefault"));
-		watermarkInfo.setWatermarkId(context.stringValue("GetWatermarkResponse.WatermarkInfo.WatermarkId"));
-		watermarkInfo.setName(context.stringValue("GetWatermarkResponse.WatermarkInfo.Name"));
-		watermarkInfo.setFileUrl(context.stringValue("GetWatermarkResponse.WatermarkInfo.FileUrl"));
-		watermarkInfo.setWatermarkConfig(context.stringValue("GetWatermarkResponse.WatermarkInfo.WatermarkConfig"));
-		watermarkInfo.setAppId(context.stringValue("GetWatermarkResponse.WatermarkInfo.AppId"));
+		watermarkInfo.setCreationTime(_ctx.stringValue("GetWatermarkResponse.WatermarkInfo.CreationTime"));
+		watermarkInfo.setType(_ctx.stringValue("GetWatermarkResponse.WatermarkInfo.Type"));
+		watermarkInfo.setIsDefault(_ctx.stringValue("GetWatermarkResponse.WatermarkInfo.IsDefault"));
+		watermarkInfo.setWatermarkId(_ctx.stringValue("GetWatermarkResponse.WatermarkInfo.WatermarkId"));
+		watermarkInfo.setName(_ctx.stringValue("GetWatermarkResponse.WatermarkInfo.Name"));
+		watermarkInfo.setFileUrl(_ctx.stringValue("GetWatermarkResponse.WatermarkInfo.FileUrl"));
+		watermarkInfo.setWatermarkConfig(_ctx.stringValue("GetWatermarkResponse.WatermarkInfo.WatermarkConfig"));
+		watermarkInfo.setAppId(_ctx.stringValue("GetWatermarkResponse.WatermarkInfo.AppId"));
 		getWatermarkResponse.setWatermarkInfo(watermarkInfo);
 	 
 	 	return getWatermarkResponse;

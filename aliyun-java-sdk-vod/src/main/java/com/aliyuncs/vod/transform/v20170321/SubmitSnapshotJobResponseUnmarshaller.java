@@ -21,12 +21,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitSnapshotJobResponseUnmarshaller {
 
-	public static SubmitSnapshotJobResponse unmarshall(SubmitSnapshotJobResponse submitSnapshotJobResponse, UnmarshallerContext context) {
+	public static SubmitSnapshotJobResponse unmarshall(SubmitSnapshotJobResponse submitSnapshotJobResponse, UnmarshallerContext _ctx) {
 		
-		submitSnapshotJobResponse.setRequestId(context.stringValue("SubmitSnapshotJobResponse.RequestId"));
+		submitSnapshotJobResponse.setRequestId(_ctx.stringValue("SubmitSnapshotJobResponse.RequestId"));
 
 		SnapshotJob snapshotJob = new SnapshotJob();
-		snapshotJob.setJobId(context.stringValue("SubmitSnapshotJobResponse.SnapshotJob.JobId"));
+		snapshotJob.setJobId(_ctx.stringValue("SubmitSnapshotJobResponse.SnapshotJob.JobId"));
 		submitSnapshotJobResponse.setSnapshotJob(snapshotJob);
 	 
 	 	return submitSnapshotJobResponse;

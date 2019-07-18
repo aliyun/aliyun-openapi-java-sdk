@@ -23,19 +23,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMezzaninesResponseUnmarshaller {
 
-	public static DeleteMezzaninesResponse unmarshall(DeleteMezzaninesResponse deleteMezzaninesResponse, UnmarshallerContext context) {
+	public static DeleteMezzaninesResponse unmarshall(DeleteMezzaninesResponse deleteMezzaninesResponse, UnmarshallerContext _ctx) {
 		
-		deleteMezzaninesResponse.setRequestId(context.stringValue("DeleteMezzaninesResponse.RequestId"));
+		deleteMezzaninesResponse.setRequestId(_ctx.stringValue("DeleteMezzaninesResponse.RequestId"));
 
 		List<String> nonExistVideoIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DeleteMezzaninesResponse.NonExistVideoIds.Length"); i++) {
-			nonExistVideoIds.add(context.stringValue("DeleteMezzaninesResponse.NonExistVideoIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DeleteMezzaninesResponse.NonExistVideoIds.Length"); i++) {
+			nonExistVideoIds.add(_ctx.stringValue("DeleteMezzaninesResponse.NonExistVideoIds["+ i +"]"));
 		}
 		deleteMezzaninesResponse.setNonExistVideoIds(nonExistVideoIds);
 
 		List<String> unRemoveableVideoIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DeleteMezzaninesResponse.UnRemoveableVideoIds.Length"); i++) {
-			unRemoveableVideoIds.add(context.stringValue("DeleteMezzaninesResponse.UnRemoveableVideoIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DeleteMezzaninesResponse.UnRemoveableVideoIds.Length"); i++) {
+			unRemoveableVideoIds.add(_ctx.stringValue("DeleteMezzaninesResponse.UnRemoveableVideoIds["+ i +"]"));
 		}
 		deleteMezzaninesResponse.setUnRemoveableVideoIds(unRemoveableVideoIds);
 	 

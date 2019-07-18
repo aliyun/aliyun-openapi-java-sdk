@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RefreshUploadVideoResponseUnmarshaller {
 
-	public static RefreshUploadVideoResponse unmarshall(RefreshUploadVideoResponse refreshUploadVideoResponse, UnmarshallerContext context) {
+	public static RefreshUploadVideoResponse unmarshall(RefreshUploadVideoResponse refreshUploadVideoResponse, UnmarshallerContext _ctx) {
 		
-		refreshUploadVideoResponse.setRequestId(context.stringValue("RefreshUploadVideoResponse.RequestId"));
-		refreshUploadVideoResponse.setUploadAuth(context.stringValue("RefreshUploadVideoResponse.UploadAuth"));
-		refreshUploadVideoResponse.setUploadAddress(context.stringValue("RefreshUploadVideoResponse.UploadAddress"));
-		refreshUploadVideoResponse.setVideoId(context.stringValue("RefreshUploadVideoResponse.VideoId"));
+		refreshUploadVideoResponse.setRequestId(_ctx.stringValue("RefreshUploadVideoResponse.RequestId"));
+		refreshUploadVideoResponse.setUploadAuth(_ctx.stringValue("RefreshUploadVideoResponse.UploadAuth"));
+		refreshUploadVideoResponse.setUploadAddress(_ctx.stringValue("RefreshUploadVideoResponse.UploadAddress"));
+		refreshUploadVideoResponse.setVideoId(_ctx.stringValue("RefreshUploadVideoResponse.VideoId"));
 	 
 	 	return refreshUploadVideoResponse;
 	}

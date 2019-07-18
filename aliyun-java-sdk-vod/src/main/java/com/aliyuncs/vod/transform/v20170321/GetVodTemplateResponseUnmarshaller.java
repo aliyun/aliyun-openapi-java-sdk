@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetVodTemplateResponseUnmarshaller {
 
-	public static GetVodTemplateResponse unmarshall(GetVodTemplateResponse getVodTemplateResponse, UnmarshallerContext context) {
+	public static GetVodTemplateResponse unmarshall(GetVodTemplateResponse getVodTemplateResponse, UnmarshallerContext _ctx) {
 		
-		getVodTemplateResponse.setRequestId(context.stringValue("GetVodTemplateResponse.RequestId"));
+		getVodTemplateResponse.setRequestId(_ctx.stringValue("GetVodTemplateResponse.RequestId"));
 
 		VodTemplateInfo vodTemplateInfo = new VodTemplateInfo();
-		vodTemplateInfo.setName(context.stringValue("GetVodTemplateResponse.VodTemplateInfo.Name"));
-		vodTemplateInfo.setVodTemplateId(context.stringValue("GetVodTemplateResponse.VodTemplateInfo.VodTemplateId"));
-		vodTemplateInfo.setTemplateType(context.stringValue("GetVodTemplateResponse.VodTemplateInfo.TemplateType"));
-		vodTemplateInfo.setSubTemplateType(context.stringValue("GetVodTemplateResponse.VodTemplateInfo.SubTemplateType"));
-		vodTemplateInfo.setSource(context.stringValue("GetVodTemplateResponse.VodTemplateInfo.Source"));
-		vodTemplateInfo.setIsDefault(context.stringValue("GetVodTemplateResponse.VodTemplateInfo.IsDefault"));
-		vodTemplateInfo.setTemplateConfig(context.stringValue("GetVodTemplateResponse.VodTemplateInfo.TemplateConfig"));
-		vodTemplateInfo.setCreationTime(context.stringValue("GetVodTemplateResponse.VodTemplateInfo.CreationTime"));
-		vodTemplateInfo.setModifyTime(context.stringValue("GetVodTemplateResponse.VodTemplateInfo.ModifyTime"));
+		vodTemplateInfo.setName(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.Name"));
+		vodTemplateInfo.setVodTemplateId(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.VodTemplateId"));
+		vodTemplateInfo.setTemplateType(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.TemplateType"));
+		vodTemplateInfo.setSubTemplateType(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.SubTemplateType"));
+		vodTemplateInfo.setSource(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.Source"));
+		vodTemplateInfo.setIsDefault(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.IsDefault"));
+		vodTemplateInfo.setTemplateConfig(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.TemplateConfig"));
+		vodTemplateInfo.setCreationTime(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.CreationTime"));
+		vodTemplateInfo.setModifyTime(_ctx.stringValue("GetVodTemplateResponse.VodTemplateInfo.ModifyTime"));
 		getVodTemplateResponse.setVodTemplateInfo(vodTemplateInfo);
 	 
 	 	return getVodTemplateResponse;

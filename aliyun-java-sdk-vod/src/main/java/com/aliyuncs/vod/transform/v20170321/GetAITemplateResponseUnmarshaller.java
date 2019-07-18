@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAITemplateResponseUnmarshaller {
 
-	public static GetAITemplateResponse unmarshall(GetAITemplateResponse getAITemplateResponse, UnmarshallerContext context) {
+	public static GetAITemplateResponse unmarshall(GetAITemplateResponse getAITemplateResponse, UnmarshallerContext _ctx) {
 		
-		getAITemplateResponse.setRequestId(context.stringValue("GetAITemplateResponse.RequestId"));
+		getAITemplateResponse.setRequestId(_ctx.stringValue("GetAITemplateResponse.RequestId"));
 
 		TemplateInfo templateInfo = new TemplateInfo();
-		templateInfo.setTemplateId(context.stringValue("GetAITemplateResponse.TemplateInfo.TemplateId"));
-		templateInfo.setTemplateType(context.stringValue("GetAITemplateResponse.TemplateInfo.TemplateType"));
-		templateInfo.setTemplateName(context.stringValue("GetAITemplateResponse.TemplateInfo.TemplateName"));
-		templateInfo.setTemplateConfig(context.stringValue("GetAITemplateResponse.TemplateInfo.TemplateConfig"));
-		templateInfo.setSource(context.stringValue("GetAITemplateResponse.TemplateInfo.Source"));
-		templateInfo.setIsDefault(context.stringValue("GetAITemplateResponse.TemplateInfo.IsDefault"));
-		templateInfo.setCreationTime(context.stringValue("GetAITemplateResponse.TemplateInfo.CreationTime"));
-		templateInfo.setModifyTime(context.stringValue("GetAITemplateResponse.TemplateInfo.ModifyTime"));
+		templateInfo.setTemplateId(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateId"));
+		templateInfo.setTemplateType(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateType"));
+		templateInfo.setTemplateName(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateName"));
+		templateInfo.setTemplateConfig(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.TemplateConfig"));
+		templateInfo.setSource(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.Source"));
+		templateInfo.setIsDefault(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.IsDefault"));
+		templateInfo.setCreationTime(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.CreationTime"));
+		templateInfo.setModifyTime(_ctx.stringValue("GetAITemplateResponse.TemplateInfo.ModifyTime"));
 		getAITemplateResponse.setTemplateInfo(templateInfo);
 	 
 	 	return getAITemplateResponse;

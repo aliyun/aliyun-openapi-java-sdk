@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetURLUploadInfosResponseUnmarshaller {
 
-	public static GetURLUploadInfosResponse unmarshall(GetURLUploadInfosResponse getURLUploadInfosResponse, UnmarshallerContext context) {
+	public static GetURLUploadInfosResponse unmarshall(GetURLUploadInfosResponse getURLUploadInfosResponse, UnmarshallerContext _ctx) {
 		
-		getURLUploadInfosResponse.setRequestId(context.stringValue("GetURLUploadInfosResponse.RequestId"));
+		getURLUploadInfosResponse.setRequestId(_ctx.stringValue("GetURLUploadInfosResponse.RequestId"));
 
 		List<String> nonExists = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetURLUploadInfosResponse.NonExists.Length"); i++) {
-			nonExists.add(context.stringValue("GetURLUploadInfosResponse.NonExists["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetURLUploadInfosResponse.NonExists.Length"); i++) {
+			nonExists.add(_ctx.stringValue("GetURLUploadInfosResponse.NonExists["+ i +"]"));
 		}
 		getURLUploadInfosResponse.setNonExists(nonExists);
 
 		List<UrlUploadJobInfoDTO> uRLUploadInfoList = new ArrayList<UrlUploadJobInfoDTO>();
-		for (int i = 0; i < context.lengthValue("GetURLUploadInfosResponse.URLUploadInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetURLUploadInfosResponse.URLUploadInfoList.Length"); i++) {
 			UrlUploadJobInfoDTO urlUploadJobInfoDTO = new UrlUploadJobInfoDTO();
-			urlUploadJobInfoDTO.setJobId(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].JobId"));
-			urlUploadJobInfoDTO.setUploadURL(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].UploadURL"));
-			urlUploadJobInfoDTO.setMediaId(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].MediaId"));
-			urlUploadJobInfoDTO.setFileSize(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].FileSize"));
-			urlUploadJobInfoDTO.setStatus(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].Status"));
-			urlUploadJobInfoDTO.setUserData(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].UserData"));
-			urlUploadJobInfoDTO.setErrorCode(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].ErrorCode"));
-			urlUploadJobInfoDTO.setErrorMessage(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].ErrorMessage"));
-			urlUploadJobInfoDTO.setCreationTime(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].CreationTime"));
-			urlUploadJobInfoDTO.setCompleteTime(context.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].CompleteTime"));
+			urlUploadJobInfoDTO.setJobId(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].JobId"));
+			urlUploadJobInfoDTO.setUploadURL(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].UploadURL"));
+			urlUploadJobInfoDTO.setMediaId(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].MediaId"));
+			urlUploadJobInfoDTO.setFileSize(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].FileSize"));
+			urlUploadJobInfoDTO.setStatus(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].Status"));
+			urlUploadJobInfoDTO.setUserData(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].UserData"));
+			urlUploadJobInfoDTO.setErrorCode(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].ErrorCode"));
+			urlUploadJobInfoDTO.setErrorMessage(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].ErrorMessage"));
+			urlUploadJobInfoDTO.setCreationTime(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].CreationTime"));
+			urlUploadJobInfoDTO.setCompleteTime(_ctx.stringValue("GetURLUploadInfosResponse.URLUploadInfoList["+ i +"].CompleteTime"));
 
 			uRLUploadInfoList.add(urlUploadJobInfoDTO);
 		}
