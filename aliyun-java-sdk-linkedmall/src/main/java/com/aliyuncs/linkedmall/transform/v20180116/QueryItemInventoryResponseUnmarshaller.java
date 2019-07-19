@@ -26,27 +26,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryItemInventoryResponseUnmarshaller {
 
-	public static QueryItemInventoryResponse unmarshall(QueryItemInventoryResponse queryItemInventoryResponse, UnmarshallerContext context) {
+	public static QueryItemInventoryResponse unmarshall(QueryItemInventoryResponse queryItemInventoryResponse, UnmarshallerContext _ctx) {
 		
-		queryItemInventoryResponse.setRequestId(context.stringValue("QueryItemInventoryResponse.RequestId"));
-		queryItemInventoryResponse.setCode(context.stringValue("QueryItemInventoryResponse.Code"));
-		queryItemInventoryResponse.setMessage(context.stringValue("QueryItemInventoryResponse.Message"));
-		queryItemInventoryResponse.setSubCode(context.stringValue("QueryItemInventoryResponse.SubCode"));
-		queryItemInventoryResponse.setSubMessage(context.stringValue("QueryItemInventoryResponse.SubMessage"));
-		queryItemInventoryResponse.setSuccess(context.booleanValue("QueryItemInventoryResponse.Success"));
+		queryItemInventoryResponse.setRequestId(_ctx.stringValue("QueryItemInventoryResponse.RequestId"));
+		queryItemInventoryResponse.setCode(_ctx.stringValue("QueryItemInventoryResponse.Code"));
+		queryItemInventoryResponse.setMessage(_ctx.stringValue("QueryItemInventoryResponse.Message"));
+		queryItemInventoryResponse.setSubCode(_ctx.stringValue("QueryItemInventoryResponse.SubCode"));
+		queryItemInventoryResponse.setSubMessage(_ctx.stringValue("QueryItemInventoryResponse.SubMessage"));
+		queryItemInventoryResponse.setSuccess(_ctx.booleanValue("QueryItemInventoryResponse.Success"));
 
 		List<Item> itemList = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("QueryItemInventoryResponse.ItemList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryItemInventoryResponse.ItemList.Length"); i++) {
 			Item item = new Item();
-			item.setItemId(context.longValue("QueryItemInventoryResponse.ItemList["+ i +"].ItemId"));
+			item.setItemId(_ctx.longValue("QueryItemInventoryResponse.ItemList["+ i +"].ItemId"));
 
 			List<Sku> skuList = new ArrayList<Sku>();
-			for (int j = 0; j < context.lengthValue("QueryItemInventoryResponse.ItemList["+ i +"].SkuList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryItemInventoryResponse.ItemList["+ i +"].SkuList.Length"); j++) {
 				Sku sku = new Sku();
-				sku.setSkuId(context.longValue("QueryItemInventoryResponse.ItemList["+ i +"].SkuList["+ j +"].SkuId"));
+				sku.setSkuId(_ctx.longValue("QueryItemInventoryResponse.ItemList["+ i +"].SkuList["+ j +"].SkuId"));
 
 				Inventory inventory = new Inventory();
-				inventory.setQuantity(context.longValue("QueryItemInventoryResponse.ItemList["+ i +"].SkuList["+ j +"].Inventory.Quantity"));
+				inventory.setQuantity(_ctx.longValue("QueryItemInventoryResponse.ItemList["+ i +"].SkuList["+ j +"].Inventory.Quantity"));
 				sku.setInventory(inventory);
 
 				skuList.add(sku);

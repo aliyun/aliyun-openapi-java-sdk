@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ConfirmDisburseResponseUnmarshaller {
 
-	public static ConfirmDisburseResponse unmarshall(ConfirmDisburseResponse confirmDisburseResponse, UnmarshallerContext context) {
+	public static ConfirmDisburseResponse unmarshall(ConfirmDisburseResponse confirmDisburseResponse, UnmarshallerContext _ctx) {
 		
-		confirmDisburseResponse.setRequestId(context.stringValue("ConfirmDisburseResponse.RequestId"));
-		confirmDisburseResponse.setCode(context.stringValue("ConfirmDisburseResponse.Code"));
-		confirmDisburseResponse.setMessage(context.stringValue("ConfirmDisburseResponse.Message"));
+		confirmDisburseResponse.setRequestId(_ctx.stringValue("ConfirmDisburseResponse.RequestId"));
+		confirmDisburseResponse.setCode(_ctx.stringValue("ConfirmDisburseResponse.Code"));
+		confirmDisburseResponse.setMessage(_ctx.stringValue("ConfirmDisburseResponse.Message"));
 	 
 	 	return confirmDisburseResponse;
 	}

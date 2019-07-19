@@ -24,46 +24,46 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryHotMoviesResponseUnmarshaller {
 
-	public static QueryHotMoviesResponse unmarshall(QueryHotMoviesResponse queryHotMoviesResponse, UnmarshallerContext context) {
+	public static QueryHotMoviesResponse unmarshall(QueryHotMoviesResponse queryHotMoviesResponse, UnmarshallerContext _ctx) {
 		
-		queryHotMoviesResponse.setRequestId(context.stringValue("QueryHotMoviesResponse.RequestId"));
-		queryHotMoviesResponse.setLogsId(context.stringValue("QueryHotMoviesResponse.LogsId"));
-		queryHotMoviesResponse.setSubCode(context.stringValue("QueryHotMoviesResponse.SubCode"));
-		queryHotMoviesResponse.setSubMessage(context.stringValue("QueryHotMoviesResponse.SubMessage"));
-		queryHotMoviesResponse.setCode(context.stringValue("QueryHotMoviesResponse.Code"));
-		queryHotMoviesResponse.setSuccess(context.booleanValue("QueryHotMoviesResponse.Success"));
-		queryHotMoviesResponse.setMessage(context.stringValue("QueryHotMoviesResponse.Message"));
+		queryHotMoviesResponse.setRequestId(_ctx.stringValue("QueryHotMoviesResponse.RequestId"));
+		queryHotMoviesResponse.setLogsId(_ctx.stringValue("QueryHotMoviesResponse.LogsId"));
+		queryHotMoviesResponse.setSubCode(_ctx.stringValue("QueryHotMoviesResponse.SubCode"));
+		queryHotMoviesResponse.setSubMessage(_ctx.stringValue("QueryHotMoviesResponse.SubMessage"));
+		queryHotMoviesResponse.setCode(_ctx.stringValue("QueryHotMoviesResponse.Code"));
+		queryHotMoviesResponse.setSuccess(_ctx.booleanValue("QueryHotMoviesResponse.Success"));
+		queryHotMoviesResponse.setMessage(_ctx.stringValue("QueryHotMoviesResponse.Message"));
 
 		List<Movie> movies = new ArrayList<Movie>();
-		for (int i = 0; i < context.lengthValue("QueryHotMoviesResponse.Movies.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryHotMoviesResponse.Movies.Length"); i++) {
 			Movie movie = new Movie();
-			movie.setBackgroundPicture(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].BackgroundPicture"));
-			movie.setCountry(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Country"));
-			movie.setDescription(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Description"));
-			movie.setDirector(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Director"));
-			movie.setDuration(context.longValue("QueryHotMoviesResponse.Movies["+ i +"].Duration"));
-			movie.setHighlight(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Highlight"));
-			movie.setId(context.longValue("QueryHotMoviesResponse.Movies["+ i +"].Id"));
-			movie.setLanguage(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Language"));
-			movie.setLeadingRole(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].LeadingRole"));
-			movie.setOpenDay(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].OpenDay"));
-			movie.setOpenTime(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].OpenTime"));
-			movie.setPoster(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Poster"));
-			movie.setRemark(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Remark"));
-			movie.setMovieVersion(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].MovieVersion"));
-			movie.setMovieName(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].MovieName"));
-			movie.setMovieNameEn(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].MovieNameEn"));
-			movie.setType(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Type"));
+			movie.setBackgroundPicture(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].BackgroundPicture"));
+			movie.setCountry(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Country"));
+			movie.setDescription(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Description"));
+			movie.setDirector(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Director"));
+			movie.setDuration(_ctx.longValue("QueryHotMoviesResponse.Movies["+ i +"].Duration"));
+			movie.setHighlight(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Highlight"));
+			movie.setId(_ctx.longValue("QueryHotMoviesResponse.Movies["+ i +"].Id"));
+			movie.setLanguage(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Language"));
+			movie.setLeadingRole(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].LeadingRole"));
+			movie.setOpenDay(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].OpenDay"));
+			movie.setOpenTime(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].OpenTime"));
+			movie.setPoster(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Poster"));
+			movie.setRemark(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Remark"));
+			movie.setMovieVersion(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].MovieVersion"));
+			movie.setMovieName(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].MovieName"));
+			movie.setMovieNameEn(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].MovieNameEn"));
+			movie.setType(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].Type"));
 
 			List<String> movieTypeList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("QueryHotMoviesResponse.Movies["+ i +"].MovieTypeList.Length"); j++) {
-				movieTypeList.add(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].MovieTypeList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("QueryHotMoviesResponse.Movies["+ i +"].MovieTypeList.Length"); j++) {
+				movieTypeList.add(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].MovieTypeList["+ j +"]"));
 			}
 			movie.setMovieTypeList(movieTypeList);
 
 			List<String> trailerList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("QueryHotMoviesResponse.Movies["+ i +"].TrailerList.Length"); j++) {
-				trailerList.add(context.stringValue("QueryHotMoviesResponse.Movies["+ i +"].TrailerList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("QueryHotMoviesResponse.Movies["+ i +"].TrailerList.Length"); j++) {
+				trailerList.add(_ctx.stringValue("QueryHotMoviesResponse.Movies["+ i +"].TrailerList["+ j +"]"));
 			}
 			movie.setTrailerList(trailerList);
 

@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCustomServiceUrlResponseUnmarshaller {
 
-	public static GetCustomServiceUrlResponse unmarshall(GetCustomServiceUrlResponse getCustomServiceUrlResponse, UnmarshallerContext context) {
+	public static GetCustomServiceUrlResponse unmarshall(GetCustomServiceUrlResponse getCustomServiceUrlResponse, UnmarshallerContext _ctx) {
 		
-		getCustomServiceUrlResponse.setRequestId(context.stringValue("GetCustomServiceUrlResponse.RequestId"));
-		getCustomServiceUrlResponse.setCode(context.stringValue("GetCustomServiceUrlResponse.Code"));
-		getCustomServiceUrlResponse.setMessage(context.stringValue("GetCustomServiceUrlResponse.Message"));
+		getCustomServiceUrlResponse.setRequestId(_ctx.stringValue("GetCustomServiceUrlResponse.RequestId"));
+		getCustomServiceUrlResponse.setCode(_ctx.stringValue("GetCustomServiceUrlResponse.Code"));
+		getCustomServiceUrlResponse.setMessage(_ctx.stringValue("GetCustomServiceUrlResponse.Message"));
 
 		UrlData urlData = new UrlData();
-		urlData.setReturnUrl(context.stringValue("GetCustomServiceUrlResponse.UrlData.ReturnUrl"));
+		urlData.setReturnUrl(_ctx.stringValue("GetCustomServiceUrlResponse.UrlData.ReturnUrl"));
 		getCustomServiceUrlResponse.setUrlData(urlData);
 	 
 	 	return getCustomServiceUrlResponse;

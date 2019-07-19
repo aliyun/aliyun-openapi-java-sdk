@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryGuideItemGroupResponseUnmarshaller {
 
-	public static QueryGuideItemGroupResponse unmarshall(QueryGuideItemGroupResponse queryGuideItemGroupResponse, UnmarshallerContext context) {
+	public static QueryGuideItemGroupResponse unmarshall(QueryGuideItemGroupResponse queryGuideItemGroupResponse, UnmarshallerContext _ctx) {
 		
-		queryGuideItemGroupResponse.setRequestId(context.stringValue("QueryGuideItemGroupResponse.RequestId"));
-		queryGuideItemGroupResponse.setCode(context.stringValue("QueryGuideItemGroupResponse.Code"));
-		queryGuideItemGroupResponse.setMessage(context.stringValue("QueryGuideItemGroupResponse.Message"));
-		queryGuideItemGroupResponse.setSubCode(context.stringValue("QueryGuideItemGroupResponse.SubCode"));
-		queryGuideItemGroupResponse.setSubMessage(context.stringValue("QueryGuideItemGroupResponse.SubMessage"));
-		queryGuideItemGroupResponse.setSuccess(context.booleanValue("QueryGuideItemGroupResponse.Success"));
+		queryGuideItemGroupResponse.setRequestId(_ctx.stringValue("QueryGuideItemGroupResponse.RequestId"));
+		queryGuideItemGroupResponse.setCode(_ctx.stringValue("QueryGuideItemGroupResponse.Code"));
+		queryGuideItemGroupResponse.setMessage(_ctx.stringValue("QueryGuideItemGroupResponse.Message"));
+		queryGuideItemGroupResponse.setSubCode(_ctx.stringValue("QueryGuideItemGroupResponse.SubCode"));
+		queryGuideItemGroupResponse.setSubMessage(_ctx.stringValue("QueryGuideItemGroupResponse.SubMessage"));
+		queryGuideItemGroupResponse.setSuccess(_ctx.booleanValue("QueryGuideItemGroupResponse.Success"));
 
 		List<ItemInfo> guideItemGroup = new ArrayList<ItemInfo>();
-		for (int i = 0; i < context.lengthValue("QueryGuideItemGroupResponse.GuideItemGroup.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryGuideItemGroupResponse.GuideItemGroup.Length"); i++) {
 			ItemInfo itemInfo = new ItemInfo();
-			itemInfo.setItemId(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ItemId"));
-			itemInfo.setItemTitle(context.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ItemTitle"));
-			itemInfo.setMainPicUrl(context.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].MainPicUrl"));
-			itemInfo.setItemUrl(context.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ItemUrl"));
-			itemInfo.setPriceCent(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PriceCent"));
-			itemInfo.setPoints(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].Points"));
-			itemInfo.setReservePrice(context.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ReservePrice"));
-			itemInfo.setPointsAmount(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PointsAmount"));
-			itemInfo.setPointPrice(context.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PointPrice"));
+			itemInfo.setItemId(_ctx.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ItemId"));
+			itemInfo.setItemTitle(_ctx.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ItemTitle"));
+			itemInfo.setMainPicUrl(_ctx.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].MainPicUrl"));
+			itemInfo.setItemUrl(_ctx.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ItemUrl"));
+			itemInfo.setPriceCent(_ctx.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PriceCent"));
+			itemInfo.setPoints(_ctx.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].Points"));
+			itemInfo.setReservePrice(_ctx.stringValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].ReservePrice"));
+			itemInfo.setPointsAmount(_ctx.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PointsAmount"));
+			itemInfo.setPointPrice(_ctx.longValue("QueryGuideItemGroupResponse.GuideItemGroup["+ i +"].PointPrice"));
 
 			guideItemGroup.add(itemInfo);
 		}

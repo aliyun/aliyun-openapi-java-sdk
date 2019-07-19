@@ -24,30 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAllCinemasResponseUnmarshaller {
 
-	public static QueryAllCinemasResponse unmarshall(QueryAllCinemasResponse queryAllCinemasResponse, UnmarshallerContext context) {
+	public static QueryAllCinemasResponse unmarshall(QueryAllCinemasResponse queryAllCinemasResponse, UnmarshallerContext _ctx) {
 		
-		queryAllCinemasResponse.setRequestId(context.stringValue("QueryAllCinemasResponse.RequestId"));
-		queryAllCinemasResponse.setCode(context.stringValue("QueryAllCinemasResponse.Code"));
-		queryAllCinemasResponse.setMessage(context.stringValue("QueryAllCinemasResponse.Message"));
-		queryAllCinemasResponse.setSubCode(context.stringValue("QueryAllCinemasResponse.SubCode"));
-		queryAllCinemasResponse.setSubMessage(context.stringValue("QueryAllCinemasResponse.SubMessage"));
-		queryAllCinemasResponse.setLogsId(context.stringValue("QueryAllCinemasResponse.LogsId"));
-		queryAllCinemasResponse.setSuccess(context.booleanValue("QueryAllCinemasResponse.Success"));
-		queryAllCinemasResponse.setTotalCount(context.longValue("QueryAllCinemasResponse.TotalCount"));
+		queryAllCinemasResponse.setRequestId(_ctx.stringValue("QueryAllCinemasResponse.RequestId"));
+		queryAllCinemasResponse.setCode(_ctx.stringValue("QueryAllCinemasResponse.Code"));
+		queryAllCinemasResponse.setMessage(_ctx.stringValue("QueryAllCinemasResponse.Message"));
+		queryAllCinemasResponse.setSubCode(_ctx.stringValue("QueryAllCinemasResponse.SubCode"));
+		queryAllCinemasResponse.setSubMessage(_ctx.stringValue("QueryAllCinemasResponse.SubMessage"));
+		queryAllCinemasResponse.setLogsId(_ctx.stringValue("QueryAllCinemasResponse.LogsId"));
+		queryAllCinemasResponse.setSuccess(_ctx.booleanValue("QueryAllCinemasResponse.Success"));
+		queryAllCinemasResponse.setTotalCount(_ctx.longValue("QueryAllCinemasResponse.TotalCount"));
 
 		List<Cinema> cinemas = new ArrayList<Cinema>();
-		for (int i = 0; i < context.lengthValue("QueryAllCinemasResponse.Cinemas.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAllCinemasResponse.Cinemas.Length"); i++) {
 			Cinema cinema = new Cinema();
-			cinema.setCityId(context.longValue("QueryAllCinemasResponse.Cinemas["+ i +"].CityId"));
-			cinema.setCityName(context.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].CityName"));
-			cinema.setScheduleCloseTime(context.longValue("QueryAllCinemasResponse.Cinemas["+ i +"].ScheduleCloseTime"));
-			cinema.setLatitude(context.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].Latitude"));
-			cinema.setLongitude(context.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].Longitude"));
-			cinema.setCinemaName(context.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].CinemaName"));
-			cinema.setAddress(context.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].Address"));
-			cinema.setId(context.longValue("QueryAllCinemasResponse.Cinemas["+ i +"].Id"));
-			cinema.setPhone(context.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].Phone"));
-			cinema.setStandardId(context.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].StandardId"));
+			cinema.setCityId(_ctx.longValue("QueryAllCinemasResponse.Cinemas["+ i +"].CityId"));
+			cinema.setCityName(_ctx.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].CityName"));
+			cinema.setScheduleCloseTime(_ctx.longValue("QueryAllCinemasResponse.Cinemas["+ i +"].ScheduleCloseTime"));
+			cinema.setLatitude(_ctx.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].Latitude"));
+			cinema.setLongitude(_ctx.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].Longitude"));
+			cinema.setCinemaName(_ctx.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].CinemaName"));
+			cinema.setAddress(_ctx.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].Address"));
+			cinema.setId(_ctx.longValue("QueryAllCinemasResponse.Cinemas["+ i +"].Id"));
+			cinema.setPhone(_ctx.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].Phone"));
+			cinema.setStandardId(_ctx.stringValue("QueryAllCinemasResponse.Cinemas["+ i +"].StandardId"));
 
 			cinemas.add(cinema);
 		}

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyBasicAndBizItemsResponseUnmarshaller {
 
-	public static ModifyBasicAndBizItemsResponse unmarshall(ModifyBasicAndBizItemsResponse modifyBasicAndBizItemsResponse, UnmarshallerContext context) {
+	public static ModifyBasicAndBizItemsResponse unmarshall(ModifyBasicAndBizItemsResponse modifyBasicAndBizItemsResponse, UnmarshallerContext _ctx) {
 		
-		modifyBasicAndBizItemsResponse.setRequestId(context.stringValue("ModifyBasicAndBizItemsResponse.RequestId"));
-		modifyBasicAndBizItemsResponse.setCode(context.stringValue("ModifyBasicAndBizItemsResponse.Code"));
-		modifyBasicAndBizItemsResponse.setMessage(context.stringValue("ModifyBasicAndBizItemsResponse.Message"));
+		modifyBasicAndBizItemsResponse.setRequestId(_ctx.stringValue("ModifyBasicAndBizItemsResponse.RequestId"));
+		modifyBasicAndBizItemsResponse.setCode(_ctx.stringValue("ModifyBasicAndBizItemsResponse.Code"));
+		modifyBasicAndBizItemsResponse.setMessage(_ctx.stringValue("ModifyBasicAndBizItemsResponse.Message"));
 
 		List<Item> failedItemList = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("ModifyBasicAndBizItemsResponse.FailedItemList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ModifyBasicAndBizItemsResponse.FailedItemList.Length"); i++) {
 			Item item = new Item();
-			item.setItemId(context.longValue("ModifyBasicAndBizItemsResponse.FailedItemList["+ i +"].ItemId"));
+			item.setItemId(_ctx.longValue("ModifyBasicAndBizItemsResponse.FailedItemList["+ i +"].ItemId"));
 
 			List<String> skuIdList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ModifyBasicAndBizItemsResponse.FailedItemList["+ i +"].SkuIdList.Length"); j++) {
-				skuIdList.add(context.stringValue("ModifyBasicAndBizItemsResponse.FailedItemList["+ i +"].SkuIdList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ModifyBasicAndBizItemsResponse.FailedItemList["+ i +"].SkuIdList.Length"); j++) {
+				skuIdList.add(_ctx.stringValue("ModifyBasicAndBizItemsResponse.FailedItemList["+ i +"].SkuIdList["+ j +"]"));
 			}
 			item.setSkuIdList(skuIdList);
 

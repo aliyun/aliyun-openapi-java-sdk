@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReleaseMovieSeatResponseUnmarshaller {
 
-	public static ReleaseMovieSeatResponse unmarshall(ReleaseMovieSeatResponse releaseMovieSeatResponse, UnmarshallerContext context) {
+	public static ReleaseMovieSeatResponse unmarshall(ReleaseMovieSeatResponse releaseMovieSeatResponse, UnmarshallerContext _ctx) {
 		
-		releaseMovieSeatResponse.setRequestId(context.stringValue("ReleaseMovieSeatResponse.RequestId"));
-		releaseMovieSeatResponse.setCode(context.stringValue("ReleaseMovieSeatResponse.Code"));
-		releaseMovieSeatResponse.setMessage(context.stringValue("ReleaseMovieSeatResponse.Message"));
-		releaseMovieSeatResponse.setSubCode(context.stringValue("ReleaseMovieSeatResponse.SubCode"));
-		releaseMovieSeatResponse.setSubMessage(context.stringValue("ReleaseMovieSeatResponse.SubMessage"));
-		releaseMovieSeatResponse.setLogsId(context.stringValue("ReleaseMovieSeatResponse.LogsId"));
-		releaseMovieSeatResponse.setSuccess(context.booleanValue("ReleaseMovieSeatResponse.Success"));
+		releaseMovieSeatResponse.setRequestId(_ctx.stringValue("ReleaseMovieSeatResponse.RequestId"));
+		releaseMovieSeatResponse.setCode(_ctx.stringValue("ReleaseMovieSeatResponse.Code"));
+		releaseMovieSeatResponse.setMessage(_ctx.stringValue("ReleaseMovieSeatResponse.Message"));
+		releaseMovieSeatResponse.setSubCode(_ctx.stringValue("ReleaseMovieSeatResponse.SubCode"));
+		releaseMovieSeatResponse.setSubMessage(_ctx.stringValue("ReleaseMovieSeatResponse.SubMessage"));
+		releaseMovieSeatResponse.setLogsId(_ctx.stringValue("ReleaseMovieSeatResponse.LogsId"));
+		releaseMovieSeatResponse.setSuccess(_ctx.booleanValue("ReleaseMovieSeatResponse.Success"));
 
 		ActionResult actionResult = new ActionResult();
-		actionResult.setReturnCode(context.stringValue("ReleaseMovieSeatResponse.ActionResult.ReturnCode"));
-		actionResult.setReturnValue(context.stringValue("ReleaseMovieSeatResponse.ActionResult.ReturnValue"));
-		actionResult.setReturnMessage(context.stringValue("ReleaseMovieSeatResponse.ActionResult.ReturnMessage"));
+		actionResult.setReturnCode(_ctx.stringValue("ReleaseMovieSeatResponse.ActionResult.ReturnCode"));
+		actionResult.setReturnValue(_ctx.stringValue("ReleaseMovieSeatResponse.ActionResult.ReturnValue"));
+		actionResult.setReturnMessage(_ctx.stringValue("ReleaseMovieSeatResponse.ActionResult.ReturnMessage"));
 		releaseMovieSeatResponse.setActionResult(actionResult);
 	 
 	 	return releaseMovieSeatResponse;

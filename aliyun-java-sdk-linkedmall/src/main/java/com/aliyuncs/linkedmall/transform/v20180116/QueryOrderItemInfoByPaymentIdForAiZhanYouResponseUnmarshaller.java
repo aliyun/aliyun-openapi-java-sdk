@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryOrderItemInfoByPaymentIdForAiZhanYouResponseUnmarshaller {
 
-	public static QueryOrderItemInfoByPaymentIdForAiZhanYouResponse unmarshall(QueryOrderItemInfoByPaymentIdForAiZhanYouResponse queryOrderItemInfoByPaymentIdForAiZhanYouResponse, UnmarshallerContext context) {
+	public static QueryOrderItemInfoByPaymentIdForAiZhanYouResponse unmarshall(QueryOrderItemInfoByPaymentIdForAiZhanYouResponse queryOrderItemInfoByPaymentIdForAiZhanYouResponse, UnmarshallerContext _ctx) {
 		
-		queryOrderItemInfoByPaymentIdForAiZhanYouResponse.setRequestId(context.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.RequestId"));
-		queryOrderItemInfoByPaymentIdForAiZhanYouResponse.setCode(context.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.Code"));
-		queryOrderItemInfoByPaymentIdForAiZhanYouResponse.setMessage(context.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.Message"));
+		queryOrderItemInfoByPaymentIdForAiZhanYouResponse.setRequestId(_ctx.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.RequestId"));
+		queryOrderItemInfoByPaymentIdForAiZhanYouResponse.setCode(_ctx.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.Code"));
+		queryOrderItemInfoByPaymentIdForAiZhanYouResponse.setMessage(_ctx.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.Message"));
 
 		List<LmOrderListItem> lmOrderList = new ArrayList<LmOrderListItem>();
-		for (int i = 0; i < context.lengthValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList.Length"); i++) {
 			LmOrderListItem lmOrderListItem = new LmOrderListItem();
-			lmOrderListItem.setItemName(context.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].ItemName"));
-			lmOrderListItem.setLmOrderId(context.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].LmOrderId"));
-			lmOrderListItem.setSkuId(context.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].SkuId"));
-			lmOrderListItem.setSkuName(context.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].SkuName"));
-			lmOrderListItem.setItemId(context.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].ItemId"));
+			lmOrderListItem.setItemName(_ctx.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].ItemName"));
+			lmOrderListItem.setLmOrderId(_ctx.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].LmOrderId"));
+			lmOrderListItem.setSkuId(_ctx.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].SkuId"));
+			lmOrderListItem.setSkuName(_ctx.stringValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].SkuName"));
+			lmOrderListItem.setItemId(_ctx.longValue("QueryOrderItemInfoByPaymentIdForAiZhanYouResponse.LmOrderList["+ i +"].ItemId"));
 
 			lmOrderList.add(lmOrderListItem);
 		}

@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMovieCommentsResponseUnmarshaller {
 
-	public static QueryMovieCommentsResponse unmarshall(QueryMovieCommentsResponse queryMovieCommentsResponse, UnmarshallerContext context) {
+	public static QueryMovieCommentsResponse unmarshall(QueryMovieCommentsResponse queryMovieCommentsResponse, UnmarshallerContext _ctx) {
 		
-		queryMovieCommentsResponse.setRequestId(context.stringValue("QueryMovieCommentsResponse.RequestId"));
-		queryMovieCommentsResponse.setLogsId(context.stringValue("QueryMovieCommentsResponse.LogsId"));
-		queryMovieCommentsResponse.setSubCode(context.stringValue("QueryMovieCommentsResponse.SubCode"));
-		queryMovieCommentsResponse.setSubMessage(context.stringValue("QueryMovieCommentsResponse.SubMessage"));
-		queryMovieCommentsResponse.setCode(context.stringValue("QueryMovieCommentsResponse.Code"));
-		queryMovieCommentsResponse.setSuccess(context.booleanValue("QueryMovieCommentsResponse.Success"));
-		queryMovieCommentsResponse.setMessage(context.stringValue("QueryMovieCommentsResponse.Message"));
-		queryMovieCommentsResponse.setCount(context.longValue("QueryMovieCommentsResponse.Count"));
+		queryMovieCommentsResponse.setRequestId(_ctx.stringValue("QueryMovieCommentsResponse.RequestId"));
+		queryMovieCommentsResponse.setLogsId(_ctx.stringValue("QueryMovieCommentsResponse.LogsId"));
+		queryMovieCommentsResponse.setSubCode(_ctx.stringValue("QueryMovieCommentsResponse.SubCode"));
+		queryMovieCommentsResponse.setSubMessage(_ctx.stringValue("QueryMovieCommentsResponse.SubMessage"));
+		queryMovieCommentsResponse.setCode(_ctx.stringValue("QueryMovieCommentsResponse.Code"));
+		queryMovieCommentsResponse.setSuccess(_ctx.booleanValue("QueryMovieCommentsResponse.Success"));
+		queryMovieCommentsResponse.setMessage(_ctx.stringValue("QueryMovieCommentsResponse.Message"));
+		queryMovieCommentsResponse.setCount(_ctx.longValue("QueryMovieCommentsResponse.Count"));
 
 		List<Comment> commentList = new ArrayList<Comment>();
-		for (int i = 0; i < context.lengthValue("QueryMovieCommentsResponse.CommentList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMovieCommentsResponse.CommentList.Length"); i++) {
 			Comment comment = new Comment();
-			comment.setCommentTime(context.stringValue("QueryMovieCommentsResponse.CommentList["+ i +"].CommentTime"));
-			comment.setContent(context.stringValue("QueryMovieCommentsResponse.CommentList["+ i +"].Content"));
-			comment.setFavorCount(context.longValue("QueryMovieCommentsResponse.CommentList["+ i +"].FavorCount"));
-			comment.setId(context.longValue("QueryMovieCommentsResponse.CommentList["+ i +"].Id"));
-			comment.setNickName(context.stringValue("QueryMovieCommentsResponse.CommentList["+ i +"].NickName"));
-			comment.setRemark(context.longValue("QueryMovieCommentsResponse.CommentList["+ i +"].Remark"));
-			comment.setMovieId(context.longValue("QueryMovieCommentsResponse.CommentList["+ i +"].MovieId"));
-			comment.setSubject(context.stringValue("QueryMovieCommentsResponse.CommentList["+ i +"].Subject"));
+			comment.setCommentTime(_ctx.stringValue("QueryMovieCommentsResponse.CommentList["+ i +"].CommentTime"));
+			comment.setContent(_ctx.stringValue("QueryMovieCommentsResponse.CommentList["+ i +"].Content"));
+			comment.setFavorCount(_ctx.longValue("QueryMovieCommentsResponse.CommentList["+ i +"].FavorCount"));
+			comment.setId(_ctx.longValue("QueryMovieCommentsResponse.CommentList["+ i +"].Id"));
+			comment.setNickName(_ctx.stringValue("QueryMovieCommentsResponse.CommentList["+ i +"].NickName"));
+			comment.setRemark(_ctx.longValue("QueryMovieCommentsResponse.CommentList["+ i +"].Remark"));
+			comment.setMovieId(_ctx.longValue("QueryMovieCommentsResponse.CommentList["+ i +"].MovieId"));
+			comment.setSubject(_ctx.stringValue("QueryMovieCommentsResponse.CommentList["+ i +"].Subject"));
 
 			commentList.add(comment);
 		}

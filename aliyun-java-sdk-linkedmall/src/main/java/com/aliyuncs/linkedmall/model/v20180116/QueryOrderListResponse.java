@@ -123,6 +123,8 @@ public class QueryOrderListResponse extends AcsResponse {
 
 		private Integer enableStatus;
 
+		private Long tbOrderId;
+
 		private List<FundStructureModelsItem> fundStructureModels;
 
 		private List<SubOrderListItem> subOrderList;
@@ -191,6 +193,14 @@ public class QueryOrderListResponse extends AcsResponse {
 
 		public void setEnableStatus(Integer enableStatus) {
 			this.enableStatus = enableStatus;
+		}
+
+		public Long getTbOrderId() {
+			return this.tbOrderId;
+		}
+
+		public void setTbOrderId(Long tbOrderId) {
+			this.tbOrderId = tbOrderId;
 		}
 
 		public List<FundStructureModelsItem> getFundStructureModels() {
@@ -270,6 +280,8 @@ public class QueryOrderListResponse extends AcsResponse {
 
 			private Integer enableStatus;
 
+			private Long tbOrderId;
+
 			private List<ItemPriceListItem> itemPriceList;
 
 			public Long getItemId() {
@@ -342,6 +354,14 @@ public class QueryOrderListResponse extends AcsResponse {
 
 			public void setEnableStatus(Integer enableStatus) {
 				this.enableStatus = enableStatus;
+			}
+
+			public Long getTbOrderId() {
+				return this.tbOrderId;
+			}
+
+			public void setTbOrderId(Long tbOrderId) {
+				this.tbOrderId = tbOrderId;
 			}
 
 			public List<ItemPriceListItem> getItemPriceList() {

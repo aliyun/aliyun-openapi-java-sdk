@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAddressResponseUnmarshaller {
 
-	public static QueryAddressResponse unmarshall(QueryAddressResponse queryAddressResponse, UnmarshallerContext context) {
+	public static QueryAddressResponse unmarshall(QueryAddressResponse queryAddressResponse, UnmarshallerContext _ctx) {
 		
-		queryAddressResponse.setRequestId(context.stringValue("QueryAddressResponse.RequestId"));
-		queryAddressResponse.setCode(context.stringValue("QueryAddressResponse.Code"));
-		queryAddressResponse.setMessage(context.stringValue("QueryAddressResponse.Message"));
+		queryAddressResponse.setRequestId(_ctx.stringValue("QueryAddressResponse.RequestId"));
+		queryAddressResponse.setCode(_ctx.stringValue("QueryAddressResponse.Code"));
+		queryAddressResponse.setMessage(_ctx.stringValue("QueryAddressResponse.Message"));
 
 		List<DivisionAddressItem> divisionAddress = new ArrayList<DivisionAddressItem>();
-		for (int i = 0; i < context.lengthValue("QueryAddressResponse.DivisionAddress.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAddressResponse.DivisionAddress.Length"); i++) {
 			DivisionAddressItem divisionAddressItem = new DivisionAddressItem();
-			divisionAddressItem.setDivisionCode(context.longValue("QueryAddressResponse.DivisionAddress["+ i +"].DivisionCode"));
-			divisionAddressItem.setDivisionName(context.stringValue("QueryAddressResponse.DivisionAddress["+ i +"].DivisionName"));
-			divisionAddressItem.setDivisionLevel(context.integerValue("QueryAddressResponse.DivisionAddress["+ i +"].DivisionLevel"));
-			divisionAddressItem.setParentId(context.longValue("QueryAddressResponse.DivisionAddress["+ i +"].ParentId"));
+			divisionAddressItem.setDivisionCode(_ctx.longValue("QueryAddressResponse.DivisionAddress["+ i +"].DivisionCode"));
+			divisionAddressItem.setDivisionName(_ctx.stringValue("QueryAddressResponse.DivisionAddress["+ i +"].DivisionName"));
+			divisionAddressItem.setDivisionLevel(_ctx.integerValue("QueryAddressResponse.DivisionAddress["+ i +"].DivisionLevel"));
+			divisionAddressItem.setParentId(_ctx.longValue("QueryAddressResponse.DivisionAddress["+ i +"].ParentId"));
 
 			divisionAddress.add(divisionAddressItem);
 		}

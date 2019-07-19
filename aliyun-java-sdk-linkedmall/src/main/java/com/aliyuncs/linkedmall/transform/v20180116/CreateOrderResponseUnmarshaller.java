@@ -25,36 +25,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateOrderResponseUnmarshaller {
 
-	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext context) {
+	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext _ctx) {
 		
-		createOrderResponse.setRequestId(context.stringValue("CreateOrderResponse.RequestId"));
-		createOrderResponse.setCode(context.stringValue("CreateOrderResponse.Code"));
-		createOrderResponse.setMessage(context.stringValue("CreateOrderResponse.Message"));
-		createOrderResponse.setSubCode(context.stringValue("CreateOrderResponse.SubCode"));
-		createOrderResponse.setSubMessage(context.stringValue("CreateOrderResponse.SubMessage"));
-		createOrderResponse.setLogsId(context.stringValue("CreateOrderResponse.LogsId"));
-		createOrderResponse.setSuccess(context.booleanValue("CreateOrderResponse.Success"));
-		createOrderResponse.setTotalCount(context.longValue("CreateOrderResponse.TotalCount"));
+		createOrderResponse.setRequestId(_ctx.stringValue("CreateOrderResponse.RequestId"));
+		createOrderResponse.setCode(_ctx.stringValue("CreateOrderResponse.Code"));
+		createOrderResponse.setMessage(_ctx.stringValue("CreateOrderResponse.Message"));
+		createOrderResponse.setSubCode(_ctx.stringValue("CreateOrderResponse.SubCode"));
+		createOrderResponse.setSubMessage(_ctx.stringValue("CreateOrderResponse.SubMessage"));
+		createOrderResponse.setLogsId(_ctx.stringValue("CreateOrderResponse.LogsId"));
+		createOrderResponse.setSuccess(_ctx.booleanValue("CreateOrderResponse.Success"));
+		createOrderResponse.setTotalCount(_ctx.longValue("CreateOrderResponse.TotalCount"));
 
 		Model model = new Model();
-		model.setRedirectUrl(context.stringValue("CreateOrderResponse.Model.RedirectUrl"));
+		model.setRedirectUrl(_ctx.stringValue("CreateOrderResponse.Model.RedirectUrl"));
 
 		List<String> orderIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateOrderResponse.Model.OrderIds.Length"); i++) {
-			orderIds.add(context.stringValue("CreateOrderResponse.Model.OrderIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateOrderResponse.Model.OrderIds.Length"); i++) {
+			orderIds.add(_ctx.stringValue("CreateOrderResponse.Model.OrderIds["+ i +"]"));
 		}
 		model.setOrderIds(orderIds);
 
 		List<String> payTradeIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateOrderResponse.Model.PayTradeIds.Length"); i++) {
-			payTradeIds.add(context.stringValue("CreateOrderResponse.Model.PayTradeIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateOrderResponse.Model.PayTradeIds.Length"); i++) {
+			payTradeIds.add(_ctx.stringValue("CreateOrderResponse.Model.PayTradeIds["+ i +"]"));
 		}
 		model.setPayTradeIds(payTradeIds);
 
 		List<LmOrderListItem> lmOrderList = new ArrayList<LmOrderListItem>();
-		for (int i = 0; i < context.lengthValue("CreateOrderResponse.Model.LmOrderList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CreateOrderResponse.Model.LmOrderList.Length"); i++) {
 			LmOrderListItem lmOrderListItem = new LmOrderListItem();
-			lmOrderListItem.setLmOrderId(context.stringValue("CreateOrderResponse.Model.LmOrderList["+ i +"].LmOrderId"));
+			lmOrderListItem.setLmOrderId(_ctx.stringValue("CreateOrderResponse.Model.LmOrderList["+ i +"].LmOrderId"));
 
 			lmOrderList.add(lmOrderListItem);
 		}

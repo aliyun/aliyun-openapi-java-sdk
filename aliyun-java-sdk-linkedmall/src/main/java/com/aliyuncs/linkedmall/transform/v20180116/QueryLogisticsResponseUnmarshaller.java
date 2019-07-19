@@ -26,36 +26,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryLogisticsResponseUnmarshaller {
 
-	public static QueryLogisticsResponse unmarshall(QueryLogisticsResponse queryLogisticsResponse, UnmarshallerContext context) {
+	public static QueryLogisticsResponse unmarshall(QueryLogisticsResponse queryLogisticsResponse, UnmarshallerContext _ctx) {
 		
-		queryLogisticsResponse.setRequestId(context.stringValue("QueryLogisticsResponse.RequestId"));
-		queryLogisticsResponse.setCode(context.stringValue("QueryLogisticsResponse.Code"));
-		queryLogisticsResponse.setMessage(context.stringValue("QueryLogisticsResponse.Message"));
+		queryLogisticsResponse.setRequestId(_ctx.stringValue("QueryLogisticsResponse.RequestId"));
+		queryLogisticsResponse.setCode(_ctx.stringValue("QueryLogisticsResponse.Code"));
+		queryLogisticsResponse.setMessage(_ctx.stringValue("QueryLogisticsResponse.Message"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < context.lengthValue("QueryLogisticsResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryLogisticsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setMailNo(context.stringValue("QueryLogisticsResponse.Data["+ i +"].MailNo"));
-			dataItem.setDataProvider(context.stringValue("QueryLogisticsResponse.Data["+ i +"].DataProvider"));
-			dataItem.setDataProviderTitle(context.stringValue("QueryLogisticsResponse.Data["+ i +"].DataProviderTitle"));
-			dataItem.setLogisticsCompanyName(context.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsCompanyName"));
+			dataItem.setMailNo(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].MailNo"));
+			dataItem.setDataProvider(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].DataProvider"));
+			dataItem.setDataProviderTitle(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].DataProviderTitle"));
+			dataItem.setLogisticsCompanyName(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsCompanyName"));
 
 			List<LogisticsDetailListItem> logisticsDetailList = new ArrayList<LogisticsDetailListItem>();
-			for (int j = 0; j < context.lengthValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList.Length"); j++) {
 				LogisticsDetailListItem logisticsDetailListItem = new LogisticsDetailListItem();
-				logisticsDetailListItem.setStanderdDesc(context.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList["+ j +"].StanderdDesc"));
-				logisticsDetailListItem.setOcurrTimeStr(context.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList["+ j +"].OcurrTimeStr"));
+				logisticsDetailListItem.setStanderdDesc(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList["+ j +"].StanderdDesc"));
+				logisticsDetailListItem.setOcurrTimeStr(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].LogisticsDetailList["+ j +"].OcurrTimeStr"));
 
 				logisticsDetailList.add(logisticsDetailListItem);
 			}
 			dataItem.setLogisticsDetailList(logisticsDetailList);
 
 			List<GoodsItem> goods = new ArrayList<GoodsItem>();
-			for (int j = 0; j < context.lengthValue("QueryLogisticsResponse.Data["+ i +"].Goods.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryLogisticsResponse.Data["+ i +"].Goods.Length"); j++) {
 				GoodsItem goodsItem = new GoodsItem();
-				goodsItem.setGoodName(context.stringValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].GoodName"));
-				goodsItem.setQuantity(context.integerValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].Quantity"));
-				goodsItem.setItemId(context.longValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].ItemId"));
+				goodsItem.setGoodName(_ctx.stringValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].GoodName"));
+				goodsItem.setQuantity(_ctx.integerValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].Quantity"));
+				goodsItem.setItemId(_ctx.longValue("QueryLogisticsResponse.Data["+ i +"].Goods["+ j +"].ItemId"));
 
 				goods.add(goodsItem);
 			}

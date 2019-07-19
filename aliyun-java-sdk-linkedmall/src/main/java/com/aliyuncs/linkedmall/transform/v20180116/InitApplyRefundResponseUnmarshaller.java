@@ -26,29 +26,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InitApplyRefundResponseUnmarshaller {
 
-	public static InitApplyRefundResponse unmarshall(InitApplyRefundResponse initApplyRefundResponse, UnmarshallerContext context) {
+	public static InitApplyRefundResponse unmarshall(InitApplyRefundResponse initApplyRefundResponse, UnmarshallerContext _ctx) {
 		
-		initApplyRefundResponse.setRequestId(context.stringValue("InitApplyRefundResponse.RequestId"));
-		initApplyRefundResponse.setCode(context.stringValue("InitApplyRefundResponse.Code"));
-		initApplyRefundResponse.setMessage(context.stringValue("InitApplyRefundResponse.Message"));
-		initApplyRefundResponse.setSubLmOrderId(context.stringValue("InitApplyRefundResponse.SubLmOrderId"));
+		initApplyRefundResponse.setRequestId(_ctx.stringValue("InitApplyRefundResponse.RequestId"));
+		initApplyRefundResponse.setCode(_ctx.stringValue("InitApplyRefundResponse.Code"));
+		initApplyRefundResponse.setMessage(_ctx.stringValue("InitApplyRefundResponse.Message"));
+		initApplyRefundResponse.setSubLmOrderId(_ctx.stringValue("InitApplyRefundResponse.SubLmOrderId"));
 
 		InitApplyRefundData initApplyRefundData = new InitApplyRefundData();
-		initApplyRefundData.setBizClaimType(context.integerValue("InitApplyRefundResponse.InitApplyRefundData.BizClaimType"));
-		initApplyRefundData.setMainOrderRefund(context.booleanValue("InitApplyRefundResponse.InitApplyRefundData.MainOrderRefund"));
+		initApplyRefundData.setBizClaimType(_ctx.integerValue("InitApplyRefundResponse.InitApplyRefundData.BizClaimType"));
+		initApplyRefundData.setMainOrderRefund(_ctx.booleanValue("InitApplyRefundResponse.InitApplyRefundData.MainOrderRefund"));
 
 		MaxRefundFeeData maxRefundFeeData = new MaxRefundFeeData();
-		maxRefundFeeData.setMaxRefundFee(context.integerValue("InitApplyRefundResponse.InitApplyRefundData.MaxRefundFeeData.MaxRefundFee"));
-		maxRefundFeeData.setMinRefundFee(context.integerValue("InitApplyRefundResponse.InitApplyRefundData.MaxRefundFeeData.MinRefundFee"));
+		maxRefundFeeData.setMaxRefundFee(_ctx.integerValue("InitApplyRefundResponse.InitApplyRefundData.MaxRefundFeeData.MaxRefundFee"));
+		maxRefundFeeData.setMinRefundFee(_ctx.integerValue("InitApplyRefundResponse.InitApplyRefundData.MaxRefundFeeData.MinRefundFee"));
 		initApplyRefundData.setMaxRefundFeeData(maxRefundFeeData);
 
 		List<RefundReasonListItem> refundReasonList = new ArrayList<RefundReasonListItem>();
-		for (int i = 0; i < context.lengthValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList.Length"); i++) {
 			RefundReasonListItem refundReasonListItem = new RefundReasonListItem();
-			refundReasonListItem.setReasonTextId(context.longValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList["+ i +"].ReasonTextId"));
-			refundReasonListItem.setReasonTips(context.stringValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList["+ i +"].ReasonTips"));
-			refundReasonListItem.setProofRequired(context.booleanValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList["+ i +"].ProofRequired"));
-			refundReasonListItem.setRefundDescRequired(context.booleanValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList["+ i +"].RefundDescRequired"));
+			refundReasonListItem.setReasonTextId(_ctx.longValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList["+ i +"].ReasonTextId"));
+			refundReasonListItem.setReasonTips(_ctx.stringValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList["+ i +"].ReasonTips"));
+			refundReasonListItem.setProofRequired(_ctx.booleanValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList["+ i +"].ProofRequired"));
+			refundReasonListItem.setRefundDescRequired(_ctx.booleanValue("InitApplyRefundResponse.InitApplyRefundData.RefundReasonList["+ i +"].RefundDescRequired"));
 
 			refundReasonList.add(refundReasonListItem);
 		}

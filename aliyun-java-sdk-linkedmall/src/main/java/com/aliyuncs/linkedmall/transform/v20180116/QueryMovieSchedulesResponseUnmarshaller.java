@@ -24,33 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMovieSchedulesResponseUnmarshaller {
 
-	public static QueryMovieSchedulesResponse unmarshall(QueryMovieSchedulesResponse queryMovieSchedulesResponse, UnmarshallerContext context) {
+	public static QueryMovieSchedulesResponse unmarshall(QueryMovieSchedulesResponse queryMovieSchedulesResponse, UnmarshallerContext _ctx) {
 		
-		queryMovieSchedulesResponse.setRequestId(context.stringValue("QueryMovieSchedulesResponse.RequestId"));
-		queryMovieSchedulesResponse.setLogsId(context.stringValue("QueryMovieSchedulesResponse.LogsId"));
-		queryMovieSchedulesResponse.setSubCode(context.stringValue("QueryMovieSchedulesResponse.SubCode"));
-		queryMovieSchedulesResponse.setSubMessage(context.stringValue("QueryMovieSchedulesResponse.SubMessage"));
-		queryMovieSchedulesResponse.setCode(context.stringValue("QueryMovieSchedulesResponse.Code"));
-		queryMovieSchedulesResponse.setSuccess(context.booleanValue("QueryMovieSchedulesResponse.Success"));
-		queryMovieSchedulesResponse.setMessage(context.stringValue("QueryMovieSchedulesResponse.Message"));
+		queryMovieSchedulesResponse.setRequestId(_ctx.stringValue("QueryMovieSchedulesResponse.RequestId"));
+		queryMovieSchedulesResponse.setLogsId(_ctx.stringValue("QueryMovieSchedulesResponse.LogsId"));
+		queryMovieSchedulesResponse.setSubCode(_ctx.stringValue("QueryMovieSchedulesResponse.SubCode"));
+		queryMovieSchedulesResponse.setSubMessage(_ctx.stringValue("QueryMovieSchedulesResponse.SubMessage"));
+		queryMovieSchedulesResponse.setCode(_ctx.stringValue("QueryMovieSchedulesResponse.Code"));
+		queryMovieSchedulesResponse.setSuccess(_ctx.booleanValue("QueryMovieSchedulesResponse.Success"));
+		queryMovieSchedulesResponse.setMessage(_ctx.stringValue("QueryMovieSchedulesResponse.Message"));
 
 		List<Schedule> schedules = new ArrayList<Schedule>();
-		for (int i = 0; i < context.lengthValue("QueryMovieSchedulesResponse.Schedules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMovieSchedulesResponse.Schedules.Length"); i++) {
 			Schedule schedule = new Schedule();
-			schedule.setCinemaId(context.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].CinemaId"));
-			schedule.setSessionEndingTime(context.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].SessionEndingTime"));
-			schedule.setHallName(context.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].HallName"));
-			schedule.setId(context.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].Id"));
-			schedule.setIsExpired(context.booleanValue("QueryMovieSchedulesResponse.Schedules["+ i +"].IsExpired"));
-			schedule.setMaxCanBuy(context.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].MaxCanBuy"));
-			schedule.setPrice(context.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].Price"));
-			schedule.setScheduleArea(context.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].ScheduleArea"));
-			schedule.setSectionId(context.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].SectionId"));
-			schedule.setServiceFee(context.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].ServiceFee"));
-			schedule.setReleaseDate(context.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].ReleaseDate"));
-			schedule.setMovieId(context.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].MovieId"));
-			schedule.setSessionStartingTime(context.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].SessionStartingTime"));
-			schedule.setMovieVersion(context.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].MovieVersion"));
+			schedule.setCinemaId(_ctx.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].CinemaId"));
+			schedule.setSessionEndingTime(_ctx.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].SessionEndingTime"));
+			schedule.setHallName(_ctx.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].HallName"));
+			schedule.setId(_ctx.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].Id"));
+			schedule.setIsExpired(_ctx.booleanValue("QueryMovieSchedulesResponse.Schedules["+ i +"].IsExpired"));
+			schedule.setMaxCanBuy(_ctx.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].MaxCanBuy"));
+			schedule.setPrice(_ctx.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].Price"));
+			schedule.setScheduleArea(_ctx.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].ScheduleArea"));
+			schedule.setSectionId(_ctx.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].SectionId"));
+			schedule.setServiceFee(_ctx.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].ServiceFee"));
+			schedule.setReleaseDate(_ctx.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].ReleaseDate"));
+			schedule.setMovieId(_ctx.longValue("QueryMovieSchedulesResponse.Schedules["+ i +"].MovieId"));
+			schedule.setSessionStartingTime(_ctx.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].SessionStartingTime"));
+			schedule.setMovieVersion(_ctx.stringValue("QueryMovieSchedulesResponse.Schedules["+ i +"].MovieVersion"));
 
 			schedules.add(schedule);
 		}

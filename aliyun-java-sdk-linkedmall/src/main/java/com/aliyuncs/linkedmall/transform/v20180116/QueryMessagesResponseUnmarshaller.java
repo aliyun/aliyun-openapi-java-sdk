@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMessagesResponseUnmarshaller {
 
-	public static QueryMessagesResponse unmarshall(QueryMessagesResponse queryMessagesResponse, UnmarshallerContext context) {
+	public static QueryMessagesResponse unmarshall(QueryMessagesResponse queryMessagesResponse, UnmarshallerContext _ctx) {
 		
-		queryMessagesResponse.setRequestId(context.stringValue("QueryMessagesResponse.RequestId"));
-		queryMessagesResponse.setLogsId(context.stringValue("QueryMessagesResponse.LogsId"));
-		queryMessagesResponse.setSubCode(context.stringValue("QueryMessagesResponse.SubCode"));
-		queryMessagesResponse.setSubMessage(context.stringValue("QueryMessagesResponse.SubMessage"));
-		queryMessagesResponse.setCode(context.stringValue("QueryMessagesResponse.Code"));
-		queryMessagesResponse.setMessage(context.stringValue("QueryMessagesResponse.Message"));
-		queryMessagesResponse.setSuccess(context.booleanValue("QueryMessagesResponse.Success"));
+		queryMessagesResponse.setRequestId(_ctx.stringValue("QueryMessagesResponse.RequestId"));
+		queryMessagesResponse.setLogsId(_ctx.stringValue("QueryMessagesResponse.LogsId"));
+		queryMessagesResponse.setSubCode(_ctx.stringValue("QueryMessagesResponse.SubCode"));
+		queryMessagesResponse.setSubMessage(_ctx.stringValue("QueryMessagesResponse.SubMessage"));
+		queryMessagesResponse.setCode(_ctx.stringValue("QueryMessagesResponse.Code"));
+		queryMessagesResponse.setMessage(_ctx.stringValue("QueryMessagesResponse.Message"));
+		queryMessagesResponse.setSuccess(_ctx.booleanValue("QueryMessagesResponse.Success"));
 
 		List<BizMessage> bizMessages = new ArrayList<BizMessage>();
-		for (int i = 0; i < context.lengthValue("QueryMessagesResponse.BizMessages.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMessagesResponse.BizMessages.Length"); i++) {
 			BizMessage bizMessage = new BizMessage();
-			bizMessage.setTopic(context.stringValue("QueryMessagesResponse.BizMessages["+ i +"].Topic"));
-			bizMessage.setDataId(context.longValue("QueryMessagesResponse.BizMessages["+ i +"].DataId"));
-			bizMessage.setPubTime(context.stringValue("QueryMessagesResponse.BizMessages["+ i +"].PubTime"));
-			bizMessage.setContentMapJson(context.stringValue("QueryMessagesResponse.BizMessages["+ i +"].ContentMapJson"));
+			bizMessage.setTopic(_ctx.stringValue("QueryMessagesResponse.BizMessages["+ i +"].Topic"));
+			bizMessage.setDataId(_ctx.longValue("QueryMessagesResponse.BizMessages["+ i +"].DataId"));
+			bizMessage.setPubTime(_ctx.stringValue("QueryMessagesResponse.BizMessages["+ i +"].PubTime"));
+			bizMessage.setContentMapJson(_ctx.stringValue("QueryMessagesResponse.BizMessages["+ i +"].ContentMapJson"));
 
 			bizMessages.add(bizMessage);
 		}

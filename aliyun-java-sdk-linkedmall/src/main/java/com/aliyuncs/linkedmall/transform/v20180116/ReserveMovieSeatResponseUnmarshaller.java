@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReserveMovieSeatResponseUnmarshaller {
 
-	public static ReserveMovieSeatResponse unmarshall(ReserveMovieSeatResponse reserveMovieSeatResponse, UnmarshallerContext context) {
+	public static ReserveMovieSeatResponse unmarshall(ReserveMovieSeatResponse reserveMovieSeatResponse, UnmarshallerContext _ctx) {
 		
-		reserveMovieSeatResponse.setRequestId(context.stringValue("ReserveMovieSeatResponse.RequestId"));
-		reserveMovieSeatResponse.setCode(context.stringValue("ReserveMovieSeatResponse.Code"));
-		reserveMovieSeatResponse.setMessage(context.stringValue("ReserveMovieSeatResponse.Message"));
-		reserveMovieSeatResponse.setSubCode(context.stringValue("ReserveMovieSeatResponse.SubCode"));
-		reserveMovieSeatResponse.setSubMessage(context.stringValue("ReserveMovieSeatResponse.SubMessage"));
-		reserveMovieSeatResponse.setLogsId(context.stringValue("ReserveMovieSeatResponse.LogsId"));
-		reserveMovieSeatResponse.setSuccess(context.booleanValue("ReserveMovieSeatResponse.Success"));
+		reserveMovieSeatResponse.setRequestId(_ctx.stringValue("ReserveMovieSeatResponse.RequestId"));
+		reserveMovieSeatResponse.setCode(_ctx.stringValue("ReserveMovieSeatResponse.Code"));
+		reserveMovieSeatResponse.setMessage(_ctx.stringValue("ReserveMovieSeatResponse.Message"));
+		reserveMovieSeatResponse.setSubCode(_ctx.stringValue("ReserveMovieSeatResponse.SubCode"));
+		reserveMovieSeatResponse.setSubMessage(_ctx.stringValue("ReserveMovieSeatResponse.SubMessage"));
+		reserveMovieSeatResponse.setLogsId(_ctx.stringValue("ReserveMovieSeatResponse.LogsId"));
+		reserveMovieSeatResponse.setSuccess(_ctx.booleanValue("ReserveMovieSeatResponse.Success"));
 
 		ReservedSeat reservedSeat = new ReservedSeat();
-		reservedSeat.setApplyKey(context.stringValue("ReserveMovieSeatResponse.ReservedSeat.ApplyKey"));
-		reservedSeat.setDefaultLockSecond(context.longValue("ReserveMovieSeatResponse.ReservedSeat.DefaultLockSecond"));
-		reservedSeat.setReservedTime(context.longValue("ReserveMovieSeatResponse.ReservedSeat.ReservedTime"));
-		reservedSeat.setStatus(context.stringValue("ReserveMovieSeatResponse.ReservedSeat.Status"));
+		reservedSeat.setApplyKey(_ctx.stringValue("ReserveMovieSeatResponse.ReservedSeat.ApplyKey"));
+		reservedSeat.setDefaultLockSecond(_ctx.longValue("ReserveMovieSeatResponse.ReservedSeat.DefaultLockSecond"));
+		reservedSeat.setReservedTime(_ctx.longValue("ReserveMovieSeatResponse.ReservedSeat.ReservedTime"));
+		reservedSeat.setStatus(_ctx.stringValue("ReserveMovieSeatResponse.ReservedSeat.Status"));
 		reserveMovieSeatResponse.setReservedSeat(reservedSeat);
 	 
 	 	return reserveMovieSeatResponse;

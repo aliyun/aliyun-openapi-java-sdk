@@ -23,43 +23,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryRefundApplicationDetailResponseUnmarshaller {
 
-	public static QueryRefundApplicationDetailResponse unmarshall(QueryRefundApplicationDetailResponse queryRefundApplicationDetailResponse, UnmarshallerContext context) {
+	public static QueryRefundApplicationDetailResponse unmarshall(QueryRefundApplicationDetailResponse queryRefundApplicationDetailResponse, UnmarshallerContext _ctx) {
 		
-		queryRefundApplicationDetailResponse.setRequestId(context.stringValue("QueryRefundApplicationDetailResponse.RequestId"));
-		queryRefundApplicationDetailResponse.setCode(context.stringValue("QueryRefundApplicationDetailResponse.Code"));
-		queryRefundApplicationDetailResponse.setMessage(context.stringValue("QueryRefundApplicationDetailResponse.Message"));
+		queryRefundApplicationDetailResponse.setRequestId(_ctx.stringValue("QueryRefundApplicationDetailResponse.RequestId"));
+		queryRefundApplicationDetailResponse.setCode(_ctx.stringValue("QueryRefundApplicationDetailResponse.Code"));
+		queryRefundApplicationDetailResponse.setMessage(_ctx.stringValue("QueryRefundApplicationDetailResponse.Message"));
 
 		RefundApplicationDetail refundApplicationDetail = new RefundApplicationDetail();
-		refundApplicationDetail.setBizClaimType(context.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.BizClaimType"));
-		refundApplicationDetail.setOrderLogisticsStatus(context.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.OrderLogisticsStatus"));
-		refundApplicationDetail.setDisputeStatus(context.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeStatus"));
-		refundApplicationDetail.setReturnGoodLogisticsStatus(context.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ReturnGoodLogisticsStatus"));
-		refundApplicationDetail.setLmOrderId(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.LmOrderId"));
-		refundApplicationDetail.setSubLmOrderId(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.SubLmOrderId"));
-		refundApplicationDetail.setDisputeType(context.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeType"));
-		refundApplicationDetail.setRefundFee(context.longValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefundFee"));
-		refundApplicationDetail.setRealRefundFee(context.longValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RealRefundFee"));
-		refundApplicationDetail.setReturnGoodCount(context.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ReturnGoodCount"));
-		refundApplicationDetail.setDisputeDesc(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeDesc"));
-		refundApplicationDetail.setSellerAgreeMsg(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.SellerAgreeMsg"));
-		refundApplicationDetail.setSellerRefuseAgreementMessage(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.SellerRefuseAgreementMessage"));
-		refundApplicationDetail.setApplyDisputeDesc(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ApplyDisputeDesc"));
-		refundApplicationDetail.setDisputeCreateTime(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeCreateTime"));
-		refundApplicationDetail.setDisputeEndTime(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeEndTime"));
-		refundApplicationDetail.setDisputeId(context.longValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeId"));
-		refundApplicationDetail.setRefunderAddress(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderAddress"));
-		refundApplicationDetail.setRefunderName(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderName"));
-		refundApplicationDetail.setRefunderTel(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderTel"));
-		refundApplicationDetail.setRefunderZipCode(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderZipCode"));
+		refundApplicationDetail.setBizClaimType(_ctx.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.BizClaimType"));
+		refundApplicationDetail.setOrderLogisticsStatus(_ctx.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.OrderLogisticsStatus"));
+		refundApplicationDetail.setDisputeStatus(_ctx.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeStatus"));
+		refundApplicationDetail.setReturnGoodLogisticsStatus(_ctx.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ReturnGoodLogisticsStatus"));
+		refundApplicationDetail.setLmOrderId(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.LmOrderId"));
+		refundApplicationDetail.setSubLmOrderId(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.SubLmOrderId"));
+		refundApplicationDetail.setDisputeType(_ctx.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeType"));
+		refundApplicationDetail.setRefundFee(_ctx.longValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefundFee"));
+		refundApplicationDetail.setRealRefundFee(_ctx.longValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RealRefundFee"));
+		refundApplicationDetail.setReturnGoodCount(_ctx.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ReturnGoodCount"));
+		refundApplicationDetail.setDisputeDesc(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeDesc"));
+		refundApplicationDetail.setSellerAgreeMsg(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.SellerAgreeMsg"));
+		refundApplicationDetail.setSellerRefuseAgreementMessage(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.SellerRefuseAgreementMessage"));
+		refundApplicationDetail.setApplyDisputeDesc(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ApplyDisputeDesc"));
+		refundApplicationDetail.setDisputeCreateTime(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeCreateTime"));
+		refundApplicationDetail.setDisputeEndTime(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeEndTime"));
+		refundApplicationDetail.setDisputeId(_ctx.longValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.DisputeId"));
+		refundApplicationDetail.setRefunderAddress(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderAddress"));
+		refundApplicationDetail.setRefunderName(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderName"));
+		refundApplicationDetail.setRefunderTel(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderTel"));
+		refundApplicationDetail.setRefunderZipCode(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.RefunderZipCode"));
 
 		MaxRefundFeeData maxRefundFeeData = new MaxRefundFeeData();
-		maxRefundFeeData.setMaxRefundFee(context.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.MaxRefundFeeData.MaxRefundFee"));
-		maxRefundFeeData.setMinRefundFee(context.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.MaxRefundFeeData.MinRefundFee"));
+		maxRefundFeeData.setMaxRefundFee(_ctx.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.MaxRefundFeeData.MaxRefundFee"));
+		maxRefundFeeData.setMinRefundFee(_ctx.integerValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.MaxRefundFeeData.MinRefundFee"));
 		refundApplicationDetail.setMaxRefundFeeData(maxRefundFeeData);
 
 		ApplyReasonText applyReasonText = new ApplyReasonText();
-		applyReasonText.setReasonTextId(context.longValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ApplyReasonText.ReasonTextId"));
-		applyReasonText.setReasonTips(context.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ApplyReasonText.ReasonTips"));
+		applyReasonText.setReasonTextId(_ctx.longValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ApplyReasonText.ReasonTextId"));
+		applyReasonText.setReasonTips(_ctx.stringValue("QueryRefundApplicationDetailResponse.RefundApplicationDetail.ApplyReasonText.ReasonTips"));
 		refundApplicationDetail.setApplyReasonText(applyReasonText);
 		queryRefundApplicationDetailResponse.setRefundApplicationDetail(refundApplicationDetail);
 	 

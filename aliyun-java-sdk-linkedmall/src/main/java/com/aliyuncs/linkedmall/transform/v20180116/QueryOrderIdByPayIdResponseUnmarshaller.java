@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryOrderIdByPayIdResponseUnmarshaller {
 
-	public static QueryOrderIdByPayIdResponse unmarshall(QueryOrderIdByPayIdResponse queryOrderIdByPayIdResponse, UnmarshallerContext context) {
+	public static QueryOrderIdByPayIdResponse unmarshall(QueryOrderIdByPayIdResponse queryOrderIdByPayIdResponse, UnmarshallerContext _ctx) {
 		
-		queryOrderIdByPayIdResponse.setRequestId(context.stringValue("QueryOrderIdByPayIdResponse.RequestId"));
-		queryOrderIdByPayIdResponse.setCode(context.stringValue("QueryOrderIdByPayIdResponse.Code"));
-		queryOrderIdByPayIdResponse.setMessage(context.stringValue("QueryOrderIdByPayIdResponse.Message"));
+		queryOrderIdByPayIdResponse.setRequestId(_ctx.stringValue("QueryOrderIdByPayIdResponse.RequestId"));
+		queryOrderIdByPayIdResponse.setCode(_ctx.stringValue("QueryOrderIdByPayIdResponse.Code"));
+		queryOrderIdByPayIdResponse.setMessage(_ctx.stringValue("QueryOrderIdByPayIdResponse.Message"));
 
 		List<LmOrderIdsItem> lmOrderIds = new ArrayList<LmOrderIdsItem>();
-		for (int i = 0; i < context.lengthValue("QueryOrderIdByPayIdResponse.LmOrderIds.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryOrderIdByPayIdResponse.LmOrderIds.Length"); i++) {
 			LmOrderIdsItem lmOrderIdsItem = new LmOrderIdsItem();
-			lmOrderIdsItem.setLmOrderId(context.longValue("QueryOrderIdByPayIdResponse.LmOrderIds["+ i +"].LmOrderId"));
+			lmOrderIdsItem.setLmOrderId(_ctx.longValue("QueryOrderIdByPayIdResponse.LmOrderIds["+ i +"].LmOrderId"));
 
 			lmOrderIds.add(lmOrderIdsItem);
 		}

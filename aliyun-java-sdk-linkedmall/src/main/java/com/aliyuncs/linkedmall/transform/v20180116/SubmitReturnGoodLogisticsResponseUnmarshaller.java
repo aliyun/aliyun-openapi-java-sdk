@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitReturnGoodLogisticsResponseUnmarshaller {
 
-	public static SubmitReturnGoodLogisticsResponse unmarshall(SubmitReturnGoodLogisticsResponse submitReturnGoodLogisticsResponse, UnmarshallerContext context) {
+	public static SubmitReturnGoodLogisticsResponse unmarshall(SubmitReturnGoodLogisticsResponse submitReturnGoodLogisticsResponse, UnmarshallerContext _ctx) {
 		
-		submitReturnGoodLogisticsResponse.setRequestId(context.stringValue("SubmitReturnGoodLogisticsResponse.RequestId"));
-		submitReturnGoodLogisticsResponse.setCode(context.stringValue("SubmitReturnGoodLogisticsResponse.Code"));
-		submitReturnGoodLogisticsResponse.setMessage(context.stringValue("SubmitReturnGoodLogisticsResponse.Message"));
+		submitReturnGoodLogisticsResponse.setRequestId(_ctx.stringValue("SubmitReturnGoodLogisticsResponse.RequestId"));
+		submitReturnGoodLogisticsResponse.setCode(_ctx.stringValue("SubmitReturnGoodLogisticsResponse.Code"));
+		submitReturnGoodLogisticsResponse.setMessage(_ctx.stringValue("SubmitReturnGoodLogisticsResponse.Message"));
 	 
 	 	return submitReturnGoodLogisticsResponse;
 	}

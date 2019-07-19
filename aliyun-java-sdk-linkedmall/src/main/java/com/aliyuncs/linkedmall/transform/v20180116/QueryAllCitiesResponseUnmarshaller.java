@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAllCitiesResponseUnmarshaller {
 
-	public static QueryAllCitiesResponse unmarshall(QueryAllCitiesResponse queryAllCitiesResponse, UnmarshallerContext context) {
+	public static QueryAllCitiesResponse unmarshall(QueryAllCitiesResponse queryAllCitiesResponse, UnmarshallerContext _ctx) {
 		
-		queryAllCitiesResponse.setRequestId(context.stringValue("QueryAllCitiesResponse.RequestId"));
-		queryAllCitiesResponse.setCode(context.stringValue("QueryAllCitiesResponse.Code"));
-		queryAllCitiesResponse.setMessage(context.stringValue("QueryAllCitiesResponse.Message"));
-		queryAllCitiesResponse.setSubCode(context.stringValue("QueryAllCitiesResponse.SubCode"));
-		queryAllCitiesResponse.setSubMessage(context.stringValue("QueryAllCitiesResponse.SubMessage"));
-		queryAllCitiesResponse.setLogsId(context.stringValue("QueryAllCitiesResponse.LogsId"));
-		queryAllCitiesResponse.setSuccess(context.booleanValue("QueryAllCitiesResponse.Success"));
+		queryAllCitiesResponse.setRequestId(_ctx.stringValue("QueryAllCitiesResponse.RequestId"));
+		queryAllCitiesResponse.setCode(_ctx.stringValue("QueryAllCitiesResponse.Code"));
+		queryAllCitiesResponse.setMessage(_ctx.stringValue("QueryAllCitiesResponse.Message"));
+		queryAllCitiesResponse.setSubCode(_ctx.stringValue("QueryAllCitiesResponse.SubCode"));
+		queryAllCitiesResponse.setSubMessage(_ctx.stringValue("QueryAllCitiesResponse.SubMessage"));
+		queryAllCitiesResponse.setLogsId(_ctx.stringValue("QueryAllCitiesResponse.LogsId"));
+		queryAllCitiesResponse.setSuccess(_ctx.booleanValue("QueryAllCitiesResponse.Success"));
 
 		List<City> cities = new ArrayList<City>();
-		for (int i = 0; i < context.lengthValue("QueryAllCitiesResponse.Cities.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAllCitiesResponse.Cities.Length"); i++) {
 			City city = new City();
-			city.setPinYin(context.stringValue("QueryAllCitiesResponse.Cities["+ i +"].PinYin"));
-			city.setCityCode(context.longValue("QueryAllCitiesResponse.Cities["+ i +"].CityCode"));
-			city.setName(context.stringValue("QueryAllCitiesResponse.Cities["+ i +"].Name"));
-			city.setId(context.longValue("QueryAllCitiesResponse.Cities["+ i +"].Id"));
-			city.setParentId(context.longValue("QueryAllCitiesResponse.Cities["+ i +"].ParentId"));
+			city.setPinYin(_ctx.stringValue("QueryAllCitiesResponse.Cities["+ i +"].PinYin"));
+			city.setCityCode(_ctx.longValue("QueryAllCitiesResponse.Cities["+ i +"].CityCode"));
+			city.setName(_ctx.stringValue("QueryAllCitiesResponse.Cities["+ i +"].Name"));
+			city.setId(_ctx.longValue("QueryAllCitiesResponse.Cities["+ i +"].Id"));
+			city.setParentId(_ctx.longValue("QueryAllCitiesResponse.Cities["+ i +"].ParentId"));
 
 			cities.add(city);
 		}

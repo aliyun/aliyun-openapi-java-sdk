@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveMessagesResponseUnmarshaller {
 
-	public static RemoveMessagesResponse unmarshall(RemoveMessagesResponse removeMessagesResponse, UnmarshallerContext context) {
+	public static RemoveMessagesResponse unmarshall(RemoveMessagesResponse removeMessagesResponse, UnmarshallerContext _ctx) {
 		
-		removeMessagesResponse.setRequestId(context.stringValue("RemoveMessagesResponse.RequestId"));
-		removeMessagesResponse.setLogsId(context.stringValue("RemoveMessagesResponse.LogsId"));
-		removeMessagesResponse.setSubCode(context.stringValue("RemoveMessagesResponse.SubCode"));
-		removeMessagesResponse.setSubMessage(context.stringValue("RemoveMessagesResponse.SubMessage"));
-		removeMessagesResponse.setCode(context.stringValue("RemoveMessagesResponse.Code"));
-		removeMessagesResponse.setMessage(context.stringValue("RemoveMessagesResponse.Message"));
-		removeMessagesResponse.setSuccess(context.booleanValue("RemoveMessagesResponse.Success"));
+		removeMessagesResponse.setRequestId(_ctx.stringValue("RemoveMessagesResponse.RequestId"));
+		removeMessagesResponse.setLogsId(_ctx.stringValue("RemoveMessagesResponse.LogsId"));
+		removeMessagesResponse.setSubCode(_ctx.stringValue("RemoveMessagesResponse.SubCode"));
+		removeMessagesResponse.setSubMessage(_ctx.stringValue("RemoveMessagesResponse.SubMessage"));
+		removeMessagesResponse.setCode(_ctx.stringValue("RemoveMessagesResponse.Code"));
+		removeMessagesResponse.setMessage(_ctx.stringValue("RemoveMessagesResponse.Message"));
+		removeMessagesResponse.setSuccess(_ctx.booleanValue("RemoveMessagesResponse.Success"));
 
 		ActionResult actionResult = new ActionResult();
-		actionResult.setReturnCode(context.stringValue("RemoveMessagesResponse.ActionResult.ReturnCode"));
-		actionResult.setReturnValue(context.stringValue("RemoveMessagesResponse.ActionResult.ReturnValue"));
-		actionResult.setReturnMessage(context.stringValue("RemoveMessagesResponse.ActionResult.ReturnMessage"));
+		actionResult.setReturnCode(_ctx.stringValue("RemoveMessagesResponse.ActionResult.ReturnCode"));
+		actionResult.setReturnValue(_ctx.stringValue("RemoveMessagesResponse.ActionResult.ReturnValue"));
+		actionResult.setReturnMessage(_ctx.stringValue("RemoveMessagesResponse.ActionResult.ReturnMessage"));
 		removeMessagesResponse.setActionResult(actionResult);
 	 
 	 	return removeMessagesResponse;

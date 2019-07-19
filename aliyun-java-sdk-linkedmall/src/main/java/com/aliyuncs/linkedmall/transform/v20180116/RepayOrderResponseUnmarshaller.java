@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RepayOrderResponseUnmarshaller {
 
-	public static RepayOrderResponse unmarshall(RepayOrderResponse repayOrderResponse, UnmarshallerContext context) {
+	public static RepayOrderResponse unmarshall(RepayOrderResponse repayOrderResponse, UnmarshallerContext _ctx) {
 		
-		repayOrderResponse.setRequestId(context.stringValue("RepayOrderResponse.RequestId"));
-		repayOrderResponse.setCode(context.stringValue("RepayOrderResponse.Code"));
-		repayOrderResponse.setMessage(context.stringValue("RepayOrderResponse.Message"));
+		repayOrderResponse.setRequestId(_ctx.stringValue("RepayOrderResponse.RequestId"));
+		repayOrderResponse.setCode(_ctx.stringValue("RepayOrderResponse.Code"));
+		repayOrderResponse.setMessage(_ctx.stringValue("RepayOrderResponse.Message"));
 	 
 	 	return repayOrderResponse;
 	}

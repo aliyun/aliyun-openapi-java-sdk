@@ -25,36 +25,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryOrderInfoAfterSaleResponseUnmarshaller {
 
-	public static QueryOrderInfoAfterSaleResponse unmarshall(QueryOrderInfoAfterSaleResponse queryOrderInfoAfterSaleResponse, UnmarshallerContext context) {
+	public static QueryOrderInfoAfterSaleResponse unmarshall(QueryOrderInfoAfterSaleResponse queryOrderInfoAfterSaleResponse, UnmarshallerContext _ctx) {
 		
-		queryOrderInfoAfterSaleResponse.setRequestId(context.stringValue("QueryOrderInfoAfterSaleResponse.RequestId"));
-		queryOrderInfoAfterSaleResponse.setCode(context.stringValue("QueryOrderInfoAfterSaleResponse.Code"));
-		queryOrderInfoAfterSaleResponse.setMessage(context.stringValue("QueryOrderInfoAfterSaleResponse.Message"));
+		queryOrderInfoAfterSaleResponse.setRequestId(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.RequestId"));
+		queryOrderInfoAfterSaleResponse.setCode(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Code"));
+		queryOrderInfoAfterSaleResponse.setMessage(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Message"));
 
 		Model model = new Model();
-		model.setLmOrderId(context.longValue("QueryOrderInfoAfterSaleResponse.Model.LmOrderId"));
-		model.setTbOrderId(context.longValue("QueryOrderInfoAfterSaleResponse.Model.TbOrderId"));
-		model.setCreateDate(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.CreateDate"));
-		model.setCashAmount(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.CashAmount"));
-		model.setPoints(context.longValue("QueryOrderInfoAfterSaleResponse.Model.Points"));
-		model.setPointsAmount(context.longValue("QueryOrderInfoAfterSaleResponse.Model.PointsAmount"));
-		model.setOrderStatus(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.OrderStatus"));
-		model.setShopName(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.ShopName"));
-		model.setRefundStatus(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.RefundStatus"));
-		model.setRefundAmount(context.longValue("QueryOrderInfoAfterSaleResponse.Model.RefundAmount"));
-		model.setRefundRate(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.RefundRate"));
-		model.setXiaomiCode(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.XiaomiCode"));
-		model.setShopServiceTelephone(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.ShopServiceTelephone"));
-		model.setExtJson(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.ExtJson"));
-		model.setRefundPoints(context.longValue("QueryOrderInfoAfterSaleResponse.Model.RefundPoints"));
+		model.setLmOrderId(_ctx.longValue("QueryOrderInfoAfterSaleResponse.Model.LmOrderId"));
+		model.setTbOrderId(_ctx.longValue("QueryOrderInfoAfterSaleResponse.Model.TbOrderId"));
+		model.setCreateDate(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.CreateDate"));
+		model.setCashAmount(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.CashAmount"));
+		model.setPoints(_ctx.longValue("QueryOrderInfoAfterSaleResponse.Model.Points"));
+		model.setPointsAmount(_ctx.longValue("QueryOrderInfoAfterSaleResponse.Model.PointsAmount"));
+		model.setOrderStatus(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.OrderStatus"));
+		model.setShopName(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.ShopName"));
+		model.setRefundStatus(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.RefundStatus"));
+		model.setRefundAmount(_ctx.longValue("QueryOrderInfoAfterSaleResponse.Model.RefundAmount"));
+		model.setRefundRate(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.RefundRate"));
+		model.setXiaomiCode(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.XiaomiCode"));
+		model.setShopServiceTelephone(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.ShopServiceTelephone"));
+		model.setExtJson(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.ExtJson"));
+		model.setRefundPoints(_ctx.longValue("QueryOrderInfoAfterSaleResponse.Model.RefundPoints"));
 
 		List<Logistics> logisticsList = new ArrayList<Logistics>();
-		for (int i = 0; i < context.lengthValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList.Length"); i++) {
 			Logistics logistics = new Logistics();
-			logistics.setLogisticsNo(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList["+ i +"].LogisticsNo"));
-			logistics.setLogisticsStatus(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList["+ i +"].LogisticsStatus"));
-			logistics.setLogisticsCompanyName(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList["+ i +"].LogisticsCompanyName"));
-			logistics.setLogisticsCompanyCode(context.stringValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList["+ i +"].LogisticsCompanyCode"));
+			logistics.setLogisticsNo(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList["+ i +"].LogisticsNo"));
+			logistics.setLogisticsStatus(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList["+ i +"].LogisticsStatus"));
+			logistics.setLogisticsCompanyName(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList["+ i +"].LogisticsCompanyName"));
+			logistics.setLogisticsCompanyCode(_ctx.stringValue("QueryOrderInfoAfterSaleResponse.Model.LogisticsList["+ i +"].LogisticsCompanyCode"));
 
 			logisticsList.add(logistics);
 		}

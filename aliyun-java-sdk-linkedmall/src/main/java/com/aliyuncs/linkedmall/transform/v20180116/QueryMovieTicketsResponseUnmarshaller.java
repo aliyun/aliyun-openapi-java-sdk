@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMovieTicketsResponseUnmarshaller {
 
-	public static QueryMovieTicketsResponse unmarshall(QueryMovieTicketsResponse queryMovieTicketsResponse, UnmarshallerContext context) {
+	public static QueryMovieTicketsResponse unmarshall(QueryMovieTicketsResponse queryMovieTicketsResponse, UnmarshallerContext _ctx) {
 		
-		queryMovieTicketsResponse.setRequestId(context.stringValue("QueryMovieTicketsResponse.RequestId"));
-		queryMovieTicketsResponse.setLogsId(context.stringValue("QueryMovieTicketsResponse.LogsId"));
-		queryMovieTicketsResponse.setSubCode(context.stringValue("QueryMovieTicketsResponse.SubCode"));
-		queryMovieTicketsResponse.setSubMessage(context.stringValue("QueryMovieTicketsResponse.SubMessage"));
-		queryMovieTicketsResponse.setCode(context.stringValue("QueryMovieTicketsResponse.Code"));
-		queryMovieTicketsResponse.setMessage(context.stringValue("QueryMovieTicketsResponse.Message"));
-		queryMovieTicketsResponse.setSuccess(context.booleanValue("QueryMovieTicketsResponse.Success"));
+		queryMovieTicketsResponse.setRequestId(_ctx.stringValue("QueryMovieTicketsResponse.RequestId"));
+		queryMovieTicketsResponse.setLogsId(_ctx.stringValue("QueryMovieTicketsResponse.LogsId"));
+		queryMovieTicketsResponse.setSubCode(_ctx.stringValue("QueryMovieTicketsResponse.SubCode"));
+		queryMovieTicketsResponse.setSubMessage(_ctx.stringValue("QueryMovieTicketsResponse.SubMessage"));
+		queryMovieTicketsResponse.setCode(_ctx.stringValue("QueryMovieTicketsResponse.Code"));
+		queryMovieTicketsResponse.setMessage(_ctx.stringValue("QueryMovieTicketsResponse.Message"));
+		queryMovieTicketsResponse.setSuccess(_ctx.booleanValue("QueryMovieTicketsResponse.Success"));
 
 		MovieTicket movieTicket = new MovieTicket();
-		movieTicket.setStatus(context.stringValue("QueryMovieTicketsResponse.MovieTicket.Status"));
-		movieTicket.setReturnMessage(context.stringValue("QueryMovieTicketsResponse.MovieTicket.ReturnMessage"));
-		movieTicket.setTbOrderId(context.stringValue("QueryMovieTicketsResponse.MovieTicket.TbOrderId"));
-		movieTicket.setTicketContents(context.stringValue("QueryMovieTicketsResponse.MovieTicket.TicketContents"));
+		movieTicket.setStatus(_ctx.stringValue("QueryMovieTicketsResponse.MovieTicket.Status"));
+		movieTicket.setReturnMessage(_ctx.stringValue("QueryMovieTicketsResponse.MovieTicket.ReturnMessage"));
+		movieTicket.setTbOrderId(_ctx.stringValue("QueryMovieTicketsResponse.MovieTicket.TbOrderId"));
+		movieTicket.setTicketContents(_ctx.stringValue("QueryMovieTicketsResponse.MovieTicket.TicketContents"));
 		queryMovieTicketsResponse.setMovieTicket(movieTicket);
 	 
 	 	return queryMovieTicketsResponse;

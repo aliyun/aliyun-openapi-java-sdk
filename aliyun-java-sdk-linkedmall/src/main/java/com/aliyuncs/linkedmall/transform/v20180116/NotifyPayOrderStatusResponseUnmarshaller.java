@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class NotifyPayOrderStatusResponseUnmarshaller {
 
-	public static NotifyPayOrderStatusResponse unmarshall(NotifyPayOrderStatusResponse notifyPayOrderStatusResponse, UnmarshallerContext context) {
+	public static NotifyPayOrderStatusResponse unmarshall(NotifyPayOrderStatusResponse notifyPayOrderStatusResponse, UnmarshallerContext _ctx) {
 		
-		notifyPayOrderStatusResponse.setCode(context.stringValue("NotifyPayOrderStatusResponse.Code"));
-		notifyPayOrderStatusResponse.setMessage(context.stringValue("NotifyPayOrderStatusResponse.Message"));
+		notifyPayOrderStatusResponse.setCode(_ctx.stringValue("NotifyPayOrderStatusResponse.Code"));
+		notifyPayOrderStatusResponse.setMessage(_ctx.stringValue("NotifyPayOrderStatusResponse.Message"));
 	 
 	 	return notifyPayOrderStatusResponse;
 	}

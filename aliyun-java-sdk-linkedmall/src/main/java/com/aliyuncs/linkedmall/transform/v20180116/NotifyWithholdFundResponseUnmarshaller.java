@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class NotifyWithholdFundResponseUnmarshaller {
 
-	public static NotifyWithholdFundResponse unmarshall(NotifyWithholdFundResponse notifyWithholdFundResponse, UnmarshallerContext context) {
+	public static NotifyWithholdFundResponse unmarshall(NotifyWithholdFundResponse notifyWithholdFundResponse, UnmarshallerContext _ctx) {
 		
-		notifyWithholdFundResponse.setRequestId(context.stringValue("NotifyWithholdFundResponse.RequestId"));
-		notifyWithholdFundResponse.setCode(context.stringValue("NotifyWithholdFundResponse.Code"));
-		notifyWithholdFundResponse.setMessage(context.stringValue("NotifyWithholdFundResponse.Message"));
+		notifyWithholdFundResponse.setRequestId(_ctx.stringValue("NotifyWithholdFundResponse.RequestId"));
+		notifyWithholdFundResponse.setCode(_ctx.stringValue("NotifyWithholdFundResponse.Code"));
+		notifyWithholdFundResponse.setMessage(_ctx.stringValue("NotifyWithholdFundResponse.Message"));
 	 
 	 	return notifyWithholdFundResponse;
 	}

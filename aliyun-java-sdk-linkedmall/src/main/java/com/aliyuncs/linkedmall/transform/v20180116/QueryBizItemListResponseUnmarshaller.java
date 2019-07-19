@@ -25,40 +25,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryBizItemListResponseUnmarshaller {
 
-	public static QueryBizItemListResponse unmarshall(QueryBizItemListResponse queryBizItemListResponse, UnmarshallerContext context) {
+	public static QueryBizItemListResponse unmarshall(QueryBizItemListResponse queryBizItemListResponse, UnmarshallerContext _ctx) {
 		
-		queryBizItemListResponse.setRequestId(context.stringValue("QueryBizItemListResponse.RequestId"));
-		queryBizItemListResponse.setCode(context.stringValue("QueryBizItemListResponse.Code"));
-		queryBizItemListResponse.setMessage(context.stringValue("QueryBizItemListResponse.Message"));
-		queryBizItemListResponse.setTotalCount(context.integerValue("QueryBizItemListResponse.TotalCount"));
-		queryBizItemListResponse.setPageNumber(context.integerValue("QueryBizItemListResponse.PageNumber"));
-		queryBizItemListResponse.setPageSize(context.integerValue("QueryBizItemListResponse.PageSize"));
+		queryBizItemListResponse.setRequestId(_ctx.stringValue("QueryBizItemListResponse.RequestId"));
+		queryBizItemListResponse.setCode(_ctx.stringValue("QueryBizItemListResponse.Code"));
+		queryBizItemListResponse.setMessage(_ctx.stringValue("QueryBizItemListResponse.Message"));
+		queryBizItemListResponse.setTotalCount(_ctx.integerValue("QueryBizItemListResponse.TotalCount"));
+		queryBizItemListResponse.setPageNumber(_ctx.integerValue("QueryBizItemListResponse.PageNumber"));
+		queryBizItemListResponse.setPageSize(_ctx.integerValue("QueryBizItemListResponse.PageSize"));
 
 		List<Item> itemList = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("QueryBizItemListResponse.ItemList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryBizItemListResponse.ItemList.Length"); i++) {
 			Item item = new Item();
-			item.setItemId(context.longValue("QueryBizItemListResponse.ItemList["+ i +"].ItemId"));
-			item.setItemTitle(context.stringValue("QueryBizItemListResponse.ItemList["+ i +"].ItemTitle"));
-			item.setCustomizedItemName(context.stringValue("QueryBizItemListResponse.ItemList["+ i +"].CustomizedItemName"));
-			item.setMainPicUrl(context.stringValue("QueryBizItemListResponse.ItemList["+ i +"].MainPicUrl"));
-			item.setReservePrice(context.longValue("QueryBizItemListResponse.ItemList["+ i +"].ReservePrice"));
-			item.setCategoryId(context.longValue("QueryBizItemListResponse.ItemList["+ i +"].CategoryId"));
-			item.setCanSell(context.booleanValue("QueryBizItemListResponse.ItemList["+ i +"].CanSell"));
-			item.setTaobaoShopName(context.stringValue("QueryBizItemListResponse.ItemList["+ i +"].TaobaoShopName"));
-			item.setExtJson(context.stringValue("QueryBizItemListResponse.ItemList["+ i +"].ExtJson"));
-			item.setSellerId(context.longValue("QueryBizItemListResponse.ItemList["+ i +"].SellerId"));
+			item.setItemId(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].ItemId"));
+			item.setItemTitle(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].ItemTitle"));
+			item.setCustomizedItemName(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].CustomizedItemName"));
+			item.setMainPicUrl(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].MainPicUrl"));
+			item.setReservePrice(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].ReservePrice"));
+			item.setCategoryId(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].CategoryId"));
+			item.setCanSell(_ctx.booleanValue("QueryBizItemListResponse.ItemList["+ i +"].CanSell"));
+			item.setTaobaoShopName(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].TaobaoShopName"));
+			item.setExtJson(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].ExtJson"));
+			item.setSellerId(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].SellerId"));
 
 			List<Sku> skuList = new ArrayList<Sku>();
-			for (int j = 0; j < context.lengthValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList.Length"); j++) {
 				Sku sku = new Sku();
-				sku.setSkuId(context.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].SkuId"));
-				sku.setSkuPicUrl(context.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].SkuPicUrl"));
-				sku.setSkuTitle(context.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].SkuTitle"));
-				sku.setPriceCent(context.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].PriceCent"));
-				sku.setPoints(context.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].Points"));
-				sku.setPointsAmount(context.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].PointsAmount"));
-				sku.setBenefitId(context.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].BenefitId"));
-				sku.setCanSell(context.booleanValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].CanSell"));
+				sku.setSkuId(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].SkuId"));
+				sku.setSkuPicUrl(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].SkuPicUrl"));
+				sku.setSkuTitle(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].SkuTitle"));
+				sku.setPriceCent(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].PriceCent"));
+				sku.setPoints(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].Points"));
+				sku.setPointsAmount(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].PointsAmount"));
+				sku.setBenefitId(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].BenefitId"));
+				sku.setCanSell(_ctx.booleanValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].CanSell"));
 
 				skuList.add(sku);
 			}

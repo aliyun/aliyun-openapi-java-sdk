@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelRefundResponseUnmarshaller {
 
-	public static CancelRefundResponse unmarshall(CancelRefundResponse cancelRefundResponse, UnmarshallerContext context) {
+	public static CancelRefundResponse unmarshall(CancelRefundResponse cancelRefundResponse, UnmarshallerContext _ctx) {
 		
-		cancelRefundResponse.setRequestId(context.stringValue("CancelRefundResponse.RequestId"));
-		cancelRefundResponse.setCode(context.stringValue("CancelRefundResponse.Code"));
-		cancelRefundResponse.setMessage(context.stringValue("CancelRefundResponse.Message"));
+		cancelRefundResponse.setRequestId(_ctx.stringValue("CancelRefundResponse.RequestId"));
+		cancelRefundResponse.setCode(_ctx.stringValue("CancelRefundResponse.Code"));
+		cancelRefundResponse.setMessage(_ctx.stringValue("CancelRefundResponse.Message"));
 
 		RefundApplicationData refundApplicationData = new RefundApplicationData();
-		refundApplicationData.setSubLmOrderId(context.stringValue("CancelRefundResponse.RefundApplicationData.SubLmOrderId"));
-		refundApplicationData.setDisputeStatus(context.integerValue("CancelRefundResponse.RefundApplicationData.DisputeStatus"));
-		refundApplicationData.setDisputeType(context.integerValue("CancelRefundResponse.RefundApplicationData.DisputeType"));
+		refundApplicationData.setSubLmOrderId(_ctx.stringValue("CancelRefundResponse.RefundApplicationData.SubLmOrderId"));
+		refundApplicationData.setDisputeStatus(_ctx.integerValue("CancelRefundResponse.RefundApplicationData.DisputeStatus"));
+		refundApplicationData.setDisputeType(_ctx.integerValue("CancelRefundResponse.RefundApplicationData.DisputeType"));
 		cancelRefundResponse.setRefundApplicationData(refundApplicationData);
 	 
 	 	return cancelRefundResponse;

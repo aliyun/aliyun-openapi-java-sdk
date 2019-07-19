@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ValidateTaobaoAccountResponseUnmarshaller {
 
-	public static ValidateTaobaoAccountResponse unmarshall(ValidateTaobaoAccountResponse validateTaobaoAccountResponse, UnmarshallerContext context) {
+	public static ValidateTaobaoAccountResponse unmarshall(ValidateTaobaoAccountResponse validateTaobaoAccountResponse, UnmarshallerContext _ctx) {
 		
-		validateTaobaoAccountResponse.setRequestId(context.stringValue("ValidateTaobaoAccountResponse.RequestId"));
-		validateTaobaoAccountResponse.setCode(context.stringValue("ValidateTaobaoAccountResponse.Code"));
-		validateTaobaoAccountResponse.setMessage(context.stringValue("ValidateTaobaoAccountResponse.Message"));
-		validateTaobaoAccountResponse.setSubCode(context.stringValue("ValidateTaobaoAccountResponse.SubCode"));
-		validateTaobaoAccountResponse.setSubMessage(context.stringValue("ValidateTaobaoAccountResponse.SubMessage"));
-		validateTaobaoAccountResponse.setLogsId(context.stringValue("ValidateTaobaoAccountResponse.LogsId"));
-		validateTaobaoAccountResponse.setSuccess(context.booleanValue("ValidateTaobaoAccountResponse.Success"));
-		validateTaobaoAccountResponse.setTotalCount(context.longValue("ValidateTaobaoAccountResponse.TotalCount"));
+		validateTaobaoAccountResponse.setRequestId(_ctx.stringValue("ValidateTaobaoAccountResponse.RequestId"));
+		validateTaobaoAccountResponse.setCode(_ctx.stringValue("ValidateTaobaoAccountResponse.Code"));
+		validateTaobaoAccountResponse.setMessage(_ctx.stringValue("ValidateTaobaoAccountResponse.Message"));
+		validateTaobaoAccountResponse.setSubCode(_ctx.stringValue("ValidateTaobaoAccountResponse.SubCode"));
+		validateTaobaoAccountResponse.setSubMessage(_ctx.stringValue("ValidateTaobaoAccountResponse.SubMessage"));
+		validateTaobaoAccountResponse.setLogsId(_ctx.stringValue("ValidateTaobaoAccountResponse.LogsId"));
+		validateTaobaoAccountResponse.setSuccess(_ctx.booleanValue("ValidateTaobaoAccountResponse.Success"));
+		validateTaobaoAccountResponse.setTotalCount(_ctx.longValue("ValidateTaobaoAccountResponse.TotalCount"));
 
 		Model model = new Model();
-		model.setMatch(context.booleanValue("ValidateTaobaoAccountResponse.Model.Match"));
+		model.setMatch(_ctx.booleanValue("ValidateTaobaoAccountResponse.Model.Match"));
 		validateTaobaoAccountResponse.setModel(model);
 	 
 	 	return validateTaobaoAccountResponse;

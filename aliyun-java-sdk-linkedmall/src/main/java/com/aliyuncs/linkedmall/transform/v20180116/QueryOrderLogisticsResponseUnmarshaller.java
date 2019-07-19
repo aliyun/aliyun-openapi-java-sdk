@@ -27,38 +27,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryOrderLogisticsResponseUnmarshaller {
 
-	public static QueryOrderLogisticsResponse unmarshall(QueryOrderLogisticsResponse queryOrderLogisticsResponse, UnmarshallerContext context) {
+	public static QueryOrderLogisticsResponse unmarshall(QueryOrderLogisticsResponse queryOrderLogisticsResponse, UnmarshallerContext _ctx) {
 		
-		queryOrderLogisticsResponse.setRequestId(context.stringValue("QueryOrderLogisticsResponse.RequestId"));
-		queryOrderLogisticsResponse.setCode(context.stringValue("QueryOrderLogisticsResponse.Code"));
-		queryOrderLogisticsResponse.setMessage(context.stringValue("QueryOrderLogisticsResponse.Message"));
+		queryOrderLogisticsResponse.setRequestId(_ctx.stringValue("QueryOrderLogisticsResponse.RequestId"));
+		queryOrderLogisticsResponse.setCode(_ctx.stringValue("QueryOrderLogisticsResponse.Code"));
+		queryOrderLogisticsResponse.setMessage(_ctx.stringValue("QueryOrderLogisticsResponse.Message"));
 
 		OrderLogistics orderLogistics = new OrderLogistics();
-		orderLogistics.setDataProvider(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.DataProvider"));
-		orderLogistics.setDataProviderTitle(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.DataProviderTitle"));
-		orderLogistics.setLogisticsCompanyCode(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsCompanyCode"));
-		orderLogistics.setLogisticsCompanyName(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsCompanyName"));
+		orderLogistics.setDataProvider(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.DataProvider"));
+		orderLogistics.setDataProviderTitle(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.DataProviderTitle"));
+		orderLogistics.setLogisticsCompanyCode(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsCompanyCode"));
+		orderLogistics.setLogisticsCompanyName(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsCompanyName"));
 
 		Receiver receiver = new Receiver();
-		receiver.setAddress(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Receiver.Address"));
-		receiver.setName(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Receiver.Name"));
-		receiver.setPhoneNumber(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Receiver.PhoneNumber"));
-		receiver.setZipCode(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Receiver.ZipCode"));
+		receiver.setAddress(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Receiver.Address"));
+		receiver.setName(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Receiver.Name"));
+		receiver.setPhoneNumber(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Receiver.PhoneNumber"));
+		receiver.setZipCode(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Receiver.ZipCode"));
 		orderLogistics.setReceiver(receiver);
 
 		Fetcher fetcher = new Fetcher();
-		fetcher.setAddress(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Fetcher.Address"));
-		fetcher.setName(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Fetcher.Name"));
-		fetcher.setPhoneNumber(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Fetcher.PhoneNumber"));
-		fetcher.setZipCode(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Fetcher.ZipCode"));
+		fetcher.setAddress(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Fetcher.Address"));
+		fetcher.setName(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Fetcher.Name"));
+		fetcher.setPhoneNumber(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Fetcher.PhoneNumber"));
+		fetcher.setZipCode(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.Fetcher.ZipCode"));
 		orderLogistics.setFetcher(fetcher);
 
 		List<LogisticsDetailListItem> logisticsDetailList = new ArrayList<LogisticsDetailListItem>();
-		for (int i = 0; i < context.lengthValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsDetailList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsDetailList.Length"); i++) {
 			LogisticsDetailListItem logisticsDetailListItem = new LogisticsDetailListItem();
-			logisticsDetailListItem.setOcurrTimeStr(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsDetailList["+ i +"].OcurrTimeStr"));
-			logisticsDetailListItem.setStanderdDesc(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsDetailList["+ i +"].StanderdDesc"));
-			logisticsDetailListItem.setStatusIcon(context.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsDetailList["+ i +"].StatusIcon"));
+			logisticsDetailListItem.setOcurrTimeStr(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsDetailList["+ i +"].OcurrTimeStr"));
+			logisticsDetailListItem.setStanderdDesc(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsDetailList["+ i +"].StanderdDesc"));
+			logisticsDetailListItem.setStatusIcon(_ctx.stringValue("QueryOrderLogisticsResponse.OrderLogistics.LogisticsDetailList["+ i +"].StatusIcon"));
 
 			logisticsDetailList.add(logisticsDetailListItem);
 		}

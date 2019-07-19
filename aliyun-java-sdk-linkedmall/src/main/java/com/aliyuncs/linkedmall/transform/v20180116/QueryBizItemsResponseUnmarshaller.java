@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryBizItemsResponseUnmarshaller {
 
-	public static QueryBizItemsResponse unmarshall(QueryBizItemsResponse queryBizItemsResponse, UnmarshallerContext context) {
+	public static QueryBizItemsResponse unmarshall(QueryBizItemsResponse queryBizItemsResponse, UnmarshallerContext _ctx) {
 		
-		queryBizItemsResponse.setRequestId(context.stringValue("QueryBizItemsResponse.RequestId"));
-		queryBizItemsResponse.setCode(context.stringValue("QueryBizItemsResponse.Code"));
-		queryBizItemsResponse.setMessage(context.stringValue("QueryBizItemsResponse.Message"));
-		queryBizItemsResponse.setTotalCount(context.integerValue("QueryBizItemsResponse.TotalCount"));
-		queryBizItemsResponse.setPageNumber(context.integerValue("QueryBizItemsResponse.PageNumber"));
-		queryBizItemsResponse.setPageSize(context.integerValue("QueryBizItemsResponse.PageSize"));
-		queryBizItemsResponse.setModel(context.stringValue("QueryBizItemsResponse.Model"));
+		queryBizItemsResponse.setRequestId(_ctx.stringValue("QueryBizItemsResponse.RequestId"));
+		queryBizItemsResponse.setCode(_ctx.stringValue("QueryBizItemsResponse.Code"));
+		queryBizItemsResponse.setMessage(_ctx.stringValue("QueryBizItemsResponse.Message"));
+		queryBizItemsResponse.setTotalCount(_ctx.integerValue("QueryBizItemsResponse.TotalCount"));
+		queryBizItemsResponse.setPageNumber(_ctx.integerValue("QueryBizItemsResponse.PageNumber"));
+		queryBizItemsResponse.setPageSize(_ctx.integerValue("QueryBizItemsResponse.PageSize"));
+		queryBizItemsResponse.setModel(_ctx.stringValue("QueryBizItemsResponse.Model"));
 	 
 	 	return queryBizItemsResponse;
 	}

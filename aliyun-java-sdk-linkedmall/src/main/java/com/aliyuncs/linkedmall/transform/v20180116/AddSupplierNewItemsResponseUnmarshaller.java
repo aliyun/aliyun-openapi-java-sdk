@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddSupplierNewItemsResponseUnmarshaller {
 
-	public static AddSupplierNewItemsResponse unmarshall(AddSupplierNewItemsResponse addSupplierNewItemsResponse, UnmarshallerContext context) {
+	public static AddSupplierNewItemsResponse unmarshall(AddSupplierNewItemsResponse addSupplierNewItemsResponse, UnmarshallerContext _ctx) {
 		
-		addSupplierNewItemsResponse.setRequestId(context.stringValue("AddSupplierNewItemsResponse.RequestId"));
-		addSupplierNewItemsResponse.setCode(context.stringValue("AddSupplierNewItemsResponse.Code"));
-		addSupplierNewItemsResponse.setMessage(context.stringValue("AddSupplierNewItemsResponse.Message"));
+		addSupplierNewItemsResponse.setRequestId(_ctx.stringValue("AddSupplierNewItemsResponse.RequestId"));
+		addSupplierNewItemsResponse.setCode(_ctx.stringValue("AddSupplierNewItemsResponse.Code"));
+		addSupplierNewItemsResponse.setMessage(_ctx.stringValue("AddSupplierNewItemsResponse.Message"));
 	 
 	 	return addSupplierNewItemsResponse;
 	}

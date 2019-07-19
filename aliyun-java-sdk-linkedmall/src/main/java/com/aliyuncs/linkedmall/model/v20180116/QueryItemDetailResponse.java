@@ -141,6 +141,8 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 		private String tbShopName;
 
+		private String lmItemCategory;
+
 		private List<Sku> skus;
 
 		private List<String> itemImages;
@@ -319,6 +321,14 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 		public void setTbShopName(String tbShopName) {
 			this.tbShopName = tbShopName;
+		}
+
+		public String getLmItemCategory() {
+			return this.lmItemCategory;
+		}
+
+		public void setLmItemCategory(String lmItemCategory) {
+			this.lmItemCategory = lmItemCategory;
 		}
 
 		public List<Sku> getSkus() {

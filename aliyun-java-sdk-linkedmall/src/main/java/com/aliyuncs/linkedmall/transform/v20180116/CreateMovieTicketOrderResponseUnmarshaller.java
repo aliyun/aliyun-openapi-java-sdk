@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMovieTicketOrderResponseUnmarshaller {
 
-	public static CreateMovieTicketOrderResponse unmarshall(CreateMovieTicketOrderResponse createMovieTicketOrderResponse, UnmarshallerContext context) {
+	public static CreateMovieTicketOrderResponse unmarshall(CreateMovieTicketOrderResponse createMovieTicketOrderResponse, UnmarshallerContext _ctx) {
 		
-		createMovieTicketOrderResponse.setRequestId(context.stringValue("CreateMovieTicketOrderResponse.RequestId"));
-		createMovieTicketOrderResponse.setCode(context.stringValue("CreateMovieTicketOrderResponse.Code"));
-		createMovieTicketOrderResponse.setMessage(context.stringValue("CreateMovieTicketOrderResponse.Message"));
-		createMovieTicketOrderResponse.setSubCode(context.stringValue("CreateMovieTicketOrderResponse.SubCode"));
-		createMovieTicketOrderResponse.setSubMessage(context.stringValue("CreateMovieTicketOrderResponse.SubMessage"));
-		createMovieTicketOrderResponse.setLogsId(context.stringValue("CreateMovieTicketOrderResponse.LogsId"));
-		createMovieTicketOrderResponse.setSuccess(context.booleanValue("CreateMovieTicketOrderResponse.Success"));
-		createMovieTicketOrderResponse.setTotalCount(context.longValue("CreateMovieTicketOrderResponse.TotalCount"));
+		createMovieTicketOrderResponse.setRequestId(_ctx.stringValue("CreateMovieTicketOrderResponse.RequestId"));
+		createMovieTicketOrderResponse.setCode(_ctx.stringValue("CreateMovieTicketOrderResponse.Code"));
+		createMovieTicketOrderResponse.setMessage(_ctx.stringValue("CreateMovieTicketOrderResponse.Message"));
+		createMovieTicketOrderResponse.setSubCode(_ctx.stringValue("CreateMovieTicketOrderResponse.SubCode"));
+		createMovieTicketOrderResponse.setSubMessage(_ctx.stringValue("CreateMovieTicketOrderResponse.SubMessage"));
+		createMovieTicketOrderResponse.setLogsId(_ctx.stringValue("CreateMovieTicketOrderResponse.LogsId"));
+		createMovieTicketOrderResponse.setSuccess(_ctx.booleanValue("CreateMovieTicketOrderResponse.Success"));
+		createMovieTicketOrderResponse.setTotalCount(_ctx.longValue("CreateMovieTicketOrderResponse.TotalCount"));
 
 		Model model = new Model();
-		model.setRedirectUrl(context.stringValue("CreateMovieTicketOrderResponse.Model.RedirectUrl"));
+		model.setRedirectUrl(_ctx.stringValue("CreateMovieTicketOrderResponse.Model.RedirectUrl"));
 
 		List<String> orderIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateMovieTicketOrderResponse.Model.OrderIds.Length"); i++) {
-			orderIds.add(context.stringValue("CreateMovieTicketOrderResponse.Model.OrderIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateMovieTicketOrderResponse.Model.OrderIds.Length"); i++) {
+			orderIds.add(_ctx.stringValue("CreateMovieTicketOrderResponse.Model.OrderIds["+ i +"]"));
 		}
 		model.setOrderIds(orderIds);
 
 		List<String> payTradeIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateMovieTicketOrderResponse.Model.PayTradeIds.Length"); i++) {
-			payTradeIds.add(context.stringValue("CreateMovieTicketOrderResponse.Model.PayTradeIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateMovieTicketOrderResponse.Model.PayTradeIds.Length"); i++) {
+			payTradeIds.add(_ctx.stringValue("CreateMovieTicketOrderResponse.Model.PayTradeIds["+ i +"]"));
 		}
 		model.setPayTradeIds(payTradeIds);
 		createMovieTicketOrderResponse.setModel(model);

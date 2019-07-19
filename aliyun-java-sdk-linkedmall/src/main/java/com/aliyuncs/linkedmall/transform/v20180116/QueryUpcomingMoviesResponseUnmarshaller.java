@@ -24,39 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryUpcomingMoviesResponseUnmarshaller {
 
-	public static QueryUpcomingMoviesResponse unmarshall(QueryUpcomingMoviesResponse queryUpcomingMoviesResponse, UnmarshallerContext context) {
+	public static QueryUpcomingMoviesResponse unmarshall(QueryUpcomingMoviesResponse queryUpcomingMoviesResponse, UnmarshallerContext _ctx) {
 		
-		queryUpcomingMoviesResponse.setRequestId(context.stringValue("QueryUpcomingMoviesResponse.RequestId"));
-		queryUpcomingMoviesResponse.setCode(context.stringValue("QueryUpcomingMoviesResponse.Code"));
-		queryUpcomingMoviesResponse.setMessage(context.stringValue("QueryUpcomingMoviesResponse.Message"));
-		queryUpcomingMoviesResponse.setSubCode(context.stringValue("QueryUpcomingMoviesResponse.SubCode"));
-		queryUpcomingMoviesResponse.setSubMessage(context.stringValue("QueryUpcomingMoviesResponse.SubMessage"));
-		queryUpcomingMoviesResponse.setLogsId(context.stringValue("QueryUpcomingMoviesResponse.LogsId"));
-		queryUpcomingMoviesResponse.setSuccess(context.booleanValue("QueryUpcomingMoviesResponse.Success"));
-		queryUpcomingMoviesResponse.setTotalCount(context.longValue("QueryUpcomingMoviesResponse.TotalCount"));
+		queryUpcomingMoviesResponse.setRequestId(_ctx.stringValue("QueryUpcomingMoviesResponse.RequestId"));
+		queryUpcomingMoviesResponse.setCode(_ctx.stringValue("QueryUpcomingMoviesResponse.Code"));
+		queryUpcomingMoviesResponse.setMessage(_ctx.stringValue("QueryUpcomingMoviesResponse.Message"));
+		queryUpcomingMoviesResponse.setSubCode(_ctx.stringValue("QueryUpcomingMoviesResponse.SubCode"));
+		queryUpcomingMoviesResponse.setSubMessage(_ctx.stringValue("QueryUpcomingMoviesResponse.SubMessage"));
+		queryUpcomingMoviesResponse.setLogsId(_ctx.stringValue("QueryUpcomingMoviesResponse.LogsId"));
+		queryUpcomingMoviesResponse.setSuccess(_ctx.booleanValue("QueryUpcomingMoviesResponse.Success"));
+		queryUpcomingMoviesResponse.setTotalCount(_ctx.longValue("QueryUpcomingMoviesResponse.TotalCount"));
 
 		List<Movie> movies = new ArrayList<Movie>();
-		for (int i = 0; i < context.lengthValue("QueryUpcomingMoviesResponse.Movies.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryUpcomingMoviesResponse.Movies.Length"); i++) {
 			Movie movie = new Movie();
-			movie.setId(context.longValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Id"));
-			movie.setBackgroundPicture(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].BackgroundPicture"));
-			movie.setHighlight(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Highlight"));
-			movie.setOpenTime(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].OpenTime"));
-			movie.setMovieTypeList(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].MovieTypeList"));
-			movie.setMovieVersion(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].MovieVersion"));
-			movie.setDescription(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Description"));
-			movie.setPoster(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Poster"));
-			movie.setTrailerList(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].TrailerList"));
-			movie.setOpenDay(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].OpenDay"));
-			movie.setDuration(context.longValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Duration"));
-			movie.setLanguage(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Language"));
-			movie.setCountry(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Country"));
-			movie.setType(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Type"));
-			movie.setLeadingRole(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].LeadingRole"));
-			movie.setDirector(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Director"));
-			movie.setMovieNameEn(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].MovieNameEn"));
-			movie.setMovieName(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].MovieName"));
-			movie.setRemark(context.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Remark"));
+			movie.setId(_ctx.longValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Id"));
+			movie.setBackgroundPicture(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].BackgroundPicture"));
+			movie.setHighlight(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Highlight"));
+			movie.setOpenTime(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].OpenTime"));
+			movie.setMovieTypeList(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].MovieTypeList"));
+			movie.setMovieVersion(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].MovieVersion"));
+			movie.setDescription(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Description"));
+			movie.setPoster(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Poster"));
+			movie.setTrailerList(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].TrailerList"));
+			movie.setOpenDay(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].OpenDay"));
+			movie.setDuration(_ctx.longValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Duration"));
+			movie.setLanguage(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Language"));
+			movie.setCountry(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Country"));
+			movie.setType(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Type"));
+			movie.setLeadingRole(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].LeadingRole"));
+			movie.setDirector(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Director"));
+			movie.setMovieNameEn(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].MovieNameEn"));
+			movie.setMovieName(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].MovieName"));
+			movie.setRemark(_ctx.stringValue("QueryUpcomingMoviesResponse.Movies["+ i +"].Remark"));
 
 			movies.add(movie);
 		}

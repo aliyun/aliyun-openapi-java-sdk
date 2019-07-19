@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyBizItemsResponseUnmarshaller {
 
-	public static ModifyBizItemsResponse unmarshall(ModifyBizItemsResponse modifyBizItemsResponse, UnmarshallerContext context) {
+	public static ModifyBizItemsResponse unmarshall(ModifyBizItemsResponse modifyBizItemsResponse, UnmarshallerContext _ctx) {
 		
-		modifyBizItemsResponse.setRequestId(context.stringValue("ModifyBizItemsResponse.RequestId"));
-		modifyBizItemsResponse.setCode(context.stringValue("ModifyBizItemsResponse.Code"));
-		modifyBizItemsResponse.setMessage(context.stringValue("ModifyBizItemsResponse.Message"));
-		modifyBizItemsResponse.setTotalCount(context.integerValue("ModifyBizItemsResponse.TotalCount"));
-		modifyBizItemsResponse.setPageNumber(context.integerValue("ModifyBizItemsResponse.PageNumber"));
-		modifyBizItemsResponse.setPageSize(context.integerValue("ModifyBizItemsResponse.PageSize"));
+		modifyBizItemsResponse.setRequestId(_ctx.stringValue("ModifyBizItemsResponse.RequestId"));
+		modifyBizItemsResponse.setCode(_ctx.stringValue("ModifyBizItemsResponse.Code"));
+		modifyBizItemsResponse.setMessage(_ctx.stringValue("ModifyBizItemsResponse.Message"));
+		modifyBizItemsResponse.setTotalCount(_ctx.integerValue("ModifyBizItemsResponse.TotalCount"));
+		modifyBizItemsResponse.setPageNumber(_ctx.integerValue("ModifyBizItemsResponse.PageNumber"));
+		modifyBizItemsResponse.setPageSize(_ctx.integerValue("ModifyBizItemsResponse.PageSize"));
 
 		List<Item> failedItemList = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("ModifyBizItemsResponse.FailedItemList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ModifyBizItemsResponse.FailedItemList.Length"); i++) {
 			Item item = new Item();
-			item.setItemId(context.longValue("ModifyBizItemsResponse.FailedItemList["+ i +"].ItemId"));
+			item.setItemId(_ctx.longValue("ModifyBizItemsResponse.FailedItemList["+ i +"].ItemId"));
 
 			List<String> skuIdList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ModifyBizItemsResponse.FailedItemList["+ i +"].SkuIdList.Length"); j++) {
-				skuIdList.add(context.stringValue("ModifyBizItemsResponse.FailedItemList["+ i +"].SkuIdList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ModifyBizItemsResponse.FailedItemList["+ i +"].SkuIdList.Length"); j++) {
+				skuIdList.add(_ctx.stringValue("ModifyBizItemsResponse.FailedItemList["+ i +"].SkuIdList["+ j +"]"));
 			}
 			item.setSkuIdList(skuIdList);
 
