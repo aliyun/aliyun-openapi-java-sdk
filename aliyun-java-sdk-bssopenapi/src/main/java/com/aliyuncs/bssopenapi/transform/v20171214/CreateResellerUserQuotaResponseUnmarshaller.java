@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateResellerUserQuotaResponseUnmarshaller {
 
-	public static CreateResellerUserQuotaResponse unmarshall(CreateResellerUserQuotaResponse createResellerUserQuotaResponse, UnmarshallerContext context) {
+	public static CreateResellerUserQuotaResponse unmarshall(CreateResellerUserQuotaResponse createResellerUserQuotaResponse, UnmarshallerContext _ctx) {
 		
-		createResellerUserQuotaResponse.setRequestId(context.stringValue("CreateResellerUserQuotaResponse.RequestId"));
-		createResellerUserQuotaResponse.setCode(context.stringValue("CreateResellerUserQuotaResponse.Code"));
-		createResellerUserQuotaResponse.setMessage(context.stringValue("CreateResellerUserQuotaResponse.Message"));
-		createResellerUserQuotaResponse.setSuccess(context.booleanValue("CreateResellerUserQuotaResponse.Success"));
-		createResellerUserQuotaResponse.setData(context.booleanValue("CreateResellerUserQuotaResponse.Data"));
+		createResellerUserQuotaResponse.setRequestId(_ctx.stringValue("CreateResellerUserQuotaResponse.RequestId"));
+		createResellerUserQuotaResponse.setCode(_ctx.stringValue("CreateResellerUserQuotaResponse.Code"));
+		createResellerUserQuotaResponse.setMessage(_ctx.stringValue("CreateResellerUserQuotaResponse.Message"));
+		createResellerUserQuotaResponse.setSuccess(_ctx.booleanValue("CreateResellerUserQuotaResponse.Success"));
+		createResellerUserQuotaResponse.setData(_ctx.booleanValue("CreateResellerUserQuotaResponse.Data"));
 	 
 	 	return createResellerUserQuotaResponse;
 	}

@@ -25,65 +25,65 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QuerySettlementBillResponseUnmarshaller {
 
-	public static QuerySettlementBillResponse unmarshall(QuerySettlementBillResponse querySettlementBillResponse, UnmarshallerContext context) {
+	public static QuerySettlementBillResponse unmarshall(QuerySettlementBillResponse querySettlementBillResponse, UnmarshallerContext _ctx) {
 		
-		querySettlementBillResponse.setRequestId(context.stringValue("QuerySettlementBillResponse.RequestId"));
-		querySettlementBillResponse.setSuccess(context.booleanValue("QuerySettlementBillResponse.Success"));
-		querySettlementBillResponse.setCode(context.stringValue("QuerySettlementBillResponse.Code"));
-		querySettlementBillResponse.setMessage(context.stringValue("QuerySettlementBillResponse.Message"));
+		querySettlementBillResponse.setRequestId(_ctx.stringValue("QuerySettlementBillResponse.RequestId"));
+		querySettlementBillResponse.setSuccess(_ctx.booleanValue("QuerySettlementBillResponse.Success"));
+		querySettlementBillResponse.setCode(_ctx.stringValue("QuerySettlementBillResponse.Code"));
+		querySettlementBillResponse.setMessage(_ctx.stringValue("QuerySettlementBillResponse.Message"));
 
 		Data data = new Data();
-		data.setPageNum(context.integerValue("QuerySettlementBillResponse.Data.PageNum"));
-		data.setPageSize(context.integerValue("QuerySettlementBillResponse.Data.PageSize"));
-		data.setTotalCount(context.integerValue("QuerySettlementBillResponse.Data.TotalCount"));
-		data.setBillingCycle(context.stringValue("QuerySettlementBillResponse.Data.BillingCycle"));
+		data.setPageNum(_ctx.integerValue("QuerySettlementBillResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("QuerySettlementBillResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("QuerySettlementBillResponse.Data.TotalCount"));
+		data.setBillingCycle(_ctx.stringValue("QuerySettlementBillResponse.Data.BillingCycle"));
 
 		List<Item> items = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("QuerySettlementBillResponse.Data.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QuerySettlementBillResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
-			item.setRecordID(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].RecordID"));
-			item.setItem(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Item"));
-			item.setPayerAccount(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].PayerAccount"));
-			item.setOwnerID(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].OwnerID"));
-			item.setCreateTime(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].CreateTime"));
-			item.setUsageStartTime(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].UsageStartTime"));
-			item.setUsageEndTime(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].UsageEndTime"));
-			item.setSuborderID(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].SuborderID"));
-			item.setOrderID(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].OrderID"));
-			item.setOrderType(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].OrderType"));
-			item.setLinkedCustomerOrderID(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].LinkedCustomerOrderID"));
-			item.setOriginalOrderID(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].OriginalOrderID"));
-			item.setPaymentTime(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].PaymentTime"));
-			item.setSolutionID(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].SolutionID"));
-			item.setSolutionName(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].SolutionName"));
-			item.setBillID(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].BillID"));
-			item.setProductCode(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].ProductCode"));
-			item.setProductType(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].ProductType"));
-			item.setSubscriptionType(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].SubscriptionType"));
-			item.setRegion(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Region"));
-			item.setConfig(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Config"));
-			item.setQuantity(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Quantity"));
-			item.setPretaxGrossAmount(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PretaxGrossAmount"));
-			item.setChargeDiscount(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].ChargeDiscount"));
-			item.setDeductedByCoupons(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].DeductedByCoupons"));
-			item.setAccountDiscount(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].AccountDiscount"));
-			item.setPromotion(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Promotion"));
-			item.setPretaxAmount(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PretaxAmount"));
-			item.setCurrency(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Currency"));
-			item.setPretaxAmountLocal(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PretaxAmountLocal"));
-			item.setPreviousBillingCycleBalance(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PreviousBillingCycleBalance"));
-			item.setTax(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].Tax"));
-			item.setAfterTaxAmount(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].AfterTaxAmount"));
-			item.setStatus(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Status"));
-			item.setClearedTime(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].ClearedTime"));
-			item.setOutstandingAmount(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].OutstandingAmount"));
-			item.setDeductedByCashCoupons(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].DeductedByCashCoupons"));
-			item.setDeductedByPrepaidCard(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].DeductedByPrepaidCard"));
-			item.setMybankPaymentAmount(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].MybankPaymentAmount"));
-			item.setPaymentAmount(context.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PaymentAmount"));
-			item.setPaymentCurrency(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].PaymentCurrency"));
-			item.setSeller(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Seller"));
-			item.setInvoiceNo(context.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].InvoiceNo"));
+			item.setRecordID(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].RecordID"));
+			item.setItem(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Item"));
+			item.setPayerAccount(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].PayerAccount"));
+			item.setOwnerID(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].OwnerID"));
+			item.setCreateTime(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].CreateTime"));
+			item.setUsageStartTime(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].UsageStartTime"));
+			item.setUsageEndTime(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].UsageEndTime"));
+			item.setSuborderID(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].SuborderID"));
+			item.setOrderID(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].OrderID"));
+			item.setOrderType(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].OrderType"));
+			item.setLinkedCustomerOrderID(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].LinkedCustomerOrderID"));
+			item.setOriginalOrderID(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].OriginalOrderID"));
+			item.setPaymentTime(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].PaymentTime"));
+			item.setSolutionID(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].SolutionID"));
+			item.setSolutionName(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].SolutionName"));
+			item.setBillID(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].BillID"));
+			item.setProductCode(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].ProductCode"));
+			item.setProductType(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].ProductType"));
+			item.setSubscriptionType(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].SubscriptionType"));
+			item.setRegion(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Region"));
+			item.setConfig(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Config"));
+			item.setQuantity(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Quantity"));
+			item.setPretaxGrossAmount(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PretaxGrossAmount"));
+			item.setChargeDiscount(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].ChargeDiscount"));
+			item.setDeductedByCoupons(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].DeductedByCoupons"));
+			item.setAccountDiscount(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].AccountDiscount"));
+			item.setPromotion(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Promotion"));
+			item.setPretaxAmount(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PretaxAmount"));
+			item.setCurrency(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Currency"));
+			item.setPretaxAmountLocal(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PretaxAmountLocal"));
+			item.setPreviousBillingCycleBalance(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PreviousBillingCycleBalance"));
+			item.setTax(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].Tax"));
+			item.setAfterTaxAmount(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].AfterTaxAmount"));
+			item.setStatus(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Status"));
+			item.setClearedTime(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].ClearedTime"));
+			item.setOutstandingAmount(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].OutstandingAmount"));
+			item.setDeductedByCashCoupons(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].DeductedByCashCoupons"));
+			item.setDeductedByPrepaidCard(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].DeductedByPrepaidCard"));
+			item.setMybankPaymentAmount(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].MybankPaymentAmount"));
+			item.setPaymentAmount(_ctx.floatValue("QuerySettlementBillResponse.Data.Items["+ i +"].PaymentAmount"));
+			item.setPaymentCurrency(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].PaymentCurrency"));
+			item.setSeller(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].Seller"));
+			item.setInvoiceNo(_ctx.stringValue("QuerySettlementBillResponse.Data.Items["+ i +"].InvoiceNo"));
 
 			items.add(item);
 		}

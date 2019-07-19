@@ -25,35 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAccountTransactionsResponseUnmarshaller {
 
-	public static QueryAccountTransactionsResponse unmarshall(QueryAccountTransactionsResponse queryAccountTransactionsResponse, UnmarshallerContext context) {
+	public static QueryAccountTransactionsResponse unmarshall(QueryAccountTransactionsResponse queryAccountTransactionsResponse, UnmarshallerContext _ctx) {
 		
-		queryAccountTransactionsResponse.setRequestId(context.stringValue("QueryAccountTransactionsResponse.RequestId"));
-		queryAccountTransactionsResponse.setSuccess(context.booleanValue("QueryAccountTransactionsResponse.Success"));
-		queryAccountTransactionsResponse.setCode(context.stringValue("QueryAccountTransactionsResponse.Code"));
-		queryAccountTransactionsResponse.setMessage(context.stringValue("QueryAccountTransactionsResponse.Message"));
+		queryAccountTransactionsResponse.setRequestId(_ctx.stringValue("QueryAccountTransactionsResponse.RequestId"));
+		queryAccountTransactionsResponse.setSuccess(_ctx.booleanValue("QueryAccountTransactionsResponse.Success"));
+		queryAccountTransactionsResponse.setCode(_ctx.stringValue("QueryAccountTransactionsResponse.Code"));
+		queryAccountTransactionsResponse.setMessage(_ctx.stringValue("QueryAccountTransactionsResponse.Message"));
 
 		Data data = new Data();
-		data.setAccountName(context.stringValue("QueryAccountTransactionsResponse.Data.AccountName"));
-		data.setTotalCount(context.integerValue("QueryAccountTransactionsResponse.Data.TotalCount"));
-		data.setPageNum(context.integerValue("QueryAccountTransactionsResponse.Data.PageNum"));
-		data.setPageSize(context.integerValue("QueryAccountTransactionsResponse.Data.PageSize"));
+		data.setAccountName(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountName"));
+		data.setTotalCount(_ctx.integerValue("QueryAccountTransactionsResponse.Data.TotalCount"));
+		data.setPageNum(_ctx.integerValue("QueryAccountTransactionsResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("QueryAccountTransactionsResponse.Data.PageSize"));
 
 		List<AccountTransactionsListItem> accountTransactionsList = new ArrayList<AccountTransactionsListItem>();
-		for (int i = 0; i < context.lengthValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList.Length"); i++) {
 			AccountTransactionsListItem accountTransactionsListItem = new AccountTransactionsListItem();
-			accountTransactionsListItem.setTransactionNumber(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionNumber"));
-			accountTransactionsListItem.setTransactionTime(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionTime"));
-			accountTransactionsListItem.setTransactionFlow(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionFlow"));
-			accountTransactionsListItem.setTransactionType(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionType"));
-			accountTransactionsListItem.setTransactionChannel(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionChannel"));
-			accountTransactionsListItem.setTransactionChannelSN(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionChannelSN"));
-			accountTransactionsListItem.setFundType(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].FundType"));
-			accountTransactionsListItem.setRecordID(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].RecordID"));
-			accountTransactionsListItem.setRemarks(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].Remarks"));
-			accountTransactionsListItem.setBillingCycle(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].BillingCycle"));
-			accountTransactionsListItem.setAmount(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].Amount"));
-			accountTransactionsListItem.setBalance(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].Balance"));
-			accountTransactionsListItem.setTransactionAccount(context.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionAccount"));
+			accountTransactionsListItem.setTransactionNumber(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionNumber"));
+			accountTransactionsListItem.setTransactionTime(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionTime"));
+			accountTransactionsListItem.setTransactionFlow(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionFlow"));
+			accountTransactionsListItem.setTransactionType(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionType"));
+			accountTransactionsListItem.setTransactionChannel(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionChannel"));
+			accountTransactionsListItem.setTransactionChannelSN(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionChannelSN"));
+			accountTransactionsListItem.setFundType(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].FundType"));
+			accountTransactionsListItem.setRecordID(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].RecordID"));
+			accountTransactionsListItem.setRemarks(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].Remarks"));
+			accountTransactionsListItem.setBillingCycle(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].BillingCycle"));
+			accountTransactionsListItem.setAmount(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].Amount"));
+			accountTransactionsListItem.setBalance(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].Balance"));
+			accountTransactionsListItem.setTransactionAccount(_ctx.stringValue("QueryAccountTransactionsResponse.Data.AccountTransactionsList["+ i +"].TransactionAccount"));
 
 			accountTransactionsList.add(accountTransactionsListItem);
 		}

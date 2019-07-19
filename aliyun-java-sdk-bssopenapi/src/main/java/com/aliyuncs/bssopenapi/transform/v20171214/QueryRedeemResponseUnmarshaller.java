@@ -25,31 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryRedeemResponseUnmarshaller {
 
-	public static QueryRedeemResponse unmarshall(QueryRedeemResponse queryRedeemResponse, UnmarshallerContext context) {
+	public static QueryRedeemResponse unmarshall(QueryRedeemResponse queryRedeemResponse, UnmarshallerContext _ctx) {
 		
-		queryRedeemResponse.setRequestId(context.stringValue("QueryRedeemResponse.RequestId"));
-		queryRedeemResponse.setSuccess(context.booleanValue("QueryRedeemResponse.Success"));
-		queryRedeemResponse.setCode(context.stringValue("QueryRedeemResponse.Code"));
-		queryRedeemResponse.setMessage(context.stringValue("QueryRedeemResponse.Message"));
+		queryRedeemResponse.setRequestId(_ctx.stringValue("QueryRedeemResponse.RequestId"));
+		queryRedeemResponse.setSuccess(_ctx.booleanValue("QueryRedeemResponse.Success"));
+		queryRedeemResponse.setCode(_ctx.stringValue("QueryRedeemResponse.Code"));
+		queryRedeemResponse.setMessage(_ctx.stringValue("QueryRedeemResponse.Message"));
 
 		Data data = new Data();
-		data.setPageNum(context.longValue("QueryRedeemResponse.Data.PageNum"));
-		data.setPageSize(context.longValue("QueryRedeemResponse.Data.PageSize"));
-		data.setTotalCount(context.longValue("QueryRedeemResponse.Data.TotalCount"));
+		data.setPageNum(_ctx.longValue("QueryRedeemResponse.Data.PageNum"));
+		data.setPageSize(_ctx.longValue("QueryRedeemResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.longValue("QueryRedeemResponse.Data.TotalCount"));
 
 		List<RedeemItem> redeem = new ArrayList<RedeemItem>();
-		for (int i = 0; i < context.lengthValue("QueryRedeemResponse.Data.Redeem.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryRedeemResponse.Data.Redeem.Length"); i++) {
 			RedeemItem redeemItem = new RedeemItem();
-			redeemItem.setRedeemId(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].RedeemId"));
-			redeemItem.setRedeemNo(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].RedeemNo"));
-			redeemItem.setStatus(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].Status"));
-			redeemItem.setGrantedTime(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].GrantedTime"));
-			redeemItem.setEffectiveTime(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].EffectiveTime"));
-			redeemItem.setExpiryTime(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].ExpiryTime"));
-			redeemItem.setNominalValue(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].NominalValue"));
-			redeemItem.setBalance(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].Balance"));
-			redeemItem.setApplicableProducts(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].ApplicableProducts"));
-			redeemItem.setSpecification(context.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].Specification"));
+			redeemItem.setRedeemId(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].RedeemId"));
+			redeemItem.setRedeemNo(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].RedeemNo"));
+			redeemItem.setStatus(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].Status"));
+			redeemItem.setGrantedTime(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].GrantedTime"));
+			redeemItem.setEffectiveTime(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].EffectiveTime"));
+			redeemItem.setExpiryTime(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].ExpiryTime"));
+			redeemItem.setNominalValue(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].NominalValue"));
+			redeemItem.setBalance(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].Balance"));
+			redeemItem.setApplicableProducts(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].ApplicableProducts"));
+			redeemItem.setSpecification(_ctx.stringValue("QueryRedeemResponse.Data.Redeem["+ i +"].Specification"));
 
 			redeem.add(redeemItem);
 		}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubscribeBillToOSSResponseUnmarshaller {
 
-	public static SubscribeBillToOSSResponse unmarshall(SubscribeBillToOSSResponse subscribeBillToOSSResponse, UnmarshallerContext context) {
+	public static SubscribeBillToOSSResponse unmarshall(SubscribeBillToOSSResponse subscribeBillToOSSResponse, UnmarshallerContext _ctx) {
 		
-		subscribeBillToOSSResponse.setRequestId(context.stringValue("SubscribeBillToOSSResponse.RequestId"));
-		subscribeBillToOSSResponse.setSuccess(context.booleanValue("SubscribeBillToOSSResponse.Success"));
-		subscribeBillToOSSResponse.setCode(context.stringValue("SubscribeBillToOSSResponse.Code"));
-		subscribeBillToOSSResponse.setMessage(context.stringValue("SubscribeBillToOSSResponse.Message"));
+		subscribeBillToOSSResponse.setRequestId(_ctx.stringValue("SubscribeBillToOSSResponse.RequestId"));
+		subscribeBillToOSSResponse.setSuccess(_ctx.booleanValue("SubscribeBillToOSSResponse.Success"));
+		subscribeBillToOSSResponse.setCode(_ctx.stringValue("SubscribeBillToOSSResponse.Code"));
+		subscribeBillToOSSResponse.setMessage(_ctx.stringValue("SubscribeBillToOSSResponse.Message"));
 	 
 	 	return subscribeBillToOSSResponse;
 	}

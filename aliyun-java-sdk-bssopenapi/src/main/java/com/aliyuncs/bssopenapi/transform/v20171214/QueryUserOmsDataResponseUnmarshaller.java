@@ -25,18 +25,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryUserOmsDataResponseUnmarshaller {
 
-	public static QueryUserOmsDataResponse unmarshall(QueryUserOmsDataResponse queryUserOmsDataResponse, UnmarshallerContext context) {
+	public static QueryUserOmsDataResponse unmarshall(QueryUserOmsDataResponse queryUserOmsDataResponse, UnmarshallerContext _ctx) {
 		
-		queryUserOmsDataResponse.setRequestId(context.stringValue("QueryUserOmsDataResponse.RequestId"));
-		queryUserOmsDataResponse.setSuccess(context.booleanValue("QueryUserOmsDataResponse.Success"));
-		queryUserOmsDataResponse.setCode(context.stringValue("QueryUserOmsDataResponse.Code"));
-		queryUserOmsDataResponse.setMessage(context.stringValue("QueryUserOmsDataResponse.Message"));
+		queryUserOmsDataResponse.setRequestId(_ctx.stringValue("QueryUserOmsDataResponse.RequestId"));
+		queryUserOmsDataResponse.setSuccess(_ctx.booleanValue("QueryUserOmsDataResponse.Success"));
+		queryUserOmsDataResponse.setCode(_ctx.stringValue("QueryUserOmsDataResponse.Code"));
+		queryUserOmsDataResponse.setMessage(_ctx.stringValue("QueryUserOmsDataResponse.Message"));
 
 		Data data = new Data();
-		data.setMarker(context.stringValue("QueryUserOmsDataResponse.Data.Marker"));
-		data.setHostId(context.stringValue("QueryUserOmsDataResponse.Data.HostId"));
+		data.setMarker(_ctx.stringValue("QueryUserOmsDataResponse.Data.Marker"));
+		data.setHostId(_ctx.stringValue("QueryUserOmsDataResponse.Data.HostId"));
 
-		List<Map<Object, Object>> omsData = context.listMapValue("QueryUserOmsDataResponse.Data.OmsData");
+		List<Map<Object, Object>> omsData = _ctx.listMapValue("QueryUserOmsDataResponse.Data.OmsData");
 		data.setOmsData(omsData);
 		queryUserOmsDataResponse.setData(data);
 	 

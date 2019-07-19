@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetRenewalResponseUnmarshaller {
 
-	public static SetRenewalResponse unmarshall(SetRenewalResponse setRenewalResponse, UnmarshallerContext context) {
+	public static SetRenewalResponse unmarshall(SetRenewalResponse setRenewalResponse, UnmarshallerContext _ctx) {
 		
-		setRenewalResponse.setRequestId(context.stringValue("SetRenewalResponse.RequestId"));
-		setRenewalResponse.setSuccess(context.booleanValue("SetRenewalResponse.Success"));
-		setRenewalResponse.setCode(context.stringValue("SetRenewalResponse.Code"));
-		setRenewalResponse.setMessage(context.stringValue("SetRenewalResponse.Message"));
+		setRenewalResponse.setRequestId(_ctx.stringValue("SetRenewalResponse.RequestId"));
+		setRenewalResponse.setSuccess(_ctx.booleanValue("SetRenewalResponse.Success"));
+		setRenewalResponse.setCode(_ctx.stringValue("SetRenewalResponse.Code"));
+		setRenewalResponse.setMessage(_ctx.stringValue("SetRenewalResponse.Message"));
 	 
 	 	return setRenewalResponse;
 	}

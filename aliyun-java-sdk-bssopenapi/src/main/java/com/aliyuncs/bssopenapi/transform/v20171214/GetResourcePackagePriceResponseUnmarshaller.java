@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetResourcePackagePriceResponseUnmarshaller {
 
-	public static GetResourcePackagePriceResponse unmarshall(GetResourcePackagePriceResponse getResourcePackagePriceResponse, UnmarshallerContext context) {
+	public static GetResourcePackagePriceResponse unmarshall(GetResourcePackagePriceResponse getResourcePackagePriceResponse, UnmarshallerContext _ctx) {
 		
-		getResourcePackagePriceResponse.setRequestId(context.stringValue("GetResourcePackagePriceResponse.RequestId"));
-		getResourcePackagePriceResponse.setSuccess(context.booleanValue("GetResourcePackagePriceResponse.Success"));
-		getResourcePackagePriceResponse.setCode(context.stringValue("GetResourcePackagePriceResponse.Code"));
-		getResourcePackagePriceResponse.setMessage(context.stringValue("GetResourcePackagePriceResponse.Message"));
+		getResourcePackagePriceResponse.setRequestId(_ctx.stringValue("GetResourcePackagePriceResponse.RequestId"));
+		getResourcePackagePriceResponse.setSuccess(_ctx.booleanValue("GetResourcePackagePriceResponse.Success"));
+		getResourcePackagePriceResponse.setCode(_ctx.stringValue("GetResourcePackagePriceResponse.Code"));
+		getResourcePackagePriceResponse.setMessage(_ctx.stringValue("GetResourcePackagePriceResponse.Message"));
 
 		Data data = new Data();
-		data.setCurrency(context.stringValue("GetResourcePackagePriceResponse.Data.Currency"));
-		data.setOriginalPrice(context.floatValue("GetResourcePackagePriceResponse.Data.OriginalPrice"));
-		data.setTradePrice(context.floatValue("GetResourcePackagePriceResponse.Data.TradePrice"));
-		data.setDiscountPrice(context.floatValue("GetResourcePackagePriceResponse.Data.DiscountPrice"));
+		data.setCurrency(_ctx.stringValue("GetResourcePackagePriceResponse.Data.Currency"));
+		data.setOriginalPrice(_ctx.floatValue("GetResourcePackagePriceResponse.Data.OriginalPrice"));
+		data.setTradePrice(_ctx.floatValue("GetResourcePackagePriceResponse.Data.TradePrice"));
+		data.setDiscountPrice(_ctx.floatValue("GetResourcePackagePriceResponse.Data.DiscountPrice"));
 
 		List<Promotion> promotions = new ArrayList<Promotion>();
-		for (int i = 0; i < context.lengthValue("GetResourcePackagePriceResponse.Data.Promotions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetResourcePackagePriceResponse.Data.Promotions.Length"); i++) {
 			Promotion promotion = new Promotion();
-			promotion.setId(context.longValue("GetResourcePackagePriceResponse.Data.Promotions["+ i +"].Id"));
-			promotion.setName(context.stringValue("GetResourcePackagePriceResponse.Data.Promotions["+ i +"].Name"));
+			promotion.setId(_ctx.longValue("GetResourcePackagePriceResponse.Data.Promotions["+ i +"].Id"));
+			promotion.setName(_ctx.stringValue("GetResourcePackagePriceResponse.Data.Promotions["+ i +"].Name"));
 
 			promotions.add(promotion);
 		}

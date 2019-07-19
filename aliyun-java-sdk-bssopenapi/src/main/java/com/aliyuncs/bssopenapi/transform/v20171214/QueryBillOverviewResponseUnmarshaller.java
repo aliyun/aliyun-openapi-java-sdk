@@ -25,40 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryBillOverviewResponseUnmarshaller {
 
-	public static QueryBillOverviewResponse unmarshall(QueryBillOverviewResponse queryBillOverviewResponse, UnmarshallerContext context) {
+	public static QueryBillOverviewResponse unmarshall(QueryBillOverviewResponse queryBillOverviewResponse, UnmarshallerContext _ctx) {
 		
-		queryBillOverviewResponse.setRequestId(context.stringValue("QueryBillOverviewResponse.RequestId"));
-		queryBillOverviewResponse.setSuccess(context.booleanValue("QueryBillOverviewResponse.Success"));
-		queryBillOverviewResponse.setCode(context.stringValue("QueryBillOverviewResponse.Code"));
-		queryBillOverviewResponse.setMessage(context.stringValue("QueryBillOverviewResponse.Message"));
+		queryBillOverviewResponse.setRequestId(_ctx.stringValue("QueryBillOverviewResponse.RequestId"));
+		queryBillOverviewResponse.setSuccess(_ctx.booleanValue("QueryBillOverviewResponse.Success"));
+		queryBillOverviewResponse.setCode(_ctx.stringValue("QueryBillOverviewResponse.Code"));
+		queryBillOverviewResponse.setMessage(_ctx.stringValue("QueryBillOverviewResponse.Message"));
 
 		Data data = new Data();
-		data.setBillingCycle(context.stringValue("QueryBillOverviewResponse.Data.BillingCycle"));
-		data.setAccountID(context.stringValue("QueryBillOverviewResponse.Data.AccountID"));
-		data.setAccountName(context.stringValue("QueryBillOverviewResponse.Data.AccountName"));
+		data.setBillingCycle(_ctx.stringValue("QueryBillOverviewResponse.Data.BillingCycle"));
+		data.setAccountID(_ctx.stringValue("QueryBillOverviewResponse.Data.AccountID"));
+		data.setAccountName(_ctx.stringValue("QueryBillOverviewResponse.Data.AccountName"));
 
 		List<Item> items = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("QueryBillOverviewResponse.Data.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryBillOverviewResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
-			item.setItem(context.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].Item"));
-			item.setProductCode(context.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].ProductCode"));
-			item.setProductType(context.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].ProductType"));
-			item.setSubscriptionType(context.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].SubscriptionType"));
-			item.setProductName(context.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].ProductName"));
-			item.setProductDetail(context.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].ProductDetail"));
-			item.setPretaxGrossAmount(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].PretaxGrossAmount"));
-			item.setInvoiceDiscount(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].InvoiceDiscount"));
-			item.setDeductedByCoupons(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].DeductedByCoupons"));
-			item.setPretaxAmount(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].PretaxAmount"));
-			item.setCurrency(context.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].Currency"));
-			item.setPaymentAmount(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].PaymentAmount"));
-			item.setOutstandingAmount(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].OutstandingAmount"));
-			item.setDeductedByCashCoupons(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].DeductedByCashCoupons"));
-			item.setDeductedByPrepaidCard(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].DeductedByPrepaidCard"));
-			item.setPretaxAmountLocal(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].PretaxAmountLocal"));
-			item.setTax(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].Tax"));
-			item.setAfterTaxAmount(context.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].AfterTaxAmount"));
-			item.setPaymentCurrency(context.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].PaymentCurrency"));
+			item.setItem(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].Item"));
+			item.setProductCode(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].ProductCode"));
+			item.setProductType(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].ProductType"));
+			item.setSubscriptionType(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].SubscriptionType"));
+			item.setProductName(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].ProductName"));
+			item.setProductDetail(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].ProductDetail"));
+			item.setPretaxGrossAmount(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].PretaxGrossAmount"));
+			item.setInvoiceDiscount(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].InvoiceDiscount"));
+			item.setDeductedByCoupons(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].DeductedByCoupons"));
+			item.setPretaxAmount(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].PretaxAmount"));
+			item.setCurrency(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].Currency"));
+			item.setPaymentAmount(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].PaymentAmount"));
+			item.setOutstandingAmount(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].OutstandingAmount"));
+			item.setDeductedByCashCoupons(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].DeductedByCashCoupons"));
+			item.setDeductedByPrepaidCard(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].DeductedByPrepaidCard"));
+			item.setPretaxAmountLocal(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].PretaxAmountLocal"));
+			item.setTax(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].Tax"));
+			item.setAfterTaxAmount(_ctx.floatValue("QueryBillOverviewResponse.Data.Items["+ i +"].AfterTaxAmount"));
+			item.setPaymentCurrency(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].PaymentCurrency"));
+			item.setRoundDownDiscount(_ctx.stringValue("QueryBillOverviewResponse.Data.Items["+ i +"].RoundDownDiscount"));
 
 			items.add(item);
 		}

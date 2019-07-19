@@ -27,26 +27,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePricingModuleResponseUnmarshaller {
 
-	public static DescribePricingModuleResponse unmarshall(DescribePricingModuleResponse describePricingModuleResponse, UnmarshallerContext context) {
+	public static DescribePricingModuleResponse unmarshall(DescribePricingModuleResponse describePricingModuleResponse, UnmarshallerContext _ctx) {
 		
-		describePricingModuleResponse.setRequestId(context.stringValue("DescribePricingModuleResponse.RequestId"));
-		describePricingModuleResponse.setSuccess(context.booleanValue("DescribePricingModuleResponse.Success"));
-		describePricingModuleResponse.setCode(context.stringValue("DescribePricingModuleResponse.Code"));
-		describePricingModuleResponse.setMessage(context.stringValue("DescribePricingModuleResponse.Message"));
+		describePricingModuleResponse.setRequestId(_ctx.stringValue("DescribePricingModuleResponse.RequestId"));
+		describePricingModuleResponse.setSuccess(_ctx.booleanValue("DescribePricingModuleResponse.Success"));
+		describePricingModuleResponse.setCode(_ctx.stringValue("DescribePricingModuleResponse.Code"));
+		describePricingModuleResponse.setMessage(_ctx.stringValue("DescribePricingModuleResponse.Message"));
 
 		Data data = new Data();
 
 		List<Module> moduleList = new ArrayList<Module>();
-		for (int i = 0; i < context.lengthValue("DescribePricingModuleResponse.Data.ModuleList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePricingModuleResponse.Data.ModuleList.Length"); i++) {
 			Module module = new Module();
-			module.setModuleCode(context.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ModuleCode"));
-			module.setModuleName(context.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ModuleName"));
-			module.setPriceType(context.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].PriceType"));
-			module.setCurrency(context.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].Currency"));
+			module.setModuleCode(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ModuleCode"));
+			module.setModuleName(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ModuleName"));
+			module.setPriceType(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].PriceType"));
+			module.setCurrency(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].Currency"));
 
 			List<String> configList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ConfigList.Length"); j++) {
-				configList.add(context.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ConfigList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ConfigList.Length"); j++) {
+				configList.add(_ctx.stringValue("DescribePricingModuleResponse.Data.ModuleList["+ i +"].ConfigList["+ j +"]"));
 			}
 			module.setConfigList(configList);
 
@@ -55,19 +55,19 @@ public class DescribePricingModuleResponseUnmarshaller {
 		data.setModuleList(moduleList);
 
 		List<Attribute> attributeList = new ArrayList<Attribute>();
-		for (int i = 0; i < context.lengthValue("DescribePricingModuleResponse.Data.AttributeList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePricingModuleResponse.Data.AttributeList.Length"); i++) {
 			Attribute attribute = new Attribute();
-			attribute.setCode(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Code"));
-			attribute.setName(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Name"));
-			attribute.setUnit(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Unit"));
+			attribute.setCode(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Code"));
+			attribute.setName(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Name"));
+			attribute.setUnit(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Unit"));
 
 			List<AttributeValue> values = new ArrayList<AttributeValue>();
-			for (int j = 0; j < context.lengthValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values.Length"); j++) {
 				AttributeValue attributeValue = new AttributeValue();
-				attributeValue.setType(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Type"));
-				attributeValue.setName(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Name"));
-				attributeValue.setValue(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Value"));
-				attributeValue.setRemark(context.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Remark"));
+				attributeValue.setType(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Type"));
+				attributeValue.setName(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Name"));
+				attributeValue.setValue(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Value"));
+				attributeValue.setRemark(_ctx.stringValue("DescribePricingModuleResponse.Data.AttributeList["+ i +"].Values["+ j +"].Remark"));
 
 				values.add(attributeValue);
 			}

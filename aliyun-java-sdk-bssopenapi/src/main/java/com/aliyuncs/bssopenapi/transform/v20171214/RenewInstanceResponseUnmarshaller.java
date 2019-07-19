@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RenewInstanceResponseUnmarshaller {
 
-	public static RenewInstanceResponse unmarshall(RenewInstanceResponse renewInstanceResponse, UnmarshallerContext context) {
+	public static RenewInstanceResponse unmarshall(RenewInstanceResponse renewInstanceResponse, UnmarshallerContext _ctx) {
 		
-		renewInstanceResponse.setRequestId(context.stringValue("RenewInstanceResponse.RequestId"));
-		renewInstanceResponse.setSuccess(context.booleanValue("RenewInstanceResponse.Success"));
-		renewInstanceResponse.setCode(context.stringValue("RenewInstanceResponse.Code"));
-		renewInstanceResponse.setMessage(context.stringValue("RenewInstanceResponse.Message"));
+		renewInstanceResponse.setRequestId(_ctx.stringValue("RenewInstanceResponse.RequestId"));
+		renewInstanceResponse.setSuccess(_ctx.booleanValue("RenewInstanceResponse.Success"));
+		renewInstanceResponse.setCode(_ctx.stringValue("RenewInstanceResponse.Code"));
+		renewInstanceResponse.setMessage(_ctx.stringValue("RenewInstanceResponse.Message"));
 
 		Data data = new Data();
-		data.setOrderId(context.stringValue("RenewInstanceResponse.Data.OrderId"));
+		data.setOrderId(_ctx.stringValue("RenewInstanceResponse.Data.OrderId"));
 		renewInstanceResponse.setData(data);
 	 
 	 	return renewInstanceResponse;

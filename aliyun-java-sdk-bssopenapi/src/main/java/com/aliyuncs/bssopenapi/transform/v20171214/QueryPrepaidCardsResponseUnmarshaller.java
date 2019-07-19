@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryPrepaidCardsResponseUnmarshaller {
 
-	public static QueryPrepaidCardsResponse unmarshall(QueryPrepaidCardsResponse queryPrepaidCardsResponse, UnmarshallerContext context) {
+	public static QueryPrepaidCardsResponse unmarshall(QueryPrepaidCardsResponse queryPrepaidCardsResponse, UnmarshallerContext _ctx) {
 		
-		queryPrepaidCardsResponse.setRequestId(context.stringValue("QueryPrepaidCardsResponse.RequestId"));
-		queryPrepaidCardsResponse.setSuccess(context.booleanValue("QueryPrepaidCardsResponse.Success"));
-		queryPrepaidCardsResponse.setCode(context.stringValue("QueryPrepaidCardsResponse.Code"));
-		queryPrepaidCardsResponse.setMessage(context.stringValue("QueryPrepaidCardsResponse.Message"));
+		queryPrepaidCardsResponse.setRequestId(_ctx.stringValue("QueryPrepaidCardsResponse.RequestId"));
+		queryPrepaidCardsResponse.setSuccess(_ctx.booleanValue("QueryPrepaidCardsResponse.Success"));
+		queryPrepaidCardsResponse.setCode(_ctx.stringValue("QueryPrepaidCardsResponse.Code"));
+		queryPrepaidCardsResponse.setMessage(_ctx.stringValue("QueryPrepaidCardsResponse.Message"));
 
 		List<PrepaidCard> data = new ArrayList<PrepaidCard>();
-		for (int i = 0; i < context.lengthValue("QueryPrepaidCardsResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryPrepaidCardsResponse.Data.Length"); i++) {
 			PrepaidCard prepaidCard = new PrepaidCard();
-			prepaidCard.setPrepaidCardId(context.longValue("QueryPrepaidCardsResponse.Data["+ i +"].PrepaidCardId"));
-			prepaidCard.setPrepaidCardNo(context.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].PrepaidCardNo"));
-			prepaidCard.setGrantedTime(context.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].GrantedTime"));
-			prepaidCard.setEffectiveTime(context.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].EffectiveTime"));
-			prepaidCard.setExpiryTime(context.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ExpiryTime"));
-			prepaidCard.setApplicableProducts(context.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ApplicableProducts"));
-			prepaidCard.setApplicableScenarios(context.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ApplicableScenarios"));
-			prepaidCard.setNominalValue(context.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].NominalValue"));
-			prepaidCard.setBalance(context.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].Balance"));
-			prepaidCard.setStatus(context.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].Status"));
+			prepaidCard.setPrepaidCardId(_ctx.longValue("QueryPrepaidCardsResponse.Data["+ i +"].PrepaidCardId"));
+			prepaidCard.setPrepaidCardNo(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].PrepaidCardNo"));
+			prepaidCard.setGrantedTime(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].GrantedTime"));
+			prepaidCard.setEffectiveTime(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].EffectiveTime"));
+			prepaidCard.setExpiryTime(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ExpiryTime"));
+			prepaidCard.setApplicableProducts(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ApplicableProducts"));
+			prepaidCard.setApplicableScenarios(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].ApplicableScenarios"));
+			prepaidCard.setNominalValue(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].NominalValue"));
+			prepaidCard.setBalance(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].Balance"));
+			prepaidCard.setStatus(_ctx.stringValue("QueryPrepaidCardsResponse.Data["+ i +"].Status"));
 
 			data.add(prepaidCard);
 		}

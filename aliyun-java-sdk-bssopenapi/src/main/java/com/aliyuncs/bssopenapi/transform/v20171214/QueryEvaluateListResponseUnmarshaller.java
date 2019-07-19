@@ -25,45 +25,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryEvaluateListResponseUnmarshaller {
 
-	public static QueryEvaluateListResponse unmarshall(QueryEvaluateListResponse queryEvaluateListResponse, UnmarshallerContext context) {
+	public static QueryEvaluateListResponse unmarshall(QueryEvaluateListResponse queryEvaluateListResponse, UnmarshallerContext _ctx) {
 		
-		queryEvaluateListResponse.setRequestId(context.stringValue("QueryEvaluateListResponse.RequestId"));
-		queryEvaluateListResponse.setSuccess(context.booleanValue("QueryEvaluateListResponse.Success"));
-		queryEvaluateListResponse.setCode(context.stringValue("QueryEvaluateListResponse.Code"));
-		queryEvaluateListResponse.setMessage(context.stringValue("QueryEvaluateListResponse.Message"));
+		queryEvaluateListResponse.setRequestId(_ctx.stringValue("QueryEvaluateListResponse.RequestId"));
+		queryEvaluateListResponse.setSuccess(_ctx.booleanValue("QueryEvaluateListResponse.Success"));
+		queryEvaluateListResponse.setCode(_ctx.stringValue("QueryEvaluateListResponse.Code"));
+		queryEvaluateListResponse.setMessage(_ctx.stringValue("QueryEvaluateListResponse.Message"));
 
 		Data data = new Data();
-		data.setHostId(context.stringValue("QueryEvaluateListResponse.Data.HostId"));
-		data.setPageNum(context.integerValue("QueryEvaluateListResponse.Data.PageNum"));
-		data.setPageSize(context.integerValue("QueryEvaluateListResponse.Data.PageSize"));
-		data.setTotalCount(context.integerValue("QueryEvaluateListResponse.Data.TotalCount"));
-		data.setTotalInvoiceAmount(context.longValue("QueryEvaluateListResponse.Data.TotalInvoiceAmount"));
-		data.setTotalUnAppliedInvoiceAmount(context.longValue("QueryEvaluateListResponse.Data.TotalUnAppliedInvoiceAmount"));
+		data.setHostId(_ctx.stringValue("QueryEvaluateListResponse.Data.HostId"));
+		data.setPageNum(_ctx.integerValue("QueryEvaluateListResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("QueryEvaluateListResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("QueryEvaluateListResponse.Data.TotalCount"));
+		data.setTotalInvoiceAmount(_ctx.longValue("QueryEvaluateListResponse.Data.TotalInvoiceAmount"));
+		data.setTotalUnAppliedInvoiceAmount(_ctx.longValue("QueryEvaluateListResponse.Data.TotalUnAppliedInvoiceAmount"));
 
 		List<Evaluate> evaluateList = new ArrayList<Evaluate>();
-		for (int i = 0; i < context.lengthValue("QueryEvaluateListResponse.Data.EvaluateList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryEvaluateListResponse.Data.EvaluateList.Length"); i++) {
 			Evaluate evaluate = new Evaluate();
-			evaluate.setId(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].Id"));
-			evaluate.setGmtCreate(context.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].GmtCreate"));
-			evaluate.setGmtModified(context.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].GmtModified"));
-			evaluate.setUserId(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].UserId"));
-			evaluate.setUserNick(context.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].UserNick"));
-			evaluate.setOutBizId(context.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OutBizId"));
-			evaluate.setBillId(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].BillId"));
-			evaluate.setItemId(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].ItemId"));
-			evaluate.setBillCycle(context.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].BillCycle"));
-			evaluate.setBizType(context.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].BizType"));
-			evaluate.setOriginalAmount(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OriginalAmount"));
-			evaluate.setPresentAmount(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].PresentAmount"));
-			evaluate.setCanInvoiceAmount(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].CanInvoiceAmount"));
-			evaluate.setInvoicedAmount(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].InvoicedAmount"));
-			evaluate.setOffsetCostAmount(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OffsetCostAmount"));
-			evaluate.setOffsetAcceptAmount(context.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OffsetAcceptAmount"));
-			evaluate.setStatus(context.integerValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].Status"));
-			evaluate.setOpId(context.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OpId"));
-			evaluate.setName(context.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].Name"));
-			evaluate.setBizTime(context.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].BizTime"));
-			evaluate.setType(context.integerValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].Type"));
+			evaluate.setId(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].Id"));
+			evaluate.setGmtCreate(_ctx.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].GmtCreate"));
+			evaluate.setGmtModified(_ctx.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].GmtModified"));
+			evaluate.setUserId(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].UserId"));
+			evaluate.setUserNick(_ctx.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].UserNick"));
+			evaluate.setOutBizId(_ctx.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OutBizId"));
+			evaluate.setBillId(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].BillId"));
+			evaluate.setItemId(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].ItemId"));
+			evaluate.setBillCycle(_ctx.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].BillCycle"));
+			evaluate.setBizType(_ctx.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].BizType"));
+			evaluate.setOriginalAmount(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OriginalAmount"));
+			evaluate.setPresentAmount(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].PresentAmount"));
+			evaluate.setCanInvoiceAmount(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].CanInvoiceAmount"));
+			evaluate.setInvoicedAmount(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].InvoicedAmount"));
+			evaluate.setOffsetCostAmount(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OffsetCostAmount"));
+			evaluate.setOffsetAcceptAmount(_ctx.longValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OffsetAcceptAmount"));
+			evaluate.setStatus(_ctx.integerValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].Status"));
+			evaluate.setOpId(_ctx.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].OpId"));
+			evaluate.setName(_ctx.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].Name"));
+			evaluate.setBizTime(_ctx.stringValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].BizTime"));
+			evaluate.setType(_ctx.integerValue("QueryEvaluateListResponse.Data.EvaluateList["+ i +"].Type"));
 
 			evaluateList.add(evaluate);
 		}

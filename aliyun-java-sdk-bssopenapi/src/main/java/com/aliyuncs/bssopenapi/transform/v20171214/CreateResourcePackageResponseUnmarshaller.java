@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateResourcePackageResponseUnmarshaller {
 
-	public static CreateResourcePackageResponse unmarshall(CreateResourcePackageResponse createResourcePackageResponse, UnmarshallerContext context) {
+	public static CreateResourcePackageResponse unmarshall(CreateResourcePackageResponse createResourcePackageResponse, UnmarshallerContext _ctx) {
 		
-		createResourcePackageResponse.setRequestId(context.stringValue("CreateResourcePackageResponse.RequestId"));
-		createResourcePackageResponse.setOrderId(context.longValue("CreateResourcePackageResponse.OrderId"));
-		createResourcePackageResponse.setSuccess(context.booleanValue("CreateResourcePackageResponse.Success"));
-		createResourcePackageResponse.setCode(context.stringValue("CreateResourcePackageResponse.Code"));
-		createResourcePackageResponse.setMessage(context.stringValue("CreateResourcePackageResponse.Message"));
+		createResourcePackageResponse.setRequestId(_ctx.stringValue("CreateResourcePackageResponse.RequestId"));
+		createResourcePackageResponse.setOrderId(_ctx.longValue("CreateResourcePackageResponse.OrderId"));
+		createResourcePackageResponse.setSuccess(_ctx.booleanValue("CreateResourcePackageResponse.Success"));
+		createResourcePackageResponse.setCode(_ctx.stringValue("CreateResourcePackageResponse.Code"));
+		createResourcePackageResponse.setMessage(_ctx.stringValue("CreateResourcePackageResponse.Message"));
 
 		Data data = new Data();
-		data.setOrderId(context.longValue("CreateResourcePackageResponse.Data.OrderId"));
-		data.setInstanceId(context.stringValue("CreateResourcePackageResponse.Data.InstanceId"));
+		data.setOrderId(_ctx.longValue("CreateResourcePackageResponse.Data.OrderId"));
+		data.setInstanceId(_ctx.stringValue("CreateResourcePackageResponse.Data.InstanceId"));
 		createResourcePackageResponse.setData(data);
 	 
 	 	return createResourcePackageResponse;

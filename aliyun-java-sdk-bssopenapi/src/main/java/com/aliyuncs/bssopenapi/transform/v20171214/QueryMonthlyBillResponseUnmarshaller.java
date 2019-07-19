@@ -25,41 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMonthlyBillResponseUnmarshaller {
 
-	public static QueryMonthlyBillResponse unmarshall(QueryMonthlyBillResponse queryMonthlyBillResponse, UnmarshallerContext context) {
+	public static QueryMonthlyBillResponse unmarshall(QueryMonthlyBillResponse queryMonthlyBillResponse, UnmarshallerContext _ctx) {
 		
-		queryMonthlyBillResponse.setRequestId(context.stringValue("QueryMonthlyBillResponse.RequestId"));
-		queryMonthlyBillResponse.setSuccess(context.booleanValue("QueryMonthlyBillResponse.Success"));
-		queryMonthlyBillResponse.setCode(context.stringValue("QueryMonthlyBillResponse.Code"));
-		queryMonthlyBillResponse.setMessage(context.stringValue("QueryMonthlyBillResponse.Message"));
+		queryMonthlyBillResponse.setRequestId(_ctx.stringValue("QueryMonthlyBillResponse.RequestId"));
+		queryMonthlyBillResponse.setSuccess(_ctx.booleanValue("QueryMonthlyBillResponse.Success"));
+		queryMonthlyBillResponse.setCode(_ctx.stringValue("QueryMonthlyBillResponse.Code"));
+		queryMonthlyBillResponse.setMessage(_ctx.stringValue("QueryMonthlyBillResponse.Message"));
 
 		Data data = new Data();
-		data.setOutstandingAmount(context.floatValue("QueryMonthlyBillResponse.Data.OutstandingAmount"));
-		data.setTotalOutstandingAmount(context.floatValue("QueryMonthlyBillResponse.Data.TotalOutstandingAmount"));
-		data.setNewInvoiceAmount(context.floatValue("QueryMonthlyBillResponse.Data.NewInvoiceAmount"));
-		data.setBillingCycle(context.stringValue("QueryMonthlyBillResponse.Data.BillingCycle"));
+		data.setOutstandingAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.OutstandingAmount"));
+		data.setTotalOutstandingAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.TotalOutstandingAmount"));
+		data.setNewInvoiceAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.NewInvoiceAmount"));
+		data.setBillingCycle(_ctx.stringValue("QueryMonthlyBillResponse.Data.BillingCycle"));
 
 		List<Item> items = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("QueryMonthlyBillResponse.Data.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMonthlyBillResponse.Data.Items.Length"); i++) {
 			Item item = new Item();
-			item.setItem(context.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Item"));
-			item.setProductCode(context.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].ProductCode"));
-			item.setProductType(context.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].ProductType"));
-			item.setSubscriptionType(context.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SubscriptionType"));
-			item.setSolutionCode(context.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SolutionCode"));
-			item.setSolutionName(context.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SolutionName"));
-			item.setPretaxGrossAmount(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxGrossAmount"));
-			item.setInvoiceDiscount(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].InvoiceDiscount"));
-			item.setDeductedByCoupons(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByCoupons"));
-			item.setPretaxAmount(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxAmount"));
-			item.setCurrency(context.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Currency"));
-			item.setPretaxAmountLocal(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxAmountLocal"));
-			item.setTax(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Tax"));
-			item.setAfterTaxAmount(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].AfterTaxAmount"));
-			item.setOutstandingAmount(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].OutstandingAmount"));
-			item.setDeductedByCashCoupons(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByCashCoupons"));
-			item.setDeductedByPrepaidCard(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByPrepaidCard"));
-			item.setPaymentAmount(context.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PaymentAmount"));
-			item.setPaymentCurrency(context.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PaymentCurrency"));
+			item.setItem(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Item"));
+			item.setProductCode(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].ProductCode"));
+			item.setProductType(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].ProductType"));
+			item.setSubscriptionType(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SubscriptionType"));
+			item.setSolutionCode(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SolutionCode"));
+			item.setSolutionName(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].SolutionName"));
+			item.setPretaxGrossAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxGrossAmount"));
+			item.setInvoiceDiscount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].InvoiceDiscount"));
+			item.setDeductedByCoupons(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByCoupons"));
+			item.setPretaxAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxAmount"));
+			item.setCurrency(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Currency"));
+			item.setPretaxAmountLocal(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PretaxAmountLocal"));
+			item.setTax(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].Tax"));
+			item.setAfterTaxAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].AfterTaxAmount"));
+			item.setOutstandingAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].OutstandingAmount"));
+			item.setDeductedByCashCoupons(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByCashCoupons"));
+			item.setDeductedByPrepaidCard(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].DeductedByPrepaidCard"));
+			item.setPaymentAmount(_ctx.floatValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PaymentAmount"));
+			item.setPaymentCurrency(_ctx.stringValue("QueryMonthlyBillResponse.Data.Items["+ i +"].PaymentCurrency"));
 
 			items.add(item);
 		}

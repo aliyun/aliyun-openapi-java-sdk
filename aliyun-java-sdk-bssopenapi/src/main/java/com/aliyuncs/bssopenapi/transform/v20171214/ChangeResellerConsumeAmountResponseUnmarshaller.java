@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ChangeResellerConsumeAmountResponseUnmarshaller {
 
-	public static ChangeResellerConsumeAmountResponse unmarshall(ChangeResellerConsumeAmountResponse changeResellerConsumeAmountResponse, UnmarshallerContext context) {
+	public static ChangeResellerConsumeAmountResponse unmarshall(ChangeResellerConsumeAmountResponse changeResellerConsumeAmountResponse, UnmarshallerContext _ctx) {
 		
-		changeResellerConsumeAmountResponse.setRequestId(context.stringValue("ChangeResellerConsumeAmountResponse.RequestId"));
-		changeResellerConsumeAmountResponse.setCode(context.stringValue("ChangeResellerConsumeAmountResponse.Code"));
-		changeResellerConsumeAmountResponse.setMessage(context.stringValue("ChangeResellerConsumeAmountResponse.Message"));
-		changeResellerConsumeAmountResponse.setSuccess(context.booleanValue("ChangeResellerConsumeAmountResponse.Success"));
-		changeResellerConsumeAmountResponse.setData(context.stringValue("ChangeResellerConsumeAmountResponse.Data"));
+		changeResellerConsumeAmountResponse.setRequestId(_ctx.stringValue("ChangeResellerConsumeAmountResponse.RequestId"));
+		changeResellerConsumeAmountResponse.setCode(_ctx.stringValue("ChangeResellerConsumeAmountResponse.Code"));
+		changeResellerConsumeAmountResponse.setMessage(_ctx.stringValue("ChangeResellerConsumeAmountResponse.Message"));
+		changeResellerConsumeAmountResponse.setSuccess(_ctx.booleanValue("ChangeResellerConsumeAmountResponse.Success"));
+		changeResellerConsumeAmountResponse.setData(_ctx.stringValue("ChangeResellerConsumeAmountResponse.Data"));
 	 
 	 	return changeResellerConsumeAmountResponse;
 	}

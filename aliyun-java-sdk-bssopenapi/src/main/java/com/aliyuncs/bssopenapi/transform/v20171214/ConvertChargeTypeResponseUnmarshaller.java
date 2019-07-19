@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ConvertChargeTypeResponseUnmarshaller {
 
-	public static ConvertChargeTypeResponse unmarshall(ConvertChargeTypeResponse convertChargeTypeResponse, UnmarshallerContext context) {
+	public static ConvertChargeTypeResponse unmarshall(ConvertChargeTypeResponse convertChargeTypeResponse, UnmarshallerContext _ctx) {
 		
-		convertChargeTypeResponse.setRequestId(context.stringValue("ConvertChargeTypeResponse.RequestId"));
-		convertChargeTypeResponse.setSuccess(context.booleanValue("ConvertChargeTypeResponse.Success"));
-		convertChargeTypeResponse.setCode(context.stringValue("ConvertChargeTypeResponse.Code"));
-		convertChargeTypeResponse.setMessage(context.stringValue("ConvertChargeTypeResponse.Message"));
+		convertChargeTypeResponse.setRequestId(_ctx.stringValue("ConvertChargeTypeResponse.RequestId"));
+		convertChargeTypeResponse.setSuccess(_ctx.booleanValue("ConvertChargeTypeResponse.Success"));
+		convertChargeTypeResponse.setCode(_ctx.stringValue("ConvertChargeTypeResponse.Code"));
+		convertChargeTypeResponse.setMessage(_ctx.stringValue("ConvertChargeTypeResponse.Message"));
 
 		Data data = new Data();
-		data.setOrderId(context.stringValue("ConvertChargeTypeResponse.Data.OrderId"));
+		data.setOrderId(_ctx.stringValue("ConvertChargeTypeResponse.Data.OrderId"));
 		convertChargeTypeResponse.setData(data);
 	 
 	 	return convertChargeTypeResponse;

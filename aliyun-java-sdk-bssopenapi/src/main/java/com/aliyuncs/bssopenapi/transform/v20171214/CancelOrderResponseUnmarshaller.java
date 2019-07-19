@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelOrderResponseUnmarshaller {
 
-	public static CancelOrderResponse unmarshall(CancelOrderResponse cancelOrderResponse, UnmarshallerContext context) {
+	public static CancelOrderResponse unmarshall(CancelOrderResponse cancelOrderResponse, UnmarshallerContext _ctx) {
 		
-		cancelOrderResponse.setRequestId(context.stringValue("CancelOrderResponse.RequestId"));
-		cancelOrderResponse.setSuccess(context.booleanValue("CancelOrderResponse.Success"));
-		cancelOrderResponse.setCode(context.stringValue("CancelOrderResponse.Code"));
-		cancelOrderResponse.setMessage(context.stringValue("CancelOrderResponse.Message"));
+		cancelOrderResponse.setRequestId(_ctx.stringValue("CancelOrderResponse.RequestId"));
+		cancelOrderResponse.setSuccess(_ctx.booleanValue("CancelOrderResponse.Success"));
+		cancelOrderResponse.setCode(_ctx.stringValue("CancelOrderResponse.Code"));
+		cancelOrderResponse.setMessage(_ctx.stringValue("CancelOrderResponse.Message"));
 
 		Data data = new Data();
-		data.setHostId(context.stringValue("CancelOrderResponse.Data.HostId"));
+		data.setHostId(_ctx.stringValue("CancelOrderResponse.Data.HostId"));
 		cancelOrderResponse.setData(data);
 	 
 	 	return cancelOrderResponse;

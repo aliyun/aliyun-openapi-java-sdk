@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateAgAccountResponseUnmarshaller {
 
-	public static CreateAgAccountResponse unmarshall(CreateAgAccountResponse createAgAccountResponse, UnmarshallerContext context) {
+	public static CreateAgAccountResponse unmarshall(CreateAgAccountResponse createAgAccountResponse, UnmarshallerContext _ctx) {
 		
-		createAgAccountResponse.setRequestId(context.stringValue("CreateAgAccountResponse.RequestId"));
-		createAgAccountResponse.setCode(context.stringValue("CreateAgAccountResponse.Code"));
-		createAgAccountResponse.setMessage(context.stringValue("CreateAgAccountResponse.Message"));
-		createAgAccountResponse.setSuccess(context.booleanValue("CreateAgAccountResponse.Success"));
+		createAgAccountResponse.setRequestId(_ctx.stringValue("CreateAgAccountResponse.RequestId"));
+		createAgAccountResponse.setCode(_ctx.stringValue("CreateAgAccountResponse.Code"));
+		createAgAccountResponse.setMessage(_ctx.stringValue("CreateAgAccountResponse.Message"));
+		createAgAccountResponse.setSuccess(_ctx.booleanValue("CreateAgAccountResponse.Success"));
 
 		AgRelationDto agRelationDto = new AgRelationDto();
-		agRelationDto.setPk(context.stringValue("CreateAgAccountResponse.AgRelationDto.Pk"));
-		agRelationDto.setType(context.stringValue("CreateAgAccountResponse.AgRelationDto.Type"));
-		agRelationDto.setMpk(context.stringValue("CreateAgAccountResponse.AgRelationDto.Mpk"));
-		agRelationDto.setRamAdminRoleName(context.stringValue("CreateAgAccountResponse.AgRelationDto.RamAdminRoleName"));
+		agRelationDto.setPk(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.Pk"));
+		agRelationDto.setType(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.Type"));
+		agRelationDto.setMpk(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.Mpk"));
+		agRelationDto.setRamAdminRoleName(_ctx.stringValue("CreateAgAccountResponse.AgRelationDto.RamAdminRoleName"));
 		createAgAccountResponse.setAgRelationDto(agRelationDto);
 	 
 	 	return createAgAccountResponse;

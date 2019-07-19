@@ -157,6 +157,8 @@ public class QueryBillOverviewResponse extends AcsResponse {
 
 			private String paymentCurrency;
 
+			private String roundDownDiscount;
+
 			public String getItem() {
 				return this.item;
 			}
@@ -307,6 +309,14 @@ public class QueryBillOverviewResponse extends AcsResponse {
 
 			public void setPaymentCurrency(String paymentCurrency) {
 				this.paymentCurrency = paymentCurrency;
+			}
+
+			public String getRoundDownDiscount() {
+				return this.roundDownDiscount;
+			}
+
+			public void setRoundDownDiscount(String roundDownDiscount) {
+				this.roundDownDiscount = roundDownDiscount;
 			}
 		}
 	}

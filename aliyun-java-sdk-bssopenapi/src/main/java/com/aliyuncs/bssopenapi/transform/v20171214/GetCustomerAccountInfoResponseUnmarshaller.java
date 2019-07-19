@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCustomerAccountInfoResponseUnmarshaller {
 
-	public static GetCustomerAccountInfoResponse unmarshall(GetCustomerAccountInfoResponse getCustomerAccountInfoResponse, UnmarshallerContext context) {
+	public static GetCustomerAccountInfoResponse unmarshall(GetCustomerAccountInfoResponse getCustomerAccountInfoResponse, UnmarshallerContext _ctx) {
 		
-		getCustomerAccountInfoResponse.setRequestId(context.stringValue("GetCustomerAccountInfoResponse.RequestId"));
-		getCustomerAccountInfoResponse.setSuccess(context.booleanValue("GetCustomerAccountInfoResponse.Success"));
-		getCustomerAccountInfoResponse.setCode(context.stringValue("GetCustomerAccountInfoResponse.Code"));
-		getCustomerAccountInfoResponse.setMessage(context.stringValue("GetCustomerAccountInfoResponse.Message"));
+		getCustomerAccountInfoResponse.setRequestId(_ctx.stringValue("GetCustomerAccountInfoResponse.RequestId"));
+		getCustomerAccountInfoResponse.setSuccess(_ctx.booleanValue("GetCustomerAccountInfoResponse.Success"));
+		getCustomerAccountInfoResponse.setCode(_ctx.stringValue("GetCustomerAccountInfoResponse.Code"));
+		getCustomerAccountInfoResponse.setMessage(_ctx.stringValue("GetCustomerAccountInfoResponse.Message"));
 
 		Data data = new Data();
-		data.setLoginEmail(context.stringValue("GetCustomerAccountInfoResponse.Data.LoginEmail"));
-		data.setAccountType(context.stringValue("GetCustomerAccountInfoResponse.Data.AccountType"));
-		data.setMpk(context.longValue("GetCustomerAccountInfoResponse.Data.Mpk"));
-		data.setHostingStatus(context.stringValue("GetCustomerAccountInfoResponse.Data.HostingStatus"));
-		data.setCreditLimitStatus(context.stringValue("GetCustomerAccountInfoResponse.Data.CreditLimitStatus"));
-		data.setIsCertified(context.booleanValue("GetCustomerAccountInfoResponse.Data.IsCertified"));
+		data.setLoginEmail(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.LoginEmail"));
+		data.setAccountType(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.AccountType"));
+		data.setMpk(_ctx.longValue("GetCustomerAccountInfoResponse.Data.Mpk"));
+		data.setHostingStatus(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.HostingStatus"));
+		data.setCreditLimitStatus(_ctx.stringValue("GetCustomerAccountInfoResponse.Data.CreditLimitStatus"));
+		data.setIsCertified(_ctx.booleanValue("GetCustomerAccountInfoResponse.Data.IsCertified"));
 		getCustomerAccountInfoResponse.setData(data);
 	 
 	 	return getCustomerAccountInfoResponse;

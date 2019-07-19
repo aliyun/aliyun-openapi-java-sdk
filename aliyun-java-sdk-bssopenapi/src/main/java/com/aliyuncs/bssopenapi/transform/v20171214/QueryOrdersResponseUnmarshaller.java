@@ -25,38 +25,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryOrdersResponseUnmarshaller {
 
-	public static QueryOrdersResponse unmarshall(QueryOrdersResponse queryOrdersResponse, UnmarshallerContext context) {
+	public static QueryOrdersResponse unmarshall(QueryOrdersResponse queryOrdersResponse, UnmarshallerContext _ctx) {
 		
-		queryOrdersResponse.setRequestId(context.stringValue("QueryOrdersResponse.RequestId"));
-		queryOrdersResponse.setSuccess(context.booleanValue("QueryOrdersResponse.Success"));
-		queryOrdersResponse.setCode(context.stringValue("QueryOrdersResponse.Code"));
-		queryOrdersResponse.setMessage(context.stringValue("QueryOrdersResponse.Message"));
+		queryOrdersResponse.setRequestId(_ctx.stringValue("QueryOrdersResponse.RequestId"));
+		queryOrdersResponse.setSuccess(_ctx.booleanValue("QueryOrdersResponse.Success"));
+		queryOrdersResponse.setCode(_ctx.stringValue("QueryOrdersResponse.Code"));
+		queryOrdersResponse.setMessage(_ctx.stringValue("QueryOrdersResponse.Message"));
 
 		Data data = new Data();
-		data.setHostName(context.stringValue("QueryOrdersResponse.Data.HostName"));
-		data.setPageNum(context.integerValue("QueryOrdersResponse.Data.PageNum"));
-		data.setPageSize(context.integerValue("QueryOrdersResponse.Data.PageSize"));
-		data.setTotalCount(context.integerValue("QueryOrdersResponse.Data.TotalCount"));
+		data.setHostName(_ctx.stringValue("QueryOrdersResponse.Data.HostName"));
+		data.setPageNum(_ctx.integerValue("QueryOrdersResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("QueryOrdersResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("QueryOrdersResponse.Data.TotalCount"));
 
 		List<Order> orderList = new ArrayList<Order>();
-		for (int i = 0; i < context.lengthValue("QueryOrdersResponse.Data.OrderList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryOrdersResponse.Data.OrderList.Length"); i++) {
 			Order order = new Order();
-			order.setOrderId(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].OrderId"));
-			order.setProductCode(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].ProductCode"));
-			order.setProductType(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].ProductType"));
-			order.setSubscriptionType(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].SubscriptionType"));
-			order.setOrderType(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].OrderType"));
-			order.setCreateTime(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].CreateTime"));
-			order.setPaymentTime(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PaymentTime"));
-			order.setPaymentStatus(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PaymentStatus"));
-			order.setPretaxGrossAmount(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PretaxGrossAmount"));
-			order.setPretaxAmount(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PretaxAmount"));
-			order.setCurrency(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].Currency"));
-			order.setPretaxAmountLocal(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PretaxAmountLocal"));
-			order.setTax(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].Tax"));
-			order.setAfterTaxAmount(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].AfterTaxAmount"));
-			order.setPaymentCurrency(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PaymentCurrency"));
-			order.setRelatedOrderId(context.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].RelatedOrderId"));
+			order.setOrderId(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].OrderId"));
+			order.setProductCode(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].ProductCode"));
+			order.setProductType(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].ProductType"));
+			order.setSubscriptionType(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].SubscriptionType"));
+			order.setOrderType(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].OrderType"));
+			order.setCreateTime(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].CreateTime"));
+			order.setPaymentTime(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PaymentTime"));
+			order.setPaymentStatus(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PaymentStatus"));
+			order.setPretaxGrossAmount(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PretaxGrossAmount"));
+			order.setPretaxAmount(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PretaxAmount"));
+			order.setCurrency(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].Currency"));
+			order.setPretaxAmountLocal(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PretaxAmountLocal"));
+			order.setTax(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].Tax"));
+			order.setAfterTaxAmount(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].AfterTaxAmount"));
+			order.setPaymentCurrency(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].PaymentCurrency"));
+			order.setRelatedOrderId(_ctx.stringValue("QueryOrdersResponse.Data.OrderList["+ i +"].RelatedOrderId"));
 
 			orderList.add(order);
 		}

@@ -25,41 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryResourcePackageInstancesResponseUnmarshaller {
 
-	public static QueryResourcePackageInstancesResponse unmarshall(QueryResourcePackageInstancesResponse queryResourcePackageInstancesResponse, UnmarshallerContext context) {
+	public static QueryResourcePackageInstancesResponse unmarshall(QueryResourcePackageInstancesResponse queryResourcePackageInstancesResponse, UnmarshallerContext _ctx) {
 		
-		queryResourcePackageInstancesResponse.setRequestId(context.stringValue("QueryResourcePackageInstancesResponse.RequestId"));
-		queryResourcePackageInstancesResponse.setSuccess(context.booleanValue("QueryResourcePackageInstancesResponse.Success"));
-		queryResourcePackageInstancesResponse.setCode(context.stringValue("QueryResourcePackageInstancesResponse.Code"));
-		queryResourcePackageInstancesResponse.setMessage(context.stringValue("QueryResourcePackageInstancesResponse.Message"));
-		queryResourcePackageInstancesResponse.setPage(context.integerValue("QueryResourcePackageInstancesResponse.Page"));
-		queryResourcePackageInstancesResponse.setPageSize(context.integerValue("QueryResourcePackageInstancesResponse.PageSize"));
-		queryResourcePackageInstancesResponse.setTotal(context.integerValue("QueryResourcePackageInstancesResponse.Total"));
+		queryResourcePackageInstancesResponse.setRequestId(_ctx.stringValue("QueryResourcePackageInstancesResponse.RequestId"));
+		queryResourcePackageInstancesResponse.setSuccess(_ctx.booleanValue("QueryResourcePackageInstancesResponse.Success"));
+		queryResourcePackageInstancesResponse.setCode(_ctx.stringValue("QueryResourcePackageInstancesResponse.Code"));
+		queryResourcePackageInstancesResponse.setMessage(_ctx.stringValue("QueryResourcePackageInstancesResponse.Message"));
+		queryResourcePackageInstancesResponse.setPage(_ctx.integerValue("QueryResourcePackageInstancesResponse.Page"));
+		queryResourcePackageInstancesResponse.setPageSize(_ctx.integerValue("QueryResourcePackageInstancesResponse.PageSize"));
+		queryResourcePackageInstancesResponse.setTotal(_ctx.integerValue("QueryResourcePackageInstancesResponse.Total"));
 
 		Data data = new Data();
-		data.setHostId(context.stringValue("QueryResourcePackageInstancesResponse.Data.HostId"));
-		data.setPageNum(context.stringValue("QueryResourcePackageInstancesResponse.Data.PageNum"));
-		data.setPageSize(context.stringValue("QueryResourcePackageInstancesResponse.Data.PageSize"));
-		data.setTotalCount(context.stringValue("QueryResourcePackageInstancesResponse.Data.TotalCount"));
+		data.setHostId(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.HostId"));
+		data.setPageNum(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.PageNum"));
+		data.setPageSize(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.TotalCount"));
 
 		List<Instance> instances = new ArrayList<Instance>();
-		for (int i = 0; i < context.lengthValue("QueryResourcePackageInstancesResponse.Data.Instances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryResourcePackageInstancesResponse.Data.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setInstanceId(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].InstanceId"));
-			instance.setRegion(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Region"));
-			instance.setTotalAmount(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].TotalAmount"));
-			instance.setTotalAmountUnit(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].TotalAmountUnit"));
-			instance.setRemainingAmount(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].RemainingAmount"));
-			instance.setRemainingAmountUnit(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].RemainingAmountUnit"));
-			instance.setEffectiveTime(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].EffectiveTime"));
-			instance.setExpiryTime(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ExpiryTime"));
-			instance.setRemark(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Remark"));
-			instance.setPackageType(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].PackageType"));
-			instance.setStatus(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Status"));
-			instance.setDeductType(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].DeductType"));
+			instance.setInstanceId(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].InstanceId"));
+			instance.setRegion(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Region"));
+			instance.setTotalAmount(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].TotalAmount"));
+			instance.setTotalAmountUnit(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].TotalAmountUnit"));
+			instance.setRemainingAmount(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].RemainingAmount"));
+			instance.setRemainingAmountUnit(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].RemainingAmountUnit"));
+			instance.setEffectiveTime(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].EffectiveTime"));
+			instance.setExpiryTime(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ExpiryTime"));
+			instance.setRemark(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Remark"));
+			instance.setPackageType(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].PackageType"));
+			instance.setStatus(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].Status"));
+			instance.setDeductType(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].DeductType"));
 
 			List<String> applicableProducts = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ApplicableProducts.Length"); j++) {
-				applicableProducts.add(context.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ApplicableProducts["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ApplicableProducts.Length"); j++) {
+				applicableProducts.add(_ctx.stringValue("QueryResourcePackageInstancesResponse.Data.Instances["+ i +"].ApplicableProducts["+ j +"]"));
 			}
 			instance.setApplicableProducts(applicableProducts);
 

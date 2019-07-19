@@ -201,6 +201,8 @@ public class QueryBillResponse extends AcsResponse {
 
 			private String paymentTransactionID;
 
+			private String roundDownDiscount;
+
 			public String getRecordID() {
 				return this.recordID;
 			}
@@ -407,6 +409,14 @@ public class QueryBillResponse extends AcsResponse {
 
 			public void setPaymentTransactionID(String paymentTransactionID) {
 				this.paymentTransactionID = paymentTransactionID;
+			}
+
+			public String getRoundDownDiscount() {
+				return this.roundDownDiscount;
+			}
+
+			public void setRoundDownDiscount(String roundDownDiscount) {
+				this.roundDownDiscount = roundDownDiscount;
 			}
 		}
 	}

@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class QueryBillRequest extends RpcAcsRequest<QueryBillResponse> {
 	
 	public QueryBillRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryBill");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String productCode;

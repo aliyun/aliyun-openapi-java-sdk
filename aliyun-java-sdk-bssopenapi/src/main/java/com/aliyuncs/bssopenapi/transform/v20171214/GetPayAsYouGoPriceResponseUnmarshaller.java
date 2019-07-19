@@ -26,35 +26,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPayAsYouGoPriceResponseUnmarshaller {
 
-	public static GetPayAsYouGoPriceResponse unmarshall(GetPayAsYouGoPriceResponse getPayAsYouGoPriceResponse, UnmarshallerContext context) {
+	public static GetPayAsYouGoPriceResponse unmarshall(GetPayAsYouGoPriceResponse getPayAsYouGoPriceResponse, UnmarshallerContext _ctx) {
 		
-		getPayAsYouGoPriceResponse.setRequestId(context.stringValue("GetPayAsYouGoPriceResponse.RequestId"));
-		getPayAsYouGoPriceResponse.setSuccess(context.booleanValue("GetPayAsYouGoPriceResponse.Success"));
-		getPayAsYouGoPriceResponse.setCode(context.stringValue("GetPayAsYouGoPriceResponse.Code"));
-		getPayAsYouGoPriceResponse.setMessage(context.stringValue("GetPayAsYouGoPriceResponse.Message"));
+		getPayAsYouGoPriceResponse.setRequestId(_ctx.stringValue("GetPayAsYouGoPriceResponse.RequestId"));
+		getPayAsYouGoPriceResponse.setSuccess(_ctx.booleanValue("GetPayAsYouGoPriceResponse.Success"));
+		getPayAsYouGoPriceResponse.setCode(_ctx.stringValue("GetPayAsYouGoPriceResponse.Code"));
+		getPayAsYouGoPriceResponse.setMessage(_ctx.stringValue("GetPayAsYouGoPriceResponse.Message"));
 
 		Data data = new Data();
-		data.setCurrency(context.stringValue("GetPayAsYouGoPriceResponse.Data.Currency"));
+		data.setCurrency(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.Currency"));
 
 		List<ModuleDetail> moduleDetails = new ArrayList<ModuleDetail>();
-		for (int i = 0; i < context.lengthValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails.Length"); i++) {
 			ModuleDetail moduleDetail = new ModuleDetail();
-			moduleDetail.setModuleCode(context.stringValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].ModuleCode"));
-			moduleDetail.setOriginalCost(context.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].OriginalCost"));
-			moduleDetail.setInvoiceDiscount(context.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].InvoiceDiscount"));
-			moduleDetail.setCostAfterDiscount(context.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].CostAfterDiscount"));
-			moduleDetail.setUnitPrice(context.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].UnitPrice"));
+			moduleDetail.setModuleCode(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].ModuleCode"));
+			moduleDetail.setOriginalCost(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].OriginalCost"));
+			moduleDetail.setInvoiceDiscount(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].InvoiceDiscount"));
+			moduleDetail.setCostAfterDiscount(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].CostAfterDiscount"));
+			moduleDetail.setUnitPrice(_ctx.floatValue("GetPayAsYouGoPriceResponse.Data.ModuleDetails["+ i +"].UnitPrice"));
 
 			moduleDetails.add(moduleDetail);
 		}
 		data.setModuleDetails(moduleDetails);
 
 		List<PromotionDetail> promotionDetails = new ArrayList<PromotionDetail>();
-		for (int i = 0; i < context.lengthValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails.Length"); i++) {
 			PromotionDetail promotionDetail = new PromotionDetail();
-			promotionDetail.setPromotionName(context.stringValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionName"));
-			promotionDetail.setPromotionDesc(context.stringValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionDesc"));
-			promotionDetail.setPromotionId(context.longValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionId"));
+			promotionDetail.setPromotionName(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionName"));
+			promotionDetail.setPromotionDesc(_ctx.stringValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionDesc"));
+			promotionDetail.setPromotionId(_ctx.longValue("GetPayAsYouGoPriceResponse.Data.PromotionDetails["+ i +"].PromotionId"));
 
 			promotionDetails.add(promotionDetail);
 		}

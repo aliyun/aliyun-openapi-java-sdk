@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryResellerAvailableQuotaResponseUnmarshaller {
 
-	public static QueryResellerAvailableQuotaResponse unmarshall(QueryResellerAvailableQuotaResponse queryResellerAvailableQuotaResponse, UnmarshallerContext context) {
+	public static QueryResellerAvailableQuotaResponse unmarshall(QueryResellerAvailableQuotaResponse queryResellerAvailableQuotaResponse, UnmarshallerContext _ctx) {
 		
-		queryResellerAvailableQuotaResponse.setRequestId(context.stringValue("QueryResellerAvailableQuotaResponse.RequestId"));
-		queryResellerAvailableQuotaResponse.setCode(context.stringValue("QueryResellerAvailableQuotaResponse.Code"));
-		queryResellerAvailableQuotaResponse.setMessage(context.stringValue("QueryResellerAvailableQuotaResponse.Message"));
-		queryResellerAvailableQuotaResponse.setSuccess(context.booleanValue("QueryResellerAvailableQuotaResponse.Success"));
-		queryResellerAvailableQuotaResponse.setData(context.stringValue("QueryResellerAvailableQuotaResponse.Data"));
+		queryResellerAvailableQuotaResponse.setRequestId(_ctx.stringValue("QueryResellerAvailableQuotaResponse.RequestId"));
+		queryResellerAvailableQuotaResponse.setCode(_ctx.stringValue("QueryResellerAvailableQuotaResponse.Code"));
+		queryResellerAvailableQuotaResponse.setMessage(_ctx.stringValue("QueryResellerAvailableQuotaResponse.Message"));
+		queryResellerAvailableQuotaResponse.setSuccess(_ctx.booleanValue("QueryResellerAvailableQuotaResponse.Success"));
+		queryResellerAvailableQuotaResponse.setData(_ctx.stringValue("QueryResellerAvailableQuotaResponse.Data"));
 	 
 	 	return queryResellerAvailableQuotaResponse;
 	}

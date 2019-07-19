@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCustomerListResponseUnmarshaller {
 
-	public static GetCustomerListResponse unmarshall(GetCustomerListResponse getCustomerListResponse, UnmarshallerContext context) {
+	public static GetCustomerListResponse unmarshall(GetCustomerListResponse getCustomerListResponse, UnmarshallerContext _ctx) {
 		
-		getCustomerListResponse.setRequestId(context.stringValue("GetCustomerListResponse.RequestId"));
-		getCustomerListResponse.setSuccess(context.booleanValue("GetCustomerListResponse.Success"));
-		getCustomerListResponse.setCode(context.stringValue("GetCustomerListResponse.Code"));
-		getCustomerListResponse.setMessage(context.stringValue("GetCustomerListResponse.Message"));
+		getCustomerListResponse.setRequestId(_ctx.stringValue("GetCustomerListResponse.RequestId"));
+		getCustomerListResponse.setSuccess(_ctx.booleanValue("GetCustomerListResponse.Success"));
+		getCustomerListResponse.setCode(_ctx.stringValue("GetCustomerListResponse.Code"));
+		getCustomerListResponse.setMessage(_ctx.stringValue("GetCustomerListResponse.Message"));
 
 		Data data = new Data();
 
 		List<String> uidList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetCustomerListResponse.Data.UidList.Length"); i++) {
-			uidList.add(context.stringValue("GetCustomerListResponse.Data.UidList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetCustomerListResponse.Data.UidList.Length"); i++) {
+			uidList.add(_ctx.stringValue("GetCustomerListResponse.Data.UidList["+ i +"]"));
 		}
 		data.setUidList(uidList);
 		getCustomerListResponse.setData(data);

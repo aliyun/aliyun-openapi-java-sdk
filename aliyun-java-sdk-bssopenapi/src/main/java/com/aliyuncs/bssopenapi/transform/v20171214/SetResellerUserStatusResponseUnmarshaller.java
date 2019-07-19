@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetResellerUserStatusResponseUnmarshaller {
 
-	public static SetResellerUserStatusResponse unmarshall(SetResellerUserStatusResponse setResellerUserStatusResponse, UnmarshallerContext context) {
+	public static SetResellerUserStatusResponse unmarshall(SetResellerUserStatusResponse setResellerUserStatusResponse, UnmarshallerContext _ctx) {
 		
-		setResellerUserStatusResponse.setRequestId(context.stringValue("SetResellerUserStatusResponse.RequestId"));
-		setResellerUserStatusResponse.setCode(context.stringValue("SetResellerUserStatusResponse.Code"));
-		setResellerUserStatusResponse.setMessage(context.stringValue("SetResellerUserStatusResponse.Message"));
-		setResellerUserStatusResponse.setSuccess(context.booleanValue("SetResellerUserStatusResponse.Success"));
-		setResellerUserStatusResponse.setData(context.booleanValue("SetResellerUserStatusResponse.Data"));
+		setResellerUserStatusResponse.setRequestId(_ctx.stringValue("SetResellerUserStatusResponse.RequestId"));
+		setResellerUserStatusResponse.setCode(_ctx.stringValue("SetResellerUserStatusResponse.Code"));
+		setResellerUserStatusResponse.setMessage(_ctx.stringValue("SetResellerUserStatusResponse.Message"));
+		setResellerUserStatusResponse.setSuccess(_ctx.booleanValue("SetResellerUserStatusResponse.Success"));
+		setResellerUserStatusResponse.setData(_ctx.booleanValue("SetResellerUserStatusResponse.Data"));
 	 
 	 	return setResellerUserStatusResponse;
 	}

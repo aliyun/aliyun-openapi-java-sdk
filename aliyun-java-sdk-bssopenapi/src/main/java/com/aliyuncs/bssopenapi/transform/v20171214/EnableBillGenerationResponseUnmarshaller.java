@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnableBillGenerationResponseUnmarshaller {
 
-	public static EnableBillGenerationResponse unmarshall(EnableBillGenerationResponse enableBillGenerationResponse, UnmarshallerContext context) {
+	public static EnableBillGenerationResponse unmarshall(EnableBillGenerationResponse enableBillGenerationResponse, UnmarshallerContext _ctx) {
 		
-		enableBillGenerationResponse.setRequestId(context.stringValue("EnableBillGenerationResponse.RequestId"));
-		enableBillGenerationResponse.setSuccess(context.booleanValue("EnableBillGenerationResponse.Success"));
-		enableBillGenerationResponse.setCode(context.stringValue("EnableBillGenerationResponse.Code"));
-		enableBillGenerationResponse.setMessage(context.stringValue("EnableBillGenerationResponse.Message"));
+		enableBillGenerationResponse.setRequestId(_ctx.stringValue("EnableBillGenerationResponse.RequestId"));
+		enableBillGenerationResponse.setSuccess(_ctx.booleanValue("EnableBillGenerationResponse.Success"));
+		enableBillGenerationResponse.setCode(_ctx.stringValue("EnableBillGenerationResponse.Code"));
+		enableBillGenerationResponse.setMessage(_ctx.stringValue("EnableBillGenerationResponse.Message"));
 
 		Data data = new Data();
-		data.set_Boolean(context.booleanValue("EnableBillGenerationResponse.Data.Boolean"));
+		data.set_Boolean(_ctx.booleanValue("EnableBillGenerationResponse.Data.Boolean"));
 		enableBillGenerationResponse.setData(data);
 	 
 	 	return enableBillGenerationResponse;

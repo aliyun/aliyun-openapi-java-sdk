@@ -26,39 +26,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSubscriptionPriceResponseUnmarshaller {
 
-	public static GetSubscriptionPriceResponse unmarshall(GetSubscriptionPriceResponse getSubscriptionPriceResponse, UnmarshallerContext context) {
+	public static GetSubscriptionPriceResponse unmarshall(GetSubscriptionPriceResponse getSubscriptionPriceResponse, UnmarshallerContext _ctx) {
 		
-		getSubscriptionPriceResponse.setRequestId(context.stringValue("GetSubscriptionPriceResponse.RequestId"));
-		getSubscriptionPriceResponse.setSuccess(context.booleanValue("GetSubscriptionPriceResponse.Success"));
-		getSubscriptionPriceResponse.setCode(context.stringValue("GetSubscriptionPriceResponse.Code"));
-		getSubscriptionPriceResponse.setMessage(context.stringValue("GetSubscriptionPriceResponse.Message"));
+		getSubscriptionPriceResponse.setRequestId(_ctx.stringValue("GetSubscriptionPriceResponse.RequestId"));
+		getSubscriptionPriceResponse.setSuccess(_ctx.booleanValue("GetSubscriptionPriceResponse.Success"));
+		getSubscriptionPriceResponse.setCode(_ctx.stringValue("GetSubscriptionPriceResponse.Code"));
+		getSubscriptionPriceResponse.setMessage(_ctx.stringValue("GetSubscriptionPriceResponse.Message"));
 
 		Data data = new Data();
-		data.setOriginalPrice(context.floatValue("GetSubscriptionPriceResponse.Data.OriginalPrice"));
-		data.setDiscountPrice(context.floatValue("GetSubscriptionPriceResponse.Data.DiscountPrice"));
-		data.setTradePrice(context.floatValue("GetSubscriptionPriceResponse.Data.TradePrice"));
-		data.setCurrency(context.stringValue("GetSubscriptionPriceResponse.Data.Currency"));
-		data.setQuantity(context.integerValue("GetSubscriptionPriceResponse.Data.Quantity"));
+		data.setOriginalPrice(_ctx.floatValue("GetSubscriptionPriceResponse.Data.OriginalPrice"));
+		data.setDiscountPrice(_ctx.floatValue("GetSubscriptionPriceResponse.Data.DiscountPrice"));
+		data.setTradePrice(_ctx.floatValue("GetSubscriptionPriceResponse.Data.TradePrice"));
+		data.setCurrency(_ctx.stringValue("GetSubscriptionPriceResponse.Data.Currency"));
+		data.setQuantity(_ctx.integerValue("GetSubscriptionPriceResponse.Data.Quantity"));
 
 		List<ModuleDetail> moduleDetails = new ArrayList<ModuleDetail>();
-		for (int i = 0; i < context.lengthValue("GetSubscriptionPriceResponse.Data.ModuleDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetSubscriptionPriceResponse.Data.ModuleDetails.Length"); i++) {
 			ModuleDetail moduleDetail = new ModuleDetail();
-			moduleDetail.setModuleCode(context.stringValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].ModuleCode"));
-			moduleDetail.setOriginalCost(context.floatValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].OriginalCost"));
-			moduleDetail.setInvoiceDiscount(context.floatValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].InvoiceDiscount"));
-			moduleDetail.setCostAfterDiscount(context.floatValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].CostAfterDiscount"));
-			moduleDetail.setUnitPrice(context.floatValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].UnitPrice"));
+			moduleDetail.setModuleCode(_ctx.stringValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].ModuleCode"));
+			moduleDetail.setOriginalCost(_ctx.floatValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].OriginalCost"));
+			moduleDetail.setInvoiceDiscount(_ctx.floatValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].InvoiceDiscount"));
+			moduleDetail.setCostAfterDiscount(_ctx.floatValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].CostAfterDiscount"));
+			moduleDetail.setUnitPrice(_ctx.floatValue("GetSubscriptionPriceResponse.Data.ModuleDetails["+ i +"].UnitPrice"));
 
 			moduleDetails.add(moduleDetail);
 		}
 		data.setModuleDetails(moduleDetails);
 
 		List<PromotionDetail> promotionDetails = new ArrayList<PromotionDetail>();
-		for (int i = 0; i < context.lengthValue("GetSubscriptionPriceResponse.Data.PromotionDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetSubscriptionPriceResponse.Data.PromotionDetails.Length"); i++) {
 			PromotionDetail promotionDetail = new PromotionDetail();
-			promotionDetail.setPromotionName(context.stringValue("GetSubscriptionPriceResponse.Data.PromotionDetails["+ i +"].PromotionName"));
-			promotionDetail.setPromotionDesc(context.stringValue("GetSubscriptionPriceResponse.Data.PromotionDetails["+ i +"].PromotionDesc"));
-			promotionDetail.setPromotionId(context.longValue("GetSubscriptionPriceResponse.Data.PromotionDetails["+ i +"].PromotionId"));
+			promotionDetail.setPromotionName(_ctx.stringValue("GetSubscriptionPriceResponse.Data.PromotionDetails["+ i +"].PromotionName"));
+			promotionDetail.setPromotionDesc(_ctx.stringValue("GetSubscriptionPriceResponse.Data.PromotionDetails["+ i +"].PromotionDesc"));
+			promotionDetail.setPromotionId(_ctx.longValue("GetSubscriptionPriceResponse.Data.PromotionDetails["+ i +"].PromotionId"));
 
 			promotionDetails.add(promotionDetail);
 		}

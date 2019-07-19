@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAccountBalanceResponseUnmarshaller {
 
-	public static QueryAccountBalanceResponse unmarshall(QueryAccountBalanceResponse queryAccountBalanceResponse, UnmarshallerContext context) {
+	public static QueryAccountBalanceResponse unmarshall(QueryAccountBalanceResponse queryAccountBalanceResponse, UnmarshallerContext _ctx) {
 		
-		queryAccountBalanceResponse.setRequestId(context.stringValue("QueryAccountBalanceResponse.RequestId"));
-		queryAccountBalanceResponse.setSuccess(context.booleanValue("QueryAccountBalanceResponse.Success"));
-		queryAccountBalanceResponse.setCode(context.stringValue("QueryAccountBalanceResponse.Code"));
-		queryAccountBalanceResponse.setMessage(context.stringValue("QueryAccountBalanceResponse.Message"));
+		queryAccountBalanceResponse.setRequestId(_ctx.stringValue("QueryAccountBalanceResponse.RequestId"));
+		queryAccountBalanceResponse.setSuccess(_ctx.booleanValue("QueryAccountBalanceResponse.Success"));
+		queryAccountBalanceResponse.setCode(_ctx.stringValue("QueryAccountBalanceResponse.Code"));
+		queryAccountBalanceResponse.setMessage(_ctx.stringValue("QueryAccountBalanceResponse.Message"));
 
 		Data data = new Data();
-		data.setAvailableAmount(context.stringValue("QueryAccountBalanceResponse.Data.AvailableAmount"));
-		data.setAvailableCashAmount(context.stringValue("QueryAccountBalanceResponse.Data.AvailableCashAmount"));
-		data.setCreditAmount(context.stringValue("QueryAccountBalanceResponse.Data.CreditAmount"));
-		data.setMybankCreditAmount(context.stringValue("QueryAccountBalanceResponse.Data.MybankCreditAmount"));
-		data.setCurrency(context.stringValue("QueryAccountBalanceResponse.Data.Currency"));
+		data.setAvailableAmount(_ctx.stringValue("QueryAccountBalanceResponse.Data.AvailableAmount"));
+		data.setAvailableCashAmount(_ctx.stringValue("QueryAccountBalanceResponse.Data.AvailableCashAmount"));
+		data.setCreditAmount(_ctx.stringValue("QueryAccountBalanceResponse.Data.CreditAmount"));
+		data.setMybankCreditAmount(_ctx.stringValue("QueryAccountBalanceResponse.Data.MybankCreditAmount"));
+		data.setCurrency(_ctx.stringValue("QueryAccountBalanceResponse.Data.Currency"));
 		queryAccountBalanceResponse.setData(data);
 	 
 	 	return queryAccountBalanceResponse;

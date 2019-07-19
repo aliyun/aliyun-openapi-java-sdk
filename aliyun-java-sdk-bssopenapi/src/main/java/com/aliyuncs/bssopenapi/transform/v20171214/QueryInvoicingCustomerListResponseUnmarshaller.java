@@ -25,39 +25,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryInvoicingCustomerListResponseUnmarshaller {
 
-	public static QueryInvoicingCustomerListResponse unmarshall(QueryInvoicingCustomerListResponse queryInvoicingCustomerListResponse, UnmarshallerContext context) {
+	public static QueryInvoicingCustomerListResponse unmarshall(QueryInvoicingCustomerListResponse queryInvoicingCustomerListResponse, UnmarshallerContext _ctx) {
 		
-		queryInvoicingCustomerListResponse.setRequestId(context.stringValue("QueryInvoicingCustomerListResponse.RequestId"));
-		queryInvoicingCustomerListResponse.setSuccess(context.booleanValue("QueryInvoicingCustomerListResponse.Success"));
-		queryInvoicingCustomerListResponse.setCode(context.stringValue("QueryInvoicingCustomerListResponse.Code"));
-		queryInvoicingCustomerListResponse.setMessage(context.stringValue("QueryInvoicingCustomerListResponse.Message"));
+		queryInvoicingCustomerListResponse.setRequestId(_ctx.stringValue("QueryInvoicingCustomerListResponse.RequestId"));
+		queryInvoicingCustomerListResponse.setSuccess(_ctx.booleanValue("QueryInvoicingCustomerListResponse.Success"));
+		queryInvoicingCustomerListResponse.setCode(_ctx.stringValue("QueryInvoicingCustomerListResponse.Code"));
+		queryInvoicingCustomerListResponse.setMessage(_ctx.stringValue("QueryInvoicingCustomerListResponse.Message"));
 
 		Data data = new Data();
 
 		List<CustomerInvoice> customerInvoiceList = new ArrayList<CustomerInvoice>();
-		for (int i = 0; i < context.lengthValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList.Length"); i++) {
 			CustomerInvoice customerInvoice = new CustomerInvoice();
-			customerInvoice.setId(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].Id"));
-			customerInvoice.setUserId(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].UserId"));
-			customerInvoice.setUserNick(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].UserNick"));
-			customerInvoice.setInvoiceTitle(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].InvoiceTitle"));
-			customerInvoice.setCustomerType(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].CustomerType"));
-			customerInvoice.setTaxpayerType(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].TaxpayerType"));
-			customerInvoice.setBank(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].Bank"));
-			customerInvoice.setBankNo(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].BankNo"));
-			customerInvoice.setOperatingLicenseAddress(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].OperatingLicenseAddress"));
-			customerInvoice.setOperatingLicensePhone(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].OperatingLicensePhone"));
-			customerInvoice.setRegisterNo(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].RegisterNo"));
-			customerInvoice.setStartCycle(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].StartCycle"));
-			customerInvoice.setStatus(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].Status"));
-			customerInvoice.setGmtCreate(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].GmtCreate"));
-			customerInvoice.setTaxationLicense(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].TaxationLicense"));
-			customerInvoice.setAdjustType(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].AdjustType"));
-			customerInvoice.setEndCycle(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].EndCycle"));
-			customerInvoice.setTitleChangeInstructions(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].TitleChangeInstructions"));
-			customerInvoice.setIssueType(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].IssueType"));
-			customerInvoice.setType(context.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].Type"));
-			customerInvoice.setDefaultRemark(context.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].DefaultRemark"));
+			customerInvoice.setId(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].Id"));
+			customerInvoice.setUserId(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].UserId"));
+			customerInvoice.setUserNick(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].UserNick"));
+			customerInvoice.setInvoiceTitle(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].InvoiceTitle"));
+			customerInvoice.setCustomerType(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].CustomerType"));
+			customerInvoice.setTaxpayerType(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].TaxpayerType"));
+			customerInvoice.setBank(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].Bank"));
+			customerInvoice.setBankNo(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].BankNo"));
+			customerInvoice.setOperatingLicenseAddress(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].OperatingLicenseAddress"));
+			customerInvoice.setOperatingLicensePhone(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].OperatingLicensePhone"));
+			customerInvoice.setRegisterNo(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].RegisterNo"));
+			customerInvoice.setStartCycle(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].StartCycle"));
+			customerInvoice.setStatus(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].Status"));
+			customerInvoice.setGmtCreate(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].GmtCreate"));
+			customerInvoice.setTaxationLicense(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].TaxationLicense"));
+			customerInvoice.setAdjustType(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].AdjustType"));
+			customerInvoice.setEndCycle(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].EndCycle"));
+			customerInvoice.setTitleChangeInstructions(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].TitleChangeInstructions"));
+			customerInvoice.setIssueType(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].IssueType"));
+			customerInvoice.setType(_ctx.longValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].Type"));
+			customerInvoice.setDefaultRemark(_ctx.stringValue("QueryInvoicingCustomerListResponse.Data.CustomerInvoiceList["+ i +"].DefaultRemark"));
 
 			customerInvoiceList.add(customerInvoice);
 		}

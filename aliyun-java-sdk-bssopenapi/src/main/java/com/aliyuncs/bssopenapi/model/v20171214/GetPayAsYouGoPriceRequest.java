@@ -16,6 +16,7 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceR
 	
 	public GetPayAsYouGoPriceRequest() {
 		super("BssOpenApi", "2017-12-14", "GetPayAsYouGoPrice");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String productCode;

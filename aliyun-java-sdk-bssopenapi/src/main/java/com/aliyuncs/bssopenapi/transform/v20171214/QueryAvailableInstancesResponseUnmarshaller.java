@@ -25,39 +25,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAvailableInstancesResponseUnmarshaller {
 
-	public static QueryAvailableInstancesResponse unmarshall(QueryAvailableInstancesResponse queryAvailableInstancesResponse, UnmarshallerContext context) {
+	public static QueryAvailableInstancesResponse unmarshall(QueryAvailableInstancesResponse queryAvailableInstancesResponse, UnmarshallerContext _ctx) {
 		
-		queryAvailableInstancesResponse.setRequestId(context.stringValue("QueryAvailableInstancesResponse.RequestId"));
-		queryAvailableInstancesResponse.setSuccess(context.booleanValue("QueryAvailableInstancesResponse.Success"));
-		queryAvailableInstancesResponse.setCode(context.stringValue("QueryAvailableInstancesResponse.Code"));
-		queryAvailableInstancesResponse.setMessage(context.stringValue("QueryAvailableInstancesResponse.Message"));
+		queryAvailableInstancesResponse.setRequestId(_ctx.stringValue("QueryAvailableInstancesResponse.RequestId"));
+		queryAvailableInstancesResponse.setSuccess(_ctx.booleanValue("QueryAvailableInstancesResponse.Success"));
+		queryAvailableInstancesResponse.setCode(_ctx.stringValue("QueryAvailableInstancesResponse.Code"));
+		queryAvailableInstancesResponse.setMessage(_ctx.stringValue("QueryAvailableInstancesResponse.Message"));
 
 		Data data = new Data();
-		data.setPageNum(context.integerValue("QueryAvailableInstancesResponse.Data.PageNum"));
-		data.setPageSize(context.integerValue("QueryAvailableInstancesResponse.Data.PageSize"));
-		data.setTotalCount(context.integerValue("QueryAvailableInstancesResponse.Data.TotalCount"));
+		data.setPageNum(_ctx.integerValue("QueryAvailableInstancesResponse.Data.PageNum"));
+		data.setPageSize(_ctx.integerValue("QueryAvailableInstancesResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("QueryAvailableInstancesResponse.Data.TotalCount"));
 
 		List<Instance> instanceList = new ArrayList<Instance>();
-		for (int i = 0; i < context.lengthValue("QueryAvailableInstancesResponse.Data.InstanceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAvailableInstancesResponse.Data.InstanceList.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setOwnerId(context.longValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].OwnerId"));
-			instance.setSellerId(context.longValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SellerId"));
-			instance.setProductCode(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ProductCode"));
-			instance.setProductType(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ProductType"));
-			instance.setSubscriptionType(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SubscriptionType"));
-			instance.setInstanceID(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].InstanceID"));
-			instance.setRegion(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Region"));
-			instance.setCreateTime(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].CreateTime"));
-			instance.setEndTime(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].EndTime"));
-			instance.setStopTime(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].StopTime"));
-			instance.setReleaseTime(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ReleaseTime"));
-			instance.setExpectedReleaseTime(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ExpectedReleaseTime"));
-			instance.setStatus(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Status"));
-			instance.setSubStatus(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SubStatus"));
-			instance.setRenewStatus(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewStatus"));
-			instance.setRenewalDuration(context.integerValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewalDuration"));
-			instance.setRenewalDurationUnit(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewalDurationUnit"));
-			instance.setSeller(context.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Seller"));
+			instance.setOwnerId(_ctx.longValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].OwnerId"));
+			instance.setSellerId(_ctx.longValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SellerId"));
+			instance.setProductCode(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ProductCode"));
+			instance.setProductType(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ProductType"));
+			instance.setSubscriptionType(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SubscriptionType"));
+			instance.setInstanceID(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].InstanceID"));
+			instance.setRegion(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Region"));
+			instance.setCreateTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].CreateTime"));
+			instance.setEndTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].EndTime"));
+			instance.setStopTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].StopTime"));
+			instance.setReleaseTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ReleaseTime"));
+			instance.setExpectedReleaseTime(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].ExpectedReleaseTime"));
+			instance.setStatus(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Status"));
+			instance.setSubStatus(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].SubStatus"));
+			instance.setRenewStatus(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewStatus"));
+			instance.setRenewalDuration(_ctx.integerValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewalDuration"));
+			instance.setRenewalDurationUnit(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].RenewalDurationUnit"));
+			instance.setSeller(_ctx.stringValue("QueryAvailableInstancesResponse.Data.InstanceList["+ i +"].Seller"));
 
 			instanceList.add(instance);
 		}

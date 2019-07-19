@@ -215,6 +215,8 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			private String zone;
 
+			private String item;
+
 			public String getInstanceID() {
 				return this.instanceID;
 			}
@@ -477,6 +479,14 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			public void setZone(String zone) {
 				this.zone = zone;
+			}
+
+			public String getItem() {
+				return this.item;
+			}
+
+			public void setItem(String item) {
+				this.item = item;
 			}
 		}
 	}

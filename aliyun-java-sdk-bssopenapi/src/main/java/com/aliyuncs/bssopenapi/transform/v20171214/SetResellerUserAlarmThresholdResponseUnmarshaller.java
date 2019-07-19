@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetResellerUserAlarmThresholdResponseUnmarshaller {
 
-	public static SetResellerUserAlarmThresholdResponse unmarshall(SetResellerUserAlarmThresholdResponse setResellerUserAlarmThresholdResponse, UnmarshallerContext context) {
+	public static SetResellerUserAlarmThresholdResponse unmarshall(SetResellerUserAlarmThresholdResponse setResellerUserAlarmThresholdResponse, UnmarshallerContext _ctx) {
 		
-		setResellerUserAlarmThresholdResponse.setRequestId(context.stringValue("SetResellerUserAlarmThresholdResponse.RequestId"));
-		setResellerUserAlarmThresholdResponse.setCode(context.stringValue("SetResellerUserAlarmThresholdResponse.Code"));
-		setResellerUserAlarmThresholdResponse.setMessage(context.stringValue("SetResellerUserAlarmThresholdResponse.Message"));
-		setResellerUserAlarmThresholdResponse.setSuccess(context.booleanValue("SetResellerUserAlarmThresholdResponse.Success"));
-		setResellerUserAlarmThresholdResponse.setData(context.booleanValue("SetResellerUserAlarmThresholdResponse.Data"));
+		setResellerUserAlarmThresholdResponse.setRequestId(_ctx.stringValue("SetResellerUserAlarmThresholdResponse.RequestId"));
+		setResellerUserAlarmThresholdResponse.setCode(_ctx.stringValue("SetResellerUserAlarmThresholdResponse.Code"));
+		setResellerUserAlarmThresholdResponse.setMessage(_ctx.stringValue("SetResellerUserAlarmThresholdResponse.Message"));
+		setResellerUserAlarmThresholdResponse.setSuccess(_ctx.booleanValue("SetResellerUserAlarmThresholdResponse.Success"));
+		setResellerUserAlarmThresholdResponse.setData(_ctx.booleanValue("SetResellerUserAlarmThresholdResponse.Data"));
 	 
 	 	return setResellerUserAlarmThresholdResponse;
 	}

@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyInstanceResponseUnmarshaller {
 
-	public static ModifyInstanceResponse unmarshall(ModifyInstanceResponse modifyInstanceResponse, UnmarshallerContext context) {
+	public static ModifyInstanceResponse unmarshall(ModifyInstanceResponse modifyInstanceResponse, UnmarshallerContext _ctx) {
 		
-		modifyInstanceResponse.setRequestId(context.stringValue("ModifyInstanceResponse.RequestId"));
-		modifyInstanceResponse.setSuccess(context.booleanValue("ModifyInstanceResponse.Success"));
-		modifyInstanceResponse.setCode(context.stringValue("ModifyInstanceResponse.Code"));
-		modifyInstanceResponse.setMessage(context.stringValue("ModifyInstanceResponse.Message"));
+		modifyInstanceResponse.setRequestId(_ctx.stringValue("ModifyInstanceResponse.RequestId"));
+		modifyInstanceResponse.setSuccess(_ctx.booleanValue("ModifyInstanceResponse.Success"));
+		modifyInstanceResponse.setCode(_ctx.stringValue("ModifyInstanceResponse.Code"));
+		modifyInstanceResponse.setMessage(_ctx.stringValue("ModifyInstanceResponse.Message"));
 
 		Data data = new Data();
-		data.setHostId(context.stringValue("ModifyInstanceResponse.Data.HostId"));
-		data.setOrderId(context.stringValue("ModifyInstanceResponse.Data.OrderId"));
+		data.setHostId(_ctx.stringValue("ModifyInstanceResponse.Data.HostId"));
+		data.setOrderId(_ctx.stringValue("ModifyInstanceResponse.Data.OrderId"));
 		modifyInstanceResponse.setData(data);
 	 
 	 	return modifyInstanceResponse;
