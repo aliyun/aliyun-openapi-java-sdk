@@ -53,6 +53,10 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		private String nodes;
 
+		private String readWriteMode;
+
+		private String autoAddNewNodes;
+
 		private String endpointConfig;
 
 		private List<Address> addressItems;
@@ -95,6 +99,22 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		public void setNodes(String nodes) {
 			this.nodes = nodes;
+		}
+
+		public String getReadWriteMode() {
+			return this.readWriteMode;
+		}
+
+		public void setReadWriteMode(String readWriteMode) {
+			this.readWriteMode = readWriteMode;
+		}
+
+		public String getAutoAddNewNodes() {
+			return this.autoAddNewNodes;
+		}
+
+		public void setAutoAddNewNodes(String autoAddNewNodes) {
+			this.autoAddNewNodes = autoAddNewNodes;
 		}
 
 		public String getEndpointConfig() {

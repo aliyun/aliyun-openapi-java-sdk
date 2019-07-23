@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteDBNodesResponseUnmarshaller {
 
-	public static DeleteDBNodesResponse unmarshall(DeleteDBNodesResponse deleteDBNodesResponse, UnmarshallerContext context) {
+	public static DeleteDBNodesResponse unmarshall(DeleteDBNodesResponse deleteDBNodesResponse, UnmarshallerContext _ctx) {
 		
-		deleteDBNodesResponse.setRequestId(context.stringValue("DeleteDBNodesResponse.RequestId"));
-		deleteDBNodesResponse.setDBClusterId(context.stringValue("DeleteDBNodesResponse.DBClusterId"));
-		deleteDBNodesResponse.setOrderId(context.stringValue("DeleteDBNodesResponse.OrderId"));
+		deleteDBNodesResponse.setRequestId(_ctx.stringValue("DeleteDBNodesResponse.RequestId"));
+		deleteDBNodesResponse.setDBClusterId(_ctx.stringValue("DeleteDBNodesResponse.DBClusterId"));
+		deleteDBNodesResponse.setOrderId(_ctx.stringValue("DeleteDBNodesResponse.OrderId"));
 	 
 	 	return deleteDBNodesResponse;
 	}

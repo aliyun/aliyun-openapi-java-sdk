@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.polardb.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptio
 	
 	public ModifyDBDescriptionRequest() {
 		super("polardb", "2017-08-01", "ModifyDBDescription", "polardb");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

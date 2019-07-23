@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDBClusterAccessWhitelistResponseUnmarshaller {
 
-	public static ModifyDBClusterAccessWhitelistResponse unmarshall(ModifyDBClusterAccessWhitelistResponse modifyDBClusterAccessWhitelistResponse, UnmarshallerContext context) {
+	public static ModifyDBClusterAccessWhitelistResponse unmarshall(ModifyDBClusterAccessWhitelistResponse modifyDBClusterAccessWhitelistResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBClusterAccessWhitelistResponse.setRequestId(context.stringValue("ModifyDBClusterAccessWhitelistResponse.RequestId"));
+		modifyDBClusterAccessWhitelistResponse.setRequestId(_ctx.stringValue("ModifyDBClusterAccessWhitelistResponse.RequestId"));
 	 
 	 	return modifyDBClusterAccessWhitelistResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDBClusterMaintainTimeResponseUnmarshaller {
 
-	public static ModifyDBClusterMaintainTimeResponse unmarshall(ModifyDBClusterMaintainTimeResponse modifyDBClusterMaintainTimeResponse, UnmarshallerContext context) {
+	public static ModifyDBClusterMaintainTimeResponse unmarshall(ModifyDBClusterMaintainTimeResponse modifyDBClusterMaintainTimeResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBClusterMaintainTimeResponse.setRequestId(context.stringValue("ModifyDBClusterMaintainTimeResponse.RequestId"));
+		modifyDBClusterMaintainTimeResponse.setRequestId(_ctx.stringValue("ModifyDBClusterMaintainTimeResponse.RequestId"));
 	 
 	 	return modifyDBClusterMaintainTimeResponse;
 	}

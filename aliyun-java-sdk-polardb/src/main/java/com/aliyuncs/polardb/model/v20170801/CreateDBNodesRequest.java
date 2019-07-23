@@ -16,6 +16,7 @@ package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.polardb.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 	
 	public CreateDBNodesRequest() {
 		super("polardb", "2017-08-01", "CreateDBNodes", "polardb");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

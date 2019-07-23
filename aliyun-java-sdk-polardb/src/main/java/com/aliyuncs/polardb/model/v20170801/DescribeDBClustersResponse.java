@@ -87,6 +87,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String zoneId;
+
 		private String expireTime;
 
 		private String expired;
@@ -100,6 +102,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 		private String dBVersion;
 
 		private String lockMode;
+
+		private Integer deletionLock;
 
 		private String createTime;
 
@@ -171,6 +175,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
 		public String getExpireTime() {
 			return this.expireTime;
 		}
@@ -225,6 +237,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public Integer getDeletionLock() {
+			return this.deletionLock;
+		}
+
+		public void setDeletionLock(Integer deletionLock) {
+			this.deletionLock = deletionLock;
 		}
 
 		public String getCreateTime() {
@@ -291,6 +311,10 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			private String dBNodeRole;
 
+			private String regionId;
+
+			private String zoneId;
+
 			public String getDBNodeId() {
 				return this.dBNodeId;
 			}
@@ -313,6 +337,38 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 			public void setDBNodeRole(String dBNodeRole) {
 				this.dBNodeRole = dBNodeRole;
+			}
+
+			public String getBizRegionId() {
+				return this.regionId;
+			}
+
+			public void setBizRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			/**
+			 * @deprecated use getBizRegionId instead of this.
+			 */
+			@Deprecated
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			/**
+			 * @deprecated use setBizRegionId instead of this.
+			 */
+			@Deprecated
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
 			}
 		}
 

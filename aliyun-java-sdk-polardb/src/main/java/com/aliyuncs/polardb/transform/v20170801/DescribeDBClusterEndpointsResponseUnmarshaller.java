@@ -25,27 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBClusterEndpointsResponseUnmarshaller {
 
-	public static DescribeDBClusterEndpointsResponse unmarshall(DescribeDBClusterEndpointsResponse describeDBClusterEndpointsResponse, UnmarshallerContext context) {
+	public static DescribeDBClusterEndpointsResponse unmarshall(DescribeDBClusterEndpointsResponse describeDBClusterEndpointsResponse, UnmarshallerContext _ctx) {
 		
-		describeDBClusterEndpointsResponse.setRequestId(context.stringValue("DescribeDBClusterEndpointsResponse.RequestId"));
+		describeDBClusterEndpointsResponse.setRequestId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.RequestId"));
 
 		List<DBEndpoint> items = new ArrayList<DBEndpoint>();
-		for (int i = 0; i < context.lengthValue("DescribeDBClusterEndpointsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterEndpointsResponse.Items.Length"); i++) {
 			DBEndpoint dBEndpoint = new DBEndpoint();
-			dBEndpoint.setDBEndpointId(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointId"));
-			dBEndpoint.setEndpointType(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].EndpointType"));
-			dBEndpoint.setNodes(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].Nodes"));
-			dBEndpoint.setEndpointConfig(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].EndpointConfig"));
+			dBEndpoint.setDBEndpointId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].DBEndpointId"));
+			dBEndpoint.setEndpointType(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].EndpointType"));
+			dBEndpoint.setNodes(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].Nodes"));
+			dBEndpoint.setReadWriteMode(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].ReadWriteMode"));
+			dBEndpoint.setAutoAddNewNodes(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AutoAddNewNodes"));
+			dBEndpoint.setEndpointConfig(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].EndpointConfig"));
 
 			List<Address> addressItems = new ArrayList<Address>();
-			for (int j = 0; j < context.lengthValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems.Length"); j++) {
 				Address address = new Address();
-				address.setConnectionString(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].ConnectionString"));
-				address.setIPAddress(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].IPAddress"));
-				address.setNetType(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].NetType"));
-				address.setPort(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].Port"));
-				address.setVPCId(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VPCId"));
-				address.setVSwitchId(context.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VSwitchId"));
+				address.setConnectionString(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].ConnectionString"));
+				address.setIPAddress(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].IPAddress"));
+				address.setNetType(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].NetType"));
+				address.setPort(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].Port"));
+				address.setVPCId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VPCId"));
+				address.setVSwitchId(_ctx.stringValue("DescribeDBClusterEndpointsResponse.Items["+ i +"].AddressItems["+ j +"].VSwitchId"));
 
 				addressItems.add(address);
 			}

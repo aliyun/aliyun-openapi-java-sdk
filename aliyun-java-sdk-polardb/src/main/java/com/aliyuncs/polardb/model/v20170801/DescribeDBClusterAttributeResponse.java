@@ -51,6 +51,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String lockMode;
 
+	private Integer deletionLock;
+
 	private String creationTime;
 
 	private String expireTime;
@@ -61,7 +63,13 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Long storageUsed;
 
+	private Integer storageMax;
+
+	private String zoneIds;
+
 	private Long sQLSize;
+
+	private Boolean isLatestVersion;
 
 	private List<Tag> tags;
 
@@ -187,6 +195,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.lockMode = lockMode;
 	}
 
+	public Integer getDeletionLock() {
+		return this.deletionLock;
+	}
+
+	public void setDeletionLock(Integer deletionLock) {
+		this.deletionLock = deletionLock;
+	}
+
 	public String getCreationTime() {
 		return this.creationTime;
 	}
@@ -227,12 +243,36 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.storageUsed = storageUsed;
 	}
 
+	public Integer getStorageMax() {
+		return this.storageMax;
+	}
+
+	public void setStorageMax(Integer storageMax) {
+		this.storageMax = storageMax;
+	}
+
+	public String getZoneIds() {
+		return this.zoneIds;
+	}
+
+	public void setZoneIds(String zoneIds) {
+		this.zoneIds = zoneIds;
+	}
+
 	public Long getSQLSize() {
 		return this.sQLSize;
 	}
 
 	public void setSQLSize(Long sQLSize) {
 		this.sQLSize = sQLSize;
+	}
+
+	public Boolean getIsLatestVersion() {
+		return this.isLatestVersion;
+	}
+
+	public void setIsLatestVersion(Boolean isLatestVersion) {
+		this.isLatestVersion = isLatestVersion;
 	}
 
 	public List<Tag> getTags() {

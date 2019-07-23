@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBClusterAccessWhitelistResponseUnmarshaller {
 
-	public static DescribeDBClusterAccessWhitelistResponse unmarshall(DescribeDBClusterAccessWhitelistResponse describeDBClusterAccessWhitelistResponse, UnmarshallerContext context) {
+	public static DescribeDBClusterAccessWhitelistResponse unmarshall(DescribeDBClusterAccessWhitelistResponse describeDBClusterAccessWhitelistResponse, UnmarshallerContext _ctx) {
 		
-		describeDBClusterAccessWhitelistResponse.setRequestId(context.stringValue("DescribeDBClusterAccessWhitelistResponse.RequestId"));
+		describeDBClusterAccessWhitelistResponse.setRequestId(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.RequestId"));
 
 		List<DBClusterIPArray> items = new ArrayList<DBClusterIPArray>();
-		for (int i = 0; i < context.lengthValue("DescribeDBClusterAccessWhitelistResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAccessWhitelistResponse.Items.Length"); i++) {
 			DBClusterIPArray dBClusterIPArray = new DBClusterIPArray();
-			dBClusterIPArray.setDBClusterIPArrayName(context.stringValue("DescribeDBClusterAccessWhitelistResponse.Items["+ i +"].DBClusterIPArrayName"));
-			dBClusterIPArray.setDBClusterIPArrayAttribute(context.stringValue("DescribeDBClusterAccessWhitelistResponse.Items["+ i +"].DBClusterIPArrayAttribute"));
-			dBClusterIPArray.setSecurityIps(context.stringValue("DescribeDBClusterAccessWhitelistResponse.Items["+ i +"].SecurityIps"));
+			dBClusterIPArray.setDBClusterIPArrayName(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.Items["+ i +"].DBClusterIPArrayName"));
+			dBClusterIPArray.setDBClusterIPArrayAttribute(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.Items["+ i +"].DBClusterIPArrayAttribute"));
+			dBClusterIPArray.setSecurityIps(_ctx.stringValue("DescribeDBClusterAccessWhitelistResponse.Items["+ i +"].SecurityIps"));
 
 			items.add(dBClusterIPArray);
 		}

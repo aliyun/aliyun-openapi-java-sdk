@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteDBClusterResponseUnmarshaller {
 
-	public static DeleteDBClusterResponse unmarshall(DeleteDBClusterResponse deleteDBClusterResponse, UnmarshallerContext context) {
+	public static DeleteDBClusterResponse unmarshall(DeleteDBClusterResponse deleteDBClusterResponse, UnmarshallerContext _ctx) {
 		
-		deleteDBClusterResponse.setRequestId(context.stringValue("DeleteDBClusterResponse.RequestId"));
+		deleteDBClusterResponse.setRequestId(_ctx.stringValue("DeleteDBClusterResponse.RequestId"));
 	 
 	 	return deleteDBClusterResponse;
 	}

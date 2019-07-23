@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.polardb.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +25,19 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 	
 	public ModifyDBClusterEndpointRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterEndpoint", "polardb");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String autoAddNewNodes;
 
 	private Long resourceOwnerId;
 
 	private String nodes;
+
+	private String readWriteMode;
 
 	private String resourceOwnerAccount;
 
@@ -41,6 +50,17 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 	private String endpointConfig;
 
 	private Long ownerId;
+
+	public String getAutoAddNewNodes() {
+		return this.autoAddNewNodes;
+	}
+
+	public void setAutoAddNewNodes(String autoAddNewNodes) {
+		this.autoAddNewNodes = autoAddNewNodes;
+		if(autoAddNewNodes != null){
+			putQueryParameter("AutoAddNewNodes", autoAddNewNodes);
+		}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,6 +81,17 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 		this.nodes = nodes;
 		if(nodes != null){
 			putQueryParameter("Nodes", nodes);
+		}
+	}
+
+	public String getReadWriteMode() {
+		return this.readWriteMode;
+	}
+
+	public void setReadWriteMode(String readWriteMode) {
+		this.readWriteMode = readWriteMode;
+		if(readWriteMode != null){
+			putQueryParameter("ReadWriteMode", readWriteMode);
 		}
 	}
 

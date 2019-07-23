@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDBClusterEndpointResponseUnmarshaller {
 
-	public static CreateDBClusterEndpointResponse unmarshall(CreateDBClusterEndpointResponse createDBClusterEndpointResponse, UnmarshallerContext context) {
+	public static CreateDBClusterEndpointResponse unmarshall(CreateDBClusterEndpointResponse createDBClusterEndpointResponse, UnmarshallerContext _ctx) {
 		
-		createDBClusterEndpointResponse.setRequestId(context.stringValue("CreateDBClusterEndpointResponse.RequestId"));
+		createDBClusterEndpointResponse.setRequestId(_ctx.stringValue("CreateDBClusterEndpointResponse.RequestId"));
 	 
 	 	return createDBClusterEndpointResponse;
 	}

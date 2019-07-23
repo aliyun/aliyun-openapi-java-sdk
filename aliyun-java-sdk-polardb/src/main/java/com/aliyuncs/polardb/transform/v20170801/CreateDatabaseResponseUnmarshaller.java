@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDatabaseResponseUnmarshaller {
 
-	public static CreateDatabaseResponse unmarshall(CreateDatabaseResponse createDatabaseResponse, UnmarshallerContext context) {
+	public static CreateDatabaseResponse unmarshall(CreateDatabaseResponse createDatabaseResponse, UnmarshallerContext _ctx) {
 		
-		createDatabaseResponse.setRequestId(context.stringValue("CreateDatabaseResponse.RequestId"));
+		createDatabaseResponse.setRequestId(_ctx.stringValue("CreateDatabaseResponse.RequestId"));
 	 
 	 	return createDatabaseResponse;
 	}

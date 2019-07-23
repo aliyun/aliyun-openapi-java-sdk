@@ -25,49 +25,53 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBClusterAttributeResponseUnmarshaller {
 
-	public static DescribeDBClusterAttributeResponse unmarshall(DescribeDBClusterAttributeResponse describeDBClusterAttributeResponse, UnmarshallerContext context) {
+	public static DescribeDBClusterAttributeResponse unmarshall(DescribeDBClusterAttributeResponse describeDBClusterAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeDBClusterAttributeResponse.setRequestId(context.stringValue("DescribeDBClusterAttributeResponse.RequestId"));
-		describeDBClusterAttributeResponse.setRegionId(context.stringValue("DescribeDBClusterAttributeResponse.RegionId"));
-		describeDBClusterAttributeResponse.setDBClusterNetworkType(context.stringValue("DescribeDBClusterAttributeResponse.DBClusterNetworkType"));
-		describeDBClusterAttributeResponse.setVPCId(context.stringValue("DescribeDBClusterAttributeResponse.VPCId"));
-		describeDBClusterAttributeResponse.setVSwitchId(context.stringValue("DescribeDBClusterAttributeResponse.VSwitchId"));
-		describeDBClusterAttributeResponse.setPayType(context.stringValue("DescribeDBClusterAttributeResponse.PayType"));
-		describeDBClusterAttributeResponse.setDBClusterId(context.stringValue("DescribeDBClusterAttributeResponse.DBClusterId"));
-		describeDBClusterAttributeResponse.setDBClusterStatus(context.stringValue("DescribeDBClusterAttributeResponse.DBClusterStatus"));
-		describeDBClusterAttributeResponse.setDBClusterDescription(context.stringValue("DescribeDBClusterAttributeResponse.DBClusterDescription"));
-		describeDBClusterAttributeResponse.setEngine(context.stringValue("DescribeDBClusterAttributeResponse.Engine"));
-		describeDBClusterAttributeResponse.setDBType(context.stringValue("DescribeDBClusterAttributeResponse.DBType"));
-		describeDBClusterAttributeResponse.setDBVersion(context.stringValue("DescribeDBClusterAttributeResponse.DBVersion"));
-		describeDBClusterAttributeResponse.setLockMode(context.stringValue("DescribeDBClusterAttributeResponse.LockMode"));
-		describeDBClusterAttributeResponse.setCreationTime(context.stringValue("DescribeDBClusterAttributeResponse.CreationTime"));
-		describeDBClusterAttributeResponse.setExpireTime(context.stringValue("DescribeDBClusterAttributeResponse.ExpireTime"));
-		describeDBClusterAttributeResponse.setExpired(context.stringValue("DescribeDBClusterAttributeResponse.Expired"));
-		describeDBClusterAttributeResponse.setMaintainTime(context.stringValue("DescribeDBClusterAttributeResponse.MaintainTime"));
-		describeDBClusterAttributeResponse.setStorageUsed(context.longValue("DescribeDBClusterAttributeResponse.StorageUsed"));
-		describeDBClusterAttributeResponse.setSQLSize(context.longValue("DescribeDBClusterAttributeResponse.SQLSize"));
+		describeDBClusterAttributeResponse.setRequestId(_ctx.stringValue("DescribeDBClusterAttributeResponse.RequestId"));
+		describeDBClusterAttributeResponse.setRegionId(_ctx.stringValue("DescribeDBClusterAttributeResponse.RegionId"));
+		describeDBClusterAttributeResponse.setDBClusterNetworkType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBClusterNetworkType"));
+		describeDBClusterAttributeResponse.setVPCId(_ctx.stringValue("DescribeDBClusterAttributeResponse.VPCId"));
+		describeDBClusterAttributeResponse.setVSwitchId(_ctx.stringValue("DescribeDBClusterAttributeResponse.VSwitchId"));
+		describeDBClusterAttributeResponse.setPayType(_ctx.stringValue("DescribeDBClusterAttributeResponse.PayType"));
+		describeDBClusterAttributeResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBClusterId"));
+		describeDBClusterAttributeResponse.setDBClusterStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBClusterStatus"));
+		describeDBClusterAttributeResponse.setDBClusterDescription(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBClusterDescription"));
+		describeDBClusterAttributeResponse.setEngine(_ctx.stringValue("DescribeDBClusterAttributeResponse.Engine"));
+		describeDBClusterAttributeResponse.setDBType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBType"));
+		describeDBClusterAttributeResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBVersion"));
+		describeDBClusterAttributeResponse.setLockMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.LockMode"));
+		describeDBClusterAttributeResponse.setDeletionLock(_ctx.integerValue("DescribeDBClusterAttributeResponse.DeletionLock"));
+		describeDBClusterAttributeResponse.setCreationTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.CreationTime"));
+		describeDBClusterAttributeResponse.setExpireTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.ExpireTime"));
+		describeDBClusterAttributeResponse.setExpired(_ctx.stringValue("DescribeDBClusterAttributeResponse.Expired"));
+		describeDBClusterAttributeResponse.setMaintainTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.MaintainTime"));
+		describeDBClusterAttributeResponse.setStorageUsed(_ctx.longValue("DescribeDBClusterAttributeResponse.StorageUsed"));
+		describeDBClusterAttributeResponse.setStorageMax(_ctx.integerValue("DescribeDBClusterAttributeResponse.StorageMax"));
+		describeDBClusterAttributeResponse.setZoneIds(_ctx.stringValue("DescribeDBClusterAttributeResponse.ZoneIds"));
+		describeDBClusterAttributeResponse.setSQLSize(_ctx.longValue("DescribeDBClusterAttributeResponse.SQLSize"));
+		describeDBClusterAttributeResponse.setIsLatestVersion(_ctx.booleanValue("DescribeDBClusterAttributeResponse.IsLatestVersion"));
 
 		List<Tag> tags = new ArrayList<Tag>();
-		for (int i = 0; i < context.lengthValue("DescribeDBClusterAttributeResponse.Tags.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAttributeResponse.Tags.Length"); i++) {
 			Tag tag = new Tag();
-			tag.setKey(context.stringValue("DescribeDBClusterAttributeResponse.Tags["+ i +"].Key"));
-			tag.setValue(context.stringValue("DescribeDBClusterAttributeResponse.Tags["+ i +"].Value"));
+			tag.setKey(_ctx.stringValue("DescribeDBClusterAttributeResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("DescribeDBClusterAttributeResponse.Tags["+ i +"].Value"));
 
 			tags.add(tag);
 		}
 		describeDBClusterAttributeResponse.setTags(tags);
 
 		List<DBNode> dBNodes = new ArrayList<DBNode>();
-		for (int i = 0; i < context.lengthValue("DescribeDBClusterAttributeResponse.DBNodes.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterAttributeResponse.DBNodes.Length"); i++) {
 			DBNode dBNode = new DBNode();
-			dBNode.setDBNodeId(context.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeId"));
-			dBNode.setZoneId(context.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ZoneId"));
-			dBNode.setDBNodeStatus(context.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeStatus"));
-			dBNode.setCreationTime(context.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].CreationTime"));
-			dBNode.setDBNodeClass(context.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeClass"));
-			dBNode.setDBNodeRole(context.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeRole"));
-			dBNode.setMaxIOPS(context.integerValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MaxIOPS"));
-			dBNode.setMaxConnections(context.integerValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MaxConnections"));
+			dBNode.setDBNodeId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeId"));
+			dBNode.setZoneId(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].ZoneId"));
+			dBNode.setDBNodeStatus(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeStatus"));
+			dBNode.setCreationTime(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].CreationTime"));
+			dBNode.setDBNodeClass(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeClass"));
+			dBNode.setDBNodeRole(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].DBNodeRole"));
+			dBNode.setMaxIOPS(_ctx.integerValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MaxIOPS"));
+			dBNode.setMaxConnections(_ctx.integerValue("DescribeDBClusterAttributeResponse.DBNodes["+ i +"].MaxConnections"));
 
 			dBNodes.add(dBNode);
 		}

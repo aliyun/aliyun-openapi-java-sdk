@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDBNodesResponseUnmarshaller {
 
-	public static CreateDBNodesResponse unmarshall(CreateDBNodesResponse createDBNodesResponse, UnmarshallerContext context) {
+	public static CreateDBNodesResponse unmarshall(CreateDBNodesResponse createDBNodesResponse, UnmarshallerContext _ctx) {
 		
-		createDBNodesResponse.setRequestId(context.stringValue("CreateDBNodesResponse.RequestId"));
-		createDBNodesResponse.setDBClusterId(context.stringValue("CreateDBNodesResponse.DBClusterId"));
-		createDBNodesResponse.setOrderId(context.stringValue("CreateDBNodesResponse.OrderId"));
+		createDBNodesResponse.setRequestId(_ctx.stringValue("CreateDBNodesResponse.RequestId"));
+		createDBNodesResponse.setDBClusterId(_ctx.stringValue("CreateDBNodesResponse.DBClusterId"));
+		createDBNodesResponse.setOrderId(_ctx.stringValue("CreateDBNodesResponse.OrderId"));
 	 
 	 	return createDBNodesResponse;
 	}

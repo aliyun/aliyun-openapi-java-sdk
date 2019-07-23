@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteDBEndpointAddressResponseUnmarshaller {
 
-	public static DeleteDBEndpointAddressResponse unmarshall(DeleteDBEndpointAddressResponse deleteDBEndpointAddressResponse, UnmarshallerContext context) {
+	public static DeleteDBEndpointAddressResponse unmarshall(DeleteDBEndpointAddressResponse deleteDBEndpointAddressResponse, UnmarshallerContext _ctx) {
 		
-		deleteDBEndpointAddressResponse.setRequestId(context.stringValue("DeleteDBEndpointAddressResponse.RequestId"));
+		deleteDBEndpointAddressResponse.setRequestId(_ctx.stringValue("DeleteDBEndpointAddressResponse.RequestId"));
 	 
 	 	return deleteDBEndpointAddressResponse;
 	}

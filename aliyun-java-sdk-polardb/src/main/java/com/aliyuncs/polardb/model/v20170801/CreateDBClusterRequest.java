@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.polardb.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	
 	public CreateDBClusterRequest() {
 		super("polardb", "2017-08-01", "CreateDBCluster", "polardb");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
@@ -59,6 +64,12 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String zoneId;
 
 	private String dBVersion;
+
+	private String creationOption;
+
+	private String sourceResourceId;
+
+	private String cloneDataPoint;
 
 	private String payType;
 
@@ -246,6 +257,39 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBVersion = dBVersion;
 		if(dBVersion != null){
 			putQueryParameter("DBVersion", dBVersion);
+		}
+	}
+
+	public String getCreationOption() {
+		return this.creationOption;
+	}
+
+	public void setCreationOption(String creationOption) {
+		this.creationOption = creationOption;
+		if(creationOption != null){
+			putQueryParameter("CreationOption", creationOption);
+		}
+	}
+
+	public String getSourceResourceId() {
+		return this.sourceResourceId;
+	}
+
+	public void setSourceResourceId(String sourceResourceId) {
+		this.sourceResourceId = sourceResourceId;
+		if(sourceResourceId != null){
+			putQueryParameter("SourceResourceId", sourceResourceId);
+		}
+	}
+
+	public String getCloneDataPoint() {
+		return this.cloneDataPoint;
+	}
+
+	public void setCloneDataPoint(String cloneDataPoint) {
+		this.cloneDataPoint = cloneDataPoint;
+		if(cloneDataPoint != null){
+			putQueryParameter("CloneDataPoint", cloneDataPoint);
 		}
 	}
 

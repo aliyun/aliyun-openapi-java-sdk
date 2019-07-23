@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDBEndpointAddressResponseUnmarshaller {
 
-	public static CreateDBEndpointAddressResponse unmarshall(CreateDBEndpointAddressResponse createDBEndpointAddressResponse, UnmarshallerContext context) {
+	public static CreateDBEndpointAddressResponse unmarshall(CreateDBEndpointAddressResponse createDBEndpointAddressResponse, UnmarshallerContext _ctx) {
 		
-		createDBEndpointAddressResponse.setRequestId(context.stringValue("CreateDBEndpointAddressResponse.RequestId"));
+		createDBEndpointAddressResponse.setRequestId(_ctx.stringValue("CreateDBEndpointAddressResponse.RequestId"));
 	 
 	 	return createDBEndpointAddressResponse;
 	}

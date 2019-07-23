@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAutoRenewAttributeResponseUnmarshaller {
 
-	public static DescribeAutoRenewAttributeResponse unmarshall(DescribeAutoRenewAttributeResponse describeAutoRenewAttributeResponse, UnmarshallerContext context) {
+	public static DescribeAutoRenewAttributeResponse unmarshall(DescribeAutoRenewAttributeResponse describeAutoRenewAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeAutoRenewAttributeResponse.setRequestId(context.stringValue("DescribeAutoRenewAttributeResponse.RequestId"));
-		describeAutoRenewAttributeResponse.setPageNumber(context.integerValue("DescribeAutoRenewAttributeResponse.PageNumber"));
-		describeAutoRenewAttributeResponse.setTotalRecordCount(context.integerValue("DescribeAutoRenewAttributeResponse.TotalRecordCount"));
-		describeAutoRenewAttributeResponse.setPageRecordCount(context.integerValue("DescribeAutoRenewAttributeResponse.PageRecordCount"));
+		describeAutoRenewAttributeResponse.setRequestId(_ctx.stringValue("DescribeAutoRenewAttributeResponse.RequestId"));
+		describeAutoRenewAttributeResponse.setPageNumber(_ctx.integerValue("DescribeAutoRenewAttributeResponse.PageNumber"));
+		describeAutoRenewAttributeResponse.setTotalRecordCount(_ctx.integerValue("DescribeAutoRenewAttributeResponse.TotalRecordCount"));
+		describeAutoRenewAttributeResponse.setPageRecordCount(_ctx.integerValue("DescribeAutoRenewAttributeResponse.PageRecordCount"));
 
 		List<AutoRenewAttribute> items = new ArrayList<AutoRenewAttribute>();
-		for (int i = 0; i < context.lengthValue("DescribeAutoRenewAttributeResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAutoRenewAttributeResponse.Items.Length"); i++) {
 			AutoRenewAttribute autoRenewAttribute = new AutoRenewAttribute();
-			autoRenewAttribute.setDBClusterId(context.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].DBClusterId"));
-			autoRenewAttribute.setRegionId(context.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].RegionId"));
-			autoRenewAttribute.setAutoRenewEnabled(context.booleanValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].AutoRenewEnabled"));
-			autoRenewAttribute.setDuration(context.integerValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].Duration"));
-			autoRenewAttribute.setPeriodUnit(context.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].PeriodUnit"));
-			autoRenewAttribute.setRenewalStatus(context.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].RenewalStatus"));
+			autoRenewAttribute.setDBClusterId(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].DBClusterId"));
+			autoRenewAttribute.setRegionId(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].RegionId"));
+			autoRenewAttribute.setAutoRenewEnabled(_ctx.booleanValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].AutoRenewEnabled"));
+			autoRenewAttribute.setDuration(_ctx.integerValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].Duration"));
+			autoRenewAttribute.setPeriodUnit(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].PeriodUnit"));
+			autoRenewAttribute.setRenewalStatus(_ctx.stringValue("DescribeAutoRenewAttributeResponse.Items["+ i +"].RenewalStatus"));
 
 			items.add(autoRenewAttribute);
 		}
