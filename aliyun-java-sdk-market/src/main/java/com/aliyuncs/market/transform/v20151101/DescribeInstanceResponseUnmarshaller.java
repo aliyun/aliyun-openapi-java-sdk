@@ -42,6 +42,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setExtendJson(_ctx.stringValue("DescribeInstanceResponse.ExtendJson"));
 		describeInstanceResponse.setHostJson(_ctx.stringValue("DescribeInstanceResponse.HostJson"));
 		describeInstanceResponse.setAppJson(_ctx.stringValue("DescribeInstanceResponse.AppJson"));
+		describeInstanceResponse.setComponentJson(_ctx.stringValue("DescribeInstanceResponse.ComponentJson"));
 		describeInstanceResponse.setConstraints(_ctx.stringValue("DescribeInstanceResponse.Constraints"));
 
 		List<Module> modules = new ArrayList<Module>();

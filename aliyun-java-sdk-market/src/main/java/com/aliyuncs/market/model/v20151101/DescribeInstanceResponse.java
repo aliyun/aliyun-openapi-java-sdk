@@ -53,6 +53,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String appJson;
 
+	private String componentJson;
+
 	private String constraints;
 
 	private List<Module> modules;
@@ -167,6 +169,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setAppJson(String appJson) {
 		this.appJson = appJson;
+	}
+
+	public String getComponentJson() {
+		return this.componentJson;
+	}
+
+	public void setComponentJson(String componentJson) {
+		this.componentJson = componentJson;
 	}
 
 	public String getConstraints() {
