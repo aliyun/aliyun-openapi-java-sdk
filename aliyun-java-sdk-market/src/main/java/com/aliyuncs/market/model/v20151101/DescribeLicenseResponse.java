@@ -65,6 +65,8 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 		private String productName;
 
+		private String supplierName;
+
 		private List<LicenseAttribute> extendArray;
 
 		private ExtendInfo extendInfo;
@@ -139,6 +141,14 @@ public class DescribeLicenseResponse extends AcsResponse {
 
 		public void setProductName(String productName) {
 			this.productName = productName;
+		}
+
+		public String getSupplierName() {
+			return this.supplierName;
+		}
+
+		public void setSupplierName(String supplierName) {
+			this.supplierName = supplierName;
 		}
 
 		public List<LicenseAttribute> getExtendArray() {

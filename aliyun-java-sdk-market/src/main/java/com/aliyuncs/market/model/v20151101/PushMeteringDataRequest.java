@@ -16,6 +16,7 @@ package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.market.Endpoint;
 
 /**
  * @author auto create
@@ -24,8 +25,12 @@ import com.aliyuncs.http.MethodType;
 public class PushMeteringDataRequest extends RpcAcsRequest<PushMeteringDataResponse> {
 	
 	public PushMeteringDataRequest() {
-		super("Market", "2015-11-01", "PushMeteringData");
+		super("Market", "2015-11-01", "PushMeteringData", "yunmarket");
 		setMethod(MethodType.POST);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String metering;

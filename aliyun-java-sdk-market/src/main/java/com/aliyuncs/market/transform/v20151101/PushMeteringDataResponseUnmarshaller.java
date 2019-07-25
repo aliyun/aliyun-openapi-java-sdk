@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PushMeteringDataResponseUnmarshaller {
 
-	public static PushMeteringDataResponse unmarshall(PushMeteringDataResponse pushMeteringDataResponse, UnmarshallerContext context) {
+	public static PushMeteringDataResponse unmarshall(PushMeteringDataResponse pushMeteringDataResponse, UnmarshallerContext _ctx) {
 		
-		pushMeteringDataResponse.setRequestId(context.stringValue("PushMeteringDataResponse.RequestId"));
-		pushMeteringDataResponse.setSuccess(context.booleanValue("PushMeteringDataResponse.Success"));
+		pushMeteringDataResponse.setRequestId(_ctx.stringValue("PushMeteringDataResponse.RequestId"));
+		pushMeteringDataResponse.setSuccess(_ctx.booleanValue("PushMeteringDataResponse.Success"));
 	 
 	 	return pushMeteringDataResponse;
 	}

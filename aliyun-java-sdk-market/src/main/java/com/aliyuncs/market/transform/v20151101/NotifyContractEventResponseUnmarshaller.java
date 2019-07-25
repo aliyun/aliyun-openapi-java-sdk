@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class NotifyContractEventResponseUnmarshaller {
 
-	public static NotifyContractEventResponse unmarshall(NotifyContractEventResponse notifyContractEventResponse, UnmarshallerContext context) {
+	public static NotifyContractEventResponse unmarshall(NotifyContractEventResponse notifyContractEventResponse, UnmarshallerContext _ctx) {
 		
-		notifyContractEventResponse.setRequestId(context.stringValue("NotifyContractEventResponse.RequestId"));
-		notifyContractEventResponse.setSuccess(context.booleanValue("NotifyContractEventResponse.Success"));
+		notifyContractEventResponse.setRequestId(_ctx.stringValue("NotifyContractEventResponse.RequestId"));
+		notifyContractEventResponse.setSuccess(_ctx.booleanValue("NotifyContractEventResponse.Success"));
 	 
 	 	return notifyContractEventResponse;
 	}

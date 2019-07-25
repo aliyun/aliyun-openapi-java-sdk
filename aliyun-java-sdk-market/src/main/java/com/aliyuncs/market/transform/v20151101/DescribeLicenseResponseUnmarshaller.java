@@ -26,33 +26,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLicenseResponseUnmarshaller {
 
-	public static DescribeLicenseResponse unmarshall(DescribeLicenseResponse describeLicenseResponse, UnmarshallerContext context) {
+	public static DescribeLicenseResponse unmarshall(DescribeLicenseResponse describeLicenseResponse, UnmarshallerContext _ctx) {
 		
-		describeLicenseResponse.setRequestId(context.stringValue("DescribeLicenseResponse.RequestId"));
+		describeLicenseResponse.setRequestId(_ctx.stringValue("DescribeLicenseResponse.RequestId"));
 
 		License license = new License();
-		license.setLicenseStatus(context.stringValue("DescribeLicenseResponse.License.LicenseStatus"));
-		license.setLicenseCode(context.stringValue("DescribeLicenseResponse.License.LicenseCode"));
-		license.setInstanceId(context.stringValue("DescribeLicenseResponse.License.InstanceId"));
-		license.setCreateTime(context.stringValue("DescribeLicenseResponse.License.CreateTime"));
-		license.setExpiredTime(context.stringValue("DescribeLicenseResponse.License.ExpiredTime"));
-		license.setActivateTime(context.stringValue("DescribeLicenseResponse.License.ActivateTime"));
-		license.setProductSkuId(context.stringValue("DescribeLicenseResponse.License.ProductSkuId"));
-		license.setProductCode(context.stringValue("DescribeLicenseResponse.License.ProductCode"));
-		license.setProductName(context.stringValue("DescribeLicenseResponse.License.ProductName"));
+		license.setLicenseStatus(_ctx.stringValue("DescribeLicenseResponse.License.LicenseStatus"));
+		license.setLicenseCode(_ctx.stringValue("DescribeLicenseResponse.License.LicenseCode"));
+		license.setInstanceId(_ctx.stringValue("DescribeLicenseResponse.License.InstanceId"));
+		license.setCreateTime(_ctx.stringValue("DescribeLicenseResponse.License.CreateTime"));
+		license.setExpiredTime(_ctx.stringValue("DescribeLicenseResponse.License.ExpiredTime"));
+		license.setActivateTime(_ctx.stringValue("DescribeLicenseResponse.License.ActivateTime"));
+		license.setProductSkuId(_ctx.stringValue("DescribeLicenseResponse.License.ProductSkuId"));
+		license.setProductCode(_ctx.stringValue("DescribeLicenseResponse.License.ProductCode"));
+		license.setProductName(_ctx.stringValue("DescribeLicenseResponse.License.ProductName"));
+		license.setSupplierName(_ctx.stringValue("DescribeLicenseResponse.License.SupplierName"));
 
 		ExtendInfo extendInfo = new ExtendInfo();
-		extendInfo.setAliUid(context.longValue("DescribeLicenseResponse.License.ExtendInfo.AliUid"));
-		extendInfo.setEmail(context.stringValue("DescribeLicenseResponse.License.ExtendInfo.Email"));
-		extendInfo.setMobile(context.stringValue("DescribeLicenseResponse.License.ExtendInfo.Mobile"));
-		extendInfo.setAccountQuantity(context.longValue("DescribeLicenseResponse.License.ExtendInfo.AccountQuantity"));
+		extendInfo.setAliUid(_ctx.longValue("DescribeLicenseResponse.License.ExtendInfo.AliUid"));
+		extendInfo.setEmail(_ctx.stringValue("DescribeLicenseResponse.License.ExtendInfo.Email"));
+		extendInfo.setMobile(_ctx.stringValue("DescribeLicenseResponse.License.ExtendInfo.Mobile"));
+		extendInfo.setAccountQuantity(_ctx.longValue("DescribeLicenseResponse.License.ExtendInfo.AccountQuantity"));
 		license.setExtendInfo(extendInfo);
 
 		List<LicenseAttribute> extendArray = new ArrayList<LicenseAttribute>();
-		for (int i = 0; i < context.lengthValue("DescribeLicenseResponse.License.ExtendArray.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLicenseResponse.License.ExtendArray.Length"); i++) {
 			LicenseAttribute licenseAttribute = new LicenseAttribute();
-			licenseAttribute.setCode(context.stringValue("DescribeLicenseResponse.License.ExtendArray["+ i +"].Code"));
-			licenseAttribute.setValue(context.stringValue("DescribeLicenseResponse.License.ExtendArray["+ i +"].Value"));
+			licenseAttribute.setCode(_ctx.stringValue("DescribeLicenseResponse.License.ExtendArray["+ i +"].Code"));
+			licenseAttribute.setValue(_ctx.stringValue("DescribeLicenseResponse.License.ExtendArray["+ i +"].Value"));
 
 			extendArray.add(licenseAttribute);
 		}

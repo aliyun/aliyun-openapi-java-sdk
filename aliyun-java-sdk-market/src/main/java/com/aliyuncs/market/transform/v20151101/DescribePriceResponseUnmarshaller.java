@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePriceResponseUnmarshaller {
 
-	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext context) {
+	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext _ctx) {
 		
-		describePriceResponse.setProductCode(context.stringValue("DescribePriceResponse.ProductCode"));
-		describePriceResponse.setOriginalPrice(context.floatValue("DescribePriceResponse.OriginalPrice"));
-		describePriceResponse.setTradePrice(context.floatValue("DescribePriceResponse.TradePrice"));
-		describePriceResponse.setDiscountPrice(context.floatValue("DescribePriceResponse.DiscountPrice"));
+		describePriceResponse.setProductCode(_ctx.stringValue("DescribePriceResponse.ProductCode"));
+		describePriceResponse.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.OriginalPrice"));
+		describePriceResponse.setTradePrice(_ctx.floatValue("DescribePriceResponse.TradePrice"));
+		describePriceResponse.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.DiscountPrice"));
 
 		List<PromotionRule> promotionRules = new ArrayList<PromotionRule>();
-		for (int i = 0; i < context.lengthValue("DescribePriceResponse.PromotionRules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PromotionRules.Length"); i++) {
 			PromotionRule promotionRule = new PromotionRule();
-			promotionRule.setRuleId(context.stringValue("DescribePriceResponse.PromotionRules["+ i +"].RuleId"));
-			promotionRule.setName(context.stringValue("DescribePriceResponse.PromotionRules["+ i +"].Name"));
-			promotionRule.setTitle(context.stringValue("DescribePriceResponse.PromotionRules["+ i +"].Title"));
+			promotionRule.setRuleId(_ctx.stringValue("DescribePriceResponse.PromotionRules["+ i +"].RuleId"));
+			promotionRule.setName(_ctx.stringValue("DescribePriceResponse.PromotionRules["+ i +"].Name"));
+			promotionRule.setTitle(_ctx.stringValue("DescribePriceResponse.PromotionRules["+ i +"].Title"));
 
 			promotionRules.add(promotionRule);
 		}

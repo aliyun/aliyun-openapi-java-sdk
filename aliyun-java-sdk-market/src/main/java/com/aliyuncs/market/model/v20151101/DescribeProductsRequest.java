@@ -16,6 +16,7 @@ package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.market.Endpoint;
 
 /**
  * @author auto create
@@ -24,7 +25,11 @@ import java.util.List;
 public class DescribeProductsRequest extends RpcAcsRequest<DescribeProductsResponse> {
 	
 	public DescribeProductsRequest() {
-		super("Market", "2015-11-01", "DescribeProducts");
+		super("Market", "2015-11-01", "DescribeProducts", "yunmarket");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private List<Filter> filters;

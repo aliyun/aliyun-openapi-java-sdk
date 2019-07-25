@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeProductsResponseUnmarshaller {
 
-	public static DescribeProductsResponse unmarshall(DescribeProductsResponse describeProductsResponse, UnmarshallerContext context) {
+	public static DescribeProductsResponse unmarshall(DescribeProductsResponse describeProductsResponse, UnmarshallerContext _ctx) {
 		
-		describeProductsResponse.setRequestId(context.stringValue("DescribeProductsResponse.RequestId"));
-		describeProductsResponse.setPageNumber(context.integerValue("DescribeProductsResponse.PageNumber"));
-		describeProductsResponse.setPageSize(context.integerValue("DescribeProductsResponse.PageSize"));
-		describeProductsResponse.setTotalCount(context.integerValue("DescribeProductsResponse.TotalCount"));
+		describeProductsResponse.setRequestId(_ctx.stringValue("DescribeProductsResponse.RequestId"));
+		describeProductsResponse.setPageNumber(_ctx.integerValue("DescribeProductsResponse.PageNumber"));
+		describeProductsResponse.setPageSize(_ctx.integerValue("DescribeProductsResponse.PageSize"));
+		describeProductsResponse.setTotalCount(_ctx.integerValue("DescribeProductsResponse.TotalCount"));
 
 		List<ProductItem> productItems = new ArrayList<ProductItem>();
-		for (int i = 0; i < context.lengthValue("DescribeProductsResponse.ProductItems.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeProductsResponse.ProductItems.Length"); i++) {
 			ProductItem productItem = new ProductItem();
-			productItem.setCode(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Code"));
-			productItem.setName(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Name"));
-			productItem.setCategoryId(context.longValue("DescribeProductsResponse.ProductItems["+ i +"].CategoryId"));
-			productItem.setSupplierId(context.longValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierId"));
-			productItem.setSupplierName(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierName"));
-			productItem.setShortDescription(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].ShortDescription"));
-			productItem.setTags(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Tags"));
-			productItem.setSuggestedPrice(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].SuggestedPrice"));
-			productItem.setTargetUrl(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].TargetUrl"));
-			productItem.setImageUrl(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].ImageUrl"));
-			productItem.setScore(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Score"));
-			productItem.setOperationSystem(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].OperationSystem"));
-			productItem.setWarrantyDate(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].WarrantyDate"));
-			productItem.setDeliveryDate(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryDate"));
-			productItem.setDeliveryWay(context.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryWay"));
+			productItem.setCode(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Code"));
+			productItem.setName(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Name"));
+			productItem.setCategoryId(_ctx.longValue("DescribeProductsResponse.ProductItems["+ i +"].CategoryId"));
+			productItem.setSupplierId(_ctx.longValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierId"));
+			productItem.setSupplierName(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].SupplierName"));
+			productItem.setShortDescription(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].ShortDescription"));
+			productItem.setTags(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Tags"));
+			productItem.setSuggestedPrice(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].SuggestedPrice"));
+			productItem.setTargetUrl(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].TargetUrl"));
+			productItem.setImageUrl(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].ImageUrl"));
+			productItem.setScore(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].Score"));
+			productItem.setOperationSystem(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].OperationSystem"));
+			productItem.setWarrantyDate(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].WarrantyDate"));
+			productItem.setDeliveryDate(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryDate"));
+			productItem.setDeliveryWay(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryWay"));
 
 			productItems.add(productItem);
 		}

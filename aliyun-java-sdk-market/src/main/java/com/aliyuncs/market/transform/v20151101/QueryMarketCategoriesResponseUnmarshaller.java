@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryMarketCategoriesResponseUnmarshaller {
 
-	public static QueryMarketCategoriesResponse unmarshall(QueryMarketCategoriesResponse queryMarketCategoriesResponse, UnmarshallerContext context) {
+	public static QueryMarketCategoriesResponse unmarshall(QueryMarketCategoriesResponse queryMarketCategoriesResponse, UnmarshallerContext _ctx) {
 		
-		queryMarketCategoriesResponse.setRequestId(context.stringValue("QueryMarketCategoriesResponse.RequestId"));
-		queryMarketCategoriesResponse.setPageNumber(context.integerValue("QueryMarketCategoriesResponse.PageNumber"));
-		queryMarketCategoriesResponse.setPageSize(context.integerValue("QueryMarketCategoriesResponse.PageSize"));
-		queryMarketCategoriesResponse.setTotalCount(context.integerValue("QueryMarketCategoriesResponse.TotalCount"));
+		queryMarketCategoriesResponse.setRequestId(_ctx.stringValue("QueryMarketCategoriesResponse.RequestId"));
+		queryMarketCategoriesResponse.setPageNumber(_ctx.integerValue("QueryMarketCategoriesResponse.PageNumber"));
+		queryMarketCategoriesResponse.setPageSize(_ctx.integerValue("QueryMarketCategoriesResponse.PageSize"));
+		queryMarketCategoriesResponse.setTotalCount(_ctx.integerValue("QueryMarketCategoriesResponse.TotalCount"));
 
 		List<Category> categories = new ArrayList<Category>();
-		for (int i = 0; i < context.lengthValue("QueryMarketCategoriesResponse.Categories.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryMarketCategoriesResponse.Categories.Length"); i++) {
 			Category category = new Category();
-			category.setId(context.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].Id"));
-			category.setCategoryCode(context.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].CategoryCode"));
-			category.setCategoryName(context.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].CategoryName"));
+			category.setId(_ctx.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].Id"));
+			category.setCategoryCode(_ctx.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].CategoryCode"));
+			category.setCategoryName(_ctx.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].CategoryName"));
 
 			List<ChildCategory> childCategories = new ArrayList<ChildCategory>();
-			for (int j = 0; j < context.lengthValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories.Length"); j++) {
 				ChildCategory childCategory = new ChildCategory();
-				childCategory.setId(context.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].Id"));
-				childCategory.setCategoryCode(context.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].CategoryCode"));
-				childCategory.setCategoryName(context.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].CategoryName"));
+				childCategory.setId(_ctx.longValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].Id"));
+				childCategory.setCategoryCode(_ctx.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].CategoryCode"));
+				childCategory.setCategoryName(_ctx.stringValue("QueryMarketCategoriesResponse.Categories["+ i +"].ChildCategories["+ j +"].CategoryName"));
 
 				childCategories.add(childCategory);
 			}

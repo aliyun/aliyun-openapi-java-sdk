@@ -15,6 +15,7 @@
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.market.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class BindImagePackageRequest extends RpcAcsRequest<BindImagePackageResponse> {
 	
 	public BindImagePackageRequest() {
-		super("Market", "2015-11-01", "BindImagePackage");
+		super("Market", "2015-11-01", "BindImagePackage", "yunmarket");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String ecsInstanceId;

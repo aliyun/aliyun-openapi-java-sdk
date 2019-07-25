@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCommodityResponseUnmarshaller {
 
-	public static DescribeCommodityResponse unmarshall(DescribeCommodityResponse describeCommodityResponse, UnmarshallerContext context) {
+	public static DescribeCommodityResponse unmarshall(DescribeCommodityResponse describeCommodityResponse, UnmarshallerContext _ctx) {
 		
-		describeCommodityResponse.setRequestId(context.stringValue("DescribeCommodityResponse.RequestId"));
-		describeCommodityResponse.setSuccess(context.booleanValue("DescribeCommodityResponse.Success"));
+		describeCommodityResponse.setRequestId(_ctx.stringValue("DescribeCommodityResponse.RequestId"));
+		describeCommodityResponse.setSuccess(_ctx.booleanValue("DescribeCommodityResponse.Success"));
 
 		Commodity commodity = new Commodity();
-		commodity.setCommodityId(context.stringValue("DescribeCommodityResponse.Commodity.CommodityId"));
-		commodity.setProperties(context.stringValue("DescribeCommodityResponse.Commodity.Properties"));
-		commodity.setCommoditySpecs(context.stringValue("DescribeCommodityResponse.Commodity.CommoditySpecs"));
+		commodity.setCommodityId(_ctx.stringValue("DescribeCommodityResponse.Commodity.CommodityId"));
+		commodity.setProperties(_ctx.stringValue("DescribeCommodityResponse.Commodity.Properties"));
+		commodity.setCommoditySpecs(_ctx.stringValue("DescribeCommodityResponse.Commodity.CommoditySpecs"));
 		describeCommodityResponse.setCommodity(commodity);
 	 
 	 	return describeCommodityResponse;

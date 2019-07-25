@@ -23,36 +23,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOrderResponseUnmarshaller {
 
-	public static DescribeOrderResponse unmarshall(DescribeOrderResponse describeOrderResponse, UnmarshallerContext context) {
+	public static DescribeOrderResponse unmarshall(DescribeOrderResponse describeOrderResponse, UnmarshallerContext _ctx) {
 		
-		describeOrderResponse.setOrderId(context.longValue("DescribeOrderResponse.OrderId"));
-		describeOrderResponse.setAliUid(context.longValue("DescribeOrderResponse.AliUid"));
-		describeOrderResponse.setSupplierCompanyName(context.stringValue("DescribeOrderResponse.SupplierCompanyName"));
-		describeOrderResponse.setProductCode(context.stringValue("DescribeOrderResponse.ProductCode"));
-		describeOrderResponse.setProductSkuCode(context.stringValue("DescribeOrderResponse.ProductSkuCode"));
-		describeOrderResponse.setProductName(context.stringValue("DescribeOrderResponse.ProductName"));
-		describeOrderResponse.setPeriodType(context.stringValue("DescribeOrderResponse.PeriodType"));
-		describeOrderResponse.setQuantity(context.integerValue("DescribeOrderResponse.Quantity"));
-		describeOrderResponse.setAccountQuantity(context.longValue("DescribeOrderResponse.AccountQuantity"));
-		describeOrderResponse.setOrderType(context.stringValue("DescribeOrderResponse.OrderType"));
-		describeOrderResponse.setOrderStatus(context.stringValue("DescribeOrderResponse.OrderStatus"));
-		describeOrderResponse.setPayStatus(context.stringValue("DescribeOrderResponse.PayStatus"));
-		describeOrderResponse.setPaidOn(context.longValue("DescribeOrderResponse.PaidOn"));
-		describeOrderResponse.setCreatedOn(context.longValue("DescribeOrderResponse.CreatedOn"));
-		describeOrderResponse.setOriginalPrice(context.floatValue("DescribeOrderResponse.OriginalPrice"));
-		describeOrderResponse.setTotalPrice(context.floatValue("DescribeOrderResponse.TotalPrice"));
-		describeOrderResponse.setPaymentPrice(context.floatValue("DescribeOrderResponse.PaymentPrice"));
-		describeOrderResponse.setCouponPrice(context.floatValue("DescribeOrderResponse.CouponPrice"));
+		describeOrderResponse.setOrderId(_ctx.longValue("DescribeOrderResponse.OrderId"));
+		describeOrderResponse.setAliUid(_ctx.longValue("DescribeOrderResponse.AliUid"));
+		describeOrderResponse.setSupplierCompanyName(_ctx.stringValue("DescribeOrderResponse.SupplierCompanyName"));
+		describeOrderResponse.setProductCode(_ctx.stringValue("DescribeOrderResponse.ProductCode"));
+		describeOrderResponse.setProductSkuCode(_ctx.stringValue("DescribeOrderResponse.ProductSkuCode"));
+		describeOrderResponse.setProductName(_ctx.stringValue("DescribeOrderResponse.ProductName"));
+		describeOrderResponse.setPeriodType(_ctx.stringValue("DescribeOrderResponse.PeriodType"));
+		describeOrderResponse.setQuantity(_ctx.integerValue("DescribeOrderResponse.Quantity"));
+		describeOrderResponse.setAccountQuantity(_ctx.longValue("DescribeOrderResponse.AccountQuantity"));
+		describeOrderResponse.setOrderType(_ctx.stringValue("DescribeOrderResponse.OrderType"));
+		describeOrderResponse.setOrderStatus(_ctx.stringValue("DescribeOrderResponse.OrderStatus"));
+		describeOrderResponse.setPayStatus(_ctx.stringValue("DescribeOrderResponse.PayStatus"));
+		describeOrderResponse.setPaidOn(_ctx.longValue("DescribeOrderResponse.PaidOn"));
+		describeOrderResponse.setCreatedOn(_ctx.longValue("DescribeOrderResponse.CreatedOn"));
+		describeOrderResponse.setOriginalPrice(_ctx.floatValue("DescribeOrderResponse.OriginalPrice"));
+		describeOrderResponse.setTotalPrice(_ctx.floatValue("DescribeOrderResponse.TotalPrice"));
+		describeOrderResponse.setPaymentPrice(_ctx.floatValue("DescribeOrderResponse.PaymentPrice"));
+		describeOrderResponse.setCouponPrice(_ctx.floatValue("DescribeOrderResponse.CouponPrice"));
 
 		List<String> supplierTelephones = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeOrderResponse.SupplierTelephones.Length"); i++) {
-			supplierTelephones.add(context.stringValue("DescribeOrderResponse.SupplierTelephones["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeOrderResponse.SupplierTelephones.Length"); i++) {
+			supplierTelephones.add(_ctx.stringValue("DescribeOrderResponse.SupplierTelephones["+ i +"]"));
 		}
 		describeOrderResponse.setSupplierTelephones(supplierTelephones);
 
 		List<String> instanceIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeOrderResponse.InstanceIds.Length"); i++) {
-			instanceIds.add(context.stringValue("DescribeOrderResponse.InstanceIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeOrderResponse.InstanceIds.Length"); i++) {
+			instanceIds.add(_ctx.stringValue("DescribeOrderResponse.InstanceIds["+ i +"]"));
 		}
 		describeOrderResponse.setInstanceIds(instanceIds);
 	 

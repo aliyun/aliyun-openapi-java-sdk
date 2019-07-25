@@ -15,6 +15,7 @@
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.market.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateRateRequest extends RpcAcsRequest<CreateRateResponse> {
 	
 	public CreateRateRequest() {
-		super("Market", "2015-11-01", "CreateRate");
+		super("Market", "2015-11-01", "CreateRate", "yunmarket");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String score;

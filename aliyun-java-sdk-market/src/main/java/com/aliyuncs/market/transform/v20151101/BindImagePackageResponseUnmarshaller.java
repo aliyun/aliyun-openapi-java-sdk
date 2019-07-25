@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BindImagePackageResponseUnmarshaller {
 
-	public static BindImagePackageResponse unmarshall(BindImagePackageResponse bindImagePackageResponse, UnmarshallerContext context) {
+	public static BindImagePackageResponse unmarshall(BindImagePackageResponse bindImagePackageResponse, UnmarshallerContext _ctx) {
 		
-		bindImagePackageResponse.setRequestId(context.stringValue("BindImagePackageResponse.RequestId"));
-		bindImagePackageResponse.setSuccess(context.booleanValue("BindImagePackageResponse.Success"));
+		bindImagePackageResponse.setRequestId(_ctx.stringValue("BindImagePackageResponse.RequestId"));
+		bindImagePackageResponse.setSuccess(_ctx.booleanValue("BindImagePackageResponse.Success"));
 	 
 	 	return bindImagePackageResponse;
 	}
