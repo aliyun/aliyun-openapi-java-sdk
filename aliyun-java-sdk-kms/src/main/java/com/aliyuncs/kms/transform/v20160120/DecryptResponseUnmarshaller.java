@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DecryptResponseUnmarshaller {
 
-	public static DecryptResponse unmarshall(DecryptResponse decryptResponse, UnmarshallerContext context) {
+	public static DecryptResponse unmarshall(DecryptResponse decryptResponse, UnmarshallerContext _ctx) {
 		
-		decryptResponse.setRequestId(context.stringValue("DecryptResponse.RequestId"));
-		decryptResponse.setPlaintext(context.stringValue("DecryptResponse.Plaintext"));
-		decryptResponse.setKeyId(context.stringValue("DecryptResponse.KeyId"));
+		decryptResponse.setRequestId(_ctx.stringValue("DecryptResponse.RequestId"));
+		decryptResponse.setPlaintext(_ctx.stringValue("DecryptResponse.Plaintext"));
+		decryptResponse.setKeyId(_ctx.stringValue("DecryptResponse.KeyId"));
 	 
 	 	return decryptResponse;
 	}

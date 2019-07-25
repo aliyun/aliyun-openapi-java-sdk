@@ -12,18 +12,12 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.kms.transform.v20160120;
+package com.aliyuncs.kms;
 
-import com.aliyuncs.kms.model.v20160120.DisableKeyResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import java.util.HashMap;
 
+public class Endpoint {
+    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
 
-public class DisableKeyResponseUnmarshaller {
-
-	public static DisableKeyResponse unmarshall(DisableKeyResponse disableKeyResponse, UnmarshallerContext _ctx) {
-		
-		disableKeyResponse.setRequestId(_ctx.stringValue("DisableKeyResponse.RequestId"));
-	 
-	 	return disableKeyResponse;
-	}
+    public static String endpointRegionalType = "regional";
 }

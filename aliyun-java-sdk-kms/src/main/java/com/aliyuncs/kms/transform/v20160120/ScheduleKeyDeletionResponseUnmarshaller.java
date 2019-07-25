@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ScheduleKeyDeletionResponseUnmarshaller {
 
-	public static ScheduleKeyDeletionResponse unmarshall(ScheduleKeyDeletionResponse scheduleKeyDeletionResponse, UnmarshallerContext context) {
+	public static ScheduleKeyDeletionResponse unmarshall(ScheduleKeyDeletionResponse scheduleKeyDeletionResponse, UnmarshallerContext _ctx) {
 		
-		scheduleKeyDeletionResponse.setRequestId(context.stringValue("ScheduleKeyDeletionResponse.RequestId"));
+		scheduleKeyDeletionResponse.setRequestId(_ctx.stringValue("ScheduleKeyDeletionResponse.RequestId"));
 	 
 	 	return scheduleKeyDeletionResponse;
 	}

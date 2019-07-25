@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetParametersForImportResponseUnmarshaller {
 
-	public static GetParametersForImportResponse unmarshall(GetParametersForImportResponse getParametersForImportResponse, UnmarshallerContext context) {
+	public static GetParametersForImportResponse unmarshall(GetParametersForImportResponse getParametersForImportResponse, UnmarshallerContext _ctx) {
 		
-		getParametersForImportResponse.setRequestId(context.stringValue("GetParametersForImportResponse.RequestId"));
-		getParametersForImportResponse.setKeyId(context.stringValue("GetParametersForImportResponse.KeyId"));
-		getParametersForImportResponse.setImportToken(context.stringValue("GetParametersForImportResponse.ImportToken"));
-		getParametersForImportResponse.setPublicKey(context.stringValue("GetParametersForImportResponse.PublicKey"));
-		getParametersForImportResponse.setTokenExpireTime(context.stringValue("GetParametersForImportResponse.TokenExpireTime"));
+		getParametersForImportResponse.setRequestId(_ctx.stringValue("GetParametersForImportResponse.RequestId"));
+		getParametersForImportResponse.setKeyId(_ctx.stringValue("GetParametersForImportResponse.KeyId"));
+		getParametersForImportResponse.setImportToken(_ctx.stringValue("GetParametersForImportResponse.ImportToken"));
+		getParametersForImportResponse.setPublicKey(_ctx.stringValue("GetParametersForImportResponse.PublicKey"));
+		getParametersForImportResponse.setTokenExpireTime(_ctx.stringValue("GetParametersForImportResponse.TokenExpireTime"));
 	 
 	 	return getParametersForImportResponse;
 	}

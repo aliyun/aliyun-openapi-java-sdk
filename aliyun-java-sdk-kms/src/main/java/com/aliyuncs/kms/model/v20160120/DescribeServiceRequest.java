@@ -22,10 +22,10 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeKeyRequest extends RpcAcsRequest<DescribeKeyResponse> {
+public class DescribeServiceRequest extends RpcAcsRequest<DescribeServiceResponse> {
 	
-	public DescribeKeyRequest() {
-		super("Kms", "2016-01-20", "DescribeKey", "kms");
+	public DescribeServiceRequest() {
+		super("Kms", "2016-01-20", "DescribeService", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,22 +33,9 @@ public class DescribeKeyRequest extends RpcAcsRequest<DescribeKeyResponse> {
 		} catch (Exception e) {}
 	}
 
-	private String keyId;
-
-	public String getKeyId() {
-		return this.keyId;
-	}
-
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
-		}
-	}
-
 	@Override
-	public Class<DescribeKeyResponse> getResponseClass() {
-		return DescribeKeyResponse.class;
+	public Class<DescribeServiceResponse> getResponseClass() {
+		return DescribeServiceResponse.class;
 	}
 
 }

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GenerateDataKeyResponseUnmarshaller {
 
-	public static GenerateDataKeyResponse unmarshall(GenerateDataKeyResponse generateDataKeyResponse, UnmarshallerContext context) {
+	public static GenerateDataKeyResponse unmarshall(GenerateDataKeyResponse generateDataKeyResponse, UnmarshallerContext _ctx) {
 		
-		generateDataKeyResponse.setRequestId(context.stringValue("GenerateDataKeyResponse.RequestId"));
-		generateDataKeyResponse.setCiphertextBlob(context.stringValue("GenerateDataKeyResponse.CiphertextBlob"));
-		generateDataKeyResponse.setKeyId(context.stringValue("GenerateDataKeyResponse.KeyId"));
-		generateDataKeyResponse.setPlaintext(context.stringValue("GenerateDataKeyResponse.Plaintext"));
+		generateDataKeyResponse.setRequestId(_ctx.stringValue("GenerateDataKeyResponse.RequestId"));
+		generateDataKeyResponse.setCiphertextBlob(_ctx.stringValue("GenerateDataKeyResponse.CiphertextBlob"));
+		generateDataKeyResponse.setKeyId(_ctx.stringValue("GenerateDataKeyResponse.KeyId"));
+		generateDataKeyResponse.setPlaintext(_ctx.stringValue("GenerateDataKeyResponse.Plaintext"));
 	 
 	 	return generateDataKeyResponse;
 	}

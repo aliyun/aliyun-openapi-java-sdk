@@ -16,6 +16,7 @@ package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.kms.Endpoint;
 
 /**
  * @author auto create
@@ -26,13 +27,30 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 	public CreateKeyRequest() {
 		super("Kms", "2016-01-20", "CreateKey", "kms");
 		setProtocol(ProtocolType.HTTPS);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String protectionLevel;
 
 	private String keyUsage;
 
 	private String origin;
 
 	private String description;
+
+	public String getProtectionLevel() {
+		return this.protectionLevel;
+	}
+
+	public void setProtectionLevel(String protectionLevel) {
+		this.protectionLevel = protectionLevel;
+		if(protectionLevel != null){
+			putQueryParameter("ProtectionLevel", protectionLevel);
+		}
+	}
 
 	public String getKeyUsage() {
 		return this.keyUsage;

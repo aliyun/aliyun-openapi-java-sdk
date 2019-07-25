@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAliasesResponseUnmarshaller {
 
-	public static ListAliasesResponse unmarshall(ListAliasesResponse listAliasesResponse, UnmarshallerContext context) {
+	public static ListAliasesResponse unmarshall(ListAliasesResponse listAliasesResponse, UnmarshallerContext _ctx) {
 		
-		listAliasesResponse.setRequestId(context.stringValue("ListAliasesResponse.RequestId"));
-		listAliasesResponse.setTotalCount(context.integerValue("ListAliasesResponse.TotalCount"));
-		listAliasesResponse.setPageNumber(context.integerValue("ListAliasesResponse.PageNumber"));
-		listAliasesResponse.setPageSize(context.integerValue("ListAliasesResponse.PageSize"));
+		listAliasesResponse.setRequestId(_ctx.stringValue("ListAliasesResponse.RequestId"));
+		listAliasesResponse.setTotalCount(_ctx.integerValue("ListAliasesResponse.TotalCount"));
+		listAliasesResponse.setPageNumber(_ctx.integerValue("ListAliasesResponse.PageNumber"));
+		listAliasesResponse.setPageSize(_ctx.integerValue("ListAliasesResponse.PageSize"));
 
 		List<Alias> aliases = new ArrayList<Alias>();
-		for (int i = 0; i < context.lengthValue("ListAliasesResponse.Aliases.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAliasesResponse.Aliases.Length"); i++) {
 			Alias alias = new Alias();
-			alias.setKeyId(context.stringValue("ListAliasesResponse.Aliases["+ i +"].KeyId"));
-			alias.setAliasName(context.stringValue("ListAliasesResponse.Aliases["+ i +"].AliasName"));
-			alias.setAliasArn(context.stringValue("ListAliasesResponse.Aliases["+ i +"].AliasArn"));
+			alias.setKeyId(_ctx.stringValue("ListAliasesResponse.Aliases["+ i +"].KeyId"));
+			alias.setAliasName(_ctx.stringValue("ListAliasesResponse.Aliases["+ i +"].AliasName"));
+			alias.setAliasArn(_ctx.stringValue("ListAliasesResponse.Aliases["+ i +"].AliasArn"));
 
 			aliases.add(alias);
 		}

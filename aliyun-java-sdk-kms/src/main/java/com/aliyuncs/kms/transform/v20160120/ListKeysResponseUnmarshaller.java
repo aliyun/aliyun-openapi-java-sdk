@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListKeysResponseUnmarshaller {
 
-	public static ListKeysResponse unmarshall(ListKeysResponse listKeysResponse, UnmarshallerContext context) {
+	public static ListKeysResponse unmarshall(ListKeysResponse listKeysResponse, UnmarshallerContext _ctx) {
 		
-		listKeysResponse.setRequestId(context.stringValue("ListKeysResponse.RequestId"));
-		listKeysResponse.setTotalCount(context.integerValue("ListKeysResponse.TotalCount"));
-		listKeysResponse.setPageNumber(context.integerValue("ListKeysResponse.PageNumber"));
-		listKeysResponse.setPageSize(context.integerValue("ListKeysResponse.PageSize"));
+		listKeysResponse.setRequestId(_ctx.stringValue("ListKeysResponse.RequestId"));
+		listKeysResponse.setTotalCount(_ctx.integerValue("ListKeysResponse.TotalCount"));
+		listKeysResponse.setPageNumber(_ctx.integerValue("ListKeysResponse.PageNumber"));
+		listKeysResponse.setPageSize(_ctx.integerValue("ListKeysResponse.PageSize"));
 
 		List<Key> keys = new ArrayList<Key>();
-		for (int i = 0; i < context.lengthValue("ListKeysResponse.Keys.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListKeysResponse.Keys.Length"); i++) {
 			Key key = new Key();
-			key.setKeyId(context.stringValue("ListKeysResponse.Keys["+ i +"].KeyId"));
-			key.setKeyArn(context.stringValue("ListKeysResponse.Keys["+ i +"].KeyArn"));
+			key.setKeyId(_ctx.stringValue("ListKeysResponse.Keys["+ i +"].KeyId"));
+			key.setKeyArn(_ctx.stringValue("ListKeysResponse.Keys["+ i +"].KeyArn"));
 
 			keys.add(key);
 		}

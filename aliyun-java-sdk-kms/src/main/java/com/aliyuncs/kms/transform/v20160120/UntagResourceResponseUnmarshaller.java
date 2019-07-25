@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UntagResourceResponseUnmarshaller {
 
-	public static UntagResourceResponse unmarshall(UntagResourceResponse untagResourceResponse, UnmarshallerContext context) {
+	public static UntagResourceResponse unmarshall(UntagResourceResponse untagResourceResponse, UnmarshallerContext _ctx) {
 		
-		untagResourceResponse.setKeyId(context.stringValue("UntagResourceResponse.KeyId"));
+		untagResourceResponse.setKeyId(_ctx.stringValue("UntagResourceResponse.KeyId"));
 	 
 	 	return untagResourceResponse;
 	}

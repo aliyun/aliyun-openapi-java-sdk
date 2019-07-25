@@ -16,6 +16,7 @@ package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.kms.Endpoint;
 
 /**
  * @author auto create
@@ -26,6 +27,10 @@ public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletio
 	public ScheduleKeyDeletionRequest() {
 		super("Kms", "2016-01-20", "ScheduleKeyDeletion", "kms");
 		setProtocol(ProtocolType.HTTPS);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Integer pendingWindowInDays;

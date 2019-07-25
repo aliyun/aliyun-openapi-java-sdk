@@ -66,6 +66,8 @@ public class DescribeKeyResponse extends AcsResponse {
 
 		private String materialExpireTime;
 
+		private String protectionLevel;
+
 		public String getCreationDate() {
 			return this.creationDate;
 		}
@@ -144,6 +146,14 @@ public class DescribeKeyResponse extends AcsResponse {
 
 		public void setMaterialExpireTime(String materialExpireTime) {
 			this.materialExpireTime = materialExpireTime;
+		}
+
+		public String getProtectionLevel() {
+			return this.protectionLevel;
+		}
+
+		public void setProtectionLevel(String protectionLevel) {
+			this.protectionLevel = protectionLevel;
 		}
 	}
 

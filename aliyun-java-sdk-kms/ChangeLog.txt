@@ -1,3 +1,8 @@
+2019-07-25 Version: 2.7.0
+- Api createKey add optional parameter `ProtectionLevel`.
+- Api describeKey add a field `ProtectionLevel` in the response.
+- Add Api `DescribeService`.
+
 2019-04-09 Version: 2.6.0
 1, Add APIs: TagResource, UntagResource, ListResourceTags.
 2, Remove the optional parameter 'STSToken'  and replace it with 'SecurityToken'.

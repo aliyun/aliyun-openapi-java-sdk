@@ -14,17 +14,20 @@
 
 package com.aliyuncs.kms.model.v20160120;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.kms.transform.v20160120.CancelKeyDeletionResponseUnmarshaller;
+import com.aliyuncs.kms.transform.v20160120.DescribeServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CancelKeyDeletionResponse extends AcsResponse {
+public class DescribeServiceResponse extends AcsResponse {
 
 	private String requestId;
+
+	private List<ProtectionLevel> protectionLevels;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +37,29 @@ public class CancelKeyDeletionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public List<ProtectionLevel> getProtectionLevels() {
+		return this.protectionLevels;
+	}
+
+	public void setProtectionLevels(List<ProtectionLevel> protectionLevels) {
+		this.protectionLevels = protectionLevels;
+	}
+
+	public static class ProtectionLevel {
+
+		private String type;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+	}
+
 	@Override
-	public CancelKeyDeletionResponse getInstance(UnmarshallerContext context) {
-		return	CancelKeyDeletionResponseUnmarshaller.unmarshall(this, context);
+	public DescribeServiceResponse getInstance(UnmarshallerContext context) {
+		return	DescribeServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

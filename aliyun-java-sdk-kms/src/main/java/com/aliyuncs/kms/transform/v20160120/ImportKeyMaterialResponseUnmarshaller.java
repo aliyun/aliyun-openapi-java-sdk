@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ImportKeyMaterialResponseUnmarshaller {
 
-	public static ImportKeyMaterialResponse unmarshall(ImportKeyMaterialResponse importKeyMaterialResponse, UnmarshallerContext context) {
+	public static ImportKeyMaterialResponse unmarshall(ImportKeyMaterialResponse importKeyMaterialResponse, UnmarshallerContext _ctx) {
 		
-		importKeyMaterialResponse.setRequestId(context.stringValue("ImportKeyMaterialResponse.RequestId"));
+		importKeyMaterialResponse.setRequestId(_ctx.stringValue("ImportKeyMaterialResponse.RequestId"));
 	 
 	 	return importKeyMaterialResponse;
 	}
