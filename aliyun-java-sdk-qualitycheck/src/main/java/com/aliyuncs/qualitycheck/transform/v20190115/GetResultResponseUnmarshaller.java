@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.Agent;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.AsrResultItem;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.Hit;
@@ -62,7 +63,17 @@ public class GetResultResponseUnmarshaller {
 			recording.setUrl(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Url"));
 			recording.setDataSetName(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.DataSetName"));
 			recording.setDuration(_ctx.longValue("GetResultResponse.Data["+ i +"].Recording.Duration"));
+			recording.setCaller(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Caller"));
+			recording.setCallee(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Callee"));
+			recording.setCallTime(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.CallTime"));
+			recording.setCallType(_ctx.integerValue("GetResultResponse.Data["+ i +"].Recording.CallType"));
 			resultInfo.setRecording(recording);
+
+			Agent agent = new Agent();
+			agent.setId(_ctx.stringValue("GetResultResponse.Data["+ i +"].Agent.Id"));
+			agent.setName(_ctx.stringValue("GetResultResponse.Data["+ i +"].Agent.Name"));
+			agent.setSkillGroup(_ctx.stringValue("GetResultResponse.Data["+ i +"].Agent.SkillGroup"));
+			resultInfo.setAgent(agent);
 
 			List<AsrResultItem> asrResult = new ArrayList<AsrResultItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetResultResponse.Data["+ i +"].AsrResult.Length"); j++) {

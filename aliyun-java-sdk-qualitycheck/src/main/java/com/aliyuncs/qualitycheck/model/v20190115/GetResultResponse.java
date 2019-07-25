@@ -135,6 +135,8 @@ public class GetResultResponse extends AcsResponse {
 
 		private Recording recording;
 
+		private Agent agent;
+
 		public Integer getScore() {
 			return this.score;
 		}
@@ -245,6 +247,14 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setRecording(Recording recording) {
 			this.recording = recording;
+		}
+
+		public Agent getAgent() {
+			return this.agent;
+		}
+
+		public void setAgent(Agent agent) {
+			this.agent = agent;
 		}
 
 		public static class AsrResultItem {
@@ -536,6 +546,14 @@ public class GetResultResponse extends AcsResponse {
 
 			private Long duration;
 
+			private String caller;
+
+			private String callee;
+
+			private String callTime;
+
+			private Integer callType;
+
 			public String getId() {
 				return this.id;
 			}
@@ -598,6 +616,71 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setDuration(Long duration) {
 				this.duration = duration;
+			}
+
+			public String getCaller() {
+				return this.caller;
+			}
+
+			public void setCaller(String caller) {
+				this.caller = caller;
+			}
+
+			public String getCallee() {
+				return this.callee;
+			}
+
+			public void setCallee(String callee) {
+				this.callee = callee;
+			}
+
+			public String getCallTime() {
+				return this.callTime;
+			}
+
+			public void setCallTime(String callTime) {
+				this.callTime = callTime;
+			}
+
+			public Integer getCallType() {
+				return this.callType;
+			}
+
+			public void setCallType(Integer callType) {
+				this.callType = callType;
+			}
+		}
+
+		public static class Agent {
+
+			private String id;
+
+			private String name;
+
+			private String skillGroup;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getSkillGroup() {
+				return this.skillGroup;
+			}
+
+			public void setSkillGroup(String skillGroup) {
+				this.skillGroup = skillGroup;
 			}
 		}
 	}
