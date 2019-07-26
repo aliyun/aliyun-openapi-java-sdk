@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateAccessRuleResponseUnmarshaller {
 
-	public static CreateAccessRuleResponse unmarshall(CreateAccessRuleResponse createAccessRuleResponse, UnmarshallerContext context) {
+	public static CreateAccessRuleResponse unmarshall(CreateAccessRuleResponse createAccessRuleResponse, UnmarshallerContext _ctx) {
 		
-		createAccessRuleResponse.setRequestId(context.stringValue("CreateAccessRuleResponse.RequestId"));
-		createAccessRuleResponse.setAccessRuleId(context.stringValue("CreateAccessRuleResponse.AccessRuleId"));
+		createAccessRuleResponse.setRequestId(_ctx.stringValue("CreateAccessRuleResponse.RequestId"));
+		createAccessRuleResponse.setAccessRuleId(_ctx.stringValue("CreateAccessRuleResponse.AccessRuleId"));
 	 
 	 	return createAccessRuleResponse;
 	}

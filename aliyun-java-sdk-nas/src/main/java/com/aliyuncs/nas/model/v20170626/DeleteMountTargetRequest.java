@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteMountTargetRequest extends RpcAcsRequest<DeleteMountTargetResponse> {
 	
 	public DeleteMountTargetRequest() {
-		super("NAS", "2017-06-26", "DeleteMountTarget", "nas");
+		super("NAS", "2017-06-26", "DeleteMountTarget", "NAS");
 	}
 
 	private String mountTargetDomain;

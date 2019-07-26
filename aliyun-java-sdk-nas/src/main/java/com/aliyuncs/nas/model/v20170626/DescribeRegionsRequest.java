@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	
 	public DescribeRegionsRequest() {
-		super("NAS", "2017-06-26", "DescribeRegions", "nas");
+		super("NAS", "2017-06-26", "DescribeRegions", "NAS");
 	}
 
 	private Integer pageSize;

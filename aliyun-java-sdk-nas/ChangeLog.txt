@@ -1,3 +1,6 @@
+2019-07-26 Version: 3.4.0
+- Support tag for standard NAS.
+
 2019-06-30 Version: 3.3.2
 - Supported for Extreme NAS.
 

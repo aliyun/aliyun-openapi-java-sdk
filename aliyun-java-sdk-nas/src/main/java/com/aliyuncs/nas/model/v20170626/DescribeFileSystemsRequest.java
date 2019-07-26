@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystemsResponse> {
 	
 	public DescribeFileSystemsRequest() {
-		super("NAS", "2017-06-26", "DescribeFileSystems", "nas");
+		super("NAS", "2017-06-26", "DescribeFileSystems", "NAS");
 	}
 
 	private String vpcId;

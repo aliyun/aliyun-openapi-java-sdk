@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTieringJobRequest extends RpcAcsRequest<DeleteTieringJobResponse> {
 	
 	public DeleteTieringJobRequest() {
-		super("NAS", "2017-06-26", "DeleteTieringJob", "nas");
+		super("NAS", "2017-06-26", "DeleteTieringJob", "NAS");
 	}
 
 	private String volume;

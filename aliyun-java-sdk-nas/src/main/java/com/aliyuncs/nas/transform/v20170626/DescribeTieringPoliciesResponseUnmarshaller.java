@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTieringPoliciesResponseUnmarshaller {
 
-	public static DescribeTieringPoliciesResponse unmarshall(DescribeTieringPoliciesResponse describeTieringPoliciesResponse, UnmarshallerContext context) {
+	public static DescribeTieringPoliciesResponse unmarshall(DescribeTieringPoliciesResponse describeTieringPoliciesResponse, UnmarshallerContext _ctx) {
 		
-		describeTieringPoliciesResponse.setRequestId(context.stringValue("DescribeTieringPoliciesResponse.RequestId"));
-		describeTieringPoliciesResponse.setTotalCount(context.integerValue("DescribeTieringPoliciesResponse.TotalCount"));
-		describeTieringPoliciesResponse.setPageSize(context.integerValue("DescribeTieringPoliciesResponse.PageSize"));
-		describeTieringPoliciesResponse.setPageNumber(context.integerValue("DescribeTieringPoliciesResponse.PageNumber"));
+		describeTieringPoliciesResponse.setRequestId(_ctx.stringValue("DescribeTieringPoliciesResponse.RequestId"));
+		describeTieringPoliciesResponse.setTotalCount(_ctx.integerValue("DescribeTieringPoliciesResponse.TotalCount"));
+		describeTieringPoliciesResponse.setPageSize(_ctx.integerValue("DescribeTieringPoliciesResponse.PageSize"));
+		describeTieringPoliciesResponse.setPageNumber(_ctx.integerValue("DescribeTieringPoliciesResponse.PageNumber"));
 
 		List<TieringPolicy> tieringPolicies = new ArrayList<TieringPolicy>();
-		for (int i = 0; i < context.lengthValue("DescribeTieringPoliciesResponse.TieringPolicies.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTieringPoliciesResponse.TieringPolicies.Length"); i++) {
 			TieringPolicy tieringPolicy = new TieringPolicy();
-			tieringPolicy.setName(context.stringValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Name"));
-			tieringPolicy.setDescription(context.stringValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Description"));
-			tieringPolicy.setRefCount(context.integerValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].RefCount"));
-			tieringPolicy.setMtime(context.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Mtime"));
-			tieringPolicy.setAtime(context.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Atime"));
-			tieringPolicy.setCtime(context.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Ctime"));
-			tieringPolicy.setSize(context.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Size"));
-			tieringPolicy.setFileName(context.stringValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].FileName"));
-			tieringPolicy.setRecallTime(context.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].RecallTime"));
+			tieringPolicy.setName(_ctx.stringValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Name"));
+			tieringPolicy.setDescription(_ctx.stringValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Description"));
+			tieringPolicy.setRefCount(_ctx.integerValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].RefCount"));
+			tieringPolicy.setMtime(_ctx.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Mtime"));
+			tieringPolicy.setAtime(_ctx.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Atime"));
+			tieringPolicy.setCtime(_ctx.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Ctime"));
+			tieringPolicy.setSize(_ctx.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].Size"));
+			tieringPolicy.setFileName(_ctx.stringValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].FileName"));
+			tieringPolicy.setRecallTime(_ctx.longValue("DescribeTieringPoliciesResponse.TieringPolicies["+ i +"].RecallTime"));
 
 			tieringPolicies.add(tieringPolicy);
 		}

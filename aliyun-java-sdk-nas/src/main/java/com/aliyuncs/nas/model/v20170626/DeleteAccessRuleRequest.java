@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteAccessRuleRequest extends RpcAcsRequest<DeleteAccessRuleResponse> {
 	
 	public DeleteAccessRuleRequest() {
-		super("NAS", "2017-06-26", "DeleteAccessRule", "nas");
+		super("NAS", "2017-06-26", "DeleteAccessRule", "NAS");
 	}
 
 	private String accessGroupName;

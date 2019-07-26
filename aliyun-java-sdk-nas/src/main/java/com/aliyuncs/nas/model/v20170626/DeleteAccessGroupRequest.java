@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteAccessGroupRequest extends RpcAcsRequest<DeleteAccessGroupResponse> {
 	
 	public DeleteAccessGroupRequest() {
-		super("NAS", "2017-06-26", "DeleteAccessGroup", "nas");
+		super("NAS", "2017-06-26", "DeleteAccessGroup", "NAS");
 	}
 
 	private String accessGroupName;

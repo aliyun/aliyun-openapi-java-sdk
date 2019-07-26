@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemResponse> {
 	
 	public CreateFileSystemRequest() {
-		super("NAS", "2017-06-26", "CreateFileSystem", "nas");
+		super("NAS", "2017-06-26", "CreateFileSystem", "NAS");
 	}
 
 	private String description;

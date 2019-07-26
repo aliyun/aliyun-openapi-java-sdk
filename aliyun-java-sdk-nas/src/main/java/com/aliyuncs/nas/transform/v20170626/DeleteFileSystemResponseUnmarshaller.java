@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteFileSystemResponseUnmarshaller {
 
-	public static DeleteFileSystemResponse unmarshall(DeleteFileSystemResponse deleteFileSystemResponse, UnmarshallerContext context) {
+	public static DeleteFileSystemResponse unmarshall(DeleteFileSystemResponse deleteFileSystemResponse, UnmarshallerContext _ctx) {
 		
-		deleteFileSystemResponse.setRequestId(context.stringValue("DeleteFileSystemResponse.RequestId"));
+		deleteFileSystemResponse.setRequestId(_ctx.stringValue("DeleteFileSystemResponse.RequestId"));
 	 
 	 	return deleteFileSystemResponse;
 	}

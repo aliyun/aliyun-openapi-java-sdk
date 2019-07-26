@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateTieringJobRequest extends RpcAcsRequest<CreateTieringJobResponse> {
 	
 	public CreateTieringJobRequest() {
-		super("NAS", "2017-06-26", "CreateTieringJob", "nas");
+		super("NAS", "2017-06-26", "CreateTieringJob", "NAS");
 	}
 
 	private String volume;

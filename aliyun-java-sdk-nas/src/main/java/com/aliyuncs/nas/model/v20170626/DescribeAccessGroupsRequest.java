@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeAccessGroupsRequest extends RpcAcsRequest<DescribeAccessGroupsResponse> {
 	
 	public DescribeAccessGroupsRequest() {
-		super("NAS", "2017-06-26", "DescribeAccessGroups", "nas");
+		super("NAS", "2017-06-26", "DescribeAccessGroups", "NAS");
 	}
 
 	private Integer pageSize;

@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTieringJobsResponseUnmarshaller {
 
-	public static DescribeTieringJobsResponse unmarshall(DescribeTieringJobsResponse describeTieringJobsResponse, UnmarshallerContext context) {
+	public static DescribeTieringJobsResponse unmarshall(DescribeTieringJobsResponse describeTieringJobsResponse, UnmarshallerContext _ctx) {
 		
-		describeTieringJobsResponse.setRequestId(context.stringValue("DescribeTieringJobsResponse.RequestId"));
-		describeTieringJobsResponse.setTotalCount(context.integerValue("DescribeTieringJobsResponse.TotalCount"));
-		describeTieringJobsResponse.setPageSize(context.integerValue("DescribeTieringJobsResponse.PageSize"));
-		describeTieringJobsResponse.setPageNumber(context.integerValue("DescribeTieringJobsResponse.PageNumber"));
+		describeTieringJobsResponse.setRequestId(_ctx.stringValue("DescribeTieringJobsResponse.RequestId"));
+		describeTieringJobsResponse.setTotalCount(_ctx.integerValue("DescribeTieringJobsResponse.TotalCount"));
+		describeTieringJobsResponse.setPageSize(_ctx.integerValue("DescribeTieringJobsResponse.PageSize"));
+		describeTieringJobsResponse.setPageNumber(_ctx.integerValue("DescribeTieringJobsResponse.PageNumber"));
 
 		List<TieringJob> tieringJobs = new ArrayList<TieringJob>();
-		for (int i = 0; i < context.lengthValue("DescribeTieringJobsResponse.TieringJobs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTieringJobsResponse.TieringJobs.Length"); i++) {
 			TieringJob tieringJob = new TieringJob();
-			tieringJob.setName(context.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Name"));
-			tieringJob.setVolume(context.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Volume"));
-			tieringJob.setPath(context.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Path"));
-			tieringJob.setRecursive(context.booleanValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Recursive"));
-			tieringJob.setType(context.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Type"));
-			tieringJob.setPolicy(context.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Policy"));
-			tieringJob.setWeekday(context.integerValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Weekday"));
-			tieringJob.setHour(context.integerValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Hour"));
-			tieringJob.setEnabled(context.booleanValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Enabled"));
-			tieringJob.setStatus(context.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Status"));
-			tieringJob.setLastUpdateTime(context.longValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].LastUpdateTime"));
+			tieringJob.setName(_ctx.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Name"));
+			tieringJob.setVolume(_ctx.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Volume"));
+			tieringJob.setPath(_ctx.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Path"));
+			tieringJob.setRecursive(_ctx.booleanValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Recursive"));
+			tieringJob.setType(_ctx.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Type"));
+			tieringJob.setPolicy(_ctx.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Policy"));
+			tieringJob.setWeekday(_ctx.integerValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Weekday"));
+			tieringJob.setHour(_ctx.integerValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Hour"));
+			tieringJob.setEnabled(_ctx.booleanValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Enabled"));
+			tieringJob.setStatus(_ctx.stringValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].Status"));
+			tieringJob.setLastUpdateTime(_ctx.longValue("DescribeTieringJobsResponse.TieringJobs["+ i +"].LastUpdateTime"));
 
 			tieringJobs.add(tieringJob);
 		}

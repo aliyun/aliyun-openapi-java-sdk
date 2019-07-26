@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMountTargetsResponseUnmarshaller {
 
-	public static DescribeMountTargetsResponse unmarshall(DescribeMountTargetsResponse describeMountTargetsResponse, UnmarshallerContext context) {
+	public static DescribeMountTargetsResponse unmarshall(DescribeMountTargetsResponse describeMountTargetsResponse, UnmarshallerContext _ctx) {
 		
-		describeMountTargetsResponse.setRequestId(context.stringValue("DescribeMountTargetsResponse.RequestId"));
-		describeMountTargetsResponse.setTotalCount(context.integerValue("DescribeMountTargetsResponse.TotalCount"));
-		describeMountTargetsResponse.setPageSize(context.integerValue("DescribeMountTargetsResponse.PageSize"));
-		describeMountTargetsResponse.setPageNumber(context.integerValue("DescribeMountTargetsResponse.PageNumber"));
+		describeMountTargetsResponse.setRequestId(_ctx.stringValue("DescribeMountTargetsResponse.RequestId"));
+		describeMountTargetsResponse.setTotalCount(_ctx.integerValue("DescribeMountTargetsResponse.TotalCount"));
+		describeMountTargetsResponse.setPageSize(_ctx.integerValue("DescribeMountTargetsResponse.PageSize"));
+		describeMountTargetsResponse.setPageNumber(_ctx.integerValue("DescribeMountTargetsResponse.PageNumber"));
 
 		List<MountTarget> mountTargets = new ArrayList<MountTarget>();
-		for (int i = 0; i < context.lengthValue("DescribeMountTargetsResponse.MountTargets.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMountTargetsResponse.MountTargets.Length"); i++) {
 			MountTarget mountTarget = new MountTarget();
-			mountTarget.setMountTargetDomain(context.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].MountTargetDomain"));
-			mountTarget.setNetworkType(context.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].NetworkType"));
-			mountTarget.setVpcId(context.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VpcId"));
-			mountTarget.setVswId(context.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VswId"));
-			mountTarget.setAccessGroup(context.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].AccessGroup"));
-			mountTarget.setStatus(context.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Status"));
+			mountTarget.setMountTargetDomain(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].MountTargetDomain"));
+			mountTarget.setNetworkType(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].NetworkType"));
+			mountTarget.setVpcId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VpcId"));
+			mountTarget.setVswId(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].VswId"));
+			mountTarget.setAccessGroup(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].AccessGroup"));
+			mountTarget.setStatus(_ctx.stringValue("DescribeMountTargetsResponse.MountTargets["+ i +"].Status"));
 
 			mountTargets.add(mountTarget);
 		}

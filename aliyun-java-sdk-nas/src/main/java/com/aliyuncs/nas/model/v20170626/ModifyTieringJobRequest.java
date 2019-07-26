@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyTieringJobRequest extends RpcAcsRequest<ModifyTieringJobResponse> {
 	
 	public ModifyTieringJobRequest() {
-		super("NAS", "2017-06-26", "ModifyTieringJob", "nas");
+		super("NAS", "2017-06-26", "ModifyTieringJob", "NAS");
 	}
 
 	private String volume;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyTieringPolicyRequest extends RpcAcsRequest<ModifyTieringPolicyResponse> {
 	
 	public ModifyTieringPolicyRequest() {
-		super("NAS", "2017-06-26", "ModifyTieringPolicy", "nas");
+		super("NAS", "2017-06-26", "ModifyTieringPolicy", "NAS");
 	}
 
 	private Long atime;

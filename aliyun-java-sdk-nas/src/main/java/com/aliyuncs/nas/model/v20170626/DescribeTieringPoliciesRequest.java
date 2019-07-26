@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeTieringPoliciesRequest extends RpcAcsRequest<DescribeTieringPoliciesResponse> {
 	
 	public DescribeTieringPoliciesRequest() {
-		super("NAS", "2017-06-26", "DescribeTieringPolicies", "nas");
+		super("NAS", "2017-06-26", "DescribeTieringPolicies", "NAS");
 	}
 
 	@Override

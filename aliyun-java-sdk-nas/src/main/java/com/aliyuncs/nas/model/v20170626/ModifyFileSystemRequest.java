@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyFileSystemRequest extends RpcAcsRequest<ModifyFileSystemResponse> {
 	
 	public ModifyFileSystemRequest() {
-		super("NAS", "2017-06-26", "ModifyFileSystem", "nas");
+		super("NAS", "2017-06-26", "ModifyFileSystem", "NAS");
 	}
 
 	private String description;

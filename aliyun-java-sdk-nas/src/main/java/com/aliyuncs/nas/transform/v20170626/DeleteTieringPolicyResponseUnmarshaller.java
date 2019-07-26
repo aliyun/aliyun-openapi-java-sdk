@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteTieringPolicyResponseUnmarshaller {
 
-	public static DeleteTieringPolicyResponse unmarshall(DeleteTieringPolicyResponse deleteTieringPolicyResponse, UnmarshallerContext context) {
+	public static DeleteTieringPolicyResponse unmarshall(DeleteTieringPolicyResponse deleteTieringPolicyResponse, UnmarshallerContext _ctx) {
 		
-		deleteTieringPolicyResponse.setRequestId(context.stringValue("DeleteTieringPolicyResponse.RequestId"));
-		deleteTieringPolicyResponse.setSuccess(context.booleanValue("DeleteTieringPolicyResponse.Success"));
+		deleteTieringPolicyResponse.setRequestId(_ctx.stringValue("DeleteTieringPolicyResponse.RequestId"));
+		deleteTieringPolicyResponse.setSuccess(_ctx.booleanValue("DeleteTieringPolicyResponse.Success"));
 	 
 	 	return deleteTieringPolicyResponse;
 	}

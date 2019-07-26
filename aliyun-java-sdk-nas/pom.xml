@@ -4,16 +4,16 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-nas</artifactId>
   <packaging>jar</packaging>
-  <version>3.3.2</version>
+  <version>3.4.0</version>
   <name>aliyun-java-sdk-nas</name>
   <url>http://www.aliyun.com</url>
-  <description>Aliyun Open API SDK for Java
-
-Copyright (C) Alibaba Cloud Computing
-All rights reserved.
-
-版权所有 （C）阿里云计算有限公司
-
+  <description>Aliyun Open API SDK for Java&#xD;
+&#xD;
+Copyright (C) Alibaba Cloud Computing&#xD;
+All rights reserved.&#xD;
+&#xD;
+版权所有 （C）阿里云计算有限公司&#xD;
+&#xD;
 http://www.aliyun.com</description>
   <distributionManagement>
     <snapshotRepository>
@@ -73,7 +73,7 @@ http://www.aliyun.com</description>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <excludes>
+          <excludes>&#xD;
 					</excludes>
         </configuration>
       </plugin>

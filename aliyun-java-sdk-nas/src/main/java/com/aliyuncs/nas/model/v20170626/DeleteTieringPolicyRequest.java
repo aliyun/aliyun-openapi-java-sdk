@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTieringPolicyRequest extends RpcAcsRequest<DeleteTieringPolicyResponse> {
 	
 	public DeleteTieringPolicyRequest() {
-		super("NAS", "2017-06-26", "DeleteTieringPolicy", "nas");
+		super("NAS", "2017-06-26", "DeleteTieringPolicy", "NAS");
 	}
 
 	private String name;

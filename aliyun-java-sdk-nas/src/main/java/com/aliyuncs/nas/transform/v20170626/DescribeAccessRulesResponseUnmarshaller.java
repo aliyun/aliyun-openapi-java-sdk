@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAccessRulesResponseUnmarshaller {
 
-	public static DescribeAccessRulesResponse unmarshall(DescribeAccessRulesResponse describeAccessRulesResponse, UnmarshallerContext context) {
+	public static DescribeAccessRulesResponse unmarshall(DescribeAccessRulesResponse describeAccessRulesResponse, UnmarshallerContext _ctx) {
 		
-		describeAccessRulesResponse.setRequestId(context.stringValue("DescribeAccessRulesResponse.RequestId"));
-		describeAccessRulesResponse.setTotalCount(context.integerValue("DescribeAccessRulesResponse.TotalCount"));
-		describeAccessRulesResponse.setPageSize(context.integerValue("DescribeAccessRulesResponse.PageSize"));
-		describeAccessRulesResponse.setPageNumber(context.integerValue("DescribeAccessRulesResponse.PageNumber"));
+		describeAccessRulesResponse.setRequestId(_ctx.stringValue("DescribeAccessRulesResponse.RequestId"));
+		describeAccessRulesResponse.setTotalCount(_ctx.integerValue("DescribeAccessRulesResponse.TotalCount"));
+		describeAccessRulesResponse.setPageSize(_ctx.integerValue("DescribeAccessRulesResponse.PageSize"));
+		describeAccessRulesResponse.setPageNumber(_ctx.integerValue("DescribeAccessRulesResponse.PageNumber"));
 
 		List<AccessRule> accessRules = new ArrayList<AccessRule>();
-		for (int i = 0; i < context.lengthValue("DescribeAccessRulesResponse.AccessRules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAccessRulesResponse.AccessRules.Length"); i++) {
 			AccessRule accessRule = new AccessRule();
-			accessRule.setSourceCidrIp(context.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].SourceCidrIp"));
-			accessRule.setPriority(context.integerValue("DescribeAccessRulesResponse.AccessRules["+ i +"].Priority"));
-			accessRule.setAccessRuleId(context.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].AccessRuleId"));
-			accessRule.setRWAccess(context.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].RWAccess"));
-			accessRule.setUserAccess(context.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].UserAccess"));
+			accessRule.setSourceCidrIp(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].SourceCidrIp"));
+			accessRule.setPriority(_ctx.integerValue("DescribeAccessRulesResponse.AccessRules["+ i +"].Priority"));
+			accessRule.setAccessRuleId(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].AccessRuleId"));
+			accessRule.setRWAccess(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].RWAccess"));
+			accessRule.setUserAccess(_ctx.stringValue("DescribeAccessRulesResponse.AccessRules["+ i +"].UserAccess"));
 
 			accessRules.add(accessRule);
 		}

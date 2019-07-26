@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteFileSystemRequest extends RpcAcsRequest<DeleteFileSystemResponse> {
 	
 	public DeleteFileSystemRequest() {
-		super("NAS", "2017-06-26", "DeleteFileSystem", "nas");
+		super("NAS", "2017-06-26", "DeleteFileSystem", "NAS");
 	}
 
 	private String fileSystemId;

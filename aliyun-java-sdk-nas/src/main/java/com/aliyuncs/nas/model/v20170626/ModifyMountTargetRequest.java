@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyMountTargetRequest extends RpcAcsRequest<ModifyMountTargetResponse> {
 	
 	public ModifyMountTargetRequest() {
-		super("NAS", "2017-06-26", "ModifyMountTarget", "nas");
+		super("NAS", "2017-06-26", "ModifyMountTarget", "NAS");
 	}
 
 	private String mountTargetDomain;

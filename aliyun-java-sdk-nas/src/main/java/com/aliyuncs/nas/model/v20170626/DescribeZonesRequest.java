@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 	
 	public DescribeZonesRequest() {
-		super("NAS", "2017-06-26", "DescribeZones", "nas");
+		super("NAS", "2017-06-26", "DescribeZones", "NAS");
 	}
 
 	@Override

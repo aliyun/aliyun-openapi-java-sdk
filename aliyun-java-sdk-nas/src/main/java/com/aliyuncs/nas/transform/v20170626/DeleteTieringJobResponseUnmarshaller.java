@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteTieringJobResponseUnmarshaller {
 
-	public static DeleteTieringJobResponse unmarshall(DeleteTieringJobResponse deleteTieringJobResponse, UnmarshallerContext context) {
+	public static DeleteTieringJobResponse unmarshall(DeleteTieringJobResponse deleteTieringJobResponse, UnmarshallerContext _ctx) {
 		
-		deleteTieringJobResponse.setRequestId(context.stringValue("DeleteTieringJobResponse.RequestId"));
-		deleteTieringJobResponse.setSuccess(context.booleanValue("DeleteTieringJobResponse.Success"));
+		deleteTieringJobResponse.setRequestId(_ctx.stringValue("DeleteTieringJobResponse.RequestId"));
+		deleteTieringJobResponse.setSuccess(_ctx.booleanValue("DeleteTieringJobResponse.Success"));
 	 
 	 	return deleteTieringJobResponse;
 	}

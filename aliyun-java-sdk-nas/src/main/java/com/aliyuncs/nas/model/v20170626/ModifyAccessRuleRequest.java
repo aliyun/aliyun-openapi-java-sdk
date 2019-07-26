@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAccessRuleRequest extends RpcAcsRequest<ModifyAccessRuleResponse> {
 	
 	public ModifyAccessRuleRequest() {
-		super("NAS", "2017-06-26", "ModifyAccessRule", "nas");
+		super("NAS", "2017-06-26", "ModifyAccessRule", "NAS");
 	}
 
 	private String rWAccessType;

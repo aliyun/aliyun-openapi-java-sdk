@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAccessGroupsResponseUnmarshaller {
 
-	public static DescribeAccessGroupsResponse unmarshall(DescribeAccessGroupsResponse describeAccessGroupsResponse, UnmarshallerContext context) {
+	public static DescribeAccessGroupsResponse unmarshall(DescribeAccessGroupsResponse describeAccessGroupsResponse, UnmarshallerContext _ctx) {
 		
-		describeAccessGroupsResponse.setRequestId(context.stringValue("DescribeAccessGroupsResponse.RequestId"));
-		describeAccessGroupsResponse.setTotalCount(context.integerValue("DescribeAccessGroupsResponse.TotalCount"));
-		describeAccessGroupsResponse.setPageSize(context.integerValue("DescribeAccessGroupsResponse.PageSize"));
-		describeAccessGroupsResponse.setPageNumber(context.integerValue("DescribeAccessGroupsResponse.PageNumber"));
+		describeAccessGroupsResponse.setRequestId(_ctx.stringValue("DescribeAccessGroupsResponse.RequestId"));
+		describeAccessGroupsResponse.setTotalCount(_ctx.integerValue("DescribeAccessGroupsResponse.TotalCount"));
+		describeAccessGroupsResponse.setPageSize(_ctx.integerValue("DescribeAccessGroupsResponse.PageSize"));
+		describeAccessGroupsResponse.setPageNumber(_ctx.integerValue("DescribeAccessGroupsResponse.PageNumber"));
 
 		List<AccessGroup> accessGroups = new ArrayList<AccessGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeAccessGroupsResponse.AccessGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAccessGroupsResponse.AccessGroups.Length"); i++) {
 			AccessGroup accessGroup = new AccessGroup();
-			accessGroup.setAccessGroupName(context.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].AccessGroupName"));
-			accessGroup.setAccessGroupType(context.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].AccessGroupType"));
-			accessGroup.setRuleCount(context.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].RuleCount"));
-			accessGroup.setMountTargetCount(context.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].MountTargetCount"));
-			accessGroup.setDescription(context.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Description"));
+			accessGroup.setAccessGroupName(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].AccessGroupName"));
+			accessGroup.setAccessGroupType(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].AccessGroupType"));
+			accessGroup.setRuleCount(_ctx.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].RuleCount"));
+			accessGroup.setMountTargetCount(_ctx.integerValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].MountTargetCount"));
+			accessGroup.setDescription(_ctx.stringValue("DescribeAccessGroupsResponse.AccessGroups["+ i +"].Description"));
 
 			accessGroups.add(accessGroup);
 		}

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateAccessGroupResponseUnmarshaller {
 
-	public static CreateAccessGroupResponse unmarshall(CreateAccessGroupResponse createAccessGroupResponse, UnmarshallerContext context) {
+	public static CreateAccessGroupResponse unmarshall(CreateAccessGroupResponse createAccessGroupResponse, UnmarshallerContext _ctx) {
 		
-		createAccessGroupResponse.setRequestId(context.stringValue("CreateAccessGroupResponse.RequestId"));
-		createAccessGroupResponse.setAccessGroupName(context.stringValue("CreateAccessGroupResponse.AccessGroupName"));
+		createAccessGroupResponse.setRequestId(_ctx.stringValue("CreateAccessGroupResponse.RequestId"));
+		createAccessGroupResponse.setAccessGroupName(_ctx.stringValue("CreateAccessGroupResponse.AccessGroupName"));
 	 
 	 	return createAccessGroupResponse;
 	}

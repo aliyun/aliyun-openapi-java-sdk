@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAccessGroupRequest extends RpcAcsRequest<ModifyAccessGroupResponse> {
 	
 	public ModifyAccessGroupRequest() {
-		super("NAS", "2017-06-26", "ModifyAccessGroup", "nas");
+		super("NAS", "2017-06-26", "ModifyAccessGroup", "NAS");
 	}
 
 	private String description;

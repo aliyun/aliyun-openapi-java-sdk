@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeTieringJobsRequest extends RpcAcsRequest<DescribeTieringJobsResponse> {
 	
 	public DescribeTieringJobsRequest() {
-		super("NAS", "2017-06-26", "DescribeTieringJobs", "nas");
+		super("NAS", "2017-06-26", "DescribeTieringJobs", "NAS");
 	}
 
 	private String volume;

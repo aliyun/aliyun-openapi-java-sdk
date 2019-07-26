@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateMountTargetRequest extends RpcAcsRequest<CreateMountTargetResponse> {
 	
 	public CreateMountTargetRequest() {
-		super("NAS", "2017-06-26", "CreateMountTarget", "nas");
+		super("NAS", "2017-06-26", "CreateMountTarget", "NAS");
 	}
 
 	private String vSwitchId;
