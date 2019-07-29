@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceRunSummaryResponseUnmarshaller {
 
-	public static GetInstanceRunSummaryResponse unmarshall(GetInstanceRunSummaryResponse getInstanceRunSummaryResponse, UnmarshallerContext context) {
+	public static GetInstanceRunSummaryResponse unmarshall(GetInstanceRunSummaryResponse getInstanceRunSummaryResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceRunSummaryResponse.setRequestId(context.stringValue("GetInstanceRunSummaryResponse.RequestId"));
+		getInstanceRunSummaryResponse.setRequestId(_ctx.stringValue("GetInstanceRunSummaryResponse.RequestId"));
 
 		RunSummary runSummary = new RunSummary();
-		runSummary.setId(context.longValue("GetInstanceRunSummaryResponse.RunSummary.Id"));
-		runSummary.setActualState(context.stringValue("GetInstanceRunSummaryResponse.RunSummary.ActualState"));
-		runSummary.setExpectState(context.stringValue("GetInstanceRunSummaryResponse.RunSummary.ExpectState"));
-		runSummary.setLastErrorTime(context.longValue("GetInstanceRunSummaryResponse.RunSummary.LastErrorTime"));
-		runSummary.setLastErrorMessage(context.stringValue("GetInstanceRunSummaryResponse.RunSummary.LastErrorMessage"));
-		runSummary.setEngineJobHandler(context.stringValue("GetInstanceRunSummaryResponse.RunSummary.EngineJobHandler"));
-		runSummary.setInputDelay(context.longValue("GetInstanceRunSummaryResponse.RunSummary.InputDelay"));
-		runSummary.setJobName(context.stringValue("GetInstanceRunSummaryResponse.RunSummary.JobName"));
+		runSummary.setId(_ctx.longValue("GetInstanceRunSummaryResponse.RunSummary.Id"));
+		runSummary.setActualState(_ctx.stringValue("GetInstanceRunSummaryResponse.RunSummary.ActualState"));
+		runSummary.setExpectState(_ctx.stringValue("GetInstanceRunSummaryResponse.RunSummary.ExpectState"));
+		runSummary.setLastErrorTime(_ctx.longValue("GetInstanceRunSummaryResponse.RunSummary.LastErrorTime"));
+		runSummary.setLastErrorMessage(_ctx.stringValue("GetInstanceRunSummaryResponse.RunSummary.LastErrorMessage"));
+		runSummary.setEngineJobHandler(_ctx.stringValue("GetInstanceRunSummaryResponse.RunSummary.EngineJobHandler"));
+		runSummary.setInputDelay(_ctx.longValue("GetInstanceRunSummaryResponse.RunSummary.InputDelay"));
+		runSummary.setJobName(_ctx.stringValue("GetInstanceRunSummaryResponse.RunSummary.JobName"));
 		getInstanceRunSummaryResponse.setRunSummary(runSummary);
 	 
 	 	return getInstanceRunSummaryResponse;

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MVFolderResponseUnmarshaller {
 
-	public static MVFolderResponse unmarshall(MVFolderResponse mVFolderResponse, UnmarshallerContext context) {
+	public static MVFolderResponse unmarshall(MVFolderResponse mVFolderResponse, UnmarshallerContext _ctx) {
 		
-		mVFolderResponse.setRequestId(context.stringValue("MVFolderResponse.RequestId"));
+		mVFolderResponse.setRequestId(_ctx.stringValue("MVFolderResponse.RequestId"));
 	 
 	 	return mVFolderResponse;
 	}

@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceResourceResponseUnmarshaller {
 
-	public static GetInstanceResourceResponse unmarshall(GetInstanceResourceResponse getInstanceResourceResponse, UnmarshallerContext context) {
+	public static GetInstanceResourceResponse unmarshall(GetInstanceResourceResponse getInstanceResourceResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceResourceResponse.setRequestId(context.stringValue("GetInstanceResourceResponse.RequestId"));
+		getInstanceResourceResponse.setRequestId(_ctx.stringValue("GetInstanceResourceResponse.RequestId"));
 
 		Resource resource = new Resource();
-		resource.setTotalMB(context.longValue("GetInstanceResourceResponse.Resource.TotalMB"));
-		resource.setAllocatedMB(context.longValue("GetInstanceResourceResponse.Resource.AllocatedMB"));
-		resource.setTotalVirtualCores(context.longValue("GetInstanceResourceResponse.Resource.TotalVirtualCores"));
-		resource.setAllocatedVirtualCores(context.longValue("GetInstanceResourceResponse.Resource.AllocatedVirtualCores"));
+		resource.setTotalMB(_ctx.longValue("GetInstanceResourceResponse.Resource.TotalMB"));
+		resource.setAllocatedMB(_ctx.longValue("GetInstanceResourceResponse.Resource.AllocatedMB"));
+		resource.setTotalVirtualCores(_ctx.longValue("GetInstanceResourceResponse.Resource.TotalVirtualCores"));
+		resource.setAllocatedVirtualCores(_ctx.longValue("GetInstanceResourceResponse.Resource.AllocatedVirtualCores"));
 		getInstanceResourceResponse.setResource(resource);
 	 
 	 	return getInstanceResourceResponse;

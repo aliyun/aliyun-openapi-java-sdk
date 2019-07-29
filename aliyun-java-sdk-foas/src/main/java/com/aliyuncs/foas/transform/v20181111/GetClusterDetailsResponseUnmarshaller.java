@@ -21,28 +21,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetClusterDetailsResponseUnmarshaller {
 
-	public static GetClusterDetailsResponse unmarshall(GetClusterDetailsResponse getClusterDetailsResponse, UnmarshallerContext context) {
+	public static GetClusterDetailsResponse unmarshall(GetClusterDetailsResponse getClusterDetailsResponse, UnmarshallerContext _ctx) {
 		
-		getClusterDetailsResponse.setRequestId(context.stringValue("GetClusterDetailsResponse.RequestId"));
+		getClusterDetailsResponse.setRequestId(_ctx.stringValue("GetClusterDetailsResponse.RequestId"));
 
 		Details details = new Details();
-		details.setClusterId(context.stringValue("GetClusterDetailsResponse.Details.ClusterId"));
-		details.setRegionId(context.stringValue("GetClusterDetailsResponse.Details.RegionId"));
-		details.setZoneId(context.stringValue("GetClusterDetailsResponse.Details.ZoneId"));
-		details.setState(context.stringValue("GetClusterDetailsResponse.Details.State"));
-		details.setDescription(context.stringValue("GetClusterDetailsResponse.Details.Description"));
-		details.setDisplayName(context.stringValue("GetClusterDetailsResponse.Details.DisplayName"));
-		details.setOwnerId(context.stringValue("GetClusterDetailsResponse.Details.OwnerId"));
-		details.setOperator(context.stringValue("GetClusterDetailsResponse.Details.Operator"));
-		details.setStorageType(context.stringValue("GetClusterDetailsResponse.Details.StorageType"));
-		details.setGmtCreate(context.longValue("GetClusterDetailsResponse.Details.GmtCreate"));
-		details.setGmtModified(context.longValue("GetClusterDetailsResponse.Details.GmtModified"));
-		details.setUserOssInfo(context.stringValue("GetClusterDetailsResponse.Details.UserOssInfo"));
-		details.setUserVpcId(context.stringValue("GetClusterDetailsResponse.Details.UserVpcId"));
-		details.setUserSGId(context.stringValue("GetClusterDetailsResponse.Details.UserSGId"));
-		details.setUserVSwitchList(context.stringValue("GetClusterDetailsResponse.Details.UserVSwitchList"));
-		details.setIsMixDeploy(context.booleanValue("GetClusterDetailsResponse.Details.IsMixDeploy"));
-		details.setInstanceInfos(context.stringValue("GetClusterDetailsResponse.Details.InstanceInfos"));
+		details.setClusterId(_ctx.stringValue("GetClusterDetailsResponse.Details.ClusterId"));
+		details.setRegionId(_ctx.stringValue("GetClusterDetailsResponse.Details.RegionId"));
+		details.setZoneId(_ctx.stringValue("GetClusterDetailsResponse.Details.ZoneId"));
+		details.setState(_ctx.stringValue("GetClusterDetailsResponse.Details.State"));
+		details.setDescription(_ctx.stringValue("GetClusterDetailsResponse.Details.Description"));
+		details.setDisplayName(_ctx.stringValue("GetClusterDetailsResponse.Details.DisplayName"));
+		details.setOwnerId(_ctx.stringValue("GetClusterDetailsResponse.Details.OwnerId"));
+		details.setOperator(_ctx.stringValue("GetClusterDetailsResponse.Details.Operator"));
+		details.setStorageType(_ctx.stringValue("GetClusterDetailsResponse.Details.StorageType"));
+		details.setGmtCreate(_ctx.longValue("GetClusterDetailsResponse.Details.GmtCreate"));
+		details.setGmtModified(_ctx.longValue("GetClusterDetailsResponse.Details.GmtModified"));
+		details.setUserOssInfo(_ctx.stringValue("GetClusterDetailsResponse.Details.UserOssInfo"));
+		details.setUserVpcId(_ctx.stringValue("GetClusterDetailsResponse.Details.UserVpcId"));
+		details.setUserSGId(_ctx.stringValue("GetClusterDetailsResponse.Details.UserSGId"));
+		details.setUserVSwitchList(_ctx.stringValue("GetClusterDetailsResponse.Details.UserVSwitchList"));
+		details.setIsMixDeploy(_ctx.booleanValue("GetClusterDetailsResponse.Details.IsMixDeploy"));
+		details.setInstanceInfos(_ctx.stringValue("GetClusterDetailsResponse.Details.InstanceInfos"));
 		getClusterDetailsResponse.setDetails(details);
 	 
 	 	return getClusterDetailsResponse;

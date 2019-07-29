@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CommitJobResponseUnmarshaller {
 
-	public static CommitJobResponse unmarshall(CommitJobResponse commitJobResponse, UnmarshallerContext context) {
+	public static CommitJobResponse unmarshall(CommitJobResponse commitJobResponse, UnmarshallerContext _ctx) {
 		
-		commitJobResponse.setRequestId(context.stringValue("CommitJobResponse.RequestId"));
+		commitJobResponse.setRequestId(_ctx.stringValue("CommitJobResponse.RequestId"));
 	 
 	 	return commitJobResponse;
 	}

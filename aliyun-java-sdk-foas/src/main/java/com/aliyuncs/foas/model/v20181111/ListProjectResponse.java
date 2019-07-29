@@ -109,6 +109,8 @@ public class ListProjectResponse extends AcsResponse {
 
 		private String region;
 
+		private String id;
+
 		public String getName() {
 			return this.name;
 		}
@@ -195,6 +197,14 @@ public class ListProjectResponse extends AcsResponse {
 
 		public void setRegion(String region) {
 			this.region = region;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

@@ -17,6 +17,7 @@ package com.aliyuncs.foas.model.v20181111;
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.foas.Endpoint;
 
 /**
  * @author auto create
@@ -29,6 +30,10 @@ public class GetRefPackageJobRequest extends RoaAcsRequest<GetRefPackageJobRespo
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/packages/[packageName]/jobs");
 		setMethod(MethodType.GET);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String projectName;

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateFolderResponseUnmarshaller {
 
-	public static CreateFolderResponse unmarshall(CreateFolderResponse createFolderResponse, UnmarshallerContext context) {
+	public static CreateFolderResponse unmarshall(CreateFolderResponse createFolderResponse, UnmarshallerContext _ctx) {
 		
-		createFolderResponse.setRequestId(context.stringValue("CreateFolderResponse.RequestId"));
-		createFolderResponse.setFolderId(context.longValue("CreateFolderResponse.FolderId"));
+		createFolderResponse.setRequestId(_ctx.stringValue("CreateFolderResponse.RequestId"));
+		createFolderResponse.setFolderId(_ctx.longValue("CreateFolderResponse.FolderId"));
 	 
 	 	return createFolderResponse;
 	}

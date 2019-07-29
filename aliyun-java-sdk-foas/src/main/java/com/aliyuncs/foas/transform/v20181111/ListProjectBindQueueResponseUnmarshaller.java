@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListProjectBindQueueResponseUnmarshaller {
 
-	public static ListProjectBindQueueResponse unmarshall(ListProjectBindQueueResponse listProjectBindQueueResponse, UnmarshallerContext context) {
+	public static ListProjectBindQueueResponse unmarshall(ListProjectBindQueueResponse listProjectBindQueueResponse, UnmarshallerContext _ctx) {
 		
-		listProjectBindQueueResponse.setRequestId(context.stringValue("ListProjectBindQueueResponse.RequestId"));
+		listProjectBindQueueResponse.setRequestId(_ctx.stringValue("ListProjectBindQueueResponse.RequestId"));
 
 		List<Queue> queues = new ArrayList<Queue>();
-		for (int i = 0; i < context.lengthValue("ListProjectBindQueueResponse.Queues.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListProjectBindQueueResponse.Queues.Length"); i++) {
 			Queue queue = new Queue();
-			queue.setClusterId(context.stringValue("ListProjectBindQueueResponse.Queues["+ i +"].ClusterId"));
-			queue.setQueueName(context.stringValue("ListProjectBindQueueResponse.Queues["+ i +"].QueueName"));
+			queue.setClusterId(_ctx.stringValue("ListProjectBindQueueResponse.Queues["+ i +"].ClusterId"));
+			queue.setQueueName(_ctx.stringValue("ListProjectBindQueueResponse.Queues["+ i +"].QueueName"));
 
 			queues.add(queue);
 		}

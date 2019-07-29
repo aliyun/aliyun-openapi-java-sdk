@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCellClusterOrderResponseUnmarshaller {
 
-	public static CreateCellClusterOrderResponse unmarshall(CreateCellClusterOrderResponse createCellClusterOrderResponse, UnmarshallerContext context) {
+	public static CreateCellClusterOrderResponse unmarshall(CreateCellClusterOrderResponse createCellClusterOrderResponse, UnmarshallerContext _ctx) {
 		
-		createCellClusterOrderResponse.setRequestId(context.stringValue("CreateCellClusterOrderResponse.RequestId"));
-		createCellClusterOrderResponse.setOrderId(context.stringValue("CreateCellClusterOrderResponse.OrderId"));
+		createCellClusterOrderResponse.setRequestId(_ctx.stringValue("CreateCellClusterOrderResponse.RequestId"));
+		createCellClusterOrderResponse.setOrderId(_ctx.stringValue("CreateCellClusterOrderResponse.OrderId"));
 	 
 	 	return createCellClusterOrderResponse;
 	}

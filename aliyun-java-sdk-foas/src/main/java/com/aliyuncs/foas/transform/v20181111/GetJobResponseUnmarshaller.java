@@ -21,29 +21,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJobResponseUnmarshaller {
 
-	public static GetJobResponse unmarshall(GetJobResponse getJobResponse, UnmarshallerContext context) {
+	public static GetJobResponse unmarshall(GetJobResponse getJobResponse, UnmarshallerContext _ctx) {
 		
-		getJobResponse.setRequestId(context.stringValue("GetJobResponse.RequestId"));
+		getJobResponse.setRequestId(_ctx.stringValue("GetJobResponse.RequestId"));
 
 		Job job = new Job();
-		job.setJobName(context.stringValue("GetJobResponse.Job.JobName"));
-		job.setProjectName(context.stringValue("GetJobResponse.Job.ProjectName"));
-		job.setJobType(context.stringValue("GetJobResponse.Job.JobType"));
-		job.setApiType(context.stringValue("GetJobResponse.Job.ApiType"));
-		job.setCode(context.stringValue("GetJobResponse.Job.Code"));
-		job.setPlanJson(context.stringValue("GetJobResponse.Job.PlanJson"));
-		job.setProperties(context.stringValue("GetJobResponse.Job.Properties"));
-		job.setPackages(context.stringValue("GetJobResponse.Job.Packages"));
-		job.setIsCommitted(context.booleanValue("GetJobResponse.Job.IsCommitted"));
-		job.setCreator(context.stringValue("GetJobResponse.Job.Creator"));
-		job.setCreateTime(context.longValue("GetJobResponse.Job.CreateTime"));
-		job.setModifier(context.stringValue("GetJobResponse.Job.Modifier"));
-		job.setModifyTime(context.longValue("GetJobResponse.Job.ModifyTime"));
-		job.setDescription(context.stringValue("GetJobResponse.Job.Description"));
-		job.setEngineVersion(context.stringValue("GetJobResponse.Job.EngineVersion"));
-		job.setClusterId(context.stringValue("GetJobResponse.Job.ClusterId"));
-		job.setQueueName(context.stringValue("GetJobResponse.Job.QueueName"));
-		job.setFolderId(context.longValue("GetJobResponse.Job.FolderId"));
+		job.setJobName(_ctx.stringValue("GetJobResponse.Job.JobName"));
+		job.setProjectName(_ctx.stringValue("GetJobResponse.Job.ProjectName"));
+		job.setJobType(_ctx.stringValue("GetJobResponse.Job.JobType"));
+		job.setApiType(_ctx.stringValue("GetJobResponse.Job.ApiType"));
+		job.setCode(_ctx.stringValue("GetJobResponse.Job.Code"));
+		job.setPlanJson(_ctx.stringValue("GetJobResponse.Job.PlanJson"));
+		job.setProperties(_ctx.stringValue("GetJobResponse.Job.Properties"));
+		job.setPackages(_ctx.stringValue("GetJobResponse.Job.Packages"));
+		job.setIsCommitted(_ctx.booleanValue("GetJobResponse.Job.IsCommitted"));
+		job.setCreator(_ctx.stringValue("GetJobResponse.Job.Creator"));
+		job.setCreateTime(_ctx.longValue("GetJobResponse.Job.CreateTime"));
+		job.setModifier(_ctx.stringValue("GetJobResponse.Job.Modifier"));
+		job.setModifyTime(_ctx.longValue("GetJobResponse.Job.ModifyTime"));
+		job.setDescription(_ctx.stringValue("GetJobResponse.Job.Description"));
+		job.setEngineVersion(_ctx.stringValue("GetJobResponse.Job.EngineVersion"));
+		job.setClusterId(_ctx.stringValue("GetJobResponse.Job.ClusterId"));
+		job.setQueueName(_ctx.stringValue("GetJobResponse.Job.QueueName"));
+		job.setFolderId(_ctx.longValue("GetJobResponse.Job.FolderId"));
+		job.setJobId(_ctx.stringValue("GetJobResponse.Job.JobId"));
 		getJobResponse.setJob(job);
 	 
 	 	return getJobResponse;

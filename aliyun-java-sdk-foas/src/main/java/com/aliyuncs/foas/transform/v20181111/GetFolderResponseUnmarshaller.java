@@ -21,13 +21,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetFolderResponseUnmarshaller {
 
-	public static GetFolderResponse unmarshall(GetFolderResponse getFolderResponse, UnmarshallerContext context) {
+	public static GetFolderResponse unmarshall(GetFolderResponse getFolderResponse, UnmarshallerContext _ctx) {
 		
-		getFolderResponse.setRequestId(context.stringValue("GetFolderResponse.RequestId"));
+		getFolderResponse.setRequestId(_ctx.stringValue("GetFolderResponse.RequestId"));
 
 		Folder folder = new Folder();
-		folder.setFolderId(context.longValue("GetFolderResponse.Folder.FolderId"));
-		folder.setPath(context.stringValue("GetFolderResponse.Folder.Path"));
+		folder.setFolderId(_ctx.longValue("GetFolderResponse.Folder.FolderId"));
+		folder.setPath(_ctx.stringValue("GetFolderResponse.Folder.Path"));
 		getFolderResponse.setFolder(folder);
 	 
 	 	return getFolderResponse;

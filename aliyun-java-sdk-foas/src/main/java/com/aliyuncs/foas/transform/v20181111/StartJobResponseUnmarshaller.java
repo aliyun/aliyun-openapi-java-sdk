@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartJobResponseUnmarshaller {
 
-	public static StartJobResponse unmarshall(StartJobResponse startJobResponse, UnmarshallerContext context) {
+	public static StartJobResponse unmarshall(StartJobResponse startJobResponse, UnmarshallerContext _ctx) {
 		
-		startJobResponse.setRequestId(context.stringValue("StartJobResponse.RequestId"));
-		startJobResponse.setInstanceId(context.longValue("StartJobResponse.instanceId"));
+		startJobResponse.setRequestId(_ctx.stringValue("StartJobResponse.RequestId"));
+		startJobResponse.setInstanceId(_ctx.longValue("StartJobResponse.instanceId"));
 	 
 	 	return startJobResponse;
 	}

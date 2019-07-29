@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OfflineJobResponseUnmarshaller {
 
-	public static OfflineJobResponse unmarshall(OfflineJobResponse offlineJobResponse, UnmarshallerContext context) {
+	public static OfflineJobResponse unmarshall(OfflineJobResponse offlineJobResponse, UnmarshallerContext _ctx) {
 		
-		offlineJobResponse.setRequestId(context.stringValue("OfflineJobResponse.RequestId"));
+		offlineJobResponse.setRequestId(_ctx.stringValue("OfflineJobResponse.RequestId"));
 	 
 	 	return offlineJobResponse;
 	}

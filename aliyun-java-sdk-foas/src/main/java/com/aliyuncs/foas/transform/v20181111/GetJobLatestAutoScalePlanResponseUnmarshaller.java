@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJobLatestAutoScalePlanResponseUnmarshaller {
 
-	public static GetJobLatestAutoScalePlanResponse unmarshall(GetJobLatestAutoScalePlanResponse getJobLatestAutoScalePlanResponse, UnmarshallerContext context) {
+	public static GetJobLatestAutoScalePlanResponse unmarshall(GetJobLatestAutoScalePlanResponse getJobLatestAutoScalePlanResponse, UnmarshallerContext _ctx) {
 		
-		getJobLatestAutoScalePlanResponse.setRequestId(context.stringValue("GetJobLatestAutoScalePlanResponse.RequestId"));
-		getJobLatestAutoScalePlanResponse.setPlanJson(context.stringValue("GetJobLatestAutoScalePlanResponse.PlanJson"));
+		getJobLatestAutoScalePlanResponse.setRequestId(_ctx.stringValue("GetJobLatestAutoScalePlanResponse.RequestId"));
+		getJobLatestAutoScalePlanResponse.setPlanJson(_ctx.stringValue("GetJobLatestAutoScalePlanResponse.PlanJson"));
 	 
 	 	return getJobLatestAutoScalePlanResponse;
 	}

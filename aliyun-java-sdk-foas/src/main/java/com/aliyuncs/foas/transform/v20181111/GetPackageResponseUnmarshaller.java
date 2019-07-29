@@ -21,26 +21,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPackageResponseUnmarshaller {
 
-	public static GetPackageResponse unmarshall(GetPackageResponse getPackageResponse, UnmarshallerContext context) {
+	public static GetPackageResponse unmarshall(GetPackageResponse getPackageResponse, UnmarshallerContext _ctx) {
 		
-		getPackageResponse.setRequestId(context.stringValue("GetPackageResponse.RequestId"));
+		getPackageResponse.setRequestId(_ctx.stringValue("GetPackageResponse.RequestId"));
 
 		_Package _package = new _Package();
-		_package.setProjectName(context.stringValue("GetPackageResponse.Package.ProjectName"));
-		_package.setPackageName(context.stringValue("GetPackageResponse.Package.PackageName"));
-		_package.setCreator(context.stringValue("GetPackageResponse.Package.Creator"));
-		_package.setModifier(context.stringValue("GetPackageResponse.Package.Modifier"));
-		_package.setCreateTime(context.longValue("GetPackageResponse.Package.CreateTime"));
-		_package.setModifyTime(context.longValue("GetPackageResponse.Package.ModifyTime"));
-		_package.setOriginName(context.stringValue("GetPackageResponse.Package.OriginName"));
-		_package.setType(context.stringValue("GetPackageResponse.Package.Type"));
-		_package.setMd5(context.stringValue("GetPackageResponse.Package.Md5"));
-		_package.setDescription(context.stringValue("GetPackageResponse.Package.Description"));
-		_package.setOssEndpoint(context.stringValue("GetPackageResponse.Package.OssEndpoint"));
-		_package.setOssBucket(context.stringValue("GetPackageResponse.Package.OssBucket"));
-		_package.setOssOwner(context.stringValue("GetPackageResponse.Package.OssOwner"));
-		_package.setOssPath(context.stringValue("GetPackageResponse.Package.OssPath"));
-		_package.setTag(context.stringValue("GetPackageResponse.Package.Tag"));
+		_package.setProjectName(_ctx.stringValue("GetPackageResponse.Package.ProjectName"));
+		_package.setPackageName(_ctx.stringValue("GetPackageResponse.Package.PackageName"));
+		_package.setCreator(_ctx.stringValue("GetPackageResponse.Package.Creator"));
+		_package.setModifier(_ctx.stringValue("GetPackageResponse.Package.Modifier"));
+		_package.setCreateTime(_ctx.longValue("GetPackageResponse.Package.CreateTime"));
+		_package.setModifyTime(_ctx.longValue("GetPackageResponse.Package.ModifyTime"));
+		_package.setOriginName(_ctx.stringValue("GetPackageResponse.Package.OriginName"));
+		_package.setType(_ctx.stringValue("GetPackageResponse.Package.Type"));
+		_package.setMd5(_ctx.stringValue("GetPackageResponse.Package.Md5"));
+		_package.setDescription(_ctx.stringValue("GetPackageResponse.Package.Description"));
+		_package.setOssEndpoint(_ctx.stringValue("GetPackageResponse.Package.OssEndpoint"));
+		_package.setOssBucket(_ctx.stringValue("GetPackageResponse.Package.OssBucket"));
+		_package.setOssOwner(_ctx.stringValue("GetPackageResponse.Package.OssOwner"));
+		_package.setOssPath(_ctx.stringValue("GetPackageResponse.Package.OssPath"));
+		_package.setTag(_ctx.stringValue("GetPackageResponse.Package.Tag"));
 		getPackageResponse.set_Package(_package);
 	 
 	 	return getPackageResponse;

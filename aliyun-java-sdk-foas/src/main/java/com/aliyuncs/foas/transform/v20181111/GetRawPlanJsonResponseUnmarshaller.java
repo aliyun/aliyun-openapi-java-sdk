@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRawPlanJsonResponseUnmarshaller {
 
-	public static GetRawPlanJsonResponse unmarshall(GetRawPlanJsonResponse getRawPlanJsonResponse, UnmarshallerContext context) {
+	public static GetRawPlanJsonResponse unmarshall(GetRawPlanJsonResponse getRawPlanJsonResponse, UnmarshallerContext _ctx) {
 		
-		getRawPlanJsonResponse.setRequestId(context.stringValue("GetRawPlanJsonResponse.RequestId"));
-		getRawPlanJsonResponse.setSessionId(context.stringValue("GetRawPlanJsonResponse.SessionId"));
+		getRawPlanJsonResponse.setRequestId(_ctx.stringValue("GetRawPlanJsonResponse.RequestId"));
+		getRawPlanJsonResponse.setSessionId(_ctx.stringValue("GetRawPlanJsonResponse.SessionId"));
 	 
 	 	return getRawPlanJsonResponse;
 	}

@@ -24,35 +24,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobResponseUnmarshaller {
 
-	public static ListJobResponse unmarshall(ListJobResponse listJobResponse, UnmarshallerContext context) {
+	public static ListJobResponse unmarshall(ListJobResponse listJobResponse, UnmarshallerContext _ctx) {
 		
-		listJobResponse.setRequestId(context.stringValue("ListJobResponse.RequestId"));
-		listJobResponse.setPageIndex(context.integerValue("ListJobResponse.PageIndex"));
-		listJobResponse.setPageSize(context.integerValue("ListJobResponse.PageSize"));
-		listJobResponse.setTotalPage(context.integerValue("ListJobResponse.TotalPage"));
-		listJobResponse.setTotalCount(context.longValue("ListJobResponse.TotalCount"));
+		listJobResponse.setRequestId(_ctx.stringValue("ListJobResponse.RequestId"));
+		listJobResponse.setPageIndex(_ctx.integerValue("ListJobResponse.PageIndex"));
+		listJobResponse.setPageSize(_ctx.integerValue("ListJobResponse.PageSize"));
+		listJobResponse.setTotalPage(_ctx.integerValue("ListJobResponse.TotalPage"));
+		listJobResponse.setTotalCount(_ctx.longValue("ListJobResponse.TotalCount"));
 
 		List<Job> jobs = new ArrayList<Job>();
-		for (int i = 0; i < context.lengthValue("ListJobResponse.Jobs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobResponse.Jobs.Length"); i++) {
 			Job job = new Job();
-			job.setJobName(context.stringValue("ListJobResponse.Jobs["+ i +"].JobName"));
-			job.setProjectName(context.stringValue("ListJobResponse.Jobs["+ i +"].ProjectName"));
-			job.setJobType(context.stringValue("ListJobResponse.Jobs["+ i +"].JobType"));
-			job.setApiType(context.stringValue("ListJobResponse.Jobs["+ i +"].ApiType"));
-			job.setCode(context.stringValue("ListJobResponse.Jobs["+ i +"].Code"));
-			job.setPlanJson(context.stringValue("ListJobResponse.Jobs["+ i +"].PlanJson"));
-			job.setProperties(context.stringValue("ListJobResponse.Jobs["+ i +"].Properties"));
-			job.setPackages(context.stringValue("ListJobResponse.Jobs["+ i +"].Packages"));
-			job.setIsCommitted(context.booleanValue("ListJobResponse.Jobs["+ i +"].IsCommitted"));
-			job.setCreator(context.stringValue("ListJobResponse.Jobs["+ i +"].Creator"));
-			job.setCreateTime(context.longValue("ListJobResponse.Jobs["+ i +"].CreateTime"));
-			job.setModifier(context.stringValue("ListJobResponse.Jobs["+ i +"].Modifier"));
-			job.setModifyTime(context.longValue("ListJobResponse.Jobs["+ i +"].ModifyTime"));
-			job.setDescription(context.stringValue("ListJobResponse.Jobs["+ i +"].Description"));
-			job.setEngineVersion(context.stringValue("ListJobResponse.Jobs["+ i +"].EngineVersion"));
-			job.setClusterId(context.stringValue("ListJobResponse.Jobs["+ i +"].ClusterId"));
-			job.setQueueName(context.stringValue("ListJobResponse.Jobs["+ i +"].QueueName"));
-			job.setFolderId(context.longValue("ListJobResponse.Jobs["+ i +"].FolderId"));
+			job.setJobName(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].JobName"));
+			job.setProjectName(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].ProjectName"));
+			job.setJobType(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].JobType"));
+			job.setApiType(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].ApiType"));
+			job.setCode(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].Code"));
+			job.setPlanJson(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].PlanJson"));
+			job.setProperties(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].Properties"));
+			job.setPackages(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].Packages"));
+			job.setIsCommitted(_ctx.booleanValue("ListJobResponse.Jobs["+ i +"].IsCommitted"));
+			job.setCreator(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].Creator"));
+			job.setCreateTime(_ctx.longValue("ListJobResponse.Jobs["+ i +"].CreateTime"));
+			job.setModifier(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].Modifier"));
+			job.setModifyTime(_ctx.longValue("ListJobResponse.Jobs["+ i +"].ModifyTime"));
+			job.setDescription(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].Description"));
+			job.setEngineVersion(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].EngineVersion"));
+			job.setClusterId(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].ClusterId"));
+			job.setQueueName(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].QueueName"));
+			job.setFolderId(_ctx.longValue("ListJobResponse.Jobs["+ i +"].FolderId"));
+			job.setJobId(_ctx.stringValue("ListJobResponse.Jobs["+ i +"].JobId"));
 
 			jobs.add(job);
 		}

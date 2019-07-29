@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListProjectBindQueueResourceResponseUnmarshaller {
 
-	public static ListProjectBindQueueResourceResponse unmarshall(ListProjectBindQueueResourceResponse listProjectBindQueueResourceResponse, UnmarshallerContext context) {
+	public static ListProjectBindQueueResourceResponse unmarshall(ListProjectBindQueueResourceResponse listProjectBindQueueResourceResponse, UnmarshallerContext _ctx) {
 		
-		listProjectBindQueueResourceResponse.setRequestId(context.stringValue("ListProjectBindQueueResourceResponse.RequestId"));
+		listProjectBindQueueResourceResponse.setRequestId(_ctx.stringValue("ListProjectBindQueueResourceResponse.RequestId"));
 
 		List<Queue> queues = new ArrayList<Queue>();
-		for (int i = 0; i < context.lengthValue("ListProjectBindQueueResourceResponse.Queues.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListProjectBindQueueResourceResponse.Queues.Length"); i++) {
 			Queue queue = new Queue();
-			queue.setClusterId(context.stringValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].ClusterId"));
-			queue.setQueueName(context.stringValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].QueueName"));
-			queue.setMinGpu(context.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MinGpu"));
-			queue.setMaxGpu(context.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MaxGpu"));
-			queue.setMinMem(context.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MinMem"));
-			queue.setMaxMem(context.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MaxMem"));
-			queue.setMinVCore(context.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MinVCore"));
-			queue.setMaxVCore(context.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MaxVCore"));
-			queue.setUsedVCore(context.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].UsedVCore"));
-			queue.setUsedGpu(context.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].UsedGpu"));
-			queue.setUsedMem(context.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].UsedMem"));
+			queue.setClusterId(_ctx.stringValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].ClusterId"));
+			queue.setQueueName(_ctx.stringValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].QueueName"));
+			queue.setMinGpu(_ctx.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MinGpu"));
+			queue.setMaxGpu(_ctx.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MaxGpu"));
+			queue.setMinMem(_ctx.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MinMem"));
+			queue.setMaxMem(_ctx.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MaxMem"));
+			queue.setMinVCore(_ctx.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MinVCore"));
+			queue.setMaxVCore(_ctx.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].MaxVCore"));
+			queue.setUsedVCore(_ctx.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].UsedVCore"));
+			queue.setUsedGpu(_ctx.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].UsedGpu"));
+			queue.setUsedMem(_ctx.integerValue("ListProjectBindQueueResourceResponse.Queues["+ i +"].UsedMem"));
 
 			queues.add(queue);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteFolderResponseUnmarshaller {
 
-	public static DeleteFolderResponse unmarshall(DeleteFolderResponse deleteFolderResponse, UnmarshallerContext context) {
+	public static DeleteFolderResponse unmarshall(DeleteFolderResponse deleteFolderResponse, UnmarshallerContext _ctx) {
 		
-		deleteFolderResponse.setRequestId(context.stringValue("DeleteFolderResponse.RequestId"));
+		deleteFolderResponse.setRequestId(_ctx.stringValue("DeleteFolderResponse.RequestId"));
 	 
 	 	return deleteFolderResponse;
 	}

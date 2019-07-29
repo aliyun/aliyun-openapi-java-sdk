@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ShrinkClusterResponseUnmarshaller {
 
-	public static ShrinkClusterResponse unmarshall(ShrinkClusterResponse shrinkClusterResponse, UnmarshallerContext context) {
+	public static ShrinkClusterResponse unmarshall(ShrinkClusterResponse shrinkClusterResponse, UnmarshallerContext _ctx) {
 		
-		shrinkClusterResponse.setRequestId(context.stringValue("ShrinkClusterResponse.RequestId"));
+		shrinkClusterResponse.setRequestId(_ctx.stringValue("ShrinkClusterResponse.RequestId"));
 	 
 	 	return shrinkClusterResponse;
 	}

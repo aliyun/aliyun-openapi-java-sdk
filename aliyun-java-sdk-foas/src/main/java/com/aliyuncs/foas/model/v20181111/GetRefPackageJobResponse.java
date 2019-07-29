@@ -123,6 +123,8 @@ public class GetRefPackageJobResponse extends AcsResponse {
 
 		private Long folderId;
 
+		private String jobId;
+
 		public String getJobName() {
 			return this.jobName;
 		}
@@ -265,6 +267,14 @@ public class GetRefPackageJobResponse extends AcsResponse {
 
 		public void setFolderId(Long folderId) {
 			this.folderId = folderId;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 	}
 

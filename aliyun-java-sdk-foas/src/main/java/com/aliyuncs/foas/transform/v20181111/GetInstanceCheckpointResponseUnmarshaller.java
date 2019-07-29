@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceCheckpointResponseUnmarshaller {
 
-	public static GetInstanceCheckpointResponse unmarshall(GetInstanceCheckpointResponse getInstanceCheckpointResponse, UnmarshallerContext context) {
+	public static GetInstanceCheckpointResponse unmarshall(GetInstanceCheckpointResponse getInstanceCheckpointResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceCheckpointResponse.setRequestId(context.stringValue("GetInstanceCheckpointResponse.RequestId"));
-		getInstanceCheckpointResponse.setCheckpoints(context.stringValue("GetInstanceCheckpointResponse.Checkpoints"));
+		getInstanceCheckpointResponse.setRequestId(_ctx.stringValue("GetInstanceCheckpointResponse.RequestId"));
+		getInstanceCheckpointResponse.setCheckpoints(_ctx.stringValue("GetInstanceCheckpointResponse.Checkpoints"));
 	 
 	 	return getInstanceCheckpointResponse;
 	}

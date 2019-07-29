@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetClusterResourceResponseUnmarshaller {
 
-	public static GetClusterResourceResponse unmarshall(GetClusterResourceResponse getClusterResourceResponse, UnmarshallerContext context) {
+	public static GetClusterResourceResponse unmarshall(GetClusterResourceResponse getClusterResourceResponse, UnmarshallerContext _ctx) {
 		
-		getClusterResourceResponse.setRequestId(context.stringValue("GetClusterResourceResponse.RequestId"));
+		getClusterResourceResponse.setRequestId(_ctx.stringValue("GetClusterResourceResponse.RequestId"));
 
 		Resource resource = new Resource();
-		resource.setTotalMB(context.longValue("GetClusterResourceResponse.Resource.TotalMB"));
-		resource.setAllocatedMB(context.longValue("GetClusterResourceResponse.Resource.AllocatedMB"));
-		resource.setAvailableMB(context.longValue("GetClusterResourceResponse.Resource.AvailableMB"));
-		resource.setTotalVirtualCores(context.longValue("GetClusterResourceResponse.Resource.TotalVirtualCores"));
-		resource.setAllocatedVirtualCores(context.longValue("GetClusterResourceResponse.Resource.AllocatedVirtualCores"));
-		resource.setAvailableVirtualCores(context.longValue("GetClusterResourceResponse.Resource.AvailableVirtualCores"));
+		resource.setTotalMB(_ctx.longValue("GetClusterResourceResponse.Resource.TotalMB"));
+		resource.setAllocatedMB(_ctx.longValue("GetClusterResourceResponse.Resource.AllocatedMB"));
+		resource.setAvailableMB(_ctx.longValue("GetClusterResourceResponse.Resource.AvailableMB"));
+		resource.setTotalVirtualCores(_ctx.longValue("GetClusterResourceResponse.Resource.TotalVirtualCores"));
+		resource.setAllocatedVirtualCores(_ctx.longValue("GetClusterResourceResponse.Resource.AllocatedVirtualCores"));
+		resource.setAvailableVirtualCores(_ctx.longValue("GetClusterResourceResponse.Resource.AvailableVirtualCores"));
 		getClusterResourceResponse.setResource(resource);
 	 
 	 	return getClusterResourceResponse;

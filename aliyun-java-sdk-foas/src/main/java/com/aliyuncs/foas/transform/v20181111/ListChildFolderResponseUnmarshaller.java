@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListChildFolderResponseUnmarshaller {
 
-	public static ListChildFolderResponse unmarshall(ListChildFolderResponse listChildFolderResponse, UnmarshallerContext context) {
+	public static ListChildFolderResponse unmarshall(ListChildFolderResponse listChildFolderResponse, UnmarshallerContext _ctx) {
 		
-		listChildFolderResponse.setRequestId(context.stringValue("ListChildFolderResponse.RequestId"));
+		listChildFolderResponse.setRequestId(_ctx.stringValue("ListChildFolderResponse.RequestId"));
 
 		List<Folder> folders = new ArrayList<Folder>();
-		for (int i = 0; i < context.lengthValue("ListChildFolderResponse.Folders.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListChildFolderResponse.Folders.Length"); i++) {
 			Folder folder = new Folder();
-			folder.setFolderId(context.longValue("ListChildFolderResponse.Folders["+ i +"].FolderId"));
-			folder.setPath(context.stringValue("ListChildFolderResponse.Folders["+ i +"].Path"));
+			folder.setFolderId(_ctx.longValue("ListChildFolderResponse.Folders["+ i +"].FolderId"));
+			folder.setPath(_ctx.stringValue("ListChildFolderResponse.Folders["+ i +"].Path"));
 
 			folders.add(folder);
 		}

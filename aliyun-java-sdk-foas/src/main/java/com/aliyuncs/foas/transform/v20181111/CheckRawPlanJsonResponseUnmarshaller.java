@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckRawPlanJsonResponseUnmarshaller {
 
-	public static CheckRawPlanJsonResponse unmarshall(CheckRawPlanJsonResponse checkRawPlanJsonResponse, UnmarshallerContext context) {
+	public static CheckRawPlanJsonResponse unmarshall(CheckRawPlanJsonResponse checkRawPlanJsonResponse, UnmarshallerContext _ctx) {
 		
-		checkRawPlanJsonResponse.setRequestId(context.stringValue("CheckRawPlanJsonResponse.RequestId"));
+		checkRawPlanJsonResponse.setRequestId(_ctx.stringValue("CheckRawPlanJsonResponse.RequestId"));
 
 		PlanJsonInfo planJsonInfo = new PlanJsonInfo();
-		planJsonInfo.setStatus(context.stringValue("CheckRawPlanJsonResponse.PlanJsonInfo.Status"));
-		planJsonInfo.setPlanJson(context.stringValue("CheckRawPlanJsonResponse.PlanJsonInfo.PlanJson"));
-		planJsonInfo.setErrorMessage(context.stringValue("CheckRawPlanJsonResponse.PlanJsonInfo.ErrorMessage"));
+		planJsonInfo.setStatus(_ctx.stringValue("CheckRawPlanJsonResponse.PlanJsonInfo.Status"));
+		planJsonInfo.setPlanJson(_ctx.stringValue("CheckRawPlanJsonResponse.PlanJsonInfo.PlanJson"));
+		planJsonInfo.setErrorMessage(_ctx.stringValue("CheckRawPlanJsonResponse.PlanJsonInfo.ErrorMessage"));
 		checkRawPlanJsonResponse.setPlanJsonInfo(planJsonInfo);
 	 
 	 	return checkRawPlanJsonResponse;

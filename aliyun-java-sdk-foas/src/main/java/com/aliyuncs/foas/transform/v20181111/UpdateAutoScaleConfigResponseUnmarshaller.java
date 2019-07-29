@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateAutoScaleConfigResponseUnmarshaller {
 
-	public static UpdateAutoScaleConfigResponse unmarshall(UpdateAutoScaleConfigResponse updateAutoScaleConfigResponse, UnmarshallerContext context) {
+	public static UpdateAutoScaleConfigResponse unmarshall(UpdateAutoScaleConfigResponse updateAutoScaleConfigResponse, UnmarshallerContext _ctx) {
 		
-		updateAutoScaleConfigResponse.setRequestId(context.stringValue("UpdateAutoScaleConfigResponse.RequestId"));
+		updateAutoScaleConfigResponse.setRequestId(_ctx.stringValue("UpdateAutoScaleConfigResponse.RequestId"));
 	 
 	 	return updateAutoScaleConfigResponse;
 	}

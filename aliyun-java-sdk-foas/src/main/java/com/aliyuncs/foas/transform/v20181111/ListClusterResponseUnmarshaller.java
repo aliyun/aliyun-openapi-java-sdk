@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterResponseUnmarshaller {
 
-	public static ListClusterResponse unmarshall(ListClusterResponse listClusterResponse, UnmarshallerContext context) {
+	public static ListClusterResponse unmarshall(ListClusterResponse listClusterResponse, UnmarshallerContext _ctx) {
 		
-		listClusterResponse.setRequestId(context.stringValue("ListClusterResponse.RequestId"));
-		listClusterResponse.setTotalCount(context.longValue("ListClusterResponse.TotalCount"));
-		listClusterResponse.setTotalPage(context.integerValue("ListClusterResponse.TotalPage"));
-		listClusterResponse.setPageIndex(context.integerValue("ListClusterResponse.PageIndex"));
-		listClusterResponse.setPageSize(context.integerValue("ListClusterResponse.PageSize"));
+		listClusterResponse.setRequestId(_ctx.stringValue("ListClusterResponse.RequestId"));
+		listClusterResponse.setTotalCount(_ctx.longValue("ListClusterResponse.TotalCount"));
+		listClusterResponse.setTotalPage(_ctx.integerValue("ListClusterResponse.TotalPage"));
+		listClusterResponse.setPageIndex(_ctx.integerValue("ListClusterResponse.PageIndex"));
+		listClusterResponse.setPageSize(_ctx.integerValue("ListClusterResponse.PageSize"));
 
 		List<Cluster> clusters = new ArrayList<Cluster>();
-		for (int i = 0; i < context.lengthValue("ListClusterResponse.Clusters.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterResponse.Clusters.Length"); i++) {
 			Cluster cluster = new Cluster();
-			cluster.setClusterId(context.stringValue("ListClusterResponse.Clusters["+ i +"].ClusterId"));
-			cluster.setRegionId(context.stringValue("ListClusterResponse.Clusters["+ i +"].RegionId"));
-			cluster.setZoneId(context.stringValue("ListClusterResponse.Clusters["+ i +"].ZoneId"));
-			cluster.setState(context.stringValue("ListClusterResponse.Clusters["+ i +"].State"));
-			cluster.setOwnerId(context.stringValue("ListClusterResponse.Clusters["+ i +"].OwnerId"));
-			cluster.setOperator(context.stringValue("ListClusterResponse.Clusters["+ i +"].Operator"));
-			cluster.setDisplayName(context.stringValue("ListClusterResponse.Clusters["+ i +"].DisplayName"));
-			cluster.setDescription(context.stringValue("ListClusterResponse.Clusters["+ i +"].Description"));
-			cluster.setGmtCreate(context.longValue("ListClusterResponse.Clusters["+ i +"].GmtCreate"));
-			cluster.setGmtModified(context.longValue("ListClusterResponse.Clusters["+ i +"].GmtModified"));
+			cluster.setClusterId(_ctx.stringValue("ListClusterResponse.Clusters["+ i +"].ClusterId"));
+			cluster.setRegionId(_ctx.stringValue("ListClusterResponse.Clusters["+ i +"].RegionId"));
+			cluster.setZoneId(_ctx.stringValue("ListClusterResponse.Clusters["+ i +"].ZoneId"));
+			cluster.setState(_ctx.stringValue("ListClusterResponse.Clusters["+ i +"].State"));
+			cluster.setOwnerId(_ctx.stringValue("ListClusterResponse.Clusters["+ i +"].OwnerId"));
+			cluster.setOperator(_ctx.stringValue("ListClusterResponse.Clusters["+ i +"].Operator"));
+			cluster.setDisplayName(_ctx.stringValue("ListClusterResponse.Clusters["+ i +"].DisplayName"));
+			cluster.setDescription(_ctx.stringValue("ListClusterResponse.Clusters["+ i +"].Description"));
+			cluster.setGmtCreate(_ctx.longValue("ListClusterResponse.Clusters["+ i +"].GmtCreate"));
+			cluster.setGmtModified(_ctx.longValue("ListClusterResponse.Clusters["+ i +"].GmtModified"));
 
 			clusters.add(cluster);
 		}

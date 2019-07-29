@@ -21,13 +21,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CalcPlanJsonResourceResponseUnmarshaller {
 
-	public static CalcPlanJsonResourceResponse unmarshall(CalcPlanJsonResourceResponse calcPlanJsonResourceResponse, UnmarshallerContext context) {
+	public static CalcPlanJsonResourceResponse unmarshall(CalcPlanJsonResourceResponse calcPlanJsonResourceResponse, UnmarshallerContext _ctx) {
 		
-		calcPlanJsonResourceResponse.setRequestId(context.stringValue("CalcPlanJsonResourceResponse.RequestId"));
+		calcPlanJsonResourceResponse.setRequestId(_ctx.stringValue("CalcPlanJsonResourceResponse.RequestId"));
 
 		PlanJsonResource planJsonResource = new PlanJsonResource();
-		planJsonResource.setCores(context.floatValue("CalcPlanJsonResourceResponse.PlanJsonResource.Cores"));
-		planJsonResource.setMemoryGB(context.floatValue("CalcPlanJsonResourceResponse.PlanJsonResource.MemoryGB"));
+		planJsonResource.setCores(_ctx.floatValue("CalcPlanJsonResourceResponse.PlanJsonResource.Cores"));
+		planJsonResource.setMemoryGB(_ctx.floatValue("CalcPlanJsonResourceResponse.PlanJsonResource.MemoryGB"));
 		calcPlanJsonResourceResponse.setPlanJsonResource(planJsonResource);
 	 
 	 	return calcPlanJsonResourceResponse;

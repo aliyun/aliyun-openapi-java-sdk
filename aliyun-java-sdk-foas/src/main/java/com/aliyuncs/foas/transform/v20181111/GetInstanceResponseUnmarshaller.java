@@ -21,34 +21,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceResponseUnmarshaller {
 
-	public static GetInstanceResponse unmarshall(GetInstanceResponse getInstanceResponse, UnmarshallerContext context) {
+	public static GetInstanceResponse unmarshall(GetInstanceResponse getInstanceResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceResponse.setRequestId(context.stringValue("GetInstanceResponse.RequestId"));
+		getInstanceResponse.setRequestId(_ctx.stringValue("GetInstanceResponse.RequestId"));
 
 		Instance instance = new Instance();
-		instance.setId(context.longValue("GetInstanceResponse.Instance.Id"));
-		instance.setProjectName(context.stringValue("GetInstanceResponse.Instance.ProjectName"));
-		instance.setJobName(context.stringValue("GetInstanceResponse.Instance.JobName"));
-		instance.setActualState(context.stringValue("GetInstanceResponse.Instance.ActualState"));
-		instance.setExpectState(context.stringValue("GetInstanceResponse.Instance.ExpectState"));
-		instance.setJobType(context.stringValue("GetInstanceResponse.Instance.JobType"));
-		instance.setApiType(context.stringValue("GetInstanceResponse.Instance.ApiType"));
-		instance.setCode(context.stringValue("GetInstanceResponse.Instance.Code"));
-		instance.setProperties(context.stringValue("GetInstanceResponse.Instance.Properties"));
-		instance.setPackages(context.stringValue("GetInstanceResponse.Instance.Packages"));
-		instance.setStarter(context.stringValue("GetInstanceResponse.Instance.Starter"));
-		instance.setStartTime(context.longValue("GetInstanceResponse.Instance.StartTime"));
-		instance.setLastErrorTime(context.longValue("GetInstanceResponse.Instance.LastErrorTime"));
-		instance.setLastErrorMessage(context.stringValue("GetInstanceResponse.Instance.LastErrorMessage"));
-		instance.setLastOperator(context.stringValue("GetInstanceResponse.Instance.LastOperator"));
-		instance.setLastOperateTime(context.longValue("GetInstanceResponse.Instance.LastOperateTime"));
-		instance.setPlanJson(context.stringValue("GetInstanceResponse.Instance.PlanJson"));
-		instance.setEngineVersion(context.stringValue("GetInstanceResponse.Instance.EngineVersion"));
-		instance.setEngineJobHandler(context.stringValue("GetInstanceResponse.Instance.EngineJobHandler"));
-		instance.setInputDelay(context.longValue("GetInstanceResponse.Instance.InputDelay"));
-		instance.setClusterId(context.stringValue("GetInstanceResponse.Instance.ClusterId"));
-		instance.setQueueName(context.stringValue("GetInstanceResponse.Instance.QueueName"));
-		instance.setEndTime(context.longValue("GetInstanceResponse.Instance.EndTime"));
+		instance.setId(_ctx.longValue("GetInstanceResponse.Instance.Id"));
+		instance.setProjectName(_ctx.stringValue("GetInstanceResponse.Instance.ProjectName"));
+		instance.setJobName(_ctx.stringValue("GetInstanceResponse.Instance.JobName"));
+		instance.setActualState(_ctx.stringValue("GetInstanceResponse.Instance.ActualState"));
+		instance.setExpectState(_ctx.stringValue("GetInstanceResponse.Instance.ExpectState"));
+		instance.setJobType(_ctx.stringValue("GetInstanceResponse.Instance.JobType"));
+		instance.setApiType(_ctx.stringValue("GetInstanceResponse.Instance.ApiType"));
+		instance.setCode(_ctx.stringValue("GetInstanceResponse.Instance.Code"));
+		instance.setProperties(_ctx.stringValue("GetInstanceResponse.Instance.Properties"));
+		instance.setPackages(_ctx.stringValue("GetInstanceResponse.Instance.Packages"));
+		instance.setStarter(_ctx.stringValue("GetInstanceResponse.Instance.Starter"));
+		instance.setStartTime(_ctx.longValue("GetInstanceResponse.Instance.StartTime"));
+		instance.setLastErrorTime(_ctx.longValue("GetInstanceResponse.Instance.LastErrorTime"));
+		instance.setLastErrorMessage(_ctx.stringValue("GetInstanceResponse.Instance.LastErrorMessage"));
+		instance.setLastOperator(_ctx.stringValue("GetInstanceResponse.Instance.LastOperator"));
+		instance.setLastOperateTime(_ctx.longValue("GetInstanceResponse.Instance.LastOperateTime"));
+		instance.setPlanJson(_ctx.stringValue("GetInstanceResponse.Instance.PlanJson"));
+		instance.setEngineVersion(_ctx.stringValue("GetInstanceResponse.Instance.EngineVersion"));
+		instance.setEngineJobHandler(_ctx.stringValue("GetInstanceResponse.Instance.EngineJobHandler"));
+		instance.setInputDelay(_ctx.longValue("GetInstanceResponse.Instance.InputDelay"));
+		instance.setClusterId(_ctx.stringValue("GetInstanceResponse.Instance.ClusterId"));
+		instance.setQueueName(_ctx.stringValue("GetInstanceResponse.Instance.QueueName"));
+		instance.setEndTime(_ctx.longValue("GetInstanceResponse.Instance.EndTime"));
 		getInstanceResponse.setInstance(instance);
 	 
 	 	return getInstanceResponse;

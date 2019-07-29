@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceFinalStateResponseUnmarshaller {
 
-	public static GetInstanceFinalStateResponse unmarshall(GetInstanceFinalStateResponse getInstanceFinalStateResponse, UnmarshallerContext context) {
+	public static GetInstanceFinalStateResponse unmarshall(GetInstanceFinalStateResponse getInstanceFinalStateResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceFinalStateResponse.setRequestId(context.stringValue("GetInstanceFinalStateResponse.RequestId"));
-		getInstanceFinalStateResponse.setFinalstate(context.stringValue("GetInstanceFinalStateResponse.Finalstate"));
+		getInstanceFinalStateResponse.setRequestId(_ctx.stringValue("GetInstanceFinalStateResponse.RequestId"));
+		getInstanceFinalStateResponse.setFinalstate(_ctx.stringValue("GetInstanceFinalStateResponse.Finalstate"));
 	 
 	 	return getInstanceFinalStateResponse;
 	}

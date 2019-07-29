@@ -17,6 +17,7 @@ package com.aliyuncs.foas.model.v20181111;
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.foas.Endpoint;
 
 /**
  * @author auto create
@@ -29,11 +30,15 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 		setProtocol(ProtocolType.HTTPS);
 		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/commit");
 		setMethod(MethodType.PUT);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String projectName;
 
-	private Integer maxCU;
+	private Float maxCU;
 
 	private String configure;
 
@@ -52,11 +57,11 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 		}
 	}
 
-	public Integer getMaxCU() {
+	public Float getMaxCU() {
 		return this.maxCU;
 	}
 
-	public void setMaxCU(Integer maxCU) {
+	public void setMaxCU(Float maxCU) {
 		this.maxCU = maxCU;
 		if(maxCU != null){
 			putBodyParameter("maxCU", maxCU.toString());

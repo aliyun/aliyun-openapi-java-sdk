@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchGetInstanceRunSummaryResponseUnmarshaller {
 
-	public static BatchGetInstanceRunSummaryResponse unmarshall(BatchGetInstanceRunSummaryResponse batchGetInstanceRunSummaryResponse, UnmarshallerContext context) {
+	public static BatchGetInstanceRunSummaryResponse unmarshall(BatchGetInstanceRunSummaryResponse batchGetInstanceRunSummaryResponse, UnmarshallerContext _ctx) {
 		
-		batchGetInstanceRunSummaryResponse.setRequestId(context.stringValue("BatchGetInstanceRunSummaryResponse.RequestId"));
+		batchGetInstanceRunSummaryResponse.setRequestId(_ctx.stringValue("BatchGetInstanceRunSummaryResponse.RequestId"));
 
 		List<RunSummary> runSummarys = new ArrayList<RunSummary>();
-		for (int i = 0; i < context.lengthValue("BatchGetInstanceRunSummaryResponse.RunSummarys.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("BatchGetInstanceRunSummaryResponse.RunSummarys.Length"); i++) {
 			RunSummary runSummary = new RunSummary();
-			runSummary.setId(context.longValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].Id"));
-			runSummary.setActualState(context.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].ActualState"));
-			runSummary.setExpectState(context.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].ExpectState"));
-			runSummary.setLastErrorTime(context.longValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].LastErrorTime"));
-			runSummary.setLastErrorMessage(context.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].LastErrorMessage"));
-			runSummary.setEngineJobHandler(context.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].EngineJobHandler"));
-			runSummary.setInputDelay(context.longValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].InputDelay"));
-			runSummary.setJobName(context.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].JobName"));
+			runSummary.setId(_ctx.longValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].Id"));
+			runSummary.setActualState(_ctx.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].ActualState"));
+			runSummary.setExpectState(_ctx.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].ExpectState"));
+			runSummary.setLastErrorTime(_ctx.longValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].LastErrorTime"));
+			runSummary.setLastErrorMessage(_ctx.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].LastErrorMessage"));
+			runSummary.setEngineJobHandler(_ctx.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].EngineJobHandler"));
+			runSummary.setInputDelay(_ctx.longValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].InputDelay"));
+			runSummary.setJobName(_ctx.stringValue("BatchGetInstanceRunSummaryResponse.RunSummarys["+ i +"].JobName"));
 
 			runSummarys.add(runSummary);
 		}
