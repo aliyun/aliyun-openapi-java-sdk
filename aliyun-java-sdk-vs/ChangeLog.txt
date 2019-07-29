@@ -1,0 +1,8 @@
+2019-07-29 Version: 1.0.0
+- Supported group API.
+- Supported device APIs.
+- Supported stream APIs.
+- Supported template APIs.
+- Supported record APIs.
+- Supported domain APIs.
+

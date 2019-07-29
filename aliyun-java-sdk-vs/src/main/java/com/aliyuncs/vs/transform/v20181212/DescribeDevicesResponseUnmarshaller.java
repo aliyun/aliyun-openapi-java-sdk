@@ -1,0 +1,74 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.vs.transform.v20181212;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aliyuncs.vs.model.v20181212.DescribeDevicesResponse;
+import com.aliyuncs.vs.model.v20181212.DescribeDevicesResponse.Device;
+import com.aliyuncs.vs.model.v20181212.DescribeDevicesResponse.Device.Stats;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class DescribeDevicesResponseUnmarshaller {
+
+	public static DescribeDevicesResponse unmarshall(DescribeDevicesResponse describeDevicesResponse, UnmarshallerContext _ctx) {
+		
+		describeDevicesResponse.setRequestId(_ctx.stringValue("DescribeDevicesResponse.RequestId"));
+		describeDevicesResponse.setPageSize(_ctx.longValue("DescribeDevicesResponse.PageSize"));
+		describeDevicesResponse.setPageNum(_ctx.longValue("DescribeDevicesResponse.PageNum"));
+		describeDevicesResponse.setPageCount(_ctx.longValue("DescribeDevicesResponse.PageCount"));
+		describeDevicesResponse.setTotalCount(_ctx.longValue("DescribeDevicesResponse.TotalCount"));
+
+		List<Device> devices = new ArrayList<Device>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDevicesResponse.Devices.Length"); i++) {
+			Device device = new Device();
+			device.setId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Id"));
+			device.setName(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Name"));
+			device.setDescription(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Description"));
+			device.setGroupId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].GroupId"));
+			device.setParentId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].ParentId"));
+			device.setType(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Type"));
+			device.setAutoStart(_ctx.booleanValue("DescribeDevicesResponse.Devices["+ i +"].AutoStart"));
+			device.setEnabled(_ctx.booleanValue("DescribeDevicesResponse.Devices["+ i +"].Enabled"));
+			device.setProtocol(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Protocol"));
+			device.setStatus(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Status"));
+			device.setGbId(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].GbId"));
+			device.setIp(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Ip"));
+			device.setPort(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].Port"));
+			device.setUrl(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Url"));
+			device.setUsername(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Username"));
+			device.setPassword(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Password"));
+			device.setVendor(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].Vendor"));
+			device.setCreatedTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].CreatedTime"));
+			device.setRegisteredTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].RegisteredTime"));
+			device.setChannelSyncTime(_ctx.stringValue("DescribeDevicesResponse.Devices["+ i +"].ChannelSyncTime"));
+
+			Stats stats = new Stats();
+			stats.setChannelNum(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].Stats.ChannelNum"));
+			stats.setStreamNum(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].Stats.StreamNum"));
+			stats.setOnlineNum(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].Stats.OnlineNum"));
+			stats.setOfflineNum(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].Stats.OfflineNum"));
+			stats.setFailedNum(_ctx.longValue("DescribeDevicesResponse.Devices["+ i +"].Stats.FailedNum"));
+			device.setStats(stats);
+
+			devices.add(device);
+		}
+		describeDevicesResponse.setDevices(devices);
+	 
+	 	return describeDevicesResponse;
+	}
+}
