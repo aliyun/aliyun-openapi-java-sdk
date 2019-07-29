@@ -19,13 +19,17 @@ import java.util.List;
 
 /**
  * @author liumi
- * @version 1.0.8
+ * @version 1.0.9
  */
 public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGroupResponse> {
-	
+
 	public CreateContainerGroupRequest() {
 		super("Eci", "2018-08-08", "CreateContainerGroup", "eci");
 	}
+
+	private Float cpu;
+
+	private Float memory;
 
 	private List<Container> containers;
 
@@ -59,18 +63,43 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private DnsConfig dnsConfig;
 
+	private String dnsPolicy;
+
 	private List<HostAliase> hostAliases;
 
 	private Boolean slsEnable;
 
 	private String clientToken;
 
+	public Float getCpu() {
+		return cpu;
+	}
+
+	public void setCpu(Float cpu) {
+		this.cpu = cpu;
+		if (cpu != null) {
+			putQueryParameter("Cpu", cpu);
+		}
+	}
+
+	public Float getMemory() {
+		return memory;
+	}
+
+	public void setMemory(Float memory) {
+		this.memory = memory;
+		if (memory != null) {
+			putQueryParameter("Memory", memory);
+		}
+	}
+
+
 	public List<Container> getContainers() {
 		return this.containers;
 	}
 
 	public void setContainers(List<Container> containers) {
-		this.containers = containers;	
+		this.containers = containers;
 		if (containers != null) {
 			for (int depth1 = 0; depth1 < containers.size(); depth1++) {
 				putQueryParameter("Container." + (depth1 + 1) + ".Image" , containers.get(depth1).getImage());
@@ -168,7 +197,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 					putQueryParameter("Container." + (depth1 + 1) + ".SecurityContext.RunAsUser" , containers.get(depth1).getSecurityContext().getRunAsUser());
 				}
 			}
-		}	
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -198,7 +227,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public void setInitContainers(List<Container> initContainers) {
-		this.initContainers = initContainers;	
+		this.initContainers = initContainers;
 		if (initContainers != null) {
 			for (int depth1 = 0; depth1 < initContainers.size(); depth1++) {
 				putQueryParameter("InitContainer." + (depth1 + 1) + ".Name" , initContainers.get(depth1).getName());
@@ -250,7 +279,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 					putQueryParameter("InitContainer." + (depth1 + 1) + ".SecurityContext.RunAsUser" , initContainers.get(depth1).getSecurityContext().getRunAsUser());
 				}
 			}
-		}	
+		}
 	}
 
 	public List<ImageRegistryCredential> getImageRegistryCredentials() {
@@ -258,14 +287,14 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public void setImageRegistryCredentials(List<ImageRegistryCredential> imageRegistryCredentials) {
-		this.imageRegistryCredentials = imageRegistryCredentials;	
+		this.imageRegistryCredentials = imageRegistryCredentials;
 		if (imageRegistryCredentials != null) {
 			for (int depth1 = 0; depth1 < imageRegistryCredentials.size(); depth1++) {
 				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Server" , imageRegistryCredentials.get(depth1).getServer());
 				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".UserName" , imageRegistryCredentials.get(depth1).getUserName());
 				putQueryParameter("ImageRegistryCredential." + (depth1 + 1) + ".Password" , imageRegistryCredentials.get(depth1).getPassword());
 			}
-		}	
+		}
 	}
 
 	public List<Tag> getTags() {
@@ -273,13 +302,13 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
+		this.tags = tags;
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
-		}	
+		}
 	}
 
 	public String getEipInstanceId() {
@@ -353,7 +382,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public void setVolumes(List<Volume> volumes) {
-		this.volumes = volumes;	
+		this.volumes = volumes;
 		if (volumes != null) {
 			for (int depth1 = 0; depth1 < volumes.size(); depth1++) {
 				putQueryParameter("Volume." + (depth1 + 1) + ".Name" , volumes.get(depth1).getName());
@@ -373,7 +402,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Volume." + (depth1 + 1) + ".ConfigFileVolume.DefaultModel" , volumes.get(depth1).getConfigFileVolumeDefaultModel());
 				putQueryParameter("Volume." + (depth1 + 1) + ".Type" , volumes.get(depth1).getType());
 			}
-		}	
+		}
 	}
 
 	public String getContainerGroupName() {
@@ -461,6 +490,17 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			putQueryParameter("SlsEnable", slsEnable);
 		}
 
+	}
+
+	public String getDnsPolicy() {
+		return dnsPolicy;
+	}
+
+	public void setDnsPolicy(String dnsPolicy) {
+		this.dnsPolicy = dnsPolicy;
+		if (dnsPolicy != null) {
+			putQueryParameter("DnsPolicy", dnsPolicy);
+		}
 	}
 
 	public static class Container {
