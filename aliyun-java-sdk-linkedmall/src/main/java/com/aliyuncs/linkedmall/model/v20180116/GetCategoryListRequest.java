@@ -20,39 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryOrderLogisticsRequest extends RpcAcsRequest<QueryOrderLogisticsResponse> {
+public class GetCategoryListRequest extends RpcAcsRequest<GetCategoryListResponse> {
 	
-	public QueryOrderLogisticsRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderLogistics", "linkedmall");
+	public GetCategoryListRequest() {
+		super("linkedmall", "2018-01-16", "GetCategoryList", "linkedmall");
 	}
-
-	private Long lmOrderId;
-
-	private String bizUid;
 
 	private String bizId;
 
-	public Long getLmOrderId() {
-		return this.lmOrderId;
-	}
-
-	public void setLmOrderId(Long lmOrderId) {
-		this.lmOrderId = lmOrderId;
-		if(lmOrderId != null){
-			putQueryParameter("LmOrderId", lmOrderId.toString());
-		}
-	}
-
-	public String getBizUid() {
-		return this.bizUid;
-	}
-
-	public void setBizUid(String bizUid) {
-		this.bizUid = bizUid;
-		if(bizUid != null){
-			putQueryParameter("BizUid", bizUid);
-		}
-	}
+	private Long categoryId;
 
 	public String getBizId() {
 		return this.bizId;
@@ -65,9 +41,20 @@ public class QueryOrderLogisticsRequest extends RpcAcsRequest<QueryOrderLogistic
 		}
 	}
 
+	public Long getCategoryId() {
+		return this.categoryId;
+	}
+
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
+		if(categoryId != null){
+			putQueryParameter("CategoryId", categoryId.toString());
+		}
+	}
+
 	@Override
-	public Class<QueryOrderLogisticsResponse> getResponseClass() {
-		return QueryOrderLogisticsResponse.class;
+	public Class<GetCategoryListResponse> getResponseClass() {
+		return GetCategoryListResponse.class;
 	}
 
 }

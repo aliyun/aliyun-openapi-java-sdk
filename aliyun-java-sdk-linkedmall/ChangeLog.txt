@@ -1,3 +1,6 @@
+2019-07-30 Version: 2.4.0
+- Generated 2018-01-16 for `linkedmall`.
+
 2019-07-19 Version: 2.3.2
 - Generated 2018-01-16 for `linkedmall`.
 

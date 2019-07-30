@@ -16,14 +16,14 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkedmall.transform.v20180116.ModifyBasicAndBizItemsResponseUnmarshaller;
+import com.aliyuncs.linkedmall.transform.v20180116.GetCategoryListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyBasicAndBizItemsResponse extends AcsResponse {
+public class GetCategoryListResponse extends AcsResponse {
 
 	private String code;
 
@@ -31,7 +31,7 @@ public class ModifyBasicAndBizItemsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Item> failedItemList;
+	private List<Category> categoryList;
 
 	public String getCode() {
 		return this.code;
@@ -57,39 +57,39 @@ public class ModifyBasicAndBizItemsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Item> getFailedItemList() {
-		return this.failedItemList;
+	public List<Category> getCategoryList() {
+		return this.categoryList;
 	}
 
-	public void setFailedItemList(List<Item> failedItemList) {
-		this.failedItemList = failedItemList;
+	public void setCategoryList(List<Category> categoryList) {
+		this.categoryList = categoryList;
 	}
 
-	public static class Item {
+	public static class Category {
 
-		private Long itemId;
+		private Long categoryId;
 
-		private List<String> skuIdList;
+		private String name;
 
-		public Long getItemId() {
-			return this.itemId;
+		public Long getCategoryId() {
+			return this.categoryId;
 		}
 
-		public void setItemId(Long itemId) {
-			this.itemId = itemId;
+		public void setCategoryId(Long categoryId) {
+			this.categoryId = categoryId;
 		}
 
-		public List<String> getSkuIdList() {
-			return this.skuIdList;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setSkuIdList(List<String> skuIdList) {
-			this.skuIdList = skuIdList;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 
 	@Override
-	public ModifyBasicAndBizItemsResponse getInstance(UnmarshallerContext context) {
-		return	ModifyBasicAndBizItemsResponseUnmarshaller.unmarshall(this, context);
+	public GetCategoryListResponse getInstance(UnmarshallerContext context) {
+		return	GetCategoryListResponseUnmarshaller.unmarshall(this, context);
 	}
 }
