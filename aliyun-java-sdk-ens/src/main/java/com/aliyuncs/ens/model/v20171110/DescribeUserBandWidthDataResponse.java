@@ -61,7 +61,7 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 
 		private String maxUpBandWidth;
 
-		private String bandWidthMonitorData;
+		private List<BandWidthMonitorDataItem> bandWidthMonitorData;
 
 		public String getMaxDownBandWidth() {
 			return this.maxDownBandWidth;
@@ -79,17 +79,75 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 			this.maxUpBandWidth = maxUpBandWidth;
 		}
 
-		public String getBandWidthMonitorData() {
+		public List<BandWidthMonitorDataItem> getBandWidthMonitorData() {
 			return this.bandWidthMonitorData;
 		}
 
-		public void setBandWidthMonitorData(String bandWidthMonitorData) {
+		public void setBandWidthMonitorData(List<BandWidthMonitorDataItem> bandWidthMonitorData) {
 			this.bandWidthMonitorData = bandWidthMonitorData;
+		}
+
+		public static class BandWidthMonitorDataItem {
+
+			private Integer upBandWidth;
+
+			private Integer downBandWidth;
+
+			private Integer internetTX;
+
+			private Integer internetRX;
+
+			private String timeStamp;
+
+			public Integer getUpBandWidth() {
+				return this.upBandWidth;
+			}
+
+			public void setUpBandWidth(Integer upBandWidth) {
+				this.upBandWidth = upBandWidth;
+			}
+
+			public Integer getDownBandWidth() {
+				return this.downBandWidth;
+			}
+
+			public void setDownBandWidth(Integer downBandWidth) {
+				this.downBandWidth = downBandWidth;
+			}
+
+			public Integer getInternetTX() {
+				return this.internetTX;
+			}
+
+			public void setInternetTX(Integer internetTX) {
+				this.internetTX = internetTX;
+			}
+
+			public Integer getInternetRX() {
+				return this.internetRX;
+			}
+
+			public void setInternetRX(Integer internetRX) {
+				this.internetRX = internetRX;
+			}
+
+			public String getTimeStamp() {
+				return this.timeStamp;
+			}
+
+			public void setTimeStamp(String timeStamp) {
+				this.timeStamp = timeStamp;
+			}
 		}
 	}
 
 	@Override
 	public DescribeUserBandWidthDataResponse getInstance(UnmarshallerContext context) {
 		return	DescribeUserBandWidthDataResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

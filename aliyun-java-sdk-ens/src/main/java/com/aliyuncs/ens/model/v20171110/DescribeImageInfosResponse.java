@@ -65,7 +65,7 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 		private String oSType;
 
-		private Integer oSName;
+		private String oSName;
 
 		private String imageSize;
 
@@ -101,11 +101,11 @@ public class DescribeImageInfosResponse extends AcsResponse {
 			this.oSType = oSType;
 		}
 
-		public Integer getOSName() {
+		public String getOSName() {
 			return this.oSName;
 		}
 
-		public void setOSName(Integer oSName) {
+		public void setOSName(String oSName) {
 			this.oSName = oSName;
 		}
 

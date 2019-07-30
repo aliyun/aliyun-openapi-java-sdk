@@ -36,7 +36,7 @@ public class DescribeImageInfosResponseUnmarshaller {
 			image.setDescription(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].Description"));
 			image.setImageVersion(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ImageVersion"));
 			image.setOSType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSType"));
-			image.setOSName(_ctx.integerValue("DescribeImageInfosResponse.Images["+ i +"].OSName"));
+			image.setOSName(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSName"));
 			image.setImageSize(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ImageSize"));
 
 			images.add(image);

@@ -1,3 +1,8 @@
+2019-07-30 Version: 1.1.0
+- Add DescribeInstanceTypes.
+- Add DescribeReservedResource.
+- Add DescribeInstances.
+
 2019-07-18 Version: 1.0.0
 - Add CreateInstance.
 - Add DescribeEnsRegions.

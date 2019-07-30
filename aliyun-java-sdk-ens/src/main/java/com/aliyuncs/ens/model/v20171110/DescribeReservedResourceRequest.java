@@ -20,52 +20,13 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstanceAttributeResponse> {
+public class DescribeReservedResourceRequest extends RpcAcsRequest<DescribeReservedResourceResponse> {
 	
-	public ModifyInstanceAttributeRequest() {
-		super("Ens", "2017-11-10", "ModifyInstanceAttribute", "ens");
+	public DescribeReservedResourceRequest() {
+		super("Ens", "2017-11-10", "DescribeReservedResource", "ens");
 	}
-
-	private String password;
-
-	private String instanceId;
-
-	private String instanceName;
 
 	private String version;
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
 
 	public String getBizVersion() {
 		return this.version;
@@ -98,8 +59,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 	}
 
 	@Override
-	public Class<ModifyInstanceAttributeResponse> getResponseClass() {
-		return ModifyInstanceAttributeResponse.class;
+	public Class<DescribeReservedResourceResponse> getResponseClass() {
+		return DescribeReservedResourceResponse.class;
 	}
 
 }
