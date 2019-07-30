@@ -3,10 +3,10 @@ language: java
 sudo: false # faster builds
 
 jdk:
-  - oraclejdk8
-  - oraclejdk9
-  - oraclejdk11
- 
+  - openjdk8
+  - openjdk10
+  - openjdk11
+
 branches: # build only on these branches
   only:
     - master
@@ -26,11 +26,11 @@ script:
   # Test
   - mvn test -B -f ./aliyun-java-sdk-core/pom.xml
   - test -z $daily_accessKeyId -a -z $daily_accessSecret || make travis-test
- 
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
 matrix:
   allow_failures:
-  - jdk: oraclejdk9
-  - jdk: oraclejdk11
+  - jdk: openjdk10
+  - jdk: openjdk11
