@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateOrderResponseUnmarshaller {
 
-	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext context) {
+	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext _ctx) {
 		
-		createOrderResponse.setRequestId(context.stringValue("CreateOrderResponse.RequestId"));
-		createOrderResponse.setCode(context.integerValue("CreateOrderResponse.Code"));
-		createOrderResponse.setMessage(context.stringValue("CreateOrderResponse.Message"));
+		createOrderResponse.setRequestId(_ctx.stringValue("CreateOrderResponse.RequestId"));
+		createOrderResponse.setCode(_ctx.integerValue("CreateOrderResponse.Code"));
+		createOrderResponse.setMessage(_ctx.stringValue("CreateOrderResponse.Message"));
 
 		Data data = new Data();
-		data.setId(context.longValue("CreateOrderResponse.Data.Id"));
+		data.setId(_ctx.longValue("CreateOrderResponse.Data.Id"));
 		createOrderResponse.setData(data);
 	 
 	 	return createOrderResponse;

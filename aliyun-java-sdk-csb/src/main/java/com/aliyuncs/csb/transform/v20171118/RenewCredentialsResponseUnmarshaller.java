@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RenewCredentialsResponseUnmarshaller {
 
-	public static RenewCredentialsResponse unmarshall(RenewCredentialsResponse renewCredentialsResponse, UnmarshallerContext context) {
+	public static RenewCredentialsResponse unmarshall(RenewCredentialsResponse renewCredentialsResponse, UnmarshallerContext _ctx) {
 		
-		renewCredentialsResponse.setRequestId(context.stringValue("RenewCredentialsResponse.RequestId"));
-		renewCredentialsResponse.setCode(context.integerValue("RenewCredentialsResponse.Code"));
-		renewCredentialsResponse.setMessage(context.stringValue("RenewCredentialsResponse.Message"));
+		renewCredentialsResponse.setRequestId(_ctx.stringValue("RenewCredentialsResponse.RequestId"));
+		renewCredentialsResponse.setCode(_ctx.integerValue("RenewCredentialsResponse.Code"));
+		renewCredentialsResponse.setMessage(_ctx.stringValue("RenewCredentialsResponse.Message"));
 
 		Data data = new Data();
 
 		Credentials credentials = new Credentials();
-		credentials.setGmtCreate(context.longValue("RenewCredentialsResponse.Data.Credentials.GmtCreate"));
-		credentials.setId(context.longValue("RenewCredentialsResponse.Data.Credentials.Id"));
-		credentials.setName(context.stringValue("RenewCredentialsResponse.Data.Credentials.Name"));
-		credentials.setUserId(context.stringValue("RenewCredentialsResponse.Data.Credentials.UserId"));
+		credentials.setGmtCreate(_ctx.longValue("RenewCredentialsResponse.Data.Credentials.GmtCreate"));
+		credentials.setId(_ctx.longValue("RenewCredentialsResponse.Data.Credentials.Id"));
+		credentials.setName(_ctx.stringValue("RenewCredentialsResponse.Data.Credentials.Name"));
+		credentials.setUserId(_ctx.stringValue("RenewCredentialsResponse.Data.Credentials.UserId"));
 
 		CurrentCredential currentCredential = new CurrentCredential();
-		currentCredential.setAccessKey(context.stringValue("RenewCredentialsResponse.Data.Credentials.CurrentCredential.AccessKey"));
-		currentCredential.setSecretKey(context.stringValue("RenewCredentialsResponse.Data.Credentials.CurrentCredential.SecretKey"));
+		currentCredential.setAccessKey(_ctx.stringValue("RenewCredentialsResponse.Data.Credentials.CurrentCredential.AccessKey"));
+		currentCredential.setSecretKey(_ctx.stringValue("RenewCredentialsResponse.Data.Credentials.CurrentCredential.SecretKey"));
 		credentials.setCurrentCredential(currentCredential);
 
 		NewCredential newCredential = new NewCredential();
-		newCredential.setAccessKey(context.stringValue("RenewCredentialsResponse.Data.Credentials.NewCredential.AccessKey"));
-		newCredential.setSecretKey(context.stringValue("RenewCredentialsResponse.Data.Credentials.NewCredential.SecretKey"));
+		newCredential.setAccessKey(_ctx.stringValue("RenewCredentialsResponse.Data.Credentials.NewCredential.AccessKey"));
+		newCredential.setSecretKey(_ctx.stringValue("RenewCredentialsResponse.Data.Credentials.NewCredential.SecretKey"));
 		credentials.setNewCredential(newCredential);
 		data.setCredentials(credentials);
 		renewCredentialsResponse.setData(data);

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ApproveOrderListResponseUnmarshaller {
 
-	public static ApproveOrderListResponse unmarshall(ApproveOrderListResponse approveOrderListResponse, UnmarshallerContext context) {
+	public static ApproveOrderListResponse unmarshall(ApproveOrderListResponse approveOrderListResponse, UnmarshallerContext _ctx) {
 		
-		approveOrderListResponse.setRequestId(context.stringValue("ApproveOrderListResponse.RequestId"));
-		approveOrderListResponse.setCode(context.integerValue("ApproveOrderListResponse.Code"));
-		approveOrderListResponse.setMessage(context.stringValue("ApproveOrderListResponse.Message"));
+		approveOrderListResponse.setRequestId(_ctx.stringValue("ApproveOrderListResponse.RequestId"));
+		approveOrderListResponse.setCode(_ctx.integerValue("ApproveOrderListResponse.Code"));
+		approveOrderListResponse.setMessage(_ctx.stringValue("ApproveOrderListResponse.Message"));
 	 
 	 	return approveOrderListResponse;
 	}

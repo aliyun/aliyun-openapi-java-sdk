@@ -19,23 +19,22 @@ import java.util.List;
 
 import com.aliyuncs.csb.model.v20171118.FindProjectsNameListResponse;
 import com.aliyuncs.csb.model.v20171118.FindProjectsNameListResponse.Data;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class FindProjectsNameListResponseUnmarshaller {
 
-	public static FindProjectsNameListResponse unmarshall(FindProjectsNameListResponse findProjectsNameListResponse, UnmarshallerContext context) {
+	public static FindProjectsNameListResponse unmarshall(FindProjectsNameListResponse findProjectsNameListResponse, UnmarshallerContext _ctx) {
 		
-		findProjectsNameListResponse.setRequestId(context.stringValue("FindProjectsNameListResponse.RequestId"));
-		findProjectsNameListResponse.setCode(context.integerValue("FindProjectsNameListResponse.Code"));
-		findProjectsNameListResponse.setMessage(context.stringValue("FindProjectsNameListResponse.Message"));
+		findProjectsNameListResponse.setRequestId(_ctx.stringValue("FindProjectsNameListResponse.RequestId"));
+		findProjectsNameListResponse.setCode(_ctx.integerValue("FindProjectsNameListResponse.Code"));
+		findProjectsNameListResponse.setMessage(_ctx.stringValue("FindProjectsNameListResponse.Message"));
 
 		Data data = new Data();
 
 		List<String> projectNameList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("FindProjectsNameListResponse.Data.ProjectNameList.Length"); i++) {
-			projectNameList.add(context.stringValue("FindProjectsNameListResponse.Data.ProjectNameList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("FindProjectsNameListResponse.Data.ProjectNameList.Length"); i++) {
+			projectNameList.add(_ctx.stringValue("FindProjectsNameListResponse.Data.ProjectNameList["+ i +"]"));
 		}
 		data.setProjectNameList(projectNameList);
 		findProjectsNameListResponse.setData(data);

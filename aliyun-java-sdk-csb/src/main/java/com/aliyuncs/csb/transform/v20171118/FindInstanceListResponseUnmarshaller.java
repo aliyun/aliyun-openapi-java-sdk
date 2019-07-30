@@ -20,35 +20,34 @@ import java.util.List;
 import com.aliyuncs.csb.model.v20171118.FindInstanceListResponse;
 import com.aliyuncs.csb.model.v20171118.FindInstanceListResponse.Data;
 import com.aliyuncs.csb.model.v20171118.FindInstanceListResponse.Data.Item;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class FindInstanceListResponseUnmarshaller {
 
-	public static FindInstanceListResponse unmarshall(FindInstanceListResponse findInstanceListResponse, UnmarshallerContext context) {
+	public static FindInstanceListResponse unmarshall(FindInstanceListResponse findInstanceListResponse, UnmarshallerContext _ctx) {
 		
-		findInstanceListResponse.setRequestId(context.stringValue("FindInstanceListResponse.RequestId"));
-		findInstanceListResponse.setCode(context.integerValue("FindInstanceListResponse.Code"));
-		findInstanceListResponse.setMessage(context.stringValue("FindInstanceListResponse.Message"));
+		findInstanceListResponse.setRequestId(_ctx.stringValue("FindInstanceListResponse.RequestId"));
+		findInstanceListResponse.setCode(_ctx.integerValue("FindInstanceListResponse.Code"));
+		findInstanceListResponse.setMessage(_ctx.stringValue("FindInstanceListResponse.Message"));
 
 		Data data = new Data();
-		data.setCurrentPage(context.integerValue("FindInstanceListResponse.Data.CurrentPage"));
-		data.setPageNumber(context.integerValue("FindInstanceListResponse.Data.PageNumber"));
+		data.setCurrentPage(_ctx.integerValue("FindInstanceListResponse.Data.CurrentPage"));
+		data.setPageNumber(_ctx.integerValue("FindInstanceListResponse.Data.PageNumber"));
 
 		List<Item> itemList = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("FindInstanceListResponse.Data.ItemList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("FindInstanceListResponse.Data.ItemList.Length"); i++) {
 			Item item = new Item();
-			item.setDescription(context.stringValue("FindInstanceListResponse.Data.ItemList["+ i +"].Description"));
-			item.setFrontStatus(context.stringValue("FindInstanceListResponse.Data.ItemList["+ i +"].FrontStatus"));
-			item.setGmtCreate(context.longValue("FindInstanceListResponse.Data.ItemList["+ i +"].GmtCreate"));
-			item.setGmtModified(context.longValue("FindInstanceListResponse.Data.ItemList["+ i +"].GmtModified"));
-			item.setId(context.longValue("FindInstanceListResponse.Data.ItemList["+ i +"].Id"));
-			item.setInstanceCategory(context.integerValue("FindInstanceListResponse.Data.ItemList["+ i +"].InstanceCategory"));
-			item.setName(context.stringValue("FindInstanceListResponse.Data.ItemList["+ i +"].Name"));
-			item.setStatusCode(context.integerValue("FindInstanceListResponse.Data.ItemList["+ i +"].StatusCode"));
-			item.setVisible(context.booleanValue("FindInstanceListResponse.Data.ItemList["+ i +"].Visible"));
-			item.setVpcName(context.stringValue("FindInstanceListResponse.Data.ItemList["+ i +"].VpcName"));
+			item.setDescription(_ctx.stringValue("FindInstanceListResponse.Data.ItemList["+ i +"].Description"));
+			item.setFrontStatus(_ctx.stringValue("FindInstanceListResponse.Data.ItemList["+ i +"].FrontStatus"));
+			item.setGmtCreate(_ctx.longValue("FindInstanceListResponse.Data.ItemList["+ i +"].GmtCreate"));
+			item.setGmtModified(_ctx.longValue("FindInstanceListResponse.Data.ItemList["+ i +"].GmtModified"));
+			item.setId(_ctx.longValue("FindInstanceListResponse.Data.ItemList["+ i +"].Id"));
+			item.setInstanceCategory(_ctx.integerValue("FindInstanceListResponse.Data.ItemList["+ i +"].InstanceCategory"));
+			item.setName(_ctx.stringValue("FindInstanceListResponse.Data.ItemList["+ i +"].Name"));
+			item.setStatusCode(_ctx.integerValue("FindInstanceListResponse.Data.ItemList["+ i +"].StatusCode"));
+			item.setVisible(_ctx.booleanValue("FindInstanceListResponse.Data.ItemList["+ i +"].Visible"));
+			item.setVpcName(_ctx.stringValue("FindInstanceListResponse.Data.ItemList["+ i +"].VpcName"));
 
 			itemList.add(item);
 		}

@@ -20,45 +20,44 @@ import java.util.List;
 import com.aliyuncs.csb.model.v20171118.FindApproveServiceListResponse;
 import com.aliyuncs.csb.model.v20171118.FindApproveServiceListResponse.Data;
 import com.aliyuncs.csb.model.v20171118.FindApproveServiceListResponse.Data.Service;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class FindApproveServiceListResponseUnmarshaller {
 
-	public static FindApproveServiceListResponse unmarshall(FindApproveServiceListResponse findApproveServiceListResponse, UnmarshallerContext context) {
+	public static FindApproveServiceListResponse unmarshall(FindApproveServiceListResponse findApproveServiceListResponse, UnmarshallerContext _ctx) {
 		
-		findApproveServiceListResponse.setRequestId(context.stringValue("FindApproveServiceListResponse.RequestId"));
-		findApproveServiceListResponse.setCode(context.integerValue("FindApproveServiceListResponse.Code"));
-		findApproveServiceListResponse.setMessage(context.stringValue("FindApproveServiceListResponse.Message"));
+		findApproveServiceListResponse.setRequestId(_ctx.stringValue("FindApproveServiceListResponse.RequestId"));
+		findApproveServiceListResponse.setCode(_ctx.integerValue("FindApproveServiceListResponse.Code"));
+		findApproveServiceListResponse.setMessage(_ctx.stringValue("FindApproveServiceListResponse.Message"));
 
 		Data data = new Data();
-		data.setTotal(context.integerValue("FindApproveServiceListResponse.Data.Total"));
-		data.setPageNumber(context.integerValue("FindApproveServiceListResponse.Data.PageNumber"));
-		data.setCurrentPage(context.integerValue("FindApproveServiceListResponse.Data.CurrentPage"));
+		data.setTotal(_ctx.integerValue("FindApproveServiceListResponse.Data.Total"));
+		data.setPageNumber(_ctx.integerValue("FindApproveServiceListResponse.Data.PageNumber"));
+		data.setCurrentPage(_ctx.integerValue("FindApproveServiceListResponse.Data.CurrentPage"));
 
 		List<Service> serviceList = new ArrayList<Service>();
-		for (int i = 0; i < context.lengthValue("FindApproveServiceListResponse.Data.ServiceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("FindApproveServiceListResponse.Data.ServiceList.Length"); i++) {
 			Service service = new Service();
-			service.setAllVisiable(context.booleanValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].AllVisiable"));
-			service.setCasTargets(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].CasTargets"));
-			service.setCreateTime(context.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].CreateTime"));
-			service.setCsbId(context.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].CsbId"));
-			service.setId(context.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].Id"));
-			service.setInterfaceName(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].InterfaceName"));
-			service.setModifiedTime(context.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ModifiedTime"));
-			service.setOwnerId(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].OwnerId"));
-			service.setPrincipalName(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].PrincipalName"));
-			service.setProjectId(context.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ProjectId"));
-			service.setProjectName(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ProjectName"));
-			service.setQps(context.integerValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].Qps"));
-			service.setScope(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].Scope"));
-			service.setServiceName(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ServiceName"));
-			service.setServiceVersion(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ServiceVersion"));
-			service.setSkipAuth(context.booleanValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].SkipAuth"));
-			service.setStatisticName(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].StatisticName"));
-			service.setStatus(context.integerValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].Status"));
-			service.setUserId(context.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].UserId"));
+			service.setAllVisiable(_ctx.booleanValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].AllVisiable"));
+			service.setCasTargets(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].CasTargets"));
+			service.setCreateTime(_ctx.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].CreateTime"));
+			service.setCsbId(_ctx.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].CsbId"));
+			service.setId(_ctx.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].Id"));
+			service.setInterfaceName(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].InterfaceName"));
+			service.setModifiedTime(_ctx.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ModifiedTime"));
+			service.setOwnerId(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].OwnerId"));
+			service.setPrincipalName(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].PrincipalName"));
+			service.setProjectId(_ctx.longValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ProjectId"));
+			service.setProjectName(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ProjectName"));
+			service.setQps(_ctx.integerValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].Qps"));
+			service.setScope(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].Scope"));
+			service.setServiceName(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ServiceName"));
+			service.setServiceVersion(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].ServiceVersion"));
+			service.setSkipAuth(_ctx.booleanValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].SkipAuth"));
+			service.setStatisticName(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].StatisticName"));
+			service.setStatus(_ctx.integerValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].Status"));
+			service.setUserId(_ctx.stringValue("FindApproveServiceListResponse.Data.ServiceList["+ i +"].UserId"));
 
 			serviceList.add(service);
 		}

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PublishCasServiceResponseUnmarshaller {
 
-	public static PublishCasServiceResponse unmarshall(PublishCasServiceResponse publishCasServiceResponse, UnmarshallerContext context) {
+	public static PublishCasServiceResponse unmarshall(PublishCasServiceResponse publishCasServiceResponse, UnmarshallerContext _ctx) {
 		
-		publishCasServiceResponse.setRequestId(context.stringValue("PublishCasServiceResponse.RequestId"));
-		publishCasServiceResponse.setCode(context.integerValue("PublishCasServiceResponse.Code"));
-		publishCasServiceResponse.setMessage(context.stringValue("PublishCasServiceResponse.Message"));
+		publishCasServiceResponse.setRequestId(_ctx.stringValue("PublishCasServiceResponse.RequestId"));
+		publishCasServiceResponse.setCode(_ctx.integerValue("PublishCasServiceResponse.Code"));
+		publishCasServiceResponse.setMessage(_ctx.stringValue("PublishCasServiceResponse.Message"));
 	 
 	 	return publishCasServiceResponse;
 	}

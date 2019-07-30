@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateOrderListResponseUnmarshaller {
 
-	public static UpdateOrderListResponse unmarshall(UpdateOrderListResponse updateOrderListResponse, UnmarshallerContext context) {
+	public static UpdateOrderListResponse unmarshall(UpdateOrderListResponse updateOrderListResponse, UnmarshallerContext _ctx) {
 		
-		updateOrderListResponse.setRequestId(context.stringValue("UpdateOrderListResponse.RequestId"));
-		updateOrderListResponse.setCode(context.integerValue("UpdateOrderListResponse.Code"));
-		updateOrderListResponse.setMessage(context.stringValue("UpdateOrderListResponse.Message"));
+		updateOrderListResponse.setRequestId(_ctx.stringValue("UpdateOrderListResponse.RequestId"));
+		updateOrderListResponse.setCode(_ctx.integerValue("UpdateOrderListResponse.Code"));
+		updateOrderListResponse.setMessage(_ctx.stringValue("UpdateOrderListResponse.Message"));
 
 		Data data = new Data();
-		data.setUpdateCount(context.integerValue("UpdateOrderListResponse.Data.UpdateCount"));
+		data.setUpdateCount(_ctx.integerValue("UpdateOrderListResponse.Data.UpdateCount"));
 		updateOrderListResponse.setData(data);
 	 
 	 	return updateOrderListResponse;

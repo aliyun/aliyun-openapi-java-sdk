@@ -22,39 +22,38 @@ import com.aliyuncs.csb.model.v20171118.FindCredentialsListResponse.Data;
 import com.aliyuncs.csb.model.v20171118.FindCredentialsListResponse.Data.Credential;
 import com.aliyuncs.csb.model.v20171118.FindCredentialsListResponse.Data.Credential.CurrentCredential;
 import com.aliyuncs.csb.model.v20171118.FindCredentialsListResponse.Data.Credential.NewCredential;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class FindCredentialsListResponseUnmarshaller {
 
-	public static FindCredentialsListResponse unmarshall(FindCredentialsListResponse findCredentialsListResponse, UnmarshallerContext context) {
+	public static FindCredentialsListResponse unmarshall(FindCredentialsListResponse findCredentialsListResponse, UnmarshallerContext _ctx) {
 		
-		findCredentialsListResponse.setRequestId(context.stringValue("FindCredentialsListResponse.RequestId"));
-		findCredentialsListResponse.setCode(context.integerValue("FindCredentialsListResponse.Code"));
-		findCredentialsListResponse.setMessage(context.stringValue("FindCredentialsListResponse.Message"));
+		findCredentialsListResponse.setRequestId(_ctx.stringValue("FindCredentialsListResponse.RequestId"));
+		findCredentialsListResponse.setCode(_ctx.integerValue("FindCredentialsListResponse.Code"));
+		findCredentialsListResponse.setMessage(_ctx.stringValue("FindCredentialsListResponse.Message"));
 
 		Data data = new Data();
-		data.setCurrentPage(context.integerValue("FindCredentialsListResponse.Data.CurrentPage"));
-		data.setPageNumber(context.integerValue("FindCredentialsListResponse.Data.PageNumber"));
+		data.setCurrentPage(_ctx.integerValue("FindCredentialsListResponse.Data.CurrentPage"));
+		data.setPageNumber(_ctx.integerValue("FindCredentialsListResponse.Data.PageNumber"));
 
 		List<Credential> credentialList = new ArrayList<Credential>();
-		for (int i = 0; i < context.lengthValue("FindCredentialsListResponse.Data.CredentialList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("FindCredentialsListResponse.Data.CredentialList.Length"); i++) {
 			Credential credential = new Credential();
-			credential.setGmtCreate(context.longValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].GmtCreate"));
-			credential.setId(context.longValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].Id"));
-			credential.setName(context.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].Name"));
-			credential.setOwnerAttr(context.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].OwnerAttr"));
-			credential.setUserId(context.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].UserId"));
+			credential.setGmtCreate(_ctx.longValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].GmtCreate"));
+			credential.setId(_ctx.longValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].Id"));
+			credential.setName(_ctx.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].Name"));
+			credential.setOwnerAttr(_ctx.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].OwnerAttr"));
+			credential.setUserId(_ctx.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].UserId"));
 
 			CurrentCredential currentCredential = new CurrentCredential();
-			currentCredential.setAccessKey(context.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].CurrentCredential.AccessKey"));
-			currentCredential.setSecretKey(context.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].CurrentCredential.SecretKey"));
+			currentCredential.setAccessKey(_ctx.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].CurrentCredential.AccessKey"));
+			currentCredential.setSecretKey(_ctx.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].CurrentCredential.SecretKey"));
 			credential.setCurrentCredential(currentCredential);
 
 			NewCredential newCredential = new NewCredential();
-			newCredential.setAccessKey(context.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].NewCredential.AccessKey"));
-			newCredential.setSecretKey(context.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].NewCredential.SecretKey"));
+			newCredential.setAccessKey(_ctx.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].NewCredential.AccessKey"));
+			newCredential.setSecretKey(_ctx.stringValue("FindCredentialsListResponse.Data.CredentialList["+ i +"].NewCredential.SecretKey"));
 			credential.setNewCredential(newCredential);
 
 			credentialList.add(credential);

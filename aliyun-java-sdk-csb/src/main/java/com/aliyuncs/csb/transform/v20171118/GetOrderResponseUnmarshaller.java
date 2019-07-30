@@ -24,92 +24,91 @@ import com.aliyuncs.csb.model.v20171118.GetOrderResponse.Data.Order.ErrorTypeCat
 import com.aliyuncs.csb.model.v20171118.GetOrderResponse.Data.Order.Service;
 import com.aliyuncs.csb.model.v20171118.GetOrderResponse.Data.Order.SlaInfo;
 import com.aliyuncs.csb.model.v20171118.GetOrderResponse.Data.Order.Total;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class GetOrderResponseUnmarshaller {
 
-	public static GetOrderResponse unmarshall(GetOrderResponse getOrderResponse, UnmarshallerContext context) {
+	public static GetOrderResponse unmarshall(GetOrderResponse getOrderResponse, UnmarshallerContext _ctx) {
 		
-		getOrderResponse.setRequestId(context.stringValue("GetOrderResponse.RequestId"));
-		getOrderResponse.setCode(context.integerValue("GetOrderResponse.Code"));
-		getOrderResponse.setMessage(context.stringValue("GetOrderResponse.Message"));
+		getOrderResponse.setRequestId(_ctx.stringValue("GetOrderResponse.RequestId"));
+		getOrderResponse.setCode(_ctx.integerValue("GetOrderResponse.Code"));
+		getOrderResponse.setMessage(_ctx.stringValue("GetOrderResponse.Message"));
 
 		Data data = new Data();
 
 		Order order = new Order();
-		order.setAlias(context.stringValue("GetOrderResponse.Data.Order.Alias"));
-		order.setCredentialGroupId(context.longValue("GetOrderResponse.Data.Order.CredentialGroupId"));
-		order.setCsbId(context.longValue("GetOrderResponse.Data.Order.CsbId"));
-		order.setDauthGroupName(context.stringValue("GetOrderResponse.Data.Order.DauthGroupName"));
-		order.setGmtCreate(context.longValue("GetOrderResponse.Data.Order.GmtCreate"));
-		order.setGmtModified(context.longValue("GetOrderResponse.Data.Order.GmtModified"));
-		order.setGroupName(context.stringValue("GetOrderResponse.Data.Order.GroupName"));
-		order.setId(context.longValue("GetOrderResponse.Data.Order.Id"));
-		order.setProjectName(context.stringValue("GetOrderResponse.Data.Order.ProjectName"));
-		order.setServiceId(context.longValue("GetOrderResponse.Data.Order.ServiceId"));
-		order.setServiceName(context.stringValue("GetOrderResponse.Data.Order.ServiceName"));
-		order.setServiceStatus(context.integerValue("GetOrderResponse.Data.Order.ServiceStatus"));
-		order.setServiceVersion(context.stringValue("GetOrderResponse.Data.Order.ServiceVersion"));
-		order.setStatisticName(context.stringValue("GetOrderResponse.Data.Order.StatisticName"));
-		order.setStatus(context.integerValue("GetOrderResponse.Data.Order.Status"));
-		order.setStrictWhiteListJson(context.stringValue("GetOrderResponse.Data.Order.StrictWhiteListJson"));
-		order.setUserId(context.stringValue("GetOrderResponse.Data.Order.UserId"));
+		order.setAlias(_ctx.stringValue("GetOrderResponse.Data.Order.Alias"));
+		order.setCredentialGroupId(_ctx.longValue("GetOrderResponse.Data.Order.CredentialGroupId"));
+		order.setCsbId(_ctx.longValue("GetOrderResponse.Data.Order.CsbId"));
+		order.setDauthGroupName(_ctx.stringValue("GetOrderResponse.Data.Order.DauthGroupName"));
+		order.setGmtCreate(_ctx.longValue("GetOrderResponse.Data.Order.GmtCreate"));
+		order.setGmtModified(_ctx.longValue("GetOrderResponse.Data.Order.GmtModified"));
+		order.setGroupName(_ctx.stringValue("GetOrderResponse.Data.Order.GroupName"));
+		order.setId(_ctx.longValue("GetOrderResponse.Data.Order.Id"));
+		order.setProjectName(_ctx.stringValue("GetOrderResponse.Data.Order.ProjectName"));
+		order.setServiceId(_ctx.longValue("GetOrderResponse.Data.Order.ServiceId"));
+		order.setServiceName(_ctx.stringValue("GetOrderResponse.Data.Order.ServiceName"));
+		order.setServiceStatus(_ctx.integerValue("GetOrderResponse.Data.Order.ServiceStatus"));
+		order.setServiceVersion(_ctx.stringValue("GetOrderResponse.Data.Order.ServiceVersion"));
+		order.setStatisticName(_ctx.stringValue("GetOrderResponse.Data.Order.StatisticName"));
+		order.setStatus(_ctx.integerValue("GetOrderResponse.Data.Order.Status"));
+		order.setStrictWhiteListJson(_ctx.stringValue("GetOrderResponse.Data.Order.StrictWhiteListJson"));
+		order.setUserId(_ctx.stringValue("GetOrderResponse.Data.Order.UserId"));
 
 		List<String> strictWhiteList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetOrderResponse.Data.Order.StrictWhiteList.Length"); i++) {
-			strictWhiteList.add(context.stringValue("GetOrderResponse.Data.Order.StrictWhiteList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetOrderResponse.Data.Order.StrictWhiteList.Length"); i++) {
+			strictWhiteList.add(_ctx.stringValue("GetOrderResponse.Data.Order.StrictWhiteList["+ i +"]"));
 		}
 		order.setStrictWhiteList(strictWhiteList);
 
 		Service service = new Service();
-		service.setAccessParamsJSON(context.stringValue("GetOrderResponse.Data.Order.Service.AccessParamsJSON"));
-		service.setActive(context.booleanValue("GetOrderResponse.Data.Order.Service.Active"));
-		service.setAlias(context.stringValue("GetOrderResponse.Data.Order.Service.Alias"));
-		service.setAllVisiable(context.booleanValue("GetOrderResponse.Data.Order.Service.AllVisiable"));
-		service.setConsumeTypesJSON(context.stringValue("GetOrderResponse.Data.Order.Service.ConsumeTypesJSON"));
-		service.setCreateTime(context.longValue("GetOrderResponse.Data.Order.Service.CreateTime"));
-		service.setCsbId(context.longValue("GetOrderResponse.Data.Order.Service.CsbId"));
-		service.setErrDefJSON(context.stringValue("GetOrderResponse.Data.Order.Service.ErrDefJSON"));
-		service.setId(context.longValue("GetOrderResponse.Data.Order.Service.Id"));
-		service.setInterfaceName(context.stringValue("GetOrderResponse.Data.Order.Service.InterfaceName"));
-		service.setOldVersion(context.stringValue("GetOrderResponse.Data.Order.Service.OldVersion"));
-		service.setOttFlag(context.booleanValue("GetOrderResponse.Data.Order.Service.OttFlag"));
-		service.setOwnerId(context.stringValue("GetOrderResponse.Data.Order.Service.OwnerId"));
-		service.setPrincipalName(context.stringValue("GetOrderResponse.Data.Order.Service.PrincipalName"));
-		service.setProjectId(context.stringValue("GetOrderResponse.Data.Order.Service.ProjectId"));
-		service.setProjectName(context.stringValue("GetOrderResponse.Data.Order.Service.ProjectName"));
-		service.setProvideType(context.stringValue("GetOrderResponse.Data.Order.Service.ProvideType"));
-		service.setSSL(context.booleanValue("GetOrderResponse.Data.Order.Service.SSL"));
-		service.setScope(context.stringValue("GetOrderResponse.Data.Order.Service.Scope"));
-		service.setServiceName(context.stringValue("GetOrderResponse.Data.Order.Service.ServiceName"));
-		service.setServiceProviderType(context.stringValue("GetOrderResponse.Data.Order.Service.ServiceProviderType"));
-		service.setServiceVersion(context.stringValue("GetOrderResponse.Data.Order.Service.ServiceVersion"));
-		service.setSkipAuth(context.booleanValue("GetOrderResponse.Data.Order.Service.SkipAuth"));
-		service.setStatisticName(context.stringValue("GetOrderResponse.Data.Order.Service.StatisticName"));
-		service.setStatus(context.integerValue("GetOrderResponse.Data.Order.Service.Status"));
-		service.setUserId(context.longValue("GetOrderResponse.Data.Order.Service.UserId"));
-		service.setValidConsumeTypes(context.booleanValue("GetOrderResponse.Data.Order.Service.ValidConsumeTypes"));
-		service.setValidProvideType(context.booleanValue("GetOrderResponse.Data.Order.Service.ValidProvideType"));
+		service.setAccessParamsJSON(_ctx.stringValue("GetOrderResponse.Data.Order.Service.AccessParamsJSON"));
+		service.setActive(_ctx.booleanValue("GetOrderResponse.Data.Order.Service.Active"));
+		service.setAlias(_ctx.stringValue("GetOrderResponse.Data.Order.Service.Alias"));
+		service.setAllVisiable(_ctx.booleanValue("GetOrderResponse.Data.Order.Service.AllVisiable"));
+		service.setConsumeTypesJSON(_ctx.stringValue("GetOrderResponse.Data.Order.Service.ConsumeTypesJSON"));
+		service.setCreateTime(_ctx.longValue("GetOrderResponse.Data.Order.Service.CreateTime"));
+		service.setCsbId(_ctx.longValue("GetOrderResponse.Data.Order.Service.CsbId"));
+		service.setErrDefJSON(_ctx.stringValue("GetOrderResponse.Data.Order.Service.ErrDefJSON"));
+		service.setId(_ctx.longValue("GetOrderResponse.Data.Order.Service.Id"));
+		service.setInterfaceName(_ctx.stringValue("GetOrderResponse.Data.Order.Service.InterfaceName"));
+		service.setOldVersion(_ctx.stringValue("GetOrderResponse.Data.Order.Service.OldVersion"));
+		service.setOttFlag(_ctx.booleanValue("GetOrderResponse.Data.Order.Service.OttFlag"));
+		service.setOwnerId(_ctx.stringValue("GetOrderResponse.Data.Order.Service.OwnerId"));
+		service.setPrincipalName(_ctx.stringValue("GetOrderResponse.Data.Order.Service.PrincipalName"));
+		service.setProjectId(_ctx.stringValue("GetOrderResponse.Data.Order.Service.ProjectId"));
+		service.setProjectName(_ctx.stringValue("GetOrderResponse.Data.Order.Service.ProjectName"));
+		service.setProvideType(_ctx.stringValue("GetOrderResponse.Data.Order.Service.ProvideType"));
+		service.setSSL(_ctx.booleanValue("GetOrderResponse.Data.Order.Service.SSL"));
+		service.setScope(_ctx.stringValue("GetOrderResponse.Data.Order.Service.Scope"));
+		service.setServiceName(_ctx.stringValue("GetOrderResponse.Data.Order.Service.ServiceName"));
+		service.setServiceProviderType(_ctx.stringValue("GetOrderResponse.Data.Order.Service.ServiceProviderType"));
+		service.setServiceVersion(_ctx.stringValue("GetOrderResponse.Data.Order.Service.ServiceVersion"));
+		service.setSkipAuth(_ctx.booleanValue("GetOrderResponse.Data.Order.Service.SkipAuth"));
+		service.setStatisticName(_ctx.stringValue("GetOrderResponse.Data.Order.Service.StatisticName"));
+		service.setStatus(_ctx.integerValue("GetOrderResponse.Data.Order.Service.Status"));
+		service.setUserId(_ctx.longValue("GetOrderResponse.Data.Order.Service.UserId"));
+		service.setValidConsumeTypes(_ctx.booleanValue("GetOrderResponse.Data.Order.Service.ValidConsumeTypes"));
+		service.setValidProvideType(_ctx.booleanValue("GetOrderResponse.Data.Order.Service.ValidProvideType"));
 		order.setService(service);
 
 		SlaInfo slaInfo = new SlaInfo();
-		slaInfo.setQph(context.stringValue("GetOrderResponse.Data.Order.SlaInfo.Qph"));
-		slaInfo.setQps(context.stringValue("GetOrderResponse.Data.Order.SlaInfo.Qps"));
+		slaInfo.setQph(_ctx.stringValue("GetOrderResponse.Data.Order.SlaInfo.Qph"));
+		slaInfo.setQps(_ctx.stringValue("GetOrderResponse.Data.Order.SlaInfo.Qps"));
 		order.setSlaInfo(slaInfo);
 
 		Total total = new Total();
-		total.setErrorNum(context.integerValue("GetOrderResponse.Data.Order.Total.ErrorNum"));
-		total.setTotal(context.integerValue("GetOrderResponse.Data.Order.Total.Total"));
+		total.setErrorNum(_ctx.integerValue("GetOrderResponse.Data.Order.Total.ErrorNum"));
+		total.setTotal(_ctx.integerValue("GetOrderResponse.Data.Order.Total.Total"));
 		order.setTotal(total);
 
 		List<ErrorTypeCatagory> errorTypeCatagoryList = new ArrayList<ErrorTypeCatagory>();
-		for (int i = 0; i < context.lengthValue("GetOrderResponse.Data.Order.ErrorTypeCatagoryList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetOrderResponse.Data.Order.ErrorTypeCatagoryList.Length"); i++) {
 			ErrorTypeCatagory errorTypeCatagory = new ErrorTypeCatagory();
-			errorTypeCatagory.setTotal(context.integerValue("GetOrderResponse.Data.Order.ErrorTypeCatagoryList["+ i +"].Total"));
-			errorTypeCatagory.setErrorNum(context.integerValue("GetOrderResponse.Data.Order.ErrorTypeCatagoryList["+ i +"].ErrorNum"));
-			errorTypeCatagory.setName(context.stringValue("GetOrderResponse.Data.Order.ErrorTypeCatagoryList["+ i +"].Name"));
+			errorTypeCatagory.setTotal(_ctx.integerValue("GetOrderResponse.Data.Order.ErrorTypeCatagoryList["+ i +"].Total"));
+			errorTypeCatagory.setErrorNum(_ctx.integerValue("GetOrderResponse.Data.Order.ErrorTypeCatagoryList["+ i +"].ErrorNum"));
+			errorTypeCatagory.setName(_ctx.stringValue("GetOrderResponse.Data.Order.ErrorTypeCatagoryList["+ i +"].Name"));
 
 			errorTypeCatagoryList.add(errorTypeCatagory);
 		}

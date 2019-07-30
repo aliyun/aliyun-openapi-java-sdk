@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReplaceCredentialResponseUnmarshaller {
 
-	public static ReplaceCredentialResponse unmarshall(ReplaceCredentialResponse replaceCredentialResponse, UnmarshallerContext context) {
+	public static ReplaceCredentialResponse unmarshall(ReplaceCredentialResponse replaceCredentialResponse, UnmarshallerContext _ctx) {
 		
-		replaceCredentialResponse.setRequestId(context.stringValue("ReplaceCredentialResponse.RequestId"));
-		replaceCredentialResponse.setCode(context.integerValue("ReplaceCredentialResponse.Code"));
-		replaceCredentialResponse.setMessage(context.stringValue("ReplaceCredentialResponse.Message"));
+		replaceCredentialResponse.setRequestId(_ctx.stringValue("ReplaceCredentialResponse.RequestId"));
+		replaceCredentialResponse.setCode(_ctx.integerValue("ReplaceCredentialResponse.Code"));
+		replaceCredentialResponse.setMessage(_ctx.stringValue("ReplaceCredentialResponse.Message"));
 
 		Data data = new Data();
 
 		Credentials credentials = new Credentials();
-		credentials.setGmtCreate(context.longValue("ReplaceCredentialResponse.Data.Credentials.GmtCreate"));
-		credentials.setId(context.longValue("ReplaceCredentialResponse.Data.Credentials.Id"));
-		credentials.setName(context.stringValue("ReplaceCredentialResponse.Data.Credentials.Name"));
-		credentials.setUserId(context.stringValue("ReplaceCredentialResponse.Data.Credentials.UserId"));
+		credentials.setGmtCreate(_ctx.longValue("ReplaceCredentialResponse.Data.Credentials.GmtCreate"));
+		credentials.setId(_ctx.longValue("ReplaceCredentialResponse.Data.Credentials.Id"));
+		credentials.setName(_ctx.stringValue("ReplaceCredentialResponse.Data.Credentials.Name"));
+		credentials.setUserId(_ctx.stringValue("ReplaceCredentialResponse.Data.Credentials.UserId"));
 
 		CurrentCredential currentCredential = new CurrentCredential();
-		currentCredential.setAccessKey(context.stringValue("ReplaceCredentialResponse.Data.Credentials.CurrentCredential.AccessKey"));
-		currentCredential.setSecretKey(context.stringValue("ReplaceCredentialResponse.Data.Credentials.CurrentCredential.SecretKey"));
+		currentCredential.setAccessKey(_ctx.stringValue("ReplaceCredentialResponse.Data.Credentials.CurrentCredential.AccessKey"));
+		currentCredential.setSecretKey(_ctx.stringValue("ReplaceCredentialResponse.Data.Credentials.CurrentCredential.SecretKey"));
 		credentials.setCurrentCredential(currentCredential);
 
 		NewCredential newCredential = new NewCredential();
-		newCredential.setAccessKey(context.stringValue("ReplaceCredentialResponse.Data.Credentials.NewCredential.AccessKey"));
-		newCredential.setSecretKey(context.stringValue("ReplaceCredentialResponse.Data.Credentials.NewCredential.SecretKey"));
+		newCredential.setAccessKey(_ctx.stringValue("ReplaceCredentialResponse.Data.Credentials.NewCredential.AccessKey"));
+		newCredential.setSecretKey(_ctx.stringValue("ReplaceCredentialResponse.Data.Credentials.NewCredential.SecretKey"));
 		credentials.setNewCredential(newCredential);
 		data.setCredentials(credentials);
 		replaceCredentialResponse.setData(data);

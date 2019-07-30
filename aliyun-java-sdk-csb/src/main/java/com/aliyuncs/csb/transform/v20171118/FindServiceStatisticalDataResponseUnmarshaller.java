@@ -21,35 +21,34 @@ import com.aliyuncs.csb.model.v20171118.FindServiceStatisticalDataResponse;
 import com.aliyuncs.csb.model.v20171118.FindServiceStatisticalDataResponse.Data;
 import com.aliyuncs.csb.model.v20171118.FindServiceStatisticalDataResponse.Data.ServiceStatisticData;
 import com.aliyuncs.csb.model.v20171118.FindServiceStatisticalDataResponse.Data.ServiceStatisticData.Total;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class FindServiceStatisticalDataResponseUnmarshaller {
 
-	public static FindServiceStatisticalDataResponse unmarshall(FindServiceStatisticalDataResponse findServiceStatisticalDataResponse, UnmarshallerContext context) {
+	public static FindServiceStatisticalDataResponse unmarshall(FindServiceStatisticalDataResponse findServiceStatisticalDataResponse, UnmarshallerContext _ctx) {
 		
-		findServiceStatisticalDataResponse.setRequestId(context.stringValue("FindServiceStatisticalDataResponse.RequestId"));
-		findServiceStatisticalDataResponse.setCode(context.integerValue("FindServiceStatisticalDataResponse.Code"));
-		findServiceStatisticalDataResponse.setMessage(context.stringValue("FindServiceStatisticalDataResponse.Message"));
+		findServiceStatisticalDataResponse.setRequestId(_ctx.stringValue("FindServiceStatisticalDataResponse.RequestId"));
+		findServiceStatisticalDataResponse.setCode(_ctx.integerValue("FindServiceStatisticalDataResponse.Code"));
+		findServiceStatisticalDataResponse.setMessage(_ctx.stringValue("FindServiceStatisticalDataResponse.Message"));
 
 		Data data = new Data();
-		data.setCurrentPage(context.integerValue("FindServiceStatisticalDataResponse.Data.CurrentPage"));
-		data.setPageNumber(context.integerValue("FindServiceStatisticalDataResponse.Data.PageNumber"));
+		data.setCurrentPage(_ctx.integerValue("FindServiceStatisticalDataResponse.Data.CurrentPage"));
+		data.setPageNumber(_ctx.integerValue("FindServiceStatisticalDataResponse.Data.PageNumber"));
 
 		List<ServiceStatisticData> monitorStatisticData = new ArrayList<ServiceStatisticData>();
-		for (int i = 0; i < context.lengthValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData.Length"); i++) {
 			ServiceStatisticData serviceStatisticData = new ServiceStatisticData();
-			serviceStatisticData.setAvgRt(context.floatValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].AvgRt"));
-			serviceStatisticData.setMaxRt(context.floatValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].MaxRt"));
-			serviceStatisticData.setMinRt(context.floatValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].MinRt"));
-			serviceStatisticData.setRequestTime(context.longValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].RequestTime"));
-			serviceStatisticData.setServiceName(context.stringValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].ServiceName"));
-			serviceStatisticData.setUserId(context.stringValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].UserId"));
+			serviceStatisticData.setAvgRt(_ctx.floatValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].AvgRt"));
+			serviceStatisticData.setMaxRt(_ctx.floatValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].MaxRt"));
+			serviceStatisticData.setMinRt(_ctx.floatValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].MinRt"));
+			serviceStatisticData.setRequestTime(_ctx.longValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].RequestTime"));
+			serviceStatisticData.setServiceName(_ctx.stringValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].ServiceName"));
+			serviceStatisticData.setUserId(_ctx.stringValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].UserId"));
 
 			Total total = new Total();
-			total.setErrorNum(context.integerValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].Total.ErrorNum"));
-			total.setTotal(context.integerValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].Total.Total"));
+			total.setErrorNum(_ctx.integerValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].Total.ErrorNum"));
+			total.setTotal(_ctx.integerValue("FindServiceStatisticalDataResponse.Data.MonitorStatisticData["+ i +"].Total.Total"));
 			serviceStatisticData.setTotal(total);
 
 			monitorStatisticData.add(serviceStatisticData);

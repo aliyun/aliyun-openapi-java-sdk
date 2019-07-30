@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CommitSuccessedServicesResponseUnmarshaller {
 
-	public static CommitSuccessedServicesResponse unmarshall(CommitSuccessedServicesResponse commitSuccessedServicesResponse, UnmarshallerContext context) {
+	public static CommitSuccessedServicesResponse unmarshall(CommitSuccessedServicesResponse commitSuccessedServicesResponse, UnmarshallerContext _ctx) {
 		
-		commitSuccessedServicesResponse.setRequestId(context.stringValue("CommitSuccessedServicesResponse.RequestId"));
-		commitSuccessedServicesResponse.setCode(context.integerValue("CommitSuccessedServicesResponse.Code"));
-		commitSuccessedServicesResponse.setMessage(context.stringValue("CommitSuccessedServicesResponse.Message"));
+		commitSuccessedServicesResponse.setRequestId(_ctx.stringValue("CommitSuccessedServicesResponse.RequestId"));
+		commitSuccessedServicesResponse.setCode(_ctx.integerValue("CommitSuccessedServicesResponse.Code"));
+		commitSuccessedServicesResponse.setMessage(_ctx.stringValue("CommitSuccessedServicesResponse.Message"));
 	 
 	 	return commitSuccessedServicesResponse;
 	}

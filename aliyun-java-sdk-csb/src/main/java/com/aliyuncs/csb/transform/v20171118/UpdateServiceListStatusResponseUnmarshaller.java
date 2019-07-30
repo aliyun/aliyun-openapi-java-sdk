@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateServiceListStatusResponseUnmarshaller {
 
-	public static UpdateServiceListStatusResponse unmarshall(UpdateServiceListStatusResponse updateServiceListStatusResponse, UnmarshallerContext context) {
+	public static UpdateServiceListStatusResponse unmarshall(UpdateServiceListStatusResponse updateServiceListStatusResponse, UnmarshallerContext _ctx) {
 		
-		updateServiceListStatusResponse.setRequestId(context.stringValue("UpdateServiceListStatusResponse.RequestId"));
-		updateServiceListStatusResponse.setCode(context.integerValue("UpdateServiceListStatusResponse.Code"));
-		updateServiceListStatusResponse.setMessage(context.stringValue("UpdateServiceListStatusResponse.Message"));
+		updateServiceListStatusResponse.setRequestId(_ctx.stringValue("UpdateServiceListStatusResponse.RequestId"));
+		updateServiceListStatusResponse.setCode(_ctx.integerValue("UpdateServiceListStatusResponse.Code"));
+		updateServiceListStatusResponse.setMessage(_ctx.stringValue("UpdateServiceListStatusResponse.Message"));
 	 
 	 	return updateServiceListStatusResponse;
 	}

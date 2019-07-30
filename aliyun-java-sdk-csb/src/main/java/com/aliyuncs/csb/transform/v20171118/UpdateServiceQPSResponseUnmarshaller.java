@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateServiceQPSResponseUnmarshaller {
 
-	public static UpdateServiceQPSResponse unmarshall(UpdateServiceQPSResponse updateServiceQPSResponse, UnmarshallerContext context) {
+	public static UpdateServiceQPSResponse unmarshall(UpdateServiceQPSResponse updateServiceQPSResponse, UnmarshallerContext _ctx) {
 		
-		updateServiceQPSResponse.setRequestId(context.stringValue("UpdateServiceQPSResponse.RequestId"));
-		updateServiceQPSResponse.setCode(context.integerValue("UpdateServiceQPSResponse.Code"));
-		updateServiceQPSResponse.setMessage(context.stringValue("UpdateServiceQPSResponse.Message"));
+		updateServiceQPSResponse.setRequestId(_ctx.stringValue("UpdateServiceQPSResponse.RequestId"));
+		updateServiceQPSResponse.setCode(_ctx.integerValue("UpdateServiceQPSResponse.Code"));
+		updateServiceQPSResponse.setMessage(_ctx.stringValue("UpdateServiceQPSResponse.Message"));
 	 
 	 	return updateServiceQPSResponse;
 	}

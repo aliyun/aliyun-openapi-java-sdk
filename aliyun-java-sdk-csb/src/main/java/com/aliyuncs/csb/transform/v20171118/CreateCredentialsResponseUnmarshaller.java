@@ -23,20 +23,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCredentialsResponseUnmarshaller {
 
-	public static CreateCredentialsResponse unmarshall(CreateCredentialsResponse createCredentialsResponse, UnmarshallerContext context) {
+	public static CreateCredentialsResponse unmarshall(CreateCredentialsResponse createCredentialsResponse, UnmarshallerContext _ctx) {
 		
-		createCredentialsResponse.setRequestId(context.stringValue("CreateCredentialsResponse.RequestId"));
-		createCredentialsResponse.setCode(context.integerValue("CreateCredentialsResponse.Code"));
-		createCredentialsResponse.setMessage(context.stringValue("CreateCredentialsResponse.Message"));
+		createCredentialsResponse.setRequestId(_ctx.stringValue("CreateCredentialsResponse.RequestId"));
+		createCredentialsResponse.setCode(_ctx.integerValue("CreateCredentialsResponse.Code"));
+		createCredentialsResponse.setMessage(_ctx.stringValue("CreateCredentialsResponse.Message"));
 
 		Data data = new Data();
 
 		Credentials credentials = new Credentials();
-		credentials.setId(context.longValue("CreateCredentialsResponse.Data.Credentials.Id"));
+		credentials.setId(_ctx.longValue("CreateCredentialsResponse.Data.Credentials.Id"));
 
 		CurrentCredential currentCredential = new CurrentCredential();
-		currentCredential.setSecretKey(context.stringValue("CreateCredentialsResponse.Data.Credentials.CurrentCredential.SecretKey"));
-		currentCredential.setAccessKey(context.stringValue("CreateCredentialsResponse.Data.Credentials.CurrentCredential.AccessKey"));
+		currentCredential.setSecretKey(_ctx.stringValue("CreateCredentialsResponse.Data.Credentials.CurrentCredential.SecretKey"));
+		currentCredential.setAccessKey(_ctx.stringValue("CreateCredentialsResponse.Data.Credentials.CurrentCredential.AccessKey"));
 		credentials.setCurrentCredential(currentCredential);
 		data.setCredentials(credentials);
 		createCredentialsResponse.setData(data);

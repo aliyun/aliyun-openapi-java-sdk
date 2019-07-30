@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteCasServiceResponseUnmarshaller {
 
-	public static DeleteCasServiceResponse unmarshall(DeleteCasServiceResponse deleteCasServiceResponse, UnmarshallerContext context) {
+	public static DeleteCasServiceResponse unmarshall(DeleteCasServiceResponse deleteCasServiceResponse, UnmarshallerContext _ctx) {
 		
-		deleteCasServiceResponse.setRequestId(context.stringValue("DeleteCasServiceResponse.RequestId"));
-		deleteCasServiceResponse.setCode(context.integerValue("DeleteCasServiceResponse.Code"));
-		deleteCasServiceResponse.setMessage(context.stringValue("DeleteCasServiceResponse.Message"));
+		deleteCasServiceResponse.setRequestId(_ctx.stringValue("DeleteCasServiceResponse.RequestId"));
+		deleteCasServiceResponse.setCode(_ctx.integerValue("DeleteCasServiceResponse.Code"));
+		deleteCasServiceResponse.setMessage(_ctx.stringValue("DeleteCasServiceResponse.Message"));
 	 
 	 	return deleteCasServiceResponse;
 	}

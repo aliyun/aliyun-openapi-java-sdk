@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckServiceExistResponseUnmarshaller {
 
-	public static CheckServiceExistResponse unmarshall(CheckServiceExistResponse checkServiceExistResponse, UnmarshallerContext context) {
+	public static CheckServiceExistResponse unmarshall(CheckServiceExistResponse checkServiceExistResponse, UnmarshallerContext _ctx) {
 		
-		checkServiceExistResponse.setRequestId(context.stringValue("CheckServiceExistResponse.RequestId"));
-		checkServiceExistResponse.setCode(context.integerValue("CheckServiceExistResponse.Code"));
-		checkServiceExistResponse.setMessage(context.stringValue("CheckServiceExistResponse.Message"));
+		checkServiceExistResponse.setRequestId(_ctx.stringValue("CheckServiceExistResponse.RequestId"));
+		checkServiceExistResponse.setCode(_ctx.integerValue("CheckServiceExistResponse.Code"));
+		checkServiceExistResponse.setMessage(_ctx.stringValue("CheckServiceExistResponse.Message"));
 
 		Data data = new Data();
-		data.setExist(context.booleanValue("CheckServiceExistResponse.Data.Exist"));
+		data.setExist(_ctx.booleanValue("CheckServiceExistResponse.Data.Exist"));
 		checkServiceExistResponse.setData(data);
 	 
 	 	return checkServiceExistResponse;
