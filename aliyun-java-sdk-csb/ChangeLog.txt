@@ -2,6 +2,9 @@
 - Suport ImportCredentials api.
 
 2019-07-30 Version: 1.1.9
+- Suport ImportCredentials api.
+
+2019-07-30 Version: 1.1.9
 - Generated 2017-11-18 for `CSB`.
 
 2019-07-30 Version: 1.1.9
