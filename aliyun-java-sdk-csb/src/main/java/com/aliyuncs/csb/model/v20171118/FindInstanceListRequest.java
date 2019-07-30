@@ -15,6 +15,7 @@
 package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.csb.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class FindInstanceListRequest extends RpcAcsRequest<FindInstanceListRespo
 	
 	public FindInstanceListRequest() {
 		super("CSB", "2017-11-18", "FindInstanceList");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String searchTxt;
