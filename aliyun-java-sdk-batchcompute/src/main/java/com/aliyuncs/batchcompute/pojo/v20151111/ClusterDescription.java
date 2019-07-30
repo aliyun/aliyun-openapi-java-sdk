@@ -69,6 +69,19 @@ public class ClusterDescription {
     @JsonProperty("Bootstrap")
     private String bootstrap;
 
+    @JsonIgnore
+    public Boolean getPasswordInherit() {
+        return passwordInherit;
+    }
+
+    @JsonIgnore
+    public void setPasswordInherit(Boolean passwordInherit) {
+        this.passwordInherit = passwordInherit;
+    }
+
+    @JsonProperty("PasswordInherit")
+    private Boolean passwordInherit;
+
 
     @JsonProperty("EnvVars")
     private Map<String, String> envVars;

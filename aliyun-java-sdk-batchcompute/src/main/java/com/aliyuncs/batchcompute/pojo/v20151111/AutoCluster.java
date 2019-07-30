@@ -28,6 +28,9 @@ public class AutoCluster{
     @JsonProperty("ResourceType")
     private String resourceType = "OnDemand";
 
+    @JsonProperty("ClusterId")
+    private String clusterId;
+
     @JsonProperty("Configs")
     private Configs configs;
 
@@ -80,9 +83,6 @@ public class AutoCluster{
     public void setConfigs(Configs configs) {
         this.configs = configs;
     }
-
-
-
 
     @JsonIgnore
     public Map<String, String> getUserData() {
@@ -138,5 +138,11 @@ public class AutoCluster{
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
+
+    @JsonIgnore
+    public void setClusterId(String clusterId) { this.clusterId = clusterId; }
+
+    @JsonIgnore
+    public String getClusterId() { return clusterId; }
 
 }
