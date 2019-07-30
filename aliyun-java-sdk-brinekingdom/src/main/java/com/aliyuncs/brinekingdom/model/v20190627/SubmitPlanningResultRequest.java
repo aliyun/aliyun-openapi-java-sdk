@@ -17,6 +17,7 @@ package com.aliyuncs.brinekingdom.model.v20190627;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.brinekingdom.Endpoint;
 
 /**
  * @author auto create
@@ -27,6 +28,10 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 	public SubmitPlanningResultRequest() {
 		super("brinekingdom", "2019-06-27", "SubmitPlanningResult");
 		setProtocol(ProtocolType.HTTPS);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long demandId;
@@ -101,6 +106,7 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Region" , resourceMethods.get(depth1).getRegion());
 				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".ConvertHostType" , resourceMethods.get(depth1).getConvertHostType());
 				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".Azone" , resourceMethods.get(depth1).getAzone());
+				putQueryParameter("ResourceMethod." + (depth1 + 1) + ".GapCnt" , resourceMethods.get(depth1).getGapCnt());
 			}
 		}	
 	}
@@ -126,6 +132,8 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 		private String convertHostType;
 
 		private String azone;
+
+		private Integer gapCnt;
 
 		public String getFinalAvzone() {
 			return this.finalAvzone;
@@ -205,6 +213,14 @@ public class SubmitPlanningResultRequest extends RpcAcsRequest<SubmitPlanningRes
 
 		public void setAzone(String azone) {
 			this.azone = azone;
+		}
+
+		public Integer getGapCnt() {
+			return this.gapCnt;
+		}
+
+		public void setGapCnt(Integer gapCnt) {
+			this.gapCnt = gapCnt;
 		}
 
 		public static class SupplyPlan {
