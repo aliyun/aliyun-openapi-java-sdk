@@ -15,14 +15,14 @@
 package com.aliyuncs.csb.model.v20171118;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.csb.transform.v20171118.UpdateOrderListResponseUnmarshaller;
+import com.aliyuncs.csb.transform.v20171118.ImportCredentialsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateOrderListResponse extends AcsResponse {
+public class ImportCredentialsResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -66,20 +66,66 @@ public class UpdateOrderListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer updateCount;
+		private Credentials credentials;
 
-		public Integer getUpdateCount() {
-			return this.updateCount;
+		public Credentials getCredentials() {
+			return this.credentials;
 		}
 
-		public void setUpdateCount(Integer updateCount) {
-			this.updateCount = updateCount;
+		public void setCredentials(Credentials credentials) {
+			this.credentials = credentials;
+		}
+
+		public static class Credentials {
+
+			private Long id;
+
+			private CurrentCredential currentCredential;
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public CurrentCredential getCurrentCredential() {
+				return this.currentCredential;
+			}
+
+			public void setCurrentCredential(CurrentCredential currentCredential) {
+				this.currentCredential = currentCredential;
+			}
+
+			public static class CurrentCredential {
+
+				private String secretKey;
+
+				private String accessKey;
+
+				public String getSecretKey() {
+					return this.secretKey;
+				}
+
+				public void setSecretKey(String secretKey) {
+					this.secretKey = secretKey;
+				}
+
+				public String getAccessKey() {
+					return this.accessKey;
+				}
+
+				public void setAccessKey(String accessKey) {
+					this.accessKey = accessKey;
+				}
+			}
 		}
 	}
 
 	@Override
-	public UpdateOrderListResponse getInstance(UnmarshallerContext context) {
-		return	UpdateOrderListResponseUnmarshaller.unmarshall(this, context);
+	public ImportCredentialsResponse getInstance(UnmarshallerContext context) {
+		return	ImportCredentialsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

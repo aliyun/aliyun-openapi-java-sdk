@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateOrderRequest extends RpcAcsRequest<UpdateOrderResponse> {
 	
 	public UpdateOrderRequest() {
-		super("CSB", "2017-11-18", "UpdateOrder", "csb");
+		super("CSB", "2017-11-18", "UpdateOrder");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

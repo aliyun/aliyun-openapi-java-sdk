@@ -22,10 +22,10 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
+public class ImportCredentialsRequest extends RpcAcsRequest<ImportCredentialsResponse> {
 	
-	public CreateProjectRequest() {
-		super("CSB", "2017-11-18", "CreateProject");
+	public ImportCredentialsRequest() {
+		super("CSB", "2017-11-18", "ImportCredentials");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
@@ -57,8 +57,8 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 	}
 
 	@Override
-	public Class<CreateProjectResponse> getResponseClass() {
-		return CreateProjectResponse.class;
+	public Class<ImportCredentialsResponse> getResponseClass() {
+		return ImportCredentialsResponse.class;
 	}
 
 }

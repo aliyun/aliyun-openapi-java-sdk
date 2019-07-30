@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FindInstanceListRequest extends RpcAcsRequest<FindInstanceListResponse> {
 	
 	public FindInstanceListRequest() {
-		super("CSB", "2017-11-18", "FindInstanceList", "csb");
+		super("CSB", "2017-11-18", "FindInstanceList");
 	}
 
 	private String searchTxt;

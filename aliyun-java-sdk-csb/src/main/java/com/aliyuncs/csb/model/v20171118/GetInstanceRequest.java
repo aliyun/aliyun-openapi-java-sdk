@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetInstanceRequest extends RpcAcsRequest<GetInstanceResponse> {
 	
 	public GetInstanceRequest() {
-		super("CSB", "2017-11-18", "GetInstance", "csb");
+		super("CSB", "2017-11-18", "GetInstance");
 	}
 
 	private Long csbId;

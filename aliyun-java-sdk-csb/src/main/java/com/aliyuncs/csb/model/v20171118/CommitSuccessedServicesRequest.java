@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class CommitSuccessedServicesRequest extends RpcAcsRequest<CommitSuccessedServicesResponse> {
 	
 	public CommitSuccessedServicesRequest() {
-		super("CSB", "2017-11-18", "CommitSuccessedServices", "csb");
+		super("CSB", "2017-11-18", "CommitSuccessedServices");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

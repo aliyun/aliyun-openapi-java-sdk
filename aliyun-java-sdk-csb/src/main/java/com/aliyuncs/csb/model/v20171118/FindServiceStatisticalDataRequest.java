@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class FindServiceStatisticalDataRequest extends RpcAcsRequest<FindServiceStatisticalDataResponse> {
 	
 	public FindServiceStatisticalDataRequest() {
-		super("CSB", "2017-11-18", "FindServiceStatisticalData", "csb");
+		super("CSB", "2017-11-18", "FindServiceStatisticalData");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

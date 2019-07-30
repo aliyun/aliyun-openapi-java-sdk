@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class UpdateProjectListStatusRequest extends RpcAcsRequest<UpdateProjectListStatusResponse> {
 	
 	public UpdateProjectListStatusRequest() {
-		super("CSB", "2017-11-18", "UpdateProjectListStatus", "csb");
+		super("CSB", "2017-11-18", "UpdateProjectListStatus");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}

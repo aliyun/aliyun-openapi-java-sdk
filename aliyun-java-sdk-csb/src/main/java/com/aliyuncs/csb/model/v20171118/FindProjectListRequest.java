@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class FindProjectListRequest extends RpcAcsRequest<FindProjectListResponse> {
 	
 	public FindProjectListRequest() {
-		super("CSB", "2017-11-18", "FindProjectList", "csb");
+		super("CSB", "2017-11-18", "FindProjectList");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

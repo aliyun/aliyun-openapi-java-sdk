@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class FindApproveServiceListRequest extends RpcAcsRequest<FindApproveServiceListResponse> {
 	
 	public FindApproveServiceListRequest() {
-		super("CSB", "2017-11-18", "FindApproveServiceList", "csb");
+		super("CSB", "2017-11-18", "FindApproveServiceList");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

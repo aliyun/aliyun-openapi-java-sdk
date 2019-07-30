@@ -24,7 +24,7 @@ import com.aliyuncs.http.ProtocolType;
 public class FindApprovalOrderListRequest extends RpcAcsRequest<FindApprovalOrderListResponse> {
 	
 	public FindApprovalOrderListRequest() {
-		super("CSB", "2017-11-18", "FindApprovalOrderList", "csb");
+		super("CSB", "2017-11-18", "FindApprovalOrderList");
 		setProtocol(ProtocolType.HTTPS);
 	}
 

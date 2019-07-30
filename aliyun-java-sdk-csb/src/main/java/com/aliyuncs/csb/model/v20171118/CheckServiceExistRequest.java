@@ -25,7 +25,7 @@ import com.aliyuncs.http.MethodType;
 public class CheckServiceExistRequest extends RpcAcsRequest<CheckServiceExistResponse> {
 	
 	public CheckServiceExistRequest() {
-		super("CSB", "2017-11-18", "CheckServiceExist", "csb");
+		super("CSB", "2017-11-18", "CheckServiceExist");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 	}
