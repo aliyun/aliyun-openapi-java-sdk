@@ -21,32 +21,32 @@ import com.aliyuncs.market.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeOrderRequest extends RpcAcsRequest<DescribeOrderResponse> {
+public class DeleteCommodityRequest extends RpcAcsRequest<DeleteCommodityResponse> {
 	
-	public DescribeOrderRequest() {
-		super("Market", "2015-11-01", "DescribeOrder");
+	public DeleteCommodityRequest() {
+		super("Market", "2015-11-01", "DeleteCommodity");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String orderId;
+	private String commodityId;
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getCommodityId() {
+		return this.commodityId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setCommodityId(String commodityId) {
+		this.commodityId = commodityId;
+		if(commodityId != null){
+			putQueryParameter("CommodityId", commodityId);
 		}
 	}
 
 	@Override
-	public Class<DescribeOrderResponse> getResponseClass() {
-		return DescribeOrderResponse.class;
+	public Class<DeleteCommodityResponse> getResponseClass() {
+		return DeleteCommodityResponse.class;
 	}
 
 }

@@ -15,38 +15,53 @@
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.market.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeOrderRequest extends RpcAcsRequest<DescribeOrderResponse> {
+public class CreateCommodityRequest extends RpcAcsRequest<CreateCommodityResponse> {
 	
-	public DescribeOrderRequest() {
-		super("Market", "2015-11-01", "DescribeOrder");
+	public CreateCommodityRequest() {
+		super("Market", "2015-11-01", "CreateCommodity");
+		setMethod(MethodType.POST);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String orderId;
+	private String applicationId;
 
-	public String getOrderId() {
-		return this.orderId;
+	private String content;
+
+	public String getApplicationId() {
+		return this.applicationId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setApplicationId(String applicationId) {
+		this.applicationId = applicationId;
+		if(applicationId != null){
+			putQueryParameter("ApplicationId", applicationId);
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putBodyParameter("Content", content);
 		}
 	}
 
 	@Override
-	public Class<DescribeOrderResponse> getResponseClass() {
-		return DescribeOrderResponse.class;
+	public Class<CreateCommodityResponse> getResponseClass() {
+		return CreateCommodityResponse.class;
 	}
 
 }

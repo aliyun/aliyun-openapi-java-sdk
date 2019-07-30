@@ -15,14 +15,14 @@
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.market.transform.v20151101.DescribeCommodityResponseUnmarshaller;
+import com.aliyuncs.market.transform.v20151101.CreateCommodityResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeCommodityResponse extends AcsResponse {
+public class CreateCommodityResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -58,12 +58,6 @@ public class DescribeCommodityResponse extends AcsResponse {
 
 		private String commodityId;
 
-		private String properties;
-
-		private String commoditySpecs;
-
-		private String applicationId;
-
 		public String getCommodityId() {
 			return this.commodityId;
 		}
@@ -71,34 +65,10 @@ public class DescribeCommodityResponse extends AcsResponse {
 		public void setCommodityId(String commodityId) {
 			this.commodityId = commodityId;
 		}
-
-		public String getProperties() {
-			return this.properties;
-		}
-
-		public void setProperties(String properties) {
-			this.properties = properties;
-		}
-
-		public String getCommoditySpecs() {
-			return this.commoditySpecs;
-		}
-
-		public void setCommoditySpecs(String commoditySpecs) {
-			this.commoditySpecs = commoditySpecs;
-		}
-
-		public String getApplicationId() {
-			return this.applicationId;
-		}
-
-		public void setApplicationId(String applicationId) {
-			this.applicationId = applicationId;
-		}
 	}
 
 	@Override
-	public DescribeCommodityResponse getInstance(UnmarshallerContext context) {
-		return	DescribeCommodityResponseUnmarshaller.unmarshall(this, context);
+	public CreateCommodityResponse getInstance(UnmarshallerContext context) {
+		return	CreateCommodityResponseUnmarshaller.unmarshall(this, context);
 	}
 }

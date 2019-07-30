@@ -24,7 +24,7 @@ import com.aliyuncs.market.Endpoint;
 public class ActivateLicenseRequest extends RpcAcsRequest<ActivateLicenseResponse> {
 	
 	public ActivateLicenseRequest() {
-		super("Market", "2015-11-01", "ActivateLicense", "yunmarket");
+		super("Market", "2015-11-01", "ActivateLicense");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

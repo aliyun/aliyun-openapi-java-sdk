@@ -24,7 +24,7 @@ import com.aliyuncs.market.Endpoint;
 public class QueryMarketImagesRequest extends RpcAcsRequest<QueryMarketImagesResponse> {
 	
 	public QueryMarketImagesRequest() {
-		super("Market", "2015-11-01", "QueryMarketImages", "yunmarket");
+		super("Market", "2015-11-01", "QueryMarketImages");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

@@ -21,32 +21,45 @@ import com.aliyuncs.market.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeOrderRequest extends RpcAcsRequest<DescribeOrderResponse> {
+public class UpdateCommodityRequest extends RpcAcsRequest<UpdateCommodityResponse> {
 	
-	public DescribeOrderRequest() {
-		super("Market", "2015-11-01", "DescribeOrder");
+	public UpdateCommodityRequest() {
+		super("Market", "2015-11-01", "UpdateCommodity");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String orderId;
+	private String commodityId;
 
-	public String getOrderId() {
-		return this.orderId;
+	private String content;
+
+	public String getCommodityId() {
+		return this.commodityId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setCommodityId(String commodityId) {
+		this.commodityId = commodityId;
+		if(commodityId != null){
+			putQueryParameter("CommodityId", commodityId);
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
 		}
 	}
 
 	@Override
-	public Class<DescribeOrderResponse> getResponseClass() {
-		return DescribeOrderResponse.class;
+	public Class<UpdateCommodityResponse> getResponseClass() {
+		return UpdateCommodityResponse.class;
 	}
 
 }

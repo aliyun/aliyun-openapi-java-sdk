@@ -24,7 +24,7 @@ import com.aliyuncs.market.Endpoint;
 public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	
 	public DescribePriceRequest() {
-		super("Market", "2015-11-01", "DescribePrice", "yunmarket");
+		super("Market", "2015-11-01", "DescribePrice");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

@@ -30,6 +30,7 @@ public class DescribeCommodityResponseUnmarshaller {
 		commodity.setCommodityId(_ctx.stringValue("DescribeCommodityResponse.Commodity.CommodityId"));
 		commodity.setProperties(_ctx.stringValue("DescribeCommodityResponse.Commodity.Properties"));
 		commodity.setCommoditySpecs(_ctx.stringValue("DescribeCommodityResponse.Commodity.CommoditySpecs"));
+		commodity.setApplicationId(_ctx.stringValue("DescribeCommodityResponse.Commodity.ApplicationId"));
 		describeCommodityResponse.setCommodity(commodity);
 	 
 	 	return describeCommodityResponse;

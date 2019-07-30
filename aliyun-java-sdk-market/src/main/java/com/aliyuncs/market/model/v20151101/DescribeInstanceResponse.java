@@ -59,6 +59,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private List<Module> modules;
 
+	private RelationalData relationalData;
+
 	public Long getInstanceId() {
 		return this.instanceId;
 	}
@@ -193,6 +195,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setModules(List<Module> modules) {
 		this.modules = modules;
+	}
+
+	public RelationalData getRelationalData() {
+		return this.relationalData;
+	}
+
+	public void setRelationalData(RelationalData relationalData) {
+		this.relationalData = relationalData;
 	}
 
 	public static class Module {
@@ -361,6 +371,19 @@ public class DescribeInstanceResponse extends AcsResponse {
 					this.remark = remark;
 				}
 			}
+		}
+	}
+
+	public static class RelationalData {
+
+		private String serviceStatus;
+
+		public String getServiceStatus() {
+			return this.serviceStatus;
+		}
+
+		public void setServiceStatus(String serviceStatus) {
+			this.serviceStatus = serviceStatus;
 		}
 	}
 

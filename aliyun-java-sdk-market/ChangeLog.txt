@@ -1,3 +1,6 @@
+2019-07-30 Version: 2.0.22
+- Generated 2015-11-01 for `Market`.
+
 2019-07-25 Version: 2.0.21
 - Update describeInstance.
 

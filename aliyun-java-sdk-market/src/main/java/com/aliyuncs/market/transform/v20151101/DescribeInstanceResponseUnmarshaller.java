@@ -21,6 +21,7 @@ import com.aliyuncs.market.model.v20151101.DescribeInstanceResponse;
 import com.aliyuncs.market.model.v20151101.DescribeInstanceResponse.Module;
 import com.aliyuncs.market.model.v20151101.DescribeInstanceResponse.Module.Property;
 import com.aliyuncs.market.model.v20151101.DescribeInstanceResponse.Module.Property.PropertyValue;
+import com.aliyuncs.market.model.v20151101.DescribeInstanceResponse.RelationalData;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,10 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setAppJson(_ctx.stringValue("DescribeInstanceResponse.AppJson"));
 		describeInstanceResponse.setComponentJson(_ctx.stringValue("DescribeInstanceResponse.ComponentJson"));
 		describeInstanceResponse.setConstraints(_ctx.stringValue("DescribeInstanceResponse.Constraints"));
+
+		RelationalData relationalData = new RelationalData();
+		relationalData.setServiceStatus(_ctx.stringValue("DescribeInstanceResponse.RelationalData.ServiceStatus"));
+		describeInstanceResponse.setRelationalData(relationalData);
 
 		List<Module> modules = new ArrayList<Module>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Modules.Length"); i++) {

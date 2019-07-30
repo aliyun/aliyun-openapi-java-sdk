@@ -24,7 +24,7 @@ import com.aliyuncs.market.Endpoint;
 public class CreateRateRequest extends RpcAcsRequest<CreateRateResponse> {
 	
 	public CreateRateRequest() {
-		super("Market", "2015-11-01", "CreateRate", "yunmarket");
+		super("Market", "2015-11-01", "CreateRate");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
