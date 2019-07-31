@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class UnsubscribeBillToOSSRequest extends RpcAcsRequest<UnsubscribeBillToOSSResponse> {
 	
 	public UnsubscribeBillToOSSRequest() {
-		super("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS");
+		super("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS", "bssopenapi");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

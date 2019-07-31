@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class DescribePricingModuleRequest extends RpcAcsRequest<DescribePricingModuleResponse> {
 	
 	public DescribePricingModuleRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribePricingModule");
+		super("BssOpenApi", "2017-12-14", "DescribePricingModule", "bssopenapi");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

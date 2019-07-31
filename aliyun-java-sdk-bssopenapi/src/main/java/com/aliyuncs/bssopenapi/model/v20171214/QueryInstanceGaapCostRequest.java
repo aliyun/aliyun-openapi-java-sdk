@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryInstanceGaapCostRequest extends RpcAcsRequest<QueryInstanceGaapCostResponse> {
 	
 	public QueryInstanceGaapCostRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryInstanceGaapCost");
+		super("BssOpenApi", "2017-12-14", "QueryInstanceGaapCost", "bssopenapi");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
