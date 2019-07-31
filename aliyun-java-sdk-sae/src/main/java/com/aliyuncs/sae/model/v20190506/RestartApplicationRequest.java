@@ -22,21 +22,47 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class RestartApplicationRequest extends RoaAcsRequest<RestartApplicationResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
-		setMethod(MethodType.GET);
+	public RestartApplicationRequest() {
+		super("sae", "2019-05-06", "RestartApplication", "serverless");
+		setUriPattern("/pop/v1/sam/app/restartApplication");
+		setMethod(MethodType.PUT);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	private Integer minReadyInstances;
+
+	private String appId;
+
+	public Integer getMinReadyInstances() {
+		return this.minReadyInstances;
+	}
+
+	public void setMinReadyInstances(Integer minReadyInstances) {
+		this.minReadyInstances = minReadyInstances;
+		if(minReadyInstances != null){
+			putQueryParameter("MinReadyInstances", minReadyInstances.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<RestartApplicationResponse> getResponseClass() {
+		return RestartApplicationResponse.class;
 	}
 
 }

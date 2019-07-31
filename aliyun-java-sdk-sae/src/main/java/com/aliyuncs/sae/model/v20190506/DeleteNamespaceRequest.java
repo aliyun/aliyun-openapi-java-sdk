@@ -22,21 +22,34 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class DeleteNamespaceRequest extends RoaAcsRequest<DeleteNamespaceResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
-		setMethod(MethodType.GET);
+	public DeleteNamespaceRequest() {
+		super("sae", "2019-05-06", "DeleteNamespace", "serverless");
+		setUriPattern("/pop/v1/paas/namespace");
+		setMethod(MethodType.DELETE);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	private String namespaceId;
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DeleteNamespaceResponse> getResponseClass() {
+		return DeleteNamespaceResponse.class;
 	}
 
 }

@@ -22,11 +22,11 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class DescribeEdasContainersRequest extends RoaAcsRequest<DescribeEdasContainersResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
+	public DescribeEdasContainersRequest() {
+		super("sae", "2019-05-06", "DescribeEdasContainers", "serverless");
+		setUriPattern("/pop/v1/sam/resource/edasContainers");
 		setMethod(MethodType.GET);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,8 +35,8 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DescribeEdasContainersResponse> getResponseClass() {
+		return DescribeEdasContainersResponse.class;
 	}
 
 }

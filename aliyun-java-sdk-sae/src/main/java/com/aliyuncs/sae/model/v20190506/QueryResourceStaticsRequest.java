@@ -22,11 +22,11 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class QueryResourceStaticsRequest extends RoaAcsRequest<QueryResourceStaticsResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
+	public QueryResourceStaticsRequest() {
+		super("sae", "2019-05-06", "QueryResourceStatics", "serverless");
+		setUriPattern("/pop/v1/paas/quota/queryResourceStatics");
 		setMethod(MethodType.GET);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +34,22 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	private String appId;
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<QueryResourceStaticsResponse> getResponseClass() {
+		return QueryResourceStaticsResponse.class;
 	}
 
 }

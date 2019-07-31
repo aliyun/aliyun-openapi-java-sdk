@@ -1,3 +1,6 @@
+2019-07-31 Version: 1.0.0
+- Initial release.
+
 2019-06-03 Version: 2.48.0-SNAPSHOT
 发布单接口规范化
 

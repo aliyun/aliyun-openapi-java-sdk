@@ -22,11 +22,11 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class DescribeNamespacesRequest extends RoaAcsRequest<DescribeNamespacesResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
+	public DescribeNamespacesRequest() {
+		super("sae", "2019-05-06", "DescribeNamespaces", "serverless");
+		setUriPattern("/pop/v1/paas/namespaces");
 		setMethod(MethodType.GET);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +34,35 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	private Integer pageSize;
+
+	private Integer currentPage;
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DescribeNamespacesResponse> getResponseClass() {
+		return DescribeNamespacesResponse.class;
 	}
 
 }

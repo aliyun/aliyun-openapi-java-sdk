@@ -22,11 +22,11 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class DescribeNamespaceListRequest extends RoaAcsRequest<DescribeNamespaceListResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
+	public DescribeNamespaceListRequest() {
+		super("sae", "2019-05-06", "DescribeNamespaceList", "serverless");
+		setUriPattern("/pop/v1/sam/namespace/describeNamespaceList");
 		setMethod(MethodType.GET);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +34,35 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	private Boolean hybridCloudExclude;
+
+	private Boolean containCustom;
+
+	public Boolean getHybridCloudExclude() {
+		return this.hybridCloudExclude;
+	}
+
+	public void setHybridCloudExclude(Boolean hybridCloudExclude) {
+		this.hybridCloudExclude = hybridCloudExclude;
+		if(hybridCloudExclude != null){
+			putQueryParameter("HybridCloudExclude", hybridCloudExclude.toString());
+		}
+	}
+
+	public Boolean getContainCustom() {
+		return this.containCustom;
+	}
+
+	public void setContainCustom(Boolean containCustom) {
+		this.containCustom = containCustom;
+		if(containCustom != null){
+			putQueryParameter("ContainCustom", containCustom.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DescribeNamespaceListResponse> getResponseClass() {
+		return DescribeNamespaceListResponse.class;
 	}
 
 }

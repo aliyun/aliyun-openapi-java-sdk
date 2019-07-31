@@ -22,21 +22,34 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class AbortChangeOrderRequest extends RoaAcsRequest<AbortChangeOrderResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
-		setMethod(MethodType.GET);
+	public AbortChangeOrderRequest() {
+		super("sae", "2019-05-06", "AbortChangeOrder", "serverless");
+		setUriPattern("/pop/v1/sam/changeorder/AbortChangeOrder");
+		setMethod(MethodType.PUT);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	private String changeOrderId;
+
+	public String getChangeOrderId() {
+		return this.changeOrderId;
+	}
+
+	public void setChangeOrderId(String changeOrderId) {
+		this.changeOrderId = changeOrderId;
+		if(changeOrderId != null){
+			putQueryParameter("ChangeOrderId", changeOrderId);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<AbortChangeOrderResponse> getResponseClass() {
+		return AbortChangeOrderResponse.class;
 	}
 
 }

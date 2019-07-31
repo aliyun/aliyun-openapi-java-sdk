@@ -22,21 +22,60 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
-		setMethod(MethodType.GET);
+	public BindSlbRequest() {
+		super("sae", "2019-05-06", "BindSlb", "serverless");
+		setUriPattern("/pop/v1/sam/app/slb");
+		setMethod(MethodType.POST);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	private String intranet;
+
+	private String appId;
+
+	private String internet;
+
+	public String getIntranet() {
+		return this.intranet;
+	}
+
+	public void setIntranet(String intranet) {
+		this.intranet = intranet;
+		if(intranet != null){
+			putQueryParameter("Intranet", intranet);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getInternet() {
+		return this.internet;
+	}
+
+	public void setInternet(String internet) {
+		this.internet = internet;
+		if(internet != null){
+			putQueryParameter("Internet", internet);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<BindSlbResponse> getResponseClass() {
+		return BindSlbResponse.class;
 	}
 
 }

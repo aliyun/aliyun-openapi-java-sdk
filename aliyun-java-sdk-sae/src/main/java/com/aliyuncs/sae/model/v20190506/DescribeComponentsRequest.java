@@ -22,11 +22,11 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class DescribeComponentsRequest extends RoaAcsRequest<DescribeComponentsResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
+	public DescribeComponentsRequest() {
+		super("sae", "2019-05-06", "DescribeComponents", "serverless");
+		setUriPattern("/pop/v1/sam/resource/components");
 		setMethod(MethodType.GET);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +34,35 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	private String appId;
+
+	private String type;
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DescribeComponentsResponse> getResponseClass() {
+		return DescribeComponentsResponse.class;
 	}
 
 }

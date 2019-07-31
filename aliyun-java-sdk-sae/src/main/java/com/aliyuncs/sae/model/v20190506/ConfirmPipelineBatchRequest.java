@@ -22,11 +22,11 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class ConfirmPipelineBatchRequest extends RoaAcsRequest<ConfirmPipelineBatchResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
+	public ConfirmPipelineBatchRequest() {
+		super("sae", "2019-05-06", "ConfirmPipelineBatch", "serverless");
+		setUriPattern("/pop/v1/sam/changeorder/ConfirmPipelineBatch");
 		setMethod(MethodType.GET);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +34,35 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	private Boolean confirm;
+
+	private String pipelineId;
+
+	public Boolean getConfirm() {
+		return this.confirm;
+	}
+
+	public void setConfirm(Boolean confirm) {
+		this.confirm = confirm;
+		if(confirm != null){
+			putQueryParameter("Confirm", confirm.toString());
+		}
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+		if(pipelineId != null){
+			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<ConfirmPipelineBatchResponse> getResponseClass() {
+		return ConfirmPipelineBatchResponse.class;
 	}
 
 }

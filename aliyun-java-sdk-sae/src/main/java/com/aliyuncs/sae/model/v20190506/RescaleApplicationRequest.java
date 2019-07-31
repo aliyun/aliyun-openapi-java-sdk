@@ -22,21 +22,47 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class RescaleApplicationRequest extends RoaAcsRequest<RescaleApplicationResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
-		setMethod(MethodType.GET);
+	public RescaleApplicationRequest() {
+		super("sae", "2019-05-06", "RescaleApplication", "serverless");
+		setUriPattern("/pop/v1/sam/app/rescaleApplication");
+		setMethod(MethodType.PUT);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	private Integer replicas;
+
+	private String appId;
+
+	public Integer getReplicas() {
+		return this.replicas;
+	}
+
+	public void setReplicas(Integer replicas) {
+		this.replicas = replicas;
+		if(replicas != null){
+			putQueryParameter("Replicas", replicas.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<RescaleApplicationResponse> getResponseClass() {
+		return RescaleApplicationResponse.class;
 	}
 
 }

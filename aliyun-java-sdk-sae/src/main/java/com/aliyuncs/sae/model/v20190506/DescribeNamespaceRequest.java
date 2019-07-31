@@ -22,11 +22,11 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
+public class DescribeNamespaceRequest extends RoaAcsRequest<DescribeNamespaceResponse> {
 	
-	public DescribeRegionsRequest() {
-		super("sae", "2019-05-06", "DescribeRegions", "serverless");
-		setUriPattern("/pop/v1/paas/regionConfig");
+	public DescribeNamespaceRequest() {
+		super("sae", "2019-05-06", "DescribeNamespace", "serverless");
+		setUriPattern("/pop/v1/paas/namespace");
 		setMethod(MethodType.GET);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,9 +34,22 @@ public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	private String namespaceId;
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<DescribeNamespaceResponse> getResponseClass() {
+		return DescribeNamespaceResponse.class;
 	}
 
 }

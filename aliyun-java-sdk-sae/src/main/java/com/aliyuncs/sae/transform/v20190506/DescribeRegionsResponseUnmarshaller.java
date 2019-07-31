@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRegionsResponseUnmarshaller {
 
-	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext context) {
+	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext _ctx) {
 		
-		describeRegionsResponse.setRequestId(context.stringValue("DescribeRegionsResponse.RequestId"));
-		describeRegionsResponse.setCode(context.integerValue("DescribeRegionsResponse.Code"));
-		describeRegionsResponse.setMessage(context.stringValue("DescribeRegionsResponse.Message"));
+		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.RequestId"));
+		describeRegionsResponse.setCode(_ctx.integerValue("DescribeRegionsResponse.Code"));
+		describeRegionsResponse.setMessage(_ctx.stringValue("DescribeRegionsResponse.Message"));
 
 		List<Region> regions = new ArrayList<Region>();
-		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setRegionId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
-			region.setRegionEndpoint(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
-			region.setLocalName(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
+			region.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
+			region.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
+			region.setLocalName(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
 
 			regions.add(region);
 		}
