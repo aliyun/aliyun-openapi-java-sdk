@@ -26,11 +26,26 @@ public class QueryOrderIdByPayIdRequest extends RpcAcsRequest<QueryOrderIdByPayI
 		super("linkedmall", "2018-01-16", "QueryOrderIdByPayId", "linkedmall");
 	}
 
+	private String thirdPartyUserId;
+
 	private String bizUid;
 
 	private String paymentId;
 
 	private String bizId;
+
+	private Boolean useAnonymousTbAccount;
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
 
 	public String getBizUid() {
 		return this.bizUid;
@@ -62,6 +77,17 @@ public class QueryOrderIdByPayIdRequest extends RpcAcsRequest<QueryOrderIdByPayI
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

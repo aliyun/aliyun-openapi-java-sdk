@@ -20,32 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryLogisticsRequest extends RpcAcsRequest<QueryLogisticsResponse> {
+public class RegistAnonymousTbAccountRequest extends RpcAcsRequest<RegistAnonymousTbAccountResponse> {
 	
-	public QueryLogisticsRequest() {
-		super("linkedmall", "2018-01-16", "QueryLogistics", "linkedmall");
+	public RegistAnonymousTbAccountRequest() {
+		super("linkedmall", "2018-01-16", "RegistAnonymousTbAccount", "linkedmall");
 	}
-
-	private Long lmOrderId;
 
 	private String thirdPartyUserId;
 
-	private String bizUid;
-
 	private String bizId;
-
-	private Boolean useAnonymousTbAccount;
-
-	public Long getLmOrderId() {
-		return this.lmOrderId;
-	}
-
-	public void setLmOrderId(Long lmOrderId) {
-		this.lmOrderId = lmOrderId;
-		if(lmOrderId != null){
-			putQueryParameter("LmOrderId", lmOrderId.toString());
-		}
-	}
 
 	public String getThirdPartyUserId() {
 		return this.thirdPartyUserId;
@@ -55,17 +38,6 @@ public class QueryLogisticsRequest extends RpcAcsRequest<QueryLogisticsResponse>
 		this.thirdPartyUserId = thirdPartyUserId;
 		if(thirdPartyUserId != null){
 			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
-		}
-	}
-
-	public String getBizUid() {
-		return this.bizUid;
-	}
-
-	public void setBizUid(String bizUid) {
-		this.bizUid = bizUid;
-		if(bizUid != null){
-			putQueryParameter("BizUid", bizUid);
 		}
 	}
 
@@ -80,20 +52,9 @@ public class QueryLogisticsRequest extends RpcAcsRequest<QueryLogisticsResponse>
 		}
 	}
 
-	public Boolean getUseAnonymousTbAccount() {
-		return this.useAnonymousTbAccount;
-	}
-
-	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
-		this.useAnonymousTbAccount = useAnonymousTbAccount;
-		if(useAnonymousTbAccount != null){
-			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
-		}
-	}
-
 	@Override
-	public Class<QueryLogisticsResponse> getResponseClass() {
-		return QueryLogisticsResponse.class;
+	public Class<RegistAnonymousTbAccountResponse> getResponseClass() {
+		return RegistAnonymousTbAccountResponse.class;
 	}
 
 }

@@ -28,7 +28,11 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 
 	private String lmOrderId;
 
+	private String thirdPartyUserId;
+
 	private String bizId;
+
+	private Boolean useAnonymousTbAccount;
 
 	private String channelUserId;
 
@@ -43,6 +47,17 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		}
 	}
 
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
+
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -51,6 +66,17 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

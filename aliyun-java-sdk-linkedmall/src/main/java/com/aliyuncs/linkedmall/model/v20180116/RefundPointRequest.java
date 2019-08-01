@@ -32,7 +32,11 @@ public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
 
 	private String lmOrderId;
 
+	private String thirdPartyUserId;
+
 	private String bizId;
+
+	private Boolean useAnonymousTbAccount;
 
 	public String getReason() {
 		return this.reason;
@@ -67,6 +71,17 @@ public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
 		}
 	}
 
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
+
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -75,6 +90,17 @@ public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

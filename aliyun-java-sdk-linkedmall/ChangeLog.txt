@@ -1,3 +1,6 @@
+2019-08-01 Version: 2.5.0
+- Support anonymous account.
+
 2019-07-30 Version: 2.4.0
 - Generated 2018-01-16 for `linkedmall`.
 

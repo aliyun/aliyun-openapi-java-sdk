@@ -28,9 +28,13 @@ public class QueryRefundApplicationDetailRequest extends RpcAcsRequest<QueryRefu
 
 	private String subLmOrderId;
 
+	private String thirdPartyUserId;
+
 	private String bizUid;
 
 	private String bizId;
+
+	private Boolean useAnonymousTbAccount;
 
 	public String getSubLmOrderId() {
 		return this.subLmOrderId;
@@ -40,6 +44,17 @@ public class QueryRefundApplicationDetailRequest extends RpcAcsRequest<QueryRefu
 		this.subLmOrderId = subLmOrderId;
 		if(subLmOrderId != null){
 			putQueryParameter("SubLmOrderId", subLmOrderId);
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
 		}
 	}
 
@@ -62,6 +77,17 @@ public class QueryRefundApplicationDetailRequest extends RpcAcsRequest<QueryRefu
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

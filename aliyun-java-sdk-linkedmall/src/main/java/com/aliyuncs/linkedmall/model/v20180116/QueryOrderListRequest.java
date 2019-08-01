@@ -26,6 +26,8 @@ public class QueryOrderListRequest extends RpcAcsRequest<QueryOrderListResponse>
 		super("linkedmall", "2018-01-16", "QueryOrderList", "linkedmall");
 	}
 
+	private String thirdPartyUserId;
+
 	private String bizUid;
 
 	private String filterOption;
@@ -34,7 +36,20 @@ public class QueryOrderListRequest extends RpcAcsRequest<QueryOrderListResponse>
 
 	private Long pageSize;
 
+	private Boolean useAnonymousTbAccount;
+
 	private Long pageNumber;
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
 
 	public String getBizUid() {
 		return this.bizUid;
@@ -77,6 +92,17 @@ public class QueryOrderListRequest extends RpcAcsRequest<QueryOrderListResponse>
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

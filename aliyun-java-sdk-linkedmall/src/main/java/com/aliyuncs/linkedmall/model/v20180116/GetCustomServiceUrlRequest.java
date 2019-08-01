@@ -34,9 +34,13 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 
 	private String cuid;
 
+	private String thirdPartyUserId;
+
 	private String bizUid;
 
 	private String bizId;
+
+	private Boolean useAnonymousTbAccount;
 
 	public String getNick() {
 		return this.nick;
@@ -71,6 +75,17 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 		}
 	}
 
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
+
 	public String getBizUid() {
 		return this.bizUid;
 	}
@@ -90,6 +105,17 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

@@ -30,9 +30,13 @@ public class ConfirmDisburseRequest extends RpcAcsRequest<ConfirmDisburseRespons
 
 	private String lmOrderId;
 
+	private String thirdPartyUserId;
+
 	private String bizUid;
 
 	private String bizId;
+
+	private Boolean useAnonymousTbAccount;
 
 	public String getLmOrderId() {
 		return this.lmOrderId;
@@ -42,6 +46,17 @@ public class ConfirmDisburseRequest extends RpcAcsRequest<ConfirmDisburseRespons
 		this.lmOrderId = lmOrderId;
 		if(lmOrderId != null){
 			putQueryParameter("LmOrderId", lmOrderId);
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
 		}
 	}
 
@@ -64,6 +79,17 @@ public class ConfirmDisburseRequest extends RpcAcsRequest<ConfirmDisburseRespons
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

@@ -32,6 +32,8 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 
 	private String subLmOrderId;
 
+	private String thirdPartyUserId;
+
 	private String bizUid;
 
 	private Long disputeId;
@@ -39,6 +41,8 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 	private String bizId;
 
 	private String logisticsNo;
+
+	private Boolean useAnonymousTbAccount;
 
 	public String getCpCode() {
 		return this.cpCode;
@@ -59,6 +63,17 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 		this.subLmOrderId = subLmOrderId;
 		if(subLmOrderId != null){
 			putQueryParameter("SubLmOrderId", subLmOrderId);
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
 		}
 	}
 
@@ -103,6 +118,17 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 		this.logisticsNo = logisticsNo;
 		if(logisticsNo != null){
 			putQueryParameter("LogisticsNo", logisticsNo);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

@@ -33,6 +33,8 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 
 	private Long totalAmount;
 
+	private String thirdPartyUserId;
+
 	private String bizUid;
 
 	private String extJson;
@@ -40,6 +42,8 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 	private String bizId;
 
 	private String outTradeId;
+
+	private Boolean useAnonymousTbAccount;
 
 	private Long orderExpireTime;
 
@@ -77,6 +81,17 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		this.totalAmount = totalAmount;
 		if(totalAmount != null){
 			putQueryParameter("TotalAmount", totalAmount.toString());
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
 		}
 	}
 
@@ -121,6 +136,17 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		this.outTradeId = outTradeId;
 		if(outTradeId != null){
 			putQueryParameter("OutTradeId", outTradeId);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 
