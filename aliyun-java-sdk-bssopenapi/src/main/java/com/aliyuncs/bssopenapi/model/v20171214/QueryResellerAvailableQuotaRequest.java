@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryResellerAvailableQuotaRequest extends RpcAcsRequest<QueryResellerAvailableQuotaResponse> {
 	
 	public QueryResellerAvailableQuotaRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryResellerAvailableQuota", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryResellerAvailableQuota");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

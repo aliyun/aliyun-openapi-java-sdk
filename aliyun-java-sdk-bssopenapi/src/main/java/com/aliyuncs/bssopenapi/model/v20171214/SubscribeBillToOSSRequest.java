@@ -24,16 +24,31 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class SubscribeBillToOSSRequest extends RpcAcsRequest<SubscribeBillToOSSResponse> {
 	
 	public SubscribeBillToOSSRequest() {
-		super("BssOpenApi", "2017-12-14", "SubscribeBillToOSS", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "SubscribeBillToOSS");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	private Long bucketOwnerId;
+
 	private String subscribeType;
 
 	private String subscribeBucket;
+
+	private String multAccountRelSubscribe;
+
+	public Long getBucketOwnerId() {
+		return this.bucketOwnerId;
+	}
+
+	public void setBucketOwnerId(Long bucketOwnerId) {
+		this.bucketOwnerId = bucketOwnerId;
+		if(bucketOwnerId != null){
+			putQueryParameter("BucketOwnerId", bucketOwnerId.toString());
+		}
+	}
 
 	public String getSubscribeType() {
 		return this.subscribeType;
@@ -54,6 +69,17 @@ public class SubscribeBillToOSSRequest extends RpcAcsRequest<SubscribeBillToOSSR
 		this.subscribeBucket = subscribeBucket;
 		if(subscribeBucket != null){
 			putQueryParameter("SubscribeBucket", subscribeBucket);
+		}
+	}
+
+	public String getMultAccountRelSubscribe() {
+		return this.multAccountRelSubscribe;
+	}
+
+	public void setMultAccountRelSubscribe(String multAccountRelSubscribe) {
+		this.multAccountRelSubscribe = multAccountRelSubscribe;
+		if(multAccountRelSubscribe != null){
+			putQueryParameter("MultAccountRelSubscribe", multAccountRelSubscribe);
 		}
 	}
 

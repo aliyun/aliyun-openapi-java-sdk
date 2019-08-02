@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class SetResellerUserAlarmThresholdRequest extends RpcAcsRequest<SetResellerUserAlarmThresholdResponse> {
 	
 	public SetResellerUserAlarmThresholdRequest() {
-		super("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

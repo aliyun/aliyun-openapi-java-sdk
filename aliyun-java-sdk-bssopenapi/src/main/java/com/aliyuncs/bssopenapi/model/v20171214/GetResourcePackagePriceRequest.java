@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePackagePriceResponse> {
 	
 	public GetResourcePackagePriceRequest() {
-		super("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "GetResourcePackagePrice");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

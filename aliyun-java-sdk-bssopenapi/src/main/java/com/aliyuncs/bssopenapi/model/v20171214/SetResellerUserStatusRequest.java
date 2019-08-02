@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class SetResellerUserStatusRequest extends RpcAcsRequest<SetResellerUserStatusResponse> {
 	
 	public SetResellerUserStatusRequest() {
-		super("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "SetResellerUserStatus");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

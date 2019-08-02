@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryProductListRequest extends RpcAcsRequest<QueryProductListResponse> {
 	
 	public QueryProductListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryProductList", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryProductList");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

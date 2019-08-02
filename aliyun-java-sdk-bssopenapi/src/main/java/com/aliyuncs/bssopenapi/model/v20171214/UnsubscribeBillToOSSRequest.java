@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class UnsubscribeBillToOSSRequest extends RpcAcsRequest<UnsubscribeBillToOSSResponse> {
 	
 	public UnsubscribeBillToOSSRequest() {
-		super("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -32,6 +32,8 @@ public class UnsubscribeBillToOSSRequest extends RpcAcsRequest<UnsubscribeBillTo
 	}
 
 	private String subscribeType;
+
+	private String multAccountRelSubscribe;
 
 	public String getSubscribeType() {
 		return this.subscribeType;
@@ -41,6 +43,17 @@ public class UnsubscribeBillToOSSRequest extends RpcAcsRequest<UnsubscribeBillTo
 		this.subscribeType = subscribeType;
 		if(subscribeType != null){
 			putQueryParameter("SubscribeType", subscribeType);
+		}
+	}
+
+	public String getMultAccountRelSubscribe() {
+		return this.multAccountRelSubscribe;
+	}
+
+	public void setMultAccountRelSubscribe(String multAccountRelSubscribe) {
+		this.multAccountRelSubscribe = multAccountRelSubscribe;
+		if(multAccountRelSubscribe != null){
+			putQueryParameter("MultAccountRelSubscribe", multAccountRelSubscribe);
 		}
 	}
 

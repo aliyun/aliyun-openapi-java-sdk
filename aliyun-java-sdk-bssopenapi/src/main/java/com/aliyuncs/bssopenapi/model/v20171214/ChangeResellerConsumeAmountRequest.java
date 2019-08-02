@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class ChangeResellerConsumeAmountRequest extends RpcAcsRequest<ChangeResellerConsumeAmountResponse> {
 	
 	public ChangeResellerConsumeAmountRequest() {
-		super("BssOpenApi", "2017-12-14", "ChangeResellerConsumeAmount", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "ChangeResellerConsumeAmount");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
