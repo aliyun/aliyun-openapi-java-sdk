@@ -24,23 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMasterSlaveServerGroupAttributeResponseUnmarshaller {
 
-	public static DescribeMasterSlaveServerGroupAttributeResponse unmarshall(DescribeMasterSlaveServerGroupAttributeResponse describeMasterSlaveServerGroupAttributeResponse, UnmarshallerContext context) {
+	public static DescribeMasterSlaveServerGroupAttributeResponse unmarshall(DescribeMasterSlaveServerGroupAttributeResponse describeMasterSlaveServerGroupAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeMasterSlaveServerGroupAttributeResponse.setRequestId(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.RequestId"));
-		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupId(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupId"));
-		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupName(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupName"));
+		describeMasterSlaveServerGroupAttributeResponse.setRequestId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.RequestId"));
+		describeMasterSlaveServerGroupAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.LoadBalancerId"));
+		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupId"));
+		describeMasterSlaveServerGroupAttributeResponse.setMasterSlaveServerGroupName(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupName"));
 
 		List<MasterSlaveBackendServer> masterSlaveBackendServers = new ArrayList<MasterSlaveBackendServer>();
-		for (int i = 0; i < context.lengthValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers.Length"); i++) {
 			MasterSlaveBackendServer masterSlaveBackendServer = new MasterSlaveBackendServer();
-			masterSlaveBackendServer.setServerId(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerId"));
-			masterSlaveBackendServer.setPort(context.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Port"));
-			masterSlaveBackendServer.setWeight(context.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Weight"));
-			masterSlaveBackendServer.setServerType(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerType"));
-			masterSlaveBackendServer.setType(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Type"));
-			masterSlaveBackendServer.setServerIp(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
-			masterSlaveBackendServer.setVpcId(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].VpcId"));
-			masterSlaveBackendServer.setDescription(context.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Description"));
+			masterSlaveBackendServer.setServerId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerId"));
+			masterSlaveBackendServer.setPort(_ctx.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Port"));
+			masterSlaveBackendServer.setWeight(_ctx.integerValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Weight"));
+			masterSlaveBackendServer.setServerType(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerType"));
+			masterSlaveBackendServer.setType(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Type"));
+			masterSlaveBackendServer.setServerIp(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
+			masterSlaveBackendServer.setVpcId(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].VpcId"));
+			masterSlaveBackendServer.setDescription(_ctx.stringValue("DescribeMasterSlaveServerGroupAttributeResponse.MasterSlaveBackendServers["+ i +"].Description"));
 
 			masterSlaveBackendServers.add(masterSlaveBackendServer);
 		}

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyLoadBalancerInternetSpecResponseUnmarshaller {
 
-	public static ModifyLoadBalancerInternetSpecResponse unmarshall(ModifyLoadBalancerInternetSpecResponse modifyLoadBalancerInternetSpecResponse, UnmarshallerContext context) {
+	public static ModifyLoadBalancerInternetSpecResponse unmarshall(ModifyLoadBalancerInternetSpecResponse modifyLoadBalancerInternetSpecResponse, UnmarshallerContext _ctx) {
 		
-		modifyLoadBalancerInternetSpecResponse.setRequestId(context.stringValue("ModifyLoadBalancerInternetSpecResponse.RequestId"));
-		modifyLoadBalancerInternetSpecResponse.setOrderId(context.longValue("ModifyLoadBalancerInternetSpecResponse.OrderId"));
+		modifyLoadBalancerInternetSpecResponse.setRequestId(_ctx.stringValue("ModifyLoadBalancerInternetSpecResponse.RequestId"));
+		modifyLoadBalancerInternetSpecResponse.setOrderId(_ctx.longValue("ModifyLoadBalancerInternetSpecResponse.OrderId"));
 	 
 	 	return modifyLoadBalancerInternetSpecResponse;
 	}

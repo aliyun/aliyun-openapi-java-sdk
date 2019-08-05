@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetListenerAccessControlStatusResponseUnmarshaller {
 
-	public static SetListenerAccessControlStatusResponse unmarshall(SetListenerAccessControlStatusResponse setListenerAccessControlStatusResponse, UnmarshallerContext context) {
+	public static SetListenerAccessControlStatusResponse unmarshall(SetListenerAccessControlStatusResponse setListenerAccessControlStatusResponse, UnmarshallerContext _ctx) {
 		
-		setListenerAccessControlStatusResponse.setRequestId(context.stringValue("SetListenerAccessControlStatusResponse.RequestId"));
+		setListenerAccessControlStatusResponse.setRequestId(_ctx.stringValue("SetListenerAccessControlStatusResponse.RequestId"));
 	 
 	 	return setListenerAccessControlStatusResponse;
 	}

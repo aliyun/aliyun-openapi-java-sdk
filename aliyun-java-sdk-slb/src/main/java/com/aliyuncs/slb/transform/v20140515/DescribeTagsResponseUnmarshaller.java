@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTagsResponseUnmarshaller {
 
-	public static DescribeTagsResponse unmarshall(DescribeTagsResponse describeTagsResponse, UnmarshallerContext context) {
+	public static DescribeTagsResponse unmarshall(DescribeTagsResponse describeTagsResponse, UnmarshallerContext _ctx) {
 		
-		describeTagsResponse.setRequestId(context.stringValue("DescribeTagsResponse.RequestId"));
-		describeTagsResponse.setPageSize(context.integerValue("DescribeTagsResponse.PageSize"));
-		describeTagsResponse.setPageNumber(context.integerValue("DescribeTagsResponse.PageNumber"));
-		describeTagsResponse.setTotalCount(context.integerValue("DescribeTagsResponse.TotalCount"));
+		describeTagsResponse.setRequestId(_ctx.stringValue("DescribeTagsResponse.RequestId"));
+		describeTagsResponse.setPageSize(_ctx.integerValue("DescribeTagsResponse.PageSize"));
+		describeTagsResponse.setPageNumber(_ctx.integerValue("DescribeTagsResponse.PageNumber"));
+		describeTagsResponse.setTotalCount(_ctx.integerValue("DescribeTagsResponse.TotalCount"));
 
 		List<TagSet> tagSets = new ArrayList<TagSet>();
-		for (int i = 0; i < context.lengthValue("DescribeTagsResponse.TagSets.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTagsResponse.TagSets.Length"); i++) {
 			TagSet tagSet = new TagSet();
-			tagSet.setTagKey(context.stringValue("DescribeTagsResponse.TagSets["+ i +"].TagKey"));
-			tagSet.setTagValue(context.stringValue("DescribeTagsResponse.TagSets["+ i +"].TagValue"));
-			tagSet.setInstanceCount(context.integerValue("DescribeTagsResponse.TagSets["+ i +"].InstanceCount"));
+			tagSet.setTagKey(_ctx.stringValue("DescribeTagsResponse.TagSets["+ i +"].TagKey"));
+			tagSet.setTagValue(_ctx.stringValue("DescribeTagsResponse.TagSets["+ i +"].TagValue"));
+			tagSet.setInstanceCount(_ctx.integerValue("DescribeTagsResponse.TagSets["+ i +"].InstanceCount"));
 
 			tagSets.add(tagSet);
 		}

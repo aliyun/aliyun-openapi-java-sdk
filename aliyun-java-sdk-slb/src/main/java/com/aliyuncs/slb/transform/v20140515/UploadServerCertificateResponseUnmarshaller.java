@@ -23,27 +23,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadServerCertificateResponseUnmarshaller {
 
-	public static UploadServerCertificateResponse unmarshall(UploadServerCertificateResponse uploadServerCertificateResponse, UnmarshallerContext context) {
+	public static UploadServerCertificateResponse unmarshall(UploadServerCertificateResponse uploadServerCertificateResponse, UnmarshallerContext _ctx) {
 		
-		uploadServerCertificateResponse.setRequestId(context.stringValue("UploadServerCertificateResponse.RequestId"));
-		uploadServerCertificateResponse.setServerCertificateId(context.stringValue("UploadServerCertificateResponse.ServerCertificateId"));
-		uploadServerCertificateResponse.setFingerprint(context.stringValue("UploadServerCertificateResponse.Fingerprint"));
-		uploadServerCertificateResponse.setServerCertificateName(context.stringValue("UploadServerCertificateResponse.ServerCertificateName"));
-		uploadServerCertificateResponse.setRegionId(context.stringValue("UploadServerCertificateResponse.RegionId"));
-		uploadServerCertificateResponse.setRegionIdAlias(context.stringValue("UploadServerCertificateResponse.RegionIdAlias"));
-		uploadServerCertificateResponse.setAliCloudCertificateId(context.stringValue("UploadServerCertificateResponse.AliCloudCertificateId"));
-		uploadServerCertificateResponse.setAliCloudCertificateName(context.stringValue("UploadServerCertificateResponse.AliCloudCertificateName"));
-		uploadServerCertificateResponse.setIsAliCloudCertificate(context.integerValue("UploadServerCertificateResponse.IsAliCloudCertificate"));
-		uploadServerCertificateResponse.setResourceGroupId(context.stringValue("UploadServerCertificateResponse.ResourceGroupId"));
-		uploadServerCertificateResponse.setCreateTime(context.stringValue("UploadServerCertificateResponse.CreateTime"));
-		uploadServerCertificateResponse.setCreateTimeStamp(context.longValue("UploadServerCertificateResponse.CreateTimeStamp"));
-		uploadServerCertificateResponse.setExpireTime(context.stringValue("UploadServerCertificateResponse.ExpireTime"));
-		uploadServerCertificateResponse.setExpireTimeStamp(context.longValue("UploadServerCertificateResponse.ExpireTimeStamp"));
-		uploadServerCertificateResponse.setCommonName(context.stringValue("UploadServerCertificateResponse.CommonName"));
+		uploadServerCertificateResponse.setRequestId(_ctx.stringValue("UploadServerCertificateResponse.RequestId"));
+		uploadServerCertificateResponse.setServerCertificateId(_ctx.stringValue("UploadServerCertificateResponse.ServerCertificateId"));
+		uploadServerCertificateResponse.setFingerprint(_ctx.stringValue("UploadServerCertificateResponse.Fingerprint"));
+		uploadServerCertificateResponse.setServerCertificateName(_ctx.stringValue("UploadServerCertificateResponse.ServerCertificateName"));
+		uploadServerCertificateResponse.setRegionId(_ctx.stringValue("UploadServerCertificateResponse.RegionId"));
+		uploadServerCertificateResponse.setRegionIdAlias(_ctx.stringValue("UploadServerCertificateResponse.RegionIdAlias"));
+		uploadServerCertificateResponse.setAliCloudCertificateId(_ctx.stringValue("UploadServerCertificateResponse.AliCloudCertificateId"));
+		uploadServerCertificateResponse.setAliCloudCertificateName(_ctx.stringValue("UploadServerCertificateResponse.AliCloudCertificateName"));
+		uploadServerCertificateResponse.setIsAliCloudCertificate(_ctx.integerValue("UploadServerCertificateResponse.IsAliCloudCertificate"));
+		uploadServerCertificateResponse.setResourceGroupId(_ctx.stringValue("UploadServerCertificateResponse.ResourceGroupId"));
+		uploadServerCertificateResponse.setCreateTime(_ctx.stringValue("UploadServerCertificateResponse.CreateTime"));
+		uploadServerCertificateResponse.setCreateTimeStamp(_ctx.longValue("UploadServerCertificateResponse.CreateTimeStamp"));
+		uploadServerCertificateResponse.setExpireTime(_ctx.stringValue("UploadServerCertificateResponse.ExpireTime"));
+		uploadServerCertificateResponse.setExpireTimeStamp(_ctx.longValue("UploadServerCertificateResponse.ExpireTimeStamp"));
+		uploadServerCertificateResponse.setCommonName(_ctx.stringValue("UploadServerCertificateResponse.CommonName"));
 
 		List<String> subjectAlternativeNames = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UploadServerCertificateResponse.SubjectAlternativeNames.Length"); i++) {
-			subjectAlternativeNames.add(context.stringValue("UploadServerCertificateResponse.SubjectAlternativeNames["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UploadServerCertificateResponse.SubjectAlternativeNames.Length"); i++) {
+			subjectAlternativeNames.add(_ctx.stringValue("UploadServerCertificateResponse.SubjectAlternativeNames["+ i +"]"));
 		}
 		uploadServerCertificateResponse.setSubjectAlternativeNames(subjectAlternativeNames);
 	 

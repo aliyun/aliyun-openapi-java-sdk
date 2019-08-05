@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyLoadBalancerPayTypeResponseUnmarshaller {
 
-	public static ModifyLoadBalancerPayTypeResponse unmarshall(ModifyLoadBalancerPayTypeResponse modifyLoadBalancerPayTypeResponse, UnmarshallerContext context) {
+	public static ModifyLoadBalancerPayTypeResponse unmarshall(ModifyLoadBalancerPayTypeResponse modifyLoadBalancerPayTypeResponse, UnmarshallerContext _ctx) {
 		
-		modifyLoadBalancerPayTypeResponse.setRequestId(context.stringValue("ModifyLoadBalancerPayTypeResponse.RequestId"));
-		modifyLoadBalancerPayTypeResponse.setOrderId(context.longValue("ModifyLoadBalancerPayTypeResponse.OrderId"));
+		modifyLoadBalancerPayTypeResponse.setRequestId(_ctx.stringValue("ModifyLoadBalancerPayTypeResponse.RequestId"));
+		modifyLoadBalancerPayTypeResponse.setOrderId(_ctx.longValue("ModifyLoadBalancerPayTypeResponse.OrderId"));
 	 
 	 	return modifyLoadBalancerPayTypeResponse;
 	}

@@ -20,18 +20,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UploadCACertificateResponseUnmarshaller {
 
-	public static UploadCACertificateResponse unmarshall(UploadCACertificateResponse uploadCACertificateResponse, UnmarshallerContext context) {
+	public static UploadCACertificateResponse unmarshall(UploadCACertificateResponse uploadCACertificateResponse, UnmarshallerContext _ctx) {
 		
-		uploadCACertificateResponse.setRequestId(context.stringValue("UploadCACertificateResponse.RequestId"));
-		uploadCACertificateResponse.setCACertificateId(context.stringValue("UploadCACertificateResponse.CACertificateId"));
-		uploadCACertificateResponse.setCACertificateName(context.stringValue("UploadCACertificateResponse.CACertificateName"));
-		uploadCACertificateResponse.setFingerprint(context.stringValue("UploadCACertificateResponse.Fingerprint"));
-		uploadCACertificateResponse.setResourceGroupId(context.stringValue("UploadCACertificateResponse.ResourceGroupId"));
-		uploadCACertificateResponse.setCreateTime(context.stringValue("UploadCACertificateResponse.CreateTime"));
-		uploadCACertificateResponse.setCreateTimeStamp(context.longValue("UploadCACertificateResponse.CreateTimeStamp"));
-		uploadCACertificateResponse.setExpireTime(context.stringValue("UploadCACertificateResponse.ExpireTime"));
-		uploadCACertificateResponse.setExpireTimeStamp(context.longValue("UploadCACertificateResponse.ExpireTimeStamp"));
-		uploadCACertificateResponse.setCommonName(context.stringValue("UploadCACertificateResponse.CommonName"));
+		uploadCACertificateResponse.setRequestId(_ctx.stringValue("UploadCACertificateResponse.RequestId"));
+		uploadCACertificateResponse.setCACertificateId(_ctx.stringValue("UploadCACertificateResponse.CACertificateId"));
+		uploadCACertificateResponse.setCACertificateName(_ctx.stringValue("UploadCACertificateResponse.CACertificateName"));
+		uploadCACertificateResponse.setFingerprint(_ctx.stringValue("UploadCACertificateResponse.Fingerprint"));
+		uploadCACertificateResponse.setResourceGroupId(_ctx.stringValue("UploadCACertificateResponse.ResourceGroupId"));
+		uploadCACertificateResponse.setCreateTime(_ctx.stringValue("UploadCACertificateResponse.CreateTime"));
+		uploadCACertificateResponse.setCreateTimeStamp(_ctx.longValue("UploadCACertificateResponse.CreateTimeStamp"));
+		uploadCACertificateResponse.setExpireTime(_ctx.stringValue("UploadCACertificateResponse.ExpireTime"));
+		uploadCACertificateResponse.setExpireTimeStamp(_ctx.longValue("UploadCACertificateResponse.ExpireTimeStamp"));
+		uploadCACertificateResponse.setCommonName(_ctx.stringValue("UploadCACertificateResponse.CommonName"));
 	 
 	 	return uploadCACertificateResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteAccessControlListResponseUnmarshaller {
 
-	public static DeleteAccessControlListResponse unmarshall(DeleteAccessControlListResponse deleteAccessControlListResponse, UnmarshallerContext context) {
+	public static DeleteAccessControlListResponse unmarshall(DeleteAccessControlListResponse deleteAccessControlListResponse, UnmarshallerContext _ctx) {
 		
-		deleteAccessControlListResponse.setRequestId(context.stringValue("DeleteAccessControlListResponse.RequestId"));
+		deleteAccessControlListResponse.setRequestId(_ctx.stringValue("DeleteAccessControlListResponse.RequestId"));
 	 
 	 	return deleteAccessControlListResponse;
 	}

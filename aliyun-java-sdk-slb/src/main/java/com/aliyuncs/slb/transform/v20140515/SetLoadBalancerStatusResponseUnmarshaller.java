@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetLoadBalancerStatusResponseUnmarshaller {
 
-	public static SetLoadBalancerStatusResponse unmarshall(SetLoadBalancerStatusResponse setLoadBalancerStatusResponse, UnmarshallerContext context) {
+	public static SetLoadBalancerStatusResponse unmarshall(SetLoadBalancerStatusResponse setLoadBalancerStatusResponse, UnmarshallerContext _ctx) {
 		
-		setLoadBalancerStatusResponse.setRequestId(context.stringValue("SetLoadBalancerStatusResponse.RequestId"));
+		setLoadBalancerStatusResponse.setRequestId(_ctx.stringValue("SetLoadBalancerStatusResponse.RequestId"));
 	 
 	 	return setLoadBalancerStatusResponse;
 	}

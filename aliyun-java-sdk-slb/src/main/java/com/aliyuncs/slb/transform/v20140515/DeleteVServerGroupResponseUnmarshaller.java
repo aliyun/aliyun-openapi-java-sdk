@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteVServerGroupResponseUnmarshaller {
 
-	public static DeleteVServerGroupResponse unmarshall(DeleteVServerGroupResponse deleteVServerGroupResponse, UnmarshallerContext context) {
+	public static DeleteVServerGroupResponse unmarshall(DeleteVServerGroupResponse deleteVServerGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteVServerGroupResponse.setRequestId(context.stringValue("DeleteVServerGroupResponse.RequestId"));
+		deleteVServerGroupResponse.setRequestId(_ctx.stringValue("DeleteVServerGroupResponse.RequestId"));
 	 
 	 	return deleteVServerGroupResponse;
 	}

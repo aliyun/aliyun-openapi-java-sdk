@@ -27,6 +27,8 @@ public class DescribeMasterSlaveServerGroupAttributeResponse extends AcsResponse
 
 	private String requestId;
 
+	private String loadBalancerId;
+
 	private String masterSlaveServerGroupId;
 
 	private String masterSlaveServerGroupName;
@@ -39,6 +41,14 @@ public class DescribeMasterSlaveServerGroupAttributeResponse extends AcsResponse
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
 	}
 
 	public String getMasterSlaveServerGroupId() {

@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAvailableResourceResponseUnmarshaller {
 
-	public static DescribeAvailableResourceResponse unmarshall(DescribeAvailableResourceResponse describeAvailableResourceResponse, UnmarshallerContext context) {
+	public static DescribeAvailableResourceResponse unmarshall(DescribeAvailableResourceResponse describeAvailableResourceResponse, UnmarshallerContext _ctx) {
 		
-		describeAvailableResourceResponse.setRequestId(context.stringValue("DescribeAvailableResourceResponse.RequestId"));
+		describeAvailableResourceResponse.setRequestId(_ctx.stringValue("DescribeAvailableResourceResponse.RequestId"));
 
 		List<AvailableResource> availableResources = new ArrayList<AvailableResource>();
-		for (int i = 0; i < context.lengthValue("DescribeAvailableResourceResponse.AvailableResources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableResources.Length"); i++) {
 			AvailableResource availableResource = new AvailableResource();
-			availableResource.setMasterZoneId(context.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].MasterZoneId"));
-			availableResource.setSlaveZoneId(context.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SlaveZoneId"));
+			availableResource.setMasterZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].MasterZoneId"));
+			availableResource.setSlaveZoneId(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SlaveZoneId"));
 
 			List<SupportResource> supportResources = new ArrayList<SupportResource>();
-			for (int j = 0; j < context.lengthValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SupportResources.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SupportResources.Length"); j++) {
 				SupportResource supportResource = new SupportResource();
-				supportResource.setAddressType(context.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SupportResources["+ j +"].AddressType"));
-				supportResource.setAddressIPVersion(context.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SupportResources["+ j +"].AddressIPVersion"));
+				supportResource.setAddressType(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SupportResources["+ j +"].AddressType"));
+				supportResource.setAddressIPVersion(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableResources["+ i +"].SupportResources["+ j +"].AddressIPVersion"));
 
 				supportResources.add(supportResource);
 			}

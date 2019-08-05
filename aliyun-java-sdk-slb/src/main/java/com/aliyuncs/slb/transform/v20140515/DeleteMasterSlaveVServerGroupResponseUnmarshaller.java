@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMasterSlaveVServerGroupResponseUnmarshaller {
 
-	public static DeleteMasterSlaveVServerGroupResponse unmarshall(DeleteMasterSlaveVServerGroupResponse deleteMasterSlaveVServerGroupResponse, UnmarshallerContext context) {
+	public static DeleteMasterSlaveVServerGroupResponse unmarshall(DeleteMasterSlaveVServerGroupResponse deleteMasterSlaveVServerGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteMasterSlaveVServerGroupResponse.setRequestId(context.stringValue("DeleteMasterSlaveVServerGroupResponse.RequestId"));
+		deleteMasterSlaveVServerGroupResponse.setRequestId(_ctx.stringValue("DeleteMasterSlaveVServerGroupResponse.RequestId"));
 	 
 	 	return deleteMasterSlaveVServerGroupResponse;
 	}

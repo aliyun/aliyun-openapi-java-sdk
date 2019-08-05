@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddAccessControlListEntryResponseUnmarshaller {
 
-	public static AddAccessControlListEntryResponse unmarshall(AddAccessControlListEntryResponse addAccessControlListEntryResponse, UnmarshallerContext context) {
+	public static AddAccessControlListEntryResponse unmarshall(AddAccessControlListEntryResponse addAccessControlListEntryResponse, UnmarshallerContext _ctx) {
 		
-		addAccessControlListEntryResponse.setRequestId(context.stringValue("AddAccessControlListEntryResponse.RequestId"));
+		addAccessControlListEntryResponse.setRequestId(_ctx.stringValue("AddAccessControlListEntryResponse.RequestId"));
 	 
 	 	return addAccessControlListEntryResponse;
 	}

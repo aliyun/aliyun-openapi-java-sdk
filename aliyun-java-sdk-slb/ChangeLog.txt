@@ -1,3 +1,6 @@
+2019-08-05 Version: 3.2.11
+- Add response parameter LoadBalancerId for DescribeMasterSlaveServerGroupAttribute interface.
+
 2019-06-21 Version: 3.2.10
 - Support DeleteProtection api.
 

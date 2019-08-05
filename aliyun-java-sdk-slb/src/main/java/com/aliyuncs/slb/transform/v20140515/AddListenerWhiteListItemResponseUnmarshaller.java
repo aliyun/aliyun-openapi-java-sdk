@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddListenerWhiteListItemResponseUnmarshaller {
 
-	public static AddListenerWhiteListItemResponse unmarshall(AddListenerWhiteListItemResponse addListenerWhiteListItemResponse, UnmarshallerContext context) {
+	public static AddListenerWhiteListItemResponse unmarshall(AddListenerWhiteListItemResponse addListenerWhiteListItemResponse, UnmarshallerContext _ctx) {
 		
-		addListenerWhiteListItemResponse.setRequestId(context.stringValue("AddListenerWhiteListItemResponse.RequestId"));
+		addListenerWhiteListItemResponse.setRequestId(_ctx.stringValue("AddListenerWhiteListItemResponse.RequestId"));
 	 
 	 	return addListenerWhiteListItemResponse;
 	}

@@ -24,33 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRulesResponseUnmarshaller {
 
-	public static DescribeRulesResponse unmarshall(DescribeRulesResponse describeRulesResponse, UnmarshallerContext context) {
+	public static DescribeRulesResponse unmarshall(DescribeRulesResponse describeRulesResponse, UnmarshallerContext _ctx) {
 		
-		describeRulesResponse.setRequestId(context.stringValue("DescribeRulesResponse.RequestId"));
+		describeRulesResponse.setRequestId(_ctx.stringValue("DescribeRulesResponse.RequestId"));
 
 		List<Rule> rules = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("DescribeRulesResponse.Rules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRulesResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(context.stringValue("DescribeRulesResponse.Rules["+ i +"].RuleId"));
-			rule.setRuleName(context.stringValue("DescribeRulesResponse.Rules["+ i +"].RuleName"));
-			rule.setDomain(context.stringValue("DescribeRulesResponse.Rules["+ i +"].Domain"));
-			rule.setUrl(context.stringValue("DescribeRulesResponse.Rules["+ i +"].Url"));
-			rule.setVServerGroupId(context.stringValue("DescribeRulesResponse.Rules["+ i +"].VServerGroupId"));
-			rule.setListenerSync(context.stringValue("DescribeRulesResponse.Rules["+ i +"].ListenerSync"));
-			rule.setScheduler(context.stringValue("DescribeRulesResponse.Rules["+ i +"].Scheduler"));
-			rule.setStickySession(context.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySession"));
-			rule.setStickySessionType(context.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySessionType"));
-			rule.setCookieTimeout(context.integerValue("DescribeRulesResponse.Rules["+ i +"].CookieTimeout"));
-			rule.setCookie(context.stringValue("DescribeRulesResponse.Rules["+ i +"].Cookie"));
-			rule.setHealthCheck(context.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheck"));
-			rule.setHealthCheckDomain(context.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckDomain"));
-			rule.setHealthCheckURI(context.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckURI"));
-			rule.setHealthyThreshold(context.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthyThreshold"));
-			rule.setUnhealthyThreshold(context.integerValue("DescribeRulesResponse.Rules["+ i +"].UnhealthyThreshold"));
-			rule.setHealthCheckTimeout(context.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckTimeout"));
-			rule.setHealthCheckInterval(context.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckInterval"));
-			rule.setHealthCheckConnectPort(context.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckConnectPort"));
-			rule.setHealthCheckHttpCode(context.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckHttpCode"));
+			rule.setRuleId(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].RuleId"));
+			rule.setRuleName(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].RuleName"));
+			rule.setDomain(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Domain"));
+			rule.setUrl(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Url"));
+			rule.setVServerGroupId(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].VServerGroupId"));
+			rule.setListenerSync(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].ListenerSync"));
+			rule.setScheduler(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Scheduler"));
+			rule.setStickySession(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySession"));
+			rule.setStickySessionType(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].StickySessionType"));
+			rule.setCookieTimeout(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].CookieTimeout"));
+			rule.setCookie(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].Cookie"));
+			rule.setHealthCheck(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheck"));
+			rule.setHealthCheckDomain(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckDomain"));
+			rule.setHealthCheckURI(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckURI"));
+			rule.setHealthyThreshold(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthyThreshold"));
+			rule.setUnhealthyThreshold(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].UnhealthyThreshold"));
+			rule.setHealthCheckTimeout(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckTimeout"));
+			rule.setHealthCheckInterval(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckInterval"));
+			rule.setHealthCheckConnectPort(_ctx.integerValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckConnectPort"));
+			rule.setHealthCheckHttpCode(_ctx.stringValue("DescribeRulesResponse.Rules["+ i +"].HealthCheckHttpCode"));
 
 			rules.add(rule);
 		}

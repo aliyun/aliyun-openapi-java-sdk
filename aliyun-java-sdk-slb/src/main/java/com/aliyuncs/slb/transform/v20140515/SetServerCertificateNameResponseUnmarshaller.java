@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetServerCertificateNameResponseUnmarshaller {
 
-	public static SetServerCertificateNameResponse unmarshall(SetServerCertificateNameResponse setServerCertificateNameResponse, UnmarshallerContext context) {
+	public static SetServerCertificateNameResponse unmarshall(SetServerCertificateNameResponse setServerCertificateNameResponse, UnmarshallerContext _ctx) {
 		
-		setServerCertificateNameResponse.setRequestId(context.stringValue("SetServerCertificateNameResponse.RequestId"));
+		setServerCertificateNameResponse.setRequestId(_ctx.stringValue("SetServerCertificateNameResponse.RequestId"));
 	 
 	 	return setServerCertificateNameResponse;
 	}

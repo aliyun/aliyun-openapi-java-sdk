@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetLoadBalancerDeleteProtectionResponseUnmarshaller {
 
-	public static SetLoadBalancerDeleteProtectionResponse unmarshall(SetLoadBalancerDeleteProtectionResponse setLoadBalancerDeleteProtectionResponse, UnmarshallerContext context) {
+	public static SetLoadBalancerDeleteProtectionResponse unmarshall(SetLoadBalancerDeleteProtectionResponse setLoadBalancerDeleteProtectionResponse, UnmarshallerContext _ctx) {
 		
-		setLoadBalancerDeleteProtectionResponse.setRequestId(context.stringValue("SetLoadBalancerDeleteProtectionResponse.RequestId"));
+		setLoadBalancerDeleteProtectionResponse.setRequestId(_ctx.stringValue("SetLoadBalancerDeleteProtectionResponse.RequestId"));
 	 
 	 	return setLoadBalancerDeleteProtectionResponse;
 	}

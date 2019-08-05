@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.slb.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class DeleteLoadBalancerListenerRequest extends RpcAcsRequest<DeleteLoadB
 	
 	public DeleteLoadBalancerListenerRequest() {
 		super("Slb", "2014-05-15", "DeleteLoadBalancerListener", "slb");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

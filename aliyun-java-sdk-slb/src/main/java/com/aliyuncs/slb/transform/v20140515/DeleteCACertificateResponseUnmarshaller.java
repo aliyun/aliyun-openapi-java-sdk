@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteCACertificateResponseUnmarshaller {
 
-	public static DeleteCACertificateResponse unmarshall(DeleteCACertificateResponse deleteCACertificateResponse, UnmarshallerContext context) {
+	public static DeleteCACertificateResponse unmarshall(DeleteCACertificateResponse deleteCACertificateResponse, UnmarshallerContext _ctx) {
 		
-		deleteCACertificateResponse.setRequestId(context.stringValue("DeleteCACertificateResponse.RequestId"));
+		deleteCACertificateResponse.setRequestId(_ctx.stringValue("DeleteCACertificateResponse.RequestId"));
 	 
 	 	return deleteCACertificateResponse;
 	}

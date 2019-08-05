@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetBackendServersResponseUnmarshaller {
 
-	public static SetBackendServersResponse unmarshall(SetBackendServersResponse setBackendServersResponse, UnmarshallerContext context) {
+	public static SetBackendServersResponse unmarshall(SetBackendServersResponse setBackendServersResponse, UnmarshallerContext _ctx) {
 		
-		setBackendServersResponse.setRequestId(context.stringValue("SetBackendServersResponse.RequestId"));
-		setBackendServersResponse.setLoadBalancerId(context.stringValue("SetBackendServersResponse.LoadBalancerId"));
+		setBackendServersResponse.setRequestId(_ctx.stringValue("SetBackendServersResponse.RequestId"));
+		setBackendServersResponse.setLoadBalancerId(_ctx.stringValue("SetBackendServersResponse.LoadBalancerId"));
 
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
-		for (int i = 0; i < context.lengthValue("SetBackendServersResponse.BackendServers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SetBackendServersResponse.BackendServers.Length"); i++) {
 			BackendServer backendServer = new BackendServer();
-			backendServer.setServerId(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].ServerId"));
-			backendServer.setWeight(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].Weight"));
-			backendServer.setServerIp(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].ServerIp"));
-			backendServer.setVpcId(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].VpcId"));
-			backendServer.setType(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].Type"));
-			backendServer.setDescription(context.stringValue("SetBackendServersResponse.BackendServers["+ i +"].Description"));
+			backendServer.setServerId(_ctx.stringValue("SetBackendServersResponse.BackendServers["+ i +"].ServerId"));
+			backendServer.setWeight(_ctx.stringValue("SetBackendServersResponse.BackendServers["+ i +"].Weight"));
+			backendServer.setServerIp(_ctx.stringValue("SetBackendServersResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setVpcId(_ctx.stringValue("SetBackendServersResponse.BackendServers["+ i +"].VpcId"));
+			backendServer.setType(_ctx.stringValue("SetBackendServersResponse.BackendServers["+ i +"].Type"));
+			backendServer.setDescription(_ctx.stringValue("SetBackendServersResponse.BackendServers["+ i +"].Description"));
 
 			backendServers.add(backendServer);
 		}

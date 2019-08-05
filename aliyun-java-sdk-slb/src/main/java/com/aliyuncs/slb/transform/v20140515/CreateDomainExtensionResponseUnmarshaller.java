@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDomainExtensionResponseUnmarshaller {
 
-	public static CreateDomainExtensionResponse unmarshall(CreateDomainExtensionResponse createDomainExtensionResponse, UnmarshallerContext context) {
+	public static CreateDomainExtensionResponse unmarshall(CreateDomainExtensionResponse createDomainExtensionResponse, UnmarshallerContext _ctx) {
 		
-		createDomainExtensionResponse.setRequestId(context.stringValue("CreateDomainExtensionResponse.RequestId"));
-		createDomainExtensionResponse.setListenerPort(context.integerValue("CreateDomainExtensionResponse.ListenerPort"));
-		createDomainExtensionResponse.setDomainExtensionId(context.stringValue("CreateDomainExtensionResponse.DomainExtensionId"));
+		createDomainExtensionResponse.setRequestId(_ctx.stringValue("CreateDomainExtensionResponse.RequestId"));
+		createDomainExtensionResponse.setListenerPort(_ctx.integerValue("CreateDomainExtensionResponse.ListenerPort"));
+		createDomainExtensionResponse.setDomainExtensionId(_ctx.stringValue("CreateDomainExtensionResponse.DomainExtensionId"));
 	 
 	 	return createDomainExtensionResponse;
 	}

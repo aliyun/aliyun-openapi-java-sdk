@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveListenerWhiteListItemResponseUnmarshaller {
 
-	public static RemoveListenerWhiteListItemResponse unmarshall(RemoveListenerWhiteListItemResponse removeListenerWhiteListItemResponse, UnmarshallerContext context) {
+	public static RemoveListenerWhiteListItemResponse unmarshall(RemoveListenerWhiteListItemResponse removeListenerWhiteListItemResponse, UnmarshallerContext _ctx) {
 		
-		removeListenerWhiteListItemResponse.setRequestId(context.stringValue("RemoveListenerWhiteListItemResponse.RequestId"));
+		removeListenerWhiteListItemResponse.setRequestId(_ctx.stringValue("RemoveListenerWhiteListItemResponse.RequestId"));
 	 
 	 	return removeListenerWhiteListItemResponse;
 	}

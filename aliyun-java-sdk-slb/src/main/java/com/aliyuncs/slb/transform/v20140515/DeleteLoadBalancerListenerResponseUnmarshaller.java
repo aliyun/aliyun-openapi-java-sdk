@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteLoadBalancerListenerResponseUnmarshaller {
 
-	public static DeleteLoadBalancerListenerResponse unmarshall(DeleteLoadBalancerListenerResponse deleteLoadBalancerListenerResponse, UnmarshallerContext context) {
+	public static DeleteLoadBalancerListenerResponse unmarshall(DeleteLoadBalancerListenerResponse deleteLoadBalancerListenerResponse, UnmarshallerContext _ctx) {
 		
-		deleteLoadBalancerListenerResponse.setRequestId(context.stringValue("DeleteLoadBalancerListenerResponse.RequestId"));
+		deleteLoadBalancerListenerResponse.setRequestId(_ctx.stringValue("DeleteLoadBalancerListenerResponse.RequestId"));
 	 
 	 	return deleteLoadBalancerListenerResponse;
 	}

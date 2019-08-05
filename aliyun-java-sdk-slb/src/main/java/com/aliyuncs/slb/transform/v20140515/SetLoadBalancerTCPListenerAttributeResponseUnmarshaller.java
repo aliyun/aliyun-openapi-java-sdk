@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetLoadBalancerTCPListenerAttributeResponseUnmarshaller {
 
-	public static SetLoadBalancerTCPListenerAttributeResponse unmarshall(SetLoadBalancerTCPListenerAttributeResponse setLoadBalancerTCPListenerAttributeResponse, UnmarshallerContext context) {
+	public static SetLoadBalancerTCPListenerAttributeResponse unmarshall(SetLoadBalancerTCPListenerAttributeResponse setLoadBalancerTCPListenerAttributeResponse, UnmarshallerContext _ctx) {
 		
-		setLoadBalancerTCPListenerAttributeResponse.setRequestId(context.stringValue("SetLoadBalancerTCPListenerAttributeResponse.RequestId"));
+		setLoadBalancerTCPListenerAttributeResponse.setRequestId(_ctx.stringValue("SetLoadBalancerTCPListenerAttributeResponse.RequestId"));
 	 
 	 	return setLoadBalancerTCPListenerAttributeResponse;
 	}

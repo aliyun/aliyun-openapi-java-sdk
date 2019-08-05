@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeHealthStatusResponseUnmarshaller {
 
-	public static DescribeHealthStatusResponse unmarshall(DescribeHealthStatusResponse describeHealthStatusResponse, UnmarshallerContext context) {
+	public static DescribeHealthStatusResponse unmarshall(DescribeHealthStatusResponse describeHealthStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeHealthStatusResponse.setRequestId(context.stringValue("DescribeHealthStatusResponse.RequestId"));
+		describeHealthStatusResponse.setRequestId(_ctx.stringValue("DescribeHealthStatusResponse.RequestId"));
 
 		List<BackendServer> backendServers = new ArrayList<BackendServer>();
-		for (int i = 0; i < context.lengthValue("DescribeHealthStatusResponse.BackendServers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeHealthStatusResponse.BackendServers.Length"); i++) {
 			BackendServer backendServer = new BackendServer();
-			backendServer.setListenerPort(context.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ListenerPort"));
-			backendServer.setServerId(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerId"));
-			backendServer.setPort(context.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Port"));
-			backendServer.setServerHealthStatus(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerHealthStatus"));
-			backendServer.setServerIp(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerIp"));
-			backendServer.setEniHost(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].EniHost"));
-			backendServer.setProtocol(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Protocol"));
-			backendServer.setType(context.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Type"));
+			backendServer.setListenerPort(_ctx.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ListenerPort"));
+			backendServer.setServerId(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerId"));
+			backendServer.setPort(_ctx.integerValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Port"));
+			backendServer.setServerHealthStatus(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerHealthStatus"));
+			backendServer.setServerIp(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].ServerIp"));
+			backendServer.setEniHost(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].EniHost"));
+			backendServer.setProtocol(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Protocol"));
+			backendServer.setType(_ctx.stringValue("DescribeHealthStatusResponse.BackendServers["+ i +"].Type"));
 
 			backendServers.add(backendServer);
 		}

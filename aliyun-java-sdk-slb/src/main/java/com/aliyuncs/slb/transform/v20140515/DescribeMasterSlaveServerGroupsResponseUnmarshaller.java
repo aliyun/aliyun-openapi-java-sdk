@@ -26,23 +26,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMasterSlaveServerGroupsResponseUnmarshaller {
 
-	public static DescribeMasterSlaveServerGroupsResponse unmarshall(DescribeMasterSlaveServerGroupsResponse describeMasterSlaveServerGroupsResponse, UnmarshallerContext context) {
+	public static DescribeMasterSlaveServerGroupsResponse unmarshall(DescribeMasterSlaveServerGroupsResponse describeMasterSlaveServerGroupsResponse, UnmarshallerContext _ctx) {
 		
-		describeMasterSlaveServerGroupsResponse.setRequestId(context.stringValue("DescribeMasterSlaveServerGroupsResponse.RequestId"));
+		describeMasterSlaveServerGroupsResponse.setRequestId(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.RequestId"));
 
 		List<MasterSlaveServerGroup> masterSlaveServerGroups = new ArrayList<MasterSlaveServerGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups.Length"); i++) {
 			MasterSlaveServerGroup masterSlaveServerGroup = new MasterSlaveServerGroup();
-			masterSlaveServerGroup.setMasterSlaveServerGroupId(context.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupId"));
-			masterSlaveServerGroup.setMasterSlaveServerGroupName(context.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupName"));
+			masterSlaveServerGroup.setMasterSlaveServerGroupId(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupId"));
+			masterSlaveServerGroup.setMasterSlaveServerGroupName(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupName"));
 
 			AssociatedObjects associatedObjects = new AssociatedObjects();
 
 			List<Listener> listeners = new ArrayList<Listener>();
-			for (int j = 0; j < context.lengthValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
 				Listener listener = new Listener();
-				listener.setProtocol(context.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
-				listener.setPort(context.integerValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port"));
+				listener.setProtocol(_ctx.stringValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
+				listener.setPort(_ctx.integerValue("DescribeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port"));
 
 				listeners.add(listener);
 			}

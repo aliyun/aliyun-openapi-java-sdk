@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainExtensionsResponseUnmarshaller {
 
-	public static DescribeDomainExtensionsResponse unmarshall(DescribeDomainExtensionsResponse describeDomainExtensionsResponse, UnmarshallerContext context) {
+	public static DescribeDomainExtensionsResponse unmarshall(DescribeDomainExtensionsResponse describeDomainExtensionsResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainExtensionsResponse.setRequestId(context.stringValue("DescribeDomainExtensionsResponse.RequestId"));
+		describeDomainExtensionsResponse.setRequestId(_ctx.stringValue("DescribeDomainExtensionsResponse.RequestId"));
 
 		List<DomainExtension> domainExtensions = new ArrayList<DomainExtension>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainExtensionsResponse.DomainExtensions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainExtensionsResponse.DomainExtensions.Length"); i++) {
 			DomainExtension domainExtension = new DomainExtension();
-			domainExtension.setDomainExtensionId(context.stringValue("DescribeDomainExtensionsResponse.DomainExtensions["+ i +"].DomainExtensionId"));
-			domainExtension.setDomain(context.stringValue("DescribeDomainExtensionsResponse.DomainExtensions["+ i +"].Domain"));
-			domainExtension.setServerCertificateId(context.stringValue("DescribeDomainExtensionsResponse.DomainExtensions["+ i +"].ServerCertificateId"));
+			domainExtension.setDomainExtensionId(_ctx.stringValue("DescribeDomainExtensionsResponse.DomainExtensions["+ i +"].DomainExtensionId"));
+			domainExtension.setDomain(_ctx.stringValue("DescribeDomainExtensionsResponse.DomainExtensions["+ i +"].Domain"));
+			domainExtension.setServerCertificateId(_ctx.stringValue("DescribeDomainExtensionsResponse.DomainExtensions["+ i +"].ServerCertificateId"));
 
 			domainExtensions.add(domainExtension);
 		}

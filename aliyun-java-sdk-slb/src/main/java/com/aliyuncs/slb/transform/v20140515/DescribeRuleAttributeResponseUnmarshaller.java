@@ -20,31 +20,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRuleAttributeResponseUnmarshaller {
 
-	public static DescribeRuleAttributeResponse unmarshall(DescribeRuleAttributeResponse describeRuleAttributeResponse, UnmarshallerContext context) {
+	public static DescribeRuleAttributeResponse unmarshall(DescribeRuleAttributeResponse describeRuleAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeRuleAttributeResponse.setRequestId(context.stringValue("DescribeRuleAttributeResponse.RequestId"));
-		describeRuleAttributeResponse.setRuleId(context.stringValue("DescribeRuleAttributeResponse.RuleId"));
-		describeRuleAttributeResponse.setRuleName(context.stringValue("DescribeRuleAttributeResponse.RuleName"));
-		describeRuleAttributeResponse.setLoadBalancerId(context.stringValue("DescribeRuleAttributeResponse.LoadBalancerId"));
-		describeRuleAttributeResponse.setListenerPort(context.stringValue("DescribeRuleAttributeResponse.ListenerPort"));
-		describeRuleAttributeResponse.setDomain(context.stringValue("DescribeRuleAttributeResponse.Domain"));
-		describeRuleAttributeResponse.setUrl(context.stringValue("DescribeRuleAttributeResponse.Url"));
-		describeRuleAttributeResponse.setVServerGroupId(context.stringValue("DescribeRuleAttributeResponse.VServerGroupId"));
-		describeRuleAttributeResponse.setListenerSync(context.stringValue("DescribeRuleAttributeResponse.ListenerSync"));
-		describeRuleAttributeResponse.setScheduler(context.stringValue("DescribeRuleAttributeResponse.Scheduler"));
-		describeRuleAttributeResponse.setStickySession(context.stringValue("DescribeRuleAttributeResponse.StickySession"));
-		describeRuleAttributeResponse.setStickySessionType(context.stringValue("DescribeRuleAttributeResponse.StickySessionType"));
-		describeRuleAttributeResponse.setCookieTimeout(context.integerValue("DescribeRuleAttributeResponse.CookieTimeout"));
-		describeRuleAttributeResponse.setCookie(context.stringValue("DescribeRuleAttributeResponse.Cookie"));
-		describeRuleAttributeResponse.setHealthCheck(context.stringValue("DescribeRuleAttributeResponse.HealthCheck"));
-		describeRuleAttributeResponse.setHealthCheckDomain(context.stringValue("DescribeRuleAttributeResponse.HealthCheckDomain"));
-		describeRuleAttributeResponse.setHealthCheckURI(context.stringValue("DescribeRuleAttributeResponse.HealthCheckURI"));
-		describeRuleAttributeResponse.setHealthyThreshold(context.integerValue("DescribeRuleAttributeResponse.HealthyThreshold"));
-		describeRuleAttributeResponse.setUnhealthyThreshold(context.integerValue("DescribeRuleAttributeResponse.UnhealthyThreshold"));
-		describeRuleAttributeResponse.setHealthCheckTimeout(context.integerValue("DescribeRuleAttributeResponse.HealthCheckTimeout"));
-		describeRuleAttributeResponse.setHealthCheckInterval(context.integerValue("DescribeRuleAttributeResponse.HealthCheckInterval"));
-		describeRuleAttributeResponse.setHealthCheckConnectPort(context.integerValue("DescribeRuleAttributeResponse.HealthCheckConnectPort"));
-		describeRuleAttributeResponse.setHealthCheckHttpCode(context.stringValue("DescribeRuleAttributeResponse.HealthCheckHttpCode"));
+		describeRuleAttributeResponse.setRequestId(_ctx.stringValue("DescribeRuleAttributeResponse.RequestId"));
+		describeRuleAttributeResponse.setRuleId(_ctx.stringValue("DescribeRuleAttributeResponse.RuleId"));
+		describeRuleAttributeResponse.setRuleName(_ctx.stringValue("DescribeRuleAttributeResponse.RuleName"));
+		describeRuleAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeRuleAttributeResponse.LoadBalancerId"));
+		describeRuleAttributeResponse.setListenerPort(_ctx.stringValue("DescribeRuleAttributeResponse.ListenerPort"));
+		describeRuleAttributeResponse.setDomain(_ctx.stringValue("DescribeRuleAttributeResponse.Domain"));
+		describeRuleAttributeResponse.setUrl(_ctx.stringValue("DescribeRuleAttributeResponse.Url"));
+		describeRuleAttributeResponse.setVServerGroupId(_ctx.stringValue("DescribeRuleAttributeResponse.VServerGroupId"));
+		describeRuleAttributeResponse.setListenerSync(_ctx.stringValue("DescribeRuleAttributeResponse.ListenerSync"));
+		describeRuleAttributeResponse.setScheduler(_ctx.stringValue("DescribeRuleAttributeResponse.Scheduler"));
+		describeRuleAttributeResponse.setStickySession(_ctx.stringValue("DescribeRuleAttributeResponse.StickySession"));
+		describeRuleAttributeResponse.setStickySessionType(_ctx.stringValue("DescribeRuleAttributeResponse.StickySessionType"));
+		describeRuleAttributeResponse.setCookieTimeout(_ctx.integerValue("DescribeRuleAttributeResponse.CookieTimeout"));
+		describeRuleAttributeResponse.setCookie(_ctx.stringValue("DescribeRuleAttributeResponse.Cookie"));
+		describeRuleAttributeResponse.setHealthCheck(_ctx.stringValue("DescribeRuleAttributeResponse.HealthCheck"));
+		describeRuleAttributeResponse.setHealthCheckDomain(_ctx.stringValue("DescribeRuleAttributeResponse.HealthCheckDomain"));
+		describeRuleAttributeResponse.setHealthCheckURI(_ctx.stringValue("DescribeRuleAttributeResponse.HealthCheckURI"));
+		describeRuleAttributeResponse.setHealthyThreshold(_ctx.integerValue("DescribeRuleAttributeResponse.HealthyThreshold"));
+		describeRuleAttributeResponse.setUnhealthyThreshold(_ctx.integerValue("DescribeRuleAttributeResponse.UnhealthyThreshold"));
+		describeRuleAttributeResponse.setHealthCheckTimeout(_ctx.integerValue("DescribeRuleAttributeResponse.HealthCheckTimeout"));
+		describeRuleAttributeResponse.setHealthCheckInterval(_ctx.integerValue("DescribeRuleAttributeResponse.HealthCheckInterval"));
+		describeRuleAttributeResponse.setHealthCheckConnectPort(_ctx.integerValue("DescribeRuleAttributeResponse.HealthCheckConnectPort"));
+		describeRuleAttributeResponse.setHealthCheckHttpCode(_ctx.stringValue("DescribeRuleAttributeResponse.HealthCheckHttpCode"));
 	 
 	 	return describeRuleAttributeResponse;
 	}

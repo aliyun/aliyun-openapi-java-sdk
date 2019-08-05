@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMasterSlaveVServerGroupResponseUnmarshaller {
 
-	public static CreateMasterSlaveVServerGroupResponse unmarshall(CreateMasterSlaveVServerGroupResponse createMasterSlaveVServerGroupResponse, UnmarshallerContext context) {
+	public static CreateMasterSlaveVServerGroupResponse unmarshall(CreateMasterSlaveVServerGroupResponse createMasterSlaveVServerGroupResponse, UnmarshallerContext _ctx) {
 		
-		createMasterSlaveVServerGroupResponse.setRequestId(context.stringValue("CreateMasterSlaveVServerGroupResponse.RequestId"));
-		createMasterSlaveVServerGroupResponse.setMasterSlaveVServerGroupId(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveVServerGroupId"));
+		createMasterSlaveVServerGroupResponse.setRequestId(_ctx.stringValue("CreateMasterSlaveVServerGroupResponse.RequestId"));
+		createMasterSlaveVServerGroupResponse.setMasterSlaveVServerGroupId(_ctx.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveVServerGroupId"));
 
 		List<MasterSlaveBackendServer> masterSlaveBackendServers = new ArrayList<MasterSlaveBackendServer>();
-		for (int i = 0; i < context.lengthValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers.Length"); i++) {
 			MasterSlaveBackendServer masterSlaveBackendServer = new MasterSlaveBackendServer();
-			masterSlaveBackendServer.setServerId(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerId"));
-			masterSlaveBackendServer.setPort(context.integerValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Port"));
-			masterSlaveBackendServer.setWeight(context.integerValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Weight"));
-			masterSlaveBackendServer.setIsBackup(context.integerValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].IsBackup"));
-			masterSlaveBackendServer.setType(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Type"));
-			masterSlaveBackendServer.setServerIp(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
-			masterSlaveBackendServer.setEniHost(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].EniHost"));
-			masterSlaveBackendServer.setVpcId(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].VpcId"));
-			masterSlaveBackendServer.setDescription(context.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Description"));
+			masterSlaveBackendServer.setServerId(_ctx.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerId"));
+			masterSlaveBackendServer.setPort(_ctx.integerValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Port"));
+			masterSlaveBackendServer.setWeight(_ctx.integerValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Weight"));
+			masterSlaveBackendServer.setIsBackup(_ctx.integerValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].IsBackup"));
+			masterSlaveBackendServer.setType(_ctx.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Type"));
+			masterSlaveBackendServer.setServerIp(_ctx.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].ServerIp"));
+			masterSlaveBackendServer.setEniHost(_ctx.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].EniHost"));
+			masterSlaveBackendServer.setVpcId(_ctx.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].VpcId"));
+			masterSlaveBackendServer.setDescription(_ctx.stringValue("CreateMasterSlaveVServerGroupResponse.MasterSlaveBackendServers["+ i +"].Description"));
 
 			masterSlaveBackendServers.add(masterSlaveBackendServer);
 		}

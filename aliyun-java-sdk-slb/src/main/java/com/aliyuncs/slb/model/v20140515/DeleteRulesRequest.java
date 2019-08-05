@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.slb.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class DeleteRulesRequest extends RpcAcsRequest<DeleteRulesResponse> {
 	
 	public DeleteRulesRequest() {
 		super("Slb", "2014-05-15", "DeleteRules", "slb");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

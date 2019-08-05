@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopLoadBalancerListenerResponseUnmarshaller {
 
-	public static StopLoadBalancerListenerResponse unmarshall(StopLoadBalancerListenerResponse stopLoadBalancerListenerResponse, UnmarshallerContext context) {
+	public static StopLoadBalancerListenerResponse unmarshall(StopLoadBalancerListenerResponse stopLoadBalancerListenerResponse, UnmarshallerContext _ctx) {
 		
-		stopLoadBalancerListenerResponse.setRequestId(context.stringValue("StopLoadBalancerListenerResponse.RequestId"));
+		stopLoadBalancerListenerResponse.setRequestId(_ctx.stringValue("StopLoadBalancerListenerResponse.RequestId"));
 	 
 	 	return stopLoadBalancerListenerResponse;
 	}

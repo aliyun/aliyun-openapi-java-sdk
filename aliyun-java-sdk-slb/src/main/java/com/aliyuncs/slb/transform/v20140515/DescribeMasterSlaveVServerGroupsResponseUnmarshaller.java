@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMasterSlaveVServerGroupsResponseUnmarshaller {
 
-	public static DescribeMasterSlaveVServerGroupsResponse unmarshall(DescribeMasterSlaveVServerGroupsResponse describeMasterSlaveVServerGroupsResponse, UnmarshallerContext context) {
+	public static DescribeMasterSlaveVServerGroupsResponse unmarshall(DescribeMasterSlaveVServerGroupsResponse describeMasterSlaveVServerGroupsResponse, UnmarshallerContext _ctx) {
 		
-		describeMasterSlaveVServerGroupsResponse.setRequestId(context.stringValue("DescribeMasterSlaveVServerGroupsResponse.RequestId"));
+		describeMasterSlaveVServerGroupsResponse.setRequestId(_ctx.stringValue("DescribeMasterSlaveVServerGroupsResponse.RequestId"));
 
 		List<MasterSlaveVServerGroup> masterSlaveVServerGroups = new ArrayList<MasterSlaveVServerGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeMasterSlaveVServerGroupsResponse.MasterSlaveVServerGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMasterSlaveVServerGroupsResponse.MasterSlaveVServerGroups.Length"); i++) {
 			MasterSlaveVServerGroup masterSlaveVServerGroup = new MasterSlaveVServerGroup();
-			masterSlaveVServerGroup.setMasterSlaveVServerGroupId(context.stringValue("DescribeMasterSlaveVServerGroupsResponse.MasterSlaveVServerGroups["+ i +"].MasterSlaveVServerGroupId"));
-			masterSlaveVServerGroup.setMasterSlaveVServerGroupName(context.stringValue("DescribeMasterSlaveVServerGroupsResponse.MasterSlaveVServerGroups["+ i +"].MasterSlaveVServerGroupName"));
+			masterSlaveVServerGroup.setMasterSlaveVServerGroupId(_ctx.stringValue("DescribeMasterSlaveVServerGroupsResponse.MasterSlaveVServerGroups["+ i +"].MasterSlaveVServerGroupId"));
+			masterSlaveVServerGroup.setMasterSlaveVServerGroupName(_ctx.stringValue("DescribeMasterSlaveVServerGroupsResponse.MasterSlaveVServerGroups["+ i +"].MasterSlaveVServerGroupName"));
 
 			masterSlaveVServerGroups.add(masterSlaveVServerGroup);
 		}

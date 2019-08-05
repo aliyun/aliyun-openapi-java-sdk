@@ -27,35 +27,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVServerGroupsResponseUnmarshaller {
 
-	public static DescribeVServerGroupsResponse unmarshall(DescribeVServerGroupsResponse describeVServerGroupsResponse, UnmarshallerContext context) {
+	public static DescribeVServerGroupsResponse unmarshall(DescribeVServerGroupsResponse describeVServerGroupsResponse, UnmarshallerContext _ctx) {
 		
-		describeVServerGroupsResponse.setRequestId(context.stringValue("DescribeVServerGroupsResponse.RequestId"));
+		describeVServerGroupsResponse.setRequestId(_ctx.stringValue("DescribeVServerGroupsResponse.RequestId"));
 
 		List<VServerGroup> vServerGroups = new ArrayList<VServerGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeVServerGroupsResponse.VServerGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVServerGroupsResponse.VServerGroups.Length"); i++) {
 			VServerGroup vServerGroup = new VServerGroup();
-			vServerGroup.setVServerGroupId(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].VServerGroupId"));
-			vServerGroup.setVServerGroupName(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].VServerGroupName"));
+			vServerGroup.setVServerGroupId(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].VServerGroupId"));
+			vServerGroup.setVServerGroupName(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].VServerGroupName"));
 
 			AssociatedObjects associatedObjects = new AssociatedObjects();
 
 			List<Listener> listeners = new ArrayList<Listener>();
-			for (int j = 0; j < context.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
 				Listener listener = new Listener();
-				listener.setProtocol(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
-				listener.setPort(context.integerValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port"));
+				listener.setProtocol(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol"));
+				listener.setPort(_ctx.integerValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port"));
 
 				listeners.add(listener);
 			}
 			associatedObjects.setListeners(listeners);
 
 			List<Rule> rules = new ArrayList<Rule>();
-			for (int j = 0; j < context.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules.Length"); j++) {
 				Rule rule = new Rule();
-				rule.setRuleId(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleId"));
-				rule.setDomain(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].Domain"));
-				rule.setUrl(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].Url"));
-				rule.setRuleName(context.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleName"));
+				rule.setRuleId(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleId"));
+				rule.setDomain(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].Domain"));
+				rule.setUrl(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].Url"));
+				rule.setRuleName(_ctx.stringValue("DescribeVServerGroupsResponse.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleName"));
 
 				rules.add(rule);
 			}

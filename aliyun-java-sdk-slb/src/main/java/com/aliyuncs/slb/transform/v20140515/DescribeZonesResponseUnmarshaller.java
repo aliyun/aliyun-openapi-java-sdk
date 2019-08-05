@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeZonesResponseUnmarshaller {
 
-	public static DescribeZonesResponse unmarshall(DescribeZonesResponse describeZonesResponse, UnmarshallerContext context) {
+	public static DescribeZonesResponse unmarshall(DescribeZonesResponse describeZonesResponse, UnmarshallerContext _ctx) {
 		
-		describeZonesResponse.setRequestId(context.stringValue("DescribeZonesResponse.RequestId"));
+		describeZonesResponse.setRequestId(_ctx.stringValue("DescribeZonesResponse.RequestId"));
 
 		List<Zone> zones = new ArrayList<Zone>();
-		for (int i = 0; i < context.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
 			Zone zone = new Zone();
-			zone.setZoneId(context.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
-			zone.setLocalName(context.stringValue("DescribeZonesResponse.Zones["+ i +"].LocalName"));
+			zone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
+			zone.setLocalName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].LocalName"));
 
 			List<SlaveZone> slaveZones = new ArrayList<SlaveZone>();
-			for (int j = 0; j < context.lengthValue("DescribeZonesResponse.Zones["+ i +"].SlaveZones.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeZonesResponse.Zones["+ i +"].SlaveZones.Length"); j++) {
 				SlaveZone slaveZone = new SlaveZone();
-				slaveZone.setZoneId(context.stringValue("DescribeZonesResponse.Zones["+ i +"].SlaveZones["+ j +"].ZoneId"));
-				slaveZone.setLocalName(context.stringValue("DescribeZonesResponse.Zones["+ i +"].SlaveZones["+ j +"].LocalName"));
+				slaveZone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].SlaveZones["+ j +"].ZoneId"));
+				slaveZone.setLocalName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].SlaveZones["+ j +"].LocalName"));
 
 				slaveZones.add(slaveZone);
 			}

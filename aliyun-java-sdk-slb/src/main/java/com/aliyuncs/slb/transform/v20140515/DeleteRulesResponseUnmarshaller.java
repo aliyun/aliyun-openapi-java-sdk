@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteRulesResponseUnmarshaller {
 
-	public static DeleteRulesResponse unmarshall(DeleteRulesResponse deleteRulesResponse, UnmarshallerContext context) {
+	public static DeleteRulesResponse unmarshall(DeleteRulesResponse deleteRulesResponse, UnmarshallerContext _ctx) {
 		
-		deleteRulesResponse.setRequestId(context.stringValue("DeleteRulesResponse.RequestId"));
+		deleteRulesResponse.setRequestId(_ctx.stringValue("DeleteRulesResponse.RequestId"));
 	 
 	 	return deleteRulesResponse;
 	}
