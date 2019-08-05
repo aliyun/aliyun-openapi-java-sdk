@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryAccountTransactionsRequest extends RpcAcsRequest<QueryAccountTransactionsResponse> {
 	
 	public QueryAccountTransactionsRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryAccountTransactions");
+		super("BssOpenApi", "2017-12-14", "QueryAccountTransactions", "bssopenapi");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

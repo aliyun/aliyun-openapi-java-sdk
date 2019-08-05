@@ -177,6 +177,10 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 			private String relatedOrderId;
 
+			private String orderSubType;
+
+			private String originalConfig;
+
 			public String getOrderId() {
 				return this.orderId;
 			}
@@ -367,6 +371,22 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 			public void setRelatedOrderId(String relatedOrderId) {
 				this.relatedOrderId = relatedOrderId;
+			}
+
+			public String getOrderSubType() {
+				return this.orderSubType;
+			}
+
+			public void setOrderSubType(String orderSubType) {
+				this.orderSubType = orderSubType;
+			}
+
+			public String getOriginalConfig() {
+				return this.originalConfig;
+			}
+
+			public void setOriginalConfig(String originalConfig) {
+				this.originalConfig = originalConfig;
 			}
 		}
 	}

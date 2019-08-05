@@ -65,6 +65,8 @@ public class GetOrderDetailResponseUnmarshaller {
 			order.setPaymentCurrency(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PaymentCurrency"));
 			order.setOperator(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Operator"));
 			order.setRelatedOrderId(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].RelatedOrderId"));
+			order.setOrderSubType(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OrderSubType"));
+			order.setOriginalConfig(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OriginalConfig"));
 
 			orderList.add(order);
 		}
