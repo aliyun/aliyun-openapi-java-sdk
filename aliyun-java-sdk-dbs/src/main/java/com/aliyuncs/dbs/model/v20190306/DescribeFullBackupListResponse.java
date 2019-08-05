@@ -147,6 +147,10 @@ public class DescribeFullBackupListResponse extends AcsResponse {
 
 		private String backupObjects;
 
+		private Long createTime;
+
+		private Long finishTime;
+
 		public String getBackupSetId() {
 			return this.backupSetId;
 		}
@@ -225,6 +229,22 @@ public class DescribeFullBackupListResponse extends AcsResponse {
 
 		public void setBackupObjects(String backupObjects) {
 			this.backupObjects = backupObjects;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getFinishTime() {
+			return this.finishTime;
+		}
+
+		public void setFinishTime(Long finishTime) {
+			this.finishTime = finishTime;
 		}
 	}
 

@@ -49,6 +49,8 @@ public class DescribeFullBackupListResponseUnmarshaller {
 			fullBackupFile.setStorageMethod(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].StorageMethod"));
 			fullBackupFile.setErrMessage(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].ErrMessage"));
 			fullBackupFile.setBackupObjects(_ctx.stringValue("DescribeFullBackupListResponse.Items["+ i +"].BackupObjects"));
+			fullBackupFile.setCreateTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].CreateTime"));
+			fullBackupFile.setFinishTime(_ctx.longValue("DescribeFullBackupListResponse.Items["+ i +"].FinishTime"));
 
 			items.add(fullBackupFile);
 		}
