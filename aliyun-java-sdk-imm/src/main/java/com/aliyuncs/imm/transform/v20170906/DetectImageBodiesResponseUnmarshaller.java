@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetectImageBodiesResponseUnmarshaller {
 
-	public static DetectImageBodiesResponse unmarshall(DetectImageBodiesResponse detectImageBodiesResponse, UnmarshallerContext context) {
+	public static DetectImageBodiesResponse unmarshall(DetectImageBodiesResponse detectImageBodiesResponse, UnmarshallerContext _ctx) {
 		
-		detectImageBodiesResponse.setRequestId(context.stringValue("DetectImageBodiesResponse.RequestId"));
-		detectImageBodiesResponse.setImageUri(context.stringValue("DetectImageBodiesResponse.ImageUri"));
+		detectImageBodiesResponse.setRequestId(_ctx.stringValue("DetectImageBodiesResponse.RequestId"));
+		detectImageBodiesResponse.setImageUri(_ctx.stringValue("DetectImageBodiesResponse.ImageUri"));
 
 		List<BodiesItem> bodies = new ArrayList<BodiesItem>();
-		for (int i = 0; i < context.lengthValue("DetectImageBodiesResponse.Bodies.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectImageBodiesResponse.Bodies.Length"); i++) {
 			BodiesItem bodiesItem = new BodiesItem();
-			bodiesItem.setBodyConfidence(context.floatValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyConfidence"));
+			bodiesItem.setBodyConfidence(_ctx.floatValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyConfidence"));
 
 			BodyBoundary bodyBoundary = new BodyBoundary();
-			bodyBoundary.setLeft(context.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Left"));
-			bodyBoundary.setTop(context.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Top"));
-			bodyBoundary.setWidth(context.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Width"));
-			bodyBoundary.setHeight(context.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Height"));
+			bodyBoundary.setLeft(_ctx.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Left"));
+			bodyBoundary.setTop(_ctx.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Top"));
+			bodyBoundary.setWidth(_ctx.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Width"));
+			bodyBoundary.setHeight(_ctx.integerValue("DetectImageBodiesResponse.Bodies["+ i +"].BodyBoundary.Height"));
 			bodiesItem.setBodyBoundary(bodyBoundary);
 
 			bodies.add(bodiesItem);

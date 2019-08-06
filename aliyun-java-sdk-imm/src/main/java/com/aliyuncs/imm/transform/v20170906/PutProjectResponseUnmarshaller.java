@@ -20,17 +20,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PutProjectResponseUnmarshaller {
 
-	public static PutProjectResponse unmarshall(PutProjectResponse putProjectResponse, UnmarshallerContext context) {
+	public static PutProjectResponse unmarshall(PutProjectResponse putProjectResponse, UnmarshallerContext _ctx) {
 		
-		putProjectResponse.setRequestId(context.stringValue("PutProjectResponse.RequestId"));
-		putProjectResponse.setProject(context.stringValue("PutProjectResponse.Project"));
-		putProjectResponse.setCreateTime(context.stringValue("PutProjectResponse.CreateTime"));
-		putProjectResponse.setModifyTime(context.stringValue("PutProjectResponse.ModifyTime"));
-		putProjectResponse.setServiceRole(context.stringValue("PutProjectResponse.ServiceRole"));
-		putProjectResponse.setCU(context.integerValue("PutProjectResponse.CU"));
-		putProjectResponse.setType(context.stringValue("PutProjectResponse.Type"));
-		putProjectResponse.setEndpoint(context.stringValue("PutProjectResponse.Endpoint"));
-		putProjectResponse.setBillingType(context.stringValue("PutProjectResponse.BillingType"));
+		putProjectResponse.setRequestId(_ctx.stringValue("PutProjectResponse.RequestId"));
+		putProjectResponse.setProject(_ctx.stringValue("PutProjectResponse.Project"));
+		putProjectResponse.setCreateTime(_ctx.stringValue("PutProjectResponse.CreateTime"));
+		putProjectResponse.setModifyTime(_ctx.stringValue("PutProjectResponse.ModifyTime"));
+		putProjectResponse.setServiceRole(_ctx.stringValue("PutProjectResponse.ServiceRole"));
+		putProjectResponse.setCU(_ctx.integerValue("PutProjectResponse.CU"));
+		putProjectResponse.setType(_ctx.stringValue("PutProjectResponse.Type"));
+		putProjectResponse.setEndpoint(_ctx.stringValue("PutProjectResponse.Endpoint"));
+		putProjectResponse.setBillingType(_ctx.stringValue("PutProjectResponse.BillingType"));
 	 
 	 	return putProjectResponse;
 	}

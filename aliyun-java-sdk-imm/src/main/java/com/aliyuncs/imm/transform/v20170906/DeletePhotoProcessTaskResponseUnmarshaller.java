@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeletePhotoProcessTaskResponseUnmarshaller {
 
-	public static DeletePhotoProcessTaskResponse unmarshall(DeletePhotoProcessTaskResponse deletePhotoProcessTaskResponse, UnmarshallerContext context) {
+	public static DeletePhotoProcessTaskResponse unmarshall(DeletePhotoProcessTaskResponse deletePhotoProcessTaskResponse, UnmarshallerContext _ctx) {
 		
-		deletePhotoProcessTaskResponse.setRequestId(context.stringValue("DeletePhotoProcessTaskResponse.RequestId"));
+		deletePhotoProcessTaskResponse.setRequestId(_ctx.stringValue("DeletePhotoProcessTaskResponse.RequestId"));
 	 
 	 	return deletePhotoProcessTaskResponse;
 	}

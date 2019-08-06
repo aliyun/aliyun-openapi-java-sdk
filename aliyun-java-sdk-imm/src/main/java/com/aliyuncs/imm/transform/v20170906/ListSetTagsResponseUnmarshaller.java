@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSetTagsResponseUnmarshaller {
 
-	public static ListSetTagsResponse unmarshall(ListSetTagsResponse listSetTagsResponse, UnmarshallerContext context) {
+	public static ListSetTagsResponse unmarshall(ListSetTagsResponse listSetTagsResponse, UnmarshallerContext _ctx) {
 		
-		listSetTagsResponse.setRequestId(context.stringValue("ListSetTagsResponse.RequestId"));
-		listSetTagsResponse.setSetId(context.stringValue("ListSetTagsResponse.SetId"));
+		listSetTagsResponse.setRequestId(_ctx.stringValue("ListSetTagsResponse.RequestId"));
+		listSetTagsResponse.setSetId(_ctx.stringValue("ListSetTagsResponse.SetId"));
 
 		List<TagsItem> tags = new ArrayList<TagsItem>();
-		for (int i = 0; i < context.lengthValue("ListSetTagsResponse.Tags.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSetTagsResponse.Tags.Length"); i++) {
 			TagsItem tagsItem = new TagsItem();
-			tagsItem.setTagName(context.stringValue("ListSetTagsResponse.Tags["+ i +"].TagName"));
-			tagsItem.setTagCount(context.integerValue("ListSetTagsResponse.Tags["+ i +"].TagCount"));
+			tagsItem.setTagName(_ctx.stringValue("ListSetTagsResponse.Tags["+ i +"].TagName"));
+			tagsItem.setTagCount(_ctx.integerValue("ListSetTagsResponse.Tags["+ i +"].TagCount"));
 
 			tags.add(tagsItem);
 		}

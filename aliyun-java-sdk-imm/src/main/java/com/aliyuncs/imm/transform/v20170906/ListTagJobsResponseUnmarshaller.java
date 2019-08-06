@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTagJobsResponseUnmarshaller {
 
-	public static ListTagJobsResponse unmarshall(ListTagJobsResponse listTagJobsResponse, UnmarshallerContext context) {
+	public static ListTagJobsResponse unmarshall(ListTagJobsResponse listTagJobsResponse, UnmarshallerContext _ctx) {
 		
-		listTagJobsResponse.setRequestId(context.stringValue("ListTagJobsResponse.RequestId"));
-		listTagJobsResponse.setNextMarker(context.stringValue("ListTagJobsResponse.NextMarker"));
+		listTagJobsResponse.setRequestId(_ctx.stringValue("ListTagJobsResponse.RequestId"));
+		listTagJobsResponse.setNextMarker(_ctx.stringValue("ListTagJobsResponse.NextMarker"));
 
 		List<JobsItem> jobs = new ArrayList<JobsItem>();
-		for (int i = 0; i < context.lengthValue("ListTagJobsResponse.Jobs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTagJobsResponse.Jobs.Length"); i++) {
 			JobsItem jobsItem = new JobsItem();
-			jobsItem.setJobId(context.stringValue("ListTagJobsResponse.Jobs["+ i +"].JobId"));
-			jobsItem.setSetId(context.stringValue("ListTagJobsResponse.Jobs["+ i +"].SetId"));
-			jobsItem.setSrcUri(context.stringValue("ListTagJobsResponse.Jobs["+ i +"].SrcUri"));
-			jobsItem.setStatus(context.stringValue("ListTagJobsResponse.Jobs["+ i +"].Status"));
-			jobsItem.setPercent(context.integerValue("ListTagJobsResponse.Jobs["+ i +"].Percent"));
-			jobsItem.setCreateTime(context.stringValue("ListTagJobsResponse.Jobs["+ i +"].CreateTime"));
-			jobsItem.setFinishTime(context.stringValue("ListTagJobsResponse.Jobs["+ i +"].FinishTime"));
+			jobsItem.setJobId(_ctx.stringValue("ListTagJobsResponse.Jobs["+ i +"].JobId"));
+			jobsItem.setSetId(_ctx.stringValue("ListTagJobsResponse.Jobs["+ i +"].SetId"));
+			jobsItem.setSrcUri(_ctx.stringValue("ListTagJobsResponse.Jobs["+ i +"].SrcUri"));
+			jobsItem.setStatus(_ctx.stringValue("ListTagJobsResponse.Jobs["+ i +"].Status"));
+			jobsItem.setPercent(_ctx.integerValue("ListTagJobsResponse.Jobs["+ i +"].Percent"));
+			jobsItem.setCreateTime(_ctx.stringValue("ListTagJobsResponse.Jobs["+ i +"].CreateTime"));
+			jobsItem.setFinishTime(_ctx.stringValue("ListTagJobsResponse.Jobs["+ i +"].FinishTime"));
 
 			jobs.add(jobsItem);
 		}

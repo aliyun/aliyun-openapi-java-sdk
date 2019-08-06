@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateVideoCompressTaskResponseUnmarshaller {
 
-	public static CreateVideoCompressTaskResponse unmarshall(CreateVideoCompressTaskResponse createVideoCompressTaskResponse, UnmarshallerContext context) {
+	public static CreateVideoCompressTaskResponse unmarshall(CreateVideoCompressTaskResponse createVideoCompressTaskResponse, UnmarshallerContext _ctx) {
 		
-		createVideoCompressTaskResponse.setRequestId(context.stringValue("CreateVideoCompressTaskResponse.RequestId"));
-		createVideoCompressTaskResponse.setTaskId(context.stringValue("CreateVideoCompressTaskResponse.TaskId"));
-		createVideoCompressTaskResponse.setTaskType(context.stringValue("CreateVideoCompressTaskResponse.TaskType"));
+		createVideoCompressTaskResponse.setRequestId(_ctx.stringValue("CreateVideoCompressTaskResponse.RequestId"));
+		createVideoCompressTaskResponse.setTaskId(_ctx.stringValue("CreateVideoCompressTaskResponse.TaskId"));
+		createVideoCompressTaskResponse.setTaskType(_ctx.stringValue("CreateVideoCompressTaskResponse.TaskType"));
 	 
 	 	return createVideoCompressTaskResponse;
 	}

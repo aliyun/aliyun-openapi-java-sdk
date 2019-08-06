@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListImageJobsResponseUnmarshaller {
 
-	public static ListImageJobsResponse unmarshall(ListImageJobsResponse listImageJobsResponse, UnmarshallerContext context) {
+	public static ListImageJobsResponse unmarshall(ListImageJobsResponse listImageJobsResponse, UnmarshallerContext _ctx) {
 		
-		listImageJobsResponse.setRequestId(context.stringValue("ListImageJobsResponse.RequestId"));
-		listImageJobsResponse.setNextMarker(context.stringValue("ListImageJobsResponse.NextMarker"));
+		listImageJobsResponse.setRequestId(_ctx.stringValue("ListImageJobsResponse.RequestId"));
+		listImageJobsResponse.setNextMarker(_ctx.stringValue("ListImageJobsResponse.NextMarker"));
 
 		List<JobsItem> jobs = new ArrayList<JobsItem>();
-		for (int i = 0; i < context.lengthValue("ListImageJobsResponse.Jobs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListImageJobsResponse.Jobs.Length"); i++) {
 			JobsItem jobsItem = new JobsItem();
-			jobsItem.setStatus(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].Status"));
-			jobsItem.setJobId(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].JobId"));
-			jobsItem.setJobType(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].JobType"));
-			jobsItem.setParameters(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].Parameters"));
-			jobsItem.setResult(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].Result"));
-			jobsItem.setStartTime(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].StartTime"));
-			jobsItem.setEndTime(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].EndTime"));
-			jobsItem.setErrorMessage(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].ErrorMessage"));
-			jobsItem.setNotifyEndpoint(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].NotifyEndpoint"));
-			jobsItem.setNotifyTopicName(context.stringValue("ListImageJobsResponse.Jobs["+ i +"].NotifyTopicName"));
-			jobsItem.setProgress(context.integerValue("ListImageJobsResponse.Jobs["+ i +"].Progress"));
+			jobsItem.setStatus(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].Status"));
+			jobsItem.setJobId(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].JobId"));
+			jobsItem.setJobType(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].JobType"));
+			jobsItem.setParameters(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].Parameters"));
+			jobsItem.setResult(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].Result"));
+			jobsItem.setStartTime(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].StartTime"));
+			jobsItem.setEndTime(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].EndTime"));
+			jobsItem.setErrorMessage(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].ErrorMessage"));
+			jobsItem.setNotifyEndpoint(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].NotifyEndpoint"));
+			jobsItem.setNotifyTopicName(_ctx.stringValue("ListImageJobsResponse.Jobs["+ i +"].NotifyTopicName"));
+			jobsItem.setProgress(_ctx.integerValue("ListImageJobsResponse.Jobs["+ i +"].Progress"));
 
 			jobs.add(jobsItem);
 		}

@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPhotoProcessTasksResponseUnmarshaller {
 
-	public static ListPhotoProcessTasksResponse unmarshall(ListPhotoProcessTasksResponse listPhotoProcessTasksResponse, UnmarshallerContext context) {
+	public static ListPhotoProcessTasksResponse unmarshall(ListPhotoProcessTasksResponse listPhotoProcessTasksResponse, UnmarshallerContext _ctx) {
 		
-		listPhotoProcessTasksResponse.setRequestId(context.stringValue("ListPhotoProcessTasksResponse.RequestId"));
-		listPhotoProcessTasksResponse.setNextMarker(context.stringValue("ListPhotoProcessTasksResponse.NextMarker"));
+		listPhotoProcessTasksResponse.setRequestId(_ctx.stringValue("ListPhotoProcessTasksResponse.RequestId"));
+		listPhotoProcessTasksResponse.setNextMarker(_ctx.stringValue("ListPhotoProcessTasksResponse.NextMarker"));
 
 		List<TasksItem> tasks = new ArrayList<TasksItem>();
-		for (int i = 0; i < context.lengthValue("ListPhotoProcessTasksResponse.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPhotoProcessTasksResponse.Tasks.Length"); i++) {
 			TasksItem tasksItem = new TasksItem();
-			tasksItem.setTaskId(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].TaskId"));
-			tasksItem.setStatus(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].Status"));
-			tasksItem.setSrcUri(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].SrcUri"));
-			tasksItem.setTgtUri(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].TgtUri"));
-			tasksItem.setStyle(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].Style"));
-			tasksItem.setNotifyTopicName(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].NotifyTopicName"));
-			tasksItem.setNotifyEndpoint(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].NotifyEndpoint"));
-			tasksItem.setExternalID(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].ExternalID"));
-			tasksItem.setCreateTime(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].CreateTime"));
-			tasksItem.setFinishTime(context.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].FinishTime"));
-			tasksItem.setPercent(context.integerValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].Percent"));
+			tasksItem.setTaskId(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].TaskId"));
+			tasksItem.setStatus(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].Status"));
+			tasksItem.setSrcUri(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].SrcUri"));
+			tasksItem.setTgtUri(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].TgtUri"));
+			tasksItem.setStyle(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].Style"));
+			tasksItem.setNotifyTopicName(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].NotifyTopicName"));
+			tasksItem.setNotifyEndpoint(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].NotifyEndpoint"));
+			tasksItem.setExternalID(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].ExternalID"));
+			tasksItem.setCreateTime(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].CreateTime"));
+			tasksItem.setFinishTime(_ctx.stringValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].FinishTime"));
+			tasksItem.setPercent(_ctx.integerValue("ListPhotoProcessTasksResponse.Tasks["+ i +"].Percent"));
 
 			tasks.add(tasksItem);
 		}

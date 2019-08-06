@@ -20,20 +20,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPhotoProcessTaskResponseUnmarshaller {
 
-	public static GetPhotoProcessTaskResponse unmarshall(GetPhotoProcessTaskResponse getPhotoProcessTaskResponse, UnmarshallerContext context) {
+	public static GetPhotoProcessTaskResponse unmarshall(GetPhotoProcessTaskResponse getPhotoProcessTaskResponse, UnmarshallerContext _ctx) {
 		
-		getPhotoProcessTaskResponse.setRequestId(context.stringValue("GetPhotoProcessTaskResponse.RequestId"));
-		getPhotoProcessTaskResponse.setTaskId(context.stringValue("GetPhotoProcessTaskResponse.TaskId"));
-		getPhotoProcessTaskResponse.setStatus(context.stringValue("GetPhotoProcessTaskResponse.Status"));
-		getPhotoProcessTaskResponse.setSrcUri(context.stringValue("GetPhotoProcessTaskResponse.SrcUri"));
-		getPhotoProcessTaskResponse.setTgtUri(context.stringValue("GetPhotoProcessTaskResponse.TgtUri"));
-		getPhotoProcessTaskResponse.setStyle(context.stringValue("GetPhotoProcessTaskResponse.Style"));
-		getPhotoProcessTaskResponse.setNotifyTopicName(context.stringValue("GetPhotoProcessTaskResponse.NotifyTopicName"));
-		getPhotoProcessTaskResponse.setNotifyEndpoint(context.stringValue("GetPhotoProcessTaskResponse.NotifyEndpoint"));
-		getPhotoProcessTaskResponse.setExternalID(context.stringValue("GetPhotoProcessTaskResponse.ExternalID"));
-		getPhotoProcessTaskResponse.setCreateTime(context.stringValue("GetPhotoProcessTaskResponse.CreateTime"));
-		getPhotoProcessTaskResponse.setFinishTime(context.stringValue("GetPhotoProcessTaskResponse.FinishTime"));
-		getPhotoProcessTaskResponse.setPercent(context.integerValue("GetPhotoProcessTaskResponse.Percent"));
+		getPhotoProcessTaskResponse.setRequestId(_ctx.stringValue("GetPhotoProcessTaskResponse.RequestId"));
+		getPhotoProcessTaskResponse.setTaskId(_ctx.stringValue("GetPhotoProcessTaskResponse.TaskId"));
+		getPhotoProcessTaskResponse.setStatus(_ctx.stringValue("GetPhotoProcessTaskResponse.Status"));
+		getPhotoProcessTaskResponse.setSrcUri(_ctx.stringValue("GetPhotoProcessTaskResponse.SrcUri"));
+		getPhotoProcessTaskResponse.setTgtUri(_ctx.stringValue("GetPhotoProcessTaskResponse.TgtUri"));
+		getPhotoProcessTaskResponse.setStyle(_ctx.stringValue("GetPhotoProcessTaskResponse.Style"));
+		getPhotoProcessTaskResponse.setNotifyTopicName(_ctx.stringValue("GetPhotoProcessTaskResponse.NotifyTopicName"));
+		getPhotoProcessTaskResponse.setNotifyEndpoint(_ctx.stringValue("GetPhotoProcessTaskResponse.NotifyEndpoint"));
+		getPhotoProcessTaskResponse.setExternalID(_ctx.stringValue("GetPhotoProcessTaskResponse.ExternalID"));
+		getPhotoProcessTaskResponse.setCreateTime(_ctx.stringValue("GetPhotoProcessTaskResponse.CreateTime"));
+		getPhotoProcessTaskResponse.setFinishTime(_ctx.stringValue("GetPhotoProcessTaskResponse.FinishTime"));
+		getPhotoProcessTaskResponse.setPercent(_ctx.integerValue("GetPhotoProcessTaskResponse.Percent"));
 	 
 	 	return getPhotoProcessTaskResponse;
 	}

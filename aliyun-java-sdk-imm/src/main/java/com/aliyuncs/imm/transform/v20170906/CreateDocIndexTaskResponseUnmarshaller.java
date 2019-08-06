@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDocIndexTaskResponseUnmarshaller {
 
-	public static CreateDocIndexTaskResponse unmarshall(CreateDocIndexTaskResponse createDocIndexTaskResponse, UnmarshallerContext context) {
+	public static CreateDocIndexTaskResponse unmarshall(CreateDocIndexTaskResponse createDocIndexTaskResponse, UnmarshallerContext _ctx) {
 		
-		createDocIndexTaskResponse.setRequestId(context.stringValue("CreateDocIndexTaskResponse.RequestId"));
-		createDocIndexTaskResponse.setTaskId(context.stringValue("CreateDocIndexTaskResponse.TaskId"));
-		createDocIndexTaskResponse.setStatus(context.stringValue("CreateDocIndexTaskResponse.Status"));
-		createDocIndexTaskResponse.setCreateTime(context.stringValue("CreateDocIndexTaskResponse.CreateTime"));
+		createDocIndexTaskResponse.setRequestId(_ctx.stringValue("CreateDocIndexTaskResponse.RequestId"));
+		createDocIndexTaskResponse.setTaskId(_ctx.stringValue("CreateDocIndexTaskResponse.TaskId"));
+		createDocIndexTaskResponse.setStatus(_ctx.stringValue("CreateDocIndexTaskResponse.Status"));
+		createDocIndexTaskResponse.setCreateTime(_ctx.stringValue("CreateDocIndexTaskResponse.CreateTime"));
 	 
 	 	return createDocIndexTaskResponse;
 	}

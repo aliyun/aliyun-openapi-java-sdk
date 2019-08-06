@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCADConversionTaskResponseUnmarshaller {
 
-	public static CreateCADConversionTaskResponse unmarshall(CreateCADConversionTaskResponse createCADConversionTaskResponse, UnmarshallerContext context) {
+	public static CreateCADConversionTaskResponse unmarshall(CreateCADConversionTaskResponse createCADConversionTaskResponse, UnmarshallerContext _ctx) {
 		
-		createCADConversionTaskResponse.setRequestId(context.stringValue("CreateCADConversionTaskResponse.RequestId"));
-		createCADConversionTaskResponse.setTaskId(context.stringValue("CreateCADConversionTaskResponse.TaskId"));
-		createCADConversionTaskResponse.setTgtLoc(context.stringValue("CreateCADConversionTaskResponse.TgtLoc"));
-		createCADConversionTaskResponse.setStatus(context.stringValue("CreateCADConversionTaskResponse.Status"));
-		createCADConversionTaskResponse.setCreateTime(context.stringValue("CreateCADConversionTaskResponse.CreateTime"));
-		createCADConversionTaskResponse.setPercent(context.integerValue("CreateCADConversionTaskResponse.Percent"));
+		createCADConversionTaskResponse.setRequestId(_ctx.stringValue("CreateCADConversionTaskResponse.RequestId"));
+		createCADConversionTaskResponse.setTaskId(_ctx.stringValue("CreateCADConversionTaskResponse.TaskId"));
+		createCADConversionTaskResponse.setTgtLoc(_ctx.stringValue("CreateCADConversionTaskResponse.TgtLoc"));
+		createCADConversionTaskResponse.setStatus(_ctx.stringValue("CreateCADConversionTaskResponse.Status"));
+		createCADConversionTaskResponse.setCreateTime(_ctx.stringValue("CreateCADConversionTaskResponse.CreateTime"));
+		createCADConversionTaskResponse.setPercent(_ctx.integerValue("CreateCADConversionTaskResponse.Percent"));
 	 
 	 	return createCADConversionTaskResponse;
 	}

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFaceSearchGroupsResponseUnmarshaller {
 
-	public static ListFaceSearchGroupsResponse unmarshall(ListFaceSearchGroupsResponse listFaceSearchGroupsResponse, UnmarshallerContext context) {
+	public static ListFaceSearchGroupsResponse unmarshall(ListFaceSearchGroupsResponse listFaceSearchGroupsResponse, UnmarshallerContext _ctx) {
 		
-		listFaceSearchGroupsResponse.setRequestId(context.stringValue("ListFaceSearchGroupsResponse.RequestId"));
-		listFaceSearchGroupsResponse.setNextMarker(context.stringValue("ListFaceSearchGroupsResponse.NextMarker"));
+		listFaceSearchGroupsResponse.setRequestId(_ctx.stringValue("ListFaceSearchGroupsResponse.RequestId"));
+		listFaceSearchGroupsResponse.setNextMarker(_ctx.stringValue("ListFaceSearchGroupsResponse.NextMarker"));
 
 		List<GroupsItem> groups = new ArrayList<GroupsItem>();
-		for (int i = 0; i < context.lengthValue("ListFaceSearchGroupsResponse.Groups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFaceSearchGroupsResponse.Groups.Length"); i++) {
 			GroupsItem groupsItem = new GroupsItem();
-			groupsItem.setGroupName(context.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].GroupName"));
-			groupsItem.setCount(context.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].Count"));
-			groupsItem.setStatus(context.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].Status"));
-			groupsItem.setCreateTime(context.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].CreateTime"));
-			groupsItem.setModifyTime(context.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].ModifyTime"));
-			groupsItem.setGroupId(context.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].GroupId"));
+			groupsItem.setGroupName(_ctx.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].GroupName"));
+			groupsItem.setCount(_ctx.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].Count"));
+			groupsItem.setStatus(_ctx.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].Status"));
+			groupsItem.setCreateTime(_ctx.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].CreateTime"));
+			groupsItem.setModifyTime(_ctx.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].ModifyTime"));
+			groupsItem.setGroupId(_ctx.stringValue("ListFaceSearchGroupsResponse.Groups["+ i +"].GroupId"));
 
 			groups.add(groupsItem);
 		}

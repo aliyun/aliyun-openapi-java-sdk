@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetectImageLogosResponseUnmarshaller {
 
-	public static DetectImageLogosResponse unmarshall(DetectImageLogosResponse detectImageLogosResponse, UnmarshallerContext context) {
+	public static DetectImageLogosResponse unmarshall(DetectImageLogosResponse detectImageLogosResponse, UnmarshallerContext _ctx) {
 		
-		detectImageLogosResponse.setRequestId(context.stringValue("DetectImageLogosResponse.RequestId"));
-		detectImageLogosResponse.setImageUri(context.stringValue("DetectImageLogosResponse.ImageUri"));
+		detectImageLogosResponse.setRequestId(_ctx.stringValue("DetectImageLogosResponse.RequestId"));
+		detectImageLogosResponse.setImageUri(_ctx.stringValue("DetectImageLogosResponse.ImageUri"));
 
 		List<LogosItem> logos = new ArrayList<LogosItem>();
-		for (int i = 0; i < context.lengthValue("DetectImageLogosResponse.Logos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectImageLogosResponse.Logos.Length"); i++) {
 			LogosItem logosItem = new LogosItem();
-			logosItem.setLogoName(context.stringValue("DetectImageLogosResponse.Logos["+ i +"].LogoName"));
-			logosItem.setLogoConfidence(context.floatValue("DetectImageLogosResponse.Logos["+ i +"].LogoConfidence"));
+			logosItem.setLogoName(_ctx.stringValue("DetectImageLogosResponse.Logos["+ i +"].LogoName"));
+			logosItem.setLogoConfidence(_ctx.floatValue("DetectImageLogosResponse.Logos["+ i +"].LogoConfidence"));
 
 			LogoBoundary logoBoundary = new LogoBoundary();
-			logoBoundary.setWidth(context.integerValue("DetectImageLogosResponse.Logos["+ i +"].LogoBoundary.Width"));
-			logoBoundary.setHeight(context.integerValue("DetectImageLogosResponse.Logos["+ i +"].LogoBoundary.Height"));
-			logoBoundary.setTop(context.integerValue("DetectImageLogosResponse.Logos["+ i +"].LogoBoundary.Top"));
-			logoBoundary.setLeft(context.integerValue("DetectImageLogosResponse.Logos["+ i +"].LogoBoundary.Left"));
+			logoBoundary.setWidth(_ctx.integerValue("DetectImageLogosResponse.Logos["+ i +"].LogoBoundary.Width"));
+			logoBoundary.setHeight(_ctx.integerValue("DetectImageLogosResponse.Logos["+ i +"].LogoBoundary.Height"));
+			logoBoundary.setTop(_ctx.integerValue("DetectImageLogosResponse.Logos["+ i +"].LogoBoundary.Top"));
+			logoBoundary.setLeft(_ctx.integerValue("DetectImageLogosResponse.Logos["+ i +"].LogoBoundary.Left"));
 			logosItem.setLogoBoundary(logoBoundary);
 
 			logos.add(logosItem);

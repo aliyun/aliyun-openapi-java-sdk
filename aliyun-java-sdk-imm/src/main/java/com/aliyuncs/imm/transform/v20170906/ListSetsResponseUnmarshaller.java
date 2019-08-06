@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSetsResponseUnmarshaller {
 
-	public static ListSetsResponse unmarshall(ListSetsResponse listSetsResponse, UnmarshallerContext context) {
+	public static ListSetsResponse unmarshall(ListSetsResponse listSetsResponse, UnmarshallerContext _ctx) {
 		
-		listSetsResponse.setRequestId(context.stringValue("ListSetsResponse.RequestId"));
-		listSetsResponse.setNextMarker(context.stringValue("ListSetsResponse.NextMarker"));
+		listSetsResponse.setRequestId(_ctx.stringValue("ListSetsResponse.RequestId"));
+		listSetsResponse.setNextMarker(_ctx.stringValue("ListSetsResponse.NextMarker"));
 
 		List<SetsItem> sets = new ArrayList<SetsItem>();
-		for (int i = 0; i < context.lengthValue("ListSetsResponse.Sets.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSetsResponse.Sets.Length"); i++) {
 			SetsItem setsItem = new SetsItem();
-			setsItem.setSetId(context.stringValue("ListSetsResponse.Sets["+ i +"].SetId"));
-			setsItem.setSetName(context.stringValue("ListSetsResponse.Sets["+ i +"].SetName"));
-			setsItem.setCreateTime(context.stringValue("ListSetsResponse.Sets["+ i +"].CreateTime"));
-			setsItem.setModifyTime(context.stringValue("ListSetsResponse.Sets["+ i +"].ModifyTime"));
-			setsItem.setFaceCount(context.integerValue("ListSetsResponse.Sets["+ i +"].FaceCount"));
-			setsItem.setImageCount(context.integerValue("ListSetsResponse.Sets["+ i +"].ImageCount"));
-			setsItem.setVideoCount(context.integerValue("ListSetsResponse.Sets["+ i +"].VideoCount"));
-			setsItem.setVideoLength(context.integerValue("ListSetsResponse.Sets["+ i +"].VideoLength"));
+			setsItem.setSetId(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].SetId"));
+			setsItem.setSetName(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].SetName"));
+			setsItem.setCreateTime(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].CreateTime"));
+			setsItem.setModifyTime(_ctx.stringValue("ListSetsResponse.Sets["+ i +"].ModifyTime"));
+			setsItem.setFaceCount(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].FaceCount"));
+			setsItem.setImageCount(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].ImageCount"));
+			setsItem.setVideoCount(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].VideoCount"));
+			setsItem.setVideoLength(_ctx.integerValue("ListSetsResponse.Sets["+ i +"].VideoLength"));
 
 			sets.add(setsItem);
 		}

@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateTagJobResponseUnmarshaller {
 
-	public static CreateTagJobResponse unmarshall(CreateTagJobResponse createTagJobResponse, UnmarshallerContext context) {
+	public static CreateTagJobResponse unmarshall(CreateTagJobResponse createTagJobResponse, UnmarshallerContext _ctx) {
 		
-		createTagJobResponse.setRequestId(context.stringValue("CreateTagJobResponse.RequestId"));
-		createTagJobResponse.setJobId(context.stringValue("CreateTagJobResponse.JobId"));
-		createTagJobResponse.setSetId(context.stringValue("CreateTagJobResponse.SetId"));
-		createTagJobResponse.setSrcUri(context.stringValue("CreateTagJobResponse.SrcUri"));
-		createTagJobResponse.setStatus(context.stringValue("CreateTagJobResponse.Status"));
-		createTagJobResponse.setPercent(context.integerValue("CreateTagJobResponse.Percent"));
-		createTagJobResponse.setCreateTime(context.stringValue("CreateTagJobResponse.CreateTime"));
-		createTagJobResponse.setFinishTime(context.stringValue("CreateTagJobResponse.FinishTime"));
+		createTagJobResponse.setRequestId(_ctx.stringValue("CreateTagJobResponse.RequestId"));
+		createTagJobResponse.setJobId(_ctx.stringValue("CreateTagJobResponse.JobId"));
+		createTagJobResponse.setSetId(_ctx.stringValue("CreateTagJobResponse.SetId"));
+		createTagJobResponse.setSrcUri(_ctx.stringValue("CreateTagJobResponse.SrcUri"));
+		createTagJobResponse.setStatus(_ctx.stringValue("CreateTagJobResponse.Status"));
+		createTagJobResponse.setPercent(_ctx.integerValue("CreateTagJobResponse.Percent"));
+		createTagJobResponse.setCreateTime(_ctx.stringValue("CreateTagJobResponse.CreateTime"));
+		createTagJobResponse.setFinishTime(_ctx.stringValue("CreateTagJobResponse.FinishTime"));
 	 
 	 	return createTagJobResponse;
 	}

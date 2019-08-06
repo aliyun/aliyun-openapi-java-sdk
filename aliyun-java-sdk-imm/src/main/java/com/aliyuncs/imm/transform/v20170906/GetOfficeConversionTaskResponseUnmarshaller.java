@@ -21,25 +21,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetOfficeConversionTaskResponseUnmarshaller {
 
-	public static GetOfficeConversionTaskResponse unmarshall(GetOfficeConversionTaskResponse getOfficeConversionTaskResponse, UnmarshallerContext context) {
+	public static GetOfficeConversionTaskResponse unmarshall(GetOfficeConversionTaskResponse getOfficeConversionTaskResponse, UnmarshallerContext _ctx) {
 		
-		getOfficeConversionTaskResponse.setRequestId(context.stringValue("GetOfficeConversionTaskResponse.RequestId"));
-		getOfficeConversionTaskResponse.setTgtType(context.stringValue("GetOfficeConversionTaskResponse.TgtType"));
-		getOfficeConversionTaskResponse.setStatus(context.stringValue("GetOfficeConversionTaskResponse.Status"));
-		getOfficeConversionTaskResponse.setPercent(context.integerValue("GetOfficeConversionTaskResponse.Percent"));
-		getOfficeConversionTaskResponse.setPageCount(context.integerValue("GetOfficeConversionTaskResponse.PageCount"));
-		getOfficeConversionTaskResponse.setTaskId(context.stringValue("GetOfficeConversionTaskResponse.TaskId"));
-		getOfficeConversionTaskResponse.setTgtUri(context.stringValue("GetOfficeConversionTaskResponse.TgtUri"));
-		getOfficeConversionTaskResponse.setImageSpec(context.stringValue("GetOfficeConversionTaskResponse.ImageSpec"));
-		getOfficeConversionTaskResponse.setNotifyTopicName(context.stringValue("GetOfficeConversionTaskResponse.NotifyTopicName"));
-		getOfficeConversionTaskResponse.setNotifyEndpoint(context.stringValue("GetOfficeConversionTaskResponse.NotifyEndpoint"));
-		getOfficeConversionTaskResponse.setExternalID(context.stringValue("GetOfficeConversionTaskResponse.ExternalID"));
-		getOfficeConversionTaskResponse.setCreateTime(context.stringValue("GetOfficeConversionTaskResponse.CreateTime"));
-		getOfficeConversionTaskResponse.setFinishTime(context.stringValue("GetOfficeConversionTaskResponse.FinishTime"));
-		getOfficeConversionTaskResponse.setSrcUri(context.stringValue("GetOfficeConversionTaskResponse.SrcUri"));
+		getOfficeConversionTaskResponse.setRequestId(_ctx.stringValue("GetOfficeConversionTaskResponse.RequestId"));
+		getOfficeConversionTaskResponse.setTgtType(_ctx.stringValue("GetOfficeConversionTaskResponse.TgtType"));
+		getOfficeConversionTaskResponse.setStatus(_ctx.stringValue("GetOfficeConversionTaskResponse.Status"));
+		getOfficeConversionTaskResponse.setPercent(_ctx.integerValue("GetOfficeConversionTaskResponse.Percent"));
+		getOfficeConversionTaskResponse.setPageCount(_ctx.integerValue("GetOfficeConversionTaskResponse.PageCount"));
+		getOfficeConversionTaskResponse.setTaskId(_ctx.stringValue("GetOfficeConversionTaskResponse.TaskId"));
+		getOfficeConversionTaskResponse.setTgtUri(_ctx.stringValue("GetOfficeConversionTaskResponse.TgtUri"));
+		getOfficeConversionTaskResponse.setImageSpec(_ctx.stringValue("GetOfficeConversionTaskResponse.ImageSpec"));
+		getOfficeConversionTaskResponse.setNotifyTopicName(_ctx.stringValue("GetOfficeConversionTaskResponse.NotifyTopicName"));
+		getOfficeConversionTaskResponse.setNotifyEndpoint(_ctx.stringValue("GetOfficeConversionTaskResponse.NotifyEndpoint"));
+		getOfficeConversionTaskResponse.setExternalID(_ctx.stringValue("GetOfficeConversionTaskResponse.ExternalID"));
+		getOfficeConversionTaskResponse.setCreateTime(_ctx.stringValue("GetOfficeConversionTaskResponse.CreateTime"));
+		getOfficeConversionTaskResponse.setFinishTime(_ctx.stringValue("GetOfficeConversionTaskResponse.FinishTime"));
+		getOfficeConversionTaskResponse.setSrcUri(_ctx.stringValue("GetOfficeConversionTaskResponse.SrcUri"));
 
 		FailDetail failDetail = new FailDetail();
-		failDetail.setCode(context.stringValue("GetOfficeConversionTaskResponse.FailDetail.Code"));
+		failDetail.setCode(_ctx.stringValue("GetOfficeConversionTaskResponse.FailDetail.Code"));
 		getOfficeConversionTaskResponse.setFailDetail(failDetail);
 	 
 	 	return getOfficeConversionTaskResponse;

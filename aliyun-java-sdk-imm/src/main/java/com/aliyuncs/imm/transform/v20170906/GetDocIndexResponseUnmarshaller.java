@@ -20,24 +20,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetDocIndexResponseUnmarshaller {
 
-	public static GetDocIndexResponse unmarshall(GetDocIndexResponse getDocIndexResponse, UnmarshallerContext context) {
+	public static GetDocIndexResponse unmarshall(GetDocIndexResponse getDocIndexResponse, UnmarshallerContext _ctx) {
 		
-		getDocIndexResponse.setRequestId(context.stringValue("GetDocIndexResponse.RequestId"));
-		getDocIndexResponse.setIndexCreatedTime(context.stringValue("GetDocIndexResponse.IndexCreatedTime"));
-		getDocIndexResponse.setIndexModifiedTime(context.stringValue("GetDocIndexResponse.IndexModifiedTime"));
-		getDocIndexResponse.setUniqueId(context.stringValue("GetDocIndexResponse.UniqueId"));
-		getDocIndexResponse.setSrcUri(context.stringValue("GetDocIndexResponse.SrcUri"));
-		getDocIndexResponse.setName(context.stringValue("GetDocIndexResponse.Name"));
-		getDocIndexResponse.setContentType(context.stringValue("GetDocIndexResponse.ContentType"));
-		getDocIndexResponse.setLastModified(context.stringValue("GetDocIndexResponse.LastModified"));
-		getDocIndexResponse.setSize(context.longValue("GetDocIndexResponse.Size"));
-		getDocIndexResponse.setPageNum(context.longValue("GetDocIndexResponse.PageNum"));
-		getDocIndexResponse.setCustomKey1(context.stringValue("GetDocIndexResponse.CustomKey1"));
-		getDocIndexResponse.setCustomKey2(context.stringValue("GetDocIndexResponse.CustomKey2"));
-		getDocIndexResponse.setCustomKey3(context.stringValue("GetDocIndexResponse.CustomKey3"));
-		getDocIndexResponse.setCustomKey4(context.stringValue("GetDocIndexResponse.CustomKey4"));
-		getDocIndexResponse.setCustomKey5(context.stringValue("GetDocIndexResponse.CustomKey5"));
-		getDocIndexResponse.setCustomKey6(context.stringValue("GetDocIndexResponse.CustomKey6"));
+		getDocIndexResponse.setRequestId(_ctx.stringValue("GetDocIndexResponse.RequestId"));
+		getDocIndexResponse.setIndexCreatedTime(_ctx.stringValue("GetDocIndexResponse.IndexCreatedTime"));
+		getDocIndexResponse.setIndexModifiedTime(_ctx.stringValue("GetDocIndexResponse.IndexModifiedTime"));
+		getDocIndexResponse.setUniqueId(_ctx.stringValue("GetDocIndexResponse.UniqueId"));
+		getDocIndexResponse.setSrcUri(_ctx.stringValue("GetDocIndexResponse.SrcUri"));
+		getDocIndexResponse.setName(_ctx.stringValue("GetDocIndexResponse.Name"));
+		getDocIndexResponse.setContentType(_ctx.stringValue("GetDocIndexResponse.ContentType"));
+		getDocIndexResponse.setLastModified(_ctx.stringValue("GetDocIndexResponse.LastModified"));
+		getDocIndexResponse.setSize(_ctx.longValue("GetDocIndexResponse.Size"));
+		getDocIndexResponse.setPageNum(_ctx.longValue("GetDocIndexResponse.PageNum"));
+		getDocIndexResponse.setCustomKey1(_ctx.stringValue("GetDocIndexResponse.CustomKey1"));
+		getDocIndexResponse.setCustomKey2(_ctx.stringValue("GetDocIndexResponse.CustomKey2"));
+		getDocIndexResponse.setCustomKey3(_ctx.stringValue("GetDocIndexResponse.CustomKey3"));
+		getDocIndexResponse.setCustomKey4(_ctx.stringValue("GetDocIndexResponse.CustomKey4"));
+		getDocIndexResponse.setCustomKey5(_ctx.stringValue("GetDocIndexResponse.CustomKey5"));
+		getDocIndexResponse.setCustomKey6(_ctx.stringValue("GetDocIndexResponse.CustomKey6"));
 	 
 	 	return getDocIndexResponse;
 	}

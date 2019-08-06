@@ -23,28 +23,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RegistFaceResponseUnmarshaller {
 
-	public static RegistFaceResponse unmarshall(RegistFaceResponse registFaceResponse, UnmarshallerContext context) {
+	public static RegistFaceResponse unmarshall(RegistFaceResponse registFaceResponse, UnmarshallerContext _ctx) {
 		
-		registFaceResponse.setRequestId(context.stringValue("RegistFaceResponse.RequestId"));
-		registFaceResponse.setGroupId(context.stringValue("RegistFaceResponse.GroupId"));
-		registFaceResponse.setImageUri(context.stringValue("RegistFaceResponse.ImageUri"));
-		registFaceResponse.setImageMd5(context.stringValue("RegistFaceResponse.ImageMd5"));
-		registFaceResponse.setImageId(context.stringValue("RegistFaceResponse.ImageId"));
-		registFaceResponse.setGroupName(context.stringValue("RegistFaceResponse.GroupName"));
-		registFaceResponse.setUser(context.stringValue("RegistFaceResponse.User"));
-		registFaceResponse.setRoll(context.floatValue("RegistFaceResponse.Roll"));
-		registFaceResponse.setFaceId(context.stringValue("RegistFaceResponse.FaceId"));
-		registFaceResponse.setYaw(context.floatValue("RegistFaceResponse.Yaw"));
-		registFaceResponse.setQuality(context.floatValue("RegistFaceResponse.Quality"));
-		registFaceResponse.setGlasses(context.integerValue("RegistFaceResponse.Glasses"));
-		registFaceResponse.setHat(context.integerValue("RegistFaceResponse.Hat"));
-		registFaceResponse.setPitch(context.floatValue("RegistFaceResponse.Pitch"));
-		registFaceResponse.setAge(context.integerValue("RegistFaceResponse.Age"));
-		registFaceResponse.setGender(context.stringValue("RegistFaceResponse.Gender"));
+		registFaceResponse.setRequestId(_ctx.stringValue("RegistFaceResponse.RequestId"));
+		registFaceResponse.setGroupId(_ctx.stringValue("RegistFaceResponse.GroupId"));
+		registFaceResponse.setImageUri(_ctx.stringValue("RegistFaceResponse.ImageUri"));
+		registFaceResponse.setImageMd5(_ctx.stringValue("RegistFaceResponse.ImageMd5"));
+		registFaceResponse.setImageId(_ctx.stringValue("RegistFaceResponse.ImageId"));
+		registFaceResponse.setGroupName(_ctx.stringValue("RegistFaceResponse.GroupName"));
+		registFaceResponse.setUser(_ctx.stringValue("RegistFaceResponse.User"));
+		registFaceResponse.setRoll(_ctx.floatValue("RegistFaceResponse.Roll"));
+		registFaceResponse.setFaceId(_ctx.stringValue("RegistFaceResponse.FaceId"));
+		registFaceResponse.setYaw(_ctx.floatValue("RegistFaceResponse.Yaw"));
+		registFaceResponse.setQuality(_ctx.floatValue("RegistFaceResponse.Quality"));
+		registFaceResponse.setGlasses(_ctx.integerValue("RegistFaceResponse.Glasses"));
+		registFaceResponse.setHat(_ctx.integerValue("RegistFaceResponse.Hat"));
+		registFaceResponse.setPitch(_ctx.floatValue("RegistFaceResponse.Pitch"));
+		registFaceResponse.setAge(_ctx.integerValue("RegistFaceResponse.Age"));
+		registFaceResponse.setGender(_ctx.stringValue("RegistFaceResponse.Gender"));
 
 		List<String> axis = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("RegistFaceResponse.Axis.Length"); i++) {
-			axis.add(context.stringValue("RegistFaceResponse.Axis["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("RegistFaceResponse.Axis.Length"); i++) {
+			axis.add(_ctx.stringValue("RegistFaceResponse.Axis["+ i +"]"));
 		}
 		registFaceResponse.setAxis(axis);
 	 

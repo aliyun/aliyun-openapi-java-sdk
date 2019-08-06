@@ -20,18 +20,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class IndexImageResponseUnmarshaller {
 
-	public static IndexImageResponse unmarshall(IndexImageResponse indexImageResponse, UnmarshallerContext context) {
+	public static IndexImageResponse unmarshall(IndexImageResponse indexImageResponse, UnmarshallerContext _ctx) {
 		
-		indexImageResponse.setRequestId(context.stringValue("IndexImageResponse.RequestId"));
-		indexImageResponse.setSetId(context.stringValue("IndexImageResponse.SetId"));
-		indexImageResponse.setImageUri(context.stringValue("IndexImageResponse.ImageUri"));
-		indexImageResponse.setRemarksA(context.stringValue("IndexImageResponse.RemarksA"));
-		indexImageResponse.setRemarksB(context.stringValue("IndexImageResponse.RemarksB"));
-		indexImageResponse.setCreateTime(context.stringValue("IndexImageResponse.CreateTime"));
-		indexImageResponse.setModifyTime(context.stringValue("IndexImageResponse.ModifyTime"));
-		indexImageResponse.setRemarksC(context.stringValue("IndexImageResponse.RemarksC"));
-		indexImageResponse.setRemarksD(context.stringValue("IndexImageResponse.RemarksD"));
-		indexImageResponse.setExternalId(context.stringValue("IndexImageResponse.ExternalId"));
+		indexImageResponse.setRequestId(_ctx.stringValue("IndexImageResponse.RequestId"));
+		indexImageResponse.setSetId(_ctx.stringValue("IndexImageResponse.SetId"));
+		indexImageResponse.setImageUri(_ctx.stringValue("IndexImageResponse.ImageUri"));
+		indexImageResponse.setRemarksA(_ctx.stringValue("IndexImageResponse.RemarksA"));
+		indexImageResponse.setRemarksB(_ctx.stringValue("IndexImageResponse.RemarksB"));
+		indexImageResponse.setCreateTime(_ctx.stringValue("IndexImageResponse.CreateTime"));
+		indexImageResponse.setModifyTime(_ctx.stringValue("IndexImageResponse.ModifyTime"));
+		indexImageResponse.setRemarksC(_ctx.stringValue("IndexImageResponse.RemarksC"));
+		indexImageResponse.setRemarksD(_ctx.stringValue("IndexImageResponse.RemarksD"));
+		indexImageResponse.setExternalId(_ctx.stringValue("IndexImageResponse.ExternalId"));
 	 
 	 	return indexImageResponse;
 	}

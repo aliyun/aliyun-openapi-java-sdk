@@ -34,92 +34,92 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FindImagesResponseUnmarshaller {
 
-	public static FindImagesResponse unmarshall(FindImagesResponse findImagesResponse, UnmarshallerContext context) {
+	public static FindImagesResponse unmarshall(FindImagesResponse findImagesResponse, UnmarshallerContext _ctx) {
 		
-		findImagesResponse.setRequestId(context.stringValue("FindImagesResponse.RequestId"));
-		findImagesResponse.setSetId(context.stringValue("FindImagesResponse.SetId"));
-		findImagesResponse.setNextMarker(context.stringValue("FindImagesResponse.NextMarker"));
+		findImagesResponse.setRequestId(_ctx.stringValue("FindImagesResponse.RequestId"));
+		findImagesResponse.setSetId(_ctx.stringValue("FindImagesResponse.SetId"));
+		findImagesResponse.setNextMarker(_ctx.stringValue("FindImagesResponse.NextMarker"));
 
 		List<ImagesItem> images = new ArrayList<ImagesItem>();
-		for (int i = 0; i < context.lengthValue("FindImagesResponse.Images.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("FindImagesResponse.Images.Length"); i++) {
 			ImagesItem imagesItem = new ImagesItem();
-			imagesItem.setFacesModifyTime(context.stringValue("FindImagesResponse.Images["+ i +"].FacesModifyTime"));
-			imagesItem.setOCRModifyTime(context.stringValue("FindImagesResponse.Images["+ i +"].OCRModifyTime"));
-			imagesItem.setOCRStatus(context.stringValue("FindImagesResponse.Images["+ i +"].OCRStatus"));
-			imagesItem.setSourcePosition(context.stringValue("FindImagesResponse.Images["+ i +"].SourcePosition"));
-			imagesItem.setExif(context.stringValue("FindImagesResponse.Images["+ i +"].Exif"));
-			imagesItem.setImageUri(context.stringValue("FindImagesResponse.Images["+ i +"].ImageUri"));
-			imagesItem.setImageWidth(context.integerValue("FindImagesResponse.Images["+ i +"].ImageWidth"));
-			imagesItem.setImageFormat(context.stringValue("FindImagesResponse.Images["+ i +"].ImageFormat"));
-			imagesItem.setSourceType(context.stringValue("FindImagesResponse.Images["+ i +"].SourceType"));
-			imagesItem.setModifyTime(context.stringValue("FindImagesResponse.Images["+ i +"].ModifyTime"));
-			imagesItem.setFileSize(context.integerValue("FindImagesResponse.Images["+ i +"].FileSize"));
-			imagesItem.setSourceUri(context.stringValue("FindImagesResponse.Images["+ i +"].SourceUri"));
-			imagesItem.setCreateTime(context.stringValue("FindImagesResponse.Images["+ i +"].CreateTime"));
-			imagesItem.setFacesStatus(context.stringValue("FindImagesResponse.Images["+ i +"].FacesStatus"));
-			imagesItem.setRemarksA(context.stringValue("FindImagesResponse.Images["+ i +"].RemarksA"));
-			imagesItem.setImageHeight(context.integerValue("FindImagesResponse.Images["+ i +"].ImageHeight"));
-			imagesItem.setRemarksB(context.stringValue("FindImagesResponse.Images["+ i +"].RemarksB"));
-			imagesItem.setImageTime(context.stringValue("FindImagesResponse.Images["+ i +"].ImageTime"));
-			imagesItem.setOrientation(context.stringValue("FindImagesResponse.Images["+ i +"].Orientation"));
-			imagesItem.setLocation(context.stringValue("FindImagesResponse.Images["+ i +"].Location"));
-			imagesItem.setOCRFailReason(context.stringValue("FindImagesResponse.Images["+ i +"].OCRFailReason"));
-			imagesItem.setFacesFailReason(context.stringValue("FindImagesResponse.Images["+ i +"].FacesFailReason"));
-			imagesItem.setTagsFailReason(context.stringValue("FindImagesResponse.Images["+ i +"].TagsFailReason"));
-			imagesItem.setTagsModifyTime(context.stringValue("FindImagesResponse.Images["+ i +"].TagsModifyTime"));
-			imagesItem.setCelebrityStatus(context.stringValue("FindImagesResponse.Images["+ i +"].CelebrityStatus"));
-			imagesItem.setCelebrityModifyTime(context.stringValue("FindImagesResponse.Images["+ i +"].CelebrityModifyTime"));
-			imagesItem.setCelebrityFailReason(context.stringValue("FindImagesResponse.Images["+ i +"].CelebrityFailReason"));
-			imagesItem.setTagsStatus(context.stringValue("FindImagesResponse.Images["+ i +"].TagsStatus"));
-			imagesItem.setRemarksC(context.stringValue("FindImagesResponse.Images["+ i +"].RemarksC"));
-			imagesItem.setRemarksD(context.stringValue("FindImagesResponse.Images["+ i +"].RemarksD"));
-			imagesItem.setExternalId(context.stringValue("FindImagesResponse.Images["+ i +"].ExternalId"));
+			imagesItem.setFacesModifyTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].FacesModifyTime"));
+			imagesItem.setOCRModifyTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].OCRModifyTime"));
+			imagesItem.setOCRStatus(_ctx.stringValue("FindImagesResponse.Images["+ i +"].OCRStatus"));
+			imagesItem.setSourcePosition(_ctx.stringValue("FindImagesResponse.Images["+ i +"].SourcePosition"));
+			imagesItem.setExif(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Exif"));
+			imagesItem.setImageUri(_ctx.stringValue("FindImagesResponse.Images["+ i +"].ImageUri"));
+			imagesItem.setImageWidth(_ctx.integerValue("FindImagesResponse.Images["+ i +"].ImageWidth"));
+			imagesItem.setImageFormat(_ctx.stringValue("FindImagesResponse.Images["+ i +"].ImageFormat"));
+			imagesItem.setSourceType(_ctx.stringValue("FindImagesResponse.Images["+ i +"].SourceType"));
+			imagesItem.setModifyTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].ModifyTime"));
+			imagesItem.setFileSize(_ctx.integerValue("FindImagesResponse.Images["+ i +"].FileSize"));
+			imagesItem.setSourceUri(_ctx.stringValue("FindImagesResponse.Images["+ i +"].SourceUri"));
+			imagesItem.setCreateTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].CreateTime"));
+			imagesItem.setFacesStatus(_ctx.stringValue("FindImagesResponse.Images["+ i +"].FacesStatus"));
+			imagesItem.setRemarksA(_ctx.stringValue("FindImagesResponse.Images["+ i +"].RemarksA"));
+			imagesItem.setImageHeight(_ctx.integerValue("FindImagesResponse.Images["+ i +"].ImageHeight"));
+			imagesItem.setRemarksB(_ctx.stringValue("FindImagesResponse.Images["+ i +"].RemarksB"));
+			imagesItem.setImageTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].ImageTime"));
+			imagesItem.setOrientation(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Orientation"));
+			imagesItem.setLocation(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Location"));
+			imagesItem.setOCRFailReason(_ctx.stringValue("FindImagesResponse.Images["+ i +"].OCRFailReason"));
+			imagesItem.setFacesFailReason(_ctx.stringValue("FindImagesResponse.Images["+ i +"].FacesFailReason"));
+			imagesItem.setTagsFailReason(_ctx.stringValue("FindImagesResponse.Images["+ i +"].TagsFailReason"));
+			imagesItem.setTagsModifyTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].TagsModifyTime"));
+			imagesItem.setCelebrityStatus(_ctx.stringValue("FindImagesResponse.Images["+ i +"].CelebrityStatus"));
+			imagesItem.setCelebrityModifyTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].CelebrityModifyTime"));
+			imagesItem.setCelebrityFailReason(_ctx.stringValue("FindImagesResponse.Images["+ i +"].CelebrityFailReason"));
+			imagesItem.setTagsStatus(_ctx.stringValue("FindImagesResponse.Images["+ i +"].TagsStatus"));
+			imagesItem.setRemarksC(_ctx.stringValue("FindImagesResponse.Images["+ i +"].RemarksC"));
+			imagesItem.setRemarksD(_ctx.stringValue("FindImagesResponse.Images["+ i +"].RemarksD"));
+			imagesItem.setExternalId(_ctx.stringValue("FindImagesResponse.Images["+ i +"].ExternalId"));
 
 			List<FacesItem> faces = new ArrayList<FacesItem>();
-			for (int j = 0; j < context.lengthValue("FindImagesResponse.Images["+ i +"].Faces.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("FindImagesResponse.Images["+ i +"].Faces.Length"); j++) {
 				FacesItem facesItem = new FacesItem();
-				facesItem.setAge(context.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].Age"));
-				facesItem.setGenderConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].GenderConfidence"));
-				facesItem.setAttractive(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].Attractive"));
-				facesItem.setGender(context.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].Gender"));
-				facesItem.setFaceConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceConfidence"));
-				facesItem.setEmotion(context.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].Emotion"));
-				facesItem.setFaceId(context.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceId"));
-				facesItem.setEmotionConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionConfidence"));
-				facesItem.setGroupId(context.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].GroupId"));
-				facesItem.setFaceQuality(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceQuality"));
+				facesItem.setAge(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].Age"));
+				facesItem.setGenderConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].GenderConfidence"));
+				facesItem.setAttractive(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].Attractive"));
+				facesItem.setGender(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].Gender"));
+				facesItem.setFaceConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceConfidence"));
+				facesItem.setEmotion(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].Emotion"));
+				facesItem.setFaceId(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceId"));
+				facesItem.setEmotionConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionConfidence"));
+				facesItem.setGroupId(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].GroupId"));
+				facesItem.setFaceQuality(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceQuality"));
 
 				EmotionDetails emotionDetails = new EmotionDetails();
-				emotionDetails.setSAD(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.SAD"));
-				emotionDetails.setCALM(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.CALM"));
-				emotionDetails.setANGRY(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.ANGRY"));
-				emotionDetails.setHAPPY(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.HAPPY"));
-				emotionDetails.setSCARED(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.SCARED"));
-				emotionDetails.setDISGUSTED(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.DISGUSTED"));
-				emotionDetails.setSURPRISED(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.SURPRISED"));
+				emotionDetails.setSAD(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.SAD"));
+				emotionDetails.setCALM(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.CALM"));
+				emotionDetails.setANGRY(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.ANGRY"));
+				emotionDetails.setHAPPY(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.HAPPY"));
+				emotionDetails.setSCARED(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.SCARED"));
+				emotionDetails.setDISGUSTED(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.DISGUSTED"));
+				emotionDetails.setSURPRISED(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].EmotionDetails.SURPRISED"));
 				facesItem.setEmotionDetails(emotionDetails);
 
 				FaceAttributes faceAttributes = new FaceAttributes();
-				faceAttributes.setGlassesConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.GlassesConfidence"));
-				faceAttributes.setGlasses(context.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.Glasses"));
-				faceAttributes.setRaceConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.RaceConfidence"));
-				faceAttributes.setBeard(context.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.Beard"));
-				faceAttributes.setMaskConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.MaskConfidence"));
-				faceAttributes.setRace(context.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.Race"));
-				faceAttributes.setBeardConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.BeardConfidence"));
-				faceAttributes.setMask(context.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.Mask"));
+				faceAttributes.setGlassesConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.GlassesConfidence"));
+				faceAttributes.setGlasses(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.Glasses"));
+				faceAttributes.setRaceConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.RaceConfidence"));
+				faceAttributes.setBeard(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.Beard"));
+				faceAttributes.setMaskConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.MaskConfidence"));
+				faceAttributes.setRace(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.Race"));
+				faceAttributes.setBeardConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.BeardConfidence"));
+				faceAttributes.setMask(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.Mask"));
 
 				FaceBoundary faceBoundary = new FaceBoundary();
-				faceBoundary.setTop(context.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Top"));
-				faceBoundary.setHeight(context.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Height"));
-				faceBoundary.setWidth(context.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Width"));
-				faceBoundary.setLeft(context.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Left"));
+				faceBoundary.setTop(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Top"));
+				faceBoundary.setHeight(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Height"));
+				faceBoundary.setWidth(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Width"));
+				faceBoundary.setLeft(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Left"));
 				faceAttributes.setFaceBoundary(faceBoundary);
 
 				HeadPose headPose = new HeadPose();
-				headPose.setPitch(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Pitch"));
-				headPose.setRoll(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Roll"));
-				headPose.setYaw(context.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Yaw"));
+				headPose.setPitch(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Pitch"));
+				headPose.setRoll(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Roll"));
+				headPose.setYaw(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Yaw"));
 				faceAttributes.setHeadPose(headPose);
 				facesItem.setFaceAttributes(faceAttributes);
 
@@ -128,28 +128,28 @@ public class FindImagesResponseUnmarshaller {
 			imagesItem.setFaces(faces);
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
-			for (int j = 0; j < context.lengthValue("FindImagesResponse.Images["+ i +"].Tags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("FindImagesResponse.Images["+ i +"].Tags.Length"); j++) {
 				TagsItem tagsItem = new TagsItem();
-				tagsItem.setTagConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].Tags["+ j +"].TagConfidence"));
-				tagsItem.setTagLevel(context.integerValue("FindImagesResponse.Images["+ i +"].Tags["+ j +"].TagLevel"));
-				tagsItem.setTagName(context.stringValue("FindImagesResponse.Images["+ i +"].Tags["+ j +"].TagName"));
-				tagsItem.setParentTagName(context.stringValue("FindImagesResponse.Images["+ i +"].Tags["+ j +"].ParentTagName"));
+				tagsItem.setTagConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Tags["+ j +"].TagConfidence"));
+				tagsItem.setTagLevel(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Tags["+ j +"].TagLevel"));
+				tagsItem.setTagName(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Tags["+ j +"].TagName"));
+				tagsItem.setParentTagName(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Tags["+ j +"].ParentTagName"));
 
 				tags.add(tagsItem);
 			}
 			imagesItem.setTags(tags);
 
 			List<OCRItem> oCR = new ArrayList<OCRItem>();
-			for (int j = 0; j < context.lengthValue("FindImagesResponse.Images["+ i +"].OCR.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("FindImagesResponse.Images["+ i +"].OCR.Length"); j++) {
 				OCRItem oCRItem = new OCRItem();
-				oCRItem.setOCRContents(context.stringValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRContents"));
-				oCRItem.setOCRConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRConfidence"));
+				oCRItem.setOCRContents(_ctx.stringValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRContents"));
+				oCRItem.setOCRConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRConfidence"));
 
 				OCRBoundary oCRBoundary = new OCRBoundary();
-				oCRBoundary.setLeft(context.integerValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left"));
-				oCRBoundary.setLeft1(context.integerValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left"));
-				oCRBoundary.setWidth(context.integerValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRBoundary.Width"));
-				oCRBoundary.setHeight(context.integerValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRBoundary.Height"));
+				oCRBoundary.setLeft(_ctx.integerValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left"));
+				oCRBoundary.setLeft1(_ctx.integerValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left"));
+				oCRBoundary.setWidth(_ctx.integerValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRBoundary.Width"));
+				oCRBoundary.setHeight(_ctx.integerValue("FindImagesResponse.Images["+ i +"].OCR["+ j +"].OCRBoundary.Height"));
 				oCRItem.setOCRBoundary(oCRBoundary);
 
 				oCR.add(oCRItem);
@@ -157,18 +157,18 @@ public class FindImagesResponseUnmarshaller {
 			imagesItem.setOCR(oCR);
 
 			List<CelebrityItem> celebrity = new ArrayList<CelebrityItem>();
-			for (int j = 0; j < context.lengthValue("FindImagesResponse.Images["+ i +"].Celebrity.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("FindImagesResponse.Images["+ i +"].Celebrity.Length"); j++) {
 				CelebrityItem celebrityItem = new CelebrityItem();
-				celebrityItem.setCelebrityName(context.stringValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityName"));
-				celebrityItem.setCelebrityGender(context.stringValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityGender"));
-				celebrityItem.setCelebrityConfidence(context.floatValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityConfidence"));
-				celebrityItem.setCelebrityLibraryName(context.stringValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityLibraryName"));
+				celebrityItem.setCelebrityName(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityName"));
+				celebrityItem.setCelebrityGender(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityGender"));
+				celebrityItem.setCelebrityConfidence(_ctx.floatValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityConfidence"));
+				celebrityItem.setCelebrityLibraryName(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityLibraryName"));
 
 				CelebrityBoundary celebrityBoundary = new CelebrityBoundary();
-				celebrityBoundary.setLeft(context.integerValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Left"));
-				celebrityBoundary.setTop(context.integerValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Top"));
-				celebrityBoundary.setWidth(context.integerValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Width"));
-				celebrityBoundary.setHeight(context.integerValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Height"));
+				celebrityBoundary.setLeft(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Left"));
+				celebrityBoundary.setTop(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Top"));
+				celebrityBoundary.setWidth(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Width"));
+				celebrityBoundary.setHeight(_ctx.integerValue("FindImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Height"));
 				celebrityItem.setCelebrityBoundary(celebrityBoundary);
 
 				celebrity.add(celebrityItem);

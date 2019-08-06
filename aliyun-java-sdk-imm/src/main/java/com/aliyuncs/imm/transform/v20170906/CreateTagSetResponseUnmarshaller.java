@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateTagSetResponseUnmarshaller {
 
-	public static CreateTagSetResponse unmarshall(CreateTagSetResponse createTagSetResponse, UnmarshallerContext context) {
+	public static CreateTagSetResponse unmarshall(CreateTagSetResponse createTagSetResponse, UnmarshallerContext _ctx) {
 		
-		createTagSetResponse.setRequestId(context.stringValue("CreateTagSetResponse.RequestId"));
-		createTagSetResponse.setSetId(context.stringValue("CreateTagSetResponse.SetId"));
-		createTagSetResponse.setStatus(context.stringValue("CreateTagSetResponse.Status"));
-		createTagSetResponse.setPhotos(context.longValue("CreateTagSetResponse.Photos"));
-		createTagSetResponse.setCreateTime(context.stringValue("CreateTagSetResponse.CreateTime"));
-		createTagSetResponse.setModifyTime(context.stringValue("CreateTagSetResponse.ModifyTime"));
+		createTagSetResponse.setRequestId(_ctx.stringValue("CreateTagSetResponse.RequestId"));
+		createTagSetResponse.setSetId(_ctx.stringValue("CreateTagSetResponse.SetId"));
+		createTagSetResponse.setStatus(_ctx.stringValue("CreateTagSetResponse.Status"));
+		createTagSetResponse.setPhotos(_ctx.longValue("CreateTagSetResponse.Photos"));
+		createTagSetResponse.setCreateTime(_ctx.stringValue("CreateTagSetResponse.CreateTime"));
+		createTagSetResponse.setModifyTime(_ctx.stringValue("CreateTagSetResponse.ModifyTime"));
 	 
 	 	return createTagSetResponse;
 	}

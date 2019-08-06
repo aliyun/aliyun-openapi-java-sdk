@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTagPhotosResponseUnmarshaller {
 
-	public static ListTagPhotosResponse unmarshall(ListTagPhotosResponse listTagPhotosResponse, UnmarshallerContext context) {
+	public static ListTagPhotosResponse unmarshall(ListTagPhotosResponse listTagPhotosResponse, UnmarshallerContext _ctx) {
 		
-		listTagPhotosResponse.setRequestId(context.stringValue("ListTagPhotosResponse.RequestId"));
-		listTagPhotosResponse.setNextMarker(context.stringValue("ListTagPhotosResponse.NextMarker"));
+		listTagPhotosResponse.setRequestId(_ctx.stringValue("ListTagPhotosResponse.RequestId"));
+		listTagPhotosResponse.setNextMarker(_ctx.stringValue("ListTagPhotosResponse.NextMarker"));
 
 		List<PhotosItem> photos = new ArrayList<PhotosItem>();
-		for (int i = 0; i < context.lengthValue("ListTagPhotosResponse.Photos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTagPhotosResponse.Photos.Length"); i++) {
 			PhotosItem photosItem = new PhotosItem();
-			photosItem.setSrcUri(context.stringValue("ListTagPhotosResponse.Photos["+ i +"].SrcUri"));
-			photosItem.setTagScore(context.floatValue("ListTagPhotosResponse.Photos["+ i +"].TagScore"));
+			photosItem.setSrcUri(_ctx.stringValue("ListTagPhotosResponse.Photos["+ i +"].SrcUri"));
+			photosItem.setTagScore(_ctx.floatValue("ListTagPhotosResponse.Photos["+ i +"].TagScore"));
 
 			photos.add(photosItem);
 		}

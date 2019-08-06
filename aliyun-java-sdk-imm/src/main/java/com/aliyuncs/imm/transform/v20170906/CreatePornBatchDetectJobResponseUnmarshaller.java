@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreatePornBatchDetectJobResponseUnmarshaller {
 
-	public static CreatePornBatchDetectJobResponse unmarshall(CreatePornBatchDetectJobResponse createPornBatchDetectJobResponse, UnmarshallerContext context) {
+	public static CreatePornBatchDetectJobResponse unmarshall(CreatePornBatchDetectJobResponse createPornBatchDetectJobResponse, UnmarshallerContext _ctx) {
 		
-		createPornBatchDetectJobResponse.setRequestId(context.stringValue("CreatePornBatchDetectJobResponse.RequestId"));
-		createPornBatchDetectJobResponse.setJobId(context.stringValue("CreatePornBatchDetectJobResponse.JobId"));
-		createPornBatchDetectJobResponse.setTgtLoc(context.stringValue("CreatePornBatchDetectJobResponse.TgtLoc"));
-		createPornBatchDetectJobResponse.setStatus(context.stringValue("CreatePornBatchDetectJobResponse.Status"));
-		createPornBatchDetectJobResponse.setCreateTime(context.stringValue("CreatePornBatchDetectJobResponse.CreateTime"));
-		createPornBatchDetectJobResponse.setPercent(context.integerValue("CreatePornBatchDetectJobResponse.Percent"));
+		createPornBatchDetectJobResponse.setRequestId(_ctx.stringValue("CreatePornBatchDetectJobResponse.RequestId"));
+		createPornBatchDetectJobResponse.setJobId(_ctx.stringValue("CreatePornBatchDetectJobResponse.JobId"));
+		createPornBatchDetectJobResponse.setTgtLoc(_ctx.stringValue("CreatePornBatchDetectJobResponse.TgtLoc"));
+		createPornBatchDetectJobResponse.setStatus(_ctx.stringValue("CreatePornBatchDetectJobResponse.Status"));
+		createPornBatchDetectJobResponse.setCreateTime(_ctx.stringValue("CreatePornBatchDetectJobResponse.CreateTime"));
+		createPornBatchDetectJobResponse.setPercent(_ctx.integerValue("CreatePornBatchDetectJobResponse.Percent"));
 	 
 	 	return createPornBatchDetectJobResponse;
 	}

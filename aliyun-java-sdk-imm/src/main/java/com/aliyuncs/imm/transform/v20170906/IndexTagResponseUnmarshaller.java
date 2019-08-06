@@ -26,36 +26,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class IndexTagResponseUnmarshaller {
 
-	public static IndexTagResponse unmarshall(IndexTagResponse indexTagResponse, UnmarshallerContext context) {
+	public static IndexTagResponse unmarshall(IndexTagResponse indexTagResponse, UnmarshallerContext _ctx) {
 		
-		indexTagResponse.setRequestId(context.stringValue("IndexTagResponse.RequestId"));
-		indexTagResponse.setSetId(context.stringValue("IndexTagResponse.SetId"));
-		indexTagResponse.setSuccessIndexNum(context.stringValue("IndexTagResponse.SuccessIndexNum"));
+		indexTagResponse.setRequestId(_ctx.stringValue("IndexTagResponse.RequestId"));
+		indexTagResponse.setSetId(_ctx.stringValue("IndexTagResponse.SetId"));
+		indexTagResponse.setSuccessIndexNum(_ctx.stringValue("IndexTagResponse.SuccessIndexNum"));
 
 		List<FailDetailsItem> failDetails = new ArrayList<FailDetailsItem>();
-		for (int i = 0; i < context.lengthValue("IndexTagResponse.FailDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("IndexTagResponse.FailDetails.Length"); i++) {
 			FailDetailsItem failDetailsItem = new FailDetailsItem();
-			failDetailsItem.setSrcUri(context.stringValue("IndexTagResponse.FailDetails["+ i +"].SrcUri"));
-			failDetailsItem.setReason(context.stringValue("IndexTagResponse.FailDetails["+ i +"].Reason"));
+			failDetailsItem.setSrcUri(_ctx.stringValue("IndexTagResponse.FailDetails["+ i +"].SrcUri"));
+			failDetailsItem.setReason(_ctx.stringValue("IndexTagResponse.FailDetails["+ i +"].Reason"));
 
 			failDetails.add(failDetailsItem);
 		}
 		indexTagResponse.setFailDetails(failDetails);
 
 		List<SuccessDetailsItem> successDetails = new ArrayList<SuccessDetailsItem>();
-		for (int i = 0; i < context.lengthValue("IndexTagResponse.SuccessDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("IndexTagResponse.SuccessDetails.Length"); i++) {
 			SuccessDetailsItem successDetailsItem = new SuccessDetailsItem();
-			successDetailsItem.setSrcUri(context.stringValue("IndexTagResponse.SuccessDetails["+ i +"].SrcUri"));
+			successDetailsItem.setSrcUri(_ctx.stringValue("IndexTagResponse.SuccessDetails["+ i +"].SrcUri"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
-			for (int j = 0; j < context.lengthValue("IndexTagResponse.SuccessDetails["+ i +"].Tags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("IndexTagResponse.SuccessDetails["+ i +"].Tags.Length"); j++) {
 				TagsItem tagsItem = new TagsItem();
-				tagsItem.setTagId(context.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].TagId"));
-				tagsItem.setTagLevel(context.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].TagLevel"));
-				tagsItem.setTagName(context.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].TagName"));
-				tagsItem.setParentTagId(context.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].ParentTagId"));
-				tagsItem.setParentTagName(context.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].ParentTagName"));
-				tagsItem.setTagScore(context.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].TagScore"));
+				tagsItem.setTagId(_ctx.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].TagId"));
+				tagsItem.setTagLevel(_ctx.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].TagLevel"));
+				tagsItem.setTagName(_ctx.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].TagName"));
+				tagsItem.setParentTagId(_ctx.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].ParentTagId"));
+				tagsItem.setParentTagName(_ctx.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].ParentTagName"));
+				tagsItem.setTagScore(_ctx.stringValue("IndexTagResponse.SuccessDetails["+ i +"].Tags["+ j +"].TagScore"));
 
 				tags.add(tagsItem);
 			}

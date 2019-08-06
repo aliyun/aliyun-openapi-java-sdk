@@ -26,24 +26,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FindSimilarFacesResponseUnmarshaller {
 
-	public static FindSimilarFacesResponse unmarshall(FindSimilarFacesResponse findSimilarFacesResponse, UnmarshallerContext context) {
+	public static FindSimilarFacesResponse unmarshall(FindSimilarFacesResponse findSimilarFacesResponse, UnmarshallerContext _ctx) {
 		
-		findSimilarFacesResponse.setRequestId(context.stringValue("FindSimilarFacesResponse.RequestId"));
+		findSimilarFacesResponse.setRequestId(_ctx.stringValue("FindSimilarFacesResponse.RequestId"));
 
 		List<FacesItem> faces = new ArrayList<FacesItem>();
-		for (int i = 0; i < context.lengthValue("FindSimilarFacesResponse.Faces.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("FindSimilarFacesResponse.Faces.Length"); i++) {
 			FacesItem facesItem = new FacesItem();
-			facesItem.setFaceId(context.stringValue("FindSimilarFacesResponse.Faces["+ i +"].FaceId"));
-			facesItem.setImageUri(context.stringValue("FindSimilarFacesResponse.Faces["+ i +"].ImageUri"));
-			facesItem.setSimilarity(context.floatValue("FindSimilarFacesResponse.Faces["+ i +"].Similarity"));
+			facesItem.setFaceId(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].FaceId"));
+			facesItem.setImageUri(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].ImageUri"));
+			facesItem.setSimilarity(_ctx.floatValue("FindSimilarFacesResponse.Faces["+ i +"].Similarity"));
 
 			FaceAttributes faceAttributes = new FaceAttributes();
 
 			FaceBoundary faceBoundary = new FaceBoundary();
-			faceBoundary.setLeft(context.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Left"));
-			faceBoundary.setTop(context.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Top"));
-			faceBoundary.setWidth(context.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Width"));
-			faceBoundary.setHeight(context.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Height"));
+			faceBoundary.setLeft(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Left"));
+			faceBoundary.setTop(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Top"));
+			faceBoundary.setWidth(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Width"));
+			faceBoundary.setHeight(_ctx.integerValue("FindSimilarFacesResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Height"));
 			faceAttributes.setFaceBoundary(faceBoundary);
 			facesItem.setFaceAttributes(faceAttributes);
 

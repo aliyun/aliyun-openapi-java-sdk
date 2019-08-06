@@ -20,17 +20,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSetResponseUnmarshaller {
 
-	public static GetSetResponse unmarshall(GetSetResponse getSetResponse, UnmarshallerContext context) {
+	public static GetSetResponse unmarshall(GetSetResponse getSetResponse, UnmarshallerContext _ctx) {
 		
-		getSetResponse.setRequestId(context.stringValue("GetSetResponse.RequestId"));
-		getSetResponse.setSetId(context.stringValue("GetSetResponse.SetId"));
-		getSetResponse.setSetName(context.stringValue("GetSetResponse.SetName"));
-		getSetResponse.setCreateTime(context.stringValue("GetSetResponse.CreateTime"));
-		getSetResponse.setModifyTime(context.stringValue("GetSetResponse.ModifyTime"));
-		getSetResponse.setFaceCount(context.integerValue("GetSetResponse.FaceCount"));
-		getSetResponse.setImageCount(context.integerValue("GetSetResponse.ImageCount"));
-		getSetResponse.setVideoCount(context.integerValue("GetSetResponse.VideoCount"));
-		getSetResponse.setVideoLength(context.integerValue("GetSetResponse.VideoLength"));
+		getSetResponse.setRequestId(_ctx.stringValue("GetSetResponse.RequestId"));
+		getSetResponse.setSetId(_ctx.stringValue("GetSetResponse.SetId"));
+		getSetResponse.setSetName(_ctx.stringValue("GetSetResponse.SetName"));
+		getSetResponse.setCreateTime(_ctx.stringValue("GetSetResponse.CreateTime"));
+		getSetResponse.setModifyTime(_ctx.stringValue("GetSetResponse.ModifyTime"));
+		getSetResponse.setFaceCount(_ctx.integerValue("GetSetResponse.FaceCount"));
+		getSetResponse.setImageCount(_ctx.integerValue("GetSetResponse.ImageCount"));
+		getSetResponse.setVideoCount(_ctx.integerValue("GetSetResponse.VideoCount"));
+		getSetResponse.setVideoLength(_ctx.integerValue("GetSetResponse.VideoLength"));
 	 
 	 	return getSetResponse;
 	}

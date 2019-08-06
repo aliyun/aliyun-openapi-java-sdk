@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetectImageTagsResponseUnmarshaller {
 
-	public static DetectImageTagsResponse unmarshall(DetectImageTagsResponse detectImageTagsResponse, UnmarshallerContext context) {
+	public static DetectImageTagsResponse unmarshall(DetectImageTagsResponse detectImageTagsResponse, UnmarshallerContext _ctx) {
 		
-		detectImageTagsResponse.setRequestId(context.stringValue("DetectImageTagsResponse.RequestId"));
-		detectImageTagsResponse.setImageUri(context.stringValue("DetectImageTagsResponse.ImageUri"));
+		detectImageTagsResponse.setRequestId(_ctx.stringValue("DetectImageTagsResponse.RequestId"));
+		detectImageTagsResponse.setImageUri(_ctx.stringValue("DetectImageTagsResponse.ImageUri"));
 
 		List<TagsItem> tags = new ArrayList<TagsItem>();
-		for (int i = 0; i < context.lengthValue("DetectImageTagsResponse.Tags.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectImageTagsResponse.Tags.Length"); i++) {
 			TagsItem tagsItem = new TagsItem();
-			tagsItem.setTagName(context.stringValue("DetectImageTagsResponse.Tags["+ i +"].TagName"));
-			tagsItem.setTagConfidence(context.floatValue("DetectImageTagsResponse.Tags["+ i +"].TagConfidence"));
-			tagsItem.setTagLevel(context.integerValue("DetectImageTagsResponse.Tags["+ i +"].TagLevel"));
-			tagsItem.setParentTagName(context.stringValue("DetectImageTagsResponse.Tags["+ i +"].ParentTagName"));
-			tagsItem.setParentTagEnName(context.stringValue("DetectImageTagsResponse.Tags["+ i +"].ParentTagEnName"));
-			tagsItem.setTagEnName(context.stringValue("DetectImageTagsResponse.Tags["+ i +"].TagEnName"));
+			tagsItem.setTagName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].TagName"));
+			tagsItem.setTagConfidence(_ctx.floatValue("DetectImageTagsResponse.Tags["+ i +"].TagConfidence"));
+			tagsItem.setTagLevel(_ctx.integerValue("DetectImageTagsResponse.Tags["+ i +"].TagLevel"));
+			tagsItem.setParentTagName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].ParentTagName"));
+			tagsItem.setParentTagEnName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].ParentTagEnName"));
+			tagsItem.setTagEnName(_ctx.stringValue("DetectImageTagsResponse.Tags["+ i +"].TagEnName"));
 
 			tags.add(tagsItem);
 		}

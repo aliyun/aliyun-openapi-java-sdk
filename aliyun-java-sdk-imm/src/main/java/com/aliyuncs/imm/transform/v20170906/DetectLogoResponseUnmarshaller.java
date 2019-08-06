@@ -26,34 +26,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetectLogoResponseUnmarshaller {
 
-	public static DetectLogoResponse unmarshall(DetectLogoResponse detectLogoResponse, UnmarshallerContext context) {
+	public static DetectLogoResponse unmarshall(DetectLogoResponse detectLogoResponse, UnmarshallerContext _ctx) {
 		
-		detectLogoResponse.setRequestId(context.stringValue("DetectLogoResponse.RequestId"));
+		detectLogoResponse.setRequestId(_ctx.stringValue("DetectLogoResponse.RequestId"));
 
 		List<String> srcUris = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DetectLogoResponse.SrcUris.Length"); i++) {
-			srcUris.add(context.stringValue("DetectLogoResponse.SrcUris["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DetectLogoResponse.SrcUris.Length"); i++) {
+			srcUris.add(_ctx.stringValue("DetectLogoResponse.SrcUris["+ i +"]"));
 		}
 		detectLogoResponse.setSrcUris(srcUris);
 
 		List<SuccessDetailsItem> successDetails = new ArrayList<SuccessDetailsItem>();
-		for (int i = 0; i < context.lengthValue("DetectLogoResponse.SuccessDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectLogoResponse.SuccessDetails.Length"); i++) {
 			SuccessDetailsItem successDetailsItem = new SuccessDetailsItem();
-			successDetailsItem.setSrcUri(context.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].SrcUri"));
-			successDetailsItem.setTime(context.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].Time"));
-			successDetailsItem.setGetImageTime(context.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].GetImageTime"));
-			successDetailsItem.setDetectTime(context.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].DetectTime"));
+			successDetailsItem.setSrcUri(_ctx.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].SrcUri"));
+			successDetailsItem.setTime(_ctx.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].Time"));
+			successDetailsItem.setGetImageTime(_ctx.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].GetImageTime"));
+			successDetailsItem.setDetectTime(_ctx.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].DetectTime"));
 
 			List<LogoBoxDetailItem> logoBoxDetail = new ArrayList<LogoBoxDetailItem>();
-			for (int j = 0; j < context.lengthValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail.Length"); j++) {
 				LogoBoxDetailItem logoBoxDetailItem = new LogoBoxDetailItem();
-				logoBoxDetailItem.setPUID(context.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].PUID"));
-				logoBoxDetailItem.setType(context.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].Type"));
-				logoBoxDetailItem.setScore(context.floatValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].Score"));
+				logoBoxDetailItem.setPUID(_ctx.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].PUID"));
+				logoBoxDetailItem.setType(_ctx.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].Type"));
+				logoBoxDetailItem.setScore(_ctx.floatValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].Score"));
 
 				List<String> box = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].Box.Length"); k++) {
-					box.add(context.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].Box["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].Box.Length"); k++) {
+					box.add(_ctx.stringValue("DetectLogoResponse.SuccessDetails["+ i +"].LogoBoxDetail["+ j +"].Box["+ k +"]"));
 				}
 				logoBoxDetailItem.setBox(box);
 
@@ -66,10 +66,10 @@ public class DetectLogoResponseUnmarshaller {
 		detectLogoResponse.setSuccessDetails(successDetails);
 
 		List<FailDetailsItem> failDetails = new ArrayList<FailDetailsItem>();
-		for (int i = 0; i < context.lengthValue("DetectLogoResponse.FailDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectLogoResponse.FailDetails.Length"); i++) {
 			FailDetailsItem failDetailsItem = new FailDetailsItem();
-			failDetailsItem.setSrcUri(context.stringValue("DetectLogoResponse.FailDetails["+ i +"].SrcUri"));
-			failDetailsItem.setReason(context.stringValue("DetectLogoResponse.FailDetails["+ i +"].Reason"));
+			failDetailsItem.setSrcUri(_ctx.stringValue("DetectLogoResponse.FailDetails["+ i +"].SrcUri"));
+			failDetailsItem.setReason(_ctx.stringValue("DetectLogoResponse.FailDetails["+ i +"].Reason"));
 
 			failDetails.add(failDetailsItem);
 		}

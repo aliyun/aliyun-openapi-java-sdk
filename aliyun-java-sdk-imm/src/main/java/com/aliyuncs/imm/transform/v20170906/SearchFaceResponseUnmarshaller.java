@@ -24,35 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SearchFaceResponseUnmarshaller {
 
-	public static SearchFaceResponse unmarshall(SearchFaceResponse searchFaceResponse, UnmarshallerContext context) {
+	public static SearchFaceResponse unmarshall(SearchFaceResponse searchFaceResponse, UnmarshallerContext _ctx) {
 		
-		searchFaceResponse.setRequestId(context.stringValue("SearchFaceResponse.RequestId"));
-		searchFaceResponse.setImageUri(context.stringValue("SearchFaceResponse.ImageUri"));
-		searchFaceResponse.setGroupName(context.stringValue("SearchFaceResponse.GroupName"));
-		searchFaceResponse.setGlasses(context.integerValue("SearchFaceResponse.Glasses"));
-		searchFaceResponse.setHat(context.integerValue("SearchFaceResponse.Hat"));
-		searchFaceResponse.setScore(context.floatValue("SearchFaceResponse.Score"));
+		searchFaceResponse.setRequestId(_ctx.stringValue("SearchFaceResponse.RequestId"));
+		searchFaceResponse.setImageUri(_ctx.stringValue("SearchFaceResponse.ImageUri"));
+		searchFaceResponse.setGroupName(_ctx.stringValue("SearchFaceResponse.GroupName"));
+		searchFaceResponse.setGlasses(_ctx.integerValue("SearchFaceResponse.Glasses"));
+		searchFaceResponse.setHat(_ctx.integerValue("SearchFaceResponse.Hat"));
+		searchFaceResponse.setScore(_ctx.floatValue("SearchFaceResponse.Score"));
 
 		List<String> axis = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("SearchFaceResponse.Axis.Length"); i++) {
-			axis.add(context.stringValue("SearchFaceResponse.Axis["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("SearchFaceResponse.Axis.Length"); i++) {
+			axis.add(_ctx.stringValue("SearchFaceResponse.Axis["+ i +"]"));
 		}
 		searchFaceResponse.setAxis(axis);
 
 		List<ResultFacesItem> resultFaces = new ArrayList<ResultFacesItem>();
-		for (int i = 0; i < context.lengthValue("SearchFaceResponse.ResultFaces.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SearchFaceResponse.ResultFaces.Length"); i++) {
 			ResultFacesItem resultFacesItem = new ResultFacesItem();
-			resultFacesItem.setGroupId(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].GroupId"));
-			resultFacesItem.setUser(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].User"));
-			resultFacesItem.setImageId(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].ImageId"));
-			resultFacesItem.setScore(context.floatValue("SearchFaceResponse.ResultFaces["+ i +"].Score"));
-			resultFacesItem.setImageUri(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].ImageUri"));
-			resultFacesItem.setGlasses(context.integerValue("SearchFaceResponse.ResultFaces["+ i +"].Glasses"));
-			resultFacesItem.setHat(context.integerValue("SearchFaceResponse.ResultFaces["+ i +"].Hat"));
+			resultFacesItem.setGroupId(_ctx.stringValue("SearchFaceResponse.ResultFaces["+ i +"].GroupId"));
+			resultFacesItem.setUser(_ctx.stringValue("SearchFaceResponse.ResultFaces["+ i +"].User"));
+			resultFacesItem.setImageId(_ctx.stringValue("SearchFaceResponse.ResultFaces["+ i +"].ImageId"));
+			resultFacesItem.setScore(_ctx.floatValue("SearchFaceResponse.ResultFaces["+ i +"].Score"));
+			resultFacesItem.setImageUri(_ctx.stringValue("SearchFaceResponse.ResultFaces["+ i +"].ImageUri"));
+			resultFacesItem.setGlasses(_ctx.integerValue("SearchFaceResponse.ResultFaces["+ i +"].Glasses"));
+			resultFacesItem.setHat(_ctx.integerValue("SearchFaceResponse.ResultFaces["+ i +"].Hat"));
 
 			List<String> axis1 = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("SearchFaceResponse.ResultFaces["+ i +"].Axis.Length"); j++) {
-				axis1.add(context.stringValue("SearchFaceResponse.ResultFaces["+ i +"].Axis["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("SearchFaceResponse.ResultFaces["+ i +"].Axis.Length"); j++) {
+				axis1.add(_ctx.stringValue("SearchFaceResponse.ResultFaces["+ i +"].Axis["+ j +"]"));
 			}
 			resultFacesItem.setAxis1(axis1);
 

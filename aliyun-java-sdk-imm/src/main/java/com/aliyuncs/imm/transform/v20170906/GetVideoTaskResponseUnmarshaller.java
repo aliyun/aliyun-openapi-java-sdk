@@ -20,20 +20,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetVideoTaskResponseUnmarshaller {
 
-	public static GetVideoTaskResponse unmarshall(GetVideoTaskResponse getVideoTaskResponse, UnmarshallerContext context) {
+	public static GetVideoTaskResponse unmarshall(GetVideoTaskResponse getVideoTaskResponse, UnmarshallerContext _ctx) {
 		
-		getVideoTaskResponse.setRequestId(context.stringValue("GetVideoTaskResponse.RequestId"));
-		getVideoTaskResponse.setTaskId(context.stringValue("GetVideoTaskResponse.TaskId"));
-		getVideoTaskResponse.setTaskType(context.stringValue("GetVideoTaskResponse.TaskType"));
-		getVideoTaskResponse.setParameters(context.stringValue("GetVideoTaskResponse.Parameters"));
-		getVideoTaskResponse.setResult(context.stringValue("GetVideoTaskResponse.Result"));
-		getVideoTaskResponse.setStatus(context.stringValue("GetVideoTaskResponse.Status"));
-		getVideoTaskResponse.setStartTime(context.stringValue("GetVideoTaskResponse.StartTime"));
-		getVideoTaskResponse.setEndTime(context.stringValue("GetVideoTaskResponse.EndTime"));
-		getVideoTaskResponse.setErrorMessage(context.stringValue("GetVideoTaskResponse.ErrorMessage"));
-		getVideoTaskResponse.setNotifyEndpoint(context.stringValue("GetVideoTaskResponse.NotifyEndpoint"));
-		getVideoTaskResponse.setNotifyTopicName(context.stringValue("GetVideoTaskResponse.NotifyTopicName"));
-		getVideoTaskResponse.setProgress(context.integerValue("GetVideoTaskResponse.Progress"));
+		getVideoTaskResponse.setRequestId(_ctx.stringValue("GetVideoTaskResponse.RequestId"));
+		getVideoTaskResponse.setTaskId(_ctx.stringValue("GetVideoTaskResponse.TaskId"));
+		getVideoTaskResponse.setTaskType(_ctx.stringValue("GetVideoTaskResponse.TaskType"));
+		getVideoTaskResponse.setParameters(_ctx.stringValue("GetVideoTaskResponse.Parameters"));
+		getVideoTaskResponse.setResult(_ctx.stringValue("GetVideoTaskResponse.Result"));
+		getVideoTaskResponse.setStatus(_ctx.stringValue("GetVideoTaskResponse.Status"));
+		getVideoTaskResponse.setStartTime(_ctx.stringValue("GetVideoTaskResponse.StartTime"));
+		getVideoTaskResponse.setEndTime(_ctx.stringValue("GetVideoTaskResponse.EndTime"));
+		getVideoTaskResponse.setErrorMessage(_ctx.stringValue("GetVideoTaskResponse.ErrorMessage"));
+		getVideoTaskResponse.setNotifyEndpoint(_ctx.stringValue("GetVideoTaskResponse.NotifyEndpoint"));
+		getVideoTaskResponse.setNotifyTopicName(_ctx.stringValue("GetVideoTaskResponse.NotifyTopicName"));
+		getVideoTaskResponse.setProgress(_ctx.integerValue("GetVideoTaskResponse.Progress"));
 	 
 	 	return getVideoTaskResponse;
 	}

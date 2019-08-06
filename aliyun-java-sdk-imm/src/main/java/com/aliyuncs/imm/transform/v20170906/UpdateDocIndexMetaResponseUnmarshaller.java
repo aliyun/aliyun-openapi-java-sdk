@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateDocIndexMetaResponseUnmarshaller {
 
-	public static UpdateDocIndexMetaResponse unmarshall(UpdateDocIndexMetaResponse updateDocIndexMetaResponse, UnmarshallerContext context) {
+	public static UpdateDocIndexMetaResponse unmarshall(UpdateDocIndexMetaResponse updateDocIndexMetaResponse, UnmarshallerContext _ctx) {
 		
-		updateDocIndexMetaResponse.setRequestId(context.stringValue("UpdateDocIndexMetaResponse.RequestId"));
-		updateDocIndexMetaResponse.setIndexCreatedTime(context.stringValue("UpdateDocIndexMetaResponse.IndexCreatedTime"));
-		updateDocIndexMetaResponse.setIndexModifiedTime(context.stringValue("UpdateDocIndexMetaResponse.IndexModifiedTime"));
+		updateDocIndexMetaResponse.setRequestId(_ctx.stringValue("UpdateDocIndexMetaResponse.RequestId"));
+		updateDocIndexMetaResponse.setIndexCreatedTime(_ctx.stringValue("UpdateDocIndexMetaResponse.IndexCreatedTime"));
+		updateDocIndexMetaResponse.setIndexModifiedTime(_ctx.stringValue("UpdateDocIndexMetaResponse.IndexModifiedTime"));
 	 
 	 	return updateDocIndexMetaResponse;
 	}

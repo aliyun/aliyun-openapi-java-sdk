@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPornBatchDetectJobsResponseUnmarshaller {
 
-	public static ListPornBatchDetectJobsResponse unmarshall(ListPornBatchDetectJobsResponse listPornBatchDetectJobsResponse, UnmarshallerContext context) {
+	public static ListPornBatchDetectJobsResponse unmarshall(ListPornBatchDetectJobsResponse listPornBatchDetectJobsResponse, UnmarshallerContext _ctx) {
 		
-		listPornBatchDetectJobsResponse.setRequestId(context.stringValue("ListPornBatchDetectJobsResponse.RequestId"));
-		listPornBatchDetectJobsResponse.setNextMarker(context.stringValue("ListPornBatchDetectJobsResponse.NextMarker"));
+		listPornBatchDetectJobsResponse.setRequestId(_ctx.stringValue("ListPornBatchDetectJobsResponse.RequestId"));
+		listPornBatchDetectJobsResponse.setNextMarker(_ctx.stringValue("ListPornBatchDetectJobsResponse.NextMarker"));
 
 		List<JobsItem> jobs = new ArrayList<JobsItem>();
-		for (int i = 0; i < context.lengthValue("ListPornBatchDetectJobsResponse.Jobs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPornBatchDetectJobsResponse.Jobs.Length"); i++) {
 			JobsItem jobsItem = new JobsItem();
-			jobsItem.setJobId(context.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].JobId"));
-			jobsItem.setSrcUri(context.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].SrcUri"));
-			jobsItem.setStatus(context.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].Status"));
-			jobsItem.setTgtUri(context.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].TgtUri"));
-			jobsItem.setNotifyTopicName(context.integerValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].NotifyTopicName"));
-			jobsItem.setNotifyEndpoint(context.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].NotifyEndpoint"));
-			jobsItem.setExternalID(context.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].ExternalID"));
-			jobsItem.setCreateTime(context.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].CreateTime"));
-			jobsItem.setFinishTime(context.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].FinishTime"));
-			jobsItem.setPercent(context.integerValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].Percent"));
+			jobsItem.setJobId(_ctx.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].JobId"));
+			jobsItem.setSrcUri(_ctx.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].SrcUri"));
+			jobsItem.setStatus(_ctx.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].Status"));
+			jobsItem.setTgtUri(_ctx.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].TgtUri"));
+			jobsItem.setNotifyTopicName(_ctx.integerValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].NotifyTopicName"));
+			jobsItem.setNotifyEndpoint(_ctx.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].NotifyEndpoint"));
+			jobsItem.setExternalID(_ctx.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].ExternalID"));
+			jobsItem.setCreateTime(_ctx.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].CreateTime"));
+			jobsItem.setFinishTime(_ctx.stringValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].FinishTime"));
+			jobsItem.setPercent(_ctx.integerValue("ListPornBatchDetectJobsResponse.Jobs["+ i +"].Percent"));
 
 			jobs.add(jobsItem);
 		}

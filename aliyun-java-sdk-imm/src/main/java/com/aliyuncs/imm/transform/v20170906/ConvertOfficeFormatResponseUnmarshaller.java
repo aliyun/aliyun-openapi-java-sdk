@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ConvertOfficeFormatResponseUnmarshaller {
 
-	public static ConvertOfficeFormatResponse unmarshall(ConvertOfficeFormatResponse convertOfficeFormatResponse, UnmarshallerContext context) {
+	public static ConvertOfficeFormatResponse unmarshall(ConvertOfficeFormatResponse convertOfficeFormatResponse, UnmarshallerContext _ctx) {
 		
-		convertOfficeFormatResponse.setRequestId(context.stringValue("ConvertOfficeFormatResponse.RequestId"));
-		convertOfficeFormatResponse.setPageCount(context.integerValue("ConvertOfficeFormatResponse.PageCount"));
+		convertOfficeFormatResponse.setRequestId(_ctx.stringValue("ConvertOfficeFormatResponse.RequestId"));
+		convertOfficeFormatResponse.setPageCount(_ctx.integerValue("ConvertOfficeFormatResponse.PageCount"));
 	 
 	 	return convertOfficeFormatResponse;
 	}

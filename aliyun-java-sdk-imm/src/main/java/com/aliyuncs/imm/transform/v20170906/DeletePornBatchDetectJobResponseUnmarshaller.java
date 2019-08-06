@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeletePornBatchDetectJobResponseUnmarshaller {
 
-	public static DeletePornBatchDetectJobResponse unmarshall(DeletePornBatchDetectJobResponse deletePornBatchDetectJobResponse, UnmarshallerContext context) {
+	public static DeletePornBatchDetectJobResponse unmarshall(DeletePornBatchDetectJobResponse deletePornBatchDetectJobResponse, UnmarshallerContext _ctx) {
 		
-		deletePornBatchDetectJobResponse.setRequestId(context.stringValue("DeletePornBatchDetectJobResponse.RequestId"));
+		deletePornBatchDetectJobResponse.setRequestId(_ctx.stringValue("DeletePornBatchDetectJobResponse.RequestId"));
 	 
 	 	return deletePornBatchDetectJobResponse;
 	}

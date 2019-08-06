@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateGroupFacesJobResponseUnmarshaller {
 
-	public static CreateGroupFacesJobResponse unmarshall(CreateGroupFacesJobResponse createGroupFacesJobResponse, UnmarshallerContext context) {
+	public static CreateGroupFacesJobResponse unmarshall(CreateGroupFacesJobResponse createGroupFacesJobResponse, UnmarshallerContext _ctx) {
 		
-		createGroupFacesJobResponse.setRequestId(context.stringValue("CreateGroupFacesJobResponse.RequestId"));
-		createGroupFacesJobResponse.setJobId(context.stringValue("CreateGroupFacesJobResponse.JobId"));
-		createGroupFacesJobResponse.setSetId(context.stringValue("CreateGroupFacesJobResponse.SetId"));
-		createGroupFacesJobResponse.setJobType(context.stringValue("CreateGroupFacesJobResponse.JobType"));
+		createGroupFacesJobResponse.setRequestId(_ctx.stringValue("CreateGroupFacesJobResponse.RequestId"));
+		createGroupFacesJobResponse.setJobId(_ctx.stringValue("CreateGroupFacesJobResponse.JobId"));
+		createGroupFacesJobResponse.setSetId(_ctx.stringValue("CreateGroupFacesJobResponse.SetId"));
+		createGroupFacesJobResponse.setJobType(_ctx.stringValue("CreateGroupFacesJobResponse.JobType"));
 	 
 	 	return createGroupFacesJobResponse;
 	}

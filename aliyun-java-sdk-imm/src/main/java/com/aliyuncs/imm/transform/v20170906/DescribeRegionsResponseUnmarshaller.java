@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRegionsResponseUnmarshaller {
 
-	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext context) {
+	public static DescribeRegionsResponse unmarshall(DescribeRegionsResponse describeRegionsResponse, UnmarshallerContext _ctx) {
 		
-		describeRegionsResponse.setRequestId(context.stringValue("DescribeRegionsResponse.RequestId"));
+		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.RequestId"));
 
 		Regions regions = new Regions();
 
 		List<RegionItem> region = new ArrayList<RegionItem>();
-		for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Region.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Region.Length"); i++) {
 			RegionItem regionItem = new RegionItem();
-			regionItem.setRegionId(context.stringValue("DescribeRegionsResponse.Regions.Region["+ i +"].RegionId"));
+			regionItem.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions.Region["+ i +"].RegionId"));
 
 			List<String> projectTypes = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeRegionsResponse.Regions.Region["+ i +"].ProjectTypes.Length"); j++) {
-				projectTypes.add(context.stringValue("DescribeRegionsResponse.Regions.Region["+ i +"].ProjectTypes["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeRegionsResponse.Regions.Region["+ i +"].ProjectTypes.Length"); j++) {
+				projectTypes.add(_ctx.stringValue("DescribeRegionsResponse.Regions.Region["+ i +"].ProjectTypes["+ j +"]"));
 			}
 			regionItem.setProjectTypes(projectTypes);
 

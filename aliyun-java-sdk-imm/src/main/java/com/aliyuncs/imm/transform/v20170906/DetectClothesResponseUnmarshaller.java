@@ -26,34 +26,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetectClothesResponseUnmarshaller {
 
-	public static DetectClothesResponse unmarshall(DetectClothesResponse detectClothesResponse, UnmarshallerContext context) {
+	public static DetectClothesResponse unmarshall(DetectClothesResponse detectClothesResponse, UnmarshallerContext _ctx) {
 		
-		detectClothesResponse.setRequestId(context.stringValue("DetectClothesResponse.RequestId"));
+		detectClothesResponse.setRequestId(_ctx.stringValue("DetectClothesResponse.RequestId"));
 
 		List<String> srcUris = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DetectClothesResponse.SrcUris.Length"); i++) {
-			srcUris.add(context.stringValue("DetectClothesResponse.SrcUris["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DetectClothesResponse.SrcUris.Length"); i++) {
+			srcUris.add(_ctx.stringValue("DetectClothesResponse.SrcUris["+ i +"]"));
 		}
 		detectClothesResponse.setSrcUris(srcUris);
 
 		List<SuccessDetailsItem> successDetails = new ArrayList<SuccessDetailsItem>();
-		for (int i = 0; i < context.lengthValue("DetectClothesResponse.SuccessDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectClothesResponse.SuccessDetails.Length"); i++) {
 			SuccessDetailsItem successDetailsItem = new SuccessDetailsItem();
-			successDetailsItem.setSrcUri(context.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].SrcUri"));
-			successDetailsItem.setTime(context.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].Time"));
-			successDetailsItem.setGetImageTime(context.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].GetImageTime"));
-			successDetailsItem.setDetectTime(context.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].DetectTime"));
+			successDetailsItem.setSrcUri(_ctx.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].SrcUri"));
+			successDetailsItem.setTime(_ctx.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].Time"));
+			successDetailsItem.setGetImageTime(_ctx.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].GetImageTime"));
+			successDetailsItem.setDetectTime(_ctx.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].DetectTime"));
 
 			List<ClothesBoxDetailItem> clothesBoxDetail = new ArrayList<ClothesBoxDetailItem>();
-			for (int j = 0; j < context.lengthValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail.Length"); j++) {
 				ClothesBoxDetailItem clothesBoxDetailItem = new ClothesBoxDetailItem();
-				clothesBoxDetailItem.setPUID(context.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].PUID"));
-				clothesBoxDetailItem.setType(context.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].Type"));
-				clothesBoxDetailItem.setScore(context.floatValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].Score"));
+				clothesBoxDetailItem.setPUID(_ctx.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].PUID"));
+				clothesBoxDetailItem.setType(_ctx.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].Type"));
+				clothesBoxDetailItem.setScore(_ctx.floatValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].Score"));
 
 				List<String> box = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].Box.Length"); k++) {
-					box.add(context.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].Box["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].Box.Length"); k++) {
+					box.add(_ctx.stringValue("DetectClothesResponse.SuccessDetails["+ i +"].ClothesBoxDetail["+ j +"].Box["+ k +"]"));
 				}
 				clothesBoxDetailItem.setBox(box);
 
@@ -66,10 +66,10 @@ public class DetectClothesResponseUnmarshaller {
 		detectClothesResponse.setSuccessDetails(successDetails);
 
 		List<FailDetailsItem> failDetails = new ArrayList<FailDetailsItem>();
-		for (int i = 0; i < context.lengthValue("DetectClothesResponse.FailDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectClothesResponse.FailDetails.Length"); i++) {
 			FailDetailsItem failDetailsItem = new FailDetailsItem();
-			failDetailsItem.setSrcUri(context.stringValue("DetectClothesResponse.FailDetails["+ i +"].SrcUri"));
-			failDetailsItem.setReason(context.stringValue("DetectClothesResponse.FailDetails["+ i +"].Reason"));
+			failDetailsItem.setSrcUri(_ctx.stringValue("DetectClothesResponse.FailDetails["+ i +"].SrcUri"));
+			failDetailsItem.setReason(_ctx.stringValue("DetectClothesResponse.FailDetails["+ i +"].Reason"));
 
 			failDetails.add(failDetailsItem);
 		}

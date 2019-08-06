@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetectImageTextsResponseUnmarshaller {
 
-	public static DetectImageTextsResponse unmarshall(DetectImageTextsResponse detectImageTextsResponse, UnmarshallerContext context) {
+	public static DetectImageTextsResponse unmarshall(DetectImageTextsResponse detectImageTextsResponse, UnmarshallerContext _ctx) {
 		
-		detectImageTextsResponse.setRequestId(context.stringValue("DetectImageTextsResponse.RequestId"));
-		detectImageTextsResponse.setImageUri(context.stringValue("DetectImageTextsResponse.ImageUri"));
+		detectImageTextsResponse.setRequestId(_ctx.stringValue("DetectImageTextsResponse.RequestId"));
+		detectImageTextsResponse.setImageUri(_ctx.stringValue("DetectImageTextsResponse.ImageUri"));
 
 		List<OCRItem> oCR = new ArrayList<OCRItem>();
-		for (int i = 0; i < context.lengthValue("DetectImageTextsResponse.OCR.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectImageTextsResponse.OCR.Length"); i++) {
 			OCRItem oCRItem = new OCRItem();
-			oCRItem.setOCRContents(context.stringValue("DetectImageTextsResponse.OCR["+ i +"].OCRContents"));
-			oCRItem.setOCRConfidence(context.floatValue("DetectImageTextsResponse.OCR["+ i +"].OCRConfidence"));
+			oCRItem.setOCRContents(_ctx.stringValue("DetectImageTextsResponse.OCR["+ i +"].OCRContents"));
+			oCRItem.setOCRConfidence(_ctx.floatValue("DetectImageTextsResponse.OCR["+ i +"].OCRConfidence"));
 
 			OCRBoundary oCRBoundary = new OCRBoundary();
-			oCRBoundary.setLeft(context.integerValue("DetectImageTextsResponse.OCR["+ i +"].OCRBoundary.Left"));
-			oCRBoundary.setTop(context.integerValue("DetectImageTextsResponse.OCR["+ i +"].OCRBoundary.Top"));
-			oCRBoundary.setWidth(context.integerValue("DetectImageTextsResponse.OCR["+ i +"].OCRBoundary.Width"));
-			oCRBoundary.setHeight(context.integerValue("DetectImageTextsResponse.OCR["+ i +"].OCRBoundary.Height"));
+			oCRBoundary.setLeft(_ctx.integerValue("DetectImageTextsResponse.OCR["+ i +"].OCRBoundary.Left"));
+			oCRBoundary.setTop(_ctx.integerValue("DetectImageTextsResponse.OCR["+ i +"].OCRBoundary.Top"));
+			oCRBoundary.setWidth(_ctx.integerValue("DetectImageTextsResponse.OCR["+ i +"].OCRBoundary.Width"));
+			oCRBoundary.setHeight(_ctx.integerValue("DetectImageTextsResponse.OCR["+ i +"].OCRBoundary.Height"));
 			oCRItem.setOCRBoundary(oCRBoundary);
 
 			oCR.add(oCRItem);

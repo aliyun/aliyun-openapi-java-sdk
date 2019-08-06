@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTagSetsResponseUnmarshaller {
 
-	public static ListTagSetsResponse unmarshall(ListTagSetsResponse listTagSetsResponse, UnmarshallerContext context) {
+	public static ListTagSetsResponse unmarshall(ListTagSetsResponse listTagSetsResponse, UnmarshallerContext _ctx) {
 		
-		listTagSetsResponse.setRequestId(context.stringValue("ListTagSetsResponse.RequestId"));
-		listTagSetsResponse.setNextMarker(context.stringValue("ListTagSetsResponse.NextMarker"));
+		listTagSetsResponse.setRequestId(_ctx.stringValue("ListTagSetsResponse.RequestId"));
+		listTagSetsResponse.setNextMarker(_ctx.stringValue("ListTagSetsResponse.NextMarker"));
 
 		List<SetsItem> sets = new ArrayList<SetsItem>();
-		for (int i = 0; i < context.lengthValue("ListTagSetsResponse.Sets.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTagSetsResponse.Sets.Length"); i++) {
 			SetsItem setsItem = new SetsItem();
-			setsItem.setSetId(context.stringValue("ListTagSetsResponse.Sets["+ i +"].SetId"));
-			setsItem.setStatus(context.stringValue("ListTagSetsResponse.Sets["+ i +"].Status"));
-			setsItem.setPhotos(context.longValue("ListTagSetsResponse.Sets["+ i +"].Photos"));
-			setsItem.setCreateTime(context.stringValue("ListTagSetsResponse.Sets["+ i +"].CreateTime"));
-			setsItem.setModifyTime(context.stringValue("ListTagSetsResponse.Sets["+ i +"].ModifyTime"));
+			setsItem.setSetId(_ctx.stringValue("ListTagSetsResponse.Sets["+ i +"].SetId"));
+			setsItem.setStatus(_ctx.stringValue("ListTagSetsResponse.Sets["+ i +"].Status"));
+			setsItem.setPhotos(_ctx.longValue("ListTagSetsResponse.Sets["+ i +"].Photos"));
+			setsItem.setCreateTime(_ctx.stringValue("ListTagSetsResponse.Sets["+ i +"].CreateTime"));
+			setsItem.setModifyTime(_ctx.stringValue("ListTagSetsResponse.Sets["+ i +"].ModifyTime"));
 
 			sets.add(setsItem);
 		}

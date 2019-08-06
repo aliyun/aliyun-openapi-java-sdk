@@ -27,72 +27,72 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListVideosResponseUnmarshaller {
 
-	public static ListVideosResponse unmarshall(ListVideosResponse listVideosResponse, UnmarshallerContext context) {
+	public static ListVideosResponse unmarshall(ListVideosResponse listVideosResponse, UnmarshallerContext _ctx) {
 		
-		listVideosResponse.setRequestId(context.stringValue("ListVideosResponse.RequestId"));
-		listVideosResponse.setSetId(context.stringValue("ListVideosResponse.SetId"));
-		listVideosResponse.setNextMarker(context.stringValue("ListVideosResponse.NextMarker"));
+		listVideosResponse.setRequestId(_ctx.stringValue("ListVideosResponse.RequestId"));
+		listVideosResponse.setSetId(_ctx.stringValue("ListVideosResponse.SetId"));
+		listVideosResponse.setNextMarker(_ctx.stringValue("ListVideosResponse.NextMarker"));
 
 		List<VideosItem> videos = new ArrayList<VideosItem>();
-		for (int i = 0; i < context.lengthValue("ListVideosResponse.Videos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListVideosResponse.Videos.Length"); i++) {
 			VideosItem videosItem = new VideosItem();
-			videosItem.setVideoUri(context.stringValue("ListVideosResponse.Videos["+ i +"].VideoUri"));
-			videosItem.setRemarksA(context.stringValue("ListVideosResponse.Videos["+ i +"].RemarksA"));
-			videosItem.setRemarksB(context.stringValue("ListVideosResponse.Videos["+ i +"].RemarksB"));
-			videosItem.setCreateTime(context.stringValue("ListVideosResponse.Videos["+ i +"].CreateTime"));
-			videosItem.setModifyTime(context.stringValue("ListVideosResponse.Videos["+ i +"].ModifyTime"));
-			videosItem.setVideoWidth(context.integerValue("ListVideosResponse.Videos["+ i +"].VideoWidth"));
-			videosItem.setVideoHeight(context.integerValue("ListVideosResponse.Videos["+ i +"].VideoHeight"));
-			videosItem.setVideoFormat(context.stringValue("ListVideosResponse.Videos["+ i +"].VideoFormat"));
-			videosItem.setVideoDuration(context.floatValue("ListVideosResponse.Videos["+ i +"].VideoDuration"));
-			videosItem.setFileSize(context.integerValue("ListVideosResponse.Videos["+ i +"].FileSize"));
-			videosItem.setVideoFrames(context.integerValue("ListVideosResponse.Videos["+ i +"].VideoFrames"));
-			videosItem.setSourceType(context.stringValue("ListVideosResponse.Videos["+ i +"].SourceType"));
-			videosItem.setSourceUri(context.stringValue("ListVideosResponse.Videos["+ i +"].SourceUri"));
-			videosItem.setSourcePosition(context.stringValue("ListVideosResponse.Videos["+ i +"].SourcePosition"));
-			videosItem.setProcessStatus(context.stringValue("ListVideosResponse.Videos["+ i +"].ProcessStatus"));
-			videosItem.setProcessModifyTime(context.stringValue("ListVideosResponse.Videos["+ i +"].ProcessModifyTime"));
-			videosItem.setVideoTagsStatus(context.stringValue("ListVideosResponse.Videos["+ i +"].VideoTagsStatus"));
-			videosItem.setVideoTagsModifyTime(context.stringValue("ListVideosResponse.Videos["+ i +"].VideoTagsModifyTime"));
-			videosItem.setCelebrityStatus(context.stringValue("ListVideosResponse.Videos["+ i +"].CelebrityStatus"));
-			videosItem.setCelebrityModifyTime(context.stringValue("ListVideosResponse.Videos["+ i +"].CelebrityModifyTime"));
-			videosItem.setCelebrityFailReason(context.stringValue("ListVideosResponse.Videos["+ i +"].CelebrityFailReason"));
-			videosItem.setVideoTagsFailReason(context.stringValue("ListVideosResponse.Videos["+ i +"].VideoTagsFailReason"));
-			videosItem.setProcessFailReason(context.stringValue("ListVideosResponse.Videos["+ i +"].ProcessFailReason"));
-			videosItem.setRemarksC(context.stringValue("ListVideosResponse.Videos["+ i +"].RemarksC"));
-			videosItem.setRemarksD(context.stringValue("ListVideosResponse.Videos["+ i +"].RemarksD"));
-			videosItem.setExternalId(context.stringValue("ListVideosResponse.Videos["+ i +"].ExternalId"));
+			videosItem.setVideoUri(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].VideoUri"));
+			videosItem.setRemarksA(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].RemarksA"));
+			videosItem.setRemarksB(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].RemarksB"));
+			videosItem.setCreateTime(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].CreateTime"));
+			videosItem.setModifyTime(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].ModifyTime"));
+			videosItem.setVideoWidth(_ctx.integerValue("ListVideosResponse.Videos["+ i +"].VideoWidth"));
+			videosItem.setVideoHeight(_ctx.integerValue("ListVideosResponse.Videos["+ i +"].VideoHeight"));
+			videosItem.setVideoFormat(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].VideoFormat"));
+			videosItem.setVideoDuration(_ctx.floatValue("ListVideosResponse.Videos["+ i +"].VideoDuration"));
+			videosItem.setFileSize(_ctx.integerValue("ListVideosResponse.Videos["+ i +"].FileSize"));
+			videosItem.setVideoFrames(_ctx.integerValue("ListVideosResponse.Videos["+ i +"].VideoFrames"));
+			videosItem.setSourceType(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].SourceType"));
+			videosItem.setSourceUri(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].SourceUri"));
+			videosItem.setSourcePosition(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].SourcePosition"));
+			videosItem.setProcessStatus(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].ProcessStatus"));
+			videosItem.setProcessModifyTime(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].ProcessModifyTime"));
+			videosItem.setVideoTagsStatus(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].VideoTagsStatus"));
+			videosItem.setVideoTagsModifyTime(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].VideoTagsModifyTime"));
+			videosItem.setCelebrityStatus(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].CelebrityStatus"));
+			videosItem.setCelebrityModifyTime(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].CelebrityModifyTime"));
+			videosItem.setCelebrityFailReason(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].CelebrityFailReason"));
+			videosItem.setVideoTagsFailReason(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].VideoTagsFailReason"));
+			videosItem.setProcessFailReason(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].ProcessFailReason"));
+			videosItem.setRemarksC(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].RemarksC"));
+			videosItem.setRemarksD(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].RemarksD"));
+			videosItem.setExternalId(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].ExternalId"));
 
 			List<VideoTagsItem> videoTags = new ArrayList<VideoTagsItem>();
-			for (int j = 0; j < context.lengthValue("ListVideosResponse.Videos["+ i +"].VideoTags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListVideosResponse.Videos["+ i +"].VideoTags.Length"); j++) {
 				VideoTagsItem videoTagsItem = new VideoTagsItem();
-				videoTagsItem.setVideoTagName(context.stringValue("ListVideosResponse.Videos["+ i +"].VideoTags["+ j +"].VideoTagName"));
-				videoTagsItem.setVideoTagEnName(context.stringValue("ListVideosResponse.Videos["+ i +"].VideoTags["+ j +"].VideoTagEnName"));
-				videoTagsItem.setVideoTagConfidence(context.floatValue("ListVideosResponse.Videos["+ i +"].VideoTags["+ j +"].VideoTagConfidence"));
+				videoTagsItem.setVideoTagName(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].VideoTags["+ j +"].VideoTagName"));
+				videoTagsItem.setVideoTagEnName(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].VideoTags["+ j +"].VideoTagEnName"));
+				videoTagsItem.setVideoTagConfidence(_ctx.floatValue("ListVideosResponse.Videos["+ i +"].VideoTags["+ j +"].VideoTagConfidence"));
 
 				videoTags.add(videoTagsItem);
 			}
 			videosItem.setVideoTags(videoTags);
 
 			List<CelebrityItem> celebrity = new ArrayList<CelebrityItem>();
-			for (int j = 0; j < context.lengthValue("ListVideosResponse.Videos["+ i +"].Celebrity.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListVideosResponse.Videos["+ i +"].Celebrity.Length"); j++) {
 				CelebrityItem celebrityItem = new CelebrityItem();
-				celebrityItem.setCelebrityName(context.stringValue("ListVideosResponse.Videos["+ i +"].Celebrity["+ j +"].CelebrityName"));
-				celebrityItem.setCelebrityNum(context.integerValue("ListVideosResponse.Videos["+ i +"].Celebrity["+ j +"].CelebrityNum"));
-				celebrityItem.setCelebrityLibraryName(context.stringValue("ListVideosResponse.Videos["+ i +"].Celebrity["+ j +"].CelebrityLibraryName"));
+				celebrityItem.setCelebrityName(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].Celebrity["+ j +"].CelebrityName"));
+				celebrityItem.setCelebrityNum(_ctx.integerValue("ListVideosResponse.Videos["+ i +"].Celebrity["+ j +"].CelebrityNum"));
+				celebrityItem.setCelebrityLibraryName(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].Celebrity["+ j +"].CelebrityLibraryName"));
 
 				celebrity.add(celebrityItem);
 			}
 			videosItem.setCelebrity(celebrity);
 
 			List<PersonsItem> persons = new ArrayList<PersonsItem>();
-			for (int j = 0; j < context.lengthValue("ListVideosResponse.Videos["+ i +"].Persons.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListVideosResponse.Videos["+ i +"].Persons.Length"); j++) {
 				PersonsItem personsItem = new PersonsItem();
-				personsItem.setPersonId(context.stringValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].PersonId"));
-				personsItem.setAge(context.integerValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].Age"));
-				personsItem.setAgeConfidence(context.floatValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].AgeConfidence"));
-				personsItem.setGender(context.stringValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].Gender"));
-				personsItem.setGenderConfidence(context.floatValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].GenderConfidence"));
+				personsItem.setPersonId(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].PersonId"));
+				personsItem.setAge(_ctx.integerValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].Age"));
+				personsItem.setAgeConfidence(_ctx.floatValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].AgeConfidence"));
+				personsItem.setGender(_ctx.stringValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].Gender"));
+				personsItem.setGenderConfidence(_ctx.floatValue("ListVideosResponse.Videos["+ i +"].Persons["+ j +"].GenderConfidence"));
 
 				persons.add(personsItem);
 			}

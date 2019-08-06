@@ -33,87 +33,87 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetImageResponseUnmarshaller {
 
-	public static GetImageResponse unmarshall(GetImageResponse getImageResponse, UnmarshallerContext context) {
+	public static GetImageResponse unmarshall(GetImageResponse getImageResponse, UnmarshallerContext _ctx) {
 		
-		getImageResponse.setRequestId(context.stringValue("GetImageResponse.RequestId"));
-		getImageResponse.setSetId(context.stringValue("GetImageResponse.SetId"));
-		getImageResponse.setImageUri(context.stringValue("GetImageResponse.ImageUri"));
-		getImageResponse.setRemarksA(context.stringValue("GetImageResponse.RemarksA"));
-		getImageResponse.setRemarksB(context.stringValue("GetImageResponse.RemarksB"));
-		getImageResponse.setCreateTime(context.stringValue("GetImageResponse.CreateTime"));
-		getImageResponse.setModifyTime(context.stringValue("GetImageResponse.ModifyTime"));
-		getImageResponse.setImageWidth(context.integerValue("GetImageResponse.ImageWidth"));
-		getImageResponse.setImageHeight(context.integerValue("GetImageResponse.ImageHeight"));
-		getImageResponse.setImageFormat(context.stringValue("GetImageResponse.ImageFormat"));
-		getImageResponse.setExif(context.stringValue("GetImageResponse.Exif"));
-		getImageResponse.setFileSize(context.integerValue("GetImageResponse.FileSize"));
-		getImageResponse.setImageTime(context.stringValue("GetImageResponse.ImageTime"));
-		getImageResponse.setOrientation(context.stringValue("GetImageResponse.Orientation"));
-		getImageResponse.setSourceType(context.stringValue("GetImageResponse.SourceType"));
-		getImageResponse.setSourceUri(context.stringValue("GetImageResponse.SourceUri"));
-		getImageResponse.setSourcePosition(context.stringValue("GetImageResponse.SourcePosition"));
-		getImageResponse.setFacesStatus(context.stringValue("GetImageResponse.FacesStatus"));
-		getImageResponse.setFacesModifyTime(context.stringValue("GetImageResponse.FacesModifyTime"));
-		getImageResponse.setLocation(context.stringValue("GetImageResponse.Location"));
-		getImageResponse.setOCRStatus(context.stringValue("GetImageResponse.OCRStatus"));
-		getImageResponse.setOCRModifyTime(context.stringValue("GetImageResponse.OCRModifyTime"));
-		getImageResponse.setOCRFailReason(context.stringValue("GetImageResponse.OCRFailReason"));
-		getImageResponse.setFacesFailReason(context.stringValue("GetImageResponse.FacesFailReason"));
-		getImageResponse.setTagsFailReason(context.stringValue("GetImageResponse.TagsFailReason"));
-		getImageResponse.setTagsModifyTime(context.stringValue("GetImageResponse.TagsModifyTime"));
-		getImageResponse.setCelebrityStatus(context.stringValue("GetImageResponse.CelebrityStatus"));
-		getImageResponse.setCelebrityModifyTime(context.stringValue("GetImageResponse.CelebrityModifyTime"));
-		getImageResponse.setCelebrityFailReason(context.stringValue("GetImageResponse.CelebrityFailReason"));
-		getImageResponse.setTagsStatus(context.stringValue("GetImageResponse.TagsStatus"));
-		getImageResponse.setRemarksC(context.stringValue("GetImageResponse.RemarksC"));
-		getImageResponse.setRemarksD(context.stringValue("GetImageResponse.RemarksD"));
-		getImageResponse.setExternalId(context.stringValue("GetImageResponse.ExternalId"));
+		getImageResponse.setRequestId(_ctx.stringValue("GetImageResponse.RequestId"));
+		getImageResponse.setSetId(_ctx.stringValue("GetImageResponse.SetId"));
+		getImageResponse.setImageUri(_ctx.stringValue("GetImageResponse.ImageUri"));
+		getImageResponse.setRemarksA(_ctx.stringValue("GetImageResponse.RemarksA"));
+		getImageResponse.setRemarksB(_ctx.stringValue("GetImageResponse.RemarksB"));
+		getImageResponse.setCreateTime(_ctx.stringValue("GetImageResponse.CreateTime"));
+		getImageResponse.setModifyTime(_ctx.stringValue("GetImageResponse.ModifyTime"));
+		getImageResponse.setImageWidth(_ctx.integerValue("GetImageResponse.ImageWidth"));
+		getImageResponse.setImageHeight(_ctx.integerValue("GetImageResponse.ImageHeight"));
+		getImageResponse.setImageFormat(_ctx.stringValue("GetImageResponse.ImageFormat"));
+		getImageResponse.setExif(_ctx.stringValue("GetImageResponse.Exif"));
+		getImageResponse.setFileSize(_ctx.integerValue("GetImageResponse.FileSize"));
+		getImageResponse.setImageTime(_ctx.stringValue("GetImageResponse.ImageTime"));
+		getImageResponse.setOrientation(_ctx.stringValue("GetImageResponse.Orientation"));
+		getImageResponse.setSourceType(_ctx.stringValue("GetImageResponse.SourceType"));
+		getImageResponse.setSourceUri(_ctx.stringValue("GetImageResponse.SourceUri"));
+		getImageResponse.setSourcePosition(_ctx.stringValue("GetImageResponse.SourcePosition"));
+		getImageResponse.setFacesStatus(_ctx.stringValue("GetImageResponse.FacesStatus"));
+		getImageResponse.setFacesModifyTime(_ctx.stringValue("GetImageResponse.FacesModifyTime"));
+		getImageResponse.setLocation(_ctx.stringValue("GetImageResponse.Location"));
+		getImageResponse.setOCRStatus(_ctx.stringValue("GetImageResponse.OCRStatus"));
+		getImageResponse.setOCRModifyTime(_ctx.stringValue("GetImageResponse.OCRModifyTime"));
+		getImageResponse.setOCRFailReason(_ctx.stringValue("GetImageResponse.OCRFailReason"));
+		getImageResponse.setFacesFailReason(_ctx.stringValue("GetImageResponse.FacesFailReason"));
+		getImageResponse.setTagsFailReason(_ctx.stringValue("GetImageResponse.TagsFailReason"));
+		getImageResponse.setTagsModifyTime(_ctx.stringValue("GetImageResponse.TagsModifyTime"));
+		getImageResponse.setCelebrityStatus(_ctx.stringValue("GetImageResponse.CelebrityStatus"));
+		getImageResponse.setCelebrityModifyTime(_ctx.stringValue("GetImageResponse.CelebrityModifyTime"));
+		getImageResponse.setCelebrityFailReason(_ctx.stringValue("GetImageResponse.CelebrityFailReason"));
+		getImageResponse.setTagsStatus(_ctx.stringValue("GetImageResponse.TagsStatus"));
+		getImageResponse.setRemarksC(_ctx.stringValue("GetImageResponse.RemarksC"));
+		getImageResponse.setRemarksD(_ctx.stringValue("GetImageResponse.RemarksD"));
+		getImageResponse.setExternalId(_ctx.stringValue("GetImageResponse.ExternalId"));
 
 		List<FacesItem> faces = new ArrayList<FacesItem>();
-		for (int i = 0; i < context.lengthValue("GetImageResponse.Faces.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetImageResponse.Faces.Length"); i++) {
 			FacesItem facesItem = new FacesItem();
-			facesItem.setFaceId(context.stringValue("GetImageResponse.Faces["+ i +"].FaceId"));
-			facesItem.setFaceConfidence(context.floatValue("GetImageResponse.Faces["+ i +"].FaceConfidence"));
-			facesItem.setAge(context.stringValue("GetImageResponse.Faces["+ i +"].Age"));
-			facesItem.setGender(context.stringValue("GetImageResponse.Faces["+ i +"].Gender"));
-			facesItem.setEmotion(context.stringValue("GetImageResponse.Faces["+ i +"].Emotion"));
-			facesItem.setAttractive(context.floatValue("GetImageResponse.Faces["+ i +"].Attractive"));
-			facesItem.setGenderConfidence(context.floatValue("GetImageResponse.Faces["+ i +"].GenderConfidence"));
-			facesItem.setGroupId(context.stringValue("GetImageResponse.Faces["+ i +"].GroupId"));
-			facesItem.setFaceQuality(context.floatValue("GetImageResponse.Faces["+ i +"].FaceQuality"));
+			facesItem.setFaceId(_ctx.stringValue("GetImageResponse.Faces["+ i +"].FaceId"));
+			facesItem.setFaceConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceConfidence"));
+			facesItem.setAge(_ctx.stringValue("GetImageResponse.Faces["+ i +"].Age"));
+			facesItem.setGender(_ctx.stringValue("GetImageResponse.Faces["+ i +"].Gender"));
+			facesItem.setEmotion(_ctx.stringValue("GetImageResponse.Faces["+ i +"].Emotion"));
+			facesItem.setAttractive(_ctx.floatValue("GetImageResponse.Faces["+ i +"].Attractive"));
+			facesItem.setGenderConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].GenderConfidence"));
+			facesItem.setGroupId(_ctx.stringValue("GetImageResponse.Faces["+ i +"].GroupId"));
+			facesItem.setFaceQuality(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceQuality"));
 
 			FaceAttributes faceAttributes = new FaceAttributes();
-			faceAttributes.setGlasses(context.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Glasses"));
-			faceAttributes.setBeard(context.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Beard"));
-			faceAttributes.setRace(context.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Race"));
-			faceAttributes.setMask(context.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Mask"));
-			faceAttributes.setGlassesConfidence(context.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.GlassesConfidence"));
-			faceAttributes.setBeardConfidence(context.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.BeardConfidence"));
-			faceAttributes.setRaceConfidence(context.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.RaceConfidence"));
-			faceAttributes.setMaskConfidence(context.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.MaskConfidence"));
+			faceAttributes.setGlasses(_ctx.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Glasses"));
+			faceAttributes.setBeard(_ctx.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Beard"));
+			faceAttributes.setRace(_ctx.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Race"));
+			faceAttributes.setMask(_ctx.stringValue("GetImageResponse.Faces["+ i +"].FaceAttributes.Mask"));
+			faceAttributes.setGlassesConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.GlassesConfidence"));
+			faceAttributes.setBeardConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.BeardConfidence"));
+			faceAttributes.setRaceConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.RaceConfidence"));
+			faceAttributes.setMaskConfidence(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.MaskConfidence"));
 
 			FaceBoundary faceBoundary = new FaceBoundary();
-			faceBoundary.setLeft(context.integerValue("GetImageResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Left"));
-			faceBoundary.setTop(context.integerValue("GetImageResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Top"));
-			faceBoundary.setWidth(context.integerValue("GetImageResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Width"));
-			faceBoundary.setHeight(context.integerValue("GetImageResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Height"));
+			faceBoundary.setLeft(_ctx.integerValue("GetImageResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Left"));
+			faceBoundary.setTop(_ctx.integerValue("GetImageResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Top"));
+			faceBoundary.setWidth(_ctx.integerValue("GetImageResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Width"));
+			faceBoundary.setHeight(_ctx.integerValue("GetImageResponse.Faces["+ i +"].FaceAttributes.FaceBoundary.Height"));
 			faceAttributes.setFaceBoundary(faceBoundary);
 
 			HeadPose headPose = new HeadPose();
-			headPose.setPitch(context.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.HeadPose.Pitch"));
-			headPose.setRoll(context.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.HeadPose.Roll"));
-			headPose.setYaw(context.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.HeadPose.Yaw"));
+			headPose.setPitch(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.HeadPose.Pitch"));
+			headPose.setRoll(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.HeadPose.Roll"));
+			headPose.setYaw(_ctx.floatValue("GetImageResponse.Faces["+ i +"].FaceAttributes.HeadPose.Yaw"));
 			faceAttributes.setHeadPose(headPose);
 			facesItem.setFaceAttributes(faceAttributes);
 
 			EmotionDetails emotionDetails = new EmotionDetails();
-			emotionDetails.setHAPPY(context.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.HAPPY"));
-			emotionDetails.setSAD(context.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.SAD"));
-			emotionDetails.setANGRY(context.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.ANGRY"));
-			emotionDetails.setSURPRISED(context.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.SURPRISED"));
-			emotionDetails.setSCARED(context.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.SCARED"));
-			emotionDetails.setDISGUSTED(context.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.DISGUSTED"));
-			emotionDetails.setCALM(context.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.CALM"));
+			emotionDetails.setHAPPY(_ctx.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.HAPPY"));
+			emotionDetails.setSAD(_ctx.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.SAD"));
+			emotionDetails.setANGRY(_ctx.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.ANGRY"));
+			emotionDetails.setSURPRISED(_ctx.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.SURPRISED"));
+			emotionDetails.setSCARED(_ctx.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.SCARED"));
+			emotionDetails.setDISGUSTED(_ctx.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.DISGUSTED"));
+			emotionDetails.setCALM(_ctx.floatValue("GetImageResponse.Faces["+ i +"].EmotionDetails.CALM"));
 			facesItem.setEmotionDetails(emotionDetails);
 
 			faces.add(facesItem);
@@ -121,16 +121,16 @@ public class GetImageResponseUnmarshaller {
 		getImageResponse.setFaces(faces);
 
 		List<OCRItem> oCR = new ArrayList<OCRItem>();
-		for (int i = 0; i < context.lengthValue("GetImageResponse.OCR.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetImageResponse.OCR.Length"); i++) {
 			OCRItem oCRItem = new OCRItem();
-			oCRItem.setOCRContents(context.stringValue("GetImageResponse.OCR["+ i +"].OCRContents"));
-			oCRItem.setOCRConfidence(context.floatValue("GetImageResponse.OCR["+ i +"].OCRConfidence"));
+			oCRItem.setOCRContents(_ctx.stringValue("GetImageResponse.OCR["+ i +"].OCRContents"));
+			oCRItem.setOCRConfidence(_ctx.floatValue("GetImageResponse.OCR["+ i +"].OCRConfidence"));
 
 			OCRBoundary oCRBoundary = new OCRBoundary();
-			oCRBoundary.setLeft(context.integerValue("GetImageResponse.OCR["+ i +"].OCRBoundary.Left"));
-			oCRBoundary.setTop(context.integerValue("GetImageResponse.OCR["+ i +"].OCRBoundary.Top"));
-			oCRBoundary.setWidth(context.integerValue("GetImageResponse.OCR["+ i +"].OCRBoundary.Width"));
-			oCRBoundary.setHeight(context.integerValue("GetImageResponse.OCR["+ i +"].OCRBoundary.Height"));
+			oCRBoundary.setLeft(_ctx.integerValue("GetImageResponse.OCR["+ i +"].OCRBoundary.Left"));
+			oCRBoundary.setTop(_ctx.integerValue("GetImageResponse.OCR["+ i +"].OCRBoundary.Top"));
+			oCRBoundary.setWidth(_ctx.integerValue("GetImageResponse.OCR["+ i +"].OCRBoundary.Width"));
+			oCRBoundary.setHeight(_ctx.integerValue("GetImageResponse.OCR["+ i +"].OCRBoundary.Height"));
 			oCRItem.setOCRBoundary(oCRBoundary);
 
 			oCR.add(oCRItem);
@@ -138,30 +138,30 @@ public class GetImageResponseUnmarshaller {
 		getImageResponse.setOCR(oCR);
 
 		List<TagsItem> tags = new ArrayList<TagsItem>();
-		for (int i = 0; i < context.lengthValue("GetImageResponse.Tags.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetImageResponse.Tags.Length"); i++) {
 			TagsItem tagsItem = new TagsItem();
-			tagsItem.setTagName(context.stringValue("GetImageResponse.Tags["+ i +"].TagName"));
-			tagsItem.setTagConfidence(context.floatValue("GetImageResponse.Tags["+ i +"].TagConfidence"));
-			tagsItem.setTagLevel(context.integerValue("GetImageResponse.Tags["+ i +"].TagLevel"));
-			tagsItem.setParentTagName(context.stringValue("GetImageResponse.Tags["+ i +"].ParentTagName"));
+			tagsItem.setTagName(_ctx.stringValue("GetImageResponse.Tags["+ i +"].TagName"));
+			tagsItem.setTagConfidence(_ctx.floatValue("GetImageResponse.Tags["+ i +"].TagConfidence"));
+			tagsItem.setTagLevel(_ctx.integerValue("GetImageResponse.Tags["+ i +"].TagLevel"));
+			tagsItem.setParentTagName(_ctx.stringValue("GetImageResponse.Tags["+ i +"].ParentTagName"));
 
 			tags.add(tagsItem);
 		}
 		getImageResponse.setTags(tags);
 
 		List<CelebrityItem> celebrity = new ArrayList<CelebrityItem>();
-		for (int i = 0; i < context.lengthValue("GetImageResponse.Celebrity.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetImageResponse.Celebrity.Length"); i++) {
 			CelebrityItem celebrityItem = new CelebrityItem();
-			celebrityItem.setCelebrityName(context.stringValue("GetImageResponse.Celebrity["+ i +"].CelebrityName"));
-			celebrityItem.setCelebrityGender(context.stringValue("GetImageResponse.Celebrity["+ i +"].CelebrityGender"));
-			celebrityItem.setCelebrityConfidence(context.floatValue("GetImageResponse.Celebrity["+ i +"].CelebrityConfidence"));
-			celebrityItem.setCelebrityLibraryName(context.stringValue("GetImageResponse.Celebrity["+ i +"].CelebrityLibraryName"));
+			celebrityItem.setCelebrityName(_ctx.stringValue("GetImageResponse.Celebrity["+ i +"].CelebrityName"));
+			celebrityItem.setCelebrityGender(_ctx.stringValue("GetImageResponse.Celebrity["+ i +"].CelebrityGender"));
+			celebrityItem.setCelebrityConfidence(_ctx.floatValue("GetImageResponse.Celebrity["+ i +"].CelebrityConfidence"));
+			celebrityItem.setCelebrityLibraryName(_ctx.stringValue("GetImageResponse.Celebrity["+ i +"].CelebrityLibraryName"));
 
 			CelebrityBoundary celebrityBoundary = new CelebrityBoundary();
-			celebrityBoundary.setLeft(context.integerValue("GetImageResponse.Celebrity["+ i +"].CelebrityBoundary.Left"));
-			celebrityBoundary.setTop(context.integerValue("GetImageResponse.Celebrity["+ i +"].CelebrityBoundary.Top"));
-			celebrityBoundary.setWidth(context.integerValue("GetImageResponse.Celebrity["+ i +"].CelebrityBoundary.Width"));
-			celebrityBoundary.setHeight(context.integerValue("GetImageResponse.Celebrity["+ i +"].CelebrityBoundary.Height"));
+			celebrityBoundary.setLeft(_ctx.integerValue("GetImageResponse.Celebrity["+ i +"].CelebrityBoundary.Left"));
+			celebrityBoundary.setTop(_ctx.integerValue("GetImageResponse.Celebrity["+ i +"].CelebrityBoundary.Top"));
+			celebrityBoundary.setWidth(_ctx.integerValue("GetImageResponse.Celebrity["+ i +"].CelebrityBoundary.Width"));
+			celebrityBoundary.setHeight(_ctx.integerValue("GetImageResponse.Celebrity["+ i +"].CelebrityBoundary.Height"));
 			celebrityItem.setCelebrityBoundary(celebrityBoundary);
 
 			celebrity.add(celebrityItem);

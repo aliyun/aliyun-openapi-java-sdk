@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateProjectResponseUnmarshaller {
 
-	public static UpdateProjectResponse unmarshall(UpdateProjectResponse updateProjectResponse, UnmarshallerContext context) {
+	public static UpdateProjectResponse unmarshall(UpdateProjectResponse updateProjectResponse, UnmarshallerContext _ctx) {
 		
-		updateProjectResponse.setRequestId(context.stringValue("UpdateProjectResponse.RequestId"));
-		updateProjectResponse.setProject(context.stringValue("UpdateProjectResponse.Project"));
-		updateProjectResponse.setCreateTime(context.stringValue("UpdateProjectResponse.CreateTime"));
-		updateProjectResponse.setModifyTime(context.stringValue("UpdateProjectResponse.ModifyTime"));
-		updateProjectResponse.setServiceRole(context.stringValue("UpdateProjectResponse.ServiceRole"));
-		updateProjectResponse.setCU(context.integerValue("UpdateProjectResponse.CU"));
-		updateProjectResponse.setType(context.stringValue("UpdateProjectResponse.Type"));
+		updateProjectResponse.setRequestId(_ctx.stringValue("UpdateProjectResponse.RequestId"));
+		updateProjectResponse.setProject(_ctx.stringValue("UpdateProjectResponse.Project"));
+		updateProjectResponse.setCreateTime(_ctx.stringValue("UpdateProjectResponse.CreateTime"));
+		updateProjectResponse.setModifyTime(_ctx.stringValue("UpdateProjectResponse.ModifyTime"));
+		updateProjectResponse.setServiceRole(_ctx.stringValue("UpdateProjectResponse.ServiceRole"));
+		updateProjectResponse.setCU(_ctx.integerValue("UpdateProjectResponse.CU"));
+		updateProjectResponse.setType(_ctx.stringValue("UpdateProjectResponse.Type"));
 	 
 	 	return updateProjectResponse;
 	}

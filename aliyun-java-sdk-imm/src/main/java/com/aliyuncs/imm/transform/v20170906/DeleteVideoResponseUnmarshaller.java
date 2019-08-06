@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteVideoResponseUnmarshaller {
 
-	public static DeleteVideoResponse unmarshall(DeleteVideoResponse deleteVideoResponse, UnmarshallerContext context) {
+	public static DeleteVideoResponse unmarshall(DeleteVideoResponse deleteVideoResponse, UnmarshallerContext _ctx) {
 		
-		deleteVideoResponse.setRequestId(context.stringValue("DeleteVideoResponse.RequestId"));
-		deleteVideoResponse.setSetId(context.stringValue("DeleteVideoResponse.SetId"));
-		deleteVideoResponse.setVideoUri(context.stringValue("DeleteVideoResponse.VideoUri"));
+		deleteVideoResponse.setRequestId(_ctx.stringValue("DeleteVideoResponse.RequestId"));
+		deleteVideoResponse.setSetId(_ctx.stringValue("DeleteVideoResponse.SetId"));
+		deleteVideoResponse.setVideoUri(_ctx.stringValue("DeleteVideoResponse.VideoUri"));
 	 
 	 	return deleteVideoResponse;
 	}

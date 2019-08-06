@@ -20,20 +20,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetImageJobResponseUnmarshaller {
 
-	public static GetImageJobResponse unmarshall(GetImageJobResponse getImageJobResponse, UnmarshallerContext context) {
+	public static GetImageJobResponse unmarshall(GetImageJobResponse getImageJobResponse, UnmarshallerContext _ctx) {
 		
-		getImageJobResponse.setRequestId(context.stringValue("GetImageJobResponse.RequestId"));
-		getImageJobResponse.setJobId(context.stringValue("GetImageJobResponse.JobId"));
-		getImageJobResponse.setJobType(context.stringValue("GetImageJobResponse.JobType"));
-		getImageJobResponse.setParameters(context.stringValue("GetImageJobResponse.Parameters"));
-		getImageJobResponse.setResult(context.stringValue("GetImageJobResponse.Result"));
-		getImageJobResponse.setStatus(context.stringValue("GetImageJobResponse.Status"));
-		getImageJobResponse.setStartTime(context.stringValue("GetImageJobResponse.StartTime"));
-		getImageJobResponse.setEndTime(context.stringValue("GetImageJobResponse.EndTime"));
-		getImageJobResponse.setErrorMessage(context.stringValue("GetImageJobResponse.ErrorMessage"));
-		getImageJobResponse.setNotifyEndpoint(context.stringValue("GetImageJobResponse.NotifyEndpoint"));
-		getImageJobResponse.setNotifyTopicName(context.stringValue("GetImageJobResponse.NotifyTopicName"));
-		getImageJobResponse.setProgress(context.integerValue("GetImageJobResponse.Progress"));
+		getImageJobResponse.setRequestId(_ctx.stringValue("GetImageJobResponse.RequestId"));
+		getImageJobResponse.setJobId(_ctx.stringValue("GetImageJobResponse.JobId"));
+		getImageJobResponse.setJobType(_ctx.stringValue("GetImageJobResponse.JobType"));
+		getImageJobResponse.setParameters(_ctx.stringValue("GetImageJobResponse.Parameters"));
+		getImageJobResponse.setResult(_ctx.stringValue("GetImageJobResponse.Result"));
+		getImageJobResponse.setStatus(_ctx.stringValue("GetImageJobResponse.Status"));
+		getImageJobResponse.setStartTime(_ctx.stringValue("GetImageJobResponse.StartTime"));
+		getImageJobResponse.setEndTime(_ctx.stringValue("GetImageJobResponse.EndTime"));
+		getImageJobResponse.setErrorMessage(_ctx.stringValue("GetImageJobResponse.ErrorMessage"));
+		getImageJobResponse.setNotifyEndpoint(_ctx.stringValue("GetImageJobResponse.NotifyEndpoint"));
+		getImageJobResponse.setNotifyTopicName(_ctx.stringValue("GetImageJobResponse.NotifyTopicName"));
+		getImageJobResponse.setProgress(_ctx.integerValue("GetImageJobResponse.Progress"));
 	 
 	 	return getImageJobResponse;
 	}

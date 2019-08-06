@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListOfficeConversionTaskResponseUnmarshaller {
 
-	public static ListOfficeConversionTaskResponse unmarshall(ListOfficeConversionTaskResponse listOfficeConversionTaskResponse, UnmarshallerContext context) {
+	public static ListOfficeConversionTaskResponse unmarshall(ListOfficeConversionTaskResponse listOfficeConversionTaskResponse, UnmarshallerContext _ctx) {
 		
-		listOfficeConversionTaskResponse.setRequestId(context.stringValue("ListOfficeConversionTaskResponse.RequestId"));
-		listOfficeConversionTaskResponse.setNextMarker(context.stringValue("ListOfficeConversionTaskResponse.NextMarker"));
+		listOfficeConversionTaskResponse.setRequestId(_ctx.stringValue("ListOfficeConversionTaskResponse.RequestId"));
+		listOfficeConversionTaskResponse.setNextMarker(_ctx.stringValue("ListOfficeConversionTaskResponse.NextMarker"));
 
 		List<TasksItem> tasks = new ArrayList<TasksItem>();
-		for (int i = 0; i < context.lengthValue("ListOfficeConversionTaskResponse.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListOfficeConversionTaskResponse.Tasks.Length"); i++) {
 			TasksItem tasksItem = new TasksItem();
-			tasksItem.setTaskId(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TaskId"));
-			tasksItem.setStatus(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].Status"));
-			tasksItem.setPercent(context.integerValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].Percent"));
-			tasksItem.setPageCount(context.integerValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].PageCount"));
-			tasksItem.setSrcUri(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].SrcUri"));
-			tasksItem.setTgtType(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TgtType"));
-			tasksItem.setTgtUri(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TgtUri"));
-			tasksItem.setImageSpec(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].ImageSpec"));
-			tasksItem.setNotifyTopicName(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].NotifyTopicName"));
-			tasksItem.setNotifyEndpoint(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].NotifyEndpoint"));
-			tasksItem.setExternalID(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].ExternalID"));
-			tasksItem.setCreateTime(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].CreateTime"));
-			tasksItem.setFinishTime(context.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].FinishTime"));
+			tasksItem.setTaskId(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TaskId"));
+			tasksItem.setStatus(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].Status"));
+			tasksItem.setPercent(_ctx.integerValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].Percent"));
+			tasksItem.setPageCount(_ctx.integerValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].PageCount"));
+			tasksItem.setSrcUri(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].SrcUri"));
+			tasksItem.setTgtType(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TgtType"));
+			tasksItem.setTgtUri(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].TgtUri"));
+			tasksItem.setImageSpec(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].ImageSpec"));
+			tasksItem.setNotifyTopicName(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].NotifyTopicName"));
+			tasksItem.setNotifyEndpoint(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].NotifyEndpoint"));
+			tasksItem.setExternalID(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].ExternalID"));
+			tasksItem.setCreateTime(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].CreateTime"));
+			tasksItem.setFinishTime(_ctx.stringValue("ListOfficeConversionTaskResponse.Tasks["+ i +"].FinishTime"));
 
 			tasks.add(tasksItem);
 		}

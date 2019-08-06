@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SearchDocIndexResponseUnmarshaller {
 
-	public static SearchDocIndexResponse unmarshall(SearchDocIndexResponse searchDocIndexResponse, UnmarshallerContext context) {
+	public static SearchDocIndexResponse unmarshall(SearchDocIndexResponse searchDocIndexResponse, UnmarshallerContext _ctx) {
 		
-		searchDocIndexResponse.setRequestId(context.stringValue("SearchDocIndexResponse.RequestId"));
+		searchDocIndexResponse.setRequestId(_ctx.stringValue("SearchDocIndexResponse.RequestId"));
 
 		List<DocInfosItem> docInfos = new ArrayList<DocInfosItem>();
-		for (int i = 0; i < context.lengthValue("SearchDocIndexResponse.DocInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SearchDocIndexResponse.DocInfos.Length"); i++) {
 			DocInfosItem docInfosItem = new DocInfosItem();
-			docInfosItem.setUniqueId(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].UniqueId"));
-			docInfosItem.setSrcUri(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].SrcUri"));
-			docInfosItem.setName(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].Name"));
-			docInfosItem.setContentType(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].ContentType"));
-			docInfosItem.setLastModified(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].LastModified"));
-			docInfosItem.setSize(context.integerValue("SearchDocIndexResponse.DocInfos["+ i +"].Size"));
-			docInfosItem.setPageNum(context.integerValue("SearchDocIndexResponse.DocInfos["+ i +"].PageNum"));
-			docInfosItem.setCustomKey1(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey1"));
-			docInfosItem.setCustomKey2(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey2"));
-			docInfosItem.setCustomKey3(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey3"));
-			docInfosItem.setCustomKey4(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey4"));
-			docInfosItem.setCustomKey5(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey5"));
-			docInfosItem.setCustomKey6(context.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey6"));
+			docInfosItem.setUniqueId(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].UniqueId"));
+			docInfosItem.setSrcUri(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].SrcUri"));
+			docInfosItem.setName(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].Name"));
+			docInfosItem.setContentType(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].ContentType"));
+			docInfosItem.setLastModified(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].LastModified"));
+			docInfosItem.setSize(_ctx.integerValue("SearchDocIndexResponse.DocInfos["+ i +"].Size"));
+			docInfosItem.setPageNum(_ctx.integerValue("SearchDocIndexResponse.DocInfos["+ i +"].PageNum"));
+			docInfosItem.setCustomKey1(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey1"));
+			docInfosItem.setCustomKey2(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey2"));
+			docInfosItem.setCustomKey3(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey3"));
+			docInfosItem.setCustomKey4(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey4"));
+			docInfosItem.setCustomKey5(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey5"));
+			docInfosItem.setCustomKey6(_ctx.stringValue("SearchDocIndexResponse.DocInfos["+ i +"].CustomKey6"));
 
 			docInfos.add(docInfosItem);
 		}

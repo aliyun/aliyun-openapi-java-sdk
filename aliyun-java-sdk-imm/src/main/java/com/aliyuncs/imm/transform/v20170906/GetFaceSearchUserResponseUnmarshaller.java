@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetFaceSearchUserResponseUnmarshaller {
 
-	public static GetFaceSearchUserResponse unmarshall(GetFaceSearchUserResponse getFaceSearchUserResponse, UnmarshallerContext context) {
+	public static GetFaceSearchUserResponse unmarshall(GetFaceSearchUserResponse getFaceSearchUserResponse, UnmarshallerContext _ctx) {
 		
-		getFaceSearchUserResponse.setRequestId(context.stringValue("GetFaceSearchUserResponse.RequestId"));
-		getFaceSearchUserResponse.setGroupName(context.stringValue("GetFaceSearchUserResponse.GroupName"));
-		getFaceSearchUserResponse.setCount(context.integerValue("GetFaceSearchUserResponse.Count"));
-		getFaceSearchUserResponse.setStatus(context.stringValue("GetFaceSearchUserResponse.Status"));
-		getFaceSearchUserResponse.setCreateTime(context.stringValue("GetFaceSearchUserResponse.CreateTime"));
-		getFaceSearchUserResponse.setModifyTime(context.stringValue("GetFaceSearchUserResponse.ModifyTime"));
-		getFaceSearchUserResponse.setGroupId(context.stringValue("GetFaceSearchUserResponse.GroupId"));
-		getFaceSearchUserResponse.setUser(context.stringValue("GetFaceSearchUserResponse.User"));
+		getFaceSearchUserResponse.setRequestId(_ctx.stringValue("GetFaceSearchUserResponse.RequestId"));
+		getFaceSearchUserResponse.setGroupName(_ctx.stringValue("GetFaceSearchUserResponse.GroupName"));
+		getFaceSearchUserResponse.setCount(_ctx.integerValue("GetFaceSearchUserResponse.Count"));
+		getFaceSearchUserResponse.setStatus(_ctx.stringValue("GetFaceSearchUserResponse.Status"));
+		getFaceSearchUserResponse.setCreateTime(_ctx.stringValue("GetFaceSearchUserResponse.CreateTime"));
+		getFaceSearchUserResponse.setModifyTime(_ctx.stringValue("GetFaceSearchUserResponse.ModifyTime"));
+		getFaceSearchUserResponse.setGroupId(_ctx.stringValue("GetFaceSearchUserResponse.GroupId"));
+		getFaceSearchUserResponse.setUser(_ctx.stringValue("GetFaceSearchUserResponse.User"));
 	 
 	 	return getFaceSearchUserResponse;
 	}

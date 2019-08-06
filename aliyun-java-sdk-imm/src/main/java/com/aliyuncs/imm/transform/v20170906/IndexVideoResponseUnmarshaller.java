@@ -20,24 +20,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class IndexVideoResponseUnmarshaller {
 
-	public static IndexVideoResponse unmarshall(IndexVideoResponse indexVideoResponse, UnmarshallerContext context) {
+	public static IndexVideoResponse unmarshall(IndexVideoResponse indexVideoResponse, UnmarshallerContext _ctx) {
 		
-		indexVideoResponse.setRequestId(context.stringValue("IndexVideoResponse.RequestId"));
-		indexVideoResponse.setSetId(context.stringValue("IndexVideoResponse.SetId"));
-		indexVideoResponse.setVideoUri(context.stringValue("IndexVideoResponse.VideoUri"));
-		indexVideoResponse.setRemarksA(context.stringValue("IndexVideoResponse.RemarksA"));
-		indexVideoResponse.setRemarksB(context.stringValue("IndexVideoResponse.RemarksB"));
-		indexVideoResponse.setCreateTime(context.stringValue("IndexVideoResponse.CreateTime"));
-		indexVideoResponse.setModifyTime(context.stringValue("IndexVideoResponse.ModifyTime"));
-		indexVideoResponse.setInterval(context.floatValue("IndexVideoResponse.Interval"));
-		indexVideoResponse.setGrabType(context.stringValue("IndexVideoResponse.GrabType"));
-		indexVideoResponse.setStartTime(context.stringValue("IndexVideoResponse.StartTime"));
-		indexVideoResponse.setEndTime(context.stringValue("IndexVideoResponse.EndTime"));
-		indexVideoResponse.setSaveType(context.booleanValue("IndexVideoResponse.SaveType"));
-		indexVideoResponse.setTgtUri(context.stringValue("IndexVideoResponse.TgtUri"));
-		indexVideoResponse.setRemarksC(context.stringValue("IndexVideoResponse.RemarksC"));
-		indexVideoResponse.setRemarksD(context.stringValue("IndexVideoResponse.RemarksD"));
-		indexVideoResponse.setExternalId(context.stringValue("IndexVideoResponse.ExternalId"));
+		indexVideoResponse.setRequestId(_ctx.stringValue("IndexVideoResponse.RequestId"));
+		indexVideoResponse.setSetId(_ctx.stringValue("IndexVideoResponse.SetId"));
+		indexVideoResponse.setVideoUri(_ctx.stringValue("IndexVideoResponse.VideoUri"));
+		indexVideoResponse.setRemarksA(_ctx.stringValue("IndexVideoResponse.RemarksA"));
+		indexVideoResponse.setRemarksB(_ctx.stringValue("IndexVideoResponse.RemarksB"));
+		indexVideoResponse.setCreateTime(_ctx.stringValue("IndexVideoResponse.CreateTime"));
+		indexVideoResponse.setModifyTime(_ctx.stringValue("IndexVideoResponse.ModifyTime"));
+		indexVideoResponse.setInterval(_ctx.floatValue("IndexVideoResponse.Interval"));
+		indexVideoResponse.setGrabType(_ctx.stringValue("IndexVideoResponse.GrabType"));
+		indexVideoResponse.setStartTime(_ctx.stringValue("IndexVideoResponse.StartTime"));
+		indexVideoResponse.setEndTime(_ctx.stringValue("IndexVideoResponse.EndTime"));
+		indexVideoResponse.setSaveType(_ctx.booleanValue("IndexVideoResponse.SaveType"));
+		indexVideoResponse.setTgtUri(_ctx.stringValue("IndexVideoResponse.TgtUri"));
+		indexVideoResponse.setRemarksC(_ctx.stringValue("IndexVideoResponse.RemarksC"));
+		indexVideoResponse.setRemarksD(_ctx.stringValue("IndexVideoResponse.RemarksD"));
+		indexVideoResponse.setExternalId(_ctx.stringValue("IndexVideoResponse.ExternalId"));
 	 
 	 	return indexVideoResponse;
 	}

@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateOfficeConversionTaskResponseUnmarshaller {
 
-	public static CreateOfficeConversionTaskResponse unmarshall(CreateOfficeConversionTaskResponse createOfficeConversionTaskResponse, UnmarshallerContext context) {
+	public static CreateOfficeConversionTaskResponse unmarshall(CreateOfficeConversionTaskResponse createOfficeConversionTaskResponse, UnmarshallerContext _ctx) {
 		
-		createOfficeConversionTaskResponse.setRequestId(context.stringValue("CreateOfficeConversionTaskResponse.RequestId"));
-		createOfficeConversionTaskResponse.setTaskId(context.stringValue("CreateOfficeConversionTaskResponse.TaskId"));
-		createOfficeConversionTaskResponse.setTgtLoc(context.stringValue("CreateOfficeConversionTaskResponse.TgtLoc"));
-		createOfficeConversionTaskResponse.setStatus(context.stringValue("CreateOfficeConversionTaskResponse.Status"));
-		createOfficeConversionTaskResponse.setCreateTime(context.stringValue("CreateOfficeConversionTaskResponse.CreateTime"));
-		createOfficeConversionTaskResponse.setPercent(context.integerValue("CreateOfficeConversionTaskResponse.Percent"));
+		createOfficeConversionTaskResponse.setRequestId(_ctx.stringValue("CreateOfficeConversionTaskResponse.RequestId"));
+		createOfficeConversionTaskResponse.setTaskId(_ctx.stringValue("CreateOfficeConversionTaskResponse.TaskId"));
+		createOfficeConversionTaskResponse.setTgtLoc(_ctx.stringValue("CreateOfficeConversionTaskResponse.TgtLoc"));
+		createOfficeConversionTaskResponse.setStatus(_ctx.stringValue("CreateOfficeConversionTaskResponse.Status"));
+		createOfficeConversionTaskResponse.setCreateTime(_ctx.stringValue("CreateOfficeConversionTaskResponse.CreateTime"));
+		createOfficeConversionTaskResponse.setPercent(_ctx.integerValue("CreateOfficeConversionTaskResponse.Percent"));
 	 
 	 	return createOfficeConversionTaskResponse;
 	}

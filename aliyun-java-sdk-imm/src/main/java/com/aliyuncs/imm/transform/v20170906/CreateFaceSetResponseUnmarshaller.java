@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateFaceSetResponseUnmarshaller {
 
-	public static CreateFaceSetResponse unmarshall(CreateFaceSetResponse createFaceSetResponse, UnmarshallerContext context) {
+	public static CreateFaceSetResponse unmarshall(CreateFaceSetResponse createFaceSetResponse, UnmarshallerContext _ctx) {
 		
-		createFaceSetResponse.setRequestId(context.stringValue("CreateFaceSetResponse.RequestId"));
-		createFaceSetResponse.setSetId(context.stringValue("CreateFaceSetResponse.SetId"));
-		createFaceSetResponse.setStatus(context.stringValue("CreateFaceSetResponse.Status"));
-		createFaceSetResponse.setPhotos(context.longValue("CreateFaceSetResponse.Photos"));
-		createFaceSetResponse.setCreateTime(context.stringValue("CreateFaceSetResponse.CreateTime"));
-		createFaceSetResponse.setModifyTime(context.stringValue("CreateFaceSetResponse.ModifyTime"));
-		createFaceSetResponse.setFaces(context.longValue("CreateFaceSetResponse.Faces"));
+		createFaceSetResponse.setRequestId(_ctx.stringValue("CreateFaceSetResponse.RequestId"));
+		createFaceSetResponse.setSetId(_ctx.stringValue("CreateFaceSetResponse.SetId"));
+		createFaceSetResponse.setStatus(_ctx.stringValue("CreateFaceSetResponse.Status"));
+		createFaceSetResponse.setPhotos(_ctx.longValue("CreateFaceSetResponse.Photos"));
+		createFaceSetResponse.setCreateTime(_ctx.stringValue("CreateFaceSetResponse.CreateTime"));
+		createFaceSetResponse.setModifyTime(_ctx.stringValue("CreateFaceSetResponse.ModifyTime"));
+		createFaceSetResponse.setFaces(_ctx.longValue("CreateFaceSetResponse.Faces"));
 	 
 	 	return createFaceSetResponse;
 	}

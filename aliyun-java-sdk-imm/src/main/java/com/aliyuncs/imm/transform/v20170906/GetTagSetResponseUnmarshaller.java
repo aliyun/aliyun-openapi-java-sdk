@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTagSetResponseUnmarshaller {
 
-	public static GetTagSetResponse unmarshall(GetTagSetResponse getTagSetResponse, UnmarshallerContext context) {
+	public static GetTagSetResponse unmarshall(GetTagSetResponse getTagSetResponse, UnmarshallerContext _ctx) {
 		
-		getTagSetResponse.setRequestId(context.stringValue("GetTagSetResponse.RequestId"));
-		getTagSetResponse.setSetId(context.stringValue("GetTagSetResponse.SetId"));
-		getTagSetResponse.setStatus(context.stringValue("GetTagSetResponse.Status"));
-		getTagSetResponse.setCreateTime(context.stringValue("GetTagSetResponse.CreateTime"));
-		getTagSetResponse.setModifyTime(context.stringValue("GetTagSetResponse.ModifyTime"));
-		getTagSetResponse.setPhotos(context.longValue("GetTagSetResponse.Photos"));
+		getTagSetResponse.setRequestId(_ctx.stringValue("GetTagSetResponse.RequestId"));
+		getTagSetResponse.setSetId(_ctx.stringValue("GetTagSetResponse.SetId"));
+		getTagSetResponse.setStatus(_ctx.stringValue("GetTagSetResponse.Status"));
+		getTagSetResponse.setCreateTime(_ctx.stringValue("GetTagSetResponse.CreateTime"));
+		getTagSetResponse.setModifyTime(_ctx.stringValue("GetTagSetResponse.ModifyTime"));
+		getTagSetResponse.setPhotos(_ctx.longValue("GetTagSetResponse.Photos"));
 	 
 	 	return getTagSetResponse;
 	}

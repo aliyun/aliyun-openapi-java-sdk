@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteFaceSearchGroupResponseUnmarshaller {
 
-	public static DeleteFaceSearchGroupResponse unmarshall(DeleteFaceSearchGroupResponse deleteFaceSearchGroupResponse, UnmarshallerContext context) {
+	public static DeleteFaceSearchGroupResponse unmarshall(DeleteFaceSearchGroupResponse deleteFaceSearchGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteFaceSearchGroupResponse.setRequestId(context.stringValue("DeleteFaceSearchGroupResponse.RequestId"));
+		deleteFaceSearchGroupResponse.setRequestId(_ctx.stringValue("DeleteFaceSearchGroupResponse.RequestId"));
 	 
 	 	return deleteFaceSearchGroupResponse;
 	}

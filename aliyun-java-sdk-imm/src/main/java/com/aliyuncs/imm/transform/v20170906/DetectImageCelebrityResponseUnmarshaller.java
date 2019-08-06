@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetectImageCelebrityResponseUnmarshaller {
 
-	public static DetectImageCelebrityResponse unmarshall(DetectImageCelebrityResponse detectImageCelebrityResponse, UnmarshallerContext context) {
+	public static DetectImageCelebrityResponse unmarshall(DetectImageCelebrityResponse detectImageCelebrityResponse, UnmarshallerContext _ctx) {
 		
-		detectImageCelebrityResponse.setRequestId(context.stringValue("DetectImageCelebrityResponse.RequestId"));
-		detectImageCelebrityResponse.setImageUri(context.stringValue("DetectImageCelebrityResponse.ImageUri"));
+		detectImageCelebrityResponse.setRequestId(_ctx.stringValue("DetectImageCelebrityResponse.RequestId"));
+		detectImageCelebrityResponse.setImageUri(_ctx.stringValue("DetectImageCelebrityResponse.ImageUri"));
 
 		List<CelebrityItem> celebrity = new ArrayList<CelebrityItem>();
-		for (int i = 0; i < context.lengthValue("DetectImageCelebrityResponse.Celebrity.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectImageCelebrityResponse.Celebrity.Length"); i++) {
 			CelebrityItem celebrityItem = new CelebrityItem();
-			celebrityItem.setCelebrityName(context.stringValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityName"));
-			celebrityItem.setCelebrityGender(context.stringValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityGender"));
-			celebrityItem.setCelebrityConfidence(context.floatValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityConfidence"));
-			celebrityItem.setCelebrityLibraryName(context.stringValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityLibraryName"));
+			celebrityItem.setCelebrityName(_ctx.stringValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityName"));
+			celebrityItem.setCelebrityGender(_ctx.stringValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityGender"));
+			celebrityItem.setCelebrityConfidence(_ctx.floatValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityConfidence"));
+			celebrityItem.setCelebrityLibraryName(_ctx.stringValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityLibraryName"));
 
 			CelebrityBoundary celebrityBoundary = new CelebrityBoundary();
-			celebrityBoundary.setLeft(context.integerValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityBoundary.Left"));
-			celebrityBoundary.setTop(context.integerValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityBoundary.Top"));
-			celebrityBoundary.setWidth(context.integerValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityBoundary.Width"));
-			celebrityBoundary.setHeight(context.integerValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityBoundary.Height"));
+			celebrityBoundary.setLeft(_ctx.integerValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityBoundary.Left"));
+			celebrityBoundary.setTop(_ctx.integerValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityBoundary.Top"));
+			celebrityBoundary.setWidth(_ctx.integerValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityBoundary.Width"));
+			celebrityBoundary.setHeight(_ctx.integerValue("DetectImageCelebrityResponse.Celebrity["+ i +"].CelebrityBoundary.Height"));
 			celebrityItem.setCelebrityBoundary(celebrityBoundary);
 
 			celebrity.add(celebrityItem);

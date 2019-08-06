@@ -27,25 +27,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetectQRCodesResponseUnmarshaller {
 
-	public static DetectQRCodesResponse unmarshall(DetectQRCodesResponse detectQRCodesResponse, UnmarshallerContext context) {
+	public static DetectQRCodesResponse unmarshall(DetectQRCodesResponse detectQRCodesResponse, UnmarshallerContext _ctx) {
 		
-		detectQRCodesResponse.setRequestId(context.stringValue("DetectQRCodesResponse.RequestId"));
+		detectQRCodesResponse.setRequestId(_ctx.stringValue("DetectQRCodesResponse.RequestId"));
 
 		List<SuccessDetailsItem> successDetails = new ArrayList<SuccessDetailsItem>();
-		for (int i = 0; i < context.lengthValue("DetectQRCodesResponse.SuccessDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectQRCodesResponse.SuccessDetails.Length"); i++) {
 			SuccessDetailsItem successDetailsItem = new SuccessDetailsItem();
-			successDetailsItem.setSrcUri(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].SrcUri"));
+			successDetailsItem.setSrcUri(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].SrcUri"));
 
 			List<QRCodesItem> qRCodes = new ArrayList<QRCodesItem>();
-			for (int j = 0; j < context.lengthValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes.Length"); j++) {
 				QRCodesItem qRCodesItem = new QRCodesItem();
-				qRCodesItem.setContent(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].Content"));
+				qRCodesItem.setContent(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].Content"));
 
 				QRCodesRectangle qRCodesRectangle = new QRCodesRectangle();
-				qRCodesRectangle.setLeft(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Left"));
-				qRCodesRectangle.setTop(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Top"));
-				qRCodesRectangle.setWidth(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Width"));
-				qRCodesRectangle.setHeight(context.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Height"));
+				qRCodesRectangle.setLeft(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Left"));
+				qRCodesRectangle.setTop(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Top"));
+				qRCodesRectangle.setWidth(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Width"));
+				qRCodesRectangle.setHeight(_ctx.stringValue("DetectQRCodesResponse.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Height"));
 				qRCodesItem.setQRCodesRectangle(qRCodesRectangle);
 
 				qRCodes.add(qRCodesItem);
@@ -57,11 +57,11 @@ public class DetectQRCodesResponseUnmarshaller {
 		detectQRCodesResponse.setSuccessDetails(successDetails);
 
 		List<FailDetailsItem> failDetails = new ArrayList<FailDetailsItem>();
-		for (int i = 0; i < context.lengthValue("DetectQRCodesResponse.FailDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DetectQRCodesResponse.FailDetails.Length"); i++) {
 			FailDetailsItem failDetailsItem = new FailDetailsItem();
-			failDetailsItem.setSrcUri(context.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].SrcUri"));
-			failDetailsItem.setErrorCode(context.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].ErrorCode"));
-			failDetailsItem.setErrorMessage(context.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].ErrorMessage"));
+			failDetailsItem.setSrcUri(_ctx.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].SrcUri"));
+			failDetailsItem.setErrorCode(_ctx.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].ErrorCode"));
+			failDetailsItem.setErrorMessage(_ctx.stringValue("DetectQRCodesResponse.FailDetails["+ i +"].ErrorMessage"));
 
 			failDetails.add(failDetailsItem);
 		}

@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMergeFaceGroupsJobResponseUnmarshaller {
 
-	public static CreateMergeFaceGroupsJobResponse unmarshall(CreateMergeFaceGroupsJobResponse createMergeFaceGroupsJobResponse, UnmarshallerContext context) {
+	public static CreateMergeFaceGroupsJobResponse unmarshall(CreateMergeFaceGroupsJobResponse createMergeFaceGroupsJobResponse, UnmarshallerContext _ctx) {
 		
-		createMergeFaceGroupsJobResponse.setRequestId(context.stringValue("CreateMergeFaceGroupsJobResponse.RequestId"));
-		createMergeFaceGroupsJobResponse.setJobId(context.stringValue("CreateMergeFaceGroupsJobResponse.JobId"));
-		createMergeFaceGroupsJobResponse.setSetId(context.stringValue("CreateMergeFaceGroupsJobResponse.SetId"));
-		createMergeFaceGroupsJobResponse.setJobType(context.stringValue("CreateMergeFaceGroupsJobResponse.JobType"));
-		createMergeFaceGroupsJobResponse.setGroupIdTo(context.stringValue("CreateMergeFaceGroupsJobResponse.GroupIdTo"));
-		createMergeFaceGroupsJobResponse.setGroupIdFrom(context.stringValue("CreateMergeFaceGroupsJobResponse.GroupIdFrom"));
+		createMergeFaceGroupsJobResponse.setRequestId(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.RequestId"));
+		createMergeFaceGroupsJobResponse.setJobId(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.JobId"));
+		createMergeFaceGroupsJobResponse.setSetId(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.SetId"));
+		createMergeFaceGroupsJobResponse.setJobType(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.JobType"));
+		createMergeFaceGroupsJobResponse.setGroupIdTo(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.GroupIdTo"));
+		createMergeFaceGroupsJobResponse.setGroupIdFrom(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.GroupIdFrom"));
 	 
 	 	return createMergeFaceGroupsJobResponse;
 	}

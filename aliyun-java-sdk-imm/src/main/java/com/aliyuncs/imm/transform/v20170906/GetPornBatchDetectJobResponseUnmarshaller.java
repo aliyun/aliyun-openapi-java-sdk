@@ -20,19 +20,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPornBatchDetectJobResponseUnmarshaller {
 
-	public static GetPornBatchDetectJobResponse unmarshall(GetPornBatchDetectJobResponse getPornBatchDetectJobResponse, UnmarshallerContext context) {
+	public static GetPornBatchDetectJobResponse unmarshall(GetPornBatchDetectJobResponse getPornBatchDetectJobResponse, UnmarshallerContext _ctx) {
 		
-		getPornBatchDetectJobResponse.setRequestId(context.stringValue("GetPornBatchDetectJobResponse.RequestId"));
-		getPornBatchDetectJobResponse.setJobId(context.stringValue("GetPornBatchDetectJobResponse.JobId"));
-		getPornBatchDetectJobResponse.setSrcUri(context.stringValue("GetPornBatchDetectJobResponse.SrcUri"));
-		getPornBatchDetectJobResponse.setTgtUri(context.stringValue("GetPornBatchDetectJobResponse.TgtUri"));
-		getPornBatchDetectJobResponse.setNotifyTopicName(context.stringValue("GetPornBatchDetectJobResponse.NotifyTopicName"));
-		getPornBatchDetectJobResponse.setNotifyEndpoint(context.stringValue("GetPornBatchDetectJobResponse.NotifyEndpoint"));
-		getPornBatchDetectJobResponse.setExternalID(context.stringValue("GetPornBatchDetectJobResponse.ExternalID"));
-		getPornBatchDetectJobResponse.setStatus(context.stringValue("GetPornBatchDetectJobResponse.Status"));
-		getPornBatchDetectJobResponse.setCreateTime(context.stringValue("GetPornBatchDetectJobResponse.CreateTime"));
-		getPornBatchDetectJobResponse.setFinishTime(context.stringValue("GetPornBatchDetectJobResponse.FinishTime"));
-		getPornBatchDetectJobResponse.setPercent(context.integerValue("GetPornBatchDetectJobResponse.Percent"));
+		getPornBatchDetectJobResponse.setRequestId(_ctx.stringValue("GetPornBatchDetectJobResponse.RequestId"));
+		getPornBatchDetectJobResponse.setJobId(_ctx.stringValue("GetPornBatchDetectJobResponse.JobId"));
+		getPornBatchDetectJobResponse.setSrcUri(_ctx.stringValue("GetPornBatchDetectJobResponse.SrcUri"));
+		getPornBatchDetectJobResponse.setTgtUri(_ctx.stringValue("GetPornBatchDetectJobResponse.TgtUri"));
+		getPornBatchDetectJobResponse.setNotifyTopicName(_ctx.stringValue("GetPornBatchDetectJobResponse.NotifyTopicName"));
+		getPornBatchDetectJobResponse.setNotifyEndpoint(_ctx.stringValue("GetPornBatchDetectJobResponse.NotifyEndpoint"));
+		getPornBatchDetectJobResponse.setExternalID(_ctx.stringValue("GetPornBatchDetectJobResponse.ExternalID"));
+		getPornBatchDetectJobResponse.setStatus(_ctx.stringValue("GetPornBatchDetectJobResponse.Status"));
+		getPornBatchDetectJobResponse.setCreateTime(_ctx.stringValue("GetPornBatchDetectJobResponse.CreateTime"));
+		getPornBatchDetectJobResponse.setFinishTime(_ctx.stringValue("GetPornBatchDetectJobResponse.FinishTime"));
+		getPornBatchDetectJobResponse.setPercent(_ctx.integerValue("GetPornBatchDetectJobResponse.Percent"));
 	 
 	 	return getPornBatchDetectJobResponse;
 	}

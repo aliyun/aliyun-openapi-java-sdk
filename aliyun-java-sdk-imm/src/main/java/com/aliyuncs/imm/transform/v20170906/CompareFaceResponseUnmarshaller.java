@@ -26,31 +26,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CompareFaceResponseUnmarshaller {
 
-	public static CompareFaceResponse unmarshall(CompareFaceResponse compareFaceResponse, UnmarshallerContext context) {
+	public static CompareFaceResponse unmarshall(CompareFaceResponse compareFaceResponse, UnmarshallerContext _ctx) {
 		
-		compareFaceResponse.setRequestId(context.stringValue("CompareFaceResponse.RequestId"));
+		compareFaceResponse.setRequestId(_ctx.stringValue("CompareFaceResponse.RequestId"));
 
 		List<CompareResultItem> compareResult = new ArrayList<CompareResultItem>();
-		for (int i = 0; i < context.lengthValue("CompareFaceResponse.CompareResult.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CompareFaceResponse.CompareResult.Length"); i++) {
 			CompareResultItem compareResultItem = new CompareResultItem();
-			compareResultItem.setSimilarity(context.floatValue("CompareFaceResponse.CompareResult["+ i +"].Similarity"));
+			compareResultItem.setSimilarity(_ctx.floatValue("CompareFaceResponse.CompareResult["+ i +"].Similarity"));
 
 			FaceA faceA = new FaceA();
-			faceA.setImageUri(context.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceA.ImageUri"));
+			faceA.setImageUri(_ctx.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceA.ImageUri"));
 
 			List<String> axis = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("CompareFaceResponse.CompareResult["+ i +"].FaceA.Axis.Length"); j++) {
-				axis.add(context.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceA.Axis["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("CompareFaceResponse.CompareResult["+ i +"].FaceA.Axis.Length"); j++) {
+				axis.add(_ctx.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceA.Axis["+ j +"]"));
 			}
 			faceA.setAxis(axis);
 			compareResultItem.setFaceA(faceA);
 
 			FaceB faceB = new FaceB();
-			faceB.setImageUri(context.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceB.ImageUri"));
+			faceB.setImageUri(_ctx.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceB.ImageUri"));
 
 			List<String> axis1 = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("CompareFaceResponse.CompareResult["+ i +"].FaceB.Axis.Length"); j++) {
-				axis1.add(context.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceB.Axis["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("CompareFaceResponse.CompareResult["+ i +"].FaceB.Axis.Length"); j++) {
+				axis1.add(_ctx.stringValue("CompareFaceResponse.CompareResult["+ i +"].FaceB.Axis["+ j +"]"));
 			}
 			faceB.setAxis1(axis1);
 			compareResultItem.setFaceB(faceB);

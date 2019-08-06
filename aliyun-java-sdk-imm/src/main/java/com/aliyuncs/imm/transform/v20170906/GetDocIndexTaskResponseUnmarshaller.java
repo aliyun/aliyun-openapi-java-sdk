@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetDocIndexTaskResponseUnmarshaller {
 
-	public static GetDocIndexTaskResponse unmarshall(GetDocIndexTaskResponse getDocIndexTaskResponse, UnmarshallerContext context) {
+	public static GetDocIndexTaskResponse unmarshall(GetDocIndexTaskResponse getDocIndexTaskResponse, UnmarshallerContext _ctx) {
 		
-		getDocIndexTaskResponse.setRequestId(context.stringValue("GetDocIndexTaskResponse.RequestId"));
-		getDocIndexTaskResponse.setStatus(context.stringValue("GetDocIndexTaskResponse.Status"));
-		getDocIndexTaskResponse.setTaskId(context.stringValue("GetDocIndexTaskResponse.TaskId"));
-		getDocIndexTaskResponse.setCreateTime(context.stringValue("GetDocIndexTaskResponse.CreateTime"));
-		getDocIndexTaskResponse.setFinishTime(context.stringValue("GetDocIndexTaskResponse.FinishTime"));
+		getDocIndexTaskResponse.setRequestId(_ctx.stringValue("GetDocIndexTaskResponse.RequestId"));
+		getDocIndexTaskResponse.setStatus(_ctx.stringValue("GetDocIndexTaskResponse.Status"));
+		getDocIndexTaskResponse.setTaskId(_ctx.stringValue("GetDocIndexTaskResponse.TaskId"));
+		getDocIndexTaskResponse.setCreateTime(_ctx.stringValue("GetDocIndexTaskResponse.CreateTime"));
+		getDocIndexTaskResponse.setFinishTime(_ctx.stringValue("GetDocIndexTaskResponse.FinishTime"));
 
 		FailDetail failDetail = new FailDetail();
-		failDetail.setCode(context.stringValue("GetDocIndexTaskResponse.FailDetail.Code"));
+		failDetail.setCode(_ctx.stringValue("GetDocIndexTaskResponse.FailDetail.Code"));
 		getDocIndexTaskResponse.setFailDetail(failDetail);
 	 
 	 	return getDocIndexTaskResponse;

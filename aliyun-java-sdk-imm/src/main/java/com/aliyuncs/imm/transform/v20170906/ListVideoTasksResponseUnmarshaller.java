@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListVideoTasksResponseUnmarshaller {
 
-	public static ListVideoTasksResponse unmarshall(ListVideoTasksResponse listVideoTasksResponse, UnmarshallerContext context) {
+	public static ListVideoTasksResponse unmarshall(ListVideoTasksResponse listVideoTasksResponse, UnmarshallerContext _ctx) {
 		
-		listVideoTasksResponse.setRequestId(context.stringValue("ListVideoTasksResponse.RequestId"));
-		listVideoTasksResponse.setNextMarker(context.stringValue("ListVideoTasksResponse.NextMarker"));
+		listVideoTasksResponse.setRequestId(_ctx.stringValue("ListVideoTasksResponse.RequestId"));
+		listVideoTasksResponse.setNextMarker(_ctx.stringValue("ListVideoTasksResponse.NextMarker"));
 
 		List<TasksItem> tasks = new ArrayList<TasksItem>();
-		for (int i = 0; i < context.lengthValue("ListVideoTasksResponse.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListVideoTasksResponse.Tasks.Length"); i++) {
 			TasksItem tasksItem = new TasksItem();
-			tasksItem.setStatus(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].Status"));
-			tasksItem.setTaskId(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].TaskId"));
-			tasksItem.setTaskType(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].TaskType"));
-			tasksItem.setParameters(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].Parameters"));
-			tasksItem.setResult(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].Result"));
-			tasksItem.setStartTime(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].StartTime"));
-			tasksItem.setEndTime(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].EndTime"));
-			tasksItem.setErrorMessage(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].ErrorMessage"));
-			tasksItem.setNotifyEndpoint(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].NotifyEndpoint"));
-			tasksItem.setNotifyTopicName(context.stringValue("ListVideoTasksResponse.Tasks["+ i +"].NotifyTopicName"));
-			tasksItem.setProgress(context.integerValue("ListVideoTasksResponse.Tasks["+ i +"].Progress"));
+			tasksItem.setStatus(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].Status"));
+			tasksItem.setTaskId(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].TaskId"));
+			tasksItem.setTaskType(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].TaskType"));
+			tasksItem.setParameters(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].Parameters"));
+			tasksItem.setResult(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].Result"));
+			tasksItem.setStartTime(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].StartTime"));
+			tasksItem.setEndTime(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].EndTime"));
+			tasksItem.setErrorMessage(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].ErrorMessage"));
+			tasksItem.setNotifyEndpoint(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].NotifyEndpoint"));
+			tasksItem.setNotifyTopicName(_ctx.stringValue("ListVideoTasksResponse.Tasks["+ i +"].NotifyTopicName"));
+			tasksItem.setProgress(_ctx.integerValue("ListVideoTasksResponse.Tasks["+ i +"].Progress"));
 
 			tasks.add(tasksItem);
 		}

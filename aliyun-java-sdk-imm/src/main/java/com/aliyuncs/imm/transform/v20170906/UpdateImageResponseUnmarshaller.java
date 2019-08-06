@@ -20,18 +20,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateImageResponseUnmarshaller {
 
-	public static UpdateImageResponse unmarshall(UpdateImageResponse updateImageResponse, UnmarshallerContext context) {
+	public static UpdateImageResponse unmarshall(UpdateImageResponse updateImageResponse, UnmarshallerContext _ctx) {
 		
-		updateImageResponse.setRequestId(context.stringValue("UpdateImageResponse.RequestId"));
-		updateImageResponse.setSetId(context.stringValue("UpdateImageResponse.SetId"));
-		updateImageResponse.setImageUri(context.stringValue("UpdateImageResponse.ImageUri"));
-		updateImageResponse.setRemarksA(context.stringValue("UpdateImageResponse.RemarksA"));
-		updateImageResponse.setRemarksB(context.stringValue("UpdateImageResponse.RemarksB"));
-		updateImageResponse.setCreateTime(context.stringValue("UpdateImageResponse.CreateTime"));
-		updateImageResponse.setModifyTime(context.stringValue("UpdateImageResponse.ModifyTime"));
-		updateImageResponse.setRemarksC(context.stringValue("UpdateImageResponse.RemarksC"));
-		updateImageResponse.setRemarksD(context.stringValue("UpdateImageResponse.RemarksD"));
-		updateImageResponse.setExternalId(context.stringValue("UpdateImageResponse.ExternalId"));
+		updateImageResponse.setRequestId(_ctx.stringValue("UpdateImageResponse.RequestId"));
+		updateImageResponse.setSetId(_ctx.stringValue("UpdateImageResponse.SetId"));
+		updateImageResponse.setImageUri(_ctx.stringValue("UpdateImageResponse.ImageUri"));
+		updateImageResponse.setRemarksA(_ctx.stringValue("UpdateImageResponse.RemarksA"));
+		updateImageResponse.setRemarksB(_ctx.stringValue("UpdateImageResponse.RemarksB"));
+		updateImageResponse.setCreateTime(_ctx.stringValue("UpdateImageResponse.CreateTime"));
+		updateImageResponse.setModifyTime(_ctx.stringValue("UpdateImageResponse.ModifyTime"));
+		updateImageResponse.setRemarksC(_ctx.stringValue("UpdateImageResponse.RemarksC"));
+		updateImageResponse.setRemarksD(_ctx.stringValue("UpdateImageResponse.RemarksD"));
+		updateImageResponse.setExternalId(_ctx.stringValue("UpdateImageResponse.ExternalId"));
 	 
 	 	return updateImageResponse;
 	}

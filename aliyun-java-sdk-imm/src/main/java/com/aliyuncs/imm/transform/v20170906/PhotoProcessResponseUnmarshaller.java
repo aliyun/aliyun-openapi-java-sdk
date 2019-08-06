@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PhotoProcessResponseUnmarshaller {
 
-	public static PhotoProcessResponse unmarshall(PhotoProcessResponse photoProcessResponse, UnmarshallerContext context) {
+	public static PhotoProcessResponse unmarshall(PhotoProcessResponse photoProcessResponse, UnmarshallerContext _ctx) {
 		
-		photoProcessResponse.setRequestId(context.stringValue("PhotoProcessResponse.RequestId"));
-		photoProcessResponse.setTaskId(context.stringValue("PhotoProcessResponse.TaskId"));
-		photoProcessResponse.setTgtLoc(context.stringValue("PhotoProcessResponse.TgtLoc"));
-		photoProcessResponse.setStatus(context.stringValue("PhotoProcessResponse.Status"));
-		photoProcessResponse.setCreateTime(context.stringValue("PhotoProcessResponse.CreateTime"));
-		photoProcessResponse.setPercent(context.integerValue("PhotoProcessResponse.Percent"));
+		photoProcessResponse.setRequestId(_ctx.stringValue("PhotoProcessResponse.RequestId"));
+		photoProcessResponse.setTaskId(_ctx.stringValue("PhotoProcessResponse.TaskId"));
+		photoProcessResponse.setTgtLoc(_ctx.stringValue("PhotoProcessResponse.TgtLoc"));
+		photoProcessResponse.setStatus(_ctx.stringValue("PhotoProcessResponse.Status"));
+		photoProcessResponse.setCreateTime(_ctx.stringValue("PhotoProcessResponse.CreateTime"));
+		photoProcessResponse.setPercent(_ctx.integerValue("PhotoProcessResponse.Percent"));
 	 
 	 	return photoProcessResponse;
 	}

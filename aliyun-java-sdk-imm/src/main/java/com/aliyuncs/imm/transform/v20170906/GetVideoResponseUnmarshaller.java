@@ -26,67 +26,67 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetVideoResponseUnmarshaller {
 
-	public static GetVideoResponse unmarshall(GetVideoResponse getVideoResponse, UnmarshallerContext context) {
+	public static GetVideoResponse unmarshall(GetVideoResponse getVideoResponse, UnmarshallerContext _ctx) {
 		
-		getVideoResponse.setRequestId(context.stringValue("GetVideoResponse.RequestId"));
-		getVideoResponse.setSetId(context.stringValue("GetVideoResponse.SetId"));
-		getVideoResponse.setVideoUri(context.stringValue("GetVideoResponse.VideoUri"));
-		getVideoResponse.setRemarksA(context.stringValue("GetVideoResponse.RemarksA"));
-		getVideoResponse.setRemarksB(context.stringValue("GetVideoResponse.RemarksB"));
-		getVideoResponse.setCreateTime(context.stringValue("GetVideoResponse.CreateTime"));
-		getVideoResponse.setModifyTime(context.stringValue("GetVideoResponse.ModifyTime"));
-		getVideoResponse.setVideoWidth(context.integerValue("GetVideoResponse.VideoWidth"));
-		getVideoResponse.setVideoHeight(context.integerValue("GetVideoResponse.VideoHeight"));
-		getVideoResponse.setVideoFormat(context.stringValue("GetVideoResponse.VideoFormat"));
-		getVideoResponse.setVideoDuration(context.floatValue("GetVideoResponse.VideoDuration"));
-		getVideoResponse.setFileSize(context.integerValue("GetVideoResponse.FileSize"));
-		getVideoResponse.setVideoFrames(context.integerValue("GetVideoResponse.VideoFrames"));
-		getVideoResponse.setSourceType(context.stringValue("GetVideoResponse.SourceType"));
-		getVideoResponse.setSourceUri(context.stringValue("GetVideoResponse.SourceUri"));
-		getVideoResponse.setSourcePosition(context.stringValue("GetVideoResponse.SourcePosition"));
-		getVideoResponse.setProcessStatus(context.stringValue("GetVideoResponse.ProcessStatus"));
-		getVideoResponse.setProcessModifyTime(context.stringValue("GetVideoResponse.ProcessModifyTime"));
-		getVideoResponse.setVideoTagsStatus(context.stringValue("GetVideoResponse.VideoTagsStatus"));
-		getVideoResponse.setVideoTagsModifyTime(context.stringValue("GetVideoResponse.VideoTagsModifyTime"));
-		getVideoResponse.setCelebrityStatus(context.stringValue("GetVideoResponse.CelebrityStatus"));
-		getVideoResponse.setCelebrityModifyTime(context.stringValue("GetVideoResponse.CelebrityModifyTime"));
-		getVideoResponse.setProcessFailReason(context.stringValue("GetVideoResponse.ProcessFailReason"));
-		getVideoResponse.setVideoTagsFailReason(context.stringValue("GetVideoResponse.VideoTagsFailReason"));
-		getVideoResponse.setCelebrityFailReason(context.stringValue("GetVideoResponse.CelebrityFailReason"));
-		getVideoResponse.setRemarksC(context.stringValue("GetVideoResponse.RemarksC"));
-		getVideoResponse.setRemarksD(context.stringValue("GetVideoResponse.RemarksD"));
-		getVideoResponse.setExternalId(context.stringValue("GetVideoResponse.ExternalId"));
+		getVideoResponse.setRequestId(_ctx.stringValue("GetVideoResponse.RequestId"));
+		getVideoResponse.setSetId(_ctx.stringValue("GetVideoResponse.SetId"));
+		getVideoResponse.setVideoUri(_ctx.stringValue("GetVideoResponse.VideoUri"));
+		getVideoResponse.setRemarksA(_ctx.stringValue("GetVideoResponse.RemarksA"));
+		getVideoResponse.setRemarksB(_ctx.stringValue("GetVideoResponse.RemarksB"));
+		getVideoResponse.setCreateTime(_ctx.stringValue("GetVideoResponse.CreateTime"));
+		getVideoResponse.setModifyTime(_ctx.stringValue("GetVideoResponse.ModifyTime"));
+		getVideoResponse.setVideoWidth(_ctx.integerValue("GetVideoResponse.VideoWidth"));
+		getVideoResponse.setVideoHeight(_ctx.integerValue("GetVideoResponse.VideoHeight"));
+		getVideoResponse.setVideoFormat(_ctx.stringValue("GetVideoResponse.VideoFormat"));
+		getVideoResponse.setVideoDuration(_ctx.floatValue("GetVideoResponse.VideoDuration"));
+		getVideoResponse.setFileSize(_ctx.integerValue("GetVideoResponse.FileSize"));
+		getVideoResponse.setVideoFrames(_ctx.integerValue("GetVideoResponse.VideoFrames"));
+		getVideoResponse.setSourceType(_ctx.stringValue("GetVideoResponse.SourceType"));
+		getVideoResponse.setSourceUri(_ctx.stringValue("GetVideoResponse.SourceUri"));
+		getVideoResponse.setSourcePosition(_ctx.stringValue("GetVideoResponse.SourcePosition"));
+		getVideoResponse.setProcessStatus(_ctx.stringValue("GetVideoResponse.ProcessStatus"));
+		getVideoResponse.setProcessModifyTime(_ctx.stringValue("GetVideoResponse.ProcessModifyTime"));
+		getVideoResponse.setVideoTagsStatus(_ctx.stringValue("GetVideoResponse.VideoTagsStatus"));
+		getVideoResponse.setVideoTagsModifyTime(_ctx.stringValue("GetVideoResponse.VideoTagsModifyTime"));
+		getVideoResponse.setCelebrityStatus(_ctx.stringValue("GetVideoResponse.CelebrityStatus"));
+		getVideoResponse.setCelebrityModifyTime(_ctx.stringValue("GetVideoResponse.CelebrityModifyTime"));
+		getVideoResponse.setProcessFailReason(_ctx.stringValue("GetVideoResponse.ProcessFailReason"));
+		getVideoResponse.setVideoTagsFailReason(_ctx.stringValue("GetVideoResponse.VideoTagsFailReason"));
+		getVideoResponse.setCelebrityFailReason(_ctx.stringValue("GetVideoResponse.CelebrityFailReason"));
+		getVideoResponse.setRemarksC(_ctx.stringValue("GetVideoResponse.RemarksC"));
+		getVideoResponse.setRemarksD(_ctx.stringValue("GetVideoResponse.RemarksD"));
+		getVideoResponse.setExternalId(_ctx.stringValue("GetVideoResponse.ExternalId"));
 
 		List<CelebrityItem> celebrity = new ArrayList<CelebrityItem>();
-		for (int i = 0; i < context.lengthValue("GetVideoResponse.Celebrity.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetVideoResponse.Celebrity.Length"); i++) {
 			CelebrityItem celebrityItem = new CelebrityItem();
-			celebrityItem.setCelebrityName(context.stringValue("GetVideoResponse.Celebrity["+ i +"].CelebrityName"));
-			celebrityItem.setCelebrityNum(context.integerValue("GetVideoResponse.Celebrity["+ i +"].CelebrityNum"));
-			celebrityItem.setCelebrityLibraryName(context.stringValue("GetVideoResponse.Celebrity["+ i +"].CelebrityLibraryName"));
+			celebrityItem.setCelebrityName(_ctx.stringValue("GetVideoResponse.Celebrity["+ i +"].CelebrityName"));
+			celebrityItem.setCelebrityNum(_ctx.integerValue("GetVideoResponse.Celebrity["+ i +"].CelebrityNum"));
+			celebrityItem.setCelebrityLibraryName(_ctx.stringValue("GetVideoResponse.Celebrity["+ i +"].CelebrityLibraryName"));
 
 			celebrity.add(celebrityItem);
 		}
 		getVideoResponse.setCelebrity(celebrity);
 
 		List<VideoTagsItem> videoTags = new ArrayList<VideoTagsItem>();
-		for (int i = 0; i < context.lengthValue("GetVideoResponse.VideoTags.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetVideoResponse.VideoTags.Length"); i++) {
 			VideoTagsItem videoTagsItem = new VideoTagsItem();
-			videoTagsItem.setVideoTagName(context.stringValue("GetVideoResponse.VideoTags["+ i +"].VideoTagName"));
-			videoTagsItem.setVideoTagEnName(context.stringValue("GetVideoResponse.VideoTags["+ i +"].VideoTagEnName"));
-			videoTagsItem.setVideoTagConfidence(context.floatValue("GetVideoResponse.VideoTags["+ i +"].VideoTagConfidence"));
+			videoTagsItem.setVideoTagName(_ctx.stringValue("GetVideoResponse.VideoTags["+ i +"].VideoTagName"));
+			videoTagsItem.setVideoTagEnName(_ctx.stringValue("GetVideoResponse.VideoTags["+ i +"].VideoTagEnName"));
+			videoTagsItem.setVideoTagConfidence(_ctx.floatValue("GetVideoResponse.VideoTags["+ i +"].VideoTagConfidence"));
 
 			videoTags.add(videoTagsItem);
 		}
 		getVideoResponse.setVideoTags(videoTags);
 
 		List<PersonsItem> persons = new ArrayList<PersonsItem>();
-		for (int i = 0; i < context.lengthValue("GetVideoResponse.Persons.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetVideoResponse.Persons.Length"); i++) {
 			PersonsItem personsItem = new PersonsItem();
-			personsItem.setPersonId(context.stringValue("GetVideoResponse.Persons["+ i +"].PersonId"));
-			personsItem.setAge(context.integerValue("GetVideoResponse.Persons["+ i +"].Age"));
-			personsItem.setAgeConfidence(context.floatValue("GetVideoResponse.Persons["+ i +"].AgeConfidence"));
-			personsItem.setGender(context.stringValue("GetVideoResponse.Persons["+ i +"].Gender"));
-			personsItem.setGenderConfidence(context.floatValue("GetVideoResponse.Persons["+ i +"].GenderConfidence"));
+			personsItem.setPersonId(_ctx.stringValue("GetVideoResponse.Persons["+ i +"].PersonId"));
+			personsItem.setAge(_ctx.integerValue("GetVideoResponse.Persons["+ i +"].Age"));
+			personsItem.setAgeConfidence(_ctx.floatValue("GetVideoResponse.Persons["+ i +"].AgeConfidence"));
+			personsItem.setGender(_ctx.stringValue("GetVideoResponse.Persons["+ i +"].Gender"));
+			personsItem.setGenderConfidence(_ctx.floatValue("GetVideoResponse.Persons["+ i +"].GenderConfidence"));
 
 			persons.add(personsItem);
 		}
