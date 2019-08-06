@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTopicStatusResponseUnmarshaller {
 
-	public static GetTopicStatusResponse unmarshall(GetTopicStatusResponse getTopicStatusResponse, UnmarshallerContext context) {
+	public static GetTopicStatusResponse unmarshall(GetTopicStatusResponse getTopicStatusResponse, UnmarshallerContext _ctx) {
 		
-		getTopicStatusResponse.setRequestId(context.stringValue("GetTopicStatusResponse.RequestId"));
-		getTopicStatusResponse.setSuccess(context.booleanValue("GetTopicStatusResponse.Success"));
-		getTopicStatusResponse.setCode(context.integerValue("GetTopicStatusResponse.Code"));
-		getTopicStatusResponse.setMessage(context.stringValue("GetTopicStatusResponse.Message"));
+		getTopicStatusResponse.setRequestId(_ctx.stringValue("GetTopicStatusResponse.RequestId"));
+		getTopicStatusResponse.setSuccess(_ctx.booleanValue("GetTopicStatusResponse.Success"));
+		getTopicStatusResponse.setCode(_ctx.integerValue("GetTopicStatusResponse.Code"));
+		getTopicStatusResponse.setMessage(_ctx.stringValue("GetTopicStatusResponse.Message"));
 
 		TopicStatus topicStatus = new TopicStatus();
-		topicStatus.setTotalCount(context.longValue("GetTopicStatusResponse.TopicStatus.TotalCount"));
-		topicStatus.setLastTimeStamp(context.longValue("GetTopicStatusResponse.TopicStatus.LastTimeStamp"));
+		topicStatus.setTotalCount(_ctx.longValue("GetTopicStatusResponse.TopicStatus.TotalCount"));
+		topicStatus.setLastTimeStamp(_ctx.longValue("GetTopicStatusResponse.TopicStatus.LastTimeStamp"));
 
 		List<OffsetTableItem> offsetTable = new ArrayList<OffsetTableItem>();
-		for (int i = 0; i < context.lengthValue("GetTopicStatusResponse.TopicStatus.OffsetTable.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetTopicStatusResponse.TopicStatus.OffsetTable.Length"); i++) {
 			OffsetTableItem offsetTableItem = new OffsetTableItem();
-			offsetTableItem.setMinOffset(context.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].MinOffset"));
-			offsetTableItem.setMaxOffset(context.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].MaxOffset"));
-			offsetTableItem.setLastUpdateTimestamp(context.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].LastUpdateTimestamp"));
-			offsetTableItem.setTopic(context.stringValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].Topic"));
-			offsetTableItem.setPartition(context.integerValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].Partition"));
+			offsetTableItem.setMinOffset(_ctx.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].MinOffset"));
+			offsetTableItem.setMaxOffset(_ctx.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].MaxOffset"));
+			offsetTableItem.setLastUpdateTimestamp(_ctx.longValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].LastUpdateTimestamp"));
+			offsetTableItem.setTopic(_ctx.stringValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].Topic"));
+			offsetTableItem.setPartition(_ctx.integerValue("GetTopicStatusResponse.TopicStatus.OffsetTable["+ i +"].Partition"));
 
 			offsetTable.add(offsetTableItem);
 		}

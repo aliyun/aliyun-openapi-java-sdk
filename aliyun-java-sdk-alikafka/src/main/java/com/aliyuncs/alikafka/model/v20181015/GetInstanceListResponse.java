@@ -97,6 +97,8 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private String sslEndPoint;
 
+		private String name;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -191,6 +193,14 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		public void setSslEndPoint(String sslEndPoint) {
 			this.sslEndPoint = sslEndPoint;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

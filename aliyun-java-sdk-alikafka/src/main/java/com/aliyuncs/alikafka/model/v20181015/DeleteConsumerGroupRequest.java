@@ -22,10 +22,10 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListResponse> {
+public class DeleteConsumerGroupRequest extends RpcAcsRequest<DeleteConsumerGroupResponse> {
 	
-	public GetInstanceListRequest() {
-		super("alikafka", "2018-10-15", "GetInstanceList", "alikafka");
+	public DeleteConsumerGroupRequest() {
+		super("alikafka", "2018-10-15", "DeleteConsumerGroup", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +33,35 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 		} catch (Exception e) {}
 	}
 
+	private String instanceId;
+
+	private String consumerId;
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getConsumerId() {
+		return this.consumerId;
+	}
+
+	public void setConsumerId(String consumerId) {
+		this.consumerId = consumerId;
+		if(consumerId != null){
+			putQueryParameter("ConsumerId", consumerId);
+		}
+	}
+
 	@Override
-	public Class<GetInstanceListResponse> getResponseClass() {
-		return GetInstanceListResponse.class;
+	public Class<DeleteConsumerGroupResponse> getResponseClass() {
+		return DeleteConsumerGroupResponse.class;
 	}
 
 }

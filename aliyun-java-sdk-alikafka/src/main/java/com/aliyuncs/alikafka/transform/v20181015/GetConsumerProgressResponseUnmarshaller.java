@@ -26,31 +26,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetConsumerProgressResponseUnmarshaller {
 
-	public static GetConsumerProgressResponse unmarshall(GetConsumerProgressResponse getConsumerProgressResponse, UnmarshallerContext context) {
+	public static GetConsumerProgressResponse unmarshall(GetConsumerProgressResponse getConsumerProgressResponse, UnmarshallerContext _ctx) {
 		
-		getConsumerProgressResponse.setRequestId(context.stringValue("GetConsumerProgressResponse.RequestId"));
-		getConsumerProgressResponse.setSuccess(context.booleanValue("GetConsumerProgressResponse.Success"));
-		getConsumerProgressResponse.setCode(context.integerValue("GetConsumerProgressResponse.Code"));
-		getConsumerProgressResponse.setMessage(context.stringValue("GetConsumerProgressResponse.Message"));
+		getConsumerProgressResponse.setRequestId(_ctx.stringValue("GetConsumerProgressResponse.RequestId"));
+		getConsumerProgressResponse.setSuccess(_ctx.booleanValue("GetConsumerProgressResponse.Success"));
+		getConsumerProgressResponse.setCode(_ctx.integerValue("GetConsumerProgressResponse.Code"));
+		getConsumerProgressResponse.setMessage(_ctx.stringValue("GetConsumerProgressResponse.Message"));
 
 		ConsumerProgress consumerProgress = new ConsumerProgress();
-		consumerProgress.setTotalDiff(context.longValue("GetConsumerProgressResponse.ConsumerProgress.TotalDiff"));
-		consumerProgress.setLastTimestamp(context.longValue("GetConsumerProgressResponse.ConsumerProgress.LastTimestamp"));
+		consumerProgress.setTotalDiff(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.TotalDiff"));
+		consumerProgress.setLastTimestamp(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.LastTimestamp"));
 
 		List<TopicListItem> topicList = new ArrayList<TopicListItem>();
-		for (int i = 0; i < context.lengthValue("GetConsumerProgressResponse.ConsumerProgress.TopicList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetConsumerProgressResponse.ConsumerProgress.TopicList.Length"); i++) {
 			TopicListItem topicListItem = new TopicListItem();
-			topicListItem.setTopic(context.stringValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].Topic"));
-			topicListItem.setTotalDiff(context.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].TotalDiff"));
-			topicListItem.setLastTimestamp(context.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].LastTimestamp"));
+			topicListItem.setTopic(_ctx.stringValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].Topic"));
+			topicListItem.setTotalDiff(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].TotalDiff"));
+			topicListItem.setLastTimestamp(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].LastTimestamp"));
 
 			List<OffsetListItem> offsetList = new ArrayList<OffsetListItem>();
-			for (int j = 0; j < context.lengthValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList.Length"); j++) {
 				OffsetListItem offsetListItem = new OffsetListItem();
-				offsetListItem.setBrokerOffset(context.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].BrokerOffset"));
-				offsetListItem.setConsumerOffset(context.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].ConsumerOffset"));
-				offsetListItem.setLastTimestamp(context.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].LastTimestamp"));
-				offsetListItem.setPartition(context.integerValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].Partition"));
+				offsetListItem.setBrokerOffset(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].BrokerOffset"));
+				offsetListItem.setConsumerOffset(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].ConsumerOffset"));
+				offsetListItem.setLastTimestamp(_ctx.longValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].LastTimestamp"));
+				offsetListItem.setPartition(_ctx.integerValue("GetConsumerProgressResponse.ConsumerProgress.TopicList["+ i +"].OffsetList["+ j +"].Partition"));
 
 				offsetList.add(offsetListItem);
 			}

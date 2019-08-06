@@ -16,6 +16,7 @@ package com.aliyuncs.alikafka.model.v20181015;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alikafka.Endpoint;
 
 /**
  * @author auto create
@@ -26,6 +27,10 @@ public class GetTopicStatusRequest extends RpcAcsRequest<GetTopicStatusResponse>
 	public GetTopicStatusRequest() {
 		super("alikafka", "2018-10-15", "GetTopicStatus", "alikafka");
 		setMethod(MethodType.POST);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String instanceId;

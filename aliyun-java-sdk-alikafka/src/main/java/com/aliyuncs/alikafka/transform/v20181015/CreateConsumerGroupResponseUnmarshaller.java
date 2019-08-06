@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateConsumerGroupResponseUnmarshaller {
 
-	public static CreateConsumerGroupResponse unmarshall(CreateConsumerGroupResponse createConsumerGroupResponse, UnmarshallerContext context) {
+	public static CreateConsumerGroupResponse unmarshall(CreateConsumerGroupResponse createConsumerGroupResponse, UnmarshallerContext _ctx) {
 		
-		createConsumerGroupResponse.setRequestId(context.stringValue("CreateConsumerGroupResponse.RequestId"));
-		createConsumerGroupResponse.setSuccess(context.booleanValue("CreateConsumerGroupResponse.Success"));
-		createConsumerGroupResponse.setCode(context.integerValue("CreateConsumerGroupResponse.Code"));
-		createConsumerGroupResponse.setMessage(context.stringValue("CreateConsumerGroupResponse.Message"));
+		createConsumerGroupResponse.setRequestId(_ctx.stringValue("CreateConsumerGroupResponse.RequestId"));
+		createConsumerGroupResponse.setSuccess(_ctx.booleanValue("CreateConsumerGroupResponse.Success"));
+		createConsumerGroupResponse.setCode(_ctx.integerValue("CreateConsumerGroupResponse.Code"));
+		createConsumerGroupResponse.setMessage(_ctx.stringValue("CreateConsumerGroupResponse.Message"));
 	 
 	 	return createConsumerGroupResponse;
 	}

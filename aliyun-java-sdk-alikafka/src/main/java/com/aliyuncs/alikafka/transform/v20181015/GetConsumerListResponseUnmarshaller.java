@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetConsumerListResponseUnmarshaller {
 
-	public static GetConsumerListResponse unmarshall(GetConsumerListResponse getConsumerListResponse, UnmarshallerContext context) {
+	public static GetConsumerListResponse unmarshall(GetConsumerListResponse getConsumerListResponse, UnmarshallerContext _ctx) {
 		
-		getConsumerListResponse.setRequestId(context.stringValue("GetConsumerListResponse.RequestId"));
-		getConsumerListResponse.setSuccess(context.booleanValue("GetConsumerListResponse.Success"));
-		getConsumerListResponse.setCode(context.integerValue("GetConsumerListResponse.Code"));
-		getConsumerListResponse.setMessage(context.stringValue("GetConsumerListResponse.Message"));
+		getConsumerListResponse.setRequestId(_ctx.stringValue("GetConsumerListResponse.RequestId"));
+		getConsumerListResponse.setSuccess(_ctx.booleanValue("GetConsumerListResponse.Success"));
+		getConsumerListResponse.setCode(_ctx.integerValue("GetConsumerListResponse.Code"));
+		getConsumerListResponse.setMessage(_ctx.stringValue("GetConsumerListResponse.Message"));
 
 		List<ConsumerListItem> consumerList = new ArrayList<ConsumerListItem>();
-		for (int i = 0; i < context.lengthValue("GetConsumerListResponse.ConsumerList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetConsumerListResponse.ConsumerList.Length"); i++) {
 			ConsumerListItem consumerListItem = new ConsumerListItem();
-			consumerListItem.setRegionId(context.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].RegionId"));
-			consumerListItem.setInstanceId(context.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].InstanceId"));
-			consumerListItem.setConsumerId(context.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].ConsumerId"));
+			consumerListItem.setRegionId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].RegionId"));
+			consumerListItem.setInstanceId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].InstanceId"));
+			consumerListItem.setConsumerId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].ConsumerId"));
 
 			consumerList.add(consumerListItem);
 		}

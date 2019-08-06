@@ -21,13 +21,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAllInstanceIdListResponseUnmarshaller {
 
-	public static GetAllInstanceIdListResponse unmarshall(GetAllInstanceIdListResponse getAllInstanceIdListResponse, UnmarshallerContext context) {
+	public static GetAllInstanceIdListResponse unmarshall(GetAllInstanceIdListResponse getAllInstanceIdListResponse, UnmarshallerContext _ctx) {
 		
-		getAllInstanceIdListResponse.setRequestId(context.stringValue("GetAllInstanceIdListResponse.RequestId"));
-		getAllInstanceIdListResponse.setSuccess(context.booleanValue("GetAllInstanceIdListResponse.Success"));
-		getAllInstanceIdListResponse.setCode(context.integerValue("GetAllInstanceIdListResponse.Code"));
-		getAllInstanceIdListResponse.setMessage(context.stringValue("GetAllInstanceIdListResponse.Message"));
-		getAllInstanceIdListResponse.setInstanceIds(context.mapValue("GetAllInstanceIdListResponse.InstanceIds"));
+		getAllInstanceIdListResponse.setRequestId(_ctx.stringValue("GetAllInstanceIdListResponse.RequestId"));
+		getAllInstanceIdListResponse.setSuccess(_ctx.booleanValue("GetAllInstanceIdListResponse.Success"));
+		getAllInstanceIdListResponse.setCode(_ctx.integerValue("GetAllInstanceIdListResponse.Code"));
+		getAllInstanceIdListResponse.setMessage(_ctx.stringValue("GetAllInstanceIdListResponse.Message"));
+		getAllInstanceIdListResponse.setInstanceIds(_ctx.mapValue("GetAllInstanceIdListResponse.InstanceIds"));
 	 
 	 	return getAllInstanceIdListResponse;
 	}

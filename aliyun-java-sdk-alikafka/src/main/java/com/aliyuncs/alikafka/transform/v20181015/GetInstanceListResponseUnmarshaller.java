@@ -24,26 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceListResponseUnmarshaller {
 
-	public static GetInstanceListResponse unmarshall(GetInstanceListResponse getInstanceListResponse, UnmarshallerContext context) {
+	public static GetInstanceListResponse unmarshall(GetInstanceListResponse getInstanceListResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceListResponse.setRequestId(context.stringValue("GetInstanceListResponse.RequestId"));
-		getInstanceListResponse.setSuccess(context.booleanValue("GetInstanceListResponse.Success"));
-		getInstanceListResponse.setCode(context.integerValue("GetInstanceListResponse.Code"));
-		getInstanceListResponse.setMessage(context.stringValue("GetInstanceListResponse.Message"));
+		getInstanceListResponse.setRequestId(_ctx.stringValue("GetInstanceListResponse.RequestId"));
+		getInstanceListResponse.setSuccess(_ctx.booleanValue("GetInstanceListResponse.Success"));
+		getInstanceListResponse.setCode(_ctx.integerValue("GetInstanceListResponse.Code"));
+		getInstanceListResponse.setMessage(_ctx.stringValue("GetInstanceListResponse.Message"));
 
 		List<InstanceListItem> instanceList = new ArrayList<InstanceListItem>();
-		for (int i = 0; i < context.lengthValue("GetInstanceListResponse.InstanceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetInstanceListResponse.InstanceList.Length"); i++) {
 			InstanceListItem instanceListItem = new InstanceListItem();
-			instanceListItem.setInstanceId(context.stringValue("GetInstanceListResponse.InstanceList["+ i +"].InstanceId"));
-			instanceListItem.setRegionId(context.stringValue("GetInstanceListResponse.InstanceList["+ i +"].RegionId"));
-			instanceListItem.setServiceStatus(context.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ServiceStatus"));
-			instanceListItem.setVpcId(context.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VpcId"));
-			instanceListItem.setVSwitchId(context.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VSwitchId"));
-			instanceListItem.setEndPoint(context.stringValue("GetInstanceListResponse.InstanceList["+ i +"].EndPoint"));
-			instanceListItem.setCreateTime(context.longValue("GetInstanceListResponse.InstanceList["+ i +"].CreateTime"));
-			instanceListItem.setExpiredTime(context.longValue("GetInstanceListResponse.InstanceList["+ i +"].ExpiredTime"));
-			instanceListItem.setDeployType(context.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DeployType"));
-			instanceListItem.setSslEndPoint(context.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SslEndPoint"));
+			instanceListItem.setInstanceId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].InstanceId"));
+			instanceListItem.setRegionId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].RegionId"));
+			instanceListItem.setServiceStatus(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].ServiceStatus"));
+			instanceListItem.setVpcId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VpcId"));
+			instanceListItem.setVSwitchId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].VSwitchId"));
+			instanceListItem.setEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].EndPoint"));
+			instanceListItem.setCreateTime(_ctx.longValue("GetInstanceListResponse.InstanceList["+ i +"].CreateTime"));
+			instanceListItem.setExpiredTime(_ctx.longValue("GetInstanceListResponse.InstanceList["+ i +"].ExpiredTime"));
+			instanceListItem.setDeployType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].DeployType"));
+			instanceListItem.setSslEndPoint(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SslEndPoint"));
+			instanceListItem.setName(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].Name"));
 
 			instanceList.add(instanceListItem);
 		}

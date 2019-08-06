@@ -15,6 +15,7 @@
 package com.aliyuncs.alikafka.model.v20181015;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.alikafka.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class GetAllInstanceIdListRequest extends RpcAcsRequest<GetAllInstanceIdL
 	
 	public GetAllInstanceIdListRequest() {
 		super("alikafka", "2018-10-15", "GetAllInstanceIdList", "alikafka");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	@Override

@@ -14,19 +14,19 @@
 
 package com.aliyuncs.alikafka.transform.v20181015;
 
-import com.aliyuncs.alikafka.model.v20181015.CreateTopicResponse;
+import com.aliyuncs.alikafka.model.v20181015.DeleteTopicResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateTopicResponseUnmarshaller {
+public class DeleteTopicResponseUnmarshaller {
 
-	public static CreateTopicResponse unmarshall(CreateTopicResponse createTopicResponse, UnmarshallerContext _ctx) {
+	public static DeleteTopicResponse unmarshall(DeleteTopicResponse deleteTopicResponse, UnmarshallerContext _ctx) {
 		
-		createTopicResponse.setRequestId(_ctx.stringValue("CreateTopicResponse.RequestId"));
-		createTopicResponse.setSuccess(_ctx.booleanValue("CreateTopicResponse.Success"));
-		createTopicResponse.setCode(_ctx.integerValue("CreateTopicResponse.Code"));
-		createTopicResponse.setMessage(_ctx.stringValue("CreateTopicResponse.Message"));
+		deleteTopicResponse.setRequestId(_ctx.stringValue("DeleteTopicResponse.RequestId"));
+		deleteTopicResponse.setSuccess(_ctx.booleanValue("DeleteTopicResponse.Success"));
+		deleteTopicResponse.setCode(_ctx.integerValue("DeleteTopicResponse.Code"));
+		deleteTopicResponse.setMessage(_ctx.stringValue("DeleteTopicResponse.Message"));
 	 
-	 	return createTopicResponse;
+	 	return deleteTopicResponse;
 	}
 }

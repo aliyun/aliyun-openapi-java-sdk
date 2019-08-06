@@ -22,10 +22,10 @@ import com.aliyuncs.alikafka.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListResponse> {
+public class DeleteTopicRequest extends RpcAcsRequest<DeleteTopicResponse> {
 	
-	public GetInstanceListRequest() {
-		super("alikafka", "2018-10-15", "GetInstanceList", "alikafka");
+	public DeleteTopicRequest() {
+		super("alikafka", "2018-10-15", "DeleteTopic", "alikafka");
 		setMethod(MethodType.POST);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +33,35 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 		} catch (Exception e) {}
 	}
 
+	private String instanceId;
+
+	private String topic;
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
+		}
+	}
+
 	@Override
-	public Class<GetInstanceListResponse> getResponseClass() {
-		return GetInstanceListResponse.class;
+	public Class<DeleteTopicResponse> getResponseClass() {
+		return DeleteTopicResponse.class;
 	}
 
 }

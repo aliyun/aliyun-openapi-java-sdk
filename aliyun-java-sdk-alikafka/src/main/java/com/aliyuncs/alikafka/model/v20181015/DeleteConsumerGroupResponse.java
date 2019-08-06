@@ -15,14 +15,14 @@
 package com.aliyuncs.alikafka.model.v20181015;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.alikafka.transform.v20181015.CreateTopicResponseUnmarshaller;
+import com.aliyuncs.alikafka.transform.v20181015.DeleteConsumerGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateTopicResponse extends AcsResponse {
+public class DeleteConsumerGroupResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -65,7 +65,7 @@ public class CreateTopicResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateTopicResponse getInstance(UnmarshallerContext context) {
-		return	CreateTopicResponseUnmarshaller.unmarshall(this, context);
+	public DeleteConsumerGroupResponse getInstance(UnmarshallerContext context) {
+		return	DeleteConsumerGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 }

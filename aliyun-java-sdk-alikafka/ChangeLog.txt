@@ -1,3 +1,7 @@
+2019-08-06 Version: 1.0.9
+- Add DeleteTopic method.
+- Add DeleteConsumerGroup method.
+
 2019-06-20 Version: 1.0.8
 - Support more return values when invoke GetTopicList.
 
