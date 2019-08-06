@@ -14,6 +14,7 @@
 
 package com.aliyuncs.drds.model.v20190123;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.drds.transform.v20190123.DescribeExpandLogicTableInfoListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class DescribeExpandLogicTableInfoListResponse extends AcsResponse {
 	private String requestId;
 
 	private Boolean success;
+
+	private List<DataItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +45,47 @@ public class DescribeExpandLogicTableInfoListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public List<DataItem> getData() {
+		return this.data;
+	}
+
+	public void setData(List<DataItem> data) {
+		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String tableName;
+
+		private String shardDbKey;
+
+		private String shardTbKey;
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public String getShardDbKey() {
+			return this.shardDbKey;
+		}
+
+		public void setShardDbKey(String shardDbKey) {
+			this.shardDbKey = shardDbKey;
+		}
+
+		public String getShardTbKey() {
+			return this.shardTbKey;
+		}
+
+		public void setShardTbKey(String shardTbKey) {
+			this.shardTbKey = shardTbKey;
+		}
 	}
 
 	@Override

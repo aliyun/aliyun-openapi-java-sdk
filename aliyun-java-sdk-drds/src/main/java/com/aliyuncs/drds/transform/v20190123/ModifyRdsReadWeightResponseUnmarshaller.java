@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyRdsReadWeightResponseUnmarshaller {
 
-	public static ModifyRdsReadWeightResponse unmarshall(ModifyRdsReadWeightResponse modifyRdsReadWeightResponse, UnmarshallerContext context) {
+	public static ModifyRdsReadWeightResponse unmarshall(ModifyRdsReadWeightResponse modifyRdsReadWeightResponse, UnmarshallerContext _ctx) {
 		
-		modifyRdsReadWeightResponse.setRequestId(context.stringValue("ModifyRdsReadWeightResponse.RequestId"));
-		modifyRdsReadWeightResponse.setSuccess(context.booleanValue("ModifyRdsReadWeightResponse.Success"));
+		modifyRdsReadWeightResponse.setRequestId(_ctx.stringValue("ModifyRdsReadWeightResponse.RequestId"));
+		modifyRdsReadWeightResponse.setSuccess(_ctx.booleanValue("ModifyRdsReadWeightResponse.Success"));
 	 
 	 	return modifyRdsReadWeightResponse;
 	}

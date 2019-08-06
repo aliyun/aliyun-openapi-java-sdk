@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDrdsTasksResponseUnmarshaller {
 
-	public static DescribeDrdsTasksResponse unmarshall(DescribeDrdsTasksResponse describeDrdsTasksResponse, UnmarshallerContext context) {
+	public static DescribeDrdsTasksResponse unmarshall(DescribeDrdsTasksResponse describeDrdsTasksResponse, UnmarshallerContext _ctx) {
 		
-		describeDrdsTasksResponse.setRequestId(context.stringValue("DescribeDrdsTasksResponse.RequestId"));
-		describeDrdsTasksResponse.setSuccess(context.booleanValue("DescribeDrdsTasksResponse.Success"));
+		describeDrdsTasksResponse.setRequestId(_ctx.stringValue("DescribeDrdsTasksResponse.RequestId"));
+		describeDrdsTasksResponse.setSuccess(_ctx.booleanValue("DescribeDrdsTasksResponse.Success"));
 
 		List<Task> tasks = new ArrayList<Task>();
-		for (int i = 0; i < context.lengthValue("DescribeDrdsTasksResponse.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsTasksResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setId(context.longValue("DescribeDrdsTasksResponse.Tasks["+ i +"].Id"));
-			task.setState(context.stringValue("DescribeDrdsTasksResponse.Tasks["+ i +"].State"));
-			task.setContent(context.stringValue("DescribeDrdsTasksResponse.Tasks["+ i +"].Content"));
+			task.setId(_ctx.longValue("DescribeDrdsTasksResponse.Tasks["+ i +"].Id"));
+			task.setState(_ctx.stringValue("DescribeDrdsTasksResponse.Tasks["+ i +"].State"));
+			task.setContent(_ctx.stringValue("DescribeDrdsTasksResponse.Tasks["+ i +"].Content"));
 
 			tasks.add(task);
 		}

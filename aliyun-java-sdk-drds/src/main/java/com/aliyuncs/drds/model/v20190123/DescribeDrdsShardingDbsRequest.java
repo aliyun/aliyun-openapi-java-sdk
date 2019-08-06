@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsShardingDbsRequest extends RpcAcsRequest<DescribeDrdsShardingDbsResponse> {
 	
 	public DescribeDrdsShardingDbsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsShardingDbs");
+		super("Drds", "2019-01-23", "DescribeDrdsShardingDbs", "drds");
 	}
 
 	private String dbName;

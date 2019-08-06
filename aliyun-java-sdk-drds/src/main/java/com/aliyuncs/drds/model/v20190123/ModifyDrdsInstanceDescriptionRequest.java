@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyDrdsInstanceDescriptionRequest extends RpcAcsRequest<ModifyDrdsInstanceDescriptionResponse> {
 	
 	public ModifyDrdsInstanceDescriptionRequest() {
-		super("Drds", "2019-01-23", "ModifyDrdsInstanceDescription");
+		super("Drds", "2019-01-23", "ModifyDrdsInstanceDescription", "drds");
 	}
 
 	private String description;

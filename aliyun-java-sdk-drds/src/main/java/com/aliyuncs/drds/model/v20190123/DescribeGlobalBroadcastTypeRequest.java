@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeGlobalBroadcastTypeRequest extends RpcAcsRequest<DescribeGlobalBroadcastTypeResponse> {
 	
 	public DescribeGlobalBroadcastTypeRequest() {
-		super("Drds", "2019-01-23", "DescribeGlobalBroadcastType");
+		super("Drds", "2019-01-23", "DescribeGlobalBroadcastType", "drds");
 	}
 
 	private String dbName;

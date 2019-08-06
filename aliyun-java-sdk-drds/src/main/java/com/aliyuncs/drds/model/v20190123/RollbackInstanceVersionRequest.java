@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RollbackInstanceVersionRequest extends RpcAcsRequest<RollbackInstanceVersionResponse> {
 	
 	public RollbackInstanceVersionRequest() {
-		super("Drds", "2019-01-23", "RollbackInstanceVersion");
+		super("Drds", "2019-01-23", "RollbackInstanceVersion", "drds");
 	}
 
 	private String drdsInstanceId;

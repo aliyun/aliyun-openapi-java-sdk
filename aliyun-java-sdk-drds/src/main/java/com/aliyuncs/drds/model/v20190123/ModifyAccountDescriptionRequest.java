@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccountDescriptionResponse> {
 	
 	public ModifyAccountDescriptionRequest() {
-		super("Drds", "2019-01-23", "ModifyAccountDescription");
+		super("Drds", "2019-01-23", "ModifyAccountDescription", "drds");
 	}
 
 	private String accountName;

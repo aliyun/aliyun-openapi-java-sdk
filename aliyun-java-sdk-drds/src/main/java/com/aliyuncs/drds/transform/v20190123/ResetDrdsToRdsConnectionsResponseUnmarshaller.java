@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResetDrdsToRdsConnectionsResponseUnmarshaller {
 
-	public static ResetDrdsToRdsConnectionsResponse unmarshall(ResetDrdsToRdsConnectionsResponse resetDrdsToRdsConnectionsResponse, UnmarshallerContext context) {
+	public static ResetDrdsToRdsConnectionsResponse unmarshall(ResetDrdsToRdsConnectionsResponse resetDrdsToRdsConnectionsResponse, UnmarshallerContext _ctx) {
 		
-		resetDrdsToRdsConnectionsResponse.setRequestId(context.stringValue("ResetDrdsToRdsConnectionsResponse.RequestId"));
-		resetDrdsToRdsConnectionsResponse.setSuccess(context.booleanValue("ResetDrdsToRdsConnectionsResponse.Success"));
-		resetDrdsToRdsConnectionsResponse.setResult(context.stringValue("ResetDrdsToRdsConnectionsResponse.Result"));
+		resetDrdsToRdsConnectionsResponse.setRequestId(_ctx.stringValue("ResetDrdsToRdsConnectionsResponse.RequestId"));
+		resetDrdsToRdsConnectionsResponse.setSuccess(_ctx.booleanValue("ResetDrdsToRdsConnectionsResponse.Success"));
+		resetDrdsToRdsConnectionsResponse.setResult(_ctx.stringValue("ResetDrdsToRdsConnectionsResponse.Result"));
 	 
 	 	return resetDrdsToRdsConnectionsResponse;
 	}

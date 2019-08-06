@@ -24,12 +24,53 @@ import java.util.List;
 public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInstancesResponse> {
 	
 	public DescribeDrdsInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstances");
+		super("Drds", "2019-01-23", "DescribeDrdsInstances", "drds");
 	}
+
+	private Boolean expired;
+
+	private Integer pageSize;
+
+	private String description;
 
 	private List<Tag> tags;
 
 	private String type;
+
+	private Integer pageNumber;
+
+	public Boolean getExpired() {
+		return this.expired;
+	}
+
+	public void setExpired(Boolean expired) {
+		this.expired = expired;
+		if(expired != null){
+			putQueryParameter("Expired", expired.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
 
 	public List<Tag> getTags() {
 		return this.tags;
@@ -53,6 +94,17 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

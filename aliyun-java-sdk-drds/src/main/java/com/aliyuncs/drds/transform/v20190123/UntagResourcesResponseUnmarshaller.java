@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UntagResourcesResponseUnmarshaller {
 
-	public static UntagResourcesResponse unmarshall(UntagResourcesResponse untagResourcesResponse, UnmarshallerContext context) {
+	public static UntagResourcesResponse unmarshall(UntagResourcesResponse untagResourcesResponse, UnmarshallerContext _ctx) {
 		
-		untagResourcesResponse.setRequestId(context.stringValue("UntagResourcesResponse.RequestId"));
-		untagResourcesResponse.setSuccess(context.booleanValue("UntagResourcesResponse.Success"));
+		untagResourcesResponse.setRequestId(_ctx.stringValue("UntagResourcesResponse.RequestId"));
+		untagResourcesResponse.setSuccess(_ctx.booleanValue("UntagResourcesResponse.Success"));
 	 
 	 	return untagResourcesResponse;
 	}

@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupDbsResponseUnmarshaller {
 
-	public static DescribeBackupDbsResponse unmarshall(DescribeBackupDbsResponse describeBackupDbsResponse, UnmarshallerContext context) {
+	public static DescribeBackupDbsResponse unmarshall(DescribeBackupDbsResponse describeBackupDbsResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupDbsResponse.setRequestId(context.stringValue("DescribeBackupDbsResponse.RequestId"));
-		describeBackupDbsResponse.setSuccess(context.booleanValue("DescribeBackupDbsResponse.Success"));
+		describeBackupDbsResponse.setRequestId(_ctx.stringValue("DescribeBackupDbsResponse.RequestId"));
+		describeBackupDbsResponse.setSuccess(_ctx.booleanValue("DescribeBackupDbsResponse.Success"));
 
 		List<String> dbNames = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeBackupDbsResponse.DbNames.Length"); i++) {
-			dbNames.add(context.stringValue("DescribeBackupDbsResponse.DbNames["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeBackupDbsResponse.DbNames.Length"); i++) {
+			dbNames.add(_ctx.stringValue("DescribeBackupDbsResponse.DbNames["+ i +"]"));
 		}
 		describeBackupDbsResponse.setDbNames(dbNames);
 	 

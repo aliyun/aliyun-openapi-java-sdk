@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateDrdsDBPreviewRequest extends RpcAcsRequest<CreateDrdsDBPreviewResponse> {
 	
 	public CreateDrdsDBPreviewRequest() {
-		super("Drds", "2019-01-23", "CreateDrdsDBPreview");
+		super("Drds", "2019-01-23", "CreateDrdsDBPreview", "drds");
 	}
 
 	private List<InstDbName> instDbNames;
@@ -33,6 +33,8 @@ public class CreateDrdsDBPreviewRequest extends RpcAcsRequest<CreateDrdsDBPrevie
 
 	private String accountName;
 
+	private String orderId;
+
 	private List<String> rdsInstances;
 
 	private String type;
@@ -40,6 +42,8 @@ public class CreateDrdsDBPreviewRequest extends RpcAcsRequest<CreateDrdsDBPrevie
 	private String dbInstType;
 
 	private String drdsInstanceId;
+
+	private Boolean dbInstanceIsCreating;
 
 	public List<InstDbName> getInstDbNames() {
 		return this.instDbNames;
@@ -78,6 +82,17 @@ public class CreateDrdsDBPreviewRequest extends RpcAcsRequest<CreateDrdsDBPrevie
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
+		}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 
@@ -124,6 +139,17 @@ public class CreateDrdsDBPreviewRequest extends RpcAcsRequest<CreateDrdsDBPrevie
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public Boolean getDbInstanceIsCreating() {
+		return this.dbInstanceIsCreating;
+	}
+
+	public void setDbInstanceIsCreating(Boolean dbInstanceIsCreating) {
+		this.dbInstanceIsCreating = dbInstanceIsCreating;
+		if(dbInstanceIsCreating != null){
+			putQueryParameter("DbInstanceIsCreating", dbInstanceIsCreating.toString());
 		}
 	}
 

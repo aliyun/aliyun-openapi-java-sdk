@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateShardTaskRequest extends RpcAcsRequest<CreateShardTaskResponse> {
 	
 	public CreateShardTaskRequest() {
-		super("Drds", "2019-01-23", "CreateShardTask");
+		super("Drds", "2019-01-23", "CreateShardTask", "drds");
 	}
 
 	private String taskType;

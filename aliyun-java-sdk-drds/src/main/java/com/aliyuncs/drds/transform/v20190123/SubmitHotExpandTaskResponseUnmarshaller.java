@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitHotExpandTaskResponseUnmarshaller {
 
-	public static SubmitHotExpandTaskResponse unmarshall(SubmitHotExpandTaskResponse submitHotExpandTaskResponse, UnmarshallerContext context) {
+	public static SubmitHotExpandTaskResponse unmarshall(SubmitHotExpandTaskResponse submitHotExpandTaskResponse, UnmarshallerContext _ctx) {
 		
-		submitHotExpandTaskResponse.setRequestId(context.stringValue("SubmitHotExpandTaskResponse.RequestId"));
-		submitHotExpandTaskResponse.setSuccess(context.booleanValue("SubmitHotExpandTaskResponse.Success"));
+		submitHotExpandTaskResponse.setRequestId(_ctx.stringValue("SubmitHotExpandTaskResponse.RequestId"));
+		submitHotExpandTaskResponse.setSuccess(_ctx.booleanValue("SubmitHotExpandTaskResponse.Success"));
 	 
 	 	return submitHotExpandTaskResponse;
 	}

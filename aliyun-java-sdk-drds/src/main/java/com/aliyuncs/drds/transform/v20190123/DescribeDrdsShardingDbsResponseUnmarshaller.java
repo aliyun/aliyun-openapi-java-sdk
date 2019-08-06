@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDrdsShardingDbsResponseUnmarshaller {
 
-	public static DescribeDrdsShardingDbsResponse unmarshall(DescribeDrdsShardingDbsResponse describeDrdsShardingDbsResponse, UnmarshallerContext context) {
+	public static DescribeDrdsShardingDbsResponse unmarshall(DescribeDrdsShardingDbsResponse describeDrdsShardingDbsResponse, UnmarshallerContext _ctx) {
 		
-		describeDrdsShardingDbsResponse.setRequestId(context.stringValue("DescribeDrdsShardingDbsResponse.RequestId"));
-		describeDrdsShardingDbsResponse.setSuccess(context.booleanValue("DescribeDrdsShardingDbsResponse.Success"));
+		describeDrdsShardingDbsResponse.setRequestId(_ctx.stringValue("DescribeDrdsShardingDbsResponse.RequestId"));
+		describeDrdsShardingDbsResponse.setSuccess(_ctx.booleanValue("DescribeDrdsShardingDbsResponse.Success"));
 
 		List<ShardingDb> shardingDbs = new ArrayList<ShardingDb>();
-		for (int i = 0; i < context.lengthValue("DescribeDrdsShardingDbsResponse.ShardingDbs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsShardingDbsResponse.ShardingDbs.Length"); i++) {
 			ShardingDb shardingDb = new ShardingDb();
-			shardingDb.setShardingDbName(context.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].ShardingDbName"));
-			shardingDb.setDbInstanceId(context.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].DbInstanceId"));
-			shardingDb.setGroupName(context.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].GroupName"));
-			shardingDb.setDbStatus(context.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].DbStatus"));
-			shardingDb.setDbType(context.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].DbType"));
-			shardingDb.setMinPoolSize(context.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].MinPoolSize"));
-			shardingDb.setMaxPoolSize(context.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].MaxPoolSize"));
-			shardingDb.setIdleTimeOut(context.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].IdleTimeOut"));
-			shardingDb.setBlockingTimeout(context.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].BlockingTimeout"));
-			shardingDb.setConnectionProperties(context.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].ConnectionProperties"));
-			shardingDb.setPreparedStatementCacheSize(context.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].PreparedStatementCacheSize"));
-			shardingDb.setUserName(context.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].UserName"));
-			shardingDb.setConnectUrl(context.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].ConnectUrl"));
+			shardingDb.setShardingDbName(_ctx.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].ShardingDbName"));
+			shardingDb.setDbInstanceId(_ctx.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].DbInstanceId"));
+			shardingDb.setGroupName(_ctx.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].GroupName"));
+			shardingDb.setDbStatus(_ctx.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].DbStatus"));
+			shardingDb.setDbType(_ctx.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].DbType"));
+			shardingDb.setMinPoolSize(_ctx.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].MinPoolSize"));
+			shardingDb.setMaxPoolSize(_ctx.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].MaxPoolSize"));
+			shardingDb.setIdleTimeOut(_ctx.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].IdleTimeOut"));
+			shardingDb.setBlockingTimeout(_ctx.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].BlockingTimeout"));
+			shardingDb.setConnectionProperties(_ctx.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].ConnectionProperties"));
+			shardingDb.setPreparedStatementCacheSize(_ctx.integerValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].PreparedStatementCacheSize"));
+			shardingDb.setUserName(_ctx.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].UserName"));
+			shardingDb.setConnectUrl(_ctx.stringValue("DescribeDrdsShardingDbsResponse.ShardingDbs["+ i +"].ConnectUrl"));
 
 			shardingDbs.add(shardingDb);
 		}

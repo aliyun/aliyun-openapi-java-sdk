@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDrdsDbTasksResponseUnmarshaller {
 
-	public static DescribeDrdsDbTasksResponse unmarshall(DescribeDrdsDbTasksResponse describeDrdsDbTasksResponse, UnmarshallerContext context) {
+	public static DescribeDrdsDbTasksResponse unmarshall(DescribeDrdsDbTasksResponse describeDrdsDbTasksResponse, UnmarshallerContext _ctx) {
 		
-		describeDrdsDbTasksResponse.setRequestId(context.stringValue("DescribeDrdsDbTasksResponse.RequestId"));
-		describeDrdsDbTasksResponse.setSuccess(context.booleanValue("DescribeDrdsDbTasksResponse.Success"));
+		describeDrdsDbTasksResponse.setRequestId(_ctx.stringValue("DescribeDrdsDbTasksResponse.RequestId"));
+		describeDrdsDbTasksResponse.setSuccess(_ctx.booleanValue("DescribeDrdsDbTasksResponse.Success"));
 
 		List<Task> tasks = new ArrayList<Task>();
-		for (int i = 0; i < context.lengthValue("DescribeDrdsDbTasksResponse.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsDbTasksResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setTaskName(context.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskName"));
-			task.setGmtCreate(context.longValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].GmtCreate"));
-			task.setTaskDetail(context.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskDetail"));
-			task.setTaskType(context.integerValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskType"));
-			task.setTaskStatus(context.integerValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskStatus"));
-			task.setProgress(context.integerValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].Progress"));
-			task.setTaskPhase(context.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskPhase"));
-			task.setShowProgress(context.booleanValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].ShowProgress"));
-			task.setAllowCancel(context.booleanValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].AllowCancel"));
-			task.setParentJobId(context.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].ParentJobId"));
-			task.setExpandType(context.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].ExpandType"));
-			task.setTargetId(context.longValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TargetId"));
-			task.setLabel(context.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].Label"));
+			task.setTaskName(_ctx.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskName"));
+			task.setGmtCreate(_ctx.longValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].GmtCreate"));
+			task.setTaskDetail(_ctx.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskDetail"));
+			task.setTaskType(_ctx.integerValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskType"));
+			task.setTaskStatus(_ctx.integerValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskStatus"));
+			task.setProgress(_ctx.integerValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].Progress"));
+			task.setTaskPhase(_ctx.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TaskPhase"));
+			task.setShowProgress(_ctx.booleanValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].ShowProgress"));
+			task.setAllowCancel(_ctx.booleanValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].AllowCancel"));
+			task.setParentJobId(_ctx.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].ParentJobId"));
+			task.setExpandType(_ctx.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].ExpandType"));
+			task.setTargetId(_ctx.longValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].TargetId"));
+			task.setLabel(_ctx.stringValue("DescribeDrdsDbTasksResponse.Tasks["+ i +"].Label"));
 
 			tasks.add(task);
 		}

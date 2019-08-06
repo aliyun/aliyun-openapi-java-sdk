@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RollbackInstanceVersionResponseUnmarshaller {
 
-	public static RollbackInstanceVersionResponse unmarshall(RollbackInstanceVersionResponse rollbackInstanceVersionResponse, UnmarshallerContext context) {
+	public static RollbackInstanceVersionResponse unmarshall(RollbackInstanceVersionResponse rollbackInstanceVersionResponse, UnmarshallerContext _ctx) {
 		
-		rollbackInstanceVersionResponse.setRequestId(context.stringValue("RollbackInstanceVersionResponse.RequestId"));
-		rollbackInstanceVersionResponse.setData(context.stringValue("RollbackInstanceVersionResponse.Data"));
+		rollbackInstanceVersionResponse.setRequestId(_ctx.stringValue("RollbackInstanceVersionResponse.RequestId"));
+		rollbackInstanceVersionResponse.setData(_ctx.stringValue("RollbackInstanceVersionResponse.Data"));
 	 
 	 	return rollbackInstanceVersionResponse;
 	}

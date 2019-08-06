@@ -14,16 +14,30 @@
 
 package com.aliyuncs.drds.transform.v20190123;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.drds.model.v20190123.DescribeSrcRdsListResponse;
+import com.aliyuncs.drds.model.v20190123.DescribeSrcRdsListResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeSrcRdsListResponseUnmarshaller {
 
-	public static DescribeSrcRdsListResponse unmarshall(DescribeSrcRdsListResponse describeSrcRdsListResponse, UnmarshallerContext context) {
+	public static DescribeSrcRdsListResponse unmarshall(DescribeSrcRdsListResponse describeSrcRdsListResponse, UnmarshallerContext _ctx) {
 		
-		describeSrcRdsListResponse.setRequestId(context.stringValue("DescribeSrcRdsListResponse.RequestId"));
-		describeSrcRdsListResponse.setSuccess(context.booleanValue("DescribeSrcRdsListResponse.Success"));
+		describeSrcRdsListResponse.setRequestId(_ctx.stringValue("DescribeSrcRdsListResponse.RequestId"));
+		describeSrcRdsListResponse.setSuccess(_ctx.booleanValue("DescribeSrcRdsListResponse.Success"));
+
+		List<DataItem> data = new ArrayList<DataItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSrcRdsListResponse.Data.Length"); i++) {
+			DataItem dataItem = new DataItem();
+			dataItem.setRds(_ctx.stringValue("DescribeSrcRdsListResponse.Data["+ i +"].Rds"));
+			dataItem.setDbName(_ctx.stringValue("DescribeSrcRdsListResponse.Data["+ i +"].DbName"));
+
+			data.add(dataItem);
+		}
+		describeSrcRdsListResponse.setData(data);
 	 
 	 	return describeSrcRdsListResponse;
 	}

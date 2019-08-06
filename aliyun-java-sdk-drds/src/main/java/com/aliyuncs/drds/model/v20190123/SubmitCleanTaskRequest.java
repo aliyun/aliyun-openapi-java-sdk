@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitCleanTaskRequest extends RpcAcsRequest<SubmitCleanTaskResponse> {
 	
 	public SubmitCleanTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitCleanTask");
+		super("Drds", "2019-01-23", "SubmitCleanTask", "drds");
 	}
 
 	private String jobId;

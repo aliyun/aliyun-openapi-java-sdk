@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PreCheckSqlFlashbackTaskResponseUnmarshaller {
 
-	public static PreCheckSqlFlashbackTaskResponse unmarshall(PreCheckSqlFlashbackTaskResponse preCheckSqlFlashbackTaskResponse, UnmarshallerContext context) {
+	public static PreCheckSqlFlashbackTaskResponse unmarshall(PreCheckSqlFlashbackTaskResponse preCheckSqlFlashbackTaskResponse, UnmarshallerContext _ctx) {
 		
-		preCheckSqlFlashbackTaskResponse.setRequestId(context.stringValue("PreCheckSqlFlashbackTaskResponse.RequestId"));
-		preCheckSqlFlashbackTaskResponse.setSuccess(context.booleanValue("PreCheckSqlFlashbackTaskResponse.Success"));
+		preCheckSqlFlashbackTaskResponse.setRequestId(_ctx.stringValue("PreCheckSqlFlashbackTaskResponse.RequestId"));
+		preCheckSqlFlashbackTaskResponse.setSuccess(_ctx.booleanValue("PreCheckSqlFlashbackTaskResponse.Success"));
 
 		CheckResult checkResult = new CheckResult();
-		checkResult.setBinlogExists(context.booleanValue("PreCheckSqlFlashbackTaskResponse.CheckResult.BinlogExists"));
-		checkResult.setSupportBinlogRowQueryEvents(context.booleanValue("PreCheckSqlFlashbackTaskResponse.CheckResult.SupportBinlogRowQueryEvents"));
-		checkResult.setBinlogRowQueryEventEnabled(context.booleanValue("PreCheckSqlFlashbackTaskResponse.CheckResult.BinlogRowQueryEventEnabled"));
-		checkResult.setCanUpgradeSupportBinlogRowQueryEvents(context.booleanValue("PreCheckSqlFlashbackTaskResponse.CheckResult.CanUpgradeSupportBinlogRowQueryEvents"));
+		checkResult.setBinlogExists(_ctx.booleanValue("PreCheckSqlFlashbackTaskResponse.CheckResult.BinlogExists"));
+		checkResult.setSupportBinlogRowQueryEvents(_ctx.booleanValue("PreCheckSqlFlashbackTaskResponse.CheckResult.SupportBinlogRowQueryEvents"));
+		checkResult.setBinlogRowQueryEventEnabled(_ctx.booleanValue("PreCheckSqlFlashbackTaskResponse.CheckResult.BinlogRowQueryEventEnabled"));
+		checkResult.setCanUpgradeSupportBinlogRowQueryEvents(_ctx.booleanValue("PreCheckSqlFlashbackTaskResponse.CheckResult.CanUpgradeSupportBinlogRowQueryEvents"));
 		preCheckSqlFlashbackTaskResponse.setCheckResult(checkResult);
 	 
 	 	return preCheckSqlFlashbackTaskResponse;

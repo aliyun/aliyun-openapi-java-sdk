@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckSqlAuditEnableStatusRequest extends RpcAcsRequest<CheckSqlAuditEnableStatusResponse> {
 	
 	public CheckSqlAuditEnableStatusRequest() {
-		super("Drds", "2019-01-23", "CheckSqlAuditEnableStatus");
+		super("Drds", "2019-01-23", "CheckSqlAuditEnableStatus", "drds");
 	}
 
 	private String dbName;

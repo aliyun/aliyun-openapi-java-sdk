@@ -25,46 +25,48 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDrdsInstanceResponseUnmarshaller {
 
-	public static DescribeDrdsInstanceResponse unmarshall(DescribeDrdsInstanceResponse describeDrdsInstanceResponse, UnmarshallerContext context) {
+	public static DescribeDrdsInstanceResponse unmarshall(DescribeDrdsInstanceResponse describeDrdsInstanceResponse, UnmarshallerContext _ctx) {
 		
-		describeDrdsInstanceResponse.setRequestId(context.stringValue("DescribeDrdsInstanceResponse.RequestId"));
-		describeDrdsInstanceResponse.setSuccess(context.booleanValue("DescribeDrdsInstanceResponse.Success"));
+		describeDrdsInstanceResponse.setRequestId(_ctx.stringValue("DescribeDrdsInstanceResponse.RequestId"));
+		describeDrdsInstanceResponse.setSuccess(_ctx.booleanValue("DescribeDrdsInstanceResponse.Success"));
 
 		Data data = new Data();
-		data.setDrdsInstanceId(context.stringValue("DescribeDrdsInstanceResponse.Data.DrdsInstanceId"));
-		data.setType(context.stringValue("DescribeDrdsInstanceResponse.Data.Type"));
-		data.setRegionId(context.stringValue("DescribeDrdsInstanceResponse.Data.RegionId"));
-		data.setZoneId(context.stringValue("DescribeDrdsInstanceResponse.Data.ZoneId"));
-		data.setDescription(context.stringValue("DescribeDrdsInstanceResponse.Data.Description"));
-		data.setNetworkType(context.stringValue("DescribeDrdsInstanceResponse.Data.NetworkType"));
-		data.setStatus(context.stringValue("DescribeDrdsInstanceResponse.Data.Status"));
-		data.setCreateTime(context.longValue("DescribeDrdsInstanceResponse.Data.CreateTime"));
-		data.setVersion(context.longValue("DescribeDrdsInstanceResponse.Data.Version"));
-		data.setInstanceSeries(context.stringValue("DescribeDrdsInstanceResponse.Data.InstanceSeries"));
-		data.setInstanceSpec(context.stringValue("DescribeDrdsInstanceResponse.Data.InstanceSpec"));
-		data.setVpcCloudInstanceId(context.stringValue("DescribeDrdsInstanceResponse.Data.VpcCloudInstanceId"));
-		data.setInstRole(context.stringValue("DescribeDrdsInstanceResponse.Data.InstRole"));
-		data.setCommodityCode(context.stringValue("DescribeDrdsInstanceResponse.Data.CommodityCode"));
-		data.setExpireDate(context.longValue("DescribeDrdsInstanceResponse.Data.ExpireDate"));
-		data.setVersionAction(context.stringValue("DescribeDrdsInstanceResponse.Data.VersionAction"));
-		data.setLabel(context.stringValue("DescribeDrdsInstanceResponse.Data.Label"));
-		data.setMasterInstanceId(context.stringValue("DescribeDrdsInstanceResponse.Data.MasterInstanceId"));
+		data.setDrdsInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.DrdsInstanceId"));
+		data.setType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Type"));
+		data.setRegionId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.RegionId"));
+		data.setZoneId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.ZoneId"));
+		data.setDescription(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Description"));
+		data.setNetworkType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.NetworkType"));
+		data.setStatus(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Status"));
+		data.setCreateTime(_ctx.longValue("DescribeDrdsInstanceResponse.Data.CreateTime"));
+		data.setVersion(_ctx.longValue("DescribeDrdsInstanceResponse.Data.Version"));
+		data.setInstanceSeries(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.InstanceSeries"));
+		data.setInstanceSpec(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.InstanceSpec"));
+		data.setVpcCloudInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.VpcCloudInstanceId"));
+		data.setInstRole(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.InstRole"));
+		data.setCommodityCode(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.CommodityCode"));
+		data.setExpireDate(_ctx.longValue("DescribeDrdsInstanceResponse.Data.ExpireDate"));
+		data.setVersionAction(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.VersionAction"));
+		data.setLabel(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Label"));
+		data.setMasterInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.MasterInstanceId"));
+		data.setMachineType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.MachineType"));
+		data.setOrderInstanceId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.OrderInstanceId"));
 
 		List<String> readOnlyDBInstanceIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeDrdsInstanceResponse.Data.ReadOnlyDBInstanceIds.Length"); i++) {
-			readOnlyDBInstanceIds.add(context.stringValue("DescribeDrdsInstanceResponse.Data.ReadOnlyDBInstanceIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsInstanceResponse.Data.ReadOnlyDBInstanceIds.Length"); i++) {
+			readOnlyDBInstanceIds.add(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.ReadOnlyDBInstanceIds["+ i +"]"));
 		}
 		data.setReadOnlyDBInstanceIds(readOnlyDBInstanceIds);
 
 		List<Vip> vips = new ArrayList<Vip>();
-		for (int i = 0; i < context.lengthValue("DescribeDrdsInstanceResponse.Data.Vips.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsInstanceResponse.Data.Vips.Length"); i++) {
 			Vip vip = new Vip();
-			vip.setDns(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Dns"));
-			vip.setExpireDays(context.longValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].ExpireDays"));
-			vip.setPort(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Port"));
-			vip.setType(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Type"));
-			vip.setVpcId(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].VpcId"));
-			vip.setVswitchId(context.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].VswitchId"));
+			vip.setDns(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Dns"));
+			vip.setExpireDays(_ctx.longValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].ExpireDays"));
+			vip.setPort(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Port"));
+			vip.setType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].Type"));
+			vip.setVpcId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].VpcId"));
+			vip.setVswitchId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.Vips["+ i +"].VswitchId"));
 
 			vips.add(vip);
 		}

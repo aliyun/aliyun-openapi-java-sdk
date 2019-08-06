@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ChangeInstanceNetworkRequest extends RpcAcsRequest<ChangeInstanceNetworkResponse> {
 	
 	public ChangeInstanceNetworkRequest() {
-		super("Drds", "2019-01-23", "ChangeInstanceNetwork");
+		super("Drds", "2019-01-23", "ChangeInstanceNetwork", "drds");
 	}
 
 	private String vswitchId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeSqlFlashbakTaskRequest extends RpcAcsRequest<DescribeSqlFlashbakTaskResponse> {
 	
 	public DescribeSqlFlashbakTaskRequest() {
-		super("Drds", "2019-01-23", "DescribeSqlFlashbakTask");
+		super("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "drds");
 	}
 
 	private String drdsInstanceId;

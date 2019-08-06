@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class UpgradeInstanceVersionRequest extends RpcAcsRequest<UpgradeInstanceVersionResponse> {
 	
 	public UpgradeInstanceVersionRequest() {
-		super("Drds", "2019-01-23", "UpgradeInstanceVersion");
+		super("Drds", "2019-01-23", "UpgradeInstanceVersion", "drds");
 	}
 
 	private String drdsInstanceId;

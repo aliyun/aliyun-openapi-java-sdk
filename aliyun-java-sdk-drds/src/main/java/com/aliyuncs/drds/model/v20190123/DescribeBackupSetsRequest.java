@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBackupSetsRequest extends RpcAcsRequest<DescribeBackupSetsResponse> {
 	
 	public DescribeBackupSetsRequest() {
-		super("Drds", "2019-01-23", "DescribeBackupSets");
+		super("Drds", "2019-01-23", "DescribeBackupSets", "drds");
 	}
 
 	private String endTime;

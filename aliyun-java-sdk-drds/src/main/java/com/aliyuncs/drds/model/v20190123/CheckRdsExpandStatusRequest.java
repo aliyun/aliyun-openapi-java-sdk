@@ -24,7 +24,7 @@ import java.util.List;
 public class CheckRdsExpandStatusRequest extends RpcAcsRequest<CheckRdsExpandStatusResponse> {
 	
 	public CheckRdsExpandStatusRequest() {
-		super("Drds", "2019-01-23", "CheckRdsExpandStatus");
+		super("Drds", "2019-01-23", "CheckRdsExpandStatus", "drds");
 	}
 
 	private List<String> instanceLists;

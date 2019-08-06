@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EnableSqlAuditRequest extends RpcAcsRequest<EnableSqlAuditResponse> {
 	
 	public EnableSqlAuditRequest() {
-		super("Drds", "2019-01-23", "EnableSqlAudit");
+		super("Drds", "2019-01-23", "EnableSqlAudit", "drds");
 	}
 
 	private String recallStartTimestamp;

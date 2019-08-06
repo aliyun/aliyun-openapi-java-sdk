@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBackMenuRequest extends RpcAcsRequest<DescribeBackMenuResponse> {
 	
 	public DescribeBackMenuRequest() {
-		super("Drds", "2019-01-23", "DescribeBackMenu");
+		super("Drds", "2019-01-23", "DescribeBackMenu", "drds");
 	}
 
 	private String drdsInstanceId;

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDrdsIpWhiteListResponseUnmarshaller {
 
-	public static ModifyDrdsIpWhiteListResponse unmarshall(ModifyDrdsIpWhiteListResponse modifyDrdsIpWhiteListResponse, UnmarshallerContext context) {
+	public static ModifyDrdsIpWhiteListResponse unmarshall(ModifyDrdsIpWhiteListResponse modifyDrdsIpWhiteListResponse, UnmarshallerContext _ctx) {
 		
-		modifyDrdsIpWhiteListResponse.setRequestId(context.stringValue("ModifyDrdsIpWhiteListResponse.RequestId"));
-		modifyDrdsIpWhiteListResponse.setSuccess(context.booleanValue("ModifyDrdsIpWhiteListResponse.Success"));
+		modifyDrdsIpWhiteListResponse.setRequestId(_ctx.stringValue("ModifyDrdsIpWhiteListResponse.RequestId"));
+		modifyDrdsIpWhiteListResponse.setSuccess(_ctx.booleanValue("ModifyDrdsIpWhiteListResponse.Success"));
 	 
 	 	return modifyDrdsIpWhiteListResponse;
 	}

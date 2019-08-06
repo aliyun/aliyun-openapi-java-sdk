@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnableSqlAuditResponseUnmarshaller {
 
-	public static EnableSqlAuditResponse unmarshall(EnableSqlAuditResponse enableSqlAuditResponse, UnmarshallerContext context) {
+	public static EnableSqlAuditResponse unmarshall(EnableSqlAuditResponse enableSqlAuditResponse, UnmarshallerContext _ctx) {
 		
-		enableSqlAuditResponse.setRequestId(context.stringValue("EnableSqlAuditResponse.RequestId"));
-		enableSqlAuditResponse.setSuccess(context.booleanValue("EnableSqlAuditResponse.Success"));
-		enableSqlAuditResponse.setResult(context.booleanValue("EnableSqlAuditResponse.Result"));
+		enableSqlAuditResponse.setRequestId(_ctx.stringValue("EnableSqlAuditResponse.RequestId"));
+		enableSqlAuditResponse.setSuccess(_ctx.booleanValue("EnableSqlAuditResponse.Success"));
+		enableSqlAuditResponse.setResult(_ctx.booleanValue("EnableSqlAuditResponse.Result"));
 	 
 	 	return enableSqlAuditResponse;
 	}

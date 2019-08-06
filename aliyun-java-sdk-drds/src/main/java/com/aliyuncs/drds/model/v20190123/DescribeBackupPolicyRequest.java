@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPolicyResponse> {
 	
 	public DescribeBackupPolicyRequest() {
-		super("Drds", "2019-01-23", "DescribeBackupPolicy");
+		super("Drds", "2019-01-23", "DescribeBackupPolicy", "drds");
 	}
 
 	private String drdsInstanceId;

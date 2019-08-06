@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetupRecycleBinStatusRequest extends RpcAcsRequest<SetupRecycleBinStatusResponse> {
 	
 	public SetupRecycleBinStatusRequest() {
-		super("Drds", "2019-01-23", "SetupRecycleBinStatus");
+		super("Drds", "2019-01-23", "SetupRecycleBinStatus", "drds");
 	}
 
 	private String statusAction;

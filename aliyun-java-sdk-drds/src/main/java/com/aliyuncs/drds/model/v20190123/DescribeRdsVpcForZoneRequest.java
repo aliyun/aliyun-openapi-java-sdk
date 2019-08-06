@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRdsVpcForZoneRequest extends RpcAcsRequest<DescribeRdsVpcForZoneResponse> {
 	
 	public DescribeRdsVpcForZoneRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsVpcForZone");
+		super("Drds", "2019-01-23", "DescribeRdsVpcForZone", "drds");
 	}
 
 	private String zoneId;

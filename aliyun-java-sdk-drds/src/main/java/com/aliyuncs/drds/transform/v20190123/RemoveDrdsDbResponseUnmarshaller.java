@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveDrdsDbResponseUnmarshaller {
 
-	public static RemoveDrdsDbResponse unmarshall(RemoveDrdsDbResponse removeDrdsDbResponse, UnmarshallerContext context) {
+	public static RemoveDrdsDbResponse unmarshall(RemoveDrdsDbResponse removeDrdsDbResponse, UnmarshallerContext _ctx) {
 		
-		removeDrdsDbResponse.setRequestId(context.stringValue("RemoveDrdsDbResponse.RequestId"));
-		removeDrdsDbResponse.setSuccess(context.booleanValue("RemoveDrdsDbResponse.Success"));
+		removeDrdsDbResponse.setRequestId(_ctx.stringValue("RemoveDrdsDbResponse.RequestId"));
+		removeDrdsDbResponse.setSuccess(_ctx.booleanValue("RemoveDrdsDbResponse.Success"));
 	 
 	 	return removeDrdsDbResponse;
 	}

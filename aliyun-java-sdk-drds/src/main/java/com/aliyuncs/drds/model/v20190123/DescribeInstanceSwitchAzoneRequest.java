@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceSwitchAzoneRequest extends RpcAcsRequest<DescribeInstanceSwitchAzoneResponse> {
 	
 	public DescribeInstanceSwitchAzoneRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceSwitchAzone");
+		super("Drds", "2019-01-23", "DescribeInstanceSwitchAzone", "drds");
 	}
 
 	private String drdsInstanceId;

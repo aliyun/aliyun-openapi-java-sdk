@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateShardTaskResponseUnmarshaller {
 
-	public static CreateShardTaskResponse unmarshall(CreateShardTaskResponse createShardTaskResponse, UnmarshallerContext context) {
+	public static CreateShardTaskResponse unmarshall(CreateShardTaskResponse createShardTaskResponse, UnmarshallerContext _ctx) {
 		
-		createShardTaskResponse.setRequestId(context.stringValue("CreateShardTaskResponse.RequestId"));
-		createShardTaskResponse.setSuccess(context.booleanValue("CreateShardTaskResponse.Success"));
-		createShardTaskResponse.setData(context.booleanValue("CreateShardTaskResponse.Data"));
+		createShardTaskResponse.setRequestId(_ctx.stringValue("CreateShardTaskResponse.RequestId"));
+		createShardTaskResponse.setSuccess(_ctx.booleanValue("CreateShardTaskResponse.Success"));
+		createShardTaskResponse.setData(_ctx.booleanValue("CreateShardTaskResponse.Data"));
 	 
 	 	return createShardTaskResponse;
 	}

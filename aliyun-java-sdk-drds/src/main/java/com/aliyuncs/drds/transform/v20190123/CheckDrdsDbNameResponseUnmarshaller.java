@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckDrdsDbNameResponseUnmarshaller {
 
-	public static CheckDrdsDbNameResponse unmarshall(CheckDrdsDbNameResponse checkDrdsDbNameResponse, UnmarshallerContext context) {
+	public static CheckDrdsDbNameResponse unmarshall(CheckDrdsDbNameResponse checkDrdsDbNameResponse, UnmarshallerContext _ctx) {
 		
-		checkDrdsDbNameResponse.setRequestId(context.stringValue("CheckDrdsDbNameResponse.RequestId"));
-		checkDrdsDbNameResponse.setSuccess(context.booleanValue("CheckDrdsDbNameResponse.Success"));
-		checkDrdsDbNameResponse.setResult(context.booleanValue("CheckDrdsDbNameResponse.Result"));
+		checkDrdsDbNameResponse.setRequestId(_ctx.stringValue("CheckDrdsDbNameResponse.RequestId"));
+		checkDrdsDbNameResponse.setSuccess(_ctx.booleanValue("CheckDrdsDbNameResponse.Success"));
+		checkDrdsDbNameResponse.setResult(_ctx.booleanValue("CheckDrdsDbNameResponse.Result"));
 	 
 	 	return checkDrdsDbNameResponse;
 	}

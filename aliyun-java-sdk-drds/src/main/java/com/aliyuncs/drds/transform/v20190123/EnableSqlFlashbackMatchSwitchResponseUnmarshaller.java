@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnableSqlFlashbackMatchSwitchResponseUnmarshaller {
 
-	public static EnableSqlFlashbackMatchSwitchResponse unmarshall(EnableSqlFlashbackMatchSwitchResponse enableSqlFlashbackMatchSwitchResponse, UnmarshallerContext context) {
+	public static EnableSqlFlashbackMatchSwitchResponse unmarshall(EnableSqlFlashbackMatchSwitchResponse enableSqlFlashbackMatchSwitchResponse, UnmarshallerContext _ctx) {
 		
-		enableSqlFlashbackMatchSwitchResponse.setRequestId(context.stringValue("EnableSqlFlashbackMatchSwitchResponse.RequestId"));
-		enableSqlFlashbackMatchSwitchResponse.setSuccess(context.booleanValue("EnableSqlFlashbackMatchSwitchResponse.Success"));
-		enableSqlFlashbackMatchSwitchResponse.setResult(context.booleanValue("EnableSqlFlashbackMatchSwitchResponse.Result"));
+		enableSqlFlashbackMatchSwitchResponse.setRequestId(_ctx.stringValue("EnableSqlFlashbackMatchSwitchResponse.RequestId"));
+		enableSqlFlashbackMatchSwitchResponse.setSuccess(_ctx.booleanValue("EnableSqlFlashbackMatchSwitchResponse.Success"));
+		enableSqlFlashbackMatchSwitchResponse.setResult(_ctx.booleanValue("EnableSqlFlashbackMatchSwitchResponse.Result"));
 	 
 	 	return enableSqlFlashbackMatchSwitchResponse;
 	}

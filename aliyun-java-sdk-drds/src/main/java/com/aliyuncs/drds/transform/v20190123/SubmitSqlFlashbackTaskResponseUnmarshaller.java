@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitSqlFlashbackTaskResponseUnmarshaller {
 
-	public static SubmitSqlFlashbackTaskResponse unmarshall(SubmitSqlFlashbackTaskResponse submitSqlFlashbackTaskResponse, UnmarshallerContext context) {
+	public static SubmitSqlFlashbackTaskResponse unmarshall(SubmitSqlFlashbackTaskResponse submitSqlFlashbackTaskResponse, UnmarshallerContext _ctx) {
 		
-		submitSqlFlashbackTaskResponse.setRequestId(context.stringValue("SubmitSqlFlashbackTaskResponse.RequestId"));
-		submitSqlFlashbackTaskResponse.setSuccess(context.booleanValue("SubmitSqlFlashbackTaskResponse.Success"));
-		submitSqlFlashbackTaskResponse.setTaskId(context.longValue("SubmitSqlFlashbackTaskResponse.TaskId"));
+		submitSqlFlashbackTaskResponse.setRequestId(_ctx.stringValue("SubmitSqlFlashbackTaskResponse.RequestId"));
+		submitSqlFlashbackTaskResponse.setSuccess(_ctx.booleanValue("SubmitSqlFlashbackTaskResponse.Success"));
+		submitSqlFlashbackTaskResponse.setTaskId(_ctx.longValue("SubmitSqlFlashbackTaskResponse.TaskId"));
 	 
 	 	return submitSqlFlashbackTaskResponse;
 	}

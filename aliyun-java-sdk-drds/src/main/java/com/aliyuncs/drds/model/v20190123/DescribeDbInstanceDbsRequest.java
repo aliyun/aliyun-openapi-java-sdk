@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDbInstanceDbsRequest extends RpcAcsRequest<DescribeDbInstanceDbsResponse> {
 	
 	public DescribeDbInstanceDbsRequest() {
-		super("Drds", "2019-01-23", "DescribeDbInstanceDbs");
+		super("Drds", "2019-01-23", "DescribeDbInstanceDbs", "drds");
 	}
 
 	private String password;
@@ -31,6 +31,8 @@ public class DescribeDbInstanceDbsRequest extends RpcAcsRequest<DescribeDbInstan
 	private String accountName;
 
 	private String dbInstanceId;
+
+	private String dbInstType;
 
 	private String drdsInstanceId;
 
@@ -64,6 +66,17 @@ public class DescribeDbInstanceDbsRequest extends RpcAcsRequest<DescribeDbInstan
 		this.dbInstanceId = dbInstanceId;
 		if(dbInstanceId != null){
 			putQueryParameter("DbInstanceId", dbInstanceId);
+		}
+	}
+
+	public String getDbInstType() {
+		return this.dbInstType;
+	}
+
+	public void setDbInstType(String dbInstType) {
+		this.dbInstType = dbInstType;
+		if(dbInstType != null){
+			putQueryParameter("DbInstType", dbInstType);
 		}
 	}
 

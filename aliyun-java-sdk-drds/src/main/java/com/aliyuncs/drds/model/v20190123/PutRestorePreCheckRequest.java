@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PutRestorePreCheckRequest extends RpcAcsRequest<PutRestorePreCheckResponse> {
 	
 	public PutRestorePreCheckRequest() {
-		super("Drds", "2019-01-23", "PutRestorePreCheck");
+		super("Drds", "2019-01-23", "PutRestorePreCheck", "drds");
 	}
 
 	private String preferredBackupTime;

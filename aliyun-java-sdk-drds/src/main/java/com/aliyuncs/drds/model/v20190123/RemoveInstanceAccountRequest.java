@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveInstanceAccountRequest extends RpcAcsRequest<RemoveInstanceAccountResponse> {
 	
 	public RemoveInstanceAccountRequest() {
-		super("Drds", "2019-01-23", "RemoveInstanceAccount");
+		super("Drds", "2019-01-23", "RemoveInstanceAccount", "drds");
 	}
 
 	private String accountName;

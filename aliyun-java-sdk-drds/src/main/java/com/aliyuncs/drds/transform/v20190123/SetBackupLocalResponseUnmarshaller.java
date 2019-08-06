@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetBackupLocalResponseUnmarshaller {
 
-	public static SetBackupLocalResponse unmarshall(SetBackupLocalResponse setBackupLocalResponse, UnmarshallerContext context) {
+	public static SetBackupLocalResponse unmarshall(SetBackupLocalResponse setBackupLocalResponse, UnmarshallerContext _ctx) {
 		
-		setBackupLocalResponse.setRequestId(context.stringValue("SetBackupLocalResponse.RequestId"));
-		setBackupLocalResponse.setResult(context.stringValue("SetBackupLocalResponse.Result"));
-		setBackupLocalResponse.setSuccess(context.booleanValue("SetBackupLocalResponse.Success"));
+		setBackupLocalResponse.setRequestId(_ctx.stringValue("SetBackupLocalResponse.RequestId"));
+		setBackupLocalResponse.setResult(_ctx.stringValue("SetBackupLocalResponse.Result"));
+		setBackupLocalResponse.setSuccess(_ctx.booleanValue("SetBackupLocalResponse.Success"));
 	 
 	 	return setBackupLocalResponse;
 	}

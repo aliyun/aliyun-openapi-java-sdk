@@ -1,3 +1,6 @@
+2019-08-06 Version: 4.1.0
+- Support latest DRDS Open API for version 2019-01-23.
+
 2019-04-11 Version: 4.0.0
 1, A new 2019-01-23 version on which DRDS new Console based.
 

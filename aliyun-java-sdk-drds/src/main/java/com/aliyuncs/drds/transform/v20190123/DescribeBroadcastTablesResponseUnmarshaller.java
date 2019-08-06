@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBroadcastTablesResponseUnmarshaller {
 
-	public static DescribeBroadcastTablesResponse unmarshall(DescribeBroadcastTablesResponse describeBroadcastTablesResponse, UnmarshallerContext context) {
+	public static DescribeBroadcastTablesResponse unmarshall(DescribeBroadcastTablesResponse describeBroadcastTablesResponse, UnmarshallerContext _ctx) {
 		
-		describeBroadcastTablesResponse.setRequestId(context.stringValue("DescribeBroadcastTablesResponse.RequestId"));
-		describeBroadcastTablesResponse.setSuccess(context.booleanValue("DescribeBroadcastTablesResponse.Success"));
-		describeBroadcastTablesResponse.setIsShard(context.booleanValue("DescribeBroadcastTablesResponse.IsShard"));
-		describeBroadcastTablesResponse.setPageNumber(context.integerValue("DescribeBroadcastTablesResponse.PageNumber"));
-		describeBroadcastTablesResponse.setPageSize(context.integerValue("DescribeBroadcastTablesResponse.PageSize"));
-		describeBroadcastTablesResponse.setTotal(context.integerValue("DescribeBroadcastTablesResponse.Total"));
+		describeBroadcastTablesResponse.setRequestId(_ctx.stringValue("DescribeBroadcastTablesResponse.RequestId"));
+		describeBroadcastTablesResponse.setSuccess(_ctx.booleanValue("DescribeBroadcastTablesResponse.Success"));
+		describeBroadcastTablesResponse.setIsShard(_ctx.booleanValue("DescribeBroadcastTablesResponse.IsShard"));
+		describeBroadcastTablesResponse.setPageNumber(_ctx.integerValue("DescribeBroadcastTablesResponse.PageNumber"));
+		describeBroadcastTablesResponse.setPageSize(_ctx.integerValue("DescribeBroadcastTablesResponse.PageSize"));
+		describeBroadcastTablesResponse.setTotal(_ctx.integerValue("DescribeBroadcastTablesResponse.Total"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
-		for (int i = 0; i < context.lengthValue("DescribeBroadcastTablesResponse.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBroadcastTablesResponse.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setTable(context.stringValue("DescribeBroadcastTablesResponse.List["+ i +"].Table"));
-			listItem.setBroadcastType(context.stringValue("DescribeBroadcastTablesResponse.List["+ i +"].BroadcastType"));
-			listItem.setIsShard(context.booleanValue("DescribeBroadcastTablesResponse.List["+ i +"].IsShard"));
-			listItem.setDbInstType(context.integerValue("DescribeBroadcastTablesResponse.List["+ i +"].DbInstType"));
-			listItem.setBroadcast(context.booleanValue("DescribeBroadcastTablesResponse.List["+ i +"].Broadcast"));
-			listItem.setStatus(context.integerValue("DescribeBroadcastTablesResponse.List["+ i +"].Status"));
+			listItem.setTable(_ctx.stringValue("DescribeBroadcastTablesResponse.List["+ i +"].Table"));
+			listItem.setBroadcastType(_ctx.stringValue("DescribeBroadcastTablesResponse.List["+ i +"].BroadcastType"));
+			listItem.setIsShard(_ctx.booleanValue("DescribeBroadcastTablesResponse.List["+ i +"].IsShard"));
+			listItem.setDbInstType(_ctx.integerValue("DescribeBroadcastTablesResponse.List["+ i +"].DbInstType"));
+			listItem.setBroadcast(_ctx.booleanValue("DescribeBroadcastTablesResponse.List["+ i +"].Broadcast"));
+			listItem.setStatus(_ctx.integerValue("DescribeBroadcastTablesResponse.List["+ i +"].Status"));
 
 			list.add(listItem);
 		}

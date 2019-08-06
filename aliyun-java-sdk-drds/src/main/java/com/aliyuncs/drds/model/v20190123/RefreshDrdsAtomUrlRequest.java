@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RefreshDrdsAtomUrlRequest extends RpcAcsRequest<RefreshDrdsAtomUrlResponse> {
 	
 	public RefreshDrdsAtomUrlRequest() {
-		super("Drds", "2019-01-23", "RefreshDrdsAtomUrl");
+		super("Drds", "2019-01-23", "RefreshDrdsAtomUrl", "drds");
 	}
 
 	private String dbName;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckExpandStatusRequest extends RpcAcsRequest<CheckExpandStatusResponse> {
 	
 	public CheckExpandStatusRequest() {
-		super("Drds", "2019-01-23", "CheckExpandStatus");
+		super("Drds", "2019-01-23", "CheckExpandStatus", "drds");
 	}
 
 	private String dbName;

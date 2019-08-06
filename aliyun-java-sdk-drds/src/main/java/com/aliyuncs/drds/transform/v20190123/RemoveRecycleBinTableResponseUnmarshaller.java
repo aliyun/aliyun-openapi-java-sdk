@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveRecycleBinTableResponseUnmarshaller {
 
-	public static RemoveRecycleBinTableResponse unmarshall(RemoveRecycleBinTableResponse removeRecycleBinTableResponse, UnmarshallerContext context) {
+	public static RemoveRecycleBinTableResponse unmarshall(RemoveRecycleBinTableResponse removeRecycleBinTableResponse, UnmarshallerContext _ctx) {
 		
-		removeRecycleBinTableResponse.setRequestId(context.stringValue("RemoveRecycleBinTableResponse.RequestId"));
-		removeRecycleBinTableResponse.setSuccess(context.booleanValue("RemoveRecycleBinTableResponse.Success"));
-		removeRecycleBinTableResponse.setData(context.booleanValue("RemoveRecycleBinTableResponse.Data"));
+		removeRecycleBinTableResponse.setRequestId(_ctx.stringValue("RemoveRecycleBinTableResponse.RequestId"));
+		removeRecycleBinTableResponse.setSuccess(_ctx.booleanValue("RemoveRecycleBinTableResponse.Success"));
+		removeRecycleBinTableResponse.setData(_ctx.booleanValue("RemoveRecycleBinTableResponse.Data"));
 	 
 	 	return removeRecycleBinTableResponse;
 	}

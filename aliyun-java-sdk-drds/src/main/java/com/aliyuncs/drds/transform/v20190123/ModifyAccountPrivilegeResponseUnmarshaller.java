@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyAccountPrivilegeResponseUnmarshaller {
 
-	public static ModifyAccountPrivilegeResponse unmarshall(ModifyAccountPrivilegeResponse modifyAccountPrivilegeResponse, UnmarshallerContext context) {
+	public static ModifyAccountPrivilegeResponse unmarshall(ModifyAccountPrivilegeResponse modifyAccountPrivilegeResponse, UnmarshallerContext _ctx) {
 		
-		modifyAccountPrivilegeResponse.setRequestId(context.stringValue("ModifyAccountPrivilegeResponse.RequestId"));
-		modifyAccountPrivilegeResponse.setSuccess(context.booleanValue("ModifyAccountPrivilegeResponse.Success"));
+		modifyAccountPrivilegeResponse.setRequestId(_ctx.stringValue("ModifyAccountPrivilegeResponse.RequestId"));
+		modifyAccountPrivilegeResponse.setSuccess(_ctx.booleanValue("ModifyAccountPrivilegeResponse.Success"));
 	 
 	 	return modifyAccountPrivilegeResponse;
 	}

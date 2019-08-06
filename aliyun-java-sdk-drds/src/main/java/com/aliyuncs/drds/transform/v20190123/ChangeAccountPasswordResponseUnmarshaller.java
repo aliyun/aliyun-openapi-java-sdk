@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ChangeAccountPasswordResponseUnmarshaller {
 
-	public static ChangeAccountPasswordResponse unmarshall(ChangeAccountPasswordResponse changeAccountPasswordResponse, UnmarshallerContext context) {
+	public static ChangeAccountPasswordResponse unmarshall(ChangeAccountPasswordResponse changeAccountPasswordResponse, UnmarshallerContext _ctx) {
 		
-		changeAccountPasswordResponse.setRequestId(context.stringValue("ChangeAccountPasswordResponse.RequestId"));
-		changeAccountPasswordResponse.setSuccess(context.booleanValue("ChangeAccountPasswordResponse.Success"));
+		changeAccountPasswordResponse.setRequestId(_ctx.stringValue("ChangeAccountPasswordResponse.RequestId"));
+		changeAccountPasswordResponse.setSuccess(_ctx.booleanValue("ChangeAccountPasswordResponse.Success"));
 	 
 	 	return changeAccountPasswordResponse;
 	}

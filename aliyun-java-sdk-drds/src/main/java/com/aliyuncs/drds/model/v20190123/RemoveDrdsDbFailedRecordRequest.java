@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveDrdsDbFailedRecordRequest extends RpcAcsRequest<RemoveDrdsDbFailedRecordResponse> {
 	
 	public RemoveDrdsDbFailedRecordRequest() {
-		super("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord");
+		super("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "drds");
 	}
 
 	private String dbName;

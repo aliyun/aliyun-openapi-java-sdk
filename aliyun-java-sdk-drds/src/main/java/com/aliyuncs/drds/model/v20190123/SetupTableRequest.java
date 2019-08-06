@@ -24,7 +24,7 @@ import java.util.List;
 public class SetupTableRequest extends RpcAcsRequest<SetupTableResponse> {
 	
 	public SetupTableRequest() {
-		super("Drds", "2019-01-23", "SetupTable");
+		super("Drds", "2019-01-23", "SetupTable", "drds");
 	}
 
 	private String dbName;

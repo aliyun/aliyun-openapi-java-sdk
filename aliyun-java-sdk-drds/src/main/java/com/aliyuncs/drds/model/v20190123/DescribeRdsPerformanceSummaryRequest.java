@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeRdsPerformanceSummaryRequest extends RpcAcsRequest<DescribeRdsPerformanceSummaryResponse> {
 	
 	public DescribeRdsPerformanceSummaryRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsPerformanceSummary");
+		super("Drds", "2019-01-23", "DescribeRdsPerformanceSummary", "drds");
 	}
 
 	private List<String> rdsInstanceIds;

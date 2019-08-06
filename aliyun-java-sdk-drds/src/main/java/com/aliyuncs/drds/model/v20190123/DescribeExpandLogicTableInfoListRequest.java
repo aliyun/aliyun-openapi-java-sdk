@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeExpandLogicTableInfoListRequest extends RpcAcsRequest<DescribeExpandLogicTableInfoListResponse> {
 	
 	public DescribeExpandLogicTableInfoListRequest() {
-		super("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList");
+		super("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList", "drds");
 	}
 
 	private String dbName;

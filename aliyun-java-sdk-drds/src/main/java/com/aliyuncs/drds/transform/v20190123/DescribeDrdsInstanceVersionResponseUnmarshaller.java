@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDrdsInstanceVersionResponseUnmarshaller {
 
-	public static DescribeDrdsInstanceVersionResponse unmarshall(DescribeDrdsInstanceVersionResponse describeDrdsInstanceVersionResponse, UnmarshallerContext context) {
+	public static DescribeDrdsInstanceVersionResponse unmarshall(DescribeDrdsInstanceVersionResponse describeDrdsInstanceVersionResponse, UnmarshallerContext _ctx) {
 		
-		describeDrdsInstanceVersionResponse.setRequestId(context.stringValue("DescribeDrdsInstanceVersionResponse.RequestId"));
-		describeDrdsInstanceVersionResponse.setSuccess(context.booleanValue("DescribeDrdsInstanceVersionResponse.Success"));
+		describeDrdsInstanceVersionResponse.setRequestId(_ctx.stringValue("DescribeDrdsInstanceVersionResponse.RequestId"));
+		describeDrdsInstanceVersionResponse.setSuccess(_ctx.booleanValue("DescribeDrdsInstanceVersionResponse.Success"));
 
 		Data data = new Data();
-		data.setInstanceVersion(context.stringValue("DescribeDrdsInstanceVersionResponse.Data.InstanceVersion"));
-		data.setNewestVersion(context.stringValue("DescribeDrdsInstanceVersionResponse.Data.NewestVersion"));
+		data.setInstanceVersion(_ctx.stringValue("DescribeDrdsInstanceVersionResponse.Data.InstanceVersion"));
+		data.setNewestVersion(_ctx.stringValue("DescribeDrdsInstanceVersionResponse.Data.NewestVersion"));
 		describeDrdsInstanceVersionResponse.setData(data);
 	 
 	 	return describeDrdsInstanceVersionResponse;

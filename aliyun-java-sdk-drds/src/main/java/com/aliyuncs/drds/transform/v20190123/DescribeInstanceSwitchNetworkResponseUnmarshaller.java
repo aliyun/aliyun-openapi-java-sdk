@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceSwitchNetworkResponseUnmarshaller {
 
-	public static DescribeInstanceSwitchNetworkResponse unmarshall(DescribeInstanceSwitchNetworkResponse describeInstanceSwitchNetworkResponse, UnmarshallerContext context) {
+	public static DescribeInstanceSwitchNetworkResponse unmarshall(DescribeInstanceSwitchNetworkResponse describeInstanceSwitchNetworkResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceSwitchNetworkResponse.setRequestId(context.stringValue("DescribeInstanceSwitchNetworkResponse.RequestId"));
-		describeInstanceSwitchNetworkResponse.setSuccess(context.booleanValue("DescribeInstanceSwitchNetworkResponse.Success"));
+		describeInstanceSwitchNetworkResponse.setRequestId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.RequestId"));
+		describeInstanceSwitchNetworkResponse.setSuccess(_ctx.booleanValue("DescribeInstanceSwitchNetworkResponse.Success"));
 
 		List<VpcInfo> vpcInfos = new ArrayList<VpcInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceSwitchNetworkResponse.VpcInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceSwitchNetworkResponse.VpcInfos.Length"); i++) {
 			VpcInfo vpcInfo = new VpcInfo();
-			vpcInfo.setVpcId(context.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VpcId"));
-			vpcInfo.setRegionId(context.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].RegionId"));
-			vpcInfo.setVpcName(context.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VpcName"));
+			vpcInfo.setVpcId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VpcId"));
+			vpcInfo.setRegionId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].RegionId"));
+			vpcInfo.setVpcName(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VpcName"));
 
 			List<VswitchInfo> vswitchInfos = new ArrayList<VswitchInfo>();
-			for (int j = 0; j < context.lengthValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos.Length"); j++) {
 				VswitchInfo vswitchInfo = new VswitchInfo();
-				vswitchInfo.setVswitchId(context.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchId"));
-				vswitchInfo.setVpcId(context.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VpcId"));
-				vswitchInfo.setVswitchName(context.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchName"));
-				vswitchInfo.setAzoneId(context.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].AzoneId"));
-				vswitchInfo.setDrdsSupported(context.booleanValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].DrdsSupported"));
+				vswitchInfo.setVswitchId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchId"));
+				vswitchInfo.setVpcId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VpcId"));
+				vswitchInfo.setVswitchName(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].VswitchName"));
+				vswitchInfo.setAzoneId(_ctx.stringValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].AzoneId"));
+				vswitchInfo.setDrdsSupported(_ctx.booleanValue("DescribeInstanceSwitchNetworkResponse.VpcInfos["+ i +"].VswitchInfos["+ j +"].DrdsSupported"));
 
 				vswitchInfos.add(vswitchInfo);
 			}

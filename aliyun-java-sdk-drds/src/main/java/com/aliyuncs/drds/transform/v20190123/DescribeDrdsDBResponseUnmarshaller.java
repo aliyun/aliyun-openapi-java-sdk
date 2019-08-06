@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDrdsDBResponseUnmarshaller {
 
-	public static DescribeDrdsDBResponse unmarshall(DescribeDrdsDBResponse describeDrdsDBResponse, UnmarshallerContext context) {
+	public static DescribeDrdsDBResponse unmarshall(DescribeDrdsDBResponse describeDrdsDBResponse, UnmarshallerContext _ctx) {
 		
-		describeDrdsDBResponse.setRequestId(context.stringValue("DescribeDrdsDBResponse.RequestId"));
-		describeDrdsDBResponse.setSuccess(context.booleanValue("DescribeDrdsDBResponse.Success"));
+		describeDrdsDBResponse.setRequestId(_ctx.stringValue("DescribeDrdsDBResponse.RequestId"));
+		describeDrdsDBResponse.setSuccess(_ctx.booleanValue("DescribeDrdsDBResponse.Success"));
 
 		Data data = new Data();
-		data.setDbName(context.stringValue("DescribeDrdsDBResponse.Data.DbName"));
-		data.setStatus(context.stringValue("DescribeDrdsDBResponse.Data.Status"));
-		data.setCreateTime(context.stringValue("DescribeDrdsDBResponse.Data.CreateTime"));
-		data.setMode(context.stringValue("DescribeDrdsDBResponse.Data.Mode"));
-		data.setSchema(context.stringValue("DescribeDrdsDBResponse.Data.Schema"));
-		data.setDbInstType(context.stringValue("DescribeDrdsDBResponse.Data.DbInstType"));
-		data.setInstRole(context.stringValue("DescribeDrdsDBResponse.Data.InstRole"));
+		data.setDbName(_ctx.stringValue("DescribeDrdsDBResponse.Data.DbName"));
+		data.setStatus(_ctx.stringValue("DescribeDrdsDBResponse.Data.Status"));
+		data.setCreateTime(_ctx.stringValue("DescribeDrdsDBResponse.Data.CreateTime"));
+		data.setMode(_ctx.stringValue("DescribeDrdsDBResponse.Data.Mode"));
+		data.setSchema(_ctx.stringValue("DescribeDrdsDBResponse.Data.Schema"));
+		data.setDbInstType(_ctx.stringValue("DescribeDrdsDBResponse.Data.DbInstType"));
+		data.setInstRole(_ctx.stringValue("DescribeDrdsDBResponse.Data.InstRole"));
 		describeDrdsDBResponse.setData(data);
 	 
 	 	return describeDrdsDBResponse;

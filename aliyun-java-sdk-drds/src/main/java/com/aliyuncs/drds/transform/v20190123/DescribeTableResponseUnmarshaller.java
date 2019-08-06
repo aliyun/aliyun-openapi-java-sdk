@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTableResponseUnmarshaller {
 
-	public static DescribeTableResponse unmarshall(DescribeTableResponse describeTableResponse, UnmarshallerContext context) {
+	public static DescribeTableResponse unmarshall(DescribeTableResponse describeTableResponse, UnmarshallerContext _ctx) {
 		
-		describeTableResponse.setRequestId(context.stringValue("DescribeTableResponse.RequestId"));
-		describeTableResponse.setSuccess(context.booleanValue("DescribeTableResponse.Success"));
+		describeTableResponse.setRequestId(_ctx.stringValue("DescribeTableResponse.RequestId"));
+		describeTableResponse.setSuccess(_ctx.booleanValue("DescribeTableResponse.Success"));
 
 		Data data = new Data();
 
 		List<ColumnInfo> list = new ArrayList<ColumnInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeTableResponse.Data.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTableResponse.Data.List.Length"); i++) {
 			ColumnInfo columnInfo = new ColumnInfo();
-			columnInfo.setColumnName(context.stringValue("DescribeTableResponse.Data.List["+ i +"].ColumnName"));
-			columnInfo.setColumnType(context.stringValue("DescribeTableResponse.Data.List["+ i +"].ColumnType"));
-			columnInfo.setExtra(context.stringValue("DescribeTableResponse.Data.List["+ i +"].Extra"));
-			columnInfo.setIndex(context.stringValue("DescribeTableResponse.Data.List["+ i +"].Index"));
-			columnInfo.setIsAllowNull(context.stringValue("DescribeTableResponse.Data.List["+ i +"].IsAllowNull"));
-			columnInfo.setIsPk(context.stringValue("DescribeTableResponse.Data.List["+ i +"].IsPk"));
+			columnInfo.setColumnName(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].ColumnName"));
+			columnInfo.setColumnType(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].ColumnType"));
+			columnInfo.setExtra(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].Extra"));
+			columnInfo.setIndex(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].Index"));
+			columnInfo.setIsAllowNull(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].IsAllowNull"));
+			columnInfo.setIsPk(_ctx.stringValue("DescribeTableResponse.Data.List["+ i +"].IsPk"));
 
 			list.add(columnInfo);
 		}

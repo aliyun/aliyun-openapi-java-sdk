@@ -24,7 +24,7 @@ import java.util.List;
 public class ConfigureDrdsDbInstancesRequest extends RpcAcsRequest<ConfigureDrdsDbInstancesResponse> {
 	
 	public ConfigureDrdsDbInstancesRequest() {
-		super("Drds", "2019-01-23", "ConfigureDrdsDbInstances");
+		super("Drds", "2019-01-23", "ConfigureDrdsDbInstances", "drds");
 	}
 
 	private String dbName;
@@ -52,6 +52,7 @@ public class ConfigureDrdsDbInstancesRequest extends RpcAcsRequest<ConfigureDrds
 		this.dbInstances = dbInstances;	
 		if (dbInstances != null) {
 			for (int depth1 = 0; depth1 < dbInstances.size(); depth1++) {
+				putQueryParameter("DbInstance." + (depth1 + 1) + ".SlaveDbInstanceType" , dbInstances.get(depth1).getSlaveDbInstanceType());
 				putQueryParameter("DbInstance." + (depth1 + 1) + ".SlaveDbInstanceId" , dbInstances.get(depth1).getSlaveDbInstanceId());
 				putQueryParameter("DbInstance." + (depth1 + 1) + ".MasterDbInstanceId" , dbInstances.get(depth1).getMasterDbInstanceId());
 			}
@@ -71,9 +72,19 @@ public class ConfigureDrdsDbInstancesRequest extends RpcAcsRequest<ConfigureDrds
 
 	public static class DbInstance {
 
+		private String slaveDbInstanceType;
+
 		private String slaveDbInstanceId;
 
 		private String masterDbInstanceId;
+
+		public String getSlaveDbInstanceType() {
+			return this.slaveDbInstanceType;
+		}
+
+		public void setSlaveDbInstanceType(String slaveDbInstanceType) {
+			this.slaveDbInstanceType = slaveDbInstanceType;
+		}
 
 		public String getSlaveDbInstanceId() {
 			return this.slaveDbInstanceId;

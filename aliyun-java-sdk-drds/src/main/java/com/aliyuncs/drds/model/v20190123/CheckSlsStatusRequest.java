@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckSlsStatusRequest extends RpcAcsRequest<CheckSlsStatusResponse> {
 	
 	public CheckSlsStatusRequest() {
-		super("Drds", "2019-01-23", "CheckSlsStatus");
+		super("Drds", "2019-01-23", "CheckSlsStatus", "drds");
 	}
 
 	@Override

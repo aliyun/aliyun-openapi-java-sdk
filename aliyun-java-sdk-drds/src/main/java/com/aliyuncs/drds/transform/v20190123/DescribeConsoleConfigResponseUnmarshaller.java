@@ -21,11 +21,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeConsoleConfigResponseUnmarshaller {
 
-	public static DescribeConsoleConfigResponse unmarshall(DescribeConsoleConfigResponse describeConsoleConfigResponse, UnmarshallerContext context) {
+	public static DescribeConsoleConfigResponse unmarshall(DescribeConsoleConfigResponse describeConsoleConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeConsoleConfigResponse.setRequestId(context.stringValue("DescribeConsoleConfigResponse.RequestId"));
-		describeConsoleConfigResponse.setSuccess(context.booleanValue("DescribeConsoleConfigResponse.Success"));
-		describeConsoleConfigResponse.setConfig(context.mapValue("DescribeConsoleConfigResponse.Config"));
+		describeConsoleConfigResponse.setRequestId(_ctx.stringValue("DescribeConsoleConfigResponse.RequestId"));
+		describeConsoleConfigResponse.setSuccess(_ctx.booleanValue("DescribeConsoleConfigResponse.Success"));
+		describeConsoleConfigResponse.setConfig(_ctx.mapValue("DescribeConsoleConfigResponse.Config"));
 	 
 	 	return describeConsoleConfigResponse;
 	}

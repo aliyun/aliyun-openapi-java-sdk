@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckDrdsDbNameRequest extends RpcAcsRequest<CheckDrdsDbNameResponse> {
 	
 	public CheckDrdsDbNameRequest() {
-		super("Drds", "2019-01-23", "CheckDrdsDbName");
+		super("Drds", "2019-01-23", "CheckDrdsDbName", "drds");
 	}
 
 	private String dbName;

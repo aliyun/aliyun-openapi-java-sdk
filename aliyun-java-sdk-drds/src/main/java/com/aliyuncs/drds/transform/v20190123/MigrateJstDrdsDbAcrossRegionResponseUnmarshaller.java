@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MigrateJstDrdsDbAcrossRegionResponseUnmarshaller {
 
-	public static MigrateJstDrdsDbAcrossRegionResponse unmarshall(MigrateJstDrdsDbAcrossRegionResponse migrateJstDrdsDbAcrossRegionResponse, UnmarshallerContext context) {
+	public static MigrateJstDrdsDbAcrossRegionResponse unmarshall(MigrateJstDrdsDbAcrossRegionResponse migrateJstDrdsDbAcrossRegionResponse, UnmarshallerContext _ctx) {
 		
-		migrateJstDrdsDbAcrossRegionResponse.setRequestId(context.stringValue("MigrateJstDrdsDbAcrossRegionResponse.RequestId"));
-		migrateJstDrdsDbAcrossRegionResponse.setSuccess(context.booleanValue("MigrateJstDrdsDbAcrossRegionResponse.Success"));
-		migrateJstDrdsDbAcrossRegionResponse.setTaskId(context.longValue("MigrateJstDrdsDbAcrossRegionResponse.TaskId"));
+		migrateJstDrdsDbAcrossRegionResponse.setRequestId(_ctx.stringValue("MigrateJstDrdsDbAcrossRegionResponse.RequestId"));
+		migrateJstDrdsDbAcrossRegionResponse.setSuccess(_ctx.booleanValue("MigrateJstDrdsDbAcrossRegionResponse.Success"));
+		migrateJstDrdsDbAcrossRegionResponse.setTaskId(_ctx.longValue("MigrateJstDrdsDbAcrossRegionResponse.TaskId"));
 	 
 	 	return migrateJstDrdsDbAcrossRegionResponse;
 	}

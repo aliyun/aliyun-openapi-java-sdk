@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ChangeAccountPasswordRequest extends RpcAcsRequest<ChangeAccountPasswordResponse> {
 	
 	public ChangeAccountPasswordRequest() {
-		super("Drds", "2019-01-23", "ChangeAccountPassword");
+		super("Drds", "2019-01-23", "ChangeAccountPassword", "drds");
 	}
 
 	private String password;

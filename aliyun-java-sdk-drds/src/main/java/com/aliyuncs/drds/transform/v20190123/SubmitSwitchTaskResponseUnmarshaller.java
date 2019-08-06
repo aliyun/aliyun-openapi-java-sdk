@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitSwitchTaskResponseUnmarshaller {
 
-	public static SubmitSwitchTaskResponse unmarshall(SubmitSwitchTaskResponse submitSwitchTaskResponse, UnmarshallerContext context) {
+	public static SubmitSwitchTaskResponse unmarshall(SubmitSwitchTaskResponse submitSwitchTaskResponse, UnmarshallerContext _ctx) {
 		
-		submitSwitchTaskResponse.setRequestId(context.stringValue("SubmitSwitchTaskResponse.RequestId"));
-		submitSwitchTaskResponse.setSuccess(context.booleanValue("SubmitSwitchTaskResponse.Success"));
+		submitSwitchTaskResponse.setRequestId(_ctx.stringValue("SubmitSwitchTaskResponse.RequestId"));
+		submitSwitchTaskResponse.setSuccess(_ctx.booleanValue("SubmitSwitchTaskResponse.Success"));
 	 
 	 	return submitSwitchTaskResponse;
 	}

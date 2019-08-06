@@ -24,7 +24,7 @@ import java.util.List;
 public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse> {
 	
 	public UntagResourcesRequest() {
-		super("Drds", "2019-01-23", "UntagResources");
+		super("Drds", "2019-01-23", "UntagResources", "drds");
 	}
 
 	private Boolean all;

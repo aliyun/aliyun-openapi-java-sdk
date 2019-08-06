@@ -24,7 +24,7 @@ import java.util.List;
 public class GetSrcRdsListRequest extends RpcAcsRequest<GetSrcRdsListResponse> {
 	
 	public GetSrcRdsListRequest() {
-		super("Drds", "2019-01-23", "GetSrcRdsList");
+		super("Drds", "2019-01-23", "GetSrcRdsList", "drds");
 	}
 
 	private String dbName;

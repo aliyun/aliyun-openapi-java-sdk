@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRecycleBinTablesRequest extends RpcAcsRequest<DescribeRecycleBinTablesResponse> {
 	
 	public DescribeRecycleBinTablesRequest() {
-		super("Drds", "2019-01-23", "DescribeRecycleBinTables");
+		super("Drds", "2019-01-23", "DescribeRecycleBinTables", "drds");
 	}
 
 	private String dbName;

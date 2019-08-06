@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 	
 	public CreateDrdsDBRequest() {
-		super("Drds", "2019-01-23", "CreateDrdsDB");
+		super("Drds", "2019-01-23", "CreateDrdsDB", "drds");
 	}
 
 	private String encode;
@@ -46,6 +46,8 @@ public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 	private String dbInstType;
 
 	private String drdsInstanceId;
+
+	private Boolean dbInstanceIsCreating;
 
 	public String getEncode() {
 		return this.encode;
@@ -167,6 +169,17 @@ public class CreateDrdsDBRequest extends RpcAcsRequest<CreateDrdsDBResponse> {
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public Boolean getDbInstanceIsCreating() {
+		return this.dbInstanceIsCreating;
+	}
+
+	public void setDbInstanceIsCreating(Boolean dbInstanceIsCreating) {
+		this.dbInstanceIsCreating = dbInstanceIsCreating;
+		if(dbInstanceIsCreating != null){
+			putQueryParameter("DbInstanceIsCreating", dbInstanceIsCreating.toString());
 		}
 	}
 

@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckDrdsDefaultRoleResponseUnmarshaller {
 
-	public static CheckDrdsDefaultRoleResponse unmarshall(CheckDrdsDefaultRoleResponse checkDrdsDefaultRoleResponse, UnmarshallerContext context) {
+	public static CheckDrdsDefaultRoleResponse unmarshall(CheckDrdsDefaultRoleResponse checkDrdsDefaultRoleResponse, UnmarshallerContext _ctx) {
 		
-		checkDrdsDefaultRoleResponse.setRequestId(context.stringValue("CheckDrdsDefaultRoleResponse.RequestId"));
-		checkDrdsDefaultRoleResponse.setSuccess(context.booleanValue("CheckDrdsDefaultRoleResponse.Success"));
+		checkDrdsDefaultRoleResponse.setRequestId(_ctx.stringValue("CheckDrdsDefaultRoleResponse.RequestId"));
+		checkDrdsDefaultRoleResponse.setSuccess(_ctx.booleanValue("CheckDrdsDefaultRoleResponse.Success"));
 
 		List<RoleAuth> roleAuths = new ArrayList<RoleAuth>();
-		for (int i = 0; i < context.lengthValue("CheckDrdsDefaultRoleResponse.RoleAuths.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CheckDrdsDefaultRoleResponse.RoleAuths.Length"); i++) {
 			RoleAuth roleAuth = new RoleAuth();
-			roleAuth.setTitle(context.stringValue("CheckDrdsDefaultRoleResponse.RoleAuths["+ i +"].Title"));
-			roleAuth.setContent(context.stringValue("CheckDrdsDefaultRoleResponse.RoleAuths["+ i +"].Content"));
-			roleAuth.setHasAuthorized(context.booleanValue("CheckDrdsDefaultRoleResponse.RoleAuths["+ i +"].HasAuthorized"));
-			roleAuth.setLink(context.stringValue("CheckDrdsDefaultRoleResponse.RoleAuths["+ i +"].Link"));
+			roleAuth.setTitle(_ctx.stringValue("CheckDrdsDefaultRoleResponse.RoleAuths["+ i +"].Title"));
+			roleAuth.setContent(_ctx.stringValue("CheckDrdsDefaultRoleResponse.RoleAuths["+ i +"].Content"));
+			roleAuth.setHasAuthorized(_ctx.booleanValue("CheckDrdsDefaultRoleResponse.RoleAuths["+ i +"].HasAuthorized"));
+			roleAuth.setLink(_ctx.stringValue("CheckDrdsDefaultRoleResponse.RoleAuths["+ i +"].Link"));
 
 			roleAuths.add(roleAuth);
 		}

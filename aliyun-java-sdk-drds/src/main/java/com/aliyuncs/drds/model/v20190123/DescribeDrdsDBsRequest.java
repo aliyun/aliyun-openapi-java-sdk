@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsDBsRequest extends RpcAcsRequest<DescribeDrdsDBsResponse> {
 	
 	public DescribeDrdsDBsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDBs");
+		super("Drds", "2019-01-23", "DescribeDrdsDBs", "drds");
 	}
 
 	private Integer pageSize;

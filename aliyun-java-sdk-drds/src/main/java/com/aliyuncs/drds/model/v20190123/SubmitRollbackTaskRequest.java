@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitRollbackTaskRequest extends RpcAcsRequest<SubmitRollbackTaskResponse> {
 	
 	public SubmitRollbackTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitRollbackTask");
+		super("Drds", "2019-01-23", "SubmitRollbackTask", "drds");
 	}
 
 	private String jobId;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveRecycleBinTableRequest extends RpcAcsRequest<RemoveRecycleBinTableResponse> {
 	
 	public RemoveRecycleBinTableRequest() {
-		super("Drds", "2019-01-23", "RemoveRecycleBinTable");
+		super("Drds", "2019-01-23", "RemoveRecycleBinTable", "drds");
 	}
 
 	private String dbName;

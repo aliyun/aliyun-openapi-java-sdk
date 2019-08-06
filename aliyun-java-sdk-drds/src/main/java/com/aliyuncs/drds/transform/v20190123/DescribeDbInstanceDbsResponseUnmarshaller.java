@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDbInstanceDbsResponseUnmarshaller {
 
-	public static DescribeDbInstanceDbsResponse unmarshall(DescribeDbInstanceDbsResponse describeDbInstanceDbsResponse, UnmarshallerContext context) {
+	public static DescribeDbInstanceDbsResponse unmarshall(DescribeDbInstanceDbsResponse describeDbInstanceDbsResponse, UnmarshallerContext _ctx) {
 		
-		describeDbInstanceDbsResponse.setRequestId(context.stringValue("DescribeDbInstanceDbsResponse.RequestId"));
-		describeDbInstanceDbsResponse.setSuccess(context.booleanValue("DescribeDbInstanceDbsResponse.Success"));
-		describeDbInstanceDbsResponse.setTotal(context.stringValue("DescribeDbInstanceDbsResponse.Total"));
+		describeDbInstanceDbsResponse.setRequestId(_ctx.stringValue("DescribeDbInstanceDbsResponse.RequestId"));
+		describeDbInstanceDbsResponse.setSuccess(_ctx.booleanValue("DescribeDbInstanceDbsResponse.Success"));
+		describeDbInstanceDbsResponse.setTotal(_ctx.stringValue("DescribeDbInstanceDbsResponse.Total"));
 
 		List<Database> databases = new ArrayList<Database>();
-		for (int i = 0; i < context.lengthValue("DescribeDbInstanceDbsResponse.Databases.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDbInstanceDbsResponse.Databases.Length"); i++) {
 			Database database = new Database();
-			database.setDbName(context.stringValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].DbName"));
-			database.setStatus(context.integerValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].Status"));
-			database.setDescription(context.stringValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].Description"));
+			database.setDbName(_ctx.stringValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].DbName"));
+			database.setStatus(_ctx.integerValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].Status"));
+			database.setDescription(_ctx.stringValue("DescribeDbInstanceDbsResponse.Databases["+ i +"].Description"));
 
 			databases.add(database);
 		}

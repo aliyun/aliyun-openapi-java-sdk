@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceMenuSwitchRequest extends RpcAcsRequest<DescribeInstanceMenuSwitchResponse> {
 	
 	public DescribeInstanceMenuSwitchRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceMenuSwitch");
+		super("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "drds");
 	}
 
 	private String drdsInstanceId;

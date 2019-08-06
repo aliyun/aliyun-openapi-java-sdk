@@ -24,18 +24,18 @@ import java.util.List;
 public class SubmitSmoothExpandTaskRequest extends RpcAcsRequest<SubmitSmoothExpandTaskResponse> {
 	
 	public SubmitSmoothExpandTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSmoothExpandTask");
+		super("Drds", "2019-01-23", "SubmitSmoothExpandTask", "drds");
 	}
 
 	private List<RdsSuperInstances> rdsSuperInstancess;
 
 	private String dbName;
 
-	private Boolean useCreatingRDS;
-
 	private List<TransferTaskInfos> transferTaskInfoss;
 
 	private String drdsInstanceId;
+
+	private Boolean dbInstanceIsCreating;
 
 	public List<RdsSuperInstances> getRdsSuperInstancess() {
 		return this.rdsSuperInstancess;
@@ -63,17 +63,6 @@ public class SubmitSmoothExpandTaskRequest extends RpcAcsRequest<SubmitSmoothExp
 		}
 	}
 
-	public Boolean getUseCreatingRDS() {
-		return this.useCreatingRDS;
-	}
-
-	public void setUseCreatingRDS(Boolean useCreatingRDS) {
-		this.useCreatingRDS = useCreatingRDS;
-		if(useCreatingRDS != null){
-			putQueryParameter("UseCreatingRDS", useCreatingRDS.toString());
-		}
-	}
-
 	public List<TransferTaskInfos> getTransferTaskInfoss() {
 		return this.transferTaskInfoss;
 	}
@@ -98,6 +87,17 @@ public class SubmitSmoothExpandTaskRequest extends RpcAcsRequest<SubmitSmoothExp
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public Boolean getDbInstanceIsCreating() {
+		return this.dbInstanceIsCreating;
+	}
+
+	public void setDbInstanceIsCreating(Boolean dbInstanceIsCreating) {
+		this.dbInstanceIsCreating = dbInstanceIsCreating;
+		if(dbInstanceIsCreating != null){
+			putQueryParameter("DbInstanceIsCreating", dbInstanceIsCreating.toString());
 		}
 	}
 

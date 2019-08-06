@@ -14,6 +14,7 @@
 
 package com.aliyuncs.drds.model.v20190123;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.drds.transform.v20190123.DescribeSrcRdsListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class DescribeSrcRdsListResponse extends AcsResponse {
 	private String requestId;
 
 	private Boolean success;
+
+	private List<DataItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +45,37 @@ public class DescribeSrcRdsListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public List<DataItem> getData() {
+		return this.data;
+	}
+
+	public void setData(List<DataItem> data) {
+		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String rds;
+
+		private String dbName;
+
+		public String getRds() {
+			return this.rds;
+		}
+
+		public void setRds(String rds) {
+			this.rds = rds;
+		}
+
+		public String getDbName() {
+			return this.dbName;
+		}
+
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
+		}
 	}
 
 	@Override

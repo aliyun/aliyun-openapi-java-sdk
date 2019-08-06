@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RestartDrdsInstanceRequest extends RpcAcsRequest<RestartDrdsInstanceResponse> {
 	
 	public RestartDrdsInstanceRequest() {
-		super("Drds", "2019-01-23", "RestartDrdsInstance");
+		super("Drds", "2019-01-23", "RestartDrdsInstance", "drds");
 	}
 
 	private String drdsInstanceId;

@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ValidateShardTaskResponseUnmarshaller {
 
-	public static ValidateShardTaskResponse unmarshall(ValidateShardTaskResponse validateShardTaskResponse, UnmarshallerContext context) {
+	public static ValidateShardTaskResponse unmarshall(ValidateShardTaskResponse validateShardTaskResponse, UnmarshallerContext _ctx) {
 		
-		validateShardTaskResponse.setRequestId(context.stringValue("ValidateShardTaskResponse.RequestId"));
-		validateShardTaskResponse.setSuccess(context.booleanValue("ValidateShardTaskResponse.Success"));
+		validateShardTaskResponse.setRequestId(_ctx.stringValue("ValidateShardTaskResponse.RequestId"));
+		validateShardTaskResponse.setSuccess(_ctx.booleanValue("ValidateShardTaskResponse.Success"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
-		for (int i = 0; i < context.lengthValue("ValidateShardTaskResponse.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ValidateShardTaskResponse.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setItem(context.stringValue("ValidateShardTaskResponse.List["+ i +"].Item"));
-			listItem.setResult(context.integerValue("ValidateShardTaskResponse.List["+ i +"].Result"));
+			listItem.setItem(_ctx.stringValue("ValidateShardTaskResponse.List["+ i +"].Item"));
+			listItem.setResult(_ctx.integerValue("ValidateShardTaskResponse.List["+ i +"].Result"));
 
 			list.add(listItem);
 		}

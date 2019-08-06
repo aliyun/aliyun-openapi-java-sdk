@@ -24,7 +24,7 @@ import java.util.List;
 public class SetupDrdsParamsRequest extends RpcAcsRequest<SetupDrdsParamsResponse> {
 	
 	public SetupDrdsParamsRequest() {
-		super("Drds", "2019-01-23", "SetupDrdsParams");
+		super("Drds", "2019-01-23", "SetupDrdsParams", "drds");
 	}
 
 	private String paramLevel;

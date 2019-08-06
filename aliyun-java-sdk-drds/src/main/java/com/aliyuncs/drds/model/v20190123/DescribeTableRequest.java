@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeTableRequest extends RpcAcsRequest<DescribeTableResponse> {
 	
 	public DescribeTableRequest() {
-		super("Drds", "2019-01-23", "DescribeTable");
+		super("Drds", "2019-01-23", "DescribeTable", "drds");
 	}
 
 	private String dbName;

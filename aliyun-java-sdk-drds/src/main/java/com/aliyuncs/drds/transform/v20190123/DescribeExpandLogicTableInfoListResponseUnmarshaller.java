@@ -14,16 +14,31 @@
 
 package com.aliyuncs.drds.transform.v20190123;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.drds.model.v20190123.DescribeExpandLogicTableInfoListResponse;
+import com.aliyuncs.drds.model.v20190123.DescribeExpandLogicTableInfoListResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeExpandLogicTableInfoListResponseUnmarshaller {
 
-	public static DescribeExpandLogicTableInfoListResponse unmarshall(DescribeExpandLogicTableInfoListResponse describeExpandLogicTableInfoListResponse, UnmarshallerContext context) {
+	public static DescribeExpandLogicTableInfoListResponse unmarshall(DescribeExpandLogicTableInfoListResponse describeExpandLogicTableInfoListResponse, UnmarshallerContext _ctx) {
 		
-		describeExpandLogicTableInfoListResponse.setRequestId(context.stringValue("DescribeExpandLogicTableInfoListResponse.RequestId"));
-		describeExpandLogicTableInfoListResponse.setSuccess(context.booleanValue("DescribeExpandLogicTableInfoListResponse.Success"));
+		describeExpandLogicTableInfoListResponse.setRequestId(_ctx.stringValue("DescribeExpandLogicTableInfoListResponse.RequestId"));
+		describeExpandLogicTableInfoListResponse.setSuccess(_ctx.booleanValue("DescribeExpandLogicTableInfoListResponse.Success"));
+
+		List<DataItem> data = new ArrayList<DataItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeExpandLogicTableInfoListResponse.Data.Length"); i++) {
+			DataItem dataItem = new DataItem();
+			dataItem.setTableName(_ctx.stringValue("DescribeExpandLogicTableInfoListResponse.Data["+ i +"].TableName"));
+			dataItem.setShardDbKey(_ctx.stringValue("DescribeExpandLogicTableInfoListResponse.Data["+ i +"].ShardDbKey"));
+			dataItem.setShardTbKey(_ctx.stringValue("DescribeExpandLogicTableInfoListResponse.Data["+ i +"].ShardTbKey"));
+
+			data.add(dataItem);
+		}
+		describeExpandLogicTableInfoListResponse.setData(data);
 	 
 	 	return describeExpandLogicTableInfoListResponse;
 	}

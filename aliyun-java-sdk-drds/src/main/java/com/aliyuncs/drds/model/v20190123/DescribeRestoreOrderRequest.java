@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRestoreOrderRequest extends RpcAcsRequest<DescribeRestoreOrderResponse> {
 	
 	public DescribeRestoreOrderRequest() {
-		super("Drds", "2019-01-23", "DescribeRestoreOrder");
+		super("Drds", "2019-01-23", "DescribeRestoreOrder", "drds");
 	}
 
 	private String preferredBackupTime;

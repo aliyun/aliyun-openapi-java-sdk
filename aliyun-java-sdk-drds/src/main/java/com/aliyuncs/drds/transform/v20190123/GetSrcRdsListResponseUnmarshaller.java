@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSrcRdsListResponseUnmarshaller {
 
-	public static GetSrcRdsListResponse unmarshall(GetSrcRdsListResponse getSrcRdsListResponse, UnmarshallerContext context) {
+	public static GetSrcRdsListResponse unmarshall(GetSrcRdsListResponse getSrcRdsListResponse, UnmarshallerContext _ctx) {
 		
-		getSrcRdsListResponse.setRequestId(context.stringValue("GetSrcRdsListResponse.RequestId"));
-		getSrcRdsListResponse.setSuccess(context.booleanValue("GetSrcRdsListResponse.Success"));
+		getSrcRdsListResponse.setRequestId(_ctx.stringValue("GetSrcRdsListResponse.RequestId"));
+		getSrcRdsListResponse.setSuccess(_ctx.booleanValue("GetSrcRdsListResponse.Success"));
 	 
 	 	return getSrcRdsListResponse;
 	}

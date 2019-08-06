@@ -24,7 +24,7 @@ import java.util.List;
 public class ModifyAccountPrivilegeRequest extends RpcAcsRequest<ModifyAccountPrivilegeResponse> {
 	
 	public ModifyAccountPrivilegeRequest() {
-		super("Drds", "2019-01-23", "ModifyAccountPrivilege");
+		super("Drds", "2019-01-23", "ModifyAccountPrivilege", "drds");
 	}
 
 	private String accountName;

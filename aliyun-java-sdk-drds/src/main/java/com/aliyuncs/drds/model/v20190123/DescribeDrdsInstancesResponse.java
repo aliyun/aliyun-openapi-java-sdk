@@ -115,6 +115,10 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 
 		private String label;
 
+		private String machineType;
+
+		private String orderInstanceId;
+
 		private List<Vip> vips;
 
 		private List<String> readOnlyDBInstanceIds;
@@ -301,6 +305,22 @@ public class DescribeDrdsInstancesResponse extends AcsResponse {
 
 		public void setLabel(String label) {
 			this.label = label;
+		}
+
+		public String getMachineType() {
+			return this.machineType;
+		}
+
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
+		}
+
+		public String getOrderInstanceId() {
+			return this.orderInstanceId;
+		}
+
+		public void setOrderInstanceId(String orderInstanceId) {
+			this.orderInstanceId = orderInstanceId;
 		}
 
 		public List<Vip> getVips() {

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReleaseInstanceInternetAddressResponseUnmarshaller {
 
-	public static ReleaseInstanceInternetAddressResponse unmarshall(ReleaseInstanceInternetAddressResponse releaseInstanceInternetAddressResponse, UnmarshallerContext context) {
+	public static ReleaseInstanceInternetAddressResponse unmarshall(ReleaseInstanceInternetAddressResponse releaseInstanceInternetAddressResponse, UnmarshallerContext _ctx) {
 		
-		releaseInstanceInternetAddressResponse.setRequestId(context.stringValue("ReleaseInstanceInternetAddressResponse.RequestId"));
-		releaseInstanceInternetAddressResponse.setData(context.booleanValue("ReleaseInstanceInternetAddressResponse.Data"));
+		releaseInstanceInternetAddressResponse.setRequestId(_ctx.stringValue("ReleaseInstanceInternetAddressResponse.RequestId"));
+		releaseInstanceInternetAddressResponse.setData(_ctx.booleanValue("ReleaseInstanceInternetAddressResponse.Data"));
 	 
 	 	return releaseInstanceInternetAddressResponse;
 	}

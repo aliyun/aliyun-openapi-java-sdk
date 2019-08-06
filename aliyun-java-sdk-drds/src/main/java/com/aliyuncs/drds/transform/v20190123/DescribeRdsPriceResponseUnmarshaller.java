@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRdsPriceResponseUnmarshaller {
 
-	public static DescribeRdsPriceResponse unmarshall(DescribeRdsPriceResponse describeRdsPriceResponse, UnmarshallerContext context) {
+	public static DescribeRdsPriceResponse unmarshall(DescribeRdsPriceResponse describeRdsPriceResponse, UnmarshallerContext _ctx) {
 		
-		describeRdsPriceResponse.setRequestId(context.stringValue("DescribeRdsPriceResponse.RequestId"));
-		describeRdsPriceResponse.setSuccess(context.booleanValue("DescribeRdsPriceResponse.Success"));
-		describeRdsPriceResponse.setData(context.stringValue("DescribeRdsPriceResponse.Data"));
+		describeRdsPriceResponse.setRequestId(_ctx.stringValue("DescribeRdsPriceResponse.RequestId"));
+		describeRdsPriceResponse.setSuccess(_ctx.booleanValue("DescribeRdsPriceResponse.Success"));
+		describeRdsPriceResponse.setData(_ctx.stringValue("DescribeRdsPriceResponse.Data"));
 	 
 	 	return describeRdsPriceResponse;
 	}

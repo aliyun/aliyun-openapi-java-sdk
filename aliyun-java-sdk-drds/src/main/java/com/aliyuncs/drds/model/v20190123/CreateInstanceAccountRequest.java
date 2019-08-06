@@ -24,7 +24,7 @@ import java.util.List;
 public class CreateInstanceAccountRequest extends RpcAcsRequest<CreateInstanceAccountResponse> {
 	
 	public CreateInstanceAccountRequest() {
-		super("Drds", "2019-01-23", "CreateInstanceAccount");
+		super("Drds", "2019-01-23", "CreateInstanceAccount", "drds");
 	}
 
 	private String password;

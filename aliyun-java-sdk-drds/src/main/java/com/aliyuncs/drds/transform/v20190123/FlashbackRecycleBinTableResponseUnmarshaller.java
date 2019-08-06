@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FlashbackRecycleBinTableResponseUnmarshaller {
 
-	public static FlashbackRecycleBinTableResponse unmarshall(FlashbackRecycleBinTableResponse flashbackRecycleBinTableResponse, UnmarshallerContext context) {
+	public static FlashbackRecycleBinTableResponse unmarshall(FlashbackRecycleBinTableResponse flashbackRecycleBinTableResponse, UnmarshallerContext _ctx) {
 		
-		flashbackRecycleBinTableResponse.setRequestId(context.stringValue("FlashbackRecycleBinTableResponse.RequestId"));
-		flashbackRecycleBinTableResponse.setSuccess(context.booleanValue("FlashbackRecycleBinTableResponse.Success"));
-		flashbackRecycleBinTableResponse.setData(context.booleanValue("FlashbackRecycleBinTableResponse.Data"));
+		flashbackRecycleBinTableResponse.setRequestId(_ctx.stringValue("FlashbackRecycleBinTableResponse.RequestId"));
+		flashbackRecycleBinTableResponse.setSuccess(_ctx.booleanValue("FlashbackRecycleBinTableResponse.Success"));
+		flashbackRecycleBinTableResponse.setData(_ctx.booleanValue("FlashbackRecycleBinTableResponse.Data"));
 	 
 	 	return flashbackRecycleBinTableResponse;
 	}

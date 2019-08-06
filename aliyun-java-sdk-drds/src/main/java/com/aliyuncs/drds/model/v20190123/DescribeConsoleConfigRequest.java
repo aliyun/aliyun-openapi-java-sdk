@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeConsoleConfigRequest extends RpcAcsRequest<DescribeConsoleConfigResponse> {
 	
 	public DescribeConsoleConfigRequest() {
-		super("Drds", "2019-01-23", "DescribeConsoleConfig");
+		super("Drds", "2019-01-23", "DescribeConsoleConfig", "drds");
 	}
 
 	private String type;

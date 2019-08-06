@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCandidateInstanceListRequest extends RpcAcsRequest<DescribeCandidateInstanceListResponse> {
 	
 	public DescribeCandidateInstanceListRequest() {
-		super("Drds", "2019-01-23", "DescribeCandidateInstanceList");
+		super("Drds", "2019-01-23", "DescribeCandidateInstanceList", "drds");
 	}
 
 	private String search;

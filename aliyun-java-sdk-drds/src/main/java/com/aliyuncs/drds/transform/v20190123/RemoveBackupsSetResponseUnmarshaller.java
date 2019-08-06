@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveBackupsSetResponseUnmarshaller {
 
-	public static RemoveBackupsSetResponse unmarshall(RemoveBackupsSetResponse removeBackupsSetResponse, UnmarshallerContext context) {
+	public static RemoveBackupsSetResponse unmarshall(RemoveBackupsSetResponse removeBackupsSetResponse, UnmarshallerContext _ctx) {
 		
-		removeBackupsSetResponse.setRequestId(context.stringValue("RemoveBackupsSetResponse.RequestId"));
-		removeBackupsSetResponse.setSuccess(context.booleanValue("RemoveBackupsSetResponse.Success"));
-		removeBackupsSetResponse.setResult(context.stringValue("RemoveBackupsSetResponse.Result"));
+		removeBackupsSetResponse.setRequestId(_ctx.stringValue("RemoveBackupsSetResponse.RequestId"));
+		removeBackupsSetResponse.setSuccess(_ctx.booleanValue("RemoveBackupsSetResponse.Success"));
+		removeBackupsSetResponse.setResult(_ctx.stringValue("RemoveBackupsSetResponse.Result"));
 	 
 	 	return removeBackupsSetResponse;
 	}

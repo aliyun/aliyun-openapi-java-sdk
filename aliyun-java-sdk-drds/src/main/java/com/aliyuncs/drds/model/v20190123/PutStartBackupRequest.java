@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PutStartBackupRequest extends RpcAcsRequest<PutStartBackupResponse> {
 	
 	public PutStartBackupRequest() {
-		super("Drds", "2019-01-23", "PutStartBackup");
+		super("Drds", "2019-01-23", "PutStartBackup", "drds");
 	}
 
 	private String backupDbNames;

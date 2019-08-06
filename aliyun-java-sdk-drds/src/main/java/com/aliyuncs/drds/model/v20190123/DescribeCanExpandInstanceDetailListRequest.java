@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCanExpandInstanceDetailListRequest extends RpcAcsRequest<DescribeCanExpandInstanceDetailListResponse> {
 	
 	public DescribeCanExpandInstanceDetailListRequest() {
-		super("Drds", "2019-01-23", "DescribeCanExpandInstanceDetailList");
+		super("Drds", "2019-01-23", "DescribeCanExpandInstanceDetailList", "drds");
 	}
 
 	private String currentPlan;

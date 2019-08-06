@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstDbLogInfoRequest extends RpcAcsRequest<DescribeInstDbLogInfoResponse> {
 	
 	public DescribeInstDbLogInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeInstDbLogInfo");
+		super("Drds", "2019-01-23", "DescribeInstDbLogInfo", "drds");
 	}
 
 	private String dbName;

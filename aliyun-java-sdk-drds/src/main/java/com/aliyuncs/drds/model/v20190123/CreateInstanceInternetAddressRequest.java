@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateInstanceInternetAddressRequest extends RpcAcsRequest<CreateInstanceInternetAddressResponse> {
 	
 	public CreateInstanceInternetAddressRequest() {
-		super("Drds", "2019-01-23", "CreateInstanceInternetAddress");
+		super("Drds", "2019-01-23", "CreateInstanceInternetAddress", "drds");
 	}
 
 	private String drdsInstanceId;

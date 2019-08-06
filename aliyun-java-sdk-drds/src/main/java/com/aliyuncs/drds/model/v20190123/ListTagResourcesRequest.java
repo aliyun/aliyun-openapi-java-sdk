@@ -24,7 +24,7 @@ import java.util.List;
 public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesResponse> {
 	
 	public ListTagResourcesRequest() {
-		super("Drds", "2019-01-23", "ListTagResources");
+		super("Drds", "2019-01-23", "ListTagResources", "drds");
 	}
 
 	private List<String> resourceIds;

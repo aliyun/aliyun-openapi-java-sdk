@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class RemoveBackupsSetRequest extends RpcAcsRequest<RemoveBackupsSetResponse> {
 	
 	public RemoveBackupsSetRequest() {
-		super("Drds", "2019-01-23", "RemoveBackupsSet");
+		super("Drds", "2019-01-23", "RemoveBackupsSet", "drds");
 	}
 
 	private String backupId;

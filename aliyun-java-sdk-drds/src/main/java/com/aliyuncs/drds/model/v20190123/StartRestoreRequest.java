@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartRestoreRequest extends RpcAcsRequest<StartRestoreResponse> {
 	
 	public StartRestoreRequest() {
-		super("Drds", "2019-01-23", "StartRestore");
+		super("Drds", "2019-01-23", "StartRestore", "drds");
 	}
 
 	private String preferredBackupTime;

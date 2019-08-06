@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitSqlFlashbackTaskRequest extends RpcAcsRequest<SubmitSqlFlashbackTaskResponse> {
 	
 	public SubmitSqlFlashbackTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSqlFlashbackTask");
+		super("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "drds");
 	}
 
 	private String traceId;

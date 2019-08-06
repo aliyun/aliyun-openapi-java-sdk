@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstanceSwitchNetworkRequest extends RpcAcsRequest<DescribeInstanceSwitchNetworkResponse> {
 	
 	public DescribeInstanceSwitchNetworkRequest() {
-		super("Drds", "2019-01-23", "DescribeInstanceSwitchNetwork");
+		super("Drds", "2019-01-23", "DescribeInstanceSwitchNetwork", "drds");
 	}
 
 	private String drdsInstanceId;

@@ -93,6 +93,10 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 		private String masterInstanceId;
 
+		private String machineType;
+
+		private String orderInstanceId;
+
 		private List<Vip> vips;
 
 		private List<String> readOnlyDBInstanceIds;
@@ -271,6 +275,22 @@ public class DescribeDrdsInstanceResponse extends AcsResponse {
 
 		public void setMasterInstanceId(String masterInstanceId) {
 			this.masterInstanceId = masterInstanceId;
+		}
+
+		public String getMachineType() {
+			return this.machineType;
+		}
+
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
+		}
+
+		public String getOrderInstanceId() {
+			return this.orderInstanceId;
+		}
+
+		public void setOrderInstanceId(String orderInstanceId) {
+			this.orderInstanceId = orderInstanceId;
 		}
 
 		public List<Vip> getVips() {

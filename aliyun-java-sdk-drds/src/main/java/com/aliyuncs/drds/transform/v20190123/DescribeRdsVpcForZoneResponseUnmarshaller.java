@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRdsVpcForZoneResponseUnmarshaller {
 
-	public static DescribeRdsVpcForZoneResponse unmarshall(DescribeRdsVpcForZoneResponse describeRdsVpcForZoneResponse, UnmarshallerContext context) {
+	public static DescribeRdsVpcForZoneResponse unmarshall(DescribeRdsVpcForZoneResponse describeRdsVpcForZoneResponse, UnmarshallerContext _ctx) {
 		
-		describeRdsVpcForZoneResponse.setRequestId(context.stringValue("DescribeRdsVpcForZoneResponse.RequestId"));
-		describeRdsVpcForZoneResponse.setSuccess(context.booleanValue("DescribeRdsVpcForZoneResponse.Success"));
-		describeRdsVpcForZoneResponse.setData(context.stringValue("DescribeRdsVpcForZoneResponse.Data"));
+		describeRdsVpcForZoneResponse.setRequestId(_ctx.stringValue("DescribeRdsVpcForZoneResponse.RequestId"));
+		describeRdsVpcForZoneResponse.setSuccess(_ctx.booleanValue("DescribeRdsVpcForZoneResponse.Success"));
+		describeRdsVpcForZoneResponse.setData(_ctx.stringValue("DescribeRdsVpcForZoneResponse.Data"));
 	 
 	 	return describeRdsVpcForZoneResponse;
 	}

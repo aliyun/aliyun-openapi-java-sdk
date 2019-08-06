@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetLogicTableInfoListResponseUnmarshaller {
 
-	public static GetLogicTableInfoListResponse unmarshall(GetLogicTableInfoListResponse getLogicTableInfoListResponse, UnmarshallerContext context) {
+	public static GetLogicTableInfoListResponse unmarshall(GetLogicTableInfoListResponse getLogicTableInfoListResponse, UnmarshallerContext _ctx) {
 		
-		getLogicTableInfoListResponse.setRequestId(context.stringValue("GetLogicTableInfoListResponse.RequestId"));
-		getLogicTableInfoListResponse.setSuccess(context.booleanValue("GetLogicTableInfoListResponse.Success"));
+		getLogicTableInfoListResponse.setRequestId(_ctx.stringValue("GetLogicTableInfoListResponse.RequestId"));
+		getLogicTableInfoListResponse.setSuccess(_ctx.booleanValue("GetLogicTableInfoListResponse.Success"));
 	 
 	 	return getLogicTableInfoListResponse;
 	}

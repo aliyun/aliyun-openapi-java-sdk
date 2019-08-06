@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckSlsStatusResponseUnmarshaller {
 
-	public static CheckSlsStatusResponse unmarshall(CheckSlsStatusResponse checkSlsStatusResponse, UnmarshallerContext context) {
+	public static CheckSlsStatusResponse unmarshall(CheckSlsStatusResponse checkSlsStatusResponse, UnmarshallerContext _ctx) {
 		
-		checkSlsStatusResponse.setRequestId(context.stringValue("CheckSlsStatusResponse.RequestId"));
-		checkSlsStatusResponse.setSuccess(context.booleanValue("CheckSlsStatusResponse.Success"));
-		checkSlsStatusResponse.setStatus(context.stringValue("CheckSlsStatusResponse.Status"));
+		checkSlsStatusResponse.setRequestId(_ctx.stringValue("CheckSlsStatusResponse.RequestId"));
+		checkSlsStatusResponse.setSuccess(_ctx.booleanValue("CheckSlsStatusResponse.Success"));
+		checkSlsStatusResponse.setStatus(_ctx.stringValue("CheckSlsStatusResponse.Status"));
 	 
 	 	return checkSlsStatusResponse;
 	}

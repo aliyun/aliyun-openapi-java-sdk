@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class EnableSqlFlashbackMatchSwitchRequest extends RpcAcsRequest<EnableSqlFlashbackMatchSwitchResponse> {
 	
 	public EnableSqlFlashbackMatchSwitchRequest() {
-		super("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch");
+		super("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "drds");
 	}
 
 	private String dbName;

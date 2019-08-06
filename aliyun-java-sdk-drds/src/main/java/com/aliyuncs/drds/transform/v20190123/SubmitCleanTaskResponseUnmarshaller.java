@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitCleanTaskResponseUnmarshaller {
 
-	public static SubmitCleanTaskResponse unmarshall(SubmitCleanTaskResponse submitCleanTaskResponse, UnmarshallerContext context) {
+	public static SubmitCleanTaskResponse unmarshall(SubmitCleanTaskResponse submitCleanTaskResponse, UnmarshallerContext _ctx) {
 		
-		submitCleanTaskResponse.setRequestId(context.stringValue("SubmitCleanTaskResponse.RequestId"));
-		submitCleanTaskResponse.setSuccess(context.booleanValue("SubmitCleanTaskResponse.Success"));
+		submitCleanTaskResponse.setRequestId(_ctx.stringValue("SubmitCleanTaskResponse.RequestId"));
+		submitCleanTaskResponse.setSuccess(_ctx.booleanValue("SubmitCleanTaskResponse.Success"));
 	 
 	 	return submitCleanTaskResponse;
 	}

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckRdsSuperAccountRequest extends RpcAcsRequest<CheckRdsSuperAccountResponse> {
 	
 	public CheckRdsSuperAccountRequest() {
-		super("Drds", "2019-01-23", "CheckRdsSuperAccount");
+		super("Drds", "2019-01-23", "CheckRdsSuperAccount", "drds");
 	}
 
 	private String password;

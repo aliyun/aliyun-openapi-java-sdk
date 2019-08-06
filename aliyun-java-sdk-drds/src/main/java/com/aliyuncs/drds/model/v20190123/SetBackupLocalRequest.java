@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetBackupLocalRequest extends RpcAcsRequest<SetBackupLocalResponse> {
 	
 	public SetBackupLocalRequest() {
-		super("Drds", "2019-01-23", "SetBackupLocal");
+		super("Drds", "2019-01-23", "SetBackupLocal", "drds");
 	}
 
 	private String localLogRetentionHours;

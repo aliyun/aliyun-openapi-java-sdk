@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RefreshDrdsAtomUrlResponseUnmarshaller {
 
-	public static RefreshDrdsAtomUrlResponse unmarshall(RefreshDrdsAtomUrlResponse refreshDrdsAtomUrlResponse, UnmarshallerContext context) {
+	public static RefreshDrdsAtomUrlResponse unmarshall(RefreshDrdsAtomUrlResponse refreshDrdsAtomUrlResponse, UnmarshallerContext _ctx) {
 		
-		refreshDrdsAtomUrlResponse.setRequestId(context.stringValue("RefreshDrdsAtomUrlResponse.RequestId"));
-		refreshDrdsAtomUrlResponse.setSuccess(context.booleanValue("RefreshDrdsAtomUrlResponse.Success"));
-		refreshDrdsAtomUrlResponse.setResult(context.booleanValue("RefreshDrdsAtomUrlResponse.Result"));
+		refreshDrdsAtomUrlResponse.setRequestId(_ctx.stringValue("RefreshDrdsAtomUrlResponse.RequestId"));
+		refreshDrdsAtomUrlResponse.setSuccess(_ctx.booleanValue("RefreshDrdsAtomUrlResponse.Success"));
+		refreshDrdsAtomUrlResponse.setResult(_ctx.booleanValue("RefreshDrdsAtomUrlResponse.Result"));
 	 
 	 	return refreshDrdsAtomUrlResponse;
 	}

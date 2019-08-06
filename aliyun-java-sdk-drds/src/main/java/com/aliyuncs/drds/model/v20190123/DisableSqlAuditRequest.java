@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DisableSqlAuditRequest extends RpcAcsRequest<DisableSqlAuditResponse> {
 	
 	public DisableSqlAuditRequest() {
-		super("Drds", "2019-01-23", "DisableSqlAudit");
+		super("Drds", "2019-01-23", "DisableSqlAudit", "drds");
 	}
 
 	private String dbName;

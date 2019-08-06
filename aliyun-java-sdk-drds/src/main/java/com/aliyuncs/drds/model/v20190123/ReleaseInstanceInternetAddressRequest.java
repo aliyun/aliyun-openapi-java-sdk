@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReleaseInstanceInternetAddressRequest extends RpcAcsRequest<ReleaseInstanceInternetAddressResponse> {
 	
 	public ReleaseInstanceInternetAddressRequest() {
-		super("Drds", "2019-01-23", "ReleaseInstanceInternetAddress");
+		super("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "drds");
 	}
 
 	private String drdsInstanceId;

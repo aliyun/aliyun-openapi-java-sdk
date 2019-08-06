@@ -24,7 +24,7 @@ import java.util.List;
 public class SetupBroadcastTablesRequest extends RpcAcsRequest<SetupBroadcastTablesResponse> {
 	
 	public SetupBroadcastTablesRequest() {
-		super("Drds", "2019-01-23", "SetupBroadcastTables");
+		super("Drds", "2019-01-23", "SetupBroadcastTables", "drds");
 	}
 
 	private String dbName;

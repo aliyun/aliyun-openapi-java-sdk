@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class FlashbackRecycleBinTableRequest extends RpcAcsRequest<FlashbackRecycleBinTableResponse> {
 	
 	public FlashbackRecycleBinTableRequest() {
-		super("Drds", "2019-01-23", "FlashbackRecycleBinTable");
+		super("Drds", "2019-01-23", "FlashbackRecycleBinTable", "drds");
 	}
 
 	private String dbName;

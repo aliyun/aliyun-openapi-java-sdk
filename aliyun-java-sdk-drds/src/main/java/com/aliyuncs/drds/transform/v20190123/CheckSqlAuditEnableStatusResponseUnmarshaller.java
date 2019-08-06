@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckSqlAuditEnableStatusResponseUnmarshaller {
 
-	public static CheckSqlAuditEnableStatusResponse unmarshall(CheckSqlAuditEnableStatusResponse checkSqlAuditEnableStatusResponse, UnmarshallerContext context) {
+	public static CheckSqlAuditEnableStatusResponse unmarshall(CheckSqlAuditEnableStatusResponse checkSqlAuditEnableStatusResponse, UnmarshallerContext _ctx) {
 		
-		checkSqlAuditEnableStatusResponse.setRequestId(context.stringValue("CheckSqlAuditEnableStatusResponse.RequestId"));
-		checkSqlAuditEnableStatusResponse.setSuccess(context.booleanValue("CheckSqlAuditEnableStatusResponse.Success"));
-		checkSqlAuditEnableStatusResponse.setStatus(context.stringValue("CheckSqlAuditEnableStatusResponse.Status"));
+		checkSqlAuditEnableStatusResponse.setRequestId(_ctx.stringValue("CheckSqlAuditEnableStatusResponse.RequestId"));
+		checkSqlAuditEnableStatusResponse.setSuccess(_ctx.booleanValue("CheckSqlAuditEnableStatusResponse.Success"));
+		checkSqlAuditEnableStatusResponse.setStatus(_ctx.stringValue("CheckSqlAuditEnableStatusResponse.Status"));
 	 
 	 	return checkSqlAuditEnableStatusResponse;
 	}

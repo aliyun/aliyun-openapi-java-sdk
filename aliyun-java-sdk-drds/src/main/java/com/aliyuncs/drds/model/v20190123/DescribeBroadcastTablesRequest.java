@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeBroadcastTablesRequest extends RpcAcsRequest<DescribeBroadcastTablesResponse> {
 	
 	public DescribeBroadcastTablesRequest() {
-		super("Drds", "2019-01-23", "DescribeBroadcastTables");
+		super("Drds", "2019-01-23", "DescribeBroadcastTables", "drds");
 	}
 
 	private String dbName;

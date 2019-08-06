@@ -24,7 +24,7 @@ import java.util.List;
 public class DeleteShardTasksRequest extends RpcAcsRequest<DeleteShardTasksResponse> {
 	
 	public DeleteShardTasksRequest() {
-		super("Drds", "2019-01-23", "DeleteShardTasks");
+		super("Drds", "2019-01-23", "DeleteShardTasks", "drds");
 	}
 
 	private String dbName;

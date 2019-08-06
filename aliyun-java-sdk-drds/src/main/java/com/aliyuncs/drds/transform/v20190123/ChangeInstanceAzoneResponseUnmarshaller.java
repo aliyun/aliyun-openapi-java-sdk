@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ChangeInstanceAzoneResponseUnmarshaller {
 
-	public static ChangeInstanceAzoneResponse unmarshall(ChangeInstanceAzoneResponse changeInstanceAzoneResponse, UnmarshallerContext context) {
+	public static ChangeInstanceAzoneResponse unmarshall(ChangeInstanceAzoneResponse changeInstanceAzoneResponse, UnmarshallerContext _ctx) {
 		
-		changeInstanceAzoneResponse.setRequestId(context.stringValue("ChangeInstanceAzoneResponse.RequestId"));
-		changeInstanceAzoneResponse.setSuccess(context.booleanValue("ChangeInstanceAzoneResponse.Success"));
+		changeInstanceAzoneResponse.setRequestId(_ctx.stringValue("ChangeInstanceAzoneResponse.RequestId"));
+		changeInstanceAzoneResponse.setSuccess(_ctx.booleanValue("ChangeInstanceAzoneResponse.Success"));
 	 
 	 	return changeInstanceAzoneResponse;
 	}

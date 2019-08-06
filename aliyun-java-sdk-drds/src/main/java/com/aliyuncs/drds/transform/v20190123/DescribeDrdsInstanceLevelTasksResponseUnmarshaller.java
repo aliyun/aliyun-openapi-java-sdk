@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDrdsInstanceLevelTasksResponseUnmarshaller {
 
-	public static DescribeDrdsInstanceLevelTasksResponse unmarshall(DescribeDrdsInstanceLevelTasksResponse describeDrdsInstanceLevelTasksResponse, UnmarshallerContext context) {
+	public static DescribeDrdsInstanceLevelTasksResponse unmarshall(DescribeDrdsInstanceLevelTasksResponse describeDrdsInstanceLevelTasksResponse, UnmarshallerContext _ctx) {
 		
-		describeDrdsInstanceLevelTasksResponse.setRequestId(context.stringValue("DescribeDrdsInstanceLevelTasksResponse.RequestId"));
-		describeDrdsInstanceLevelTasksResponse.setSuccess(context.booleanValue("DescribeDrdsInstanceLevelTasksResponse.Success"));
+		describeDrdsInstanceLevelTasksResponse.setRequestId(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.RequestId"));
+		describeDrdsInstanceLevelTasksResponse.setSuccess(_ctx.booleanValue("DescribeDrdsInstanceLevelTasksResponse.Success"));
 
 		List<Task> tasks = new ArrayList<Task>();
-		for (int i = 0; i < context.lengthValue("DescribeDrdsInstanceLevelTasksResponse.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsInstanceLevelTasksResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setTaskName(context.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskName"));
-			task.setGmtCreate(context.longValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].GmtCreate"));
-			task.setTaskType(context.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskType"));
-			task.setTaskStatus(context.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskStatus"));
-			task.setProgress(context.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].Progress"));
-			task.setProgressDescription(context.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ProgressDescription"));
-			task.setTaskPhase(context.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskPhase"));
-			task.setErrMsg(context.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ErrMsg"));
-			task.setShowProgress(context.booleanValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ShowProgress"));
-			task.setAllowCancel(context.booleanValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].AllowCancel"));
+			task.setTaskName(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskName"));
+			task.setGmtCreate(_ctx.longValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].GmtCreate"));
+			task.setTaskType(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskType"));
+			task.setTaskStatus(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskStatus"));
+			task.setProgress(_ctx.integerValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].Progress"));
+			task.setProgressDescription(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ProgressDescription"));
+			task.setTaskPhase(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].TaskPhase"));
+			task.setErrMsg(_ctx.stringValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ErrMsg"));
+			task.setShowProgress(_ctx.booleanValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].ShowProgress"));
+			task.setAllowCancel(_ctx.booleanValue("DescribeDrdsInstanceLevelTasksResponse.Tasks["+ i +"].AllowCancel"));
 
 			tasks.add(task);
 		}

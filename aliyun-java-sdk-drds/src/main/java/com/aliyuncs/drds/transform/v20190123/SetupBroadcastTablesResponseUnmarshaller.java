@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetupBroadcastTablesResponseUnmarshaller {
 
-	public static SetupBroadcastTablesResponse unmarshall(SetupBroadcastTablesResponse setupBroadcastTablesResponse, UnmarshallerContext context) {
+	public static SetupBroadcastTablesResponse unmarshall(SetupBroadcastTablesResponse setupBroadcastTablesResponse, UnmarshallerContext _ctx) {
 		
-		setupBroadcastTablesResponse.setRequestId(context.stringValue("SetupBroadcastTablesResponse.RequestId"));
-		setupBroadcastTablesResponse.setSuccess(context.booleanValue("SetupBroadcastTablesResponse.Success"));
-		setupBroadcastTablesResponse.setData(context.booleanValue("SetupBroadcastTablesResponse.Data"));
+		setupBroadcastTablesResponse.setRequestId(_ctx.stringValue("SetupBroadcastTablesResponse.RequestId"));
+		setupBroadcastTablesResponse.setSuccess(_ctx.booleanValue("SetupBroadcastTablesResponse.Success"));
+		setupBroadcastTablesResponse.setData(_ctx.booleanValue("SetupBroadcastTablesResponse.Data"));
 	 
 	 	return setupBroadcastTablesResponse;
 	}

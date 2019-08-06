@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckRdsSuperAccountResponseUnmarshaller {
 
-	public static CheckRdsSuperAccountResponse unmarshall(CheckRdsSuperAccountResponse checkRdsSuperAccountResponse, UnmarshallerContext context) {
+	public static CheckRdsSuperAccountResponse unmarshall(CheckRdsSuperAccountResponse checkRdsSuperAccountResponse, UnmarshallerContext _ctx) {
 		
-		checkRdsSuperAccountResponse.setRequestId(context.stringValue("CheckRdsSuperAccountResponse.RequestId"));
-		checkRdsSuperAccountResponse.setSuccess(context.booleanValue("CheckRdsSuperAccountResponse.Success"));
+		checkRdsSuperAccountResponse.setRequestId(_ctx.stringValue("CheckRdsSuperAccountResponse.RequestId"));
+		checkRdsSuperAccountResponse.setSuccess(_ctx.booleanValue("CheckRdsSuperAccountResponse.Success"));
 	 
 	 	return checkRdsSuperAccountResponse;
 	}

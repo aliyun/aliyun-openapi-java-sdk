@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTableListByTypeResponseUnmarshaller {
 
-	public static DescribeTableListByTypeResponse unmarshall(DescribeTableListByTypeResponse describeTableListByTypeResponse, UnmarshallerContext context) {
+	public static DescribeTableListByTypeResponse unmarshall(DescribeTableListByTypeResponse describeTableListByTypeResponse, UnmarshallerContext _ctx) {
 		
-		describeTableListByTypeResponse.setRequestId(context.stringValue("DescribeTableListByTypeResponse.RequestId"));
-		describeTableListByTypeResponse.setSuccess(context.booleanValue("DescribeTableListByTypeResponse.Success"));
-		describeTableListByTypeResponse.setPageNumber(context.integerValue("DescribeTableListByTypeResponse.PageNumber"));
-		describeTableListByTypeResponse.setPageSize(context.integerValue("DescribeTableListByTypeResponse.PageSize"));
-		describeTableListByTypeResponse.setTotal(context.integerValue("DescribeTableListByTypeResponse.Total"));
+		describeTableListByTypeResponse.setRequestId(_ctx.stringValue("DescribeTableListByTypeResponse.RequestId"));
+		describeTableListByTypeResponse.setSuccess(_ctx.booleanValue("DescribeTableListByTypeResponse.Success"));
+		describeTableListByTypeResponse.setPageNumber(_ctx.integerValue("DescribeTableListByTypeResponse.PageNumber"));
+		describeTableListByTypeResponse.setPageSize(_ctx.integerValue("DescribeTableListByTypeResponse.PageSize"));
+		describeTableListByTypeResponse.setTotal(_ctx.integerValue("DescribeTableListByTypeResponse.Total"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
-		for (int i = 0; i < context.lengthValue("DescribeTableListByTypeResponse.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTableListByTypeResponse.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setTableName(context.stringValue("DescribeTableListByTypeResponse.List["+ i +"].TableName"));
-			listItem.setProperty(context.stringValue("DescribeTableListByTypeResponse.List["+ i +"].Property"));
+			listItem.setTableName(_ctx.stringValue("DescribeTableListByTypeResponse.List["+ i +"].TableName"));
+			listItem.setProperty(_ctx.stringValue("DescribeTableListByTypeResponse.List["+ i +"].Property"));
 
 			list.add(listItem);
 		}

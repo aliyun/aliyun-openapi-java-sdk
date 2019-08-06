@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsRegionsRequest extends RpcAcsRequest<DescribeDrdsRegionsResponse> {
 	
 	public DescribeDrdsRegionsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsRegions");
+		super("Drds", "2019-01-23", "DescribeDrdsRegions", "drds");
 	}
 
 	@Override

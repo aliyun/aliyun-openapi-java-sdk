@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRdsPriceRequest extends RpcAcsRequest<DescribeRdsPriceResponse> {
 	
 	public DescribeRdsPriceRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsPrice");
+		super("Drds", "2019-01-23", "DescribeRdsPrice", "drds");
 	}
 
 	private String params;

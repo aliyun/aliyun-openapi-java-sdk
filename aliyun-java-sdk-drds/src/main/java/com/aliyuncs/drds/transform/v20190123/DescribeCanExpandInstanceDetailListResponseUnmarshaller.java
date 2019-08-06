@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCanExpandInstanceDetailListResponseUnmarshaller {
 
-	public static DescribeCanExpandInstanceDetailListResponse unmarshall(DescribeCanExpandInstanceDetailListResponse describeCanExpandInstanceDetailListResponse, UnmarshallerContext context) {
+	public static DescribeCanExpandInstanceDetailListResponse unmarshall(DescribeCanExpandInstanceDetailListResponse describeCanExpandInstanceDetailListResponse, UnmarshallerContext _ctx) {
 		
-		describeCanExpandInstanceDetailListResponse.setRequestId(context.stringValue("DescribeCanExpandInstanceDetailListResponse.RequestId"));
-		describeCanExpandInstanceDetailListResponse.setSuccess(context.booleanValue("DescribeCanExpandInstanceDetailListResponse.Success"));
+		describeCanExpandInstanceDetailListResponse.setRequestId(_ctx.stringValue("DescribeCanExpandInstanceDetailListResponse.RequestId"));
+		describeCanExpandInstanceDetailListResponse.setSuccess(_ctx.booleanValue("DescribeCanExpandInstanceDetailListResponse.Success"));
 
 		List<ItemData> data = new ArrayList<ItemData>();
-		for (int i = 0; i < context.lengthValue("DescribeCanExpandInstanceDetailListResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCanExpandInstanceDetailListResponse.Data.Length"); i++) {
 			ItemData itemData = new ItemData();
-			itemData.setSrcInstance(context.stringValue("DescribeCanExpandInstanceDetailListResponse.Data["+ i +"].SrcInstance"));
+			itemData.setSrcInstance(_ctx.stringValue("DescribeCanExpandInstanceDetailListResponse.Data["+ i +"].SrcInstance"));
 
 			List<String> dbList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeCanExpandInstanceDetailListResponse.Data["+ i +"].DbList.Length"); j++) {
-				dbList.add(context.stringValue("DescribeCanExpandInstanceDetailListResponse.Data["+ i +"].DbList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeCanExpandInstanceDetailListResponse.Data["+ i +"].DbList.Length"); j++) {
+				dbList.add(_ctx.stringValue("DescribeCanExpandInstanceDetailListResponse.Data["+ i +"].DbList["+ j +"]"));
 			}
 			itemData.setDbList(dbList);
 

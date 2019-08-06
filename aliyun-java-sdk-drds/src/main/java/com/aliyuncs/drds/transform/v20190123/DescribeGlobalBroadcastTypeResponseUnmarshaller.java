@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGlobalBroadcastTypeResponseUnmarshaller {
 
-	public static DescribeGlobalBroadcastTypeResponse unmarshall(DescribeGlobalBroadcastTypeResponse describeGlobalBroadcastTypeResponse, UnmarshallerContext context) {
+	public static DescribeGlobalBroadcastTypeResponse unmarshall(DescribeGlobalBroadcastTypeResponse describeGlobalBroadcastTypeResponse, UnmarshallerContext _ctx) {
 		
-		describeGlobalBroadcastTypeResponse.setRequestId(context.stringValue("DescribeGlobalBroadcastTypeResponse.RequestId"));
-		describeGlobalBroadcastTypeResponse.setSuccess(context.booleanValue("DescribeGlobalBroadcastTypeResponse.Success"));
-		describeGlobalBroadcastTypeResponse.setData(context.stringValue("DescribeGlobalBroadcastTypeResponse.Data"));
+		describeGlobalBroadcastTypeResponse.setRequestId(_ctx.stringValue("DescribeGlobalBroadcastTypeResponse.RequestId"));
+		describeGlobalBroadcastTypeResponse.setSuccess(_ctx.booleanValue("DescribeGlobalBroadcastTypeResponse.Success"));
+		describeGlobalBroadcastTypeResponse.setData(_ctx.stringValue("DescribeGlobalBroadcastTypeResponse.Data"));
 	 
 	 	return describeGlobalBroadcastTypeResponse;
 	}

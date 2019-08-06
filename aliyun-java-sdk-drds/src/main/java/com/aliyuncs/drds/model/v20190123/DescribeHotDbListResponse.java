@@ -14,6 +14,7 @@
 
 package com.aliyuncs.drds.model.v20190123;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.drds.transform.v20190123.DescribeHotDbListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,10 @@ public class DescribeHotDbListResponse extends AcsResponse {
 	private String requestId;
 
 	private Boolean success;
+
+	private String msg;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +47,68 @@ public class DescribeHotDbListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getMsg() {
+		return this.msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String randomCode;
+
+		private List<InstanceDb> list;
+
+		public String getRandomCode() {
+			return this.randomCode;
+		}
+
+		public void setRandomCode(String randomCode) {
+			this.randomCode = randomCode;
+		}
+
+		public List<InstanceDb> getList() {
+			return this.list;
+		}
+
+		public void setList(List<InstanceDb> list) {
+			this.list = list;
+		}
+
+		public static class InstanceDb {
+
+			private String instanceName;
+
+			private List<String> hotDbList;
+
+			public String getInstanceName() {
+				return this.instanceName;
+			}
+
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
+			}
+
+			public List<String> getHotDbList() {
+				return this.hotDbList;
+			}
+
+			public void setHotDbList(List<String> hotDbList) {
+				this.hotDbList = hotDbList;
+			}
+		}
 	}
 
 	@Override

@@ -24,16 +24,16 @@ import java.util.List;
 public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTaskResponse> {
 	
 	public SubmitHotExpandTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitHotExpandTask");
+		super("Drds", "2019-01-23", "SubmitHotExpandTask", "drds");
 	}
+
+	private List<InstanceDbMapping> instanceDbMappings;
 
 	private List<Mapping> mappings;
 
 	private String taskDesc;
 
 	private String dbName;
-
-	private List<RdsDbMapping> rdsDbMappings;
 
 	private List<SupperAccountMapping> supperAccountMappings;
 
@@ -42,6 +42,20 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 	private String taskName;
 
 	private String drdsInstanceId;
+
+	public List<InstanceDbMapping> getInstanceDbMappings() {
+		return this.instanceDbMappings;
+	}
+
+	public void setInstanceDbMappings(List<InstanceDbMapping> instanceDbMappings) {
+		this.instanceDbMappings = instanceDbMappings;	
+		if (instanceDbMappings != null) {
+			for (int depth1 = 0; depth1 < instanceDbMappings.size(); depth1++) {
+				putQueryParameter("InstanceDbMapping." + (depth1 + 1) + ".DbList" , instanceDbMappings.get(depth1).getDbList());
+				putQueryParameter("InstanceDbMapping." + (depth1 + 1) + ".InstanceName" , instanceDbMappings.get(depth1).getInstanceName());
+			}
+		}	
+	}
 
 	public List<Mapping> getMappings() {
 		return this.mappings;
@@ -84,24 +98,6 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 		}
 	}
 
-	public List<RdsDbMapping> getRdsDbMappings() {
-		return this.rdsDbMappings;
-	}
-
-	public void setRdsDbMappings(List<RdsDbMapping> rdsDbMappings) {
-		this.rdsDbMappings = rdsDbMappings;	
-		if (rdsDbMappings != null) {
-			for (int depth1 = 0; depth1 < rdsDbMappings.size(); depth1++) {
-				if (rdsDbMappings.get(depth1).getDbLists() != null) {
-					for (int i = 0; i < rdsDbMappings.get(depth1).getDbLists().size(); i++) {
-						putQueryParameter("RdsDbMapping." + (depth1 + 1) + ".DbList." + (i + 1) , rdsDbMappings.get(depth1).getDbLists().get(i));
-					}
-				}
-				putQueryParameter("RdsDbMapping." + (depth1 + 1) + ".RdsInstanceName" , rdsDbMappings.get(depth1).getRdsInstanceName());
-			}
-		}	
-	}
-
 	public List<SupperAccountMapping> getSupperAccountMappings() {
 		return this.supperAccountMappings;
 	}
@@ -110,7 +106,7 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 		this.supperAccountMappings = supperAccountMappings;	
 		if (supperAccountMappings != null) {
 			for (int depth1 = 0; depth1 < supperAccountMappings.size(); depth1++) {
-				putQueryParameter("SupperAccountMapping." + (depth1 + 1) + ".RdsInstanceName" , supperAccountMappings.get(depth1).getRdsInstanceName());
+				putQueryParameter("SupperAccountMapping." + (depth1 + 1) + ".InstanceName" , supperAccountMappings.get(depth1).getInstanceName());
 				putQueryParameter("SupperAccountMapping." + (depth1 + 1) + ".SupperAccount" , supperAccountMappings.get(depth1).getSupperAccount());
 				putQueryParameter("SupperAccountMapping." + (depth1 + 1) + ".SupperPassword" , supperAccountMappings.get(depth1).getSupperPassword());
 			}
@@ -125,7 +121,7 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 		this.extendedMappings = extendedMappings;	
 		if (extendedMappings != null) {
 			for (int depth1 = 0; depth1 < extendedMappings.size(); depth1++) {
-				putQueryParameter("ExtendedMapping." + (depth1 + 1) + ".SrcRdsInstanceId" , extendedMappings.get(depth1).getSrcRdsInstanceId());
+				putQueryParameter("ExtendedMapping." + (depth1 + 1) + ".SrcInstanceId" , extendedMappings.get(depth1).getSrcInstanceId());
 				putQueryParameter("ExtendedMapping." + (depth1 + 1) + ".SrcDb" , extendedMappings.get(depth1).getSrcDb());
 			}
 		}	
@@ -150,6 +146,29 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
+		}
+	}
+
+	public static class InstanceDbMapping {
+
+		private String dbList;
+
+		private String instanceName;
+
+		public String getDbList() {
+			return this.dbList;
+		}
+
+		public void setDbList(String dbList) {
+			this.dbList = dbList;
+		}
+
+		public String getInstanceName() {
+			return this.instanceName;
+		}
+
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 	}
 
@@ -226,43 +245,20 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 		}
 	}
 
-	public static class RdsDbMapping {
-
-		private List<String> dbLists;
-
-		private String rdsInstanceName;
-
-		public List<String> getDbLists() {
-			return this.dbLists;
-		}
-
-		public void setDbLists(List<String> dbLists) {
-			this.dbLists = dbLists;
-		}
-
-		public String getRdsInstanceName() {
-			return this.rdsInstanceName;
-		}
-
-		public void setRdsInstanceName(String rdsInstanceName) {
-			this.rdsInstanceName = rdsInstanceName;
-		}
-	}
-
 	public static class SupperAccountMapping {
 
-		private String rdsInstanceName;
+		private String instanceName;
 
 		private String supperAccount;
 
 		private String supperPassword;
 
-		public String getRdsInstanceName() {
-			return this.rdsInstanceName;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setRdsInstanceName(String rdsInstanceName) {
-			this.rdsInstanceName = rdsInstanceName;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
 		}
 
 		public String getSupperAccount() {
@@ -284,16 +280,16 @@ public class SubmitHotExpandTaskRequest extends RpcAcsRequest<SubmitHotExpandTas
 
 	public static class ExtendedMapping {
 
-		private String srcRdsInstanceId;
+		private String srcInstanceId;
 
 		private String srcDb;
 
-		public String getSrcRdsInstanceId() {
-			return this.srcRdsInstanceId;
+		public String getSrcInstanceId() {
+			return this.srcInstanceId;
 		}
 
-		public void setSrcRdsInstanceId(String srcRdsInstanceId) {
-			this.srcRdsInstanceId = srcRdsInstanceId;
+		public void setSrcInstanceId(String srcInstanceId) {
+			this.srcInstanceId = srcInstanceId;
 		}
 
 		public String getSrcDb() {

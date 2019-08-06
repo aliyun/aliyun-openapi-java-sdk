@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CheckDrdsDefaultRoleRequest extends RpcAcsRequest<CheckDrdsDefaultRoleResponse> {
 	
 	public CheckDrdsDefaultRoleRequest() {
-		super("Drds", "2019-01-23", "CheckDrdsDefaultRole");
+		super("Drds", "2019-01-23", "CheckDrdsDefaultRole", "drds");
 	}
 
 	@Override

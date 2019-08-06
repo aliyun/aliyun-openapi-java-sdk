@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckExpandStatusResponseUnmarshaller {
 
-	public static CheckExpandStatusResponse unmarshall(CheckExpandStatusResponse checkExpandStatusResponse, UnmarshallerContext context) {
+	public static CheckExpandStatusResponse unmarshall(CheckExpandStatusResponse checkExpandStatusResponse, UnmarshallerContext _ctx) {
 		
-		checkExpandStatusResponse.setRequestId(context.stringValue("CheckExpandStatusResponse.RequestId"));
-		checkExpandStatusResponse.setSuccess(context.booleanValue("CheckExpandStatusResponse.Success"));
+		checkExpandStatusResponse.setRequestId(_ctx.stringValue("CheckExpandStatusResponse.RequestId"));
+		checkExpandStatusResponse.setSuccess(_ctx.booleanValue("CheckExpandStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setIsActive(context.booleanValue("CheckExpandStatusResponse.Data.IsActive"));
-		data.setMsg(context.stringValue("CheckExpandStatusResponse.Data.Msg"));
+		data.setIsActive(_ctx.booleanValue("CheckExpandStatusResponse.Data.IsActive"));
+		data.setMsg(_ctx.stringValue("CheckExpandStatusResponse.Data.Msg"));
 		checkExpandStatusResponse.setData(data);
 	 
 	 	return checkExpandStatusResponse;

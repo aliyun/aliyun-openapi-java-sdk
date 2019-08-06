@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpgradeInstanceVersionResponseUnmarshaller {
 
-	public static UpgradeInstanceVersionResponse unmarshall(UpgradeInstanceVersionResponse upgradeInstanceVersionResponse, UnmarshallerContext context) {
+	public static UpgradeInstanceVersionResponse unmarshall(UpgradeInstanceVersionResponse upgradeInstanceVersionResponse, UnmarshallerContext _ctx) {
 		
-		upgradeInstanceVersionResponse.setRequestId(context.stringValue("UpgradeInstanceVersionResponse.RequestId"));
-		upgradeInstanceVersionResponse.setData(context.stringValue("UpgradeInstanceVersionResponse.Data"));
+		upgradeInstanceVersionResponse.setRequestId(_ctx.stringValue("UpgradeInstanceVersionResponse.RequestId"));
+		upgradeInstanceVersionResponse.setData(_ctx.stringValue("UpgradeInstanceVersionResponse.Data"));
 	 
 	 	return upgradeInstanceVersionResponse;
 	}

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetupRecycleBinStatusResponseUnmarshaller {
 
-	public static SetupRecycleBinStatusResponse unmarshall(SetupRecycleBinStatusResponse setupRecycleBinStatusResponse, UnmarshallerContext context) {
+	public static SetupRecycleBinStatusResponse unmarshall(SetupRecycleBinStatusResponse setupRecycleBinStatusResponse, UnmarshallerContext _ctx) {
 		
-		setupRecycleBinStatusResponse.setRequestId(context.stringValue("SetupRecycleBinStatusResponse.RequestId"));
-		setupRecycleBinStatusResponse.setSuccess(context.booleanValue("SetupRecycleBinStatusResponse.Success"));
-		setupRecycleBinStatusResponse.setData(context.booleanValue("SetupRecycleBinStatusResponse.Data"));
+		setupRecycleBinStatusResponse.setRequestId(_ctx.stringValue("SetupRecycleBinStatusResponse.RequestId"));
+		setupRecycleBinStatusResponse.setSuccess(_ctx.booleanValue("SetupRecycleBinStatusResponse.Success"));
+		setupRecycleBinStatusResponse.setData(_ctx.booleanValue("SetupRecycleBinStatusResponse.Data"));
 	 
 	 	return setupRecycleBinStatusResponse;
 	}

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsSlowSqlsRequest extends RpcAcsRequest<DescribeDrdsSlowSqlsResponse> {
 	
 	public DescribeDrdsSlowSqlsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsSlowSqls");
+		super("Drds", "2019-01-23", "DescribeDrdsSlowSqls", "drds");
 	}
 
 	private String dbName;

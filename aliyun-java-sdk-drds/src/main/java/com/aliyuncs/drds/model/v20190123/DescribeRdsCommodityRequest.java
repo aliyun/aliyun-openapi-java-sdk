@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRdsCommodityRequest extends RpcAcsRequest<DescribeRdsCommodityResponse> {
 	
 	public DescribeRdsCommodityRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsCommodity");
+		super("Drds", "2019-01-23", "DescribeRdsCommodity", "drds");
 	}
 
 	private String commodityCode;

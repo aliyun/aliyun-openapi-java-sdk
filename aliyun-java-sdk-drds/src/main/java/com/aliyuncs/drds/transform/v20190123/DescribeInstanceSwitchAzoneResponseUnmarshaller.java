@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceSwitchAzoneResponseUnmarshaller {
 
-	public static DescribeInstanceSwitchAzoneResponse unmarshall(DescribeInstanceSwitchAzoneResponse describeInstanceSwitchAzoneResponse, UnmarshallerContext context) {
+	public static DescribeInstanceSwitchAzoneResponse unmarshall(DescribeInstanceSwitchAzoneResponse describeInstanceSwitchAzoneResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceSwitchAzoneResponse.setRequestId(context.stringValue("DescribeInstanceSwitchAzoneResponse.RequestId"));
-		describeInstanceSwitchAzoneResponse.setSuccess(context.booleanValue("DescribeInstanceSwitchAzoneResponse.Success"));
+		describeInstanceSwitchAzoneResponse.setRequestId(_ctx.stringValue("DescribeInstanceSwitchAzoneResponse.RequestId"));
+		describeInstanceSwitchAzoneResponse.setSuccess(_ctx.booleanValue("DescribeInstanceSwitchAzoneResponse.Success"));
 
 		Result result = new Result();
-		result.setOriginAzoneId(context.stringValue("DescribeInstanceSwitchAzoneResponse.Result.OriginAzoneId"));
-		result.setRegionId(context.stringValue("DescribeInstanceSwitchAzoneResponse.Result.RegionId"));
-		result.setSwitchAble(context.booleanValue("DescribeInstanceSwitchAzoneResponse.Result.SwitchAble"));
+		result.setOriginAzoneId(_ctx.stringValue("DescribeInstanceSwitchAzoneResponse.Result.OriginAzoneId"));
+		result.setRegionId(_ctx.stringValue("DescribeInstanceSwitchAzoneResponse.Result.RegionId"));
+		result.setSwitchAble(_ctx.booleanValue("DescribeInstanceSwitchAzoneResponse.Result.SwitchAble"));
 
 		List<String> targetAzones = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceSwitchAzoneResponse.Result.TargetAzones.Length"); i++) {
-			targetAzones.add(context.stringValue("DescribeInstanceSwitchAzoneResponse.Result.TargetAzones["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceSwitchAzoneResponse.Result.TargetAzones.Length"); i++) {
+			targetAzones.add(_ctx.stringValue("DescribeInstanceSwitchAzoneResponse.Result.TargetAzones["+ i +"]"));
 		}
 		result.setTargetAzones(targetAzones);
 		describeInstanceSwitchAzoneResponse.setResult(result);

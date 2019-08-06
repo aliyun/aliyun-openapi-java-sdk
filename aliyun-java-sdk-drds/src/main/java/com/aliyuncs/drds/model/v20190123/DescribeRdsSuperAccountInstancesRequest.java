@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeRdsSuperAccountInstancesRequest extends RpcAcsRequest<DescribeRdsSuperAccountInstancesResponse> {
 	
 	public DescribeRdsSuperAccountInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances");
+		super("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "drds");
 	}
 
 	private List<String> rdsInstances;

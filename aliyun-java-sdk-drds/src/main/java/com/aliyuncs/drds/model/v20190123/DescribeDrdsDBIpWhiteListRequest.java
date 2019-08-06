@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsDBIpWhiteListRequest extends RpcAcsRequest<DescribeDrdsDBIpWhiteListResponse> {
 	
 	public DescribeDrdsDBIpWhiteListRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDBIpWhiteList");
+		super("Drds", "2019-01-23", "DescribeDrdsDBIpWhiteList", "drds");
 	}
 
 	private String dbName;

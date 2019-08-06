@@ -24,7 +24,7 @@ import java.util.List;
 public class RearrangeDbToInstanceRequest extends RpcAcsRequest<RearrangeDbToInstanceResponse> {
 	
 	public RearrangeDbToInstanceRequest() {
-		super("Drds", "2019-01-23", "RearrangeDbToInstance");
+		super("Drds", "2019-01-23", "RearrangeDbToInstance", "drds");
 	}
 
 	private String chooseSubDb;
@@ -32,6 +32,8 @@ public class RearrangeDbToInstanceRequest extends RpcAcsRequest<RearrangeDbToIns
 	private List<String> instanceLists;
 
 	private String dbName;
+
+	private String orderId;
 
 	private String chooseRds;
 
@@ -69,6 +71,17 @@ public class RearrangeDbToInstanceRequest extends RpcAcsRequest<RearrangeDbToIns
 		this.dbName = dbName;
 		if(dbName != null){
 			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+		if(orderId != null){
+			putQueryParameter("OrderId", orderId);
 		}
 	}
 

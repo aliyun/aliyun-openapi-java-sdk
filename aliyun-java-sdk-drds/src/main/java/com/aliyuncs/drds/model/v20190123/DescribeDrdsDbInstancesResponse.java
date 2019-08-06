@@ -101,6 +101,18 @@ public class DescribeDrdsDbInstancesResponse extends AcsResponse {
 
 		private String networkType;
 
+		private String engine;
+
+		private String engineVersion;
+
+		private String rdsInstType;
+
+		private String payType;
+
+		private String expireTime;
+
+		private Integer remainDays;
+
 		private List<ReadOnlyInstance> readOnlyInstances;
 
 		public String getDBInstanceId() {
@@ -159,6 +171,54 @@ public class DescribeDrdsDbInstancesResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public String getRdsInstType() {
+			return this.rdsInstType;
+		}
+
+		public void setRdsInstType(String rdsInstType) {
+			this.rdsInstType = rdsInstType;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
+		}
+
+		public Integer getRemainDays() {
+			return this.remainDays;
+		}
+
+		public void setRemainDays(Integer remainDays) {
+			this.remainDays = remainDays;
+		}
+
 		public List<ReadOnlyInstance> getReadOnlyInstances() {
 			return this.readOnlyInstances;
 		}
@@ -182,6 +242,18 @@ public class DescribeDrdsDbInstancesResponse extends AcsResponse {
 			private Integer readWeight;
 
 			private String networkType;
+
+			private String engine;
+
+			private String engineVersion;
+
+			private String rdsInstType;
+
+			private String payType;
+
+			private String expireTime;
+
+			private Integer remainDays;
 
 			public String getInstanceName() {
 				return this.instanceName;
@@ -237,6 +309,54 @@ public class DescribeDrdsDbInstancesResponse extends AcsResponse {
 
 			public void setNetworkType(String networkType) {
 				this.networkType = networkType;
+			}
+
+			public String getEngine() {
+				return this.engine;
+			}
+
+			public void setEngine(String engine) {
+				this.engine = engine;
+			}
+
+			public String getEngineVersion() {
+				return this.engineVersion;
+			}
+
+			public void setEngineVersion(String engineVersion) {
+				this.engineVersion = engineVersion;
+			}
+
+			public String getRdsInstType() {
+				return this.rdsInstType;
+			}
+
+			public void setRdsInstType(String rdsInstType) {
+				this.rdsInstType = rdsInstType;
+			}
+
+			public String getPayType() {
+				return this.payType;
+			}
+
+			public void setPayType(String payType) {
+				this.payType = payType;
+			}
+
+			public String getExpireTime() {
+				return this.expireTime;
+			}
+
+			public void setExpireTime(String expireTime) {
+				this.expireTime = expireTime;
+			}
+
+			public Integer getRemainDays() {
+				return this.remainDays;
+			}
+
+			public void setRemainDays(Integer remainDays) {
+				this.remainDays = remainDays;
 			}
 		}
 	}

@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstDbLogInfoResponseUnmarshaller {
 
-	public static DescribeInstDbLogInfoResponse unmarshall(DescribeInstDbLogInfoResponse describeInstDbLogInfoResponse, UnmarshallerContext context) {
+	public static DescribeInstDbLogInfoResponse unmarshall(DescribeInstDbLogInfoResponse describeInstDbLogInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeInstDbLogInfoResponse.setRequestId(context.stringValue("DescribeInstDbLogInfoResponse.RequestId"));
-		describeInstDbLogInfoResponse.setSuccess(context.booleanValue("DescribeInstDbLogInfoResponse.Success"));
+		describeInstDbLogInfoResponse.setRequestId(_ctx.stringValue("DescribeInstDbLogInfoResponse.RequestId"));
+		describeInstDbLogInfoResponse.setSuccess(_ctx.booleanValue("DescribeInstDbLogInfoResponse.Success"));
 
 		LogTimeRange logTimeRange = new LogTimeRange();
-		logTimeRange.setSupportOldestTime(context.longValue("DescribeInstDbLogInfoResponse.LogTimeRange.SupportOldestTime"));
-		logTimeRange.setSupportLatestTime(context.longValue("DescribeInstDbLogInfoResponse.LogTimeRange.SupportLatestTime"));
+		logTimeRange.setSupportOldestTime(_ctx.longValue("DescribeInstDbLogInfoResponse.LogTimeRange.SupportOldestTime"));
+		logTimeRange.setSupportLatestTime(_ctx.longValue("DescribeInstDbLogInfoResponse.LogTimeRange.SupportLatestTime"));
 		describeInstDbLogInfoResponse.setLogTimeRange(logTimeRange);
 	 
 	 	return describeInstDbLogInfoResponse;

@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsInstanceLevelTasksRequest extends RpcAcsRequest<DescribeDrdsInstanceLevelTasksResponse> {
 	
 	public DescribeDrdsInstanceLevelTasksRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceLevelTasks");
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceLevelTasks", "drds");
 	}
 
 	private String drdsInstanceId;

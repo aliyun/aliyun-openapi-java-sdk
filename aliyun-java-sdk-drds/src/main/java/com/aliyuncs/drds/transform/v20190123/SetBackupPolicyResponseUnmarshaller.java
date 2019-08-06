@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetBackupPolicyResponseUnmarshaller {
 
-	public static SetBackupPolicyResponse unmarshall(SetBackupPolicyResponse setBackupPolicyResponse, UnmarshallerContext context) {
+	public static SetBackupPolicyResponse unmarshall(SetBackupPolicyResponse setBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
-		setBackupPolicyResponse.setRequestId(context.stringValue("SetBackupPolicyResponse.RequestId"));
-		setBackupPolicyResponse.setResult(context.stringValue("SetBackupPolicyResponse.Result"));
-		setBackupPolicyResponse.setSuccess(context.booleanValue("SetBackupPolicyResponse.Success"));
+		setBackupPolicyResponse.setRequestId(_ctx.stringValue("SetBackupPolicyResponse.RequestId"));
+		setBackupPolicyResponse.setResult(_ctx.stringValue("SetBackupPolicyResponse.Result"));
+		setBackupPolicyResponse.setSuccess(_ctx.booleanValue("SetBackupPolicyResponse.Success"));
 	 
 	 	return setBackupPolicyResponse;
 	}

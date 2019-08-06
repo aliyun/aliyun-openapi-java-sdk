@@ -15,7 +15,6 @@
 package com.aliyuncs.drds.model.v20190123;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,8 +23,7 @@ import com.aliyuncs.http.MethodType;
 public class EnableInstanceIpv6AddressRequest extends RpcAcsRequest<EnableInstanceIpv6AddressResponse> {
 	
 	public EnableInstanceIpv6AddressRequest() {
-		super("Drds", "2019-01-23", "EnableInstanceIpv6Address");
-		setMethod(MethodType.POST);
+		super("Drds", "2019-01-23", "EnableInstanceIpv6Address", "drds");
 	}
 
 	private String drdsInstanceId;

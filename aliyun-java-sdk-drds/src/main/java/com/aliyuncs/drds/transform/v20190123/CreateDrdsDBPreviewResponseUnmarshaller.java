@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDrdsDBPreviewResponseUnmarshaller {
 
-	public static CreateDrdsDBPreviewResponse unmarshall(CreateDrdsDBPreviewResponse createDrdsDBPreviewResponse, UnmarshallerContext context) {
+	public static CreateDrdsDBPreviewResponse unmarshall(CreateDrdsDBPreviewResponse createDrdsDBPreviewResponse, UnmarshallerContext _ctx) {
 		
-		createDrdsDBPreviewResponse.setRequestId(context.stringValue("CreateDrdsDBPreviewResponse.RequestId"));
-		createDrdsDBPreviewResponse.setSuccess(context.booleanValue("CreateDrdsDBPreviewResponse.Success"));
+		createDrdsDBPreviewResponse.setRequestId(_ctx.stringValue("CreateDrdsDBPreviewResponse.RequestId"));
+		createDrdsDBPreviewResponse.setSuccess(_ctx.booleanValue("CreateDrdsDBPreviewResponse.Success"));
 
 		List<Item> items = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("CreateDrdsDBPreviewResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CreateDrdsDBPreviewResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setDbInstanceId(context.stringValue("CreateDrdsDBPreviewResponse.Items["+ i +"].DbInstanceId"));
+			item.setDbInstanceId(_ctx.stringValue("CreateDrdsDBPreviewResponse.Items["+ i +"].DbInstanceId"));
 
 			List<String> dbNames = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("CreateDrdsDBPreviewResponse.Items["+ i +"].DbNames.Length"); j++) {
-				dbNames.add(context.stringValue("CreateDrdsDBPreviewResponse.Items["+ i +"].DbNames["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("CreateDrdsDBPreviewResponse.Items["+ i +"].DbNames.Length"); j++) {
+				dbNames.add(_ctx.stringValue("CreateDrdsDBPreviewResponse.Items["+ i +"].DbNames["+ j +"]"));
 			}
 			item.setDbNames(dbNames);
 

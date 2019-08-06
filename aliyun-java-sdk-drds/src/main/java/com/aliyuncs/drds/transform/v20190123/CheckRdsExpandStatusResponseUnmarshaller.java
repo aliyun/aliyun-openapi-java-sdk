@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckRdsExpandStatusResponseUnmarshaller {
 
-	public static CheckRdsExpandStatusResponse unmarshall(CheckRdsExpandStatusResponse checkRdsExpandStatusResponse, UnmarshallerContext context) {
+	public static CheckRdsExpandStatusResponse unmarshall(CheckRdsExpandStatusResponse checkRdsExpandStatusResponse, UnmarshallerContext _ctx) {
 		
-		checkRdsExpandStatusResponse.setRequestId(context.stringValue("CheckRdsExpandStatusResponse.RequestId"));
-		checkRdsExpandStatusResponse.setSuccess(context.booleanValue("CheckRdsExpandStatusResponse.Success"));
+		checkRdsExpandStatusResponse.setRequestId(_ctx.stringValue("CheckRdsExpandStatusResponse.RequestId"));
+		checkRdsExpandStatusResponse.setSuccess(_ctx.booleanValue("CheckRdsExpandStatusResponse.Success"));
 
 		Data data = new Data();
-		data.setIsUsable(context.booleanValue("CheckRdsExpandStatusResponse.Data.IsUsable"));
-		data.setMsg(context.stringValue("CheckRdsExpandStatusResponse.Data.Msg"));
+		data.setIsUsable(_ctx.booleanValue("CheckRdsExpandStatusResponse.Data.IsUsable"));
+		data.setMsg(_ctx.stringValue("CheckRdsExpandStatusResponse.Data.Msg"));
 		checkRdsExpandStatusResponse.setData(data);
 	 
 	 	return checkRdsExpandStatusResponse;

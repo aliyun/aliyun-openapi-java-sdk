@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ChangeInstanceAzoneRequest extends RpcAcsRequest<ChangeInstanceAzoneResponse> {
 	
 	public ChangeInstanceAzoneRequest() {
-		super("Drds", "2019-01-23", "ChangeInstanceAzone");
+		super("Drds", "2019-01-23", "ChangeInstanceAzone", "drds");
 	}
 
 	private String originAzoneId;

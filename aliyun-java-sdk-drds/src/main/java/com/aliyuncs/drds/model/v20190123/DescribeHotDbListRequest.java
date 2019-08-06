@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeHotDbListRequest extends RpcAcsRequest<DescribeHotDbListResponse> {
 	
 	public DescribeHotDbListRequest() {
-		super("Drds", "2019-01-23", "DescribeHotDbList");
+		super("Drds", "2019-01-23", "DescribeHotDbList", "drds");
 	}
 
 	private String dbName;

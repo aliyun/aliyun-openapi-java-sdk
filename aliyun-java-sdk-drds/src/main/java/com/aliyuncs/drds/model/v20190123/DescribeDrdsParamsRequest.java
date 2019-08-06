@@ -23,10 +23,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsParamsRequest extends RpcAcsRequest<DescribeDrdsParamsResponse> {
 	
 	public DescribeDrdsParamsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsParams");
+		super("Drds", "2019-01-23", "DescribeDrdsParams", "drds");
 	}
 
 	private String paramLevel;
+
+	private String dbName;
 
 	private String drdsInstanceId;
 
@@ -38,6 +40,17 @@ public class DescribeDrdsParamsRequest extends RpcAcsRequest<DescribeDrdsParamsR
 		this.paramLevel = paramLevel;
 		if(paramLevel != null){
 			putQueryParameter("ParamLevel", paramLevel);
+		}
+	}
+
+	public String getDbName() {
+		return this.dbName;
+	}
+
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
 		}
 	}
 

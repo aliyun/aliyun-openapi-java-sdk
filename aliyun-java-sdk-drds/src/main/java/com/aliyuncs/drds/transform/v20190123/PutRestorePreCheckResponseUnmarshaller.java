@@ -25,23 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PutRestorePreCheckResponseUnmarshaller {
 
-	public static PutRestorePreCheckResponse unmarshall(PutRestorePreCheckResponse putRestorePreCheckResponse, UnmarshallerContext context) {
+	public static PutRestorePreCheckResponse unmarshall(PutRestorePreCheckResponse putRestorePreCheckResponse, UnmarshallerContext _ctx) {
 		
-		putRestorePreCheckResponse.setRequestId(context.stringValue("PutRestorePreCheckResponse.RequestId"));
-		putRestorePreCheckResponse.setSuccess(context.booleanValue("PutRestorePreCheckResponse.Success"));
+		putRestorePreCheckResponse.setRequestId(_ctx.stringValue("PutRestorePreCheckResponse.RequestId"));
+		putRestorePreCheckResponse.setSuccess(_ctx.booleanValue("PutRestorePreCheckResponse.Success"));
 
 		PrecheckBackupResult precheckBackupResult = new PrecheckBackupResult();
-		precheckBackupResult.setResult(context.booleanValue("PutRestorePreCheckResponse.PrecheckBackupResult.Result"));
+		precheckBackupResult.setResult(_ctx.booleanValue("PutRestorePreCheckResponse.PrecheckBackupResult.Result"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
-		for (int i = 0; i < context.lengthValue("PutRestorePreCheckResponse.PrecheckBackupResult.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("PutRestorePreCheckResponse.PrecheckBackupResult.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setItemId(context.longValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].ItemId"));
-			listItem.setCheckItemName(context.stringValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].CheckItemName"));
-			listItem.setCheckItemContent(context.stringValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].CheckItemContent"));
-			listItem.setCheckResult(context.stringValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].CheckResult"));
-			listItem.setCheckFailReason(context.stringValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].CheckFailReason"));
-			listItem.setResult(context.booleanValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].Result"));
+			listItem.setItemId(_ctx.longValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].ItemId"));
+			listItem.setCheckItemName(_ctx.stringValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].CheckItemName"));
+			listItem.setCheckItemContent(_ctx.stringValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].CheckItemContent"));
+			listItem.setCheckResult(_ctx.stringValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].CheckResult"));
+			listItem.setCheckFailReason(_ctx.stringValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].CheckFailReason"));
+			listItem.setResult(_ctx.booleanValue("PutRestorePreCheckResponse.PrecheckBackupResult.List["+ i +"].Result"));
 
 			list.add(listItem);
 		}

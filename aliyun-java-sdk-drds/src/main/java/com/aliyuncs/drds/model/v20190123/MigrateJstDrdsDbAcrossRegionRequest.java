@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class MigrateJstDrdsDbAcrossRegionRequest extends RpcAcsRequest<MigrateJstDrdsDbAcrossRegionResponse> {
 	
 	public MigrateJstDrdsDbAcrossRegionRequest() {
-		super("Drds", "2019-01-23", "MigrateJstDrdsDbAcrossRegion");
+		super("Drds", "2019-01-23", "MigrateJstDrdsDbAcrossRegion", "drds");
 	}
 
 	private String dbName;

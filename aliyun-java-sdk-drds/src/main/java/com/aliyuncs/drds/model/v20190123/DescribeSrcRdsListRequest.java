@@ -24,7 +24,7 @@ import java.util.List;
 public class DescribeSrcRdsListRequest extends RpcAcsRequest<DescribeSrcRdsListResponse> {
 	
 	public DescribeSrcRdsListRequest() {
-		super("Drds", "2019-01-23", "DescribeSrcRdsList");
+		super("Drds", "2019-01-23", "DescribeSrcRdsList", "drds");
 	}
 
 	private String dbName;

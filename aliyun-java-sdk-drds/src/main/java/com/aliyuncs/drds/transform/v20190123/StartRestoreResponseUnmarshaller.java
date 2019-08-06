@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartRestoreResponseUnmarshaller {
 
-	public static StartRestoreResponse unmarshall(StartRestoreResponse startRestoreResponse, UnmarshallerContext context) {
+	public static StartRestoreResponse unmarshall(StartRestoreResponse startRestoreResponse, UnmarshallerContext _ctx) {
 		
-		startRestoreResponse.setRequestId(context.stringValue("StartRestoreResponse.RequestId"));
-		startRestoreResponse.setResult(context.stringValue("StartRestoreResponse.Result"));
-		startRestoreResponse.setSuccess(context.booleanValue("StartRestoreResponse.Success"));
+		startRestoreResponse.setRequestId(_ctx.stringValue("StartRestoreResponse.RequestId"));
+		startRestoreResponse.setResult(_ctx.stringValue("StartRestoreResponse.Result"));
+		startRestoreResponse.setSuccess(_ctx.booleanValue("StartRestoreResponse.Success"));
 	 
 	 	return startRestoreResponse;
 	}

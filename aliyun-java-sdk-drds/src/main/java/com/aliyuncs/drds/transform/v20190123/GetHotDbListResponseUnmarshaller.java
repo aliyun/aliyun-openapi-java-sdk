@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetHotDbListResponseUnmarshaller {
 
-	public static GetHotDbListResponse unmarshall(GetHotDbListResponse getHotDbListResponse, UnmarshallerContext context) {
+	public static GetHotDbListResponse unmarshall(GetHotDbListResponse getHotDbListResponse, UnmarshallerContext _ctx) {
 		
-		getHotDbListResponse.setRequestId(context.stringValue("GetHotDbListResponse.RequestId"));
-		getHotDbListResponse.setSuccess(context.booleanValue("GetHotDbListResponse.Success"));
+		getHotDbListResponse.setRequestId(_ctx.stringValue("GetHotDbListResponse.RequestId"));
+		getHotDbListResponse.setSuccess(_ctx.booleanValue("GetHotDbListResponse.Success"));
 	 
 	 	return getHotDbListResponse;
 	}

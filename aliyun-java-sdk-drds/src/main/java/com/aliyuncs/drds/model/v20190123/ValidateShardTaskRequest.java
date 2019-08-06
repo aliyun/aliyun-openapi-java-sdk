@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ValidateShardTaskRequest extends RpcAcsRequest<ValidateShardTaskResponse> {
 	
 	public ValidateShardTaskRequest() {
-		super("Drds", "2019-01-23", "ValidateShardTask");
+		super("Drds", "2019-01-23", "ValidateShardTask", "drds");
 	}
 
 	private String taskType;

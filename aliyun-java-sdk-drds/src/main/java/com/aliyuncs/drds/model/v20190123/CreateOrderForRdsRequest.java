@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateOrderForRdsRequest extends RpcAcsRequest<CreateOrderForRdsResponse> {
 	
 	public CreateOrderForRdsRequest() {
-		super("Drds", "2019-01-23", "CreateOrderForRds");
+		super("Drds", "2019-01-23", "CreateOrderForRds", "drds");
 	}
 
 	private String params;

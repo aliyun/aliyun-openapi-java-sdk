@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateInstanceInternetAddressResponseUnmarshaller {
 
-	public static CreateInstanceInternetAddressResponse unmarshall(CreateInstanceInternetAddressResponse createInstanceInternetAddressResponse, UnmarshallerContext context) {
+	public static CreateInstanceInternetAddressResponse unmarshall(CreateInstanceInternetAddressResponse createInstanceInternetAddressResponse, UnmarshallerContext _ctx) {
 		
-		createInstanceInternetAddressResponse.setRequestId(context.stringValue("CreateInstanceInternetAddressResponse.RequestId"));
-		createInstanceInternetAddressResponse.setData(context.booleanValue("CreateInstanceInternetAddressResponse.Data"));
-		createInstanceInternetAddressResponse.setSuccess(context.booleanValue("CreateInstanceInternetAddressResponse.Success"));
-		createInstanceInternetAddressResponse.setCode(context.integerValue("CreateInstanceInternetAddressResponse.Code"));
+		createInstanceInternetAddressResponse.setRequestId(_ctx.stringValue("CreateInstanceInternetAddressResponse.RequestId"));
+		createInstanceInternetAddressResponse.setData(_ctx.booleanValue("CreateInstanceInternetAddressResponse.Data"));
+		createInstanceInternetAddressResponse.setSuccess(_ctx.booleanValue("CreateInstanceInternetAddressResponse.Success"));
+		createInstanceInternetAddressResponse.setCode(_ctx.integerValue("CreateInstanceInternetAddressResponse.Code"));
 	 
 	 	return createInstanceInternetAddressResponse;
 	}

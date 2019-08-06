@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitRollbackTaskResponseUnmarshaller {
 
-	public static SubmitRollbackTaskResponse unmarshall(SubmitRollbackTaskResponse submitRollbackTaskResponse, UnmarshallerContext context) {
+	public static SubmitRollbackTaskResponse unmarshall(SubmitRollbackTaskResponse submitRollbackTaskResponse, UnmarshallerContext _ctx) {
 		
-		submitRollbackTaskResponse.setRequestId(context.stringValue("SubmitRollbackTaskResponse.RequestId"));
-		submitRollbackTaskResponse.setSuccess(context.booleanValue("SubmitRollbackTaskResponse.Success"));
+		submitRollbackTaskResponse.setRequestId(_ctx.stringValue("SubmitRollbackTaskResponse.RequestId"));
+		submitRollbackTaskResponse.setSuccess(_ctx.booleanValue("SubmitRollbackTaskResponse.Success"));
 	 
 	 	return submitRollbackTaskResponse;
 	}

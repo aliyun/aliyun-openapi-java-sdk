@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstDbSlsInfoResponseUnmarshaller {
 
-	public static DescribeInstDbSlsInfoResponse unmarshall(DescribeInstDbSlsInfoResponse describeInstDbSlsInfoResponse, UnmarshallerContext context) {
+	public static DescribeInstDbSlsInfoResponse unmarshall(DescribeInstDbSlsInfoResponse describeInstDbSlsInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeInstDbSlsInfoResponse.setRequestId(context.stringValue("DescribeInstDbSlsInfoResponse.RequestId"));
-		describeInstDbSlsInfoResponse.setSuccess(context.booleanValue("DescribeInstDbSlsInfoResponse.Success"));
+		describeInstDbSlsInfoResponse.setRequestId(_ctx.stringValue("DescribeInstDbSlsInfoResponse.RequestId"));
+		describeInstDbSlsInfoResponse.setSuccess(_ctx.booleanValue("DescribeInstDbSlsInfoResponse.Success"));
 
 		AuditInfo auditInfo = new AuditInfo();
-		auditInfo.setProject(context.stringValue("DescribeInstDbSlsInfoResponse.AuditInfo.Project"));
-		auditInfo.setLogStore(context.stringValue("DescribeInstDbSlsInfoResponse.AuditInfo.LogStore"));
+		auditInfo.setProject(_ctx.stringValue("DescribeInstDbSlsInfoResponse.AuditInfo.Project"));
+		auditInfo.setLogStore(_ctx.stringValue("DescribeInstDbSlsInfoResponse.AuditInfo.LogStore"));
 		describeInstDbSlsInfoResponse.setAuditInfo(auditInfo);
 	 
 	 	return describeInstDbSlsInfoResponse;

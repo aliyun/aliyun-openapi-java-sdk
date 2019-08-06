@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnableInstanceIpv6AddressResponseUnmarshaller {
 
-	public static EnableInstanceIpv6AddressResponse unmarshall(EnableInstanceIpv6AddressResponse enableInstanceIpv6AddressResponse, UnmarshallerContext context) {
+	public static EnableInstanceIpv6AddressResponse unmarshall(EnableInstanceIpv6AddressResponse enableInstanceIpv6AddressResponse, UnmarshallerContext _ctx) {
 		
-		enableInstanceIpv6AddressResponse.setRequestId(context.stringValue("EnableInstanceIpv6AddressResponse.RequestId"));
-		enableInstanceIpv6AddressResponse.setData(context.booleanValue("EnableInstanceIpv6AddressResponse.Data"));
+		enableInstanceIpv6AddressResponse.setRequestId(_ctx.stringValue("EnableInstanceIpv6AddressResponse.RequestId"));
+		enableInstanceIpv6AddressResponse.setData(_ctx.booleanValue("EnableInstanceIpv6AddressResponse.Data"));
 	 
 	 	return enableInstanceIpv6AddressResponse;
 	}

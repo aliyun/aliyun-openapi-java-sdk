@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsInstanceMonitorRequest extends RpcAcsRequest<DescribeDrdsInstanceMonitorResponse> {
 	
 	public DescribeDrdsInstanceMonitorRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceMonitor");
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceMonitor", "drds");
 	}
 
 	private Long endTime;

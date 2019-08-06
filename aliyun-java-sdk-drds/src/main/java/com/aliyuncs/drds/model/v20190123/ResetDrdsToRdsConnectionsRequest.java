@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ResetDrdsToRdsConnectionsRequest extends RpcAcsRequest<ResetDrdsToRdsConnectionsResponse> {
 	
 	public ResetDrdsToRdsConnectionsRequest() {
-		super("Drds", "2019-01-23", "ResetDrdsToRdsConnections");
+		super("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "drds");
 	}
 
 	private String dbName;

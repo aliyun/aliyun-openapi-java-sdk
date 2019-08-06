@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsInstanceDbMonitorRequest extends RpcAcsRequest<DescribeDrdsInstanceDbMonitorResponse> {
 	
 	public DescribeDrdsInstanceDbMonitorRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor");
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "drds");
 	}
 
 	private String dbName;

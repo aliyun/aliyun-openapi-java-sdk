@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetCandidateInstanceListRequest extends RpcAcsRequest<GetCandidateInstanceListResponse> {
 	
 	public GetCandidateInstanceListRequest() {
-		super("Drds", "2019-01-23", "GetCandidateInstanceList");
+		super("Drds", "2019-01-23", "GetCandidateInstanceList", "drds");
 	}
 
 	private String search;

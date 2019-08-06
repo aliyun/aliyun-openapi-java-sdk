@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDrdsDBIpWhiteListResponseUnmarshaller {
 
-	public static DescribeDrdsDBIpWhiteListResponse unmarshall(DescribeDrdsDBIpWhiteListResponse describeDrdsDBIpWhiteListResponse, UnmarshallerContext context) {
+	public static DescribeDrdsDBIpWhiteListResponse unmarshall(DescribeDrdsDBIpWhiteListResponse describeDrdsDBIpWhiteListResponse, UnmarshallerContext _ctx) {
 		
-		describeDrdsDBIpWhiteListResponse.setRequestId(context.stringValue("DescribeDrdsDBIpWhiteListResponse.RequestId"));
-		describeDrdsDBIpWhiteListResponse.setSuccess(context.booleanValue("DescribeDrdsDBIpWhiteListResponse.Success"));
+		describeDrdsDBIpWhiteListResponse.setRequestId(_ctx.stringValue("DescribeDrdsDBIpWhiteListResponse.RequestId"));
+		describeDrdsDBIpWhiteListResponse.setSuccess(_ctx.booleanValue("DescribeDrdsDBIpWhiteListResponse.Success"));
 
 		List<String> ipWhiteList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeDrdsDBIpWhiteListResponse.IpWhiteList.Length"); i++) {
-			ipWhiteList.add(context.stringValue("DescribeDrdsDBIpWhiteListResponse.IpWhiteList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsDBIpWhiteListResponse.IpWhiteList.Length"); i++) {
+			ipWhiteList.add(_ctx.stringValue("DescribeDrdsDBIpWhiteListResponse.IpWhiteList["+ i +"]"));
 		}
 		describeDrdsDBIpWhiteListResponse.setIpWhiteList(ipWhiteList);
 	 

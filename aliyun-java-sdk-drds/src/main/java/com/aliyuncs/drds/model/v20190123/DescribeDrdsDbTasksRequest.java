@@ -23,12 +23,25 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDrdsDbTasksRequest extends RpcAcsRequest<DescribeDrdsDbTasksResponse> {
 	
 	public DescribeDrdsDbTasksRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsDbTasks");
+		super("Drds", "2019-01-23", "DescribeDrdsDbTasks", "drds");
 	}
+
+	private String taskType;
 
 	private String dbName;
 
 	private String drdsInstanceId;
+
+	public String getTaskType() {
+		return this.taskType;
+	}
+
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
+		}
+	}
 
 	public String getDbName() {
 		return this.dbName;

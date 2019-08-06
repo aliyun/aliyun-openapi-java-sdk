@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RearrangeDbToInstanceResponseUnmarshaller {
 
-	public static RearrangeDbToInstanceResponse unmarshall(RearrangeDbToInstanceResponse rearrangeDbToInstanceResponse, UnmarshallerContext context) {
+	public static RearrangeDbToInstanceResponse unmarshall(RearrangeDbToInstanceResponse rearrangeDbToInstanceResponse, UnmarshallerContext _ctx) {
 		
-		rearrangeDbToInstanceResponse.setRequestId(context.stringValue("RearrangeDbToInstanceResponse.RequestId"));
-		rearrangeDbToInstanceResponse.setSuccess(context.booleanValue("RearrangeDbToInstanceResponse.Success"));
+		rearrangeDbToInstanceResponse.setRequestId(_ctx.stringValue("RearrangeDbToInstanceResponse.RequestId"));
+		rearrangeDbToInstanceResponse.setSuccess(_ctx.booleanValue("RearrangeDbToInstanceResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < context.lengthValue("RearrangeDbToInstanceResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("RearrangeDbToInstanceResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setDstInstance(context.stringValue("RearrangeDbToInstanceResponse.Data["+ i +"].DstInstance"));
-			dataItem.setSrcInstance(context.stringValue("RearrangeDbToInstanceResponse.Data["+ i +"].SrcInstance"));
-			dataItem.setSrcDbName(context.stringValue("RearrangeDbToInstanceResponse.Data["+ i +"].SrcDbName"));
+			dataItem.setDstInstance(_ctx.stringValue("RearrangeDbToInstanceResponse.Data["+ i +"].DstInstance"));
+			dataItem.setSrcInstance(_ctx.stringValue("RearrangeDbToInstanceResponse.Data["+ i +"].SrcInstance"));
+			dataItem.setSrcDbName(_ctx.stringValue("RearrangeDbToInstanceResponse.Data["+ i +"].SrcDbName"));
 
 			data.add(dataItem);
 		}

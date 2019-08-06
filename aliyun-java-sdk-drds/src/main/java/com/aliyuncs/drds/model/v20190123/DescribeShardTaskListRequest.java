@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeShardTaskListRequest extends RpcAcsRequest<DescribeShardTaskListResponse> {
 	
 	public DescribeShardTaskListRequest() {
-		super("Drds", "2019-01-23", "DescribeShardTaskList");
+		super("Drds", "2019-01-23", "DescribeShardTaskList", "drds");
 	}
 
 	private String taskType;

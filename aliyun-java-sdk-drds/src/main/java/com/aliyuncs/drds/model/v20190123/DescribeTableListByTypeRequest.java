@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeTableListByTypeRequest extends RpcAcsRequest<DescribeTableListByTypeResponse> {
 	
 	public DescribeTableListByTypeRequest() {
-		super("Drds", "2019-01-23", "DescribeTableListByType");
+		super("Drds", "2019-01-23", "DescribeTableListByType", "drds");
 	}
 
 	private String tableType;

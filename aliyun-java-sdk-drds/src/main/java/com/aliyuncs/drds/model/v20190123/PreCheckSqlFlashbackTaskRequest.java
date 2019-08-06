@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class PreCheckSqlFlashbackTaskRequest extends RpcAcsRequest<PreCheckSqlFlashbackTaskResponse> {
 	
 	public PreCheckSqlFlashbackTaskRequest() {
-		super("Drds", "2019-01-23", "PreCheckSqlFlashbackTask");
+		super("Drds", "2019-01-23", "PreCheckSqlFlashbackTask", "drds");
 	}
 
 	private String dbName;

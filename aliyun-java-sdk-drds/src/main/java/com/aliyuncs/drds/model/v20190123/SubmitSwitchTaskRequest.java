@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class SubmitSwitchTaskRequest extends RpcAcsRequest<SubmitSwitchTaskResponse> {
 	
 	public SubmitSwitchTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitSwitchTask");
+		super("Drds", "2019-01-23", "SubmitSwitchTask", "drds");
 	}
 
 	private String jobId;
