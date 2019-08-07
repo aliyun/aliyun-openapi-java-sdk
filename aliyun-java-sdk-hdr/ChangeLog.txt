@@ -1,0 +1,3 @@
+2019-08-07 Version: 1.0.0
+- First release of HDR java sdk.
+
