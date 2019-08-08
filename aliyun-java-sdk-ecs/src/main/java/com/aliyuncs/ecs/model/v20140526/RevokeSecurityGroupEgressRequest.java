@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.ecs.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class RevokeSecurityGroupEgressRequest extends RpcAcsRequest<RevokeSecuri
 	
 	public RevokeSecurityGroupEgressRequest() {
 		super("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "ecs");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String nicType;

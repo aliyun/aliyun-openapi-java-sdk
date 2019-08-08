@@ -16,6 +16,7 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.ecs.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class DescribeAccountAttributesRequest extends RpcAcsRequest<DescribeAcco
 	
 	public DescribeAccountAttributesRequest() {
 		super("Ecs", "2014-05-26", "DescribeAccountAttributes", "ecs");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

@@ -16,6 +16,7 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.ecs.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 	
 	public DescribeNetworkInterfacesRequest() {
 		super("Ecs", "2014-05-26", "DescribeNetworkInterfaces", "ecs");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
@@ -52,6 +57,8 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 	private Long ownerId;
 
 	private String vSwitchId;
+
+	private List<String> privateIpAddresss;
 
 	private String instanceId;
 
@@ -205,6 +212,19 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
 		}
+	}
+
+	public List<String> getPrivateIpAddresss() {
+		return this.privateIpAddresss;
+	}
+
+	public void setPrivateIpAddresss(List<String> privateIpAddresss) {
+		this.privateIpAddresss = privateIpAddresss;	
+		if (privateIpAddresss != null) {
+			for (int i = 0; i < privateIpAddresss.size(); i++) {
+				putQueryParameter("PrivateIpAddress." + (i + 1) , privateIpAddresss.get(i));
+			}
+		}	
 	}
 
 	public String getInstanceId() {

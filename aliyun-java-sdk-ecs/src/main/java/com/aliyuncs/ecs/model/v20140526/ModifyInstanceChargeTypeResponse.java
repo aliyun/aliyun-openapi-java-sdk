@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ecs.model.v20140526;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.ModifyInstanceChargeTypeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class ModifyInstanceChargeTypeResponse extends AcsResponse {
 	private String requestId;
 
 	private String orderId;
+
+	private List<FeeOfInstance> feeOfInstances;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +45,47 @@ public class ModifyInstanceChargeTypeResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public List<FeeOfInstance> getFeeOfInstances() {
+		return this.feeOfInstances;
+	}
+
+	public void setFeeOfInstances(List<FeeOfInstance> feeOfInstances) {
+		this.feeOfInstances = feeOfInstances;
+	}
+
+	public static class FeeOfInstance {
+
+		private String instanceId;
+
+		private String fee;
+
+		private String currency;
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getFee() {
+			return this.fee;
+		}
+
+		public void setFee(String fee) {
+			this.fee = fee;
+		}
+
+		public String getCurrency() {
+			return this.currency;
+		}
+
+		public void setCurrency(String currency) {
+			this.currency = currency;
+		}
 	}
 
 	@Override

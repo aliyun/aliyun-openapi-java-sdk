@@ -14,7 +14,11 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.ModifyInstanceChargeTypeResponse;
+import com.aliyuncs.ecs.model.v20140526.ModifyInstanceChargeTypeResponse.FeeOfInstance;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,6 +28,17 @@ public class ModifyInstanceChargeTypeResponseUnmarshaller {
 		
 		modifyInstanceChargeTypeResponse.setRequestId(_ctx.stringValue("ModifyInstanceChargeTypeResponse.RequestId"));
 		modifyInstanceChargeTypeResponse.setOrderId(_ctx.stringValue("ModifyInstanceChargeTypeResponse.OrderId"));
+
+		List<FeeOfInstance> feeOfInstances = new ArrayList<FeeOfInstance>();
+		for (int i = 0; i < _ctx.lengthValue("ModifyInstanceChargeTypeResponse.FeeOfInstances.Length"); i++) {
+			FeeOfInstance feeOfInstance = new FeeOfInstance();
+			feeOfInstance.setInstanceId(_ctx.stringValue("ModifyInstanceChargeTypeResponse.FeeOfInstances["+ i +"].InstanceId"));
+			feeOfInstance.setFee(_ctx.stringValue("ModifyInstanceChargeTypeResponse.FeeOfInstances["+ i +"].Fee"));
+			feeOfInstance.setCurrency(_ctx.stringValue("ModifyInstanceChargeTypeResponse.FeeOfInstances["+ i +"].Currency"));
+
+			feeOfInstances.add(feeOfInstance);
+		}
+		modifyInstanceChargeTypeResponse.setFeeOfInstances(feeOfInstances);
 	 
 	 	return modifyInstanceChargeTypeResponse;
 	}

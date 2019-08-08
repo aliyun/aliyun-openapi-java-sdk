@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.ecs.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 	
 	public ModifyInstanceChargeTypeRequest() {
 		super("Ecs", "2014-05-26", "ModifyInstanceChargeType", "ecs");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
@@ -47,6 +52,8 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 	private String periodUnit;
 
 	private String instanceIds;
+
+	private Boolean isDetailFee;
 
 	private String instanceChargeType;
 
@@ -168,6 +175,17 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public Boolean getIsDetailFee() {
+		return this.isDetailFee;
+	}
+
+	public void setIsDetailFee(Boolean isDetailFee) {
+		this.isDetailFee = isDetailFee;
+		if(isDetailFee != null){
+			putQueryParameter("IsDetailFee", isDetailFee.toString());
 		}
 	}
 

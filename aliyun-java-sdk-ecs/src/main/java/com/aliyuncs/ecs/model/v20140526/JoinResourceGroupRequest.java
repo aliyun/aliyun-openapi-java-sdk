@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.ecs.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class JoinResourceGroupRequest extends RpcAcsRequest<JoinResourceGroupRes
 	
 	public JoinResourceGroupRequest() {
 		super("Ecs", "2014-05-26", "JoinResourceGroup", "ecs");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String resourceGroupId;

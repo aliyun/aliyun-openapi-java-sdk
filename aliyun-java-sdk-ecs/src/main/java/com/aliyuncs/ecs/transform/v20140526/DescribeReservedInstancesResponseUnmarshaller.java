@@ -43,6 +43,7 @@ public class DescribeReservedInstancesResponseUnmarshaller {
 			reservedInstance.setInstanceType(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceType"));
 			reservedInstance.setScope(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Scope"));
 			reservedInstance.setOfferingType(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].OfferingType"));
+			reservedInstance.setPlatform(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Platform"));
 			reservedInstance.setInstanceAmount(_ctx.integerValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].InstanceAmount"));
 			reservedInstance.setStatus(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Status"));
 			reservedInstance.setCreationTime(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].CreationTime"));

@@ -93,6 +93,8 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 		private String offeringType;
 
+		private String platform;
+
 		private Integer instanceAmount;
 
 		private String status;
@@ -185,6 +187,14 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 		public void setOfferingType(String offeringType) {
 			this.offeringType = offeringType;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 
 		public Integer getInstanceAmount() {

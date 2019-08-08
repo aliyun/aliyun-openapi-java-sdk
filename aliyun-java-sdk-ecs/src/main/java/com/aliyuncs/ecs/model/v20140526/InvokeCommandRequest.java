@@ -18,6 +18,7 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import java.util.Map;
 import com.google.gson.Gson;
+import com.aliyuncs.ecs.Endpoint;
 
 /**
  * @author auto create
@@ -27,6 +28,10 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 	
 	public InvokeCommandRequest() {
 		super("Ecs", "2014-05-26", "InvokeCommand", "ecs");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

@@ -16,6 +16,7 @@ package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.ecs.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends Rp
 	
 	public DescribeVirtualBorderRoutersForPhysicalConnectionRequest() {
 		super("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "ecs");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private List<Filter> filters;
