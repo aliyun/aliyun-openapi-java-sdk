@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SyncUserToRdcResponseUnmarshaller {
 
-	public static SyncUserToRdcResponse unmarshall(SyncUserToRdcResponse syncUserToRdcResponse, UnmarshallerContext context) {
+	public static SyncUserToRdcResponse unmarshall(SyncUserToRdcResponse syncUserToRdcResponse, UnmarshallerContext _ctx) {
 		
-		syncUserToRdcResponse.setRequestId(context.stringValue("SyncUserToRdcResponse.RequestId"));
-		syncUserToRdcResponse.setSuccess(context.booleanValue("SyncUserToRdcResponse.Success"));
-		syncUserToRdcResponse.setCode(context.integerValue("SyncUserToRdcResponse.Code"));
-		syncUserToRdcResponse.setMessage(context.stringValue("SyncUserToRdcResponse.Message"));
+		syncUserToRdcResponse.setRequestId(_ctx.stringValue("SyncUserToRdcResponse.RequestId"));
+		syncUserToRdcResponse.setSuccess(_ctx.booleanValue("SyncUserToRdcResponse.Success"));
+		syncUserToRdcResponse.setCode(_ctx.integerValue("SyncUserToRdcResponse.Code"));
+		syncUserToRdcResponse.setMessage(_ctx.stringValue("SyncUserToRdcResponse.Message"));
 
 		Data data = new Data();
-		data.setIsValid(context.booleanValue("SyncUserToRdcResponse.Data.IsValid"));
+		data.setIsValid(_ctx.booleanValue("SyncUserToRdcResponse.Data.IsValid"));
 		syncUserToRdcResponse.setData(data);
 	 
 	 	return syncUserToRdcResponse;

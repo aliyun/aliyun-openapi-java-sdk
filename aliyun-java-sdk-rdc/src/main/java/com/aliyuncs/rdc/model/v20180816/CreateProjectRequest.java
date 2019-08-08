@@ -16,6 +16,7 @@ package com.aliyuncs.rdc.model.v20180816;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rdc.Endpoint;
 
 /**
  * @author auto create
@@ -26,6 +27,10 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 	public CreateProjectRequest() {
 		super("Rdc", "2018-08-16", "CreateProject");
 		setMethod(MethodType.POST);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String corpIdentifier;

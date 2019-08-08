@@ -15,6 +15,7 @@
 package com.aliyuncs.rdc.model.v20180821;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.rdc.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class SearchWorkitemRequest extends RpcAcsRequest<SearchWorkitemResponse>
 	
 	public SearchWorkitemRequest() {
 		super("Rdc", "2018-08-21", "SearchWorkitem");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Integer sprintId;

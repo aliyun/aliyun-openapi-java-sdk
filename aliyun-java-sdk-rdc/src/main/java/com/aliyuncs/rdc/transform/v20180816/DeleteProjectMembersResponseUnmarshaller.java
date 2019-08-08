@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteProjectMembersResponseUnmarshaller {
 
-	public static DeleteProjectMembersResponse unmarshall(DeleteProjectMembersResponse deleteProjectMembersResponse, UnmarshallerContext context) {
+	public static DeleteProjectMembersResponse unmarshall(DeleteProjectMembersResponse deleteProjectMembersResponse, UnmarshallerContext _ctx) {
 		
-		deleteProjectMembersResponse.setRequestId(context.stringValue("DeleteProjectMembersResponse.RequestId"));
-		deleteProjectMembersResponse.setCode(context.integerValue("DeleteProjectMembersResponse.Code"));
-		deleteProjectMembersResponse.setData(context.booleanValue("DeleteProjectMembersResponse.Data"));
-		deleteProjectMembersResponse.setSuccess(context.booleanValue("DeleteProjectMembersResponse.Success"));
-		deleteProjectMembersResponse.setMessage(context.stringValue("DeleteProjectMembersResponse.Message"));
+		deleteProjectMembersResponse.setRequestId(_ctx.stringValue("DeleteProjectMembersResponse.RequestId"));
+		deleteProjectMembersResponse.setCode(_ctx.integerValue("DeleteProjectMembersResponse.Code"));
+		deleteProjectMembersResponse.setData(_ctx.booleanValue("DeleteProjectMembersResponse.Data"));
+		deleteProjectMembersResponse.setSuccess(_ctx.booleanValue("DeleteProjectMembersResponse.Success"));
+		deleteProjectMembersResponse.setMessage(_ctx.stringValue("DeleteProjectMembersResponse.Message"));
 	 
 	 	return deleteProjectMembersResponse;
 	}

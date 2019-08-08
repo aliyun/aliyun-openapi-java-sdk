@@ -28,7 +28,7 @@ public class UpdateWorkitemResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Integer data;
+	private Boolean data;
 
 	private Boolean success;
 
@@ -50,11 +50,11 @@ public class UpdateWorkitemResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Integer getData() {
+	public Boolean getData() {
 		return this.data;
 	}
 
-	public void setData(Integer data) {
+	public void setData(Boolean data) {
 		this.data = data;
 	}
 

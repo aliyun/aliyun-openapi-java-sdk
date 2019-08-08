@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SearchTestCaseResponseUnmarshaller {
 
-	public static SearchTestCaseResponse unmarshall(SearchTestCaseResponse searchTestCaseResponse, UnmarshallerContext context) {
+	public static SearchTestCaseResponse unmarshall(SearchTestCaseResponse searchTestCaseResponse, UnmarshallerContext _ctx) {
 		
-		searchTestCaseResponse.setRequestId(context.stringValue("SearchTestCaseResponse.RequestId"));
-		searchTestCaseResponse.setCode(context.integerValue("SearchTestCaseResponse.Code"));
-		searchTestCaseResponse.setSuccess(context.booleanValue("SearchTestCaseResponse.Success"));
-		searchTestCaseResponse.setMessage(context.stringValue("SearchTestCaseResponse.Message"));
+		searchTestCaseResponse.setRequestId(_ctx.stringValue("SearchTestCaseResponse.RequestId"));
+		searchTestCaseResponse.setCode(_ctx.integerValue("SearchTestCaseResponse.Code"));
+		searchTestCaseResponse.setSuccess(_ctx.booleanValue("SearchTestCaseResponse.Success"));
+		searchTestCaseResponse.setMessage(_ctx.stringValue("SearchTestCaseResponse.Message"));
 
 		Data data = new Data();
-		data.setPageTotal(context.stringValue("SearchTestCaseResponse.Data.PageTotal"));
-		data.setPageSize(context.stringValue("SearchTestCaseResponse.Data.PageSize"));
-		data.setPageNum(context.stringValue("SearchTestCaseResponse.Data.PageNum"));
-		data.setTotalCount(context.stringValue("SearchTestCaseResponse.Data.TotalCount"));
-		data.setCases(context.stringValue("SearchTestCaseResponse.Data.Cases"));
+		data.setPageTotal(_ctx.stringValue("SearchTestCaseResponse.Data.PageTotal"));
+		data.setPageSize(_ctx.stringValue("SearchTestCaseResponse.Data.PageSize"));
+		data.setPageNum(_ctx.stringValue("SearchTestCaseResponse.Data.PageNum"));
+		data.setTotalCount(_ctx.stringValue("SearchTestCaseResponse.Data.TotalCount"));
+		data.setCases(_ctx.stringValue("SearchTestCaseResponse.Data.Cases"));
 		searchTestCaseResponse.setData(data);
 	 
 	 	return searchTestCaseResponse;

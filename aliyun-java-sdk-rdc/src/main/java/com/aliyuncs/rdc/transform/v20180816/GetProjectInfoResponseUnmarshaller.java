@@ -28,62 +28,62 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetProjectInfoResponseUnmarshaller {
 
-	public static GetProjectInfoResponse unmarshall(GetProjectInfoResponse getProjectInfoResponse, UnmarshallerContext context) {
+	public static GetProjectInfoResponse unmarshall(GetProjectInfoResponse getProjectInfoResponse, UnmarshallerContext _ctx) {
 		
-		getProjectInfoResponse.setRequestId(context.stringValue("GetProjectInfoResponse.RequestId"));
-		getProjectInfoResponse.setCode(context.integerValue("GetProjectInfoResponse.Code"));
-		getProjectInfoResponse.setSuccess(context.booleanValue("GetProjectInfoResponse.Success"));
-		getProjectInfoResponse.setMessage(context.stringValue("GetProjectInfoResponse.Message"));
+		getProjectInfoResponse.setRequestId(_ctx.stringValue("GetProjectInfoResponse.RequestId"));
+		getProjectInfoResponse.setCode(_ctx.integerValue("GetProjectInfoResponse.Code"));
+		getProjectInfoResponse.setSuccess(_ctx.booleanValue("GetProjectInfoResponse.Success"));
+		getProjectInfoResponse.setMessage(_ctx.stringValue("GetProjectInfoResponse.Message"));
 
 		Data data = new Data();
-		data.setGmtModified(context.stringValue("GetProjectInfoResponse.Data.GmtModified"));
-		data.setDescription(context.stringValue("GetProjectInfoResponse.Data.Description"));
-		data.setStamp(context.stringValue("GetProjectInfoResponse.Data.Stamp"));
-		data.setGmtCreate(context.stringValue("GetProjectInfoResponse.Data.GmtCreate"));
-		data.setType(context.stringValue("GetProjectInfoResponse.Data.Type"));
-		data.setParentId(context.integerValue("GetProjectInfoResponse.Data.ParentId"));
-		data.setMode(context.stringValue("GetProjectInfoResponse.Data.Mode"));
-		data.setIdPath(context.stringValue("GetProjectInfoResponse.Data.IdPath"));
-		data.setName(context.stringValue("GetProjectInfoResponse.Data.Name"));
-		data.setId(context.integerValue("GetProjectInfoResponse.Data.Id"));
-		data.setRegion(context.stringValue("GetProjectInfoResponse.Data.Region"));
-		data.setCustomValues(context.stringValue("GetProjectInfoResponse.Data.CustomValues"));
-		data.setStatus(context.stringValue("GetProjectInfoResponse.Data.Status"));
+		data.setGmtModified(_ctx.stringValue("GetProjectInfoResponse.Data.GmtModified"));
+		data.setDescription(_ctx.stringValue("GetProjectInfoResponse.Data.Description"));
+		data.setStamp(_ctx.stringValue("GetProjectInfoResponse.Data.Stamp"));
+		data.setGmtCreate(_ctx.stringValue("GetProjectInfoResponse.Data.GmtCreate"));
+		data.setType(_ctx.stringValue("GetProjectInfoResponse.Data.Type"));
+		data.setParentId(_ctx.integerValue("GetProjectInfoResponse.Data.ParentId"));
+		data.setMode(_ctx.stringValue("GetProjectInfoResponse.Data.Mode"));
+		data.setIdPath(_ctx.stringValue("GetProjectInfoResponse.Data.IdPath"));
+		data.setName(_ctx.stringValue("GetProjectInfoResponse.Data.Name"));
+		data.setId(_ctx.integerValue("GetProjectInfoResponse.Data.Id"));
+		data.setRegion(_ctx.stringValue("GetProjectInfoResponse.Data.Region"));
+		data.setCustomValues(_ctx.stringValue("GetProjectInfoResponse.Data.CustomValues"));
+		data.setStatus(_ctx.stringValue("GetProjectInfoResponse.Data.Status"));
 
 		Creator creator = new Creator();
-		creator.setRealName(context.stringValue("GetProjectInfoResponse.Data.Creator.RealName"));
-		creator.setNickName(context.stringValue("GetProjectInfoResponse.Data.Creator.NickName"));
-		creator.setAvatar(context.stringValue("GetProjectInfoResponse.Data.Creator.Avatar"));
-		creator.setId(context.integerValue("GetProjectInfoResponse.Data.Creator.Id"));
-		creator.setEmail(context.stringValue("GetProjectInfoResponse.Data.Creator.Email"));
-		creator.setStaffId(context.stringValue("GetProjectInfoResponse.Data.Creator.StaffId"));
+		creator.setRealName(_ctx.stringValue("GetProjectInfoResponse.Data.Creator.RealName"));
+		creator.setNickName(_ctx.stringValue("GetProjectInfoResponse.Data.Creator.NickName"));
+		creator.setAvatar(_ctx.stringValue("GetProjectInfoResponse.Data.Creator.Avatar"));
+		creator.setId(_ctx.integerValue("GetProjectInfoResponse.Data.Creator.Id"));
+		creator.setEmail(_ctx.stringValue("GetProjectInfoResponse.Data.Creator.Email"));
+		creator.setStaffId(_ctx.stringValue("GetProjectInfoResponse.Data.Creator.StaffId"));
 		data.setCreator(creator);
 
 		Modifier modifier = new Modifier();
-		modifier.setRealName(context.stringValue("GetProjectInfoResponse.Data.Modifier.RealName"));
-		modifier.setNickName(context.stringValue("GetProjectInfoResponse.Data.Modifier.NickName"));
-		modifier.setAvatar(context.stringValue("GetProjectInfoResponse.Data.Modifier.Avatar"));
-		modifier.setId(context.integerValue("GetProjectInfoResponse.Data.Modifier.Id"));
-		modifier.setEmail(context.stringValue("GetProjectInfoResponse.Data.Modifier.Email"));
-		modifier.setStaffId(context.stringValue("GetProjectInfoResponse.Data.Modifier.StaffId"));
+		modifier.setRealName(_ctx.stringValue("GetProjectInfoResponse.Data.Modifier.RealName"));
+		modifier.setNickName(_ctx.stringValue("GetProjectInfoResponse.Data.Modifier.NickName"));
+		modifier.setAvatar(_ctx.stringValue("GetProjectInfoResponse.Data.Modifier.Avatar"));
+		modifier.setId(_ctx.integerValue("GetProjectInfoResponse.Data.Modifier.Id"));
+		modifier.setEmail(_ctx.stringValue("GetProjectInfoResponse.Data.Modifier.Email"));
+		modifier.setStaffId(_ctx.stringValue("GetProjectInfoResponse.Data.Modifier.StaffId"));
 		data.setModifier(modifier);
 
 		List<ProjectMember> projectMembers = new ArrayList<ProjectMember>();
-		for (int i = 0; i < context.lengthValue("GetProjectInfoResponse.Data.ProjectMembers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetProjectInfoResponse.Data.ProjectMembers.Length"); i++) {
 			ProjectMember projectMember = new ProjectMember();
-			projectMember.setIdentifier(context.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Identifier"));
-			projectMember.setName(context.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Name"));
-			projectMember.setId(context.integerValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Id"));
+			projectMember.setIdentifier(_ctx.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Identifier"));
+			projectMember.setName(_ctx.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Name"));
+			projectMember.setId(_ctx.integerValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Id"));
 
 			List<User> users = new ArrayList<User>();
-			for (int j = 0; j < context.lengthValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users.Length"); j++) {
 				User user = new User();
-				user.setRealName(context.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].RealName"));
-				user.setNickName(context.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].NickName"));
-				user.setAvatar(context.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].Avatar"));
-				user.setId(context.integerValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].Id"));
-				user.setEmail(context.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].Email"));
-				user.setStaffId(context.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].StaffId"));
+				user.setRealName(_ctx.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].RealName"));
+				user.setNickName(_ctx.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].NickName"));
+				user.setAvatar(_ctx.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].Avatar"));
+				user.setId(_ctx.integerValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].Id"));
+				user.setEmail(_ctx.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].Email"));
+				user.setStaffId(_ctx.stringValue("GetProjectInfoResponse.Data.ProjectMembers["+ i +"].Users["+ j +"].StaffId"));
 
 				users.add(user);
 			}

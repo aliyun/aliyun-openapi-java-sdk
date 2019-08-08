@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateEnterpriseResponseUnmarshaller {
 
-	public static CreateEnterpriseResponse unmarshall(CreateEnterpriseResponse createEnterpriseResponse, UnmarshallerContext context) {
+	public static CreateEnterpriseResponse unmarshall(CreateEnterpriseResponse createEnterpriseResponse, UnmarshallerContext _ctx) {
 		
-		createEnterpriseResponse.setRequestId(context.stringValue("CreateEnterpriseResponse.RequestId"));
-		createEnterpriseResponse.setSuccess(context.booleanValue("CreateEnterpriseResponse.Success"));
-		createEnterpriseResponse.setMessage(context.stringValue("CreateEnterpriseResponse.Message"));
-		createEnterpriseResponse.setCode(context.integerValue("CreateEnterpriseResponse.Code"));
+		createEnterpriseResponse.setRequestId(_ctx.stringValue("CreateEnterpriseResponse.RequestId"));
+		createEnterpriseResponse.setSuccess(_ctx.booleanValue("CreateEnterpriseResponse.Success"));
+		createEnterpriseResponse.setMessage(_ctx.stringValue("CreateEnterpriseResponse.Message"));
+		createEnterpriseResponse.setCode(_ctx.integerValue("CreateEnterpriseResponse.Code"));
 
 		Data data = new Data();
-		data.setId(context.longValue("CreateEnterpriseResponse.Data.Id"));
-		data.setName(context.stringValue("CreateEnterpriseResponse.Data.Name"));
-		data.setStatus(context.integerValue("CreateEnterpriseResponse.Data.Status"));
-		data.setProhibitCode(context.integerValue("CreateEnterpriseResponse.Data.ProhibitCode"));
-		data.setType(context.integerValue("CreateEnterpriseResponse.Data.Type"));
-		data.setIdentifier(context.stringValue("CreateEnterpriseResponse.Data.Identifier"));
+		data.setId(_ctx.longValue("CreateEnterpriseResponse.Data.Id"));
+		data.setName(_ctx.stringValue("CreateEnterpriseResponse.Data.Name"));
+		data.setStatus(_ctx.integerValue("CreateEnterpriseResponse.Data.Status"));
+		data.setProhibitCode(_ctx.integerValue("CreateEnterpriseResponse.Data.ProhibitCode"));
+		data.setType(_ctx.integerValue("CreateEnterpriseResponse.Data.Type"));
+		data.setIdentifier(_ctx.stringValue("CreateEnterpriseResponse.Data.Identifier"));
 		createEnterpriseResponse.setData(data);
 	 
 	 	return createEnterpriseResponse;

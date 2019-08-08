@@ -24,51 +24,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetBindedUserByDingIdResponseUnmarshaller {
 
-	public static GetBindedUserByDingIdResponse unmarshall(GetBindedUserByDingIdResponse getBindedUserByDingIdResponse, UnmarshallerContext context) {
+	public static GetBindedUserByDingIdResponse unmarshall(GetBindedUserByDingIdResponse getBindedUserByDingIdResponse, UnmarshallerContext _ctx) {
 		
-		getBindedUserByDingIdResponse.setRequestId(context.stringValue("GetBindedUserByDingIdResponse.RequestId"));
-		getBindedUserByDingIdResponse.setCode(context.integerValue("GetBindedUserByDingIdResponse.Code"));
-		getBindedUserByDingIdResponse.setSuccess(context.booleanValue("GetBindedUserByDingIdResponse.Success"));
+		getBindedUserByDingIdResponse.setRequestId(_ctx.stringValue("GetBindedUserByDingIdResponse.RequestId"));
+		getBindedUserByDingIdResponse.setCode(_ctx.integerValue("GetBindedUserByDingIdResponse.Code"));
+		getBindedUserByDingIdResponse.setSuccess(_ctx.booleanValue("GetBindedUserByDingIdResponse.Success"));
 
 		Data data = new Data();
-		data.setNickName(context.stringValue("GetBindedUserByDingIdResponse.Data.NickName"));
-		data.setIsValid(context.booleanValue("GetBindedUserByDingIdResponse.Data.IsValid"));
-		data.setUuid(context.stringValue("GetBindedUserByDingIdResponse.Data.Uuid"));
-		data.setGuid(context.stringValue("GetBindedUserByDingIdResponse.Data.Guid"));
-		data.setId(context.integerValue("GetBindedUserByDingIdResponse.Data.Id"));
-		data.setMainAccountType(context.stringValue("GetBindedUserByDingIdResponse.Data.MainAccountType"));
+		data.setNickName(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.NickName"));
+		data.setIsValid(_ctx.booleanValue("GetBindedUserByDingIdResponse.Data.IsValid"));
+		data.setUuid(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.Uuid"));
+		data.setGuid(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.Guid"));
+		data.setId(_ctx.integerValue("GetBindedUserByDingIdResponse.Data.Id"));
+		data.setMainAccountType(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.MainAccountType"));
 
 		AliyunUser aliyunUser = new AliyunUser();
-		aliyunUser.setKp(context.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.Kp"));
-		aliyunUser.setNickName(context.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.NickName"));
-		aliyunUser.setHavanaId(context.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.HavanaId"));
-		aliyunUser.setRealname(context.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.Realname"));
-		aliyunUser.setTaobaoNick(context.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.TaobaoNick"));
-		aliyunUser.setAliyunId(context.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.AliyunId"));
-		aliyunUser.setAccountStructure(context.integerValue("GetBindedUserByDingIdResponse.Data.AliyunUser.AccountStructure"));
-		aliyunUser.setId(context.integerValue("GetBindedUserByDingIdResponse.Data.AliyunUser.Id"));
-		aliyunUser.setEmail(context.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.Email"));
+		aliyunUser.setKp(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.Kp"));
+		aliyunUser.setNickName(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.NickName"));
+		aliyunUser.setHavanaId(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.HavanaId"));
+		aliyunUser.setRealname(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.Realname"));
+		aliyunUser.setTaobaoNick(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.TaobaoNick"));
+		aliyunUser.setAliyunId(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.AliyunId"));
+		aliyunUser.setAccountStructure(_ctx.integerValue("GetBindedUserByDingIdResponse.Data.AliyunUser.AccountStructure"));
+		aliyunUser.setId(_ctx.integerValue("GetBindedUserByDingIdResponse.Data.AliyunUser.Id"));
+		aliyunUser.setEmail(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.AliyunUser.Email"));
 		data.setAliyunUser(aliyunUser);
 
 		DingtalkUser dingtalkUser = new DingtalkUser();
-		dingtalkUser.setNick(context.stringValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.Nick"));
-		dingtalkUser.setCodeUserName(context.stringValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.CodeUserName"));
-		dingtalkUser.setUnionId(context.stringValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.UnionId"));
-		dingtalkUser.setDingId(context.stringValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.DingId"));
-		dingtalkUser.setDingtalkUserId(context.integerValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.DingtalkUserId"));
-		dingtalkUser.setId(context.integerValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.Id"));
+		dingtalkUser.setNick(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.Nick"));
+		dingtalkUser.setCodeUserName(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.CodeUserName"));
+		dingtalkUser.setUnionId(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.UnionId"));
+		dingtalkUser.setDingId(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.DingId"));
+		dingtalkUser.setDingtalkUserId(_ctx.integerValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.DingtalkUserId"));
+		dingtalkUser.setId(_ctx.integerValue("GetBindedUserByDingIdResponse.Data.DingtalkUser.Id"));
 		data.setDingtalkUser(dingtalkUser);
 
 		UserProfileDTO userProfileDTO = new UserProfileDTO();
-		userProfileDTO.setEnglishName(context.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.EnglishName"));
-		userProfileDTO.setNickName(context.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.NickName"));
-		userProfileDTO.setMobile(context.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.Mobile"));
-		userProfileDTO.setAvatar(context.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.Avatar"));
-		userProfileDTO.setUserId(context.integerValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.UserId"));
-		userProfileDTO.setCreatedAt(context.longValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.CreatedAt"));
-		userProfileDTO.setName(context.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.Name"));
-		userProfileDTO.setDataSource(context.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.DataSource"));
-		userProfileDTO.setEmail(context.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.Email"));
+		userProfileDTO.setEnglishName(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.EnglishName"));
+		userProfileDTO.setNickName(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.NickName"));
+		userProfileDTO.setMobile(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.Mobile"));
+		userProfileDTO.setAvatar(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.Avatar"));
+		userProfileDTO.setUserId(_ctx.integerValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.UserId"));
+		userProfileDTO.setCreatedAt(_ctx.longValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.CreatedAt"));
+		userProfileDTO.setName(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.Name"));
+		userProfileDTO.setDataSource(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.DataSource"));
+		userProfileDTO.setEmail(_ctx.stringValue("GetBindedUserByDingIdResponse.Data.UserProfileDTO.Email"));
 		data.setUserProfileDTO(userProfileDTO);
 		getBindedUserByDingIdResponse.setData(data);
 	 

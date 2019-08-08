@@ -23,16 +23,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ApproveJoinCompanyResponseUnmarshaller {
 
-	public static ApproveJoinCompanyResponse unmarshall(ApproveJoinCompanyResponse approveJoinCompanyResponse, UnmarshallerContext context) {
+	public static ApproveJoinCompanyResponse unmarshall(ApproveJoinCompanyResponse approveJoinCompanyResponse, UnmarshallerContext _ctx) {
 		
-		approveJoinCompanyResponse.setRequestId(context.stringValue("ApproveJoinCompanyResponse.RequestId"));
-		approveJoinCompanyResponse.setSuccess(context.booleanValue("ApproveJoinCompanyResponse.Success"));
-		approveJoinCompanyResponse.setCode(context.integerValue("ApproveJoinCompanyResponse.Code"));
-		approveJoinCompanyResponse.setMessage(context.stringValue("ApproveJoinCompanyResponse.Message"));
+		approveJoinCompanyResponse.setRequestId(_ctx.stringValue("ApproveJoinCompanyResponse.RequestId"));
+		approveJoinCompanyResponse.setSuccess(_ctx.booleanValue("ApproveJoinCompanyResponse.Success"));
+		approveJoinCompanyResponse.setCode(_ctx.integerValue("ApproveJoinCompanyResponse.Code"));
+		approveJoinCompanyResponse.setMessage(_ctx.stringValue("ApproveJoinCompanyResponse.Message"));
 
 		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ApproveJoinCompanyResponse.Data.Length"); i++) {
-			data.add(context.stringValue("ApproveJoinCompanyResponse.Data["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ApproveJoinCompanyResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("ApproveJoinCompanyResponse.Data["+ i +"]"));
 		}
 		approveJoinCompanyResponse.setData(data);
 	 

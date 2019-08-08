@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class JoinCompanyResponseUnmarshaller {
 
-	public static JoinCompanyResponse unmarshall(JoinCompanyResponse joinCompanyResponse, UnmarshallerContext context) {
+	public static JoinCompanyResponse unmarshall(JoinCompanyResponse joinCompanyResponse, UnmarshallerContext _ctx) {
 		
-		joinCompanyResponse.setRequestId(context.stringValue("JoinCompanyResponse.RequestId"));
-		joinCompanyResponse.setSuccess(context.booleanValue("JoinCompanyResponse.Success"));
-		joinCompanyResponse.setCode(context.integerValue("JoinCompanyResponse.Code"));
-		joinCompanyResponse.setMessage(context.stringValue("JoinCompanyResponse.Message"));
+		joinCompanyResponse.setRequestId(_ctx.stringValue("JoinCompanyResponse.RequestId"));
+		joinCompanyResponse.setSuccess(_ctx.booleanValue("JoinCompanyResponse.Success"));
+		joinCompanyResponse.setCode(_ctx.integerValue("JoinCompanyResponse.Code"));
+		joinCompanyResponse.setMessage(_ctx.stringValue("JoinCompanyResponse.Message"));
 
 		Data data = new Data();
-		data.setApplicationId(context.stringValue("JoinCompanyResponse.Data.ApplicationId"));
+		data.setApplicationId(_ctx.stringValue("JoinCompanyResponse.Data.ApplicationId"));
 		joinCompanyResponse.setData(data);
 	 
 	 	return joinCompanyResponse;

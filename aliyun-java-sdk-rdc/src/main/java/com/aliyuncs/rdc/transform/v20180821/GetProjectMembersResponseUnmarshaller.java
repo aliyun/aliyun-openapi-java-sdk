@@ -25,29 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetProjectMembersResponseUnmarshaller {
 
-	public static GetProjectMembersResponse unmarshall(GetProjectMembersResponse getProjectMembersResponse, UnmarshallerContext context) {
+	public static GetProjectMembersResponse unmarshall(GetProjectMembersResponse getProjectMembersResponse, UnmarshallerContext _ctx) {
 		
-		getProjectMembersResponse.setRequestId(context.stringValue("GetProjectMembersResponse.RequestId"));
-		getProjectMembersResponse.setCode(context.integerValue("GetProjectMembersResponse.Code"));
-		getProjectMembersResponse.setSuccess(context.booleanValue("GetProjectMembersResponse.Success"));
-		getProjectMembersResponse.setMessage(context.stringValue("GetProjectMembersResponse.Message"));
+		getProjectMembersResponse.setRequestId(_ctx.stringValue("GetProjectMembersResponse.RequestId"));
+		getProjectMembersResponse.setCode(_ctx.integerValue("GetProjectMembersResponse.Code"));
+		getProjectMembersResponse.setSuccess(_ctx.booleanValue("GetProjectMembersResponse.Success"));
+		getProjectMembersResponse.setMessage(_ctx.stringValue("GetProjectMembersResponse.Message"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < context.lengthValue("GetProjectMembersResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetProjectMembersResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setId(context.integerValue("GetProjectMembersResponse.Data["+ i +"].Id"));
-			dataItem.setName(context.stringValue("GetProjectMembersResponse.Data["+ i +"].Name"));
-			dataItem.setIdentifier(context.stringValue("GetProjectMembersResponse.Data["+ i +"].Identifier"));
+			dataItem.setId(_ctx.integerValue("GetProjectMembersResponse.Data["+ i +"].Id"));
+			dataItem.setName(_ctx.stringValue("GetProjectMembersResponse.Data["+ i +"].Name"));
+			dataItem.setIdentifier(_ctx.stringValue("GetProjectMembersResponse.Data["+ i +"].Identifier"));
 
 			List<UsersItem> users = new ArrayList<UsersItem>();
-			for (int j = 0; j < context.lengthValue("GetProjectMembersResponse.Data["+ i +"].Users.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetProjectMembersResponse.Data["+ i +"].Users.Length"); j++) {
 				UsersItem usersItem = new UsersItem();
-				usersItem.setId(context.integerValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].Id"));
-				usersItem.setStaffId(context.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].StaffId"));
-				usersItem.setRealName(context.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].RealName"));
-				usersItem.setNickName(context.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].NickName"));
-				usersItem.setAvatar(context.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].Avatar"));
-				usersItem.setEmail(context.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].Email"));
+				usersItem.setId(_ctx.integerValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].Id"));
+				usersItem.setStaffId(_ctx.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].StaffId"));
+				usersItem.setRealName(_ctx.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].RealName"));
+				usersItem.setNickName(_ctx.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].NickName"));
+				usersItem.setAvatar(_ctx.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].Avatar"));
+				usersItem.setEmail(_ctx.stringValue("GetProjectMembersResponse.Data["+ i +"].Users["+ j +"].Email"));
 
 				users.add(usersItem);
 			}

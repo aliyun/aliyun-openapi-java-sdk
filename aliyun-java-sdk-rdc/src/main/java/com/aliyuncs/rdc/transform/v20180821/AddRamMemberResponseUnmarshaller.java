@@ -23,16 +23,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddRamMemberResponseUnmarshaller {
 
-	public static AddRamMemberResponse unmarshall(AddRamMemberResponse addRamMemberResponse, UnmarshallerContext context) {
+	public static AddRamMemberResponse unmarshall(AddRamMemberResponse addRamMemberResponse, UnmarshallerContext _ctx) {
 		
-		addRamMemberResponse.setRequestId(context.stringValue("AddRamMemberResponse.RequestId"));
-		addRamMemberResponse.setSuccess(context.booleanValue("AddRamMemberResponse.Success"));
-		addRamMemberResponse.setCode(context.integerValue("AddRamMemberResponse.Code"));
-		addRamMemberResponse.setMessage(context.stringValue("AddRamMemberResponse.Message"));
+		addRamMemberResponse.setRequestId(_ctx.stringValue("AddRamMemberResponse.RequestId"));
+		addRamMemberResponse.setSuccess(_ctx.booleanValue("AddRamMemberResponse.Success"));
+		addRamMemberResponse.setCode(_ctx.integerValue("AddRamMemberResponse.Code"));
+		addRamMemberResponse.setMessage(_ctx.stringValue("AddRamMemberResponse.Message"));
 
 		List<String> data = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("AddRamMemberResponse.Data.Length"); i++) {
-			data.add(context.stringValue("AddRamMemberResponse.Data["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("AddRamMemberResponse.Data.Length"); i++) {
+			data.add(_ctx.stringValue("AddRamMemberResponse.Data["+ i +"]"));
 		}
 		addRamMemberResponse.setData(data);
 	 

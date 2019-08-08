@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetChangeLogResponseUnmarshaller {
 
-	public static GetChangeLogResponse unmarshall(GetChangeLogResponse getChangeLogResponse, UnmarshallerContext context) {
+	public static GetChangeLogResponse unmarshall(GetChangeLogResponse getChangeLogResponse, UnmarshallerContext _ctx) {
 		
-		getChangeLogResponse.setRequestId(context.stringValue("GetChangeLogResponse.RequestId"));
-		getChangeLogResponse.setCode(context.integerValue("GetChangeLogResponse.Code"));
-		getChangeLogResponse.setSuccess(context.booleanValue("GetChangeLogResponse.Success"));
+		getChangeLogResponse.setRequestId(_ctx.stringValue("GetChangeLogResponse.RequestId"));
+		getChangeLogResponse.setCode(_ctx.integerValue("GetChangeLogResponse.Code"));
+		getChangeLogResponse.setSuccess(_ctx.booleanValue("GetChangeLogResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < context.lengthValue("GetChangeLogResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetChangeLogResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setNewValue(context.stringValue("GetChangeLogResponse.Data["+ i +"].NewValue"));
-			dataItem.setPropertyType(context.stringValue("GetChangeLogResponse.Data["+ i +"].PropertyType"));
-			dataItem.setOther(context.stringValue("GetChangeLogResponse.Data["+ i +"].Other"));
-			dataItem.setPropertyKey(context.stringValue("GetChangeLogResponse.Data["+ i +"].PropertyKey"));
-			dataItem.setOldValue(context.stringValue("GetChangeLogResponse.Data["+ i +"].OldValue"));
-			dataItem.setTargetType(context.stringValue("GetChangeLogResponse.Data["+ i +"].TargetType"));
-			dataItem.setTargetId(context.integerValue("GetChangeLogResponse.Data["+ i +"].TargetId"));
+			dataItem.setNewValue(_ctx.stringValue("GetChangeLogResponse.Data["+ i +"].NewValue"));
+			dataItem.setPropertyType(_ctx.stringValue("GetChangeLogResponse.Data["+ i +"].PropertyType"));
+			dataItem.setOther(_ctx.stringValue("GetChangeLogResponse.Data["+ i +"].Other"));
+			dataItem.setPropertyKey(_ctx.stringValue("GetChangeLogResponse.Data["+ i +"].PropertyKey"));
+			dataItem.setOldValue(_ctx.stringValue("GetChangeLogResponse.Data["+ i +"].OldValue"));
+			dataItem.setTargetType(_ctx.stringValue("GetChangeLogResponse.Data["+ i +"].TargetType"));
+			dataItem.setTargetId(_ctx.integerValue("GetChangeLogResponse.Data["+ i +"].TargetId"));
 
 			data.add(dataItem);
 		}

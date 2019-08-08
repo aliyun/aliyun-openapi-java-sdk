@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddProjectMembersResponseUnmarshaller {
 
-	public static AddProjectMembersResponse unmarshall(AddProjectMembersResponse addProjectMembersResponse, UnmarshallerContext context) {
+	public static AddProjectMembersResponse unmarshall(AddProjectMembersResponse addProjectMembersResponse, UnmarshallerContext _ctx) {
 		
-		addProjectMembersResponse.setRequestId(context.stringValue("AddProjectMembersResponse.RequestId"));
-		addProjectMembersResponse.setCode(context.integerValue("AddProjectMembersResponse.Code"));
-		addProjectMembersResponse.setData(context.booleanValue("AddProjectMembersResponse.Data"));
-		addProjectMembersResponse.setSuccess(context.booleanValue("AddProjectMembersResponse.Success"));
-		addProjectMembersResponse.setMessage(context.stringValue("AddProjectMembersResponse.Message"));
+		addProjectMembersResponse.setRequestId(_ctx.stringValue("AddProjectMembersResponse.RequestId"));
+		addProjectMembersResponse.setCode(_ctx.integerValue("AddProjectMembersResponse.Code"));
+		addProjectMembersResponse.setData(_ctx.booleanValue("AddProjectMembersResponse.Data"));
+		addProjectMembersResponse.setSuccess(_ctx.booleanValue("AddProjectMembersResponse.Success"));
+		addProjectMembersResponse.setMessage(_ctx.stringValue("AddProjectMembersResponse.Message"));
 	 
 	 	return addProjectMembersResponse;
 	}

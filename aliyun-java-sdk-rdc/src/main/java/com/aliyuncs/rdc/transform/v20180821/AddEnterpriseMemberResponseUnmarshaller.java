@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddEnterpriseMemberResponseUnmarshaller {
 
-	public static AddEnterpriseMemberResponse unmarshall(AddEnterpriseMemberResponse addEnterpriseMemberResponse, UnmarshallerContext context) {
+	public static AddEnterpriseMemberResponse unmarshall(AddEnterpriseMemberResponse addEnterpriseMemberResponse, UnmarshallerContext _ctx) {
 		
-		addEnterpriseMemberResponse.setRequestId(context.stringValue("AddEnterpriseMemberResponse.RequestId"));
-		addEnterpriseMemberResponse.setSuccess(context.booleanValue("AddEnterpriseMemberResponse.Success"));
-		addEnterpriseMemberResponse.setMessage(context.stringValue("AddEnterpriseMemberResponse.Message"));
-		addEnterpriseMemberResponse.setCode(context.integerValue("AddEnterpriseMemberResponse.Code"));
-		addEnterpriseMemberResponse.setData(context.booleanValue("AddEnterpriseMemberResponse.Data"));
+		addEnterpriseMemberResponse.setRequestId(_ctx.stringValue("AddEnterpriseMemberResponse.RequestId"));
+		addEnterpriseMemberResponse.setSuccess(_ctx.booleanValue("AddEnterpriseMemberResponse.Success"));
+		addEnterpriseMemberResponse.setMessage(_ctx.stringValue("AddEnterpriseMemberResponse.Message"));
+		addEnterpriseMemberResponse.setCode(_ctx.integerValue("AddEnterpriseMemberResponse.Code"));
+		addEnterpriseMemberResponse.setData(_ctx.booleanValue("AddEnterpriseMemberResponse.Data"));
 	 
 	 	return addEnterpriseMemberResponse;
 	}

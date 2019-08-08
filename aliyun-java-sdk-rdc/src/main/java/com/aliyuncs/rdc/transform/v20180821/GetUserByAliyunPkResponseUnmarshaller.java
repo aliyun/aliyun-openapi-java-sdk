@@ -24,51 +24,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetUserByAliyunPkResponseUnmarshaller {
 
-	public static GetUserByAliyunPkResponse unmarshall(GetUserByAliyunPkResponse getUserByAliyunPkResponse, UnmarshallerContext context) {
+	public static GetUserByAliyunPkResponse unmarshall(GetUserByAliyunPkResponse getUserByAliyunPkResponse, UnmarshallerContext _ctx) {
 		
-		getUserByAliyunPkResponse.setRequestId(context.stringValue("GetUserByAliyunPkResponse.RequestId"));
-		getUserByAliyunPkResponse.setCode(context.integerValue("GetUserByAliyunPkResponse.Code"));
-		getUserByAliyunPkResponse.setSuccess(context.booleanValue("GetUserByAliyunPkResponse.Success"));
+		getUserByAliyunPkResponse.setRequestId(_ctx.stringValue("GetUserByAliyunPkResponse.RequestId"));
+		getUserByAliyunPkResponse.setCode(_ctx.integerValue("GetUserByAliyunPkResponse.Code"));
+		getUserByAliyunPkResponse.setSuccess(_ctx.booleanValue("GetUserByAliyunPkResponse.Success"));
 
 		Data data = new Data();
-		data.setNickName(context.stringValue("GetUserByAliyunPkResponse.Data.NickName"));
-		data.setIsValid(context.booleanValue("GetUserByAliyunPkResponse.Data.IsValid"));
-		data.setUuid(context.stringValue("GetUserByAliyunPkResponse.Data.Uuid"));
-		data.setGuid(context.stringValue("GetUserByAliyunPkResponse.Data.Guid"));
-		data.setId(context.integerValue("GetUserByAliyunPkResponse.Data.Id"));
-		data.setMainAccountType(context.stringValue("GetUserByAliyunPkResponse.Data.MainAccountType"));
+		data.setNickName(_ctx.stringValue("GetUserByAliyunPkResponse.Data.NickName"));
+		data.setIsValid(_ctx.booleanValue("GetUserByAliyunPkResponse.Data.IsValid"));
+		data.setUuid(_ctx.stringValue("GetUserByAliyunPkResponse.Data.Uuid"));
+		data.setGuid(_ctx.stringValue("GetUserByAliyunPkResponse.Data.Guid"));
+		data.setId(_ctx.integerValue("GetUserByAliyunPkResponse.Data.Id"));
+		data.setMainAccountType(_ctx.stringValue("GetUserByAliyunPkResponse.Data.MainAccountType"));
 
 		AliyunUser aliyunUser = new AliyunUser();
-		aliyunUser.setKp(context.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.Kp"));
-		aliyunUser.setNickName(context.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.NickName"));
-		aliyunUser.setHavanaId(context.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.HavanaId"));
-		aliyunUser.setRealname(context.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.Realname"));
-		aliyunUser.setTaobaoNick(context.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.TaobaoNick"));
-		aliyunUser.setAliyunId(context.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.AliyunId"));
-		aliyunUser.setAccountStructure(context.integerValue("GetUserByAliyunPkResponse.Data.AliyunUser.AccountStructure"));
-		aliyunUser.setId(context.integerValue("GetUserByAliyunPkResponse.Data.AliyunUser.Id"));
-		aliyunUser.setEmail(context.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.Email"));
+		aliyunUser.setKp(_ctx.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.Kp"));
+		aliyunUser.setNickName(_ctx.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.NickName"));
+		aliyunUser.setHavanaId(_ctx.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.HavanaId"));
+		aliyunUser.setRealname(_ctx.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.Realname"));
+		aliyunUser.setTaobaoNick(_ctx.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.TaobaoNick"));
+		aliyunUser.setAliyunId(_ctx.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.AliyunId"));
+		aliyunUser.setAccountStructure(_ctx.integerValue("GetUserByAliyunPkResponse.Data.AliyunUser.AccountStructure"));
+		aliyunUser.setId(_ctx.integerValue("GetUserByAliyunPkResponse.Data.AliyunUser.Id"));
+		aliyunUser.setEmail(_ctx.stringValue("GetUserByAliyunPkResponse.Data.AliyunUser.Email"));
 		data.setAliyunUser(aliyunUser);
 
 		DingtalkUser dingtalkUser = new DingtalkUser();
-		dingtalkUser.setNick(context.stringValue("GetUserByAliyunPkResponse.Data.DingtalkUser.Nick"));
-		dingtalkUser.setCodeUserName(context.stringValue("GetUserByAliyunPkResponse.Data.DingtalkUser.CodeUserName"));
-		dingtalkUser.setUnionId(context.stringValue("GetUserByAliyunPkResponse.Data.DingtalkUser.UnionId"));
-		dingtalkUser.setDingId(context.stringValue("GetUserByAliyunPkResponse.Data.DingtalkUser.DingId"));
-		dingtalkUser.setDingtalkUserId(context.integerValue("GetUserByAliyunPkResponse.Data.DingtalkUser.DingtalkUserId"));
-		dingtalkUser.setId(context.integerValue("GetUserByAliyunPkResponse.Data.DingtalkUser.Id"));
+		dingtalkUser.setNick(_ctx.stringValue("GetUserByAliyunPkResponse.Data.DingtalkUser.Nick"));
+		dingtalkUser.setCodeUserName(_ctx.stringValue("GetUserByAliyunPkResponse.Data.DingtalkUser.CodeUserName"));
+		dingtalkUser.setUnionId(_ctx.stringValue("GetUserByAliyunPkResponse.Data.DingtalkUser.UnionId"));
+		dingtalkUser.setDingId(_ctx.stringValue("GetUserByAliyunPkResponse.Data.DingtalkUser.DingId"));
+		dingtalkUser.setDingtalkUserId(_ctx.integerValue("GetUserByAliyunPkResponse.Data.DingtalkUser.DingtalkUserId"));
+		dingtalkUser.setId(_ctx.integerValue("GetUserByAliyunPkResponse.Data.DingtalkUser.Id"));
 		data.setDingtalkUser(dingtalkUser);
 
 		UserProfileDTO userProfileDTO = new UserProfileDTO();
-		userProfileDTO.setEnglishName(context.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.EnglishName"));
-		userProfileDTO.setNickName(context.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.NickName"));
-		userProfileDTO.setMobile(context.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.Mobile"));
-		userProfileDTO.setAvatar(context.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.Avatar"));
-		userProfileDTO.setUserId(context.integerValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.UserId"));
-		userProfileDTO.setCreatedAt(context.longValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.CreatedAt"));
-		userProfileDTO.setName(context.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.Name"));
-		userProfileDTO.setDataSource(context.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.DataSource"));
-		userProfileDTO.setEmail(context.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.Email"));
+		userProfileDTO.setEnglishName(_ctx.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.EnglishName"));
+		userProfileDTO.setNickName(_ctx.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.NickName"));
+		userProfileDTO.setMobile(_ctx.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.Mobile"));
+		userProfileDTO.setAvatar(_ctx.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.Avatar"));
+		userProfileDTO.setUserId(_ctx.integerValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.UserId"));
+		userProfileDTO.setCreatedAt(_ctx.longValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.CreatedAt"));
+		userProfileDTO.setName(_ctx.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.Name"));
+		userProfileDTO.setDataSource(_ctx.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.DataSource"));
+		userProfileDTO.setEmail(_ctx.stringValue("GetUserByAliyunPkResponse.Data.UserProfileDTO.Email"));
 		data.setUserProfileDTO(userProfileDTO);
 		getUserByAliyunPkResponse.setData(data);
 	 
