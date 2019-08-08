@@ -538,6 +538,8 @@ public class GetResultResponse extends AcsResponse {
 
 			private String primaryId;
 
+			private String callId;
+
 			private String name;
 
 			private String url;
@@ -568,6 +570,14 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setPrimaryId(String primaryId) {
 				this.primaryId = primaryId;
+			}
+
+			public String getCallId() {
+				return this.callId;
+			}
+
+			public void setCallId(String callId) {
+				this.callId = callId;
 			}
 
 			public String getName() {

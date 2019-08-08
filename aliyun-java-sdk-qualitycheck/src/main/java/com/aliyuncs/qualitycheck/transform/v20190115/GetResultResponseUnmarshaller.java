@@ -59,6 +59,7 @@ public class GetResultResponseUnmarshaller {
 			Recording recording = new Recording();
 			recording.setId(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Id"));
 			recording.setPrimaryId(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.PrimaryId"));
+			recording.setCallId(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.CallId"));
 			recording.setName(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Name"));
 			recording.setUrl(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Url"));
 			recording.setDataSetName(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.DataSetName"));
