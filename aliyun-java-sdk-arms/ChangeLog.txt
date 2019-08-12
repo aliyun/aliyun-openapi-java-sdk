@@ -1,3 +1,6 @@
+2019-08-12 Version: 2.5.0
+- Api release 2019-08-08 public sdk.
+
 2019-07-08 Version: 2.4.8
 - Add api `get token`.
 
