@@ -12,17 +12,20 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.green.transform.v20180509;
+package com.aliyuncs.green.model.v20180509;
 
-import com.aliyuncs.green.model.v20180509.ListSimilarityLibrariesResponse;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.green.transform.v20180509.DetectFaceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
+/**
+ * @author auto create
+ * @version 
+ */
+public class DetectFaceResponse extends AcsResponse {
 
-public class ListSimilarityLibrariesResponseUnmarshaller {
-
-	public static ListSimilarityLibrariesResponse unmarshall(ListSimilarityLibrariesResponse listSimilarityLibrariesResponse, UnmarshallerContext _ctx) {
-		
-	 
-	 	return listSimilarityLibrariesResponse;
+	@Override
+	public DetectFaceResponse getInstance(UnmarshallerContext context) {
+		return	DetectFaceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

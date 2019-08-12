@@ -14,15 +14,15 @@
 
 package com.aliyuncs.green.transform.v20180509;
 
-import com.aliyuncs.green.model.v20180509.ListSimilarityLibrariesResponse;
+import com.aliyuncs.green.model.v20180509.DetectFaceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ListSimilarityLibrariesResponseUnmarshaller {
+public class DetectFaceResponseUnmarshaller {
 
-	public static ListSimilarityLibrariesResponse unmarshall(ListSimilarityLibrariesResponse listSimilarityLibrariesResponse, UnmarshallerContext _ctx) {
+	public static DetectFaceResponse unmarshall(DetectFaceResponse detectFaceResponse, UnmarshallerContext _ctx) {
 		
 	 
-	 	return listSimilarityLibrariesResponse;
+	 	return detectFaceResponse;
 	}
 }

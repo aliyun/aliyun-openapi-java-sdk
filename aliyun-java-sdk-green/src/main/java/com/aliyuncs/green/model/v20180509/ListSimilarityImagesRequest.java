@@ -16,6 +16,7 @@ package com.aliyuncs.green.model.v20180509;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
@@ -27,6 +28,10 @@ public class ListSimilarityImagesRequest extends RoaAcsRequest<ListSimilarityIma
 		super("Green", "2018-05-09", "ListSimilarityImages", "green");
 		setUriPattern("/green/similarity/image/list");
 		setMethod(MethodType.POST);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String clientInfo;

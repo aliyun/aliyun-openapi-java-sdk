@@ -22,11 +22,11 @@ import com.aliyuncs.green.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSimilarityLibraryRequest extends RoaAcsRequest<GetSimilarityLibraryResponse> {
+public class DetectFaceRequest extends RoaAcsRequest<DetectFaceResponse> {
 	
-	public GetSimilarityLibraryRequest() {
-		super("Green", "2018-05-09", "GetSimilarityLibrary", "green");
-		setUriPattern("/green/similarity/library/get");
+	public DetectFaceRequest() {
+		super("Green", "2018-05-09", "DetectFace", "green");
+		setUriPattern("/green/face/detect");
 		setMethod(MethodType.POST);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,8 +48,8 @@ public class GetSimilarityLibraryRequest extends RoaAcsRequest<GetSimilarityLibr
 	}
 
 	@Override
-	public Class<GetSimilarityLibraryResponse> getResponseClass() {
-		return GetSimilarityLibraryResponse.class;
+	public Class<DetectFaceResponse> getResponseClass() {
+		return DetectFaceResponse.class;
 	}
 
 }

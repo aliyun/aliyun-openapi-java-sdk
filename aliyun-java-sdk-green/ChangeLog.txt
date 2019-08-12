@@ -1,3 +1,6 @@
+2019-08-12 Version: 3.5.0
+- Support Defect Face API.
+
 2019-07-04 Version: 3.4.4
 - Supported library managment for simillarity scene.
 - Remove the local file uploader code which can be downloaded from yundun content security document.
