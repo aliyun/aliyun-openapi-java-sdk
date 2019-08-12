@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ValidateTemplateContentRequest extends RpcAcsRequest<ValidateTemplateContentResponse> {
 	
 	public ValidateTemplateContentRequest() {
-		super("oos", "2019-06-01", "ValidateTemplateContent", "oos");
+		super("oos", "2019-06-01", "ValidateTemplateContent", "OOS");
 	}
 
 	private String content;

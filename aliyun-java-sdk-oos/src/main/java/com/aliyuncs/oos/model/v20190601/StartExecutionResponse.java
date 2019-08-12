@@ -27,6 +27,8 @@ public class StartExecutionResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String loopMode;
+
 	private Execution execution;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class StartExecutionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getLoopMode() {
+		return this.loopMode;
+	}
+
+	public void setLoopMode(String loopMode) {
+		this.loopMode = loopMode;
 	}
 
 	public Execution getExecution() {
@@ -82,6 +92,8 @@ public class StartExecutionResponse extends AcsResponse {
 		private String counters;
 
 		private String ramRole;
+
+		private String loopMode;
 
 		private List<CurrentTask> currentTasks;
 
@@ -227,6 +239,14 @@ public class StartExecutionResponse extends AcsResponse {
 
 		public void setRamRole(String ramRole) {
 			this.ramRole = ramRole;
+		}
+
+		public String getLoopMode() {
+			return this.loopMode;
+		}
+
+		public void setLoopMode(String loopMode) {
+			this.loopMode = loopMode;
 		}
 
 		public List<CurrentTask> getCurrentTasks() {

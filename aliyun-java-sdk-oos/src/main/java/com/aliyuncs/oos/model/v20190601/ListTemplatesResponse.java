@@ -93,6 +93,8 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		private Integer popularity;
 
+		private Boolean hasTrigger;
+
 		public String getTemplateName() {
 			return this.templateName;
 		}
@@ -195,6 +197,14 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		public void setPopularity(Integer popularity) {
 			this.popularity = popularity;
+		}
+
+		public Boolean getHasTrigger() {
+			return this.hasTrigger;
+		}
+
+		public void setHasTrigger(Boolean hasTrigger) {
+			this.hasTrigger = hasTrigger;
 		}
 	}
 

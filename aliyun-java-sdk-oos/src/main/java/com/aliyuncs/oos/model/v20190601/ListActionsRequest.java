@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListActionsRequest extends RpcAcsRequest<ListActionsResponse> {
 	
 	public ListActionsRequest() {
-		super("oos", "2019-06-01", "ListActions", "oos");
+		super("oos", "2019-06-01", "ListActions", "OOS");
 	}
 
 	private String nextToken;

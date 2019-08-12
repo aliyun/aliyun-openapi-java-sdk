@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListExecutionLogsRequest extends RpcAcsRequest<ListExecutionLogsResponse> {
 	
 	public ListExecutionLogsRequest() {
-		super("oos", "2019-06-01", "ListExecutionLogs", "oos");
+		super("oos", "2019-06-01", "ListExecutionLogs", "OOS");
 	}
 
 	private String executionId;

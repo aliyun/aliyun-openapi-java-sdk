@@ -23,8 +23,10 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 	
 	public ListTemplatesRequest() {
-		super("oos", "2019-06-01", "ListTemplates", "oos");
+		super("oos", "2019-06-01", "ListTemplates", "OOS");
 	}
+
+	private Boolean hasTrigger;
 
 	private String createdDateBefore;
 
@@ -45,6 +47,17 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 	private String shareType;
 
 	private String sortField;
+
+	public Boolean getHasTrigger() {
+		return this.hasTrigger;
+	}
+
+	public void setHasTrigger(Boolean hasTrigger) {
+		this.hasTrigger = hasTrigger;
+		if(hasTrigger != null){
+			putQueryParameter("HasTrigger", hasTrigger.toString());
+		}
+	}
 
 	public String getCreatedDateBefore() {
 		return this.createdDateBefore;

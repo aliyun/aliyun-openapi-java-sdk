@@ -46,6 +46,7 @@ public class ListTemplatesResponseUnmarshaller {
 			template.setTemplateVersion(_ctx.stringValue("ListTemplatesResponse.Templates["+ i +"].TemplateVersion"));
 			template.setTotalExecutionCount(_ctx.integerValue("ListTemplatesResponse.Templates["+ i +"].TotalExecutionCount"));
 			template.setPopularity(_ctx.integerValue("ListTemplatesResponse.Templates["+ i +"].Popularity"));
+			template.setHasTrigger(_ctx.booleanValue("ListTemplatesResponse.Templates["+ i +"].HasTrigger"));
 
 			templates.add(template);
 		}

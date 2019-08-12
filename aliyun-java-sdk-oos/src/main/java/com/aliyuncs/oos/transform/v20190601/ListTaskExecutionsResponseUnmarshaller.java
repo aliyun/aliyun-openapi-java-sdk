@@ -51,6 +51,7 @@ public class ListTaskExecutionsResponseUnmarshaller {
 			taskExecution.setLoopItem(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].LoopItem"));
 			taskExecution.setLoop(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].Loop"));
 			taskExecution.setExtraData(_ctx.stringValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].ExtraData"));
+			taskExecution.setLoopBatchNumber(_ctx.integerValue("ListTaskExecutionsResponse.TaskExecutions["+ i +"].LoopBatchNumber"));
 
 			taskExecutions.add(taskExecution);
 		}

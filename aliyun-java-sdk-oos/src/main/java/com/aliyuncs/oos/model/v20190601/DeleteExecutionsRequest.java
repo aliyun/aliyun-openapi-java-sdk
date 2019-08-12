@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteExecutionsRequest extends RpcAcsRequest<DeleteExecutionsResponse> {
 	
 	public DeleteExecutionsRequest() {
-		super("oos", "2019-06-01", "DeleteExecutions", "oos");
+		super("oos", "2019-06-01", "DeleteExecutions", "OOS");
 	}
 
 	private String executionIds;

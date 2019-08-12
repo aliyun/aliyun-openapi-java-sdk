@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 	
 	public GetTemplateRequest() {
-		super("oos", "2019-06-01", "GetTemplate", "oos");
+		super("oos", "2019-06-01", "GetTemplate", "OOS");
 	}
 
 	private String templateVersion;

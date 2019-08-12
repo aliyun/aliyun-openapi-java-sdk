@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelExecutionRequest extends RpcAcsRequest<CancelExecutionResponse> {
 	
 	public CancelExecutionRequest() {
-		super("oos", "2019-06-01", "CancelExecution", "oos");
+		super("oos", "2019-06-01", "CancelExecution", "OOS");
 	}
 
 	private String executionId;

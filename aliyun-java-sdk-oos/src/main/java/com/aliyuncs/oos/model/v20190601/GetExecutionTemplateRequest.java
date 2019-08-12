@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetExecutionTemplateRequest extends RpcAcsRequest<GetExecutionTemplateResponse> {
 	
 	public GetExecutionTemplateRequest() {
-		super("oos", "2019-06-01", "GetExecutionTemplate", "oos");
+		super("oos", "2019-06-01", "GetExecutionTemplate", "OOS");
 	}
 
 	private String executionId;

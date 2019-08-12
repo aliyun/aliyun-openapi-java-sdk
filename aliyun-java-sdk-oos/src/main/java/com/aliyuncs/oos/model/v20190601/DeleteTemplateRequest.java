@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse> {
 	
 	public DeleteTemplateRequest() {
-		super("oos", "2019-06-01", "DeleteTemplate", "oos");
+		super("oos", "2019-06-01", "DeleteTemplate", "OOS");
 	}
 
 	private String templateName;

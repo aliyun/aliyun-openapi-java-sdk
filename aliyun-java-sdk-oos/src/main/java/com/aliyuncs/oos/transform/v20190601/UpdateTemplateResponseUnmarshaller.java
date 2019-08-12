@@ -37,6 +37,7 @@ public class UpdateTemplateResponseUnmarshaller {
 		template.setShareType(_ctx.stringValue("UpdateTemplateResponse.Template.ShareType"));
 		template.setTemplateFormat(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateFormat"));
 		template.setTemplateVersion(_ctx.stringValue("UpdateTemplateResponse.Template.TemplateVersion"));
+		template.setHasTrigger(_ctx.booleanValue("UpdateTemplateResponse.Template.HasTrigger"));
 		updateTemplateResponse.setTemplate(template);
 	 
 	 	return updateTemplateResponse;

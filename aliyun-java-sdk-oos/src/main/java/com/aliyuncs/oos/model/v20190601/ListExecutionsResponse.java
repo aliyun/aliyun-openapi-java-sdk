@@ -105,6 +105,10 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		private Boolean isParent;
 
+		private String statusReason;
+
+		private String loopMode;
+
 		private List<CurrentTask> currentTasks;
 
 		public String getExecutionId() {
@@ -257,6 +261,22 @@ public class ListExecutionsResponse extends AcsResponse {
 
 		public void setIsParent(Boolean isParent) {
 			this.isParent = isParent;
+		}
+
+		public String getStatusReason() {
+			return this.statusReason;
+		}
+
+		public void setStatusReason(String statusReason) {
+			this.statusReason = statusReason;
+		}
+
+		public String getLoopMode() {
+			return this.loopMode;
+		}
+
+		public void setLoopMode(String loopMode) {
+			this.loopMode = loopMode;
 		}
 
 		public List<CurrentTask> getCurrentTasks() {

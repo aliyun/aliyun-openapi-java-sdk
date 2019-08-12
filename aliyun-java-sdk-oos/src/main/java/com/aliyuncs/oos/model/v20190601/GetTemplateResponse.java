@@ -78,6 +78,8 @@ public class GetTemplateResponse extends AcsResponse {
 
 		private String templateVersion;
 
+		private Boolean hasTrigger;
+
 		public String getTemplateName() {
 			return this.templateName;
 		}
@@ -164,6 +166,14 @@ public class GetTemplateResponse extends AcsResponse {
 
 		public void setTemplateVersion(String templateVersion) {
 			this.templateVersion = templateVersion;
+		}
+
+		public Boolean getHasTrigger() {
+			return this.hasTrigger;
+		}
+
+		public void setHasTrigger(Boolean hasTrigger) {
+			this.hasTrigger = hasTrigger;
 		}
 	}
 

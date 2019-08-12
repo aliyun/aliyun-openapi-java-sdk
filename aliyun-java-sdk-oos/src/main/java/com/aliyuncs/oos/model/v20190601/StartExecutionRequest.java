@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse> {
 	
 	public StartExecutionRequest() {
-		super("oos", "2019-06-01", "StartExecution", "oos");
+		super("oos", "2019-06-01", "StartExecution", "OOS");
 	}
 
 	private String mode;
@@ -37,6 +37,8 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 	private String safetyCheck;
 
 	private String parameters;
+
+	private String loopMode;
 
 	public String getMode() {
 		return this.mode;
@@ -101,6 +103,17 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 		this.parameters = parameters;
 		if(parameters != null){
 			putQueryParameter("Parameters", parameters);
+		}
+	}
+
+	public String getLoopMode() {
+		return this.loopMode;
+	}
+
+	public void setLoopMode(String loopMode) {
+		this.loopMode = loopMode;
+		if(loopMode != null){
+			putQueryParameter("LoopMode", loopMode);
 		}
 	}
 

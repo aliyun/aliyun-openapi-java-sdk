@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse> {
 	
 	public CreateTemplateRequest() {
-		super("oos", "2019-06-01", "CreateTemplate", "oos");
+		super("oos", "2019-06-01", "CreateTemplate", "OOS");
 	}
 
 	private String templateName;

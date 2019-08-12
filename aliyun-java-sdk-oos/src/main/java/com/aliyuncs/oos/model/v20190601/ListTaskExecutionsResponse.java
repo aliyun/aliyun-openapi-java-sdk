@@ -103,6 +103,8 @@ public class ListTaskExecutionsResponse extends AcsResponse {
 
 		private String extraData;
 
+		private Integer loopBatchNumber;
+
 		public String getExecutionId() {
 			return this.executionId;
 		}
@@ -245,6 +247,14 @@ public class ListTaskExecutionsResponse extends AcsResponse {
 
 		public void setExtraData(String extraData) {
 			this.extraData = extraData;
+		}
+
+		public Integer getLoopBatchNumber() {
+			return this.loopBatchNumber;
+		}
+
+		public void setLoopBatchNumber(Integer loopBatchNumber) {
+			this.loopBatchNumber = loopBatchNumber;
 		}
 	}
 

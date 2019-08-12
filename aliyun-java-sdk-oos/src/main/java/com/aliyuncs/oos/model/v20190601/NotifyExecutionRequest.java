@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionResponse> {
 	
 	public NotifyExecutionRequest() {
-		super("oos", "2019-06-01", "NotifyExecution", "oos");
+		super("oos", "2019-06-01", "NotifyExecution", "OOS");
 	}
 
 	private String executionId;
@@ -37,6 +37,8 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 	private String notifyType;
 
 	private String parameters;
+
+	private String loopItem;
 
 	public String getExecutionId() {
 		return this.executionId;
@@ -101,6 +103,17 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 		this.parameters = parameters;
 		if(parameters != null){
 			putQueryParameter("Parameters", parameters);
+		}
+	}
+
+	public String getLoopItem() {
+		return this.loopItem;
+	}
+
+	public void setLoopItem(String loopItem) {
+		this.loopItem = loopItem;
+		if(loopItem != null){
+			putQueryParameter("LoopItem", loopItem);
 		}
 	}
 

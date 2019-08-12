@@ -28,6 +28,7 @@ public class StartExecutionResponseUnmarshaller {
 	public static StartExecutionResponse unmarshall(StartExecutionResponse startExecutionResponse, UnmarshallerContext _ctx) {
 		
 		startExecutionResponse.setRequestId(_ctx.stringValue("StartExecutionResponse.RequestId"));
+		startExecutionResponse.setLoopMode(_ctx.stringValue("StartExecutionResponse.LoopMode"));
 
 		Execution execution = new Execution();
 		execution.setExecutionId(_ctx.stringValue("StartExecutionResponse.Execution.ExecutionId"));
@@ -48,6 +49,7 @@ public class StartExecutionResponseUnmarshaller {
 		execution.setSafetyCheck(_ctx.stringValue("StartExecutionResponse.Execution.SafetyCheck"));
 		execution.setCounters(_ctx.stringValue("StartExecutionResponse.Execution.Counters"));
 		execution.setRamRole(_ctx.stringValue("StartExecutionResponse.Execution.RamRole"));
+		execution.setLoopMode(_ctx.stringValue("StartExecutionResponse.Execution.LoopMode"));
 
 		List<CurrentTask> currentTasks = new ArrayList<CurrentTask>();
 		for (int i = 0; i < _ctx.lengthValue("StartExecutionResponse.Execution.CurrentTasks.Length"); i++) {

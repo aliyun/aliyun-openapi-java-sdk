@@ -23,7 +23,7 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListTaskExecutionsRequest extends RpcAcsRequest<ListTaskExecutionsResponse> {
 	
 	public ListTaskExecutionsRequest() {
-		super("oos", "2019-06-01", "ListTaskExecutions", "oos");
+		super("oos", "2019-06-01", "ListTaskExecutions", "OOS");
 	}
 
 	private String startDateAfter;

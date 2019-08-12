@@ -20,28 +20,28 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class GenerateExecutionPolicyRequest extends RpcAcsRequest<GenerateExecutionPolicyResponse> {
+public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	
-	public GenerateExecutionPolicyRequest() {
-		super("oos", "2019-06-01", "GenerateExecutionPolicy", "OOS");
+	public DescribeRegionsRequest() {
+		super("oos", "2019-06-01", "DescribeRegions", "OOS");
 	}
 
-	private String templateName;
+	private String acceptLanguage;
 
-	public String getTemplateName() {
-		return this.templateName;
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
 	}
 
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putQueryParameter("TemplateName", templateName);
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
 	@Override
-	public Class<GenerateExecutionPolicyResponse> getResponseClass() {
-		return GenerateExecutionPolicyResponse.class;
+	public Class<DescribeRegionsResponse> getResponseClass() {
+		return DescribeRegionsResponse.class;
 	}
 
 }

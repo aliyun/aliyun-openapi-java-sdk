@@ -53,6 +53,8 @@ public class ListExecutionsResponseUnmarshaller {
 			execution.setRamRole(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].RamRole"));
 			execution.setCounters(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].Counters"));
 			execution.setIsParent(_ctx.booleanValue("ListExecutionsResponse.Executions["+ i +"].IsParent"));
+			execution.setStatusReason(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].StatusReason"));
+			execution.setLoopMode(_ctx.stringValue("ListExecutionsResponse.Executions["+ i +"].LoopMode"));
 
 			List<CurrentTask> currentTasks = new ArrayList<CurrentTask>();
 			for (int j = 0; j < _ctx.lengthValue("ListExecutionsResponse.Executions["+ i +"].CurrentTasks.Length"); j++) {
