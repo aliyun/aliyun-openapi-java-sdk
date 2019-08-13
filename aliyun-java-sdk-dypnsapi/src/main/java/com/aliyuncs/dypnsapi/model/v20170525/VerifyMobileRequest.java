@@ -17,6 +17,7 @@ package com.aliyuncs.dypnsapi.model.v20170525;
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dypnsapi.Endpoint;
 
 /**
  * @author auto create
@@ -28,6 +29,10 @@ public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
 		super("Dypnsapi", "2017-05-25", "VerifyMobile", "dypnsapi");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

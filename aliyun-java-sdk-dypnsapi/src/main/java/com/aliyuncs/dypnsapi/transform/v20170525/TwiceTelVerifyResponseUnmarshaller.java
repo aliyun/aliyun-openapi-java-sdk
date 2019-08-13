@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TwiceTelVerifyResponseUnmarshaller {
 
-	public static TwiceTelVerifyResponse unmarshall(TwiceTelVerifyResponse twiceTelVerifyResponse, UnmarshallerContext context) {
+	public static TwiceTelVerifyResponse unmarshall(TwiceTelVerifyResponse twiceTelVerifyResponse, UnmarshallerContext _ctx) {
 		
-		twiceTelVerifyResponse.setRequestId(context.stringValue("TwiceTelVerifyResponse.RequestId"));
-		twiceTelVerifyResponse.setCode(context.stringValue("TwiceTelVerifyResponse.Code"));
-		twiceTelVerifyResponse.setMessage(context.stringValue("TwiceTelVerifyResponse.Message"));
+		twiceTelVerifyResponse.setRequestId(_ctx.stringValue("TwiceTelVerifyResponse.RequestId"));
+		twiceTelVerifyResponse.setCode(_ctx.stringValue("TwiceTelVerifyResponse.Code"));
+		twiceTelVerifyResponse.setMessage(_ctx.stringValue("TwiceTelVerifyResponse.Message"));
 
 		TwiceTelVerifyResult twiceTelVerifyResult = new TwiceTelVerifyResult();
-		twiceTelVerifyResult.setCarrier(context.stringValue("TwiceTelVerifyResponse.TwiceTelVerifyResult.Carrier"));
-		twiceTelVerifyResult.setVerifyResult(context.integerValue("TwiceTelVerifyResponse.TwiceTelVerifyResult.VerifyResult"));
+		twiceTelVerifyResult.setCarrier(_ctx.stringValue("TwiceTelVerifyResponse.TwiceTelVerifyResult.Carrier"));
+		twiceTelVerifyResult.setVerifyResult(_ctx.integerValue("TwiceTelVerifyResponse.TwiceTelVerifyResult.VerifyResult"));
 		twiceTelVerifyResponse.setTwiceTelVerifyResult(twiceTelVerifyResult);
 	 
 	 	return twiceTelVerifyResponse;

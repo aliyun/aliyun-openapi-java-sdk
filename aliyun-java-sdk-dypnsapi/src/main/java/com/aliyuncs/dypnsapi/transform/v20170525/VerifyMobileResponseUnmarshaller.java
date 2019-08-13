@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VerifyMobileResponseUnmarshaller {
 
-	public static VerifyMobileResponse unmarshall(VerifyMobileResponse verifyMobileResponse, UnmarshallerContext context) {
+	public static VerifyMobileResponse unmarshall(VerifyMobileResponse verifyMobileResponse, UnmarshallerContext _ctx) {
 		
-		verifyMobileResponse.setRequestId(context.stringValue("VerifyMobileResponse.RequestId"));
-		verifyMobileResponse.setCode(context.stringValue("VerifyMobileResponse.Code"));
-		verifyMobileResponse.setMessage(context.stringValue("VerifyMobileResponse.Message"));
+		verifyMobileResponse.setRequestId(_ctx.stringValue("VerifyMobileResponse.RequestId"));
+		verifyMobileResponse.setCode(_ctx.stringValue("VerifyMobileResponse.Code"));
+		verifyMobileResponse.setMessage(_ctx.stringValue("VerifyMobileResponse.Message"));
 
 		GateVerifyResultDTO gateVerifyResultDTO = new GateVerifyResultDTO();
-		gateVerifyResultDTO.setVerifyId(context.stringValue("VerifyMobileResponse.GateVerifyResultDTO.VerifyId"));
-		gateVerifyResultDTO.setVerifyResult(context.stringValue("VerifyMobileResponse.GateVerifyResultDTO.VerifyResult"));
+		gateVerifyResultDTO.setVerifyId(_ctx.stringValue("VerifyMobileResponse.GateVerifyResultDTO.VerifyId"));
+		gateVerifyResultDTO.setVerifyResult(_ctx.stringValue("VerifyMobileResponse.GateVerifyResultDTO.VerifyResult"));
 		verifyMobileResponse.setGateVerifyResultDTO(gateVerifyResultDTO);
 	 
 	 	return verifyMobileResponse;

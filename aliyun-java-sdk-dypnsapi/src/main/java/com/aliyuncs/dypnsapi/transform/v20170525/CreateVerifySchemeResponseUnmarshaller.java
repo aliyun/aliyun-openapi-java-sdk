@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateVerifySchemeResponseUnmarshaller {
 
-	public static CreateVerifySchemeResponse unmarshall(CreateVerifySchemeResponse createVerifySchemeResponse, UnmarshallerContext context) {
+	public static CreateVerifySchemeResponse unmarshall(CreateVerifySchemeResponse createVerifySchemeResponse, UnmarshallerContext _ctx) {
 		
-		createVerifySchemeResponse.setRequestId(context.stringValue("CreateVerifySchemeResponse.RequestId"));
-		createVerifySchemeResponse.setCode(context.stringValue("CreateVerifySchemeResponse.Code"));
-		createVerifySchemeResponse.setMessage(context.stringValue("CreateVerifySchemeResponse.Message"));
+		createVerifySchemeResponse.setRequestId(_ctx.stringValue("CreateVerifySchemeResponse.RequestId"));
+		createVerifySchemeResponse.setCode(_ctx.stringValue("CreateVerifySchemeResponse.Code"));
+		createVerifySchemeResponse.setMessage(_ctx.stringValue("CreateVerifySchemeResponse.Message"));
 
 		GateVerifySchemeDTO gateVerifySchemeDTO = new GateVerifySchemeDTO();
-		gateVerifySchemeDTO.setSchemeCode(context.stringValue("CreateVerifySchemeResponse.GateVerifySchemeDTO.SchemeCode"));
+		gateVerifySchemeDTO.setSchemeCode(_ctx.stringValue("CreateVerifySchemeResponse.GateVerifySchemeDTO.SchemeCode"));
 		createVerifySchemeResponse.setGateVerifySchemeDTO(gateVerifySchemeDTO);
 	 
 	 	return createVerifySchemeResponse;

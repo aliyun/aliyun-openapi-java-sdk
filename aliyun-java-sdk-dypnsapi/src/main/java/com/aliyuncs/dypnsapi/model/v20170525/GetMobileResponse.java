@@ -15,14 +15,14 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dypnsapi.transform.v20170525.VerifyMobileResponseUnmarshaller;
+import com.aliyuncs.dypnsapi.transform.v20170525.GetMobileResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class VerifyMobileResponse extends AcsResponse {
+public class GetMobileResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -30,7 +30,7 @@ public class VerifyMobileResponse extends AcsResponse {
 
 	private String message;
 
-	private GateVerifyResultDTO gateVerifyResultDTO;
+	private GetMobileResultDTO getMobileResultDTO;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,39 +56,29 @@ public class VerifyMobileResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public GateVerifyResultDTO getGateVerifyResultDTO() {
-		return this.gateVerifyResultDTO;
+	public GetMobileResultDTO getGetMobileResultDTO() {
+		return this.getMobileResultDTO;
 	}
 
-	public void setGateVerifyResultDTO(GateVerifyResultDTO gateVerifyResultDTO) {
-		this.gateVerifyResultDTO = gateVerifyResultDTO;
+	public void setGetMobileResultDTO(GetMobileResultDTO getMobileResultDTO) {
+		this.getMobileResultDTO = getMobileResultDTO;
 	}
 
-	public static class GateVerifyResultDTO {
+	public static class GetMobileResultDTO {
 
-		private String verifyId;
+		private String mobile;
 
-		private String verifyResult;
-
-		public String getVerifyId() {
-			return this.verifyId;
+		public String getMobile() {
+			return this.mobile;
 		}
 
-		public void setVerifyId(String verifyId) {
-			this.verifyId = verifyId;
-		}
-
-		public String getVerifyResult() {
-			return this.verifyResult;
-		}
-
-		public void setVerifyResult(String verifyResult) {
-			this.verifyResult = verifyResult;
+		public void setMobile(String mobile) {
+			this.mobile = mobile;
 		}
 	}
 
 	@Override
-	public VerifyMobileResponse getInstance(UnmarshallerContext context) {
-		return	VerifyMobileResponseUnmarshaller.unmarshall(this, context);
+	public GetMobileResponse getInstance(UnmarshallerContext context) {
+		return	GetMobileResponseUnmarshaller.unmarshall(this, context);
 	}
 }

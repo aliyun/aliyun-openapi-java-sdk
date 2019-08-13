@@ -15,16 +15,20 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dypnsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse> {
+public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
 	
-	public TwiceTelVerifyRequest() {
-		super("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypnsapi");
+	public GetMobileRequest() {
+		super("Dypnsapi", "2017-05-25", "GetMobile", "dypnsapi");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,11 +39,11 @@ public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse>
 
 	private String resourceOwnerAccount;
 
-	private String phoneNumber;
+	private String accessToken;
+
+	private String outId;
 
 	private Long ownerId;
-
-	private String since;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,14 +67,25 @@ public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse>
 		}
 	}
 
-	public String getPhoneNumber() {
-		return this.phoneNumber;
+	public String getAccessToken() {
+		return this.accessToken;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-		if(phoneNumber != null){
-			putQueryParameter("PhoneNumber", phoneNumber);
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
+		if(accessToken != null){
+			putQueryParameter("AccessToken", accessToken);
+		}
+	}
+
+	public String getOutId() {
+		return this.outId;
+	}
+
+	public void setOutId(String outId) {
+		this.outId = outId;
+		if(outId != null){
+			putQueryParameter("OutId", outId);
 		}
 	}
 
@@ -85,20 +100,9 @@ public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse>
 		}
 	}
 
-	public String getSince() {
-		return this.since;
-	}
-
-	public void setSince(String since) {
-		this.since = since;
-		if(since != null){
-			putQueryParameter("Since", since);
-		}
-	}
-
 	@Override
-	public Class<TwiceTelVerifyResponse> getResponseClass() {
-		return TwiceTelVerifyResponse.class;
+	public Class<GetMobileResponse> getResponseClass() {
+		return GetMobileResponse.class;
 	}
 
 }
