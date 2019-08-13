@@ -27,6 +27,12 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean success;
+
+	private Integer code;
+
+	private String message;
+
 	private List<TraceApp> traceApps;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class ListTraceAppsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public List<TraceApp> getTraceApps() {

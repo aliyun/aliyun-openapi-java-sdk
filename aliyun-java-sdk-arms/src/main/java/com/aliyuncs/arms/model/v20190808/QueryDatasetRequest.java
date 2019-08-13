@@ -58,7 +58,7 @@ public class QueryDatasetRequest extends RpcAcsRequest<QueryDatasetResponse> {
 
 	private List<RequiredDims> requiredDimss;
 
-	private List<String> dimensionss;
+	private List<Dimensions> dimensionss;
 
 	public String getDateStr() {
 		return this.dateStr;
@@ -213,15 +213,17 @@ public class QueryDatasetRequest extends RpcAcsRequest<QueryDatasetResponse> {
 		}	
 	}
 
-	public List<String> getDimensionss() {
+	public List<Dimensions> getDimensionss() {
 		return this.dimensionss;
 	}
 
-	public void setDimensionss(List<String> dimensionss) {
+	public void setDimensionss(List<Dimensions> dimensionss) {
 		this.dimensionss = dimensionss;	
 		if (dimensionss != null) {
-			for (int i = 0; i < dimensionss.size(); i++) {
-				putQueryParameter("Dimensions." + (i + 1) , dimensionss.get(i));
+			for (int depth1 = 0; depth1 < dimensionss.size(); depth1++) {
+				putQueryParameter("Dimensions." + (depth1 + 1) + ".Type" , dimensionss.get(depth1).getType());
+				putQueryParameter("Dimensions." + (depth1 + 1) + ".Value" , dimensionss.get(depth1).getValue());
+				putQueryParameter("Dimensions." + (depth1 + 1) + ".Key" , dimensionss.get(depth1).getKey());
 			}
 		}	
 	}
@@ -260,6 +262,39 @@ public class QueryDatasetRequest extends RpcAcsRequest<QueryDatasetResponse> {
 	}
 
 	public static class RequiredDims {
+
+		private String type;
+
+		private String value;
+
+		private String key;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
+	public static class Dimensions {
 
 		private String type;
 

@@ -27,6 +27,9 @@ public class ListTraceAppsResponseUnmarshaller {
 	public static ListTraceAppsResponse unmarshall(ListTraceAppsResponse listTraceAppsResponse, UnmarshallerContext _ctx) {
 		
 		listTraceAppsResponse.setRequestId(_ctx.stringValue("ListTraceAppsResponse.RequestId"));
+		listTraceAppsResponse.setSuccess(_ctx.booleanValue("ListTraceAppsResponse.Success"));
+		listTraceAppsResponse.setCode(_ctx.integerValue("ListTraceAppsResponse.Code"));
+		listTraceAppsResponse.setMessage(_ctx.stringValue("ListTraceAppsResponse.Message"));
 
 		List<TraceApp> traceApps = new ArrayList<TraceApp>();
 		for (int i = 0; i < _ctx.lengthValue("ListTraceAppsResponse.TraceApps.Length"); i++) {
