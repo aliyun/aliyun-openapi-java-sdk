@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class CancelETLJobReleaseRequest extends RpcAcsRequest<CancelETLJobReleaseResponse> {
 	
 	public CancelETLJobReleaseRequest() {
-		super("Emr", "2016-04-08", "CancelETLJobRelease");
+		super("Emr", "2016-04-08", "CancelETLJobRelease", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

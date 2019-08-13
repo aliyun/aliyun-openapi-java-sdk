@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class KillFlowResponseUnmarshaller {
 
-	public static KillFlowResponse unmarshall(KillFlowResponse killFlowResponse, UnmarshallerContext context) {
+	public static KillFlowResponse unmarshall(KillFlowResponse killFlowResponse, UnmarshallerContext _ctx) {
 		
-		killFlowResponse.setRequestId(context.stringValue("KillFlowResponse.RequestId"));
-		killFlowResponse.setData(context.booleanValue("KillFlowResponse.Data"));
+		killFlowResponse.setRequestId(_ctx.stringValue("KillFlowResponse.RequestId"));
+		killFlowResponse.setData(_ctx.booleanValue("KillFlowResponse.Data"));
 	 
 	 	return killFlowResponse;
 	}

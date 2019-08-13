@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -23,10 +24,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class ReleaseETLJobRequest extends RpcAcsRequest<ReleaseETLJobResponse> {
 	
 	public ReleaseETLJobRequest() {
-		super("Emr", "2016-04-08", "ReleaseETLJob");
+		super("Emr", "2016-04-08", "ReleaseETLJob", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String releaseId;
 
 	private String id;
 
@@ -38,6 +45,17 @@ public class ReleaseETLJobRequest extends RpcAcsRequest<ReleaseETLJobResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getReleaseId() {
+		return this.releaseId;
+	}
+
+	public void setReleaseId(String releaseId) {
+		this.releaseId = releaseId;
+		if(releaseId != null){
+			putQueryParameter("ReleaseId", releaseId);
 		}
 	}
 

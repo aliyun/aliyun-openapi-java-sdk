@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteClusterTemplateResponseUnmarshaller {
 
-	public static DeleteClusterTemplateResponse unmarshall(DeleteClusterTemplateResponse deleteClusterTemplateResponse, UnmarshallerContext context) {
+	public static DeleteClusterTemplateResponse unmarshall(DeleteClusterTemplateResponse deleteClusterTemplateResponse, UnmarshallerContext _ctx) {
 		
-		deleteClusterTemplateResponse.setRequestId(context.stringValue("DeleteClusterTemplateResponse.RequestId"));
+		deleteClusterTemplateResponse.setRequestId(_ctx.stringValue("DeleteClusterTemplateResponse.RequestId"));
 	 
 	 	return deleteClusterTemplateResponse;
 	}

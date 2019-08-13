@@ -25,22 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeETLJobSqlSchemaResponseUnmarshaller {
 
-	public static DescribeETLJobSqlSchemaResponse unmarshall(DescribeETLJobSqlSchemaResponse describeETLJobSqlSchemaResponse, UnmarshallerContext context) {
+	public static DescribeETLJobSqlSchemaResponse unmarshall(DescribeETLJobSqlSchemaResponse describeETLJobSqlSchemaResponse, UnmarshallerContext _ctx) {
 		
-		describeETLJobSqlSchemaResponse.setRequestId(context.stringValue("DescribeETLJobSqlSchemaResponse.RequestId"));
+		describeETLJobSqlSchemaResponse.setRequestId(_ctx.stringValue("DescribeETLJobSqlSchemaResponse.RequestId"));
 
 		Schema schema = new Schema();
-		schema.setName(context.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Name"));
+		schema.setName(_ctx.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Name"));
 
 		List<Field> fields = new ArrayList<Field>();
-		for (int i = 0; i < context.lengthValue("DescribeETLJobSqlSchemaResponse.Schema.Fields.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeETLJobSqlSchemaResponse.Schema.Fields.Length"); i++) {
 			Field field = new Field();
-			field.setType(context.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].Type"));
-			field.setName(context.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].Name"));
-			field.setIndex(context.integerValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].Index"));
-			field.setRawType(context.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].RawType"));
-			field.setAssignType(context.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].AssignType"));
-			field.setAssignValue(context.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].AssignValue"));
+			field.setType(_ctx.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].Type"));
+			field.setLength(_ctx.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].Length"));
+			field.setName(_ctx.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].Name"));
+			field.setIndex(_ctx.integerValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].Index"));
+			field.setRawType(_ctx.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].RawType"));
+			field.setAssignType(_ctx.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].AssignType"));
+			field.setAssignValue(_ctx.stringValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].AssignValue"));
+			field.setPartitionKey(_ctx.booleanValue("DescribeETLJobSqlSchemaResponse.Schema.Fields["+ i +"].PartitionKey"));
 
 			fields.add(field);
 		}

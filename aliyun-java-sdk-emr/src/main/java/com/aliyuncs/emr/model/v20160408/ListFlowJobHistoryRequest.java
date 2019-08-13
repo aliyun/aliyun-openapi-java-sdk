@@ -15,6 +15,8 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -23,8 +25,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowJobHistoryRequest extends RpcAcsRequest<ListFlowJobHistoryResponse> {
 	
 	public ListFlowJobHistoryRequest() {
-		super("Emr", "2016-04-08", "ListFlowJobHistory");
+		super("Emr", "2016-04-08", "ListFlowJobHistory", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String timeRange;
+
+	private List<String> statusLists;
+
+	private String instanceId;
 
 	private Integer pageSize;
 
@@ -32,7 +44,44 @@ public class ListFlowJobHistoryRequest extends RpcAcsRequest<ListFlowJobHistoryR
 
 	private String projectId;
 
+	private String jobType;
+
 	private Integer pageNumber;
+
+	public String getTimeRange() {
+		return this.timeRange;
+	}
+
+	public void setTimeRange(String timeRange) {
+		this.timeRange = timeRange;
+		if(timeRange != null){
+			putQueryParameter("TimeRange", timeRange);
+		}
+	}
+
+	public List<String> getStatusLists() {
+		return this.statusLists;
+	}
+
+	public void setStatusLists(List<String> statusLists) {
+		this.statusLists = statusLists;	
+		if (statusLists != null) {
+			for (int i = 0; i < statusLists.size(); i++) {
+				putQueryParameter("StatusList." + (i + 1) , statusLists.get(i));
+			}
+		}	
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -64,6 +113,17 @@ public class ListFlowJobHistoryRequest extends RpcAcsRequest<ListFlowJobHistoryR
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId);
+		}
+	}
+
+	public String getJobType() {
+		return this.jobType;
+	}
+
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+		if(jobType != null){
+			putQueryParameter("JobType", jobType);
 		}
 	}
 

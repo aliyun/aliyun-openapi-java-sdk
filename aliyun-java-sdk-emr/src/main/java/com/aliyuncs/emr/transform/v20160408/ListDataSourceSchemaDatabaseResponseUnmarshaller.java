@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDataSourceSchemaDatabaseResponseUnmarshaller {
 
-	public static ListDataSourceSchemaDatabaseResponse unmarshall(ListDataSourceSchemaDatabaseResponse listDataSourceSchemaDatabaseResponse, UnmarshallerContext context) {
+	public static ListDataSourceSchemaDatabaseResponse unmarshall(ListDataSourceSchemaDatabaseResponse listDataSourceSchemaDatabaseResponse, UnmarshallerContext _ctx) {
 		
-		listDataSourceSchemaDatabaseResponse.setRequestId(context.stringValue("ListDataSourceSchemaDatabaseResponse.RequestId"));
-		listDataSourceSchemaDatabaseResponse.setDataSourceId(context.stringValue("ListDataSourceSchemaDatabaseResponse.DataSourceId"));
+		listDataSourceSchemaDatabaseResponse.setRequestId(_ctx.stringValue("ListDataSourceSchemaDatabaseResponse.RequestId"));
+		listDataSourceSchemaDatabaseResponse.setDataSourceId(_ctx.stringValue("ListDataSourceSchemaDatabaseResponse.DataSourceId"));
 
 		List<Schema> schemaList = new ArrayList<Schema>();
-		for (int i = 0; i < context.lengthValue("ListDataSourceSchemaDatabaseResponse.SchemaList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDataSourceSchemaDatabaseResponse.SchemaList.Length"); i++) {
 			Schema schema = new Schema();
-			schema.setDbName(context.stringValue("ListDataSourceSchemaDatabaseResponse.SchemaList["+ i +"].DbName"));
-			schema.setDbVersion(context.stringValue("ListDataSourceSchemaDatabaseResponse.SchemaList["+ i +"].DbVersion"));
-			schema.setDbType(context.stringValue("ListDataSourceSchemaDatabaseResponse.SchemaList["+ i +"].DbType"));
+			schema.setDbName(_ctx.stringValue("ListDataSourceSchemaDatabaseResponse.SchemaList["+ i +"].DbName"));
+			schema.setDbVersion(_ctx.stringValue("ListDataSourceSchemaDatabaseResponse.SchemaList["+ i +"].DbVersion"));
+			schema.setDbType(_ctx.stringValue("ListDataSourceSchemaDatabaseResponse.SchemaList["+ i +"].DbType"));
 
 			schemaList.add(schema);
 		}

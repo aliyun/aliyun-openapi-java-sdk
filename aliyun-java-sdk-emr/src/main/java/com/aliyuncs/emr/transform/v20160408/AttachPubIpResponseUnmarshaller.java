@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AttachPubIpResponseUnmarshaller {
 
-	public static AttachPubIpResponse unmarshall(AttachPubIpResponse attachPubIpResponse, UnmarshallerContext context) {
+	public static AttachPubIpResponse unmarshall(AttachPubIpResponse attachPubIpResponse, UnmarshallerContext _ctx) {
 		
-		attachPubIpResponse.setRequestId(context.stringValue("AttachPubIpResponse.RequestId"));
+		attachPubIpResponse.setRequestId(_ctx.stringValue("AttachPubIpResponse.RequestId"));
 	 
 	 	return attachPubIpResponse;
 	}

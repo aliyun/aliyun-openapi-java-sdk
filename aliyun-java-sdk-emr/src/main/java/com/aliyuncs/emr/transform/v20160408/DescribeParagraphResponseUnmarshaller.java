@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeParagraphResponseUnmarshaller {
 
-	public static DescribeParagraphResponse unmarshall(DescribeParagraphResponse describeParagraphResponse, UnmarshallerContext context) {
+	public static DescribeParagraphResponse unmarshall(DescribeParagraphResponse describeParagraphResponse, UnmarshallerContext _ctx) {
 		
-		describeParagraphResponse.setRequestId(context.stringValue("DescribeParagraphResponse.RequestId"));
-		describeParagraphResponse.setParagraph(context.stringValue("DescribeParagraphResponse.Paragraph"));
+		describeParagraphResponse.setRequestId(_ctx.stringValue("DescribeParagraphResponse.RequestId"));
+		describeParagraphResponse.setParagraph(_ctx.stringValue("DescribeParagraphResponse.Paragraph"));
 	 
 	 	return describeParagraphResponse;
 	}

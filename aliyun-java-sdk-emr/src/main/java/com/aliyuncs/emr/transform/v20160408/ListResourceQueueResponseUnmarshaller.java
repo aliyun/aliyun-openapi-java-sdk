@@ -25,23 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListResourceQueueResponseUnmarshaller {
 
-	public static ListResourceQueueResponse unmarshall(ListResourceQueueResponse listResourceQueueResponse, UnmarshallerContext context) {
+	public static ListResourceQueueResponse unmarshall(ListResourceQueueResponse listResourceQueueResponse, UnmarshallerContext _ctx) {
 		
 
 		List<Queue> queueList = new ArrayList<Queue>();
-		for (int i = 0; i < context.lengthValue("ListResourceQueueResponse.QueueList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListResourceQueueResponse.QueueList.Length"); i++) {
 			Queue queue = new Queue();
 
 			EcmResourceQueue ecmResourceQueue = new EcmResourceQueue();
-			ecmResourceQueue.setId(context.longValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.Id"));
-			ecmResourceQueue.setName(context.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.Name"));
-			ecmResourceQueue.setQualifiedName(context.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.QualifiedName"));
-			ecmResourceQueue.setQueueType(context.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.QueueType"));
-			ecmResourceQueue.setParentQueueId(context.longValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.ParentQueueId"));
-			ecmResourceQueue.setLeaf(context.booleanValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.Leaf"));
-			ecmResourceQueue.setStatus(context.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.Status"));
-			ecmResourceQueue.setUserId(context.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.UserId"));
-			ecmResourceQueue.setResourcePoolId(context.longValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.ResourcePoolId"));
+			ecmResourceQueue.setId(_ctx.longValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.Id"));
+			ecmResourceQueue.setName(_ctx.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.Name"));
+			ecmResourceQueue.setQualifiedName(_ctx.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.QualifiedName"));
+			ecmResourceQueue.setQueueType(_ctx.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.QueueType"));
+			ecmResourceQueue.setParentQueueId(_ctx.longValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.ParentQueueId"));
+			ecmResourceQueue.setLeaf(_ctx.booleanValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.Leaf"));
+			ecmResourceQueue.setStatus(_ctx.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.Status"));
+			ecmResourceQueue.setUserId(_ctx.stringValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.UserId"));
+			ecmResourceQueue.setResourcePoolId(_ctx.longValue("ListResourceQueueResponse.QueueList["+ i +"].EcmResourceQueue.ResourcePoolId"));
 			queue.setEcmResourceQueue(ecmResourceQueue);
 
 			queueList.add(queue);

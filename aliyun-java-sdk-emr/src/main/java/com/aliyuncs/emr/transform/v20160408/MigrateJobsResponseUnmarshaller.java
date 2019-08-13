@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MigrateJobsResponseUnmarshaller {
 
-	public static MigrateJobsResponse unmarshall(MigrateJobsResponse migrateJobsResponse, UnmarshallerContext context) {
+	public static MigrateJobsResponse unmarshall(MigrateJobsResponse migrateJobsResponse, UnmarshallerContext _ctx) {
 		
-		migrateJobsResponse.setResult(context.stringValue("MigrateJobsResponse.Result"));
+		migrateJobsResponse.setResult(_ctx.stringValue("MigrateJobsResponse.Result"));
 	 
 	 	return migrateJobsResponse;
 	}

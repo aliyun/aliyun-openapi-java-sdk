@@ -30,31 +30,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeClusterServiceConfigResponseUnmarshaller {
 
-	public static DescribeClusterServiceConfigResponse unmarshall(DescribeClusterServiceConfigResponse describeClusterServiceConfigResponse, UnmarshallerContext context) {
+	public static DescribeClusterServiceConfigResponse unmarshall(DescribeClusterServiceConfigResponse describeClusterServiceConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeClusterServiceConfigResponse.setRequestId(context.stringValue("DescribeClusterServiceConfigResponse.RequestId"));
+		describeClusterServiceConfigResponse.setRequestId(_ctx.stringValue("DescribeClusterServiceConfigResponse.RequestId"));
 
 		Config config = new Config();
-		config.setServiceName(context.stringValue("DescribeClusterServiceConfigResponse.Config.ServiceName"));
-		config.setConfigVersion(context.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigVersion"));
-		config.setApplied(context.stringValue("DescribeClusterServiceConfigResponse.Config.Applied"));
-		config.setCreateTime(context.stringValue("DescribeClusterServiceConfigResponse.Config.CreateTime"));
-		config.setAuthor(context.stringValue("DescribeClusterServiceConfigResponse.Config.Author"));
-		config.setComment(context.stringValue("DescribeClusterServiceConfigResponse.Config.Comment"));
+		config.setServiceName(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ServiceName"));
+		config.setConfigVersion(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigVersion"));
+		config.setApplied(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.Applied"));
+		config.setCreateTime(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.CreateTime"));
+		config.setAuthor(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.Author"));
+		config.setComment(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.Comment"));
 
 		List<ConfigValue> configValueList = new ArrayList<ConfigValue>();
-		for (int i = 0; i < context.lengthValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList.Length"); i++) {
 			ConfigValue configValue = new ConfigValue();
-			configValue.setConfigName(context.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigName"));
-			configValue.setAllowCustom(context.booleanValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].AllowCustom"));
+			configValue.setConfigName(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigName"));
+			configValue.setAllowCustom(_ctx.booleanValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].AllowCustom"));
 
 			List<ConfigItemValue> configItemValueList = new ArrayList<ConfigItemValue>();
-			for (int j = 0; j < context.lengthValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList.Length"); j++) {
 				ConfigItemValue configItemValue = new ConfigItemValue();
-				configItemValue.setItemName(context.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].ItemName"));
-				configItemValue.setValue(context.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].Value"));
-				configItemValue.setIsCustom(context.booleanValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].IsCustom"));
-				configItemValue.setDescription(context.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].Description"));
+				configItemValue.setItemName(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].ItemName"));
+				configItemValue.setValue(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].Value"));
+				configItemValue.setIsCustom(_ctx.booleanValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].IsCustom"));
+				configItemValue.setDescription(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].Description"));
 
 				configItemValueList.add(configItemValue);
 			}
@@ -65,37 +65,37 @@ public class DescribeClusterServiceConfigResponseUnmarshaller {
 		config.setConfigValueList(configValueList);
 
 		List<PropertyInfo> propertyInfoList = new ArrayList<PropertyInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList.Length"); i++) {
 			PropertyInfo propertyInfo = new PropertyInfo();
-			propertyInfo.setName(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].Name"));
-			propertyInfo.setValue(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].Value"));
-			propertyInfo.setDescription(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].Description"));
-			propertyInfo.setFileName(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].FileName"));
-			propertyInfo.setDisplayName(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].DisplayName"));
-			propertyInfo.setServiceName(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].ServiceName"));
-			propertyInfo.setComponent(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].Component"));
+			propertyInfo.setName(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].Name"));
+			propertyInfo.setValue(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].Value"));
+			propertyInfo.setDescription(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].Description"));
+			propertyInfo.setFileName(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].FileName"));
+			propertyInfo.setDisplayName(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].DisplayName"));
+			propertyInfo.setServiceName(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].ServiceName"));
+			propertyInfo.setComponent(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].Component"));
 
 			List<String> propertyTypes = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyTypes.Length"); j++) {
-				propertyTypes.add(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyTypes["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyTypes.Length"); j++) {
+				propertyTypes.add(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyTypes["+ j +"]"));
 			}
 			propertyInfo.setPropertyTypes(propertyTypes);
 
 			PropertyValueAttributes propertyValueAttributes = new PropertyValueAttributes();
-			propertyValueAttributes.setType(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Type"));
-			propertyValueAttributes.setMaximum(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Maximum"));
-			propertyValueAttributes.setMimimum(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Mimimum"));
-			propertyValueAttributes.setUnit(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Unit"));
-			propertyValueAttributes.setReadOnly(context.booleanValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.ReadOnly"));
-			propertyValueAttributes.setHidden(context.booleanValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Hidden"));
-			propertyValueAttributes.setIncrememtStep(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.IncrememtStep"));
+			propertyValueAttributes.setType(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Type"));
+			propertyValueAttributes.setMaximum(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Maximum"));
+			propertyValueAttributes.setMimimum(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Mimimum"));
+			propertyValueAttributes.setUnit(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Unit"));
+			propertyValueAttributes.setReadOnly(_ctx.booleanValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.ReadOnly"));
+			propertyValueAttributes.setHidden(_ctx.booleanValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Hidden"));
+			propertyValueAttributes.setIncrememtStep(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.IncrememtStep"));
 
 			List<ValueEntryInfo> entries = new ArrayList<ValueEntryInfo>();
-			for (int j = 0; j < context.lengthValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Entries.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Entries.Length"); j++) {
 				ValueEntryInfo valueEntryInfo = new ValueEntryInfo();
-				valueEntryInfo.setValue(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Entries["+ j +"].Value"));
-				valueEntryInfo.setLabel(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Entries["+ j +"].Label"));
-				valueEntryInfo.setDescription(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Entries["+ j +"].Description"));
+				valueEntryInfo.setValue(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Entries["+ j +"].Value"));
+				valueEntryInfo.setLabel(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Entries["+ j +"].Label"));
+				valueEntryInfo.setDescription(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].PropertyValueAttributes.Entries["+ j +"].Description"));
 
 				entries.add(valueEntryInfo);
 			}
@@ -103,8 +103,8 @@ public class DescribeClusterServiceConfigResponseUnmarshaller {
 			propertyInfo.setPropertyValueAttributes(propertyValueAttributes);
 
 			EffectWay effectWay = new EffectWay();
-			effectWay.setEffectType(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].EffectWay.EffectType"));
-			effectWay.setInvokeServiceName(context.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].EffectWay.InvokeServiceName"));
+			effectWay.setEffectType(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].EffectWay.EffectType"));
+			effectWay.setInvokeServiceName(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.PropertyInfoList["+ i +"].EffectWay.InvokeServiceName"));
 			propertyInfo.setEffectWay(effectWay);
 
 			propertyInfoList.add(propertyInfo);

@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeClusterStatisticsResponseUnmarshaller {
 
-	public static DescribeClusterStatisticsResponse unmarshall(DescribeClusterStatisticsResponse describeClusterStatisticsResponse, UnmarshallerContext context) {
+	public static DescribeClusterStatisticsResponse unmarshall(DescribeClusterStatisticsResponse describeClusterStatisticsResponse, UnmarshallerContext _ctx) {
 		
-		describeClusterStatisticsResponse.setRequestId(context.stringValue("DescribeClusterStatisticsResponse.RequestId"));
-		describeClusterStatisticsResponse.setTotalCount(context.integerValue("DescribeClusterStatisticsResponse.TotalCount"));
+		describeClusterStatisticsResponse.setRequestId(_ctx.stringValue("DescribeClusterStatisticsResponse.RequestId"));
+		describeClusterStatisticsResponse.setTotalCount(_ctx.integerValue("DescribeClusterStatisticsResponse.TotalCount"));
 
 		List<ClusterStatistics> clusterStatisticsList = new ArrayList<ClusterStatistics>();
-		for (int i = 0; i < context.lengthValue("DescribeClusterStatisticsResponse.ClusterStatisticsList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterStatisticsResponse.ClusterStatisticsList.Length"); i++) {
 			ClusterStatistics clusterStatistics = new ClusterStatistics();
-			clusterStatistics.setClusterType(context.stringValue("DescribeClusterStatisticsResponse.ClusterStatisticsList["+ i +"].ClusterType"));
-			clusterStatistics.setCount(context.integerValue("DescribeClusterStatisticsResponse.ClusterStatisticsList["+ i +"].Count"));
-			clusterStatistics.setClusterStatus(context.stringValue("DescribeClusterStatisticsResponse.ClusterStatisticsList["+ i +"].ClusterStatus"));
+			clusterStatistics.setClusterType(_ctx.stringValue("DescribeClusterStatisticsResponse.ClusterStatisticsList["+ i +"].ClusterType"));
+			clusterStatistics.setCount(_ctx.integerValue("DescribeClusterStatisticsResponse.ClusterStatisticsList["+ i +"].Count"));
+			clusterStatistics.setClusterStatus(_ctx.stringValue("DescribeClusterStatisticsResponse.ClusterStatisticsList["+ i +"].ClusterStatus"));
 
 			clusterStatisticsList.add(clusterStatistics);
 		}

@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFlowClusterAllHostsResponseUnmarshaller {
 
-	public static ListFlowClusterAllHostsResponse unmarshall(ListFlowClusterAllHostsResponse listFlowClusterAllHostsResponse, UnmarshallerContext context) {
+	public static ListFlowClusterAllHostsResponse unmarshall(ListFlowClusterAllHostsResponse listFlowClusterAllHostsResponse, UnmarshallerContext _ctx) {
 		
-		listFlowClusterAllHostsResponse.setRequestId(context.stringValue("ListFlowClusterAllHostsResponse.RequestId"));
+		listFlowClusterAllHostsResponse.setRequestId(_ctx.stringValue("ListFlowClusterAllHostsResponse.RequestId"));
 
 		List<Host> hostList = new ArrayList<Host>();
-		for (int i = 0; i < context.lengthValue("ListFlowClusterAllHostsResponse.HostList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFlowClusterAllHostsResponse.HostList.Length"); i++) {
 			Host host = new Host();
-			host.setHostId(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].HostId"));
-			host.setHostName(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].HostName"));
-			host.setPublicIp(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].PublicIp"));
-			host.setPrivateIp(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].PrivateIp"));
-			host.setRole(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Role"));
-			host.setInstanceType(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].InstanceType"));
-			host.setCpu(context.integerValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Cpu"));
-			host.setMemory(context.integerValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Memory"));
-			host.setStatus(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Status"));
-			host.setType(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Type"));
-			host.setHostInstanceId(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].HostInstanceId"));
-			host.setSerialNumber(context.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].SerialNumber"));
+			host.setHostId(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].HostId"));
+			host.setHostName(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].HostName"));
+			host.setPublicIp(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].PublicIp"));
+			host.setPrivateIp(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].PrivateIp"));
+			host.setRole(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Role"));
+			host.setInstanceType(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].InstanceType"));
+			host.setCpu(_ctx.integerValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Cpu"));
+			host.setMemory(_ctx.integerValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Memory"));
+			host.setStatus(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Status"));
+			host.setType(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].Type"));
+			host.setHostInstanceId(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].HostInstanceId"));
+			host.setSerialNumber(_ctx.stringValue("ListFlowClusterAllHostsResponse.HostList["+ i +"].SerialNumber"));
 
 			hostList.add(host);
 		}

@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeFlowProjectResponseUnmarshaller {
 
-	public static DescribeFlowProjectResponse unmarshall(DescribeFlowProjectResponse describeFlowProjectResponse, UnmarshallerContext context) {
+	public static DescribeFlowProjectResponse unmarshall(DescribeFlowProjectResponse describeFlowProjectResponse, UnmarshallerContext _ctx) {
 		
-		describeFlowProjectResponse.setRequestId(context.stringValue("DescribeFlowProjectResponse.RequestId"));
-		describeFlowProjectResponse.setId(context.stringValue("DescribeFlowProjectResponse.Id"));
-		describeFlowProjectResponse.setGmtCreate(context.longValue("DescribeFlowProjectResponse.GmtCreate"));
-		describeFlowProjectResponse.setGmtModified(context.longValue("DescribeFlowProjectResponse.GmtModified"));
-		describeFlowProjectResponse.setUserId(context.stringValue("DescribeFlowProjectResponse.UserId"));
-		describeFlowProjectResponse.setName(context.stringValue("DescribeFlowProjectResponse.Name"));
-		describeFlowProjectResponse.setDescription(context.stringValue("DescribeFlowProjectResponse.Description"));
+		describeFlowProjectResponse.setRequestId(_ctx.stringValue("DescribeFlowProjectResponse.RequestId"));
+		describeFlowProjectResponse.setId(_ctx.stringValue("DescribeFlowProjectResponse.Id"));
+		describeFlowProjectResponse.setGmtCreate(_ctx.longValue("DescribeFlowProjectResponse.GmtCreate"));
+		describeFlowProjectResponse.setGmtModified(_ctx.longValue("DescribeFlowProjectResponse.GmtModified"));
+		describeFlowProjectResponse.setUserId(_ctx.stringValue("DescribeFlowProjectResponse.UserId"));
+		describeFlowProjectResponse.setName(_ctx.stringValue("DescribeFlowProjectResponse.Name"));
+		describeFlowProjectResponse.setDescription(_ctx.stringValue("DescribeFlowProjectResponse.Description"));
 	 
 	 	return describeFlowProjectResponse;
 	}

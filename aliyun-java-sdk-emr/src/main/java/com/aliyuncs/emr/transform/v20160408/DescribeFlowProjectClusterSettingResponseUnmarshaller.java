@@ -23,31 +23,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeFlowProjectClusterSettingResponseUnmarshaller {
 
-	public static DescribeFlowProjectClusterSettingResponse unmarshall(DescribeFlowProjectClusterSettingResponse describeFlowProjectClusterSettingResponse, UnmarshallerContext context) {
+	public static DescribeFlowProjectClusterSettingResponse unmarshall(DescribeFlowProjectClusterSettingResponse describeFlowProjectClusterSettingResponse, UnmarshallerContext _ctx) {
 		
-		describeFlowProjectClusterSettingResponse.setRequestId(context.stringValue("DescribeFlowProjectClusterSettingResponse.RequestId"));
-		describeFlowProjectClusterSettingResponse.setGmtCreate(context.longValue("DescribeFlowProjectClusterSettingResponse.GmtCreate"));
-		describeFlowProjectClusterSettingResponse.setGmtModified(context.longValue("DescribeFlowProjectClusterSettingResponse.GmtModified"));
-		describeFlowProjectClusterSettingResponse.setProjectId(context.stringValue("DescribeFlowProjectClusterSettingResponse.ProjectId"));
-		describeFlowProjectClusterSettingResponse.setClusterId(context.stringValue("DescribeFlowProjectClusterSettingResponse.ClusterId"));
-		describeFlowProjectClusterSettingResponse.setDefaultUser(context.stringValue("DescribeFlowProjectClusterSettingResponse.DefaultUser"));
-		describeFlowProjectClusterSettingResponse.setDefaultQueue(context.stringValue("DescribeFlowProjectClusterSettingResponse.DefaultQueue"));
+		describeFlowProjectClusterSettingResponse.setRequestId(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.RequestId"));
+		describeFlowProjectClusterSettingResponse.setGmtCreate(_ctx.longValue("DescribeFlowProjectClusterSettingResponse.GmtCreate"));
+		describeFlowProjectClusterSettingResponse.setGmtModified(_ctx.longValue("DescribeFlowProjectClusterSettingResponse.GmtModified"));
+		describeFlowProjectClusterSettingResponse.setProjectId(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.ProjectId"));
+		describeFlowProjectClusterSettingResponse.setClusterId(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.ClusterId"));
+		describeFlowProjectClusterSettingResponse.setDefaultUser(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.DefaultUser"));
+		describeFlowProjectClusterSettingResponse.setDefaultQueue(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.DefaultQueue"));
 
 		List<String> userList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeFlowProjectClusterSettingResponse.UserList.Length"); i++) {
-			userList.add(context.stringValue("DescribeFlowProjectClusterSettingResponse.UserList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeFlowProjectClusterSettingResponse.UserList.Length"); i++) {
+			userList.add(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.UserList["+ i +"]"));
 		}
 		describeFlowProjectClusterSettingResponse.setUserList(userList);
 
 		List<String> queueList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeFlowProjectClusterSettingResponse.QueueList.Length"); i++) {
-			queueList.add(context.stringValue("DescribeFlowProjectClusterSettingResponse.QueueList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeFlowProjectClusterSettingResponse.QueueList.Length"); i++) {
+			queueList.add(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.QueueList["+ i +"]"));
 		}
 		describeFlowProjectClusterSettingResponse.setQueueList(queueList);
 
 		List<String> hostList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeFlowProjectClusterSettingResponse.HostList.Length"); i++) {
-			hostList.add(context.stringValue("DescribeFlowProjectClusterSettingResponse.HostList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeFlowProjectClusterSettingResponse.HostList.Length"); i++) {
+			hostList.add(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.HostList["+ i +"]"));
 		}
 		describeFlowProjectClusterSettingResponse.setHostList(hostList);
 	 

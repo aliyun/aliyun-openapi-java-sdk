@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFlowProjectUserResponseUnmarshaller {
 
-	public static ListFlowProjectUserResponse unmarshall(ListFlowProjectUserResponse listFlowProjectUserResponse, UnmarshallerContext context) {
+	public static ListFlowProjectUserResponse unmarshall(ListFlowProjectUserResponse listFlowProjectUserResponse, UnmarshallerContext _ctx) {
 		
-		listFlowProjectUserResponse.setRequestId(context.stringValue("ListFlowProjectUserResponse.RequestId"));
-		listFlowProjectUserResponse.setPageNumber(context.integerValue("ListFlowProjectUserResponse.PageNumber"));
-		listFlowProjectUserResponse.setPageSize(context.integerValue("ListFlowProjectUserResponse.PageSize"));
-		listFlowProjectUserResponse.setTotal(context.integerValue("ListFlowProjectUserResponse.Total"));
+		listFlowProjectUserResponse.setRequestId(_ctx.stringValue("ListFlowProjectUserResponse.RequestId"));
+		listFlowProjectUserResponse.setPageNumber(_ctx.integerValue("ListFlowProjectUserResponse.PageNumber"));
+		listFlowProjectUserResponse.setPageSize(_ctx.integerValue("ListFlowProjectUserResponse.PageSize"));
+		listFlowProjectUserResponse.setTotal(_ctx.integerValue("ListFlowProjectUserResponse.Total"));
 
 		List<User> users = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("ListFlowProjectUserResponse.Users.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFlowProjectUserResponse.Users.Length"); i++) {
 			User user = new User();
-			user.setGmtCreate(context.longValue("ListFlowProjectUserResponse.Users["+ i +"].GmtCreate"));
-			user.setGmtModified(context.longValue("ListFlowProjectUserResponse.Users["+ i +"].GmtModified"));
-			user.setProjectId(context.stringValue("ListFlowProjectUserResponse.Users["+ i +"].ProjectId"));
-			user.setOwnerId(context.stringValue("ListFlowProjectUserResponse.Users["+ i +"].OwnerId"));
-			user.setUserName(context.stringValue("ListFlowProjectUserResponse.Users["+ i +"].UserName"));
+			user.setGmtCreate(_ctx.longValue("ListFlowProjectUserResponse.Users["+ i +"].GmtCreate"));
+			user.setGmtModified(_ctx.longValue("ListFlowProjectUserResponse.Users["+ i +"].GmtModified"));
+			user.setProjectId(_ctx.stringValue("ListFlowProjectUserResponse.Users["+ i +"].ProjectId"));
+			user.setOwnerId(_ctx.stringValue("ListFlowProjectUserResponse.Users["+ i +"].OwnerId"));
+			user.setUserName(_ctx.stringValue("ListFlowProjectUserResponse.Users["+ i +"].UserName"));
 
 			users.add(user);
 		}

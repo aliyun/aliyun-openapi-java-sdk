@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetUserInputStatisticInfoResponseUnmarshaller {
 
-	public static GetUserInputStatisticInfoResponse unmarshall(GetUserInputStatisticInfoResponse getUserInputStatisticInfoResponse, UnmarshallerContext context) {
+	public static GetUserInputStatisticInfoResponse unmarshall(GetUserInputStatisticInfoResponse getUserInputStatisticInfoResponse, UnmarshallerContext _ctx) {
 		
-		getUserInputStatisticInfoResponse.setRequestId(context.stringValue("GetUserInputStatisticInfoResponse.RequestId"));
+		getUserInputStatisticInfoResponse.setRequestId(_ctx.stringValue("GetUserInputStatisticInfoResponse.RequestId"));
 
 		List<ClusterStatUserInput> userInputList = new ArrayList<ClusterStatUserInput>();
-		for (int i = 0; i < context.lengthValue("GetUserInputStatisticInfoResponse.UserInputList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetUserInputStatisticInfoResponse.UserInputList.Length"); i++) {
 			ClusterStatUserInput clusterStatUserInput = new ClusterStatUserInput();
-			clusterStatUserInput.setUser(context.stringValue("GetUserInputStatisticInfoResponse.UserInputList["+ i +"].User"));
-			clusterStatUserInput.setBytesInput(context.longValue("GetUserInputStatisticInfoResponse.UserInputList["+ i +"].BytesInput"));
+			clusterStatUserInput.setUser(_ctx.stringValue("GetUserInputStatisticInfoResponse.UserInputList["+ i +"].User"));
+			clusterStatUserInput.setBytesInput(_ctx.longValue("GetUserInputStatisticInfoResponse.UserInputList["+ i +"].BytesInput"));
 
 			userInputList.add(clusterStatUserInput);
 		}

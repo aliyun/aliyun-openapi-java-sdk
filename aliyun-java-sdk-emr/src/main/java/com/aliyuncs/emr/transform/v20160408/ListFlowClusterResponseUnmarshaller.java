@@ -26,39 +26,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFlowClusterResponseUnmarshaller {
 
-	public static ListFlowClusterResponse unmarshall(ListFlowClusterResponse listFlowClusterResponse, UnmarshallerContext context) {
+	public static ListFlowClusterResponse unmarshall(ListFlowClusterResponse listFlowClusterResponse, UnmarshallerContext _ctx) {
 		
-		listFlowClusterResponse.setRequestId(context.stringValue("ListFlowClusterResponse.RequestId"));
-		listFlowClusterResponse.setTotalCount(context.integerValue("ListFlowClusterResponse.TotalCount"));
-		listFlowClusterResponse.setPageNumber(context.integerValue("ListFlowClusterResponse.PageNumber"));
-		listFlowClusterResponse.setPageSize(context.integerValue("ListFlowClusterResponse.PageSize"));
+		listFlowClusterResponse.setRequestId(_ctx.stringValue("ListFlowClusterResponse.RequestId"));
+		listFlowClusterResponse.setTotalCount(_ctx.integerValue("ListFlowClusterResponse.TotalCount"));
+		listFlowClusterResponse.setPageNumber(_ctx.integerValue("ListFlowClusterResponse.PageNumber"));
+		listFlowClusterResponse.setPageSize(_ctx.integerValue("ListFlowClusterResponse.PageSize"));
 
 		List<ClusterInfo> clusters = new ArrayList<ClusterInfo>();
-		for (int i = 0; i < context.lengthValue("ListFlowClusterResponse.Clusters.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFlowClusterResponse.Clusters.Length"); i++) {
 			ClusterInfo clusterInfo = new ClusterInfo();
-			clusterInfo.setId(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].Id"));
-			clusterInfo.setName(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].Name"));
-			clusterInfo.setType(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].Type"));
-			clusterInfo.setCreateTime(context.longValue("ListFlowClusterResponse.Clusters["+ i +"].CreateTime"));
-			clusterInfo.setRunningTime(context.integerValue("ListFlowClusterResponse.Clusters["+ i +"].RunningTime"));
-			clusterInfo.setStatus(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].Status"));
-			clusterInfo.setChargeType(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].ChargeType"));
-			clusterInfo.setExpiredTime(context.longValue("ListFlowClusterResponse.Clusters["+ i +"].ExpiredTime"));
-			clusterInfo.setPeriod(context.integerValue("ListFlowClusterResponse.Clusters["+ i +"].Period"));
-			clusterInfo.setHasUncompletedOrder(context.booleanValue("ListFlowClusterResponse.Clusters["+ i +"].HasUncompletedOrder"));
-			clusterInfo.setOrderList(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].OrderList"));
-			clusterInfo.setCreateResource(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].CreateResource"));
+			clusterInfo.setId(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].Id"));
+			clusterInfo.setName(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].Name"));
+			clusterInfo.setType(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].Type"));
+			clusterInfo.setCreateTime(_ctx.longValue("ListFlowClusterResponse.Clusters["+ i +"].CreateTime"));
+			clusterInfo.setRunningTime(_ctx.integerValue("ListFlowClusterResponse.Clusters["+ i +"].RunningTime"));
+			clusterInfo.setStatus(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].Status"));
+			clusterInfo.setChargeType(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].ChargeType"));
+			clusterInfo.setExpiredTime(_ctx.longValue("ListFlowClusterResponse.Clusters["+ i +"].ExpiredTime"));
+			clusterInfo.setPeriod(_ctx.integerValue("ListFlowClusterResponse.Clusters["+ i +"].Period"));
+			clusterInfo.setHasUncompletedOrder(_ctx.booleanValue("ListFlowClusterResponse.Clusters["+ i +"].HasUncompletedOrder"));
+			clusterInfo.setOrderList(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].OrderList"));
+			clusterInfo.setCreateResource(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].CreateResource"));
 
 			OrderTaskInfo orderTaskInfo = new OrderTaskInfo();
-			orderTaskInfo.setTargetCount(context.integerValue("ListFlowClusterResponse.Clusters["+ i +"].OrderTaskInfo.TargetCount"));
-			orderTaskInfo.setCurrentCount(context.integerValue("ListFlowClusterResponse.Clusters["+ i +"].OrderTaskInfo.CurrentCount"));
-			orderTaskInfo.setOrderIdList(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].OrderTaskInfo.OrderIdList"));
+			orderTaskInfo.setTargetCount(_ctx.integerValue("ListFlowClusterResponse.Clusters["+ i +"].OrderTaskInfo.TargetCount"));
+			orderTaskInfo.setCurrentCount(_ctx.integerValue("ListFlowClusterResponse.Clusters["+ i +"].OrderTaskInfo.CurrentCount"));
+			orderTaskInfo.setOrderIdList(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].OrderTaskInfo.OrderIdList"));
 			clusterInfo.setOrderTaskInfo(orderTaskInfo);
 
 			FailReason failReason = new FailReason();
-			failReason.setErrorCode(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].FailReason.ErrorCode"));
-			failReason.setErrorMsg(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].FailReason.ErrorMsg"));
-			failReason.setRequestId(context.stringValue("ListFlowClusterResponse.Clusters["+ i +"].FailReason.RequestId"));
+			failReason.setErrorCode(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].FailReason.ErrorCode"));
+			failReason.setErrorMsg(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].FailReason.ErrorMsg"));
+			failReason.setRequestId(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].FailReason.RequestId"));
 			clusterInfo.setFailReason(failReason);
 
 			clusters.add(clusterInfo);

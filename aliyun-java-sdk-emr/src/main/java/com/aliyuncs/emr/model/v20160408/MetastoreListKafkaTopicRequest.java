@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -23,10 +24,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class MetastoreListKafkaTopicRequest extends RpcAcsRequest<MetastoreListKafkaTopicResponse> {
 	
 	public MetastoreListKafkaTopicRequest() {
-		super("Emr", "2016-04-08", "MetastoreListKafkaTopic");
+		super("Emr", "2016-04-08", "MetastoreListKafkaTopic", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private Boolean activeOnly;
 
 	private Integer pageSize;
 
@@ -46,6 +53,17 @@ public class MetastoreListKafkaTopicRequest extends RpcAcsRequest<MetastoreListK
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getActiveOnly() {
+		return this.activeOnly;
+	}
+
+	public void setActiveOnly(Boolean activeOnly) {
+		this.activeOnly = activeOnly;
+		if(activeOnly != null){
+			putQueryParameter("ActiveOnly", activeOnly.toString());
 		}
 	}
 

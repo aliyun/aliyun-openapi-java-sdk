@@ -24,36 +24,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFlowResponseUnmarshaller {
 
-	public static ListFlowResponse unmarshall(ListFlowResponse listFlowResponse, UnmarshallerContext context) {
+	public static ListFlowResponse unmarshall(ListFlowResponse listFlowResponse, UnmarshallerContext _ctx) {
 		
-		listFlowResponse.setRequestId(context.stringValue("ListFlowResponse.RequestId"));
-		listFlowResponse.setPageNumber(context.integerValue("ListFlowResponse.PageNumber"));
-		listFlowResponse.setPageSize(context.integerValue("ListFlowResponse.PageSize"));
-		listFlowResponse.setTotal(context.integerValue("ListFlowResponse.Total"));
+		listFlowResponse.setRequestId(_ctx.stringValue("ListFlowResponse.RequestId"));
+		listFlowResponse.setPageNumber(_ctx.integerValue("ListFlowResponse.PageNumber"));
+		listFlowResponse.setPageSize(_ctx.integerValue("ListFlowResponse.PageSize"));
+		listFlowResponse.setTotal(_ctx.integerValue("ListFlowResponse.Total"));
 
 		List<FlowItem> flow = new ArrayList<FlowItem>();
-		for (int i = 0; i < context.lengthValue("ListFlowResponse.Flow.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFlowResponse.Flow.Length"); i++) {
 			FlowItem flowItem = new FlowItem();
-			flowItem.setId(context.stringValue("ListFlowResponse.Flow["+ i +"].Id"));
-			flowItem.setGmtCreate(context.longValue("ListFlowResponse.Flow["+ i +"].GmtCreate"));
-			flowItem.setGmtModified(context.longValue("ListFlowResponse.Flow["+ i +"].GmtModified"));
-			flowItem.setName(context.stringValue("ListFlowResponse.Flow["+ i +"].Name"));
-			flowItem.setDescription(context.stringValue("ListFlowResponse.Flow["+ i +"].Description"));
-			flowItem.setType(context.stringValue("ListFlowResponse.Flow["+ i +"].Type"));
-			flowItem.setStatus(context.stringValue("ListFlowResponse.Flow["+ i +"].Status"));
-			flowItem.setPeriodic(context.booleanValue("ListFlowResponse.Flow["+ i +"].Periodic"));
-			flowItem.setStartSchedule(context.longValue("ListFlowResponse.Flow["+ i +"].StartSchedule"));
-			flowItem.setEndSchedule(context.longValue("ListFlowResponse.Flow["+ i +"].EndSchedule"));
-			flowItem.setCronExpr(context.stringValue("ListFlowResponse.Flow["+ i +"].CronExpr"));
-			flowItem.setCreateCluster(context.booleanValue("ListFlowResponse.Flow["+ i +"].CreateCluster"));
-			flowItem.setClusterId(context.stringValue("ListFlowResponse.Flow["+ i +"].ClusterId"));
-			flowItem.setProjectId(context.stringValue("ListFlowResponse.Flow["+ i +"].ProjectId"));
-			flowItem.setHostName(context.stringValue("ListFlowResponse.Flow["+ i +"].HostName"));
-			flowItem.setGraph(context.stringValue("ListFlowResponse.Flow["+ i +"].Graph"));
-			flowItem.setAlertUserGroupBizId(context.stringValue("ListFlowResponse.Flow["+ i +"].AlertUserGroupBizId"));
-			flowItem.setAlertDingDingGroupBizId(context.stringValue("ListFlowResponse.Flow["+ i +"].AlertDingDingGroupBizId"));
-			flowItem.setAlertConf(context.stringValue("ListFlowResponse.Flow["+ i +"].AlertConf"));
-			flowItem.setCategoryId(context.stringValue("ListFlowResponse.Flow["+ i +"].CategoryId"));
+			flowItem.setId(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].Id"));
+			flowItem.setGmtCreate(_ctx.longValue("ListFlowResponse.Flow["+ i +"].GmtCreate"));
+			flowItem.setGmtModified(_ctx.longValue("ListFlowResponse.Flow["+ i +"].GmtModified"));
+			flowItem.setName(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].Name"));
+			flowItem.setDescription(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].Description"));
+			flowItem.setType(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].Type"));
+			flowItem.setStatus(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].Status"));
+			flowItem.setPeriodic(_ctx.booleanValue("ListFlowResponse.Flow["+ i +"].Periodic"));
+			flowItem.setStartSchedule(_ctx.longValue("ListFlowResponse.Flow["+ i +"].StartSchedule"));
+			flowItem.setEndSchedule(_ctx.longValue("ListFlowResponse.Flow["+ i +"].EndSchedule"));
+			flowItem.setCronExpr(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].CronExpr"));
+			flowItem.setCreateCluster(_ctx.booleanValue("ListFlowResponse.Flow["+ i +"].CreateCluster"));
+			flowItem.setClusterId(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].ClusterId"));
+			flowItem.setProjectId(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].ProjectId"));
+			flowItem.setHostName(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].HostName"));
+			flowItem.setGraph(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].Graph"));
+			flowItem.setAlertUserGroupBizId(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].AlertUserGroupBizId"));
+			flowItem.setAlertDingDingGroupBizId(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].AlertDingDingGroupBizId"));
+			flowItem.setAlertConf(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].AlertConf"));
+			flowItem.setCategoryId(_ctx.stringValue("ListFlowResponse.Flow["+ i +"].CategoryId"));
 
 			flow.add(flowItem);
 		}

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RenderResourcePoolXmlResponseUnmarshaller {
 
-	public static RenderResourcePoolXmlResponse unmarshall(RenderResourcePoolXmlResponse renderResourcePoolXmlResponse, UnmarshallerContext context) {
+	public static RenderResourcePoolXmlResponse unmarshall(RenderResourcePoolXmlResponse renderResourcePoolXmlResponse, UnmarshallerContext _ctx) {
 		
-		renderResourcePoolXmlResponse.setRequestId(context.stringValue("RenderResourcePoolXmlResponse.RequestId"));
-		renderResourcePoolXmlResponse.setXmlContent(context.stringValue("RenderResourcePoolXmlResponse.XmlContent"));
+		renderResourcePoolXmlResponse.setRequestId(_ctx.stringValue("RenderResourcePoolXmlResponse.RequestId"));
+		renderResourcePoolXmlResponse.setXmlContent(_ctx.stringValue("RenderResourcePoolXmlResponse.XmlContent"));
 	 
 	 	return renderResourcePoolXmlResponse;
 	}

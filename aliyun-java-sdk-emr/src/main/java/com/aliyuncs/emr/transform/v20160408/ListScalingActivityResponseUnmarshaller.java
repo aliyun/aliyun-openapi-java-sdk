@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListScalingActivityResponseUnmarshaller {
 
-	public static ListScalingActivityResponse unmarshall(ListScalingActivityResponse listScalingActivityResponse, UnmarshallerContext context) {
+	public static ListScalingActivityResponse unmarshall(ListScalingActivityResponse listScalingActivityResponse, UnmarshallerContext _ctx) {
 		
-		listScalingActivityResponse.setRequestId(context.stringValue("ListScalingActivityResponse.RequestId"));
-		listScalingActivityResponse.setPageNumber(context.integerValue("ListScalingActivityResponse.PageNumber"));
-		listScalingActivityResponse.setPageSize(context.integerValue("ListScalingActivityResponse.PageSize"));
-		listScalingActivityResponse.setTotal(context.integerValue("ListScalingActivityResponse.Total"));
+		listScalingActivityResponse.setRequestId(_ctx.stringValue("ListScalingActivityResponse.RequestId"));
+		listScalingActivityResponse.setPageNumber(_ctx.integerValue("ListScalingActivityResponse.PageNumber"));
+		listScalingActivityResponse.setPageSize(_ctx.integerValue("ListScalingActivityResponse.PageSize"));
+		listScalingActivityResponse.setTotal(_ctx.integerValue("ListScalingActivityResponse.Total"));
 
 		List<ScalingActivity> scalingActivityList = new ArrayList<ScalingActivity>();
-		for (int i = 0; i < context.lengthValue("ListScalingActivityResponse.ScalingActivityList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListScalingActivityResponse.ScalingActivityList.Length"); i++) {
 			ScalingActivity scalingActivity = new ScalingActivity();
-			scalingActivity.setBizId(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].BizId"));
-			scalingActivity.setStartTime(context.longValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].StartTime"));
-			scalingActivity.setEndTime(context.longValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].EndTime"));
-			scalingActivity.setInstanceIds(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].InstanceIds"));
-			scalingActivity.setTotalCapacity(context.integerValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].TotalCapacity"));
-			scalingActivity.setCause(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Cause"));
-			scalingActivity.setDescription(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Description"));
-			scalingActivity.setStatus(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Status"));
-			scalingActivity.setTransition(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Transition"));
-			scalingActivity.setScalingRuleId(context.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].ScalingRuleId"));
-			scalingActivity.setExpectNum(context.integerValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].ExpectNum"));
+			scalingActivity.setBizId(_ctx.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].BizId"));
+			scalingActivity.setStartTime(_ctx.longValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].StartTime"));
+			scalingActivity.setEndTime(_ctx.longValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].EndTime"));
+			scalingActivity.setInstanceIds(_ctx.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].InstanceIds"));
+			scalingActivity.setTotalCapacity(_ctx.integerValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].TotalCapacity"));
+			scalingActivity.setCause(_ctx.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Cause"));
+			scalingActivity.setDescription(_ctx.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Description"));
+			scalingActivity.setStatus(_ctx.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Status"));
+			scalingActivity.setTransition(_ctx.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].Transition"));
+			scalingActivity.setScalingRuleId(_ctx.stringValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].ScalingRuleId"));
+			scalingActivity.setExpectNum(_ctx.integerValue("ListScalingActivityResponse.ScalingActivityList["+ i +"].ExpectNum"));
 
 			scalingActivityList.add(scalingActivity);
 		}

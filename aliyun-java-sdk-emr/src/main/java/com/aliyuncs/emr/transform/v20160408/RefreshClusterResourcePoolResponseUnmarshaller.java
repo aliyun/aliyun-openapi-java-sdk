@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RefreshClusterResourcePoolResponseUnmarshaller {
 
-	public static RefreshClusterResourcePoolResponse unmarshall(RefreshClusterResourcePoolResponse refreshClusterResourcePoolResponse, UnmarshallerContext context) {
+	public static RefreshClusterResourcePoolResponse unmarshall(RefreshClusterResourcePoolResponse refreshClusterResourcePoolResponse, UnmarshallerContext _ctx) {
 		
-		refreshClusterResourcePoolResponse.setRequestId(context.stringValue("RefreshClusterResourcePoolResponse.RequestId"));
-		refreshClusterResourcePoolResponse.setWorkFlowInstanceId(context.stringValue("RefreshClusterResourcePoolResponse.WorkFlowInstanceId"));
-		refreshClusterResourcePoolResponse.setOperationId(context.stringValue("RefreshClusterResourcePoolResponse.OperationId"));
+		refreshClusterResourcePoolResponse.setRequestId(_ctx.stringValue("RefreshClusterResourcePoolResponse.RequestId"));
+		refreshClusterResourcePoolResponse.setWorkFlowInstanceId(_ctx.stringValue("RefreshClusterResourcePoolResponse.WorkFlowInstanceId"));
+		refreshClusterResourcePoolResponse.setOperationId(_ctx.stringValue("RefreshClusterResourcePoolResponse.OperationId"));
 	 
 	 	return refreshClusterResourcePoolResponse;
 	}

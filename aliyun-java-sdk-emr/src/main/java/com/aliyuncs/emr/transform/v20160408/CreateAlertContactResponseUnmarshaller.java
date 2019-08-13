@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateAlertContactResponseUnmarshaller {
 
-	public static CreateAlertContactResponse unmarshall(CreateAlertContactResponse createAlertContactResponse, UnmarshallerContext context) {
+	public static CreateAlertContactResponse unmarshall(CreateAlertContactResponse createAlertContactResponse, UnmarshallerContext _ctx) {
 		
-		createAlertContactResponse.setId(context.longValue("CreateAlertContactResponse.Id"));
+		createAlertContactResponse.setId(_ctx.longValue("CreateAlertContactResponse.Id"));
 	 
 	 	return createAlertContactResponse;
 	}

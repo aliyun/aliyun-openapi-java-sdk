@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyJobRequest extends RpcAcsRequest<ModifyJobResponse> {
 	
 	public ModifyJobRequest() {
-		super("Emr", "2016-04-08", "ModifyJob");
+		super("Emr", "2016-04-08", "ModifyJob", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String runParameter;

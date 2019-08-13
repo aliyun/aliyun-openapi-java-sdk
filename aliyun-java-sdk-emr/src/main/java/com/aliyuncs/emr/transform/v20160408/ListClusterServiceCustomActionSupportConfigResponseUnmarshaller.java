@@ -24,14 +24,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterServiceCustomActionSupportConfigResponseUnmarshaller {
 
-	public static ListClusterServiceCustomActionSupportConfigResponse unmarshall(ListClusterServiceCustomActionSupportConfigResponse listClusterServiceCustomActionSupportConfigResponse, UnmarshallerContext context) {
+	public static ListClusterServiceCustomActionSupportConfigResponse unmarshall(ListClusterServiceCustomActionSupportConfigResponse listClusterServiceCustomActionSupportConfigResponse, UnmarshallerContext _ctx) {
 		
-		listClusterServiceCustomActionSupportConfigResponse.setRequestId(context.stringValue("ListClusterServiceCustomActionSupportConfigResponse.RequestId"));
+		listClusterServiceCustomActionSupportConfigResponse.setRequestId(_ctx.stringValue("ListClusterServiceCustomActionSupportConfigResponse.RequestId"));
 
 		List<SupportedConfig> supportedConfigList = new ArrayList<SupportedConfig>();
-		for (int i = 0; i < context.lengthValue("ListClusterServiceCustomActionSupportConfigResponse.SupportedConfigList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterServiceCustomActionSupportConfigResponse.SupportedConfigList.Length"); i++) {
 			SupportedConfig supportedConfig = new SupportedConfig();
-			supportedConfig.setConfigKey(context.stringValue("ListClusterServiceCustomActionSupportConfigResponse.SupportedConfigList["+ i +"].ConfigKey"));
+			supportedConfig.setConfigKey(_ctx.stringValue("ListClusterServiceCustomActionSupportConfigResponse.SupportedConfigList["+ i +"].ConfigKey"));
 
 			supportedConfigList.add(supportedConfig);
 		}

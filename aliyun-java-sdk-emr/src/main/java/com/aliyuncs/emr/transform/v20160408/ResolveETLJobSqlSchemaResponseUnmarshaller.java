@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResolveETLJobSqlSchemaResponseUnmarshaller {
 
-	public static ResolveETLJobSqlSchemaResponse unmarshall(ResolveETLJobSqlSchemaResponse resolveETLJobSqlSchemaResponse, UnmarshallerContext context) {
+	public static ResolveETLJobSqlSchemaResponse unmarshall(ResolveETLJobSqlSchemaResponse resolveETLJobSqlSchemaResponse, UnmarshallerContext _ctx) {
 		
-		resolveETLJobSqlSchemaResponse.setRequestId(context.stringValue("ResolveETLJobSqlSchemaResponse.RequestId"));
-		resolveETLJobSqlSchemaResponse.setResolveId(context.stringValue("ResolveETLJobSqlSchemaResponse.ResolveId"));
+		resolveETLJobSqlSchemaResponse.setRequestId(_ctx.stringValue("ResolveETLJobSqlSchemaResponse.RequestId"));
+		resolveETLJobSqlSchemaResponse.setResolveId(_ctx.stringValue("ResolveETLJobSqlSchemaResponse.ResolveId"));
 	 
 	 	return resolveETLJobSqlSchemaResponse;
 	}

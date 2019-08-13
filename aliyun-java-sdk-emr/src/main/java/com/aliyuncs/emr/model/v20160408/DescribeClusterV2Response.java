@@ -53,6 +53,8 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		private String depositType;
 
+		private String machineType;
+
 		private String zoneId;
 
 		private String name;
@@ -137,6 +139,8 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		private Boolean resizeDiskEnable;
 
+		private String metaStoreType;
+
 		private List<GatewayClusterInfo> gatewayClusterInfoList;
 
 		private List<HostGroup> hostGroupList;
@@ -144,6 +148,8 @@ public class DescribeClusterV2Response extends AcsResponse {
 		private List<BootstrapAction> bootstrapActionList;
 
 		private RelateClusterInfo relateClusterInfo;
+
+		private HostPoolInfo hostPoolInfo;
 
 		private FailReason failReason;
 
@@ -189,6 +195,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		public void setDepositType(String depositType) {
 			this.depositType = depositType;
+		}
+
+		public String getMachineType() {
+			return this.machineType;
+		}
+
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
 		}
 
 		public String getZoneId() {
@@ -527,6 +541,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 			this.resizeDiskEnable = resizeDiskEnable;
 		}
 
+		public String getMetaStoreType() {
+			return this.metaStoreType;
+		}
+
+		public void setMetaStoreType(String metaStoreType) {
+			this.metaStoreType = metaStoreType;
+		}
+
 		public List<GatewayClusterInfo> getGatewayClusterInfoList() {
 			return this.gatewayClusterInfoList;
 		}
@@ -557,6 +579,14 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 		public void setRelateClusterInfo(RelateClusterInfo relateClusterInfo) {
 			this.relateClusterInfo = relateClusterInfo;
+		}
+
+		public HostPoolInfo getHostPoolInfo() {
+			return this.hostPoolInfo;
+		}
+
+		public void setHostPoolInfo(HostPoolInfo hostPoolInfo) {
+			this.hostPoolInfo = hostPoolInfo;
 		}
 
 		public FailReason getFailReason() {
@@ -1051,6 +1081,29 @@ public class DescribeClusterV2Response extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+		}
+
+		public static class HostPoolInfo {
+
+			private String hpBizId;
+
+			private String hpName;
+
+			public String getHpBizId() {
+				return this.hpBizId;
+			}
+
+			public void setHpBizId(String hpBizId) {
+				this.hpBizId = hpBizId;
+			}
+
+			public String getHpName() {
+				return this.hpName;
+			}
+
+			public void setHpName(String hpName) {
+				this.hpName = hpName;
 			}
 		}
 

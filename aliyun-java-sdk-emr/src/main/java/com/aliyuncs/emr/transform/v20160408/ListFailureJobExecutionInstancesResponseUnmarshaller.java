@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFailureJobExecutionInstancesResponseUnmarshaller {
 
-	public static ListFailureJobExecutionInstancesResponse unmarshall(ListFailureJobExecutionInstancesResponse listFailureJobExecutionInstancesResponse, UnmarshallerContext context) {
+	public static ListFailureJobExecutionInstancesResponse unmarshall(ListFailureJobExecutionInstancesResponse listFailureJobExecutionInstancesResponse, UnmarshallerContext _ctx) {
 		
-		listFailureJobExecutionInstancesResponse.setRequestId(context.stringValue("ListFailureJobExecutionInstancesResponse.RequestId"));
+		listFailureJobExecutionInstancesResponse.setRequestId(_ctx.stringValue("ListFailureJobExecutionInstancesResponse.RequestId"));
 
 		List<JobInstance> jobInstances = new ArrayList<JobInstance>();
-		for (int i = 0; i < context.lengthValue("ListFailureJobExecutionInstancesResponse.JobInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFailureJobExecutionInstancesResponse.JobInstances.Length"); i++) {
 			JobInstance jobInstance = new JobInstance();
-			jobInstance.setId(context.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].Id"));
-			jobInstance.setJobName(context.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].JobName"));
-			jobInstance.setStartTime(context.longValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].StartTime"));
-			jobInstance.setRunTime(context.integerValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].RunTime"));
-			jobInstance.setJobType(context.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].JobType"));
-			jobInstance.setJobId(context.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].JobId"));
-			jobInstance.setClusterId(context.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].ClusterId"));
-			jobInstance.setStatus(context.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].Status"));
-			jobInstance.setRetryInfo(context.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].RetryInfo"));
+			jobInstance.setId(_ctx.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].Id"));
+			jobInstance.setJobName(_ctx.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].JobName"));
+			jobInstance.setStartTime(_ctx.longValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].StartTime"));
+			jobInstance.setRunTime(_ctx.integerValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].RunTime"));
+			jobInstance.setJobType(_ctx.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].JobType"));
+			jobInstance.setJobId(_ctx.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].JobId"));
+			jobInstance.setClusterId(_ctx.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].ClusterId"));
+			jobInstance.setStatus(_ctx.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].Status"));
+			jobInstance.setRetryInfo(_ctx.stringValue("ListFailureJobExecutionInstancesResponse.JobInstances["+ i +"].RetryInfo"));
 
 			jobInstances.add(jobInstance);
 		}

@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAlertDingDingGroupResponseUnmarshaller {
 
-	public static ListAlertDingDingGroupResponse unmarshall(ListAlertDingDingGroupResponse listAlertDingDingGroupResponse, UnmarshallerContext context) {
+	public static ListAlertDingDingGroupResponse unmarshall(ListAlertDingDingGroupResponse listAlertDingDingGroupResponse, UnmarshallerContext _ctx) {
 		
 
 		List<AlertDingDingGroup> alertDingDingGroupList = new ArrayList<AlertDingDingGroup>();
-		for (int i = 0; i < context.lengthValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList.Length"); i++) {
 			AlertDingDingGroup alertDingDingGroup = new AlertDingDingGroup();
-			alertDingDingGroup.setId(context.longValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].Id"));
-			alertDingDingGroup.setGmtCreate(context.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].GmtCreate"));
-			alertDingDingGroup.setGmtModified(context.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].GmtModified"));
-			alertDingDingGroup.setBizId(context.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].BizId"));
-			alertDingDingGroup.setName(context.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].Name"));
-			alertDingDingGroup.setDescription(context.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].Description"));
-			alertDingDingGroup.setWebHookUrl(context.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].WebHookUrl"));
+			alertDingDingGroup.setId(_ctx.longValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].Id"));
+			alertDingDingGroup.setGmtCreate(_ctx.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].GmtCreate"));
+			alertDingDingGroup.setGmtModified(_ctx.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].GmtModified"));
+			alertDingDingGroup.setBizId(_ctx.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].BizId"));
+			alertDingDingGroup.setName(_ctx.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].Name"));
+			alertDingDingGroup.setDescription(_ctx.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].Description"));
+			alertDingDingGroup.setWebHookUrl(_ctx.stringValue("ListAlertDingDingGroupResponse.AlertDingDingGroupList["+ i +"].WebHookUrl"));
 
 			alertDingDingGroupList.add(alertDingDingGroup);
 		}

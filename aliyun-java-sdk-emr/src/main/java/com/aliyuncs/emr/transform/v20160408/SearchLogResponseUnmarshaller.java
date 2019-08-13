@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SearchLogResponseUnmarshaller {
 
-	public static SearchLogResponse unmarshall(SearchLogResponse searchLogResponse, UnmarshallerContext context) {
+	public static SearchLogResponse unmarshall(SearchLogResponse searchLogResponse, UnmarshallerContext _ctx) {
 		
-		searchLogResponse.setRequestId(context.stringValue("SearchLogResponse.RequestId"));
-		searchLogResponse.setCompleted(context.booleanValue("SearchLogResponse.Completed"));
+		searchLogResponse.setRequestId(_ctx.stringValue("SearchLogResponse.RequestId"));
+		searchLogResponse.setCompleted(_ctx.booleanValue("SearchLogResponse.Completed"));
 
 		List<SlsLogItem> slsLogItemList = new ArrayList<SlsLogItem>();
-		for (int i = 0; i < context.lengthValue("SearchLogResponse.SlsLogItemList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("SearchLogResponse.SlsLogItemList.Length"); i++) {
 			SlsLogItem slsLogItem = new SlsLogItem();
-			slsLogItem.setTimestamp(context.integerValue("SearchLogResponse.SlsLogItemList["+ i +"].Timestamp"));
-			slsLogItem.setSourceIp(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].SourceIp"));
-			slsLogItem.setHostName(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].HostName"));
-			slsLogItem.setPath(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].Path"));
-			slsLogItem.setContent(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].Content"));
-			slsLogItem.setPackMeta(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].PackMeta"));
-			slsLogItem.setPackId(context.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].PackId"));
+			slsLogItem.setTimestamp(_ctx.integerValue("SearchLogResponse.SlsLogItemList["+ i +"].Timestamp"));
+			slsLogItem.setSourceIp(_ctx.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].SourceIp"));
+			slsLogItem.setHostName(_ctx.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].HostName"));
+			slsLogItem.setPath(_ctx.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].Path"));
+			slsLogItem.setContent(_ctx.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].Content"));
+			slsLogItem.setPackMeta(_ctx.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].PackMeta"));
+			slsLogItem.setPackId(_ctx.stringValue("SearchLogResponse.SlsLogItemList["+ i +"].PackId"));
 
 			slsLogItemList.add(slsLogItem);
 		}

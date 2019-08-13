@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckDataSourceResponseUnmarshaller {
 
-	public static CheckDataSourceResponse unmarshall(CheckDataSourceResponse checkDataSourceResponse, UnmarshallerContext context) {
+	public static CheckDataSourceResponse unmarshall(CheckDataSourceResponse checkDataSourceResponse, UnmarshallerContext _ctx) {
 		
-		checkDataSourceResponse.setRequestId(context.stringValue("CheckDataSourceResponse.RequestId"));
-		checkDataSourceResponse.setCommandId(context.stringValue("CheckDataSourceResponse.CommandId"));
+		checkDataSourceResponse.setRequestId(_ctx.stringValue("CheckDataSourceResponse.RequestId"));
+		checkDataSourceResponse.setCommandId(_ctx.stringValue("CheckDataSourceResponse.CommandId"));
 	 
 	 	return checkDataSourceResponse;
 	}

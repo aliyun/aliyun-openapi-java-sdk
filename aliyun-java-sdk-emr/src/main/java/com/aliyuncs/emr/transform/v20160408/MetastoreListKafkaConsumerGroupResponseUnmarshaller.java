@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreListKafkaConsumerGroupResponseUnmarshaller {
 
-	public static MetastoreListKafkaConsumerGroupResponse unmarshall(MetastoreListKafkaConsumerGroupResponse metastoreListKafkaConsumerGroupResponse, UnmarshallerContext context) {
+	public static MetastoreListKafkaConsumerGroupResponse unmarshall(MetastoreListKafkaConsumerGroupResponse metastoreListKafkaConsumerGroupResponse, UnmarshallerContext _ctx) {
 		
-		metastoreListKafkaConsumerGroupResponse.setRequestId(context.stringValue("MetastoreListKafkaConsumerGroupResponse.RequestId"));
-		metastoreListKafkaConsumerGroupResponse.setTotalCount(context.integerValue("MetastoreListKafkaConsumerGroupResponse.TotalCount"));
-		metastoreListKafkaConsumerGroupResponse.setPageNumber(context.integerValue("MetastoreListKafkaConsumerGroupResponse.PageNumber"));
-		metastoreListKafkaConsumerGroupResponse.setPageSize(context.integerValue("MetastoreListKafkaConsumerGroupResponse.PageSize"));
+		metastoreListKafkaConsumerGroupResponse.setRequestId(_ctx.stringValue("MetastoreListKafkaConsumerGroupResponse.RequestId"));
+		metastoreListKafkaConsumerGroupResponse.setTotalCount(_ctx.integerValue("MetastoreListKafkaConsumerGroupResponse.TotalCount"));
+		metastoreListKafkaConsumerGroupResponse.setPageNumber(_ctx.integerValue("MetastoreListKafkaConsumerGroupResponse.PageNumber"));
+		metastoreListKafkaConsumerGroupResponse.setPageSize(_ctx.integerValue("MetastoreListKafkaConsumerGroupResponse.PageSize"));
 
 		List<ConsumerGroup> consumerGroupList = new ArrayList<ConsumerGroup>();
-		for (int i = 0; i < context.lengthValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList.Length"); i++) {
 			ConsumerGroup consumerGroup = new ConsumerGroup();
-			consumerGroup.setId(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].Id"));
-			consumerGroup.setDataSourceId(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].DataSourceId"));
-			consumerGroup.setConsumerGroup(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].ConsumerGroup"));
-			consumerGroup.setConsumerType(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].ConsumerType"));
-			consumerGroup.setTotalLag(context.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].TotalLag"));
-			consumerGroup.setGmtCreate(context.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].GmtCreate"));
-			consumerGroup.setGmtModified(context.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].GmtModified"));
-			consumerGroup.setPartitionProportion(context.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].PartitionProportion"));
+			consumerGroup.setId(_ctx.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].Id"));
+			consumerGroup.setDataSourceId(_ctx.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].DataSourceId"));
+			consumerGroup.setConsumerGroup(_ctx.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].ConsumerGroup"));
+			consumerGroup.setConsumerType(_ctx.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].ConsumerType"));
+			consumerGroup.setTotalLag(_ctx.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].TotalLag"));
+			consumerGroup.setGmtCreate(_ctx.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].GmtCreate"));
+			consumerGroup.setGmtModified(_ctx.longValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].GmtModified"));
+			consumerGroup.setPartitionProportion(_ctx.stringValue("MetastoreListKafkaConsumerGroupResponse.ConsumerGroupList["+ i +"].PartitionProportion"));
 
 			consumerGroupList.add(consumerGroup);
 		}

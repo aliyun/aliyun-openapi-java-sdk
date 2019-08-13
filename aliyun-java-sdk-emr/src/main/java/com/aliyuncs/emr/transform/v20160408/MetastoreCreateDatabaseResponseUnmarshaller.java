@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreCreateDatabaseResponseUnmarshaller {
 
-	public static MetastoreCreateDatabaseResponse unmarshall(MetastoreCreateDatabaseResponse metastoreCreateDatabaseResponse, UnmarshallerContext context) {
+	public static MetastoreCreateDatabaseResponse unmarshall(MetastoreCreateDatabaseResponse metastoreCreateDatabaseResponse, UnmarshallerContext _ctx) {
 		
-		metastoreCreateDatabaseResponse.setRequestId(context.stringValue("MetastoreCreateDatabaseResponse.RequestId"));
+		metastoreCreateDatabaseResponse.setRequestId(_ctx.stringValue("MetastoreCreateDatabaseResponse.RequestId"));
 	 
 	 	return metastoreCreateDatabaseResponse;
 	}

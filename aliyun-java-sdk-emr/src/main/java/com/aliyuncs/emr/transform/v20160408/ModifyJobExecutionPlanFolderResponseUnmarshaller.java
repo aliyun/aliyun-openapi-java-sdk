@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyJobExecutionPlanFolderResponseUnmarshaller {
 
-	public static ModifyJobExecutionPlanFolderResponse unmarshall(ModifyJobExecutionPlanFolderResponse modifyJobExecutionPlanFolderResponse, UnmarshallerContext context) {
+	public static ModifyJobExecutionPlanFolderResponse unmarshall(ModifyJobExecutionPlanFolderResponse modifyJobExecutionPlanFolderResponse, UnmarshallerContext _ctx) {
 		
-		modifyJobExecutionPlanFolderResponse.setRequestId(context.stringValue("ModifyJobExecutionPlanFolderResponse.RequestId"));
-		modifyJobExecutionPlanFolderResponse.setSuccess(context.stringValue("ModifyJobExecutionPlanFolderResponse.Success"));
-		modifyJobExecutionPlanFolderResponse.setErrCode(context.stringValue("ModifyJobExecutionPlanFolderResponse.ErrCode"));
-		modifyJobExecutionPlanFolderResponse.setErrMsg(context.stringValue("ModifyJobExecutionPlanFolderResponse.ErrMsg"));
-		modifyJobExecutionPlanFolderResponse.setFolderId(context.stringValue("ModifyJobExecutionPlanFolderResponse.FolderId"));
+		modifyJobExecutionPlanFolderResponse.setRequestId(_ctx.stringValue("ModifyJobExecutionPlanFolderResponse.RequestId"));
+		modifyJobExecutionPlanFolderResponse.setSuccess(_ctx.stringValue("ModifyJobExecutionPlanFolderResponse.Success"));
+		modifyJobExecutionPlanFolderResponse.setErrCode(_ctx.stringValue("ModifyJobExecutionPlanFolderResponse.ErrCode"));
+		modifyJobExecutionPlanFolderResponse.setErrMsg(_ctx.stringValue("ModifyJobExecutionPlanFolderResponse.ErrMsg"));
+		modifyJobExecutionPlanFolderResponse.setFolderId(_ctx.stringValue("ModifyJobExecutionPlanFolderResponse.FolderId"));
 	 
 	 	return modifyJobExecutionPlanFolderResponse;
 	}

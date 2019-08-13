@@ -20,44 +20,44 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeFlowNodeInstanceResponseUnmarshaller {
 
-	public static DescribeFlowNodeInstanceResponse unmarshall(DescribeFlowNodeInstanceResponse describeFlowNodeInstanceResponse, UnmarshallerContext context) {
+	public static DescribeFlowNodeInstanceResponse unmarshall(DescribeFlowNodeInstanceResponse describeFlowNodeInstanceResponse, UnmarshallerContext _ctx) {
 		
-		describeFlowNodeInstanceResponse.setRequestId(context.stringValue("DescribeFlowNodeInstanceResponse.RequestId"));
-		describeFlowNodeInstanceResponse.setId(context.stringValue("DescribeFlowNodeInstanceResponse.Id"));
-		describeFlowNodeInstanceResponse.setGmtCreate(context.longValue("DescribeFlowNodeInstanceResponse.GmtCreate"));
-		describeFlowNodeInstanceResponse.setGmtModified(context.longValue("DescribeFlowNodeInstanceResponse.GmtModified"));
-		describeFlowNodeInstanceResponse.setType(context.stringValue("DescribeFlowNodeInstanceResponse.Type"));
-		describeFlowNodeInstanceResponse.setStatus(context.stringValue("DescribeFlowNodeInstanceResponse.Status"));
-		describeFlowNodeInstanceResponse.setJobId(context.stringValue("DescribeFlowNodeInstanceResponse.JobId"));
-		describeFlowNodeInstanceResponse.setJobName(context.stringValue("DescribeFlowNodeInstanceResponse.JobName"));
-		describeFlowNodeInstanceResponse.setJobType(context.stringValue("DescribeFlowNodeInstanceResponse.JobType"));
-		describeFlowNodeInstanceResponse.setJobParams(context.stringValue("DescribeFlowNodeInstanceResponse.JobParams"));
-		describeFlowNodeInstanceResponse.setFailAct(context.stringValue("DescribeFlowNodeInstanceResponse.FailAct"));
-		describeFlowNodeInstanceResponse.setMaxRetry(context.stringValue("DescribeFlowNodeInstanceResponse.MaxRetry"));
-		describeFlowNodeInstanceResponse.setRetryInterval(context.stringValue("DescribeFlowNodeInstanceResponse.RetryInterval"));
-		describeFlowNodeInstanceResponse.setNodeName(context.stringValue("DescribeFlowNodeInstanceResponse.NodeName"));
-		describeFlowNodeInstanceResponse.setFlowId(context.stringValue("DescribeFlowNodeInstanceResponse.FlowId"));
-		describeFlowNodeInstanceResponse.setFlowInstanceId(context.stringValue("DescribeFlowNodeInstanceResponse.FlowInstanceId"));
-		describeFlowNodeInstanceResponse.setClusterId(context.stringValue("DescribeFlowNodeInstanceResponse.ClusterId"));
-		describeFlowNodeInstanceResponse.setHostName(context.stringValue("DescribeFlowNodeInstanceResponse.HostName"));
-		describeFlowNodeInstanceResponse.setProjectId(context.stringValue("DescribeFlowNodeInstanceResponse.ProjectId"));
-		describeFlowNodeInstanceResponse.setPending(context.booleanValue("DescribeFlowNodeInstanceResponse.Pending"));
-		describeFlowNodeInstanceResponse.setStartTime(context.longValue("DescribeFlowNodeInstanceResponse.StartTime"));
-		describeFlowNodeInstanceResponse.setEndTime(context.longValue("DescribeFlowNodeInstanceResponse.EndTime"));
-		describeFlowNodeInstanceResponse.setDuration(context.longValue("DescribeFlowNodeInstanceResponse.Duration"));
-		describeFlowNodeInstanceResponse.setRetries(context.integerValue("DescribeFlowNodeInstanceResponse.Retries"));
-		describeFlowNodeInstanceResponse.setExternalId(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalId"));
-		describeFlowNodeInstanceResponse.setExternalSubId(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalSubId"));
-		describeFlowNodeInstanceResponse.setExternalChildIds(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalChildIds"));
-		describeFlowNodeInstanceResponse.setExternalStatus(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalStatus"));
-		describeFlowNodeInstanceResponse.setExternalInfo(context.stringValue("DescribeFlowNodeInstanceResponse.ExternalInfo"));
-		describeFlowNodeInstanceResponse.setParamConf(context.stringValue("DescribeFlowNodeInstanceResponse.ParamConf"));
-		describeFlowNodeInstanceResponse.setEnvConf(context.stringValue("DescribeFlowNodeInstanceResponse.EnvConf"));
-		describeFlowNodeInstanceResponse.setRunConf(context.stringValue("DescribeFlowNodeInstanceResponse.RunConf"));
-		describeFlowNodeInstanceResponse.setAdhoc(context.booleanValue("DescribeFlowNodeInstanceResponse.Adhoc"));
-		describeFlowNodeInstanceResponse.setMonitorConf(context.stringValue("DescribeFlowNodeInstanceResponse.MonitorConf"));
-		describeFlowNodeInstanceResponse.setMode(context.stringValue("DescribeFlowNodeInstanceResponse.Mode"));
-		describeFlowNodeInstanceResponse.setClusterName(context.stringValue("DescribeFlowNodeInstanceResponse.ClusterName"));
+		describeFlowNodeInstanceResponse.setRequestId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.RequestId"));
+		describeFlowNodeInstanceResponse.setId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.Id"));
+		describeFlowNodeInstanceResponse.setGmtCreate(_ctx.longValue("DescribeFlowNodeInstanceResponse.GmtCreate"));
+		describeFlowNodeInstanceResponse.setGmtModified(_ctx.longValue("DescribeFlowNodeInstanceResponse.GmtModified"));
+		describeFlowNodeInstanceResponse.setType(_ctx.stringValue("DescribeFlowNodeInstanceResponse.Type"));
+		describeFlowNodeInstanceResponse.setStatus(_ctx.stringValue("DescribeFlowNodeInstanceResponse.Status"));
+		describeFlowNodeInstanceResponse.setJobId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.JobId"));
+		describeFlowNodeInstanceResponse.setJobName(_ctx.stringValue("DescribeFlowNodeInstanceResponse.JobName"));
+		describeFlowNodeInstanceResponse.setJobType(_ctx.stringValue("DescribeFlowNodeInstanceResponse.JobType"));
+		describeFlowNodeInstanceResponse.setJobParams(_ctx.stringValue("DescribeFlowNodeInstanceResponse.JobParams"));
+		describeFlowNodeInstanceResponse.setFailAct(_ctx.stringValue("DescribeFlowNodeInstanceResponse.FailAct"));
+		describeFlowNodeInstanceResponse.setMaxRetry(_ctx.stringValue("DescribeFlowNodeInstanceResponse.MaxRetry"));
+		describeFlowNodeInstanceResponse.setRetryInterval(_ctx.stringValue("DescribeFlowNodeInstanceResponse.RetryInterval"));
+		describeFlowNodeInstanceResponse.setNodeName(_ctx.stringValue("DescribeFlowNodeInstanceResponse.NodeName"));
+		describeFlowNodeInstanceResponse.setFlowId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.FlowId"));
+		describeFlowNodeInstanceResponse.setFlowInstanceId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.FlowInstanceId"));
+		describeFlowNodeInstanceResponse.setClusterId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.ClusterId"));
+		describeFlowNodeInstanceResponse.setHostName(_ctx.stringValue("DescribeFlowNodeInstanceResponse.HostName"));
+		describeFlowNodeInstanceResponse.setProjectId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.ProjectId"));
+		describeFlowNodeInstanceResponse.setPending(_ctx.booleanValue("DescribeFlowNodeInstanceResponse.Pending"));
+		describeFlowNodeInstanceResponse.setStartTime(_ctx.longValue("DescribeFlowNodeInstanceResponse.StartTime"));
+		describeFlowNodeInstanceResponse.setEndTime(_ctx.longValue("DescribeFlowNodeInstanceResponse.EndTime"));
+		describeFlowNodeInstanceResponse.setDuration(_ctx.longValue("DescribeFlowNodeInstanceResponse.Duration"));
+		describeFlowNodeInstanceResponse.setRetries(_ctx.integerValue("DescribeFlowNodeInstanceResponse.Retries"));
+		describeFlowNodeInstanceResponse.setExternalId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.ExternalId"));
+		describeFlowNodeInstanceResponse.setExternalSubId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.ExternalSubId"));
+		describeFlowNodeInstanceResponse.setExternalChildIds(_ctx.stringValue("DescribeFlowNodeInstanceResponse.ExternalChildIds"));
+		describeFlowNodeInstanceResponse.setExternalStatus(_ctx.stringValue("DescribeFlowNodeInstanceResponse.ExternalStatus"));
+		describeFlowNodeInstanceResponse.setExternalInfo(_ctx.stringValue("DescribeFlowNodeInstanceResponse.ExternalInfo"));
+		describeFlowNodeInstanceResponse.setParamConf(_ctx.stringValue("DescribeFlowNodeInstanceResponse.ParamConf"));
+		describeFlowNodeInstanceResponse.setEnvConf(_ctx.stringValue("DescribeFlowNodeInstanceResponse.EnvConf"));
+		describeFlowNodeInstanceResponse.setRunConf(_ctx.stringValue("DescribeFlowNodeInstanceResponse.RunConf"));
+		describeFlowNodeInstanceResponse.setAdhoc(_ctx.booleanValue("DescribeFlowNodeInstanceResponse.Adhoc"));
+		describeFlowNodeInstanceResponse.setMonitorConf(_ctx.stringValue("DescribeFlowNodeInstanceResponse.MonitorConf"));
+		describeFlowNodeInstanceResponse.setMode(_ctx.stringValue("DescribeFlowNodeInstanceResponse.Mode"));
+		describeFlowNodeInstanceResponse.setClusterName(_ctx.stringValue("DescribeFlowNodeInstanceResponse.ClusterName"));
 	 
 	 	return describeFlowNodeInstanceResponse;
 	}

@@ -25,23 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSupportedOpsCommandResponseUnmarshaller {
 
-	public static GetSupportedOpsCommandResponse unmarshall(GetSupportedOpsCommandResponse getSupportedOpsCommandResponse, UnmarshallerContext context) {
+	public static GetSupportedOpsCommandResponse unmarshall(GetSupportedOpsCommandResponse getSupportedOpsCommandResponse, UnmarshallerContext _ctx) {
 		
-		getSupportedOpsCommandResponse.setRequestId(context.stringValue("GetSupportedOpsCommandResponse.RequestId"));
+		getSupportedOpsCommandResponse.setRequestId(_ctx.stringValue("GetSupportedOpsCommandResponse.RequestId"));
 
 		List<OpsCommandCategory> list = new ArrayList<OpsCommandCategory>();
-		for (int i = 0; i < context.lengthValue("GetSupportedOpsCommandResponse.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetSupportedOpsCommandResponse.List.Length"); i++) {
 			OpsCommandCategory opsCommandCategory = new OpsCommandCategory();
-			opsCommandCategory.setCategory(context.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].Category"));
+			opsCommandCategory.setCategory(_ctx.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].Category"));
 
 			List<OpsCommandInfo> commandList = new ArrayList<OpsCommandInfo>();
-			for (int j = 0; j < context.lengthValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList.Length"); j++) {
 				OpsCommandInfo opsCommandInfo = new OpsCommandInfo();
-				opsCommandInfo.setId(context.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].Id"));
-				opsCommandInfo.setName(context.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].Name"));
-				opsCommandInfo.setDiscription(context.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].Discription"));
-				opsCommandInfo.setTargetType(context.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].TargetType"));
-				opsCommandInfo.setParams(context.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].Params"));
+				opsCommandInfo.setId(_ctx.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].Id"));
+				opsCommandInfo.setName(_ctx.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].Name"));
+				opsCommandInfo.setDiscription(_ctx.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].Discription"));
+				opsCommandInfo.setTargetType(_ctx.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].TargetType"));
+				opsCommandInfo.setParams(_ctx.stringValue("GetSupportedOpsCommandResponse.List["+ i +"].CommandList["+ j +"].Params"));
 
 				commandList.add(opsCommandInfo);
 			}

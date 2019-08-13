@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobExecutionInstancesResponseUnmarshaller {
 
-	public static ListJobExecutionInstancesResponse unmarshall(ListJobExecutionInstancesResponse listJobExecutionInstancesResponse, UnmarshallerContext context) {
+	public static ListJobExecutionInstancesResponse unmarshall(ListJobExecutionInstancesResponse listJobExecutionInstancesResponse, UnmarshallerContext _ctx) {
 		
-		listJobExecutionInstancesResponse.setRequestId(context.stringValue("ListJobExecutionInstancesResponse.RequestId"));
-		listJobExecutionInstancesResponse.setTotalCount(context.integerValue("ListJobExecutionInstancesResponse.TotalCount"));
-		listJobExecutionInstancesResponse.setPageNumber(context.integerValue("ListJobExecutionInstancesResponse.PageNumber"));
-		listJobExecutionInstancesResponse.setPageSize(context.integerValue("ListJobExecutionInstancesResponse.PageSize"));
+		listJobExecutionInstancesResponse.setRequestId(_ctx.stringValue("ListJobExecutionInstancesResponse.RequestId"));
+		listJobExecutionInstancesResponse.setTotalCount(_ctx.integerValue("ListJobExecutionInstancesResponse.TotalCount"));
+		listJobExecutionInstancesResponse.setPageNumber(_ctx.integerValue("ListJobExecutionInstancesResponse.PageNumber"));
+		listJobExecutionInstancesResponse.setPageSize(_ctx.integerValue("ListJobExecutionInstancesResponse.PageSize"));
 
 		List<JobInstance> jobInstances = new ArrayList<JobInstance>();
-		for (int i = 0; i < context.lengthValue("ListJobExecutionInstancesResponse.JobInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobExecutionInstancesResponse.JobInstances.Length"); i++) {
 			JobInstance jobInstance = new JobInstance();
-			jobInstance.setId(context.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].Id"));
-			jobInstance.setJobName(context.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].JobName"));
-			jobInstance.setStartTime(context.longValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].StartTime"));
-			jobInstance.setRunTime(context.integerValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].RunTime"));
-			jobInstance.setJobType(context.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].JobType"));
-			jobInstance.setJobId(context.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].JobId"));
-			jobInstance.setClusterId(context.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].ClusterId"));
-			jobInstance.setStatus(context.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].Status"));
-			jobInstance.setRetryInfo(context.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].RetryInfo"));
+			jobInstance.setId(_ctx.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].Id"));
+			jobInstance.setJobName(_ctx.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].JobName"));
+			jobInstance.setStartTime(_ctx.longValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].StartTime"));
+			jobInstance.setRunTime(_ctx.integerValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].RunTime"));
+			jobInstance.setJobType(_ctx.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].JobType"));
+			jobInstance.setJobId(_ctx.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].JobId"));
+			jobInstance.setClusterId(_ctx.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].ClusterId"));
+			jobInstance.setStatus(_ctx.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].Status"));
+			jobInstance.setRetryInfo(_ctx.stringValue("ListJobExecutionInstancesResponse.JobInstances["+ i +"].RetryInfo"));
 
 			jobInstances.add(jobInstance);
 		}

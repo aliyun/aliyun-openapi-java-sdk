@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterServiceConfigHistoryResponseUnmarshaller {
 
-	public static ListClusterServiceConfigHistoryResponse unmarshall(ListClusterServiceConfigHistoryResponse listClusterServiceConfigHistoryResponse, UnmarshallerContext context) {
+	public static ListClusterServiceConfigHistoryResponse unmarshall(ListClusterServiceConfigHistoryResponse listClusterServiceConfigHistoryResponse, UnmarshallerContext _ctx) {
 		
-		listClusterServiceConfigHistoryResponse.setRequestId(context.stringValue("ListClusterServiceConfigHistoryResponse.RequestId"));
-		listClusterServiceConfigHistoryResponse.setTotalCount(context.integerValue("ListClusterServiceConfigHistoryResponse.TotalCount"));
-		listClusterServiceConfigHistoryResponse.setPageNumber(context.integerValue("ListClusterServiceConfigHistoryResponse.PageNumber"));
-		listClusterServiceConfigHistoryResponse.setPageSize(context.integerValue("ListClusterServiceConfigHistoryResponse.PageSize"));
+		listClusterServiceConfigHistoryResponse.setRequestId(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.RequestId"));
+		listClusterServiceConfigHistoryResponse.setTotalCount(_ctx.integerValue("ListClusterServiceConfigHistoryResponse.TotalCount"));
+		listClusterServiceConfigHistoryResponse.setPageNumber(_ctx.integerValue("ListClusterServiceConfigHistoryResponse.PageNumber"));
+		listClusterServiceConfigHistoryResponse.setPageSize(_ctx.integerValue("ListClusterServiceConfigHistoryResponse.PageSize"));
 
 		List<ConfigHistory> configHistoryList = new ArrayList<ConfigHistory>();
-		for (int i = 0; i < context.lengthValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList.Length"); i++) {
 			ConfigHistory configHistory = new ConfigHistory();
-			configHistory.setServiceName(context.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].ServiceName"));
-			configHistory.setConfigVersion(context.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].ConfigVersion"));
-			configHistory.setConfigFileName(context.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].ConfigFileName"));
-			configHistory.setConfigItemName(context.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].ConfigItemName"));
-			configHistory.setNewValue(context.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].NewValue"));
-			configHistory.setOldValue(context.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].OldValue"));
-			configHistory.setApplied(context.booleanValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].Applied"));
-			configHistory.setCreateTime(context.longValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].CreateTime"));
-			configHistory.setAuthor(context.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].Author"));
-			configHistory.setComment(context.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].Comment"));
+			configHistory.setServiceName(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].ServiceName"));
+			configHistory.setConfigVersion(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].ConfigVersion"));
+			configHistory.setConfigFileName(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].ConfigFileName"));
+			configHistory.setConfigItemName(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].ConfigItemName"));
+			configHistory.setNewValue(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].NewValue"));
+			configHistory.setOldValue(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].OldValue"));
+			configHistory.setApplied(_ctx.booleanValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].Applied"));
+			configHistory.setCreateTime(_ctx.longValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].CreateTime"));
+			configHistory.setAuthor(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].Author"));
+			configHistory.setComment(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].Comment"));
 
 			configHistoryList.add(configHistory);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreDropTableResponseUnmarshaller {
 
-	public static MetastoreDropTableResponse unmarshall(MetastoreDropTableResponse metastoreDropTableResponse, UnmarshallerContext context) {
+	public static MetastoreDropTableResponse unmarshall(MetastoreDropTableResponse metastoreDropTableResponse, UnmarshallerContext _ctx) {
 		
-		metastoreDropTableResponse.setRequestId(context.stringValue("MetastoreDropTableResponse.RequestId"));
+		metastoreDropTableResponse.setRequestId(_ctx.stringValue("MetastoreDropTableResponse.RequestId"));
 	 
 	 	return metastoreDropTableResponse;
 	}

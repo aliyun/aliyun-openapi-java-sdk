@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateETLJobStageResponseUnmarshaller {
 
-	public static UpdateETLJobStageResponse unmarshall(UpdateETLJobStageResponse updateETLJobStageResponse, UnmarshallerContext context) {
+	public static UpdateETLJobStageResponse unmarshall(UpdateETLJobStageResponse updateETLJobStageResponse, UnmarshallerContext _ctx) {
 		
-		updateETLJobStageResponse.setRequestId(context.stringValue("UpdateETLJobStageResponse.RequestId"));
+		updateETLJobStageResponse.setRequestId(_ctx.stringValue("UpdateETLJobStageResponse.RequestId"));
 	 
 	 	return updateETLJobStageResponse;
 	}

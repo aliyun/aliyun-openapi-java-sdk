@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyFlowProjectClusterSettingResponseUnmarshaller {
 
-	public static ModifyFlowProjectClusterSettingResponse unmarshall(ModifyFlowProjectClusterSettingResponse modifyFlowProjectClusterSettingResponse, UnmarshallerContext context) {
+	public static ModifyFlowProjectClusterSettingResponse unmarshall(ModifyFlowProjectClusterSettingResponse modifyFlowProjectClusterSettingResponse, UnmarshallerContext _ctx) {
 		
-		modifyFlowProjectClusterSettingResponse.setRequestId(context.stringValue("ModifyFlowProjectClusterSettingResponse.RequestId"));
-		modifyFlowProjectClusterSettingResponse.setData(context.booleanValue("ModifyFlowProjectClusterSettingResponse.Data"));
+		modifyFlowProjectClusterSettingResponse.setRequestId(_ctx.stringValue("ModifyFlowProjectClusterSettingResponse.RequestId"));
+		modifyFlowProjectClusterSettingResponse.setData(_ctx.booleanValue("ModifyFlowProjectClusterSettingResponse.Data"));
 	 
 	 	return modifyFlowProjectClusterSettingResponse;
 	}

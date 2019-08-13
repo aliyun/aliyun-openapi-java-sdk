@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResumeFlowResponseUnmarshaller {
 
-	public static ResumeFlowResponse unmarshall(ResumeFlowResponse resumeFlowResponse, UnmarshallerContext context) {
+	public static ResumeFlowResponse unmarshall(ResumeFlowResponse resumeFlowResponse, UnmarshallerContext _ctx) {
 		
-		resumeFlowResponse.setRequestId(context.stringValue("ResumeFlowResponse.RequestId"));
-		resumeFlowResponse.setData(context.booleanValue("ResumeFlowResponse.Data"));
+		resumeFlowResponse.setRequestId(_ctx.stringValue("ResumeFlowResponse.RequestId"));
+		resumeFlowResponse.setData(_ctx.booleanValue("ResumeFlowResponse.Data"));
 	 
 	 	return resumeFlowResponse;
 	}

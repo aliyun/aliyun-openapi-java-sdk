@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreDeleteDataResourceResponseUnmarshaller {
 
-	public static MetastoreDeleteDataResourceResponse unmarshall(MetastoreDeleteDataResourceResponse metastoreDeleteDataResourceResponse, UnmarshallerContext context) {
+	public static MetastoreDeleteDataResourceResponse unmarshall(MetastoreDeleteDataResourceResponse metastoreDeleteDataResourceResponse, UnmarshallerContext _ctx) {
 		
-		metastoreDeleteDataResourceResponse.setRequestId(context.stringValue("MetastoreDeleteDataResourceResponse.RequestId"));
+		metastoreDeleteDataResourceResponse.setRequestId(_ctx.stringValue("MetastoreDeleteDataResourceResponse.RequestId"));
 	 
 	 	return metastoreDeleteDataResourceResponse;
 	}

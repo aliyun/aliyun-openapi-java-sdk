@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteETLJobResponseUnmarshaller {
 
-	public static DeleteETLJobResponse unmarshall(DeleteETLJobResponse deleteETLJobResponse, UnmarshallerContext context) {
+	public static DeleteETLJobResponse unmarshall(DeleteETLJobResponse deleteETLJobResponse, UnmarshallerContext _ctx) {
 		
-		deleteETLJobResponse.setRequestId(context.stringValue("DeleteETLJobResponse.RequestId"));
+		deleteETLJobResponse.setRequestId(_ctx.stringValue("DeleteETLJobResponse.RequestId"));
 	 
 	 	return deleteETLJobResponse;
 	}

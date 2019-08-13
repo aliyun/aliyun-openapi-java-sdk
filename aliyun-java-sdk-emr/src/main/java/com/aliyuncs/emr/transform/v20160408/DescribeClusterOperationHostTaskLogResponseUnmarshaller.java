@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeClusterOperationHostTaskLogResponseUnmarshaller {
 
-	public static DescribeClusterOperationHostTaskLogResponse unmarshall(DescribeClusterOperationHostTaskLogResponse describeClusterOperationHostTaskLogResponse, UnmarshallerContext context) {
+	public static DescribeClusterOperationHostTaskLogResponse unmarshall(DescribeClusterOperationHostTaskLogResponse describeClusterOperationHostTaskLogResponse, UnmarshallerContext _ctx) {
 		
-		describeClusterOperationHostTaskLogResponse.setRequestId(context.stringValue("DescribeClusterOperationHostTaskLogResponse.RequestId"));
-		describeClusterOperationHostTaskLogResponse.setStdout(context.stringValue("DescribeClusterOperationHostTaskLogResponse.Stdout"));
-		describeClusterOperationHostTaskLogResponse.setStderr(context.stringValue("DescribeClusterOperationHostTaskLogResponse.Stderr"));
+		describeClusterOperationHostTaskLogResponse.setRequestId(_ctx.stringValue("DescribeClusterOperationHostTaskLogResponse.RequestId"));
+		describeClusterOperationHostTaskLogResponse.setStdout(_ctx.stringValue("DescribeClusterOperationHostTaskLogResponse.Stdout"));
+		describeClusterOperationHostTaskLogResponse.setStderr(_ctx.stringValue("DescribeClusterOperationHostTaskLogResponse.Stderr"));
 	 
 	 	return describeClusterOperationHostTaskLogResponse;
 	}

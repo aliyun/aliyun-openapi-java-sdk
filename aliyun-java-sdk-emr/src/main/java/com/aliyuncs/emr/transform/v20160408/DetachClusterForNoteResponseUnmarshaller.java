@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetachClusterForNoteResponseUnmarshaller {
 
-	public static DetachClusterForNoteResponse unmarshall(DetachClusterForNoteResponse detachClusterForNoteResponse, UnmarshallerContext context) {
+	public static DetachClusterForNoteResponse unmarshall(DetachClusterForNoteResponse detachClusterForNoteResponse, UnmarshallerContext _ctx) {
 		
-		detachClusterForNoteResponse.setRequestId(context.stringValue("DetachClusterForNoteResponse.RequestId"));
+		detachClusterForNoteResponse.setRequestId(_ctx.stringValue("DetachClusterForNoteResponse.RequestId"));
 	 
 	 	return detachClusterForNoteResponse;
 	}

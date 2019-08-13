@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreDataPreviewResponseUnmarshaller {
 
-	public static MetastoreDataPreviewResponse unmarshall(MetastoreDataPreviewResponse metastoreDataPreviewResponse, UnmarshallerContext context) {
+	public static MetastoreDataPreviewResponse unmarshall(MetastoreDataPreviewResponse metastoreDataPreviewResponse, UnmarshallerContext _ctx) {
 		
-		metastoreDataPreviewResponse.setRequestId(context.stringValue("MetastoreDataPreviewResponse.RequestId"));
-		metastoreDataPreviewResponse.setSamples(context.stringValue("MetastoreDataPreviewResponse.Samples"));
+		metastoreDataPreviewResponse.setRequestId(_ctx.stringValue("MetastoreDataPreviewResponse.RequestId"));
+		metastoreDataPreviewResponse.setSamples(_ctx.stringValue("MetastoreDataPreviewResponse.Samples"));
 	 
 	 	return metastoreDataPreviewResponse;
 	}

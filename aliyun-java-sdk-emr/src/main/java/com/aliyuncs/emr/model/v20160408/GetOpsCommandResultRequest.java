@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class GetOpsCommandResultRequest extends RpcAcsRequest<GetOpsCommandResultResponse> {
 	
 	public GetOpsCommandResultRequest() {
-		super("Emr", "2016-04-08", "GetOpsCommandResult");
+		super("Emr", "2016-04-08", "GetOpsCommandResult", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

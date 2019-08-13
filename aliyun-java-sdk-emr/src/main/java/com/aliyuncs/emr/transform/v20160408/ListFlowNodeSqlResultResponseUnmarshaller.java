@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFlowNodeSqlResultResponseUnmarshaller {
 
-	public static ListFlowNodeSqlResultResponse unmarshall(ListFlowNodeSqlResultResponse listFlowNodeSqlResultResponse, UnmarshallerContext context) {
+	public static ListFlowNodeSqlResultResponse unmarshall(ListFlowNodeSqlResultResponse listFlowNodeSqlResultResponse, UnmarshallerContext _ctx) {
 		
-		listFlowNodeSqlResultResponse.setRequestId(context.stringValue("ListFlowNodeSqlResultResponse.RequestId"));
-		listFlowNodeSqlResultResponse.setEnd(context.booleanValue("ListFlowNodeSqlResultResponse.End"));
+		listFlowNodeSqlResultResponse.setRequestId(_ctx.stringValue("ListFlowNodeSqlResultResponse.RequestId"));
+		listFlowNodeSqlResultResponse.setEnd(_ctx.booleanValue("ListFlowNodeSqlResultResponse.End"));
 
 		List<String> headerList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ListFlowNodeSqlResultResponse.HeaderList.Length"); i++) {
-			headerList.add(context.stringValue("ListFlowNodeSqlResultResponse.HeaderList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ListFlowNodeSqlResultResponse.HeaderList.Length"); i++) {
+			headerList.add(_ctx.stringValue("ListFlowNodeSqlResultResponse.HeaderList["+ i +"]"));
 		}
 		listFlowNodeSqlResultResponse.setHeaderList(headerList);
 
 		List<Row> rowList = new ArrayList<Row>();
-		for (int i = 0; i < context.lengthValue("ListFlowNodeSqlResultResponse.RowList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFlowNodeSqlResultResponse.RowList.Length"); i++) {
 			Row row = new Row();
-			row.setRowIndex(context.integerValue("ListFlowNodeSqlResultResponse.RowList["+ i +"].RowIndex"));
+			row.setRowIndex(_ctx.integerValue("ListFlowNodeSqlResultResponse.RowList["+ i +"].RowIndex"));
 
 			List<String> rowItemList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListFlowNodeSqlResultResponse.RowList["+ i +"].RowItemList.Length"); j++) {
-				rowItemList.add(context.stringValue("ListFlowNodeSqlResultResponse.RowList["+ i +"].RowItemList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListFlowNodeSqlResultResponse.RowList["+ i +"].RowItemList.Length"); j++) {
+				rowItemList.add(_ctx.stringValue("ListFlowNodeSqlResultResponse.RowList["+ i +"].RowItemList["+ j +"]"));
 			}
 			row.setRowItemList(rowItemList);
 

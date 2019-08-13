@@ -21,26 +21,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreDescribeTaskResponseUnmarshaller {
 
-	public static MetastoreDescribeTaskResponse unmarshall(MetastoreDescribeTaskResponse metastoreDescribeTaskResponse, UnmarshallerContext context) {
+	public static MetastoreDescribeTaskResponse unmarshall(MetastoreDescribeTaskResponse metastoreDescribeTaskResponse, UnmarshallerContext _ctx) {
 		
-		metastoreDescribeTaskResponse.setRequestId(context.stringValue("MetastoreDescribeTaskResponse.RequestId"));
+		metastoreDescribeTaskResponse.setRequestId(_ctx.stringValue("MetastoreDescribeTaskResponse.RequestId"));
 
 		Task task = new Task();
-		task.setBizId(context.stringValue("MetastoreDescribeTaskResponse.Task.BizId"));
-		task.setDataSourceId(context.stringValue("MetastoreDescribeTaskResponse.Task.DataSourceId"));
-		task.setTaskType(context.stringValue("MetastoreDescribeTaskResponse.Task.TaskType"));
-		task.setTaskStatus(context.stringValue("MetastoreDescribeTaskResponse.Task.TaskStatus"));
-		task.setStartTime(context.longValue("MetastoreDescribeTaskResponse.Task.StartTime"));
-		task.setEndTime(context.longValue("MetastoreDescribeTaskResponse.Task.EndTime"));
-		task.setTaskDetail(context.stringValue("MetastoreDescribeTaskResponse.Task.TaskDetail"));
-		task.setTaskObject(context.stringValue("MetastoreDescribeTaskResponse.Task.TaskObject"));
-		task.setTaskResultDetail(context.stringValue("MetastoreDescribeTaskResponse.Task.TaskResultDetail"));
-		task.setTaskProcess(context.integerValue("MetastoreDescribeTaskResponse.Task.TaskProcess"));
-		task.setTriggerUser(context.stringValue("MetastoreDescribeTaskResponse.Task.TriggerUser"));
-		task.setTriggerType(context.stringValue("MetastoreDescribeTaskResponse.Task.TriggerType"));
-		task.setGmtCreate(context.longValue("MetastoreDescribeTaskResponse.Task.GmtCreate"));
-		task.setGmtModified(context.longValue("MetastoreDescribeTaskResponse.Task.GmtModified"));
-		task.setExecuteTime(context.longValue("MetastoreDescribeTaskResponse.Task.ExecuteTime"));
+		task.setBizId(_ctx.stringValue("MetastoreDescribeTaskResponse.Task.BizId"));
+		task.setDataSourceId(_ctx.stringValue("MetastoreDescribeTaskResponse.Task.DataSourceId"));
+		task.setTaskType(_ctx.stringValue("MetastoreDescribeTaskResponse.Task.TaskType"));
+		task.setTaskStatus(_ctx.stringValue("MetastoreDescribeTaskResponse.Task.TaskStatus"));
+		task.setStartTime(_ctx.longValue("MetastoreDescribeTaskResponse.Task.StartTime"));
+		task.setEndTime(_ctx.longValue("MetastoreDescribeTaskResponse.Task.EndTime"));
+		task.setTaskDetail(_ctx.stringValue("MetastoreDescribeTaskResponse.Task.TaskDetail"));
+		task.setTaskObject(_ctx.stringValue("MetastoreDescribeTaskResponse.Task.TaskObject"));
+		task.setTaskResultDetail(_ctx.stringValue("MetastoreDescribeTaskResponse.Task.TaskResultDetail"));
+		task.setTaskProcess(_ctx.integerValue("MetastoreDescribeTaskResponse.Task.TaskProcess"));
+		task.setTriggerUser(_ctx.stringValue("MetastoreDescribeTaskResponse.Task.TriggerUser"));
+		task.setTriggerType(_ctx.stringValue("MetastoreDescribeTaskResponse.Task.TriggerType"));
+		task.setGmtCreate(_ctx.longValue("MetastoreDescribeTaskResponse.Task.GmtCreate"));
+		task.setGmtModified(_ctx.longValue("MetastoreDescribeTaskResponse.Task.GmtModified"));
+		task.setExecuteTime(_ctx.longValue("MetastoreDescribeTaskResponse.Task.ExecuteTime"));
 		metastoreDescribeTaskResponse.setTask(task);
 	 
 	 	return metastoreDescribeTaskResponse;

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RunOpsCommandResponseUnmarshaller {
 
-	public static RunOpsCommandResponse unmarshall(RunOpsCommandResponse runOpsCommandResponse, UnmarshallerContext context) {
+	public static RunOpsCommandResponse unmarshall(RunOpsCommandResponse runOpsCommandResponse, UnmarshallerContext _ctx) {
 		
-		runOpsCommandResponse.setRequestId(context.stringValue("RunOpsCommandResponse.RequestId"));
-		runOpsCommandResponse.setOperationId(context.longValue("RunOpsCommandResponse.OperationId"));
+		runOpsCommandResponse.setRequestId(_ctx.stringValue("RunOpsCommandResponse.RequestId"));
+		runOpsCommandResponse.setOperationId(_ctx.longValue("RunOpsCommandResponse.OperationId"));
 	 
 	 	return runOpsCommandResponse;
 	}

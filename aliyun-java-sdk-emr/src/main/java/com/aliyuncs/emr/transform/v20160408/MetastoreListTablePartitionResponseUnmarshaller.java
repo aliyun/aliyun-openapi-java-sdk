@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreListTablePartitionResponseUnmarshaller {
 
-	public static MetastoreListTablePartitionResponse unmarshall(MetastoreListTablePartitionResponse metastoreListTablePartitionResponse, UnmarshallerContext context) {
+	public static MetastoreListTablePartitionResponse unmarshall(MetastoreListTablePartitionResponse metastoreListTablePartitionResponse, UnmarshallerContext _ctx) {
 		
-		metastoreListTablePartitionResponse.setRequestId(context.stringValue("MetastoreListTablePartitionResponse.RequestId"));
-		metastoreListTablePartitionResponse.setTotalCount(context.integerValue("MetastoreListTablePartitionResponse.TotalCount"));
-		metastoreListTablePartitionResponse.setPageNumber(context.integerValue("MetastoreListTablePartitionResponse.PageNumber"));
-		metastoreListTablePartitionResponse.setPageSize(context.integerValue("MetastoreListTablePartitionResponse.PageSize"));
+		metastoreListTablePartitionResponse.setRequestId(_ctx.stringValue("MetastoreListTablePartitionResponse.RequestId"));
+		metastoreListTablePartitionResponse.setTotalCount(_ctx.integerValue("MetastoreListTablePartitionResponse.TotalCount"));
+		metastoreListTablePartitionResponse.setPageNumber(_ctx.integerValue("MetastoreListTablePartitionResponse.PageNumber"));
+		metastoreListTablePartitionResponse.setPageSize(_ctx.integerValue("MetastoreListTablePartitionResponse.PageSize"));
 
 		List<Partition> partitionList = new ArrayList<Partition>();
-		for (int i = 0; i < context.lengthValue("MetastoreListTablePartitionResponse.PartitionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreListTablePartitionResponse.PartitionList.Length"); i++) {
 			Partition partition = new Partition();
-			partition.setDatabaseId(context.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].DatabaseId"));
-			partition.setTableId(context.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].TableId"));
-			partition.setPartitionName(context.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].PartitionName"));
-			partition.setPartitionType(context.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].PartitionType"));
-			partition.setPartitionComment(context.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].PartitionComment"));
-			partition.setLocation(context.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].Location"));
-			partition.setPartitionPath(context.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].PartitionPath"));
-			partition.setBucketNum(context.integerValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].BucketNum"));
-			partition.setGmtCreate(context.longValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].GmtCreate"));
-			partition.setGmtModified(context.longValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].GmtModified"));
+			partition.setDatabaseId(_ctx.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].DatabaseId"));
+			partition.setTableId(_ctx.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].TableId"));
+			partition.setPartitionName(_ctx.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].PartitionName"));
+			partition.setPartitionType(_ctx.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].PartitionType"));
+			partition.setPartitionComment(_ctx.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].PartitionComment"));
+			partition.setLocation(_ctx.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].Location"));
+			partition.setPartitionPath(_ctx.stringValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].PartitionPath"));
+			partition.setBucketNum(_ctx.integerValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].BucketNum"));
+			partition.setGmtCreate(_ctx.longValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].GmtCreate"));
+			partition.setGmtModified(_ctx.longValue("MetastoreListTablePartitionResponse.PartitionList["+ i +"].GmtModified"));
 
 			partitionList.add(partition);
 		}

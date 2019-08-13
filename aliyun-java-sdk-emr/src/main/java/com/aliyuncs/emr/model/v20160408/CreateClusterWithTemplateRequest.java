@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -23,12 +24,18 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateClusterWithTemplateRequest extends RpcAcsRequest<CreateClusterWithTemplateResponse> {
 	
 	public CreateClusterWithTemplateRequest() {
-		super("Emr", "2016-04-08", "CreateClusterWithTemplate");
+		super("Emr", "2016-04-08", "CreateClusterWithTemplate", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
 	private String uniqueTag;
+
+	private String clusterName;
 
 	private String templateBizId;
 
@@ -51,6 +58,17 @@ public class CreateClusterWithTemplateRequest extends RpcAcsRequest<CreateCluste
 		this.uniqueTag = uniqueTag;
 		if(uniqueTag != null){
 			putQueryParameter("UniqueTag", uniqueTag);
+		}
+	}
+
+	public String getClusterName() {
+		return this.clusterName;
+	}
+
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putQueryParameter("ClusterName", clusterName);
 		}
 	}
 

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterScriptsResponseUnmarshaller {
 
-	public static ListClusterScriptsResponse unmarshall(ListClusterScriptsResponse listClusterScriptsResponse, UnmarshallerContext context) {
+	public static ListClusterScriptsResponse unmarshall(ListClusterScriptsResponse listClusterScriptsResponse, UnmarshallerContext _ctx) {
 		
-		listClusterScriptsResponse.setRequestId(context.stringValue("ListClusterScriptsResponse.RequestId"));
+		listClusterScriptsResponse.setRequestId(_ctx.stringValue("ListClusterScriptsResponse.RequestId"));
 
 		List<ClusterScript> clusterScripts = new ArrayList<ClusterScript>();
-		for (int i = 0; i < context.lengthValue("ListClusterScriptsResponse.ClusterScripts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterScriptsResponse.ClusterScripts.Length"); i++) {
 			ClusterScript clusterScript = new ClusterScript();
-			clusterScript.setId(context.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Id"));
-			clusterScript.setName(context.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Name"));
-			clusterScript.setStartTime(context.longValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].StartTime"));
-			clusterScript.setEndTime(context.longValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].EndTime"));
-			clusterScript.setPath(context.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Path"));
-			clusterScript.setArgs(context.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Args"));
-			clusterScript.setStatus(context.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Status"));
+			clusterScript.setId(_ctx.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Id"));
+			clusterScript.setName(_ctx.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Name"));
+			clusterScript.setStartTime(_ctx.longValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].StartTime"));
+			clusterScript.setEndTime(_ctx.longValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].EndTime"));
+			clusterScript.setPath(_ctx.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Path"));
+			clusterScript.setArgs(_ctx.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Args"));
+			clusterScript.setStatus(_ctx.stringValue("ListClusterScriptsResponse.ClusterScripts["+ i +"].Status"));
 
 			clusterScripts.add(clusterScript);
 		}

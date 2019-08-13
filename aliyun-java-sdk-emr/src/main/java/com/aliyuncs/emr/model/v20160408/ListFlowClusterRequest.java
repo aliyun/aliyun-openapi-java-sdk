@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListFlowClusterRequest extends RpcAcsRequest<ListFlowClusterResponse> {
 	
 	public ListFlowClusterRequest() {
-		super("Emr", "2016-04-08", "ListFlowCluster");
+		super("Emr", "2016-04-08", "ListFlowCluster", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Integer pageSize;

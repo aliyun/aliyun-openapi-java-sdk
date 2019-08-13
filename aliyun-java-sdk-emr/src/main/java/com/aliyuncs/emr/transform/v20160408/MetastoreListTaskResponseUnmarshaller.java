@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreListTaskResponseUnmarshaller {
 
-	public static MetastoreListTaskResponse unmarshall(MetastoreListTaskResponse metastoreListTaskResponse, UnmarshallerContext context) {
+	public static MetastoreListTaskResponse unmarshall(MetastoreListTaskResponse metastoreListTaskResponse, UnmarshallerContext _ctx) {
 		
-		metastoreListTaskResponse.setRequestId(context.stringValue("MetastoreListTaskResponse.RequestId"));
-		metastoreListTaskResponse.setTotalCount(context.integerValue("MetastoreListTaskResponse.TotalCount"));
-		metastoreListTaskResponse.setPageNumber(context.integerValue("MetastoreListTaskResponse.PageNumber"));
-		metastoreListTaskResponse.setPageSize(context.integerValue("MetastoreListTaskResponse.PageSize"));
+		metastoreListTaskResponse.setRequestId(_ctx.stringValue("MetastoreListTaskResponse.RequestId"));
+		metastoreListTaskResponse.setTotalCount(_ctx.integerValue("MetastoreListTaskResponse.TotalCount"));
+		metastoreListTaskResponse.setPageNumber(_ctx.integerValue("MetastoreListTaskResponse.PageNumber"));
+		metastoreListTaskResponse.setPageSize(_ctx.integerValue("MetastoreListTaskResponse.PageSize"));
 
 		List<Task> taskList = new ArrayList<Task>();
-		for (int i = 0; i < context.lengthValue("MetastoreListTaskResponse.TaskList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreListTaskResponse.TaskList.Length"); i++) {
 			Task task = new Task();
-			task.setBizId(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].BizId"));
-			task.setTaskType(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskType"));
-			task.setTaskObject(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskObject"));
-			task.setTaskStatus(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskStatus"));
-			task.setStartTime(context.longValue("MetastoreListTaskResponse.TaskList["+ i +"].StartTime"));
-			task.setEndTime(context.longValue("MetastoreListTaskResponse.TaskList["+ i +"].EndTime"));
-			task.setTaskProcess(context.integerValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskProcess"));
-			task.setTriggerUser(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TriggerUser"));
-			task.setTriggerType(context.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TriggerType"));
-			task.setGmtCreate(context.longValue("MetastoreListTaskResponse.TaskList["+ i +"].GmtCreate"));
-			task.setGmtModified(context.longValue("MetastoreListTaskResponse.TaskList["+ i +"].GmtModified"));
-			task.setExecuteTime(context.longValue("MetastoreListTaskResponse.TaskList["+ i +"].ExecuteTime"));
+			task.setBizId(_ctx.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].BizId"));
+			task.setTaskType(_ctx.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskType"));
+			task.setTaskObject(_ctx.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskObject"));
+			task.setTaskStatus(_ctx.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskStatus"));
+			task.setStartTime(_ctx.longValue("MetastoreListTaskResponse.TaskList["+ i +"].StartTime"));
+			task.setEndTime(_ctx.longValue("MetastoreListTaskResponse.TaskList["+ i +"].EndTime"));
+			task.setTaskProcess(_ctx.integerValue("MetastoreListTaskResponse.TaskList["+ i +"].TaskProcess"));
+			task.setTriggerUser(_ctx.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TriggerUser"));
+			task.setTriggerType(_ctx.stringValue("MetastoreListTaskResponse.TaskList["+ i +"].TriggerType"));
+			task.setGmtCreate(_ctx.longValue("MetastoreListTaskResponse.TaskList["+ i +"].GmtCreate"));
+			task.setGmtModified(_ctx.longValue("MetastoreListTaskResponse.TaskList["+ i +"].GmtModified"));
+			task.setExecuteTime(_ctx.longValue("MetastoreListTaskResponse.TaskList["+ i +"].ExecuteTime"));
 
 			taskList.add(task);
 		}

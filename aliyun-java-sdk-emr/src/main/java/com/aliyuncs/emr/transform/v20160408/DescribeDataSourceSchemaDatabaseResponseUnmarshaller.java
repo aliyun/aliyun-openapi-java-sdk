@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataSourceSchemaDatabaseResponseUnmarshaller {
 
-	public static DescribeDataSourceSchemaDatabaseResponse unmarshall(DescribeDataSourceSchemaDatabaseResponse describeDataSourceSchemaDatabaseResponse, UnmarshallerContext context) {
+	public static DescribeDataSourceSchemaDatabaseResponse unmarshall(DescribeDataSourceSchemaDatabaseResponse describeDataSourceSchemaDatabaseResponse, UnmarshallerContext _ctx) {
 		
-		describeDataSourceSchemaDatabaseResponse.setRequestId(context.stringValue("DescribeDataSourceSchemaDatabaseResponse.RequestId"));
-		describeDataSourceSchemaDatabaseResponse.setDataSourceId(context.stringValue("DescribeDataSourceSchemaDatabaseResponse.DataSourceId"));
+		describeDataSourceSchemaDatabaseResponse.setRequestId(_ctx.stringValue("DescribeDataSourceSchemaDatabaseResponse.RequestId"));
+		describeDataSourceSchemaDatabaseResponse.setDataSourceId(_ctx.stringValue("DescribeDataSourceSchemaDatabaseResponse.DataSourceId"));
 
 		Schema schema = new Schema();
-		schema.setDbName(context.stringValue("DescribeDataSourceSchemaDatabaseResponse.Schema.DbName"));
-		schema.setDbVersion(context.stringValue("DescribeDataSourceSchemaDatabaseResponse.Schema.DbVersion"));
-		schema.setDbType(context.stringValue("DescribeDataSourceSchemaDatabaseResponse.Schema.DbType"));
+		schema.setDbName(_ctx.stringValue("DescribeDataSourceSchemaDatabaseResponse.Schema.DbName"));
+		schema.setDbVersion(_ctx.stringValue("DescribeDataSourceSchemaDatabaseResponse.Schema.DbVersion"));
+		schema.setDbType(_ctx.stringValue("DescribeDataSourceSchemaDatabaseResponse.Schema.DbType"));
 		describeDataSourceSchemaDatabaseResponse.setSchema(schema);
 	 
 	 	return describeDataSourceSchemaDatabaseResponse;

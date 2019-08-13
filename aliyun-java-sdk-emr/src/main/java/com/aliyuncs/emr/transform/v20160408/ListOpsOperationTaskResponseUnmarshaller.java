@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListOpsOperationTaskResponseUnmarshaller {
 
-	public static ListOpsOperationTaskResponse unmarshall(ListOpsOperationTaskResponse listOpsOperationTaskResponse, UnmarshallerContext context) {
+	public static ListOpsOperationTaskResponse unmarshall(ListOpsOperationTaskResponse listOpsOperationTaskResponse, UnmarshallerContext _ctx) {
 		
-		listOpsOperationTaskResponse.setRequestId(context.stringValue("ListOpsOperationTaskResponse.RequestId"));
-		listOpsOperationTaskResponse.setTotal(context.integerValue("ListOpsOperationTaskResponse.Total"));
-		listOpsOperationTaskResponse.setPageNumber(context.integerValue("ListOpsOperationTaskResponse.PageNumber"));
-		listOpsOperationTaskResponse.setPageSize(context.integerValue("ListOpsOperationTaskResponse.PageSize"));
+		listOpsOperationTaskResponse.setRequestId(_ctx.stringValue("ListOpsOperationTaskResponse.RequestId"));
+		listOpsOperationTaskResponse.setTotal(_ctx.integerValue("ListOpsOperationTaskResponse.Total"));
+		listOpsOperationTaskResponse.setPageNumber(_ctx.integerValue("ListOpsOperationTaskResponse.PageNumber"));
+		listOpsOperationTaskResponse.setPageSize(_ctx.integerValue("ListOpsOperationTaskResponse.PageSize"));
 
 		List<TaskListItem> taskList = new ArrayList<TaskListItem>();
-		for (int i = 0; i < context.lengthValue("ListOpsOperationTaskResponse.TaskList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListOpsOperationTaskResponse.TaskList.Length"); i++) {
 			TaskListItem taskListItem = new TaskListItem();
-			taskListItem.setId(context.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].Id"));
-			taskListItem.setOpsOperationId(context.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].OpsOperationId"));
-			taskListItem.setTaskId(context.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].TaskId"));
-			taskListItem.setStatus(context.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].Status"));
-			taskListItem.setRegionId(context.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].RegionId"));
-			taskListItem.setUserId(context.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].UserId"));
-			taskListItem.setClusterId(context.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].ClusterId"));
-			taskListItem.setExternalClusterId(context.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].ExternalClusterId"));
-			taskListItem.setHostId(context.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].HostId"));
-			taskListItem.setStartTime(context.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].StartTime"));
-			taskListItem.setEndTime(context.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].EndTime"));
-			taskListItem.setCommandName(context.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].CommandName"));
-			taskListItem.setHostName(context.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].HostName"));
+			taskListItem.setId(_ctx.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].Id"));
+			taskListItem.setOpsOperationId(_ctx.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].OpsOperationId"));
+			taskListItem.setTaskId(_ctx.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].TaskId"));
+			taskListItem.setStatus(_ctx.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].Status"));
+			taskListItem.setRegionId(_ctx.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].RegionId"));
+			taskListItem.setUserId(_ctx.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].UserId"));
+			taskListItem.setClusterId(_ctx.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].ClusterId"));
+			taskListItem.setExternalClusterId(_ctx.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].ExternalClusterId"));
+			taskListItem.setHostId(_ctx.longValue("ListOpsOperationTaskResponse.TaskList["+ i +"].HostId"));
+			taskListItem.setStartTime(_ctx.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].StartTime"));
+			taskListItem.setEndTime(_ctx.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].EndTime"));
+			taskListItem.setCommandName(_ctx.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].CommandName"));
+			taskListItem.setHostName(_ctx.stringValue("ListOpsOperationTaskResponse.TaskList["+ i +"].HostName"));
 
 			taskList.add(taskListItem);
 		}

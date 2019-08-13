@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -24,7 +25,11 @@ import java.util.List;
 public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Response> {
 	
 	public CreateClusterV2Request() {
-		super("Emr", "2016-04-08", "CreateClusterV2");
+		super("Emr", "2016-04-08", "CreateClusterV2", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Boolean autoPayOrder;
@@ -47,6 +52,8 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 	private String keyPairName;
 
+	private String metaStoreType;
+
 	private String securityGroupName;
 
 	private String depositType;
@@ -58,6 +65,8 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 	private List<BootstrapAction> bootstrapActions;
 
 	private Boolean useLocalMetaDb;
+
+	private String metaStoreConf;
 
 	private String emrVer;
 
@@ -215,6 +224,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
+	public String getMetaStoreType() {
+		return this.metaStoreType;
+	}
+
+	public void setMetaStoreType(String metaStoreType) {
+		this.metaStoreType = metaStoreType;
+		if(metaStoreType != null){
+			putQueryParameter("MetaStoreType", metaStoreType);
+		}
+	}
+
 	public String getSecurityGroupName() {
 		return this.securityGroupName;
 	}
@@ -290,6 +310,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.useLocalMetaDb = useLocalMetaDb;
 		if(useLocalMetaDb != null){
 			putQueryParameter("UseLocalMetaDb", useLocalMetaDb.toString());
+		}
+	}
+
+	public String getMetaStoreConf() {
+		return this.metaStoreConf;
+	}
+
+	public void setMetaStoreConf(String metaStoreConf) {
+		this.metaStoreConf = metaStoreConf;
+		if(metaStoreConf != null){
+			putQueryParameter("MetaStoreConf", metaStoreConf);
 		}
 	}
 

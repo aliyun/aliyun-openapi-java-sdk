@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeNoteResponseUnmarshaller {
 
-	public static DescribeNoteResponse unmarshall(DescribeNoteResponse describeNoteResponse, UnmarshallerContext context) {
+	public static DescribeNoteResponse unmarshall(DescribeNoteResponse describeNoteResponse, UnmarshallerContext _ctx) {
 		
-		describeNoteResponse.setRequestId(context.stringValue("DescribeNoteResponse.RequestId"));
-		describeNoteResponse.setId(context.stringValue("DescribeNoteResponse.Id"));
-		describeNoteResponse.setName(context.stringValue("DescribeNoteResponse.Name"));
-		describeNoteResponse.setClusterId(context.stringValue("DescribeNoteResponse.ClusterId"));
-		describeNoteResponse.setType(context.stringValue("DescribeNoteResponse.Type"));
-		describeNoteResponse.setParagraphs(context.stringValue("DescribeNoteResponse.Paragraphs"));
+		describeNoteResponse.setRequestId(_ctx.stringValue("DescribeNoteResponse.RequestId"));
+		describeNoteResponse.setId(_ctx.stringValue("DescribeNoteResponse.Id"));
+		describeNoteResponse.setName(_ctx.stringValue("DescribeNoteResponse.Name"));
+		describeNoteResponse.setClusterId(_ctx.stringValue("DescribeNoteResponse.ClusterId"));
+		describeNoteResponse.setType(_ctx.stringValue("DescribeNoteResponse.Type"));
+		describeNoteResponse.setParagraphs(_ctx.stringValue("DescribeNoteResponse.Paragraphs"));
 	 
 	 	return describeNoteResponse;
 	}

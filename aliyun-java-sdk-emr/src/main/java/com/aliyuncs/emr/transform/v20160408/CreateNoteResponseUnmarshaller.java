@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateNoteResponseUnmarshaller {
 
-	public static CreateNoteResponse unmarshall(CreateNoteResponse createNoteResponse, UnmarshallerContext context) {
+	public static CreateNoteResponse unmarshall(CreateNoteResponse createNoteResponse, UnmarshallerContext _ctx) {
 		
-		createNoteResponse.setRequestId(context.stringValue("CreateNoteResponse.RequestId"));
-		createNoteResponse.setId(context.stringValue("CreateNoteResponse.Id"));
-		createNoteResponse.setParagraph(context.stringValue("CreateNoteResponse.Paragraph"));
+		createNoteResponse.setRequestId(_ctx.stringValue("CreateNoteResponse.RequestId"));
+		createNoteResponse.setId(_ctx.stringValue("CreateNoteResponse.Id"));
+		createNoteResponse.setParagraph(_ctx.stringValue("CreateNoteResponse.Paragraph"));
 	 
 	 	return createNoteResponse;
 	}

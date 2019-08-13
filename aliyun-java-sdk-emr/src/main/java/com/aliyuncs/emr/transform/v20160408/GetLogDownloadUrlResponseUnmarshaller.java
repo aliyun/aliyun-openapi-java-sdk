@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetLogDownloadUrlResponseUnmarshaller {
 
-	public static GetLogDownloadUrlResponse unmarshall(GetLogDownloadUrlResponse getLogDownloadUrlResponse, UnmarshallerContext context) {
+	public static GetLogDownloadUrlResponse unmarshall(GetLogDownloadUrlResponse getLogDownloadUrlResponse, UnmarshallerContext _ctx) {
 		
-		getLogDownloadUrlResponse.setRequestId(context.stringValue("GetLogDownloadUrlResponse.RequestId"));
-		getLogDownloadUrlResponse.setDownloadUrlBase64Encoded(context.stringValue("GetLogDownloadUrlResponse.DownloadUrlBase64Encoded"));
+		getLogDownloadUrlResponse.setRequestId(_ctx.stringValue("GetLogDownloadUrlResponse.RequestId"));
+		getLogDownloadUrlResponse.setDownloadUrlBase64Encoded(_ctx.stringValue("GetLogDownloadUrlResponse.DownloadUrlBase64Encoded"));
 	 
 	 	return getLogDownloadUrlResponse;
 	}

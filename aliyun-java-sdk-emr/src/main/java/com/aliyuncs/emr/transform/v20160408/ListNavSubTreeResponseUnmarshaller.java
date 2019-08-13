@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListNavSubTreeResponseUnmarshaller {
 
-	public static ListNavSubTreeResponse unmarshall(ListNavSubTreeResponse listNavSubTreeResponse, UnmarshallerContext context) {
+	public static ListNavSubTreeResponse unmarshall(ListNavSubTreeResponse listNavSubTreeResponse, UnmarshallerContext _ctx) {
 		
-		listNavSubTreeResponse.setRequestId(context.stringValue("ListNavSubTreeResponse.RequestId"));
-		listNavSubTreeResponse.setData(context.stringValue("ListNavSubTreeResponse.Data"));
+		listNavSubTreeResponse.setRequestId(_ctx.stringValue("ListNavSubTreeResponse.RequestId"));
+		listNavSubTreeResponse.setData(_ctx.stringValue("ListNavSubTreeResponse.Data"));
 	 
 	 	return listNavSubTreeResponse;
 	}

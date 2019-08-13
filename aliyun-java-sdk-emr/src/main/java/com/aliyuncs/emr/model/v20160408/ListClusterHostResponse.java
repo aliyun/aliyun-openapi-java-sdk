@@ -85,6 +85,8 @@ public class ListClusterHostResponse extends AcsResponse {
 
 		private String role;
 
+		private String zoneId;
+
 		private String instanceType;
 
 		private Integer cpu;
@@ -145,6 +147,14 @@ public class ListClusterHostResponse extends AcsResponse {
 
 		public void setRole(String role) {
 			this.role = role;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public String getInstanceType() {
@@ -273,6 +283,8 @@ public class ListClusterHostResponse extends AcsResponse {
 
 			private String type;
 
+			private String device;
+
 			private String diskType;
 
 			private Integer diskSize;
@@ -291,6 +303,14 @@ public class ListClusterHostResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
 			}
 
 			public String getDiskType() {

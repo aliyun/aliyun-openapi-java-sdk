@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJobRunningTimeStatisticInfoResponseUnmarshaller {
 
-	public static GetJobRunningTimeStatisticInfoResponse unmarshall(GetJobRunningTimeStatisticInfoResponse getJobRunningTimeStatisticInfoResponse, UnmarshallerContext context) {
+	public static GetJobRunningTimeStatisticInfoResponse unmarshall(GetJobRunningTimeStatisticInfoResponse getJobRunningTimeStatisticInfoResponse, UnmarshallerContext _ctx) {
 		
-		getJobRunningTimeStatisticInfoResponse.setRequestId(context.stringValue("GetJobRunningTimeStatisticInfoResponse.RequestId"));
-		getJobRunningTimeStatisticInfoResponse.setTotal(context.integerValue("GetJobRunningTimeStatisticInfoResponse.Total"));
-		getJobRunningTimeStatisticInfoResponse.setPageNumber(context.integerValue("GetJobRunningTimeStatisticInfoResponse.PageNumber"));
-		getJobRunningTimeStatisticInfoResponse.setPageSize(context.integerValue("GetJobRunningTimeStatisticInfoResponse.PageSize"));
+		getJobRunningTimeStatisticInfoResponse.setRequestId(_ctx.stringValue("GetJobRunningTimeStatisticInfoResponse.RequestId"));
+		getJobRunningTimeStatisticInfoResponse.setTotal(_ctx.integerValue("GetJobRunningTimeStatisticInfoResponse.Total"));
+		getJobRunningTimeStatisticInfoResponse.setPageNumber(_ctx.integerValue("GetJobRunningTimeStatisticInfoResponse.PageNumber"));
+		getJobRunningTimeStatisticInfoResponse.setPageSize(_ctx.integerValue("GetJobRunningTimeStatisticInfoResponse.PageSize"));
 
 		List<ClusterStatJobRunningTime> runningTimeList = new ArrayList<ClusterStatJobRunningTime>();
-		for (int i = 0; i < context.lengthValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList.Length"); i++) {
 			ClusterStatJobRunningTime clusterStatJobRunningTime = new ClusterStatJobRunningTime();
-			clusterStatJobRunningTime.setApplicationId(context.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].ApplicationId"));
-			clusterStatJobRunningTime.setJobId(context.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].JobId"));
-			clusterStatJobRunningTime.setStartTime(context.longValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].StartTime"));
-			clusterStatJobRunningTime.setFinishTime(context.longValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].FinishTime"));
-			clusterStatJobRunningTime.setName(context.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].Name"));
-			clusterStatJobRunningTime.setQueue(context.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].Queue"));
-			clusterStatJobRunningTime.setUser(context.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].User"));
-			clusterStatJobRunningTime.setState(context.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].State"));
-			clusterStatJobRunningTime.setRunningTime(context.longValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].RunningTime"));
+			clusterStatJobRunningTime.setApplicationId(_ctx.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].ApplicationId"));
+			clusterStatJobRunningTime.setJobId(_ctx.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].JobId"));
+			clusterStatJobRunningTime.setStartTime(_ctx.longValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].StartTime"));
+			clusterStatJobRunningTime.setFinishTime(_ctx.longValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].FinishTime"));
+			clusterStatJobRunningTime.setName(_ctx.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].Name"));
+			clusterStatJobRunningTime.setQueue(_ctx.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].Queue"));
+			clusterStatJobRunningTime.setUser(_ctx.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].User"));
+			clusterStatJobRunningTime.setState(_ctx.stringValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].State"));
+			clusterStatJobRunningTime.setRunningTime(_ctx.longValue("GetJobRunningTimeStatisticInfoResponse.RunningTimeList["+ i +"].RunningTime"));
 
 			runningTimeList.add(clusterStatJobRunningTime);
 		}

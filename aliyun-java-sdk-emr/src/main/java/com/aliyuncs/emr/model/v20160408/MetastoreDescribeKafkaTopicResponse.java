@@ -51,6 +51,10 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 
 	private String preferredReplicasPercentage;
 
+	private String status;
+
+	private String reassignId;
+
 	private List<AdvancedConfig> advancedConfigList;
 
 	private List<Summary> summaryList;
@@ -161,6 +165,22 @@ public class MetastoreDescribeKafkaTopicResponse extends AcsResponse {
 
 	public void setPreferredReplicasPercentage(String preferredReplicasPercentage) {
 		this.preferredReplicasPercentage = preferredReplicasPercentage;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getReassignId() {
+		return this.reassignId;
+	}
+
+	public void setReassignId(String reassignId) {
+		this.reassignId = reassignId;
 	}
 
 	public List<AdvancedConfig> getAdvancedConfigList() {

@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobExecutionInstanceTrendResponseUnmarshaller {
 
-	public static ListJobExecutionInstanceTrendResponse unmarshall(ListJobExecutionInstanceTrendResponse listJobExecutionInstanceTrendResponse, UnmarshallerContext context) {
+	public static ListJobExecutionInstanceTrendResponse unmarshall(ListJobExecutionInstanceTrendResponse listJobExecutionInstanceTrendResponse, UnmarshallerContext _ctx) {
 		
-		listJobExecutionInstanceTrendResponse.setRequestId(context.stringValue("ListJobExecutionInstanceTrendResponse.RequestId"));
+		listJobExecutionInstanceTrendResponse.setRequestId(_ctx.stringValue("ListJobExecutionInstanceTrendResponse.RequestId"));
 
 		List<Trend> trends = new ArrayList<Trend>();
-		for (int i = 0; i < context.lengthValue("ListJobExecutionInstanceTrendResponse.Trends.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobExecutionInstanceTrendResponse.Trends.Length"); i++) {
 			Trend trend = new Trend();
-			trend.setDay(context.stringValue("ListJobExecutionInstanceTrendResponse.Trends["+ i +"].Day"));
-			trend.setCount(context.integerValue("ListJobExecutionInstanceTrendResponse.Trends["+ i +"].Count"));
-			trend.setStatus(context.stringValue("ListJobExecutionInstanceTrendResponse.Trends["+ i +"].Status"));
+			trend.setDay(_ctx.stringValue("ListJobExecutionInstanceTrendResponse.Trends["+ i +"].Day"));
+			trend.setCount(_ctx.integerValue("ListJobExecutionInstanceTrendResponse.Trends["+ i +"].Count"));
+			trend.setStatus(_ctx.stringValue("ListJobExecutionInstanceTrendResponse.Trends["+ i +"].Status"));
 
 			trends.add(trend);
 		}

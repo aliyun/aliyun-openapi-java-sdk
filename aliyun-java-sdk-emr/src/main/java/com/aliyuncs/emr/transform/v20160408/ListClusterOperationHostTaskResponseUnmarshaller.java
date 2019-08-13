@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterOperationHostTaskResponseUnmarshaller {
 
-	public static ListClusterOperationHostTaskResponse unmarshall(ListClusterOperationHostTaskResponse listClusterOperationHostTaskResponse, UnmarshallerContext context) {
+	public static ListClusterOperationHostTaskResponse unmarshall(ListClusterOperationHostTaskResponse listClusterOperationHostTaskResponse, UnmarshallerContext _ctx) {
 		
-		listClusterOperationHostTaskResponse.setRequestId(context.stringValue("ListClusterOperationHostTaskResponse.RequestId"));
-		listClusterOperationHostTaskResponse.setTotalCount(context.integerValue("ListClusterOperationHostTaskResponse.TotalCount"));
-		listClusterOperationHostTaskResponse.setPageNumber(context.integerValue("ListClusterOperationHostTaskResponse.PageNumber"));
-		listClusterOperationHostTaskResponse.setPageSize(context.integerValue("ListClusterOperationHostTaskResponse.PageSize"));
+		listClusterOperationHostTaskResponse.setRequestId(_ctx.stringValue("ListClusterOperationHostTaskResponse.RequestId"));
+		listClusterOperationHostTaskResponse.setTotalCount(_ctx.integerValue("ListClusterOperationHostTaskResponse.TotalCount"));
+		listClusterOperationHostTaskResponse.setPageNumber(_ctx.integerValue("ListClusterOperationHostTaskResponse.PageNumber"));
+		listClusterOperationHostTaskResponse.setPageSize(_ctx.integerValue("ListClusterOperationHostTaskResponse.PageSize"));
 
 		List<ClusterOperationHostTask> clusterOperationHostTaskList = new ArrayList<ClusterOperationHostTask>();
-		for (int i = 0; i < context.lengthValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList.Length"); i++) {
 			ClusterOperationHostTask clusterOperationHostTask = new ClusterOperationHostTask();
-			clusterOperationHostTask.setTaskId(context.stringValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList["+ i +"].TaskId"));
-			clusterOperationHostTask.setTaskName(context.stringValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList["+ i +"].TaskName"));
-			clusterOperationHostTask.setStatus(context.stringValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList["+ i +"].Status"));
-			clusterOperationHostTask.setPercentage(context.stringValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList["+ i +"].Percentage"));
+			clusterOperationHostTask.setTaskId(_ctx.stringValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList["+ i +"].TaskId"));
+			clusterOperationHostTask.setTaskName(_ctx.stringValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList["+ i +"].TaskName"));
+			clusterOperationHostTask.setStatus(_ctx.stringValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList["+ i +"].Status"));
+			clusterOperationHostTask.setPercentage(_ctx.stringValue("ListClusterOperationHostTaskResponse.ClusterOperationHostTaskList["+ i +"].Percentage"));
 
 			clusterOperationHostTaskList.add(clusterOperationHostTask);
 		}

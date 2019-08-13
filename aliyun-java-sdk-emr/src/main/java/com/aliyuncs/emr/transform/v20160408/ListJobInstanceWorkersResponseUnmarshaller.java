@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobInstanceWorkersResponseUnmarshaller {
 
-	public static ListJobInstanceWorkersResponse unmarshall(ListJobInstanceWorkersResponse listJobInstanceWorkersResponse, UnmarshallerContext context) {
+	public static ListJobInstanceWorkersResponse unmarshall(ListJobInstanceWorkersResponse listJobInstanceWorkersResponse, UnmarshallerContext _ctx) {
 		
-		listJobInstanceWorkersResponse.setRequestId(context.stringValue("ListJobInstanceWorkersResponse.RequestId"));
+		listJobInstanceWorkersResponse.setRequestId(_ctx.stringValue("ListJobInstanceWorkersResponse.RequestId"));
 
 		List<JobInstanceWorkerInfo> jobInstanceWorkers = new ArrayList<JobInstanceWorkerInfo>();
-		for (int i = 0; i < context.lengthValue("ListJobInstanceWorkersResponse.JobInstanceWorkers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobInstanceWorkersResponse.JobInstanceWorkers.Length"); i++) {
 			JobInstanceWorkerInfo jobInstanceWorkerInfo = new JobInstanceWorkerInfo();
-			jobInstanceWorkerInfo.setApplicationId(context.stringValue("ListJobInstanceWorkersResponse.JobInstanceWorkers["+ i +"].ApplicationId"));
-			jobInstanceWorkerInfo.setInstanceInfo(context.stringValue("ListJobInstanceWorkersResponse.JobInstanceWorkers["+ i +"].InstanceInfo"));
-			jobInstanceWorkerInfo.setContainerInfo(context.stringValue("ListJobInstanceWorkersResponse.JobInstanceWorkers["+ i +"].ContainerInfo"));
+			jobInstanceWorkerInfo.setApplicationId(_ctx.stringValue("ListJobInstanceWorkersResponse.JobInstanceWorkers["+ i +"].ApplicationId"));
+			jobInstanceWorkerInfo.setInstanceInfo(_ctx.stringValue("ListJobInstanceWorkersResponse.JobInstanceWorkers["+ i +"].InstanceInfo"));
+			jobInstanceWorkerInfo.setContainerInfo(_ctx.stringValue("ListJobInstanceWorkersResponse.JobInstanceWorkers["+ i +"].ContainerInfo"));
 
 			jobInstanceWorkers.add(jobInstanceWorkerInfo);
 		}

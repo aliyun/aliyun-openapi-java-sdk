@@ -22,36 +22,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeScalingRuleResponseUnmarshaller {
 
-	public static DescribeScalingRuleResponse unmarshall(DescribeScalingRuleResponse describeScalingRuleResponse, UnmarshallerContext context) {
+	public static DescribeScalingRuleResponse unmarshall(DescribeScalingRuleResponse describeScalingRuleResponse, UnmarshallerContext _ctx) {
 		
-		describeScalingRuleResponse.setRequestId(context.stringValue("DescribeScalingRuleResponse.RequestId"));
-		describeScalingRuleResponse.setId(context.stringValue("DescribeScalingRuleResponse.Id"));
-		describeScalingRuleResponse.setGmtCreate(context.stringValue("DescribeScalingRuleResponse.GmtCreate"));
-		describeScalingRuleResponse.setGmtModified(context.stringValue("DescribeScalingRuleResponse.GmtModified"));
-		describeScalingRuleResponse.setRuleName(context.stringValue("DescribeScalingRuleResponse.RuleName"));
-		describeScalingRuleResponse.setRuleCategory(context.stringValue("DescribeScalingRuleResponse.RuleCategory"));
-		describeScalingRuleResponse.setAdjustmentType(context.stringValue("DescribeScalingRuleResponse.AdjustmentType"));
-		describeScalingRuleResponse.setAdjustmentValue(context.integerValue("DescribeScalingRuleResponse.AdjustmentValue"));
-		describeScalingRuleResponse.setCooldown(context.integerValue("DescribeScalingRuleResponse.Cooldown"));
-		describeScalingRuleResponse.setStatus(context.stringValue("DescribeScalingRuleResponse.Status"));
+		describeScalingRuleResponse.setRequestId(_ctx.stringValue("DescribeScalingRuleResponse.RequestId"));
+		describeScalingRuleResponse.setId(_ctx.stringValue("DescribeScalingRuleResponse.Id"));
+		describeScalingRuleResponse.setGmtCreate(_ctx.stringValue("DescribeScalingRuleResponse.GmtCreate"));
+		describeScalingRuleResponse.setGmtModified(_ctx.stringValue("DescribeScalingRuleResponse.GmtModified"));
+		describeScalingRuleResponse.setRuleName(_ctx.stringValue("DescribeScalingRuleResponse.RuleName"));
+		describeScalingRuleResponse.setRuleCategory(_ctx.stringValue("DescribeScalingRuleResponse.RuleCategory"));
+		describeScalingRuleResponse.setAdjustmentType(_ctx.stringValue("DescribeScalingRuleResponse.AdjustmentType"));
+		describeScalingRuleResponse.setAdjustmentValue(_ctx.integerValue("DescribeScalingRuleResponse.AdjustmentValue"));
+		describeScalingRuleResponse.setCooldown(_ctx.integerValue("DescribeScalingRuleResponse.Cooldown"));
+		describeScalingRuleResponse.setStatus(_ctx.stringValue("DescribeScalingRuleResponse.Status"));
 
 		SchedulerTrigger schedulerTrigger = new SchedulerTrigger();
-		schedulerTrigger.setLaunchTime(context.longValue("DescribeScalingRuleResponse.SchedulerTrigger.LaunchTime"));
-		schedulerTrigger.setLaunchExpirationTime(context.integerValue("DescribeScalingRuleResponse.SchedulerTrigger.LaunchExpirationTime"));
-		schedulerTrigger.setRecurrenceType(context.stringValue("DescribeScalingRuleResponse.SchedulerTrigger.RecurrenceType"));
-		schedulerTrigger.setRecurrenceValue(context.stringValue("DescribeScalingRuleResponse.SchedulerTrigger.RecurrenceValue"));
-		schedulerTrigger.setRecurrenceEndTime(context.longValue("DescribeScalingRuleResponse.SchedulerTrigger.RecurrenceEndTime"));
+		schedulerTrigger.setLaunchTime(_ctx.longValue("DescribeScalingRuleResponse.SchedulerTrigger.LaunchTime"));
+		schedulerTrigger.setLaunchExpirationTime(_ctx.integerValue("DescribeScalingRuleResponse.SchedulerTrigger.LaunchExpirationTime"));
+		schedulerTrigger.setRecurrenceType(_ctx.stringValue("DescribeScalingRuleResponse.SchedulerTrigger.RecurrenceType"));
+		schedulerTrigger.setRecurrenceValue(_ctx.stringValue("DescribeScalingRuleResponse.SchedulerTrigger.RecurrenceValue"));
+		schedulerTrigger.setRecurrenceEndTime(_ctx.longValue("DescribeScalingRuleResponse.SchedulerTrigger.RecurrenceEndTime"));
 		describeScalingRuleResponse.setSchedulerTrigger(schedulerTrigger);
 
 		CloudWatchTrigger cloudWatchTrigger = new CloudWatchTrigger();
-		cloudWatchTrigger.setMetricName(context.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.MetricName"));
-		cloudWatchTrigger.setPeriod(context.integerValue("DescribeScalingRuleResponse.CloudWatchTrigger.Period"));
-		cloudWatchTrigger.setStatistics(context.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.Statistics"));
-		cloudWatchTrigger.setComparisonOperator(context.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.ComparisonOperator"));
-		cloudWatchTrigger.setThreshold(context.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.Threshold"));
-		cloudWatchTrigger.setEvaluationCount(context.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.EvaluationCount"));
-		cloudWatchTrigger.setUnit(context.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.Unit"));
-		cloudWatchTrigger.setMetricDisplayName(context.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.MetricDisplayName"));
+		cloudWatchTrigger.setMetricName(_ctx.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.MetricName"));
+		cloudWatchTrigger.setPeriod(_ctx.integerValue("DescribeScalingRuleResponse.CloudWatchTrigger.Period"));
+		cloudWatchTrigger.setStatistics(_ctx.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.Statistics"));
+		cloudWatchTrigger.setComparisonOperator(_ctx.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.ComparisonOperator"));
+		cloudWatchTrigger.setThreshold(_ctx.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.Threshold"));
+		cloudWatchTrigger.setEvaluationCount(_ctx.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.EvaluationCount"));
+		cloudWatchTrigger.setUnit(_ctx.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.Unit"));
+		cloudWatchTrigger.setMetricDisplayName(_ctx.stringValue("DescribeScalingRuleResponse.CloudWatchTrigger.MetricDisplayName"));
 		describeScalingRuleResponse.setCloudWatchTrigger(cloudWatchTrigger);
 	 
 	 	return describeScalingRuleResponse;

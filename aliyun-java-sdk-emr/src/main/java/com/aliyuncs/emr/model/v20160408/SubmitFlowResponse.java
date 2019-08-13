@@ -26,7 +26,11 @@ public class SubmitFlowResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String instanceId;
+
 	private String id;
+
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +40,28 @@ public class SubmitFlowResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
 	public String getId() {
 		return this.id;
 	}
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

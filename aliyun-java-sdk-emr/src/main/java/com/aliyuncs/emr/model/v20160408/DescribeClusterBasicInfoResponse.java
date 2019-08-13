@@ -47,19 +47,27 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 	public static class ClusterInfo {
 
-		private String id;
-
-		private String bizId;
+		private String clusterId;
 
 		private String regionId;
+
+		private String machineType;
+
+		private String depositType;
 
 		private String zoneId;
 
 		private String name;
 
+		private String relateClusterId;
+
+		private String gatewayClusterIds;
+
 		private String createType;
 
 		private Long startTime;
+
+		private Long expiredTime;
 
 		private Long stopTime;
 
@@ -67,13 +75,15 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		private String logPath;
 
+		private String userId;
+
 		private String status;
 
 		private Boolean highAvailabilityEnable;
 
-		private String chargeType;
+		private Boolean localMetaDb;
 
-		private Long expiredTime;
+		private String chargeType;
 
 		private Integer period;
 
@@ -93,6 +103,8 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		private Boolean showSoftwareInterface;
 
+		private String createResource;
+
 		private String vpcId;
 
 		private String vSwitchId;
@@ -105,40 +117,50 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		private String instanceGeneration;
 
-		private Boolean bootstrapFailed;
-
-		private String configurations;
-
 		private String imageId;
 
 		private String securityGroupId;
 
 		private String securityGroupName;
 
+		private Boolean bootstrapFailed;
+
+		private String configurations;
+
 		private Boolean easEnable;
 
-		private String clusterType;
+		private Boolean autoScalingEnable;
+
+		private Boolean autoScalingAllowed;
+
+		private Boolean autoScalingSpotWithLimitAllowed;
+
+		private Boolean autoScalingByLoadAllowed;
+
+		private Boolean resizeDiskEnable;
+
+		private String metaStoreType;
+
+		private List<GatewayClusterInfo> gatewayClusterInfoList;
 
 		private List<BootstrapAction> bootstrapActionList;
 
-		private SoftwareInfo softwareInfo;
+		private RelateClusterInfo relateClusterInfo;
+
+		private HostPoolInfo hostPoolInfo;
 
 		private FailReason failReason;
 
-		public String getId() {
-			return this.id;
+		private SoftwareInfo softwareInfo;
+
+		private AccessInfo accessInfo;
+
+		public String getClusterId() {
+			return this.clusterId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public String getBizRegionId() {
@@ -165,6 +187,22 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
+		public String getMachineType() {
+			return this.machineType;
+		}
+
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
+		}
+
+		public String getDepositType() {
+			return this.depositType;
+		}
+
+		public void setDepositType(String depositType) {
+			this.depositType = depositType;
+		}
+
 		public String getZoneId() {
 			return this.zoneId;
 		}
@@ -181,6 +219,22 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public String getRelateClusterId() {
+			return this.relateClusterId;
+		}
+
+		public void setRelateClusterId(String relateClusterId) {
+			this.relateClusterId = relateClusterId;
+		}
+
+		public String getGatewayClusterIds() {
+			return this.gatewayClusterIds;
+		}
+
+		public void setGatewayClusterIds(String gatewayClusterIds) {
+			this.gatewayClusterIds = gatewayClusterIds;
+		}
+
 		public String getCreateType() {
 			return this.createType;
 		}
@@ -195,6 +249,14 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		public void setStartTime(Long startTime) {
 			this.startTime = startTime;
+		}
+
+		public Long getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(Long expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 
 		public Long getStopTime() {
@@ -221,6 +283,14 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.logPath = logPath;
 		}
 
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -237,20 +307,20 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.highAvailabilityEnable = highAvailabilityEnable;
 		}
 
+		public Boolean getLocalMetaDb() {
+			return this.localMetaDb;
+		}
+
+		public void setLocalMetaDb(Boolean localMetaDb) {
+			this.localMetaDb = localMetaDb;
+		}
+
 		public String getChargeType() {
 			return this.chargeType;
 		}
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
-		}
-
-		public Long getExpiredTime() {
-			return this.expiredTime;
-		}
-
-		public void setExpiredTime(Long expiredTime) {
-			this.expiredTime = expiredTime;
 		}
 
 		public Integer getPeriod() {
@@ -325,6 +395,14 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.showSoftwareInterface = showSoftwareInterface;
 		}
 
+		public String getCreateResource() {
+			return this.createResource;
+		}
+
+		public void setCreateResource(String createResource) {
+			this.createResource = createResource;
+		}
+
 		public String getVpcId() {
 			return this.vpcId;
 		}
@@ -373,22 +451,6 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.instanceGeneration = instanceGeneration;
 		}
 
-		public Boolean getBootstrapFailed() {
-			return this.bootstrapFailed;
-		}
-
-		public void setBootstrapFailed(Boolean bootstrapFailed) {
-			this.bootstrapFailed = bootstrapFailed;
-		}
-
-		public String getConfigurations() {
-			return this.configurations;
-		}
-
-		public void setConfigurations(String configurations) {
-			this.configurations = configurations;
-		}
-
 		public String getImageId() {
 			return this.imageId;
 		}
@@ -413,6 +475,22 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.securityGroupName = securityGroupName;
 		}
 
+		public Boolean getBootstrapFailed() {
+			return this.bootstrapFailed;
+		}
+
+		public void setBootstrapFailed(Boolean bootstrapFailed) {
+			this.bootstrapFailed = bootstrapFailed;
+		}
+
+		public String getConfigurations() {
+			return this.configurations;
+		}
+
+		public void setConfigurations(String configurations) {
+			this.configurations = configurations;
+		}
+
 		public Boolean getEasEnable() {
 			return this.easEnable;
 		}
@@ -421,12 +499,60 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.easEnable = easEnable;
 		}
 
-		public String getClusterType() {
-			return this.clusterType;
+		public Boolean getAutoScalingEnable() {
+			return this.autoScalingEnable;
 		}
 
-		public void setClusterType(String clusterType) {
-			this.clusterType = clusterType;
+		public void setAutoScalingEnable(Boolean autoScalingEnable) {
+			this.autoScalingEnable = autoScalingEnable;
+		}
+
+		public Boolean getAutoScalingAllowed() {
+			return this.autoScalingAllowed;
+		}
+
+		public void setAutoScalingAllowed(Boolean autoScalingAllowed) {
+			this.autoScalingAllowed = autoScalingAllowed;
+		}
+
+		public Boolean getAutoScalingSpotWithLimitAllowed() {
+			return this.autoScalingSpotWithLimitAllowed;
+		}
+
+		public void setAutoScalingSpotWithLimitAllowed(Boolean autoScalingSpotWithLimitAllowed) {
+			this.autoScalingSpotWithLimitAllowed = autoScalingSpotWithLimitAllowed;
+		}
+
+		public Boolean getAutoScalingByLoadAllowed() {
+			return this.autoScalingByLoadAllowed;
+		}
+
+		public void setAutoScalingByLoadAllowed(Boolean autoScalingByLoadAllowed) {
+			this.autoScalingByLoadAllowed = autoScalingByLoadAllowed;
+		}
+
+		public Boolean getResizeDiskEnable() {
+			return this.resizeDiskEnable;
+		}
+
+		public void setResizeDiskEnable(Boolean resizeDiskEnable) {
+			this.resizeDiskEnable = resizeDiskEnable;
+		}
+
+		public String getMetaStoreType() {
+			return this.metaStoreType;
+		}
+
+		public void setMetaStoreType(String metaStoreType) {
+			this.metaStoreType = metaStoreType;
+		}
+
+		public List<GatewayClusterInfo> getGatewayClusterInfoList() {
+			return this.gatewayClusterInfoList;
+		}
+
+		public void setGatewayClusterInfoList(List<GatewayClusterInfo> gatewayClusterInfoList) {
+			this.gatewayClusterInfoList = gatewayClusterInfoList;
 		}
 
 		public List<BootstrapAction> getBootstrapActionList() {
@@ -437,12 +563,20 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			this.bootstrapActionList = bootstrapActionList;
 		}
 
-		public SoftwareInfo getSoftwareInfo() {
-			return this.softwareInfo;
+		public RelateClusterInfo getRelateClusterInfo() {
+			return this.relateClusterInfo;
 		}
 
-		public void setSoftwareInfo(SoftwareInfo softwareInfo) {
-			this.softwareInfo = softwareInfo;
+		public void setRelateClusterInfo(RelateClusterInfo relateClusterInfo) {
+			this.relateClusterInfo = relateClusterInfo;
+		}
+
+		public HostPoolInfo getHostPoolInfo() {
+			return this.hostPoolInfo;
+		}
+
+		public void setHostPoolInfo(HostPoolInfo hostPoolInfo) {
+			this.hostPoolInfo = hostPoolInfo;
 		}
 
 		public FailReason getFailReason() {
@@ -451,6 +585,55 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 		public void setFailReason(FailReason failReason) {
 			this.failReason = failReason;
+		}
+
+		public SoftwareInfo getSoftwareInfo() {
+			return this.softwareInfo;
+		}
+
+		public void setSoftwareInfo(SoftwareInfo softwareInfo) {
+			this.softwareInfo = softwareInfo;
+		}
+
+		public AccessInfo getAccessInfo() {
+			return this.accessInfo;
+		}
+
+		public void setAccessInfo(AccessInfo accessInfo) {
+			this.accessInfo = accessInfo;
+		}
+
+		public static class GatewayClusterInfo {
+
+			private String clusterId;
+
+			private String clusterName;
+
+			private String status;
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public String getClusterName() {
+				return this.clusterName;
+			}
+
+			public void setClusterName(String clusterName) {
+				this.clusterName = clusterName;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class BootstrapAction {
@@ -483,6 +666,95 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 
 			public void setArg(String arg) {
 				this.arg = arg;
+			}
+		}
+
+		public static class RelateClusterInfo {
+
+			private String clusterId;
+
+			private String clusterName;
+
+			private String status;
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public String getClusterName() {
+				return this.clusterName;
+			}
+
+			public void setClusterName(String clusterName) {
+				this.clusterName = clusterName;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+		}
+
+		public static class HostPoolInfo {
+
+			private String hpBizId;
+
+			private String hpName;
+
+			public String getHpBizId() {
+				return this.hpBizId;
+			}
+
+			public void setHpBizId(String hpBizId) {
+				this.hpBizId = hpBizId;
+			}
+
+			public String getHpName() {
+				return this.hpName;
+			}
+
+			public void setHpName(String hpName) {
+				this.hpName = hpName;
+			}
+		}
+
+		public static class FailReason {
+
+			private String errorCode;
+
+			private String errorMsg;
+
+			private String requestId;
+
+			public String getErrorCode() {
+				return this.errorCode;
+			}
+
+			public void setErrorCode(String errorCode) {
+				this.errorCode = errorCode;
+			}
+
+			public String getErrorMsg() {
+				return this.errorMsg;
+			}
+
+			public void setErrorMsg(String errorMsg) {
+				this.errorMsg = errorMsg;
+			}
+
+			public String getRequestId() {
+				return this.requestId;
+			}
+
+			public void setRequestId(String requestId) {
+				this.requestId = requestId;
 			}
 		}
 
@@ -588,36 +860,39 @@ public class DescribeClusterBasicInfoResponse extends AcsResponse {
 			}
 		}
 
-		public static class FailReason {
+		public static class AccessInfo {
 
-			private String errorCode;
+			private List<ZKLink> zKLinks;
 
-			private String errorMsg;
-
-			private String requestId;
-
-			public String getErrorCode() {
-				return this.errorCode;
+			public List<ZKLink> getZKLinks() {
+				return this.zKLinks;
 			}
 
-			public void setErrorCode(String errorCode) {
-				this.errorCode = errorCode;
+			public void setZKLinks(List<ZKLink> zKLinks) {
+				this.zKLinks = zKLinks;
 			}
 
-			public String getErrorMsg() {
-				return this.errorMsg;
-			}
+			public static class ZKLink {
 
-			public void setErrorMsg(String errorMsg) {
-				this.errorMsg = errorMsg;
-			}
+				private String link;
 
-			public String getRequestId() {
-				return this.requestId;
-			}
+				private String port;
 
-			public void setRequestId(String requestId) {
-				this.requestId = requestId;
+				public String getLink() {
+					return this.link;
+				}
+
+				public void setLink(String link) {
+					this.link = link;
+				}
+
+				public String getPort() {
+					return this.port;
+				}
+
+				public void setPort(String port) {
+					this.port = port;
+				}
 			}
 		}
 	}

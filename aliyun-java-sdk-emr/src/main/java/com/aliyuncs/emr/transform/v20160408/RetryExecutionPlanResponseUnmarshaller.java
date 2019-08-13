@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RetryExecutionPlanResponseUnmarshaller {
 
-	public static RetryExecutionPlanResponse unmarshall(RetryExecutionPlanResponse retryExecutionPlanResponse, UnmarshallerContext context) {
+	public static RetryExecutionPlanResponse unmarshall(RetryExecutionPlanResponse retryExecutionPlanResponse, UnmarshallerContext _ctx) {
 		
-		retryExecutionPlanResponse.setRequestId(context.stringValue("RetryExecutionPlanResponse.RequestId"));
-		retryExecutionPlanResponse.setExecutionPlanInstanceId(context.stringValue("RetryExecutionPlanResponse.ExecutionPlanInstanceId"));
+		retryExecutionPlanResponse.setRequestId(_ctx.stringValue("RetryExecutionPlanResponse.RequestId"));
+		retryExecutionPlanResponse.setExecutionPlanInstanceId(_ctx.stringValue("RetryExecutionPlanResponse.ExecutionPlanInstanceId"));
 	 
 	 	return retryExecutionPlanResponse;
 	}

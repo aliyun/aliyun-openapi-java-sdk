@@ -26,43 +26,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListScalingRuleResponseUnmarshaller {
 
-	public static ListScalingRuleResponse unmarshall(ListScalingRuleResponse listScalingRuleResponse, UnmarshallerContext context) {
+	public static ListScalingRuleResponse unmarshall(ListScalingRuleResponse listScalingRuleResponse, UnmarshallerContext _ctx) {
 		
-		listScalingRuleResponse.setRequestId(context.stringValue("ListScalingRuleResponse.RequestId"));
-		listScalingRuleResponse.setPageNumber(context.integerValue("ListScalingRuleResponse.PageNumber"));
-		listScalingRuleResponse.setPageSize(context.integerValue("ListScalingRuleResponse.PageSize"));
-		listScalingRuleResponse.setTotal(context.integerValue("ListScalingRuleResponse.Total"));
+		listScalingRuleResponse.setRequestId(_ctx.stringValue("ListScalingRuleResponse.RequestId"));
+		listScalingRuleResponse.setPageNumber(_ctx.integerValue("ListScalingRuleResponse.PageNumber"));
+		listScalingRuleResponse.setPageSize(_ctx.integerValue("ListScalingRuleResponse.PageSize"));
+		listScalingRuleResponse.setTotal(_ctx.integerValue("ListScalingRuleResponse.Total"));
 
 		List<Rule> ruleList = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("ListScalingRuleResponse.RuleList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListScalingRuleResponse.RuleList.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setId(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].Id"));
-			rule.setGmtCreate(context.longValue("ListScalingRuleResponse.RuleList["+ i +"].GmtCreate"));
-			rule.setGmtModified(context.longValue("ListScalingRuleResponse.RuleList["+ i +"].GmtModified"));
-			rule.setRuleName(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].RuleName"));
-			rule.setRuleCategory(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].RuleCategory"));
-			rule.setAdjustmentType(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].AdjustmentType"));
-			rule.setAdjustmentValue(context.integerValue("ListScalingRuleResponse.RuleList["+ i +"].AdjustmentValue"));
-			rule.setCooldown(context.integerValue("ListScalingRuleResponse.RuleList["+ i +"].Cooldown"));
-			rule.setStatus(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].Status"));
+			rule.setId(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].Id"));
+			rule.setGmtCreate(_ctx.longValue("ListScalingRuleResponse.RuleList["+ i +"].GmtCreate"));
+			rule.setGmtModified(_ctx.longValue("ListScalingRuleResponse.RuleList["+ i +"].GmtModified"));
+			rule.setRuleName(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].RuleName"));
+			rule.setRuleCategory(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].RuleCategory"));
+			rule.setAdjustmentType(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].AdjustmentType"));
+			rule.setAdjustmentValue(_ctx.integerValue("ListScalingRuleResponse.RuleList["+ i +"].AdjustmentValue"));
+			rule.setCooldown(_ctx.integerValue("ListScalingRuleResponse.RuleList["+ i +"].Cooldown"));
+			rule.setStatus(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].Status"));
 
 			SchedulerTrigger schedulerTrigger = new SchedulerTrigger();
-			schedulerTrigger.setLaunchTime(context.longValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.LaunchTime"));
-			schedulerTrigger.setLaunchExpirationTime(context.integerValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.LaunchExpirationTime"));
-			schedulerTrigger.setRecurrenceType(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.RecurrenceType"));
-			schedulerTrigger.setRecurrenceValue(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.RecurrenceValue"));
-			schedulerTrigger.setRecurrenceEndTime(context.longValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.RecurrenceEndTime"));
+			schedulerTrigger.setLaunchTime(_ctx.longValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.LaunchTime"));
+			schedulerTrigger.setLaunchExpirationTime(_ctx.integerValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.LaunchExpirationTime"));
+			schedulerTrigger.setRecurrenceType(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.RecurrenceType"));
+			schedulerTrigger.setRecurrenceValue(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.RecurrenceValue"));
+			schedulerTrigger.setRecurrenceEndTime(_ctx.longValue("ListScalingRuleResponse.RuleList["+ i +"].SchedulerTrigger.RecurrenceEndTime"));
 			rule.setSchedulerTrigger(schedulerTrigger);
 
 			CloudWatchTrigger cloudWatchTrigger = new CloudWatchTrigger();
-			cloudWatchTrigger.setMetricName(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.MetricName"));
-			cloudWatchTrigger.setPeriod(context.integerValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Period"));
-			cloudWatchTrigger.setStatistics(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Statistics"));
-			cloudWatchTrigger.setComparisonOperator(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.ComparisonOperator"));
-			cloudWatchTrigger.setThreshold(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Threshold"));
-			cloudWatchTrigger.setEvaluationCount(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.EvaluationCount"));
-			cloudWatchTrigger.setUnit(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Unit"));
-			cloudWatchTrigger.setMetricDisplayName(context.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.MetricDisplayName"));
+			cloudWatchTrigger.setMetricName(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.MetricName"));
+			cloudWatchTrigger.setPeriod(_ctx.integerValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Period"));
+			cloudWatchTrigger.setStatistics(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Statistics"));
+			cloudWatchTrigger.setComparisonOperator(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.ComparisonOperator"));
+			cloudWatchTrigger.setThreshold(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Threshold"));
+			cloudWatchTrigger.setEvaluationCount(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.EvaluationCount"));
+			cloudWatchTrigger.setUnit(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.Unit"));
+			cloudWatchTrigger.setMetricDisplayName(_ctx.stringValue("ListScalingRuleResponse.RuleList["+ i +"].CloudWatchTrigger.MetricDisplayName"));
 			rule.setCloudWatchTrigger(cloudWatchTrigger);
 
 			ruleList.add(rule);

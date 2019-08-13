@@ -26,53 +26,53 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeClusterServiceResponseUnmarshaller {
 
-	public static DescribeClusterServiceResponse unmarshall(DescribeClusterServiceResponse describeClusterServiceResponse, UnmarshallerContext context) {
+	public static DescribeClusterServiceResponse unmarshall(DescribeClusterServiceResponse describeClusterServiceResponse, UnmarshallerContext _ctx) {
 		
-		describeClusterServiceResponse.setRequestId(context.stringValue("DescribeClusterServiceResponse.RequestId"));
+		describeClusterServiceResponse.setRequestId(_ctx.stringValue("DescribeClusterServiceResponse.RequestId"));
 
 		ServiceInfo serviceInfo = new ServiceInfo();
-		serviceInfo.setServiceName(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceName"));
-		serviceInfo.setServiceVersion(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceVersion"));
-		serviceInfo.setServiceStatus(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceStatus"));
-		serviceInfo.setNeedRestartInfo(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartInfo"));
-		serviceInfo.setNeedRestartNum(context.integerValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartNum"));
+		serviceInfo.setServiceName(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceName"));
+		serviceInfo.setServiceVersion(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceVersion"));
+		serviceInfo.setServiceStatus(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceStatus"));
+		serviceInfo.setNeedRestartInfo(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartInfo"));
+		serviceInfo.setNeedRestartNum(_ctx.integerValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartNum"));
 
 		List<String> needRestartHostIdList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartHostIdList.Length"); i++) {
-			needRestartHostIdList.add(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartHostIdList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartHostIdList.Length"); i++) {
+			needRestartHostIdList.add(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartHostIdList["+ i +"]"));
 		}
 		serviceInfo.setNeedRestartHostIdList(needRestartHostIdList);
 
 		List<String> needRestartComponentNameList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartComponentNameList.Length"); i++) {
-			needRestartComponentNameList.add(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartComponentNameList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartComponentNameList.Length"); i++) {
+			needRestartComponentNameList.add(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.NeedRestartComponentNameList["+ i +"]"));
 		}
 		serviceInfo.setNeedRestartComponentNameList(needRestartComponentNameList);
 
 		List<ServiceAction> serviceActionList = new ArrayList<ServiceAction>();
-		for (int i = 0; i < context.lengthValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList.Length"); i++) {
 			ServiceAction serviceAction = new ServiceAction();
-			serviceAction.setServiceName(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].ServiceName"));
-			serviceAction.setComponentName(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].ComponentName"));
-			serviceAction.setActionName(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].ActionName"));
-			serviceAction.setCommand(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].Command"));
-			serviceAction.setDisplayName(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].DisplayName"));
+			serviceAction.setServiceName(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].ServiceName"));
+			serviceAction.setComponentName(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].ComponentName"));
+			serviceAction.setActionName(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].ActionName"));
+			serviceAction.setCommand(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].Command"));
+			serviceAction.setDisplayName(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ServiceActionList["+ i +"].DisplayName"));
 
 			serviceActionList.add(serviceAction);
 		}
 		serviceInfo.setServiceActionList(serviceActionList);
 
 		List<ClusterServiceSummary> clusterServiceSummaryList = new ArrayList<ClusterServiceSummary>();
-		for (int i = 0; i < context.lengthValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList.Length"); i++) {
 			ClusterServiceSummary clusterServiceSummary = new ClusterServiceSummary();
-			clusterServiceSummary.setKey(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Key"));
-			clusterServiceSummary.setDisplayName(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].DisplayName"));
-			clusterServiceSummary.setValue(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Value"));
-			clusterServiceSummary.setDesiredStoppedValue(context.integerValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].DesiredStoppedValue"));
-			clusterServiceSummary.setStatus(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Status"));
-			clusterServiceSummary.setType(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Type"));
-			clusterServiceSummary.setCategory(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Category"));
-			clusterServiceSummary.setAlertInfo(context.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].AlertInfo"));
+			clusterServiceSummary.setKey(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Key"));
+			clusterServiceSummary.setDisplayName(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].DisplayName"));
+			clusterServiceSummary.setValue(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Value"));
+			clusterServiceSummary.setDesiredStoppedValue(_ctx.integerValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].DesiredStoppedValue"));
+			clusterServiceSummary.setStatus(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Status"));
+			clusterServiceSummary.setType(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Type"));
+			clusterServiceSummary.setCategory(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].Category"));
+			clusterServiceSummary.setAlertInfo(_ctx.stringValue("DescribeClusterServiceResponse.ServiceInfo.ClusterServiceSummaryList["+ i +"].AlertInfo"));
 
 			clusterServiceSummaryList.add(clusterServiceSummary);
 		}

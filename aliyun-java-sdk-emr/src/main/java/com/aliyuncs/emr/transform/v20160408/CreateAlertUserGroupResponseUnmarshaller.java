@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateAlertUserGroupResponseUnmarshaller {
 
-	public static CreateAlertUserGroupResponse unmarshall(CreateAlertUserGroupResponse createAlertUserGroupResponse, UnmarshallerContext context) {
+	public static CreateAlertUserGroupResponse unmarshall(CreateAlertUserGroupResponse createAlertUserGroupResponse, UnmarshallerContext _ctx) {
 		
-		createAlertUserGroupResponse.setId(context.longValue("CreateAlertUserGroupResponse.Id"));
+		createAlertUserGroupResponse.setId(_ctx.longValue("CreateAlertUserGroupResponse.Id"));
 	 
 	 	return createAlertUserGroupResponse;
 	}

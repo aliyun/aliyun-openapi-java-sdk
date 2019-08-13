@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteAlertDingDingGroupsResponseUnmarshaller {
 
-	public static DeleteAlertDingDingGroupsResponse unmarshall(DeleteAlertDingDingGroupsResponse deleteAlertDingDingGroupsResponse, UnmarshallerContext context) {
+	public static DeleteAlertDingDingGroupsResponse unmarshall(DeleteAlertDingDingGroupsResponse deleteAlertDingDingGroupsResponse, UnmarshallerContext _ctx) {
 		
-		deleteAlertDingDingGroupsResponse.setDone(context.booleanValue("DeleteAlertDingDingGroupsResponse.Done"));
+		deleteAlertDingDingGroupsResponse.setDone(_ctx.booleanValue("DeleteAlertDingDingGroupsResponse.Done"));
 	 
 	 	return deleteAlertDingDingGroupsResponse;
 	}

@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -23,10 +24,16 @@ import com.aliyuncs.RpcAcsRequest;
 public class CloneDataSourceRequest extends RpcAcsRequest<CloneDataSourceResponse> {
 	
 	public CloneDataSourceRequest() {
-		super("Emr", "2016-04-08", "CloneDataSource");
+		super("Emr", "2016-04-08", "CloneDataSource", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String name;
 
 	private String id;
 
@@ -38,6 +45,17 @@ public class CloneDataSourceRequest extends RpcAcsRequest<CloneDataSourceRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

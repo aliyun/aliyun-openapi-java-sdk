@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteScalingTaskGroupResponseUnmarshaller {
 
-	public static DeleteScalingTaskGroupResponse unmarshall(DeleteScalingTaskGroupResponse deleteScalingTaskGroupResponse, UnmarshallerContext context) {
+	public static DeleteScalingTaskGroupResponse unmarshall(DeleteScalingTaskGroupResponse deleteScalingTaskGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteScalingTaskGroupResponse.setRequestId(context.stringValue("DeleteScalingTaskGroupResponse.RequestId"));
-		deleteScalingTaskGroupResponse.setData(context.booleanValue("DeleteScalingTaskGroupResponse.Data"));
+		deleteScalingTaskGroupResponse.setRequestId(_ctx.stringValue("DeleteScalingTaskGroupResponse.RequestId"));
+		deleteScalingTaskGroupResponse.setData(_ctx.booleanValue("DeleteScalingTaskGroupResponse.Data"));
 	 
 	 	return deleteScalingTaskGroupResponse;
 	}

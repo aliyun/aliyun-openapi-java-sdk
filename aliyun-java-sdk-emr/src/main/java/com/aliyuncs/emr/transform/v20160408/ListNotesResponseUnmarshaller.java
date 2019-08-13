@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListNotesResponseUnmarshaller {
 
-	public static ListNotesResponse unmarshall(ListNotesResponse listNotesResponse, UnmarshallerContext context) {
+	public static ListNotesResponse unmarshall(ListNotesResponse listNotesResponse, UnmarshallerContext _ctx) {
 		
-		listNotesResponse.setRequestId(context.stringValue("ListNotesResponse.RequestId"));
+		listNotesResponse.setRequestId(_ctx.stringValue("ListNotesResponse.RequestId"));
 
 		List<NoteInfo> notes = new ArrayList<NoteInfo>();
-		for (int i = 0; i < context.lengthValue("ListNotesResponse.Notes.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListNotesResponse.Notes.Length"); i++) {
 			NoteInfo noteInfo = new NoteInfo();
-			noteInfo.setId(context.stringValue("ListNotesResponse.Notes["+ i +"].Id"));
-			noteInfo.setName(context.stringValue("ListNotesResponse.Notes["+ i +"].Name"));
-			noteInfo.setType(context.stringValue("ListNotesResponse.Notes["+ i +"].Type"));
+			noteInfo.setId(_ctx.stringValue("ListNotesResponse.Notes["+ i +"].Id"));
+			noteInfo.setName(_ctx.stringValue("ListNotesResponse.Notes["+ i +"].Name"));
+			noteInfo.setType(_ctx.stringValue("ListNotesResponse.Notes["+ i +"].Type"));
 
 			notes.add(noteInfo);
 		}

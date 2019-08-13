@@ -24,42 +24,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFlowJobHistoryResponseUnmarshaller {
 
-	public static ListFlowJobHistoryResponse unmarshall(ListFlowJobHistoryResponse listFlowJobHistoryResponse, UnmarshallerContext context) {
+	public static ListFlowJobHistoryResponse unmarshall(ListFlowJobHistoryResponse listFlowJobHistoryResponse, UnmarshallerContext _ctx) {
 		
-		listFlowJobHistoryResponse.setRequestId(context.stringValue("ListFlowJobHistoryResponse.RequestId"));
-		listFlowJobHistoryResponse.setPageNumber(context.integerValue("ListFlowJobHistoryResponse.PageNumber"));
-		listFlowJobHistoryResponse.setPageSize(context.integerValue("ListFlowJobHistoryResponse.PageSize"));
-		listFlowJobHistoryResponse.setTotal(context.integerValue("ListFlowJobHistoryResponse.Total"));
+		listFlowJobHistoryResponse.setRequestId(_ctx.stringValue("ListFlowJobHistoryResponse.RequestId"));
+		listFlowJobHistoryResponse.setPageNumber(_ctx.integerValue("ListFlowJobHistoryResponse.PageNumber"));
+		listFlowJobHistoryResponse.setPageSize(_ctx.integerValue("ListFlowJobHistoryResponse.PageSize"));
+		listFlowJobHistoryResponse.setTotal(_ctx.integerValue("ListFlowJobHistoryResponse.Total"));
 
 		List<NodeInstance> nodeInstances = new ArrayList<NodeInstance>();
-		for (int i = 0; i < context.lengthValue("ListFlowJobHistoryResponse.NodeInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFlowJobHistoryResponse.NodeInstances.Length"); i++) {
 			NodeInstance nodeInstance = new NodeInstance();
-			nodeInstance.setId(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].Id"));
-			nodeInstance.setGmtCreate(context.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].GmtCreate"));
-			nodeInstance.setGmtModified(context.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].GmtModified"));
-			nodeInstance.setType(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].Type"));
-			nodeInstance.setStatus(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].Status"));
-			nodeInstance.setJobId(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].JobId"));
-			nodeInstance.setJobName(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].JobName"));
-			nodeInstance.setJobType(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].JobType"));
-			nodeInstance.setJobParams(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].JobParams"));
-			nodeInstance.setFailAct(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].FailAct"));
-			nodeInstance.setMaxRetry(context.integerValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].MaxRetry"));
-			nodeInstance.setRetryInterval(context.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].RetryInterval"));
-			nodeInstance.setNodeName(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].NodeName"));
-			nodeInstance.setClusterId(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ClusterId"));
-			nodeInstance.setHostName(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].HostName"));
-			nodeInstance.setProjectId(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ProjectId"));
-			nodeInstance.setStartTime(context.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].StartTime"));
-			nodeInstance.setEndTime(context.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].EndTime"));
-			nodeInstance.setPending(context.booleanValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].pending"));
-			nodeInstance.setRetries(context.integerValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].Retries"));
-			nodeInstance.setExternalId(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ExternalId"));
-			nodeInstance.setExternalStatus(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ExternalStatus"));
-			nodeInstance.setExternalInfo(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ExternalInfo"));
-			nodeInstance.setParamConf(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ParamConf"));
-			nodeInstance.setEnvConf(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].EnvConf"));
-			nodeInstance.setRunConf(context.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].RunConf"));
+			nodeInstance.setId(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].Id"));
+			nodeInstance.setGmtCreate(_ctx.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].GmtCreate"));
+			nodeInstance.setGmtModified(_ctx.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].GmtModified"));
+			nodeInstance.setType(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].Type"));
+			nodeInstance.setStatus(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].Status"));
+			nodeInstance.setJobId(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].JobId"));
+			nodeInstance.setJobName(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].JobName"));
+			nodeInstance.setJobType(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].JobType"));
+			nodeInstance.setJobParams(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].JobParams"));
+			nodeInstance.setFailAct(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].FailAct"));
+			nodeInstance.setMaxRetry(_ctx.integerValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].MaxRetry"));
+			nodeInstance.setRetryInterval(_ctx.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].RetryInterval"));
+			nodeInstance.setNodeName(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].NodeName"));
+			nodeInstance.setClusterId(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ClusterId"));
+			nodeInstance.setHostName(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].HostName"));
+			nodeInstance.setProjectId(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ProjectId"));
+			nodeInstance.setStartTime(_ctx.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].StartTime"));
+			nodeInstance.setEndTime(_ctx.longValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].EndTime"));
+			nodeInstance.setPending(_ctx.booleanValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].pending"));
+			nodeInstance.setRetries(_ctx.integerValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].Retries"));
+			nodeInstance.setExternalId(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ExternalId"));
+			nodeInstance.setExternalStatus(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ExternalStatus"));
+			nodeInstance.setExternalInfo(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ExternalInfo"));
+			nodeInstance.setParamConf(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].ParamConf"));
+			nodeInstance.setEnvConf(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].EnvConf"));
+			nodeInstance.setRunConf(_ctx.stringValue("ListFlowJobHistoryResponse.NodeInstances["+ i +"].RunConf"));
 
 			nodeInstances.add(nodeInstance);
 		}

@@ -20,19 +20,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeFlowCategoryResponseUnmarshaller {
 
-	public static DescribeFlowCategoryResponse unmarshall(DescribeFlowCategoryResponse describeFlowCategoryResponse, UnmarshallerContext context) {
+	public static DescribeFlowCategoryResponse unmarshall(DescribeFlowCategoryResponse describeFlowCategoryResponse, UnmarshallerContext _ctx) {
 		
-		describeFlowCategoryResponse.setRequestId(context.stringValue("DescribeFlowCategoryResponse.RequestId"));
-		describeFlowCategoryResponse.setId(context.stringValue("DescribeFlowCategoryResponse.Id"));
-		describeFlowCategoryResponse.setGmtCreate(context.longValue("DescribeFlowCategoryResponse.GmtCreate"));
-		describeFlowCategoryResponse.setGmtModified(context.longValue("DescribeFlowCategoryResponse.GmtModified"));
-		describeFlowCategoryResponse.setName(context.stringValue("DescribeFlowCategoryResponse.Name"));
-		describeFlowCategoryResponse.setParentId(context.stringValue("DescribeFlowCategoryResponse.ParentId"));
-		describeFlowCategoryResponse.setType(context.stringValue("DescribeFlowCategoryResponse.Type"));
-		describeFlowCategoryResponse.setCategoryType(context.stringValue("DescribeFlowCategoryResponse.CategoryType"));
-		describeFlowCategoryResponse.setObjectType(context.stringValue("DescribeFlowCategoryResponse.ObjectType"));
-		describeFlowCategoryResponse.setObjectId(context.stringValue("DescribeFlowCategoryResponse.ObjectId"));
-		describeFlowCategoryResponse.setProjectId(context.stringValue("DescribeFlowCategoryResponse.ProjectId"));
+		describeFlowCategoryResponse.setRequestId(_ctx.stringValue("DescribeFlowCategoryResponse.RequestId"));
+		describeFlowCategoryResponse.setId(_ctx.stringValue("DescribeFlowCategoryResponse.Id"));
+		describeFlowCategoryResponse.setGmtCreate(_ctx.longValue("DescribeFlowCategoryResponse.GmtCreate"));
+		describeFlowCategoryResponse.setGmtModified(_ctx.longValue("DescribeFlowCategoryResponse.GmtModified"));
+		describeFlowCategoryResponse.setName(_ctx.stringValue("DescribeFlowCategoryResponse.Name"));
+		describeFlowCategoryResponse.setParentId(_ctx.stringValue("DescribeFlowCategoryResponse.ParentId"));
+		describeFlowCategoryResponse.setType(_ctx.stringValue("DescribeFlowCategoryResponse.Type"));
+		describeFlowCategoryResponse.setCategoryType(_ctx.stringValue("DescribeFlowCategoryResponse.CategoryType"));
+		describeFlowCategoryResponse.setObjectType(_ctx.stringValue("DescribeFlowCategoryResponse.ObjectType"));
+		describeFlowCategoryResponse.setObjectId(_ctx.stringValue("DescribeFlowCategoryResponse.ObjectId"));
+		describeFlowCategoryResponse.setProjectId(_ctx.stringValue("DescribeFlowCategoryResponse.ProjectId"));
 	 
 	 	return describeFlowCategoryResponse;
 	}

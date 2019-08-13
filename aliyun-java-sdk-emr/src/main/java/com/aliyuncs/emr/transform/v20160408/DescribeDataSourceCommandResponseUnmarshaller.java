@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataSourceCommandResponseUnmarshaller {
 
-	public static DescribeDataSourceCommandResponse unmarshall(DescribeDataSourceCommandResponse describeDataSourceCommandResponse, UnmarshallerContext context) {
+	public static DescribeDataSourceCommandResponse unmarshall(DescribeDataSourceCommandResponse describeDataSourceCommandResponse, UnmarshallerContext _ctx) {
 		
-		describeDataSourceCommandResponse.setRequestId(context.stringValue("DescribeDataSourceCommandResponse.RequestId"));
-		describeDataSourceCommandResponse.setCommandId(context.stringValue("DescribeDataSourceCommandResponse.CommandId"));
-		describeDataSourceCommandResponse.setHostName(context.stringValue("DescribeDataSourceCommandResponse.HostName"));
-		describeDataSourceCommandResponse.setState(context.stringValue("DescribeDataSourceCommandResponse.State"));
-		describeDataSourceCommandResponse.setStartTime(context.longValue("DescribeDataSourceCommandResponse.StartTime"));
-		describeDataSourceCommandResponse.setEndTime(context.longValue("DescribeDataSourceCommandResponse.EndTime"));
-		describeDataSourceCommandResponse.setMessage(context.stringValue("DescribeDataSourceCommandResponse.Message"));
-		describeDataSourceCommandResponse.setData(context.stringValue("DescribeDataSourceCommandResponse.Data"));
+		describeDataSourceCommandResponse.setRequestId(_ctx.stringValue("DescribeDataSourceCommandResponse.RequestId"));
+		describeDataSourceCommandResponse.setCommandId(_ctx.stringValue("DescribeDataSourceCommandResponse.CommandId"));
+		describeDataSourceCommandResponse.setHostName(_ctx.stringValue("DescribeDataSourceCommandResponse.HostName"));
+		describeDataSourceCommandResponse.setState(_ctx.stringValue("DescribeDataSourceCommandResponse.State"));
+		describeDataSourceCommandResponse.setStartTime(_ctx.longValue("DescribeDataSourceCommandResponse.StartTime"));
+		describeDataSourceCommandResponse.setEndTime(_ctx.longValue("DescribeDataSourceCommandResponse.EndTime"));
+		describeDataSourceCommandResponse.setMessage(_ctx.stringValue("DescribeDataSourceCommandResponse.Message"));
+		describeDataSourceCommandResponse.setData(_ctx.stringValue("DescribeDataSourceCommandResponse.Data"));
 
 		List<Host> hostList = new ArrayList<Host>();
-		for (int i = 0; i < context.lengthValue("DescribeDataSourceCommandResponse.HostList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDataSourceCommandResponse.HostList.Length"); i++) {
 			Host host = new Host();
-			host.setHostName(context.stringValue("DescribeDataSourceCommandResponse.HostList["+ i +"].HostName"));
-			host.setState(context.stringValue("DescribeDataSourceCommandResponse.HostList["+ i +"].State"));
-			host.setStartTime(context.longValue("DescribeDataSourceCommandResponse.HostList["+ i +"].StartTime"));
-			host.setEndTime(context.longValue("DescribeDataSourceCommandResponse.HostList["+ i +"].EndTime"));
-			host.setMessage(context.stringValue("DescribeDataSourceCommandResponse.HostList["+ i +"].Message"));
-			host.setData(context.stringValue("DescribeDataSourceCommandResponse.HostList["+ i +"].Data"));
+			host.setHostName(_ctx.stringValue("DescribeDataSourceCommandResponse.HostList["+ i +"].HostName"));
+			host.setState(_ctx.stringValue("DescribeDataSourceCommandResponse.HostList["+ i +"].State"));
+			host.setStartTime(_ctx.longValue("DescribeDataSourceCommandResponse.HostList["+ i +"].StartTime"));
+			host.setEndTime(_ctx.longValue("DescribeDataSourceCommandResponse.HostList["+ i +"].EndTime"));
+			host.setMessage(_ctx.stringValue("DescribeDataSourceCommandResponse.HostList["+ i +"].Message"));
+			host.setData(_ctx.stringValue("DescribeDataSourceCommandResponse.HostList["+ i +"].Data"));
 
 			hostList.add(host);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveParagraphResponseUnmarshaller {
 
-	public static SaveParagraphResponse unmarshall(SaveParagraphResponse saveParagraphResponse, UnmarshallerContext context) {
+	public static SaveParagraphResponse unmarshall(SaveParagraphResponse saveParagraphResponse, UnmarshallerContext _ctx) {
 		
-		saveParagraphResponse.setRequestId(context.stringValue("SaveParagraphResponse.RequestId"));
+		saveParagraphResponse.setRequestId(_ctx.stringValue("SaveParagraphResponse.RequestId"));
 	 
 	 	return saveParagraphResponse;
 	}

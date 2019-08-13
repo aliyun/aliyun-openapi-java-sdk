@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteAlertContactsResponseUnmarshaller {
 
-	public static DeleteAlertContactsResponse unmarshall(DeleteAlertContactsResponse deleteAlertContactsResponse, UnmarshallerContext context) {
+	public static DeleteAlertContactsResponse unmarshall(DeleteAlertContactsResponse deleteAlertContactsResponse, UnmarshallerContext _ctx) {
 		
-		deleteAlertContactsResponse.setDone(context.booleanValue("DeleteAlertContactsResponse.Done"));
+		deleteAlertContactsResponse.setDone(_ctx.booleanValue("DeleteAlertContactsResponse.Done"));
 	 
 	 	return deleteAlertContactsResponse;
 	}

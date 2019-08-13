@@ -20,10 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitFlowResponseUnmarshaller {
 
-	public static SubmitFlowResponse unmarshall(SubmitFlowResponse submitFlowResponse, UnmarshallerContext context) {
+	public static SubmitFlowResponse unmarshall(SubmitFlowResponse submitFlowResponse, UnmarshallerContext _ctx) {
 		
-		submitFlowResponse.setRequestId(context.stringValue("SubmitFlowResponse.RequestId"));
-		submitFlowResponse.setId(context.stringValue("SubmitFlowResponse.Id"));
+		submitFlowResponse.setRequestId(_ctx.stringValue("SubmitFlowResponse.RequestId"));
+		submitFlowResponse.setInstanceId(_ctx.stringValue("SubmitFlowResponse.InstanceId"));
+		submitFlowResponse.setId(_ctx.stringValue("SubmitFlowResponse.Id"));
+		submitFlowResponse.setData(_ctx.stringValue("SubmitFlowResponse.Data"));
 	 
 	 	return submitFlowResponse;
 	}

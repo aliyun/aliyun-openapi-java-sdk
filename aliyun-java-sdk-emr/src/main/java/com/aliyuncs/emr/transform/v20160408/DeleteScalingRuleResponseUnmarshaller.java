@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteScalingRuleResponseUnmarshaller {
 
-	public static DeleteScalingRuleResponse unmarshall(DeleteScalingRuleResponse deleteScalingRuleResponse, UnmarshallerContext context) {
+	public static DeleteScalingRuleResponse unmarshall(DeleteScalingRuleResponse deleteScalingRuleResponse, UnmarshallerContext _ctx) {
 		
-		deleteScalingRuleResponse.setRequestId(context.stringValue("DeleteScalingRuleResponse.RequestId"));
-		deleteScalingRuleResponse.setData(context.booleanValue("DeleteScalingRuleResponse.Data"));
+		deleteScalingRuleResponse.setRequestId(_ctx.stringValue("DeleteScalingRuleResponse.RequestId"));
+		deleteScalingRuleResponse.setData(_ctx.booleanValue("DeleteScalingRuleResponse.Data"));
 	 
 	 	return deleteScalingRuleResponse;
 	}

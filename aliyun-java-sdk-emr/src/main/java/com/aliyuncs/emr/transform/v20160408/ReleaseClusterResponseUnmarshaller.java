@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReleaseClusterResponseUnmarshaller {
 
-	public static ReleaseClusterResponse unmarshall(ReleaseClusterResponse releaseClusterResponse, UnmarshallerContext context) {
+	public static ReleaseClusterResponse unmarshall(ReleaseClusterResponse releaseClusterResponse, UnmarshallerContext _ctx) {
 		
-		releaseClusterResponse.setRequestId(context.stringValue("ReleaseClusterResponse.RequestId"));
+		releaseClusterResponse.setRequestId(_ctx.stringValue("ReleaseClusterResponse.RequestId"));
 	 
 	 	return releaseClusterResponse;
 	}

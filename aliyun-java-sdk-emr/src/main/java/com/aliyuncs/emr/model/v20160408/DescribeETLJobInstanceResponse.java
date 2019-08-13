@@ -174,11 +174,9 @@ public class DescribeETLJobInstanceResponse extends AcsResponse {
 
 		private String name;
 
-		private Long startTime;
+		private Long stageStartTime;
 
-		private Long endTime;
-
-		private Metrics1 metrics1;
+		private Long stageEndTime;
 
 		public String getId() {
 			return this.id;
@@ -196,101 +194,20 @@ public class DescribeETLJobInstanceResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public Long getStartTime() {
-			return this.startTime;
+		public Long getStageStartTime() {
+			return this.stageStartTime;
 		}
 
-		public void setStartTime(Long startTime) {
-			this.startTime = startTime;
+		public void setStageStartTime(Long stageStartTime) {
+			this.stageStartTime = stageStartTime;
 		}
 
-		public Long getEndTime() {
-			return this.endTime;
+		public Long getStageEndTime() {
+			return this.stageEndTime;
 		}
 
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
-		}
-
-		public Metrics1 getMetrics1() {
-			return this.metrics1;
-		}
-
-		public void setMetrics1(Metrics1 metrics1) {
-			this.metrics1 = metrics1;
-		}
-
-		public static class Metrics1 {
-
-			private Long totalTime;
-
-			private Long recordsIn;
-
-			private Long recordsOut;
-
-			private Long recordsError;
-
-			private String recordsRate;
-
-			private Long vcores;
-
-			private Long memSize;
-
-			public Long getTotalTime() {
-				return this.totalTime;
-			}
-
-			public void setTotalTime(Long totalTime) {
-				this.totalTime = totalTime;
-			}
-
-			public Long getRecordsIn() {
-				return this.recordsIn;
-			}
-
-			public void setRecordsIn(Long recordsIn) {
-				this.recordsIn = recordsIn;
-			}
-
-			public Long getRecordsOut() {
-				return this.recordsOut;
-			}
-
-			public void setRecordsOut(Long recordsOut) {
-				this.recordsOut = recordsOut;
-			}
-
-			public Long getRecordsError() {
-				return this.recordsError;
-			}
-
-			public void setRecordsError(Long recordsError) {
-				this.recordsError = recordsError;
-			}
-
-			public String getRecordsRate() {
-				return this.recordsRate;
-			}
-
-			public void setRecordsRate(String recordsRate) {
-				this.recordsRate = recordsRate;
-			}
-
-			public Long getVcores() {
-				return this.vcores;
-			}
-
-			public void setVcores(Long vcores) {
-				this.vcores = vcores;
-			}
-
-			public Long getMemSize() {
-				return this.memSize;
-			}
-
-			public void setMemSize(Long memSize) {
-				this.memSize = memSize;
-			}
+		public void setStageEndTime(Long stageEndTime) {
+			this.stageEndTime = stageEndTime;
 		}
 	}
 

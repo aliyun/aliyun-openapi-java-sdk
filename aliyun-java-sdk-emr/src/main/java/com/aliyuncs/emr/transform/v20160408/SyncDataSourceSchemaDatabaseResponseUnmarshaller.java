@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SyncDataSourceSchemaDatabaseResponseUnmarshaller {
 
-	public static SyncDataSourceSchemaDatabaseResponse unmarshall(SyncDataSourceSchemaDatabaseResponse syncDataSourceSchemaDatabaseResponse, UnmarshallerContext context) {
+	public static SyncDataSourceSchemaDatabaseResponse unmarshall(SyncDataSourceSchemaDatabaseResponse syncDataSourceSchemaDatabaseResponse, UnmarshallerContext _ctx) {
 		
-		syncDataSourceSchemaDatabaseResponse.setRequestId(context.stringValue("SyncDataSourceSchemaDatabaseResponse.RequestId"));
-		syncDataSourceSchemaDatabaseResponse.setCommandId(context.stringValue("SyncDataSourceSchemaDatabaseResponse.CommandId"));
+		syncDataSourceSchemaDatabaseResponse.setRequestId(_ctx.stringValue("SyncDataSourceSchemaDatabaseResponse.RequestId"));
+		syncDataSourceSchemaDatabaseResponse.setCommandId(_ctx.stringValue("SyncDataSourceSchemaDatabaseResponse.CommandId"));
 	 
 	 	return syncDataSourceSchemaDatabaseResponse;
 	}

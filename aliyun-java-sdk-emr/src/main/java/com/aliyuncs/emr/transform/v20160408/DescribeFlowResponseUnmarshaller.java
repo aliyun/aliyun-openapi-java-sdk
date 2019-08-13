@@ -24,37 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeFlowResponseUnmarshaller {
 
-	public static DescribeFlowResponse unmarshall(DescribeFlowResponse describeFlowResponse, UnmarshallerContext context) {
+	public static DescribeFlowResponse unmarshall(DescribeFlowResponse describeFlowResponse, UnmarshallerContext _ctx) {
 		
-		describeFlowResponse.setRequestId(context.stringValue("DescribeFlowResponse.RequestId"));
-		describeFlowResponse.setId(context.stringValue("DescribeFlowResponse.Id"));
-		describeFlowResponse.setGmtCreate(context.longValue("DescribeFlowResponse.GmtCreate"));
-		describeFlowResponse.setGmtModified(context.longValue("DescribeFlowResponse.GmtModified"));
-		describeFlowResponse.setName(context.stringValue("DescribeFlowResponse.Name"));
-		describeFlowResponse.setDescription(context.stringValue("DescribeFlowResponse.Description"));
-		describeFlowResponse.setType(context.stringValue("DescribeFlowResponse.Type"));
-		describeFlowResponse.setStatus(context.stringValue("DescribeFlowResponse.Status"));
-		describeFlowResponse.setPeriodic(context.booleanValue("DescribeFlowResponse.Periodic"));
-		describeFlowResponse.setStartSchedule(context.longValue("DescribeFlowResponse.StartSchedule"));
-		describeFlowResponse.setEndSchedule(context.longValue("DescribeFlowResponse.EndSchedule"));
-		describeFlowResponse.setCronExpr(context.stringValue("DescribeFlowResponse.CronExpr"));
-		describeFlowResponse.setCreateCluster(context.booleanValue("DescribeFlowResponse.CreateCluster"));
-		describeFlowResponse.setClusterId(context.stringValue("DescribeFlowResponse.ClusterId"));
-		describeFlowResponse.setHostName(context.stringValue("DescribeFlowResponse.HostName"));
-		describeFlowResponse.setGraph(context.stringValue("DescribeFlowResponse.Graph"));
-		describeFlowResponse.setCategoryId(context.stringValue("DescribeFlowResponse.CategoryId"));
-		describeFlowResponse.setAlertConf(context.stringValue("DescribeFlowResponse.AlertConf"));
-		describeFlowResponse.setAlertUserGroupBizId(context.stringValue("DescribeFlowResponse.AlertUserGroupBizId"));
-		describeFlowResponse.setAlertDingDingGroupBizId(context.stringValue("DescribeFlowResponse.AlertDingDingGroupBizId"));
-		describeFlowResponse.setApplication(context.stringValue("DescribeFlowResponse.Application"));
+		describeFlowResponse.setRequestId(_ctx.stringValue("DescribeFlowResponse.RequestId"));
+		describeFlowResponse.setId(_ctx.stringValue("DescribeFlowResponse.Id"));
+		describeFlowResponse.setGmtCreate(_ctx.longValue("DescribeFlowResponse.GmtCreate"));
+		describeFlowResponse.setGmtModified(_ctx.longValue("DescribeFlowResponse.GmtModified"));
+		describeFlowResponse.setName(_ctx.stringValue("DescribeFlowResponse.Name"));
+		describeFlowResponse.setDescription(_ctx.stringValue("DescribeFlowResponse.Description"));
+		describeFlowResponse.setType(_ctx.stringValue("DescribeFlowResponse.Type"));
+		describeFlowResponse.setStatus(_ctx.stringValue("DescribeFlowResponse.Status"));
+		describeFlowResponse.setPeriodic(_ctx.booleanValue("DescribeFlowResponse.Periodic"));
+		describeFlowResponse.setStartSchedule(_ctx.longValue("DescribeFlowResponse.StartSchedule"));
+		describeFlowResponse.setEndSchedule(_ctx.longValue("DescribeFlowResponse.EndSchedule"));
+		describeFlowResponse.setCronExpr(_ctx.stringValue("DescribeFlowResponse.CronExpr"));
+		describeFlowResponse.setCreateCluster(_ctx.booleanValue("DescribeFlowResponse.CreateCluster"));
+		describeFlowResponse.setClusterId(_ctx.stringValue("DescribeFlowResponse.ClusterId"));
+		describeFlowResponse.setHostName(_ctx.stringValue("DescribeFlowResponse.HostName"));
+		describeFlowResponse.setGraph(_ctx.stringValue("DescribeFlowResponse.Graph"));
+		describeFlowResponse.setCategoryId(_ctx.stringValue("DescribeFlowResponse.CategoryId"));
+		describeFlowResponse.setAlertConf(_ctx.stringValue("DescribeFlowResponse.AlertConf"));
+		describeFlowResponse.setAlertUserGroupBizId(_ctx.stringValue("DescribeFlowResponse.AlertUserGroupBizId"));
+		describeFlowResponse.setAlertDingDingGroupBizId(_ctx.stringValue("DescribeFlowResponse.AlertDingDingGroupBizId"));
+		describeFlowResponse.setApplication(_ctx.stringValue("DescribeFlowResponse.Application"));
 
 		List<ParentFlow> parentFlowList = new ArrayList<ParentFlow>();
-		for (int i = 0; i < context.lengthValue("DescribeFlowResponse.ParentFlowList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeFlowResponse.ParentFlowList.Length"); i++) {
 			ParentFlow parentFlow = new ParentFlow();
-			parentFlow.setParentFlowId(context.stringValue("DescribeFlowResponse.ParentFlowList["+ i +"].ParentFlowId"));
-			parentFlow.setParentFlowName(context.stringValue("DescribeFlowResponse.ParentFlowList["+ i +"].ParentFlowName"));
-			parentFlow.setProjectId(context.stringValue("DescribeFlowResponse.ParentFlowList["+ i +"].ProjectId"));
-			parentFlow.setProjectName(context.stringValue("DescribeFlowResponse.ParentFlowList["+ i +"].ProjectName"));
+			parentFlow.setParentFlowId(_ctx.stringValue("DescribeFlowResponse.ParentFlowList["+ i +"].ParentFlowId"));
+			parentFlow.setParentFlowName(_ctx.stringValue("DescribeFlowResponse.ParentFlowList["+ i +"].ParentFlowName"));
+			parentFlow.setProjectId(_ctx.stringValue("DescribeFlowResponse.ParentFlowList["+ i +"].ProjectId"));
+			parentFlow.setProjectName(_ctx.stringValue("DescribeFlowResponse.ParentFlowList["+ i +"].ProjectName"));
 
 			parentFlowList.add(parentFlow);
 		}

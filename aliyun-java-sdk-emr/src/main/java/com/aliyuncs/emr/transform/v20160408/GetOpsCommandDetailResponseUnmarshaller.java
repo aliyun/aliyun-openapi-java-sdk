@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetOpsCommandDetailResponseUnmarshaller {
 
-	public static GetOpsCommandDetailResponse unmarshall(GetOpsCommandDetailResponse getOpsCommandDetailResponse, UnmarshallerContext context) {
+	public static GetOpsCommandDetailResponse unmarshall(GetOpsCommandDetailResponse getOpsCommandDetailResponse, UnmarshallerContext _ctx) {
 		
-		getOpsCommandDetailResponse.setRequestId(context.stringValue("GetOpsCommandDetailResponse.RequestId"));
-		getOpsCommandDetailResponse.setId(context.longValue("GetOpsCommandDetailResponse.Id"));
-		getOpsCommandDetailResponse.setName(context.stringValue("GetOpsCommandDetailResponse.Name"));
-		getOpsCommandDetailResponse.setDescription(context.stringValue("GetOpsCommandDetailResponse.Description"));
-		getOpsCommandDetailResponse.setTargetType(context.stringValue("GetOpsCommandDetailResponse.TargetType"));
-		getOpsCommandDetailResponse.setServiceName(context.stringValue("GetOpsCommandDetailResponse.ServiceName"));
-		getOpsCommandDetailResponse.setCategory(context.stringValue("GetOpsCommandDetailResponse.Category"));
-		getOpsCommandDetailResponse.setParams(context.stringValue("GetOpsCommandDetailResponse.Params"));
+		getOpsCommandDetailResponse.setRequestId(_ctx.stringValue("GetOpsCommandDetailResponse.RequestId"));
+		getOpsCommandDetailResponse.setId(_ctx.longValue("GetOpsCommandDetailResponse.Id"));
+		getOpsCommandDetailResponse.setName(_ctx.stringValue("GetOpsCommandDetailResponse.Name"));
+		getOpsCommandDetailResponse.setDescription(_ctx.stringValue("GetOpsCommandDetailResponse.Description"));
+		getOpsCommandDetailResponse.setTargetType(_ctx.stringValue("GetOpsCommandDetailResponse.TargetType"));
+		getOpsCommandDetailResponse.setServiceName(_ctx.stringValue("GetOpsCommandDetailResponse.ServiceName"));
+		getOpsCommandDetailResponse.setCategory(_ctx.stringValue("GetOpsCommandDetailResponse.Category"));
+		getOpsCommandDetailResponse.setParams(_ctx.stringValue("GetOpsCommandDetailResponse.Params"));
 	 
 	 	return getOpsCommandDetailResponse;
 	}

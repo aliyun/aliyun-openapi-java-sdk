@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResumeExecutionPlanInstanceResponseUnmarshaller {
 
-	public static ResumeExecutionPlanInstanceResponse unmarshall(ResumeExecutionPlanInstanceResponse resumeExecutionPlanInstanceResponse, UnmarshallerContext context) {
+	public static ResumeExecutionPlanInstanceResponse unmarshall(ResumeExecutionPlanInstanceResponse resumeExecutionPlanInstanceResponse, UnmarshallerContext _ctx) {
 		
-		resumeExecutionPlanInstanceResponse.setRequestId(context.stringValue("ResumeExecutionPlanInstanceResponse.RequestId"));
+		resumeExecutionPlanInstanceResponse.setRequestId(_ctx.stringValue("ResumeExecutionPlanInstanceResponse.RequestId"));
 	 
 	 	return resumeExecutionPlanInstanceResponse;
 	}

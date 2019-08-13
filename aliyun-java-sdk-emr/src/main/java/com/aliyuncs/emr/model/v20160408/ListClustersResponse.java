@@ -81,6 +81,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String name;
 
+		private String machineType;
+
 		private String type;
 
 		private Long createTime;
@@ -103,6 +105,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String depositType;
 
+		private String metaStoreType;
+
 		private OrderTaskInfo orderTaskInfo;
 
 		private FailReason failReason;
@@ -121,6 +125,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getMachineType() {
+			return this.machineType;
+		}
+
+		public void setMachineType(String machineType) {
+			this.machineType = machineType;
 		}
 
 		public String getType() {
@@ -209,6 +221,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setDepositType(String depositType) {
 			this.depositType = depositType;
+		}
+
+		public String getMetaStoreType() {
+			return this.metaStoreType;
+		}
+
+		public void setMetaStoreType(String metaStoreType) {
+			this.metaStoreType = metaStoreType;
 		}
 
 		public OrderTaskInfo getOrderTaskInfo() {

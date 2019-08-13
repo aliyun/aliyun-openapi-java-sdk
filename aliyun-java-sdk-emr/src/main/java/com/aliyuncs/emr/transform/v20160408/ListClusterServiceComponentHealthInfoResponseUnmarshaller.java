@@ -26,36 +26,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterServiceComponentHealthInfoResponseUnmarshaller {
 
-	public static ListClusterServiceComponentHealthInfoResponse unmarshall(ListClusterServiceComponentHealthInfoResponse listClusterServiceComponentHealthInfoResponse, UnmarshallerContext context) {
+	public static ListClusterServiceComponentHealthInfoResponse unmarshall(ListClusterServiceComponentHealthInfoResponse listClusterServiceComponentHealthInfoResponse, UnmarshallerContext _ctx) {
 		
-		listClusterServiceComponentHealthInfoResponse.setRequestId(context.stringValue("ListClusterServiceComponentHealthInfoResponse.RequestId"));
-		listClusterServiceComponentHealthInfoResponse.setClusterId(context.stringValue("ListClusterServiceComponentHealthInfoResponse.ClusterId"));
+		listClusterServiceComponentHealthInfoResponse.setRequestId(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.RequestId"));
+		listClusterServiceComponentHealthInfoResponse.setClusterId(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.ClusterId"));
 
 		List<HealthInfo> healthInfoList = new ArrayList<HealthInfo>();
-		for (int i = 0; i < context.lengthValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList.Length"); i++) {
 			HealthInfo healthInfo = new HealthInfo();
-			healthInfo.setServiceName(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].ServiceName"));
-			healthInfo.setComponentName(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].ComponentName"));
-			healthInfo.setHealthLevel(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthLevel"));
-			healthInfo.setStoppedNum(context.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].StoppedNum"));
-			healthInfo.setManualStoppedNum(context.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].ManualStoppedNum"));
-			healthInfo.setNormalNum(context.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].NormalNum"));
-			healthInfo.setTotalNum(context.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].TotalNum"));
-			healthInfo.setAgentHeartBeatLostNum(context.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].AgentHeartBeatLostNum"));
+			healthInfo.setServiceName(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].ServiceName"));
+			healthInfo.setComponentName(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].ComponentName"));
+			healthInfo.setHealthLevel(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthLevel"));
+			healthInfo.setStoppedNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].StoppedNum"));
+			healthInfo.setManualStoppedNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].ManualStoppedNum"));
+			healthInfo.setNormalNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].NormalNum"));
+			healthInfo.setTotalNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].TotalNum"));
+			healthInfo.setAgentHeartBeatLostNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].AgentHeartBeatLostNum"));
 
 			List<HealthDetail> healthDetailList = new ArrayList<HealthDetail>();
-			for (int j = 0; j < context.lengthValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList.Length"); j++) {
 				HealthDetail healthDetail = new HealthDetail();
-				healthDetail.setCode(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].code"));
+				healthDetail.setCode(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].code"));
 
 				HealthRuleParam healthRuleParam = new HealthRuleParam();
-				healthRuleParam.setService(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Service"));
-				healthRuleParam.setComponent(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Component"));
-				healthRuleParam.setRuleTitle(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleTitle"));
-				healthRuleParam.setPass(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Pass"));
-				healthRuleParam.setRuleId(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleId"));
-				healthRuleParam.setRuleDescription(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleDescription"));
-				healthRuleParam.setHostNames(context.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.HostNames"));
+				healthRuleParam.setService(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Service"));
+				healthRuleParam.setComponent(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Component"));
+				healthRuleParam.setRuleTitle(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleTitle"));
+				healthRuleParam.setPass(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Pass"));
+				healthRuleParam.setRuleId(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleId"));
+				healthRuleParam.setRuleDescription(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleDescription"));
+				healthRuleParam.setHostNames(_ctx.stringValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.HostNames"));
 				healthDetail.setHealthRuleParam(healthRuleParam);
 
 				healthDetailList.add(healthDetail);

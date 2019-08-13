@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListServiceLogResponseUnmarshaller {
 
-	public static ListServiceLogResponse unmarshall(ListServiceLogResponse listServiceLogResponse, UnmarshallerContext context) {
+	public static ListServiceLogResponse unmarshall(ListServiceLogResponse listServiceLogResponse, UnmarshallerContext _ctx) {
 		
-		listServiceLogResponse.setRequestId(context.stringValue("ListServiceLogResponse.RequestId"));
+		listServiceLogResponse.setRequestId(_ctx.stringValue("ListServiceLogResponse.RequestId"));
 
 		List<LogFile> logFileList = new ArrayList<LogFile>();
-		for (int i = 0; i < context.lengthValue("ListServiceLogResponse.LogFileList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListServiceLogResponse.LogFileList.Length"); i++) {
 			LogFile logFile = new LogFile();
-			logFile.setFileName(context.stringValue("ListServiceLogResponse.LogFileList["+ i +"].FileName"));
-			logFile.setSize(context.longValue("ListServiceLogResponse.LogFileList["+ i +"].Size"));
-			logFile.setHostName(context.stringValue("ListServiceLogResponse.LogFileList["+ i +"].HostName"));
-			logFile.setLastModified(context.longValue("ListServiceLogResponse.LogFileList["+ i +"].LastModified"));
+			logFile.setFileName(_ctx.stringValue("ListServiceLogResponse.LogFileList["+ i +"].FileName"));
+			logFile.setSize(_ctx.longValue("ListServiceLogResponse.LogFileList["+ i +"].Size"));
+			logFile.setHostName(_ctx.stringValue("ListServiceLogResponse.LogFileList["+ i +"].HostName"));
+			logFile.setLastModified(_ctx.longValue("ListServiceLogResponse.LogFileList["+ i +"].LastModified"));
 
 			logFileList.add(logFile);
 		}

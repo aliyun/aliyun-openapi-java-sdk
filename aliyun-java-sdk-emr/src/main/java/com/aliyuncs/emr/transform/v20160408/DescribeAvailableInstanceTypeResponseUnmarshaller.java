@@ -25,23 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAvailableInstanceTypeResponseUnmarshaller {
 
-	public static DescribeAvailableInstanceTypeResponse unmarshall(DescribeAvailableInstanceTypeResponse describeAvailableInstanceTypeResponse, UnmarshallerContext context) {
+	public static DescribeAvailableInstanceTypeResponse unmarshall(DescribeAvailableInstanceTypeResponse describeAvailableInstanceTypeResponse, UnmarshallerContext _ctx) {
 		
-		describeAvailableInstanceTypeResponse.setRequestId(context.stringValue("DescribeAvailableInstanceTypeResponse.RequestId"));
+		describeAvailableInstanceTypeResponse.setRequestId(_ctx.stringValue("DescribeAvailableInstanceTypeResponse.RequestId"));
 
 		List<EmrSupportInstanceType> emrSupportedInstanceTypeList = new ArrayList<EmrSupportInstanceType>();
-		for (int i = 0; i < context.lengthValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList.Length"); i++) {
 			EmrSupportInstanceType emrSupportInstanceType = new EmrSupportInstanceType();
-			emrSupportInstanceType.setClusterType(context.stringValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].ClusterType"));
+			emrSupportInstanceType.setClusterType(_ctx.stringValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].ClusterType"));
 
 			List<ClusterNodeTypeSupportInfo> nodeTypeSupportInfoList = new ArrayList<ClusterNodeTypeSupportInfo>();
-			for (int j = 0; j < context.lengthValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].NodeTypeSupportInfoList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].NodeTypeSupportInfoList.Length"); j++) {
 				ClusterNodeTypeSupportInfo clusterNodeTypeSupportInfo = new ClusterNodeTypeSupportInfo();
-				clusterNodeTypeSupportInfo.setClusterNodeType(context.stringValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].NodeTypeSupportInfoList["+ j +"].ClusterNodeType"));
+				clusterNodeTypeSupportInfo.setClusterNodeType(_ctx.stringValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].NodeTypeSupportInfoList["+ j +"].ClusterNodeType"));
 
 				List<String> supportInstanceTypeList = new ArrayList<String>();
-				for (int k = 0; k < context.lengthValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].NodeTypeSupportInfoList["+ j +"].SupportInstanceTypeList.Length"); k++) {
-					supportInstanceTypeList.add(context.stringValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].NodeTypeSupportInfoList["+ j +"].SupportInstanceTypeList["+ k +"]"));
+				for (int k = 0; k < _ctx.lengthValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].NodeTypeSupportInfoList["+ j +"].SupportInstanceTypeList.Length"); k++) {
+					supportInstanceTypeList.add(_ctx.stringValue("DescribeAvailableInstanceTypeResponse.EmrSupportedInstanceTypeList["+ i +"].NodeTypeSupportInfoList["+ j +"].SupportInstanceTypeList["+ k +"]"));
 				}
 				clusterNodeTypeSupportInfo.setSupportInstanceTypeList(supportInstanceTypeList);
 

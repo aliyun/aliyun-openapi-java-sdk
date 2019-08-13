@@ -109,6 +109,14 @@ public class DescribeClusterTemplateResponse extends AcsResponse {
 
 		private Boolean initCustomHiveMetaDb;
 
+		private String keyPairName;
+
+		private String masterPwd;
+
+		private String metaStoreType;
+
+		private String metaStoreConf;
+
 		private List<BootstrapAction> bootstrapActionList;
 
 		private List<HostGroup> hostGroupList;
@@ -363,6 +371,38 @@ public class DescribeClusterTemplateResponse extends AcsResponse {
 
 		public void setInitCustomHiveMetaDb(Boolean initCustomHiveMetaDb) {
 			this.initCustomHiveMetaDb = initCustomHiveMetaDb;
+		}
+
+		public String getKeyPairName() {
+			return this.keyPairName;
+		}
+
+		public void setKeyPairName(String keyPairName) {
+			this.keyPairName = keyPairName;
+		}
+
+		public String getMasterPwd() {
+			return this.masterPwd;
+		}
+
+		public void setMasterPwd(String masterPwd) {
+			this.masterPwd = masterPwd;
+		}
+
+		public String getMetaStoreType() {
+			return this.metaStoreType;
+		}
+
+		public void setMetaStoreType(String metaStoreType) {
+			this.metaStoreType = metaStoreType;
+		}
+
+		public String getMetaStoreConf() {
+			return this.metaStoreConf;
+		}
+
+		public void setMetaStoreConf(String metaStoreConf) {
+			this.metaStoreConf = metaStoreConf;
 		}
 
 		public List<BootstrapAction> getBootstrapActionList() {

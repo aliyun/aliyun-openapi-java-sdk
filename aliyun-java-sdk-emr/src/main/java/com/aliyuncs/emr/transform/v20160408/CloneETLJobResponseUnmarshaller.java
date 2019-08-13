@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CloneETLJobResponseUnmarshaller {
 
-	public static CloneETLJobResponse unmarshall(CloneETLJobResponse cloneETLJobResponse, UnmarshallerContext context) {
+	public static CloneETLJobResponse unmarshall(CloneETLJobResponse cloneETLJobResponse, UnmarshallerContext _ctx) {
 		
-		cloneETLJobResponse.setRequestId(context.stringValue("CloneETLJobResponse.RequestId"));
-		cloneETLJobResponse.setId(context.stringValue("CloneETLJobResponse.Id"));
+		cloneETLJobResponse.setRequestId(_ctx.stringValue("CloneETLJobResponse.RequestId"));
+		cloneETLJobResponse.setId(_ctx.stringValue("CloneETLJobResponse.Id"));
 	 
 	 	return cloneETLJobResponse;
 	}

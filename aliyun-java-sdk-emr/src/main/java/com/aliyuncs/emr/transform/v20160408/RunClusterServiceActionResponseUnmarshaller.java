@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RunClusterServiceActionResponseUnmarshaller {
 
-	public static RunClusterServiceActionResponse unmarshall(RunClusterServiceActionResponse runClusterServiceActionResponse, UnmarshallerContext context) {
+	public static RunClusterServiceActionResponse unmarshall(RunClusterServiceActionResponse runClusterServiceActionResponse, UnmarshallerContext _ctx) {
 		
-		runClusterServiceActionResponse.setRequestId(context.stringValue("RunClusterServiceActionResponse.RequestId"));
+		runClusterServiceActionResponse.setRequestId(_ctx.stringValue("RunClusterServiceActionResponse.RequestId"));
 	 
 	 	return runClusterServiceActionResponse;
 	}

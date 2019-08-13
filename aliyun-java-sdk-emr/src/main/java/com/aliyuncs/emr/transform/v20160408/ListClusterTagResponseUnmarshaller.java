@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterTagResponseUnmarshaller {
 
-	public static ListClusterTagResponse unmarshall(ListClusterTagResponse listClusterTagResponse, UnmarshallerContext context) {
+	public static ListClusterTagResponse unmarshall(ListClusterTagResponse listClusterTagResponse, UnmarshallerContext _ctx) {
 		
-		listClusterTagResponse.setRequestId(context.stringValue("ListClusterTagResponse.RequestId"));
+		listClusterTagResponse.setRequestId(_ctx.stringValue("ListClusterTagResponse.RequestId"));
 
 		List<ClusterTag> clusterTagList = new ArrayList<ClusterTag>();
-		for (int i = 0; i < context.lengthValue("ListClusterTagResponse.ClusterTagList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterTagResponse.ClusterTagList.Length"); i++) {
 			ClusterTag clusterTag = new ClusterTag();
-			clusterTag.setClusterId(context.stringValue("ListClusterTagResponse.ClusterTagList["+ i +"].ClusterId"));
+			clusterTag.setClusterId(_ctx.stringValue("ListClusterTagResponse.ClusterTagList["+ i +"].ClusterId"));
 
 			List<TagInfo> tagInfoList = new ArrayList<TagInfo>();
-			for (int j = 0; j < context.lengthValue("ListClusterTagResponse.ClusterTagList["+ i +"].TagInfoList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListClusterTagResponse.ClusterTagList["+ i +"].TagInfoList.Length"); j++) {
 				TagInfo tagInfo = new TagInfo();
-				tagInfo.setTagType(context.stringValue("ListClusterTagResponse.ClusterTagList["+ i +"].TagInfoList["+ j +"].TagType"));
-				tagInfo.setTagValue(context.stringValue("ListClusterTagResponse.ClusterTagList["+ i +"].TagInfoList["+ j +"].TagValue"));
-				tagInfo.setTagKey(context.stringValue("ListClusterTagResponse.ClusterTagList["+ i +"].TagInfoList["+ j +"].TagKey"));
+				tagInfo.setTagType(_ctx.stringValue("ListClusterTagResponse.ClusterTagList["+ i +"].TagInfoList["+ j +"].TagType"));
+				tagInfo.setTagValue(_ctx.stringValue("ListClusterTagResponse.ClusterTagList["+ i +"].TagInfoList["+ j +"].TagValue"));
+				tagInfo.setTagKey(_ctx.stringValue("ListClusterTagResponse.ClusterTagList["+ i +"].TagInfoList["+ j +"].TagKey"));
 
 				tagInfoList.add(tagInfo);
 			}

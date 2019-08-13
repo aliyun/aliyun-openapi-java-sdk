@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserStatisticsResponseUnmarshaller {
 
-	public static DescribeUserStatisticsResponse unmarshall(DescribeUserStatisticsResponse describeUserStatisticsResponse, UnmarshallerContext context) {
+	public static DescribeUserStatisticsResponse unmarshall(DescribeUserStatisticsResponse describeUserStatisticsResponse, UnmarshallerContext _ctx) {
 		
-		describeUserStatisticsResponse.setId(context.longValue("DescribeUserStatisticsResponse.Id"));
-		describeUserStatisticsResponse.setUserId(context.stringValue("DescribeUserStatisticsResponse.UserId"));
-		describeUserStatisticsResponse.setJobNum(context.integerValue("DescribeUserStatisticsResponse.JobNum"));
-		describeUserStatisticsResponse.setExecutePlanNum(context.integerValue("DescribeUserStatisticsResponse.ExecutePlanNum"));
-		describeUserStatisticsResponse.setInteractionJobNum(context.integerValue("DescribeUserStatisticsResponse.InteractionJobNum"));
-		describeUserStatisticsResponse.setJobMigratedNum(context.integerValue("DescribeUserStatisticsResponse.JobMigratedNum"));
-		describeUserStatisticsResponse.setExecutePlanMigratedNum(context.integerValue("DescribeUserStatisticsResponse.ExecutePlanMigratedNum"));
-		describeUserStatisticsResponse.setInteractionJobMigratedNum(context.integerValue("DescribeUserStatisticsResponse.InteractionJobMigratedNum"));
+		describeUserStatisticsResponse.setId(_ctx.longValue("DescribeUserStatisticsResponse.Id"));
+		describeUserStatisticsResponse.setUserId(_ctx.stringValue("DescribeUserStatisticsResponse.UserId"));
+		describeUserStatisticsResponse.setJobNum(_ctx.integerValue("DescribeUserStatisticsResponse.JobNum"));
+		describeUserStatisticsResponse.setExecutePlanNum(_ctx.integerValue("DescribeUserStatisticsResponse.ExecutePlanNum"));
+		describeUserStatisticsResponse.setInteractionJobNum(_ctx.integerValue("DescribeUserStatisticsResponse.InteractionJobNum"));
+		describeUserStatisticsResponse.setJobMigratedNum(_ctx.integerValue("DescribeUserStatisticsResponse.JobMigratedNum"));
+		describeUserStatisticsResponse.setExecutePlanMigratedNum(_ctx.integerValue("DescribeUserStatisticsResponse.ExecutePlanMigratedNum"));
+		describeUserStatisticsResponse.setInteractionJobMigratedNum(_ctx.integerValue("DescribeUserStatisticsResponse.InteractionJobMigratedNum"));
 	 
 	 	return describeUserStatisticsResponse;
 	}

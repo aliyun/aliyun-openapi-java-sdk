@@ -24,33 +24,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterHostComponentResponseUnmarshaller {
 
-	public static ListClusterHostComponentResponse unmarshall(ListClusterHostComponentResponse listClusterHostComponentResponse, UnmarshallerContext context) {
+	public static ListClusterHostComponentResponse unmarshall(ListClusterHostComponentResponse listClusterHostComponentResponse, UnmarshallerContext _ctx) {
 		
-		listClusterHostComponentResponse.setRequestId(context.stringValue("ListClusterHostComponentResponse.RequestId"));
-		listClusterHostComponentResponse.setPageNumber(context.integerValue("ListClusterHostComponentResponse.PageNumber"));
-		listClusterHostComponentResponse.setPageSize(context.integerValue("ListClusterHostComponentResponse.PageSize"));
-		listClusterHostComponentResponse.setTotal(context.integerValue("ListClusterHostComponentResponse.Total"));
+		listClusterHostComponentResponse.setRequestId(_ctx.stringValue("ListClusterHostComponentResponse.RequestId"));
+		listClusterHostComponentResponse.setPageNumber(_ctx.integerValue("ListClusterHostComponentResponse.PageNumber"));
+		listClusterHostComponentResponse.setPageSize(_ctx.integerValue("ListClusterHostComponentResponse.PageSize"));
+		listClusterHostComponentResponse.setTotal(_ctx.integerValue("ListClusterHostComponentResponse.Total"));
 
 		List<Component> componentList = new ArrayList<Component>();
-		for (int i = 0; i < context.lengthValue("ListClusterHostComponentResponse.ComponentList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterHostComponentResponse.ComponentList.Length"); i++) {
 			Component component = new Component();
-			component.setServiceName(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ServiceName"));
-			component.setServiceDisplayName(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ServiceDisplayName"));
-			component.setComponentName(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ComponentName"));
-			component.setComponentDisplayName(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ComponentDisplayName"));
-			component.setStatus(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].Status"));
-			component.setNeedRestart(context.booleanValue("ListClusterHostComponentResponse.ComponentList["+ i +"].NeedRestart"));
-			component.setHostId(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].HostId"));
-			component.setServerStatus(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ServerStatus"));
-			component.setHostName(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].HostName"));
-			component.setPublicIp(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].PublicIp"));
-			component.setPrivateIp(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].PrivateIp"));
-			component.setRole(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].Role"));
-			component.setInstanceType(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].InstanceType"));
-			component.setCpu(context.integerValue("ListClusterHostComponentResponse.ComponentList["+ i +"].Cpu"));
-			component.setMemory(context.integerValue("ListClusterHostComponentResponse.ComponentList["+ i +"].Memory"));
-			component.setHostInstanceId(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].HostInstanceId"));
-			component.setSerialNumber(context.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].SerialNumber"));
+			component.setServiceName(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ServiceName"));
+			component.setServiceDisplayName(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ServiceDisplayName"));
+			component.setComponentName(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ComponentName"));
+			component.setComponentDisplayName(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ComponentDisplayName"));
+			component.setStatus(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].Status"));
+			component.setNeedRestart(_ctx.booleanValue("ListClusterHostComponentResponse.ComponentList["+ i +"].NeedRestart"));
+			component.setHostId(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].HostId"));
+			component.setServerStatus(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].ServerStatus"));
+			component.setHostName(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].HostName"));
+			component.setPublicIp(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].PublicIp"));
+			component.setPrivateIp(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].PrivateIp"));
+			component.setRole(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].Role"));
+			component.setInstanceType(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].InstanceType"));
+			component.setCpu(_ctx.integerValue("ListClusterHostComponentResponse.ComponentList["+ i +"].Cpu"));
+			component.setMemory(_ctx.integerValue("ListClusterHostComponentResponse.ComponentList["+ i +"].Memory"));
+			component.setHostInstanceId(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].HostInstanceId"));
+			component.setSerialNumber(_ctx.stringValue("ListClusterHostComponentResponse.ComponentList["+ i +"].SerialNumber"));
 
 			componentList.add(component);
 		}

@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListUsersResponseUnmarshaller {
 
-	public static ListUsersResponse unmarshall(ListUsersResponse listUsersResponse, UnmarshallerContext context) {
+	public static ListUsersResponse unmarshall(ListUsersResponse listUsersResponse, UnmarshallerContext _ctx) {
 		
-		listUsersResponse.setRequestId(context.stringValue("ListUsersResponse.RequestId"));
+		listUsersResponse.setRequestId(_ctx.stringValue("ListUsersResponse.RequestId"));
 
 		List<User> userList = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("ListUsersResponse.UserList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.UserList.Length"); i++) {
 			User user = new User();
-			user.setUserName(context.stringValue("ListUsersResponse.UserList["+ i +"].UserName"));
-			user.setGroupName(context.stringValue("ListUsersResponse.UserList["+ i +"].GroupName"));
-			user.setUserId(context.stringValue("ListUsersResponse.UserList["+ i +"].UserId"));
-			user.setKnoxStatus(context.stringValue("ListUsersResponse.UserList["+ i +"].KnoxStatus"));
-			user.setLinuxStatus(context.stringValue("ListUsersResponse.UserList["+ i +"].LinuxStatus"));
-			user.setKerberosStatus(context.stringValue("ListUsersResponse.UserList["+ i +"].KerberosStatus"));
+			user.setUserName(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].UserName"));
+			user.setGroupName(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].GroupName"));
+			user.setUserId(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].UserId"));
+			user.setKnoxStatus(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].KnoxStatus"));
+			user.setLinuxStatus(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].LinuxStatus"));
+			user.setKerberosStatus(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].KerberosStatus"));
 
 			userList.add(user);
 		}

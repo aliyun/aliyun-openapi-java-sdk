@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetOpsCommandResultResponseUnmarshaller {
 
-	public static GetOpsCommandResultResponse unmarshall(GetOpsCommandResultResponse getOpsCommandResultResponse, UnmarshallerContext context) {
+	public static GetOpsCommandResultResponse unmarshall(GetOpsCommandResultResponse getOpsCommandResultResponse, UnmarshallerContext _ctx) {
 		
-		getOpsCommandResultResponse.setRequestId(context.stringValue("GetOpsCommandResultResponse.RequestId"));
-		getOpsCommandResultResponse.setContent(context.stringValue("GetOpsCommandResultResponse.Content"));
-		getOpsCommandResultResponse.setCursor(context.longValue("GetOpsCommandResultResponse.Cursor"));
-		getOpsCommandResultResponse.setFinished(context.booleanValue("GetOpsCommandResultResponse.Finished"));
+		getOpsCommandResultResponse.setRequestId(_ctx.stringValue("GetOpsCommandResultResponse.RequestId"));
+		getOpsCommandResultResponse.setContent(_ctx.stringValue("GetOpsCommandResultResponse.Content"));
+		getOpsCommandResultResponse.setCursor(_ctx.longValue("GetOpsCommandResultResponse.Cursor"));
+		getOpsCommandResultResponse.setFinished(_ctx.booleanValue("GetOpsCommandResultResponse.Finished"));
 	 
 	 	return getOpsCommandResultResponse;
 	}

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreCreateKafkaTopicResponseUnmarshaller {
 
-	public static MetastoreCreateKafkaTopicResponse unmarshall(MetastoreCreateKafkaTopicResponse metastoreCreateKafkaTopicResponse, UnmarshallerContext context) {
+	public static MetastoreCreateKafkaTopicResponse unmarshall(MetastoreCreateKafkaTopicResponse metastoreCreateKafkaTopicResponse, UnmarshallerContext _ctx) {
 		
-		metastoreCreateKafkaTopicResponse.setRequestId(context.stringValue("MetastoreCreateKafkaTopicResponse.RequestId"));
-		metastoreCreateKafkaTopicResponse.setTaskId(context.stringValue("MetastoreCreateKafkaTopicResponse.TaskId"));
+		metastoreCreateKafkaTopicResponse.setRequestId(_ctx.stringValue("MetastoreCreateKafkaTopicResponse.RequestId"));
+		metastoreCreateKafkaTopicResponse.setTaskId(_ctx.stringValue("MetastoreCreateKafkaTopicResponse.TaskId"));
 	 
 	 	return metastoreCreateKafkaTopicResponse;
 	}

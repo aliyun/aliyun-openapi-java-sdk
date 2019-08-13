@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateClusterWithTemplateResponseUnmarshaller {
 
-	public static CreateClusterWithTemplateResponse unmarshall(CreateClusterWithTemplateResponse createClusterWithTemplateResponse, UnmarshallerContext context) {
+	public static CreateClusterWithTemplateResponse unmarshall(CreateClusterWithTemplateResponse createClusterWithTemplateResponse, UnmarshallerContext _ctx) {
 		
-		createClusterWithTemplateResponse.setRequestId(context.stringValue("CreateClusterWithTemplateResponse.RequestId"));
-		createClusterWithTemplateResponse.setClusterId(context.stringValue("CreateClusterWithTemplateResponse.ClusterId"));
-		createClusterWithTemplateResponse.setEmrOrderId(context.stringValue("CreateClusterWithTemplateResponse.EmrOrderId"));
-		createClusterWithTemplateResponse.setMasterOrderId(context.stringValue("CreateClusterWithTemplateResponse.MasterOrderId"));
-		createClusterWithTemplateResponse.setCoreOrderId(context.stringValue("CreateClusterWithTemplateResponse.CoreOrderId"));
+		createClusterWithTemplateResponse.setRequestId(_ctx.stringValue("CreateClusterWithTemplateResponse.RequestId"));
+		createClusterWithTemplateResponse.setClusterId(_ctx.stringValue("CreateClusterWithTemplateResponse.ClusterId"));
+		createClusterWithTemplateResponse.setEmrOrderId(_ctx.stringValue("CreateClusterWithTemplateResponse.EmrOrderId"));
+		createClusterWithTemplateResponse.setMasterOrderId(_ctx.stringValue("CreateClusterWithTemplateResponse.MasterOrderId"));
+		createClusterWithTemplateResponse.setCoreOrderId(_ctx.stringValue("CreateClusterWithTemplateResponse.CoreOrderId"));
 	 
 	 	return createClusterWithTemplateResponse;
 	}

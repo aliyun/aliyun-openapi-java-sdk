@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -24,28 +25,32 @@ import java.util.List;
 public class UpdateETLJobRequest extends RpcAcsRequest<UpdateETLJobResponse> {
 	
 	public UpdateETLJobRequest() {
-		super("Emr", "2016-04-08", "UpdateETLJob");
+		super("Emr", "2016-04-08", "UpdateETLJob", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
-
-	private List<StageConnection> stageConnections;
 
 	private String clusterConfig;
 
 	private List<TriggerRule> triggerRules;
 
-	private List<Stage> stages;
-
 	private String alertConfig;
-
-	private String name;
 
 	private String description;
 
-	private String id;
-
 	private Boolean check;
+
+	private List<StageConnection> stageConnections;
+
+	private List<Stage> stages;
+
+	private String name;
+
+	private String id;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,21 +61,6 @@ public class UpdateETLJobRequest extends RpcAcsRequest<UpdateETLJobResponse> {
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
-	}
-
-	public List<StageConnection> getStageConnections() {
-		return this.stageConnections;
-	}
-
-	public void setStageConnections(List<StageConnection> stageConnections) {
-		this.stageConnections = stageConnections;	
-		if (stageConnections != null) {
-			for (int depth1 = 0; depth1 < stageConnections.size(); depth1++) {
-				putQueryParameter("StageConnection." + (depth1 + 1) + ".Port" , stageConnections.get(depth1).getPort());
-				putQueryParameter("StageConnection." + (depth1 + 1) + ".From" , stageConnections.get(depth1).getFrom());
-				putQueryParameter("StageConnection." + (depth1 + 1) + ".To" , stageConnections.get(depth1).getTo());
-			}
-		}	
 	}
 
 	public String getClusterConfig() {
@@ -100,6 +90,54 @@ public class UpdateETLJobRequest extends RpcAcsRequest<UpdateETLJobResponse> {
 		}	
 	}
 
+	public String getAlertConfig() {
+		return this.alertConfig;
+	}
+
+	public void setAlertConfig(String alertConfig) {
+		this.alertConfig = alertConfig;
+		if(alertConfig != null){
+			putQueryParameter("AlertConfig", alertConfig);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getCheck() {
+		return this.check;
+	}
+
+	public void setCheck(Boolean check) {
+		this.check = check;
+		if(check != null){
+			putQueryParameter("Check", check.toString());
+		}
+	}
+
+	public List<StageConnection> getStageConnections() {
+		return this.stageConnections;
+	}
+
+	public void setStageConnections(List<StageConnection> stageConnections) {
+		this.stageConnections = stageConnections;	
+		if (stageConnections != null) {
+			for (int depth1 = 0; depth1 < stageConnections.size(); depth1++) {
+				putQueryParameter("StageConnection." + (depth1 + 1) + ".Port" , stageConnections.get(depth1).getPort());
+				putQueryParameter("StageConnection." + (depth1 + 1) + ".From" , stageConnections.get(depth1).getFrom());
+				putQueryParameter("StageConnection." + (depth1 + 1) + ".To" , stageConnections.get(depth1).getTo());
+			}
+		}	
+	}
+
 	public List<Stage> getStages() {
 		return this.stages;
 	}
@@ -116,17 +154,6 @@ public class UpdateETLJobRequest extends RpcAcsRequest<UpdateETLJobResponse> {
 		}	
 	}
 
-	public String getAlertConfig() {
-		return this.alertConfig;
-	}
-
-	public void setAlertConfig(String alertConfig) {
-		this.alertConfig = alertConfig;
-		if(alertConfig != null){
-			putQueryParameter("AlertConfig", alertConfig);
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -138,17 +165,6 @@ public class UpdateETLJobRequest extends RpcAcsRequest<UpdateETLJobResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public String getId() {
 		return this.id;
 	}
@@ -157,50 +173,6 @@ public class UpdateETLJobRequest extends RpcAcsRequest<UpdateETLJobResponse> {
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
-		}
-	}
-
-	public Boolean getCheck() {
-		return this.check;
-	}
-
-	public void setCheck(Boolean check) {
-		this.check = check;
-		if(check != null){
-			putQueryParameter("Check", check.toString());
-		}
-	}
-
-	public static class StageConnection {
-
-		private String port;
-
-		private String from;
-
-		private String to;
-
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
-
-		public String getFrom() {
-			return this.from;
-		}
-
-		public void setFrom(String from) {
-			this.from = from;
-		}
-
-		public String getTo() {
-			return this.to;
-		}
-
-		public void setTo(String to) {
-			this.to = to;
 		}
 	}
 
@@ -244,6 +216,39 @@ public class UpdateETLJobRequest extends RpcAcsRequest<UpdateETLJobResponse> {
 
 		public void setEnabled(Boolean enabled) {
 			this.enabled = enabled;
+		}
+	}
+
+	public static class StageConnection {
+
+		private String port;
+
+		private String from;
+
+		private String to;
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
+		}
+
+		public String getFrom() {
+			return this.from;
+		}
+
+		public void setFrom(String from) {
+			this.from = from;
+		}
+
+		public String getTo() {
+			return this.to;
+		}
+
+		public void setTo(String to) {
+			this.to = to;
 		}
 	}
 

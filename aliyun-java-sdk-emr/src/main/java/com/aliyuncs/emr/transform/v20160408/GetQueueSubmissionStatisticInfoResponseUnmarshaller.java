@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetQueueSubmissionStatisticInfoResponseUnmarshaller {
 
-	public static GetQueueSubmissionStatisticInfoResponse unmarshall(GetQueueSubmissionStatisticInfoResponse getQueueSubmissionStatisticInfoResponse, UnmarshallerContext context) {
+	public static GetQueueSubmissionStatisticInfoResponse unmarshall(GetQueueSubmissionStatisticInfoResponse getQueueSubmissionStatisticInfoResponse, UnmarshallerContext _ctx) {
 		
-		getQueueSubmissionStatisticInfoResponse.setRequestId(context.stringValue("GetQueueSubmissionStatisticInfoResponse.RequestId"));
+		getQueueSubmissionStatisticInfoResponse.setRequestId(_ctx.stringValue("GetQueueSubmissionStatisticInfoResponse.RequestId"));
 
 		List<ClusterStatQueueSubmission> queueSubmissionList = new ArrayList<ClusterStatQueueSubmission>();
-		for (int i = 0; i < context.lengthValue("GetQueueSubmissionStatisticInfoResponse.QueueSubmissionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetQueueSubmissionStatisticInfoResponse.QueueSubmissionList.Length"); i++) {
 			ClusterStatQueueSubmission clusterStatQueueSubmission = new ClusterStatQueueSubmission();
-			clusterStatQueueSubmission.setQueue(context.stringValue("GetQueueSubmissionStatisticInfoResponse.QueueSubmissionList["+ i +"].Queue"));
-			clusterStatQueueSubmission.setSubmission(context.longValue("GetQueueSubmissionStatisticInfoResponse.QueueSubmissionList["+ i +"].Submission"));
+			clusterStatQueueSubmission.setQueue(_ctx.stringValue("GetQueueSubmissionStatisticInfoResponse.QueueSubmissionList["+ i +"].Queue"));
+			clusterStatQueueSubmission.setSubmission(_ctx.longValue("GetQueueSubmissionStatisticInfoResponse.QueueSubmissionList["+ i +"].Submission"));
 
 			queueSubmissionList.add(clusterStatQueueSubmission);
 		}

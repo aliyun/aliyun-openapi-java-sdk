@@ -25,29 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreDescribeDataSourceResponseUnmarshaller {
 
-	public static MetastoreDescribeDataSourceResponse unmarshall(MetastoreDescribeDataSourceResponse metastoreDescribeDataSourceResponse, UnmarshallerContext context) {
+	public static MetastoreDescribeDataSourceResponse unmarshall(MetastoreDescribeDataSourceResponse metastoreDescribeDataSourceResponse, UnmarshallerContext _ctx) {
 		
-		metastoreDescribeDataSourceResponse.setRequestId(context.stringValue("MetastoreDescribeDataSourceResponse.RequestId"));
+		metastoreDescribeDataSourceResponse.setRequestId(_ctx.stringValue("MetastoreDescribeDataSourceResponse.RequestId"));
 
 		DataSource dataSource = new DataSource();
-		dataSource.setId(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.Id"));
-		dataSource.setName(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.Name"));
-		dataSource.setSourceType(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.SourceType"));
-		dataSource.setDescription(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.Description"));
-		dataSource.setConnectionInfo(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ConnectionInfo"));
-		dataSource.setClusterBizId(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ClusterBizId"));
-		dataSource.setClusterName(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ClusterName"));
-		dataSource.setUserId(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.UserId"));
-		dataSource.setGmtCreate(context.longValue("MetastoreDescribeDataSourceResponse.DataSource.GmtCreate"));
-		dataSource.setGmtModified(context.longValue("MetastoreDescribeDataSourceResponse.DataSource.GmtModified"));
-		dataSource.setCapacity(context.longValue("MetastoreDescribeDataSourceResponse.DataSource.Capacity"));
-		dataSource.setUsedSize(context.longValue("MetastoreDescribeDataSourceResponse.DataSource.UsedSize"));
+		dataSource.setId(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.Id"));
+		dataSource.setName(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.Name"));
+		dataSource.setSourceType(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.SourceType"));
+		dataSource.setDescription(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.Description"));
+		dataSource.setConnectionInfo(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ConnectionInfo"));
+		dataSource.setClusterBizId(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ClusterBizId"));
+		dataSource.setClusterName(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ClusterName"));
+		dataSource.setUserId(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.UserId"));
+		dataSource.setGmtCreate(_ctx.longValue("MetastoreDescribeDataSourceResponse.DataSource.GmtCreate"));
+		dataSource.setGmtModified(_ctx.longValue("MetastoreDescribeDataSourceResponse.DataSource.GmtModified"));
+		dataSource.setCapacity(_ctx.longValue("MetastoreDescribeDataSourceResponse.DataSource.Capacity"));
+		dataSource.setUsedSize(_ctx.longValue("MetastoreDescribeDataSourceResponse.DataSource.UsedSize"));
 
 		List<Config> configList = new ArrayList<Config>();
-		for (int i = 0; i < context.lengthValue("MetastoreDescribeDataSourceResponse.DataSource.ConfigList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreDescribeDataSourceResponse.DataSource.ConfigList.Length"); i++) {
 			Config config = new Config();
-			config.setConfigName(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ConfigList["+ i +"].ConfigName"));
-			config.setValue(context.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ConfigList["+ i +"].Value"));
+			config.setConfigName(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ConfigList["+ i +"].ConfigName"));
+			config.setValue(_ctx.stringValue("MetastoreDescribeDataSourceResponse.DataSource.ConfigList["+ i +"].Value"));
 
 			configList.add(config);
 		}

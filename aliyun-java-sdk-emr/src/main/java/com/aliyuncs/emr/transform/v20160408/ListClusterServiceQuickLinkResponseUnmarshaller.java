@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterServiceQuickLinkResponseUnmarshaller {
 
-	public static ListClusterServiceQuickLinkResponse unmarshall(ListClusterServiceQuickLinkResponse listClusterServiceQuickLinkResponse, UnmarshallerContext context) {
+	public static ListClusterServiceQuickLinkResponse unmarshall(ListClusterServiceQuickLinkResponse listClusterServiceQuickLinkResponse, UnmarshallerContext _ctx) {
 		
-		listClusterServiceQuickLinkResponse.setRequestId(context.stringValue("ListClusterServiceQuickLinkResponse.RequestId"));
+		listClusterServiceQuickLinkResponse.setRequestId(_ctx.stringValue("ListClusterServiceQuickLinkResponse.RequestId"));
 
 		List<QuickLink> quickLinkList = new ArrayList<QuickLink>();
-		for (int i = 0; i < context.lengthValue("ListClusterServiceQuickLinkResponse.QuickLinkList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterServiceQuickLinkResponse.QuickLinkList.Length"); i++) {
 			QuickLink quickLink = new QuickLink();
-			quickLink.setServiceName(context.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].ServiceName"));
-			quickLink.setServiceDisplayName(context.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].ServiceDisplayName"));
-			quickLink.setQuickLinkAddress(context.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].QuickLinkAddress"));
-			quickLink.setProtocol(context.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Protocol"));
-			quickLink.setPort(context.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Port"));
-			quickLink.setType(context.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Type"));
+			quickLink.setServiceName(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].ServiceName"));
+			quickLink.setServiceDisplayName(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].ServiceDisplayName"));
+			quickLink.setQuickLinkAddress(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].QuickLinkAddress"));
+			quickLink.setProtocol(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Protocol"));
+			quickLink.setPort(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Port"));
+			quickLink.setType(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Type"));
 
 			quickLinkList.add(quickLink);
 		}

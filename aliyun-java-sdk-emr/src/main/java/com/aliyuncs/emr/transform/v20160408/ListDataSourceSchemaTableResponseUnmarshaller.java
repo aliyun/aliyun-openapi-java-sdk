@@ -25,28 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDataSourceSchemaTableResponseUnmarshaller {
 
-	public static ListDataSourceSchemaTableResponse unmarshall(ListDataSourceSchemaTableResponse listDataSourceSchemaTableResponse, UnmarshallerContext context) {
+	public static ListDataSourceSchemaTableResponse unmarshall(ListDataSourceSchemaTableResponse listDataSourceSchemaTableResponse, UnmarshallerContext _ctx) {
 		
-		listDataSourceSchemaTableResponse.setRequestId(context.stringValue("ListDataSourceSchemaTableResponse.RequestId"));
-		listDataSourceSchemaTableResponse.setDataSourceId(context.stringValue("ListDataSourceSchemaTableResponse.DataSourceId"));
+		listDataSourceSchemaTableResponse.setRequestId(_ctx.stringValue("ListDataSourceSchemaTableResponse.RequestId"));
+		listDataSourceSchemaTableResponse.setDataSourceId(_ctx.stringValue("ListDataSourceSchemaTableResponse.DataSourceId"));
 
 		List<Schema> schemaList = new ArrayList<Schema>();
-		for (int i = 0; i < context.lengthValue("ListDataSourceSchemaTableResponse.SchemaList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDataSourceSchemaTableResponse.SchemaList.Length"); i++) {
 			Schema schema = new Schema();
-			schema.setDbType(context.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].DbType"));
-			schema.setDbVersion(context.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].DbVersion"));
-			schema.setDbName(context.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].DbName"));
-			schema.setTableName(context.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].TableName"));
+			schema.setDbType(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].DbType"));
+			schema.setDbVersion(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].DbVersion"));
+			schema.setDbName(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].DbName"));
+			schema.setTableName(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].TableName"));
 
 			List<Field> fields = new ArrayList<Field>();
-			for (int j = 0; j < context.lengthValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields.Length"); j++) {
 				Field field = new Field();
-				field.setType(context.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].Type"));
-				field.setName(context.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].Name"));
-				field.setIndex(context.integerValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].Index"));
-				field.setRawType(context.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].RawType"));
-				field.setAssignType(context.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].AssignType"));
-				field.setAssignValue(context.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].AssignValue"));
+				field.setType(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].Type"));
+				field.setLength(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].Length"));
+				field.setName(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].Name"));
+				field.setIndex(_ctx.integerValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].Index"));
+				field.setRawType(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].RawType"));
+				field.setAssignType(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].AssignType"));
+				field.setAssignValue(_ctx.stringValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].AssignValue"));
+				field.setPartitionKey(_ctx.booleanValue("ListDataSourceSchemaTableResponse.SchemaList["+ i +"].Fields["+ j +"].PartitionKey"));
 
 				fields.add(field);
 			}

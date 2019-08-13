@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSupportedServiceNameResponseUnmarshaller {
 
-	public static ListSupportedServiceNameResponse unmarshall(ListSupportedServiceNameResponse listSupportedServiceNameResponse, UnmarshallerContext context) {
+	public static ListSupportedServiceNameResponse unmarshall(ListSupportedServiceNameResponse listSupportedServiceNameResponse, UnmarshallerContext _ctx) {
 		
-		listSupportedServiceNameResponse.setRequestId(context.stringValue("ListSupportedServiceNameResponse.RequestId"));
+		listSupportedServiceNameResponse.setRequestId(_ctx.stringValue("ListSupportedServiceNameResponse.RequestId"));
 
 		List<String> supportedServiceNameList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ListSupportedServiceNameResponse.SupportedServiceNameList.Length"); i++) {
-			supportedServiceNameList.add(context.stringValue("ListSupportedServiceNameResponse.SupportedServiceNameList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ListSupportedServiceNameResponse.SupportedServiceNameList.Length"); i++) {
+			supportedServiceNameList.add(_ctx.stringValue("ListSupportedServiceNameResponse.SupportedServiceNameList["+ i +"]"));
 		}
 		listSupportedServiceNameResponse.setSupportedServiceNameList(supportedServiceNameList);
 	 

@@ -25,31 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListExecutePlanMigrateInfoResponseUnmarshaller {
 
-	public static ListExecutePlanMigrateInfoResponse unmarshall(ListExecutePlanMigrateInfoResponse listExecutePlanMigrateInfoResponse, UnmarshallerContext context) {
+	public static ListExecutePlanMigrateInfoResponse unmarshall(ListExecutePlanMigrateInfoResponse listExecutePlanMigrateInfoResponse, UnmarshallerContext _ctx) {
 		
-		listExecutePlanMigrateInfoResponse.setTotal(context.longValue("ListExecutePlanMigrateInfoResponse.Total"));
+		listExecutePlanMigrateInfoResponse.setTotal(_ctx.longValue("ListExecutePlanMigrateInfoResponse.Total"));
 
 		List<ExecutePlanMigrateInfo> executePlanMigrateInfoList = new ArrayList<ExecutePlanMigrateInfo>();
-		for (int i = 0; i < context.lengthValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList.Length"); i++) {
 			ExecutePlanMigrateInfo executePlanMigrateInfo = new ExecutePlanMigrateInfo();
-			executePlanMigrateInfo.setId(context.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].Id"));
-			executePlanMigrateInfo.setBizId(context.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].BizId"));
-			executePlanMigrateInfo.setCreateTime(context.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].CreateTime"));
-			executePlanMigrateInfo.setName(context.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].Name"));
-			executePlanMigrateInfo.setStatus(context.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].Status"));
-			executePlanMigrateInfo.setCronExpr(context.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].CronExpr"));
-			executePlanMigrateInfo.setStartScheduleTime(context.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].StartScheduleTime"));
-			executePlanMigrateInfo.setIsCycle(context.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].IsCycle"));
-			executePlanMigrateInfo.setBuildClusterCondition(context.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].BuildClusterCondition"));
+			executePlanMigrateInfo.setId(_ctx.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].Id"));
+			executePlanMigrateInfo.setBizId(_ctx.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].BizId"));
+			executePlanMigrateInfo.setCreateTime(_ctx.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].CreateTime"));
+			executePlanMigrateInfo.setName(_ctx.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].Name"));
+			executePlanMigrateInfo.setStatus(_ctx.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].Status"));
+			executePlanMigrateInfo.setCronExpr(_ctx.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].CronExpr"));
+			executePlanMigrateInfo.setStartScheduleTime(_ctx.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].StartScheduleTime"));
+			executePlanMigrateInfo.setIsCycle(_ctx.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].IsCycle"));
+			executePlanMigrateInfo.setBuildClusterCondition(_ctx.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].BuildClusterCondition"));
 
 			List<JobInfo> jobList = new ArrayList<JobInfo>();
-			for (int j = 0; j < context.lengthValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList.Length"); j++) {
 				JobInfo jobInfo = new JobInfo();
-				jobInfo.setClusterId(context.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].ClusterId"));
-				jobInfo.setJobId(context.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].JobId"));
-				jobInfo.setDescription(context.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].Description"));
-				jobInfo.setIndexNO(context.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].IndexNO"));
-				jobInfo.setStatus(context.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].Status"));
+				jobInfo.setClusterId(_ctx.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].ClusterId"));
+				jobInfo.setJobId(_ctx.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].JobId"));
+				jobInfo.setDescription(_ctx.stringValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].Description"));
+				jobInfo.setIndexNO(_ctx.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].IndexNO"));
+				jobInfo.setStatus(_ctx.longValue("ListExecutePlanMigrateInfoResponse.ExecutePlanMigrateInfoList["+ i +"].JobList["+ j +"].Status"));
 
 				jobList.add(jobInfo);
 			}

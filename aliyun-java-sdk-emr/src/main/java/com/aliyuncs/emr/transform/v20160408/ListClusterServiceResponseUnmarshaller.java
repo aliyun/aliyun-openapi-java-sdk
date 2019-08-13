@@ -25,37 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterServiceResponseUnmarshaller {
 
-	public static ListClusterServiceResponse unmarshall(ListClusterServiceResponse listClusterServiceResponse, UnmarshallerContext context) {
+	public static ListClusterServiceResponse unmarshall(ListClusterServiceResponse listClusterServiceResponse, UnmarshallerContext _ctx) {
 		
-		listClusterServiceResponse.setRequestId(context.stringValue("ListClusterServiceResponse.RequestId"));
-		listClusterServiceResponse.setTotalCount(context.integerValue("ListClusterServiceResponse.TotalCount"));
-		listClusterServiceResponse.setPageNumber(context.integerValue("ListClusterServiceResponse.PageNumber"));
-		listClusterServiceResponse.setPageSize(context.integerValue("ListClusterServiceResponse.PageSize"));
+		listClusterServiceResponse.setRequestId(_ctx.stringValue("ListClusterServiceResponse.RequestId"));
+		listClusterServiceResponse.setTotalCount(_ctx.integerValue("ListClusterServiceResponse.TotalCount"));
+		listClusterServiceResponse.setPageNumber(_ctx.integerValue("ListClusterServiceResponse.PageNumber"));
+		listClusterServiceResponse.setPageSize(_ctx.integerValue("ListClusterServiceResponse.PageSize"));
 
 		List<ClusterService> clusterServiceList = new ArrayList<ClusterService>();
-		for (int i = 0; i < context.lengthValue("ListClusterServiceResponse.ClusterServiceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterServiceResponse.ClusterServiceList.Length"); i++) {
 			ClusterService clusterService = new ClusterService();
-			clusterService.setServiceName(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceName"));
-			clusterService.setServiceDisplayName(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceDisplayName"));
-			clusterService.setServiceVersion(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceVersion"));
-			clusterService.setInstallStatus(context.booleanValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].InstallStatus"));
-			clusterService.setClientType(context.booleanValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ClientType"));
-			clusterService.setServiceStatus(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceStatus"));
-			clusterService.setHealthStatus(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].HealthStatus"));
-			clusterService.setNeedRestartInfo(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].NeedRestartInfo"));
-			clusterService.setNotStartInfo(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].NotStartInfo"));
-			clusterService.setAbnormalNum(context.integerValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].AbnormalNum"));
-			clusterService.setStoppedNum(context.integerValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].StoppedNum"));
-			clusterService.setNeedRestartNum(context.integerValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].NeedRestartNum"));
+			clusterService.setServiceName(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceName"));
+			clusterService.setServiceDisplayName(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceDisplayName"));
+			clusterService.setServiceVersion(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceVersion"));
+			clusterService.setInstallStatus(_ctx.booleanValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].InstallStatus"));
+			clusterService.setClientType(_ctx.booleanValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ClientType"));
+			clusterService.setServiceStatus(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceStatus"));
+			clusterService.setHealthStatus(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].HealthStatus"));
+			clusterService.setNeedRestartInfo(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].NeedRestartInfo"));
+			clusterService.setNotStartInfo(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].NotStartInfo"));
+			clusterService.setAbnormalNum(_ctx.integerValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].AbnormalNum"));
+			clusterService.setStoppedNum(_ctx.integerValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].StoppedNum"));
+			clusterService.setNeedRestartNum(_ctx.integerValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].NeedRestartNum"));
 
 			List<ServiceAction> serviceActionList = new ArrayList<ServiceAction>();
-			for (int j = 0; j < context.lengthValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList.Length"); j++) {
 				ServiceAction serviceAction = new ServiceAction();
-				serviceAction.setServiceName(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].ServiceName"));
-				serviceAction.setComponentName(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].ComponentName"));
-				serviceAction.setActionName(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].ActionName"));
-				serviceAction.setCommand(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].Command"));
-				serviceAction.setDisplayName(context.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].DisplayName"));
+				serviceAction.setServiceName(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].ServiceName"));
+				serviceAction.setComponentName(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].ComponentName"));
+				serviceAction.setActionName(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].ActionName"));
+				serviceAction.setCommand(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].Command"));
+				serviceAction.setDisplayName(_ctx.stringValue("ListClusterServiceResponse.ClusterServiceList["+ i +"].ServiceActionList["+ j +"].DisplayName"));
 
 				serviceActionList.add(serviceAction);
 			}

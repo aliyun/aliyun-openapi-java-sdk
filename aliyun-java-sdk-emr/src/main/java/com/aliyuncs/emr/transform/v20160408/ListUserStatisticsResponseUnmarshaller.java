@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListUserStatisticsResponseUnmarshaller {
 
-	public static ListUserStatisticsResponse unmarshall(ListUserStatisticsResponse listUserStatisticsResponse, UnmarshallerContext context) {
+	public static ListUserStatisticsResponse unmarshall(ListUserStatisticsResponse listUserStatisticsResponse, UnmarshallerContext _ctx) {
 		
-		listUserStatisticsResponse.setTotal(context.longValue("ListUserStatisticsResponse.Total"));
+		listUserStatisticsResponse.setTotal(_ctx.longValue("ListUserStatisticsResponse.Total"));
 
 		List<UserStatistics> userStatisticsList = new ArrayList<UserStatistics>();
-		for (int i = 0; i < context.lengthValue("ListUserStatisticsResponse.UserStatisticsList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListUserStatisticsResponse.UserStatisticsList.Length"); i++) {
 			UserStatistics userStatistics = new UserStatistics();
-			userStatistics.setId(context.longValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].Id"));
-			userStatistics.setUserId(context.stringValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].UserId"));
-			userStatistics.setJobNum(context.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].JobNum"));
-			userStatistics.setExecutePlanNum(context.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].ExecutePlanNum"));
-			userStatistics.setInteractionJobNum(context.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].InteractionJobNum"));
-			userStatistics.setJobMigratedNum(context.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].JobMigratedNum"));
-			userStatistics.setExecutePlanMigratedNum(context.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].ExecutePlanMigratedNum"));
-			userStatistics.setInteractionJobMigratedNum(context.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].InteractionJobMigratedNum"));
+			userStatistics.setId(_ctx.longValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].Id"));
+			userStatistics.setUserId(_ctx.stringValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].UserId"));
+			userStatistics.setJobNum(_ctx.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].JobNum"));
+			userStatistics.setExecutePlanNum(_ctx.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].ExecutePlanNum"));
+			userStatistics.setInteractionJobNum(_ctx.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].InteractionJobNum"));
+			userStatistics.setJobMigratedNum(_ctx.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].JobMigratedNum"));
+			userStatistics.setExecutePlanMigratedNum(_ctx.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].ExecutePlanMigratedNum"));
+			userStatistics.setInteractionJobMigratedNum(_ctx.integerValue("ListUserStatisticsResponse.UserStatisticsList["+ i +"].InteractionJobMigratedNum"));
 
 			userStatisticsList.add(userStatistics);
 		}

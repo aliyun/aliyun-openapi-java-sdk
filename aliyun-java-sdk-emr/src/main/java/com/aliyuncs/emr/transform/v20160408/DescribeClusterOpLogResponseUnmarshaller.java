@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeClusterOpLogResponseUnmarshaller {
 
-	public static DescribeClusterOpLogResponse unmarshall(DescribeClusterOpLogResponse describeClusterOpLogResponse, UnmarshallerContext context) {
+	public static DescribeClusterOpLogResponse unmarshall(DescribeClusterOpLogResponse describeClusterOpLogResponse, UnmarshallerContext _ctx) {
 		
-		describeClusterOpLogResponse.setRequestId(context.stringValue("DescribeClusterOpLogResponse.RequestId"));
-		describeClusterOpLogResponse.setPageNumber(context.stringValue("DescribeClusterOpLogResponse.PageNumber"));
-		describeClusterOpLogResponse.setPageSize(context.stringValue("DescribeClusterOpLogResponse.PageSize"));
-		describeClusterOpLogResponse.setTotal(context.stringValue("DescribeClusterOpLogResponse.Total"));
+		describeClusterOpLogResponse.setRequestId(_ctx.stringValue("DescribeClusterOpLogResponse.RequestId"));
+		describeClusterOpLogResponse.setPageNumber(_ctx.stringValue("DescribeClusterOpLogResponse.PageNumber"));
+		describeClusterOpLogResponse.setPageSize(_ctx.stringValue("DescribeClusterOpLogResponse.PageSize"));
+		describeClusterOpLogResponse.setTotal(_ctx.stringValue("DescribeClusterOpLogResponse.Total"));
 
 		List<ChangeLog> changeLogList = new ArrayList<ChangeLog>();
-		for (int i = 0; i < context.lengthValue("DescribeClusterOpLogResponse.ChangeLogList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterOpLogResponse.ChangeLogList.Length"); i++) {
 			ChangeLog changeLog = new ChangeLog();
-			changeLog.setId(context.longValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].Id"));
-			changeLog.setGmtCreate(context.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].GmtCreate"));
-			changeLog.setGmtModified(context.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].GmtModified"));
-			changeLog.setTargetKey(context.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].TargetKey"));
-			changeLog.setStatus(context.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].Status"));
-			changeLog.setChangeType(context.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].ChangeType"));
-			changeLog.setMessage(context.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].Message"));
-			changeLog.setTargetType(context.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].TargetType"));
+			changeLog.setId(_ctx.longValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].Id"));
+			changeLog.setGmtCreate(_ctx.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].GmtCreate"));
+			changeLog.setGmtModified(_ctx.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].GmtModified"));
+			changeLog.setTargetKey(_ctx.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].TargetKey"));
+			changeLog.setStatus(_ctx.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].Status"));
+			changeLog.setChangeType(_ctx.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].ChangeType"));
+			changeLog.setMessage(_ctx.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].Message"));
+			changeLog.setTargetType(_ctx.stringValue("DescribeClusterOpLogResponse.ChangeLogList["+ i +"].TargetType"));
 
 			changeLogList.add(changeLog);
 		}

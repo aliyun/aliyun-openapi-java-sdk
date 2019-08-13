@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFlowInstanceResponseUnmarshaller {
 
-	public static ListFlowInstanceResponse unmarshall(ListFlowInstanceResponse listFlowInstanceResponse, UnmarshallerContext context) {
+	public static ListFlowInstanceResponse unmarshall(ListFlowInstanceResponse listFlowInstanceResponse, UnmarshallerContext _ctx) {
 		
-		listFlowInstanceResponse.setRequestId(context.stringValue("ListFlowInstanceResponse.RequestId"));
-		listFlowInstanceResponse.setPageNumber(context.integerValue("ListFlowInstanceResponse.PageNumber"));
-		listFlowInstanceResponse.setPageSize(context.integerValue("ListFlowInstanceResponse.PageSize"));
-		listFlowInstanceResponse.setTotal(context.integerValue("ListFlowInstanceResponse.Total"));
+		listFlowInstanceResponse.setRequestId(_ctx.stringValue("ListFlowInstanceResponse.RequestId"));
+		listFlowInstanceResponse.setPageNumber(_ctx.integerValue("ListFlowInstanceResponse.PageNumber"));
+		listFlowInstanceResponse.setPageSize(_ctx.integerValue("ListFlowInstanceResponse.PageSize"));
+		listFlowInstanceResponse.setTotal(_ctx.integerValue("ListFlowInstanceResponse.Total"));
 
 		List<FlowInstance> flowInstances = new ArrayList<FlowInstance>();
-		for (int i = 0; i < context.lengthValue("ListFlowInstanceResponse.FlowInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFlowInstanceResponse.FlowInstances.Length"); i++) {
 			FlowInstance flowInstance = new FlowInstance();
-			flowInstance.setId(context.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Id"));
-			flowInstance.setGmtCreate(context.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].GmtCreate"));
-			flowInstance.setGmtModified(context.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].GmtModified"));
-			flowInstance.setFlowId(context.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].FlowId"));
-			flowInstance.setFlowName(context.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].FlowName"));
-			flowInstance.setProjectId(context.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].ProjectId"));
-			flowInstance.setStatus(context.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Status"));
-			flowInstance.setClusterId(context.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].ClusterId"));
-			flowInstance.setOwner(context.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Owner"));
-			flowInstance.setStartTime(context.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].StartTime"));
-			flowInstance.setEndTime(context.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].EndTime"));
-			flowInstance.setDuration(context.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Duration"));
-			flowInstance.setHasNodeFailed(context.booleanValue("ListFlowInstanceResponse.FlowInstances["+ i +"].HasNodeFailed"));
+			flowInstance.setId(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Id"));
+			flowInstance.setGmtCreate(_ctx.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].GmtCreate"));
+			flowInstance.setGmtModified(_ctx.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].GmtModified"));
+			flowInstance.setFlowId(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].FlowId"));
+			flowInstance.setFlowName(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].FlowName"));
+			flowInstance.setProjectId(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].ProjectId"));
+			flowInstance.setStatus(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Status"));
+			flowInstance.setClusterId(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].ClusterId"));
+			flowInstance.setOwner(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Owner"));
+			flowInstance.setStartTime(_ctx.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].StartTime"));
+			flowInstance.setEndTime(_ctx.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].EndTime"));
+			flowInstance.setDuration(_ctx.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Duration"));
+			flowInstance.setHasNodeFailed(_ctx.booleanValue("ListFlowInstanceResponse.FlowInstances["+ i +"].HasNodeFailed"));
 
 			flowInstances.add(flowInstance);
 		}

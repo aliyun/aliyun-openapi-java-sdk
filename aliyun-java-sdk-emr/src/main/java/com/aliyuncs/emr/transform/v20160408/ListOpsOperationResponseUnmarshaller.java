@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListOpsOperationResponseUnmarshaller {
 
-	public static ListOpsOperationResponse unmarshall(ListOpsOperationResponse listOpsOperationResponse, UnmarshallerContext context) {
+	public static ListOpsOperationResponse unmarshall(ListOpsOperationResponse listOpsOperationResponse, UnmarshallerContext _ctx) {
 		
-		listOpsOperationResponse.setRequestId(context.stringValue("ListOpsOperationResponse.RequestId"));
-		listOpsOperationResponse.setTotal(context.integerValue("ListOpsOperationResponse.Total"));
-		listOpsOperationResponse.setPageNumber(context.integerValue("ListOpsOperationResponse.PageNumber"));
-		listOpsOperationResponse.setPageSize(context.integerValue("ListOpsOperationResponse.PageSize"));
+		listOpsOperationResponse.setRequestId(_ctx.stringValue("ListOpsOperationResponse.RequestId"));
+		listOpsOperationResponse.setTotal(_ctx.integerValue("ListOpsOperationResponse.Total"));
+		listOpsOperationResponse.setPageNumber(_ctx.integerValue("ListOpsOperationResponse.PageNumber"));
+		listOpsOperationResponse.setPageSize(_ctx.integerValue("ListOpsOperationResponse.PageSize"));
 
 		List<OpsOperationListItem> opsOperationList = new ArrayList<OpsOperationListItem>();
-		for (int i = 0; i < context.lengthValue("ListOpsOperationResponse.OpsOperationList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListOpsOperationResponse.OpsOperationList.Length"); i++) {
 			OpsOperationListItem opsOperationListItem = new OpsOperationListItem();
-			opsOperationListItem.setId(context.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Id"));
-			opsOperationListItem.setStartTime(context.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].StartTime"));
-			opsOperationListItem.setEndTime(context.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].EndTime"));
-			opsOperationListItem.setOpsCommandId(context.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].OpsCommandId"));
-			opsOperationListItem.setOpsCommandName(context.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].OpsCommandName"));
-			opsOperationListItem.setStatus(context.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Status"));
-			opsOperationListItem.setTotalTaskNum(context.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].TotalTaskNum"));
-			opsOperationListItem.setFailedTaskNum(context.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].FailedTaskNum"));
-			opsOperationListItem.setFinishedTaskNum(context.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].FinishedTaskNum"));
-			opsOperationListItem.setClusterId(context.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].ClusterId"));
-			opsOperationListItem.setRegionId(context.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].RegionId"));
-			opsOperationListItem.setParams(context.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Params"));
-			opsOperationListItem.setRemark(context.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Remark"));
-			opsOperationListItem.setRunningTime(context.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].RunningTime"));
-			opsOperationListItem.setCategory(context.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Category"));
+			opsOperationListItem.setId(_ctx.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Id"));
+			opsOperationListItem.setStartTime(_ctx.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].StartTime"));
+			opsOperationListItem.setEndTime(_ctx.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].EndTime"));
+			opsOperationListItem.setOpsCommandId(_ctx.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].OpsCommandId"));
+			opsOperationListItem.setOpsCommandName(_ctx.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].OpsCommandName"));
+			opsOperationListItem.setStatus(_ctx.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Status"));
+			opsOperationListItem.setTotalTaskNum(_ctx.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].TotalTaskNum"));
+			opsOperationListItem.setFailedTaskNum(_ctx.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].FailedTaskNum"));
+			opsOperationListItem.setFinishedTaskNum(_ctx.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].FinishedTaskNum"));
+			opsOperationListItem.setClusterId(_ctx.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].ClusterId"));
+			opsOperationListItem.setRegionId(_ctx.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].RegionId"));
+			opsOperationListItem.setParams(_ctx.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Params"));
+			opsOperationListItem.setRemark(_ctx.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Remark"));
+			opsOperationListItem.setRunningTime(_ctx.longValue("ListOpsOperationResponse.OpsOperationList["+ i +"].RunningTime"));
+			opsOperationListItem.setCategory(_ctx.stringValue("ListOpsOperationResponse.OpsOperationList["+ i +"].Category"));
 
 			opsOperationList.add(opsOperationListItem);
 		}

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreUpdateTableResponseUnmarshaller {
 
-	public static MetastoreUpdateTableResponse unmarshall(MetastoreUpdateTableResponse metastoreUpdateTableResponse, UnmarshallerContext context) {
+	public static MetastoreUpdateTableResponse unmarshall(MetastoreUpdateTableResponse metastoreUpdateTableResponse, UnmarshallerContext _ctx) {
 		
-		metastoreUpdateTableResponse.setRequestId(context.stringValue("MetastoreUpdateTableResponse.RequestId"));
-		metastoreUpdateTableResponse.setSuccess(context.booleanValue("MetastoreUpdateTableResponse.success"));
+		metastoreUpdateTableResponse.setRequestId(_ctx.stringValue("MetastoreUpdateTableResponse.RequestId"));
+		metastoreUpdateTableResponse.setSuccess(_ctx.booleanValue("MetastoreUpdateTableResponse.success"));
 	 
 	 	return metastoreUpdateTableResponse;
 	}

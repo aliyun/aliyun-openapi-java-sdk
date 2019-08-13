@@ -28,75 +28,75 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreDescribeTableResponseUnmarshaller {
 
-	public static MetastoreDescribeTableResponse unmarshall(MetastoreDescribeTableResponse metastoreDescribeTableResponse, UnmarshallerContext context) {
+	public static MetastoreDescribeTableResponse unmarshall(MetastoreDescribeTableResponse metastoreDescribeTableResponse, UnmarshallerContext _ctx) {
 		
-		metastoreDescribeTableResponse.setRequestId(context.stringValue("MetastoreDescribeTableResponse.RequestId"));
-		metastoreDescribeTableResponse.setId(context.stringValue("MetastoreDescribeTableResponse.Id"));
-		metastoreDescribeTableResponse.setDatabaseId(context.stringValue("MetastoreDescribeTableResponse.DatabaseId"));
-		metastoreDescribeTableResponse.setClusterBizId(context.stringValue("MetastoreDescribeTableResponse.ClusterBizId"));
-		metastoreDescribeTableResponse.setClusterName(context.stringValue("MetastoreDescribeTableResponse.ClusterName"));
-		metastoreDescribeTableResponse.setCreateTime(context.integerValue("MetastoreDescribeTableResponse.CreateTime"));
-		metastoreDescribeTableResponse.setLastAccessTime(context.integerValue("MetastoreDescribeTableResponse.LastAccessTime"));
-		metastoreDescribeTableResponse.setLocationUri(context.stringValue("MetastoreDescribeTableResponse.LocationUri"));
-		metastoreDescribeTableResponse.setInputFormat(context.stringValue("MetastoreDescribeTableResponse.InputFormat"));
-		metastoreDescribeTableResponse.setOutputFormat(context.stringValue("MetastoreDescribeTableResponse.OutputFormat"));
-		metastoreDescribeTableResponse.setCompressed(context.booleanValue("MetastoreDescribeTableResponse.Compressed"));
-		metastoreDescribeTableResponse.setSerializationLib(context.stringValue("MetastoreDescribeTableResponse.SerializationLib"));
-		metastoreDescribeTableResponse.setTableName(context.stringValue("MetastoreDescribeTableResponse.TableName"));
-		metastoreDescribeTableResponse.setDbName(context.stringValue("MetastoreDescribeTableResponse.DbName"));
-		metastoreDescribeTableResponse.setOwner(context.stringValue("MetastoreDescribeTableResponse.Owner"));
-		metastoreDescribeTableResponse.setTableComment(context.stringValue("MetastoreDescribeTableResponse.TableComment"));
-		metastoreDescribeTableResponse.setTableType(context.stringValue("MetastoreDescribeTableResponse.TableType"));
-		metastoreDescribeTableResponse.setCreator(context.stringValue("MetastoreDescribeTableResponse.Creator"));
-		metastoreDescribeTableResponse.setFieldDelimiter(context.stringValue("MetastoreDescribeTableResponse.FieldDelimiter"));
+		metastoreDescribeTableResponse.setRequestId(_ctx.stringValue("MetastoreDescribeTableResponse.RequestId"));
+		metastoreDescribeTableResponse.setId(_ctx.stringValue("MetastoreDescribeTableResponse.Id"));
+		metastoreDescribeTableResponse.setDatabaseId(_ctx.stringValue("MetastoreDescribeTableResponse.DatabaseId"));
+		metastoreDescribeTableResponse.setClusterBizId(_ctx.stringValue("MetastoreDescribeTableResponse.ClusterBizId"));
+		metastoreDescribeTableResponse.setClusterName(_ctx.stringValue("MetastoreDescribeTableResponse.ClusterName"));
+		metastoreDescribeTableResponse.setCreateTime(_ctx.integerValue("MetastoreDescribeTableResponse.CreateTime"));
+		metastoreDescribeTableResponse.setLastAccessTime(_ctx.integerValue("MetastoreDescribeTableResponse.LastAccessTime"));
+		metastoreDescribeTableResponse.setLocationUri(_ctx.stringValue("MetastoreDescribeTableResponse.LocationUri"));
+		metastoreDescribeTableResponse.setInputFormat(_ctx.stringValue("MetastoreDescribeTableResponse.InputFormat"));
+		metastoreDescribeTableResponse.setOutputFormat(_ctx.stringValue("MetastoreDescribeTableResponse.OutputFormat"));
+		metastoreDescribeTableResponse.setCompressed(_ctx.booleanValue("MetastoreDescribeTableResponse.Compressed"));
+		metastoreDescribeTableResponse.setSerializationLib(_ctx.stringValue("MetastoreDescribeTableResponse.SerializationLib"));
+		metastoreDescribeTableResponse.setTableName(_ctx.stringValue("MetastoreDescribeTableResponse.TableName"));
+		metastoreDescribeTableResponse.setDbName(_ctx.stringValue("MetastoreDescribeTableResponse.DbName"));
+		metastoreDescribeTableResponse.setOwner(_ctx.stringValue("MetastoreDescribeTableResponse.Owner"));
+		metastoreDescribeTableResponse.setTableComment(_ctx.stringValue("MetastoreDescribeTableResponse.TableComment"));
+		metastoreDescribeTableResponse.setTableType(_ctx.stringValue("MetastoreDescribeTableResponse.TableType"));
+		metastoreDescribeTableResponse.setCreator(_ctx.stringValue("MetastoreDescribeTableResponse.Creator"));
+		metastoreDescribeTableResponse.setFieldDelimiter(_ctx.stringValue("MetastoreDescribeTableResponse.FieldDelimiter"));
 
 		List<Column> columns = new ArrayList<Column>();
-		for (int i = 0; i < context.lengthValue("MetastoreDescribeTableResponse.Columns.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreDescribeTableResponse.Columns.Length"); i++) {
 			Column column = new Column();
-			column.setName(context.stringValue("MetastoreDescribeTableResponse.Columns["+ i +"].Name"));
-			column.setType(context.stringValue("MetastoreDescribeTableResponse.Columns["+ i +"].Type"));
-			column.setComment(context.stringValue("MetastoreDescribeTableResponse.Columns["+ i +"].Comment"));
+			column.setName(_ctx.stringValue("MetastoreDescribeTableResponse.Columns["+ i +"].Name"));
+			column.setType(_ctx.stringValue("MetastoreDescribeTableResponse.Columns["+ i +"].Type"));
+			column.setComment(_ctx.stringValue("MetastoreDescribeTableResponse.Columns["+ i +"].Comment"));
 
 			columns.add(column);
 		}
 		metastoreDescribeTableResponse.setColumns(columns);
 
 		List<PartitionColumn> partitionColumns = new ArrayList<PartitionColumn>();
-		for (int i = 0; i < context.lengthValue("MetastoreDescribeTableResponse.PartitionColumns.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreDescribeTableResponse.PartitionColumns.Length"); i++) {
 			PartitionColumn partitionColumn = new PartitionColumn();
-			partitionColumn.setName(context.stringValue("MetastoreDescribeTableResponse.PartitionColumns["+ i +"].Name"));
-			partitionColumn.setType(context.stringValue("MetastoreDescribeTableResponse.PartitionColumns["+ i +"].Type"));
-			partitionColumn.setComment(context.stringValue("MetastoreDescribeTableResponse.PartitionColumns["+ i +"].Comment"));
+			partitionColumn.setName(_ctx.stringValue("MetastoreDescribeTableResponse.PartitionColumns["+ i +"].Name"));
+			partitionColumn.setType(_ctx.stringValue("MetastoreDescribeTableResponse.PartitionColumns["+ i +"].Type"));
+			partitionColumn.setComment(_ctx.stringValue("MetastoreDescribeTableResponse.PartitionColumns["+ i +"].Comment"));
 
 			partitionColumns.add(partitionColumn);
 		}
 		metastoreDescribeTableResponse.setPartitionColumns(partitionColumns);
 
 		List<SerdeParameter> serdeParameters = new ArrayList<SerdeParameter>();
-		for (int i = 0; i < context.lengthValue("MetastoreDescribeTableResponse.SerdeParameters.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreDescribeTableResponse.SerdeParameters.Length"); i++) {
 			SerdeParameter serdeParameter = new SerdeParameter();
-			serdeParameter.setKey(context.stringValue("MetastoreDescribeTableResponse.SerdeParameters["+ i +"].Key"));
-			serdeParameter.setValue(context.stringValue("MetastoreDescribeTableResponse.SerdeParameters["+ i +"].Value"));
+			serdeParameter.setKey(_ctx.stringValue("MetastoreDescribeTableResponse.SerdeParameters["+ i +"].Key"));
+			serdeParameter.setValue(_ctx.stringValue("MetastoreDescribeTableResponse.SerdeParameters["+ i +"].Value"));
 
 			serdeParameters.add(serdeParameter);
 		}
 		metastoreDescribeTableResponse.setSerdeParameters(serdeParameters);
 
 		List<StorageDescParameter> storageDescParameters = new ArrayList<StorageDescParameter>();
-		for (int i = 0; i < context.lengthValue("MetastoreDescribeTableResponse.StorageDescParameters.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreDescribeTableResponse.StorageDescParameters.Length"); i++) {
 			StorageDescParameter storageDescParameter = new StorageDescParameter();
-			storageDescParameter.setKey(context.stringValue("MetastoreDescribeTableResponse.StorageDescParameters["+ i +"].Key"));
-			storageDescParameter.setValue(context.stringValue("MetastoreDescribeTableResponse.StorageDescParameters["+ i +"].Value"));
+			storageDescParameter.setKey(_ctx.stringValue("MetastoreDescribeTableResponse.StorageDescParameters["+ i +"].Key"));
+			storageDescParameter.setValue(_ctx.stringValue("MetastoreDescribeTableResponse.StorageDescParameters["+ i +"].Value"));
 
 			storageDescParameters.add(storageDescParameter);
 		}
 		metastoreDescribeTableResponse.setStorageDescParameters(storageDescParameters);
 
 		List<TableParameter> tableParameters = new ArrayList<TableParameter>();
-		for (int i = 0; i < context.lengthValue("MetastoreDescribeTableResponse.TableParameters.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreDescribeTableResponse.TableParameters.Length"); i++) {
 			TableParameter tableParameter = new TableParameter();
-			tableParameter.setKey(context.stringValue("MetastoreDescribeTableResponse.TableParameters["+ i +"].Key"));
-			tableParameter.setValue(context.stringValue("MetastoreDescribeTableResponse.TableParameters["+ i +"].Value"));
+			tableParameter.setKey(_ctx.stringValue("MetastoreDescribeTableResponse.TableParameters["+ i +"].Key"));
+			tableParameter.setValue(_ctx.stringValue("MetastoreDescribeTableResponse.TableParameters["+ i +"].Value"));
 
 			tableParameters.add(tableParameter);
 		}

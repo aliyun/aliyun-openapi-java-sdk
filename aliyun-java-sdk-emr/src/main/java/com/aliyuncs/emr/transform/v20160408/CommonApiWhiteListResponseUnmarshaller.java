@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CommonApiWhiteListResponseUnmarshaller {
 
-	public static CommonApiWhiteListResponse unmarshall(CommonApiWhiteListResponse commonApiWhiteListResponse, UnmarshallerContext context) {
+	public static CommonApiWhiteListResponse unmarshall(CommonApiWhiteListResponse commonApiWhiteListResponse, UnmarshallerContext _ctx) {
 		
-		commonApiWhiteListResponse.setRequestId(context.stringValue("CommonApiWhiteListResponse.RequestId"));
-		commonApiWhiteListResponse.setWhiteList(context.stringValue("CommonApiWhiteListResponse.WhiteList"));
+		commonApiWhiteListResponse.setRequestId(_ctx.stringValue("CommonApiWhiteListResponse.RequestId"));
+		commonApiWhiteListResponse.setWhiteList(_ctx.stringValue("CommonApiWhiteListResponse.WhiteList"));
 	 
 	 	return commonApiWhiteListResponse;
 	}

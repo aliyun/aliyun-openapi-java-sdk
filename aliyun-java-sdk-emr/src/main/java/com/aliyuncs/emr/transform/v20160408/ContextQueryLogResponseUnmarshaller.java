@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ContextQueryLogResponseUnmarshaller {
 
-	public static ContextQueryLogResponse unmarshall(ContextQueryLogResponse contextQueryLogResponse, UnmarshallerContext context) {
+	public static ContextQueryLogResponse unmarshall(ContextQueryLogResponse contextQueryLogResponse, UnmarshallerContext _ctx) {
 		
-		contextQueryLogResponse.setRequestId(context.stringValue("ContextQueryLogResponse.RequestId"));
-		contextQueryLogResponse.setPackId(context.stringValue("ContextQueryLogResponse.PackId"));
-		contextQueryLogResponse.setPackMeta(context.stringValue("ContextQueryLogResponse.PackMeta"));
-		contextQueryLogResponse.setTime(context.stringValue("ContextQueryLogResponse.Time"));
+		contextQueryLogResponse.setRequestId(_ctx.stringValue("ContextQueryLogResponse.RequestId"));
+		contextQueryLogResponse.setPackId(_ctx.stringValue("ContextQueryLogResponse.PackId"));
+		contextQueryLogResponse.setPackMeta(_ctx.stringValue("ContextQueryLogResponse.PackMeta"));
+		contextQueryLogResponse.setTime(_ctx.stringValue("ContextQueryLogResponse.Time"));
 
 		List<Item> logs = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("ContextQueryLogResponse.Logs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ContextQueryLogResponse.Logs.Length"); i++) {
 			Item item = new Item();
-			item.setIndex(context.integerValue("ContextQueryLogResponse.Logs["+ i +"].Index"));
-			item.setContent(context.stringValue("ContextQueryLogResponse.Logs["+ i +"].Content"));
+			item.setIndex(_ctx.integerValue("ContextQueryLogResponse.Logs["+ i +"].Index"));
+			item.setContent(_ctx.stringValue("ContextQueryLogResponse.Logs["+ i +"].Content"));
 
 			logs.add(item);
 		}

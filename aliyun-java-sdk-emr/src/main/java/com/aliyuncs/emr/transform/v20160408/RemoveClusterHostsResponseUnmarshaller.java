@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveClusterHostsResponseUnmarshaller {
 
-	public static RemoveClusterHostsResponse unmarshall(RemoveClusterHostsResponse removeClusterHostsResponse, UnmarshallerContext context) {
+	public static RemoveClusterHostsResponse unmarshall(RemoveClusterHostsResponse removeClusterHostsResponse, UnmarshallerContext _ctx) {
 		
-		removeClusterHostsResponse.setRequestId(context.stringValue("RemoveClusterHostsResponse.RequestId"));
-		removeClusterHostsResponse.setClusterId(context.stringValue("RemoveClusterHostsResponse.ClusterId"));
+		removeClusterHostsResponse.setRequestId(_ctx.stringValue("RemoveClusterHostsResponse.RequestId"));
+		removeClusterHostsResponse.setClusterId(_ctx.stringValue("RemoveClusterHostsResponse.ClusterId"));
 	 
 	 	return removeClusterHostsResponse;
 	}

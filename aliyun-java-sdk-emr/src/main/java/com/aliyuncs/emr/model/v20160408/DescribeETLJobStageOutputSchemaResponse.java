@@ -71,6 +71,8 @@ public class DescribeETLJobStageOutputSchemaResponse extends AcsResponse {
 
 			private String type;
 
+			private String length;
+
 			private String name;
 
 			private Integer index;
@@ -81,12 +83,22 @@ public class DescribeETLJobStageOutputSchemaResponse extends AcsResponse {
 
 			private String assignValue;
 
+			private Boolean partitionKey;
+
 			public String getType() {
 				return this.type;
 			}
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public String getLength() {
+				return this.length;
+			}
+
+			public void setLength(String length) {
+				this.length = length;
 			}
 
 			public String getName() {
@@ -127,6 +139,14 @@ public class DescribeETLJobStageOutputSchemaResponse extends AcsResponse {
 
 			public void setAssignValue(String assignValue) {
 				this.assignValue = assignValue;
+			}
+
+			public Boolean getPartitionKey() {
+				return this.partitionKey;
+			}
+
+			public void setPartitionKey(Boolean partitionKey) {
+				this.partitionKey = partitionKey;
 			}
 		}
 	}

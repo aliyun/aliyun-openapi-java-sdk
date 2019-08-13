@@ -403,7 +403,7 @@ public class DescribeETLJobResponse extends AcsResponse {
 
 			private List<String> alertUserGroupIdList;
 
-			private List<String> alertDingDingGroupIdList;
+			private List<String> alertDingDingGroupList;
 
 			public Boolean getEnable() {
 				return this.enable;
@@ -429,12 +429,12 @@ public class DescribeETLJobResponse extends AcsResponse {
 				this.alertUserGroupIdList = alertUserGroupIdList;
 			}
 
-			public List<String> getAlertDingDingGroupIdList() {
-				return this.alertDingDingGroupIdList;
+			public List<String> getAlertDingDingGroupList() {
+				return this.alertDingDingGroupList;
 			}
 
-			public void setAlertDingDingGroupIdList(List<String> alertDingDingGroupIdList) {
-				this.alertDingDingGroupIdList = alertDingDingGroupIdList;
+			public void setAlertDingDingGroupList(List<String> alertDingDingGroupList) {
+				this.alertDingDingGroupList = alertDingDingGroupList;
 			}
 		}
 	}

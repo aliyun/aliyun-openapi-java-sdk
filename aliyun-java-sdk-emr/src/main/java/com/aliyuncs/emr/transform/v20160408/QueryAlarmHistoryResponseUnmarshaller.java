@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAlarmHistoryResponseUnmarshaller {
 
-	public static QueryAlarmHistoryResponse unmarshall(QueryAlarmHistoryResponse queryAlarmHistoryResponse, UnmarshallerContext context) {
+	public static QueryAlarmHistoryResponse unmarshall(QueryAlarmHistoryResponse queryAlarmHistoryResponse, UnmarshallerContext _ctx) {
 		
-		queryAlarmHistoryResponse.setRequestId(context.stringValue("QueryAlarmHistoryResponse.RequestId"));
-		queryAlarmHistoryResponse.setTotal(context.stringValue("QueryAlarmHistoryResponse.Total"));
-		queryAlarmHistoryResponse.setCursor(context.stringValue("QueryAlarmHistoryResponse.Cursor"));
+		queryAlarmHistoryResponse.setRequestId(_ctx.stringValue("QueryAlarmHistoryResponse.RequestId"));
+		queryAlarmHistoryResponse.setTotal(_ctx.stringValue("QueryAlarmHistoryResponse.Total"));
+		queryAlarmHistoryResponse.setCursor(_ctx.stringValue("QueryAlarmHistoryResponse.Cursor"));
 
 		List<EmrAlarmHistory> alarmHistoryList = new ArrayList<EmrAlarmHistory>();
-		for (int i = 0; i < context.lengthValue("QueryAlarmHistoryResponse.AlarmHistoryList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAlarmHistoryResponse.AlarmHistoryList.Length"); i++) {
 			EmrAlarmHistory emrAlarmHistory = new EmrAlarmHistory();
-			emrAlarmHistory.setClusterId(context.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].ClusterId"));
-			emrAlarmHistory.setRole(context.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].Role"));
-			emrAlarmHistory.setInstanceId(context.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].InstanceId"));
-			emrAlarmHistory.setName(context.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].Name"));
-			emrAlarmHistory.setMetricName(context.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].MetricName"));
-			emrAlarmHistory.setAlarmTime(context.longValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].AlarmTime"));
-			emrAlarmHistory.setLastTime(context.longValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].LastTime"));
-			emrAlarmHistory.setState(context.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].State"));
-			emrAlarmHistory.setStatus(context.integerValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].Status"));
-			emrAlarmHistory.setContactGroups(context.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].ContactGroups"));
+			emrAlarmHistory.setClusterId(_ctx.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].ClusterId"));
+			emrAlarmHistory.setRole(_ctx.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].Role"));
+			emrAlarmHistory.setInstanceId(_ctx.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].InstanceId"));
+			emrAlarmHistory.setName(_ctx.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].Name"));
+			emrAlarmHistory.setMetricName(_ctx.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].MetricName"));
+			emrAlarmHistory.setAlarmTime(_ctx.longValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].AlarmTime"));
+			emrAlarmHistory.setLastTime(_ctx.longValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].LastTime"));
+			emrAlarmHistory.setState(_ctx.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].State"));
+			emrAlarmHistory.setStatus(_ctx.integerValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].Status"));
+			emrAlarmHistory.setContactGroups(_ctx.stringValue("QueryAlarmHistoryResponse.AlarmHistoryList["+ i +"].ContactGroups"));
 
 			alarmHistoryList.add(emrAlarmHistory);
 		}

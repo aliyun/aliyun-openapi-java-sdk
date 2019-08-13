@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateFlowJobResponseUnmarshaller {
 
-	public static CreateFlowJobResponse unmarshall(CreateFlowJobResponse createFlowJobResponse, UnmarshallerContext context) {
+	public static CreateFlowJobResponse unmarshall(CreateFlowJobResponse createFlowJobResponse, UnmarshallerContext _ctx) {
 		
-		createFlowJobResponse.setRequestId(context.stringValue("CreateFlowJobResponse.RequestId"));
-		createFlowJobResponse.setId(context.stringValue("CreateFlowJobResponse.Id"));
+		createFlowJobResponse.setRequestId(_ctx.stringValue("CreateFlowJobResponse.RequestId"));
+		createFlowJobResponse.setId(_ctx.stringValue("CreateFlowJobResponse.Id"));
 	 
 	 	return createFlowJobResponse;
 	}

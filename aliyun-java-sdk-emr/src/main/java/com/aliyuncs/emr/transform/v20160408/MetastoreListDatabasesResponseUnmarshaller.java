@@ -24,37 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreListDatabasesResponseUnmarshaller {
 
-	public static MetastoreListDatabasesResponse unmarshall(MetastoreListDatabasesResponse metastoreListDatabasesResponse, UnmarshallerContext context) {
+	public static MetastoreListDatabasesResponse unmarshall(MetastoreListDatabasesResponse metastoreListDatabasesResponse, UnmarshallerContext _ctx) {
 		
-		metastoreListDatabasesResponse.setRequestId(context.stringValue("MetastoreListDatabasesResponse.RequestId"));
-		metastoreListDatabasesResponse.setDescription(context.stringValue("MetastoreListDatabasesResponse.Description"));
-		metastoreListDatabasesResponse.setTotalCount(context.integerValue("MetastoreListDatabasesResponse.TotalCount"));
-		metastoreListDatabasesResponse.setPageNumber(context.integerValue("MetastoreListDatabasesResponse.PageNumber"));
-		metastoreListDatabasesResponse.setPageSize(context.integerValue("MetastoreListDatabasesResponse.PageSize"));
+		metastoreListDatabasesResponse.setRequestId(_ctx.stringValue("MetastoreListDatabasesResponse.RequestId"));
+		metastoreListDatabasesResponse.setDescription(_ctx.stringValue("MetastoreListDatabasesResponse.Description"));
+		metastoreListDatabasesResponse.setTotalCount(_ctx.integerValue("MetastoreListDatabasesResponse.TotalCount"));
+		metastoreListDatabasesResponse.setPageNumber(_ctx.integerValue("MetastoreListDatabasesResponse.PageNumber"));
+		metastoreListDatabasesResponse.setPageSize(_ctx.integerValue("MetastoreListDatabasesResponse.PageSize"));
 
 		List<String> dbNames = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("MetastoreListDatabasesResponse.DbNames.Length"); i++) {
-			dbNames.add(context.stringValue("MetastoreListDatabasesResponse.DbNames["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("MetastoreListDatabasesResponse.DbNames.Length"); i++) {
+			dbNames.add(_ctx.stringValue("MetastoreListDatabasesResponse.DbNames["+ i +"]"));
 		}
 		metastoreListDatabasesResponse.setDbNames(dbNames);
 
 		List<Database> databaseList = new ArrayList<Database>();
-		for (int i = 0; i < context.lengthValue("MetastoreListDatabasesResponse.DatabaseList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreListDatabasesResponse.DatabaseList.Length"); i++) {
 			Database database = new Database();
-			database.setId(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].Id"));
-			database.setClusterBizId(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].ClusterBizId"));
-			database.setClusterName(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].ClusterName"));
-			database.setDatabaseName(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].DatabaseName"));
-			database.setDatabaseType(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].DatabaseType"));
-			database.setOwner(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].Owner"));
-			database.setOwnerType(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].OwnerType"));
-			database.setLocation(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].Location"));
-			database.setStatus(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].Status"));
-			database.setDatabaseParameters(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].DatabaseParameters"));
-			database.setGmtCreate(context.longValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].GmtCreate"));
-			database.setGmtModified(context.longValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].GmtModified"));
-			database.setLocationType(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].LocationType"));
-			database.setDatabaseComment(context.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].DatabaseComment"));
+			database.setId(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].Id"));
+			database.setClusterBizId(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].ClusterBizId"));
+			database.setClusterName(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].ClusterName"));
+			database.setDatabaseName(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].DatabaseName"));
+			database.setDatabaseType(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].DatabaseType"));
+			database.setOwner(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].Owner"));
+			database.setOwnerType(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].OwnerType"));
+			database.setLocation(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].Location"));
+			database.setStatus(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].Status"));
+			database.setDatabaseParameters(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].DatabaseParameters"));
+			database.setGmtCreate(_ctx.longValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].GmtCreate"));
+			database.setGmtModified(_ctx.longValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].GmtModified"));
+			database.setLocationType(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].LocationType"));
+			database.setDatabaseComment(_ctx.stringValue("MetastoreListDatabasesResponse.DatabaseList["+ i +"].DatabaseComment"));
 
 			databaseList.add(database);
 		}

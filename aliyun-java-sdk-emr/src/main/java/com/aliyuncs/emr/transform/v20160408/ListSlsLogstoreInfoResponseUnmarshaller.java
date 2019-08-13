@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSlsLogstoreInfoResponseUnmarshaller {
 
-	public static ListSlsLogstoreInfoResponse unmarshall(ListSlsLogstoreInfoResponse listSlsLogstoreInfoResponse, UnmarshallerContext context) {
+	public static ListSlsLogstoreInfoResponse unmarshall(ListSlsLogstoreInfoResponse listSlsLogstoreInfoResponse, UnmarshallerContext _ctx) {
 		
-		listSlsLogstoreInfoResponse.setRequestId(context.stringValue("ListSlsLogstoreInfoResponse.RequestId"));
+		listSlsLogstoreInfoResponse.setRequestId(_ctx.stringValue("ListSlsLogstoreInfoResponse.RequestId"));
 
 		List<SlsLogstoreInfo> slsLogstoreInfoList = new ArrayList<SlsLogstoreInfo>();
-		for (int i = 0; i < context.lengthValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList.Length"); i++) {
 			SlsLogstoreInfo slsLogstoreInfo = new SlsLogstoreInfo();
-			slsLogstoreInfo.setId(context.longValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].Id"));
-			slsLogstoreInfo.setServiceName(context.stringValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].ServiceName"));
-			slsLogstoreInfo.setComponentName(context.stringValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].ComponentName"));
-			slsLogstoreInfo.setLogstoreName(context.stringValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].LogstoreName"));
-			slsLogstoreInfo.setLogType(context.stringValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].LogType"));
+			slsLogstoreInfo.setId(_ctx.longValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].Id"));
+			slsLogstoreInfo.setServiceName(_ctx.stringValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].ServiceName"));
+			slsLogstoreInfo.setComponentName(_ctx.stringValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].ComponentName"));
+			slsLogstoreInfo.setLogstoreName(_ctx.stringValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].LogstoreName"));
+			slsLogstoreInfo.setLogType(_ctx.stringValue("ListSlsLogstoreInfoResponse.SlsLogstoreInfoList["+ i +"].LogType"));
 
 			slsLogstoreInfoList.add(slsLogstoreInfo);
 		}

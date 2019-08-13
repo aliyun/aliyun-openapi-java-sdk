@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyJobExecutionPlanParamResponseUnmarshaller {
 
-	public static ModifyJobExecutionPlanParamResponse unmarshall(ModifyJobExecutionPlanParamResponse modifyJobExecutionPlanParamResponse, UnmarshallerContext context) {
+	public static ModifyJobExecutionPlanParamResponse unmarshall(ModifyJobExecutionPlanParamResponse modifyJobExecutionPlanParamResponse, UnmarshallerContext _ctx) {
 		
-		modifyJobExecutionPlanParamResponse.setRequestId(context.stringValue("ModifyJobExecutionPlanParamResponse.RequestId"));
-		modifyJobExecutionPlanParamResponse.setSuccess(context.stringValue("ModifyJobExecutionPlanParamResponse.Success"));
-		modifyJobExecutionPlanParamResponse.setErrCode(context.stringValue("ModifyJobExecutionPlanParamResponse.ErrCode"));
-		modifyJobExecutionPlanParamResponse.setErrMsg(context.stringValue("ModifyJobExecutionPlanParamResponse.ErrMsg"));
+		modifyJobExecutionPlanParamResponse.setRequestId(_ctx.stringValue("ModifyJobExecutionPlanParamResponse.RequestId"));
+		modifyJobExecutionPlanParamResponse.setSuccess(_ctx.stringValue("ModifyJobExecutionPlanParamResponse.Success"));
+		modifyJobExecutionPlanParamResponse.setErrCode(_ctx.stringValue("ModifyJobExecutionPlanParamResponse.ErrCode"));
+		modifyJobExecutionPlanParamResponse.setErrMsg(_ctx.stringValue("ModifyJobExecutionPlanParamResponse.ErrMsg"));
 	 
 	 	return modifyJobExecutionPlanParamResponse;
 	}

@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreListDataResourcesResponseUnmarshaller {
 
-	public static MetastoreListDataResourcesResponse unmarshall(MetastoreListDataResourcesResponse metastoreListDataResourcesResponse, UnmarshallerContext context) {
+	public static MetastoreListDataResourcesResponse unmarshall(MetastoreListDataResourcesResponse metastoreListDataResourcesResponse, UnmarshallerContext _ctx) {
 		
-		metastoreListDataResourcesResponse.setRequestId(context.stringValue("MetastoreListDataResourcesResponse.RequestId"));
+		metastoreListDataResourcesResponse.setRequestId(_ctx.stringValue("MetastoreListDataResourcesResponse.RequestId"));
 
 		List<DataResourceInfo> dataResources = new ArrayList<DataResourceInfo>();
-		for (int i = 0; i < context.lengthValue("MetastoreListDataResourcesResponse.DataResources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreListDataResourcesResponse.DataResources.Length"); i++) {
 			DataResourceInfo dataResourceInfo = new DataResourceInfo();
-			dataResourceInfo.setId(context.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].Id"));
-			dataResourceInfo.setRegionId(context.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].RegionId"));
-			dataResourceInfo.setName(context.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].Name"));
-			dataResourceInfo.setMetaType(context.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].MetaType"));
-			dataResourceInfo.setClusterId(context.longValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].ClusterId"));
-			dataResourceInfo.setAccessType(context.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].AccessType"));
-			dataResourceInfo.set_Default(context.booleanValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].Default"));
-			dataResourceInfo.setDescription(context.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].Description"));
+			dataResourceInfo.setId(_ctx.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].Id"));
+			dataResourceInfo.setRegionId(_ctx.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].RegionId"));
+			dataResourceInfo.setName(_ctx.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].Name"));
+			dataResourceInfo.setMetaType(_ctx.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].MetaType"));
+			dataResourceInfo.setClusterId(_ctx.longValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].ClusterId"));
+			dataResourceInfo.setAccessType(_ctx.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].AccessType"));
+			dataResourceInfo.set_Default(_ctx.booleanValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].Default"));
+			dataResourceInfo.setDescription(_ctx.stringValue("MetastoreListDataResourcesResponse.DataResources["+ i +"].Description"));
 
 			dataResources.add(dataResourceInfo);
 		}

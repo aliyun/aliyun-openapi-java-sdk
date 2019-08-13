@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreRetryTaskResponseUnmarshaller {
 
-	public static MetastoreRetryTaskResponse unmarshall(MetastoreRetryTaskResponse metastoreRetryTaskResponse, UnmarshallerContext context) {
+	public static MetastoreRetryTaskResponse unmarshall(MetastoreRetryTaskResponse metastoreRetryTaskResponse, UnmarshallerContext _ctx) {
 		
-		metastoreRetryTaskResponse.setRequestId(context.stringValue("MetastoreRetryTaskResponse.RequestId"));
-		metastoreRetryTaskResponse.setSuccess(context.booleanValue("MetastoreRetryTaskResponse.success"));
-		metastoreRetryTaskResponse.setNewTaskId(context.booleanValue("MetastoreRetryTaskResponse.NewTaskId"));
+		metastoreRetryTaskResponse.setRequestId(_ctx.stringValue("MetastoreRetryTaskResponse.RequestId"));
+		metastoreRetryTaskResponse.setSuccess(_ctx.booleanValue("MetastoreRetryTaskResponse.success"));
+		metastoreRetryTaskResponse.setNewTaskId(_ctx.booleanValue("MetastoreRetryTaskResponse.NewTaskId"));
 	 
 	 	return metastoreRetryTaskResponse;
 	}

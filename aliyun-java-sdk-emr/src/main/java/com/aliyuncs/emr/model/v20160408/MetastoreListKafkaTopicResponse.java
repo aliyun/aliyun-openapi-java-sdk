@@ -91,6 +91,10 @@ public class MetastoreListKafkaTopicResponse extends AcsResponse {
 
 		private Long gmtModified;
 
+		private String status;
+
+		private String reassignId;
+
 		private List<AdvancedConfig> advancedConfigList;
 
 		private Cluster cluster;
@@ -149,6 +153,22 @@ public class MetastoreListKafkaTopicResponse extends AcsResponse {
 
 		public void setGmtModified(Long gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getReassignId() {
+			return this.reassignId;
+		}
+
+		public void setReassignId(String reassignId) {
+			this.reassignId = reassignId;
 		}
 
 		public List<AdvancedConfig> getAdvancedConfigList() {

@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobExecutionPlanParamsResponseUnmarshaller {
 
-	public static ListJobExecutionPlanParamsResponse unmarshall(ListJobExecutionPlanParamsResponse listJobExecutionPlanParamsResponse, UnmarshallerContext context) {
+	public static ListJobExecutionPlanParamsResponse unmarshall(ListJobExecutionPlanParamsResponse listJobExecutionPlanParamsResponse, UnmarshallerContext _ctx) {
 		
-		listJobExecutionPlanParamsResponse.setRequestId(context.stringValue("ListJobExecutionPlanParamsResponse.RequestId"));
-		listJobExecutionPlanParamsResponse.setSuccess(context.stringValue("ListJobExecutionPlanParamsResponse.Success"));
-		listJobExecutionPlanParamsResponse.setErrCode(context.stringValue("ListJobExecutionPlanParamsResponse.ErrCode"));
-		listJobExecutionPlanParamsResponse.setErrMsg(context.stringValue("ListJobExecutionPlanParamsResponse.ErrMsg"));
+		listJobExecutionPlanParamsResponse.setRequestId(_ctx.stringValue("ListJobExecutionPlanParamsResponse.RequestId"));
+		listJobExecutionPlanParamsResponse.setSuccess(_ctx.stringValue("ListJobExecutionPlanParamsResponse.Success"));
+		listJobExecutionPlanParamsResponse.setErrCode(_ctx.stringValue("ListJobExecutionPlanParamsResponse.ErrCode"));
+		listJobExecutionPlanParamsResponse.setErrMsg(_ctx.stringValue("ListJobExecutionPlanParamsResponse.ErrMsg"));
 
 		List<ParamInfo> paramInfoList = new ArrayList<ParamInfo>();
-		for (int i = 0; i < context.lengthValue("ListJobExecutionPlanParamsResponse.ParamInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobExecutionPlanParamsResponse.ParamInfoList.Length"); i++) {
 			ParamInfo paramInfo = new ParamInfo();
-			paramInfo.setParamBizType(context.stringValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].ParamBizType"));
-			paramInfo.setRelateId(context.stringValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].RelateId"));
-			paramInfo.setParamName(context.stringValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].ParamName"));
-			paramInfo.setParamValue(context.stringValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].ParamValue"));
-			paramInfo.setUtcCreateTimestamp(context.longValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].UtcCreateTimestamp"));
-			paramInfo.setUtcModifiedTimestamp(context.longValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].UtcModifiedTimestamp"));
+			paramInfo.setParamBizType(_ctx.stringValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].ParamBizType"));
+			paramInfo.setRelateId(_ctx.stringValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].RelateId"));
+			paramInfo.setParamName(_ctx.stringValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].ParamName"));
+			paramInfo.setParamValue(_ctx.stringValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].ParamValue"));
+			paramInfo.setUtcCreateTimestamp(_ctx.longValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].UtcCreateTimestamp"));
+			paramInfo.setUtcModifiedTimestamp(_ctx.longValue("ListJobExecutionPlanParamsResponse.ParamInfoList["+ i +"].UtcModifiedTimestamp"));
 
 			paramInfoList.add(paramInfo);
 		}

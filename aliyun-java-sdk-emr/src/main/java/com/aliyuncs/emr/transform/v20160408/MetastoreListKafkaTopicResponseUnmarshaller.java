@@ -26,35 +26,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MetastoreListKafkaTopicResponseUnmarshaller {
 
-	public static MetastoreListKafkaTopicResponse unmarshall(MetastoreListKafkaTopicResponse metastoreListKafkaTopicResponse, UnmarshallerContext context) {
+	public static MetastoreListKafkaTopicResponse unmarshall(MetastoreListKafkaTopicResponse metastoreListKafkaTopicResponse, UnmarshallerContext _ctx) {
 		
-		metastoreListKafkaTopicResponse.setRequestId(context.stringValue("MetastoreListKafkaTopicResponse.RequestId"));
-		metastoreListKafkaTopicResponse.setTotalCount(context.integerValue("MetastoreListKafkaTopicResponse.TotalCount"));
-		metastoreListKafkaTopicResponse.setPageNumber(context.integerValue("MetastoreListKafkaTopicResponse.PageNumber"));
-		metastoreListKafkaTopicResponse.setPageSize(context.integerValue("MetastoreListKafkaTopicResponse.PageSize"));
+		metastoreListKafkaTopicResponse.setRequestId(_ctx.stringValue("MetastoreListKafkaTopicResponse.RequestId"));
+		metastoreListKafkaTopicResponse.setTotalCount(_ctx.integerValue("MetastoreListKafkaTopicResponse.TotalCount"));
+		metastoreListKafkaTopicResponse.setPageNumber(_ctx.integerValue("MetastoreListKafkaTopicResponse.PageNumber"));
+		metastoreListKafkaTopicResponse.setPageSize(_ctx.integerValue("MetastoreListKafkaTopicResponse.PageSize"));
 
 		List<Topic> topicList = new ArrayList<Topic>();
-		for (int i = 0; i < context.lengthValue("MetastoreListKafkaTopicResponse.TopicList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MetastoreListKafkaTopicResponse.TopicList.Length"); i++) {
 			Topic topic = new Topic();
-			topic.setId(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Id"));
-			topic.setDataSourceId(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].DataSourceId"));
-			topic.setTopicName(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].TopicName"));
-			topic.setNumPartitions(context.integerValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].NumPartitions"));
-			topic.setReplicationFactor(context.integerValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].ReplicationFactor"));
-			topic.setGmtCreate(context.longValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].GmtCreate"));
-			topic.setGmtModified(context.longValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].GmtModified"));
+			topic.setId(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Id"));
+			topic.setDataSourceId(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].DataSourceId"));
+			topic.setTopicName(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].TopicName"));
+			topic.setNumPartitions(_ctx.integerValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].NumPartitions"));
+			topic.setReplicationFactor(_ctx.integerValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].ReplicationFactor"));
+			topic.setGmtCreate(_ctx.longValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].GmtCreate"));
+			topic.setGmtModified(_ctx.longValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].GmtModified"));
+			topic.setStatus(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Status"));
+			topic.setReassignId(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].ReassignId"));
 
 			Cluster cluster = new Cluster();
-			cluster.setClusterBizId(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Cluster.ClusterBizId"));
-			cluster.setClusterName(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Cluster.ClusterName"));
-			cluster.setClusterStatus(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Cluster.ClusterStatus"));
+			cluster.setClusterBizId(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Cluster.ClusterBizId"));
+			cluster.setClusterName(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Cluster.ClusterName"));
+			cluster.setClusterStatus(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].Cluster.ClusterStatus"));
 			topic.setCluster(cluster);
 
 			List<AdvancedConfig> advancedConfigList = new ArrayList<AdvancedConfig>();
-			for (int j = 0; j < context.lengthValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].AdvancedConfigList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].AdvancedConfigList.Length"); j++) {
 				AdvancedConfig advancedConfig = new AdvancedConfig();
-				advancedConfig.setKey(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].AdvancedConfigList["+ j +"].Key"));
-				advancedConfig.setValue(context.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].AdvancedConfigList["+ j +"].Value"));
+				advancedConfig.setKey(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].AdvancedConfigList["+ j +"].Key"));
+				advancedConfig.setValue(_ctx.stringValue("MetastoreListKafkaTopicResponse.TopicList["+ i +"].AdvancedConfigList["+ j +"].Value"));
 
 				advancedConfigList.add(advancedConfig);
 			}

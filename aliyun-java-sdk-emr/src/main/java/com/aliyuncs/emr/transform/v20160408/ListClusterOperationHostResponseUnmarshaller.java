@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterOperationHostResponseUnmarshaller {
 
-	public static ListClusterOperationHostResponse unmarshall(ListClusterOperationHostResponse listClusterOperationHostResponse, UnmarshallerContext context) {
+	public static ListClusterOperationHostResponse unmarshall(ListClusterOperationHostResponse listClusterOperationHostResponse, UnmarshallerContext _ctx) {
 		
-		listClusterOperationHostResponse.setRequestId(context.stringValue("ListClusterOperationHostResponse.RequestId"));
-		listClusterOperationHostResponse.setTotalCount(context.integerValue("ListClusterOperationHostResponse.TotalCount"));
-		listClusterOperationHostResponse.setPageNumber(context.integerValue("ListClusterOperationHostResponse.PageNumber"));
-		listClusterOperationHostResponse.setPageSize(context.integerValue("ListClusterOperationHostResponse.PageSize"));
+		listClusterOperationHostResponse.setRequestId(_ctx.stringValue("ListClusterOperationHostResponse.RequestId"));
+		listClusterOperationHostResponse.setTotalCount(_ctx.integerValue("ListClusterOperationHostResponse.TotalCount"));
+		listClusterOperationHostResponse.setPageNumber(_ctx.integerValue("ListClusterOperationHostResponse.PageNumber"));
+		listClusterOperationHostResponse.setPageSize(_ctx.integerValue("ListClusterOperationHostResponse.PageSize"));
 
 		List<ClusterOperationHost> clusterOperationHostList = new ArrayList<ClusterOperationHost>();
-		for (int i = 0; i < context.lengthValue("ListClusterOperationHostResponse.ClusterOperationHostList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterOperationHostResponse.ClusterOperationHostList.Length"); i++) {
 			ClusterOperationHost clusterOperationHost = new ClusterOperationHost();
-			clusterOperationHost.setHostId(context.stringValue("ListClusterOperationHostResponse.ClusterOperationHostList["+ i +"].HostId"));
-			clusterOperationHost.setHostName(context.stringValue("ListClusterOperationHostResponse.ClusterOperationHostList["+ i +"].HostName"));
-			clusterOperationHost.setStatus(context.stringValue("ListClusterOperationHostResponse.ClusterOperationHostList["+ i +"].Status"));
-			clusterOperationHost.setPercentage(context.stringValue("ListClusterOperationHostResponse.ClusterOperationHostList["+ i +"].Percentage"));
+			clusterOperationHost.setHostId(_ctx.stringValue("ListClusterOperationHostResponse.ClusterOperationHostList["+ i +"].HostId"));
+			clusterOperationHost.setHostName(_ctx.stringValue("ListClusterOperationHostResponse.ClusterOperationHostList["+ i +"].HostName"));
+			clusterOperationHost.setStatus(_ctx.stringValue("ListClusterOperationHostResponse.ClusterOperationHostList["+ i +"].Status"));
+			clusterOperationHost.setPercentage(_ctx.stringValue("ListClusterOperationHostResponse.ClusterOperationHostList["+ i +"].Percentage"));
 
 			clusterOperationHostList.add(clusterOperationHost);
 		}

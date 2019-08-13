@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -24,7 +25,11 @@ import java.util.List;
 public class RunETLJobRequest extends RpcAcsRequest<RunETLJobResponse> {
 	
 	public RunETLJobRequest() {
-		super("Emr", "2016-04-08", "RunETLJob");
+		super("Emr", "2016-04-08", "RunETLJob", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateClusterHostGroupResponseUnmarshaller {
 
-	public static CreateClusterHostGroupResponse unmarshall(CreateClusterHostGroupResponse createClusterHostGroupResponse, UnmarshallerContext context) {
+	public static CreateClusterHostGroupResponse unmarshall(CreateClusterHostGroupResponse createClusterHostGroupResponse, UnmarshallerContext _ctx) {
 		
-		createClusterHostGroupResponse.setRequestId(context.stringValue("CreateClusterHostGroupResponse.RequestId"));
-		createClusterHostGroupResponse.setClusterId(context.stringValue("CreateClusterHostGroupResponse.ClusterId"));
-		createClusterHostGroupResponse.setHostGroupId(context.stringValue("CreateClusterHostGroupResponse.HostGroupId"));
+		createClusterHostGroupResponse.setRequestId(_ctx.stringValue("CreateClusterHostGroupResponse.RequestId"));
+		createClusterHostGroupResponse.setClusterId(_ctx.stringValue("CreateClusterHostGroupResponse.ClusterId"));
+		createClusterHostGroupResponse.setHostGroupId(_ctx.stringValue("CreateClusterHostGroupResponse.HostGroupId"));
 	 
 	 	return createClusterHostGroupResponse;
 	}

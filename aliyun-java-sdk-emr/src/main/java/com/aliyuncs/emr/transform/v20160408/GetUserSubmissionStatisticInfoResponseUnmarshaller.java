@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetUserSubmissionStatisticInfoResponseUnmarshaller {
 
-	public static GetUserSubmissionStatisticInfoResponse unmarshall(GetUserSubmissionStatisticInfoResponse getUserSubmissionStatisticInfoResponse, UnmarshallerContext context) {
+	public static GetUserSubmissionStatisticInfoResponse unmarshall(GetUserSubmissionStatisticInfoResponse getUserSubmissionStatisticInfoResponse, UnmarshallerContext _ctx) {
 		
-		getUserSubmissionStatisticInfoResponse.setRequestId(context.stringValue("GetUserSubmissionStatisticInfoResponse.RequestId"));
+		getUserSubmissionStatisticInfoResponse.setRequestId(_ctx.stringValue("GetUserSubmissionStatisticInfoResponse.RequestId"));
 
 		List<ClusterStatUserSubmission> userSubmissionList = new ArrayList<ClusterStatUserSubmission>();
-		for (int i = 0; i < context.lengthValue("GetUserSubmissionStatisticInfoResponse.UserSubmissionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetUserSubmissionStatisticInfoResponse.UserSubmissionList.Length"); i++) {
 			ClusterStatUserSubmission clusterStatUserSubmission = new ClusterStatUserSubmission();
-			clusterStatUserSubmission.setUser(context.stringValue("GetUserSubmissionStatisticInfoResponse.UserSubmissionList["+ i +"].User"));
-			clusterStatUserSubmission.setSubmission(context.longValue("GetUserSubmissionStatisticInfoResponse.UserSubmissionList["+ i +"].Submission"));
+			clusterStatUserSubmission.setUser(_ctx.stringValue("GetUserSubmissionStatisticInfoResponse.UserSubmissionList["+ i +"].User"));
+			clusterStatUserSubmission.setSubmission(_ctx.longValue("GetUserSubmissionStatisticInfoResponse.UserSubmissionList["+ i +"].Submission"));
 
 			userSubmissionList.add(clusterStatUserSubmission);
 		}

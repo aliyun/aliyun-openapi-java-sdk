@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJobOutputStatisticInfoResponseUnmarshaller {
 
-	public static GetJobOutputStatisticInfoResponse unmarshall(GetJobOutputStatisticInfoResponse getJobOutputStatisticInfoResponse, UnmarshallerContext context) {
+	public static GetJobOutputStatisticInfoResponse unmarshall(GetJobOutputStatisticInfoResponse getJobOutputStatisticInfoResponse, UnmarshallerContext _ctx) {
 		
-		getJobOutputStatisticInfoResponse.setRequestId(context.stringValue("GetJobOutputStatisticInfoResponse.RequestId"));
-		getJobOutputStatisticInfoResponse.setTotal(context.integerValue("GetJobOutputStatisticInfoResponse.Total"));
-		getJobOutputStatisticInfoResponse.setPageNumber(context.integerValue("GetJobOutputStatisticInfoResponse.PageNumber"));
-		getJobOutputStatisticInfoResponse.setPageSize(context.integerValue("GetJobOutputStatisticInfoResponse.PageSize"));
+		getJobOutputStatisticInfoResponse.setRequestId(_ctx.stringValue("GetJobOutputStatisticInfoResponse.RequestId"));
+		getJobOutputStatisticInfoResponse.setTotal(_ctx.integerValue("GetJobOutputStatisticInfoResponse.Total"));
+		getJobOutputStatisticInfoResponse.setPageNumber(_ctx.integerValue("GetJobOutputStatisticInfoResponse.PageNumber"));
+		getJobOutputStatisticInfoResponse.setPageSize(_ctx.integerValue("GetJobOutputStatisticInfoResponse.PageSize"));
 
 		List<ClusterStatJobOutput> jobOutputList = new ArrayList<ClusterStatJobOutput>();
-		for (int i = 0; i < context.lengthValue("GetJobOutputStatisticInfoResponse.JobOutputList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetJobOutputStatisticInfoResponse.JobOutputList.Length"); i++) {
 			ClusterStatJobOutput clusterStatJobOutput = new ClusterStatJobOutput();
-			clusterStatJobOutput.setApplicationId(context.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].ApplicationId"));
-			clusterStatJobOutput.setJobId(context.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].JobId"));
-			clusterStatJobOutput.setStartTime(context.longValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].StartTime"));
-			clusterStatJobOutput.setFinishTime(context.longValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].FinishTime"));
-			clusterStatJobOutput.setName(context.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].Name"));
-			clusterStatJobOutput.setQueue(context.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].Queue"));
-			clusterStatJobOutput.setUser(context.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].User"));
-			clusterStatJobOutput.setState(context.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].State"));
-			clusterStatJobOutput.setBytesOutput(context.longValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].BytesOutput"));
+			clusterStatJobOutput.setApplicationId(_ctx.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].ApplicationId"));
+			clusterStatJobOutput.setJobId(_ctx.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].JobId"));
+			clusterStatJobOutput.setStartTime(_ctx.longValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].StartTime"));
+			clusterStatJobOutput.setFinishTime(_ctx.longValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].FinishTime"));
+			clusterStatJobOutput.setName(_ctx.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].Name"));
+			clusterStatJobOutput.setQueue(_ctx.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].Queue"));
+			clusterStatJobOutput.setUser(_ctx.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].User"));
+			clusterStatJobOutput.setState(_ctx.stringValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].State"));
+			clusterStatJobOutput.setBytesOutput(_ctx.longValue("GetJobOutputStatisticInfoResponse.JobOutputList["+ i +"].BytesOutput"));
 
 			jobOutputList.add(clusterStatJobOutput);
 		}

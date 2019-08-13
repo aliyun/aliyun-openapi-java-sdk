@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListRequiredServiceResponseUnmarshaller {
 
-	public static ListRequiredServiceResponse unmarshall(ListRequiredServiceResponse listRequiredServiceResponse, UnmarshallerContext context) {
+	public static ListRequiredServiceResponse unmarshall(ListRequiredServiceResponse listRequiredServiceResponse, UnmarshallerContext _ctx) {
 		
-		listRequiredServiceResponse.setRequestId(context.stringValue("ListRequiredServiceResponse.RequestId"));
-		listRequiredServiceResponse.setNeedOtherService(context.booleanValue("ListRequiredServiceResponse.NeedOtherService"));
+		listRequiredServiceResponse.setRequestId(_ctx.stringValue("ListRequiredServiceResponse.RequestId"));
+		listRequiredServiceResponse.setNeedOtherService(_ctx.booleanValue("ListRequiredServiceResponse.NeedOtherService"));
 
 		List<Service> serviceList = new ArrayList<Service>();
-		for (int i = 0; i < context.lengthValue("ListRequiredServiceResponse.ServiceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListRequiredServiceResponse.ServiceList.Length"); i++) {
 			Service service = new Service();
-			service.setServiceName(context.stringValue("ListRequiredServiceResponse.ServiceList["+ i +"].ServiceName"));
-			service.setServiceDisplayName(context.stringValue("ListRequiredServiceResponse.ServiceList["+ i +"].ServiceDisplayName"));
+			service.setServiceName(_ctx.stringValue("ListRequiredServiceResponse.ServiceList["+ i +"].ServiceName"));
+			service.setServiceDisplayName(_ctx.stringValue("ListRequiredServiceResponse.ServiceList["+ i +"].ServiceDisplayName"));
 
 			serviceList.add(service);
 		}

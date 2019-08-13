@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobMigrateInfoResponseUnmarshaller {
 
-	public static ListJobMigrateInfoResponse unmarshall(ListJobMigrateInfoResponse listJobMigrateInfoResponse, UnmarshallerContext context) {
+	public static ListJobMigrateInfoResponse unmarshall(ListJobMigrateInfoResponse listJobMigrateInfoResponse, UnmarshallerContext _ctx) {
 		
-		listJobMigrateInfoResponse.setTotal(context.longValue("ListJobMigrateInfoResponse.Total"));
+		listJobMigrateInfoResponse.setTotal(_ctx.longValue("ListJobMigrateInfoResponse.Total"));
 
 		List<JobMigrateInfo> jobMigrateInfoList = new ArrayList<JobMigrateInfo>();
-		for (int i = 0; i < context.lengthValue("ListJobMigrateInfoResponse.JobMigrateInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobMigrateInfoResponse.JobMigrateInfoList.Length"); i++) {
 			JobMigrateInfo jobMigrateInfo = new JobMigrateInfo();
-			jobMigrateInfo.setId(context.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].Id"));
-			jobMigrateInfo.setName(context.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].Name"));
-			jobMigrateInfo.setType(context.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].Type"));
-			jobMigrateInfo.setMaxRetry(context.integerValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].MaxRetry"));
-			jobMigrateInfo.setFailedAction(context.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].FailedAction"));
-			jobMigrateInfo.setParams(context.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].Params"));
-			jobMigrateInfo.setNewId(context.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].NewId"));
-			jobMigrateInfo.setPremigratedDate(context.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].PremigratedDate"));
-			jobMigrateInfo.setMigratedDate(context.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].MigratedDate"));
-			jobMigrateInfo.setCreateTime(context.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].CreateTime"));
+			jobMigrateInfo.setId(_ctx.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].Id"));
+			jobMigrateInfo.setName(_ctx.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].Name"));
+			jobMigrateInfo.setType(_ctx.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].Type"));
+			jobMigrateInfo.setMaxRetry(_ctx.integerValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].MaxRetry"));
+			jobMigrateInfo.setFailedAction(_ctx.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].FailedAction"));
+			jobMigrateInfo.setParams(_ctx.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].Params"));
+			jobMigrateInfo.setNewId(_ctx.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].NewId"));
+			jobMigrateInfo.setPremigratedDate(_ctx.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].PremigratedDate"));
+			jobMigrateInfo.setMigratedDate(_ctx.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].MigratedDate"));
+			jobMigrateInfo.setCreateTime(_ctx.stringValue("ListJobMigrateInfoResponse.JobMigrateInfoList["+ i +"].CreateTime"));
 
 			jobMigrateInfoList.add(jobMigrateInfo);
 		}

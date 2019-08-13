@@ -24,44 +24,44 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFlowNodeInstanceResponseUnmarshaller {
 
-	public static ListFlowNodeInstanceResponse unmarshall(ListFlowNodeInstanceResponse listFlowNodeInstanceResponse, UnmarshallerContext context) {
+	public static ListFlowNodeInstanceResponse unmarshall(ListFlowNodeInstanceResponse listFlowNodeInstanceResponse, UnmarshallerContext _ctx) {
 		
-		listFlowNodeInstanceResponse.setRequestId(context.stringValue("ListFlowNodeInstanceResponse.RequestId"));
-		listFlowNodeInstanceResponse.setPageNumber(context.integerValue("ListFlowNodeInstanceResponse.PageNumber"));
-		listFlowNodeInstanceResponse.setPageSize(context.integerValue("ListFlowNodeInstanceResponse.PageSize"));
-		listFlowNodeInstanceResponse.setTotal(context.integerValue("ListFlowNodeInstanceResponse.Total"));
+		listFlowNodeInstanceResponse.setRequestId(_ctx.stringValue("ListFlowNodeInstanceResponse.RequestId"));
+		listFlowNodeInstanceResponse.setPageNumber(_ctx.integerValue("ListFlowNodeInstanceResponse.PageNumber"));
+		listFlowNodeInstanceResponse.setPageSize(_ctx.integerValue("ListFlowNodeInstanceResponse.PageSize"));
+		listFlowNodeInstanceResponse.setTotal(_ctx.integerValue("ListFlowNodeInstanceResponse.Total"));
 
 		List<FlowNodeInstance> flowNodeInstances = new ArrayList<FlowNodeInstance>();
-		for (int i = 0; i < context.lengthValue("ListFlowNodeInstanceResponse.FlowNodeInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFlowNodeInstanceResponse.FlowNodeInstances.Length"); i++) {
 			FlowNodeInstance flowNodeInstance = new FlowNodeInstance();
-			flowNodeInstance.setId(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Id"));
-			flowNodeInstance.setGmtCreate(context.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].GmtCreate"));
-			flowNodeInstance.setGmtModified(context.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].GmtModified"));
-			flowNodeInstance.setType(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Type"));
-			flowNodeInstance.setStatus(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Status"));
-			flowNodeInstance.setJobId(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].JobId"));
-			flowNodeInstance.setJobName(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].JobName"));
-			flowNodeInstance.setJobType(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].JobType"));
-			flowNodeInstance.setJobParams(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].JobParams"));
-			flowNodeInstance.setFailAct(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].FailAct"));
-			flowNodeInstance.setMaxRetry(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].MaxRetry"));
-			flowNodeInstance.setRetryInterval(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].RetryInterval"));
-			flowNodeInstance.setNodeName(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].NodeName"));
-			flowNodeInstance.setFlowId(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].FlowId"));
-			flowNodeInstance.setFlowInstanceId(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].FlowInstanceId"));
-			flowNodeInstance.setClusterId(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ClusterId"));
-			flowNodeInstance.setHostName(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].HostName"));
-			flowNodeInstance.setProjectId(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ProjectId"));
-			flowNodeInstance.setPending(context.booleanValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Pending"));
-			flowNodeInstance.setStartTime(context.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].StartTime"));
-			flowNodeInstance.setEndTime(context.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].EndTime"));
-			flowNodeInstance.setDuration(context.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Duration"));
-			flowNodeInstance.setRetries(context.integerValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Retries"));
-			flowNodeInstance.setExternalId(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalId"));
-			flowNodeInstance.setExternalSubId(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalSubId"));
-			flowNodeInstance.setExternalChildIds(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalChildIds"));
-			flowNodeInstance.setExternalStatus(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalStatus"));
-			flowNodeInstance.setExternalInfo(context.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalInfo"));
+			flowNodeInstance.setId(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Id"));
+			flowNodeInstance.setGmtCreate(_ctx.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].GmtCreate"));
+			flowNodeInstance.setGmtModified(_ctx.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].GmtModified"));
+			flowNodeInstance.setType(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Type"));
+			flowNodeInstance.setStatus(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Status"));
+			flowNodeInstance.setJobId(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].JobId"));
+			flowNodeInstance.setJobName(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].JobName"));
+			flowNodeInstance.setJobType(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].JobType"));
+			flowNodeInstance.setJobParams(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].JobParams"));
+			flowNodeInstance.setFailAct(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].FailAct"));
+			flowNodeInstance.setMaxRetry(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].MaxRetry"));
+			flowNodeInstance.setRetryInterval(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].RetryInterval"));
+			flowNodeInstance.setNodeName(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].NodeName"));
+			flowNodeInstance.setFlowId(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].FlowId"));
+			flowNodeInstance.setFlowInstanceId(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].FlowInstanceId"));
+			flowNodeInstance.setClusterId(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ClusterId"));
+			flowNodeInstance.setHostName(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].HostName"));
+			flowNodeInstance.setProjectId(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ProjectId"));
+			flowNodeInstance.setPending(_ctx.booleanValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Pending"));
+			flowNodeInstance.setStartTime(_ctx.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].StartTime"));
+			flowNodeInstance.setEndTime(_ctx.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].EndTime"));
+			flowNodeInstance.setDuration(_ctx.longValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Duration"));
+			flowNodeInstance.setRetries(_ctx.integerValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].Retries"));
+			flowNodeInstance.setExternalId(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalId"));
+			flowNodeInstance.setExternalSubId(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalSubId"));
+			flowNodeInstance.setExternalChildIds(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalChildIds"));
+			flowNodeInstance.setExternalStatus(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalStatus"));
+			flowNodeInstance.setExternalInfo(_ctx.stringValue("ListFlowNodeInstanceResponse.FlowNodeInstances["+ i +"].ExternalInfo"));
 
 			flowNodeInstances.add(flowNodeInstance);
 		}

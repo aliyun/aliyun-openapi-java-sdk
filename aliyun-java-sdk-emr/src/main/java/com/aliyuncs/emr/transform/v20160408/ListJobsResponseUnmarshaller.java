@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobsResponseUnmarshaller {
 
-	public static ListJobsResponse unmarshall(ListJobsResponse listJobsResponse, UnmarshallerContext context) {
+	public static ListJobsResponse unmarshall(ListJobsResponse listJobsResponse, UnmarshallerContext _ctx) {
 		
-		listJobsResponse.setRequestId(context.stringValue("ListJobsResponse.RequestId"));
-		listJobsResponse.setTotalCount(context.integerValue("ListJobsResponse.TotalCount"));
-		listJobsResponse.setPageNumber(context.integerValue("ListJobsResponse.PageNumber"));
-		listJobsResponse.setPageSize(context.integerValue("ListJobsResponse.PageSize"));
+		listJobsResponse.setRequestId(_ctx.stringValue("ListJobsResponse.RequestId"));
+		listJobsResponse.setTotalCount(_ctx.integerValue("ListJobsResponse.TotalCount"));
+		listJobsResponse.setPageNumber(_ctx.integerValue("ListJobsResponse.PageNumber"));
+		listJobsResponse.setPageSize(_ctx.integerValue("ListJobsResponse.PageSize"));
 
 		List<JobInfo> jobs = new ArrayList<JobInfo>();
-		for (int i = 0; i < context.lengthValue("ListJobsResponse.Jobs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobsResponse.Jobs.Length"); i++) {
 			JobInfo jobInfo = new JobInfo();
-			jobInfo.setId(context.stringValue("ListJobsResponse.Jobs["+ i +"].Id"));
-			jobInfo.setName(context.stringValue("ListJobsResponse.Jobs["+ i +"].Name"));
-			jobInfo.setType(context.stringValue("ListJobsResponse.Jobs["+ i +"].Type"));
-			jobInfo.setRunParameter(context.stringValue("ListJobsResponse.Jobs["+ i +"].RunParameter"));
-			jobInfo.setFailAct(context.stringValue("ListJobsResponse.Jobs["+ i +"].FailAct"));
-			jobInfo.setMaxRetry(context.integerValue("ListJobsResponse.Jobs["+ i +"].MaxRetry"));
-			jobInfo.setRetryInterval(context.integerValue("ListJobsResponse.Jobs["+ i +"].RetryInterval"));
+			jobInfo.setId(_ctx.stringValue("ListJobsResponse.Jobs["+ i +"].Id"));
+			jobInfo.setName(_ctx.stringValue("ListJobsResponse.Jobs["+ i +"].Name"));
+			jobInfo.setType(_ctx.stringValue("ListJobsResponse.Jobs["+ i +"].Type"));
+			jobInfo.setRunParameter(_ctx.stringValue("ListJobsResponse.Jobs["+ i +"].RunParameter"));
+			jobInfo.setFailAct(_ctx.stringValue("ListJobsResponse.Jobs["+ i +"].FailAct"));
+			jobInfo.setMaxRetry(_ctx.integerValue("ListJobsResponse.Jobs["+ i +"].MaxRetry"));
+			jobInfo.setRetryInterval(_ctx.integerValue("ListJobsResponse.Jobs["+ i +"].RetryInterval"));
 
 			jobs.add(jobInfo);
 		}

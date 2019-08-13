@@ -20,20 +20,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeScalingActivityResponseUnmarshaller {
 
-	public static DescribeScalingActivityResponse unmarshall(DescribeScalingActivityResponse describeScalingActivityResponse, UnmarshallerContext context) {
+	public static DescribeScalingActivityResponse unmarshall(DescribeScalingActivityResponse describeScalingActivityResponse, UnmarshallerContext _ctx) {
 		
-		describeScalingActivityResponse.setRequestId(context.stringValue("DescribeScalingActivityResponse.RequestId"));
-		describeScalingActivityResponse.setBizId(context.stringValue("DescribeScalingActivityResponse.BizId"));
-		describeScalingActivityResponse.setStartTime(context.longValue("DescribeScalingActivityResponse.StartTime"));
-		describeScalingActivityResponse.setEndTime(context.longValue("DescribeScalingActivityResponse.EndTime"));
-		describeScalingActivityResponse.setInstanceIds(context.stringValue("DescribeScalingActivityResponse.InstanceIds"));
-		describeScalingActivityResponse.setTotalCapacity(context.integerValue("DescribeScalingActivityResponse.TotalCapacity"));
-		describeScalingActivityResponse.setCause(context.stringValue("DescribeScalingActivityResponse.Cause"));
-		describeScalingActivityResponse.setDescription(context.stringValue("DescribeScalingActivityResponse.Description"));
-		describeScalingActivityResponse.setStatus(context.stringValue("DescribeScalingActivityResponse.Status"));
-		describeScalingActivityResponse.setTransition(context.stringValue("DescribeScalingActivityResponse.Transition"));
-		describeScalingActivityResponse.setScalingRuleId(context.stringValue("DescribeScalingActivityResponse.ScalingRuleId"));
-		describeScalingActivityResponse.setExpectNum(context.integerValue("DescribeScalingActivityResponse.ExpectNum"));
+		describeScalingActivityResponse.setRequestId(_ctx.stringValue("DescribeScalingActivityResponse.RequestId"));
+		describeScalingActivityResponse.setBizId(_ctx.stringValue("DescribeScalingActivityResponse.BizId"));
+		describeScalingActivityResponse.setStartTime(_ctx.longValue("DescribeScalingActivityResponse.StartTime"));
+		describeScalingActivityResponse.setEndTime(_ctx.longValue("DescribeScalingActivityResponse.EndTime"));
+		describeScalingActivityResponse.setInstanceIds(_ctx.stringValue("DescribeScalingActivityResponse.InstanceIds"));
+		describeScalingActivityResponse.setTotalCapacity(_ctx.integerValue("DescribeScalingActivityResponse.TotalCapacity"));
+		describeScalingActivityResponse.setCause(_ctx.stringValue("DescribeScalingActivityResponse.Cause"));
+		describeScalingActivityResponse.setDescription(_ctx.stringValue("DescribeScalingActivityResponse.Description"));
+		describeScalingActivityResponse.setStatus(_ctx.stringValue("DescribeScalingActivityResponse.Status"));
+		describeScalingActivityResponse.setTransition(_ctx.stringValue("DescribeScalingActivityResponse.Transition"));
+		describeScalingActivityResponse.setScalingRuleId(_ctx.stringValue("DescribeScalingActivityResponse.ScalingRuleId"));
+		describeScalingActivityResponse.setExpectNum(_ctx.integerValue("DescribeScalingActivityResponse.ExpectNum"));
 	 
 	 	return describeScalingActivityResponse;
 	}

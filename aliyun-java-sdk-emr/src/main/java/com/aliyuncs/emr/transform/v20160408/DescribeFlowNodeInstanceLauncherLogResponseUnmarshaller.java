@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeFlowNodeInstanceLauncherLogResponseUnmarshaller {
 
-	public static DescribeFlowNodeInstanceLauncherLogResponse unmarshall(DescribeFlowNodeInstanceLauncherLogResponse describeFlowNodeInstanceLauncherLogResponse, UnmarshallerContext context) {
+	public static DescribeFlowNodeInstanceLauncherLogResponse unmarshall(DescribeFlowNodeInstanceLauncherLogResponse describeFlowNodeInstanceLauncherLogResponse, UnmarshallerContext _ctx) {
 		
-		describeFlowNodeInstanceLauncherLogResponse.setRequestId(context.stringValue("DescribeFlowNodeInstanceLauncherLogResponse.RequestId"));
-		describeFlowNodeInstanceLauncherLogResponse.setLogEnd(context.booleanValue("DescribeFlowNodeInstanceLauncherLogResponse.LogEnd"));
+		describeFlowNodeInstanceLauncherLogResponse.setRequestId(_ctx.stringValue("DescribeFlowNodeInstanceLauncherLogResponse.RequestId"));
+		describeFlowNodeInstanceLauncherLogResponse.setLogEnd(_ctx.booleanValue("DescribeFlowNodeInstanceLauncherLogResponse.LogEnd"));
 
 		List<LogEntry> logEntrys = new ArrayList<LogEntry>();
-		for (int i = 0; i < context.lengthValue("DescribeFlowNodeInstanceLauncherLogResponse.LogEntrys.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeFlowNodeInstanceLauncherLogResponse.LogEntrys.Length"); i++) {
 			LogEntry logEntry = new LogEntry();
-			logEntry.setContent(context.stringValue("DescribeFlowNodeInstanceLauncherLogResponse.LogEntrys["+ i +"].Content"));
+			logEntry.setContent(_ctx.stringValue("DescribeFlowNodeInstanceLauncherLogResponse.LogEntrys["+ i +"].Content"));
 
 			logEntrys.add(logEntry);
 		}

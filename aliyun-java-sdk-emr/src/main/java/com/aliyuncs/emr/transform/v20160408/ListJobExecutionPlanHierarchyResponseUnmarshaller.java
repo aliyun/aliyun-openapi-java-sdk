@@ -26,55 +26,55 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobExecutionPlanHierarchyResponseUnmarshaller {
 
-	public static ListJobExecutionPlanHierarchyResponse unmarshall(ListJobExecutionPlanHierarchyResponse listJobExecutionPlanHierarchyResponse, UnmarshallerContext context) {
+	public static ListJobExecutionPlanHierarchyResponse unmarshall(ListJobExecutionPlanHierarchyResponse listJobExecutionPlanHierarchyResponse, UnmarshallerContext _ctx) {
 		
-		listJobExecutionPlanHierarchyResponse.setRequestId(context.stringValue("ListJobExecutionPlanHierarchyResponse.RequestId"));
-		listJobExecutionPlanHierarchyResponse.setSuccess(context.stringValue("ListJobExecutionPlanHierarchyResponse.Success"));
-		listJobExecutionPlanHierarchyResponse.setErrCode(context.stringValue("ListJobExecutionPlanHierarchyResponse.ErrCode"));
-		listJobExecutionPlanHierarchyResponse.setErrMsg(context.stringValue("ListJobExecutionPlanHierarchyResponse.ErrMsg"));
-		listJobExecutionPlanHierarchyResponse.setTotalCount(context.integerValue("ListJobExecutionPlanHierarchyResponse.TotalCount"));
-		listJobExecutionPlanHierarchyResponse.setPageSize(context.integerValue("ListJobExecutionPlanHierarchyResponse.pageSize"));
-		listJobExecutionPlanHierarchyResponse.setPageNumber(context.integerValue("ListJobExecutionPlanHierarchyResponse.pageNumber"));
+		listJobExecutionPlanHierarchyResponse.setRequestId(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.RequestId"));
+		listJobExecutionPlanHierarchyResponse.setSuccess(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.Success"));
+		listJobExecutionPlanHierarchyResponse.setErrCode(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.ErrCode"));
+		listJobExecutionPlanHierarchyResponse.setErrMsg(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.ErrMsg"));
+		listJobExecutionPlanHierarchyResponse.setTotalCount(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.TotalCount"));
+		listJobExecutionPlanHierarchyResponse.setPageSize(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.pageSize"));
+		listJobExecutionPlanHierarchyResponse.setPageNumber(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.pageNumber"));
 
 		List<HierarchyInfo> hierarchyInfos = new ArrayList<HierarchyInfo>();
-		for (int i = 0; i < context.lengthValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos.Length"); i++) {
 			HierarchyInfo hierarchyInfo = new HierarchyInfo();
-			hierarchyInfo.setId(context.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Id"));
-			hierarchyInfo.setNodeBizType(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].NodeBizType"));
-			hierarchyInfo.setNodeType(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].NodeType"));
-			hierarchyInfo.setRelateId(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].RelateId"));
-			hierarchyInfo.setName(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Name"));
-			hierarchyInfo.setParentId(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ParentId"));
-			hierarchyInfo.setResourceOwnerId(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ResourceOwnerId"));
-			hierarchyInfo.setUtcCreateTimestamp(context.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].UtcCreateTimestamp"));
-			hierarchyInfo.setUtcModifiedTimestamp(context.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].UtcModifiedTimestamp"));
-			hierarchyInfo.setNodeStatus(context.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].NodeStatus"));
+			hierarchyInfo.setId(_ctx.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Id"));
+			hierarchyInfo.setNodeBizType(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].NodeBizType"));
+			hierarchyInfo.setNodeType(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].NodeType"));
+			hierarchyInfo.setRelateId(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].RelateId"));
+			hierarchyInfo.setName(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Name"));
+			hierarchyInfo.setParentId(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ParentId"));
+			hierarchyInfo.setResourceOwnerId(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ResourceOwnerId"));
+			hierarchyInfo.setUtcCreateTimestamp(_ctx.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].UtcCreateTimestamp"));
+			hierarchyInfo.setUtcModifiedTimestamp(_ctx.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].UtcModifiedTimestamp"));
+			hierarchyInfo.setNodeStatus(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].NodeStatus"));
 
 			ExecutionPlan executionPlan = new ExecutionPlan();
-			executionPlan.setBizId(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.BizId"));
-			executionPlan.setName(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.Name"));
-			executionPlan.setStatus(context.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.Status"));
-			executionPlan.setLastExeStatus(context.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.LastExeStatus"));
-			executionPlan.setIsCreateCluster(context.booleanValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.IsCreateCluster"));
-			executionPlan.setIsInterruptWhenError(context.booleanValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.IsInterruptWhenError"));
-			executionPlan.setIsCycle(context.booleanValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.IsCycle"));
-			executionPlan.setScheduleCycle(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.ScheduleCycle"));
-			executionPlan.setRegionId(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.RegionId"));
-			executionPlan.setCronExpr(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.CronExpr"));
-			executionPlan.setUtcCreateTimestamp(context.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.UtcCreateTimestamp"));
-			executionPlan.setUtcModifiedTimestamp(context.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.UtcModifiedTimestamp"));
-			executionPlan.setVersion(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.Version"));
-			executionPlan.setClusterTemplateId(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.ClusterTemplateId"));
+			executionPlan.setBizId(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.BizId"));
+			executionPlan.setName(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.Name"));
+			executionPlan.setStatus(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.Status"));
+			executionPlan.setLastExeStatus(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.LastExeStatus"));
+			executionPlan.setIsCreateCluster(_ctx.booleanValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.IsCreateCluster"));
+			executionPlan.setIsInterruptWhenError(_ctx.booleanValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.IsInterruptWhenError"));
+			executionPlan.setIsCycle(_ctx.booleanValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.IsCycle"));
+			executionPlan.setScheduleCycle(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.ScheduleCycle"));
+			executionPlan.setRegionId(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.RegionId"));
+			executionPlan.setCronExpr(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.CronExpr"));
+			executionPlan.setUtcCreateTimestamp(_ctx.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.UtcCreateTimestamp"));
+			executionPlan.setUtcModifiedTimestamp(_ctx.longValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.UtcModifiedTimestamp"));
+			executionPlan.setVersion(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.Version"));
+			executionPlan.setClusterTemplateId(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].ExecutionPlan.ClusterTemplateId"));
 			hierarchyInfo.setExecutionPlan(executionPlan);
 
 			Job job = new Job();
-			job.setBizId(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.BizId"));
-			job.setName(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.Name"));
-			job.setJobFailAct(context.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.JobFailAct"));
-			job.setJobType(context.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.JobType"));
-			job.setEnvParam(context.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.EnvParam"));
-			job.setMaxRetry(context.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.MaxRetry"));
-			job.setRetryInterval(context.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.RetryInterval"));
+			job.setBizId(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.BizId"));
+			job.setName(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.Name"));
+			job.setJobFailAct(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.JobFailAct"));
+			job.setJobType(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.JobType"));
+			job.setEnvParam(_ctx.stringValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.EnvParam"));
+			job.setMaxRetry(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.MaxRetry"));
+			job.setRetryInterval(_ctx.integerValue("ListJobExecutionPlanHierarchyResponse.HierarchyInfos["+ i +"].Job.RetryInterval"));
 			hierarchyInfo.setJob(job);
 
 			hierarchyInfos.add(hierarchyInfo);

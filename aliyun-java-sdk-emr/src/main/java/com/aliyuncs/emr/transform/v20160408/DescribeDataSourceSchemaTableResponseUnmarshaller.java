@@ -25,26 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataSourceSchemaTableResponseUnmarshaller {
 
-	public static DescribeDataSourceSchemaTableResponse unmarshall(DescribeDataSourceSchemaTableResponse describeDataSourceSchemaTableResponse, UnmarshallerContext context) {
+	public static DescribeDataSourceSchemaTableResponse unmarshall(DescribeDataSourceSchemaTableResponse describeDataSourceSchemaTableResponse, UnmarshallerContext _ctx) {
 		
-		describeDataSourceSchemaTableResponse.setRequestId(context.stringValue("DescribeDataSourceSchemaTableResponse.RequestId"));
-		describeDataSourceSchemaTableResponse.setDataSourceId(context.stringValue("DescribeDataSourceSchemaTableResponse.DataSourceId"));
+		describeDataSourceSchemaTableResponse.setRequestId(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.RequestId"));
+		describeDataSourceSchemaTableResponse.setDataSourceId(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.DataSourceId"));
 
 		Schema schema = new Schema();
-		schema.setDbType(context.stringValue("DescribeDataSourceSchemaTableResponse.Schema.DbType"));
-		schema.setDbVersion(context.stringValue("DescribeDataSourceSchemaTableResponse.Schema.DbVersion"));
-		schema.setDbName(context.stringValue("DescribeDataSourceSchemaTableResponse.Schema.DbName"));
-		schema.setTableName(context.stringValue("DescribeDataSourceSchemaTableResponse.Schema.TableName"));
+		schema.setDbType(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.DbType"));
+		schema.setDbVersion(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.DbVersion"));
+		schema.setDbName(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.DbName"));
+		schema.setTableName(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.TableName"));
 
 		List<Field> fields = new ArrayList<Field>();
-		for (int i = 0; i < context.lengthValue("DescribeDataSourceSchemaTableResponse.Schema.Fields.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDataSourceSchemaTableResponse.Schema.Fields.Length"); i++) {
 			Field field = new Field();
-			field.setType(context.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].Type"));
-			field.setName(context.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].Name"));
-			field.setIndex(context.integerValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].Index"));
-			field.setRawType(context.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].RawType"));
-			field.setAssignType(context.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].AssignType"));
-			field.setAssignValue(context.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].AssignValue"));
+			field.setType(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].Type"));
+			field.setLength(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].Length"));
+			field.setName(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].Name"));
+			field.setIndex(_ctx.integerValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].Index"));
+			field.setRawType(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].RawType"));
+			field.setAssignType(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].AssignType"));
+			field.setAssignValue(_ctx.stringValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].AssignValue"));
+			field.setPartitionKey(_ctx.booleanValue("DescribeDataSourceSchemaTableResponse.Schema.Fields["+ i +"].PartitionKey"));
 
 			fields.add(field);
 		}

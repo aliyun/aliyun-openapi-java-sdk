@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class KillExecutionJobInstanceResponseUnmarshaller {
 
-	public static KillExecutionJobInstanceResponse unmarshall(KillExecutionJobInstanceResponse killExecutionJobInstanceResponse, UnmarshallerContext context) {
+	public static KillExecutionJobInstanceResponse unmarshall(KillExecutionJobInstanceResponse killExecutionJobInstanceResponse, UnmarshallerContext _ctx) {
 		
-		killExecutionJobInstanceResponse.setRequestId(context.stringValue("KillExecutionJobInstanceResponse.RequestId"));
+		killExecutionJobInstanceResponse.setRequestId(_ctx.stringValue("KillExecutionJobInstanceResponse.RequestId"));
 	 
 	 	return killExecutionJobInstanceResponse;
 	}

@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetLogHistogramResponseUnmarshaller {
 
-	public static GetLogHistogramResponse unmarshall(GetLogHistogramResponse getLogHistogramResponse, UnmarshallerContext context) {
+	public static GetLogHistogramResponse unmarshall(GetLogHistogramResponse getLogHistogramResponse, UnmarshallerContext _ctx) {
 		
-		getLogHistogramResponse.setRequestId(context.stringValue("GetLogHistogramResponse.RequestId"));
-		getLogHistogramResponse.setCompleted(context.booleanValue("GetLogHistogramResponse.Completed"));
-		getLogHistogramResponse.setTotalCount(context.longValue("GetLogHistogramResponse.TotalCount"));
+		getLogHistogramResponse.setRequestId(_ctx.stringValue("GetLogHistogramResponse.RequestId"));
+		getLogHistogramResponse.setCompleted(_ctx.booleanValue("GetLogHistogramResponse.Completed"));
+		getLogHistogramResponse.setTotalCount(_ctx.longValue("GetLogHistogramResponse.TotalCount"));
 
 		List<SlsLogHistogram> slsLogHistogramList = new ArrayList<SlsLogHistogram>();
-		for (int i = 0; i < context.lengthValue("GetLogHistogramResponse.SlsLogHistogramList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetLogHistogramResponse.SlsLogHistogramList.Length"); i++) {
 			SlsLogHistogram slsLogHistogram = new SlsLogHistogram();
-			slsLogHistogram.setFromTime(context.integerValue("GetLogHistogramResponse.SlsLogHistogramList["+ i +"].FromTime"));
-			slsLogHistogram.setToTime(context.integerValue("GetLogHistogramResponse.SlsLogHistogramList["+ i +"].ToTime"));
-			slsLogHistogram.setCount(context.longValue("GetLogHistogramResponse.SlsLogHistogramList["+ i +"].Count"));
-			slsLogHistogram.setCompleted(context.booleanValue("GetLogHistogramResponse.SlsLogHistogramList["+ i +"].Completed"));
+			slsLogHistogram.setFromTime(_ctx.integerValue("GetLogHistogramResponse.SlsLogHistogramList["+ i +"].FromTime"));
+			slsLogHistogram.setToTime(_ctx.integerValue("GetLogHistogramResponse.SlsLogHistogramList["+ i +"].ToTime"));
+			slsLogHistogram.setCount(_ctx.longValue("GetLogHistogramResponse.SlsLogHistogramList["+ i +"].Count"));
+			slsLogHistogram.setCompleted(_ctx.booleanValue("GetLogHistogramResponse.SlsLogHistogramList["+ i +"].Completed"));
 
 			slsLogHistogramList.add(slsLogHistogram);
 		}

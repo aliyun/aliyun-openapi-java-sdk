@@ -20,22 +20,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataSourceResponseUnmarshaller {
 
-	public static DescribeDataSourceResponse unmarshall(DescribeDataSourceResponse describeDataSourceResponse, UnmarshallerContext context) {
+	public static DescribeDataSourceResponse unmarshall(DescribeDataSourceResponse describeDataSourceResponse, UnmarshallerContext _ctx) {
 		
-		describeDataSourceResponse.setRequestId(context.stringValue("DescribeDataSourceResponse.RequestId"));
-		describeDataSourceResponse.setId(context.stringValue("DescribeDataSourceResponse.Id"));
-		describeDataSourceResponse.setName(context.stringValue("DescribeDataSourceResponse.Name"));
-		describeDataSourceResponse.setDescription(context.stringValue("DescribeDataSourceResponse.Description"));
-		describeDataSourceResponse.setCategoryId(context.stringValue("DescribeDataSourceResponse.CategoryId"));
-		describeDataSourceResponse.setStatus(context.stringValue("DescribeDataSourceResponse.Status"));
-		describeDataSourceResponse.setSourceType(context.stringValue("DescribeDataSourceResponse.SourceType"));
-		describeDataSourceResponse.setCreateFrom(context.stringValue("DescribeDataSourceResponse.CreateFrom"));
-		describeDataSourceResponse.setConf(context.stringValue("DescribeDataSourceResponse.Conf"));
-		describeDataSourceResponse.setClusterId(context.stringValue("DescribeDataSourceResponse.ClusterId"));
-		describeDataSourceResponse.setCreator(context.stringValue("DescribeDataSourceResponse.Creator"));
-		describeDataSourceResponse.setModifier(context.stringValue("DescribeDataSourceResponse.Modifier"));
-		describeDataSourceResponse.setGmtCreate(context.longValue("DescribeDataSourceResponse.GmtCreate"));
-		describeDataSourceResponse.setGmtModified(context.longValue("DescribeDataSourceResponse.GmtModified"));
+		describeDataSourceResponse.setRequestId(_ctx.stringValue("DescribeDataSourceResponse.RequestId"));
+		describeDataSourceResponse.setId(_ctx.stringValue("DescribeDataSourceResponse.Id"));
+		describeDataSourceResponse.setName(_ctx.stringValue("DescribeDataSourceResponse.Name"));
+		describeDataSourceResponse.setDescription(_ctx.stringValue("DescribeDataSourceResponse.Description"));
+		describeDataSourceResponse.setCategoryId(_ctx.stringValue("DescribeDataSourceResponse.CategoryId"));
+		describeDataSourceResponse.setStatus(_ctx.stringValue("DescribeDataSourceResponse.Status"));
+		describeDataSourceResponse.setSourceType(_ctx.stringValue("DescribeDataSourceResponse.SourceType"));
+		describeDataSourceResponse.setCreateFrom(_ctx.stringValue("DescribeDataSourceResponse.CreateFrom"));
+		describeDataSourceResponse.setConf(_ctx.stringValue("DescribeDataSourceResponse.Conf"));
+		describeDataSourceResponse.setClusterId(_ctx.stringValue("DescribeDataSourceResponse.ClusterId"));
+		describeDataSourceResponse.setCreator(_ctx.stringValue("DescribeDataSourceResponse.Creator"));
+		describeDataSourceResponse.setModifier(_ctx.stringValue("DescribeDataSourceResponse.Modifier"));
+		describeDataSourceResponse.setGmtCreate(_ctx.longValue("DescribeDataSourceResponse.GmtCreate"));
+		describeDataSourceResponse.setGmtModified(_ctx.longValue("DescribeDataSourceResponse.GmtModified"));
 	 
 	 	return describeDataSourceResponse;
 	}

@@ -26,39 +26,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeEmrMainVersionResponseUnmarshaller {
 
-	public static DescribeEmrMainVersionResponse unmarshall(DescribeEmrMainVersionResponse describeEmrMainVersionResponse, UnmarshallerContext context) {
+	public static DescribeEmrMainVersionResponse unmarshall(DescribeEmrMainVersionResponse describeEmrMainVersionResponse, UnmarshallerContext _ctx) {
 		
-		describeEmrMainVersionResponse.setRequestId(context.stringValue("DescribeEmrMainVersionResponse.RequestId"));
+		describeEmrMainVersionResponse.setRequestId(_ctx.stringValue("DescribeEmrMainVersionResponse.RequestId"));
 
 		EmrMainVersion emrMainVersion = new EmrMainVersion();
-		emrMainVersion.setRegionId(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.RegionId"));
-		emrMainVersion.setEmrVersion(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.EmrVersion"));
-		emrMainVersion.setEcmVersion(context.booleanValue("DescribeEmrMainVersionResponse.EmrMainVersion.EcmVersion"));
-		emrMainVersion.setImageId(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ImageId"));
-		emrMainVersion.setDisplay(context.booleanValue("DescribeEmrMainVersionResponse.EmrMainVersion.Display"));
-		emrMainVersion.setStackName(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.StackName"));
-		emrMainVersion.setStackVersion(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.StackVersion"));
+		emrMainVersion.setRegionId(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.RegionId"));
+		emrMainVersion.setEmrVersion(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.EmrVersion"));
+		emrMainVersion.setEcmVersion(_ctx.booleanValue("DescribeEmrMainVersionResponse.EmrMainVersion.EcmVersion"));
+		emrMainVersion.setImageId(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ImageId"));
+		emrMainVersion.setDisplay(_ctx.booleanValue("DescribeEmrMainVersionResponse.EmrMainVersion.Display"));
+		emrMainVersion.setStackName(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.StackName"));
+		emrMainVersion.setStackVersion(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.StackVersion"));
 
 		List<String> whiteUserList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeEmrMainVersionResponse.EmrMainVersion.WhiteUserList.Length"); i++) {
-			whiteUserList.add(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.WhiteUserList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeEmrMainVersionResponse.EmrMainVersion.WhiteUserList.Length"); i++) {
+			whiteUserList.add(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.WhiteUserList["+ i +"]"));
 		}
 		emrMainVersion.setWhiteUserList(whiteUserList);
 
 		List<ClusterTypeInfo> clusterTypeInfoList = new ArrayList<ClusterTypeInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList.Length"); i++) {
 			ClusterTypeInfo clusterTypeInfo = new ClusterTypeInfo();
-			clusterTypeInfo.setClusterType(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ClusterType"));
+			clusterTypeInfo.setClusterType(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ClusterType"));
 
 			List<ServiceInfo> serviceInfoList = new ArrayList<ServiceInfo>();
-			for (int j = 0; j < context.lengthValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList.Length"); j++) {
 				ServiceInfo serviceInfo = new ServiceInfo();
-				serviceInfo.setServiceName(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].ServiceName"));
-				serviceInfo.setServiceDisplayName(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].ServiceDisplayName"));
-				serviceInfo.setServiceVersion(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].ServiceVersion"));
-				serviceInfo.setServiceDisplayVersion(context.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].ServiceDisplayVersion"));
-				serviceInfo.setMandatory(context.booleanValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].Mandatory"));
-				serviceInfo.setDisplay(context.booleanValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].Display"));
+				serviceInfo.setServiceName(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].ServiceName"));
+				serviceInfo.setServiceDisplayName(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].ServiceDisplayName"));
+				serviceInfo.setServiceVersion(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].ServiceVersion"));
+				serviceInfo.setServiceDisplayVersion(_ctx.stringValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].ServiceDisplayVersion"));
+				serviceInfo.setMandatory(_ctx.booleanValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].Mandatory"));
+				serviceInfo.setDisplay(_ctx.booleanValue("DescribeEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfoList["+ i +"].ServiceInfoList["+ j +"].Display"));
 
 				serviceInfoList.add(serviceInfo);
 			}

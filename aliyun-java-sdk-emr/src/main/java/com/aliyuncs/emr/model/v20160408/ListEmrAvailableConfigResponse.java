@@ -83,6 +83,10 @@ public class ListEmrAvailableConfigResponse extends AcsResponse {
 
 		private Boolean ecmVersion;
 
+		private String stackName;
+
+		private String stackVersion;
+
 		private List<ClusterTypeInfo> clusterTypeInfoList;
 
 		public String getBizRegionId() {
@@ -123,6 +127,22 @@ public class ListEmrAvailableConfigResponse extends AcsResponse {
 
 		public void setEcmVersion(Boolean ecmVersion) {
 			this.ecmVersion = ecmVersion;
+		}
+
+		public String getStackName() {
+			return this.stackName;
+		}
+
+		public void setStackName(String stackName) {
+			this.stackName = stackName;
+		}
+
+		public String getStackVersion() {
+			return this.stackVersion;
+		}
+
+		public void setStackVersion(String stackVersion) {
+			this.stackVersion = stackVersion;
 		}
 
 		public List<ClusterTypeInfo> getClusterTypeInfoList() {

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateNavNodeResponseUnmarshaller {
 
-	public static CreateNavNodeResponse unmarshall(CreateNavNodeResponse createNavNodeResponse, UnmarshallerContext context) {
+	public static CreateNavNodeResponse unmarshall(CreateNavNodeResponse createNavNodeResponse, UnmarshallerContext _ctx) {
 		
-		createNavNodeResponse.setRequestId(context.stringValue("CreateNavNodeResponse.RequestId"));
-		createNavNodeResponse.setId(context.stringValue("CreateNavNodeResponse.Id"));
+		createNavNodeResponse.setRequestId(_ctx.stringValue("CreateNavNodeResponse.RequestId"));
+		createNavNodeResponse.setId(_ctx.stringValue("CreateNavNodeResponse.Id"));
 	 
 	 	return createNavNodeResponse;
 	}

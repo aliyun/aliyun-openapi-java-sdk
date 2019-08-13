@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListETLJobTriggerEntityResponseUnmarshaller {
 
-	public static ListETLJobTriggerEntityResponse unmarshall(ListETLJobTriggerEntityResponse listETLJobTriggerEntityResponse, UnmarshallerContext context) {
+	public static ListETLJobTriggerEntityResponse unmarshall(ListETLJobTriggerEntityResponse listETLJobTriggerEntityResponse, UnmarshallerContext _ctx) {
 		
-		listETLJobTriggerEntityResponse.setRequestId(context.stringValue("ListETLJobTriggerEntityResponse.RequestId"));
+		listETLJobTriggerEntityResponse.setRequestId(_ctx.stringValue("ListETLJobTriggerEntityResponse.RequestId"));
 
 		List<TriggerEntity> triggerEntityList = new ArrayList<TriggerEntity>();
-		for (int i = 0; i < context.lengthValue("ListETLJobTriggerEntityResponse.TriggerEntityList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListETLJobTriggerEntityResponse.TriggerEntityList.Length"); i++) {
 			TriggerEntity triggerEntity = new TriggerEntity();
-			triggerEntity.setEntityType(context.stringValue("ListETLJobTriggerEntityResponse.TriggerEntityList["+ i +"].EntityType"));
-			triggerEntity.setId(context.stringValue("ListETLJobTriggerEntityResponse.TriggerEntityList["+ i +"].Id"));
-			triggerEntity.setName(context.stringValue("ListETLJobTriggerEntityResponse.TriggerEntityList["+ i +"].Name"));
+			triggerEntity.setEntityType(_ctx.stringValue("ListETLJobTriggerEntityResponse.TriggerEntityList["+ i +"].EntityType"));
+			triggerEntity.setId(_ctx.stringValue("ListETLJobTriggerEntityResponse.TriggerEntityList["+ i +"].Id"));
+			triggerEntity.setName(_ctx.stringValue("ListETLJobTriggerEntityResponse.TriggerEntityList["+ i +"].Name"));
 
 			triggerEntityList.add(triggerEntity);
 		}

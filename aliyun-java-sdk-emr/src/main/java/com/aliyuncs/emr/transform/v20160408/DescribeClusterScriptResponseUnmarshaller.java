@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeClusterScriptResponseUnmarshaller {
 
-	public static DescribeClusterScriptResponse unmarshall(DescribeClusterScriptResponse describeClusterScriptResponse, UnmarshallerContext context) {
+	public static DescribeClusterScriptResponse unmarshall(DescribeClusterScriptResponse describeClusterScriptResponse, UnmarshallerContext _ctx) {
 		
-		describeClusterScriptResponse.setRequestId(context.stringValue("DescribeClusterScriptResponse.RequestId"));
+		describeClusterScriptResponse.setRequestId(_ctx.stringValue("DescribeClusterScriptResponse.RequestId"));
 
 		List<ScriptNodeInstance> scriptNodeInstances = new ArrayList<ScriptNodeInstance>();
-		for (int i = 0; i < context.lengthValue("DescribeClusterScriptResponse.ScriptNodeInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeClusterScriptResponse.ScriptNodeInstances.Length"); i++) {
 			ScriptNodeInstance scriptNodeInstance = new ScriptNodeInstance();
-			scriptNodeInstance.setNodeId(context.stringValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].NodeId"));
-			scriptNodeInstance.setNodeIp(context.stringValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].NodeIp"));
-			scriptNodeInstance.setStartTime(context.longValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].StartTime"));
-			scriptNodeInstance.setEndTime(context.longValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].EndTime"));
-			scriptNodeInstance.setStatus(context.stringValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].Status"));
+			scriptNodeInstance.setNodeId(_ctx.stringValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].NodeId"));
+			scriptNodeInstance.setNodeIp(_ctx.stringValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].NodeIp"));
+			scriptNodeInstance.setStartTime(_ctx.longValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].StartTime"));
+			scriptNodeInstance.setEndTime(_ctx.longValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].EndTime"));
+			scriptNodeInstance.setStatus(_ctx.stringValue("DescribeClusterScriptResponse.ScriptNodeInstances["+ i +"].Status"));
 
 			scriptNodeInstances.add(scriptNodeInstance);
 		}

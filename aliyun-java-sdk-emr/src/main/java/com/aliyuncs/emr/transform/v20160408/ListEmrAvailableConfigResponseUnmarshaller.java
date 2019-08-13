@@ -29,35 +29,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListEmrAvailableConfigResponseUnmarshaller {
 
-	public static ListEmrAvailableConfigResponse unmarshall(ListEmrAvailableConfigResponse listEmrAvailableConfigResponse, UnmarshallerContext context) {
+	public static ListEmrAvailableConfigResponse unmarshall(ListEmrAvailableConfigResponse listEmrAvailableConfigResponse, UnmarshallerContext _ctx) {
 		
-		listEmrAvailableConfigResponse.setRequestId(context.stringValue("ListEmrAvailableConfigResponse.RequestId"));
+		listEmrAvailableConfigResponse.setRequestId(_ctx.stringValue("ListEmrAvailableConfigResponse.RequestId"));
 
 		List<String> keyPairNameList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ListEmrAvailableConfigResponse.KeyPairNameList.Length"); i++) {
-			keyPairNameList.add(context.stringValue("ListEmrAvailableConfigResponse.KeyPairNameList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ListEmrAvailableConfigResponse.KeyPairNameList.Length"); i++) {
+			keyPairNameList.add(_ctx.stringValue("ListEmrAvailableConfigResponse.KeyPairNameList["+ i +"]"));
 		}
 		listEmrAvailableConfigResponse.setKeyPairNameList(keyPairNameList);
 
 		List<EmrMainVersion> emrMainVersionList = new ArrayList<EmrMainVersion>();
-		for (int i = 0; i < context.lengthValue("ListEmrAvailableConfigResponse.EmrMainVersionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListEmrAvailableConfigResponse.EmrMainVersionList.Length"); i++) {
 			EmrMainVersion emrMainVersion = new EmrMainVersion();
-			emrMainVersion.setRegionId(context.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].RegionId"));
-			emrMainVersion.setMainVersionName(context.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].MainVersionName"));
-			emrMainVersion.setEcmVersion(context.booleanValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].EcmVersion"));
+			emrMainVersion.setRegionId(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].RegionId"));
+			emrMainVersion.setMainVersionName(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].MainVersionName"));
+			emrMainVersion.setEcmVersion(_ctx.booleanValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].EcmVersion"));
+			emrMainVersion.setStackName(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].StackName"));
+			emrMainVersion.setStackVersion(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].StackVersion"));
 
 			List<ClusterTypeInfo> clusterTypeInfoList = new ArrayList<ClusterTypeInfo>();
-			for (int j = 0; j < context.lengthValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList.Length"); j++) {
 				ClusterTypeInfo clusterTypeInfo = new ClusterTypeInfo();
-				clusterTypeInfo.setClusterType(context.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterType"));
+				clusterTypeInfo.setClusterType(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterType"));
 
 				List<ClusterServiceInfo> clusterServiceInfoList = new ArrayList<ClusterServiceInfo>();
-				for (int k = 0; k < context.lengthValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList.Length"); k++) {
 					ClusterServiceInfo clusterServiceInfo = new ClusterServiceInfo();
-					clusterServiceInfo.setServiceName(context.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList["+ k +"].ServiceName"));
-					clusterServiceInfo.setServiceDisplayName(context.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList["+ k +"].ServiceDisplayName"));
-					clusterServiceInfo.setServiceVersion(context.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList["+ k +"].ServiceVersion"));
-					clusterServiceInfo.setMandatory(context.booleanValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList["+ k +"].Mandatory"));
+					clusterServiceInfo.setServiceName(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList["+ k +"].ServiceName"));
+					clusterServiceInfo.setServiceDisplayName(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList["+ k +"].ServiceDisplayName"));
+					clusterServiceInfo.setServiceVersion(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList["+ k +"].ServiceVersion"));
+					clusterServiceInfo.setMandatory(_ctx.booleanValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterServiceInfoList["+ k +"].Mandatory"));
 
 					clusterServiceInfoList.add(clusterServiceInfo);
 				}
@@ -72,41 +74,41 @@ public class ListEmrAvailableConfigResponseUnmarshaller {
 		listEmrAvailableConfigResponse.setEmrMainVersionList(emrMainVersionList);
 
 		List<SecurityGroup> securityGroupList = new ArrayList<SecurityGroup>();
-		for (int i = 0; i < context.lengthValue("ListEmrAvailableConfigResponse.SecurityGroupList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListEmrAvailableConfigResponse.SecurityGroupList.Length"); i++) {
 			SecurityGroup securityGroup = new SecurityGroup();
-			securityGroup.setSecurityGroupId(context.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].SecurityGroupId"));
-			securityGroup.setDescription(context.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].Description"));
-			securityGroup.setSecurityGroupName(context.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].SecurityGroupName"));
-			securityGroup.setVpcId(context.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].VpcId"));
-			securityGroup.setCreationTime(context.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].CreationTime"));
-			securityGroup.setAvailableInstanceAmount(context.integerValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].AvailableInstanceAmount"));
-			securityGroup.setEcsCount(context.integerValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].EcsCount"));
+			securityGroup.setSecurityGroupId(_ctx.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].SecurityGroupId"));
+			securityGroup.setDescription(_ctx.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].Description"));
+			securityGroup.setSecurityGroupName(_ctx.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].SecurityGroupName"));
+			securityGroup.setVpcId(_ctx.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].VpcId"));
+			securityGroup.setCreationTime(_ctx.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].CreationTime"));
+			securityGroup.setAvailableInstanceAmount(_ctx.integerValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].AvailableInstanceAmount"));
+			securityGroup.setEcsCount(_ctx.integerValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].EcsCount"));
 
 			securityGroupList.add(securityGroup);
 		}
 		listEmrAvailableConfigResponse.setSecurityGroupList(securityGroupList);
 
 		List<VpcInfo> vpcInfoList = new ArrayList<VpcInfo>();
-		for (int i = 0; i < context.lengthValue("ListEmrAvailableConfigResponse.VpcInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListEmrAvailableConfigResponse.VpcInfoList.Length"); i++) {
 			VpcInfo vpcInfo = new VpcInfo();
-			vpcInfo.setVpcId(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VpcId"));
-			vpcInfo.setVpcName(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VpcName"));
-			vpcInfo.setCidrBlock(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].CidrBlock"));
-			vpcInfo.setCreationTime(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].CreationTime"));
-			vpcInfo.setVRouterId(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VRouterId"));
-			vpcInfo.setDescription(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].Description"));
+			vpcInfo.setVpcId(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VpcId"));
+			vpcInfo.setVpcName(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VpcName"));
+			vpcInfo.setCidrBlock(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].CidrBlock"));
+			vpcInfo.setCreationTime(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].CreationTime"));
+			vpcInfo.setVRouterId(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VRouterId"));
+			vpcInfo.setDescription(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].Description"));
 
 			List<VswitchInfo> vswitchInfoList = new ArrayList<VswitchInfo>();
-			for (int j = 0; j < context.lengthValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList.Length"); j++) {
 				VswitchInfo vswitchInfo = new VswitchInfo();
-				vswitchInfo.setVpcId(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].VpcId"));
-				vswitchInfo.setVswitchId(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].VswitchId"));
-				vswitchInfo.setVswitchName(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].VswitchName"));
-				vswitchInfo.setZoneId(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].ZoneId"));
-				vswitchInfo.setCidrBlock(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].CidrBlock"));
-				vswitchInfo.setAvailableIpAddressCount(context.longValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].AvailableIpAddressCount"));
-				vswitchInfo.setDescription(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].Description"));
-				vswitchInfo.setCreationTime(context.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].CreationTime"));
+				vswitchInfo.setVpcId(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].VpcId"));
+				vswitchInfo.setVswitchId(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].VswitchId"));
+				vswitchInfo.setVswitchName(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].VswitchName"));
+				vswitchInfo.setZoneId(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].ZoneId"));
+				vswitchInfo.setCidrBlock(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].CidrBlock"));
+				vswitchInfo.setAvailableIpAddressCount(_ctx.longValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].AvailableIpAddressCount"));
+				vswitchInfo.setDescription(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].Description"));
+				vswitchInfo.setCreationTime(_ctx.stringValue("ListEmrAvailableConfigResponse.VpcInfoList["+ i +"].VswitchInfoList["+ j +"].CreationTime"));
 
 				vswitchInfoList.add(vswitchInfo);
 			}

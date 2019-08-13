@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListClusterOperationResponseUnmarshaller {
 
-	public static ListClusterOperationResponse unmarshall(ListClusterOperationResponse listClusterOperationResponse, UnmarshallerContext context) {
+	public static ListClusterOperationResponse unmarshall(ListClusterOperationResponse listClusterOperationResponse, UnmarshallerContext _ctx) {
 		
-		listClusterOperationResponse.setRequestId(context.stringValue("ListClusterOperationResponse.RequestId"));
-		listClusterOperationResponse.setTotalCount(context.integerValue("ListClusterOperationResponse.TotalCount"));
-		listClusterOperationResponse.setPageNumber(context.integerValue("ListClusterOperationResponse.PageNumber"));
-		listClusterOperationResponse.setPageSize(context.integerValue("ListClusterOperationResponse.PageSize"));
+		listClusterOperationResponse.setRequestId(_ctx.stringValue("ListClusterOperationResponse.RequestId"));
+		listClusterOperationResponse.setTotalCount(_ctx.integerValue("ListClusterOperationResponse.TotalCount"));
+		listClusterOperationResponse.setPageNumber(_ctx.integerValue("ListClusterOperationResponse.PageNumber"));
+		listClusterOperationResponse.setPageSize(_ctx.integerValue("ListClusterOperationResponse.PageSize"));
 
 		List<ClusterOperation> clusterOperationList = new ArrayList<ClusterOperation>();
-		for (int i = 0; i < context.lengthValue("ListClusterOperationResponse.ClusterOperationList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListClusterOperationResponse.ClusterOperationList.Length"); i++) {
 			ClusterOperation clusterOperation = new ClusterOperation();
-			clusterOperation.setOperationId(context.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].OperationId"));
-			clusterOperation.setOperationName(context.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].OperationName"));
-			clusterOperation.setStartTime(context.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].StartTime"));
-			clusterOperation.setDuration(context.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].Duration"));
-			clusterOperation.setStatus(context.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].Status"));
-			clusterOperation.setPercentage(context.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].Percentage"));
-			clusterOperation.setComment(context.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].Comment"));
+			clusterOperation.setOperationId(_ctx.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].OperationId"));
+			clusterOperation.setOperationName(_ctx.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].OperationName"));
+			clusterOperation.setStartTime(_ctx.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].StartTime"));
+			clusterOperation.setDuration(_ctx.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].Duration"));
+			clusterOperation.setStatus(_ctx.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].Status"));
+			clusterOperation.setPercentage(_ctx.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].Percentage"));
+			clusterOperation.setComment(_ctx.stringValue("ListClusterOperationResponse.ClusterOperationList["+ i +"].Comment"));
 
 			clusterOperationList.add(clusterOperation);
 		}

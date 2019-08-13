@@ -25,30 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 
-	public static DescribeSecurityGroupAttributeResponse unmarshall(DescribeSecurityGroupAttributeResponse describeSecurityGroupAttributeResponse, UnmarshallerContext context) {
+	public static DescribeSecurityGroupAttributeResponse unmarshall(DescribeSecurityGroupAttributeResponse describeSecurityGroupAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeSecurityGroupAttributeResponse.setRequestId(context.stringValue("DescribeSecurityGroupAttributeResponse.RequestId"));
+		describeSecurityGroupAttributeResponse.setRequestId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.RequestId"));
 
 		List<SecurityGroup> availableGroupList = new ArrayList<SecurityGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList.Length"); i++) {
 			SecurityGroup securityGroup = new SecurityGroup();
-			securityGroup.setSecurityGroupId(context.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].SecurityGroupId"));
-			securityGroup.setDescription(context.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].Description"));
-			securityGroup.setSecurityGroupName(context.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].SecurityGroupName"));
-			securityGroup.setVpcId(context.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].VpcId"));
-			securityGroup.setCreationTime(context.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].CreationTime"));
-			securityGroup.setAvailableInstanceAmount(context.integerValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].AvailableInstanceAmount"));
-			securityGroup.setEcsCount(context.integerValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].EcsCount"));
+			securityGroup.setSecurityGroupId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].SecurityGroupId"));
+			securityGroup.setDescription(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].Description"));
+			securityGroup.setSecurityGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].SecurityGroupName"));
+			securityGroup.setVpcId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].VpcId"));
+			securityGroup.setCreationTime(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].CreationTime"));
+			securityGroup.setAvailableInstanceAmount(_ctx.integerValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].AvailableInstanceAmount"));
+			securityGroup.setEcsCount(_ctx.integerValue("DescribeSecurityGroupAttributeResponse.AvailableGroupList["+ i +"].EcsCount"));
 
 			availableGroupList.add(securityGroup);
 		}
 		describeSecurityGroupAttributeResponse.setAvailableGroupList(availableGroupList);
 
 		List<SecurityGroupAttribute> securityGroupAttributeList = new ArrayList<SecurityGroupAttribute>();
-		for (int i = 0; i < context.lengthValue("DescribeSecurityGroupAttributeResponse.SecurityGroupAttributeList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityGroupAttributeResponse.SecurityGroupAttributeList.Length"); i++) {
 			SecurityGroupAttribute securityGroupAttribute = new SecurityGroupAttribute();
-			securityGroupAttribute.setBizType(context.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupAttributeList["+ i +"].BizType"));
-			securityGroupAttribute.setBizContent(context.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupAttributeList["+ i +"].BizContent"));
+			securityGroupAttribute.setBizType(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupAttributeList["+ i +"].BizType"));
+			securityGroupAttribute.setBizContent(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.SecurityGroupAttributeList["+ i +"].BizContent"));
 
 			securityGroupAttributeList.add(securityGroupAttribute);
 		}

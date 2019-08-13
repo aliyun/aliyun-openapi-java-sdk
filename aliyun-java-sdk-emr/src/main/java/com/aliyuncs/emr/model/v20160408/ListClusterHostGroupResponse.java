@@ -121,6 +121,8 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 
 		private String payType;
 
+		private String chargeType;
+
 		private Integer nodeCount;
 
 		private String vswitchId;
@@ -132,6 +134,10 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 		private String gmtCreate;
 
 		private String gmtModified;
+
+		private String hostGroupChangeType;
+
+		private String hostGroupChangeStatus;
 
 		public String getHostGroupId() {
 			return this.hostGroupId;
@@ -269,6 +275,14 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 			this.payType = payType;
 		}
 
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
+		}
+
 		public Integer getNodeCount() {
 			return this.nodeCount;
 		}
@@ -315,6 +329,22 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 
 		public void setGmtModified(String gmtModified) {
 			this.gmtModified = gmtModified;
+		}
+
+		public String getHostGroupChangeType() {
+			return this.hostGroupChangeType;
+		}
+
+		public void setHostGroupChangeType(String hostGroupChangeType) {
+			this.hostGroupChangeType = hostGroupChangeType;
+		}
+
+		public String getHostGroupChangeStatus() {
+			return this.hostGroupChangeStatus;
+		}
+
+		public void setHostGroupChangeStatus(String hostGroupChangeStatus) {
+			this.hostGroupChangeStatus = hostGroupChangeStatus;
 		}
 	}
 

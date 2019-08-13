@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RerunFlowResponseUnmarshaller {
 
-	public static RerunFlowResponse unmarshall(RerunFlowResponse rerunFlowResponse, UnmarshallerContext context) {
+	public static RerunFlowResponse unmarshall(RerunFlowResponse rerunFlowResponse, UnmarshallerContext _ctx) {
 		
-		rerunFlowResponse.setRequestId(context.stringValue("RerunFlowResponse.RequestId"));
-		rerunFlowResponse.setData(context.booleanValue("RerunFlowResponse.Data"));
+		rerunFlowResponse.setRequestId(_ctx.stringValue("RerunFlowResponse.RequestId"));
+		rerunFlowResponse.setData(_ctx.booleanValue("RerunFlowResponse.Data"));
 	 
 	 	return rerunFlowResponse;
 	}

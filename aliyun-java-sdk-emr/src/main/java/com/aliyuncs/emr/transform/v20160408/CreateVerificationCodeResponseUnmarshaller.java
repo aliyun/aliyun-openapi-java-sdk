@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateVerificationCodeResponseUnmarshaller {
 
-	public static CreateVerificationCodeResponse unmarshall(CreateVerificationCodeResponse createVerificationCodeResponse, UnmarshallerContext context) {
+	public static CreateVerificationCodeResponse unmarshall(CreateVerificationCodeResponse createVerificationCodeResponse, UnmarshallerContext _ctx) {
 		
-		createVerificationCodeResponse.setStatus(context.longValue("CreateVerificationCodeResponse.Status"));
+		createVerificationCodeResponse.setStatus(_ctx.longValue("CreateVerificationCodeResponse.Status"));
 	 
 	 	return createVerificationCodeResponse;
 	}

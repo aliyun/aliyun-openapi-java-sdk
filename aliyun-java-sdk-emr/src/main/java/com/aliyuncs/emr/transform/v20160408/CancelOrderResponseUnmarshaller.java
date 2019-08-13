@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelOrderResponseUnmarshaller {
 
-	public static CancelOrderResponse unmarshall(CancelOrderResponse cancelOrderResponse, UnmarshallerContext context) {
+	public static CancelOrderResponse unmarshall(CancelOrderResponse cancelOrderResponse, UnmarshallerContext _ctx) {
 		
-		cancelOrderResponse.setRequestId(context.stringValue("CancelOrderResponse.RequestId"));
-		cancelOrderResponse.setClusterId(context.stringValue("CancelOrderResponse.clusterId"));
+		cancelOrderResponse.setRequestId(_ctx.stringValue("CancelOrderResponse.RequestId"));
+		cancelOrderResponse.setClusterId(_ctx.stringValue("CancelOrderResponse.clusterId"));
 	 
 	 	return cancelOrderResponse;
 	}

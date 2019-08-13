@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDataSourceResponseUnmarshaller {
 
-	public static ListDataSourceResponse unmarshall(ListDataSourceResponse listDataSourceResponse, UnmarshallerContext context) {
+	public static ListDataSourceResponse unmarshall(ListDataSourceResponse listDataSourceResponse, UnmarshallerContext _ctx) {
 		
-		listDataSourceResponse.setRequestId(context.stringValue("ListDataSourceResponse.RequestId"));
-		listDataSourceResponse.setTotal(context.integerValue("ListDataSourceResponse.Total"));
-		listDataSourceResponse.setPageSize(context.integerValue("ListDataSourceResponse.PageSize"));
-		listDataSourceResponse.setPageNumber(context.integerValue("ListDataSourceResponse.PageNumber"));
+		listDataSourceResponse.setRequestId(_ctx.stringValue("ListDataSourceResponse.RequestId"));
+		listDataSourceResponse.setTotal(_ctx.integerValue("ListDataSourceResponse.Total"));
+		listDataSourceResponse.setPageSize(_ctx.integerValue("ListDataSourceResponse.PageSize"));
+		listDataSourceResponse.setPageNumber(_ctx.integerValue("ListDataSourceResponse.PageNumber"));
 
 		List<DataSource> dataSourceList = new ArrayList<DataSource>();
-		for (int i = 0; i < context.lengthValue("ListDataSourceResponse.DataSourceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDataSourceResponse.DataSourceList.Length"); i++) {
 			DataSource dataSource = new DataSource();
-			dataSource.setId(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Id"));
-			dataSource.setName(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Name"));
-			dataSource.setDescription(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Description"));
-			dataSource.setStatus(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Status"));
-			dataSource.setSourceType(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].SourceType"));
-			dataSource.setCreateFrom(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].CreateFrom"));
-			dataSource.setConf(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Conf"));
-			dataSource.setClusterId(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].ClusterId"));
-			dataSource.setCreator(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Creator"));
-			dataSource.setModifier(context.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Modifier"));
-			dataSource.setGmtCreate(context.longValue("ListDataSourceResponse.DataSourceList["+ i +"].GmtCreate"));
-			dataSource.setGmtModified(context.longValue("ListDataSourceResponse.DataSourceList["+ i +"].GmtModified"));
+			dataSource.setId(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Id"));
+			dataSource.setName(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Name"));
+			dataSource.setDescription(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Description"));
+			dataSource.setStatus(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Status"));
+			dataSource.setSourceType(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].SourceType"));
+			dataSource.setCreateFrom(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].CreateFrom"));
+			dataSource.setConf(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Conf"));
+			dataSource.setClusterId(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].ClusterId"));
+			dataSource.setCreator(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Creator"));
+			dataSource.setModifier(_ctx.stringValue("ListDataSourceResponse.DataSourceList["+ i +"].Modifier"));
+			dataSource.setGmtCreate(_ctx.longValue("ListDataSourceResponse.DataSourceList["+ i +"].GmtCreate"));
+			dataSource.setGmtModified(_ctx.longValue("ListDataSourceResponse.DataSourceList["+ i +"].GmtModified"));
 
 			dataSourceList.add(dataSource);
 		}

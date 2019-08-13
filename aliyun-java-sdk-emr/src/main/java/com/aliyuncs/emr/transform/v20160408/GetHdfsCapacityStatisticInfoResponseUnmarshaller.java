@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetHdfsCapacityStatisticInfoResponseUnmarshaller {
 
-	public static GetHdfsCapacityStatisticInfoResponse unmarshall(GetHdfsCapacityStatisticInfoResponse getHdfsCapacityStatisticInfoResponse, UnmarshallerContext context) {
+	public static GetHdfsCapacityStatisticInfoResponse unmarshall(GetHdfsCapacityStatisticInfoResponse getHdfsCapacityStatisticInfoResponse, UnmarshallerContext _ctx) {
 		
-		getHdfsCapacityStatisticInfoResponse.setRequestId(context.stringValue("GetHdfsCapacityStatisticInfoResponse.RequestId"));
+		getHdfsCapacityStatisticInfoResponse.setRequestId(_ctx.stringValue("GetHdfsCapacityStatisticInfoResponse.RequestId"));
 
 		List<ClusterStatHdfsCapacity> hdfsCapacityList = new ArrayList<ClusterStatHdfsCapacity>();
-		for (int i = 0; i < context.lengthValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList.Length"); i++) {
 			ClusterStatHdfsCapacity clusterStatHdfsCapacity = new ClusterStatHdfsCapacity();
-			clusterStatHdfsCapacity.setCapacityTotal(context.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityTotal"));
-			clusterStatHdfsCapacity.setCapacityTotalGB(context.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityTotalGB"));
-			clusterStatHdfsCapacity.setCapacityUsed(context.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityUsed"));
-			clusterStatHdfsCapacity.setCapacityUsedGB(context.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityUsedGB"));
-			clusterStatHdfsCapacity.setCapacityRemaining(context.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityRemaining"));
-			clusterStatHdfsCapacity.setCapacityRemainingGB(context.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityRemainingGB"));
-			clusterStatHdfsCapacity.setCapacityUsedNonDfs(context.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityUsedNonDfs"));
-			clusterStatHdfsCapacity.setClusterBizId(context.stringValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].ClusterBizId"));
-			clusterStatHdfsCapacity.setDateTime(context.stringValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].DateTime"));
+			clusterStatHdfsCapacity.setCapacityTotal(_ctx.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityTotal"));
+			clusterStatHdfsCapacity.setCapacityTotalGB(_ctx.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityTotalGB"));
+			clusterStatHdfsCapacity.setCapacityUsed(_ctx.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityUsed"));
+			clusterStatHdfsCapacity.setCapacityUsedGB(_ctx.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityUsedGB"));
+			clusterStatHdfsCapacity.setCapacityRemaining(_ctx.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityRemaining"));
+			clusterStatHdfsCapacity.setCapacityRemainingGB(_ctx.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityRemainingGB"));
+			clusterStatHdfsCapacity.setCapacityUsedNonDfs(_ctx.longValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].CapacityUsedNonDfs"));
+			clusterStatHdfsCapacity.setClusterBizId(_ctx.stringValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].ClusterBizId"));
+			clusterStatHdfsCapacity.setDateTime(_ctx.stringValue("GetHdfsCapacityStatisticInfoResponse.HdfsCapacityList["+ i +"].DateTime"));
 
 			hdfsCapacityList.add(clusterStatHdfsCapacity);
 		}

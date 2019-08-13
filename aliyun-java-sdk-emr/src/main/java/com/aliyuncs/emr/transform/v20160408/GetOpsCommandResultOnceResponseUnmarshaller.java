@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetOpsCommandResultOnceResponseUnmarshaller {
 
-	public static GetOpsCommandResultOnceResponse unmarshall(GetOpsCommandResultOnceResponse getOpsCommandResultOnceResponse, UnmarshallerContext context) {
+	public static GetOpsCommandResultOnceResponse unmarshall(GetOpsCommandResultOnceResponse getOpsCommandResultOnceResponse, UnmarshallerContext _ctx) {
 		
-		getOpsCommandResultOnceResponse.setRequestId(context.stringValue("GetOpsCommandResultOnceResponse.RequestId"));
-		getOpsCommandResultOnceResponse.setContent(context.stringValue("GetOpsCommandResultOnceResponse.Content"));
+		getOpsCommandResultOnceResponse.setRequestId(_ctx.stringValue("GetOpsCommandResultOnceResponse.RequestId"));
+		getOpsCommandResultOnceResponse.setContent(_ctx.stringValue("GetOpsCommandResultOnceResponse.Content"));
 	 
 	 	return getOpsCommandResultOnceResponse;
 	}

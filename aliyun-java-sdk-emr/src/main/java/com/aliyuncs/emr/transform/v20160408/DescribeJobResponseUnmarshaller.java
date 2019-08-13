@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeJobResponseUnmarshaller {
 
-	public static DescribeJobResponse unmarshall(DescribeJobResponse describeJobResponse, UnmarshallerContext context) {
+	public static DescribeJobResponse unmarshall(DescribeJobResponse describeJobResponse, UnmarshallerContext _ctx) {
 		
-		describeJobResponse.setRequestId(context.stringValue("DescribeJobResponse.RequestId"));
-		describeJobResponse.setId(context.stringValue("DescribeJobResponse.Id"));
-		describeJobResponse.setName(context.stringValue("DescribeJobResponse.Name"));
-		describeJobResponse.setFailAct(context.stringValue("DescribeJobResponse.FailAct"));
-		describeJobResponse.setType(context.stringValue("DescribeJobResponse.Type"));
-		describeJobResponse.setMaxRetry(context.integerValue("DescribeJobResponse.MaxRetry"));
-		describeJobResponse.setRetryInterval(context.integerValue("DescribeJobResponse.RetryInterval"));
-		describeJobResponse.setRunParameter(context.stringValue("DescribeJobResponse.RunParameter"));
+		describeJobResponse.setRequestId(_ctx.stringValue("DescribeJobResponse.RequestId"));
+		describeJobResponse.setId(_ctx.stringValue("DescribeJobResponse.Id"));
+		describeJobResponse.setName(_ctx.stringValue("DescribeJobResponse.Name"));
+		describeJobResponse.setFailAct(_ctx.stringValue("DescribeJobResponse.FailAct"));
+		describeJobResponse.setType(_ctx.stringValue("DescribeJobResponse.Type"));
+		describeJobResponse.setMaxRetry(_ctx.integerValue("DescribeJobResponse.MaxRetry"));
+		describeJobResponse.setRetryInterval(_ctx.integerValue("DescribeJobResponse.RetryInterval"));
+		describeJobResponse.setRunParameter(_ctx.stringValue("DescribeJobResponse.RunParameter"));
 	 
 	 	return describeJobResponse;
 	}

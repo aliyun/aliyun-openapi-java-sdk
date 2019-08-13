@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyAlertContactResponseUnmarshaller {
 
-	public static ModifyAlertContactResponse unmarshall(ModifyAlertContactResponse modifyAlertContactResponse, UnmarshallerContext context) {
+	public static ModifyAlertContactResponse unmarshall(ModifyAlertContactResponse modifyAlertContactResponse, UnmarshallerContext _ctx) {
 		
-		modifyAlertContactResponse.setDone(context.booleanValue("ModifyAlertContactResponse.Done"));
+		modifyAlertContactResponse.setDone(_ctx.booleanValue("ModifyAlertContactResponse.Done"));
 	 
 	 	return modifyAlertContactResponse;
 	}

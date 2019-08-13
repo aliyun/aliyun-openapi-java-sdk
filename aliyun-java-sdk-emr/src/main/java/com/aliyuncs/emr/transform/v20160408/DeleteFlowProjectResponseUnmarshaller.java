@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteFlowProjectResponseUnmarshaller {
 
-	public static DeleteFlowProjectResponse unmarshall(DeleteFlowProjectResponse deleteFlowProjectResponse, UnmarshallerContext context) {
+	public static DeleteFlowProjectResponse unmarshall(DeleteFlowProjectResponse deleteFlowProjectResponse, UnmarshallerContext _ctx) {
 		
-		deleteFlowProjectResponse.setRequestId(context.stringValue("DeleteFlowProjectResponse.RequestId"));
-		deleteFlowProjectResponse.setData(context.booleanValue("DeleteFlowProjectResponse.Data"));
+		deleteFlowProjectResponse.setRequestId(_ctx.stringValue("DeleteFlowProjectResponse.RequestId"));
+		deleteFlowProjectResponse.setData(_ctx.booleanValue("DeleteFlowProjectResponse.Data"));
 	 
 	 	return deleteFlowProjectResponse;
 	}

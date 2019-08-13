@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAlertUserGroupResponseUnmarshaller {
 
-	public static ListAlertUserGroupResponse unmarshall(ListAlertUserGroupResponse listAlertUserGroupResponse, UnmarshallerContext context) {
+	public static ListAlertUserGroupResponse unmarshall(ListAlertUserGroupResponse listAlertUserGroupResponse, UnmarshallerContext _ctx) {
 		
 
 		List<Group> alertUserGroupList = new ArrayList<Group>();
-		for (int i = 0; i < context.lengthValue("ListAlertUserGroupResponse.AlertUserGroupList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAlertUserGroupResponse.AlertUserGroupList.Length"); i++) {
 			Group group = new Group();
-			group.setId(context.longValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].Id"));
-			group.setGmtCreate(context.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].GmtCreate"));
-			group.setGmtModified(context.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].GmtModified"));
-			group.setBizId(context.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].BizId"));
-			group.setName(context.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].Name"));
-			group.setDescription(context.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].Description"));
+			group.setId(_ctx.longValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].Id"));
+			group.setGmtCreate(_ctx.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].GmtCreate"));
+			group.setGmtModified(_ctx.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].GmtModified"));
+			group.setBizId(_ctx.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].BizId"));
+			group.setName(_ctx.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].Name"));
+			group.setDescription(_ctx.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].Description"));
 
 			List<UserInfo> userList = new ArrayList<UserInfo>();
-			for (int j = 0; j < context.lengthValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList.Length"); j++) {
 				UserInfo userInfo = new UserInfo();
-				userInfo.setUserId(context.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList["+ j +"].UserId"));
-				userInfo.setUserName(context.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList["+ j +"].UserName"));
-				userInfo.setEnableSMS(context.booleanValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList["+ j +"].EnableSMS"));
-				userInfo.setEnableEmail(context.booleanValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList["+ j +"].EnableEmail"));
+				userInfo.setUserId(_ctx.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList["+ j +"].UserId"));
+				userInfo.setUserName(_ctx.stringValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList["+ j +"].UserName"));
+				userInfo.setEnableSMS(_ctx.booleanValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList["+ j +"].EnableSMS"));
+				userInfo.setEnableEmail(_ctx.booleanValue("ListAlertUserGroupResponse.AlertUserGroupList["+ i +"].UserList["+ j +"].EnableEmail"));
 
 				userList.add(userInfo);
 			}

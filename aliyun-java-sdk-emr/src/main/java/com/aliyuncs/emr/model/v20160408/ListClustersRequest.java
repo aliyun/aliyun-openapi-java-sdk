@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.emr.Endpoint;
 
 /**
  * @author auto create
@@ -24,7 +25,11 @@ import java.util.List;
 public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 	
 	public ListClustersRequest() {
-		super("Emr", "2016-04-08", "ListClusters");
+		super("Emr", "2016-04-08", "ListClusters", "emr");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
@@ -44,6 +49,8 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 	private Boolean defaultStatus;
 
 	private Integer pageNumber;
+
+	private String machineType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -145,6 +152,17 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getMachineType() {
+		return this.machineType;
+	}
+
+	public void setMachineType(String machineType) {
+		this.machineType = machineType;
+		if(machineType != null){
+			putQueryParameter("MachineType", machineType);
 		}
 	}
 

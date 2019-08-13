@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QuerySlsMetricDataResponseUnmarshaller {
 
-	public static QuerySlsMetricDataResponse unmarshall(QuerySlsMetricDataResponse querySlsMetricDataResponse, UnmarshallerContext context) {
+	public static QuerySlsMetricDataResponse unmarshall(QuerySlsMetricDataResponse querySlsMetricDataResponse, UnmarshallerContext _ctx) {
 		
-		querySlsMetricDataResponse.setRequestId(context.stringValue("QuerySlsMetricDataResponse.RequestId"));
+		querySlsMetricDataResponse.setRequestId(_ctx.stringValue("QuerySlsMetricDataResponse.RequestId"));
 
 		List<SlsDataPoint> datapoints = new ArrayList<SlsDataPoint>();
-		for (int i = 0; i < context.lengthValue("QuerySlsMetricDataResponse.Datapoints.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QuerySlsMetricDataResponse.Datapoints.Length"); i++) {
 			SlsDataPoint slsDataPoint = new SlsDataPoint();
-			slsDataPoint.setRole(context.stringValue("QuerySlsMetricDataResponse.Datapoints["+ i +"].Role"));
-			slsDataPoint.setValue(context.stringValue("QuerySlsMetricDataResponse.Datapoints["+ i +"].Value"));
-			slsDataPoint.setTimestamp(context.longValue("QuerySlsMetricDataResponse.Datapoints["+ i +"].Timestamp"));
+			slsDataPoint.setRole(_ctx.stringValue("QuerySlsMetricDataResponse.Datapoints["+ i +"].Role"));
+			slsDataPoint.setValue(_ctx.stringValue("QuerySlsMetricDataResponse.Datapoints["+ i +"].Value"));
+			slsDataPoint.setTimestamp(_ctx.longValue("QuerySlsMetricDataResponse.Datapoints["+ i +"].Timestamp"));
 
 			datapoints.add(slsDataPoint);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RunParagraphResponseUnmarshaller {
 
-	public static RunParagraphResponse unmarshall(RunParagraphResponse runParagraphResponse, UnmarshallerContext context) {
+	public static RunParagraphResponse unmarshall(RunParagraphResponse runParagraphResponse, UnmarshallerContext _ctx) {
 		
-		runParagraphResponse.setRequestId(context.stringValue("RunParagraphResponse.RequestId"));
+		runParagraphResponse.setRequestId(_ctx.stringValue("RunParagraphResponse.RequestId"));
 	 
 	 	return runParagraphResponse;
 	}
