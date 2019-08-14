@@ -12,18 +12,12 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.oos.transform.v20190601;
+package com.aliyuncs.oos;
 
-import com.aliyuncs.oos.model.v20190601.CancelExecutionResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import java.util.HashMap;
 
+public class Endpoint {
+    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
 
-public class CancelExecutionResponseUnmarshaller {
-
-	public static CancelExecutionResponse unmarshall(CancelExecutionResponse cancelExecutionResponse, UnmarshallerContext _ctx) {
-		
-		cancelExecutionResponse.setRequestId(_ctx.stringValue("CancelExecutionResponse.RequestId"));
-	 
-	 	return cancelExecutionResponse;
-	}
+    public static String endpointRegionalType = "regional";
 }

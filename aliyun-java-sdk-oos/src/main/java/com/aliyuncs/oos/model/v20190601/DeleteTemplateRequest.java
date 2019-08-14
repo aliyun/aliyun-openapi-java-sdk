@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.oos.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse> {
 	
 	public DeleteTemplateRequest() {
-		super("oos", "2019-06-01", "DeleteTemplate", "OOS");
+		super("oos", "2019-06-01", "DeleteTemplate", "oos");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String templateName;

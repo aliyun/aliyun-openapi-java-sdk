@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.oos.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 	
 	public ListTemplatesRequest() {
-		super("oos", "2019-06-01", "ListTemplates", "OOS");
+		super("oos", "2019-06-01", "ListTemplates", "oos");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Boolean hasTrigger;

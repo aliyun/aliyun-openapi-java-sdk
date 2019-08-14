@@ -1,3 +1,6 @@
+2019-08-14 Version: 1.0.6
+- Generated 2019-06-01 for `oos`.
+
 2019-08-12 Version: 1.0.5
 - Generated 2019-06-01 for `oos`.
 
