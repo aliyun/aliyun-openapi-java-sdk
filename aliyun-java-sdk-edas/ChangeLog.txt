@@ -1,3 +1,7 @@
+2019-08-14 Version: 2.46.7
+- Increase the elastic expansion pop interface.
+- Increase the service method list pop interface.
+
 2019-07-11 Version: 2.46.6
 - Generated 2017-08-01 for `Edas`.
 

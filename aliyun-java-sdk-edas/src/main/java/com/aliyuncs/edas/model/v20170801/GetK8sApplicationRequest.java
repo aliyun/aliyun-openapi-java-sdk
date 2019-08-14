@@ -16,6 +16,7 @@ package com.aliyuncs.edas.model.v20170801;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.edas.Endpoint;
 
 /**
  * @author auto create
@@ -27,6 +28,10 @@ public class GetK8sApplicationRequest extends RoaAcsRequest<GetK8sApplicationRes
 		super("Edas", "2017-08-01", "GetK8sApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_application");
 		setMethod(MethodType.GET);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String appId;

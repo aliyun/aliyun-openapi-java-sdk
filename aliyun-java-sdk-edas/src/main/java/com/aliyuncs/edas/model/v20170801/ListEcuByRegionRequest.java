@@ -16,6 +16,7 @@ package com.aliyuncs.edas.model.v20170801;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.edas.Endpoint;
 
 /**
  * @author auto create
@@ -27,6 +28,10 @@ public class ListEcuByRegionRequest extends RoaAcsRequest<ListEcuByRegionRespons
 		super("Edas", "2017-08-01", "ListEcuByRegion", "edas");
 		setUriPattern("/pop/v5/resource/ecu_list");
 		setMethod(MethodType.GET);
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String act;
