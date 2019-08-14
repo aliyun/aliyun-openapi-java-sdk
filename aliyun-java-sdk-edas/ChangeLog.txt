@@ -1,3 +1,6 @@
+2019-08-14 Version: 2.51.0
+- Support kubernetes application using war and jar package.
+
 2019-08-14 Version: 2.46.7
 - Increase the elastic expansion pop interface.
 - Increase the service method list pop interface.
