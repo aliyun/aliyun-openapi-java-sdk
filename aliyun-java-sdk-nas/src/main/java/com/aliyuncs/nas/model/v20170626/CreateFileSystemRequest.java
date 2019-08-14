@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.nas.Endpoint;
 
 /**
  * @author auto create
@@ -23,14 +24,31 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemResponse> {
 	
 	public CreateFileSystemRequest() {
-		super("NAS", "2017-06-26", "CreateFileSystem", "NAS");
+		super("NAS", "2017-06-26", "CreateFileSystem", "nas");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String zoneId;
 
 	private String description;
 
 	private String protocolType;
 
 	private String storageType;
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
 
 	public String getDescription() {
 		return this.description;

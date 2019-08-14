@@ -16,6 +16,7 @@ package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.nas.Endpoint;
 
 /**
  * @author auto create
@@ -24,7 +25,11 @@ import java.util.List;
 public class RemoveTagsRequest extends RpcAcsRequest<RemoveTagsResponse> {
 	
 	public RemoveTagsRequest() {
-		super("NAS", "2017-06-26", "RemoveTags", "NAS");
+		super("NAS", "2017-06-26", "RemoveTags", "nas");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private List<Tag> tags;

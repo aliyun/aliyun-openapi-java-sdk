@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.nas.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteMountTargetRequest extends RpcAcsRequest<DeleteMountTargetResponse> {
 	
 	public DeleteMountTargetRequest() {
-		super("NAS", "2017-06-26", "DeleteMountTarget", "NAS");
+		super("NAS", "2017-06-26", "DeleteMountTarget", "nas");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String mountTargetDomain;

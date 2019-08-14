@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem;
+import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Ldap;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem._Package;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -46,8 +47,13 @@ public class DescribeFileSystemsResponseUnmarshaller {
 			fileSystem.setZoneId(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].ZoneId"));
 			fileSystem.setBandwidth(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Bandwidth"));
 			fileSystem.setCapacity(_ctx.longValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Capacity"));
-			fileSystem.setDestription(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Destription"));
 			fileSystem.setStatus(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Status"));
+
+			Ldap ldap = new Ldap();
+			ldap.setBindDN(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.BindDN"));
+			ldap.setURI(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.URI"));
+			ldap.setSearchBase(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Ldap.SearchBase"));
+			fileSystem.setLdap(ldap);
 
 			List<MountTarget> mountTargets = new ArrayList<MountTarget>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets.Length"); j++) {

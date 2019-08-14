@@ -15,6 +15,7 @@
 package com.aliyuncs.nas.model.v20170626;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.nas.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse> {
 	
 	public DeleteSnapshotRequest() {
-		super("NAS", "2017-06-26", "DeleteSnapshot", "NAS");
+		super("NAS", "2017-06-26", "DeleteSnapshot", "nas");
+		try {
+			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
+			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String snapshotId;

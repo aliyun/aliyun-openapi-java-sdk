@@ -97,13 +97,13 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private Long capacity;
 
-		private String destription;
-
 		private String status;
 
 		private List<MountTarget> mountTargets;
 
 		private List<_Package> packages;
+
+		private Ldap ldap;
 
 		public String getFileSystemId() {
 			return this.fileSystemId;
@@ -201,14 +201,6 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.capacity = capacity;
 		}
 
-		public String getDestription() {
-			return this.destription;
-		}
-
-		public void setDestription(String destription) {
-			this.destription = destription;
-		}
-
 		public String getStatus() {
 			return this.status;
 		}
@@ -231,6 +223,14 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		public void setPackages(List<_Package> packages) {
 			this.packages = packages;
+		}
+
+		public Ldap getLdap() {
+			return this.ldap;
+		}
+
+		public void setLdap(Ldap ldap) {
+			this.ldap = ldap;
 		}
 
 		public static class MountTarget {
@@ -306,6 +306,39 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 			public void setPackageId(String packageId) {
 				this.packageId = packageId;
+			}
+		}
+
+		public static class Ldap {
+
+			private String bindDN;
+
+			private String uRI;
+
+			private String searchBase;
+
+			public String getBindDN() {
+				return this.bindDN;
+			}
+
+			public void setBindDN(String bindDN) {
+				this.bindDN = bindDN;
+			}
+
+			public String getURI() {
+				return this.uRI;
+			}
+
+			public void setURI(String uRI) {
+				this.uRI = uRI;
+			}
+
+			public String getSearchBase() {
+				return this.searchBase;
+			}
+
+			public void setSearchBase(String searchBase) {
+				this.searchBase = searchBase;
 			}
 		}
 	}
