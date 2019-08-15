@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCdnDomainConfigsResponseUnmarshaller {
 
-	public static DescribeCdnDomainConfigsResponse unmarshall(DescribeCdnDomainConfigsResponse describeCdnDomainConfigsResponse, UnmarshallerContext context) {
+	public static DescribeCdnDomainConfigsResponse unmarshall(DescribeCdnDomainConfigsResponse describeCdnDomainConfigsResponse, UnmarshallerContext _ctx) {
 		
-		describeCdnDomainConfigsResponse.setRequestId(context.stringValue("DescribeCdnDomainConfigsResponse.RequestId"));
+		describeCdnDomainConfigsResponse.setRequestId(_ctx.stringValue("DescribeCdnDomainConfigsResponse.RequestId"));
 
 		List<DomainConfig> domainConfigs = new ArrayList<DomainConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeCdnDomainConfigsResponse.DomainConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCdnDomainConfigsResponse.DomainConfigs.Length"); i++) {
 			DomainConfig domainConfig = new DomainConfig();
-			domainConfig.setFunctionName(context.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionName"));
-			domainConfig.setConfigId(context.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].ConfigId"));
-			domainConfig.setStatus(context.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].Status"));
+			domainConfig.setFunctionName(_ctx.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionName"));
+			domainConfig.setConfigId(_ctx.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].ConfigId"));
+			domainConfig.setStatus(_ctx.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].Status"));
 
 			List<FunctionArg> functionArgs = new ArrayList<FunctionArg>();
-			for (int j = 0; j < context.lengthValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {
 				FunctionArg functionArg = new FunctionArg();
-				functionArg.setArgName(context.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgName"));
-				functionArg.setArgValue(context.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue"));
+				functionArg.setArgName(_ctx.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgName"));
+				functionArg.setArgValue(_ctx.stringValue("DescribeCdnDomainConfigsResponse.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue"));
 
 				functionArgs.add(functionArg);
 			}

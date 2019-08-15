@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCdnCertificateDetailResponseUnmarshaller {
 
-	public static DescribeCdnCertificateDetailResponse unmarshall(DescribeCdnCertificateDetailResponse describeCdnCertificateDetailResponse, UnmarshallerContext context) {
+	public static DescribeCdnCertificateDetailResponse unmarshall(DescribeCdnCertificateDetailResponse describeCdnCertificateDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeCdnCertificateDetailResponse.setRequestId(context.stringValue("DescribeCdnCertificateDetailResponse.RequestId"));
-		describeCdnCertificateDetailResponse.setCert(context.stringValue("DescribeCdnCertificateDetailResponse.Cert"));
-		describeCdnCertificateDetailResponse.setKey(context.stringValue("DescribeCdnCertificateDetailResponse.Key"));
-		describeCdnCertificateDetailResponse.setCertId(context.longValue("DescribeCdnCertificateDetailResponse.CertId"));
-		describeCdnCertificateDetailResponse.setCertName(context.stringValue("DescribeCdnCertificateDetailResponse.CertName"));
+		describeCdnCertificateDetailResponse.setRequestId(_ctx.stringValue("DescribeCdnCertificateDetailResponse.RequestId"));
+		describeCdnCertificateDetailResponse.setCert(_ctx.stringValue("DescribeCdnCertificateDetailResponse.Cert"));
+		describeCdnCertificateDetailResponse.setKey(_ctx.stringValue("DescribeCdnCertificateDetailResponse.Key"));
+		describeCdnCertificateDetailResponse.setCertId(_ctx.longValue("DescribeCdnCertificateDetailResponse.CertId"));
+		describeCdnCertificateDetailResponse.setCertName(_ctx.stringValue("DescribeCdnCertificateDetailResponse.CertName"));
 	 
 	 	return describeCdnCertificateDetailResponse;
 	}

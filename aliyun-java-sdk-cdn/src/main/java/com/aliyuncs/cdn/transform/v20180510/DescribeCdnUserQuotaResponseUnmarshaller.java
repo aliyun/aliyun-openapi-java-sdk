@@ -20,18 +20,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCdnUserQuotaResponseUnmarshaller {
 
-	public static DescribeCdnUserQuotaResponse unmarshall(DescribeCdnUserQuotaResponse describeCdnUserQuotaResponse, UnmarshallerContext context) {
+	public static DescribeCdnUserQuotaResponse unmarshall(DescribeCdnUserQuotaResponse describeCdnUserQuotaResponse, UnmarshallerContext _ctx) {
 		
-		describeCdnUserQuotaResponse.setRequestId(context.stringValue("DescribeCdnUserQuotaResponse.RequestId"));
-		describeCdnUserQuotaResponse.setDomainQuota(context.integerValue("DescribeCdnUserQuotaResponse.DomainQuota"));
-		describeCdnUserQuotaResponse.setRefreshUrlQuota(context.integerValue("DescribeCdnUserQuotaResponse.RefreshUrlQuota"));
-		describeCdnUserQuotaResponse.setRefreshDirQuota(context.integerValue("DescribeCdnUserQuotaResponse.RefreshDirQuota"));
-		describeCdnUserQuotaResponse.setRefreshUrlRemain(context.integerValue("DescribeCdnUserQuotaResponse.RefreshUrlRemain"));
-		describeCdnUserQuotaResponse.setRefreshDirRemain(context.integerValue("DescribeCdnUserQuotaResponse.RefreshDirRemain"));
-		describeCdnUserQuotaResponse.setPreloadQuota(context.integerValue("DescribeCdnUserQuotaResponse.PreloadQuota"));
-		describeCdnUserQuotaResponse.setPreloadRemain(context.integerValue("DescribeCdnUserQuotaResponse.PreloadRemain"));
-		describeCdnUserQuotaResponse.setBlockQuota(context.integerValue("DescribeCdnUserQuotaResponse.BlockQuota"));
-		describeCdnUserQuotaResponse.setBlockRemain(context.integerValue("DescribeCdnUserQuotaResponse.BlockRemain"));
+		describeCdnUserQuotaResponse.setRequestId(_ctx.stringValue("DescribeCdnUserQuotaResponse.RequestId"));
+		describeCdnUserQuotaResponse.setDomainQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.DomainQuota"));
+		describeCdnUserQuotaResponse.setRefreshUrlQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshUrlQuota"));
+		describeCdnUserQuotaResponse.setRefreshDirQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshDirQuota"));
+		describeCdnUserQuotaResponse.setRefreshUrlRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshUrlRemain"));
+		describeCdnUserQuotaResponse.setRefreshDirRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.RefreshDirRemain"));
+		describeCdnUserQuotaResponse.setPreloadQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.PreloadQuota"));
+		describeCdnUserQuotaResponse.setPreloadRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.PreloadRemain"));
+		describeCdnUserQuotaResponse.setBlockQuota(_ctx.integerValue("DescribeCdnUserQuotaResponse.BlockQuota"));
+		describeCdnUserQuotaResponse.setBlockRemain(_ctx.integerValue("DescribeCdnUserQuotaResponse.BlockRemain"));
 	 
 	 	return describeCdnUserQuotaResponse;
 	}

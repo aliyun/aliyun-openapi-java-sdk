@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainTopReferVisitResponseUnmarshaller {
 
-	public static DescribeDomainTopReferVisitResponse unmarshall(DescribeDomainTopReferVisitResponse describeDomainTopReferVisitResponse, UnmarshallerContext context) {
+	public static DescribeDomainTopReferVisitResponse unmarshall(DescribeDomainTopReferVisitResponse describeDomainTopReferVisitResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainTopReferVisitResponse.setRequestId(context.stringValue("DescribeDomainTopReferVisitResponse.RequestId"));
-		describeDomainTopReferVisitResponse.setDomainName(context.stringValue("DescribeDomainTopReferVisitResponse.DomainName"));
-		describeDomainTopReferVisitResponse.setStartTime(context.stringValue("DescribeDomainTopReferVisitResponse.StartTime"));
+		describeDomainTopReferVisitResponse.setRequestId(_ctx.stringValue("DescribeDomainTopReferVisitResponse.RequestId"));
+		describeDomainTopReferVisitResponse.setDomainName(_ctx.stringValue("DescribeDomainTopReferVisitResponse.DomainName"));
+		describeDomainTopReferVisitResponse.setStartTime(_ctx.stringValue("DescribeDomainTopReferVisitResponse.StartTime"));
 
 		List<ReferList> topReferList = new ArrayList<ReferList>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainTopReferVisitResponse.TopReferList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainTopReferVisitResponse.TopReferList.Length"); i++) {
 			ReferList referList = new ReferList();
-			referList.setReferDetail(context.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].ReferDetail"));
-			referList.setVisitData(context.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].VisitData"));
-			referList.setVisitProportion(context.floatValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].VisitProportion"));
-			referList.setFlow(context.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].Flow"));
-			referList.setFlowProportion(context.floatValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].FlowProportion"));
+			referList.setReferDetail(_ctx.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].ReferDetail"));
+			referList.setVisitData(_ctx.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].VisitData"));
+			referList.setVisitProportion(_ctx.floatValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].VisitProportion"));
+			referList.setFlow(_ctx.stringValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].Flow"));
+			referList.setFlowProportion(_ctx.floatValue("DescribeDomainTopReferVisitResponse.TopReferList["+ i +"].FlowProportion"));
 
 			topReferList.add(referList);
 		}

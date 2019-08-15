@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainCnameResponseUnmarshaller {
 
-	public static DescribeDomainCnameResponse unmarshall(DescribeDomainCnameResponse describeDomainCnameResponse, UnmarshallerContext context) {
+	public static DescribeDomainCnameResponse unmarshall(DescribeDomainCnameResponse describeDomainCnameResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainCnameResponse.setRequestId(context.stringValue("DescribeDomainCnameResponse.RequestId"));
+		describeDomainCnameResponse.setRequestId(_ctx.stringValue("DescribeDomainCnameResponse.RequestId"));
 
 		List<Data> cnameDatas = new ArrayList<Data>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainCnameResponse.CnameDatas.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainCnameResponse.CnameDatas.Length"); i++) {
 			Data data = new Data();
-			data.setDomain(context.stringValue("DescribeDomainCnameResponse.CnameDatas["+ i +"].Domain"));
-			data.setCname(context.stringValue("DescribeDomainCnameResponse.CnameDatas["+ i +"].Cname"));
-			data.setStatus(context.integerValue("DescribeDomainCnameResponse.CnameDatas["+ i +"].Status"));
+			data.setDomain(_ctx.stringValue("DescribeDomainCnameResponse.CnameDatas["+ i +"].Domain"));
+			data.setCname(_ctx.stringValue("DescribeDomainCnameResponse.CnameDatas["+ i +"].Cname"));
+			data.setStatus(_ctx.integerValue("DescribeDomainCnameResponse.CnameDatas["+ i +"].Status"));
 
 			cnameDatas.add(data);
 		}

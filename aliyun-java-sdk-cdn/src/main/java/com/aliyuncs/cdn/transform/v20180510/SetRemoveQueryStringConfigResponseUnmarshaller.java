@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetRemoveQueryStringConfigResponseUnmarshaller {
 
-	public static SetRemoveQueryStringConfigResponse unmarshall(SetRemoveQueryStringConfigResponse setRemoveQueryStringConfigResponse, UnmarshallerContext context) {
+	public static SetRemoveQueryStringConfigResponse unmarshall(SetRemoveQueryStringConfigResponse setRemoveQueryStringConfigResponse, UnmarshallerContext _ctx) {
 		
-		setRemoveQueryStringConfigResponse.setRequestId(context.stringValue("SetRemoveQueryStringConfigResponse.RequestId"));
+		setRemoveQueryStringConfigResponse.setRequestId(_ctx.stringValue("SetRemoveQueryStringConfigResponse.RequestId"));
 	 
 	 	return setRemoveQueryStringConfigResponse;
 	}

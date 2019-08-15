@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyFileCacheExpiredConfigResponseUnmarshaller {
 
-	public static ModifyFileCacheExpiredConfigResponse unmarshall(ModifyFileCacheExpiredConfigResponse modifyFileCacheExpiredConfigResponse, UnmarshallerContext context) {
+	public static ModifyFileCacheExpiredConfigResponse unmarshall(ModifyFileCacheExpiredConfigResponse modifyFileCacheExpiredConfigResponse, UnmarshallerContext _ctx) {
 		
-		modifyFileCacheExpiredConfigResponse.setRequestId(context.stringValue("ModifyFileCacheExpiredConfigResponse.RequestId"));
+		modifyFileCacheExpiredConfigResponse.setRequestId(_ctx.stringValue("ModifyFileCacheExpiredConfigResponse.RequestId"));
 	 
 	 	return modifyFileCacheExpiredConfigResponse;
 	}

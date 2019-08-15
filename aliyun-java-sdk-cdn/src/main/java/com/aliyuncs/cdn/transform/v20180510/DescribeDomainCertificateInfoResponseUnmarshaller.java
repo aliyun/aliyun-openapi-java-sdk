@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainCertificateInfoResponseUnmarshaller {
 
-	public static DescribeDomainCertificateInfoResponse unmarshall(DescribeDomainCertificateInfoResponse describeDomainCertificateInfoResponse, UnmarshallerContext context) {
+	public static DescribeDomainCertificateInfoResponse unmarshall(DescribeDomainCertificateInfoResponse describeDomainCertificateInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainCertificateInfoResponse.setRequestId(context.stringValue("DescribeDomainCertificateInfoResponse.RequestId"));
+		describeDomainCertificateInfoResponse.setRequestId(_ctx.stringValue("DescribeDomainCertificateInfoResponse.RequestId"));
 
 		List<CertInfo> certInfos = new ArrayList<CertInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainCertificateInfoResponse.CertInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainCertificateInfoResponse.CertInfos.Length"); i++) {
 			CertInfo certInfo = new CertInfo();
-			certInfo.setDomainName(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].DomainName"));
-			certInfo.setCertName(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertName"));
-			certInfo.setCertDomainName(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertDomainName"));
-			certInfo.setCertExpireTime(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertExpireTime"));
-			certInfo.setCertLife(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertLife"));
-			certInfo.setCertOrg(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertOrg"));
-			certInfo.setCertType(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertType"));
-			certInfo.setServerCertificateStatus(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].ServerCertificateStatus"));
-			certInfo.setStatus(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].Status"));
-			certInfo.setServerCertificate(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].ServerCertificate"));
-			certInfo.setCertUpdateTime(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertUpdateTime"));
-			certInfo.setCertStartTime(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertStartTime"));
-			certInfo.setDomainCnameStatus(context.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].DomainCnameStatus"));
+			certInfo.setDomainName(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].DomainName"));
+			certInfo.setCertName(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertName"));
+			certInfo.setCertDomainName(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertDomainName"));
+			certInfo.setCertExpireTime(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertExpireTime"));
+			certInfo.setCertLife(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertLife"));
+			certInfo.setCertOrg(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertOrg"));
+			certInfo.setCertType(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertType"));
+			certInfo.setServerCertificateStatus(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].ServerCertificateStatus"));
+			certInfo.setStatus(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].Status"));
+			certInfo.setServerCertificate(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].ServerCertificate"));
+			certInfo.setCertUpdateTime(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertUpdateTime"));
+			certInfo.setCertStartTime(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].CertStartTime"));
+			certInfo.setDomainCnameStatus(_ctx.stringValue("DescribeDomainCertificateInfoResponse.CertInfos["+ i +"].DomainCnameStatus"));
 
 			certInfos.add(certInfo);
 		}

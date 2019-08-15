@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetDomainGreenManagerConfigResponseUnmarshaller {
 
-	public static SetDomainGreenManagerConfigResponse unmarshall(SetDomainGreenManagerConfigResponse setDomainGreenManagerConfigResponse, UnmarshallerContext context) {
+	public static SetDomainGreenManagerConfigResponse unmarshall(SetDomainGreenManagerConfigResponse setDomainGreenManagerConfigResponse, UnmarshallerContext _ctx) {
 		
-		setDomainGreenManagerConfigResponse.setRequestId(context.stringValue("SetDomainGreenManagerConfigResponse.RequestId"));
+		setDomainGreenManagerConfigResponse.setRequestId(_ctx.stringValue("SetDomainGreenManagerConfigResponse.RequestId"));
 	 
 	 	return setDomainGreenManagerConfigResponse;
 	}

@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeL2VipsByDomainResponseUnmarshaller {
 
-	public static DescribeL2VipsByDomainResponse unmarshall(DescribeL2VipsByDomainResponse describeL2VipsByDomainResponse, UnmarshallerContext context) {
+	public static DescribeL2VipsByDomainResponse unmarshall(DescribeL2VipsByDomainResponse describeL2VipsByDomainResponse, UnmarshallerContext _ctx) {
 		
-		describeL2VipsByDomainResponse.setRequestId(context.stringValue("DescribeL2VipsByDomainResponse.RequestId"));
-		describeL2VipsByDomainResponse.setDomainName(context.stringValue("DescribeL2VipsByDomainResponse.DomainName"));
+		describeL2VipsByDomainResponse.setRequestId(_ctx.stringValue("DescribeL2VipsByDomainResponse.RequestId"));
+		describeL2VipsByDomainResponse.setDomainName(_ctx.stringValue("DescribeL2VipsByDomainResponse.DomainName"));
 
 		List<String> vips = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeL2VipsByDomainResponse.Vips.Length"); i++) {
-			vips.add(context.stringValue("DescribeL2VipsByDomainResponse.Vips["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeL2VipsByDomainResponse.Vips.Length"); i++) {
+			vips.add(_ctx.stringValue("DescribeL2VipsByDomainResponse.Vips["+ i +"]"));
 		}
 		describeL2VipsByDomainResponse.setVips(vips);
 	 

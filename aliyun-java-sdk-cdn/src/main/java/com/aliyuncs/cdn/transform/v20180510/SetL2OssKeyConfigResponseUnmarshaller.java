@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetL2OssKeyConfigResponseUnmarshaller {
 
-	public static SetL2OssKeyConfigResponse unmarshall(SetL2OssKeyConfigResponse setL2OssKeyConfigResponse, UnmarshallerContext context) {
+	public static SetL2OssKeyConfigResponse unmarshall(SetL2OssKeyConfigResponse setL2OssKeyConfigResponse, UnmarshallerContext _ctx) {
 		
-		setL2OssKeyConfigResponse.setRequestId(context.stringValue("SetL2OssKeyConfigResponse.RequestId"));
+		setL2OssKeyConfigResponse.setRequestId(_ctx.stringValue("SetL2OssKeyConfigResponse.RequestId"));
 	 
 	 	return setL2OssKeyConfigResponse;
 	}

@@ -20,17 +20,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRefreshQuotaResponseUnmarshaller {
 
-	public static DescribeRefreshQuotaResponse unmarshall(DescribeRefreshQuotaResponse describeRefreshQuotaResponse, UnmarshallerContext context) {
+	public static DescribeRefreshQuotaResponse unmarshall(DescribeRefreshQuotaResponse describeRefreshQuotaResponse, UnmarshallerContext _ctx) {
 		
-		describeRefreshQuotaResponse.setRequestId(context.stringValue("DescribeRefreshQuotaResponse.RequestId"));
-		describeRefreshQuotaResponse.setUrlQuota(context.stringValue("DescribeRefreshQuotaResponse.UrlQuota"));
-		describeRefreshQuotaResponse.setDirQuota(context.stringValue("DescribeRefreshQuotaResponse.DirQuota"));
-		describeRefreshQuotaResponse.setUrlRemain(context.stringValue("DescribeRefreshQuotaResponse.UrlRemain"));
-		describeRefreshQuotaResponse.setDirRemain(context.stringValue("DescribeRefreshQuotaResponse.DirRemain"));
-		describeRefreshQuotaResponse.setPreloadQuota(context.stringValue("DescribeRefreshQuotaResponse.PreloadQuota"));
-		describeRefreshQuotaResponse.setBlockQuota(context.stringValue("DescribeRefreshQuotaResponse.BlockQuota"));
-		describeRefreshQuotaResponse.setPreloadRemain(context.stringValue("DescribeRefreshQuotaResponse.PreloadRemain"));
-		describeRefreshQuotaResponse.setBlockRemain(context.stringValue("DescribeRefreshQuotaResponse.blockRemain"));
+		describeRefreshQuotaResponse.setRequestId(_ctx.stringValue("DescribeRefreshQuotaResponse.RequestId"));
+		describeRefreshQuotaResponse.setUrlQuota(_ctx.stringValue("DescribeRefreshQuotaResponse.UrlQuota"));
+		describeRefreshQuotaResponse.setDirQuota(_ctx.stringValue("DescribeRefreshQuotaResponse.DirQuota"));
+		describeRefreshQuotaResponse.setUrlRemain(_ctx.stringValue("DescribeRefreshQuotaResponse.UrlRemain"));
+		describeRefreshQuotaResponse.setDirRemain(_ctx.stringValue("DescribeRefreshQuotaResponse.DirRemain"));
+		describeRefreshQuotaResponse.setPreloadQuota(_ctx.stringValue("DescribeRefreshQuotaResponse.PreloadQuota"));
+		describeRefreshQuotaResponse.setBlockQuota(_ctx.stringValue("DescribeRefreshQuotaResponse.BlockQuota"));
+		describeRefreshQuotaResponse.setPreloadRemain(_ctx.stringValue("DescribeRefreshQuotaResponse.PreloadRemain"));
+		describeRefreshQuotaResponse.setBlockRemain(_ctx.stringValue("DescribeRefreshQuotaResponse.blockRemain"));
 	 
 	 	return describeRefreshQuotaResponse;
 	}

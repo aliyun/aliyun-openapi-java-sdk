@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRealtimeDeliveryAccResponseUnmarshaller {
 
-	public static DescribeRealtimeDeliveryAccResponse unmarshall(DescribeRealtimeDeliveryAccResponse describeRealtimeDeliveryAccResponse, UnmarshallerContext context) {
+	public static DescribeRealtimeDeliveryAccResponse unmarshall(DescribeRealtimeDeliveryAccResponse describeRealtimeDeliveryAccResponse, UnmarshallerContext _ctx) {
 		
-		describeRealtimeDeliveryAccResponse.setRequestId(context.stringValue("DescribeRealtimeDeliveryAccResponse.RequestId"));
+		describeRealtimeDeliveryAccResponse.setRequestId(_ctx.stringValue("DescribeRealtimeDeliveryAccResponse.RequestId"));
 
 		List<AccData> reatTimeDeliveryAccData = new ArrayList<AccData>();
-		for (int i = 0; i < context.lengthValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData.Length"); i++) {
 			AccData accData = new AccData();
-			accData.setTimeStamp(context.stringValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].TimeStamp"));
-			accData.setSuccessNum(context.integerValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].SuccessNum"));
-			accData.setFailedNum(context.integerValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].FailedNum"));
+			accData.setTimeStamp(_ctx.stringValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].TimeStamp"));
+			accData.setSuccessNum(_ctx.integerValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].SuccessNum"));
+			accData.setFailedNum(_ctx.integerValue("DescribeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData["+ i +"].FailedNum"));
 
 			reatTimeDeliveryAccData.add(accData);
 		}

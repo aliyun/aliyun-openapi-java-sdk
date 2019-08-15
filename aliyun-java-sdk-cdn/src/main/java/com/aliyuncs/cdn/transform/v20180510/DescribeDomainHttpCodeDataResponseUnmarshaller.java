@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainHttpCodeDataResponseUnmarshaller {
 
-	public static DescribeDomainHttpCodeDataResponse unmarshall(DescribeDomainHttpCodeDataResponse describeDomainHttpCodeDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainHttpCodeDataResponse unmarshall(DescribeDomainHttpCodeDataResponse describeDomainHttpCodeDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainHttpCodeDataResponse.setRequestId(context.stringValue("DescribeDomainHttpCodeDataResponse.RequestId"));
-		describeDomainHttpCodeDataResponse.setDomainName(context.stringValue("DescribeDomainHttpCodeDataResponse.DomainName"));
-		describeDomainHttpCodeDataResponse.setStartTime(context.stringValue("DescribeDomainHttpCodeDataResponse.StartTime"));
-		describeDomainHttpCodeDataResponse.setEndTime(context.stringValue("DescribeDomainHttpCodeDataResponse.EndTime"));
-		describeDomainHttpCodeDataResponse.setDataInterval(context.stringValue("DescribeDomainHttpCodeDataResponse.DataInterval"));
+		describeDomainHttpCodeDataResponse.setRequestId(_ctx.stringValue("DescribeDomainHttpCodeDataResponse.RequestId"));
+		describeDomainHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeDomainHttpCodeDataResponse.DomainName"));
+		describeDomainHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeDomainHttpCodeDataResponse.StartTime"));
+		describeDomainHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeDomainHttpCodeDataResponse.EndTime"));
+		describeDomainHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainHttpCodeDataResponse.DataInterval"));
 
 		List<UsageData> httpCodeData = new ArrayList<UsageData>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainHttpCodeDataResponse.HttpCodeData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainHttpCodeDataResponse.HttpCodeData.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTimeStamp(context.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].TimeStamp"));
+			usageData.setTimeStamp(_ctx.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].TimeStamp"));
 
 			List<CodeProportionData> value = new ArrayList<CodeProportionData>();
-			for (int j = 0; j < context.lengthValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value.Length"); j++) {
 				CodeProportionData codeProportionData = new CodeProportionData();
-				codeProportionData.setCode(context.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value["+ j +"].Code"));
-				codeProportionData.setProportion(context.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value["+ j +"].Proportion"));
-				codeProportionData.setCount(context.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value["+ j +"].Count"));
+				codeProportionData.setCode(_ctx.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value["+ j +"].Code"));
+				codeProportionData.setProportion(_ctx.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value["+ j +"].Proportion"));
+				codeProportionData.setCount(_ctx.stringValue("DescribeDomainHttpCodeDataResponse.HttpCodeData["+ i +"].Value["+ j +"].Count"));
 
 				value.add(codeProportionData);
 			}

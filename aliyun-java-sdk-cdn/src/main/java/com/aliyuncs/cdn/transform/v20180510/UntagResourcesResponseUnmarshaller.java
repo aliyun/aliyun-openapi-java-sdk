@@ -14,16 +14,16 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20180510.AddFCTriggerResponse;
+import com.aliyuncs.cdn.model.v20180510.UntagResourcesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AddFCTriggerResponseUnmarshaller {
+public class UntagResourcesResponseUnmarshaller {
 
-	public static AddFCTriggerResponse unmarshall(AddFCTriggerResponse addFCTriggerResponse, UnmarshallerContext _ctx) {
+	public static UntagResourcesResponse unmarshall(UntagResourcesResponse untagResourcesResponse, UnmarshallerContext _ctx) {
 		
-		addFCTriggerResponse.setRequestId(_ctx.stringValue("AddFCTriggerResponse.RequestId"));
+		untagResourcesResponse.setRequestId(_ctx.stringValue("UntagResourcesResponse.RequestId"));
 	 
-	 	return addFCTriggerResponse;
+	 	return untagResourcesResponse;
 	}
 }

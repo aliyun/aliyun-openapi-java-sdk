@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCdnTypesResponseUnmarshaller {
 
-	public static DescribeCdnTypesResponse unmarshall(DescribeCdnTypesResponse describeCdnTypesResponse, UnmarshallerContext context) {
+	public static DescribeCdnTypesResponse unmarshall(DescribeCdnTypesResponse describeCdnTypesResponse, UnmarshallerContext _ctx) {
 		
-		describeCdnTypesResponse.setRequestId(context.stringValue("DescribeCdnTypesResponse.RequestId"));
+		describeCdnTypesResponse.setRequestId(_ctx.stringValue("DescribeCdnTypesResponse.RequestId"));
 
 		List<CdnType> cdnTypes = new ArrayList<CdnType>();
-		for (int i = 0; i < context.lengthValue("DescribeCdnTypesResponse.CdnTypes.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCdnTypesResponse.CdnTypes.Length"); i++) {
 			CdnType cdnType = new CdnType();
-			cdnType.setType(context.stringValue("DescribeCdnTypesResponse.CdnTypes["+ i +"].Type"));
-			cdnType.setDesc(context.stringValue("DescribeCdnTypesResponse.CdnTypes["+ i +"].Desc"));
+			cdnType.setType(_ctx.stringValue("DescribeCdnTypesResponse.CdnTypes["+ i +"].Type"));
+			cdnType.setDesc(_ctx.stringValue("DescribeCdnTypesResponse.CdnTypes["+ i +"].Desc"));
 
 			cdnTypes.add(cdnType);
 		}

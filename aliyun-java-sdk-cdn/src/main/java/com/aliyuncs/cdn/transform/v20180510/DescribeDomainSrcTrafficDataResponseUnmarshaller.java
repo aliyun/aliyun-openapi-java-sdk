@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainSrcTrafficDataResponseUnmarshaller {
 
-	public static DescribeDomainSrcTrafficDataResponse unmarshall(DescribeDomainSrcTrafficDataResponse describeDomainSrcTrafficDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainSrcTrafficDataResponse unmarshall(DescribeDomainSrcTrafficDataResponse describeDomainSrcTrafficDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainSrcTrafficDataResponse.setRequestId(context.stringValue("DescribeDomainSrcTrafficDataResponse.RequestId"));
-		describeDomainSrcTrafficDataResponse.setDomainName(context.stringValue("DescribeDomainSrcTrafficDataResponse.DomainName"));
-		describeDomainSrcTrafficDataResponse.setStartTime(context.stringValue("DescribeDomainSrcTrafficDataResponse.StartTime"));
-		describeDomainSrcTrafficDataResponse.setEndTime(context.stringValue("DescribeDomainSrcTrafficDataResponse.EndTime"));
-		describeDomainSrcTrafficDataResponse.setDataInterval(context.stringValue("DescribeDomainSrcTrafficDataResponse.DataInterval"));
+		describeDomainSrcTrafficDataResponse.setRequestId(_ctx.stringValue("DescribeDomainSrcTrafficDataResponse.RequestId"));
+		describeDomainSrcTrafficDataResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcTrafficDataResponse.DomainName"));
+		describeDomainSrcTrafficDataResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcTrafficDataResponse.StartTime"));
+		describeDomainSrcTrafficDataResponse.setEndTime(_ctx.stringValue("DescribeDomainSrcTrafficDataResponse.EndTime"));
+		describeDomainSrcTrafficDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainSrcTrafficDataResponse.DataInterval"));
 
 		List<DataModule> srcTrafficDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainSrcTrafficDataResponse.SrcTrafficDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcTrafficDataResponse.SrcTrafficDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDomainSrcTrafficDataResponse.SrcTrafficDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeDomainSrcTrafficDataResponse.SrcTrafficDataPerInterval["+ i +"].Value"));
-			dataModule.setHttpsValue(context.stringValue("DescribeDomainSrcTrafficDataResponse.SrcTrafficDataPerInterval["+ i +"].HttpsValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainSrcTrafficDataResponse.SrcTrafficDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainSrcTrafficDataResponse.SrcTrafficDataPerInterval["+ i +"].Value"));
+			dataModule.setHttpsValue(_ctx.stringValue("DescribeDomainSrcTrafficDataResponse.SrcTrafficDataPerInterval["+ i +"].HttpsValue"));
 
 			srcTrafficDataPerInterval.add(dataModule);
 		}

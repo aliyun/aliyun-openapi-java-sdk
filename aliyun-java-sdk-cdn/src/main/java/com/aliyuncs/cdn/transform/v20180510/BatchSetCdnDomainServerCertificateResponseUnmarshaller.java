@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BatchSetCdnDomainServerCertificateResponseUnmarshaller {
 
-	public static BatchSetCdnDomainServerCertificateResponse unmarshall(BatchSetCdnDomainServerCertificateResponse batchSetCdnDomainServerCertificateResponse, UnmarshallerContext context) {
+	public static BatchSetCdnDomainServerCertificateResponse unmarshall(BatchSetCdnDomainServerCertificateResponse batchSetCdnDomainServerCertificateResponse, UnmarshallerContext _ctx) {
 		
-		batchSetCdnDomainServerCertificateResponse.setRequestId(context.stringValue("BatchSetCdnDomainServerCertificateResponse.RequestId"));
+		batchSetCdnDomainServerCertificateResponse.setRequestId(_ctx.stringValue("BatchSetCdnDomainServerCertificateResponse.RequestId"));
 	 
 	 	return batchSetCdnDomainServerCertificateResponse;
 	}

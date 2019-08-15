@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainBpsDataResponseUnmarshaller {
 
-	public static DescribeDomainBpsDataResponse unmarshall(DescribeDomainBpsDataResponse describeDomainBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainBpsDataResponse unmarshall(DescribeDomainBpsDataResponse describeDomainBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainBpsDataResponse.setRequestId(context.stringValue("DescribeDomainBpsDataResponse.RequestId"));
-		describeDomainBpsDataResponse.setDomainName(context.stringValue("DescribeDomainBpsDataResponse.DomainName"));
-		describeDomainBpsDataResponse.setStartTime(context.stringValue("DescribeDomainBpsDataResponse.StartTime"));
-		describeDomainBpsDataResponse.setEndTime(context.stringValue("DescribeDomainBpsDataResponse.EndTime"));
-		describeDomainBpsDataResponse.setLocationNameEn(context.stringValue("DescribeDomainBpsDataResponse.LocationNameEn"));
-		describeDomainBpsDataResponse.setIspNameEn(context.stringValue("DescribeDomainBpsDataResponse.IspNameEn"));
-		describeDomainBpsDataResponse.setDataInterval(context.stringValue("DescribeDomainBpsDataResponse.DataInterval"));
+		describeDomainBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDomainBpsDataResponse.RequestId"));
+		describeDomainBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainBpsDataResponse.DomainName"));
+		describeDomainBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDomainBpsDataResponse.StartTime"));
+		describeDomainBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDomainBpsDataResponse.EndTime"));
+		describeDomainBpsDataResponse.setLocationNameEn(_ctx.stringValue("DescribeDomainBpsDataResponse.LocationNameEn"));
+		describeDomainBpsDataResponse.setIspNameEn(_ctx.stringValue("DescribeDomainBpsDataResponse.IspNameEn"));
+		describeDomainBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainBpsDataResponse.DataInterval"));
 
 		List<DataModule> bpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainBpsDataResponse.BpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Value"));
-			dataModule.setDomesticValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticValue"));
-			dataModule.setOverseasValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasValue"));
-			dataModule.setHttpsValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsValue"));
-			dataModule.setHttpsDomesticValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsDomesticValue"));
-			dataModule.setHttpsOverseasValue(context.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsOverseasValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].Value"));
+			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].DomesticValue"));
+			dataModule.setOverseasValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].OverseasValue"));
+			dataModule.setHttpsValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsValue"));
+			dataModule.setHttpsDomesticValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsDomesticValue"));
+			dataModule.setHttpsOverseasValue(_ctx.stringValue("DescribeDomainBpsDataResponse.BpsDataPerInterval["+ i +"].HttpsOverseasValue"));
 
 			bpsDataPerInterval.add(dataModule);
 		}

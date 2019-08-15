@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteUserUsageDataExportTaskResponseUnmarshaller {
 
-	public static DeleteUserUsageDataExportTaskResponse unmarshall(DeleteUserUsageDataExportTaskResponse deleteUserUsageDataExportTaskResponse, UnmarshallerContext context) {
+	public static DeleteUserUsageDataExportTaskResponse unmarshall(DeleteUserUsageDataExportTaskResponse deleteUserUsageDataExportTaskResponse, UnmarshallerContext _ctx) {
 		
-		deleteUserUsageDataExportTaskResponse.setRequestId(context.stringValue("DeleteUserUsageDataExportTaskResponse.RequestId"));
+		deleteUserUsageDataExportTaskResponse.setRequestId(_ctx.stringValue("DeleteUserUsageDataExportTaskResponse.RequestId"));
 	 
 	 	return deleteUserUsageDataExportTaskResponse;
 	}

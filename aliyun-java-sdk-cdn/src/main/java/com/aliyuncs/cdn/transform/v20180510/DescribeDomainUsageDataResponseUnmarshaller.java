@@ -24,22 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainUsageDataResponseUnmarshaller {
 
-	public static DescribeDomainUsageDataResponse unmarshall(DescribeDomainUsageDataResponse describeDomainUsageDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainUsageDataResponse unmarshall(DescribeDomainUsageDataResponse describeDomainUsageDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainUsageDataResponse.setRequestId(context.stringValue("DescribeDomainUsageDataResponse.RequestId"));
-		describeDomainUsageDataResponse.setDomainName(context.stringValue("DescribeDomainUsageDataResponse.DomainName"));
-		describeDomainUsageDataResponse.setStartTime(context.stringValue("DescribeDomainUsageDataResponse.StartTime"));
-		describeDomainUsageDataResponse.setEndTime(context.stringValue("DescribeDomainUsageDataResponse.EndTime"));
-		describeDomainUsageDataResponse.setType(context.stringValue("DescribeDomainUsageDataResponse.Type"));
-		describeDomainUsageDataResponse.setArea(context.stringValue("DescribeDomainUsageDataResponse.Area"));
-		describeDomainUsageDataResponse.setDataInterval(context.stringValue("DescribeDomainUsageDataResponse.DataInterval"));
+		describeDomainUsageDataResponse.setRequestId(_ctx.stringValue("DescribeDomainUsageDataResponse.RequestId"));
+		describeDomainUsageDataResponse.setDomainName(_ctx.stringValue("DescribeDomainUsageDataResponse.DomainName"));
+		describeDomainUsageDataResponse.setStartTime(_ctx.stringValue("DescribeDomainUsageDataResponse.StartTime"));
+		describeDomainUsageDataResponse.setEndTime(_ctx.stringValue("DescribeDomainUsageDataResponse.EndTime"));
+		describeDomainUsageDataResponse.setType(_ctx.stringValue("DescribeDomainUsageDataResponse.Type"));
+		describeDomainUsageDataResponse.setArea(_ctx.stringValue("DescribeDomainUsageDataResponse.Area"));
+		describeDomainUsageDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainUsageDataResponse.DataInterval"));
 
 		List<DataModule> usageDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainUsageDataResponse.UsageDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainUsageDataResponse.UsageDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setPeakTime(context.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].PeakTime"));
-			dataModule.setValue(context.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setPeakTime(_ctx.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].PeakTime"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].Value"));
+			dataModule.setSpecialValue(_ctx.stringValue("DescribeDomainUsageDataResponse.UsageDataPerInterval["+ i +"].SpecialValue"));
 
 			usageDataPerInterval.add(dataModule);
 		}

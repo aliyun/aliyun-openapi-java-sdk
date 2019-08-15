@@ -1,6 +1,9 @@
 2019-08-15 Version: 3.0.9
 - Add API BatchStartCdnDomain, BatchStopCdnDomain, DescribeTagResources, DescribeUserTags, TagResources, UntagResources.
 
+2019-08-15 Version: 3.0.9
+- Add API BatchStartCdnDomain, BatchStopCdnDomain, DescribeTagResources, DescribeUserTags, TagResources, UntagResources.
+
 2019-03-19 Version: 3.0.8
 1, Support ' fc ' Source DomainName
 

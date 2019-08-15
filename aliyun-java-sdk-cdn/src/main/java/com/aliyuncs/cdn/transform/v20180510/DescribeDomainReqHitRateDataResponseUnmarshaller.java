@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainReqHitRateDataResponseUnmarshaller {
 
-	public static DescribeDomainReqHitRateDataResponse unmarshall(DescribeDomainReqHitRateDataResponse describeDomainReqHitRateDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainReqHitRateDataResponse unmarshall(DescribeDomainReqHitRateDataResponse describeDomainReqHitRateDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainReqHitRateDataResponse.setRequestId(context.stringValue("DescribeDomainReqHitRateDataResponse.RequestId"));
-		describeDomainReqHitRateDataResponse.setDomainName(context.stringValue("DescribeDomainReqHitRateDataResponse.DomainName"));
-		describeDomainReqHitRateDataResponse.setDataInterval(context.stringValue("DescribeDomainReqHitRateDataResponse.DataInterval"));
-		describeDomainReqHitRateDataResponse.setStartTime(context.stringValue("DescribeDomainReqHitRateDataResponse.StartTime"));
-		describeDomainReqHitRateDataResponse.setEndTime(context.stringValue("DescribeDomainReqHitRateDataResponse.EndTime"));
+		describeDomainReqHitRateDataResponse.setRequestId(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.RequestId"));
+		describeDomainReqHitRateDataResponse.setDomainName(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.DomainName"));
+		describeDomainReqHitRateDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.DataInterval"));
+		describeDomainReqHitRateDataResponse.setStartTime(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.StartTime"));
+		describeDomainReqHitRateDataResponse.setEndTime(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.EndTime"));
 
 		List<DataModule> reqHitRateInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].Value"));
-			dataModule.setHttpsValue(context.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].HttpsValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].Value"));
+			dataModule.setHttpsValue(_ctx.stringValue("DescribeDomainReqHitRateDataResponse.ReqHitRateInterval["+ i +"].HttpsValue"));
 
 			reqHitRateInterval.add(dataModule);
 		}

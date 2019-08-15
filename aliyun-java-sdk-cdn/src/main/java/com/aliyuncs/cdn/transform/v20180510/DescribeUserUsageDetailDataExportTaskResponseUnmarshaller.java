@@ -26,28 +26,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserUsageDetailDataExportTaskResponseUnmarshaller {
 
-	public static DescribeUserUsageDetailDataExportTaskResponse unmarshall(DescribeUserUsageDetailDataExportTaskResponse describeUserUsageDetailDataExportTaskResponse, UnmarshallerContext context) {
+	public static DescribeUserUsageDetailDataExportTaskResponse unmarshall(DescribeUserUsageDetailDataExportTaskResponse describeUserUsageDetailDataExportTaskResponse, UnmarshallerContext _ctx) {
 		
-		describeUserUsageDetailDataExportTaskResponse.setRequestId(context.stringValue("DescribeUserUsageDetailDataExportTaskResponse.RequestId"));
+		describeUserUsageDetailDataExportTaskResponse.setRequestId(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.RequestId"));
 
 		UsageDataPerPage usageDataPerPage = new UsageDataPerPage();
-		usageDataPerPage.setTotalCount(context.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.TotalCount"));
-		usageDataPerPage.setPageSize(context.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.PageSize"));
-		usageDataPerPage.setPageNumber(context.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.PageNumber"));
+		usageDataPerPage.setTotalCount(_ctx.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.TotalCount"));
+		usageDataPerPage.setPageSize(_ctx.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.PageSize"));
+		usageDataPerPage.setPageNumber(_ctx.integerValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.PageNumber"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < context.lengthValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTaskName(context.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskName"));
-			dataItem.setTaskId(context.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskId"));
-			dataItem.setCreateTime(context.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].CreateTime"));
-			dataItem.setUpdateTime(context.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].UpdateTime"));
-			dataItem.setStatus(context.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].Status"));
-			dataItem.setDownloadUrl(context.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].DownloadUrl"));
+			dataItem.setTaskName(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskName"));
+			dataItem.setTaskId(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskId"));
+			dataItem.setCreateTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].CreateTime"));
+			dataItem.setUpdateTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].UpdateTime"));
+			dataItem.setStatus(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].Status"));
+			dataItem.setDownloadUrl(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].DownloadUrl"));
 
 			TaskConfig taskConfig = new TaskConfig();
-			taskConfig.setStartTime(context.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.StartTime"));
-			taskConfig.setEndTime(context.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.EndTime"));
+			taskConfig.setStartTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.StartTime"));
+			taskConfig.setEndTime(_ctx.stringValue("DescribeUserUsageDetailDataExportTaskResponse.UsageDataPerPage.Data["+ i +"].TaskConfig.EndTime"));
 			dataItem.setTaskConfig(taskConfig);
 
 			data.add(dataItem);

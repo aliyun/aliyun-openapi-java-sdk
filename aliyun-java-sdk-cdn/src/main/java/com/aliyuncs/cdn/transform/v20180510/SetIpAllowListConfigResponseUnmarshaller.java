@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetIpAllowListConfigResponseUnmarshaller {
 
-	public static SetIpAllowListConfigResponse unmarshall(SetIpAllowListConfigResponse setIpAllowListConfigResponse, UnmarshallerContext context) {
+	public static SetIpAllowListConfigResponse unmarshall(SetIpAllowListConfigResponse setIpAllowListConfigResponse, UnmarshallerContext _ctx) {
 		
-		setIpAllowListConfigResponse.setRequestId(context.stringValue("SetIpAllowListConfigResponse.RequestId"));
+		setIpAllowListConfigResponse.setRequestId(_ctx.stringValue("SetIpAllowListConfigResponse.RequestId"));
 	 
 	 	return setIpAllowListConfigResponse;
 	}

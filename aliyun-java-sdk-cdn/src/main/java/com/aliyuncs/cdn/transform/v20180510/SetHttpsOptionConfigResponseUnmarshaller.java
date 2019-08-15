@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetHttpsOptionConfigResponseUnmarshaller {
 
-	public static SetHttpsOptionConfigResponse unmarshall(SetHttpsOptionConfigResponse setHttpsOptionConfigResponse, UnmarshallerContext context) {
+	public static SetHttpsOptionConfigResponse unmarshall(SetHttpsOptionConfigResponse setHttpsOptionConfigResponse, UnmarshallerContext _ctx) {
 		
-		setHttpsOptionConfigResponse.setRequestId(context.stringValue("SetHttpsOptionConfigResponse.RequestId"));
+		setHttpsOptionConfigResponse.setRequestId(_ctx.stringValue("SetHttpsOptionConfigResponse.RequestId"));
 	 
 	 	return setHttpsOptionConfigResponse;
 	}

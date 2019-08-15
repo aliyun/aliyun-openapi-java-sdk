@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetWafConfigResponseUnmarshaller {
 
-	public static SetWafConfigResponse unmarshall(SetWafConfigResponse setWafConfigResponse, UnmarshallerContext context) {
+	public static SetWafConfigResponse unmarshall(SetWafConfigResponse setWafConfigResponse, UnmarshallerContext _ctx) {
 		
-		setWafConfigResponse.setRequestId(context.stringValue("SetWafConfigResponse.RequestId"));
+		setWafConfigResponse.setRequestId(_ctx.stringValue("SetWafConfigResponse.RequestId"));
 	 
 	 	return setWafConfigResponse;
 	}

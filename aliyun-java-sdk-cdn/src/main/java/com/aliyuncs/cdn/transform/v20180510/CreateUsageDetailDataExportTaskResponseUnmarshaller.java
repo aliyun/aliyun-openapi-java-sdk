@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateUsageDetailDataExportTaskResponseUnmarshaller {
 
-	public static CreateUsageDetailDataExportTaskResponse unmarshall(CreateUsageDetailDataExportTaskResponse createUsageDetailDataExportTaskResponse, UnmarshallerContext context) {
+	public static CreateUsageDetailDataExportTaskResponse unmarshall(CreateUsageDetailDataExportTaskResponse createUsageDetailDataExportTaskResponse, UnmarshallerContext _ctx) {
 		
-		createUsageDetailDataExportTaskResponse.setRequestId(context.stringValue("CreateUsageDetailDataExportTaskResponse.RequestId"));
-		createUsageDetailDataExportTaskResponse.setStartTime(context.stringValue("CreateUsageDetailDataExportTaskResponse.StartTime"));
-		createUsageDetailDataExportTaskResponse.setEndTime(context.stringValue("CreateUsageDetailDataExportTaskResponse.EndTime"));
-		createUsageDetailDataExportTaskResponse.setTaskId(context.stringValue("CreateUsageDetailDataExportTaskResponse.TaskId"));
+		createUsageDetailDataExportTaskResponse.setRequestId(_ctx.stringValue("CreateUsageDetailDataExportTaskResponse.RequestId"));
+		createUsageDetailDataExportTaskResponse.setStartTime(_ctx.stringValue("CreateUsageDetailDataExportTaskResponse.StartTime"));
+		createUsageDetailDataExportTaskResponse.setEndTime(_ctx.stringValue("CreateUsageDetailDataExportTaskResponse.EndTime"));
+		createUsageDetailDataExportTaskResponse.setTaskId(_ctx.stringValue("CreateUsageDetailDataExportTaskResponse.TaskId"));
 	 
 	 	return createUsageDetailDataExportTaskResponse;
 	}

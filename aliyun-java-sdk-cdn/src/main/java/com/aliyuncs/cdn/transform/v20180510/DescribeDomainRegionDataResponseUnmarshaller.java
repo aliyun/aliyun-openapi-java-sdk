@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainRegionDataResponseUnmarshaller {
 
-	public static DescribeDomainRegionDataResponse unmarshall(DescribeDomainRegionDataResponse describeDomainRegionDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainRegionDataResponse unmarshall(DescribeDomainRegionDataResponse describeDomainRegionDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainRegionDataResponse.setRequestId(context.stringValue("DescribeDomainRegionDataResponse.RequestId"));
-		describeDomainRegionDataResponse.setDomainName(context.stringValue("DescribeDomainRegionDataResponse.DomainName"));
-		describeDomainRegionDataResponse.setDataInterval(context.stringValue("DescribeDomainRegionDataResponse.DataInterval"));
-		describeDomainRegionDataResponse.setStartTime(context.stringValue("DescribeDomainRegionDataResponse.StartTime"));
-		describeDomainRegionDataResponse.setEndTime(context.stringValue("DescribeDomainRegionDataResponse.EndTime"));
+		describeDomainRegionDataResponse.setRequestId(_ctx.stringValue("DescribeDomainRegionDataResponse.RequestId"));
+		describeDomainRegionDataResponse.setDomainName(_ctx.stringValue("DescribeDomainRegionDataResponse.DomainName"));
+		describeDomainRegionDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainRegionDataResponse.DataInterval"));
+		describeDomainRegionDataResponse.setStartTime(_ctx.stringValue("DescribeDomainRegionDataResponse.StartTime"));
+		describeDomainRegionDataResponse.setEndTime(_ctx.stringValue("DescribeDomainRegionDataResponse.EndTime"));
 
 		List<RegionProportionData> value = new ArrayList<RegionProportionData>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainRegionDataResponse.Value.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainRegionDataResponse.Value.Length"); i++) {
 			RegionProportionData regionProportionData = new RegionProportionData();
-			regionProportionData.setRegion(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Region"));
-			regionProportionData.setProportion(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Proportion"));
-			regionProportionData.setRegionEname(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].RegionEname"));
-			regionProportionData.setAvgObjectSize(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgObjectSize"));
-			regionProportionData.setAvgResponseTime(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgResponseTime"));
-			regionProportionData.setBps(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Bps"));
-			regionProportionData.setQps(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Qps"));
-			regionProportionData.setAvgResponseRate(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgResponseRate"));
-			regionProportionData.setReqErrRate(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].ReqErrRate"));
-			regionProportionData.setTotalBytes(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalBytes"));
-			regionProportionData.setBytesProportion(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].BytesProportion"));
-			regionProportionData.setTotalQuery(context.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalQuery"));
+			regionProportionData.setRegion(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Region"));
+			regionProportionData.setProportion(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Proportion"));
+			regionProportionData.setRegionEname(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].RegionEname"));
+			regionProportionData.setAvgObjectSize(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgObjectSize"));
+			regionProportionData.setAvgResponseTime(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgResponseTime"));
+			regionProportionData.setBps(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Bps"));
+			regionProportionData.setQps(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].Qps"));
+			regionProportionData.setAvgResponseRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].AvgResponseRate"));
+			regionProportionData.setReqErrRate(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].ReqErrRate"));
+			regionProportionData.setTotalBytes(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalBytes"));
+			regionProportionData.setBytesProportion(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].BytesProportion"));
+			regionProportionData.setTotalQuery(_ctx.stringValue("DescribeDomainRegionDataResponse.Value["+ i +"].TotalQuery"));
 
 			value.add(regionProportionData);
 		}

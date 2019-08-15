@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeFCTriggerResponseUnmarshaller {
 
-	public static DescribeFCTriggerResponse unmarshall(DescribeFCTriggerResponse describeFCTriggerResponse, UnmarshallerContext context) {
+	public static DescribeFCTriggerResponse unmarshall(DescribeFCTriggerResponse describeFCTriggerResponse, UnmarshallerContext _ctx) {
 		
-		describeFCTriggerResponse.setRequestId(context.stringValue("DescribeFCTriggerResponse.RequestId"));
+		describeFCTriggerResponse.setRequestId(_ctx.stringValue("DescribeFCTriggerResponse.RequestId"));
 
 		FCTrigger fCTrigger = new FCTrigger();
-		fCTrigger.setEventMetaName(context.stringValue("DescribeFCTriggerResponse.FCTrigger.EventMetaName"));
-		fCTrigger.setEventMetaVersion(context.stringValue("DescribeFCTriggerResponse.FCTrigger.EventMetaVersion"));
-		fCTrigger.setTriggerARN(context.stringValue("DescribeFCTriggerResponse.FCTrigger.TriggerARN"));
-		fCTrigger.setRoleARN(context.stringValue("DescribeFCTriggerResponse.FCTrigger.RoleARN"));
-		fCTrigger.setSourceArn(context.stringValue("DescribeFCTriggerResponse.FCTrigger.SourceArn"));
-		fCTrigger.setNotes(context.stringValue("DescribeFCTriggerResponse.FCTrigger.Notes"));
+		fCTrigger.setEventMetaName(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.EventMetaName"));
+		fCTrigger.setEventMetaVersion(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.EventMetaVersion"));
+		fCTrigger.setTriggerARN(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.TriggerARN"));
+		fCTrigger.setRoleARN(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.RoleARN"));
+		fCTrigger.setSourceArn(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.SourceArn"));
+		fCTrigger.setNotes(_ctx.stringValue("DescribeFCTriggerResponse.FCTrigger.Notes"));
 		describeFCTriggerResponse.setFCTrigger(fCTrigger);
 	 
 	 	return describeFCTriggerResponse;

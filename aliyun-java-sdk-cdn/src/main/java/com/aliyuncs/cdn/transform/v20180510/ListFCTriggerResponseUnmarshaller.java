@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListFCTriggerResponseUnmarshaller {
 
-	public static ListFCTriggerResponse unmarshall(ListFCTriggerResponse listFCTriggerResponse, UnmarshallerContext context) {
+	public static ListFCTriggerResponse unmarshall(ListFCTriggerResponse listFCTriggerResponse, UnmarshallerContext _ctx) {
 		
-		listFCTriggerResponse.setRequestId(context.stringValue("ListFCTriggerResponse.RequestId"));
+		listFCTriggerResponse.setRequestId(_ctx.stringValue("ListFCTriggerResponse.RequestId"));
 
 		List<FCTrigger> fCTriggers = new ArrayList<FCTrigger>();
-		for (int i = 0; i < context.lengthValue("ListFCTriggerResponse.FCTriggers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListFCTriggerResponse.FCTriggers.Length"); i++) {
 			FCTrigger fCTrigger = new FCTrigger();
-			fCTrigger.setEventMetaName(context.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].EventMetaName"));
-			fCTrigger.setEventMetaVersion(context.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].EventMetaVersion"));
-			fCTrigger.setTriggerARN(context.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].TriggerARN"));
-			fCTrigger.setRoleARN(context.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].RoleARN"));
-			fCTrigger.setSourceArn(context.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].SourceArn"));
-			fCTrigger.setNotes(context.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].Notes"));
+			fCTrigger.setEventMetaName(_ctx.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].EventMetaName"));
+			fCTrigger.setEventMetaVersion(_ctx.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].EventMetaVersion"));
+			fCTrigger.setTriggerARN(_ctx.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].TriggerARN"));
+			fCTrigger.setRoleARN(_ctx.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].RoleARN"));
+			fCTrigger.setSourceArn(_ctx.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].SourceArn"));
+			fCTrigger.setNotes(_ctx.stringValue("ListFCTriggerResponse.FCTriggers["+ i +"].Notes"));
 
 			fCTriggers.add(fCTrigger);
 		}

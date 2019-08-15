@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeIpInfoResponseUnmarshaller {
 
-	public static DescribeIpInfoResponse unmarshall(DescribeIpInfoResponse describeIpInfoResponse, UnmarshallerContext context) {
+	public static DescribeIpInfoResponse unmarshall(DescribeIpInfoResponse describeIpInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeIpInfoResponse.setRequestId(context.stringValue("DescribeIpInfoResponse.RequestId"));
-		describeIpInfoResponse.setCdnIp(context.stringValue("DescribeIpInfoResponse.CdnIp"));
-		describeIpInfoResponse.setISP(context.stringValue("DescribeIpInfoResponse.ISP"));
-		describeIpInfoResponse.setIspEname(context.stringValue("DescribeIpInfoResponse.IspEname"));
-		describeIpInfoResponse.setRegion(context.stringValue("DescribeIpInfoResponse.Region"));
-		describeIpInfoResponse.setRegionEname(context.stringValue("DescribeIpInfoResponse.RegionEname"));
+		describeIpInfoResponse.setRequestId(_ctx.stringValue("DescribeIpInfoResponse.RequestId"));
+		describeIpInfoResponse.setCdnIp(_ctx.stringValue("DescribeIpInfoResponse.CdnIp"));
+		describeIpInfoResponse.setISP(_ctx.stringValue("DescribeIpInfoResponse.ISP"));
+		describeIpInfoResponse.setIspEname(_ctx.stringValue("DescribeIpInfoResponse.IspEname"));
+		describeIpInfoResponse.setRegion(_ctx.stringValue("DescribeIpInfoResponse.Region"));
+		describeIpInfoResponse.setRegionEname(_ctx.stringValue("DescribeIpInfoResponse.RegionEname"));
 	 
 	 	return describeIpInfoResponse;
 	}

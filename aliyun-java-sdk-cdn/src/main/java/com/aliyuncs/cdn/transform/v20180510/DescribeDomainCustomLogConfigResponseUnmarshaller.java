@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainCustomLogConfigResponseUnmarshaller {
 
-	public static DescribeDomainCustomLogConfigResponse unmarshall(DescribeDomainCustomLogConfigResponse describeDomainCustomLogConfigResponse, UnmarshallerContext context) {
+	public static DescribeDomainCustomLogConfigResponse unmarshall(DescribeDomainCustomLogConfigResponse describeDomainCustomLogConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainCustomLogConfigResponse.setRequestId(context.stringValue("DescribeDomainCustomLogConfigResponse.RequestId"));
-		describeDomainCustomLogConfigResponse.setConfigId(context.stringValue("DescribeDomainCustomLogConfigResponse.ConfigId"));
-		describeDomainCustomLogConfigResponse.setRemark(context.stringValue("DescribeDomainCustomLogConfigResponse.Remark"));
-		describeDomainCustomLogConfigResponse.setSample(context.stringValue("DescribeDomainCustomLogConfigResponse.Sample"));
-		describeDomainCustomLogConfigResponse.setTag(context.stringValue("DescribeDomainCustomLogConfigResponse.Tag"));
+		describeDomainCustomLogConfigResponse.setRequestId(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.RequestId"));
+		describeDomainCustomLogConfigResponse.setConfigId(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.ConfigId"));
+		describeDomainCustomLogConfigResponse.setRemark(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.Remark"));
+		describeDomainCustomLogConfigResponse.setSample(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.Sample"));
+		describeDomainCustomLogConfigResponse.setTag(_ctx.stringValue("DescribeDomainCustomLogConfigResponse.Tag"));
 	 
 	 	return describeDomainCustomLogConfigResponse;
 	}

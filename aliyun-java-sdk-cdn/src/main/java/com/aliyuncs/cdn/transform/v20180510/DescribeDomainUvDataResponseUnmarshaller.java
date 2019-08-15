@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainUvDataResponseUnmarshaller {
 
-	public static DescribeDomainUvDataResponse unmarshall(DescribeDomainUvDataResponse describeDomainUvDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainUvDataResponse unmarshall(DescribeDomainUvDataResponse describeDomainUvDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainUvDataResponse.setRequestId(context.stringValue("DescribeDomainUvDataResponse.RequestId"));
-		describeDomainUvDataResponse.setDomainName(context.stringValue("DescribeDomainUvDataResponse.DomainName"));
-		describeDomainUvDataResponse.setDataInterval(context.stringValue("DescribeDomainUvDataResponse.DataInterval"));
-		describeDomainUvDataResponse.setStartTime(context.stringValue("DescribeDomainUvDataResponse.StartTime"));
-		describeDomainUvDataResponse.setEndTime(context.stringValue("DescribeDomainUvDataResponse.EndTime"));
+		describeDomainUvDataResponse.setRequestId(_ctx.stringValue("DescribeDomainUvDataResponse.RequestId"));
+		describeDomainUvDataResponse.setDomainName(_ctx.stringValue("DescribeDomainUvDataResponse.DomainName"));
+		describeDomainUvDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainUvDataResponse.DataInterval"));
+		describeDomainUvDataResponse.setStartTime(_ctx.stringValue("DescribeDomainUvDataResponse.StartTime"));
+		describeDomainUvDataResponse.setEndTime(_ctx.stringValue("DescribeDomainUvDataResponse.EndTime"));
 
 		List<UsageData> uvDataInterval = new ArrayList<UsageData>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainUvDataResponse.UvDataInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainUvDataResponse.UvDataInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTimeStamp(context.stringValue("DescribeDomainUvDataResponse.UvDataInterval["+ i +"].TimeStamp"));
-			usageData.setValue(context.stringValue("DescribeDomainUvDataResponse.UvDataInterval["+ i +"].Value"));
+			usageData.setTimeStamp(_ctx.stringValue("DescribeDomainUvDataResponse.UvDataInterval["+ i +"].TimeStamp"));
+			usageData.setValue(_ctx.stringValue("DescribeDomainUvDataResponse.UvDataInterval["+ i +"].Value"));
 
 			uvDataInterval.add(usageData);
 		}

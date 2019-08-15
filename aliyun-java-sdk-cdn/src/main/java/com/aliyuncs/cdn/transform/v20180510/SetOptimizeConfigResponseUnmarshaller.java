@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetOptimizeConfigResponseUnmarshaller {
 
-	public static SetOptimizeConfigResponse unmarshall(SetOptimizeConfigResponse setOptimizeConfigResponse, UnmarshallerContext context) {
+	public static SetOptimizeConfigResponse unmarshall(SetOptimizeConfigResponse setOptimizeConfigResponse, UnmarshallerContext _ctx) {
 		
-		setOptimizeConfigResponse.setRequestId(context.stringValue("SetOptimizeConfigResponse.RequestId"));
+		setOptimizeConfigResponse.setRequestId(_ctx.stringValue("SetOptimizeConfigResponse.RequestId"));
 	 
 	 	return setOptimizeConfigResponse;
 	}
