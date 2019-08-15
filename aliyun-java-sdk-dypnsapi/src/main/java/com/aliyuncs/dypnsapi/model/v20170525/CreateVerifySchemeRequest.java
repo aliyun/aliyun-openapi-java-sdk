@@ -28,8 +28,8 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		super("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
-			AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 

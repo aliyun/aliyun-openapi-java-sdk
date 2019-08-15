@@ -30,8 +30,8 @@ public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
-			AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 

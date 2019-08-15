@@ -26,8 +26,8 @@ public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse>
 	public TwiceTelVerifyRequest() {
 		super("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypnsapi");
 		try {
-			AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
