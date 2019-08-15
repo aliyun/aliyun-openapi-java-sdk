@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryUserOmsDataRequest extends RpcAcsRequest<QueryUserOmsDataResponse> {
 	
 	public QueryUserOmsDataRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryUserOmsData", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryUserOmsData");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

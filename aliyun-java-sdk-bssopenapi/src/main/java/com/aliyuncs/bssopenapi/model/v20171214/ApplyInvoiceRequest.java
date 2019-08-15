@@ -25,7 +25,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 	
 	public ApplyInvoiceRequest() {
-		super("BssOpenApi", "2017-12-14", "ApplyInvoice", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "ApplyInvoice");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class SetRenewalRequest extends RpcAcsRequest<SetRenewalResponse> {
 	
 	public SetRenewalRequest() {
-		super("BssOpenApi", "2017-12-14", "SetRenewal", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "SetRenewal");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

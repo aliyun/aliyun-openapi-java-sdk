@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class CreateResellerUserQuotaRequest extends RpcAcsRequest<CreateResellerUserQuotaResponse> {
 	
 	public CreateResellerUserQuotaRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateResellerUserQuota", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "CreateResellerUserQuota");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

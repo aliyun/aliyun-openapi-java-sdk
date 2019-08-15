@@ -217,6 +217,8 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			private String item;
 
+			private String servicePeriod;
+
 			public String getInstanceID() {
 				return this.instanceID;
 			}
@@ -487,6 +489,14 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			public void setItem(String item) {
 				this.item = item;
+			}
+
+			public String getServicePeriod() {
+				return this.servicePeriod;
+			}
+
+			public void setServicePeriod(String servicePeriod) {
+				this.servicePeriod = servicePeriod;
 			}
 		}
 	}

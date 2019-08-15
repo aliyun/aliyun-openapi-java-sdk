@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryPrepaidCardsRequest extends RpcAcsRequest<QueryPrepaidCardsResponse> {
 	
 	public QueryPrepaidCardsRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryPrepaidCards", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryPrepaidCards");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

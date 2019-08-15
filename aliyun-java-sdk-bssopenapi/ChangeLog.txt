@@ -1,3 +1,6 @@
+2019-08-15 Version: 1.3.3
+- QueryInstanceBillResponse add ServicePeriod.
+
 2019-08-05 Version: 1.3.2
 - GetOrderDetail add originalConfig param.
 

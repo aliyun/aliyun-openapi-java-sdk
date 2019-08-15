@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class GetCustomerAccountInfoRequest extends RpcAcsRequest<GetCustomerAccountInfoResponse> {
 	
 	public GetCustomerAccountInfoRequest() {
-		super("BssOpenApi", "2017-12-14", "GetCustomerAccountInfo", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "GetCustomerAccountInfo");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

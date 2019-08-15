@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryCashCouponsRequest extends RpcAcsRequest<QueryCashCouponsResponse> {
 	
 	public QueryCashCouponsRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryCashCoupons", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryCashCoupons");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);

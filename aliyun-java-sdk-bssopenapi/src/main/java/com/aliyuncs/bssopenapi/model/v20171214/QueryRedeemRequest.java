@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryRedeemRequest extends RpcAcsRequest<QueryRedeemResponse> {
 	
 	public QueryRedeemRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryRedeem", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryRedeem");
 		try {
 			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
 			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
