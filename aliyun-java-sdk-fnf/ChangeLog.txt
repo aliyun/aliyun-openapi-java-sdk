@@ -1,3 +1,7 @@
+2019-08-15 Version: 1.1.0
+- FnF public version.
+- Add Report task api.
+
 2019-07-02 Version: 1.0.0
 - FnF public version.
 
