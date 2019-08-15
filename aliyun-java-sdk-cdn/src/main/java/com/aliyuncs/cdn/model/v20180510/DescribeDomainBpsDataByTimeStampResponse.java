@@ -67,11 +67,21 @@ public class DescribeDomainBpsDataByTimeStampResponse extends AcsResponse {
 
 	public static class BpsDataModel {
 
+		private String timeStamp;
+
 		private String locationName;
 
 		private String ispName;
 
 		private Long bps;
+
+		public String getTimeStamp() {
+			return this.timeStamp;
+		}
+
+		public void setTimeStamp(String timeStamp) {
+			this.timeStamp = timeStamp;
+		}
 
 		public String getLocationName() {
 			return this.locationName;

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class SetDomainGreenManagerConfigRequest extends RpcAcsRequest<SetDomainGreenManagerConfigResponse> {
 	
 	public SetDomainGreenManagerConfigRequest() {
-		super("Cdn", "2018-05-10", "SetDomainGreenManagerConfig");
+		super("Cdn", "2018-05-10", "SetDomainGreenManagerConfig", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String enable;

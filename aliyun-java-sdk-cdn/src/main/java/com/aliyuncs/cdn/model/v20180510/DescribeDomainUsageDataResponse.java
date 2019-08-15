@@ -113,6 +113,8 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 		private String value;
 
+		private String specialValue;
+
 		public String getTimeStamp() {
 			return this.timeStamp;
 		}
@@ -135,6 +137,14 @@ public class DescribeDomainUsageDataResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getSpecialValue() {
+			return this.specialValue;
+		}
+
+		public void setSpecialValue(String specialValue) {
+			this.specialValue = specialValue;
 		}
 	}
 

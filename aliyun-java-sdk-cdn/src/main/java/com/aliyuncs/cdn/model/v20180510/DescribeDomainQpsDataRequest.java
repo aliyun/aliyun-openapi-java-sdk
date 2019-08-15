@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainQpsDataRequest extends RpcAcsRequest<DescribeDomainQpsDataResponse> {
 	
 	public DescribeDomainQpsDataRequest() {
-		super("Cdn", "2018-05-10", "DescribeDomainQpsData");
+		super("Cdn", "2018-05-10", "DescribeDomainQpsData", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String locationNameEn;

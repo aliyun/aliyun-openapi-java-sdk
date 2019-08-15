@@ -24,21 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCdnHttpsDomainListResponseUnmarshaller {
 
-	public static DescribeCdnHttpsDomainListResponse unmarshall(DescribeCdnHttpsDomainListResponse describeCdnHttpsDomainListResponse, UnmarshallerContext context) {
+	public static DescribeCdnHttpsDomainListResponse unmarshall(DescribeCdnHttpsDomainListResponse describeCdnHttpsDomainListResponse, UnmarshallerContext _ctx) {
 		
-		describeCdnHttpsDomainListResponse.setRequestId(context.stringValue("DescribeCdnHttpsDomainListResponse.RequestId"));
+		describeCdnHttpsDomainListResponse.setRequestId(_ctx.stringValue("DescribeCdnHttpsDomainListResponse.RequestId"));
+		describeCdnHttpsDomainListResponse.setTotalCount(_ctx.integerValue("DescribeCdnHttpsDomainListResponse.TotalCount"));
 
 		List<CertInfo> certInfos = new ArrayList<CertInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeCdnHttpsDomainListResponse.CertInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCdnHttpsDomainListResponse.CertInfos.Length"); i++) {
 			CertInfo certInfo = new CertInfo();
-			certInfo.setCertCommonName(context.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertCommonName"));
-			certInfo.setCertName(context.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertName"));
-			certInfo.setCertStartTime(context.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertStartTime"));
-			certInfo.setCertExpireTime(context.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertExpireTime"));
-			certInfo.setCertStatus(context.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertStatus"));
-			certInfo.setCertType(context.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertType"));
-			certInfo.setDomainName(context.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].DomainName"));
-			certInfo.setCertUpdateTime(context.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertUpdateTime"));
+			certInfo.setCertCommonName(_ctx.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertCommonName"));
+			certInfo.setCertName(_ctx.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertName"));
+			certInfo.setCertStartTime(_ctx.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertStartTime"));
+			certInfo.setCertExpireTime(_ctx.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertExpireTime"));
+			certInfo.setCertStatus(_ctx.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertStatus"));
+			certInfo.setCertType(_ctx.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertType"));
+			certInfo.setDomainName(_ctx.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].DomainName"));
+			certInfo.setCertUpdateTime(_ctx.stringValue("DescribeCdnHttpsDomainListResponse.CertInfos["+ i +"].CertUpdateTime"));
 
 			certInfos.add(certInfo);
 		}

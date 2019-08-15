@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -23,10 +24,53 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeCdnHttpsDomainListRequest extends RpcAcsRequest<DescribeCdnHttpsDomainListResponse> {
 	
 	public DescribeCdnHttpsDomainListRequest() {
-		super("Cdn", "2018-05-10", "DescribeCdnHttpsDomainList");
+		super("Cdn", "2018-05-10", "DescribeCdnHttpsDomainList", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String keyword;
+
 	private Long ownerId;
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyFileCacheExpiredConfigRequest extends RpcAcsRequest<ModifyFileCacheExpiredConfigResponse> {
 	
 	public ModifyFileCacheExpiredConfigRequest() {
-		super("Cdn", "2018-05-10", "ModifyFileCacheExpiredConfig");
+		super("Cdn", "2018-05-10", "ModifyFileCacheExpiredConfig", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String securityToken;

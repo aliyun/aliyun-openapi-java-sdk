@@ -27,6 +27,8 @@ public class DescribeCdnHttpsDomainListResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer totalCount;
+
 	private List<CertInfo> certInfos;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class DescribeCdnHttpsDomainListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<CertInfo> getCertInfos() {

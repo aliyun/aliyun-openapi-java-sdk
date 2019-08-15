@@ -16,6 +16,7 @@ package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -24,7 +25,11 @@ import java.util.List;
 public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomainsResponse> {
 	
 	public DescribeUserDomainsRequest() {
-		super("Cdn", "2018-05-10", "DescribeUserDomains");
+		super("Cdn", "2018-05-10", "DescribeUserDomains", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String funcFilter;
