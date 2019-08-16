@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.iot.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 	
 	public CreateRuleRequest() {
 		super("Iot", "2018-01-20", "CreateRule", "iot");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String select;

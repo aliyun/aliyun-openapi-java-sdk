@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.iot.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class BatchGetDeviceStateRequest extends RpcAcsRequest<BatchGetDeviceStat
 	
 	public BatchGetDeviceStateRequest() {
 		super("Iot", "2018-01-20", "BatchGetDeviceState", "iot");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private List<String> iotIds;

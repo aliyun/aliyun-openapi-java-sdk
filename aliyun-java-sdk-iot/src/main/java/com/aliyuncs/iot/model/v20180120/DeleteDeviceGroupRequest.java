@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.iot.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class DeleteDeviceGroupRequest extends RpcAcsRequest<DeleteDeviceGroupRes
 	
 	public DeleteDeviceGroupRequest() {
 		super("Iot", "2018-01-20", "DeleteDeviceGroup", "iot");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String iotInstanceId;

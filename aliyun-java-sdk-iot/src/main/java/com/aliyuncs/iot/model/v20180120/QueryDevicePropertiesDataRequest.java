@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.iot.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class QueryDevicePropertiesDataRequest extends RpcAcsRequest<QueryDeviceP
 	
 	public QueryDevicePropertiesDataRequest() {
 		super("Iot", "2018-01-20", "QueryDevicePropertiesData", "iot");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Integer asc;
