@@ -14,16 +14,18 @@
 
 package com.aliyuncs.gpdb.transform.v20160503;
 
-import com.aliyuncs.gpdb.model.v20160503.ModifyDBInstanceDescriptionResponse;
+import com.aliyuncs.gpdb.model.v20160503.UpgradeDBInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyDBInstanceDescriptionResponseUnmarshaller {
+public class UpgradeDBInstanceResponseUnmarshaller {
 
-	public static ModifyDBInstanceDescriptionResponse unmarshall(ModifyDBInstanceDescriptionResponse modifyDBInstanceDescriptionResponse, UnmarshallerContext _ctx) {
+	public static UpgradeDBInstanceResponse unmarshall(UpgradeDBInstanceResponse upgradeDBInstanceResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBInstanceDescriptionResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceDescriptionResponse.RequestId"));
+		upgradeDBInstanceResponse.setRequestId(_ctx.stringValue("UpgradeDBInstanceResponse.RequestId"));
+		upgradeDBInstanceResponse.setDBInstanceId(_ctx.stringValue("UpgradeDBInstanceResponse.DBInstanceId"));
+		upgradeDBInstanceResponse.setOrderId(_ctx.stringValue("UpgradeDBInstanceResponse.OrderId"));
 	 
-	 	return modifyDBInstanceDescriptionResponse;
+	 	return upgradeDBInstanceResponse;
 	}
 }

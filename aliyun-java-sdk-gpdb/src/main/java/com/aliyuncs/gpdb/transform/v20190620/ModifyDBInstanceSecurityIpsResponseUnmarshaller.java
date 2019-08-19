@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDBInstanceSecurityIpsResponseUnmarshaller {
 
-	public static ModifyDBInstanceSecurityIpsResponse unmarshall(ModifyDBInstanceSecurityIpsResponse modifyDBInstanceSecurityIpsResponse, UnmarshallerContext context) {
+	public static ModifyDBInstanceSecurityIpsResponse unmarshall(ModifyDBInstanceSecurityIpsResponse modifyDBInstanceSecurityIpsResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBInstanceSecurityIpsResponse.setRequestId(context.stringValue("ModifyDBInstanceSecurityIpsResponse.RequestId"));
-		modifyDBInstanceSecurityIpsResponse.setSuccess(context.booleanValue("ModifyDBInstanceSecurityIpsResponse.Success"));
-		modifyDBInstanceSecurityIpsResponse.setHttpStatusCode(context.integerValue("ModifyDBInstanceSecurityIpsResponse.HttpStatusCode"));
-		modifyDBInstanceSecurityIpsResponse.setCode(context.stringValue("ModifyDBInstanceSecurityIpsResponse.Code"));
-		modifyDBInstanceSecurityIpsResponse.setMessage(context.stringValue("ModifyDBInstanceSecurityIpsResponse.Message"));
+		modifyDBInstanceSecurityIpsResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceSecurityIpsResponse.RequestId"));
+		modifyDBInstanceSecurityIpsResponse.setSuccess(_ctx.booleanValue("ModifyDBInstanceSecurityIpsResponse.Success"));
+		modifyDBInstanceSecurityIpsResponse.setHttpStatusCode(_ctx.integerValue("ModifyDBInstanceSecurityIpsResponse.HttpStatusCode"));
+		modifyDBInstanceSecurityIpsResponse.setCode(_ctx.stringValue("ModifyDBInstanceSecurityIpsResponse.Code"));
+		modifyDBInstanceSecurityIpsResponse.setMessage(_ctx.stringValue("ModifyDBInstanceSecurityIpsResponse.Message"));
 	 
 	 	return modifyDBInstanceSecurityIpsResponse;
 	}

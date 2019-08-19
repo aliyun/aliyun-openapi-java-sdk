@@ -21,30 +21,58 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceResponse> {
+public class UpgradeDBVersionRequest extends RpcAcsRequest<UpgradeDBVersionResponse> {
 	
-	public DeleteDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "DeleteDBInstance", "gpdb");
+	public UpgradeDBVersionRequest() {
+		super("gpdb", "2016-05-03", "UpgradeDBVersion", "gpdb");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String clientToken;
+	private String switchTimeMode;
+
+	private String majorVersion;
+
+	private String minorVersion;
 
 	private String dBInstanceId;
 
+	private String switchTime;
+
 	private Long ownerId;
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getSwitchTimeMode() {
+		return this.switchTimeMode;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setSwitchTimeMode(String switchTimeMode) {
+		this.switchTimeMode = switchTimeMode;
+		if(switchTimeMode != null){
+			putQueryParameter("SwitchTimeMode", switchTimeMode);
+		}
+	}
+
+	public String getMajorVersion() {
+		return this.majorVersion;
+	}
+
+	public void setMajorVersion(String majorVersion) {
+		this.majorVersion = majorVersion;
+		if(majorVersion != null){
+			putQueryParameter("MajorVersion", majorVersion);
+		}
+	}
+
+	public String getMinorVersion() {
+		return this.minorVersion;
+	}
+
+	public void setMinorVersion(String minorVersion) {
+		this.minorVersion = minorVersion;
+		if(minorVersion != null){
+			putQueryParameter("MinorVersion", minorVersion);
 		}
 	}
 
@@ -56,6 +84,17 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 
@@ -71,8 +110,8 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 	}
 
 	@Override
-	public Class<DeleteDBInstanceResponse> getResponseClass() {
-		return DeleteDBInstanceResponse.class;
+	public Class<UpgradeDBVersionResponse> getResponseClass() {
+		return UpgradeDBVersionResponse.class;
 	}
 
 }

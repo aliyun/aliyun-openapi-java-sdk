@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBInstanceSecurityIpsResponseUnmarshaller {
 
-	public static DescribeDBInstanceSecurityIpsResponse unmarshall(DescribeDBInstanceSecurityIpsResponse describeDBInstanceSecurityIpsResponse, UnmarshallerContext context) {
+	public static DescribeDBInstanceSecurityIpsResponse unmarshall(DescribeDBInstanceSecurityIpsResponse describeDBInstanceSecurityIpsResponse, UnmarshallerContext _ctx) {
 		
-		describeDBInstanceSecurityIpsResponse.setRequestId(context.stringValue("DescribeDBInstanceSecurityIpsResponse.RequestId"));
-		describeDBInstanceSecurityIpsResponse.setCount(context.longValue("DescribeDBInstanceSecurityIpsResponse.Count"));
-		describeDBInstanceSecurityIpsResponse.setSuccess(context.booleanValue("DescribeDBInstanceSecurityIpsResponse.Success"));
-		describeDBInstanceSecurityIpsResponse.setHttpStatusCode(context.integerValue("DescribeDBInstanceSecurityIpsResponse.HttpStatusCode"));
-		describeDBInstanceSecurityIpsResponse.setCode(context.stringValue("DescribeDBInstanceSecurityIpsResponse.Code"));
-		describeDBInstanceSecurityIpsResponse.setMessage(context.stringValue("DescribeDBInstanceSecurityIpsResponse.Message"));
+		describeDBInstanceSecurityIpsResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceSecurityIpsResponse.RequestId"));
+		describeDBInstanceSecurityIpsResponse.setCount(_ctx.longValue("DescribeDBInstanceSecurityIpsResponse.Count"));
+		describeDBInstanceSecurityIpsResponse.setSuccess(_ctx.booleanValue("DescribeDBInstanceSecurityIpsResponse.Success"));
+		describeDBInstanceSecurityIpsResponse.setHttpStatusCode(_ctx.integerValue("DescribeDBInstanceSecurityIpsResponse.HttpStatusCode"));
+		describeDBInstanceSecurityIpsResponse.setCode(_ctx.stringValue("DescribeDBInstanceSecurityIpsResponse.Code"));
+		describeDBInstanceSecurityIpsResponse.setMessage(_ctx.stringValue("DescribeDBInstanceSecurityIpsResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstanceSecurityIpsResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceSecurityIpsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setGroupName(context.stringValue("DescribeDBInstanceSecurityIpsResponse.Result["+ i +"].GroupName"));
+			resultItem.setGroupName(_ctx.stringValue("DescribeDBInstanceSecurityIpsResponse.Result["+ i +"].GroupName"));
 
 			List<String> whiteList = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeDBInstanceSecurityIpsResponse.Result["+ i +"].WhiteList.Length"); j++) {
-				whiteList.add(context.stringValue("DescribeDBInstanceSecurityIpsResponse.Result["+ i +"].WhiteList["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceSecurityIpsResponse.Result["+ i +"].WhiteList.Length"); j++) {
+				whiteList.add(_ctx.stringValue("DescribeDBInstanceSecurityIpsResponse.Result["+ i +"].WhiteList["+ j +"]"));
 			}
 			resultItem.setWhiteList(whiteList);
 

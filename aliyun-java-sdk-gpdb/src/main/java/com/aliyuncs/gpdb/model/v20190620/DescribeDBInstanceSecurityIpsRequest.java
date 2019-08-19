@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20190620;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.gpdb.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class DescribeDBInstanceSecurityIpsRequest extends RpcAcsRequest<Describe
 	
 	public DescribeDBInstanceSecurityIpsRequest() {
 		super("gpdb", "2019-06-20", "DescribeDBInstanceSecurityIps", "gpdb");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String instanceId;

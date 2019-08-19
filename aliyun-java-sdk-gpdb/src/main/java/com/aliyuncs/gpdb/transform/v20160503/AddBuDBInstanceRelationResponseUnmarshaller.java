@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddBuDBInstanceRelationResponseUnmarshaller {
 
-	public static AddBuDBInstanceRelationResponse unmarshall(AddBuDBInstanceRelationResponse addBuDBInstanceRelationResponse, UnmarshallerContext context) {
+	public static AddBuDBInstanceRelationResponse unmarshall(AddBuDBInstanceRelationResponse addBuDBInstanceRelationResponse, UnmarshallerContext _ctx) {
 		
-		addBuDBInstanceRelationResponse.setRequestId(context.stringValue("AddBuDBInstanceRelationResponse.RequestId"));
-		addBuDBInstanceRelationResponse.setBusinessUnit(context.stringValue("AddBuDBInstanceRelationResponse.BusinessUnit"));
-		addBuDBInstanceRelationResponse.setDBInstanceName(context.stringValue("AddBuDBInstanceRelationResponse.DBInstanceName"));
+		addBuDBInstanceRelationResponse.setRequestId(_ctx.stringValue("AddBuDBInstanceRelationResponse.RequestId"));
+		addBuDBInstanceRelationResponse.setBusinessUnit(_ctx.stringValue("AddBuDBInstanceRelationResponse.BusinessUnit"));
+		addBuDBInstanceRelationResponse.setDBInstanceName(_ctx.stringValue("AddBuDBInstanceRelationResponse.DBInstanceName"));
 	 
 	 	return addBuDBInstanceRelationResponse;
 	}

@@ -15,6 +15,7 @@
 package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.gpdb.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class DescribeSQLLogFilesRequest extends RpcAcsRequest<DescribeSQLLogFile
 	
 	public DescribeSQLLogFilesRequest() {
 		super("gpdb", "2016-05-03", "DescribeSQLLogFiles", "gpdb");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String fileName;

@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBInstanceIPArrayListResponseUnmarshaller {
 
-	public static DescribeDBInstanceIPArrayListResponse unmarshall(DescribeDBInstanceIPArrayListResponse describeDBInstanceIPArrayListResponse, UnmarshallerContext context) {
+	public static DescribeDBInstanceIPArrayListResponse unmarshall(DescribeDBInstanceIPArrayListResponse describeDBInstanceIPArrayListResponse, UnmarshallerContext _ctx) {
 		
-		describeDBInstanceIPArrayListResponse.setRequestId(context.stringValue("DescribeDBInstanceIPArrayListResponse.RequestId"));
+		describeDBInstanceIPArrayListResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceIPArrayListResponse.RequestId"));
 
 		List<DBInstanceIPArray> items = new ArrayList<DBInstanceIPArray>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstanceIPArrayListResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceIPArrayListResponse.Items.Length"); i++) {
 			DBInstanceIPArray dBInstanceIPArray = new DBInstanceIPArray();
-			dBInstanceIPArray.setDBInstanceIPArrayName(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayName"));
-			dBInstanceIPArray.setDBInstanceIPArrayAttribute(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayAttribute"));
-			dBInstanceIPArray.setSecurityIPList(context.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].SecurityIPList"));
+			dBInstanceIPArray.setDBInstanceIPArrayName(_ctx.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayName"));
+			dBInstanceIPArray.setDBInstanceIPArrayAttribute(_ctx.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].DBInstanceIPArrayAttribute"));
+			dBInstanceIPArray.setSecurityIPList(_ctx.stringValue("DescribeDBInstanceIPArrayListResponse.Items["+ i +"].SecurityIPList"));
 
 			items.add(dBInstanceIPArray);
 		}

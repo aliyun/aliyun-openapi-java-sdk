@@ -1,3 +1,7 @@
+2019-08-19 Version: 1.0.3
+- Supported UpgradeDBInstance for Aliyun and PrivateCloud.
+- Supported UpgradeDBVersion for Aliyun and PrivateCloud.
+
 2019-06-26 Version: 1.0.2
 - Supported DescribeDBInstances for DMS.
 - Supported DescribeDBInstance for DMS.

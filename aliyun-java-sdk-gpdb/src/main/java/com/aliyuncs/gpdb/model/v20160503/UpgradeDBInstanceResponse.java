@@ -14,24 +14,29 @@
 
 package com.aliyuncs.gpdb.model.v20160503;
 
-import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.gpdb.Endpoint;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.gpdb.transform.v20160503.UpgradeDBInstanceResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<DescribeDBInstanceIPArrayListResponse> {
-	
-	public DescribeDBInstanceIPArrayListRequest() {
-		super("gpdb", "2016-05-03", "DescribeDBInstanceIPArrayList", "gpdb");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+public class UpgradeDBInstanceResponse extends AcsResponse {
+
+	private String requestId;
 
 	private String dBInstanceId;
+
+	private String orderId;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
@@ -39,14 +44,23 @@ public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<Describe
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override
-	public Class<DescribeDBInstanceIPArrayListResponse> getResponseClass() {
-		return DescribeDBInstanceIPArrayListResponse.class;
+	public UpgradeDBInstanceResponse getInstance(UnmarshallerContext context) {
+		return	UpgradeDBInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

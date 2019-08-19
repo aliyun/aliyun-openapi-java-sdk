@@ -21,30 +21,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBInstanceForDmsResponseUnmarshaller {
 
-	public static DescribeDBInstanceForDmsResponse unmarshall(DescribeDBInstanceForDmsResponse describeDBInstanceForDmsResponse, UnmarshallerContext context) {
+	public static DescribeDBInstanceForDmsResponse unmarshall(DescribeDBInstanceForDmsResponse describeDBInstanceForDmsResponse, UnmarshallerContext _ctx) {
 		
-		describeDBInstanceForDmsResponse.setRequestId(context.stringValue("DescribeDBInstanceForDmsResponse.RequestId"));
-		describeDBInstanceForDmsResponse.setCount(context.longValue("DescribeDBInstanceForDmsResponse.Count"));
-		describeDBInstanceForDmsResponse.setSuccess(context.booleanValue("DescribeDBInstanceForDmsResponse.Success"));
-		describeDBInstanceForDmsResponse.setHttpStatusCode(context.integerValue("DescribeDBInstanceForDmsResponse.HttpStatusCode"));
-		describeDBInstanceForDmsResponse.setCode(context.stringValue("DescribeDBInstanceForDmsResponse.Code"));
-		describeDBInstanceForDmsResponse.setMessage(context.stringValue("DescribeDBInstanceForDmsResponse.Message"));
+		describeDBInstanceForDmsResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceForDmsResponse.RequestId"));
+		describeDBInstanceForDmsResponse.setCount(_ctx.longValue("DescribeDBInstanceForDmsResponse.Count"));
+		describeDBInstanceForDmsResponse.setSuccess(_ctx.booleanValue("DescribeDBInstanceForDmsResponse.Success"));
+		describeDBInstanceForDmsResponse.setHttpStatusCode(_ctx.integerValue("DescribeDBInstanceForDmsResponse.HttpStatusCode"));
+		describeDBInstanceForDmsResponse.setCode(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Code"));
+		describeDBInstanceForDmsResponse.setMessage(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Message"));
 
 		Instance instance = new Instance();
-		instance.setDbType(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.DbType"));
-		instance.setVersion(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.Version"));
-		instance.setDbInstanceName(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.DbInstanceName"));
-		instance.setConnectionString(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.ConnectionString"));
-		instance.setPort(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.Port"));
-		instance.setAliUid(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.AliUid"));
-		instance.setBid(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.Bid"));
-		instance.setInstanceNetworkType(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.InstanceNetworkType"));
-		instance.setVpcCloudInstanceId(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.VpcCloudInstanceId"));
-		instance.setVpcIp(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.VpcIp"));
-		instance.setVpcId(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.VpcId"));
-		instance.setVSwitchId(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.VSwitchId"));
-		instance.setRegion(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.Region"));
-		instance.setDescription(context.stringValue("DescribeDBInstanceForDmsResponse.Instance.Description"));
+		instance.setDbType(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.DbType"));
+		instance.setVersion(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.Version"));
+		instance.setDbInstanceName(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.DbInstanceName"));
+		instance.setConnectionString(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.ConnectionString"));
+		instance.setPort(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.Port"));
+		instance.setAliUid(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.AliUid"));
+		instance.setBid(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.Bid"));
+		instance.setInstanceNetworkType(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.InstanceNetworkType"));
+		instance.setVpcCloudInstanceId(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.VpcCloudInstanceId"));
+		instance.setVpcIp(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.VpcIp"));
+		instance.setVpcId(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.VpcId"));
+		instance.setVSwitchId(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.VSwitchId"));
+		instance.setRegion(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.Region"));
+		instance.setDescription(_ctx.stringValue("DescribeDBInstanceForDmsResponse.Instance.Description"));
 		describeDBInstanceForDmsResponse.setInstance(instance);
 	 
 	 	return describeDBInstanceForDmsResponse;

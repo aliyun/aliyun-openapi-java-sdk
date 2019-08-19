@@ -21,30 +21,34 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceResponse> {
+public class UpgradeDBInstanceRequest extends RpcAcsRequest<UpgradeDBInstanceResponse> {
 	
-	public DeleteDBInstanceRequest() {
-		super("gpdb", "2016-05-03", "DeleteDBInstance", "gpdb");
+	public UpgradeDBInstanceRequest() {
+		super("gpdb", "2016-05-03", "UpgradeDBInstance", "gpdb");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String clientToken;
+	private String dBInstanceGroupCount;
 
 	private String dBInstanceId;
 
 	private Long ownerId;
 
-	public String getClientToken() {
-		return this.clientToken;
+	private String payType;
+
+	private String dBInstanceClass;
+
+	public String getDBInstanceGroupCount() {
+		return this.dBInstanceGroupCount;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setDBInstanceGroupCount(String dBInstanceGroupCount) {
+		this.dBInstanceGroupCount = dBInstanceGroupCount;
+		if(dBInstanceGroupCount != null){
+			putQueryParameter("DBInstanceGroupCount", dBInstanceGroupCount);
 		}
 	}
 
@@ -70,9 +74,31 @@ public class DeleteDBInstanceRequest extends RpcAcsRequest<DeleteDBInstanceRespo
 		}
 	}
 
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
 	@Override
-	public Class<DeleteDBInstanceResponse> getResponseClass() {
-		return DeleteDBInstanceResponse.class;
+	public Class<UpgradeDBInstanceResponse> getResponseClass() {
+		return UpgradeDBInstanceResponse.class;
 	}
 
 }
