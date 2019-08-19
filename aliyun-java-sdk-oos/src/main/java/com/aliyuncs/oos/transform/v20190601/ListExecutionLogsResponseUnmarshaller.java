@@ -35,6 +35,8 @@ public class ListExecutionLogsResponseUnmarshaller {
 			ExecutionLog executionLog = new ExecutionLog();
 			executionLog.setTimestamp(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Timestamp"));
 			executionLog.setMessage(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].Message"));
+			executionLog.setTaskExecutionId(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].TaskExecutionId"));
+			executionLog.setLogType(_ctx.stringValue("ListExecutionLogsResponse.ExecutionLogs["+ i +"].LogType"));
 
 			executionLogs.add(executionLog);
 		}

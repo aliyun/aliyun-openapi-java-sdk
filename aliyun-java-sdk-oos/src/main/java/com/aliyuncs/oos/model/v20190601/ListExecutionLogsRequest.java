@@ -26,16 +26,20 @@ public class ListExecutionLogsRequest extends RpcAcsRequest<ListExecutionLogsRes
 	public ListExecutionLogsRequest() {
 		super("oos", "2019-06-01", "ListExecutionLogs", "oos");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private String executionId;
 
+	private String logType;
+
 	private String nextToken;
 
 	private Integer maxResults;
+
+	private String taskExecutionId;
 
 	public String getExecutionId() {
 		return this.executionId;
@@ -45,6 +49,17 @@ public class ListExecutionLogsRequest extends RpcAcsRequest<ListExecutionLogsRes
 		this.executionId = executionId;
 		if(executionId != null){
 			putQueryParameter("ExecutionId", executionId);
+		}
+	}
+
+	public String getLogType() {
+		return this.logType;
+	}
+
+	public void setLogType(String logType) {
+		this.logType = logType;
+		if(logType != null){
+			putQueryParameter("LogType", logType);
 		}
 	}
 
@@ -67,6 +82,17 @@ public class ListExecutionLogsRequest extends RpcAcsRequest<ListExecutionLogsRes
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
+	public String getTaskExecutionId() {
+		return this.taskExecutionId;
+	}
+
+	public void setTaskExecutionId(String taskExecutionId) {
+		this.taskExecutionId = taskExecutionId;
+		if(taskExecutionId != null){
+			putQueryParameter("TaskExecutionId", taskExecutionId);
 		}
 	}
 

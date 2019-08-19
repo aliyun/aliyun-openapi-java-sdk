@@ -71,6 +71,10 @@ public class ListExecutionLogsResponse extends AcsResponse {
 
 		private String message;
 
+		private String taskExecutionId;
+
+		private String logType;
+
 		public String getTimestamp() {
 			return this.timestamp;
 		}
@@ -85,6 +89,22 @@ public class ListExecutionLogsResponse extends AcsResponse {
 
 		public void setMessage(String message) {
 			this.message = message;
+		}
+
+		public String getTaskExecutionId() {
+			return this.taskExecutionId;
+		}
+
+		public void setTaskExecutionId(String taskExecutionId) {
+			this.taskExecutionId = taskExecutionId;
+		}
+
+		public String getLogType() {
+			return this.logType;
+		}
+
+		public void setLogType(String logType) {
+			this.logType = logType;
 		}
 	}
 
