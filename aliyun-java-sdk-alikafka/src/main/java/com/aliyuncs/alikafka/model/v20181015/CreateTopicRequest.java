@@ -45,8 +45,6 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 
 	private Boolean localTopic;
 
-	private Integer orderType;
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -110,17 +108,6 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		this.localTopic = localTopic;
 		if(localTopic != null){
 			putQueryParameter("LocalTopic", localTopic.toString());
-		}
-	}
-
-	public Integer getOrderType() {
-		return this.orderType;
-	}
-
-	public void setOrderType(Integer orderType) {
-		this.orderType = orderType;
-		if(orderType != null){
-			putQueryParameter("OrderType", orderType.toString());
 		}
 	}
 
