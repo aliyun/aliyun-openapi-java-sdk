@@ -28,8 +28,8 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		super("alikafka", "2018-10-15", "CreateTopic", "alikafka");
 		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -39,13 +39,11 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 
 	private String remark;
 
-	private String compactTopic;
+	private Boolean compactTopic;
 
 	private String partitionNum;
 
-	private String replicationFactor;
-
-	private String localTopic;
+	private Boolean localTopic;
 
 	private Integer orderType;
 
@@ -82,14 +80,14 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		}
 	}
 
-	public String getCompactTopic() {
+	public Boolean getCompactTopic() {
 		return this.compactTopic;
 	}
 
-	public void setCompactTopic(String compactTopic) {
+	public void setCompactTopic(Boolean compactTopic) {
 		this.compactTopic = compactTopic;
 		if(compactTopic != null){
-			putQueryParameter("CompactTopic", compactTopic);
+			putQueryParameter("CompactTopic", compactTopic.toString());
 		}
 	}
 
@@ -104,25 +102,14 @@ public class CreateTopicRequest extends RpcAcsRequest<CreateTopicResponse> {
 		}
 	}
 
-	public String getReplicationFactor() {
-		return this.replicationFactor;
-	}
-
-	public void setReplicationFactor(String replicationFactor) {
-		this.replicationFactor = replicationFactor;
-		if(replicationFactor != null){
-			putQueryParameter("ReplicationFactor", replicationFactor);
-		}
-	}
-
-	public String getLocalTopic() {
+	public Boolean getLocalTopic() {
 		return this.localTopic;
 	}
 
-	public void setLocalTopic(String localTopic) {
+	public void setLocalTopic(Boolean localTopic) {
 		this.localTopic = localTopic;
 		if(localTopic != null){
-			putQueryParameter("LocalTopic", localTopic);
+			putQueryParameter("LocalTopic", localTopic.toString());
 		}
 	}
 
