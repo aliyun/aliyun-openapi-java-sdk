@@ -1,0 +1,3 @@
+2019-08-20 Version: 1.1.1
+- API TaobaoFilmGetSchedules retrun col add hallId.
+
