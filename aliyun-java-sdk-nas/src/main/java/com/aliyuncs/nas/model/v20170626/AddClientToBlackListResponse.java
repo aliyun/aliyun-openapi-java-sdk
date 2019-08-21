@@ -14,16 +14,15 @@
 
 package com.aliyuncs.nas.model.v20170626;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.nas.transform.v20170626.CPFSModifyFileSystemResponseUnmarshaller;
+import com.aliyuncs.nas.transform.v20170626.AddClientToBlackListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CPFSModifyFileSystemResponse extends AcsResponse {
+public class AddClientToBlackListResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -36,7 +35,7 @@ public class CPFSModifyFileSystemResponse extends AcsResponse {
 	}
 
 	@Override
-	public CPFSModifyFileSystemResponse getInstance(UnmarshallerContext context) {
-		return	CPFSModifyFileSystemResponseUnmarshaller.unmarshall(this, context);
+	public AddClientToBlackListResponse getInstance(UnmarshallerContext context) {
+		return	AddClientToBlackListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

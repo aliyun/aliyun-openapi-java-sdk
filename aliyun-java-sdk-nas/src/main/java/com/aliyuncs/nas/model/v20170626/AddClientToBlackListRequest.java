@@ -21,54 +21,41 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse> {
+public class AddClientToBlackListRequest extends RpcAcsRequest<AddClientToBlackListResponse> {
 	
-	public CreateSnapshotRequest() {
-		super("NAS", "2017-06-26", "CreateSnapshot", "nas");
+	public AddClientToBlackListRequest() {
+		super("NAS", "2017-06-26", "AddClientToBlackList", "nas");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String description;
+	private String clientToken;
 
-	private String snapshotName;
-
-	private Integer retentionDays;
+	private String clientIP;
 
 	private String fileSystemId;
 
-	public String getDescription() {
-		return this.description;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getSnapshotName() {
-		return this.snapshotName;
+	public String getClientIP() {
+		return this.clientIP;
 	}
 
-	public void setSnapshotName(String snapshotName) {
-		this.snapshotName = snapshotName;
-		if(snapshotName != null){
-			putQueryParameter("SnapshotName", snapshotName);
-		}
-	}
-
-	public Integer getRetentionDays() {
-		return this.retentionDays;
-	}
-
-	public void setRetentionDays(Integer retentionDays) {
-		this.retentionDays = retentionDays;
-		if(retentionDays != null){
-			putQueryParameter("RetentionDays", retentionDays.toString());
+	public void setClientIP(String clientIP) {
+		this.clientIP = clientIP;
+		if(clientIP != null){
+			putQueryParameter("ClientIP", clientIP);
 		}
 	}
 
@@ -84,8 +71,8 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 	}
 
 	@Override
-	public Class<CreateSnapshotResponse> getResponseClass() {
-		return CreateSnapshotResponse.class;
+	public Class<AddClientToBlackListResponse> getResponseClass() {
+		return AddClientToBlackListResponse.class;
 	}
 
 }

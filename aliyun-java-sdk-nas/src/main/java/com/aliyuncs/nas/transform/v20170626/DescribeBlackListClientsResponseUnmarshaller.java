@@ -14,16 +14,17 @@
 
 package com.aliyuncs.nas.transform.v20170626;
 
-import com.aliyuncs.nas.model.v20170626.CPFSDeleteFileSystemResponse;
+import com.aliyuncs.nas.model.v20170626.DescribeBlackListClientsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CPFSDeleteFileSystemResponseUnmarshaller {
+public class DescribeBlackListClientsResponseUnmarshaller {
 
-	public static CPFSDeleteFileSystemResponse unmarshall(CPFSDeleteFileSystemResponse cPFSDeleteFileSystemResponse, UnmarshallerContext context) {
+	public static DescribeBlackListClientsResponse unmarshall(DescribeBlackListClientsResponse describeBlackListClientsResponse, UnmarshallerContext _ctx) {
 		
-		cPFSDeleteFileSystemResponse.setRequestId(context.stringValue("CPFSDeleteFileSystemResponse.RequestId"));
+		describeBlackListClientsResponse.setRequestId(_ctx.stringValue("DescribeBlackListClientsResponse.RequestId"));
+		describeBlackListClientsResponse.setClients(_ctx.stringValue("DescribeBlackListClientsResponse.Clients"));
 	 
-	 	return cPFSDeleteFileSystemResponse;
+	 	return describeBlackListClientsResponse;
 	}
 }
