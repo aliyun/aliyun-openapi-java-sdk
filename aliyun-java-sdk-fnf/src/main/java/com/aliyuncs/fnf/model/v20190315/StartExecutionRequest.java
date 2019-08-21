@@ -54,7 +54,7 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 	public void setExecutionName(String executionName) {
 		this.executionName = executionName;
 		if(executionName != null){
-			putQueryParameter("ExecutionName", executionName);
+			putBodyParameter("ExecutionName", executionName);
 		}
 	}
 
@@ -76,7 +76,7 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 	public void setFlowName(String flowName) {
 		this.flowName = flowName;
 		if(flowName != null){
-			putQueryParameter("FlowName", flowName);
+			putBodyParameter("FlowName", flowName);
 		}
 	}
 

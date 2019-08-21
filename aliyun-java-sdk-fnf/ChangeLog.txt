@@ -1,3 +1,6 @@
+2019-08-21 Version: 1.2.0
+- Move StartExecution params to body.
+
 2019-08-15 Version: 1.1.0
 - FnF public version.
 - Add Report task api.
