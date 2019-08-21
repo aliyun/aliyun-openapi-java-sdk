@@ -15,14 +15,14 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.CreateDBEndpointAddressResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.ContinueDBClusterMigrationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDBEndpointAddressResponse extends AcsResponse {
+public class ContinueDBClusterMigrationResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class CreateDBEndpointAddressResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateDBEndpointAddressResponse getInstance(UnmarshallerContext context) {
-		return	CreateDBEndpointAddressResponseUnmarshaller.unmarshall(this, context);
+	public ContinueDBClusterMigrationResponse getInstance(UnmarshallerContext context) {
+		return	ContinueDBClusterMigrationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -26,12 +26,22 @@ public class CreateBackupResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String backupJobId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getBackupJobId() {
+		return this.backupJobId;
+	}
+
+	public void setBackupJobId(String backupJobId) {
+		this.backupJobId = backupJobId;
 	}
 
 	@Override

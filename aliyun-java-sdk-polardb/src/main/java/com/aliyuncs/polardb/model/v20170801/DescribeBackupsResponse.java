@@ -95,6 +95,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String storeStatus;
 
+		private String backupSetSize;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -165,6 +167,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setStoreStatus(String storeStatus) {
 			this.storeStatus = storeStatus;
+		}
+
+		public String getBackupSetSize() {
+			return this.backupSetSize;
+		}
+
+		public void setBackupSetSize(String backupSetSize) {
+			this.backupSetSize = backupSetSize;
 		}
 	}
 

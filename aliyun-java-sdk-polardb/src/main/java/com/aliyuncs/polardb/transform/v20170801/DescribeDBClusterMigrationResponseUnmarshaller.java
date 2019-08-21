@@ -31,6 +31,7 @@ public class DescribeDBClusterMigrationResponseUnmarshaller {
 		describeDBClusterMigrationResponse.setExpiredTime(_ctx.stringValue("DescribeDBClusterMigrationResponse.ExpiredTime"));
 		describeDBClusterMigrationResponse.setRdsReadWriteMode(_ctx.stringValue("DescribeDBClusterMigrationResponse.RdsReadWriteMode"));
 		describeDBClusterMigrationResponse.setDBClusterReadWriteMode(_ctx.stringValue("DescribeDBClusterMigrationResponse.DBClusterReadWriteMode"));
+		describeDBClusterMigrationResponse.setComment(_ctx.stringValue("DescribeDBClusterMigrationResponse.Comment"));
 	 
 	 	return describeDBClusterMigrationResponse;
 	}

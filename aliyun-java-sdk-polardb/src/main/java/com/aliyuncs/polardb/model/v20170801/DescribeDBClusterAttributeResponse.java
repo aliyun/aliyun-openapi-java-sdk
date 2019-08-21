@@ -63,7 +63,7 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Long storageUsed;
 
-	private Integer storageMax;
+	private Long storageMax;
 
 	private String zoneIds;
 
@@ -243,11 +243,11 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		this.storageUsed = storageUsed;
 	}
 
-	public Integer getStorageMax() {
+	public Long getStorageMax() {
 		return this.storageMax;
 	}
 
-	public void setStorageMax(Integer storageMax) {
+	public void setStorageMax(Long storageMax) {
 		this.storageMax = storageMax;
 	}
 

@@ -23,6 +23,7 @@ public class CreateBackupResponseUnmarshaller {
 	public static CreateBackupResponse unmarshall(CreateBackupResponse createBackupResponse, UnmarshallerContext _ctx) {
 		
 		createBackupResponse.setRequestId(_ctx.stringValue("CreateBackupResponse.RequestId"));
+		createBackupResponse.setBackupJobId(_ctx.stringValue("CreateBackupResponse.BackupJobId"));
 	 
 	 	return createBackupResponse;
 	}

@@ -42,6 +42,8 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 	private String dBClusterReadWriteMode;
 
+	private String comment;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +114,14 @@ public class DescribeDBClusterMigrationResponse extends AcsResponse {
 
 	public void setDBClusterReadWriteMode(String dBClusterReadWriteMode) {
 		this.dBClusterReadWriteMode = dBClusterReadWriteMode;
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 	@Override

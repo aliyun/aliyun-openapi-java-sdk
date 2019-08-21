@@ -26,7 +26,6 @@ public class Endpoint {
             endpointMap.put("cn-hongkong", "polardb.aliyuncs.com");
             endpointMap.put("ap-southeast-1", "polardb.aliyuncs.com");
             endpointMap.put("us-east-1", "polardb.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("us-west-1", "polardb.us-west-1us-west-1.aliyuncs.com");
             endpointMap.put("cn-hangzhou", "polardb.aliyuncs.com");
         }
     };
