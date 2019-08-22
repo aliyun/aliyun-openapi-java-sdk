@@ -21,28 +21,43 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryResellerAvailableQuotaRequest extends RpcAcsRequest<QueryResellerAvailableQuotaResponse> {
+public class UpgradeResourcePackageRequest extends RpcAcsRequest<UpgradeResourcePackageResponse> {
 	
-	public QueryResellerAvailableQuotaRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryResellerAvailableQuota", "bssopenapi");
+	public UpgradeResourcePackageRequest() {
+		super("BssOpenApi", "2017-12-14", "UpgradeResourcePackage", "bssopenapi");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String itemCodes;
+	private String instanceId;
+
+	private String specification;
 
 	private Long ownerId;
 
-	public String getItemCodes() {
-		return this.itemCodes;
+	private String effectiveDate;
+
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setItemCodes(String itemCodes) {
-		this.itemCodes = itemCodes;
-		if(itemCodes != null){
-			putQueryParameter("ItemCodes", itemCodes);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getSpecification() {
+		return this.specification;
+	}
+
+	public void setSpecification(String specification) {
+		this.specification = specification;
+		if(specification != null){
+			putQueryParameter("Specification", specification);
 		}
 	}
 
@@ -57,9 +72,20 @@ public class QueryResellerAvailableQuotaRequest extends RpcAcsRequest<QueryResel
 		}
 	}
 
+	public String getEffectiveDate() {
+		return this.effectiveDate;
+	}
+
+	public void setEffectiveDate(String effectiveDate) {
+		this.effectiveDate = effectiveDate;
+		if(effectiveDate != null){
+			putQueryParameter("EffectiveDate", effectiveDate);
+		}
+	}
+
 	@Override
-	public Class<QueryResellerAvailableQuotaResponse> getResponseClass() {
-		return QueryResellerAvailableQuotaResponse.class;
+	public Class<UpgradeResourcePackageResponse> getResponseClass() {
+		return UpgradeResourcePackageResponse.class;
 	}
 
 }

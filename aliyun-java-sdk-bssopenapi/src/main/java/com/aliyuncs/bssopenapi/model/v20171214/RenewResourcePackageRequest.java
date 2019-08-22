@@ -21,47 +21,34 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeResponse> {
+public class RenewResourcePackageRequest extends RpcAcsRequest<RenewResourcePackageResponse> {
 	
-	public ConvertChargeTypeRequest() {
-		super("BssOpenApi", "2017-12-14", "ConvertChargeType", "bssopenapi");
+	public RenewResourcePackageRequest() {
+		super("BssOpenApi", "2017-12-14", "RenewResourcePackage", "bssopenapi");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Integer period;
-
-	private String productCode;
+	private Integer duration;
 
 	private String instanceId;
 
-	private String subscriptionType;
-
 	private Long ownerId;
 
-	private String productType;
+	private String effectiveDate;
 
-	public Integer getPeriod() {
-		return this.period;
+	private String pricingCycle;
+
+	public Integer getDuration() {
+		return this.duration;
 	}
 
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
 		}
 	}
 
@@ -76,17 +63,6 @@ public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeRes
 		}
 	}
 
-	public String getSubscriptionType() {
-		return this.subscriptionType;
-	}
-
-	public void setSubscriptionType(String subscriptionType) {
-		this.subscriptionType = subscriptionType;
-		if(subscriptionType != null){
-			putQueryParameter("SubscriptionType", subscriptionType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -98,20 +74,31 @@ public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeRes
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
+	public String getEffectiveDate() {
+		return this.effectiveDate;
 	}
 
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
+	public void setEffectiveDate(String effectiveDate) {
+		this.effectiveDate = effectiveDate;
+		if(effectiveDate != null){
+			putQueryParameter("EffectiveDate", effectiveDate);
+		}
+	}
+
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
 		}
 	}
 
 	@Override
-	public Class<ConvertChargeTypeResponse> getResponseClass() {
-		return ConvertChargeTypeResponse.class;
+	public Class<RenewResourcePackageResponse> getResponseClass() {
+		return RenewResourcePackageResponse.class;
 	}
 
 }

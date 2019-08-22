@@ -24,10 +24,10 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryAccountBalanceRequest extends RpcAcsRequest<QueryAccountBalanceResponse> {
 	
 	public QueryAccountBalanceRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryAccountBalance");
+		super("BssOpenApi", "2017-12-14", "QueryAccountBalance", "bssopenapi");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 

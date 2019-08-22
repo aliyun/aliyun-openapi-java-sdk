@@ -24,16 +24,18 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePackagePriceResponse> {
 	
 	public GetResourcePackagePriceRequest() {
-		super("BssOpenApi", "2017-12-14", "GetResourcePackagePrice");
+		super("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "bssopenapi");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private Integer duration;
 
 	private String productCode;
+
+	private String instanceId;
 
 	private String specification;
 
@@ -44,6 +46,8 @@ public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePac
 	private String effectiveDate;
 
 	private String pricingCycle;
+
+	private String orderType;
 
 	public Integer getDuration() {
 		return this.duration;
@@ -64,6 +68,17 @@ public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePac
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -119,6 +134,17 @@ public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePac
 		this.pricingCycle = pricingCycle;
 		if(pricingCycle != null){
 			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 

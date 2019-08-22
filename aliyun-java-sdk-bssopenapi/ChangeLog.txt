@@ -1,3 +1,6 @@
+2019-08-22 Version: 1.3.4
+- Generated 2017-12-14 for `BssOpenApi`.
+
 2019-08-15 Version: 1.3.3
 - QueryInstanceBillResponse add ServicePeriod.
 

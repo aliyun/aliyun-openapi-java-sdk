@@ -24,10 +24,10 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class EnableBillGenerationRequest extends RpcAcsRequest<EnableBillGenerationResponse> {
 	
 	public EnableBillGenerationRequest() {
-		super("BssOpenApi", "2017-12-14", "EnableBillGeneration");
+		super("BssOpenApi", "2017-12-14", "EnableBillGeneration", "bssopenapi");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
