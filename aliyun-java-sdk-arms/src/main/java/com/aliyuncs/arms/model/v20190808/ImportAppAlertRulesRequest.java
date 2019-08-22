@@ -26,8 +26,8 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 	public ImportAppAlertRulesRequest() {
 		super("ARMS", "2019-08-08", "ImportAppAlertRules", "arms");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -36,6 +36,8 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 	private String contactGroupIds;
 
 	private String pids;
+
+	private String templageAlertConfig;
 
 	private String templateAlertId;
 
@@ -69,6 +71,17 @@ public class ImportAppAlertRulesRequest extends RpcAcsRequest<ImportAppAlertRule
 		this.pids = pids;
 		if(pids != null){
 			putQueryParameter("Pids", pids);
+		}
+	}
+
+	public String getTemplageAlertConfig() {
+		return this.templageAlertConfig;
+	}
+
+	public void setTemplageAlertConfig(String templageAlertConfig) {
+		this.templageAlertConfig = templageAlertConfig;
+		if(templageAlertConfig != null){
+			putQueryParameter("TemplageAlertConfig", templageAlertConfig);
 		}
 	}
 
