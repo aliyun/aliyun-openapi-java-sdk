@@ -1,0 +1,10 @@
+2019-08-22 Version: 0.1.0
+- Support API RecognizeImageColor.
+- Support API DetectImageElements.
+- Support API RecolorImage.
+- Support API SegmentImage.
+- Support API ChangeImageSize.
+- Support API ExtendImageStyle.
+- Support API RecognizeImageStyle.
+- Support API MakeSuperResolutionImage.
+
