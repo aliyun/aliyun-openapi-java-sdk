@@ -39,6 +39,8 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 
 	private String taskName;
 
+	private String taskExecutionId;
+
 	private String notifyType;
 
 	private String parameters;
@@ -86,6 +88,17 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 		this.taskName = taskName;
 		if(taskName != null){
 			putQueryParameter("TaskName", taskName);
+		}
+	}
+
+	public String getTaskExecutionId() {
+		return this.taskExecutionId;
+	}
+
+	public void setTaskExecutionId(String taskExecutionId) {
+		this.taskExecutionId = taskExecutionId;
+		if(taskExecutionId != null){
+			putQueryParameter("TaskExecutionId", taskExecutionId);
 		}
 	}
 
