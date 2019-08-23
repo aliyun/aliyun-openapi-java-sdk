@@ -31,6 +31,19 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		} catch (Exception e) {}
 	}
 
+	private String region;
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
 	public Class<DescribeRegionsResponse> getResponseClass() {
 		return DescribeRegionsResponse.class;

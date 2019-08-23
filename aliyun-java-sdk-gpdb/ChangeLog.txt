@@ -1,3 +1,8 @@
+2019-08-23 Version: 1.0.4
+- API DescribeRegion Support Filter by Region.
+- Support UpgradeDBInstance.
+- Support UpgradeDBVersion.
+
 2019-08-19 Version: 1.0.3
 - Supported UpgradeDBInstance for Aliyun and PrivateCloud.
 - Supported UpgradeDBVersion for Aliyun and PrivateCloud.
