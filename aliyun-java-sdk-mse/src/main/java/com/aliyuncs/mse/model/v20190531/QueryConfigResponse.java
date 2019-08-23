@@ -32,7 +32,7 @@ public class QueryConfigResponse extends AcsResponse {
 
 	private String errorCode;
 
-	private String data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,12 +66,145 @@ public class QueryConfigResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
+	}
+
+	public static class Data {
+
+		private String clusterName;
+
+		private String tickTime;
+
+		private String initLimit;
+
+		private String syncLimit;
+
+		private String maxClientCnxns;
+
+		private Boolean openSuperAcl;
+
+		private String userName;
+
+		private String passWord;
+
+		private String jvmFlagsCustom;
+
+		private String juteMaxbuffer;
+
+		private String autopurgePurgeInterval;
+
+		private String autopurgeSnapRetainCount;
+
+		private Boolean restartFlag;
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public String getTickTime() {
+			return this.tickTime;
+		}
+
+		public void setTickTime(String tickTime) {
+			this.tickTime = tickTime;
+		}
+
+		public String getInitLimit() {
+			return this.initLimit;
+		}
+
+		public void setInitLimit(String initLimit) {
+			this.initLimit = initLimit;
+		}
+
+		public String getSyncLimit() {
+			return this.syncLimit;
+		}
+
+		public void setSyncLimit(String syncLimit) {
+			this.syncLimit = syncLimit;
+		}
+
+		public String getMaxClientCnxns() {
+			return this.maxClientCnxns;
+		}
+
+		public void setMaxClientCnxns(String maxClientCnxns) {
+			this.maxClientCnxns = maxClientCnxns;
+		}
+
+		public Boolean getOpenSuperAcl() {
+			return this.openSuperAcl;
+		}
+
+		public void setOpenSuperAcl(Boolean openSuperAcl) {
+			this.openSuperAcl = openSuperAcl;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getPassWord() {
+			return this.passWord;
+		}
+
+		public void setPassWord(String passWord) {
+			this.passWord = passWord;
+		}
+
+		public String getJvmFlagsCustom() {
+			return this.jvmFlagsCustom;
+		}
+
+		public void setJvmFlagsCustom(String jvmFlagsCustom) {
+			this.jvmFlagsCustom = jvmFlagsCustom;
+		}
+
+		public String getJuteMaxbuffer() {
+			return this.juteMaxbuffer;
+		}
+
+		public void setJuteMaxbuffer(String juteMaxbuffer) {
+			this.juteMaxbuffer = juteMaxbuffer;
+		}
+
+		public String getAutopurgePurgeInterval() {
+			return this.autopurgePurgeInterval;
+		}
+
+		public void setAutopurgePurgeInterval(String autopurgePurgeInterval) {
+			this.autopurgePurgeInterval = autopurgePurgeInterval;
+		}
+
+		public String getAutopurgeSnapRetainCount() {
+			return this.autopurgeSnapRetainCount;
+		}
+
+		public void setAutopurgeSnapRetainCount(String autopurgeSnapRetainCount) {
+			this.autopurgeSnapRetainCount = autopurgeSnapRetainCount;
+		}
+
+		public Boolean getRestartFlag() {
+			return this.restartFlag;
+		}
+
+		public void setRestartFlag(Boolean restartFlag) {
+			this.restartFlag = restartFlag;
+		}
 	}
 
 	@Override

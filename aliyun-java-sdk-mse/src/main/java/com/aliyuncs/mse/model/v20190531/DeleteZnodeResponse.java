@@ -32,9 +32,9 @@ public class DeleteZnodeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
-
 	private String httpCode;
+
+	private Data data;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -68,20 +68,63 @@ public class DeleteZnodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getHttpCode() {
 		return this.httpCode;
 	}
 
 	public void setHttpCode(String httpCode) {
 		this.httpCode = httpCode;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String path;
+
+		private String name;
+
+		private String data;
+
+		private Boolean dir;
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getData() {
+			return this.data;
+		}
+
+		public void setData(String data) {
+			this.data = data;
+		}
+
+		public Boolean getDir() {
+			return this.dir;
+		}
+
+		public void setDir(Boolean dir) {
+			this.dir = dir;
+		}
 	}
 
 	@Override

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.mse.model.v20190531;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.mse.transform.v20190531.ListZnodeChildrenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,7 +33,7 @@ public class ListZnodeChildrenResponse extends AcsResponse {
 
 	private String errorCode;
 
-	private String data;
+	private List<ZnodeModel> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,12 +67,55 @@ public class ListZnodeChildrenResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getData() {
+	public List<ZnodeModel> getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(List<ZnodeModel> data) {
 		this.data = data;
+	}
+
+	public static class ZnodeModel {
+
+		private String path;
+
+		private String name;
+
+		private String data;
+
+		private Boolean dir;
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getData() {
+			return this.data;
+		}
+
+		public void setData(String data) {
+			this.data = data;
+		}
+
+		public Boolean getDir() {
+			return this.dir;
+		}
+
+		public void setDir(Boolean dir) {
+			this.dir = dir;
+		}
 	}
 
 	@Override

@@ -32,7 +32,7 @@ public class QueryZnodeDetailResponse extends AcsResponse {
 
 	private String errorCode;
 
-	private String data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,12 +66,55 @@ public class QueryZnodeDetailResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
+	}
+
+	public static class Data {
+
+		private String path;
+
+		private String name;
+
+		private String data;
+
+		private Boolean dir;
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getData() {
+			return this.data;
+		}
+
+		public void setData(String data) {
+			this.data = data;
+		}
+
+		public Boolean getDir() {
+			return this.dir;
+		}
+
+		public void setDir(Boolean dir) {
+			this.dir = dir;
+		}
 	}
 
 	@Override

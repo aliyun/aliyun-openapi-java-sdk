@@ -14,7 +14,11 @@
 
 package com.aliyuncs.mse.transform.v20190531;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.mse.model.v20190531.ListZnodeChildrenResponse;
+import com.aliyuncs.mse.model.v20190531.ListZnodeChildrenResponse.ZnodeModel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,7 +30,18 @@ public class ListZnodeChildrenResponseUnmarshaller {
 		listZnodeChildrenResponse.setSuccess(_ctx.booleanValue("ListZnodeChildrenResponse.Success"));
 		listZnodeChildrenResponse.setMessage(_ctx.stringValue("ListZnodeChildrenResponse.Message"));
 		listZnodeChildrenResponse.setErrorCode(_ctx.stringValue("ListZnodeChildrenResponse.ErrorCode"));
-		listZnodeChildrenResponse.setData(_ctx.stringValue("ListZnodeChildrenResponse.Data"));
+
+		List<ZnodeModel> data = new ArrayList<ZnodeModel>();
+		for (int i = 0; i < _ctx.lengthValue("ListZnodeChildrenResponse.Data.Length"); i++) {
+			ZnodeModel znodeModel = new ZnodeModel();
+			znodeModel.setPath(_ctx.stringValue("ListZnodeChildrenResponse.Data["+ i +"].Path"));
+			znodeModel.setName(_ctx.stringValue("ListZnodeChildrenResponse.Data["+ i +"].Name"));
+			znodeModel.setData(_ctx.stringValue("ListZnodeChildrenResponse.Data["+ i +"].Data"));
+			znodeModel.setDir(_ctx.booleanValue("ListZnodeChildrenResponse.Data["+ i +"].Dir"));
+
+			data.add(znodeModel);
+		}
+		listZnodeChildrenResponse.setData(data);
 	 
 	 	return listZnodeChildrenResponse;
 	}
