@@ -21,11 +21,17 @@ import java.util.List;
  * @author auto create
  * @version 
  */
-public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
+public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 	
-	public RenderOrderRequest() {
-		super("linkedmall", "2018-01-16", "RenderOrder", "linkedmall");
+	public CreateOrderV2Request() {
+		super("linkedmall", "2018-01-16", "CreateOrderV2", "linkedmall");
 	}
+
+	private Long itemId;
+
+	private Long quantity;
+
+	private Long totalAmount;
 
 	private String thirdPartyUserId;
 
@@ -35,11 +41,48 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 
 	private String bizId;
 
+	private String outTradeId;
+
 	private Boolean useAnonymousTbAccount;
+
+	private Long orderExpireTime;
 
 	private List<ItemList> itemLists;
 
 	private String deliveryAddress;
+
+	public Long getItemId() {
+		return this.itemId;
+	}
+
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
+		if(itemId != null){
+			putQueryParameter("ItemId", itemId.toString());
+		}
+	}
+
+	public Long getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(Long quantity) {
+		this.quantity = quantity;
+		if(quantity != null){
+			putQueryParameter("Quantity", quantity.toString());
+		}
+	}
+
+	public Long getTotalAmount() {
+		return this.totalAmount;
+	}
+
+	public void setTotalAmount(Long totalAmount) {
+		this.totalAmount = totalAmount;
+		if(totalAmount != null){
+			putQueryParameter("TotalAmount", totalAmount.toString());
+		}
+	}
 
 	public String getThirdPartyUserId() {
 		return this.thirdPartyUserId;
@@ -85,6 +128,17 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 		}
 	}
 
+	public String getOutTradeId() {
+		return this.outTradeId;
+	}
+
+	public void setOutTradeId(String outTradeId) {
+		this.outTradeId = outTradeId;
+		if(outTradeId != null){
+			putQueryParameter("OutTradeId", outTradeId);
+		}
+	}
+
 	public Boolean getUseAnonymousTbAccount() {
 		return this.useAnonymousTbAccount;
 	}
@@ -93,6 +147,17 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 		this.useAnonymousTbAccount = useAnonymousTbAccount;
 		if(useAnonymousTbAccount != null){
 			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
+	}
+
+	public Long getOrderExpireTime() {
+		return this.orderExpireTime;
+	}
+
+	public void setOrderExpireTime(Long orderExpireTime) {
+		this.orderExpireTime = orderExpireTime;
+		if(orderExpireTime != null){
+			putQueryParameter("OrderExpireTime", orderExpireTime.toString());
 		}
 	}
 
@@ -156,8 +221,8 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 	}
 
 	@Override
-	public Class<RenderOrderResponse> getResponseClass() {
-		return RenderOrderResponse.class;
+	public Class<CreateOrderV2Response> getResponseClass() {
+		return CreateOrderV2Response.class;
 	}
 
 }

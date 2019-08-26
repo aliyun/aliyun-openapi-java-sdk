@@ -20,19 +20,43 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class QueryMovieCommentsRequest extends RpcAcsRequest<QueryMovieCommentsResponse> {
+public class EnableOrderRequest extends RpcAcsRequest<EnableOrderResponse> {
 	
-	public QueryMovieCommentsRequest() {
-		super("linkedmall", "2018-01-16", "QueryMovieComments", "linkedmall");
+	public EnableOrderRequest() {
+		super("linkedmall", "2018-01-16", "EnableOrder", "linkedmall");
 	}
+
+	private String lmOrderId;
+
+	private String bizUid;
 
 	private String extJson;
 
 	private String bizId;
 
-	private Long movieId;
+	private String outTradeId;
 
-	private Long pageNumber;
+	public String getLmOrderId() {
+		return this.lmOrderId;
+	}
+
+	public void setLmOrderId(String lmOrderId) {
+		this.lmOrderId = lmOrderId;
+		if(lmOrderId != null){
+			putQueryParameter("LmOrderId", lmOrderId);
+		}
+	}
+
+	public String getBizUid() {
+		return this.bizUid;
+	}
+
+	public void setBizUid(String bizUid) {
+		this.bizUid = bizUid;
+		if(bizUid != null){
+			putQueryParameter("BizUid", bizUid);
+		}
+	}
 
 	public String getExtJson() {
 		return this.extJson;
@@ -56,31 +80,20 @@ public class QueryMovieCommentsRequest extends RpcAcsRequest<QueryMovieCommentsR
 		}
 	}
 
-	public Long getMovieId() {
-		return this.movieId;
+	public String getOutTradeId() {
+		return this.outTradeId;
 	}
 
-	public void setMovieId(Long movieId) {
-		this.movieId = movieId;
-		if(movieId != null){
-			putQueryParameter("MovieId", movieId.toString());
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setOutTradeId(String outTradeId) {
+		this.outTradeId = outTradeId;
+		if(outTradeId != null){
+			putQueryParameter("OutTradeId", outTradeId);
 		}
 	}
 
 	@Override
-	public Class<QueryMovieCommentsResponse> getResponseClass() {
-		return QueryMovieCommentsResponse.class;
+	public Class<EnableOrderResponse> getResponseClass() {
+		return EnableOrderResponse.class;
 	}
 
 }

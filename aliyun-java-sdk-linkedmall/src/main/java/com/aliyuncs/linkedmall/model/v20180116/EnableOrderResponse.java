@@ -16,14 +16,14 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkedmall.transform.v20180116.QueryAllCitiesResponseUnmarshaller;
+import com.aliyuncs.linkedmall.transform.v20180116.EnableOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryAllCitiesResponse extends AcsResponse {
+public class EnableOrderResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -39,7 +39,9 @@ public class QueryAllCitiesResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private List<City> cities;
+	private Long totalCount;
+
+	private Model model;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -97,69 +99,80 @@ public class QueryAllCitiesResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<City> getCities() {
-		return this.cities;
+	public Long getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setCities(List<City> cities) {
-		this.cities = cities;
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
-	public static class City {
+	public Model getModel() {
+		return this.model;
+	}
 
-		private String pinYin;
+	public void setModel(Model model) {
+		this.model = model;
+	}
 
-		private Long cityCode;
+	public static class Model {
 
-		private String name;
+		private String redirectUrl;
 
-		private Long id;
+		private List<LmOrderListItem> lmOrderList;
 
-		private Long parentId;
+		private List<String> orderIds;
 
-		public String getPinYin() {
-			return this.pinYin;
+		private List<String> payTradeIds;
+
+		public String getRedirectUrl() {
+			return this.redirectUrl;
 		}
 
-		public void setPinYin(String pinYin) {
-			this.pinYin = pinYin;
+		public void setRedirectUrl(String redirectUrl) {
+			this.redirectUrl = redirectUrl;
 		}
 
-		public Long getCityCode() {
-			return this.cityCode;
+		public List<LmOrderListItem> getLmOrderList() {
+			return this.lmOrderList;
 		}
 
-		public void setCityCode(Long cityCode) {
-			this.cityCode = cityCode;
+		public void setLmOrderList(List<LmOrderListItem> lmOrderList) {
+			this.lmOrderList = lmOrderList;
 		}
 
-		public String getName() {
-			return this.name;
+		public List<String> getOrderIds() {
+			return this.orderIds;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setOrderIds(List<String> orderIds) {
+			this.orderIds = orderIds;
 		}
 
-		public Long getId() {
-			return this.id;
+		public List<String> getPayTradeIds() {
+			return this.payTradeIds;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setPayTradeIds(List<String> payTradeIds) {
+			this.payTradeIds = payTradeIds;
 		}
 
-		public Long getParentId() {
-			return this.parentId;
-		}
+		public static class LmOrderListItem {
 
-		public void setParentId(Long parentId) {
-			this.parentId = parentId;
+			private String lmOrderId;
+
+			public String getLmOrderId() {
+				return this.lmOrderId;
+			}
+
+			public void setLmOrderId(String lmOrderId) {
+				this.lmOrderId = lmOrderId;
+			}
 		}
 	}
 
 	@Override
-	public QueryAllCitiesResponse getInstance(UnmarshallerContext context) {
-		return	QueryAllCitiesResponseUnmarshaller.unmarshall(this, context);
+	public EnableOrderResponse getInstance(UnmarshallerContext context) {
+		return	EnableOrderResponseUnmarshaller.unmarshall(this, context);
 	}
 }
