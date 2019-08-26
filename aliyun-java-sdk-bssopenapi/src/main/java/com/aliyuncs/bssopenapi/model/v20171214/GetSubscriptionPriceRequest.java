@@ -25,7 +25,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPriceResponse> {
 	
 	public GetSubscriptionPriceRequest() {
-		super("BssOpenApi", "2017-12-14", "GetSubscriptionPrice", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "GetSubscriptionPrice");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

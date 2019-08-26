@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class DescribeResourcePackageProductRequest extends RpcAcsRequest<DescribeResourcePackageProductResponse> {
 	
 	public DescribeResourcePackageProductRequest() {
-		super("BssOpenApi", "2017-12-14", "DescribeResourcePackageProduct", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "DescribeResourcePackageProduct");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

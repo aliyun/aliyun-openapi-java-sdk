@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class CreateResourcePackageRequest extends RpcAcsRequest<CreateResourcePackageResponse> {
 	
 	public CreateResourcePackageRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateResourcePackage", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "CreateResourcePackage");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

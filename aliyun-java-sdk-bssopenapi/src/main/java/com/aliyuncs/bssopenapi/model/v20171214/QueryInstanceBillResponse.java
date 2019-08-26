@@ -165,19 +165,19 @@ public class QueryInstanceBillResponse extends AcsResponse {
 
 			private String productDetail;
 
-			private Long ownerID;
+			private String ownerID;
 
 			private String billingItem;
 
-			private Float listPrice;
+			private String listPrice;
 
 			private String listPriceUnit;
 
-			private Float usage;
+			private String usage;
 
 			private String usageUnit;
 
-			private Float deductedByResourcePackage;
+			private String deductedByResourcePackage;
 
 			private Float pretaxGrossAmount;
 
@@ -283,11 +283,11 @@ public class QueryInstanceBillResponse extends AcsResponse {
 				this.productDetail = productDetail;
 			}
 
-			public Long getOwnerID() {
+			public String getOwnerID() {
 				return this.ownerID;
 			}
 
-			public void setOwnerID(Long ownerID) {
+			public void setOwnerID(String ownerID) {
 				this.ownerID = ownerID;
 			}
 
@@ -299,11 +299,11 @@ public class QueryInstanceBillResponse extends AcsResponse {
 				this.billingItem = billingItem;
 			}
 
-			public Float getListPrice() {
+			public String getListPrice() {
 				return this.listPrice;
 			}
 
-			public void setListPrice(Float listPrice) {
+			public void setListPrice(String listPrice) {
 				this.listPrice = listPrice;
 			}
 
@@ -315,11 +315,11 @@ public class QueryInstanceBillResponse extends AcsResponse {
 				this.listPriceUnit = listPriceUnit;
 			}
 
-			public Float getUsage() {
+			public String getUsage() {
 				return this.usage;
 			}
 
-			public void setUsage(Float usage) {
+			public void setUsage(String usage) {
 				this.usage = usage;
 			}
 
@@ -331,11 +331,11 @@ public class QueryInstanceBillResponse extends AcsResponse {
 				this.usageUnit = usageUnit;
 			}
 
-			public Float getDeductedByResourcePackage() {
+			public String getDeductedByResourcePackage() {
 				return this.deductedByResourcePackage;
 			}
 
-			public void setDeductedByResourcePackage(Float deductedByResourcePackage) {
+			public void setDeductedByResourcePackage(String deductedByResourcePackage) {
 				this.deductedByResourcePackage = deductedByResourcePackage;
 			}
 

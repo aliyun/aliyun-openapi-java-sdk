@@ -51,13 +51,13 @@ public class QueryInstanceBillResponseUnmarshaller {
 			item.setSubscriptionType(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].SubscriptionType"));
 			item.setProductName(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ProductName"));
 			item.setProductDetail(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ProductDetail"));
-			item.setOwnerID(_ctx.longValue("QueryInstanceBillResponse.Data.Items["+ i +"].OwnerID"));
+			item.setOwnerID(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].OwnerID"));
 			item.setBillingItem(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].BillingItem"));
-			item.setListPrice(_ctx.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].ListPrice"));
+			item.setListPrice(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ListPrice"));
 			item.setListPriceUnit(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].ListPriceUnit"));
-			item.setUsage(_ctx.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].Usage"));
+			item.setUsage(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].Usage"));
 			item.setUsageUnit(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].UsageUnit"));
-			item.setDeductedByResourcePackage(_ctx.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].DeductedByResourcePackage"));
+			item.setDeductedByResourcePackage(_ctx.stringValue("QueryInstanceBillResponse.Data.Items["+ i +"].DeductedByResourcePackage"));
 			item.setPretaxGrossAmount(_ctx.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].PretaxGrossAmount"));
 			item.setInvoiceDiscount(_ctx.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].InvoiceDiscount"));
 			item.setDeductedByCoupons(_ctx.floatValue("QueryInstanceBillResponse.Data.Items["+ i +"].DeductedByCoupons"));

@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryAvailableInstancesRequest extends RpcAcsRequest<QueryAvailableInstancesResponse> {
 	
 	public QueryAvailableInstancesRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryAvailableInstances", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QueryAvailableInstances");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

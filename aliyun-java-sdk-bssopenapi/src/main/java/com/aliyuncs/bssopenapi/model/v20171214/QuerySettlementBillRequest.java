@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QuerySettlementBillRequest extends RpcAcsRequest<QuerySettlementBillResponse> {
 	
 	public QuerySettlementBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySettlementBill", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "QuerySettlementBill");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

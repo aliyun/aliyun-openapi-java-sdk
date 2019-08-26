@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class CancelOrderRequest extends RpcAcsRequest<CancelOrderResponse> {
 	
 	public CancelOrderRequest() {
-		super("BssOpenApi", "2017-12-14", "CancelOrder", "bssopenapi");
+		super("BssOpenApi", "2017-12-14", "CancelOrder");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
