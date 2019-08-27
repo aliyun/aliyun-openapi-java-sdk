@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainRealTimeByteHitRateDataResponseUnmarshaller {
 
-	public static DescribeDomainRealTimeByteHitRateDataResponse unmarshall(DescribeDomainRealTimeByteHitRateDataResponse describeDomainRealTimeByteHitRateDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainRealTimeByteHitRateDataResponse unmarshall(DescribeDomainRealTimeByteHitRateDataResponse describeDomainRealTimeByteHitRateDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainRealTimeByteHitRateDataResponse.setRequestId(context.stringValue("DescribeDomainRealTimeByteHitRateDataResponse.RequestId"));
+		describeDomainRealTimeByteHitRateDataResponse.setRequestId(_ctx.stringValue("DescribeDomainRealTimeByteHitRateDataResponse.RequestId"));
 
 		List<ByteHitRateDataModel> data = new ArrayList<ByteHitRateDataModel>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainRealTimeByteHitRateDataResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainRealTimeByteHitRateDataResponse.Data.Length"); i++) {
 			ByteHitRateDataModel byteHitRateDataModel = new ByteHitRateDataModel();
-			byteHitRateDataModel.setByteHitRate(context.floatValue("DescribeDomainRealTimeByteHitRateDataResponse.Data["+ i +"].ByteHitRate"));
-			byteHitRateDataModel.setTimeStamp(context.stringValue("DescribeDomainRealTimeByteHitRateDataResponse.Data["+ i +"].TimeStamp"));
+			byteHitRateDataModel.setByteHitRate(_ctx.floatValue("DescribeDomainRealTimeByteHitRateDataResponse.Data["+ i +"].ByteHitRate"));
+			byteHitRateDataModel.setTimeStamp(_ctx.stringValue("DescribeDomainRealTimeByteHitRateDataResponse.Data["+ i +"].TimeStamp"));
 
 			data.add(byteHitRateDataModel);
 		}

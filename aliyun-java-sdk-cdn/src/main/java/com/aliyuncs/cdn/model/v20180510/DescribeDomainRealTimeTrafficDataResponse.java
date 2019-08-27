@@ -12,30 +12,30 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.DescribeDomainCCDataResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.DescribeDomainRealTimeTrafficDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDomainCCDataResponse extends AcsResponse {
+public class DescribeDomainRealTimeTrafficDataResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String domainName;
 
-	private String dataInterval;
-
 	private String startTime;
 
 	private String endTime;
 
-	private List<CCDatas> cCDataList;
+	private String dataInterval;
+
+	private List<DataModule> realTimeTrafficDataPerInterval;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,14 +51,6 @@ public class DescribeDomainCCDataResponse extends AcsResponse {
 
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
-	}
-
-	public String getDataInterval() {
-		return this.dataInterval;
-	}
-
-	public void setDataInterval(String dataInterval) {
-		this.dataInterval = dataInterval;
 	}
 
 	public String getStartTime() {
@@ -77,19 +69,27 @@ public class DescribeDomainCCDataResponse extends AcsResponse {
 		this.endTime = endTime;
 	}
 
-	public List<CCDatas> getCCDataList() {
-		return this.cCDataList;
+	public String getDataInterval() {
+		return this.dataInterval;
 	}
 
-	public void setCCDataList(List<CCDatas> cCDataList) {
-		this.cCDataList = cCDataList;
+	public void setDataInterval(String dataInterval) {
+		this.dataInterval = dataInterval;
 	}
 
-	public static class CCDatas {
+	public List<DataModule> getRealTimeTrafficDataPerInterval() {
+		return this.realTimeTrafficDataPerInterval;
+	}
+
+	public void setRealTimeTrafficDataPerInterval(List<DataModule> realTimeTrafficDataPerInterval) {
+		this.realTimeTrafficDataPerInterval = realTimeTrafficDataPerInterval;
+	}
+
+	public static class DataModule {
 
 		private String timeStamp;
 
-		private String count;
+		private String value;
 
 		public String getTimeStamp() {
 			return this.timeStamp;
@@ -99,17 +99,17 @@ public class DescribeDomainCCDataResponse extends AcsResponse {
 			this.timeStamp = timeStamp;
 		}
 
-		public String getCount() {
-			return this.count;
+		public String getValue() {
+			return this.value;
 		}
 
-		public void setCount(String count) {
-			this.count = count;
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 
 	@Override
-	public DescribeDomainCCDataResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDomainCCDataResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDomainRealTimeTrafficDataResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDomainRealTimeTrafficDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

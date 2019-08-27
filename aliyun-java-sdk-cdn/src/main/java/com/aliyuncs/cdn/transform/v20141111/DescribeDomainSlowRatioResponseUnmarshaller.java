@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainSlowRatioResponseUnmarshaller {
 
-	public static DescribeDomainSlowRatioResponse unmarshall(DescribeDomainSlowRatioResponse describeDomainSlowRatioResponse, UnmarshallerContext context) {
+	public static DescribeDomainSlowRatioResponse unmarshall(DescribeDomainSlowRatioResponse describeDomainSlowRatioResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainSlowRatioResponse.setEndTime(context.stringValue("DescribeDomainSlowRatioResponse.EndTime"));
-		describeDomainSlowRatioResponse.setDataInterval(context.integerValue("DescribeDomainSlowRatioResponse.DataInterval"));
-		describeDomainSlowRatioResponse.setPageNumber(context.integerValue("DescribeDomainSlowRatioResponse.PageNumber"));
-		describeDomainSlowRatioResponse.setPageSize(context.integerValue("DescribeDomainSlowRatioResponse.PageSize"));
-		describeDomainSlowRatioResponse.setTotalCount(context.integerValue("DescribeDomainSlowRatioResponse.TotalCount"));
-		describeDomainSlowRatioResponse.setStartTime(context.stringValue("DescribeDomainSlowRatioResponse.StartTime"));
+		describeDomainSlowRatioResponse.setEndTime(_ctx.stringValue("DescribeDomainSlowRatioResponse.EndTime"));
+		describeDomainSlowRatioResponse.setDataInterval(_ctx.integerValue("DescribeDomainSlowRatioResponse.DataInterval"));
+		describeDomainSlowRatioResponse.setPageNumber(_ctx.integerValue("DescribeDomainSlowRatioResponse.PageNumber"));
+		describeDomainSlowRatioResponse.setPageSize(_ctx.integerValue("DescribeDomainSlowRatioResponse.PageSize"));
+		describeDomainSlowRatioResponse.setTotalCount(_ctx.integerValue("DescribeDomainSlowRatioResponse.TotalCount"));
+		describeDomainSlowRatioResponse.setStartTime(_ctx.stringValue("DescribeDomainSlowRatioResponse.StartTime"));
 
 		List<SlowRatioData> slowRatioDataPerInterval = new ArrayList<SlowRatioData>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval.Length"); i++) {
 			SlowRatioData slowRatioData = new SlowRatioData();
-			slowRatioData.setTotalUsers(context.integerValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].TotalUsers"));
-			slowRatioData.setSlowUsers(context.integerValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].SlowUsers"));
-			slowRatioData.setSlowRatio(context.floatValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].SlowRatio"));
-			slowRatioData.setRegionNameZh(context.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].RegionNameZh"));
-			slowRatioData.setRegionNameEn(context.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].RegionNameEn"));
-			slowRatioData.setIspNameZh(context.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].IspNameZh"));
-			slowRatioData.setIspNameEn(context.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].IspNameEn"));
-			slowRatioData.setTime(context.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].Time"));
+			slowRatioData.setTotalUsers(_ctx.integerValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].TotalUsers"));
+			slowRatioData.setSlowUsers(_ctx.integerValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].SlowUsers"));
+			slowRatioData.setSlowRatio(_ctx.floatValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].SlowRatio"));
+			slowRatioData.setRegionNameZh(_ctx.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].RegionNameZh"));
+			slowRatioData.setRegionNameEn(_ctx.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].RegionNameEn"));
+			slowRatioData.setIspNameZh(_ctx.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].IspNameZh"));
+			slowRatioData.setIspNameEn(_ctx.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].IspNameEn"));
+			slowRatioData.setTime(_ctx.stringValue("DescribeDomainSlowRatioResponse.SlowRatioDataPerInterval["+ i +"].Time"));
 
 			slowRatioDataPerInterval.add(slowRatioData);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddLiveStreamTranscodeResponseUnmarshaller {
 
-	public static AddLiveStreamTranscodeResponse unmarshall(AddLiveStreamTranscodeResponse addLiveStreamTranscodeResponse, UnmarshallerContext context) {
+	public static AddLiveStreamTranscodeResponse unmarshall(AddLiveStreamTranscodeResponse addLiveStreamTranscodeResponse, UnmarshallerContext _ctx) {
 		
-		addLiveStreamTranscodeResponse.setRequestId(context.stringValue("AddLiveStreamTranscodeResponse.RequestId"));
+		addLiveStreamTranscodeResponse.setRequestId(_ctx.stringValue("AddLiveStreamTranscodeResponse.RequestId"));
 	 
 	 	return addLiveStreamTranscodeResponse;
 	}

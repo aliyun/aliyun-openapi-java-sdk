@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainISPDataResponseUnmarshaller {
 
-	public static DescribeDomainISPDataResponse unmarshall(DescribeDomainISPDataResponse describeDomainISPDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainISPDataResponse unmarshall(DescribeDomainISPDataResponse describeDomainISPDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainISPDataResponse.setRequestId(context.stringValue("DescribeDomainISPDataResponse.RequestId"));
-		describeDomainISPDataResponse.setDomainName(context.stringValue("DescribeDomainISPDataResponse.DomainName"));
-		describeDomainISPDataResponse.setDataInterval(context.stringValue("DescribeDomainISPDataResponse.DataInterval"));
-		describeDomainISPDataResponse.setStartTime(context.stringValue("DescribeDomainISPDataResponse.StartTime"));
-		describeDomainISPDataResponse.setEndTime(context.stringValue("DescribeDomainISPDataResponse.EndTime"));
+		describeDomainISPDataResponse.setRequestId(_ctx.stringValue("DescribeDomainISPDataResponse.RequestId"));
+		describeDomainISPDataResponse.setDomainName(_ctx.stringValue("DescribeDomainISPDataResponse.DomainName"));
+		describeDomainISPDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainISPDataResponse.DataInterval"));
+		describeDomainISPDataResponse.setStartTime(_ctx.stringValue("DescribeDomainISPDataResponse.StartTime"));
+		describeDomainISPDataResponse.setEndTime(_ctx.stringValue("DescribeDomainISPDataResponse.EndTime"));
 
 		List<ISPProportionData> value = new ArrayList<ISPProportionData>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainISPDataResponse.Value.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainISPDataResponse.Value.Length"); i++) {
 			ISPProportionData iSPProportionData = new ISPProportionData();
-			iSPProportionData.setISP(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].ISP"));
-			iSPProportionData.setProportion(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].Proportion"));
-			iSPProportionData.setIspEname(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].IspEname"));
-			iSPProportionData.setAvgObjectSize(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].AvgObjectSize"));
-			iSPProportionData.setAvgResponseTime(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].AvgResponseTime"));
-			iSPProportionData.setBps(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].Bps"));
-			iSPProportionData.setQps(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].Qps"));
-			iSPProportionData.setAvgResponseRate(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].AvgResponseRate"));
-			iSPProportionData.setByteHitRate(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].ByteHitRate"));
-			iSPProportionData.setReqHitRate(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].ReqHitRate"));
-			iSPProportionData.setReqErrRate(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].ReqErrRate"));
-			iSPProportionData.setTotalBytes(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].TotalBytes"));
-			iSPProportionData.setBytesProportion(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].BytesProportion"));
-			iSPProportionData.setTotalQuery(context.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].TotalQuery"));
+			iSPProportionData.setISP(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].ISP"));
+			iSPProportionData.setProportion(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].Proportion"));
+			iSPProportionData.setIspEname(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].IspEname"));
+			iSPProportionData.setAvgObjectSize(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].AvgObjectSize"));
+			iSPProportionData.setAvgResponseTime(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].AvgResponseTime"));
+			iSPProportionData.setBps(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].Bps"));
+			iSPProportionData.setQps(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].Qps"));
+			iSPProportionData.setAvgResponseRate(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].AvgResponseRate"));
+			iSPProportionData.setByteHitRate(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].ByteHitRate"));
+			iSPProportionData.setReqHitRate(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].ReqHitRate"));
+			iSPProportionData.setReqErrRate(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].ReqErrRate"));
+			iSPProportionData.setTotalBytes(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].TotalBytes"));
+			iSPProportionData.setBytesProportion(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].BytesProportion"));
+			iSPProportionData.setTotalQuery(_ctx.stringValue("DescribeDomainISPDataResponse.Value["+ i +"].TotalQuery"));
 
 			value.add(iSPProportionData);
 		}

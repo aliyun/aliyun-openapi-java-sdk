@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetVideoSeekConfigResponseUnmarshaller {
 
-	public static SetVideoSeekConfigResponse unmarshall(SetVideoSeekConfigResponse setVideoSeekConfigResponse, UnmarshallerContext context) {
+	public static SetVideoSeekConfigResponse unmarshall(SetVideoSeekConfigResponse setVideoSeekConfigResponse, UnmarshallerContext _ctx) {
 		
-		setVideoSeekConfigResponse.setRequestId(context.stringValue("SetVideoSeekConfigResponse.RequestId"));
+		setVideoSeekConfigResponse.setRequestId(_ctx.stringValue("SetVideoSeekConfigResponse.RequestId"));
 	 
 	 	return setVideoSeekConfigResponse;
 	}

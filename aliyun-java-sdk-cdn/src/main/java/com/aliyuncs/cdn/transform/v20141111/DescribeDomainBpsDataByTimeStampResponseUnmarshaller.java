@@ -24,18 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainBpsDataByTimeStampResponseUnmarshaller {
 
-	public static DescribeDomainBpsDataByTimeStampResponse unmarshall(DescribeDomainBpsDataByTimeStampResponse describeDomainBpsDataByTimeStampResponse, UnmarshallerContext context) {
+	public static DescribeDomainBpsDataByTimeStampResponse unmarshall(DescribeDomainBpsDataByTimeStampResponse describeDomainBpsDataByTimeStampResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainBpsDataByTimeStampResponse.setRequestId(context.stringValue("DescribeDomainBpsDataByTimeStampResponse.RequestId"));
-		describeDomainBpsDataByTimeStampResponse.setDomainName(context.stringValue("DescribeDomainBpsDataByTimeStampResponse.DomainName"));
-		describeDomainBpsDataByTimeStampResponse.setTimeStamp(context.stringValue("DescribeDomainBpsDataByTimeStampResponse.TimeStamp"));
+		describeDomainBpsDataByTimeStampResponse.setRequestId(_ctx.stringValue("DescribeDomainBpsDataByTimeStampResponse.RequestId"));
+		describeDomainBpsDataByTimeStampResponse.setDomainName(_ctx.stringValue("DescribeDomainBpsDataByTimeStampResponse.DomainName"));
+		describeDomainBpsDataByTimeStampResponse.setTimeStamp(_ctx.stringValue("DescribeDomainBpsDataByTimeStampResponse.TimeStamp"));
 
 		List<BpsDataModel> bpsDataList = new ArrayList<BpsDataModel>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList.Length"); i++) {
 			BpsDataModel bpsDataModel = new BpsDataModel();
-			bpsDataModel.setLocationName(context.stringValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].LocationName"));
-			bpsDataModel.setIspName(context.stringValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].IspName"));
-			bpsDataModel.setBps(context.longValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].Bps"));
+			bpsDataModel.setTimeStamp(_ctx.stringValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].TimeStamp"));
+			bpsDataModel.setLocationName(_ctx.stringValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].LocationName"));
+			bpsDataModel.setIspName(_ctx.stringValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].IspName"));
+			bpsDataModel.setBps(_ctx.longValue("DescribeDomainBpsDataByTimeStampResponse.BpsDataList["+ i +"].Bps"));
 
 			bpsDataList.add(bpsDataModel);
 		}

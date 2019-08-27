@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateFCTriggerResponseUnmarshaller {
 
-	public static UpdateFCTriggerResponse unmarshall(UpdateFCTriggerResponse updateFCTriggerResponse, UnmarshallerContext context) {
+	public static UpdateFCTriggerResponse unmarshall(UpdateFCTriggerResponse updateFCTriggerResponse, UnmarshallerContext _ctx) {
 		
-		updateFCTriggerResponse.setRequestId(context.stringValue("UpdateFCTriggerResponse.RequestId"));
+		updateFCTriggerResponse.setRequestId(_ctx.stringValue("UpdateFCTriggerResponse.RequestId"));
 	 
 	 	return updateFCTriggerResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetHttpHeaderConfigResponseUnmarshaller {
 
-	public static SetHttpHeaderConfigResponse unmarshall(SetHttpHeaderConfigResponse setHttpHeaderConfigResponse, UnmarshallerContext context) {
+	public static SetHttpHeaderConfigResponse unmarshall(SetHttpHeaderConfigResponse setHttpHeaderConfigResponse, UnmarshallerContext _ctx) {
 		
-		setHttpHeaderConfigResponse.setRequestId(context.stringValue("SetHttpHeaderConfigResponse.RequestId"));
+		setHttpHeaderConfigResponse.setRequestId(_ctx.stringValue("SetHttpHeaderConfigResponse.RequestId"));
 	 
 	 	return setHttpHeaderConfigResponse;
 	}

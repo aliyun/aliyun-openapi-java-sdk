@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamsOnlineListResponseUnmarshaller {
 
-	public static DescribeLiveStreamsOnlineListResponse unmarshall(DescribeLiveStreamsOnlineListResponse describeLiveStreamsOnlineListResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamsOnlineListResponse unmarshall(DescribeLiveStreamsOnlineListResponse describeLiveStreamsOnlineListResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamsOnlineListResponse.setRequestId(context.stringValue("DescribeLiveStreamsOnlineListResponse.RequestId"));
-		describeLiveStreamsOnlineListResponse.setPageNum(context.integerValue("DescribeLiveStreamsOnlineListResponse.PageNum"));
-		describeLiveStreamsOnlineListResponse.setPageSize(context.integerValue("DescribeLiveStreamsOnlineListResponse.PageSize"));
-		describeLiveStreamsOnlineListResponse.setTotalNum(context.integerValue("DescribeLiveStreamsOnlineListResponse.TotalNum"));
-		describeLiveStreamsOnlineListResponse.setTotalPage(context.integerValue("DescribeLiveStreamsOnlineListResponse.TotalPage"));
+		describeLiveStreamsOnlineListResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.RequestId"));
+		describeLiveStreamsOnlineListResponse.setPageNum(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.PageNum"));
+		describeLiveStreamsOnlineListResponse.setPageSize(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.PageSize"));
+		describeLiveStreamsOnlineListResponse.setTotalNum(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.TotalNum"));
+		describeLiveStreamsOnlineListResponse.setTotalPage(_ctx.integerValue("DescribeLiveStreamsOnlineListResponse.TotalPage"));
 
 		List<LiveStreamOnlineInfo> onlineInfo = new ArrayList<LiveStreamOnlineInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo.Length"); i++) {
 			LiveStreamOnlineInfo liveStreamOnlineInfo = new LiveStreamOnlineInfo();
-			liveStreamOnlineInfo.setDomainName(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].DomainName"));
-			liveStreamOnlineInfo.setAppName(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].AppName"));
-			liveStreamOnlineInfo.setStreamName(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].StreamName"));
-			liveStreamOnlineInfo.setPublishTime(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishTime"));
-			liveStreamOnlineInfo.setPublishUrl(context.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishUrl"));
+			liveStreamOnlineInfo.setDomainName(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].DomainName"));
+			liveStreamOnlineInfo.setAppName(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].AppName"));
+			liveStreamOnlineInfo.setStreamName(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].StreamName"));
+			liveStreamOnlineInfo.setPublishTime(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishTime"));
+			liveStreamOnlineInfo.setPublishUrl(_ctx.stringValue("DescribeLiveStreamsOnlineListResponse.OnlineInfo["+ i +"].PublishUrl"));
 
 			onlineInfo.add(liveStreamOnlineInfo);
 		}

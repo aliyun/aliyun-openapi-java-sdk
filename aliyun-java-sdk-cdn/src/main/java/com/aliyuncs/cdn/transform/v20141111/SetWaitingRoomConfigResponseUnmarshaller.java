@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetWaitingRoomConfigResponseUnmarshaller {
 
-	public static SetWaitingRoomConfigResponse unmarshall(SetWaitingRoomConfigResponse setWaitingRoomConfigResponse, UnmarshallerContext context) {
+	public static SetWaitingRoomConfigResponse unmarshall(SetWaitingRoomConfigResponse setWaitingRoomConfigResponse, UnmarshallerContext _ctx) {
 		
-		setWaitingRoomConfigResponse.setRequestId(context.stringValue("SetWaitingRoomConfigResponse.RequestId"));
+		setWaitingRoomConfigResponse.setRequestId(_ctx.stringValue("SetWaitingRoomConfigResponse.RequestId"));
 	 
 	 	return setWaitingRoomConfigResponse;
 	}

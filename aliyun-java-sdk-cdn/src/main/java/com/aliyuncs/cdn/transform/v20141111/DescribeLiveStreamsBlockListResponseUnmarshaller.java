@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamsBlockListResponseUnmarshaller {
 
-	public static DescribeLiveStreamsBlockListResponse unmarshall(DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamsBlockListResponse unmarshall(DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamsBlockListResponse.setRequestId(context.stringValue("DescribeLiveStreamsBlockListResponse.RequestId"));
-		describeLiveStreamsBlockListResponse.setDomainName(context.stringValue("DescribeLiveStreamsBlockListResponse.DomainName"));
+		describeLiveStreamsBlockListResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamsBlockListResponse.RequestId"));
+		describeLiveStreamsBlockListResponse.setDomainName(_ctx.stringValue("DescribeLiveStreamsBlockListResponse.DomainName"));
 
 		List<String> streamUrls = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsBlockListResponse.StreamUrls.Length"); i++) {
-			streamUrls.add(context.stringValue("DescribeLiveStreamsBlockListResponse.StreamUrls["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamsBlockListResponse.StreamUrls.Length"); i++) {
+			streamUrls.add(_ctx.stringValue("DescribeLiveStreamsBlockListResponse.StreamUrls["+ i +"]"));
 		}
 		describeLiveStreamsBlockListResponse.setStreamUrls(streamUrls);
 	 

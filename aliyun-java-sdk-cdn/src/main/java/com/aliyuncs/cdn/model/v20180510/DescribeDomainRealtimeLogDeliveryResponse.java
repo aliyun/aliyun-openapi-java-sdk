@@ -15,24 +15,24 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20180510.DescribeUserCdnStatusResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.DescribeDomainRealtimeLogDeliveryResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeUserCdnStatusResponse extends AcsResponse {
+public class DescribeDomainRealtimeLogDeliveryResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean enabled;
+	private String project;
 
-	private Boolean onService;
+	private String region;
 
-	private Boolean inDebt;
+	private String logstore;
 
-	private Boolean inDebtOverdue;
+	private String status;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,40 +42,40 @@ public class DescribeUserCdnStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getEnabled() {
-		return this.enabled;
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setEnabled(Boolean enabled) {
-		this.enabled = enabled;
+	public void setProject(String project) {
+		this.project = project;
 	}
 
-	public Boolean getOnService() {
-		return this.onService;
+	public String getRegion() {
+		return this.region;
 	}
 
-	public void setOnService(Boolean onService) {
-		this.onService = onService;
+	public void setRegion(String region) {
+		this.region = region;
 	}
 
-	public Boolean getInDebt() {
-		return this.inDebt;
+	public String getLogstore() {
+		return this.logstore;
 	}
 
-	public void setInDebt(Boolean inDebt) {
-		this.inDebt = inDebt;
+	public void setLogstore(String logstore) {
+		this.logstore = logstore;
 	}
 
-	public Boolean getInDebtOverdue() {
-		return this.inDebtOverdue;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setInDebtOverdue(Boolean inDebtOverdue) {
-		this.inDebtOverdue = inDebtOverdue;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
-	public DescribeUserCdnStatusResponse getInstance(UnmarshallerContext context) {
-		return	DescribeUserCdnStatusResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDomainRealtimeLogDeliveryResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDomainRealtimeLogDeliveryResponseUnmarshaller.unmarshall(this, context);
 	}
 }

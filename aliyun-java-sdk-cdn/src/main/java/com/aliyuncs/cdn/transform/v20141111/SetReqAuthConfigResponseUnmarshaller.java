@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetReqAuthConfigResponseUnmarshaller {
 
-	public static SetReqAuthConfigResponse unmarshall(SetReqAuthConfigResponse setReqAuthConfigResponse, UnmarshallerContext context) {
+	public static SetReqAuthConfigResponse unmarshall(SetReqAuthConfigResponse setReqAuthConfigResponse, UnmarshallerContext _ctx) {
 		
-		setReqAuthConfigResponse.setRequestId(context.stringValue("SetReqAuthConfigResponse.RequestId"));
+		setReqAuthConfigResponse.setRequestId(_ctx.stringValue("SetReqAuthConfigResponse.RequestId"));
 	 
 	 	return setReqAuthConfigResponse;
 	}

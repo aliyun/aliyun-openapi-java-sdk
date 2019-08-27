@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeLivePullStreamConfigRequest extends RpcAcsRequest<DescribeLivePullStreamConfigResponse> {
 	
 	public DescribeLivePullStreamConfigRequest() {
-		super("Cdn", "2014-11-11", "DescribeLivePullStreamConfig");
+		super("Cdn", "2014-11-11", "DescribeLivePullStreamConfig", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String securityToken;

@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -23,61 +24,22 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<DescribeDomainBpsDataByTimeStampResponse> {
 	
 	public DescribeDomainBpsDataByTimeStampRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainBpsDataByTimeStamp");
+		super("Cdn", "2014-11-11", "DescribeDomainBpsDataByTimeStamp", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String ispNames;
-
-	private String securityToken;
-
 	private String locationNames;
+
+	private String ispNames;
 
 	private String domainName;
 
 	private Long ownerId;
 
 	private String timePoint;
-
-	public String getIspNames() {
-		return this.ispNames;
-	}
-
-	public void setIspNames(String ispNames) {
-		this.ispNames = ispNames;
-		if(ispNames != null){
-			putQueryParameter("IspNames", ispNames);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
 
 	public String getLocationNames() {
 		return this.locationNames;
@@ -87,6 +49,17 @@ public class DescribeDomainBpsDataByTimeStampRequest extends RpcAcsRequest<Descr
 		this.locationNames = locationNames;
 		if(locationNames != null){
 			putQueryParameter("LocationNames", locationNames);
+		}
+	}
+
+	public String getIspNames() {
+		return this.ispNames;
+	}
+
+	public void setIspNames(String ispNames) {
+		this.ispNames = ispNames;
+		if(ispNames != null){
+			putQueryParameter("IspNames", ispNames);
 		}
 	}
 

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRangeDataByLocateAndIspServiceResponseUnmarshaller {
 
-	public static DescribeRangeDataByLocateAndIspServiceResponse unmarshall(DescribeRangeDataByLocateAndIspServiceResponse describeRangeDataByLocateAndIspServiceResponse, UnmarshallerContext context) {
+	public static DescribeRangeDataByLocateAndIspServiceResponse unmarshall(DescribeRangeDataByLocateAndIspServiceResponse describeRangeDataByLocateAndIspServiceResponse, UnmarshallerContext _ctx) {
 		
-		describeRangeDataByLocateAndIspServiceResponse.setRequestId(context.stringValue("DescribeRangeDataByLocateAndIspServiceResponse.RequestId"));
-		describeRangeDataByLocateAndIspServiceResponse.setJsonResult(context.stringValue("DescribeRangeDataByLocateAndIspServiceResponse.JsonResult"));
+		describeRangeDataByLocateAndIspServiceResponse.setRequestId(_ctx.stringValue("DescribeRangeDataByLocateAndIspServiceResponse.RequestId"));
+		describeRangeDataByLocateAndIspServiceResponse.setJsonResult(_ctx.stringValue("DescribeRangeDataByLocateAndIspServiceResponse.JsonResult"));
 	 
 	 	return describeRangeDataByLocateAndIspServiceResponse;
 	}

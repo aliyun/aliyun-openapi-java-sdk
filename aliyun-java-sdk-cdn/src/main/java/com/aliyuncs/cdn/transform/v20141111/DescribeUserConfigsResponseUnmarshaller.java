@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserConfigsResponseUnmarshaller {
 
-	public static DescribeUserConfigsResponse unmarshall(DescribeUserConfigsResponse describeUserConfigsResponse, UnmarshallerContext context) {
+	public static DescribeUserConfigsResponse unmarshall(DescribeUserConfigsResponse describeUserConfigsResponse, UnmarshallerContext _ctx) {
 		
-		describeUserConfigsResponse.setRequestId(context.stringValue("DescribeUserConfigsResponse.RequestId"));
+		describeUserConfigsResponse.setRequestId(_ctx.stringValue("DescribeUserConfigsResponse.RequestId"));
 
 		Configs configs = new Configs();
 
 		OssLogConfig ossLogConfig = new OssLogConfig();
-		ossLogConfig.setEnable(context.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Enable"));
-		ossLogConfig.setBucket(context.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Bucket"));
-		ossLogConfig.setPrefix(context.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Prefix"));
+		ossLogConfig.setEnable(_ctx.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Enable"));
+		ossLogConfig.setBucket(_ctx.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Bucket"));
+		ossLogConfig.setPrefix(_ctx.stringValue("DescribeUserConfigsResponse.Configs.OssLogConfig.Prefix"));
 		configs.setOssLogConfig(ossLogConfig);
 
 		GreenManagerConfig greenManagerConfig = new GreenManagerConfig();
-		greenManagerConfig.setQuota(context.stringValue("DescribeUserConfigsResponse.Configs.GreenManagerConfig.Quota"));
-		greenManagerConfig.setRatio(context.stringValue("DescribeUserConfigsResponse.Configs.GreenManagerConfig.Ratio"));
+		greenManagerConfig.setQuota(_ctx.stringValue("DescribeUserConfigsResponse.Configs.GreenManagerConfig.Quota"));
+		greenManagerConfig.setRatio(_ctx.stringValue("DescribeUserConfigsResponse.Configs.GreenManagerConfig.Ratio"));
 		configs.setGreenManagerConfig(greenManagerConfig);
 
 		WafConfig wafConfig = new WafConfig();
-		wafConfig.setEnable(context.stringValue("DescribeUserConfigsResponse.Configs.WafConfig.Enable"));
+		wafConfig.setEnable(_ctx.stringValue("DescribeUserConfigsResponse.Configs.WafConfig.Enable"));
 		configs.setWafConfig(wafConfig);
 		describeUserConfigsResponse.setConfigs(configs);
 	 

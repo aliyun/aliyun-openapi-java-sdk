@@ -25,42 +25,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCdnDomainDetailResponseUnmarshaller {
 
-	public static DescribeCdnDomainDetailResponse unmarshall(DescribeCdnDomainDetailResponse describeCdnDomainDetailResponse, UnmarshallerContext context) {
+	public static DescribeCdnDomainDetailResponse unmarshall(DescribeCdnDomainDetailResponse describeCdnDomainDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeCdnDomainDetailResponse.setRequestId(context.stringValue("DescribeCdnDomainDetailResponse.RequestId"));
+		describeCdnDomainDetailResponse.setRequestId(_ctx.stringValue("DescribeCdnDomainDetailResponse.RequestId"));
 
 		GetDomainDetailModel getDomainDetailModel = new GetDomainDetailModel();
-		getDomainDetailModel.setGmtCreated(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.GmtCreated"));
-		getDomainDetailModel.setGmtModified(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.GmtModified"));
-		getDomainDetailModel.setSourceType(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceType"));
-		getDomainDetailModel.setDomainStatus(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainStatus"));
-		getDomainDetailModel.setSourcePort(context.integerValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourcePort"));
-		getDomainDetailModel.setCdnType(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CdnType"));
-		getDomainDetailModel.setCname(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Cname"));
-		getDomainDetailModel.setHttpsCname(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.HttpsCname"));
-		getDomainDetailModel.setDomainName(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainName"));
-		getDomainDetailModel.setDescription(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Description"));
-		getDomainDetailModel.setServerCertificateStatus(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ServerCertificateStatus"));
-		getDomainDetailModel.setServerCertificate(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ServerCertificate"));
-		getDomainDetailModel.setRegion(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Region"));
-		getDomainDetailModel.setScope(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Scope"));
-		getDomainDetailModel.setCertificateName(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CertificateName"));
-		getDomainDetailModel.setResourceGroupId(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ResourceGroupId"));
+		getDomainDetailModel.setGmtCreated(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.GmtCreated"));
+		getDomainDetailModel.setGmtModified(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.GmtModified"));
+		getDomainDetailModel.setSourceType(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceType"));
+		getDomainDetailModel.setDomainStatus(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainStatus"));
+		getDomainDetailModel.setSourcePort(_ctx.integerValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourcePort"));
+		getDomainDetailModel.setCdnType(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CdnType"));
+		getDomainDetailModel.setCname(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Cname"));
+		getDomainDetailModel.setHttpsCname(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.HttpsCname"));
+		getDomainDetailModel.setDomainName(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.DomainName"));
+		getDomainDetailModel.setDescription(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Description"));
+		getDomainDetailModel.setServerCertificateStatus(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ServerCertificateStatus"));
+		getDomainDetailModel.setServerCertificate(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ServerCertificate"));
+		getDomainDetailModel.setRegion(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Region"));
+		getDomainDetailModel.setScope(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Scope"));
+		getDomainDetailModel.setCertificateName(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.CertificateName"));
+		getDomainDetailModel.setResourceGroupId(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.ResourceGroupId"));
 
 		List<String> sources = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Sources.Length"); i++) {
-			sources.add(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Sources["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Sources.Length"); i++) {
+			sources.add(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.Sources["+ i +"]"));
 		}
 		getDomainDetailModel.setSources(sources);
 
 		List<SourceModel> sourceModels = new ArrayList<SourceModel>();
-		for (int i = 0; i < context.lengthValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels.Length"); i++) {
 			SourceModel sourceModel = new SourceModel();
-			sourceModel.setContent(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Content"));
-			sourceModel.setType(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Type"));
-			sourceModel.setPort(context.integerValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Port"));
-			sourceModel.setEnabled(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Enabled"));
-			sourceModel.setPriority(context.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Priority"));
+			sourceModel.setContent(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Content"));
+			sourceModel.setType(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Type"));
+			sourceModel.setPort(_ctx.integerValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Port"));
+			sourceModel.setEnabled(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Enabled"));
+			sourceModel.setPriority(_ctx.stringValue("DescribeCdnDomainDetailResponse.GetDomainDetailModel.SourceModels["+ i +"].Priority"));
 
 			sourceModels.add(sourceModel);
 		}

@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainSrcBpsDataResponseUnmarshaller {
 
-	public static DescribeDomainSrcBpsDataResponse unmarshall(DescribeDomainSrcBpsDataResponse describeDomainSrcBpsDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainSrcBpsDataResponse unmarshall(DescribeDomainSrcBpsDataResponse describeDomainSrcBpsDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainSrcBpsDataResponse.setRequestId(context.stringValue("DescribeDomainSrcBpsDataResponse.RequestId"));
-		describeDomainSrcBpsDataResponse.setDomainName(context.stringValue("DescribeDomainSrcBpsDataResponse.DomainName"));
-		describeDomainSrcBpsDataResponse.setStartTime(context.stringValue("DescribeDomainSrcBpsDataResponse.StartTime"));
-		describeDomainSrcBpsDataResponse.setEndTime(context.stringValue("DescribeDomainSrcBpsDataResponse.EndTime"));
-		describeDomainSrcBpsDataResponse.setDataInterval(context.stringValue("DescribeDomainSrcBpsDataResponse.DataInterval"));
+		describeDomainSrcBpsDataResponse.setRequestId(_ctx.stringValue("DescribeDomainSrcBpsDataResponse.RequestId"));
+		describeDomainSrcBpsDataResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcBpsDataResponse.DomainName"));
+		describeDomainSrcBpsDataResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcBpsDataResponse.StartTime"));
+		describeDomainSrcBpsDataResponse.setEndTime(_ctx.stringValue("DescribeDomainSrcBpsDataResponse.EndTime"));
+		describeDomainSrcBpsDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainSrcBpsDataResponse.DataInterval"));
 
 		List<DataModule> srcBpsDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainSrcBpsDataResponse.SrcBpsDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcBpsDataResponse.SrcBpsDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDomainSrcBpsDataResponse.SrcBpsDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeDomainSrcBpsDataResponse.SrcBpsDataPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainSrcBpsDataResponse.SrcBpsDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainSrcBpsDataResponse.SrcBpsDataPerInterval["+ i +"].Value"));
 
 			srcBpsDataPerInterval.add(dataModule);
 		}

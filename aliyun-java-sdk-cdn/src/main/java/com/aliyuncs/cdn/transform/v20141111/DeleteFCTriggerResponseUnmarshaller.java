@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteFCTriggerResponseUnmarshaller {
 
-	public static DeleteFCTriggerResponse unmarshall(DeleteFCTriggerResponse deleteFCTriggerResponse, UnmarshallerContext context) {
+	public static DeleteFCTriggerResponse unmarshall(DeleteFCTriggerResponse deleteFCTriggerResponse, UnmarshallerContext _ctx) {
 		
-		deleteFCTriggerResponse.setRequestId(context.stringValue("DeleteFCTriggerResponse.RequestId"));
+		deleteFCTriggerResponse.setRequestId(_ctx.stringValue("DeleteFCTriggerResponse.RequestId"));
 	 
 	 	return deleteFCTriggerResponse;
 	}

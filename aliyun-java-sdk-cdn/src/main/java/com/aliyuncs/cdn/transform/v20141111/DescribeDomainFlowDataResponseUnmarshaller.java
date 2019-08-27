@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainFlowDataResponseUnmarshaller {
 
-	public static DescribeDomainFlowDataResponse unmarshall(DescribeDomainFlowDataResponse describeDomainFlowDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainFlowDataResponse unmarshall(DescribeDomainFlowDataResponse describeDomainFlowDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainFlowDataResponse.setRequestId(context.stringValue("DescribeDomainFlowDataResponse.RequestId"));
-		describeDomainFlowDataResponse.setDomainName(context.stringValue("DescribeDomainFlowDataResponse.DomainName"));
-		describeDomainFlowDataResponse.setStartTime(context.stringValue("DescribeDomainFlowDataResponse.StartTime"));
-		describeDomainFlowDataResponse.setEndTime(context.stringValue("DescribeDomainFlowDataResponse.EndTime"));
-		describeDomainFlowDataResponse.setDataInterval(context.stringValue("DescribeDomainFlowDataResponse.DataInterval"));
+		describeDomainFlowDataResponse.setRequestId(_ctx.stringValue("DescribeDomainFlowDataResponse.RequestId"));
+		describeDomainFlowDataResponse.setDomainName(_ctx.stringValue("DescribeDomainFlowDataResponse.DomainName"));
+		describeDomainFlowDataResponse.setStartTime(_ctx.stringValue("DescribeDomainFlowDataResponse.StartTime"));
+		describeDomainFlowDataResponse.setEndTime(_ctx.stringValue("DescribeDomainFlowDataResponse.EndTime"));
+		describeDomainFlowDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainFlowDataResponse.DataInterval"));
 
 		List<DataModule> flowDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainFlowDataResponse.FlowDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainFlowDataResponse.FlowDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].Value"));
-			dataModule.setDomesticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DomesticValue"));
-			dataModule.setOverseasValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].OverseasValue"));
-			dataModule.setDynamicValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DynamicValue"));
-			dataModule.setDynamicDomesticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DynamicDomesticValue"));
-			dataModule.setDynamicOverseasValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DynamicOverseasValue"));
-			dataModule.setStaticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticValue"));
-			dataModule.setStaticDomesticValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticDomesticValue"));
-			dataModule.setStaticOverseasValue(context.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticOverseasValue"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].Value"));
+			dataModule.setDomesticValue(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DomesticValue"));
+			dataModule.setOverseasValue(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].OverseasValue"));
+			dataModule.setDynamicValue(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DynamicValue"));
+			dataModule.setDynamicDomesticValue(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DynamicDomesticValue"));
+			dataModule.setDynamicOverseasValue(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].DynamicOverseasValue"));
+			dataModule.setStaticValue(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticValue"));
+			dataModule.setStaticDomesticValue(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticDomesticValue"));
+			dataModule.setStaticOverseasValue(_ctx.stringValue("DescribeDomainFlowDataResponse.FlowDataPerInterval["+ i +"].StaticOverseasValue"));
 
 			flowDataPerInterval.add(dataModule);
 		}

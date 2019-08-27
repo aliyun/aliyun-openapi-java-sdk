@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetSourceHostConfigResponseUnmarshaller {
 
-	public static SetSourceHostConfigResponse unmarshall(SetSourceHostConfigResponse setSourceHostConfigResponse, UnmarshallerContext context) {
+	public static SetSourceHostConfigResponse unmarshall(SetSourceHostConfigResponse setSourceHostConfigResponse, UnmarshallerContext _ctx) {
 		
-		setSourceHostConfigResponse.setRequestId(context.stringValue("SetSourceHostConfigResponse.RequestId"));
+		setSourceHostConfigResponse.setRequestId(_ctx.stringValue("SetSourceHostConfigResponse.RequestId"));
 	 
 	 	return setSourceHostConfigResponse;
 	}

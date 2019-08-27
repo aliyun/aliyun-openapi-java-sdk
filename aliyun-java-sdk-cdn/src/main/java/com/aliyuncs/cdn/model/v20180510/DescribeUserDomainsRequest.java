@@ -46,6 +46,8 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 
 	private String domainSearchType;
 
+	private String changeStartTime;
+
 	private Boolean checkDomainShow;
 
 	private String resourceGroupId;
@@ -53,6 +55,8 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 	private String securityToken;
 
 	private String cdnType;
+
+	private String changeEndTime;
 
 	private Integer pageSize;
 
@@ -135,6 +139,17 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		}
 	}
 
+	public String getChangeStartTime() {
+		return this.changeStartTime;
+	}
+
+	public void setChangeStartTime(String changeStartTime) {
+		this.changeStartTime = changeStartTime;
+		if(changeStartTime != null){
+			putQueryParameter("ChangeStartTime", changeStartTime);
+		}
+	}
+
 	public Boolean getCheckDomainShow() {
 		return this.checkDomainShow;
 	}
@@ -195,6 +210,17 @@ public class DescribeUserDomainsRequest extends RpcAcsRequest<DescribeUserDomain
 		this.cdnType = cdnType;
 		if(cdnType != null){
 			putQueryParameter("CdnType", cdnType);
+		}
+	}
+
+	public String getChangeEndTime() {
+		return this.changeEndTime;
+	}
+
+	public void setChangeEndTime(String changeEndTime) {
+		this.changeEndTime = changeEndTime;
+		if(changeEndTime != null){
+			putQueryParameter("ChangeEndTime", changeEndTime);
 		}
 	}
 

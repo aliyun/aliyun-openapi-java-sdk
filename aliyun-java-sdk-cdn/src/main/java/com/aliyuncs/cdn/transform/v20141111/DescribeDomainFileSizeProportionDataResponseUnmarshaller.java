@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainFileSizeProportionDataResponseUnmarshaller {
 
-	public static DescribeDomainFileSizeProportionDataResponse unmarshall(DescribeDomainFileSizeProportionDataResponse describeDomainFileSizeProportionDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainFileSizeProportionDataResponse unmarshall(DescribeDomainFileSizeProportionDataResponse describeDomainFileSizeProportionDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainFileSizeProportionDataResponse.setRequestId(context.stringValue("DescribeDomainFileSizeProportionDataResponse.RequestId"));
-		describeDomainFileSizeProportionDataResponse.setDomainName(context.stringValue("DescribeDomainFileSizeProportionDataResponse.DomainName"));
-		describeDomainFileSizeProportionDataResponse.setDataInterval(context.stringValue("DescribeDomainFileSizeProportionDataResponse.DataInterval"));
-		describeDomainFileSizeProportionDataResponse.setStartTime(context.stringValue("DescribeDomainFileSizeProportionDataResponse.StartTime"));
-		describeDomainFileSizeProportionDataResponse.setEndTime(context.stringValue("DescribeDomainFileSizeProportionDataResponse.EndTime"));
+		describeDomainFileSizeProportionDataResponse.setRequestId(_ctx.stringValue("DescribeDomainFileSizeProportionDataResponse.RequestId"));
+		describeDomainFileSizeProportionDataResponse.setDomainName(_ctx.stringValue("DescribeDomainFileSizeProportionDataResponse.DomainName"));
+		describeDomainFileSizeProportionDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainFileSizeProportionDataResponse.DataInterval"));
+		describeDomainFileSizeProportionDataResponse.setStartTime(_ctx.stringValue("DescribeDomainFileSizeProportionDataResponse.StartTime"));
+		describeDomainFileSizeProportionDataResponse.setEndTime(_ctx.stringValue("DescribeDomainFileSizeProportionDataResponse.EndTime"));
 
 		List<UsageData> fileSizeProportionDataInterval = new ArrayList<UsageData>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTimeStamp(context.stringValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].TimeStamp"));
+			usageData.setTimeStamp(_ctx.stringValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].TimeStamp"));
 
 			List<FileSizeProportionData> value = new ArrayList<FileSizeProportionData>();
-			for (int j = 0; j < context.lengthValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].Value.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].Value.Length"); j++) {
 				FileSizeProportionData fileSizeProportionData = new FileSizeProportionData();
-				fileSizeProportionData.setFileSize(context.stringValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].FileSize"));
-				fileSizeProportionData.setProportion(context.stringValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].Proportion"));
+				fileSizeProportionData.setFileSize(_ctx.stringValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].FileSize"));
+				fileSizeProportionData.setProportion(_ctx.stringValue("DescribeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].Proportion"));
 
 				value.add(fileSizeProportionData);
 			}

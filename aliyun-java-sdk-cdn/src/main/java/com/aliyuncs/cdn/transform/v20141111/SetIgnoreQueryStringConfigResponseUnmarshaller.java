@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetIgnoreQueryStringConfigResponseUnmarshaller {
 
-	public static SetIgnoreQueryStringConfigResponse unmarshall(SetIgnoreQueryStringConfigResponse setIgnoreQueryStringConfigResponse, UnmarshallerContext context) {
+	public static SetIgnoreQueryStringConfigResponse unmarshall(SetIgnoreQueryStringConfigResponse setIgnoreQueryStringConfigResponse, UnmarshallerContext _ctx) {
 		
-		setIgnoreQueryStringConfigResponse.setRequestId(context.stringValue("SetIgnoreQueryStringConfigResponse.RequestId"));
+		setIgnoreQueryStringConfigResponse.setRequestId(_ctx.stringValue("SetIgnoreQueryStringConfigResponse.RequestId"));
 	 
 	 	return setIgnoreQueryStringConfigResponse;
 	}

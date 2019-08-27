@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddLiveDomainMappingResponseUnmarshaller {
 
-	public static AddLiveDomainMappingResponse unmarshall(AddLiveDomainMappingResponse addLiveDomainMappingResponse, UnmarshallerContext context) {
+	public static AddLiveDomainMappingResponse unmarshall(AddLiveDomainMappingResponse addLiveDomainMappingResponse, UnmarshallerContext _ctx) {
 		
-		addLiveDomainMappingResponse.setRequestId(context.stringValue("AddLiveDomainMappingResponse.RequestId"));
+		addLiveDomainMappingResponse.setRequestId(_ctx.stringValue("AddLiveDomainMappingResponse.RequestId"));
 	 
 	 	return addLiveDomainMappingResponse;
 	}

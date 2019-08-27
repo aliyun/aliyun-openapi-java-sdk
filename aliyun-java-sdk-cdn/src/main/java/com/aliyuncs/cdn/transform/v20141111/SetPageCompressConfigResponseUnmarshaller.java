@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetPageCompressConfigResponseUnmarshaller {
 
-	public static SetPageCompressConfigResponse unmarshall(SetPageCompressConfigResponse setPageCompressConfigResponse, UnmarshallerContext context) {
+	public static SetPageCompressConfigResponse unmarshall(SetPageCompressConfigResponse setPageCompressConfigResponse, UnmarshallerContext _ctx) {
 		
-		setPageCompressConfigResponse.setRequestId(context.stringValue("SetPageCompressConfigResponse.RequestId"));
+		setPageCompressConfigResponse.setRequestId(_ctx.stringValue("SetPageCompressConfigResponse.RequestId"));
 	 
 	 	return setPageCompressConfigResponse;
 	}

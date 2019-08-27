@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamsFrameRateAndBitRateDataResponseUnmarshaller {
 
-	public static DescribeLiveStreamsFrameRateAndBitRateDataResponse unmarshall(DescribeLiveStreamsFrameRateAndBitRateDataResponse describeLiveStreamsFrameRateAndBitRateDataResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamsFrameRateAndBitRateDataResponse unmarshall(DescribeLiveStreamsFrameRateAndBitRateDataResponse describeLiveStreamsFrameRateAndBitRateDataResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamsFrameRateAndBitRateDataResponse.setRequestId(context.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.RequestId"));
+		describeLiveStreamsFrameRateAndBitRateDataResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.RequestId"));
 
 		List<FrameRateAndBitRateInfo> frameRateAndBitRateInfos = new ArrayList<FrameRateAndBitRateInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos.Length"); i++) {
 			FrameRateAndBitRateInfo frameRateAndBitRateInfo = new FrameRateAndBitRateInfo();
-			frameRateAndBitRateInfo.setStreamUrl(context.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].StreamUrl"));
-			frameRateAndBitRateInfo.setVideoFrameRate(context.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate"));
-			frameRateAndBitRateInfo.setAudioFrameRate(context.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate"));
-			frameRateAndBitRateInfo.setBitRate(context.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].BitRate"));
-			frameRateAndBitRateInfo.setTime(context.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].Time"));
+			frameRateAndBitRateInfo.setStreamUrl(_ctx.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].StreamUrl"));
+			frameRateAndBitRateInfo.setVideoFrameRate(_ctx.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate"));
+			frameRateAndBitRateInfo.setAudioFrameRate(_ctx.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate"));
+			frameRateAndBitRateInfo.setBitRate(_ctx.floatValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].BitRate"));
+			frameRateAndBitRateInfo.setTime(_ctx.stringValue("DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos["+ i +"].Time"));
 
 			frameRateAndBitRateInfos.add(frameRateAndBitRateInfo);
 		}

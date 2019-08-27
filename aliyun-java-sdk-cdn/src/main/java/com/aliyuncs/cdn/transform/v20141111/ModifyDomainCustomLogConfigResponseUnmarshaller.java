@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDomainCustomLogConfigResponseUnmarshaller {
 
-	public static ModifyDomainCustomLogConfigResponse unmarshall(ModifyDomainCustomLogConfigResponse modifyDomainCustomLogConfigResponse, UnmarshallerContext context) {
+	public static ModifyDomainCustomLogConfigResponse unmarshall(ModifyDomainCustomLogConfigResponse modifyDomainCustomLogConfigResponse, UnmarshallerContext _ctx) {
 		
-		modifyDomainCustomLogConfigResponse.setRequestId(context.stringValue("ModifyDomainCustomLogConfigResponse.RequestId"));
+		modifyDomainCustomLogConfigResponse.setRequestId(_ctx.stringValue("ModifyDomainCustomLogConfigResponse.RequestId"));
 	 
 	 	return modifyDomainCustomLogConfigResponse;
 	}

@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartMixStreamsServiceResponseUnmarshaller {
 
-	public static StartMixStreamsServiceResponse unmarshall(StartMixStreamsServiceResponse startMixStreamsServiceResponse, UnmarshallerContext context) {
+	public static StartMixStreamsServiceResponse unmarshall(StartMixStreamsServiceResponse startMixStreamsServiceResponse, UnmarshallerContext _ctx) {
 		
-		startMixStreamsServiceResponse.setRequestId(context.stringValue("StartMixStreamsServiceResponse.RequestId"));
+		startMixStreamsServiceResponse.setRequestId(_ctx.stringValue("StartMixStreamsServiceResponse.RequestId"));
 
 		List<MixStreamsInfo> mixStreamsInfoList = new ArrayList<MixStreamsInfo>();
-		for (int i = 0; i < context.lengthValue("StartMixStreamsServiceResponse.MixStreamsInfoList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("StartMixStreamsServiceResponse.MixStreamsInfoList.Length"); i++) {
 			MixStreamsInfo mixStreamsInfo = new MixStreamsInfo();
-			mixStreamsInfo.setDomainName(context.stringValue("StartMixStreamsServiceResponse.MixStreamsInfoList["+ i +"].DomainName"));
-			mixStreamsInfo.setAppName(context.stringValue("StartMixStreamsServiceResponse.MixStreamsInfoList["+ i +"].AppName"));
-			mixStreamsInfo.setStreamName(context.stringValue("StartMixStreamsServiceResponse.MixStreamsInfoList["+ i +"].StreamName"));
+			mixStreamsInfo.setDomainName(_ctx.stringValue("StartMixStreamsServiceResponse.MixStreamsInfoList["+ i +"].DomainName"));
+			mixStreamsInfo.setAppName(_ctx.stringValue("StartMixStreamsServiceResponse.MixStreamsInfoList["+ i +"].AppName"));
+			mixStreamsInfo.setStreamName(_ctx.stringValue("StartMixStreamsServiceResponse.MixStreamsInfoList["+ i +"].StreamName"));
 
 			mixStreamsInfoList.add(mixStreamsInfo);
 		}

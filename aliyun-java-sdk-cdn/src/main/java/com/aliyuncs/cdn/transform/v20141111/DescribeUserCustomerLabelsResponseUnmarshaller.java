@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserCustomerLabelsResponseUnmarshaller {
 
-	public static DescribeUserCustomerLabelsResponse unmarshall(DescribeUserCustomerLabelsResponse describeUserCustomerLabelsResponse, UnmarshallerContext context) {
+	public static DescribeUserCustomerLabelsResponse unmarshall(DescribeUserCustomerLabelsResponse describeUserCustomerLabelsResponse, UnmarshallerContext _ctx) {
 		
-		describeUserCustomerLabelsResponse.setRequestId(context.stringValue("DescribeUserCustomerLabelsResponse.RequestId"));
-		describeUserCustomerLabelsResponse.setIsInnerUser(context.booleanValue("DescribeUserCustomerLabelsResponse.IsInnerUser"));
+		describeUserCustomerLabelsResponse.setRequestId(_ctx.stringValue("DescribeUserCustomerLabelsResponse.RequestId"));
+		describeUserCustomerLabelsResponse.setIsInnerUser(_ctx.booleanValue("DescribeUserCustomerLabelsResponse.IsInnerUser"));
 	 
 	 	return describeUserCustomerLabelsResponse;
 	}

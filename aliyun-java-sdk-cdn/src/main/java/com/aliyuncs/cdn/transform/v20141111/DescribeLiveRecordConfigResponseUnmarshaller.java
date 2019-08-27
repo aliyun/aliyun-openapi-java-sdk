@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveRecordConfigResponseUnmarshaller {
 
-	public static DescribeLiveRecordConfigResponse unmarshall(DescribeLiveRecordConfigResponse describeLiveRecordConfigResponse, UnmarshallerContext context) {
+	public static DescribeLiveRecordConfigResponse unmarshall(DescribeLiveRecordConfigResponse describeLiveRecordConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveRecordConfigResponse.setRequestId(context.stringValue("DescribeLiveRecordConfigResponse.RequestId"));
+		describeLiveRecordConfigResponse.setRequestId(_ctx.stringValue("DescribeLiveRecordConfigResponse.RequestId"));
 
 		List<LiveAppRecord> liveAppRecordList = new ArrayList<LiveAppRecord>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveRecordConfigResponse.LiveAppRecordList.Length"); i++) {
 			LiveAppRecord liveAppRecord = new LiveAppRecord();
-			liveAppRecord.setDomainName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
-			liveAppRecord.setAppName(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].AppName"));
-			liveAppRecord.setOssEndpoint(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssEndpoint"));
-			liveAppRecord.setOssBucket(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssBucket"));
-			liveAppRecord.setOssObjectPrefix(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssObjectPrefix"));
-			liveAppRecord.setCreateTime(context.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].CreateTime"));
+			liveAppRecord.setDomainName(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].DomainName"));
+			liveAppRecord.setAppName(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].AppName"));
+			liveAppRecord.setOssEndpoint(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssEndpoint"));
+			liveAppRecord.setOssBucket(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssBucket"));
+			liveAppRecord.setOssObjectPrefix(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].OssObjectPrefix"));
+			liveAppRecord.setCreateTime(_ctx.stringValue("DescribeLiveRecordConfigResponse.LiveAppRecordList["+ i +"].CreateTime"));
 
 			liveAppRecordList.add(liveAppRecord);
 		}

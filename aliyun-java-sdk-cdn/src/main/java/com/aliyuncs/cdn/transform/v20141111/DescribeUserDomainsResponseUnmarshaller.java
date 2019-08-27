@@ -24,31 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserDomainsResponseUnmarshaller {
 
-	public static DescribeUserDomainsResponse unmarshall(DescribeUserDomainsResponse describeUserDomainsResponse, UnmarshallerContext context) {
+	public static DescribeUserDomainsResponse unmarshall(DescribeUserDomainsResponse describeUserDomainsResponse, UnmarshallerContext _ctx) {
 		
-		describeUserDomainsResponse.setRequestId(context.stringValue("DescribeUserDomainsResponse.RequestId"));
-		describeUserDomainsResponse.setPageNumber(context.longValue("DescribeUserDomainsResponse.PageNumber"));
-		describeUserDomainsResponse.setPageSize(context.longValue("DescribeUserDomainsResponse.PageSize"));
-		describeUserDomainsResponse.setTotalCount(context.longValue("DescribeUserDomainsResponse.TotalCount"));
+		describeUserDomainsResponse.setRequestId(_ctx.stringValue("DescribeUserDomainsResponse.RequestId"));
+		describeUserDomainsResponse.setPageNumber(_ctx.longValue("DescribeUserDomainsResponse.PageNumber"));
+		describeUserDomainsResponse.setPageSize(_ctx.longValue("DescribeUserDomainsResponse.PageSize"));
+		describeUserDomainsResponse.setTotalCount(_ctx.longValue("DescribeUserDomainsResponse.TotalCount"));
 
 		List<PageData> domains = new ArrayList<PageData>();
-		for (int i = 0; i < context.lengthValue("DescribeUserDomainsResponse.Domains.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeUserDomainsResponse.Domains.Length"); i++) {
 			PageData pageData = new PageData();
-			pageData.setDomainName(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainName"));
-			pageData.setCname(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Cname"));
-			pageData.setCdnType(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].CdnType"));
-			pageData.setDomainStatus(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainStatus"));
-			pageData.setGmtCreated(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].GmtCreated"));
-			pageData.setGmtModified(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].GmtModified"));
-			pageData.setDescription(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Description"));
-			pageData.setSourceType(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SourceType"));
-			pageData.setSslProtocol(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SslProtocol"));
-			pageData.setResourceGroupId(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
-			pageData.setSandbox(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Sandbox"));
+			pageData.setDomainName(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainName"));
+			pageData.setCname(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Cname"));
+			pageData.setCdnType(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].CdnType"));
+			pageData.setDomainStatus(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].DomainStatus"));
+			pageData.setGmtCreated(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].GmtCreated"));
+			pageData.setGmtModified(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].GmtModified"));
+			pageData.setDescription(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Description"));
+			pageData.setSourceType(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SourceType"));
+			pageData.setSslProtocol(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].SslProtocol"));
+			pageData.setResourceGroupId(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].ResourceGroupId"));
+			pageData.setSandbox(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Sandbox"));
 
 			List<String> sources = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
-				sources.add(context.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Sources["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeUserDomainsResponse.Domains["+ i +"].Sources.Length"); j++) {
+				sources.add(_ctx.stringValue("DescribeUserDomainsResponse.Domains["+ i +"].Sources["+ j +"]"));
 			}
 			pageData.setSources(sources);
 

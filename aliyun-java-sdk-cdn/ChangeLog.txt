@@ -1,3 +1,6 @@
+2019-08-27 Version: 3.0.10
+- Fixed endpoint data init.
+
 2019-08-15 Version: 3.0.9
 - Generated 2018-05-10 for `Cdn`.
 

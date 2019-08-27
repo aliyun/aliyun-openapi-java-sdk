@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetDynamicConfigResponseUnmarshaller {
 
-	public static SetDynamicConfigResponse unmarshall(SetDynamicConfigResponse setDynamicConfigResponse, UnmarshallerContext context) {
+	public static SetDynamicConfigResponse unmarshall(SetDynamicConfigResponse setDynamicConfigResponse, UnmarshallerContext _ctx) {
 		
-		setDynamicConfigResponse.setRequestId(context.stringValue("SetDynamicConfigResponse.RequestId"));
+		setDynamicConfigResponse.setRequestId(_ctx.stringValue("SetDynamicConfigResponse.RequestId"));
 	 
 	 	return setDynamicConfigResponse;
 	}

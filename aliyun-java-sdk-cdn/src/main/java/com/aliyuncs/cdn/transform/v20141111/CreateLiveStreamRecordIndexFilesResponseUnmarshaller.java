@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateLiveStreamRecordIndexFilesResponseUnmarshaller {
 
-	public static CreateLiveStreamRecordIndexFilesResponse unmarshall(CreateLiveStreamRecordIndexFilesResponse createLiveStreamRecordIndexFilesResponse, UnmarshallerContext context) {
+	public static CreateLiveStreamRecordIndexFilesResponse unmarshall(CreateLiveStreamRecordIndexFilesResponse createLiveStreamRecordIndexFilesResponse, UnmarshallerContext _ctx) {
 		
-		createLiveStreamRecordIndexFilesResponse.setRequestId(context.stringValue("CreateLiveStreamRecordIndexFilesResponse.RequestId"));
+		createLiveStreamRecordIndexFilesResponse.setRequestId(_ctx.stringValue("CreateLiveStreamRecordIndexFilesResponse.RequestId"));
 
 		RecordInfo recordInfo = new RecordInfo();
-		recordInfo.setRecordId(context.stringValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.RecordId"));
-		recordInfo.setRecordUrl(context.stringValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.RecordUrl"));
-		recordInfo.setDuration(context.floatValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.Duration"));
-		recordInfo.setHeight(context.integerValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.Height"));
-		recordInfo.setWidth(context.integerValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.Width"));
-		recordInfo.setCreateTime(context.stringValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.CreateTime"));
+		recordInfo.setRecordId(_ctx.stringValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.RecordId"));
+		recordInfo.setRecordUrl(_ctx.stringValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.RecordUrl"));
+		recordInfo.setDuration(_ctx.floatValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.Duration"));
+		recordInfo.setHeight(_ctx.integerValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.Height"));
+		recordInfo.setWidth(_ctx.integerValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.Width"));
+		recordInfo.setCreateTime(_ctx.stringValue("CreateLiveStreamRecordIndexFilesResponse.RecordInfo.CreateTime"));
 		createLiveStreamRecordIndexFilesResponse.setRecordInfo(recordInfo);
 	 
 	 	return createLiveStreamRecordIndexFilesResponse;

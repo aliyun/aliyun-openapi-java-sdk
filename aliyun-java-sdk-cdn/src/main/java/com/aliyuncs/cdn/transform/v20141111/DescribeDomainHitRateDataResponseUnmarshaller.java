@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainHitRateDataResponseUnmarshaller {
 
-	public static DescribeDomainHitRateDataResponse unmarshall(DescribeDomainHitRateDataResponse describeDomainHitRateDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainHitRateDataResponse unmarshall(DescribeDomainHitRateDataResponse describeDomainHitRateDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainHitRateDataResponse.setRequestId(context.stringValue("DescribeDomainHitRateDataResponse.RequestId"));
-		describeDomainHitRateDataResponse.setDomainName(context.stringValue("DescribeDomainHitRateDataResponse.DomainName"));
-		describeDomainHitRateDataResponse.setStartTime(context.stringValue("DescribeDomainHitRateDataResponse.StartTime"));
-		describeDomainHitRateDataResponse.setEndTime(context.stringValue("DescribeDomainHitRateDataResponse.EndTime"));
-		describeDomainHitRateDataResponse.setDataInterval(context.stringValue("DescribeDomainHitRateDataResponse.DataInterval"));
+		describeDomainHitRateDataResponse.setRequestId(_ctx.stringValue("DescribeDomainHitRateDataResponse.RequestId"));
+		describeDomainHitRateDataResponse.setDomainName(_ctx.stringValue("DescribeDomainHitRateDataResponse.DomainName"));
+		describeDomainHitRateDataResponse.setStartTime(_ctx.stringValue("DescribeDomainHitRateDataResponse.StartTime"));
+		describeDomainHitRateDataResponse.setEndTime(_ctx.stringValue("DescribeDomainHitRateDataResponse.EndTime"));
+		describeDomainHitRateDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainHitRateDataResponse.DataInterval"));
 
 		List<DataModule> hitRateInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainHitRateDataResponse.HitRateInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainHitRateDataResponse.HitRateInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDomainHitRateDataResponse.HitRateInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeDomainHitRateDataResponse.HitRateInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainHitRateDataResponse.HitRateInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainHitRateDataResponse.HitRateInterval["+ i +"].Value"));
 
 			hitRateInterval.add(dataModule);
 		}

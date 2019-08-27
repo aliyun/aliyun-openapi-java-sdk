@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class DeleteLiveStreamTranscodeRequest extends RpcAcsRequest<DeleteLiveStreamTranscodeResponse> {
 	
 	public DeleteLiveStreamTranscodeRequest() {
-		super("Cdn", "2014-11-11", "DeleteLiveStreamTranscode");
+		super("Cdn", "2014-11-11", "DeleteLiveStreamTranscode", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String template;

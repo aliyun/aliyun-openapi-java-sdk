@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDomainsByLogConfigIdResponseUnmarshaller {
 
-	public static ListDomainsByLogConfigIdResponse unmarshall(ListDomainsByLogConfigIdResponse listDomainsByLogConfigIdResponse, UnmarshallerContext context) {
+	public static ListDomainsByLogConfigIdResponse unmarshall(ListDomainsByLogConfigIdResponse listDomainsByLogConfigIdResponse, UnmarshallerContext _ctx) {
 		
-		listDomainsByLogConfigIdResponse.setRequestId(context.stringValue("ListDomainsByLogConfigIdResponse.RequestId"));
+		listDomainsByLogConfigIdResponse.setRequestId(_ctx.stringValue("ListDomainsByLogConfigIdResponse.RequestId"));
 
 		List<String> domains = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ListDomainsByLogConfigIdResponse.Domains.Length"); i++) {
-			domains.add(context.stringValue("ListDomainsByLogConfigIdResponse.Domains["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ListDomainsByLogConfigIdResponse.Domains.Length"); i++) {
+			domains.add(_ctx.stringValue("ListDomainsByLogConfigIdResponse.Domains["+ i +"]"));
 		}
 		listDomainsByLogConfigIdResponse.setDomains(domains);
 	 

@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamsPublishListResponseUnmarshaller {
 
-	public static DescribeLiveStreamsPublishListResponse unmarshall(DescribeLiveStreamsPublishListResponse describeLiveStreamsPublishListResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamsPublishListResponse unmarshall(DescribeLiveStreamsPublishListResponse describeLiveStreamsPublishListResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamsPublishListResponse.setRequestId(context.stringValue("DescribeLiveStreamsPublishListResponse.RequestId"));
+		describeLiveStreamsPublishListResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.RequestId"));
 
 		List<LiveStreamPublishInfo> publishInfo = new ArrayList<LiveStreamPublishInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveStreamsPublishListResponse.PublishInfo.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamsPublishListResponse.PublishInfo.Length"); i++) {
 			LiveStreamPublishInfo liveStreamPublishInfo = new LiveStreamPublishInfo();
-			liveStreamPublishInfo.setDomainName(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].DomainName"));
-			liveStreamPublishInfo.setAppName(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].AppName"));
-			liveStreamPublishInfo.setStreamName(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamName"));
-			liveStreamPublishInfo.setStreamUrl(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamUrl"));
-			liveStreamPublishInfo.setPublishTime(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishTime"));
-			liveStreamPublishInfo.setStopTime(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StopTime"));
-			liveStreamPublishInfo.setPublishUrl(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishUrl"));
-			liveStreamPublishInfo.setClientAddr(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].ClientAddr"));
-			liveStreamPublishInfo.setEdgeNodeAddr(context.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].EdgeNodeAddr"));
+			liveStreamPublishInfo.setDomainName(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].DomainName"));
+			liveStreamPublishInfo.setAppName(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].AppName"));
+			liveStreamPublishInfo.setStreamName(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamName"));
+			liveStreamPublishInfo.setStreamUrl(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StreamUrl"));
+			liveStreamPublishInfo.setPublishTime(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishTime"));
+			liveStreamPublishInfo.setStopTime(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].StopTime"));
+			liveStreamPublishInfo.setPublishUrl(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].PublishUrl"));
+			liveStreamPublishInfo.setClientAddr(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].ClientAddr"));
+			liveStreamPublishInfo.setEdgeNodeAddr(_ctx.stringValue("DescribeLiveStreamsPublishListResponse.PublishInfo["+ i +"].EdgeNodeAddr"));
 
 			publishInfo.add(liveStreamPublishInfo);
 		}

@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller {
 
-	public static DescribeLiveStreamTranscodeInfoResponse unmarshall(DescribeLiveStreamTranscodeInfoResponse describeLiveStreamTranscodeInfoResponse, UnmarshallerContext context) {
+	public static DescribeLiveStreamTranscodeInfoResponse unmarshall(DescribeLiveStreamTranscodeInfoResponse describeLiveStreamTranscodeInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeLiveStreamTranscodeInfoResponse.setRequestId(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.RequestId"));
+		describeLiveStreamTranscodeInfoResponse.setRequestId(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.RequestId"));
 
 		List<DomainTranscodeInfo> domainTranscodeList = new ArrayList<DomainTranscodeInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList.Length"); i++) {
 			DomainTranscodeInfo domainTranscodeInfo = new DomainTranscodeInfo();
-			domainTranscodeInfo.setTranscodeApp(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeApp"));
-			domainTranscodeInfo.setTranscodeId(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeId"));
-			domainTranscodeInfo.setTranscodeName(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeName"));
-			domainTranscodeInfo.setTranscodeRecord(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeRecord"));
-			domainTranscodeInfo.setTranscodeSnapshot(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeSnapshot"));
-			domainTranscodeInfo.setTranscodeTemplate(context.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeTemplate"));
+			domainTranscodeInfo.setTranscodeApp(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeApp"));
+			domainTranscodeInfo.setTranscodeId(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeId"));
+			domainTranscodeInfo.setTranscodeName(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeName"));
+			domainTranscodeInfo.setTranscodeRecord(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeRecord"));
+			domainTranscodeInfo.setTranscodeSnapshot(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeSnapshot"));
+			domainTranscodeInfo.setTranscodeTemplate(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].TranscodeTemplate"));
 
 			domainTranscodeList.add(domainTranscodeInfo);
 		}

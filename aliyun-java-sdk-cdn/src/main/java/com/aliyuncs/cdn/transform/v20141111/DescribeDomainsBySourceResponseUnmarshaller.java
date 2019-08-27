@@ -25,30 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainsBySourceResponseUnmarshaller {
 
-	public static DescribeDomainsBySourceResponse unmarshall(DescribeDomainsBySourceResponse describeDomainsBySourceResponse, UnmarshallerContext context) {
+	public static DescribeDomainsBySourceResponse unmarshall(DescribeDomainsBySourceResponse describeDomainsBySourceResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainsBySourceResponse.setRequestId(context.stringValue("DescribeDomainsBySourceResponse.RequestId"));
-		describeDomainsBySourceResponse.setSources(context.stringValue("DescribeDomainsBySourceResponse.Sources"));
+		describeDomainsBySourceResponse.setRequestId(_ctx.stringValue("DescribeDomainsBySourceResponse.RequestId"));
+		describeDomainsBySourceResponse.setSources(_ctx.stringValue("DescribeDomainsBySourceResponse.Sources"));
 
 		List<DomainsData> domainsList = new ArrayList<DomainsData>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainsBySourceResponse.DomainsList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainsBySourceResponse.DomainsList.Length"); i++) {
 			DomainsData domainsData = new DomainsData();
-			domainsData.setSource(context.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].Source"));
+			domainsData.setSource(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].Source"));
 
 			List<String> domains = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].Domains.Length"); j++) {
-				domains.add(context.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].Domains["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].Domains.Length"); j++) {
+				domains.add(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].Domains["+ j +"]"));
 			}
 			domainsData.setDomains(domains);
 
 			List<DomainInfo> domainInfos = new ArrayList<DomainInfo>();
-			for (int j = 0; j < context.lengthValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos.Length"); j++) {
 				DomainInfo domainInfo = new DomainInfo();
-				domainInfo.setDomainName(context.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].DomainName"));
-				domainInfo.setDomainCname(context.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].DomainCname"));
-				domainInfo.setCreateTime(context.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime"));
-				domainInfo.setUpdateTime(context.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime"));
-				domainInfo.setStatus(context.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].Status"));
+				domainInfo.setDomainName(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].DomainName"));
+				domainInfo.setDomainCname(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].DomainCname"));
+				domainInfo.setCreateTime(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime"));
+				domainInfo.setUpdateTime(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime"));
+				domainInfo.setStatus(_ctx.stringValue("DescribeDomainsBySourceResponse.DomainsList["+ i +"].DomainInfos["+ j +"].Status"));
 
 				domainInfos.add(domainInfo);
 			}

@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeUserCustomLogConfigResponseUnmarshaller {
 
-	public static DescribeUserCustomLogConfigResponse unmarshall(DescribeUserCustomLogConfigResponse describeUserCustomLogConfigResponse, UnmarshallerContext context) {
+	public static DescribeUserCustomLogConfigResponse unmarshall(DescribeUserCustomLogConfigResponse describeUserCustomLogConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeUserCustomLogConfigResponse.setRequestId(context.stringValue("DescribeUserCustomLogConfigResponse.RequestId"));
+		describeUserCustomLogConfigResponse.setRequestId(_ctx.stringValue("DescribeUserCustomLogConfigResponse.RequestId"));
 
 		List<String> configIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeUserCustomLogConfigResponse.ConfigIds.Length"); i++) {
-			configIds.add(context.stringValue("DescribeUserCustomLogConfigResponse.ConfigIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeUserCustomLogConfigResponse.ConfigIds.Length"); i++) {
+			configIds.add(_ctx.stringValue("DescribeUserCustomLogConfigResponse.ConfigIds["+ i +"]"));
 		}
 		describeUserCustomLogConfigResponse.setConfigIds(configIds);
 	 

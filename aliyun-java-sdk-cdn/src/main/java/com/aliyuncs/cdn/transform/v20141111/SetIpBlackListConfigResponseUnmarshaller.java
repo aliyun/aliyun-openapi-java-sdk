@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetIpBlackListConfigResponseUnmarshaller {
 
-	public static SetIpBlackListConfigResponse unmarshall(SetIpBlackListConfigResponse setIpBlackListConfigResponse, UnmarshallerContext context) {
+	public static SetIpBlackListConfigResponse unmarshall(SetIpBlackListConfigResponse setIpBlackListConfigResponse, UnmarshallerContext _ctx) {
 		
-		setIpBlackListConfigResponse.setRequestId(context.stringValue("SetIpBlackListConfigResponse.RequestId"));
+		setIpBlackListConfigResponse.setRequestId(_ctx.stringValue("SetIpBlackListConfigResponse.RequestId"));
 	 
 	 	return setIpBlackListConfigResponse;
 	}

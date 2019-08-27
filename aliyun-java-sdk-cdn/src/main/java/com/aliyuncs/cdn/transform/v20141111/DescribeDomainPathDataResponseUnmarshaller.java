@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainPathDataResponseUnmarshaller {
 
-	public static DescribeDomainPathDataResponse unmarshall(DescribeDomainPathDataResponse describeDomainPathDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainPathDataResponse unmarshall(DescribeDomainPathDataResponse describeDomainPathDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainPathDataResponse.setRequestId(context.stringValue("DescribeDomainPathDataResponse.RequestId"));
-		describeDomainPathDataResponse.setDomainName(context.stringValue("DescribeDomainPathDataResponse.DomainName"));
-		describeDomainPathDataResponse.setStartTime(context.stringValue("DescribeDomainPathDataResponse.StartTime"));
-		describeDomainPathDataResponse.setEndTime(context.stringValue("DescribeDomainPathDataResponse.EndTime"));
-		describeDomainPathDataResponse.setPageSize(context.integerValue("DescribeDomainPathDataResponse.PageSize"));
-		describeDomainPathDataResponse.setPageNumber(context.integerValue("DescribeDomainPathDataResponse.PageNumber"));
-		describeDomainPathDataResponse.setDataInterval(context.stringValue("DescribeDomainPathDataResponse.DataInterval"));
-		describeDomainPathDataResponse.setTotalCount(context.integerValue("DescribeDomainPathDataResponse.TotalCount"));
+		describeDomainPathDataResponse.setRequestId(_ctx.stringValue("DescribeDomainPathDataResponse.RequestId"));
+		describeDomainPathDataResponse.setDomainName(_ctx.stringValue("DescribeDomainPathDataResponse.DomainName"));
+		describeDomainPathDataResponse.setStartTime(_ctx.stringValue("DescribeDomainPathDataResponse.StartTime"));
+		describeDomainPathDataResponse.setEndTime(_ctx.stringValue("DescribeDomainPathDataResponse.EndTime"));
+		describeDomainPathDataResponse.setPageSize(_ctx.integerValue("DescribeDomainPathDataResponse.PageSize"));
+		describeDomainPathDataResponse.setPageNumber(_ctx.integerValue("DescribeDomainPathDataResponse.PageNumber"));
+		describeDomainPathDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainPathDataResponse.DataInterval"));
+		describeDomainPathDataResponse.setTotalCount(_ctx.integerValue("DescribeDomainPathDataResponse.TotalCount"));
 
 		List<UsageData> pathDataPerInterval = new ArrayList<UsageData>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainPathDataResponse.PathDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainPathDataResponse.PathDataPerInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTraffic(context.integerValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Traffic"));
-			usageData.setAcc(context.integerValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Acc"));
-			usageData.setPath(context.stringValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Path"));
-			usageData.setTime(context.stringValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Time"));
+			usageData.setTraffic(_ctx.integerValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Traffic"));
+			usageData.setAcc(_ctx.integerValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Acc"));
+			usageData.setPath(_ctx.stringValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Path"));
+			usageData.setTime(_ctx.stringValue("DescribeDomainPathDataResponse.PathDataPerInterval["+ i +"].Time"));
 
 			pathDataPerInterval.add(usageData);
 		}

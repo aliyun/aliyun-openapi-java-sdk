@@ -25,24 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCdnDomainLogsResponseUnmarshaller {
 
-	public static DescribeCdnDomainLogsResponse unmarshall(DescribeCdnDomainLogsResponse describeCdnDomainLogsResponse, UnmarshallerContext context) {
+	public static DescribeCdnDomainLogsResponse unmarshall(DescribeCdnDomainLogsResponse describeCdnDomainLogsResponse, UnmarshallerContext _ctx) {
 		
-		describeCdnDomainLogsResponse.setRequestId(context.stringValue("DescribeCdnDomainLogsResponse.RequestId"));
-		describeCdnDomainLogsResponse.setPageNumber(context.longValue("DescribeCdnDomainLogsResponse.PageNumber"));
-		describeCdnDomainLogsResponse.setPageSize(context.longValue("DescribeCdnDomainLogsResponse.PageSize"));
-		describeCdnDomainLogsResponse.setTotalCount(context.longValue("DescribeCdnDomainLogsResponse.TotalCount"));
+		describeCdnDomainLogsResponse.setRequestId(_ctx.stringValue("DescribeCdnDomainLogsResponse.RequestId"));
+		describeCdnDomainLogsResponse.setPageNumber(_ctx.longValue("DescribeCdnDomainLogsResponse.PageNumber"));
+		describeCdnDomainLogsResponse.setPageSize(_ctx.longValue("DescribeCdnDomainLogsResponse.PageSize"));
+		describeCdnDomainLogsResponse.setTotalCount(_ctx.longValue("DescribeCdnDomainLogsResponse.TotalCount"));
 
 		DomainLogModel domainLogModel = new DomainLogModel();
-		domainLogModel.setDomainName(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainName"));
+		domainLogModel.setDomainName(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainName"));
 
 		List<DomainLogDetail> domainLogDetails = new ArrayList<DomainLogDetail>();
-		for (int i = 0; i < context.lengthValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails.Length"); i++) {
 			DomainLogDetail domainLogDetail = new DomainLogDetail();
-			domainLogDetail.setLogName(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogName"));
-			domainLogDetail.setLogPath(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogPath"));
-			domainLogDetail.setLogSize(context.longValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogSize"));
-			domainLogDetail.setStartTime(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].StartTime"));
-			domainLogDetail.setEndTime(context.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].EndTime"));
+			domainLogDetail.setLogName(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogName"));
+			domainLogDetail.setLogPath(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogPath"));
+			domainLogDetail.setLogSize(_ctx.longValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].LogSize"));
+			domainLogDetail.setStartTime(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].StartTime"));
+			domainLogDetail.setEndTime(_ctx.stringValue("DescribeCdnDomainLogsResponse.DomainLogModel.DomainLogDetails["+ i +"].EndTime"));
 
 			domainLogDetails.add(domainLogDetail);
 		}

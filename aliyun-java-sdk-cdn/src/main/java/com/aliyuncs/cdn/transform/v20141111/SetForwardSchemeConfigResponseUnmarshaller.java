@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetForwardSchemeConfigResponseUnmarshaller {
 
-	public static SetForwardSchemeConfigResponse unmarshall(SetForwardSchemeConfigResponse setForwardSchemeConfigResponse, UnmarshallerContext context) {
+	public static SetForwardSchemeConfigResponse unmarshall(SetForwardSchemeConfigResponse setForwardSchemeConfigResponse, UnmarshallerContext _ctx) {
 		
-		setForwardSchemeConfigResponse.setRequestId(context.stringValue("SetForwardSchemeConfigResponse.RequestId"));
+		setForwardSchemeConfigResponse.setRequestId(_ctx.stringValue("SetForwardSchemeConfigResponse.RequestId"));
 	 
 	 	return setForwardSchemeConfigResponse;
 	}

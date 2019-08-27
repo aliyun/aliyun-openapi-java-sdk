@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteLiveAppSnapshotConfigResponseUnmarshaller {
 
-	public static DeleteLiveAppSnapshotConfigResponse unmarshall(DeleteLiveAppSnapshotConfigResponse deleteLiveAppSnapshotConfigResponse, UnmarshallerContext context) {
+	public static DeleteLiveAppSnapshotConfigResponse unmarshall(DeleteLiveAppSnapshotConfigResponse deleteLiveAppSnapshotConfigResponse, UnmarshallerContext _ctx) {
 		
-		deleteLiveAppSnapshotConfigResponse.setRequestId(context.stringValue("DeleteLiveAppSnapshotConfigResponse.RequestId"));
+		deleteLiveAppSnapshotConfigResponse.setRequestId(_ctx.stringValue("DeleteLiveAppSnapshotConfigResponse.RequestId"));
 	 
 	 	return deleteLiveAppSnapshotConfigResponse;
 	}

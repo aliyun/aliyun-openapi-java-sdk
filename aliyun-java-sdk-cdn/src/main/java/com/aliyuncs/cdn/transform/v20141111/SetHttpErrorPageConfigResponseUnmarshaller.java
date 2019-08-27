@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetHttpErrorPageConfigResponseUnmarshaller {
 
-	public static SetHttpErrorPageConfigResponse unmarshall(SetHttpErrorPageConfigResponse setHttpErrorPageConfigResponse, UnmarshallerContext context) {
+	public static SetHttpErrorPageConfigResponse unmarshall(SetHttpErrorPageConfigResponse setHttpErrorPageConfigResponse, UnmarshallerContext _ctx) {
 		
-		setHttpErrorPageConfigResponse.setRequestId(context.stringValue("SetHttpErrorPageConfigResponse.RequestId"));
+		setHttpErrorPageConfigResponse.setRequestId(_ctx.stringValue("SetHttpErrorPageConfigResponse.RequestId"));
 	 
 	 	return setHttpErrorPageConfigResponse;
 	}

@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainSrcFlowDataResponseUnmarshaller {
 
-	public static DescribeDomainSrcFlowDataResponse unmarshall(DescribeDomainSrcFlowDataResponse describeDomainSrcFlowDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainSrcFlowDataResponse unmarshall(DescribeDomainSrcFlowDataResponse describeDomainSrcFlowDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainSrcFlowDataResponse.setRequestId(context.stringValue("DescribeDomainSrcFlowDataResponse.RequestId"));
-		describeDomainSrcFlowDataResponse.setDomainName(context.stringValue("DescribeDomainSrcFlowDataResponse.DomainName"));
-		describeDomainSrcFlowDataResponse.setStartTime(context.stringValue("DescribeDomainSrcFlowDataResponse.StartTime"));
-		describeDomainSrcFlowDataResponse.setEndTime(context.stringValue("DescribeDomainSrcFlowDataResponse.EndTime"));
-		describeDomainSrcFlowDataResponse.setDataInterval(context.stringValue("DescribeDomainSrcFlowDataResponse.DataInterval"));
+		describeDomainSrcFlowDataResponse.setRequestId(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.RequestId"));
+		describeDomainSrcFlowDataResponse.setDomainName(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.DomainName"));
+		describeDomainSrcFlowDataResponse.setStartTime(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.StartTime"));
+		describeDomainSrcFlowDataResponse.setEndTime(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.EndTime"));
+		describeDomainSrcFlowDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.DataInterval"));
 
 		List<DataModule> srcFlowDataPerInterval = new ArrayList<DataModule>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval.Length"); i++) {
 			DataModule dataModule = new DataModule();
-			dataModule.setTimeStamp(context.stringValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval["+ i +"].TimeStamp"));
-			dataModule.setValue(context.stringValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval["+ i +"].Value"));
+			dataModule.setTimeStamp(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval["+ i +"].TimeStamp"));
+			dataModule.setValue(_ctx.stringValue("DescribeDomainSrcFlowDataResponse.SrcFlowDataPerInterval["+ i +"].Value"));
 
 			srcFlowDataPerInterval.add(dataModule);
 		}

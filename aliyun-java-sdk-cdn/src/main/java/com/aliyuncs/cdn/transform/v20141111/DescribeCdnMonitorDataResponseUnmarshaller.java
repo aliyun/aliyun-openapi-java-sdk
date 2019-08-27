@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCdnMonitorDataResponseUnmarshaller {
 
-	public static DescribeCdnMonitorDataResponse unmarshall(DescribeCdnMonitorDataResponse describeCdnMonitorDataResponse, UnmarshallerContext context) {
+	public static DescribeCdnMonitorDataResponse unmarshall(DescribeCdnMonitorDataResponse describeCdnMonitorDataResponse, UnmarshallerContext _ctx) {
 		
-		describeCdnMonitorDataResponse.setRequestId(context.stringValue("DescribeCdnMonitorDataResponse.RequestId"));
-		describeCdnMonitorDataResponse.setDomainName(context.stringValue("DescribeCdnMonitorDataResponse.DomainName"));
-		describeCdnMonitorDataResponse.setStartTime(context.stringValue("DescribeCdnMonitorDataResponse.StartTime"));
-		describeCdnMonitorDataResponse.setEndTime(context.stringValue("DescribeCdnMonitorDataResponse.EndTime"));
-		describeCdnMonitorDataResponse.setMonitorInterval(context.stringValue("DescribeCdnMonitorDataResponse.MonitorInterval"));
+		describeCdnMonitorDataResponse.setRequestId(_ctx.stringValue("DescribeCdnMonitorDataResponse.RequestId"));
+		describeCdnMonitorDataResponse.setDomainName(_ctx.stringValue("DescribeCdnMonitorDataResponse.DomainName"));
+		describeCdnMonitorDataResponse.setStartTime(_ctx.stringValue("DescribeCdnMonitorDataResponse.StartTime"));
+		describeCdnMonitorDataResponse.setEndTime(_ctx.stringValue("DescribeCdnMonitorDataResponse.EndTime"));
+		describeCdnMonitorDataResponse.setMonitorInterval(_ctx.stringValue("DescribeCdnMonitorDataResponse.MonitorInterval"));
 
 		List<CDNMonitorData> monitorDatas = new ArrayList<CDNMonitorData>();
-		for (int i = 0; i < context.lengthValue("DescribeCdnMonitorDataResponse.MonitorDatas.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCdnMonitorDataResponse.MonitorDatas.Length"); i++) {
 			CDNMonitorData cDNMonitorData = new CDNMonitorData();
-			cDNMonitorData.setTimeStamp(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].TimeStamp"));
-			cDNMonitorData.setBytesPerSecond(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].BytesPerSecond"));
-			cDNMonitorData.setQueryPerSecond(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].QueryPerSecond"));
-			cDNMonitorData.setRequestHitRate(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].RequestHitRate"));
-			cDNMonitorData.setBytesHitRate(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].BytesHitRate"));
-			cDNMonitorData.setAverageObjectSize(context.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].AverageObjectSize"));
+			cDNMonitorData.setTimeStamp(_ctx.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].TimeStamp"));
+			cDNMonitorData.setBytesPerSecond(_ctx.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].BytesPerSecond"));
+			cDNMonitorData.setQueryPerSecond(_ctx.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].QueryPerSecond"));
+			cDNMonitorData.setRequestHitRate(_ctx.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].RequestHitRate"));
+			cDNMonitorData.setBytesHitRate(_ctx.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].BytesHitRate"));
+			cDNMonitorData.setAverageObjectSize(_ctx.stringValue("DescribeCdnMonitorDataResponse.MonitorDatas["+ i +"].AverageObjectSize"));
 
 			monitorDatas.add(cDNMonitorData);
 		}

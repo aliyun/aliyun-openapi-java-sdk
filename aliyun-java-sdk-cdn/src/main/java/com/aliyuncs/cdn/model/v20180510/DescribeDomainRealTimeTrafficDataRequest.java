@@ -12,57 +12,41 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDomainCCDataRequest extends RpcAcsRequest<DescribeDomainCCDataResponse> {
+public class DescribeDomainRealTimeTrafficDataRequest extends RpcAcsRequest<DescribeDomainRealTimeTrafficDataResponse> {
 	
-	public DescribeDomainCCDataRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainCCData");
+	public DescribeDomainRealTimeTrafficDataRequest() {
+		super("Cdn", "2018-05-10", "DescribeDomainRealTimeTrafficData", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String securityToken;
+	private String startTime;
 
 	private String domainName;
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -88,17 +72,6 @@ public class DescribeDomainCCDataRequest extends RpcAcsRequest<DescribeDomainCCD
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -111,8 +84,8 @@ public class DescribeDomainCCDataRequest extends RpcAcsRequest<DescribeDomainCCD
 	}
 
 	@Override
-	public Class<DescribeDomainCCDataResponse> getResponseClass() {
-		return DescribeDomainCCDataResponse.class;
+	public Class<DescribeDomainRealTimeTrafficDataResponse> getResponseClass() {
+		return DescribeDomainRealTimeTrafficDataResponse.class;
 	}
 
 }

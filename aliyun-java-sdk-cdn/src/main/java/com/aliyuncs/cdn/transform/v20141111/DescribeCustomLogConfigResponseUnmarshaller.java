@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCustomLogConfigResponseUnmarshaller {
 
-	public static DescribeCustomLogConfigResponse unmarshall(DescribeCustomLogConfigResponse describeCustomLogConfigResponse, UnmarshallerContext context) {
+	public static DescribeCustomLogConfigResponse unmarshall(DescribeCustomLogConfigResponse describeCustomLogConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeCustomLogConfigResponse.setRequestId(context.stringValue("DescribeCustomLogConfigResponse.RequestId"));
-		describeCustomLogConfigResponse.setRemark(context.stringValue("DescribeCustomLogConfigResponse.Remark"));
-		describeCustomLogConfigResponse.setSample(context.stringValue("DescribeCustomLogConfigResponse.Sample"));
-		describeCustomLogConfigResponse.setTag(context.stringValue("DescribeCustomLogConfigResponse.Tag"));
+		describeCustomLogConfigResponse.setRequestId(_ctx.stringValue("DescribeCustomLogConfigResponse.RequestId"));
+		describeCustomLogConfigResponse.setRemark(_ctx.stringValue("DescribeCustomLogConfigResponse.Remark"));
+		describeCustomLogConfigResponse.setSample(_ctx.stringValue("DescribeCustomLogConfigResponse.Sample"));
+		describeCustomLogConfigResponse.setTag(_ctx.stringValue("DescribeCustomLogConfigResponse.Tag"));
 	 
 	 	return describeCustomLogConfigResponse;
 	}

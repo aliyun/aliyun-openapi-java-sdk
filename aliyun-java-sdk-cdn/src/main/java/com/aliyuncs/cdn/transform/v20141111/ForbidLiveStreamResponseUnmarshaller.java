@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ForbidLiveStreamResponseUnmarshaller {
 
-	public static ForbidLiveStreamResponse unmarshall(ForbidLiveStreamResponse forbidLiveStreamResponse, UnmarshallerContext context) {
+	public static ForbidLiveStreamResponse unmarshall(ForbidLiveStreamResponse forbidLiveStreamResponse, UnmarshallerContext _ctx) {
 		
-		forbidLiveStreamResponse.setRequestId(context.stringValue("ForbidLiveStreamResponse.RequestId"));
+		forbidLiveStreamResponse.setRequestId(_ctx.stringValue("ForbidLiveStreamResponse.RequestId"));
 	 
 	 	return forbidLiveStreamResponse;
 	}

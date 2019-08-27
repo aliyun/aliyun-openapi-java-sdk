@@ -33,14 +33,6 @@ public class DescribeDomainAverageResponseTimeResponse extends AcsResponse {
 
 	private String endTime;
 
-	private String locationNameEn;
-
-	private String ispNameEn;
-
-	private String locationName;
-
-	private String ispName;
-
 	private String dataInterval;
 
 	private List<DataModule> avgRTPerInterval;
@@ -75,38 +67,6 @@ public class DescribeDomainAverageResponseTimeResponse extends AcsResponse {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
-	}
-
-	public String getLocationNameEn() {
-		return this.locationNameEn;
-	}
-
-	public void setLocationNameEn(String locationNameEn) {
-		this.locationNameEn = locationNameEn;
-	}
-
-	public String getIspNameEn() {
-		return this.ispNameEn;
-	}
-
-	public void setIspNameEn(String ispNameEn) {
-		this.ispNameEn = ispNameEn;
-	}
-
-	public String getLocationName() {
-		return this.locationName;
-	}
-
-	public void setLocationName(String locationName) {
-		this.locationName = locationName;
-	}
-
-	public String getIspName() {
-		return this.ispName;
-	}
-
-	public void setIspName(String ispName) {
-		this.ispName = ispName;
 	}
 
 	public String getDataInterval() {

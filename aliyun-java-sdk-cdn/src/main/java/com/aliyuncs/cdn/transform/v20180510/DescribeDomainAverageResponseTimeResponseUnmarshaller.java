@@ -30,10 +30,6 @@ public class DescribeDomainAverageResponseTimeResponseUnmarshaller {
 		describeDomainAverageResponseTimeResponse.setDomainName(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.DomainName"));
 		describeDomainAverageResponseTimeResponse.setStartTime(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.StartTime"));
 		describeDomainAverageResponseTimeResponse.setEndTime(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.EndTime"));
-		describeDomainAverageResponseTimeResponse.setLocationNameEn(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.LocationNameEn"));
-		describeDomainAverageResponseTimeResponse.setIspNameEn(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.IspNameEn"));
-		describeDomainAverageResponseTimeResponse.setLocationName(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.LocationName"));
-		describeDomainAverageResponseTimeResponse.setIspName(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.IspName"));
 		describeDomainAverageResponseTimeResponse.setDataInterval(_ctx.stringValue("DescribeDomainAverageResponseTimeResponse.DataInterval"));
 
 		List<DataModule> avgRTPerInterval = new ArrayList<DataModule>();

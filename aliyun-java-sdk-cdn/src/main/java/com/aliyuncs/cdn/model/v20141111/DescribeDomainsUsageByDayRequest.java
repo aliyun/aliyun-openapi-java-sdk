@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +24,11 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeDomainsUsageByDayRequest extends RpcAcsRequest<DescribeDomainsUsageByDayResponse> {
 	
 	public DescribeDomainsUsageByDayRequest() {
-		super("Cdn", "2014-11-11", "DescribeDomainsUsageByDay");
+		super("Cdn", "2014-11-11", "DescribeDomainsUsageByDay", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String startTime;

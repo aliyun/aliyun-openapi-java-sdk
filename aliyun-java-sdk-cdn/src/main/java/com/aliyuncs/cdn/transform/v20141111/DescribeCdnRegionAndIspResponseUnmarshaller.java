@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCdnRegionAndIspResponseUnmarshaller {
 
-	public static DescribeCdnRegionAndIspResponse unmarshall(DescribeCdnRegionAndIspResponse describeCdnRegionAndIspResponse, UnmarshallerContext context) {
+	public static DescribeCdnRegionAndIspResponse unmarshall(DescribeCdnRegionAndIspResponse describeCdnRegionAndIspResponse, UnmarshallerContext _ctx) {
 		
-		describeCdnRegionAndIspResponse.setRequestId(context.stringValue("DescribeCdnRegionAndIspResponse.RequestId"));
+		describeCdnRegionAndIspResponse.setRequestId(_ctx.stringValue("DescribeCdnRegionAndIspResponse.RequestId"));
 
 		List<Region> regions = new ArrayList<Region>();
-		for (int i = 0; i < context.lengthValue("DescribeCdnRegionAndIspResponse.Regions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCdnRegionAndIspResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setNameZh(context.stringValue("DescribeCdnRegionAndIspResponse.Regions["+ i +"].NameZh"));
-			region.setNameEn(context.stringValue("DescribeCdnRegionAndIspResponse.Regions["+ i +"].NameEn"));
+			region.setNameZh(_ctx.stringValue("DescribeCdnRegionAndIspResponse.Regions["+ i +"].NameZh"));
+			region.setNameEn(_ctx.stringValue("DescribeCdnRegionAndIspResponse.Regions["+ i +"].NameEn"));
 
 			regions.add(region);
 		}
 		describeCdnRegionAndIspResponse.setRegions(regions);
 
 		List<Isp> isps = new ArrayList<Isp>();
-		for (int i = 0; i < context.lengthValue("DescribeCdnRegionAndIspResponse.Isps.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCdnRegionAndIspResponse.Isps.Length"); i++) {
 			Isp isp = new Isp();
-			isp.setNameZh(context.stringValue("DescribeCdnRegionAndIspResponse.Isps["+ i +"].NameZh"));
-			isp.setNameEn(context.stringValue("DescribeCdnRegionAndIspResponse.Isps["+ i +"].NameEn"));
+			isp.setNameZh(_ctx.stringValue("DescribeCdnRegionAndIspResponse.Isps["+ i +"].NameZh"));
+			isp.setNameEn(_ctx.stringValue("DescribeCdnRegionAndIspResponse.Isps["+ i +"].NameEn"));
 
 			isps.add(isp);
 		}

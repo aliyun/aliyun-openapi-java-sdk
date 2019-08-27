@@ -51,229 +51,229 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainConfigsResponseUnmarshaller {
 
-	public static DescribeDomainConfigsResponse unmarshall(DescribeDomainConfigsResponse describeDomainConfigsResponse, UnmarshallerContext context) {
+	public static DescribeDomainConfigsResponse unmarshall(DescribeDomainConfigsResponse describeDomainConfigsResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainConfigsResponse.setRequestId(context.stringValue("DescribeDomainConfigsResponse.RequestId"));
+		describeDomainConfigsResponse.setRequestId(_ctx.stringValue("DescribeDomainConfigsResponse.RequestId"));
 
 		DomainConfigs domainConfigs = new DomainConfigs();
 
 		CcConfig ccConfig = new CcConfig();
-		ccConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.ConfigId"));
-		ccConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.Enable"));
-		ccConfig.setAllowIps(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.AllowIps"));
-		ccConfig.setBlockIps(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.BlockIps"));
-		ccConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.Status"));
+		ccConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.ConfigId"));
+		ccConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.Enable"));
+		ccConfig.setAllowIps(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.AllowIps"));
+		ccConfig.setBlockIps(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.BlockIps"));
+		ccConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CcConfig.Status"));
 		domainConfigs.setCcConfig(ccConfig);
 
 		ErrorPageConfig errorPageConfig = new ErrorPageConfig();
-		errorPageConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.ConfigId"));
-		errorPageConfig.setErrorCode(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.ErrorCode"));
-		errorPageConfig.setPageType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.PageType"));
-		errorPageConfig.setCustomPageUrl(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.CustomPageUrl"));
-		errorPageConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.Status"));
+		errorPageConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.ConfigId"));
+		errorPageConfig.setErrorCode(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.ErrorCode"));
+		errorPageConfig.setPageType(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.PageType"));
+		errorPageConfig.setCustomPageUrl(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.CustomPageUrl"));
+		errorPageConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ErrorPageConfig.Status"));
 		domainConfigs.setErrorPageConfig(errorPageConfig);
 
 		OptimizeConfig optimizeConfig = new OptimizeConfig();
-		optimizeConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.OptimizeConfig.ConfigId"));
-		optimizeConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.OptimizeConfig.Enable"));
-		optimizeConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.OptimizeConfig.Status"));
+		optimizeConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.OptimizeConfig.ConfigId"));
+		optimizeConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.OptimizeConfig.Enable"));
+		optimizeConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.OptimizeConfig.Status"));
 		domainConfigs.setOptimizeConfig(optimizeConfig);
 
 		PageCompressConfig pageCompressConfig = new PageCompressConfig();
-		pageCompressConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.PageCompressConfig.ConfigId"));
-		pageCompressConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.PageCompressConfig.Enable"));
-		pageCompressConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.PageCompressConfig.Status"));
+		pageCompressConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.PageCompressConfig.ConfigId"));
+		pageCompressConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.PageCompressConfig.Enable"));
+		pageCompressConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.PageCompressConfig.Status"));
 		domainConfigs.setPageCompressConfig(pageCompressConfig);
 
 		IgnoreQueryStringConfig ignoreQueryStringConfig = new IgnoreQueryStringConfig();
-		ignoreQueryStringConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig.ConfigId"));
-		ignoreQueryStringConfig.setHashKeyArgs(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig.HashKeyArgs"));
-		ignoreQueryStringConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig.Enable"));
-		ignoreQueryStringConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig.Status"));
+		ignoreQueryStringConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig.ConfigId"));
+		ignoreQueryStringConfig.setHashKeyArgs(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig.HashKeyArgs"));
+		ignoreQueryStringConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig.Enable"));
+		ignoreQueryStringConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IgnoreQueryStringConfig.Status"));
 		domainConfigs.setIgnoreQueryStringConfig(ignoreQueryStringConfig);
 
 		RangeConfig rangeConfig = new RangeConfig();
-		rangeConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RangeConfig.ConfigId"));
-		rangeConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RangeConfig.Enable"));
-		rangeConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RangeConfig.Status"));
+		rangeConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RangeConfig.ConfigId"));
+		rangeConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RangeConfig.Enable"));
+		rangeConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RangeConfig.Status"));
 		domainConfigs.setRangeConfig(rangeConfig);
 
 		RefererConfig refererConfig = new RefererConfig();
-		refererConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.ConfigId"));
-		refererConfig.setReferType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.ReferType"));
-		refererConfig.setReferList(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.ReferList"));
-		refererConfig.setAllowEmpty(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.AllowEmpty"));
-		refererConfig.setDisableAst(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.DisableAst"));
-		refererConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.Status"));
+		refererConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.ConfigId"));
+		refererConfig.setReferType(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.ReferType"));
+		refererConfig.setReferList(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.ReferList"));
+		refererConfig.setAllowEmpty(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.AllowEmpty"));
+		refererConfig.setDisableAst(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.DisableAst"));
+		refererConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RefererConfig.Status"));
 		domainConfigs.setRefererConfig(refererConfig);
 
 		ReqAuthConfig reqAuthConfig = new ReqAuthConfig();
-		reqAuthConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.ConfigId"));
-		reqAuthConfig.setAuthType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AuthType"));
-		reqAuthConfig.setKey1(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.Key1"));
-		reqAuthConfig.setKey2(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.Key2"));
-		reqAuthConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.Status"));
-		reqAuthConfig.setAliAuthWhiteList(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AliAuthWhiteList"));
-		reqAuthConfig.setAuthM3u8(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AuthM3u8"));
-		reqAuthConfig.setAuthAddr(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AuthAddr"));
-		reqAuthConfig.setAuthRemoteDesc(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AuthRemoteDesc"));
-		reqAuthConfig.setTimeOut(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.TimeOut"));
+		reqAuthConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.ConfigId"));
+		reqAuthConfig.setAuthType(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AuthType"));
+		reqAuthConfig.setKey1(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.Key1"));
+		reqAuthConfig.setKey2(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.Key2"));
+		reqAuthConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.Status"));
+		reqAuthConfig.setAliAuthWhiteList(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AliAuthWhiteList"));
+		reqAuthConfig.setAuthM3u8(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AuthM3u8"));
+		reqAuthConfig.setAuthAddr(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AuthAddr"));
+		reqAuthConfig.setAuthRemoteDesc(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.AuthRemoteDesc"));
+		reqAuthConfig.setTimeOut(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqAuthConfig.TimeOut"));
 		domainConfigs.setReqAuthConfig(reqAuthConfig);
 
 		SrcHostConfig srcHostConfig = new SrcHostConfig();
-		srcHostConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig.ConfigId"));
-		srcHostConfig.setDomainName(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig.DomainName"));
-		srcHostConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig.Status"));
+		srcHostConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig.ConfigId"));
+		srcHostConfig.setDomainName(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig.DomainName"));
+		srcHostConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SrcHostConfig.Status"));
 		domainConfigs.setSrcHostConfig(srcHostConfig);
 
 		VideoSeekConfig videoSeekConfig = new VideoSeekConfig();
-		videoSeekConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.VideoSeekConfig.ConfigId"));
-		videoSeekConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.VideoSeekConfig.Enable"));
-		videoSeekConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.VideoSeekConfig.Status"));
+		videoSeekConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.VideoSeekConfig.ConfigId"));
+		videoSeekConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.VideoSeekConfig.Enable"));
+		videoSeekConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.VideoSeekConfig.Status"));
 		domainConfigs.setVideoSeekConfig(videoSeekConfig);
 
 		WafConfig wafConfig = new WafConfig();
-		wafConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.WafConfig.ConfigId"));
-		wafConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.WafConfig.Enable"));
-		wafConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.WafConfig.Status"));
+		wafConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.WafConfig.ConfigId"));
+		wafConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.WafConfig.Enable"));
+		wafConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.WafConfig.Status"));
 		domainConfigs.setWafConfig(wafConfig);
 
 		NotifyUrlConfig notifyUrlConfig = new NotifyUrlConfig();
-		notifyUrlConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig.Enable"));
-		notifyUrlConfig.setNotifyUrl(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig.NotifyUrl"));
+		notifyUrlConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig.Enable"));
+		notifyUrlConfig.setNotifyUrl(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.NotifyUrlConfig.NotifyUrl"));
 		domainConfigs.setNotifyUrlConfig(notifyUrlConfig);
 
 		RedirectTypeConfig redirectTypeConfig = new RedirectTypeConfig();
-		redirectTypeConfig.setRedirectType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RedirectTypeConfig.RedirectType"));
+		redirectTypeConfig.setRedirectType(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RedirectTypeConfig.RedirectType"));
 		domainConfigs.setRedirectTypeConfig(redirectTypeConfig);
 
 		ForwardSchemeConfig forwardSchemeConfig = new ForwardSchemeConfig();
-		forwardSchemeConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.ConfigId"));
-		forwardSchemeConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.Enable"));
-		forwardSchemeConfig.setSchemeOrigin(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.SchemeOrigin"));
-		forwardSchemeConfig.setSchemeOriginPort(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.SchemeOriginPort"));
-		forwardSchemeConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.Status"));
+		forwardSchemeConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.ConfigId"));
+		forwardSchemeConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.Enable"));
+		forwardSchemeConfig.setSchemeOrigin(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.SchemeOrigin"));
+		forwardSchemeConfig.setSchemeOriginPort(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.SchemeOriginPort"));
+		forwardSchemeConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ForwardSchemeConfig.Status"));
 		domainConfigs.setForwardSchemeConfig(forwardSchemeConfig);
 
 		RemoveQueryStringConfig removeQueryStringConfig = new RemoveQueryStringConfig();
-		removeQueryStringConfig.setAliRemoveArgs(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RemoveQueryStringConfig.AliRemoveArgs"));
-		removeQueryStringConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RemoveQueryStringConfig.ConfigId"));
-		removeQueryStringConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RemoveQueryStringConfig.Status"));
+		removeQueryStringConfig.setAliRemoveArgs(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RemoveQueryStringConfig.AliRemoveArgs"));
+		removeQueryStringConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RemoveQueryStringConfig.ConfigId"));
+		removeQueryStringConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.RemoveQueryStringConfig.Status"));
 		domainConfigs.setRemoveQueryStringConfig(removeQueryStringConfig);
 
 		L2OssKeyConfig l2OssKeyConfig = new L2OssKeyConfig();
-		l2OssKeyConfig.setPrivateOssAuth(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig.PrivateOssAuth"));
-		l2OssKeyConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig.ConfigId"));
-		l2OssKeyConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig.Status"));
+		l2OssKeyConfig.setPrivateOssAuth(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig.PrivateOssAuth"));
+		l2OssKeyConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig.ConfigId"));
+		l2OssKeyConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.L2OssKeyConfig.Status"));
 		domainConfigs.setL2OssKeyConfig(l2OssKeyConfig);
 
 		MacServiceConfig macServiceConfig = new MacServiceConfig();
-		macServiceConfig.setAppList(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.AppList"));
-		macServiceConfig.setEnabled(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.Enabled"));
-		macServiceConfig.setProcessResult(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.ProcessResult"));
-		macServiceConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.ConfigId"));
-		macServiceConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.Status"));
+		macServiceConfig.setAppList(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.AppList"));
+		macServiceConfig.setEnabled(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.Enabled"));
+		macServiceConfig.setProcessResult(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.ProcessResult"));
+		macServiceConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.ConfigId"));
+		macServiceConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.MacServiceConfig.Status"));
 		domainConfigs.setMacServiceConfig(macServiceConfig);
 
 		GreenManagerConfig greenManagerConfig = new GreenManagerConfig();
-		greenManagerConfig.setEnabled(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.Enabled"));
-		greenManagerConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.ConfigId"));
-		greenManagerConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.Status"));
+		greenManagerConfig.setEnabled(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.Enabled"));
+		greenManagerConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.ConfigId"));
+		greenManagerConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.GreenManagerConfig.Status"));
 		domainConfigs.setGreenManagerConfig(greenManagerConfig);
 
 		HttpsOptionConfig httpsOptionConfig = new HttpsOptionConfig();
-		httpsOptionConfig.setHttp2(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.Http2"));
-		httpsOptionConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.ConfigId"));
-		httpsOptionConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.Status"));
+		httpsOptionConfig.setHttp2(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.Http2"));
+		httpsOptionConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.ConfigId"));
+		httpsOptionConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpsOptionConfig.Status"));
 		domainConfigs.setHttpsOptionConfig(httpsOptionConfig);
 
 		AliBusinessConfig aliBusinessConfig = new AliBusinessConfig();
-		aliBusinessConfig.setAliBusinessTable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.AliBusinessTable"));
-		aliBusinessConfig.setAliBusinessType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.AliBusinessType"));
-		aliBusinessConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.ConfigId"));
-		aliBusinessConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.Status"));
+		aliBusinessConfig.setAliBusinessTable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.AliBusinessTable"));
+		aliBusinessConfig.setAliBusinessType(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.AliBusinessType"));
+		aliBusinessConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.ConfigId"));
+		aliBusinessConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.AliBusinessConfig.Status"));
 		domainConfigs.setAliBusinessConfig(aliBusinessConfig);
 
 		IpAllowListConfig ipAllowListConfig = new IpAllowListConfig();
-		ipAllowListConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.ConfigId"));
-		ipAllowListConfig.setIpList(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.IpList"));
-		ipAllowListConfig.setIpAclXfwd(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.IpAclXfwd"));
-		ipAllowListConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.Status"));
+		ipAllowListConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.ConfigId"));
+		ipAllowListConfig.setIpList(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.IpList"));
+		ipAllowListConfig.setIpAclXfwd(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.IpAclXfwd"));
+		ipAllowListConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.IpAllowListConfig.Status"));
 		domainConfigs.setIpAllowListConfig(ipAllowListConfig);
 
 		List<CacheExpiredConfig> cacheExpiredConfigs = new ArrayList<CacheExpiredConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs.Length"); i++) {
 			CacheExpiredConfig cacheExpiredConfig = new CacheExpiredConfig();
-			cacheExpiredConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].ConfigId"));
-			cacheExpiredConfig.setCacheType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].CacheType"));
-			cacheExpiredConfig.setCacheContent(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].CacheContent"));
-			cacheExpiredConfig.setTTL(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].TTL"));
-			cacheExpiredConfig.setWeight(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].Weight"));
-			cacheExpiredConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].Status"));
+			cacheExpiredConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].ConfigId"));
+			cacheExpiredConfig.setCacheType(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].CacheType"));
+			cacheExpiredConfig.setCacheContent(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].CacheContent"));
+			cacheExpiredConfig.setTTL(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].TTL"));
+			cacheExpiredConfig.setWeight(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].Weight"));
+			cacheExpiredConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.CacheExpiredConfigs["+ i +"].Status"));
 
 			cacheExpiredConfigs.add(cacheExpiredConfig);
 		}
 		domainConfigs.setCacheExpiredConfigs(cacheExpiredConfigs);
 
 		List<HttpErrorPageConfig> httpErrorPageConfigs = new ArrayList<HttpErrorPageConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs.Length"); i++) {
 			HttpErrorPageConfig httpErrorPageConfig = new HttpErrorPageConfig();
-			httpErrorPageConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].ConfigId"));
-			httpErrorPageConfig.setErrorCode(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].ErrorCode"));
-			httpErrorPageConfig.setPageUrl(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].PageUrl"));
-			httpErrorPageConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].Status"));
+			httpErrorPageConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].ConfigId"));
+			httpErrorPageConfig.setErrorCode(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].ErrorCode"));
+			httpErrorPageConfig.setPageUrl(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].PageUrl"));
+			httpErrorPageConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpErrorPageConfigs["+ i +"].Status"));
 
 			httpErrorPageConfigs.add(httpErrorPageConfig);
 		}
 		domainConfigs.setHttpErrorPageConfigs(httpErrorPageConfigs);
 
 		List<HttpHeaderConfig> httpHeaderConfigs = new ArrayList<HttpHeaderConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs.Length"); i++) {
 			HttpHeaderConfig httpHeaderConfig = new HttpHeaderConfig();
-			httpHeaderConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].ConfigId"));
-			httpHeaderConfig.setHeaderKey(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].HeaderKey"));
-			httpHeaderConfig.setHeaderValue(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].HeaderValue"));
-			httpHeaderConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].Status"));
+			httpHeaderConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].ConfigId"));
+			httpHeaderConfig.setHeaderKey(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].HeaderKey"));
+			httpHeaderConfig.setHeaderValue(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].HeaderValue"));
+			httpHeaderConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.HttpHeaderConfigs["+ i +"].Status"));
 
 			httpHeaderConfigs.add(httpHeaderConfig);
 		}
 		domainConfigs.setHttpHeaderConfigs(httpHeaderConfigs);
 
 		List<DynamicConfig> dynamicConfigs = new ArrayList<DynamicConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs.Length"); i++) {
 			DynamicConfig dynamicConfig = new DynamicConfig();
-			dynamicConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].ConfigId"));
-			dynamicConfig.setEnable(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].Enable"));
-			dynamicConfig.setDynamicOrigin(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].DynamicOrigin"));
-			dynamicConfig.setStaticType(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticType"));
-			dynamicConfig.setStaticUri(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticUri"));
-			dynamicConfig.setStaticPath(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticPath"));
-			dynamicConfig.setDynamicCacheControl(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].DynamicCacheControl"));
-			dynamicConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].Status"));
+			dynamicConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].ConfigId"));
+			dynamicConfig.setEnable(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].Enable"));
+			dynamicConfig.setDynamicOrigin(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].DynamicOrigin"));
+			dynamicConfig.setStaticType(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticType"));
+			dynamicConfig.setStaticUri(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticUri"));
+			dynamicConfig.setStaticPath(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].StaticPath"));
+			dynamicConfig.setDynamicCacheControl(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].DynamicCacheControl"));
+			dynamicConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.DynamicConfigs["+ i +"].Status"));
 
 			dynamicConfigs.add(dynamicConfig);
 		}
 		domainConfigs.setDynamicConfigs(dynamicConfigs);
 
 		List<ReqHeaderConfig> reqHeaderConfigs = new ArrayList<ReqHeaderConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs.Length"); i++) {
 			ReqHeaderConfig reqHeaderConfig = new ReqHeaderConfig();
-			reqHeaderConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].ConfigId"));
-			reqHeaderConfig.setKey(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].Key"));
-			reqHeaderConfig.setValue(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].Value"));
-			reqHeaderConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].Status"));
+			reqHeaderConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].ConfigId"));
+			reqHeaderConfig.setKey(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].Key"));
+			reqHeaderConfig.setValue(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].Value"));
+			reqHeaderConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.ReqHeaderConfigs["+ i +"].Status"));
 
 			reqHeaderConfigs.add(reqHeaderConfig);
 		}
 		domainConfigs.setReqHeaderConfigs(reqHeaderConfigs);
 
 		List<SetVarsConfig> setVarsConfigs = new ArrayList<SetVarsConfig>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs.Length"); i++) {
 			SetVarsConfig setVarsConfig = new SetVarsConfig();
-			setVarsConfig.setConfigId(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].ConfigId"));
-			setVarsConfig.setVarName(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].VarName"));
-			setVarsConfig.setVarValue(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].VarValue"));
-			setVarsConfig.setStatus(context.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].Status"));
+			setVarsConfig.setConfigId(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].ConfigId"));
+			setVarsConfig.setVarName(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].VarName"));
+			setVarsConfig.setVarValue(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].VarValue"));
+			setVarsConfig.setStatus(_ctx.stringValue("DescribeDomainConfigsResponse.DomainConfigs.SetVarsConfigs["+ i +"].Status"));
 
 			setVarsConfigs.add(setVarsConfig);
 		}

@@ -35,8 +35,6 @@ public class DescribeTopDomainsByFlowRequest extends RpcAcsRequest<DescribeTopDo
 
 	private Long limit;
 
-	private String product;
-
 	private String endTime;
 
 	private Long ownerId;
@@ -60,36 +58,6 @@ public class DescribeTopDomainsByFlowRequest extends RpcAcsRequest<DescribeTopDo
 		this.limit = limit;
 		if(limit != null){
 			putQueryParameter("Limit", limit.toString());
-		}
-	}
-
-	public String getBizProduct() {
-		return this.product;
-	}
-
-	public void setBizProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizProduct instead of this.
-	 */
-	@Deprecated
-	public String getProduct() {
-		return this.product;
-	}
-
-	/**
-	 * @deprecated use setBizProduct instead of this.
-	 */
-	@Deprecated
-	public void setProduct(String product) {
-		this.product = product;
-		if(product != null){
-			putQueryParameter("Product", product);
 		}
 	}
 

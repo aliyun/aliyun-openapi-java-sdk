@@ -15,6 +15,7 @@
 package com.aliyuncs.cdn.model.v20141111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
@@ -23,63 +24,24 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest<DescribeRangeDataByLocateAndIspServiceResponse> {
 	
 	public DescribeRangeDataByLocateAndIspServiceRequest() {
-		super("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService");
+		super("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String ispNames;
-
-	private String securityToken;
 
 	private String domainNames;
 
 	private String locationNames;
 
-	private String endTime;
-
 	private String startTime;
 
+	private String ispNames;
+
+	private String endTime;
+
 	private Long ownerId;
-
-	public String getIspNames() {
-		return this.ispNames;
-	}
-
-	public void setIspNames(String ispNames) {
-		this.ispNames = ispNames;
-		if(ispNames != null){
-			putQueryParameter("IspNames", ispNames);
-		}
-	}
-
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
 
 	public String getDomainNames() {
 		return this.domainNames;
@@ -103,6 +65,28 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 		}
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIspNames() {
+		return this.ispNames;
+	}
+
+	public void setIspNames(String ispNames) {
+		this.ispNames = ispNames;
+		if(ispNames != null){
+			putQueryParameter("IspNames", ispNames);
+		}
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -111,17 +95,6 @@ public class DescribeRangeDataByLocateAndIspServiceRequest extends RpcAcsRequest
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("startTime", startTime);
 		}
 	}
 

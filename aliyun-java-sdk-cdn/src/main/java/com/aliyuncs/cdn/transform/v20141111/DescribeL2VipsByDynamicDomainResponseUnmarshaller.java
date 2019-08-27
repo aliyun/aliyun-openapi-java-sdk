@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeL2VipsByDynamicDomainResponseUnmarshaller {
 
-	public static DescribeL2VipsByDynamicDomainResponse unmarshall(DescribeL2VipsByDynamicDomainResponse describeL2VipsByDynamicDomainResponse, UnmarshallerContext context) {
+	public static DescribeL2VipsByDynamicDomainResponse unmarshall(DescribeL2VipsByDynamicDomainResponse describeL2VipsByDynamicDomainResponse, UnmarshallerContext _ctx) {
 		
-		describeL2VipsByDynamicDomainResponse.setRequestId(context.stringValue("DescribeL2VipsByDynamicDomainResponse.RequestId"));
-		describeL2VipsByDynamicDomainResponse.setDomainName(context.stringValue("DescribeL2VipsByDynamicDomainResponse.DomainName"));
+		describeL2VipsByDynamicDomainResponse.setRequestId(_ctx.stringValue("DescribeL2VipsByDynamicDomainResponse.RequestId"));
+		describeL2VipsByDynamicDomainResponse.setDomainName(_ctx.stringValue("DescribeL2VipsByDynamicDomainResponse.DomainName"));
 
 		List<String> vips = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeL2VipsByDynamicDomainResponse.Vips.Length"); i++) {
-			vips.add(context.stringValue("DescribeL2VipsByDynamicDomainResponse.Vips["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeL2VipsByDynamicDomainResponse.Vips.Length"); i++) {
+			vips.add(_ctx.stringValue("DescribeL2VipsByDynamicDomainResponse.Vips["+ i +"]"));
 		}
 		describeL2VipsByDynamicDomainResponse.setVips(vips);
 	 

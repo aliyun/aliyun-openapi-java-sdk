@@ -15,18 +15,27 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cdn.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeUserCdnStatusRequest extends RpcAcsRequest<DescribeUserCdnStatusResponse> {
+public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserVipsByDomainResponse> {
 	
-	public DescribeUserCdnStatusRequest() {
-		super("Cdn", "2018-05-10", "DescribeUserCdnStatus");
+	public DescribeUserVipsByDomainRequest() {
+		super("Cdn", "2018-05-10", "DescribeUserVipsByDomain", "cdn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String securityToken;
+
+	private String domainName;
+
+	private String available;
 
 	private Long ownerId;
 
@@ -60,6 +69,28 @@ public class DescribeUserCdnStatusRequest extends RpcAcsRequest<DescribeUserCdnS
 		}
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getAvailable() {
+		return this.available;
+	}
+
+	public void setAvailable(String available) {
+		this.available = available;
+		if(available != null){
+			putQueryParameter("Available", available);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -72,8 +103,8 @@ public class DescribeUserCdnStatusRequest extends RpcAcsRequest<DescribeUserCdnS
 	}
 
 	@Override
-	public Class<DescribeUserCdnStatusResponse> getResponseClass() {
-		return DescribeUserCdnStatusResponse.class;
+	public Class<DescribeUserVipsByDomainResponse> getResponseClass() {
+		return DescribeUserVipsByDomainResponse.class;
 	}
 
 }

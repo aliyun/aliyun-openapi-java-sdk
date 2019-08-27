@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetUserGreenManagerConfigResponseUnmarshaller {
 
-	public static SetUserGreenManagerConfigResponse unmarshall(SetUserGreenManagerConfigResponse setUserGreenManagerConfigResponse, UnmarshallerContext context) {
+	public static SetUserGreenManagerConfigResponse unmarshall(SetUserGreenManagerConfigResponse setUserGreenManagerConfigResponse, UnmarshallerContext _ctx) {
 		
-		setUserGreenManagerConfigResponse.setRequestId(context.stringValue("SetUserGreenManagerConfigResponse.RequestId"));
+		setUserGreenManagerConfigResponse.setRequestId(_ctx.stringValue("SetUserGreenManagerConfigResponse.RequestId"));
 	 
 	 	return setUserGreenManagerConfigResponse;
 	}

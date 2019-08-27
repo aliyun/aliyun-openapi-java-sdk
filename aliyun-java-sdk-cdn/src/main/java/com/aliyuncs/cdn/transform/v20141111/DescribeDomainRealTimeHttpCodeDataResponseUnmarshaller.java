@@ -25,25 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainRealTimeHttpCodeDataResponseUnmarshaller {
 
-	public static DescribeDomainRealTimeHttpCodeDataResponse unmarshall(DescribeDomainRealTimeHttpCodeDataResponse describeDomainRealTimeHttpCodeDataResponse, UnmarshallerContext context) {
+	public static DescribeDomainRealTimeHttpCodeDataResponse unmarshall(DescribeDomainRealTimeHttpCodeDataResponse describeDomainRealTimeHttpCodeDataResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainRealTimeHttpCodeDataResponse.setRequestId(context.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RequestId"));
-		describeDomainRealTimeHttpCodeDataResponse.setDomainName(context.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.DomainName"));
-		describeDomainRealTimeHttpCodeDataResponse.setStartTime(context.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.StartTime"));
-		describeDomainRealTimeHttpCodeDataResponse.setEndTime(context.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.EndTime"));
-		describeDomainRealTimeHttpCodeDataResponse.setDataInterval(context.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.DataInterval"));
+		describeDomainRealTimeHttpCodeDataResponse.setRequestId(_ctx.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RequestId"));
+		describeDomainRealTimeHttpCodeDataResponse.setDomainName(_ctx.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.DomainName"));
+		describeDomainRealTimeHttpCodeDataResponse.setStartTime(_ctx.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.StartTime"));
+		describeDomainRealTimeHttpCodeDataResponse.setEndTime(_ctx.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.EndTime"));
+		describeDomainRealTimeHttpCodeDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.DataInterval"));
 
 		List<UsageData> realTimeHttpCodeData = new ArrayList<UsageData>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTimeStamp(context.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].TimeStamp"));
+			usageData.setTimeStamp(_ctx.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].TimeStamp"));
 
 			List<RealTimeCodeProportionData> value = new ArrayList<RealTimeCodeProportionData>();
-			for (int j = 0; j < context.lengthValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value.Length"); j++) {
 				RealTimeCodeProportionData realTimeCodeProportionData = new RealTimeCodeProportionData();
-				realTimeCodeProportionData.setCode(context.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Code"));
-				realTimeCodeProportionData.setProportion(context.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Proportion"));
-				realTimeCodeProportionData.setCount(context.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Count"));
+				realTimeCodeProportionData.setCode(_ctx.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Code"));
+				realTimeCodeProportionData.setProportion(_ctx.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Proportion"));
+				realTimeCodeProportionData.setCount(_ctx.stringValue("DescribeDomainRealTimeHttpCodeDataResponse.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Count"));
 
 				value.add(realTimeCodeProportionData);
 			}
