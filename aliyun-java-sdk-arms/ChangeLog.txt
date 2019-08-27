@@ -1,3 +1,6 @@
+2019-08-27 Version: 2.5.3
+- Fixed endpoint data init.
+
 2019-08-22 Version: 2.5.2
 - Api release 2019-08-08 public sdk 2-5-2 sdk release 20190822 shichun-fsc.
 
