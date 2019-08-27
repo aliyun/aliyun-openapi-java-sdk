@@ -19,17 +19,17 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("ap-south-1", "foas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("cn-hongkong", "foas.aliyuncs.com");
-            endpointMap.put("eu-west-1", "foas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("ap-southeast-2", "foas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("eu-central-1", "foas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("cn-huhehaote", "foas.aliyuncs.com");
-            endpointMap.put("ap-southeast-5", "foas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("us-east-1", "foas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("me-east-1", "foas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("us-west-1", "foas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("cn-chengdu", "foas.aliyuncs.com");
+            put("ap-south-1", "foas.ap-northeast-1.aliyuncs.com");
+            put("cn-hongkong", "foas.aliyuncs.com");
+            put("eu-west-1", "foas.ap-northeast-1.aliyuncs.com");
+            put("ap-southeast-2", "foas.ap-northeast-1.aliyuncs.com");
+            put("eu-central-1", "foas.ap-northeast-1.aliyuncs.com");
+            put("cn-huhehaote", "foas.aliyuncs.com");
+            put("ap-southeast-5", "foas.ap-northeast-1.aliyuncs.com");
+            put("us-east-1", "foas.ap-northeast-1.aliyuncs.com");
+            put("me-east-1", "foas.ap-northeast-1.aliyuncs.com");
+            put("us-west-1", "foas.ap-northeast-1.aliyuncs.com");
+            put("cn-chengdu", "foas.aliyuncs.com");
         }
     };
 
