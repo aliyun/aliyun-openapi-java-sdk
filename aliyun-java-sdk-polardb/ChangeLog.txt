@@ -1,3 +1,6 @@
+2019-08-27 Version: 1.6.2
+- Fixed endpoint data init.
+
 2019-08-21 Version: 1.6.1
 - Return backup job id when create backup.
 - Return backup set size when describe backups.
