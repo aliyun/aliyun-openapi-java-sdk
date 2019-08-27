@@ -1,3 +1,6 @@
+2019-08-27 Version: 1.0.5
+- Fixed endpoint data init.
+
 2019-08-23 Version: 1.0.4
 - API DescribeRegion Support Filter by Region.
 - Support UpgradeDBInstance.
