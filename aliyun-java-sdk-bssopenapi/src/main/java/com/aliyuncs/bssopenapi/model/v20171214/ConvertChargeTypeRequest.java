@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeResponse> {
 	
 	public ConvertChargeTypeRequest() {
-		super("BssOpenApi", "2017-12-14", "ConvertChargeType");
+		super("BssOpenApi", "2017-12-14", "ConvertChargeType", "bssopenapi");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

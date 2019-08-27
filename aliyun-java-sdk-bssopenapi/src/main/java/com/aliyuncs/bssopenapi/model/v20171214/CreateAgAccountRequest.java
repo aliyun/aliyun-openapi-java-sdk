@@ -25,7 +25,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountResponse> {
 	
 	public CreateAgAccountRequest() {
-		super("BssOpenApi", "2017-12-14", "CreateAgAccount");
+		super("BssOpenApi", "2017-12-14", "CreateAgAccount", "bssopenapi");
 		setProtocol(ProtocolType.HTTPS);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

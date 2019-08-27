@@ -24,7 +24,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryMonthlyInstanceConsumptionRequest extends RpcAcsRequest<QueryMonthlyInstanceConsumptionResponse> {
 	
 	public QueryMonthlyInstanceConsumptionRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryMonthlyInstanceConsumption");
+		super("BssOpenApi", "2017-12-14", "QueryMonthlyInstanceConsumption", "bssopenapi");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

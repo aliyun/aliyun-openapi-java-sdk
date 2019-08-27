@@ -1,3 +1,6 @@
+2019-08-27 Version: 1.4.1
+- Fixed endpoint data init.
+
 2019-08-26 Version: 1.4.0
 - QueryInstanceBillResponse change ownerId type from Long to String.
 - QueryInstanceBillResponse change usage type from float to String.

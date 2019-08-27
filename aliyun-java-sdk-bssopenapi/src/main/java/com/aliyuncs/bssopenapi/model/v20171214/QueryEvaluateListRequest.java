@@ -25,7 +25,7 @@ import com.aliyuncs.bssopenapi.Endpoint;
 public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListResponse> {
 	
 	public QueryEvaluateListRequest() {
-		super("BssOpenApi", "2017-12-14", "QueryEvaluateList");
+		super("BssOpenApi", "2017-12-14", "QueryEvaluateList", "bssopenapi");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
