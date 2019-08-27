@@ -33,7 +33,7 @@ public class GetConsumerListResponse extends AcsResponse {
 
 	private String message;
 
-	private List<ConsumerListItem> consumerList;
+	private List<ConsumerVO> consumerList;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -67,15 +67,15 @@ public class GetConsumerListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<ConsumerListItem> getConsumerList() {
+	public List<ConsumerVO> getConsumerList() {
 		return this.consumerList;
 	}
 
-	public void setConsumerList(List<ConsumerListItem> consumerList) {
+	public void setConsumerList(List<ConsumerVO> consumerList) {
 		this.consumerList = consumerList;
 	}
 
-	public static class ConsumerListItem {
+	public static class ConsumerVO {
 
 		private String regionId;
 

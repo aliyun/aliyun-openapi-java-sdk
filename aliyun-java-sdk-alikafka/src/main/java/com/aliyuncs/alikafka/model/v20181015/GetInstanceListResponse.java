@@ -33,7 +33,7 @@ public class GetInstanceListResponse extends AcsResponse {
 
 	private String message;
 
-	private List<InstanceListItem> instanceList;
+	private List<InstanceVO> instanceList;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -67,15 +67,15 @@ public class GetInstanceListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<InstanceListItem> getInstanceList() {
+	public List<InstanceVO> getInstanceList() {
 		return this.instanceList;
 	}
 
-	public void setInstanceList(List<InstanceListItem> instanceList) {
+	public void setInstanceList(List<InstanceVO> instanceList) {
 		this.instanceList = instanceList;
 	}
 
-	public static class InstanceListItem {
+	public static class InstanceVO {
 
 		private String instanceId;
 
@@ -98,6 +98,8 @@ public class GetInstanceListResponse extends AcsResponse {
 		private String sslEndPoint;
 
 		private String name;
+
+		private List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -201,6 +203,27 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public List<UpgradeServiceDetailInfoVO> getUpgradeServiceDetailInfo() {
+			return this.upgradeServiceDetailInfo;
+		}
+
+		public void setUpgradeServiceDetailInfo(List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo) {
+			this.upgradeServiceDetailInfo = upgradeServiceDetailInfo;
+		}
+
+		public static class UpgradeServiceDetailInfoVO {
+
+			private String current2OpenSourceVersion;
+
+			public String getCurrent2OpenSourceVersion() {
+				return this.current2OpenSourceVersion;
+			}
+
+			public void setCurrent2OpenSourceVersion(String current2OpenSourceVersion) {
+				this.current2OpenSourceVersion = current2OpenSourceVersion;
+			}
 		}
 	}
 

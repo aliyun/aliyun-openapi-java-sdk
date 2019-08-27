@@ -19,15 +19,15 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("eu-west-1", "alikafka.ap-south-1.aliyuncs.com");
-            endpointMap.put("ap-southeast-2", "alikafka.ap-south-1.aliyuncs.com");
-            endpointMap.put("ap-southeast-3", "alikafka.ap-south-1.aliyuncs.com");
-            endpointMap.put("eu-central-1", "alikafka.ap-south-1.aliyuncs.com");
-            endpointMap.put("ap-northeast-1", "alikafka.ap-south-1.aliyuncs.com");
-            endpointMap.put("us-east-1", "alikafka.ap-south-1.aliyuncs.com");
-            endpointMap.put("me-east-1", "alikafka.ap-south-1.aliyuncs.com");
-            endpointMap.put("us-west-1", "alikafka.ap-south-1.aliyuncs.com");
-            endpointMap.put("cn-chengdu", "alikafka.aliyuncs.com");
+            put("eu-west-1", "alikafka.ap-south-1.aliyuncs.com");
+            put("ap-southeast-2", "alikafka.ap-south-1.aliyuncs.com");
+            put("ap-southeast-3", "alikafka.ap-south-1.aliyuncs.com");
+            put("eu-central-1", "alikafka.ap-south-1.aliyuncs.com");
+            put("ap-northeast-1", "alikafka.ap-south-1.aliyuncs.com");
+            put("us-east-1", "alikafka.ap-south-1.aliyuncs.com");
+            put("me-east-1", "alikafka.ap-south-1.aliyuncs.com");
+            put("us-west-1", "alikafka.ap-south-1.aliyuncs.com");
+            put("cn-chengdu", "alikafka.aliyuncs.com");
         }
     };
 

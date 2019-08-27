@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20181015.GetTopicListResponse;
-import com.aliyuncs.alikafka.model.v20181015.GetTopicListResponse.TopicListItem;
+import com.aliyuncs.alikafka.model.v20181015.GetTopicListResponse.TopicVO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,21 +34,21 @@ public class GetTopicListResponseUnmarshaller {
 		getTopicListResponse.setPageSize(_ctx.integerValue("GetTopicListResponse.PageSize"));
 		getTopicListResponse.setCurrentPage(_ctx.integerValue("GetTopicListResponse.CurrentPage"));
 
-		List<TopicListItem> topicList = new ArrayList<TopicListItem>();
+		List<TopicVO> topicList = new ArrayList<TopicVO>();
 		for (int i = 0; i < _ctx.lengthValue("GetTopicListResponse.TopicList.Length"); i++) {
-			TopicListItem topicListItem = new TopicListItem();
-			topicListItem.setTopic(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Topic"));
-			topicListItem.setCreateTime(_ctx.longValue("GetTopicListResponse.TopicList["+ i +"].CreateTime"));
-			topicListItem.setRemark(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Remark"));
-			topicListItem.setStatus(_ctx.integerValue("GetTopicListResponse.TopicList["+ i +"].Status"));
-			topicListItem.setInstanceId(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].InstanceId"));
-			topicListItem.setRegionId(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].RegionId"));
-			topicListItem.setStatusName(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].StatusName"));
-			topicListItem.setCompactTopic(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].CompactTopic"));
-			topicListItem.setLocalTopic(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].LocalTopic"));
-			topicListItem.setPartitionNum(_ctx.integerValue("GetTopicListResponse.TopicList["+ i +"].PartitionNum"));
+			TopicVO topicVO = new TopicVO();
+			topicVO.setTopic(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Topic"));
+			topicVO.setCreateTime(_ctx.longValue("GetTopicListResponse.TopicList["+ i +"].CreateTime"));
+			topicVO.setRemark(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].Remark"));
+			topicVO.setStatus(_ctx.integerValue("GetTopicListResponse.TopicList["+ i +"].Status"));
+			topicVO.setInstanceId(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].InstanceId"));
+			topicVO.setRegionId(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].RegionId"));
+			topicVO.setStatusName(_ctx.stringValue("GetTopicListResponse.TopicList["+ i +"].StatusName"));
+			topicVO.setCompactTopic(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].CompactTopic"));
+			topicVO.setLocalTopic(_ctx.booleanValue("GetTopicListResponse.TopicList["+ i +"].LocalTopic"));
+			topicVO.setPartitionNum(_ctx.integerValue("GetTopicListResponse.TopicList["+ i +"].PartitionNum"));
 
-			topicList.add(topicListItem);
+			topicList.add(topicVO);
 		}
 		getTopicListResponse.setTopicList(topicList);
 	 

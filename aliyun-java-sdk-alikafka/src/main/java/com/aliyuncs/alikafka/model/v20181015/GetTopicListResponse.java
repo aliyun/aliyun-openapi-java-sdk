@@ -39,7 +39,7 @@ public class GetTopicListResponse extends AcsResponse {
 
 	private Integer currentPage;
 
-	private List<TopicListItem> topicList;
+	private List<TopicVO> topicList;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -97,15 +97,15 @@ public class GetTopicListResponse extends AcsResponse {
 		this.currentPage = currentPage;
 	}
 
-	public List<TopicListItem> getTopicList() {
+	public List<TopicVO> getTopicList() {
 		return this.topicList;
 	}
 
-	public void setTopicList(List<TopicListItem> topicList) {
+	public void setTopicList(List<TopicVO> topicList) {
 		this.topicList = topicList;
 	}
 
-	public static class TopicListItem {
+	public static class TopicVO {
 
 		private String topic;
 

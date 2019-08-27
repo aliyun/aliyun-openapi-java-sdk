@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.alikafka.model.v20181015.GetConsumerListResponse;
-import com.aliyuncs.alikafka.model.v20181015.GetConsumerListResponse.ConsumerListItem;
+import com.aliyuncs.alikafka.model.v20181015.GetConsumerListResponse.ConsumerVO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,14 +31,14 @@ public class GetConsumerListResponseUnmarshaller {
 		getConsumerListResponse.setCode(_ctx.integerValue("GetConsumerListResponse.Code"));
 		getConsumerListResponse.setMessage(_ctx.stringValue("GetConsumerListResponse.Message"));
 
-		List<ConsumerListItem> consumerList = new ArrayList<ConsumerListItem>();
+		List<ConsumerVO> consumerList = new ArrayList<ConsumerVO>();
 		for (int i = 0; i < _ctx.lengthValue("GetConsumerListResponse.ConsumerList.Length"); i++) {
-			ConsumerListItem consumerListItem = new ConsumerListItem();
-			consumerListItem.setRegionId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].RegionId"));
-			consumerListItem.setInstanceId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].InstanceId"));
-			consumerListItem.setConsumerId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].ConsumerId"));
+			ConsumerVO consumerVO = new ConsumerVO();
+			consumerVO.setRegionId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].RegionId"));
+			consumerVO.setInstanceId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].InstanceId"));
+			consumerVO.setConsumerId(_ctx.stringValue("GetConsumerListResponse.ConsumerList["+ i +"].ConsumerId"));
 
-			consumerList.add(consumerListItem);
+			consumerList.add(consumerVO);
 		}
 		getConsumerListResponse.setConsumerList(consumerList);
 	 
