@@ -29,8 +29,8 @@ public class ListServiceGroupsRequest extends RoaAcsRequest<ListServiceGroupsRes
 		setUriPattern("/pop/v5/service/serviceGroups");
 		setMethod(MethodType.GET);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 

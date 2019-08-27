@@ -29,8 +29,8 @@ public class QueryMigrateRegionListRequest extends RoaAcsRequest<QueryMigrateReg
 		setUriPattern("/pop/v5/resource/migrate_region_select");
 		setMethod(MethodType.GET);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 

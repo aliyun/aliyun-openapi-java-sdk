@@ -29,8 +29,8 @@ public class ListEcsNotInClusterRequest extends RoaAcsRequest<ListEcsNotInCluste
 		setUriPattern("/pop/v5/resource/ecs_not_in_cluster");
 		setMethod(MethodType.GET);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 

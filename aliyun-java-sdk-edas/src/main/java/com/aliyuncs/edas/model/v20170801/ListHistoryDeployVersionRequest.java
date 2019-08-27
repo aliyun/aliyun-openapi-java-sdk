@@ -29,8 +29,8 @@ public class ListHistoryDeployVersionRequest extends RoaAcsRequest<ListHistoryDe
 		setUriPattern("/pop/v5/app/deploy_history_version_list");
 		setMethod(MethodType.GET);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
