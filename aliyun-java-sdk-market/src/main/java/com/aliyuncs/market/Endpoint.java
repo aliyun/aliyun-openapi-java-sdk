@@ -19,25 +19,25 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("cn-shenzhen", "market.aliyuncs.com");
-            endpointMap.put("cn-beijing", "market.aliyuncs.com");
-            endpointMap.put("ap-south-1", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("eu-west-1", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("ap-northeast-1", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("me-east-1", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("cn-chengdu", "market.aliyuncs.com");
-            endpointMap.put("cn-qingdao", "market.aliyuncs.com");
-            endpointMap.put("cn-shanghai", "market.aliyuncs.com");
-            endpointMap.put("cn-hongkong", "market.aliyuncs.com");
-            endpointMap.put("ap-southeast-2", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("ap-southeast-3", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("eu-central-1", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("cn-huhehaote", "market.aliyuncs.com");
-            endpointMap.put("ap-southeast-5", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("us-east-1", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("cn-zhangjiakou", "market.aliyuncs.com");
-            endpointMap.put("us-west-1", "market.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("cn-hangzhou", "market.aliyuncs.com");
+            put("cn-shenzhen", "market.aliyuncs.com");
+            put("cn-beijing", "market.aliyuncs.com");
+            put("ap-south-1", "market.ap-southeast-1.aliyuncs.com");
+            put("eu-west-1", "market.ap-southeast-1.aliyuncs.com");
+            put("ap-northeast-1", "market.ap-southeast-1.aliyuncs.com");
+            put("me-east-1", "market.ap-southeast-1.aliyuncs.com");
+            put("cn-chengdu", "market.aliyuncs.com");
+            put("cn-qingdao", "market.aliyuncs.com");
+            put("cn-shanghai", "market.aliyuncs.com");
+            put("cn-hongkong", "market.aliyuncs.com");
+            put("ap-southeast-2", "market.ap-southeast-1.aliyuncs.com");
+            put("ap-southeast-3", "market.ap-southeast-1.aliyuncs.com");
+            put("eu-central-1", "market.ap-southeast-1.aliyuncs.com");
+            put("cn-huhehaote", "market.aliyuncs.com");
+            put("ap-southeast-5", "market.ap-southeast-1.aliyuncs.com");
+            put("us-east-1", "market.ap-southeast-1.aliyuncs.com");
+            put("cn-zhangjiakou", "market.aliyuncs.com");
+            put("us-west-1", "market.ap-southeast-1.aliyuncs.com");
+            put("cn-hangzhou", "market.aliyuncs.com");
         }
     };
 
