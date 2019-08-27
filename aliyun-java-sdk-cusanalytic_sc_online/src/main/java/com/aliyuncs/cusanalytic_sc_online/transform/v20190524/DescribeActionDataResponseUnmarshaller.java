@@ -20,8 +20,8 @@ import java.util.List;
 import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeActionDataResponse;
 import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeActionDataResponse.ActionsMsgItem;
 import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeActionDataResponse.ActionsMsgItem.ActionInfosItem;
-import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeActionDataResponse.ActionsMsgItem.ActionInfosItem.Point;
-import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeActionDataResponse.ActionsMsgItem.ActionInfosItem.SenseRectEntityItem;
+import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeActionDataResponse.ActionsMsgItem.ActionInfosItem.FaceImgRect;
+import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeActionDataResponse.ActionsMsgItem.ActionInfosItem.MapImagePoint;
 import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeActionDataResponse.ActionsMsgItem.AttributesMsgItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -34,6 +34,8 @@ public class DescribeActionDataResponseUnmarshaller {
 		describeActionDataResponse.setTsStart(_ctx.longValue("DescribeActionDataResponse.TsStart"));
 		describeActionDataResponse.setPageLimit(_ctx.integerValue("DescribeActionDataResponse.PageLimit"));
 		describeActionDataResponse.setPageCount(_ctx.integerValue("DescribeActionDataResponse.PageCount"));
+		describeActionDataResponse.setIsSuccess(_ctx.booleanValue("DescribeActionDataResponse.IsSuccess"));
+		describeActionDataResponse.setErrorMsg(_ctx.stringValue("DescribeActionDataResponse.ErrorMsg"));
 		describeActionDataResponse.setStoreId(_ctx.stringValue("DescribeActionDataResponse.StoreId"));
 		describeActionDataResponse.setTsEnd(_ctx.longValue("DescribeActionDataResponse.TsEnd"));
 
@@ -57,17 +59,17 @@ public class DescribeActionDataResponseUnmarshaller {
 			actionInfosItem.setRawId(_ctx.longValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.RawId"));
 			actionInfosItem.setMints(_ctx.longValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.Mints"));
 
-			Point point = new Point();
-			point.setX(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.Point.X"));
-			point.setY(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.Point.Y"));
-			actionInfosItem.setPoint(point);
+			MapImagePoint mapImagePoint = new MapImagePoint();
+			mapImagePoint.setX(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.MapImagePoint.X"));
+			mapImagePoint.setY(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.MapImagePoint.Y"));
+			actionInfosItem.setMapImagePoint(mapImagePoint);
 
-			SenseRectEntityItem senseRectEntityItem = new SenseRectEntityItem();
-			senseRectEntityItem.setBottom(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.SenseRectEntityItem.Bottom"));
-			senseRectEntityItem.setLeft(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.SenseRectEntityItem.Left"));
-			senseRectEntityItem.setTop(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.SenseRectEntityItem.Top"));
-			senseRectEntityItem.setRight(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.SenseRectEntityItem.Right"));
-			actionInfosItem.setSenseRectEntityItem(senseRectEntityItem);
+			FaceImgRect faceImgRect = new FaceImgRect();
+			faceImgRect.setBottom(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.FaceImgRect.Bottom"));
+			faceImgRect.setLeft(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.FaceImgRect.Left"));
+			faceImgRect.setTop(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.FaceImgRect.Top"));
+			faceImgRect.setRight(_ctx.floatValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].ActionInfosItem.FaceImgRect.Right"));
+			actionInfosItem.setFaceImgRect(faceImgRect);
 			actionsMsgItem.setActionInfosItem(actionInfosItem);
 
 			AttributesMsgItem attributesMsgItem = new AttributesMsgItem();
@@ -76,6 +78,7 @@ public class DescribeActionDataResponseUnmarshaller {
 			attributesMsgItem.setGender(_ctx.stringValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].AttributesMsgItem.Gender"));
 			attributesMsgItem.setIsClerk(_ctx.longValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].AttributesMsgItem.IsClerk"));
 			attributesMsgItem.setAgeNum(_ctx.integerValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].AttributesMsgItem.AgeNum"));
+			attributesMsgItem.setImgObjectKey(_ctx.stringValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].AttributesMsgItem.ImgObjectKey"));
 			attributesMsgItem.setImgType(_ctx.stringValue("DescribeActionDataResponse.ActionsMsgItems["+ i +"].AttributesMsgItem.ImgType"));
 			actionsMsgItem.setAttributesMsgItem(attributesMsgItem);
 

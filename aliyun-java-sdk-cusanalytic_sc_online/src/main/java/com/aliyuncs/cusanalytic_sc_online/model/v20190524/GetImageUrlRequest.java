@@ -21,19 +21,58 @@ import com.aliyuncs.cusanalytic_sc_online.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSupportStoreRequest extends RpcAcsRequest<GetSupportStoreResponse> {
+public class GetImageUrlRequest extends RpcAcsRequest<GetImageUrlResponse> {
 	
-	public GetSupportStoreRequest() {
-		super("cusanalytic_sc_online", "2019-05-24", "GetSupportStore");
+	public GetImageUrlRequest() {
+		super("cusanalytic_sc_online", "2019-05-24", "GetImageUrl");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	private String objectKeys;
+
+	private String originUrls;
+
+	private String storeId;
+
+	public String getObjectKeys() {
+		return this.objectKeys;
+	}
+
+	public void setObjectKeys(String objectKeys) {
+		this.objectKeys = objectKeys;
+		if(objectKeys != null){
+			putBodyParameter("ObjectKeys", objectKeys);
+		}
+	}
+
+	public String getOriginUrls() {
+		return this.originUrls;
+	}
+
+	public void setOriginUrls(String originUrls) {
+		this.originUrls = originUrls;
+		if(originUrls != null){
+			putBodyParameter("OriginUrls", originUrls);
+		}
+	}
+
+	public String getStoreId() {
+		return this.storeId;
+	}
+
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+		if(storeId != null){
+			putBodyParameter("StoreId", storeId);
+		}
+	}
+
 	@Override
-	public Class<GetSupportStoreResponse> getResponseClass() {
-		return GetSupportStoreResponse.class;
+	public Class<GetImageUrlResponse> getResponseClass() {
+		return GetImageUrlResponse.class;
 	}
 
 }

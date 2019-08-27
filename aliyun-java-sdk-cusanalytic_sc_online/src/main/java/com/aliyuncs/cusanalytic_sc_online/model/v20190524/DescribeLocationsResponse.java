@@ -171,6 +171,10 @@ public class DescribeLocationsResponse extends AcsResponse {
 
 			private List<Point> points;
 
+			private LeftTop leftTop;
+
+			private RightBottom rightBottom;
+
 			public List<Point> getPoints() {
 				return this.points;
 			}
@@ -179,7 +183,69 @@ public class DescribeLocationsResponse extends AcsResponse {
 				this.points = points;
 			}
 
+			public LeftTop getLeftTop() {
+				return this.leftTop;
+			}
+
+			public void setLeftTop(LeftTop leftTop) {
+				this.leftTop = leftTop;
+			}
+
+			public RightBottom getRightBottom() {
+				return this.rightBottom;
+			}
+
+			public void setRightBottom(RightBottom rightBottom) {
+				this.rightBottom = rightBottom;
+			}
+
 			public static class Point {
+
+				private Float x;
+
+				private Float y;
+
+				public Float getX() {
+					return this.x;
+				}
+
+				public void setX(Float x) {
+					this.x = x;
+				}
+
+				public Float getY() {
+					return this.y;
+				}
+
+				public void setY(Float y) {
+					this.y = y;
+				}
+			}
+
+			public static class LeftTop {
+
+				private Float x;
+
+				private Float y;
+
+				public Float getX() {
+					return this.x;
+				}
+
+				public void setX(Float x) {
+					this.x = x;
+				}
+
+				public Float getY() {
+					return this.y;
+				}
+
+				public void setY(Float y) {
+					this.y = y;
+				}
+			}
+
+			public static class RightBottom {
 
 				private Float x;
 

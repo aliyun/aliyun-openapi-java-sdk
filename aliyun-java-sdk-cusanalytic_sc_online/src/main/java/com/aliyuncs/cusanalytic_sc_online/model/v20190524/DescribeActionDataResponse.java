@@ -33,6 +33,10 @@ public class DescribeActionDataResponse extends AcsResponse {
 
 	private Integer pageCount;
 
+	private Boolean isSuccess;
+
+	private String errorMsg;
+
 	private String storeId;
 
 	private Long tsEnd;
@@ -69,6 +73,22 @@ public class DescribeActionDataResponse extends AcsResponse {
 
 	public void setPageCount(Integer pageCount) {
 		this.pageCount = pageCount;
+	}
+
+	public Boolean getIsSuccess() {
+		return this.isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+
+	public String getErrorMsg() {
+		return this.errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
 	}
 
 	public String getStoreId() {
@@ -219,9 +239,9 @@ public class DescribeActionDataResponse extends AcsResponse {
 
 			private Long mints;
 
-			private Point point;
+			private MapImagePoint mapImagePoint;
 
-			private SenseRectEntityItem senseRectEntityItem;
+			private FaceImgRect faceImgRect;
 
 			public Long getMaxts() {
 				return this.maxts;
@@ -263,23 +283,23 @@ public class DescribeActionDataResponse extends AcsResponse {
 				this.mints = mints;
 			}
 
-			public Point getPoint() {
-				return this.point;
+			public MapImagePoint getMapImagePoint() {
+				return this.mapImagePoint;
 			}
 
-			public void setPoint(Point point) {
-				this.point = point;
+			public void setMapImagePoint(MapImagePoint mapImagePoint) {
+				this.mapImagePoint = mapImagePoint;
 			}
 
-			public SenseRectEntityItem getSenseRectEntityItem() {
-				return this.senseRectEntityItem;
+			public FaceImgRect getFaceImgRect() {
+				return this.faceImgRect;
 			}
 
-			public void setSenseRectEntityItem(SenseRectEntityItem senseRectEntityItem) {
-				this.senseRectEntityItem = senseRectEntityItem;
+			public void setFaceImgRect(FaceImgRect faceImgRect) {
+				this.faceImgRect = faceImgRect;
 			}
 
-			public static class Point {
+			public static class MapImagePoint {
 
 				private Float x;
 
@@ -302,7 +322,7 @@ public class DescribeActionDataResponse extends AcsResponse {
 				}
 			}
 
-			public static class SenseRectEntityItem {
+			public static class FaceImgRect {
 
 				private Float bottom;
 
@@ -358,6 +378,8 @@ public class DescribeActionDataResponse extends AcsResponse {
 
 			private Integer ageNum;
 
+			private String imgObjectKey;
+
 			private String imgType;
 
 			public String getImgUrl() {
@@ -398,6 +420,14 @@ public class DescribeActionDataResponse extends AcsResponse {
 
 			public void setAgeNum(Integer ageNum) {
 				this.ageNum = ageNum;
+			}
+
+			public String getImgObjectKey() {
+				return this.imgObjectKey;
+			}
+
+			public void setImgObjectKey(String imgObjectKey) {
+				this.imgObjectKey = imgObjectKey;
 			}
 
 			public String getImgType() {

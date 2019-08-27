@@ -21,19 +21,32 @@ import com.aliyuncs.cusanalytic_sc_online.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSupportStoreRequest extends RpcAcsRequest<GetSupportStoreResponse> {
+public class GetActionCursorRequest extends RpcAcsRequest<GetActionCursorResponse> {
 	
-	public GetSupportStoreRequest() {
-		super("cusanalytic_sc_online", "2019-05-24", "GetSupportStore");
+	public GetActionCursorRequest() {
+		super("cusanalytic_sc_online", "2019-05-24", "GetActionCursor");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
+	private String storeId;
+
+	public String getStoreId() {
+		return this.storeId;
+	}
+
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+		if(storeId != null){
+			putBodyParameter("StoreId", storeId);
+		}
+	}
+
 	@Override
-	public Class<GetSupportStoreResponse> getResponseClass() {
-		return GetSupportStoreResponse.class;
+	public Class<GetActionCursorResponse> getResponseClass() {
+		return GetActionCursorResponse.class;
 	}
 
 }

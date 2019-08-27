@@ -20,7 +20,9 @@ import java.util.List;
 import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeLocationsResponse;
 import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeLocationsResponse.LocationMsgItem;
 import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeLocationsResponse.LocationMsgItem.RectRoi;
+import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeLocationsResponse.LocationMsgItem.RectRoi.LeftTop;
 import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeLocationsResponse.LocationMsgItem.RectRoi.Point;
+import com.aliyuncs.cusanalytic_sc_online.model.v20190524.DescribeLocationsResponse.LocationMsgItem.RectRoi.RightBottom;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +50,16 @@ public class DescribeLocationsResponseUnmarshaller {
 			List<RectRoi> rectRois = new ArrayList<RectRoi>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeLocationsResponse.LocationMsgItems["+ i +"].RectRois.Length"); j++) {
 				RectRoi rectRoi = new RectRoi();
+
+				LeftTop leftTop = new LeftTop();
+				leftTop.setX(_ctx.floatValue("DescribeLocationsResponse.LocationMsgItems["+ i +"].RectRois["+ j +"].LeftTop.X"));
+				leftTop.setY(_ctx.floatValue("DescribeLocationsResponse.LocationMsgItems["+ i +"].RectRois["+ j +"].LeftTop.Y"));
+				rectRoi.setLeftTop(leftTop);
+
+				RightBottom rightBottom = new RightBottom();
+				rightBottom.setX(_ctx.floatValue("DescribeLocationsResponse.LocationMsgItems["+ i +"].RectRois["+ j +"].RightBottom.X"));
+				rightBottom.setY(_ctx.floatValue("DescribeLocationsResponse.LocationMsgItems["+ i +"].RectRois["+ j +"].RightBottom.Y"));
+				rectRoi.setRightBottom(rightBottom);
 
 				List<Point> points = new ArrayList<Point>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeLocationsResponse.LocationMsgItems["+ i +"].RectRois["+ j +"].Points.Length"); k++) {
