@@ -19,14 +19,14 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("ap-south-1", "edas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("eu-west-1", "edas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("ap-southeast-3", "edas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("cn-huhehaote", "edas.aliyuncs.com");
-            endpointMap.put("ap-southeast-5", "edas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("me-east-1", "edas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("us-west-1", "edas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("cn-chengdu", "edas.aliyuncs.com");
+            put("ap-south-1", "edas.ap-northeast-1.aliyuncs.com");
+            put("eu-west-1", "edas.ap-northeast-1.aliyuncs.com");
+            put("ap-southeast-3", "edas.ap-northeast-1.aliyuncs.com");
+            put("cn-huhehaote", "edas.aliyuncs.com");
+            put("ap-southeast-5", "edas.ap-northeast-1.aliyuncs.com");
+            put("me-east-1", "edas.ap-northeast-1.aliyuncs.com");
+            put("us-west-1", "edas.ap-northeast-1.aliyuncs.com");
+            put("cn-chengdu", "edas.aliyuncs.com");
         }
     };
 
