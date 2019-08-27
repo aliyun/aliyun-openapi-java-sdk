@@ -1,3 +1,6 @@
+2019-08-27 Version: 7.0.1
+- Fixed endpoint data init.
+
 2019-08-16 Version: 7.0.0
 - Add LinkIoTEdge API.
 

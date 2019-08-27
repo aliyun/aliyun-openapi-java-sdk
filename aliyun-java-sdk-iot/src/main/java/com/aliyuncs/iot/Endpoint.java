@@ -19,19 +19,19 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("cn-shenzhen", "iot.aliyuncs.com");
-            endpointMap.put("cn-beijing", "iot.aliyuncs.com");
-            endpointMap.put("ap-south-1", "iot.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("eu-west-1", "iot.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("me-east-1", "iot.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("cn-chengdu", "iot.aliyuncs.com");
-            endpointMap.put("cn-qingdao", "iot.aliyuncs.com");
-            endpointMap.put("cn-hongkong", "iot.aliyuncs.com");
-            endpointMap.put("ap-southeast-2", "iot.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("ap-southeast-3", "iot.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("cn-huhehaote", "iot.aliyuncs.com");
-            endpointMap.put("ap-southeast-5", "iot.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("cn-zhangjiakou", "iot.aliyuncs.com");
+            put("cn-shenzhen", "iot.aliyuncs.com");
+            put("cn-beijing", "iot.aliyuncs.com");
+            put("ap-south-1", "iot.ap-northeast-1.aliyuncs.com");
+            put("eu-west-1", "iot.ap-northeast-1.aliyuncs.com");
+            put("me-east-1", "iot.ap-northeast-1.aliyuncs.com");
+            put("cn-chengdu", "iot.aliyuncs.com");
+            put("cn-qingdao", "iot.aliyuncs.com");
+            put("cn-hongkong", "iot.aliyuncs.com");
+            put("ap-southeast-2", "iot.ap-northeast-1.aliyuncs.com");
+            put("ap-southeast-3", "iot.ap-northeast-1.aliyuncs.com");
+            put("cn-huhehaote", "iot.aliyuncs.com");
+            put("ap-southeast-5", "iot.ap-northeast-1.aliyuncs.com");
+            put("cn-zhangjiakou", "iot.aliyuncs.com");
         }
     };
 
