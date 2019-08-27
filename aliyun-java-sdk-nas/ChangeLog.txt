@@ -1,3 +1,6 @@
+2019-08-27 Version: 3.6.1
+- Fixed endpoint data init.
+
 2019-08-21 Version: 3.6.0
 - Supported for CPFS new feature of client evict.
 

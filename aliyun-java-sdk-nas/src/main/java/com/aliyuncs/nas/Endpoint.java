@@ -19,8 +19,8 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("me-east-1", "nas.ap-northeast-1.aliyuncs.com");
-            endpointMap.put("cn-chengdu", "nas.aliyuncs.com");
+            put("me-east-1", "nas.ap-northeast-1.aliyuncs.com");
+            put("cn-chengdu", "nas.aliyuncs.com");
         }
     };
 
