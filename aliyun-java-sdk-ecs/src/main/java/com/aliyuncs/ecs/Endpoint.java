@@ -19,15 +19,15 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("cn-shenzhen", "ecs-cn-hangzhou.aliyuncs.com");
-            endpointMap.put("cn-qingdao", "ecs-cn-hangzhou.aliyuncs.com");
-            endpointMap.put("cn-beijing", "ecs-cn-hangzhou.aliyuncs.com");
-            endpointMap.put("cn-shanghai", "ecs-cn-hangzhou.aliyuncs.com");
-            endpointMap.put("cn-hongkong", "ecs-cn-hangzhou.aliyuncs.com");
-            endpointMap.put("ap-southeast-1", "ecs-cn-hangzhou.aliyuncs.com");
-            endpointMap.put("us-east-1", "ecs-cn-hangzhou.aliyuncs.com");
-            endpointMap.put("us-west-1", "ecs-cn-hangzhou.aliyuncs.com");
-            endpointMap.put("cn-hangzhou", "ecs-cn-hangzhou.aliyuncs.com");
+            put("cn-shenzhen", "ecs-cn-hangzhou.aliyuncs.com");
+            put("cn-qingdao", "ecs-cn-hangzhou.aliyuncs.com");
+            put("cn-beijing", "ecs-cn-hangzhou.aliyuncs.com");
+            put("cn-shanghai", "ecs-cn-hangzhou.aliyuncs.com");
+            put("cn-hongkong", "ecs-cn-hangzhou.aliyuncs.com");
+            put("ap-southeast-1", "ecs-cn-hangzhou.aliyuncs.com");
+            put("us-east-1", "ecs-cn-hangzhou.aliyuncs.com");
+            put("us-west-1", "ecs-cn-hangzhou.aliyuncs.com");
+            put("cn-hangzhou", "ecs-cn-hangzhou.aliyuncs.com");
         }
     };
 

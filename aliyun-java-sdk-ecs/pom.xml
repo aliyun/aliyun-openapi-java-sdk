@@ -4,16 +4,13 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-ecs</artifactId>
   <packaging>jar</packaging>
-  <version>4.17.1</version>
+  <version>4.17.2</version>
   <name>aliyun-java-sdk-ecs</name>
   <url>http://www.aliyun.com</url>
-  <description>Aliyun Open API SDK for Java&#xD;
-&#xD;
-Copyright (C) Alibaba Cloud Computing&#xD;
-All rights reserved.&#xD;
-&#xD;
-版权所有 （C）阿里云计算有限公司&#xD;
-&#xD;
+  <description>Aliyun Open API SDK for Java
+Copyright (C) Alibaba Cloud Computing
+All rights reserved.
+版权所有 （C）阿里云计算有限公司
 http://www.aliyun.com</description>
   <distributionManagement>
     <snapshotRepository>
@@ -73,8 +70,7 @@ http://www.aliyun.com</description>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <excludes>&#xD;
-					</excludes>
+          <excludes/>
         </configuration>
       </plugin>
       <plugin>

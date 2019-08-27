@@ -27,8 +27,8 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 	public CreateSnapshotRequest() {
 		super("Ecs", "2014-05-26", "CreateSnapshot", "ecs");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -42,21 +42,15 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 
 	private String description;
 
-	private String snapshotName;
-
-	private Long ownerId;
-
-	private String sourceSnapshotId;
-
-	private Boolean removeSourceSnapshot;
-
 	private String diskId;
+
+	private String snapshotName;
 
 	private Integer retentionDays;
 
 	private List<Tag> tags;
 
-	private String category;
+	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -113,50 +107,6 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		}
 	}
 
-	public String getSnapshotName() {
-		return this.snapshotName;
-	}
-
-	public void setSnapshotName(String snapshotName) {
-		this.snapshotName = snapshotName;
-		if(snapshotName != null){
-			putQueryParameter("SnapshotName", snapshotName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSourceSnapshotId() {
-		return this.sourceSnapshotId;
-	}
-
-	public void setSourceSnapshotId(String sourceSnapshotId) {
-		this.sourceSnapshotId = sourceSnapshotId;
-		if(sourceSnapshotId != null){
-			putQueryParameter("SourceSnapshotId", sourceSnapshotId);
-		}
-	}
-
-	public Boolean getRemoveSourceSnapshot() {
-		return this.removeSourceSnapshot;
-	}
-
-	public void setRemoveSourceSnapshot(Boolean removeSourceSnapshot) {
-		this.removeSourceSnapshot = removeSourceSnapshot;
-		if(removeSourceSnapshot != null){
-			putQueryParameter("RemoveSourceSnapshot", removeSourceSnapshot.toString());
-		}
-	}
-
 	public String getDiskId() {
 		return this.diskId;
 	}
@@ -165,6 +115,17 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		this.diskId = diskId;
 		if(diskId != null){
 			putQueryParameter("DiskId", diskId);
+		}
+	}
+
+	public String getSnapshotName() {
+		return this.snapshotName;
+	}
+
+	public void setSnapshotName(String snapshotName) {
+		this.snapshotName = snapshotName;
+		if(snapshotName != null){
+			putQueryParameter("SnapshotName", snapshotName);
 		}
 	}
 
@@ -193,14 +154,14 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		}	
 	}
 
-	public String getCategory() {
-		return this.category;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
-		if(category != null){
-			putQueryParameter("Category", category);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

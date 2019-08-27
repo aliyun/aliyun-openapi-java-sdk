@@ -27,8 +27,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	public RunInstancesRequest() {
 		super("Ecs", "2014-05-26", "RunInstances", "ecs");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -43,6 +43,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String securityEnhancementStrategy;
 
 	private String keyPairName;
+
+	private Integer minAmount;
 
 	private Float spotPriceLimit;
 
@@ -60,8 +62,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Integer autoRenewPeriod;
 
-	private Integer cpuOptionsCore;
-
 	private Integer period;
 
 	private Boolean dryRun;
@@ -69,8 +69,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String launchTemplateId;
 
 	private Integer ipv6AddressCount;
-
-	private String cpuOptionsNuma;
 
 	private Long ownerId;
 
@@ -110,8 +108,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String description;
 
-	private Integer cpuOptionsThreadsPerCore;
-
 	private String systemDiskCategory;
 
 	private String systemDiskPerformanceLevel;
@@ -147,8 +143,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private String creditSpecification;
 
 	private List<String> securityGroupIdss;
-
-	private Integer spotDuration;
 
 	private List<DataDisk> dataDisks;
 
@@ -223,6 +217,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public Integer getMinAmount() {
+		return this.minAmount;
+	}
+
+	public void setMinAmount(Integer minAmount) {
+		this.minAmount = minAmount;
+		if(minAmount != null){
+			putQueryParameter("MinAmount", minAmount.toString());
 		}
 	}
 
@@ -317,17 +322,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
-	public Integer getCpuOptionsCore() {
-		return this.cpuOptionsCore;
-	}
-
-	public void setCpuOptionsCore(Integer cpuOptionsCore) {
-		this.cpuOptionsCore = cpuOptionsCore;
-		if(cpuOptionsCore != null){
-			putQueryParameter("CpuOptions.Core", cpuOptionsCore.toString());
-		}
-	}
-
 	public Integer getPeriod() {
 		return this.period;
 	}
@@ -369,17 +363,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.ipv6AddressCount = ipv6AddressCount;
 		if(ipv6AddressCount != null){
 			putQueryParameter("Ipv6AddressCount", ipv6AddressCount.toString());
-		}
-	}
-
-	public String getCpuOptionsNuma() {
-		return this.cpuOptionsNuma;
-	}
-
-	public void setCpuOptionsNuma(String cpuOptionsNuma) {
-		this.cpuOptionsNuma = cpuOptionsNuma;
-		if(cpuOptionsNuma != null){
-			putQueryParameter("CpuOptions.Numa", cpuOptionsNuma);
 		}
 	}
 
@@ -594,17 +577,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
-	public Integer getCpuOptionsThreadsPerCore() {
-		return this.cpuOptionsThreadsPerCore;
-	}
-
-	public void setCpuOptionsThreadsPerCore(Integer cpuOptionsThreadsPerCore) {
-		this.cpuOptionsThreadsPerCore = cpuOptionsThreadsPerCore;
-		if(cpuOptionsThreadsPerCore != null){
-			putQueryParameter("CpuOptions.ThreadsPerCore", cpuOptionsThreadsPerCore.toString());
-		}
-	}
-
 	public String getSystemDiskCategory() {
 		return this.systemDiskCategory;
 	}
@@ -809,17 +781,6 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
 			}
 		}	
-	}
-
-	public Integer getSpotDuration() {
-		return this.spotDuration;
-	}
-
-	public void setSpotDuration(Integer spotDuration) {
-		this.spotDuration = spotDuration;
-		if(spotDuration != null){
-			putQueryParameter("SpotDuration", spotDuration.toString());
-		}
 	}
 
 	public List<DataDisk> getDataDisks() {

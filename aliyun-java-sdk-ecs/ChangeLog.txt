@@ -1,3 +1,6 @@
+2019-08-27 Version: 4.17.2
+- Fixed endpoint data init.
+
 2019-08-08 Version: 4.17.1
 - Add CreateStorageSet api to support storageSet.
 - Add DeleteStorageSet api to support storageSet.

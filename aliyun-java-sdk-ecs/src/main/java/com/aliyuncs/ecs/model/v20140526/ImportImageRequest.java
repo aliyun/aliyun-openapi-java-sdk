@@ -27,14 +27,16 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	public ImportImageRequest() {
 		super("Ecs", "2014-05-26", "ImportImage", "ecs");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private List<DiskDeviceMapping> diskDeviceMappings;
 
 	private Long resourceOwnerId;
+
+	private String licenseType;
 
 	private String resourceOwnerAccount;
 
@@ -78,6 +80,17 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getLicenseType() {
+		return this.licenseType;
+	}
+
+	public void setLicenseType(String licenseType) {
+		this.licenseType = licenseType;
+		if(licenseType != null){
+			putQueryParameter("LicenseType", licenseType);
 		}
 	}
 

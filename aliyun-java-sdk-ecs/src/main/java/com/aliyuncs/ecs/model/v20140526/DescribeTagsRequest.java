@@ -27,8 +27,8 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 	public DescribeTagsRequest() {
 		super("Ecs", "2014-05-26", "DescribeTags", "ecs");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
