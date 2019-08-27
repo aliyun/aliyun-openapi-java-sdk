@@ -19,12 +19,12 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("cn-shenzhen", "emr.aliyuncs.com");
-            endpointMap.put("cn-beijing", "emr.aliyuncs.com");
-            endpointMap.put("cn-shanghai", "emr.aliyuncs.com");
-            endpointMap.put("ap-southeast-1", "emr.aliyuncs.com");
-            endpointMap.put("us-west-1", "emr.aliyuncs.com");
-            endpointMap.put("cn-hangzhou", "emr.aliyuncs.com");
+            put("cn-shenzhen", "emr.aliyuncs.com");
+            put("cn-beijing", "emr.aliyuncs.com");
+            put("cn-shanghai", "emr.aliyuncs.com");
+            put("ap-southeast-1", "emr.aliyuncs.com");
+            put("us-west-1", "emr.aliyuncs.com");
+            put("cn-hangzhou", "emr.aliyuncs.com");
         }
     };
 
