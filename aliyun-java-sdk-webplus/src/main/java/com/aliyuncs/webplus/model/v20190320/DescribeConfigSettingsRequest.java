@@ -29,14 +29,29 @@ public class DescribeConfigSettingsRequest extends RoaAcsRequest<DescribeConfigS
 		setUriPattern("/pop/v1/wam/config/configSetting");
 		setMethod(MethodType.GET);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
+
+	private String optionName;
 
 	private String envId;
 
 	private String templateId;
+
+	private String pathName;
+
+	public String getOptionName() {
+		return this.optionName;
+	}
+
+	public void setOptionName(String optionName) {
+		this.optionName = optionName;
+		if(optionName != null){
+			putQueryParameter("OptionName", optionName);
+		}
+	}
 
 	public String getEnvId() {
 		return this.envId;
@@ -57,6 +72,17 @@ public class DescribeConfigSettingsRequest extends RoaAcsRequest<DescribeConfigS
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public String getPathName() {
+		return this.pathName;
+	}
+
+	public void setPathName(String pathName) {
+		this.pathName = pathName;
+		if(pathName != null){
+			putQueryParameter("PathName", pathName);
 		}
 	}
 

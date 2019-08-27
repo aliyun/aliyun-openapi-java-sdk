@@ -85,14 +85,14 @@ public class DescribeEnvResourceResponseUnmarshaller {
 		}
 		envResource.setLoadBalancers(loadBalancers);
 
-		List<SecurityGroup> securityGroups = new ArrayList<SecurityGroup>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeEnvResourceResponse.EnvResource.SecurityGroups.Length"); i++) {
+		List<SecurityGroup> defaultSecurityGroups = new ArrayList<SecurityGroup>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEnvResourceResponse.EnvResource.DefaultSecurityGroups.Length"); i++) {
 			SecurityGroup securityGroup = new SecurityGroup();
-			securityGroup.setId(_ctx.stringValue("DescribeEnvResourceResponse.EnvResource.SecurityGroups["+ i +"].Id"));
+			securityGroup.setId(_ctx.stringValue("DescribeEnvResourceResponse.EnvResource.DefaultSecurityGroups["+ i +"].Id"));
 
-			securityGroups.add(securityGroup);
+			defaultSecurityGroups.add(securityGroup);
 		}
-		envResource.setSecurityGroups(securityGroups);
+		envResource.setDefaultSecurityGroups(defaultSecurityGroups);
 		describeEnvResourceResponse.setEnvResource(envResource);
 	 
 	 	return describeEnvResourceResponse;

@@ -81,7 +81,7 @@ public class DescribeEnvResourceResponse extends AcsResponse {
 
 		private List<LoadBalancer> loadBalancers;
 
-		private List<SecurityGroup> securityGroups;
+		private List<SecurityGroup> defaultSecurityGroups;
 
 		private MonitorGroup monitorGroup;
 
@@ -145,12 +145,12 @@ public class DescribeEnvResourceResponse extends AcsResponse {
 			this.loadBalancers = loadBalancers;
 		}
 
-		public List<SecurityGroup> getSecurityGroups() {
-			return this.securityGroups;
+		public List<SecurityGroup> getDefaultSecurityGroups() {
+			return this.defaultSecurityGroups;
 		}
 
-		public void setSecurityGroups(List<SecurityGroup> securityGroups) {
-			this.securityGroups = securityGroups;
+		public void setDefaultSecurityGroups(List<SecurityGroup> defaultSecurityGroups) {
+			this.defaultSecurityGroups = defaultSecurityGroups;
 		}
 
 		public MonitorGroup getMonitorGroup() {

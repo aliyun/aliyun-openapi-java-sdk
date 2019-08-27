@@ -1,3 +1,6 @@
+2019-08-27 Version: 1.0.1
+- Fixed endpoint data init.
+
 2019-08-07 Version: 1.0.0
 - Generated 2019-03-20 for `WebPlus`.
 

@@ -19,25 +19,25 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("cn-shenzhen", "webplus.cn-hangzhou.aliyuncs.com");
-            endpointMap.put("cn-beijing", "webplus.cn-hangzhou.aliyuncs.com");
-            endpointMap.put("ap-south-1", "webplus.aliyuncs.com");
-            endpointMap.put("eu-west-1", "webplus.aliyuncs.com");
-            endpointMap.put("ap-northeast-1", "webplus.aliyuncs.com");
-            endpointMap.put("me-east-1", "webplus.aliyuncs.com");
-            endpointMap.put("cn-chengdu", "webplus.aliyuncs.com");
-            endpointMap.put("cn-qingdao", "webplus.aliyuncs.com");
-            endpointMap.put("cn-shanghai", "webplus.cn-hangzhou.aliyuncs.com");
-            endpointMap.put("cn-hongkong", "webplus.aliyuncs.com");
-            endpointMap.put("ap-southeast-1", "webplus.aliyuncs.com");
-            endpointMap.put("ap-southeast-2", "webplus.aliyuncs.com");
-            endpointMap.put("ap-southeast-3", "webplus.aliyuncs.com");
-            endpointMap.put("eu-central-1", "webplus.aliyuncs.com");
-            endpointMap.put("cn-huhehaote", "webplus.aliyuncs.com");
-            endpointMap.put("ap-southeast-5", "webplus.aliyuncs.com");
-            endpointMap.put("us-east-1", "webplus.aliyuncs.com");
-            endpointMap.put("cn-zhangjiakou", "webplus.cn-hangzhou.aliyuncs.com");
-            endpointMap.put("us-west-1", "webplus.aliyuncs.com");
+            put("cn-shenzhen", "webplus.cn-hangzhou.aliyuncs.com");
+            put("cn-beijing", "webplus.cn-hangzhou.aliyuncs.com");
+            put("ap-south-1", "webplus.aliyuncs.com");
+            put("eu-west-1", "webplus.aliyuncs.com");
+            put("ap-northeast-1", "webplus.aliyuncs.com");
+            put("me-east-1", "webplus.aliyuncs.com");
+            put("cn-chengdu", "webplus.aliyuncs.com");
+            put("cn-qingdao", "webplus.aliyuncs.com");
+            put("cn-shanghai", "webplus.cn-hangzhou.aliyuncs.com");
+            put("cn-hongkong", "webplus.aliyuncs.com");
+            put("ap-southeast-1", "webplus.aliyuncs.com");
+            put("ap-southeast-2", "webplus.aliyuncs.com");
+            put("ap-southeast-3", "webplus.aliyuncs.com");
+            put("eu-central-1", "webplus.aliyuncs.com");
+            put("cn-huhehaote", "webplus.aliyuncs.com");
+            put("ap-southeast-5", "webplus.aliyuncs.com");
+            put("us-east-1", "webplus.aliyuncs.com");
+            put("cn-zhangjiakou", "webplus.cn-hangzhou.aliyuncs.com");
+            put("us-west-1", "webplus.aliyuncs.com");
         }
     };
 
