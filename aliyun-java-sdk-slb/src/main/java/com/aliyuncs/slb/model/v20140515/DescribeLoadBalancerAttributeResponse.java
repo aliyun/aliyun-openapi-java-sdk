@@ -93,6 +93,14 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private String deleteProtection;
 
+	private String cloudInstanceType;
+
+	private String cloudInstanceId;
+
+	private String tunnelType;
+
+	private Long cloudInstanceUid;
+
 	private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 	private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -387,6 +395,38 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	public void setDeleteProtection(String deleteProtection) {
 		this.deleteProtection = deleteProtection;
+	}
+
+	public String getCloudInstanceType() {
+		return this.cloudInstanceType;
+	}
+
+	public void setCloudInstanceType(String cloudInstanceType) {
+		this.cloudInstanceType = cloudInstanceType;
+	}
+
+	public String getCloudInstanceId() {
+		return this.cloudInstanceId;
+	}
+
+	public void setCloudInstanceId(String cloudInstanceId) {
+		this.cloudInstanceId = cloudInstanceId;
+	}
+
+	public String getTunnelType() {
+		return this.tunnelType;
+	}
+
+	public void setTunnelType(String tunnelType) {
+		this.tunnelType = tunnelType;
+	}
+
+	public Long getCloudInstanceUid() {
+		return this.cloudInstanceUid;
+	}
+
+	public void setCloudInstanceUid(Long cloudInstanceUid) {
+		this.cloudInstanceUid = cloudInstanceUid;
 	}
 
 	public List<ListenerPortAndProtocal> getListenerPortsAndProtocal() {

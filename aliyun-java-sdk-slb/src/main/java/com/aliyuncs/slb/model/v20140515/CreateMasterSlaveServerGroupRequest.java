@@ -26,8 +26,8 @@ public class CreateMasterSlaveServerGroupRequest extends RpcAcsRequest<CreateMas
 	public CreateMasterSlaveServerGroupRequest() {
 		super("Slb", "2014-05-15", "CreateMasterSlaveServerGroup", "slb");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 

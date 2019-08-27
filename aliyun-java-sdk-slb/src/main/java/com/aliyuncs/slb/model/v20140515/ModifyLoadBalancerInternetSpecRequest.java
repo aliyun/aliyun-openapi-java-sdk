@@ -26,8 +26,8 @@ public class ModifyLoadBalancerInternetSpecRequest extends RpcAcsRequest<ModifyL
 	public ModifyLoadBalancerInternetSpecRequest() {
 		super("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "slb");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 

@@ -1,3 +1,6 @@
+2019-08-27 Version: 3.2.12
+- Fixed endpoint data init.
+
 2019-08-05 Version: 3.2.11
 - Add response parameter LoadBalancerId for DescribeMasterSlaveServerGroupAttribute interface.
 
