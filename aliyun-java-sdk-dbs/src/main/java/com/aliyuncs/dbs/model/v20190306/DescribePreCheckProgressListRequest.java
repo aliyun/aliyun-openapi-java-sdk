@@ -20,13 +20,15 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanResponse> {
+public class DescribePreCheckProgressListRequest extends RpcAcsRequest<DescribePreCheckProgressListResponse> {
 	
-	public StartBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "StartBackupPlan", "cbs");
+	public DescribePreCheckProgressListRequest() {
+		super("Dbs", "2019-03-06", "DescribePreCheckProgressList", "cbs");
 	}
 
 	private String clientToken;
+
+	private String restoreTaskId;
 
 	private String backupPlanId;
 
@@ -40,6 +42,17 @@ public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanRespons
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getRestoreTaskId() {
+		return this.restoreTaskId;
+	}
+
+	public void setRestoreTaskId(String restoreTaskId) {
+		this.restoreTaskId = restoreTaskId;
+		if(restoreTaskId != null){
+			putQueryParameter("RestoreTaskId", restoreTaskId);
 		}
 	}
 
@@ -66,8 +79,8 @@ public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanRespons
 	}
 
 	@Override
-	public Class<StartBackupPlanResponse> getResponseClass() {
-		return StartBackupPlanResponse.class;
+	public Class<DescribePreCheckProgressListResponse> getResponseClass() {
+		return DescribePreCheckProgressListResponse.class;
 	}
 
 }

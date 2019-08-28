@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanResponse> {
+public class UpgradeBackupPlanRequest extends RpcAcsRequest<UpgradeBackupPlanResponse> {
 	
-	public StartBackupPlanRequest() {
-		super("Dbs", "2019-03-06", "StartBackupPlan", "cbs");
+	public UpgradeBackupPlanRequest() {
+		super("Dbs", "2019-03-06", "UpgradeBackupPlan", "cbs");
 	}
 
 	private String clientToken;
@@ -31,6 +31,8 @@ public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanRespons
 	private String backupPlanId;
 
 	private String ownerId;
+
+	private String instanceClass;
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -65,9 +67,20 @@ public class StartBackupPlanRequest extends RpcAcsRequest<StartBackupPlanRespons
 		}
 	}
 
+	public String getInstanceClass() {
+		return this.instanceClass;
+	}
+
+	public void setInstanceClass(String instanceClass) {
+		this.instanceClass = instanceClass;
+		if(instanceClass != null){
+			putQueryParameter("InstanceClass", instanceClass);
+		}
+	}
+
 	@Override
-	public Class<StartBackupPlanResponse> getResponseClass() {
-		return StartBackupPlanResponse.class;
+	public Class<UpgradeBackupPlanResponse> getResponseClass() {
+		return UpgradeBackupPlanResponse.class;
 	}
 
 }

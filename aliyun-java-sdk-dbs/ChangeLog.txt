@@ -1,3 +1,7 @@
+2019-08-28 Version: 1.0.13
+- Add DBS API UpgradeBackupPlan.
+- Add DBS API DescribePreCheckProgressList.
+
 2019-08-05 Version: 1.0.12
 - Modify DBS API DescribeFullBackupList.
 

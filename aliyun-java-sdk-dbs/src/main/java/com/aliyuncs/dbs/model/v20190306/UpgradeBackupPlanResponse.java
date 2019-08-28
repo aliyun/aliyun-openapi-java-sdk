@@ -15,14 +15,14 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dbs.transform.v20190306.CreateBackupPlanResponseUnmarshaller;
+import com.aliyuncs.dbs.transform.v20190306.UpgradeBackupPlanResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateBackupPlanResponse extends AcsResponse {
+public class UpgradeBackupPlanResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -95,7 +95,7 @@ public class CreateBackupPlanResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateBackupPlanResponse getInstance(UnmarshallerContext context) {
-		return	CreateBackupPlanResponseUnmarshaller.unmarshall(this, context);
+	public UpgradeBackupPlanResponse getInstance(UnmarshallerContext context) {
+		return	UpgradeBackupPlanResponseUnmarshaller.unmarshall(this, context);
 	}
 }
