@@ -1,3 +1,6 @@
+2019-08-28 Version: 2.0.17
+- Add rate OpenAPI.
+
 2019-08-27 Version: 2.0.23
 - Fixed endpoint data init.
 
