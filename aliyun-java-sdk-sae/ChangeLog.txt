@@ -1,3 +1,6 @@
+2019-08-28 Version: 1.0.1
+- Add NamespaceId for listApplication.
+
 2019-07-31 Version: 1.0.0
 - Initial release.
 

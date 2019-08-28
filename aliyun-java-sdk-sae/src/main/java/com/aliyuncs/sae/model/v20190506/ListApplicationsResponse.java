@@ -141,6 +141,8 @@ public class ListApplicationsResponse extends AcsResponse {
 
 			private Integer instances;
 
+			private String namespaceId;
+
 			public Boolean getAppDeletingStatus() {
 				return this.appDeletingStatus;
 			}
@@ -203,6 +205,14 @@ public class ListApplicationsResponse extends AcsResponse {
 
 			public void setInstances(Integer instances) {
 				this.instances = instances;
+			}
+
+			public String getNamespaceId() {
+				return this.namespaceId;
+			}
+
+			public void setNamespaceId(String namespaceId) {
+				this.namespaceId = namespaceId;
 			}
 		}
 	}

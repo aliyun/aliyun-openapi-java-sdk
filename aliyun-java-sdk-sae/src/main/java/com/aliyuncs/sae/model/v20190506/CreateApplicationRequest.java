@@ -29,8 +29,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		setUriPattern("/pop/v1/sam/app/createApplication");
 		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -40,31 +40,23 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private Integer memory;
 
-	private String commandArgs;
+	private String slsConfigs;
 
-	private Integer replicas;
+	private String commandArgs;
 
 	private String readiness;
 
-	private String liveness;
+	private String timezone;
 
-	private Integer cpu;
+	private String liveness;
 
 	private String envs;
 
 	private String packageVersion;
 
-	private String command;
-
 	private String customHostAlias;
 
 	private Boolean deploy;
-
-	private String vSwitchId;
-
-	private String jdk;
-
-	private String appDescription;
 
 	private String jarStartOptions;
 
@@ -75,6 +67,18 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String namespaceId;
 
 	private String packageUrl;
+
+	private Integer replicas;
+
+	private Integer cpu;
+
+	private String command;
+
+	private String vSwitchId;
+
+	private String jdk;
+
+	private String appDescription;
 
 	private String vpcId;
 
@@ -115,6 +119,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getSlsConfigs() {
+		return this.slsConfigs;
+	}
+
+	public void setSlsConfigs(String slsConfigs) {
+		this.slsConfigs = slsConfigs;
+		if(slsConfigs != null){
+			putQueryParameter("SlsConfigs", slsConfigs);
+		}
+	}
+
 	public String getCommandArgs() {
 		return this.commandArgs;
 	}
@@ -123,17 +138,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.commandArgs = commandArgs;
 		if(commandArgs != null){
 			putQueryParameter("CommandArgs", commandArgs);
-		}
-	}
-
-	public Integer getReplicas() {
-		return this.replicas;
-	}
-
-	public void setReplicas(Integer replicas) {
-		this.replicas = replicas;
-		if(replicas != null){
-			putQueryParameter("Replicas", replicas.toString());
 		}
 	}
 
@@ -148,6 +152,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getTimezone() {
+		return this.timezone;
+	}
+
+	public void setTimezone(String timezone) {
+		this.timezone = timezone;
+		if(timezone != null){
+			putQueryParameter("Timezone", timezone);
+		}
+	}
+
 	public String getLiveness() {
 		return this.liveness;
 	}
@@ -156,17 +171,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.liveness = liveness;
 		if(liveness != null){
 			putQueryParameter("Liveness", liveness);
-		}
-	}
-
-	public Integer getCpu() {
-		return this.cpu;
-	}
-
-	public void setCpu(Integer cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
 		}
 	}
 
@@ -192,17 +196,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
-	public String getCommand() {
-		return this.command;
-	}
-
-	public void setCommand(String command) {
-		this.command = command;
-		if(command != null){
-			putQueryParameter("Command", command);
-		}
-	}
-
 	public String getCustomHostAlias() {
 		return this.customHostAlias;
 	}
@@ -222,39 +215,6 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.deploy = deploy;
 		if(deploy != null){
 			putQueryParameter("Deploy", deploy.toString());
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getJdk() {
-		return this.jdk;
-	}
-
-	public void setJdk(String jdk) {
-		this.jdk = jdk;
-		if(jdk != null){
-			putQueryParameter("Jdk", jdk);
-		}
-	}
-
-	public String getAppDescription() {
-		return this.appDescription;
-	}
-
-	public void setAppDescription(String appDescription) {
-		this.appDescription = appDescription;
-		if(appDescription != null){
-			putQueryParameter("AppDescription", appDescription);
 		}
 	}
 
@@ -310,6 +270,72 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.packageUrl = packageUrl;
 		if(packageUrl != null){
 			putQueryParameter("PackageUrl", packageUrl);
+		}
+	}
+
+	public Integer getReplicas() {
+		return this.replicas;
+	}
+
+	public void setReplicas(Integer replicas) {
+		this.replicas = replicas;
+		if(replicas != null){
+			putQueryParameter("Replicas", replicas.toString());
+		}
+	}
+
+	public Integer getCpu() {
+		return this.cpu;
+	}
+
+	public void setCpu(Integer cpu) {
+		this.cpu = cpu;
+		if(cpu != null){
+			putQueryParameter("Cpu", cpu.toString());
+		}
+	}
+
+	public String getCommand() {
+		return this.command;
+	}
+
+	public void setCommand(String command) {
+		this.command = command;
+		if(command != null){
+			putQueryParameter("Command", command);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getJdk() {
+		return this.jdk;
+	}
+
+	public void setJdk(String jdk) {
+		this.jdk = jdk;
+		if(jdk != null){
+			putQueryParameter("Jdk", jdk);
+		}
+	}
+
+	public String getAppDescription() {
+		return this.appDescription;
+	}
+
+	public void setAppDescription(String appDescription) {
+		this.appDescription = appDescription;
+		if(appDescription != null){
+			putQueryParameter("AppDescription", appDescription);
 		}
 	}
 
