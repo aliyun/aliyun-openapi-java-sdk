@@ -1,3 +1,6 @@
+2019-08-29 Version: 1.1.0
+- Add PTZ APIs.
+
 2019-07-29 Version: 1.0.0
 - Supported group API.
 - Supported device APIs.

@@ -26,8 +26,8 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 	public ModifyTemplateRequest() {
 		super("vs", "2018-12-12", "ModifyTemplate", "vs");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -43,9 +43,9 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 
 	private String startTime;
 
-	private String type;
-
 	private String id;
+
+	private Long retention;
 
 	private String hlsM3u8;
 
@@ -137,17 +137,6 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	public String getId() {
 		return this.id;
 	}
@@ -156,6 +145,17 @@ public class ModifyTemplateRequest extends RpcAcsRequest<ModifyTemplateResponse>
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id);
+		}
+	}
+
+	public Long getRetention() {
+		return this.retention;
+	}
+
+	public void setRetention(Long retention) {
+		this.retention = retention;
+		if(retention != null){
+			putQueryParameter("Retention", retention.toString());
 		}
 	}
 

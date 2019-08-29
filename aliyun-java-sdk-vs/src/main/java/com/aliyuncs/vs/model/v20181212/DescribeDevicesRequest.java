@@ -26,12 +26,14 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 	public DescribeDevicesRequest() {
 		super("vs", "2018-12-12", "DescribeDevices", "vs");
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private String sortDirection;
+
+	private String gbId;
 
 	private String type;
 
@@ -65,6 +67,17 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 		this.sortDirection = sortDirection;
 		if(sortDirection != null){
 			putQueryParameter("SortDirection", sortDirection);
+		}
+	}
+
+	public String getGbId() {
+		return this.gbId;
+	}
+
+	public void setGbId(String gbId) {
+		this.gbId = gbId;
+		if(gbId != null){
+			putQueryParameter("GbId", gbId);
 		}
 	}
 
