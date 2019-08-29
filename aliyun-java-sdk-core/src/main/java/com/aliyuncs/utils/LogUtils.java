@@ -144,6 +144,166 @@ public class LogUtils {
         private String time;
         private String error;
 
+        public HttpRequest getHttpRequest() {
+            return httpRequest;
+        }
+
+        public void setHttpRequest(HttpRequest httpRequest) {
+            this.httpRequest = httpRequest;
+        }
+
+        public HttpResponse getHttpResponse() {
+            return httpResponse;
+        }
+
+        public void setHttpResponse(HttpResponse httpResponse) {
+            this.httpResponse = httpResponse;
+        }
+
+        public String getTs() {
+            return ts;
+        }
+
+        public void setTs(String ts) {
+            this.ts = ts;
+        }
+
+        public String getHost() {
+            return host;
+        }
+
+        public void setHost(String host) {
+            this.host = host;
+        }
+
+        public String getMethod() {
+            return method;
+        }
+
+        public void setMethod(String method) {
+            this.method = method;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getVersion() {
+            return version;
+        }
+
+        public void setVersion(String version) {
+            this.version = version;
+        }
+
+        public String getTarget() {
+            return target;
+        }
+
+        public void setTarget(String target) {
+            this.target = target;
+        }
+
+        public String getHostname() {
+            return hostname;
+        }
+
+        public void setHostname(String hostname) {
+            this.hostname = hostname;
+        }
+
+        public String getCode() {
+            return code;
+        }
+
+        public void setCode(String code) {
+            this.code = code;
+        }
+
+        public String getPhrase() {
+            return phrase;
+        }
+
+        public void setPhrase(String phrase) {
+            this.phrase = phrase;
+        }
+
+        public String getReqHeaders() {
+            return reqHeaders;
+        }
+
+        public void setReqHeaders(String reqHeaders) {
+            this.reqHeaders = reqHeaders;
+        }
+
+        public String getResHeaders() {
+            return resHeaders;
+        }
+
+        public void setResHeaders(String resHeaders) {
+            this.resHeaders = resHeaders;
+        }
+
+        public String getReqBody() {
+            return reqBody;
+        }
+
+        public void setReqBody(String reqBody) {
+            this.reqBody = reqBody;
+        }
+
+        public String getResBody() {
+            return resBody;
+        }
+
+        public void setResBody(String resBody) {
+            this.resBody = resBody;
+        }
+
+        public String getPid() {
+            return pid;
+        }
+
+        public void setPid(String pid) {
+            this.pid = pid;
+        }
+
+        public String getCost() {
+            return cost;
+        }
+
+        public void setCost(String cost) {
+            this.cost = cost;
+        }
+
+        public String getStartTime() {
+            return startTime;
+        }
+
+        public void setStartTime(String startTime) {
+            this.startTime = startTime;
+        }
+
+        public String getTime() {
+            return time;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
+
+        public String getError() {
+            return error;
+        }
+
+        public void setError(String error) {
+            this.error = error;
+        }
+
         public LogUnit(HttpRequest httpRequest, HttpResponse httpResponse) {
             this.httpRequest = httpRequest;
             this.httpResponse = httpResponse;
