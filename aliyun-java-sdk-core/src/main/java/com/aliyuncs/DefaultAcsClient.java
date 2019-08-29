@@ -292,10 +292,9 @@ public class DefaultAcsClient implements IAcsClient {
                 return response;
             } catch (SocketTimeoutException exp) {
                 errorMessage = exp.getMessage();
-                throw new ClientException("SDK.ServerUnreachable",
-                        "SocketTimeoutException has occurred on a socket read or accept.The url is "
-                                + request.getSysUrl(),
-                        exp);
+                throw new ClientException("SDK.ReadTimeOut",
+                        "SocketTimeoutException has occurred on a socket read or accept.The url is " +
+                                request.getSysUrl(), exp);
             } catch (IOException exp) {
                 errorMessage = exp.getMessage();
                 throw new ClientException("SDK.ServerUnreachable",
