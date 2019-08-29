@@ -45,7 +45,7 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 	public void setExecutionName(String executionName) {
 		this.executionName = executionName;
 		if(executionName != null){
-			putQueryParameter("ExecutionName", executionName);
+			putBodyParameter("ExecutionName", executionName);
 		}
 	}
 
@@ -67,7 +67,7 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 	public void setCause(String cause) {
 		this.cause = cause;
 		if(cause != null){
-			putQueryParameter("Cause", cause);
+			putBodyParameter("Cause", cause);
 		}
 	}
 
@@ -78,7 +78,7 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 	public void setFlowName(String flowName) {
 		this.flowName = flowName;
 		if(flowName != null){
-			putQueryParameter("FlowName", flowName);
+			putBodyParameter("FlowName", flowName);
 		}
 	}
 
@@ -89,7 +89,7 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 	public void setError(String error) {
 		this.error = error;
 		if(error != null){
-			putQueryParameter("Error", error);
+			putBodyParameter("Error", error);
 		}
 	}
 
