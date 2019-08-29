@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResolveAndRouteServiceInCenResponseUnmarshaller {
 
-	public static ResolveAndRouteServiceInCenResponse unmarshall(ResolveAndRouteServiceInCenResponse resolveAndRouteServiceInCenResponse, UnmarshallerContext context) {
+	public static ResolveAndRouteServiceInCenResponse unmarshall(ResolveAndRouteServiceInCenResponse resolveAndRouteServiceInCenResponse, UnmarshallerContext _ctx) {
 		
-		resolveAndRouteServiceInCenResponse.setRequestId(context.stringValue("ResolveAndRouteServiceInCenResponse.RequestId"));
+		resolveAndRouteServiceInCenResponse.setRequestId(_ctx.stringValue("ResolveAndRouteServiceInCenResponse.RequestId"));
 	 
 	 	return resolveAndRouteServiceInCenResponse;
 	}

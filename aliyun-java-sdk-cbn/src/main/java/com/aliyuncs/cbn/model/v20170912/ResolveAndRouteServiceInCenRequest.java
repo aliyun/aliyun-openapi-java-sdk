@@ -15,6 +15,8 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.aliyuncs.cbn.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,15 @@ public class ResolveAndRouteServiceInCenRequest extends RpcAcsRequest<ResolveAnd
 	
 	public ResolveAndRouteServiceInCenRequest() {
 		super("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "cbn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private List<String> accessRegionIdss;
 
 	private String resourceOwnerAccount;
 
@@ -40,11 +48,11 @@ public class ResolveAndRouteServiceInCenRequest extends RpcAcsRequest<ResolveAnd
 
 	private String hostRegionId;
 
-	private String accessRegionId;
-
 	private Long ownerId;
 
 	private Long updateInterval;
+
+	private String hostVpcId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,6 +63,19 @@ public class ResolveAndRouteServiceInCenRequest extends RpcAcsRequest<ResolveAnd
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
+	}
+
+	public List<String> getAccessRegionIdss() {
+		return this.accessRegionIdss;
+	}
+
+	public void setAccessRegionIdss(List<String> accessRegionIdss) {
+		this.accessRegionIdss = accessRegionIdss;	
+		if (accessRegionIdss != null) {
+			for (int i = 0; i < accessRegionIdss.size(); i++) {
+				putQueryParameter("AccessRegionIds." + (i + 1) , accessRegionIdss.get(i));
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -123,17 +144,6 @@ public class ResolveAndRouteServiceInCenRequest extends RpcAcsRequest<ResolveAnd
 		}
 	}
 
-	public String getAccessRegionId() {
-		return this.accessRegionId;
-	}
-
-	public void setAccessRegionId(String accessRegionId) {
-		this.accessRegionId = accessRegionId;
-		if(accessRegionId != null){
-			putQueryParameter("AccessRegionId", accessRegionId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -153,6 +163,17 @@ public class ResolveAndRouteServiceInCenRequest extends RpcAcsRequest<ResolveAnd
 		this.updateInterval = updateInterval;
 		if(updateInterval != null){
 			putQueryParameter("UpdateInterval", updateInterval.toString());
+		}
+	}
+
+	public String getHostVpcId() {
+		return this.hostVpcId;
+	}
+
+	public void setHostVpcId(String hostVpcId) {
+		this.hostVpcId = hostVpcId;
+		if(hostVpcId != null){
+			putQueryParameter("HostVpcId", hostVpcId);
 		}
 	}
 

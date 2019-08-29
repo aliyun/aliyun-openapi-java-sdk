@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UnroutePrivateZoneInCenToVpcResponseUnmarshaller {
 
-	public static UnroutePrivateZoneInCenToVpcResponse unmarshall(UnroutePrivateZoneInCenToVpcResponse unroutePrivateZoneInCenToVpcResponse, UnmarshallerContext context) {
+	public static UnroutePrivateZoneInCenToVpcResponse unmarshall(UnroutePrivateZoneInCenToVpcResponse unroutePrivateZoneInCenToVpcResponse, UnmarshallerContext _ctx) {
 		
-		unroutePrivateZoneInCenToVpcResponse.setRequestId(context.stringValue("UnroutePrivateZoneInCenToVpcResponse.RequestId"));
+		unroutePrivateZoneInCenToVpcResponse.setRequestId(_ctx.stringValue("UnroutePrivateZoneInCenToVpcResponse.RequestId"));
 	 
 	 	return unroutePrivateZoneInCenToVpcResponse;
 	}

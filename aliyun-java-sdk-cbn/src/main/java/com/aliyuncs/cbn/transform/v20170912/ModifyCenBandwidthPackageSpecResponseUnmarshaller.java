@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyCenBandwidthPackageSpecResponseUnmarshaller {
 
-	public static ModifyCenBandwidthPackageSpecResponse unmarshall(ModifyCenBandwidthPackageSpecResponse modifyCenBandwidthPackageSpecResponse, UnmarshallerContext context) {
+	public static ModifyCenBandwidthPackageSpecResponse unmarshall(ModifyCenBandwidthPackageSpecResponse modifyCenBandwidthPackageSpecResponse, UnmarshallerContext _ctx) {
 		
-		modifyCenBandwidthPackageSpecResponse.setRequestId(context.stringValue("ModifyCenBandwidthPackageSpecResponse.RequestId"));
+		modifyCenBandwidthPackageSpecResponse.setRequestId(_ctx.stringValue("ModifyCenBandwidthPackageSpecResponse.RequestId"));
 	 
 	 	return modifyCenBandwidthPackageSpecResponse;
 	}

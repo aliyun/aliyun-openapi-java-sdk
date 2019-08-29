@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SetCenInterRegionBandwidthLimitResponseUnmarshaller {
 
-	public static SetCenInterRegionBandwidthLimitResponse unmarshall(SetCenInterRegionBandwidthLimitResponse setCenInterRegionBandwidthLimitResponse, UnmarshallerContext context) {
+	public static SetCenInterRegionBandwidthLimitResponse unmarshall(SetCenInterRegionBandwidthLimitResponse setCenInterRegionBandwidthLimitResponse, UnmarshallerContext _ctx) {
 		
-		setCenInterRegionBandwidthLimitResponse.setRequestId(context.stringValue("SetCenInterRegionBandwidthLimitResponse.RequestId"));
+		setCenInterRegionBandwidthLimitResponse.setRequestId(_ctx.stringValue("SetCenInterRegionBandwidthLimitResponse.RequestId"));
 	 
 	 	return setCenInterRegionBandwidthLimitResponse;
 	}

@@ -87,6 +87,20 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 
 		private String nextHopRegionId;
 
+		private String status;
+
+		private String toOtherRegionStatus;
+
+		private Integer preference;
+
+		private List<CenRouteMapRecord> cenRouteMapRecords;
+
+		private List<CenOutRouteMapRecord> cenOutRouteMapRecords;
+
+		private List<String> asPaths;
+
+		private List<String> communities;
+
 		public String getDestinationCidrBlock() {
 			return this.destinationCidrBlock;
 		}
@@ -125,6 +139,140 @@ public class DescribeCenRegionDomainRouteEntriesResponse extends AcsResponse {
 
 		public void setNextHopRegionId(String nextHopRegionId) {
 			this.nextHopRegionId = nextHopRegionId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getToOtherRegionStatus() {
+			return this.toOtherRegionStatus;
+		}
+
+		public void setToOtherRegionStatus(String toOtherRegionStatus) {
+			this.toOtherRegionStatus = toOtherRegionStatus;
+		}
+
+		public Integer getPreference() {
+			return this.preference;
+		}
+
+		public void setPreference(Integer preference) {
+			this.preference = preference;
+		}
+
+		public List<CenRouteMapRecord> getCenRouteMapRecords() {
+			return this.cenRouteMapRecords;
+		}
+
+		public void setCenRouteMapRecords(List<CenRouteMapRecord> cenRouteMapRecords) {
+			this.cenRouteMapRecords = cenRouteMapRecords;
+		}
+
+		public List<CenOutRouteMapRecord> getCenOutRouteMapRecords() {
+			return this.cenOutRouteMapRecords;
+		}
+
+		public void setCenOutRouteMapRecords(List<CenOutRouteMapRecord> cenOutRouteMapRecords) {
+			this.cenOutRouteMapRecords = cenOutRouteMapRecords;
+		}
+
+		public List<String> getAsPaths() {
+			return this.asPaths;
+		}
+
+		public void setAsPaths(List<String> asPaths) {
+			this.asPaths = asPaths;
+		}
+
+		public List<String> getCommunities() {
+			return this.communities;
+		}
+
+		public void setCommunities(List<String> communities) {
+			this.communities = communities;
+		}
+
+		public static class CenRouteMapRecord {
+
+			private String regionId;
+
+			private String routeMapId;
+
+			public String getBizRegionId() {
+				return this.regionId;
+			}
+
+			public void setBizRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			/**
+			 * @deprecated use getBizRegionId instead of this.
+			 */
+			@Deprecated
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			/**
+			 * @deprecated use setBizRegionId instead of this.
+			 */
+			@Deprecated
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getRouteMapId() {
+				return this.routeMapId;
+			}
+
+			public void setRouteMapId(String routeMapId) {
+				this.routeMapId = routeMapId;
+			}
+		}
+
+		public static class CenOutRouteMapRecord {
+
+			private String regionId;
+
+			private String routeMapId;
+
+			public String getBizRegionId() {
+				return this.regionId;
+			}
+
+			public void setBizRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			/**
+			 * @deprecated use getBizRegionId instead of this.
+			 */
+			@Deprecated
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			/**
+			 * @deprecated use setBizRegionId instead of this.
+			 */
+			@Deprecated
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getRouteMapId() {
+				return this.routeMapId;
+			}
+
+			public void setRouteMapId(String routeMapId) {
+				this.routeMapId = routeMapId;
+			}
 		}
 	}
 

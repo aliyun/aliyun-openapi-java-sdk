@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCenAttachedChildInstancesResponseUnmarshaller {
 
-	public static DescribeCenAttachedChildInstancesResponse unmarshall(DescribeCenAttachedChildInstancesResponse describeCenAttachedChildInstancesResponse, UnmarshallerContext context) {
+	public static DescribeCenAttachedChildInstancesResponse unmarshall(DescribeCenAttachedChildInstancesResponse describeCenAttachedChildInstancesResponse, UnmarshallerContext _ctx) {
 		
-		describeCenAttachedChildInstancesResponse.setRequestId(context.stringValue("DescribeCenAttachedChildInstancesResponse.RequestId"));
-		describeCenAttachedChildInstancesResponse.setTotalCount(context.integerValue("DescribeCenAttachedChildInstancesResponse.TotalCount"));
-		describeCenAttachedChildInstancesResponse.setPageNumber(context.integerValue("DescribeCenAttachedChildInstancesResponse.PageNumber"));
-		describeCenAttachedChildInstancesResponse.setPageSize(context.integerValue("DescribeCenAttachedChildInstancesResponse.PageSize"));
+		describeCenAttachedChildInstancesResponse.setRequestId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.RequestId"));
+		describeCenAttachedChildInstancesResponse.setTotalCount(_ctx.integerValue("DescribeCenAttachedChildInstancesResponse.TotalCount"));
+		describeCenAttachedChildInstancesResponse.setPageNumber(_ctx.integerValue("DescribeCenAttachedChildInstancesResponse.PageNumber"));
+		describeCenAttachedChildInstancesResponse.setPageSize(_ctx.integerValue("DescribeCenAttachedChildInstancesResponse.PageSize"));
 
 		List<ChildInstance> childInstances = new ArrayList<ChildInstance>();
-		for (int i = 0; i < context.lengthValue("DescribeCenAttachedChildInstancesResponse.ChildInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCenAttachedChildInstancesResponse.ChildInstances.Length"); i++) {
 			ChildInstance childInstance = new ChildInstance();
-			childInstance.setCenId(context.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].CenId"));
-			childInstance.setChildInstanceId(context.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceId"));
-			childInstance.setChildInstanceType(context.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceType"));
-			childInstance.setChildInstanceRegionId(context.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceRegionId"));
-			childInstance.setChildInstanceOwnerId(context.longValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceOwnerId"));
-			childInstance.setStatus(context.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].Status"));
-			childInstance.setChildInstanceAttachTime(context.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceAttachTime"));
+			childInstance.setCenId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].CenId"));
+			childInstance.setChildInstanceId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceId"));
+			childInstance.setChildInstanceType(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceType"));
+			childInstance.setChildInstanceRegionId(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceRegionId"));
+			childInstance.setChildInstanceOwnerId(_ctx.longValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceOwnerId"));
+			childInstance.setStatus(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].Status"));
+			childInstance.setChildInstanceAttachTime(_ctx.stringValue("DescribeCenAttachedChildInstancesResponse.ChildInstances["+ i +"].ChildInstanceAttachTime"));
 
 			childInstances.add(childInstance);
 		}

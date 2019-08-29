@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PublishRouteEntriesResponseUnmarshaller {
 
-	public static PublishRouteEntriesResponse unmarshall(PublishRouteEntriesResponse publishRouteEntriesResponse, UnmarshallerContext context) {
+	public static PublishRouteEntriesResponse unmarshall(PublishRouteEntriesResponse publishRouteEntriesResponse, UnmarshallerContext _ctx) {
 		
-		publishRouteEntriesResponse.setRequestId(context.stringValue("PublishRouteEntriesResponse.RequestId"));
+		publishRouteEntriesResponse.setRequestId(_ctx.stringValue("PublishRouteEntriesResponse.RequestId"));
 	 
 	 	return publishRouteEntriesResponse;
 	}

@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCenGeographicSpansResponseUnmarshaller {
 
-	public static DescribeCenGeographicSpansResponse unmarshall(DescribeCenGeographicSpansResponse describeCenGeographicSpansResponse, UnmarshallerContext context) {
+	public static DescribeCenGeographicSpansResponse unmarshall(DescribeCenGeographicSpansResponse describeCenGeographicSpansResponse, UnmarshallerContext _ctx) {
 		
-		describeCenGeographicSpansResponse.setRequestId(context.stringValue("DescribeCenGeographicSpansResponse.RequestId"));
-		describeCenGeographicSpansResponse.setTotalCount(context.integerValue("DescribeCenGeographicSpansResponse.TotalCount"));
-		describeCenGeographicSpansResponse.setPageNumber(context.integerValue("DescribeCenGeographicSpansResponse.PageNumber"));
-		describeCenGeographicSpansResponse.setPageSize(context.integerValue("DescribeCenGeographicSpansResponse.PageSize"));
+		describeCenGeographicSpansResponse.setRequestId(_ctx.stringValue("DescribeCenGeographicSpansResponse.RequestId"));
+		describeCenGeographicSpansResponse.setTotalCount(_ctx.integerValue("DescribeCenGeographicSpansResponse.TotalCount"));
+		describeCenGeographicSpansResponse.setPageNumber(_ctx.integerValue("DescribeCenGeographicSpansResponse.PageNumber"));
+		describeCenGeographicSpansResponse.setPageSize(_ctx.integerValue("DescribeCenGeographicSpansResponse.PageSize"));
 
 		List<GeographicSpanModel> geographicSpanModels = new ArrayList<GeographicSpanModel>();
-		for (int i = 0; i < context.lengthValue("DescribeCenGeographicSpansResponse.GeographicSpanModels.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCenGeographicSpansResponse.GeographicSpanModels.Length"); i++) {
 			GeographicSpanModel geographicSpanModel = new GeographicSpanModel();
-			geographicSpanModel.setGeographicSpanId(context.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].GeographicSpanId"));
-			geographicSpanModel.setLocalGeoRegionId(context.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].LocalGeoRegionId"));
-			geographicSpanModel.setOppositeGeoRegionId(context.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].OppositeGeoRegionId"));
+			geographicSpanModel.setGeographicSpanId(_ctx.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].GeographicSpanId"));
+			geographicSpanModel.setLocalGeoRegionId(_ctx.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].LocalGeoRegionId"));
+			geographicSpanModel.setOppositeGeoRegionId(_ctx.stringValue("DescribeCenGeographicSpansResponse.GeographicSpanModels["+ i +"].OppositeGeoRegionId"));
 
 			geographicSpanModels.add(geographicSpanModel);
 		}

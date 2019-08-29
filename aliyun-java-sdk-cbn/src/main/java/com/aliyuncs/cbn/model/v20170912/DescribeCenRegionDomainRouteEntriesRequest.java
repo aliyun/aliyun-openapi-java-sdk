@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cbn.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class DescribeCenRegionDomainRouteEntriesRequest extends RpcAcsRequest<De
 	
 	public DescribeCenRegionDomainRouteEntriesRequest() {
 		super("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "cbn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
@@ -41,6 +46,8 @@ public class DescribeCenRegionDomainRouteEntriesRequest extends RpcAcsRequest<De
 	private Long ownerId;
 
 	private Integer pageNumber;
+
+	private String status;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -127,6 +134,17 @@ public class DescribeCenRegionDomainRouteEntriesRequest extends RpcAcsRequest<De
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

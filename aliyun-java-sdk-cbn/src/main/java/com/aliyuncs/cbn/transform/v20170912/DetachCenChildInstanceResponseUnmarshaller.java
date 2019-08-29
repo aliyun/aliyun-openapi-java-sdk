@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DetachCenChildInstanceResponseUnmarshaller {
 
-	public static DetachCenChildInstanceResponse unmarshall(DetachCenChildInstanceResponse detachCenChildInstanceResponse, UnmarshallerContext context) {
+	public static DetachCenChildInstanceResponse unmarshall(DetachCenChildInstanceResponse detachCenChildInstanceResponse, UnmarshallerContext _ctx) {
 		
-		detachCenChildInstanceResponse.setRequestId(context.stringValue("DetachCenChildInstanceResponse.RequestId"));
+		detachCenChildInstanceResponse.setRequestId(_ctx.stringValue("DetachCenChildInstanceResponse.RequestId"));
 	 
 	 	return detachCenChildInstanceResponse;
 	}

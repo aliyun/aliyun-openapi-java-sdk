@@ -25,32 +25,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePublishedRouteEntriesResponseUnmarshaller {
 
-	public static DescribePublishedRouteEntriesResponse unmarshall(DescribePublishedRouteEntriesResponse describePublishedRouteEntriesResponse, UnmarshallerContext context) {
+	public static DescribePublishedRouteEntriesResponse unmarshall(DescribePublishedRouteEntriesResponse describePublishedRouteEntriesResponse, UnmarshallerContext _ctx) {
 		
-		describePublishedRouteEntriesResponse.setRequestId(context.stringValue("DescribePublishedRouteEntriesResponse.RequestId"));
-		describePublishedRouteEntriesResponse.setPageNumber(context.integerValue("DescribePublishedRouteEntriesResponse.PageNumber"));
-		describePublishedRouteEntriesResponse.setTotalCount(context.integerValue("DescribePublishedRouteEntriesResponse.TotalCount"));
-		describePublishedRouteEntriesResponse.setPageSize(context.integerValue("DescribePublishedRouteEntriesResponse.PageSize"));
+		describePublishedRouteEntriesResponse.setRequestId(_ctx.stringValue("DescribePublishedRouteEntriesResponse.RequestId"));
+		describePublishedRouteEntriesResponse.setPageNumber(_ctx.integerValue("DescribePublishedRouteEntriesResponse.PageNumber"));
+		describePublishedRouteEntriesResponse.setTotalCount(_ctx.integerValue("DescribePublishedRouteEntriesResponse.TotalCount"));
+		describePublishedRouteEntriesResponse.setPageSize(_ctx.integerValue("DescribePublishedRouteEntriesResponse.PageSize"));
 
 		List<PublishedRouteEntry> publishedRouteEntries = new ArrayList<PublishedRouteEntry>();
-		for (int i = 0; i < context.lengthValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries.Length"); i++) {
 			PublishedRouteEntry publishedRouteEntry = new PublishedRouteEntry();
-			publishedRouteEntry.setDestinationCidrBlock(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].DestinationCidrBlock"));
-			publishedRouteEntry.setChildInstanceRouteTableId(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].ChildInstanceRouteTableId"));
-			publishedRouteEntry.setNextHopType(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].NextHopType"));
-			publishedRouteEntry.setRouteType(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].RouteType"));
-			publishedRouteEntry.setNextHopId(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].NextHopId"));
-			publishedRouteEntry.setOperationalMode(context.booleanValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].OperationalMode"));
-			publishedRouteEntry.setPublishStatus(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].PublishStatus"));
+			publishedRouteEntry.setDestinationCidrBlock(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].DestinationCidrBlock"));
+			publishedRouteEntry.setChildInstanceRouteTableId(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].ChildInstanceRouteTableId"));
+			publishedRouteEntry.setNextHopType(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].NextHopType"));
+			publishedRouteEntry.setRouteType(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].RouteType"));
+			publishedRouteEntry.setNextHopId(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].NextHopId"));
+			publishedRouteEntry.setOperationalMode(_ctx.booleanValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].OperationalMode"));
+			publishedRouteEntry.setPublishStatus(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].PublishStatus"));
 
 			List<Conflict> conflicts = new ArrayList<Conflict>();
-			for (int j = 0; j < context.lengthValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts.Length"); j++) {
 				Conflict conflict = new Conflict();
-				conflict.setDestinationCidrBlock(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].DestinationCidrBlock"));
-				conflict.setRegionId(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].RegionId"));
-				conflict.setInstanceId(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].InstanceId"));
-				conflict.setInstanceType(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].InstanceType"));
-				conflict.setStatus(context.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].Status"));
+				conflict.setDestinationCidrBlock(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].DestinationCidrBlock"));
+				conflict.setRegionId(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].RegionId"));
+				conflict.setInstanceId(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].InstanceId"));
+				conflict.setInstanceType(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].InstanceType"));
+				conflict.setStatus(_ctx.stringValue("DescribePublishedRouteEntriesResponse.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].Status"));
 
 				conflicts.add(conflict);
 			}

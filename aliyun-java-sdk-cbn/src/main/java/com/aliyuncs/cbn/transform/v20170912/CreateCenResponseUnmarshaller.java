@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCenResponseUnmarshaller {
 
-	public static CreateCenResponse unmarshall(CreateCenResponse createCenResponse, UnmarshallerContext context) {
+	public static CreateCenResponse unmarshall(CreateCenResponse createCenResponse, UnmarshallerContext _ctx) {
 		
-		createCenResponse.setRequestId(context.stringValue("CreateCenResponse.RequestId"));
-		createCenResponse.setCenId(context.stringValue("CreateCenResponse.CenId"));
+		createCenResponse.setRequestId(_ctx.stringValue("CreateCenResponse.RequestId"));
+		createCenResponse.setCenId(_ctx.stringValue("CreateCenResponse.CenId"));
 	 
 	 	return createCenResponse;
 	}

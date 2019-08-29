@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCenPrivateZoneRoutesResponseUnmarshaller {
 
-	public static DescribeCenPrivateZoneRoutesResponse unmarshall(DescribeCenPrivateZoneRoutesResponse describeCenPrivateZoneRoutesResponse, UnmarshallerContext context) {
+	public static DescribeCenPrivateZoneRoutesResponse unmarshall(DescribeCenPrivateZoneRoutesResponse describeCenPrivateZoneRoutesResponse, UnmarshallerContext _ctx) {
 		
-		describeCenPrivateZoneRoutesResponse.setRequestId(context.stringValue("DescribeCenPrivateZoneRoutesResponse.RequestId"));
-		describeCenPrivateZoneRoutesResponse.setCenId(context.stringValue("DescribeCenPrivateZoneRoutesResponse.CenId"));
-		describeCenPrivateZoneRoutesResponse.setPrivateZoneDnsServers(context.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneDnsServers"));
-		describeCenPrivateZoneRoutesResponse.setPageNumber(context.integerValue("DescribeCenPrivateZoneRoutesResponse.PageNumber"));
-		describeCenPrivateZoneRoutesResponse.setTotalCount(context.integerValue("DescribeCenPrivateZoneRoutesResponse.TotalCount"));
-		describeCenPrivateZoneRoutesResponse.setPageSize(context.integerValue("DescribeCenPrivateZoneRoutesResponse.PageSize"));
+		describeCenPrivateZoneRoutesResponse.setRequestId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.RequestId"));
+		describeCenPrivateZoneRoutesResponse.setCenId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.CenId"));
+		describeCenPrivateZoneRoutesResponse.setPrivateZoneDnsServers(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneDnsServers"));
+		describeCenPrivateZoneRoutesResponse.setPageNumber(_ctx.integerValue("DescribeCenPrivateZoneRoutesResponse.PageNumber"));
+		describeCenPrivateZoneRoutesResponse.setTotalCount(_ctx.integerValue("DescribeCenPrivateZoneRoutesResponse.TotalCount"));
+		describeCenPrivateZoneRoutesResponse.setPageSize(_ctx.integerValue("DescribeCenPrivateZoneRoutesResponse.PageSize"));
 
 		List<PrivateZoneInfo> privateZoneInfos = new ArrayList<PrivateZoneInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos.Length"); i++) {
 			PrivateZoneInfo privateZoneInfo = new PrivateZoneInfo();
-			privateZoneInfo.setAccessRegionId(context.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].AccessRegionId"));
-			privateZoneInfo.setHostRegionId(context.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].HostRegionId"));
-			privateZoneInfo.setHostVpcId(context.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].HostVpcId"));
-			privateZoneInfo.setStatus(context.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].Status"));
+			privateZoneInfo.setAccessRegionId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].AccessRegionId"));
+			privateZoneInfo.setHostRegionId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].HostRegionId"));
+			privateZoneInfo.setHostVpcId(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].HostVpcId"));
+			privateZoneInfo.setStatus(_ctx.stringValue("DescribeCenPrivateZoneRoutesResponse.PrivateZoneInfos["+ i +"].Status"));
 
 			privateZoneInfos.add(privateZoneInfo);
 		}

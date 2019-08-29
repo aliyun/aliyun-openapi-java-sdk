@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCenInterRegionBandwidthLimitsResponseUnmarshaller {
 
-	public static DescribeCenInterRegionBandwidthLimitsResponse unmarshall(DescribeCenInterRegionBandwidthLimitsResponse describeCenInterRegionBandwidthLimitsResponse, UnmarshallerContext context) {
+	public static DescribeCenInterRegionBandwidthLimitsResponse unmarshall(DescribeCenInterRegionBandwidthLimitsResponse describeCenInterRegionBandwidthLimitsResponse, UnmarshallerContext _ctx) {
 		
-		describeCenInterRegionBandwidthLimitsResponse.setRequestId(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.RequestId"));
-		describeCenInterRegionBandwidthLimitsResponse.setTotalCount(context.integerValue("DescribeCenInterRegionBandwidthLimitsResponse.TotalCount"));
-		describeCenInterRegionBandwidthLimitsResponse.setPageNumber(context.integerValue("DescribeCenInterRegionBandwidthLimitsResponse.PageNumber"));
-		describeCenInterRegionBandwidthLimitsResponse.setPageSize(context.integerValue("DescribeCenInterRegionBandwidthLimitsResponse.PageSize"));
+		describeCenInterRegionBandwidthLimitsResponse.setRequestId(_ctx.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.RequestId"));
+		describeCenInterRegionBandwidthLimitsResponse.setTotalCount(_ctx.integerValue("DescribeCenInterRegionBandwidthLimitsResponse.TotalCount"));
+		describeCenInterRegionBandwidthLimitsResponse.setPageNumber(_ctx.integerValue("DescribeCenInterRegionBandwidthLimitsResponse.PageNumber"));
+		describeCenInterRegionBandwidthLimitsResponse.setPageSize(_ctx.integerValue("DescribeCenInterRegionBandwidthLimitsResponse.PageSize"));
 
 		List<CenInterRegionBandwidthLimit> cenInterRegionBandwidthLimits = new ArrayList<CenInterRegionBandwidthLimit>();
-		for (int i = 0; i < context.lengthValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits.Length"); i++) {
 			CenInterRegionBandwidthLimit cenInterRegionBandwidthLimit = new CenInterRegionBandwidthLimit();
-			cenInterRegionBandwidthLimit.setCenId(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].CenId"));
-			cenInterRegionBandwidthLimit.setLocalRegionId(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].LocalRegionId"));
-			cenInterRegionBandwidthLimit.setOppositeRegionId(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].OppositeRegionId"));
-			cenInterRegionBandwidthLimit.setGeographicSpanId(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].GeographicSpanId"));
-			cenInterRegionBandwidthLimit.setBandwidthLimit(context.longValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].BandwidthLimit"));
-			cenInterRegionBandwidthLimit.setStatus(context.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].Status"));
+			cenInterRegionBandwidthLimit.setCenId(_ctx.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].CenId"));
+			cenInterRegionBandwidthLimit.setLocalRegionId(_ctx.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].LocalRegionId"));
+			cenInterRegionBandwidthLimit.setOppositeRegionId(_ctx.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].OppositeRegionId"));
+			cenInterRegionBandwidthLimit.setGeographicSpanId(_ctx.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].GeographicSpanId"));
+			cenInterRegionBandwidthLimit.setBandwidthLimit(_ctx.longValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].BandwidthLimit"));
+			cenInterRegionBandwidthLimit.setStatus(_ctx.stringValue("DescribeCenInterRegionBandwidthLimitsResponse.CenInterRegionBandwidthLimits["+ i +"].Status"));
 
 			cenInterRegionBandwidthLimits.add(cenInterRegionBandwidthLimit);
 		}

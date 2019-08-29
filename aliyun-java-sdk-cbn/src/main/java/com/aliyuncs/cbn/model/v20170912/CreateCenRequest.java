@@ -15,6 +15,7 @@
 package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.cbn.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +25,10 @@ public class CreateCenRequest extends RpcAcsRequest<CreateCenResponse> {
 	
 	public CreateCenRequest() {
 		super("Cbn", "2017-09-12", "CreateCen", "cbn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String protectionLevel;

@@ -16,6 +16,7 @@ package com.aliyuncs.cbn.model.v20170912;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.cbn.Endpoint;
 
 /**
  * @author auto create
@@ -25,6 +26,10 @@ public class DescribeCenBandwidthPackagesRequest extends RpcAcsRequest<DescribeC
 	
 	public DescribeCenBandwidthPackagesRequest() {
 		super("Cbn", "2017-09-12", "DescribeCenBandwidthPackages", "cbn");
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private List<Filter> filters;
@@ -38,6 +43,8 @@ public class DescribeCenBandwidthPackagesRequest extends RpcAcsRequest<DescribeC
 	private Integer pageSize;
 
 	private Long ownerId;
+
+	private Boolean includeReservationData;
 
 	private Integer pageNumber;
 
@@ -113,6 +120,17 @@ public class DescribeCenBandwidthPackagesRequest extends RpcAcsRequest<DescribeC
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
 		}
 	}
 

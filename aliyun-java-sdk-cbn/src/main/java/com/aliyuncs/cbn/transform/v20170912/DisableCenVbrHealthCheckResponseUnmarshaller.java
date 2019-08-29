@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DisableCenVbrHealthCheckResponseUnmarshaller {
 
-	public static DisableCenVbrHealthCheckResponse unmarshall(DisableCenVbrHealthCheckResponse disableCenVbrHealthCheckResponse, UnmarshallerContext context) {
+	public static DisableCenVbrHealthCheckResponse unmarshall(DisableCenVbrHealthCheckResponse disableCenVbrHealthCheckResponse, UnmarshallerContext _ctx) {
 		
-		disableCenVbrHealthCheckResponse.setRequestId(context.stringValue("DisableCenVbrHealthCheckResponse.RequestId"));
+		disableCenVbrHealthCheckResponse.setRequestId(_ctx.stringValue("DisableCenVbrHealthCheckResponse.RequestId"));
 	 
 	 	return disableCenVbrHealthCheckResponse;
 	}

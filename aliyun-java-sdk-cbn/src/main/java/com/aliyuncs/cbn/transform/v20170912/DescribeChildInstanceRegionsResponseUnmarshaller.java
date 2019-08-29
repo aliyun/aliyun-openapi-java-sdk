@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeChildInstanceRegionsResponseUnmarshaller {
 
-	public static DescribeChildInstanceRegionsResponse unmarshall(DescribeChildInstanceRegionsResponse describeChildInstanceRegionsResponse, UnmarshallerContext context) {
+	public static DescribeChildInstanceRegionsResponse unmarshall(DescribeChildInstanceRegionsResponse describeChildInstanceRegionsResponse, UnmarshallerContext _ctx) {
 		
-		describeChildInstanceRegionsResponse.setRequestId(context.stringValue("DescribeChildInstanceRegionsResponse.RequestId"));
+		describeChildInstanceRegionsResponse.setRequestId(_ctx.stringValue("DescribeChildInstanceRegionsResponse.RequestId"));
 
 		List<Region> regions = new ArrayList<Region>();
-		for (int i = 0; i < context.lengthValue("DescribeChildInstanceRegionsResponse.Regions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeChildInstanceRegionsResponse.Regions.Length"); i++) {
 			Region region = new Region();
-			region.setRegionId(context.stringValue("DescribeChildInstanceRegionsResponse.Regions["+ i +"].RegionId"));
-			region.setLocalName(context.stringValue("DescribeChildInstanceRegionsResponse.Regions["+ i +"].LocalName"));
+			region.setRegionId(_ctx.stringValue("DescribeChildInstanceRegionsResponse.Regions["+ i +"].RegionId"));
+			region.setLocalName(_ctx.stringValue("DescribeChildInstanceRegionsResponse.Regions["+ i +"].LocalName"));
 
 			regions.add(region);
 		}

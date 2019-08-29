@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCenBandwidthPackageResponseUnmarshaller {
 
-	public static CreateCenBandwidthPackageResponse unmarshall(CreateCenBandwidthPackageResponse createCenBandwidthPackageResponse, UnmarshallerContext context) {
+	public static CreateCenBandwidthPackageResponse unmarshall(CreateCenBandwidthPackageResponse createCenBandwidthPackageResponse, UnmarshallerContext _ctx) {
 		
-		createCenBandwidthPackageResponse.setRequestId(context.stringValue("CreateCenBandwidthPackageResponse.RequestId"));
-		createCenBandwidthPackageResponse.setCenBandwidthPackageId(context.stringValue("CreateCenBandwidthPackageResponse.CenBandwidthPackageId"));
-		createCenBandwidthPackageResponse.setCenBandwidthPackageOrderId(context.stringValue("CreateCenBandwidthPackageResponse.CenBandwidthPackageOrderId"));
+		createCenBandwidthPackageResponse.setRequestId(_ctx.stringValue("CreateCenBandwidthPackageResponse.RequestId"));
+		createCenBandwidthPackageResponse.setCenBandwidthPackageId(_ctx.stringValue("CreateCenBandwidthPackageResponse.CenBandwidthPackageId"));
+		createCenBandwidthPackageResponse.setCenBandwidthPackageOrderId(_ctx.stringValue("CreateCenBandwidthPackageResponse.CenBandwidthPackageOrderId"));
 	 
 	 	return createCenBandwidthPackageResponse;
 	}

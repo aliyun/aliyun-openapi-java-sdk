@@ -25,34 +25,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCensResponseUnmarshaller {
 
-	public static DescribeCensResponse unmarshall(DescribeCensResponse describeCensResponse, UnmarshallerContext context) {
+	public static DescribeCensResponse unmarshall(DescribeCensResponse describeCensResponse, UnmarshallerContext _ctx) {
 		
-		describeCensResponse.setRequestId(context.stringValue("DescribeCensResponse.RequestId"));
-		describeCensResponse.setTotalCount(context.integerValue("DescribeCensResponse.TotalCount"));
-		describeCensResponse.setPageNumber(context.integerValue("DescribeCensResponse.PageNumber"));
-		describeCensResponse.setPageSize(context.integerValue("DescribeCensResponse.PageSize"));
+		describeCensResponse.setRequestId(_ctx.stringValue("DescribeCensResponse.RequestId"));
+		describeCensResponse.setTotalCount(_ctx.integerValue("DescribeCensResponse.TotalCount"));
+		describeCensResponse.setPageNumber(_ctx.integerValue("DescribeCensResponse.PageNumber"));
+		describeCensResponse.setPageSize(_ctx.integerValue("DescribeCensResponse.PageSize"));
 
 		List<Cen> cens = new ArrayList<Cen>();
-		for (int i = 0; i < context.lengthValue("DescribeCensResponse.Cens.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCensResponse.Cens.Length"); i++) {
 			Cen cen = new Cen();
-			cen.setCenId(context.stringValue("DescribeCensResponse.Cens["+ i +"].CenId"));
-			cen.setName(context.stringValue("DescribeCensResponse.Cens["+ i +"].Name"));
-			cen.setDescription(context.stringValue("DescribeCensResponse.Cens["+ i +"].Description"));
-			cen.setProtectionLevel(context.stringValue("DescribeCensResponse.Cens["+ i +"].ProtectionLevel"));
-			cen.setStatus(context.stringValue("DescribeCensResponse.Cens["+ i +"].Status"));
-			cen.setCreationTime(context.stringValue("DescribeCensResponse.Cens["+ i +"].CreationTime"));
+			cen.setCenId(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].CenId"));
+			cen.setName(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Name"));
+			cen.setDescription(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Description"));
+			cen.setProtectionLevel(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].ProtectionLevel"));
+			cen.setStatus(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Status"));
+			cen.setCreationTime(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].CreationTime"));
 
 			List<String> cenBandwidthPackageIds = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeCensResponse.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {
-				cenBandwidthPackageIds.add(context.stringValue("DescribeCensResponse.Cens["+ i +"].CenBandwidthPackageIds["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeCensResponse.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {
+				cenBandwidthPackageIds.add(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].CenBandwidthPackageIds["+ j +"]"));
 			}
 			cen.setCenBandwidthPackageIds(cenBandwidthPackageIds);
 
 			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < context.lengthValue("DescribeCensResponse.Cens["+ i +"].Tags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeCensResponse.Cens["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(context.stringValue("DescribeCensResponse.Cens["+ i +"].Tags["+ j +"].Key"));
-				tag.setValue(context.stringValue("DescribeCensResponse.Cens["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeCensResponse.Cens["+ i +"].Tags["+ j +"].Value"));
 
 				tags.add(tag);
 			}

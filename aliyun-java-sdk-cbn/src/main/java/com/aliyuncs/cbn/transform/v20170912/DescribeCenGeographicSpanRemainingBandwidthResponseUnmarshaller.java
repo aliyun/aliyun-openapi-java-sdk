@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCenGeographicSpanRemainingBandwidthResponseUnmarshaller {
 
-	public static DescribeCenGeographicSpanRemainingBandwidthResponse unmarshall(DescribeCenGeographicSpanRemainingBandwidthResponse describeCenGeographicSpanRemainingBandwidthResponse, UnmarshallerContext context) {
+	public static DescribeCenGeographicSpanRemainingBandwidthResponse unmarshall(DescribeCenGeographicSpanRemainingBandwidthResponse describeCenGeographicSpanRemainingBandwidthResponse, UnmarshallerContext _ctx) {
 		
-		describeCenGeographicSpanRemainingBandwidthResponse.setRequestId(context.stringValue("DescribeCenGeographicSpanRemainingBandwidthResponse.RequestId"));
-		describeCenGeographicSpanRemainingBandwidthResponse.setRemainingBandwidth(context.longValue("DescribeCenGeographicSpanRemainingBandwidthResponse.RemainingBandwidth"));
+		describeCenGeographicSpanRemainingBandwidthResponse.setRequestId(_ctx.stringValue("DescribeCenGeographicSpanRemainingBandwidthResponse.RequestId"));
+		describeCenGeographicSpanRemainingBandwidthResponse.setRemainingBandwidth(_ctx.longValue("DescribeCenGeographicSpanRemainingBandwidthResponse.RemainingBandwidth"));
 	 
 	 	return describeCenGeographicSpanRemainingBandwidthResponse;
 	}

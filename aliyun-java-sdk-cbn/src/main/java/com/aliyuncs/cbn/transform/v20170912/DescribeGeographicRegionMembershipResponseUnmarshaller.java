@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGeographicRegionMembershipResponseUnmarshaller {
 
-	public static DescribeGeographicRegionMembershipResponse unmarshall(DescribeGeographicRegionMembershipResponse describeGeographicRegionMembershipResponse, UnmarshallerContext context) {
+	public static DescribeGeographicRegionMembershipResponse unmarshall(DescribeGeographicRegionMembershipResponse describeGeographicRegionMembershipResponse, UnmarshallerContext _ctx) {
 		
-		describeGeographicRegionMembershipResponse.setRequestId(context.stringValue("DescribeGeographicRegionMembershipResponse.RequestId"));
-		describeGeographicRegionMembershipResponse.setTotalCount(context.integerValue("DescribeGeographicRegionMembershipResponse.TotalCount"));
-		describeGeographicRegionMembershipResponse.setPageNumber(context.integerValue("DescribeGeographicRegionMembershipResponse.PageNumber"));
-		describeGeographicRegionMembershipResponse.setPageSize(context.integerValue("DescribeGeographicRegionMembershipResponse.PageSize"));
+		describeGeographicRegionMembershipResponse.setRequestId(_ctx.stringValue("DescribeGeographicRegionMembershipResponse.RequestId"));
+		describeGeographicRegionMembershipResponse.setTotalCount(_ctx.integerValue("DescribeGeographicRegionMembershipResponse.TotalCount"));
+		describeGeographicRegionMembershipResponse.setPageNumber(_ctx.integerValue("DescribeGeographicRegionMembershipResponse.PageNumber"));
+		describeGeographicRegionMembershipResponse.setPageSize(_ctx.integerValue("DescribeGeographicRegionMembershipResponse.PageSize"));
 
 		List<RegionId> regionIds = new ArrayList<RegionId>();
-		for (int i = 0; i < context.lengthValue("DescribeGeographicRegionMembershipResponse.RegionIds.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeGeographicRegionMembershipResponse.RegionIds.Length"); i++) {
 			RegionId regionId = new RegionId();
-			regionId.setRegionId(context.stringValue("DescribeGeographicRegionMembershipResponse.RegionIds["+ i +"].RegionId"));
+			regionId.setRegionId(_ctx.stringValue("DescribeGeographicRegionMembershipResponse.RegionIds["+ i +"].RegionId"));
 
 			regionIds.add(regionId);
 		}

@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGrantRulesToCenResponseUnmarshaller {
 
-	public static DescribeGrantRulesToCenResponse unmarshall(DescribeGrantRulesToCenResponse describeGrantRulesToCenResponse, UnmarshallerContext context) {
+	public static DescribeGrantRulesToCenResponse unmarshall(DescribeGrantRulesToCenResponse describeGrantRulesToCenResponse, UnmarshallerContext _ctx) {
 		
-		describeGrantRulesToCenResponse.setRequestId(context.stringValue("DescribeGrantRulesToCenResponse.RequestId"));
+		describeGrantRulesToCenResponse.setRequestId(_ctx.stringValue("DescribeGrantRulesToCenResponse.RequestId"));
 
 		List<GrantRule> grantRules = new ArrayList<GrantRule>();
-		for (int i = 0; i < context.lengthValue("DescribeGrantRulesToCenResponse.GrantRules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeGrantRulesToCenResponse.GrantRules.Length"); i++) {
 			GrantRule grantRule = new GrantRule();
-			grantRule.setCenId(context.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].CenId"));
-			grantRule.setChildInstanceRegionId(context.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceRegionId"));
-			grantRule.setChildInstanceType(context.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceType"));
-			grantRule.setChildInstanceId(context.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceId"));
-			grantRule.setChildInstanceOwnerId(context.longValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceOwnerId"));
+			grantRule.setCenId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].CenId"));
+			grantRule.setChildInstanceRegionId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceRegionId"));
+			grantRule.setChildInstanceType(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceType"));
+			grantRule.setChildInstanceId(_ctx.stringValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceId"));
+			grantRule.setChildInstanceOwnerId(_ctx.longValue("DescribeGrantRulesToCenResponse.GrantRules["+ i +"].ChildInstanceOwnerId"));
 
 			grantRules.add(grantRule);
 		}

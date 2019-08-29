@@ -19,26 +19,63 @@ import java.util.List;
 
 import com.aliyuncs.cbn.model.v20170912.DescribeCenRegionDomainRouteEntriesResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntry;
+import com.aliyuncs.cbn.model.v20170912.DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntry.CenOutRouteMapRecord;
+import com.aliyuncs.cbn.model.v20170912.DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntry.CenRouteMapRecord;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeCenRegionDomainRouteEntriesResponseUnmarshaller {
 
-	public static DescribeCenRegionDomainRouteEntriesResponse unmarshall(DescribeCenRegionDomainRouteEntriesResponse describeCenRegionDomainRouteEntriesResponse, UnmarshallerContext context) {
+	public static DescribeCenRegionDomainRouteEntriesResponse unmarshall(DescribeCenRegionDomainRouteEntriesResponse describeCenRegionDomainRouteEntriesResponse, UnmarshallerContext _ctx) {
 		
-		describeCenRegionDomainRouteEntriesResponse.setRequestId(context.stringValue("DescribeCenRegionDomainRouteEntriesResponse.RequestId"));
-		describeCenRegionDomainRouteEntriesResponse.setPageNumber(context.integerValue("DescribeCenRegionDomainRouteEntriesResponse.PageNumber"));
-		describeCenRegionDomainRouteEntriesResponse.setTotalCount(context.integerValue("DescribeCenRegionDomainRouteEntriesResponse.TotalCount"));
-		describeCenRegionDomainRouteEntriesResponse.setPageSize(context.integerValue("DescribeCenRegionDomainRouteEntriesResponse.PageSize"));
+		describeCenRegionDomainRouteEntriesResponse.setRequestId(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.RequestId"));
+		describeCenRegionDomainRouteEntriesResponse.setPageNumber(_ctx.integerValue("DescribeCenRegionDomainRouteEntriesResponse.PageNumber"));
+		describeCenRegionDomainRouteEntriesResponse.setTotalCount(_ctx.integerValue("DescribeCenRegionDomainRouteEntriesResponse.TotalCount"));
+		describeCenRegionDomainRouteEntriesResponse.setPageSize(_ctx.integerValue("DescribeCenRegionDomainRouteEntriesResponse.PageSize"));
 
 		List<CenRouteEntry> cenRouteEntries = new ArrayList<CenRouteEntry>();
-		for (int i = 0; i < context.lengthValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries.Length"); i++) {
 			CenRouteEntry cenRouteEntry = new CenRouteEntry();
-			cenRouteEntry.setDestinationCidrBlock(context.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].DestinationCidrBlock"));
-			cenRouteEntry.setType(context.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].Type"));
-			cenRouteEntry.setNextHopInstanceId(context.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].NextHopInstanceId"));
-			cenRouteEntry.setNextHopType(context.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].NextHopType"));
-			cenRouteEntry.setNextHopRegionId(context.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].NextHopRegionId"));
+			cenRouteEntry.setDestinationCidrBlock(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].DestinationCidrBlock"));
+			cenRouteEntry.setType(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].Type"));
+			cenRouteEntry.setNextHopInstanceId(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].NextHopInstanceId"));
+			cenRouteEntry.setNextHopType(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].NextHopType"));
+			cenRouteEntry.setNextHopRegionId(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].NextHopRegionId"));
+			cenRouteEntry.setStatus(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].Status"));
+			cenRouteEntry.setToOtherRegionStatus(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].ToOtherRegionStatus"));
+			cenRouteEntry.setPreference(_ctx.integerValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].Preference"));
+
+			List<String> asPaths = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].AsPaths.Length"); j++) {
+				asPaths.add(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].AsPaths["+ j +"]"));
+			}
+			cenRouteEntry.setAsPaths(asPaths);
+
+			List<String> communities = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].Communities.Length"); j++) {
+				communities.add(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].Communities["+ j +"]"));
+			}
+			cenRouteEntry.setCommunities(communities);
+
+			List<CenRouteMapRecord> cenRouteMapRecords = new ArrayList<CenRouteMapRecord>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].CenRouteMapRecords.Length"); j++) {
+				CenRouteMapRecord cenRouteMapRecord = new CenRouteMapRecord();
+				cenRouteMapRecord.setRegionId(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].CenRouteMapRecords["+ j +"].RegionId"));
+				cenRouteMapRecord.setRouteMapId(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].CenRouteMapRecords["+ j +"].RouteMapId"));
+
+				cenRouteMapRecords.add(cenRouteMapRecord);
+			}
+			cenRouteEntry.setCenRouteMapRecords(cenRouteMapRecords);
+
+			List<CenOutRouteMapRecord> cenOutRouteMapRecords = new ArrayList<CenOutRouteMapRecord>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].CenOutRouteMapRecords.Length"); j++) {
+				CenOutRouteMapRecord cenOutRouteMapRecord = new CenOutRouteMapRecord();
+				cenOutRouteMapRecord.setRegionId(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].CenOutRouteMapRecords["+ j +"].RegionId"));
+				cenOutRouteMapRecord.setRouteMapId(_ctx.stringValue("DescribeCenRegionDomainRouteEntriesResponse.CenRouteEntries["+ i +"].CenOutRouteMapRecords["+ j +"].RouteMapId"));
+
+				cenOutRouteMapRecords.add(cenOutRouteMapRecord);
+			}
+			cenRouteEntry.setCenOutRouteMapRecords(cenOutRouteMapRecords);
 
 			cenRouteEntries.add(cenRouteEntry);
 		}

@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCenVbrHealthCheckResponseUnmarshaller {
 
-	public static DescribeCenVbrHealthCheckResponse unmarshall(DescribeCenVbrHealthCheckResponse describeCenVbrHealthCheckResponse, UnmarshallerContext context) {
+	public static DescribeCenVbrHealthCheckResponse unmarshall(DescribeCenVbrHealthCheckResponse describeCenVbrHealthCheckResponse, UnmarshallerContext _ctx) {
 		
-		describeCenVbrHealthCheckResponse.setRequestId(context.stringValue("DescribeCenVbrHealthCheckResponse.RequestId"));
-		describeCenVbrHealthCheckResponse.setTotalCount(context.integerValue("DescribeCenVbrHealthCheckResponse.TotalCount"));
-		describeCenVbrHealthCheckResponse.setPageNumber(context.integerValue("DescribeCenVbrHealthCheckResponse.PageNumber"));
-		describeCenVbrHealthCheckResponse.setPageSize(context.integerValue("DescribeCenVbrHealthCheckResponse.PageSize"));
+		describeCenVbrHealthCheckResponse.setRequestId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.RequestId"));
+		describeCenVbrHealthCheckResponse.setTotalCount(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.TotalCount"));
+		describeCenVbrHealthCheckResponse.setPageNumber(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.PageNumber"));
+		describeCenVbrHealthCheckResponse.setPageSize(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.PageSize"));
 
 		List<VbrHealthCheck> vbrHealthChecks = new ArrayList<VbrHealthCheck>();
-		for (int i = 0; i < context.lengthValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks.Length"); i++) {
 			VbrHealthCheck vbrHealthCheck = new VbrHealthCheck();
-			vbrHealthCheck.setCenId(context.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].CenId"));
-			vbrHealthCheck.setVbrInstanceId(context.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].VbrInstanceId"));
-			vbrHealthCheck.setLinkStatus(context.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].LinkStatus"));
-			vbrHealthCheck.setPacketLoss(context.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].PacketLoss"));
-			vbrHealthCheck.setHealthCheckSourceIp(context.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckSourceIp"));
-			vbrHealthCheck.setHealthCheckTargetIp(context.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckTargetIp"));
-			vbrHealthCheck.setDelay(context.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].Delay"));
+			vbrHealthCheck.setCenId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].CenId"));
+			vbrHealthCheck.setVbrInstanceId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].VbrInstanceId"));
+			vbrHealthCheck.setLinkStatus(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].LinkStatus"));
+			vbrHealthCheck.setPacketLoss(_ctx.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].PacketLoss"));
+			vbrHealthCheck.setHealthCheckSourceIp(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckSourceIp"));
+			vbrHealthCheck.setHealthCheckTargetIp(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckTargetIp"));
+			vbrHealthCheck.setDelay(_ctx.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].Delay"));
 
 			vbrHealthChecks.add(vbrHealthCheck);
 		}
