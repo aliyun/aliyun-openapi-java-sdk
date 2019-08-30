@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TriggerNetworkResponseUnmarshaller {
 
-	public static TriggerNetworkResponse unmarshall(TriggerNetworkResponse triggerNetworkResponse, UnmarshallerContext context) {
+	public static TriggerNetworkResponse unmarshall(TriggerNetworkResponse triggerNetworkResponse, UnmarshallerContext _ctx) {
 		
-		triggerNetworkResponse.setRequestId(context.stringValue("TriggerNetworkResponse.RequestId"));
-		triggerNetworkResponse.setResult(context.booleanValue("TriggerNetworkResponse.Result"));
+		triggerNetworkResponse.setRequestId(_ctx.stringValue("TriggerNetworkResponse.RequestId"));
+		triggerNetworkResponse.setResult(_ctx.booleanValue("TriggerNetworkResponse.Result"));
 	 
 	 	return triggerNetworkResponse;
 	}

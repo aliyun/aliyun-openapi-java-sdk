@@ -21,10 +21,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeKibanaSettingsResponseUnmarshaller {
 
-	public static DescribeKibanaSettingsResponse unmarshall(DescribeKibanaSettingsResponse describeKibanaSettingsResponse, UnmarshallerContext context) {
+	public static DescribeKibanaSettingsResponse unmarshall(DescribeKibanaSettingsResponse describeKibanaSettingsResponse, UnmarshallerContext _ctx) {
 		
-		describeKibanaSettingsResponse.setRequestId(context.stringValue("DescribeKibanaSettingsResponse.RequestId"));
-		describeKibanaSettingsResponse.setResult(context.mapValue("DescribeKibanaSettingsResponse.Result"));
+		describeKibanaSettingsResponse.setRequestId(_ctx.stringValue("DescribeKibanaSettingsResponse.RequestId"));
+		describeKibanaSettingsResponse.setResult(_ctx.mapValue("DescribeKibanaSettingsResponse.Result"));
 	 
 	 	return describeKibanaSettingsResponse;
 	}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ShrinkNodeResponseUnmarshaller {
 
-	public static ShrinkNodeResponse unmarshall(ShrinkNodeResponse shrinkNodeResponse, UnmarshallerContext context) {
+	public static ShrinkNodeResponse unmarshall(ShrinkNodeResponse shrinkNodeResponse, UnmarshallerContext _ctx) {
 		
-		shrinkNodeResponse.setRequestId(context.stringValue("ShrinkNodeResponse.RequestId"));
-		shrinkNodeResponse.setCode(context.stringValue("ShrinkNodeResponse.Code"));
-		shrinkNodeResponse.setMessage(context.stringValue("ShrinkNodeResponse.Message"));
-		shrinkNodeResponse.setResult(context.booleanValue("ShrinkNodeResponse.Result"));
+		shrinkNodeResponse.setRequestId(_ctx.stringValue("ShrinkNodeResponse.RequestId"));
+		shrinkNodeResponse.setCode(_ctx.stringValue("ShrinkNodeResponse.Code"));
+		shrinkNodeResponse.setMessage(_ctx.stringValue("ShrinkNodeResponse.Message"));
+		shrinkNodeResponse.setResult(_ctx.booleanValue("ShrinkNodeResponse.Result"));
 	 
 	 	return shrinkNodeResponse;
 	}

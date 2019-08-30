@@ -29,7 +29,20 @@ public class DeleteProjectRequest extends RoaAcsRequest<DeleteProjectResponse> {
 		setMethod(MethodType.DELETE);
 	}
 
+	private String clientToken;
+
 	private String id;
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
+		}
+	}
 
 	public String getId() {
 		return this.id;

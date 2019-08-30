@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TransferNodeResponseUnmarshaller {
 
-	public static TransferNodeResponse unmarshall(TransferNodeResponse transferNodeResponse, UnmarshallerContext context) {
+	public static TransferNodeResponse unmarshall(TransferNodeResponse transferNodeResponse, UnmarshallerContext _ctx) {
 		
-		transferNodeResponse.setRequestId(context.stringValue("TransferNodeResponse.RequestId"));
-		transferNodeResponse.setCode(context.stringValue("TransferNodeResponse.Code"));
-		transferNodeResponse.setMessage(context.stringValue("TransferNodeResponse.Message"));
-		transferNodeResponse.setResult(context.booleanValue("TransferNodeResponse.Result"));
+		transferNodeResponse.setRequestId(_ctx.stringValue("TransferNodeResponse.RequestId"));
+		transferNodeResponse.setCode(_ctx.stringValue("TransferNodeResponse.Code"));
+		transferNodeResponse.setMessage(_ctx.stringValue("TransferNodeResponse.Message"));
+		transferNodeResponse.setResult(_ctx.booleanValue("TransferNodeResponse.Result"));
 	 
 	 	return transferNodeResponse;
 	}

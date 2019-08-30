@@ -92,9 +92,17 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private Boolean warmNode;
 
+		private String protocol;
+
+		private Boolean enableKibanaPublicNetwork;
+
+		private Boolean haveKibana;
+
 		private List<DictListItem> dictList;
 
 		private List<SynonymsDictsItem> synonymsDicts;
+
+		private List<ZoneInfo> zoneInfos;
 
 		private List<String> esIPWhitelist;
 
@@ -310,6 +318,46 @@ public class DescribeInstanceResponse extends AcsResponse {
 			this.warmNode = warmNode;
 		}
 
+		public String getBizProtocol() {
+			return this.protocol;
+		}
+
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		/**
+		 * @deprecated use getBizProtocol instead of this.
+		 */
+		@Deprecated
+		public String getProtocol() {
+			return this.protocol;
+		}
+
+		/**
+		 * @deprecated use setBizProtocol instead of this.
+		 */
+		@Deprecated
+		public void setProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public Boolean getEnableKibanaPublicNetwork() {
+			return this.enableKibanaPublicNetwork;
+		}
+
+		public void setEnableKibanaPublicNetwork(Boolean enableKibanaPublicNetwork) {
+			this.enableKibanaPublicNetwork = enableKibanaPublicNetwork;
+		}
+
+		public Boolean getHaveKibana() {
+			return this.haveKibana;
+		}
+
+		public void setHaveKibana(Boolean haveKibana) {
+			this.haveKibana = haveKibana;
+		}
+
 		public List<DictListItem> getDictList() {
 			return this.dictList;
 		}
@@ -324,6 +372,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setSynonymsDicts(List<SynonymsDictsItem> synonymsDicts) {
 			this.synonymsDicts = synonymsDicts;
+		}
+
+		public List<ZoneInfo> getZoneInfos() {
+			return this.zoneInfos;
+		}
+
+		public void setZoneInfos(List<ZoneInfo> zoneInfos) {
+			this.zoneInfos = zoneInfos;
 		}
 
 		public List<String> getEsIPWhitelist() {
@@ -497,6 +553,29 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 			public void setSourceType(String sourceType) {
 				this.sourceType = sourceType;
+			}
+		}
+
+		public static class ZoneInfo {
+
+			private String zoneId;
+
+			private String status;
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 		}
 

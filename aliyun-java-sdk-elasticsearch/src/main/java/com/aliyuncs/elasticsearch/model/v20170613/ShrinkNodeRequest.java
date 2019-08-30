@@ -33,6 +33,8 @@ public class ShrinkNodeRequest extends RoaAcsRequest<ShrinkNodeResponse> {
 
 	private String nodeType;
 
+	private String clientToken;
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -52,6 +54,17 @@ public class ShrinkNodeRequest extends RoaAcsRequest<ShrinkNodeResponse> {
 		this.nodeType = nodeType;
 		if(nodeType != null){
 			putQueryParameter("nodeType", nodeType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
 		}
 	}
 

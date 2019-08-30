@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InstallKibanaSystemPluginResponseUnmarshaller {
 
-	public static InstallKibanaSystemPluginResponse unmarshall(InstallKibanaSystemPluginResponse installKibanaSystemPluginResponse, UnmarshallerContext context) {
+	public static InstallKibanaSystemPluginResponse unmarshall(InstallKibanaSystemPluginResponse installKibanaSystemPluginResponse, UnmarshallerContext _ctx) {
 		
-		installKibanaSystemPluginResponse.setRequestId(context.stringValue("InstallKibanaSystemPluginResponse.RequestId"));
+		installKibanaSystemPluginResponse.setRequestId(_ctx.stringValue("InstallKibanaSystemPluginResponse.RequestId"));
 
 		List<String> result = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("InstallKibanaSystemPluginResponse.Result.Length"); i++) {
-			result.add(context.stringValue("InstallKibanaSystemPluginResponse.Result["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("InstallKibanaSystemPluginResponse.Result.Length"); i++) {
+			result.add(_ctx.stringValue("InstallKibanaSystemPluginResponse.Result["+ i +"]"));
 		}
 		installKibanaSystemPluginResponse.setResult(result);
 	 

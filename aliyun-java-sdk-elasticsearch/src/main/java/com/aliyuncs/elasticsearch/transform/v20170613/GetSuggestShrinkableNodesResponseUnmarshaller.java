@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSuggestShrinkableNodesResponseUnmarshaller {
 
-	public static GetSuggestShrinkableNodesResponse unmarshall(GetSuggestShrinkableNodesResponse getSuggestShrinkableNodesResponse, UnmarshallerContext context) {
+	public static GetSuggestShrinkableNodesResponse unmarshall(GetSuggestShrinkableNodesResponse getSuggestShrinkableNodesResponse, UnmarshallerContext _ctx) {
 		
-		getSuggestShrinkableNodesResponse.setRequestId(context.stringValue("GetSuggestShrinkableNodesResponse.RequestId"));
-		getSuggestShrinkableNodesResponse.setCode(context.stringValue("GetSuggestShrinkableNodesResponse.Code"));
-		getSuggestShrinkableNodesResponse.setMessage(context.stringValue("GetSuggestShrinkableNodesResponse.Message"));
+		getSuggestShrinkableNodesResponse.setRequestId(_ctx.stringValue("GetSuggestShrinkableNodesResponse.RequestId"));
+		getSuggestShrinkableNodesResponse.setCode(_ctx.stringValue("GetSuggestShrinkableNodesResponse.Code"));
+		getSuggestShrinkableNodesResponse.setMessage(_ctx.stringValue("GetSuggestShrinkableNodesResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("GetSuggestShrinkableNodesResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetSuggestShrinkableNodesResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setHost(context.stringValue("GetSuggestShrinkableNodesResponse.Result["+ i +"].host"));
-			resultItem.setPort(context.integerValue("GetSuggestShrinkableNodesResponse.Result["+ i +"].port"));
+			resultItem.setHost(_ctx.stringValue("GetSuggestShrinkableNodesResponse.Result["+ i +"].host"));
+			resultItem.setPort(_ctx.integerValue("GetSuggestShrinkableNodesResponse.Result["+ i +"].port"));
 
 			result.add(resultItem);
 		}

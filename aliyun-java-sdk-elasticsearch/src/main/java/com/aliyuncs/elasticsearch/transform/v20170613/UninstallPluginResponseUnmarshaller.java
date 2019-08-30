@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UninstallPluginResponseUnmarshaller {
 
-	public static UninstallPluginResponse unmarshall(UninstallPluginResponse uninstallPluginResponse, UnmarshallerContext context) {
+	public static UninstallPluginResponse unmarshall(UninstallPluginResponse uninstallPluginResponse, UnmarshallerContext _ctx) {
 		
-		uninstallPluginResponse.setRequestId(context.stringValue("UninstallPluginResponse.RequestId"));
+		uninstallPluginResponse.setRequestId(_ctx.stringValue("UninstallPluginResponse.RequestId"));
 
 		List<String> result = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UninstallPluginResponse.Result.Length"); i++) {
-			result.add(context.stringValue("UninstallPluginResponse.Result["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UninstallPluginResponse.Result.Length"); i++) {
+			result.add(_ctx.stringValue("UninstallPluginResponse.Result["+ i +"]"));
 		}
 		uninstallPluginResponse.setResult(result);
 	 

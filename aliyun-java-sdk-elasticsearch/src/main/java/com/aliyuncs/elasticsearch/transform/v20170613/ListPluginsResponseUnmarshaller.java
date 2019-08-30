@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPluginsResponseUnmarshaller {
 
-	public static ListPluginsResponse unmarshall(ListPluginsResponse listPluginsResponse, UnmarshallerContext context) {
+	public static ListPluginsResponse unmarshall(ListPluginsResponse listPluginsResponse, UnmarshallerContext _ctx) {
 		
-		listPluginsResponse.setRequestId(context.stringValue("ListPluginsResponse.RequestId"));
+		listPluginsResponse.setRequestId(_ctx.stringValue("ListPluginsResponse.RequestId"));
 
 		Headers headers = new Headers();
-		headers.setXTotalCount(context.integerValue("ListPluginsResponse.Headers.X-Total-Count"));
+		headers.setXTotalCount(_ctx.integerValue("ListPluginsResponse.Headers.X-Total-Count"));
 		listPluginsResponse.setHeaders(headers);
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("ListPluginsResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPluginsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(context.stringValue("ListPluginsResponse.Result["+ i +"].name"));
-			resultItem.setState(context.stringValue("ListPluginsResponse.Result["+ i +"].state"));
-			resultItem.setSource(context.stringValue("ListPluginsResponse.Result["+ i +"].source"));
-			resultItem.setDescription(context.stringValue("ListPluginsResponse.Result["+ i +"].description"));
+			resultItem.setName(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].name"));
+			resultItem.setState(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].state"));
+			resultItem.setSource(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].source"));
+			resultItem.setDescription(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].description"));
 
 			result.add(resultItem);
 		}

@@ -29,6 +29,19 @@ public class CreateProjectRequest extends RoaAcsRequest<CreateProjectResponse> {
 		setMethod(MethodType.POST);
 	}
 
+	private String clientToken;
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
 	@Override
 	public Class<CreateProjectResponse> getResponseClass() {
 		return CreateProjectResponse.class;

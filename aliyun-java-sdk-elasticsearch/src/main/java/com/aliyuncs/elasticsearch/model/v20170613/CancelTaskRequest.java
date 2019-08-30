@@ -33,6 +33,8 @@ public class CancelTaskRequest extends RoaAcsRequest<CancelTaskResponse> {
 
 	private String taskType;
 
+	private String clientToken;
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -52,6 +54,17 @@ public class CancelTaskRequest extends RoaAcsRequest<CancelTaskResponse> {
 		this.taskType = taskType;
 		if(taskType != null){
 			putQueryParameter("taskType", taskType);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
 		}
 	}
 

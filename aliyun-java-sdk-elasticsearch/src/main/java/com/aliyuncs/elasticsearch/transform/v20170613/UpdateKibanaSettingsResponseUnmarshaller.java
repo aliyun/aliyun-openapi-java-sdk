@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateKibanaSettingsResponseUnmarshaller {
 
-	public static UpdateKibanaSettingsResponse unmarshall(UpdateKibanaSettingsResponse updateKibanaSettingsResponse, UnmarshallerContext context) {
+	public static UpdateKibanaSettingsResponse unmarshall(UpdateKibanaSettingsResponse updateKibanaSettingsResponse, UnmarshallerContext _ctx) {
 		
-		updateKibanaSettingsResponse.setRequestId(context.stringValue("UpdateKibanaSettingsResponse.RequestId"));
-		updateKibanaSettingsResponse.setResult(context.booleanValue("UpdateKibanaSettingsResponse.Result"));
+		updateKibanaSettingsResponse.setRequestId(_ctx.stringValue("UpdateKibanaSettingsResponse.RequestId"));
+		updateKibanaSettingsResponse.setResult(_ctx.booleanValue("UpdateKibanaSettingsResponse.Result"));
 	 
 	 	return updateKibanaSettingsResponse;
 	}

@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTransferableNodesResponseUnmarshaller {
 
-	public static GetTransferableNodesResponse unmarshall(GetTransferableNodesResponse getTransferableNodesResponse, UnmarshallerContext context) {
+	public static GetTransferableNodesResponse unmarshall(GetTransferableNodesResponse getTransferableNodesResponse, UnmarshallerContext _ctx) {
 		
-		getTransferableNodesResponse.setRequestId(context.stringValue("GetTransferableNodesResponse.RequestId"));
-		getTransferableNodesResponse.setCode(context.stringValue("GetTransferableNodesResponse.Code"));
-		getTransferableNodesResponse.setMessage(context.stringValue("GetTransferableNodesResponse.Message"));
+		getTransferableNodesResponse.setRequestId(_ctx.stringValue("GetTransferableNodesResponse.RequestId"));
+		getTransferableNodesResponse.setCode(_ctx.stringValue("GetTransferableNodesResponse.Code"));
+		getTransferableNodesResponse.setMessage(_ctx.stringValue("GetTransferableNodesResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("GetTransferableNodesResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetTransferableNodesResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setHost(context.stringValue("GetTransferableNodesResponse.Result["+ i +"].host"));
-			resultItem.setPort(context.integerValue("GetTransferableNodesResponse.Result["+ i +"].port"));
+			resultItem.setHost(_ctx.stringValue("GetTransferableNodesResponse.Result["+ i +"].host"));
+			resultItem.setPort(_ctx.integerValue("GetTransferableNodesResponse.Result["+ i +"].port"));
 
 			result.add(resultItem);
 		}

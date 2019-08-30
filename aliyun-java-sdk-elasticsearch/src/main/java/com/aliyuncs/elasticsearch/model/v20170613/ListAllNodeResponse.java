@@ -75,6 +75,14 @@ public class ListAllNodeResponse extends AcsResponse {
 
 		private String nodeType;
 
+		private String cpuPercent;
+
+		private String loadFiveM;
+
+		private String heapPercent;
+
+		private String health;
+
 		public String getHost() {
 			return this.host;
 		}
@@ -105,6 +113,38 @@ public class ListAllNodeResponse extends AcsResponse {
 
 		public void setNodeType(String nodeType) {
 			this.nodeType = nodeType;
+		}
+
+		public String getCpuPercent() {
+			return this.cpuPercent;
+		}
+
+		public void setCpuPercent(String cpuPercent) {
+			this.cpuPercent = cpuPercent;
+		}
+
+		public String getLoadFiveM() {
+			return this.loadFiveM;
+		}
+
+		public void setLoadFiveM(String loadFiveM) {
+			this.loadFiveM = loadFiveM;
+		}
+
+		public String getHeapPercent() {
+			return this.heapPercent;
+		}
+
+		public void setHeapPercent(String heapPercent) {
+			this.heapPercent = heapPercent;
+		}
+
+		public String getHealth() {
+			return this.health;
+		}
+
+		public void setHealth(String health) {
+			this.health = health;
 		}
 	}
 

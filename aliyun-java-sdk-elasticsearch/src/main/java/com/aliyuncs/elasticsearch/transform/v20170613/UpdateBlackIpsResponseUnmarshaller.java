@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateBlackIpsResponseUnmarshaller {
 
-	public static UpdateBlackIpsResponse unmarshall(UpdateBlackIpsResponse updateBlackIpsResponse, UnmarshallerContext context) {
+	public static UpdateBlackIpsResponse unmarshall(UpdateBlackIpsResponse updateBlackIpsResponse, UnmarshallerContext _ctx) {
 		
-		updateBlackIpsResponse.setRequestId(context.stringValue("UpdateBlackIpsResponse.RequestId"));
+		updateBlackIpsResponse.setRequestId(_ctx.stringValue("UpdateBlackIpsResponse.RequestId"));
 
 		Result result = new Result();
 
 		List<String> esIPBlacklist = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UpdateBlackIpsResponse.Result.esIPBlacklist.Length"); i++) {
-			esIPBlacklist.add(context.stringValue("UpdateBlackIpsResponse.Result.esIPBlacklist["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UpdateBlackIpsResponse.Result.esIPBlacklist.Length"); i++) {
+			esIPBlacklist.add(_ctx.stringValue("UpdateBlackIpsResponse.Result.esIPBlacklist["+ i +"]"));
 		}
 		result.setEsIPBlacklist(esIPBlacklist);
 		updateBlackIpsResponse.setResult(result);

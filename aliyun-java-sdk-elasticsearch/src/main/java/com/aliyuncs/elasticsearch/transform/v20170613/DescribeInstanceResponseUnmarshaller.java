@@ -27,134 +27,148 @@ import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Resul
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.NodeSpec;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.SynonymsDictsItem;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.WarmNodeConfiguration;
+import com.aliyuncs.elasticsearch.model.v20170613.DescribeInstanceResponse.Result.ZoneInfo;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class DescribeInstanceResponseUnmarshaller {
 
-	public static DescribeInstanceResponse unmarshall(DescribeInstanceResponse describeInstanceResponse, UnmarshallerContext context) {
+	public static DescribeInstanceResponse unmarshall(DescribeInstanceResponse describeInstanceResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceResponse.setRequestId(context.stringValue("DescribeInstanceResponse.RequestId"));
+		describeInstanceResponse.setRequestId(_ctx.stringValue("DescribeInstanceResponse.RequestId"));
 
 		Result result = new Result();
-		result.setInstanceId(context.stringValue("DescribeInstanceResponse.Result.instanceId"));
-		result.setDomain(context.stringValue("DescribeInstanceResponse.Result.domain"));
-		result.setDescription(context.stringValue("DescribeInstanceResponse.Result.description"));
-		result.setNodeAmount(context.integerValue("DescribeInstanceResponse.Result.nodeAmount"));
-		result.setPaymentType(context.stringValue("DescribeInstanceResponse.Result.paymentType"));
-		result.setStatus(context.stringValue("DescribeInstanceResponse.Result.status"));
-		result.setEsVersion(context.stringValue("DescribeInstanceResponse.Result.esVersion"));
-		result.setCreatedAt(context.stringValue("DescribeInstanceResponse.Result.createdAt"));
-		result.setUpdatedAt(context.stringValue("DescribeInstanceResponse.Result.updatedAt"));
-		result.setKibanaDomain(context.stringValue("DescribeInstanceResponse.Result.kibanaDomain"));
-		result.setEnablePublic(context.booleanValue("DescribeInstanceResponse.Result.enablePublic"));
-		result.setDedicateMaster(context.booleanValue("DescribeInstanceResponse.Result.dedicateMaster"));
-		result.setAdvancedDedicateMaster(context.booleanValue("DescribeInstanceResponse.Result.advancedDedicateMaster"));
-		result.setPublicPort(context.integerValue("DescribeInstanceResponse.Result.publicPort"));
-		result.setKibanaPort(context.integerValue("DescribeInstanceResponse.Result.kibanaPort"));
-		result.setPublicDomain(context.stringValue("DescribeInstanceResponse.Result.publicDomain"));
-		result.setVpcInstanceId(context.stringValue("DescribeInstanceResponse.Result.vpcInstanceId"));
-		result.setPort(context.integerValue("DescribeInstanceResponse.Result.port"));
-		result.setEsConfig(context.mapValue("DescribeInstanceResponse.Result.esConfig"));
-		result.setZoneCount(context.integerValue("DescribeInstanceResponse.Result.zoneCount"));
-		result.setHaveClientNode(context.booleanValue("DescribeInstanceResponse.Result.haveClientNode"));
-		result.setWarmNode(context.booleanValue("DescribeInstanceResponse.Result.warmNode"));
+		result.setInstanceId(_ctx.stringValue("DescribeInstanceResponse.Result.instanceId"));
+		result.setDomain(_ctx.stringValue("DescribeInstanceResponse.Result.domain"));
+		result.setDescription(_ctx.stringValue("DescribeInstanceResponse.Result.description"));
+		result.setNodeAmount(_ctx.integerValue("DescribeInstanceResponse.Result.nodeAmount"));
+		result.setPaymentType(_ctx.stringValue("DescribeInstanceResponse.Result.paymentType"));
+		result.setStatus(_ctx.stringValue("DescribeInstanceResponse.Result.status"));
+		result.setEsVersion(_ctx.stringValue("DescribeInstanceResponse.Result.esVersion"));
+		result.setCreatedAt(_ctx.stringValue("DescribeInstanceResponse.Result.createdAt"));
+		result.setUpdatedAt(_ctx.stringValue("DescribeInstanceResponse.Result.updatedAt"));
+		result.setKibanaDomain(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaDomain"));
+		result.setEnablePublic(_ctx.booleanValue("DescribeInstanceResponse.Result.enablePublic"));
+		result.setDedicateMaster(_ctx.booleanValue("DescribeInstanceResponse.Result.dedicateMaster"));
+		result.setAdvancedDedicateMaster(_ctx.booleanValue("DescribeInstanceResponse.Result.advancedDedicateMaster"));
+		result.setPublicPort(_ctx.integerValue("DescribeInstanceResponse.Result.publicPort"));
+		result.setKibanaPort(_ctx.integerValue("DescribeInstanceResponse.Result.kibanaPort"));
+		result.setPublicDomain(_ctx.stringValue("DescribeInstanceResponse.Result.publicDomain"));
+		result.setVpcInstanceId(_ctx.stringValue("DescribeInstanceResponse.Result.vpcInstanceId"));
+		result.setPort(_ctx.integerValue("DescribeInstanceResponse.Result.port"));
+		result.setEsConfig(_ctx.mapValue("DescribeInstanceResponse.Result.esConfig"));
+		result.setZoneCount(_ctx.integerValue("DescribeInstanceResponse.Result.zoneCount"));
+		result.setHaveClientNode(_ctx.booleanValue("DescribeInstanceResponse.Result.haveClientNode"));
+		result.setWarmNode(_ctx.booleanValue("DescribeInstanceResponse.Result.warmNode"));
+		result.setProtocol(_ctx.stringValue("DescribeInstanceResponse.Result.protocol"));
+		result.setEnableKibanaPublicNetwork(_ctx.booleanValue("DescribeInstanceResponse.Result.enableKibanaPublicNetwork"));
+		result.setHaveKibana(_ctx.booleanValue("DescribeInstanceResponse.Result.haveKibana"));
 
 		List<String> esIPWhitelist = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceResponse.Result.esIPWhitelist.Length"); i++) {
-			esIPWhitelist.add(context.stringValue("DescribeInstanceResponse.Result.esIPWhitelist["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.esIPWhitelist.Length"); i++) {
+			esIPWhitelist.add(_ctx.stringValue("DescribeInstanceResponse.Result.esIPWhitelist["+ i +"]"));
 		}
 		result.setEsIPWhitelist(esIPWhitelist);
 
 		List<String> esIPBlacklist = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceResponse.Result.esIPBlacklist.Length"); i++) {
-			esIPBlacklist.add(context.stringValue("DescribeInstanceResponse.Result.esIPBlacklist["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.esIPBlacklist.Length"); i++) {
+			esIPBlacklist.add(_ctx.stringValue("DescribeInstanceResponse.Result.esIPBlacklist["+ i +"]"));
 		}
 		result.setEsIPBlacklist(esIPBlacklist);
 
 		List<String> kibanaIPWhitelist = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceResponse.Result.kibanaIPWhitelist.Length"); i++) {
-			kibanaIPWhitelist.add(context.stringValue("DescribeInstanceResponse.Result.kibanaIPWhitelist["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.kibanaIPWhitelist.Length"); i++) {
+			kibanaIPWhitelist.add(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaIPWhitelist["+ i +"]"));
 		}
 		result.setKibanaIPWhitelist(kibanaIPWhitelist);
 
 		List<String> publicIpWhitelist = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceResponse.Result.publicIpWhitelist.Length"); i++) {
-			publicIpWhitelist.add(context.stringValue("DescribeInstanceResponse.Result.publicIpWhitelist["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.publicIpWhitelist.Length"); i++) {
+			publicIpWhitelist.add(_ctx.stringValue("DescribeInstanceResponse.Result.publicIpWhitelist["+ i +"]"));
 		}
 		result.setPublicIpWhitelist(publicIpWhitelist);
 
 		List<String> privateNetworkIpWhiteList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceResponse.Result.privateNetworkIpWhiteList.Length"); i++) {
-			privateNetworkIpWhiteList.add(context.stringValue("DescribeInstanceResponse.Result.privateNetworkIpWhiteList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.privateNetworkIpWhiteList.Length"); i++) {
+			privateNetworkIpWhiteList.add(_ctx.stringValue("DescribeInstanceResponse.Result.privateNetworkIpWhiteList["+ i +"]"));
 		}
 		result.setPrivateNetworkIpWhiteList(privateNetworkIpWhiteList);
 
 		NodeSpec nodeSpec = new NodeSpec();
-		nodeSpec.setSpec(context.stringValue("DescribeInstanceResponse.Result.nodeSpec.spec"));
-		nodeSpec.setDisk(context.integerValue("DescribeInstanceResponse.Result.nodeSpec.disk"));
-		nodeSpec.setDiskType(context.stringValue("DescribeInstanceResponse.Result.nodeSpec.diskType"));
+		nodeSpec.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.nodeSpec.spec"));
+		nodeSpec.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.nodeSpec.disk"));
+		nodeSpec.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.nodeSpec.diskType"));
 		result.setNodeSpec(nodeSpec);
 
 		NetworkConfig networkConfig = new NetworkConfig();
-		networkConfig.setType(context.stringValue("DescribeInstanceResponse.Result.networkConfig.type"));
-		networkConfig.setVpcId(context.stringValue("DescribeInstanceResponse.Result.networkConfig.vpcId"));
-		networkConfig.setVswitchId(context.stringValue("DescribeInstanceResponse.Result.networkConfig.vswitchId"));
-		networkConfig.setVsArea(context.stringValue("DescribeInstanceResponse.Result.networkConfig.vsArea"));
+		networkConfig.setType(_ctx.stringValue("DescribeInstanceResponse.Result.networkConfig.type"));
+		networkConfig.setVpcId(_ctx.stringValue("DescribeInstanceResponse.Result.networkConfig.vpcId"));
+		networkConfig.setVswitchId(_ctx.stringValue("DescribeInstanceResponse.Result.networkConfig.vswitchId"));
+		networkConfig.setVsArea(_ctx.stringValue("DescribeInstanceResponse.Result.networkConfig.vsArea"));
 		result.setNetworkConfig(networkConfig);
 
 		KibanaConfiguration kibanaConfiguration = new KibanaConfiguration();
-		kibanaConfiguration.setSpec(context.stringValue("DescribeInstanceResponse.Result.kibanaConfiguration.spec"));
-		kibanaConfiguration.setAmount(context.integerValue("DescribeInstanceResponse.Result.kibanaConfiguration.amount"));
-		kibanaConfiguration.setDiskType(context.stringValue("DescribeInstanceResponse.Result.kibanaConfiguration.diskType"));
-		kibanaConfiguration.setDisk(context.integerValue("DescribeInstanceResponse.Result.kibanaConfiguration.disk"));
+		kibanaConfiguration.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaConfiguration.spec"));
+		kibanaConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.kibanaConfiguration.amount"));
+		kibanaConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.kibanaConfiguration.diskType"));
+		kibanaConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.kibanaConfiguration.disk"));
 		result.setKibanaConfiguration(kibanaConfiguration);
 
 		MasterConfiguration masterConfiguration = new MasterConfiguration();
-		masterConfiguration.setSpec(context.stringValue("DescribeInstanceResponse.Result.masterConfiguration.spec"));
-		masterConfiguration.setAmount(context.integerValue("DescribeInstanceResponse.Result.masterConfiguration.amount"));
-		masterConfiguration.setDiskType(context.stringValue("DescribeInstanceResponse.Result.masterConfiguration.diskType"));
-		masterConfiguration.setDisk(context.integerValue("DescribeInstanceResponse.Result.masterConfiguration.disk"));
+		masterConfiguration.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.masterConfiguration.spec"));
+		masterConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.masterConfiguration.amount"));
+		masterConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.masterConfiguration.diskType"));
+		masterConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.masterConfiguration.disk"));
 		result.setMasterConfiguration(masterConfiguration);
 
 		ClientNodeConfiguration clientNodeConfiguration = new ClientNodeConfiguration();
-		clientNodeConfiguration.setSpec(context.stringValue("DescribeInstanceResponse.Result.clientNodeConfiguration.spec"));
-		clientNodeConfiguration.setAmount(context.integerValue("DescribeInstanceResponse.Result.clientNodeConfiguration.amount"));
-		clientNodeConfiguration.setDiskType(context.stringValue("DescribeInstanceResponse.Result.clientNodeConfiguration.diskType"));
-		clientNodeConfiguration.setDisk(context.integerValue("DescribeInstanceResponse.Result.clientNodeConfiguration.disk"));
+		clientNodeConfiguration.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.clientNodeConfiguration.spec"));
+		clientNodeConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.clientNodeConfiguration.amount"));
+		clientNodeConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.clientNodeConfiguration.diskType"));
+		clientNodeConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.clientNodeConfiguration.disk"));
 		result.setClientNodeConfiguration(clientNodeConfiguration);
 
 		WarmNodeConfiguration warmNodeConfiguration = new WarmNodeConfiguration();
-		warmNodeConfiguration.setSpec(context.stringValue("DescribeInstanceResponse.Result.warmNodeConfiguration.spec"));
-		warmNodeConfiguration.setAmount(context.integerValue("DescribeInstanceResponse.Result.warmNodeConfiguration.amount"));
-		warmNodeConfiguration.setDiskType(context.stringValue("DescribeInstanceResponse.Result.warmNodeConfiguration.diskType"));
-		warmNodeConfiguration.setDisk(context.integerValue("DescribeInstanceResponse.Result.warmNodeConfiguration.disk"));
+		warmNodeConfiguration.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.warmNodeConfiguration.spec"));
+		warmNodeConfiguration.setAmount(_ctx.integerValue("DescribeInstanceResponse.Result.warmNodeConfiguration.amount"));
+		warmNodeConfiguration.setDiskType(_ctx.stringValue("DescribeInstanceResponse.Result.warmNodeConfiguration.diskType"));
+		warmNodeConfiguration.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.warmNodeConfiguration.disk"));
 		result.setWarmNodeConfiguration(warmNodeConfiguration);
 
 		List<DictListItem> dictList = new ArrayList<DictListItem>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceResponse.Result.dictList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.dictList.Length"); i++) {
 			DictListItem dictListItem = new DictListItem();
-			dictListItem.setName(context.stringValue("DescribeInstanceResponse.Result.dictList["+ i +"].name"));
-			dictListItem.setFileSize(context.longValue("DescribeInstanceResponse.Result.dictList["+ i +"].fileSize"));
-			dictListItem.setType(context.stringValue("DescribeInstanceResponse.Result.dictList["+ i +"].type"));
-			dictListItem.setSourceType(context.stringValue("DescribeInstanceResponse.Result.dictList["+ i +"].sourceType"));
+			dictListItem.setName(_ctx.stringValue("DescribeInstanceResponse.Result.dictList["+ i +"].name"));
+			dictListItem.setFileSize(_ctx.longValue("DescribeInstanceResponse.Result.dictList["+ i +"].fileSize"));
+			dictListItem.setType(_ctx.stringValue("DescribeInstanceResponse.Result.dictList["+ i +"].type"));
+			dictListItem.setSourceType(_ctx.stringValue("DescribeInstanceResponse.Result.dictList["+ i +"].sourceType"));
 
 			dictList.add(dictListItem);
 		}
 		result.setDictList(dictList);
 
 		List<SynonymsDictsItem> synonymsDicts = new ArrayList<SynonymsDictsItem>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceResponse.Result.synonymsDicts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.synonymsDicts.Length"); i++) {
 			SynonymsDictsItem synonymsDictsItem = new SynonymsDictsItem();
-			synonymsDictsItem.setName(context.stringValue("DescribeInstanceResponse.Result.synonymsDicts["+ i +"].name"));
-			synonymsDictsItem.setFileSize(context.longValue("DescribeInstanceResponse.Result.synonymsDicts["+ i +"].fileSize"));
-			synonymsDictsItem.setType(context.stringValue("DescribeInstanceResponse.Result.synonymsDicts["+ i +"].type"));
-			synonymsDictsItem.setSourceType(context.stringValue("DescribeInstanceResponse.Result.synonymsDicts["+ i +"].sourceType"));
+			synonymsDictsItem.setName(_ctx.stringValue("DescribeInstanceResponse.Result.synonymsDicts["+ i +"].name"));
+			synonymsDictsItem.setFileSize(_ctx.longValue("DescribeInstanceResponse.Result.synonymsDicts["+ i +"].fileSize"));
+			synonymsDictsItem.setType(_ctx.stringValue("DescribeInstanceResponse.Result.synonymsDicts["+ i +"].type"));
+			synonymsDictsItem.setSourceType(_ctx.stringValue("DescribeInstanceResponse.Result.synonymsDicts["+ i +"].sourceType"));
 
 			synonymsDicts.add(synonymsDictsItem);
 		}
 		result.setSynonymsDicts(synonymsDicts);
+
+		List<ZoneInfo> zoneInfos = new ArrayList<ZoneInfo>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Result.zoneInfos.Length"); i++) {
+			ZoneInfo zoneInfo = new ZoneInfo();
+			zoneInfo.setZoneId(_ctx.stringValue("DescribeInstanceResponse.Result.zoneInfos["+ i +"].zoneId"));
+			zoneInfo.setStatus(_ctx.stringValue("DescribeInstanceResponse.Result.zoneInfos["+ i +"].status"));
+
+			zoneInfos.add(zoneInfo);
+		}
+		result.setZoneInfos(zoneInfos);
 		describeInstanceResponse.setResult(result);
 	 
 	 	return describeInstanceResponse;

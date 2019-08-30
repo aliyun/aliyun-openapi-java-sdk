@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CloseHttpsResponseUnmarshaller {
 
-	public static CloseHttpsResponse unmarshall(CloseHttpsResponse closeHttpsResponse, UnmarshallerContext context) {
+	public static CloseHttpsResponse unmarshall(CloseHttpsResponse closeHttpsResponse, UnmarshallerContext _ctx) {
 		
-		closeHttpsResponse.setRequestId(context.stringValue("CloseHttpsResponse.RequestId"));
-		closeHttpsResponse.setResult(context.booleanValue("CloseHttpsResponse.Result"));
+		closeHttpsResponse.setRequestId(_ctx.stringValue("CloseHttpsResponse.RequestId"));
+		closeHttpsResponse.setResult(_ctx.booleanValue("CloseHttpsResponse.Result"));
 	 
 	 	return closeHttpsResponse;
 	}

@@ -31,6 +31,8 @@ public class UpdatePublicNetworkRequest extends RoaAcsRequest<UpdatePublicNetwor
 
 	private String instanceId;
 
+	private String clientToken;
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -39,6 +41,17 @@ public class UpdatePublicNetworkRequest extends RoaAcsRequest<UpdatePublicNetwor
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
 		}
 	}
 

@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdatePublicWhiteIpsResponseUnmarshaller {
 
-	public static UpdatePublicWhiteIpsResponse unmarshall(UpdatePublicWhiteIpsResponse updatePublicWhiteIpsResponse, UnmarshallerContext context) {
+	public static UpdatePublicWhiteIpsResponse unmarshall(UpdatePublicWhiteIpsResponse updatePublicWhiteIpsResponse, UnmarshallerContext _ctx) {
 		
-		updatePublicWhiteIpsResponse.setRequestId(context.stringValue("UpdatePublicWhiteIpsResponse.RequestId"));
+		updatePublicWhiteIpsResponse.setRequestId(_ctx.stringValue("UpdatePublicWhiteIpsResponse.RequestId"));
 
 		Result result = new Result();
 
 		List<String> publicIpWhitelist = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UpdatePublicWhiteIpsResponse.Result.publicIpWhitelist.Length"); i++) {
-			publicIpWhitelist.add(context.stringValue("UpdatePublicWhiteIpsResponse.Result.publicIpWhitelist["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UpdatePublicWhiteIpsResponse.Result.publicIpWhitelist.Length"); i++) {
+			publicIpWhitelist.add(_ctx.stringValue("UpdatePublicWhiteIpsResponse.Result.publicIpWhitelist["+ i +"]"));
 		}
 		result.setPublicIpWhitelist(publicIpWhitelist);
 		updatePublicWhiteIpsResponse.setResult(result);

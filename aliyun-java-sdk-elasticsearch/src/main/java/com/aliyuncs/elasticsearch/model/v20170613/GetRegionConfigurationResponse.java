@@ -59,11 +59,27 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 		private List<NodeSpecListItem> nodeSpecList;
 
+		private List<Disk> clientNodeDiskList;
+
+		private List<Disk> masterDiskList;
+
 		private List<String> zones;
 
 		private List<String> esVersions;
 
+		private List<String> masterSpec;
+
+		private List<String> clientNodeSpec;
+
 		private Node node;
+
+		private JvmConfine jvmConfine;
+
+		private ClientNodeAmountRange clientNodeAmountRange;
+
+		private WarmNodeProperties warmNodeProperties;
+
+		private KibanaNodeProperties kibanaNodeProperties;
 
 		public String getEnv() {
 			return this.env;
@@ -129,6 +145,22 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 			this.nodeSpecList = nodeSpecList;
 		}
 
+		public List<Disk> getClientNodeDiskList() {
+			return this.clientNodeDiskList;
+		}
+
+		public void setClientNodeDiskList(List<Disk> clientNodeDiskList) {
+			this.clientNodeDiskList = clientNodeDiskList;
+		}
+
+		public List<Disk> getMasterDiskList() {
+			return this.masterDiskList;
+		}
+
+		public void setMasterDiskList(List<Disk> masterDiskList) {
+			this.masterDiskList = masterDiskList;
+		}
+
 		public List<String> getZones() {
 			return this.zones;
 		}
@@ -145,12 +177,60 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 			this.esVersions = esVersions;
 		}
 
+		public List<String> getMasterSpec() {
+			return this.masterSpec;
+		}
+
+		public void setMasterSpec(List<String> masterSpec) {
+			this.masterSpec = masterSpec;
+		}
+
+		public List<String> getClientNodeSpec() {
+			return this.clientNodeSpec;
+		}
+
+		public void setClientNodeSpec(List<String> clientNodeSpec) {
+			this.clientNodeSpec = clientNodeSpec;
+		}
+
 		public Node getNode() {
 			return this.node;
 		}
 
 		public void setNode(Node node) {
 			this.node = node;
+		}
+
+		public JvmConfine getJvmConfine() {
+			return this.jvmConfine;
+		}
+
+		public void setJvmConfine(JvmConfine jvmConfine) {
+			this.jvmConfine = jvmConfine;
+		}
+
+		public ClientNodeAmountRange getClientNodeAmountRange() {
+			return this.clientNodeAmountRange;
+		}
+
+		public void setClientNodeAmountRange(ClientNodeAmountRange clientNodeAmountRange) {
+			this.clientNodeAmountRange = clientNodeAmountRange;
+		}
+
+		public WarmNodeProperties getWarmNodeProperties() {
+			return this.warmNodeProperties;
+		}
+
+		public void setWarmNodeProperties(WarmNodeProperties warmNodeProperties) {
+			this.warmNodeProperties = warmNodeProperties;
+		}
+
+		public KibanaNodeProperties getKibanaNodeProperties() {
+			return this.kibanaNodeProperties;
+		}
+
+		public void setKibanaNodeProperties(KibanaNodeProperties kibanaNodeProperties) {
+			this.kibanaNodeProperties = kibanaNodeProperties;
 		}
 
 		public static class DataDiskListItem {
@@ -302,6 +382,49 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 			}
 		}
 
+		public static class Disk {
+
+			private String diskType;
+
+			private Integer minSize;
+
+			private Integer maxSize;
+
+			private Integer scaleLimit;
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public Integer getMinSize() {
+				return this.minSize;
+			}
+
+			public void setMinSize(Integer minSize) {
+				this.minSize = minSize;
+			}
+
+			public Integer getMaxSize() {
+				return this.maxSize;
+			}
+
+			public void setMaxSize(Integer maxSize) {
+				this.maxSize = maxSize;
+			}
+
+			public Integer getScaleLimit() {
+				return this.scaleLimit;
+			}
+
+			public void setScaleLimit(Integer scaleLimit) {
+				this.scaleLimit = scaleLimit;
+			}
+		}
+
 		public static class Node {
 
 			private Integer minAmount;
@@ -322,6 +445,217 @@ public class GetRegionConfigurationResponse extends AcsResponse {
 
 			public void setMaxAmount(Integer maxAmount) {
 				this.maxAmount = maxAmount;
+			}
+		}
+
+		public static class JvmConfine {
+
+			private Integer memory;
+
+			private List<String> supportGcs;
+
+			private List<String> supportEsVersions;
+
+			public Integer getMemory() {
+				return this.memory;
+			}
+
+			public void setMemory(Integer memory) {
+				this.memory = memory;
+			}
+
+			public List<String> getSupportGcs() {
+				return this.supportGcs;
+			}
+
+			public void setSupportGcs(List<String> supportGcs) {
+				this.supportGcs = supportGcs;
+			}
+
+			public List<String> getSupportEsVersions() {
+				return this.supportEsVersions;
+			}
+
+			public void setSupportEsVersions(List<String> supportEsVersions) {
+				this.supportEsVersions = supportEsVersions;
+			}
+		}
+
+		public static class ClientNodeAmountRange {
+
+			private Integer minAmount;
+
+			private Integer maxAmount;
+
+			public Integer getMinAmount() {
+				return this.minAmount;
+			}
+
+			public void setMinAmount(Integer minAmount) {
+				this.minAmount = minAmount;
+			}
+
+			public Integer getMaxAmount() {
+				return this.maxAmount;
+			}
+
+			public void setMaxAmount(Integer maxAmount) {
+				this.maxAmount = maxAmount;
+			}
+		}
+
+		public static class WarmNodeProperties {
+
+			private List<Disk1> diskList;
+
+			private List<String> spec;
+
+			private AmountRange amountRange;
+
+			public List<Disk1> getDiskList() {
+				return this.diskList;
+			}
+
+			public void setDiskList(List<Disk1> diskList) {
+				this.diskList = diskList;
+			}
+
+			public List<String> getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(List<String> spec) {
+				this.spec = spec;
+			}
+
+			public AmountRange getAmountRange() {
+				return this.amountRange;
+			}
+
+			public void setAmountRange(AmountRange amountRange) {
+				this.amountRange = amountRange;
+			}
+
+			public static class Disk1 {
+
+				private String diskType;
+
+				private Integer minSize;
+
+				private Integer maxSize;
+
+				private Integer scaleLimit;
+
+				private List<String> valueLimitSet2;
+
+				public String getDiskType() {
+					return this.diskType;
+				}
+
+				public void setDiskType(String diskType) {
+					this.diskType = diskType;
+				}
+
+				public Integer getMinSize() {
+					return this.minSize;
+				}
+
+				public void setMinSize(Integer minSize) {
+					this.minSize = minSize;
+				}
+
+				public Integer getMaxSize() {
+					return this.maxSize;
+				}
+
+				public void setMaxSize(Integer maxSize) {
+					this.maxSize = maxSize;
+				}
+
+				public Integer getScaleLimit() {
+					return this.scaleLimit;
+				}
+
+				public void setScaleLimit(Integer scaleLimit) {
+					this.scaleLimit = scaleLimit;
+				}
+
+				public List<String> getValueLimitSet2() {
+					return this.valueLimitSet2;
+				}
+
+				public void setValueLimitSet2(List<String> valueLimitSet2) {
+					this.valueLimitSet2 = valueLimitSet2;
+				}
+			}
+
+			public static class AmountRange {
+
+				private Integer minAmount;
+
+				private Integer maxAmount;
+
+				public Integer getMinAmount() {
+					return this.minAmount;
+				}
+
+				public void setMinAmount(Integer minAmount) {
+					this.minAmount = minAmount;
+				}
+
+				public Integer getMaxAmount() {
+					return this.maxAmount;
+				}
+
+				public void setMaxAmount(Integer maxAmount) {
+					this.maxAmount = maxAmount;
+				}
+			}
+		}
+
+		public static class KibanaNodeProperties {
+
+			private List<String> spec3;
+
+			private AmountRange4 amountRange4;
+
+			public List<String> getSpec3() {
+				return this.spec3;
+			}
+
+			public void setSpec3(List<String> spec3) {
+				this.spec3 = spec3;
+			}
+
+			public AmountRange4 getAmountRange4() {
+				return this.amountRange4;
+			}
+
+			public void setAmountRange4(AmountRange4 amountRange4) {
+				this.amountRange4 = amountRange4;
+			}
+
+			public static class AmountRange4 {
+
+				private Integer minAmount;
+
+				private Integer maxAmount;
+
+				public Integer getMinAmount() {
+					return this.minAmount;
+				}
+
+				public void setMinAmount(Integer minAmount) {
+					this.minAmount = minAmount;
+				}
+
+				public Integer getMaxAmount() {
+					return this.maxAmount;
+				}
+
+				public void setMaxAmount(Integer maxAmount) {
+					this.maxAmount = maxAmount;
+				}
 			}
 		}
 	}

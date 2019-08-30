@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class InstallSystemPluginResponseUnmarshaller {
 
-	public static InstallSystemPluginResponse unmarshall(InstallSystemPluginResponse installSystemPluginResponse, UnmarshallerContext context) {
+	public static InstallSystemPluginResponse unmarshall(InstallSystemPluginResponse installSystemPluginResponse, UnmarshallerContext _ctx) {
 		
-		installSystemPluginResponse.setRequestId(context.stringValue("InstallSystemPluginResponse.RequestId"));
+		installSystemPluginResponse.setRequestId(_ctx.stringValue("InstallSystemPluginResponse.RequestId"));
 
 		List<String> result = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("InstallSystemPluginResponse.Result.Length"); i++) {
-			result.add(context.stringValue("InstallSystemPluginResponse.Result["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("InstallSystemPluginResponse.Result.Length"); i++) {
+			result.add(_ctx.stringValue("InstallSystemPluginResponse.Result["+ i +"]"));
 		}
 		installSystemPluginResponse.setResult(result);
 	 

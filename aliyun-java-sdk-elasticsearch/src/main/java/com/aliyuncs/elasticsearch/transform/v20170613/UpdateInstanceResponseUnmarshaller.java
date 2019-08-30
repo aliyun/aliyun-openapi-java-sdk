@@ -23,31 +23,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateInstanceResponseUnmarshaller {
 
-	public static UpdateInstanceResponse unmarshall(UpdateInstanceResponse updateInstanceResponse, UnmarshallerContext context) {
+	public static UpdateInstanceResponse unmarshall(UpdateInstanceResponse updateInstanceResponse, UnmarshallerContext _ctx) {
 		
-		updateInstanceResponse.setRequestId(context.stringValue("UpdateInstanceResponse.RequestId"));
+		updateInstanceResponse.setRequestId(_ctx.stringValue("UpdateInstanceResponse.RequestId"));
 
 		Result result = new Result();
-		result.setInstanceId(context.stringValue("UpdateInstanceResponse.Result.instanceId"));
-		result.setDomain(context.stringValue("UpdateInstanceResponse.Result.domain"));
-		result.setDescription(context.stringValue("UpdateInstanceResponse.Result.description"));
-		result.setNodeAmount(context.integerValue("UpdateInstanceResponse.Result.nodeAmount"));
-		result.setPaymentType(context.stringValue("UpdateInstanceResponse.Result.paymentType"));
-		result.setStatus(context.stringValue("UpdateInstanceResponse.Result.status"));
-		result.setEsVersion(context.stringValue("UpdateInstanceResponse.Result.esVersion"));
-		result.setCreatedAt(context.stringValue("UpdateInstanceResponse.Result.createdAt"));
-		result.setUpdatedAt(context.stringValue("UpdateInstanceResponse.Result.updatedAt"));
+		result.setInstanceId(_ctx.stringValue("UpdateInstanceResponse.Result.instanceId"));
+		result.setDomain(_ctx.stringValue("UpdateInstanceResponse.Result.domain"));
+		result.setDescription(_ctx.stringValue("UpdateInstanceResponse.Result.description"));
+		result.setNodeAmount(_ctx.integerValue("UpdateInstanceResponse.Result.nodeAmount"));
+		result.setPaymentType(_ctx.stringValue("UpdateInstanceResponse.Result.paymentType"));
+		result.setStatus(_ctx.stringValue("UpdateInstanceResponse.Result.status"));
+		result.setEsVersion(_ctx.stringValue("UpdateInstanceResponse.Result.esVersion"));
+		result.setCreatedAt(_ctx.stringValue("UpdateInstanceResponse.Result.createdAt"));
+		result.setUpdatedAt(_ctx.stringValue("UpdateInstanceResponse.Result.updatedAt"));
 
 		NodeSpec nodeSpec = new NodeSpec();
-		nodeSpec.setSpec(context.stringValue("UpdateInstanceResponse.Result.nodeSpec.spec"));
-		nodeSpec.setDisk(context.integerValue("UpdateInstanceResponse.Result.nodeSpec.disk"));
+		nodeSpec.setSpec(_ctx.stringValue("UpdateInstanceResponse.Result.nodeSpec.spec"));
+		nodeSpec.setDisk(_ctx.integerValue("UpdateInstanceResponse.Result.nodeSpec.disk"));
 		result.setNodeSpec(nodeSpec);
 
 		NetworkConfig networkConfig = new NetworkConfig();
-		networkConfig.setType(context.stringValue("UpdateInstanceResponse.Result.networkConfig.type"));
-		networkConfig.setVpcId(context.stringValue("UpdateInstanceResponse.Result.networkConfig.vpcId"));
-		networkConfig.setVswitchId(context.stringValue("UpdateInstanceResponse.Result.networkConfig.vswitchId"));
-		networkConfig.setVsArea(context.stringValue("UpdateInstanceResponse.Result.networkConfig.vsArea"));
+		networkConfig.setType(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.type"));
+		networkConfig.setVpcId(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.vpcId"));
+		networkConfig.setVswitchId(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.vswitchId"));
+		networkConfig.setVsArea(_ctx.stringValue("UpdateInstanceResponse.Result.networkConfig.vsArea"));
 		result.setNetworkConfig(networkConfig);
 		updateInstanceResponse.setResult(result);
 	 

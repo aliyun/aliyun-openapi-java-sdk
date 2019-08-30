@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateDictResponseUnmarshaller {
 
-	public static UpdateDictResponse unmarshall(UpdateDictResponse updateDictResponse, UnmarshallerContext context) {
+	public static UpdateDictResponse unmarshall(UpdateDictResponse updateDictResponse, UnmarshallerContext _ctx) {
 		
-		updateDictResponse.setRequestId(context.stringValue("UpdateDictResponse.RequestId"));
+		updateDictResponse.setRequestId(_ctx.stringValue("UpdateDictResponse.RequestId"));
 
 		List<DictList> result = new ArrayList<DictList>();
-		for (int i = 0; i < context.lengthValue("UpdateDictResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("UpdateDictResponse.Result.Length"); i++) {
 			DictList dictList = new DictList();
-			dictList.setName(context.stringValue("UpdateDictResponse.Result["+ i +"].name"));
-			dictList.setFileSize(context.longValue("UpdateDictResponse.Result["+ i +"].fileSize"));
-			dictList.setType(context.stringValue("UpdateDictResponse.Result["+ i +"].type"));
-			dictList.setSourceType(context.stringValue("UpdateDictResponse.Result["+ i +"].sourceType"));
+			dictList.setName(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].name"));
+			dictList.setFileSize(_ctx.longValue("UpdateDictResponse.Result["+ i +"].fileSize"));
+			dictList.setType(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].type"));
+			dictList.setSourceType(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].sourceType"));
 
 			OssObject ossObject = new OssObject();
-			ossObject.setBucketName(context.stringValue("UpdateDictResponse.Result["+ i +"].ossObject.bucketName"));
-			ossObject.setKey(context.stringValue("UpdateDictResponse.Result["+ i +"].ossObject.key"));
-			ossObject.setEtag(context.stringValue("UpdateDictResponse.Result["+ i +"].ossObject.etag"));
+			ossObject.setBucketName(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].ossObject.bucketName"));
+			ossObject.setKey(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].ossObject.key"));
+			ossObject.setEtag(_ctx.stringValue("UpdateDictResponse.Result["+ i +"].ossObject.etag"));
 			dictList.setOssObject(ossObject);
 
 			result.add(dictList);

@@ -21,13 +21,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateSnapshotSettingResponseUnmarshaller {
 
-	public static UpdateSnapshotSettingResponse unmarshall(UpdateSnapshotSettingResponse updateSnapshotSettingResponse, UnmarshallerContext context) {
+	public static UpdateSnapshotSettingResponse unmarshall(UpdateSnapshotSettingResponse updateSnapshotSettingResponse, UnmarshallerContext _ctx) {
 		
-		updateSnapshotSettingResponse.setRequestId(context.stringValue("UpdateSnapshotSettingResponse.RequestId"));
+		updateSnapshotSettingResponse.setRequestId(_ctx.stringValue("UpdateSnapshotSettingResponse.RequestId"));
 
 		Result result = new Result();
-		result.setQuartzRegex(context.stringValue("UpdateSnapshotSettingResponse.Result.quartzRegex"));
-		result.setEnable(context.booleanValue("UpdateSnapshotSettingResponse.Result.enable"));
+		result.setQuartzRegex(_ctx.stringValue("UpdateSnapshotSettingResponse.Result.quartzRegex"));
+		result.setEnable(_ctx.booleanValue("UpdateSnapshotSettingResponse.Result.enable"));
 		updateSnapshotSettingResponse.setResult(result);
 	 
 	 	return updateSnapshotSettingResponse;

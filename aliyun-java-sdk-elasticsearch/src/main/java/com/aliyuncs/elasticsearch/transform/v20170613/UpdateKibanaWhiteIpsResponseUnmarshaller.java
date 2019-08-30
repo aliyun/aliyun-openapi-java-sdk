@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateKibanaWhiteIpsResponseUnmarshaller {
 
-	public static UpdateKibanaWhiteIpsResponse unmarshall(UpdateKibanaWhiteIpsResponse updateKibanaWhiteIpsResponse, UnmarshallerContext context) {
+	public static UpdateKibanaWhiteIpsResponse unmarshall(UpdateKibanaWhiteIpsResponse updateKibanaWhiteIpsResponse, UnmarshallerContext _ctx) {
 		
-		updateKibanaWhiteIpsResponse.setRequestId(context.stringValue("UpdateKibanaWhiteIpsResponse.RequestId"));
+		updateKibanaWhiteIpsResponse.setRequestId(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.RequestId"));
 
 		Result result = new Result();
 
 		List<String> kibanaIPWhitelist = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UpdateKibanaWhiteIpsResponse.Result.kibanaIPWhitelist.Length"); i++) {
-			kibanaIPWhitelist.add(context.stringValue("UpdateKibanaWhiteIpsResponse.Result.kibanaIPWhitelist["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UpdateKibanaWhiteIpsResponse.Result.kibanaIPWhitelist.Length"); i++) {
+			kibanaIPWhitelist.add(_ctx.stringValue("UpdateKibanaWhiteIpsResponse.Result.kibanaIPWhitelist["+ i +"]"));
 		}
 		result.setKibanaIPWhitelist(kibanaIPWhitelist);
 		updateKibanaWhiteIpsResponse.setResult(result);

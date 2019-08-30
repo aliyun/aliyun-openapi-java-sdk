@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ValidateTransferableNodesResponseUnmarshaller {
 
-	public static ValidateTransferableNodesResponse unmarshall(ValidateTransferableNodesResponse validateTransferableNodesResponse, UnmarshallerContext context) {
+	public static ValidateTransferableNodesResponse unmarshall(ValidateTransferableNodesResponse validateTransferableNodesResponse, UnmarshallerContext _ctx) {
 		
-		validateTransferableNodesResponse.setRequestId(context.stringValue("ValidateTransferableNodesResponse.RequestId"));
-		validateTransferableNodesResponse.setCode(context.stringValue("ValidateTransferableNodesResponse.Code"));
-		validateTransferableNodesResponse.setMessage(context.stringValue("ValidateTransferableNodesResponse.Message"));
-		validateTransferableNodesResponse.setResult(context.booleanValue("ValidateTransferableNodesResponse.Result"));
+		validateTransferableNodesResponse.setRequestId(_ctx.stringValue("ValidateTransferableNodesResponse.RequestId"));
+		validateTransferableNodesResponse.setCode(_ctx.stringValue("ValidateTransferableNodesResponse.Code"));
+		validateTransferableNodesResponse.setMessage(_ctx.stringValue("ValidateTransferableNodesResponse.Message"));
+		validateTransferableNodesResponse.setResult(_ctx.booleanValue("ValidateTransferableNodesResponse.Result"));
 	 
 	 	return validateTransferableNodesResponse;
 	}

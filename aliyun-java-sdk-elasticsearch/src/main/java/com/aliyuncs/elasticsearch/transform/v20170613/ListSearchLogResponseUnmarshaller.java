@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSearchLogResponseUnmarshaller {
 
-	public static ListSearchLogResponse unmarshall(ListSearchLogResponse listSearchLogResponse, UnmarshallerContext context) {
+	public static ListSearchLogResponse unmarshall(ListSearchLogResponse listSearchLogResponse, UnmarshallerContext _ctx) {
 		
-		listSearchLogResponse.setRequestId(context.stringValue("ListSearchLogResponse.RequestId"));
+		listSearchLogResponse.setRequestId(_ctx.stringValue("ListSearchLogResponse.RequestId"));
 
 		Headers headers = new Headers();
-		headers.setXTotalCount(context.integerValue("ListSearchLogResponse.Headers.X-Total-Count"));
+		headers.setXTotalCount(_ctx.integerValue("ListSearchLogResponse.Headers.X-Total-Count"));
 		listSearchLogResponse.setHeaders(headers);
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("ListSearchLogResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSearchLogResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setTimestamp(context.longValue("ListSearchLogResponse.Result["+ i +"].timestamp"));
-			resultItem.setHost(context.stringValue("ListSearchLogResponse.Result["+ i +"].host"));
-			resultItem.setLevel(context.stringValue("ListSearchLogResponse.Result["+ i +"].level"));
-			resultItem.setContent(context.stringValue("ListSearchLogResponse.Result["+ i +"].content"));
-			resultItem.setInstanceId(context.stringValue("ListSearchLogResponse.Result["+ i +"].instanceId"));
+			resultItem.setTimestamp(_ctx.longValue("ListSearchLogResponse.Result["+ i +"].timestamp"));
+			resultItem.setHost(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].host"));
+			resultItem.setLevel(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].level"));
+			resultItem.setContent(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].content"));
+			resultItem.setInstanceId(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].instanceId"));
 
 			result.add(resultItem);
 		}

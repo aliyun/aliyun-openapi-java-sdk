@@ -24,19 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAllNodeResponseUnmarshaller {
 
-	public static ListAllNodeResponse unmarshall(ListAllNodeResponse listAllNodeResponse, UnmarshallerContext context) {
+	public static ListAllNodeResponse unmarshall(ListAllNodeResponse listAllNodeResponse, UnmarshallerContext _ctx) {
 		
-		listAllNodeResponse.setRequestId(context.stringValue("ListAllNodeResponse.RequestId"));
-		listAllNodeResponse.setCode(context.stringValue("ListAllNodeResponse.Code"));
-		listAllNodeResponse.setMessage(context.stringValue("ListAllNodeResponse.Message"));
+		listAllNodeResponse.setRequestId(_ctx.stringValue("ListAllNodeResponse.RequestId"));
+		listAllNodeResponse.setCode(_ctx.stringValue("ListAllNodeResponse.Code"));
+		listAllNodeResponse.setMessage(_ctx.stringValue("ListAllNodeResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("ListAllNodeResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAllNodeResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setHost(context.stringValue("ListAllNodeResponse.Result["+ i +"].host"));
-			resultItem.setPort(context.integerValue("ListAllNodeResponse.Result["+ i +"].port"));
-			resultItem.setZoneId(context.stringValue("ListAllNodeResponse.Result["+ i +"].zoneId"));
-			resultItem.setNodeType(context.stringValue("ListAllNodeResponse.Result["+ i +"].nodeType"));
+			resultItem.setHost(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].host"));
+			resultItem.setPort(_ctx.integerValue("ListAllNodeResponse.Result["+ i +"].port"));
+			resultItem.setZoneId(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].zoneId"));
+			resultItem.setNodeType(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].nodeType"));
+			resultItem.setCpuPercent(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].cpuPercent"));
+			resultItem.setLoadFiveM(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].loadFiveM"));
+			resultItem.setHeapPercent(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].heapPercent"));
+			resultItem.setHealth(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].health"));
 
 			result.add(resultItem);
 		}

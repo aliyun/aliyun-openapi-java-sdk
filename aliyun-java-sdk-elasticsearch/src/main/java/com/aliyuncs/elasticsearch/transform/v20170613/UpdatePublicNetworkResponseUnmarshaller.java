@@ -21,12 +21,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdatePublicNetworkResponseUnmarshaller {
 
-	public static UpdatePublicNetworkResponse unmarshall(UpdatePublicNetworkResponse updatePublicNetworkResponse, UnmarshallerContext context) {
+	public static UpdatePublicNetworkResponse unmarshall(UpdatePublicNetworkResponse updatePublicNetworkResponse, UnmarshallerContext _ctx) {
 		
-		updatePublicNetworkResponse.setRequestId(context.stringValue("UpdatePublicNetworkResponse.RequestId"));
+		updatePublicNetworkResponse.setRequestId(_ctx.stringValue("UpdatePublicNetworkResponse.RequestId"));
 
 		Result result = new Result();
-		result.setEnablePublic(context.booleanValue("UpdatePublicNetworkResponse.Result.enablePublic"));
+		result.setEnablePublic(_ctx.booleanValue("UpdatePublicNetworkResponse.Result.enablePublic"));
 		updatePublicNetworkResponse.setResult(result);
 	 
 	 	return updatePublicNetworkResponse;

@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UninstallKibanaPluginResponseUnmarshaller {
 
-	public static UninstallKibanaPluginResponse unmarshall(UninstallKibanaPluginResponse uninstallKibanaPluginResponse, UnmarshallerContext context) {
+	public static UninstallKibanaPluginResponse unmarshall(UninstallKibanaPluginResponse uninstallKibanaPluginResponse, UnmarshallerContext _ctx) {
 		
-		uninstallKibanaPluginResponse.setRequestId(context.stringValue("UninstallKibanaPluginResponse.RequestId"));
+		uninstallKibanaPluginResponse.setRequestId(_ctx.stringValue("UninstallKibanaPluginResponse.RequestId"));
 
 		List<String> result = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("UninstallKibanaPluginResponse.Result.Length"); i++) {
-			result.add(context.stringValue("UninstallKibanaPluginResponse.Result["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("UninstallKibanaPluginResponse.Result.Length"); i++) {
+			result.add(_ctx.stringValue("UninstallKibanaPluginResponse.Result["+ i +"]"));
 		}
 		uninstallKibanaPluginResponse.setResult(result);
 	 

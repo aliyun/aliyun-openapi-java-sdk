@@ -31,6 +31,10 @@ public class RestartInstanceRequest extends RoaAcsRequest<RestartInstanceRespons
 
 	private String instanceId;
 
+	private String clientToken;
+
+	private Boolean force;
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -39,6 +43,28 @@ public class RestartInstanceRequest extends RoaAcsRequest<RestartInstanceRespons
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("force", force.toString());
 		}
 	}
 

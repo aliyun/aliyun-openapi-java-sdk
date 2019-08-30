@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateHotIkDictsResponseUnmarshaller {
 
-	public static UpdateHotIkDictsResponse unmarshall(UpdateHotIkDictsResponse updateHotIkDictsResponse, UnmarshallerContext context) {
+	public static UpdateHotIkDictsResponse unmarshall(UpdateHotIkDictsResponse updateHotIkDictsResponse, UnmarshallerContext _ctx) {
 		
-		updateHotIkDictsResponse.setRequestId(context.stringValue("UpdateHotIkDictsResponse.RequestId"));
+		updateHotIkDictsResponse.setRequestId(_ctx.stringValue("UpdateHotIkDictsResponse.RequestId"));
 
 		List<DictList> result = new ArrayList<DictList>();
-		for (int i = 0; i < context.lengthValue("UpdateHotIkDictsResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("UpdateHotIkDictsResponse.Result.Length"); i++) {
 			DictList dictList = new DictList();
-			dictList.setName(context.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].name"));
-			dictList.setFileSize(context.longValue("UpdateHotIkDictsResponse.Result["+ i +"].fileSize"));
-			dictList.setType(context.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].type"));
-			dictList.setSourceType(context.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].sourceType"));
+			dictList.setName(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].name"));
+			dictList.setFileSize(_ctx.longValue("UpdateHotIkDictsResponse.Result["+ i +"].fileSize"));
+			dictList.setType(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].type"));
+			dictList.setSourceType(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].sourceType"));
 
 			OssObject ossObject = new OssObject();
-			ossObject.setBucketName(context.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].ossObject.bucketName"));
-			ossObject.setKey(context.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].ossObject.key"));
-			ossObject.setEtag(context.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].ossObject.etag"));
+			ossObject.setBucketName(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].ossObject.bucketName"));
+			ossObject.setKey(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].ossObject.key"));
+			ossObject.setEtag(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].ossObject.etag"));
 			dictList.setOssObject(ossObject);
 
 			result.add(dictList);
