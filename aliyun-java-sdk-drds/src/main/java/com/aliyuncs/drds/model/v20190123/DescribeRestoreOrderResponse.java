@@ -61,6 +61,8 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 
 		private List<RdsOrderDOListItem> rdsOrderDOList;
 
+		private List<PolarOrderDOListItem> polarOrderDOList;
+
 		public List<DrdsOrderDOListItem> getDrdsOrderDOList() {
 			return this.drdsOrderDOList;
 		}
@@ -75,6 +77,14 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 
 		public void setRdsOrderDOList(List<RdsOrderDOListItem> rdsOrderDOList) {
 			this.rdsOrderDOList = rdsOrderDOList;
+		}
+
+		public List<PolarOrderDOListItem> getPolarOrderDOList() {
+			return this.polarOrderDOList;
+		}
+
+		public void setPolarOrderDOList(List<PolarOrderDOListItem> polarOrderDOList) {
+			this.polarOrderDOList = polarOrderDOList;
 		}
 
 		public static class DrdsOrderDOListItem {
@@ -162,15 +172,15 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 
 			private String azoneId;
 
-			private String network;
+			private String engine;
 
-			private String vpcId;
+			private String version;
 
-			private String vSwtichId;
+			private String instanceClass;
 
 			private String dbInstanceStorage;
 
-			private String network1;
+			private String network;
 
 			private Long num;
 
@@ -206,28 +216,44 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 				this.azoneId = azoneId;
 			}
 
-			public String getNetwork() {
-				return this.network;
+			public String getEngine() {
+				return this.engine;
 			}
 
-			public void setNetwork(String network) {
-				this.network = network;
+			public void setEngine(String engine) {
+				this.engine = engine;
 			}
 
-			public String getVpcId() {
-				return this.vpcId;
+			public String getBizVersion() {
+				return this.version;
 			}
 
-			public void setVpcId(String vpcId) {
-				this.vpcId = vpcId;
+			public void setBizVersion(String version) {
+				this.version = version;
 			}
 
-			public String getVSwtichId() {
-				return this.vSwtichId;
+			/**
+			 * @deprecated use getBizVersion instead of this.
+			 */
+			@Deprecated
+			public String getVersion() {
+				return this.version;
 			}
 
-			public void setVSwtichId(String vSwtichId) {
-				this.vSwtichId = vSwtichId;
+			/**
+			 * @deprecated use setBizVersion instead of this.
+			 */
+			@Deprecated
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getInstanceClass() {
+				return this.instanceClass;
+			}
+
+			public void setInstanceClass(String instanceClass) {
+				this.instanceClass = instanceClass;
 			}
 
 			public String getDbInstanceStorage() {
@@ -238,12 +264,127 @@ public class DescribeRestoreOrderResponse extends AcsResponse {
 				this.dbInstanceStorage = dbInstanceStorage;
 			}
 
-			public String getNetwork1() {
-				return this.network1;
+			public String getNetwork() {
+				return this.network;
 			}
 
-			public void setNetwork1(String network1) {
-				this.network1 = network1;
+			public void setNetwork(String network) {
+				this.network = network;
+			}
+
+			public Long getNum() {
+				return this.num;
+			}
+
+			public void setNum(Long num) {
+				this.num = num;
+			}
+		}
+
+		public static class PolarOrderDOListItem {
+
+			private String regionId;
+
+			private String azoneId;
+
+			private String engine;
+
+			private String version;
+
+			private String instanceClass;
+
+			private String dbInstanceStorage;
+
+			private String network;
+
+			private Long num;
+
+			public String getBizRegionId() {
+				return this.regionId;
+			}
+
+			public void setBizRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			/**
+			 * @deprecated use getBizRegionId instead of this.
+			 */
+			@Deprecated
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			/**
+			 * @deprecated use setBizRegionId instead of this.
+			 */
+			@Deprecated
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getAzoneId() {
+				return this.azoneId;
+			}
+
+			public void setAzoneId(String azoneId) {
+				this.azoneId = azoneId;
+			}
+
+			public String getEngine() {
+				return this.engine;
+			}
+
+			public void setEngine(String engine) {
+				this.engine = engine;
+			}
+
+			public String getBizVersion() {
+				return this.version;
+			}
+
+			public void setBizVersion(String version) {
+				this.version = version;
+			}
+
+			/**
+			 * @deprecated use getBizVersion instead of this.
+			 */
+			@Deprecated
+			public String getVersion() {
+				return this.version;
+			}
+
+			/**
+			 * @deprecated use setBizVersion instead of this.
+			 */
+			@Deprecated
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getInstanceClass() {
+				return this.instanceClass;
+			}
+
+			public void setInstanceClass(String instanceClass) {
+				this.instanceClass = instanceClass;
+			}
+
+			public String getDbInstanceStorage() {
+				return this.dbInstanceStorage;
+			}
+
+			public void setDbInstanceStorage(String dbInstanceStorage) {
+				this.dbInstanceStorage = dbInstanceStorage;
+			}
+
+			public String getNetwork() {
+				return this.network;
+			}
+
+			public void setNetwork(String network) {
+				this.network = network;
 			}
 
 			public Long getNum() {

@@ -15,6 +15,7 @@
 package com.aliyuncs.drds.transform.v20190123;
 
 import com.aliyuncs.drds.model.v20190123.DescribeGlobalBroadcastTypeResponse;
+import com.aliyuncs.drds.model.v20190123.DescribeGlobalBroadcastTypeResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,7 +25,10 @@ public class DescribeGlobalBroadcastTypeResponseUnmarshaller {
 		
 		describeGlobalBroadcastTypeResponse.setRequestId(_ctx.stringValue("DescribeGlobalBroadcastTypeResponse.RequestId"));
 		describeGlobalBroadcastTypeResponse.setSuccess(_ctx.booleanValue("DescribeGlobalBroadcastTypeResponse.Success"));
-		describeGlobalBroadcastTypeResponse.setData(_ctx.stringValue("DescribeGlobalBroadcastTypeResponse.Data"));
+
+		Data data = new Data();
+		data.setIsSyncType(_ctx.booleanValue("DescribeGlobalBroadcastTypeResponse.Data.IsSyncType"));
+		describeGlobalBroadcastTypeResponse.setData(data);
 	 
 	 	return describeGlobalBroadcastTypeResponse;
 	}

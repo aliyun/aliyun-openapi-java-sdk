@@ -28,7 +28,7 @@ public class DescribeGlobalBroadcastTypeResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,12 +46,25 @@ public class DescribeGlobalBroadcastTypeResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Data data) {
 		this.data = data;
+	}
+
+	public static class Data {
+
+		private Boolean isSyncType;
+
+		public Boolean getIsSyncType() {
+			return this.isSyncType;
+		}
+
+		public void setIsSyncType(Boolean isSyncType) {
+			this.isSyncType = isSyncType;
+		}
 	}
 
 	@Override
