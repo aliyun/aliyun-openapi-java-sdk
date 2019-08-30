@@ -1,3 +1,6 @@
+2019-08-30 Version: 3.0.0
+- Release Apis of Version 2019-09-10.
+
 2019-01-22 Version: 2.2.8
 1, support Stack Policy setting .
 
