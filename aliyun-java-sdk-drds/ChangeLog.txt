@@ -1,3 +1,6 @@
+2019-08-30 Version: 4.3.0
+- Support latest DRDS Open API for version 2019-01-23 and 2017-10-16.
+
 2019-08-30 Version: 4.2.0
 - Support latest DRDS Open API for version 2019-01-23.
 
