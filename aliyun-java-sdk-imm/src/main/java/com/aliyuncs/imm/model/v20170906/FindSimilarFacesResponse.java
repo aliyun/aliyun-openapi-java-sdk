@@ -53,6 +53,8 @@ public class FindSimilarFacesResponse extends AcsResponse {
 
 		private Float similarity;
 
+		private List<SimilarFacesItem> similarFaces;
+
 		private FaceAttributes faceAttributes;
 
 		public String getFaceId() {
@@ -79,6 +81,14 @@ public class FindSimilarFacesResponse extends AcsResponse {
 			this.similarity = similarity;
 		}
 
+		public List<SimilarFacesItem> getSimilarFaces() {
+			return this.similarFaces;
+		}
+
+		public void setSimilarFaces(List<SimilarFacesItem> similarFaces) {
+			this.similarFaces = similarFaces;
+		}
+
 		public FaceAttributes getFaceAttributes() {
 			return this.faceAttributes;
 		}
@@ -87,19 +97,118 @@ public class FindSimilarFacesResponse extends AcsResponse {
 			this.faceAttributes = faceAttributes;
 		}
 
+		public static class SimilarFacesItem {
+
+			private String faceId;
+
+			private String imageUri;
+
+			private Float similarity;
+
+			private FaceAttributes1 faceAttributes1;
+
+			public String getFaceId() {
+				return this.faceId;
+			}
+
+			public void setFaceId(String faceId) {
+				this.faceId = faceId;
+			}
+
+			public String getImageUri() {
+				return this.imageUri;
+			}
+
+			public void setImageUri(String imageUri) {
+				this.imageUri = imageUri;
+			}
+
+			public Float getSimilarity() {
+				return this.similarity;
+			}
+
+			public void setSimilarity(Float similarity) {
+				this.similarity = similarity;
+			}
+
+			public FaceAttributes1 getFaceAttributes1() {
+				return this.faceAttributes1;
+			}
+
+			public void setFaceAttributes1(FaceAttributes1 faceAttributes1) {
+				this.faceAttributes1 = faceAttributes1;
+			}
+
+			public static class FaceAttributes1 {
+
+				private FaceBoundary faceBoundary;
+
+				public FaceBoundary getFaceBoundary() {
+					return this.faceBoundary;
+				}
+
+				public void setFaceBoundary(FaceBoundary faceBoundary) {
+					this.faceBoundary = faceBoundary;
+				}
+
+				public static class FaceBoundary {
+
+					private Integer left;
+
+					private Integer top;
+
+					private Integer width;
+
+					private Integer height;
+
+					public Integer getLeft() {
+						return this.left;
+					}
+
+					public void setLeft(Integer left) {
+						this.left = left;
+					}
+
+					public Integer getTop() {
+						return this.top;
+					}
+
+					public void setTop(Integer top) {
+						this.top = top;
+					}
+
+					public Integer getWidth() {
+						return this.width;
+					}
+
+					public void setWidth(Integer width) {
+						this.width = width;
+					}
+
+					public Integer getHeight() {
+						return this.height;
+					}
+
+					public void setHeight(Integer height) {
+						this.height = height;
+					}
+				}
+			}
+		}
+
 		public static class FaceAttributes {
 
-			private FaceBoundary faceBoundary;
+			private FaceBoundary2 faceBoundary2;
 
-			public FaceBoundary getFaceBoundary() {
-				return this.faceBoundary;
+			public FaceBoundary2 getFaceBoundary2() {
+				return this.faceBoundary2;
 			}
 
-			public void setFaceBoundary(FaceBoundary faceBoundary) {
-				this.faceBoundary = faceBoundary;
+			public void setFaceBoundary2(FaceBoundary2 faceBoundary2) {
+				this.faceBoundary2 = faceBoundary2;
 			}
 
-			public static class FaceBoundary {
+			public static class FaceBoundary2 {
 
 				private Integer left;
 

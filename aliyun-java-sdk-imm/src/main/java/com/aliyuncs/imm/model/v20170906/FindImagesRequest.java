@@ -32,6 +32,8 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 
 	private String externalId;
 
+	private String facesModifyTimeRange;
+
 	private String imageSizeRange;
 
 	private String remarksBPrefix;
@@ -45,6 +47,8 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 	private Integer limit;
 
 	private String remarksDPrefix;
+
+	private String tagsModifyTimeRange;
 
 	private String sourceType;
 
@@ -104,6 +108,17 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		this.externalId = externalId;
 		if(externalId != null){
 			putQueryParameter("ExternalId", externalId);
+		}
+	}
+
+	public String getFacesModifyTimeRange() {
+		return this.facesModifyTimeRange;
+	}
+
+	public void setFacesModifyTimeRange(String facesModifyTimeRange) {
+		this.facesModifyTimeRange = facesModifyTimeRange;
+		if(facesModifyTimeRange != null){
+			putQueryParameter("FacesModifyTimeRange", facesModifyTimeRange);
 		}
 	}
 
@@ -181,6 +196,17 @@ public class FindImagesRequest extends RpcAcsRequest<FindImagesResponse> {
 		this.remarksDPrefix = remarksDPrefix;
 		if(remarksDPrefix != null){
 			putQueryParameter("RemarksDPrefix", remarksDPrefix);
+		}
+	}
+
+	public String getTagsModifyTimeRange() {
+		return this.tagsModifyTimeRange;
+	}
+
+	public void setTagsModifyTimeRange(String tagsModifyTimeRange) {
+		this.tagsModifyTimeRange = tagsModifyTimeRange;
+		if(tagsModifyTimeRange != null){
+			putQueryParameter("TagsModifyTimeRange", tagsModifyTimeRange);
 		}
 	}
 

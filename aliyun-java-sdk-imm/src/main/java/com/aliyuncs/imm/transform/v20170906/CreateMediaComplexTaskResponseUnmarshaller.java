@@ -14,16 +14,18 @@
 
 package com.aliyuncs.imm.transform.v20170906;
 
-import com.aliyuncs.imm.model.v20170906.DeleteImageJobResponse;
+import com.aliyuncs.imm.model.v20170906.CreateMediaComplexTaskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteImageJobResponseUnmarshaller {
+public class CreateMediaComplexTaskResponseUnmarshaller {
 
-	public static DeleteImageJobResponse unmarshall(DeleteImageJobResponse deleteImageJobResponse, UnmarshallerContext _ctx) {
+	public static CreateMediaComplexTaskResponse unmarshall(CreateMediaComplexTaskResponse createMediaComplexTaskResponse, UnmarshallerContext _ctx) {
 		
-		deleteImageJobResponse.setRequestId(_ctx.stringValue("DeleteImageJobResponse.RequestId"));
+		createMediaComplexTaskResponse.setRequestId(_ctx.stringValue("CreateMediaComplexTaskResponse.RequestId"));
+		createMediaComplexTaskResponse.setTaskId(_ctx.stringValue("CreateMediaComplexTaskResponse.TaskId"));
+		createMediaComplexTaskResponse.setTaskType(_ctx.stringValue("CreateMediaComplexTaskResponse.TaskType"));
 	 
-	 	return deleteImageJobResponse;
+	 	return createMediaComplexTaskResponse;
 	}
 }

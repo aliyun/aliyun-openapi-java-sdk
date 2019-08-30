@@ -30,6 +30,8 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 
 	private Float minSimilarity;
 
+	private String responseFormat;
+
 	private Integer limit;
 
 	private String project;
@@ -57,6 +59,17 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 		this.minSimilarity = minSimilarity;
 		if(minSimilarity != null){
 			putQueryParameter("MinSimilarity", minSimilarity.toString());
+		}
+	}
+
+	public String getResponseFormat() {
+		return this.responseFormat;
+	}
+
+	public void setResponseFormat(String responseFormat) {
+		this.responseFormat = responseFormat;
+		if(responseFormat != null){
+			putQueryParameter("ResponseFormat", responseFormat);
 		}
 	}
 

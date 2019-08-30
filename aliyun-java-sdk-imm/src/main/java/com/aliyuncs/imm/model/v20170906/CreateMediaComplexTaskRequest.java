@@ -20,10 +20,10 @@ import com.aliyuncs.RpcAcsRequest;
  * @author auto create
  * @version 
  */
-public class CreatePornBatchDetectJobRequest extends RpcAcsRequest<CreatePornBatchDetectJobResponse> {
+public class CreateMediaComplexTaskRequest extends RpcAcsRequest<CreateMediaComplexTaskResponse> {
 	
-	public CreatePornBatchDetectJobRequest() {
-		super("imm", "2017-09-06", "CreatePornBatchDetectJob", "imm");
+	public CreateMediaComplexTaskRequest() {
+		super("imm", "2017-09-06", "CreateMediaComplexTask", "imm");
 	}
 
 	private String notifyTopicName;
@@ -32,11 +32,7 @@ public class CreatePornBatchDetectJobRequest extends RpcAcsRequest<CreatePornBat
 
 	private String project;
 
-	private String externalID;
-
-	private String srcUri;
-
-	private String tgtUri;
+	private String parameters;
 
 	public String getNotifyTopicName() {
 		return this.notifyTopicName;
@@ -71,42 +67,20 @@ public class CreatePornBatchDetectJobRequest extends RpcAcsRequest<CreatePornBat
 		}
 	}
 
-	public String getExternalID() {
-		return this.externalID;
+	public String getParameters() {
+		return this.parameters;
 	}
 
-	public void setExternalID(String externalID) {
-		this.externalID = externalID;
-		if(externalID != null){
-			putQueryParameter("ExternalID", externalID);
-		}
-	}
-
-	public String getSrcUri() {
-		return this.srcUri;
-	}
-
-	public void setSrcUri(String srcUri) {
-		this.srcUri = srcUri;
-		if(srcUri != null){
-			putQueryParameter("SrcUri", srcUri);
-		}
-	}
-
-	public String getTgtUri() {
-		return this.tgtUri;
-	}
-
-	public void setTgtUri(String tgtUri) {
-		this.tgtUri = tgtUri;
-		if(tgtUri != null){
-			putQueryParameter("TgtUri", tgtUri);
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
+		if(parameters != null){
+			putQueryParameter("Parameters", parameters);
 		}
 	}
 
 	@Override
-	public Class<CreatePornBatchDetectJobResponse> getResponseClass() {
-		return CreatePornBatchDetectJobResponse.class;
+	public Class<CreateMediaComplexTaskResponse> getResponseClass() {
+		return CreateMediaComplexTaskResponse.class;
 	}
 
 }

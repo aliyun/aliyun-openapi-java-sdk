@@ -15,16 +15,20 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.DeletePornBatchDetectJobResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.CreateMediaComplexTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeletePornBatchDetectJobResponse extends AcsResponse {
+public class CreateMediaComplexTaskResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String taskId;
+
+	private String taskType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +38,29 @@ public class DeletePornBatchDetectJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getTaskType() {
+		return this.taskType;
+	}
+
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+	}
+
 	@Override
-	public DeletePornBatchDetectJobResponse getInstance(UnmarshallerContext context) {
-		return	DeletePornBatchDetectJobResponseUnmarshaller.unmarshall(this, context);
+	public CreateMediaComplexTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateMediaComplexTaskResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
