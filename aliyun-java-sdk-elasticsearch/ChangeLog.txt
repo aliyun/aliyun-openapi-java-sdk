@@ -2,6 +2,10 @@
 - Add describeRegions.
 - Add toen.
 
+2019-08-30 Version: 3.0.7
+- Add describeRegions.
+- Add toen.
+
 2019-06-13 Version: 3.0.6
 1.multi zones supported
 
