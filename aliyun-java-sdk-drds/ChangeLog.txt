@@ -1,3 +1,6 @@
+2019-09-03 Version: 4.4.0
+- Support get DRDS user info and instance info.
+
 2019-08-30 Version: 4.3.0
 - Support latest DRDS Open API for version 2019-01-23 and 2017-10-16.
 
