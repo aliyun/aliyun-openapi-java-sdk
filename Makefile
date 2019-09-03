@@ -1,5 +1,5 @@
 travis-test:
-	mkdir ./java-sdk-function-test/lib
+	mkdir -p ./java-sdk-function-test/lib
 	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-core/pom.xml
 	mv ./aliyun-java-sdk-core/target/*.jar ./java-sdk-function-test/lib/core.jar
 	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-ecs/pom.xml

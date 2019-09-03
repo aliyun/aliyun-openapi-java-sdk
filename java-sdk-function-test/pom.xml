@@ -175,7 +175,6 @@
             <version>1.7.25</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>
