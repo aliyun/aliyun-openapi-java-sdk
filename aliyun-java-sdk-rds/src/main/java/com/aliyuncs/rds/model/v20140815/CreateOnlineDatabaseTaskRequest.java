@@ -28,21 +28,21 @@ public class CreateOnlineDatabaseTaskRequest extends RpcAcsRequest<CreateOnlineD
 
 	private Long resourceOwnerId;
 
-	private String migrateTaskId;
-
-	private String dBName;
-
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private String ownerAccount;
 
 	private String dBInstanceId;
 
-	private String checkDBMode;
+	private String migrateTaskId;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String dBName;
+
+	private String checkDBMode;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,39 +52,6 @@ public class CreateOnlineDatabaseTaskRequest extends RpcAcsRequest<CreateOnlineD
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getMigrateTaskId() {
-		return this.migrateTaskId;
-	}
-
-	public void setMigrateTaskId(String migrateTaskId) {
-		this.migrateTaskId = migrateTaskId;
-		if(migrateTaskId != null){
-			putQueryParameter("MigrateTaskId", migrateTaskId);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -99,17 +66,6 @@ public class CreateOnlineDatabaseTaskRequest extends RpcAcsRequest<CreateOnlineD
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -121,14 +77,36 @@ public class CreateOnlineDatabaseTaskRequest extends RpcAcsRequest<CreateOnlineD
 		}
 	}
 
-	public String getCheckDBMode() {
-		return this.checkDBMode;
+	public String getMigrateTaskId() {
+		return this.migrateTaskId;
 	}
 
-	public void setCheckDBMode(String checkDBMode) {
-		this.checkDBMode = checkDBMode;
-		if(checkDBMode != null){
-			putQueryParameter("CheckDBMode", checkDBMode);
+	public void setMigrateTaskId(String migrateTaskId) {
+		this.migrateTaskId = migrateTaskId;
+		if(migrateTaskId != null){
+			putQueryParameter("MigrateTaskId", migrateTaskId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -140,6 +118,28 @@ public class CreateOnlineDatabaseTaskRequest extends RpcAcsRequest<CreateOnlineD
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getCheckDBMode() {
+		return this.checkDBMode;
+	}
+
+	public void setCheckDBMode(String checkDBMode) {
+		this.checkDBMode = checkDBMode;
+		if(checkDBMode != null){
+			putQueryParameter("CheckDBMode", checkDBMode);
 		}
 	}
 

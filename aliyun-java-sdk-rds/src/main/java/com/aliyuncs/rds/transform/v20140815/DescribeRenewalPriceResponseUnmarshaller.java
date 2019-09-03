@@ -27,35 +27,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRenewalPriceResponseUnmarshaller {
 
-	public static DescribeRenewalPriceResponse unmarshall(DescribeRenewalPriceResponse describeRenewalPriceResponse, UnmarshallerContext context) {
+	public static DescribeRenewalPriceResponse unmarshall(DescribeRenewalPriceResponse describeRenewalPriceResponse, UnmarshallerContext _ctx) {
 		
-		describeRenewalPriceResponse.setRequestId(context.stringValue("DescribeRenewalPriceResponse.RequestId"));
+		describeRenewalPriceResponse.setRequestId(_ctx.stringValue("DescribeRenewalPriceResponse.RequestId"));
 
 		PriceInfo priceInfo = new PriceInfo();
-		priceInfo.setCurrency(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.Currency"));
-		priceInfo.setOriginalPrice(context.floatValue("DescribeRenewalPriceResponse.PriceInfo.OriginalPrice"));
-		priceInfo.setTradePrice(context.floatValue("DescribeRenewalPriceResponse.PriceInfo.TradePrice"));
-		priceInfo.setDiscountPrice(context.floatValue("DescribeRenewalPriceResponse.PriceInfo.DiscountPrice"));
+		priceInfo.setCurrency(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Currency"));
+		priceInfo.setOriginalPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.OriginalPrice"));
+		priceInfo.setTradePrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.TradePrice"));
+		priceInfo.setDiscountPrice(_ctx.floatValue("DescribeRenewalPriceResponse.PriceInfo.DiscountPrice"));
 
 		List<String> ruleIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeRenewalPriceResponse.PriceInfo.RuleIds.Length"); i++) {
-			ruleIds.add(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.RuleIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.RuleIds.Length"); i++) {
+			ruleIds.add(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.RuleIds["+ i +"]"));
 		}
 		priceInfo.setRuleIds(ruleIds);
 
 		ActivityInfo activityInfo = new ActivityInfo();
-		activityInfo.setCheckErrMsg(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.ActivityInfo.CheckErrMsg"));
-		activityInfo.setErrorCode(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.ActivityInfo.ErrorCode"));
-		activityInfo.setSuccess(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.ActivityInfo.Success"));
+		activityInfo.setCheckErrMsg(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.ActivityInfo.CheckErrMsg"));
+		activityInfo.setErrorCode(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.ActivityInfo.ErrorCode"));
+		activityInfo.setSuccess(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.ActivityInfo.Success"));
 		priceInfo.setActivityInfo(activityInfo);
 
 		List<Coupon> coupons = new ArrayList<Coupon>();
-		for (int i = 0; i < context.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Coupons.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.PriceInfo.Coupons.Length"); i++) {
 			Coupon coupon = new Coupon();
-			coupon.setCouponNo(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].CouponNo"));
-			coupon.setName(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].Name"));
-			coupon.setDescription(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].Description"));
-			coupon.setIsSelected(context.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].IsSelected"));
+			coupon.setCouponNo(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].CouponNo"));
+			coupon.setName(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].Name"));
+			coupon.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].Description"));
+			coupon.setIsSelected(_ctx.stringValue("DescribeRenewalPriceResponse.PriceInfo.Coupons["+ i +"].IsSelected"));
 
 			coupons.add(coupon);
 		}
@@ -63,11 +63,11 @@ public class DescribeRenewalPriceResponseUnmarshaller {
 		describeRenewalPriceResponse.setPriceInfo(priceInfo);
 
 		List<Rule> rules = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("DescribeRenewalPriceResponse.Rules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRenewalPriceResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(context.longValue("DescribeRenewalPriceResponse.Rules["+ i +"].RuleId"));
-			rule.setName(context.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Name"));
-			rule.setDescription(context.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Description"));
+			rule.setRuleId(_ctx.longValue("DescribeRenewalPriceResponse.Rules["+ i +"].RuleId"));
+			rule.setName(_ctx.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Name"));
+			rule.setDescription(_ctx.stringValue("DescribeRenewalPriceResponse.Rules["+ i +"].Description"));
 
 			rules.add(rule);
 		}

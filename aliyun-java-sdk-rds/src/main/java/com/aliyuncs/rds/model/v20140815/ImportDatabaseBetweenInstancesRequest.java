@@ -28,17 +28,17 @@ public class ImportDatabaseBetweenInstancesRequest extends RpcAcsRequest<ImportD
 
 	private Long resourceOwnerId;
 
-	private String sourceDBInstanceId;
-
-	private String resourceOwnerAccount;
-
 	private String dBInfo;
-
-	private String ownerAccount;
 
 	private String dBInstanceId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Long ownerId;
+
+	private String sourceDBInstanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,28 +48,6 @@ public class ImportDatabaseBetweenInstancesRequest extends RpcAcsRequest<ImportD
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSourceDBInstanceId() {
-		return this.sourceDBInstanceId;
-	}
-
-	public void setSourceDBInstanceId(String sourceDBInstanceId) {
-		this.sourceDBInstanceId = sourceDBInstanceId;
-		if(sourceDBInstanceId != null){
-			putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -84,17 +62,6 @@ public class ImportDatabaseBetweenInstancesRequest extends RpcAcsRequest<ImportD
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -106,6 +73,28 @@ public class ImportDatabaseBetweenInstancesRequest extends RpcAcsRequest<ImportD
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +103,17 @@ public class ImportDatabaseBetweenInstancesRequest extends RpcAcsRequest<ImportD
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSourceDBInstanceId() {
+		return this.sourceDBInstanceId;
+	}
+
+	public void setSourceDBInstanceId(String sourceDBInstanceId) {
+		this.sourceDBInstanceId = sourceDBInstanceId;
+		if(sourceDBInstanceId != null){
+			putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
 		}
 	}
 

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDBInstanceProxyConfigurationResponseUnmarshaller {
 
-	public static ModifyDBInstanceProxyConfigurationResponse unmarshall(ModifyDBInstanceProxyConfigurationResponse modifyDBInstanceProxyConfigurationResponse, UnmarshallerContext context) {
+	public static ModifyDBInstanceProxyConfigurationResponse unmarshall(ModifyDBInstanceProxyConfigurationResponse modifyDBInstanceProxyConfigurationResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBInstanceProxyConfigurationResponse.setRequestId(context.stringValue("ModifyDBInstanceProxyConfigurationResponse.RequestId"));
+		modifyDBInstanceProxyConfigurationResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceProxyConfigurationResponse.RequestId"));
 	 
 	 	return modifyDBInstanceProxyConfigurationResponse;
 	}

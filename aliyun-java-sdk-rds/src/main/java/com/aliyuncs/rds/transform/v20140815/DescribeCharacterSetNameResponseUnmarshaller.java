@@ -23,14 +23,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCharacterSetNameResponseUnmarshaller {
 
-	public static DescribeCharacterSetNameResponse unmarshall(DescribeCharacterSetNameResponse describeCharacterSetNameResponse, UnmarshallerContext context) {
+	public static DescribeCharacterSetNameResponse unmarshall(DescribeCharacterSetNameResponse describeCharacterSetNameResponse, UnmarshallerContext _ctx) {
 		
-		describeCharacterSetNameResponse.setRequestId(context.stringValue("DescribeCharacterSetNameResponse.RequestId"));
-		describeCharacterSetNameResponse.setEngine(context.stringValue("DescribeCharacterSetNameResponse.Engine"));
+		describeCharacterSetNameResponse.setRequestId(_ctx.stringValue("DescribeCharacterSetNameResponse.RequestId"));
+		describeCharacterSetNameResponse.setEngine(_ctx.stringValue("DescribeCharacterSetNameResponse.Engine"));
 
 		List<String> characterSetNameItems = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeCharacterSetNameResponse.CharacterSetNameItems.Length"); i++) {
-			characterSetNameItems.add(context.stringValue("DescribeCharacterSetNameResponse.CharacterSetNameItems["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeCharacterSetNameResponse.CharacterSetNameItems.Length"); i++) {
+			characterSetNameItems.add(_ctx.stringValue("DescribeCharacterSetNameResponse.CharacterSetNameItems["+ i +"]"));
 		}
 		describeCharacterSetNameResponse.setCharacterSetNameItems(characterSetNameItems);
 	 

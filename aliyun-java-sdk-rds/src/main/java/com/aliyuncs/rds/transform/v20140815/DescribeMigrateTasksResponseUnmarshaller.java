@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMigrateTasksResponseUnmarshaller {
 
-	public static DescribeMigrateTasksResponse unmarshall(DescribeMigrateTasksResponse describeMigrateTasksResponse, UnmarshallerContext context) {
+	public static DescribeMigrateTasksResponse unmarshall(DescribeMigrateTasksResponse describeMigrateTasksResponse, UnmarshallerContext _ctx) {
 		
-		describeMigrateTasksResponse.setRequestId(context.stringValue("DescribeMigrateTasksResponse.RequestId"));
-		describeMigrateTasksResponse.setDBInstanceId(context.stringValue("DescribeMigrateTasksResponse.DBInstanceId"));
-		describeMigrateTasksResponse.setTotalRecordCount(context.integerValue("DescribeMigrateTasksResponse.TotalRecordCount"));
-		describeMigrateTasksResponse.setPageNumber(context.integerValue("DescribeMigrateTasksResponse.PageNumber"));
-		describeMigrateTasksResponse.setPageRecordCount(context.integerValue("DescribeMigrateTasksResponse.PageRecordCount"));
+		describeMigrateTasksResponse.setRequestId(_ctx.stringValue("DescribeMigrateTasksResponse.RequestId"));
+		describeMigrateTasksResponse.setDBInstanceId(_ctx.stringValue("DescribeMigrateTasksResponse.DBInstanceId"));
+		describeMigrateTasksResponse.setTotalRecordCount(_ctx.integerValue("DescribeMigrateTasksResponse.TotalRecordCount"));
+		describeMigrateTasksResponse.setPageNumber(_ctx.integerValue("DescribeMigrateTasksResponse.PageNumber"));
+		describeMigrateTasksResponse.setPageRecordCount(_ctx.integerValue("DescribeMigrateTasksResponse.PageRecordCount"));
 
 		List<MigrateTask> items = new ArrayList<MigrateTask>();
-		for (int i = 0; i < context.lengthValue("DescribeMigrateTasksResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMigrateTasksResponse.Items.Length"); i++) {
 			MigrateTask migrateTask = new MigrateTask();
-			migrateTask.setDBName(context.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].DBName"));
-			migrateTask.setMigrateTaskId(context.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].MigrateTaskId"));
-			migrateTask.setCreateTime(context.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].CreateTime"));
-			migrateTask.setEndTime(context.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].EndTime"));
-			migrateTask.setBackupMode(context.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].BackupMode"));
-			migrateTask.setStatus(context.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].Status"));
-			migrateTask.setIsDBReplaced(context.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].IsDBReplaced"));
-			migrateTask.setDescription(context.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].Description"));
+			migrateTask.setDBName(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].DBName"));
+			migrateTask.setMigrateTaskId(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].MigrateTaskId"));
+			migrateTask.setCreateTime(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].CreateTime"));
+			migrateTask.setEndTime(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].EndTime"));
+			migrateTask.setBackupMode(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].BackupMode"));
+			migrateTask.setStatus(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].Status"));
+			migrateTask.setIsDBReplaced(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].IsDBReplaced"));
+			migrateTask.setDescription(_ctx.stringValue("DescribeMigrateTasksResponse.Items["+ i +"].Description"));
 
 			items.add(migrateTask);
 		}

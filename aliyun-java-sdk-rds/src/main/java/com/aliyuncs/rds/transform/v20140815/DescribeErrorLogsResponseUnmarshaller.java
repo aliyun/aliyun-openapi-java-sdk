@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeErrorLogsResponseUnmarshaller {
 
-	public static DescribeErrorLogsResponse unmarshall(DescribeErrorLogsResponse describeErrorLogsResponse, UnmarshallerContext context) {
+	public static DescribeErrorLogsResponse unmarshall(DescribeErrorLogsResponse describeErrorLogsResponse, UnmarshallerContext _ctx) {
 		
-		describeErrorLogsResponse.setRequestId(context.stringValue("DescribeErrorLogsResponse.RequestId"));
-		describeErrorLogsResponse.setTotalRecordCount(context.integerValue("DescribeErrorLogsResponse.TotalRecordCount"));
-		describeErrorLogsResponse.setPageNumber(context.integerValue("DescribeErrorLogsResponse.PageNumber"));
-		describeErrorLogsResponse.setPageRecordCount(context.integerValue("DescribeErrorLogsResponse.PageRecordCount"));
+		describeErrorLogsResponse.setRequestId(_ctx.stringValue("DescribeErrorLogsResponse.RequestId"));
+		describeErrorLogsResponse.setTotalRecordCount(_ctx.integerValue("DescribeErrorLogsResponse.TotalRecordCount"));
+		describeErrorLogsResponse.setPageNumber(_ctx.integerValue("DescribeErrorLogsResponse.PageNumber"));
+		describeErrorLogsResponse.setPageRecordCount(_ctx.integerValue("DescribeErrorLogsResponse.PageRecordCount"));
 
 		List<ErrorLog> items = new ArrayList<ErrorLog>();
-		for (int i = 0; i < context.lengthValue("DescribeErrorLogsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeErrorLogsResponse.Items.Length"); i++) {
 			ErrorLog errorLog = new ErrorLog();
-			errorLog.setErrorInfo(context.stringValue("DescribeErrorLogsResponse.Items["+ i +"].ErrorInfo"));
-			errorLog.setCreateTime(context.stringValue("DescribeErrorLogsResponse.Items["+ i +"].CreateTime"));
+			errorLog.setErrorInfo(_ctx.stringValue("DescribeErrorLogsResponse.Items["+ i +"].ErrorInfo"));
+			errorLog.setCreateTime(_ctx.stringValue("DescribeErrorLogsResponse.Items["+ i +"].CreateTime"));
 
 			items.add(errorLog);
 		}

@@ -30,11 +30,11 @@ public class DescribeCharacterSetNameRequest extends RpcAcsRequest<DescribeChara
 
 	private String resourceOwnerAccount;
 
-	private String engine;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String engine;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +58,6 @@ public class DescribeCharacterSetNameRequest extends RpcAcsRequest<DescribeChara
 		}
 	}
 
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -88,6 +77,17 @@ public class DescribeCharacterSetNameRequest extends RpcAcsRequest<DescribeChara
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
 		}
 	}
 

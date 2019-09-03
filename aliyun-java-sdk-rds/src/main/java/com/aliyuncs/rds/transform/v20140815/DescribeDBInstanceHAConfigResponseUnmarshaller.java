@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBInstanceHAConfigResponseUnmarshaller {
 
-	public static DescribeDBInstanceHAConfigResponse unmarshall(DescribeDBInstanceHAConfigResponse describeDBInstanceHAConfigResponse, UnmarshallerContext context) {
+	public static DescribeDBInstanceHAConfigResponse unmarshall(DescribeDBInstanceHAConfigResponse describeDBInstanceHAConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeDBInstanceHAConfigResponse.setRequestId(context.stringValue("DescribeDBInstanceHAConfigResponse.RequestId"));
-		describeDBInstanceHAConfigResponse.setDBInstanceId(context.stringValue("DescribeDBInstanceHAConfigResponse.DBInstanceId"));
-		describeDBInstanceHAConfigResponse.setSyncMode(context.stringValue("DescribeDBInstanceHAConfigResponse.SyncMode"));
-		describeDBInstanceHAConfigResponse.setHAMode(context.stringValue("DescribeDBInstanceHAConfigResponse.HAMode"));
+		describeDBInstanceHAConfigResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.RequestId"));
+		describeDBInstanceHAConfigResponse.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.DBInstanceId"));
+		describeDBInstanceHAConfigResponse.setSyncMode(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.SyncMode"));
+		describeDBInstanceHAConfigResponse.setHAMode(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HAMode"));
 
 		List<NodeInfo> hostInstanceInfos = new ArrayList<NodeInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos.Length"); i++) {
 			NodeInfo nodeInfo = new NodeInfo();
-			nodeInfo.setNodeId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeId"));
-			nodeInfo.setRegionId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].RegionId"));
-			nodeInfo.setLogSyncTime(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].LogSyncTime"));
-			nodeInfo.setDataSyncTime(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].DataSyncTime"));
-			nodeInfo.setNodeType(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeType"));
-			nodeInfo.setZoneId(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].ZoneId"));
-			nodeInfo.setSyncStatus(context.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].SyncStatus"));
+			nodeInfo.setNodeId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeId"));
+			nodeInfo.setRegionId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].RegionId"));
+			nodeInfo.setLogSyncTime(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].LogSyncTime"));
+			nodeInfo.setDataSyncTime(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].DataSyncTime"));
+			nodeInfo.setNodeType(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].NodeType"));
+			nodeInfo.setZoneId(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].ZoneId"));
+			nodeInfo.setSyncStatus(_ctx.stringValue("DescribeDBInstanceHAConfigResponse.HostInstanceInfos["+ i +"].SyncStatus"));
 
 			hostInstanceInfos.add(nodeInfo);
 		}

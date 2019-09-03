@@ -28,21 +28,21 @@ public class DescribeCrossRegionLogBackupFilesRequest extends RpcAcsRequest<Desc
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String startTime;
+
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String endTime;
-
 	private String dBInstanceId;
 
-	private String startTime;
+	private String resourceOwnerAccount;
+
+	private String endTime;
 
 	private Long ownerId;
 
 	private String crossBackupRegion;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,14 +55,25 @@ public class DescribeCrossRegionLogBackupFilesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -77,17 +88,6 @@ public class DescribeCrossRegionLogBackupFilesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -99,14 +99,25 @@ public class DescribeCrossRegionLogBackupFilesRequest extends RpcAcsRequest<Desc
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -129,17 +140,6 @@ public class DescribeCrossRegionLogBackupFilesRequest extends RpcAcsRequest<Desc
 		this.crossBackupRegion = crossBackupRegion;
 		if(crossBackupRegion != null){
 			putQueryParameter("CrossBackupRegion", crossBackupRegion);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -28,25 +28,25 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 
 	private Long resourceOwnerId;
 
-	private String restoreTime;
-
 	private Integer dBInstanceStorage;
 
 	private String sourceDBInstanceName;
 
+	private String engineVersion;
+
+	private String engine;
+
+	private String restoreTime;
+
 	private String resourceOwnerAccount;
 
 	private String backupSetId;
-
-	private String engineVersion;
 
 	private Long ownerId;
 
 	private String dBInstanceClass;
 
 	private String restoreType;
-
-	private String engine;
 
 	private String sourceRegion;
 
@@ -58,17 +58,6 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
 		}
 	}
 
@@ -94,6 +83,39 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 		}
 	}
 
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -113,17 +135,6 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 		this.backupSetId = backupSetId;
 		if(backupSetId != null){
 			putQueryParameter("BackupSetId", backupSetId);
-		}
-	}
-
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
-
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-		if(engineVersion != null){
-			putQueryParameter("EngineVersion", engineVersion);
 		}
 	}
 
@@ -157,17 +168,6 @@ public class CheckCreateDdrDBInstanceRequest extends RpcAcsRequest<CheckCreateDd
 		this.restoreType = restoreType;
 		if(restoreType != null){
 			putQueryParameter("RestoreType", restoreType);
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
 		}
 	}
 

@@ -30,15 +30,15 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String engineVersion;
 
-	private String dBInstanceClass;
-
 	private String engine;
-
-	private String zoneId;
 
 	private String dBInstanceId;
 
 	private String instanceChargeType;
+
+	private String dBInstanceClass;
+
+	private String zoneId;
 
 	private String orderType;
 
@@ -64,17 +64,6 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
-
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		if(dBInstanceClass != null){
-			putQueryParameter("DBInstanceClass", dBInstanceClass);
-		}
-	}
-
 	public String getEngine() {
 		return this.engine;
 	}
@@ -83,17 +72,6 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.engine = engine;
 		if(engine != null){
 			putQueryParameter("Engine", engine);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -116,6 +94,28 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.instanceChargeType = instanceChargeType;
 		if(instanceChargeType != null){
 			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

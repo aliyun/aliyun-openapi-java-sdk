@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDiagnosticReportListResponseUnmarshaller {
 
-	public static DescribeDiagnosticReportListResponse unmarshall(DescribeDiagnosticReportListResponse describeDiagnosticReportListResponse, UnmarshallerContext context) {
+	public static DescribeDiagnosticReportListResponse unmarshall(DescribeDiagnosticReportListResponse describeDiagnosticReportListResponse, UnmarshallerContext _ctx) {
 		
-		describeDiagnosticReportListResponse.setRequestId(context.stringValue("DescribeDiagnosticReportListResponse.RequestId"));
+		describeDiagnosticReportListResponse.setRequestId(_ctx.stringValue("DescribeDiagnosticReportListResponse.RequestId"));
 
 		List<Report> reportList = new ArrayList<Report>();
-		for (int i = 0; i < context.lengthValue("DescribeDiagnosticReportListResponse.ReportList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDiagnosticReportListResponse.ReportList.Length"); i++) {
 			Report report = new Report();
-			report.setDiagnosticTime(context.stringValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].DiagnosticTime"));
-			report.setScore(context.integerValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].Score"));
-			report.setStartTime(context.stringValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].StartTime"));
-			report.setEndTime(context.stringValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].EndTime"));
-			report.setDownloadURL(context.stringValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].DownloadURL"));
+			report.setDiagnosticTime(_ctx.stringValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].DiagnosticTime"));
+			report.setScore(_ctx.integerValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].Score"));
+			report.setStartTime(_ctx.stringValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].StartTime"));
+			report.setEndTime(_ctx.stringValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].EndTime"));
+			report.setDownloadURL(_ctx.stringValue("DescribeDiagnosticReportListResponse.ReportList["+ i +"].DownloadURL"));
 
 			reportList.add(report);
 		}

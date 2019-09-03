@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AllocateReadWriteSplittingConnectionResponseUnmarshaller {
 
-	public static AllocateReadWriteSplittingConnectionResponse unmarshall(AllocateReadWriteSplittingConnectionResponse allocateReadWriteSplittingConnectionResponse, UnmarshallerContext context) {
+	public static AllocateReadWriteSplittingConnectionResponse unmarshall(AllocateReadWriteSplittingConnectionResponse allocateReadWriteSplittingConnectionResponse, UnmarshallerContext _ctx) {
 		
-		allocateReadWriteSplittingConnectionResponse.setRequestId(context.stringValue("AllocateReadWriteSplittingConnectionResponse.RequestId"));
+		allocateReadWriteSplittingConnectionResponse.setRequestId(_ctx.stringValue("AllocateReadWriteSplittingConnectionResponse.RequestId"));
 	 
 	 	return allocateReadWriteSplittingConnectionResponse;
 	}

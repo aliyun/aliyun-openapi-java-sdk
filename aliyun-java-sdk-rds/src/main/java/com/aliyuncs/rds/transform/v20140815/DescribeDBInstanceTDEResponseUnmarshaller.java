@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBInstanceTDEResponseUnmarshaller {
 
-	public static DescribeDBInstanceTDEResponse unmarshall(DescribeDBInstanceTDEResponse describeDBInstanceTDEResponse, UnmarshallerContext context) {
+	public static DescribeDBInstanceTDEResponse unmarshall(DescribeDBInstanceTDEResponse describeDBInstanceTDEResponse, UnmarshallerContext _ctx) {
 		
-		describeDBInstanceTDEResponse.setRequestId(context.stringValue("DescribeDBInstanceTDEResponse.RequestId"));
-		describeDBInstanceTDEResponse.setTDEStatus(context.stringValue("DescribeDBInstanceTDEResponse.TDEStatus"));
+		describeDBInstanceTDEResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceTDEResponse.RequestId"));
+		describeDBInstanceTDEResponse.setTDEStatus(_ctx.stringValue("DescribeDBInstanceTDEResponse.TDEStatus"));
 
 		List<Database> databases = new ArrayList<Database>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstanceTDEResponse.Databases.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceTDEResponse.Databases.Length"); i++) {
 			Database database = new Database();
-			database.setDBName(context.stringValue("DescribeDBInstanceTDEResponse.Databases["+ i +"].DBName"));
-			database.setTDEStatus(context.stringValue("DescribeDBInstanceTDEResponse.Databases["+ i +"].TDEStatus"));
+			database.setDBName(_ctx.stringValue("DescribeDBInstanceTDEResponse.Databases["+ i +"].DBName"));
+			database.setTDEStatus(_ctx.stringValue("DescribeDBInstanceTDEResponse.Databases["+ i +"].TDEStatus"));
 
 			databases.add(database);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AllocateInstancePrivateConnectionResponseUnmarshaller {
 
-	public static AllocateInstancePrivateConnectionResponse unmarshall(AllocateInstancePrivateConnectionResponse allocateInstancePrivateConnectionResponse, UnmarshallerContext context) {
+	public static AllocateInstancePrivateConnectionResponse unmarshall(AllocateInstancePrivateConnectionResponse allocateInstancePrivateConnectionResponse, UnmarshallerContext _ctx) {
 		
-		allocateInstancePrivateConnectionResponse.setRequestId(context.stringValue("AllocateInstancePrivateConnectionResponse.RequestId"));
+		allocateInstancePrivateConnectionResponse.setRequestId(_ctx.stringValue("AllocateInstancePrivateConnectionResponse.RequestId"));
 	 
 	 	return allocateInstancePrivateConnectionResponse;
 	}

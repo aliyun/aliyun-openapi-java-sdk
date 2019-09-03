@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ResetAccountResponseUnmarshaller {
 
-	public static ResetAccountResponse unmarshall(ResetAccountResponse resetAccountResponse, UnmarshallerContext context) {
+	public static ResetAccountResponse unmarshall(ResetAccountResponse resetAccountResponse, UnmarshallerContext _ctx) {
 		
-		resetAccountResponse.setRequestId(context.stringValue("ResetAccountResponse.RequestId"));
+		resetAccountResponse.setRequestId(_ctx.stringValue("ResetAccountResponse.RequestId"));
 	 
 	 	return resetAccountResponse;
 	}

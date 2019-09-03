@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceAutoRenewalAttributeResponseUnmarshaller {
 
-	public static DescribeInstanceAutoRenewalAttributeResponse unmarshall(DescribeInstanceAutoRenewalAttributeResponse describeInstanceAutoRenewalAttributeResponse, UnmarshallerContext context) {
+	public static DescribeInstanceAutoRenewalAttributeResponse unmarshall(DescribeInstanceAutoRenewalAttributeResponse describeInstanceAutoRenewalAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceAutoRenewalAttributeResponse.setRequestId(context.stringValue("DescribeInstanceAutoRenewalAttributeResponse.RequestId"));
-		describeInstanceAutoRenewalAttributeResponse.setPageNumber(context.integerValue("DescribeInstanceAutoRenewalAttributeResponse.PageNumber"));
-		describeInstanceAutoRenewalAttributeResponse.setTotalRecordCount(context.integerValue("DescribeInstanceAutoRenewalAttributeResponse.TotalRecordCount"));
-		describeInstanceAutoRenewalAttributeResponse.setPageRecordCount(context.integerValue("DescribeInstanceAutoRenewalAttributeResponse.PageRecordCount"));
+		describeInstanceAutoRenewalAttributeResponse.setRequestId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.RequestId"));
+		describeInstanceAutoRenewalAttributeResponse.setPageNumber(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.PageNumber"));
+		describeInstanceAutoRenewalAttributeResponse.setTotalRecordCount(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.TotalRecordCount"));
+		describeInstanceAutoRenewalAttributeResponse.setPageRecordCount(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.PageRecordCount"));
 
 		List<Item> items = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceAutoRenewalAttributeResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAutoRenewalAttributeResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setDBInstanceId(context.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].DBInstanceId"));
-			item.setRegionId(context.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].RegionId"));
-			item.setDuration(context.integerValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Duration"));
-			item.setStatus(context.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Status"));
-			item.setAutoRenew(context.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].AutoRenew"));
+			item.setDBInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].DBInstanceId"));
+			item.setRegionId(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].RegionId"));
+			item.setDuration(_ctx.integerValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Duration"));
+			item.setStatus(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].Status"));
+			item.setAutoRenew(_ctx.stringValue("DescribeInstanceAutoRenewalAttributeResponse.Items["+ i +"].AutoRenew"));
 
 			items.add(item);
 		}

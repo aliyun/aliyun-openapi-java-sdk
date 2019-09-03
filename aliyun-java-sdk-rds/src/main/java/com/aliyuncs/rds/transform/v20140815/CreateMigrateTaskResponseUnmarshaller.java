@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMigrateTaskResponseUnmarshaller {
 
-	public static CreateMigrateTaskResponse unmarshall(CreateMigrateTaskResponse createMigrateTaskResponse, UnmarshallerContext context) {
+	public static CreateMigrateTaskResponse unmarshall(CreateMigrateTaskResponse createMigrateTaskResponse, UnmarshallerContext _ctx) {
 		
-		createMigrateTaskResponse.setRequestId(context.stringValue("CreateMigrateTaskResponse.RequestId"));
-		createMigrateTaskResponse.setDBInstanceId(context.stringValue("CreateMigrateTaskResponse.DBInstanceId"));
-		createMigrateTaskResponse.setTaskId(context.stringValue("CreateMigrateTaskResponse.TaskId"));
-		createMigrateTaskResponse.setDBName(context.stringValue("CreateMigrateTaskResponse.DBName"));
-		createMigrateTaskResponse.setMigrateTaskId(context.stringValue("CreateMigrateTaskResponse.MigrateTaskId"));
-		createMigrateTaskResponse.setBackupMode(context.stringValue("CreateMigrateTaskResponse.BackupMode"));
+		createMigrateTaskResponse.setRequestId(_ctx.stringValue("CreateMigrateTaskResponse.RequestId"));
+		createMigrateTaskResponse.setDBInstanceId(_ctx.stringValue("CreateMigrateTaskResponse.DBInstanceId"));
+		createMigrateTaskResponse.setTaskId(_ctx.stringValue("CreateMigrateTaskResponse.TaskId"));
+		createMigrateTaskResponse.setDBName(_ctx.stringValue("CreateMigrateTaskResponse.DBName"));
+		createMigrateTaskResponse.setMigrateTaskId(_ctx.stringValue("CreateMigrateTaskResponse.MigrateTaskId"));
+		createMigrateTaskResponse.setBackupMode(_ctx.stringValue("CreateMigrateTaskResponse.BackupMode"));
 	 
 	 	return createMigrateTaskResponse;
 	}

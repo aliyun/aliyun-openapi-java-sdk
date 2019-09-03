@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CopyDatabaseBetweenInstancesResponseUnmarshaller {
 
-	public static CopyDatabaseBetweenInstancesResponse unmarshall(CopyDatabaseBetweenInstancesResponse copyDatabaseBetweenInstancesResponse, UnmarshallerContext context) {
+	public static CopyDatabaseBetweenInstancesResponse unmarshall(CopyDatabaseBetweenInstancesResponse copyDatabaseBetweenInstancesResponse, UnmarshallerContext _ctx) {
 		
-		copyDatabaseBetweenInstancesResponse.setRequestId(context.stringValue("CopyDatabaseBetweenInstancesResponse.RequestId"));
-		copyDatabaseBetweenInstancesResponse.setDBInstanceId(context.stringValue("CopyDatabaseBetweenInstancesResponse.DBInstanceId"));
+		copyDatabaseBetweenInstancesResponse.setRequestId(_ctx.stringValue("CopyDatabaseBetweenInstancesResponse.RequestId"));
+		copyDatabaseBetweenInstancesResponse.setDBInstanceId(_ctx.stringValue("CopyDatabaseBetweenInstancesResponse.DBInstanceId"));
 	 
 	 	return copyDatabaseBetweenInstancesResponse;
 	}

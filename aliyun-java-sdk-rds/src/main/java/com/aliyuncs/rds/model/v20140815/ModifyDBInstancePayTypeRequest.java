@@ -28,11 +28,11 @@ public class ModifyDBInstancePayTypeRequest extends RpcAcsRequest<ModifyDBInstan
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
 	private String period;
 
 	private Integer usedTime;
-
-	private String dBInstanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -42,6 +42,17 @@ public class ModifyDBInstancePayTypeRequest extends RpcAcsRequest<ModifyDBInstan
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -64,17 +75,6 @@ public class ModifyDBInstancePayTypeRequest extends RpcAcsRequest<ModifyDBInstan
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

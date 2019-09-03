@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDBInstancePayTypeResponseUnmarshaller {
 
-	public static ModifyDBInstancePayTypeResponse unmarshall(ModifyDBInstancePayTypeResponse modifyDBInstancePayTypeResponse, UnmarshallerContext context) {
+	public static ModifyDBInstancePayTypeResponse unmarshall(ModifyDBInstancePayTypeResponse modifyDBInstancePayTypeResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBInstancePayTypeResponse.setRequestId(context.stringValue("ModifyDBInstancePayTypeResponse.RequestId"));
-		modifyDBInstancePayTypeResponse.setDBInstanceId(context.stringValue("ModifyDBInstancePayTypeResponse.DBInstanceId"));
-		modifyDBInstancePayTypeResponse.setOrderId(context.longValue("ModifyDBInstancePayTypeResponse.OrderId"));
+		modifyDBInstancePayTypeResponse.setRequestId(_ctx.stringValue("ModifyDBInstancePayTypeResponse.RequestId"));
+		modifyDBInstancePayTypeResponse.setDBInstanceId(_ctx.stringValue("ModifyDBInstancePayTypeResponse.DBInstanceId"));
+		modifyDBInstancePayTypeResponse.setOrderId(_ctx.longValue("ModifyDBInstancePayTypeResponse.OrderId"));
 	 
 	 	return modifyDBInstancePayTypeResponse;
 	}

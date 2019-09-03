@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySQLCollectorPolicyResponseUnmarshaller {
 
-	public static ModifySQLCollectorPolicyResponse unmarshall(ModifySQLCollectorPolicyResponse modifySQLCollectorPolicyResponse, UnmarshallerContext context) {
+	public static ModifySQLCollectorPolicyResponse unmarshall(ModifySQLCollectorPolicyResponse modifySQLCollectorPolicyResponse, UnmarshallerContext _ctx) {
 		
-		modifySQLCollectorPolicyResponse.setRequestId(context.stringValue("ModifySQLCollectorPolicyResponse.RequestId"));
+		modifySQLCollectorPolicyResponse.setRequestId(_ctx.stringValue("ModifySQLCollectorPolicyResponse.RequestId"));
 	 
 	 	return modifySQLCollectorPolicyResponse;
 	}

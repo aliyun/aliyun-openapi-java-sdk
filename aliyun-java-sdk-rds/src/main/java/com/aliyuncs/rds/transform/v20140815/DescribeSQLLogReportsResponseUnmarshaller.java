@@ -26,34 +26,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSQLLogReportsResponseUnmarshaller {
 
-	public static DescribeSQLLogReportsResponse unmarshall(DescribeSQLLogReportsResponse describeSQLLogReportsResponse, UnmarshallerContext context) {
+	public static DescribeSQLLogReportsResponse unmarshall(DescribeSQLLogReportsResponse describeSQLLogReportsResponse, UnmarshallerContext _ctx) {
 		
-		describeSQLLogReportsResponse.setRequestId(context.stringValue("DescribeSQLLogReportsResponse.RequestId"));
-		describeSQLLogReportsResponse.setTotalRecordCount(context.integerValue("DescribeSQLLogReportsResponse.TotalRecordCount"));
-		describeSQLLogReportsResponse.setPageNumber(context.integerValue("DescribeSQLLogReportsResponse.PageNumber"));
-		describeSQLLogReportsResponse.setPageRecordCount(context.integerValue("DescribeSQLLogReportsResponse.PageRecordCount"));
+		describeSQLLogReportsResponse.setRequestId(_ctx.stringValue("DescribeSQLLogReportsResponse.RequestId"));
+		describeSQLLogReportsResponse.setTotalRecordCount(_ctx.integerValue("DescribeSQLLogReportsResponse.TotalRecordCount"));
+		describeSQLLogReportsResponse.setPageNumber(_ctx.integerValue("DescribeSQLLogReportsResponse.PageNumber"));
+		describeSQLLogReportsResponse.setPageRecordCount(_ctx.integerValue("DescribeSQLLogReportsResponse.PageRecordCount"));
 
 		List<Item> items = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("DescribeSQLLogReportsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogReportsResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setReportTime(context.stringValue("DescribeSQLLogReportsResponse.Items["+ i +"].ReportTime"));
+			item.setReportTime(_ctx.stringValue("DescribeSQLLogReportsResponse.Items["+ i +"].ReportTime"));
 
 			List<LatencyTopNItem> latencyTopNItems = new ArrayList<LatencyTopNItem>();
-			for (int j = 0; j < context.lengthValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems.Length"); j++) {
 				LatencyTopNItem latencyTopNItem = new LatencyTopNItem();
-				latencyTopNItem.setSQLText(context.stringValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText"));
-				latencyTopNItem.setAvgLatency(context.longValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency"));
-				latencyTopNItem.setSQLExecuteTimes(context.longValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes"));
+				latencyTopNItem.setSQLText(_ctx.stringValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText"));
+				latencyTopNItem.setAvgLatency(_ctx.longValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency"));
+				latencyTopNItem.setSQLExecuteTimes(_ctx.longValue("DescribeSQLLogReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes"));
 
 				latencyTopNItems.add(latencyTopNItem);
 			}
 			item.setLatencyTopNItems(latencyTopNItems);
 
 			List<QPSTopNItem> qPSTopNItems = new ArrayList<QPSTopNItem>();
-			for (int j = 0; j < context.lengthValue("DescribeSQLLogReportsResponse.Items["+ i +"].QPSTopNItems.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeSQLLogReportsResponse.Items["+ i +"].QPSTopNItems.Length"); j++) {
 				QPSTopNItem qPSTopNItem = new QPSTopNItem();
-				qPSTopNItem.setSQLText(context.stringValue("DescribeSQLLogReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLText"));
-				qPSTopNItem.setSQLExecuteTimes(context.longValue("DescribeSQLLogReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLExecuteTimes"));
+				qPSTopNItem.setSQLText(_ctx.stringValue("DescribeSQLLogReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLText"));
+				qPSTopNItem.setSQLExecuteTimes(_ctx.longValue("DescribeSQLLogReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLExecuteTimes"));
 
 				qPSTopNItems.add(qPSTopNItem);
 			}

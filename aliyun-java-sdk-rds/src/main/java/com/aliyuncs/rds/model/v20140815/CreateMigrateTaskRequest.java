@@ -28,11 +28,13 @@ public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskRes
 
 	private Long resourceOwnerId;
 
+	private String isOnlineDB;
+
+	private String dBInstanceId;
+
 	private String migrateTaskId;
 
 	private String resourceOwnerAccount;
-
-	private String isOnlineDB;
 
 	private Long ownerId;
 
@@ -41,8 +43,6 @@ public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskRes
 	private String oSSUrls;
 
 	private String dBName;
-
-	private String dBInstanceId;
 
 	private String backupMode;
 
@@ -56,6 +56,28 @@ public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getIsOnlineDB() {
+		return this.isOnlineDB;
+	}
+
+	public void setIsOnlineDB(String isOnlineDB) {
+		this.isOnlineDB = isOnlineDB;
+		if(isOnlineDB != null){
+			putQueryParameter("IsOnlineDB", isOnlineDB);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -78,17 +100,6 @@ public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskRes
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getIsOnlineDB() {
-		return this.isOnlineDB;
-	}
-
-	public void setIsOnlineDB(String isOnlineDB) {
-		this.isOnlineDB = isOnlineDB;
-		if(isOnlineDB != null){
-			putQueryParameter("IsOnlineDB", isOnlineDB);
 		}
 	}
 
@@ -133,17 +144,6 @@ public class CreateMigrateTaskRequest extends RpcAcsRequest<CreateMigrateTaskRes
 		this.dBName = dBName;
 		if(dBName != null){
 			putQueryParameter("DBName", dBName);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

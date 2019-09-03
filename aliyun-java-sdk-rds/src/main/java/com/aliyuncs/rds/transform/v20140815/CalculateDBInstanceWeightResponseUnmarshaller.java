@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CalculateDBInstanceWeightResponseUnmarshaller {
 
-	public static CalculateDBInstanceWeightResponse unmarshall(CalculateDBInstanceWeightResponse calculateDBInstanceWeightResponse, UnmarshallerContext context) {
+	public static CalculateDBInstanceWeightResponse unmarshall(CalculateDBInstanceWeightResponse calculateDBInstanceWeightResponse, UnmarshallerContext _ctx) {
 		
-		calculateDBInstanceWeightResponse.setRequestId(context.stringValue("CalculateDBInstanceWeightResponse.RequestId"));
+		calculateDBInstanceWeightResponse.setRequestId(_ctx.stringValue("CalculateDBInstanceWeightResponse.RequestId"));
 
 		List<DBInstanceWeight> items = new ArrayList<DBInstanceWeight>();
-		for (int i = 0; i < context.lengthValue("CalculateDBInstanceWeightResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CalculateDBInstanceWeightResponse.Items.Length"); i++) {
 			DBInstanceWeight dBInstanceWeight = new DBInstanceWeight();
-			dBInstanceWeight.setDBInstanceId(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceId"));
-			dBInstanceWeight.setDBInstanceType(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceType"));
-			dBInstanceWeight.setReadonlyInstanceSQLDelayedTime(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].ReadonlyInstanceSQLDelayedTime"));
-			dBInstanceWeight.setAvailability(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Availability"));
-			dBInstanceWeight.setWeight(context.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Weight"));
+			dBInstanceWeight.setDBInstanceId(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceId"));
+			dBInstanceWeight.setDBInstanceType(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].DBInstanceType"));
+			dBInstanceWeight.setReadonlyInstanceSQLDelayedTime(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].ReadonlyInstanceSQLDelayedTime"));
+			dBInstanceWeight.setAvailability(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Availability"));
+			dBInstanceWeight.setWeight(_ctx.stringValue("CalculateDBInstanceWeightResponse.Items["+ i +"].Weight"));
 
 			items.add(dBInstanceWeight);
 		}

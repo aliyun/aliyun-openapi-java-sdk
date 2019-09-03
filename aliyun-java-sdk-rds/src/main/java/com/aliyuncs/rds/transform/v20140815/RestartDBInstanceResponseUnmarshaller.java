@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RestartDBInstanceResponseUnmarshaller {
 
-	public static RestartDBInstanceResponse unmarshall(RestartDBInstanceResponse restartDBInstanceResponse, UnmarshallerContext context) {
+	public static RestartDBInstanceResponse unmarshall(RestartDBInstanceResponse restartDBInstanceResponse, UnmarshallerContext _ctx) {
 		
-		restartDBInstanceResponse.setRequestId(context.stringValue("RestartDBInstanceResponse.RequestId"));
+		restartDBInstanceResponse.setRequestId(_ctx.stringValue("RestartDBInstanceResponse.RequestId"));
 	 
 	 	return restartDBInstanceResponse;
 	}

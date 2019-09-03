@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ImportDatabaseBetweenInstancesResponseUnmarshaller {
 
-	public static ImportDatabaseBetweenInstancesResponse unmarshall(ImportDatabaseBetweenInstancesResponse importDatabaseBetweenInstancesResponse, UnmarshallerContext context) {
+	public static ImportDatabaseBetweenInstancesResponse unmarshall(ImportDatabaseBetweenInstancesResponse importDatabaseBetweenInstancesResponse, UnmarshallerContext _ctx) {
 		
-		importDatabaseBetweenInstancesResponse.setRequestId(context.stringValue("ImportDatabaseBetweenInstancesResponse.RequestId"));
-		importDatabaseBetweenInstancesResponse.setImportId(context.stringValue("ImportDatabaseBetweenInstancesResponse.ImportId"));
+		importDatabaseBetweenInstancesResponse.setRequestId(_ctx.stringValue("ImportDatabaseBetweenInstancesResponse.RequestId"));
+		importDatabaseBetweenInstancesResponse.setImportId(_ctx.stringValue("ImportDatabaseBetweenInstancesResponse.ImportId"));
 	 
 	 	return importDatabaseBetweenInstancesResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SwitchDBInstanceHAResponseUnmarshaller {
 
-	public static SwitchDBInstanceHAResponse unmarshall(SwitchDBInstanceHAResponse switchDBInstanceHAResponse, UnmarshallerContext context) {
+	public static SwitchDBInstanceHAResponse unmarshall(SwitchDBInstanceHAResponse switchDBInstanceHAResponse, UnmarshallerContext _ctx) {
 		
-		switchDBInstanceHAResponse.setRequestId(context.stringValue("SwitchDBInstanceHAResponse.RequestId"));
+		switchDBInstanceHAResponse.setRequestId(_ctx.stringValue("SwitchDBInstanceHAResponse.RequestId"));
 	 
 	 	return switchDBInstanceHAResponse;
 	}

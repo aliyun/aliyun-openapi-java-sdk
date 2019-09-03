@@ -20,19 +20,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeResourceUsageResponseUnmarshaller {
 
-	public static DescribeResourceUsageResponse unmarshall(DescribeResourceUsageResponse describeResourceUsageResponse, UnmarshallerContext context) {
+	public static DescribeResourceUsageResponse unmarshall(DescribeResourceUsageResponse describeResourceUsageResponse, UnmarshallerContext _ctx) {
 		
-		describeResourceUsageResponse.setRequestId(context.stringValue("DescribeResourceUsageResponse.RequestId"));
-		describeResourceUsageResponse.setDBInstanceId(context.stringValue("DescribeResourceUsageResponse.DBInstanceId"));
-		describeResourceUsageResponse.setEngine(context.stringValue("DescribeResourceUsageResponse.Engine"));
-		describeResourceUsageResponse.setDiskUsed(context.longValue("DescribeResourceUsageResponse.DiskUsed"));
-		describeResourceUsageResponse.setDataSize(context.longValue("DescribeResourceUsageResponse.DataSize"));
-		describeResourceUsageResponse.setLogSize(context.longValue("DescribeResourceUsageResponse.LogSize"));
-		describeResourceUsageResponse.setBackupSize(context.longValue("DescribeResourceUsageResponse.BackupSize"));
-		describeResourceUsageResponse.setBackupOssDataSize(context.longValue("DescribeResourceUsageResponse.BackupOssDataSize"));
-		describeResourceUsageResponse.setBackupOssLogSize(context.longValue("DescribeResourceUsageResponse.BackupOssLogSize"));
-		describeResourceUsageResponse.setSQLSize(context.longValue("DescribeResourceUsageResponse.SQLSize"));
-		describeResourceUsageResponse.setColdBackupSize(context.longValue("DescribeResourceUsageResponse.ColdBackupSize"));
+		describeResourceUsageResponse.setRequestId(_ctx.stringValue("DescribeResourceUsageResponse.RequestId"));
+		describeResourceUsageResponse.setDBInstanceId(_ctx.stringValue("DescribeResourceUsageResponse.DBInstanceId"));
+		describeResourceUsageResponse.setEngine(_ctx.stringValue("DescribeResourceUsageResponse.Engine"));
+		describeResourceUsageResponse.setDiskUsed(_ctx.longValue("DescribeResourceUsageResponse.DiskUsed"));
+		describeResourceUsageResponse.setDataSize(_ctx.longValue("DescribeResourceUsageResponse.DataSize"));
+		describeResourceUsageResponse.setLogSize(_ctx.longValue("DescribeResourceUsageResponse.LogSize"));
+		describeResourceUsageResponse.setBackupSize(_ctx.longValue("DescribeResourceUsageResponse.BackupSize"));
+		describeResourceUsageResponse.setBackupOssDataSize(_ctx.longValue("DescribeResourceUsageResponse.BackupOssDataSize"));
+		describeResourceUsageResponse.setBackupOssLogSize(_ctx.longValue("DescribeResourceUsageResponse.BackupOssLogSize"));
+		describeResourceUsageResponse.setSQLSize(_ctx.longValue("DescribeResourceUsageResponse.SQLSize"));
+		describeResourceUsageResponse.setColdBackupSize(_ctx.longValue("DescribeResourceUsageResponse.ColdBackupSize"));
 	 
 	 	return describeResourceUsageResponse;
 	}

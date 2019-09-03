@@ -181,6 +181,8 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String masterZone;
 
+		private String autoUpgradeMinorVersion;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -737,6 +739,14 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setMasterZone(String masterZone) {
 			this.masterZone = masterZone;
+		}
+
+		public String getAutoUpgradeMinorVersion() {
+			return this.autoUpgradeMinorVersion;
+		}
+
+		public void setAutoUpgradeMinorVersion(String autoUpgradeMinorVersion) {
+			this.autoUpgradeMinorVersion = autoUpgradeMinorVersion;
 		}
 
 		public List<SlaveZone> getSlaveZones() {

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDBInstanceNetworkTypeResponseUnmarshaller {
 
-	public static ModifyDBInstanceNetworkTypeResponse unmarshall(ModifyDBInstanceNetworkTypeResponse modifyDBInstanceNetworkTypeResponse, UnmarshallerContext context) {
+	public static ModifyDBInstanceNetworkTypeResponse unmarshall(ModifyDBInstanceNetworkTypeResponse modifyDBInstanceNetworkTypeResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBInstanceNetworkTypeResponse.setRequestId(context.stringValue("ModifyDBInstanceNetworkTypeResponse.RequestId"));
-		modifyDBInstanceNetworkTypeResponse.setTaskId(context.stringValue("ModifyDBInstanceNetworkTypeResponse.TaskId"));
+		modifyDBInstanceNetworkTypeResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceNetworkTypeResponse.RequestId"));
+		modifyDBInstanceNetworkTypeResponse.setTaskId(_ctx.stringValue("ModifyDBInstanceNetworkTypeResponse.TaskId"));
 	 
 	 	return modifyDBInstanceNetworkTypeResponse;
 	}

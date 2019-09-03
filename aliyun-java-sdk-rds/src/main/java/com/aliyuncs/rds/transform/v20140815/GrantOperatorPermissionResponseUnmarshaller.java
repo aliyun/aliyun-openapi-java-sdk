@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GrantOperatorPermissionResponseUnmarshaller {
 
-	public static GrantOperatorPermissionResponse unmarshall(GrantOperatorPermissionResponse grantOperatorPermissionResponse, UnmarshallerContext context) {
+	public static GrantOperatorPermissionResponse unmarshall(GrantOperatorPermissionResponse grantOperatorPermissionResponse, UnmarshallerContext _ctx) {
 		
-		grantOperatorPermissionResponse.setRequestId(context.stringValue("GrantOperatorPermissionResponse.RequestId"));
+		grantOperatorPermissionResponse.setRequestId(_ctx.stringValue("GrantOperatorPermissionResponse.RequestId"));
 	 
 	 	return grantOperatorPermissionResponse;
 	}

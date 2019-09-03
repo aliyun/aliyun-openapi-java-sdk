@@ -28,14 +28,6 @@ public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherReg
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private String targetVSwitchId;
-
-	private Long ownerId;
-
 	private String targetVpcId;
 
 	private String targetZoneId;
@@ -44,9 +36,17 @@ public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherReg
 
 	private String dBInstanceId;
 
-	private String targetRegionId;
-
 	private String switchTime;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String targetVSwitchId;
+
+	private Long ownerId;
+
+	private String targetRegionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,50 +56,6 @@ public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherReg
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getTargetVSwitchId() {
-		return this.targetVSwitchId;
-	}
-
-	public void setTargetVSwitchId(String targetVSwitchId) {
-		this.targetVSwitchId = targetVSwitchId;
-		if(targetVSwitchId != null){
-			putQueryParameter("TargetVSwitchId", targetVSwitchId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -147,17 +103,6 @@ public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherReg
 		}
 	}
 
-	public String getTargetRegionId() {
-		return this.targetRegionId;
-	}
-
-	public void setTargetRegionId(String targetRegionId) {
-		this.targetRegionId = targetRegionId;
-		if(targetRegionId != null){
-			putQueryParameter("TargetRegionId", targetRegionId);
-		}
-	}
-
 	public String getSwitchTime() {
 		return this.switchTime;
 	}
@@ -166,6 +111,61 @@ public class MigrateToOtherRegionRequest extends RpcAcsRequest<MigrateToOtherReg
 		this.switchTime = switchTime;
 		if(switchTime != null){
 			putQueryParameter("SwitchTime", switchTime);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getTargetVSwitchId() {
+		return this.targetVSwitchId;
+	}
+
+	public void setTargetVSwitchId(String targetVSwitchId) {
+		this.targetVSwitchId = targetVSwitchId;
+		if(targetVSwitchId != null){
+			putQueryParameter("TargetVSwitchId", targetVSwitchId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTargetRegionId() {
+		return this.targetRegionId;
+	}
+
+	public void setTargetRegionId(String targetRegionId) {
+		this.targetRegionId = targetRegionId;
+		if(targetRegionId != null){
+			putQueryParameter("TargetRegionId", targetRegionId);
 		}
 	}
 

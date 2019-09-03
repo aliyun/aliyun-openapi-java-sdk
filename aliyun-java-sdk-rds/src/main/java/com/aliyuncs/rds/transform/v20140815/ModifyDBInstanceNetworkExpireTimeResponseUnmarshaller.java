@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDBInstanceNetworkExpireTimeResponseUnmarshaller {
 
-	public static ModifyDBInstanceNetworkExpireTimeResponse unmarshall(ModifyDBInstanceNetworkExpireTimeResponse modifyDBInstanceNetworkExpireTimeResponse, UnmarshallerContext context) {
+	public static ModifyDBInstanceNetworkExpireTimeResponse unmarshall(ModifyDBInstanceNetworkExpireTimeResponse modifyDBInstanceNetworkExpireTimeResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBInstanceNetworkExpireTimeResponse.setRequestId(context.stringValue("ModifyDBInstanceNetworkExpireTimeResponse.RequestId"));
+		modifyDBInstanceNetworkExpireTimeResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceNetworkExpireTimeResponse.RequestId"));
 	 
 	 	return modifyDBInstanceNetworkExpireTimeResponse;
 	}

@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMigrateTasksForSQLServerResponseUnmarshaller {
 
-	public static DescribeMigrateTasksForSQLServerResponse unmarshall(DescribeMigrateTasksForSQLServerResponse describeMigrateTasksForSQLServerResponse, UnmarshallerContext context) {
+	public static DescribeMigrateTasksForSQLServerResponse unmarshall(DescribeMigrateTasksForSQLServerResponse describeMigrateTasksForSQLServerResponse, UnmarshallerContext _ctx) {
 		
-		describeMigrateTasksForSQLServerResponse.setRequestId(context.stringValue("DescribeMigrateTasksForSQLServerResponse.RequestId"));
-		describeMigrateTasksForSQLServerResponse.setDBInstanceID(context.stringValue("DescribeMigrateTasksForSQLServerResponse.DBInstanceID"));
-		describeMigrateTasksForSQLServerResponse.setDBInstanceName(context.stringValue("DescribeMigrateTasksForSQLServerResponse.DBInstanceName"));
-		describeMigrateTasksForSQLServerResponse.setStartTime(context.stringValue("DescribeMigrateTasksForSQLServerResponse.StartTime"));
-		describeMigrateTasksForSQLServerResponse.setEndTime(context.stringValue("DescribeMigrateTasksForSQLServerResponse.EndTime"));
-		describeMigrateTasksForSQLServerResponse.setTotalRecordCount(context.integerValue("DescribeMigrateTasksForSQLServerResponse.TotalRecordCount"));
-		describeMigrateTasksForSQLServerResponse.setPageNumber(context.integerValue("DescribeMigrateTasksForSQLServerResponse.PageNumber"));
-		describeMigrateTasksForSQLServerResponse.setPageRecordCount(context.integerValue("DescribeMigrateTasksForSQLServerResponse.PageRecordCount"));
+		describeMigrateTasksForSQLServerResponse.setRequestId(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.RequestId"));
+		describeMigrateTasksForSQLServerResponse.setDBInstanceID(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.DBInstanceID"));
+		describeMigrateTasksForSQLServerResponse.setDBInstanceName(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.DBInstanceName"));
+		describeMigrateTasksForSQLServerResponse.setStartTime(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.StartTime"));
+		describeMigrateTasksForSQLServerResponse.setEndTime(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.EndTime"));
+		describeMigrateTasksForSQLServerResponse.setTotalRecordCount(_ctx.integerValue("DescribeMigrateTasksForSQLServerResponse.TotalRecordCount"));
+		describeMigrateTasksForSQLServerResponse.setPageNumber(_ctx.integerValue("DescribeMigrateTasksForSQLServerResponse.PageNumber"));
+		describeMigrateTasksForSQLServerResponse.setPageRecordCount(_ctx.integerValue("DescribeMigrateTasksForSQLServerResponse.PageRecordCount"));
 
 		List<MigrateTask> items = new ArrayList<MigrateTask>();
-		for (int i = 0; i < context.lengthValue("DescribeMigrateTasksForSQLServerResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMigrateTasksForSQLServerResponse.Items.Length"); i++) {
 			MigrateTask migrateTask = new MigrateTask();
-			migrateTask.setDBName(context.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].DBName"));
-			migrateTask.setMigrateIaskId(context.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].MigrateIaskId"));
-			migrateTask.setCreateTime(context.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].CreateTime"));
-			migrateTask.setEndTime(context.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].EndTime"));
-			migrateTask.setTaskType(context.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].TaskType"));
-			migrateTask.setStatus(context.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].Status"));
-			migrateTask.setIsDBReplaced(context.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].IsDBReplaced"));
-			migrateTask.setDesc(context.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].Desc"));
+			migrateTask.setDBName(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].DBName"));
+			migrateTask.setMigrateIaskId(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].MigrateIaskId"));
+			migrateTask.setCreateTime(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].CreateTime"));
+			migrateTask.setEndTime(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].EndTime"));
+			migrateTask.setTaskType(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].TaskType"));
+			migrateTask.setStatus(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].Status"));
+			migrateTask.setIsDBReplaced(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].IsDBReplaced"));
+			migrateTask.setDesc(_ctx.stringValue("DescribeMigrateTasksForSQLServerResponse.Items["+ i +"].Desc"));
 
 			items.add(migrateTask);
 		}

@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSQLLogFilesResponseUnmarshaller {
 
-	public static DescribeSQLLogFilesResponse unmarshall(DescribeSQLLogFilesResponse describeSQLLogFilesResponse, UnmarshallerContext context) {
+	public static DescribeSQLLogFilesResponse unmarshall(DescribeSQLLogFilesResponse describeSQLLogFilesResponse, UnmarshallerContext _ctx) {
 		
-		describeSQLLogFilesResponse.setRequestId(context.stringValue("DescribeSQLLogFilesResponse.RequestId"));
-		describeSQLLogFilesResponse.setTotalRecordCount(context.integerValue("DescribeSQLLogFilesResponse.TotalRecordCount"));
-		describeSQLLogFilesResponse.setPageNumber(context.integerValue("DescribeSQLLogFilesResponse.PageNumber"));
-		describeSQLLogFilesResponse.setPageRecordCount(context.integerValue("DescribeSQLLogFilesResponse.PageRecordCount"));
+		describeSQLLogFilesResponse.setRequestId(_ctx.stringValue("DescribeSQLLogFilesResponse.RequestId"));
+		describeSQLLogFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeSQLLogFilesResponse.TotalRecordCount"));
+		describeSQLLogFilesResponse.setPageNumber(_ctx.integerValue("DescribeSQLLogFilesResponse.PageNumber"));
+		describeSQLLogFilesResponse.setPageRecordCount(_ctx.integerValue("DescribeSQLLogFilesResponse.PageRecordCount"));
 
 		List<LogFile> items = new ArrayList<LogFile>();
-		for (int i = 0; i < context.lengthValue("DescribeSQLLogFilesResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSQLLogFilesResponse.Items.Length"); i++) {
 			LogFile logFile = new LogFile();
-			logFile.setFileID(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].FileID"));
-			logFile.setLogStatus(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStatus"));
-			logFile.setLogDownloadURL(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogDownloadURL"));
-			logFile.setLogSize(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogSize"));
-			logFile.setLogStartTime(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStartTime"));
-			logFile.setLogEndTime(context.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogEndTime"));
+			logFile.setFileID(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].FileID"));
+			logFile.setLogStatus(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStatus"));
+			logFile.setLogDownloadURL(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogDownloadURL"));
+			logFile.setLogSize(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogSize"));
+			logFile.setLogStartTime(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogStartTime"));
+			logFile.setLogEndTime(_ctx.stringValue("DescribeSQLLogFilesResponse.Items["+ i +"].LogEndTime"));
 
 			items.add(logFile);
 		}

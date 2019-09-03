@@ -26,15 +26,37 @@ public class SwitchDBInstanceVpcRequest extends RpcAcsRequest<SwitchDBInstanceVp
 		super("Rds", "2014-08-15", "SwitchDBInstanceVpc", "rds");
 	}
 
+	private Long resourceOwnerId;
+
+	private String dBInstanceId;
+
 	private String vSwitchId;
 
 	private String privateIpAddress;
 
-	private Long resourceOwnerId;
-
 	private String vPCId;
 
-	private String dBInstanceId;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
 
 	public String getVSwitchId() {
 		return this.vSwitchId;
@@ -58,17 +80,6 @@ public class SwitchDBInstanceVpcRequest extends RpcAcsRequest<SwitchDBInstanceVp
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getVPCId() {
 		return this.vPCId;
 	}
@@ -77,17 +88,6 @@ public class SwitchDBInstanceVpcRequest extends RpcAcsRequest<SwitchDBInstanceVp
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

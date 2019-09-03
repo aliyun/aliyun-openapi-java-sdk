@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckAccountNameAvailableResponseUnmarshaller {
 
-	public static CheckAccountNameAvailableResponse unmarshall(CheckAccountNameAvailableResponse checkAccountNameAvailableResponse, UnmarshallerContext context) {
+	public static CheckAccountNameAvailableResponse unmarshall(CheckAccountNameAvailableResponse checkAccountNameAvailableResponse, UnmarshallerContext _ctx) {
 		
-		checkAccountNameAvailableResponse.setRequestId(context.stringValue("CheckAccountNameAvailableResponse.RequestId"));
+		checkAccountNameAvailableResponse.setRequestId(_ctx.stringValue("CheckAccountNameAvailableResponse.RequestId"));
 	 
 	 	return checkAccountNameAvailableResponse;
 	}

@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckResourceResponseUnmarshaller {
 
-	public static CheckResourceResponse unmarshall(CheckResourceResponse checkResourceResponse, UnmarshallerContext context) {
+	public static CheckResourceResponse unmarshall(CheckResourceResponse checkResourceResponse, UnmarshallerContext _ctx) {
 		
-		checkResourceResponse.setRequestId(context.stringValue("CheckResourceResponse.RequestId"));
-		checkResourceResponse.setSpecifyCount(context.stringValue("CheckResourceResponse.SpecifyCount"));
+		checkResourceResponse.setRequestId(_ctx.stringValue("CheckResourceResponse.RequestId"));
+		checkResourceResponse.setSpecifyCount(_ctx.stringValue("CheckResourceResponse.SpecifyCount"));
 
 		List<Resource> resources = new ArrayList<Resource>();
-		for (int i = 0; i < context.lengthValue("CheckResourceResponse.Resources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CheckResourceResponse.Resources.Length"); i++) {
 			Resource resource = new Resource();
-			resource.setDBInstanceAvailable(context.stringValue("CheckResourceResponse.Resources["+ i +"].DBInstanceAvailable"));
-			resource.setEngine(context.stringValue("CheckResourceResponse.Resources["+ i +"].Engine"));
-			resource.setEngineVersion(context.stringValue("CheckResourceResponse.Resources["+ i +"].EngineVersion"));
+			resource.setDBInstanceAvailable(_ctx.stringValue("CheckResourceResponse.Resources["+ i +"].DBInstanceAvailable"));
+			resource.setEngine(_ctx.stringValue("CheckResourceResponse.Resources["+ i +"].Engine"));
+			resource.setEngineVersion(_ctx.stringValue("CheckResourceResponse.Resources["+ i +"].EngineVersion"));
 
 			resources.add(resource);
 		}

@@ -30,19 +30,19 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 
 	private Long resourceOwnerId;
 
-	private String modifyMode;
-
 	private String securityIps;
 
 	private String securityGroupId;
 
 	private String whitelistNetworkType;
 
-	private String dBInstanceIPArrayAttribute;
-
 	private String securityIPType;
 
 	private String dBInstanceId;
+
+	private String modifyMode;
+
+	private String dBInstanceIPArrayAttribute;
 
 	public String getDBInstanceIPArrayName() {
 		return this.dBInstanceIPArrayName;
@@ -63,17 +63,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getModifyMode() {
-		return this.modifyMode;
-	}
-
-	public void setModifyMode(String modifyMode) {
-		this.modifyMode = modifyMode;
-		if(modifyMode != null){
-			putQueryParameter("ModifyMode", modifyMode);
 		}
 	}
 
@@ -110,17 +99,6 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		}
 	}
 
-	public String getDBInstanceIPArrayAttribute() {
-		return this.dBInstanceIPArrayAttribute;
-	}
-
-	public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
-		this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
-		if(dBInstanceIPArrayAttribute != null){
-			putQueryParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
-		}
-	}
-
 	public String getSecurityIPType() {
 		return this.securityIPType;
 	}
@@ -140,6 +118,28 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getModifyMode() {
+		return this.modifyMode;
+	}
+
+	public void setModifyMode(String modifyMode) {
+		this.modifyMode = modifyMode;
+		if(modifyMode != null){
+			putQueryParameter("ModifyMode", modifyMode);
+		}
+	}
+
+	public String getDBInstanceIPArrayAttribute() {
+		return this.dBInstanceIPArrayAttribute;
+	}
+
+	public void setDBInstanceIPArrayAttribute(String dBInstanceIPArrayAttribute) {
+		this.dBInstanceIPArrayAttribute = dBInstanceIPArrayAttribute;
+		if(dBInstanceIPArrayAttribute != null){
+			putQueryParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
 		}
 	}
 

@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RecoveryDBInstanceResponseUnmarshaller {
 
-	public static RecoveryDBInstanceResponse unmarshall(RecoveryDBInstanceResponse recoveryDBInstanceResponse, UnmarshallerContext context) {
+	public static RecoveryDBInstanceResponse unmarshall(RecoveryDBInstanceResponse recoveryDBInstanceResponse, UnmarshallerContext _ctx) {
 		
-		recoveryDBInstanceResponse.setRequestId(context.stringValue("RecoveryDBInstanceResponse.RequestId"));
-		recoveryDBInstanceResponse.setDBInstanceId(context.stringValue("RecoveryDBInstanceResponse.DBInstanceId"));
-		recoveryDBInstanceResponse.setOrderId(context.stringValue("RecoveryDBInstanceResponse.OrderId"));
+		recoveryDBInstanceResponse.setRequestId(_ctx.stringValue("RecoveryDBInstanceResponse.RequestId"));
+		recoveryDBInstanceResponse.setDBInstanceId(_ctx.stringValue("RecoveryDBInstanceResponse.DBInstanceId"));
+		recoveryDBInstanceResponse.setOrderId(_ctx.stringValue("RecoveryDBInstanceResponse.OrderId"));
 	 
 	 	return recoveryDBInstanceResponse;
 	}

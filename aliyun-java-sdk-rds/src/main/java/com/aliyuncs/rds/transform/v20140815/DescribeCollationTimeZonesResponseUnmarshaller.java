@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCollationTimeZonesResponseUnmarshaller {
 
-	public static DescribeCollationTimeZonesResponse unmarshall(DescribeCollationTimeZonesResponse describeCollationTimeZonesResponse, UnmarshallerContext context) {
+	public static DescribeCollationTimeZonesResponse unmarshall(DescribeCollationTimeZonesResponse describeCollationTimeZonesResponse, UnmarshallerContext _ctx) {
 		
-		describeCollationTimeZonesResponse.setRequestId(context.stringValue("DescribeCollationTimeZonesResponse.RequestId"));
+		describeCollationTimeZonesResponse.setRequestId(_ctx.stringValue("DescribeCollationTimeZonesResponse.RequestId"));
 
 		List<CollationTimeZone> collationTimeZones = new ArrayList<CollationTimeZone>();
-		for (int i = 0; i < context.lengthValue("DescribeCollationTimeZonesResponse.CollationTimeZones.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCollationTimeZonesResponse.CollationTimeZones.Length"); i++) {
 			CollationTimeZone collationTimeZone = new CollationTimeZone();
-			collationTimeZone.setTimeZone(context.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].TimeZone"));
-			collationTimeZone.setStandardTimeOffset(context.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].StandardTimeOffset"));
-			collationTimeZone.setDescription(context.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].Description"));
+			collationTimeZone.setTimeZone(_ctx.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].TimeZone"));
+			collationTimeZone.setStandardTimeOffset(_ctx.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].StandardTimeOffset"));
+			collationTimeZone.setDescription(_ctx.stringValue("DescribeCollationTimeZonesResponse.CollationTimeZones["+ i +"].Description"));
 
 			collationTimeZones.add(collationTimeZone);
 		}

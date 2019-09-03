@@ -24,37 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupsResponseUnmarshaller {
 
-	public static DescribeBackupsResponse unmarshall(DescribeBackupsResponse describeBackupsResponse, UnmarshallerContext context) {
+	public static DescribeBackupsResponse unmarshall(DescribeBackupsResponse describeBackupsResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupsResponse.setRequestId(context.stringValue("DescribeBackupsResponse.RequestId"));
-		describeBackupsResponse.setTotalRecordCount(context.stringValue("DescribeBackupsResponse.TotalRecordCount"));
-		describeBackupsResponse.setPageNumber(context.stringValue("DescribeBackupsResponse.PageNumber"));
-		describeBackupsResponse.setPageRecordCount(context.stringValue("DescribeBackupsResponse.PageRecordCount"));
-		describeBackupsResponse.setTotalBackupSize(context.longValue("DescribeBackupsResponse.TotalBackupSize"));
+		describeBackupsResponse.setRequestId(_ctx.stringValue("DescribeBackupsResponse.RequestId"));
+		describeBackupsResponse.setTotalRecordCount(_ctx.stringValue("DescribeBackupsResponse.TotalRecordCount"));
+		describeBackupsResponse.setPageNumber(_ctx.stringValue("DescribeBackupsResponse.PageNumber"));
+		describeBackupsResponse.setPageRecordCount(_ctx.stringValue("DescribeBackupsResponse.PageRecordCount"));
+		describeBackupsResponse.setTotalBackupSize(_ctx.longValue("DescribeBackupsResponse.TotalBackupSize"));
 
 		List<Backup> items = new ArrayList<Backup>();
-		for (int i = 0; i < context.lengthValue("DescribeBackupsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBackupsResponse.Items.Length"); i++) {
 			Backup backup = new Backup();
-			backup.setBackupId(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupId"));
-			backup.setDBInstanceId(context.stringValue("DescribeBackupsResponse.Items["+ i +"].DBInstanceId"));
-			backup.setBackupStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStatus"));
-			backup.setBackupStartTime(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStartTime"));
-			backup.setBackupEndTime(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupEndTime"));
-			backup.setBackupType(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupType"));
-			backup.setBackupMode(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMode"));
-			backup.setBackupMethod(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMethod"));
-			backup.setBackupDownloadURL(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupDownloadURL"));
-			backup.setBackupIntranetDownloadURL(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupIntranetDownloadURL"));
-			backup.setBackupLocation(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupLocation"));
-			backup.setBackupExtractionStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupExtractionStatus"));
-			backup.setBackupScale(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupScale"));
-			backup.setBackupDBNames(context.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupDBNames"));
-			backup.setTotalBackupSize(context.longValue("DescribeBackupsResponse.Items["+ i +"].TotalBackupSize"));
-			backup.setBackupSize(context.longValue("DescribeBackupsResponse.Items["+ i +"].BackupSize"));
-			backup.setHostInstanceID(context.stringValue("DescribeBackupsResponse.Items["+ i +"].HostInstanceID"));
-			backup.setStoreStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].StoreStatus"));
-			backup.setMetaStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].MetaStatus"));
-			backup.setSlaveStatus(context.stringValue("DescribeBackupsResponse.Items["+ i +"].SlaveStatus"));
+			backup.setBackupId(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupId"));
+			backup.setDBInstanceId(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].DBInstanceId"));
+			backup.setBackupStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStatus"));
+			backup.setBackupStartTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupStartTime"));
+			backup.setBackupEndTime(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupEndTime"));
+			backup.setBackupType(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupType"));
+			backup.setBackupMode(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMode"));
+			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupMethod"));
+			backup.setBackupDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupDownloadURL"));
+			backup.setBackupIntranetDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupIntranetDownloadURL"));
+			backup.setBackupLocation(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupLocation"));
+			backup.setBackupExtractionStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupExtractionStatus"));
+			backup.setBackupScale(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupScale"));
+			backup.setBackupDBNames(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].BackupDBNames"));
+			backup.setTotalBackupSize(_ctx.longValue("DescribeBackupsResponse.Items["+ i +"].TotalBackupSize"));
+			backup.setBackupSize(_ctx.longValue("DescribeBackupsResponse.Items["+ i +"].BackupSize"));
+			backup.setHostInstanceID(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].HostInstanceID"));
+			backup.setStoreStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].StoreStatus"));
+			backup.setMetaStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].MetaStatus"));
+			backup.setSlaveStatus(_ctx.stringValue("DescribeBackupsResponse.Items["+ i +"].SlaveStatus"));
 
 			items.add(backup);
 		}

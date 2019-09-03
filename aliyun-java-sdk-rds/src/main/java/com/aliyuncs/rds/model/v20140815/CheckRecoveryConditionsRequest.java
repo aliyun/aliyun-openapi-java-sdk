@@ -28,6 +28,8 @@ public class CheckRecoveryConditionsRequest extends RpcAcsRequest<CheckRecoveryC
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
 	private String restoreTime;
 
 	private String resourceOwnerAccount;
@@ -37,8 +39,6 @@ public class CheckRecoveryConditionsRequest extends RpcAcsRequest<CheckRecoveryC
 	private String backupId;
 
 	private String ownerAccount;
-
-	private String dBInstanceId;
 
 	private Long ownerId;
 
@@ -50,6 +50,17 @@ public class CheckRecoveryConditionsRequest extends RpcAcsRequest<CheckRecoveryC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -105,17 +116,6 @@ public class CheckRecoveryConditionsRequest extends RpcAcsRequest<CheckRecoveryC
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

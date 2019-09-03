@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescibeImportsFromDatabaseResponseUnmarshaller {
 
-	public static DescibeImportsFromDatabaseResponse unmarshall(DescibeImportsFromDatabaseResponse descibeImportsFromDatabaseResponse, UnmarshallerContext context) {
+	public static DescibeImportsFromDatabaseResponse unmarshall(DescibeImportsFromDatabaseResponse descibeImportsFromDatabaseResponse, UnmarshallerContext _ctx) {
 		
-		descibeImportsFromDatabaseResponse.setRequestId(context.stringValue("DescibeImportsFromDatabaseResponse.RequestId"));
-		descibeImportsFromDatabaseResponse.setTotalRecordCount(context.integerValue("DescibeImportsFromDatabaseResponse.TotalRecordCount"));
-		descibeImportsFromDatabaseResponse.setPageNumber(context.integerValue("DescibeImportsFromDatabaseResponse.PageNumber"));
-		descibeImportsFromDatabaseResponse.setPageRecordCount(context.integerValue("DescibeImportsFromDatabaseResponse.PageRecordCount"));
+		descibeImportsFromDatabaseResponse.setRequestId(_ctx.stringValue("DescibeImportsFromDatabaseResponse.RequestId"));
+		descibeImportsFromDatabaseResponse.setTotalRecordCount(_ctx.integerValue("DescibeImportsFromDatabaseResponse.TotalRecordCount"));
+		descibeImportsFromDatabaseResponse.setPageNumber(_ctx.integerValue("DescibeImportsFromDatabaseResponse.PageNumber"));
+		descibeImportsFromDatabaseResponse.setPageRecordCount(_ctx.integerValue("DescibeImportsFromDatabaseResponse.PageRecordCount"));
 
 		List<ImportResultFromDB> items = new ArrayList<ImportResultFromDB>();
-		for (int i = 0; i < context.lengthValue("DescibeImportsFromDatabaseResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescibeImportsFromDatabaseResponse.Items.Length"); i++) {
 			ImportResultFromDB importResultFromDB = new ImportResultFromDB();
-			importResultFromDB.setImportId(context.integerValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportId"));
-			importResultFromDB.setImportDataType(context.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataType"));
-			importResultFromDB.setImportDataStatus(context.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatus"));
-			importResultFromDB.setImportDataStatusDescription(context.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatusDescription"));
-			importResultFromDB.setIncrementalImportingTime(context.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].IncrementalImportingTime"));
+			importResultFromDB.setImportId(_ctx.integerValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportId"));
+			importResultFromDB.setImportDataType(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataType"));
+			importResultFromDB.setImportDataStatus(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatus"));
+			importResultFromDB.setImportDataStatusDescription(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].ImportDataStatusDescription"));
+			importResultFromDB.setIncrementalImportingTime(_ctx.stringValue("DescibeImportsFromDatabaseResponse.Items["+ i +"].IncrementalImportingTime"));
 
 			items.add(importResultFromDB);
 		}

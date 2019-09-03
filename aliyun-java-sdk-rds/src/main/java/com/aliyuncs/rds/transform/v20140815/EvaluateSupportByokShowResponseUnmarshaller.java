@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EvaluateSupportByokShowResponseUnmarshaller {
 
-	public static EvaluateSupportByokShowResponse unmarshall(EvaluateSupportByokShowResponse evaluateSupportByokShowResponse, UnmarshallerContext context) {
+	public static EvaluateSupportByokShowResponse unmarshall(EvaluateSupportByokShowResponse evaluateSupportByokShowResponse, UnmarshallerContext _ctx) {
 		
-		evaluateSupportByokShowResponse.setRequestId(context.stringValue("EvaluateSupportByokShowResponse.RequestId"));
-		evaluateSupportByokShowResponse.setSupportByokShow(context.integerValue("EvaluateSupportByokShowResponse.SupportByokShow"));
-		evaluateSupportByokShowResponse.setSupportByokZone(context.stringValue("EvaluateSupportByokShowResponse.SupportByokZone"));
+		evaluateSupportByokShowResponse.setRequestId(_ctx.stringValue("EvaluateSupportByokShowResponse.RequestId"));
+		evaluateSupportByokShowResponse.setSupportByokShow(_ctx.integerValue("EvaluateSupportByokShowResponse.SupportByokShow"));
+		evaluateSupportByokShowResponse.setSupportByokZone(_ctx.stringValue("EvaluateSupportByokShowResponse.SupportByokZone"));
 	 
 	 	return evaluateSupportByokShowResponse;
 	}

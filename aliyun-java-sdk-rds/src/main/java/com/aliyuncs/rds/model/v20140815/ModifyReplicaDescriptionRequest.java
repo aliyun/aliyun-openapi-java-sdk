@@ -32,11 +32,11 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 
 	private String securityToken;
 
+	private String replicaId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String replicaId;
 
 	private Long ownerId;
 
@@ -92,6 +92,17 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 		}
 	}
 
+	public String getReplicaId() {
+		return this.replicaId;
+	}
+
+	public void setReplicaId(String replicaId) {
+		this.replicaId = replicaId;
+		if(replicaId != null){
+			putQueryParameter("ReplicaId", replicaId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -111,17 +122,6 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getReplicaId() {
-		return this.replicaId;
-	}
-
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
 		}
 	}
 

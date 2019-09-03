@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTasksResponseUnmarshaller {
 
-	public static DescribeTasksResponse unmarshall(DescribeTasksResponse describeTasksResponse, UnmarshallerContext context) {
+	public static DescribeTasksResponse unmarshall(DescribeTasksResponse describeTasksResponse, UnmarshallerContext _ctx) {
 		
-		describeTasksResponse.setRequestId(context.stringValue("DescribeTasksResponse.RequestId"));
-		describeTasksResponse.setTotalRecordCount(context.integerValue("DescribeTasksResponse.TotalRecordCount"));
-		describeTasksResponse.setPageNumber(context.integerValue("DescribeTasksResponse.PageNumber"));
-		describeTasksResponse.setPageRecordCount(context.integerValue("DescribeTasksResponse.PageRecordCount"));
+		describeTasksResponse.setRequestId(_ctx.stringValue("DescribeTasksResponse.RequestId"));
+		describeTasksResponse.setTotalRecordCount(_ctx.integerValue("DescribeTasksResponse.TotalRecordCount"));
+		describeTasksResponse.setPageNumber(_ctx.integerValue("DescribeTasksResponse.PageNumber"));
+		describeTasksResponse.setPageRecordCount(_ctx.integerValue("DescribeTasksResponse.PageRecordCount"));
 
 		List<TaskProgressInfo> items = new ArrayList<TaskProgressInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeTasksResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTasksResponse.Items.Length"); i++) {
 			TaskProgressInfo taskProgressInfo = new TaskProgressInfo();
-			taskProgressInfo.setDBName(context.stringValue("DescribeTasksResponse.Items["+ i +"].DBName"));
-			taskProgressInfo.setBeginTime(context.stringValue("DescribeTasksResponse.Items["+ i +"].BeginTime"));
-			taskProgressInfo.setProgressInfo(context.stringValue("DescribeTasksResponse.Items["+ i +"].ProgressInfo"));
-			taskProgressInfo.setFinishTime(context.stringValue("DescribeTasksResponse.Items["+ i +"].FinishTime"));
-			taskProgressInfo.setTaskAction(context.stringValue("DescribeTasksResponse.Items["+ i +"].TaskAction"));
-			taskProgressInfo.setTaskId(context.stringValue("DescribeTasksResponse.Items["+ i +"].TaskId"));
-			taskProgressInfo.setProgress(context.stringValue("DescribeTasksResponse.Items["+ i +"].Progress"));
-			taskProgressInfo.setExpectedFinishTime(context.stringValue("DescribeTasksResponse.Items["+ i +"].ExpectedFinishTime"));
-			taskProgressInfo.setStatus(context.stringValue("DescribeTasksResponse.Items["+ i +"].Status"));
-			taskProgressInfo.setTaskErrorCode(context.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorCode"));
-			taskProgressInfo.setTaskErrorMessage(context.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorMessage"));
+			taskProgressInfo.setDBName(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].DBName"));
+			taskProgressInfo.setBeginTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].BeginTime"));
+			taskProgressInfo.setProgressInfo(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].ProgressInfo"));
+			taskProgressInfo.setFinishTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].FinishTime"));
+			taskProgressInfo.setTaskAction(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskAction"));
+			taskProgressInfo.setTaskId(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskId"));
+			taskProgressInfo.setProgress(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].Progress"));
+			taskProgressInfo.setExpectedFinishTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].ExpectedFinishTime"));
+			taskProgressInfo.setStatus(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].Status"));
+			taskProgressInfo.setTaskErrorCode(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorCode"));
+			taskProgressInfo.setTaskErrorMessage(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorMessage"));
 
 			items.add(taskProgressInfo);
 		}

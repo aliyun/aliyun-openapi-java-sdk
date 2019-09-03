@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAvailableRecoveryTimeResponseUnmarshaller {
 
-	public static DescribeAvailableRecoveryTimeResponse unmarshall(DescribeAvailableRecoveryTimeResponse describeAvailableRecoveryTimeResponse, UnmarshallerContext context) {
+	public static DescribeAvailableRecoveryTimeResponse unmarshall(DescribeAvailableRecoveryTimeResponse describeAvailableRecoveryTimeResponse, UnmarshallerContext _ctx) {
 		
-		describeAvailableRecoveryTimeResponse.setRequestId(context.stringValue("DescribeAvailableRecoveryTimeResponse.RequestId"));
-		describeAvailableRecoveryTimeResponse.setRecoveryBeginTime(context.stringValue("DescribeAvailableRecoveryTimeResponse.RecoveryBeginTime"));
-		describeAvailableRecoveryTimeResponse.setRecoveryEndTime(context.stringValue("DescribeAvailableRecoveryTimeResponse.RecoveryEndTime"));
-		describeAvailableRecoveryTimeResponse.setDBInstanceId(context.stringValue("DescribeAvailableRecoveryTimeResponse.DBInstanceId"));
-		describeAvailableRecoveryTimeResponse.setRegionId(context.stringValue("DescribeAvailableRecoveryTimeResponse.RegionId"));
-		describeAvailableRecoveryTimeResponse.setCrossBackupId(context.integerValue("DescribeAvailableRecoveryTimeResponse.CrossBackupId"));
+		describeAvailableRecoveryTimeResponse.setRequestId(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RequestId"));
+		describeAvailableRecoveryTimeResponse.setRecoveryBeginTime(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RecoveryBeginTime"));
+		describeAvailableRecoveryTimeResponse.setRecoveryEndTime(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RecoveryEndTime"));
+		describeAvailableRecoveryTimeResponse.setDBInstanceId(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.DBInstanceId"));
+		describeAvailableRecoveryTimeResponse.setRegionId(_ctx.stringValue("DescribeAvailableRecoveryTimeResponse.RegionId"));
+		describeAvailableRecoveryTimeResponse.setCrossBackupId(_ctx.integerValue("DescribeAvailableRecoveryTimeResponse.CrossBackupId"));
 	 
 	 	return describeAvailableRecoveryTimeResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelImportResponseUnmarshaller {
 
-	public static CancelImportResponse unmarshall(CancelImportResponse cancelImportResponse, UnmarshallerContext context) {
+	public static CancelImportResponse unmarshall(CancelImportResponse cancelImportResponse, UnmarshallerContext _ctx) {
 		
-		cancelImportResponse.setRequestId(context.stringValue("CancelImportResponse.RequestId"));
+		cancelImportResponse.setRequestId(_ctx.stringValue("CancelImportResponse.RequestId"));
 	 
 	 	return cancelImportResponse;
 	}

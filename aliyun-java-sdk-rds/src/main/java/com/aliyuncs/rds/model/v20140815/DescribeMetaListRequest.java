@@ -28,13 +28,19 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private Long resourceOwnerId;
 
-	private String restoreTime;
-
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
 	private String pattern;
+
+	private String pageSize;
+
+	private String dBInstanceId;
+
+	private String pageIndex;
+
+	private String restoreTime;
+
+	private String resourceOwnerAccount;
 
 	private String backupSetID;
 
@@ -44,12 +50,6 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 
 	private String restoreType;
 
-	private String pageSize;
-
-	private String dBInstanceId;
-
-	private String pageIndex;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -58,28 +58,6 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -102,6 +80,61 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		this.pattern = pattern;
 		if(pattern != null){
 			putQueryParameter("Pattern", pattern);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getPageIndex() {
+		return this.pageIndex;
+	}
+
+	public void setPageIndex(String pageIndex) {
+		this.pageIndex = pageIndex;
+		if(pageIndex != null){
+			putQueryParameter("PageIndex", pageIndex);
+		}
+	}
+
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -146,39 +179,6 @@ public class DescribeMetaListRequest extends RpcAcsRequest<DescribeMetaListRespo
 		this.restoreType = restoreType;
 		if(restoreType != null){
 			putQueryParameter("RestoreType", restoreType);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getPageIndex() {
-		return this.pageIndex;
-	}
-
-	public void setPageIndex(String pageIndex) {
-		this.pageIndex = pageIndex;
-		if(pageIndex != null){
-			putQueryParameter("PageIndex", pageIndex);
 		}
 	}
 

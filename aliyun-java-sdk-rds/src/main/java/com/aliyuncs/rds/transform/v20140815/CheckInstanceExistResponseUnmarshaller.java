@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckInstanceExistResponseUnmarshaller {
 
-	public static CheckInstanceExistResponse unmarshall(CheckInstanceExistResponse checkInstanceExistResponse, UnmarshallerContext context) {
+	public static CheckInstanceExistResponse unmarshall(CheckInstanceExistResponse checkInstanceExistResponse, UnmarshallerContext _ctx) {
 		
-		checkInstanceExistResponse.setRequestId(context.stringValue("CheckInstanceExistResponse.RequestId"));
-		checkInstanceExistResponse.setIsExistInstance(context.booleanValue("CheckInstanceExistResponse.IsExistInstance"));
+		checkInstanceExistResponse.setRequestId(_ctx.stringValue("CheckInstanceExistResponse.RequestId"));
+		checkInstanceExistResponse.setIsExistInstance(_ctx.booleanValue("CheckInstanceExistResponse.IsExistInstance"));
 	 
 	 	return checkInstanceExistResponse;
 	}

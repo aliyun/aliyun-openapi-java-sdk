@@ -20,16 +20,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeProxyFunctionSupportResponseUnmarshaller {
 
-	public static DescribeProxyFunctionSupportResponse unmarshall(DescribeProxyFunctionSupportResponse describeProxyFunctionSupportResponse, UnmarshallerContext context) {
+	public static DescribeProxyFunctionSupportResponse unmarshall(DescribeProxyFunctionSupportResponse describeProxyFunctionSupportResponse, UnmarshallerContext _ctx) {
 		
-		describeProxyFunctionSupportResponse.setRequestId(context.stringValue("DescribeProxyFunctionSupportResponse.RequestId"));
-		describeProxyFunctionSupportResponse.setIsProxySwitchEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsProxySwitchEnable"));
-		describeProxyFunctionSupportResponse.setIsRwsplitEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsRwsplitEnable"));
-		describeProxyFunctionSupportResponse.setIsRwsplitSupportReplicationLag(context.booleanValue("DescribeProxyFunctionSupportResponse.IsRwsplitSupportReplicationLag"));
-		describeProxyFunctionSupportResponse.setIsRwsplitSupportWeight(context.booleanValue("DescribeProxyFunctionSupportResponse.IsRwsplitSupportWeight"));
-		describeProxyFunctionSupportResponse.setIsTransparentSwitchEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsTransparentSwitchEnable"));
-		describeProxyFunctionSupportResponse.setIsShortConnectionOptimizeEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsShortConnectionOptimizeEnable"));
-		describeProxyFunctionSupportResponse.setIsAntiBruteFroceEnable(context.booleanValue("DescribeProxyFunctionSupportResponse.IsAntiBruteFroceEnable"));
+		describeProxyFunctionSupportResponse.setRequestId(_ctx.stringValue("DescribeProxyFunctionSupportResponse.RequestId"));
+		describeProxyFunctionSupportResponse.setIsProxySwitchEnable(_ctx.booleanValue("DescribeProxyFunctionSupportResponse.IsProxySwitchEnable"));
+		describeProxyFunctionSupportResponse.setIsRwsplitEnable(_ctx.booleanValue("DescribeProxyFunctionSupportResponse.IsRwsplitEnable"));
+		describeProxyFunctionSupportResponse.setIsRwsplitSupportReplicationLag(_ctx.booleanValue("DescribeProxyFunctionSupportResponse.IsRwsplitSupportReplicationLag"));
+		describeProxyFunctionSupportResponse.setIsRwsplitSupportWeight(_ctx.booleanValue("DescribeProxyFunctionSupportResponse.IsRwsplitSupportWeight"));
+		describeProxyFunctionSupportResponse.setIsTransparentSwitchEnable(_ctx.booleanValue("DescribeProxyFunctionSupportResponse.IsTransparentSwitchEnable"));
+		describeProxyFunctionSupportResponse.setIsShortConnectionOptimizeEnable(_ctx.booleanValue("DescribeProxyFunctionSupportResponse.IsShortConnectionOptimizeEnable"));
+		describeProxyFunctionSupportResponse.setIsAntiBruteFroceEnable(_ctx.booleanValue("DescribeProxyFunctionSupportResponse.IsAntiBruteFroceEnable"));
 	 
 	 	return describeProxyFunctionSupportResponse;
 	}

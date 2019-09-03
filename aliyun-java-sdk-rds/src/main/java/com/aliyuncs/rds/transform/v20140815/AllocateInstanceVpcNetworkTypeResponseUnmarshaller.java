@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AllocateInstanceVpcNetworkTypeResponseUnmarshaller {
 
-	public static AllocateInstanceVpcNetworkTypeResponse unmarshall(AllocateInstanceVpcNetworkTypeResponse allocateInstanceVpcNetworkTypeResponse, UnmarshallerContext context) {
+	public static AllocateInstanceVpcNetworkTypeResponse unmarshall(AllocateInstanceVpcNetworkTypeResponse allocateInstanceVpcNetworkTypeResponse, UnmarshallerContext _ctx) {
 		
-		allocateInstanceVpcNetworkTypeResponse.setRequestId(context.stringValue("AllocateInstanceVpcNetworkTypeResponse.RequestId"));
+		allocateInstanceVpcNetworkTypeResponse.setRequestId(_ctx.stringValue("AllocateInstanceVpcNetworkTypeResponse.RequestId"));
 	 
 	 	return allocateInstanceVpcNetworkTypeResponse;
 	}

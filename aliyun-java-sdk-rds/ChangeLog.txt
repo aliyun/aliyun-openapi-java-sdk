@@ -1,3 +1,6 @@
+2019-09-03 Version: 0.0.1
+- Generated 2014-08-15 for `Rds`.
+
 2019-06-13 Version: 2.3.9
 1, fixed DescribeAvailableResource OpenApi AvailableZones value problem.
 

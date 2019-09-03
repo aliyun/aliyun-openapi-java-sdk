@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ImportDataForSQLServerResponseUnmarshaller {
 
-	public static ImportDataForSQLServerResponse unmarshall(ImportDataForSQLServerResponse importDataForSQLServerResponse, UnmarshallerContext context) {
+	public static ImportDataForSQLServerResponse unmarshall(ImportDataForSQLServerResponse importDataForSQLServerResponse, UnmarshallerContext _ctx) {
 		
-		importDataForSQLServerResponse.setRequestId(context.stringValue("ImportDataForSQLServerResponse.RequestId"));
-		importDataForSQLServerResponse.setImportID(context.integerValue("ImportDataForSQLServerResponse.ImportID"));
+		importDataForSQLServerResponse.setRequestId(_ctx.stringValue("ImportDataForSQLServerResponse.RequestId"));
+		importDataForSQLServerResponse.setImportID(_ctx.integerValue("ImportDataForSQLServerResponse.ImportID"));
 	 
 	 	return importDataForSQLServerResponse;
 	}

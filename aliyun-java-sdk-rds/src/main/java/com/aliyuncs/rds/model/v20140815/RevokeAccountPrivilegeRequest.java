@@ -30,15 +30,15 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 
 	private String accountName;
 
-	private String dBName;
+	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
-
 	private Long ownerId;
+
+	private String dBName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,14 +62,14 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -95,17 +95,6 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +103,17 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 

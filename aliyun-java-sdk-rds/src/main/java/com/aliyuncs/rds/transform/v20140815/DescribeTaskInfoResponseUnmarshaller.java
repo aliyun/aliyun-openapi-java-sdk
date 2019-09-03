@@ -20,21 +20,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTaskInfoResponseUnmarshaller {
 
-	public static DescribeTaskInfoResponse unmarshall(DescribeTaskInfoResponse describeTaskInfoResponse, UnmarshallerContext context) {
+	public static DescribeTaskInfoResponse unmarshall(DescribeTaskInfoResponse describeTaskInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeTaskInfoResponse.setRequestId(context.stringValue("DescribeTaskInfoResponse.RequestId"));
-		describeTaskInfoResponse.setTaskId(context.stringValue("DescribeTaskInfoResponse.TaskId"));
-		describeTaskInfoResponse.setBeginTime(context.stringValue("DescribeTaskInfoResponse.BeginTime"));
-		describeTaskInfoResponse.setFinishTime(context.stringValue("DescribeTaskInfoResponse.FinishTime"));
-		describeTaskInfoResponse.setCreateTime(context.stringValue("DescribeTaskInfoResponse.CreateTime"));
-		describeTaskInfoResponse.setTaskAction(context.stringValue("DescribeTaskInfoResponse.TaskAction"));
-		describeTaskInfoResponse.setDBName(context.stringValue("DescribeTaskInfoResponse.DBName"));
-		describeTaskInfoResponse.setTaskErrorCode(context.stringValue("DescribeTaskInfoResponse.TaskErrorCode"));
-		describeTaskInfoResponse.setProgress(context.stringValue("DescribeTaskInfoResponse.Progress"));
-		describeTaskInfoResponse.setExpectedFinishTime(context.stringValue("DescribeTaskInfoResponse.ExpectedFinishTime"));
-		describeTaskInfoResponse.setTaskErrorMessage(context.stringValue("DescribeTaskInfoResponse.TaskErrorMessage"));
-		describeTaskInfoResponse.setProgressInfo(context.stringValue("DescribeTaskInfoResponse.ProgressInfo"));
-		describeTaskInfoResponse.setStatus(context.stringValue("DescribeTaskInfoResponse.Status"));
+		describeTaskInfoResponse.setRequestId(_ctx.stringValue("DescribeTaskInfoResponse.RequestId"));
+		describeTaskInfoResponse.setTaskId(_ctx.stringValue("DescribeTaskInfoResponse.TaskId"));
+		describeTaskInfoResponse.setBeginTime(_ctx.stringValue("DescribeTaskInfoResponse.BeginTime"));
+		describeTaskInfoResponse.setFinishTime(_ctx.stringValue("DescribeTaskInfoResponse.FinishTime"));
+		describeTaskInfoResponse.setCreateTime(_ctx.stringValue("DescribeTaskInfoResponse.CreateTime"));
+		describeTaskInfoResponse.setTaskAction(_ctx.stringValue("DescribeTaskInfoResponse.TaskAction"));
+		describeTaskInfoResponse.setDBName(_ctx.stringValue("DescribeTaskInfoResponse.DBName"));
+		describeTaskInfoResponse.setTaskErrorCode(_ctx.stringValue("DescribeTaskInfoResponse.TaskErrorCode"));
+		describeTaskInfoResponse.setProgress(_ctx.stringValue("DescribeTaskInfoResponse.Progress"));
+		describeTaskInfoResponse.setExpectedFinishTime(_ctx.stringValue("DescribeTaskInfoResponse.ExpectedFinishTime"));
+		describeTaskInfoResponse.setTaskErrorMessage(_ctx.stringValue("DescribeTaskInfoResponse.TaskErrorMessage"));
+		describeTaskInfoResponse.setProgressInfo(_ctx.stringValue("DescribeTaskInfoResponse.ProgressInfo"));
+		describeTaskInfoResponse.setStatus(_ctx.stringValue("DescribeTaskInfoResponse.Status"));
 	 
 	 	return describeTaskInfoResponse;
 	}

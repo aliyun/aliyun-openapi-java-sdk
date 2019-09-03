@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBInstanceSSLResponseUnmarshaller {
 
-	public static DescribeDBInstanceSSLResponse unmarshall(DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse, UnmarshallerContext context) {
+	public static DescribeDBInstanceSSLResponse unmarshall(DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse, UnmarshallerContext _ctx) {
 		
-		describeDBInstanceSSLResponse.setRequestId(context.stringValue("DescribeDBInstanceSSLResponse.RequestId"));
-		describeDBInstanceSSLResponse.setConnectionString(context.stringValue("DescribeDBInstanceSSLResponse.ConnectionString"));
-		describeDBInstanceSSLResponse.setSSLExpireTime(context.stringValue("DescribeDBInstanceSSLResponse.SSLExpireTime"));
-		describeDBInstanceSSLResponse.setRequireUpdate(context.stringValue("DescribeDBInstanceSSLResponse.RequireUpdate"));
-		describeDBInstanceSSLResponse.setRequireUpdateReason(context.stringValue("DescribeDBInstanceSSLResponse.RequireUpdateReason"));
+		describeDBInstanceSSLResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequestId"));
+		describeDBInstanceSSLResponse.setConnectionString(_ctx.stringValue("DescribeDBInstanceSSLResponse.ConnectionString"));
+		describeDBInstanceSSLResponse.setSSLExpireTime(_ctx.stringValue("DescribeDBInstanceSSLResponse.SSLExpireTime"));
+		describeDBInstanceSSLResponse.setRequireUpdate(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequireUpdate"));
+		describeDBInstanceSSLResponse.setRequireUpdateReason(_ctx.stringValue("DescribeDBInstanceSSLResponse.RequireUpdateReason"));
 	 
 	 	return describeDBInstanceSSLResponse;
 	}

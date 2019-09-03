@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyBackupPolicyResponseUnmarshaller {
 
-	public static ModifyBackupPolicyResponse unmarshall(ModifyBackupPolicyResponse modifyBackupPolicyResponse, UnmarshallerContext context) {
+	public static ModifyBackupPolicyResponse unmarshall(ModifyBackupPolicyResponse modifyBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
-		modifyBackupPolicyResponse.setRequestId(context.stringValue("ModifyBackupPolicyResponse.RequestId"));
-		modifyBackupPolicyResponse.setDBInstanceID(context.stringValue("ModifyBackupPolicyResponse.DBInstanceID"));
-		modifyBackupPolicyResponse.setEnableBackupLog(context.stringValue("ModifyBackupPolicyResponse.EnableBackupLog"));
-		modifyBackupPolicyResponse.setLocalLogRetentionHours(context.integerValue("ModifyBackupPolicyResponse.LocalLogRetentionHours"));
-		modifyBackupPolicyResponse.setLocalLogRetentionSpace(context.stringValue("ModifyBackupPolicyResponse.LocalLogRetentionSpace"));
-		modifyBackupPolicyResponse.setHighSpaceUsageProtection(context.stringValue("ModifyBackupPolicyResponse.HighSpaceUsageProtection"));
-		modifyBackupPolicyResponse.setCompressType(context.stringValue("ModifyBackupPolicyResponse.CompressType"));
+		modifyBackupPolicyResponse.setRequestId(_ctx.stringValue("ModifyBackupPolicyResponse.RequestId"));
+		modifyBackupPolicyResponse.setDBInstanceID(_ctx.stringValue("ModifyBackupPolicyResponse.DBInstanceID"));
+		modifyBackupPolicyResponse.setEnableBackupLog(_ctx.stringValue("ModifyBackupPolicyResponse.EnableBackupLog"));
+		modifyBackupPolicyResponse.setLocalLogRetentionHours(_ctx.integerValue("ModifyBackupPolicyResponse.LocalLogRetentionHours"));
+		modifyBackupPolicyResponse.setLocalLogRetentionSpace(_ctx.stringValue("ModifyBackupPolicyResponse.LocalLogRetentionSpace"));
+		modifyBackupPolicyResponse.setHighSpaceUsageProtection(_ctx.stringValue("ModifyBackupPolicyResponse.HighSpaceUsageProtection"));
+		modifyBackupPolicyResponse.setCompressType(_ctx.stringValue("ModifyBackupPolicyResponse.CompressType"));
 	 
 	 	return modifyBackupPolicyResponse;
 	}

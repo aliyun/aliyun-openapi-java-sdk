@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RevokeOperatorPermissionResponseUnmarshaller {
 
-	public static RevokeOperatorPermissionResponse unmarshall(RevokeOperatorPermissionResponse revokeOperatorPermissionResponse, UnmarshallerContext context) {
+	public static RevokeOperatorPermissionResponse unmarshall(RevokeOperatorPermissionResponse revokeOperatorPermissionResponse, UnmarshallerContext _ctx) {
 		
-		revokeOperatorPermissionResponse.setRequestId(context.stringValue("RevokeOperatorPermissionResponse.RequestId"));
+		revokeOperatorPermissionResponse.setRequestId(_ctx.stringValue("RevokeOperatorPermissionResponse.RequestId"));
 	 
 	 	return revokeOperatorPermissionResponse;
 	}

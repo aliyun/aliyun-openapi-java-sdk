@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MigrateToOtherZoneResponseUnmarshaller {
 
-	public static MigrateToOtherZoneResponse unmarshall(MigrateToOtherZoneResponse migrateToOtherZoneResponse, UnmarshallerContext context) {
+	public static MigrateToOtherZoneResponse unmarshall(MigrateToOtherZoneResponse migrateToOtherZoneResponse, UnmarshallerContext _ctx) {
 		
-		migrateToOtherZoneResponse.setRequestId(context.stringValue("MigrateToOtherZoneResponse.RequestId"));
+		migrateToOtherZoneResponse.setRequestId(_ctx.stringValue("MigrateToOtherZoneResponse.RequestId"));
 	 
 	 	return migrateToOtherZoneResponse;
 	}

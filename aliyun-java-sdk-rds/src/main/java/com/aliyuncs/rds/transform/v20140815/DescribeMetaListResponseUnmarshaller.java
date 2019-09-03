@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMetaListResponseUnmarshaller {
 
-	public static DescribeMetaListResponse unmarshall(DescribeMetaListResponse describeMetaListResponse, UnmarshallerContext context) {
+	public static DescribeMetaListResponse unmarshall(DescribeMetaListResponse describeMetaListResponse, UnmarshallerContext _ctx) {
 		
-		describeMetaListResponse.setRequestId(context.stringValue("DescribeMetaListResponse.RequestId"));
-		describeMetaListResponse.setDBInstanceName(context.stringValue("DescribeMetaListResponse.DBInstanceName"));
-		describeMetaListResponse.setPageNumber(context.integerValue("DescribeMetaListResponse.PageNumber"));
-		describeMetaListResponse.setPageRecordCount(context.integerValue("DescribeMetaListResponse.PageRecordCount"));
-		describeMetaListResponse.setTotalRecordCount(context.integerValue("DescribeMetaListResponse.TotalRecordCount"));
-		describeMetaListResponse.setTotalPageCount(context.integerValue("DescribeMetaListResponse.TotalPageCount"));
+		describeMetaListResponse.setRequestId(_ctx.stringValue("DescribeMetaListResponse.RequestId"));
+		describeMetaListResponse.setDBInstanceName(_ctx.stringValue("DescribeMetaListResponse.DBInstanceName"));
+		describeMetaListResponse.setPageNumber(_ctx.integerValue("DescribeMetaListResponse.PageNumber"));
+		describeMetaListResponse.setPageRecordCount(_ctx.integerValue("DescribeMetaListResponse.PageRecordCount"));
+		describeMetaListResponse.setTotalRecordCount(_ctx.integerValue("DescribeMetaListResponse.TotalRecordCount"));
+		describeMetaListResponse.setTotalPageCount(_ctx.integerValue("DescribeMetaListResponse.TotalPageCount"));
 
 		List<Meta> items = new ArrayList<Meta>();
-		for (int i = 0; i < context.lengthValue("DescribeMetaListResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMetaListResponse.Items.Length"); i++) {
 			Meta meta = new Meta();
-			meta.setDatabase(context.stringValue("DescribeMetaListResponse.Items["+ i +"].Database"));
-			meta.setTables(context.stringValue("DescribeMetaListResponse.Items["+ i +"].Tables"));
-			meta.setSize(context.stringValue("DescribeMetaListResponse.Items["+ i +"].Size"));
+			meta.setDatabase(_ctx.stringValue("DescribeMetaListResponse.Items["+ i +"].Database"));
+			meta.setTables(_ctx.stringValue("DescribeMetaListResponse.Items["+ i +"].Tables"));
+			meta.setSize(_ctx.stringValue("DescribeMetaListResponse.Items["+ i +"].Size"));
 
 			items.add(meta);
 		}

@@ -28,13 +28,21 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private Long resourceOwnerId;
 
+	private Integer dBInstanceStorage;
+
+	private String tableMeta;
+
+	private String dBInstanceId;
+
+	private String dBInstanceStorageType;
+
 	private String restoreTime;
 
 	private String period;
 
-	private Integer dBInstanceStorage;
-
 	private String backupId;
+
+	private String restoreTable;
 
 	private String usedTime;
 
@@ -50,7 +58,7 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 
 	private String zoneId;
 
-	private String dBInstanceId;
+	private String category;
 
 	private String payType;
 
@@ -64,6 +72,50 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getDBInstanceStorage() {
+		return this.dBInstanceStorage;
+	}
+
+	public void setDBInstanceStorage(Integer dBInstanceStorage) {
+		this.dBInstanceStorage = dBInstanceStorage;
+		if(dBInstanceStorage != null){
+			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public String getTableMeta() {
+		return this.tableMeta;
+	}
+
+	public void setTableMeta(String tableMeta) {
+		this.tableMeta = tableMeta;
+		if(tableMeta != null){
+			putQueryParameter("TableMeta", tableMeta);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBInstanceStorageType() {
+		return this.dBInstanceStorageType;
+	}
+
+	public void setDBInstanceStorageType(String dBInstanceStorageType) {
+		this.dBInstanceStorageType = dBInstanceStorageType;
+		if(dBInstanceStorageType != null){
+			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
 		}
 	}
 
@@ -89,17 +141,6 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
-	public Integer getDBInstanceStorage() {
-		return this.dBInstanceStorage;
-	}
-
-	public void setDBInstanceStorage(Integer dBInstanceStorage) {
-		this.dBInstanceStorage = dBInstanceStorage;
-		if(dBInstanceStorage != null){
-			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
-		}
-	}
-
 	public String getBackupId() {
 		return this.backupId;
 	}
@@ -108,6 +149,17 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		this.backupId = backupId;
 		if(backupId != null){
 			putQueryParameter("BackupId", backupId);
+		}
+	}
+
+	public String getRestoreTable() {
+		return this.restoreTable;
+	}
+
+	public void setRestoreTable(String restoreTable) {
+		this.restoreTable = restoreTable;
+		if(restoreTable != null){
+			putQueryParameter("RestoreTable", restoreTable);
 		}
 	}
 
@@ -188,14 +240,14 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getCategory() {
+		return this.category;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setCategory(String category) {
+		this.category = category;
+		if(category != null){
+			putQueryParameter("Category", category);
 		}
 	}
 

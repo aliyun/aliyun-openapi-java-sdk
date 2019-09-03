@@ -28,6 +28,8 @@ public class CreateTempDBInstanceRequest extends RpcAcsRequest<CreateTempDBInsta
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
 	private String restoreTime;
 
 	private String resourceOwnerAccount;
@@ -35,8 +37,6 @@ public class CreateTempDBInstanceRequest extends RpcAcsRequest<CreateTempDBInsta
 	private Integer backupId;
 
 	private String ownerAccount;
-
-	private String dBInstanceId;
 
 	private Long ownerId;
 
@@ -48,6 +48,17 @@ public class CreateTempDBInstanceRequest extends RpcAcsRequest<CreateTempDBInsta
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -92,17 +103,6 @@ public class CreateTempDBInstanceRequest extends RpcAcsRequest<CreateTempDBInsta
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

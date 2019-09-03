@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SwitchDBInstanceNetTypeResponseUnmarshaller {
 
-	public static SwitchDBInstanceNetTypeResponse unmarshall(SwitchDBInstanceNetTypeResponse switchDBInstanceNetTypeResponse, UnmarshallerContext context) {
+	public static SwitchDBInstanceNetTypeResponse unmarshall(SwitchDBInstanceNetTypeResponse switchDBInstanceNetTypeResponse, UnmarshallerContext _ctx) {
 		
-		switchDBInstanceNetTypeResponse.setRequestId(context.stringValue("SwitchDBInstanceNetTypeResponse.RequestId"));
+		switchDBInstanceNetTypeResponse.setRequestId(_ctx.stringValue("SwitchDBInstanceNetTypeResponse.RequestId"));
 	 
 	 	return switchDBInstanceNetTypeResponse;
 	}

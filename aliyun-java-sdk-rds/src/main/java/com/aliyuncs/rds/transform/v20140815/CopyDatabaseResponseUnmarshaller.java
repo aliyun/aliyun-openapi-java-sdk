@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CopyDatabaseResponseUnmarshaller {
 
-	public static CopyDatabaseResponse unmarshall(CopyDatabaseResponse copyDatabaseResponse, UnmarshallerContext context) {
+	public static CopyDatabaseResponse unmarshall(CopyDatabaseResponse copyDatabaseResponse, UnmarshallerContext _ctx) {
 		
-		copyDatabaseResponse.setDBName(context.stringValue("CopyDatabaseResponse.DBName"));
-		copyDatabaseResponse.setDBStatus(context.stringValue("CopyDatabaseResponse.DBStatus"));
-		copyDatabaseResponse.setTaskId(context.stringValue("CopyDatabaseResponse.TaskId"));
+		copyDatabaseResponse.setDBName(_ctx.stringValue("CopyDatabaseResponse.DBName"));
+		copyDatabaseResponse.setDBStatus(_ctx.stringValue("CopyDatabaseResponse.DBStatus"));
+		copyDatabaseResponse.setTaskId(_ctx.stringValue("CopyDatabaseResponse.TaskId"));
 	 
 	 	return copyDatabaseResponse;
 	}

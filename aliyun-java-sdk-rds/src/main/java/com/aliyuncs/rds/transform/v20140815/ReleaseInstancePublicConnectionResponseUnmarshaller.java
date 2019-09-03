@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReleaseInstancePublicConnectionResponseUnmarshaller {
 
-	public static ReleaseInstancePublicConnectionResponse unmarshall(ReleaseInstancePublicConnectionResponse releaseInstancePublicConnectionResponse, UnmarshallerContext context) {
+	public static ReleaseInstancePublicConnectionResponse unmarshall(ReleaseInstancePublicConnectionResponse releaseInstancePublicConnectionResponse, UnmarshallerContext _ctx) {
 		
-		releaseInstancePublicConnectionResponse.setRequestId(context.stringValue("ReleaseInstancePublicConnectionResponse.RequestId"));
+		releaseInstancePublicConnectionResponse.setRequestId(_ctx.stringValue("ReleaseInstancePublicConnectionResponse.RequestId"));
 	 
 	 	return releaseInstancePublicConnectionResponse;
 	}

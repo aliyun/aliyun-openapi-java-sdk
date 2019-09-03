@@ -27,106 +27,107 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBInstanceAttributeResponseUnmarshaller {
 
-	public static DescribeDBInstanceAttributeResponse unmarshall(DescribeDBInstanceAttributeResponse describeDBInstanceAttributeResponse, UnmarshallerContext context) {
+	public static DescribeDBInstanceAttributeResponse unmarshall(DescribeDBInstanceAttributeResponse describeDBInstanceAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeDBInstanceAttributeResponse.setRequestId(context.stringValue("DescribeDBInstanceAttributeResponse.RequestId"));
+		describeDBInstanceAttributeResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.RequestId"));
 
 		List<DBInstanceAttribute> items = new ArrayList<DBInstanceAttribute>();
-		for (int i = 0; i < context.lengthValue("DescribeDBInstanceAttributeResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items.Length"); i++) {
 			DBInstanceAttribute dBInstanceAttribute = new DBInstanceAttribute();
-			dBInstanceAttribute.setIPType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].IPType"));
-			dBInstanceAttribute.setDBInstanceDiskUsed(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceDiskUsed"));
-			dBInstanceAttribute.setGuardDBInstanceName(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].GuardDBInstanceName"));
-			dBInstanceAttribute.setCanTempUpgrade(context.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CanTempUpgrade"));
-			dBInstanceAttribute.setTempUpgradeTimeStart(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeTimeStart"));
-			dBInstanceAttribute.setTempUpgradeTimeEnd(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeTimeEnd"));
-			dBInstanceAttribute.setTempUpgradeRecoveryTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryTime"));
-			dBInstanceAttribute.setTempUpgradeRecoveryClass(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryClass"));
-			dBInstanceAttribute.setTempUpgradeRecoveryCpu(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryCpu"));
-			dBInstanceAttribute.setTempUpgradeRecoveryMemory(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryMemory"));
-			dBInstanceAttribute.setTempUpgradeRecoveryMaxIOPS(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryMaxIOPS"));
-			dBInstanceAttribute.setTempUpgradeRecoveryMaxConnections(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryMaxConnections"));
-			dBInstanceAttribute.setInsId(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InsId"));
-			dBInstanceAttribute.setDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceId"));
-			dBInstanceAttribute.setPayType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].PayType"));
-			dBInstanceAttribute.setDBInstanceClassType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClassType"));
-			dBInstanceAttribute.setDBInstanceType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceType"));
-			dBInstanceAttribute.setRegionId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].RegionId"));
-			dBInstanceAttribute.setConnectionString(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionString"));
-			dBInstanceAttribute.setPort(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Port"));
-			dBInstanceAttribute.setEngine(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Engine"));
-			dBInstanceAttribute.setEngineVersion(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].EngineVersion"));
-			dBInstanceAttribute.setDBInstanceClass(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClass"));
-			dBInstanceAttribute.setDBInstanceMemory(context.longValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceMemory"));
-			dBInstanceAttribute.setDBInstanceStorage(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStorage"));
-			dBInstanceAttribute.setVpcCloudInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcCloudInstanceId"));
-			dBInstanceAttribute.setDBInstanceNetType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceNetType"));
-			dBInstanceAttribute.setDBInstanceStatus(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStatus"));
-			dBInstanceAttribute.setDBInstanceDescription(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceDescription"));
-			dBInstanceAttribute.setLockMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LockMode"));
-			dBInstanceAttribute.setLockReason(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LockReason"));
-			dBInstanceAttribute.setReadDelayTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadDelayTime"));
-			dBInstanceAttribute.setDBMaxQuantity(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBMaxQuantity"));
-			dBInstanceAttribute.setAccountMaxQuantity(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AccountMaxQuantity"));
-			dBInstanceAttribute.setCreationTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CreationTime"));
-			dBInstanceAttribute.setExpireTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ExpireTime"));
-			dBInstanceAttribute.setMaintainTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MaintainTime"));
-			dBInstanceAttribute.setAvailabilityValue(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AvailabilityValue"));
-			dBInstanceAttribute.setMaxIOPS(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MaxIOPS"));
-			dBInstanceAttribute.setMaxConnections(context.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MaxConnections"));
-			dBInstanceAttribute.setMasterInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MasterInstanceId"));
-			dBInstanceAttribute.setDBInstanceCPU(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceCPU"));
-			dBInstanceAttribute.setIncrementSourceDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].IncrementSourceDBInstanceId"));
-			dBInstanceAttribute.setGuardDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].GuardDBInstanceId"));
-			dBInstanceAttribute.setReplicateId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReplicateId"));
-			dBInstanceAttribute.setTempDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempDBInstanceId"));
-			dBInstanceAttribute.setSecurityIPList(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SecurityIPList"));
-			dBInstanceAttribute.setZoneId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ZoneId"));
-			dBInstanceAttribute.setInstanceNetworkType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstanceNetworkType"));
-			dBInstanceAttribute.setDBInstanceStorageType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStorageType"));
-			dBInstanceAttribute.setAdvancedFeatures(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AdvancedFeatures"));
-			dBInstanceAttribute.setCategory(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Category"));
-			dBInstanceAttribute.setAccountType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AccountType"));
-			dBInstanceAttribute.setSupportUpgradeAccountType(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportUpgradeAccountType"));
-			dBInstanceAttribute.setSupportCreateSuperAccount(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportCreateSuperAccount"));
-			dBInstanceAttribute.setVpcId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcId"));
-			dBInstanceAttribute.setVSwitchId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VSwitchId"));
-			dBInstanceAttribute.setConnectionMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionMode"));
-			dBInstanceAttribute.setCurrentKernelVersion(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CurrentKernelVersion"));
-			dBInstanceAttribute.setLatestKernelVersion(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LatestKernelVersion"));
-			dBInstanceAttribute.setResourceGroupId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ResourceGroupId"));
-			dBInstanceAttribute.setReadonlyInstanceSQLDelayedTime(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadonlyInstanceSQLDelayedTime"));
-			dBInstanceAttribute.setSecurityIPMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SecurityIPMode"));
-			dBInstanceAttribute.setTimeZone(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TimeZone"));
-			dBInstanceAttribute.setCollation(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Collation"));
-			dBInstanceAttribute.setDispenseMode(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DispenseMode"));
-			dBInstanceAttribute.setMasterZone(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MasterZone"));
+			dBInstanceAttribute.setIPType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].IPType"));
+			dBInstanceAttribute.setDBInstanceDiskUsed(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceDiskUsed"));
+			dBInstanceAttribute.setGuardDBInstanceName(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].GuardDBInstanceName"));
+			dBInstanceAttribute.setCanTempUpgrade(_ctx.booleanValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CanTempUpgrade"));
+			dBInstanceAttribute.setTempUpgradeTimeStart(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeTimeStart"));
+			dBInstanceAttribute.setTempUpgradeTimeEnd(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeTimeEnd"));
+			dBInstanceAttribute.setTempUpgradeRecoveryTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryTime"));
+			dBInstanceAttribute.setTempUpgradeRecoveryClass(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryClass"));
+			dBInstanceAttribute.setTempUpgradeRecoveryCpu(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryCpu"));
+			dBInstanceAttribute.setTempUpgradeRecoveryMemory(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryMemory"));
+			dBInstanceAttribute.setTempUpgradeRecoveryMaxIOPS(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryMaxIOPS"));
+			dBInstanceAttribute.setTempUpgradeRecoveryMaxConnections(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempUpgradeRecoveryMaxConnections"));
+			dBInstanceAttribute.setInsId(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InsId"));
+			dBInstanceAttribute.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceId"));
+			dBInstanceAttribute.setPayType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].PayType"));
+			dBInstanceAttribute.setDBInstanceClassType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClassType"));
+			dBInstanceAttribute.setDBInstanceType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceType"));
+			dBInstanceAttribute.setRegionId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].RegionId"));
+			dBInstanceAttribute.setConnectionString(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionString"));
+			dBInstanceAttribute.setPort(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Port"));
+			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Engine"));
+			dBInstanceAttribute.setEngineVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].EngineVersion"));
+			dBInstanceAttribute.setDBInstanceClass(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceClass"));
+			dBInstanceAttribute.setDBInstanceMemory(_ctx.longValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceMemory"));
+			dBInstanceAttribute.setDBInstanceStorage(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStorage"));
+			dBInstanceAttribute.setVpcCloudInstanceId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcCloudInstanceId"));
+			dBInstanceAttribute.setDBInstanceNetType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceNetType"));
+			dBInstanceAttribute.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStatus"));
+			dBInstanceAttribute.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceDescription"));
+			dBInstanceAttribute.setLockMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LockMode"));
+			dBInstanceAttribute.setLockReason(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LockReason"));
+			dBInstanceAttribute.setReadDelayTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadDelayTime"));
+			dBInstanceAttribute.setDBMaxQuantity(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBMaxQuantity"));
+			dBInstanceAttribute.setAccountMaxQuantity(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AccountMaxQuantity"));
+			dBInstanceAttribute.setCreationTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CreationTime"));
+			dBInstanceAttribute.setExpireTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ExpireTime"));
+			dBInstanceAttribute.setMaintainTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MaintainTime"));
+			dBInstanceAttribute.setAvailabilityValue(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AvailabilityValue"));
+			dBInstanceAttribute.setMaxIOPS(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MaxIOPS"));
+			dBInstanceAttribute.setMaxConnections(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MaxConnections"));
+			dBInstanceAttribute.setMasterInstanceId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MasterInstanceId"));
+			dBInstanceAttribute.setDBInstanceCPU(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceCPU"));
+			dBInstanceAttribute.setIncrementSourceDBInstanceId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].IncrementSourceDBInstanceId"));
+			dBInstanceAttribute.setGuardDBInstanceId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].GuardDBInstanceId"));
+			dBInstanceAttribute.setReplicateId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReplicateId"));
+			dBInstanceAttribute.setTempDBInstanceId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TempDBInstanceId"));
+			dBInstanceAttribute.setSecurityIPList(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SecurityIPList"));
+			dBInstanceAttribute.setZoneId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ZoneId"));
+			dBInstanceAttribute.setInstanceNetworkType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].InstanceNetworkType"));
+			dBInstanceAttribute.setDBInstanceStorageType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DBInstanceStorageType"));
+			dBInstanceAttribute.setAdvancedFeatures(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AdvancedFeatures"));
+			dBInstanceAttribute.setCategory(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Category"));
+			dBInstanceAttribute.setAccountType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AccountType"));
+			dBInstanceAttribute.setSupportUpgradeAccountType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportUpgradeAccountType"));
+			dBInstanceAttribute.setSupportCreateSuperAccount(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SupportCreateSuperAccount"));
+			dBInstanceAttribute.setVpcId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VpcId"));
+			dBInstanceAttribute.setVSwitchId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].VSwitchId"));
+			dBInstanceAttribute.setConnectionMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConnectionMode"));
+			dBInstanceAttribute.setCurrentKernelVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].CurrentKernelVersion"));
+			dBInstanceAttribute.setLatestKernelVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].LatestKernelVersion"));
+			dBInstanceAttribute.setResourceGroupId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ResourceGroupId"));
+			dBInstanceAttribute.setReadonlyInstanceSQLDelayedTime(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadonlyInstanceSQLDelayedTime"));
+			dBInstanceAttribute.setSecurityIPMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SecurityIPMode"));
+			dBInstanceAttribute.setTimeZone(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].TimeZone"));
+			dBInstanceAttribute.setCollation(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Collation"));
+			dBInstanceAttribute.setDispenseMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DispenseMode"));
+			dBInstanceAttribute.setMasterZone(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MasterZone"));
+			dBInstanceAttribute.setAutoUpgradeMinorVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AutoUpgradeMinorVersion"));
 
 			Extra extra = new Extra();
-			extra.setReplicaGroupID(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupID"));
-			extra.setReplicaGroupStatus(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupStatus"));
-			extra.setActiveReplicaDBInstanceID(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ActiveReplicaDBInstanceID"));
+			extra.setReplicaGroupID(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupID"));
+			extra.setReplicaGroupStatus(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupStatus"));
+			extra.setActiveReplicaDBInstanceID(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ActiveReplicaDBInstanceID"));
 
 			List<String> dBInstanceId = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.DBInstanceId.Length"); j++) {
-				dBInstanceId.add(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.DBInstanceId["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.DBInstanceId.Length"); j++) {
+				dBInstanceId.add(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.DBInstanceId["+ j +"]"));
 			}
 			extra.setDBInstanceId(dBInstanceId);
 			dBInstanceAttribute.setExtra(extra);
 
 			List<SlaveZone> slaveZones = new ArrayList<SlaveZone>();
-			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SlaveZones.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SlaveZones.Length"); j++) {
 				SlaveZone slaveZone = new SlaveZone();
-				slaveZone.setZoneId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SlaveZones["+ j +"].ZoneId"));
+				slaveZone.setZoneId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].SlaveZones["+ j +"].ZoneId"));
 
 				slaveZones.add(slaveZone);
 			}
 			dBInstanceAttribute.setSlaveZones(slaveZones);
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
-			for (int j = 0; j < context.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
 				ReadOnlyDBInstanceId readOnlyDBInstanceId = new ReadOnlyDBInstanceId();
-				readOnlyDBInstanceId.setDBInstanceId(context.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds["+ j +"].DBInstanceId"));
+				readOnlyDBInstanceId.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ReadOnlyDBInstanceIds["+ j +"].DBInstanceId"));
 
 				readOnlyDBInstanceIds.add(readOnlyDBInstanceId);
 			}

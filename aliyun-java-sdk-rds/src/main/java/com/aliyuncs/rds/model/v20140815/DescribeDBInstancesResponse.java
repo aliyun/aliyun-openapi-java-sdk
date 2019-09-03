@@ -137,6 +137,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String autoUpgradeMinorVersion;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public Integer getInsId() {
@@ -393,6 +395,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getAutoUpgradeMinorVersion() {
+			return this.autoUpgradeMinorVersion;
+		}
+
+		public void setAutoUpgradeMinorVersion(String autoUpgradeMinorVersion) {
+			this.autoUpgradeMinorVersion = autoUpgradeMinorVersion;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

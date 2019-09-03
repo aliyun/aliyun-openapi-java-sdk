@@ -30,19 +30,19 @@ public class SwitchDBInstanceNetTypeRequest extends RpcAcsRequest<SwitchDBInstan
 
 	private String connectionStringPrefix;
 
-	private String connectionStringType;
-
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private String port;
-
-	private String ownerAccount;
 
 	private String dBInstanceId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Long ownerId;
+
+	private String connectionStringType;
+
+	private String port;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,28 +66,6 @@ public class SwitchDBInstanceNetTypeRequest extends RpcAcsRequest<SwitchDBInstan
 		}
 	}
 
-	public String getConnectionStringType() {
-		return this.connectionStringType;
-	}
-
-	public void setConnectionStringType(String connectionStringType) {
-		this.connectionStringType = connectionStringType;
-		if(connectionStringType != null){
-			putQueryParameter("ConnectionStringType", connectionStringType);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -96,28 +74,6 @@ public class SwitchDBInstanceNetTypeRequest extends RpcAcsRequest<SwitchDBInstan
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getPort() {
-		return this.port;
-	}
-
-	public void setPort(String port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -132,6 +88,28 @@ public class SwitchDBInstanceNetTypeRequest extends RpcAcsRequest<SwitchDBInstan
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -140,6 +118,28 @@ public class SwitchDBInstanceNetTypeRequest extends RpcAcsRequest<SwitchDBInstan
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getConnectionStringType() {
+		return this.connectionStringType;
+	}
+
+	public void setConnectionStringType(String connectionStringType) {
+		this.connectionStringType = connectionStringType;
+		if(connectionStringType != null){
+			putQueryParameter("ConnectionStringType", connectionStringType);
+		}
+	}
+
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
 		}
 	}
 

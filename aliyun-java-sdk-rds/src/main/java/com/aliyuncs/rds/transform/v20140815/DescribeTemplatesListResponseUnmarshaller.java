@@ -24,32 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTemplatesListResponseUnmarshaller {
 
-	public static DescribeTemplatesListResponse unmarshall(DescribeTemplatesListResponse describeTemplatesListResponse, UnmarshallerContext context) {
+	public static DescribeTemplatesListResponse unmarshall(DescribeTemplatesListResponse describeTemplatesListResponse, UnmarshallerContext _ctx) {
 		
-		describeTemplatesListResponse.setRequestId(context.stringValue("DescribeTemplatesListResponse.RequestId"));
-		describeTemplatesListResponse.setDBInstanceID(context.integerValue("DescribeTemplatesListResponse.DBInstanceID"));
-		describeTemplatesListResponse.setDBInstanceName(context.stringValue("DescribeTemplatesListResponse.DBInstanceName"));
-		describeTemplatesListResponse.setStartTime(context.stringValue("DescribeTemplatesListResponse.StartTime"));
-		describeTemplatesListResponse.setEndTime(context.stringValue("DescribeTemplatesListResponse.EndTime"));
-		describeTemplatesListResponse.setTotalRecords(context.integerValue("DescribeTemplatesListResponse.TotalRecords"));
-		describeTemplatesListResponse.setPagingID(context.stringValue("DescribeTemplatesListResponse.PagingID"));
-		describeTemplatesListResponse.setMaxRecordsPerPage(context.integerValue("DescribeTemplatesListResponse.MaxRecordsPerPage"));
-		describeTemplatesListResponse.setPageNumbers(context.integerValue("DescribeTemplatesListResponse.PageNumbers"));
-		describeTemplatesListResponse.setItemsNumbers(context.integerValue("DescribeTemplatesListResponse.ItemsNumbers"));
+		describeTemplatesListResponse.setRequestId(_ctx.stringValue("DescribeTemplatesListResponse.RequestId"));
+		describeTemplatesListResponse.setDBInstanceID(_ctx.integerValue("DescribeTemplatesListResponse.DBInstanceID"));
+		describeTemplatesListResponse.setDBInstanceName(_ctx.stringValue("DescribeTemplatesListResponse.DBInstanceName"));
+		describeTemplatesListResponse.setStartTime(_ctx.stringValue("DescribeTemplatesListResponse.StartTime"));
+		describeTemplatesListResponse.setEndTime(_ctx.stringValue("DescribeTemplatesListResponse.EndTime"));
+		describeTemplatesListResponse.setTotalRecords(_ctx.integerValue("DescribeTemplatesListResponse.TotalRecords"));
+		describeTemplatesListResponse.setPagingID(_ctx.stringValue("DescribeTemplatesListResponse.PagingID"));
+		describeTemplatesListResponse.setMaxRecordsPerPage(_ctx.integerValue("DescribeTemplatesListResponse.MaxRecordsPerPage"));
+		describeTemplatesListResponse.setPageNumbers(_ctx.integerValue("DescribeTemplatesListResponse.PageNumbers"));
+		describeTemplatesListResponse.setItemsNumbers(_ctx.integerValue("DescribeTemplatesListResponse.ItemsNumbers"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
-		for (int i = 0; i < context.lengthValue("DescribeTemplatesListResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTemplatesListResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setTemplate(context.stringValue("DescribeTemplatesListResponse.Items["+ i +"].Template"));
-			itemsItem.setTotalConsume(context.longValue("DescribeTemplatesListResponse.Items["+ i +"].TotalConsume"));
-			itemsItem.setAvgConsume(context.floatValue("DescribeTemplatesListResponse.Items["+ i +"].AvgConsume"));
-			itemsItem.setTotalCounts(context.longValue("DescribeTemplatesListResponse.Items["+ i +"].TotalCounts"));
-			itemsItem.setAvgScanRows(context.floatValue("DescribeTemplatesListResponse.Items["+ i +"].AvgScanRows"));
-			itemsItem.setTotalScanRows(context.longValue("DescribeTemplatesListResponse.Items["+ i +"].TotalScanRows"));
-			itemsItem.setTotalUpdateRows(context.longValue("DescribeTemplatesListResponse.Items["+ i +"].TotalUpdateRows"));
-			itemsItem.setAvgUpdateRows(context.floatValue("DescribeTemplatesListResponse.Items["+ i +"].AvgUpdateRows"));
-			itemsItem.setSqlType(context.stringValue("DescribeTemplatesListResponse.Items["+ i +"].SqlType"));
-			itemsItem.setTemplateHash(context.stringValue("DescribeTemplatesListResponse.Items["+ i +"].TemplateHash"));
+			itemsItem.setTemplate(_ctx.stringValue("DescribeTemplatesListResponse.Items["+ i +"].Template"));
+			itemsItem.setTotalConsume(_ctx.longValue("DescribeTemplatesListResponse.Items["+ i +"].TotalConsume"));
+			itemsItem.setAvgConsume(_ctx.floatValue("DescribeTemplatesListResponse.Items["+ i +"].AvgConsume"));
+			itemsItem.setTotalCounts(_ctx.longValue("DescribeTemplatesListResponse.Items["+ i +"].TotalCounts"));
+			itemsItem.setAvgScanRows(_ctx.floatValue("DescribeTemplatesListResponse.Items["+ i +"].AvgScanRows"));
+			itemsItem.setTotalScanRows(_ctx.longValue("DescribeTemplatesListResponse.Items["+ i +"].TotalScanRows"));
+			itemsItem.setTotalUpdateRows(_ctx.longValue("DescribeTemplatesListResponse.Items["+ i +"].TotalUpdateRows"));
+			itemsItem.setAvgUpdateRows(_ctx.floatValue("DescribeTemplatesListResponse.Items["+ i +"].AvgUpdateRows"));
+			itemsItem.setSqlType(_ctx.stringValue("DescribeTemplatesListResponse.Items["+ i +"].SqlType"));
+			itemsItem.setTemplateHash(_ctx.stringValue("DescribeTemplatesListResponse.Items["+ i +"].TemplateHash"));
 
 			items.add(itemsItem);
 		}

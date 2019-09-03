@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MigrateSecurityIPModeResponseUnmarshaller {
 
-	public static MigrateSecurityIPModeResponse unmarshall(MigrateSecurityIPModeResponse migrateSecurityIPModeResponse, UnmarshallerContext context) {
+	public static MigrateSecurityIPModeResponse unmarshall(MigrateSecurityIPModeResponse migrateSecurityIPModeResponse, UnmarshallerContext _ctx) {
 		
-		migrateSecurityIPModeResponse.setRequestId(context.stringValue("MigrateSecurityIPModeResponse.RequestId"));
-		migrateSecurityIPModeResponse.setDBInstanceId(context.stringValue("MigrateSecurityIPModeResponse.DBInstanceId"));
-		migrateSecurityIPModeResponse.setSecurityIPMode(context.stringValue("MigrateSecurityIPModeResponse.SecurityIPMode"));
+		migrateSecurityIPModeResponse.setRequestId(_ctx.stringValue("MigrateSecurityIPModeResponse.RequestId"));
+		migrateSecurityIPModeResponse.setDBInstanceId(_ctx.stringValue("MigrateSecurityIPModeResponse.DBInstanceId"));
+		migrateSecurityIPModeResponse.setSecurityIPMode(_ctx.stringValue("MigrateSecurityIPModeResponse.SecurityIPMode"));
 	 
 	 	return migrateSecurityIPModeResponse;
 	}

@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCloudDbExpertServiceResponseUnmarshaller {
 
-	public static DescribeCloudDbExpertServiceResponse unmarshall(DescribeCloudDbExpertServiceResponse describeCloudDbExpertServiceResponse, UnmarshallerContext context) {
+	public static DescribeCloudDbExpertServiceResponse unmarshall(DescribeCloudDbExpertServiceResponse describeCloudDbExpertServiceResponse, UnmarshallerContext _ctx) {
 		
-		describeCloudDbExpertServiceResponse.setRequestId(context.stringValue("DescribeCloudDbExpertServiceResponse.RequestId"));
-		describeCloudDbExpertServiceResponse.setMessage(context.stringValue("DescribeCloudDbExpertServiceResponse.Message"));
-		describeCloudDbExpertServiceResponse.setData(context.stringValue("DescribeCloudDbExpertServiceResponse.Data"));
-		describeCloudDbExpertServiceResponse.setCode(context.stringValue("DescribeCloudDbExpertServiceResponse.Code"));
+		describeCloudDbExpertServiceResponse.setRequestId(_ctx.stringValue("DescribeCloudDbExpertServiceResponse.RequestId"));
+		describeCloudDbExpertServiceResponse.setMessage(_ctx.stringValue("DescribeCloudDbExpertServiceResponse.Message"));
+		describeCloudDbExpertServiceResponse.setData(_ctx.stringValue("DescribeCloudDbExpertServiceResponse.Data"));
+		describeCloudDbExpertServiceResponse.setCode(_ctx.stringValue("DescribeCloudDbExpertServiceResponse.Code"));
 	 
 	 	return describeCloudDbExpertServiceResponse;
 	}

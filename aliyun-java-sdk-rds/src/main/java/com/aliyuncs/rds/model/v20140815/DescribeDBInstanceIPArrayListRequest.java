@@ -28,9 +28,9 @@ public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<Describe
 
 	private Long resourceOwnerId;
 
-	private String whitelistNetworkType;
-
 	private String ownerAccount;
+
+	private String whitelistNetworkType;
 
 	private String dBInstanceId;
 
@@ -45,17 +45,6 @@ public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getWhitelistNetworkType() {
-		return this.whitelistNetworkType;
-	}
-
-	public void setWhitelistNetworkType(String whitelistNetworkType) {
-		this.whitelistNetworkType = whitelistNetworkType;
-		if(whitelistNetworkType != null){
-			putQueryParameter("WhitelistNetworkType", whitelistNetworkType);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -64,6 +53,17 @@ public class DescribeDBInstanceIPArrayListRequest extends RpcAcsRequest<Describe
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getWhitelistNetworkType() {
+		return this.whitelistNetworkType;
+	}
+
+	public void setWhitelistNetworkType(String whitelistNetworkType) {
+		this.whitelistNetworkType = whitelistNetworkType;
+		if(whitelistNetworkType != null){
+			putQueryParameter("WhitelistNetworkType", whitelistNetworkType);
 		}
 	}
 

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckCreateDdrDBInstanceResponseUnmarshaller {
 
-	public static CheckCreateDdrDBInstanceResponse unmarshall(CheckCreateDdrDBInstanceResponse checkCreateDdrDBInstanceResponse, UnmarshallerContext context) {
+	public static CheckCreateDdrDBInstanceResponse unmarshall(CheckCreateDdrDBInstanceResponse checkCreateDdrDBInstanceResponse, UnmarshallerContext _ctx) {
 		
-		checkCreateDdrDBInstanceResponse.setRequestId(context.stringValue("CheckCreateDdrDBInstanceResponse.RequestId"));
-		checkCreateDdrDBInstanceResponse.setIsValid(context.stringValue("CheckCreateDdrDBInstanceResponse.IsValid"));
+		checkCreateDdrDBInstanceResponse.setRequestId(_ctx.stringValue("CheckCreateDdrDBInstanceResponse.RequestId"));
+		checkCreateDdrDBInstanceResponse.setIsValid(_ctx.stringValue("CheckCreateDdrDBInstanceResponse.IsValid"));
 	 
 	 	return checkCreateDdrDBInstanceResponse;
 	}

@@ -28,9 +28,9 @@ public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosti
 
 	private String endTime;
 
-	private String dBInstanceId;
-
 	private String startTime;
+
+	private String dBInstanceId;
 
 	public String getEndTime() {
 		return this.endTime;
@@ -43,17 +43,6 @@ public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosti
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -62,6 +51,17 @@ public class CreateDiagnosticReportRequest extends RpcAcsRequest<CreateDiagnosti
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

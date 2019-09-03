@@ -30,21 +30,21 @@ public class ModifyInstanceCrossBackupPolicyRequest extends RpcAcsRequest<Modify
 
 	private Integer retentType;
 
+	private String backupEnabled;
+
+	private String dBInstanceId;
+
+	private Integer retention;
+
 	private String resourceOwnerAccount;
 
 	private String crossBackupType;
 
 	private String logBackupEnabled;
 
-	private String backupEnabled;
-
 	private Long ownerId;
 
 	private String crossBackupRegion;
-
-	private String dBInstanceId;
-
-	private Integer retention;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -65,6 +65,39 @@ public class ModifyInstanceCrossBackupPolicyRequest extends RpcAcsRequest<Modify
 		this.retentType = retentType;
 		if(retentType != null){
 			putQueryParameter("RetentType", retentType.toString());
+		}
+	}
+
+	public String getBackupEnabled() {
+		return this.backupEnabled;
+	}
+
+	public void setBackupEnabled(String backupEnabled) {
+		this.backupEnabled = backupEnabled;
+		if(backupEnabled != null){
+			putQueryParameter("BackupEnabled", backupEnabled);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Integer getRetention() {
+		return this.retention;
+	}
+
+	public void setRetention(Integer retention) {
+		this.retention = retention;
+		if(retention != null){
+			putQueryParameter("Retention", retention.toString());
 		}
 	}
 
@@ -101,17 +134,6 @@ public class ModifyInstanceCrossBackupPolicyRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public String getBackupEnabled() {
-		return this.backupEnabled;
-	}
-
-	public void setBackupEnabled(String backupEnabled) {
-		this.backupEnabled = backupEnabled;
-		if(backupEnabled != null){
-			putQueryParameter("BackupEnabled", backupEnabled);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -131,28 +153,6 @@ public class ModifyInstanceCrossBackupPolicyRequest extends RpcAcsRequest<Modify
 		this.crossBackupRegion = crossBackupRegion;
 		if(crossBackupRegion != null){
 			putQueryParameter("CrossBackupRegion", crossBackupRegion);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public Integer getRetention() {
-		return this.retention;
-	}
-
-	public void setRetention(Integer retention) {
-		this.retention = retention;
-		if(retention != null){
-			putQueryParameter("Retention", retention.toString());
 		}
 	}
 

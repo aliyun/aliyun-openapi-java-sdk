@@ -28,21 +28,21 @@ public class DescribeCrossRegionBackupsRequest extends RpcAcsRequest<DescribeCro
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String endTime;
-
 	private String startTime;
-
-	private Long ownerId;
-
-	private String crossBackupRegion;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String dBInstanceId;
+
+	private String resourceOwnerAccount;
+
+	private String endTime;
+
+	private Long ownerId;
+
+	private String crossBackupRegion;
 
 	private Integer crossBackupId;
 
@@ -57,28 +57,6 @@ public class DescribeCrossRegionBackupsRequest extends RpcAcsRequest<DescribeCro
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -87,28 +65,6 @@ public class DescribeCrossRegionBackupsRequest extends RpcAcsRequest<DescribeCro
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getCrossBackupRegion() {
-		return this.crossBackupRegion;
-	}
-
-	public void setCrossBackupRegion(String crossBackupRegion) {
-		this.crossBackupRegion = crossBackupRegion;
-		if(crossBackupRegion != null){
-			putQueryParameter("CrossBackupRegion", crossBackupRegion);
 		}
 	}
 
@@ -142,6 +98,50 @@ public class DescribeCrossRegionBackupsRequest extends RpcAcsRequest<DescribeCro
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCrossBackupRegion() {
+		return this.crossBackupRegion;
+	}
+
+	public void setCrossBackupRegion(String crossBackupRegion) {
+		this.crossBackupRegion = crossBackupRegion;
+		if(crossBackupRegion != null){
+			putQueryParameter("CrossBackupRegion", crossBackupRegion);
 		}
 	}
 

@@ -30,6 +30,10 @@ public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<A
 
 	private String connectionStringPrefix;
 
+	private String distributionType;
+
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -40,11 +44,7 @@ public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<A
 
 	private String port;
 
-	private String distributionType;
-
 	private String netType;
-
-	private String dBInstanceId;
 
 	private String maxDelayTime;
 
@@ -67,6 +67,28 @@ public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<A
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
+	public String getDistributionType() {
+		return this.distributionType;
+	}
+
+	public void setDistributionType(String distributionType) {
+		this.distributionType = distributionType;
+		if(distributionType != null){
+			putQueryParameter("DistributionType", distributionType);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -125,17 +147,6 @@ public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<A
 		}
 	}
 
-	public String getDistributionType() {
-		return this.distributionType;
-	}
-
-	public void setDistributionType(String distributionType) {
-		this.distributionType = distributionType;
-		if(distributionType != null){
-			putQueryParameter("DistributionType", distributionType);
-		}
-	}
-
 	public String getNetType() {
 		return this.netType;
 	}
@@ -144,17 +155,6 @@ public class AllocateReadWriteSplittingConnectionRequest extends RpcAcsRequest<A
 		this.netType = netType;
 		if(netType != null){
 			putQueryParameter("NetType", netType);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

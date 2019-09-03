@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpgradeDBInstanceKernelVersionResponseUnmarshaller {
 
-	public static UpgradeDBInstanceKernelVersionResponse unmarshall(UpgradeDBInstanceKernelVersionResponse upgradeDBInstanceKernelVersionResponse, UnmarshallerContext context) {
+	public static UpgradeDBInstanceKernelVersionResponse unmarshall(UpgradeDBInstanceKernelVersionResponse upgradeDBInstanceKernelVersionResponse, UnmarshallerContext _ctx) {
 		
-		upgradeDBInstanceKernelVersionResponse.setRequestId(context.stringValue("UpgradeDBInstanceKernelVersionResponse.RequestId"));
-		upgradeDBInstanceKernelVersionResponse.setDBInstanceName(context.stringValue("UpgradeDBInstanceKernelVersionResponse.DBInstanceName"));
-		upgradeDBInstanceKernelVersionResponse.setTaskId(context.stringValue("UpgradeDBInstanceKernelVersionResponse.TaskId"));
-		upgradeDBInstanceKernelVersionResponse.setTargetMinorVersion(context.stringValue("UpgradeDBInstanceKernelVersionResponse.TargetMinorVersion"));
+		upgradeDBInstanceKernelVersionResponse.setRequestId(_ctx.stringValue("UpgradeDBInstanceKernelVersionResponse.RequestId"));
+		upgradeDBInstanceKernelVersionResponse.setDBInstanceName(_ctx.stringValue("UpgradeDBInstanceKernelVersionResponse.DBInstanceName"));
+		upgradeDBInstanceKernelVersionResponse.setTaskId(_ctx.stringValue("UpgradeDBInstanceKernelVersionResponse.TaskId"));
+		upgradeDBInstanceKernelVersionResponse.setTargetMinorVersion(_ctx.stringValue("UpgradeDBInstanceKernelVersionResponse.TargetMinorVersion"));
 	 
 	 	return upgradeDBInstanceKernelVersionResponse;
 	}

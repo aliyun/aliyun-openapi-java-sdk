@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CloneDBInstanceResponseUnmarshaller {
 
-	public static CloneDBInstanceResponse unmarshall(CloneDBInstanceResponse cloneDBInstanceResponse, UnmarshallerContext context) {
+	public static CloneDBInstanceResponse unmarshall(CloneDBInstanceResponse cloneDBInstanceResponse, UnmarshallerContext _ctx) {
 		
-		cloneDBInstanceResponse.setRequestId(context.stringValue("CloneDBInstanceResponse.RequestId"));
-		cloneDBInstanceResponse.setDBInstanceId(context.stringValue("CloneDBInstanceResponse.DBInstanceId"));
-		cloneDBInstanceResponse.setOrderId(context.stringValue("CloneDBInstanceResponse.OrderId"));
-		cloneDBInstanceResponse.setConnectionString(context.stringValue("CloneDBInstanceResponse.ConnectionString"));
-		cloneDBInstanceResponse.setPort(context.stringValue("CloneDBInstanceResponse.Port"));
+		cloneDBInstanceResponse.setRequestId(_ctx.stringValue("CloneDBInstanceResponse.RequestId"));
+		cloneDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CloneDBInstanceResponse.DBInstanceId"));
+		cloneDBInstanceResponse.setOrderId(_ctx.stringValue("CloneDBInstanceResponse.OrderId"));
+		cloneDBInstanceResponse.setConnectionString(_ctx.stringValue("CloneDBInstanceResponse.ConnectionString"));
+		cloneDBInstanceResponse.setPort(_ctx.stringValue("CloneDBInstanceResponse.Port"));
 	 
 	 	return cloneDBInstanceResponse;
 	}

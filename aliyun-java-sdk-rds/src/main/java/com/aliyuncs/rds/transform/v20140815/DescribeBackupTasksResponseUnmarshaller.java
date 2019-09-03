@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupTasksResponseUnmarshaller {
 
-	public static DescribeBackupTasksResponse unmarshall(DescribeBackupTasksResponse describeBackupTasksResponse, UnmarshallerContext context) {
+	public static DescribeBackupTasksResponse unmarshall(DescribeBackupTasksResponse describeBackupTasksResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupTasksResponse.setRequestId(context.stringValue("DescribeBackupTasksResponse.RequestId"));
+		describeBackupTasksResponse.setRequestId(_ctx.stringValue("DescribeBackupTasksResponse.RequestId"));
 
 		List<BackupJob> items = new ArrayList<BackupJob>();
-		for (int i = 0; i < context.lengthValue("DescribeBackupTasksResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBackupTasksResponse.Items.Length"); i++) {
 			BackupJob backupJob = new BackupJob();
-			backupJob.setBackupProgressStatus(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupProgressStatus"));
-			backupJob.setBackupStatus(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupStatus"));
-			backupJob.setJobMode(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].JobMode"));
-			backupJob.setProcess(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].Process"));
-			backupJob.setTaskAction(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].TaskAction"));
-			backupJob.setBackupJobId(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupJobId"));
-			backupJob.setBackupId(context.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupId"));
+			backupJob.setBackupProgressStatus(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupProgressStatus"));
+			backupJob.setBackupStatus(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupStatus"));
+			backupJob.setJobMode(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].JobMode"));
+			backupJob.setProcess(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].Process"));
+			backupJob.setTaskAction(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].TaskAction"));
+			backupJob.setBackupJobId(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupJobId"));
+			backupJob.setBackupId(_ctx.stringValue("DescribeBackupTasksResponse.Items["+ i +"].BackupId"));
 
 			items.add(backupJob);
 		}

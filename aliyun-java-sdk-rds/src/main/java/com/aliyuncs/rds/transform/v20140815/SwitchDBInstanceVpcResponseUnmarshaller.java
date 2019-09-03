@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SwitchDBInstanceVpcResponseUnmarshaller {
 
-	public static SwitchDBInstanceVpcResponse unmarshall(SwitchDBInstanceVpcResponse switchDBInstanceVpcResponse, UnmarshallerContext context) {
+	public static SwitchDBInstanceVpcResponse unmarshall(SwitchDBInstanceVpcResponse switchDBInstanceVpcResponse, UnmarshallerContext _ctx) {
 		
-		switchDBInstanceVpcResponse.setRequestId(context.stringValue("SwitchDBInstanceVpcResponse.RequestId"));
+		switchDBInstanceVpcResponse.setRequestId(_ctx.stringValue("SwitchDBInstanceVpcResponse.RequestId"));
 	 
 	 	return switchDBInstanceVpcResponse;
 	}

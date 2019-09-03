@@ -32,11 +32,11 @@ public class ModifyCollationTimeZoneRequest extends RpcAcsRequest<ModifyCollatio
 
 	private String timezone;
 
+	private Long ownerId;
+
 	private String dBInstanceId;
 
 	private String collation;
-
-	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -71,6 +71,17 @@ public class ModifyCollationTimeZoneRequest extends RpcAcsRequest<ModifyCollatio
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -90,17 +101,6 @@ public class ModifyCollationTimeZoneRequest extends RpcAcsRequest<ModifyCollatio
 		this.collation = collation;
 		if(collation != null){
 			putQueryParameter("Collation", collation);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

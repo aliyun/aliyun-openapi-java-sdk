@@ -27,35 +27,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePriceResponseUnmarshaller {
 
-	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext context) {
+	public static DescribePriceResponse unmarshall(DescribePriceResponse describePriceResponse, UnmarshallerContext _ctx) {
 		
-		describePriceResponse.setRequestId(context.stringValue("DescribePriceResponse.RequestId"));
+		describePriceResponse.setRequestId(_ctx.stringValue("DescribePriceResponse.RequestId"));
 
 		PriceInfo priceInfo = new PriceInfo();
-		priceInfo.setCurrency(context.stringValue("DescribePriceResponse.PriceInfo.Currency"));
-		priceInfo.setOriginalPrice(context.floatValue("DescribePriceResponse.PriceInfo.OriginalPrice"));
-		priceInfo.setTradePrice(context.floatValue("DescribePriceResponse.PriceInfo.TradePrice"));
-		priceInfo.setDiscountPrice(context.floatValue("DescribePriceResponse.PriceInfo.DiscountPrice"));
+		priceInfo.setCurrency(_ctx.stringValue("DescribePriceResponse.PriceInfo.Currency"));
+		priceInfo.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.OriginalPrice"));
+		priceInfo.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.TradePrice"));
+		priceInfo.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.DiscountPrice"));
 
 		List<String> ruleIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribePriceResponse.PriceInfo.RuleIds.Length"); i++) {
-			ruleIds.add(context.stringValue("DescribePriceResponse.PriceInfo.RuleIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.RuleIds.Length"); i++) {
+			ruleIds.add(_ctx.stringValue("DescribePriceResponse.PriceInfo.RuleIds["+ i +"]"));
 		}
 		priceInfo.setRuleIds(ruleIds);
 
 		ActivityInfo activityInfo = new ActivityInfo();
-		activityInfo.setCheckErrMsg(context.stringValue("DescribePriceResponse.PriceInfo.ActivityInfo.CheckErrMsg"));
-		activityInfo.setErrorCode(context.stringValue("DescribePriceResponse.PriceInfo.ActivityInfo.ErrorCode"));
-		activityInfo.setSuccess(context.stringValue("DescribePriceResponse.PriceInfo.ActivityInfo.Success"));
+		activityInfo.setCheckErrMsg(_ctx.stringValue("DescribePriceResponse.PriceInfo.ActivityInfo.CheckErrMsg"));
+		activityInfo.setErrorCode(_ctx.stringValue("DescribePriceResponse.PriceInfo.ActivityInfo.ErrorCode"));
+		activityInfo.setSuccess(_ctx.stringValue("DescribePriceResponse.PriceInfo.ActivityInfo.Success"));
 		priceInfo.setActivityInfo(activityInfo);
 
 		List<Coupon> coupons = new ArrayList<Coupon>();
-		for (int i = 0; i < context.lengthValue("DescribePriceResponse.PriceInfo.Coupons.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PriceInfo.Coupons.Length"); i++) {
 			Coupon coupon = new Coupon();
-			coupon.setCouponNo(context.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].CouponNo"));
-			coupon.setName(context.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].Name"));
-			coupon.setDescription(context.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].Description"));
-			coupon.setIsSelected(context.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].IsSelected"));
+			coupon.setCouponNo(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].CouponNo"));
+			coupon.setName(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].Name"));
+			coupon.setDescription(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].Description"));
+			coupon.setIsSelected(_ctx.stringValue("DescribePriceResponse.PriceInfo.Coupons["+ i +"].IsSelected"));
 
 			coupons.add(coupon);
 		}
@@ -63,11 +63,11 @@ public class DescribePriceResponseUnmarshaller {
 		describePriceResponse.setPriceInfo(priceInfo);
 
 		List<Rule> rules = new ArrayList<Rule>();
-		for (int i = 0; i < context.lengthValue("DescribePriceResponse.Rules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
-			rule.setRuleId(context.longValue("DescribePriceResponse.Rules["+ i +"].RuleId"));
-			rule.setName(context.stringValue("DescribePriceResponse.Rules["+ i +"].Name"));
-			rule.setDescription(context.stringValue("DescribePriceResponse.Rules["+ i +"].Description"));
+			rule.setRuleId(_ctx.longValue("DescribePriceResponse.Rules["+ i +"].RuleId"));
+			rule.setName(_ctx.stringValue("DescribePriceResponse.Rules["+ i +"].Name"));
+			rule.setDescription(_ctx.stringValue("DescribePriceResponse.Rules["+ i +"].Description"));
 
 			rules.add(rule);
 		}

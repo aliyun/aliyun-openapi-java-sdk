@@ -26,27 +26,47 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		super("Rds", "2014-08-15", "DescribeDBInstances", "rds");
 	}
 
-	private String connectionMode;
-
 	private String tag4value;
 
 	private Long resourceOwnerId;
 
 	private String tag2key;
 
-	private String clientToken;
-
-	private String searchKey;
-
 	private String tag3key;
 
 	private String engineVersion;
 
-	private Integer pageNumber;
-
 	private String tag1value;
 
 	private String resourceGroupId;
+
+	private String proxyId;
+
+	private String tag5key;
+
+	private Long ownerId;
+
+	private String dBInstanceType;
+
+	private String dBInstanceClass;
+
+	private String tags;
+
+	private String vSwitchId;
+
+	private String zoneId;
+
+	private String tag4key;
+
+	private String instanceNetworkType;
+
+	private String connectionMode;
+
+	private String clientToken;
+
+	private String searchKey;
+
+	private Integer pageNumber;
 
 	private String expired;
 
@@ -60,25 +80,11 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String tag3value;
 
-	private String proxyId;
-
-	private String tag5key;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
 	private String tag5value;
-
-	private String dBInstanceType;
-
-	private String dBInstanceClass;
-
-	private String tags;
-
-	private String vSwitchId;
 
 	private String tag1key;
 
@@ -86,24 +92,7 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String tag2value;
 
-	private String zoneId;
-
-	private String tag4key;
-
 	private String payType;
-
-	private String instanceNetworkType;
-
-	public String getConnectionMode() {
-		return this.connectionMode;
-	}
-
-	public void setConnectionMode(String connectionMode) {
-		this.connectionMode = connectionMode;
-		if(connectionMode != null){
-			putQueryParameter("ConnectionMode", connectionMode);
-		}
-	}
 
 	public String getTag4value() {
 		return this.tag4value;
@@ -138,28 +127,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getSearchKey() {
-		return this.searchKey;
-	}
-
-	public void setSearchKey(String searchKey) {
-		this.searchKey = searchKey;
-		if(searchKey != null){
-			putQueryParameter("SearchKey", searchKey);
-		}
-	}
-
 	public String getTag3key() {
 		return this.tag3key;
 	}
@@ -182,17 +149,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getTag1value() {
 		return this.tag1value;
 	}
@@ -212,6 +168,160 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getProxyId() {
+		return this.proxyId;
+	}
+
+	public void setProxyId(String proxyId) {
+		this.proxyId = proxyId;
+		if(proxyId != null){
+			putQueryParameter("proxyId", proxyId);
+		}
+	}
+
+	public String getTag5key() {
+		return this.tag5key;
+	}
+
+	public void setTag5key(String tag5key) {
+		this.tag5key = tag5key;
+		if(tag5key != null){
+			putQueryParameter("Tag.5.key", tag5key);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBInstanceType() {
+		return this.dBInstanceType;
+	}
+
+	public void setDBInstanceType(String dBInstanceType) {
+		this.dBInstanceType = dBInstanceType;
+		if(dBInstanceType != null){
+			putQueryParameter("DBInstanceType", dBInstanceType);
+		}
+	}
+
+	public String getDBInstanceClass() {
+		return this.dBInstanceClass;
+	}
+
+	public void setDBInstanceClass(String dBInstanceClass) {
+		this.dBInstanceClass = dBInstanceClass;
+		if(dBInstanceClass != null){
+			putQueryParameter("DBInstanceClass", dBInstanceClass);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getTag4key() {
+		return this.tag4key;
+	}
+
+	public void setTag4key(String tag4key) {
+		this.tag4key = tag4key;
+		if(tag4key != null){
+			putQueryParameter("Tag.4.key", tag4key);
+		}
+	}
+
+	public String getInstanceNetworkType() {
+		return this.instanceNetworkType;
+	}
+
+	public void setInstanceNetworkType(String instanceNetworkType) {
+		this.instanceNetworkType = instanceNetworkType;
+		if(instanceNetworkType != null){
+			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getConnectionMode() {
+		return this.connectionMode;
+	}
+
+	public void setConnectionMode(String connectionMode) {
+		this.connectionMode = connectionMode;
+		if(connectionMode != null){
+			putQueryParameter("ConnectionMode", connectionMode);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSearchKey() {
+		return this.searchKey;
+	}
+
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+		if(searchKey != null){
+			putQueryParameter("SearchKey", searchKey);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -281,28 +391,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getProxyId() {
-		return this.proxyId;
-	}
-
-	public void setProxyId(String proxyId) {
-		this.proxyId = proxyId;
-		if(proxyId != null){
-			putQueryParameter("proxyId", proxyId);
-		}
-	}
-
-	public String getTag5key() {
-		return this.tag5key;
-	}
-
-	public void setTag5key(String tag5key) {
-		this.tag5key = tag5key;
-		if(tag5key != null){
-			putQueryParameter("Tag.5.key", tag5key);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -325,17 +413,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getTag5value() {
 		return this.tag5value;
 	}
@@ -344,50 +421,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.tag5value = tag5value;
 		if(tag5value != null){
 			putQueryParameter("Tag.5.value", tag5value);
-		}
-	}
-
-	public String getDBInstanceType() {
-		return this.dBInstanceType;
-	}
-
-	public void setDBInstanceType(String dBInstanceType) {
-		this.dBInstanceType = dBInstanceType;
-		if(dBInstanceType != null){
-			putQueryParameter("DBInstanceType", dBInstanceType);
-		}
-	}
-
-	public String getDBInstanceClass() {
-		return this.dBInstanceClass;
-	}
-
-	public void setDBInstanceClass(String dBInstanceClass) {
-		this.dBInstanceClass = dBInstanceClass;
-		if(dBInstanceClass != null){
-			putQueryParameter("DBInstanceClass", dBInstanceClass);
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
-		}
-	}
-
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -424,28 +457,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getTag4key() {
-		return this.tag4key;
-	}
-
-	public void setTag4key(String tag4key) {
-		this.tag4key = tag4key;
-		if(tag4key != null){
-			putQueryParameter("Tag.4.key", tag4key);
-		}
-	}
-
 	public String getPayType() {
 		return this.payType;
 	}
@@ -454,17 +465,6 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.payType = payType;
 		if(payType != null){
 			putQueryParameter("PayType", payType);
-		}
-	}
-
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
 		}
 	}
 

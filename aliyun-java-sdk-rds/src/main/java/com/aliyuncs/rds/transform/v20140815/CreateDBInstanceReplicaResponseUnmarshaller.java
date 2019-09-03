@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDBInstanceReplicaResponseUnmarshaller {
 
-	public static CreateDBInstanceReplicaResponse unmarshall(CreateDBInstanceReplicaResponse createDBInstanceReplicaResponse, UnmarshallerContext context) {
+	public static CreateDBInstanceReplicaResponse unmarshall(CreateDBInstanceReplicaResponse createDBInstanceReplicaResponse, UnmarshallerContext _ctx) {
 		
-		createDBInstanceReplicaResponse.setRequestId(context.stringValue("CreateDBInstanceReplicaResponse.RequestId"));
-		createDBInstanceReplicaResponse.setDBInstanceId(context.stringValue("CreateDBInstanceReplicaResponse.DBInstanceId"));
-		createDBInstanceReplicaResponse.setOrderId(context.longValue("CreateDBInstanceReplicaResponse.OrderId"));
-		createDBInstanceReplicaResponse.setReplicaId(context.stringValue("CreateDBInstanceReplicaResponse.ReplicaId"));
-		createDBInstanceReplicaResponse.setWorkflowId(context.stringValue("CreateDBInstanceReplicaResponse.WorkflowId"));
+		createDBInstanceReplicaResponse.setRequestId(_ctx.stringValue("CreateDBInstanceReplicaResponse.RequestId"));
+		createDBInstanceReplicaResponse.setDBInstanceId(_ctx.stringValue("CreateDBInstanceReplicaResponse.DBInstanceId"));
+		createDBInstanceReplicaResponse.setOrderId(_ctx.longValue("CreateDBInstanceReplicaResponse.OrderId"));
+		createDBInstanceReplicaResponse.setReplicaId(_ctx.stringValue("CreateDBInstanceReplicaResponse.ReplicaId"));
+		createDBInstanceReplicaResponse.setWorkflowId(_ctx.stringValue("CreateDBInstanceReplicaResponse.WorkflowId"));
 	 
 	 	return createDBInstanceReplicaResponse;
 	}

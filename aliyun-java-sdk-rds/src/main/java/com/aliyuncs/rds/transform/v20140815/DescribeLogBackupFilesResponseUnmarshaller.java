@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLogBackupFilesResponseUnmarshaller {
 
-	public static DescribeLogBackupFilesResponse unmarshall(DescribeLogBackupFilesResponse describeLogBackupFilesResponse, UnmarshallerContext context) {
+	public static DescribeLogBackupFilesResponse unmarshall(DescribeLogBackupFilesResponse describeLogBackupFilesResponse, UnmarshallerContext _ctx) {
 		
-		describeLogBackupFilesResponse.setRequestId(context.stringValue("DescribeLogBackupFilesResponse.RequestId"));
-		describeLogBackupFilesResponse.setTotalRecordCount(context.integerValue("DescribeLogBackupFilesResponse.TotalRecordCount"));
-		describeLogBackupFilesResponse.setPageNumber(context.integerValue("DescribeLogBackupFilesResponse.PageNumber"));
-		describeLogBackupFilesResponse.setPageRecordCount(context.integerValue("DescribeLogBackupFilesResponse.PageRecordCount"));
-		describeLogBackupFilesResponse.setTotalFileSize(context.longValue("DescribeLogBackupFilesResponse.TotalFileSize"));
+		describeLogBackupFilesResponse.setRequestId(_ctx.stringValue("DescribeLogBackupFilesResponse.RequestId"));
+		describeLogBackupFilesResponse.setTotalRecordCount(_ctx.integerValue("DescribeLogBackupFilesResponse.TotalRecordCount"));
+		describeLogBackupFilesResponse.setPageNumber(_ctx.integerValue("DescribeLogBackupFilesResponse.PageNumber"));
+		describeLogBackupFilesResponse.setPageRecordCount(_ctx.integerValue("DescribeLogBackupFilesResponse.PageRecordCount"));
+		describeLogBackupFilesResponse.setTotalFileSize(_ctx.longValue("DescribeLogBackupFilesResponse.TotalFileSize"));
 
 		List<BinLogFile> items = new ArrayList<BinLogFile>();
-		for (int i = 0; i < context.lengthValue("DescribeLogBackupFilesResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLogBackupFilesResponse.Items.Length"); i++) {
 			BinLogFile binLogFile = new BinLogFile();
-			binLogFile.setFileSize(context.longValue("DescribeLogBackupFilesResponse.Items["+ i +"].FileSize"));
-			binLogFile.setLogBeginTime(context.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LogBeginTime"));
-			binLogFile.setLogEndTime(context.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LogEndTime"));
-			binLogFile.setDownloadLink(context.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].DownloadLink"));
-			binLogFile.setIntranetDownloadLink(context.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].IntranetDownloadLink"));
-			binLogFile.setLinkExpiredTime(context.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LinkExpiredTime"));
+			binLogFile.setFileSize(_ctx.longValue("DescribeLogBackupFilesResponse.Items["+ i +"].FileSize"));
+			binLogFile.setLogBeginTime(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LogBeginTime"));
+			binLogFile.setLogEndTime(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LogEndTime"));
+			binLogFile.setDownloadLink(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].DownloadLink"));
+			binLogFile.setIntranetDownloadLink(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].IntranetDownloadLink"));
+			binLogFile.setLinkExpiredTime(_ctx.stringValue("DescribeLogBackupFilesResponse.Items["+ i +"].LinkExpiredTime"));
 
 			items.add(binLogFile);
 		}

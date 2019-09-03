@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssDownloadsForSQLServerResponseUnmarshaller {
 
-	public static DescribeOssDownloadsForSQLServerResponse unmarshall(DescribeOssDownloadsForSQLServerResponse describeOssDownloadsForSQLServerResponse, UnmarshallerContext context) {
+	public static DescribeOssDownloadsForSQLServerResponse unmarshall(DescribeOssDownloadsForSQLServerResponse describeOssDownloadsForSQLServerResponse, UnmarshallerContext _ctx) {
 		
-		describeOssDownloadsForSQLServerResponse.setRequestId(context.stringValue("DescribeOssDownloadsForSQLServerResponse.RequestId"));
-		describeOssDownloadsForSQLServerResponse.setDBInstanceName(context.stringValue("DescribeOssDownloadsForSQLServerResponse.DBInstanceName"));
-		describeOssDownloadsForSQLServerResponse.setMigrateIaskId(context.stringValue("DescribeOssDownloadsForSQLServerResponse.MigrateIaskId"));
+		describeOssDownloadsForSQLServerResponse.setRequestId(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.RequestId"));
+		describeOssDownloadsForSQLServerResponse.setDBInstanceName(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.DBInstanceName"));
+		describeOssDownloadsForSQLServerResponse.setMigrateIaskId(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.MigrateIaskId"));
 
 		List<OssDownload> items = new ArrayList<OssDownload>();
-		for (int i = 0; i < context.lengthValue("DescribeOssDownloadsForSQLServerResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssDownloadsForSQLServerResponse.Items.Length"); i++) {
 			OssDownload ossDownload = new OssDownload();
-			ossDownload.setFileName(context.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].FileName"));
-			ossDownload.setCreateTime(context.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].CreateTime"));
-			ossDownload.setCreateTime1(context.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].CreateTime"));
-			ossDownload.setBakType(context.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].BakType"));
-			ossDownload.setFileSize(context.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].FileSize"));
-			ossDownload.setStatus(context.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].Status"));
-			ossDownload.setIsAvail(context.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].IsAvail"));
-			ossDownload.setDesc(context.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].Desc"));
+			ossDownload.setFileName(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].FileName"));
+			ossDownload.setCreateTime(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].CreateTime"));
+			ossDownload.setCreateTime1(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].CreateTime"));
+			ossDownload.setBakType(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].BakType"));
+			ossDownload.setFileSize(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].FileSize"));
+			ossDownload.setStatus(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].Status"));
+			ossDownload.setIsAvail(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].IsAvail"));
+			ossDownload.setDesc(_ctx.stringValue("DescribeOssDownloadsForSQLServerResponse.Items["+ i +"].Desc"));
 
 			items.add(ossDownload);
 		}

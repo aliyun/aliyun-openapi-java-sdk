@@ -26,32 +26,21 @@ public class DescribeCloudDbExpertServiceRequest extends RpcAcsRequest<DescribeC
 		super("Rds", "2014-08-15", "DescribeCloudDbExpertService", "rds");
 	}
 
-	private String serviceRequestParam;
-
 	private Long resourceOwnerId;
 
+	private String serviceRequestType;
+
+	private String serviceRequestParam;
+
 	private String securityToken;
+
+	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
-
 	private Long ownerId;
-
-	private String serviceRequestType;
-
-	public String getServiceRequestParam() {
-		return this.serviceRequestParam;
-	}
-
-	public void setServiceRequestParam(String serviceRequestParam) {
-		this.serviceRequestParam = serviceRequestParam;
-		if(serviceRequestParam != null){
-			putQueryParameter("ServiceRequestParam", serviceRequestParam);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,6 +50,28 @@ public class DescribeCloudDbExpertServiceRequest extends RpcAcsRequest<DescribeC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getServiceRequestType() {
+		return this.serviceRequestType;
+	}
+
+	public void setServiceRequestType(String serviceRequestType) {
+		this.serviceRequestType = serviceRequestType;
+		if(serviceRequestType != null){
+			putQueryParameter("ServiceRequestType", serviceRequestType);
+		}
+	}
+
+	public String getServiceRequestParam() {
+		return this.serviceRequestParam;
+	}
+
+	public void setServiceRequestParam(String serviceRequestParam) {
+		this.serviceRequestParam = serviceRequestParam;
+		if(serviceRequestParam != null){
+			putQueryParameter("ServiceRequestParam", serviceRequestParam);
 		}
 	}
 
@@ -94,6 +105,17 @@ public class DescribeCloudDbExpertServiceRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -116,17 +138,6 @@ public class DescribeCloudDbExpertServiceRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -135,17 +146,6 @@ public class DescribeCloudDbExpertServiceRequest extends RpcAcsRequest<DescribeC
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getServiceRequestType() {
-		return this.serviceRequestType;
-	}
-
-	public void setServiceRequestType(String serviceRequestType) {
-		this.serviceRequestType = serviceRequestType;
-		if(serviceRequestType != null){
-			putQueryParameter("ServiceRequestType", serviceRequestType);
 		}
 	}
 

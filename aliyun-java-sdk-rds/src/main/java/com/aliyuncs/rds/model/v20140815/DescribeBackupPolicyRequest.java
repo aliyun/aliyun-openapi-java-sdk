@@ -28,17 +28,17 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
+	private String backupPolicyMode;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String compressType;
 
-	private String dBInstanceId;
-
 	private Long ownerId;
-
-	private String backupPolicyMode;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +48,28 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getBackupPolicyMode() {
+		return this.backupPolicyMode;
+	}
+
+	public void setBackupPolicyMode(String backupPolicyMode) {
+		this.backupPolicyMode = backupPolicyMode;
+		if(backupPolicyMode != null){
+			putQueryParameter("BackupPolicyMode", backupPolicyMode);
 		}
 	}
 
@@ -84,17 +106,6 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -103,17 +114,6 @@ public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPol
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getBackupPolicyMode() {
-		return this.backupPolicyMode;
-	}
-
-	public void setBackupPolicyMode(String backupPolicyMode) {
-		this.backupPolicyMode = backupPolicyMode;
-		if(backupPolicyMode != null){
-			putQueryParameter("BackupPolicyMode", backupPolicyMode);
 		}
 	}
 

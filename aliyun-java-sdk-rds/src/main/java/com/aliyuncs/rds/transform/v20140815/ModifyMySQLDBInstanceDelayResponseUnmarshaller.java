@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyMySQLDBInstanceDelayResponseUnmarshaller {
 
-	public static ModifyMySQLDBInstanceDelayResponse unmarshall(ModifyMySQLDBInstanceDelayResponse modifyMySQLDBInstanceDelayResponse, UnmarshallerContext context) {
+	public static ModifyMySQLDBInstanceDelayResponse unmarshall(ModifyMySQLDBInstanceDelayResponse modifyMySQLDBInstanceDelayResponse, UnmarshallerContext _ctx) {
 		
-		modifyMySQLDBInstanceDelayResponse.setRequestId(context.stringValue("ModifyMySQLDBInstanceDelayResponse.RequestId"));
-		modifyMySQLDBInstanceDelayResponse.setDBInstanceName(context.stringValue("ModifyMySQLDBInstanceDelayResponse.DBInstanceName"));
-		modifyMySQLDBInstanceDelayResponse.setSqlDelay(context.stringValue("ModifyMySQLDBInstanceDelayResponse.SqlDelay"));
-		modifyMySQLDBInstanceDelayResponse.setTaskId(context.stringValue("ModifyMySQLDBInstanceDelayResponse.TaskId"));
+		modifyMySQLDBInstanceDelayResponse.setRequestId(_ctx.stringValue("ModifyMySQLDBInstanceDelayResponse.RequestId"));
+		modifyMySQLDBInstanceDelayResponse.setDBInstanceName(_ctx.stringValue("ModifyMySQLDBInstanceDelayResponse.DBInstanceName"));
+		modifyMySQLDBInstanceDelayResponse.setSqlDelay(_ctx.stringValue("ModifyMySQLDBInstanceDelayResponse.SqlDelay"));
+		modifyMySQLDBInstanceDelayResponse.setTaskId(_ctx.stringValue("ModifyMySQLDBInstanceDelayResponse.TaskId"));
 	 
 	 	return modifyMySQLDBInstanceDelayResponse;
 	}

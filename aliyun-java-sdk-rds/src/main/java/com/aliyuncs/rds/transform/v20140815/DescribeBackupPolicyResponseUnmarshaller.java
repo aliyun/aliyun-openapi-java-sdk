@@ -22,30 +22,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupPolicyResponseUnmarshaller {
 
-	public static DescribeBackupPolicyResponse unmarshall(DescribeBackupPolicyResponse describeBackupPolicyResponse, UnmarshallerContext context) {
+	public static DescribeBackupPolicyResponse unmarshall(DescribeBackupPolicyResponse describeBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupPolicyResponse.setRequestId(context.stringValue("DescribeBackupPolicyResponse.RequestId"));
-		describeBackupPolicyResponse.setBackupRetentionPeriod(context.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
-		describeBackupPolicyResponse.setPreferredNextBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
-		describeBackupPolicyResponse.setPreferredBackupTime(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
-		describeBackupPolicyResponse.setPreferredBackupPeriod(context.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
-		describeBackupPolicyResponse.setBackupLog(context.stringValue("DescribeBackupPolicyResponse.BackupLog"));
-		describeBackupPolicyResponse.setLogBackupRetentionPeriod(context.integerValue("DescribeBackupPolicyResponse.LogBackupRetentionPeriod"));
-		describeBackupPolicyResponse.setEnableBackupLog(context.stringValue("DescribeBackupPolicyResponse.EnableBackupLog"));
-		describeBackupPolicyResponse.setLocalLogRetentionHours(context.integerValue("DescribeBackupPolicyResponse.LocalLogRetentionHours"));
-		describeBackupPolicyResponse.setLocalLogRetentionSpace(context.stringValue("DescribeBackupPolicyResponse.LocalLogRetentionSpace"));
-		describeBackupPolicyResponse.setDuplication(context.stringValue("DescribeBackupPolicyResponse.Duplication"));
-		describeBackupPolicyResponse.setDuplicationContent(context.stringValue("DescribeBackupPolicyResponse.DuplicationContent"));
-		describeBackupPolicyResponse.setHighSpaceUsageProtection(context.stringValue("DescribeBackupPolicyResponse.HighSpaceUsageProtection"));
-		describeBackupPolicyResponse.setLogBackupFrequency(context.stringValue("DescribeBackupPolicyResponse.LogBackupFrequency"));
-		describeBackupPolicyResponse.setCompressType(context.stringValue("DescribeBackupPolicyResponse.CompressType"));
+		describeBackupPolicyResponse.setRequestId(_ctx.stringValue("DescribeBackupPolicyResponse.RequestId"));
+		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
+		describeBackupPolicyResponse.setPreferredNextBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
+		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
+		describeBackupPolicyResponse.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
+		describeBackupPolicyResponse.setBackupLog(_ctx.stringValue("DescribeBackupPolicyResponse.BackupLog"));
+		describeBackupPolicyResponse.setLogBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.LogBackupRetentionPeriod"));
+		describeBackupPolicyResponse.setEnableBackupLog(_ctx.stringValue("DescribeBackupPolicyResponse.EnableBackupLog"));
+		describeBackupPolicyResponse.setLocalLogRetentionHours(_ctx.integerValue("DescribeBackupPolicyResponse.LocalLogRetentionHours"));
+		describeBackupPolicyResponse.setLocalLogRetentionSpace(_ctx.stringValue("DescribeBackupPolicyResponse.LocalLogRetentionSpace"));
+		describeBackupPolicyResponse.setDuplication(_ctx.stringValue("DescribeBackupPolicyResponse.Duplication"));
+		describeBackupPolicyResponse.setDuplicationContent(_ctx.stringValue("DescribeBackupPolicyResponse.DuplicationContent"));
+		describeBackupPolicyResponse.setHighSpaceUsageProtection(_ctx.stringValue("DescribeBackupPolicyResponse.HighSpaceUsageProtection"));
+		describeBackupPolicyResponse.setLogBackupFrequency(_ctx.stringValue("DescribeBackupPolicyResponse.LogBackupFrequency"));
+		describeBackupPolicyResponse.setCompressType(_ctx.stringValue("DescribeBackupPolicyResponse.CompressType"));
 
 		DuplicationLocation duplicationLocation = new DuplicationLocation();
-		duplicationLocation.setSotrage(context.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Sotrage"));
+		duplicationLocation.setSotrage(_ctx.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Sotrage"));
 
 		Location location = new Location();
-		location.setEndpoint(context.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Location.Endpoint"));
-		location.setBucket(context.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Location.Bucket"));
+		location.setEndpoint(_ctx.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Location.Endpoint"));
+		location.setBucket(_ctx.stringValue("DescribeBackupPolicyResponse.DuplicationLocation.Location.Bucket"));
 		duplicationLocation.setLocation(location);
 		describeBackupPolicyResponse.setDuplicationLocation(duplicationLocation);
 	 

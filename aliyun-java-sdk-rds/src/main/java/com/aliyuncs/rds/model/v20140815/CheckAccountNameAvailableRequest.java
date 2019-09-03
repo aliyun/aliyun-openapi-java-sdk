@@ -28,15 +28,15 @@ public class CheckAccountNameAvailableRequest extends RpcAcsRequest<CheckAccount
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String accountName;
+
+	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
-
-	private String dBInstanceId;
 
 	private Long ownerId;
 
@@ -51,6 +51,17 @@ public class CheckAccountNameAvailableRequest extends RpcAcsRequest<CheckAccount
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getAccountName() {
 		return this.accountName;
 	}
@@ -59,6 +70,17 @@ public class CheckAccountNameAvailableRequest extends RpcAcsRequest<CheckAccount
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -73,17 +95,6 @@ public class CheckAccountNameAvailableRequest extends RpcAcsRequest<CheckAccount
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -92,17 +103,6 @@ public class CheckAccountNameAvailableRequest extends RpcAcsRequest<CheckAccount
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

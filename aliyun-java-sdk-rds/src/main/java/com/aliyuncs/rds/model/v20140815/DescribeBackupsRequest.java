@@ -28,19 +28,19 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 
 	private Long resourceOwnerId;
 
-	private String backupId;
-
-	private String endTime;
-
 	private String startTime;
 
 	private Integer pageNumber;
 
-	private String backupStatus;
-
 	private Integer pageSize;
 
 	private String dBInstanceId;
+
+	private String backupId;
+
+	private String endTime;
+
+	private String backupStatus;
 
 	private String backupMode;
 
@@ -52,28 +52,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getBackupId() {
-		return this.backupId;
-	}
-
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -99,17 +77,6 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		}
 	}
 
-	public String getBackupStatus() {
-		return this.backupStatus;
-	}
-
-	public void setBackupStatus(String backupStatus) {
-		this.backupStatus = backupStatus;
-		if(backupStatus != null){
-			putQueryParameter("BackupStatus", backupStatus);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -129,6 +96,39 @@ public class DescribeBackupsRequest extends RpcAcsRequest<DescribeBackupsRespons
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getBackupStatus() {
+		return this.backupStatus;
+	}
+
+	public void setBackupStatus(String backupStatus) {
+		this.backupStatus = backupStatus;
+		if(backupStatus != null){
+			putQueryParameter("BackupStatus", backupStatus);
 		}
 	}
 

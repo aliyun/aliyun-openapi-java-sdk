@@ -26,34 +26,23 @@ public class AllocateInstanceVpcNetworkTypeRequest extends RpcAcsRequest<Allocat
 		super("Rds", "2014-08-15", "AllocateInstanceVpcNetworkType", "rds");
 	}
 
-	private String targetVpcId;
-
 	private Long resourceOwnerId;
 
+	private String targetVpcId;
+
 	private String targetZoneId;
+
+	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String dBInstanceId;
-
-	private String targetRegionId;
-
 	private String targetVSwitchId;
 
 	private Long ownerId;
 
-	public String getTargetVpcId() {
-		return this.targetVpcId;
-	}
-
-	public void setTargetVpcId(String targetVpcId) {
-		this.targetVpcId = targetVpcId;
-		if(targetVpcId != null){
-			putQueryParameter("TargetVpcId", targetVpcId);
-		}
-	}
+	private String targetRegionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,6 +55,17 @@ public class AllocateInstanceVpcNetworkTypeRequest extends RpcAcsRequest<Allocat
 		}
 	}
 
+	public String getTargetVpcId() {
+		return this.targetVpcId;
+	}
+
+	public void setTargetVpcId(String targetVpcId) {
+		this.targetVpcId = targetVpcId;
+		if(targetVpcId != null){
+			putQueryParameter("TargetVpcId", targetVpcId);
+		}
+	}
+
 	public String getTargetZoneId() {
 		return this.targetZoneId;
 	}
@@ -74,6 +74,17 @@ public class AllocateInstanceVpcNetworkTypeRequest extends RpcAcsRequest<Allocat
 		this.targetZoneId = targetZoneId;
 		if(targetZoneId != null){
 			putQueryParameter("TargetZoneId", targetZoneId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -99,28 +110,6 @@ public class AllocateInstanceVpcNetworkTypeRequest extends RpcAcsRequest<Allocat
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getTargetRegionId() {
-		return this.targetRegionId;
-	}
-
-	public void setTargetRegionId(String targetRegionId) {
-		this.targetRegionId = targetRegionId;
-		if(targetRegionId != null){
-			putQueryParameter("TargetRegionId", targetRegionId);
-		}
-	}
-
 	public String getTargetVSwitchId() {
 		return this.targetVSwitchId;
 	}
@@ -140,6 +129,17 @@ public class AllocateInstanceVpcNetworkTypeRequest extends RpcAcsRequest<Allocat
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTargetRegionId() {
+		return this.targetRegionId;
+	}
+
+	public void setTargetRegionId(String targetRegionId) {
+		this.targetRegionId = targetRegionId;
+		if(targetRegionId != null){
+			putQueryParameter("TargetRegionId", targetRegionId);
 		}
 	}
 

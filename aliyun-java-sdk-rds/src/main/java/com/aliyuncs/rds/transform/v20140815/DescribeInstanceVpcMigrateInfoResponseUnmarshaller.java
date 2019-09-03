@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceVpcMigrateInfoResponseUnmarshaller {
 
-	public static DescribeInstanceVpcMigrateInfoResponse unmarshall(DescribeInstanceVpcMigrateInfoResponse describeInstanceVpcMigrateInfoResponse, UnmarshallerContext context) {
+	public static DescribeInstanceVpcMigrateInfoResponse unmarshall(DescribeInstanceVpcMigrateInfoResponse describeInstanceVpcMigrateInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceVpcMigrateInfoResponse.setRequestId(context.stringValue("DescribeInstanceVpcMigrateInfoResponse.RequestId"));
+		describeInstanceVpcMigrateInfoResponse.setRequestId(_ctx.stringValue("DescribeInstanceVpcMigrateInfoResponse.RequestId"));
 
 		List<DBInstanceMigrateInfo> dBInstanceMigrateInfos = new ArrayList<DBInstanceMigrateInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos.Length"); i++) {
 			DBInstanceMigrateInfo dBInstanceMigrateInfo = new DBInstanceMigrateInfo();
-			dBInstanceMigrateInfo.setDBInstanceId(context.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].DBInstanceId"));
-			dBInstanceMigrateInfo.setTargetRegionId(context.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetRegionId"));
-			dBInstanceMigrateInfo.setTargetZoneId(context.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetZoneId"));
-			dBInstanceMigrateInfo.setTargetVPCId(context.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetVPCId"));
-			dBInstanceMigrateInfo.setTargetVSwitchId(context.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetVSwitchId"));
-			dBInstanceMigrateInfo.setTargetIPAddress(context.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetIPAddress"));
-			dBInstanceMigrateInfo.setTargetVpcInstanceId(context.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetVpcInstanceId"));
+			dBInstanceMigrateInfo.setDBInstanceId(_ctx.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].DBInstanceId"));
+			dBInstanceMigrateInfo.setTargetRegionId(_ctx.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetRegionId"));
+			dBInstanceMigrateInfo.setTargetZoneId(_ctx.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetZoneId"));
+			dBInstanceMigrateInfo.setTargetVPCId(_ctx.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetVPCId"));
+			dBInstanceMigrateInfo.setTargetVSwitchId(_ctx.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetVSwitchId"));
+			dBInstanceMigrateInfo.setTargetIPAddress(_ctx.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetIPAddress"));
+			dBInstanceMigrateInfo.setTargetVpcInstanceId(_ctx.stringValue("DescribeInstanceVpcMigrateInfoResponse.DBInstanceMigrateInfos["+ i +"].TargetVpcInstanceId"));
 
 			dBInstanceMigrateInfos.add(dBInstanceMigrateInfo);
 		}

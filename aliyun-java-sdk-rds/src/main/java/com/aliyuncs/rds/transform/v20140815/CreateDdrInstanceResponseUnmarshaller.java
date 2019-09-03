@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDdrInstanceResponseUnmarshaller {
 
-	public static CreateDdrInstanceResponse unmarshall(CreateDdrInstanceResponse createDdrInstanceResponse, UnmarshallerContext context) {
+	public static CreateDdrInstanceResponse unmarshall(CreateDdrInstanceResponse createDdrInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createDdrInstanceResponse.setRequestId(context.stringValue("CreateDdrInstanceResponse.RequestId"));
-		createDdrInstanceResponse.setDBInstanceId(context.stringValue("CreateDdrInstanceResponse.DBInstanceId"));
-		createDdrInstanceResponse.setOrderId(context.stringValue("CreateDdrInstanceResponse.OrderId"));
-		createDdrInstanceResponse.setConnectionString(context.stringValue("CreateDdrInstanceResponse.ConnectionString"));
-		createDdrInstanceResponse.setPort(context.stringValue("CreateDdrInstanceResponse.Port"));
+		createDdrInstanceResponse.setRequestId(_ctx.stringValue("CreateDdrInstanceResponse.RequestId"));
+		createDdrInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateDdrInstanceResponse.DBInstanceId"));
+		createDdrInstanceResponse.setOrderId(_ctx.stringValue("CreateDdrInstanceResponse.OrderId"));
+		createDdrInstanceResponse.setConnectionString(_ctx.stringValue("CreateDdrInstanceResponse.ConnectionString"));
+		createDdrInstanceResponse.setPort(_ctx.stringValue("CreateDdrInstanceResponse.Port"));
 	 
 	 	return createDdrInstanceResponse;
 	}

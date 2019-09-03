@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PurgeDBInstanceLogResponseUnmarshaller {
 
-	public static PurgeDBInstanceLogResponse unmarshall(PurgeDBInstanceLogResponse purgeDBInstanceLogResponse, UnmarshallerContext context) {
+	public static PurgeDBInstanceLogResponse unmarshall(PurgeDBInstanceLogResponse purgeDBInstanceLogResponse, UnmarshallerContext _ctx) {
 		
-		purgeDBInstanceLogResponse.setRequestId(context.stringValue("PurgeDBInstanceLogResponse.RequestId"));
+		purgeDBInstanceLogResponse.setRequestId(_ctx.stringValue("PurgeDBInstanceLogResponse.RequestId"));
 	 
 	 	return purgeDBInstanceLogResponse;
 	}

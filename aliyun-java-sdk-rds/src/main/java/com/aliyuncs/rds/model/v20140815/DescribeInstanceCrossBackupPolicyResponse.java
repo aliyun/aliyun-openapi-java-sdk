@@ -64,6 +64,10 @@ public class DescribeInstanceCrossBackupPolicyResponse extends AcsResponse {
 
 	private String lockMode;
 
+	private String relService;
+
+	private String relServiceId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -238,6 +242,22 @@ public class DescribeInstanceCrossBackupPolicyResponse extends AcsResponse {
 
 	public void setLockMode(String lockMode) {
 		this.lockMode = lockMode;
+	}
+
+	public String getRelService() {
+		return this.relService;
+	}
+
+	public void setRelService(String relService) {
+		this.relService = relService;
+	}
+
+	public String getRelServiceId() {
+		return this.relServiceId;
+	}
+
+	public void setRelServiceId(String relServiceId) {
+		this.relServiceId = relServiceId;
 	}
 
 	@Override

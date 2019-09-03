@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GrantAccountPrivilegeResponseUnmarshaller {
 
-	public static GrantAccountPrivilegeResponse unmarshall(GrantAccountPrivilegeResponse grantAccountPrivilegeResponse, UnmarshallerContext context) {
+	public static GrantAccountPrivilegeResponse unmarshall(GrantAccountPrivilegeResponse grantAccountPrivilegeResponse, UnmarshallerContext _ctx) {
 		
-		grantAccountPrivilegeResponse.setRequestId(context.stringValue("GrantAccountPrivilegeResponse.RequestId"));
+		grantAccountPrivilegeResponse.setRequestId(_ctx.stringValue("GrantAccountPrivilegeResponse.RequestId"));
 	 
 	 	return grantAccountPrivilegeResponse;
 	}

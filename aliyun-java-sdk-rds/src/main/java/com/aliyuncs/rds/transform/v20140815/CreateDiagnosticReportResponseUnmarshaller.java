@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDiagnosticReportResponseUnmarshaller {
 
-	public static CreateDiagnosticReportResponse unmarshall(CreateDiagnosticReportResponse createDiagnosticReportResponse, UnmarshallerContext context) {
+	public static CreateDiagnosticReportResponse unmarshall(CreateDiagnosticReportResponse createDiagnosticReportResponse, UnmarshallerContext _ctx) {
 		
-		createDiagnosticReportResponse.setRequestId(context.stringValue("CreateDiagnosticReportResponse.RequestId"));
-		createDiagnosticReportResponse.setReportId(context.stringValue("CreateDiagnosticReportResponse.ReportId"));
+		createDiagnosticReportResponse.setRequestId(_ctx.stringValue("CreateDiagnosticReportResponse.RequestId"));
+		createDiagnosticReportResponse.setReportId(_ctx.stringValue("CreateDiagnosticReportResponse.ReportId"));
 	 
 	 	return createDiagnosticReportResponse;
 	}

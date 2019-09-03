@@ -28,11 +28,13 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 
 	private Long resourceOwnerId;
 
+	private Integer dBInstanceStorage;
+
+	private String dBInstanceId;
+
 	private String restoreTime;
 
 	private String period;
-
-	private Integer dBInstanceStorage;
 
 	private String backupId;
 
@@ -50,8 +52,6 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 
 	private String vPCId;
 
-	private String dBInstanceId;
-
 	private String payType;
 
 	private String instanceNetworkType;
@@ -64,6 +64,28 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getDBInstanceStorage() {
+		return this.dBInstanceStorage;
+	}
+
+	public void setDBInstanceStorage(Integer dBInstanceStorage) {
+		this.dBInstanceStorage = dBInstanceStorage;
+		if(dBInstanceStorage != null){
+			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -86,17 +108,6 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
-		}
-	}
-
-	public Integer getDBInstanceStorage() {
-		return this.dBInstanceStorage;
-	}
-
-	public void setDBInstanceStorage(Integer dBInstanceStorage) {
-		this.dBInstanceStorage = dBInstanceStorage;
-		if(dBInstanceStorage != null){
-			putQueryParameter("DBInstanceStorage", dBInstanceStorage.toString());
 		}
 	}
 
@@ -185,17 +196,6 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 

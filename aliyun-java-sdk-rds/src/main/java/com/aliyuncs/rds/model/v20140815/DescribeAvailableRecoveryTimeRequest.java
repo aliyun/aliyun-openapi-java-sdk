@@ -30,9 +30,9 @@ public class DescribeAvailableRecoveryTimeRequest extends RpcAcsRequest<Describe
 
 	private String resourceOwnerAccount;
 
-	private Integer crossBackupId;
-
 	private Long ownerId;
+
+	private Integer crossBackupId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,17 +56,6 @@ public class DescribeAvailableRecoveryTimeRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public Integer getCrossBackupId() {
-		return this.crossBackupId;
-	}
-
-	public void setCrossBackupId(Integer crossBackupId) {
-		this.crossBackupId = crossBackupId;
-		if(crossBackupId != null){
-			putQueryParameter("CrossBackupId", crossBackupId.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -75,6 +64,17 @@ public class DescribeAvailableRecoveryTimeRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getCrossBackupId() {
+		return this.crossBackupId;
+	}
+
+	public void setCrossBackupId(Integer crossBackupId) {
+		this.crossBackupId = crossBackupId;
+		if(crossBackupId != null){
+			putQueryParameter("CrossBackupId", crossBackupId.toString());
 		}
 	}
 

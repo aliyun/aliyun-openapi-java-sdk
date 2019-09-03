@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeOssDownloadsResponseUnmarshaller {
 
-	public static DescribeOssDownloadsResponse unmarshall(DescribeOssDownloadsResponse describeOssDownloadsResponse, UnmarshallerContext context) {
+	public static DescribeOssDownloadsResponse unmarshall(DescribeOssDownloadsResponse describeOssDownloadsResponse, UnmarshallerContext _ctx) {
 		
-		describeOssDownloadsResponse.setRequestId(context.stringValue("DescribeOssDownloadsResponse.RequestId"));
-		describeOssDownloadsResponse.setDBInstanceId(context.stringValue("DescribeOssDownloadsResponse.DBInstanceId"));
-		describeOssDownloadsResponse.setMigrateTaskId(context.stringValue("DescribeOssDownloadsResponse.MigrateTaskId"));
+		describeOssDownloadsResponse.setRequestId(_ctx.stringValue("DescribeOssDownloadsResponse.RequestId"));
+		describeOssDownloadsResponse.setDBInstanceId(_ctx.stringValue("DescribeOssDownloadsResponse.DBInstanceId"));
+		describeOssDownloadsResponse.setMigrateTaskId(_ctx.stringValue("DescribeOssDownloadsResponse.MigrateTaskId"));
 
 		List<OssDownload> items = new ArrayList<OssDownload>();
-		for (int i = 0; i < context.lengthValue("DescribeOssDownloadsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeOssDownloadsResponse.Items.Length"); i++) {
 			OssDownload ossDownload = new OssDownload();
-			ossDownload.setFileName(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].FileName"));
-			ossDownload.setCreateTime(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].CreateTime"));
-			ossDownload.setEndTime(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].EndTime"));
-			ossDownload.setBackupMode(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].BackupMode"));
-			ossDownload.setFileSize(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].FileSize"));
-			ossDownload.setStatus(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].Status"));
-			ossDownload.setIsAvailable(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].IsAvailable"));
-			ossDownload.setDescription(context.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].Description"));
+			ossDownload.setFileName(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].FileName"));
+			ossDownload.setCreateTime(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].CreateTime"));
+			ossDownload.setEndTime(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].EndTime"));
+			ossDownload.setBackupMode(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].BackupMode"));
+			ossDownload.setFileSize(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].FileSize"));
+			ossDownload.setStatus(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].Status"));
+			ossDownload.setIsAvailable(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].IsAvailable"));
+			ossDownload.setDescription(_ctx.stringValue("DescribeOssDownloadsResponse.Items["+ i +"].Description"));
 
 			items.add(ossDownload);
 		}

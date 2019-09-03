@@ -28,6 +28,22 @@ public class DescribeTemplatesListRequest extends RpcAcsRequest<DescribeTemplate
 
 	private Long resourceOwnerId;
 
+	private String startTime;
+
+	private String sortKey;
+
+	private Integer minAvgScanRows;
+
+	private String securityToken;
+
+	private Integer pageNumbers;
+
+	private String pagingId;
+
+	private String dBInstanceId;
+
+	private Integer maxAvgScanRows;
+
 	private String resourceOwnerAccount;
 
 	private Integer minAvgConsume;
@@ -38,29 +54,13 @@ public class DescribeTemplatesListRequest extends RpcAcsRequest<DescribeTemplate
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
 
 	private Integer maxAvgConsume;
 
-	private String sortKey;
-
-	private Integer minAvgScanRows;
-
 	private String sqType;
 
-	private String securityToken;
-
 	private String sortMethod;
-
-	private Integer pageNumbers;
-
-	private String pagingId;
-
-	private String dBInstanceId;
-
-	private Integer maxAvgScanRows;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -70,6 +70,113 @@ public class DescribeTemplatesListRequest extends RpcAcsRequest<DescribeTemplate
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getSortKey() {
+		return this.sortKey;
+	}
+
+	public void setSortKey(String sortKey) {
+		this.sortKey = sortKey;
+		if(sortKey != null){
+			putQueryParameter("SortKey", sortKey);
+		}
+	}
+
+	public Integer getMinAvgScanRows() {
+		return this.minAvgScanRows;
+	}
+
+	public void setMinAvgScanRows(Integer minAvgScanRows) {
+		this.minAvgScanRows = minAvgScanRows;
+		if(minAvgScanRows != null){
+			putQueryParameter("MinAvgScanRows", minAvgScanRows.toString());
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageNumbers() {
+		return this.pageNumbers;
+	}
+
+	public void setPageNumbers(Integer pageNumbers) {
+		this.pageNumbers = pageNumbers;
+		if(pageNumbers != null){
+			putQueryParameter("PageNumbers", pageNumbers.toString());
+		}
+	}
+
+	public String getPagingId() {
+		return this.pagingId;
+	}
+
+	public void setPagingId(String pagingId) {
+		this.pagingId = pagingId;
+		if(pagingId != null){
+			putQueryParameter("PagingId", pagingId);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public Integer getMaxAvgScanRows() {
+		return this.maxAvgScanRows;
+	}
+
+	public void setMaxAvgScanRows(Integer maxAvgScanRows) {
+		this.maxAvgScanRows = maxAvgScanRows;
+		if(maxAvgScanRows != null){
+			putQueryParameter("MaxAvgScanRows", maxAvgScanRows.toString());
 		}
 	}
 
@@ -128,17 +235,6 @@ public class DescribeTemplatesListRequest extends RpcAcsRequest<DescribeTemplate
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -161,28 +257,6 @@ public class DescribeTemplatesListRequest extends RpcAcsRequest<DescribeTemplate
 		}
 	}
 
-	public String getSortKey() {
-		return this.sortKey;
-	}
-
-	public void setSortKey(String sortKey) {
-		this.sortKey = sortKey;
-		if(sortKey != null){
-			putQueryParameter("SortKey", sortKey);
-		}
-	}
-
-	public Integer getMinAvgScanRows() {
-		return this.minAvgScanRows;
-	}
-
-	public void setMinAvgScanRows(Integer minAvgScanRows) {
-		this.minAvgScanRows = minAvgScanRows;
-		if(minAvgScanRows != null){
-			putQueryParameter("MinAvgScanRows", minAvgScanRows.toString());
-		}
-	}
-
 	public String getSqType() {
 		return this.sqType;
 	}
@@ -194,36 +268,6 @@ public class DescribeTemplatesListRequest extends RpcAcsRequest<DescribeTemplate
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	public String getSortMethod() {
 		return this.sortMethod;
 	}
@@ -232,50 +276,6 @@ public class DescribeTemplatesListRequest extends RpcAcsRequest<DescribeTemplate
 		this.sortMethod = sortMethod;
 		if(sortMethod != null){
 			putQueryParameter("SortMethod", sortMethod);
-		}
-	}
-
-	public Integer getPageNumbers() {
-		return this.pageNumbers;
-	}
-
-	public void setPageNumbers(Integer pageNumbers) {
-		this.pageNumbers = pageNumbers;
-		if(pageNumbers != null){
-			putQueryParameter("PageNumbers", pageNumbers.toString());
-		}
-	}
-
-	public String getPagingId() {
-		return this.pagingId;
-	}
-
-	public void setPagingId(String pagingId) {
-		this.pagingId = pagingId;
-		if(pagingId != null){
-			putQueryParameter("PagingId", pagingId);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public Integer getMaxAvgScanRows() {
-		return this.maxAvgScanRows;
-	}
-
-	public void setMaxAvgScanRows(Integer maxAvgScanRows) {
-		this.maxAvgScanRows = maxAvgScanRows;
-		if(maxAvgScanRows != null){
-			putQueryParameter("MaxAvgScanRows", maxAvgScanRows.toString());
 		}
 	}
 

@@ -30,17 +30,17 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 
 	private String flag;
 
-	private String dBInstanceNetRWSplitType;
-
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private String ownerAccount;
 
 	private String dBInstanceId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Long ownerId;
+
+	private String dBInstanceNetRWSplitType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,28 +64,6 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		}
 	}
 
-	public String getDBInstanceNetRWSplitType() {
-		return this.dBInstanceNetRWSplitType;
-	}
-
-	public void setDBInstanceNetRWSplitType(String dBInstanceNetRWSplitType) {
-		this.dBInstanceNetRWSplitType = dBInstanceNetRWSplitType;
-		if(dBInstanceNetRWSplitType != null){
-			putQueryParameter("DBInstanceNetRWSplitType", dBInstanceNetRWSplitType);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -94,17 +72,6 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -119,6 +86,28 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +116,17 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBInstanceNetRWSplitType() {
+		return this.dBInstanceNetRWSplitType;
+	}
+
+	public void setDBInstanceNetRWSplitType(String dBInstanceNetRWSplitType) {
+		this.dBInstanceNetRWSplitType = dBInstanceNetRWSplitType;
+		if(dBInstanceNetRWSplitType != null){
+			putQueryParameter("DBInstanceNetRWSplitType", dBInstanceNetRWSplitType);
 		}
 	}
 

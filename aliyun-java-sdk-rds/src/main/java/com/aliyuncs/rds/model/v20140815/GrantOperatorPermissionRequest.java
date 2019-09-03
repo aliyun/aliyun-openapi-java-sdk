@@ -30,15 +30,15 @@ public class GrantOperatorPermissionRequest extends RpcAcsRequest<GrantOperatorP
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String expiredTime;
-
-	private String dBInstanceId;
-
 	private Long ownerId;
+
+	private String expiredTime;
 
 	public String getPrivileges() {
 		return this.privileges;
@@ -59,6 +59,17 @@ public class GrantOperatorPermissionRequest extends RpcAcsRequest<GrantOperatorP
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -84,28 +95,6 @@ public class GrantOperatorPermissionRequest extends RpcAcsRequest<GrantOperatorP
 		}
 	}
 
-	public String getExpiredTime() {
-		return this.expiredTime;
-	}
-
-	public void setExpiredTime(String expiredTime) {
-		this.expiredTime = expiredTime;
-		if(expiredTime != null){
-			putQueryParameter("ExpiredTime", expiredTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +103,17 @@ public class GrantOperatorPermissionRequest extends RpcAcsRequest<GrantOperatorP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getExpiredTime() {
+		return this.expiredTime;
+	}
+
+	public void setExpiredTime(String expiredTime) {
+		this.expiredTime = expiredTime;
+		if(expiredTime != null){
+			putQueryParameter("ExpiredTime", expiredTime);
 		}
 	}
 

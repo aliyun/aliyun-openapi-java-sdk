@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupDatabaseResponseUnmarshaller {
 
-	public static DescribeBackupDatabaseResponse unmarshall(DescribeBackupDatabaseResponse describeBackupDatabaseResponse, UnmarshallerContext context) {
+	public static DescribeBackupDatabaseResponse unmarshall(DescribeBackupDatabaseResponse describeBackupDatabaseResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupDatabaseResponse.setRequestId(context.stringValue("DescribeBackupDatabaseResponse.RequestId"));
-		describeBackupDatabaseResponse.setDatabaseNames(context.stringValue("DescribeBackupDatabaseResponse.DatabaseNames"));
+		describeBackupDatabaseResponse.setRequestId(_ctx.stringValue("DescribeBackupDatabaseResponse.RequestId"));
+		describeBackupDatabaseResponse.setDatabaseNames(_ctx.stringValue("DescribeBackupDatabaseResponse.DatabaseNames"));
 	 
 	 	return describeBackupDatabaseResponse;
 	}

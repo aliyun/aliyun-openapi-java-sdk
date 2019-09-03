@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateTempDBInstanceResponseUnmarshaller {
 
-	public static CreateTempDBInstanceResponse unmarshall(CreateTempDBInstanceResponse createTempDBInstanceResponse, UnmarshallerContext context) {
+	public static CreateTempDBInstanceResponse unmarshall(CreateTempDBInstanceResponse createTempDBInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createTempDBInstanceResponse.setRequestId(context.stringValue("CreateTempDBInstanceResponse.RequestId"));
-		createTempDBInstanceResponse.setTempDBInstanceId(context.stringValue("CreateTempDBInstanceResponse.TempDBInstanceId"));
+		createTempDBInstanceResponse.setRequestId(_ctx.stringValue("CreateTempDBInstanceResponse.RequestId"));
+		createTempDBInstanceResponse.setTempDBInstanceId(_ctx.stringValue("CreateTempDBInstanceResponse.TempDBInstanceId"));
 	 
 	 	return createTempDBInstanceResponse;
 	}

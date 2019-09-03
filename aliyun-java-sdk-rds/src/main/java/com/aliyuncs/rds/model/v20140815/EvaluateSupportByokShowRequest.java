@@ -30,21 +30,21 @@ public class EvaluateSupportByokShowRequest extends RpcAcsRequest<EvaluateSuppor
 
 	private String nodeType;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private String engineVersion;
-
-	private Long ownerId;
 
 	private String securityToken;
 
 	private String engine;
 
-	private String targetRegionId;
-
 	private String dbInstanceStorageType;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String targetRegionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -68,28 +68,6 @@ public class EvaluateSupportByokShowRequest extends RpcAcsRequest<EvaluateSuppor
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getEngineVersion() {
 		return this.engineVersion;
 	}
@@ -98,17 +76,6 @@ public class EvaluateSupportByokShowRequest extends RpcAcsRequest<EvaluateSuppor
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -153,17 +120,6 @@ public class EvaluateSupportByokShowRequest extends RpcAcsRequest<EvaluateSuppor
 		}
 	}
 
-	public String getTargetRegionId() {
-		return this.targetRegionId;
-	}
-
-	public void setTargetRegionId(String targetRegionId) {
-		this.targetRegionId = targetRegionId;
-		if(targetRegionId != null){
-			putQueryParameter("TargetRegionId", targetRegionId);
-		}
-	}
-
 	public String getDbInstanceStorageType() {
 		return this.dbInstanceStorageType;
 	}
@@ -172,6 +128,50 @@ public class EvaluateSupportByokShowRequest extends RpcAcsRequest<EvaluateSuppor
 		this.dbInstanceStorageType = dbInstanceStorageType;
 		if(dbInstanceStorageType != null){
 			putQueryParameter("DbInstanceStorageType", dbInstanceStorageType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTargetRegionId() {
+		return this.targetRegionId;
+	}
+
+	public void setTargetRegionId(String targetRegionId) {
+		this.targetRegionId = targetRegionId;
+		if(targetRegionId != null){
+			putQueryParameter("TargetRegionId", targetRegionId);
 		}
 	}
 

@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySecurityGroupConfigurationResponseUnmarshaller {
 
-	public static ModifySecurityGroupConfigurationResponse unmarshall(ModifySecurityGroupConfigurationResponse modifySecurityGroupConfigurationResponse, UnmarshallerContext context) {
+	public static ModifySecurityGroupConfigurationResponse unmarshall(ModifySecurityGroupConfigurationResponse modifySecurityGroupConfigurationResponse, UnmarshallerContext _ctx) {
 		
-		modifySecurityGroupConfigurationResponse.setRequestId(context.stringValue("ModifySecurityGroupConfigurationResponse.RequestId"));
-		modifySecurityGroupConfigurationResponse.setDBInstanceName(context.stringValue("ModifySecurityGroupConfigurationResponse.DBInstanceName"));
+		modifySecurityGroupConfigurationResponse.setRequestId(_ctx.stringValue("ModifySecurityGroupConfigurationResponse.RequestId"));
+		modifySecurityGroupConfigurationResponse.setDBInstanceName(_ctx.stringValue("ModifySecurityGroupConfigurationResponse.DBInstanceName"));
 
 		List<EcsSecurityGroupRelation> items = new ArrayList<EcsSecurityGroupRelation>();
-		for (int i = 0; i < context.lengthValue("ModifySecurityGroupConfigurationResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ModifySecurityGroupConfigurationResponse.Items.Length"); i++) {
 			EcsSecurityGroupRelation ecsSecurityGroupRelation = new EcsSecurityGroupRelation();
-			ecsSecurityGroupRelation.setRegionId(context.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].RegionId"));
-			ecsSecurityGroupRelation.setSecurityGroupId(context.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].SecurityGroupId"));
-			ecsSecurityGroupRelation.setNetworkType(context.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].NetworkType"));
+			ecsSecurityGroupRelation.setRegionId(_ctx.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].RegionId"));
+			ecsSecurityGroupRelation.setSecurityGroupId(_ctx.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].SecurityGroupId"));
+			ecsSecurityGroupRelation.setNetworkType(_ctx.stringValue("ModifySecurityGroupConfigurationResponse.Items["+ i +"].NetworkType"));
 
 			items.add(ecsSecurityGroupRelation);
 		}

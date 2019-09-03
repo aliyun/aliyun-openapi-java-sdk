@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMigrateTaskForSQLServerResponseUnmarshaller {
 
-	public static CreateMigrateTaskForSQLServerResponse unmarshall(CreateMigrateTaskForSQLServerResponse createMigrateTaskForSQLServerResponse, UnmarshallerContext context) {
+	public static CreateMigrateTaskForSQLServerResponse unmarshall(CreateMigrateTaskForSQLServerResponse createMigrateTaskForSQLServerResponse, UnmarshallerContext _ctx) {
 		
-		createMigrateTaskForSQLServerResponse.setRequestId(context.stringValue("CreateMigrateTaskForSQLServerResponse.RequestId"));
-		createMigrateTaskForSQLServerResponse.setDBInstanceId(context.stringValue("CreateMigrateTaskForSQLServerResponse.DBInstanceId"));
-		createMigrateTaskForSQLServerResponse.setDBInstanceName(context.stringValue("CreateMigrateTaskForSQLServerResponse.DBInstanceName"));
-		createMigrateTaskForSQLServerResponse.setTaskId(context.stringValue("CreateMigrateTaskForSQLServerResponse.TaskId"));
-		createMigrateTaskForSQLServerResponse.setDBName(context.stringValue("CreateMigrateTaskForSQLServerResponse.DBName"));
-		createMigrateTaskForSQLServerResponse.setMigrateIaskId(context.stringValue("CreateMigrateTaskForSQLServerResponse.MigrateIaskId"));
-		createMigrateTaskForSQLServerResponse.setTaskType(context.stringValue("CreateMigrateTaskForSQLServerResponse.TaskType"));
+		createMigrateTaskForSQLServerResponse.setRequestId(_ctx.stringValue("CreateMigrateTaskForSQLServerResponse.RequestId"));
+		createMigrateTaskForSQLServerResponse.setDBInstanceId(_ctx.stringValue("CreateMigrateTaskForSQLServerResponse.DBInstanceId"));
+		createMigrateTaskForSQLServerResponse.setDBInstanceName(_ctx.stringValue("CreateMigrateTaskForSQLServerResponse.DBInstanceName"));
+		createMigrateTaskForSQLServerResponse.setTaskId(_ctx.stringValue("CreateMigrateTaskForSQLServerResponse.TaskId"));
+		createMigrateTaskForSQLServerResponse.setDBName(_ctx.stringValue("CreateMigrateTaskForSQLServerResponse.DBName"));
+		createMigrateTaskForSQLServerResponse.setMigrateIaskId(_ctx.stringValue("CreateMigrateTaskForSQLServerResponse.MigrateIaskId"));
+		createMigrateTaskForSQLServerResponse.setTaskType(_ctx.stringValue("CreateMigrateTaskForSQLServerResponse.TaskType"));
 	 
 	 	return createMigrateTaskForSQLServerResponse;
 	}

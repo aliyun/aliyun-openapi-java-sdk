@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDBInstanceHAConfigResponseUnmarshaller {
 
-	public static ModifyDBInstanceHAConfigResponse unmarshall(ModifyDBInstanceHAConfigResponse modifyDBInstanceHAConfigResponse, UnmarshallerContext context) {
+	public static ModifyDBInstanceHAConfigResponse unmarshall(ModifyDBInstanceHAConfigResponse modifyDBInstanceHAConfigResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBInstanceHAConfigResponse.setRequestId(context.stringValue("ModifyDBInstanceHAConfigResponse.RequestId"));
+		modifyDBInstanceHAConfigResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceHAConfigResponse.RequestId"));
 	 
 	 	return modifyDBInstanceHAConfigResponse;
 	}

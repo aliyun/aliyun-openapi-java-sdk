@@ -26,34 +26,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSQLReportsResponseUnmarshaller {
 
-	public static DescribeSQLReportsResponse unmarshall(DescribeSQLReportsResponse describeSQLReportsResponse, UnmarshallerContext context) {
+	public static DescribeSQLReportsResponse unmarshall(DescribeSQLReportsResponse describeSQLReportsResponse, UnmarshallerContext _ctx) {
 		
-		describeSQLReportsResponse.setRequestId(context.stringValue("DescribeSQLReportsResponse.RequestId"));
-		describeSQLReportsResponse.setTotalRecordCount(context.integerValue("DescribeSQLReportsResponse.TotalRecordCount"));
-		describeSQLReportsResponse.setPageNumber(context.integerValue("DescribeSQLReportsResponse.PageNumber"));
-		describeSQLReportsResponse.setPageRecordCount(context.integerValue("DescribeSQLReportsResponse.PageRecordCount"));
+		describeSQLReportsResponse.setRequestId(_ctx.stringValue("DescribeSQLReportsResponse.RequestId"));
+		describeSQLReportsResponse.setTotalRecordCount(_ctx.integerValue("DescribeSQLReportsResponse.TotalRecordCount"));
+		describeSQLReportsResponse.setPageNumber(_ctx.integerValue("DescribeSQLReportsResponse.PageNumber"));
+		describeSQLReportsResponse.setPageRecordCount(_ctx.integerValue("DescribeSQLReportsResponse.PageRecordCount"));
 
 		List<Item> items = new ArrayList<Item>();
-		for (int i = 0; i < context.lengthValue("DescribeSQLReportsResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSQLReportsResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setReportTime(context.stringValue("DescribeSQLReportsResponse.Items["+ i +"].ReportTime"));
+			item.setReportTime(_ctx.stringValue("DescribeSQLReportsResponse.Items["+ i +"].ReportTime"));
 
 			List<LatencyTopNItem> latencyTopNItems = new ArrayList<LatencyTopNItem>();
-			for (int j = 0; j < context.lengthValue("DescribeSQLReportsResponse.Items["+ i +"].LatencyTopNItems.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeSQLReportsResponse.Items["+ i +"].LatencyTopNItems.Length"); j++) {
 				LatencyTopNItem latencyTopNItem = new LatencyTopNItem();
-				latencyTopNItem.setSQLText(context.stringValue("DescribeSQLReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText"));
-				latencyTopNItem.setAvgLatency(context.longValue("DescribeSQLReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency"));
-				latencyTopNItem.setSQLExecuteTimes(context.longValue("DescribeSQLReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes"));
+				latencyTopNItem.setSQLText(_ctx.stringValue("DescribeSQLReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText"));
+				latencyTopNItem.setAvgLatency(_ctx.longValue("DescribeSQLReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency"));
+				latencyTopNItem.setSQLExecuteTimes(_ctx.longValue("DescribeSQLReportsResponse.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes"));
 
 				latencyTopNItems.add(latencyTopNItem);
 			}
 			item.setLatencyTopNItems(latencyTopNItems);
 
 			List<QPSTopNItem> qPSTopNItems = new ArrayList<QPSTopNItem>();
-			for (int j = 0; j < context.lengthValue("DescribeSQLReportsResponse.Items["+ i +"].QPSTopNItems.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeSQLReportsResponse.Items["+ i +"].QPSTopNItems.Length"); j++) {
 				QPSTopNItem qPSTopNItem = new QPSTopNItem();
-				qPSTopNItem.setSQLText(context.stringValue("DescribeSQLReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLText"));
-				qPSTopNItem.setSQLExecuteTimes(context.longValue("DescribeSQLReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLExecuteTimes"));
+				qPSTopNItem.setSQLText(_ctx.stringValue("DescribeSQLReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLText"));
+				qPSTopNItem.setSQLExecuteTimes(_ctx.longValue("DescribeSQLReportsResponse.Items["+ i +"].QPSTopNItems["+ j +"].SQLExecuteTimes"));
 
 				qPSTopNItems.add(qPSTopNItem);
 			}

@@ -26,43 +26,23 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		super("Rds", "2014-08-15", "CreateDdrInstance", "rds");
 	}
 
-	private String connectionMode;
-
 	private Long resourceOwnerId;
 
 	private Integer dBInstanceStorage;
 
 	private String systemDBCharset;
 
-	private String sourceDBInstanceName;
-
-	private String clientToken;
-
 	private String engineVersion;
 
 	private String resourceGroupId;
 
-	private String engine;
-
 	private String dBInstanceDescription;
 
-	private String dBInstanceStorageType;
-
-	private String dBInstanceNetType;
-
 	private String period;
-
-	private String restoreTime;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
 
 	private String backupSetId;
 
 	private Long ownerId;
-
-	private String usedTime;
 
 	private String dBInstanceClass;
 
@@ -72,28 +52,37 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 
 	private String privateIpAddress;
 
+	private String zoneId;
+
+	private String instanceNetworkType;
+
+	private String connectionMode;
+
+	private String sourceDBInstanceName;
+
+	private String clientToken;
+
+	private String engine;
+
+	private String dBInstanceStorageType;
+
+	private String dBInstanceNetType;
+
+	private String restoreTime;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String usedTime;
+
 	private String restoreType;
 
 	private String vPCId;
 
-	private String zoneId;
-
 	private String payType;
 
 	private String sourceRegion;
-
-	private String instanceNetworkType;
-
-	public String getConnectionMode() {
-		return this.connectionMode;
-	}
-
-	public void setConnectionMode(String connectionMode) {
-		this.connectionMode = connectionMode;
-		if(connectionMode != null){
-			putQueryParameter("ConnectionMode", connectionMode);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -128,28 +117,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		}
 	}
 
-	public String getSourceDBInstanceName() {
-		return this.sourceDBInstanceName;
-	}
-
-	public void setSourceDBInstanceName(String sourceDBInstanceName) {
-		this.sourceDBInstanceName = sourceDBInstanceName;
-		if(sourceDBInstanceName != null){
-			putQueryParameter("SourceDBInstanceName", sourceDBInstanceName);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getEngineVersion() {
 		return this.engineVersion;
 	}
@@ -172,17 +139,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		}
 	}
 
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
-		}
-	}
-
 	public String getDBInstanceDescription() {
 		return this.dBInstanceDescription;
 	}
@@ -194,28 +150,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		}
 	}
 
-	public String getDBInstanceStorageType() {
-		return this.dBInstanceStorageType;
-	}
-
-	public void setDBInstanceStorageType(String dBInstanceStorageType) {
-		this.dBInstanceStorageType = dBInstanceStorageType;
-		if(dBInstanceStorageType != null){
-			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
-		}
-	}
-
-	public String getDBInstanceNetType() {
-		return this.dBInstanceNetType;
-	}
-
-	public void setDBInstanceNetType(String dBInstanceNetType) {
-		this.dBInstanceNetType = dBInstanceNetType;
-		if(dBInstanceNetType != null){
-			putQueryParameter("DBInstanceNetType", dBInstanceNetType);
-		}
-	}
-
 	public String getPeriod() {
 		return this.period;
 	}
@@ -224,39 +158,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -279,17 +180,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getUsedTime() {
-		return this.usedTime;
-	}
-
-	public void setUsedTime(String usedTime) {
-		this.usedTime = usedTime;
-		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime);
 		}
 	}
 
@@ -337,6 +227,138 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		}
 	}
 
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getInstanceNetworkType() {
+		return this.instanceNetworkType;
+	}
+
+	public void setInstanceNetworkType(String instanceNetworkType) {
+		this.instanceNetworkType = instanceNetworkType;
+		if(instanceNetworkType != null){
+			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getConnectionMode() {
+		return this.connectionMode;
+	}
+
+	public void setConnectionMode(String connectionMode) {
+		this.connectionMode = connectionMode;
+		if(connectionMode != null){
+			putQueryParameter("ConnectionMode", connectionMode);
+		}
+	}
+
+	public String getSourceDBInstanceName() {
+		return this.sourceDBInstanceName;
+	}
+
+	public void setSourceDBInstanceName(String sourceDBInstanceName) {
+		this.sourceDBInstanceName = sourceDBInstanceName;
+		if(sourceDBInstanceName != null){
+			putQueryParameter("SourceDBInstanceName", sourceDBInstanceName);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getDBInstanceStorageType() {
+		return this.dBInstanceStorageType;
+	}
+
+	public void setDBInstanceStorageType(String dBInstanceStorageType) {
+		this.dBInstanceStorageType = dBInstanceStorageType;
+		if(dBInstanceStorageType != null){
+			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
+		}
+	}
+
+	public String getDBInstanceNetType() {
+		return this.dBInstanceNetType;
+	}
+
+	public void setDBInstanceNetType(String dBInstanceNetType) {
+		this.dBInstanceNetType = dBInstanceNetType;
+		if(dBInstanceNetType != null){
+			putQueryParameter("DBInstanceNetType", dBInstanceNetType);
+		}
+	}
+
+	public String getRestoreTime() {
+		return this.restoreTime;
+	}
+
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getUsedTime() {
+		return this.usedTime;
+	}
+
+	public void setUsedTime(String usedTime) {
+		this.usedTime = usedTime;
+		if(usedTime != null){
+			putQueryParameter("UsedTime", usedTime);
+		}
+	}
+
 	public String getRestoreType() {
 		return this.restoreType;
 	}
@@ -359,17 +381,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	public String getPayType() {
 		return this.payType;
 	}
@@ -389,17 +400,6 @@ public class CreateDdrInstanceRequest extends RpcAcsRequest<CreateDdrInstanceRes
 		this.sourceRegion = sourceRegion;
 		if(sourceRegion != null){
 			putQueryParameter("SourceRegion", sourceRegion);
-		}
-	}
-
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
 		}
 	}
 

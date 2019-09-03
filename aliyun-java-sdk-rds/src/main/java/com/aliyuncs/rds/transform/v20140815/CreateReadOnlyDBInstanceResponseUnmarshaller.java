@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateReadOnlyDBInstanceResponseUnmarshaller {
 
-	public static CreateReadOnlyDBInstanceResponse unmarshall(CreateReadOnlyDBInstanceResponse createReadOnlyDBInstanceResponse, UnmarshallerContext context) {
+	public static CreateReadOnlyDBInstanceResponse unmarshall(CreateReadOnlyDBInstanceResponse createReadOnlyDBInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createReadOnlyDBInstanceResponse.setRequestId(context.stringValue("CreateReadOnlyDBInstanceResponse.RequestId"));
-		createReadOnlyDBInstanceResponse.setDBInstanceId(context.stringValue("CreateReadOnlyDBInstanceResponse.DBInstanceId"));
-		createReadOnlyDBInstanceResponse.setOrderId(context.stringValue("CreateReadOnlyDBInstanceResponse.OrderId"));
-		createReadOnlyDBInstanceResponse.setConnectionString(context.stringValue("CreateReadOnlyDBInstanceResponse.ConnectionString"));
-		createReadOnlyDBInstanceResponse.setPort(context.stringValue("CreateReadOnlyDBInstanceResponse.Port"));
+		createReadOnlyDBInstanceResponse.setRequestId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.RequestId"));
+		createReadOnlyDBInstanceResponse.setDBInstanceId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.DBInstanceId"));
+		createReadOnlyDBInstanceResponse.setOrderId(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.OrderId"));
+		createReadOnlyDBInstanceResponse.setConnectionString(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.ConnectionString"));
+		createReadOnlyDBInstanceResponse.setPort(_ctx.stringValue("CreateReadOnlyDBInstanceResponse.Port"));
 	 
 	 	return createReadOnlyDBInstanceResponse;
 	}

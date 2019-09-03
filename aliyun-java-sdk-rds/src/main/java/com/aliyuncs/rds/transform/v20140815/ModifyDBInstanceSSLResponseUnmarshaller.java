@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDBInstanceSSLResponseUnmarshaller {
 
-	public static ModifyDBInstanceSSLResponse unmarshall(ModifyDBInstanceSSLResponse modifyDBInstanceSSLResponse, UnmarshallerContext context) {
+	public static ModifyDBInstanceSSLResponse unmarshall(ModifyDBInstanceSSLResponse modifyDBInstanceSSLResponse, UnmarshallerContext _ctx) {
 		
-		modifyDBInstanceSSLResponse.setRequestId(context.stringValue("ModifyDBInstanceSSLResponse.RequestId"));
+		modifyDBInstanceSSLResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceSSLResponse.RequestId"));
 	 
 	 	return modifyDBInstanceSSLResponse;
 	}
