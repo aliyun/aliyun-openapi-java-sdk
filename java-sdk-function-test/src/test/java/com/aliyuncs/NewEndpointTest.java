@@ -114,8 +114,7 @@ public class NewEndpointTest extends BaseTest {
             myClient.getAcsResponse(request);
             Assert.fail();
         } catch (ClientException e) {
-            Assert.assertEquals(ErrorCodeConstant.SDK_ENDPOINT_RESOLVING_ERROR, e.getErrCode());
-            Assert.assertEquals("No such region 'cn-ningbo'. Please check your region ID.", e.getErrMsg());
+            Assert.assertTrue(e.getErrMsg().contains("Server unreachable: connection"));
         }
 
         DefaultProfile.addEndpoint("cn-ningbo", // which does not exist at all
