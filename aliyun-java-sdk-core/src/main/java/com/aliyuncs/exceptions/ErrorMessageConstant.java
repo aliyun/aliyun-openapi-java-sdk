@@ -23,7 +23,7 @@ public class ErrorMessageConstant {
 
     public static final String SDK_ENDPOINT_MANAGEMENT_DOC_HTML =
             "https://www.alibabacloud.com/help/zh/doc-detail/92049.htm";
-
+            
     public static final String INVALID_REGION_ID =
             "No such region '%s'. Please check your region ID.";
     public static final String ENDPOINT_NO_REGION =

@@ -9,3 +9,4 @@
 */*.iml
 .DS_Store
 */lib/
+.factorypath
