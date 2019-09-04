@@ -25,7 +25,7 @@ import com.aliyuncs.market.Endpoint;
 public class CreateCommodityRequest extends RpcAcsRequest<CreateCommodityResponse> {
 	
 	public CreateCommodityRequest() {
-		super("Market", "2015-11-01", "CreateCommodity");
+		super("Market", "2015-11-01", "CreateCommodity", "Market");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

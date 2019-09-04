@@ -1,3 +1,6 @@
+2019-09-04 Version: 2.0.23
+- Generated 2015-11-01 for `Market`.
+
 2019-08-28 Version: 2.0.17
 - Add rate OpenAPI.
 

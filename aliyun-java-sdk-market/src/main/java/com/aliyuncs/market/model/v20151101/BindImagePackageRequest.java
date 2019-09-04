@@ -24,7 +24,7 @@ import com.aliyuncs.market.Endpoint;
 public class BindImagePackageRequest extends RpcAcsRequest<BindImagePackageResponse> {
 	
 	public BindImagePackageRequest() {
-		super("Market", "2015-11-01", "BindImagePackage");
+		super("Market", "2015-11-01", "BindImagePackage", "Market");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

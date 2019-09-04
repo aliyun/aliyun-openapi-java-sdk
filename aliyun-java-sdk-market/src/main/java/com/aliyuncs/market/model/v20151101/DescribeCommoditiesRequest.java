@@ -24,7 +24,7 @@ import com.aliyuncs.market.Endpoint;
 public class DescribeCommoditiesRequest extends RpcAcsRequest<DescribeCommoditiesResponse> {
 	
 	public DescribeCommoditiesRequest() {
-		super("Market", "2015-11-01", "DescribeCommodities");
+		super("Market", "2015-11-01", "DescribeCommodities", "Market");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -198,7 +198,7 @@ public class DescribeCommoditiesRequest extends RpcAcsRequest<DescribeCommoditie
 	public void setProperties(String properties) {
 		this.properties = properties;
 		if(properties != null){
-			putBodyParameter("Properties", properties);
+			putQueryParameter("Properties", properties);
 		}
 	}
 

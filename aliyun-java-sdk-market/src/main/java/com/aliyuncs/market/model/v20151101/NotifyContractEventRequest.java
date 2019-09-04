@@ -24,7 +24,7 @@ import com.aliyuncs.market.Endpoint;
 public class NotifyContractEventRequest extends RpcAcsRequest<NotifyContractEventResponse> {
 	
 	public NotifyContractEventRequest() {
-		super("Market", "2015-11-01", "NotifyContractEvent");
+		super("Market", "2015-11-01", "NotifyContractEvent", "Market");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

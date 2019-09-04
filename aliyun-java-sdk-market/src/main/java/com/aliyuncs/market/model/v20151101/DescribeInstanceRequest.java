@@ -24,29 +24,18 @@ import com.aliyuncs.market.Endpoint;
 public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceResponse> {
 	
 	public DescribeInstanceRequest() {
-		super("Market", "2015-11-01", "DescribeInstance");
+		super("Market", "2015-11-01", "DescribeInstance", "Market");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String instanceId;
-
 	private Long ownerId;
 
+	private String instanceId;
+
 	private String orderType;
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -56,6 +45,17 @@ public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

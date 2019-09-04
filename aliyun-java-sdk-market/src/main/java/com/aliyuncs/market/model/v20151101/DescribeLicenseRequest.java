@@ -24,7 +24,7 @@ import com.aliyuncs.market.Endpoint;
 public class DescribeLicenseRequest extends RpcAcsRequest<DescribeLicenseResponse> {
 	
 	public DescribeLicenseRequest() {
-		super("Market", "2015-11-01", "DescribeLicense");
+		super("Market", "2015-11-01", "DescribeLicense", "Market");
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
