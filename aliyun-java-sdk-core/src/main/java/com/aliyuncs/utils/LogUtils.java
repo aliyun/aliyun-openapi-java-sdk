@@ -143,7 +143,7 @@ public class LogUtils {
         private String startTime;
         private String time;
         private String error;
-
+        
         public LogUnit(HttpRequest httpRequest, HttpResponse httpResponse) {
             this.httpRequest = httpRequest;
             this.httpResponse = httpResponse;
