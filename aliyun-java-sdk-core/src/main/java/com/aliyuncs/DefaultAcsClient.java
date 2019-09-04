@@ -292,7 +292,7 @@ public class DefaultAcsClient implements IAcsClient {
                 return response;
             } catch (SocketTimeoutException exp) {
                 errorMessage = exp.getMessage();
-                throw new ClientException("SDK.ReadTimeOut",
+                throw new ClientException("SDK.ReadTimeout",
                         "SocketTimeoutException has occurred on a socket read or accept.The url is " +
                                 request.getSysUrl(), exp);
             } catch (IOException exp) {
