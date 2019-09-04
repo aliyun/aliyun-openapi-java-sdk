@@ -485,7 +485,7 @@ public class DefaultAcsClientTest {
         Mockito.doThrow(new SocketTimeoutException()).when(getHttpClient(client)).syncInvoke((HttpRequest) isNull());
         Mockito.doReturn("test").when(request).getSysUrl();
         thrown.expect(ClientException.class);
-        thrown.expectMessage("SDK.ServerUnreachable : " +
+        thrown.expectMessage("SDK.ReadTimeout : " +
                 "SocketTimeoutException has occurred on a socket read or accept.The url is test");
         client.doAction(request);
     }
