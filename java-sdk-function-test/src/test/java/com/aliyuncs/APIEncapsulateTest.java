@@ -1,9 +1,5 @@
 package com.aliyuncs;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
-
 import com.aliyuncs.ccc.model.v20170705.CommitContactFlowVersionModificationRequest;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailRequest;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailResponse;
@@ -23,6 +19,9 @@ import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListsRequest;
 import com.aliyuncs.slb.model.v20140515.DescribeAccessControlListsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeAccessPointsRequest;
 import com.aliyuncs.vpc.model.v20160428.DescribeAccessPointsResponse;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class APIEncapsulateTest extends BaseTest {
 

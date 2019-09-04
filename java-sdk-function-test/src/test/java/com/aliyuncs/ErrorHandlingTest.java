@@ -4,9 +4,7 @@ import com.aliyuncs.airec.model.v20181012.PushDocumentRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.green.model.v20180509.TextScanRequest;
 import com.aliyuncs.http.FormatType;
-import com.aliyuncs.http.HttpClientConfig;
 import com.aliyuncs.http.HttpResponse;
-import com.aliyuncs.http.clients.ApacheHttpClient;
 import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
@@ -43,7 +41,7 @@ public class ErrorHandlingTest extends BaseTest {
             this.getReadTimeoutClientWithRegionId(regionId,1L).getCommonResponse(request);
             Assert.fail();
         } catch (ClientException e) {
-            Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
+            Assert.assertEquals("SDK.ReadTimeout", e.getErrCode());
             Assert.assertTrue( e.getErrMsg().contains("SocketTimeoutException has occurred on a socket read or accept."));
         }
     }

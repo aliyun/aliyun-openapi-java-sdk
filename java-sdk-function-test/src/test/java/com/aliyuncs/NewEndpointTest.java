@@ -1,29 +1,12 @@
 package com.aliyuncs;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
-
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisRequest;
 import com.aliyuncs.cloudapi.model.v20160714.DescribeApisResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesRequest;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeRegionsRequest;
 import com.aliyuncs.ecs.model.v20140526.DescribeRegionsResponse;
-import com.aliyuncs.endpoint.ChainedEndpointResolver;
-import com.aliyuncs.endpoint.DefaultEndpointResolver;
-import com.aliyuncs.endpoint.EndpointResolver;
-import com.aliyuncs.endpoint.EndpointResolverBase;
-import com.aliyuncs.endpoint.InternalLocationServiceEndpointResolver;
-import com.aliyuncs.endpoint.LocalConfigGlobalEndpointResolver;
-import com.aliyuncs.endpoint.LocalConfigRegionalEndpointResolver;
-import com.aliyuncs.endpoint.LocationServiceEndpointResolver;
-import com.aliyuncs.endpoint.ResolveEndpointRequest;
-import com.aliyuncs.endpoint.UserCustomizedEndpointResolver;
-import com.aliyuncs.endpoint.UserVpcEndpointResolver;
+import com.aliyuncs.endpoint.*;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.exceptions.ErrorCodeConstant;
 import com.aliyuncs.profile.DefaultProfile;
@@ -31,8 +14,14 @@ import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysRequest;
 import com.aliyuncs.ram.model.v20150501.ListAccessKeysResponse;
 import com.aliyuncs.ros.model.v20150901.DescribeResourcesRequest;
-
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NewEndpointTest extends BaseTest {
     private EndpointResolver endpointResolver;
@@ -42,7 +31,7 @@ public class NewEndpointTest extends BaseTest {
     private LocationServiceEndpointResolver locationServiceEndpointResolver;
 
     public void initEnv(String testLocalConfig, DefaultAcsClient client, boolean isUsingVpcEndpoint,
-            boolean isUsingInternalLocationService) {
+                        boolean isUsingInternalLocationService) {
         List<EndpointResolverBase> resolverChain = new ArrayList<EndpointResolverBase>();
 
         userCustomizedEndpointResolver = new UserCustomizedEndpointResolver();
@@ -439,7 +428,7 @@ public class NewEndpointTest extends BaseTest {
             Assert.assertEquals("SDK.ServerUnreachable", e.getErrCode());
             Assert.assertTrue(e.getErrMsg().contains("Server unreachable: connection"));
             Assert.assertTrue(e.getErrMsg().contains("failed"));
-            }
+        }
 
         request.setSysEndpoint("request.set.error.endpoint");
         userCustomizedEndpointResolver.putEndpointEntry("cn-hangzhou", "ecs", "add.point");
