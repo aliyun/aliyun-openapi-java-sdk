@@ -1,13 +1,12 @@
 package com.aliyuncs;
 
-import java.io.IOException;
-
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.http.clients.ApacheHttpClient;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.http.clients.ApacheHttpClient;
+import java.io.IOException;
 
 public class TimeoutTest extends BaseTest {
     @Rule
@@ -22,7 +21,7 @@ public class TimeoutTest extends BaseTest {
         this.client.getCommonResponse(request);
         ApacheHttpClient.getInstance().close();
         thrown.expect(ClientException.class);
-        thrown.expectMessage("SDK.ServerUnreachable : SocketTimeoutException has occurred on a socket read or accept.");
+        thrown.expectMessage("SDK.ReadTimeout : SocketTimeoutException has occurred on a socket read or accept.");
         this.getReadTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
         request.setSysReadTimeout(10000);
         this.getReadTimeoutClientWithRegionId(regionId, 1L).getCommonResponse(request);
@@ -53,7 +52,7 @@ public class TimeoutTest extends BaseTest {
         this.getCompatibleUrlConnClient(regionId).getCommonResponse(request);
 
         thrown.expect(ClientException.class);
-        thrown.expectMessage("SDK.ServerUnreachable : SocketTimeoutException has occurred on a socket read or accept.");
+        thrown.expectMessage("SDK.ReadTimeout : SocketTimeoutException has occurred on a socket read or accept.");
         this.getReadTimeoutCompatibleUrlConnClient(regionId, 1L).getCommonResponse(request);
 
         request.setSysReadTimeout(10000);
@@ -69,7 +68,7 @@ public class TimeoutTest extends BaseTest {
         this.getCompatibleUrlConnClient(regionId).getCommonResponse(request);
 
         thrown.expect(ClientException.class);
-        thrown.expectMessage("SDK.ServerUnreachable : SocketTimeoutException has occurred on a socket read or accept.");
+        thrown.expectMessage("SDK.ReadTimeout : SocketTimeoutException has occurred on a socket read or accept.");
         request.setSysDomain("rds.aliyuncs.com");
         request.setSysVersion("2014-08-15");
         request.setSysAction("DescribeRegions");

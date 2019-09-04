@@ -4,7 +4,6 @@ import com.aliyuncs.ecs.model.v20140526.DescribeRegionsRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.regions.ProductDomain;
-
 import org.junit.Assert;
 import org.junit.Test;
 
