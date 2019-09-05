@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class ResetAccountRequest extends RpcAcsRequest<ResetAccountResponse> {
 	
 	public ResetAccountRequest() {
 		super("polardb", "2017-08-01", "ResetAccount", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -32,8 +34,6 @@ public class ResetAccountRequest extends RpcAcsRequest<ResetAccountResponse> {
 	}
 
 	private Long resourceOwnerId;
-
-	private String accountPassword;
 
 	private String accountName;
 
@@ -45,6 +45,8 @@ public class ResetAccountRequest extends RpcAcsRequest<ResetAccountResponse> {
 
 	private Long ownerId;
 
+	private String accountPassword;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -53,17 +55,6 @@ public class ResetAccountRequest extends RpcAcsRequest<ResetAccountResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getAccountPassword() {
-		return this.accountPassword;
-	}
-
-	public void setAccountPassword(String accountPassword) {
-		this.accountPassword = accountPassword;
-		if(accountPassword != null){
-			putQueryParameter("AccountPassword", accountPassword);
 		}
 	}
 
@@ -119,6 +110,17 @@ public class ResetAccountRequest extends RpcAcsRequest<ResetAccountResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getAccountPassword() {
+		return this.accountPassword;
+	}
+
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+		if(accountPassword != null){
+			putQueryParameter("AccountPassword", accountPassword);
 		}
 	}
 

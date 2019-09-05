@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 	
 	public CreateDBClusterEndpointRequest() {
 		super("polardb", "2017-08-01", "CreateDBClusterEndpoint", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,9 +37,13 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String readWriteMode;
+
+	private String endpointType;
+
+	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
@@ -48,10 +54,6 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 	private Long ownerId;
 
 	private String nodes;
-
-	private String readWriteMode;
-
-	private String endpointType;
 
 	public String getAutoAddNewNodes() {
 		return this.autoAddNewNodes;
@@ -75,17 +77,6 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -94,6 +85,58 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getReadWriteMode() {
+		return this.readWriteMode;
+	}
+
+	public void setReadWriteMode(String readWriteMode) {
+		this.readWriteMode = readWriteMode;
+		if(readWriteMode != null){
+			putQueryParameter("ReadWriteMode", readWriteMode);
+		}
+	}
+
+	public String getBizEndpointType() {
+		return this.endpointType;
+	}
+
+	public void setBizEndpointType(String endpointType) {
+		this.endpointType = endpointType;
+		if(endpointType != null){
+			putQueryParameter("EndpointType", endpointType);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizEndpointType instead of this.
+	 */
+	@Deprecated
+	public String getEndpointType() {
+		return this.endpointType;
+	}
+
+	/**
+	 * @deprecated use setBizEndpointType instead of this.
+	 */
+	@Deprecated
+	public void setEndpointType(String endpointType) {
+		this.endpointType = endpointType;
+		if(endpointType != null){
+			putQueryParameter("EndpointType", endpointType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -149,47 +192,6 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		this.nodes = nodes;
 		if(nodes != null){
 			putQueryParameter("Nodes", nodes);
-		}
-	}
-
-	public String getReadWriteMode() {
-		return this.readWriteMode;
-	}
-
-	public void setReadWriteMode(String readWriteMode) {
-		this.readWriteMode = readWriteMode;
-		if(readWriteMode != null){
-			putQueryParameter("ReadWriteMode", readWriteMode);
-		}
-	}
-
-	public String getBizEndpointType() {
-		return this.endpointType;
-	}
-
-	public void setBizEndpointType(String endpointType) {
-		this.endpointType = endpointType;
-		if(endpointType != null){
-			putQueryParameter("EndpointType", endpointType);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizEndpointType instead of this.
-	 */
-	@Deprecated
-	public String getEndpointType() {
-		return this.endpointType;
-	}
-
-	/**
-	 * @deprecated use setBizEndpointType instead of this.
-	 */
-	@Deprecated
-	public void setEndpointType(String endpointType) {
-		this.endpointType = endpointType;
-		if(endpointType != null){
-			putQueryParameter("EndpointType", endpointType);
 		}
 	}
 

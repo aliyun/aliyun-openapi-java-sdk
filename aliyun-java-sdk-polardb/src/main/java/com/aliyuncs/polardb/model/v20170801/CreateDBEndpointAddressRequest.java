@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 	
 	public CreateDBEndpointAddressRequest() {
 		super("polardb", "2017-08-01", "CreateDBEndpointAddress", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,17 +37,17 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 
 	private String connectionStringPrefix;
 
+	private String dBEndpointId;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
 	private String ownerAccount;
 
-	private String netType;
-
-	private String dBEndpointId;
-
 	private Long ownerId;
+
+	private String netType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,6 +68,17 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
+	}
+
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
 		}
 	}
 
@@ -102,28 +115,6 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 		}
 	}
 
-	public String getNetType() {
-		return this.netType;
-	}
-
-	public void setNetType(String netType) {
-		this.netType = netType;
-		if(netType != null){
-			putQueryParameter("NetType", netType);
-		}
-	}
-
-	public String getDBEndpointId() {
-		return this.dBEndpointId;
-	}
-
-	public void setDBEndpointId(String dBEndpointId) {
-		this.dBEndpointId = dBEndpointId;
-		if(dBEndpointId != null){
-			putQueryParameter("DBEndpointId", dBEndpointId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,6 +123,17 @@ public class CreateDBEndpointAddressRequest extends RpcAcsRequest<CreateDBEndpoi
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putQueryParameter("NetType", netType);
 		}
 	}
 

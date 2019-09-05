@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 	
 	public RevokeAccountPrivilegeRequest() {
 		super("polardb", "2017-08-01", "RevokeAccountPrivilege", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,8 +37,6 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 
 	private String accountName;
 
-	private String dBName;
-
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -44,6 +44,8 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String dBName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,17 +66,6 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
 		}
 	}
 
@@ -119,6 +110,17 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 

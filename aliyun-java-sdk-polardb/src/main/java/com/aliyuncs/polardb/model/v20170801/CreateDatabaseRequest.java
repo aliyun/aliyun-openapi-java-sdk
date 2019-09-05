@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 	
 	public CreateDatabaseRequest() {
 		super("polardb", "2017-08-01", "CreateDatabase", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,9 +35,11 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 
 	private Long resourceOwnerId;
 
-	private String dBName;
+	private String accountPrivilege;
 
 	private String accountName;
+
+	private String dBDescription;
 
 	private String resourceOwnerAccount;
 
@@ -43,13 +47,11 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 
 	private String ownerAccount;
 
-	private String dBDescription;
-
 	private Long ownerId;
 
-	private String characterSetName;
+	private String dBName;
 
-	private String accountPrivilege;
+	private String characterSetName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,14 +64,14 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getAccountPrivilege() {
+		return this.accountPrivilege;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setAccountPrivilege(String accountPrivilege) {
+		this.accountPrivilege = accountPrivilege;
+		if(accountPrivilege != null){
+			putQueryParameter("AccountPrivilege", accountPrivilege);
 		}
 	}
 
@@ -81,6 +83,17 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
+		}
+	}
+
+	public String getDBDescription() {
+		return this.dBDescription;
+	}
+
+	public void setDBDescription(String dBDescription) {
+		this.dBDescription = dBDescription;
+		if(dBDescription != null){
+			putQueryParameter("DBDescription", dBDescription);
 		}
 	}
 
@@ -117,17 +130,6 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 		}
 	}
 
-	public String getDBDescription() {
-		return this.dBDescription;
-	}
-
-	public void setDBDescription(String dBDescription) {
-		this.dBDescription = dBDescription;
-		if(dBDescription != null){
-			putQueryParameter("DBDescription", dBDescription);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -139,6 +141,17 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 		}
 	}
 
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
+		}
+	}
+
 	public String getCharacterSetName() {
 		return this.characterSetName;
 	}
@@ -147,17 +160,6 @@ public class CreateDatabaseRequest extends RpcAcsRequest<CreateDatabaseResponse>
 		this.characterSetName = characterSetName;
 		if(characterSetName != null){
 			putQueryParameter("CharacterSetName", characterSetName);
-		}
-	}
-
-	public String getAccountPrivilege() {
-		return this.accountPrivilege;
-	}
-
-	public void setAccountPrivilege(String accountPrivilege) {
-		this.accountPrivilege = accountPrivilege;
-		if(accountPrivilege != null){
-			putQueryParameter("AccountPrivilege", accountPrivilege);
 		}
 	}
 

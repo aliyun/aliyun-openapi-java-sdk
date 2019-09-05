@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 	
 	public ModifyDBClusterAccessWhitelistRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterAccessWhitelist", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,19 +35,19 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 
 	private Long resourceOwnerId;
 
+	private String securityIps;
+
+	private String dBClusterIPArrayAttribute;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
 	private String ownerAccount;
 
-	private String securityIps;
-
-	private String dBClusterIPArrayName;
-
 	private Long ownerId;
 
-	private String dBClusterIPArrayAttribute;
+	private String dBClusterIPArrayName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,6 +57,28 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecurityIps() {
+		return this.securityIps;
+	}
+
+	public void setSecurityIps(String securityIps) {
+		this.securityIps = securityIps;
+		if(securityIps != null){
+			putQueryParameter("SecurityIps", securityIps);
+		}
+	}
+
+	public String getDBClusterIPArrayAttribute() {
+		return this.dBClusterIPArrayAttribute;
+	}
+
+	public void setDBClusterIPArrayAttribute(String dBClusterIPArrayAttribute) {
+		this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
+		if(dBClusterIPArrayAttribute != null){
+			putQueryParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
 		}
 	}
 
@@ -91,28 +115,6 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 		}
 	}
 
-	public String getSecurityIps() {
-		return this.securityIps;
-	}
-
-	public void setSecurityIps(String securityIps) {
-		this.securityIps = securityIps;
-		if(securityIps != null){
-			putQueryParameter("SecurityIps", securityIps);
-		}
-	}
-
-	public String getDBClusterIPArrayName() {
-		return this.dBClusterIPArrayName;
-	}
-
-	public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
-		this.dBClusterIPArrayName = dBClusterIPArrayName;
-		if(dBClusterIPArrayName != null){
-			putQueryParameter("DBClusterIPArrayName", dBClusterIPArrayName);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -124,14 +126,14 @@ public class ModifyDBClusterAccessWhitelistRequest extends RpcAcsRequest<ModifyD
 		}
 	}
 
-	public String getDBClusterIPArrayAttribute() {
-		return this.dBClusterIPArrayAttribute;
+	public String getDBClusterIPArrayName() {
+		return this.dBClusterIPArrayName;
 	}
 
-	public void setDBClusterIPArrayAttribute(String dBClusterIPArrayAttribute) {
-		this.dBClusterIPArrayAttribute = dBClusterIPArrayAttribute;
-		if(dBClusterIPArrayAttribute != null){
-			putQueryParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
+	public void setDBClusterIPArrayName(String dBClusterIPArrayName) {
+		this.dBClusterIPArrayName = dBClusterIPArrayName;
+		if(dBClusterIPArrayName != null){
+			putQueryParameter("DBClusterIPArrayName", dBClusterIPArrayName);
 		}
 	}
 

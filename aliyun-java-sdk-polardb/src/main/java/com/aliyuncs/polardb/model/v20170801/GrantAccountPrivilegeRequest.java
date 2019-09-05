@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 	
 	public GrantAccountPrivilegeRequest() {
 		super("polardb", "2017-08-01", "GrantAccountPrivilege", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,9 +35,9 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 
 	private Long resourceOwnerId;
 
-	private String accountName;
+	private String accountPrivilege;
 
-	private String dBName;
+	private String accountName;
 
 	private String resourceOwnerAccount;
 
@@ -45,7 +47,7 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 
 	private Long ownerId;
 
-	private String accountPrivilege;
+	private String dBName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,6 +60,17 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 		}
 	}
 
+	public String getAccountPrivilege() {
+		return this.accountPrivilege;
+	}
+
+	public void setAccountPrivilege(String accountPrivilege) {
+		this.accountPrivilege = accountPrivilege;
+		if(accountPrivilege != null){
+			putQueryParameter("AccountPrivilege", accountPrivilege);
+		}
+	}
+
 	public String getAccountName() {
 		return this.accountName;
 	}
@@ -66,17 +79,6 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 		this.accountName = accountName;
 		if(accountName != null){
 			putQueryParameter("AccountName", accountName);
-		}
-	}
-
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
 		}
 	}
 
@@ -124,14 +126,14 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 		}
 	}
 
-	public String getAccountPrivilege() {
-		return this.accountPrivilege;
+	public String getDBName() {
+		return this.dBName;
 	}
 
-	public void setAccountPrivilege(String accountPrivilege) {
-		this.accountPrivilege = accountPrivilege;
-		if(accountPrivilege != null){
-			putQueryParameter("AccountPrivilege", accountPrivilege);
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 

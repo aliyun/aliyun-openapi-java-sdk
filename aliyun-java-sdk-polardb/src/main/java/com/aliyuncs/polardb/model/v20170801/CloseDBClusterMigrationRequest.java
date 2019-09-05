@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class CloseDBClusterMigrationRequest extends RpcAcsRequest<CloseDBCluster
 	
 	public CloseDBClusterMigrationRequest() {
 		super("polardb", "2017-08-01", "CloseDBClusterMigration", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -32,8 +34,6 @@ public class CloseDBClusterMigrationRequest extends RpcAcsRequest<CloseDBCluster
 	}
 
 	private Long resourceOwnerId;
-
-	private Boolean continueEnableBinlog;
 
 	private String securityToken;
 
@@ -45,6 +45,8 @@ public class CloseDBClusterMigrationRequest extends RpcAcsRequest<CloseDBCluster
 
 	private Long ownerId;
 
+	private Boolean continueEnableBinlog;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -53,17 +55,6 @@ public class CloseDBClusterMigrationRequest extends RpcAcsRequest<CloseDBCluster
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Boolean getContinueEnableBinlog() {
-		return this.continueEnableBinlog;
-	}
-
-	public void setContinueEnableBinlog(Boolean continueEnableBinlog) {
-		this.continueEnableBinlog = continueEnableBinlog;
-		if(continueEnableBinlog != null){
-			putQueryParameter("ContinueEnableBinlog", continueEnableBinlog.toString());
 		}
 	}
 
@@ -138,6 +129,17 @@ public class CloseDBClusterMigrationRequest extends RpcAcsRequest<CloseDBCluster
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getContinueEnableBinlog() {
+		return this.continueEnableBinlog;
+	}
+
+	public void setContinueEnableBinlog(Boolean continueEnableBinlog) {
+		this.continueEnableBinlog = continueEnableBinlog;
+		if(continueEnableBinlog != null){
+			putQueryParameter("ContinueEnableBinlog", continueEnableBinlog.toString());
 		}
 	}
 

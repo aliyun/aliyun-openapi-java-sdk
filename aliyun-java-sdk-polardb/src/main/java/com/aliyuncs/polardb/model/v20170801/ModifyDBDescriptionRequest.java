@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptio
 	
 	public ModifyDBDescriptionRequest() {
 		super("polardb", "2017-08-01", "ModifyDBDescription", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,7 +35,7 @@ public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptio
 
 	private Long resourceOwnerId;
 
-	private String dBName;
+	private String dBDescription;
 
 	private String resourceOwnerAccount;
 
@@ -41,9 +43,9 @@ public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptio
 
 	private String ownerAccount;
 
-	private String dBDescription;
-
 	private Long ownerId;
+
+	private String dBName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,14 +58,14 @@ public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptio
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
+	public String getDBDescription() {
+		return this.dBDescription;
 	}
 
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
+	public void setDBDescription(String dBDescription) {
+		this.dBDescription = dBDescription;
+		if(dBDescription != null){
+			putQueryParameter("DBDescription", dBDescription);
 		}
 	}
 
@@ -100,17 +102,6 @@ public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptio
 		}
 	}
 
-	public String getDBDescription() {
-		return this.dBDescription;
-	}
-
-	public void setDBDescription(String dBDescription) {
-		this.dBDescription = dBDescription;
-		if(dBDescription != null){
-			putQueryParameter("DBDescription", dBDescription);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,6 +110,17 @@ public class ModifyDBDescriptionRequest extends RpcAcsRequest<ModifyDBDescriptio
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBName() {
+		return this.dBName;
+	}
+
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 

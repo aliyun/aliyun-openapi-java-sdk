@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,15 +26,16 @@ public class ModifyDBClusterMaintainTimeRequest extends RpcAcsRequest<ModifyDBCl
 	
 	public ModifyDBClusterMaintainTimeRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterMaintainTime", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String maintainTime;
-
 	private Long resourceOwnerId;
+
+	private String maintainTime;
 
 	private String resourceOwnerAccount;
 
@@ -43,17 +45,6 @@ public class ModifyDBClusterMaintainTimeRequest extends RpcAcsRequest<ModifyDBCl
 
 	private Long ownerId;
 
-	public String getMaintainTime() {
-		return this.maintainTime;
-	}
-
-	public void setMaintainTime(String maintainTime) {
-		this.maintainTime = maintainTime;
-		if(maintainTime != null){
-			putQueryParameter("MaintainTime", maintainTime);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -62,6 +53,17 @@ public class ModifyDBClusterMaintainTimeRequest extends RpcAcsRequest<ModifyDBCl
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getMaintainTime() {
+		return this.maintainTime;
+	}
+
+	public void setMaintainTime(String maintainTime) {
+		this.maintainTime = maintainTime;
+		if(maintainTime != null){
+			putQueryParameter("MaintainTime", maintainTime);
 		}
 	}
 

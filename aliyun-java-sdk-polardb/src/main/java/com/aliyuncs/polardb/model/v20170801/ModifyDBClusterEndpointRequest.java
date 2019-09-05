@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 	
 	public ModifyDBClusterEndpointRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterEndpoint", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,7 +37,7 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 
 	private Long resourceOwnerId;
 
-	private String nodes;
+	private String dBEndpointId;
 
 	private String readWriteMode;
 
@@ -45,11 +47,11 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 
 	private String ownerAccount;
 
-	private String dBEndpointId;
-
 	private String endpointConfig;
 
 	private Long ownerId;
+
+	private String nodes;
 
 	public String getAutoAddNewNodes() {
 		return this.autoAddNewNodes;
@@ -73,14 +75,14 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 		}
 	}
 
-	public String getNodes() {
-		return this.nodes;
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
 	}
 
-	public void setNodes(String nodes) {
-		this.nodes = nodes;
-		if(nodes != null){
-			putQueryParameter("Nodes", nodes);
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
 		}
 	}
 
@@ -128,17 +130,6 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 		}
 	}
 
-	public String getDBEndpointId() {
-		return this.dBEndpointId;
-	}
-
-	public void setDBEndpointId(String dBEndpointId) {
-		this.dBEndpointId = dBEndpointId;
-		if(dBEndpointId != null){
-			putQueryParameter("DBEndpointId", dBEndpointId);
-		}
-	}
-
 	public String getEndpointConfig() {
 		return this.endpointConfig;
 	}
@@ -158,6 +149,17 @@ public class ModifyDBClusterEndpointRequest extends RpcAcsRequest<ModifyDBCluste
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getNodes() {
+		return this.nodes;
+	}
+
+	public void setNodes(String nodes) {
+		this.nodes = nodes;
+		if(nodes != null){
+			putQueryParameter("Nodes", nodes);
 		}
 	}
 

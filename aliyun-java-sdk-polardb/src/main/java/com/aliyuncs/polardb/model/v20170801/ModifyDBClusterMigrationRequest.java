@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 	
 	public ModifyDBClusterMigrationRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterMigration", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,6 +37,8 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 
 	private String securityToken;
 
+	private String newMasterInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -42,8 +46,6 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 	private String ownerAccount;
 
 	private String sourceRDSDBInstanceId;
-
-	private String newMasterInstanceId;
 
 	private Long ownerId;
 
@@ -88,6 +90,17 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 		}
 	}
 
+	public String getNewMasterInstanceId() {
+		return this.newMasterInstanceId;
+	}
+
+	public void setNewMasterInstanceId(String newMasterInstanceId) {
+		this.newMasterInstanceId = newMasterInstanceId;
+		if(newMasterInstanceId != null){
+			putQueryParameter("NewMasterInstanceId", newMasterInstanceId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -129,17 +142,6 @@ public class ModifyDBClusterMigrationRequest extends RpcAcsRequest<ModifyDBClust
 		this.sourceRDSDBInstanceId = sourceRDSDBInstanceId;
 		if(sourceRDSDBInstanceId != null){
 			putQueryParameter("SourceRDSDBInstanceId", sourceRDSDBInstanceId);
-		}
-	}
-
-	public String getNewMasterInstanceId() {
-		return this.newMasterInstanceId;
-	}
-
-	public void setNewMasterInstanceId(String newMasterInstanceId) {
-		this.newMasterInstanceId = newMasterInstanceId;
-		if(newMasterInstanceId != null){
-			putQueryParameter("NewMasterInstanceId", newMasterInstanceId);
 		}
 	}
 

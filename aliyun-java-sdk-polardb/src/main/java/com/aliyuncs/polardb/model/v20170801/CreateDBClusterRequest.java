@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	
 	public CreateDBClusterRequest() {
 		super("polardb", "2017-08-01", "CreateDBCluster", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,11 +37,21 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBClusterDescription;
 
+	private String clientToken;
+
+	private String clusterNetworkType;
+
+	private String dBNodeClass;
+
+	private String engine;
+
+	private String creationOption;
+
+	private String sourceResourceId;
+
 	private String period;
 
 	private String resourceOwnerAccount;
-
-	private String clientToken;
 
 	private String ownerAccount;
 
@@ -47,15 +59,9 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String usedTime;
 
-	private String clusterNetworkType;
-
 	private String vSwitchId;
 
-	private String dBNodeClass;
-
 	private Boolean autoRenew;
-
-	private String engine;
 
 	private String vPCId;
 
@@ -64,10 +70,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 	private String zoneId;
 
 	private String dBVersion;
-
-	private String creationOption;
-
-	private String sourceResourceId;
 
 	private String cloneDataPoint;
 
@@ -95,6 +97,72 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getClusterNetworkType() {
+		return this.clusterNetworkType;
+	}
+
+	public void setClusterNetworkType(String clusterNetworkType) {
+		this.clusterNetworkType = clusterNetworkType;
+		if(clusterNetworkType != null){
+			putQueryParameter("ClusterNetworkType", clusterNetworkType);
+		}
+	}
+
+	public String getDBNodeClass() {
+		return this.dBNodeClass;
+	}
+
+	public void setDBNodeClass(String dBNodeClass) {
+		this.dBNodeClass = dBNodeClass;
+		if(dBNodeClass != null){
+			putQueryParameter("DBNodeClass", dBNodeClass);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getCreationOption() {
+		return this.creationOption;
+	}
+
+	public void setCreationOption(String creationOption) {
+		this.creationOption = creationOption;
+		if(creationOption != null){
+			putQueryParameter("CreationOption", creationOption);
+		}
+	}
+
+	public String getSourceResourceId() {
+		return this.sourceResourceId;
+	}
+
+	public void setSourceResourceId(String sourceResourceId) {
+		this.sourceResourceId = sourceResourceId;
+		if(sourceResourceId != null){
+			putQueryParameter("SourceResourceId", sourceResourceId);
+		}
+	}
+
 	public String getPeriod() {
 		return this.period;
 	}
@@ -114,17 +182,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -161,17 +218,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
-	public String getClusterNetworkType() {
-		return this.clusterNetworkType;
-	}
-
-	public void setClusterNetworkType(String clusterNetworkType) {
-		this.clusterNetworkType = clusterNetworkType;
-		if(clusterNetworkType != null){
-			putQueryParameter("ClusterNetworkType", clusterNetworkType);
-		}
-	}
-
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -183,17 +229,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
-	public String getDBNodeClass() {
-		return this.dBNodeClass;
-	}
-
-	public void setDBNodeClass(String dBNodeClass) {
-		this.dBNodeClass = dBNodeClass;
-		if(dBNodeClass != null){
-			putQueryParameter("DBNodeClass", dBNodeClass);
-		}
-	}
-
 	public Boolean getAutoRenew() {
 		return this.autoRenew;
 	}
@@ -202,17 +237,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.autoRenew = autoRenew;
 		if(autoRenew != null){
 			putQueryParameter("AutoRenew", autoRenew.toString());
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -257,28 +281,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBVersion = dBVersion;
 		if(dBVersion != null){
 			putQueryParameter("DBVersion", dBVersion);
-		}
-	}
-
-	public String getCreationOption() {
-		return this.creationOption;
-	}
-
-	public void setCreationOption(String creationOption) {
-		this.creationOption = creationOption;
-		if(creationOption != null){
-			putQueryParameter("CreationOption", creationOption);
-		}
-	}
-
-	public String getSourceResourceId() {
-		return this.sourceResourceId;
-	}
-
-	public void setSourceResourceId(String sourceResourceId) {
-		this.sourceResourceId = sourceResourceId;
-		if(sourceResourceId != null){
-			putQueryParameter("SourceResourceId", sourceResourceId);
 		}
 	}
 

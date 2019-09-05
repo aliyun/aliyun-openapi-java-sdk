@@ -16,6 +16,7 @@ package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -26,15 +27,16 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 	
 	public UntagResourcesRequest() {
 		super("polardb", "2017-08-01", "UntagResources", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Boolean all;
-
 	private Long resourceOwnerId;
+
+	private Boolean all;
 
 	private List<String> resourceIds;
 
@@ -44,20 +46,9 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 
 	private Long ownerId;
 
-	private List<String> tagKeys;
-
 	private String resourceType;
 
-	public Boolean getAll() {
-		return this.all;
-	}
-
-	public void setAll(Boolean all) {
-		this.all = all;
-		if(all != null){
-			putQueryParameter("All", all.toString());
-		}
-	}
+	private List<String> tagKeys;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -67,6 +58,17 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getAll() {
+		return this.all;
+	}
+
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
 		}
 	}
 
@@ -116,6 +118,17 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 		}
 	}
 
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
 	public List<String> getTagKeys() {
 		return this.tagKeys;
 	}
@@ -127,17 +140,6 @@ public class UntagResourcesRequest extends RpcAcsRequest<UntagResourcesResponse>
 				putQueryParameter("TagKey." + (i + 1) , tagKeys.get(i));
 			}
 		}	
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
 	}
 
 	@Override

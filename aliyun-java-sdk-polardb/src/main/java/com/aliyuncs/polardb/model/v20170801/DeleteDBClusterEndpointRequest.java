@@ -15,6 +15,7 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.polardb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class DeleteDBClusterEndpointRequest extends RpcAcsRequest<DeleteDBCluste
 	
 	public DeleteDBClusterEndpointRequest() {
 		super("polardb", "2017-08-01", "DeleteDBClusterEndpoint", "polardb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,13 +35,13 @@ public class DeleteDBClusterEndpointRequest extends RpcAcsRequest<DeleteDBCluste
 
 	private Long resourceOwnerId;
 
+	private String dBEndpointId;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
 
 	private String ownerAccount;
-
-	private String dBEndpointId;
 
 	private Long ownerId;
 
@@ -51,6 +53,17 @@ public class DeleteDBClusterEndpointRequest extends RpcAcsRequest<DeleteDBCluste
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBEndpointId() {
+		return this.dBEndpointId;
+	}
+
+	public void setDBEndpointId(String dBEndpointId) {
+		this.dBEndpointId = dBEndpointId;
+		if(dBEndpointId != null){
+			putQueryParameter("DBEndpointId", dBEndpointId);
 		}
 	}
 
@@ -84,17 +97,6 @@ public class DeleteDBClusterEndpointRequest extends RpcAcsRequest<DeleteDBCluste
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDBEndpointId() {
-		return this.dBEndpointId;
-	}
-
-	public void setDBEndpointId(String dBEndpointId) {
-		this.dBEndpointId = dBEndpointId;
-		if(dBEndpointId != null){
-			putQueryParameter("DBEndpointId", dBEndpointId);
 		}
 	}
 
