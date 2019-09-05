@@ -15,6 +15,7 @@
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.market.Endpoint;
 
 /**
@@ -24,7 +25,8 @@ import com.aliyuncs.market.Endpoint;
 public class DeleteCommodityRequest extends RpcAcsRequest<DeleteCommodityResponse> {
 	
 	public DeleteCommodityRequest() {
-		super("Market", "2015-11-01", "DeleteCommodity", "Market");
+		super("Market", "2015-11-01", "DeleteCommodity", "yunmarket");
+		setSysMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

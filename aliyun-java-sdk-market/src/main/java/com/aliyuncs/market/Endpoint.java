@@ -24,11 +24,15 @@ public class Endpoint {
             put("ap-south-1", "market.ap-southeast-1.aliyuncs.com");
             put("eu-west-1", "market.ap-southeast-1.aliyuncs.com");
             put("ap-northeast-1", "market.ap-southeast-1.aliyuncs.com");
+            put("cn-shenzhen-finance-1", "market.aliyuncs.com");
             put("me-east-1", "market.ap-southeast-1.aliyuncs.com");
             put("cn-chengdu", "market.aliyuncs.com");
+            put("cn-north-2-gov-1", "market.aliyuncs.com");
             put("cn-qingdao", "market.aliyuncs.com");
             put("cn-shanghai", "market.aliyuncs.com");
+            put("cn-shanghai-finance-1", "market.aliyuncs.com");
             put("cn-hongkong", "market.aliyuncs.com");
+            put("cn-hangzhou-finance", "market.aliyuncs.com");
             put("ap-southeast-2", "market.ap-southeast-1.aliyuncs.com");
             put("ap-southeast-3", "market.ap-southeast-1.aliyuncs.com");
             put("eu-central-1", "market.ap-southeast-1.aliyuncs.com");

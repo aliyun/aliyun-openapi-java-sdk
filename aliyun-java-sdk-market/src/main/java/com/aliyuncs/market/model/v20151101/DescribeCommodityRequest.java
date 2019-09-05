@@ -15,6 +15,7 @@
 package com.aliyuncs.market.model.v20151101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.market.Endpoint;
 
 /**
@@ -24,7 +25,8 @@ import com.aliyuncs.market.Endpoint;
 public class DescribeCommodityRequest extends RpcAcsRequest<DescribeCommodityResponse> {
 	
 	public DescribeCommodityRequest() {
-		super("Market", "2015-11-01", "DescribeCommodity", "Market");
+		super("Market", "2015-11-01", "DescribeCommodity", "yunmarket");
+		setSysMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
