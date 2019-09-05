@@ -92,6 +92,8 @@ public class GetContactInfoByOutboundTaskIdResponse extends AcsResponse {
 
 		private String userPhone;
 
+		private String caller;
+
 		public String getContactReferrnceId() {
 			return this.contactReferrnceId;
 		}
@@ -114,6 +116,14 @@ public class GetContactInfoByOutboundTaskIdResponse extends AcsResponse {
 
 		public void setUserPhone(String userPhone) {
 			this.userPhone = userPhone;
+		}
+
+		public String getCaller() {
+			return this.caller;
+		}
+
+		public void setCaller(String caller) {
+			this.caller = caller;
 		}
 	}
 

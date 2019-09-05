@@ -33,6 +33,7 @@ public class GetContactInfoByOutboundTaskIdResponseUnmarshaller {
 		contactIdentity.setContactReferrnceId(_ctx.stringValue("GetContactInfoByOutboundTaskIdResponse.ContactIdentity.ContactReferrnceId"));
 		contactIdentity.setJobGroupId(_ctx.stringValue("GetContactInfoByOutboundTaskIdResponse.ContactIdentity.JobGroupId"));
 		contactIdentity.setUserPhone(_ctx.stringValue("GetContactInfoByOutboundTaskIdResponse.ContactIdentity.UserPhone"));
+		contactIdentity.setCaller(_ctx.stringValue("GetContactInfoByOutboundTaskIdResponse.ContactIdentity.Caller"));
 		getContactInfoByOutboundTaskIdResponse.setContactIdentity(contactIdentity);
 	 
 	 	return getContactInfoByOutboundTaskIdResponse;
