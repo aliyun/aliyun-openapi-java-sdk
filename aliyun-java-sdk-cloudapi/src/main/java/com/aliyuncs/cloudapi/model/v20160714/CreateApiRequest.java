@@ -1,28 +1,22 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudapi.model.v20160714;
 
-import com.alibaba.fastjson.JSON;
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.cloudapi.model.v20160714.DescribeApiResponse.*;
-
-import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudapi.Endpoint;
 
 /**
  * @author auto create
@@ -32,221 +26,72 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 	
 	public CreateApiRequest() {
 		super("CloudAPI", "2016-07-14", "CreateApi", "apigateway");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String groupId;
-
-	private String apiName;
-
-	private String visibility;
-
-	private String description;
-
-	private String authType;
-
-	private Boolean forceNonceCheck;
-
-	private Boolean disableInternet;
-
-	private String requestConfig;
-
-	private String serviceConfig;
-
-	private String requestParameters;
-
-	private String systemParameters;
-
-	private String constantParameters;
-
-	private String serviceParameters;
-
-	private String serviceParametersMap;
-
-	private String resultType;
-
-	private String resultSample;
-	
-	private String failResultSample;
-
-	private String errorCodeSamples;
-	
-	private String openIdConnectConfig;
-	
-	private String allowSignatureMethod;
-
-	private String resultBodyModel;
 
 	private String webSocketApiType;
 
-	public String getGroupId() {
-		return this.groupId;
-	}
+	private String errorCodeSamples;
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		putQueryParameter("GroupId", groupId);
-	}
+	private String appCodeAuthType;
 
-	public String getApiName() {
-		return this.apiName;
-	}
+	private String description;
 
-	public void setApiName(String apiName) {
-		this.apiName = apiName;
-		putQueryParameter("ApiName", apiName);
-	}
+	private Boolean disableInternet;
 
-	public String getVisibility() {
-		return this.visibility;
-	}
+	private String constantParameters;
 
-	public void setVisibility(String visibility) {
-		this.visibility = visibility;
-		putQueryParameter("Visibility", visibility);
-	}
+	private String authType;
 
-	public String getDescription() {
-		return this.description;
-	}
+	private String allowSignatureMethod;
 
-	public void setDescription(String description) {
-		this.description = description;
-		putQueryParameter("Description", description);
-	}
+	private String serviceParameters;
 
-	public String getAuthType() {
-		return this.authType;
-	}
+	private String failResultSample;
 
-	public void setAuthType(String authType) {
-		this.authType = authType;
-		putQueryParameter("AuthType", authType);
-	}
+	private String systemParameters;
 
-	public Boolean getForceNonceCheck() {
-		return forceNonceCheck;
-	}
+	private String serviceParametersMap;
 
-	public void setForceNonceCheck(Boolean forceNonceCheck) {
-		this.forceNonceCheck = forceNonceCheck;
-		putQueryParameter("ForceNonceCheck", forceNonceCheck);
-	}
+	private String securityToken;
 
-	public Boolean getDisableInternet() {
-		return disableInternet;
-	}
+	private String openIdConnectConfig;
 
-	public void setDisableInternet(Boolean disableInternet) {
-		this.disableInternet = disableInternet;
-		putQueryParameter("DisableInternet", disableInternet);
-	}
+	private String requestParameters;
 
-	public String getRequestConfig() {
-		return this.requestConfig;
-	}
+	private String resultDescriptions;
 
-	public void setRequestConfig(String requestConfig) {
-		this.requestConfig = requestConfig;
-		putQueryParameter("RequestConfig", requestConfig);
-	}
+	private String visibility;
 
-	public String getServiceConfig() {
-		return this.serviceConfig;
-	}
-	
-	public void setServiceConfig(String serviceConfig) {
-		this.serviceConfig = serviceConfig;
-		putQueryParameter("ServiceConfig", serviceConfig);
-	}
+	private String groupId;
 
-	public String getResultBodyModel() {
-		return resultBodyModel;
-	}
+	private String serviceConfig;
 
-	public void setResultBodyModel(String resultBodyModel) {
-		this.resultBodyModel = resultBodyModel;
-		putQueryParameter("ResultBodyModel", resultBodyModel);
-	}
+	private String resultType;
+
+	private String apiName;
+
+	private String resultSample;
+
+	private Boolean forceNonceCheck;
+
+	private String requestConfig;
+
+	private String resultBodyModel;
 
 	public String getWebSocketApiType() {
-		return webSocketApiType;
+		return this.webSocketApiType;
 	}
 
 	public void setWebSocketApiType(String webSocketApiType) {
 		this.webSocketApiType = webSocketApiType;
-		putQueryParameter("WebSocketApiType", webSocketApiType);
-	}
-
-	public String getRequestParameters() {
-		return this.requestParameters;
-	}
-
-	public void setRequestParameters(String requestParameters) {
-		this.requestParameters = requestParameters;
-		putQueryParameter("RequestParameters", requestParameters);
-	}
-
-	public String getSystemParameters() {
-		return this.systemParameters;
-	}
-
-	public void setSystemParameters(String systemParameters) {
-		this.systemParameters = systemParameters;
-		putQueryParameter("SystemParameters", systemParameters);
-	}
-
-	public String getConstantParameters() {
-		return this.constantParameters;
-	}
-
-	public void setConstantParameters(String constantParameters) {
-		this.constantParameters = constantParameters;
-		putQueryParameter("ConstantParameters", constantParameters);
-	}
-
-	public String getServiceParameters() {
-		return this.serviceParameters;
-	}
-
-	public void setServiceParameters(String serviceParameters) {
-		this.serviceParameters = serviceParameters;
-		putQueryParameter("ServiceParameters", serviceParameters);
-	}
-
-	public String getServiceParametersMap() {
-		return this.serviceParametersMap;
-	}
-
-	public void setServiceParametersMap(String serviceParametersMap) {
-		this.serviceParametersMap = serviceParametersMap;
-		putQueryParameter("ServiceParametersMap", serviceParametersMap);
-	}
-
-	public String getResultType() {
-		return this.resultType;
-	}
-
-	public void setResultType(String resultType) {
-		this.resultType = resultType;
-		putQueryParameter("ResultType", resultType);
-	}
-
-	public String getResultSample() {
-		return this.resultSample;
-	}
-
-	public void setResultSample(String resultSample) {
-		this.resultSample = resultSample;
-		putQueryParameter("ResultSample", resultSample);
-	}
-	
-	public String getFailResultSample() {
-		return this.failResultSample;
-	}
-
-	public void setFailResultSample(String failResultSample) {
-		this.failResultSample = failResultSample;
-		putQueryParameter("FailResultSample", failResultSample);
+		if(webSocketApiType != null){
+			putQueryParameter("WebSocketApiType", webSocketApiType);
+		}
 	}
 
 	public String getErrorCodeSamples() {
@@ -255,82 +100,284 @@ public class CreateApiRequest extends RpcAcsRequest<CreateApiResponse> {
 
 	public void setErrorCodeSamples(String errorCodeSamples) {
 		this.errorCodeSamples = errorCodeSamples;
-		putQueryParameter("ErrorCodeSamples", errorCodeSamples);
-	}
-	
-	public void setRequestConfig(RequestConfig requestConfig) {
-		if (null != requestConfig) {
-			setRequestConfig(JSON.toJSONString(requestConfig));
+		if(errorCodeSamples != null){
+			putQueryParameter("ErrorCodeSamples", errorCodeSamples);
 		}
-	}
-	
-	public void setServiceConfig(ServiceConfig ServiceConfig) {
-		if (null != ServiceConfig) {
-			setServiceConfig(JSON.toJSONString(ServiceConfig));
-		}
-	}
-	
-	public void setRequestParameters(List<RequestParameter> list) {
-		if (null != list) {
-			setRequestParameters(JSON.toJSONString(list));
-		}
-	}
-	
-	public void setSystemParameters(List<SystemParameter> list) {
-		if (null != list) {
-			setSystemParameters(JSON.toJSONString(list));
-		}
-	}
-	
-	public void setConstantParameters(List<ConstantParameter> list) {
-		if (null != list) {
-			setConstantParameters(JSON.toJSONString(list));
-		}
-	}
-	
-	public void setServiceParameters(List<ServiceParameter> list) {
-		if (null != list) {
-			setServiceParameters(JSON.toJSONString(list));
-		}
-	}
-	
-	public void setServiceParametersMap(List<ServiceParameterMap> list) {
-		if (null != list) {
-			setServiceParametersMap(JSON.toJSONString(list));
-		}
-	}
-	
-	public void setErrorCodeSamples(List<ErrorCodeSample> list) {
-		if (null != list) {
-			setErrorCodeSamples(JSON.toJSONString(list));
-		}
-	}
-	
-	public void setOpenIdConnectConfig(OpenIdConnectConfig openIdConnectConfig) {
-	    if (null != openIdConnectConfig) {
-	        setOpenIdConnectConfig(JSON.toJSONString(openIdConnectConfig));
-	    }
 	}
 
-    public String getOpenIdConnectConfig() {
-        return openIdConnectConfig;
-    }
+	public String getAppCodeAuthType() {
+		return this.appCodeAuthType;
+	}
 
-    public void setOpenIdConnectConfig(String openIdConnectConfig) {
-        this.openIdConnectConfig = openIdConnectConfig;
-        putQueryParameter("OpenIdConnectConfig", openIdConnectConfig);
-    }
+	public void setAppCodeAuthType(String appCodeAuthType) {
+		this.appCodeAuthType = appCodeAuthType;
+		if(appCodeAuthType != null){
+			putQueryParameter("AppCodeAuthType", appCodeAuthType);
+		}
+	}
 
-    public String getAllowSignatureMethod() {
-        return allowSignatureMethod;
-    }
+	public String getDescription() {
+		return this.description;
+	}
 
-    public void setAllowSignatureMethod(String allowSignatureMethod) {
-        this.allowSignatureMethod = allowSignatureMethod;
-        putQueryParameter("AllowSignatureMethod", allowSignatureMethod);
-    }
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
 
-    @Override
+	public Boolean getDisableInternet() {
+		return this.disableInternet;
+	}
+
+	public void setDisableInternet(Boolean disableInternet) {
+		this.disableInternet = disableInternet;
+		if(disableInternet != null){
+			putQueryParameter("DisableInternet", disableInternet.toString());
+		}
+	}
+
+	public String getConstantParameters() {
+		return this.constantParameters;
+	}
+
+	public void setConstantParameters(String constantParameters) {
+		this.constantParameters = constantParameters;
+		if(constantParameters != null){
+			putQueryParameter("ConstantParameters", constantParameters);
+		}
+	}
+
+	public String getAuthType() {
+		return this.authType;
+	}
+
+	public void setAuthType(String authType) {
+		this.authType = authType;
+		if(authType != null){
+			putQueryParameter("AuthType", authType);
+		}
+	}
+
+	public String getAllowSignatureMethod() {
+		return this.allowSignatureMethod;
+	}
+
+	public void setAllowSignatureMethod(String allowSignatureMethod) {
+		this.allowSignatureMethod = allowSignatureMethod;
+		if(allowSignatureMethod != null){
+			putQueryParameter("AllowSignatureMethod", allowSignatureMethod);
+		}
+	}
+
+	public String getServiceParameters() {
+		return this.serviceParameters;
+	}
+
+	public void setServiceParameters(String serviceParameters) {
+		this.serviceParameters = serviceParameters;
+		if(serviceParameters != null){
+			putQueryParameter("ServiceParameters", serviceParameters);
+		}
+	}
+
+	public String getFailResultSample() {
+		return this.failResultSample;
+	}
+
+	public void setFailResultSample(String failResultSample) {
+		this.failResultSample = failResultSample;
+		if(failResultSample != null){
+			putQueryParameter("FailResultSample", failResultSample);
+		}
+	}
+
+	public String getSystemParameters() {
+		return this.systemParameters;
+	}
+
+	public void setSystemParameters(String systemParameters) {
+		this.systemParameters = systemParameters;
+		if(systemParameters != null){
+			putQueryParameter("SystemParameters", systemParameters);
+		}
+	}
+
+	public String getServiceParametersMap() {
+		return this.serviceParametersMap;
+	}
+
+	public void setServiceParametersMap(String serviceParametersMap) {
+		this.serviceParametersMap = serviceParametersMap;
+		if(serviceParametersMap != null){
+			putQueryParameter("ServiceParametersMap", serviceParametersMap);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getOpenIdConnectConfig() {
+		return this.openIdConnectConfig;
+	}
+
+	public void setOpenIdConnectConfig(String openIdConnectConfig) {
+		this.openIdConnectConfig = openIdConnectConfig;
+		if(openIdConnectConfig != null){
+			putQueryParameter("OpenIdConnectConfig", openIdConnectConfig);
+		}
+	}
+
+	public String getRequestParameters() {
+		return this.requestParameters;
+	}
+
+	public void setRequestParameters(String requestParameters) {
+		this.requestParameters = requestParameters;
+		if(requestParameters != null){
+			putQueryParameter("RequestParameters", requestParameters);
+		}
+	}
+
+	public String getResultDescriptions() {
+		return this.resultDescriptions;
+	}
+
+	public void setResultDescriptions(String resultDescriptions) {
+		this.resultDescriptions = resultDescriptions;
+		if(resultDescriptions != null){
+			putQueryParameter("ResultDescriptions", resultDescriptions);
+		}
+	}
+
+	public String getVisibility() {
+		return this.visibility;
+	}
+
+	public void setVisibility(String visibility) {
+		this.visibility = visibility;
+		if(visibility != null){
+			putQueryParameter("Visibility", visibility);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getServiceConfig() {
+		return this.serviceConfig;
+	}
+
+	public void setServiceConfig(String serviceConfig) {
+		this.serviceConfig = serviceConfig;
+		if(serviceConfig != null){
+			putQueryParameter("ServiceConfig", serviceConfig);
+		}
+	}
+
+	public String getResultType() {
+		return this.resultType;
+	}
+
+	public void setResultType(String resultType) {
+		this.resultType = resultType;
+		if(resultType != null){
+			putQueryParameter("ResultType", resultType);
+		}
+	}
+
+	public String getApiName() {
+		return this.apiName;
+	}
+
+	public void setApiName(String apiName) {
+		this.apiName = apiName;
+		if(apiName != null){
+			putQueryParameter("ApiName", apiName);
+		}
+	}
+
+	public String getResultSample() {
+		return this.resultSample;
+	}
+
+	public void setResultSample(String resultSample) {
+		this.resultSample = resultSample;
+		if(resultSample != null){
+			putQueryParameter("ResultSample", resultSample);
+		}
+	}
+
+	public Boolean getForceNonceCheck() {
+		return this.forceNonceCheck;
+	}
+
+	public void setForceNonceCheck(Boolean forceNonceCheck) {
+		this.forceNonceCheck = forceNonceCheck;
+		if(forceNonceCheck != null){
+			putQueryParameter("ForceNonceCheck", forceNonceCheck.toString());
+		}
+	}
+
+	public String getRequestConfig() {
+		return this.requestConfig;
+	}
+
+	public void setRequestConfig(String requestConfig) {
+		this.requestConfig = requestConfig;
+		if(requestConfig != null){
+			putQueryParameter("RequestConfig", requestConfig);
+		}
+	}
+
+	public String getResultBodyModel() {
+		return this.resultBodyModel;
+	}
+
+	public void setResultBodyModel(String resultBodyModel) {
+		this.resultBodyModel = resultBodyModel;
+		if(resultBodyModel != null){
+			putQueryParameter("ResultBodyModel", resultBodyModel);
+		}
+	}
+
+	@Override
 	public Class<CreateApiResponse> getResponseClass() {
 		return CreateApiResponse.class;
 	}

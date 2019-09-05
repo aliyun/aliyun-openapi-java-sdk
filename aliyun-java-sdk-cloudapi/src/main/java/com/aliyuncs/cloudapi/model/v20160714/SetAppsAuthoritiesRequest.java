@@ -1,24 +1,22 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudapi.Endpoint;
 
 /**
  * @author auto create
@@ -28,35 +26,26 @@ public class SetAppsAuthoritiesRequest extends RpcAcsRequest<SetAppsAuthoritiesR
 	
 	public SetAppsAuthoritiesRequest() {
 		super("CloudAPI", "2016-07-14", "SetAppsAuthorities", "apigateway");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String groupId;
-
-	private String apiId;
 
 	private String stageName;
 
-	private String appIds;
+	private String groupId;
 
 	private String description;
 
-	public String getGroupId() {
-		return this.groupId;
-	}
+	private String authValidTime;
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		putQueryParameter("GroupId", groupId);
-	}
+	private String appIds;
 
-	public String getApiId() {
-		return this.apiId;
-	}
+	private String securityToken;
 
-	public void setApiId(String apiId) {
-		this.apiId = apiId;
-		putQueryParameter("ApiId", apiId);
-	}
+	private String apiId;
 
 	public String getStageName() {
 		return this.stageName;
@@ -64,16 +53,20 @@ public class SetAppsAuthoritiesRequest extends RpcAcsRequest<SetAppsAuthoritiesR
 
 	public void setStageName(String stageName) {
 		this.stageName = stageName;
-		putQueryParameter("StageName", stageName);
+		if(stageName != null){
+			putQueryParameter("StageName", stageName);
+		}
 	}
 
-	public String getAppIds() {
-		return this.appIds;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setAppIds(String appIds) {
-		this.appIds = appIds;
-		putQueryParameter("AppIds", appIds);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
 	}
 
 	public String getDescription() {
@@ -82,7 +75,72 @@ public class SetAppsAuthoritiesRequest extends RpcAcsRequest<SetAppsAuthoritiesR
 
 	public void setDescription(String description) {
 		this.description = description;
-		putQueryParameter("Description", description);
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getAuthValidTime() {
+		return this.authValidTime;
+	}
+
+	public void setAuthValidTime(String authValidTime) {
+		this.authValidTime = authValidTime;
+		if(authValidTime != null){
+			putQueryParameter("AuthValidTime", authValidTime);
+		}
+	}
+
+	public String getAppIds() {
+		return this.appIds;
+	}
+
+	public void setAppIds(String appIds) {
+		this.appIds = appIds;
+		if(appIds != null){
+			putQueryParameter("AppIds", appIds);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getApiId() {
+		return this.apiId;
+	}
+
+	public void setApiId(String apiId) {
+		this.apiId = apiId;
+		if(apiId != null){
+			putQueryParameter("ApiId", apiId);
+		}
 	}
 
 	@Override

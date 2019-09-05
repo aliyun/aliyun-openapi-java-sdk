@@ -1,129 +1,161 @@
 /*
- * Copyright 2017 Aliyun.com All right reserved. This software is the
- * confidential and proprietary information of Aliyun.com ("Confidential
- * Information"). You shall not disclose such Confidential Information and shall
- * use it only in accordance with the terms of the license agreement you entered
- * into with Aliyun.com .
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudapi.model.v20160714;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudapi.transform.v20160714.DescribeVpcAccessesResponseUnmarshaller;
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-import java.util.List;
-
+/**
+ * @author auto create
+ * @version 
+ */
 public class DescribeVpcAccessesResponse extends AcsResponse {
-    
-    private String requestId;
 
-    private Integer totalCount;
+	private String requestId;
 
-    private Integer pageSize;
+	private Integer totalCount;
 
-    private Integer pageNumber;
-    
-    private List<VpcAccessAttribute> vpcAccessAttributes;
-    
-    public static class VpcAccessAttribute {
-        
-        private String vpcId;
-        
-        private String instanceId;
-        
-        private Integer port;
-        
-        private String name;
-        
-        private String createdTime;
+	private Integer pageSize;
 
-        public String getVpcId() {
-            return vpcId;
-        }
+	private Integer pageNumber;
 
-        public void setVpcId(String vpcId) {
-            this.vpcId = vpcId;
-        }
+	private List<VpcAccessAttribute> vpcAccessAttributes;
 
-        public String getInstanceId() {
-            return instanceId;
-        }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-        public void setInstanceId(String instanceId) {
-            this.instanceId = instanceId;
-        }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-        public String getName() {
-            return name;
-        }
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
 
-        public void setName(String name) {
-            this.name = name;
-        }
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
-        public String getCreatedTime() {
-            return createdTime;
-        }
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
 
-        public void setCreatedTime(String createdTime) {
-            this.createdTime = createdTime;
-        }
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
-        public Integer getPort() {
-            return port;
-        }
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-        public void setPort(Integer port) {
-            this.port = port;
-        }
-        
-    }
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
-    public String getRequestId() {
-        return requestId;
-    }
+	public List<VpcAccessAttribute> getVpcAccessAttributes() {
+		return this.vpcAccessAttributes;
+	}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public void setVpcAccessAttributes(List<VpcAccessAttribute> vpcAccessAttributes) {
+		this.vpcAccessAttributes = vpcAccessAttributes;
+	}
 
-    public Integer getTotalCount() {
-        return totalCount;
-    }
+	public static class VpcAccessAttribute {
 
-    public void setTotalCount(Integer totalCount) {
-        this.totalCount = totalCount;
-    }
+		private String vpcId;
 
-    public Integer getPageSize() {
-        return pageSize;
-    }
+		private String instanceId;
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
+		private String createdTime;
 
-    public Integer getPageNumber() {
-        return pageNumber;
-    }
+		private Integer port;
 
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-    }
-    
-    public List<VpcAccessAttribute> getVpcAccessAttributes() {
-        return vpcAccessAttributes;
-    }
+		private String regionId;
 
-    public void setVpcAccessAttributes(List<VpcAccessAttribute> vpcAccessAttributes) {
-        this.vpcAccessAttributes = vpcAccessAttributes;
-    }
+		private String name;
 
-    @Override
-    public AcsResponse getInstance(UnmarshallerContext context) throws ClientException, ServerException {
-        return  DescribeVpcAccessesResponseUnmarshaller.unmarshall(this, context);
-    }
+		public String getVpcId() {
+			return this.vpcId;
+		}
 
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getBizRegionId() {
+			return this.regionId;
+		}
+
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+	}
+
+	@Override
+	public DescribeVpcAccessesResponse getInstance(UnmarshallerContext context) {
+		return	DescribeVpcAccessesResponseUnmarshaller.unmarshall(this, context);
+	}
 }

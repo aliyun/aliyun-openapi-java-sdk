@@ -1,28 +1,23 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudapi.model.v20160714;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudapi.transform.v20160714.DescribeApiGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
-
-import java.util.List;
 
 /**
  * @author auto create
@@ -53,6 +48,14 @@ public class DescribeApiGroupResponse extends AcsResponse {
 	private String illegalStatus;
 
 	private Integer trafficLimit;
+
+	private String vpcDomain;
+
+	private String instanceType;
+
+	private String instanceId;
+
+	private String httpsPolicy;
 
 	private List<DomainItem> customDomains;
 
@@ -114,10 +117,26 @@ public class DescribeApiGroupResponse extends AcsResponse {
 		this.modifiedTime = modifiedTime;
 	}
 
+	public String getBizRegionId() {
+		return this.regionId;
+	}
+
+	public void setBizRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	/**
+	 * @deprecated use getBizRegionId instead of this.
+	 */
+	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
+	/**
+	 * @deprecated use setBizRegionId instead of this.
+	 */
+	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
 	}
@@ -154,6 +173,38 @@ public class DescribeApiGroupResponse extends AcsResponse {
 		this.trafficLimit = trafficLimit;
 	}
 
+	public String getVpcDomain() {
+		return this.vpcDomain;
+	}
+
+	public void setVpcDomain(String vpcDomain) {
+		this.vpcDomain = vpcDomain;
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getHttpsPolicy() {
+		return this.httpsPolicy;
+	}
+
+	public void setHttpsPolicy(String httpsPolicy) {
+		this.httpsPolicy = httpsPolicy;
+	}
+
 	public List<DomainItem> getCustomDomains() {
 		return this.customDomains;
 	}
@@ -183,6 +234,8 @@ public class DescribeApiGroupResponse extends AcsResponse {
 		private String domainBindingStatus;
 
 		private String domainLegalStatus;
+
+		private String domainWebSocketStatus;
 
 		private String domainRemark;
 
@@ -226,20 +279,28 @@ public class DescribeApiGroupResponse extends AcsResponse {
 			this.domainBindingStatus = domainBindingStatus;
 		}
 
-		public String getDomainRemark() {
-			return domainRemark;
-		}
-
-		public void setDomainRemark(String domainRemark) {
-			this.domainRemark = domainRemark;
-		}
-
 		public String getDomainLegalStatus() {
-			return domainLegalStatus;
+			return this.domainLegalStatus;
 		}
 
 		public void setDomainLegalStatus(String domainLegalStatus) {
 			this.domainLegalStatus = domainLegalStatus;
+		}
+
+		public String getDomainWebSocketStatus() {
+			return this.domainWebSocketStatus;
+		}
+
+		public void setDomainWebSocketStatus(String domainWebSocketStatus) {
+			this.domainWebSocketStatus = domainWebSocketStatus;
+		}
+
+		public String getDomainRemark() {
+			return this.domainRemark;
+		}
+
+		public void setDomainRemark(String domainRemark) {
+			this.domainRemark = domainRemark;
 		}
 	}
 

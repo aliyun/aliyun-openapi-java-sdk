@@ -1,3 +1,6 @@
+2019-09-05 Version: 4.9.2
+- Generated 2016-07-14 for `CloudAPI`.
+
 2019-03-18 Version: 4.8.5
 1, Fix model errors
 

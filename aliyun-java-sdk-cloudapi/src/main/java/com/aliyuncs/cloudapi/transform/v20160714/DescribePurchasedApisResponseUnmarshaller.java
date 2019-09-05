@@ -1,21 +1,17 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudapi.transform.v20160714;
 
 import java.util.ArrayList;
@@ -28,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePurchasedApisResponseUnmarshaller {
 
-	public static DescribePurchasedApisResponse unmarshall(DescribePurchasedApisResponse describePurchasedApisResponse, UnmarshallerContext context) {
+	public static DescribePurchasedApisResponse unmarshall(DescribePurchasedApisResponse describePurchasedApisResponse, UnmarshallerContext _ctx) {
 		
-		describePurchasedApisResponse.setRequestId(context.stringValue("DescribePurchasedApisResponse.RequestId"));
-		describePurchasedApisResponse.setTotalCount(context.integerValue("DescribePurchasedApisResponse.TotalCount"));
-		describePurchasedApisResponse.setPageSize(context.integerValue("DescribePurchasedApisResponse.PageSize"));
-		describePurchasedApisResponse.setPageNumber(context.integerValue("DescribePurchasedApisResponse.PageNumber"));
+		describePurchasedApisResponse.setRequestId(_ctx.stringValue("DescribePurchasedApisResponse.RequestId"));
+		describePurchasedApisResponse.setTotalCount(_ctx.integerValue("DescribePurchasedApisResponse.TotalCount"));
+		describePurchasedApisResponse.setPageSize(_ctx.integerValue("DescribePurchasedApisResponse.PageSize"));
+		describePurchasedApisResponse.setPageNumber(_ctx.integerValue("DescribePurchasedApisResponse.PageNumber"));
 
 		List<PurchasedApi> purchasedApis = new ArrayList<PurchasedApi>();
-		for (int i = 0; i < context.lengthValue("DescribePurchasedApisResponse.PurchasedApis.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePurchasedApisResponse.PurchasedApis.Length"); i++) {
 			PurchasedApi purchasedApi = new PurchasedApi();
-			purchasedApi.setRegionId(context.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].RegionId"));
-			purchasedApi.setGroupId(context.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].GroupId"));
-			purchasedApi.setGroupName(context.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].GroupName"));
-			purchasedApi.setApiId(context.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].ApiId"));
-			purchasedApi.setApiName(context.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].ApiName"));
-			purchasedApi.setStageName(context.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].StageName"));
-			purchasedApi.setDescription(context.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].Description"));
-			purchasedApi.setPurchasedTime(context.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].PurchasedTime"));
+			purchasedApi.setRegionId(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].RegionId"));
+			purchasedApi.setGroupId(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].GroupId"));
+			purchasedApi.setGroupName(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].GroupName"));
+			purchasedApi.setApiId(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].ApiId"));
+			purchasedApi.setApiName(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].ApiName"));
+			purchasedApi.setStageName(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].StageName"));
+			purchasedApi.setDescription(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].Description"));
+			purchasedApi.setPurchasedTime(_ctx.stringValue("DescribePurchasedApisResponse.PurchasedApis["+ i +"].PurchasedTime"));
 
 			purchasedApis.add(purchasedApi);
 		}

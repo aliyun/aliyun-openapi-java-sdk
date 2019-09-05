@@ -1,24 +1,22 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudapi.Endpoint;
 
 /**
  * @author auto create
@@ -28,19 +26,26 @@ public class CreateTrafficControlRequest extends RpcAcsRequest<CreateTrafficCont
 	
 	public CreateTrafficControlRequest() {
 		super("CloudAPI", "2016-07-14", "CreateTrafficControl", "apigateway");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String trafficControlName;
 
-	private String trafficControlUnit;
-
-	private Integer apiDefault;
+	private String description;
 
 	private Integer userDefault;
 
-	private Integer appDefault;
+	private Integer apiDefault;
 
-	private String description;
+	private String securityToken;
+
+	private String trafficControlUnit;
+
+	private Integer appDefault;
 
 	public String getTrafficControlName() {
 		return this.trafficControlName;
@@ -48,43 +53,9 @@ public class CreateTrafficControlRequest extends RpcAcsRequest<CreateTrafficCont
 
 	public void setTrafficControlName(String trafficControlName) {
 		this.trafficControlName = trafficControlName;
-		putQueryParameter("TrafficControlName", trafficControlName);
-	}
-
-	public String getTrafficControlUnit() {
-		return this.trafficControlUnit;
-	}
-
-	public void setTrafficControlUnit(String trafficControlUnit) {
-		this.trafficControlUnit = trafficControlUnit;
-		putQueryParameter("TrafficControlUnit", trafficControlUnit);
-	}
-
-	public Integer getApiDefault() {
-		return this.apiDefault;
-	}
-
-	public void setApiDefault(Integer apiDefault) {
-		this.apiDefault = apiDefault;
-		putQueryParameter("ApiDefault", apiDefault);
-	}
-
-	public Integer getUserDefault() {
-		return this.userDefault;
-	}
-
-	public void setUserDefault(Integer userDefault) {
-		this.userDefault = userDefault;
-		putQueryParameter("UserDefault", userDefault);
-	}
-
-	public Integer getAppDefault() {
-		return this.appDefault;
-	}
-
-	public void setAppDefault(Integer appDefault) {
-		this.appDefault = appDefault;
-		putQueryParameter("AppDefault", appDefault);
+		if(trafficControlName != null){
+			putQueryParameter("TrafficControlName", trafficControlName);
+		}
 	}
 
 	public String getDescription() {
@@ -93,7 +64,83 @@ public class CreateTrafficControlRequest extends RpcAcsRequest<CreateTrafficCont
 
 	public void setDescription(String description) {
 		this.description = description;
-		putQueryParameter("Description", description);
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getUserDefault() {
+		return this.userDefault;
+	}
+
+	public void setUserDefault(Integer userDefault) {
+		this.userDefault = userDefault;
+		if(userDefault != null){
+			putQueryParameter("UserDefault", userDefault.toString());
+		}
+	}
+
+	public Integer getApiDefault() {
+		return this.apiDefault;
+	}
+
+	public void setApiDefault(Integer apiDefault) {
+		this.apiDefault = apiDefault;
+		if(apiDefault != null){
+			putQueryParameter("ApiDefault", apiDefault.toString());
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getTrafficControlUnit() {
+		return this.trafficControlUnit;
+	}
+
+	public void setTrafficControlUnit(String trafficControlUnit) {
+		this.trafficControlUnit = trafficControlUnit;
+		if(trafficControlUnit != null){
+			putQueryParameter("TrafficControlUnit", trafficControlUnit);
+		}
+	}
+
+	public Integer getAppDefault() {
+		return this.appDefault;
+	}
+
+	public void setAppDefault(Integer appDefault) {
+		this.appDefault = appDefault;
+		if(appDefault != null){
+			putQueryParameter("AppDefault", appDefault.toString());
+		}
 	}
 
 	@Override

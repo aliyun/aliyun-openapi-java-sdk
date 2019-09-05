@@ -1,140 +1,138 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudapi.model.v20160714;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudapi.transform.v20160714.ImportSwaggerResponseUnmarshaller;
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.transform.UnmarshallerContext;
-
-import java.util.List;
 
 /**
  * @author auto create
- * @version
+ * @version 
  */
 public class ImportSwaggerResponse extends AcsResponse {
 
-    private String requestId;
+	private String requestId;
 
-    private List<ApiImportSwaggerSuccess> Success;
+	private List<ApiImportSwaggerSuccess> success;
 
-    private List<ApiImportSwaggerFailed> Failed;
+	private List<ApiImportSwaggerFailed> failed;
 
-    public static class ApiImportSwaggerSuccess {
-        private String path;
-        private String httpMethod;
-        private String apiUid;
-        private String apiOperation;
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-        public String getPath() {
-            return path;
-        }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-        public void setPath(String path) {
-            this.path = path;
-        }
+	public List<ApiImportSwaggerSuccess> getSuccess() {
+		return this.success;
+	}
 
-        public String getHttpMethod() {
-            return httpMethod;
-        }
+	public void setSuccess(List<ApiImportSwaggerSuccess> success) {
+		this.success = success;
+	}
 
-        public void setHttpMethod(String httpMethod) {
-            this.httpMethod = httpMethod;
-        }
+	public List<ApiImportSwaggerFailed> getFailed() {
+		return this.failed;
+	}
 
-        public String getApiUid() {
-            return apiUid;
-        }
+	public void setFailed(List<ApiImportSwaggerFailed> failed) {
+		this.failed = failed;
+	}
 
-        public void setApiUid(String apiUid) {
-            this.apiUid = apiUid;
-        }
+	public static class ApiImportSwaggerSuccess {
 
-        public String getApiOperation() {
-            return apiOperation;
-        }
+		private String path;
 
-        public void setApiOperation(String apiOperation) {
-            this.apiOperation = apiOperation;
-        }
-    }
+		private String httpMethod;
 
-    public static class ApiImportSwaggerFailed {
-        private String path;
-        private String httpMethod;
-        private String errorMsg;
+		private String apiUid;
 
-        public String getPath() {
-            return path;
-        }
+		private String apiOperation;
 
-        public void setPath(String path) {
-            this.path = path;
-        }
+		public String getPath() {
+			return this.path;
+		}
 
-        public String getHttpMethod() {
-            return httpMethod;
-        }
+		public void setPath(String path) {
+			this.path = path;
+		}
 
-        public void setHttpMethod(String httpMethod) {
-            this.httpMethod = httpMethod;
-        }
+		public String getHttpMethod() {
+			return this.httpMethod;
+		}
 
-        public String getErrorMsg() {
-            return errorMsg;
-        }
+		public void setHttpMethod(String httpMethod) {
+			this.httpMethod = httpMethod;
+		}
 
-        public void setErrorMsg(String errorMsg) {
-            this.errorMsg = errorMsg;
-        }
-    }
+		public String getApiUid() {
+			return this.apiUid;
+		}
 
-    public String getRequestId() {
-        return requestId;
-    }
+		public void setApiUid(String apiUid) {
+			this.apiUid = apiUid;
+		}
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+		public String getApiOperation() {
+			return this.apiOperation;
+		}
 
-    public List<ApiImportSwaggerSuccess> getSuccess() {
-        return Success;
-    }
+		public void setApiOperation(String apiOperation) {
+			this.apiOperation = apiOperation;
+		}
+	}
 
-    public void setSuccess(
-        List<ApiImportSwaggerSuccess> success) {
-        Success = success;
-    }
+	public static class ApiImportSwaggerFailed {
 
-    public List<ApiImportSwaggerFailed> getFailed() {
-        return Failed;
-    }
+		private String path;
 
-    public void setFailed(
-        List<ApiImportSwaggerFailed> failed) {
-        Failed = failed;
-    }
+		private String httpMethod;
 
-    @Override
-    public AcsResponse getInstance(UnmarshallerContext context) throws ClientException, ServerException {
-        return ImportSwaggerResponseUnmarshaller.unmarshall(this, context);
-    }
+		private String errorMsg;
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getHttpMethod() {
+			return this.httpMethod;
+		}
+
+		public void setHttpMethod(String httpMethod) {
+			this.httpMethod = httpMethod;
+		}
+
+		public String getErrorMsg() {
+			return this.errorMsg;
+		}
+
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
+		}
+	}
+
+	@Override
+	public ImportSwaggerResponse getInstance(UnmarshallerContext context) {
+		return	ImportSwaggerResponseUnmarshaller.unmarshall(this, context);
+	}
 }

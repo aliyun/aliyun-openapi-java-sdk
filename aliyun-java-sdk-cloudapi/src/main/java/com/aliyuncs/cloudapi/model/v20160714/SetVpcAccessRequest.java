@@ -1,70 +1,125 @@
 /*
- * Copyright 2017 Aliyun.com All right reserved. This software is the
- * confidential and proprietary information of Aliyun.com ("Confidential
- * Information"). You shall not disclose such Confidential Information and shall
- * use it only in accordance with the terms of the license agreement you entered
- * into with Aliyun.com .
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.cloudapi.Endpoint;
 
 /**
  * @author auto create
- * @version
+ * @version 
  */
 public class SetVpcAccessRequest extends RpcAcsRequest<SetVpcAccessResponse> {
+	
+	public SetVpcAccessRequest() {
+		super("CloudAPI", "2016-07-14", "SetVpcAccess", "apigateway");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-    public SetVpcAccessRequest() {
-        super("CloudAPI", "2016-07-14", "SetVpcAccess", "apigateway");
-    }
+	private String instanceId;
 
-    private String  vpcId;
+	private String securityToken;
 
-    private String  instanceId;
+	private Integer port;
 
-    private Integer port;
-    
-    private String name;
+	private String vpcId;
 
-    public String getVpcId() {
-        return vpcId;
-    }
+	private String name;
 
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-        putQueryParameter("VpcId", vpcId);
-    }
+	public String getInstanceId() {
+		return this.instanceId;
+	}
 
-    public String getInstanceId() {
-        return instanceId;
-    }
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
 
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        putQueryParameter("InstanceId", instanceId);
-    }
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
 
-    public Integer getPort() {
-        return port;
-    }
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
 
-    public void setPort(Integer port) {
-        this.port = port;
-        putQueryParameter("Port", port);
-    }
-    
-    public String getName() {
-        return name;
-    }
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-        putQueryParameter("Name", name);
-    }
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
 
-    @Override
-    public Class<SetVpcAccessResponse> getResponseClass() {
-        return SetVpcAccessResponse.class;
-    }
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	@Override
+	public Class<SetVpcAccessResponse> getResponseClass() {
+		return SetVpcAccessResponse.class;
+	}
+
 }

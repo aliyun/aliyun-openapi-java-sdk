@@ -1,37 +1,41 @@
 /*
- * Copyright 2017 Aliyun.com All right reserved. This software is the
- * confidential and proprietary information of Aliyun.com ("Confidential
- * Information"). You shall not disclose such Confidential Information and shall
- * use it only in accordance with the terms of the license agreement you entered
- * into with Aliyun.com .
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.aliyuncs.cloudapi.model.v20160714;
 
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cloudapi.transform.v20160714.RemoveVpcAccessResponseUnmarshaller;
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
- * @version
+ * @version 
  */
 public class RemoveVpcAccessResponse extends AcsResponse {
-    
-    private String requestId;
 
-    public String getRequestId() {
-        return this.requestId;
-    }
+	private String requestId;
 
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-    @Override
-    public AcsResponse getInstance(UnmarshallerContext context) throws ClientException, ServerException {
-        return  RemoveVpcAccessResponseUnmarshaller.unmarshall(this, context);
-    }
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
+	@Override
+	public RemoveVpcAccessResponse getInstance(UnmarshallerContext context) {
+		return	RemoveVpcAccessResponseUnmarshaller.unmarshall(this, context);
+	}
 }
