@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,34 +26,24 @@ public class AddVServerGroupBackendServersRequest extends RpcAcsRequest<AddVServ
 	
 	public AddVServerGroupBackendServersRequest() {
 		super("Slb", "2014-05-15", "AddVServerGroupBackendServers", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String vServerGroupId;
-
 	private Long resourceOwnerId;
+
+	private String backendServers;
+
+	private String vServerGroupId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String backendServers;
-
-	public String getVServerGroupId() {
-		return this.vServerGroupId;
-	}
-
-	public void setVServerGroupId(String vServerGroupId) {
-		this.vServerGroupId = vServerGroupId;
-		if(vServerGroupId != null){
-			putQueryParameter("VServerGroupId", vServerGroupId);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,6 +53,28 @@ public class AddVServerGroupBackendServersRequest extends RpcAcsRequest<AddVServ
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBackendServers() {
+		return this.backendServers;
+	}
+
+	public void setBackendServers(String backendServers) {
+		this.backendServers = backendServers;
+		if(backendServers != null){
+			putQueryParameter("BackendServers", backendServers);
+		}
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
+		if(vServerGroupId != null){
+			putQueryParameter("VServerGroupId", vServerGroupId);
 		}
 	}
 
@@ -95,17 +108,6 @@ public class AddVServerGroupBackendServersRequest extends RpcAcsRequest<AddVServ
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getBackendServers() {
-		return this.backendServers;
-	}
-
-	public void setBackendServers(String backendServers) {
-		this.backendServers = backendServers;
-		if(backendServers != null){
-			putQueryParameter("BackendServers", backendServers);
 		}
 	}
 

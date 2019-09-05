@@ -77,6 +77,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private String healthCheckMethod;
 
+	private String healthCheckHttpVersion;
+
 	private Integer maxConnection;
 
 	private String vServerGroupId;
@@ -317,6 +319,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setHealthCheckMethod(String healthCheckMethod) {
 		this.healthCheckMethod = healthCheckMethod;
+	}
+
+	public String getHealthCheckHttpVersion() {
+		return this.healthCheckHttpVersion;
+	}
+
+	public void setHealthCheckHttpVersion(String healthCheckHttpVersion) {
+		this.healthCheckHttpVersion = healthCheckHttpVersion;
 	}
 
 	public Integer getMaxConnection() {

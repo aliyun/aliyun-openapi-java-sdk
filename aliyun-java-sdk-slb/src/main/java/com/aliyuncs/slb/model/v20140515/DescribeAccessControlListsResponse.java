@@ -27,6 +27,14 @@ public class DescribeAccessControlListsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer totalCount;
+
+	private Integer pageSize;
+
+	private Integer count;
+
+	private Integer pageNumber;
+
 	private List<Acl> acls;
 
 	public String getRequestId() {
@@ -35,6 +43,38 @@ public class DescribeAccessControlListsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Acl> getAcls() {

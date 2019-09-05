@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 	
 	public SetLoadBalancerHTTPSListenerAttributeRequest() {
 		super("Slb", "2014-05-15", "SetLoadBalancerHTTPSListenerAttribute", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -39,57 +41,25 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 
 	private String healthCheckURI;
 
-	private String description;
-
-	private Integer unhealthyThreshold;
-
-	private Integer healthyThreshold;
-
 	private String aclStatus;
-
-	private String scheduler;
 
 	private String aclType;
 
 	private String healthCheck;
 
-	private String enableHttp2;
-
-	private Integer cookieTimeout;
-
-	private String stickySessionType;
-
 	private String vServerGroupId;
 
 	private String aclId;
 
-	private Integer listenerPort;
-
 	private String cookie;
-
-	private String resourceOwnerAccount;
-
-	private Integer bandwidth;
-
-	private String stickySession;
 
 	private String healthCheckDomain;
 
 	private Integer requestTimeout;
 
-	private String ownerAccount;
-
-	private String gzip;
-
-	private String tLSCipherPolicy;
-
 	private Long ownerId;
 
-	private String serverCertificateId;
-
 	private String cACertificateId;
-
-	private Integer idleTimeout;
 
 	private String loadBalancerId;
 
@@ -97,9 +67,41 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 
 	private Integer healthCheckInterval;
 
-	private String xForwardedFor_proto;
-
 	private String xForwardedFor_SLBID;
+
+	private String description;
+
+	private Integer unhealthyThreshold;
+
+	private Integer healthyThreshold;
+
+	private String scheduler;
+
+	private String enableHttp2;
+
+	private Integer cookieTimeout;
+
+	private String stickySessionType;
+
+	private Integer listenerPort;
+
+	private String resourceOwnerAccount;
+
+	private Integer bandwidth;
+
+	private String stickySession;
+
+	private String ownerAccount;
+
+	private String gzip;
+
+	private String tLSCipherPolicy;
+
+	private String serverCertificateId;
+
+	private Integer idleTimeout;
+
+	private String xForwardedFor_proto;
 
 	private Integer healthCheckConnectPort;
 
@@ -151,39 +153,6 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public Integer getUnhealthyThreshold() {
-		return this.unhealthyThreshold;
-	}
-
-	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
-		this.unhealthyThreshold = unhealthyThreshold;
-		if(unhealthyThreshold != null){
-			putQueryParameter("UnhealthyThreshold", unhealthyThreshold.toString());
-		}
-	}
-
-	public Integer getHealthyThreshold() {
-		return this.healthyThreshold;
-	}
-
-	public void setHealthyThreshold(Integer healthyThreshold) {
-		this.healthyThreshold = healthyThreshold;
-		if(healthyThreshold != null){
-			putQueryParameter("HealthyThreshold", healthyThreshold.toString());
-		}
-	}
-
 	public String getAclStatus() {
 		return this.aclStatus;
 	}
@@ -192,17 +161,6 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		this.aclStatus = aclStatus;
 		if(aclStatus != null){
 			putQueryParameter("AclStatus", aclStatus);
-		}
-	}
-
-	public String getScheduler() {
-		return this.scheduler;
-	}
-
-	public void setScheduler(String scheduler) {
-		this.scheduler = scheduler;
-		if(scheduler != null){
-			putQueryParameter("Scheduler", scheduler);
 		}
 	}
 
@@ -228,39 +186,6 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getEnableHttp2() {
-		return this.enableHttp2;
-	}
-
-	public void setEnableHttp2(String enableHttp2) {
-		this.enableHttp2 = enableHttp2;
-		if(enableHttp2 != null){
-			putQueryParameter("EnableHttp2", enableHttp2);
-		}
-	}
-
-	public Integer getCookieTimeout() {
-		return this.cookieTimeout;
-	}
-
-	public void setCookieTimeout(Integer cookieTimeout) {
-		this.cookieTimeout = cookieTimeout;
-		if(cookieTimeout != null){
-			putQueryParameter("CookieTimeout", cookieTimeout.toString());
-		}
-	}
-
-	public String getStickySessionType() {
-		return this.stickySessionType;
-	}
-
-	public void setStickySessionType(String stickySessionType) {
-		this.stickySessionType = stickySessionType;
-		if(stickySessionType != null){
-			putQueryParameter("StickySessionType", stickySessionType);
-		}
-	}
-
 	public String getVServerGroupId() {
 		return this.vServerGroupId;
 	}
@@ -283,17 +208,6 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		}
 	}
 
-	public Integer getListenerPort() {
-		return this.listenerPort;
-	}
-
-	public void setListenerPort(Integer listenerPort) {
-		this.listenerPort = listenerPort;
-		if(listenerPort != null){
-			putQueryParameter("ListenerPort", listenerPort.toString());
-		}
-	}
-
 	public String getCookie() {
 		return this.cookie;
 	}
@@ -302,39 +216,6 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		this.cookie = cookie;
 		if(cookie != null){
 			putQueryParameter("Cookie", cookie);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Integer getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth.toString());
-		}
-	}
-
-	public String getStickySession() {
-		return this.stickySession;
-	}
-
-	public void setStickySession(String stickySession) {
-		this.stickySession = stickySession;
-		if(stickySession != null){
-			putQueryParameter("StickySession", stickySession);
 		}
 	}
 
@@ -360,39 +241,6 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getGzip() {
-		return this.gzip;
-	}
-
-	public void setGzip(String gzip) {
-		this.gzip = gzip;
-		if(gzip != null){
-			putQueryParameter("Gzip", gzip);
-		}
-	}
-
-	public String getTLSCipherPolicy() {
-		return this.tLSCipherPolicy;
-	}
-
-	public void setTLSCipherPolicy(String tLSCipherPolicy) {
-		this.tLSCipherPolicy = tLSCipherPolicy;
-		if(tLSCipherPolicy != null){
-			putQueryParameter("TLSCipherPolicy", tLSCipherPolicy);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -404,17 +252,6 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getServerCertificateId() {
-		return this.serverCertificateId;
-	}
-
-	public void setServerCertificateId(String serverCertificateId) {
-		this.serverCertificateId = serverCertificateId;
-		if(serverCertificateId != null){
-			putQueryParameter("ServerCertificateId", serverCertificateId);
-		}
-	}
-
 	public String getCACertificateId() {
 		return this.cACertificateId;
 	}
@@ -423,17 +260,6 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		this.cACertificateId = cACertificateId;
 		if(cACertificateId != null){
 			putQueryParameter("CACertificateId", cACertificateId);
-		}
-	}
-
-	public Integer getIdleTimeout() {
-		return this.idleTimeout;
-	}
-
-	public void setIdleTimeout(Integer idleTimeout) {
-		this.idleTimeout = idleTimeout;
-		if(idleTimeout != null){
-			putQueryParameter("IdleTimeout", idleTimeout.toString());
 		}
 	}
 
@@ -470,17 +296,6 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getXForwardedFor_proto() {
-		return this.xForwardedFor_proto;
-	}
-
-	public void setXForwardedFor_proto(String xForwardedFor_proto) {
-		this.xForwardedFor_proto = xForwardedFor_proto;
-		if(xForwardedFor_proto != null){
-			putQueryParameter("XForwardedFor_proto", xForwardedFor_proto);
-		}
-	}
-
 	public String getXForwardedFor_SLBID() {
 		return this.xForwardedFor_SLBID;
 	}
@@ -489,6 +304,193 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 		this.xForwardedFor_SLBID = xForwardedFor_SLBID;
 		if(xForwardedFor_SLBID != null){
 			putQueryParameter("XForwardedFor_SLBID", xForwardedFor_SLBID);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Integer getUnhealthyThreshold() {
+		return this.unhealthyThreshold;
+	}
+
+	public void setUnhealthyThreshold(Integer unhealthyThreshold) {
+		this.unhealthyThreshold = unhealthyThreshold;
+		if(unhealthyThreshold != null){
+			putQueryParameter("UnhealthyThreshold", unhealthyThreshold.toString());
+		}
+	}
+
+	public Integer getHealthyThreshold() {
+		return this.healthyThreshold;
+	}
+
+	public void setHealthyThreshold(Integer healthyThreshold) {
+		this.healthyThreshold = healthyThreshold;
+		if(healthyThreshold != null){
+			putQueryParameter("HealthyThreshold", healthyThreshold.toString());
+		}
+	}
+
+	public String getScheduler() {
+		return this.scheduler;
+	}
+
+	public void setScheduler(String scheduler) {
+		this.scheduler = scheduler;
+		if(scheduler != null){
+			putQueryParameter("Scheduler", scheduler);
+		}
+	}
+
+	public String getEnableHttp2() {
+		return this.enableHttp2;
+	}
+
+	public void setEnableHttp2(String enableHttp2) {
+		this.enableHttp2 = enableHttp2;
+		if(enableHttp2 != null){
+			putQueryParameter("EnableHttp2", enableHttp2);
+		}
+	}
+
+	public Integer getCookieTimeout() {
+		return this.cookieTimeout;
+	}
+
+	public void setCookieTimeout(Integer cookieTimeout) {
+		this.cookieTimeout = cookieTimeout;
+		if(cookieTimeout != null){
+			putQueryParameter("CookieTimeout", cookieTimeout.toString());
+		}
+	}
+
+	public String getStickySessionType() {
+		return this.stickySessionType;
+	}
+
+	public void setStickySessionType(String stickySessionType) {
+		this.stickySessionType = stickySessionType;
+		if(stickySessionType != null){
+			putQueryParameter("StickySessionType", stickySessionType);
+		}
+	}
+
+	public Integer getListenerPort() {
+		return this.listenerPort;
+	}
+
+	public void setListenerPort(Integer listenerPort) {
+		this.listenerPort = listenerPort;
+		if(listenerPort != null){
+			putQueryParameter("ListenerPort", listenerPort.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getStickySession() {
+		return this.stickySession;
+	}
+
+	public void setStickySession(String stickySession) {
+		this.stickySession = stickySession;
+		if(stickySession != null){
+			putQueryParameter("StickySession", stickySession);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getGzip() {
+		return this.gzip;
+	}
+
+	public void setGzip(String gzip) {
+		this.gzip = gzip;
+		if(gzip != null){
+			putQueryParameter("Gzip", gzip);
+		}
+	}
+
+	public String getTLSCipherPolicy() {
+		return this.tLSCipherPolicy;
+	}
+
+	public void setTLSCipherPolicy(String tLSCipherPolicy) {
+		this.tLSCipherPolicy = tLSCipherPolicy;
+		if(tLSCipherPolicy != null){
+			putQueryParameter("TLSCipherPolicy", tLSCipherPolicy);
+		}
+	}
+
+	public String getServerCertificateId() {
+		return this.serverCertificateId;
+	}
+
+	public void setServerCertificateId(String serverCertificateId) {
+		this.serverCertificateId = serverCertificateId;
+		if(serverCertificateId != null){
+			putQueryParameter("ServerCertificateId", serverCertificateId);
+		}
+	}
+
+	public Integer getIdleTimeout() {
+		return this.idleTimeout;
+	}
+
+	public void setIdleTimeout(Integer idleTimeout) {
+		this.idleTimeout = idleTimeout;
+		if(idleTimeout != null){
+			putQueryParameter("IdleTimeout", idleTimeout.toString());
+		}
+	}
+
+	public String getXForwardedFor_proto() {
+		return this.xForwardedFor_proto;
+	}
+
+	public void setXForwardedFor_proto(String xForwardedFor_proto) {
+		this.xForwardedFor_proto = xForwardedFor_proto;
+		if(xForwardedFor_proto != null){
+			putQueryParameter("XForwardedFor_proto", xForwardedFor_proto);
 		}
 	}
 

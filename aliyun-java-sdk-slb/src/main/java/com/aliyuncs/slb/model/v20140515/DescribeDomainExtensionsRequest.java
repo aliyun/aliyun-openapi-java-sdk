@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomai
 	
 	public DescribeDomainExtensionsRequest() {
 		super("Slb", "2014-05-15", "DescribeDomainExtensions", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,9 +35,9 @@ public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomai
 
 	private Long resourceOwnerId;
 
-	private Integer listenerPort;
+	private String domainExtensionId;
 
-	private String loadBalancerId;
+	private Integer listenerPort;
 
 	private String resourceOwnerAccount;
 
@@ -43,7 +45,7 @@ public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomai
 
 	private Long ownerId;
 
-	private String domainExtensionId;
+	private String loadBalancerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,6 +58,17 @@ public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomai
 		}
 	}
 
+	public String getDomainExtensionId() {
+		return this.domainExtensionId;
+	}
+
+	public void setDomainExtensionId(String domainExtensionId) {
+		this.domainExtensionId = domainExtensionId;
+		if(domainExtensionId != null){
+			putQueryParameter("DomainExtensionId", domainExtensionId);
+		}
+	}
+
 	public Integer getListenerPort() {
 		return this.listenerPort;
 	}
@@ -64,17 +77,6 @@ public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomai
 		this.listenerPort = listenerPort;
 		if(listenerPort != null){
 			putQueryParameter("ListenerPort", listenerPort.toString());
-		}
-	}
-
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
@@ -111,14 +113,14 @@ public class DescribeDomainExtensionsRequest extends RpcAcsRequest<DescribeDomai
 		}
 	}
 
-	public String getDomainExtensionId() {
-		return this.domainExtensionId;
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
 	}
 
-	public void setDomainExtensionId(String domainExtensionId) {
-		this.domainExtensionId = domainExtensionId;
-		if(domainExtensionId != null){
-			putQueryParameter("DomainExtensionId", domainExtensionId);
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 

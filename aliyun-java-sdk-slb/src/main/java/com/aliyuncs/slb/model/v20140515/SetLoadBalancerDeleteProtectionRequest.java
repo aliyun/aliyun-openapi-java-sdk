@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class SetLoadBalancerDeleteProtectionRequest extends RpcAcsRequest<SetLoa
 	
 	public SetLoadBalancerDeleteProtectionRequest() {
 		super("Slb", "2014-05-15", "SetLoadBalancerDeleteProtection", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,7 +35,7 @@ public class SetLoadBalancerDeleteProtectionRequest extends RpcAcsRequest<SetLoa
 
 	private Long resourceOwnerId;
 
-	private String loadBalancerId;
+	private String deleteProtection;
 
 	private String resourceOwnerAccount;
 
@@ -41,7 +43,7 @@ public class SetLoadBalancerDeleteProtectionRequest extends RpcAcsRequest<SetLoa
 
 	private Long ownerId;
 
-	private String deleteProtection;
+	private String loadBalancerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,14 +56,14 @@ public class SetLoadBalancerDeleteProtectionRequest extends RpcAcsRequest<SetLoa
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
+	public String getDeleteProtection() {
+		return this.deleteProtection;
 	}
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
+	public void setDeleteProtection(String deleteProtection) {
+		this.deleteProtection = deleteProtection;
+		if(deleteProtection != null){
+			putQueryParameter("DeleteProtection", deleteProtection);
 		}
 	}
 
@@ -98,14 +100,14 @@ public class SetLoadBalancerDeleteProtectionRequest extends RpcAcsRequest<SetLoa
 		}
 	}
 
-	public String getDeleteProtection() {
-		return this.deleteProtection;
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
 	}
 
-	public void setDeleteProtection(String deleteProtection) {
-		this.deleteProtection = deleteProtection;
-		if(deleteProtection != null){
-			putQueryParameter("DeleteProtection", deleteProtection);
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 

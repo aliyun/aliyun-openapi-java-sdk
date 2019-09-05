@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,34 +26,24 @@ public class AddAccessControlListEntryRequest extends RpcAcsRequest<AddAccessCon
 	
 	public AddAccessControlListEntryRequest() {
 		super("Slb", "2014-05-15", "AddAccessControlListEntry", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String aclId;
-
 	private Long resourceOwnerId;
+
+	private String aclEntrys;
+
+	private String aclId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String aclEntrys;
-
 	private Long ownerId;
-
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,6 +53,28 @@ public class AddAccessControlListEntryRequest extends RpcAcsRequest<AddAccessCon
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAclEntrys() {
+		return this.aclEntrys;
+	}
+
+	public void setAclEntrys(String aclEntrys) {
+		this.aclEntrys = aclEntrys;
+		if(aclEntrys != null){
+			putQueryParameter("AclEntrys", aclEntrys);
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
 		}
 	}
 
@@ -84,17 +97,6 @@ public class AddAccessControlListEntryRequest extends RpcAcsRequest<AddAccessCon
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getAclEntrys() {
-		return this.aclEntrys;
-	}
-
-	public void setAclEntrys(String aclEntrys) {
-		this.aclEntrys = aclEntrys;
-		if(aclEntrys != null){
-			putQueryParameter("AclEntrys", aclEntrys);
 		}
 	}
 

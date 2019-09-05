@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class DeleteRulesRequest extends RpcAcsRequest<DeleteRulesResponse> {
 	
 	public DeleteRulesRequest() {
 		super("Slb", "2014-05-15", "DeleteRules", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,13 +35,13 @@ public class DeleteRulesRequest extends RpcAcsRequest<DeleteRulesResponse> {
 
 	private Long resourceOwnerId;
 
-	private String ruleIds;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String ruleIds;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +51,6 @@ public class DeleteRulesRequest extends RpcAcsRequest<DeleteRulesResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getRuleIds() {
-		return this.ruleIds;
-	}
-
-	public void setRuleIds(String ruleIds) {
-		this.ruleIds = ruleIds;
-		if(ruleIds != null){
-			putQueryParameter("RuleIds", ruleIds);
 		}
 	}
 
@@ -93,6 +84,17 @@ public class DeleteRulesRequest extends RpcAcsRequest<DeleteRulesResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRuleIds() {
+		return this.ruleIds;
+	}
+
+	public void setRuleIds(String ruleIds) {
+		this.ruleIds = ruleIds;
+		if(ruleIds != null){
+			putQueryParameter("RuleIds", ruleIds);
 		}
 	}
 

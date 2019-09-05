@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 	
 	public CreateDomainExtensionRequest() {
 		super("Slb", "2014-05-15", "CreateDomainExtension", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,17 +37,17 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 
 	private Integer listenerPort;
 
-	private String loadBalancerId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String domain;
-
 	private Long ownerId;
 
 	private String serverCertificateId;
+
+	private String loadBalancerId;
+
+	private String domain;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -69,17 +71,6 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -99,6 +90,39 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getServerCertificateId() {
+		return this.serverCertificateId;
+	}
+
+	public void setServerCertificateId(String serverCertificateId) {
+		this.serverCertificateId = serverCertificateId;
+		if(serverCertificateId != null){
+			putQueryParameter("ServerCertificateId", serverCertificateId);
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
@@ -129,28 +153,6 @@ public class CreateDomainExtensionRequest extends RpcAcsRequest<CreateDomainExte
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getServerCertificateId() {
-		return this.serverCertificateId;
-	}
-
-	public void setServerCertificateId(String serverCertificateId) {
-		this.serverCertificateId = serverCertificateId;
-		if(serverCertificateId != null){
-			putQueryParameter("ServerCertificateId", serverCertificateId);
 		}
 	}
 

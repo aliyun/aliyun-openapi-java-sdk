@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class SetListenerAccessControlStatusRequest extends RpcAcsRequest<SetList
 	
 	public SetListenerAccessControlStatusRequest() {
 		super("Slb", "2014-05-15", "SetListenerAccessControlStatus", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,19 +35,19 @@ public class SetListenerAccessControlStatusRequest extends RpcAcsRequest<SetList
 
 	private Long resourceOwnerId;
 
-	private Integer listenerPort;
+	private String accessControlStatus;
 
-	private String loadBalancerId;
+	private Integer listenerPort;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String accessControlStatus;
-
 	private Long ownerId;
 
 	private String listenerProtocol;
+
+	private String loadBalancerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,6 +60,17 @@ public class SetListenerAccessControlStatusRequest extends RpcAcsRequest<SetList
 		}
 	}
 
+	public String getAccessControlStatus() {
+		return this.accessControlStatus;
+	}
+
+	public void setAccessControlStatus(String accessControlStatus) {
+		this.accessControlStatus = accessControlStatus;
+		if(accessControlStatus != null){
+			putQueryParameter("AccessControlStatus", accessControlStatus);
+		}
+	}
+
 	public Integer getListenerPort() {
 		return this.listenerPort;
 	}
@@ -66,17 +79,6 @@ public class SetListenerAccessControlStatusRequest extends RpcAcsRequest<SetList
 		this.listenerPort = listenerPort;
 		if(listenerPort != null){
 			putQueryParameter("ListenerPort", listenerPort.toString());
-		}
-	}
-
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
@@ -102,17 +104,6 @@ public class SetListenerAccessControlStatusRequest extends RpcAcsRequest<SetList
 		}
 	}
 
-	public String getAccessControlStatus() {
-		return this.accessControlStatus;
-	}
-
-	public void setAccessControlStatus(String accessControlStatus) {
-		this.accessControlStatus = accessControlStatus;
-		if(accessControlStatus != null){
-			putQueryParameter("AccessControlStatus", accessControlStatus);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,6 +123,17 @@ public class SetListenerAccessControlStatusRequest extends RpcAcsRequest<SetList
 		this.listenerProtocol = listenerProtocol;
 		if(listenerProtocol != null){
 			putQueryParameter("ListenerProtocol", listenerProtocol);
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 

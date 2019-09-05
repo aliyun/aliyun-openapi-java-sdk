@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class DeleteDomainExtensionRequest extends RpcAcsRequest<DeleteDomainExte
 	
 	public DeleteDomainExtensionRequest() {
 		super("Slb", "2014-05-15", "DeleteDomainExtension", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,13 +35,13 @@ public class DeleteDomainExtensionRequest extends RpcAcsRequest<DeleteDomainExte
 
 	private Long resourceOwnerId;
 
+	private String domainExtensionId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String domainExtensionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,6 +51,17 @@ public class DeleteDomainExtensionRequest extends RpcAcsRequest<DeleteDomainExte
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDomainExtensionId() {
+		return this.domainExtensionId;
+	}
+
+	public void setDomainExtensionId(String domainExtensionId) {
+		this.domainExtensionId = domainExtensionId;
+		if(domainExtensionId != null){
+			putQueryParameter("DomainExtensionId", domainExtensionId);
 		}
 	}
 
@@ -82,17 +95,6 @@ public class DeleteDomainExtensionRequest extends RpcAcsRequest<DeleteDomainExte
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDomainExtensionId() {
-		return this.domainExtensionId;
-	}
-
-	public void setDomainExtensionId(String domainExtensionId) {
-		this.domainExtensionId = domainExtensionId;
-		if(domainExtensionId != null){
-			putQueryParameter("DomainExtensionId", domainExtensionId);
 		}
 	}
 

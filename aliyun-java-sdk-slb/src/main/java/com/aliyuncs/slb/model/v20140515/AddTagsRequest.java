@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class AddTagsRequest extends RpcAcsRequest<AddTagsResponse> {
 	
 	public AddTagsRequest() {
 		super("Slb", "2014-05-15", "AddTags", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -32,8 +34,6 @@ public class AddTagsRequest extends RpcAcsRequest<AddTagsResponse> {
 	}
 
 	private Long resourceOwnerId;
-
-	private String loadBalancerId;
 
 	private String resourceOwnerAccount;
 
@@ -43,6 +43,8 @@ public class AddTagsRequest extends RpcAcsRequest<AddTagsResponse> {
 
 	private String tags;
 
+	private String loadBalancerId;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -51,17 +53,6 @@ public class AddTagsRequest extends RpcAcsRequest<AddTagsResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
@@ -106,6 +97,17 @@ public class AddTagsRequest extends RpcAcsRequest<AddTagsResponse> {
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 

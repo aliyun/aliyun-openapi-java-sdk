@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 	
 	public DescribeMasterSlaveServerGroupsRequest() {
 		super("Slb", "2014-05-15", "DescribeMasterSlaveServerGroups", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,15 +35,15 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 
 	private Long resourceOwnerId;
 
-	private String loadBalancerId;
+	private Boolean includeListener;
 
 	private String resourceOwnerAccount;
-
-	private Boolean includeListener;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String loadBalancerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,14 +56,14 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
+	public Boolean getIncludeListener() {
+		return this.includeListener;
 	}
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
+	public void setIncludeListener(Boolean includeListener) {
+		this.includeListener = includeListener;
+		if(includeListener != null){
+			putQueryParameter("IncludeListener", includeListener.toString());
 		}
 	}
 
@@ -73,17 +75,6 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getIncludeListener() {
-		return this.includeListener;
-	}
-
-	public void setIncludeListener(Boolean includeListener) {
-		this.includeListener = includeListener;
-		if(includeListener != null){
-			putQueryParameter("IncludeListener", includeListener.toString());
 		}
 	}
 
@@ -106,6 +97,17 @@ public class DescribeMasterSlaveServerGroupsRequest extends RpcAcsRequest<Descri
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class DescribeListenerAccessControlAttributeRequest extends RpcAcsRequest
 	
 	public DescribeListenerAccessControlAttributeRequest() {
 		super("Slb", "2014-05-15", "DescribeListenerAccessControlAttribute", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,8 +37,6 @@ public class DescribeListenerAccessControlAttributeRequest extends RpcAcsRequest
 
 	private Integer listenerPort;
 
-	private String loadBalancerId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -44,6 +44,8 @@ public class DescribeListenerAccessControlAttributeRequest extends RpcAcsRequest
 	private Long ownerId;
 
 	private String listenerProtocol;
+
+	private String loadBalancerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,17 +66,6 @@ public class DescribeListenerAccessControlAttributeRequest extends RpcAcsRequest
 		this.listenerPort = listenerPort;
 		if(listenerPort != null){
 			putQueryParameter("ListenerPort", listenerPort.toString());
-		}
-	}
-
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
@@ -119,6 +110,17 @@ public class DescribeListenerAccessControlAttributeRequest extends RpcAcsRequest
 		this.listenerProtocol = listenerProtocol;
 		if(listenerProtocol != null){
 			putQueryParameter("ListenerProtocol", listenerProtocol);
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 

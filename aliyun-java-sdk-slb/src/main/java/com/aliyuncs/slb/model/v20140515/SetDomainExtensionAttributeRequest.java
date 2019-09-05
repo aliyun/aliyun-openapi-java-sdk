@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class SetDomainExtensionAttributeRequest extends RpcAcsRequest<SetDomainE
 	
 	public SetDomainExtensionAttributeRequest() {
 		super("Slb", "2014-05-15", "SetDomainExtensionAttribute", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -32,6 +34,8 @@ public class SetDomainExtensionAttributeRequest extends RpcAcsRequest<SetDomainE
 	}
 
 	private Long resourceOwnerId;
+
+	private String domainExtensionId;
 
 	private String resourceOwnerAccount;
 
@@ -41,8 +45,6 @@ public class SetDomainExtensionAttributeRequest extends RpcAcsRequest<SetDomainE
 
 	private String serverCertificateId;
 
-	private String domainExtensionId;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -51,6 +53,17 @@ public class SetDomainExtensionAttributeRequest extends RpcAcsRequest<SetDomainE
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDomainExtensionId() {
+		return this.domainExtensionId;
+	}
+
+	public void setDomainExtensionId(String domainExtensionId) {
+		this.domainExtensionId = domainExtensionId;
+		if(domainExtensionId != null){
+			putQueryParameter("DomainExtensionId", domainExtensionId);
 		}
 	}
 
@@ -95,17 +108,6 @@ public class SetDomainExtensionAttributeRequest extends RpcAcsRequest<SetDomainE
 		this.serverCertificateId = serverCertificateId;
 		if(serverCertificateId != null){
 			putQueryParameter("ServerCertificateId", serverCertificateId);
-		}
-	}
-
-	public String getDomainExtensionId() {
-		return this.domainExtensionId;
-	}
-
-	public void setDomainExtensionId(String domainExtensionId) {
-		this.domainExtensionId = domainExtensionId;
-		if(domainExtensionId != null){
-			putQueryParameter("DomainExtensionId", domainExtensionId);
 		}
 	}
 

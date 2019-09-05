@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class SetBackendServersRequest extends RpcAcsRequest<SetBackendServersRes
 	
 	public SetBackendServersRequest() {
 		super("Slb", "2014-05-15", "SetBackendServers", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,7 +35,7 @@ public class SetBackendServersRequest extends RpcAcsRequest<SetBackendServersRes
 
 	private Long resourceOwnerId;
 
-	private String loadBalancerId;
+	private String backendServers;
 
 	private String resourceOwnerAccount;
 
@@ -41,7 +43,7 @@ public class SetBackendServersRequest extends RpcAcsRequest<SetBackendServersRes
 
 	private Long ownerId;
 
-	private String backendServers;
+	private String loadBalancerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,14 +56,14 @@ public class SetBackendServersRequest extends RpcAcsRequest<SetBackendServersRes
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
+	public String getBackendServers() {
+		return this.backendServers;
 	}
 
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
+	public void setBackendServers(String backendServers) {
+		this.backendServers = backendServers;
+		if(backendServers != null){
+			putQueryParameter("BackendServers", backendServers);
 		}
 	}
 
@@ -98,14 +100,14 @@ public class SetBackendServersRequest extends RpcAcsRequest<SetBackendServersRes
 		}
 	}
 
-	public String getBackendServers() {
-		return this.backendServers;
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
 	}
 
-	public void setBackendServers(String backendServers) {
-		this.backendServers = backendServers;
-		if(backendServers != null){
-			putQueryParameter("BackendServers", backendServers);
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 

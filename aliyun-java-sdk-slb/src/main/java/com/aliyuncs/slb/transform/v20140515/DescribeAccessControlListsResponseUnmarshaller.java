@@ -28,6 +28,10 @@ public class DescribeAccessControlListsResponseUnmarshaller {
 	public static DescribeAccessControlListsResponse unmarshall(DescribeAccessControlListsResponse describeAccessControlListsResponse, UnmarshallerContext _ctx) {
 		
 		describeAccessControlListsResponse.setRequestId(_ctx.stringValue("DescribeAccessControlListsResponse.RequestId"));
+		describeAccessControlListsResponse.setTotalCount(_ctx.integerValue("DescribeAccessControlListsResponse.TotalCount"));
+		describeAccessControlListsResponse.setPageSize(_ctx.integerValue("DescribeAccessControlListsResponse.PageSize"));
+		describeAccessControlListsResponse.setCount(_ctx.integerValue("DescribeAccessControlListsResponse.Count"));
+		describeAccessControlListsResponse.setPageNumber(_ctx.integerValue("DescribeAccessControlListsResponse.PageNumber"));
 
 		List<Acl> acls = new ArrayList<Acl>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccessControlListsResponse.Acls.Length"); i++) {

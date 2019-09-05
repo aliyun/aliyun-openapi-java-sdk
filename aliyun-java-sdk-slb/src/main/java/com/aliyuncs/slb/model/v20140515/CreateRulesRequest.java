@@ -15,6 +15,7 @@
 package com.aliyuncs.slb.model.v20140515;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.slb.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 	
 	public CreateRulesRequest() {
 		super("Slb", "2014-05-15", "CreateRules", "slb");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,19 +35,19 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 
 	private Long resourceOwnerId;
 
+	private String ruleList;
+
 	private Integer listenerPort;
 
-	private String loadBalancerId;
-
 	private String resourceOwnerAccount;
-
-	private String ruleList;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
 	private String listenerProtocol;
+
+	private String loadBalancerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,6 +57,17 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRuleList() {
+		return this.ruleList;
+	}
+
+	public void setRuleList(String ruleList) {
+		this.ruleList = ruleList;
+		if(ruleList != null){
+			putQueryParameter("RuleList", ruleList);
 		}
 	}
 
@@ -69,17 +82,6 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -88,17 +90,6 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getRuleList() {
-		return this.ruleList;
-	}
-
-	public void setRuleList(String ruleList) {
-		this.ruleList = ruleList;
-		if(ruleList != null){
-			putQueryParameter("RuleList", ruleList);
 		}
 	}
 
@@ -132,6 +123,17 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 		this.listenerProtocol = listenerProtocol;
 		if(listenerProtocol != null){
 			putQueryParameter("ListenerProtocol", listenerProtocol);
+		}
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+		if(loadBalancerId != null){
+			putQueryParameter("LoadBalancerId", loadBalancerId);
 		}
 	}
 
