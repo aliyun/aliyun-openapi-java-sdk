@@ -27,8 +27,8 @@ public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
 	
 	public GetMobileRequest() {
 		super("Dypnsapi", "2017-05-25", "GetMobile", "dypnsapi");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -41,9 +41,9 @@ public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
 
 	private String accessToken;
 
-	private String outId;
-
 	private Long ownerId;
+
+	private String outId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -78,17 +78,6 @@ public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
 		}
 	}
 
-	public String getOutId() {
-		return this.outId;
-	}
-
-	public void setOutId(String outId) {
-		this.outId = outId;
-		if(outId != null){
-			putQueryParameter("OutId", outId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -97,6 +86,17 @@ public class GetMobileRequest extends RpcAcsRequest<GetMobileResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getOutId() {
+		return this.outId;
+	}
+
+	public void setOutId(String outId) {
+		this.outId = outId;
+		if(outId != null){
+			putQueryParameter("OutId", outId);
 		}
 	}
 

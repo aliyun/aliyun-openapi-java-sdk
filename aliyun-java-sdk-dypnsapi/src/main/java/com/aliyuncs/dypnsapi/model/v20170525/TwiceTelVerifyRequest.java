@@ -15,6 +15,7 @@
 package com.aliyuncs.dypnsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dypnsapi.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class TwiceTelVerifyRequest extends RpcAcsRequest<TwiceTelVerifyResponse>
 	
 	public TwiceTelVerifyRequest() {
 		super("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypnsapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

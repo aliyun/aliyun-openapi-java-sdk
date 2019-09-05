@@ -26,7 +26,7 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 	
 	public CreateVerifySchemeRequest() {
 		super("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypnsapi");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,21 +35,21 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 
 	private Long resourceOwnerId;
 
-	private String packName;
+	private String bundleId;
 
 	private String appName;
 
+	private String packSign;
+
+	private String packName;
+
 	private String resourceOwnerAccount;
-
-	private String schemeName;
-
-	private String bundleId;
 
 	private String osType;
 
 	private Long ownerId;
 
-	private String packSign;
+	private String schemeName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,14 +62,14 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		}
 	}
 
-	public String getPackName() {
-		return this.packName;
+	public String getBundleId() {
+		return this.bundleId;
 	}
 
-	public void setPackName(String packName) {
-		this.packName = packName;
-		if(packName != null){
-			putQueryParameter("PackName", packName);
+	public void setBundleId(String bundleId) {
+		this.bundleId = bundleId;
+		if(bundleId != null){
+			putQueryParameter("BundleId", bundleId);
 		}
 	}
 
@@ -84,6 +84,28 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		}
 	}
 
+	public String getPackSign() {
+		return this.packSign;
+	}
+
+	public void setPackSign(String packSign) {
+		this.packSign = packSign;
+		if(packSign != null){
+			putQueryParameter("PackSign", packSign);
+		}
+	}
+
+	public String getPackName() {
+		return this.packName;
+	}
+
+	public void setPackName(String packName) {
+		this.packName = packName;
+		if(packName != null){
+			putQueryParameter("PackName", packName);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -92,28 +114,6 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSchemeName() {
-		return this.schemeName;
-	}
-
-	public void setSchemeName(String schemeName) {
-		this.schemeName = schemeName;
-		if(schemeName != null){
-			putQueryParameter("SchemeName", schemeName);
-		}
-	}
-
-	public String getBundleId() {
-		return this.bundleId;
-	}
-
-	public void setBundleId(String bundleId) {
-		this.bundleId = bundleId;
-		if(bundleId != null){
-			putQueryParameter("BundleId", bundleId);
 		}
 	}
 
@@ -139,14 +139,14 @@ public class CreateVerifySchemeRequest extends RpcAcsRequest<CreateVerifySchemeR
 		}
 	}
 
-	public String getPackSign() {
-		return this.packSign;
+	public String getSchemeName() {
+		return this.schemeName;
 	}
 
-	public void setPackSign(String packSign) {
-		this.packSign = packSign;
-		if(packSign != null){
-			putQueryParameter("PackSign", packSign);
+	public void setSchemeName(String schemeName) {
+		this.schemeName = schemeName;
+		if(schemeName != null){
+			putQueryParameter("SchemeName", schemeName);
 		}
 	}
 

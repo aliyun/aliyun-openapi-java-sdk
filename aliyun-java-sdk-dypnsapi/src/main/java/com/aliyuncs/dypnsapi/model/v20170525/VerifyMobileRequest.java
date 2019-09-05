@@ -27,8 +27,8 @@ public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
 	
 	public VerifyMobileRequest() {
 		super("Dypnsapi", "2017-05-25", "VerifyMobile", "dypnsapi");
-		setProtocol(ProtocolType.HTTPS);
-		setMethod(MethodType.POST);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -37,15 +37,15 @@ public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
 
 	private Long resourceOwnerId;
 
+	private String phoneNumber;
+
 	private String accessCode;
 
 	private String resourceOwnerAccount;
 
-	private String phoneNumber;
+	private Long ownerId;
 
 	private String outId;
-
-	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,6 +55,17 @@ public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+		if(phoneNumber != null){
+			putQueryParameter("PhoneNumber", phoneNumber);
 		}
 	}
 
@@ -80,14 +91,14 @@ public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
 		}
 	}
 
-	public String getPhoneNumber() {
-		return this.phoneNumber;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-		if(phoneNumber != null){
-			putQueryParameter("PhoneNumber", phoneNumber);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -99,17 +110,6 @@ public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
 		this.outId = outId;
 		if(outId != null){
 			putQueryParameter("OutId", outId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

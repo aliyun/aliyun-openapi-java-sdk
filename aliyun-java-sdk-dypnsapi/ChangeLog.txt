@@ -1,3 +1,6 @@
+2019-09-05 Version: 1.0.4
+- Supported for setEndpoint method.
+
 2019-08-15 Version: 1.0.5
 - Generated 2017-05-25 for `Dypnsapi`.
 
