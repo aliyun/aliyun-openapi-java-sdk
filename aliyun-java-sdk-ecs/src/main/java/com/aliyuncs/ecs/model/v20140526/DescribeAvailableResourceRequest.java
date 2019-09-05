@@ -59,6 +59,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private Long ownerId;
 
+	private Integer spotDuration;
+
 	private String resourceType;
 
 	private String spotStrategy;
@@ -218,6 +220,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getSpotDuration() {
+		return this.spotDuration;
+	}
+
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if(spotDuration != null){
+			putQueryParameter("SpotDuration", spotDuration.toString());
 		}
 	}
 

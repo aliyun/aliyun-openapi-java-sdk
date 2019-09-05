@@ -33,13 +33,13 @@ public class DetachKeyPairRequest extends RpcAcsRequest<DetachKeyPairResponse> {
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String instanceIds;
-
 	private String keyPairName;
 
+	private String resourceOwnerAccount;
+
 	private Long ownerId;
+
+	private String instanceIds;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,28 +49,6 @@ public class DetachKeyPairRequest extends RpcAcsRequest<DetachKeyPairResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
@@ -85,6 +63,17 @@ public class DetachKeyPairRequest extends RpcAcsRequest<DetachKeyPairResponse> {
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -93,6 +82,17 @@ public class DetachKeyPairRequest extends RpcAcsRequest<DetachKeyPairResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 

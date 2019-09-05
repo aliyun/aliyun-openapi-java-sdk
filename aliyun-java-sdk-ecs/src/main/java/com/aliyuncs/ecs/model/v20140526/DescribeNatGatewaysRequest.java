@@ -33,19 +33,19 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private String vpcId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String natGatewayId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Long ownerId;
 
-	private Integer pageNumber;
+	private String vpcId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,36 +58,14 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -113,6 +91,28 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -124,14 +124,14 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

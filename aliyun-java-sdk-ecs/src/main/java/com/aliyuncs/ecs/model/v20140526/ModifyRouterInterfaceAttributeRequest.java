@@ -35,11 +35,13 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String description;
 
 	private String healthCheckTargetIp;
+
+	private String oppositeInterfaceId;
+
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
@@ -52,8 +54,6 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 	private String name;
 
 	private String oppositeRouterType;
-
-	private String oppositeInterfaceId;
 
 	public String getOppositeRouterId() {
 		return this.oppositeRouterId;
@@ -77,17 +77,6 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -107,6 +96,28 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 		this.healthCheckTargetIp = healthCheckTargetIp;
 		if(healthCheckTargetIp != null){
 			putQueryParameter("HealthCheckTargetIp", healthCheckTargetIp);
+		}
+	}
+
+	public String getOppositeInterfaceId() {
+		return this.oppositeInterfaceId;
+	}
+
+	public void setOppositeInterfaceId(String oppositeInterfaceId) {
+		this.oppositeInterfaceId = oppositeInterfaceId;
+		if(oppositeInterfaceId != null){
+			putQueryParameter("OppositeInterfaceId", oppositeInterfaceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -173,17 +184,6 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 		this.oppositeRouterType = oppositeRouterType;
 		if(oppositeRouterType != null){
 			putQueryParameter("OppositeRouterType", oppositeRouterType);
-		}
-	}
-
-	public String getOppositeInterfaceId() {
-		return this.oppositeInterfaceId;
-	}
-
-	public void setOppositeInterfaceId(String oppositeInterfaceId) {
-		this.oppositeInterfaceId = oppositeInterfaceId;
-		if(oppositeInterfaceId != null){
-			putQueryParameter("OppositeInterfaceId", oppositeInterfaceId);
 		}
 	}
 

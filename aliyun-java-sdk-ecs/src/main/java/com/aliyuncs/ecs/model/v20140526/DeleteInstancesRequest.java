@@ -34,21 +34,21 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 
 	private Long resourceOwnerId;
 
-	private List<String> instanceIds;
+	private String clientToken;
+
+	private Boolean terminateSubscription;
 
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
-	private Boolean terminateSubscription;
+	private Long ownerId;
+
+	private List<String> instanceIds;
 
 	private Boolean force;
-
-	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,17 +61,26 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 		}
 	}
 
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;	
-		if (instanceIds != null) {
-			for (int i = 0; i < instanceIds.size(); i++) {
-				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
-			}
-		}	
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getTerminateSubscription() {
+		return this.terminateSubscription;
+	}
+
+	public void setTerminateSubscription(Boolean terminateSubscription) {
+		this.terminateSubscription = terminateSubscription;
+		if(terminateSubscription != null){
+			putQueryParameter("TerminateSubscription", terminateSubscription.toString());
+		}
 	}
 
 	public Boolean getDryRun() {
@@ -96,17 +105,6 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -118,15 +116,28 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 		}
 	}
 
-	public Boolean getTerminateSubscription() {
-		return this.terminateSubscription;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setTerminateSubscription(Boolean terminateSubscription) {
-		this.terminateSubscription = terminateSubscription;
-		if(terminateSubscription != null){
-			putQueryParameter("TerminateSubscription", terminateSubscription.toString());
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			for (int i = 0; i < instanceIds.size(); i++) {
+				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
+			}
+		}	
 	}
 
 	public Boolean getForce() {
@@ -137,17 +148,6 @@ public class DeleteInstancesRequest extends RpcAcsRequest<DeleteInstancesRespons
 		this.force = force;
 		if(force != null){
 			putQueryParameter("Force", force.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

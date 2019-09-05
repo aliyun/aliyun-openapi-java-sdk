@@ -31,30 +31,19 @@ public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDep
 		} catch (Exception e) {}
 	}
 
-	private String deploymentSetId;
-
 	private Long resourceOwnerId;
+
+	private String description;
+
+	private String deploymentSetId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String description;
-
 	private String deploymentSetName;
 
 	private Long ownerId;
-
-	public String getDeploymentSetId() {
-		return this.deploymentSetId;
-	}
-
-	public void setDeploymentSetId(String deploymentSetId) {
-		this.deploymentSetId = deploymentSetId;
-		if(deploymentSetId != null){
-			putQueryParameter("DeploymentSetId", deploymentSetId);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -64,6 +53,28 @@ public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDep
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
 		}
 	}
 
@@ -86,17 +97,6 @@ public class ModifyDeploymentSetAttributeRequest extends RpcAcsRequest<ModifyDep
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 

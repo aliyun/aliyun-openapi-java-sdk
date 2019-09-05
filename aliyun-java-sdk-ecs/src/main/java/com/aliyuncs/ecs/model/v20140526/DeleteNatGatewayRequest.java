@@ -33,11 +33,11 @@ public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayRespo
 
 	private Long resourceOwnerId;
 
+	private String natGatewayId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String natGatewayId;
 
 	private Long ownerId;
 
@@ -49,6 +49,17 @@ public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 
@@ -71,17 +82,6 @@ public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayRespo
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getNatGatewayId() {
-		return this.natGatewayId;
-	}
-
-	public void setNatGatewayId(String natGatewayId) {
-		this.natGatewayId = natGatewayId;
-		if(natGatewayId != null){
-			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 

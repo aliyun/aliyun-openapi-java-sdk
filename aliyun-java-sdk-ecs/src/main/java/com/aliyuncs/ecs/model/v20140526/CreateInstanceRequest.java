@@ -136,6 +136,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String creditSpecification;
 
+	private Integer spotDuration;
+
 	private List<DataDisk> dataDisks;
 
 	private String storageSetId;
@@ -720,6 +722,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.creditSpecification = creditSpecification;
 		if(creditSpecification != null){
 			putQueryParameter("CreditSpecification", creditSpecification);
+		}
+	}
+
+	public Integer getSpotDuration() {
+		return this.spotDuration;
+	}
+
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if(spotDuration != null){
+			putQueryParameter("SpotDuration", spotDuration.toString());
 		}
 	}
 

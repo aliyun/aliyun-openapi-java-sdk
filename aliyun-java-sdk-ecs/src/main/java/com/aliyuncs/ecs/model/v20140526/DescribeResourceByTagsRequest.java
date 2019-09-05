@@ -34,17 +34,17 @@ public class DescribeResourceByTagsRequest extends RpcAcsRequest<DescribeResourc
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private List<Tag> tags;
 
+	private String resourceOwnerAccount;
+
 	private Long ownerId;
 
 	private String resourceType;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,14 +57,14 @@ public class DescribeResourceByTagsRequest extends RpcAcsRequest<DescribeResourc
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -93,6 +93,17 @@ public class DescribeResourceByTagsRequest extends RpcAcsRequest<DescribeResourc
 		}	
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -112,17 +123,6 @@ public class DescribeResourceByTagsRequest extends RpcAcsRequest<DescribeResourc
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

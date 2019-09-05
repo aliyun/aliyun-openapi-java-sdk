@@ -36,15 +36,15 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 
 	private String imageId;
 
-	private List<String> addAccounts;
-
 	private String resourceOwnerAccount;
-
-	private List<String> removeAccounts;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private List<String> addAccounts;
+
+	private List<String> removeAccounts;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -68,19 +68,6 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 		}
 	}
 
-	public List<String> getAddAccounts() {
-		return this.addAccounts;
-	}
-
-	public void setAddAccounts(List<String> addAccounts) {
-		this.addAccounts = addAccounts;	
-		if (addAccounts != null) {
-			for (int i = 0; i < addAccounts.size(); i++) {
-				putQueryParameter("AddAccount." + (i + 1) , addAccounts.get(i));
-			}
-		}	
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -90,19 +77,6 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
-	}
-
-	public List<String> getRemoveAccounts() {
-		return this.removeAccounts;
-	}
-
-	public void setRemoveAccounts(List<String> removeAccounts) {
-		this.removeAccounts = removeAccounts;	
-		if (removeAccounts != null) {
-			for (int i = 0; i < removeAccounts.size(); i++) {
-				putQueryParameter("RemoveAccount." + (i + 1) , removeAccounts.get(i));
-			}
-		}	
 	}
 
 	public String getOwnerAccount() {
@@ -125,6 +99,32 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getAddAccounts() {
+		return this.addAccounts;
+	}
+
+	public void setAddAccounts(List<String> addAccounts) {
+		this.addAccounts = addAccounts;	
+		if (addAccounts != null) {
+			for (int i = 0; i < addAccounts.size(); i++) {
+				putQueryParameter("AddAccount." + (i + 1) , addAccounts.get(i));
+			}
+		}	
+	}
+
+	public List<String> getRemoveAccounts() {
+		return this.removeAccounts;
+	}
+
+	public void setRemoveAccounts(List<String> removeAccounts) {
+		this.removeAccounts = removeAccounts;	
+		if (removeAccounts != null) {
+			for (int i = 0; i < removeAccounts.size(); i++) {
+				putQueryParameter("RemoveAccount." + (i + 1) , removeAccounts.get(i));
+			}
+		}	
 	}
 
 	@Override

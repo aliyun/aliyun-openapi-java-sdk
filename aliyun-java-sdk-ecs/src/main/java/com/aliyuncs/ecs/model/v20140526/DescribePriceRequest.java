@@ -31,15 +31,29 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		} catch (Exception e) {}
 	}
 
-	private String dataDisk3PerformanceLevel;
-
 	private Integer dataDisk3Size;
 
 	private Long resourceOwnerId;
 
-	private String imageId;
-
 	private String dataDisk3Category;
+
+	private Integer dataDisk4Size;
+
+	private String priceUnit;
+
+	private Integer period;
+
+	private String dataDisk1PerformanceLevel;
+
+	private Long ownerId;
+
+	private String internetChargeType;
+
+	private String instanceNetworkType;
+
+	private String dataDisk3PerformanceLevel;
+
+	private String imageId;
 
 	private String ioOptimized;
 
@@ -53,17 +67,11 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String dataDisk4PerformanceLevel;
 
-	private Integer dataDisk4Size;
-
-	private String priceUnit;
-
 	private String instanceType;
 
 	private String dataDisk2Category;
 
 	private Integer dataDisk1Size;
-
-	private Integer period;
 
 	private Integer amount;
 
@@ -73,10 +81,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private Integer dataDisk2Size;
 
-	private String dataDisk1PerformanceLevel;
-
-	private Long ownerId;
-
 	private String resourceType;
 
 	private String dataDisk1Category;
@@ -84,21 +88,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	private String dataDisk2PerformanceLevel;
 
 	private Integer systemDiskSize;
-
-	private String internetChargeType;
-
-	private String instanceNetworkType;
-
-	public String getDataDisk3PerformanceLevel() {
-		return this.dataDisk3PerformanceLevel;
-	}
-
-	public void setDataDisk3PerformanceLevel(String dataDisk3PerformanceLevel) {
-		this.dataDisk3PerformanceLevel = dataDisk3PerformanceLevel;
-		if(dataDisk3PerformanceLevel != null){
-			putQueryParameter("DataDisk.3.PerformanceLevel", dataDisk3PerformanceLevel);
-		}
-	}
 
 	public Integer getDataDisk3Size() {
 		return this.dataDisk3Size;
@@ -122,17 +111,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
 	public String getDataDisk3Category() {
 		return this.dataDisk3Category;
 	}
@@ -141,6 +119,105 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.dataDisk3Category = dataDisk3Category;
 		if(dataDisk3Category != null){
 			putQueryParameter("DataDisk.3.Category", dataDisk3Category);
+		}
+	}
+
+	public Integer getDataDisk4Size() {
+		return this.dataDisk4Size;
+	}
+
+	public void setDataDisk4Size(Integer dataDisk4Size) {
+		this.dataDisk4Size = dataDisk4Size;
+		if(dataDisk4Size != null){
+			putQueryParameter("DataDisk.4.Size", dataDisk4Size.toString());
+		}
+	}
+
+	public String getPriceUnit() {
+		return this.priceUnit;
+	}
+
+	public void setPriceUnit(String priceUnit) {
+		this.priceUnit = priceUnit;
+		if(priceUnit != null){
+			putQueryParameter("PriceUnit", priceUnit);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getDataDisk1PerformanceLevel() {
+		return this.dataDisk1PerformanceLevel;
+	}
+
+	public void setDataDisk1PerformanceLevel(String dataDisk1PerformanceLevel) {
+		this.dataDisk1PerformanceLevel = dataDisk1PerformanceLevel;
+		if(dataDisk1PerformanceLevel != null){
+			putQueryParameter("DataDisk.1.PerformanceLevel", dataDisk1PerformanceLevel);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getInstanceNetworkType() {
+		return this.instanceNetworkType;
+	}
+
+	public void setInstanceNetworkType(String instanceNetworkType) {
+		this.instanceNetworkType = instanceNetworkType;
+		if(instanceNetworkType != null){
+			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getDataDisk3PerformanceLevel() {
+		return this.dataDisk3PerformanceLevel;
+	}
+
+	public void setDataDisk3PerformanceLevel(String dataDisk3PerformanceLevel) {
+		this.dataDisk3PerformanceLevel = dataDisk3PerformanceLevel;
+		if(dataDisk3PerformanceLevel != null){
+			putQueryParameter("DataDisk.3.PerformanceLevel", dataDisk3PerformanceLevel);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
 		}
 	}
 
@@ -210,28 +287,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public Integer getDataDisk4Size() {
-		return this.dataDisk4Size;
-	}
-
-	public void setDataDisk4Size(Integer dataDisk4Size) {
-		this.dataDisk4Size = dataDisk4Size;
-		if(dataDisk4Size != null){
-			putQueryParameter("DataDisk.4.Size", dataDisk4Size.toString());
-		}
-	}
-
-	public String getPriceUnit() {
-		return this.priceUnit;
-	}
-
-	public void setPriceUnit(String priceUnit) {
-		this.priceUnit = priceUnit;
-		if(priceUnit != null){
-			putQueryParameter("PriceUnit", priceUnit);
-		}
-	}
-
 	public String getInstanceType() {
 		return this.instanceType;
 	}
@@ -262,17 +317,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.dataDisk1Size = dataDisk1Size;
 		if(dataDisk1Size != null){
 			putQueryParameter("DataDisk.1.Size", dataDisk1Size.toString());
-		}
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
 		}
 	}
 
@@ -320,28 +364,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public String getDataDisk1PerformanceLevel() {
-		return this.dataDisk1PerformanceLevel;
-	}
-
-	public void setDataDisk1PerformanceLevel(String dataDisk1PerformanceLevel) {
-		this.dataDisk1PerformanceLevel = dataDisk1PerformanceLevel;
-		if(dataDisk1PerformanceLevel != null){
-			putQueryParameter("DataDisk.1.PerformanceLevel", dataDisk1PerformanceLevel);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -383,28 +405,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
-	}
-
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
 		}
 	}
 

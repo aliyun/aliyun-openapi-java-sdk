@@ -39,25 +39,25 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	private String clientToken;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private String description;
-
-	private Long ownerId;
 
 	private String peerGatewayIp;
 
 	private String peeringSubnetMask;
 
-	private String physicalConnectionId;
-
-	private String name;
-
 	private String localGatewayIp;
 
 	private String userCidr;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String physicalConnectionId;
+
+	private String name;
 
 	private Long vbrOwnerId;
 
@@ -105,28 +105,6 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -135,17 +113,6 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -171,28 +138,6 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
-	}
-
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		if(physicalConnectionId != null){
-			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getLocalGatewayIp() {
 		return this.localGatewayIp;
 	}
@@ -212,6 +157,61 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		this.userCidr = userCidr;
 		if(userCidr != null){
 			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -33,7 +33,7 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private Boolean forceStop;
 
 	private Boolean dryRun;
 
@@ -43,7 +43,7 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 
 	private Long ownerId;
 
-	private Boolean forceStop;
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,14 +56,14 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Boolean getForceStop() {
+		return this.forceStop;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setForceStop(Boolean forceStop) {
+		this.forceStop = forceStop;
+		if(forceStop != null){
+			putQueryParameter("ForceStop", forceStop.toString());
 		}
 	}
 
@@ -111,14 +111,14 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 		}
 	}
 
-	public Boolean getForceStop() {
-		return this.forceStop;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setForceStop(Boolean forceStop) {
-		this.forceStop = forceStop;
-		if(forceStop != null){
-			putQueryParameter("ForceStop", forceStop.toString());
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

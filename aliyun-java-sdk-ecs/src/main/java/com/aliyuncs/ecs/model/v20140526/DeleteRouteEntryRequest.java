@@ -34,19 +34,19 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 
 	private Long resourceOwnerId;
 
+	private String nextHopId;
+
+	private String routeTableId;
+
 	private String resourceOwnerAccount;
 
 	private String destinationCidrBlock;
 
 	private String ownerAccount;
 
-	private String nextHopId;
-
 	private Long ownerId;
 
 	private List<NextHopList> nextHopLists;
-
-	private String routeTableId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,6 +56,28 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNextHopId() {
+		return this.nextHopId;
+	}
+
+	public void setNextHopId(String nextHopId) {
+		this.nextHopId = nextHopId;
+		if(nextHopId != null){
+			putQueryParameter("NextHopId", nextHopId);
+		}
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
 		}
 	}
 
@@ -92,17 +114,6 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		}
 	}
 
-	public String getNextHopId() {
-		return this.nextHopId;
-	}
-
-	public void setNextHopId(String nextHopId) {
-		this.nextHopId = nextHopId;
-		if(nextHopId != null){
-			putQueryParameter("NextHopId", nextHopId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,17 +137,6 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
 			}
 		}	
-	}
-
-	public String getRouteTableId() {
-		return this.routeTableId;
-	}
-
-	public void setRouteTableId(String routeTableId) {
-		this.routeTableId = routeTableId;
-		if(routeTableId != null){
-			putQueryParameter("RouteTableId", routeTableId);
-		}
 	}
 
 	public static class NextHopList {

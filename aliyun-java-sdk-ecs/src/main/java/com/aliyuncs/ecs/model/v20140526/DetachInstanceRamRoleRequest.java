@@ -35,11 +35,11 @@ public class DetachInstanceRamRoleRequest extends RpcAcsRequest<DetachInstanceRa
 
 	private String resourceOwnerAccount;
 
-	private String instanceIds;
-
 	private String ramRoleName;
 
 	private Long ownerId;
+
+	private String instanceIds;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,17 +63,6 @@ public class DetachInstanceRamRoleRequest extends RpcAcsRequest<DetachInstanceRa
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
 	public String getRamRoleName() {
 		return this.ramRoleName;
 	}
@@ -93,6 +82,17 @@ public class DetachInstanceRamRoleRequest extends RpcAcsRequest<DetachInstanceRa
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 

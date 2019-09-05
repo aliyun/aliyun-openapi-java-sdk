@@ -41,9 +41,9 @@ public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<Modify
 
 	private String ownerAccount;
 
-	private String removeGroup1;
-
 	private Long ownerId;
+
+	private String removeGroup1;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -100,17 +100,6 @@ public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public String getRemoveGroup1() {
-		return this.removeGroup1;
-	}
-
-	public void setRemoveGroup1(String removeGroup1) {
-		this.removeGroup1 = removeGroup1;
-		if(removeGroup1 != null){
-			putQueryParameter("RemoveGroup.1", removeGroup1);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,6 +108,17 @@ public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<Modify
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRemoveGroup1() {
+		return this.removeGroup1;
+	}
+
+	public void setRemoveGroup1(String removeGroup1) {
+		this.removeGroup1 = removeGroup1;
+		if(removeGroup1 != null){
+			putQueryParameter("RemoveGroup.1", removeGroup1);
 		}
 	}
 

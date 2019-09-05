@@ -34,13 +34,9 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 
 	private Long resourceOwnerId;
 
-	private String snapshotId;
-
 	private String filter2Value;
 
 	private String autoSnapshotPolicyId;
-
-	private Integer pageNumber;
 
 	private String diskName;
 
@@ -54,49 +50,53 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 
 	private String filter1Key;
 
-	private Integer pageSize;
-
-	private String diskIds;
-
 	private List<Tag> tags;
-
-	private Boolean deleteWithInstance;
 
 	private Boolean enableAutoSnapshot;
 
 	private Boolean dryRun;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private String filter1Value;
 
 	private Boolean portable;
+
+	private Long ownerId;
+
+	private List<String> additionalAttributess;
+
+	private String instanceId;
+
+	private String zoneId;
+
+	private String status;
+
+	private String snapshotId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String diskIds;
+
+	private Boolean deleteWithInstance;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Boolean enableAutomatedSnapshotPolicy;
 
 	private String filter2Key;
 
-	private Long ownerId;
-
 	private String diskType;
-
-	private List<String> additionalAttributess;
 
 	private Boolean enableShared;
 
-	private String instanceId;
-
 	private Boolean encrypted;
-
-	private String zoneId;
 
 	private String category;
 
 	private String kMSKeyId;
-
-	private String status;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -106,17 +106,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSnapshotId() {
-		return this.snapshotId;
-	}
-
-	public void setSnapshotId(String snapshotId) {
-		this.snapshotId = snapshotId;
-		if(snapshotId != null){
-			putQueryParameter("SnapshotId", snapshotId);
 		}
 	}
 
@@ -139,17 +128,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
 		if(autoSnapshotPolicyId != null){
 			putQueryParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -219,28 +197,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getDiskIds() {
-		return this.diskIds;
-	}
-
-	public void setDiskIds(String diskIds) {
-		this.diskIds = diskIds;
-		if(diskIds != null){
-			putQueryParameter("DiskIds", diskIds);
-		}
-	}
-
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -253,17 +209,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public Boolean getDeleteWithInstance() {
-		return this.deleteWithInstance;
-	}
-
-	public void setDeleteWithInstance(Boolean deleteWithInstance) {
-		this.deleteWithInstance = deleteWithInstance;
-		if(deleteWithInstance != null){
-			putQueryParameter("DeleteWithInstance", deleteWithInstance.toString());
-		}
 	}
 
 	public Boolean getEnableAutoSnapshot() {
@@ -285,28 +230,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -332,6 +255,140 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public List<String> getAdditionalAttributess() {
+		return this.additionalAttributess;
+	}
+
+	public void setAdditionalAttributess(List<String> additionalAttributess) {
+		this.additionalAttributess = additionalAttributess;	
+		if (additionalAttributess != null) {
+			for (int i = 0; i < additionalAttributess.size(); i++) {
+				putQueryParameter("AdditionalAttributes." + (i + 1) , additionalAttributess.get(i));
+			}
+		}	
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getSnapshotId() {
+		return this.snapshotId;
+	}
+
+	public void setSnapshotId(String snapshotId) {
+		this.snapshotId = snapshotId;
+		if(snapshotId != null){
+			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDiskIds() {
+		return this.diskIds;
+	}
+
+	public void setDiskIds(String diskIds) {
+		this.diskIds = diskIds;
+		if(diskIds != null){
+			putQueryParameter("DiskIds", diskIds);
+		}
+	}
+
+	public Boolean getDeleteWithInstance() {
+		return this.deleteWithInstance;
+	}
+
+	public void setDeleteWithInstance(Boolean deleteWithInstance) {
+		this.deleteWithInstance = deleteWithInstance;
+		if(deleteWithInstance != null){
+			putQueryParameter("DeleteWithInstance", deleteWithInstance.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Boolean getEnableAutomatedSnapshotPolicy() {
 		return this.enableAutomatedSnapshotPolicy;
 	}
@@ -354,17 +411,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getDiskType() {
 		return this.diskType;
 	}
@@ -374,19 +420,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		if(diskType != null){
 			putQueryParameter("DiskType", diskType);
 		}
-	}
-
-	public List<String> getAdditionalAttributess() {
-		return this.additionalAttributess;
-	}
-
-	public void setAdditionalAttributess(List<String> additionalAttributess) {
-		this.additionalAttributess = additionalAttributess;	
-		if (additionalAttributess != null) {
-			for (int i = 0; i < additionalAttributess.size(); i++) {
-				putQueryParameter("AdditionalAttributes." + (i + 1) , additionalAttributess.get(i));
-			}
-		}	
 	}
 
 	public Boolean getEnableShared() {
@@ -400,17 +433,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public Boolean getEncrypted() {
 		return this.encrypted;
 	}
@@ -419,17 +441,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.encrypted = encrypted;
 		if(encrypted != null){
 			putQueryParameter("Encrypted", encrypted.toString());
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
@@ -452,17 +463,6 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.kMSKeyId = kMSKeyId;
 		if(kMSKeyId != null){
 			putQueryParameter("KMSKeyId", kMSKeyId);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 

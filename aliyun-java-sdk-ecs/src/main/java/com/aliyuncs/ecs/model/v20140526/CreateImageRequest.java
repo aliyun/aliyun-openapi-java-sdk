@@ -38,29 +38,29 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String snapshotId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
-	private String ownerAccount;
-
 	private String description;
-
-	private Long ownerId;
 
 	private String platform;
 
 	private String resourceGroupId;
 
-	private String instanceId;
-
 	private String imageName;
-
-	private String imageVersion;
 
 	private List<Tag> tags;
 
 	private String architecture;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String instanceId;
+
+	private String imageVersion;
 
 	public List<DiskDeviceMapping> getDiskDeviceMappings() {
 		return this.diskDeviceMappings;
@@ -100,17 +100,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -122,17 +111,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -141,17 +119,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -177,17 +144,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getImageName() {
 		return this.imageName;
 	}
@@ -196,17 +152,6 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.imageName = imageName;
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
-		}
-	}
-
-	public String getImageVersion() {
-		return this.imageVersion;
-	}
-
-	public void setImageVersion(String imageVersion) {
-		this.imageVersion = imageVersion;
-		if(imageVersion != null){
-			putQueryParameter("ImageVersion", imageVersion);
 		}
 	}
 
@@ -232,6 +177,61 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 		this.architecture = architecture;
 		if(architecture != null){
 			putQueryParameter("Architecture", architecture);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getImageVersion() {
+		return this.imageVersion;
+	}
+
+	public void setImageVersion(String imageVersion) {
+		this.imageVersion = imageVersion;
+		if(imageVersion != null){
+			putQueryParameter("ImageVersion", imageVersion);
 		}
 	}
 

@@ -33,17 +33,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private Long resourceOwnerId;
 
+	private String instanceChargeType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String acceptLanguage;
-
 	private Long ownerId;
 
-	private String instanceChargeType;
-
 	private String resourceType;
+
+	private String acceptLanguage;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,6 +53,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 
@@ -78,17 +89,6 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -100,17 +100,6 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		}
 	}
 
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
-		}
-	}
-
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -119,6 +108,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
+	}
+
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 

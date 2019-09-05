@@ -35,13 +35,13 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 	private String imageId;
 
-	private String resourceOwnerAccount;
+	private String description;
 
 	private String imageName;
 
-	private String ownerAccount;
+	private String resourceOwnerAccount;
 
-	private String description;
+	private String ownerAccount;
 
 	private Long ownerId;
 
@@ -67,14 +67,14 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -89,6 +89,17 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -97,17 +108,6 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 

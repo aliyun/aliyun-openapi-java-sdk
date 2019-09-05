@@ -34,25 +34,25 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private String ownerAccount;
 
 	private String description;
 
-	private Long ownerId;
-
 	private String securityGroupName;
-
-	private String securityGroupType;
 
 	private String resourceGroupId;
 
-	private String vpcId;
-
 	private List<Tag> tags;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String securityGroupType;
+
+	private String vpcId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,17 +62,6 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -87,17 +76,6 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -106,17 +84,6 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -131,17 +98,6 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		}
 	}
 
-	public String getSecurityGroupType() {
-		return this.securityGroupType;
-	}
-
-	public void setSecurityGroupType(String securityGroupType) {
-		this.securityGroupType = securityGroupType;
-		if(securityGroupType != null){
-			putQueryParameter("SecurityGroupType", securityGroupType);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -150,17 +106,6 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -176,6 +121,61 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityGroupType() {
+		return this.securityGroupType;
+	}
+
+	public void setSecurityGroupType(String securityGroupType) {
+		this.securityGroupType = securityGroupType;
+		if(securityGroupType != null){
+			putQueryParameter("SecurityGroupType", securityGroupType);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
 	}
 
 	public static class Tag {

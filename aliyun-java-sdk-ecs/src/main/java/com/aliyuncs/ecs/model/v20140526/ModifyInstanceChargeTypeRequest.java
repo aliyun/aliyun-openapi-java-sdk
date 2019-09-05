@@ -33,6 +33,12 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
+	private Boolean isDetailFee;
+
+	private String instanceChargeType;
+
 	private Integer period;
 
 	private Boolean dryRun;
@@ -43,8 +49,6 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
 	private Long ownerId;
@@ -52,10 +56,6 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 	private String periodUnit;
 
 	private String instanceIds;
-
-	private Boolean isDetailFee;
-
-	private String instanceChargeType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -65,6 +65,39 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getIsDetailFee() {
+		return this.isDetailFee;
+	}
+
+	public void setIsDetailFee(Boolean isDetailFee) {
+		this.isDetailFee = isDetailFee;
+		if(isDetailFee != null){
+			putQueryParameter("IsDetailFee", isDetailFee.toString());
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 
@@ -123,17 +156,6 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -175,28 +197,6 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
-	public Boolean getIsDetailFee() {
-		return this.isDetailFee;
-	}
-
-	public void setIsDetailFee(Boolean isDetailFee) {
-		this.isDetailFee = isDetailFee;
-		if(isDetailFee != null){
-			putQueryParameter("IsDetailFee", isDetailFee.toString());
-		}
-	}
-
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 

@@ -33,13 +33,13 @@ public class AttachClassicLinkVpcRequest extends RpcAcsRequest<AttachClassicLink
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
 	private String resourceOwnerAccount;
 
-	private String vpcId;
-
 	private Long ownerId;
+
+	private String instanceId;
+
+	private String vpcId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +49,6 @@ public class AttachClassicLinkVpcRequest extends RpcAcsRequest<AttachClassicLink
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -74,17 +63,6 @@ public class AttachClassicLinkVpcRequest extends RpcAcsRequest<AttachClassicLink
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -93,6 +71,28 @@ public class AttachClassicLinkVpcRequest extends RpcAcsRequest<AttachClassicLink
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

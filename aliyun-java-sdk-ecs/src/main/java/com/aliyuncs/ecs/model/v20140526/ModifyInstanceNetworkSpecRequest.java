@@ -33,19 +33,19 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
+	private Integer internetMaxBandwidthOut;
+
+	private String startTime;
+
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private String ownerAccount;
 
-	private Integer internetMaxBandwidthOut;
-
 	private String endTime;
-
-	private String startTime;
 
 	private Long ownerId;
 
@@ -65,6 +65,39 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getInternetMaxBandwidthOut() {
+		return this.internetMaxBandwidthOut;
+	}
+
+	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		if(internetMaxBandwidthOut != null){
+			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -90,17 +123,6 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -112,17 +134,6 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		}
 	}
 
-	public Integer getInternetMaxBandwidthOut() {
-		return this.internetMaxBandwidthOut;
-	}
-
-	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		if(internetMaxBandwidthOut != null){
-			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -131,17 +142,6 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 

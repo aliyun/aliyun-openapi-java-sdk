@@ -36,21 +36,31 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private String snapshotId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String description;
+
+	private String diskName;
+
+	private String resourceGroupId;
+
+	private String diskCategory;
+
+	private Integer storageSetPartitionNumber;
+
+	private List<Tag> tags;
+
+	private List<Arn> arns;
+
+	private String advancedFeatures;
+
+	private String resourceOwnerAccount;
 
 	private String performanceLevel;
 
 	private String ownerAccount;
 
-	private String description;
-
 	private Long ownerId;
-
-	private String diskName;
-
-	private String resourceGroupId;
 
 	private String instanceId;
 
@@ -60,19 +70,9 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private Boolean encrypted;
 
-	private String diskCategory;
-
 	private String zoneId;
 
-	private Integer storageSetPartitionNumber;
-
-	private List<Tag> tags;
-
-	private List<Arn> arns;
-
 	private String kMSKeyId;
-
-	private String advancedFeatures;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -96,17 +96,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -115,6 +104,112 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getDiskName() {
+		return this.diskName;
+	}
+
+	public void setDiskName(String diskName) {
+		this.diskName = diskName;
+		if(diskName != null){
+			putQueryParameter("DiskName", diskName);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getDiskCategory() {
+		return this.diskCategory;
+	}
+
+	public void setDiskCategory(String diskCategory) {
+		this.diskCategory = diskCategory;
+		if(diskCategory != null){
+			putQueryParameter("DiskCategory", diskCategory);
+		}
+	}
+
+	public Integer getStorageSetPartitionNumber() {
+		return this.storageSetPartitionNumber;
+	}
+
+	public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
+		this.storageSetPartitionNumber = storageSetPartitionNumber;
+		if(storageSetPartitionNumber != null){
+			putQueryParameter("StorageSetPartitionNumber", storageSetPartitionNumber.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public List<Arn> getArns() {
+		return this.arns;
+	}
+
+	public void setArns(List<Arn> arns) {
+		this.arns = arns;	
+		if (arns != null) {
+			for (int depth1 = 0; depth1 < arns.size(); depth1++) {
+				putQueryParameter("Arn." + (depth1 + 1) + ".Rolearn" , arns.get(depth1).getRolearn());
+				putQueryParameter("Arn." + (depth1 + 1) + ".RoleType" , arns.get(depth1).getRoleType());
+				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
+			}
+		}	
+	}
+
+	public String getAdvancedFeatures() {
+		return this.advancedFeatures;
+	}
+
+	public void setAdvancedFeatures(String advancedFeatures) {
+		this.advancedFeatures = advancedFeatures;
+		if(advancedFeatures != null){
+			putQueryParameter("AdvancedFeatures", advancedFeatures);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -140,17 +235,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -159,28 +243,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDiskName() {
-		return this.diskName;
-	}
-
-	public void setDiskName(String diskName) {
-		this.diskName = diskName;
-		if(diskName != null){
-			putQueryParameter("DiskName", diskName);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -228,17 +290,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public String getDiskCategory() {
-		return this.diskCategory;
-	}
-
-	public void setDiskCategory(String diskCategory) {
-		this.diskCategory = diskCategory;
-		if(diskCategory != null){
-			putQueryParameter("DiskCategory", diskCategory);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -250,46 +301,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
-	public Integer getStorageSetPartitionNumber() {
-		return this.storageSetPartitionNumber;
-	}
-
-	public void setStorageSetPartitionNumber(Integer storageSetPartitionNumber) {
-		this.storageSetPartitionNumber = storageSetPartitionNumber;
-		if(storageSetPartitionNumber != null){
-			putQueryParameter("StorageSetPartitionNumber", storageSetPartitionNumber.toString());
-		}
-	}
-
-	public List<Tag> getTags() {
-		return this.tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;	
-		if (tags != null) {
-			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
-				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
-			}
-		}	
-	}
-
-	public List<Arn> getArns() {
-		return this.arns;
-	}
-
-	public void setArns(List<Arn> arns) {
-		this.arns = arns;	
-		if (arns != null) {
-			for (int depth1 = 0; depth1 < arns.size(); depth1++) {
-				putQueryParameter("Arn." + (depth1 + 1) + ".Rolearn" , arns.get(depth1).getRolearn());
-				putQueryParameter("Arn." + (depth1 + 1) + ".RoleType" , arns.get(depth1).getRoleType());
-				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
-			}
-		}	
-	}
-
 	public String getKMSKeyId() {
 		return this.kMSKeyId;
 	}
@@ -298,17 +309,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.kMSKeyId = kMSKeyId;
 		if(kMSKeyId != null){
 			putQueryParameter("KMSKeyId", kMSKeyId);
-		}
-	}
-
-	public String getAdvancedFeatures() {
-		return this.advancedFeatures;
-	}
-
-	public void setAdvancedFeatures(String advancedFeatures) {
-		this.advancedFeatures = advancedFeatures;
-		if(advancedFeatures != null){
-			putQueryParameter("AdvancedFeatures", advancedFeatures);
 		}
 	}
 

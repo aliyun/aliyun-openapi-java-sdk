@@ -33,15 +33,15 @@ public class DeleteVirtualBorderRouterRequest extends RpcAcsRequest<DeleteVirtua
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
-	private String ownerAccount;
+	private String vbrId;
 
 	private String userCidr;
 
-	private String vbrId;
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
 
@@ -56,17 +56,6 @@ public class DeleteVirtualBorderRouterRequest extends RpcAcsRequest<DeleteVirtua
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -78,14 +67,14 @@ public class DeleteVirtualBorderRouterRequest extends RpcAcsRequest<DeleteVirtua
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getVbrId() {
+		return this.vbrId;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setVbrId(String vbrId) {
+		this.vbrId = vbrId;
+		if(vbrId != null){
+			putQueryParameter("VbrId", vbrId);
 		}
 	}
 
@@ -100,14 +89,25 @@ public class DeleteVirtualBorderRouterRequest extends RpcAcsRequest<DeleteVirtua
 		}
 	}
 
-	public String getVbrId() {
-		return this.vbrId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setVbrId(String vbrId) {
-		this.vbrId = vbrId;
-		if(vbrId != null){
-			putQueryParameter("VbrId", vbrId);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

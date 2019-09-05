@@ -31,26 +31,15 @@ public class DescribeInstanceTypeFamiliesRequest extends RpcAcsRequest<DescribeI
 		} catch (Exception e) {}
 	}
 
-	private String generation;
-
 	private Long resourceOwnerId;
+
+	private String generation;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	public String getGeneration() {
-		return this.generation;
-	}
-
-	public void setGeneration(String generation) {
-		this.generation = generation;
-		if(generation != null){
-			putQueryParameter("Generation", generation);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,6 +49,17 @@ public class DescribeInstanceTypeFamiliesRequest extends RpcAcsRequest<DescribeI
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getGeneration() {
+		return this.generation;
+	}
+
+	public void setGeneration(String generation) {
+		this.generation = generation;
+		if(generation != null){
+			putQueryParameter("Generation", generation);
 		}
 	}
 

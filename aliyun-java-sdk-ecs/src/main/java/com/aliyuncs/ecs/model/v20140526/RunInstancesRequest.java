@@ -144,6 +144,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private List<String> securityGroupIdss;
 
+	private Integer spotDuration;
+
 	private List<DataDisk> dataDisks;
 
 	private Long launchTemplateVersion;
@@ -781,6 +783,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
 			}
 		}	
+	}
+
+	public Integer getSpotDuration() {
+		return this.spotDuration;
+	}
+
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if(spotDuration != null){
+			putQueryParameter("SpotDuration", spotDuration.toString());
+		}
 	}
 
 	public List<DataDisk> getDataDisks() {

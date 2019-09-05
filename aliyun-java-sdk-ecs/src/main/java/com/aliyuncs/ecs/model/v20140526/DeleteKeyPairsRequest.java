@@ -33,9 +33,9 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String keyPairNames;
+
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
@@ -50,17 +50,6 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getKeyPairNames() {
 		return this.keyPairNames;
 	}
@@ -69,6 +58,17 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 		this.keyPairNames = keyPairNames;
 		if(keyPairNames != null){
 			putQueryParameter("KeyPairNames", keyPairNames);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

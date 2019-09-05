@@ -34,8 +34,6 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 
 	private String actionType;
 
-	private List<Filter> filters;
-
 	private Long resourceOwnerId;
 
 	private String imageId;
@@ -43,6 +41,8 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
+
+	private List<Filter> filters;
 
 	public String getActionType() {
 		return this.actionType;
@@ -53,20 +53,6 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 		if(actionType != null){
 			putQueryParameter("ActionType", actionType);
 		}
-	}
-
-	public List<Filter> getFilters() {
-		return this.filters;
-	}
-
-	public void setFilters(List<Filter> filters) {
-		this.filters = filters;	
-		if (filters != null) {
-			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
-				putQueryParameter("Filter." + (depth1 + 1) + ".Value" , filters.get(depth1).getValue());
-				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
-			}
-		}	
 	}
 
 	public Long getResourceOwnerId() {
@@ -111,6 +97,20 @@ public class DescribeImageSupportInstanceTypesRequest extends RpcAcsRequest<Desc
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<Filter> getFilters() {
+		return this.filters;
+	}
+
+	public void setFilters(List<Filter> filters) {
+		this.filters = filters;	
+		if (filters != null) {
+			for (int depth1 = 0; depth1 < filters.size(); depth1++) {
+				putQueryParameter("Filter." + (depth1 + 1) + ".Value" , filters.get(depth1).getValue());
+				putQueryParameter("Filter." + (depth1 + 1) + ".Key" , filters.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public static class Filter {

@@ -53,6 +53,8 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 
 	private Long ownerId;
 
+	private Integer spotDuration;
+
 	private String zoneId;
 
 	public Long getResourceOwnerId() {
@@ -173,6 +175,17 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getSpotDuration() {
+		return this.spotDuration;
+	}
+
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if(spotDuration != null){
+			putQueryParameter("SpotDuration", spotDuration.toString());
 		}
 	}
 

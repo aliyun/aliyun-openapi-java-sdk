@@ -33,13 +33,13 @@ public class ReActivateInstancesRequest extends RpcAcsRequest<ReActivateInstance
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +49,6 @@ public class ReActivateInstancesRequest extends RpcAcsRequest<ReActivateInstance
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -93,6 +82,17 @@ public class ReActivateInstancesRequest extends RpcAcsRequest<ReActivateInstance
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

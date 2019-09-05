@@ -33,23 +33,23 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 
 	private Long resourceOwnerId;
 
+	private String forwardTableId;
+
+	private String internalIp;
+
+	private String externalIp;
+
 	private String resourceOwnerAccount;
 
 	private String ipProtocol;
 
-	private String internalPort;
-
 	private String ownerAccount;
-
-	private String forwardTableId;
 
 	private Long ownerId;
 
-	private String externalIp;
+	private String internalPort;
 
 	private String externalPort;
-
-	private String internalIp;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -59,6 +59,39 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getForwardTableId() {
+		return this.forwardTableId;
+	}
+
+	public void setForwardTableId(String forwardTableId) {
+		this.forwardTableId = forwardTableId;
+		if(forwardTableId != null){
+			putQueryParameter("ForwardTableId", forwardTableId);
+		}
+	}
+
+	public String getInternalIp() {
+		return this.internalIp;
+	}
+
+	public void setInternalIp(String internalIp) {
+		this.internalIp = internalIp;
+		if(internalIp != null){
+			putQueryParameter("InternalIp", internalIp);
+		}
+	}
+
+	public String getExternalIp() {
+		return this.externalIp;
+	}
+
+	public void setExternalIp(String externalIp) {
+		this.externalIp = externalIp;
+		if(externalIp != null){
+			putQueryParameter("ExternalIp", externalIp);
 		}
 	}
 
@@ -84,17 +117,6 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		}
 	}
 
-	public String getInternalPort() {
-		return this.internalPort;
-	}
-
-	public void setInternalPort(String internalPort) {
-		this.internalPort = internalPort;
-		if(internalPort != null){
-			putQueryParameter("InternalPort", internalPort);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -103,17 +125,6 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getForwardTableId() {
-		return this.forwardTableId;
-	}
-
-	public void setForwardTableId(String forwardTableId) {
-		this.forwardTableId = forwardTableId;
-		if(forwardTableId != null){
-			putQueryParameter("ForwardTableId", forwardTableId);
 		}
 	}
 
@@ -128,14 +139,14 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		}
 	}
 
-	public String getExternalIp() {
-		return this.externalIp;
+	public String getInternalPort() {
+		return this.internalPort;
 	}
 
-	public void setExternalIp(String externalIp) {
-		this.externalIp = externalIp;
-		if(externalIp != null){
-			putQueryParameter("ExternalIp", externalIp);
+	public void setInternalPort(String internalPort) {
+		this.internalPort = internalPort;
+		if(internalPort != null){
+			putQueryParameter("InternalPort", internalPort);
 		}
 	}
 
@@ -147,17 +158,6 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		this.externalPort = externalPort;
 		if(externalPort != null){
 			putQueryParameter("ExternalPort", externalPort);
-		}
-	}
-
-	public String getInternalIp() {
-		return this.internalIp;
-	}
-
-	public void setInternalIp(String internalIp) {
-		this.internalIp = internalIp;
-		if(internalIp != null){
-			putQueryParameter("InternalIp", internalIp);
 		}
 	}
 

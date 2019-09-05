@@ -47,22 +47,44 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 	public static class RecommendInstanceType {
 
-		private String regionNo;
+		private String regionId;
 
 		private String commodityCode;
 
 		private String scene;
 
+		private String instanceChargeType;
+
+		private String spotStrategy;
+
+		private Integer priority;
+
 		private List<Zone> zones;
 
 		private InstanceType instanceType;
 
-		public String getRegionNo() {
-			return this.regionNo;
+		public String getBizRegionId() {
+			return this.regionId;
 		}
 
-		public void setRegionNo(String regionNo) {
-			this.regionNo = regionNo;
+		public void setBizRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		/**
+		 * @deprecated use getBizRegionId instead of this.
+		 */
+		@Deprecated
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		/**
+		 * @deprecated use setBizRegionId instead of this.
+		 */
+		@Deprecated
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getCommodityCode() {
@@ -79,6 +101,30 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 		public void setScene(String scene) {
 			this.scene = scene;
+		}
+
+		public String getInstanceChargeType() {
+			return this.instanceChargeType;
+		}
+
+		public void setInstanceChargeType(String instanceChargeType) {
+			this.instanceChargeType = instanceChargeType;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 
 		public List<Zone> getZones() {

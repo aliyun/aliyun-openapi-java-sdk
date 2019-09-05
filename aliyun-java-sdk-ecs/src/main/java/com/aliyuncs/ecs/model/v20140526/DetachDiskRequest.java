@@ -33,15 +33,15 @@ public class DetachDiskRequest extends RpcAcsRequest<DetachDiskResponse> {
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private String diskId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String diskId;
-
 	private Long ownerId;
+
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,14 +54,14 @@ public class DetachDiskRequest extends RpcAcsRequest<DetachDiskResponse> {
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getDiskId() {
+		return this.diskId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
 		}
 	}
 
@@ -87,17 +87,6 @@ public class DetachDiskRequest extends RpcAcsRequest<DetachDiskResponse> {
 		}
 	}
 
-	public String getDiskId() {
-		return this.diskId;
-	}
-
-	public void setDiskId(String diskId) {
-		this.diskId = diskId;
-		if(diskId != null){
-			putQueryParameter("DiskId", diskId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -106,6 +95,17 @@ public class DetachDiskRequest extends RpcAcsRequest<DetachDiskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

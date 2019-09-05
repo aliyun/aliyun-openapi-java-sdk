@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.ecs.Endpoint;
 
 /**
@@ -33,25 +34,37 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 
 	private Long resourceOwnerId;
 
+	private Float memory;
+
+	private String ioOptimized;
+
+	private String networkType;
+
+	private String scene;
+
+	private Integer cores;
+
+	private String systemDiskCategory;
+
+	private String instanceType;
+
+	private String instanceChargeType;
+
+	private Float maxPrice;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String channel;
-
-	private String networkType;
+	private List<String> instanceTypeFamilys;
 
 	private Long ownerId;
 
-	private String operator;
+	private String spotStrategy;
 
-	private String token;
+	private String priorityStrategy;
 
-	private String scene;
-
-	private String instanceType;
-
-	private String proxyId;
+	private String zoneId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,6 +74,105 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Float getMemory() {
+		return this.memory;
+	}
+
+	public void setMemory(Float memory) {
+		this.memory = memory;
+		if(memory != null){
+			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
+	public String getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(String ioOptimized) {
+		this.ioOptimized = ioOptimized;
+		if(ioOptimized != null){
+			putQueryParameter("IoOptimized", ioOptimized);
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
+	public String getScene() {
+		return this.scene;
+	}
+
+	public void setScene(String scene) {
+		this.scene = scene;
+		if(scene != null){
+			putQueryParameter("Scene", scene);
+		}
+	}
+
+	public Integer getCores() {
+		return this.cores;
+	}
+
+	public void setCores(Integer cores) {
+		this.cores = cores;
+		if(cores != null){
+			putQueryParameter("Cores", cores.toString());
+		}
+	}
+
+	public String getSystemDiskCategory() {
+		return this.systemDiskCategory;
+	}
+
+	public void setSystemDiskCategory(String systemDiskCategory) {
+		this.systemDiskCategory = systemDiskCategory;
+		if(systemDiskCategory != null){
+			putQueryParameter("SystemDiskCategory", systemDiskCategory);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public Float getMaxPrice() {
+		return this.maxPrice;
+	}
+
+	public void setMaxPrice(Float maxPrice) {
+		this.maxPrice = maxPrice;
+		if(maxPrice != null){
+			putQueryParameter("MaxPrice", maxPrice.toString());
 		}
 	}
 
@@ -86,26 +198,17 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getChannel() {
-		return this.channel;
+	public List<String> getInstanceTypeFamilys() {
+		return this.instanceTypeFamilys;
 	}
 
-	public void setChannel(String channel) {
-		this.channel = channel;
-		if(channel != null){
-			putQueryParameter("channel", channel);
-		}
-	}
-
-	public String getNetworkType() {
-		return this.networkType;
-	}
-
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
-		}
+	public void setInstanceTypeFamilys(List<String> instanceTypeFamilys) {
+		this.instanceTypeFamilys = instanceTypeFamilys;	
+		if (instanceTypeFamilys != null) {
+			for (int i = 0; i < instanceTypeFamilys.size(); i++) {
+				putQueryParameter("InstanceTypeFamily." + (i + 1) , instanceTypeFamilys.get(i));
+			}
+		}	
 	}
 
 	public Long getOwnerId() {
@@ -119,58 +222,36 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getOperator() {
-		return this.operator;
+	public String getSpotStrategy() {
+		return this.spotStrategy;
 	}
 
-	public void setOperator(String operator) {
-		this.operator = operator;
-		if(operator != null){
-			putQueryParameter("operator", operator);
+	public void setSpotStrategy(String spotStrategy) {
+		this.spotStrategy = spotStrategy;
+		if(spotStrategy != null){
+			putQueryParameter("SpotStrategy", spotStrategy);
 		}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getPriorityStrategy() {
+		return this.priorityStrategy;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("token", token);
+	public void setPriorityStrategy(String priorityStrategy) {
+		this.priorityStrategy = priorityStrategy;
+		if(priorityStrategy != null){
+			putQueryParameter("PriorityStrategy", priorityStrategy);
 		}
 	}
 
-	public String getScene() {
-		return this.scene;
+	public String getZoneId() {
+		return this.zoneId;
 	}
 
-	public void setScene(String scene) {
-		this.scene = scene;
-		if(scene != null){
-			putQueryParameter("Scene", scene);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
-	public String getProxyId() {
-		return this.proxyId;
-	}
-
-	public void setProxyId(String proxyId) {
-		this.proxyId = proxyId;
-		if(proxyId != null){
-			putQueryParameter("proxyId", proxyId);
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

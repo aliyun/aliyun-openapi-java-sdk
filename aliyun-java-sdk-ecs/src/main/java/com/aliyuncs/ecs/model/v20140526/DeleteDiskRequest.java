@@ -33,11 +33,11 @@ public class DeleteDiskRequest extends RpcAcsRequest<DeleteDiskResponse> {
 
 	private Long resourceOwnerId;
 
+	private String diskId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String diskId;
 
 	private Long ownerId;
 
@@ -49,6 +49,17 @@ public class DeleteDiskRequest extends RpcAcsRequest<DeleteDiskResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
 		}
 	}
 
@@ -71,17 +82,6 @@ public class DeleteDiskRequest extends RpcAcsRequest<DeleteDiskResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDiskId() {
-		return this.diskId;
-	}
-
-	public void setDiskId(String diskId) {
-		this.diskId = diskId;
-		if(diskId != null){
-			putQueryParameter("DiskId", diskId);
 		}
 	}
 

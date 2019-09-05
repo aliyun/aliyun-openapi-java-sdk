@@ -31,32 +31,21 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 		} catch (Exception e) {}
 	}
 
-	private String haVipId;
-
 	private Long resourceOwnerId;
-
-	private String instanceId;
-
-	private String resourceOwnerAccount;
 
 	private String clientToken;
 
-	private String ownerAccount;
+	private String haVipId;
 
-	private String force;
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
 
-	public String getHaVipId() {
-		return this.haVipId;
-	}
+	private String instanceId;
 
-	public void setHaVipId(String haVipId) {
-		this.haVipId = haVipId;
-		if(haVipId != null){
-			putQueryParameter("HaVipId", haVipId);
-		}
-	}
+	private String force;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,28 +55,6 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -102,6 +69,28 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 		}
 	}
 
+	public String getHaVipId() {
+		return this.haVipId;
+	}
+
+	public void setHaVipId(String haVipId) {
+		this.haVipId = haVipId;
+		if(haVipId != null){
+			putQueryParameter("HaVipId", haVipId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -113,17 +102,6 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 		}
 	}
 
-	public String getForce() {
-		return this.force;
-	}
-
-	public void setForce(String force) {
-		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -132,6 +110,28 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getForce() {
+		return this.force;
+	}
+
+	public void setForce(String force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force);
 		}
 	}
 

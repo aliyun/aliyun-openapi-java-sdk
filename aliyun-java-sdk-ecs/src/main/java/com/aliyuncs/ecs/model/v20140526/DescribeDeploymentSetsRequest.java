@@ -33,25 +33,25 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private String networkType;
-
-	private String deploymentSetName;
-
-	private Long ownerId;
 
 	private Integer pageNumber;
 
 	private String deploymentSetIds;
 
+	private Integer pageSize;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String deploymentSetName;
+
+	private Long ownerId;
+
 	private String granularity;
 
 	private String domain;
-
-	private Integer pageSize;
 
 	private String strategy;
 
@@ -63,6 +63,50 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDeploymentSetIds() {
+		return this.deploymentSetIds;
+	}
+
+	public void setDeploymentSetIds(String deploymentSetIds) {
+		this.deploymentSetIds = deploymentSetIds;
+		if(deploymentSetIds != null){
+			putQueryParameter("DeploymentSetIds", deploymentSetIds);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -88,17 +132,6 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 		}
 	}
 
-	public String getNetworkType() {
-		return this.networkType;
-	}
-
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
 	public String getDeploymentSetName() {
 		return this.deploymentSetName;
 	}
@@ -118,28 +151,6 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getDeploymentSetIds() {
-		return this.deploymentSetIds;
-	}
-
-	public void setDeploymentSetIds(String deploymentSetIds) {
-		this.deploymentSetIds = deploymentSetIds;
-		if(deploymentSetIds != null){
-			putQueryParameter("DeploymentSetIds", deploymentSetIds);
 		}
 	}
 
@@ -181,17 +192,6 @@ public class DescribeDeploymentSetsRequest extends RpcAcsRequest<DescribeDeploym
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

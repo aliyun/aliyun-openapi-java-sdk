@@ -33,19 +33,19 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
+	private String pageNumber;
 
 	private String renewalStatus;
 
 	private String pageSize;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Long ownerId;
 
-	private String pageNumber;
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,36 +58,14 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 
@@ -113,6 +91,28 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -124,14 +124,14 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		}
 	}
 
-	public String getPageNumber() {
-		return this.pageNumber;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

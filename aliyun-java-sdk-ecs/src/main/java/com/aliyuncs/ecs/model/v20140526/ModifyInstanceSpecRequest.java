@@ -33,31 +33,31 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
 	private Boolean allowMigrateAcrossZone;
 
-	private String ownerAccount;
-
 	private Integer internetMaxBandwidthOut;
+
+	private String systemDiskCategory;
+
+	private String instanceType;
+
+	private String temporaryEndTime;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
 
 	private Integer temporaryInternetMaxBandwidthOut;
-
-	private String systemDiskCategory;
 
 	private String temporaryStartTime;
 
 	private Boolean async;
 
 	private String instanceId;
-
-	private String instanceType;
-
-	private String temporaryEndTime;
 
 	private Integer internetMaxBandwidthIn;
 
@@ -69,17 +69,6 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -105,17 +94,6 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public Integer getInternetMaxBandwidthOut() {
 		return this.internetMaxBandwidthOut;
 	}
@@ -124,6 +102,61 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
 		if(internetMaxBandwidthOut != null){
 			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
+	}
+
+	public String getSystemDiskCategory() {
+		return this.systemDiskCategory;
+	}
+
+	public void setSystemDiskCategory(String systemDiskCategory) {
+		this.systemDiskCategory = systemDiskCategory;
+		if(systemDiskCategory != null){
+			putQueryParameter("SystemDisk.Category", systemDiskCategory);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getTemporaryEndTime() {
+		return this.temporaryEndTime;
+	}
+
+	public void setTemporaryEndTime(String temporaryEndTime) {
+		this.temporaryEndTime = temporaryEndTime;
+		if(temporaryEndTime != null){
+			putQueryParameter("Temporary.EndTime", temporaryEndTime);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -146,17 +179,6 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.temporaryInternetMaxBandwidthOut = temporaryInternetMaxBandwidthOut;
 		if(temporaryInternetMaxBandwidthOut != null){
 			putQueryParameter("Temporary.InternetMaxBandwidthOut", temporaryInternetMaxBandwidthOut.toString());
-		}
-	}
-
-	public String getSystemDiskCategory() {
-		return this.systemDiskCategory;
-	}
-
-	public void setSystemDiskCategory(String systemDiskCategory) {
-		this.systemDiskCategory = systemDiskCategory;
-		if(systemDiskCategory != null){
-			putQueryParameter("SystemDisk.Category", systemDiskCategory);
 		}
 	}
 
@@ -190,28 +212,6 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
-	public String getTemporaryEndTime() {
-		return this.temporaryEndTime;
-	}
-
-	public void setTemporaryEndTime(String temporaryEndTime) {
-		this.temporaryEndTime = temporaryEndTime;
-		if(temporaryEndTime != null){
-			putQueryParameter("Temporary.EndTime", temporaryEndTime);
 		}
 	}
 

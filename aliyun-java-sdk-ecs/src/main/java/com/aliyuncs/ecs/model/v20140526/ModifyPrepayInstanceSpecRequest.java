@@ -33,17 +33,7 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 
 	private Long resourceOwnerId;
 
-	private Boolean autoPay;
-
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private String ownerAccount;
-
-	private String endTime;
-
-	private Long ownerId;
 
 	private String operatorType;
 
@@ -51,11 +41,21 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 
 	private String rebootTime;
 
-	private String instanceId;
-
 	private Boolean migrateAcrossZone;
 
 	private String instanceType;
+
+	private Boolean autoPay;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String endTime;
+
+	private Long ownerId;
+
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -68,28 +68,6 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		}
 	}
 
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -98,39 +76,6 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -167,17 +112,6 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public Boolean getMigrateAcrossZone() {
 		return this.migrateAcrossZone;
 	}
@@ -197,6 +131,72 @@ public class ModifyPrepayInstanceSpecRequest extends RpcAcsRequest<ModifyPrepayI
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

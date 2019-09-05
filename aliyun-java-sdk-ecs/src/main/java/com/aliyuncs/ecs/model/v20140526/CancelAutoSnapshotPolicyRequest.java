@@ -33,9 +33,9 @@ public class CancelAutoSnapshotPolicyRequest extends RpcAcsRequest<CancelAutoSna
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String diskIds;
+
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
@@ -50,17 +50,6 @@ public class CancelAutoSnapshotPolicyRequest extends RpcAcsRequest<CancelAutoSna
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getDiskIds() {
 		return this.diskIds;
 	}
@@ -69,6 +58,17 @@ public class CancelAutoSnapshotPolicyRequest extends RpcAcsRequest<CancelAutoSna
 		this.diskIds = diskIds;
 		if(diskIds != null){
 			putQueryParameter("diskIds", diskIds);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

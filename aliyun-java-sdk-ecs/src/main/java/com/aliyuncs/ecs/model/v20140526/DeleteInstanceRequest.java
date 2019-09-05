@@ -33,17 +33,17 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private Boolean terminateSubscription;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Boolean terminateSubscription;
+	private Long ownerId;
+
+	private String instanceId;
 
 	private Boolean force;
-
-	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,14 +56,14 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Boolean getTerminateSubscription() {
+		return this.terminateSubscription;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setTerminateSubscription(Boolean terminateSubscription) {
+		this.terminateSubscription = terminateSubscription;
+		if(terminateSubscription != null){
+			putQueryParameter("TerminateSubscription", terminateSubscription.toString());
 		}
 	}
 
@@ -89,14 +89,25 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		}
 	}
 
-	public Boolean getTerminateSubscription() {
-		return this.terminateSubscription;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setTerminateSubscription(Boolean terminateSubscription) {
-		this.terminateSubscription = terminateSubscription;
-		if(terminateSubscription != null){
-			putQueryParameter("TerminateSubscription", terminateSubscription.toString());
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -108,17 +119,6 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		this.force = force;
 		if(force != null){
 			putQueryParameter("Force", force.toString());
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

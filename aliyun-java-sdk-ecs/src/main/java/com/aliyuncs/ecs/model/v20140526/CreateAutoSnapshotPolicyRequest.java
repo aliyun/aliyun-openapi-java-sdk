@@ -33,17 +33,17 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String timePoints;
-
-	private Integer retentionDays;
-
-	private Long ownerId;
 
 	private String repeatWeekdays;
 
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
+
 	private String autoSnapshotPolicyName;
+
+	private Integer retentionDays;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,17 +53,6 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -78,14 +67,25 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		}
 	}
 
-	public Integer getRetentionDays() {
-		return this.retentionDays;
+	public String getRepeatWeekdays() {
+		return this.repeatWeekdays;
 	}
 
-	public void setRetentionDays(Integer retentionDays) {
-		this.retentionDays = retentionDays;
-		if(retentionDays != null){
-			putQueryParameter("retentionDays", retentionDays.toString());
+	public void setRepeatWeekdays(String repeatWeekdays) {
+		this.repeatWeekdays = repeatWeekdays;
+		if(repeatWeekdays != null){
+			putQueryParameter("repeatWeekdays", repeatWeekdays);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -100,17 +100,6 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		}
 	}
 
-	public String getRepeatWeekdays() {
-		return this.repeatWeekdays;
-	}
-
-	public void setRepeatWeekdays(String repeatWeekdays) {
-		this.repeatWeekdays = repeatWeekdays;
-		if(repeatWeekdays != null){
-			putQueryParameter("repeatWeekdays", repeatWeekdays);
-		}
-	}
-
 	public String getAutoSnapshotPolicyName() {
 		return this.autoSnapshotPolicyName;
 	}
@@ -119,6 +108,17 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 		this.autoSnapshotPolicyName = autoSnapshotPolicyName;
 		if(autoSnapshotPolicyName != null){
 			putQueryParameter("autoSnapshotPolicyName", autoSnapshotPolicyName);
+		}
+	}
+
+	public Integer getRetentionDays() {
+		return this.retentionDays;
+	}
+
+	public void setRetentionDays(Integer retentionDays) {
+		this.retentionDays = retentionDays;
+		if(retentionDays != null){
+			putQueryParameter("retentionDays", retentionDays.toString());
 		}
 	}
 

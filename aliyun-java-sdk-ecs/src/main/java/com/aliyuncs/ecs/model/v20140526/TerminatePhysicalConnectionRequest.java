@@ -33,17 +33,17 @@ public class TerminatePhysicalConnectionRequest extends RpcAcsRequest<TerminateP
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private String physicalConnectionId;
-
-	private String ownerAccount;
 
 	private String userCidr;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Long ownerId;
+
+	private String physicalConnectionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,17 +53,6 @@ public class TerminatePhysicalConnectionRequest extends RpcAcsRequest<TerminateP
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -78,14 +67,25 @@ public class TerminatePhysicalConnectionRequest extends RpcAcsRequest<TerminateP
 		}
 	}
 
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
+	public String getUserCidr() {
+		return this.userCidr;
 	}
 
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		if(physicalConnectionId != null){
-			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+	public void setUserCidr(String userCidr) {
+		this.userCidr = userCidr;
+		if(userCidr != null){
+			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -100,17 +100,6 @@ public class TerminatePhysicalConnectionRequest extends RpcAcsRequest<TerminateP
 		}
 	}
 
-	public String getUserCidr() {
-		return this.userCidr;
-	}
-
-	public void setUserCidr(String userCidr) {
-		this.userCidr = userCidr;
-		if(userCidr != null){
-			putQueryParameter("UserCidr", userCidr);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,6 +108,17 @@ public class TerminatePhysicalConnectionRequest extends RpcAcsRequest<TerminateP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
 		}
 	}
 

@@ -33,13 +33,13 @@ public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInte
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
-	private String ownerAccount;
-
 	private String userCidr;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private String routerInterfaceId;
 
@@ -56,17 +56,6 @@ public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInte
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -78,17 +67,6 @@ public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInte
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getUserCidr() {
 		return this.userCidr;
 	}
@@ -97,6 +75,28 @@ public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInte
 		this.userCidr = userCidr;
 		if(userCidr != null){
 			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

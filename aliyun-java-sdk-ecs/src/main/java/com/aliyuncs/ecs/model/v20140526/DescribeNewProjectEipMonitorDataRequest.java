@@ -33,6 +33,10 @@ public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<Descr
 
 	private Long resourceOwnerId;
 
+	private String allocationId;
+
+	private String startTime;
+
 	private Integer period;
 
 	private String resourceOwnerAccount;
@@ -40,10 +44,6 @@ public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<Descr
 	private String ownerAccount;
 
 	private String endTime;
-
-	private String allocationId;
-
-	private String startTime;
 
 	private Long ownerId;
 
@@ -55,6 +55,28 @@ public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<Descr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAllocationId() {
+		return this.allocationId;
+	}
+
+	public void setAllocationId(String allocationId) {
+		this.allocationId = allocationId;
+		if(allocationId != null){
+			putQueryParameter("AllocationId", allocationId);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -99,28 +121,6 @@ public class DescribeNewProjectEipMonitorDataRequest extends RpcAcsRequest<Descr
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getAllocationId() {
-		return this.allocationId;
-	}
-
-	public void setAllocationId(String allocationId) {
-		this.allocationId = allocationId;
-		if(allocationId != null){
-			putQueryParameter("AllocationId", allocationId);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 

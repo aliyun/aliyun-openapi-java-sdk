@@ -33,6 +33,8 @@ public class DescribeSnapshotMonitorDataRequest extends RpcAcsRequest<DescribeSn
 
 	private Long resourceOwnerId;
 
+	private String startTime;
+
 	private Integer period;
 
 	private String resourceOwnerAccount;
@@ -40,8 +42,6 @@ public class DescribeSnapshotMonitorDataRequest extends RpcAcsRequest<DescribeSn
 	private String ownerAccount;
 
 	private String endTime;
-
-	private String startTime;
 
 	private Long ownerId;
 
@@ -53,6 +53,17 @@ public class DescribeSnapshotMonitorDataRequest extends RpcAcsRequest<DescribeSn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -97,17 +108,6 @@ public class DescribeSnapshotMonitorDataRequest extends RpcAcsRequest<DescribeSn
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 

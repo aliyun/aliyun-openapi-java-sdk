@@ -31,28 +31,17 @@ public class DeleteHaVipRequest extends RpcAcsRequest<DeleteHaVipResponse> {
 		} catch (Exception e) {}
 	}
 
-	private String haVipId;
-
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String haVipId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	public String getHaVipId() {
-		return this.haVipId;
-	}
-
-	public void setHaVipId(String haVipId) {
-		this.haVipId = haVipId;
-		if(haVipId != null){
-			putQueryParameter("HaVipId", haVipId);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -65,17 +54,6 @@ public class DeleteHaVipRequest extends RpcAcsRequest<DeleteHaVipResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -84,6 +62,28 @@ public class DeleteHaVipRequest extends RpcAcsRequest<DeleteHaVipResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getHaVipId() {
+		return this.haVipId;
+	}
+
+	public void setHaVipId(String haVipId) {
+		this.haVipId = haVipId;
+		if(haVipId != null){
+			putQueryParameter("HaVipId", haVipId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

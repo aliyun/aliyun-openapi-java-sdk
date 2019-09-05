@@ -36,23 +36,23 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private Long resourceOwnerId;
 
-	private String licenseType;
-
-	private String resourceOwnerAccount;
-
-	private String roleName;
-
 	private String description;
-
-	private String oSType;
-
-	private Long ownerId;
 
 	private String platform;
 
 	private String imageName;
 
 	private String architecture;
+
+	private String licenseType;
+
+	private String resourceOwnerAccount;
+
+	private String roleName;
+
+	private String oSType;
+
+	private Long ownerId;
 
 	public List<DiskDeviceMapping> getDiskDeviceMappings() {
 		return this.diskDeviceMappings;
@@ -80,6 +80,50 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public String getImageName() {
+		return this.imageName;
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+		if(imageName != null){
+			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public String getArchitecture() {
+		return this.architecture;
+	}
+
+	public void setArchitecture(String architecture) {
+		this.architecture = architecture;
+		if(architecture != null){
+			putQueryParameter("Architecture", architecture);
 		}
 	}
 
@@ -116,17 +160,6 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public String getOSType() {
 		return this.oSType;
 	}
@@ -146,39 +179,6 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getPlatform() {
-		return this.platform;
-	}
-
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
-		}
-	}
-
-	public String getImageName() {
-		return this.imageName;
-	}
-
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-		if(imageName != null){
-			putQueryParameter("ImageName", imageName);
-		}
-	}
-
-	public String getArchitecture() {
-		return this.architecture;
-	}
-
-	public void setArchitecture(String architecture) {
-		this.architecture = architecture;
-		if(architecture != null){
-			putQueryParameter("Architecture", architecture);
 		}
 	}
 

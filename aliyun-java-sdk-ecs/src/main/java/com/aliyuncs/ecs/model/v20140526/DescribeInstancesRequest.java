@@ -36,25 +36,13 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private Long resourceOwnerId;
 
-	private String imageId;
-
 	private String privateIpAddresses;
 
 	private String hpcClusterId;
 
 	private String filter2Value;
 
-	private String filter4Value;
-
-	private Boolean ioOptimized;
-
-	private String securityGroupId;
-
 	private String keyPairName;
-
-	private String filter4Key;
-
-	private Integer pageNumber;
 
 	private String resourceGroupId;
 
@@ -62,41 +50,21 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String filter1Key;
 
-	private String rdmaIpAddresses;
-
 	private Boolean deviceAvailable;
 
-	private Integer pageSize;
-
-	private String publicIpAddresses;
-
-	private String instanceType;
-
 	private List<Tag> tags;
-
-	private String instanceChargeType;
 
 	private String filter3Value;
 
 	private Boolean dryRun;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
-	private String instanceTypeFamily;
-
 	private String filter1Value;
 
 	private Boolean needSaleCycle;
 
-	private String filter2Key;
-
 	private Long ownerId;
 
 	private String vSwitchId;
-
-	private String eipAddresses;
 
 	private String instanceName;
 
@@ -104,15 +72,47 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String internetChargeType;
 
-	private String vpcId;
-
 	private String zoneId;
-
-	private String filter3Key;
 
 	private String instanceNetworkType;
 
 	private String status;
+
+	private String imageId;
+
+	private String filter4Value;
+
+	private Boolean ioOptimized;
+
+	private String securityGroupId;
+
+	private String filter4Key;
+
+	private Integer pageNumber;
+
+	private String rdmaIpAddresses;
+
+	private Integer pageSize;
+
+	private String publicIpAddresses;
+
+	private String instanceType;
+
+	private String instanceChargeType;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String instanceTypeFamily;
+
+	private String filter2Key;
+
+	private String eipAddresses;
+
+	private String vpcId;
+
+	private String filter3Key;
 
 	public String getInnerIpAddresses() {
 		return this.innerIpAddresses;
@@ -133,17 +133,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
 		}
 	}
 
@@ -180,39 +169,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getFilter4Value() {
-		return this.filter4Value;
-	}
-
-	public void setFilter4Value(String filter4Value) {
-		this.filter4Value = filter4Value;
-		if(filter4Value != null){
-			putQueryParameter("Filter.4.Value", filter4Value);
-		}
-	}
-
-	public Boolean getIoOptimized() {
-		return this.ioOptimized;
-	}
-
-	public void setIoOptimized(Boolean ioOptimized) {
-		this.ioOptimized = ioOptimized;
-		if(ioOptimized != null){
-			putQueryParameter("IoOptimized", ioOptimized.toString());
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
 	public String getKeyPairName() {
 		return this.keyPairName;
 	}
@@ -221,28 +177,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
-		}
-	}
-
-	public String getFilter4Key() {
-		return this.filter4Key;
-	}
-
-	public void setFilter4Key(String filter4Key) {
-		this.filter4Key = filter4Key;
-		if(filter4Key != null){
-			putQueryParameter("Filter.4.Key", filter4Key);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -279,17 +213,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getRdmaIpAddresses() {
-		return this.rdmaIpAddresses;
-	}
-
-	public void setRdmaIpAddresses(String rdmaIpAddresses) {
-		this.rdmaIpAddresses = rdmaIpAddresses;
-		if(rdmaIpAddresses != null){
-			putQueryParameter("RdmaIpAddresses", rdmaIpAddresses);
-		}
-	}
-
 	public Boolean getDeviceAvailable() {
 		return this.deviceAvailable;
 	}
@@ -298,39 +221,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.deviceAvailable = deviceAvailable;
 		if(deviceAvailable != null){
 			putQueryParameter("DeviceAvailable", deviceAvailable.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getPublicIpAddresses() {
-		return this.publicIpAddresses;
-	}
-
-	public void setPublicIpAddresses(String publicIpAddresses) {
-		this.publicIpAddresses = publicIpAddresses;
-		if(publicIpAddresses != null){
-			putQueryParameter("PublicIpAddresses", publicIpAddresses);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -346,17 +236,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
-		}
 	}
 
 	public String getFilter3Value() {
@@ -378,39 +257,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
-	}
-
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		if(instanceTypeFamily != null){
-			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
 		}
 	}
 
@@ -436,17 +282,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getFilter2Key() {
-		return this.filter2Key;
-	}
-
-	public void setFilter2Key(String filter2Key) {
-		this.filter2Key = filter2Key;
-		if(filter2Key != null){
-			putQueryParameter("Filter.2.Key", filter2Key);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -466,17 +301,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
-
-	public String getEipAddresses() {
-		return this.eipAddresses;
-	}
-
-	public void setEipAddresses(String eipAddresses) {
-		this.eipAddresses = eipAddresses;
-		if(eipAddresses != null){
-			putQueryParameter("EipAddresses", eipAddresses);
 		}
 	}
 
@@ -513,17 +337,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -532,17 +345,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getFilter3Key() {
-		return this.filter3Key;
-	}
-
-	public void setFilter3Key(String filter3Key) {
-		this.filter3Key = filter3Key;
-		if(filter3Key != null){
-			putQueryParameter("Filter.3.Key", filter3Key);
 		}
 	}
 
@@ -565,6 +367,204 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getFilter4Value() {
+		return this.filter4Value;
+	}
+
+	public void setFilter4Value(String filter4Value) {
+		this.filter4Value = filter4Value;
+		if(filter4Value != null){
+			putQueryParameter("Filter.4.Value", filter4Value);
+		}
+	}
+
+	public Boolean getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(Boolean ioOptimized) {
+		this.ioOptimized = ioOptimized;
+		if(ioOptimized != null){
+			putQueryParameter("IoOptimized", ioOptimized.toString());
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getFilter4Key() {
+		return this.filter4Key;
+	}
+
+	public void setFilter4Key(String filter4Key) {
+		this.filter4Key = filter4Key;
+		if(filter4Key != null){
+			putQueryParameter("Filter.4.Key", filter4Key);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getRdmaIpAddresses() {
+		return this.rdmaIpAddresses;
+	}
+
+	public void setRdmaIpAddresses(String rdmaIpAddresses) {
+		this.rdmaIpAddresses = rdmaIpAddresses;
+		if(rdmaIpAddresses != null){
+			putQueryParameter("RdmaIpAddresses", rdmaIpAddresses);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getPublicIpAddresses() {
+		return this.publicIpAddresses;
+	}
+
+	public void setPublicIpAddresses(String publicIpAddresses) {
+		this.publicIpAddresses = publicIpAddresses;
+		if(publicIpAddresses != null){
+			putQueryParameter("PublicIpAddresses", publicIpAddresses);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getInstanceTypeFamily() {
+		return this.instanceTypeFamily;
+	}
+
+	public void setInstanceTypeFamily(String instanceTypeFamily) {
+		this.instanceTypeFamily = instanceTypeFamily;
+		if(instanceTypeFamily != null){
+			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
+		}
+	}
+
+	public String getFilter2Key() {
+		return this.filter2Key;
+	}
+
+	public void setFilter2Key(String filter2Key) {
+		this.filter2Key = filter2Key;
+		if(filter2Key != null){
+			putQueryParameter("Filter.2.Key", filter2Key);
+		}
+	}
+
+	public String getEipAddresses() {
+		return this.eipAddresses;
+	}
+
+	public void setEipAddresses(String eipAddresses) {
+		this.eipAddresses = eipAddresses;
+		if(eipAddresses != null){
+			putQueryParameter("EipAddresses", eipAddresses);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getFilter3Key() {
+		return this.filter3Key;
+	}
+
+	public void setFilter3Key(String filter3Key) {
+		this.filter3Key = filter3Key;
+		if(filter3Key != null){
+			putQueryParameter("Filter.3.Key", filter3Key);
 		}
 	}
 

@@ -33,21 +33,11 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String filter2Value;
 
 	private String iSP;
 
-	private String ownerAccount;
-
 	private String allocationId;
-
-	private String filter1Value;
-
-	private String filter2Key;
-
-	private Long ownerId;
 
 	private String eipAddress;
 
@@ -60,6 +50,16 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 	private String associatedInstanceType;
 
 	private Integer pageSize;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String filter1Value;
+
+	private String filter2Key;
+
+	private Long ownerId;
 
 	private String chargeType;
 
@@ -75,17 +75,6 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -111,17 +100,6 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getAllocationId() {
 		return this.allocationId;
 	}
@@ -130,39 +108,6 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.allocationId = allocationId;
 		if(allocationId != null){
 			putQueryParameter("AllocationId", allocationId);
-		}
-	}
-
-	public String getFilter1Value() {
-		return this.filter1Value;
-	}
-
-	public void setFilter1Value(String filter1Value) {
-		this.filter1Value = filter1Value;
-		if(filter1Value != null){
-			putQueryParameter("Filter.1.Value", filter1Value);
-		}
-	}
-
-	public String getFilter2Key() {
-		return this.filter2Key;
-	}
-
-	public void setFilter2Key(String filter2Key) {
-		this.filter2Key = filter2Key;
-		if(filter2Key != null){
-			putQueryParameter("Filter.2.Key", filter2Key);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -229,6 +174,61 @@ public class DescribeEipAddressesRequest extends RpcAcsRequest<DescribeEipAddres
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getFilter1Value() {
+		return this.filter1Value;
+	}
+
+	public void setFilter1Value(String filter1Value) {
+		this.filter1Value = filter1Value;
+		if(filter1Value != null){
+			putQueryParameter("Filter.1.Value", filter1Value);
+		}
+	}
+
+	public String getFilter2Key() {
+		return this.filter2Key;
+	}
+
+	public void setFilter2Key(String filter2Key) {
+		this.filter2Key = filter2Key;
+		if(filter2Key != null){
+			putQueryParameter("Filter.2.Key", filter2Key);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

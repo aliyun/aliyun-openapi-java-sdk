@@ -35,11 +35,11 @@ public class DeleteVpcRequest extends RpcAcsRequest<DeleteVpcResponse> {
 
 	private String resourceOwnerAccount;
 
-	private String vpcId;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String vpcId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -63,17 +63,6 @@ public class DeleteVpcRequest extends RpcAcsRequest<DeleteVpcResponse> {
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -93,6 +82,17 @@ public class DeleteVpcRequest extends RpcAcsRequest<DeleteVpcResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

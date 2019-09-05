@@ -33,11 +33,11 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String autoSnapshotPolicyId;
 
 	private String diskIds;
+
+	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
@@ -49,17 +49,6 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -82,6 +71,17 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 		this.diskIds = diskIds;
 		if(diskIds != null){
 			putQueryParameter("diskIds", diskIds);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

@@ -33,19 +33,19 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 
 	private Long resourceOwnerId;
 
-	private String password;
-
-	private String resourceOwnerAccount;
-
 	private Boolean autoStartInstance;
-
-	private String ownerAccount;
-
-	private String diskId;
 
 	private String securityEnhancementStrategy;
 
 	private String keyPairName;
+
+	private String password;
+
+	private String diskId;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
 
@@ -60,28 +60,6 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 		}
 	}
 
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public Boolean getAutoStartInstance() {
 		return this.autoStartInstance;
 	}
@@ -90,28 +68,6 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 		this.autoStartInstance = autoStartInstance;
 		if(autoStartInstance != null){
 			putQueryParameter("AutoStartInstance", autoStartInstance.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDiskId() {
-		return this.diskId;
-	}
-
-	public void setDiskId(String diskId) {
-		this.diskId = diskId;
-		if(diskId != null){
-			putQueryParameter("DiskId", diskId);
 		}
 	}
 
@@ -134,6 +90,50 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+		if(password != null){
+			putQueryParameter("Password", password);
+		}
+	}
+
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

@@ -31,36 +31,25 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		} catch (Exception e) {}
 	}
 
-	private String vSwitchId;
-
 	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private String vpcId;
-
-	private String ownerAccount;
-
-	private Integer pageSize;
-
-	private String zoneId;
-
-	private Boolean isDefault;
-
-	private Long ownerId;
 
 	private Integer pageNumber;
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
+	private Integer pageSize;
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
+	private Boolean isDefault;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String vSwitchId;
+
+	private String vpcId;
+
+	private String zoneId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -73,36 +62,14 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -117,17 +84,6 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	public Boolean getIsDefault() {
 		return this.isDefault;
 	}
@@ -136,6 +92,28 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		this.isDefault = isDefault;
 		if(isDefault != null){
 			putQueryParameter("IsDefault", isDefault.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -150,14 +128,36 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 

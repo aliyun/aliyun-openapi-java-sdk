@@ -33,19 +33,19 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String type;
+
+	private String diskId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Integer newSize;
 
-	private String diskId;
-
 	private Long ownerId;
-
-	private String type;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -58,17 +58,6 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -77,6 +66,39 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+		if(diskId != null){
+			putQueryParameter("DiskId", diskId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -102,17 +124,6 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 		}
 	}
 
-	public String getDiskId() {
-		return this.diskId;
-	}
-
-	public void setDiskId(String diskId) {
-		this.diskId = diskId;
-		if(diskId != null){
-			putQueryParameter("DiskId", diskId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -121,17 +132,6 @@ public class ResizeDiskRequest extends RpcAcsRequest<ResizeDiskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 

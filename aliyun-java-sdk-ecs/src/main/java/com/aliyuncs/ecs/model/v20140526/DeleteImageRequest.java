@@ -39,9 +39,9 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 
 	private String ownerAccount;
 
-	private Boolean force;
-
 	private Long ownerId;
+
+	private Boolean force;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -87,17 +87,6 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 		}
 	}
 
-	public Boolean getForce() {
-		return this.force;
-	}
-
-	public void setForce(Boolean force) {
-		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -106,6 +95,17 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force.toString());
 		}
 	}
 
