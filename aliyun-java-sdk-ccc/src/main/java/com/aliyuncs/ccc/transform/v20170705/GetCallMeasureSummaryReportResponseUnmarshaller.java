@@ -26,40 +26,40 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCallMeasureSummaryReportResponseUnmarshaller {
 
-	public static GetCallMeasureSummaryReportResponse unmarshall(GetCallMeasureSummaryReportResponse getCallMeasureSummaryReportResponse, UnmarshallerContext context) {
+	public static GetCallMeasureSummaryReportResponse unmarshall(GetCallMeasureSummaryReportResponse getCallMeasureSummaryReportResponse, UnmarshallerContext _ctx) {
 		
-		getCallMeasureSummaryReportResponse.setRequestId(context.stringValue("GetCallMeasureSummaryReportResponse.RequestId"));
-		getCallMeasureSummaryReportResponse.setSuccess(context.booleanValue("GetCallMeasureSummaryReportResponse.Success"));
-		getCallMeasureSummaryReportResponse.setCode(context.stringValue("GetCallMeasureSummaryReportResponse.Code"));
-		getCallMeasureSummaryReportResponse.setMessage(context.stringValue("GetCallMeasureSummaryReportResponse.Message"));
-		getCallMeasureSummaryReportResponse.setHttpStatusCode(context.integerValue("GetCallMeasureSummaryReportResponse.HttpStatusCode"));
+		getCallMeasureSummaryReportResponse.setRequestId(_ctx.stringValue("GetCallMeasureSummaryReportResponse.RequestId"));
+		getCallMeasureSummaryReportResponse.setSuccess(_ctx.booleanValue("GetCallMeasureSummaryReportResponse.Success"));
+		getCallMeasureSummaryReportResponse.setCode(_ctx.stringValue("GetCallMeasureSummaryReportResponse.Code"));
+		getCallMeasureSummaryReportResponse.setMessage(_ctx.stringValue("GetCallMeasureSummaryReportResponse.Message"));
+		getCallMeasureSummaryReportResponse.setHttpStatusCode(_ctx.integerValue("GetCallMeasureSummaryReportResponse.HttpStatusCode"));
 
 		SummaryReport summaryReport = new SummaryReport();
-		summaryReport.setYear(context.integerValue("GetCallMeasureSummaryReportResponse.SummaryReport.Year"));
-		summaryReport.setMonth(context.integerValue("GetCallMeasureSummaryReportResponse.SummaryReport.Month"));
-		summaryReport.setDay(context.integerValue("GetCallMeasureSummaryReportResponse.SummaryReport.Day"));
-		summaryReport.setInboundCount(context.longValue("GetCallMeasureSummaryReportResponse.SummaryReport.InboundCount"));
-		summaryReport.setOutboundCount(context.longValue("GetCallMeasureSummaryReportResponse.SummaryReport.OutboundCount"));
-		summaryReport.setOutboundDurationByMinute(context.longValue("GetCallMeasureSummaryReportResponse.SummaryReport.OutboundDurationByMinute"));
-		summaryReport.setInboundDurationByMinute(context.longValue("GetCallMeasureSummaryReportResponse.SummaryReport.InboundDurationByMinute"));
+		summaryReport.setYear(_ctx.integerValue("GetCallMeasureSummaryReportResponse.SummaryReport.Year"));
+		summaryReport.setMonth(_ctx.integerValue("GetCallMeasureSummaryReportResponse.SummaryReport.Month"));
+		summaryReport.setDay(_ctx.integerValue("GetCallMeasureSummaryReportResponse.SummaryReport.Day"));
+		summaryReport.setInboundCount(_ctx.longValue("GetCallMeasureSummaryReportResponse.SummaryReport.InboundCount"));
+		summaryReport.setOutboundCount(_ctx.longValue("GetCallMeasureSummaryReportResponse.SummaryReport.OutboundCount"));
+		summaryReport.setOutboundDurationByMinute(_ctx.longValue("GetCallMeasureSummaryReportResponse.SummaryReport.OutboundDurationByMinute"));
+		summaryReport.setInboundDurationByMinute(_ctx.longValue("GetCallMeasureSummaryReportResponse.SummaryReport.InboundDurationByMinute"));
 		getCallMeasureSummaryReportResponse.setSummaryReport(summaryReport);
 
 		NumberReports numberReports = new NumberReports();
-		numberReports.setTotalCount(context.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.TotalCount"));
-		numberReports.setPageNumber(context.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.PageNumber"));
-		numberReports.setPageSize(context.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.PageSize"));
+		numberReports.setTotalCount(_ctx.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.TotalCount"));
+		numberReports.setPageNumber(_ctx.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.PageNumber"));
+		numberReports.setPageSize(_ctx.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.PageSize"));
 
 		List<NumberReport> list = new ArrayList<NumberReport>();
-		for (int i = 0; i < context.lengthValue("GetCallMeasureSummaryReportResponse.NumberReports.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetCallMeasureSummaryReportResponse.NumberReports.List.Length"); i++) {
 			NumberReport numberReport = new NumberReport();
-			numberReport.setNumber(context.stringValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].Number"));
-			numberReport.setYear(context.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].Year"));
-			numberReport.setMonth(context.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].Month"));
-			numberReport.setDay(context.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].Day"));
-			numberReport.setInboundCount(context.longValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].InboundCount"));
-			numberReport.setOutboundCount(context.longValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].OutboundCount"));
-			numberReport.setOutboundDurationByMinute(context.longValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].OutboundDurationByMinute"));
-			numberReport.setInboundDurationByMinute(context.longValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].InboundDurationByMinute"));
+			numberReport.setNumber(_ctx.stringValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].Number"));
+			numberReport.setYear(_ctx.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].Year"));
+			numberReport.setMonth(_ctx.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].Month"));
+			numberReport.setDay(_ctx.integerValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].Day"));
+			numberReport.setInboundCount(_ctx.longValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].InboundCount"));
+			numberReport.setOutboundCount(_ctx.longValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].OutboundCount"));
+			numberReport.setOutboundDurationByMinute(_ctx.longValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].OutboundDurationByMinute"));
+			numberReport.setInboundDurationByMinute(_ctx.longValue("GetCallMeasureSummaryReportResponse.NumberReports.List["+ i +"].InboundDurationByMinute"));
 
 			list.add(numberReport);
 		}

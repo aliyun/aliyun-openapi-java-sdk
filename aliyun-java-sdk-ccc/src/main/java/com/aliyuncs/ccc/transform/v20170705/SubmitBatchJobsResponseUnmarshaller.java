@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitBatchJobsResponseUnmarshaller {
 
-	public static SubmitBatchJobsResponse unmarshall(SubmitBatchJobsResponse submitBatchJobsResponse, UnmarshallerContext context) {
+	public static SubmitBatchJobsResponse unmarshall(SubmitBatchJobsResponse submitBatchJobsResponse, UnmarshallerContext _ctx) {
 		
-		submitBatchJobsResponse.setRequestId(context.stringValue("SubmitBatchJobsResponse.RequestId"));
-		submitBatchJobsResponse.setSuccess(context.booleanValue("SubmitBatchJobsResponse.Success"));
-		submitBatchJobsResponse.setCode(context.stringValue("SubmitBatchJobsResponse.Code"));
-		submitBatchJobsResponse.setMessage(context.stringValue("SubmitBatchJobsResponse.Message"));
-		submitBatchJobsResponse.setHttpStatusCode(context.integerValue("SubmitBatchJobsResponse.HttpStatusCode"));
+		submitBatchJobsResponse.setRequestId(_ctx.stringValue("SubmitBatchJobsResponse.RequestId"));
+		submitBatchJobsResponse.setSuccess(_ctx.booleanValue("SubmitBatchJobsResponse.Success"));
+		submitBatchJobsResponse.setCode(_ctx.stringValue("SubmitBatchJobsResponse.Code"));
+		submitBatchJobsResponse.setMessage(_ctx.stringValue("SubmitBatchJobsResponse.Message"));
+		submitBatchJobsResponse.setHttpStatusCode(_ctx.integerValue("SubmitBatchJobsResponse.HttpStatusCode"));
 	 
 	 	return submitBatchJobsResponse;
 	}

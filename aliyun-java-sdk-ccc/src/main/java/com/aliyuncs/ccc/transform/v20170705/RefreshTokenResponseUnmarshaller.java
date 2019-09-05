@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RefreshTokenResponseUnmarshaller {
 
-	public static RefreshTokenResponse unmarshall(RefreshTokenResponse refreshTokenResponse, UnmarshallerContext context) {
+	public static RefreshTokenResponse unmarshall(RefreshTokenResponse refreshTokenResponse, UnmarshallerContext _ctx) {
 		
-		refreshTokenResponse.setRequestId(context.stringValue("RefreshTokenResponse.RequestId"));
-		refreshTokenResponse.setSuccess(context.booleanValue("RefreshTokenResponse.Success"));
-		refreshTokenResponse.setCode(context.stringValue("RefreshTokenResponse.Code"));
-		refreshTokenResponse.setMessage(context.stringValue("RefreshTokenResponse.Message"));
-		refreshTokenResponse.setHttpStatusCode(context.integerValue("RefreshTokenResponse.HttpStatusCode"));
+		refreshTokenResponse.setRequestId(_ctx.stringValue("RefreshTokenResponse.RequestId"));
+		refreshTokenResponse.setSuccess(_ctx.booleanValue("RefreshTokenResponse.Success"));
+		refreshTokenResponse.setCode(_ctx.stringValue("RefreshTokenResponse.Code"));
+		refreshTokenResponse.setMessage(_ctx.stringValue("RefreshTokenResponse.Message"));
+		refreshTokenResponse.setHttpStatusCode(_ctx.integerValue("RefreshTokenResponse.HttpStatusCode"));
 
 		Token token = new Token();
-		token.setSignature(context.stringValue("RefreshTokenResponse.Token.Signature"));
-		token.setSignData(context.stringValue("RefreshTokenResponse.Token.SignData"));
+		token.setSignature(_ctx.stringValue("RefreshTokenResponse.Token.Signature"));
+		token.setSignData(_ctx.stringValue("RefreshTokenResponse.Token.SignData"));
 		refreshTokenResponse.setToken(token);
 	 
 	 	return refreshTokenResponse;

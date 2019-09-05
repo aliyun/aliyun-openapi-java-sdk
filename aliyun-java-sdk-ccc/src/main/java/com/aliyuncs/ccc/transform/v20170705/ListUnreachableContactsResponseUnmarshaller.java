@@ -26,33 +26,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListUnreachableContactsResponseUnmarshaller {
 
-	public static ListUnreachableContactsResponse unmarshall(ListUnreachableContactsResponse listUnreachableContactsResponse, UnmarshallerContext context) {
+	public static ListUnreachableContactsResponse unmarshall(ListUnreachableContactsResponse listUnreachableContactsResponse, UnmarshallerContext _ctx) {
 		
-		listUnreachableContactsResponse.setRequestId(context.stringValue("ListUnreachableContactsResponse.RequestId"));
-		listUnreachableContactsResponse.setSuccess(context.booleanValue("ListUnreachableContactsResponse.Success"));
-		listUnreachableContactsResponse.setCode(context.stringValue("ListUnreachableContactsResponse.Code"));
-		listUnreachableContactsResponse.setMessage(context.stringValue("ListUnreachableContactsResponse.Message"));
-		listUnreachableContactsResponse.setHttpStatusCode(context.integerValue("ListUnreachableContactsResponse.HttpStatusCode"));
+		listUnreachableContactsResponse.setRequestId(_ctx.stringValue("ListUnreachableContactsResponse.RequestId"));
+		listUnreachableContactsResponse.setSuccess(_ctx.booleanValue("ListUnreachableContactsResponse.Success"));
+		listUnreachableContactsResponse.setCode(_ctx.stringValue("ListUnreachableContactsResponse.Code"));
+		listUnreachableContactsResponse.setMessage(_ctx.stringValue("ListUnreachableContactsResponse.Message"));
+		listUnreachableContactsResponse.setHttpStatusCode(_ctx.integerValue("ListUnreachableContactsResponse.HttpStatusCode"));
 
 		UnreachableContacts unreachableContacts = new UnreachableContacts();
-		unreachableContacts.setTotalCount(context.integerValue("ListUnreachableContactsResponse.UnreachableContacts.TotalCount"));
-		unreachableContacts.setPageNumber(context.integerValue("ListUnreachableContactsResponse.UnreachableContacts.PageNumber"));
-		unreachableContacts.setPageSize(context.integerValue("ListUnreachableContactsResponse.UnreachableContacts.PageSize"));
+		unreachableContacts.setTotalCount(_ctx.integerValue("ListUnreachableContactsResponse.UnreachableContacts.TotalCount"));
+		unreachableContacts.setPageNumber(_ctx.integerValue("ListUnreachableContactsResponse.UnreachableContacts.PageNumber"));
+		unreachableContacts.setPageSize(_ctx.integerValue("ListUnreachableContactsResponse.UnreachableContacts.PageSize"));
 
 		List<UnreachableContact> list = new ArrayList<UnreachableContact>();
-		for (int i = 0; i < context.lengthValue("ListUnreachableContactsResponse.UnreachableContacts.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListUnreachableContactsResponse.UnreachableContacts.List.Length"); i++) {
 			UnreachableContact unreachableContact = new UnreachableContact();
-			unreachableContact.setTotalAttempts(context.integerValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].TotalAttempts"));
+			unreachableContact.setTotalAttempts(_ctx.integerValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].TotalAttempts"));
 
 			List<Contact> contacts = new ArrayList<Contact>();
-			for (int j = 0; j < context.lengthValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts.Length"); j++) {
 				Contact contact = new Contact();
-				contact.setContactId(context.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].ContactId"));
-				contact.setContactName(context.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].ContactName"));
-				contact.setRole(context.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].Role"));
-				contact.setPhoneNumber(context.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].PhoneNumber"));
-				contact.setState(context.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].State"));
-				contact.setReferenceId(context.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].ReferenceId"));
+				contact.setContactId(_ctx.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].ContactId"));
+				contact.setContactName(_ctx.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].ContactName"));
+				contact.setRole(_ctx.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].Role"));
+				contact.setPhoneNumber(_ctx.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].PhoneNumber"));
+				contact.setState(_ctx.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].State"));
+				contact.setReferenceId(_ctx.stringValue("ListUnreachableContactsResponse.UnreachableContacts.List["+ i +"].Contacts["+ j +"].ReferenceId"));
 
 				contacts.add(contact);
 			}

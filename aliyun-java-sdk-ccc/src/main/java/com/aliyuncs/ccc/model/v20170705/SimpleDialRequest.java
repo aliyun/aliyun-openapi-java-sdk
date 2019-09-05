@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,7 +26,14 @@ public class SimpleDialRequest extends RpcAcsRequest<SimpleDialResponse> {
 	
 	public SimpleDialRequest() {
 		super("CCC", "2017-07-05", "SimpleDial");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String callee;
 
 	private String caller;
 
@@ -32,7 +41,16 @@ public class SimpleDialRequest extends RpcAcsRequest<SimpleDialResponse> {
 
 	private String contractFlowId;
 
-	private String callee;
+	public String getCallee() {
+		return this.callee;
+	}
+
+	public void setCallee(String callee) {
+		this.callee = callee;
+		if(callee != null){
+			putQueryParameter("Callee", callee);
+		}
+	}
 
 	public String getCaller() {
 		return this.caller;
@@ -64,17 +82,6 @@ public class SimpleDialRequest extends RpcAcsRequest<SimpleDialResponse> {
 		this.contractFlowId = contractFlowId;
 		if(contractFlowId != null){
 			putQueryParameter("ContractFlowId", contractFlowId);
-		}
-	}
-
-	public String getCallee() {
-		return this.callee;
-	}
-
-	public void setCallee(String callee) {
-		this.callee = callee;
-		if(callee != null){
-			putQueryParameter("Callee", callee);
 		}
 	}
 

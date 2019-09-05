@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,7 +27,14 @@ public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 	
 	public StartJobRequest() {
 		super("CCC", "2017-07-05", "StartJob");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String groupId;
 
 	private String jobJson;
 
@@ -33,11 +42,20 @@ public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 
 	private String instanceId;
 
-	private String groupId;
-
 	private Boolean selfHostedCallCenter;
 
 	private String scenarioId;
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
 
 	public String getJobJson() {
 		return this.jobJson;
@@ -71,17 +89,6 @@ public class StartJobRequest extends RpcAcsRequest<StartJobResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
 		}
 	}
 

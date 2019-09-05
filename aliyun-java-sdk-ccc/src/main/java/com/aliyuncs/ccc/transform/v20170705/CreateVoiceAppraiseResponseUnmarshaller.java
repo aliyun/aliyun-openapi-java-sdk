@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateVoiceAppraiseResponseUnmarshaller {
 
-	public static CreateVoiceAppraiseResponse unmarshall(CreateVoiceAppraiseResponse createVoiceAppraiseResponse, UnmarshallerContext context) {
+	public static CreateVoiceAppraiseResponse unmarshall(CreateVoiceAppraiseResponse createVoiceAppraiseResponse, UnmarshallerContext _ctx) {
 		
-		createVoiceAppraiseResponse.setRequestId(context.stringValue("CreateVoiceAppraiseResponse.RequestId"));
-		createVoiceAppraiseResponse.setSuccess(context.booleanValue("CreateVoiceAppraiseResponse.Success"));
-		createVoiceAppraiseResponse.setCode(context.stringValue("CreateVoiceAppraiseResponse.Code"));
-		createVoiceAppraiseResponse.setMessage(context.stringValue("CreateVoiceAppraiseResponse.Message"));
-		createVoiceAppraiseResponse.setHttpStatusCode(context.integerValue("CreateVoiceAppraiseResponse.HttpStatusCode"));
+		createVoiceAppraiseResponse.setRequestId(_ctx.stringValue("CreateVoiceAppraiseResponse.RequestId"));
+		createVoiceAppraiseResponse.setSuccess(_ctx.booleanValue("CreateVoiceAppraiseResponse.Success"));
+		createVoiceAppraiseResponse.setCode(_ctx.stringValue("CreateVoiceAppraiseResponse.Code"));
+		createVoiceAppraiseResponse.setMessage(_ctx.stringValue("CreateVoiceAppraiseResponse.Message"));
+		createVoiceAppraiseResponse.setHttpStatusCode(_ctx.integerValue("CreateVoiceAppraiseResponse.HttpStatusCode"));
 	 
 	 	return createVoiceAppraiseResponse;
 	}

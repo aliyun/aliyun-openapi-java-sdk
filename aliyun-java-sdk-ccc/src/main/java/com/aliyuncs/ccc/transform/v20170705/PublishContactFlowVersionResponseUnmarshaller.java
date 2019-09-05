@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PublishContactFlowVersionResponseUnmarshaller {
 
-	public static PublishContactFlowVersionResponse unmarshall(PublishContactFlowVersionResponse publishContactFlowVersionResponse, UnmarshallerContext context) {
+	public static PublishContactFlowVersionResponse unmarshall(PublishContactFlowVersionResponse publishContactFlowVersionResponse, UnmarshallerContext _ctx) {
 		
-		publishContactFlowVersionResponse.setRequestId(context.stringValue("PublishContactFlowVersionResponse.RequestId"));
-		publishContactFlowVersionResponse.setSuccess(context.booleanValue("PublishContactFlowVersionResponse.Success"));
-		publishContactFlowVersionResponse.setCode(context.stringValue("PublishContactFlowVersionResponse.Code"));
-		publishContactFlowVersionResponse.setMessage(context.stringValue("PublishContactFlowVersionResponse.Message"));
-		publishContactFlowVersionResponse.setHttpStatusCode(context.integerValue("PublishContactFlowVersionResponse.HttpStatusCode"));
+		publishContactFlowVersionResponse.setRequestId(_ctx.stringValue("PublishContactFlowVersionResponse.RequestId"));
+		publishContactFlowVersionResponse.setSuccess(_ctx.booleanValue("PublishContactFlowVersionResponse.Success"));
+		publishContactFlowVersionResponse.setCode(_ctx.stringValue("PublishContactFlowVersionResponse.Code"));
+		publishContactFlowVersionResponse.setMessage(_ctx.stringValue("PublishContactFlowVersionResponse.Message"));
+		publishContactFlowVersionResponse.setHttpStatusCode(_ctx.integerValue("PublishContactFlowVersionResponse.HttpStatusCode"));
 	 
 	 	return publishContactFlowVersionResponse;
 	}

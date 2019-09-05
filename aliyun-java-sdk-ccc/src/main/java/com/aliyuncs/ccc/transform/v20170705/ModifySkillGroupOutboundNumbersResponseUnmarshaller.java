@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySkillGroupOutboundNumbersResponseUnmarshaller {
 
-	public static ModifySkillGroupOutboundNumbersResponse unmarshall(ModifySkillGroupOutboundNumbersResponse modifySkillGroupOutboundNumbersResponse, UnmarshallerContext context) {
+	public static ModifySkillGroupOutboundNumbersResponse unmarshall(ModifySkillGroupOutboundNumbersResponse modifySkillGroupOutboundNumbersResponse, UnmarshallerContext _ctx) {
 		
-		modifySkillGroupOutboundNumbersResponse.setRequestId(context.stringValue("ModifySkillGroupOutboundNumbersResponse.RequestId"));
-		modifySkillGroupOutboundNumbersResponse.setSuccess(context.booleanValue("ModifySkillGroupOutboundNumbersResponse.Success"));
-		modifySkillGroupOutboundNumbersResponse.setCode(context.stringValue("ModifySkillGroupOutboundNumbersResponse.Code"));
-		modifySkillGroupOutboundNumbersResponse.setMessage(context.stringValue("ModifySkillGroupOutboundNumbersResponse.Message"));
-		modifySkillGroupOutboundNumbersResponse.setHttpStatusCode(context.integerValue("ModifySkillGroupOutboundNumbersResponse.HttpStatusCode"));
+		modifySkillGroupOutboundNumbersResponse.setRequestId(_ctx.stringValue("ModifySkillGroupOutboundNumbersResponse.RequestId"));
+		modifySkillGroupOutboundNumbersResponse.setSuccess(_ctx.booleanValue("ModifySkillGroupOutboundNumbersResponse.Success"));
+		modifySkillGroupOutboundNumbersResponse.setCode(_ctx.stringValue("ModifySkillGroupOutboundNumbersResponse.Code"));
+		modifySkillGroupOutboundNumbersResponse.setMessage(_ctx.stringValue("ModifySkillGroupOutboundNumbersResponse.Message"));
+		modifySkillGroupOutboundNumbersResponse.setHttpStatusCode(_ctx.integerValue("ModifySkillGroupOutboundNumbersResponse.HttpStatusCode"));
 	 
 	 	return modifySkillGroupOutboundNumbersResponse;
 	}

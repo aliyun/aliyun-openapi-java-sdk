@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,17 +27,22 @@ public class AddBulkPhoneNumbersRequest extends RpcAcsRequest<AddBulkPhoneNumber
 	
 	public AddBulkPhoneNumbersRequest() {
 		super("CCC", "2017-07-05", "AddBulkPhoneNumbers");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String contactFlowId;
 
-	private String instanceId;
-
 	private String usage;
 
-	private List<String> skillGroupIds;
-
 	private List<String> phoneNumbers;
+
+	private String instanceId;
+
+	private List<String> skillGroupIds;
 
 	public String getContactFlowId() {
 		return this.contactFlowId;
@@ -45,17 +52,6 @@ public class AddBulkPhoneNumbersRequest extends RpcAcsRequest<AddBulkPhoneNumber
 		this.contactFlowId = contactFlowId;
 		if(contactFlowId != null){
 			putQueryParameter("ContactFlowId", contactFlowId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -70,19 +66,6 @@ public class AddBulkPhoneNumbersRequest extends RpcAcsRequest<AddBulkPhoneNumber
 		}
 	}
 
-	public List<String> getSkillGroupIds() {
-		return this.skillGroupIds;
-	}
-
-	public void setSkillGroupIds(List<String> skillGroupIds) {
-		this.skillGroupIds = skillGroupIds;	
-		if (skillGroupIds != null) {
-			for (int i = 0; i < skillGroupIds.size(); i++) {
-				putQueryParameter("SkillGroupId." + (i + 1) , skillGroupIds.get(i));
-			}
-		}	
-	}
-
 	public List<String> getPhoneNumbers() {
 		return this.phoneNumbers;
 	}
@@ -92,6 +75,30 @@ public class AddBulkPhoneNumbersRequest extends RpcAcsRequest<AddBulkPhoneNumber
 		if (phoneNumbers != null) {
 			for (int i = 0; i < phoneNumbers.size(); i++) {
 				putQueryParameter("PhoneNumber." + (i + 1) , phoneNumbers.get(i));
+			}
+		}	
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public List<String> getSkillGroupIds() {
+		return this.skillGroupIds;
+	}
+
+	public void setSkillGroupIds(List<String> skillGroupIds) {
+		this.skillGroupIds = skillGroupIds;	
+		if (skillGroupIds != null) {
+			for (int i = 0; i < skillGroupIds.size(); i++) {
+				putQueryParameter("SkillGroupId." + (i + 1) , skillGroupIds.get(i));
 			}
 		}	
 	}

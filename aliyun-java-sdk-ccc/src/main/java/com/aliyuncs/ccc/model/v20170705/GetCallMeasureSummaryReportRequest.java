@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class GetCallMeasureSummaryReportRequest extends RpcAcsRequest<GetCallMea
 	
 	public GetCallMeasureSummaryReportRequest() {
 		super("CCC", "2017-07-05", "GetCallMeasureSummaryReport");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String intervalType;
 
-	private Integer month;
-
 	private Integer year;
+
+	private Integer pageNumber;
+
+	private Integer month;
 
 	private Integer pageSize;
 
 	private Integer day;
-
-	private Integer pageNumber;
 
 	public String getIntervalType() {
 		return this.intervalType;
@@ -49,17 +56,6 @@ public class GetCallMeasureSummaryReportRequest extends RpcAcsRequest<GetCallMea
 		}
 	}
 
-	public Integer getMonth() {
-		return this.month;
-	}
-
-	public void setMonth(Integer month) {
-		this.month = month;
-		if(month != null){
-			putQueryParameter("Month", month.toString());
-		}
-	}
-
 	public Integer getYear() {
 		return this.year;
 	}
@@ -68,6 +64,28 @@ public class GetCallMeasureSummaryReportRequest extends RpcAcsRequest<GetCallMea
 		this.year = year;
 		if(year != null){
 			putQueryParameter("Year", year.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getMonth() {
+		return this.month;
+	}
+
+	public void setMonth(Integer month) {
+		this.month = month;
+		if(month != null){
+			putQueryParameter("Month", month.toString());
 		}
 	}
 
@@ -90,17 +108,6 @@ public class GetCallMeasureSummaryReportRequest extends RpcAcsRequest<GetCallMea
 		this.day = day;
 		if(day != null){
 			putQueryParameter("Day", day.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetContactIdentifyByOutBoundTaskIdResponseUnmarshaller {
 
-	public static GetContactIdentifyByOutBoundTaskIdResponse unmarshall(GetContactIdentifyByOutBoundTaskIdResponse getContactIdentifyByOutBoundTaskIdResponse, UnmarshallerContext context) {
+	public static GetContactIdentifyByOutBoundTaskIdResponse unmarshall(GetContactIdentifyByOutBoundTaskIdResponse getContactIdentifyByOutBoundTaskIdResponse, UnmarshallerContext _ctx) {
 		
-		getContactIdentifyByOutBoundTaskIdResponse.setRequestId(context.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.RequestId"));
-		getContactIdentifyByOutBoundTaskIdResponse.setSuccess(context.booleanValue("GetContactIdentifyByOutBoundTaskIdResponse.Success"));
-		getContactIdentifyByOutBoundTaskIdResponse.setCode(context.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.Code"));
-		getContactIdentifyByOutBoundTaskIdResponse.setMessage(context.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.Message"));
-		getContactIdentifyByOutBoundTaskIdResponse.setHttpStatusCode(context.integerValue("GetContactIdentifyByOutBoundTaskIdResponse.HttpStatusCode"));
+		getContactIdentifyByOutBoundTaskIdResponse.setRequestId(_ctx.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.RequestId"));
+		getContactIdentifyByOutBoundTaskIdResponse.setSuccess(_ctx.booleanValue("GetContactIdentifyByOutBoundTaskIdResponse.Success"));
+		getContactIdentifyByOutBoundTaskIdResponse.setCode(_ctx.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.Code"));
+		getContactIdentifyByOutBoundTaskIdResponse.setMessage(_ctx.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.Message"));
+		getContactIdentifyByOutBoundTaskIdResponse.setHttpStatusCode(_ctx.integerValue("GetContactIdentifyByOutBoundTaskIdResponse.HttpStatusCode"));
 
 		ContactIdentity contactIdentity = new ContactIdentity();
-		contactIdentity.setContactReferrnceId(context.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.ContactIdentity.ContactReferrnceId"));
-		contactIdentity.setJobGroupId(context.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.ContactIdentity.JobGroupId"));
-		contactIdentity.setUserPhone(context.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.ContactIdentity.UserPhone"));
+		contactIdentity.setContactReferrnceId(_ctx.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.ContactIdentity.ContactReferrnceId"));
+		contactIdentity.setJobGroupId(_ctx.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.ContactIdentity.JobGroupId"));
+		contactIdentity.setUserPhone(_ctx.stringValue("GetContactIdentifyByOutBoundTaskIdResponse.ContactIdentity.UserPhone"));
 		getContactIdentifyByOutBoundTaskIdResponse.setContactIdentity(contactIdentity);
 	 
 	 	return getContactIdentifyByOutBoundTaskIdResponse;

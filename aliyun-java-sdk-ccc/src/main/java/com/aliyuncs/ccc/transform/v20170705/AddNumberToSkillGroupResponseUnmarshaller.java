@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddNumberToSkillGroupResponseUnmarshaller {
 
-	public static AddNumberToSkillGroupResponse unmarshall(AddNumberToSkillGroupResponse addNumberToSkillGroupResponse, UnmarshallerContext context) {
+	public static AddNumberToSkillGroupResponse unmarshall(AddNumberToSkillGroupResponse addNumberToSkillGroupResponse, UnmarshallerContext _ctx) {
 		
-		addNumberToSkillGroupResponse.setRequestId(context.stringValue("AddNumberToSkillGroupResponse.RequestId"));
-		addNumberToSkillGroupResponse.setSuccess(context.booleanValue("AddNumberToSkillGroupResponse.Success"));
-		addNumberToSkillGroupResponse.setCode(context.stringValue("AddNumberToSkillGroupResponse.Code"));
-		addNumberToSkillGroupResponse.setMessage(context.stringValue("AddNumberToSkillGroupResponse.Message"));
-		addNumberToSkillGroupResponse.setHttpStatusCode(context.integerValue("AddNumberToSkillGroupResponse.HttpStatusCode"));
+		addNumberToSkillGroupResponse.setRequestId(_ctx.stringValue("AddNumberToSkillGroupResponse.RequestId"));
+		addNumberToSkillGroupResponse.setSuccess(_ctx.booleanValue("AddNumberToSkillGroupResponse.Success"));
+		addNumberToSkillGroupResponse.setCode(_ctx.stringValue("AddNumberToSkillGroupResponse.Code"));
+		addNumberToSkillGroupResponse.setMessage(_ctx.stringValue("AddNumberToSkillGroupResponse.Message"));
+		addNumberToSkillGroupResponse.setHttpStatusCode(_ctx.integerValue("AddNumberToSkillGroupResponse.HttpStatusCode"));
 	 
 	 	return addNumberToSkillGroupResponse;
 	}

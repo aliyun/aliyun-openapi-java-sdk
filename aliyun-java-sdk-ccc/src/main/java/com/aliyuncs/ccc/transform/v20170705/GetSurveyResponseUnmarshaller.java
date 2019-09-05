@@ -23,34 +23,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSurveyResponseUnmarshaller {
 
-	public static GetSurveyResponse unmarshall(GetSurveyResponse getSurveyResponse, UnmarshallerContext context) {
+	public static GetSurveyResponse unmarshall(GetSurveyResponse getSurveyResponse, UnmarshallerContext _ctx) {
 		
-		getSurveyResponse.setRequestId(context.stringValue("GetSurveyResponse.RequestId"));
-		getSurveyResponse.setSuccess(context.booleanValue("GetSurveyResponse.Success"));
-		getSurveyResponse.setCode(context.stringValue("GetSurveyResponse.Code"));
-		getSurveyResponse.setMessage(context.stringValue("GetSurveyResponse.Message"));
-		getSurveyResponse.setHttpStatusCode(context.integerValue("GetSurveyResponse.HttpStatusCode"));
+		getSurveyResponse.setRequestId(_ctx.stringValue("GetSurveyResponse.RequestId"));
+		getSurveyResponse.setSuccess(_ctx.booleanValue("GetSurveyResponse.Success"));
+		getSurveyResponse.setCode(_ctx.stringValue("GetSurveyResponse.Code"));
+		getSurveyResponse.setMessage(_ctx.stringValue("GetSurveyResponse.Message"));
+		getSurveyResponse.setHttpStatusCode(_ctx.integerValue("GetSurveyResponse.HttpStatusCode"));
 
 		Survey survey = new Survey();
-		survey.setId(context.stringValue("GetSurveyResponse.Survey.Id"));
-		survey.setScenarioUuid(context.stringValue("GetSurveyResponse.Survey.ScenarioUuid"));
-		survey.setName(context.stringValue("GetSurveyResponse.Survey.Name"));
-		survey.setDescription(context.stringValue("GetSurveyResponse.Survey.Description"));
-		survey.setRole(context.stringValue("GetSurveyResponse.Survey.Role"));
-		survey.setRound(context.integerValue("GetSurveyResponse.Survey.Round"));
-		survey.setHotWords(context.stringValue("GetSurveyResponse.Survey.HotWords"));
-		survey.setSpeechOptimizationParam(context.stringValue("GetSurveyResponse.Survey.SpeechOptimizationParam"));
-		survey.setGlobalQuestions(context.stringValue("GetSurveyResponse.Survey.GlobalQuestions"));
+		survey.setId(_ctx.stringValue("GetSurveyResponse.Survey.Id"));
+		survey.setScenarioUuid(_ctx.stringValue("GetSurveyResponse.Survey.ScenarioUuid"));
+		survey.setName(_ctx.stringValue("GetSurveyResponse.Survey.Name"));
+		survey.setDescription(_ctx.stringValue("GetSurveyResponse.Survey.Description"));
+		survey.setRole(_ctx.stringValue("GetSurveyResponse.Survey.Role"));
+		survey.setRound(_ctx.integerValue("GetSurveyResponse.Survey.Round"));
+		survey.setHotWords(_ctx.stringValue("GetSurveyResponse.Survey.HotWords"));
+		survey.setSpeechOptimizationParam(_ctx.stringValue("GetSurveyResponse.Survey.SpeechOptimizationParam"));
+		survey.setGlobalQuestions(_ctx.stringValue("GetSurveyResponse.Survey.GlobalQuestions"));
 
 		Flow flow = new Flow();
-		flow.setFlowId(context.stringValue("GetSurveyResponse.Survey.Flow.FlowId"));
-		flow.setIsPublished(context.booleanValue("GetSurveyResponse.Survey.Flow.IsPublished"));
-		flow.setFlowJson(context.stringValue("GetSurveyResponse.Survey.Flow.FlowJson"));
+		flow.setFlowId(_ctx.stringValue("GetSurveyResponse.Survey.Flow.FlowId"));
+		flow.setIsPublished(_ctx.booleanValue("GetSurveyResponse.Survey.Flow.IsPublished"));
+		flow.setFlowJson(_ctx.stringValue("GetSurveyResponse.Survey.Flow.FlowJson"));
 		survey.setFlow(flow);
 
 		AsrCustomModel asrCustomModel = new AsrCustomModel();
-		asrCustomModel.setCorpora(context.stringValue("GetSurveyResponse.Survey.AsrCustomModel.Corpora"));
-		asrCustomModel.setCustomModelStatus(context.integerValue("GetSurveyResponse.Survey.AsrCustomModel.CustomModelStatus"));
+		asrCustomModel.setCorpora(_ctx.stringValue("GetSurveyResponse.Survey.AsrCustomModel.Corpora"));
+		asrCustomModel.setCustomModelStatus(_ctx.integerValue("GetSurveyResponse.Survey.AsrCustomModel.CustomModelStatus"));
 		survey.setAsrCustomModel(asrCustomModel);
 		getSurveyResponse.setSurvey(survey);
 	 

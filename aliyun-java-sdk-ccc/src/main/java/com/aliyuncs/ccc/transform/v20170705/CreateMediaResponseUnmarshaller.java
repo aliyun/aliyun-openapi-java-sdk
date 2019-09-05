@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMediaResponseUnmarshaller {
 
-	public static CreateMediaResponse unmarshall(CreateMediaResponse createMediaResponse, UnmarshallerContext context) {
+	public static CreateMediaResponse unmarshall(CreateMediaResponse createMediaResponse, UnmarshallerContext _ctx) {
 		
-		createMediaResponse.setRequestId(context.stringValue("CreateMediaResponse.RequestId"));
-		createMediaResponse.setSuccess(context.booleanValue("CreateMediaResponse.Success"));
-		createMediaResponse.setCode(context.stringValue("CreateMediaResponse.Code"));
-		createMediaResponse.setMessage(context.stringValue("CreateMediaResponse.Message"));
-		createMediaResponse.setHttpStatusCode(context.integerValue("CreateMediaResponse.HttpStatusCode"));
+		createMediaResponse.setRequestId(_ctx.stringValue("CreateMediaResponse.RequestId"));
+		createMediaResponse.setSuccess(_ctx.booleanValue("CreateMediaResponse.Success"));
+		createMediaResponse.setCode(_ctx.stringValue("CreateMediaResponse.Code"));
+		createMediaResponse.setMessage(_ctx.stringValue("CreateMediaResponse.Message"));
+		createMediaResponse.setHttpStatusCode(_ctx.integerValue("CreateMediaResponse.HttpStatusCode"));
 
 		MediaUploadParam mediaUploadParam = new MediaUploadParam();
-		mediaUploadParam.setId(context.stringValue("CreateMediaResponse.MediaUploadParam.Id"));
-		mediaUploadParam.setInstance(context.stringValue("CreateMediaResponse.MediaUploadParam.Instance"));
-		mediaUploadParam.setName(context.stringValue("CreateMediaResponse.MediaUploadParam.Name"));
-		mediaUploadParam.setFileName(context.stringValue("CreateMediaResponse.MediaUploadParam.FileName"));
-		mediaUploadParam.setOssFileName(context.stringValue("CreateMediaResponse.MediaUploadParam.OssFileName"));
-		mediaUploadParam.setOssFilePath(context.stringValue("CreateMediaResponse.MediaUploadParam.OssFilePath"));
+		mediaUploadParam.setId(_ctx.stringValue("CreateMediaResponse.MediaUploadParam.Id"));
+		mediaUploadParam.setInstance(_ctx.stringValue("CreateMediaResponse.MediaUploadParam.Instance"));
+		mediaUploadParam.setName(_ctx.stringValue("CreateMediaResponse.MediaUploadParam.Name"));
+		mediaUploadParam.setFileName(_ctx.stringValue("CreateMediaResponse.MediaUploadParam.FileName"));
+		mediaUploadParam.setOssFileName(_ctx.stringValue("CreateMediaResponse.MediaUploadParam.OssFileName"));
+		mediaUploadParam.setOssFilePath(_ctx.stringValue("CreateMediaResponse.MediaUploadParam.OssFilePath"));
 		createMediaResponse.setMediaUploadParam(mediaUploadParam);
 	 
 	 	return createMediaResponse;

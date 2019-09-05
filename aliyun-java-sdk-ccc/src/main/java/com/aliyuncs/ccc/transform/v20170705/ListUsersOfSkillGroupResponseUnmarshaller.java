@@ -30,49 +30,49 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListUsersOfSkillGroupResponseUnmarshaller {
 
-	public static ListUsersOfSkillGroupResponse unmarshall(ListUsersOfSkillGroupResponse listUsersOfSkillGroupResponse, UnmarshallerContext context) {
+	public static ListUsersOfSkillGroupResponse unmarshall(ListUsersOfSkillGroupResponse listUsersOfSkillGroupResponse, UnmarshallerContext _ctx) {
 		
-		listUsersOfSkillGroupResponse.setRequestId(context.stringValue("ListUsersOfSkillGroupResponse.RequestId"));
-		listUsersOfSkillGroupResponse.setSuccess(context.booleanValue("ListUsersOfSkillGroupResponse.Success"));
-		listUsersOfSkillGroupResponse.setCode(context.stringValue("ListUsersOfSkillGroupResponse.Code"));
-		listUsersOfSkillGroupResponse.setMessage(context.stringValue("ListUsersOfSkillGroupResponse.Message"));
-		listUsersOfSkillGroupResponse.setHttpStatusCode(context.integerValue("ListUsersOfSkillGroupResponse.HttpStatusCode"));
+		listUsersOfSkillGroupResponse.setRequestId(_ctx.stringValue("ListUsersOfSkillGroupResponse.RequestId"));
+		listUsersOfSkillGroupResponse.setSuccess(_ctx.booleanValue("ListUsersOfSkillGroupResponse.Success"));
+		listUsersOfSkillGroupResponse.setCode(_ctx.stringValue("ListUsersOfSkillGroupResponse.Code"));
+		listUsersOfSkillGroupResponse.setMessage(_ctx.stringValue("ListUsersOfSkillGroupResponse.Message"));
+		listUsersOfSkillGroupResponse.setHttpStatusCode(_ctx.integerValue("ListUsersOfSkillGroupResponse.HttpStatusCode"));
 
 		Users users = new Users();
-		users.setTotalCount(context.integerValue("ListUsersOfSkillGroupResponse.Users.TotalCount"));
-		users.setPageNumber(context.integerValue("ListUsersOfSkillGroupResponse.Users.PageNumber"));
-		users.setPageSize(context.integerValue("ListUsersOfSkillGroupResponse.Users.PageSize"));
+		users.setTotalCount(_ctx.integerValue("ListUsersOfSkillGroupResponse.Users.TotalCount"));
+		users.setPageNumber(_ctx.integerValue("ListUsersOfSkillGroupResponse.Users.PageNumber"));
+		users.setPageSize(_ctx.integerValue("ListUsersOfSkillGroupResponse.Users.PageSize"));
 
 		List<User> list = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("ListUsersOfSkillGroupResponse.Users.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListUsersOfSkillGroupResponse.Users.List.Length"); i++) {
 			User user = new User();
-			user.setUserId(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].UserId"));
-			user.setRamId(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].RamId"));
-			user.setInstanceId(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].InstanceId"));
+			user.setUserId(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].UserId"));
+			user.setRamId(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].RamId"));
+			user.setInstanceId(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].InstanceId"));
 
 			Detail detail = new Detail();
-			detail.setLoginName(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.LoginName"));
-			detail.setDisplayName(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.DisplayName"));
-			detail.setPhone(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.Phone"));
-			detail.setEmail(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.Email"));
-			detail.setDepartment(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.Department"));
+			detail.setLoginName(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.LoginName"));
+			detail.setDisplayName(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.DisplayName"));
+			detail.setPhone(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.Phone"));
+			detail.setEmail(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.Email"));
+			detail.setDepartment(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Detail.Department"));
 			user.setDetail(detail);
 
 			List<Role> roles = new ArrayList<Role>();
-			for (int j = 0; j < context.lengthValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles.Length"); j++) {
 				Role role = new Role();
-				role.setRoleId(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].RoleId"));
-				role.setInstanceId(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].InstanceId"));
-				role.setRoleName(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].RoleName"));
-				role.setRoleDescription(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].RoleDescription"));
-				role.setUserCount(context.integerValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].UserCount"));
+				role.setRoleId(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].RoleId"));
+				role.setInstanceId(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].InstanceId"));
+				role.setRoleName(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].RoleName"));
+				role.setRoleDescription(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].RoleDescription"));
+				role.setUserCount(_ctx.integerValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].UserCount"));
 
 				List<Privilege> privileges = new ArrayList<Privilege>();
-				for (int k = 0; k < context.lengthValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].Privileges.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].Privileges.Length"); k++) {
 					Privilege privilege = new Privilege();
-					privilege.setPrivilegeId(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeId"));
-					privilege.setPrivilegeName(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeName"));
-					privilege.setPrivilegeDescription(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeDescription"));
+					privilege.setPrivilegeId(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeId"));
+					privilege.setPrivilegeName(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeName"));
+					privilege.setPrivilegeDescription(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeDescription"));
 
 					privileges.add(privilege);
 				}
@@ -83,16 +83,16 @@ public class ListUsersOfSkillGroupResponseUnmarshaller {
 			user.setRoles(roles);
 
 			List<SkillLevel> skillLevels = new ArrayList<SkillLevel>();
-			for (int j = 0; j < context.lengthValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels.Length"); j++) {
 				SkillLevel skillLevel = new SkillLevel();
-				skillLevel.setSkillLevelId(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].SkillLevelId"));
-				skillLevel.setLevel(context.integerValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Level"));
+				skillLevel.setSkillLevelId(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].SkillLevelId"));
+				skillLevel.setLevel(_ctx.integerValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Level"));
 
 				Skill skill = new Skill();
-				skill.setSkillGroupId(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId"));
-				skill.setInstanceId(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.InstanceId"));
-				skill.setSkillGroupName(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName"));
-				skill.setSkillGroupDescription(context.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription"));
+				skill.setSkillGroupId(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId"));
+				skill.setInstanceId(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.InstanceId"));
+				skill.setSkillGroupName(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName"));
+				skill.setSkillGroupDescription(_ctx.stringValue("ListUsersOfSkillGroupResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription"));
 				skillLevel.setSkill(skill);
 
 				skillLevels.add(skillLevel);

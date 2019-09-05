@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +26,22 @@ public class ListRecordingOfDualTrackRequest extends RpcAcsRequest<ListRecording
 	
 	public ListRecordingOfDualTrackRequest() {
 		super("CCC", "2017-07-05", "ListRecordingOfDualTrack");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String callingNumber;
-
 	private String agentId;
+
+	private Long startTime;
+
+	private Long stopTime;
+
+	private Integer pageNumber;
+
+	private String callingNumber;
 
 	private String instanceId;
 
@@ -36,24 +49,7 @@ public class ListRecordingOfDualTrackRequest extends RpcAcsRequest<ListRecording
 
 	private Integer pageSize;
 
-	private Long startTime;
-
-	private Long stopTime;
-
 	private String connectId;
-
-	private Integer pageNumber;
-
-	public String getCallingNumber() {
-		return this.callingNumber;
-	}
-
-	public void setCallingNumber(String callingNumber) {
-		this.callingNumber = callingNumber;
-		if(callingNumber != null){
-			putQueryParameter("CallingNumber", callingNumber);
-		}
-	}
 
 	public String getAgentId() {
 		return this.agentId;
@@ -63,6 +59,50 @@ public class ListRecordingOfDualTrackRequest extends RpcAcsRequest<ListRecording
 		this.agentId = agentId;
 		if(agentId != null){
 			putQueryParameter("AgentId", agentId);
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getStopTime() {
+		return this.stopTime;
+	}
+
+	public void setStopTime(Long stopTime) {
+		this.stopTime = stopTime;
+		if(stopTime != null){
+			putQueryParameter("StopTime", stopTime.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getCallingNumber() {
+		return this.callingNumber;
+	}
+
+	public void setCallingNumber(String callingNumber) {
+		this.callingNumber = callingNumber;
+		if(callingNumber != null){
+			putQueryParameter("CallingNumber", callingNumber);
 		}
 	}
 
@@ -99,28 +139,6 @@ public class ListRecordingOfDualTrackRequest extends RpcAcsRequest<ListRecording
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public Long getStopTime() {
-		return this.stopTime;
-	}
-
-	public void setStopTime(Long stopTime) {
-		this.stopTime = stopTime;
-		if(stopTime != null){
-			putQueryParameter("StopTime", stopTime.toString());
-		}
-	}
-
 	public String getConnectId() {
 		return this.connectId;
 	}
@@ -129,17 +147,6 @@ public class ListRecordingOfDualTrackRequest extends RpcAcsRequest<ListRecording
 		this.connectId = connectId;
 		if(connectId != null){
 			putQueryParameter("ConnectId", connectId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

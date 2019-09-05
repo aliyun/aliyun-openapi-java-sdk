@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyAgentDeviceResponseUnmarshaller {
 
-	public static ModifyAgentDeviceResponse unmarshall(ModifyAgentDeviceResponse modifyAgentDeviceResponse, UnmarshallerContext context) {
+	public static ModifyAgentDeviceResponse unmarshall(ModifyAgentDeviceResponse modifyAgentDeviceResponse, UnmarshallerContext _ctx) {
 		
-		modifyAgentDeviceResponse.setRequestId(context.stringValue("ModifyAgentDeviceResponse.RequestId"));
-		modifyAgentDeviceResponse.setSuccess(context.booleanValue("ModifyAgentDeviceResponse.Success"));
-		modifyAgentDeviceResponse.setCode(context.stringValue("ModifyAgentDeviceResponse.Code"));
-		modifyAgentDeviceResponse.setMessage(context.stringValue("ModifyAgentDeviceResponse.Message"));
-		modifyAgentDeviceResponse.setHttpStatusCode(context.integerValue("ModifyAgentDeviceResponse.HttpStatusCode"));
+		modifyAgentDeviceResponse.setRequestId(_ctx.stringValue("ModifyAgentDeviceResponse.RequestId"));
+		modifyAgentDeviceResponse.setSuccess(_ctx.booleanValue("ModifyAgentDeviceResponse.Success"));
+		modifyAgentDeviceResponse.setCode(_ctx.stringValue("ModifyAgentDeviceResponse.Code"));
+		modifyAgentDeviceResponse.setMessage(_ctx.stringValue("ModifyAgentDeviceResponse.Message"));
+		modifyAgentDeviceResponse.setHttpStatusCode(_ctx.integerValue("ModifyAgentDeviceResponse.HttpStatusCode"));
 	 
 	 	return modifyAgentDeviceResponse;
 	}

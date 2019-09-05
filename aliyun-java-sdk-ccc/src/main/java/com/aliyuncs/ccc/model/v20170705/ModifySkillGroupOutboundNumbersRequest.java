@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,7 +27,14 @@ public class ModifySkillGroupOutboundNumbersRequest extends RpcAcsRequest<Modify
 	
 	public ModifySkillGroupOutboundNumbersRequest() {
 		super("CCC", "2017-07-05", "ModifySkillGroupOutboundNumbers");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private Integer operationType;
 
 	private String instanceId;
 
@@ -33,7 +42,16 @@ public class ModifySkillGroupOutboundNumbersRequest extends RpcAcsRequest<Modify
 
 	private String skillGroupId;
 
-	private Integer operationType;
+	public Integer getOperationType() {
+		return this.operationType;
+	}
+
+	public void setOperationType(Integer operationType) {
+		this.operationType = operationType;
+		if(operationType != null){
+			putQueryParameter("OperationType", operationType.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -67,17 +85,6 @@ public class ModifySkillGroupOutboundNumbersRequest extends RpcAcsRequest<Modify
 		this.skillGroupId = skillGroupId;
 		if(skillGroupId != null){
 			putQueryParameter("SkillGroupId", skillGroupId);
-		}
-	}
-
-	public Integer getOperationType() {
-		return this.operationType;
-	}
-
-	public void setOperationType(Integer operationType) {
-		this.operationType = operationType;
-		if(operationType != null){
-			putQueryParameter("OperationType", operationType.toString());
 		}
 	}
 

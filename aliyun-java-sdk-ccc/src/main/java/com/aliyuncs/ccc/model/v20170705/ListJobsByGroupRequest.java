@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,46 @@ public class ListJobsByGroupRequest extends RpcAcsRequest<ListJobsByGroupRespons
 	
 	public ListJobsByGroupRequest() {
 		super("CCC", "2017-07-05", "ListJobsByGroup");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String jobStatus;
+
+	private Integer pageNumber;
 
 	private String instanceId;
 
 	private String jobFailureReason;
 
-	private String jobStatus;
-
 	private String jobGroupId;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	public String getJobStatus() {
+		return this.jobStatus;
+	}
+
+	public void setJobStatus(String jobStatus) {
+		this.jobStatus = jobStatus;
+		if(jobStatus != null){
+			putQueryParameter("JobStatus", jobStatus);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -60,17 +89,6 @@ public class ListJobsByGroupRequest extends RpcAcsRequest<ListJobsByGroupRespons
 		}
 	}
 
-	public String getJobStatus() {
-		return this.jobStatus;
-	}
-
-	public void setJobStatus(String jobStatus) {
-		this.jobStatus = jobStatus;
-		if(jobStatus != null){
-			putQueryParameter("JobStatus", jobStatus);
-		}
-	}
-
 	public String getJobGroupId() {
 		return this.jobGroupId;
 	}
@@ -90,17 +108,6 @@ public class ListJobsByGroupRequest extends RpcAcsRequest<ListJobsByGroupRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

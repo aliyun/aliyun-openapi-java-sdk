@@ -26,47 +26,47 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListVoiceAppraiseResponseUnmarshaller {
 
-	public static ListVoiceAppraiseResponse unmarshall(ListVoiceAppraiseResponse listVoiceAppraiseResponse, UnmarshallerContext context) {
+	public static ListVoiceAppraiseResponse unmarshall(ListVoiceAppraiseResponse listVoiceAppraiseResponse, UnmarshallerContext _ctx) {
 		
-		listVoiceAppraiseResponse.setRequestId(context.stringValue("ListVoiceAppraiseResponse.RequestId"));
-		listVoiceAppraiseResponse.setSuccess(context.booleanValue("ListVoiceAppraiseResponse.Success"));
-		listVoiceAppraiseResponse.setCode(context.stringValue("ListVoiceAppraiseResponse.Code"));
-		listVoiceAppraiseResponse.setMessage(context.stringValue("ListVoiceAppraiseResponse.Message"));
-		listVoiceAppraiseResponse.setHttpStatusCode(context.integerValue("ListVoiceAppraiseResponse.HttpStatusCode"));
-		listVoiceAppraiseResponse.setNotice(context.stringValue("ListVoiceAppraiseResponse.Notice"));
+		listVoiceAppraiseResponse.setRequestId(_ctx.stringValue("ListVoiceAppraiseResponse.RequestId"));
+		listVoiceAppraiseResponse.setSuccess(_ctx.booleanValue("ListVoiceAppraiseResponse.Success"));
+		listVoiceAppraiseResponse.setCode(_ctx.stringValue("ListVoiceAppraiseResponse.Code"));
+		listVoiceAppraiseResponse.setMessage(_ctx.stringValue("ListVoiceAppraiseResponse.Message"));
+		listVoiceAppraiseResponse.setHttpStatusCode(_ctx.integerValue("ListVoiceAppraiseResponse.HttpStatusCode"));
+		listVoiceAppraiseResponse.setNotice(_ctx.stringValue("ListVoiceAppraiseResponse.Notice"));
 
 		ContactFlow contactFlow = new ContactFlow();
-		contactFlow.setContactFlowId(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.ContactFlowId"));
-		contactFlow.setInstanceId(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.InstanceId"));
-		contactFlow.setContactFlowName(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.ContactFlowName"));
-		contactFlow.setContactFlowDescription(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.ContactFlowDescription"));
-		contactFlow.setType(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.Type"));
-		contactFlow.setAppliedVersion(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.AppliedVersion"));
+		contactFlow.setContactFlowId(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.ContactFlowId"));
+		contactFlow.setInstanceId(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.InstanceId"));
+		contactFlow.setContactFlowName(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.ContactFlowName"));
+		contactFlow.setContactFlowDescription(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.ContactFlowDescription"));
+		contactFlow.setType(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.Type"));
+		contactFlow.setAppliedVersion(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.AppliedVersion"));
 
 		List<ContactFlowVersion> versions = new ArrayList<ContactFlowVersion>();
-		for (int i = 0; i < context.lengthValue("ListVoiceAppraiseResponse.ContactFlow.Versions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListVoiceAppraiseResponse.ContactFlow.Versions.Length"); i++) {
 			ContactFlowVersion contactFlowVersion = new ContactFlowVersion();
-			contactFlowVersion.setContactFlowVersionId(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].ContactFlowVersionId"));
-			contactFlowVersion.setVersion(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].Version"));
-			contactFlowVersion.setContactFlowVersionDescription(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].ContactFlowVersionDescription"));
-			contactFlowVersion.setContent(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].Content"));
-			contactFlowVersion.setLastModified(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].LastModified"));
-			contactFlowVersion.setLastModifiedBy(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].LastModifiedBy"));
-			contactFlowVersion.setStatus(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].Status"));
+			contactFlowVersion.setContactFlowVersionId(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].ContactFlowVersionId"));
+			contactFlowVersion.setVersion(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].Version"));
+			contactFlowVersion.setContactFlowVersionDescription(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].ContactFlowVersionDescription"));
+			contactFlowVersion.setContent(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].Content"));
+			contactFlowVersion.setLastModified(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].LastModified"));
+			contactFlowVersion.setLastModifiedBy(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].LastModifiedBy"));
+			contactFlowVersion.setStatus(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.Versions["+ i +"].Status"));
 
 			versions.add(contactFlowVersion);
 		}
 		contactFlow.setVersions(versions);
 
 		List<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();
-		for (int i = 0; i < context.lengthValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers.Length"); i++) {
 			PhoneNumber phoneNumber = new PhoneNumber();
-			phoneNumber.setPhoneNumberId(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].PhoneNumberId"));
-			phoneNumber.setInstanceId(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].InstanceId"));
-			phoneNumber.setNumber(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].Number"));
-			phoneNumber.setPhoneNumberDescription(context.stringValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].PhoneNumberDescription"));
-			phoneNumber.setRemainingTime(context.integerValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].RemainingTime"));
-			phoneNumber.setTrunks(context.integerValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].Trunks"));
+			phoneNumber.setPhoneNumberId(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].PhoneNumberId"));
+			phoneNumber.setInstanceId(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].InstanceId"));
+			phoneNumber.setNumber(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].Number"));
+			phoneNumber.setPhoneNumberDescription(_ctx.stringValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].PhoneNumberDescription"));
+			phoneNumber.setRemainingTime(_ctx.integerValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].RemainingTime"));
+			phoneNumber.setTrunks(_ctx.integerValue("ListVoiceAppraiseResponse.ContactFlow.PhoneNumbers["+ i +"].Trunks"));
 
 			phoneNumbers.add(phoneNumber);
 		}

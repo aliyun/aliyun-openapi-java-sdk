@@ -25,38 +25,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSkillGroupsResponseUnmarshaller {
 
-	public static ListSkillGroupsResponse unmarshall(ListSkillGroupsResponse listSkillGroupsResponse, UnmarshallerContext context) {
+	public static ListSkillGroupsResponse unmarshall(ListSkillGroupsResponse listSkillGroupsResponse, UnmarshallerContext _ctx) {
 		
-		listSkillGroupsResponse.setRequestId(context.stringValue("ListSkillGroupsResponse.RequestId"));
-		listSkillGroupsResponse.setSuccess(context.booleanValue("ListSkillGroupsResponse.Success"));
-		listSkillGroupsResponse.setCode(context.stringValue("ListSkillGroupsResponse.Code"));
-		listSkillGroupsResponse.setMessage(context.stringValue("ListSkillGroupsResponse.Message"));
-		listSkillGroupsResponse.setHttpStatusCode(context.integerValue("ListSkillGroupsResponse.HttpStatusCode"));
+		listSkillGroupsResponse.setRequestId(_ctx.stringValue("ListSkillGroupsResponse.RequestId"));
+		listSkillGroupsResponse.setSuccess(_ctx.booleanValue("ListSkillGroupsResponse.Success"));
+		listSkillGroupsResponse.setCode(_ctx.stringValue("ListSkillGroupsResponse.Code"));
+		listSkillGroupsResponse.setMessage(_ctx.stringValue("ListSkillGroupsResponse.Message"));
+		listSkillGroupsResponse.setHttpStatusCode(_ctx.integerValue("ListSkillGroupsResponse.HttpStatusCode"));
 
 		List<SkillGroup> skillGroups = new ArrayList<SkillGroup>();
-		for (int i = 0; i < context.lengthValue("ListSkillGroupsResponse.SkillGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSkillGroupsResponse.SkillGroups.Length"); i++) {
 			SkillGroup skillGroup = new SkillGroup();
-			skillGroup.setSkillGroupId(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].SkillGroupId"));
-			skillGroup.setInstanceId(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].InstanceId"));
-			skillGroup.setSkillGroupName(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].SkillGroupName"));
-			skillGroup.setAccSkillGroupName(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].AccSkillGroupName"));
-			skillGroup.setAccQueueName(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].AccQueueName"));
-			skillGroup.setSkillGroupDescription(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].SkillGroupDescription"));
-			skillGroup.setRoutingStrategy(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].RoutingStrategy"));
-			skillGroup.setUserCount(context.integerValue("ListSkillGroupsResponse.SkillGroups["+ i +"].UserCount"));
+			skillGroup.setSkillGroupId(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].SkillGroupId"));
+			skillGroup.setInstanceId(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].InstanceId"));
+			skillGroup.setSkillGroupName(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].SkillGroupName"));
+			skillGroup.setAccSkillGroupName(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].AccSkillGroupName"));
+			skillGroup.setAccQueueName(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].AccQueueName"));
+			skillGroup.setSkillGroupDescription(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].SkillGroupDescription"));
+			skillGroup.setRoutingStrategy(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].RoutingStrategy"));
+			skillGroup.setUserCount(_ctx.integerValue("ListSkillGroupsResponse.SkillGroups["+ i +"].UserCount"));
 
 			List<PhoneNumber> outboundPhoneNumbers = new ArrayList<PhoneNumber>();
-			for (int j = 0; j < context.lengthValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers.Length"); j++) {
 				PhoneNumber phoneNumber = new PhoneNumber();
-				phoneNumber.setPhoneNumberId(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].PhoneNumberId"));
-				phoneNumber.setInstanceId(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].InstanceId"));
-				phoneNumber.setNumber(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].Number"));
-				phoneNumber.setPhoneNumberDescription(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].PhoneNumberDescription"));
-				phoneNumber.setTestOnly(context.booleanValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].TestOnly"));
-				phoneNumber.setRemainingTime(context.integerValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].RemainingTime"));
-				phoneNumber.setAllowOutbound(context.booleanValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].AllowOutbound"));
-				phoneNumber.setUsage(context.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].Usage"));
-				phoneNumber.setTrunks(context.integerValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].Trunks"));
+				phoneNumber.setPhoneNumberId(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].PhoneNumberId"));
+				phoneNumber.setInstanceId(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].InstanceId"));
+				phoneNumber.setNumber(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].Number"));
+				phoneNumber.setPhoneNumberDescription(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].PhoneNumberDescription"));
+				phoneNumber.setTestOnly(_ctx.booleanValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].TestOnly"));
+				phoneNumber.setRemainingTime(_ctx.integerValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].RemainingTime"));
+				phoneNumber.setAllowOutbound(_ctx.booleanValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].AllowOutbound"));
+				phoneNumber.setUsage(_ctx.stringValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].Usage"));
+				phoneNumber.setTrunks(_ctx.integerValue("ListSkillGroupsResponse.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].Trunks"));
 
 				outboundPhoneNumbers.add(phoneNumber);
 			}

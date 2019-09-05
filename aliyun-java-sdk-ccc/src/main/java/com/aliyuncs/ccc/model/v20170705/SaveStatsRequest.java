@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class SaveStatsRequest extends RpcAcsRequest<SaveStatsResponse> {
 	
 	public SaveStatsRequest() {
 		super("CCC", "2017-07-05", "SaveStats");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String callId;
 
-	private String uid;
-
 	private Long recordTime;
+
+	private Long callStartTime;
+
+	private String uid;
 
 	private String instanceId;
 
 	private String stats;
-
-	private Long callStartTime;
 
 	private String tenantId;
 
@@ -55,17 +62,6 @@ public class SaveStatsRequest extends RpcAcsRequest<SaveStatsResponse> {
 		}
 	}
 
-	public String getUid() {
-		return this.uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid);
-		}
-	}
-
 	public Long getRecordTime() {
 		return this.recordTime;
 	}
@@ -74,6 +70,28 @@ public class SaveStatsRequest extends RpcAcsRequest<SaveStatsResponse> {
 		this.recordTime = recordTime;
 		if(recordTime != null){
 			putQueryParameter("RecordTime", recordTime.toString());
+		}
+	}
+
+	public Long getCallStartTime() {
+		return this.callStartTime;
+	}
+
+	public void setCallStartTime(Long callStartTime) {
+		this.callStartTime = callStartTime;
+		if(callStartTime != null){
+			putQueryParameter("CallStartTime", callStartTime.toString());
+		}
+	}
+
+	public String getUid() {
+		return this.uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
+		if(uid != null){
+			putQueryParameter("Uid", uid);
 		}
 	}
 
@@ -96,17 +114,6 @@ public class SaveStatsRequest extends RpcAcsRequest<SaveStatsResponse> {
 		this.stats = stats;
 		if(stats != null){
 			putQueryParameter("Stats", stats);
-		}
-	}
-
-	public Long getCallStartTime() {
-		return this.callStartTime;
-	}
-
-	public void setCallStartTime(Long callStartTime) {
-		this.callStartTime = callStartTime;
-		if(callStartTime != null){
-			putQueryParameter("CallStartTime", callStartTime.toString());
 		}
 	}
 

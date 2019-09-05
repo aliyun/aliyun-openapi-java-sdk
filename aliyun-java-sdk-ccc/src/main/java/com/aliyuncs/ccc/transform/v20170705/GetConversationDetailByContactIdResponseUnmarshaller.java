@@ -25,27 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetConversationDetailByContactIdResponseUnmarshaller {
 
-	public static GetConversationDetailByContactIdResponse unmarshall(GetConversationDetailByContactIdResponse getConversationDetailByContactIdResponse, UnmarshallerContext context) {
+	public static GetConversationDetailByContactIdResponse unmarshall(GetConversationDetailByContactIdResponse getConversationDetailByContactIdResponse, UnmarshallerContext _ctx) {
 		
-		getConversationDetailByContactIdResponse.setRequestId(context.stringValue("GetConversationDetailByContactIdResponse.RequestId"));
-		getConversationDetailByContactIdResponse.setSuccess(context.booleanValue("GetConversationDetailByContactIdResponse.Success"));
-		getConversationDetailByContactIdResponse.setCode(context.stringValue("GetConversationDetailByContactIdResponse.Code"));
-		getConversationDetailByContactIdResponse.setMessage(context.stringValue("GetConversationDetailByContactIdResponse.Message"));
-		getConversationDetailByContactIdResponse.setHttpStatusCode(context.integerValue("GetConversationDetailByContactIdResponse.HttpStatusCode"));
+		getConversationDetailByContactIdResponse.setRequestId(_ctx.stringValue("GetConversationDetailByContactIdResponse.RequestId"));
+		getConversationDetailByContactIdResponse.setSuccess(_ctx.booleanValue("GetConversationDetailByContactIdResponse.Success"));
+		getConversationDetailByContactIdResponse.setCode(_ctx.stringValue("GetConversationDetailByContactIdResponse.Code"));
+		getConversationDetailByContactIdResponse.setMessage(_ctx.stringValue("GetConversationDetailByContactIdResponse.Message"));
+		getConversationDetailByContactIdResponse.setHttpStatusCode(_ctx.integerValue("GetConversationDetailByContactIdResponse.HttpStatusCode"));
 
 		DataList dataList = new DataList();
-		dataList.setTotalCount(context.integerValue("GetConversationDetailByContactIdResponse.DataList.TotalCount"));
-		dataList.setPageNumber(context.integerValue("GetConversationDetailByContactIdResponse.DataList.PageNumber"));
-		dataList.setPageSize(context.integerValue("GetConversationDetailByContactIdResponse.DataList.PageSize"));
+		dataList.setTotalCount(_ctx.integerValue("GetConversationDetailByContactIdResponse.DataList.TotalCount"));
+		dataList.setPageNumber(_ctx.integerValue("GetConversationDetailByContactIdResponse.DataList.PageNumber"));
+		dataList.setPageSize(_ctx.integerValue("GetConversationDetailByContactIdResponse.DataList.PageSize"));
 
 		List<QualityCheckPhrase> list = new ArrayList<QualityCheckPhrase>();
-		for (int i = 0; i < context.lengthValue("GetConversationDetailByContactIdResponse.DataList.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetConversationDetailByContactIdResponse.DataList.List.Length"); i++) {
 			QualityCheckPhrase qualityCheckPhrase = new QualityCheckPhrase();
-			qualityCheckPhrase.setIdentity(context.stringValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].Identity"));
-			qualityCheckPhrase.setRole(context.stringValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].Role"));
-			qualityCheckPhrase.setWords(context.stringValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].Words"));
-			qualityCheckPhrase.setBegin(context.longValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].Begin"));
-			qualityCheckPhrase.setEnd(context.longValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].End"));
+			qualityCheckPhrase.setIdentity(_ctx.stringValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].Identity"));
+			qualityCheckPhrase.setRole(_ctx.stringValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].Role"));
+			qualityCheckPhrase.setWords(_ctx.stringValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].Words"));
+			qualityCheckPhrase.setBegin(_ctx.longValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].Begin"));
+			qualityCheckPhrase.setEnd(_ctx.longValue("GetConversationDetailByContactIdResponse.DataList.List["+ i +"].End"));
 
 			list.add(qualityCheckPhrase);
 		}

@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddAgentDeviceResponseUnmarshaller {
 
-	public static AddAgentDeviceResponse unmarshall(AddAgentDeviceResponse addAgentDeviceResponse, UnmarshallerContext context) {
+	public static AddAgentDeviceResponse unmarshall(AddAgentDeviceResponse addAgentDeviceResponse, UnmarshallerContext _ctx) {
 		
-		addAgentDeviceResponse.setRequestId(context.stringValue("AddAgentDeviceResponse.RequestId"));
-		addAgentDeviceResponse.setSuccess(context.booleanValue("AddAgentDeviceResponse.Success"));
-		addAgentDeviceResponse.setCode(context.stringValue("AddAgentDeviceResponse.Code"));
-		addAgentDeviceResponse.setMessage(context.stringValue("AddAgentDeviceResponse.Message"));
-		addAgentDeviceResponse.setHttpStatusCode(context.integerValue("AddAgentDeviceResponse.HttpStatusCode"));
-		addAgentDeviceResponse.setAgentDeviceId(context.longValue("AddAgentDeviceResponse.AgentDeviceId"));
+		addAgentDeviceResponse.setRequestId(_ctx.stringValue("AddAgentDeviceResponse.RequestId"));
+		addAgentDeviceResponse.setSuccess(_ctx.booleanValue("AddAgentDeviceResponse.Success"));
+		addAgentDeviceResponse.setCode(_ctx.stringValue("AddAgentDeviceResponse.Code"));
+		addAgentDeviceResponse.setMessage(_ctx.stringValue("AddAgentDeviceResponse.Message"));
+		addAgentDeviceResponse.setHttpStatusCode(_ctx.integerValue("AddAgentDeviceResponse.HttpStatusCode"));
+		addAgentDeviceResponse.setAgentDeviceId(_ctx.longValue("AddAgentDeviceResponse.AgentDeviceId"));
 	 
 	 	return addAgentDeviceResponse;
 	}

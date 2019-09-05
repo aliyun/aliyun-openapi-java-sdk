@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +26,20 @@ public class CreateSurveyRequest extends RpcAcsRequest<CreateSurveyResponse> {
 	
 	public CreateSurveyRequest() {
 		super("CCC", "2017-07-05", "CreateSurvey");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String instanceId;
-
 	private String role;
+
+	private String description;
+
+	private String speechOptimizationParam;
+
+	private String instanceId;
 
 	private Integer round;
 
@@ -38,24 +49,9 @@ public class CreateSurveyRequest extends RpcAcsRequest<CreateSurveyResponse> {
 
 	private String globalQuestions;
 
-	private String description;
-
 	private String corpora;
 
-	private String speechOptimizationParam;
-
 	private String scenarioId;
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
 
 	public String getRole() {
 		return this.role;
@@ -65,6 +61,39 @@ public class CreateSurveyRequest extends RpcAcsRequest<CreateSurveyResponse> {
 		this.role = role;
 		if(role != null){
 			putQueryParameter("Role", role);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getSpeechOptimizationParam() {
+		return this.speechOptimizationParam;
+	}
+
+	public void setSpeechOptimizationParam(String speechOptimizationParam) {
+		this.speechOptimizationParam = speechOptimizationParam;
+		if(speechOptimizationParam != null){
+			putQueryParameter("SpeechOptimizationParam", speechOptimizationParam);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -112,17 +141,6 @@ public class CreateSurveyRequest extends RpcAcsRequest<CreateSurveyResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public String getCorpora() {
 		return this.corpora;
 	}
@@ -131,17 +149,6 @@ public class CreateSurveyRequest extends RpcAcsRequest<CreateSurveyResponse> {
 		this.corpora = corpora;
 		if(corpora != null){
 			putQueryParameter("Corpora", corpora);
-		}
-	}
-
-	public String getSpeechOptimizationParam() {
-		return this.speechOptimizationParam;
-	}
-
-	public void setSpeechOptimizationParam(String speechOptimizationParam) {
-		this.speechOptimizationParam = speechOptimizationParam;
-		if(speechOptimizationParam != null){
-			putQueryParameter("SpeechOptimizationParam", speechOptimizationParam);
 		}
 	}
 

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelPredictiveJobsResponseUnmarshaller {
 
-	public static CancelPredictiveJobsResponse unmarshall(CancelPredictiveJobsResponse cancelPredictiveJobsResponse, UnmarshallerContext context) {
+	public static CancelPredictiveJobsResponse unmarshall(CancelPredictiveJobsResponse cancelPredictiveJobsResponse, UnmarshallerContext _ctx) {
 		
-		cancelPredictiveJobsResponse.setRequestId(context.stringValue("CancelPredictiveJobsResponse.RequestId"));
-		cancelPredictiveJobsResponse.setSuccess(context.booleanValue("CancelPredictiveJobsResponse.Success"));
-		cancelPredictiveJobsResponse.setCode(context.stringValue("CancelPredictiveJobsResponse.Code"));
-		cancelPredictiveJobsResponse.setMessage(context.stringValue("CancelPredictiveJobsResponse.Message"));
-		cancelPredictiveJobsResponse.setHttpStatusCode(context.integerValue("CancelPredictiveJobsResponse.HttpStatusCode"));
+		cancelPredictiveJobsResponse.setRequestId(_ctx.stringValue("CancelPredictiveJobsResponse.RequestId"));
+		cancelPredictiveJobsResponse.setSuccess(_ctx.booleanValue("CancelPredictiveJobsResponse.Success"));
+		cancelPredictiveJobsResponse.setCode(_ctx.stringValue("CancelPredictiveJobsResponse.Code"));
+		cancelPredictiveJobsResponse.setMessage(_ctx.stringValue("CancelPredictiveJobsResponse.Message"));
+		cancelPredictiveJobsResponse.setHttpStatusCode(_ctx.integerValue("CancelPredictiveJobsResponse.HttpStatusCode"));
 	 
 	 	return cancelPredictiveJobsResponse;
 	}

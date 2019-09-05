@@ -29,89 +29,89 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAgentSummaryReportsByIntervalResponseUnmarshaller {
 
-	public static ListAgentSummaryReportsByIntervalResponse unmarshall(ListAgentSummaryReportsByIntervalResponse listAgentSummaryReportsByIntervalResponse, UnmarshallerContext context) {
+	public static ListAgentSummaryReportsByIntervalResponse unmarshall(ListAgentSummaryReportsByIntervalResponse listAgentSummaryReportsByIntervalResponse, UnmarshallerContext _ctx) {
 		
-		listAgentSummaryReportsByIntervalResponse.setRequestId(context.stringValue("ListAgentSummaryReportsByIntervalResponse.RequestId"));
-		listAgentSummaryReportsByIntervalResponse.setSuccess(context.booleanValue("ListAgentSummaryReportsByIntervalResponse.Success"));
-		listAgentSummaryReportsByIntervalResponse.setCode(context.stringValue("ListAgentSummaryReportsByIntervalResponse.Code"));
-		listAgentSummaryReportsByIntervalResponse.setMessage(context.stringValue("ListAgentSummaryReportsByIntervalResponse.Message"));
-		listAgentSummaryReportsByIntervalResponse.setHttpStatusCode(context.integerValue("ListAgentSummaryReportsByIntervalResponse.HttpStatusCode"));
+		listAgentSummaryReportsByIntervalResponse.setRequestId(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.RequestId"));
+		listAgentSummaryReportsByIntervalResponse.setSuccess(_ctx.booleanValue("ListAgentSummaryReportsByIntervalResponse.Success"));
+		listAgentSummaryReportsByIntervalResponse.setCode(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.Code"));
+		listAgentSummaryReportsByIntervalResponse.setMessage(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.Message"));
+		listAgentSummaryReportsByIntervalResponse.setHttpStatusCode(_ctx.integerValue("ListAgentSummaryReportsByIntervalResponse.HttpStatusCode"));
 
 		PagedAgentSummaryReport pagedAgentSummaryReport = new PagedAgentSummaryReport();
-		pagedAgentSummaryReport.setTotalCount(context.integerValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.TotalCount"));
-		pagedAgentSummaryReport.setPageNumber(context.integerValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.PageNumber"));
-		pagedAgentSummaryReport.setPageSize(context.integerValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.PageSize"));
+		pagedAgentSummaryReport.setTotalCount(_ctx.integerValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.TotalCount"));
+		pagedAgentSummaryReport.setPageNumber(_ctx.integerValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.PageNumber"));
+		pagedAgentSummaryReport.setPageSize(_ctx.integerValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.PageSize"));
 
 		List<AgentTimeIntervalReport> list = new ArrayList<AgentTimeIntervalReport>();
-		for (int i = 0; i < context.lengthValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List.Length"); i++) {
 			AgentTimeIntervalReport agentTimeIntervalReport = new AgentTimeIntervalReport();
-			agentTimeIntervalReport.setAgentId(context.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].AgentId"));
+			agentTimeIntervalReport.setAgentId(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].AgentId"));
 
 			List<AgentSummaryReport> intervalList = new ArrayList<AgentSummaryReport>();
-			for (int j = 0; j < context.lengthValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList.Length"); j++) {
 				AgentSummaryReport agentSummaryReport = new AgentSummaryReport();
-				agentSummaryReport.setTimestamp(context.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Timestamp"));
-				agentSummaryReport.setInstanceId(context.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].InstanceId"));
-				agentSummaryReport.setAgentId(context.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].AgentId"));
-				agentSummaryReport.setLoginName(context.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].LoginName"));
-				agentSummaryReport.setAgentName(context.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].AgentName"));
-				agentSummaryReport.setSkillGroupIds(context.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].SkillGroupIds"));
-				agentSummaryReport.setSkillGroupNames(context.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].SkillGroupNames"));
+				agentSummaryReport.setTimestamp(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Timestamp"));
+				agentSummaryReport.setInstanceId(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].InstanceId"));
+				agentSummaryReport.setAgentId(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].AgentId"));
+				agentSummaryReport.setLoginName(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].LoginName"));
+				agentSummaryReport.setAgentName(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].AgentName"));
+				agentSummaryReport.setSkillGroupIds(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].SkillGroupIds"));
+				agentSummaryReport.setSkillGroupNames(_ctx.stringValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].SkillGroupNames"));
 
 				Overall overall = new Overall();
-				overall.setTotalCalls(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalCalls"));
-				overall.setTotalLoggedInTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalLoggedInTime"));
-				overall.setTotalBreakTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalBreakTime"));
-				overall.setOccupancyRate(context.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.OccupancyRate"));
-				overall.setTotalReadyTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalReadyTime"));
-				overall.setMaxReadyTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.MaxReadyTime"));
-				overall.setAverageReadyTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.AverageReadyTime"));
-				overall.setTotalTalkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalTalkTime"));
-				overall.setMaxTalkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.MaxTalkTime"));
-				overall.setAverageTalkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.AverageTalkTime"));
-				overall.setTotalWorkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalWorkTime"));
-				overall.setMaxWorkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.MaxWorkTime"));
-				overall.setAverageWorkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.AverageWorkTime"));
-				overall.setSatisfactionIndex(context.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.SatisfactionIndex"));
-				overall.setSatisfactionSurveysOffered(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.SatisfactionSurveysOffered"));
-				overall.setSatisfactionSurveysResponded(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.SatisfactionSurveysResponded"));
+				overall.setTotalCalls(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalCalls"));
+				overall.setTotalLoggedInTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalLoggedInTime"));
+				overall.setTotalBreakTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalBreakTime"));
+				overall.setOccupancyRate(_ctx.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.OccupancyRate"));
+				overall.setTotalReadyTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalReadyTime"));
+				overall.setMaxReadyTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.MaxReadyTime"));
+				overall.setAverageReadyTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.AverageReadyTime"));
+				overall.setTotalTalkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalTalkTime"));
+				overall.setMaxTalkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.MaxTalkTime"));
+				overall.setAverageTalkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.AverageTalkTime"));
+				overall.setTotalWorkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.TotalWorkTime"));
+				overall.setMaxWorkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.MaxWorkTime"));
+				overall.setAverageWorkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.AverageWorkTime"));
+				overall.setSatisfactionIndex(_ctx.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.SatisfactionIndex"));
+				overall.setSatisfactionSurveysOffered(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.SatisfactionSurveysOffered"));
+				overall.setSatisfactionSurveysResponded(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.SatisfactionSurveysResponded"));
 				agentSummaryReport.setOverall(overall);
 
 				Inbound inbound = new Inbound();
-				inbound.setCallsOffered(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.CallsOffered"));
-				inbound.setCallsHandled(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.CallsHandled"));
-				inbound.setHandleRate(context.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.HandleRate"));
-				inbound.setTotalRingTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.TotalRingTime"));
-				inbound.setMaxRingTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.MaxRingTime"));
-				inbound.setAverageRingTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AverageRingTime"));
-				inbound.setServiceLevel20(context.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.ServiceLevel20"));
-				inbound.setTotalTalkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.TotalTalkTime"));
-				inbound.setMaxTalkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.MaxTalkTime"));
-				inbound.setAverageTalkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AverageTalkTime"));
-				inbound.setTotalWorkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.TotalWorkTime"));
-				inbound.setMaxWorkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.MaxWorkTime"));
-				inbound.setAverageWorkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AverageWorkTime"));
-				inbound.setSatisfactionIndex(context.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.SatisfactionIndex"));
-				inbound.setSatisfactionSurveysOffered(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.SatisfactionSurveysOffered"));
-				inbound.setSatisfactionSurveysResponded(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.SatisfactionSurveysResponded"));
+				inbound.setCallsOffered(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.CallsOffered"));
+				inbound.setCallsHandled(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.CallsHandled"));
+				inbound.setHandleRate(_ctx.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.HandleRate"));
+				inbound.setTotalRingTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.TotalRingTime"));
+				inbound.setMaxRingTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.MaxRingTime"));
+				inbound.setAverageRingTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AverageRingTime"));
+				inbound.setServiceLevel20(_ctx.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.ServiceLevel20"));
+				inbound.setTotalTalkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.TotalTalkTime"));
+				inbound.setMaxTalkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.MaxTalkTime"));
+				inbound.setAverageTalkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AverageTalkTime"));
+				inbound.setTotalWorkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.TotalWorkTime"));
+				inbound.setMaxWorkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.MaxWorkTime"));
+				inbound.setAverageWorkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.AverageWorkTime"));
+				inbound.setSatisfactionIndex(_ctx.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.SatisfactionIndex"));
+				inbound.setSatisfactionSurveysOffered(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.SatisfactionSurveysOffered"));
+				inbound.setSatisfactionSurveysResponded(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Inbound.SatisfactionSurveysResponded"));
 				agentSummaryReport.setInbound(inbound);
 
 				Outbound outbound = new Outbound();
-				outbound.setCallsDialed(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.CallsDialed"));
-				outbound.setCallsAnswered(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.CallsAnswered"));
-				outbound.setAnswerRate(context.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.AnswerRate"));
-				outbound.setTotalDialingTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.TotalDialingTime"));
-				outbound.setMaxDialingTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.MaxDialingTime"));
-				outbound.setAverageDialingTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.AverageDialingTime"));
-				outbound.setTotalTalkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.TotalTalkTime"));
-				outbound.setMaxTalkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.MaxTalkTime"));
-				outbound.setAverageTalkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.AverageTalkTime"));
-				outbound.setTotalWorkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.TotalWorkTime"));
-				outbound.setMaxWorkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.MaxWorkTime"));
-				outbound.setAverageWorkTime(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.AverageWorkTime"));
-				outbound.setSatisfactionIndex(context.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.SatisfactionIndex"));
-				outbound.setSatisfactionSurveysOffered(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.SatisfactionSurveysOffered"));
-				outbound.setSatisfactionSurveysResponded(context.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.SatisfactionSurveysResponded"));
+				outbound.setCallsDialed(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.CallsDialed"));
+				outbound.setCallsAnswered(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.CallsAnswered"));
+				outbound.setAnswerRate(_ctx.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.AnswerRate"));
+				outbound.setTotalDialingTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.TotalDialingTime"));
+				outbound.setMaxDialingTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.MaxDialingTime"));
+				outbound.setAverageDialingTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.AverageDialingTime"));
+				outbound.setTotalTalkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.TotalTalkTime"));
+				outbound.setMaxTalkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.MaxTalkTime"));
+				outbound.setAverageTalkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.AverageTalkTime"));
+				outbound.setTotalWorkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.TotalWorkTime"));
+				outbound.setMaxWorkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.MaxWorkTime"));
+				outbound.setAverageWorkTime(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.AverageWorkTime"));
+				outbound.setSatisfactionIndex(_ctx.floatValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.SatisfactionIndex"));
+				outbound.setSatisfactionSurveysOffered(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.SatisfactionSurveysOffered"));
+				outbound.setSatisfactionSurveysResponded(_ctx.longValue("ListAgentSummaryReportsByIntervalResponse.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Outbound.SatisfactionSurveysResponded"));
 				agentSummaryReport.setOutbound(outbound);
 
 				intervalList.add(agentSummaryReport);

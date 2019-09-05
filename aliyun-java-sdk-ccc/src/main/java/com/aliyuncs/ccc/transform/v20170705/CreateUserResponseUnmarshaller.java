@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateUserResponseUnmarshaller {
 
-	public static CreateUserResponse unmarshall(CreateUserResponse createUserResponse, UnmarshallerContext context) {
+	public static CreateUserResponse unmarshall(CreateUserResponse createUserResponse, UnmarshallerContext _ctx) {
 		
-		createUserResponse.setRequestId(context.stringValue("CreateUserResponse.RequestId"));
-		createUserResponse.setSuccess(context.booleanValue("CreateUserResponse.Success"));
-		createUserResponse.setCode(context.stringValue("CreateUserResponse.Code"));
-		createUserResponse.setMessage(context.stringValue("CreateUserResponse.Message"));
-		createUserResponse.setHttpStatusCode(context.integerValue("CreateUserResponse.HttpStatusCode"));
-		createUserResponse.setUserId(context.stringValue("CreateUserResponse.UserId"));
+		createUserResponse.setRequestId(_ctx.stringValue("CreateUserResponse.RequestId"));
+		createUserResponse.setSuccess(_ctx.booleanValue("CreateUserResponse.Success"));
+		createUserResponse.setCode(_ctx.stringValue("CreateUserResponse.Code"));
+		createUserResponse.setMessage(_ctx.stringValue("CreateUserResponse.Message"));
+		createUserResponse.setHttpStatusCode(_ctx.integerValue("CreateUserResponse.HttpStatusCode"));
+		createUserResponse.setUserId(_ctx.stringValue("CreateUserResponse.UserId"));
 	 
 	 	return createUserResponse;
 	}

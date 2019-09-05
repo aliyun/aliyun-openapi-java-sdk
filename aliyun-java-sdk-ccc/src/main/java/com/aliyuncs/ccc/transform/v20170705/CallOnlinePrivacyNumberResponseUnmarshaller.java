@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CallOnlinePrivacyNumberResponseUnmarshaller {
 
-	public static CallOnlinePrivacyNumberResponse unmarshall(CallOnlinePrivacyNumberResponse callOnlinePrivacyNumberResponse, UnmarshallerContext context) {
+	public static CallOnlinePrivacyNumberResponse unmarshall(CallOnlinePrivacyNumberResponse callOnlinePrivacyNumberResponse, UnmarshallerContext _ctx) {
 		
-		callOnlinePrivacyNumberResponse.setRequestId(context.stringValue("CallOnlinePrivacyNumberResponse.RequestId"));
-		callOnlinePrivacyNumberResponse.setSuccess(context.booleanValue("CallOnlinePrivacyNumberResponse.Success"));
-		callOnlinePrivacyNumberResponse.setCode(context.stringValue("CallOnlinePrivacyNumberResponse.Code"));
-		callOnlinePrivacyNumberResponse.setMessage(context.stringValue("CallOnlinePrivacyNumberResponse.Message"));
-		callOnlinePrivacyNumberResponse.setHttpStatusCode(context.integerValue("CallOnlinePrivacyNumberResponse.HttpStatusCode"));
+		callOnlinePrivacyNumberResponse.setRequestId(_ctx.stringValue("CallOnlinePrivacyNumberResponse.RequestId"));
+		callOnlinePrivacyNumberResponse.setSuccess(_ctx.booleanValue("CallOnlinePrivacyNumberResponse.Success"));
+		callOnlinePrivacyNumberResponse.setCode(_ctx.stringValue("CallOnlinePrivacyNumberResponse.Code"));
+		callOnlinePrivacyNumberResponse.setMessage(_ctx.stringValue("CallOnlinePrivacyNumberResponse.Message"));
+		callOnlinePrivacyNumberResponse.setHttpStatusCode(_ctx.integerValue("CallOnlinePrivacyNumberResponse.HttpStatusCode"));
 
 		Data data = new Data();
-		data.setStatusCode(context.stringValue("CallOnlinePrivacyNumberResponse.Data.StatusCode"));
-		data.setDateCreated(context.stringValue("CallOnlinePrivacyNumberResponse.Data.DateCreated"));
-		data.setRepresent(context.stringValue("CallOnlinePrivacyNumberResponse.Data.Represent"));
-		data.setTelX(context.stringValue("CallOnlinePrivacyNumberResponse.Data.TelX"));
-		data.setCallId(context.stringValue("CallOnlinePrivacyNumberResponse.Data.CallId"));
+		data.setStatusCode(_ctx.stringValue("CallOnlinePrivacyNumberResponse.Data.StatusCode"));
+		data.setDateCreated(_ctx.stringValue("CallOnlinePrivacyNumberResponse.Data.DateCreated"));
+		data.setRepresent(_ctx.stringValue("CallOnlinePrivacyNumberResponse.Data.Represent"));
+		data.setTelX(_ctx.stringValue("CallOnlinePrivacyNumberResponse.Data.TelX"));
+		data.setCallId(_ctx.stringValue("CallOnlinePrivacyNumberResponse.Data.CallId"));
 		callOnlinePrivacyNumberResponse.setData(data);
 	 
 	 	return callOnlinePrivacyNumberResponse;

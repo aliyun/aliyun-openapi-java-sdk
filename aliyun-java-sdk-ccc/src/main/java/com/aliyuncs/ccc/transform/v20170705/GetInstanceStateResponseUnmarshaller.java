@@ -25,21 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceStateResponseUnmarshaller {
 
-	public static GetInstanceStateResponse unmarshall(GetInstanceStateResponse getInstanceStateResponse, UnmarshallerContext context) {
+	public static GetInstanceStateResponse unmarshall(GetInstanceStateResponse getInstanceStateResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceStateResponse.setRequestId(context.stringValue("GetInstanceStateResponse.RequestId"));
-		getInstanceStateResponse.setSuccess(context.booleanValue("GetInstanceStateResponse.Success"));
-		getInstanceStateResponse.setCode(context.stringValue("GetInstanceStateResponse.Code"));
-		getInstanceStateResponse.setMessage(context.stringValue("GetInstanceStateResponse.Message"));
-		getInstanceStateResponse.setHttpStatusCode(context.integerValue("GetInstanceStateResponse.HttpStatusCode"));
+		getInstanceStateResponse.setRequestId(_ctx.stringValue("GetInstanceStateResponse.RequestId"));
+		getInstanceStateResponse.setSuccess(_ctx.booleanValue("GetInstanceStateResponse.Success"));
+		getInstanceStateResponse.setCode(_ctx.stringValue("GetInstanceStateResponse.Code"));
+		getInstanceStateResponse.setMessage(_ctx.stringValue("GetInstanceStateResponse.Message"));
+		getInstanceStateResponse.setHttpStatusCode(_ctx.integerValue("GetInstanceStateResponse.HttpStatusCode"));
 
 		RealTimeInstanceState realTimeInstanceState = new RealTimeInstanceState();
 
 		List<AgentStateCount> agentStateDistributions = new ArrayList<AgentStateCount>();
-		for (int i = 0; i < context.lengthValue("GetInstanceStateResponse.RealTimeInstanceState.AgentStateDistributions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetInstanceStateResponse.RealTimeInstanceState.AgentStateDistributions.Length"); i++) {
 			AgentStateCount agentStateCount = new AgentStateCount();
-			agentStateCount.setState(context.stringValue("GetInstanceStateResponse.RealTimeInstanceState.AgentStateDistributions["+ i +"].State"));
-			agentStateCount.setCount(context.longValue("GetInstanceStateResponse.RealTimeInstanceState.AgentStateDistributions["+ i +"].Count"));
+			agentStateCount.setState(_ctx.stringValue("GetInstanceStateResponse.RealTimeInstanceState.AgentStateDistributions["+ i +"].State"));
+			agentStateCount.setCount(_ctx.longValue("GetInstanceStateResponse.RealTimeInstanceState.AgentStateDistributions["+ i +"].Count"));
 
 			agentStateDistributions.add(agentStateCount);
 		}

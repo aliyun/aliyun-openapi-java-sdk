@@ -21,20 +21,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyMediaResponseUnmarshaller {
 
-	public static ModifyMediaResponse unmarshall(ModifyMediaResponse modifyMediaResponse, UnmarshallerContext context) {
+	public static ModifyMediaResponse unmarshall(ModifyMediaResponse modifyMediaResponse, UnmarshallerContext _ctx) {
 		
-		modifyMediaResponse.setRequestId(context.stringValue("ModifyMediaResponse.RequestId"));
-		modifyMediaResponse.setSuccess(context.booleanValue("ModifyMediaResponse.Success"));
-		modifyMediaResponse.setCode(context.stringValue("ModifyMediaResponse.Code"));
-		modifyMediaResponse.setMessage(context.stringValue("ModifyMediaResponse.Message"));
-		modifyMediaResponse.setHttpStatusCode(context.integerValue("ModifyMediaResponse.HttpStatusCode"));
+		modifyMediaResponse.setRequestId(_ctx.stringValue("ModifyMediaResponse.RequestId"));
+		modifyMediaResponse.setSuccess(_ctx.booleanValue("ModifyMediaResponse.Success"));
+		modifyMediaResponse.setCode(_ctx.stringValue("ModifyMediaResponse.Code"));
+		modifyMediaResponse.setMessage(_ctx.stringValue("ModifyMediaResponse.Message"));
+		modifyMediaResponse.setHttpStatusCode(_ctx.integerValue("ModifyMediaResponse.HttpStatusCode"));
 
 		MediaUploadParam mediaUploadParam = new MediaUploadParam();
-		mediaUploadParam.setInstance(context.stringValue("ModifyMediaResponse.MediaUploadParam.Instance"));
-		mediaUploadParam.setName(context.stringValue("ModifyMediaResponse.MediaUploadParam.Name"));
-		mediaUploadParam.setFileName(context.stringValue("ModifyMediaResponse.MediaUploadParam.FileName"));
-		mediaUploadParam.setOssFileName(context.stringValue("ModifyMediaResponse.MediaUploadParam.OssFileName"));
-		mediaUploadParam.setOssFilePath(context.stringValue("ModifyMediaResponse.MediaUploadParam.OssFilePath"));
+		mediaUploadParam.setInstance(_ctx.stringValue("ModifyMediaResponse.MediaUploadParam.Instance"));
+		mediaUploadParam.setName(_ctx.stringValue("ModifyMediaResponse.MediaUploadParam.Name"));
+		mediaUploadParam.setFileName(_ctx.stringValue("ModifyMediaResponse.MediaUploadParam.FileName"));
+		mediaUploadParam.setOssFileName(_ctx.stringValue("ModifyMediaResponse.MediaUploadParam.OssFileName"));
+		mediaUploadParam.setOssFilePath(_ctx.stringValue("ModifyMediaResponse.MediaUploadParam.OssFilePath"));
 		modifyMediaResponse.setMediaUploadParam(mediaUploadParam);
 	 
 	 	return modifyMediaResponse;

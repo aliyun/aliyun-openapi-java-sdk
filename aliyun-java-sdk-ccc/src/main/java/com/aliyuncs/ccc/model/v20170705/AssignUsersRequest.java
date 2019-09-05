@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,7 +27,14 @@ public class AssignUsersRequest extends RpcAcsRequest<AssignUsersResponse> {
 	
 	public AssignUsersRequest() {
 		super("CCC", "2017-07-05", "AssignUsers");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private List<String> roleIds;
 
 	private List<String> userRamIds;
 
@@ -33,9 +42,20 @@ public class AssignUsersRequest extends RpcAcsRequest<AssignUsersResponse> {
 
 	private String instanceId;
 
-	private List<String> roleIds;
-
 	private List<String> skillGroupIds;
+
+	public List<String> getRoleIds() {
+		return this.roleIds;
+	}
+
+	public void setRoleIds(List<String> roleIds) {
+		this.roleIds = roleIds;	
+		if (roleIds != null) {
+			for (int i = 0; i < roleIds.size(); i++) {
+				putQueryParameter("RoleId." + (i + 1) , roleIds.get(i));
+			}
+		}	
+	}
 
 	public List<String> getUserRamIds() {
 		return this.userRamIds;
@@ -72,19 +92,6 @@ public class AssignUsersRequest extends RpcAcsRequest<AssignUsersResponse> {
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
 		}
-	}
-
-	public List<String> getRoleIds() {
-		return this.roleIds;
-	}
-
-	public void setRoleIds(List<String> roleIds) {
-		this.roleIds = roleIds;	
-		if (roleIds != null) {
-			for (int i = 0; i < roleIds.size(); i++) {
-				putQueryParameter("RoleId." + (i + 1) , roleIds.get(i));
-			}
-		}	
 	}
 
 	public List<String> getSkillGroupIds() {

@@ -25,33 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPrivacyNumberCallDetailsResponseUnmarshaller {
 
-	public static ListPrivacyNumberCallDetailsResponse unmarshall(ListPrivacyNumberCallDetailsResponse listPrivacyNumberCallDetailsResponse, UnmarshallerContext context) {
+	public static ListPrivacyNumberCallDetailsResponse unmarshall(ListPrivacyNumberCallDetailsResponse listPrivacyNumberCallDetailsResponse, UnmarshallerContext _ctx) {
 		
-		listPrivacyNumberCallDetailsResponse.setRequestId(context.stringValue("ListPrivacyNumberCallDetailsResponse.RequestId"));
-		listPrivacyNumberCallDetailsResponse.setSuccess(context.booleanValue("ListPrivacyNumberCallDetailsResponse.Success"));
-		listPrivacyNumberCallDetailsResponse.setCode(context.stringValue("ListPrivacyNumberCallDetailsResponse.Code"));
-		listPrivacyNumberCallDetailsResponse.setMessage(context.stringValue("ListPrivacyNumberCallDetailsResponse.Message"));
-		listPrivacyNumberCallDetailsResponse.setHttpStatusCode(context.integerValue("ListPrivacyNumberCallDetailsResponse.HttpStatusCode"));
+		listPrivacyNumberCallDetailsResponse.setRequestId(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.RequestId"));
+		listPrivacyNumberCallDetailsResponse.setSuccess(_ctx.booleanValue("ListPrivacyNumberCallDetailsResponse.Success"));
+		listPrivacyNumberCallDetailsResponse.setCode(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.Code"));
+		listPrivacyNumberCallDetailsResponse.setMessage(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.Message"));
+		listPrivacyNumberCallDetailsResponse.setHttpStatusCode(_ctx.integerValue("ListPrivacyNumberCallDetailsResponse.HttpStatusCode"));
 
 		PrivacyNumberCallDetails privacyNumberCallDetails = new PrivacyNumberCallDetails();
-		privacyNumberCallDetails.setTotalCount(context.integerValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.TotalCount"));
-		privacyNumberCallDetails.setPageNumber(context.integerValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.PageNumber"));
-		privacyNumberCallDetails.setPageSize(context.integerValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.PageSize"));
+		privacyNumberCallDetails.setTotalCount(_ctx.integerValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.TotalCount"));
+		privacyNumberCallDetails.setPageNumber(_ctx.integerValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.PageNumber"));
+		privacyNumberCallDetails.setPageSize(_ctx.integerValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.PageSize"));
 
 		List<PrivacyNumberCallDetail> list = new ArrayList<PrivacyNumberCallDetail>();
-		for (int i = 0; i < context.lengthValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List.Length"); i++) {
 			PrivacyNumberCallDetail privacyNumberCallDetail = new PrivacyNumberCallDetail();
-			privacyNumberCallDetail.setAgentId(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].AgentId"));
-			privacyNumberCallDetail.setAgentName(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].AgentName"));
-			privacyNumberCallDetail.setContactId(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].ContactId"));
-			privacyNumberCallDetail.setCallingNumber(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].CallingNumber"));
-			privacyNumberCallDetail.setCalledNumber(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].CalledNumber"));
-			privacyNumberCallDetail.setPrivacyNumber(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].PrivacyNumber"));
-			privacyNumberCallDetail.setContactType(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].ContactType"));
-			privacyNumberCallDetail.setResult(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].Result"));
-			privacyNumberCallDetail.setDescription(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].Description"));
-			privacyNumberCallDetail.setCallTime(context.longValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].CallTime"));
-			privacyNumberCallDetail.setStatus(context.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].Status"));
+			privacyNumberCallDetail.setAgentId(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].AgentId"));
+			privacyNumberCallDetail.setAgentName(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].AgentName"));
+			privacyNumberCallDetail.setContactId(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].ContactId"));
+			privacyNumberCallDetail.setCallingNumber(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].CallingNumber"));
+			privacyNumberCallDetail.setCalledNumber(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].CalledNumber"));
+			privacyNumberCallDetail.setPrivacyNumber(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].PrivacyNumber"));
+			privacyNumberCallDetail.setContactType(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].ContactType"));
+			privacyNumberCallDetail.setResult(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].Result"));
+			privacyNumberCallDetail.setDescription(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].Description"));
+			privacyNumberCallDetail.setCallTime(_ctx.longValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].CallTime"));
+			privacyNumberCallDetail.setStatus(_ctx.stringValue("ListPrivacyNumberCallDetailsResponse.PrivacyNumberCallDetails.List["+ i +"].Status"));
 
 			list.add(privacyNumberCallDetail);
 		}

@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveWebRTCStatsResponseUnmarshaller {
 
-	public static SaveWebRTCStatsResponse unmarshall(SaveWebRTCStatsResponse saveWebRTCStatsResponse, UnmarshallerContext context) {
+	public static SaveWebRTCStatsResponse unmarshall(SaveWebRTCStatsResponse saveWebRTCStatsResponse, UnmarshallerContext _ctx) {
 		
-		saveWebRTCStatsResponse.setRequestId(context.stringValue("SaveWebRTCStatsResponse.RequestId"));
-		saveWebRTCStatsResponse.setSuccess(context.booleanValue("SaveWebRTCStatsResponse.Success"));
-		saveWebRTCStatsResponse.setCode(context.stringValue("SaveWebRTCStatsResponse.Code"));
-		saveWebRTCStatsResponse.setMessage(context.stringValue("SaveWebRTCStatsResponse.Message"));
-		saveWebRTCStatsResponse.setHttpStatusCode(context.integerValue("SaveWebRTCStatsResponse.HttpStatusCode"));
-		saveWebRTCStatsResponse.setRowCount(context.longValue("SaveWebRTCStatsResponse.RowCount"));
+		saveWebRTCStatsResponse.setRequestId(_ctx.stringValue("SaveWebRTCStatsResponse.RequestId"));
+		saveWebRTCStatsResponse.setSuccess(_ctx.booleanValue("SaveWebRTCStatsResponse.Success"));
+		saveWebRTCStatsResponse.setCode(_ctx.stringValue("SaveWebRTCStatsResponse.Code"));
+		saveWebRTCStatsResponse.setMessage(_ctx.stringValue("SaveWebRTCStatsResponse.Message"));
+		saveWebRTCStatsResponse.setHttpStatusCode(_ctx.integerValue("SaveWebRTCStatsResponse.HttpStatusCode"));
+		saveWebRTCStatsResponse.setRowCount(_ctx.longValue("SaveWebRTCStatsResponse.RowCount"));
 	 
 	 	return saveWebRTCStatsResponse;
 	}

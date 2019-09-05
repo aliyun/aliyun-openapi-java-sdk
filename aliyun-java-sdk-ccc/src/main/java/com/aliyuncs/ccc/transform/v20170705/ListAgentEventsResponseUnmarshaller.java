@@ -25,28 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAgentEventsResponseUnmarshaller {
 
-	public static ListAgentEventsResponse unmarshall(ListAgentEventsResponse listAgentEventsResponse, UnmarshallerContext context) {
+	public static ListAgentEventsResponse unmarshall(ListAgentEventsResponse listAgentEventsResponse, UnmarshallerContext _ctx) {
 		
-		listAgentEventsResponse.setRequestId(context.stringValue("ListAgentEventsResponse.RequestId"));
-		listAgentEventsResponse.setSuccess(context.booleanValue("ListAgentEventsResponse.Success"));
-		listAgentEventsResponse.setCode(context.stringValue("ListAgentEventsResponse.Code"));
-		listAgentEventsResponse.setMessage(context.stringValue("ListAgentEventsResponse.Message"));
-		listAgentEventsResponse.setHttpStatusCode(context.integerValue("ListAgentEventsResponse.HttpStatusCode"));
+		listAgentEventsResponse.setRequestId(_ctx.stringValue("ListAgentEventsResponse.RequestId"));
+		listAgentEventsResponse.setSuccess(_ctx.booleanValue("ListAgentEventsResponse.Success"));
+		listAgentEventsResponse.setCode(_ctx.stringValue("ListAgentEventsResponse.Code"));
+		listAgentEventsResponse.setMessage(_ctx.stringValue("ListAgentEventsResponse.Message"));
+		listAgentEventsResponse.setHttpStatusCode(_ctx.integerValue("ListAgentEventsResponse.HttpStatusCode"));
 
 		List<AgentEvent> agentEventList = new ArrayList<AgentEvent>();
-		for (int i = 0; i < context.lengthValue("ListAgentEventsResponse.AgentEventList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAgentEventsResponse.AgentEventList.Length"); i++) {
 			AgentEvent agentEvent = new AgentEvent();
-			agentEvent.setInstanceId(context.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].InstanceId"));
-			agentEvent.setRamId(context.longValue("ListAgentEventsResponse.AgentEventList["+ i +"].RamId"));
-			agentEvent.setLoginName(context.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].LoginName"));
-			agentEvent.setEvent(context.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].Event"));
-			agentEvent.setEventTime(context.longValue("ListAgentEventsResponse.AgentEventList["+ i +"].EventTime"));
+			agentEvent.setInstanceId(_ctx.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].InstanceId"));
+			agentEvent.setRamId(_ctx.longValue("ListAgentEventsResponse.AgentEventList["+ i +"].RamId"));
+			agentEvent.setLoginName(_ctx.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].LoginName"));
+			agentEvent.setEvent(_ctx.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].Event"));
+			agentEvent.setEventTime(_ctx.longValue("ListAgentEventsResponse.AgentEventList["+ i +"].EventTime"));
 
 			List<SkillGroup> skillGroupIds = new ArrayList<SkillGroup>();
-			for (int j = 0; j < context.lengthValue("ListAgentEventsResponse.AgentEventList["+ i +"].SkillGroupIds.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListAgentEventsResponse.AgentEventList["+ i +"].SkillGroupIds.Length"); j++) {
 				SkillGroup skillGroup = new SkillGroup();
-				skillGroup.setSkillGroupId(context.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].SkillGroupIds["+ j +"].SkillGroupId"));
-				skillGroup.setSkillGroupName(context.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].SkillGroupIds["+ j +"].SkillGroupName"));
+				skillGroup.setSkillGroupId(_ctx.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].SkillGroupIds["+ j +"].SkillGroupId"));
+				skillGroup.setSkillGroupName(_ctx.stringValue("ListAgentEventsResponse.AgentEventList["+ i +"].SkillGroupIds["+ j +"].SkillGroupName"));
 
 				skillGroupIds.add(skillGroup);
 			}

@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,17 +27,22 @@ public class ResumeJobsRequest extends RpcAcsRequest<ResumeJobsResponse> {
 	
 	public ResumeJobsRequest() {
 		super("CCC", "2017-07-05", "ResumeJobs");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Boolean all;
 
-	private List<String> jobIds;
-
-	private String instanceId;
-
 	private List<String> jobReferenceIds;
 
 	private String groupId;
+
+	private List<String> jobIds;
+
+	private String instanceId;
 
 	private String scenarioId;
 
@@ -47,30 +54,6 @@ public class ResumeJobsRequest extends RpcAcsRequest<ResumeJobsResponse> {
 		this.all = all;
 		if(all != null){
 			putQueryParameter("All", all.toString());
-		}
-	}
-
-	public List<String> getJobIds() {
-		return this.jobIds;
-	}
-
-	public void setJobIds(List<String> jobIds) {
-		this.jobIds = jobIds;	
-		if (jobIds != null) {
-			for (int i = 0; i < jobIds.size(); i++) {
-				putQueryParameter("JobId." + (i + 1) , jobIds.get(i));
-			}
-		}	
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -95,6 +78,30 @@ public class ResumeJobsRequest extends RpcAcsRequest<ResumeJobsResponse> {
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public List<String> getJobIds() {
+		return this.jobIds;
+	}
+
+	public void setJobIds(List<String> jobIds) {
+		this.jobIds = jobIds;	
+		if (jobIds != null) {
+			for (int i = 0; i < jobIds.size(); i++) {
+				putQueryParameter("JobId." + (i + 1) , jobIds.get(i));
+			}
+		}	
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

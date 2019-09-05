@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJobFileUploadUrlResponseUnmarshaller {
 
-	public static GetJobFileUploadUrlResponse unmarshall(GetJobFileUploadUrlResponse getJobFileUploadUrlResponse, UnmarshallerContext context) {
+	public static GetJobFileUploadUrlResponse unmarshall(GetJobFileUploadUrlResponse getJobFileUploadUrlResponse, UnmarshallerContext _ctx) {
 		
-		getJobFileUploadUrlResponse.setRequestId(context.stringValue("GetJobFileUploadUrlResponse.RequestId"));
-		getJobFileUploadUrlResponse.setSuccess(context.booleanValue("GetJobFileUploadUrlResponse.Success"));
-		getJobFileUploadUrlResponse.setCode(context.stringValue("GetJobFileUploadUrlResponse.Code"));
-		getJobFileUploadUrlResponse.setMessage(context.stringValue("GetJobFileUploadUrlResponse.Message"));
-		getJobFileUploadUrlResponse.setHttpStatusCode(context.integerValue("GetJobFileUploadUrlResponse.HttpStatusCode"));
-		getJobFileUploadUrlResponse.setFilePath(context.stringValue("GetJobFileUploadUrlResponse.FilePath"));
-		getJobFileUploadUrlResponse.setUploadUrl(context.stringValue("GetJobFileUploadUrlResponse.UploadUrl"));
+		getJobFileUploadUrlResponse.setRequestId(_ctx.stringValue("GetJobFileUploadUrlResponse.RequestId"));
+		getJobFileUploadUrlResponse.setSuccess(_ctx.booleanValue("GetJobFileUploadUrlResponse.Success"));
+		getJobFileUploadUrlResponse.setCode(_ctx.stringValue("GetJobFileUploadUrlResponse.Code"));
+		getJobFileUploadUrlResponse.setMessage(_ctx.stringValue("GetJobFileUploadUrlResponse.Message"));
+		getJobFileUploadUrlResponse.setHttpStatusCode(_ctx.integerValue("GetJobFileUploadUrlResponse.HttpStatusCode"));
+		getJobFileUploadUrlResponse.setFilePath(_ctx.stringValue("GetJobFileUploadUrlResponse.FilePath"));
+		getJobFileUploadUrlResponse.setUploadUrl(_ctx.stringValue("GetJobFileUploadUrlResponse.UploadUrl"));
 	 
 	 	return getJobFileUploadUrlResponse;
 	}

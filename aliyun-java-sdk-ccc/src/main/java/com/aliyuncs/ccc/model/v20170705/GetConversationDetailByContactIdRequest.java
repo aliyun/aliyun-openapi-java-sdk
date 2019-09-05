@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,26 +26,20 @@ public class GetConversationDetailByContactIdRequest extends RpcAcsRequest<GetCo
 	
 	public GetConversationDetailByContactIdRequest() {
 		super("CCC", "2017-07-05", "GetConversationDetailByContactId");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String instanceId;
 
 	private String contactId;
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+	private String instanceId;
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
+	private Integer pageSize;
 
 	public String getContactId() {
 		return this.contactId;
@@ -56,17 +52,6 @@ public class GetConversationDetailByContactIdRequest extends RpcAcsRequest<GetCo
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -75,6 +60,28 @@ public class GetConversationDetailByContactIdRequest extends RpcAcsRequest<GetCo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

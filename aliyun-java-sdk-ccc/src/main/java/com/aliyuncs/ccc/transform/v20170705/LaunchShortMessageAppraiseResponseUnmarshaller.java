@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class LaunchShortMessageAppraiseResponseUnmarshaller {
 
-	public static LaunchShortMessageAppraiseResponse unmarshall(LaunchShortMessageAppraiseResponse launchShortMessageAppraiseResponse, UnmarshallerContext context) {
+	public static LaunchShortMessageAppraiseResponse unmarshall(LaunchShortMessageAppraiseResponse launchShortMessageAppraiseResponse, UnmarshallerContext _ctx) {
 		
-		launchShortMessageAppraiseResponse.setRequestId(context.stringValue("LaunchShortMessageAppraiseResponse.RequestId"));
-		launchShortMessageAppraiseResponse.setSuccess(context.booleanValue("LaunchShortMessageAppraiseResponse.Success"));
-		launchShortMessageAppraiseResponse.setCode(context.stringValue("LaunchShortMessageAppraiseResponse.Code"));
-		launchShortMessageAppraiseResponse.setMessage(context.stringValue("LaunchShortMessageAppraiseResponse.Message"));
-		launchShortMessageAppraiseResponse.setHttpStatusCode(context.integerValue("LaunchShortMessageAppraiseResponse.HttpStatusCode"));
+		launchShortMessageAppraiseResponse.setRequestId(_ctx.stringValue("LaunchShortMessageAppraiseResponse.RequestId"));
+		launchShortMessageAppraiseResponse.setSuccess(_ctx.booleanValue("LaunchShortMessageAppraiseResponse.Success"));
+		launchShortMessageAppraiseResponse.setCode(_ctx.stringValue("LaunchShortMessageAppraiseResponse.Code"));
+		launchShortMessageAppraiseResponse.setMessage(_ctx.stringValue("LaunchShortMessageAppraiseResponse.Message"));
+		launchShortMessageAppraiseResponse.setHttpStatusCode(_ctx.integerValue("LaunchShortMessageAppraiseResponse.HttpStatusCode"));
 	 
 	 	return launchShortMessageAppraiseResponse;
 	}

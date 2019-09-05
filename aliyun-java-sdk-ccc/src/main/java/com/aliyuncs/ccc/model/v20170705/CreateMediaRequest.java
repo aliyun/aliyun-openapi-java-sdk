@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +26,12 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 	
 	public CreateMediaRequest() {
 		super("CCC", "2017-07-05", "CreateMedia");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String fileName;
-
-	private String name;
 
 	private String description;
 
@@ -44,38 +45,11 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 
 	private String ossFileName;
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+	private String instanceId;
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
+	private String fileName;
 
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
+	private String name;
 
 	public String getDescription() {
 		return this.description;
@@ -140,6 +114,39 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 		this.ossFileName = ossFileName;
 		if(ossFileName != null){
 			putQueryParameter("OssFileName", ossFileName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putQueryParameter("FileName", fileName);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

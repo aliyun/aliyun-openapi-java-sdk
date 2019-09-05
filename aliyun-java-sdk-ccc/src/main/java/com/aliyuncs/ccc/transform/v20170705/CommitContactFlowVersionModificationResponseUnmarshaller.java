@@ -21,24 +21,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CommitContactFlowVersionModificationResponseUnmarshaller {
 
-	public static CommitContactFlowVersionModificationResponse unmarshall(CommitContactFlowVersionModificationResponse commitContactFlowVersionModificationResponse, UnmarshallerContext context) {
+	public static CommitContactFlowVersionModificationResponse unmarshall(CommitContactFlowVersionModificationResponse commitContactFlowVersionModificationResponse, UnmarshallerContext _ctx) {
 		
-		commitContactFlowVersionModificationResponse.setRequestId(context.stringValue("CommitContactFlowVersionModificationResponse.RequestId"));
-		commitContactFlowVersionModificationResponse.setSuccess(context.booleanValue("CommitContactFlowVersionModificationResponse.Success"));
-		commitContactFlowVersionModificationResponse.setCode(context.stringValue("CommitContactFlowVersionModificationResponse.Code"));
-		commitContactFlowVersionModificationResponse.setMessage(context.stringValue("CommitContactFlowVersionModificationResponse.Message"));
-		commitContactFlowVersionModificationResponse.setHttpStatusCode(context.integerValue("CommitContactFlowVersionModificationResponse.HttpStatusCode"));
+		commitContactFlowVersionModificationResponse.setRequestId(_ctx.stringValue("CommitContactFlowVersionModificationResponse.RequestId"));
+		commitContactFlowVersionModificationResponse.setSuccess(_ctx.booleanValue("CommitContactFlowVersionModificationResponse.Success"));
+		commitContactFlowVersionModificationResponse.setCode(_ctx.stringValue("CommitContactFlowVersionModificationResponse.Code"));
+		commitContactFlowVersionModificationResponse.setMessage(_ctx.stringValue("CommitContactFlowVersionModificationResponse.Message"));
+		commitContactFlowVersionModificationResponse.setHttpStatusCode(_ctx.integerValue("CommitContactFlowVersionModificationResponse.HttpStatusCode"));
 
 		ContactFlowVersion contactFlowVersion = new ContactFlowVersion();
-		contactFlowVersion.setContactFlowVersionId(context.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.ContactFlowVersionId"));
-		contactFlowVersion.setVersion(context.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.Version"));
-		contactFlowVersion.setContactFlowVersionDescription(context.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.ContactFlowVersionDescription"));
-		contactFlowVersion.setCanvas(context.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.Canvas"));
-		contactFlowVersion.setContent(context.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.Content"));
-		contactFlowVersion.setLastModified(context.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.LastModified"));
-		contactFlowVersion.setLastModifiedBy(context.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.LastModifiedBy"));
-		contactFlowVersion.setLockedBy(context.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.LockedBy"));
-		contactFlowVersion.setStatus(context.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.Status"));
+		contactFlowVersion.setContactFlowVersionId(_ctx.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.ContactFlowVersionId"));
+		contactFlowVersion.setVersion(_ctx.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.Version"));
+		contactFlowVersion.setContactFlowVersionDescription(_ctx.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.ContactFlowVersionDescription"));
+		contactFlowVersion.setCanvas(_ctx.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.Canvas"));
+		contactFlowVersion.setContent(_ctx.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.Content"));
+		contactFlowVersion.setLastModified(_ctx.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.LastModified"));
+		contactFlowVersion.setLastModifiedBy(_ctx.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.LastModifiedBy"));
+		contactFlowVersion.setLockedBy(_ctx.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.LockedBy"));
+		contactFlowVersion.setStatus(_ctx.stringValue("CommitContactFlowVersionModificationResponse.ContactFlowVersion.Status"));
 		commitContactFlowVersionModificationResponse.setContactFlowVersion(contactFlowVersion);
 	 
 	 	return commitContactFlowVersionModificationResponse;

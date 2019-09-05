@@ -25,35 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListRecordingOfDualTrackResponseUnmarshaller {
 
-	public static ListRecordingOfDualTrackResponse unmarshall(ListRecordingOfDualTrackResponse listRecordingOfDualTrackResponse, UnmarshallerContext context) {
+	public static ListRecordingOfDualTrackResponse unmarshall(ListRecordingOfDualTrackResponse listRecordingOfDualTrackResponse, UnmarshallerContext _ctx) {
 		
-		listRecordingOfDualTrackResponse.setRequestId(context.stringValue("ListRecordingOfDualTrackResponse.RequestId"));
-		listRecordingOfDualTrackResponse.setSuccess(context.booleanValue("ListRecordingOfDualTrackResponse.Success"));
-		listRecordingOfDualTrackResponse.setCode(context.stringValue("ListRecordingOfDualTrackResponse.Code"));
-		listRecordingOfDualTrackResponse.setMessage(context.stringValue("ListRecordingOfDualTrackResponse.Message"));
-		listRecordingOfDualTrackResponse.setHttpStatusCode(context.integerValue("ListRecordingOfDualTrackResponse.HttpStatusCode"));
+		listRecordingOfDualTrackResponse.setRequestId(_ctx.stringValue("ListRecordingOfDualTrackResponse.RequestId"));
+		listRecordingOfDualTrackResponse.setSuccess(_ctx.booleanValue("ListRecordingOfDualTrackResponse.Success"));
+		listRecordingOfDualTrackResponse.setCode(_ctx.stringValue("ListRecordingOfDualTrackResponse.Code"));
+		listRecordingOfDualTrackResponse.setMessage(_ctx.stringValue("ListRecordingOfDualTrackResponse.Message"));
+		listRecordingOfDualTrackResponse.setHttpStatusCode(_ctx.integerValue("ListRecordingOfDualTrackResponse.HttpStatusCode"));
 
 		Recordings recordings = new Recordings();
-		recordings.setTotalCount(context.integerValue("ListRecordingOfDualTrackResponse.Recordings.TotalCount"));
-		recordings.setPageNumber(context.integerValue("ListRecordingOfDualTrackResponse.Recordings.PageNumber"));
-		recordings.setPageSize(context.integerValue("ListRecordingOfDualTrackResponse.Recordings.PageSize"));
+		recordings.setTotalCount(_ctx.integerValue("ListRecordingOfDualTrackResponse.Recordings.TotalCount"));
+		recordings.setPageNumber(_ctx.integerValue("ListRecordingOfDualTrackResponse.Recordings.PageNumber"));
+		recordings.setPageSize(_ctx.integerValue("ListRecordingOfDualTrackResponse.Recordings.PageSize"));
 
 		List<Recording> list = new ArrayList<Recording>();
-		for (int i = 0; i < context.lengthValue("ListRecordingOfDualTrackResponse.Recordings.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListRecordingOfDualTrackResponse.Recordings.List.Length"); i++) {
 			Recording recording = new Recording();
-			recording.setContactId(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].ContactId"));
-			recording.setContactType(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].ContactType"));
-			recording.setAgentId(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].AgentId"));
-			recording.setAgentName(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].AgentName"));
-			recording.setCallingNumber(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].CallingNumber"));
-			recording.setCalledNumber(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].CalledNumber"));
-			recording.setStartTime(context.longValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].StartTime"));
-			recording.setDuration(context.integerValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].Duration"));
-			recording.setFileName(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].FileName"));
-			recording.setFilePath(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].FilePath"));
-			recording.setFileDescription(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].FileDescription"));
-			recording.setChannel(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].Channel"));
-			recording.setInstanceId(context.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].InstanceId"));
+			recording.setContactId(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].ContactId"));
+			recording.setContactType(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].ContactType"));
+			recording.setAgentId(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].AgentId"));
+			recording.setAgentName(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].AgentName"));
+			recording.setCallingNumber(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].CallingNumber"));
+			recording.setCalledNumber(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].CalledNumber"));
+			recording.setStartTime(_ctx.longValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].StartTime"));
+			recording.setDuration(_ctx.integerValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].Duration"));
+			recording.setFileName(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].FileName"));
+			recording.setFilePath(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].FilePath"));
+			recording.setFileDescription(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].FileDescription"));
+			recording.setChannel(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].Channel"));
+			recording.setInstanceId(_ctx.stringValue("ListRecordingOfDualTrackResponse.Recordings.List["+ i +"].InstanceId"));
 
 			list.add(recording);
 		}

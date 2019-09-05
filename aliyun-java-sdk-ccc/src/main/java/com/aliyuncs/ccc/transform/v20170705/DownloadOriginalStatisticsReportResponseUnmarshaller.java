@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DownloadOriginalStatisticsReportResponseUnmarshaller {
 
-	public static DownloadOriginalStatisticsReportResponse unmarshall(DownloadOriginalStatisticsReportResponse downloadOriginalStatisticsReportResponse, UnmarshallerContext context) {
+	public static DownloadOriginalStatisticsReportResponse unmarshall(DownloadOriginalStatisticsReportResponse downloadOriginalStatisticsReportResponse, UnmarshallerContext _ctx) {
 		
-		downloadOriginalStatisticsReportResponse.setRequestId(context.stringValue("DownloadOriginalStatisticsReportResponse.RequestId"));
-		downloadOriginalStatisticsReportResponse.setSuccess(context.booleanValue("DownloadOriginalStatisticsReportResponse.Success"));
-		downloadOriginalStatisticsReportResponse.setCode(context.stringValue("DownloadOriginalStatisticsReportResponse.Code"));
-		downloadOriginalStatisticsReportResponse.setMessage(context.stringValue("DownloadOriginalStatisticsReportResponse.Message"));
-		downloadOriginalStatisticsReportResponse.setHttpStatusCode(context.integerValue("DownloadOriginalStatisticsReportResponse.HttpStatusCode"));
+		downloadOriginalStatisticsReportResponse.setRequestId(_ctx.stringValue("DownloadOriginalStatisticsReportResponse.RequestId"));
+		downloadOriginalStatisticsReportResponse.setSuccess(_ctx.booleanValue("DownloadOriginalStatisticsReportResponse.Success"));
+		downloadOriginalStatisticsReportResponse.setCode(_ctx.stringValue("DownloadOriginalStatisticsReportResponse.Code"));
+		downloadOriginalStatisticsReportResponse.setMessage(_ctx.stringValue("DownloadOriginalStatisticsReportResponse.Message"));
+		downloadOriginalStatisticsReportResponse.setHttpStatusCode(_ctx.integerValue("DownloadOriginalStatisticsReportResponse.HttpStatusCode"));
 
 		DownloadParams downloadParams = new DownloadParams();
-		downloadParams.setSignatureUrl(context.stringValue("DownloadOriginalStatisticsReportResponse.DownloadParams.SignatureUrl"));
+		downloadParams.setSignatureUrl(_ctx.stringValue("DownloadOriginalStatisticsReportResponse.DownloadParams.SignatureUrl"));
 		downloadOriginalStatisticsReportResponse.setDownloadParams(downloadParams);
 	 
 	 	return downloadOriginalStatisticsReportResponse;

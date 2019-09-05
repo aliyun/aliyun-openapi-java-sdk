@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PublishSurveyResponseUnmarshaller {
 
-	public static PublishSurveyResponse unmarshall(PublishSurveyResponse publishSurveyResponse, UnmarshallerContext context) {
+	public static PublishSurveyResponse unmarshall(PublishSurveyResponse publishSurveyResponse, UnmarshallerContext _ctx) {
 		
-		publishSurveyResponse.setRequestId(context.stringValue("PublishSurveyResponse.RequestId"));
-		publishSurveyResponse.setSuccess(context.booleanValue("PublishSurveyResponse.Success"));
-		publishSurveyResponse.setCode(context.stringValue("PublishSurveyResponse.Code"));
-		publishSurveyResponse.setMessage(context.stringValue("PublishSurveyResponse.Message"));
-		publishSurveyResponse.setHttpStatusCode(context.integerValue("PublishSurveyResponse.HttpStatusCode"));
+		publishSurveyResponse.setRequestId(_ctx.stringValue("PublishSurveyResponse.RequestId"));
+		publishSurveyResponse.setSuccess(_ctx.booleanValue("PublishSurveyResponse.Success"));
+		publishSurveyResponse.setCode(_ctx.stringValue("PublishSurveyResponse.Code"));
+		publishSurveyResponse.setMessage(_ctx.stringValue("PublishSurveyResponse.Message"));
+		publishSurveyResponse.setHttpStatusCode(_ctx.integerValue("PublishSurveyResponse.HttpStatusCode"));
 	 
 	 	return publishSurveyResponse;
 	}

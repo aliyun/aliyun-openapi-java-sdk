@@ -26,28 +26,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PickOutboundNumbersByTagsResponseUnmarshaller {
 
-	public static PickOutboundNumbersByTagsResponse unmarshall(PickOutboundNumbersByTagsResponse pickOutboundNumbersByTagsResponse, UnmarshallerContext context) {
+	public static PickOutboundNumbersByTagsResponse unmarshall(PickOutboundNumbersByTagsResponse pickOutboundNumbersByTagsResponse, UnmarshallerContext _ctx) {
 		
-		pickOutboundNumbersByTagsResponse.setRequestId(context.stringValue("PickOutboundNumbersByTagsResponse.RequestId"));
-		pickOutboundNumbersByTagsResponse.setSuccess(context.booleanValue("PickOutboundNumbersByTagsResponse.Success"));
-		pickOutboundNumbersByTagsResponse.setCode(context.stringValue("PickOutboundNumbersByTagsResponse.Code"));
-		pickOutboundNumbersByTagsResponse.setMessage(context.stringValue("PickOutboundNumbersByTagsResponse.Message"));
-		pickOutboundNumbersByTagsResponse.setHttpStatusCode(context.integerValue("PickOutboundNumbersByTagsResponse.HttpStatusCode"));
+		pickOutboundNumbersByTagsResponse.setRequestId(_ctx.stringValue("PickOutboundNumbersByTagsResponse.RequestId"));
+		pickOutboundNumbersByTagsResponse.setSuccess(_ctx.booleanValue("PickOutboundNumbersByTagsResponse.Success"));
+		pickOutboundNumbersByTagsResponse.setCode(_ctx.stringValue("PickOutboundNumbersByTagsResponse.Code"));
+		pickOutboundNumbersByTagsResponse.setMessage(_ctx.stringValue("PickOutboundNumbersByTagsResponse.Message"));
+		pickOutboundNumbersByTagsResponse.setHttpStatusCode(_ctx.integerValue("PickOutboundNumbersByTagsResponse.HttpStatusCode"));
 
 		List<DialNumberPair> dialNumberPairs = new ArrayList<DialNumberPair>();
-		for (int i = 0; i < context.lengthValue("PickOutboundNumbersByTagsResponse.DialNumberPairs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("PickOutboundNumbersByTagsResponse.DialNumberPairs.Length"); i++) {
 			DialNumberPair dialNumberPair = new DialNumberPair();
 
 			Callee callee = new Callee();
-			callee.setNumber(context.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Callee.Number"));
-			callee.setProvince(context.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Callee.Province"));
-			callee.setCity(context.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Callee.City"));
+			callee.setNumber(_ctx.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Callee.Number"));
+			callee.setProvince(_ctx.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Callee.Province"));
+			callee.setCity(_ctx.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Callee.City"));
 			dialNumberPair.setCallee(callee);
 
 			Caller caller = new Caller();
-			caller.setNumber(context.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Caller.Number"));
-			caller.setProvince(context.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Caller.Province"));
-			caller.setCity(context.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Caller.City"));
+			caller.setNumber(_ctx.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Caller.Number"));
+			caller.setProvince(_ctx.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Caller.Province"));
+			caller.setCity(_ctx.stringValue("PickOutboundNumbersByTagsResponse.DialNumberPairs["+ i +"].Caller.City"));
 			dialNumberPair.setCaller(caller);
 
 			dialNumberPairs.add(dialNumberPair);

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemovePhoneNumberResponseUnmarshaller {
 
-	public static RemovePhoneNumberResponse unmarshall(RemovePhoneNumberResponse removePhoneNumberResponse, UnmarshallerContext context) {
+	public static RemovePhoneNumberResponse unmarshall(RemovePhoneNumberResponse removePhoneNumberResponse, UnmarshallerContext _ctx) {
 		
-		removePhoneNumberResponse.setRequestId(context.stringValue("RemovePhoneNumberResponse.RequestId"));
-		removePhoneNumberResponse.setSuccess(context.booleanValue("RemovePhoneNumberResponse.Success"));
-		removePhoneNumberResponse.setCode(context.stringValue("RemovePhoneNumberResponse.Code"));
-		removePhoneNumberResponse.setMessage(context.stringValue("RemovePhoneNumberResponse.Message"));
-		removePhoneNumberResponse.setHttpStatusCode(context.integerValue("RemovePhoneNumberResponse.HttpStatusCode"));
+		removePhoneNumberResponse.setRequestId(_ctx.stringValue("RemovePhoneNumberResponse.RequestId"));
+		removePhoneNumberResponse.setSuccess(_ctx.booleanValue("RemovePhoneNumberResponse.Success"));
+		removePhoneNumberResponse.setCode(_ctx.stringValue("RemovePhoneNumberResponse.Code"));
+		removePhoneNumberResponse.setMessage(_ctx.stringValue("RemovePhoneNumberResponse.Message"));
+		removePhoneNumberResponse.setHttpStatusCode(_ctx.integerValue("RemovePhoneNumberResponse.HttpStatusCode"));
 	 
 	 	return removePhoneNumberResponse;
 	}

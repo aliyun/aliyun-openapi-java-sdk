@@ -20,17 +20,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TwoPartiesCallResponseUnmarshaller {
 
-	public static TwoPartiesCallResponse unmarshall(TwoPartiesCallResponse twoPartiesCallResponse, UnmarshallerContext context) {
+	public static TwoPartiesCallResponse unmarshall(TwoPartiesCallResponse twoPartiesCallResponse, UnmarshallerContext _ctx) {
 		
-		twoPartiesCallResponse.setRequestId(context.stringValue("TwoPartiesCallResponse.RequestId"));
-		twoPartiesCallResponse.setSuccess(context.booleanValue("TwoPartiesCallResponse.Success"));
-		twoPartiesCallResponse.setCode(context.stringValue("TwoPartiesCallResponse.Code"));
-		twoPartiesCallResponse.setMessage(context.stringValue("TwoPartiesCallResponse.Message"));
-		twoPartiesCallResponse.setHttpStatusCode(context.integerValue("TwoPartiesCallResponse.HttpStatusCode"));
-		twoPartiesCallResponse.setStatusCode(context.stringValue("TwoPartiesCallResponse.StatusCode"));
-		twoPartiesCallResponse.setStatusDesc(context.stringValue("TwoPartiesCallResponse.StatusDesc"));
-		twoPartiesCallResponse.setTaskId(context.stringValue("TwoPartiesCallResponse.TaskId"));
-		twoPartiesCallResponse.setTimeStamp(context.stringValue("TwoPartiesCallResponse.TimeStamp"));
+		twoPartiesCallResponse.setRequestId(_ctx.stringValue("TwoPartiesCallResponse.RequestId"));
+		twoPartiesCallResponse.setSuccess(_ctx.booleanValue("TwoPartiesCallResponse.Success"));
+		twoPartiesCallResponse.setCode(_ctx.stringValue("TwoPartiesCallResponse.Code"));
+		twoPartiesCallResponse.setMessage(_ctx.stringValue("TwoPartiesCallResponse.Message"));
+		twoPartiesCallResponse.setHttpStatusCode(_ctx.integerValue("TwoPartiesCallResponse.HttpStatusCode"));
+		twoPartiesCallResponse.setStatusCode(_ctx.stringValue("TwoPartiesCallResponse.StatusCode"));
+		twoPartiesCallResponse.setStatusDesc(_ctx.stringValue("TwoPartiesCallResponse.StatusDesc"));
+		twoPartiesCallResponse.setTaskId(_ctx.stringValue("TwoPartiesCallResponse.TaskId"));
+		twoPartiesCallResponse.setTimeStamp(_ctx.stringValue("TwoPartiesCallResponse.TimeStamp"));
 	 
 	 	return twoPartiesCallResponse;
 	}

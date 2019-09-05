@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +26,29 @@ public class ModifyAgentDeviceRequest extends RpcAcsRequest<ModifyAgentDeviceRes
 	
 	public ModifyAgentDeviceRequest() {
 		super("CCC", "2017-07-05", "ModifyAgentDevice");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private Integer isLogin;
 
 	private Long agentDeviceId;
 
 	private String instanceId;
 
-	private Integer isLogin;
+	public Integer getIsLogin() {
+		return this.isLogin;
+	}
+
+	public void setIsLogin(Integer isLogin) {
+		this.isLogin = isLogin;
+		if(isLogin != null){
+			putQueryParameter("IsLogin", isLogin.toString());
+		}
+	}
 
 	public Long getAgentDeviceId() {
 		return this.agentDeviceId;
@@ -51,17 +69,6 @@ public class ModifyAgentDeviceRequest extends RpcAcsRequest<ModifyAgentDeviceRes
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Integer getIsLogin() {
-		return this.isLogin;
-	}
-
-	public void setIsLogin(Integer isLogin) {
-		this.isLogin = isLogin;
-		if(isLogin != null){
-			putQueryParameter("IsLogin", isLogin.toString());
 		}
 	}
 

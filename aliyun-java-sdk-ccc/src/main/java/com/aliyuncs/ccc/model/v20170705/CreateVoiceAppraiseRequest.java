@@ -16,6 +16,7 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,38 +26,20 @@ public class CreateVoiceAppraiseRequest extends RpcAcsRequest<CreateVoiceApprais
 	
 	public CreateVoiceAppraiseRequest() {
 		super("CCC", "2017-07-05", "CreateVoiceAppraise");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String contactFlowVersionId;
 
 	private Boolean isAppraise;
 
 	private String content;
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+	private String instanceId;
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getContactFlowVersionId() {
-		return this.contactFlowVersionId;
-	}
-
-	public void setContactFlowVersionId(String contactFlowVersionId) {
-		this.contactFlowVersionId = contactFlowVersionId;
-		if(contactFlowVersionId != null){
-			putQueryParameter("ContactFlowVersionId", contactFlowVersionId);
-		}
-	}
+	private String contactFlowVersionId;
 
 	public Boolean getIsAppraise() {
 		return this.isAppraise;
@@ -77,6 +60,28 @@ public class CreateVoiceAppraiseRequest extends RpcAcsRequest<CreateVoiceApprais
 		this.content = content;
 		if(content != null){
 			putBodyParameter("Content", content);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getContactFlowVersionId() {
+		return this.contactFlowVersionId;
+	}
+
+	public void setContactFlowVersionId(String contactFlowVersionId) {
+		this.contactFlowVersionId = contactFlowVersionId;
+		if(contactFlowVersionId != null){
+			putQueryParameter("ContactFlowVersionId", contactFlowVersionId);
 		}
 	}
 

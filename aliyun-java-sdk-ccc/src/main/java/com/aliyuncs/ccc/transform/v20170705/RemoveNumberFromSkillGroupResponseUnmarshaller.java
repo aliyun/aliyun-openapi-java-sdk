@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveNumberFromSkillGroupResponseUnmarshaller {
 
-	public static RemoveNumberFromSkillGroupResponse unmarshall(RemoveNumberFromSkillGroupResponse removeNumberFromSkillGroupResponse, UnmarshallerContext context) {
+	public static RemoveNumberFromSkillGroupResponse unmarshall(RemoveNumberFromSkillGroupResponse removeNumberFromSkillGroupResponse, UnmarshallerContext _ctx) {
 		
-		removeNumberFromSkillGroupResponse.setRequestId(context.stringValue("RemoveNumberFromSkillGroupResponse.RequestId"));
-		removeNumberFromSkillGroupResponse.setSuccess(context.booleanValue("RemoveNumberFromSkillGroupResponse.Success"));
-		removeNumberFromSkillGroupResponse.setCode(context.stringValue("RemoveNumberFromSkillGroupResponse.Code"));
-		removeNumberFromSkillGroupResponse.setMessage(context.stringValue("RemoveNumberFromSkillGroupResponse.Message"));
-		removeNumberFromSkillGroupResponse.setHttpStatusCode(context.integerValue("RemoveNumberFromSkillGroupResponse.HttpStatusCode"));
+		removeNumberFromSkillGroupResponse.setRequestId(_ctx.stringValue("RemoveNumberFromSkillGroupResponse.RequestId"));
+		removeNumberFromSkillGroupResponse.setSuccess(_ctx.booleanValue("RemoveNumberFromSkillGroupResponse.Success"));
+		removeNumberFromSkillGroupResponse.setCode(_ctx.stringValue("RemoveNumberFromSkillGroupResponse.Code"));
+		removeNumberFromSkillGroupResponse.setMessage(_ctx.stringValue("RemoveNumberFromSkillGroupResponse.Message"));
+		removeNumberFromSkillGroupResponse.setHttpStatusCode(_ctx.integerValue("RemoveNumberFromSkillGroupResponse.HttpStatusCode"));
 	 
 	 	return removeNumberFromSkillGroupResponse;
 	}

@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetConfigResponseUnmarshaller {
 
-	public static GetConfigResponse unmarshall(GetConfigResponse getConfigResponse, UnmarshallerContext context) {
+	public static GetConfigResponse unmarshall(GetConfigResponse getConfigResponse, UnmarshallerContext _ctx) {
 		
-		getConfigResponse.setRequestId(context.stringValue("GetConfigResponse.RequestId"));
-		getConfigResponse.setSuccess(context.booleanValue("GetConfigResponse.Success"));
-		getConfigResponse.setCode(context.stringValue("GetConfigResponse.Code"));
-		getConfigResponse.setMessage(context.stringValue("GetConfigResponse.Message"));
-		getConfigResponse.setHttpStatusCode(context.integerValue("GetConfigResponse.HttpStatusCode"));
+		getConfigResponse.setRequestId(_ctx.stringValue("GetConfigResponse.RequestId"));
+		getConfigResponse.setSuccess(_ctx.booleanValue("GetConfigResponse.Success"));
+		getConfigResponse.setCode(_ctx.stringValue("GetConfigResponse.Code"));
+		getConfigResponse.setMessage(_ctx.stringValue("GetConfigResponse.Message"));
+		getConfigResponse.setHttpStatusCode(_ctx.integerValue("GetConfigResponse.HttpStatusCode"));
 
 		ConfigItem configItem = new ConfigItem();
-		configItem.setName(context.stringValue("GetConfigResponse.ConfigItem.Name"));
-		configItem.setValue(context.stringValue("GetConfigResponse.ConfigItem.Value"));
+		configItem.setName(_ctx.stringValue("GetConfigResponse.ConfigItem.Name"));
+		configItem.setValue(_ctx.stringValue("GetConfigResponse.ConfigItem.Value"));
 		getConfigResponse.setConfigItem(configItem);
 	 
 	 	return getConfigResponse;

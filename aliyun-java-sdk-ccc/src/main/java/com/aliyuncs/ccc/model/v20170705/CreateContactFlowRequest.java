@@ -16,6 +16,7 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,20 +26,24 @@ public class CreateContactFlowRequest extends RpcAcsRequest<CreateContactFlowRes
 	
 	public CreateContactFlowRequest() {
 		super("CCC", "2017-07-05", "CreateContactFlow");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String canvas;
-
-	private String instanceId;
-
-	private String name;
 
 	private String description;
 
 	private String type;
 
 	private String content;
+
+	private String instanceId;
+
+	private String name;
 
 	public String getCanvas() {
 		return this.canvas;
@@ -48,28 +53,6 @@ public class CreateContactFlowRequest extends RpcAcsRequest<CreateContactFlowRes
 		this.canvas = canvas;
 		if(canvas != null){
 			putBodyParameter("Canvas", canvas);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -103,6 +86,28 @@ public class CreateContactFlowRequest extends RpcAcsRequest<CreateContactFlowRes
 		this.content = content;
 		if(content != null){
 			putBodyParameter("Content", content);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

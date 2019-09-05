@@ -21,22 +21,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCabInstanceResponseUnmarshaller {
 
-	public static CreateCabInstanceResponse unmarshall(CreateCabInstanceResponse createCabInstanceResponse, UnmarshallerContext context) {
+	public static CreateCabInstanceResponse unmarshall(CreateCabInstanceResponse createCabInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createCabInstanceResponse.setRequestId(context.stringValue("CreateCabInstanceResponse.RequestId"));
-		createCabInstanceResponse.setSuccess(context.booleanValue("CreateCabInstanceResponse.Success"));
-		createCabInstanceResponse.setCode(context.stringValue("CreateCabInstanceResponse.Code"));
-		createCabInstanceResponse.setMessage(context.stringValue("CreateCabInstanceResponse.Message"));
-		createCabInstanceResponse.setHttpStatusCode(context.integerValue("CreateCabInstanceResponse.HttpStatusCode"));
+		createCabInstanceResponse.setRequestId(_ctx.stringValue("CreateCabInstanceResponse.RequestId"));
+		createCabInstanceResponse.setSuccess(_ctx.booleanValue("CreateCabInstanceResponse.Success"));
+		createCabInstanceResponse.setCode(_ctx.stringValue("CreateCabInstanceResponse.Code"));
+		createCabInstanceResponse.setMessage(_ctx.stringValue("CreateCabInstanceResponse.Message"));
+		createCabInstanceResponse.setHttpStatusCode(_ctx.integerValue("CreateCabInstanceResponse.HttpStatusCode"));
 
 		Instance instance = new Instance();
-		instance.setInstanceId(context.stringValue("CreateCabInstanceResponse.Instance.InstanceId"));
-		instance.setInstanceName(context.stringValue("CreateCabInstanceResponse.Instance.InstanceName"));
-		instance.setInstanceDescription(context.stringValue("CreateCabInstanceResponse.Instance.InstanceDescription"));
-		instance.setMaxConcurrentConversation(context.integerValue("CreateCabInstanceResponse.Instance.MaxConcurrentConversation"));
-		instance.setOwner(context.stringValue("CreateCabInstanceResponse.Instance.Owner"));
-		instance.setCreationTime(context.longValue("CreateCabInstanceResponse.Instance.CreationTime"));
-		instance.setCallCenterInstanceId(context.stringValue("CreateCabInstanceResponse.Instance.CallCenterInstanceId"));
+		instance.setInstanceId(_ctx.stringValue("CreateCabInstanceResponse.Instance.InstanceId"));
+		instance.setInstanceName(_ctx.stringValue("CreateCabInstanceResponse.Instance.InstanceName"));
+		instance.setInstanceDescription(_ctx.stringValue("CreateCabInstanceResponse.Instance.InstanceDescription"));
+		instance.setMaxConcurrentConversation(_ctx.integerValue("CreateCabInstanceResponse.Instance.MaxConcurrentConversation"));
+		instance.setOwner(_ctx.stringValue("CreateCabInstanceResponse.Instance.Owner"));
+		instance.setCreationTime(_ctx.longValue("CreateCabInstanceResponse.Instance.CreationTime"));
+		instance.setCallCenterInstanceId(_ctx.stringValue("CreateCabInstanceResponse.Instance.CallCenterInstanceId"));
 		createCabInstanceResponse.setInstance(instance);
 	 
 	 	return createCabInstanceResponse;

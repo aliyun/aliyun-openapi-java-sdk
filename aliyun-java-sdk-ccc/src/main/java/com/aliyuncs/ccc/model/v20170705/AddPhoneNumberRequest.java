@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,20 @@ public class AddPhoneNumberRequest extends RpcAcsRequest<AddPhoneNumberResponse>
 	
 	public AddPhoneNumberRequest() {
 		super("CCC", "2017-07-05", "AddPhoneNumber");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String contactFlowId;
 
-	private String instanceId;
-
 	private String usage;
 
 	private String phoneNumber;
+
+	private String instanceId;
 
 	public String getContactFlowId() {
 		return this.contactFlowId;
@@ -42,17 +49,6 @@ public class AddPhoneNumberRequest extends RpcAcsRequest<AddPhoneNumberResponse>
 		this.contactFlowId = contactFlowId;
 		if(contactFlowId != null){
 			putQueryParameter("ContactFlowId", contactFlowId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -75,6 +71,17 @@ public class AddPhoneNumberRequest extends RpcAcsRequest<AddPhoneNumberResponse>
 		this.phoneNumber = phoneNumber;
 		if(phoneNumber != null){
 			putQueryParameter("PhoneNumber", phoneNumber);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SaveStatsResponseUnmarshaller {
 
-	public static SaveStatsResponse unmarshall(SaveStatsResponse saveStatsResponse, UnmarshallerContext context) {
+	public static SaveStatsResponse unmarshall(SaveStatsResponse saveStatsResponse, UnmarshallerContext _ctx) {
 		
-		saveStatsResponse.setRequestId(context.stringValue("SaveStatsResponse.RequestId"));
-		saveStatsResponse.setSuccess(context.booleanValue("SaveStatsResponse.Success"));
-		saveStatsResponse.setCode(context.stringValue("SaveStatsResponse.Code"));
-		saveStatsResponse.setMessage(context.stringValue("SaveStatsResponse.Message"));
-		saveStatsResponse.setHttpStatusCode(context.integerValue("SaveStatsResponse.HttpStatusCode"));
-		saveStatsResponse.setRowCount(context.longValue("SaveStatsResponse.RowCount"));
+		saveStatsResponse.setRequestId(_ctx.stringValue("SaveStatsResponse.RequestId"));
+		saveStatsResponse.setSuccess(_ctx.booleanValue("SaveStatsResponse.Success"));
+		saveStatsResponse.setCode(_ctx.stringValue("SaveStatsResponse.Code"));
+		saveStatsResponse.setMessage(_ctx.stringValue("SaveStatsResponse.Message"));
+		saveStatsResponse.setHttpStatusCode(_ctx.integerValue("SaveStatsResponse.HttpStatusCode"));
+		saveStatsResponse.setRowCount(_ctx.longValue("SaveStatsResponse.RowCount"));
 	 
 	 	return saveStatsResponse;
 	}

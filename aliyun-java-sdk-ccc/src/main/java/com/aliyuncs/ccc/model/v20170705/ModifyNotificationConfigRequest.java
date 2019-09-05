@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,13 +27,18 @@ public class ModifyNotificationConfigRequest extends RpcAcsRequest<ModifyNotific
 	
 	public ModifyNotificationConfigRequest() {
 		super("CCC", "2017-07-05", "ModifyNotificationConfig");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private List<Subscriptions> subscriptionss;
 
-	private String instanceId;
-
 	private String accessPoint;
+
+	private String instanceId;
 
 	private String topic;
 
@@ -52,17 +59,6 @@ public class ModifyNotificationConfigRequest extends RpcAcsRequest<ModifyNotific
 		}	
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getAccessPoint() {
 		return this.accessPoint;
 	}
@@ -71,6 +67,17 @@ public class ModifyNotificationConfigRequest extends RpcAcsRequest<ModifyNotific
 		this.accessPoint = accessPoint;
 		if(accessPoint != null){
 			putQueryParameter("AccessPoint", accessPoint);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

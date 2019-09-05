@@ -29,58 +29,58 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FindUsersResponseUnmarshaller {
 
-	public static FindUsersResponse unmarshall(FindUsersResponse findUsersResponse, UnmarshallerContext context) {
+	public static FindUsersResponse unmarshall(FindUsersResponse findUsersResponse, UnmarshallerContext _ctx) {
 		
-		findUsersResponse.setRequestId(context.stringValue("FindUsersResponse.RequestId"));
-		findUsersResponse.setSuccess(context.booleanValue("FindUsersResponse.Success"));
-		findUsersResponse.setCode(context.stringValue("FindUsersResponse.Code"));
-		findUsersResponse.setMessage(context.stringValue("FindUsersResponse.Message"));
-		findUsersResponse.setHttpStatusCode(context.integerValue("FindUsersResponse.HttpStatusCode"));
+		findUsersResponse.setRequestId(_ctx.stringValue("FindUsersResponse.RequestId"));
+		findUsersResponse.setSuccess(_ctx.booleanValue("FindUsersResponse.Success"));
+		findUsersResponse.setCode(_ctx.stringValue("FindUsersResponse.Code"));
+		findUsersResponse.setMessage(_ctx.stringValue("FindUsersResponse.Message"));
+		findUsersResponse.setHttpStatusCode(_ctx.integerValue("FindUsersResponse.HttpStatusCode"));
 
 		Users users = new Users();
-		users.setTotalCount(context.integerValue("FindUsersResponse.Users.TotalCount"));
-		users.setPageNumber(context.integerValue("FindUsersResponse.Users.PageNumber"));
-		users.setPageSize(context.integerValue("FindUsersResponse.Users.PageSize"));
+		users.setTotalCount(_ctx.integerValue("FindUsersResponse.Users.TotalCount"));
+		users.setPageNumber(_ctx.integerValue("FindUsersResponse.Users.PageNumber"));
+		users.setPageSize(_ctx.integerValue("FindUsersResponse.Users.PageSize"));
 
 		List<User> list = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("FindUsersResponse.Users.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("FindUsersResponse.Users.List.Length"); i++) {
 			User user = new User();
-			user.setUserId(context.stringValue("FindUsersResponse.Users.List["+ i +"].UserId"));
-			user.setRamId(context.stringValue("FindUsersResponse.Users.List["+ i +"].RamId"));
-			user.setInstanceId(context.stringValue("FindUsersResponse.Users.List["+ i +"].InstanceId"));
-			user.setPrivateOutboundNumberId(context.stringValue("FindUsersResponse.Users.List["+ i +"].PrivateOutboundNumberId"));
+			user.setUserId(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].UserId"));
+			user.setRamId(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].RamId"));
+			user.setInstanceId(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].InstanceId"));
+			user.setPrivateOutboundNumberId(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].PrivateOutboundNumberId"));
 
 			Detail detail = new Detail();
-			detail.setLoginName(context.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.LoginName"));
-			detail.setDisplayName(context.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.DisplayName"));
-			detail.setPhone(context.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.Phone"));
-			detail.setEmail(context.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.Email"));
-			detail.setDepartment(context.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.Department"));
+			detail.setLoginName(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.LoginName"));
+			detail.setDisplayName(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.DisplayName"));
+			detail.setPhone(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.Phone"));
+			detail.setEmail(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.Email"));
+			detail.setDepartment(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].Detail.Department"));
 			user.setDetail(detail);
 
 			List<Role> roles = new ArrayList<Role>();
-			for (int j = 0; j < context.lengthValue("FindUsersResponse.Users.List["+ i +"].Roles.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("FindUsersResponse.Users.List["+ i +"].Roles.Length"); j++) {
 				Role role = new Role();
-				role.setRoleId(context.stringValue("FindUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleId"));
-				role.setInstanceId(context.stringValue("FindUsersResponse.Users.List["+ i +"].Roles["+ j +"].InstanceId"));
-				role.setRoleName(context.stringValue("FindUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleName"));
-				role.setRoleDescription(context.stringValue("FindUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleDescription"));
+				role.setRoleId(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleId"));
+				role.setInstanceId(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].Roles["+ j +"].InstanceId"));
+				role.setRoleName(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleName"));
+				role.setRoleDescription(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleDescription"));
 
 				roles.add(role);
 			}
 			user.setRoles(roles);
 
 			List<SkillLevel> skillLevels = new ArrayList<SkillLevel>();
-			for (int j = 0; j < context.lengthValue("FindUsersResponse.Users.List["+ i +"].SkillLevels.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("FindUsersResponse.Users.List["+ i +"].SkillLevels.Length"); j++) {
 				SkillLevel skillLevel = new SkillLevel();
-				skillLevel.setSkillLevelId(context.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].SkillLevelId"));
-				skillLevel.setLevel(context.integerValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Level"));
+				skillLevel.setSkillLevelId(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].SkillLevelId"));
+				skillLevel.setLevel(_ctx.integerValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Level"));
 
 				Skill skill = new Skill();
-				skill.setSkillGroupId(context.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId"));
-				skill.setInstanceId(context.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.InstanceId"));
-				skill.setSkillGroupName(context.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName"));
-				skill.setSkillGroupDescription(context.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription"));
+				skill.setSkillGroupId(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId"));
+				skill.setInstanceId(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.InstanceId"));
+				skill.setSkillGroupName(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName"));
+				skill.setSkillGroupDescription(_ctx.stringValue("FindUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription"));
 				skillLevel.setSkill(skill);
 
 				skillLevels.add(skillLevel);

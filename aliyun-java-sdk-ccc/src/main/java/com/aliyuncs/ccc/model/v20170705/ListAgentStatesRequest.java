@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,16 @@ public class ListAgentStatesRequest extends RpcAcsRequest<ListAgentStatesRespons
 	
 	public ListAgentStatesRequest() {
 		super("CCC", "2017-07-05", "ListAgentStates");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String agentIds;
+
+	private Integer pageNumber;
 
 	private String instanceId;
 
@@ -36,8 +45,6 @@ public class ListAgentStatesRequest extends RpcAcsRequest<ListAgentStatesRespons
 
 	private String state;
 
-	private Integer pageNumber;
-
 	public String getAgentIds() {
 		return this.agentIds;
 	}
@@ -46,6 +53,17 @@ public class ListAgentStatesRequest extends RpcAcsRequest<ListAgentStatesRespons
 		this.agentIds = agentIds;
 		if(agentIds != null){
 			putQueryParameter("AgentIds", agentIds);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -90,17 +108,6 @@ public class ListAgentStatesRequest extends RpcAcsRequest<ListAgentStatesRespons
 		this.state = state;
 		if(state != null){
 			putQueryParameter("State", state);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

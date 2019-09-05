@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class LaunchAppraiseResponseUnmarshaller {
 
-	public static LaunchAppraiseResponse unmarshall(LaunchAppraiseResponse launchAppraiseResponse, UnmarshallerContext context) {
+	public static LaunchAppraiseResponse unmarshall(LaunchAppraiseResponse launchAppraiseResponse, UnmarshallerContext _ctx) {
 		
-		launchAppraiseResponse.setRequestId(context.stringValue("LaunchAppraiseResponse.RequestId"));
-		launchAppraiseResponse.setSuccess(context.booleanValue("LaunchAppraiseResponse.Success"));
-		launchAppraiseResponse.setCode(context.stringValue("LaunchAppraiseResponse.Code"));
-		launchAppraiseResponse.setMessage(context.stringValue("LaunchAppraiseResponse.Message"));
-		launchAppraiseResponse.setHttpStatusCode(context.integerValue("LaunchAppraiseResponse.HttpStatusCode"));
+		launchAppraiseResponse.setRequestId(_ctx.stringValue("LaunchAppraiseResponse.RequestId"));
+		launchAppraiseResponse.setSuccess(_ctx.booleanValue("LaunchAppraiseResponse.Success"));
+		launchAppraiseResponse.setCode(_ctx.stringValue("LaunchAppraiseResponse.Code"));
+		launchAppraiseResponse.setMessage(_ctx.stringValue("LaunchAppraiseResponse.Message"));
+		launchAppraiseResponse.setHttpStatusCode(_ctx.integerValue("LaunchAppraiseResponse.HttpStatusCode"));
 	 
 	 	return launchAppraiseResponse;
 	}

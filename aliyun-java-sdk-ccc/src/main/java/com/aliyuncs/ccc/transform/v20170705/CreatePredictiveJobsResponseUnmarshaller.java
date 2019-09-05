@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreatePredictiveJobsResponseUnmarshaller {
 
-	public static CreatePredictiveJobsResponse unmarshall(CreatePredictiveJobsResponse createPredictiveJobsResponse, UnmarshallerContext context) {
+	public static CreatePredictiveJobsResponse unmarshall(CreatePredictiveJobsResponse createPredictiveJobsResponse, UnmarshallerContext _ctx) {
 		
-		createPredictiveJobsResponse.setRequestId(context.stringValue("CreatePredictiveJobsResponse.RequestId"));
-		createPredictiveJobsResponse.setSuccess(context.booleanValue("CreatePredictiveJobsResponse.Success"));
-		createPredictiveJobsResponse.setCode(context.stringValue("CreatePredictiveJobsResponse.Code"));
-		createPredictiveJobsResponse.setMessage(context.stringValue("CreatePredictiveJobsResponse.Message"));
-		createPredictiveJobsResponse.setHttpStatusCode(context.integerValue("CreatePredictiveJobsResponse.HttpStatusCode"));
-		createPredictiveJobsResponse.setJobGroupId(context.stringValue("CreatePredictiveJobsResponse.JobGroupId"));
+		createPredictiveJobsResponse.setRequestId(_ctx.stringValue("CreatePredictiveJobsResponse.RequestId"));
+		createPredictiveJobsResponse.setSuccess(_ctx.booleanValue("CreatePredictiveJobsResponse.Success"));
+		createPredictiveJobsResponse.setCode(_ctx.stringValue("CreatePredictiveJobsResponse.Code"));
+		createPredictiveJobsResponse.setMessage(_ctx.stringValue("CreatePredictiveJobsResponse.Message"));
+		createPredictiveJobsResponse.setHttpStatusCode(_ctx.integerValue("CreatePredictiveJobsResponse.HttpStatusCode"));
+		createPredictiveJobsResponse.setJobGroupId(_ctx.stringValue("CreatePredictiveJobsResponse.JobGroupId"));
 	 
 	 	return createPredictiveJobsResponse;
 	}

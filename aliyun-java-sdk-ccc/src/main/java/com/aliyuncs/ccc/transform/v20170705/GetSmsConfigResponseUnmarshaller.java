@@ -24,27 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSmsConfigResponseUnmarshaller {
 
-	public static GetSmsConfigResponse unmarshall(GetSmsConfigResponse getSmsConfigResponse, UnmarshallerContext context) {
+	public static GetSmsConfigResponse unmarshall(GetSmsConfigResponse getSmsConfigResponse, UnmarshallerContext _ctx) {
 		
-		getSmsConfigResponse.setRequestId(context.stringValue("GetSmsConfigResponse.RequestId"));
-		getSmsConfigResponse.setSuccess(context.booleanValue("GetSmsConfigResponse.Success"));
-		getSmsConfigResponse.setCode(context.stringValue("GetSmsConfigResponse.Code"));
-		getSmsConfigResponse.setMessage(context.stringValue("GetSmsConfigResponse.Message"));
-		getSmsConfigResponse.setHttpStatusCode(context.integerValue("GetSmsConfigResponse.HttpStatusCode"));
+		getSmsConfigResponse.setRequestId(_ctx.stringValue("GetSmsConfigResponse.RequestId"));
+		getSmsConfigResponse.setSuccess(_ctx.booleanValue("GetSmsConfigResponse.Success"));
+		getSmsConfigResponse.setCode(_ctx.stringValue("GetSmsConfigResponse.Code"));
+		getSmsConfigResponse.setMessage(_ctx.stringValue("GetSmsConfigResponse.Message"));
+		getSmsConfigResponse.setHttpStatusCode(_ctx.integerValue("GetSmsConfigResponse.HttpStatusCode"));
 
 		List<SmsConfig> smsConfigs = new ArrayList<SmsConfig>();
-		for (int i = 0; i < context.lengthValue("GetSmsConfigResponse.SmsConfigs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetSmsConfigResponse.SmsConfigs.Length"); i++) {
 			SmsConfig smsConfig = new SmsConfig();
-			smsConfig.setId(context.longValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Id"));
-			smsConfig.setInstance(context.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Instance"));
-			smsConfig.setSignName(context.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].SignName"));
-			smsConfig.setTemplateCode(context.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].TemplateCode"));
-			smsConfig.setScenario(context.integerValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Scenario"));
-			smsConfig.setName(context.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Name"));
-			smsConfig.setDescription(context.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Description"));
-			smsConfig.setExtra(context.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Extra"));
-			smsConfig.setGmtCreate(context.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].GmtCreate"));
-			smsConfig.setGmtModified(context.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].GmtModified"));
+			smsConfig.setId(_ctx.longValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Id"));
+			smsConfig.setInstance(_ctx.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Instance"));
+			smsConfig.setSignName(_ctx.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].SignName"));
+			smsConfig.setTemplateCode(_ctx.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].TemplateCode"));
+			smsConfig.setScenario(_ctx.integerValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Scenario"));
+			smsConfig.setName(_ctx.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Name"));
+			smsConfig.setDescription(_ctx.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Description"));
+			smsConfig.setExtra(_ctx.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].Extra"));
+			smsConfig.setGmtCreate(_ctx.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].GmtCreate"));
+			smsConfig.setGmtModified(_ctx.stringValue("GetSmsConfigResponse.SmsConfigs["+ i +"].GmtModified"));
 
 			smsConfigs.add(smsConfig);
 		}

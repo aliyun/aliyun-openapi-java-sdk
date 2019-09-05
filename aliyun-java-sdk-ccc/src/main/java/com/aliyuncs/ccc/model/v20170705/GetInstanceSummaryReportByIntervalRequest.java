@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,57 @@ public class GetInstanceSummaryReportByIntervalRequest extends RpcAcsRequest<Get
 	
 	public GetInstanceSummaryReportByIntervalRequest() {
 		super("CCC", "2017-07-05", "GetInstanceSummaryReportByInterval");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String endTime;
+
+	private String startTime;
+
+	private Integer pageNumber;
 
 	private String instanceId;
 
 	private Integer pageSize;
 
-	private String endTime;
-
 	private String interval;
 
-	private String startTime;
+	public String getEndTime() {
+		return this.endTime;
+	}
 
-	private Integer pageNumber;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -60,17 +100,6 @@ public class GetInstanceSummaryReportByIntervalRequest extends RpcAcsRequest<Get
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getInterval() {
 		return this.interval;
 	}
@@ -79,28 +108,6 @@ public class GetInstanceSummaryReportByIntervalRequest extends RpcAcsRequest<Get
 		this.interval = interval;
 		if(interval != null){
 			putQueryParameter("Interval", interval);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListCallMeasureSummaryReportsResponseUnmarshaller {
 
-	public static ListCallMeasureSummaryReportsResponse unmarshall(ListCallMeasureSummaryReportsResponse listCallMeasureSummaryReportsResponse, UnmarshallerContext context) {
+	public static ListCallMeasureSummaryReportsResponse unmarshall(ListCallMeasureSummaryReportsResponse listCallMeasureSummaryReportsResponse, UnmarshallerContext _ctx) {
 		
-		listCallMeasureSummaryReportsResponse.setRequestId(context.stringValue("ListCallMeasureSummaryReportsResponse.RequestId"));
-		listCallMeasureSummaryReportsResponse.setSuccess(context.booleanValue("ListCallMeasureSummaryReportsResponse.Success"));
-		listCallMeasureSummaryReportsResponse.setCode(context.stringValue("ListCallMeasureSummaryReportsResponse.Code"));
-		listCallMeasureSummaryReportsResponse.setMessage(context.stringValue("ListCallMeasureSummaryReportsResponse.Message"));
-		listCallMeasureSummaryReportsResponse.setHttpStatusCode(context.integerValue("ListCallMeasureSummaryReportsResponse.HttpStatusCode"));
+		listCallMeasureSummaryReportsResponse.setRequestId(_ctx.stringValue("ListCallMeasureSummaryReportsResponse.RequestId"));
+		listCallMeasureSummaryReportsResponse.setSuccess(_ctx.booleanValue("ListCallMeasureSummaryReportsResponse.Success"));
+		listCallMeasureSummaryReportsResponse.setCode(_ctx.stringValue("ListCallMeasureSummaryReportsResponse.Code"));
+		listCallMeasureSummaryReportsResponse.setMessage(_ctx.stringValue("ListCallMeasureSummaryReportsResponse.Message"));
+		listCallMeasureSummaryReportsResponse.setHttpStatusCode(_ctx.integerValue("ListCallMeasureSummaryReportsResponse.HttpStatusCode"));
 
 		List<CallMeasureSummaryReport> callMeasureSummaryReportList = new ArrayList<CallMeasureSummaryReport>();
-		for (int i = 0; i < context.lengthValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList.Length"); i++) {
 			CallMeasureSummaryReport callMeasureSummaryReport = new CallMeasureSummaryReport();
-			callMeasureSummaryReport.setYear(context.stringValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].Year"));
-			callMeasureSummaryReport.setMonth(context.stringValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].Month"));
-			callMeasureSummaryReport.setDay(context.stringValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].Day"));
-			callMeasureSummaryReport.setInboundCount(context.longValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].InboundCount"));
-			callMeasureSummaryReport.setOutboundCount(context.longValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].OutboundCount"));
-			callMeasureSummaryReport.setOutboundDurationByMinute(context.longValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].OutboundDurationByMinute"));
-			callMeasureSummaryReport.setInboundDurationByMinute(context.longValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].InboundDurationByMinute"));
+			callMeasureSummaryReport.setYear(_ctx.stringValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].Year"));
+			callMeasureSummaryReport.setMonth(_ctx.stringValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].Month"));
+			callMeasureSummaryReport.setDay(_ctx.stringValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].Day"));
+			callMeasureSummaryReport.setInboundCount(_ctx.longValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].InboundCount"));
+			callMeasureSummaryReport.setOutboundCount(_ctx.longValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].OutboundCount"));
+			callMeasureSummaryReport.setOutboundDurationByMinute(_ctx.longValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].OutboundDurationByMinute"));
+			callMeasureSummaryReport.setInboundDurationByMinute(_ctx.longValue("ListCallMeasureSummaryReportsResponse.CallMeasureSummaryReportList["+ i +"].InboundDurationByMinute"));
 
 			callMeasureSummaryReportList.add(callMeasureSummaryReport);
 		}

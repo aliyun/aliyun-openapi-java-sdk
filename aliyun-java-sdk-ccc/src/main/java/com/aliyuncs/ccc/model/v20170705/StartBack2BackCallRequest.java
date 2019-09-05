@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,39 +26,22 @@ public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallR
 	
 	public StartBack2BackCallRequest() {
 		super("CCC", "2017-07-05", "StartBack2BackCall");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String caller;
-
-	private String instanceId;
 
 	private String callCenterNumber;
 
 	private String callee;
 
+	private String caller;
+
+	private String instanceId;
+
 	private String workflowId;
-
-	public String getCaller() {
-		return this.caller;
-	}
-
-	public void setCaller(String caller) {
-		this.caller = caller;
-		if(caller != null){
-			putQueryParameter("Caller", caller);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
 
 	public String getCallCenterNumber() {
 		return this.callCenterNumber;
@@ -77,6 +62,28 @@ public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallR
 		this.callee = callee;
 		if(callee != null){
 			putQueryParameter("Callee", callee);
+		}
+	}
+
+	public String getCaller() {
+		return this.caller;
+	}
+
+	public void setCaller(String caller) {
+		this.caller = caller;
+		if(caller != null){
+			putQueryParameter("Caller", caller);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

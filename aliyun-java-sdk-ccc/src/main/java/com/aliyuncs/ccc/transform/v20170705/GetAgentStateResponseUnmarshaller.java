@@ -21,22 +21,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAgentStateResponseUnmarshaller {
 
-	public static GetAgentStateResponse unmarshall(GetAgentStateResponse getAgentStateResponse, UnmarshallerContext context) {
+	public static GetAgentStateResponse unmarshall(GetAgentStateResponse getAgentStateResponse, UnmarshallerContext _ctx) {
 		
-		getAgentStateResponse.setRequestId(context.stringValue("GetAgentStateResponse.RequestId"));
-		getAgentStateResponse.setSuccess(context.booleanValue("GetAgentStateResponse.Success"));
-		getAgentStateResponse.setCode(context.stringValue("GetAgentStateResponse.Code"));
-		getAgentStateResponse.setMessage(context.stringValue("GetAgentStateResponse.Message"));
-		getAgentStateResponse.setHttpStatusCode(context.integerValue("GetAgentStateResponse.HttpStatusCode"));
+		getAgentStateResponse.setRequestId(_ctx.stringValue("GetAgentStateResponse.RequestId"));
+		getAgentStateResponse.setSuccess(_ctx.booleanValue("GetAgentStateResponse.Success"));
+		getAgentStateResponse.setCode(_ctx.stringValue("GetAgentStateResponse.Code"));
+		getAgentStateResponse.setMessage(_ctx.stringValue("GetAgentStateResponse.Message"));
+		getAgentStateResponse.setHttpStatusCode(_ctx.integerValue("GetAgentStateResponse.HttpStatusCode"));
 
 		Data data = new Data();
-		data.setInstanceId(context.stringValue("GetAgentStateResponse.Data.InstanceId"));
-		data.setAgentId(context.stringValue("GetAgentStateResponse.Data.AgentId"));
-		data.setLoginName(context.stringValue("GetAgentStateResponse.Data.LoginName"));
-		data.setAgentName(context.stringValue("GetAgentStateResponse.Data.AgentName"));
-		data.setState(context.stringValue("GetAgentStateResponse.Data.State"));
-		data.setDn(context.stringValue("GetAgentStateResponse.Data.Dn"));
-		data.setStateDuration(context.stringValue("GetAgentStateResponse.Data.StateDuration"));
+		data.setInstanceId(_ctx.stringValue("GetAgentStateResponse.Data.InstanceId"));
+		data.setAgentId(_ctx.stringValue("GetAgentStateResponse.Data.AgentId"));
+		data.setLoginName(_ctx.stringValue("GetAgentStateResponse.Data.LoginName"));
+		data.setAgentName(_ctx.stringValue("GetAgentStateResponse.Data.AgentName"));
+		data.setState(_ctx.stringValue("GetAgentStateResponse.Data.State"));
+		data.setDn(_ctx.stringValue("GetAgentStateResponse.Data.Dn"));
+		data.setStateDuration(_ctx.stringValue("GetAgentStateResponse.Data.StateDuration"));
 		getAgentStateResponse.setData(data);
 	 
 	 	return getAgentStateResponse;

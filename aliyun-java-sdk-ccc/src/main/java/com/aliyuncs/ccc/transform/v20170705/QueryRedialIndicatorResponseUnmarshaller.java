@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryRedialIndicatorResponseUnmarshaller {
 
-	public static QueryRedialIndicatorResponse unmarshall(QueryRedialIndicatorResponse queryRedialIndicatorResponse, UnmarshallerContext context) {
+	public static QueryRedialIndicatorResponse unmarshall(QueryRedialIndicatorResponse queryRedialIndicatorResponse, UnmarshallerContext _ctx) {
 		
-		queryRedialIndicatorResponse.setRequestId(context.stringValue("QueryRedialIndicatorResponse.RequestId"));
-		queryRedialIndicatorResponse.setSuccess(context.booleanValue("QueryRedialIndicatorResponse.Success"));
-		queryRedialIndicatorResponse.setCode(context.stringValue("QueryRedialIndicatorResponse.Code"));
-		queryRedialIndicatorResponse.setMessage(context.stringValue("QueryRedialIndicatorResponse.Message"));
-		queryRedialIndicatorResponse.setHttpStatusCode(context.integerValue("QueryRedialIndicatorResponse.HttpStatusCode"));
-		queryRedialIndicatorResponse.setRedial(context.booleanValue("QueryRedialIndicatorResponse.Redial"));
+		queryRedialIndicatorResponse.setRequestId(_ctx.stringValue("QueryRedialIndicatorResponse.RequestId"));
+		queryRedialIndicatorResponse.setSuccess(_ctx.booleanValue("QueryRedialIndicatorResponse.Success"));
+		queryRedialIndicatorResponse.setCode(_ctx.stringValue("QueryRedialIndicatorResponse.Code"));
+		queryRedialIndicatorResponse.setMessage(_ctx.stringValue("QueryRedialIndicatorResponse.Message"));
+		queryRedialIndicatorResponse.setHttpStatusCode(_ctx.integerValue("QueryRedialIndicatorResponse.HttpStatusCode"));
+		queryRedialIndicatorResponse.setRedial(_ctx.booleanValue("QueryRedialIndicatorResponse.Redial"));
 	 
 	 	return queryRedialIndicatorResponse;
 	}

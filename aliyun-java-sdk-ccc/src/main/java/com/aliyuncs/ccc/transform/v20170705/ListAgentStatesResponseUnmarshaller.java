@@ -25,29 +25,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAgentStatesResponseUnmarshaller {
 
-	public static ListAgentStatesResponse unmarshall(ListAgentStatesResponse listAgentStatesResponse, UnmarshallerContext context) {
+	public static ListAgentStatesResponse unmarshall(ListAgentStatesResponse listAgentStatesResponse, UnmarshallerContext _ctx) {
 		
-		listAgentStatesResponse.setRequestId(context.stringValue("ListAgentStatesResponse.RequestId"));
-		listAgentStatesResponse.setSuccess(context.booleanValue("ListAgentStatesResponse.Success"));
-		listAgentStatesResponse.setCode(context.stringValue("ListAgentStatesResponse.Code"));
-		listAgentStatesResponse.setMessage(context.stringValue("ListAgentStatesResponse.Message"));
-		listAgentStatesResponse.setHttpStatusCode(context.integerValue("ListAgentStatesResponse.HttpStatusCode"));
+		listAgentStatesResponse.setRequestId(_ctx.stringValue("ListAgentStatesResponse.RequestId"));
+		listAgentStatesResponse.setSuccess(_ctx.booleanValue("ListAgentStatesResponse.Success"));
+		listAgentStatesResponse.setCode(_ctx.stringValue("ListAgentStatesResponse.Code"));
+		listAgentStatesResponse.setMessage(_ctx.stringValue("ListAgentStatesResponse.Message"));
+		listAgentStatesResponse.setHttpStatusCode(_ctx.integerValue("ListAgentStatesResponse.HttpStatusCode"));
 
 		Data data = new Data();
-		data.setTotalCount(context.integerValue("ListAgentStatesResponse.Data.TotalCount"));
-		data.setPageNumber(context.integerValue("ListAgentStatesResponse.Data.PageNumber"));
-		data.setPageSize(context.integerValue("ListAgentStatesResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("ListAgentStatesResponse.Data.TotalCount"));
+		data.setPageNumber(_ctx.integerValue("ListAgentStatesResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("ListAgentStatesResponse.Data.PageSize"));
 
 		List<RealTimeAgentState> list = new ArrayList<RealTimeAgentState>();
-		for (int i = 0; i < context.lengthValue("ListAgentStatesResponse.Data.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAgentStatesResponse.Data.List.Length"); i++) {
 			RealTimeAgentState realTimeAgentState = new RealTimeAgentState();
-			realTimeAgentState.setInstanceId(context.stringValue("ListAgentStatesResponse.Data.List["+ i +"].InstanceId"));
-			realTimeAgentState.setAgentId(context.stringValue("ListAgentStatesResponse.Data.List["+ i +"].AgentId"));
-			realTimeAgentState.setLoginName(context.stringValue("ListAgentStatesResponse.Data.List["+ i +"].LoginName"));
-			realTimeAgentState.setAgentName(context.stringValue("ListAgentStatesResponse.Data.List["+ i +"].AgentName"));
-			realTimeAgentState.setState(context.stringValue("ListAgentStatesResponse.Data.List["+ i +"].State"));
-			realTimeAgentState.setDn(context.stringValue("ListAgentStatesResponse.Data.List["+ i +"].Dn"));
-			realTimeAgentState.setStateDuration(context.stringValue("ListAgentStatesResponse.Data.List["+ i +"].StateDuration"));
+			realTimeAgentState.setInstanceId(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].InstanceId"));
+			realTimeAgentState.setAgentId(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].AgentId"));
+			realTimeAgentState.setLoginName(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].LoginName"));
+			realTimeAgentState.setAgentName(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].AgentName"));
+			realTimeAgentState.setState(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].State"));
+			realTimeAgentState.setDn(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].Dn"));
+			realTimeAgentState.setStateDuration(_ctx.stringValue("ListAgentStatesResponse.Data.List["+ i +"].StateDuration"));
 
 			list.add(realTimeAgentState);
 		}

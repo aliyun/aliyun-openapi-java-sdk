@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListPrivilegesOfUserResponseUnmarshaller {
 
-	public static ListPrivilegesOfUserResponse unmarshall(ListPrivilegesOfUserResponse listPrivilegesOfUserResponse, UnmarshallerContext context) {
+	public static ListPrivilegesOfUserResponse unmarshall(ListPrivilegesOfUserResponse listPrivilegesOfUserResponse, UnmarshallerContext _ctx) {
 		
-		listPrivilegesOfUserResponse.setRequestId(context.stringValue("ListPrivilegesOfUserResponse.RequestId"));
-		listPrivilegesOfUserResponse.setSuccess(context.booleanValue("ListPrivilegesOfUserResponse.Success"));
-		listPrivilegesOfUserResponse.setCode(context.stringValue("ListPrivilegesOfUserResponse.Code"));
-		listPrivilegesOfUserResponse.setMessage(context.stringValue("ListPrivilegesOfUserResponse.Message"));
-		listPrivilegesOfUserResponse.setHttpStatusCode(context.integerValue("ListPrivilegesOfUserResponse.HttpStatusCode"));
+		listPrivilegesOfUserResponse.setRequestId(_ctx.stringValue("ListPrivilegesOfUserResponse.RequestId"));
+		listPrivilegesOfUserResponse.setSuccess(_ctx.booleanValue("ListPrivilegesOfUserResponse.Success"));
+		listPrivilegesOfUserResponse.setCode(_ctx.stringValue("ListPrivilegesOfUserResponse.Code"));
+		listPrivilegesOfUserResponse.setMessage(_ctx.stringValue("ListPrivilegesOfUserResponse.Message"));
+		listPrivilegesOfUserResponse.setHttpStatusCode(_ctx.integerValue("ListPrivilegesOfUserResponse.HttpStatusCode"));
 
 		List<Privilege> privileges = new ArrayList<Privilege>();
-		for (int i = 0; i < context.lengthValue("ListPrivilegesOfUserResponse.Privileges.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListPrivilegesOfUserResponse.Privileges.Length"); i++) {
 			Privilege privilege = new Privilege();
-			privilege.setPrivilegeId(context.stringValue("ListPrivilegesOfUserResponse.Privileges["+ i +"].PrivilegeId"));
-			privilege.setPrivilegeName(context.stringValue("ListPrivilegesOfUserResponse.Privileges["+ i +"].PrivilegeName"));
-			privilege.setPrivilegeDescription(context.stringValue("ListPrivilegesOfUserResponse.Privileges["+ i +"].PrivilegeDescription"));
+			privilege.setPrivilegeId(_ctx.stringValue("ListPrivilegesOfUserResponse.Privileges["+ i +"].PrivilegeId"));
+			privilege.setPrivilegeName(_ctx.stringValue("ListPrivilegesOfUserResponse.Privileges["+ i +"].PrivilegeName"));
+			privilege.setPrivilegeDescription(_ctx.stringValue("ListPrivilegesOfUserResponse.Privileges["+ i +"].PrivilegeDescription"));
 
 			privileges.add(privilege);
 		}

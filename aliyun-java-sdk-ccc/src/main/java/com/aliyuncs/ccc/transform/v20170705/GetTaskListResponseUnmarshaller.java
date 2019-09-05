@@ -27,54 +27,54 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTaskListResponseUnmarshaller {
 
-	public static GetTaskListResponse unmarshall(GetTaskListResponse getTaskListResponse, UnmarshallerContext context) {
+	public static GetTaskListResponse unmarshall(GetTaskListResponse getTaskListResponse, UnmarshallerContext _ctx) {
 		
-		getTaskListResponse.setRequestId(context.stringValue("GetTaskListResponse.RequestId"));
-		getTaskListResponse.setSuccess(context.booleanValue("GetTaskListResponse.Success"));
-		getTaskListResponse.setCode(context.stringValue("GetTaskListResponse.Code"));
-		getTaskListResponse.setMessage(context.stringValue("GetTaskListResponse.Message"));
-		getTaskListResponse.setHttpStatusCode(context.integerValue("GetTaskListResponse.HttpStatusCode"));
+		getTaskListResponse.setRequestId(_ctx.stringValue("GetTaskListResponse.RequestId"));
+		getTaskListResponse.setSuccess(_ctx.booleanValue("GetTaskListResponse.Success"));
+		getTaskListResponse.setCode(_ctx.stringValue("GetTaskListResponse.Code"));
+		getTaskListResponse.setMessage(_ctx.stringValue("GetTaskListResponse.Message"));
+		getTaskListResponse.setHttpStatusCode(_ctx.integerValue("GetTaskListResponse.HttpStatusCode"));
 
 		List<Task> tasks = new ArrayList<Task>();
-		for (int i = 0; i < context.lengthValue("GetTaskListResponse.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetTaskListResponse.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setTaskId(context.stringValue("GetTaskListResponse.Tasks["+ i +"].TaskId"));
-			task.setJobId(context.stringValue("GetTaskListResponse.Tasks["+ i +"].JobId"));
-			task.setScenarioId(context.stringValue("GetTaskListResponse.Tasks["+ i +"].ScenarioId"));
-			task.setChatbotId(context.stringValue("GetTaskListResponse.Tasks["+ i +"].ChatbotId"));
-			task.setPlanedTime(context.longValue("GetTaskListResponse.Tasks["+ i +"].PlanedTime"));
-			task.setActualTime(context.longValue("GetTaskListResponse.Tasks["+ i +"].ActualTime"));
-			task.setCallingNumber(context.stringValue("GetTaskListResponse.Tasks["+ i +"].CallingNumber"));
-			task.setCalledNumber(context.stringValue("GetTaskListResponse.Tasks["+ i +"].CalledNumber"));
-			task.setCallId(context.stringValue("GetTaskListResponse.Tasks["+ i +"].CallId"));
-			task.setStatus(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Status"));
-			task.setBrief(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Brief"));
-			task.setDuration(context.integerValue("GetTaskListResponse.Tasks["+ i +"].Duration"));
+			task.setTaskId(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].TaskId"));
+			task.setJobId(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].JobId"));
+			task.setScenarioId(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].ScenarioId"));
+			task.setChatbotId(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].ChatbotId"));
+			task.setPlanedTime(_ctx.longValue("GetTaskListResponse.Tasks["+ i +"].PlanedTime"));
+			task.setActualTime(_ctx.longValue("GetTaskListResponse.Tasks["+ i +"].ActualTime"));
+			task.setCallingNumber(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].CallingNumber"));
+			task.setCalledNumber(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].CalledNumber"));
+			task.setCallId(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].CallId"));
+			task.setStatus(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Status"));
+			task.setBrief(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Brief"));
+			task.setDuration(_ctx.integerValue("GetTaskListResponse.Tasks["+ i +"].Duration"));
 
 			Contact contact = new Contact();
-			contact.setContactId(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.ContactId"));
-			contact.setContactName(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.ContactName"));
-			contact.setHonorific(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.Honorific"));
-			contact.setRole(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.Role"));
-			contact.setPhoneNumber(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.PhoneNumber"));
-			contact.setState(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.State"));
-			contact.setReferenceId(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.ReferenceId"));
-			contact.setJobId(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.JobId"));
+			contact.setContactId(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.ContactId"));
+			contact.setContactName(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.ContactName"));
+			contact.setHonorific(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.Honorific"));
+			contact.setRole(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.Role"));
+			contact.setPhoneNumber(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.PhoneNumber"));
+			contact.setState(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.State"));
+			contact.setReferenceId(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.ReferenceId"));
+			contact.setJobId(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Contact.JobId"));
 			task.setContact(contact);
 
 			List<ConversationDetail> conversation = new ArrayList<ConversationDetail>();
-			for (int j = 0; j < context.lengthValue("GetTaskListResponse.Tasks["+ i +"].Conversation.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetTaskListResponse.Tasks["+ i +"].Conversation.Length"); j++) {
 				ConversationDetail conversationDetail = new ConversationDetail();
-				conversationDetail.setTimestamp(context.longValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Timestamp"));
-				conversationDetail.setSpeaker(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Speaker"));
-				conversationDetail.setScript(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Script"));
+				conversationDetail.setTimestamp(_ctx.longValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Timestamp"));
+				conversationDetail.setSpeaker(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Speaker"));
+				conversationDetail.setScript(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Script"));
 
 				List<SummaryItem> summary = new ArrayList<SummaryItem>();
-				for (int k = 0; k < context.lengthValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {
 					SummaryItem summaryItem = new SummaryItem();
-					summaryItem.setCategory(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Category"));
-					summaryItem.setSummaryName(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].SummaryName"));
-					summaryItem.setContent(context.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Content"));
+					summaryItem.setCategory(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Category"));
+					summaryItem.setSummaryName(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].SummaryName"));
+					summaryItem.setContent(_ctx.stringValue("GetTaskListResponse.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Content"));
 
 					summary.add(summaryItem);
 				}

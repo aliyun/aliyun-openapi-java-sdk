@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,31 @@ public class TwoPartiesCallRequest extends RpcAcsRequest<TwoPartiesCallResponse>
 	
 	public TwoPartiesCallRequest() {
 		super("CCC", "2017-07-05", "TwoPartiesCall");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String calleeCustomer;
 
 	private String caller;
 
 	private String instanceId;
 
-	private String calleeCustomer;
-
 	private String calleeAgent;
+
+	public String getCalleeCustomer() {
+		return this.calleeCustomer;
+	}
+
+	public void setCalleeCustomer(String calleeCustomer) {
+		this.calleeCustomer = calleeCustomer;
+		if(calleeCustomer != null){
+			putQueryParameter("CalleeCustomer", calleeCustomer);
+		}
+	}
 
 	public String getCaller() {
 		return this.caller;
@@ -53,17 +71,6 @@ public class TwoPartiesCallRequest extends RpcAcsRequest<TwoPartiesCallResponse>
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getCalleeCustomer() {
-		return this.calleeCustomer;
-	}
-
-	public void setCalleeCustomer(String calleeCustomer) {
-		this.calleeCustomer = calleeCustomer;
-		if(calleeCustomer != null){
-			putQueryParameter("CalleeCustomer", calleeCustomer);
 		}
 	}
 

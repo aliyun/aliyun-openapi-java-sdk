@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,13 +27,16 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	
 	public CreateInstanceRequest() {
 		super("CCC", "2017-07-05", "CreateInstance");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private List<String> phoneNumberss;
 
 	private List<String> userObjects;
-
-	private String name;
 
 	private String domainName;
 
@@ -41,11 +46,13 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Integer storageMaxDays;
 
+	private List<String> adminRamIds;
+
+	private String name;
+
 	private Integer storageMaxSize;
 
 	private String directoryId;
-
-	private List<String> adminRamIds;
 
 	public List<String> getPhoneNumberss() {
 		return this.phoneNumberss;
@@ -71,17 +78,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 				putQueryParameter("UserObject." + (i + 1) , userObjects.get(i));
 			}
 		}	
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
 	}
 
 	public String getDomainName() {
@@ -128,6 +124,30 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public List<String> getAdminRamIds() {
+		return this.adminRamIds;
+	}
+
+	public void setAdminRamIds(List<String> adminRamIds) {
+		this.adminRamIds = adminRamIds;	
+		if (adminRamIds != null) {
+			for (int i = 0; i < adminRamIds.size(); i++) {
+				putQueryParameter("AdminRamId." + (i + 1) , adminRamIds.get(i));
+			}
+		}	
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	public Integer getStorageMaxSize() {
 		return this.storageMaxSize;
 	}
@@ -148,19 +168,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		if(directoryId != null){
 			putQueryParameter("DirectoryId", directoryId);
 		}
-	}
-
-	public List<String> getAdminRamIds() {
-		return this.adminRamIds;
-	}
-
-	public void setAdminRamIds(List<String> adminRamIds) {
-		this.adminRamIds = adminRamIds;	
-		if (adminRamIds != null) {
-			for (int i = 0; i < adminRamIds.size(); i++) {
-				putQueryParameter("AdminRamId." + (i + 1) , adminRamIds.get(i));
-			}
-		}	
 	}
 
 	@Override

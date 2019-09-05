@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,16 @@ public class ListPredictiveJobStatusRequest extends RpcAcsRequest<ListPredictive
 	
 	public ListPredictiveJobStatusRequest() {
 		super("CCC", "2017-07-05", "ListPredictiveJobStatus");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String contactName;
-
-	private String instanceId;
 
 	private String timeAlignment;
 
-	private String jobGroupId;
-
 	private String phoneNumber;
-
-	private Integer pageSize;
 
 	private Long endTime;
 
@@ -44,27 +43,13 @@ public class ListPredictiveJobStatusRequest extends RpcAcsRequest<ListPredictive
 
 	private Integer pageNumber;
 
-	public String getContactName() {
-		return this.contactName;
-	}
+	private String contactName;
 
-	public void setContactName(String contactName) {
-		this.contactName = contactName;
-		if(contactName != null){
-			putQueryParameter("ContactName", contactName);
-		}
-	}
+	private String instanceId;
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+	private String jobGroupId;
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
+	private Integer pageSize;
 
 	public String getTimeAlignment() {
 		return this.timeAlignment;
@@ -77,17 +62,6 @@ public class ListPredictiveJobStatusRequest extends RpcAcsRequest<ListPredictive
 		}
 	}
 
-	public String getJobGroupId() {
-		return this.jobGroupId;
-	}
-
-	public void setJobGroupId(String jobGroupId) {
-		this.jobGroupId = jobGroupId;
-		if(jobGroupId != null){
-			putQueryParameter("JobGroupId", jobGroupId);
-		}
-	}
-
 	public String getPhoneNumber() {
 		return this.phoneNumber;
 	}
@@ -96,17 +70,6 @@ public class ListPredictiveJobStatusRequest extends RpcAcsRequest<ListPredictive
 		this.phoneNumber = phoneNumber;
 		if(phoneNumber != null){
 			putQueryParameter("PhoneNumber", phoneNumber);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -140,6 +103,50 @@ public class ListPredictiveJobStatusRequest extends RpcAcsRequest<ListPredictive
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getContactName() {
+		return this.contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+		if(contactName != null){
+			putQueryParameter("ContactName", contactName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getJobGroupId() {
+		return this.jobGroupId;
+	}
+
+	public void setJobGroupId(String jobGroupId) {
+		this.jobGroupId = jobGroupId;
+		if(jobGroupId != null){
+			putQueryParameter("JobGroupId", jobGroupId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

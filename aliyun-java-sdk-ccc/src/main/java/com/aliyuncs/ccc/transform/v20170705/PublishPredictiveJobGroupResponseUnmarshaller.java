@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PublishPredictiveJobGroupResponseUnmarshaller {
 
-	public static PublishPredictiveJobGroupResponse unmarshall(PublishPredictiveJobGroupResponse publishPredictiveJobGroupResponse, UnmarshallerContext context) {
+	public static PublishPredictiveJobGroupResponse unmarshall(PublishPredictiveJobGroupResponse publishPredictiveJobGroupResponse, UnmarshallerContext _ctx) {
 		
-		publishPredictiveJobGroupResponse.setRequestId(context.stringValue("PublishPredictiveJobGroupResponse.RequestId"));
-		publishPredictiveJobGroupResponse.setSuccess(context.booleanValue("PublishPredictiveJobGroupResponse.Success"));
-		publishPredictiveJobGroupResponse.setCode(context.stringValue("PublishPredictiveJobGroupResponse.Code"));
-		publishPredictiveJobGroupResponse.setMessage(context.stringValue("PublishPredictiveJobGroupResponse.Message"));
-		publishPredictiveJobGroupResponse.setHttpStatusCode(context.integerValue("PublishPredictiveJobGroupResponse.HttpStatusCode"));
+		publishPredictiveJobGroupResponse.setRequestId(_ctx.stringValue("PublishPredictiveJobGroupResponse.RequestId"));
+		publishPredictiveJobGroupResponse.setSuccess(_ctx.booleanValue("PublishPredictiveJobGroupResponse.Success"));
+		publishPredictiveJobGroupResponse.setCode(_ctx.stringValue("PublishPredictiveJobGroupResponse.Code"));
+		publishPredictiveJobGroupResponse.setMessage(_ctx.stringValue("PublishPredictiveJobGroupResponse.Message"));
+		publishPredictiveJobGroupResponse.setHttpStatusCode(_ctx.integerValue("PublishPredictiveJobGroupResponse.HttpStatusCode"));
 	 
 	 	return publishPredictiveJobGroupResponse;
 	}

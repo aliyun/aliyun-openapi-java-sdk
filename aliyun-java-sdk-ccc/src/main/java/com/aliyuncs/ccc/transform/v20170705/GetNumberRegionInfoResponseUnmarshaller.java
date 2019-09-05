@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetNumberRegionInfoResponseUnmarshaller {
 
-	public static GetNumberRegionInfoResponse unmarshall(GetNumberRegionInfoResponse getNumberRegionInfoResponse, UnmarshallerContext context) {
+	public static GetNumberRegionInfoResponse unmarshall(GetNumberRegionInfoResponse getNumberRegionInfoResponse, UnmarshallerContext _ctx) {
 		
-		getNumberRegionInfoResponse.setRequestId(context.stringValue("GetNumberRegionInfoResponse.RequestId"));
-		getNumberRegionInfoResponse.setSuccess(context.booleanValue("GetNumberRegionInfoResponse.Success"));
-		getNumberRegionInfoResponse.setCode(context.stringValue("GetNumberRegionInfoResponse.Code"));
-		getNumberRegionInfoResponse.setMessage(context.stringValue("GetNumberRegionInfoResponse.Message"));
+		getNumberRegionInfoResponse.setRequestId(_ctx.stringValue("GetNumberRegionInfoResponse.RequestId"));
+		getNumberRegionInfoResponse.setSuccess(_ctx.booleanValue("GetNumberRegionInfoResponse.Success"));
+		getNumberRegionInfoResponse.setCode(_ctx.stringValue("GetNumberRegionInfoResponse.Code"));
+		getNumberRegionInfoResponse.setMessage(_ctx.stringValue("GetNumberRegionInfoResponse.Message"));
 
 		PhoneNumber phoneNumber = new PhoneNumber();
-		phoneNumber.setNumber(context.stringValue("GetNumberRegionInfoResponse.PhoneNumber.Number"));
-		phoneNumber.setProvince(context.stringValue("GetNumberRegionInfoResponse.PhoneNumber.Province"));
-		phoneNumber.setCity(context.stringValue("GetNumberRegionInfoResponse.PhoneNumber.City"));
+		phoneNumber.setNumber(_ctx.stringValue("GetNumberRegionInfoResponse.PhoneNumber.Number"));
+		phoneNumber.setProvince(_ctx.stringValue("GetNumberRegionInfoResponse.PhoneNumber.Province"));
+		phoneNumber.setCity(_ctx.stringValue("GetNumberRegionInfoResponse.PhoneNumber.City"));
 		getNumberRegionInfoResponse.setPhoneNumber(phoneNumber);
 	 
 	 	return getNumberRegionInfoResponse;

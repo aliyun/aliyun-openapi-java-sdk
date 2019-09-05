@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,17 +27,22 @@ public class PickOutboundNumbersByTagsRequest extends RpcAcsRequest<PickOutbound
 	
 	public PickOutboundNumbersByTagsRequest() {
 		super("CCC", "2017-07-05", "PickOutboundNumbersByTags");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private List<String> prioritizedCallerAreas;
+
+	private Integer count;
 
 	private String instanceId;
 
 	private List<String> serviceTags;
 
 	private List<String> skillGroupIds;
-
-	private Integer count;
 
 	private String calleeNumber;
 
@@ -50,6 +57,17 @@ public class PickOutboundNumbersByTagsRequest extends RpcAcsRequest<PickOutbound
 				putQueryParameter("PrioritizedCallerArea." + (i + 1) , prioritizedCallerAreas.get(i));
 			}
 		}	
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+		if(count != null){
+			putQueryParameter("Count", count.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -87,17 +105,6 @@ public class PickOutboundNumbersByTagsRequest extends RpcAcsRequest<PickOutbound
 				putQueryParameter("SkillGroupId." + (i + 1) , skillGroupIds.get(i));
 			}
 		}	
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-		if(count != null){
-			putQueryParameter("Count", count.toString());
-		}
 	}
 
 	public String getCalleeNumber() {

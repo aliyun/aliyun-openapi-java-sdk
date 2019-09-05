@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AssignUsersResponseUnmarshaller {
 
-	public static AssignUsersResponse unmarshall(AssignUsersResponse assignUsersResponse, UnmarshallerContext context) {
+	public static AssignUsersResponse unmarshall(AssignUsersResponse assignUsersResponse, UnmarshallerContext _ctx) {
 		
-		assignUsersResponse.setRequestId(context.stringValue("AssignUsersResponse.RequestId"));
-		assignUsersResponse.setSuccess(context.booleanValue("AssignUsersResponse.Success"));
-		assignUsersResponse.setCode(context.stringValue("AssignUsersResponse.Code"));
-		assignUsersResponse.setMessage(context.stringValue("AssignUsersResponse.Message"));
-		assignUsersResponse.setHttpStatusCode(context.integerValue("AssignUsersResponse.HttpStatusCode"));
+		assignUsersResponse.setRequestId(_ctx.stringValue("AssignUsersResponse.RequestId"));
+		assignUsersResponse.setSuccess(_ctx.booleanValue("AssignUsersResponse.Success"));
+		assignUsersResponse.setCode(_ctx.stringValue("AssignUsersResponse.Code"));
+		assignUsersResponse.setMessage(_ctx.stringValue("AssignUsersResponse.Message"));
+		assignUsersResponse.setHttpStatusCode(_ctx.integerValue("AssignUsersResponse.HttpStatusCode"));
 	 
 	 	return assignUsersResponse;
 	}

@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,53 +26,36 @@ public class ModifySurveyRequest extends RpcAcsRequest<ModifySurveyResponse> {
 	
 	public ModifySurveyRequest() {
 		super("CCC", "2017-07-05", "ModifySurvey");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String surveyId;
-
-	private String instanceId;
 
 	private String role;
 
-	private Integer round;
+	private String description;
 
 	private String flowJson;
 
-	private String name;
-
 	private String globalQuestions;
-
-	private String description;
 
 	private String corpora;
 
-	private String speechOptimizationParam;
-
 	private String scenarioId;
 
+	private String surveyId;
+
+	private String speechOptimizationParam;
+
+	private String instanceId;
+
+	private Integer round;
+
+	private String name;
+
 	private String flowId;
-
-	public String getSurveyId() {
-		return this.surveyId;
-	}
-
-	public void setSurveyId(String surveyId) {
-		this.surveyId = surveyId;
-		if(surveyId != null){
-			putQueryParameter("SurveyId", surveyId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
 
 	public String getRole() {
 		return this.role;
@@ -80,50 +65,6 @@ public class ModifySurveyRequest extends RpcAcsRequest<ModifySurveyResponse> {
 		this.role = role;
 		if(role != null){
 			putQueryParameter("Role", role);
-		}
-	}
-
-	public Integer getRound() {
-		return this.round;
-	}
-
-	public void setRound(Integer round) {
-		this.round = round;
-		if(round != null){
-			putQueryParameter("Round", round.toString());
-		}
-	}
-
-	public String getFlowJson() {
-		return this.flowJson;
-	}
-
-	public void setFlowJson(String flowJson) {
-		this.flowJson = flowJson;
-		if(flowJson != null){
-			putQueryParameter("FlowJson", flowJson);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getGlobalQuestions() {
-		return this.globalQuestions;
-	}
-
-	public void setGlobalQuestions(String globalQuestions) {
-		this.globalQuestions = globalQuestions;
-		if(globalQuestions != null){
-			putQueryParameter("GlobalQuestions", globalQuestions);
 		}
 	}
 
@@ -138,6 +79,28 @@ public class ModifySurveyRequest extends RpcAcsRequest<ModifySurveyResponse> {
 		}
 	}
 
+	public String getFlowJson() {
+		return this.flowJson;
+	}
+
+	public void setFlowJson(String flowJson) {
+		this.flowJson = flowJson;
+		if(flowJson != null){
+			putQueryParameter("FlowJson", flowJson);
+		}
+	}
+
+	public String getGlobalQuestions() {
+		return this.globalQuestions;
+	}
+
+	public void setGlobalQuestions(String globalQuestions) {
+		this.globalQuestions = globalQuestions;
+		if(globalQuestions != null){
+			putQueryParameter("GlobalQuestions", globalQuestions);
+		}
+	}
+
 	public String getCorpora() {
 		return this.corpora;
 	}
@@ -146,6 +109,28 @@ public class ModifySurveyRequest extends RpcAcsRequest<ModifySurveyResponse> {
 		this.corpora = corpora;
 		if(corpora != null){
 			putQueryParameter("Corpora", corpora);
+		}
+	}
+
+	public String getScenarioId() {
+		return this.scenarioId;
+	}
+
+	public void setScenarioId(String scenarioId) {
+		this.scenarioId = scenarioId;
+		if(scenarioId != null){
+			putQueryParameter("ScenarioId", scenarioId);
+		}
+	}
+
+	public String getSurveyId() {
+		return this.surveyId;
+	}
+
+	public void setSurveyId(String surveyId) {
+		this.surveyId = surveyId;
+		if(surveyId != null){
+			putQueryParameter("SurveyId", surveyId);
 		}
 	}
 
@@ -160,14 +145,36 @@ public class ModifySurveyRequest extends RpcAcsRequest<ModifySurveyResponse> {
 		}
 	}
 
-	public String getScenarioId() {
-		return this.scenarioId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setScenarioId(String scenarioId) {
-		this.scenarioId = scenarioId;
-		if(scenarioId != null){
-			putQueryParameter("ScenarioId", scenarioId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getRound() {
+		return this.round;
+	}
+
+	public void setRound(Integer round) {
+		this.round = round;
+		if(round != null){
+			putQueryParameter("Round", round.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

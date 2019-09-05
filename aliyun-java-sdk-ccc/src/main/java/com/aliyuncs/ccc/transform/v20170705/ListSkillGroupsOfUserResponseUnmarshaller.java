@@ -26,41 +26,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSkillGroupsOfUserResponseUnmarshaller {
 
-	public static ListSkillGroupsOfUserResponse unmarshall(ListSkillGroupsOfUserResponse listSkillGroupsOfUserResponse, UnmarshallerContext context) {
+	public static ListSkillGroupsOfUserResponse unmarshall(ListSkillGroupsOfUserResponse listSkillGroupsOfUserResponse, UnmarshallerContext _ctx) {
 		
-		listSkillGroupsOfUserResponse.setRequestId(context.stringValue("ListSkillGroupsOfUserResponse.RequestId"));
-		listSkillGroupsOfUserResponse.setSuccess(context.booleanValue("ListSkillGroupsOfUserResponse.Success"));
-		listSkillGroupsOfUserResponse.setCode(context.stringValue("ListSkillGroupsOfUserResponse.Code"));
-		listSkillGroupsOfUserResponse.setMessage(context.stringValue("ListSkillGroupsOfUserResponse.Message"));
-		listSkillGroupsOfUserResponse.setHttpStatusCode(context.integerValue("ListSkillGroupsOfUserResponse.HttpStatusCode"));
+		listSkillGroupsOfUserResponse.setRequestId(_ctx.stringValue("ListSkillGroupsOfUserResponse.RequestId"));
+		listSkillGroupsOfUserResponse.setSuccess(_ctx.booleanValue("ListSkillGroupsOfUserResponse.Success"));
+		listSkillGroupsOfUserResponse.setCode(_ctx.stringValue("ListSkillGroupsOfUserResponse.Code"));
+		listSkillGroupsOfUserResponse.setMessage(_ctx.stringValue("ListSkillGroupsOfUserResponse.Message"));
+		listSkillGroupsOfUserResponse.setHttpStatusCode(_ctx.integerValue("ListSkillGroupsOfUserResponse.HttpStatusCode"));
 
 		List<SkillLevel> skillLevels = new ArrayList<SkillLevel>();
-		for (int i = 0; i < context.lengthValue("ListSkillGroupsOfUserResponse.SkillLevels.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSkillGroupsOfUserResponse.SkillLevels.Length"); i++) {
 			SkillLevel skillLevel = new SkillLevel();
-			skillLevel.setSkillLevelId(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].SkillLevelId"));
-			skillLevel.setLevel(context.integerValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Level"));
+			skillLevel.setSkillLevelId(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].SkillLevelId"));
+			skillLevel.setLevel(_ctx.integerValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Level"));
 
 			Skill skill = new Skill();
-			skill.setSkillGroupId(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.SkillGroupId"));
-			skill.setInstanceId(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.InstanceId"));
-			skill.setSkillGroupName(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.SkillGroupName"));
-			skill.setSkillGroupDescription(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.SkillGroupDescription"));
-			skill.setRoutingStrategy(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.RoutingStrategy"));
+			skill.setSkillGroupId(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.SkillGroupId"));
+			skill.setInstanceId(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.InstanceId"));
+			skill.setSkillGroupName(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.SkillGroupName"));
+			skill.setSkillGroupDescription(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.SkillGroupDescription"));
+			skill.setRoutingStrategy(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.RoutingStrategy"));
 
 			List<PhoneNumber> outboundPhoneNumbers = new ArrayList<PhoneNumber>();
-			for (int j = 0; j < context.lengthValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers.Length"); j++) {
 				PhoneNumber phoneNumber = new PhoneNumber();
-				phoneNumber.setPhoneNumberId(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].PhoneNumberId"));
-				phoneNumber.setInstanceId(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].InstanceId"));
-				phoneNumber.setNumber(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Number"));
-				phoneNumber.setPhoneNumberDescription(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].PhoneNumberDescription"));
-				phoneNumber.setTestOnly(context.booleanValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].TestOnly"));
-				phoneNumber.setRemainingTime(context.integerValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].RemainingTime"));
-				phoneNumber.setAllowOutbound(context.booleanValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].AllowOutbound"));
-				phoneNumber.setUsage(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Usage"));
-				phoneNumber.setTrunks(context.integerValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Trunks"));
-				phoneNumber.setProvince(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Province"));
-				phoneNumber.setCity(context.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].City"));
+				phoneNumber.setPhoneNumberId(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].PhoneNumberId"));
+				phoneNumber.setInstanceId(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].InstanceId"));
+				phoneNumber.setNumber(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Number"));
+				phoneNumber.setPhoneNumberDescription(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].PhoneNumberDescription"));
+				phoneNumber.setTestOnly(_ctx.booleanValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].TestOnly"));
+				phoneNumber.setRemainingTime(_ctx.integerValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].RemainingTime"));
+				phoneNumber.setAllowOutbound(_ctx.booleanValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].AllowOutbound"));
+				phoneNumber.setUsage(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Usage"));
+				phoneNumber.setTrunks(_ctx.integerValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Trunks"));
+				phoneNumber.setProvince(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Province"));
+				phoneNumber.setCity(_ctx.stringValue("ListSkillGroupsOfUserResponse.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].City"));
 
 				outboundPhoneNumbers.add(phoneNumber);
 			}

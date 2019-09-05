@@ -26,54 +26,54 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateBatchJobsResponseUnmarshaller {
 
-	public static CreateBatchJobsResponse unmarshall(CreateBatchJobsResponse createBatchJobsResponse, UnmarshallerContext context) {
+	public static CreateBatchJobsResponse unmarshall(CreateBatchJobsResponse createBatchJobsResponse, UnmarshallerContext _ctx) {
 		
-		createBatchJobsResponse.setRequestId(context.stringValue("CreateBatchJobsResponse.RequestId"));
-		createBatchJobsResponse.setSuccess(context.booleanValue("CreateBatchJobsResponse.Success"));
-		createBatchJobsResponse.setCode(context.stringValue("CreateBatchJobsResponse.Code"));
-		createBatchJobsResponse.setMessage(context.stringValue("CreateBatchJobsResponse.Message"));
-		createBatchJobsResponse.setHttpStatusCode(context.integerValue("CreateBatchJobsResponse.HttpStatusCode"));
+		createBatchJobsResponse.setRequestId(_ctx.stringValue("CreateBatchJobsResponse.RequestId"));
+		createBatchJobsResponse.setSuccess(_ctx.booleanValue("CreateBatchJobsResponse.Success"));
+		createBatchJobsResponse.setCode(_ctx.stringValue("CreateBatchJobsResponse.Code"));
+		createBatchJobsResponse.setMessage(_ctx.stringValue("CreateBatchJobsResponse.Message"));
+		createBatchJobsResponse.setHttpStatusCode(_ctx.integerValue("CreateBatchJobsResponse.HttpStatusCode"));
 
 		JobGroup jobGroup = new JobGroup();
-		jobGroup.setJobGroupId(context.stringValue("CreateBatchJobsResponse.JobGroup.JobGroupId"));
-		jobGroup.setJobGroupName(context.stringValue("CreateBatchJobsResponse.JobGroup.JobGroupName"));
-		jobGroup.setJobGroupDescription(context.stringValue("CreateBatchJobsResponse.JobGroup.JobGroupDescription"));
-		jobGroup.setScenarioId(context.stringValue("CreateBatchJobsResponse.JobGroup.ScenarioId"));
-		jobGroup.setJobFilePath(context.stringValue("CreateBatchJobsResponse.JobGroup.JobFilePath"));
-		jobGroup.setCreationTime(context.longValue("CreateBatchJobsResponse.JobGroup.CreationTime"));
+		jobGroup.setJobGroupId(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.JobGroupId"));
+		jobGroup.setJobGroupName(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.JobGroupName"));
+		jobGroup.setJobGroupDescription(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.JobGroupDescription"));
+		jobGroup.setScenarioId(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.ScenarioId"));
+		jobGroup.setJobFilePath(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.JobFilePath"));
+		jobGroup.setCreationTime(_ctx.longValue("CreateBatchJobsResponse.JobGroup.CreationTime"));
 
 		List<String> callingNumbers = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateBatchJobsResponse.JobGroup.CallingNumbers.Length"); i++) {
-			callingNumbers.add(context.stringValue("CreateBatchJobsResponse.JobGroup.CallingNumbers["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateBatchJobsResponse.JobGroup.CallingNumbers.Length"); i++) {
+			callingNumbers.add(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.CallingNumbers["+ i +"]"));
 		}
 		jobGroup.setCallingNumbers(callingNumbers);
 
 		Strategy strategy = new Strategy();
-		strategy.setStrategyId(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.StrategyId"));
-		strategy.setStrategyName(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.StrategyName"));
-		strategy.setStrategyDescription(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.StrategyDescription"));
-		strategy.setType(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.Type"));
-		strategy.setStartTime(context.longValue("CreateBatchJobsResponse.JobGroup.Strategy.StartTime"));
-		strategy.setEndTime(context.longValue("CreateBatchJobsResponse.JobGroup.Strategy.EndTime"));
-		strategy.setRepeatBy(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.RepeatBy"));
-		strategy.setMaxAttemptsPerDay(context.integerValue("CreateBatchJobsResponse.JobGroup.Strategy.MaxAttemptsPerDay"));
-		strategy.setMinAttemptInterval(context.integerValue("CreateBatchJobsResponse.JobGroup.Strategy.MinAttemptInterval"));
-		strategy.setCustomized(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.Customized"));
-		strategy.setRoutingStrategy(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.RoutingStrategy"));
-		strategy.setFollowUpStrategy(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.FollowUpStrategy"));
-		strategy.setIsTemplate(context.booleanValue("CreateBatchJobsResponse.JobGroup.Strategy.IsTemplate"));
+		strategy.setStrategyId(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.StrategyId"));
+		strategy.setStrategyName(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.StrategyName"));
+		strategy.setStrategyDescription(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.StrategyDescription"));
+		strategy.setType(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.Type"));
+		strategy.setStartTime(_ctx.longValue("CreateBatchJobsResponse.JobGroup.Strategy.StartTime"));
+		strategy.setEndTime(_ctx.longValue("CreateBatchJobsResponse.JobGroup.Strategy.EndTime"));
+		strategy.setRepeatBy(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.RepeatBy"));
+		strategy.setMaxAttemptsPerDay(_ctx.integerValue("CreateBatchJobsResponse.JobGroup.Strategy.MaxAttemptsPerDay"));
+		strategy.setMinAttemptInterval(_ctx.integerValue("CreateBatchJobsResponse.JobGroup.Strategy.MinAttemptInterval"));
+		strategy.setCustomized(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.Customized"));
+		strategy.setRoutingStrategy(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.RoutingStrategy"));
+		strategy.setFollowUpStrategy(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.FollowUpStrategy"));
+		strategy.setIsTemplate(_ctx.booleanValue("CreateBatchJobsResponse.JobGroup.Strategy.IsTemplate"));
 
 		List<String> repeatDays = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("CreateBatchJobsResponse.JobGroup.Strategy.RepeatDays.Length"); i++) {
-			repeatDays.add(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.RepeatDays["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("CreateBatchJobsResponse.JobGroup.Strategy.RepeatDays.Length"); i++) {
+			repeatDays.add(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.RepeatDays["+ i +"]"));
 		}
 		strategy.setRepeatDays(repeatDays);
 
 		List<TimeFrame> workingTime = new ArrayList<TimeFrame>();
-		for (int i = 0; i < context.lengthValue("CreateBatchJobsResponse.JobGroup.Strategy.WorkingTime.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CreateBatchJobsResponse.JobGroup.Strategy.WorkingTime.Length"); i++) {
 			TimeFrame timeFrame = new TimeFrame();
-			timeFrame.setBeginTime(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.WorkingTime["+ i +"].BeginTime"));
-			timeFrame.setEndTime(context.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.WorkingTime["+ i +"].EndTime"));
+			timeFrame.setBeginTime(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.WorkingTime["+ i +"].BeginTime"));
+			timeFrame.setEndTime(_ctx.stringValue("CreateBatchJobsResponse.JobGroup.Strategy.WorkingTime["+ i +"].EndTime"));
 
 			workingTime.add(timeFrame);
 		}

@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DialogueResponseUnmarshaller {
 
-	public static DialogueResponse unmarshall(DialogueResponse dialogueResponse, UnmarshallerContext context) {
+	public static DialogueResponse unmarshall(DialogueResponse dialogueResponse, UnmarshallerContext _ctx) {
 		
-		dialogueResponse.setRequestId(context.stringValue("DialogueResponse.RequestId"));
-		dialogueResponse.setSuccess(context.booleanValue("DialogueResponse.Success"));
-		dialogueResponse.setCode(context.stringValue("DialogueResponse.Code"));
-		dialogueResponse.setMessage(context.stringValue("DialogueResponse.Message"));
-		dialogueResponse.setHttpStatusCode(context.integerValue("DialogueResponse.HttpStatusCode"));
+		dialogueResponse.setRequestId(_ctx.stringValue("DialogueResponse.RequestId"));
+		dialogueResponse.setSuccess(_ctx.booleanValue("DialogueResponse.Success"));
+		dialogueResponse.setCode(_ctx.stringValue("DialogueResponse.Code"));
+		dialogueResponse.setMessage(_ctx.stringValue("DialogueResponse.Message"));
+		dialogueResponse.setHttpStatusCode(_ctx.integerValue("DialogueResponse.HttpStatusCode"));
 
 		Feedback feedback = new Feedback();
-		feedback.setContent(context.stringValue("DialogueResponse.Feedback.Content"));
-		feedback.setAction(context.stringValue("DialogueResponse.Feedback.Action"));
-		feedback.setActionParams(context.stringValue("DialogueResponse.Feedback.ActionParams"));
+		feedback.setContent(_ctx.stringValue("DialogueResponse.Feedback.Content"));
+		feedback.setAction(_ctx.stringValue("DialogueResponse.Feedback.Action"));
+		feedback.setActionParams(_ctx.stringValue("DialogueResponse.Feedback.ActionParams"));
 		dialogueResponse.setFeedback(feedback);
 	 
 	 	return dialogueResponse;

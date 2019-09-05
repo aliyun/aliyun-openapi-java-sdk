@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,23 +26,28 @@ public class ListPrivacyNumberCallDetailsRequest extends RpcAcsRequest<ListPriva
 	
 	public ListPrivacyNumberCallDetailsRequest() {
 		super("CCC", "2017-07-05", "ListPrivacyNumberCallDetails");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String agentId;
 
-	private String instanceId;
-
 	private String contactId;
-
-	private String agentName;
-
-	private Integer pageSize;
 
 	private Long endTime;
 
 	private Long startTime;
 
 	private Integer pageNumber;
+
+	private String instanceId;
+
+	private String agentName;
+
+	private Integer pageSize;
 
 	public String getAgentId() {
 		return this.agentId;
@@ -53,17 +60,6 @@ public class ListPrivacyNumberCallDetailsRequest extends RpcAcsRequest<ListPriva
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getContactId() {
 		return this.contactId;
 	}
@@ -72,28 +68,6 @@ public class ListPrivacyNumberCallDetailsRequest extends RpcAcsRequest<ListPriva
 		this.contactId = contactId;
 		if(contactId != null){
 			putQueryParameter("ContactId", contactId);
-		}
-	}
-
-	public String getAgentName() {
-		return this.agentName;
-	}
-
-	public void setAgentName(String agentName) {
-		this.agentName = agentName;
-		if(agentName != null){
-			putQueryParameter("AgentName", agentName);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -127,6 +101,39 @@ public class ListPrivacyNumberCallDetailsRequest extends RpcAcsRequest<ListPriva
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAgentName() {
+		return this.agentName;
+	}
+
+	public void setAgentName(String agentName) {
+		this.agentName = agentName;
+		if(agentName != null){
+			putQueryParameter("AgentName", agentName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

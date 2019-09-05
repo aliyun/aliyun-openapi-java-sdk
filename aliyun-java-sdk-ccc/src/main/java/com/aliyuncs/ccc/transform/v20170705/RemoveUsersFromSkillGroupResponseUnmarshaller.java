@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveUsersFromSkillGroupResponseUnmarshaller {
 
-	public static RemoveUsersFromSkillGroupResponse unmarshall(RemoveUsersFromSkillGroupResponse removeUsersFromSkillGroupResponse, UnmarshallerContext context) {
+	public static RemoveUsersFromSkillGroupResponse unmarshall(RemoveUsersFromSkillGroupResponse removeUsersFromSkillGroupResponse, UnmarshallerContext _ctx) {
 		
-		removeUsersFromSkillGroupResponse.setRequestId(context.stringValue("RemoveUsersFromSkillGroupResponse.RequestId"));
-		removeUsersFromSkillGroupResponse.setSuccess(context.booleanValue("RemoveUsersFromSkillGroupResponse.Success"));
-		removeUsersFromSkillGroupResponse.setCode(context.stringValue("RemoveUsersFromSkillGroupResponse.Code"));
-		removeUsersFromSkillGroupResponse.setMessage(context.stringValue("RemoveUsersFromSkillGroupResponse.Message"));
-		removeUsersFromSkillGroupResponse.setHttpStatusCode(context.integerValue("RemoveUsersFromSkillGroupResponse.HttpStatusCode"));
+		removeUsersFromSkillGroupResponse.setRequestId(_ctx.stringValue("RemoveUsersFromSkillGroupResponse.RequestId"));
+		removeUsersFromSkillGroupResponse.setSuccess(_ctx.booleanValue("RemoveUsersFromSkillGroupResponse.Success"));
+		removeUsersFromSkillGroupResponse.setCode(_ctx.stringValue("RemoveUsersFromSkillGroupResponse.Code"));
+		removeUsersFromSkillGroupResponse.setMessage(_ctx.stringValue("RemoveUsersFromSkillGroupResponse.Message"));
+		removeUsersFromSkillGroupResponse.setHttpStatusCode(_ctx.integerValue("RemoveUsersFromSkillGroupResponse.HttpStatusCode"));
 	 
 	 	return removeUsersFromSkillGroupResponse;
 	}

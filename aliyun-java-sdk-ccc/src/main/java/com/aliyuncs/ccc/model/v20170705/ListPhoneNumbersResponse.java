@@ -111,6 +111,10 @@ public class ListPhoneNumbersResponse extends AcsResponse {
 
 		private String assignee;
 
+		private Integer numberCommodityStatus;
+
+		private String sipTelX;
+
 		private List<SkillGroup> skillGroups;
 
 		private ContactFlow contactFlow;
@@ -211,6 +215,22 @@ public class ListPhoneNumbersResponse extends AcsResponse {
 
 		public void setAssignee(String assignee) {
 			this.assignee = assignee;
+		}
+
+		public Integer getNumberCommodityStatus() {
+			return this.numberCommodityStatus;
+		}
+
+		public void setNumberCommodityStatus(Integer numberCommodityStatus) {
+			this.numberCommodityStatus = numberCommodityStatus;
+		}
+
+		public String getSipTelX() {
+			return this.sipTelX;
+		}
+
+		public void setSipTelX(String sipTelX) {
+			this.sipTelX = sipTelX;
 		}
 
 		public List<SkillGroup> getSkillGroups() {

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveUsersResponseUnmarshaller {
 
-	public static RemoveUsersResponse unmarshall(RemoveUsersResponse removeUsersResponse, UnmarshallerContext context) {
+	public static RemoveUsersResponse unmarshall(RemoveUsersResponse removeUsersResponse, UnmarshallerContext _ctx) {
 		
-		removeUsersResponse.setRequestId(context.stringValue("RemoveUsersResponse.RequestId"));
-		removeUsersResponse.setSuccess(context.booleanValue("RemoveUsersResponse.Success"));
-		removeUsersResponse.setCode(context.stringValue("RemoveUsersResponse.Code"));
-		removeUsersResponse.setMessage(context.stringValue("RemoveUsersResponse.Message"));
-		removeUsersResponse.setHttpStatusCode(context.integerValue("RemoveUsersResponse.HttpStatusCode"));
+		removeUsersResponse.setRequestId(_ctx.stringValue("RemoveUsersResponse.RequestId"));
+		removeUsersResponse.setSuccess(_ctx.booleanValue("RemoveUsersResponse.Success"));
+		removeUsersResponse.setCode(_ctx.stringValue("RemoveUsersResponse.Code"));
+		removeUsersResponse.setMessage(_ctx.stringValue("RemoveUsersResponse.Message"));
+		removeUsersResponse.setHttpStatusCode(_ctx.integerValue("RemoveUsersResponse.HttpStatusCode"));
 	 
 	 	return removeUsersResponse;
 	}

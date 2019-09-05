@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,39 +26,22 @@ public class AddAgentDeviceRequest extends RpcAcsRequest<AddAgentDeviceResponse>
 	
 	public AddAgentDeviceRequest() {
 		super("CCC", "2017-07-05", "AddAgentDevice");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String instanceId;
-
-	private String clientIp;
 
 	private String remark;
 
 	private String clientPort;
 
+	private String instanceId;
+
+	private String clientIp;
+
 	private String browserVersion;
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getClientIp() {
-		return this.clientIp;
-	}
-
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
-		if(clientIp != null){
-			putQueryParameter("ClientIp", clientIp);
-		}
-	}
 
 	public String getRemark() {
 		return this.remark;
@@ -77,6 +62,28 @@ public class AddAgentDeviceRequest extends RpcAcsRequest<AddAgentDeviceResponse>
 		this.clientPort = clientPort;
 		if(clientPort != null){
 			putQueryParameter("ClientPort", clientPort);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getClientIp() {
+		return this.clientIp;
+	}
+
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
+		if(clientIp != null){
+			putQueryParameter("ClientIp", clientIp);
 		}
 	}
 

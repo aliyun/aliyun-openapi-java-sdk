@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AssignJobsResponseUnmarshaller {
 
-	public static AssignJobsResponse unmarshall(AssignJobsResponse assignJobsResponse, UnmarshallerContext context) {
+	public static AssignJobsResponse unmarshall(AssignJobsResponse assignJobsResponse, UnmarshallerContext _ctx) {
 		
-		assignJobsResponse.setRequestId(context.stringValue("AssignJobsResponse.RequestId"));
-		assignJobsResponse.setSuccess(context.booleanValue("AssignJobsResponse.Success"));
-		assignJobsResponse.setCode(context.stringValue("AssignJobsResponse.Code"));
-		assignJobsResponse.setMessage(context.stringValue("AssignJobsResponse.Message"));
-		assignJobsResponse.setHttpStatusCode(context.integerValue("AssignJobsResponse.HttpStatusCode"));
-		assignJobsResponse.setGroupId(context.stringValue("AssignJobsResponse.GroupId"));
+		assignJobsResponse.setRequestId(_ctx.stringValue("AssignJobsResponse.RequestId"));
+		assignJobsResponse.setSuccess(_ctx.booleanValue("AssignJobsResponse.Success"));
+		assignJobsResponse.setCode(_ctx.stringValue("AssignJobsResponse.Code"));
+		assignJobsResponse.setMessage(_ctx.stringValue("AssignJobsResponse.Message"));
+		assignJobsResponse.setHttpStatusCode(_ctx.integerValue("AssignJobsResponse.HttpStatusCode"));
+		assignJobsResponse.setGroupId(_ctx.stringValue("AssignJobsResponse.GroupId"));
 	 
 	 	return assignJobsResponse;
 	}

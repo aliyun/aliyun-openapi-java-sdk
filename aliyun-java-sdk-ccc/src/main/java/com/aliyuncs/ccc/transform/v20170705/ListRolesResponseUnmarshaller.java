@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListRolesResponseUnmarshaller {
 
-	public static ListRolesResponse unmarshall(ListRolesResponse listRolesResponse, UnmarshallerContext context) {
+	public static ListRolesResponse unmarshall(ListRolesResponse listRolesResponse, UnmarshallerContext _ctx) {
 		
-		listRolesResponse.setRequestId(context.stringValue("ListRolesResponse.RequestId"));
-		listRolesResponse.setSuccess(context.booleanValue("ListRolesResponse.Success"));
-		listRolesResponse.setCode(context.stringValue("ListRolesResponse.Code"));
-		listRolesResponse.setMessage(context.stringValue("ListRolesResponse.Message"));
-		listRolesResponse.setHttpStatusCode(context.integerValue("ListRolesResponse.HttpStatusCode"));
+		listRolesResponse.setRequestId(_ctx.stringValue("ListRolesResponse.RequestId"));
+		listRolesResponse.setSuccess(_ctx.booleanValue("ListRolesResponse.Success"));
+		listRolesResponse.setCode(_ctx.stringValue("ListRolesResponse.Code"));
+		listRolesResponse.setMessage(_ctx.stringValue("ListRolesResponse.Message"));
+		listRolesResponse.setHttpStatusCode(_ctx.integerValue("ListRolesResponse.HttpStatusCode"));
 
 		List<Role> roles = new ArrayList<Role>();
-		for (int i = 0; i < context.lengthValue("ListRolesResponse.Roles.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListRolesResponse.Roles.Length"); i++) {
 			Role role = new Role();
-			role.setRoleId(context.stringValue("ListRolesResponse.Roles["+ i +"].RoleId"));
-			role.setInstanceId(context.stringValue("ListRolesResponse.Roles["+ i +"].InstanceId"));
-			role.setRoleName(context.stringValue("ListRolesResponse.Roles["+ i +"].RoleName"));
-			role.setRoleDescription(context.stringValue("ListRolesResponse.Roles["+ i +"].RoleDescription"));
+			role.setRoleId(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleId"));
+			role.setInstanceId(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].InstanceId"));
+			role.setRoleName(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleName"));
+			role.setRoleDescription(_ctx.stringValue("ListRolesResponse.Roles["+ i +"].RoleDescription"));
 
 			roles.add(role);
 		}

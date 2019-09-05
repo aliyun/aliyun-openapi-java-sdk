@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,15 +27,44 @@ public class PickGlobalOutboundNumbersRequest extends RpcAcsRequest<PickGlobalOu
 	
 	public PickGlobalOutboundNumbersRequest() {
 		super("CCC", "2017-07-05", "PickGlobalOutboundNumbers");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private Boolean isVirtual;
+
+	private Integer count;
 
 	private String instanceId;
 
 	private List<String> skillGroupIds;
 
-	private Integer count;
-
 	private String calleeNumber;
+
+	public Boolean getIsVirtual() {
+		return this.isVirtual;
+	}
+
+	public void setIsVirtual(Boolean isVirtual) {
+		this.isVirtual = isVirtual;
+		if(isVirtual != null){
+			putQueryParameter("IsVirtual", isVirtual.toString());
+		}
+	}
+
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+		if(count != null){
+			putQueryParameter("Count", count.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -57,17 +88,6 @@ public class PickGlobalOutboundNumbersRequest extends RpcAcsRequest<PickGlobalOu
 				putQueryParameter("SkillGroupId." + (i + 1) , skillGroupIds.get(i));
 			}
 		}	
-	}
-
-	public Integer getCount() {
-		return this.count;
-	}
-
-	public void setCount(Integer count) {
-		this.count = count;
-		if(count != null){
-			putQueryParameter("Count", count.toString());
-		}
 	}
 
 	public String getCalleeNumber() {

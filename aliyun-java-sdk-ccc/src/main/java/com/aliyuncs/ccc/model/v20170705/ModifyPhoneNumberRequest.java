@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,15 +27,20 @@ public class ModifyPhoneNumberRequest extends RpcAcsRequest<ModifyPhoneNumberRes
 	
 	public ModifyPhoneNumberRequest() {
 		super("CCC", "2017-07-05", "ModifyPhoneNumber");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String contactFlowId;
 
+	private String usage;
+
 	private String instanceId;
 
 	private String phoneNumberId;
-
-	private String usage;
 
 	private List<String> skillGroupIds;
 
@@ -45,6 +52,17 @@ public class ModifyPhoneNumberRequest extends RpcAcsRequest<ModifyPhoneNumberRes
 		this.contactFlowId = contactFlowId;
 		if(contactFlowId != null){
 			putQueryParameter("ContactFlowId", contactFlowId);
+		}
+	}
+
+	public String getUsage() {
+		return this.usage;
+	}
+
+	public void setUsage(String usage) {
+		this.usage = usage;
+		if(usage != null){
+			putQueryParameter("Usage", usage);
 		}
 	}
 
@@ -67,17 +85,6 @@ public class ModifyPhoneNumberRequest extends RpcAcsRequest<ModifyPhoneNumberRes
 		this.phoneNumberId = phoneNumberId;
 		if(phoneNumberId != null){
 			putQueryParameter("PhoneNumberId", phoneNumberId);
-		}
-	}
-
-	public String getUsage() {
-		return this.usage;
-	}
-
-	public void setUsage(String usage) {
-		this.usage = usage;
-		if(usage != null){
-			putQueryParameter("Usage", usage);
 		}
 	}
 

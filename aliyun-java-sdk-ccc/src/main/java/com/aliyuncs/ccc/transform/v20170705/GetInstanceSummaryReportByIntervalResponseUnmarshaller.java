@@ -28,82 +28,82 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceSummaryReportByIntervalResponseUnmarshaller {
 
-	public static GetInstanceSummaryReportByIntervalResponse unmarshall(GetInstanceSummaryReportByIntervalResponse getInstanceSummaryReportByIntervalResponse, UnmarshallerContext context) {
+	public static GetInstanceSummaryReportByIntervalResponse unmarshall(GetInstanceSummaryReportByIntervalResponse getInstanceSummaryReportByIntervalResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceSummaryReportByIntervalResponse.setRequestId(context.stringValue("GetInstanceSummaryReportByIntervalResponse.RequestId"));
-		getInstanceSummaryReportByIntervalResponse.setSuccess(context.booleanValue("GetInstanceSummaryReportByIntervalResponse.Success"));
-		getInstanceSummaryReportByIntervalResponse.setCode(context.stringValue("GetInstanceSummaryReportByIntervalResponse.Code"));
-		getInstanceSummaryReportByIntervalResponse.setMessage(context.stringValue("GetInstanceSummaryReportByIntervalResponse.Message"));
-		getInstanceSummaryReportByIntervalResponse.setHttpStatusCode(context.integerValue("GetInstanceSummaryReportByIntervalResponse.HttpStatusCode"));
+		getInstanceSummaryReportByIntervalResponse.setRequestId(_ctx.stringValue("GetInstanceSummaryReportByIntervalResponse.RequestId"));
+		getInstanceSummaryReportByIntervalResponse.setSuccess(_ctx.booleanValue("GetInstanceSummaryReportByIntervalResponse.Success"));
+		getInstanceSummaryReportByIntervalResponse.setCode(_ctx.stringValue("GetInstanceSummaryReportByIntervalResponse.Code"));
+		getInstanceSummaryReportByIntervalResponse.setMessage(_ctx.stringValue("GetInstanceSummaryReportByIntervalResponse.Message"));
+		getInstanceSummaryReportByIntervalResponse.setHttpStatusCode(_ctx.integerValue("GetInstanceSummaryReportByIntervalResponse.HttpStatusCode"));
 
 		InstanceTimeIntervalReport instanceTimeIntervalReport = new InstanceTimeIntervalReport();
-		instanceTimeIntervalReport.setInstanceId(context.stringValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.InstanceId"));
+		instanceTimeIntervalReport.setInstanceId(_ctx.stringValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.InstanceId"));
 
 		List<InstanceSummaryReport> intervalList = new ArrayList<InstanceSummaryReport>();
-		for (int i = 0; i < context.lengthValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList.Length"); i++) {
 			InstanceSummaryReport instanceSummaryReport = new InstanceSummaryReport();
-			instanceSummaryReport.setTimestamp(context.stringValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Timestamp"));
-			instanceSummaryReport.setInstanceId(context.stringValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].InstanceId"));
+			instanceSummaryReport.setTimestamp(_ctx.stringValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Timestamp"));
+			instanceSummaryReport.setInstanceId(_ctx.stringValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].InstanceId"));
 
 			Overall overall = new Overall();
-			overall.setTotalCalls(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalCalls"));
-			overall.setTotalLoggedInTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalLoggedInTime"));
-			overall.setTotalBreakTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalBreakTime"));
-			overall.setOccupancyRate(context.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.OccupancyRate"));
-			overall.setTotalReadyTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalReadyTime"));
-			overall.setMaxReadyTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.MaxReadyTime"));
-			overall.setAverageReadyTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.AverageReadyTime"));
-			overall.setTotalTalkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalTalkTime"));
-			overall.setMaxTalkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.MaxTalkTime"));
-			overall.setAverageTalkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.AverageTalkTime"));
-			overall.setTotalWorkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalWorkTime"));
-			overall.setMaxWorkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.MaxWorkTime"));
-			overall.setAverageWorkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.AverageWorkTime"));
-			overall.setSatisfactionIndex(context.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.SatisfactionIndex"));
-			overall.setSatisfactionSurveysOffered(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.SatisfactionSurveysOffered"));
-			overall.setSatisfactionSurveysResponded(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.SatisfactionSurveysResponded"));
+			overall.setTotalCalls(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalCalls"));
+			overall.setTotalLoggedInTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalLoggedInTime"));
+			overall.setTotalBreakTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalBreakTime"));
+			overall.setOccupancyRate(_ctx.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.OccupancyRate"));
+			overall.setTotalReadyTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalReadyTime"));
+			overall.setMaxReadyTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.MaxReadyTime"));
+			overall.setAverageReadyTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.AverageReadyTime"));
+			overall.setTotalTalkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalTalkTime"));
+			overall.setMaxTalkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.MaxTalkTime"));
+			overall.setAverageTalkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.AverageTalkTime"));
+			overall.setTotalWorkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.TotalWorkTime"));
+			overall.setMaxWorkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.MaxWorkTime"));
+			overall.setAverageWorkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.AverageWorkTime"));
+			overall.setSatisfactionIndex(_ctx.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.SatisfactionIndex"));
+			overall.setSatisfactionSurveysOffered(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.SatisfactionSurveysOffered"));
+			overall.setSatisfactionSurveysResponded(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Overall.SatisfactionSurveysResponded"));
 			instanceSummaryReport.setOverall(overall);
 
 			Inbound inbound = new Inbound();
-			inbound.setCallsIncomingLine(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsIncomingLine"));
-			inbound.setCallsIncomingIVR(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsIncomingIVR"));
-			inbound.setCallsAbandonedInIVR(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsAbandonedInIVR"));
-			inbound.setCallsIncomingQueue(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsIncomingQueue"));
-			inbound.setCallsAbandonedInQueue(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsAbandonedInQueue"));
-			inbound.setCallsOffered(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsOffered"));
-			inbound.setCallsHandled(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsHandled"));
-			inbound.setHandleRate(context.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.HandleRate"));
-			inbound.setTotalRingTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.TotalRingTime"));
-			inbound.setMaxRingTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.MaxRingTime"));
-			inbound.setAverageRingTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.AverageRingTime"));
-			inbound.setServiceLevel20(context.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.ServiceLevel20"));
-			inbound.setTotalTalkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.TotalTalkTime"));
-			inbound.setMaxTalkTime(context.stringValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.MaxTalkTime"));
-			inbound.setAverageTalkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.AverageTalkTime"));
-			inbound.setTotalWorkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.TotalWorkTime"));
-			inbound.setMaxWorkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.MaxWorkTime"));
-			inbound.setAverageWorkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.AverageWorkTime"));
-			inbound.setSatisfactionIndex(context.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.SatisfactionIndex"));
-			inbound.setSatisfactionSurveysOffered(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.SatisfactionSurveysOffered"));
-			inbound.setSatisfactionSurveysResponded(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.SatisfactionSurveysResponded"));
+			inbound.setCallsIncomingLine(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsIncomingLine"));
+			inbound.setCallsIncomingIVR(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsIncomingIVR"));
+			inbound.setCallsAbandonedInIVR(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsAbandonedInIVR"));
+			inbound.setCallsIncomingQueue(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsIncomingQueue"));
+			inbound.setCallsAbandonedInQueue(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsAbandonedInQueue"));
+			inbound.setCallsOffered(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsOffered"));
+			inbound.setCallsHandled(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.CallsHandled"));
+			inbound.setHandleRate(_ctx.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.HandleRate"));
+			inbound.setTotalRingTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.TotalRingTime"));
+			inbound.setMaxRingTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.MaxRingTime"));
+			inbound.setAverageRingTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.AverageRingTime"));
+			inbound.setServiceLevel20(_ctx.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.ServiceLevel20"));
+			inbound.setTotalTalkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.TotalTalkTime"));
+			inbound.setMaxTalkTime(_ctx.stringValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.MaxTalkTime"));
+			inbound.setAverageTalkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.AverageTalkTime"));
+			inbound.setTotalWorkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.TotalWorkTime"));
+			inbound.setMaxWorkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.MaxWorkTime"));
+			inbound.setAverageWorkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.AverageWorkTime"));
+			inbound.setSatisfactionIndex(_ctx.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.SatisfactionIndex"));
+			inbound.setSatisfactionSurveysOffered(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.SatisfactionSurveysOffered"));
+			inbound.setSatisfactionSurveysResponded(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.SatisfactionSurveysResponded"));
 			instanceSummaryReport.setInbound(inbound);
 
 			Outbound outbound = new Outbound();
-			outbound.setCallsDialed(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.CallsDialed"));
-			outbound.setCallsAnswered(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.CallsAnswered"));
-			outbound.setAnswerRate(context.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.AnswerRate"));
-			outbound.setTotalDialingTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.TotalDialingTime"));
-			outbound.setMaxDialingTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.MaxDialingTime"));
-			outbound.setAverageDialingTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.AverageDialingTime"));
-			outbound.setTotalTalkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.TotalTalkTime"));
-			outbound.setMaxTalkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.MaxTalkTime"));
-			outbound.setAverageTalkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.AverageTalkTime"));
-			outbound.setTotalWorkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.TotalWorkTime"));
-			outbound.setMaxWorkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.MaxWorkTime"));
-			outbound.setAverageWorkTime(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.AverageWorkTime"));
-			outbound.setSatisfactionIndex(context.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.SatisfactionIndex"));
-			outbound.setSatisfactionSurveysOffered(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.SatisfactionSurveysOffered"));
-			outbound.setSatisfactionSurveysResponded(context.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.SatisfactionSurveysResponded"));
+			outbound.setCallsDialed(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.CallsDialed"));
+			outbound.setCallsAnswered(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.CallsAnswered"));
+			outbound.setAnswerRate(_ctx.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.AnswerRate"));
+			outbound.setTotalDialingTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.TotalDialingTime"));
+			outbound.setMaxDialingTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.MaxDialingTime"));
+			outbound.setAverageDialingTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.AverageDialingTime"));
+			outbound.setTotalTalkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.TotalTalkTime"));
+			outbound.setMaxTalkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.MaxTalkTime"));
+			outbound.setAverageTalkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.AverageTalkTime"));
+			outbound.setTotalWorkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.TotalWorkTime"));
+			outbound.setMaxWorkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.MaxWorkTime"));
+			outbound.setAverageWorkTime(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.AverageWorkTime"));
+			outbound.setSatisfactionIndex(_ctx.floatValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.SatisfactionIndex"));
+			outbound.setSatisfactionSurveysOffered(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.SatisfactionSurveysOffered"));
+			outbound.setSatisfactionSurveysResponded(_ctx.longValue("GetInstanceSummaryReportByIntervalResponse.InstanceTimeIntervalReport.IntervalList["+ i +"].Outbound.SatisfactionSurveysResponded"));
 			instanceSummaryReport.setOutbound(outbound);
 
 			intervalList.add(instanceSummaryReport);

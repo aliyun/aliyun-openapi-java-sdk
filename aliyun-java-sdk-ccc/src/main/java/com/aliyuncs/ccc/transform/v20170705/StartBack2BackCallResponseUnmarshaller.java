@@ -20,17 +20,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StartBack2BackCallResponseUnmarshaller {
 
-	public static StartBack2BackCallResponse unmarshall(StartBack2BackCallResponse startBack2BackCallResponse, UnmarshallerContext context) {
+	public static StartBack2BackCallResponse unmarshall(StartBack2BackCallResponse startBack2BackCallResponse, UnmarshallerContext _ctx) {
 		
-		startBack2BackCallResponse.setRequestId(context.stringValue("StartBack2BackCallResponse.RequestId"));
-		startBack2BackCallResponse.setSuccess(context.booleanValue("StartBack2BackCallResponse.Success"));
-		startBack2BackCallResponse.setCode(context.stringValue("StartBack2BackCallResponse.Code"));
-		startBack2BackCallResponse.setMessage(context.stringValue("StartBack2BackCallResponse.Message"));
-		startBack2BackCallResponse.setHttpStatusCode(context.integerValue("StartBack2BackCallResponse.HttpStatusCode"));
-		startBack2BackCallResponse.setStatusCode(context.stringValue("StartBack2BackCallResponse.StatusCode"));
-		startBack2BackCallResponse.setStatusDesc(context.stringValue("StartBack2BackCallResponse.StatusDesc"));
-		startBack2BackCallResponse.setTaskId(context.stringValue("StartBack2BackCallResponse.TaskId"));
-		startBack2BackCallResponse.setTimeStamp(context.stringValue("StartBack2BackCallResponse.TimeStamp"));
+		startBack2BackCallResponse.setRequestId(_ctx.stringValue("StartBack2BackCallResponse.RequestId"));
+		startBack2BackCallResponse.setSuccess(_ctx.booleanValue("StartBack2BackCallResponse.Success"));
+		startBack2BackCallResponse.setCode(_ctx.stringValue("StartBack2BackCallResponse.Code"));
+		startBack2BackCallResponse.setMessage(_ctx.stringValue("StartBack2BackCallResponse.Message"));
+		startBack2BackCallResponse.setHttpStatusCode(_ctx.integerValue("StartBack2BackCallResponse.HttpStatusCode"));
+		startBack2BackCallResponse.setStatusCode(_ctx.stringValue("StartBack2BackCallResponse.StatusCode"));
+		startBack2BackCallResponse.setStatusDesc(_ctx.stringValue("StartBack2BackCallResponse.StatusDesc"));
+		startBack2BackCallResponse.setTaskId(_ctx.stringValue("StartBack2BackCallResponse.TaskId"));
+		startBack2BackCallResponse.setTimeStamp(_ctx.stringValue("StartBack2BackCallResponse.TimeStamp"));
 	 
 	 	return startBack2BackCallResponse;
 	}

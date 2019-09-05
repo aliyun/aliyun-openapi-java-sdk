@@ -25,27 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetConversationListResponseUnmarshaller {
 
-	public static GetConversationListResponse unmarshall(GetConversationListResponse getConversationListResponse, UnmarshallerContext context) {
+	public static GetConversationListResponse unmarshall(GetConversationListResponse getConversationListResponse, UnmarshallerContext _ctx) {
 		
-		getConversationListResponse.setRequestId(context.stringValue("GetConversationListResponse.RequestId"));
-		getConversationListResponse.setSuccess(context.booleanValue("GetConversationListResponse.Success"));
-		getConversationListResponse.setCode(context.stringValue("GetConversationListResponse.Code"));
-		getConversationListResponse.setMessage(context.stringValue("GetConversationListResponse.Message"));
-		getConversationListResponse.setHttpStatusCode(context.integerValue("GetConversationListResponse.HttpStatusCode"));
+		getConversationListResponse.setRequestId(_ctx.stringValue("GetConversationListResponse.RequestId"));
+		getConversationListResponse.setSuccess(_ctx.booleanValue("GetConversationListResponse.Success"));
+		getConversationListResponse.setCode(_ctx.stringValue("GetConversationListResponse.Code"));
+		getConversationListResponse.setMessage(_ctx.stringValue("GetConversationListResponse.Message"));
+		getConversationListResponse.setHttpStatusCode(_ctx.integerValue("GetConversationListResponse.HttpStatusCode"));
 
 		List<ConversationDetail> conversations = new ArrayList<ConversationDetail>();
-		for (int i = 0; i < context.lengthValue("GetConversationListResponse.Conversations.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetConversationListResponse.Conversations.Length"); i++) {
 			ConversationDetail conversationDetail = new ConversationDetail();
-			conversationDetail.setTimestamp(context.longValue("GetConversationListResponse.Conversations["+ i +"].Timestamp"));
-			conversationDetail.setSpeaker(context.stringValue("GetConversationListResponse.Conversations["+ i +"].Speaker"));
-			conversationDetail.setScript(context.stringValue("GetConversationListResponse.Conversations["+ i +"].Script"));
+			conversationDetail.setTimestamp(_ctx.longValue("GetConversationListResponse.Conversations["+ i +"].Timestamp"));
+			conversationDetail.setSpeaker(_ctx.stringValue("GetConversationListResponse.Conversations["+ i +"].Speaker"));
+			conversationDetail.setScript(_ctx.stringValue("GetConversationListResponse.Conversations["+ i +"].Script"));
 
 			List<SummaryItem> summary = new ArrayList<SummaryItem>();
-			for (int j = 0; j < context.lengthValue("GetConversationListResponse.Conversations["+ i +"].Summary.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetConversationListResponse.Conversations["+ i +"].Summary.Length"); j++) {
 				SummaryItem summaryItem = new SummaryItem();
-				summaryItem.setCategory(context.stringValue("GetConversationListResponse.Conversations["+ i +"].Summary["+ j +"].Category"));
-				summaryItem.setSummaryName(context.stringValue("GetConversationListResponse.Conversations["+ i +"].Summary["+ j +"].SummaryName"));
-				summaryItem.setContent(context.stringValue("GetConversationListResponse.Conversations["+ i +"].Summary["+ j +"].Content"));
+				summaryItem.setCategory(_ctx.stringValue("GetConversationListResponse.Conversations["+ i +"].Summary["+ j +"].Category"));
+				summaryItem.setSummaryName(_ctx.stringValue("GetConversationListResponse.Conversations["+ i +"].Summary["+ j +"].SummaryName"));
+				summaryItem.setContent(_ctx.stringValue("GetConversationListResponse.Conversations["+ i +"].Summary["+ j +"].Content"));
 
 				summary.add(summaryItem);
 			}

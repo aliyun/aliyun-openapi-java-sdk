@@ -26,35 +26,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListRealTimeAgentResponseUnmarshaller {
 
-	public static ListRealTimeAgentResponse unmarshall(ListRealTimeAgentResponse listRealTimeAgentResponse, UnmarshallerContext context) {
+	public static ListRealTimeAgentResponse unmarshall(ListRealTimeAgentResponse listRealTimeAgentResponse, UnmarshallerContext _ctx) {
 		
-		listRealTimeAgentResponse.setRequestId(context.stringValue("ListRealTimeAgentResponse.RequestId"));
-		listRealTimeAgentResponse.setSuccess(context.booleanValue("ListRealTimeAgentResponse.Success"));
-		listRealTimeAgentResponse.setCode(context.stringValue("ListRealTimeAgentResponse.Code"));
-		listRealTimeAgentResponse.setMessage(context.stringValue("ListRealTimeAgentResponse.Message"));
-		listRealTimeAgentResponse.setHttpStatusCode(context.integerValue("ListRealTimeAgentResponse.HttpStatusCode"));
+		listRealTimeAgentResponse.setRequestId(_ctx.stringValue("ListRealTimeAgentResponse.RequestId"));
+		listRealTimeAgentResponse.setSuccess(_ctx.booleanValue("ListRealTimeAgentResponse.Success"));
+		listRealTimeAgentResponse.setCode(_ctx.stringValue("ListRealTimeAgentResponse.Code"));
+		listRealTimeAgentResponse.setMessage(_ctx.stringValue("ListRealTimeAgentResponse.Message"));
+		listRealTimeAgentResponse.setHttpStatusCode(_ctx.integerValue("ListRealTimeAgentResponse.HttpStatusCode"));
 
 		List<User> data = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("ListRealTimeAgentResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListRealTimeAgentResponse.Data.Length"); i++) {
 			User user = new User();
-			user.setRamId(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].RamId"));
-			user.setDisplayName(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].DisplayName"));
-			user.setPhone(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].Phone"));
-			user.setDn(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].Dn"));
-			user.setState(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].State"));
-			user.setStateDesc(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].StateDesc"));
+			user.setRamId(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].RamId"));
+			user.setDisplayName(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].DisplayName"));
+			user.setPhone(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].Phone"));
+			user.setDn(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].Dn"));
+			user.setState(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].State"));
+			user.setStateDesc(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].StateDesc"));
 
 			List<SkillLevel> skillLevels = new ArrayList<SkillLevel>();
-			for (int j = 0; j < context.lengthValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels.Length"); j++) {
 				SkillLevel skillLevel = new SkillLevel();
-				skillLevel.setSkillLevelId(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].SkillLevelId"));
-				skillLevel.setLevel(context.integerValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Level"));
+				skillLevel.setSkillLevelId(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].SkillLevelId"));
+				skillLevel.setLevel(_ctx.integerValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Level"));
 
 				Skill skill = new Skill();
-				skill.setSkillGroupId(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId"));
-				skill.setInstanceId(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Skill.InstanceId"));
-				skill.setSkillGroupName(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName"));
-				skill.setSkillGroupDescription(context.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription"));
+				skill.setSkillGroupId(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId"));
+				skill.setInstanceId(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Skill.InstanceId"));
+				skill.setSkillGroupName(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName"));
+				skill.setSkillGroupDescription(_ctx.stringValue("ListRealTimeAgentResponse.Data["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription"));
 				skillLevel.setSkill(skill);
 
 				skillLevels.add(skillLevel);

@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DownloadCabRecordingResponseUnmarshaller {
 
-	public static DownloadCabRecordingResponse unmarshall(DownloadCabRecordingResponse downloadCabRecordingResponse, UnmarshallerContext context) {
+	public static DownloadCabRecordingResponse unmarshall(DownloadCabRecordingResponse downloadCabRecordingResponse, UnmarshallerContext _ctx) {
 		
-		downloadCabRecordingResponse.setRequestId(context.stringValue("DownloadCabRecordingResponse.RequestId"));
-		downloadCabRecordingResponse.setSuccess(context.booleanValue("DownloadCabRecordingResponse.Success"));
-		downloadCabRecordingResponse.setCode(context.stringValue("DownloadCabRecordingResponse.Code"));
-		downloadCabRecordingResponse.setMessage(context.stringValue("DownloadCabRecordingResponse.Message"));
-		downloadCabRecordingResponse.setHttpStatusCode(context.integerValue("DownloadCabRecordingResponse.HttpStatusCode"));
+		downloadCabRecordingResponse.setRequestId(_ctx.stringValue("DownloadCabRecordingResponse.RequestId"));
+		downloadCabRecordingResponse.setSuccess(_ctx.booleanValue("DownloadCabRecordingResponse.Success"));
+		downloadCabRecordingResponse.setCode(_ctx.stringValue("DownloadCabRecordingResponse.Code"));
+		downloadCabRecordingResponse.setMessage(_ctx.stringValue("DownloadCabRecordingResponse.Message"));
+		downloadCabRecordingResponse.setHttpStatusCode(_ctx.integerValue("DownloadCabRecordingResponse.HttpStatusCode"));
 
 		MediaDownloadParam mediaDownloadParam = new MediaDownloadParam();
-		mediaDownloadParam.setSignatureUrl(context.stringValue("DownloadCabRecordingResponse.MediaDownloadParam.SignatureUrl"));
-		mediaDownloadParam.setFileName(context.stringValue("DownloadCabRecordingResponse.MediaDownloadParam.FileName"));
+		mediaDownloadParam.setSignatureUrl(_ctx.stringValue("DownloadCabRecordingResponse.MediaDownloadParam.SignatureUrl"));
+		mediaDownloadParam.setFileName(_ctx.stringValue("DownloadCabRecordingResponse.MediaDownloadParam.FileName"));
 		downloadCabRecordingResponse.setMediaDownloadParam(mediaDownloadParam);
 	 
 	 	return downloadCabRecordingResponse;

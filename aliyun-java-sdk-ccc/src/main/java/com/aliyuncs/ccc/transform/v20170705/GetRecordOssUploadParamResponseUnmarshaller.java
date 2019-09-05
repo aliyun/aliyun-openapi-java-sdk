@@ -20,20 +20,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetRecordOssUploadParamResponseUnmarshaller {
 
-	public static GetRecordOssUploadParamResponse unmarshall(GetRecordOssUploadParamResponse getRecordOssUploadParamResponse, UnmarshallerContext context) {
+	public static GetRecordOssUploadParamResponse unmarshall(GetRecordOssUploadParamResponse getRecordOssUploadParamResponse, UnmarshallerContext _ctx) {
 		
-		getRecordOssUploadParamResponse.setRequestId(context.stringValue("GetRecordOssUploadParamResponse.RequestId"));
-		getRecordOssUploadParamResponse.setSuccess(context.booleanValue("GetRecordOssUploadParamResponse.Success"));
-		getRecordOssUploadParamResponse.setCode(context.stringValue("GetRecordOssUploadParamResponse.Code"));
-		getRecordOssUploadParamResponse.setMessage(context.stringValue("GetRecordOssUploadParamResponse.Message"));
-		getRecordOssUploadParamResponse.setHttpStatusCode(context.integerValue("GetRecordOssUploadParamResponse.HttpStatusCode"));
-		getRecordOssUploadParamResponse.setOssAccessKeyId(context.stringValue("GetRecordOssUploadParamResponse.OssAccessKeyId"));
-		getRecordOssUploadParamResponse.setPolicy(context.stringValue("GetRecordOssUploadParamResponse.Policy"));
-		getRecordOssUploadParamResponse.setSignature(context.stringValue("GetRecordOssUploadParamResponse.Signature"));
-		getRecordOssUploadParamResponse.setExpires(context.stringValue("GetRecordOssUploadParamResponse.Expires"));
-		getRecordOssUploadParamResponse.setDir(context.stringValue("GetRecordOssUploadParamResponse.Dir"));
-		getRecordOssUploadParamResponse.setHost(context.stringValue("GetRecordOssUploadParamResponse.Host"));
-		getRecordOssUploadParamResponse.setOssFileName(context.stringValue("GetRecordOssUploadParamResponse.OssFileName"));
+		getRecordOssUploadParamResponse.setRequestId(_ctx.stringValue("GetRecordOssUploadParamResponse.RequestId"));
+		getRecordOssUploadParamResponse.setSuccess(_ctx.booleanValue("GetRecordOssUploadParamResponse.Success"));
+		getRecordOssUploadParamResponse.setCode(_ctx.stringValue("GetRecordOssUploadParamResponse.Code"));
+		getRecordOssUploadParamResponse.setMessage(_ctx.stringValue("GetRecordOssUploadParamResponse.Message"));
+		getRecordOssUploadParamResponse.setHttpStatusCode(_ctx.integerValue("GetRecordOssUploadParamResponse.HttpStatusCode"));
+		getRecordOssUploadParamResponse.setOssAccessKeyId(_ctx.stringValue("GetRecordOssUploadParamResponse.OssAccessKeyId"));
+		getRecordOssUploadParamResponse.setPolicy(_ctx.stringValue("GetRecordOssUploadParamResponse.Policy"));
+		getRecordOssUploadParamResponse.setSignature(_ctx.stringValue("GetRecordOssUploadParamResponse.Signature"));
+		getRecordOssUploadParamResponse.setExpires(_ctx.stringValue("GetRecordOssUploadParamResponse.Expires"));
+		getRecordOssUploadParamResponse.setDir(_ctx.stringValue("GetRecordOssUploadParamResponse.Dir"));
+		getRecordOssUploadParamResponse.setHost(_ctx.stringValue("GetRecordOssUploadParamResponse.Host"));
+		getRecordOssUploadParamResponse.setOssFileName(_ctx.stringValue("GetRecordOssUploadParamResponse.OssFileName"));
 	 
 	 	return getRecordOssUploadParamResponse;
 	}

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySkillGroupOfUserResponseUnmarshaller {
 
-	public static ModifySkillGroupOfUserResponse unmarshall(ModifySkillGroupOfUserResponse modifySkillGroupOfUserResponse, UnmarshallerContext context) {
+	public static ModifySkillGroupOfUserResponse unmarshall(ModifySkillGroupOfUserResponse modifySkillGroupOfUserResponse, UnmarshallerContext _ctx) {
 		
-		modifySkillGroupOfUserResponse.setRequestId(context.stringValue("ModifySkillGroupOfUserResponse.RequestId"));
-		modifySkillGroupOfUserResponse.setSuccess(context.booleanValue("ModifySkillGroupOfUserResponse.Success"));
-		modifySkillGroupOfUserResponse.setCode(context.stringValue("ModifySkillGroupOfUserResponse.Code"));
-		modifySkillGroupOfUserResponse.setMessage(context.stringValue("ModifySkillGroupOfUserResponse.Message"));
-		modifySkillGroupOfUserResponse.setHttpStatusCode(context.integerValue("ModifySkillGroupOfUserResponse.HttpStatusCode"));
+		modifySkillGroupOfUserResponse.setRequestId(_ctx.stringValue("ModifySkillGroupOfUserResponse.RequestId"));
+		modifySkillGroupOfUserResponse.setSuccess(_ctx.booleanValue("ModifySkillGroupOfUserResponse.Success"));
+		modifySkillGroupOfUserResponse.setCode(_ctx.stringValue("ModifySkillGroupOfUserResponse.Code"));
+		modifySkillGroupOfUserResponse.setMessage(_ctx.stringValue("ModifySkillGroupOfUserResponse.Message"));
+		modifySkillGroupOfUserResponse.setHttpStatusCode(_ctx.integerValue("ModifySkillGroupOfUserResponse.HttpStatusCode"));
 	 
 	 	return modifySkillGroupOfUserResponse;
 	}

@@ -25,39 +25,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListOutboundPhoneNumberOfUserResponseUnmarshaller {
 
-	public static ListOutboundPhoneNumberOfUserResponse unmarshall(ListOutboundPhoneNumberOfUserResponse listOutboundPhoneNumberOfUserResponse, UnmarshallerContext context) {
+	public static ListOutboundPhoneNumberOfUserResponse unmarshall(ListOutboundPhoneNumberOfUserResponse listOutboundPhoneNumberOfUserResponse, UnmarshallerContext _ctx) {
 		
-		listOutboundPhoneNumberOfUserResponse.setRequestId(context.stringValue("ListOutboundPhoneNumberOfUserResponse.RequestId"));
-		listOutboundPhoneNumberOfUserResponse.setSuccess(context.booleanValue("ListOutboundPhoneNumberOfUserResponse.Success"));
-		listOutboundPhoneNumberOfUserResponse.setCode(context.stringValue("ListOutboundPhoneNumberOfUserResponse.Code"));
-		listOutboundPhoneNumberOfUserResponse.setMessage(context.stringValue("ListOutboundPhoneNumberOfUserResponse.Message"));
-		listOutboundPhoneNumberOfUserResponse.setHttpStatusCode(context.integerValue("ListOutboundPhoneNumberOfUserResponse.HttpStatusCode"));
+		listOutboundPhoneNumberOfUserResponse.setRequestId(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.RequestId"));
+		listOutboundPhoneNumberOfUserResponse.setSuccess(_ctx.booleanValue("ListOutboundPhoneNumberOfUserResponse.Success"));
+		listOutboundPhoneNumberOfUserResponse.setCode(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.Code"));
+		listOutboundPhoneNumberOfUserResponse.setMessage(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.Message"));
+		listOutboundPhoneNumberOfUserResponse.setHttpStatusCode(_ctx.integerValue("ListOutboundPhoneNumberOfUserResponse.HttpStatusCode"));
 
 		List<PhoneNumber> outboundPhoneNumbers = new ArrayList<PhoneNumber>();
-		for (int i = 0; i < context.lengthValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers.Length"); i++) {
 			PhoneNumber phoneNumber = new PhoneNumber();
-			phoneNumber.setPhoneNumberId(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PhoneNumberId"));
-			phoneNumber.setInstanceId(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].InstanceId"));
-			phoneNumber.setNumber(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].Number"));
-			phoneNumber.setPhoneNumberDescription(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PhoneNumberDescription"));
-			phoneNumber.setTestOnly(context.booleanValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].TestOnly"));
-			phoneNumber.setRemainingTime(context.integerValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].RemainingTime"));
-			phoneNumber.setAllowOutbound(context.booleanValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].AllowOutbound"));
-			phoneNumber.setUsage(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].Usage"));
-			phoneNumber.setTrunks(context.integerValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].Trunks"));
-			phoneNumber.setCity(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].City"));
-			phoneNumber.setProvince(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].Province"));
-			phoneNumber.setPrivateFlag(context.booleanValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivateFlag"));
+			phoneNumber.setPhoneNumberId(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PhoneNumberId"));
+			phoneNumber.setInstanceId(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].InstanceId"));
+			phoneNumber.setNumber(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].Number"));
+			phoneNumber.setPhoneNumberDescription(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PhoneNumberDescription"));
+			phoneNumber.setTestOnly(_ctx.booleanValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].TestOnly"));
+			phoneNumber.setRemainingTime(_ctx.integerValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].RemainingTime"));
+			phoneNumber.setAllowOutbound(_ctx.booleanValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].AllowOutbound"));
+			phoneNumber.setUsage(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].Usage"));
+			phoneNumber.setTrunks(_ctx.integerValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].Trunks"));
+			phoneNumber.setCity(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].City"));
+			phoneNumber.setProvince(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].Province"));
+			phoneNumber.setPrivateFlag(_ctx.booleanValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivateFlag"));
+			phoneNumber.setSipTelX(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].SipTelX"));
 
 			PrivacyNumber privacyNumber = new PrivacyNumber();
-			privacyNumber.setPoolId(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PoolId"));
-			privacyNumber.setType(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.Type"));
-			privacyNumber.setTelX(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.TelX"));
-			privacyNumber.setPoolName(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PoolName"));
-			privacyNumber.setPhoneNumber(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PhoneNumber"));
-			privacyNumber.setExtra(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.Extra"));
-			privacyNumber.setBizId(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.BizId"));
-			privacyNumber.setSubId(context.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.SubId"));
+			privacyNumber.setPoolId(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PoolId"));
+			privacyNumber.setType(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.Type"));
+			privacyNumber.setTelX(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.TelX"));
+			privacyNumber.setPoolName(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PoolName"));
+			privacyNumber.setPhoneNumber(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PhoneNumber"));
+			privacyNumber.setExtra(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.Extra"));
+			privacyNumber.setBizId(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.BizId"));
+			privacyNumber.setSubId(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.SubId"));
+			privacyNumber.setRegionNameCity(_ctx.stringValue("ListOutboundPhoneNumberOfUserResponse.OutboundPhoneNumbers["+ i +"].PrivacyNumber.RegionNameCity"));
 			phoneNumber.setPrivacyNumber(privacyNumber);
 
 			outboundPhoneNumbers.add(phoneNumber);

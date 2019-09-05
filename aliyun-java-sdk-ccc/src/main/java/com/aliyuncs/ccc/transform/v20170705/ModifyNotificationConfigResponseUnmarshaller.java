@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyNotificationConfigResponseUnmarshaller {
 
-	public static ModifyNotificationConfigResponse unmarshall(ModifyNotificationConfigResponse modifyNotificationConfigResponse, UnmarshallerContext context) {
+	public static ModifyNotificationConfigResponse unmarshall(ModifyNotificationConfigResponse modifyNotificationConfigResponse, UnmarshallerContext _ctx) {
 		
-		modifyNotificationConfigResponse.setRequestId(context.stringValue("ModifyNotificationConfigResponse.RequestId"));
-		modifyNotificationConfigResponse.setSuccess(context.booleanValue("ModifyNotificationConfigResponse.Success"));
-		modifyNotificationConfigResponse.setCode(context.stringValue("ModifyNotificationConfigResponse.Code"));
-		modifyNotificationConfigResponse.setMessage(context.stringValue("ModifyNotificationConfigResponse.Message"));
-		modifyNotificationConfigResponse.setHttpStatusCode(context.integerValue("ModifyNotificationConfigResponse.HttpStatusCode"));
-		modifyNotificationConfigResponse.setProducerId(context.stringValue("ModifyNotificationConfigResponse.ProducerId"));
-		modifyNotificationConfigResponse.setAccessPoint(context.stringValue("ModifyNotificationConfigResponse.AccessPoint"));
-		modifyNotificationConfigResponse.setTopic(context.stringValue("ModifyNotificationConfigResponse.Topic"));
+		modifyNotificationConfigResponse.setRequestId(_ctx.stringValue("ModifyNotificationConfigResponse.RequestId"));
+		modifyNotificationConfigResponse.setSuccess(_ctx.booleanValue("ModifyNotificationConfigResponse.Success"));
+		modifyNotificationConfigResponse.setCode(_ctx.stringValue("ModifyNotificationConfigResponse.Code"));
+		modifyNotificationConfigResponse.setMessage(_ctx.stringValue("ModifyNotificationConfigResponse.Message"));
+		modifyNotificationConfigResponse.setHttpStatusCode(_ctx.integerValue("ModifyNotificationConfigResponse.HttpStatusCode"));
+		modifyNotificationConfigResponse.setProducerId(_ctx.stringValue("ModifyNotificationConfigResponse.ProducerId"));
+		modifyNotificationConfigResponse.setAccessPoint(_ctx.stringValue("ModifyNotificationConfigResponse.AccessPoint"));
+		modifyNotificationConfigResponse.setTopic(_ctx.stringValue("ModifyNotificationConfigResponse.Topic"));
 
 		List<SubscriptionsItem> subscriptions = new ArrayList<SubscriptionsItem>();
-		for (int i = 0; i < context.lengthValue("ModifyNotificationConfigResponse.Subscriptions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ModifyNotificationConfigResponse.Subscriptions.Length"); i++) {
 			SubscriptionsItem subscriptionsItem = new SubscriptionsItem();
-			subscriptionsItem.setName(context.stringValue("ModifyNotificationConfigResponse.Subscriptions["+ i +"].Name"));
-			subscriptionsItem.setSelected(context.booleanValue("ModifyNotificationConfigResponse.Subscriptions["+ i +"].Selected"));
-			subscriptionsItem.setDisplayName(context.stringValue("ModifyNotificationConfigResponse.Subscriptions["+ i +"].DisplayName"));
+			subscriptionsItem.setName(_ctx.stringValue("ModifyNotificationConfigResponse.Subscriptions["+ i +"].Name"));
+			subscriptionsItem.setSelected(_ctx.booleanValue("ModifyNotificationConfigResponse.Subscriptions["+ i +"].Selected"));
+			subscriptionsItem.setDisplayName(_ctx.stringValue("ModifyNotificationConfigResponse.Subscriptions["+ i +"].DisplayName"));
 
 			subscriptions.add(subscriptionsItem);
 		}

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyPrivacyNumberCallDetailResponseUnmarshaller {
 
-	public static ModifyPrivacyNumberCallDetailResponse unmarshall(ModifyPrivacyNumberCallDetailResponse modifyPrivacyNumberCallDetailResponse, UnmarshallerContext context) {
+	public static ModifyPrivacyNumberCallDetailResponse unmarshall(ModifyPrivacyNumberCallDetailResponse modifyPrivacyNumberCallDetailResponse, UnmarshallerContext _ctx) {
 		
-		modifyPrivacyNumberCallDetailResponse.setRequestId(context.stringValue("ModifyPrivacyNumberCallDetailResponse.RequestId"));
-		modifyPrivacyNumberCallDetailResponse.setSuccess(context.booleanValue("ModifyPrivacyNumberCallDetailResponse.Success"));
-		modifyPrivacyNumberCallDetailResponse.setCode(context.stringValue("ModifyPrivacyNumberCallDetailResponse.Code"));
-		modifyPrivacyNumberCallDetailResponse.setMessage(context.stringValue("ModifyPrivacyNumberCallDetailResponse.Message"));
-		modifyPrivacyNumberCallDetailResponse.setHttpStatusCode(context.integerValue("ModifyPrivacyNumberCallDetailResponse.HttpStatusCode"));
+		modifyPrivacyNumberCallDetailResponse.setRequestId(_ctx.stringValue("ModifyPrivacyNumberCallDetailResponse.RequestId"));
+		modifyPrivacyNumberCallDetailResponse.setSuccess(_ctx.booleanValue("ModifyPrivacyNumberCallDetailResponse.Success"));
+		modifyPrivacyNumberCallDetailResponse.setCode(_ctx.stringValue("ModifyPrivacyNumberCallDetailResponse.Code"));
+		modifyPrivacyNumberCallDetailResponse.setMessage(_ctx.stringValue("ModifyPrivacyNumberCallDetailResponse.Message"));
+		modifyPrivacyNumberCallDetailResponse.setHttpStatusCode(_ctx.integerValue("ModifyPrivacyNumberCallDetailResponse.HttpStatusCode"));
 	 
 	 	return modifyPrivacyNumberCallDetailResponse;
 	}

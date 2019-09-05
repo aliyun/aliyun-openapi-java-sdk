@@ -97,6 +97,10 @@ public class ListCallEventDetailByContactIdResponse extends AcsResponse {
 
 		private String privacyNumber;
 
+		private String releaseAgent;
+
+		private String releaseReason;
+
 		private List<CallEventDetail> events;
 
 		public String getCaller() {
@@ -137,6 +141,22 @@ public class ListCallEventDetailByContactIdResponse extends AcsResponse {
 
 		public void setPrivacyNumber(String privacyNumber) {
 			this.privacyNumber = privacyNumber;
+		}
+
+		public String getReleaseAgent() {
+			return this.releaseAgent;
+		}
+
+		public void setReleaseAgent(String releaseAgent) {
+			this.releaseAgent = releaseAgent;
+		}
+
+		public String getReleaseReason() {
+			return this.releaseReason;
+		}
+
+		public void setReleaseReason(String releaseReason) {
+			this.releaseReason = releaseReason;
 		}
 
 		public List<CallEventDetail> getEvents() {

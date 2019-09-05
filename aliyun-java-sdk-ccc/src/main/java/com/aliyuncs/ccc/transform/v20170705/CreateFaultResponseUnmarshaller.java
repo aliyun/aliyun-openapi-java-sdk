@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateFaultResponseUnmarshaller {
 
-	public static CreateFaultResponse unmarshall(CreateFaultResponse createFaultResponse, UnmarshallerContext context) {
+	public static CreateFaultResponse unmarshall(CreateFaultResponse createFaultResponse, UnmarshallerContext _ctx) {
 		
-		createFaultResponse.setRequestId(context.stringValue("CreateFaultResponse.RequestId"));
-		createFaultResponse.setSuccess(context.booleanValue("CreateFaultResponse.Success"));
-		createFaultResponse.setCode(context.stringValue("CreateFaultResponse.Code"));
-		createFaultResponse.setMessage(context.stringValue("CreateFaultResponse.Message"));
-		createFaultResponse.setHttpStatusCode(context.integerValue("CreateFaultResponse.HttpStatusCode"));
+		createFaultResponse.setRequestId(_ctx.stringValue("CreateFaultResponse.RequestId"));
+		createFaultResponse.setSuccess(_ctx.booleanValue("CreateFaultResponse.Success"));
+		createFaultResponse.setCode(_ctx.stringValue("CreateFaultResponse.Code"));
+		createFaultResponse.setMessage(_ctx.stringValue("CreateFaultResponse.Message"));
+		createFaultResponse.setHttpStatusCode(_ctx.integerValue("CreateFaultResponse.HttpStatusCode"));
 	 
 	 	return createFaultResponse;
 	}

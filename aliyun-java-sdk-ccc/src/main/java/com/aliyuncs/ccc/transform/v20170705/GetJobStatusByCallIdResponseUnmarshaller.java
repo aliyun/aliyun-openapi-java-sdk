@@ -31,100 +31,100 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJobStatusByCallIdResponseUnmarshaller {
 
-	public static GetJobStatusByCallIdResponse unmarshall(GetJobStatusByCallIdResponse getJobStatusByCallIdResponse, UnmarshallerContext context) {
+	public static GetJobStatusByCallIdResponse unmarshall(GetJobStatusByCallIdResponse getJobStatusByCallIdResponse, UnmarshallerContext _ctx) {
 		
-		getJobStatusByCallIdResponse.setRequestId(context.stringValue("GetJobStatusByCallIdResponse.RequestId"));
-		getJobStatusByCallIdResponse.setSuccess(context.booleanValue("GetJobStatusByCallIdResponse.Success"));
-		getJobStatusByCallIdResponse.setCode(context.stringValue("GetJobStatusByCallIdResponse.Code"));
-		getJobStatusByCallIdResponse.setMessage(context.stringValue("GetJobStatusByCallIdResponse.Message"));
-		getJobStatusByCallIdResponse.setHttpStatusCode(context.integerValue("GetJobStatusByCallIdResponse.HttpStatusCode"));
+		getJobStatusByCallIdResponse.setRequestId(_ctx.stringValue("GetJobStatusByCallIdResponse.RequestId"));
+		getJobStatusByCallIdResponse.setSuccess(_ctx.booleanValue("GetJobStatusByCallIdResponse.Success"));
+		getJobStatusByCallIdResponse.setCode(_ctx.stringValue("GetJobStatusByCallIdResponse.Code"));
+		getJobStatusByCallIdResponse.setMessage(_ctx.stringValue("GetJobStatusByCallIdResponse.Message"));
+		getJobStatusByCallIdResponse.setHttpStatusCode(_ctx.integerValue("GetJobStatusByCallIdResponse.HttpStatusCode"));
 
 		Job job = new Job();
-		job.setJobId(context.stringValue("GetJobStatusByCallIdResponse.Job.JobId"));
-		job.setGroupId(context.stringValue("GetJobStatusByCallIdResponse.Job.GroupId"));
-		job.setScenarioId(context.stringValue("GetJobStatusByCallIdResponse.Job.ScenarioId"));
-		job.setStrategyId(context.stringValue("GetJobStatusByCallIdResponse.Job.StrategyId"));
-		job.setPriority(context.integerValue("GetJobStatusByCallIdResponse.Job.Priority"));
-		job.setStatus(context.stringValue("GetJobStatusByCallIdResponse.Job.Status"));
-		job.setReferenceId(context.stringValue("GetJobStatusByCallIdResponse.Job.ReferenceId"));
-		job.setFailureReason(context.stringValue("GetJobStatusByCallIdResponse.Job.FailureReason"));
+		job.setJobId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.JobId"));
+		job.setGroupId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.GroupId"));
+		job.setScenarioId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.ScenarioId"));
+		job.setStrategyId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.StrategyId"));
+		job.setPriority(_ctx.integerValue("GetJobStatusByCallIdResponse.Job.Priority"));
+		job.setStatus(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Status"));
+		job.setReferenceId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.ReferenceId"));
+		job.setFailureReason(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.FailureReason"));
 
 		List<String> callingNumbers = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetJobStatusByCallIdResponse.Job.CallingNumbers.Length"); i++) {
-			callingNumbers.add(context.stringValue("GetJobStatusByCallIdResponse.Job.CallingNumbers["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetJobStatusByCallIdResponse.Job.CallingNumbers.Length"); i++) {
+			callingNumbers.add(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.CallingNumbers["+ i +"]"));
 		}
 		job.setCallingNumbers(callingNumbers);
 
 		List<Contact> contacts = new ArrayList<Contact>();
-		for (int i = 0; i < context.lengthValue("GetJobStatusByCallIdResponse.Job.Contacts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetJobStatusByCallIdResponse.Job.Contacts.Length"); i++) {
 			Contact contact = new Contact();
-			contact.setContactId(context.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].ContactId"));
-			contact.setContactName(context.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].ContactName"));
-			contact.setHonorific(context.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].Honorific"));
-			contact.setRole(context.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].Role"));
-			contact.setPhoneNumber(context.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].PhoneNumber"));
-			contact.setState(context.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].State"));
-			contact.setReferenceId(context.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].ReferenceId"));
-			contact.setJobId(context.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].JobId"));
+			contact.setContactId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].ContactId"));
+			contact.setContactName(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].ContactName"));
+			contact.setHonorific(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].Honorific"));
+			contact.setRole(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].Role"));
+			contact.setPhoneNumber(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].PhoneNumber"));
+			contact.setState(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].State"));
+			contact.setReferenceId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].ReferenceId"));
+			contact.setJobId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Contacts["+ i +"].JobId"));
 
 			contacts.add(contact);
 		}
 		job.setContacts(contacts);
 
 		List<KeyValuePair> extras = new ArrayList<KeyValuePair>();
-		for (int i = 0; i < context.lengthValue("GetJobStatusByCallIdResponse.Job.Extras.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetJobStatusByCallIdResponse.Job.Extras.Length"); i++) {
 			KeyValuePair keyValuePair = new KeyValuePair();
-			keyValuePair.setKey(context.stringValue("GetJobStatusByCallIdResponse.Job.Extras["+ i +"].Key"));
-			keyValuePair.setValue(context.stringValue("GetJobStatusByCallIdResponse.Job.Extras["+ i +"].Value"));
+			keyValuePair.setKey(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Extras["+ i +"].Key"));
+			keyValuePair.setValue(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Extras["+ i +"].Value"));
 
 			extras.add(keyValuePair);
 		}
 		job.setExtras(extras);
 
 		List<Task> tasks = new ArrayList<Task>();
-		for (int i = 0; i < context.lengthValue("GetJobStatusByCallIdResponse.Job.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetJobStatusByCallIdResponse.Job.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setTaskId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].TaskId"));
-			task.setJobId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].JobId"));
-			task.setScenarioId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].ScenarioId"));
-			task.setChatbotId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].ChatbotId"));
-			task.setPlanedTime(context.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].PlanedTime"));
-			task.setActualTime(context.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].ActualTime"));
-			task.setEndTime(context.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].EndTime"));
-			task.setCallingNumber(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].CallingNumber"));
-			task.setCalledNumber(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].CalledNumber"));
-			task.setCallId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].CallId"));
-			task.setStatus(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Status"));
-			task.setBrief(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Brief"));
-			task.setDuration(context.integerValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Duration"));
+			task.setTaskId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].TaskId"));
+			task.setJobId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].JobId"));
+			task.setScenarioId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].ScenarioId"));
+			task.setChatbotId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].ChatbotId"));
+			task.setPlanedTime(_ctx.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].PlanedTime"));
+			task.setActualTime(_ctx.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].ActualTime"));
+			task.setEndTime(_ctx.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].EndTime"));
+			task.setCallingNumber(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].CallingNumber"));
+			task.setCalledNumber(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].CalledNumber"));
+			task.setCallId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].CallId"));
+			task.setStatus(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Status"));
+			task.setBrief(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Brief"));
+			task.setDuration(_ctx.integerValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Duration"));
 
 			Contact2 contact2 = new Contact2();
-			contact2.setContactId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.ContactId"));
-			contact2.setContactName(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.ContactName"));
-			contact2.setHonorific(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.Honorific"));
-			contact2.setRole(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.Role"));
-			contact2.setPhoneNumber(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.PhoneNumber"));
-			contact2.setState(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.State"));
-			contact2.setReferenceId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.ReferenceId"));
-			contact2.setJobId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.JobId"));
+			contact2.setContactId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.ContactId"));
+			contact2.setContactName(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.ContactName"));
+			contact2.setHonorific(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.Honorific"));
+			contact2.setRole(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.Role"));
+			contact2.setPhoneNumber(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.PhoneNumber"));
+			contact2.setState(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.State"));
+			contact2.setReferenceId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.ReferenceId"));
+			contact2.setJobId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Contact.JobId"));
 			task.setContact2(contact2);
 
 			List<ConversationDetail> conversation = new ArrayList<ConversationDetail>();
-			for (int j = 0; j < context.lengthValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation.Length"); j++) {
 				ConversationDetail conversationDetail = new ConversationDetail();
-				conversationDetail.setConversationDetailId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].ConversationDetailId"));
-				conversationDetail.setTaskId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].TaskId"));
-				conversationDetail.setTimestamp(context.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Timestamp"));
-				conversationDetail.setSpeaker(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Speaker"));
-				conversationDetail.setScript(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Script"));
+				conversationDetail.setConversationDetailId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].ConversationDetailId"));
+				conversationDetail.setTaskId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].TaskId"));
+				conversationDetail.setTimestamp(_ctx.longValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Timestamp"));
+				conversationDetail.setSpeaker(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Speaker"));
+				conversationDetail.setScript(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Script"));
 
 				List<SummaryItem> summary1 = new ArrayList<SummaryItem>();
-				for (int k = 0; k < context.lengthValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {
 					SummaryItem summaryItem = new SummaryItem();
-					summaryItem.setSummaryId(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].SummaryId"));
-					summaryItem.setCategory(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Category"));
-					summaryItem.setSummaryName(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].SummaryName"));
-					summaryItem.setContent(context.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Content"));
+					summaryItem.setSummaryId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].SummaryId"));
+					summaryItem.setCategory(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Category"));
+					summaryItem.setSummaryName(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].SummaryName"));
+					summaryItem.setContent(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Content"));
 
 					summary1.add(summaryItem);
 				}
@@ -139,12 +139,12 @@ public class GetJobStatusByCallIdResponseUnmarshaller {
 		job.setTasks(tasks);
 
 		List<SummaryItem3> summary = new ArrayList<SummaryItem3>();
-		for (int i = 0; i < context.lengthValue("GetJobStatusByCallIdResponse.Job.Summary.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetJobStatusByCallIdResponse.Job.Summary.Length"); i++) {
 			SummaryItem3 summaryItem3 = new SummaryItem3();
-			summaryItem3.setSummaryId(context.stringValue("GetJobStatusByCallIdResponse.Job.Summary["+ i +"].SummaryId"));
-			summaryItem3.setCategory(context.stringValue("GetJobStatusByCallIdResponse.Job.Summary["+ i +"].Category"));
-			summaryItem3.setSummaryName(context.stringValue("GetJobStatusByCallIdResponse.Job.Summary["+ i +"].SummaryName"));
-			summaryItem3.setContent(context.stringValue("GetJobStatusByCallIdResponse.Job.Summary["+ i +"].Content"));
+			summaryItem3.setSummaryId(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Summary["+ i +"].SummaryId"));
+			summaryItem3.setCategory(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Summary["+ i +"].Category"));
+			summaryItem3.setSummaryName(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Summary["+ i +"].SummaryName"));
+			summaryItem3.setContent(_ctx.stringValue("GetJobStatusByCallIdResponse.Job.Summary["+ i +"].Content"));
 
 			summary.add(summaryItem3);
 		}

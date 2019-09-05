@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,19 +27,24 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 	
 	public CreateUserRequest() {
 		super("CCC", "2017-07-05", "CreateUser");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String privateOutboundNumberId;
+
+	private String loginName;
+
+	private List<String> roleIds;
 
 	private List<Integer> skillLevels;
 
 	private String instanceId;
 
-	private String loginName;
-
 	private String phone;
-
-	private List<String> roleIds;
 
 	private String displayName;
 
@@ -54,6 +61,30 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		if(privateOutboundNumberId != null){
 			putQueryParameter("PrivateOutboundNumberId", privateOutboundNumberId);
 		}
+	}
+
+	public String getLoginName() {
+		return this.loginName;
+	}
+
+	public void setLoginName(String loginName) {
+		this.loginName = loginName;
+		if(loginName != null){
+			putQueryParameter("LoginName", loginName);
+		}
+	}
+
+	public List<String> getRoleIds() {
+		return this.roleIds;
+	}
+
+	public void setRoleIds(List<String> roleIds) {
+		this.roleIds = roleIds;	
+		if (roleIds != null) {
+			for (int i = 0; i < roleIds.size(); i++) {
+				putQueryParameter("RoleId." + (i + 1) , roleIds.get(i));
+			}
+		}	
 	}
 
 	public List<Integer> getSkillLevels() {
@@ -80,17 +111,6 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		}
 	}
 
-	public String getLoginName() {
-		return this.loginName;
-	}
-
-	public void setLoginName(String loginName) {
-		this.loginName = loginName;
-		if(loginName != null){
-			putQueryParameter("LoginName", loginName);
-		}
-	}
-
 	public String getPhone() {
 		return this.phone;
 	}
@@ -100,19 +120,6 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		if(phone != null){
 			putQueryParameter("Phone", phone);
 		}
-	}
-
-	public List<String> getRoleIds() {
-		return this.roleIds;
-	}
-
-	public void setRoleIds(List<String> roleIds) {
-		this.roleIds = roleIds;	
-		if (roleIds != null) {
-			for (int i = 0; i < roleIds.size(); i++) {
-				putQueryParameter("RoleId." + (i + 1) , roleIds.get(i));
-			}
-		}	
 	}
 
 	public String getDisplayName() {

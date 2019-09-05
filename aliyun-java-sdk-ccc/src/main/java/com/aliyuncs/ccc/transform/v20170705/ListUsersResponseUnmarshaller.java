@@ -29,59 +29,59 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListUsersResponseUnmarshaller {
 
-	public static ListUsersResponse unmarshall(ListUsersResponse listUsersResponse, UnmarshallerContext context) {
+	public static ListUsersResponse unmarshall(ListUsersResponse listUsersResponse, UnmarshallerContext _ctx) {
 		
-		listUsersResponse.setRequestId(context.stringValue("ListUsersResponse.RequestId"));
-		listUsersResponse.setSuccess(context.booleanValue("ListUsersResponse.Success"));
-		listUsersResponse.setCode(context.stringValue("ListUsersResponse.Code"));
-		listUsersResponse.setMessage(context.stringValue("ListUsersResponse.Message"));
-		listUsersResponse.setHttpStatusCode(context.integerValue("ListUsersResponse.HttpStatusCode"));
+		listUsersResponse.setRequestId(_ctx.stringValue("ListUsersResponse.RequestId"));
+		listUsersResponse.setSuccess(_ctx.booleanValue("ListUsersResponse.Success"));
+		listUsersResponse.setCode(_ctx.stringValue("ListUsersResponse.Code"));
+		listUsersResponse.setMessage(_ctx.stringValue("ListUsersResponse.Message"));
+		listUsersResponse.setHttpStatusCode(_ctx.integerValue("ListUsersResponse.HttpStatusCode"));
 
 		Users users = new Users();
-		users.setTotalCount(context.integerValue("ListUsersResponse.Users.TotalCount"));
-		users.setPageNumber(context.integerValue("ListUsersResponse.Users.PageNumber"));
-		users.setPageSize(context.integerValue("ListUsersResponse.Users.PageSize"));
+		users.setTotalCount(_ctx.integerValue("ListUsersResponse.Users.TotalCount"));
+		users.setPageNumber(_ctx.integerValue("ListUsersResponse.Users.PageNumber"));
+		users.setPageSize(_ctx.integerValue("ListUsersResponse.Users.PageSize"));
 
 		List<User> list = new ArrayList<User>();
-		for (int i = 0; i < context.lengthValue("ListUsersResponse.Users.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.Users.List.Length"); i++) {
 			User user = new User();
-			user.setUserId(context.stringValue("ListUsersResponse.Users.List["+ i +"].UserId"));
-			user.setRamId(context.stringValue("ListUsersResponse.Users.List["+ i +"].RamId"));
-			user.setInstanceId(context.stringValue("ListUsersResponse.Users.List["+ i +"].InstanceId"));
-			user.setPrimary(context.booleanValue("ListUsersResponse.Users.List["+ i +"].Primary"));
-			user.setPrivateOutboundNumberId(context.stringValue("ListUsersResponse.Users.List["+ i +"].PrivateOutboundNumberId"));
+			user.setUserId(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].UserId"));
+			user.setRamId(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].RamId"));
+			user.setInstanceId(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].InstanceId"));
+			user.setPrimary(_ctx.booleanValue("ListUsersResponse.Users.List["+ i +"].Primary"));
+			user.setPrivateOutboundNumberId(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].PrivateOutboundNumberId"));
 
 			Detail detail = new Detail();
-			detail.setLoginName(context.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.LoginName"));
-			detail.setDisplayName(context.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.DisplayName"));
-			detail.setPhone(context.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.Phone"));
-			detail.setEmail(context.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.Email"));
-			detail.setDepartment(context.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.Department"));
+			detail.setLoginName(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.LoginName"));
+			detail.setDisplayName(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.DisplayName"));
+			detail.setPhone(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.Phone"));
+			detail.setEmail(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.Email"));
+			detail.setDepartment(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].Detail.Department"));
 			user.setDetail(detail);
 
 			List<Role> roles = new ArrayList<Role>();
-			for (int j = 0; j < context.lengthValue("ListUsersResponse.Users.List["+ i +"].Roles.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListUsersResponse.Users.List["+ i +"].Roles.Length"); j++) {
 				Role role = new Role();
-				role.setRoleId(context.stringValue("ListUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleId"));
-				role.setInstanceId(context.stringValue("ListUsersResponse.Users.List["+ i +"].Roles["+ j +"].InstanceId"));
-				role.setRoleName(context.stringValue("ListUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleName"));
-				role.setRoleDescription(context.stringValue("ListUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleDescription"));
+				role.setRoleId(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleId"));
+				role.setInstanceId(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].Roles["+ j +"].InstanceId"));
+				role.setRoleName(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleName"));
+				role.setRoleDescription(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].Roles["+ j +"].RoleDescription"));
 
 				roles.add(role);
 			}
 			user.setRoles(roles);
 
 			List<SkillLevel> skillLevels = new ArrayList<SkillLevel>();
-			for (int j = 0; j < context.lengthValue("ListUsersResponse.Users.List["+ i +"].SkillLevels.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListUsersResponse.Users.List["+ i +"].SkillLevels.Length"); j++) {
 				SkillLevel skillLevel = new SkillLevel();
-				skillLevel.setSkillLevelId(context.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].SkillLevelId"));
-				skillLevel.setLevel(context.integerValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Level"));
+				skillLevel.setSkillLevelId(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].SkillLevelId"));
+				skillLevel.setLevel(_ctx.integerValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Level"));
 
 				Skill skill = new Skill();
-				skill.setSkillGroupId(context.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId"));
-				skill.setInstanceId(context.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.InstanceId"));
-				skill.setSkillGroupName(context.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName"));
-				skill.setSkillGroupDescription(context.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription"));
+				skill.setSkillGroupId(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId"));
+				skill.setInstanceId(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.InstanceId"));
+				skill.setSkillGroupName(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName"));
+				skill.setSkillGroupDescription(_ctx.stringValue("ListUsersResponse.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription"));
 				skillLevel.setSkill(skill);
 
 				skillLevels.add(skillLevel);

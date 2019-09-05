@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,17 +27,14 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 	
 	public CreateSkillGroupRequest() {
 		super("CCC", "2017-07-05", "CreateSkillGroup");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private List<Integer> skillLevels;
-
-	private String instanceId;
-
 	private Boolean allowPrivateOutboundNumber;
-
-	private List<String> outboundPhoneNumberIds;
-
-	private String name;
 
 	private String description;
 
@@ -43,29 +42,13 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 
 	private List<String> userIds;
 
-	public List<Integer> getSkillLevels() {
-		return this.skillLevels;
-	}
+	private List<Integer> skillLevels;
 
-	public void setSkillLevels(List<Integer> skillLevels) {
-		this.skillLevels = skillLevels;	
-		if (skillLevels != null) {
-			for (int i = 0; i < skillLevels.size(); i++) {
-				putQueryParameter("SkillLevel." + (i + 1) , skillLevels.get(i));
-			}
-		}	
-	}
+	private String instanceId;
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+	private List<String> outboundPhoneNumberIds;
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
+	private String name;
 
 	public Boolean getAllowPrivateOutboundNumber() {
 		return this.allowPrivateOutboundNumber;
@@ -75,30 +58,6 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 		this.allowPrivateOutboundNumber = allowPrivateOutboundNumber;
 		if(allowPrivateOutboundNumber != null){
 			putQueryParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber.toString());
-		}
-	}
-
-	public List<String> getOutboundPhoneNumberIds() {
-		return this.outboundPhoneNumberIds;
-	}
-
-	public void setOutboundPhoneNumberIds(List<String> outboundPhoneNumberIds) {
-		this.outboundPhoneNumberIds = outboundPhoneNumberIds;	
-		if (outboundPhoneNumberIds != null) {
-			for (int i = 0; i < outboundPhoneNumberIds.size(); i++) {
-				putQueryParameter("OutboundPhoneNumberId." + (i + 1) , outboundPhoneNumberIds.get(i));
-			}
-		}	
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -135,6 +94,54 @@ public class CreateSkillGroupRequest extends RpcAcsRequest<CreateSkillGroupRespo
 				putQueryParameter("UserId." + (i + 1) , userIds.get(i));
 			}
 		}	
+	}
+
+	public List<Integer> getSkillLevels() {
+		return this.skillLevels;
+	}
+
+	public void setSkillLevels(List<Integer> skillLevels) {
+		this.skillLevels = skillLevels;	
+		if (skillLevels != null) {
+			for (int i = 0; i < skillLevels.size(); i++) {
+				putQueryParameter("SkillLevel." + (i + 1) , skillLevels.get(i));
+			}
+		}	
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public List<String> getOutboundPhoneNumberIds() {
+		return this.outboundPhoneNumberIds;
+	}
+
+	public void setOutboundPhoneNumberIds(List<String> outboundPhoneNumberIds) {
+		this.outboundPhoneNumberIds = outboundPhoneNumberIds;	
+		if (outboundPhoneNumberIds != null) {
+			for (int i = 0; i < outboundPhoneNumberIds.size(); i++) {
+				putQueryParameter("OutboundPhoneNumberId." + (i + 1) , outboundPhoneNumberIds.get(i));
+			}
+		}	
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
 	}
 
 	@Override

@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DownloadUnreachableContactsResponseUnmarshaller {
 
-	public static DownloadUnreachableContactsResponse unmarshall(DownloadUnreachableContactsResponse downloadUnreachableContactsResponse, UnmarshallerContext context) {
+	public static DownloadUnreachableContactsResponse unmarshall(DownloadUnreachableContactsResponse downloadUnreachableContactsResponse, UnmarshallerContext _ctx) {
 		
-		downloadUnreachableContactsResponse.setRequestId(context.stringValue("DownloadUnreachableContactsResponse.RequestId"));
-		downloadUnreachableContactsResponse.setSuccess(context.booleanValue("DownloadUnreachableContactsResponse.Success"));
-		downloadUnreachableContactsResponse.setCode(context.stringValue("DownloadUnreachableContactsResponse.Code"));
-		downloadUnreachableContactsResponse.setMessage(context.stringValue("DownloadUnreachableContactsResponse.Message"));
-		downloadUnreachableContactsResponse.setHttpStatusCode(context.integerValue("DownloadUnreachableContactsResponse.HttpStatusCode"));
+		downloadUnreachableContactsResponse.setRequestId(_ctx.stringValue("DownloadUnreachableContactsResponse.RequestId"));
+		downloadUnreachableContactsResponse.setSuccess(_ctx.booleanValue("DownloadUnreachableContactsResponse.Success"));
+		downloadUnreachableContactsResponse.setCode(_ctx.stringValue("DownloadUnreachableContactsResponse.Code"));
+		downloadUnreachableContactsResponse.setMessage(_ctx.stringValue("DownloadUnreachableContactsResponse.Message"));
+		downloadUnreachableContactsResponse.setHttpStatusCode(_ctx.integerValue("DownloadUnreachableContactsResponse.HttpStatusCode"));
 
 		DownloadParams downloadParams = new DownloadParams();
-		downloadParams.setSignatureUrl(context.stringValue("DownloadUnreachableContactsResponse.DownloadParams.SignatureUrl"));
+		downloadParams.setSignatureUrl(_ctx.stringValue("DownloadUnreachableContactsResponse.DownloadParams.SignatureUrl"));
 		downloadUnreachableContactsResponse.setDownloadParams(downloadParams);
 	 
 	 	return downloadUnreachableContactsResponse;

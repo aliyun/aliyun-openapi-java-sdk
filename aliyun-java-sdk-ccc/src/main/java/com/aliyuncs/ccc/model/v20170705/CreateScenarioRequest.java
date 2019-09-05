@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,30 +27,24 @@ public class CreateScenarioRequest extends RpcAcsRequest<CreateScenarioResponse>
 	
 	public CreateScenarioRequest() {
 		super("CCC", "2017-07-05", "CreateScenario");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String instanceId;
-
 	private List<String> surveysJsons;
-
-	private String strategyJson;
-
-	private String name;
 
 	private String description;
 
 	private String type;
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+	private String instanceId;
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
+	private String strategyJson;
+
+	private String name;
 
 	public List<String> getSurveysJsons() {
 		return this.surveysJsons;
@@ -61,28 +57,6 @@ public class CreateScenarioRequest extends RpcAcsRequest<CreateScenarioResponse>
 				putQueryParameter("SurveysJson." + (i + 1) , surveysJsons.get(i));
 			}
 		}	
-	}
-
-	public String getStrategyJson() {
-		return this.strategyJson;
-	}
-
-	public void setStrategyJson(String strategyJson) {
-		this.strategyJson = strategyJson;
-		if(strategyJson != null){
-			putQueryParameter("StrategyJson", strategyJson);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
 	}
 
 	public String getDescription() {
@@ -104,6 +78,39 @@ public class CreateScenarioRequest extends RpcAcsRequest<CreateScenarioResponse>
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getStrategyJson() {
+		return this.strategyJson;
+	}
+
+	public void setStrategyJson(String strategyJson) {
+		this.strategyJson = strategyJson;
+		if(strategyJson != null){
+			putQueryParameter("StrategyJson", strategyJson);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

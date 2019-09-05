@@ -16,6 +16,7 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,16 +26,20 @@ public class CommitContactFlowVersionModificationRequest extends RpcAcsRequest<C
 	
 	public CommitContactFlowVersionModificationRequest() {
 		super("CCC", "2017-07-05", "CommitContactFlowVersionModification");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String canvas;
 
+	private String content;
+
 	private String instanceId;
 
 	private String contactFlowVersionId;
-
-	private String content;
 
 	public String getCanvas() {
 		return this.canvas;
@@ -44,6 +49,17 @@ public class CommitContactFlowVersionModificationRequest extends RpcAcsRequest<C
 		this.canvas = canvas;
 		if(canvas != null){
 			putBodyParameter("Canvas", canvas);
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putBodyParameter("Content", content);
 		}
 	}
 
@@ -66,17 +82,6 @@ public class CommitContactFlowVersionModificationRequest extends RpcAcsRequest<C
 		this.contactFlowVersionId = contactFlowVersionId;
 		if(contactFlowVersionId != null){
 			putQueryParameter("ContactFlowVersionId", contactFlowVersionId);
-		}
-	}
-
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putBodyParameter("Content", content);
 		}
 	}
 

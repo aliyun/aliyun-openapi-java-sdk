@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJobDataUploadParamsResponseUnmarshaller {
 
-	public static GetJobDataUploadParamsResponse unmarshall(GetJobDataUploadParamsResponse getJobDataUploadParamsResponse, UnmarshallerContext context) {
+	public static GetJobDataUploadParamsResponse unmarshall(GetJobDataUploadParamsResponse getJobDataUploadParamsResponse, UnmarshallerContext _ctx) {
 		
-		getJobDataUploadParamsResponse.setRequestId(context.stringValue("GetJobDataUploadParamsResponse.RequestId"));
-		getJobDataUploadParamsResponse.setSuccess(context.booleanValue("GetJobDataUploadParamsResponse.Success"));
-		getJobDataUploadParamsResponse.setCode(context.stringValue("GetJobDataUploadParamsResponse.Code"));
-		getJobDataUploadParamsResponse.setMessage(context.stringValue("GetJobDataUploadParamsResponse.Message"));
-		getJobDataUploadParamsResponse.setHttpStatusCode(context.integerValue("GetJobDataUploadParamsResponse.HttpStatusCode"));
+		getJobDataUploadParamsResponse.setRequestId(_ctx.stringValue("GetJobDataUploadParamsResponse.RequestId"));
+		getJobDataUploadParamsResponse.setSuccess(_ctx.booleanValue("GetJobDataUploadParamsResponse.Success"));
+		getJobDataUploadParamsResponse.setCode(_ctx.stringValue("GetJobDataUploadParamsResponse.Code"));
+		getJobDataUploadParamsResponse.setMessage(_ctx.stringValue("GetJobDataUploadParamsResponse.Message"));
+		getJobDataUploadParamsResponse.setHttpStatusCode(_ctx.integerValue("GetJobDataUploadParamsResponse.HttpStatusCode"));
 
 		UploadParams uploadParams = new UploadParams();
-		uploadParams.setAccessId(context.stringValue("GetJobDataUploadParamsResponse.UploadParams.AccessId"));
-		uploadParams.setPolicy(context.stringValue("GetJobDataUploadParamsResponse.UploadParams.Policy"));
-		uploadParams.setSignature(context.stringValue("GetJobDataUploadParamsResponse.UploadParams.Signature"));
-		uploadParams.setFolder(context.stringValue("GetJobDataUploadParamsResponse.UploadParams.Folder"));
-		uploadParams.setHost(context.stringValue("GetJobDataUploadParamsResponse.UploadParams.Host"));
-		uploadParams.setExpire(context.integerValue("GetJobDataUploadParamsResponse.UploadParams.Expire"));
+		uploadParams.setAccessId(_ctx.stringValue("GetJobDataUploadParamsResponse.UploadParams.AccessId"));
+		uploadParams.setPolicy(_ctx.stringValue("GetJobDataUploadParamsResponse.UploadParams.Policy"));
+		uploadParams.setSignature(_ctx.stringValue("GetJobDataUploadParamsResponse.UploadParams.Signature"));
+		uploadParams.setFolder(_ctx.stringValue("GetJobDataUploadParamsResponse.UploadParams.Folder"));
+		uploadParams.setHost(_ctx.stringValue("GetJobDataUploadParamsResponse.UploadParams.Host"));
+		uploadParams.setExpire(_ctx.integerValue("GetJobDataUploadParamsResponse.UploadParams.Expire"));
 		getJobDataUploadParamsResponse.setUploadParams(uploadParams);
 	 
 	 	return getJobDataUploadParamsResponse;

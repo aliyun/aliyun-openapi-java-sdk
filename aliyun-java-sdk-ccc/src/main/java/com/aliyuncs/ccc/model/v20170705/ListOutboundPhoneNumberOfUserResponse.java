@@ -111,6 +111,8 @@ public class ListOutboundPhoneNumberOfUserResponse extends AcsResponse {
 
 		private Boolean privateFlag;
 
+		private String sipTelX;
+
 		private PrivacyNumber privacyNumber;
 
 		public String getPhoneNumberId() {
@@ -209,6 +211,14 @@ public class ListOutboundPhoneNumberOfUserResponse extends AcsResponse {
 			this.privateFlag = privateFlag;
 		}
 
+		public String getSipTelX() {
+			return this.sipTelX;
+		}
+
+		public void setSipTelX(String sipTelX) {
+			this.sipTelX = sipTelX;
+		}
+
 		public PrivacyNumber getPrivacyNumber() {
 			return this.privacyNumber;
 		}
@@ -234,6 +244,8 @@ public class ListOutboundPhoneNumberOfUserResponse extends AcsResponse {
 			private String bizId;
 
 			private String subId;
+
+			private String regionNameCity;
 
 			public String getPoolId() {
 				return this.poolId;
@@ -297,6 +309,14 @@ public class ListOutboundPhoneNumberOfUserResponse extends AcsResponse {
 
 			public void setSubId(String subId) {
 				this.subId = subId;
+			}
+
+			public String getRegionNameCity() {
+				return this.regionNameCity;
+			}
+
+			public void setRegionNameCity(String regionNameCity) {
+				this.regionNameCity = regionNameCity;
 			}
 		}
 	}

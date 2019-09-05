@@ -21,27 +21,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJobsProgressResponseUnmarshaller {
 
-	public static GetJobsProgressResponse unmarshall(GetJobsProgressResponse getJobsProgressResponse, UnmarshallerContext context) {
+	public static GetJobsProgressResponse unmarshall(GetJobsProgressResponse getJobsProgressResponse, UnmarshallerContext _ctx) {
 		
-		getJobsProgressResponse.setRequestId(context.stringValue("GetJobsProgressResponse.RequestId"));
-		getJobsProgressResponse.setSuccess(context.booleanValue("GetJobsProgressResponse.Success"));
-		getJobsProgressResponse.setCode(context.stringValue("GetJobsProgressResponse.Code"));
-		getJobsProgressResponse.setMessage(context.stringValue("GetJobsProgressResponse.Message"));
-		getJobsProgressResponse.setHttpStatusCode(context.integerValue("GetJobsProgressResponse.HttpStatusCode"));
+		getJobsProgressResponse.setRequestId(_ctx.stringValue("GetJobsProgressResponse.RequestId"));
+		getJobsProgressResponse.setSuccess(_ctx.booleanValue("GetJobsProgressResponse.Success"));
+		getJobsProgressResponse.setCode(_ctx.stringValue("GetJobsProgressResponse.Code"));
+		getJobsProgressResponse.setMessage(_ctx.stringValue("GetJobsProgressResponse.Message"));
+		getJobsProgressResponse.setHttpStatusCode(_ctx.integerValue("GetJobsProgressResponse.HttpStatusCode"));
 
 		JobsProgress jobsProgress = new JobsProgress();
-		jobsProgress.setStatus(context.stringValue("GetJobsProgressResponse.JobsProgress.Status"));
-		jobsProgress.setStartTime(context.longValue("GetJobsProgressResponse.JobsProgress.StartTime"));
-		jobsProgress.setDuration(context.integerValue("GetJobsProgressResponse.JobsProgress.Duration"));
-		jobsProgress.setTotalJobs(context.integerValue("GetJobsProgressResponse.JobsProgress.TotalJobs"));
-		jobsProgress.setTotalNotAnswered(context.integerValue("GetJobsProgressResponse.JobsProgress.TotalNotAnswered"));
-		jobsProgress.setTotalCompleted(context.integerValue("GetJobsProgressResponse.JobsProgress.TotalCompleted"));
-		jobsProgress.setScheduling(context.integerValue("GetJobsProgressResponse.JobsProgress.Scheduling"));
-		jobsProgress.setExecuting(context.integerValue("GetJobsProgressResponse.JobsProgress.Executing"));
-		jobsProgress.setPaused(context.integerValue("GetJobsProgressResponse.JobsProgress.Paused"));
-		jobsProgress.setFailed(context.integerValue("GetJobsProgressResponse.JobsProgress.Failed"));
-		jobsProgress.setCancelled(context.integerValue("GetJobsProgressResponse.JobsProgress.Cancelled"));
-		jobsProgress.setRepeatCall(context.integerValue("GetJobsProgressResponse.JobsProgress.RepeatCall"));
+		jobsProgress.setStatus(_ctx.stringValue("GetJobsProgressResponse.JobsProgress.Status"));
+		jobsProgress.setStartTime(_ctx.longValue("GetJobsProgressResponse.JobsProgress.StartTime"));
+		jobsProgress.setDuration(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.Duration"));
+		jobsProgress.setTotalJobs(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.TotalJobs"));
+		jobsProgress.setTotalNotAnswered(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.TotalNotAnswered"));
+		jobsProgress.setTotalCompleted(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.TotalCompleted"));
+		jobsProgress.setScheduling(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.Scheduling"));
+		jobsProgress.setExecuting(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.Executing"));
+		jobsProgress.setPaused(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.Paused"));
+		jobsProgress.setFailed(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.Failed"));
+		jobsProgress.setCancelled(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.Cancelled"));
+		jobsProgress.setRepeatCall(_ctx.integerValue("GetJobsProgressResponse.JobsProgress.RepeatCall"));
 		getJobsProgressResponse.setJobsProgress(jobsProgress);
 	 
 	 	return getJobsProgressResponse;

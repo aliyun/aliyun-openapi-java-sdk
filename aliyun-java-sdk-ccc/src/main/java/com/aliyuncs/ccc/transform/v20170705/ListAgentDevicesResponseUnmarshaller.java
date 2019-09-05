@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListAgentDevicesResponseUnmarshaller {
 
-	public static ListAgentDevicesResponse unmarshall(ListAgentDevicesResponse listAgentDevicesResponse, UnmarshallerContext context) {
+	public static ListAgentDevicesResponse unmarshall(ListAgentDevicesResponse listAgentDevicesResponse, UnmarshallerContext _ctx) {
 		
-		listAgentDevicesResponse.setRequestId(context.stringValue("ListAgentDevicesResponse.RequestId"));
-		listAgentDevicesResponse.setSuccess(context.booleanValue("ListAgentDevicesResponse.Success"));
-		listAgentDevicesResponse.setCode(context.stringValue("ListAgentDevicesResponse.Code"));
-		listAgentDevicesResponse.setMessage(context.stringValue("ListAgentDevicesResponse.Message"));
-		listAgentDevicesResponse.setHttpStatusCode(context.integerValue("ListAgentDevicesResponse.HttpStatusCode"));
+		listAgentDevicesResponse.setRequestId(_ctx.stringValue("ListAgentDevicesResponse.RequestId"));
+		listAgentDevicesResponse.setSuccess(_ctx.booleanValue("ListAgentDevicesResponse.Success"));
+		listAgentDevicesResponse.setCode(_ctx.stringValue("ListAgentDevicesResponse.Code"));
+		listAgentDevicesResponse.setMessage(_ctx.stringValue("ListAgentDevicesResponse.Message"));
+		listAgentDevicesResponse.setHttpStatusCode(_ctx.integerValue("ListAgentDevicesResponse.HttpStatusCode"));
 
 		List<AgentDevice> agentDeviceList = new ArrayList<AgentDevice>();
-		for (int i = 0; i < context.lengthValue("ListAgentDevicesResponse.AgentDeviceList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListAgentDevicesResponse.AgentDeviceList.Length"); i++) {
 			AgentDevice agentDevice = new AgentDevice();
-			agentDevice.setInstanceId(context.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].InstanceId"));
-			agentDevice.setRamId(context.longValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].RamId"));
-			agentDevice.setLoginTime(context.longValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].LoginTime"));
-			agentDevice.setClientIp(context.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].ClientIp"));
-			agentDevice.setClientPort(context.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].ClientPort"));
-			agentDevice.setBrowserVersion(context.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].BrowserVersion"));
-			agentDevice.setIsLogin(context.integerValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].IsLogin"));
-			agentDevice.setRemark(context.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].Remark"));
+			agentDevice.setInstanceId(_ctx.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].InstanceId"));
+			agentDevice.setRamId(_ctx.longValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].RamId"));
+			agentDevice.setLoginTime(_ctx.longValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].LoginTime"));
+			agentDevice.setClientIp(_ctx.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].ClientIp"));
+			agentDevice.setClientPort(_ctx.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].ClientPort"));
+			agentDevice.setBrowserVersion(_ctx.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].BrowserVersion"));
+			agentDevice.setIsLogin(_ctx.integerValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].IsLogin"));
+			agentDevice.setRemark(_ctx.stringValue("ListAgentDevicesResponse.AgentDeviceList["+ i +"].Remark"));
 
 			agentDeviceList.add(agentDevice);
 		}

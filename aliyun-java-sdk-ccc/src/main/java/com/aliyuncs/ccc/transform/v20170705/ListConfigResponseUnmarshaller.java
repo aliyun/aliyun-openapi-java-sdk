@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListConfigResponseUnmarshaller {
 
-	public static ListConfigResponse unmarshall(ListConfigResponse listConfigResponse, UnmarshallerContext context) {
+	public static ListConfigResponse unmarshall(ListConfigResponse listConfigResponse, UnmarshallerContext _ctx) {
 		
-		listConfigResponse.setRequestId(context.stringValue("ListConfigResponse.RequestId"));
-		listConfigResponse.setSuccess(context.booleanValue("ListConfigResponse.Success"));
-		listConfigResponse.setCode(context.stringValue("ListConfigResponse.Code"));
-		listConfigResponse.setMessage(context.stringValue("ListConfigResponse.Message"));
-		listConfigResponse.setHttpStatusCode(context.integerValue("ListConfigResponse.HttpStatusCode"));
+		listConfigResponse.setRequestId(_ctx.stringValue("ListConfigResponse.RequestId"));
+		listConfigResponse.setSuccess(_ctx.booleanValue("ListConfigResponse.Success"));
+		listConfigResponse.setCode(_ctx.stringValue("ListConfigResponse.Code"));
+		listConfigResponse.setMessage(_ctx.stringValue("ListConfigResponse.Message"));
+		listConfigResponse.setHttpStatusCode(_ctx.integerValue("ListConfigResponse.HttpStatusCode"));
 
 		List<ConfigItem> configItems = new ArrayList<ConfigItem>();
-		for (int i = 0; i < context.lengthValue("ListConfigResponse.ConfigItems.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListConfigResponse.ConfigItems.Length"); i++) {
 			ConfigItem configItem = new ConfigItem();
-			configItem.setName(context.stringValue("ListConfigResponse.ConfigItems["+ i +"].Name"));
-			configItem.setValue(context.stringValue("ListConfigResponse.ConfigItems["+ i +"].Value"));
+			configItem.setName(_ctx.stringValue("ListConfigResponse.ConfigItems["+ i +"].Name"));
+			configItem.setValue(_ctx.stringValue("ListConfigResponse.ConfigItems["+ i +"].Value"));
 
 			configItems.add(configItem);
 		}

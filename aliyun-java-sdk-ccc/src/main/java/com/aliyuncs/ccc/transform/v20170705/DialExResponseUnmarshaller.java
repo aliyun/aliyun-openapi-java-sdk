@@ -20,17 +20,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DialExResponseUnmarshaller {
 
-	public static DialExResponse unmarshall(DialExResponse dialExResponse, UnmarshallerContext context) {
+	public static DialExResponse unmarshall(DialExResponse dialExResponse, UnmarshallerContext _ctx) {
 		
-		dialExResponse.setRequestId(context.stringValue("DialExResponse.RequestId"));
-		dialExResponse.setSuccess(context.booleanValue("DialExResponse.Success"));
-		dialExResponse.setCode(context.stringValue("DialExResponse.Code"));
-		dialExResponse.setMessage(context.stringValue("DialExResponse.Message"));
-		dialExResponse.setHttpStatusCode(context.integerValue("DialExResponse.HttpStatusCode"));
-		dialExResponse.setStatusCode(context.stringValue("DialExResponse.StatusCode"));
-		dialExResponse.setStatusDesc(context.stringValue("DialExResponse.StatusDesc"));
-		dialExResponse.setTaskId(context.stringValue("DialExResponse.TaskId"));
-		dialExResponse.setTimeStamp(context.stringValue("DialExResponse.TimeStamp"));
+		dialExResponse.setRequestId(_ctx.stringValue("DialExResponse.RequestId"));
+		dialExResponse.setSuccess(_ctx.booleanValue("DialExResponse.Success"));
+		dialExResponse.setCode(_ctx.stringValue("DialExResponse.Code"));
+		dialExResponse.setMessage(_ctx.stringValue("DialExResponse.Message"));
+		dialExResponse.setHttpStatusCode(_ctx.integerValue("DialExResponse.HttpStatusCode"));
+		dialExResponse.setStatusCode(_ctx.stringValue("DialExResponse.StatusCode"));
+		dialExResponse.setStatusDesc(_ctx.stringValue("DialExResponse.StatusDesc"));
+		dialExResponse.setTaskId(_ctx.stringValue("DialExResponse.TaskId"));
+		dialExResponse.setTimeStamp(_ctx.stringValue("DialExResponse.TimeStamp"));
 	 
 	 	return dialExResponse;
 	}

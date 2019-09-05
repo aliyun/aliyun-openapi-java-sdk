@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,16 @@ public class DialExRequest extends RpcAcsRequest<DialExResponse> {
 	
 	public DialExRequest() {
 		super("CCC", "2017-07-05", "DialEx");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String contactFlowId;
+	private String callee;
+
+	private String routPoint;
 
 	private String caller;
 
@@ -34,16 +43,27 @@ public class DialExRequest extends RpcAcsRequest<DialExResponse> {
 
 	private String provider;
 
-	private String callee;
+	private Integer answerMode;
 
-	public String getContactFlowId() {
-		return this.contactFlowId;
+	public String getCallee() {
+		return this.callee;
 	}
 
-	public void setContactFlowId(String contactFlowId) {
-		this.contactFlowId = contactFlowId;
-		if(contactFlowId != null){
-			putQueryParameter("ContactFlowId", contactFlowId);
+	public void setCallee(String callee) {
+		this.callee = callee;
+		if(callee != null){
+			putQueryParameter("Callee", callee);
+		}
+	}
+
+	public String getRoutPoint() {
+		return this.routPoint;
+	}
+
+	public void setRoutPoint(String routPoint) {
+		this.routPoint = routPoint;
+		if(routPoint != null){
+			putQueryParameter("RoutPoint", routPoint);
 		}
 	}
 
@@ -80,14 +100,14 @@ public class DialExRequest extends RpcAcsRequest<DialExResponse> {
 		}
 	}
 
-	public String getCallee() {
-		return this.callee;
+	public Integer getAnswerMode() {
+		return this.answerMode;
 	}
 
-	public void setCallee(String callee) {
-		this.callee = callee;
-		if(callee != null){
-			putQueryParameter("Callee", callee);
+	public void setAnswerMode(Integer answerMode) {
+		this.answerMode = answerMode;
+		if(answerMode != null){
+			putQueryParameter("AnswerMode", answerMode.toString());
 		}
 	}
 

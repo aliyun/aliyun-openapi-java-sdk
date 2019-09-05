@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,44 @@ public class SubmitCabRecordingRequest extends RpcAcsRequest<SubmitCabRecordingR
 	
 	public SubmitCabRecordingRequest() {
 		super("CCC", "2017-07-05", "SubmitCabRecording");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String mergedRecording;
+
+	private String resourceRecording;
 
 	private String instanceId;
 
 	private Long instanceOwnerId;
 
-	private String mergedRecording;
-
 	private String taskId;
 
-	private String resourceRecording;
+	public String getMergedRecording() {
+		return this.mergedRecording;
+	}
+
+	public void setMergedRecording(String mergedRecording) {
+		this.mergedRecording = mergedRecording;
+		if(mergedRecording != null){
+			putQueryParameter("MergedRecording", mergedRecording);
+		}
+	}
+
+	public String getResourceRecording() {
+		return this.resourceRecording;
+	}
+
+	public void setResourceRecording(String resourceRecording) {
+		this.resourceRecording = resourceRecording;
+		if(resourceRecording != null){
+			putQueryParameter("ResourceRecording", resourceRecording);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -58,17 +87,6 @@ public class SubmitCabRecordingRequest extends RpcAcsRequest<SubmitCabRecordingR
 		}
 	}
 
-	public String getMergedRecording() {
-		return this.mergedRecording;
-	}
-
-	public void setMergedRecording(String mergedRecording) {
-		this.mergedRecording = mergedRecording;
-		if(mergedRecording != null){
-			putQueryParameter("MergedRecording", mergedRecording);
-		}
-	}
-
 	public String getTaskId() {
 		return this.taskId;
 	}
@@ -77,17 +95,6 @@ public class SubmitCabRecordingRequest extends RpcAcsRequest<SubmitCabRecordingR
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
-		}
-	}
-
-	public String getResourceRecording() {
-		return this.resourceRecording;
-	}
-
-	public void setResourceRecording(String resourceRecording) {
-		this.resourceRecording = resourceRecording;
-		if(resourceRecording != null){
-			putQueryParameter("ResourceRecording", resourceRecording);
 		}
 	}
 

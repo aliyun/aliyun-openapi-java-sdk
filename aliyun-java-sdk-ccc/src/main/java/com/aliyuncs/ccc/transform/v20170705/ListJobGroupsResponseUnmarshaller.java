@@ -29,61 +29,61 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobGroupsResponseUnmarshaller {
 
-	public static ListJobGroupsResponse unmarshall(ListJobGroupsResponse listJobGroupsResponse, UnmarshallerContext context) {
+	public static ListJobGroupsResponse unmarshall(ListJobGroupsResponse listJobGroupsResponse, UnmarshallerContext _ctx) {
 		
-		listJobGroupsResponse.setRequestId(context.stringValue("ListJobGroupsResponse.RequestId"));
-		listJobGroupsResponse.setSuccess(context.booleanValue("ListJobGroupsResponse.Success"));
-		listJobGroupsResponse.setCode(context.stringValue("ListJobGroupsResponse.Code"));
-		listJobGroupsResponse.setMessage(context.stringValue("ListJobGroupsResponse.Message"));
-		listJobGroupsResponse.setHttpStatusCode(context.integerValue("ListJobGroupsResponse.HttpStatusCode"));
+		listJobGroupsResponse.setRequestId(_ctx.stringValue("ListJobGroupsResponse.RequestId"));
+		listJobGroupsResponse.setSuccess(_ctx.booleanValue("ListJobGroupsResponse.Success"));
+		listJobGroupsResponse.setCode(_ctx.stringValue("ListJobGroupsResponse.Code"));
+		listJobGroupsResponse.setMessage(_ctx.stringValue("ListJobGroupsResponse.Message"));
+		listJobGroupsResponse.setHttpStatusCode(_ctx.integerValue("ListJobGroupsResponse.HttpStatusCode"));
 
 		JobGroups jobGroups = new JobGroups();
-		jobGroups.setTotalCount(context.integerValue("ListJobGroupsResponse.JobGroups.TotalCount"));
-		jobGroups.setPageNumber(context.integerValue("ListJobGroupsResponse.JobGroups.PageNumber"));
-		jobGroups.setPageSize(context.integerValue("ListJobGroupsResponse.JobGroups.PageSize"));
+		jobGroups.setTotalCount(_ctx.integerValue("ListJobGroupsResponse.JobGroups.TotalCount"));
+		jobGroups.setPageNumber(_ctx.integerValue("ListJobGroupsResponse.JobGroups.PageNumber"));
+		jobGroups.setPageSize(_ctx.integerValue("ListJobGroupsResponse.JobGroups.PageSize"));
 
 		List<JobGroup> list = new ArrayList<JobGroup>();
-		for (int i = 0; i < context.lengthValue("ListJobGroupsResponse.JobGroups.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobGroupsResponse.JobGroups.List.Length"); i++) {
 			JobGroup jobGroup = new JobGroup();
-			jobGroup.setId(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Id"));
-			jobGroup.setName(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Name"));
-			jobGroup.setDescription(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Description"));
-			jobGroup.setScenarioId(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScenarioId"));
-			jobGroup.setJobFilePath(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobFilePath"));
-			jobGroup.setCreationTime(context.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CreationTime"));
+			jobGroup.setId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Id"));
+			jobGroup.setName(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Name"));
+			jobGroup.setDescription(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Description"));
+			jobGroup.setScenarioId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].ScenarioId"));
+			jobGroup.setJobFilePath(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].JobFilePath"));
+			jobGroup.setCreationTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CreationTime"));
 
 			List<String> callingNumbers = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CallingNumbers.Length"); j++) {
-				callingNumbers.add(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CallingNumbers["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CallingNumbers.Length"); j++) {
+				callingNumbers.add(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].CallingNumbers["+ j +"]"));
 			}
 			jobGroup.setCallingNumbers(callingNumbers);
 
 			Strategy strategy = new Strategy();
-			strategy.setId(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Id"));
-			strategy.setName(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Name"));
-			strategy.setDescription(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Description"));
-			strategy.setType(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Type"));
-			strategy.setStartTime(context.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.StartTime"));
-			strategy.setEndTime(context.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.EndTime"));
-			strategy.setRepeatBy(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.RepeatBy"));
-			strategy.setMaxAttemptsPerDay(context.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.MaxAttemptsPerDay"));
-			strategy.setMinAttemptInterval(context.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.MinAttemptInterval"));
-			strategy.setCustomized(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Customized"));
-			strategy.setRoutingStrategy(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.RoutingStrategy"));
-			strategy.setFollowUpStrategy(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.FollowUpStrategy"));
-			strategy.setIsTemplate(context.booleanValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.IsTemplate"));
+			strategy.setId(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Id"));
+			strategy.setName(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Name"));
+			strategy.setDescription(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Description"));
+			strategy.setType(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Type"));
+			strategy.setStartTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.StartTime"));
+			strategy.setEndTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.EndTime"));
+			strategy.setRepeatBy(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.RepeatBy"));
+			strategy.setMaxAttemptsPerDay(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.MaxAttemptsPerDay"));
+			strategy.setMinAttemptInterval(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.MinAttemptInterval"));
+			strategy.setCustomized(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.Customized"));
+			strategy.setRoutingStrategy(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.RoutingStrategy"));
+			strategy.setFollowUpStrategy(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.FollowUpStrategy"));
+			strategy.setIsTemplate(_ctx.booleanValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.IsTemplate"));
 
 			List<String> repeatDays = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.RepeatDays.Length"); j++) {
-				repeatDays.add(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.RepeatDays["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.RepeatDays.Length"); j++) {
+				repeatDays.add(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.RepeatDays["+ j +"]"));
 			}
 			strategy.setRepeatDays(repeatDays);
 
 			List<TimeFrame> workingTime = new ArrayList<TimeFrame>();
-			for (int j = 0; j < context.lengthValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime.Length"); j++) {
 				TimeFrame timeFrame = new TimeFrame();
-				timeFrame.setBeginTime(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].BeginTime"));
-				timeFrame.setEndTime(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].EndTime"));
+				timeFrame.setBeginTime(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].BeginTime"));
+				timeFrame.setEndTime(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].EndTime"));
 
 				workingTime.add(timeFrame);
 			}
@@ -91,18 +91,18 @@ public class ListJobGroupsResponseUnmarshaller {
 			jobGroup.setStrategy(strategy);
 
 			Progress progress = new Progress();
-			progress.setTotalJobs(context.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalJobs"));
-			progress.setStatus(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Status"));
-			progress.setTotalNotAnswered(context.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalNotAnswered"));
-			progress.setTotalCompleted(context.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalCompleted"));
-			progress.setStartTime(context.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.StartTime"));
-			progress.setDuration(context.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Duration"));
+			progress.setTotalJobs(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalJobs"));
+			progress.setStatus(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Status"));
+			progress.setTotalNotAnswered(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalNotAnswered"));
+			progress.setTotalCompleted(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.TotalCompleted"));
+			progress.setStartTime(_ctx.longValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.StartTime"));
+			progress.setDuration(_ctx.integerValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Duration"));
 
 			List<KeyValuePair> categories = new ArrayList<KeyValuePair>();
-			for (int j = 0; j < context.lengthValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Categories.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Categories.Length"); j++) {
 				KeyValuePair keyValuePair = new KeyValuePair();
-				keyValuePair.setKey(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Categories["+ j +"].Key"));
-				keyValuePair.setValue(context.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Categories["+ j +"].Value"));
+				keyValuePair.setKey(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Categories["+ j +"].Key"));
+				keyValuePair.setValue(_ctx.stringValue("ListJobGroupsResponse.JobGroups.List["+ i +"].Progress.Categories["+ j +"].Value"));
 
 				categories.add(keyValuePair);
 			}

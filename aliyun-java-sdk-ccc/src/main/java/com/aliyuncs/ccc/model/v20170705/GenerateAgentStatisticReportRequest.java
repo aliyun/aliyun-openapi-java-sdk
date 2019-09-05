@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class GenerateAgentStatisticReportRequest extends RpcAcsRequest<GenerateA
 	
 	public GenerateAgentStatisticReportRequest() {
 		super("CCC", "2017-07-05", "GenerateAgentStatisticReport");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String agentId;
+
+	private String startDate;
+
+	private Integer pageNumber;
 
 	private String instanceId;
 
 	private String endDate;
 
 	private Integer pageSize;
-
-	private String startDate;
-
-	private Integer pageNumber;
 
 	public String getAgentId() {
 		return this.agentId;
@@ -46,6 +53,28 @@ public class GenerateAgentStatisticReportRequest extends RpcAcsRequest<GenerateA
 		this.agentId = agentId;
 		if(agentId != null){
 			putQueryParameter("AgentId", agentId);
+		}
+	}
+
+	public String getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -79,28 +108,6 @@ public class GenerateAgentStatisticReportRequest extends RpcAcsRequest<GenerateA
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

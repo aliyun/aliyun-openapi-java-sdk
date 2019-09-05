@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,7 +27,14 @@ public class CreatePredictiveJobsRequest extends RpcAcsRequest<CreatePredictiveJ
 	
 	public CreatePredictiveJobsRequest() {
 		super("CCC", "2017-07-05", "CreatePredictiveJobs");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private List<String> jobsJsons;
 
 	private String instanceId;
 
@@ -33,7 +42,18 @@ public class CreatePredictiveJobsRequest extends RpcAcsRequest<CreatePredictiveJ
 
 	private String strategyJson;
 
-	private List<String> jobsJsons;
+	public List<String> getJobsJsons() {
+		return this.jobsJsons;
+	}
+
+	public void setJobsJsons(List<String> jobsJsons) {
+		this.jobsJsons = jobsJsons;	
+		if (jobsJsons != null) {
+			for (int i = 0; i < jobsJsons.size(); i++) {
+				putQueryParameter("JobsJson." + (i + 1) , jobsJsons.get(i));
+			}
+		}	
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -66,19 +86,6 @@ public class CreatePredictiveJobsRequest extends RpcAcsRequest<CreatePredictiveJ
 		if(strategyJson != null){
 			putQueryParameter("StrategyJson", strategyJson);
 		}
-	}
-
-	public List<String> getJobsJsons() {
-		return this.jobsJsons;
-	}
-
-	public void setJobsJsons(List<String> jobsJsons) {
-		this.jobsJsons = jobsJsons;	
-		if (jobsJsons != null) {
-			for (int i = 0; i < jobsJsons.size(); i++) {
-				putQueryParameter("JobsJson." + (i + 1) , jobsJsons.get(i));
-			}
-		}	
 	}
 
 	@Override

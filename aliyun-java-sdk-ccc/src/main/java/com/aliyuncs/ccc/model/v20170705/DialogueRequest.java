@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,16 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 	
 	public DialogueRequest() {
 		super("CCC", "2017-07-05", "Dialogue");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String callId;
+
+	private String actionParams;
 
 	private String callingNumber;
 
@@ -34,11 +43,7 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 
 	private String calledNumber;
 
-	private Long instanceOwnerId;
-
 	private String actionKey;
-
-	private String actionParams;
 
 	private String callType;
 
@@ -56,6 +61,17 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		this.callId = callId;
 		if(callId != null){
 			putQueryParameter("CallId", callId);
+		}
+	}
+
+	public String getActionParams() {
+		return this.actionParams;
+	}
+
+	public void setActionParams(String actionParams) {
+		this.actionParams = actionParams;
+		if(actionParams != null){
+			putQueryParameter("ActionParams", actionParams);
 		}
 	}
 
@@ -92,17 +108,6 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		}
 	}
 
-	public Long getInstanceOwnerId() {
-		return this.instanceOwnerId;
-	}
-
-	public void setInstanceOwnerId(Long instanceOwnerId) {
-		this.instanceOwnerId = instanceOwnerId;
-		if(instanceOwnerId != null){
-			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
-		}
-	}
-
 	public String getActionKey() {
 		return this.actionKey;
 	}
@@ -111,17 +116,6 @@ public class DialogueRequest extends RpcAcsRequest<DialogueResponse> {
 		this.actionKey = actionKey;
 		if(actionKey != null){
 			putQueryParameter("ActionKey", actionKey);
-		}
-	}
-
-	public String getActionParams() {
-		return this.actionParams;
-	}
-
-	public void setActionParams(String actionParams) {
-		this.actionParams = actionParams;
-		if(actionParams != null){
-			putQueryParameter("ActionParams", actionParams);
 		}
 	}
 

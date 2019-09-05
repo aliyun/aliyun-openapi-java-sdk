@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,19 +27,48 @@ public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 	
 	public AssignJobsRequest() {
 		super("CCC", "2017-07-05", "AssignJobs");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String groupId;
+
+	private List<String> jobsJsons;
 
 	private List<String> callingNumbers;
 
 	private String instanceId;
 
-	private String groupId;
-
 	private String strategyJson;
 
 	private String scenarioId;
 
-	private List<String> jobsJsons;
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public List<String> getJobsJsons() {
+		return this.jobsJsons;
+	}
+
+	public void setJobsJsons(List<String> jobsJsons) {
+		this.jobsJsons = jobsJsons;	
+		if (jobsJsons != null) {
+			for (int i = 0; i < jobsJsons.size(); i++) {
+				putQueryParameter("JobsJson." + (i + 1) , jobsJsons.get(i));
+			}
+		}	
+	}
 
 	public List<String> getCallingNumbers() {
 		return this.callingNumbers;
@@ -63,17 +94,6 @@ public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
 	public String getStrategyJson() {
 		return this.strategyJson;
 	}
@@ -94,19 +114,6 @@ public class AssignJobsRequest extends RpcAcsRequest<AssignJobsResponse> {
 		if(scenarioId != null){
 			putQueryParameter("ScenarioId", scenarioId);
 		}
-	}
-
-	public List<String> getJobsJsons() {
-		return this.jobsJsons;
-	}
-
-	public void setJobsJsons(List<String> jobsJsons) {
-		this.jobsJsons = jobsJsons;	
-		if (jobsJsons != null) {
-			for (int i = 0; i < jobsJsons.size(); i++) {
-				putQueryParameter("JobsJson." + (i + 1) , jobsJsons.get(i));
-			}
-		}	
 	}
 
 	@Override

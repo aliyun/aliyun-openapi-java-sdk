@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,14 @@ public class ListIvrTrackingDetailRequest extends RpcAcsRequest<ListIvrTrackingD
 	
 	public ListIvrTrackingDetailRequest() {
 		super("CCC", "2017-07-05", "ListIvrTrackingDetail");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String callingNumber;
-
-	private String instanceId;
-
 	private String contactId;
-
-	private String calledNumber;
-
-	private Integer pageSize;
 
 	private Long startTime;
 
@@ -42,27 +41,13 @@ public class ListIvrTrackingDetailRequest extends RpcAcsRequest<ListIvrTrackingD
 
 	private Integer pageNumber;
 
-	public String getCallingNumber() {
-		return this.callingNumber;
-	}
+	private String callingNumber;
 
-	public void setCallingNumber(String callingNumber) {
-		this.callingNumber = callingNumber;
-		if(callingNumber != null){
-			putQueryParameter("CallingNumber", callingNumber);
-		}
-	}
+	private String instanceId;
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
+	private String calledNumber;
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
+	private Integer pageSize;
 
 	public String getContactId() {
 		return this.contactId;
@@ -72,28 +57,6 @@ public class ListIvrTrackingDetailRequest extends RpcAcsRequest<ListIvrTrackingD
 		this.contactId = contactId;
 		if(contactId != null){
 			putQueryParameter("ContactId", contactId);
-		}
-	}
-
-	public String getCalledNumber() {
-		return this.calledNumber;
-	}
-
-	public void setCalledNumber(String calledNumber) {
-		this.calledNumber = calledNumber;
-		if(calledNumber != null){
-			putQueryParameter("CalledNumber", calledNumber);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -127,6 +90,50 @@ public class ListIvrTrackingDetailRequest extends RpcAcsRequest<ListIvrTrackingD
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getCallingNumber() {
+		return this.callingNumber;
+	}
+
+	public void setCallingNumber(String callingNumber) {
+		this.callingNumber = callingNumber;
+		if(callingNumber != null){
+			putQueryParameter("CallingNumber", callingNumber);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getCalledNumber() {
+		return this.calledNumber;
+	}
+
+	public void setCalledNumber(String calledNumber) {
+		this.calledNumber = calledNumber;
+		if(calledNumber != null){
+			putQueryParameter("CalledNumber", calledNumber);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

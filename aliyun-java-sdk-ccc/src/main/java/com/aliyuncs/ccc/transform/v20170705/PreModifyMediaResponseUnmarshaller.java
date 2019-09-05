@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PreModifyMediaResponseUnmarshaller {
 
-	public static PreModifyMediaResponse unmarshall(PreModifyMediaResponse preModifyMediaResponse, UnmarshallerContext context) {
+	public static PreModifyMediaResponse unmarshall(PreModifyMediaResponse preModifyMediaResponse, UnmarshallerContext _ctx) {
 		
-		preModifyMediaResponse.setRequestId(context.stringValue("PreModifyMediaResponse.RequestId"));
-		preModifyMediaResponse.setSuccess(context.booleanValue("PreModifyMediaResponse.Success"));
-		preModifyMediaResponse.setCode(context.stringValue("PreModifyMediaResponse.Code"));
-		preModifyMediaResponse.setMessage(context.stringValue("PreModifyMediaResponse.Message"));
-		preModifyMediaResponse.setHttpStatusCode(context.integerValue("PreModifyMediaResponse.HttpStatusCode"));
+		preModifyMediaResponse.setRequestId(_ctx.stringValue("PreModifyMediaResponse.RequestId"));
+		preModifyMediaResponse.setSuccess(_ctx.booleanValue("PreModifyMediaResponse.Success"));
+		preModifyMediaResponse.setCode(_ctx.stringValue("PreModifyMediaResponse.Code"));
+		preModifyMediaResponse.setMessage(_ctx.stringValue("PreModifyMediaResponse.Message"));
+		preModifyMediaResponse.setHttpStatusCode(_ctx.integerValue("PreModifyMediaResponse.HttpStatusCode"));
 
 		PreModifyMediaParam preModifyMediaParam = new PreModifyMediaParam();
-		preModifyMediaParam.setOssFile(context.stringValue("PreModifyMediaResponse.PreModifyMediaParam.OssFile"));
-		preModifyMediaParam.setOssFilePath(context.stringValue("PreModifyMediaResponse.PreModifyMediaParam.OssFilePath"));
-		preModifyMediaParam.setOssBucket(context.stringValue("PreModifyMediaResponse.PreModifyMediaParam.OssBucket"));
-		preModifyMediaParam.setSignatureUrl(context.stringValue("PreModifyMediaResponse.PreModifyMediaParam.SignatureUrl"));
+		preModifyMediaParam.setOssFile(_ctx.stringValue("PreModifyMediaResponse.PreModifyMediaParam.OssFile"));
+		preModifyMediaParam.setOssFilePath(_ctx.stringValue("PreModifyMediaResponse.PreModifyMediaParam.OssFilePath"));
+		preModifyMediaParam.setOssBucket(_ctx.stringValue("PreModifyMediaResponse.PreModifyMediaParam.OssBucket"));
+		preModifyMediaParam.setSignatureUrl(_ctx.stringValue("PreModifyMediaResponse.PreModifyMediaParam.SignatureUrl"));
 		preModifyMediaResponse.setPreModifyMediaParam(preModifyMediaParam);
 	 
 	 	return preModifyMediaResponse;

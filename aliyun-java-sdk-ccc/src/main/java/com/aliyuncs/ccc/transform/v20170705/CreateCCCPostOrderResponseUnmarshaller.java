@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateCCCPostOrderResponseUnmarshaller {
 
-	public static CreateCCCPostOrderResponse unmarshall(CreateCCCPostOrderResponse createCCCPostOrderResponse, UnmarshallerContext context) {
+	public static CreateCCCPostOrderResponse unmarshall(CreateCCCPostOrderResponse createCCCPostOrderResponse, UnmarshallerContext _ctx) {
 		
-		createCCCPostOrderResponse.setRequestId(context.stringValue("CreateCCCPostOrderResponse.RequestId"));
-		createCCCPostOrderResponse.setSuccess(context.booleanValue("CreateCCCPostOrderResponse.Success"));
-		createCCCPostOrderResponse.setCode(context.stringValue("CreateCCCPostOrderResponse.Code"));
-		createCCCPostOrderResponse.setMessage(context.stringValue("CreateCCCPostOrderResponse.Message"));
-		createCCCPostOrderResponse.setHttpStatusCode(context.integerValue("CreateCCCPostOrderResponse.HttpStatusCode"));
-		createCCCPostOrderResponse.setOrderId(context.stringValue("CreateCCCPostOrderResponse.OrderId"));
+		createCCCPostOrderResponse.setRequestId(_ctx.stringValue("CreateCCCPostOrderResponse.RequestId"));
+		createCCCPostOrderResponse.setSuccess(_ctx.booleanValue("CreateCCCPostOrderResponse.Success"));
+		createCCCPostOrderResponse.setCode(_ctx.stringValue("CreateCCCPostOrderResponse.Code"));
+		createCCCPostOrderResponse.setMessage(_ctx.stringValue("CreateCCCPostOrderResponse.Message"));
+		createCCCPostOrderResponse.setHttpStatusCode(_ctx.integerValue("CreateCCCPostOrderResponse.HttpStatusCode"));
+		createCCCPostOrderResponse.setOrderId(_ctx.stringValue("CreateCCCPostOrderResponse.OrderId"));
 	 
 	 	return createCCCPostOrderResponse;
 	}

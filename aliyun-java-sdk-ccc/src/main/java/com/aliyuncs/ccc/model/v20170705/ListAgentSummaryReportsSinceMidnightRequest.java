@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,22 @@ public class ListAgentSummaryReportsSinceMidnightRequest extends RpcAcsRequest<L
 	
 	public ListAgentSummaryReportsSinceMidnightRequest() {
 		super("CCC", "2017-07-05", "ListAgentSummaryReportsSinceMidnight");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String agentIds;
+
+	private Integer pageNumber;
 
 	private String instanceId;
 
 	private String skillGroupId;
 
 	private Integer pageSize;
-
-	private Integer pageNumber;
 
 	public String getAgentIds() {
 		return this.agentIds;
@@ -44,6 +51,17 @@ public class ListAgentSummaryReportsSinceMidnightRequest extends RpcAcsRequest<L
 		this.agentIds = agentIds;
 		if(agentIds != null){
 			putQueryParameter("AgentIds", agentIds);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -77,17 +95,6 @@ public class ListAgentSummaryReportsSinceMidnightRequest extends RpcAcsRequest<L
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

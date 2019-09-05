@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyUserResponseUnmarshaller {
 
-	public static ModifyUserResponse unmarshall(ModifyUserResponse modifyUserResponse, UnmarshallerContext context) {
+	public static ModifyUserResponse unmarshall(ModifyUserResponse modifyUserResponse, UnmarshallerContext _ctx) {
 		
-		modifyUserResponse.setRequestId(context.stringValue("ModifyUserResponse.RequestId"));
-		modifyUserResponse.setSuccess(context.booleanValue("ModifyUserResponse.Success"));
-		modifyUserResponse.setCode(context.stringValue("ModifyUserResponse.Code"));
-		modifyUserResponse.setMessage(context.stringValue("ModifyUserResponse.Message"));
-		modifyUserResponse.setHttpStatusCode(context.integerValue("ModifyUserResponse.HttpStatusCode"));
+		modifyUserResponse.setRequestId(_ctx.stringValue("ModifyUserResponse.RequestId"));
+		modifyUserResponse.setSuccess(_ctx.booleanValue("ModifyUserResponse.Success"));
+		modifyUserResponse.setCode(_ctx.stringValue("ModifyUserResponse.Code"));
+		modifyUserResponse.setMessage(_ctx.stringValue("ModifyUserResponse.Message"));
+		modifyUserResponse.setHttpStatusCode(_ctx.integerValue("ModifyUserResponse.HttpStatusCode"));
 	 
 	 	return modifyUserResponse;
 	}

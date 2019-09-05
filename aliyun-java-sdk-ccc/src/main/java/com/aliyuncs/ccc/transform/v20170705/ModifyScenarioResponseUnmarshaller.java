@@ -29,47 +29,47 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyScenarioResponseUnmarshaller {
 
-	public static ModifyScenarioResponse unmarshall(ModifyScenarioResponse modifyScenarioResponse, UnmarshallerContext context) {
+	public static ModifyScenarioResponse unmarshall(ModifyScenarioResponse modifyScenarioResponse, UnmarshallerContext _ctx) {
 		
-		modifyScenarioResponse.setRequestId(context.stringValue("ModifyScenarioResponse.RequestId"));
-		modifyScenarioResponse.setSuccess(context.booleanValue("ModifyScenarioResponse.Success"));
-		modifyScenarioResponse.setCode(context.stringValue("ModifyScenarioResponse.Code"));
-		modifyScenarioResponse.setMessage(context.stringValue("ModifyScenarioResponse.Message"));
-		modifyScenarioResponse.setHttpStatusCode(context.integerValue("ModifyScenarioResponse.HttpStatusCode"));
+		modifyScenarioResponse.setRequestId(_ctx.stringValue("ModifyScenarioResponse.RequestId"));
+		modifyScenarioResponse.setSuccess(_ctx.booleanValue("ModifyScenarioResponse.Success"));
+		modifyScenarioResponse.setCode(_ctx.stringValue("ModifyScenarioResponse.Code"));
+		modifyScenarioResponse.setMessage(_ctx.stringValue("ModifyScenarioResponse.Message"));
+		modifyScenarioResponse.setHttpStatusCode(_ctx.integerValue("ModifyScenarioResponse.HttpStatusCode"));
 
 		Scenario scenario = new Scenario();
-		scenario.setScenarioId(context.stringValue("ModifyScenarioResponse.Scenario.ScenarioId"));
-		scenario.setScenarioName(context.stringValue("ModifyScenarioResponse.Scenario.ScenarioName"));
-		scenario.setScenarioDescription(context.stringValue("ModifyScenarioResponse.Scenario.ScenarioDescription"));
-		scenario.setType(context.stringValue("ModifyScenarioResponse.Scenario.Type"));
-		scenario.setIsTemplate(context.booleanValue("ModifyScenarioResponse.Scenario.IsTemplate"));
+		scenario.setScenarioId(_ctx.stringValue("ModifyScenarioResponse.Scenario.ScenarioId"));
+		scenario.setScenarioName(_ctx.stringValue("ModifyScenarioResponse.Scenario.ScenarioName"));
+		scenario.setScenarioDescription(_ctx.stringValue("ModifyScenarioResponse.Scenario.ScenarioDescription"));
+		scenario.setType(_ctx.stringValue("ModifyScenarioResponse.Scenario.Type"));
+		scenario.setIsTemplate(_ctx.booleanValue("ModifyScenarioResponse.Scenario.IsTemplate"));
 
 		Strategy strategy = new Strategy();
-		strategy.setStrategyId(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.StrategyId"));
-		strategy.setStrategyName(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.StrategyName"));
-		strategy.setStrategyDescription(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.StrategyDescription"));
-		strategy.setType(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.Type"));
-		strategy.setStartTime(context.longValue("ModifyScenarioResponse.Scenario.Strategy.StartTime"));
-		strategy.setEndTime(context.longValue("ModifyScenarioResponse.Scenario.Strategy.EndTime"));
-		strategy.setRepeatBy(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.RepeatBy"));
-		strategy.setMaxAttemptsPerDay(context.integerValue("ModifyScenarioResponse.Scenario.Strategy.MaxAttemptsPerDay"));
-		strategy.setMinAttemptInterval(context.integerValue("ModifyScenarioResponse.Scenario.Strategy.MinAttemptInterval"));
-		strategy.setCustomized(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.Customized"));
-		strategy.setRoutingStrategy(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.RoutingStrategy"));
-		strategy.setFollowUpStrategy(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.FollowUpStrategy"));
-		strategy.setIsTemplate(context.booleanValue("ModifyScenarioResponse.Scenario.Strategy.IsTemplate"));
+		strategy.setStrategyId(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.StrategyId"));
+		strategy.setStrategyName(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.StrategyName"));
+		strategy.setStrategyDescription(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.StrategyDescription"));
+		strategy.setType(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.Type"));
+		strategy.setStartTime(_ctx.longValue("ModifyScenarioResponse.Scenario.Strategy.StartTime"));
+		strategy.setEndTime(_ctx.longValue("ModifyScenarioResponse.Scenario.Strategy.EndTime"));
+		strategy.setRepeatBy(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.RepeatBy"));
+		strategy.setMaxAttemptsPerDay(_ctx.integerValue("ModifyScenarioResponse.Scenario.Strategy.MaxAttemptsPerDay"));
+		strategy.setMinAttemptInterval(_ctx.integerValue("ModifyScenarioResponse.Scenario.Strategy.MinAttemptInterval"));
+		strategy.setCustomized(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.Customized"));
+		strategy.setRoutingStrategy(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.RoutingStrategy"));
+		strategy.setFollowUpStrategy(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.FollowUpStrategy"));
+		strategy.setIsTemplate(_ctx.booleanValue("ModifyScenarioResponse.Scenario.Strategy.IsTemplate"));
 
 		List<String> repeatDays = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ModifyScenarioResponse.Scenario.Strategy.RepeatDays.Length"); i++) {
-			repeatDays.add(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.RepeatDays["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ModifyScenarioResponse.Scenario.Strategy.RepeatDays.Length"); i++) {
+			repeatDays.add(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.RepeatDays["+ i +"]"));
 		}
 		strategy.setRepeatDays(repeatDays);
 
 		List<TimeFrame> workingTime = new ArrayList<TimeFrame>();
-		for (int i = 0; i < context.lengthValue("ModifyScenarioResponse.Scenario.Strategy.WorkingTime.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ModifyScenarioResponse.Scenario.Strategy.WorkingTime.Length"); i++) {
 			TimeFrame timeFrame = new TimeFrame();
-			timeFrame.setBeginTime(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.WorkingTime["+ i +"].BeginTime"));
-			timeFrame.setEndTime(context.stringValue("ModifyScenarioResponse.Scenario.Strategy.WorkingTime["+ i +"].EndTime"));
+			timeFrame.setBeginTime(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.WorkingTime["+ i +"].BeginTime"));
+			timeFrame.setEndTime(_ctx.stringValue("ModifyScenarioResponse.Scenario.Strategy.WorkingTime["+ i +"].EndTime"));
 
 			workingTime.add(timeFrame);
 		}
@@ -77,20 +77,20 @@ public class ModifyScenarioResponseUnmarshaller {
 		scenario.setStrategy(strategy);
 
 		List<Survey> surveys = new ArrayList<Survey>();
-		for (int i = 0; i < context.lengthValue("ModifyScenarioResponse.Scenario.Surveys.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ModifyScenarioResponse.Scenario.Surveys.Length"); i++) {
 			Survey survey = new Survey();
-			survey.setSurveyId(context.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].SurveyId"));
-			survey.setSurveyName(context.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].SurveyName"));
-			survey.setSurveyDescription(context.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].SurveyDescription"));
-			survey.setRole(context.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Role"));
-			survey.setRound(context.integerValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Round"));
-			survey.setBeebotId(context.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].BeebotId"));
+			survey.setSurveyId(_ctx.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].SurveyId"));
+			survey.setSurveyName(_ctx.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].SurveyName"));
+			survey.setSurveyDescription(_ctx.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].SurveyDescription"));
+			survey.setRole(_ctx.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Role"));
+			survey.setRound(_ctx.integerValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Round"));
+			survey.setBeebotId(_ctx.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].BeebotId"));
 
 			List<IntentNode> intents = new ArrayList<IntentNode>();
-			for (int j = 0; j < context.lengthValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Intents.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Intents.Length"); j++) {
 				IntentNode intentNode = new IntentNode();
-				intentNode.setNodeId(context.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Intents["+ j +"].NodeId"));
-				intentNode.setIntentId(context.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Intents["+ j +"].IntentId"));
+				intentNode.setNodeId(_ctx.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Intents["+ j +"].NodeId"));
+				intentNode.setIntentId(_ctx.stringValue("ModifyScenarioResponse.Scenario.Surveys["+ i +"].Intents["+ j +"].IntentId"));
 
 				intents.add(intentNode);
 			}
@@ -101,10 +101,10 @@ public class ModifyScenarioResponseUnmarshaller {
 		scenario.setSurveys(surveys);
 
 		List<KeyValuePair> variables = new ArrayList<KeyValuePair>();
-		for (int i = 0; i < context.lengthValue("ModifyScenarioResponse.Scenario.Variables.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ModifyScenarioResponse.Scenario.Variables.Length"); i++) {
 			KeyValuePair keyValuePair = new KeyValuePair();
-			keyValuePair.setKey(context.stringValue("ModifyScenarioResponse.Scenario.Variables["+ i +"].Key"));
-			keyValuePair.setValue(context.stringValue("ModifyScenarioResponse.Scenario.Variables["+ i +"].Value"));
+			keyValuePair.setKey(_ctx.stringValue("ModifyScenarioResponse.Scenario.Variables["+ i +"].Key"));
+			keyValuePair.setValue(_ctx.stringValue("ModifyScenarioResponse.Scenario.Variables["+ i +"].Value"));
 
 			variables.add(keyValuePair);
 		}

@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,7 +27,16 @@ public class CreateBatchJobsRequest extends RpcAcsRequest<CreateBatchJobsRespons
 	
 	public CreateBatchJobsRequest() {
 		super("CCC", "2017-07-05", "CreateBatchJobs");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String description;
+
+	private String jobFilePath;
 
 	private List<String> callingNumbers;
 
@@ -37,11 +48,29 @@ public class CreateBatchJobsRequest extends RpcAcsRequest<CreateBatchJobsRespons
 
 	private String name;
 
-	private String description;
-
 	private String scenarioId;
 
-	private String jobFilePath;
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getJobFilePath() {
+		return this.jobFilePath;
+	}
+
+	public void setJobFilePath(String jobFilePath) {
+		this.jobFilePath = jobFilePath;
+		if(jobFilePath != null){
+			putQueryParameter("JobFilePath", jobFilePath);
+		}
+	}
 
 	public List<String> getCallingNumbers() {
 		return this.callingNumbers;
@@ -100,17 +129,6 @@ public class CreateBatchJobsRequest extends RpcAcsRequest<CreateBatchJobsRespons
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public String getScenarioId() {
 		return this.scenarioId;
 	}
@@ -119,17 +137,6 @@ public class CreateBatchJobsRequest extends RpcAcsRequest<CreateBatchJobsRespons
 		this.scenarioId = scenarioId;
 		if(scenarioId != null){
 			putQueryParameter("ScenarioId", scenarioId);
-		}
-	}
-
-	public String getJobFilePath() {
-		return this.jobFilePath;
-	}
-
-	public void setJobFilePath(String jobFilePath) {
-		this.jobFilePath = jobFilePath;
-		if(jobFilePath != null){
-			putQueryParameter("JobFilePath", jobFilePath);
 		}
 	}
 

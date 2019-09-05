@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,7 +26,16 @@ public class GetJobListRequest extends RpcAcsRequest<GetJobListResponse> {
 	
 	public GetJobListRequest() {
 		super("CCC", "2017-07-05", "GetJobList");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private Integer pageNumber;
+
+	private Boolean queryAll;
 
 	private String instanceId;
 
@@ -32,11 +43,29 @@ public class GetJobListRequest extends RpcAcsRequest<GetJobListResponse> {
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
-
 	private Integer status;
 
-	private Boolean queryAll;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Boolean getQueryAll() {
+		return this.queryAll;
+	}
+
+	public void setQueryAll(Boolean queryAll) {
+		this.queryAll = queryAll;
+		if(queryAll != null){
+			putQueryParameter("QueryAll", queryAll.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -71,17 +100,6 @@ public class GetJobListRequest extends RpcAcsRequest<GetJobListResponse> {
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public Integer getStatus() {
 		return this.status;
 	}
@@ -90,17 +108,6 @@ public class GetJobListRequest extends RpcAcsRequest<GetJobListResponse> {
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status.toString());
-		}
-	}
-
-	public Boolean getQueryAll() {
-		return this.queryAll;
-	}
-
-	public void setQueryAll(Boolean queryAll) {
-		this.queryAll = queryAll;
-		if(queryAll != null){
-			putQueryParameter("QueryAll", queryAll.toString());
 		}
 	}
 

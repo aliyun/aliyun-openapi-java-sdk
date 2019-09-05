@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetJobTemplateDownloadParamsResponseUnmarshaller {
 
-	public static GetJobTemplateDownloadParamsResponse unmarshall(GetJobTemplateDownloadParamsResponse getJobTemplateDownloadParamsResponse, UnmarshallerContext context) {
+	public static GetJobTemplateDownloadParamsResponse unmarshall(GetJobTemplateDownloadParamsResponse getJobTemplateDownloadParamsResponse, UnmarshallerContext _ctx) {
 		
-		getJobTemplateDownloadParamsResponse.setRequestId(context.stringValue("GetJobTemplateDownloadParamsResponse.RequestId"));
-		getJobTemplateDownloadParamsResponse.setSuccess(context.booleanValue("GetJobTemplateDownloadParamsResponse.Success"));
-		getJobTemplateDownloadParamsResponse.setCode(context.stringValue("GetJobTemplateDownloadParamsResponse.Code"));
-		getJobTemplateDownloadParamsResponse.setMessage(context.stringValue("GetJobTemplateDownloadParamsResponse.Message"));
-		getJobTemplateDownloadParamsResponse.setHttpStatusCode(context.integerValue("GetJobTemplateDownloadParamsResponse.HttpStatusCode"));
+		getJobTemplateDownloadParamsResponse.setRequestId(_ctx.stringValue("GetJobTemplateDownloadParamsResponse.RequestId"));
+		getJobTemplateDownloadParamsResponse.setSuccess(_ctx.booleanValue("GetJobTemplateDownloadParamsResponse.Success"));
+		getJobTemplateDownloadParamsResponse.setCode(_ctx.stringValue("GetJobTemplateDownloadParamsResponse.Code"));
+		getJobTemplateDownloadParamsResponse.setMessage(_ctx.stringValue("GetJobTemplateDownloadParamsResponse.Message"));
+		getJobTemplateDownloadParamsResponse.setHttpStatusCode(_ctx.integerValue("GetJobTemplateDownloadParamsResponse.HttpStatusCode"));
 
 		DownloadParams downloadParams = new DownloadParams();
-		downloadParams.setSignatureUrl(context.stringValue("GetJobTemplateDownloadParamsResponse.DownloadParams.SignatureUrl"));
+		downloadParams.setSignatureUrl(_ctx.stringValue("GetJobTemplateDownloadParamsResponse.DownloadParams.SignatureUrl"));
 		getJobTemplateDownloadParamsResponse.setDownloadParams(downloadParams);
 	 
 	 	return getJobTemplateDownloadParamsResponse;

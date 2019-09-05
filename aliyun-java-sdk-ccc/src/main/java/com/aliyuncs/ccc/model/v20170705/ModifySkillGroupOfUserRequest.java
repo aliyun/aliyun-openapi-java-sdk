@@ -16,6 +16,8 @@ package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -25,17 +27,46 @@ public class ModifySkillGroupOfUserRequest extends RpcAcsRequest<ModifySkillGrou
 	
 	public ModifySkillGroupOfUserRequest() {
 		super("CCC", "2017-07-05", "ModifySkillGroupOfUser");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private List<String> roleIds;
+
+	private String userId;
 
 	private List<Integer> skillLevels;
 
 	private String instanceId;
 
-	private List<String> roleIds;
-
 	private List<String> skillGroupIds;
 
-	private String userId;
+	public List<String> getRoleIds() {
+		return this.roleIds;
+	}
+
+	public void setRoleIds(List<String> roleIds) {
+		this.roleIds = roleIds;	
+		if (roleIds != null) {
+			for (int i = 0; i < roleIds.size(); i++) {
+				putQueryParameter("RoleId." + (i + 1) , roleIds.get(i));
+			}
+		}	
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
 
 	public List<Integer> getSkillLevels() {
 		return this.skillLevels;
@@ -61,19 +92,6 @@ public class ModifySkillGroupOfUserRequest extends RpcAcsRequest<ModifySkillGrou
 		}
 	}
 
-	public List<String> getRoleIds() {
-		return this.roleIds;
-	}
-
-	public void setRoleIds(List<String> roleIds) {
-		this.roleIds = roleIds;	
-		if (roleIds != null) {
-			for (int i = 0; i < roleIds.size(); i++) {
-				putQueryParameter("RoleId." + (i + 1) , roleIds.get(i));
-			}
-		}	
-	}
-
 	public List<String> getSkillGroupIds() {
 		return this.skillGroupIds;
 	}
@@ -85,17 +103,6 @@ public class ModifySkillGroupOfUserRequest extends RpcAcsRequest<ModifySkillGrou
 				putQueryParameter("SkillGroupId." + (i + 1) , skillGroupIds.get(i));
 			}
 		}	
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
 	}
 
 	@Override

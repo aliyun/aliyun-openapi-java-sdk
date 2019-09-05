@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +26,18 @@ public class ModifyPrivacyNumberCallDetailRequest extends RpcAcsRequest<ModifyPr
 	
 	public ModifyPrivacyNumberCallDetailRequest() {
 		super("CCC", "2017-07-05", "ModifyPrivacyNumberCallDetail");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String callId;
 
-	private String instanceId;
-
 	private String contactId;
+
+	private String instanceId;
 
 	public String getCallId() {
 		return this.callId;
@@ -43,17 +50,6 @@ public class ModifyPrivacyNumberCallDetailRequest extends RpcAcsRequest<ModifyPr
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getContactId() {
 		return this.contactId;
 	}
@@ -62,6 +58,17 @@ public class ModifyPrivacyNumberCallDetailRequest extends RpcAcsRequest<ModifyPr
 		this.contactId = contactId;
 		if(contactId != null){
 			putQueryParameter("ContactId", contactId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

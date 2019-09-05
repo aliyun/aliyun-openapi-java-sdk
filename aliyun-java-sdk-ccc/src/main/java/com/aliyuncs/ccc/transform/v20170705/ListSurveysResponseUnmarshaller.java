@@ -26,36 +26,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSurveysResponseUnmarshaller {
 
-	public static ListSurveysResponse unmarshall(ListSurveysResponse listSurveysResponse, UnmarshallerContext context) {
+	public static ListSurveysResponse unmarshall(ListSurveysResponse listSurveysResponse, UnmarshallerContext _ctx) {
 		
-		listSurveysResponse.setRequestId(context.stringValue("ListSurveysResponse.RequestId"));
-		listSurveysResponse.setSuccess(context.booleanValue("ListSurveysResponse.Success"));
-		listSurveysResponse.setCode(context.stringValue("ListSurveysResponse.Code"));
-		listSurveysResponse.setMessage(context.stringValue("ListSurveysResponse.Message"));
-		listSurveysResponse.setHttpStatusCode(context.integerValue("ListSurveysResponse.HttpStatusCode"));
+		listSurveysResponse.setRequestId(_ctx.stringValue("ListSurveysResponse.RequestId"));
+		listSurveysResponse.setSuccess(_ctx.booleanValue("ListSurveysResponse.Success"));
+		listSurveysResponse.setCode(_ctx.stringValue("ListSurveysResponse.Code"));
+		listSurveysResponse.setMessage(_ctx.stringValue("ListSurveysResponse.Message"));
+		listSurveysResponse.setHttpStatusCode(_ctx.integerValue("ListSurveysResponse.HttpStatusCode"));
 
 		List<Survey> surveys = new ArrayList<Survey>();
-		for (int i = 0; i < context.lengthValue("ListSurveysResponse.Surveys.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSurveysResponse.Surveys.Length"); i++) {
 			Survey survey = new Survey();
-			survey.setId(context.stringValue("ListSurveysResponse.Surveys["+ i +"].Id"));
-			survey.setScenarioUuid(context.stringValue("ListSurveysResponse.Surveys["+ i +"].ScenarioUuid"));
-			survey.setName(context.stringValue("ListSurveysResponse.Surveys["+ i +"].Name"));
-			survey.setDescription(context.stringValue("ListSurveysResponse.Surveys["+ i +"].Description"));
-			survey.setRole(context.stringValue("ListSurveysResponse.Surveys["+ i +"].Role"));
-			survey.setRound(context.integerValue("ListSurveysResponse.Surveys["+ i +"].Round"));
-			survey.setHotWords(context.stringValue("ListSurveysResponse.Surveys["+ i +"].HotWords"));
-			survey.setSpeechOptimizationParam(context.stringValue("ListSurveysResponse.Surveys["+ i +"].SpeechOptimizationParam"));
-			survey.setGlobalQuestions(context.stringValue("ListSurveysResponse.Surveys["+ i +"].GlobalQuestions"));
+			survey.setId(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].Id"));
+			survey.setScenarioUuid(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].ScenarioUuid"));
+			survey.setName(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].Name"));
+			survey.setDescription(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].Description"));
+			survey.setRole(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].Role"));
+			survey.setRound(_ctx.integerValue("ListSurveysResponse.Surveys["+ i +"].Round"));
+			survey.setHotWords(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].HotWords"));
+			survey.setSpeechOptimizationParam(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].SpeechOptimizationParam"));
+			survey.setGlobalQuestions(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].GlobalQuestions"));
 
 			Flow flow = new Flow();
-			flow.setFlowId(context.stringValue("ListSurveysResponse.Surveys["+ i +"].Flow.FlowId"));
-			flow.setIsPublished(context.booleanValue("ListSurveysResponse.Surveys["+ i +"].Flow.IsPublished"));
-			flow.setFlowJson(context.stringValue("ListSurveysResponse.Surveys["+ i +"].Flow.FlowJson"));
+			flow.setFlowId(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].Flow.FlowId"));
+			flow.setIsPublished(_ctx.booleanValue("ListSurveysResponse.Surveys["+ i +"].Flow.IsPublished"));
+			flow.setFlowJson(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].Flow.FlowJson"));
 			survey.setFlow(flow);
 
 			AsrCustomModel asrCustomModel = new AsrCustomModel();
-			asrCustomModel.setCorpora(context.stringValue("ListSurveysResponse.Surveys["+ i +"].AsrCustomModel.Corpora"));
-			asrCustomModel.setCustomModelStatus(context.integerValue("ListSurveysResponse.Surveys["+ i +"].AsrCustomModel.CustomModelStatus"));
+			asrCustomModel.setCorpora(_ctx.stringValue("ListSurveysResponse.Surveys["+ i +"].AsrCustomModel.Corpora"));
+			asrCustomModel.setCustomModelStatus(_ctx.integerValue("ListSurveysResponse.Surveys["+ i +"].AsrCustomModel.CustomModelStatus"));
 			survey.setAsrCustomModel(asrCustomModel);
 
 			surveys.add(survey);

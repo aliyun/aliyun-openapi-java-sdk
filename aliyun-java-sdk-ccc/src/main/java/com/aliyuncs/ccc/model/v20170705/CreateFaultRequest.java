@@ -15,6 +15,8 @@
 package com.aliyuncs.ccc.model.v20170705;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ccc.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,16 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 	
 	public CreateFaultRequest() {
 		super("CCC", "2017-07-05", "CreateFault");
+		setSysMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String speakerList;
-
-	private Long agentId;
 
 	private String agentOssFileName;
 
 	private String description;
-
-	private Long endTime;
 
 	private String operatingSystemVersion;
 
@@ -42,19 +43,25 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 
 	private String microphoneList;
 
-	private String speakerEquipment;
-
-	private String servicePort;
-
 	private String clientPort;
-
-	private String serviceIp;
-
-	private String instanceId;
 
 	private String customFilePath;
 
 	private String clientIp;
+
+	private String speakerList;
+
+	private Long agentId;
+
+	private Long endTime;
+
+	private String speakerEquipment;
+
+	private String servicePort;
+
+	private String serviceIp;
+
+	private String instanceId;
 
 	private String agentFilePath;
 
@@ -65,28 +72,6 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 	private String microphoneEquipment;
 
 	private String browserVersion;
-
-	public String getSpeakerList() {
-		return this.speakerList;
-	}
-
-	public void setSpeakerList(String speakerList) {
-		this.speakerList = speakerList;
-		if(speakerList != null){
-			putQueryParameter("SpeakerList", speakerList);
-		}
-	}
-
-	public Long getAgentId() {
-		return this.agentId;
-	}
-
-	public void setAgentId(Long agentId) {
-		this.agentId = agentId;
-		if(agentId != null){
-			putQueryParameter("AgentId", agentId.toString());
-		}
-	}
 
 	public String getAgentOssFileName() {
 		return this.agentOssFileName;
@@ -107,17 +92,6 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -154,28 +128,6 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 		}
 	}
 
-	public String getSpeakerEquipment() {
-		return this.speakerEquipment;
-	}
-
-	public void setSpeakerEquipment(String speakerEquipment) {
-		this.speakerEquipment = speakerEquipment;
-		if(speakerEquipment != null){
-			putQueryParameter("SpeakerEquipment", speakerEquipment);
-		}
-	}
-
-	public String getServicePort() {
-		return this.servicePort;
-	}
-
-	public void setServicePort(String servicePort) {
-		this.servicePort = servicePort;
-		if(servicePort != null){
-			putQueryParameter("ServicePort", servicePort);
-		}
-	}
-
 	public String getClientPort() {
 		return this.clientPort;
 	}
@@ -184,28 +136,6 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 		this.clientPort = clientPort;
 		if(clientPort != null){
 			putQueryParameter("ClientPort", clientPort);
-		}
-	}
-
-	public String getServiceIp() {
-		return this.serviceIp;
-	}
-
-	public void setServiceIp(String serviceIp) {
-		this.serviceIp = serviceIp;
-		if(serviceIp != null){
-			putQueryParameter("ServiceIp", serviceIp);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -228,6 +158,83 @@ public class CreateFaultRequest extends RpcAcsRequest<CreateFaultResponse> {
 		this.clientIp = clientIp;
 		if(clientIp != null){
 			putQueryParameter("ClientIp", clientIp);
+		}
+	}
+
+	public String getSpeakerList() {
+		return this.speakerList;
+	}
+
+	public void setSpeakerList(String speakerList) {
+		this.speakerList = speakerList;
+		if(speakerList != null){
+			putQueryParameter("SpeakerList", speakerList);
+		}
+	}
+
+	public Long getAgentId() {
+		return this.agentId;
+	}
+
+	public void setAgentId(Long agentId) {
+		this.agentId = agentId;
+		if(agentId != null){
+			putQueryParameter("AgentId", agentId.toString());
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public String getSpeakerEquipment() {
+		return this.speakerEquipment;
+	}
+
+	public void setSpeakerEquipment(String speakerEquipment) {
+		this.speakerEquipment = speakerEquipment;
+		if(speakerEquipment != null){
+			putQueryParameter("SpeakerEquipment", speakerEquipment);
+		}
+	}
+
+	public String getServicePort() {
+		return this.servicePort;
+	}
+
+	public void setServicePort(String servicePort) {
+		this.servicePort = servicePort;
+		if(servicePort != null){
+			putQueryParameter("ServicePort", servicePort);
+		}
+	}
+
+	public String getServiceIp() {
+		return this.serviceIp;
+	}
+
+	public void setServiceIp(String serviceIp) {
+		this.serviceIp = serviceIp;
+		if(serviceIp != null){
+			putQueryParameter("ServiceIp", serviceIp);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

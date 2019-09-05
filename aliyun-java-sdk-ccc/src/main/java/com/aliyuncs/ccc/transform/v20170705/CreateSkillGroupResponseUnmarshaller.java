@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateSkillGroupResponseUnmarshaller {
 
-	public static CreateSkillGroupResponse unmarshall(CreateSkillGroupResponse createSkillGroupResponse, UnmarshallerContext context) {
+	public static CreateSkillGroupResponse unmarshall(CreateSkillGroupResponse createSkillGroupResponse, UnmarshallerContext _ctx) {
 		
-		createSkillGroupResponse.setRequestId(context.stringValue("CreateSkillGroupResponse.RequestId"));
-		createSkillGroupResponse.setSuccess(context.booleanValue("CreateSkillGroupResponse.Success"));
-		createSkillGroupResponse.setCode(context.stringValue("CreateSkillGroupResponse.Code"));
-		createSkillGroupResponse.setMessage(context.stringValue("CreateSkillGroupResponse.Message"));
-		createSkillGroupResponse.setHttpStatusCode(context.integerValue("CreateSkillGroupResponse.HttpStatusCode"));
-		createSkillGroupResponse.setSkillGroupId(context.stringValue("CreateSkillGroupResponse.SkillGroupId"));
+		createSkillGroupResponse.setRequestId(_ctx.stringValue("CreateSkillGroupResponse.RequestId"));
+		createSkillGroupResponse.setSuccess(_ctx.booleanValue("CreateSkillGroupResponse.Success"));
+		createSkillGroupResponse.setCode(_ctx.stringValue("CreateSkillGroupResponse.Code"));
+		createSkillGroupResponse.setMessage(_ctx.stringValue("CreateSkillGroupResponse.Message"));
+		createSkillGroupResponse.setHttpStatusCode(_ctx.integerValue("CreateSkillGroupResponse.HttpStatusCode"));
+		createSkillGroupResponse.setSkillGroupId(_ctx.stringValue("CreateSkillGroupResponse.SkillGroupId"));
 	 
 	 	return createSkillGroupResponse;
 	}

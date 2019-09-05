@@ -28,45 +28,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListScenarioTemplatesResponseUnmarshaller {
 
-	public static ListScenarioTemplatesResponse unmarshall(ListScenarioTemplatesResponse listScenarioTemplatesResponse, UnmarshallerContext context) {
+	public static ListScenarioTemplatesResponse unmarshall(ListScenarioTemplatesResponse listScenarioTemplatesResponse, UnmarshallerContext _ctx) {
 		
-		listScenarioTemplatesResponse.setRequestId(context.stringValue("ListScenarioTemplatesResponse.RequestId"));
-		listScenarioTemplatesResponse.setSuccess(context.booleanValue("ListScenarioTemplatesResponse.Success"));
-		listScenarioTemplatesResponse.setCode(context.stringValue("ListScenarioTemplatesResponse.Code"));
-		listScenarioTemplatesResponse.setMessage(context.stringValue("ListScenarioTemplatesResponse.Message"));
-		listScenarioTemplatesResponse.setHttpStatusCode(context.integerValue("ListScenarioTemplatesResponse.HttpStatusCode"));
+		listScenarioTemplatesResponse.setRequestId(_ctx.stringValue("ListScenarioTemplatesResponse.RequestId"));
+		listScenarioTemplatesResponse.setSuccess(_ctx.booleanValue("ListScenarioTemplatesResponse.Success"));
+		listScenarioTemplatesResponse.setCode(_ctx.stringValue("ListScenarioTemplatesResponse.Code"));
+		listScenarioTemplatesResponse.setMessage(_ctx.stringValue("ListScenarioTemplatesResponse.Message"));
+		listScenarioTemplatesResponse.setHttpStatusCode(_ctx.integerValue("ListScenarioTemplatesResponse.HttpStatusCode"));
 
 		List<Scenario> scenarioTemplates = new ArrayList<Scenario>();
-		for (int i = 0; i < context.lengthValue("ListScenarioTemplatesResponse.ScenarioTemplates.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListScenarioTemplatesResponse.ScenarioTemplates.Length"); i++) {
 			Scenario scenario = new Scenario();
-			scenario.setId(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Id"));
-			scenario.setName(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Name"));
-			scenario.setDescription(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Description"));
-			scenario.setType(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Type"));
-			scenario.setIsTemplate(context.booleanValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].IsTemplate"));
+			scenario.setId(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Id"));
+			scenario.setName(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Name"));
+			scenario.setDescription(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Description"));
+			scenario.setType(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Type"));
+			scenario.setIsTemplate(_ctx.booleanValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].IsTemplate"));
 
 			List<Survey> surveys = new ArrayList<Survey>();
-			for (int j = 0; j < context.lengthValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys.Length"); j++) {
 				Survey survey = new Survey();
-				survey.setId(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Id"));
-				survey.setName(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Name"));
-				survey.setDescription(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Description"));
-				survey.setRole(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Role"));
-				survey.setRound(context.integerValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Round"));
-				survey.setBeebotId(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].BeebotId"));
-				survey.setGlobalQuestions(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].GlobalQuestions"));
+				survey.setId(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Id"));
+				survey.setName(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Name"));
+				survey.setDescription(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Description"));
+				survey.setRole(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Role"));
+				survey.setRound(_ctx.integerValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Round"));
+				survey.setBeebotId(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].BeebotId"));
+				survey.setGlobalQuestions(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].GlobalQuestions"));
 
 				Flow flow = new Flow();
-				flow.setFlowId(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.FlowId"));
-				flow.setIsPublished(context.booleanValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.IsPublished"));
-				flow.setFlowJson(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.FlowJson"));
+				flow.setFlowId(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.FlowId"));
+				flow.setIsPublished(_ctx.booleanValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.IsPublished"));
+				flow.setFlowJson(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.FlowJson"));
 				survey.setFlow(flow);
 
 				List<IntentNode> intents = new ArrayList<IntentNode>();
-				for (int k = 0; k < context.lengthValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents.Length"); k++) {
+				for (int k = 0; k < _ctx.lengthValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents.Length"); k++) {
 					IntentNode intentNode = new IntentNode();
-					intentNode.setNodeId(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents["+ k +"].NodeId"));
-					intentNode.setIntentId(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents["+ k +"].IntentId"));
+					intentNode.setNodeId(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents["+ k +"].NodeId"));
+					intentNode.setIntentId(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents["+ k +"].IntentId"));
 
 					intents.add(intentNode);
 				}
@@ -77,10 +77,10 @@ public class ListScenarioTemplatesResponseUnmarshaller {
 			scenario.setSurveys(surveys);
 
 			List<KeyValuePair> variables = new ArrayList<KeyValuePair>();
-			for (int j = 0; j < context.lengthValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Variables.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Variables.Length"); j++) {
 				KeyValuePair keyValuePair = new KeyValuePair();
-				keyValuePair.setKey(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Variables["+ j +"].Key"));
-				keyValuePair.setValue(context.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Variables["+ j +"].Value"));
+				keyValuePair.setKey(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Variables["+ j +"].Key"));
+				keyValuePair.setValue(_ctx.stringValue("ListScenarioTemplatesResponse.ScenarioTemplates["+ i +"].Variables["+ j +"].Value"));
 
 				variables.add(keyValuePair);
 			}

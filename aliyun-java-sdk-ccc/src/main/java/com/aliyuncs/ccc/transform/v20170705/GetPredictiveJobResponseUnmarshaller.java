@@ -27,72 +27,72 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetPredictiveJobResponseUnmarshaller {
 
-	public static GetPredictiveJobResponse unmarshall(GetPredictiveJobResponse getPredictiveJobResponse, UnmarshallerContext context) {
+	public static GetPredictiveJobResponse unmarshall(GetPredictiveJobResponse getPredictiveJobResponse, UnmarshallerContext _ctx) {
 		
-		getPredictiveJobResponse.setRequestId(context.stringValue("GetPredictiveJobResponse.RequestId"));
-		getPredictiveJobResponse.setSuccess(context.booleanValue("GetPredictiveJobResponse.Success"));
-		getPredictiveJobResponse.setCode(context.stringValue("GetPredictiveJobResponse.Code"));
-		getPredictiveJobResponse.setMessage(context.stringValue("GetPredictiveJobResponse.Message"));
-		getPredictiveJobResponse.setHttpStatusCode(context.integerValue("GetPredictiveJobResponse.HttpStatusCode"));
+		getPredictiveJobResponse.setRequestId(_ctx.stringValue("GetPredictiveJobResponse.RequestId"));
+		getPredictiveJobResponse.setSuccess(_ctx.booleanValue("GetPredictiveJobResponse.Success"));
+		getPredictiveJobResponse.setCode(_ctx.stringValue("GetPredictiveJobResponse.Code"));
+		getPredictiveJobResponse.setMessage(_ctx.stringValue("GetPredictiveJobResponse.Message"));
+		getPredictiveJobResponse.setHttpStatusCode(_ctx.integerValue("GetPredictiveJobResponse.HttpStatusCode"));
 
 		Job job = new Job();
-		job.setJobId(context.stringValue("GetPredictiveJobResponse.Job.JobId"));
-		job.setJobGroupId(context.stringValue("GetPredictiveJobResponse.Job.JobGroupId"));
-		job.setScenarioId(context.stringValue("GetPredictiveJobResponse.Job.ScenarioId"));
-		job.setStrategyId(context.stringValue("GetPredictiveJobResponse.Job.StrategyId"));
-		job.setPriority(context.integerValue("GetPredictiveJobResponse.Job.Priority"));
-		job.setSystemPriority(context.integerValue("GetPredictiveJobResponse.Job.SystemPriority"));
-		job.setStatus(context.stringValue("GetPredictiveJobResponse.Job.Status"));
-		job.setReferenceId(context.stringValue("GetPredictiveJobResponse.Job.ReferenceId"));
-		job.setFailureReason(context.stringValue("GetPredictiveJobResponse.Job.FailureReason"));
+		job.setJobId(_ctx.stringValue("GetPredictiveJobResponse.Job.JobId"));
+		job.setJobGroupId(_ctx.stringValue("GetPredictiveJobResponse.Job.JobGroupId"));
+		job.setScenarioId(_ctx.stringValue("GetPredictiveJobResponse.Job.ScenarioId"));
+		job.setStrategyId(_ctx.stringValue("GetPredictiveJobResponse.Job.StrategyId"));
+		job.setPriority(_ctx.integerValue("GetPredictiveJobResponse.Job.Priority"));
+		job.setSystemPriority(_ctx.integerValue("GetPredictiveJobResponse.Job.SystemPriority"));
+		job.setStatus(_ctx.stringValue("GetPredictiveJobResponse.Job.Status"));
+		job.setReferenceId(_ctx.stringValue("GetPredictiveJobResponse.Job.ReferenceId"));
+		job.setFailureReason(_ctx.stringValue("GetPredictiveJobResponse.Job.FailureReason"));
 
 		List<String> callingNumbers = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("GetPredictiveJobResponse.Job.CallingNumbers.Length"); i++) {
-			callingNumbers.add(context.stringValue("GetPredictiveJobResponse.Job.CallingNumbers["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetPredictiveJobResponse.Job.CallingNumbers.Length"); i++) {
+			callingNumbers.add(_ctx.stringValue("GetPredictiveJobResponse.Job.CallingNumbers["+ i +"]"));
 		}
 		job.setCallingNumbers(callingNumbers);
 
 		List<Contact> contacts = new ArrayList<Contact>();
-		for (int i = 0; i < context.lengthValue("GetPredictiveJobResponse.Job.Contacts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetPredictiveJobResponse.Job.Contacts.Length"); i++) {
 			Contact contact = new Contact();
-			contact.setContactId(context.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].ContactId"));
-			contact.setContactName(context.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].ContactName"));
-			contact.setHonorific(context.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].Honorific"));
-			contact.setRole(context.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].Role"));
-			contact.setPhoneNumber(context.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].PhoneNumber"));
-			contact.setState(context.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].State"));
-			contact.setReferenceId(context.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].ReferenceId"));
-			contact.setJobId(context.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].JobId"));
+			contact.setContactId(_ctx.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].ContactId"));
+			contact.setContactName(_ctx.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].ContactName"));
+			contact.setHonorific(_ctx.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].Honorific"));
+			contact.setRole(_ctx.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].Role"));
+			contact.setPhoneNumber(_ctx.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].PhoneNumber"));
+			contact.setState(_ctx.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].State"));
+			contact.setReferenceId(_ctx.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].ReferenceId"));
+			contact.setJobId(_ctx.stringValue("GetPredictiveJobResponse.Job.Contacts["+ i +"].JobId"));
 
 			contacts.add(contact);
 		}
 		job.setContacts(contacts);
 
 		List<Task> tasks = new ArrayList<Task>();
-		for (int i = 0; i < context.lengthValue("GetPredictiveJobResponse.Job.Tasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetPredictiveJobResponse.Job.Tasks.Length"); i++) {
 			Task task = new Task();
-			task.setTaskId(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].TaskId"));
-			task.setJobId(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].JobId"));
-			task.setScenarioId(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].ScenarioId"));
-			task.setChatbotId(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].ChatbotId"));
-			task.setPlanedTime(context.longValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].PlanedTime"));
-			task.setActualTime(context.longValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].ActualTime"));
-			task.setCallingNumber(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].CallingNumber"));
-			task.setCalledNumber(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].CalledNumber"));
-			task.setCallId(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].CallId"));
-			task.setStatus(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Status"));
-			task.setBrief(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Brief"));
-			task.setDuration(context.integerValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Duration"));
+			task.setTaskId(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].TaskId"));
+			task.setJobId(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].JobId"));
+			task.setScenarioId(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].ScenarioId"));
+			task.setChatbotId(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].ChatbotId"));
+			task.setPlanedTime(_ctx.longValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].PlanedTime"));
+			task.setActualTime(_ctx.longValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].ActualTime"));
+			task.setCallingNumber(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].CallingNumber"));
+			task.setCalledNumber(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].CalledNumber"));
+			task.setCallId(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].CallId"));
+			task.setStatus(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Status"));
+			task.setBrief(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Brief"));
+			task.setDuration(_ctx.integerValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Duration"));
 
 			Contact1 contact1 = new Contact1();
-			contact1.setContactId(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.ContactId"));
-			contact1.setContactName(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.ContactName"));
-			contact1.setHonorific(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.Honorific"));
-			contact1.setRole(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.Role"));
-			contact1.setPhoneNumber(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.PhoneNumber"));
-			contact1.setState(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.State"));
-			contact1.setReferenceId(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.ReferenceId"));
-			contact1.setJobId(context.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.JobId"));
+			contact1.setContactId(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.ContactId"));
+			contact1.setContactName(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.ContactName"));
+			contact1.setHonorific(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.Honorific"));
+			contact1.setRole(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.Role"));
+			contact1.setPhoneNumber(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.PhoneNumber"));
+			contact1.setState(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.State"));
+			contact1.setReferenceId(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.ReferenceId"));
+			contact1.setJobId(_ctx.stringValue("GetPredictiveJobResponse.Job.Tasks["+ i +"].Contact.JobId"));
 			task.setContact1(contact1);
 
 			tasks.add(task);

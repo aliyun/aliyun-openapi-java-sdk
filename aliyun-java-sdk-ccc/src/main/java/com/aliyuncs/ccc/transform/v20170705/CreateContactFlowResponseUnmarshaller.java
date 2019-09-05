@@ -26,51 +26,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateContactFlowResponseUnmarshaller {
 
-	public static CreateContactFlowResponse unmarshall(CreateContactFlowResponse createContactFlowResponse, UnmarshallerContext context) {
+	public static CreateContactFlowResponse unmarshall(CreateContactFlowResponse createContactFlowResponse, UnmarshallerContext _ctx) {
 		
-		createContactFlowResponse.setRequestId(context.stringValue("CreateContactFlowResponse.RequestId"));
-		createContactFlowResponse.setSuccess(context.booleanValue("CreateContactFlowResponse.Success"));
-		createContactFlowResponse.setCode(context.stringValue("CreateContactFlowResponse.Code"));
-		createContactFlowResponse.setMessage(context.stringValue("CreateContactFlowResponse.Message"));
-		createContactFlowResponse.setHttpStatusCode(context.integerValue("CreateContactFlowResponse.HttpStatusCode"));
+		createContactFlowResponse.setRequestId(_ctx.stringValue("CreateContactFlowResponse.RequestId"));
+		createContactFlowResponse.setSuccess(_ctx.booleanValue("CreateContactFlowResponse.Success"));
+		createContactFlowResponse.setCode(_ctx.stringValue("CreateContactFlowResponse.Code"));
+		createContactFlowResponse.setMessage(_ctx.stringValue("CreateContactFlowResponse.Message"));
+		createContactFlowResponse.setHttpStatusCode(_ctx.integerValue("CreateContactFlowResponse.HttpStatusCode"));
 
 		ContactFlow contactFlow = new ContactFlow();
-		contactFlow.setContactFlowId(context.stringValue("CreateContactFlowResponse.ContactFlow.ContactFlowId"));
-		contactFlow.setInstanceId(context.stringValue("CreateContactFlowResponse.ContactFlow.InstanceId"));
-		contactFlow.setContactFlowName(context.stringValue("CreateContactFlowResponse.ContactFlow.ContactFlowName"));
-		contactFlow.setContactFlowDescription(context.stringValue("CreateContactFlowResponse.ContactFlow.ContactFlowDescription"));
-		contactFlow.setType(context.stringValue("CreateContactFlowResponse.ContactFlow.Type"));
-		contactFlow.setAppliedVersion(context.stringValue("CreateContactFlowResponse.ContactFlow.AppliedVersion"));
+		contactFlow.setContactFlowId(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.ContactFlowId"));
+		contactFlow.setInstanceId(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.InstanceId"));
+		contactFlow.setContactFlowName(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.ContactFlowName"));
+		contactFlow.setContactFlowDescription(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.ContactFlowDescription"));
+		contactFlow.setType(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Type"));
+		contactFlow.setAppliedVersion(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.AppliedVersion"));
 
 		List<ContactFlowVersion> versions = new ArrayList<ContactFlowVersion>();
-		for (int i = 0; i < context.lengthValue("CreateContactFlowResponse.ContactFlow.Versions.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CreateContactFlowResponse.ContactFlow.Versions.Length"); i++) {
 			ContactFlowVersion contactFlowVersion = new ContactFlowVersion();
-			contactFlowVersion.setContactFlowVersionId(context.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].ContactFlowVersionId"));
-			contactFlowVersion.setVersion(context.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].Version"));
-			contactFlowVersion.setContactFlowVersionDescription(context.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].ContactFlowVersionDescription"));
-			contactFlowVersion.setCanvas(context.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].Canvas"));
-			contactFlowVersion.setContent(context.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].Content"));
-			contactFlowVersion.setLastModified(context.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].LastModified"));
-			contactFlowVersion.setLastModifiedBy(context.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].LastModifiedBy"));
-			contactFlowVersion.setLockedBy(context.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].LockedBy"));
-			contactFlowVersion.setStatus(context.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].Status"));
+			contactFlowVersion.setContactFlowVersionId(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].ContactFlowVersionId"));
+			contactFlowVersion.setVersion(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].Version"));
+			contactFlowVersion.setContactFlowVersionDescription(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].ContactFlowVersionDescription"));
+			contactFlowVersion.setCanvas(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].Canvas"));
+			contactFlowVersion.setContent(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].Content"));
+			contactFlowVersion.setLastModified(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].LastModified"));
+			contactFlowVersion.setLastModifiedBy(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].LastModifiedBy"));
+			contactFlowVersion.setLockedBy(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].LockedBy"));
+			contactFlowVersion.setStatus(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.Versions["+ i +"].Status"));
 
 			versions.add(contactFlowVersion);
 		}
 		contactFlow.setVersions(versions);
 
 		List<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();
-		for (int i = 0; i < context.lengthValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers.Length"); i++) {
 			PhoneNumber phoneNumber = new PhoneNumber();
-			phoneNumber.setPhoneNumberId(context.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].PhoneNumberId"));
-			phoneNumber.setInstanceId(context.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].InstanceId"));
-			phoneNumber.setNumber(context.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].Number"));
-			phoneNumber.setPhoneNumberDescription(context.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].PhoneNumberDescription"));
-			phoneNumber.setTestOnly(context.booleanValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].TestOnly"));
-			phoneNumber.setRemainingTime(context.integerValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].RemainingTime"));
-			phoneNumber.setAllowOutbound(context.booleanValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].AllowOutbound"));
-			phoneNumber.setUsage(context.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].Usage"));
-			phoneNumber.setTrunks(context.integerValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].Trunks"));
+			phoneNumber.setPhoneNumberId(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].PhoneNumberId"));
+			phoneNumber.setInstanceId(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].InstanceId"));
+			phoneNumber.setNumber(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].Number"));
+			phoneNumber.setPhoneNumberDescription(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].PhoneNumberDescription"));
+			phoneNumber.setTestOnly(_ctx.booleanValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].TestOnly"));
+			phoneNumber.setRemainingTime(_ctx.integerValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].RemainingTime"));
+			phoneNumber.setAllowOutbound(_ctx.booleanValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].AllowOutbound"));
+			phoneNumber.setUsage(_ctx.stringValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].Usage"));
+			phoneNumber.setTrunks(_ctx.integerValue("CreateContactFlowResponse.ContactFlow.PhoneNumbers["+ i +"].Trunks"));
 
 			phoneNumbers.add(phoneNumber);
 		}

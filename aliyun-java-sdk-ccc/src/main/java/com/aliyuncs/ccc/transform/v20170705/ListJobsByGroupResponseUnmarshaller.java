@@ -28,75 +28,75 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListJobsByGroupResponseUnmarshaller {
 
-	public static ListJobsByGroupResponse unmarshall(ListJobsByGroupResponse listJobsByGroupResponse, UnmarshallerContext context) {
+	public static ListJobsByGroupResponse unmarshall(ListJobsByGroupResponse listJobsByGroupResponse, UnmarshallerContext _ctx) {
 		
-		listJobsByGroupResponse.setRequestId(context.stringValue("ListJobsByGroupResponse.RequestId"));
-		listJobsByGroupResponse.setSuccess(context.booleanValue("ListJobsByGroupResponse.Success"));
-		listJobsByGroupResponse.setCode(context.stringValue("ListJobsByGroupResponse.Code"));
-		listJobsByGroupResponse.setMessage(context.stringValue("ListJobsByGroupResponse.Message"));
-		listJobsByGroupResponse.setHttpStatusCode(context.integerValue("ListJobsByGroupResponse.HttpStatusCode"));
+		listJobsByGroupResponse.setRequestId(_ctx.stringValue("ListJobsByGroupResponse.RequestId"));
+		listJobsByGroupResponse.setSuccess(_ctx.booleanValue("ListJobsByGroupResponse.Success"));
+		listJobsByGroupResponse.setCode(_ctx.stringValue("ListJobsByGroupResponse.Code"));
+		listJobsByGroupResponse.setMessage(_ctx.stringValue("ListJobsByGroupResponse.Message"));
+		listJobsByGroupResponse.setHttpStatusCode(_ctx.integerValue("ListJobsByGroupResponse.HttpStatusCode"));
 
 		Jobs jobs = new Jobs();
-		jobs.setTotalCount(context.integerValue("ListJobsByGroupResponse.Jobs.TotalCount"));
-		jobs.setPageNumber(context.integerValue("ListJobsByGroupResponse.Jobs.PageNumber"));
-		jobs.setPageSize(context.integerValue("ListJobsByGroupResponse.Jobs.PageSize"));
+		jobs.setTotalCount(_ctx.integerValue("ListJobsByGroupResponse.Jobs.TotalCount"));
+		jobs.setPageNumber(_ctx.integerValue("ListJobsByGroupResponse.Jobs.PageNumber"));
+		jobs.setPageSize(_ctx.integerValue("ListJobsByGroupResponse.Jobs.PageSize"));
 
 		List<Job> list = new ArrayList<Job>();
-		for (int i = 0; i < context.lengthValue("ListJobsByGroupResponse.Jobs.List.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListJobsByGroupResponse.Jobs.List.Length"); i++) {
 			Job job = new Job();
-			job.setJobId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].JobId"));
-			job.setGroupId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].GroupId"));
-			job.setScenarioId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].ScenarioId"));
-			job.setStrategyId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].StrategyId"));
-			job.setPriority(context.integerValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Priority"));
-			job.setSystemPriority(context.integerValue("ListJobsByGroupResponse.Jobs.List["+ i +"].SystemPriority"));
-			job.setStatus(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Status"));
-			job.setReferenceId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].ReferenceId"));
-			job.setFailureReason(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].FailureReason"));
+			job.setJobId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].JobId"));
+			job.setGroupId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].GroupId"));
+			job.setScenarioId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].ScenarioId"));
+			job.setStrategyId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].StrategyId"));
+			job.setPriority(_ctx.integerValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Priority"));
+			job.setSystemPriority(_ctx.integerValue("ListJobsByGroupResponse.Jobs.List["+ i +"].SystemPriority"));
+			job.setStatus(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Status"));
+			job.setReferenceId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].ReferenceId"));
+			job.setFailureReason(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].FailureReason"));
 
 			List<String> callingNumbers = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("ListJobsByGroupResponse.Jobs.List["+ i +"].CallingNumbers.Length"); j++) {
-				callingNumbers.add(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].CallingNumbers["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("ListJobsByGroupResponse.Jobs.List["+ i +"].CallingNumbers.Length"); j++) {
+				callingNumbers.add(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].CallingNumbers["+ j +"]"));
 			}
 			job.setCallingNumbers(callingNumbers);
 
 			List<Contact> contacts = new ArrayList<Contact>();
-			for (int j = 0; j < context.lengthValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts.Length"); j++) {
 				Contact contact = new Contact();
-				contact.setContactId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].ContactId"));
-				contact.setContactName(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].ContactName"));
-				contact.setHonorific(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].Honorific"));
-				contact.setRole(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].Role"));
-				contact.setPhoneNumber(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].PhoneNumber"));
-				contact.setState(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].State"));
-				contact.setReferenceId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].ReferenceId"));
-				contact.setJobId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].JobId"));
+				contact.setContactId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].ContactId"));
+				contact.setContactName(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].ContactName"));
+				contact.setHonorific(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].Honorific"));
+				contact.setRole(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].Role"));
+				contact.setPhoneNumber(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].PhoneNumber"));
+				contact.setState(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].State"));
+				contact.setReferenceId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].ReferenceId"));
+				contact.setJobId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Contacts["+ j +"].JobId"));
 
 				contacts.add(contact);
 			}
 			job.setContacts(contacts);
 
 			List<KeyValuePair> extras = new ArrayList<KeyValuePair>();
-			for (int j = 0; j < context.lengthValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Extras.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Extras.Length"); j++) {
 				KeyValuePair keyValuePair = new KeyValuePair();
-				keyValuePair.setKey(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Extras["+ j +"].Key"));
-				keyValuePair.setValue(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Extras["+ j +"].Value"));
+				keyValuePair.setKey(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Extras["+ j +"].Key"));
+				keyValuePair.setValue(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Extras["+ j +"].Value"));
 
 				extras.add(keyValuePair);
 			}
 			job.setExtras(extras);
 
 			List<SummaryItem> summary = new ArrayList<SummaryItem>();
-			for (int j = 0; j < context.lengthValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary.Length"); j++) {
 				SummaryItem summaryItem = new SummaryItem();
-				summaryItem.setSummaryId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].SummaryId"));
-				summaryItem.setGroupId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].GroupId"));
-				summaryItem.setJobId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].JobId"));
-				summaryItem.setTaskId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].TaskId"));
-				summaryItem.setConversationDetailId(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].ConversationDetailId"));
-				summaryItem.setCategory(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].Category"));
-				summaryItem.setSummaryName(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].SummaryName"));
-				summaryItem.setContent(context.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].Content"));
+				summaryItem.setSummaryId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].SummaryId"));
+				summaryItem.setGroupId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].GroupId"));
+				summaryItem.setJobId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].JobId"));
+				summaryItem.setTaskId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].TaskId"));
+				summaryItem.setConversationDetailId(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].ConversationDetailId"));
+				summaryItem.setCategory(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].Category"));
+				summaryItem.setSummaryName(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].SummaryName"));
+				summaryItem.setContent(_ctx.stringValue("ListJobsByGroupResponse.Jobs.List["+ i +"].Summary["+ j +"].Content"));
 
 				summary.add(summaryItem);
 			}

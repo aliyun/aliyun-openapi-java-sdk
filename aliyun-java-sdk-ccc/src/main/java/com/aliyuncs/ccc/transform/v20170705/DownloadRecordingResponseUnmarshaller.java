@@ -21,17 +21,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DownloadRecordingResponseUnmarshaller {
 
-	public static DownloadRecordingResponse unmarshall(DownloadRecordingResponse downloadRecordingResponse, UnmarshallerContext context) {
+	public static DownloadRecordingResponse unmarshall(DownloadRecordingResponse downloadRecordingResponse, UnmarshallerContext _ctx) {
 		
-		downloadRecordingResponse.setRequestId(context.stringValue("DownloadRecordingResponse.RequestId"));
-		downloadRecordingResponse.setSuccess(context.booleanValue("DownloadRecordingResponse.Success"));
-		downloadRecordingResponse.setCode(context.stringValue("DownloadRecordingResponse.Code"));
-		downloadRecordingResponse.setMessage(context.stringValue("DownloadRecordingResponse.Message"));
-		downloadRecordingResponse.setHttpStatusCode(context.integerValue("DownloadRecordingResponse.HttpStatusCode"));
+		downloadRecordingResponse.setRequestId(_ctx.stringValue("DownloadRecordingResponse.RequestId"));
+		downloadRecordingResponse.setSuccess(_ctx.booleanValue("DownloadRecordingResponse.Success"));
+		downloadRecordingResponse.setCode(_ctx.stringValue("DownloadRecordingResponse.Code"));
+		downloadRecordingResponse.setMessage(_ctx.stringValue("DownloadRecordingResponse.Message"));
+		downloadRecordingResponse.setHttpStatusCode(_ctx.integerValue("DownloadRecordingResponse.HttpStatusCode"));
 
 		MediaDownloadParam mediaDownloadParam = new MediaDownloadParam();
-		mediaDownloadParam.setSignatureUrl(context.stringValue("DownloadRecordingResponse.MediaDownloadParam.SignatureUrl"));
-		mediaDownloadParam.setFileName(context.stringValue("DownloadRecordingResponse.MediaDownloadParam.FileName"));
+		mediaDownloadParam.setSignatureUrl(_ctx.stringValue("DownloadRecordingResponse.MediaDownloadParam.SignatureUrl"));
+		mediaDownloadParam.setFileName(_ctx.stringValue("DownloadRecordingResponse.MediaDownloadParam.FileName"));
 		downloadRecordingResponse.setMediaDownloadParam(mediaDownloadParam);
 	 
 	 	return downloadRecordingResponse;

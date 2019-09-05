@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PreCreateMediaResponseUnmarshaller {
 
-	public static PreCreateMediaResponse unmarshall(PreCreateMediaResponse preCreateMediaResponse, UnmarshallerContext context) {
+	public static PreCreateMediaResponse unmarshall(PreCreateMediaResponse preCreateMediaResponse, UnmarshallerContext _ctx) {
 		
-		preCreateMediaResponse.setRequestId(context.stringValue("PreCreateMediaResponse.RequestId"));
-		preCreateMediaResponse.setSuccess(context.booleanValue("PreCreateMediaResponse.Success"));
-		preCreateMediaResponse.setCode(context.stringValue("PreCreateMediaResponse.Code"));
-		preCreateMediaResponse.setMessage(context.stringValue("PreCreateMediaResponse.Message"));
-		preCreateMediaResponse.setHttpStatusCode(context.integerValue("PreCreateMediaResponse.HttpStatusCode"));
+		preCreateMediaResponse.setRequestId(_ctx.stringValue("PreCreateMediaResponse.RequestId"));
+		preCreateMediaResponse.setSuccess(_ctx.booleanValue("PreCreateMediaResponse.Success"));
+		preCreateMediaResponse.setCode(_ctx.stringValue("PreCreateMediaResponse.Code"));
+		preCreateMediaResponse.setMessage(_ctx.stringValue("PreCreateMediaResponse.Message"));
+		preCreateMediaResponse.setHttpStatusCode(_ctx.integerValue("PreCreateMediaResponse.HttpStatusCode"));
 
 		PreCreateMediaParam preCreateMediaParam = new PreCreateMediaParam();
-		preCreateMediaParam.setOssFile(context.stringValue("PreCreateMediaResponse.PreCreateMediaParam.OssFile"));
-		preCreateMediaParam.setOssFilePath(context.stringValue("PreCreateMediaResponse.PreCreateMediaParam.OssFilePath"));
-		preCreateMediaParam.setOssBucket(context.stringValue("PreCreateMediaResponse.PreCreateMediaParam.OssBucket"));
-		preCreateMediaParam.setSignatureUrl(context.stringValue("PreCreateMediaResponse.PreCreateMediaParam.SignatureUrl"));
+		preCreateMediaParam.setOssFile(_ctx.stringValue("PreCreateMediaResponse.PreCreateMediaParam.OssFile"));
+		preCreateMediaParam.setOssFilePath(_ctx.stringValue("PreCreateMediaResponse.PreCreateMediaParam.OssFilePath"));
+		preCreateMediaParam.setOssBucket(_ctx.stringValue("PreCreateMediaResponse.PreCreateMediaParam.OssBucket"));
+		preCreateMediaParam.setSignatureUrl(_ctx.stringValue("PreCreateMediaResponse.PreCreateMediaParam.SignatureUrl"));
 		preCreateMediaResponse.setPreCreateMediaParam(preCreateMediaParam);
 	 
 	 	return preCreateMediaResponse;

@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SubmitCabRecordingResponseUnmarshaller {
 
-	public static SubmitCabRecordingResponse unmarshall(SubmitCabRecordingResponse submitCabRecordingResponse, UnmarshallerContext context) {
+	public static SubmitCabRecordingResponse unmarshall(SubmitCabRecordingResponse submitCabRecordingResponse, UnmarshallerContext _ctx) {
 		
-		submitCabRecordingResponse.setRequestId(context.stringValue("SubmitCabRecordingResponse.RequestId"));
-		submitCabRecordingResponse.setSuccess(context.booleanValue("SubmitCabRecordingResponse.Success"));
-		submitCabRecordingResponse.setCode(context.stringValue("SubmitCabRecordingResponse.Code"));
-		submitCabRecordingResponse.setMessage(context.stringValue("SubmitCabRecordingResponse.Message"));
-		submitCabRecordingResponse.setHttpStatusCode(context.integerValue("SubmitCabRecordingResponse.HttpStatusCode"));
+		submitCabRecordingResponse.setRequestId(_ctx.stringValue("SubmitCabRecordingResponse.RequestId"));
+		submitCabRecordingResponse.setSuccess(_ctx.booleanValue("SubmitCabRecordingResponse.Success"));
+		submitCabRecordingResponse.setCode(_ctx.stringValue("SubmitCabRecordingResponse.Code"));
+		submitCabRecordingResponse.setMessage(_ctx.stringValue("SubmitCabRecordingResponse.Message"));
+		submitCabRecordingResponse.setHttpStatusCode(_ctx.integerValue("SubmitCabRecordingResponse.HttpStatusCode"));
 	 
 	 	return submitCabRecordingResponse;
 	}

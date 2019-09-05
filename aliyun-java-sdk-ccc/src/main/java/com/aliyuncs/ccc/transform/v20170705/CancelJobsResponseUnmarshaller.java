@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelJobsResponseUnmarshaller {
 
-	public static CancelJobsResponse unmarshall(CancelJobsResponse cancelJobsResponse, UnmarshallerContext context) {
+	public static CancelJobsResponse unmarshall(CancelJobsResponse cancelJobsResponse, UnmarshallerContext _ctx) {
 		
-		cancelJobsResponse.setRequestId(context.stringValue("CancelJobsResponse.RequestId"));
-		cancelJobsResponse.setSuccess(context.booleanValue("CancelJobsResponse.Success"));
-		cancelJobsResponse.setCode(context.stringValue("CancelJobsResponse.Code"));
-		cancelJobsResponse.setMessage(context.stringValue("CancelJobsResponse.Message"));
-		cancelJobsResponse.setHttpStatusCode(context.integerValue("CancelJobsResponse.HttpStatusCode"));
+		cancelJobsResponse.setRequestId(_ctx.stringValue("CancelJobsResponse.RequestId"));
+		cancelJobsResponse.setSuccess(_ctx.booleanValue("CancelJobsResponse.Success"));
+		cancelJobsResponse.setCode(_ctx.stringValue("CancelJobsResponse.Code"));
+		cancelJobsResponse.setMessage(_ctx.stringValue("CancelJobsResponse.Message"));
+		cancelJobsResponse.setHttpStatusCode(_ctx.integerValue("CancelJobsResponse.HttpStatusCode"));
 	 
 	 	return cancelJobsResponse;
 	}
