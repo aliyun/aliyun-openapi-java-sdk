@@ -25,7 +25,7 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 	
 	public GetCustomServiceUrlRequest() {
 		super("linkedmall", "2018-01-16", "GetCustomServiceUrl", "linkedmall");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
 	}
 
 	private String nick;

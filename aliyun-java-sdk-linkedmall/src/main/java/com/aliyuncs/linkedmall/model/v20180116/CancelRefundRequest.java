@@ -25,7 +25,7 @@ public class CancelRefundRequest extends RpcAcsRequest<CancelRefundResponse> {
 	
 	public CancelRefundRequest() {
 		super("linkedmall", "2018-01-16", "CancelRefund", "linkedmall");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
 	}
 
 	private String subLmOrderId;

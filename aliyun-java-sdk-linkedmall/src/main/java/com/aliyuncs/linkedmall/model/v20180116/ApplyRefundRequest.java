@@ -26,24 +26,14 @@ public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
 	
 	public ApplyRefundRequest() {
 		super("linkedmall", "2018-01-16", "ApplyRefund", "linkedmall");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
 	}
 
-	private Integer goodsStatus;
-
-	private String subLmOrderId;
-
-	private String thirdPartyUserId;
-
 	private String bizUid;
-
-	private Long applyRefundFee;
 
 	private Integer bizClaimType;
 
 	private Long applyReasonTextId;
-
-	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
 
@@ -51,40 +41,17 @@ public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
 
 	private Integer applyRefundCount;
 
+	private Integer goodsStatus;
+
+	private String subLmOrderId;
+
+	private String thirdPartyUserId;
+
+	private Long applyRefundFee;
+
+	private String bizId;
+
 	private String leaveMessage;
-
-	public Integer getGoodsStatus() {
-		return this.goodsStatus;
-	}
-
-	public void setGoodsStatus(Integer goodsStatus) {
-		this.goodsStatus = goodsStatus;
-		if(goodsStatus != null){
-			putQueryParameter("GoodsStatus", goodsStatus.toString());
-		}
-	}
-
-	public String getSubLmOrderId() {
-		return this.subLmOrderId;
-	}
-
-	public void setSubLmOrderId(String subLmOrderId) {
-		this.subLmOrderId = subLmOrderId;
-		if(subLmOrderId != null){
-			putQueryParameter("SubLmOrderId", subLmOrderId);
-		}
-	}
-
-	public String getThirdPartyUserId() {
-		return this.thirdPartyUserId;
-	}
-
-	public void setThirdPartyUserId(String thirdPartyUserId) {
-		this.thirdPartyUserId = thirdPartyUserId;
-		if(thirdPartyUserId != null){
-			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
-		}
-	}
 
 	public String getBizUid() {
 		return this.bizUid;
@@ -94,17 +61,6 @@ public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
 		this.bizUid = bizUid;
 		if(bizUid != null){
 			putQueryParameter("BizUid", bizUid);
-		}
-	}
-
-	public Long getApplyRefundFee() {
-		return this.applyRefundFee;
-	}
-
-	public void setApplyRefundFee(Long applyRefundFee) {
-		this.applyRefundFee = applyRefundFee;
-		if(applyRefundFee != null){
-			putQueryParameter("ApplyRefundFee", applyRefundFee.toString());
 		}
 	}
 
@@ -127,17 +83,6 @@ public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
 		this.applyReasonTextId = applyReasonTextId;
 		if(applyReasonTextId != null){
 			putQueryParameter("ApplyReasonTextId", applyReasonTextId.toString());
-		}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
 		}
 	}
 
@@ -174,6 +119,61 @@ public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
 		this.applyRefundCount = applyRefundCount;
 		if(applyRefundCount != null){
 			putQueryParameter("ApplyRefundCount", applyRefundCount.toString());
+		}
+	}
+
+	public Integer getGoodsStatus() {
+		return this.goodsStatus;
+	}
+
+	public void setGoodsStatus(Integer goodsStatus) {
+		this.goodsStatus = goodsStatus;
+		if(goodsStatus != null){
+			putQueryParameter("GoodsStatus", goodsStatus.toString());
+		}
+	}
+
+	public String getSubLmOrderId() {
+		return this.subLmOrderId;
+	}
+
+	public void setSubLmOrderId(String subLmOrderId) {
+		this.subLmOrderId = subLmOrderId;
+		if(subLmOrderId != null){
+			putQueryParameter("SubLmOrderId", subLmOrderId);
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
+
+	public Long getApplyRefundFee() {
+		return this.applyRefundFee;
+	}
+
+	public void setApplyRefundFee(Long applyRefundFee) {
+		this.applyRefundFee = applyRefundFee;
+		if(applyRefundFee != null){
+			putQueryParameter("ApplyRefundFee", applyRefundFee.toString());
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

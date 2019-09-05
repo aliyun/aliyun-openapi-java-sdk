@@ -25,7 +25,7 @@ public class RemoveMessagesRequest extends RpcAcsRequest<RemoveMessagesResponse>
 	
 	public RemoveMessagesRequest() {
 		super("linkedmall", "2018-01-16", "RemoveMessages", "linkedmall");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
 	}
 
 	private String extJson;

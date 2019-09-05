@@ -47,6 +47,7 @@ public class QueryBizItemListResponseUnmarshaller {
 			item.setTaobaoShopName(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].TaobaoShopName"));
 			item.setExtJson(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].ExtJson"));
 			item.setSellerId(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].SellerId"));
+			item.setLmItemId(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].LmItemId"));
 
 			List<Sku> skuList = new ArrayList<Sku>();
 			for (int j = 0; j < _ctx.lengthValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList.Length"); j++) {

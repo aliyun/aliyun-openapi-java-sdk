@@ -15,6 +15,7 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,6 +25,7 @@ public class QueryItemDetailRequest extends RpcAcsRequest<QueryItemDetailRespons
 	
 	public QueryItemDetailRequest() {
 		super("linkedmall", "2018-01-16", "QueryItemDetail", "linkedmall");
+		setSysMethod(MethodType.POST);
 	}
 
 	private Long itemId;

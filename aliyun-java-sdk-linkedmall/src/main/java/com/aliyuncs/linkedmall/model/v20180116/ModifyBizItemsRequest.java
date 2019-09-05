@@ -26,7 +26,7 @@ public class ModifyBizItemsRequest extends RpcAcsRequest<ModifyBizItemsResponse>
 	
 	public ModifyBizItemsRequest() {
 		super("linkedmall", "2018-01-16", "ModifyBizItems", "linkedmall");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
 	}
 
 	private String bizId;

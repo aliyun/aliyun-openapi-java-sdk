@@ -25,8 +25,12 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 	
 	public SubmitReturnGoodLogisticsRequest() {
 		super("linkedmall", "2018-01-16", "SubmitReturnGoodLogistics", "linkedmall");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
 	}
+
+	private String bizUid;
+
+	private Boolean useAnonymousTbAccount;
 
 	private String cpCode;
 
@@ -34,15 +38,33 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 
 	private String thirdPartyUserId;
 
-	private String bizUid;
-
 	private Long disputeId;
 
 	private String bizId;
 
 	private String logisticsNo;
 
-	private Boolean useAnonymousTbAccount;
+	public String getBizUid() {
+		return this.bizUid;
+	}
+
+	public void setBizUid(String bizUid) {
+		this.bizUid = bizUid;
+		if(bizUid != null){
+			putQueryParameter("BizUid", bizUid);
+		}
+	}
+
+	public Boolean getUseAnonymousTbAccount() {
+		return this.useAnonymousTbAccount;
+	}
+
+	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
+		this.useAnonymousTbAccount = useAnonymousTbAccount;
+		if(useAnonymousTbAccount != null){
+			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
+		}
+	}
 
 	public String getCpCode() {
 		return this.cpCode;
@@ -77,17 +99,6 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 		}
 	}
 
-	public String getBizUid() {
-		return this.bizUid;
-	}
-
-	public void setBizUid(String bizUid) {
-		this.bizUid = bizUid;
-		if(bizUid != null){
-			putQueryParameter("BizUid", bizUid);
-		}
-	}
-
 	public Long getDisputeId() {
 		return this.disputeId;
 	}
@@ -118,17 +129,6 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 		this.logisticsNo = logisticsNo;
 		if(logisticsNo != null){
 			putQueryParameter("LogisticsNo", logisticsNo);
-		}
-	}
-
-	public Boolean getUseAnonymousTbAccount() {
-		return this.useAnonymousTbAccount;
-	}
-
-	public void setUseAnonymousTbAccount(Boolean useAnonymousTbAccount) {
-		this.useAnonymousTbAccount = useAnonymousTbAccount;
-		if(useAnonymousTbAccount != null){
-			putQueryParameter("UseAnonymousTbAccount", useAnonymousTbAccount.toString());
 		}
 	}
 

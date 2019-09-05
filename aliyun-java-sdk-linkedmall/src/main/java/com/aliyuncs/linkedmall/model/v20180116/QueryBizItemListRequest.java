@@ -15,6 +15,9 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,17 +27,68 @@ public class QueryBizItemListRequest extends RpcAcsRequest<QueryBizItemListRespo
 	
 	public QueryBizItemListRequest() {
 		super("linkedmall", "2018-01-16", "QueryBizItemList", "linkedmall");
+		setSysMethod(MethodType.POST);
 	}
 
-	private String bizId;
+	private List<Object> lmItemIds;
 
-	private Integer pageSize;
+	private List<Object> itemIds;
 
 	private String userId;
 
 	private Integer pageNumber;
 
+	private String bizId;
+
+	private Integer pageSize;
+
+	private Long categoryId;
+
 	private String subBizId;
+
+	public List<Object> getLmItemIds() {
+		return this.lmItemIds;
+	}
+
+	public void setLmItemIds(List<Object> lmItemIds) {
+		this.lmItemIds = lmItemIds;
+		if(lmItemIds != null){
+			putQueryParameter("LmItemIds", new Gson().toJson(lmItemIds));
+		}
+	}
+
+	public List<Object> getItemIds() {
+		return this.itemIds;
+	}
+
+	public void setItemIds(List<Object> itemIds) {
+		this.itemIds = itemIds;
+		if(itemIds != null){
+			putQueryParameter("ItemIds", new Gson().toJson(itemIds));
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getBizId() {
 		return this.bizId;
@@ -58,25 +112,14 @@ public class QueryBizItemListRequest extends RpcAcsRequest<QueryBizItemListRespo
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Long getCategoryId() {
+		return this.categoryId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
+		if(categoryId != null){
+			putQueryParameter("CategoryId", categoryId.toString());
 		}
 	}
 

@@ -117,6 +117,8 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 		private Long sellerId;
 
+		private String lmItemId;
+
 		private List<Sku> skuList;
 
 		public Long getItemId() {
@@ -197,6 +199,14 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 		public void setSellerId(Long sellerId) {
 			this.sellerId = sellerId;
+		}
+
+		public String getLmItemId() {
+			return this.lmItemId;
+		}
+
+		public void setLmItemId(String lmItemId) {
+			this.lmItemId = lmItemId;
 		}
 
 		public List<Sku> getSkuList() {

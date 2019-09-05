@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -25,23 +26,14 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 	
 	public CreateOrderV2Request() {
 		super("linkedmall", "2018-01-16", "CreateOrderV2", "linkedmall");
+		setSysMethod(MethodType.POST);
 	}
 
-	private Long itemId;
-
 	private Long quantity;
-
-	private Long totalAmount;
-
-	private String thirdPartyUserId;
 
 	private String bizUid;
 
 	private String extJson;
-
-	private String bizId;
-
-	private String outTradeId;
 
 	private Boolean useAnonymousTbAccount;
 
@@ -49,18 +41,17 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 
 	private List<ItemList> itemLists;
 
+	private Long itemId;
+
+	private Long totalAmount;
+
+	private String thirdPartyUserId;
+
+	private String bizId;
+
+	private String outTradeId;
+
 	private String deliveryAddress;
-
-	public Long getItemId() {
-		return this.itemId;
-	}
-
-	public void setItemId(Long itemId) {
-		this.itemId = itemId;
-		if(itemId != null){
-			putQueryParameter("ItemId", itemId.toString());
-		}
-	}
 
 	public Long getQuantity() {
 		return this.quantity;
@@ -70,28 +61,6 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 		this.quantity = quantity;
 		if(quantity != null){
 			putQueryParameter("Quantity", quantity.toString());
-		}
-	}
-
-	public Long getTotalAmount() {
-		return this.totalAmount;
-	}
-
-	public void setTotalAmount(Long totalAmount) {
-		this.totalAmount = totalAmount;
-		if(totalAmount != null){
-			putQueryParameter("TotalAmount", totalAmount.toString());
-		}
-	}
-
-	public String getThirdPartyUserId() {
-		return this.thirdPartyUserId;
-	}
-
-	public void setThirdPartyUserId(String thirdPartyUserId) {
-		this.thirdPartyUserId = thirdPartyUserId;
-		if(thirdPartyUserId != null){
-			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
 		}
 	}
 
@@ -114,28 +83,6 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
-		}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
-		}
-	}
-
-	public String getOutTradeId() {
-		return this.outTradeId;
-	}
-
-	public void setOutTradeId(String outTradeId) {
-		this.outTradeId = outTradeId;
-		if(outTradeId != null){
-			putQueryParameter("OutTradeId", outTradeId);
 		}
 	}
 
@@ -174,6 +121,61 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 				putQueryParameter("ItemList." + (depth1 + 1) + ".SkuId" , itemLists.get(depth1).getSkuId());
 			}
 		}	
+	}
+
+	public Long getItemId() {
+		return this.itemId;
+	}
+
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
+		if(itemId != null){
+			putQueryParameter("ItemId", itemId.toString());
+		}
+	}
+
+	public Long getTotalAmount() {
+		return this.totalAmount;
+	}
+
+	public void setTotalAmount(Long totalAmount) {
+		this.totalAmount = totalAmount;
+		if(totalAmount != null){
+			putQueryParameter("TotalAmount", totalAmount.toString());
+		}
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getOutTradeId() {
+		return this.outTradeId;
+	}
+
+	public void setOutTradeId(String outTradeId) {
+		this.outTradeId = outTradeId;
+		if(outTradeId != null){
+			putQueryParameter("OutTradeId", outTradeId);
+		}
 	}
 
 	public String getDeliveryAddress() {

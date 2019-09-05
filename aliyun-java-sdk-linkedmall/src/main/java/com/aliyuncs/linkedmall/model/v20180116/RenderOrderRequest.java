@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -25,32 +26,22 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 	
 	public RenderOrderRequest() {
 		super("linkedmall", "2018-01-16", "RenderOrder", "linkedmall");
+		setSysMethod(MethodType.POST);
 	}
-
-	private String thirdPartyUserId;
 
 	private String bizUid;
 
 	private String extJson;
 
-	private String bizId;
-
 	private Boolean useAnonymousTbAccount;
 
 	private List<ItemList> itemLists;
 
+	private String thirdPartyUserId;
+
+	private String bizId;
+
 	private String deliveryAddress;
-
-	public String getThirdPartyUserId() {
-		return this.thirdPartyUserId;
-	}
-
-	public void setThirdPartyUserId(String thirdPartyUserId) {
-		this.thirdPartyUserId = thirdPartyUserId;
-		if(thirdPartyUserId != null){
-			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
-		}
-	}
 
 	public String getBizUid() {
 		return this.bizUid;
@@ -71,17 +62,6 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 		this.extJson = extJson;
 		if(extJson != null){
 			putQueryParameter("ExtJson", extJson);
-		}
-	}
-
-	public String getBizId() {
-		return this.bizId;
-	}
-
-	public void setBizId(String bizId) {
-		this.bizId = bizId;
-		if(bizId != null){
-			putQueryParameter("BizId", bizId);
 		}
 	}
 
@@ -109,6 +89,28 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 				putQueryParameter("ItemList." + (depth1 + 1) + ".SkuId" , itemLists.get(depth1).getSkuId());
 			}
 		}	
+	}
+
+	public String getThirdPartyUserId() {
+		return this.thirdPartyUserId;
+	}
+
+	public void setThirdPartyUserId(String thirdPartyUserId) {
+		this.thirdPartyUserId = thirdPartyUserId;
+		if(thirdPartyUserId != null){
+			putQueryParameter("ThirdPartyUserId", thirdPartyUserId);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
+		}
 	}
 
 	public String getDeliveryAddress() {

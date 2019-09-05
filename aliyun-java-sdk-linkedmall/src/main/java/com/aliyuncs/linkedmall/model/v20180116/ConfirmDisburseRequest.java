@@ -25,7 +25,7 @@ public class ConfirmDisburseRequest extends RpcAcsRequest<ConfirmDisburseRespons
 	
 	public ConfirmDisburseRequest() {
 		super("linkedmall", "2018-01-16", "ConfirmDisburse", "linkedmall");
-		setMethod(MethodType.POST);
+		setSysMethod(MethodType.POST);
 	}
 
 	private String lmOrderId;

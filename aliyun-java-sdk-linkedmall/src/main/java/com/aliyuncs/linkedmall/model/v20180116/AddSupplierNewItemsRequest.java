@@ -16,6 +16,7 @@ package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -25,6 +26,7 @@ public class AddSupplierNewItemsRequest extends RpcAcsRequest<AddSupplierNewItem
 	
 	public AddSupplierNewItemsRequest() {
 		super("linkedmall", "2018-01-16", "AddSupplierNewItems", "linkedmall");
+		setSysMethod(MethodType.POST);
 	}
 
 	private String bizId;
