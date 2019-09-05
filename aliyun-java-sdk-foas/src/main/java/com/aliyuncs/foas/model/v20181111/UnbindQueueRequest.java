@@ -27,9 +27,8 @@ public class UnbindQueueRequest extends RoaAcsRequest<UnbindQueueResponse> {
 	
 	public UnbindQueueRequest() {
 		super("foas", "2018-11-11", "UnbindQueue", "foas");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/queue");
-		setMethod(MethodType.DELETE);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

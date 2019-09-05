@@ -27,9 +27,8 @@ public class DeleteQueueRequest extends RoaAcsRequest<DeleteQueueResponse> {
 	
 	public DeleteQueueRequest() {
 		super("foas", "2018-11-11", "DeleteQueue", "foas");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/clusters/[clusterId]/queue");
-		setMethod(MethodType.DELETE);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

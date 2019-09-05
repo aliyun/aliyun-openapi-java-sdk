@@ -25,6 +25,7 @@ public class Endpoint {
             put("ap-southeast-2", "foas.ap-northeast-1.aliyuncs.com");
             put("eu-central-1", "foas.ap-northeast-1.aliyuncs.com");
             put("cn-huhehaote", "foas.aliyuncs.com");
+            put("cn-shenzhen-finance-1", "foas.aliyuncs.com");
             put("ap-southeast-5", "foas.ap-northeast-1.aliyuncs.com");
             put("us-east-1", "foas.ap-northeast-1.aliyuncs.com");
             put("me-east-1", "foas.ap-northeast-1.aliyuncs.com");

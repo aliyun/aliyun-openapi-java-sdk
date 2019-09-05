@@ -27,9 +27,8 @@ public class ModifyMasterSpecRequest extends RoaAcsRequest<ModifyMasterSpecRespo
 	
 	public ModifyMasterSpecRequest() {
 		super("foas", "2018-11-11", "ModifyMasterSpec", "foas");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/clusters/[clusterId]/specification");
-		setMethod(MethodType.PUT);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

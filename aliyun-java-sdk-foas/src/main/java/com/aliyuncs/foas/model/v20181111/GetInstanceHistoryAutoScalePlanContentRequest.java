@@ -27,9 +27,8 @@ public class GetInstanceHistoryAutoScalePlanContentRequest extends RoaAcsRequest
 	
 	public GetInstanceHistoryAutoScalePlanContentRequest() {
 		super("foas", "2018-11-11", "GetInstanceHistoryAutoScalePlanContent", "foas");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/plancontent");
-		setMethod(MethodType.GET);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

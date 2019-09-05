@@ -27,9 +27,8 @@ public class GetJobRequest extends RoaAcsRequest<GetJobResponse> {
 	
 	public GetJobRequest() {
 		super("foas", "2018-11-11", "GetJob", "foas");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]");
-		setMethod(MethodType.GET);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

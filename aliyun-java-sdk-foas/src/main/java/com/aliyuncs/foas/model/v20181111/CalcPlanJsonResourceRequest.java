@@ -27,9 +27,8 @@ public class CalcPlanJsonResourceRequest extends RoaAcsRequest<CalcPlanJsonResou
 	
 	public CalcPlanJsonResourceRequest() {
 		super("foas", "2018-11-11", "CalcPlanJsonResource", "foas");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/planjson-resource");
-		setMethod(MethodType.GET);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

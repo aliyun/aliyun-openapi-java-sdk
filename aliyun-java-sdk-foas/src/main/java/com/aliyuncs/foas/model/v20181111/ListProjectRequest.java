@@ -27,9 +27,8 @@ public class ListProjectRequest extends RoaAcsRequest<ListProjectResponse> {
 	
 	public ListProjectRequest() {
 		super("foas", "2018-11-11", "ListProject", "foas");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects");
-		setMethod(MethodType.GET);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

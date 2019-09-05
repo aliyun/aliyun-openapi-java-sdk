@@ -27,9 +27,8 @@ public class CommitJobRequest extends RoaAcsRequest<CommitJobResponse> {
 	
 	public CommitJobRequest() {
 		super("foas", "2018-11-11", "CommitJob", "foas");
-		setProtocol(ProtocolType.HTTPS);
-		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/commit");
-		setMethod(MethodType.PUT);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
