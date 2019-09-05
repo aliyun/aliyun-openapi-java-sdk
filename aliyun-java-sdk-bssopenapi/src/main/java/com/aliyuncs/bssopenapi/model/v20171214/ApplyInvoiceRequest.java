@@ -16,6 +16,7 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -26,6 +27,7 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 	
 	public ApplyInvoiceRequest() {
 		super("BssOpenApi", "2017-12-14", "ApplyInvoice", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,14 +35,6 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 	}
 
 	private Integer invoicingType;
-
-	private String applyUserNick;
-
-	private Boolean invoiceByAmount;
-
-	private Long customerId;
-
-	private List<Long> selectedIdss;
 
 	private Integer processWay;
 
@@ -51,6 +45,14 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 	private Long invoiceAmount;
 
 	private Long addressId;
+
+	private String applyUserNick;
+
+	private Boolean invoiceByAmount;
+
+	private Long customerId;
+
+	private List<Long> selectedIdss;
 
 	private Long callerUid;
 
@@ -63,52 +65,6 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 		if(invoicingType != null){
 			putQueryParameter("InvoicingType", invoicingType.toString());
 		}
-	}
-
-	public String getApplyUserNick() {
-		return this.applyUserNick;
-	}
-
-	public void setApplyUserNick(String applyUserNick) {
-		this.applyUserNick = applyUserNick;
-		if(applyUserNick != null){
-			putQueryParameter("ApplyUserNick", applyUserNick);
-		}
-	}
-
-	public Boolean getInvoiceByAmount() {
-		return this.invoiceByAmount;
-	}
-
-	public void setInvoiceByAmount(Boolean invoiceByAmount) {
-		this.invoiceByAmount = invoiceByAmount;
-		if(invoiceByAmount != null){
-			putQueryParameter("InvoiceByAmount", invoiceByAmount.toString());
-		}
-	}
-
-	public Long getCustomerId() {
-		return this.customerId;
-	}
-
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-		if(customerId != null){
-			putQueryParameter("CustomerId", customerId.toString());
-		}
-	}
-
-	public List<Long> getSelectedIdss() {
-		return this.selectedIdss;
-	}
-
-	public void setSelectedIdss(List<Long> selectedIdss) {
-		this.selectedIdss = selectedIdss;	
-		if (selectedIdss != null) {
-			for (int i = 0; i < selectedIdss.size(); i++) {
-				putQueryParameter("SelectedIds." + (i + 1) , selectedIdss.get(i));
-			}
-		}	
 	}
 
 	public Integer getProcessWay() {
@@ -164,6 +120,52 @@ public class ApplyInvoiceRequest extends RpcAcsRequest<ApplyInvoiceResponse> {
 		if(addressId != null){
 			putQueryParameter("AddressId", addressId.toString());
 		}
+	}
+
+	public String getApplyUserNick() {
+		return this.applyUserNick;
+	}
+
+	public void setApplyUserNick(String applyUserNick) {
+		this.applyUserNick = applyUserNick;
+		if(applyUserNick != null){
+			putQueryParameter("ApplyUserNick", applyUserNick);
+		}
+	}
+
+	public Boolean getInvoiceByAmount() {
+		return this.invoiceByAmount;
+	}
+
+	public void setInvoiceByAmount(Boolean invoiceByAmount) {
+		this.invoiceByAmount = invoiceByAmount;
+		if(invoiceByAmount != null){
+			putQueryParameter("InvoiceByAmount", invoiceByAmount.toString());
+		}
+	}
+
+	public Long getCustomerId() {
+		return this.customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+		if(customerId != null){
+			putQueryParameter("CustomerId", customerId.toString());
+		}
+	}
+
+	public List<Long> getSelectedIdss() {
+		return this.selectedIdss;
+	}
+
+	public void setSelectedIdss(List<Long> selectedIdss) {
+		this.selectedIdss = selectedIdss;	
+		if (selectedIdss != null) {
+			for (int i = 0; i < selectedIdss.size(); i++) {
+				putQueryParameter("SelectedIds." + (i + 1) , selectedIdss.get(i));
+			}
+		}	
 	}
 
 	public Long getCallerUid() {

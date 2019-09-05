@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeRes
 	
 	public ConvertChargeTypeRequest() {
 		super("BssOpenApi", "2017-12-14", "ConvertChargeType", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,13 +37,13 @@ public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeRes
 
 	private String productCode;
 
-	private String instanceId;
-
 	private String subscriptionType;
 
 	private Long ownerId;
 
 	private String productType;
+
+	private String instanceId;
 
 	public Integer getPeriod() {
 		return this.period;
@@ -62,17 +64,6 @@ public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeRes
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -106,6 +97,17 @@ public class ConvertChargeTypeRequest extends RpcAcsRequest<ConvertChargeTypeRes
 		this.productType = productType;
 		if(productType != null){
 			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

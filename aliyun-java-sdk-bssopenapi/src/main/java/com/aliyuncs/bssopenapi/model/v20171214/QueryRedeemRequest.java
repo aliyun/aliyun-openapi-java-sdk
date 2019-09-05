@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class QueryRedeemRequest extends RpcAcsRequest<QueryRedeemResponse> {
 	
 	public QueryRedeemRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryRedeem", "bssopenapi");
+		setSysMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,13 +35,13 @@ public class QueryRedeemRequest extends RpcAcsRequest<QueryRedeemResponse> {
 
 	private String expiryTimeEnd;
 
-	private Integer pageSize;
-
 	private String expiryTimeStart;
 
 	private Integer pageNum;
 
 	private Boolean effectiveOrNot;
+
+	private Integer pageSize;
 
 	public String getExpiryTimeEnd() {
 		return this.expiryTimeEnd;
@@ -49,17 +51,6 @@ public class QueryRedeemRequest extends RpcAcsRequest<QueryRedeemResponse> {
 		this.expiryTimeEnd = expiryTimeEnd;
 		if(expiryTimeEnd != null){
 			putQueryParameter("ExpiryTimeEnd", expiryTimeEnd);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -93,6 +84,17 @@ public class QueryRedeemRequest extends RpcAcsRequest<QueryRedeemResponse> {
 		this.effectiveOrNot = effectiveOrNot;
 		if(effectiveOrNot != null){
 			putQueryParameter("EffectiveOrNot", effectiveOrNot.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

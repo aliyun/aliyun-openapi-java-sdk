@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,17 +26,12 @@ public class QueryUserOmsDataRequest extends RpcAcsRequest<QueryUserOmsDataRespo
 	
 	public QueryUserOmsDataRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryUserOmsData", "bssopenapi");
+		setSysMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String dataType;
-
-	private String marker;
-
-	private Integer pageSize;
 
 	private String endTime;
 
@@ -43,40 +39,13 @@ public class QueryUserOmsDataRequest extends RpcAcsRequest<QueryUserOmsDataRespo
 
 	private Long ownerId;
 
+	private String dataType;
+
+	private String marker;
+
+	private Integer pageSize;
+
 	private String table;
-
-	public String getDataType() {
-		return this.dataType;
-	}
-
-	public void setDataType(String dataType) {
-		this.dataType = dataType;
-		if(dataType != null){
-			putQueryParameter("DataType", dataType);
-		}
-	}
-
-	public String getMarker() {
-		return this.marker;
-	}
-
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
 
 	public String getEndTime() {
 		return this.endTime;
@@ -108,6 +77,39 @@ public class QueryUserOmsDataRequest extends RpcAcsRequest<QueryUserOmsDataRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDataType() {
+		return this.dataType;
+	}
+
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+		if(dataType != null){
+			putQueryParameter("DataType", dataType);
+		}
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

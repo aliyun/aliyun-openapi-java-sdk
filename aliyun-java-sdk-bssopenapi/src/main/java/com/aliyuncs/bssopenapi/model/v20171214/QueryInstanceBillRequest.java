@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,21 +26,18 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 	
 	public QueryInstanceBillRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryInstanceBill", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Boolean isBillingItem;
-
 	private String productCode;
 
 	private Boolean isHideZeroCharge;
 
 	private String subscriptionType;
-
-	private Integer pageSize;
 
 	private String billingCycle;
 
@@ -49,16 +47,9 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 
 	private String productType;
 
-	public Boolean getIsBillingItem() {
-		return this.isBillingItem;
-	}
+	private Boolean isBillingItem;
 
-	public void setIsBillingItem(Boolean isBillingItem) {
-		this.isBillingItem = isBillingItem;
-		if(isBillingItem != null){
-			putQueryParameter("IsBillingItem", isBillingItem.toString());
-		}
-	}
+	private Integer pageSize;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -90,17 +81,6 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 		this.subscriptionType = subscriptionType;
 		if(subscriptionType != null){
 			putQueryParameter("SubscriptionType", subscriptionType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -145,6 +125,28 @@ public class QueryInstanceBillRequest extends RpcAcsRequest<QueryInstanceBillRes
 		this.productType = productType;
 		if(productType != null){
 			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public Boolean getIsBillingItem() {
+		return this.isBillingItem;
+	}
+
+	public void setIsBillingItem(Boolean isBillingItem) {
+		this.isBillingItem = isBillingItem;
+		if(isBillingItem != null){
+			putQueryParameter("IsBillingItem", isBillingItem.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

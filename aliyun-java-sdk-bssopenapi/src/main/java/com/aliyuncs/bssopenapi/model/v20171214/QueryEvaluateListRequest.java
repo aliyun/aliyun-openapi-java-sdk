@@ -16,6 +16,7 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -26,6 +27,7 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 	
 	public QueryEvaluateListRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryEvaluateList", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -38,23 +40,23 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 
 	private Integer sortType;
 
-	private List<String> bizTypeLists;
-
 	private Integer type;
 
-	private Long ownerId;
-
 	private Integer pageNum;
-
-	private String startSearchTime;
-
-	private String endBizTime;
 
 	private Integer pageSize;
 
 	private Long endAmount;
 
 	private String billCycle;
+
+	private List<String> bizTypeLists;
+
+	private Long ownerId;
+
+	private String startSearchTime;
+
+	private String endBizTime;
 
 	private Long startAmount;
 
@@ -93,19 +95,6 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 		}
 	}
 
-	public List<String> getBizTypeLists() {
-		return this.bizTypeLists;
-	}
-
-	public void setBizTypeLists(List<String> bizTypeLists) {
-		this.bizTypeLists = bizTypeLists;	
-		if (bizTypeLists != null) {
-			for (int i = 0; i < bizTypeLists.size(); i++) {
-				putQueryParameter("BizTypeList." + (i + 1) , bizTypeLists.get(i));
-			}
-		}	
-	}
-
 	public Integer getType() {
 		return this.type;
 	}
@@ -117,17 +106,6 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public Integer getPageNum() {
 		return this.pageNum;
 	}
@@ -136,28 +114,6 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getStartSearchTime() {
-		return this.startSearchTime;
-	}
-
-	public void setStartSearchTime(String startSearchTime) {
-		this.startSearchTime = startSearchTime;
-		if(startSearchTime != null){
-			putQueryParameter("StartSearchTime", startSearchTime);
-		}
-	}
-
-	public String getEndBizTime() {
-		return this.endBizTime;
-	}
-
-	public void setEndBizTime(String endBizTime) {
-		this.endBizTime = endBizTime;
-		if(endBizTime != null){
-			putQueryParameter("EndBizTime", endBizTime);
 		}
 	}
 
@@ -191,6 +147,52 @@ public class QueryEvaluateListRequest extends RpcAcsRequest<QueryEvaluateListRes
 		this.billCycle = billCycle;
 		if(billCycle != null){
 			putQueryParameter("BillCycle", billCycle);
+		}
+	}
+
+	public List<String> getBizTypeLists() {
+		return this.bizTypeLists;
+	}
+
+	public void setBizTypeLists(List<String> bizTypeLists) {
+		this.bizTypeLists = bizTypeLists;	
+		if (bizTypeLists != null) {
+			for (int i = 0; i < bizTypeLists.size(); i++) {
+				putQueryParameter("BizTypeList." + (i + 1) , bizTypeLists.get(i));
+			}
+		}	
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getStartSearchTime() {
+		return this.startSearchTime;
+	}
+
+	public void setStartSearchTime(String startSearchTime) {
+		this.startSearchTime = startSearchTime;
+		if(startSearchTime != null){
+			putQueryParameter("StartSearchTime", startSearchTime);
+		}
+	}
+
+	public String getEndBizTime() {
+		return this.endBizTime;
+	}
+
+	public void setEndBizTime(String endBizTime) {
+		this.endBizTime = endBizTime;
+		if(endBizTime != null){
+			putQueryParameter("EndBizTime", endBizTime);
 		}
 	}
 

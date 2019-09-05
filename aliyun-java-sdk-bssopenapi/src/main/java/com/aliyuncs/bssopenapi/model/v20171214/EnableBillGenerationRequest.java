@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class EnableBillGenerationRequest extends RpcAcsRequest<EnableBillGenerat
 	
 	public EnableBillGenerationRequest() {
 		super("BssOpenApi", "2017-12-14", "EnableBillGeneration", "bssopenapi");
+		setSysMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

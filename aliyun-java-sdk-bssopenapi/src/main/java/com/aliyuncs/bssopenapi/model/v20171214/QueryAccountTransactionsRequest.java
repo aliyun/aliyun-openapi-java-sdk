@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,11 +26,16 @@ public class QueryAccountTransactionsRequest extends RpcAcsRequest<QueryAccountT
 	
 	public QueryAccountTransactionsRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryAccountTransactions", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
+
+	private Integer pageNum;
+
+	private String createTimeEnd;
 
 	private String recordID;
 
@@ -41,9 +47,27 @@ public class QueryAccountTransactionsRequest extends RpcAcsRequest<QueryAccountT
 
 	private String transactionNumber;
 
-	private Integer pageNum;
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
 
-	private String createTimeEnd;
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getCreateTimeEnd() {
+		return this.createTimeEnd;
+	}
+
+	public void setCreateTimeEnd(String createTimeEnd) {
+		this.createTimeEnd = createTimeEnd;
+		if(createTimeEnd != null){
+			putQueryParameter("CreateTimeEnd", createTimeEnd);
+		}
+	}
 
 	public String getRecordID() {
 		return this.recordID;
@@ -97,28 +121,6 @@ public class QueryAccountTransactionsRequest extends RpcAcsRequest<QueryAccountT
 		this.transactionNumber = transactionNumber;
 		if(transactionNumber != null){
 			putQueryParameter("TransactionNumber", transactionNumber);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
-	public String getCreateTimeEnd() {
-		return this.createTimeEnd;
-	}
-
-	public void setCreateTimeEnd(String createTimeEnd) {
-		this.createTimeEnd = createTimeEnd;
-		if(createTimeEnd != null){
-			putQueryParameter("CreateTimeEnd", createTimeEnd);
 		}
 	}
 

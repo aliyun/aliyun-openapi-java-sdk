@@ -16,6 +16,7 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -26,21 +27,16 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 	
 	public GetSubscriptionPriceRequest() {
 		super("BssOpenApi", "2017-12-14", "GetSubscriptionPrice", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Integer servicePeriodQuantity;
-
 	private String productCode;
 
-	private String instanceId;
-
 	private Integer quantity;
-
-	private String servicePeriodUnit;
 
 	private String subscriptionType;
 
@@ -48,22 +44,17 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 
 	private Long ownerId;
 
+	private String productType;
+
+	private Integer servicePeriodQuantity;
+
+	private String instanceId;
+
+	private String servicePeriodUnit;
+
 	private String region;
 
 	private String orderType;
-
-	private String productType;
-
-	public Integer getServicePeriodQuantity() {
-		return this.servicePeriodQuantity;
-	}
-
-	public void setServicePeriodQuantity(Integer servicePeriodQuantity) {
-		this.servicePeriodQuantity = servicePeriodQuantity;
-		if(servicePeriodQuantity != null){
-			putQueryParameter("ServicePeriodQuantity", servicePeriodQuantity.toString());
-		}
-	}
 
 	public String getProductCode() {
 		return this.productCode;
@@ -76,17 +67,6 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public Integer getQuantity() {
 		return this.quantity;
 	}
@@ -95,17 +75,6 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 		this.quantity = quantity;
 		if(quantity != null){
 			putQueryParameter("Quantity", quantity.toString());
-		}
-	}
-
-	public String getServicePeriodUnit() {
-		return this.servicePeriodUnit;
-	}
-
-	public void setServicePeriodUnit(String servicePeriodUnit) {
-		this.servicePeriodUnit = servicePeriodUnit;
-		if(servicePeriodUnit != null){
-			putQueryParameter("ServicePeriodUnit", servicePeriodUnit);
 		}
 	}
 
@@ -147,6 +116,50 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 		}
 	}
 
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public Integer getServicePeriodQuantity() {
+		return this.servicePeriodQuantity;
+	}
+
+	public void setServicePeriodQuantity(Integer servicePeriodQuantity) {
+		this.servicePeriodQuantity = servicePeriodQuantity;
+		if(servicePeriodQuantity != null){
+			putQueryParameter("ServicePeriodQuantity", servicePeriodQuantity.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getServicePeriodUnit() {
+		return this.servicePeriodUnit;
+	}
+
+	public void setServicePeriodUnit(String servicePeriodUnit) {
+		this.servicePeriodUnit = servicePeriodUnit;
+		if(servicePeriodUnit != null){
+			putQueryParameter("ServicePeriodUnit", servicePeriodUnit);
+		}
+	}
+
 	public String getRegion() {
 		return this.region;
 	}
@@ -166,17 +179,6 @@ public class GetSubscriptionPriceRequest extends RpcAcsRequest<GetSubscriptionPr
 		this.orderType = orderType;
 		if(orderType != null){
 			putQueryParameter("OrderType", orderType);
-		}
-	}
-
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
 		}
 	}
 

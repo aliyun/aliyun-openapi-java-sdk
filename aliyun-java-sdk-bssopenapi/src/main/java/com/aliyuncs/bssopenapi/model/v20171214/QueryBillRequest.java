@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class QueryBillRequest extends RpcAcsRequest<QueryBillResponse> {
 	
 	public QueryBillRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryBill", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -39,8 +41,6 @@ public class QueryBillRequest extends RpcAcsRequest<QueryBillResponse> {
 
 	private String subscriptionType;
 
-	private Integer pageSize;
-
 	private String billingCycle;
 
 	private String type;
@@ -50,6 +50,8 @@ public class QueryBillRequest extends RpcAcsRequest<QueryBillResponse> {
 	private Integer pageNum;
 
 	private String productType;
+
+	private Integer pageSize;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -92,17 +94,6 @@ public class QueryBillRequest extends RpcAcsRequest<QueryBillResponse> {
 		this.subscriptionType = subscriptionType;
 		if(subscriptionType != null){
 			putQueryParameter("SubscriptionType", subscriptionType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -158,6 +149,17 @@ public class QueryBillRequest extends RpcAcsRequest<QueryBillResponse> {
 		this.productType = productType;
 		if(productType != null){
 			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

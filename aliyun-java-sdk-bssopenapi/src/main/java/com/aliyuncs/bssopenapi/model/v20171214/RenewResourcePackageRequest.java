@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,43 +26,22 @@ public class RenewResourcePackageRequest extends RpcAcsRequest<RenewResourcePack
 	
 	public RenewResourcePackageRequest() {
 		super("BssOpenApi", "2017-12-14", "RenewResourcePackage", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Integer duration;
-
-	private String instanceId;
-
 	private Long ownerId;
 
 	private String effectiveDate;
 
+	private Integer duration;
+
+	private String instanceId;
+
 	private String pricingCycle;
-
-	public Integer getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -82,6 +62,28 @@ public class RenewResourcePackageRequest extends RpcAcsRequest<RenewResourcePack
 		this.effectiveDate = effectiveDate;
 		if(effectiveDate != null){
 			putQueryParameter("EffectiveDate", effectiveDate);
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

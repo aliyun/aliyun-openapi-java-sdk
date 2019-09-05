@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,21 +26,16 @@ public class ChangeResellerConsumeAmountRequest extends RpcAcsRequest<ChangeRese
 	
 	public ChangeResellerConsumeAmountRequest() {
 		super("BssOpenApi", "2017-12-14", "ChangeResellerConsumeAmount", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String adjustType;
-
 	private String amount;
 
 	private String outBizId;
-
-	private String extendMap;
-
-	private String currency;
 
 	private String source;
 
@@ -47,16 +43,11 @@ public class ChangeResellerConsumeAmountRequest extends RpcAcsRequest<ChangeRese
 
 	private String businessType;
 
-	public String getAdjustType() {
-		return this.adjustType;
-	}
+	private String adjustType;
 
-	public void setAdjustType(String adjustType) {
-		this.adjustType = adjustType;
-		if(adjustType != null){
-			putQueryParameter("AdjustType", adjustType);
-		}
-	}
+	private String extendMap;
+
+	private String currency;
 
 	public String getAmount() {
 		return this.amount;
@@ -77,28 +68,6 @@ public class ChangeResellerConsumeAmountRequest extends RpcAcsRequest<ChangeRese
 		this.outBizId = outBizId;
 		if(outBizId != null){
 			putQueryParameter("OutBizId", outBizId);
-		}
-	}
-
-	public String getExtendMap() {
-		return this.extendMap;
-	}
-
-	public void setExtendMap(String extendMap) {
-		this.extendMap = extendMap;
-		if(extendMap != null){
-			putQueryParameter("ExtendMap", extendMap);
-		}
-	}
-
-	public String getCurrency() {
-		return this.currency;
-	}
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
-		if(currency != null){
-			putQueryParameter("Currency", currency);
 		}
 	}
 
@@ -132,6 +101,39 @@ public class ChangeResellerConsumeAmountRequest extends RpcAcsRequest<ChangeRese
 		this.businessType = businessType;
 		if(businessType != null){
 			putQueryParameter("BusinessType", businessType);
+		}
+	}
+
+	public String getAdjustType() {
+		return this.adjustType;
+	}
+
+	public void setAdjustType(String adjustType) {
+		this.adjustType = adjustType;
+		if(adjustType != null){
+			putQueryParameter("AdjustType", adjustType);
+		}
+	}
+
+	public String getExtendMap() {
+		return this.extendMap;
+	}
+
+	public void setExtendMap(String extendMap) {
+		this.extendMap = extendMap;
+		if(extendMap != null){
+			putQueryParameter("ExtendMap", extendMap);
+		}
+	}
+
+	public String getCurrency() {
+		return this.currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+		if(currency != null){
+			putQueryParameter("Currency", currency);
 		}
 	}
 

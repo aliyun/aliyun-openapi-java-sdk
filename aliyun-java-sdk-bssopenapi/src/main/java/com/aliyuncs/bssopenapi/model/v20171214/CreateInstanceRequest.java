@@ -16,6 +16,7 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -26,6 +27,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	
 	public CreateInstanceRequest() {
 		super("BssOpenApi", "2017-12-14", "CreateInstance", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -40,15 +42,15 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String subscriptionType;
 
+	private Long ownerId;
+
+	private String productType;
+
 	private Integer renewPeriod;
 
 	private List<Parameter> parameters;
 
 	private String renewalStatus;
-
-	private Long ownerId;
-
-	private String productType;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -94,6 +96,28 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
+		}
+	}
+
 	public Integer getRenewPeriod() {
 		return this.renewPeriod;
 	}
@@ -127,28 +151,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.renewalStatus = renewalStatus;
 		if(renewalStatus != null){
 			putQueryParameter("RenewalStatus", renewalStatus);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
 		}
 	}
 

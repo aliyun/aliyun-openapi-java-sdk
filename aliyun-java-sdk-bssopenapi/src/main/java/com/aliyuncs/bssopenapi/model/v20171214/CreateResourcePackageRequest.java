@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,13 +26,12 @@ public class CreateResourcePackageRequest extends RpcAcsRequest<CreateResourcePa
 	
 	public CreateResourcePackageRequest() {
 		super("BssOpenApi", "2017-12-14", "CreateResourcePackage", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Integer duration;
 
 	private String productCode;
 
@@ -39,22 +39,13 @@ public class CreateResourcePackageRequest extends RpcAcsRequest<CreateResourcePa
 
 	private Long ownerId;
 
-	private String packageType;
-
 	private String effectiveDate;
 
+	private Integer duration;
+
+	private String packageType;
+
 	private String pricingCycle;
-
-	public Integer getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
-		}
-	}
 
 	public String getProductCode() {
 		return this.productCode;
@@ -89,17 +80,6 @@ public class CreateResourcePackageRequest extends RpcAcsRequest<CreateResourcePa
 		}
 	}
 
-	public String getPackageType() {
-		return this.packageType;
-	}
-
-	public void setPackageType(String packageType) {
-		this.packageType = packageType;
-		if(packageType != null){
-			putQueryParameter("PackageType", packageType);
-		}
-	}
-
 	public String getEffectiveDate() {
 		return this.effectiveDate;
 	}
@@ -108,6 +88,28 @@ public class CreateResourcePackageRequest extends RpcAcsRequest<CreateResourcePa
 		this.effectiveDate = effectiveDate;
 		if(effectiveDate != null){
 			putQueryParameter("EffectiveDate", effectiveDate);
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getPackageType() {
+		return this.packageType;
+	}
+
+	public void setPackageType(String packageType) {
+		this.packageType = packageType;
+		if(packageType != null){
+			putQueryParameter("PackageType", packageType);
 		}
 	}
 

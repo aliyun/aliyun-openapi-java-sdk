@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,40 +26,30 @@ public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePac
 	
 	public GetResourcePackagePriceRequest() {
 		super("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Integer duration;
-
 	private String productCode;
-
-	private String instanceId;
 
 	private String specification;
 
 	private Long ownerId;
 
-	private String packageType;
-
 	private String effectiveDate;
+
+	private Integer duration;
+
+	private String instanceId;
+
+	private String packageType;
 
 	private String pricingCycle;
 
 	private String orderType;
-
-	public Integer getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
-		}
-	}
 
 	public String getProductCode() {
 		return this.productCode;
@@ -68,17 +59,6 @@ public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePac
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -104,17 +84,6 @@ public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePac
 		}
 	}
 
-	public String getPackageType() {
-		return this.packageType;
-	}
-
-	public void setPackageType(String packageType) {
-		this.packageType = packageType;
-		if(packageType != null){
-			putQueryParameter("PackageType", packageType);
-		}
-	}
-
 	public String getEffectiveDate() {
 		return this.effectiveDate;
 	}
@@ -123,6 +92,39 @@ public class GetResourcePackagePriceRequest extends RpcAcsRequest<GetResourcePac
 		this.effectiveDate = effectiveDate;
 		if(effectiveDate != null){
 			putQueryParameter("EffectiveDate", effectiveDate);
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getPackageType() {
+		return this.packageType;
+	}
+
+	public void setPackageType(String packageType) {
+		this.packageType = packageType;
+		if(packageType != null){
+			putQueryParameter("PackageType", packageType);
 		}
 	}
 

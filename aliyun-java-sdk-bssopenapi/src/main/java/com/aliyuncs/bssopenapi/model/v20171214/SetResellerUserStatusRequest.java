@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class SetResellerUserStatusRequest extends RpcAcsRequest<SetResellerUserS
 	
 	public SetResellerUserStatusRequest() {
 		super("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,9 +35,9 @@ public class SetResellerUserStatusRequest extends RpcAcsRequest<SetResellerUserS
 
 	private String ownerId;
 
-	private String status;
-
 	private String businessType;
+
+	private String status;
 
 	public String getOwnerId() {
 		return this.ownerId;
@@ -48,17 +50,6 @@ public class SetResellerUserStatusRequest extends RpcAcsRequest<SetResellerUserS
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
 	public String getBusinessType() {
 		return this.businessType;
 	}
@@ -67,6 +58,17 @@ public class SetResellerUserStatusRequest extends RpcAcsRequest<SetResellerUserS
 		this.businessType = businessType;
 		if(businessType != null){
 			putQueryParameter("BusinessType", businessType);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

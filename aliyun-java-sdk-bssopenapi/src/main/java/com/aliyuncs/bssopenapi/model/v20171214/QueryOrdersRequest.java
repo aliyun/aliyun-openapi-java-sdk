@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 	
 	public QueryOrdersRequest() {
 		super("BssOpenApi", "2017-12-14", "QueryOrders", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,12 +37,6 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 
 	private String subscriptionType;
 
-	private Integer pageSize;
-
-	private String paymentStatus;
-
-	private String createTimeStart;
-
 	private Integer pageNum;
 
 	private Long ownerId;
@@ -48,6 +44,12 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 	private String createTimeEnd;
 
 	private String productType;
+
+	private Integer pageSize;
+
+	private String paymentStatus;
+
+	private String createTimeStart;
 
 	private String orderType;
 
@@ -70,39 +72,6 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 		this.subscriptionType = subscriptionType;
 		if(subscriptionType != null){
 			putQueryParameter("SubscriptionType", subscriptionType);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getPaymentStatus() {
-		return this.paymentStatus;
-	}
-
-	public void setPaymentStatus(String paymentStatus) {
-		this.paymentStatus = paymentStatus;
-		if(paymentStatus != null){
-			putQueryParameter("PaymentStatus", paymentStatus);
-		}
-	}
-
-	public String getCreateTimeStart() {
-		return this.createTimeStart;
-	}
-
-	public void setCreateTimeStart(String createTimeStart) {
-		this.createTimeStart = createTimeStart;
-		if(createTimeStart != null){
-			putQueryParameter("CreateTimeStart", createTimeStart);
 		}
 	}
 
@@ -147,6 +116,39 @@ public class QueryOrdersRequest extends RpcAcsRequest<QueryOrdersResponse> {
 		this.productType = productType;
 		if(productType != null){
 			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getPaymentStatus() {
+		return this.paymentStatus;
+	}
+
+	public void setPaymentStatus(String paymentStatus) {
+		this.paymentStatus = paymentStatus;
+		if(paymentStatus != null){
+			putQueryParameter("PaymentStatus", paymentStatus);
+		}
+	}
+
+	public String getCreateTimeStart() {
+		return this.createTimeStart;
+	}
+
+	public void setCreateTimeStart(String createTimeStart) {
+		this.createTimeStart = createTimeStart;
+		if(createTimeStart != null){
+			putQueryParameter("CreateTimeStart", createTimeStart);
 		}
 	}
 

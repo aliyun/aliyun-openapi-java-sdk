@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class SetResellerUserQuotaRequest extends RpcAcsRequest<SetResellerUserQu
 	
 	public SetResellerUserQuotaRequest() {
 		super("BssOpenApi", "2017-12-14", "SetResellerUserQuota", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,9 +37,9 @@ public class SetResellerUserQuotaRequest extends RpcAcsRequest<SetResellerUserQu
 
 	private String outBizId;
 
-	private String currency;
-
 	private Long ownerId;
+
+	private String currency;
 
 	public String getAmount() {
 		return this.amount;
@@ -61,17 +63,6 @@ public class SetResellerUserQuotaRequest extends RpcAcsRequest<SetResellerUserQu
 		}
 	}
 
-	public String getCurrency() {
-		return this.currency;
-	}
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
-		if(currency != null){
-			putQueryParameter("Currency", currency);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -80,6 +71,17 @@ public class SetResellerUserQuotaRequest extends RpcAcsRequest<SetResellerUserQu
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getCurrency() {
+		return this.currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+		if(currency != null){
+			putQueryParameter("Currency", currency);
 		}
 	}
 

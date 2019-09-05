@@ -16,6 +16,7 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -26,7 +27,8 @@ public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountRespons
 	
 	public CreateAgAccountRequest() {
 		super("BssOpenApi", "2017-12-14", "CreateAgAccount", "bssopenapi");
-		setProtocol(ProtocolType.HTTPS);
+		setSysProtocol(ProtocolType.HTTPS);
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,13 +37,7 @@ public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountRespons
 
 	private String firstName;
 
-	private String loginEmail;
-
-	private String provinceName;
-
 	private String cityName;
-
-	private String accountAttr;
 
 	private String postcode;
 
@@ -50,6 +46,12 @@ public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountRespons
 	private String nationCode;
 
 	private String lastName;
+
+	private String loginEmail;
+
+	private String provinceName;
+
+	private String accountAttr;
 
 	public String getFirstName() {
 		return this.firstName;
@@ -62,28 +64,6 @@ public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountRespons
 		}
 	}
 
-	public String getLoginEmail() {
-		return this.loginEmail;
-	}
-
-	public void setLoginEmail(String loginEmail) {
-		this.loginEmail = loginEmail;
-		if(loginEmail != null){
-			putQueryParameter("LoginEmail", loginEmail);
-		}
-	}
-
-	public String getProvinceName() {
-		return this.provinceName;
-	}
-
-	public void setProvinceName(String provinceName) {
-		this.provinceName = provinceName;
-		if(provinceName != null){
-			putQueryParameter("ProvinceName", provinceName);
-		}
-	}
-
 	public String getCityName() {
 		return this.cityName;
 	}
@@ -92,17 +72,6 @@ public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountRespons
 		this.cityName = cityName;
 		if(cityName != null){
 			putQueryParameter("CityName", cityName);
-		}
-	}
-
-	public String getAccountAttr() {
-		return this.accountAttr;
-	}
-
-	public void setAccountAttr(String accountAttr) {
-		this.accountAttr = accountAttr;
-		if(accountAttr != null){
-			putQueryParameter("AccountAttr", accountAttr);
 		}
 	}
 
@@ -147,6 +116,39 @@ public class CreateAgAccountRequest extends RpcAcsRequest<CreateAgAccountRespons
 		this.lastName = lastName;
 		if(lastName != null){
 			putQueryParameter("LastName", lastName);
+		}
+	}
+
+	public String getLoginEmail() {
+		return this.loginEmail;
+	}
+
+	public void setLoginEmail(String loginEmail) {
+		this.loginEmail = loginEmail;
+		if(loginEmail != null){
+			putQueryParameter("LoginEmail", loginEmail);
+		}
+	}
+
+	public String getProvinceName() {
+		return this.provinceName;
+	}
+
+	public void setProvinceName(String provinceName) {
+		this.provinceName = provinceName;
+		if(provinceName != null){
+			putQueryParameter("ProvinceName", provinceName);
+		}
+	}
+
+	public String getAccountAttr() {
+		return this.accountAttr;
+	}
+
+	public void setAccountAttr(String accountAttr) {
+		this.accountAttr = accountAttr;
+		if(accountAttr != null){
+			putQueryParameter("AccountAttr", accountAttr);
 		}
 	}
 

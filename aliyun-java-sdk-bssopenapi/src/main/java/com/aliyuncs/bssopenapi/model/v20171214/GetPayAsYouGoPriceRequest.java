@@ -16,6 +16,7 @@ package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
 /**
@@ -26,6 +27,7 @@ public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceR
 	
 	public GetPayAsYouGoPriceRequest() {
 		super("BssOpenApi", "2017-12-14", "GetPayAsYouGoPrice", "bssopenapi");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -40,9 +42,9 @@ public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceR
 
 	private Long ownerId;
 
-	private String region;
-
 	private String productType;
+
+	private String region;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -92,17 +94,6 @@ public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceR
 		}
 	}
 
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
-		}
-	}
-
 	public String getProductType() {
 		return this.productType;
 	}
@@ -111,6 +102,17 @@ public class GetPayAsYouGoPriceRequest extends RpcAcsRequest<GetPayAsYouGoPriceR
 		this.productType = productType;
 		if(productType != null){
 			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
