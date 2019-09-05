@@ -15,6 +15,7 @@
 package com.aliyuncs.cusanalytic_sc_online.model.v20190524;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cusanalytic_sc_online.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class DescribeActionDataRequest extends RpcAcsRequest<DescribeActionDataR
 	
 	public DescribeActionDataRequest() {
 		super("cusanalytic_sc_online", "2019-05-24", "DescribeActionData");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -33,13 +35,13 @@ public class DescribeActionDataRequest extends RpcAcsRequest<DescribeActionDataR
 
 	private Long tsEnd;
 
-	private Integer pageNo;
-
-	private Long tsStart;
-
 	private String storeId;
 
 	private Integer pageLimit;
+
+	private Integer pageNo;
+
+	private Long tsStart;
 
 	public Long getTsEnd() {
 		return this.tsEnd;
@@ -49,28 +51,6 @@ public class DescribeActionDataRequest extends RpcAcsRequest<DescribeActionDataR
 		this.tsEnd = tsEnd;
 		if(tsEnd != null){
 			putBodyParameter("TsEnd", tsEnd.toString());
-		}
-	}
-
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putBodyParameter("PageNo", pageNo.toString());
-		}
-	}
-
-	public Long getTsStart() {
-		return this.tsStart;
-	}
-
-	public void setTsStart(Long tsStart) {
-		this.tsStart = tsStart;
-		if(tsStart != null){
-			putBodyParameter("TsStart", tsStart.toString());
 		}
 	}
 
@@ -93,6 +73,28 @@ public class DescribeActionDataRequest extends RpcAcsRequest<DescribeActionDataR
 		this.pageLimit = pageLimit;
 		if(pageLimit != null){
 			putBodyParameter("PageLimit", pageLimit.toString());
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putBodyParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public Long getTsStart() {
+		return this.tsStart;
+	}
+
+	public void setTsStart(Long tsStart) {
+		this.tsStart = tsStart;
+		if(tsStart != null){
+			putBodyParameter("TsStart", tsStart.toString());
 		}
 	}
 

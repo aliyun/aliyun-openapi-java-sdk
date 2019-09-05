@@ -15,6 +15,7 @@
 package com.aliyuncs.cusanalytic_sc_online.model.v20190524;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cusanalytic_sc_online.Endpoint;
 
 /**
@@ -25,26 +26,16 @@ public class GetEMapRequest extends RpcAcsRequest<GetEMapResponse> {
 	
 	public GetEMapRequest() {
 		super("cusanalytic_sc_online", "2019-05-24", "GetEMap");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Long locationId;
-
 	private Long storeId;
 
-	public Long getLocationId() {
-		return this.locationId;
-	}
-
-	public void setLocationId(Long locationId) {
-		this.locationId = locationId;
-		if(locationId != null){
-			putBodyParameter("LocationId", locationId.toString());
-		}
-	}
+	private Long locationId;
 
 	public Long getStoreId() {
 		return this.storeId;
@@ -54,6 +45,17 @@ public class GetEMapRequest extends RpcAcsRequest<GetEMapResponse> {
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId.toString());
+		}
+	}
+
+	public Long getLocationId() {
+		return this.locationId;
+	}
+
+	public void setLocationId(Long locationId) {
+		this.locationId = locationId;
+		if(locationId != null){
+			putBodyParameter("LocationId", locationId.toString());
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.cusanalytic_sc_online.model.v20190524;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cusanalytic_sc_online.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class GetLocationsRequest extends RpcAcsRequest<GetLocationsResponse> {
 	
 	public GetLocationsRequest() {
 		super("cusanalytic_sc_online", "2019-05-24", "GetLocations");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

@@ -1,3 +1,6 @@
+2019-09-05 Version: 1.0.2
+- Generated 2019-05-24 for `cusanalytic_sc_online`.
+
 2019-08-27 Version: 1.0.1
 - Fixed endpoint data init.
 

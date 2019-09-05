@@ -15,6 +15,7 @@
 package com.aliyuncs.cusanalytic_sc_online.model.v20190524;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cusanalytic_sc_online.Endpoint;
 
 /**
@@ -25,49 +26,50 @@ public class GetAnalyzeCommodityDataRequest extends RpcAcsRequest<GetAnalyzeComm
 	
 	public GetAnalyzeCommodityDataRequest() {
 		super("cusanalytic_sc_online", "2019-05-24", "GetAnalyzeCommodityData");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Long startUserCount;
+	private Long storeId;
 
-	private String endDate;
+	private String startDate;
 
 	private Long endUserCount;
 
 	private Integer pageSize;
 
-	private Long minSupportCount;
-
 	private Integer pageIndex;
-
-	private Long storeId;
-
-	private String startDate;
 
 	private Long stayPeriod;
 
-	public Long getStartUserCount() {
-		return this.startUserCount;
+	private Long startUserCount;
+
+	private Long minSupportCount;
+
+	private String endDate;
+
+	public Long getStoreId() {
+		return this.storeId;
 	}
 
-	public void setStartUserCount(Long startUserCount) {
-		this.startUserCount = startUserCount;
-		if(startUserCount != null){
-			putBodyParameter("StartUserCount", startUserCount.toString());
+	public void setStoreId(Long storeId) {
+		this.storeId = storeId;
+		if(storeId != null){
+			putBodyParameter("StoreId", storeId.toString());
 		}
 	}
 
-	public String getEndDate() {
-		return this.endDate;
+	public String getStartDate() {
+		return this.startDate;
 	}
 
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putBodyParameter("EndDate", endDate);
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putBodyParameter("StartDate", startDate);
 		}
 	}
 
@@ -93,17 +95,6 @@ public class GetAnalyzeCommodityDataRequest extends RpcAcsRequest<GetAnalyzeComm
 		}
 	}
 
-	public Long getMinSupportCount() {
-		return this.minSupportCount;
-	}
-
-	public void setMinSupportCount(Long minSupportCount) {
-		this.minSupportCount = minSupportCount;
-		if(minSupportCount != null){
-			putBodyParameter("MinSupportCount", minSupportCount.toString());
-		}
-	}
-
 	public Integer getPageIndex() {
 		return this.pageIndex;
 	}
@@ -115,28 +106,6 @@ public class GetAnalyzeCommodityDataRequest extends RpcAcsRequest<GetAnalyzeComm
 		}
 	}
 
-	public Long getStoreId() {
-		return this.storeId;
-	}
-
-	public void setStoreId(Long storeId) {
-		this.storeId = storeId;
-		if(storeId != null){
-			putBodyParameter("StoreId", storeId.toString());
-		}
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putBodyParameter("StartDate", startDate);
-		}
-	}
-
 	public Long getStayPeriod() {
 		return this.stayPeriod;
 	}
@@ -145,6 +114,39 @@ public class GetAnalyzeCommodityDataRequest extends RpcAcsRequest<GetAnalyzeComm
 		this.stayPeriod = stayPeriod;
 		if(stayPeriod != null){
 			putBodyParameter("StayPeriod", stayPeriod.toString());
+		}
+	}
+
+	public Long getStartUserCount() {
+		return this.startUserCount;
+	}
+
+	public void setStartUserCount(Long startUserCount) {
+		this.startUserCount = startUserCount;
+		if(startUserCount != null){
+			putBodyParameter("StartUserCount", startUserCount.toString());
+		}
+	}
+
+	public Long getMinSupportCount() {
+		return this.minSupportCount;
+	}
+
+	public void setMinSupportCount(Long minSupportCount) {
+		this.minSupportCount = minSupportCount;
+		if(minSupportCount != null){
+			putBodyParameter("MinSupportCount", minSupportCount.toString());
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putBodyParameter("EndDate", endDate);
 		}
 	}
 

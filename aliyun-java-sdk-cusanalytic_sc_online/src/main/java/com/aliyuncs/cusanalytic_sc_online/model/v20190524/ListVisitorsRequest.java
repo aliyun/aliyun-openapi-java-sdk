@@ -15,6 +15,7 @@
 package com.aliyuncs.cusanalytic_sc_online.model.v20190524;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cusanalytic_sc_online.Endpoint;
 
 /**
@@ -25,46 +26,36 @@ public class ListVisitorsRequest extends RpcAcsRequest<ListVisitorsResponse> {
 	
 	public ListVisitorsRequest() {
 		super("cusanalytic_sc_online", "2019-05-24", "ListVisitors");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String pkId;
-
 	private String gender;
 
 	private Long ukId;
 
-	private Integer pageSize;
-
 	private String locationIds;
 
-	private String endTime;
+	private String startTime;
+
+	private Integer pageSize;
 
 	private Long enterCount;
 
 	private Integer pageIndex;
 
-	private String startTime;
-
 	private Long ageStart;
 
 	private Long ageEnd;
 
+	private String pkId;
+
+	private String endTime;
+
 	private String storeIds;
-
-	public String getPkId() {
-		return this.pkId;
-	}
-
-	public void setPkId(String pkId) {
-		this.pkId = pkId;
-		if(pkId != null){
-			putBodyParameter("PkId", pkId);
-		}
-	}
 
 	public String getGender() {
 		return this.gender;
@@ -88,17 +79,6 @@ public class ListVisitorsRequest extends RpcAcsRequest<ListVisitorsResponse> {
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getLocationIds() {
 		return this.locationIds;
 	}
@@ -110,14 +90,25 @@ public class ListVisitorsRequest extends RpcAcsRequest<ListVisitorsResponse> {
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putBodyParameter("EndTime", endTime);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -143,17 +134,6 @@ public class ListVisitorsRequest extends RpcAcsRequest<ListVisitorsResponse> {
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putBodyParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getAgeStart() {
 		return this.ageStart;
 	}
@@ -173,6 +153,28 @@ public class ListVisitorsRequest extends RpcAcsRequest<ListVisitorsResponse> {
 		this.ageEnd = ageEnd;
 		if(ageEnd != null){
 			putBodyParameter("AgeEnd", ageEnd.toString());
+		}
+	}
+
+	public String getPkId() {
+		return this.pkId;
+	}
+
+	public void setPkId(String pkId) {
+		this.pkId = pkId;
+		if(pkId != null){
+			putBodyParameter("PkId", pkId);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime);
 		}
 	}
 

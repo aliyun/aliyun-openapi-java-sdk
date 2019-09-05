@@ -15,6 +15,7 @@
 package com.aliyuncs.cusanalytic_sc_online.model.v20190524;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cusanalytic_sc_online.Endpoint;
 
 /**
@@ -25,26 +26,16 @@ public class SearchPersonByImgRequest extends RpcAcsRequest<SearchPersonByImgRes
 	
 	public SearchPersonByImgRequest() {
 		super("cusanalytic_sc_online", "2019-05-24", "SearchPersonByImg");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String imgUrl;
-
 	private Long storeId;
 
-	public String getImgUrl() {
-		return this.imgUrl;
-	}
-
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
-		if(imgUrl != null){
-			putBodyParameter("ImgUrl", imgUrl);
-		}
-	}
+	private String imgUrl;
 
 	public Long getStoreId() {
 		return this.storeId;
@@ -54,6 +45,17 @@ public class SearchPersonByImgRequest extends RpcAcsRequest<SearchPersonByImgRes
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId.toString());
+		}
+	}
+
+	public String getImgUrl() {
+		return this.imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+		if(imgUrl != null){
+			putBodyParameter("ImgUrl", imgUrl);
 		}
 	}
 

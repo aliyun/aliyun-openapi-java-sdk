@@ -15,6 +15,7 @@
 package com.aliyuncs.cusanalytic_sc_online.model.v20190524;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cusanalytic_sc_online.Endpoint;
 
 /**
@@ -25,6 +26,7 @@ public class GetAnalyzePlaceDataRequest extends RpcAcsRequest<GetAnalyzePlaceDat
 	
 	public GetAnalyzePlaceDataRequest() {
 		super("cusanalytic_sc_online", "2019-05-24", "GetAnalyzePlaceData");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -35,17 +37,17 @@ public class GetAnalyzePlaceDataRequest extends RpcAcsRequest<GetAnalyzePlaceDat
 
 	private Long parentAmount;
 
-	private String endDate;
-
-	private Long locationId;
-
-	private String parentLocationIds;
-
 	private String startDate;
 
 	private Long startUVCount;
 
 	private Long storeId;
+
+	private String endDate;
+
+	private Long locationId;
+
+	private String parentLocationIds;
 
 	public Long getEndUVCount() {
 		return this.endUVCount;
@@ -66,39 +68,6 @@ public class GetAnalyzePlaceDataRequest extends RpcAcsRequest<GetAnalyzePlaceDat
 		this.parentAmount = parentAmount;
 		if(parentAmount != null){
 			putBodyParameter("ParentAmount", parentAmount.toString());
-		}
-	}
-
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putBodyParameter("EndDate", endDate);
-		}
-	}
-
-	public Long getLocationId() {
-		return this.locationId;
-	}
-
-	public void setLocationId(Long locationId) {
-		this.locationId = locationId;
-		if(locationId != null){
-			putBodyParameter("LocationId", locationId.toString());
-		}
-	}
-
-	public String getParentLocationIds() {
-		return this.parentLocationIds;
-	}
-
-	public void setParentLocationIds(String parentLocationIds) {
-		this.parentLocationIds = parentLocationIds;
-		if(parentLocationIds != null){
-			putBodyParameter("ParentLocationIds", parentLocationIds);
 		}
 	}
 
@@ -132,6 +101,39 @@ public class GetAnalyzePlaceDataRequest extends RpcAcsRequest<GetAnalyzePlaceDat
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId.toString());
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putBodyParameter("EndDate", endDate);
+		}
+	}
+
+	public Long getLocationId() {
+		return this.locationId;
+	}
+
+	public void setLocationId(Long locationId) {
+		this.locationId = locationId;
+		if(locationId != null){
+			putBodyParameter("LocationId", locationId.toString());
+		}
+	}
+
+	public String getParentLocationIds() {
+		return this.parentLocationIds;
+	}
+
+	public void setParentLocationIds(String parentLocationIds) {
+		this.parentLocationIds = parentLocationIds;
+		if(parentLocationIds != null){
+			putBodyParameter("ParentLocationIds", parentLocationIds);
 		}
 	}
 

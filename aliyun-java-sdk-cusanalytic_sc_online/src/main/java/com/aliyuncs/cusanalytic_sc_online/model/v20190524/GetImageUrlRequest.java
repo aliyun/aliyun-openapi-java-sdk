@@ -15,6 +15,7 @@
 package com.aliyuncs.cusanalytic_sc_online.model.v20190524;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cusanalytic_sc_online.Endpoint;
 
 /**
@@ -25,28 +26,18 @@ public class GetImageUrlRequest extends RpcAcsRequest<GetImageUrlResponse> {
 	
 	public GetImageUrlRequest() {
 		super("cusanalytic_sc_online", "2019-05-24", "GetImageUrl");
+		setSysMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String objectKeys;
-
 	private String originUrls;
 
 	private String storeId;
 
-	public String getObjectKeys() {
-		return this.objectKeys;
-	}
-
-	public void setObjectKeys(String objectKeys) {
-		this.objectKeys = objectKeys;
-		if(objectKeys != null){
-			putBodyParameter("ObjectKeys", objectKeys);
-		}
-	}
+	private String objectKeys;
 
 	public String getOriginUrls() {
 		return this.originUrls;
@@ -67,6 +58,17 @@ public class GetImageUrlRequest extends RpcAcsRequest<GetImageUrlResponse> {
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId);
+		}
+	}
+
+	public String getObjectKeys() {
+		return this.objectKeys;
+	}
+
+	public void setObjectKeys(String objectKeys) {
+		this.objectKeys = objectKeys;
+		if(objectKeys != null){
+			putBodyParameter("ObjectKeys", objectKeys);
 		}
 	}
 

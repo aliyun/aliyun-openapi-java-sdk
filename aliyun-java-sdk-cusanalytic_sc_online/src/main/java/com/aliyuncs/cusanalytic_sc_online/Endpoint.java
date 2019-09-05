@@ -24,11 +24,15 @@ public class Endpoint {
             put("ap-south-1", "cusanalytic.aliyuncs.com");
             put("eu-west-1", "cusanalytic.aliyuncs.com");
             put("ap-northeast-1", "cusanalytic.aliyuncs.com");
+            put("cn-shenzhen-finance-1", "cusanalytic.aliyuncs.com");
             put("me-east-1", "cusanalytic.aliyuncs.com");
             put("cn-chengdu", "cusanalytic.aliyuncs.com");
+            put("cn-north-2-gov-1", "cusanalytic.aliyuncs.com");
             put("cn-qingdao", "cusanalytic.aliyuncs.com");
             put("cn-shanghai", "cusanalytic.aliyuncs.com");
+            put("cn-shanghai-finance-1", "cusanalytic.aliyuncs.com");
             put("cn-hongkong", "cusanalytic.aliyuncs.com");
+            put("cn-hangzhou-finance", "cusanalytic.aliyuncs.com");
             put("ap-southeast-1", "cusanalytic.aliyuncs.com");
             put("ap-southeast-2", "cusanalytic.aliyuncs.com");
             put("ap-southeast-3", "cusanalytic.aliyuncs.com");
