@@ -18,6 +18,7 @@ import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import java.util.Map;
 import com.google.gson.Gson;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
 /**
@@ -28,6 +29,7 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 	
 	public InvokeCommandRequest() {
 		super("Ecs", "2014-05-26", "InvokeCommand", "ecs");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

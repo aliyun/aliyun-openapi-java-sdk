@@ -1,3 +1,6 @@
+2019-09-06 Version: 4.17.4
+- Update endpoint data.
+
 2019-09-05 Version: 4.17.3
 - Generated 2014-05-26 for `Ecs`.
 
