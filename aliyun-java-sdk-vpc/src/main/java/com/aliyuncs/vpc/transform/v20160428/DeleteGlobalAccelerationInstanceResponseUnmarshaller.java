@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteGlobalAccelerationInstanceResponseUnmarshaller {
 
-	public static DeleteGlobalAccelerationInstanceResponse unmarshall(DeleteGlobalAccelerationInstanceResponse deleteGlobalAccelerationInstanceResponse, UnmarshallerContext context) {
+	public static DeleteGlobalAccelerationInstanceResponse unmarshall(DeleteGlobalAccelerationInstanceResponse deleteGlobalAccelerationInstanceResponse, UnmarshallerContext _ctx) {
 		
-		deleteGlobalAccelerationInstanceResponse.setRequestId(context.stringValue("DeleteGlobalAccelerationInstanceResponse.RequestId"));
+		deleteGlobalAccelerationInstanceResponse.setRequestId(_ctx.stringValue("DeleteGlobalAccelerationInstanceResponse.RequestId"));
 	 
 	 	return deleteGlobalAccelerationInstanceResponse;
 	}

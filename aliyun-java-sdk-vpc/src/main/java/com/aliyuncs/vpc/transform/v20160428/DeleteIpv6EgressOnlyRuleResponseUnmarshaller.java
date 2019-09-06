@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteIpv6EgressOnlyRuleResponseUnmarshaller {
 
-	public static DeleteIpv6EgressOnlyRuleResponse unmarshall(DeleteIpv6EgressOnlyRuleResponse deleteIpv6EgressOnlyRuleResponse, UnmarshallerContext context) {
+	public static DeleteIpv6EgressOnlyRuleResponse unmarshall(DeleteIpv6EgressOnlyRuleResponse deleteIpv6EgressOnlyRuleResponse, UnmarshallerContext _ctx) {
 		
-		deleteIpv6EgressOnlyRuleResponse.setRequestId(context.stringValue("DeleteIpv6EgressOnlyRuleResponse.RequestId"));
+		deleteIpv6EgressOnlyRuleResponse.setRequestId(_ctx.stringValue("DeleteIpv6EgressOnlyRuleResponse.RequestId"));
 	 
 	 	return deleteIpv6EgressOnlyRuleResponse;
 	}

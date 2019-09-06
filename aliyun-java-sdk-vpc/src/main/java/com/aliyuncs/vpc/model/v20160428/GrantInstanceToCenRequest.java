@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,25 +26,30 @@ public class GrantInstanceToCenRequest extends RpcAcsRequest<GrantInstanceToCenR
 	
 	public GrantInstanceToCenRequest() {
 		super("Vpc", "2016-04-28", "GrantInstanceToCen", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
-
-	private String instanceId;
-
-	private String resourceOwnerAccount;
 
 	private String cenId;
 
 	private String clientToken;
 
-	private String ownerAccount;
+	private Long cenOwnerId;
 
 	private String instanceType;
 
-	private Long cenOwnerId;
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,28 +59,6 @@ public class GrantInstanceToCenRequest extends RpcAcsRequest<GrantInstanceToCenR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -99,14 +84,14 @@ public class GrantInstanceToCenRequest extends RpcAcsRequest<GrantInstanceToCenR
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public Long getCenOwnerId() {
+		return this.cenOwnerId;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setCenOwnerId(Long cenOwnerId) {
+		this.cenOwnerId = cenOwnerId;
+		if(cenOwnerId != null){
+			putQueryParameter("CenOwnerId", cenOwnerId.toString());
 		}
 	}
 
@@ -121,14 +106,25 @@ public class GrantInstanceToCenRequest extends RpcAcsRequest<GrantInstanceToCenR
 		}
 	}
 
-	public Long getCenOwnerId() {
-		return this.cenOwnerId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setCenOwnerId(Long cenOwnerId) {
-		this.cenOwnerId = cenOwnerId;
-		if(cenOwnerId != null){
-			putQueryParameter("CenOwnerId", cenOwnerId.toString());
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -140,6 +136,17 @@ public class GrantInstanceToCenRequest extends RpcAcsRequest<GrantInstanceToCenR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

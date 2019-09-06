@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,21 +26,18 @@ public class CreateIPv6TranslatorEntryRequest extends RpcAcsRequest<CreateIPv6Tr
 	
 	public CreateIPv6TranslatorEntryRequest() {
 		super("Vpc", "2016-04-28", "CreateIPv6TranslatorEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Integer backendIpv4Port;
 
-	private String aclId;
-
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String entryName;
-
-	private String ownerAccount;
-
-	private Long ownerId;
 
 	private String aclStatus;
 
@@ -51,6 +50,14 @@ public class CreateIPv6TranslatorEntryRequest extends RpcAcsRequest<CreateIPv6Tr
 	private String entryDescription;
 
 	private String backendIpv4Addr;
+
+	private String aclId;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
 
 	private String transProtocol;
 
@@ -67,17 +74,6 @@ public class CreateIPv6TranslatorEntryRequest extends RpcAcsRequest<CreateIPv6Tr
 		}
 	}
 
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -89,17 +85,6 @@ public class CreateIPv6TranslatorEntryRequest extends RpcAcsRequest<CreateIPv6Tr
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getEntryName() {
 		return this.entryName;
 	}
@@ -108,28 +93,6 @@ public class CreateIPv6TranslatorEntryRequest extends RpcAcsRequest<CreateIPv6Tr
 		this.entryName = entryName;
 		if(entryName != null){
 			putQueryParameter("EntryName", entryName);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -196,6 +159,50 @@ public class CreateIPv6TranslatorEntryRequest extends RpcAcsRequest<CreateIPv6Tr
 		this.backendIpv4Addr = backendIpv4Addr;
 		if(backendIpv4Addr != null){
 			putQueryParameter("BackendIpv4Addr", backendIpv4Addr);
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

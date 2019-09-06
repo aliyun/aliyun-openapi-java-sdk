@@ -20,21 +20,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyVpnGatewayAttributeResponseUnmarshaller {
 
-	public static ModifyVpnGatewayAttributeResponse unmarshall(ModifyVpnGatewayAttributeResponse modifyVpnGatewayAttributeResponse, UnmarshallerContext context) {
+	public static ModifyVpnGatewayAttributeResponse unmarshall(ModifyVpnGatewayAttributeResponse modifyVpnGatewayAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyVpnGatewayAttributeResponse.setRequestId(context.stringValue("ModifyVpnGatewayAttributeResponse.RequestId"));
-		modifyVpnGatewayAttributeResponse.setVpnGatewayId(context.stringValue("ModifyVpnGatewayAttributeResponse.VpnGatewayId"));
-		modifyVpnGatewayAttributeResponse.setVpcId(context.stringValue("ModifyVpnGatewayAttributeResponse.VpcId"));
-		modifyVpnGatewayAttributeResponse.setVSwitchId(context.stringValue("ModifyVpnGatewayAttributeResponse.VSwitchId"));
-		modifyVpnGatewayAttributeResponse.setInternetIp(context.stringValue("ModifyVpnGatewayAttributeResponse.InternetIp"));
-		modifyVpnGatewayAttributeResponse.setIntranetIp(context.stringValue("ModifyVpnGatewayAttributeResponse.IntranetIp"));
-		modifyVpnGatewayAttributeResponse.setCreateTime(context.longValue("ModifyVpnGatewayAttributeResponse.CreateTime"));
-		modifyVpnGatewayAttributeResponse.setEndTime(context.longValue("ModifyVpnGatewayAttributeResponse.EndTime"));
-		modifyVpnGatewayAttributeResponse.setSpec(context.stringValue("ModifyVpnGatewayAttributeResponse.Spec"));
-		modifyVpnGatewayAttributeResponse.setName(context.stringValue("ModifyVpnGatewayAttributeResponse.Name"));
-		modifyVpnGatewayAttributeResponse.setDescription(context.stringValue("ModifyVpnGatewayAttributeResponse.Description"));
-		modifyVpnGatewayAttributeResponse.setStatus(context.stringValue("ModifyVpnGatewayAttributeResponse.Status"));
-		modifyVpnGatewayAttributeResponse.setBusinessStatus(context.stringValue("ModifyVpnGatewayAttributeResponse.BusinessStatus"));
+		modifyVpnGatewayAttributeResponse.setRequestId(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.RequestId"));
+		modifyVpnGatewayAttributeResponse.setVpnGatewayId(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.VpnGatewayId"));
+		modifyVpnGatewayAttributeResponse.setVpcId(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.VpcId"));
+		modifyVpnGatewayAttributeResponse.setVSwitchId(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.VSwitchId"));
+		modifyVpnGatewayAttributeResponse.setInternetIp(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.InternetIp"));
+		modifyVpnGatewayAttributeResponse.setIntranetIp(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.IntranetIp"));
+		modifyVpnGatewayAttributeResponse.setCreateTime(_ctx.longValue("ModifyVpnGatewayAttributeResponse.CreateTime"));
+		modifyVpnGatewayAttributeResponse.setEndTime(_ctx.longValue("ModifyVpnGatewayAttributeResponse.EndTime"));
+		modifyVpnGatewayAttributeResponse.setSpec(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.Spec"));
+		modifyVpnGatewayAttributeResponse.setName(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.Name"));
+		modifyVpnGatewayAttributeResponse.setDescription(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.Description"));
+		modifyVpnGatewayAttributeResponse.setStatus(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.Status"));
+		modifyVpnGatewayAttributeResponse.setBusinessStatus(_ctx.stringValue("ModifyVpnGatewayAttributeResponse.BusinessStatus"));
 	 
 	 	return modifyVpnGatewayAttributeResponse;
 	}

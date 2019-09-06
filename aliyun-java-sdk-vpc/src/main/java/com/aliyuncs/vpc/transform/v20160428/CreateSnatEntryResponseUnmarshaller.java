@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateSnatEntryResponseUnmarshaller {
 
-	public static CreateSnatEntryResponse unmarshall(CreateSnatEntryResponse createSnatEntryResponse, UnmarshallerContext context) {
+	public static CreateSnatEntryResponse unmarshall(CreateSnatEntryResponse createSnatEntryResponse, UnmarshallerContext _ctx) {
 		
-		createSnatEntryResponse.setRequestId(context.stringValue("CreateSnatEntryResponse.RequestId"));
-		createSnatEntryResponse.setSnatEntryId(context.stringValue("CreateSnatEntryResponse.SnatEntryId"));
+		createSnatEntryResponse.setRequestId(_ctx.stringValue("CreateSnatEntryResponse.RequestId"));
+		createSnatEntryResponse.setSnatEntryId(_ctx.stringValue("CreateSnatEntryResponse.SnatEntryId"));
 	 
 	 	return createSnatEntryResponse;
 	}

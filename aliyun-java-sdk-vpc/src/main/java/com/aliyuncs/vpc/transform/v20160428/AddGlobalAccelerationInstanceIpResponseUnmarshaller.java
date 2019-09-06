@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddGlobalAccelerationInstanceIpResponseUnmarshaller {
 
-	public static AddGlobalAccelerationInstanceIpResponse unmarshall(AddGlobalAccelerationInstanceIpResponse addGlobalAccelerationInstanceIpResponse, UnmarshallerContext context) {
+	public static AddGlobalAccelerationInstanceIpResponse unmarshall(AddGlobalAccelerationInstanceIpResponse addGlobalAccelerationInstanceIpResponse, UnmarshallerContext _ctx) {
 		
-		addGlobalAccelerationInstanceIpResponse.setRequestId(context.stringValue("AddGlobalAccelerationInstanceIpResponse.RequestId"));
+		addGlobalAccelerationInstanceIpResponse.setRequestId(_ctx.stringValue("AddGlobalAccelerationInstanceIpResponse.RequestId"));
 	 
 	 	return addGlobalAccelerationInstanceIpResponse;
 	}

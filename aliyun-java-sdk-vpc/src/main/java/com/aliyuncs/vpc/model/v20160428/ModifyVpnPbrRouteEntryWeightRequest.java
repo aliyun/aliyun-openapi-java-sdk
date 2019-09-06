@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,22 @@ public class ModifyVpnPbrRouteEntryWeightRequest extends RpcAcsRequest<ModifyVpn
 	
 	public ModifyVpnPbrRouteEntryWeightRequest() {
 		super("Vpc", "2016-04-28", "ModifyVpnPbrRouteEntryWeight", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String routeSource;
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private Integer newWeight;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -42,11 +51,11 @@ public class ModifyVpnPbrRouteEntryWeightRequest extends RpcAcsRequest<ModifyVpn
 
 	private Long ownerId;
 
-	private Integer newWeight;
-
 	private String routeDest;
 
 	private String nextHop;
+
+	private String overlayMode;
 
 	public String getRouteSource() {
 		return this.routeSource;
@@ -70,17 +79,6 @@ public class ModifyVpnPbrRouteEntryWeightRequest extends RpcAcsRequest<ModifyVpn
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -89,6 +87,28 @@ public class ModifyVpnPbrRouteEntryWeightRequest extends RpcAcsRequest<ModifyVpn
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getNewWeight() {
+		return this.newWeight;
+	}
+
+	public void setNewWeight(Integer newWeight) {
+		this.newWeight = newWeight;
+		if(newWeight != null){
+			putQueryParameter("NewWeight", newWeight.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -136,17 +156,6 @@ public class ModifyVpnPbrRouteEntryWeightRequest extends RpcAcsRequest<ModifyVpn
 		}
 	}
 
-	public Integer getNewWeight() {
-		return this.newWeight;
-	}
-
-	public void setNewWeight(Integer newWeight) {
-		this.newWeight = newWeight;
-		if(newWeight != null){
-			putQueryParameter("NewWeight", newWeight.toString());
-		}
-	}
-
 	public String getRouteDest() {
 		return this.routeDest;
 	}
@@ -166,6 +175,17 @@ public class ModifyVpnPbrRouteEntryWeightRequest extends RpcAcsRequest<ModifyVpn
 		this.nextHop = nextHop;
 		if(nextHop != null){
 			putQueryParameter("NextHop", nextHop);
+		}
+	}
+
+	public String getOverlayMode() {
+		return this.overlayMode;
+	}
+
+	public void setOverlayMode(String overlayMode) {
+		this.overlayMode = overlayMode;
+		if(overlayMode != null){
+			putQueryParameter("OverlayMode", overlayMode);
 		}
 	}
 

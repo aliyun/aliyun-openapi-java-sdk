@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,22 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 	
 	public ModifyRouteEntryRequest() {
 		super("Vpc", "2016-04-28", "ModifyRouteEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String routeEntryName;
-
-	private String routeEntryId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String routeEntryId;
 
 	public String getRouteEntryName() {
 		return this.routeEntryName;
@@ -44,17 +51,6 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 		this.routeEntryName = routeEntryName;
 		if(routeEntryName != null){
 			putQueryParameter("RouteEntryName", routeEntryName);
-		}
-	}
-
-	public String getRouteEntryId() {
-		return this.routeEntryId;
-	}
-
-	public void setRouteEntryId(String routeEntryId) {
-		this.routeEntryId = routeEntryId;
-		if(routeEntryId != null){
-			putQueryParameter("RouteEntryId", routeEntryId);
 		}
 	}
 
@@ -88,6 +84,17 @@ public class ModifyRouteEntryRequest extends RpcAcsRequest<ModifyRouteEntryRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRouteEntryId() {
+		return this.routeEntryId;
+	}
+
+	public void setRouteEntryId(String routeEntryId) {
+		this.routeEntryId = routeEntryId;
+		if(routeEntryId != null){
+			putQueryParameter("RouteEntryId", routeEntryId);
 		}
 	}
 

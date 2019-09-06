@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateGlobalAccelerationInstanceResponseUnmarshaller {
 
-	public static CreateGlobalAccelerationInstanceResponse unmarshall(CreateGlobalAccelerationInstanceResponse createGlobalAccelerationInstanceResponse, UnmarshallerContext context) {
+	public static CreateGlobalAccelerationInstanceResponse unmarshall(CreateGlobalAccelerationInstanceResponse createGlobalAccelerationInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createGlobalAccelerationInstanceResponse.setRequestId(context.stringValue("CreateGlobalAccelerationInstanceResponse.RequestId"));
-		createGlobalAccelerationInstanceResponse.setGlobalAccelerationInstanceId(context.stringValue("CreateGlobalAccelerationInstanceResponse.GlobalAccelerationInstanceId"));
-		createGlobalAccelerationInstanceResponse.setIpAddress(context.stringValue("CreateGlobalAccelerationInstanceResponse.IpAddress"));
+		createGlobalAccelerationInstanceResponse.setRequestId(_ctx.stringValue("CreateGlobalAccelerationInstanceResponse.RequestId"));
+		createGlobalAccelerationInstanceResponse.setGlobalAccelerationInstanceId(_ctx.stringValue("CreateGlobalAccelerationInstanceResponse.GlobalAccelerationInstanceId"));
+		createGlobalAccelerationInstanceResponse.setIpAddress(_ctx.stringValue("CreateGlobalAccelerationInstanceResponse.IpAddress"));
 	 
 	 	return createGlobalAccelerationInstanceResponse;
 	}

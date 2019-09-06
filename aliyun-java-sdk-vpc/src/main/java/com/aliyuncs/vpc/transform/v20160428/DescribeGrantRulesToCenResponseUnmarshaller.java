@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeGrantRulesToCenResponseUnmarshaller {
 
-	public static DescribeGrantRulesToCenResponse unmarshall(DescribeGrantRulesToCenResponse describeGrantRulesToCenResponse, UnmarshallerContext context) {
+	public static DescribeGrantRulesToCenResponse unmarshall(DescribeGrantRulesToCenResponse describeGrantRulesToCenResponse, UnmarshallerContext _ctx) {
 		
-		describeGrantRulesToCenResponse.setRequestId(context.stringValue("DescribeGrantRulesToCenResponse.RequestId"));
-		describeGrantRulesToCenResponse.setTotalCount(context.integerValue("DescribeGrantRulesToCenResponse.TotalCount"));
-		describeGrantRulesToCenResponse.setPageNumber(context.integerValue("DescribeGrantRulesToCenResponse.PageNumber"));
-		describeGrantRulesToCenResponse.setPageSize(context.integerValue("DescribeGrantRulesToCenResponse.PageSize"));
+		describeGrantRulesToCenResponse.setRequestId(_ctx.stringValue("DescribeGrantRulesToCenResponse.RequestId"));
+		describeGrantRulesToCenResponse.setTotalCount(_ctx.integerValue("DescribeGrantRulesToCenResponse.TotalCount"));
+		describeGrantRulesToCenResponse.setPageNumber(_ctx.integerValue("DescribeGrantRulesToCenResponse.PageNumber"));
+		describeGrantRulesToCenResponse.setPageSize(_ctx.integerValue("DescribeGrantRulesToCenResponse.PageSize"));
 
 		List<CbnGrantRule> cenGrantRules = new ArrayList<CbnGrantRule>();
-		for (int i = 0; i < context.lengthValue("DescribeGrantRulesToCenResponse.CenGrantRules.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeGrantRulesToCenResponse.CenGrantRules.Length"); i++) {
 			CbnGrantRule cbnGrantRule = new CbnGrantRule();
-			cbnGrantRule.setCenInstanceId(context.stringValue("DescribeGrantRulesToCenResponse.CenGrantRules["+ i +"].CenInstanceId"));
-			cbnGrantRule.setCenOwnerId(context.longValue("DescribeGrantRulesToCenResponse.CenGrantRules["+ i +"].CenOwnerId"));
-			cbnGrantRule.setCreationTime(context.stringValue("DescribeGrantRulesToCenResponse.CenGrantRules["+ i +"].CreationTime"));
+			cbnGrantRule.setCenInstanceId(_ctx.stringValue("DescribeGrantRulesToCenResponse.CenGrantRules["+ i +"].CenInstanceId"));
+			cbnGrantRule.setCenOwnerId(_ctx.longValue("DescribeGrantRulesToCenResponse.CenGrantRules["+ i +"].CenOwnerId"));
+			cbnGrantRule.setCreationTime(_ctx.stringValue("DescribeGrantRulesToCenResponse.CenGrantRules["+ i +"].CreationTime"));
 
 			cenGrantRules.add(cbnGrantRule);
 		}

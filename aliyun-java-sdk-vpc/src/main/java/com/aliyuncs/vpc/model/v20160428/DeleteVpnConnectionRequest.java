@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class DeleteVpnConnectionRequest extends RpcAcsRequest<DeleteVpnConnectio
 	
 	public DeleteVpnConnectionRequest() {
 		super("Vpc", "2016-04-28", "DeleteVpnConnection", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
-	private String vpnConnectionId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String vpnConnectionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,17 +53,6 @@ public class DeleteVpnConnectionRequest extends RpcAcsRequest<DeleteVpnConnectio
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -71,14 +67,14 @@ public class DeleteVpnConnectionRequest extends RpcAcsRequest<DeleteVpnConnectio
 		}
 	}
 
-	public String getVpnConnectionId() {
-		return this.vpnConnectionId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setVpnConnectionId(String vpnConnectionId) {
-		this.vpnConnectionId = vpnConnectionId;
-		if(vpnConnectionId != null){
-			putQueryParameter("VpnConnectionId", vpnConnectionId);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -101,6 +97,17 @@ public class DeleteVpnConnectionRequest extends RpcAcsRequest<DeleteVpnConnectio
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVpnConnectionId() {
+		return this.vpnConnectionId;
+	}
+
+	public void setVpnConnectionId(String vpnConnectionId) {
+		this.vpnConnectionId = vpnConnectionId;
+		if(vpnConnectionId != null){
+			putQueryParameter("VpnConnectionId", vpnConnectionId);
 		}
 	}
 

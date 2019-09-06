@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PublishVpnRouteEntryResponseUnmarshaller {
 
-	public static PublishVpnRouteEntryResponse unmarshall(PublishVpnRouteEntryResponse publishVpnRouteEntryResponse, UnmarshallerContext context) {
+	public static PublishVpnRouteEntryResponse unmarshall(PublishVpnRouteEntryResponse publishVpnRouteEntryResponse, UnmarshallerContext _ctx) {
 		
-		publishVpnRouteEntryResponse.setRequestId(context.stringValue("PublishVpnRouteEntryResponse.RequestId"));
+		publishVpnRouteEntryResponse.setRequestId(_ctx.stringValue("PublishVpnRouteEntryResponse.RequestId"));
 	 
 	 	return publishVpnRouteEntryResponse;
 	}

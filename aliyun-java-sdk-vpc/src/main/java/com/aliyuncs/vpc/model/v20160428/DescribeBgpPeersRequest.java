@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,27 +26,32 @@ public class DescribeBgpPeersRequest extends RpcAcsRequest<DescribeBgpPeersRespo
 	
 	public DescribeBgpPeersRequest() {
 		super("Vpc", "2016-04-28", "DescribeBgpPeers", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String bgpGroupId;
 
-	private String routerId;
-
-	private String ownerAccount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String bgpGroupId;
+	private Boolean isDefault;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private String bgpPeerId;
 
-	private Boolean isDefault;
-
 	private Long ownerId;
 
-	private Integer pageNumber;
+	private String routerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,50 +61,6 @@ public class DescribeBgpPeersRequest extends RpcAcsRequest<DescribeBgpPeersRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getRouterId() {
-		return this.routerId;
-	}
-
-	public void setRouterId(String routerId) {
-		this.routerId = routerId;
-		if(routerId != null){
-			putQueryParameter("RouterId", routerId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -112,14 +75,25 @@ public class DescribeBgpPeersRequest extends RpcAcsRequest<DescribeBgpPeersRespo
 		}
 	}
 
-	public String getBgpPeerId() {
-		return this.bgpPeerId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setBgpPeerId(String bgpPeerId) {
-		this.bgpPeerId = bgpPeerId;
-		if(bgpPeerId != null){
-			putQueryParameter("BgpPeerId", bgpPeerId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -134,6 +108,39 @@ public class DescribeBgpPeersRequest extends RpcAcsRequest<DescribeBgpPeersRespo
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getBgpPeerId() {
+		return this.bgpPeerId;
+	}
+
+	public void setBgpPeerId(String bgpPeerId) {
+		this.bgpPeerId = bgpPeerId;
+		if(bgpPeerId != null){
+			putQueryParameter("BgpPeerId", bgpPeerId);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -145,14 +152,14 @@ public class DescribeBgpPeersRequest extends RpcAcsRequest<DescribeBgpPeersRespo
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRouterId() {
+		return this.routerId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setRouterId(String routerId) {
+		this.routerId = routerId;
+		if(routerId != null){
+			putQueryParameter("RouterId", routerId);
 		}
 	}
 

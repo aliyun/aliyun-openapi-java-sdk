@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class DeleteIPv6TranslatorRequest extends RpcAcsRequest<DeleteIPv6Transla
 	
 	public DeleteIPv6TranslatorRequest() {
 		super("Vpc", "2016-04-28", "DeleteIPv6Translator", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String ipv6TranslatorId;
-
 	private Long ownerId;
+
+	private String ipv6TranslatorId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,17 +53,6 @@ public class DeleteIPv6TranslatorRequest extends RpcAcsRequest<DeleteIPv6Transla
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -71,6 +67,17 @@ public class DeleteIPv6TranslatorRequest extends RpcAcsRequest<DeleteIPv6Transla
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -82,17 +89,6 @@ public class DeleteIPv6TranslatorRequest extends RpcAcsRequest<DeleteIPv6Transla
 		}
 	}
 
-	public String getIpv6TranslatorId() {
-		return this.ipv6TranslatorId;
-	}
-
-	public void setIpv6TranslatorId(String ipv6TranslatorId) {
-		this.ipv6TranslatorId = ipv6TranslatorId;
-		if(ipv6TranslatorId != null){
-			putQueryParameter("Ipv6TranslatorId", ipv6TranslatorId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +97,17 @@ public class DeleteIPv6TranslatorRequest extends RpcAcsRequest<DeleteIPv6Transla
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIpv6TranslatorId() {
+		return this.ipv6TranslatorId;
+	}
+
+	public void setIpv6TranslatorId(String ipv6TranslatorId) {
+		this.ipv6TranslatorId = ipv6TranslatorId;
+		if(ipv6TranslatorId != null){
+			putQueryParameter("Ipv6TranslatorId", ipv6TranslatorId);
 		}
 	}
 

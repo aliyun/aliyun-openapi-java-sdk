@@ -109,6 +109,8 @@ public class DescribeBgpPeersResponse extends AcsResponse {
 
 		private String regionId;
 
+		private Boolean enableBfd;
+
 		public String getName() {
 			return this.name;
 		}
@@ -251,6 +253,14 @@ public class DescribeBgpPeersResponse extends AcsResponse {
 		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Boolean getEnableBfd() {
+			return this.enableBfd;
+		}
+
+		public void setEnableBfd(Boolean enableBfd) {
+			this.enableBfd = enableBfd;
 		}
 	}
 

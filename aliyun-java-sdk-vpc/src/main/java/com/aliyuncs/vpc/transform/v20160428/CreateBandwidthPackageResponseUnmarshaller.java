@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateBandwidthPackageResponseUnmarshaller {
 
-	public static CreateBandwidthPackageResponse unmarshall(CreateBandwidthPackageResponse createBandwidthPackageResponse, UnmarshallerContext context) {
+	public static CreateBandwidthPackageResponse unmarshall(CreateBandwidthPackageResponse createBandwidthPackageResponse, UnmarshallerContext _ctx) {
 		
-		createBandwidthPackageResponse.setRequestId(context.stringValue("CreateBandwidthPackageResponse.RequestId"));
-		createBandwidthPackageResponse.setBandwidthPackageId(context.stringValue("CreateBandwidthPackageResponse.BandwidthPackageId"));
+		createBandwidthPackageResponse.setRequestId(_ctx.stringValue("CreateBandwidthPackageResponse.RequestId"));
+		createBandwidthPackageResponse.setBandwidthPackageId(_ctx.stringValue("CreateBandwidthPackageResponse.BandwidthPackageId"));
 	 
 	 	return createBandwidthPackageResponse;
 	}

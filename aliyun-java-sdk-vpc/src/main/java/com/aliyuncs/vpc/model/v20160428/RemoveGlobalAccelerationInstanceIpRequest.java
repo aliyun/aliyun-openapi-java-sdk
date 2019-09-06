@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class RemoveGlobalAccelerationInstanceIpRequest extends RpcAcsRequest<Rem
 	
 	public RemoveGlobalAccelerationInstanceIpRequest() {
 		super("Vpc", "2016-04-28", "RemoveGlobalAccelerationInstanceIp", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String globalAccelerationInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String ipInstanceId;
-
 	private Long ownerId;
 
-	private String globalAccelerationInstanceId;
+	private String ipInstanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -46,6 +53,17 @@ public class RemoveGlobalAccelerationInstanceIpRequest extends RpcAcsRequest<Rem
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getGlobalAccelerationInstanceId() {
+		return this.globalAccelerationInstanceId;
+	}
+
+	public void setGlobalAccelerationInstanceId(String globalAccelerationInstanceId) {
+		this.globalAccelerationInstanceId = globalAccelerationInstanceId;
+		if(globalAccelerationInstanceId != null){
+			putQueryParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 		}
 	}
 
@@ -71,17 +89,6 @@ public class RemoveGlobalAccelerationInstanceIpRequest extends RpcAcsRequest<Rem
 		}
 	}
 
-	public String getIpInstanceId() {
-		return this.ipInstanceId;
-	}
-
-	public void setIpInstanceId(String ipInstanceId) {
-		this.ipInstanceId = ipInstanceId;
-		if(ipInstanceId != null){
-			putQueryParameter("IpInstanceId", ipInstanceId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -93,14 +100,14 @@ public class RemoveGlobalAccelerationInstanceIpRequest extends RpcAcsRequest<Rem
 		}
 	}
 
-	public String getGlobalAccelerationInstanceId() {
-		return this.globalAccelerationInstanceId;
+	public String getIpInstanceId() {
+		return this.ipInstanceId;
 	}
 
-	public void setGlobalAccelerationInstanceId(String globalAccelerationInstanceId) {
-		this.globalAccelerationInstanceId = globalAccelerationInstanceId;
-		if(globalAccelerationInstanceId != null){
-			putQueryParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	public void setIpInstanceId(String ipInstanceId) {
+		this.ipInstanceId = ipInstanceId;
+		if(ipInstanceId != null){
+			putQueryParameter("IpInstanceId", ipInstanceId);
 		}
 	}
 

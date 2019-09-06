@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyVpnPbrRouteEntryWeightResponseUnmarshaller {
 
-	public static ModifyVpnPbrRouteEntryWeightResponse unmarshall(ModifyVpnPbrRouteEntryWeightResponse modifyVpnPbrRouteEntryWeightResponse, UnmarshallerContext context) {
+	public static ModifyVpnPbrRouteEntryWeightResponse unmarshall(ModifyVpnPbrRouteEntryWeightResponse modifyVpnPbrRouteEntryWeightResponse, UnmarshallerContext _ctx) {
 		
-		modifyVpnPbrRouteEntryWeightResponse.setRequestId(context.stringValue("ModifyVpnPbrRouteEntryWeightResponse.RequestId"));
+		modifyVpnPbrRouteEntryWeightResponse.setRequestId(_ctx.stringValue("ModifyVpnPbrRouteEntryWeightResponse.RequestId"));
 	 
 	 	return modifyVpnPbrRouteEntryWeightResponse;
 	}

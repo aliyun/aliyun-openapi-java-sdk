@@ -16,6 +16,8 @@ package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -25,25 +27,30 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 	
 	public DeleteRouteEntryRequest() {
 		super("Vpc", "2016-04-28", "DeleteRouteEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String nextHopId;
 
-	private String routeEntryId;
+	private String routeTableId;
+
+	private String resourceOwnerAccount;
 
 	private String destinationCidrBlock;
 
 	private String ownerAccount;
 
-	private String nextHopId;
-
 	private Long ownerId;
 
-	private List<NextHopList> nextHopLists;
+	private String routeEntryId;
 
-	private String routeTableId;
+	private List<NextHopList> nextHopLists;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,6 +63,28 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		}
 	}
 
+	public String getNextHopId() {
+		return this.nextHopId;
+	}
+
+	public void setNextHopId(String nextHopId) {
+		this.nextHopId = nextHopId;
+		if(nextHopId != null){
+			putQueryParameter("NextHopId", nextHopId);
+		}
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -64,17 +93,6 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getRouteEntryId() {
-		return this.routeEntryId;
-	}
-
-	public void setRouteEntryId(String routeEntryId) {
-		this.routeEntryId = routeEntryId;
-		if(routeEntryId != null){
-			putQueryParameter("RouteEntryId", routeEntryId);
 		}
 	}
 
@@ -100,17 +118,6 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		}
 	}
 
-	public String getNextHopId() {
-		return this.nextHopId;
-	}
-
-	public void setNextHopId(String nextHopId) {
-		this.nextHopId = nextHopId;
-		if(nextHopId != null){
-			putQueryParameter("NextHopId", nextHopId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -119,6 +126,17 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRouteEntryId() {
+		return this.routeEntryId;
+	}
+
+	public void setRouteEntryId(String routeEntryId) {
+		this.routeEntryId = routeEntryId;
+		if(routeEntryId != null){
+			putQueryParameter("RouteEntryId", routeEntryId);
 		}
 	}
 
@@ -134,17 +152,6 @@ public class DeleteRouteEntryRequest extends RpcAcsRequest<DeleteRouteEntryRespo
 				putQueryParameter("NextHopList." + (depth1 + 1) + ".NextHopType" , nextHopLists.get(depth1).getNextHopType());
 			}
 		}	
-	}
-
-	public String getRouteTableId() {
-		return this.routeTableId;
-	}
-
-	public void setRouteTableId(String routeTableId) {
-		this.routeTableId = routeTableId;
-		if(routeTableId != null){
-			putQueryParameter("RouteTableId", routeTableId);
-		}
 	}
 
 	public static class NextHopList {

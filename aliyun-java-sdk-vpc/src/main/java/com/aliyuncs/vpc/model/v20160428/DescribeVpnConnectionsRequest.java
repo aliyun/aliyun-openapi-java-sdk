@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,25 +26,30 @@ public class DescribeVpnConnectionsRequest extends RpcAcsRequest<DescribeVpnConn
 	
 	public DescribeVpnConnectionsRequest() {
 		super("Vpc", "2016-04-28", "DescribeVpnConnections", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
+	private String customerGatewayId;
 
-	private String vpnConnectionId;
-
-	private String ownerAccount;
+	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private String vpnGatewayId;
 
 	private Long ownerId;
 
-	private String customerGatewayId;
-
-	private Integer pageNumber;
+	private String vpnConnectionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,6 +59,39 @@ public class DescribeVpnConnectionsRequest extends RpcAcsRequest<DescribeVpnConn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCustomerGatewayId() {
+		return this.customerGatewayId;
+	}
+
+	public void setCustomerGatewayId(String customerGatewayId) {
+		this.customerGatewayId = customerGatewayId;
+		if(customerGatewayId != null){
+			putQueryParameter("CustomerGatewayId", customerGatewayId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -66,17 +106,6 @@ public class DescribeVpnConnectionsRequest extends RpcAcsRequest<DescribeVpnConn
 		}
 	}
 
-	public String getVpnConnectionId() {
-		return this.vpnConnectionId;
-	}
-
-	public void setVpnConnectionId(String vpnConnectionId) {
-		this.vpnConnectionId = vpnConnectionId;
-		if(vpnConnectionId != null){
-			putQueryParameter("VpnConnectionId", vpnConnectionId);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -85,17 +114,6 @@ public class DescribeVpnConnectionsRequest extends RpcAcsRequest<DescribeVpnConn
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -121,25 +139,14 @@ public class DescribeVpnConnectionsRequest extends RpcAcsRequest<DescribeVpnConn
 		}
 	}
 
-	public String getCustomerGatewayId() {
-		return this.customerGatewayId;
+	public String getVpnConnectionId() {
+		return this.vpnConnectionId;
 	}
 
-	public void setCustomerGatewayId(String customerGatewayId) {
-		this.customerGatewayId = customerGatewayId;
-		if(customerGatewayId != null){
-			putQueryParameter("CustomerGatewayId", customerGatewayId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setVpnConnectionId(String vpnConnectionId) {
+		this.vpnConnectionId = vpnConnectionId;
+		if(vpnConnectionId != null){
+			putQueryParameter("VpnConnectionId", vpnConnectionId);
 		}
 	}
 

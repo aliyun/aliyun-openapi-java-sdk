@@ -101,6 +101,8 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String cenStatus;
+
 		private List<Tag> tags;
 
 		private List<String> vSwitchIds;
@@ -221,6 +223,14 @@ public class DescribeVpcsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getCenStatus() {
+			return this.cenStatus;
+		}
+
+		public void setCenStatus(String cenStatus) {
+			this.cenStatus = cenStatus;
 		}
 
 		public List<Tag> getTags() {

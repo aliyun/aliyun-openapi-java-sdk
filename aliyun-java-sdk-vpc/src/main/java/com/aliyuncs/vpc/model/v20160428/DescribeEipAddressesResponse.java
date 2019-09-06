@@ -133,6 +133,8 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String mode;
 
+		private Boolean deletionProtection;
+
 		private Boolean secondLimited;
 
 		private List<LockReason> operationLocks;
@@ -379,6 +381,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setMode(String mode) {
 			this.mode = mode;
+		}
+
+		public Boolean getDeletionProtection() {
+			return this.deletionProtection;
+		}
+
+		public void setDeletionProtection(Boolean deletionProtection) {
+			this.deletionProtection = deletionProtection;
 		}
 
 		public Boolean getSecondLimited() {

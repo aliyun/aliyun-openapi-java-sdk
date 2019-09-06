@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyBgpGroupAttributeResponseUnmarshaller {
 
-	public static ModifyBgpGroupAttributeResponse unmarshall(ModifyBgpGroupAttributeResponse modifyBgpGroupAttributeResponse, UnmarshallerContext context) {
+	public static ModifyBgpGroupAttributeResponse unmarshall(ModifyBgpGroupAttributeResponse modifyBgpGroupAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyBgpGroupAttributeResponse.setRequestId(context.stringValue("ModifyBgpGroupAttributeResponse.RequestId"));
+		modifyBgpGroupAttributeResponse.setRequestId(_ctx.stringValue("ModifyBgpGroupAttributeResponse.RequestId"));
 	 
 	 	return modifyBgpGroupAttributeResponse;
 	}

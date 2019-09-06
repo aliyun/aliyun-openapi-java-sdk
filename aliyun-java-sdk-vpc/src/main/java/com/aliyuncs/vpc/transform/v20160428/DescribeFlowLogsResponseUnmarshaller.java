@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeFlowLogsResponseUnmarshaller {
 
-	public static DescribeFlowLogsResponse unmarshall(DescribeFlowLogsResponse describeFlowLogsResponse, UnmarshallerContext context) {
+	public static DescribeFlowLogsResponse unmarshall(DescribeFlowLogsResponse describeFlowLogsResponse, UnmarshallerContext _ctx) {
 		
-		describeFlowLogsResponse.setRequestId(context.stringValue("DescribeFlowLogsResponse.RequestId"));
-		describeFlowLogsResponse.setSuccess(context.stringValue("DescribeFlowLogsResponse.Success"));
-		describeFlowLogsResponse.setTotalCount(context.stringValue("DescribeFlowLogsResponse.TotalCount"));
-		describeFlowLogsResponse.setPageNumber(context.stringValue("DescribeFlowLogsResponse.PageNumber"));
-		describeFlowLogsResponse.setPageSize(context.stringValue("DescribeFlowLogsResponse.PageSize"));
+		describeFlowLogsResponse.setRequestId(_ctx.stringValue("DescribeFlowLogsResponse.RequestId"));
+		describeFlowLogsResponse.setSuccess(_ctx.stringValue("DescribeFlowLogsResponse.Success"));
+		describeFlowLogsResponse.setTotalCount(_ctx.stringValue("DescribeFlowLogsResponse.TotalCount"));
+		describeFlowLogsResponse.setPageNumber(_ctx.stringValue("DescribeFlowLogsResponse.PageNumber"));
+		describeFlowLogsResponse.setPageSize(_ctx.stringValue("DescribeFlowLogsResponse.PageSize"));
 
 		List<FlowLog> flowLogs = new ArrayList<FlowLog>();
-		for (int i = 0; i < context.lengthValue("DescribeFlowLogsResponse.FlowLogs.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs.Length"); i++) {
 			FlowLog flowLog = new FlowLog();
-			flowLog.setFlowLogId(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogId"));
-			flowLog.setFlowLogName(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogName"));
-			flowLog.setDescription(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Description"));
-			flowLog.setCreationTime(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].CreationTime"));
-			flowLog.setResourceType(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceType"));
-			flowLog.setResourceId(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceId"));
-			flowLog.setProjectName(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ProjectName"));
-			flowLog.setLogStoreName(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].LogStoreName"));
-			flowLog.setStatus(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Status"));
-			flowLog.setTrafficType(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficType"));
-			flowLog.setRegionId(context.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].RegionId"));
+			flowLog.setFlowLogId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogId"));
+			flowLog.setFlowLogName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogName"));
+			flowLog.setDescription(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Description"));
+			flowLog.setCreationTime(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].CreationTime"));
+			flowLog.setResourceType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceType"));
+			flowLog.setResourceId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ResourceId"));
+			flowLog.setProjectName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ProjectName"));
+			flowLog.setLogStoreName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].LogStoreName"));
+			flowLog.setStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Status"));
+			flowLog.setTrafficType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TrafficType"));
+			flowLog.setRegionId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].RegionId"));
 
 			flowLogs.add(flowLog);
 		}

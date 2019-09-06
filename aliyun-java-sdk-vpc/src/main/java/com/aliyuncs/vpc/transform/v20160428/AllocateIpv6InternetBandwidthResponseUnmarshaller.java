@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AllocateIpv6InternetBandwidthResponseUnmarshaller {
 
-	public static AllocateIpv6InternetBandwidthResponse unmarshall(AllocateIpv6InternetBandwidthResponse allocateIpv6InternetBandwidthResponse, UnmarshallerContext context) {
+	public static AllocateIpv6InternetBandwidthResponse unmarshall(AllocateIpv6InternetBandwidthResponse allocateIpv6InternetBandwidthResponse, UnmarshallerContext _ctx) {
 		
-		allocateIpv6InternetBandwidthResponse.setRequestId(context.stringValue("AllocateIpv6InternetBandwidthResponse.RequestId"));
-		allocateIpv6InternetBandwidthResponse.setIpv6AddressId(context.stringValue("AllocateIpv6InternetBandwidthResponse.Ipv6AddressId"));
-		allocateIpv6InternetBandwidthResponse.setInternetBandwidthId(context.stringValue("AllocateIpv6InternetBandwidthResponse.InternetBandwidthId"));
+		allocateIpv6InternetBandwidthResponse.setRequestId(_ctx.stringValue("AllocateIpv6InternetBandwidthResponse.RequestId"));
+		allocateIpv6InternetBandwidthResponse.setIpv6AddressId(_ctx.stringValue("AllocateIpv6InternetBandwidthResponse.Ipv6AddressId"));
+		allocateIpv6InternetBandwidthResponse.setInternetBandwidthId(_ctx.stringValue("AllocateIpv6InternetBandwidthResponse.InternetBandwidthId"));
 	 
 	 	return allocateIpv6InternetBandwidthResponse;
 	}

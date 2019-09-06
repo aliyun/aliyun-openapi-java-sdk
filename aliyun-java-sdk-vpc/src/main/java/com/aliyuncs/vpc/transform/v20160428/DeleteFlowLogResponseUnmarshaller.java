@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteFlowLogResponseUnmarshaller {
 
-	public static DeleteFlowLogResponse unmarshall(DeleteFlowLogResponse deleteFlowLogResponse, UnmarshallerContext context) {
+	public static DeleteFlowLogResponse unmarshall(DeleteFlowLogResponse deleteFlowLogResponse, UnmarshallerContext _ctx) {
 		
-		deleteFlowLogResponse.setRequestId(context.stringValue("DeleteFlowLogResponse.RequestId"));
-		deleteFlowLogResponse.setSuccess(context.stringValue("DeleteFlowLogResponse.Success"));
+		deleteFlowLogResponse.setRequestId(_ctx.stringValue("DeleteFlowLogResponse.RequestId"));
+		deleteFlowLogResponse.setSuccess(_ctx.stringValue("DeleteFlowLogResponse.Success"));
 	 
 	 	return deleteFlowLogResponse;
 	}

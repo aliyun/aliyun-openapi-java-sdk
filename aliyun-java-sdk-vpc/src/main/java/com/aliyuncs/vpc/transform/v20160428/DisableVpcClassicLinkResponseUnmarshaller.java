@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DisableVpcClassicLinkResponseUnmarshaller {
 
-	public static DisableVpcClassicLinkResponse unmarshall(DisableVpcClassicLinkResponse disableVpcClassicLinkResponse, UnmarshallerContext context) {
+	public static DisableVpcClassicLinkResponse unmarshall(DisableVpcClassicLinkResponse disableVpcClassicLinkResponse, UnmarshallerContext _ctx) {
 		
-		disableVpcClassicLinkResponse.setRequestId(context.stringValue("DisableVpcClassicLinkResponse.RequestId"));
+		disableVpcClassicLinkResponse.setRequestId(_ctx.stringValue("DisableVpcClassicLinkResponse.RequestId"));
 	 
 	 	return disableVpcClassicLinkResponse;
 	}

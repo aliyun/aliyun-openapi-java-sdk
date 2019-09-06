@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateRouterInterfaceResponseUnmarshaller {
 
-	public static CreateRouterInterfaceResponse unmarshall(CreateRouterInterfaceResponse createRouterInterfaceResponse, UnmarshallerContext context) {
+	public static CreateRouterInterfaceResponse unmarshall(CreateRouterInterfaceResponse createRouterInterfaceResponse, UnmarshallerContext _ctx) {
 		
-		createRouterInterfaceResponse.setRequestId(context.stringValue("CreateRouterInterfaceResponse.RequestId"));
-		createRouterInterfaceResponse.setRouterInterfaceId(context.stringValue("CreateRouterInterfaceResponse.RouterInterfaceId"));
-		createRouterInterfaceResponse.setOrderId(context.longValue("CreateRouterInterfaceResponse.OrderId"));
+		createRouterInterfaceResponse.setRequestId(_ctx.stringValue("CreateRouterInterfaceResponse.RequestId"));
+		createRouterInterfaceResponse.setRouterInterfaceId(_ctx.stringValue("CreateRouterInterfaceResponse.RouterInterfaceId"));
+		createRouterInterfaceResponse.setOrderId(_ctx.longValue("CreateRouterInterfaceResponse.OrderId"));
 	 
 	 	return createRouterInterfaceResponse;
 	}

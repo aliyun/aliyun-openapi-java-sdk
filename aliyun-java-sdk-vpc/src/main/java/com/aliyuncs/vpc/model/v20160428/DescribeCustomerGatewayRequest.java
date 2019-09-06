@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,22 @@ public class DescribeCustomerGatewayRequest extends RpcAcsRequest<DescribeCustom
 	
 	public DescribeCustomerGatewayRequest() {
 		super("Vpc", "2016-04-28", "DescribeCustomerGateway", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String customerGatewayId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String customerGatewayId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -44,6 +51,17 @@ public class DescribeCustomerGatewayRequest extends RpcAcsRequest<DescribeCustom
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCustomerGatewayId() {
+		return this.customerGatewayId;
+	}
+
+	public void setCustomerGatewayId(String customerGatewayId) {
+		this.customerGatewayId = customerGatewayId;
+		if(customerGatewayId != null){
+			putQueryParameter("CustomerGatewayId", customerGatewayId);
 		}
 	}
 
@@ -77,17 +95,6 @@ public class DescribeCustomerGatewayRequest extends RpcAcsRequest<DescribeCustom
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getCustomerGatewayId() {
-		return this.customerGatewayId;
-	}
-
-	public void setCustomerGatewayId(String customerGatewayId) {
-		this.customerGatewayId = customerGatewayId;
-		if(customerGatewayId != null){
-			putQueryParameter("CustomerGatewayId", customerGatewayId);
 		}
 	}
 

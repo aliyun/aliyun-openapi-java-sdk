@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,30 +26,24 @@ public class DeleteSslVpnServerRequest extends RpcAcsRequest<DeleteSslVpnServerR
 	
 	public DeleteSslVpnServerRequest() {
 		super("Vpc", "2016-04-28", "DeleteSslVpnServer", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String sslVpnServerId;
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String sslVpnServerId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	public String getSslVpnServerId() {
-		return this.sslVpnServerId;
-	}
-
-	public void setSslVpnServerId(String sslVpnServerId) {
-		this.sslVpnServerId = sslVpnServerId;
-		if(sslVpnServerId != null){
-			putQueryParameter("SslVpnServerId", sslVpnServerId);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -60,17 +56,6 @@ public class DeleteSslVpnServerRequest extends RpcAcsRequest<DeleteSslVpnServerR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -79,6 +64,28 @@ public class DeleteSslVpnServerRequest extends RpcAcsRequest<DeleteSslVpnServerR
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSslVpnServerId() {
+		return this.sslVpnServerId;
+	}
+
+	public void setSslVpnServerId(String sslVpnServerId) {
+		this.sslVpnServerId = sslVpnServerId;
+		if(sslVpnServerId != null){
+			putQueryParameter("SslVpnServerId", sslVpnServerId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 

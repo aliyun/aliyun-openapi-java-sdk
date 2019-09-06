@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,25 +26,52 @@ public class DescribeSslVpnClientCertsRequest extends RpcAcsRequest<DescribeSslV
 	
 	public DescribeSslVpnClientCertsRequest() {
 		super("Vpc", "2016-04-28", "DescribeSslVpnClientCerts", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private Long resourceOwnerId;
+
+	private Integer pageNumber;
 
 	private String sslVpnServerId;
 
-	private Long resourceOwnerId;
+	private Integer pageSize;
+
+	private String sslVpnClientCertId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String name;
-
-	private Integer pageSize;
-
 	private Long ownerId;
 
-	private String sslVpnClientCertId;
+	private String name;
 
-	private Integer pageNumber;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getSslVpnServerId() {
 		return this.sslVpnServerId;
@@ -55,14 +84,25 @@ public class DescribeSslVpnClientCertsRequest extends RpcAcsRequest<DescribeSslV
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSslVpnClientCertId() {
+		return this.sslVpnClientCertId;
+	}
+
+	public void setSslVpnClientCertId(String sslVpnClientCertId) {
+		this.sslVpnClientCertId = sslVpnClientCertId;
+		if(sslVpnClientCertId != null){
+			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
 		}
 	}
 
@@ -88,28 +128,6 @@ public class DescribeSslVpnClientCertsRequest extends RpcAcsRequest<DescribeSslV
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -121,25 +139,14 @@ public class DescribeSslVpnClientCertsRequest extends RpcAcsRequest<DescribeSslV
 		}
 	}
 
-	public String getSslVpnClientCertId() {
-		return this.sslVpnClientCertId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setSslVpnClientCertId(String sslVpnClientCertId) {
-		this.sslVpnClientCertId = sslVpnClientCertId;
-		if(sslVpnClientCertId != null){
-			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,22 @@ public class PublishVpnRouteEntryRequest extends RpcAcsRequest<PublishVpnRouteEn
 	
 	public PublishVpnRouteEntryRequest() {
 		super("Vpc", "2016-04-28", "PublishVpnRouteEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
+	private String routeType;
+
 	private Boolean publishVpc;
 
 	private String resourceOwnerAccount;
-
-	private String clientToken;
 
 	private String ownerAccount;
 
@@ -44,8 +53,6 @@ public class PublishVpnRouteEntryRequest extends RpcAcsRequest<PublishVpnRouteEn
 
 	private String nextHop;
 
-	private String routeType;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -54,6 +61,28 @@ public class PublishVpnRouteEntryRequest extends RpcAcsRequest<PublishVpnRouteEn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getRouteType() {
+		return this.routeType;
+	}
+
+	public void setRouteType(String routeType) {
+		this.routeType = routeType;
+		if(routeType != null){
+			putQueryParameter("RouteType", routeType);
 		}
 	}
 
@@ -76,17 +105,6 @@ public class PublishVpnRouteEntryRequest extends RpcAcsRequest<PublishVpnRouteEn
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -142,17 +160,6 @@ public class PublishVpnRouteEntryRequest extends RpcAcsRequest<PublishVpnRouteEn
 		this.nextHop = nextHop;
 		if(nextHop != null){
 			putQueryParameter("NextHop", nextHop);
-		}
-	}
-
-	public String getRouteType() {
-		return this.routeType;
-	}
-
-	public void setRouteType(String routeType) {
-		this.routeType = routeType;
-		if(routeType != null){
-			putQueryParameter("RouteType", routeType);
 		}
 	}
 

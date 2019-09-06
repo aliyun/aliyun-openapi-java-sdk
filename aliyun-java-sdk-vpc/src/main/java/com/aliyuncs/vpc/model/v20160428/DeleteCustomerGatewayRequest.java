@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class DeleteCustomerGatewayRequest extends RpcAcsRequest<DeleteCustomerGa
 	
 	public DeleteCustomerGatewayRequest() {
 		super("Vpc", "2016-04-28", "DeleteCustomerGateway", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String customerGatewayId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String customerGatewayId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +56,6 @@ public class DeleteCustomerGatewayRequest extends RpcAcsRequest<DeleteCustomerGa
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -68,6 +64,28 @@ public class DeleteCustomerGatewayRequest extends RpcAcsRequest<DeleteCustomerGa
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getCustomerGatewayId() {
+		return this.customerGatewayId;
+	}
+
+	public void setCustomerGatewayId(String customerGatewayId) {
+		this.customerGatewayId = customerGatewayId;
+		if(customerGatewayId != null){
+			putQueryParameter("CustomerGatewayId", customerGatewayId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -90,17 +108,6 @@ public class DeleteCustomerGatewayRequest extends RpcAcsRequest<DeleteCustomerGa
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getCustomerGatewayId() {
-		return this.customerGatewayId;
-	}
-
-	public void setCustomerGatewayId(String customerGatewayId) {
-		this.customerGatewayId = customerGatewayId;
-		if(customerGatewayId != null){
-			putQueryParameter("CustomerGatewayId", customerGatewayId);
 		}
 	}
 

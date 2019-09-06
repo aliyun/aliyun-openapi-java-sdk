@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +26,11 @@ public class DeleteCommonBandwidthPackageRequest extends RpcAcsRequest<DeleteCom
 	
 	public DeleteCommonBandwidthPackageRequest() {
 		super("Vpc", "2016-04-28", "DeleteCommonBandwidthPackage", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
@@ -34,9 +41,9 @@ public class DeleteCommonBandwidthPackageRequest extends RpcAcsRequest<DeleteCom
 
 	private String ownerAccount;
 
-	private String force;
-
 	private Long ownerId;
+
+	private String force;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -82,17 +89,6 @@ public class DeleteCommonBandwidthPackageRequest extends RpcAcsRequest<DeleteCom
 		}
 	}
 
-	public String getForce() {
-		return this.force;
-	}
-
-	public void setForce(String force) {
-		this.force = force;
-		if(force != null){
-			putQueryParameter("Force", force);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -101,6 +97,17 @@ public class DeleteCommonBandwidthPackageRequest extends RpcAcsRequest<DeleteCom
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getForce() {
+		return this.force;
+	}
+
+	public void setForce(String force) {
+		this.force = force;
+		if(force != null){
+			putQueryParameter("Force", force);
 		}
 	}
 

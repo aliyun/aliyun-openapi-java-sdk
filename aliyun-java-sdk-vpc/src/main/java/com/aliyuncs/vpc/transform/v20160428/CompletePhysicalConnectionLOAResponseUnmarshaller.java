@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CompletePhysicalConnectionLOAResponseUnmarshaller {
 
-	public static CompletePhysicalConnectionLOAResponse unmarshall(CompletePhysicalConnectionLOAResponse completePhysicalConnectionLOAResponse, UnmarshallerContext context) {
+	public static CompletePhysicalConnectionLOAResponse unmarshall(CompletePhysicalConnectionLOAResponse completePhysicalConnectionLOAResponse, UnmarshallerContext _ctx) {
 		
-		completePhysicalConnectionLOAResponse.setRequestId(context.stringValue("CompletePhysicalConnectionLOAResponse.RequestId"));
+		completePhysicalConnectionLOAResponse.setRequestId(_ctx.stringValue("CompletePhysicalConnectionLOAResponse.RequestId"));
 	 
 	 	return completePhysicalConnectionLOAResponse;
 	}

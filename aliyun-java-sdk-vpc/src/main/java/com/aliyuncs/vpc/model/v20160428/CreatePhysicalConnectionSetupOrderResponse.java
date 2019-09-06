@@ -28,6 +28,8 @@ public class CreatePhysicalConnectionSetupOrderResponse extends AcsResponse {
 
 	private String orderId;
 
+	private String physicalConnectionId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreatePhysicalConnectionSetupOrderResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
 	}
 
 	@Override

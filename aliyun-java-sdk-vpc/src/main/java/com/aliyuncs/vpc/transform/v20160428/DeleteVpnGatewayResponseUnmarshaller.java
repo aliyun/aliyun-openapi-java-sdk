@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteVpnGatewayResponseUnmarshaller {
 
-	public static DeleteVpnGatewayResponse unmarshall(DeleteVpnGatewayResponse deleteVpnGatewayResponse, UnmarshallerContext context) {
+	public static DeleteVpnGatewayResponse unmarshall(DeleteVpnGatewayResponse deleteVpnGatewayResponse, UnmarshallerContext _ctx) {
 		
-		deleteVpnGatewayResponse.setRequestId(context.stringValue("DeleteVpnGatewayResponse.RequestId"));
+		deleteVpnGatewayResponse.setRequestId(_ctx.stringValue("DeleteVpnGatewayResponse.RequestId"));
 	 
 	 	return deleteVpnGatewayResponse;
 	}

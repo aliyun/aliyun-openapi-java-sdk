@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,21 +26,26 @@ public class UnassociatePhysicalConnectionFromVirtualBorderRouterRequest extends
 	
 	public UnassociatePhysicalConnectionFromVirtualBorderRouterRequest() {
 		super("Vpc", "2016-04-28", "UnassociatePhysicalConnectionFromVirtualBorderRouter", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private String physicalConnectionId;
-
-	private String ownerAccount;
 
 	private String vbrId;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
 	private Long ownerId;
+
+	private String physicalConnectionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,17 +55,6 @@ public class UnassociatePhysicalConnectionFromVirtualBorderRouterRequest extends
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -73,14 +69,25 @@ public class UnassociatePhysicalConnectionFromVirtualBorderRouterRequest extends
 		}
 	}
 
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
+	public String getVbrId() {
+		return this.vbrId;
 	}
 
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		if(physicalConnectionId != null){
-			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+	public void setVbrId(String vbrId) {
+		this.vbrId = vbrId;
+		if(vbrId != null){
+			putQueryParameter("VbrId", vbrId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -95,17 +102,6 @@ public class UnassociatePhysicalConnectionFromVirtualBorderRouterRequest extends
 		}
 	}
 
-	public String getVbrId() {
-		return this.vbrId;
-	}
-
-	public void setVbrId(String vbrId) {
-		this.vbrId = vbrId;
-		if(vbrId != null){
-			putQueryParameter("VbrId", vbrId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +110,17 @@ public class UnassociatePhysicalConnectionFromVirtualBorderRouterRequest extends
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
 		}
 	}
 

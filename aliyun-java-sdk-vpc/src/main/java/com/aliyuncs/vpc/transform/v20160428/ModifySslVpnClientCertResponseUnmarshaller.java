@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySslVpnClientCertResponseUnmarshaller {
 
-	public static ModifySslVpnClientCertResponse unmarshall(ModifySslVpnClientCertResponse modifySslVpnClientCertResponse, UnmarshallerContext context) {
+	public static ModifySslVpnClientCertResponse unmarshall(ModifySslVpnClientCertResponse modifySslVpnClientCertResponse, UnmarshallerContext _ctx) {
 		
-		modifySslVpnClientCertResponse.setRequestId(context.stringValue("ModifySslVpnClientCertResponse.RequestId"));
-		modifySslVpnClientCertResponse.setName(context.stringValue("ModifySslVpnClientCertResponse.Name"));
-		modifySslVpnClientCertResponse.setSslVpnClientCertId(context.stringValue("ModifySslVpnClientCertResponse.SslVpnClientCertId"));
+		modifySslVpnClientCertResponse.setRequestId(_ctx.stringValue("ModifySslVpnClientCertResponse.RequestId"));
+		modifySslVpnClientCertResponse.setName(_ctx.stringValue("ModifySslVpnClientCertResponse.Name"));
+		modifySslVpnClientCertResponse.setSslVpnClientCertId(_ctx.stringValue("ModifySslVpnClientCertResponse.SslVpnClientCertId"));
 	 
 	 	return modifySslVpnClientCertResponse;
 	}

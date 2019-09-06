@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateBgpGroupResponseUnmarshaller {
 
-	public static CreateBgpGroupResponse unmarshall(CreateBgpGroupResponse createBgpGroupResponse, UnmarshallerContext context) {
+	public static CreateBgpGroupResponse unmarshall(CreateBgpGroupResponse createBgpGroupResponse, UnmarshallerContext _ctx) {
 		
-		createBgpGroupResponse.setRequestId(context.stringValue("CreateBgpGroupResponse.RequestId"));
-		createBgpGroupResponse.setBgpGroupId(context.stringValue("CreateBgpGroupResponse.BgpGroupId"));
+		createBgpGroupResponse.setRequestId(_ctx.stringValue("CreateBgpGroupResponse.RequestId"));
+		createBgpGroupResponse.setBgpGroupId(_ctx.stringValue("CreateBgpGroupResponse.BgpGroupId"));
 	 
 	 	return createBgpGroupResponse;
 	}

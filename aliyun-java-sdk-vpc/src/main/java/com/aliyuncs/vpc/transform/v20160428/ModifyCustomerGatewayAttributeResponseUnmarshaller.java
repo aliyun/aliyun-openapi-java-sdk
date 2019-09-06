@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyCustomerGatewayAttributeResponseUnmarshaller {
 
-	public static ModifyCustomerGatewayAttributeResponse unmarshall(ModifyCustomerGatewayAttributeResponse modifyCustomerGatewayAttributeResponse, UnmarshallerContext context) {
+	public static ModifyCustomerGatewayAttributeResponse unmarshall(ModifyCustomerGatewayAttributeResponse modifyCustomerGatewayAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyCustomerGatewayAttributeResponse.setRequestId(context.stringValue("ModifyCustomerGatewayAttributeResponse.RequestId"));
-		modifyCustomerGatewayAttributeResponse.setCustomerGatewayId(context.stringValue("ModifyCustomerGatewayAttributeResponse.CustomerGatewayId"));
-		modifyCustomerGatewayAttributeResponse.setIpAddress(context.stringValue("ModifyCustomerGatewayAttributeResponse.IpAddress"));
-		modifyCustomerGatewayAttributeResponse.setName(context.stringValue("ModifyCustomerGatewayAttributeResponse.Name"));
-		modifyCustomerGatewayAttributeResponse.setDescription(context.stringValue("ModifyCustomerGatewayAttributeResponse.Description"));
-		modifyCustomerGatewayAttributeResponse.setCreateTime(context.longValue("ModifyCustomerGatewayAttributeResponse.CreateTime"));
+		modifyCustomerGatewayAttributeResponse.setRequestId(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.RequestId"));
+		modifyCustomerGatewayAttributeResponse.setCustomerGatewayId(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.CustomerGatewayId"));
+		modifyCustomerGatewayAttributeResponse.setIpAddress(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.IpAddress"));
+		modifyCustomerGatewayAttributeResponse.setName(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.Name"));
+		modifyCustomerGatewayAttributeResponse.setDescription(_ctx.stringValue("ModifyCustomerGatewayAttributeResponse.Description"));
+		modifyCustomerGatewayAttributeResponse.setCreateTime(_ctx.longValue("ModifyCustomerGatewayAttributeResponse.CreateTime"));
 	 
 	 	return modifyCustomerGatewayAttributeResponse;
 	}

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateBgpPeerResponseUnmarshaller {
 
-	public static CreateBgpPeerResponse unmarshall(CreateBgpPeerResponse createBgpPeerResponse, UnmarshallerContext context) {
+	public static CreateBgpPeerResponse unmarshall(CreateBgpPeerResponse createBgpPeerResponse, UnmarshallerContext _ctx) {
 		
-		createBgpPeerResponse.setRequestId(context.stringValue("CreateBgpPeerResponse.RequestId"));
-		createBgpPeerResponse.setBgpPeerId(context.stringValue("CreateBgpPeerResponse.BgpPeerId"));
+		createBgpPeerResponse.setRequestId(_ctx.stringValue("CreateBgpPeerResponse.RequestId"));
+		createBgpPeerResponse.setBgpPeerId(_ctx.stringValue("CreateBgpPeerResponse.BgpPeerId"));
 	 
 	 	return createBgpPeerResponse;
 	}

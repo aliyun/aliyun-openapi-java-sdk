@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AddBgpNetworkResponseUnmarshaller {
 
-	public static AddBgpNetworkResponse unmarshall(AddBgpNetworkResponse addBgpNetworkResponse, UnmarshallerContext context) {
+	public static AddBgpNetworkResponse unmarshall(AddBgpNetworkResponse addBgpNetworkResponse, UnmarshallerContext _ctx) {
 		
-		addBgpNetworkResponse.setRequestId(context.stringValue("AddBgpNetworkResponse.RequestId"));
+		addBgpNetworkResponse.setRequestId(_ctx.stringValue("AddBgpNetworkResponse.RequestId"));
 	 
 	 	return addBgpNetworkResponse;
 	}

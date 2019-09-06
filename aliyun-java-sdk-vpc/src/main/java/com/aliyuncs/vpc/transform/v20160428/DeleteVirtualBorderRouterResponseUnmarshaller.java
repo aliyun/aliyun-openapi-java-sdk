@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteVirtualBorderRouterResponseUnmarshaller {
 
-	public static DeleteVirtualBorderRouterResponse unmarshall(DeleteVirtualBorderRouterResponse deleteVirtualBorderRouterResponse, UnmarshallerContext context) {
+	public static DeleteVirtualBorderRouterResponse unmarshall(DeleteVirtualBorderRouterResponse deleteVirtualBorderRouterResponse, UnmarshallerContext _ctx) {
 		
-		deleteVirtualBorderRouterResponse.setRequestId(context.stringValue("DeleteVirtualBorderRouterResponse.RequestId"));
+		deleteVirtualBorderRouterResponse.setRequestId(_ctx.stringValue("DeleteVirtualBorderRouterResponse.RequestId"));
 	 
 	 	return deleteVirtualBorderRouterResponse;
 	}

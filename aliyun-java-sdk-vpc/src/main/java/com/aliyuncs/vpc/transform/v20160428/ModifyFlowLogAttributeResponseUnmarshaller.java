@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyFlowLogAttributeResponseUnmarshaller {
 
-	public static ModifyFlowLogAttributeResponse unmarshall(ModifyFlowLogAttributeResponse modifyFlowLogAttributeResponse, UnmarshallerContext context) {
+	public static ModifyFlowLogAttributeResponse unmarshall(ModifyFlowLogAttributeResponse modifyFlowLogAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyFlowLogAttributeResponse.setRequestId(context.stringValue("ModifyFlowLogAttributeResponse.RequestId"));
-		modifyFlowLogAttributeResponse.setSuccess(context.stringValue("ModifyFlowLogAttributeResponse.Success"));
+		modifyFlowLogAttributeResponse.setRequestId(_ctx.stringValue("ModifyFlowLogAttributeResponse.RequestId"));
+		modifyFlowLogAttributeResponse.setSuccess(_ctx.stringValue("ModifyFlowLogAttributeResponse.Success"));
 	 
 	 	return modifyFlowLogAttributeResponse;
 	}

@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,22 @@ public class DeleteSnatEntryRequest extends RpcAcsRequest<DeleteSnatEntryRespons
 	
 	public DeleteSnatEntryRequest() {
 		super("Vpc", "2016-04-28", "DeleteSnatEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String snatEntryId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private String snatTableId;
-
-	private String snatEntryId;
 
 	private Long ownerId;
 
@@ -46,6 +53,17 @@ public class DeleteSnatEntryRequest extends RpcAcsRequest<DeleteSnatEntryRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSnatEntryId() {
+		return this.snatEntryId;
+	}
+
+	public void setSnatEntryId(String snatEntryId) {
+		this.snatEntryId = snatEntryId;
+		if(snatEntryId != null){
+			putQueryParameter("SnatEntryId", snatEntryId);
 		}
 	}
 
@@ -79,17 +97,6 @@ public class DeleteSnatEntryRequest extends RpcAcsRequest<DeleteSnatEntryRespons
 		this.snatTableId = snatTableId;
 		if(snatTableId != null){
 			putQueryParameter("SnatTableId", snatTableId);
-		}
-	}
-
-	public String getSnatEntryId() {
-		return this.snatEntryId;
-	}
-
-	public void setSnatEntryId(String snatEntryId) {
-		this.snatEntryId = snatEntryId;
-		if(snatEntryId != null){
-			putQueryParameter("SnatEntryId", snatEntryId);
 		}
 	}
 

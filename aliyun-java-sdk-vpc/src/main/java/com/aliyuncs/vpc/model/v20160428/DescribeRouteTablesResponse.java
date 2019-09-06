@@ -87,6 +87,8 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String status;
+
 		private List<RouteEntry> routeEntrys;
 
 		private List<String> vSwitchIds;
@@ -131,6 +133,14 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
 		public List<RouteEntry> getRouteEntrys() {
 			return this.routeEntrys;
 		}
@@ -160,6 +170,10 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 			private String instanceId;
 
 			private String nextHopType;
+
+			private String routeEntryName;
+
+			private String routeEntryId;
 
 			private String nextHopRegionId;
 
@@ -219,6 +233,22 @@ public class DescribeRouteTablesResponse extends AcsResponse {
 
 			public void setNextHopType(String nextHopType) {
 				this.nextHopType = nextHopType;
+			}
+
+			public String getRouteEntryName() {
+				return this.routeEntryName;
+			}
+
+			public void setRouteEntryName(String routeEntryName) {
+				this.routeEntryName = routeEntryName;
+			}
+
+			public String getRouteEntryId() {
+				return this.routeEntryId;
+			}
+
+			public void setRouteEntryId(String routeEntryId) {
+				this.routeEntryId = routeEntryId;
 			}
 
 			public String getNextHopRegionId() {

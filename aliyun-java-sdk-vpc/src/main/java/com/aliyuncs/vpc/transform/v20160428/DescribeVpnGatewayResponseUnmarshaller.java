@@ -20,25 +20,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVpnGatewayResponseUnmarshaller {
 
-	public static DescribeVpnGatewayResponse unmarshall(DescribeVpnGatewayResponse describeVpnGatewayResponse, UnmarshallerContext context) {
+	public static DescribeVpnGatewayResponse unmarshall(DescribeVpnGatewayResponse describeVpnGatewayResponse, UnmarshallerContext _ctx) {
 		
-		describeVpnGatewayResponse.setRequestId(context.stringValue("DescribeVpnGatewayResponse.RequestId"));
-		describeVpnGatewayResponse.setVpnGatewayId(context.stringValue("DescribeVpnGatewayResponse.VpnGatewayId"));
-		describeVpnGatewayResponse.setVpcId(context.stringValue("DescribeVpnGatewayResponse.VpcId"));
-		describeVpnGatewayResponse.setVSwitchId(context.stringValue("DescribeVpnGatewayResponse.VSwitchId"));
-		describeVpnGatewayResponse.setInternetIp(context.stringValue("DescribeVpnGatewayResponse.InternetIp"));
-		describeVpnGatewayResponse.setCreateTime(context.longValue("DescribeVpnGatewayResponse.CreateTime"));
-		describeVpnGatewayResponse.setEndTime(context.longValue("DescribeVpnGatewayResponse.EndTime"));
-		describeVpnGatewayResponse.setSpec(context.stringValue("DescribeVpnGatewayResponse.Spec"));
-		describeVpnGatewayResponse.setName(context.stringValue("DescribeVpnGatewayResponse.Name"));
-		describeVpnGatewayResponse.setDescription(context.stringValue("DescribeVpnGatewayResponse.Description"));
-		describeVpnGatewayResponse.setStatus(context.stringValue("DescribeVpnGatewayResponse.Status"));
-		describeVpnGatewayResponse.setBusinessStatus(context.stringValue("DescribeVpnGatewayResponse.BusinessStatus"));
-		describeVpnGatewayResponse.setChargeType(context.stringValue("DescribeVpnGatewayResponse.ChargeType"));
-		describeVpnGatewayResponse.setIpsecVpn(context.stringValue("DescribeVpnGatewayResponse.IpsecVpn"));
-		describeVpnGatewayResponse.setSslVpn(context.stringValue("DescribeVpnGatewayResponse.SslVpn"));
-		describeVpnGatewayResponse.setSslMaxConnections(context.longValue("DescribeVpnGatewayResponse.SslMaxConnections"));
-		describeVpnGatewayResponse.setTag(context.stringValue("DescribeVpnGatewayResponse.Tag"));
+		describeVpnGatewayResponse.setRequestId(_ctx.stringValue("DescribeVpnGatewayResponse.RequestId"));
+		describeVpnGatewayResponse.setVpnGatewayId(_ctx.stringValue("DescribeVpnGatewayResponse.VpnGatewayId"));
+		describeVpnGatewayResponse.setVpcId(_ctx.stringValue("DescribeVpnGatewayResponse.VpcId"));
+		describeVpnGatewayResponse.setVSwitchId(_ctx.stringValue("DescribeVpnGatewayResponse.VSwitchId"));
+		describeVpnGatewayResponse.setInternetIp(_ctx.stringValue("DescribeVpnGatewayResponse.InternetIp"));
+		describeVpnGatewayResponse.setCreateTime(_ctx.longValue("DescribeVpnGatewayResponse.CreateTime"));
+		describeVpnGatewayResponse.setEndTime(_ctx.longValue("DescribeVpnGatewayResponse.EndTime"));
+		describeVpnGatewayResponse.setSpec(_ctx.stringValue("DescribeVpnGatewayResponse.Spec"));
+		describeVpnGatewayResponse.setName(_ctx.stringValue("DescribeVpnGatewayResponse.Name"));
+		describeVpnGatewayResponse.setDescription(_ctx.stringValue("DescribeVpnGatewayResponse.Description"));
+		describeVpnGatewayResponse.setStatus(_ctx.stringValue("DescribeVpnGatewayResponse.Status"));
+		describeVpnGatewayResponse.setBusinessStatus(_ctx.stringValue("DescribeVpnGatewayResponse.BusinessStatus"));
+		describeVpnGatewayResponse.setChargeType(_ctx.stringValue("DescribeVpnGatewayResponse.ChargeType"));
+		describeVpnGatewayResponse.setIpsecVpn(_ctx.stringValue("DescribeVpnGatewayResponse.IpsecVpn"));
+		describeVpnGatewayResponse.setSslVpn(_ctx.stringValue("DescribeVpnGatewayResponse.SslVpn"));
+		describeVpnGatewayResponse.setSslMaxConnections(_ctx.longValue("DescribeVpnGatewayResponse.SslMaxConnections"));
+		describeVpnGatewayResponse.setTag(_ctx.stringValue("DescribeVpnGatewayResponse.Tag"));
 	 
 	 	return describeVpnGatewayResponse;
 	}

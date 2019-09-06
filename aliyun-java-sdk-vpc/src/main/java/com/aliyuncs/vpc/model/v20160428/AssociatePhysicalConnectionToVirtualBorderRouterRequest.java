@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +26,11 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 	
 	public AssociatePhysicalConnectionToVirtualBorderRouterRequest() {
 		super("Vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
@@ -32,23 +39,23 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 
 	private String vlanId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
-	private String ownerAccount;
-
 	private String vbrId;
-
-	private Long ownerId;
 
 	private String peerGatewayIp;
 
 	private String peeringSubnetMask;
 
-	private String physicalConnectionId;
-
 	private String localGatewayIp;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String physicalConnectionId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -83,17 +90,6 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -105,17 +101,6 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getVbrId() {
 		return this.vbrId;
 	}
@@ -124,17 +109,6 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 		this.vbrId = vbrId;
 		if(vbrId != null){
 			putQueryParameter("VbrId", vbrId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -160,17 +134,6 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 		}
 	}
 
-	public String getPhysicalConnectionId() {
-		return this.physicalConnectionId;
-	}
-
-	public void setPhysicalConnectionId(String physicalConnectionId) {
-		this.physicalConnectionId = physicalConnectionId;
-		if(physicalConnectionId != null){
-			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
-		}
-	}
-
 	public String getLocalGatewayIp() {
 		return this.localGatewayIp;
 	}
@@ -179,6 +142,50 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 		this.localGatewayIp = localGatewayIp;
 		if(localGatewayIp != null){
 			putQueryParameter("LocalGatewayIp", localGatewayIp);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
 		}
 	}
 

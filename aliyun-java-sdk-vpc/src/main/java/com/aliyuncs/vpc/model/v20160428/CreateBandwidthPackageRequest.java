@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,31 +26,36 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 	
 	public CreateBandwidthPackageRequest() {
 		super("Vpc", "2016-04-28", "CreateBandwidthPackage", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private Integer bandwidth;
-
-	private String ownerAccount;
 
 	private String iSP;
 
 	private String description;
 
-	private Long ownerId;
-
 	private String zone;
+
+	private String natGatewayId;
+
+	private String resourceOwnerAccount;
+
+	private Integer bandwidth;
+
+	private String ownerAccount;
+
+	private Long ownerId;
 
 	private String internetChargeType;
 
 	private String name;
-
-	private String natGatewayId;
 
 	private Integer ipCount;
 
@@ -63,17 +70,6 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -82,28 +78,6 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Integer getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth.toString());
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -129,17 +103,6 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getZone() {
 		return this.zone;
 	}
@@ -148,6 +111,61 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		this.zone = zone;
 		if(zone != null){
 			putQueryParameter("Zone", zone);
+		}
+	}
+
+	public String getNatGatewayId() {
+		return this.natGatewayId;
+	}
+
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -170,17 +188,6 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getNatGatewayId() {
-		return this.natGatewayId;
-	}
-
-	public void setNatGatewayId(String natGatewayId) {
-		this.natGatewayId = natGatewayId;
-		if(natGatewayId != null){
-			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 

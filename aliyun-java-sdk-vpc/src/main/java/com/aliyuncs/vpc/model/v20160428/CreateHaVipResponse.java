@@ -28,6 +28,8 @@ public class CreateHaVipResponse extends AcsResponse {
 
 	private String haVipId;
 
+	private String ipAddress;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreateHaVipResponse extends AcsResponse {
 
 	public void setHaVipId(String haVipId) {
 		this.haVipId = haVipId;
+	}
+
+	public String getIpAddress() {
+		return this.ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
 	}
 
 	@Override

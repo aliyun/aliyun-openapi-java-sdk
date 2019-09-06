@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +26,12 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 	
 	public ModifyPhysicalConnectionAttributeRequest() {
 		super("Vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String redundantPhysicalConnectionId;
-
-	private String peerLocation;
 
 	private Long resourceOwnerId;
 
@@ -36,15 +39,19 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 
 	private String circuitCode;
 
-	private Integer bandwidth;
-
 	private String clientToken;
+
+	private String description;
+
+	private String redundantPhysicalConnectionId;
+
+	private String peerLocation;
+
+	private Integer bandwidth;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String description;
 
 	private Long ownerId;
 
@@ -53,28 +60,6 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 	private String physicalConnectionId;
 
 	private String name;
-
-	public String getRedundantPhysicalConnectionId() {
-		return this.redundantPhysicalConnectionId;
-	}
-
-	public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
-		this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
-		if(redundantPhysicalConnectionId != null){
-			putQueryParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
-		}
-	}
-
-	public String getPeerLocation() {
-		return this.peerLocation;
-	}
-
-	public void setPeerLocation(String peerLocation) {
-		this.peerLocation = peerLocation;
-		if(peerLocation != null){
-			putQueryParameter("PeerLocation", peerLocation);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -109,17 +94,6 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 		}
 	}
 
-	public Integer getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("bandwidth", bandwidth.toString());
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -128,6 +102,50 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getRedundantPhysicalConnectionId() {
+		return this.redundantPhysicalConnectionId;
+	}
+
+	public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
+		this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
+		if(redundantPhysicalConnectionId != null){
+			putQueryParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
+		}
+	}
+
+	public String getPeerLocation() {
+		return this.peerLocation;
+	}
+
+	public void setPeerLocation(String peerLocation) {
+		this.peerLocation = peerLocation;
+		if(peerLocation != null){
+			putQueryParameter("PeerLocation", peerLocation);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("bandwidth", bandwidth.toString());
 		}
 	}
 
@@ -150,17 +168,6 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 

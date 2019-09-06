@@ -125,6 +125,8 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String status;
+
 		private List<Tag> tags;
 
 		private List<String> vSwitchIds;
@@ -199,6 +201,14 @@ public class DescribeRouteTableListResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public List<Tag> getTags() {

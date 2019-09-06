@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateVirtualBorderRouterResponseUnmarshaller {
 
-	public static CreateVirtualBorderRouterResponse unmarshall(CreateVirtualBorderRouterResponse createVirtualBorderRouterResponse, UnmarshallerContext context) {
+	public static CreateVirtualBorderRouterResponse unmarshall(CreateVirtualBorderRouterResponse createVirtualBorderRouterResponse, UnmarshallerContext _ctx) {
 		
-		createVirtualBorderRouterResponse.setRequestId(context.stringValue("CreateVirtualBorderRouterResponse.RequestId"));
-		createVirtualBorderRouterResponse.setVbrId(context.stringValue("CreateVirtualBorderRouterResponse.VbrId"));
+		createVirtualBorderRouterResponse.setRequestId(_ctx.stringValue("CreateVirtualBorderRouterResponse.RequestId"));
+		createVirtualBorderRouterResponse.setVbrId(_ctx.stringValue("CreateVirtualBorderRouterResponse.VbrId"));
 	 
 	 	return createVirtualBorderRouterResponse;
 	}

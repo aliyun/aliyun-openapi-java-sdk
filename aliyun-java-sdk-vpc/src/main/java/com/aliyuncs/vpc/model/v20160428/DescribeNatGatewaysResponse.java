@@ -101,6 +101,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private String status;
 
+		private Boolean deletionProtection;
+
 		private List<IpList> ipLists;
 
 		private List<String> forwardTableIds;
@@ -219,6 +221,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Boolean getDeletionProtection() {
+			return this.deletionProtection;
+		}
+
+		public void setDeletionProtection(Boolean deletionProtection) {
+			this.deletionProtection = deletionProtection;
 		}
 
 		public List<IpList> getIpLists() {

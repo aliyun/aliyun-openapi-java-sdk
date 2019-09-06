@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteBandwidthPackageResponseUnmarshaller {
 
-	public static DeleteBandwidthPackageResponse unmarshall(DeleteBandwidthPackageResponse deleteBandwidthPackageResponse, UnmarshallerContext context) {
+	public static DeleteBandwidthPackageResponse unmarshall(DeleteBandwidthPackageResponse deleteBandwidthPackageResponse, UnmarshallerContext _ctx) {
 		
-		deleteBandwidthPackageResponse.setRequestId(context.stringValue("DeleteBandwidthPackageResponse.RequestId"));
+		deleteBandwidthPackageResponse.setRequestId(_ctx.stringValue("DeleteBandwidthPackageResponse.RequestId"));
 	 
 	 	return deleteBandwidthPackageResponse;
 	}

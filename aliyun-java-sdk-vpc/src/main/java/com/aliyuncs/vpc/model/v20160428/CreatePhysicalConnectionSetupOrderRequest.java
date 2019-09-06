@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class CreatePhysicalConnectionSetupOrderRequest extends RpcAcsRequest<Cre
 	
 	public CreatePhysicalConnectionSetupOrderRequest() {
 		super("Vpc", "2016-04-28", "CreatePhysicalConnectionSetupOrder", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String accessPointId;
-
-	private String redundantPhysicalConnectionId;
 
 	private Long resourceOwnerId;
 
 	private String portType;
 
-	private Boolean autoPay;
-
 	private String clientToken;
+
+	private String redundantPhysicalConnectionId;
+
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
@@ -54,17 +61,6 @@ public class CreatePhysicalConnectionSetupOrderRequest extends RpcAcsRequest<Cre
 		this.accessPointId = accessPointId;
 		if(accessPointId != null){
 			putQueryParameter("AccessPointId", accessPointId);
-		}
-	}
-
-	public String getRedundantPhysicalConnectionId() {
-		return this.redundantPhysicalConnectionId;
-	}
-
-	public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
-		this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
-		if(redundantPhysicalConnectionId != null){
-			putQueryParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
 		}
 	}
 
@@ -90,17 +86,6 @@ public class CreatePhysicalConnectionSetupOrderRequest extends RpcAcsRequest<Cre
 		}
 	}
 
-	public Boolean getAutoPay() {
-		return this.autoPay;
-	}
-
-	public void setAutoPay(Boolean autoPay) {
-		this.autoPay = autoPay;
-		if(autoPay != null){
-			putQueryParameter("AutoPay", autoPay.toString());
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -109,6 +94,28 @@ public class CreatePhysicalConnectionSetupOrderRequest extends RpcAcsRequest<Cre
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getRedundantPhysicalConnectionId() {
+		return this.redundantPhysicalConnectionId;
+	}
+
+	public void setRedundantPhysicalConnectionId(String redundantPhysicalConnectionId) {
+		this.redundantPhysicalConnectionId = redundantPhysicalConnectionId;
+		if(redundantPhysicalConnectionId != null){
+			putQueryParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 

@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +26,16 @@ public class AddIPv6TranslatorAclListEntryRequest extends RpcAcsRequest<AddIPv6T
 	
 	public AddIPv6TranslatorAclListEntryRequest() {
 		super("Vpc", "2016-04-28", "AddIPv6TranslatorAclListEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String aclId;
-
 	private Long resourceOwnerId;
+
+	private String aclId;
 
 	private String aclEntryIp;
 
@@ -40,17 +47,6 @@ public class AddIPv6TranslatorAclListEntryRequest extends RpcAcsRequest<AddIPv6T
 
 	private Long ownerId;
 
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -59,6 +55,17 @@ public class AddIPv6TranslatorAclListEntryRequest extends RpcAcsRequest<AddIPv6T
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
 		}
 	}
 

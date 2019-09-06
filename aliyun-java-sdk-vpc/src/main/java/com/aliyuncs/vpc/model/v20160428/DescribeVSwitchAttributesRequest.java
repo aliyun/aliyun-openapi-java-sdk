@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +26,16 @@ public class DescribeVSwitchAttributesRequest extends RpcAcsRequest<DescribeVSwi
 	
 	public DescribeVSwitchAttributesRequest() {
 		super("Vpc", "2016-04-28", "DescribeVSwitchAttributes", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String vSwitchId;
-
 	private Long resourceOwnerId;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -36,16 +43,7 @@ public class DescribeVSwitchAttributesRequest extends RpcAcsRequest<DescribeVSwi
 
 	private Long ownerId;
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
+	private String vSwitchId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -55,6 +53,17 @@ public class DescribeVSwitchAttributesRequest extends RpcAcsRequest<DescribeVSwi
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -88,6 +97,17 @@ public class DescribeVSwitchAttributesRequest extends RpcAcsRequest<DescribeVSwi
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 

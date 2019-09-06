@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +26,18 @@ public class DeleteVpnRouteEntryRequest extends RpcAcsRequest<DeleteVpnRouteEntr
 	
 	public DeleteVpnRouteEntryRequest() {
 		super("Vpc", "2016-04-28", "DeleteVpnRouteEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
@@ -44,6 +51,8 @@ public class DeleteVpnRouteEntryRequest extends RpcAcsRequest<DeleteVpnRouteEntr
 
 	private String nextHop;
 
+	private String overlayMode;
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -55,17 +64,6 @@ public class DeleteVpnRouteEntryRequest extends RpcAcsRequest<DeleteVpnRouteEntr
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -74,6 +72,17 @@ public class DeleteVpnRouteEntryRequest extends RpcAcsRequest<DeleteVpnRouteEntr
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -140,6 +149,17 @@ public class DeleteVpnRouteEntryRequest extends RpcAcsRequest<DeleteVpnRouteEntr
 		this.nextHop = nextHop;
 		if(nextHop != null){
 			putQueryParameter("NextHop", nextHop);
+		}
+	}
+
+	public String getOverlayMode() {
+		return this.overlayMode;
+	}
+
+	public void setOverlayMode(String overlayMode) {
+		this.overlayMode = overlayMode;
+		if(overlayMode != null){
+			putQueryParameter("OverlayMode", overlayMode);
 		}
 	}
 

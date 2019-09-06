@@ -24,53 +24,53 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRouterInterfacesResponseUnmarshaller {
 
-	public static DescribeRouterInterfacesResponse unmarshall(DescribeRouterInterfacesResponse describeRouterInterfacesResponse, UnmarshallerContext context) {
+	public static DescribeRouterInterfacesResponse unmarshall(DescribeRouterInterfacesResponse describeRouterInterfacesResponse, UnmarshallerContext _ctx) {
 		
-		describeRouterInterfacesResponse.setRequestId(context.stringValue("DescribeRouterInterfacesResponse.RequestId"));
-		describeRouterInterfacesResponse.setPageNumber(context.integerValue("DescribeRouterInterfacesResponse.PageNumber"));
-		describeRouterInterfacesResponse.setPageSize(context.integerValue("DescribeRouterInterfacesResponse.PageSize"));
-		describeRouterInterfacesResponse.setTotalCount(context.integerValue("DescribeRouterInterfacesResponse.TotalCount"));
+		describeRouterInterfacesResponse.setRequestId(_ctx.stringValue("DescribeRouterInterfacesResponse.RequestId"));
+		describeRouterInterfacesResponse.setPageNumber(_ctx.integerValue("DescribeRouterInterfacesResponse.PageNumber"));
+		describeRouterInterfacesResponse.setPageSize(_ctx.integerValue("DescribeRouterInterfacesResponse.PageSize"));
+		describeRouterInterfacesResponse.setTotalCount(_ctx.integerValue("DescribeRouterInterfacesResponse.TotalCount"));
 
 		List<RouterInterfaceType> routerInterfaceSet = new ArrayList<RouterInterfaceType>();
-		for (int i = 0; i < context.lengthValue("DescribeRouterInterfacesResponse.RouterInterfaceSet.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRouterInterfacesResponse.RouterInterfaceSet.Length"); i++) {
 			RouterInterfaceType routerInterfaceType = new RouterInterfaceType();
-			routerInterfaceType.setRouterInterfaceId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].RouterInterfaceId"));
-			routerInterfaceType.setOppositeRegionId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeRegionId"));
-			routerInterfaceType.setRole(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Role"));
-			routerInterfaceType.setSpec(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Spec"));
-			routerInterfaceType.setName(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Name"));
-			routerInterfaceType.setDescription(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Description"));
-			routerInterfaceType.setRouterId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].RouterId"));
-			routerInterfaceType.setRouterType(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].RouterType"));
-			routerInterfaceType.setCreationTime(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].CreationTime"));
-			routerInterfaceType.setEndTime(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].EndTime"));
-			routerInterfaceType.setChargeType(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ChargeType"));
-			routerInterfaceType.setStatus(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Status"));
-			routerInterfaceType.setBusinessStatus(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].BusinessStatus"));
-			routerInterfaceType.setConnectedTime(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ConnectedTime"));
-			routerInterfaceType.setOppositeInterfaceId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceId"));
-			routerInterfaceType.setOppositeInterfaceSpec(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceSpec"));
-			routerInterfaceType.setOppositeInterfaceStatus(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceStatus"));
-			routerInterfaceType.setOppositeInterfaceBusinessStatus(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceBusinessStatus"));
-			routerInterfaceType.setOppositeRouterId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeRouterId"));
-			routerInterfaceType.setOppositeRouterType(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeRouterType"));
-			routerInterfaceType.setOppositeInterfaceOwnerId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceOwnerId"));
-			routerInterfaceType.setAccessPointId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].AccessPointId"));
-			routerInterfaceType.setOppositeAccessPointId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeAccessPointId"));
-			routerInterfaceType.setHealthCheckSourceIp(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HealthCheckSourceIp"));
-			routerInterfaceType.setHealthCheckTargetIp(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HealthCheckTargetIp"));
-			routerInterfaceType.setOppositeVpcInstanceId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeVpcInstanceId"));
-			routerInterfaceType.setBandwidth(context.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Bandwidth"));
-			routerInterfaceType.setVpcInstanceId(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].VpcInstanceId"));
-			routerInterfaceType.setOppositeBandwidth(context.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeBandwidth"));
-			routerInterfaceType.setHasReservationData(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HasReservationData"));
-			routerInterfaceType.setReservationBandwidth(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationBandwidth"));
-			routerInterfaceType.setReservationInternetChargeType(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationInternetChargeType"));
-			routerInterfaceType.setReservationActiveTime(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationActiveTime"));
-			routerInterfaceType.setReservationOrderType(context.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationOrderType"));
-			routerInterfaceType.setCrossBorder(context.booleanValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].CrossBorder"));
-			routerInterfaceType.setHcThreshold(context.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HcThreshold"));
-			routerInterfaceType.setHcRate(context.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HcRate"));
+			routerInterfaceType.setRouterInterfaceId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].RouterInterfaceId"));
+			routerInterfaceType.setOppositeRegionId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeRegionId"));
+			routerInterfaceType.setRole(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Role"));
+			routerInterfaceType.setSpec(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Spec"));
+			routerInterfaceType.setName(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Name"));
+			routerInterfaceType.setDescription(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Description"));
+			routerInterfaceType.setRouterId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].RouterId"));
+			routerInterfaceType.setRouterType(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].RouterType"));
+			routerInterfaceType.setCreationTime(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].CreationTime"));
+			routerInterfaceType.setEndTime(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].EndTime"));
+			routerInterfaceType.setChargeType(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ChargeType"));
+			routerInterfaceType.setStatus(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Status"));
+			routerInterfaceType.setBusinessStatus(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].BusinessStatus"));
+			routerInterfaceType.setConnectedTime(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ConnectedTime"));
+			routerInterfaceType.setOppositeInterfaceId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceId"));
+			routerInterfaceType.setOppositeInterfaceSpec(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceSpec"));
+			routerInterfaceType.setOppositeInterfaceStatus(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceStatus"));
+			routerInterfaceType.setOppositeInterfaceBusinessStatus(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceBusinessStatus"));
+			routerInterfaceType.setOppositeRouterId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeRouterId"));
+			routerInterfaceType.setOppositeRouterType(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeRouterType"));
+			routerInterfaceType.setOppositeInterfaceOwnerId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeInterfaceOwnerId"));
+			routerInterfaceType.setAccessPointId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].AccessPointId"));
+			routerInterfaceType.setOppositeAccessPointId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeAccessPointId"));
+			routerInterfaceType.setHealthCheckSourceIp(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HealthCheckSourceIp"));
+			routerInterfaceType.setHealthCheckTargetIp(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HealthCheckTargetIp"));
+			routerInterfaceType.setOppositeVpcInstanceId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeVpcInstanceId"));
+			routerInterfaceType.setBandwidth(_ctx.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].Bandwidth"));
+			routerInterfaceType.setVpcInstanceId(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].VpcInstanceId"));
+			routerInterfaceType.setOppositeBandwidth(_ctx.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].OppositeBandwidth"));
+			routerInterfaceType.setHasReservationData(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HasReservationData"));
+			routerInterfaceType.setReservationBandwidth(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationBandwidth"));
+			routerInterfaceType.setReservationInternetChargeType(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationInternetChargeType"));
+			routerInterfaceType.setReservationActiveTime(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationActiveTime"));
+			routerInterfaceType.setReservationOrderType(_ctx.stringValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].ReservationOrderType"));
+			routerInterfaceType.setCrossBorder(_ctx.booleanValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].CrossBorder"));
+			routerInterfaceType.setHcThreshold(_ctx.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HcThreshold"));
+			routerInterfaceType.setHcRate(_ctx.integerValue("DescribeRouterInterfacesResponse.RouterInterfaceSet["+ i +"].HcRate"));
 
 			routerInterfaceSet.add(routerInterfaceType);
 		}

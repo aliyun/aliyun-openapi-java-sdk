@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeletePhysicalConnectionResponseUnmarshaller {
 
-	public static DeletePhysicalConnectionResponse unmarshall(DeletePhysicalConnectionResponse deletePhysicalConnectionResponse, UnmarshallerContext context) {
+	public static DeletePhysicalConnectionResponse unmarshall(DeletePhysicalConnectionResponse deletePhysicalConnectionResponse, UnmarshallerContext _ctx) {
 		
-		deletePhysicalConnectionResponse.setRequestId(context.stringValue("DeletePhysicalConnectionResponse.RequestId"));
+		deletePhysicalConnectionResponse.setRequestId(_ctx.stringValue("DeletePhysicalConnectionResponse.RequestId"));
 	 
 	 	return deletePhysicalConnectionResponse;
 	}

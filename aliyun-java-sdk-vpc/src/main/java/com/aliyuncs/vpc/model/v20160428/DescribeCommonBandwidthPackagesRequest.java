@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +26,22 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 	
 	public DescribeCommonBandwidthPackagesRequest() {
 		super("Vpc", "2016-04-28", "DescribeCommonBandwidthPackages", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private Long resourceOwnerId;
+
+	private Boolean includeReservationData;
+
+	private Integer pageNumber;
 
 	private String resourceGroupId;
 
-	private Long resourceOwnerId;
+	private Integer pageSize;
 
 	private String bandwidthPackageId;
 
@@ -36,15 +49,42 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 
 	private String ownerAccount;
 
-	private String name;
-
-	private Integer pageSize;
-
 	private Long ownerId;
 
-	private Boolean includeReservationData;
+	private String name;
 
-	private Integer pageNumber;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
@@ -57,14 +97,14 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -101,28 +141,6 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -134,25 +152,14 @@ public class DescribeCommonBandwidthPackagesRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Boolean getIncludeReservationData() {
-		return this.includeReservationData;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setIncludeReservationData(Boolean includeReservationData) {
-		this.includeReservationData = includeReservationData;
-		if(includeReservationData != null){
-			putQueryParameter("IncludeReservationData", includeReservationData.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

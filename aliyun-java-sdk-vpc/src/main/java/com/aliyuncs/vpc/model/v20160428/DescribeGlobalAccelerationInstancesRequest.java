@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +26,11 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 	
 	public DescribeGlobalAccelerationInstancesRequest() {
 		super("Vpc", "2016-04-28", "DescribeGlobalAccelerationInstances", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String ipAddress;
@@ -31,6 +38,14 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 	private Long resourceOwnerId;
 
 	private String bandwidthType;
+
+	private Boolean includeReservationData;
+
+	private String globalAccelerationInstanceId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -40,17 +55,9 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 
 	private Long ownerId;
 
-	private Boolean includeReservationData;
-
-	private String globalAccelerationInstanceId;
-
 	private String serverId;
 
-	private Integer pageNumber;
-
 	private String name;
-
-	private Integer pageSize;
 
 	private String status;
 
@@ -84,6 +91,50 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 		this.bandwidthType = bandwidthType;
 		if(bandwidthType != null){
 			putQueryParameter("BandwidthType", bandwidthType);
+		}
+	}
+
+	public Boolean getIncludeReservationData() {
+		return this.includeReservationData;
+	}
+
+	public void setIncludeReservationData(Boolean includeReservationData) {
+		this.includeReservationData = includeReservationData;
+		if(includeReservationData != null){
+			putQueryParameter("IncludeReservationData", includeReservationData.toString());
+		}
+	}
+
+	public String getGlobalAccelerationInstanceId() {
+		return this.globalAccelerationInstanceId;
+	}
+
+	public void setGlobalAccelerationInstanceId(String globalAccelerationInstanceId) {
+		this.globalAccelerationInstanceId = globalAccelerationInstanceId;
+		if(globalAccelerationInstanceId != null){
+			putQueryParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -131,28 +182,6 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 		}
 	}
 
-	public Boolean getIncludeReservationData() {
-		return this.includeReservationData;
-	}
-
-	public void setIncludeReservationData(Boolean includeReservationData) {
-		this.includeReservationData = includeReservationData;
-		if(includeReservationData != null){
-			putQueryParameter("IncludeReservationData", includeReservationData.toString());
-		}
-	}
-
-	public String getGlobalAccelerationInstanceId() {
-		return this.globalAccelerationInstanceId;
-	}
-
-	public void setGlobalAccelerationInstanceId(String globalAccelerationInstanceId) {
-		this.globalAccelerationInstanceId = globalAccelerationInstanceId;
-		if(globalAccelerationInstanceId != null){
-			putQueryParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
-		}
-	}
-
 	public String getServerId() {
 		return this.serverId;
 	}
@@ -164,17 +193,6 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -183,17 +201,6 @@ public class DescribeGlobalAccelerationInstancesRequest extends RpcAcsRequest<De
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

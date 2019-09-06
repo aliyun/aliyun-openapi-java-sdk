@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBgpGroupsResponseUnmarshaller {
 
-	public static DescribeBgpGroupsResponse unmarshall(DescribeBgpGroupsResponse describeBgpGroupsResponse, UnmarshallerContext context) {
+	public static DescribeBgpGroupsResponse unmarshall(DescribeBgpGroupsResponse describeBgpGroupsResponse, UnmarshallerContext _ctx) {
 		
-		describeBgpGroupsResponse.setRequestId(context.stringValue("DescribeBgpGroupsResponse.RequestId"));
-		describeBgpGroupsResponse.setTotalCount(context.integerValue("DescribeBgpGroupsResponse.TotalCount"));
-		describeBgpGroupsResponse.setPageNumber(context.integerValue("DescribeBgpGroupsResponse.PageNumber"));
-		describeBgpGroupsResponse.setPageSize(context.integerValue("DescribeBgpGroupsResponse.PageSize"));
+		describeBgpGroupsResponse.setRequestId(_ctx.stringValue("DescribeBgpGroupsResponse.RequestId"));
+		describeBgpGroupsResponse.setTotalCount(_ctx.integerValue("DescribeBgpGroupsResponse.TotalCount"));
+		describeBgpGroupsResponse.setPageNumber(_ctx.integerValue("DescribeBgpGroupsResponse.PageNumber"));
+		describeBgpGroupsResponse.setPageSize(_ctx.integerValue("DescribeBgpGroupsResponse.PageSize"));
 
 		List<BgpGroup> bgpGroups = new ArrayList<BgpGroup>();
-		for (int i = 0; i < context.lengthValue("DescribeBgpGroupsResponse.BgpGroups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBgpGroupsResponse.BgpGroups.Length"); i++) {
 			BgpGroup bgpGroup = new BgpGroup();
-			bgpGroup.setName(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Name"));
-			bgpGroup.setDescription(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Description"));
-			bgpGroup.setBgpGroupId(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].BgpGroupId"));
-			bgpGroup.setPeerAsn(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].PeerAsn"));
-			bgpGroup.setAuthKey(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].AuthKey"));
-			bgpGroup.setRouterId(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouterId"));
-			bgpGroup.setStatus(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Status"));
-			bgpGroup.setKeepalive(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Keepalive"));
-			bgpGroup.setLocalAsn(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].LocalAsn"));
-			bgpGroup.setHold(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Hold"));
-			bgpGroup.setIsFake(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].IsFake"));
-			bgpGroup.setRouteLimit(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouteLimit"));
-			bgpGroup.setRegionId(context.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RegionId"));
+			bgpGroup.setName(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Name"));
+			bgpGroup.setDescription(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Description"));
+			bgpGroup.setBgpGroupId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].BgpGroupId"));
+			bgpGroup.setPeerAsn(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].PeerAsn"));
+			bgpGroup.setAuthKey(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].AuthKey"));
+			bgpGroup.setRouterId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouterId"));
+			bgpGroup.setStatus(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Status"));
+			bgpGroup.setKeepalive(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Keepalive"));
+			bgpGroup.setLocalAsn(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].LocalAsn"));
+			bgpGroup.setHold(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].Hold"));
+			bgpGroup.setIsFake(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].IsFake"));
+			bgpGroup.setRouteLimit(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RouteLimit"));
+			bgpGroup.setRegionId(_ctx.stringValue("DescribeBgpGroupsResponse.BgpGroups["+ i +"].RegionId"));
 
 			bgpGroups.add(bgpGroup);
 		}

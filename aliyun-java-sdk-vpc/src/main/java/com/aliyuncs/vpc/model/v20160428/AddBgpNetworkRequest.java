@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,21 +26,26 @@ public class AddBgpNetworkRequest extends RpcAcsRequest<AddBgpNetworkResponse> {
 	
 	public AddBgpNetworkRequest() {
 		super("Vpc", "2016-04-28", "AddBgpNetwork", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
-	private String routerId;
-
-	private String vpcId;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String routerId;
+
+	private String vpcId;
 
 	private String dstCidrBlock;
 
@@ -53,17 +60,6 @@ public class AddBgpNetworkRequest extends RpcAcsRequest<AddBgpNetworkResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -75,25 +71,14 @@ public class AddBgpNetworkRequest extends RpcAcsRequest<AddBgpNetworkResponse> {
 		}
 	}
 
-	public String getRouterId() {
-		return this.routerId;
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
 	}
 
-	public void setRouterId(String routerId) {
-		this.routerId = routerId;
-		if(routerId != null){
-			putQueryParameter("RouterId", routerId);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -116,6 +101,28 @@ public class AddBgpNetworkRequest extends RpcAcsRequest<AddBgpNetworkResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getRouterId() {
+		return this.routerId;
+	}
+
+	public void setRouterId(String routerId) {
+		this.routerId = routerId;
+		if(routerId != null){
+			putQueryParameter("RouterId", routerId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

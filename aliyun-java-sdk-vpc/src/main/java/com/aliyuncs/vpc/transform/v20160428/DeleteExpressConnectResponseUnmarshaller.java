@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteExpressConnectResponseUnmarshaller {
 
-	public static DeleteExpressConnectResponse unmarshall(DeleteExpressConnectResponse deleteExpressConnectResponse, UnmarshallerContext context) {
+	public static DeleteExpressConnectResponse unmarshall(DeleteExpressConnectResponse deleteExpressConnectResponse, UnmarshallerContext _ctx) {
 		
-		deleteExpressConnectResponse.setRequestId(context.stringValue("DeleteExpressConnectResponse.RequestId"));
+		deleteExpressConnectResponse.setRequestId(_ctx.stringValue("DeleteExpressConnectResponse.RequestId"));
 	 
 	 	return deleteExpressConnectResponse;
 	}

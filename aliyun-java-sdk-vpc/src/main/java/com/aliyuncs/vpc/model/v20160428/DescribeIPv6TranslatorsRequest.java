@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +26,24 @@ public class DescribeIPv6TranslatorsRequest extends RpcAcsRequest<DescribeIPv6Tr
 	
 	public DescribeIPv6TranslatorsRequest() {
 		super("Vpc", "2016-04-28", "DescribeIPv6Translators", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String businessStatus;
-
 	private Long resourceOwnerId;
+
+	private String allocateIpv4Addr;
+
+	private String spec;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String businessStatus;
 
 	private String resourceOwnerAccount;
 
@@ -36,34 +51,15 @@ public class DescribeIPv6TranslatorsRequest extends RpcAcsRequest<DescribeIPv6Tr
 
 	private String ownerAccount;
 
-	private String allocateIpv4Addr;
-
 	private Long ownerId;
 
-	private String spec;
-
-	private Integer pageNumber;
-
 	private String name;
-
-	private Integer pageSize;
 
 	private String ipv6TranslatorId;
 
 	private String payType;
 
 	private String status;
-
-	public String getBusinessStatus() {
-		return this.businessStatus;
-	}
-
-	public void setBusinessStatus(String businessStatus) {
-		this.businessStatus = businessStatus;
-		if(businessStatus != null){
-			putQueryParameter("BusinessStatus", businessStatus);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -73,6 +69,61 @@ public class DescribeIPv6TranslatorsRequest extends RpcAcsRequest<DescribeIPv6Tr
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getAllocateIpv4Addr() {
+		return this.allocateIpv4Addr;
+	}
+
+	public void setAllocateIpv4Addr(String allocateIpv4Addr) {
+		this.allocateIpv4Addr = allocateIpv4Addr;
+		if(allocateIpv4Addr != null){
+			putQueryParameter("AllocateIpv4Addr", allocateIpv4Addr);
+		}
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putQueryParameter("Spec", spec);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBusinessStatus() {
+		return this.businessStatus;
+	}
+
+	public void setBusinessStatus(String businessStatus) {
+		this.businessStatus = businessStatus;
+		if(businessStatus != null){
+			putQueryParameter("BusinessStatus", businessStatus);
 		}
 	}
 
@@ -109,17 +160,6 @@ public class DescribeIPv6TranslatorsRequest extends RpcAcsRequest<DescribeIPv6Tr
 		}
 	}
 
-	public String getAllocateIpv4Addr() {
-		return this.allocateIpv4Addr;
-	}
-
-	public void setAllocateIpv4Addr(String allocateIpv4Addr) {
-		this.allocateIpv4Addr = allocateIpv4Addr;
-		if(allocateIpv4Addr != null){
-			putQueryParameter("AllocateIpv4Addr", allocateIpv4Addr);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -131,28 +171,6 @@ public class DescribeIPv6TranslatorsRequest extends RpcAcsRequest<DescribeIPv6Tr
 		}
 	}
 
-	public String getSpec() {
-		return this.spec;
-	}
-
-	public void setSpec(String spec) {
-		this.spec = spec;
-		if(spec != null){
-			putQueryParameter("Spec", spec);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -161,17 +179,6 @@ public class DescribeIPv6TranslatorsRequest extends RpcAcsRequest<DescribeIPv6Tr
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

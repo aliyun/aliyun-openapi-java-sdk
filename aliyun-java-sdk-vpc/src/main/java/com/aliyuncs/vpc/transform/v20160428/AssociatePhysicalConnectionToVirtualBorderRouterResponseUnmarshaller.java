@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AssociatePhysicalConnectionToVirtualBorderRouterResponseUnmarshaller {
 
-	public static AssociatePhysicalConnectionToVirtualBorderRouterResponse unmarshall(AssociatePhysicalConnectionToVirtualBorderRouterResponse associatePhysicalConnectionToVirtualBorderRouterResponse, UnmarshallerContext context) {
+	public static AssociatePhysicalConnectionToVirtualBorderRouterResponse unmarshall(AssociatePhysicalConnectionToVirtualBorderRouterResponse associatePhysicalConnectionToVirtualBorderRouterResponse, UnmarshallerContext _ctx) {
 		
-		associatePhysicalConnectionToVirtualBorderRouterResponse.setRequestId(context.stringValue("AssociatePhysicalConnectionToVirtualBorderRouterResponse.RequestId"));
+		associatePhysicalConnectionToVirtualBorderRouterResponse.setRequestId(_ctx.stringValue("AssociatePhysicalConnectionToVirtualBorderRouterResponse.RequestId"));
 	 
 	 	return associatePhysicalConnectionToVirtualBorderRouterResponse;
 	}

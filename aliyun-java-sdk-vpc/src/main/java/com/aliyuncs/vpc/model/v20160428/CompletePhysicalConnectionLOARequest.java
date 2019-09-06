@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,20 @@ public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<Complete
 	
 	public CompletePhysicalConnectionLOARequest() {
 		super("Vpc", "2016-04-28", "CompletePhysicalConnectionLOA", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String lineLabel;
 
 	private String lineCode;
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
 	private String clientToken;
+
+	private String lineLabel;
 
 	private String resourceOwnerAccount;
 
@@ -42,16 +47,7 @@ public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<Complete
 
 	private Long ownerId;
 
-	public String getLineLabel() {
-		return this.lineLabel;
-	}
-
-	public void setLineLabel(String lineLabel) {
-		this.lineLabel = lineLabel;
-		if(lineLabel != null){
-			putQueryParameter("LineLabel", lineLabel);
-		}
-	}
+	private String instanceId;
 
 	public String getLineCode() {
 		return this.lineCode;
@@ -75,17 +71,6 @@ public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<Complete
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -94,6 +79,17 @@ public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<Complete
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getLineLabel() {
+		return this.lineLabel;
+	}
+
+	public void setLineLabel(String lineLabel) {
+		this.lineLabel = lineLabel;
+		if(lineLabel != null){
+			putQueryParameter("LineLabel", lineLabel);
 		}
 	}
 
@@ -127,6 +123,17 @@ public class CompletePhysicalConnectionLOARequest extends RpcAcsRequest<Complete
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

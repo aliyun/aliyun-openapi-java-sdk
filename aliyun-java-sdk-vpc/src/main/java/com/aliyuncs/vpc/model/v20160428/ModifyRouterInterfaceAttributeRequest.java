@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,28 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 	
 	public ModifyRouterInterfaceAttributeRequest() {
 		super("Vpc", "2016-04-28", "ModifyRouterInterfaceAttribute", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String oppositeRouterId;
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private Boolean deleteHealthCheckIp;
-
 	private String description;
 
 	private String healthCheckTargetIp;
+
+	private String oppositeInterfaceId;
+
+	private Integer hcThreshold;
+
+	private String resourceOwnerAccount;
+
+	private Boolean deleteHealthCheckIp;
 
 	private Long ownerId;
 
@@ -50,7 +61,7 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 
 	private String oppositeRouterType;
 
-	private String oppositeInterfaceId;
+	private Integer hcRate;
 
 	public String getOppositeRouterId() {
 		return this.oppositeRouterId;
@@ -74,28 +85,6 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public Boolean getDeleteHealthCheckIp() {
-		return this.deleteHealthCheckIp;
-	}
-
-	public void setDeleteHealthCheckIp(Boolean deleteHealthCheckIp) {
-		this.deleteHealthCheckIp = deleteHealthCheckIp;
-		if(deleteHealthCheckIp != null){
-			putQueryParameter("DeleteHealthCheckIp", deleteHealthCheckIp.toString());
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -115,6 +104,50 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 		this.healthCheckTargetIp = healthCheckTargetIp;
 		if(healthCheckTargetIp != null){
 			putQueryParameter("HealthCheckTargetIp", healthCheckTargetIp);
+		}
+	}
+
+	public String getOppositeInterfaceId() {
+		return this.oppositeInterfaceId;
+	}
+
+	public void setOppositeInterfaceId(String oppositeInterfaceId) {
+		this.oppositeInterfaceId = oppositeInterfaceId;
+		if(oppositeInterfaceId != null){
+			putQueryParameter("OppositeInterfaceId", oppositeInterfaceId);
+		}
+	}
+
+	public Integer getHcThreshold() {
+		return this.hcThreshold;
+	}
+
+	public void setHcThreshold(Integer hcThreshold) {
+		this.hcThreshold = hcThreshold;
+		if(hcThreshold != null){
+			putQueryParameter("HcThreshold", hcThreshold.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Boolean getDeleteHealthCheckIp() {
+		return this.deleteHealthCheckIp;
+	}
+
+	public void setDeleteHealthCheckIp(Boolean deleteHealthCheckIp) {
+		this.deleteHealthCheckIp = deleteHealthCheckIp;
+		if(deleteHealthCheckIp != null){
+			putQueryParameter("DeleteHealthCheckIp", deleteHealthCheckIp.toString());
 		}
 	}
 
@@ -184,14 +217,14 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 		}
 	}
 
-	public String getOppositeInterfaceId() {
-		return this.oppositeInterfaceId;
+	public Integer getHcRate() {
+		return this.hcRate;
 	}
 
-	public void setOppositeInterfaceId(String oppositeInterfaceId) {
-		this.oppositeInterfaceId = oppositeInterfaceId;
-		if(oppositeInterfaceId != null){
-			putQueryParameter("OppositeInterfaceId", oppositeInterfaceId);
+	public void setHcRate(Integer hcRate) {
+		this.hcRate = hcRate;
+		if(hcRate != null){
+			putQueryParameter("HcRate", hcRate.toString());
 		}
 	}
 

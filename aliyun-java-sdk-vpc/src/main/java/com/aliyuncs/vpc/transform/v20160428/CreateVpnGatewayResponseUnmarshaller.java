@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateVpnGatewayResponseUnmarshaller {
 
-	public static CreateVpnGatewayResponse unmarshall(CreateVpnGatewayResponse createVpnGatewayResponse, UnmarshallerContext context) {
+	public static CreateVpnGatewayResponse unmarshall(CreateVpnGatewayResponse createVpnGatewayResponse, UnmarshallerContext _ctx) {
 		
-		createVpnGatewayResponse.setRequestId(context.stringValue("CreateVpnGatewayResponse.RequestId"));
-		createVpnGatewayResponse.setVpnGatewayId(context.stringValue("CreateVpnGatewayResponse.VpnGatewayId"));
-		createVpnGatewayResponse.setName(context.stringValue("CreateVpnGatewayResponse.Name"));
-		createVpnGatewayResponse.setOrderId(context.longValue("CreateVpnGatewayResponse.OrderId"));
+		createVpnGatewayResponse.setRequestId(_ctx.stringValue("CreateVpnGatewayResponse.RequestId"));
+		createVpnGatewayResponse.setVpnGatewayId(_ctx.stringValue("CreateVpnGatewayResponse.VpnGatewayId"));
+		createVpnGatewayResponse.setName(_ctx.stringValue("CreateVpnGatewayResponse.Name"));
+		createVpnGatewayResponse.setOrderId(_ctx.longValue("CreateVpnGatewayResponse.OrderId"));
 	 
 	 	return createVpnGatewayResponse;
 	}

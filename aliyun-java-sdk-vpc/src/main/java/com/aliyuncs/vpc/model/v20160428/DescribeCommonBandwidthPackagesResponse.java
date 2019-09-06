@@ -115,6 +115,8 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 		private String iSP;
 
+		private Boolean deletionProtection;
+
 		private List<PublicIpAddresse> publicIpAddresses;
 
 		public String getBandwidthPackageId() {
@@ -283,6 +285,14 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 		public void setISP(String iSP) {
 			this.iSP = iSP;
+		}
+
+		public Boolean getDeletionProtection() {
+			return this.deletionProtection;
+		}
+
+		public void setDeletionProtection(Boolean deletionProtection) {
+			this.deletionProtection = deletionProtection;
 		}
 
 		public List<PublicIpAddresse> getPublicIpAddresses() {

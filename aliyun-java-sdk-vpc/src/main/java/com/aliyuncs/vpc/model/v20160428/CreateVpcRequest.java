@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,31 +26,38 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 	
 	public CreateVpcRequest() {
 		super("Vpc", "2016-04-28", "CreateVpc", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
-
-	private String ownerAccount;
 
 	private Boolean enableIpv6;
 
 	private String description;
 
-	private Long ownerId;
-
-	private String ipv6CidrBlock;
-
 	private String vpcName;
 
 	private String resourceGroupId;
 
-	private String cidrBlock;
-
 	private String userCidr;
+
+	private Boolean dryRun;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
+	private String ipv6CidrBlock;
+
+	private String cidrBlock;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,17 +70,6 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -80,17 +78,6 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -116,28 +103,6 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getIpv6CidrBlock() {
-		return this.ipv6CidrBlock;
-	}
-
-	public void setIpv6CidrBlock(String ipv6CidrBlock) {
-		this.ipv6CidrBlock = ipv6CidrBlock;
-		if(ipv6CidrBlock != null){
-			putQueryParameter("Ipv6CidrBlock", ipv6CidrBlock);
-		}
-	}
-
 	public String getVpcName() {
 		return this.vpcName;
 	}
@@ -160,17 +125,6 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		}
 	}
 
-	public String getCidrBlock() {
-		return this.cidrBlock;
-	}
-
-	public void setCidrBlock(String cidrBlock) {
-		this.cidrBlock = cidrBlock;
-		if(cidrBlock != null){
-			putQueryParameter("CidrBlock", cidrBlock);
-		}
-	}
-
 	public String getUserCidr() {
 		return this.userCidr;
 	}
@@ -179,6 +133,72 @@ public class CreateVpcRequest extends RpcAcsRequest<CreateVpcResponse> {
 		this.userCidr = userCidr;
 		if(userCidr != null){
 			putQueryParameter("UserCidr", userCidr);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIpv6CidrBlock() {
+		return this.ipv6CidrBlock;
+	}
+
+	public void setIpv6CidrBlock(String ipv6CidrBlock) {
+		this.ipv6CidrBlock = ipv6CidrBlock;
+		if(ipv6CidrBlock != null){
+			putQueryParameter("Ipv6CidrBlock", ipv6CidrBlock);
+		}
+	}
+
+	public String getCidrBlock() {
+		return this.cidrBlock;
+	}
+
+	public void setCidrBlock(String cidrBlock) {
+		this.cidrBlock = cidrBlock;
+		if(cidrBlock != null){
+			putQueryParameter("CidrBlock", cidrBlock);
 		}
 	}
 

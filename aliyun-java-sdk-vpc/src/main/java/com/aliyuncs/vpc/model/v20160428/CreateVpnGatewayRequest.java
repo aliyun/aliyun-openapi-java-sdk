@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,18 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 	
 	public CreateVpnGatewayRequest() {
 		super("Vpc", "2016-04-28", "CreateVpnGateway", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private Boolean enableIpsec;
+
+	private String instanceChargeType;
 
 	private Integer period;
 
@@ -36,11 +47,11 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 
 	private Integer bandwidth;
 
-	private Boolean enableIpsec;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String vSwitchId;
 
 	private Boolean enableSsl;
 
@@ -50,8 +61,6 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 
 	private String name;
 
-	private String instanceChargeType;
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -60,6 +69,28 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getEnableIpsec() {
+		return this.enableIpsec;
+	}
+
+	public void setEnableIpsec(Boolean enableIpsec) {
+		this.enableIpsec = enableIpsec;
+		if(enableIpsec != null){
+			putQueryParameter("EnableIpsec", enableIpsec.toString());
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 
@@ -107,17 +138,6 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		}
 	}
 
-	public Boolean getEnableIpsec() {
-		return this.enableIpsec;
-	}
-
-	public void setEnableIpsec(Boolean enableIpsec) {
-		this.enableIpsec = enableIpsec;
-		if(enableIpsec != null){
-			putQueryParameter("EnableIpsec", enableIpsec.toString());
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -137,6 +157,17 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
@@ -181,17 +212,6 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 

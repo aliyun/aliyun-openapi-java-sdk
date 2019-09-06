@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteHaVipResponseUnmarshaller {
 
-	public static DeleteHaVipResponse unmarshall(DeleteHaVipResponse deleteHaVipResponse, UnmarshallerContext context) {
+	public static DeleteHaVipResponse unmarshall(DeleteHaVipResponse deleteHaVipResponse, UnmarshallerContext _ctx) {
 		
-		deleteHaVipResponse.setRequestId(context.stringValue("DeleteHaVipResponse.RequestId"));
+		deleteHaVipResponse.setRequestId(_ctx.stringValue("DeleteHaVipResponse.RequestId"));
 	 
 	 	return deleteHaVipResponse;
 	}

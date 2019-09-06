@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CancelCommonBandwidthPackageIpBandwidthResponseUnmarshaller {
 
-	public static CancelCommonBandwidthPackageIpBandwidthResponse unmarshall(CancelCommonBandwidthPackageIpBandwidthResponse cancelCommonBandwidthPackageIpBandwidthResponse, UnmarshallerContext context) {
+	public static CancelCommonBandwidthPackageIpBandwidthResponse unmarshall(CancelCommonBandwidthPackageIpBandwidthResponse cancelCommonBandwidthPackageIpBandwidthResponse, UnmarshallerContext _ctx) {
 		
-		cancelCommonBandwidthPackageIpBandwidthResponse.setRequestId(context.stringValue("CancelCommonBandwidthPackageIpBandwidthResponse.RequestId"));
+		cancelCommonBandwidthPackageIpBandwidthResponse.setRequestId(_ctx.stringValue("CancelCommonBandwidthPackageIpBandwidthResponse.RequestId"));
 	 
 	 	return cancelCommonBandwidthPackageIpBandwidthResponse;
 	}

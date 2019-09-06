@@ -23,33 +23,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DownloadVpnConnectionConfigResponseUnmarshaller {
 
-	public static DownloadVpnConnectionConfigResponse unmarshall(DownloadVpnConnectionConfigResponse downloadVpnConnectionConfigResponse, UnmarshallerContext context) {
+	public static DownloadVpnConnectionConfigResponse unmarshall(DownloadVpnConnectionConfigResponse downloadVpnConnectionConfigResponse, UnmarshallerContext _ctx) {
 		
-		downloadVpnConnectionConfigResponse.setRequestId(context.stringValue("DownloadVpnConnectionConfigResponse.RequestId"));
+		downloadVpnConnectionConfigResponse.setRequestId(_ctx.stringValue("DownloadVpnConnectionConfigResponse.RequestId"));
 
 		VpnConnectionConfig vpnConnectionConfig = new VpnConnectionConfig();
-		vpnConnectionConfig.setLocalSubnet(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.LocalSubnet"));
-		vpnConnectionConfig.setRemoteSubnet(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.RemoteSubnet"));
-		vpnConnectionConfig.setLocal(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.Local"));
-		vpnConnectionConfig.setRemote(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.Remote"));
+		vpnConnectionConfig.setLocalSubnet(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.LocalSubnet"));
+		vpnConnectionConfig.setRemoteSubnet(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.RemoteSubnet"));
+		vpnConnectionConfig.setLocal(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.Local"));
+		vpnConnectionConfig.setRemote(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.Remote"));
 
 		IkeConfig ikeConfig = new IkeConfig();
-		ikeConfig.setPsk(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.Psk"));
-		ikeConfig.setIkeVersion(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeVersion"));
-		ikeConfig.setIkeMode(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeMode"));
-		ikeConfig.setIkeEncAlg(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeEncAlg"));
-		ikeConfig.setIkeAuthAlg(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeAuthAlg"));
-		ikeConfig.setIkePfs(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkePfs"));
-		ikeConfig.setIkeLifetime(context.longValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeLifetime"));
-		ikeConfig.setLocalId(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.LocalId"));
-		ikeConfig.setRemoteId(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.RemoteId"));
+		ikeConfig.setPsk(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.Psk"));
+		ikeConfig.setIkeVersion(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeVersion"));
+		ikeConfig.setIkeMode(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeMode"));
+		ikeConfig.setIkeEncAlg(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeEncAlg"));
+		ikeConfig.setIkeAuthAlg(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeAuthAlg"));
+		ikeConfig.setIkePfs(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkePfs"));
+		ikeConfig.setIkeLifetime(_ctx.longValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.IkeLifetime"));
+		ikeConfig.setLocalId(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.LocalId"));
+		ikeConfig.setRemoteId(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IkeConfig.RemoteId"));
 		vpnConnectionConfig.setIkeConfig(ikeConfig);
 
 		IpsecConfig ipsecConfig = new IpsecConfig();
-		ipsecConfig.setIpsecEncAlg(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecEncAlg"));
-		ipsecConfig.setIpsecAuthAlg(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecAuthAlg"));
-		ipsecConfig.setIpsecPfs(context.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecPfs"));
-		ipsecConfig.setIpsecLifetime(context.longValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecLifetime"));
+		ipsecConfig.setIpsecEncAlg(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecEncAlg"));
+		ipsecConfig.setIpsecAuthAlg(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecAuthAlg"));
+		ipsecConfig.setIpsecPfs(_ctx.stringValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecPfs"));
+		ipsecConfig.setIpsecLifetime(_ctx.longValue("DownloadVpnConnectionConfigResponse.VpnConnectionConfig.IpsecConfig.IpsecLifetime"));
 		vpnConnectionConfig.setIpsecConfig(ipsecConfig);
 		downloadVpnConnectionConfigResponse.setVpnConnectionConfig(vpnConnectionConfig);
 	 

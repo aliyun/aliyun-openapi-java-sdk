@@ -20,23 +20,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifySslVpnServerResponseUnmarshaller {
 
-	public static ModifySslVpnServerResponse unmarshall(ModifySslVpnServerResponse modifySslVpnServerResponse, UnmarshallerContext context) {
+	public static ModifySslVpnServerResponse unmarshall(ModifySslVpnServerResponse modifySslVpnServerResponse, UnmarshallerContext _ctx) {
 		
-		modifySslVpnServerResponse.setRequestId(context.stringValue("ModifySslVpnServerResponse.RequestId"));
-		modifySslVpnServerResponse.setRegionId(context.stringValue("ModifySslVpnServerResponse.RegionId"));
-		modifySslVpnServerResponse.setSslVpnServerId(context.stringValue("ModifySslVpnServerResponse.SslVpnServerId"));
-		modifySslVpnServerResponse.setVpnGatewayId(context.stringValue("ModifySslVpnServerResponse.VpnGatewayId"));
-		modifySslVpnServerResponse.setName(context.stringValue("ModifySslVpnServerResponse.Name"));
-		modifySslVpnServerResponse.setLocalSubnet(context.stringValue("ModifySslVpnServerResponse.LocalSubnet"));
-		modifySslVpnServerResponse.setClientIpPool(context.stringValue("ModifySslVpnServerResponse.ClientIpPool"));
-		modifySslVpnServerResponse.setCreateTime(context.longValue("ModifySslVpnServerResponse.CreateTime"));
-		modifySslVpnServerResponse.setCipher(context.stringValue("ModifySslVpnServerResponse.Cipher"));
-		modifySslVpnServerResponse.setProto(context.stringValue("ModifySslVpnServerResponse.Proto"));
-		modifySslVpnServerResponse.setPort(context.integerValue("ModifySslVpnServerResponse.Port"));
-		modifySslVpnServerResponse.setCompress(context.booleanValue("ModifySslVpnServerResponse.Compress"));
-		modifySslVpnServerResponse.setConnections(context.integerValue("ModifySslVpnServerResponse.Connections"));
-		modifySslVpnServerResponse.setMaxConnections(context.integerValue("ModifySslVpnServerResponse.MaxConnections"));
-		modifySslVpnServerResponse.setInternetIp(context.stringValue("ModifySslVpnServerResponse.InternetIp"));
+		modifySslVpnServerResponse.setRequestId(_ctx.stringValue("ModifySslVpnServerResponse.RequestId"));
+		modifySslVpnServerResponse.setRegionId(_ctx.stringValue("ModifySslVpnServerResponse.RegionId"));
+		modifySslVpnServerResponse.setSslVpnServerId(_ctx.stringValue("ModifySslVpnServerResponse.SslVpnServerId"));
+		modifySslVpnServerResponse.setVpnGatewayId(_ctx.stringValue("ModifySslVpnServerResponse.VpnGatewayId"));
+		modifySslVpnServerResponse.setName(_ctx.stringValue("ModifySslVpnServerResponse.Name"));
+		modifySslVpnServerResponse.setLocalSubnet(_ctx.stringValue("ModifySslVpnServerResponse.LocalSubnet"));
+		modifySslVpnServerResponse.setClientIpPool(_ctx.stringValue("ModifySslVpnServerResponse.ClientIpPool"));
+		modifySslVpnServerResponse.setCreateTime(_ctx.longValue("ModifySslVpnServerResponse.CreateTime"));
+		modifySslVpnServerResponse.setCipher(_ctx.stringValue("ModifySslVpnServerResponse.Cipher"));
+		modifySslVpnServerResponse.setProto(_ctx.stringValue("ModifySslVpnServerResponse.Proto"));
+		modifySslVpnServerResponse.setPort(_ctx.integerValue("ModifySslVpnServerResponse.Port"));
+		modifySslVpnServerResponse.setCompress(_ctx.booleanValue("ModifySslVpnServerResponse.Compress"));
+		modifySslVpnServerResponse.setConnections(_ctx.integerValue("ModifySslVpnServerResponse.Connections"));
+		modifySslVpnServerResponse.setMaxConnections(_ctx.integerValue("ModifySslVpnServerResponse.MaxConnections"));
+		modifySslVpnServerResponse.setInternetIp(_ctx.stringValue("ModifySslVpnServerResponse.InternetIp"));
 	 
 	 	return modifySslVpnServerResponse;
 	}

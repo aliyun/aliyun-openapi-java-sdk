@@ -20,20 +20,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSslVpnClientCertResponseUnmarshaller {
 
-	public static DescribeSslVpnClientCertResponse unmarshall(DescribeSslVpnClientCertResponse describeSslVpnClientCertResponse, UnmarshallerContext context) {
+	public static DescribeSslVpnClientCertResponse unmarshall(DescribeSslVpnClientCertResponse describeSslVpnClientCertResponse, UnmarshallerContext _ctx) {
 		
-		describeSslVpnClientCertResponse.setRequestId(context.stringValue("DescribeSslVpnClientCertResponse.RequestId"));
-		describeSslVpnClientCertResponse.setRegionId(context.stringValue("DescribeSslVpnClientCertResponse.RegionId"));
-		describeSslVpnClientCertResponse.setSslVpnClientCertId(context.stringValue("DescribeSslVpnClientCertResponse.SslVpnClientCertId"));
-		describeSslVpnClientCertResponse.setName(context.stringValue("DescribeSslVpnClientCertResponse.Name"));
-		describeSslVpnClientCertResponse.setSslVpnServerId(context.stringValue("DescribeSslVpnClientCertResponse.SslVpnServerId"));
-		describeSslVpnClientCertResponse.setCaCert(context.stringValue("DescribeSslVpnClientCertResponse.CaCert"));
-		describeSslVpnClientCertResponse.setClientCert(context.stringValue("DescribeSslVpnClientCertResponse.ClientCert"));
-		describeSslVpnClientCertResponse.setClientKey(context.stringValue("DescribeSslVpnClientCertResponse.ClientKey"));
-		describeSslVpnClientCertResponse.setClientConfig(context.stringValue("DescribeSslVpnClientCertResponse.ClientConfig"));
-		describeSslVpnClientCertResponse.setCreateTime(context.longValue("DescribeSslVpnClientCertResponse.CreateTime"));
-		describeSslVpnClientCertResponse.setEndTime(context.longValue("DescribeSslVpnClientCertResponse.EndTime"));
-		describeSslVpnClientCertResponse.setStatus(context.stringValue("DescribeSslVpnClientCertResponse.Status"));
+		describeSslVpnClientCertResponse.setRequestId(_ctx.stringValue("DescribeSslVpnClientCertResponse.RequestId"));
+		describeSslVpnClientCertResponse.setRegionId(_ctx.stringValue("DescribeSslVpnClientCertResponse.RegionId"));
+		describeSslVpnClientCertResponse.setSslVpnClientCertId(_ctx.stringValue("DescribeSslVpnClientCertResponse.SslVpnClientCertId"));
+		describeSslVpnClientCertResponse.setName(_ctx.stringValue("DescribeSslVpnClientCertResponse.Name"));
+		describeSslVpnClientCertResponse.setSslVpnServerId(_ctx.stringValue("DescribeSslVpnClientCertResponse.SslVpnServerId"));
+		describeSslVpnClientCertResponse.setCaCert(_ctx.stringValue("DescribeSslVpnClientCertResponse.CaCert"));
+		describeSslVpnClientCertResponse.setClientCert(_ctx.stringValue("DescribeSslVpnClientCertResponse.ClientCert"));
+		describeSslVpnClientCertResponse.setClientKey(_ctx.stringValue("DescribeSslVpnClientCertResponse.ClientKey"));
+		describeSslVpnClientCertResponse.setClientConfig(_ctx.stringValue("DescribeSslVpnClientCertResponse.ClientConfig"));
+		describeSslVpnClientCertResponse.setCreateTime(_ctx.longValue("DescribeSslVpnClientCertResponse.CreateTime"));
+		describeSslVpnClientCertResponse.setEndTime(_ctx.longValue("DescribeSslVpnClientCertResponse.EndTime"));
+		describeSslVpnClientCertResponse.setStatus(_ctx.stringValue("DescribeSslVpnClientCertResponse.Status"));
 	 
 	 	return describeSslVpnClientCertResponse;
 	}

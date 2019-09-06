@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteSslVpnServerResponseUnmarshaller {
 
-	public static DeleteSslVpnServerResponse unmarshall(DeleteSslVpnServerResponse deleteSslVpnServerResponse, UnmarshallerContext context) {
+	public static DeleteSslVpnServerResponse unmarshall(DeleteSslVpnServerResponse deleteSslVpnServerResponse, UnmarshallerContext _ctx) {
 		
-		deleteSslVpnServerResponse.setRequestId(context.stringValue("DeleteSslVpnServerResponse.RequestId"));
+		deleteSslVpnServerResponse.setRequestId(_ctx.stringValue("DeleteSslVpnServerResponse.RequestId"));
 	 
 	 	return deleteSslVpnServerResponse;
 	}

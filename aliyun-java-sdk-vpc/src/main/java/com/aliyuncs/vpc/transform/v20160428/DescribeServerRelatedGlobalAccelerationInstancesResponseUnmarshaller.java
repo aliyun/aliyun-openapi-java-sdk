@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeServerRelatedGlobalAccelerationInstancesResponseUnmarshaller {
 
-	public static DescribeServerRelatedGlobalAccelerationInstancesResponse unmarshall(DescribeServerRelatedGlobalAccelerationInstancesResponse describeServerRelatedGlobalAccelerationInstancesResponse, UnmarshallerContext context) {
+	public static DescribeServerRelatedGlobalAccelerationInstancesResponse unmarshall(DescribeServerRelatedGlobalAccelerationInstancesResponse describeServerRelatedGlobalAccelerationInstancesResponse, UnmarshallerContext _ctx) {
 		
-		describeServerRelatedGlobalAccelerationInstancesResponse.setRequestId(context.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.RequestId"));
+		describeServerRelatedGlobalAccelerationInstancesResponse.setRequestId(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.RequestId"));
 
 		List<GlobalAccelerationInstance> globalAccelerationInstances = new ArrayList<GlobalAccelerationInstance>();
-		for (int i = 0; i < context.lengthValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances.Length"); i++) {
 			GlobalAccelerationInstance globalAccelerationInstance = new GlobalAccelerationInstance();
-			globalAccelerationInstance.setRegionId(context.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].RegionId"));
-			globalAccelerationInstance.setGlobalAccelerationInstanceId(context.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].GlobalAccelerationInstanceId"));
-			globalAccelerationInstance.setIpAddress(context.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].IpAddress"));
-			globalAccelerationInstance.setServerIpAddress(context.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].ServerIpAddress"));
+			globalAccelerationInstance.setRegionId(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].RegionId"));
+			globalAccelerationInstance.setGlobalAccelerationInstanceId(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].GlobalAccelerationInstanceId"));
+			globalAccelerationInstance.setIpAddress(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].IpAddress"));
+			globalAccelerationInstance.setServerIpAddress(_ctx.stringValue("DescribeServerRelatedGlobalAccelerationInstancesResponse.GlobalAccelerationInstances["+ i +"].ServerIpAddress"));
 
 			globalAccelerationInstances.add(globalAccelerationInstance);
 		}

@@ -24,30 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSslVpnServersResponseUnmarshaller {
 
-	public static DescribeSslVpnServersResponse unmarshall(DescribeSslVpnServersResponse describeSslVpnServersResponse, UnmarshallerContext context) {
+	public static DescribeSslVpnServersResponse unmarshall(DescribeSslVpnServersResponse describeSslVpnServersResponse, UnmarshallerContext _ctx) {
 		
-		describeSslVpnServersResponse.setRequestId(context.stringValue("DescribeSslVpnServersResponse.RequestId"));
-		describeSslVpnServersResponse.setTotalCount(context.integerValue("DescribeSslVpnServersResponse.TotalCount"));
-		describeSslVpnServersResponse.setPageNumber(context.integerValue("DescribeSslVpnServersResponse.PageNumber"));
-		describeSslVpnServersResponse.setPageSize(context.integerValue("DescribeSslVpnServersResponse.PageSize"));
+		describeSslVpnServersResponse.setRequestId(_ctx.stringValue("DescribeSslVpnServersResponse.RequestId"));
+		describeSslVpnServersResponse.setTotalCount(_ctx.integerValue("DescribeSslVpnServersResponse.TotalCount"));
+		describeSslVpnServersResponse.setPageNumber(_ctx.integerValue("DescribeSslVpnServersResponse.PageNumber"));
+		describeSslVpnServersResponse.setPageSize(_ctx.integerValue("DescribeSslVpnServersResponse.PageSize"));
 
 		List<SslVpnServer> sslVpnServers = new ArrayList<SslVpnServer>();
-		for (int i = 0; i < context.lengthValue("DescribeSslVpnServersResponse.SslVpnServers.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSslVpnServersResponse.SslVpnServers.Length"); i++) {
 			SslVpnServer sslVpnServer = new SslVpnServer();
-			sslVpnServer.setRegionId(context.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].RegionId"));
-			sslVpnServer.setSslVpnServerId(context.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].SslVpnServerId"));
-			sslVpnServer.setVpnGatewayId(context.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].VpnGatewayId"));
-			sslVpnServer.setName(context.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Name"));
-			sslVpnServer.setLocalSubnet(context.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].LocalSubnet"));
-			sslVpnServer.setClientIpPool(context.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].ClientIpPool"));
-			sslVpnServer.setCreateTime(context.longValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].CreateTime"));
-			sslVpnServer.setCipher(context.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Cipher"));
-			sslVpnServer.setProto(context.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Proto"));
-			sslVpnServer.setPort(context.integerValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Port"));
-			sslVpnServer.setCompress(context.booleanValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Compress"));
-			sslVpnServer.setConnections(context.integerValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Connections"));
-			sslVpnServer.setMaxConnections(context.integerValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].MaxConnections"));
-			sslVpnServer.setInternetIp(context.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].InternetIp"));
+			sslVpnServer.setRegionId(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].RegionId"));
+			sslVpnServer.setSslVpnServerId(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].SslVpnServerId"));
+			sslVpnServer.setVpnGatewayId(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].VpnGatewayId"));
+			sslVpnServer.setName(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Name"));
+			sslVpnServer.setLocalSubnet(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].LocalSubnet"));
+			sslVpnServer.setClientIpPool(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].ClientIpPool"));
+			sslVpnServer.setCreateTime(_ctx.longValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].CreateTime"));
+			sslVpnServer.setCipher(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Cipher"));
+			sslVpnServer.setProto(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Proto"));
+			sslVpnServer.setPort(_ctx.integerValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Port"));
+			sslVpnServer.setCompress(_ctx.booleanValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Compress"));
+			sslVpnServer.setConnections(_ctx.integerValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].Connections"));
+			sslVpnServer.setMaxConnections(_ctx.integerValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].MaxConnections"));
+			sslVpnServer.setInternetIp(_ctx.stringValue("DescribeSslVpnServersResponse.SslVpnServers["+ i +"].InternetIp"));
 
 			sslVpnServers.add(sslVpnServer);
 		}

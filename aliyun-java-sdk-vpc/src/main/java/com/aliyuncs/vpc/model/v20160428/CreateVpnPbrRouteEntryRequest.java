@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,21 +26,28 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 	
 	public CreateVpnPbrRouteEntryRequest() {
 		super("Vpc", "2016-04-28", "CreateVpnPbrRouteEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String routeSource;
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String description;
+
+	private Boolean publishVpc;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Integer weight;
-
-	private String description;
 
 	private String vpnGatewayId;
 
@@ -48,7 +57,7 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 
 	private String nextHop;
 
-	private Boolean publishVpc;
+	private String overlayMode;
 
 	public String getRouteSource() {
 		return this.routeSource;
@@ -72,17 +81,6 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -91,6 +89,39 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getPublishVpc() {
+		return this.publishVpc;
+	}
+
+	public void setPublishVpc(Boolean publishVpc) {
+		this.publishVpc = publishVpc;
+		if(publishVpc != null){
+			putQueryParameter("PublishVpc", publishVpc.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -113,17 +144,6 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 		this.weight = weight;
 		if(weight != null){
 			putQueryParameter("Weight", weight.toString());
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -171,14 +191,14 @@ public class CreateVpnPbrRouteEntryRequest extends RpcAcsRequest<CreateVpnPbrRou
 		}
 	}
 
-	public Boolean getPublishVpc() {
-		return this.publishVpc;
+	public String getOverlayMode() {
+		return this.overlayMode;
 	}
 
-	public void setPublishVpc(Boolean publishVpc) {
-		this.publishVpc = publishVpc;
-		if(publishVpc != null){
-			putQueryParameter("PublishVpc", publishVpc.toString());
+	public void setOverlayMode(String overlayMode) {
+		this.overlayMode = overlayMode;
+		if(overlayMode != null){
+			putQueryParameter("OverlayMode", overlayMode);
 		}
 	}
 

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateIpv6EgressOnlyRuleResponseUnmarshaller {
 
-	public static CreateIpv6EgressOnlyRuleResponse unmarshall(CreateIpv6EgressOnlyRuleResponse createIpv6EgressOnlyRuleResponse, UnmarshallerContext context) {
+	public static CreateIpv6EgressOnlyRuleResponse unmarshall(CreateIpv6EgressOnlyRuleResponse createIpv6EgressOnlyRuleResponse, UnmarshallerContext _ctx) {
 		
-		createIpv6EgressOnlyRuleResponse.setRequestId(context.stringValue("CreateIpv6EgressOnlyRuleResponse.RequestId"));
-		createIpv6EgressOnlyRuleResponse.setIpv6EgressRuleId(context.stringValue("CreateIpv6EgressOnlyRuleResponse.Ipv6EgressRuleId"));
+		createIpv6EgressOnlyRuleResponse.setRequestId(_ctx.stringValue("CreateIpv6EgressOnlyRuleResponse.RequestId"));
+		createIpv6EgressOnlyRuleResponse.setIpv6EgressRuleId(_ctx.stringValue("CreateIpv6EgressOnlyRuleResponse.Ipv6EgressRuleId"));
 	 
 	 	return createIpv6EgressOnlyRuleResponse;
 	}

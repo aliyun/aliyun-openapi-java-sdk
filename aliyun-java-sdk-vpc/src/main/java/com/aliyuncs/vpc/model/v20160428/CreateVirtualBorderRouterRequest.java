@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +26,11 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 	
 	public CreateVirtualBorderRouterRequest() {
 		super("Vpc", "2016-04-28", "CreateVirtualBorderRouter", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
@@ -34,23 +41,23 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	private String clientToken;
 
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
-
 	private String description;
-
-	private Long ownerId;
 
 	private String peerGatewayIp;
 
 	private String peeringSubnetMask;
 
+	private String localGatewayIp;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
 	private String physicalConnectionId;
 
 	private String name;
-
-	private String localGatewayIp;
 
 	private Long vbrOwnerId;
 
@@ -98,28 +105,6 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -128,17 +113,6 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -164,6 +138,50 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		}
 	}
 
+	public String getLocalGatewayIp() {
+		return this.localGatewayIp;
+	}
+
+	public void setLocalGatewayIp(String localGatewayIp) {
+		this.localGatewayIp = localGatewayIp;
+		if(localGatewayIp != null){
+			putQueryParameter("LocalGatewayIp", localGatewayIp);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getPhysicalConnectionId() {
 		return this.physicalConnectionId;
 	}
@@ -183,17 +201,6 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getLocalGatewayIp() {
-		return this.localGatewayIp;
-	}
-
-	public void setLocalGatewayIp(String localGatewayIp) {
-		this.localGatewayIp = localGatewayIp;
-		if(localGatewayIp != null){
-			putQueryParameter("LocalGatewayIp", localGatewayIp);
 		}
 	}
 

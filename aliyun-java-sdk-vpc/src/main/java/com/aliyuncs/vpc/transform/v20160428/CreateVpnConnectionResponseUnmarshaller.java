@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateVpnConnectionResponseUnmarshaller {
 
-	public static CreateVpnConnectionResponse unmarshall(CreateVpnConnectionResponse createVpnConnectionResponse, UnmarshallerContext context) {
+	public static CreateVpnConnectionResponse unmarshall(CreateVpnConnectionResponse createVpnConnectionResponse, UnmarshallerContext _ctx) {
 		
-		createVpnConnectionResponse.setRequestId(context.stringValue("CreateVpnConnectionResponse.RequestId"));
-		createVpnConnectionResponse.setVpnConnectionId(context.stringValue("CreateVpnConnectionResponse.VpnConnectionId"));
-		createVpnConnectionResponse.setName(context.stringValue("CreateVpnConnectionResponse.Name"));
-		createVpnConnectionResponse.setCreateTime(context.longValue("CreateVpnConnectionResponse.CreateTime"));
+		createVpnConnectionResponse.setRequestId(_ctx.stringValue("CreateVpnConnectionResponse.RequestId"));
+		createVpnConnectionResponse.setVpnConnectionId(_ctx.stringValue("CreateVpnConnectionResponse.VpnConnectionId"));
+		createVpnConnectionResponse.setName(_ctx.stringValue("CreateVpnConnectionResponse.Name"));
+		createVpnConnectionResponse.setCreateTime(_ctx.longValue("CreateVpnConnectionResponse.CreateTime"));
 	 
 	 	return createVpnConnectionResponse;
 	}

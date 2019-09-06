@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,12 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 	
 	public DeleteVSwitchRequest() {
 		super("Vpc", "2016-04-28", "DeleteVSwitch", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String vSwitchId;
 
 	private Long resourceOwnerId;
 
@@ -36,16 +41,7 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 
 	private Long ownerId;
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
-	}
-
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
-		}
-	}
+	private String vSwitchId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -88,6 +84,17 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 

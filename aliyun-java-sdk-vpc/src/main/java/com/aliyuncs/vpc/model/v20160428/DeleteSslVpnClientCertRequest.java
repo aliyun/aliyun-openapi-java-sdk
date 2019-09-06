@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class DeleteSslVpnClientCertRequest extends RpcAcsRequest<DeleteSslVpnCli
 	
 	public DeleteSslVpnClientCertRequest() {
 		super("Vpc", "2016-04-28", "DeleteSslVpnClientCert", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
+
+	private String sslVpnClientCertId;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String sslVpnClientCertId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +56,6 @@ public class DeleteSslVpnClientCertRequest extends RpcAcsRequest<DeleteSslVpnCli
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -68,6 +64,28 @@ public class DeleteSslVpnClientCertRequest extends RpcAcsRequest<DeleteSslVpnCli
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSslVpnClientCertId() {
+		return this.sslVpnClientCertId;
+	}
+
+	public void setSslVpnClientCertId(String sslVpnClientCertId) {
+		this.sslVpnClientCertId = sslVpnClientCertId;
+		if(sslVpnClientCertId != null){
+			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -90,17 +108,6 @@ public class DeleteSslVpnClientCertRequest extends RpcAcsRequest<DeleteSslVpnCli
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSslVpnClientCertId() {
-		return this.sslVpnClientCertId;
-	}
-
-	public void setSslVpnClientCertId(String sslVpnClientCertId) {
-		this.sslVpnClientCertId = sslVpnClientCertId;
-		if(sslVpnClientCertId != null){
-			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
 		}
 	}
 

@@ -25,30 +25,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribePhysicalConnectionLOAResponseUnmarshaller {
 
-	public static DescribePhysicalConnectionLOAResponse unmarshall(DescribePhysicalConnectionLOAResponse describePhysicalConnectionLOAResponse, UnmarshallerContext context) {
+	public static DescribePhysicalConnectionLOAResponse unmarshall(DescribePhysicalConnectionLOAResponse describePhysicalConnectionLOAResponse, UnmarshallerContext _ctx) {
 		
-		describePhysicalConnectionLOAResponse.setRequestId(context.stringValue("DescribePhysicalConnectionLOAResponse.RequestId"));
+		describePhysicalConnectionLOAResponse.setRequestId(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.RequestId"));
 
 		PhysicalConnectionLOAType physicalConnectionLOAType = new PhysicalConnectionLOAType();
-		physicalConnectionLOAType.setInstanceId(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.InstanceId"));
-		physicalConnectionLOAType.setCompanyName(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.CompanyName"));
-		physicalConnectionLOAType.setCompanyLocalizedName(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.CompanyLocalizedName"));
-		physicalConnectionLOAType.setLineType(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineType"));
-		physicalConnectionLOAType.setLineCode(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineCode"));
-		physicalConnectionLOAType.setLineLabel(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineLabel"));
-		physicalConnectionLOAType.setConstructionTime(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.ConstructionTime"));
-		physicalConnectionLOAType.setStatus(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.Status"));
-		physicalConnectionLOAType.setLoaUrl(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LoaUrl"));
-		physicalConnectionLOAType.setSI(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.SI"));
+		physicalConnectionLOAType.setInstanceId(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.InstanceId"));
+		physicalConnectionLOAType.setCompanyName(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.CompanyName"));
+		physicalConnectionLOAType.setCompanyLocalizedName(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.CompanyLocalizedName"));
+		physicalConnectionLOAType.setLineType(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineType"));
+		physicalConnectionLOAType.setLineCode(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineCode"));
+		physicalConnectionLOAType.setLineLabel(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LineLabel"));
+		physicalConnectionLOAType.setConstructionTime(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.ConstructionTime"));
+		physicalConnectionLOAType.setStatus(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.Status"));
+		physicalConnectionLOAType.setLoaUrl(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.LoaUrl"));
+		physicalConnectionLOAType.setSI(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.SI"));
 
 		List<PMInfoItem> pMInfo = new ArrayList<PMInfoItem>();
-		for (int i = 0; i < context.lengthValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo.Length"); i++) {
 			PMInfoItem pMInfoItem = new PMInfoItem();
-			pMInfoItem.setPMName(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMName"));
-			pMInfoItem.setPMContactInfo(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMContactInfo"));
-			pMInfoItem.setPMCertificateType(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateType"));
-			pMInfoItem.setPMCertificateNo(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateNo"));
-			pMInfoItem.setPMGender(context.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMGender"));
+			pMInfoItem.setPMName(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMName"));
+			pMInfoItem.setPMContactInfo(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMContactInfo"));
+			pMInfoItem.setPMCertificateType(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateType"));
+			pMInfoItem.setPMCertificateNo(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateNo"));
+			pMInfoItem.setPMGender(_ctx.stringValue("DescribePhysicalConnectionLOAResponse.PhysicalConnectionLOAType.PMInfo["+ i +"].PMGender"));
 
 			pMInfo.add(pMInfoItem);
 		}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteBgpGroupResponseUnmarshaller {
 
-	public static DeleteBgpGroupResponse unmarshall(DeleteBgpGroupResponse deleteBgpGroupResponse, UnmarshallerContext context) {
+	public static DeleteBgpGroupResponse unmarshall(DeleteBgpGroupResponse deleteBgpGroupResponse, UnmarshallerContext _ctx) {
 		
-		deleteBgpGroupResponse.setRequestId(context.stringValue("DeleteBgpGroupResponse.RequestId"));
+		deleteBgpGroupResponse.setRequestId(_ctx.stringValue("DeleteBgpGroupResponse.RequestId"));
 	 
 	 	return deleteBgpGroupResponse;
 	}

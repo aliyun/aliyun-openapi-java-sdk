@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,35 +26,40 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 	
 	public CreateVpnConnectionRequest() {
 		super("Vpc", "2016-04-28", "CreateVpnConnection", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String ikeConfig;
 
 	private Long resourceOwnerId;
 
-	private String remoteSubnet;
-
-	private Boolean effectImmediately;
-
 	private Boolean autoConfigRoute;
-
-	private String resourceOwnerAccount;
 
 	private String clientToken;
 
-	private String ownerAccount;
-
 	private String ipsecConfig;
-
-	private String vpnGatewayId;
-
-	private Long ownerId;
 
 	private String healthCheckConfig;
 
 	private String customerGatewayId;
 
 	private String localSubnet;
+
+	private String remoteSubnet;
+
+	private Boolean effectImmediately;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String vpnGatewayId;
+
+	private Long ownerId;
 
 	private String name;
 
@@ -78,28 +85,6 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		}
 	}
 
-	public String getRemoteSubnet() {
-		return this.remoteSubnet;
-	}
-
-	public void setRemoteSubnet(String remoteSubnet) {
-		this.remoteSubnet = remoteSubnet;
-		if(remoteSubnet != null){
-			putQueryParameter("RemoteSubnet", remoteSubnet);
-		}
-	}
-
-	public Boolean getEffectImmediately() {
-		return this.effectImmediately;
-	}
-
-	public void setEffectImmediately(Boolean effectImmediately) {
-		this.effectImmediately = effectImmediately;
-		if(effectImmediately != null){
-			putQueryParameter("EffectImmediately", effectImmediately.toString());
-		}
-	}
-
 	public Boolean getAutoConfigRoute() {
 		return this.autoConfigRoute;
 	}
@@ -108,17 +93,6 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		this.autoConfigRoute = autoConfigRoute;
 		if(autoConfigRoute != null){
 			putQueryParameter("AutoConfigRoute", autoConfigRoute.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -133,17 +107,6 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getIpsecConfig() {
 		return this.ipsecConfig;
 	}
@@ -152,28 +115,6 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		this.ipsecConfig = ipsecConfig;
 		if(ipsecConfig != null){
 			putQueryParameter("IpsecConfig", ipsecConfig);
-		}
-	}
-
-	public String getVpnGatewayId() {
-		return this.vpnGatewayId;
-	}
-
-	public void setVpnGatewayId(String vpnGatewayId) {
-		this.vpnGatewayId = vpnGatewayId;
-		if(vpnGatewayId != null){
-			putQueryParameter("VpnGatewayId", vpnGatewayId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -207,6 +148,72 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		this.localSubnet = localSubnet;
 		if(localSubnet != null){
 			putQueryParameter("LocalSubnet", localSubnet);
+		}
+	}
+
+	public String getRemoteSubnet() {
+		return this.remoteSubnet;
+	}
+
+	public void setRemoteSubnet(String remoteSubnet) {
+		this.remoteSubnet = remoteSubnet;
+		if(remoteSubnet != null){
+			putQueryParameter("RemoteSubnet", remoteSubnet);
+		}
+	}
+
+	public Boolean getEffectImmediately() {
+		return this.effectImmediately;
+	}
+
+	public void setEffectImmediately(Boolean effectImmediately) {
+		this.effectImmediately = effectImmediately;
+		if(effectImmediately != null){
+			putQueryParameter("EffectImmediately", effectImmediately.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getVpnGatewayId() {
+		return this.vpnGatewayId;
+	}
+
+	public void setVpnGatewayId(String vpnGatewayId) {
+		this.vpnGatewayId = vpnGatewayId;
+		if(vpnGatewayId != null){
+			putQueryParameter("VpnGatewayId", vpnGatewayId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

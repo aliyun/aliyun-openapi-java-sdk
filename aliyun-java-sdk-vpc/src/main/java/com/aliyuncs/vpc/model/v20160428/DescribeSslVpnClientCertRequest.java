@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,22 @@ public class DescribeSslVpnClientCertRequest extends RpcAcsRequest<DescribeSslVp
 	
 	public DescribeSslVpnClientCertRequest() {
 		super("Vpc", "2016-04-28", "DescribeSslVpnClientCert", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String sslVpnClientCertId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String sslVpnClientCertId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -44,6 +51,17 @@ public class DescribeSslVpnClientCertRequest extends RpcAcsRequest<DescribeSslVp
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSslVpnClientCertId() {
+		return this.sslVpnClientCertId;
+	}
+
+	public void setSslVpnClientCertId(String sslVpnClientCertId) {
+		this.sslVpnClientCertId = sslVpnClientCertId;
+		if(sslVpnClientCertId != null){
+			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
 		}
 	}
 
@@ -77,17 +95,6 @@ public class DescribeSslVpnClientCertRequest extends RpcAcsRequest<DescribeSslVp
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSslVpnClientCertId() {
-		return this.sslVpnClientCertId;
-	}
-
-	public void setSslVpnClientCertId(String sslVpnClientCertId) {
-		this.sslVpnClientCertId = sslVpnClientCertId;
-		if(sslVpnClientCertId != null){
-			putQueryParameter("SslVpnClientCertId", sslVpnClientCertId);
 		}
 	}
 

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateIpv6GatewayResponseUnmarshaller {
 
-	public static CreateIpv6GatewayResponse unmarshall(CreateIpv6GatewayResponse createIpv6GatewayResponse, UnmarshallerContext context) {
+	public static CreateIpv6GatewayResponse unmarshall(CreateIpv6GatewayResponse createIpv6GatewayResponse, UnmarshallerContext _ctx) {
 		
-		createIpv6GatewayResponse.setRequestId(context.stringValue("CreateIpv6GatewayResponse.RequestId"));
-		createIpv6GatewayResponse.setIpv6GatewayId(context.stringValue("CreateIpv6GatewayResponse.Ipv6GatewayId"));
+		createIpv6GatewayResponse.setRequestId(_ctx.stringValue("CreateIpv6GatewayResponse.RequestId"));
+		createIpv6GatewayResponse.setIpv6GatewayId(_ctx.stringValue("CreateIpv6GatewayResponse.Ipv6GatewayId"));
 	 
 	 	return createIpv6GatewayResponse;
 	}

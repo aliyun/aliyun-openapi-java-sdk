@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,27 +26,20 @@ public class DescribeIPv6TranslatorEntriesRequest extends RpcAcsRequest<Describe
 	
 	public DescribeIPv6TranslatorEntriesRequest() {
 		super("Vpc", "2016-04-28", "DescribeIPv6TranslatorEntries", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Integer backendIpv4Port;
 
-	private String aclId;
-
 	private Long resourceOwnerId;
-
-	private String ipv6TranslatorEntryId;
-
-	private String resourceOwnerAccount;
 
 	private String entryName;
 
-	private String allocateIpv6Addr;
-
 	private String clientToken;
-
-	private String ownerAccount;
-
-	private Long ownerId;
 
 	private String aclStatus;
 
@@ -57,6 +52,18 @@ public class DescribeIPv6TranslatorEntriesRequest extends RpcAcsRequest<Describe
 	private Integer pageSize;
 
 	private String backendIpv4Addr;
+
+	private String aclId;
+
+	private String ipv6TranslatorEntryId;
+
+	private String resourceOwnerAccount;
+
+	private String allocateIpv6Addr;
+
+	private String ownerAccount;
+
+	private Long ownerId;
 
 	private String transProtocol;
 
@@ -73,17 +80,6 @@ public class DescribeIPv6TranslatorEntriesRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getAclId() {
-		return this.aclId;
-	}
-
-	public void setAclId(String aclId) {
-		this.aclId = aclId;
-		if(aclId != null){
-			putQueryParameter("AclId", aclId);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -92,28 +88,6 @@ public class DescribeIPv6TranslatorEntriesRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getIpv6TranslatorEntryId() {
-		return this.ipv6TranslatorEntryId;
-	}
-
-	public void setIpv6TranslatorEntryId(String ipv6TranslatorEntryId) {
-		this.ipv6TranslatorEntryId = ipv6TranslatorEntryId;
-		if(ipv6TranslatorEntryId != null){
-			putQueryParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -128,17 +102,6 @@ public class DescribeIPv6TranslatorEntriesRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getAllocateIpv6Addr() {
-		return this.allocateIpv6Addr;
-	}
-
-	public void setAllocateIpv6Addr(String allocateIpv6Addr) {
-		this.allocateIpv6Addr = allocateIpv6Addr;
-		if(allocateIpv6Addr != null){
-			putQueryParameter("AllocateIpv6Addr", allocateIpv6Addr);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -147,28 +110,6 @@ public class DescribeIPv6TranslatorEntriesRequest extends RpcAcsRequest<Describe
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -235,6 +176,72 @@ public class DescribeIPv6TranslatorEntriesRequest extends RpcAcsRequest<Describe
 		this.backendIpv4Addr = backendIpv4Addr;
 		if(backendIpv4Addr != null){
 			putQueryParameter("BackendIpv4Addr", backendIpv4Addr);
+		}
+	}
+
+	public String getAclId() {
+		return this.aclId;
+	}
+
+	public void setAclId(String aclId) {
+		this.aclId = aclId;
+		if(aclId != null){
+			putQueryParameter("AclId", aclId);
+		}
+	}
+
+	public String getIpv6TranslatorEntryId() {
+		return this.ipv6TranslatorEntryId;
+	}
+
+	public void setIpv6TranslatorEntryId(String ipv6TranslatorEntryId) {
+		this.ipv6TranslatorEntryId = ipv6TranslatorEntryId;
+		if(ipv6TranslatorEntryId != null){
+			putQueryParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getAllocateIpv6Addr() {
+		return this.allocateIpv6Addr;
+	}
+
+	public void setAllocateIpv6Addr(String allocateIpv6Addr) {
+		this.allocateIpv6Addr = allocateIpv6Addr;
+		if(allocateIpv6Addr != null){
+			putQueryParameter("AllocateIpv6Addr", allocateIpv6Addr);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

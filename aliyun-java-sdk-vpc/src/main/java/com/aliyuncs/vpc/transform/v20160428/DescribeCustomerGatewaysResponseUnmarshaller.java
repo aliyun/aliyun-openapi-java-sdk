@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCustomerGatewaysResponseUnmarshaller {
 
-	public static DescribeCustomerGatewaysResponse unmarshall(DescribeCustomerGatewaysResponse describeCustomerGatewaysResponse, UnmarshallerContext context) {
+	public static DescribeCustomerGatewaysResponse unmarshall(DescribeCustomerGatewaysResponse describeCustomerGatewaysResponse, UnmarshallerContext _ctx) {
 		
-		describeCustomerGatewaysResponse.setRequestId(context.stringValue("DescribeCustomerGatewaysResponse.RequestId"));
-		describeCustomerGatewaysResponse.setTotalCount(context.integerValue("DescribeCustomerGatewaysResponse.TotalCount"));
-		describeCustomerGatewaysResponse.setPageNumber(context.integerValue("DescribeCustomerGatewaysResponse.PageNumber"));
-		describeCustomerGatewaysResponse.setPageSize(context.integerValue("DescribeCustomerGatewaysResponse.PageSize"));
+		describeCustomerGatewaysResponse.setRequestId(_ctx.stringValue("DescribeCustomerGatewaysResponse.RequestId"));
+		describeCustomerGatewaysResponse.setTotalCount(_ctx.integerValue("DescribeCustomerGatewaysResponse.TotalCount"));
+		describeCustomerGatewaysResponse.setPageNumber(_ctx.integerValue("DescribeCustomerGatewaysResponse.PageNumber"));
+		describeCustomerGatewaysResponse.setPageSize(_ctx.integerValue("DescribeCustomerGatewaysResponse.PageSize"));
 
 		List<CustomerGateway> customerGateways = new ArrayList<CustomerGateway>();
-		for (int i = 0; i < context.lengthValue("DescribeCustomerGatewaysResponse.CustomerGateways.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCustomerGatewaysResponse.CustomerGateways.Length"); i++) {
 			CustomerGateway customerGateway = new CustomerGateway();
-			customerGateway.setCustomerGatewayId(context.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].CustomerGatewayId"));
-			customerGateway.setName(context.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Name"));
-			customerGateway.setIpAddress(context.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].IpAddress"));
-			customerGateway.setDescription(context.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Description"));
-			customerGateway.setCreateTime(context.longValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].CreateTime"));
+			customerGateway.setCustomerGatewayId(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].CustomerGatewayId"));
+			customerGateway.setName(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Name"));
+			customerGateway.setIpAddress(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].IpAddress"));
+			customerGateway.setDescription(_ctx.stringValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].Description"));
+			customerGateway.setCreateTime(_ctx.longValue("DescribeCustomerGatewaysResponse.CustomerGateways["+ i +"].CreateTime"));
 
 			customerGateways.add(customerGateway);
 		}

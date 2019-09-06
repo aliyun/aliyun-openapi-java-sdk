@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyNatGatewayAttributeResponseUnmarshaller {
 
-	public static ModifyNatGatewayAttributeResponse unmarshall(ModifyNatGatewayAttributeResponse modifyNatGatewayAttributeResponse, UnmarshallerContext context) {
+	public static ModifyNatGatewayAttributeResponse unmarshall(ModifyNatGatewayAttributeResponse modifyNatGatewayAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyNatGatewayAttributeResponse.setRequestId(context.stringValue("ModifyNatGatewayAttributeResponse.RequestId"));
+		modifyNatGatewayAttributeResponse.setRequestId(_ctx.stringValue("ModifyNatGatewayAttributeResponse.RequestId"));
 	 
 	 	return modifyNatGatewayAttributeResponse;
 	}

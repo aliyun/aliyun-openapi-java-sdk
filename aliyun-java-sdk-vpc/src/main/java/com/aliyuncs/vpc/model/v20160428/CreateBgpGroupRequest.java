@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,29 +26,36 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 	
 	public CreateBgpGroupRequest() {
 		super("Vpc", "2016-04-28", "CreateBgpGroup", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String authKey;
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
 	private String clientToken;
 
-	private String ownerAccount;
-
 	private String description;
-
-	private Long ownerId;
 
 	private Long peerAsn;
 
 	private Boolean isFakeAsn;
 
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private Long ownerId;
+
 	private String routerId;
 
 	private String name;
+
+	private Long localAsn;
 
 	public String getAuthKey() {
 		return this.authKey;
@@ -70,17 +79,6 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -92,17 +90,6 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -111,17 +98,6 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -147,6 +123,39 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getRouterId() {
 		return this.routerId;
 	}
@@ -166,6 +175,17 @@ public class CreateBgpGroupRequest extends RpcAcsRequest<CreateBgpGroupResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getLocalAsn() {
+		return this.localAsn;
+	}
+
+	public void setLocalAsn(Long localAsn) {
+		this.localAsn = localAsn;
+		if(localAsn != null){
+			putQueryParameter("LocalAsn", localAsn.toString());
 		}
 	}
 

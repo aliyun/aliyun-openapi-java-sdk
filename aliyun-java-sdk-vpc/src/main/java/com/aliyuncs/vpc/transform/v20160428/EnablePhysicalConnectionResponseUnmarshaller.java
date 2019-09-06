@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EnablePhysicalConnectionResponseUnmarshaller {
 
-	public static EnablePhysicalConnectionResponse unmarshall(EnablePhysicalConnectionResponse enablePhysicalConnectionResponse, UnmarshallerContext context) {
+	public static EnablePhysicalConnectionResponse unmarshall(EnablePhysicalConnectionResponse enablePhysicalConnectionResponse, UnmarshallerContext _ctx) {
 		
-		enablePhysicalConnectionResponse.setRequestId(context.stringValue("EnablePhysicalConnectionResponse.RequestId"));
+		enablePhysicalConnectionResponse.setRequestId(_ctx.stringValue("EnablePhysicalConnectionResponse.RequestId"));
 	 
 	 	return enablePhysicalConnectionResponse;
 	}

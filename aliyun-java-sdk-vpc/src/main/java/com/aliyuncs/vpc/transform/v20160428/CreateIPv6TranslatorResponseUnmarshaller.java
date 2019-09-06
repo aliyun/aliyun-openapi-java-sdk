@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateIPv6TranslatorResponseUnmarshaller {
 
-	public static CreateIPv6TranslatorResponse unmarshall(CreateIPv6TranslatorResponse createIPv6TranslatorResponse, UnmarshallerContext context) {
+	public static CreateIPv6TranslatorResponse unmarshall(CreateIPv6TranslatorResponse createIPv6TranslatorResponse, UnmarshallerContext _ctx) {
 		
-		createIPv6TranslatorResponse.setRequestId(context.stringValue("CreateIPv6TranslatorResponse.RequestId"));
-		createIPv6TranslatorResponse.setIpv6TranslatorId(context.stringValue("CreateIPv6TranslatorResponse.Ipv6TranslatorId"));
-		createIPv6TranslatorResponse.setName(context.stringValue("CreateIPv6TranslatorResponse.Name"));
-		createIPv6TranslatorResponse.setSpec(context.stringValue("CreateIPv6TranslatorResponse.Spec"));
-		createIPv6TranslatorResponse.setOrderId(context.longValue("CreateIPv6TranslatorResponse.OrderId"));
+		createIPv6TranslatorResponse.setRequestId(_ctx.stringValue("CreateIPv6TranslatorResponse.RequestId"));
+		createIPv6TranslatorResponse.setIpv6TranslatorId(_ctx.stringValue("CreateIPv6TranslatorResponse.Ipv6TranslatorId"));
+		createIPv6TranslatorResponse.setName(_ctx.stringValue("CreateIPv6TranslatorResponse.Name"));
+		createIPv6TranslatorResponse.setSpec(_ctx.stringValue("CreateIPv6TranslatorResponse.Spec"));
+		createIPv6TranslatorResponse.setOrderId(_ctx.longValue("CreateIPv6TranslatorResponse.OrderId"));
 	 
 	 	return createIPv6TranslatorResponse;
 	}

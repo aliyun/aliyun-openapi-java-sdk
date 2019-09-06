@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,25 +26,30 @@ public class CreateIPv6TranslatorRequest extends RpcAcsRequest<CreateIPv6Transla
 	
 	public CreateIPv6TranslatorRequest() {
 		super("Vpc", "2016-04-28", "CreateIPv6Translator", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
+	private String spec;
+
+	private Integer duration;
+
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
-
-	private String clientToken;
 
 	private Integer bandwidth;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String spec;
-
-	private Integer duration;
 
 	private String name;
 
@@ -58,6 +65,39 @@ public class CreateIPv6TranslatorRequest extends RpcAcsRequest<CreateIPv6Transla
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSpec() {
+		return this.spec;
+	}
+
+	public void setSpec(String spec) {
+		this.spec = spec;
+		if(spec != null){
+			putQueryParameter("Spec", spec);
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
 		}
 	}
 
@@ -80,17 +120,6 @@ public class CreateIPv6TranslatorRequest extends RpcAcsRequest<CreateIPv6Transla
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -124,28 +153,6 @@ public class CreateIPv6TranslatorRequest extends RpcAcsRequest<CreateIPv6Transla
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSpec() {
-		return this.spec;
-	}
-
-	public void setSpec(String spec) {
-		this.spec = spec;
-		if(spec != null){
-			putQueryParameter("Spec", spec);
-		}
-	}
-
-	public Integer getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
 		}
 	}
 

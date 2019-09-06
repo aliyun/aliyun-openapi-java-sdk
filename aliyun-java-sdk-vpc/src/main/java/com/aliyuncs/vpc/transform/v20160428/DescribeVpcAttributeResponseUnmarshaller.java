@@ -25,51 +25,51 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVpcAttributeResponseUnmarshaller {
 
-	public static DescribeVpcAttributeResponse unmarshall(DescribeVpcAttributeResponse describeVpcAttributeResponse, UnmarshallerContext context) {
+	public static DescribeVpcAttributeResponse unmarshall(DescribeVpcAttributeResponse describeVpcAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeVpcAttributeResponse.setRequestId(context.stringValue("DescribeVpcAttributeResponse.RequestId"));
-		describeVpcAttributeResponse.setVpcId(context.stringValue("DescribeVpcAttributeResponse.VpcId"));
-		describeVpcAttributeResponse.setRegionId(context.stringValue("DescribeVpcAttributeResponse.RegionId"));
-		describeVpcAttributeResponse.setStatus(context.stringValue("DescribeVpcAttributeResponse.Status"));
-		describeVpcAttributeResponse.setVpcName(context.stringValue("DescribeVpcAttributeResponse.VpcName"));
-		describeVpcAttributeResponse.setCreationTime(context.stringValue("DescribeVpcAttributeResponse.CreationTime"));
-		describeVpcAttributeResponse.setCidrBlock(context.stringValue("DescribeVpcAttributeResponse.CidrBlock"));
-		describeVpcAttributeResponse.setIpv6CidrBlock(context.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlock"));
-		describeVpcAttributeResponse.setVRouterId(context.stringValue("DescribeVpcAttributeResponse.VRouterId"));
-		describeVpcAttributeResponse.setDescription(context.stringValue("DescribeVpcAttributeResponse.Description"));
-		describeVpcAttributeResponse.setIsDefault(context.booleanValue("DescribeVpcAttributeResponse.IsDefault"));
-		describeVpcAttributeResponse.setClassicLinkEnabled(context.booleanValue("DescribeVpcAttributeResponse.ClassicLinkEnabled"));
-		describeVpcAttributeResponse.setResourceGroupId(context.stringValue("DescribeVpcAttributeResponse.ResourceGroupId"));
-		describeVpcAttributeResponse.setNetworkAclNum(context.stringValue("DescribeVpcAttributeResponse.NetworkAclNum"));
+		describeVpcAttributeResponse.setRequestId(_ctx.stringValue("DescribeVpcAttributeResponse.RequestId"));
+		describeVpcAttributeResponse.setVpcId(_ctx.stringValue("DescribeVpcAttributeResponse.VpcId"));
+		describeVpcAttributeResponse.setRegionId(_ctx.stringValue("DescribeVpcAttributeResponse.RegionId"));
+		describeVpcAttributeResponse.setStatus(_ctx.stringValue("DescribeVpcAttributeResponse.Status"));
+		describeVpcAttributeResponse.setVpcName(_ctx.stringValue("DescribeVpcAttributeResponse.VpcName"));
+		describeVpcAttributeResponse.setCreationTime(_ctx.stringValue("DescribeVpcAttributeResponse.CreationTime"));
+		describeVpcAttributeResponse.setCidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.CidrBlock"));
+		describeVpcAttributeResponse.setIpv6CidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlock"));
+		describeVpcAttributeResponse.setVRouterId(_ctx.stringValue("DescribeVpcAttributeResponse.VRouterId"));
+		describeVpcAttributeResponse.setDescription(_ctx.stringValue("DescribeVpcAttributeResponse.Description"));
+		describeVpcAttributeResponse.setIsDefault(_ctx.booleanValue("DescribeVpcAttributeResponse.IsDefault"));
+		describeVpcAttributeResponse.setClassicLinkEnabled(_ctx.booleanValue("DescribeVpcAttributeResponse.ClassicLinkEnabled"));
+		describeVpcAttributeResponse.setResourceGroupId(_ctx.stringValue("DescribeVpcAttributeResponse.ResourceGroupId"));
+		describeVpcAttributeResponse.setNetworkAclNum(_ctx.stringValue("DescribeVpcAttributeResponse.NetworkAclNum"));
 
 		List<String> vSwitchIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeVpcAttributeResponse.VSwitchIds.Length"); i++) {
-			vSwitchIds.add(context.stringValue("DescribeVpcAttributeResponse.VSwitchIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.VSwitchIds.Length"); i++) {
+			vSwitchIds.add(_ctx.stringValue("DescribeVpcAttributeResponse.VSwitchIds["+ i +"]"));
 		}
 		describeVpcAttributeResponse.setVSwitchIds(vSwitchIds);
 
 		List<String> userCidrs = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeVpcAttributeResponse.UserCidrs.Length"); i++) {
-			userCidrs.add(context.stringValue("DescribeVpcAttributeResponse.UserCidrs["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.UserCidrs.Length"); i++) {
+			userCidrs.add(_ctx.stringValue("DescribeVpcAttributeResponse.UserCidrs["+ i +"]"));
 		}
 		describeVpcAttributeResponse.setUserCidrs(userCidrs);
 
 		List<AssociatedCen> associatedCens = new ArrayList<AssociatedCen>();
-		for (int i = 0; i < context.lengthValue("DescribeVpcAttributeResponse.AssociatedCens.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.AssociatedCens.Length"); i++) {
 			AssociatedCen associatedCen = new AssociatedCen();
-			associatedCen.setCenId(context.stringValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenId"));
-			associatedCen.setCenOwnerId(context.longValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenOwnerId"));
-			associatedCen.setCenStatus(context.stringValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenStatus"));
+			associatedCen.setCenId(_ctx.stringValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenId"));
+			associatedCen.setCenOwnerId(_ctx.longValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenOwnerId"));
+			associatedCen.setCenStatus(_ctx.stringValue("DescribeVpcAttributeResponse.AssociatedCens["+ i +"].CenStatus"));
 
 			associatedCens.add(associatedCen);
 		}
 		describeVpcAttributeResponse.setAssociatedCens(associatedCens);
 
 		List<CloudResourceSetType> cloudResources = new ArrayList<CloudResourceSetType>();
-		for (int i = 0; i < context.lengthValue("DescribeVpcAttributeResponse.CloudResources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.CloudResources.Length"); i++) {
 			CloudResourceSetType cloudResourceSetType = new CloudResourceSetType();
-			cloudResourceSetType.setResourceType(context.stringValue("DescribeVpcAttributeResponse.CloudResources["+ i +"].ResourceType"));
-			cloudResourceSetType.setResourceCount(context.integerValue("DescribeVpcAttributeResponse.CloudResources["+ i +"].ResourceCount"));
+			cloudResourceSetType.setResourceType(_ctx.stringValue("DescribeVpcAttributeResponse.CloudResources["+ i +"].ResourceType"));
+			cloudResourceSetType.setResourceCount(_ctx.integerValue("DescribeVpcAttributeResponse.CloudResources["+ i +"].ResourceCount"));
 
 			cloudResources.add(cloudResourceSetType);
 		}

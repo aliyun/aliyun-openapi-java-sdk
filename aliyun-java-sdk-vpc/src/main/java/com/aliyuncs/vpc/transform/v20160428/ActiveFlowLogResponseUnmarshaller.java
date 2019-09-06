@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ActiveFlowLogResponseUnmarshaller {
 
-	public static ActiveFlowLogResponse unmarshall(ActiveFlowLogResponse activeFlowLogResponse, UnmarshallerContext context) {
+	public static ActiveFlowLogResponse unmarshall(ActiveFlowLogResponse activeFlowLogResponse, UnmarshallerContext _ctx) {
 		
-		activeFlowLogResponse.setRequestId(context.stringValue("ActiveFlowLogResponse.RequestId"));
-		activeFlowLogResponse.setSuccess(context.stringValue("ActiveFlowLogResponse.Success"));
+		activeFlowLogResponse.setRequestId(_ctx.stringValue("ActiveFlowLogResponse.RequestId"));
+		activeFlowLogResponse.setSuccess(_ctx.stringValue("ActiveFlowLogResponse.Success"));
 	 
 	 	return activeFlowLogResponse;
 	}

@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,16 @@ public class ModifyCommonBandwidthPackageAttributeRequest extends RpcAcsRequest<
 	
 	public ModifyCommonBandwidthPackageAttributeRequest() {
 		super("Vpc", "2016-04-28", "ModifyCommonBandwidthPackageAttribute", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String description;
 
 	private String bandwidthPackageId;
 
@@ -34,11 +43,9 @@ public class ModifyCommonBandwidthPackageAttributeRequest extends RpcAcsRequest<
 
 	private String ownerAccount;
 
-	private String name;
-
-	private String description;
-
 	private Long ownerId;
+
+	private String name;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +55,17 @@ public class ModifyCommonBandwidthPackageAttributeRequest extends RpcAcsRequest<
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -84,28 +102,6 @@ public class ModifyCommonBandwidthPackageAttributeRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +110,17 @@ public class ModifyCommonBandwidthPackageAttributeRequest extends RpcAcsRequest<
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

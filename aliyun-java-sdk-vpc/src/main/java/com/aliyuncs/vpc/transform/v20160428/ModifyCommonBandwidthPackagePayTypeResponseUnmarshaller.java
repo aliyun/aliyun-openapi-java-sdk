@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyCommonBandwidthPackagePayTypeResponseUnmarshaller {
 
-	public static ModifyCommonBandwidthPackagePayTypeResponse unmarshall(ModifyCommonBandwidthPackagePayTypeResponse modifyCommonBandwidthPackagePayTypeResponse, UnmarshallerContext context) {
+	public static ModifyCommonBandwidthPackagePayTypeResponse unmarshall(ModifyCommonBandwidthPackagePayTypeResponse modifyCommonBandwidthPackagePayTypeResponse, UnmarshallerContext _ctx) {
 		
-		modifyCommonBandwidthPackagePayTypeResponse.setRequestId(context.stringValue("ModifyCommonBandwidthPackagePayTypeResponse.RequestId"));
-		modifyCommonBandwidthPackagePayTypeResponse.setOrderId(context.longValue("ModifyCommonBandwidthPackagePayTypeResponse.OrderId"));
-		modifyCommonBandwidthPackagePayTypeResponse.setCode(context.stringValue("ModifyCommonBandwidthPackagePayTypeResponse.Code"));
-		modifyCommonBandwidthPackagePayTypeResponse.setMessage(context.stringValue("ModifyCommonBandwidthPackagePayTypeResponse.Message"));
+		modifyCommonBandwidthPackagePayTypeResponse.setRequestId(_ctx.stringValue("ModifyCommonBandwidthPackagePayTypeResponse.RequestId"));
+		modifyCommonBandwidthPackagePayTypeResponse.setOrderId(_ctx.longValue("ModifyCommonBandwidthPackagePayTypeResponse.OrderId"));
+		modifyCommonBandwidthPackagePayTypeResponse.setCode(_ctx.stringValue("ModifyCommonBandwidthPackagePayTypeResponse.Code"));
+		modifyCommonBandwidthPackagePayTypeResponse.setMessage(_ctx.stringValue("ModifyCommonBandwidthPackagePayTypeResponse.Message"));
 	 
 	 	return modifyCommonBandwidthPackagePayTypeResponse;
 	}

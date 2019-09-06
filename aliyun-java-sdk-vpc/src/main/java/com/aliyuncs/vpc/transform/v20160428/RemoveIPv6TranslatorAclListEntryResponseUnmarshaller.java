@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveIPv6TranslatorAclListEntryResponseUnmarshaller {
 
-	public static RemoveIPv6TranslatorAclListEntryResponse unmarshall(RemoveIPv6TranslatorAclListEntryResponse removeIPv6TranslatorAclListEntryResponse, UnmarshallerContext context) {
+	public static RemoveIPv6TranslatorAclListEntryResponse unmarshall(RemoveIPv6TranslatorAclListEntryResponse removeIPv6TranslatorAclListEntryResponse, UnmarshallerContext _ctx) {
 		
-		removeIPv6TranslatorAclListEntryResponse.setRequestId(context.stringValue("RemoveIPv6TranslatorAclListEntryResponse.RequestId"));
+		removeIPv6TranslatorAclListEntryResponse.setRequestId(_ctx.stringValue("RemoveIPv6TranslatorAclListEntryResponse.RequestId"));
 	 
 	 	return removeIPv6TranslatorAclListEntryResponse;
 	}

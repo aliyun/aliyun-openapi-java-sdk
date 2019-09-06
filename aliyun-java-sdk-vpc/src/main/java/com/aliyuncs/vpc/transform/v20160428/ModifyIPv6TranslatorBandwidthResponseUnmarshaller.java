@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyIPv6TranslatorBandwidthResponseUnmarshaller {
 
-	public static ModifyIPv6TranslatorBandwidthResponse unmarshall(ModifyIPv6TranslatorBandwidthResponse modifyIPv6TranslatorBandwidthResponse, UnmarshallerContext context) {
+	public static ModifyIPv6TranslatorBandwidthResponse unmarshall(ModifyIPv6TranslatorBandwidthResponse modifyIPv6TranslatorBandwidthResponse, UnmarshallerContext _ctx) {
 		
-		modifyIPv6TranslatorBandwidthResponse.setRequestId(context.stringValue("ModifyIPv6TranslatorBandwidthResponse.RequestId"));
-		modifyIPv6TranslatorBandwidthResponse.setOrderId(context.stringValue("ModifyIPv6TranslatorBandwidthResponse.OrderId"));
+		modifyIPv6TranslatorBandwidthResponse.setRequestId(_ctx.stringValue("ModifyIPv6TranslatorBandwidthResponse.RequestId"));
+		modifyIPv6TranslatorBandwidthResponse.setOrderId(_ctx.stringValue("ModifyIPv6TranslatorBandwidthResponse.OrderId"));
 	 
 	 	return modifyIPv6TranslatorBandwidthResponse;
 	}

@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSnatTableEntriesResponseUnmarshaller {
 
-	public static DescribeSnatTableEntriesResponse unmarshall(DescribeSnatTableEntriesResponse describeSnatTableEntriesResponse, UnmarshallerContext context) {
+	public static DescribeSnatTableEntriesResponse unmarshall(DescribeSnatTableEntriesResponse describeSnatTableEntriesResponse, UnmarshallerContext _ctx) {
 		
-		describeSnatTableEntriesResponse.setRequestId(context.stringValue("DescribeSnatTableEntriesResponse.RequestId"));
-		describeSnatTableEntriesResponse.setTotalCount(context.integerValue("DescribeSnatTableEntriesResponse.TotalCount"));
-		describeSnatTableEntriesResponse.setPageNumber(context.integerValue("DescribeSnatTableEntriesResponse.PageNumber"));
-		describeSnatTableEntriesResponse.setPageSize(context.integerValue("DescribeSnatTableEntriesResponse.PageSize"));
+		describeSnatTableEntriesResponse.setRequestId(_ctx.stringValue("DescribeSnatTableEntriesResponse.RequestId"));
+		describeSnatTableEntriesResponse.setTotalCount(_ctx.integerValue("DescribeSnatTableEntriesResponse.TotalCount"));
+		describeSnatTableEntriesResponse.setPageNumber(_ctx.integerValue("DescribeSnatTableEntriesResponse.PageNumber"));
+		describeSnatTableEntriesResponse.setPageSize(_ctx.integerValue("DescribeSnatTableEntriesResponse.PageSize"));
 
 		List<SnatTableEntry> snatTableEntries = new ArrayList<SnatTableEntry>();
-		for (int i = 0; i < context.lengthValue("DescribeSnatTableEntriesResponse.SnatTableEntries.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSnatTableEntriesResponse.SnatTableEntries.Length"); i++) {
 			SnatTableEntry snatTableEntry = new SnatTableEntry();
-			snatTableEntry.setSnatTableId(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatTableId"));
-			snatTableEntry.setSnatEntryId(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatEntryId"));
-			snatTableEntry.setSourceVSwitchId(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SourceVSwitchId"));
-			snatTableEntry.setSourceCIDR(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SourceCIDR"));
-			snatTableEntry.setSnatIp(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIp"));
-			snatTableEntry.setStatus(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].Status"));
-			snatTableEntry.setSnatEntryName(context.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatEntryName"));
+			snatTableEntry.setSnatTableId(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatTableId"));
+			snatTableEntry.setSnatEntryId(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatEntryId"));
+			snatTableEntry.setSourceVSwitchId(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SourceVSwitchId"));
+			snatTableEntry.setSourceCIDR(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SourceCIDR"));
+			snatTableEntry.setSnatIp(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatIp"));
+			snatTableEntry.setStatus(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].Status"));
+			snatTableEntry.setSnatEntryName(_ctx.stringValue("DescribeSnatTableEntriesResponse.SnatTableEntries["+ i +"].SnatEntryName"));
 
 			snatTableEntries.add(snatTableEntry);
 		}

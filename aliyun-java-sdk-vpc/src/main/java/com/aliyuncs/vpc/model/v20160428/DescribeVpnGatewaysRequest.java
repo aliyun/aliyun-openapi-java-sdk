@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,38 +26,32 @@ public class DescribeVpnGatewaysRequest extends RpcAcsRequest<DescribeVpnGateway
 	
 	public DescribeVpnGatewaysRequest() {
 		super("Vpc", "2016-04-28", "DescribeVpnGateways", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String businessStatus;
-
 	private Long resourceOwnerId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String businessStatus;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String vpcId;
-
-	private Integer pageSize;
-
 	private String vpnGatewayId;
 
 	private Long ownerId;
 
-	private Integer pageNumber;
+	private String vpcId;
 
 	private String status;
-
-	public String getBusinessStatus() {
-		return this.businessStatus;
-	}
-
-	public void setBusinessStatus(String businessStatus) {
-		this.businessStatus = businessStatus;
-		if(businessStatus != null){
-			putQueryParameter("BusinessStatus", businessStatus);
-		}
-	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -65,6 +61,39 @@ public class DescribeVpnGatewaysRequest extends RpcAcsRequest<DescribeVpnGateway
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getBusinessStatus() {
+		return this.businessStatus;
+	}
+
+	public void setBusinessStatus(String businessStatus) {
+		this.businessStatus = businessStatus;
+		if(businessStatus != null){
+			putQueryParameter("BusinessStatus", businessStatus);
 		}
 	}
 
@@ -90,28 +119,6 @@ public class DescribeVpnGatewaysRequest extends RpcAcsRequest<DescribeVpnGateway
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getVpnGatewayId() {
 		return this.vpnGatewayId;
 	}
@@ -134,14 +141,14 @@ public class DescribeVpnGatewaysRequest extends RpcAcsRequest<DescribeVpnGateway
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

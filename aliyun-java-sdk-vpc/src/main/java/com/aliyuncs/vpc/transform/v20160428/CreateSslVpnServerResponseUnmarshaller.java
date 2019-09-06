@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateSslVpnServerResponseUnmarshaller {
 
-	public static CreateSslVpnServerResponse unmarshall(CreateSslVpnServerResponse createSslVpnServerResponse, UnmarshallerContext context) {
+	public static CreateSslVpnServerResponse unmarshall(CreateSslVpnServerResponse createSslVpnServerResponse, UnmarshallerContext _ctx) {
 		
-		createSslVpnServerResponse.setRequestId(context.stringValue("CreateSslVpnServerResponse.RequestId"));
-		createSslVpnServerResponse.setSslVpnServerId(context.stringValue("CreateSslVpnServerResponse.SslVpnServerId"));
-		createSslVpnServerResponse.setName(context.stringValue("CreateSslVpnServerResponse.Name"));
+		createSslVpnServerResponse.setRequestId(_ctx.stringValue("CreateSslVpnServerResponse.RequestId"));
+		createSslVpnServerResponse.setSslVpnServerId(_ctx.stringValue("CreateSslVpnServerResponse.SslVpnServerId"));
+		createSslVpnServerResponse.setName(_ctx.stringValue("CreateSslVpnServerResponse.Name"));
 	 
 	 	return createSslVpnServerResponse;
 	}

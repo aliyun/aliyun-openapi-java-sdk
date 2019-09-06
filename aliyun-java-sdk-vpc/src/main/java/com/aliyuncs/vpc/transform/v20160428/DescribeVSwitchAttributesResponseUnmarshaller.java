@@ -25,33 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeVSwitchAttributesResponseUnmarshaller {
 
-	public static DescribeVSwitchAttributesResponse unmarshall(DescribeVSwitchAttributesResponse describeVSwitchAttributesResponse, UnmarshallerContext context) {
+	public static DescribeVSwitchAttributesResponse unmarshall(DescribeVSwitchAttributesResponse describeVSwitchAttributesResponse, UnmarshallerContext _ctx) {
 		
-		describeVSwitchAttributesResponse.setRequestId(context.stringValue("DescribeVSwitchAttributesResponse.RequestId"));
-		describeVSwitchAttributesResponse.setVSwitchId(context.stringValue("DescribeVSwitchAttributesResponse.VSwitchId"));
-		describeVSwitchAttributesResponse.setVpcId(context.stringValue("DescribeVSwitchAttributesResponse.VpcId"));
-		describeVSwitchAttributesResponse.setStatus(context.stringValue("DescribeVSwitchAttributesResponse.Status"));
-		describeVSwitchAttributesResponse.setCidrBlock(context.stringValue("DescribeVSwitchAttributesResponse.CidrBlock"));
-		describeVSwitchAttributesResponse.setIpv6CidrBlock(context.stringValue("DescribeVSwitchAttributesResponse.Ipv6CidrBlock"));
-		describeVSwitchAttributesResponse.setZoneId(context.stringValue("DescribeVSwitchAttributesResponse.ZoneId"));
-		describeVSwitchAttributesResponse.setAvailableIpAddressCount(context.longValue("DescribeVSwitchAttributesResponse.AvailableIpAddressCount"));
-		describeVSwitchAttributesResponse.setDescription(context.stringValue("DescribeVSwitchAttributesResponse.Description"));
-		describeVSwitchAttributesResponse.setVSwitchName(context.stringValue("DescribeVSwitchAttributesResponse.VSwitchName"));
-		describeVSwitchAttributesResponse.setCreationTime(context.stringValue("DescribeVSwitchAttributesResponse.CreationTime"));
-		describeVSwitchAttributesResponse.setIsDefault(context.booleanValue("DescribeVSwitchAttributesResponse.IsDefault"));
-		describeVSwitchAttributesResponse.setResourceGroupId(context.stringValue("DescribeVSwitchAttributesResponse.ResourceGroupId"));
-		describeVSwitchAttributesResponse.setNetworkAclId(context.stringValue("DescribeVSwitchAttributesResponse.NetworkAclId"));
+		describeVSwitchAttributesResponse.setRequestId(_ctx.stringValue("DescribeVSwitchAttributesResponse.RequestId"));
+		describeVSwitchAttributesResponse.setVSwitchId(_ctx.stringValue("DescribeVSwitchAttributesResponse.VSwitchId"));
+		describeVSwitchAttributesResponse.setVpcId(_ctx.stringValue("DescribeVSwitchAttributesResponse.VpcId"));
+		describeVSwitchAttributesResponse.setStatus(_ctx.stringValue("DescribeVSwitchAttributesResponse.Status"));
+		describeVSwitchAttributesResponse.setCidrBlock(_ctx.stringValue("DescribeVSwitchAttributesResponse.CidrBlock"));
+		describeVSwitchAttributesResponse.setIpv6CidrBlock(_ctx.stringValue("DescribeVSwitchAttributesResponse.Ipv6CidrBlock"));
+		describeVSwitchAttributesResponse.setZoneId(_ctx.stringValue("DescribeVSwitchAttributesResponse.ZoneId"));
+		describeVSwitchAttributesResponse.setAvailableIpAddressCount(_ctx.longValue("DescribeVSwitchAttributesResponse.AvailableIpAddressCount"));
+		describeVSwitchAttributesResponse.setDescription(_ctx.stringValue("DescribeVSwitchAttributesResponse.Description"));
+		describeVSwitchAttributesResponse.setVSwitchName(_ctx.stringValue("DescribeVSwitchAttributesResponse.VSwitchName"));
+		describeVSwitchAttributesResponse.setCreationTime(_ctx.stringValue("DescribeVSwitchAttributesResponse.CreationTime"));
+		describeVSwitchAttributesResponse.setIsDefault(_ctx.booleanValue("DescribeVSwitchAttributesResponse.IsDefault"));
+		describeVSwitchAttributesResponse.setResourceGroupId(_ctx.stringValue("DescribeVSwitchAttributesResponse.ResourceGroupId"));
+		describeVSwitchAttributesResponse.setNetworkAclId(_ctx.stringValue("DescribeVSwitchAttributesResponse.NetworkAclId"));
 
 		RouteTable routeTable = new RouteTable();
-		routeTable.setRouteTableId(context.stringValue("DescribeVSwitchAttributesResponse.RouteTable.RouteTableId"));
-		routeTable.setRouteTableType(context.stringValue("DescribeVSwitchAttributesResponse.RouteTable.RouteTableType"));
+		routeTable.setRouteTableId(_ctx.stringValue("DescribeVSwitchAttributesResponse.RouteTable.RouteTableId"));
+		routeTable.setRouteTableType(_ctx.stringValue("DescribeVSwitchAttributesResponse.RouteTable.RouteTableType"));
 		describeVSwitchAttributesResponse.setRouteTable(routeTable);
 
 		List<CloudResourceSetType> cloudResources = new ArrayList<CloudResourceSetType>();
-		for (int i = 0; i < context.lengthValue("DescribeVSwitchAttributesResponse.CloudResources.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeVSwitchAttributesResponse.CloudResources.Length"); i++) {
 			CloudResourceSetType cloudResourceSetType = new CloudResourceSetType();
-			cloudResourceSetType.setResourceType(context.stringValue("DescribeVSwitchAttributesResponse.CloudResources["+ i +"].ResourceType"));
-			cloudResourceSetType.setResourceCount(context.integerValue("DescribeVSwitchAttributesResponse.CloudResources["+ i +"].ResourceCount"));
+			cloudResourceSetType.setResourceType(_ctx.stringValue("DescribeVSwitchAttributesResponse.CloudResources["+ i +"].ResourceType"));
+			cloudResourceSetType.setResourceCount(_ctx.integerValue("DescribeVSwitchAttributesResponse.CloudResources["+ i +"].ResourceCount"));
 
 			cloudResources.add(cloudResourceSetType);
 		}

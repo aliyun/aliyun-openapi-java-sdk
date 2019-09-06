@@ -16,6 +16,8 @@ package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -25,19 +27,26 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 	
 	public ApplyPhysicalConnectionLOARequest() {
 		super("Vpc", "2016-04-28", "ApplyPhysicalConnectionLOA", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String peerLocation;
-
 	private String clientToken;
+
+	private String lineType;
+
+	private String si;
+
+	private String peerLocation;
 
 	private String resourceOwnerAccount;
 
 	private Integer bandwidth;
-
-	private String lineType;
 
 	private String ownerAccount;
 
@@ -48,8 +57,6 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 	private String instanceId;
 
 	private String companyName;
-
-	private String si;
 
 	private List<PMInfo> pMInfos;
 
@@ -64,17 +71,6 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 		}
 	}
 
-	public String getPeerLocation() {
-		return this.peerLocation;
-	}
-
-	public void setPeerLocation(String peerLocation) {
-		this.peerLocation = peerLocation;
-		if(peerLocation != null){
-			putQueryParameter("PeerLocation", peerLocation);
-		}
-	}
-
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -83,6 +79,39 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getLineType() {
+		return this.lineType;
+	}
+
+	public void setLineType(String lineType) {
+		this.lineType = lineType;
+		if(lineType != null){
+			putQueryParameter("LineType", lineType);
+		}
+	}
+
+	public String getSi() {
+		return this.si;
+	}
+
+	public void setSi(String si) {
+		this.si = si;
+		if(si != null){
+			putQueryParameter("Si", si);
+		}
+	}
+
+	public String getPeerLocation() {
+		return this.peerLocation;
+	}
+
+	public void setPeerLocation(String peerLocation) {
+		this.peerLocation = peerLocation;
+		if(peerLocation != null){
+			putQueryParameter("PeerLocation", peerLocation);
 		}
 	}
 
@@ -105,17 +134,6 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 		this.bandwidth = bandwidth;
 		if(bandwidth != null){
 			putQueryParameter("Bandwidth", bandwidth.toString());
-		}
-	}
-
-	public String getLineType() {
-		return this.lineType;
-	}
-
-	public void setLineType(String lineType) {
-		this.lineType = lineType;
-		if(lineType != null){
-			putQueryParameter("LineType", lineType);
 		}
 	}
 
@@ -171,17 +189,6 @@ public class ApplyPhysicalConnectionLOARequest extends RpcAcsRequest<ApplyPhysic
 		this.companyName = companyName;
 		if(companyName != null){
 			putQueryParameter("CompanyName", companyName);
-		}
-	}
-
-	public String getSi() {
-		return this.si;
-	}
-
-	public void setSi(String si) {
-		this.si = si;
-		if(si != null){
-			putQueryParameter("Si", si);
 		}
 	}
 

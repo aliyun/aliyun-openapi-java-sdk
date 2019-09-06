@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,24 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	
 	public AllocateEipAddressRequest() {
 		super("Vpc", "2016-04-28", "AllocateEipAddress", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String clientToken;
+
+	private String iSP;
+
+	private String resourceGroupId;
+
+	private String netmode;
+
+	private String instanceChargeType;
 
 	private Integer period;
 
@@ -36,23 +53,15 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 
 	private String bandwidth;
 
-	private String clientToken;
-
-	private String iSP;
-
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String resourceGroupId;
+	private Long activityId;
 
 	private String internetChargeType;
 
-	private String netmode;
-
 	private String pricingCycle;
-
-	private String instanceChargeType;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -62,6 +71,61 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getISP() {
+		return this.iSP;
+	}
+
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+		if(iSP != null){
+			putQueryParameter("ISP", iSP);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getNetmode() {
+		return this.netmode;
+	}
+
+	public void setNetmode(String netmode) {
+		this.netmode = netmode;
+		if(netmode != null){
+			putQueryParameter("Netmode", netmode);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 
@@ -109,28 +173,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getISP() {
-		return this.iSP;
-	}
-
-	public void setISP(String iSP) {
-		this.iSP = iSP;
-		if(iSP != null){
-			putQueryParameter("ISP", iSP);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -153,14 +195,14 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public Long getActivityId() {
+		return this.activityId;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setActivityId(Long activityId) {
+		this.activityId = activityId;
+		if(activityId != null){
+			putQueryParameter("ActivityId", activityId.toString());
 		}
 	}
 
@@ -175,17 +217,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		}
 	}
 
-	public String getNetmode() {
-		return this.netmode;
-	}
-
-	public void setNetmode(String netmode) {
-		this.netmode = netmode;
-		if(netmode != null){
-			putQueryParameter("Netmode", netmode);
-		}
-	}
-
 	public String getPricingCycle() {
 		return this.pricingCycle;
 	}
@@ -194,17 +225,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.pricingCycle = pricingCycle;
 		if(pricingCycle != null){
 			putQueryParameter("PricingCycle", pricingCycle);
-		}
-	}
-
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 

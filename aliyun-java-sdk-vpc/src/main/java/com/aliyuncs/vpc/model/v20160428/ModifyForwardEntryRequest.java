@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,22 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 	
 	public ModifyForwardEntryRequest() {
 		super("Vpc", "2016-04-28", "ModifyForwardEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String forwardTableId;
+
+	private String internalIp;
+
+	private String forwardEntryId;
+
+	private String externalIp;
 
 	private String resourceOwnerAccount;
 
@@ -36,17 +51,9 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 
 	private String ownerAccount;
 
-	private String forwardTableId;
-
 	private Long ownerId;
 
-	private String internalIp;
-
-	private String forwardEntryId;
-
 	private String internalPort;
-
-	private String externalIp;
 
 	private String externalPort;
 
@@ -58,6 +65,50 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getForwardTableId() {
+		return this.forwardTableId;
+	}
+
+	public void setForwardTableId(String forwardTableId) {
+		this.forwardTableId = forwardTableId;
+		if(forwardTableId != null){
+			putQueryParameter("ForwardTableId", forwardTableId);
+		}
+	}
+
+	public String getInternalIp() {
+		return this.internalIp;
+	}
+
+	public void setInternalIp(String internalIp) {
+		this.internalIp = internalIp;
+		if(internalIp != null){
+			putQueryParameter("InternalIp", internalIp);
+		}
+	}
+
+	public String getForwardEntryId() {
+		return this.forwardEntryId;
+	}
+
+	public void setForwardEntryId(String forwardEntryId) {
+		this.forwardEntryId = forwardEntryId;
+		if(forwardEntryId != null){
+			putQueryParameter("ForwardEntryId", forwardEntryId);
+		}
+	}
+
+	public String getExternalIp() {
+		return this.externalIp;
+	}
+
+	public void setExternalIp(String externalIp) {
+		this.externalIp = externalIp;
+		if(externalIp != null){
+			putQueryParameter("ExternalIp", externalIp);
 		}
 	}
 
@@ -105,17 +156,6 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		}
 	}
 
-	public String getForwardTableId() {
-		return this.forwardTableId;
-	}
-
-	public void setForwardTableId(String forwardTableId) {
-		this.forwardTableId = forwardTableId;
-		if(forwardTableId != null){
-			putQueryParameter("ForwardTableId", forwardTableId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,28 +167,6 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		}
 	}
 
-	public String getInternalIp() {
-		return this.internalIp;
-	}
-
-	public void setInternalIp(String internalIp) {
-		this.internalIp = internalIp;
-		if(internalIp != null){
-			putQueryParameter("InternalIp", internalIp);
-		}
-	}
-
-	public String getForwardEntryId() {
-		return this.forwardEntryId;
-	}
-
-	public void setForwardEntryId(String forwardEntryId) {
-		this.forwardEntryId = forwardEntryId;
-		if(forwardEntryId != null){
-			putQueryParameter("ForwardEntryId", forwardEntryId);
-		}
-	}
-
 	public String getInternalPort() {
 		return this.internalPort;
 	}
@@ -157,17 +175,6 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 		this.internalPort = internalPort;
 		if(internalPort != null){
 			putQueryParameter("InternalPort", internalPort);
-		}
-	}
-
-	public String getExternalIp() {
-		return this.externalIp;
-	}
-
-	public void setExternalIp(String externalIp) {
-		this.externalIp = externalIp;
-		if(externalIp != null){
-			putQueryParameter("ExternalIp", externalIp);
 		}
 	}
 

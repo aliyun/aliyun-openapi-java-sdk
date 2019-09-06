@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,20 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 	
 	public CreateForwardEntryRequest() {
 		super("Vpc", "2016-04-28", "CreateForwardEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String forwardTableId;
+
+	private String internalIp;
+
+	private String externalIp;
 
 	private String resourceOwnerAccount;
 
@@ -36,15 +49,9 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 
 	private String ownerAccount;
 
-	private String forwardTableId;
-
 	private Long ownerId;
 
-	private String internalIp;
-
 	private String internalPort;
-
-	private String externalIp;
 
 	private String externalPort;
 
@@ -56,6 +63,39 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getForwardTableId() {
+		return this.forwardTableId;
+	}
+
+	public void setForwardTableId(String forwardTableId) {
+		this.forwardTableId = forwardTableId;
+		if(forwardTableId != null){
+			putQueryParameter("ForwardTableId", forwardTableId);
+		}
+	}
+
+	public String getInternalIp() {
+		return this.internalIp;
+	}
+
+	public void setInternalIp(String internalIp) {
+		this.internalIp = internalIp;
+		if(internalIp != null){
+			putQueryParameter("InternalIp", internalIp);
+		}
+	}
+
+	public String getExternalIp() {
+		return this.externalIp;
+	}
+
+	public void setExternalIp(String externalIp) {
+		this.externalIp = externalIp;
+		if(externalIp != null){
+			putQueryParameter("ExternalIp", externalIp);
 		}
 	}
 
@@ -103,17 +143,6 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		}
 	}
 
-	public String getForwardTableId() {
-		return this.forwardTableId;
-	}
-
-	public void setForwardTableId(String forwardTableId) {
-		this.forwardTableId = forwardTableId;
-		if(forwardTableId != null){
-			putQueryParameter("ForwardTableId", forwardTableId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -125,17 +154,6 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		}
 	}
 
-	public String getInternalIp() {
-		return this.internalIp;
-	}
-
-	public void setInternalIp(String internalIp) {
-		this.internalIp = internalIp;
-		if(internalIp != null){
-			putQueryParameter("InternalIp", internalIp);
-		}
-	}
-
 	public String getInternalPort() {
 		return this.internalPort;
 	}
@@ -144,17 +162,6 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 		this.internalPort = internalPort;
 		if(internalPort != null){
 			putQueryParameter("InternalPort", internalPort);
-		}
-	}
-
-	public String getExternalIp() {
-		return this.externalIp;
-	}
-
-	public void setExternalIp(String externalIp) {
-		this.externalIp = externalIp;
-		if(externalIp != null){
-			putQueryParameter("ExternalIp", externalIp);
 		}
 	}
 

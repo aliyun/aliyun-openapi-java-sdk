@@ -81,6 +81,10 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		private Long vbrOwnerUid;
 
+		private String eccId;
+
+		private String type;
+
 		private String creationTime;
 
 		private String activationTime;
@@ -90,6 +94,8 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 		private String recoveryTime;
 
 		private Integer vlanId;
+
+		private String status;
 
 		private String circuitCode;
 
@@ -113,6 +119,22 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		public void setVbrOwnerUid(Long vbrOwnerUid) {
 			this.vbrOwnerUid = vbrOwnerUid;
+		}
+
+		public String getEccId() {
+			return this.eccId;
+		}
+
+		public void setEccId(String eccId) {
+			this.eccId = eccId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 
 		public String getCreationTime() {
@@ -153,6 +175,14 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		public void setVlanId(Integer vlanId) {
 			this.vlanId = vlanId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getCircuitCode() {

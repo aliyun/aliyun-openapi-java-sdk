@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyHaVipAttributeResponseUnmarshaller {
 
-	public static ModifyHaVipAttributeResponse unmarshall(ModifyHaVipAttributeResponse modifyHaVipAttributeResponse, UnmarshallerContext context) {
+	public static ModifyHaVipAttributeResponse unmarshall(ModifyHaVipAttributeResponse modifyHaVipAttributeResponse, UnmarshallerContext _ctx) {
 		
-		modifyHaVipAttributeResponse.setRequestId(context.stringValue("ModifyHaVipAttributeResponse.RequestId"));
+		modifyHaVipAttributeResponse.setRequestId(_ctx.stringValue("ModifyHaVipAttributeResponse.RequestId"));
 	 
 	 	return modifyHaVipAttributeResponse;
 	}

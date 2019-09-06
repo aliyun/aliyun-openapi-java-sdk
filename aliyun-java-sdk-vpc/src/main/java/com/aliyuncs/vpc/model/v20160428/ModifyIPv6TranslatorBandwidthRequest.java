@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,23 +26,28 @@ public class ModifyIPv6TranslatorBandwidthRequest extends RpcAcsRequest<ModifyIP
 	
 	public ModifyIPv6TranslatorBandwidthRequest() {
 		super("Vpc", "2016-04-28", "ModifyIPv6TranslatorBandwidth", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String clientToken;
 
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
-	private String clientToken;
-
 	private Integer bandwidth;
 
 	private String ownerAccount;
 
-	private String ipv6TranslatorId;
-
 	private Long ownerId;
+
+	private String ipv6TranslatorId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,6 +57,17 @@ public class ModifyIPv6TranslatorBandwidthRequest extends RpcAcsRequest<ModifyIP
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -75,17 +93,6 @@ public class ModifyIPv6TranslatorBandwidthRequest extends RpcAcsRequest<ModifyIP
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
 	public Integer getBandwidth() {
 		return this.bandwidth;
 	}
@@ -108,17 +115,6 @@ public class ModifyIPv6TranslatorBandwidthRequest extends RpcAcsRequest<ModifyIP
 		}
 	}
 
-	public String getIpv6TranslatorId() {
-		return this.ipv6TranslatorId;
-	}
-
-	public void setIpv6TranslatorId(String ipv6TranslatorId) {
-		this.ipv6TranslatorId = ipv6TranslatorId;
-		if(ipv6TranslatorId != null){
-			putQueryParameter("Ipv6TranslatorId", ipv6TranslatorId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +123,17 @@ public class ModifyIPv6TranslatorBandwidthRequest extends RpcAcsRequest<ModifyIP
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIpv6TranslatorId() {
+		return this.ipv6TranslatorId;
+	}
+
+	public void setIpv6TranslatorId(String ipv6TranslatorId) {
+		this.ipv6TranslatorId = ipv6TranslatorId;
+		if(ipv6TranslatorId != null){
+			putQueryParameter("Ipv6TranslatorId", ipv6TranslatorId);
 		}
 	}
 

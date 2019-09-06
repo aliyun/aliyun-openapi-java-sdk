@@ -93,6 +93,10 @@ public class DescribeHaVipsResponse extends AcsResponse {
 
 		private String description;
 
+		private String name;
+
+		private String chargeType;
+
 		private String createTime;
 
 		private List<String> associatedInstances;
@@ -177,6 +181,22 @@ public class DescribeHaVipsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
 		}
 
 		public String getCreateTime() {

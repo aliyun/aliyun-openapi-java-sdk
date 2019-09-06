@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBgpNetworksResponseUnmarshaller {
 
-	public static DescribeBgpNetworksResponse unmarshall(DescribeBgpNetworksResponse describeBgpNetworksResponse, UnmarshallerContext context) {
+	public static DescribeBgpNetworksResponse unmarshall(DescribeBgpNetworksResponse describeBgpNetworksResponse, UnmarshallerContext _ctx) {
 		
-		describeBgpNetworksResponse.setRequestId(context.stringValue("DescribeBgpNetworksResponse.RequestId"));
-		describeBgpNetworksResponse.setTotalCount(context.integerValue("DescribeBgpNetworksResponse.TotalCount"));
-		describeBgpNetworksResponse.setPageNumber(context.integerValue("DescribeBgpNetworksResponse.PageNumber"));
-		describeBgpNetworksResponse.setPageSize(context.integerValue("DescribeBgpNetworksResponse.PageSize"));
+		describeBgpNetworksResponse.setRequestId(_ctx.stringValue("DescribeBgpNetworksResponse.RequestId"));
+		describeBgpNetworksResponse.setTotalCount(_ctx.integerValue("DescribeBgpNetworksResponse.TotalCount"));
+		describeBgpNetworksResponse.setPageNumber(_ctx.integerValue("DescribeBgpNetworksResponse.PageNumber"));
+		describeBgpNetworksResponse.setPageSize(_ctx.integerValue("DescribeBgpNetworksResponse.PageSize"));
 
 		List<BgpNetwork> bgpNetworks = new ArrayList<BgpNetwork>();
-		for (int i = 0; i < context.lengthValue("DescribeBgpNetworksResponse.BgpNetworks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBgpNetworksResponse.BgpNetworks.Length"); i++) {
 			BgpNetwork bgpNetwork = new BgpNetwork();
-			bgpNetwork.setVpcId(context.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].VpcId"));
-			bgpNetwork.setDstCidrBlock(context.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].DstCidrBlock"));
-			bgpNetwork.setRouterId(context.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].RouterId"));
+			bgpNetwork.setVpcId(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].VpcId"));
+			bgpNetwork.setDstCidrBlock(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].DstCidrBlock"));
+			bgpNetwork.setRouterId(_ctx.stringValue("DescribeBgpNetworksResponse.BgpNetworks["+ i +"].RouterId"));
 
 			bgpNetworks.add(bgpNetwork);
 		}

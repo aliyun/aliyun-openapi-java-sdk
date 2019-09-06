@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,18 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 	
 	public CreateSnatEntryRequest() {
 		super("Vpc", "2016-04-28", "CreateSnatEntry", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String sourceCIDR;
+
+	private String snatIp;
 
 	private String sourceVSwitchId;
 
@@ -34,15 +45,11 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 
 	private String ownerAccount;
 
-	private String snatEntryName;
-
-	private String sourceCIDR;
-
 	private String snatTableId;
 
 	private Long ownerId;
 
-	private String snatIp;
+	private String snatEntryName;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -52,6 +59,28 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSourceCIDR() {
+		return this.sourceCIDR;
+	}
+
+	public void setSourceCIDR(String sourceCIDR) {
+		this.sourceCIDR = sourceCIDR;
+		if(sourceCIDR != null){
+			putQueryParameter("SourceCIDR", sourceCIDR);
+		}
+	}
+
+	public String getSnatIp() {
+		return this.snatIp;
+	}
+
+	public void setSnatIp(String snatIp) {
+		this.snatIp = snatIp;
+		if(snatIp != null){
+			putQueryParameter("SnatIp", snatIp);
 		}
 	}
 
@@ -88,28 +117,6 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		}
 	}
 
-	public String getSnatEntryName() {
-		return this.snatEntryName;
-	}
-
-	public void setSnatEntryName(String snatEntryName) {
-		this.snatEntryName = snatEntryName;
-		if(snatEntryName != null){
-			putQueryParameter("SnatEntryName", snatEntryName);
-		}
-	}
-
-	public String getSourceCIDR() {
-		return this.sourceCIDR;
-	}
-
-	public void setSourceCIDR(String sourceCIDR) {
-		this.sourceCIDR = sourceCIDR;
-		if(sourceCIDR != null){
-			putQueryParameter("SourceCIDR", sourceCIDR);
-		}
-	}
-
 	public String getSnatTableId() {
 		return this.snatTableId;
 	}
@@ -132,14 +139,14 @@ public class CreateSnatEntryRequest extends RpcAcsRequest<CreateSnatEntryRespons
 		}
 	}
 
-	public String getSnatIp() {
-		return this.snatIp;
+	public String getSnatEntryName() {
+		return this.snatEntryName;
 	}
 
-	public void setSnatIp(String snatIp) {
-		this.snatIp = snatIp;
-		if(snatIp != null){
-			putQueryParameter("SnatIp", snatIp);
+	public void setSnatEntryName(String snatEntryName) {
+		this.snatEntryName = snatEntryName;
+		if(snatEntryName != null){
+			putQueryParameter("SnatEntryName", snatEntryName);
 		}
 	}
 

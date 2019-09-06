@@ -117,6 +117,16 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		private String description;
 
+		private String eccId;
+
+		private String type;
+
+		private Long minTxInterval;
+
+		private Long minRxInterval;
+
+		private Long detectMultiplier;
+
 		private List<AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 		private List<AssociatedCen> associatedCens;
@@ -279,6 +289,46 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getEccId() {
+			return this.eccId;
+		}
+
+		public void setEccId(String eccId) {
+			this.eccId = eccId;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public Long getMinTxInterval() {
+			return this.minTxInterval;
+		}
+
+		public void setMinTxInterval(Long minTxInterval) {
+			this.minTxInterval = minTxInterval;
+		}
+
+		public Long getMinRxInterval() {
+			return this.minRxInterval;
+		}
+
+		public void setMinRxInterval(Long minRxInterval) {
+			this.minRxInterval = minRxInterval;
+		}
+
+		public Long getDetectMultiplier() {
+			return this.detectMultiplier;
+		}
+
+		public void setDetectMultiplier(Long detectMultiplier) {
+			this.detectMultiplier = detectMultiplier;
 		}
 
 		public List<AssociatedPhysicalConnection> getAssociatedPhysicalConnections() {

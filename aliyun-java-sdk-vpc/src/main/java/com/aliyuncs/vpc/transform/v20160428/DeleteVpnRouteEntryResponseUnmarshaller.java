@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteVpnRouteEntryResponseUnmarshaller {
 
-	public static DeleteVpnRouteEntryResponse unmarshall(DeleteVpnRouteEntryResponse deleteVpnRouteEntryResponse, UnmarshallerContext context) {
+	public static DeleteVpnRouteEntryResponse unmarshall(DeleteVpnRouteEntryResponse deleteVpnRouteEntryResponse, UnmarshallerContext _ctx) {
 		
-		deleteVpnRouteEntryResponse.setRequestId(context.stringValue("DeleteVpnRouteEntryResponse.RequestId"));
+		deleteVpnRouteEntryResponse.setRequestId(_ctx.stringValue("DeleteVpnRouteEntryResponse.RequestId"));
 	 
 	 	return deleteVpnRouteEntryResponse;
 	}

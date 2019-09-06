@@ -15,6 +15,8 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.vpc.Endpoint;
 
 /**
  * @author auto create
@@ -24,21 +26,26 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 	
 	public ModifyRouteTableAttributesRequest() {
 		super("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "vpc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String description;
+
+	private String routeTableName;
+
+	private String routeTableId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String description;
-
 	private Long ownerId;
-
-	private String routeTableName;
-
-	private String routeTableId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,6 +55,39 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getRouteTableName() {
+		return this.routeTableName;
+	}
+
+	public void setRouteTableName(String routeTableName) {
+		this.routeTableName = routeTableName;
+		if(routeTableName != null){
+			putQueryParameter("RouteTableName", routeTableName);
+		}
+	}
+
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
 		}
 	}
 
@@ -73,17 +113,6 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -92,28 +121,6 @@ public class ModifyRouteTableAttributesRequest extends RpcAcsRequest<ModifyRoute
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getRouteTableName() {
-		return this.routeTableName;
-	}
-
-	public void setRouteTableName(String routeTableName) {
-		this.routeTableName = routeTableName;
-		if(routeTableName != null){
-			putQueryParameter("RouteTableName", routeTableName);
-		}
-	}
-
-	public String getRouteTableId() {
-		return this.routeTableId;
-	}
-
-	public void setRouteTableId(String routeTableId) {
-		this.routeTableId = routeTableId;
-		if(routeTableId != null){
-			putQueryParameter("RouteTableId", routeTableId);
 		}
 	}
 

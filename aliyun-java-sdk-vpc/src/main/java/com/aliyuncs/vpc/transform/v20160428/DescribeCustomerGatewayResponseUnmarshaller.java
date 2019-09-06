@@ -20,14 +20,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCustomerGatewayResponseUnmarshaller {
 
-	public static DescribeCustomerGatewayResponse unmarshall(DescribeCustomerGatewayResponse describeCustomerGatewayResponse, UnmarshallerContext context) {
+	public static DescribeCustomerGatewayResponse unmarshall(DescribeCustomerGatewayResponse describeCustomerGatewayResponse, UnmarshallerContext _ctx) {
 		
-		describeCustomerGatewayResponse.setRequestId(context.stringValue("DescribeCustomerGatewayResponse.RequestId"));
-		describeCustomerGatewayResponse.setCustomerGatewayId(context.stringValue("DescribeCustomerGatewayResponse.CustomerGatewayId"));
-		describeCustomerGatewayResponse.setIpAddress(context.stringValue("DescribeCustomerGatewayResponse.IpAddress"));
-		describeCustomerGatewayResponse.setName(context.stringValue("DescribeCustomerGatewayResponse.Name"));
-		describeCustomerGatewayResponse.setDescription(context.stringValue("DescribeCustomerGatewayResponse.Description"));
-		describeCustomerGatewayResponse.setCreateTime(context.longValue("DescribeCustomerGatewayResponse.CreateTime"));
+		describeCustomerGatewayResponse.setRequestId(_ctx.stringValue("DescribeCustomerGatewayResponse.RequestId"));
+		describeCustomerGatewayResponse.setCustomerGatewayId(_ctx.stringValue("DescribeCustomerGatewayResponse.CustomerGatewayId"));
+		describeCustomerGatewayResponse.setIpAddress(_ctx.stringValue("DescribeCustomerGatewayResponse.IpAddress"));
+		describeCustomerGatewayResponse.setName(_ctx.stringValue("DescribeCustomerGatewayResponse.Name"));
+		describeCustomerGatewayResponse.setDescription(_ctx.stringValue("DescribeCustomerGatewayResponse.Description"));
+		describeCustomerGatewayResponse.setCreateTime(_ctx.longValue("DescribeCustomerGatewayResponse.CreateTime"));
 	 
 	 	return describeCustomerGatewayResponse;
 	}
