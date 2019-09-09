@@ -1,3 +1,7 @@
+2019-09-09 Version: 3.0.8
+- CreateInstance add toen.
+- UpdateInstance add toen.
+
 2019-08-30 Version: 3.0.7
 - Add describeRegions.
 - Add toen.

@@ -16,6 +16,7 @@ package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.elasticsearch.Endpoint;
 
 /**
  * @author auto create
@@ -25,8 +26,24 @@ public class CreateInstanceRequest extends RoaAcsRequest<CreateInstanceResponse>
 	
 	public CreateInstanceRequest() {
 		super("elasticsearch", "2017-06-13", "CreateInstance", "elasticsearch");
-		setUriPattern("/openapi/instances");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	private String clientToken;
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
+		}
 	}
 
 	@Override

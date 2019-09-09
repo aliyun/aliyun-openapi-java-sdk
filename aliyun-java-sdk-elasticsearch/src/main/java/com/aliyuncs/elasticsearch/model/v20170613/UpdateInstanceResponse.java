@@ -14,6 +14,7 @@
 
 package com.aliyuncs.elasticsearch.model.v20170613;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.elasticsearch.transform.v20170613.UpdateInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -64,9 +65,25 @@ public class UpdateInstanceResponse extends AcsResponse {
 
 		private String updatedAt;
 
+		private String kibanaDomain;
+
+		private Integer kibanaPort;
+
+		private String publicDomain;
+
+		private Integer publicPort;
+
+		private List<DictListItem> dictList;
+
+		private List<SynonymsDictsItem> synonymsDicts;
+
 		private NodeSpec nodeSpec;
 
 		private NetworkConfig networkConfig;
+
+		private KibanaConfiguration kibanaConfiguration;
+
+		private MasterConfiguration masterConfiguration;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -156,6 +173,54 @@ public class UpdateInstanceResponse extends AcsResponse {
 			this.updatedAt = updatedAt;
 		}
 
+		public String getKibanaDomain() {
+			return this.kibanaDomain;
+		}
+
+		public void setKibanaDomain(String kibanaDomain) {
+			this.kibanaDomain = kibanaDomain;
+		}
+
+		public Integer getKibanaPort() {
+			return this.kibanaPort;
+		}
+
+		public void setKibanaPort(Integer kibanaPort) {
+			this.kibanaPort = kibanaPort;
+		}
+
+		public String getPublicDomain() {
+			return this.publicDomain;
+		}
+
+		public void setPublicDomain(String publicDomain) {
+			this.publicDomain = publicDomain;
+		}
+
+		public Integer getPublicPort() {
+			return this.publicPort;
+		}
+
+		public void setPublicPort(Integer publicPort) {
+			this.publicPort = publicPort;
+		}
+
+		public List<DictListItem> getDictList() {
+			return this.dictList;
+		}
+
+		public void setDictList(List<DictListItem> dictList) {
+			this.dictList = dictList;
+		}
+
+		public List<SynonymsDictsItem> getSynonymsDicts() {
+			return this.synonymsDicts;
+		}
+
+		public void setSynonymsDicts(List<SynonymsDictsItem> synonymsDicts) {
+			this.synonymsDicts = synonymsDicts;
+		}
+
 		public NodeSpec getNodeSpec() {
 			return this.nodeSpec;
 		}
@@ -172,11 +237,115 @@ public class UpdateInstanceResponse extends AcsResponse {
 			this.networkConfig = networkConfig;
 		}
 
+		public KibanaConfiguration getKibanaConfiguration() {
+			return this.kibanaConfiguration;
+		}
+
+		public void setKibanaConfiguration(KibanaConfiguration kibanaConfiguration) {
+			this.kibanaConfiguration = kibanaConfiguration;
+		}
+
+		public MasterConfiguration getMasterConfiguration() {
+			return this.masterConfiguration;
+		}
+
+		public void setMasterConfiguration(MasterConfiguration masterConfiguration) {
+			this.masterConfiguration = masterConfiguration;
+		}
+
+		public static class DictListItem {
+
+			private String name;
+
+			private Long fileSize;
+
+			private String type;
+
+			private String sourceType;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Long getFileSize() {
+				return this.fileSize;
+			}
+
+			public void setFileSize(Long fileSize) {
+				this.fileSize = fileSize;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
+			}
+		}
+
+		public static class SynonymsDictsItem {
+
+			private String name;
+
+			private Long fileSize;
+
+			private String type;
+
+			private String sourceType;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Long getFileSize() {
+				return this.fileSize;
+			}
+
+			public void setFileSize(Long fileSize) {
+				this.fileSize = fileSize;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getSourceType() {
+				return this.sourceType;
+			}
+
+			public void setSourceType(String sourceType) {
+				this.sourceType = sourceType;
+			}
+		}
+
 		public static class NodeSpec {
 
 			private String spec;
 
 			private Integer disk;
+
+			private String diskType;
 
 			public String getSpec() {
 				return this.spec;
@@ -192,6 +361,14 @@ public class UpdateInstanceResponse extends AcsResponse {
 
 			public void setDisk(Integer disk) {
 				this.disk = disk;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
 			}
 		}
 
@@ -235,6 +412,92 @@ public class UpdateInstanceResponse extends AcsResponse {
 
 			public void setVsArea(String vsArea) {
 				this.vsArea = vsArea;
+			}
+		}
+
+		public static class KibanaConfiguration {
+
+			private String spec;
+
+			private Integer amount;
+
+			private String diskType;
+
+			private Integer disk;
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
+			}
+		}
+
+		public static class MasterConfiguration {
+
+			private String spec;
+
+			private Integer amount;
+
+			private String diskType;
+
+			private Integer disk;
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
 			}
 		}
 	}

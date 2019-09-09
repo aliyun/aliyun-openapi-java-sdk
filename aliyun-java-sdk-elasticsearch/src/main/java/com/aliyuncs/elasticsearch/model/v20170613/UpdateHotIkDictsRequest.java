@@ -16,6 +16,7 @@ package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.elasticsearch.Endpoint;
 
 /**
  * @author auto create
@@ -25,8 +26,11 @@ public class UpdateHotIkDictsRequest extends RoaAcsRequest<UpdateHotIkDictsRespo
 	
 	public UpdateHotIkDictsRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateHotIkDicts", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/ik-hot-dict");
 		setMethod(MethodType.PUT);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String instanceId;
