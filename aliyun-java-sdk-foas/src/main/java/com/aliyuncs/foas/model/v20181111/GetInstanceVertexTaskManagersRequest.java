@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class GetInstanceVertexTaskManagersRequest extends RoaAcsRequest<GetInstanceVertexTaskManagersResponse> {
 	
 	public GetInstanceVertexTaskManagersRequest() {
-		super("foas", "2018-11-11", "GetInstanceVertexTaskManagers", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.GET);
+		super("foas", "2018-11-11", "GetInstanceVertexTaskManagers");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/vertices/[vertexId]/taskmanagers");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

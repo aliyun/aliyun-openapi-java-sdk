@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class GetInstanceFinalStateRequest extends RoaAcsRequest<GetInstanceFinalStateResponse> {
 	
 	public GetInstanceFinalStateRequest() {
-		super("foas", "2018-11-11", "GetInstanceFinalState", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.GET);
+		super("foas", "2018-11-11", "GetInstanceFinalState");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/finalstate");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

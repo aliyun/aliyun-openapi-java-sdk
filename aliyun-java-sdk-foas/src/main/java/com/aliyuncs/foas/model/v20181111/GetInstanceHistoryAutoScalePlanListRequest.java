@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class GetInstanceHistoryAutoScalePlanListRequest extends RoaAcsRequest<GetInstanceHistoryAutoScalePlanListResponse> {
 	
 	public GetInstanceHistoryAutoScalePlanListRequest() {
-		super("foas", "2018-11-11", "GetInstanceHistoryAutoScalePlanList", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.GET);
+		super("foas", "2018-11-11", "GetInstanceHistoryAutoScalePlanList");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/planlist");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

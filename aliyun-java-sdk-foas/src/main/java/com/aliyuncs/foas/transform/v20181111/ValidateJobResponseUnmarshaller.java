@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.foas.model.v20181111.ValidateJobResponse;
 import com.aliyuncs.foas.model.v20181111.ValidateJobResponse.JobInOut;
+import com.aliyuncs.foas.model.v20181111.ValidateJobResponse.JobInOut.Dim;
 import com.aliyuncs.foas.model.v20181111.ValidateJobResponse.JobInOut.Input;
 import com.aliyuncs.foas.model.v20181111.ValidateJobResponse.JobInOut.Output;
 import java.util.Map;
@@ -40,6 +41,7 @@ public class ValidateJobResponseUnmarshaller {
 			input.setWorkspace(_ctx.stringValue("ValidateJobResponse.JobInOut.Inputs["+ i +"].Workspace"));
 			input.setName(_ctx.stringValue("ValidateJobResponse.JobInOut.Inputs["+ i +"].Name"));
 			input.setProperties(_ctx.mapValue("ValidateJobResponse.JobInOut.Inputs["+ i +"].Properties"));
+			input.setAlias(_ctx.stringValue("ValidateJobResponse.JobInOut.Inputs["+ i +"].Alias"));
 
 			inputs.add(input);
 		}
@@ -52,10 +54,24 @@ public class ValidateJobResponseUnmarshaller {
 			output.setWorkspace(_ctx.stringValue("ValidateJobResponse.JobInOut.Outputs["+ i +"].Workspace"));
 			output.setName(_ctx.stringValue("ValidateJobResponse.JobInOut.Outputs["+ i +"].Name"));
 			output.setProperties(_ctx.mapValue("ValidateJobResponse.JobInOut.Outputs["+ i +"].Properties"));
+			output.setAlias(_ctx.stringValue("ValidateJobResponse.JobInOut.Outputs["+ i +"].Alias"));
 
 			outputs.add(output);
 		}
 		jobInOut.setOutputs(outputs);
+
+		List<Dim> dims = new ArrayList<Dim>();
+		for (int i = 0; i < _ctx.lengthValue("ValidateJobResponse.JobInOut.Dims.Length"); i++) {
+			Dim dim = new Dim();
+			dim.setType(_ctx.stringValue("ValidateJobResponse.JobInOut.Dims["+ i +"].Type"));
+			dim.setWorkspace(_ctx.stringValue("ValidateJobResponse.JobInOut.Dims["+ i +"].Workspace"));
+			dim.setName(_ctx.stringValue("ValidateJobResponse.JobInOut.Dims["+ i +"].Name"));
+			dim.setProperties(_ctx.mapValue("ValidateJobResponse.JobInOut.Dims["+ i +"].Properties"));
+			dim.setAlias(_ctx.stringValue("ValidateJobResponse.JobInOut.Dims["+ i +"].Alias"));
+
+			dims.add(dim);
+		}
+		jobInOut.setDims(dims);
 		validateJobResponse.setJobInOut(jobInOut);
 	 
 	 	return validateJobResponse;

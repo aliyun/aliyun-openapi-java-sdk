@@ -52,6 +52,8 @@ public class ValidateJobResponse extends AcsResponse {
 
 		private List<Output> outputs;
 
+		private List<Dim> dims;
+
 		public List<Input> getInputs() {
 			return this.inputs;
 		}
@@ -68,6 +70,14 @@ public class ValidateJobResponse extends AcsResponse {
 			this.outputs = outputs;
 		}
 
+		public List<Dim> getDims() {
+			return this.dims;
+		}
+
+		public void setDims(List<Dim> dims) {
+			this.dims = dims;
+		}
+
 		public static class Input {
 
 			private String type;
@@ -77,6 +87,8 @@ public class ValidateJobResponse extends AcsResponse {
 			private String name;
 
 			private Map<Object,Object> properties;
+
+			private String alias;
 
 			public String getType() {
 				return this.type;
@@ -108,6 +120,14 @@ public class ValidateJobResponse extends AcsResponse {
 
 			public void setProperties(Map<Object,Object> properties) {
 				this.properties = properties;
+			}
+
+			public String getAlias() {
+				return this.alias;
+			}
+
+			public void setAlias(String alias) {
+				this.alias = alias;
 			}
 		}
 
@@ -121,6 +141,8 @@ public class ValidateJobResponse extends AcsResponse {
 
 			private Map<Object,Object> properties;
 
+			private String alias;
+
 			public String getType() {
 				return this.type;
 			}
@@ -151,6 +173,67 @@ public class ValidateJobResponse extends AcsResponse {
 
 			public void setProperties(Map<Object,Object> properties) {
 				this.properties = properties;
+			}
+
+			public String getAlias() {
+				return this.alias;
+			}
+
+			public void setAlias(String alias) {
+				this.alias = alias;
+			}
+		}
+
+		public static class Dim {
+
+			private String type;
+
+			private String workspace;
+
+			private String name;
+
+			private Map<Object,Object> properties;
+
+			private String alias;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getWorkspace() {
+				return this.workspace;
+			}
+
+			public void setWorkspace(String workspace) {
+				this.workspace = workspace;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Map<Object,Object> getProperties() {
+				return this.properties;
+			}
+
+			public void setProperties(Map<Object,Object> properties) {
+				this.properties = properties;
+			}
+
+			public String getAlias() {
+				return this.alias;
+			}
+
+			public void setAlias(String alias) {
+				this.alias = alias;
 			}
 		}
 	}

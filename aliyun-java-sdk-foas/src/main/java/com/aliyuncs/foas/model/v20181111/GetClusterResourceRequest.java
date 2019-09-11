@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class GetClusterResourceRequest extends RoaAcsRequest<GetClusterResourceResponse> {
 	
 	public GetClusterResourceRequest() {
-		super("foas", "2018-11-11", "GetClusterResource", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.GET);
+		super("foas", "2018-11-11", "GetClusterResource");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/clusters/[clusterId]/resource");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

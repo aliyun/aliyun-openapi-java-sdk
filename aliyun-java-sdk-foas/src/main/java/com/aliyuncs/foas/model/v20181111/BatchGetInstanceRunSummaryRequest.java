@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class BatchGetInstanceRunSummaryRequest extends RoaAcsRequest<BatchGetInstanceRunSummaryResponse> {
 	
 	public BatchGetInstanceRunSummaryRequest() {
-		super("foas", "2018-11-11", "BatchGetInstanceRunSummary", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.GET);
+		super("foas", "2018-11-11", "BatchGetInstanceRunSummary");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/runsummary");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

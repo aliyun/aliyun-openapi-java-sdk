@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 	
 	public ListInstanceRequest() {
-		super("foas", "2018-11-11", "ListInstance", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.GET);
+		super("foas", "2018-11-11", "ListInstance");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/instances");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

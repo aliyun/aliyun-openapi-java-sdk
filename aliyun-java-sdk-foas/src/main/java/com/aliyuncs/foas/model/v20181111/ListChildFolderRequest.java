@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class ListChildFolderRequest extends RoaAcsRequest<ListChildFolderResponse> {
 	
 	public ListChildFolderRequest() {
-		super("foas", "2018-11-11", "ListChildFolder", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.GET);
+		super("foas", "2018-11-11", "ListChildFolder");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/projects/[projectName]/folders/children");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

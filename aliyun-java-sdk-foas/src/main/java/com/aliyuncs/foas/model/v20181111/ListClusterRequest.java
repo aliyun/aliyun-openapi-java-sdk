@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class ListClusterRequest extends RoaAcsRequest<ListClusterResponse> {
 	
 	public ListClusterRequest() {
-		super("foas", "2018-11-11", "ListCluster", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.GET);
+		super("foas", "2018-11-11", "ListCluster");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/clusters");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

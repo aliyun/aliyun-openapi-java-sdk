@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class DestroyClusterRequest extends RoaAcsRequest<DestroyClusterResponse> {
 	
 	public DestroyClusterRequest() {
-		super("foas", "2018-11-11", "DestroyCluster", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.DELETE);
+		super("foas", "2018-11-11", "DestroyCluster");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/clusters/[clusterId]");
+		setMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

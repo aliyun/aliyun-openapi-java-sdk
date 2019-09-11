@@ -26,9 +26,10 @@ import com.aliyuncs.foas.Endpoint;
 public class CreateCellClusterOrderRequest extends RoaAcsRequest<CreateCellClusterOrderResponse> {
 	
 	public CreateCellClusterOrderRequest() {
-		super("foas", "2018-11-11", "CreateCellClusterOrder", "foas");
-		setSysProtocol(ProtocolType.HTTPS);
-		setSysMethod(MethodType.POST);
+		super("foas", "2018-11-11", "CreateCellClusterOrder");
+		setProtocol(ProtocolType.HTTPS);
+		setUriPattern("/api/v2/realtime-compute/cell/buy");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
