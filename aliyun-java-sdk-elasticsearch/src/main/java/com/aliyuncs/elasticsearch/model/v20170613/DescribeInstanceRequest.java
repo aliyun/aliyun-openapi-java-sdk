@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class DescribeInstanceRequest extends RoaAcsRequest<DescribeInstanceResponse> {
 	
 	public DescribeInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeInstance", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DescribeInstance");
+		setUriPattern("/openapi/instances/[InstanceId]");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

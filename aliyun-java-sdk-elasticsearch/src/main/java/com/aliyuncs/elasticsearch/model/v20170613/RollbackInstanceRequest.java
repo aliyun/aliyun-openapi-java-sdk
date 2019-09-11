@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class RollbackInstanceRequest extends RoaAcsRequest<RollbackInstanceResponse> {
 	
 	public RollbackInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "RollbackInstance", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "RollbackInstance");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/rollback");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

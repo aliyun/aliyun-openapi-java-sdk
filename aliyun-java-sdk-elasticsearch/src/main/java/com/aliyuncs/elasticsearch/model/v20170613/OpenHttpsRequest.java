@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class OpenHttpsRequest extends RoaAcsRequest<OpenHttpsResponse> {
 	
 	public OpenHttpsRequest() {
-		super("elasticsearch", "2017-06-13", "OpenHttps", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "OpenHttps");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/open-https");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

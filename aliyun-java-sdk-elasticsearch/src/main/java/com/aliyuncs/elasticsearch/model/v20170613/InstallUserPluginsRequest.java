@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class InstallUserPluginsRequest extends RoaAcsRequest<InstallUserPluginsResponse> {
 	
 	public InstallUserPluginsRequest() {
-		super("elasticsearch", "2017-06-13", "InstallUserPlugins", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "InstallUserPlugins");
+		setUriPattern("/openapi/instances/[InstanceId]/plugins/user/actions/install");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

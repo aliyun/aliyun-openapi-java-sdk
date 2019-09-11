@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ListSearchLogRequest extends RoaAcsRequest<ListSearchLogResponse> {
 	
 	public ListSearchLogRequest() {
-		super("elasticsearch", "2017-06-13", "ListSearchLog", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListSearchLog");
+		setUriPattern("/openapi/instances/[InstanceId]/search-log");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

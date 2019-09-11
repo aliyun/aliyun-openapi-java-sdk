@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdateAdminPasswordRequest extends RoaAcsRequest<UpdateAdminPasswordResponse> {
 	
 	public UpdateAdminPasswordRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateAdminPassword", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateAdminPassword");
+		setUriPattern("/openapi/instances/[InstanceId]/admin-pwd");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

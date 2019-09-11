@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ShrinkNodeRequest extends RoaAcsRequest<ShrinkNodeResponse> {
 	
 	public ShrinkNodeRequest() {
-		super("elasticsearch", "2017-06-13", "ShrinkNode", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ShrinkNode");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/shrink");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ValidateShrinkNodesRequest extends RoaAcsRequest<ValidateShrinkNodesResponse> {
 	
 	public ValidateShrinkNodesRequest() {
-		super("elasticsearch", "2017-06-13", "ValidateShrinkNodes", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ValidateShrinkNodes");
+		setUriPattern("/openapi/instances/[InstanceId]/validate-shrink-nodes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

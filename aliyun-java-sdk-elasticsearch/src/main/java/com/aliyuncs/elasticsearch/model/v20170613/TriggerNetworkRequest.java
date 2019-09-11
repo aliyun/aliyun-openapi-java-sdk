@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class TriggerNetworkRequest extends RoaAcsRequest<TriggerNetworkResponse> {
 	
 	public TriggerNetworkRequest() {
-		super("elasticsearch", "2017-06-13", "TriggerNetwork", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "TriggerNetwork");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/network-trigger");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

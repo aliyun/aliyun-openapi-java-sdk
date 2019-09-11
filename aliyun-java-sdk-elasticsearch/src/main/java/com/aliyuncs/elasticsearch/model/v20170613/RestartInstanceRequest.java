@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class RestartInstanceRequest extends RoaAcsRequest<RestartInstanceResponse> {
 	
 	public RestartInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "RestartInstance");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/restart");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

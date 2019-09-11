@@ -1,3 +1,6 @@
+2019-09-11 Version: 3.0.9
+- Fixed setUriPattern method not exist.
+
 2019-09-09 Version: 3.0.8
 - CreateInstance add toen.
 - UpdateInstance add toen.

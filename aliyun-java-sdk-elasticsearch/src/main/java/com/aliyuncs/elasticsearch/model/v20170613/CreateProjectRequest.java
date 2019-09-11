@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class CreateProjectRequest extends RoaAcsRequest<CreateProjectResponse> {
 	
 	public CreateProjectRequest() {
-		super("elasticsearch", "2017-06-13", "CreateProject", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "CreateProject");
+		setUriPattern("/openapi/projects");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

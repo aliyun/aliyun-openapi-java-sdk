@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ValidateTransferableNodesRequest extends RoaAcsRequest<ValidateTransferableNodesResponse> {
 	
 	public ValidateTransferableNodesRequest() {
-		super("elasticsearch", "2017-06-13", "ValidateTransferableNodes", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ValidateTransferableNodes");
+		setUriPattern("/openapi/instances/[InstanceId]/validate-transfer-nodes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

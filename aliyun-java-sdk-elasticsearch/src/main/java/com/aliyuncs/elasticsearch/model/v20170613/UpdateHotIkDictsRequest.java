@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdateHotIkDictsRequest extends RoaAcsRequest<UpdateHotIkDictsResponse> {
 	
 	public UpdateHotIkDictsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateHotIkDicts", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateHotIkDicts");
+		setUriPattern("/openapi/instances/[InstanceId]/ik-hot-dict");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

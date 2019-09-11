@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ListPluginsRequest extends RoaAcsRequest<ListPluginsResponse> {
 	
 	public ListPluginsRequest() {
-		super("elasticsearch", "2017-06-13", "ListPlugins", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListPlugins");
+		setUriPattern("/openapi/instances/[InstanceId]/plugins");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

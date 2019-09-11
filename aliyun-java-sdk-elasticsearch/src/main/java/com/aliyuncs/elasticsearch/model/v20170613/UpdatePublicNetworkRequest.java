@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdatePublicNetworkRequest extends RoaAcsRequest<UpdatePublicNetworkResponse> {
 	
 	public UpdatePublicNetworkRequest() {
-		super("elasticsearch", "2017-06-13", "UpdatePublicNetwork", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdatePublicNetwork");
+		setUriPattern("/openapi/instances/[InstanceId]/public-network");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

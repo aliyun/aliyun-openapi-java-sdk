@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class CloseHttpsRequest extends RoaAcsRequest<CloseHttpsResponse> {
 	
 	public CloseHttpsRequest() {
-		super("elasticsearch", "2017-06-13", "CloseHttps", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "CloseHttps");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/close-https");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdateWhiteIpsRequest extends RoaAcsRequest<UpdateWhiteIpsResponse> {
 	
 	public UpdateWhiteIpsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateWhiteIps", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateWhiteIps");
+		setUriPattern("/openapi/instances/[InstanceId]/white-ips");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

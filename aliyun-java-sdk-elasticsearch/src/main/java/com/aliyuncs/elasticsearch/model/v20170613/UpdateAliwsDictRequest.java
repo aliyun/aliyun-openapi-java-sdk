@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdateAliwsDictRequest extends RoaAcsRequest<UpdateAliwsDictResponse> {
 	
 	public UpdateAliwsDictRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateAliwsDict", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateAliwsDict");
+		setUriPattern("/openapi/instances/[InstanceId]/aliws-dict");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

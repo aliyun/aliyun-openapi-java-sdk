@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class InstallKibanaSystemPluginRequest extends RoaAcsRequest<InstallKibanaSystemPluginResponse> {
 	
 	public InstallKibanaSystemPluginRequest() {
-		super("elasticsearch", "2017-06-13", "InstallKibanaSystemPlugin", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "InstallKibanaSystemPlugin");
+		setUriPattern("/openapi/instances/[InstanceId]/kibana-plugins/system/actions/install");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

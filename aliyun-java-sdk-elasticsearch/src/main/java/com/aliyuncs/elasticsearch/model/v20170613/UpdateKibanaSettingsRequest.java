@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdateKibanaSettingsRequest extends RoaAcsRequest<UpdateKibanaSettingsResponse> {
 	
 	public UpdateKibanaSettingsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateKibanaSettings", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateKibanaSettings");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/update-kibana-settings");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

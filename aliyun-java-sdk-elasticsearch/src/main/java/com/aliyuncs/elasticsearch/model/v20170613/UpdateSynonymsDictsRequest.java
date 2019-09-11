@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdateSynonymsDictsRequest extends RoaAcsRequest<UpdateSynonymsDictsResponse> {
 	
 	public UpdateSynonymsDictsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateSynonymsDicts", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateSynonymsDicts");
+		setUriPattern("/openapi/instances/[InstanceId]/synonymsDict");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

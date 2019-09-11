@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class DeactivateZonesRequest extends RoaAcsRequest<DeactivateZonesResponse> {
 	
 	public DeactivateZonesRequest() {
-		super("elasticsearch", "2017-06-13", "DeactivateZones", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DeactivateZones");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/down-zones");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

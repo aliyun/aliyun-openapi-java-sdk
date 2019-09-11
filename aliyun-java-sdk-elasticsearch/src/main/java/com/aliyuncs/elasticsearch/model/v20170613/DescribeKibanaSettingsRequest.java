@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class DescribeKibanaSettingsRequest extends RoaAcsRequest<DescribeKibanaSettingsResponse> {
 	
 	public DescribeKibanaSettingsRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeKibanaSettings", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DescribeKibanaSettings");
+		setUriPattern("/openapi/instances/[InstanceId]/kibana-settings");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

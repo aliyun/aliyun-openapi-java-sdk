@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class TransferNodeRequest extends RoaAcsRequest<TransferNodeResponse> {
 	
 	public TransferNodeRequest() {
-		super("elasticsearch", "2017-06-13", "TransferNode", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "TransferNode");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/transfer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class UpdateInstanceSettingsRequest extends RoaAcsRequest<UpdateInstanceSettingsResponse> {
 	
 	public UpdateInstanceSettingsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateInstanceSettings", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateInstanceSettings");
+		setUriPattern("/openapi/instances/[InstanceId]/instance-settings");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

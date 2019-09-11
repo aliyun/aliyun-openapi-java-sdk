@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class GetSuggestShrinkableNodesRequest extends RoaAcsRequest<GetSuggestShrinkableNodesResponse> {
 	
 	public GetSuggestShrinkableNodesRequest() {
-		super("elasticsearch", "2017-06-13", "GetSuggestShrinkableNodes", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "GetSuggestShrinkableNodes");
+		setUriPattern("/openapi/instances/[InstanceId]/suggest-shrinkable-nodes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

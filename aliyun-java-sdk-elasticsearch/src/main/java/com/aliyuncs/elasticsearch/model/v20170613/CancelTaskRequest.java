@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class CancelTaskRequest extends RoaAcsRequest<CancelTaskResponse> {
 	
 	public CancelTaskRequest() {
-		super("elasticsearch", "2017-06-13", "CancelTask", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "CancelTask");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/cancel-task");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class DescribeElasticsearchHealthRequest extends RoaAcsRequest<DescribeElasticsearchHealthResponse> {
 	
 	public DescribeElasticsearchHealthRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeElasticsearchHealth", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DescribeElasticsearchHealth");
+		setUriPattern("/openapi/instances/[InstanceId]/elasticsearch-health");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

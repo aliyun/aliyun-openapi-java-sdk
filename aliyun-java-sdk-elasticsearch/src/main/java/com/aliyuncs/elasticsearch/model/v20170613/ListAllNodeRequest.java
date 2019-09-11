@@ -25,7 +25,8 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class ListAllNodeRequest extends RoaAcsRequest<ListAllNodeResponse> {
 	
 	public ListAllNodeRequest() {
-		super("elasticsearch", "2017-06-13", "ListAllNode", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListAllNode");
+		setUriPattern("/openapi/instances/[InstanceId]/nodes");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
