@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class ResumeChangeRequest extends RoaAcsRequest<ResumeChangeResponse> {
 	
 	public ResumeChangeRequest() {
-		super("WebPlus", "2019-03-20", "ResumeChange", "webx");
+		super("WebPlus", "2019-03-20", "ResumeChange");
 		setUriPattern("/pop/v1/wam/change/resume");
 		setMethod(MethodType.POST);
 		try {

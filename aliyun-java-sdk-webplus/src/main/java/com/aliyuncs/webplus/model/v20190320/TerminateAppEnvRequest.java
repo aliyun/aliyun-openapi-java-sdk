@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class TerminateAppEnvRequest extends RoaAcsRequest<TerminateAppEnvResponse> {
 	
 	public TerminateAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "TerminateAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "TerminateAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv/terminate");
 		setMethod(MethodType.POST);
 		try {

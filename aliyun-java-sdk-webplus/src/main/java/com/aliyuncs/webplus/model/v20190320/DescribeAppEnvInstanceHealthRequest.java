@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeAppEnvInstanceHealthRequest extends RoaAcsRequest<DescribeAppEnvInstanceHealthResponse> {
 	
 	public DescribeAppEnvInstanceHealthRequest() {
-		super("WebPlus", "2019-03-20", "DescribeAppEnvInstanceHealth", "webx");
+		super("WebPlus", "2019-03-20", "DescribeAppEnvInstanceHealth");
 		setUriPattern("/pop/v1/wam/appEnv/instanceHealth");
 		setMethod(MethodType.GET);
 		try {

@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class RestartAppEnvRequest extends RoaAcsRequest<RestartAppEnvResponse> {
 	
 	public RestartAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "RestartAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "RestartAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv/restart");
 		setMethod(MethodType.POST);
 		try {

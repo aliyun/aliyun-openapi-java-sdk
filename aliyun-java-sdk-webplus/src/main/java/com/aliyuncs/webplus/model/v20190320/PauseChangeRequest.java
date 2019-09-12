@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class PauseChangeRequest extends RoaAcsRequest<PauseChangeResponse> {
 	
 	public PauseChangeRequest() {
-		super("WebPlus", "2019-03-20", "PauseChange", "webx");
+		super("WebPlus", "2019-03-20", "PauseChange");
 		setUriPattern("/pop/v1/wam/change/pause");
 		setMethod(MethodType.POST);
 		try {

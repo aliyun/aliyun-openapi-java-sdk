@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class ValidateConfigSettingRequest extends RoaAcsRequest<ValidateConfigSettingResponse> {
 	
 	public ValidateConfigSettingRequest() {
-		super("WebPlus", "2019-03-20", "ValidateConfigSetting", "webx");
+		super("WebPlus", "2019-03-20", "ValidateConfigSetting");
 		setUriPattern("/pop/v1/wam/config/configSetting/validate");
 		setMethod(MethodType.POST);
 		try {

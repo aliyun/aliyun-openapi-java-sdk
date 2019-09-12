@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeChangeRequest extends RoaAcsRequest<DescribeChangeResponse> {
 	
 	public DescribeChangeRequest() {
-		super("WebPlus", "2019-03-20", "DescribeChange", "webx");
+		super("WebPlus", "2019-03-20", "DescribeChange");
 		setUriPattern("/pop/v1/wam/changeInfo");
 		setMethod(MethodType.GET);
 		try {

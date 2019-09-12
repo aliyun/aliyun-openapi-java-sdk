@@ -83,6 +83,8 @@ public class DescribeEnvResourceResponse extends AcsResponse {
 
 		private List<SecurityGroup> defaultSecurityGroups;
 
+		private List<RdsInstance> rdsInstances;
+
 		private MonitorGroup monitorGroup;
 
 		private ScalingGroup scalingGroup;
@@ -153,6 +155,14 @@ public class DescribeEnvResourceResponse extends AcsResponse {
 			this.defaultSecurityGroups = defaultSecurityGroups;
 		}
 
+		public List<RdsInstance> getRdsInstances() {
+			return this.rdsInstances;
+		}
+
+		public void setRdsInstances(List<RdsInstance> rdsInstances) {
+			this.rdsInstances = rdsInstances;
+		}
+
 		public MonitorGroup getMonitorGroup() {
 			return this.monitorGroup;
 		}
@@ -181,12 +191,22 @@ public class DescribeEnvResourceResponse extends AcsResponse {
 
 			private String id;
 
+			private Boolean imported;
+
 			public String getId() {
 				return this.id;
 			}
 
 			public void setId(String id) {
 				this.id = id;
+			}
+
+			public Boolean getImported() {
+				return this.imported;
+			}
+
+			public void setImported(Boolean imported) {
+				this.imported = imported;
 			}
 		}
 
@@ -212,6 +232,8 @@ public class DescribeEnvResourceResponse extends AcsResponse {
 			private Integer port;
 
 			private String protocol;
+
+			private Boolean imported;
 
 			public String getId() {
 				return this.id;
@@ -260,6 +282,14 @@ public class DescribeEnvResourceResponse extends AcsResponse {
 			public void setProtocol(String protocol) {
 				this.protocol = protocol;
 			}
+
+			public Boolean getImported() {
+				return this.imported;
+			}
+
+			public void setImported(Boolean imported) {
+				this.imported = imported;
+			}
 		}
 
 		public static class SecurityGroup {
@@ -272,6 +302,49 @@ public class DescribeEnvResourceResponse extends AcsResponse {
 
 			public void setId(String id) {
 				this.id = id;
+			}
+		}
+
+		public static class RdsInstance {
+
+			private String id;
+
+			private Boolean imported;
+
+			private String databaseName;
+
+			private String accountName;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public Boolean getImported() {
+				return this.imported;
+			}
+
+			public void setImported(Boolean imported) {
+				this.imported = imported;
+			}
+
+			public String getDatabaseName() {
+				return this.databaseName;
+			}
+
+			public void setDatabaseName(String databaseName) {
+				this.databaseName = databaseName;
+			}
+
+			public String getAccountName() {
+				return this.accountName;
+			}
+
+			public void setAccountName(String accountName) {
+				this.accountName = accountName;
 			}
 		}
 

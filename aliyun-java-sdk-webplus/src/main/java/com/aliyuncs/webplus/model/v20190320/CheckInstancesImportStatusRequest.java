@@ -22,34 +22,34 @@ import com.aliyuncs.webplus.Endpoint;
  * @author auto create
  * @version 
  */
-public class AbortChangeRequest extends RoaAcsRequest<AbortChangeResponse> {
+public class CheckInstancesImportStatusRequest extends RoaAcsRequest<CheckInstancesImportStatusResponse> {
 	
-	public AbortChangeRequest() {
-		super("WebPlus", "2019-03-20", "AbortChange");
-		setUriPattern("/pop/v1/wam/change/abort");
-		setMethod(MethodType.POST);
+	public CheckInstancesImportStatusRequest() {
+		super("WebPlus", "2019-03-20", "CheckInstancesImportStatus");
+		setUriPattern("/pop/v1/wam/instance/ecsImportStat");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String changeId;
+	private String instanceIds;
 
-	public String getChangeId() {
-		return this.changeId;
+	public String getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setChangeId(String changeId) {
-		this.changeId = changeId;
-		if(changeId != null){
-			putBodyParameter("ChangeId", changeId);
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
 	@Override
-	public Class<AbortChangeResponse> getResponseClass() {
-		return AbortChangeResponse.class;
+	public Class<CheckInstancesImportStatusResponse> getResponseClass() {
+		return CheckInstancesImportStatusResponse.class;
 	}
 
 }

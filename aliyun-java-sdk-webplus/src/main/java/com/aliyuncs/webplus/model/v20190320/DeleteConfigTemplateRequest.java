@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DeleteConfigTemplateRequest extends RoaAcsRequest<DeleteConfigTemplateResponse> {
 	
 	public DeleteConfigTemplateRequest() {
-		super("WebPlus", "2019-03-20", "DeleteConfigTemplate", "webx");
+		super("WebPlus", "2019-03-20", "DeleteConfigTemplate");
 		setUriPattern("/pop/v1/wam/configTemplate");
 		setMethod(MethodType.DELETE);
 		try {

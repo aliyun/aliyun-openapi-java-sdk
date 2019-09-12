@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class CreatePkgVersionRequest extends RoaAcsRequest<CreatePkgVersionResponse> {
 	
 	public CreatePkgVersionRequest() {
-		super("WebPlus", "2019-03-20", "CreatePkgVersion", "webx");
+		super("WebPlus", "2019-03-20", "CreatePkgVersion");
 		setUriPattern("/pop/v1/wam/pkgVersion");
 		setMethod(MethodType.POST);
 		try {

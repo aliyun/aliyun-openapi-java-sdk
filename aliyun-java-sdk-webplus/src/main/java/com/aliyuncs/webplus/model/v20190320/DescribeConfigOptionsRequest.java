@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeConfigOptionsRequest extends RoaAcsRequest<DescribeConfigOptionsResponse> {
 	
 	public DescribeConfigOptionsRequest() {
-		super("WebPlus", "2019-03-20", "DescribeConfigOptions", "webx");
+		super("WebPlus", "2019-03-20", "DescribeConfigOptions");
 		setUriPattern("/pop/v1/wam/config/configOption");
 		setMethod(MethodType.GET);
 		try {

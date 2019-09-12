@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class StopAppEnvRequest extends RoaAcsRequest<StopAppEnvResponse> {
 	
 	public StopAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "StopAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "StopAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv/stop");
 		setMethod(MethodType.POST);
 		try {

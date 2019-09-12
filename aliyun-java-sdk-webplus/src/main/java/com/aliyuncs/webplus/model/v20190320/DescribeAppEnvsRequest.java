@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeAppEnvsRequest extends RoaAcsRequest<DescribeAppEnvsResponse> {
 	
 	public DescribeAppEnvsRequest() {
-		super("WebPlus", "2019-03-20", "DescribeAppEnvs", "webx");
+		super("WebPlus", "2019-03-20", "DescribeAppEnvs");
 		setUriPattern("/pop/v1/wam/appEnv");
 		setMethod(MethodType.GET);
 		try {

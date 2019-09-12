@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class CreateStorageRequest extends RoaAcsRequest<CreateStorageResponse> {
 	
 	public CreateStorageRequest() {
-		super("WebPlus", "2019-03-20", "CreateStorage", "webx");
+		super("WebPlus", "2019-03-20", "CreateStorage");
 		setUriPattern("/pop/v1/wam/storage");
 		setMethod(MethodType.POST);
 		try {

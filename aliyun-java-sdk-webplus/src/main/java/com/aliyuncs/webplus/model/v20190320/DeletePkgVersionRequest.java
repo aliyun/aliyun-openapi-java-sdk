@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DeletePkgVersionRequest extends RoaAcsRequest<DeletePkgVersionResponse> {
 	
 	public DeletePkgVersionRequest() {
-		super("WebPlus", "2019-03-20", "DeletePkgVersion", "webx");
+		super("WebPlus", "2019-03-20", "DeletePkgVersion");
 		setUriPattern("/pop/v1/wam/pkgVersion");
 		setMethod(MethodType.DELETE);
 		try {

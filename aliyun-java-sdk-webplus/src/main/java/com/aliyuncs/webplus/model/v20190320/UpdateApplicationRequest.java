@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class UpdateApplicationRequest extends RoaAcsRequest<UpdateApplicationResponse> {
 	
 	public UpdateApplicationRequest() {
-		super("WebPlus", "2019-03-20", "UpdateApplication", "webx");
+		super("WebPlus", "2019-03-20", "UpdateApplication");
 		setUriPattern("/pop/v1/wam/application");
 		setMethod(MethodType.PUT);
 		try {

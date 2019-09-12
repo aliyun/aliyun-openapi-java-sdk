@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeInstanceHealthRequest extends RoaAcsRequest<DescribeInstanceHealthResponse> {
 	
 	public DescribeInstanceHealthRequest() {
-		super("WebPlus", "2019-03-20", "DescribeInstanceHealth", "webx");
+		super("WebPlus", "2019-03-20", "DescribeInstanceHealth");
 		setUriPattern("/pop/v1/wam/instance/health");
 		setMethod(MethodType.GET);
 		try {

@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class RebuildAppEnvRequest extends RoaAcsRequest<RebuildAppEnvResponse> {
 	
 	public RebuildAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "RebuildAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "RebuildAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv/rebuild");
 		setMethod(MethodType.POST);
 		try {

@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class UpdateAppEnvRequest extends RoaAcsRequest<UpdateAppEnvResponse> {
 	
 	public UpdateAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "UpdateAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "UpdateAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv");
 		setMethod(MethodType.PUT);
 		try {
@@ -37,6 +37,8 @@ public class UpdateAppEnvRequest extends RoaAcsRequest<UpdateAppEnvResponse> {
 	private String optionSettings;
 
 	private Boolean dryRun;
+
+	private String extraProperties;
 
 	private String stackId;
 
@@ -65,6 +67,17 @@ public class UpdateAppEnvRequest extends RoaAcsRequest<UpdateAppEnvResponse> {
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putBodyParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getExtraProperties() {
+		return this.extraProperties;
+	}
+
+	public void setExtraProperties(String extraProperties) {
+		this.extraProperties = extraProperties;
+		if(extraProperties != null){
+			putBodyParameter("ExtraProperties", extraProperties);
 		}
 	}
 

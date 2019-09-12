@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class StartAppEnvRequest extends RoaAcsRequest<StartAppEnvResponse> {
 	
 	public StartAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "StartAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "StartAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv/start");
 		setMethod(MethodType.POST);
 		try {

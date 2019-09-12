@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DryRunCreateAppEnvRequest extends RoaAcsRequest<DryRunCreateAppEnvResponse> {
 	
 	public DryRunCreateAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "DryRunCreateAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "DryRunCreateAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv/dryRunCreate");
 		setMethod(MethodType.POST);
 		try {
@@ -35,6 +35,8 @@ public class DryRunCreateAppEnvRequest extends RoaAcsRequest<DryRunCreateAppEnvR
 	}
 
 	private String optionSettings;
+
+	private String extraProperties;
 
 	private String stackId;
 
@@ -52,6 +54,17 @@ public class DryRunCreateAppEnvRequest extends RoaAcsRequest<DryRunCreateAppEnvR
 		this.optionSettings = optionSettings;
 		if(optionSettings != null){
 			putBodyParameter("OptionSettings", optionSettings);
+		}
+	}
+
+	public String getExtraProperties() {
+		return this.extraProperties;
+	}
+
+	public void setExtraProperties(String extraProperties) {
+		this.extraProperties = extraProperties;
+		if(extraProperties != null){
+			putBodyParameter("ExtraProperties", extraProperties);
 		}
 	}
 

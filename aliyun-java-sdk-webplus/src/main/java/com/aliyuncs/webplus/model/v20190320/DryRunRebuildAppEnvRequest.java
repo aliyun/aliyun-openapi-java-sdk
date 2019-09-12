@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DryRunRebuildAppEnvRequest extends RoaAcsRequest<DryRunRebuildAppEnvResponse> {
 	
 	public DryRunRebuildAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "DryRunRebuildAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "DryRunRebuildAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv/dryRunRebuild");
 		setMethod(MethodType.POST);
 		try {

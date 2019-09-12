@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DryRunTerminateAppEnvRequest extends RoaAcsRequest<DryRunTerminateAppEnvResponse> {
 	
 	public DryRunTerminateAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "DryRunTerminateAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "DryRunTerminateAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv/dryRunTerminate");
 		setMethod(MethodType.POST);
 		try {

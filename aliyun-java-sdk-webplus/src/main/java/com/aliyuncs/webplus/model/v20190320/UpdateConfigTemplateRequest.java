@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class UpdateConfigTemplateRequest extends RoaAcsRequest<UpdateConfigTemplateResponse> {
 	
 	public UpdateConfigTemplateRequest() {
-		super("WebPlus", "2019-03-20", "UpdateConfigTemplate", "webx");
+		super("WebPlus", "2019-03-20", "UpdateConfigTemplate");
 		setUriPattern("/pop/v1/wam/configTemplate");
 		setMethod(MethodType.PUT);
 		try {

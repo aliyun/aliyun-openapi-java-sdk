@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class CreateAppEnvRequest extends RoaAcsRequest<CreateAppEnvResponse> {
 	
 	public CreateAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "CreateAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "CreateAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv");
 		setMethod(MethodType.POST);
 		try {
@@ -39,6 +39,8 @@ public class CreateAppEnvRequest extends RoaAcsRequest<CreateAppEnvResponse> {
 	private Boolean dryRun;
 
 	private String envName;
+
+	private String extraProperties;
 
 	private String stackId;
 
@@ -84,6 +86,17 @@ public class CreateAppEnvRequest extends RoaAcsRequest<CreateAppEnvResponse> {
 		this.envName = envName;
 		if(envName != null){
 			putBodyParameter("EnvName", envName);
+		}
+	}
+
+	public String getExtraProperties() {
+		return this.extraProperties;
+	}
+
+	public void setExtraProperties(String extraProperties) {
+		this.extraProperties = extraProperties;
+		if(extraProperties != null){
+			putBodyParameter("ExtraProperties", extraProperties);
 		}
 	}
 

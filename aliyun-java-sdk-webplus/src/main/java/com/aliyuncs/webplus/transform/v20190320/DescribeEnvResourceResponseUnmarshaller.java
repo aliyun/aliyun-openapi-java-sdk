@@ -22,6 +22,7 @@ import com.aliyuncs.webplus.model.v20190320.DescribeEnvResourceResponse.EnvResou
 import com.aliyuncs.webplus.model.v20190320.DescribeEnvResourceResponse.EnvResource.Instance;
 import com.aliyuncs.webplus.model.v20190320.DescribeEnvResourceResponse.EnvResource.LoadBalancer;
 import com.aliyuncs.webplus.model.v20190320.DescribeEnvResourceResponse.EnvResource.MonitorGroup;
+import com.aliyuncs.webplus.model.v20190320.DescribeEnvResourceResponse.EnvResource.RdsInstance;
 import com.aliyuncs.webplus.model.v20190320.DescribeEnvResourceResponse.EnvResource.ScalingGroup;
 import com.aliyuncs.webplus.model.v20190320.DescribeEnvResourceResponse.EnvResource.SecurityGroup;
 import com.aliyuncs.webplus.model.v20190320.DescribeEnvResourceResponse.EnvResource.VSwitch;
@@ -59,6 +60,7 @@ public class DescribeEnvResourceResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeEnvResourceResponse.EnvResource.Instances.Length"); i++) {
 			Instance instance = new Instance();
 			instance.setId(_ctx.stringValue("DescribeEnvResourceResponse.EnvResource.Instances["+ i +"].Id"));
+			instance.setImported(_ctx.booleanValue("DescribeEnvResourceResponse.EnvResource.Instances["+ i +"].Imported"));
 
 			instances.add(instance);
 		}
@@ -80,6 +82,7 @@ public class DescribeEnvResourceResponseUnmarshaller {
 			loadBalancer.setAddressType(_ctx.stringValue("DescribeEnvResourceResponse.EnvResource.LoadBalancers["+ i +"].AddressType"));
 			loadBalancer.setPort(_ctx.integerValue("DescribeEnvResourceResponse.EnvResource.LoadBalancers["+ i +"].Port"));
 			loadBalancer.setProtocol(_ctx.stringValue("DescribeEnvResourceResponse.EnvResource.LoadBalancers["+ i +"].Protocol"));
+			loadBalancer.setImported(_ctx.booleanValue("DescribeEnvResourceResponse.EnvResource.LoadBalancers["+ i +"].Imported"));
 
 			loadBalancers.add(loadBalancer);
 		}
@@ -93,6 +96,18 @@ public class DescribeEnvResourceResponseUnmarshaller {
 			defaultSecurityGroups.add(securityGroup);
 		}
 		envResource.setDefaultSecurityGroups(defaultSecurityGroups);
+
+		List<RdsInstance> rdsInstances = new ArrayList<RdsInstance>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEnvResourceResponse.EnvResource.RdsInstances.Length"); i++) {
+			RdsInstance rdsInstance = new RdsInstance();
+			rdsInstance.setId(_ctx.stringValue("DescribeEnvResourceResponse.EnvResource.RdsInstances["+ i +"].Id"));
+			rdsInstance.setImported(_ctx.booleanValue("DescribeEnvResourceResponse.EnvResource.RdsInstances["+ i +"].Imported"));
+			rdsInstance.setDatabaseName(_ctx.stringValue("DescribeEnvResourceResponse.EnvResource.RdsInstances["+ i +"].DatabaseName"));
+			rdsInstance.setAccountName(_ctx.stringValue("DescribeEnvResourceResponse.EnvResource.RdsInstances["+ i +"].AccountName"));
+
+			rdsInstances.add(rdsInstance);
+		}
+		envResource.setRdsInstances(rdsInstances);
 		describeEnvResourceResponse.setEnvResource(envResource);
 	 
 	 	return describeEnvResourceResponse;

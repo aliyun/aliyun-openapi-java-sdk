@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeApplicationsRequest extends RoaAcsRequest<DescribeApplicationsResponse> {
 	
 	public DescribeApplicationsRequest() {
-		super("WebPlus", "2019-03-20", "DescribeApplications", "webx");
+		super("WebPlus", "2019-03-20", "DescribeApplications");
 		setUriPattern("/pop/v1/wam/application");
 		setMethod(MethodType.GET);
 		try {

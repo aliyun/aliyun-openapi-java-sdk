@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeEventsRequest extends RoaAcsRequest<DescribeEventsResponse> {
 	
 	public DescribeEventsRequest() {
-		super("WebPlus", "2019-03-20", "DescribeEvents", "webx");
+		super("WebPlus", "2019-03-20", "DescribeEvents");
 		setUriPattern("/pop/v1/wam/event");
 		setMethod(MethodType.GET);
 		try {

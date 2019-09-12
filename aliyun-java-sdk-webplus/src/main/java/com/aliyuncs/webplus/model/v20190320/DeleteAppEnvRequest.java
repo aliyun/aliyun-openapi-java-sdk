@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DeleteAppEnvRequest extends RoaAcsRequest<DeleteAppEnvResponse> {
 	
 	public DeleteAppEnvRequest() {
-		super("WebPlus", "2019-03-20", "DeleteAppEnv", "webx");
+		super("WebPlus", "2019-03-20", "DeleteAppEnv");
 		setUriPattern("/pop/v1/wam/appEnv");
 		setMethod(MethodType.DELETE);
 		try {

@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeStorageRequest extends RoaAcsRequest<DescribeStorageResponse> {
 	
 	public DescribeStorageRequest() {
-		super("WebPlus", "2019-03-20", "DescribeStorage", "webx");
+		super("WebPlus", "2019-03-20", "DescribeStorage");
 		setUriPattern("/pop/v1/wam/storage");
 		setMethod(MethodType.GET);
 		try {

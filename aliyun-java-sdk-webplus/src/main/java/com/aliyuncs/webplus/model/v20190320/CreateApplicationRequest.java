@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationResponse> {
 	
 	public CreateApplicationRequest() {
-		super("WebPlus", "2019-03-20", "CreateApplication", "webx");
+		super("WebPlus", "2019-03-20", "CreateApplication");
 		setUriPattern("/pop/v1/wam/application");
 		setMethod(MethodType.POST);
 		try {

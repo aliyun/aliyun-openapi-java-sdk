@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DeleteChangeRequest extends RoaAcsRequest<DeleteChangeResponse> {
 	
 	public DeleteChangeRequest() {
-		super("WebPlus", "2019-03-20", "DeleteChange", "webx");
+		super("WebPlus", "2019-03-20", "DeleteChange");
 		setUriPattern("/pop/v1/wam/change");
 		setMethod(MethodType.DELETE);
 		try {

@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeGatherStatsResultRequest extends RoaAcsRequest<DescribeGatherStatsResultResponse> {
 	
 	public DescribeGatherStatsResultRequest() {
-		super("WebPlus", "2019-03-20", "DescribeGatherStatsResult", "webx");
+		super("WebPlus", "2019-03-20", "DescribeGatherStatsResult");
 		setUriPattern("/pop/v1/wam/appEnv/gatherStats");
 		setMethod(MethodType.GET);
 		try {

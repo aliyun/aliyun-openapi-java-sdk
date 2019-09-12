@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribeStacksRequest extends RoaAcsRequest<DescribeStacksResponse> {
 	
 	public DescribeStacksRequest() {
-		super("WebPlus", "2019-03-20", "DescribeStacks", "webx");
+		super("WebPlus", "2019-03-20", "DescribeStacks");
 		setUriPattern("/pop/v1/wam/stack");
 		setMethod(MethodType.GET);
 		try {

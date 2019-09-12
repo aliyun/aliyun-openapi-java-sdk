@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DeleteApplicationRequest extends RoaAcsRequest<DeleteApplicationResponse> {
 	
 	public DeleteApplicationRequest() {
-		super("WebPlus", "2019-03-20", "DeleteApplication", "webx");
+		super("WebPlus", "2019-03-20", "DeleteApplication");
 		setUriPattern("/pop/v1/wam/application");
 		setMethod(MethodType.DELETE);
 		try {

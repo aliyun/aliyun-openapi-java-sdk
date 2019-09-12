@@ -25,7 +25,7 @@ import com.aliyuncs.webplus.Endpoint;
 public class DescribePkgVersionsRequest extends RoaAcsRequest<DescribePkgVersionsResponse> {
 	
 	public DescribePkgVersionsRequest() {
-		super("WebPlus", "2019-03-20", "DescribePkgVersions", "webx");
+		super("WebPlus", "2019-03-20", "DescribePkgVersions");
 		setUriPattern("/pop/v1/wam/pkgVersion");
 		setMethod(MethodType.GET);
 		try {
