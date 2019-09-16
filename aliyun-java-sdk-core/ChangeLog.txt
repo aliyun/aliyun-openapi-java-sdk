@@ -1,4 +1,7 @@
-﻿2019-05-27 Version: 4.4.4
+﻿2019-09-16 Version: 4.4.5
+1, Modify getEndpoint logic
+
+2019-05-27 Version: 4.4.4
 1, Update dependency
 2, Change exception message
 3, Add new endpoint resolve and test
