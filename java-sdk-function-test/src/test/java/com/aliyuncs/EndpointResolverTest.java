@@ -16,6 +16,9 @@ public class EndpointResolverTest extends BaseTest {
         DescribeRegionsRequest request = new DescribeRegionsRequest();
         ProductDomain domain = client.getDomain(request, "cn-qingdao");
         Assert.assertEquals("ecs-cn-hangzhou.aliyuncs.com", domain.getDomainName());
+
+        domain = client.getDomain(request, new String("cn-qingdao"));
+        Assert.assertEquals("ecs-cn-hangzhou.aliyuncs.com", domain.getDomainName());
     }
 
     @Test

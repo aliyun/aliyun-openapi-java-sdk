@@ -37,14 +37,10 @@ public class EndpointResolverRules extends EndpointResolverBase {
             if ("".equals(this.productNetwork) || this.productNetwork == null) {
                 this.productNetwork = "public";
             }
-            
+
             if ("public".equals(this.productNetwork)) {
-                Iterator<HashMap.Entry<String, String>> entries = this.productEndpointMap.entrySet().iterator();
-                while (entries.hasNext()) {
-                    HashMap.Entry<String, String> entry = entries.next();
-                    if (entry.getKey() == regionId) {
-                        return entry.getValue();
-                    }
+                if (this.productEndpointMap.containsKey(regionId)) {
+                    return this.productEndpointMap.get(regionId);
                 }
             }
 
