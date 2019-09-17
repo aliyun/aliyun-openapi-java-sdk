@@ -18,10 +18,10 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
+ * @version
  */
 public class AllocatePublicNetworkAddressRequest extends RpcAcsRequest<AllocatePublicNetworkAddressResponse> {
-	
+
 	public AllocatePublicNetworkAddressRequest() {
 		super("Dds", "2015-12-01", "AllocatePublicNetworkAddress", "Dds");
 	}
