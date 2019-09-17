@@ -63,13 +63,7 @@ public class Credential {
     }
 
     public boolean isExpired() {
-        if (this.expiredDate == null) {
-            return false;
-        }
-        if (this.expiredDate.after(new Date())) {
-            return false;
-        }
-        return true;
+        return expiredDate == null;
     }
 
     public String getSecurityToken() {

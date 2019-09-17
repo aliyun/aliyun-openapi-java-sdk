@@ -33,7 +33,9 @@ import java.util.regex.Pattern;
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
 
-    // Now maxRetryNumber and autoRetry has no effect.
+    /**
+     * Now maxRetryNumber and autoRetry has no effect.
+     */
     private int maxRetryNumber = 3;
     private boolean autoRetry = true;
     private IClientProfile clientProfile = null;
@@ -44,7 +46,6 @@ public class DefaultAcsClient implements IAcsClient {
     private EndpointResolver endpointResolver;
     private static final String SIGNATURE_BEGIN = "string to sign is:";
     private final UserAgentConfig userAgentConfig = new UserAgentConfig();
-
     /**
      * @Deprecated : Use DefaultAcsClient(String regionId) instead of this
      */

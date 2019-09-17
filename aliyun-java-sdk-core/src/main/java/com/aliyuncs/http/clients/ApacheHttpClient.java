@@ -260,7 +260,8 @@ public class ApacheHttpClient extends IHttpClient {
         }
         URL url = new URL(apiReq.getSysUrl());
         HttpHost proxy = null;
-        if ("https".equalsIgnoreCase(url.getProtocol())) {
+        String https = "https";
+        if (https.equalsIgnoreCase(url.getProtocol())) {
             proxy = HttpUtil.getApacheProxy(clientConfig.getHttpsProxy(), EnvironmentUtils.getHttpsProxy(), apiReq);
         } else {
             proxy = HttpUtil.getApacheProxy(clientConfig.getHttpProxy(), EnvironmentUtils.getHttpProxy(), apiReq);

@@ -55,13 +55,13 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     @Override
     public void setVersion(String version) {
-        super.setVersion(version);
+        super.setSysVersion(version);
         this.putHeaderParameter("x-acs-version", version);
     }
 
     @Override
-    public void setSecurityToken(String securityToken) {
-        super.setSecurityToken(securityToken);
+    public void setSysSecurityToken(String securityToken) {
+        super.setSysSecurityToken(securityToken);
         this.putHeaderParameter("x-acs-security-token", securityToken);
     }
 

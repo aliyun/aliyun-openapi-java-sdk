@@ -38,20 +38,18 @@ public class EndpointResolverRules extends EndpointResolverBase {
                 this.productNetwork = "public";
             }
 
-            if ("public".equals(this.productNetwork)) {
-                if (this.productEndpointMap.containsKey(regionId)) {
+            if ("public".equals(this.productNetwork) && this.productEndpointMap.containsKey(regionId)) {
                     return this.productEndpointMap.get(regionId);
-                }
             }
 
             String endpoint = "";
-            if (this.productEndpointRegional.equals("regional")) {
+            if ("regional".equals(this.productEndpointRegional)) {
                 endpoint = "<product_id><suffix><network>.<region_id>.aliyuncs.com";
                 endpoint = endpoint.replace("<region_id>", regionId.toLowerCase());
             } else {
                 endpoint = "<product_id><suffix><network>.aliyuncs.com";
             }
-            if (this.productSuffix == null || this.productSuffix.equals("")) {
+            if (this.productSuffix == null || "".equals(this.productSuffix)) {
                 endpoint = endpoint.replace("<suffix>", "");
             } else {
                 endpoint = endpoint.replace("<suffix>", "-" + this.productSuffix.toLowerCase());

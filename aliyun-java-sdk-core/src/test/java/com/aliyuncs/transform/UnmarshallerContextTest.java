@@ -116,7 +116,7 @@ public class UnmarshallerContextTest {
         responseMap.put("floatValueKey", "100.5");
         unmarshallerContext.setResponseMap(responseMap);
         Map<String, String> map = unmarshallerContext.getResponseMap();
-        Assert.assertTrue("100.5" == map.get("floatValueKey"));
+        Assert.assertTrue("100.5".equals(map.get("floatValueKey")));
     }
 
     @Test

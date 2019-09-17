@@ -206,6 +206,6 @@ public class ProfileCredentialsProviderTest {
                 getResource("configTest.ini").getPath();
         Wini firstIni = (Wini) getIni.invoke(profileCredentialsProvider, file);
         Wini secondIni = (Wini) getIni.invoke(profileCredentialsProvider, file);
-        Assert.assertTrue(firstIni == secondIni);
+        Assert.assertTrue(firstIni.equals(secondIni));
     }
 }

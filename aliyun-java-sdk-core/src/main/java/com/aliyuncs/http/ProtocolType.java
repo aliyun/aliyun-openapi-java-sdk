@@ -1,6 +1,10 @@
 package com.aliyuncs.http;
 
 public enum ProtocolType {
+    /**
+     * HTTP
+     * HTTPS
+     */
 
     HTTP("http"),
 
