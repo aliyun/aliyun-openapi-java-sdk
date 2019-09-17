@@ -14,6 +14,13 @@
 
 package com.aliyuncs.ecs;
 
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.IAcsClient;
+import com.aliyuncs.ecs.model.v20140526.DescribeRegionsRequest;
+import com.aliyuncs.ecs.model.v20140526.DescribeRegionsResponse;
+import com.aliyuncs.exceptions.ClientException;
+import com.aliyuncs.profile.DefaultProfile;
+
 import java.util.HashMap;
 
 public class Endpoint {
@@ -65,4 +72,11 @@ public class Endpoint {
     };
 
     public static String endpointRegionalType = "regional";
+
+    public static void main(String[] args) throws ClientException {
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", System.getenv("AccessKeyId"), System.getenv("AccessKeySecret"));
+        IAcsClient client = new DefaultAcsClient(profile);
+        DescribeRegionsRequest regionsRequest = new DescribeRegionsRequest();
+        DescribeRegionsResponse response = client.getAcsResponse(regionsRequest);
+    }
 }

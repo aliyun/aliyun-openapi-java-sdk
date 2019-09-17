@@ -52,25 +52,25 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     @Override
     public void setActionName(String actionName) {
-        super.setActionName(actionName);
+        super.setSysActionName(actionName);
         this.putQueryParameter("Action", actionName);
     }
 
     @Override
     public void setVersion(String version) {
-        super.setVersion(version);
+        super.setSysVersion(version);
         this.putQueryParameter("Version", version);
     }
 
     @Override
     public void setSecurityToken(String securityToken) {
-        super.setSecurityToken(securityToken);
+        super.setSysSecurityToken(securityToken);
         this.putQueryParameter("SecurityToken", securityToken);
     }
 
     @Override
     public void setAcceptFormat(FormatType acceptFormat) {
-        super.setAcceptFormat(acceptFormat);
+        super.setSysAcceptFormat(acceptFormat);
         this.putQueryParameter("Format", acceptFormat.toString());
     }
 

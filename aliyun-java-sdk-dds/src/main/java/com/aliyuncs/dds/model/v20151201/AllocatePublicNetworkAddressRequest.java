@@ -73,6 +73,7 @@ public class AllocatePublicNetworkAddressRequest extends RpcAcsRequest<AllocateP
 	/**
 	 * @deprecated use setBizSecurityToken instead of this.
 	 */
+	@Override
 	@Deprecated
 	public void setSecurityToken(String securityToken) {
 		this.securityToken = securityToken;

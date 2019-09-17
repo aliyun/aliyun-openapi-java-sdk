@@ -42,8 +42,8 @@ public class LogUtils {
     public final static String ERROR = "{error}";
     public final static String DEFAULT_LOG_FORMAT =
             "{method} {uri} HTTP/{version} {code} {cost} {hostname} {pid} {error}";
-    public final static Pattern reqHeaderPattern = Pattern.compile("\\{req_header_(.*?)\\}");
-    public final static Pattern resHeaderPattern = Pattern.compile("\\{res_header_(.*?)\\}");
+    public final static Pattern REQHEADERPATTERN = Pattern.compile("\\{req_header_(.*?)\\}");
+    public final static Pattern RESHEADERPATTERN = Pattern.compile("\\{res_header_(.*?)\\}");
 
     public static String fillContent(String format, LogUnit logUnit) {
         String content = format.replace(REQUEST, logUnit.getHttpRequest().toString())
@@ -70,14 +70,14 @@ public class LogUtils {
                     replace(PHRASE, logUnit.getPhrase()).
                     replace(CODE, logUnit.getCode());
         }
-        Matcher m = reqHeaderPattern.matcher(content);
+        Matcher m = REQHEADERPATTERN.matcher(content);
         while (m.find()) {
             String headerKey = m.group(1);
             if (null != logUnit.getHttpRequest().getHeaderValue(headerKey)) {
                 content = content.replace(m.group(), logUnit.getHttpRequest().getHeaderValue(headerKey));
             }
         }
-        m = resHeaderPattern.matcher(content);
+        m = RESHEADERPATTERN.matcher(content);
         while (m.find()) {
             String headerKey = m.group(1);
             if (null != logUnit.getHttpResponse().getHeaderValue(headerKey)) {

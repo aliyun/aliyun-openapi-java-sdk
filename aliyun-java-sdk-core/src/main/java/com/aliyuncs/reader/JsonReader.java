@@ -85,6 +85,7 @@ public class JsonReader implements Reader {
             case NEXT_POSITION:
                 c = ct.next();
                 break;
+                default:
         }
         readJsonForHideItem(endpoint);
         return map;
