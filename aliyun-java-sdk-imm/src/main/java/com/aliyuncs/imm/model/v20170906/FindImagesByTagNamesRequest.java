@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,26 +25,27 @@ public class FindImagesByTagNamesRequest extends RpcAcsRequest<FindImagesByTagNa
 	
 	public FindImagesByTagNamesRequest() {
 		super("imm", "2017-09-06", "FindImagesByTagNames", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String marker;
-
-	private Integer limit;
 
 	private String project;
 
-	private String setId;
+	private Integer limit;
 
 	private String tagNames;
 
-	public String getMarker() {
-		return this.marker;
+	private String marker;
+
+	private String setId;
+
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -58,14 +60,25 @@ public class FindImagesByTagNamesRequest extends RpcAcsRequest<FindImagesByTagNa
 		}
 	}
 
-	public String getProject() {
-		return this.project;
+	public String getTagNames() {
+		return this.tagNames;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
+	public void setTagNames(String tagNames) {
+		this.tagNames = tagNames;
+		if(tagNames != null){
+			putQueryParameter("TagNames", tagNames);
+		}
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
 		}
 	}
 
@@ -77,17 +90,6 @@ public class FindImagesByTagNamesRequest extends RpcAcsRequest<FindImagesByTagNa
 		this.setId = setId;
 		if(setId != null){
 			putQueryParameter("SetId", setId);
-		}
-	}
-
-	public String getTagNames() {
-		return this.tagNames;
-	}
-
-	public void setTagNames(String tagNames) {
-		this.tagNames = tagNames;
-		if(tagNames != null){
-			putQueryParameter("TagNames", tagNames);
 		}
 	}
 

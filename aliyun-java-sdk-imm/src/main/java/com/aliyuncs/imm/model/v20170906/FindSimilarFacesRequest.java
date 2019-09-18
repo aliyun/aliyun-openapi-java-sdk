@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,9 +25,10 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 	
 	public FindSimilarFacesRequest() {
 		super("imm", "2017-09-06", "FindSimilarFaces", "imm");
+		setMethod(MethodType.POST);
 	}
 
-	private String imageUri;
+	private String project;
 
 	private Float minSimilarity;
 
@@ -34,20 +36,20 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 
 	private Integer limit;
 
-	private String project;
+	private String faceId;
+
+	private String imageUri;
 
 	private String setId;
 
-	private String faceId;
-
-	public String getImageUri() {
-		return this.imageUri;
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setImageUri(String imageUri) {
-		this.imageUri = imageUri;
-		if(imageUri != null){
-			putQueryParameter("ImageUri", imageUri);
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -84,14 +86,25 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 		}
 	}
 
-	public String getProject() {
-		return this.project;
+	public String getFaceId() {
+		return this.faceId;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
+	public void setFaceId(String faceId) {
+		this.faceId = faceId;
+		if(faceId != null){
+			putQueryParameter("FaceId", faceId);
+		}
+	}
+
+	public String getImageUri() {
+		return this.imageUri;
+	}
+
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
+		if(imageUri != null){
+			putQueryParameter("ImageUri", imageUri);
 		}
 	}
 
@@ -103,17 +116,6 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 		this.setId = setId;
 		if(setId != null){
 			putQueryParameter("SetId", setId);
-		}
-	}
-
-	public String getFaceId() {
-		return this.faceId;
-	}
-
-	public void setFaceId(String faceId) {
-		this.faceId = faceId;
-		if(faceId != null){
-			putQueryParameter("FaceId", faceId);
 		}
 	}
 

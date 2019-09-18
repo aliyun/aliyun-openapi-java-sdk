@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,24 +25,14 @@ public class DeleteVideoTaskRequest extends RpcAcsRequest<DeleteVideoTaskRespons
 	
 	public DeleteVideoTaskRequest() {
 		super("imm", "2017-09-06", "DeleteVideoTask", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String taskType;
 
 	private String project;
 
 	private String taskId;
 
-	public String getTaskType() {
-		return this.taskType;
-	}
-
-	public void setTaskType(String taskType) {
-		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
-		}
-	}
+	private String taskType;
 
 	public String getProject() {
 		return this.project;
@@ -62,6 +53,17 @@ public class DeleteVideoTaskRequest extends RpcAcsRequest<DeleteVideoTaskRespons
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public String getTaskType() {
+		return this.taskType;
+	}
+
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,6 +25,7 @@ public class RegistFaceRequest extends RpcAcsRequest<RegistFaceResponse> {
 	
 	public RegistFaceRequest() {
 		super("imm", "2017-09-06", "RegistFace", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private Boolean chooseBiggestFace;
@@ -32,11 +34,11 @@ public class RegistFaceRequest extends RpcAcsRequest<RegistFaceResponse> {
 
 	private String project;
 
+	private String groupName;
+
 	private String srcUri;
 
 	private String registerCheckLevel;
-
-	private String groupName;
 
 	private String user;
 
@@ -73,6 +75,17 @@ public class RegistFaceRequest extends RpcAcsRequest<RegistFaceResponse> {
 		}
 	}
 
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
 	public String getSrcUri() {
 		return this.srcUri;
 	}
@@ -92,17 +105,6 @@ public class RegistFaceRequest extends RpcAcsRequest<RegistFaceResponse> {
 		this.registerCheckLevel = registerCheckLevel;
 		if(registerCheckLevel != null){
 			putQueryParameter("RegisterCheckLevel", registerCheckLevel);
-		}
-	}
-
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,26 +25,16 @@ public class DeleteTagSetRequest extends RpcAcsRequest<DeleteTagSetResponse> {
 	
 	public DeleteTagSetRequest() {
 		super("imm", "2017-09-06", "DeleteTagSet", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String lazyMode;
 
 	private String project;
 
-	private String setId;
+	private String lazyMode;
 
 	private String checkEmpty;
 
-	public String getLazyMode() {
-		return this.lazyMode;
-	}
-
-	public void setLazyMode(String lazyMode) {
-		this.lazyMode = lazyMode;
-		if(lazyMode != null){
-			putQueryParameter("LazyMode", lazyMode);
-		}
-	}
+	private String setId;
 
 	public String getProject() {
 		return this.project;
@@ -56,14 +47,14 @@ public class DeleteTagSetRequest extends RpcAcsRequest<DeleteTagSetResponse> {
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
+	public String getLazyMode() {
+		return this.lazyMode;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
+	public void setLazyMode(String lazyMode) {
+		this.lazyMode = lazyMode;
+		if(lazyMode != null){
+			putQueryParameter("LazyMode", lazyMode);
 		}
 	}
 
@@ -75,6 +66,17 @@ public class DeleteTagSetRequest extends RpcAcsRequest<DeleteTagSetResponse> {
 		this.checkEmpty = checkEmpty;
 		if(checkEmpty != null){
 			putQueryParameter("CheckEmpty", checkEmpty);
+		}
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
+		if(setId != null){
+			putQueryParameter("SetId", setId);
 		}
 	}
 

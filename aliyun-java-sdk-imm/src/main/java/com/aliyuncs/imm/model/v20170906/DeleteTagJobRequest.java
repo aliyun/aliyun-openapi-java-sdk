@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,24 +25,14 @@ public class DeleteTagJobRequest extends RpcAcsRequest<DeleteTagJobResponse> {
 	
 	public DeleteTagJobRequest() {
 		super("imm", "2017-09-06", "DeleteTagJob", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String jobId;
 
 	private String project;
 
+	private String jobId;
+
 	private String clearIndexData;
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -51,6 +42,17 @@ public class DeleteTagJobRequest extends RpcAcsRequest<DeleteTagJobResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 

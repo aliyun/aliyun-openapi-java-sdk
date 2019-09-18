@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,24 +25,14 @@ public class CreateSetRequest extends RpcAcsRequest<CreateSetResponse> {
 	
 	public CreateSetRequest() {
 		super("imm", "2017-09-06", "CreateSet", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String setName;
 
 	private String project;
 
+	private String setName;
+
 	private String setId;
-
-	public String getSetName() {
-		return this.setName;
-	}
-
-	public void setSetName(String setName) {
-		this.setName = setName;
-		if(setName != null){
-			putQueryParameter("SetName", setName);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -51,6 +42,17 @@ public class CreateSetRequest extends RpcAcsRequest<CreateSetResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getSetName() {
+		return this.setName;
+	}
+
+	public void setSetName(String setName) {
+		this.setName = setName;
+		if(setName != null){
+			putQueryParameter("SetName", setName);
 		}
 	}
 

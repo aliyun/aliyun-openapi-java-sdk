@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,6 +25,7 @@ public class DeleteTagByUrlRequest extends RpcAcsRequest<DeleteTagByUrlResponse>
 	
 	public DeleteTagByUrlRequest() {
 		super("imm", "2017-09-06", "DeleteTagByUrl", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private String project;

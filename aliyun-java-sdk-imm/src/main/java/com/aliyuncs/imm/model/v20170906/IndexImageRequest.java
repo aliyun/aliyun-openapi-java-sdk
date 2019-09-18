@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,15 +25,22 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 	
 	public IndexImageRequest() {
 		super("imm", "2017-09-06", "IndexImage", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String remarksB;
 
 	private String project;
 
-	private String remarksA;
-
 	private String externalId;
+
+	private String notifyEndpoint;
+
+	private String sourceType;
+
+	private String notifyTopicName;
+
+	private String remarksB;
+
+	private String remarksA;
 
 	private String imageUri;
 
@@ -46,7 +54,60 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 
 	private String setId;
 
-	private String sourceType;
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+		if(externalId != null){
+			putQueryParameter("ExternalId", externalId);
+		}
+	}
+
+	public String getNotifyEndpoint() {
+		return this.notifyEndpoint;
+	}
+
+	public void setNotifyEndpoint(String notifyEndpoint) {
+		this.notifyEndpoint = notifyEndpoint;
+		if(notifyEndpoint != null){
+			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getNotifyTopicName() {
+		return this.notifyTopicName;
+	}
+
+	public void setNotifyTopicName(String notifyTopicName) {
+		this.notifyTopicName = notifyTopicName;
+		if(notifyTopicName != null){
+			putQueryParameter("NotifyTopicName", notifyTopicName);
+		}
+	}
 
 	public String getRemarksB() {
 		return this.remarksB;
@@ -59,17 +120,6 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 		}
 	}
 
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
 	public String getRemarksA() {
 		return this.remarksA;
 	}
@@ -78,17 +128,6 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 		this.remarksA = remarksA;
 		if(remarksA != null){
 			putQueryParameter("RemarksA", remarksA);
-		}
-	}
-
-	public String getExternalId() {
-		return this.externalId;
-	}
-
-	public void setExternalId(String externalId) {
-		this.externalId = externalId;
-		if(externalId != null){
-			putQueryParameter("ExternalId", externalId);
 		}
 	}
 
@@ -155,17 +194,6 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 		this.setId = setId;
 		if(setId != null){
 			putQueryParameter("SetId", setId);
-		}
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putQueryParameter("SourceType", sourceType);
 		}
 	}
 

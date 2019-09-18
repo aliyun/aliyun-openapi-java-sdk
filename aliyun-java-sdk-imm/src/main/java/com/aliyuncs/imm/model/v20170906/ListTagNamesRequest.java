@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,24 +25,14 @@ public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 	
 	public ListTagNamesRequest() {
 		super("imm", "2017-09-06", "ListTagNames", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String marker;
 
 	private String project;
 
+	private String marker;
+
 	private String setId;
-
-	public String getMarker() {
-		return this.marker;
-	}
-
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -51,6 +42,17 @@ public class ListTagNamesRequest extends RpcAcsRequest<ListTagNamesResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
 		}
 	}
 

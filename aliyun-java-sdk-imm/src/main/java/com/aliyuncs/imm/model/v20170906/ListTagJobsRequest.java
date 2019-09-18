@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,26 +25,16 @@ public class ListTagJobsRequest extends RpcAcsRequest<ListTagJobsResponse> {
 	
 	public ListTagJobsRequest() {
 		super("imm", "2017-09-06", "ListTagJobs", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String condition;
 
 	private Integer maxKeys;
 
-	private String marker;
-
 	private String project;
 
-	public String getCondition() {
-		return this.condition;
-	}
+	private String condition;
 
-	public void setCondition(String condition) {
-		this.condition = condition;
-		if(condition != null){
-			putQueryParameter("Condition", condition);
-		}
-	}
+	private String marker;
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;
@@ -56,17 +47,6 @@ public class ListTagJobsRequest extends RpcAcsRequest<ListTagJobsResponse> {
 		}
 	}
 
-	public String getMarker() {
-		return this.marker;
-	}
-
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
-		}
-	}
-
 	public String getProject() {
 		return this.project;
 	}
@@ -75,6 +55,28 @@ public class ListTagJobsRequest extends RpcAcsRequest<ListTagJobsResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getCondition() {
+		return this.condition;
+	}
+
+	public void setCondition(String condition) {
+		this.condition = condition;
+		if(condition != null){
+			putQueryParameter("Condition", condition);
+		}
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,41 +25,20 @@ public class CreatePornBatchDetectJobRequest extends RpcAcsRequest<CreatePornBat
 	
 	public CreatePornBatchDetectJobRequest() {
 		super("imm", "2017-09-06", "CreatePornBatchDetectJob", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String notifyTopicName;
-
-	private String notifyEndpoint;
 
 	private String project;
 
 	private String externalID;
 
+	private String notifyEndpoint;
+
+	private String notifyTopicName;
+
 	private String srcUri;
 
 	private String tgtUri;
-
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
-		}
-	}
-
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -79,6 +59,28 @@ public class CreatePornBatchDetectJobRequest extends RpcAcsRequest<CreatePornBat
 		this.externalID = externalID;
 		if(externalID != null){
 			putQueryParameter("ExternalID", externalID);
+		}
+	}
+
+	public String getNotifyEndpoint() {
+		return this.notifyEndpoint;
+	}
+
+	public void setNotifyEndpoint(String notifyEndpoint) {
+		this.notifyEndpoint = notifyEndpoint;
+		if(notifyEndpoint != null){
+			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+		}
+	}
+
+	public String getNotifyTopicName() {
+		return this.notifyTopicName;
+	}
+
+	public void setNotifyTopicName(String notifyTopicName) {
+		this.notifyTopicName = notifyTopicName;
+		if(notifyTopicName != null){
+			putQueryParameter("NotifyTopicName", notifyTopicName);
 		}
 	}
 

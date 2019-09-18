@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,15 +25,27 @@ public class ListVideoAudiosRequest extends RpcAcsRequest<ListVideoAudiosRespons
 	
 	public ListVideoAudiosRequest() {
 		super("imm", "2017-09-06", "ListVideoAudios", "imm");
+		setMethod(MethodType.POST);
 	}
+
+	private String project;
 
 	private String videoUri;
 
 	private String marker;
 
-	private String project;
-
 	private String setId;
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
 
 	public String getVideoUri() {
 		return this.videoUri;
@@ -53,17 +66,6 @@ public class ListVideoAudiosRequest extends RpcAcsRequest<ListVideoAudiosRespons
 		this.marker = marker;
 		if(marker != null){
 			putQueryParameter("Marker", marker);
-		}
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
 		}
 	}
 

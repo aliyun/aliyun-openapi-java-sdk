@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,28 +25,18 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 	
 	public CreateVideoAnalyseTaskRequest() {
 		super("imm", "2017-09-06", "CreateVideoAnalyseTask", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String notifyTopicName;
 
 	private String project;
 
-	private String videoUri;
-
 	private String notifyEndpoint;
 
+	private String notifyTopicName;
+
+	private String videoUri;
+
 	private String tgtUri;
-
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -58,17 +49,6 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 		}
 	}
 
-	public String getVideoUri() {
-		return this.videoUri;
-	}
-
-	public void setVideoUri(String videoUri) {
-		this.videoUri = videoUri;
-		if(videoUri != null){
-			putQueryParameter("VideoUri", videoUri);
-		}
-	}
-
 	public String getNotifyEndpoint() {
 		return this.notifyEndpoint;
 	}
@@ -77,6 +57,28 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 		this.notifyEndpoint = notifyEndpoint;
 		if(notifyEndpoint != null){
 			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+		}
+	}
+
+	public String getNotifyTopicName() {
+		return this.notifyTopicName;
+	}
+
+	public void setNotifyTopicName(String notifyTopicName) {
+		this.notifyTopicName = notifyTopicName;
+		if(notifyTopicName != null){
+			putQueryParameter("NotifyTopicName", notifyTopicName);
+		}
+	}
+
+	public String getVideoUri() {
+		return this.videoUri;
+	}
+
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
+		if(videoUri != null){
+			putQueryParameter("VideoUri", videoUri);
 		}
 	}
 

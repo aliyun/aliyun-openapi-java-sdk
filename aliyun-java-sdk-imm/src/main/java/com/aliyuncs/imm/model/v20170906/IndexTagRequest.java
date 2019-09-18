@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,26 +25,16 @@ public class IndexTagRequest extends RpcAcsRequest<IndexTagResponse> {
 	
 	public IndexTagRequest() {
 		super("imm", "2017-09-06", "IndexTag", "imm");
+		setMethod(MethodType.POST);
 	}
 
-	private String srcUris;
-
 	private String project;
+
+	private String srcUris;
 
 	private String setId;
 
 	private String force;
-
-	public String getSrcUris() {
-		return this.srcUris;
-	}
-
-	public void setSrcUris(String srcUris) {
-		this.srcUris = srcUris;
-		if(srcUris != null){
-			putQueryParameter("SrcUris", srcUris);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -53,6 +44,17 @@ public class IndexTagRequest extends RpcAcsRequest<IndexTagResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getSrcUris() {
+		return this.srcUris;
+	}
+
+	public void setSrcUris(String srcUris) {
+		this.srcUris = srcUris;
+		if(srcUris != null){
+			putQueryParameter("SrcUris", srcUris);
 		}
 	}
 

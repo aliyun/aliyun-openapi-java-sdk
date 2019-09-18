@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,26 +25,27 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 	
 	public ListImagesRequest() {
 		super("imm", "2017-09-06", "ListImages", "imm");
+		setMethod(MethodType.POST);
 	}
 
-	private String marker;
+	private String project;
 
 	private Integer limit;
 
-	private String project;
+	private String marker;
 
 	private String setId;
 
 	private String createTimeStart;
 
-	public String getMarker() {
-		return this.marker;
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -58,14 +60,14 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 		}
 	}
 
-	public String getProject() {
-		return this.project;
+	public String getMarker() {
+		return this.marker;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,15 +25,16 @@ public class ListFaceSearchGroupUsersRequest extends RpcAcsRequest<ListFaceSearc
 	
 	public ListFaceSearchGroupUsersRequest() {
 		super("imm", "2017-09-06", "ListFaceSearchGroupUsers", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private Integer maxKeys;
 
-	private String marker;
-
 	private String project;
 
 	private String groupName;
+
+	private String marker;
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;
@@ -42,17 +44,6 @@ public class ListFaceSearchGroupUsersRequest extends RpcAcsRequest<ListFaceSearc
 		this.maxKeys = maxKeys;
 		if(maxKeys != null){
 			putQueryParameter("MaxKeys", maxKeys.toString());
-		}
-	}
-
-	public String getMarker() {
-		return this.marker;
-	}
-
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
 		}
 	}
 
@@ -75,6 +66,17 @@ public class ListFaceSearchGroupUsersRequest extends RpcAcsRequest<ListFaceSearc
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
 		}
 	}
 

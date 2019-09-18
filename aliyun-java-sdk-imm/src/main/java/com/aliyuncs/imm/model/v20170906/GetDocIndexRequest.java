@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,24 +25,14 @@ public class GetDocIndexRequest extends RpcAcsRequest<GetDocIndexResponse> {
 	
 	public GetDocIndexRequest() {
 		super("imm", "2017-09-06", "GetDocIndex", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String set;
 
 	private String project;
 
 	private String uniqueId;
 
-	public String getSet() {
-		return this.set;
-	}
-
-	public void setSet(String set) {
-		this.set = set;
-		if(set != null){
-			putQueryParameter("Set", set);
-		}
-	}
+	private String set;
 
 	public String getProject() {
 		return this.project;
@@ -62,6 +53,17 @@ public class GetDocIndexRequest extends RpcAcsRequest<GetDocIndexResponse> {
 		this.uniqueId = uniqueId;
 		if(uniqueId != null){
 			putQueryParameter("UniqueId", uniqueId);
+		}
+	}
+
+	public String getSet() {
+		return this.set;
+	}
+
+	public void setSet(String set) {
+		this.set = set;
+		if(set != null){
+			putQueryParameter("Set", set);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,6 +25,7 @@ public class GetOfficeConversionTaskRequest extends RpcAcsRequest<GetOfficeConve
 	
 	public GetOfficeConversionTaskRequest() {
 		super("imm", "2017-09-06", "GetOfficeConversionTask", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private String project;

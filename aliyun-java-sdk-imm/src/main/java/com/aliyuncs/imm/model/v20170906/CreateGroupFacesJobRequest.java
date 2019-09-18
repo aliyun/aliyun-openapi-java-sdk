@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,24 +25,25 @@ public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJo
 	
 	public CreateGroupFacesJobRequest() {
 		super("imm", "2017-09-06", "CreateGroupFacesJob", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String notifyTopicName;
-
-	private String notifyEndpoint;
 
 	private String project;
 
+	private String notifyEndpoint;
+
+	private String notifyTopicName;
+
 	private String setId;
 
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -56,14 +58,14 @@ public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJo
 		}
 	}
 
-	public String getProject() {
-		return this.project;
+	public String getNotifyTopicName() {
+		return this.notifyTopicName;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
+	public void setNotifyTopicName(String notifyTopicName) {
+		this.notifyTopicName = notifyTopicName;
+		if(notifyTopicName != null){
+			putQueryParameter("NotifyTopicName", notifyTopicName);
 		}
 	}
 

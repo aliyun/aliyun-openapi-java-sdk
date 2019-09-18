@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,26 +25,16 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 	
 	public DeleteVideoRequest() {
 		super("imm", "2017-09-06", "DeleteVideo", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String videoUri;
 
 	private String project;
 
-	private String setId;
-
 	private Boolean resources;
 
-	public String getVideoUri() {
-		return this.videoUri;
-	}
+	private String videoUri;
 
-	public void setVideoUri(String videoUri) {
-		this.videoUri = videoUri;
-		if(videoUri != null){
-			putQueryParameter("VideoUri", videoUri);
-		}
-	}
+	private String setId;
 
 	public String getProject() {
 		return this.project;
@@ -56,17 +47,6 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
-		}
-	}
-
 	public Boolean getResources() {
 		return this.resources;
 	}
@@ -75,6 +55,28 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 		this.resources = resources;
 		if(resources != null){
 			putQueryParameter("Resources", resources.toString());
+		}
+	}
+
+	public String getVideoUri() {
+		return this.videoUri;
+	}
+
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
+		if(videoUri != null){
+			putQueryParameter("VideoUri", videoUri);
+		}
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
+		if(setId != null){
+			putQueryParameter("SetId", setId);
 		}
 	}
 

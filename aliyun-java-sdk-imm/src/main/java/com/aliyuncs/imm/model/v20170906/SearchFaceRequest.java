@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,6 +25,7 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	
 	public SearchFaceRequest() {
 		super("imm", "2017-09-06", "SearchFace", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private Integer resultNum;
@@ -32,11 +34,11 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 
 	private String searchThresholdLevel;
 
-	private String srcUri;
-
 	private Boolean isThreshold;
 
 	private String groupName;
+
+	private String srcUri;
 
 	public Integer getResultNum() {
 		return this.resultNum;
@@ -71,17 +73,6 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 		}
 	}
 
-	public String getSrcUri() {
-		return this.srcUri;
-	}
-
-	public void setSrcUri(String srcUri) {
-		this.srcUri = srcUri;
-		if(srcUri != null){
-			putQueryParameter("SrcUri", srcUri);
-		}
-	}
-
 	public Boolean getIsThreshold() {
 		return this.isThreshold;
 	}
@@ -101,6 +92,17 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getSrcUri() {
+		return this.srcUri;
+	}
+
+	public void setSrcUri(String srcUri) {
+		this.srcUri = srcUri;
+		if(srcUri != null){
+			putQueryParameter("SrcUri", srcUri);
 		}
 	}
 

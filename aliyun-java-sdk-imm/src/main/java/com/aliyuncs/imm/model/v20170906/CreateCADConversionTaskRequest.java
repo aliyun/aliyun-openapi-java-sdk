@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,9 +25,18 @@ public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConve
 	
 	public CreateCADConversionTaskRequest() {
 		super("imm", "2017-09-06", "CreateCADConversionTask", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private String srcType;
+
+	private Integer baseRow;
+
+	private String project;
+
+	private Integer zoomFactor;
+
+	private String notifyEndpoint;
 
 	private Integer baseCol;
 
@@ -36,19 +46,11 @@ public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConve
 
 	private Integer zoomLevel;
 
-	private Integer baseRow;
-
 	private String modelId;
-
-	private String project;
-
-	private Integer zoomFactor;
 
 	private String tgtType;
 
 	private Long unitHeight;
-
-	private String notifyEndpoint;
 
 	private String srcUri;
 
@@ -64,6 +66,50 @@ public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConve
 		this.srcType = srcType;
 		if(srcType != null){
 			putQueryParameter("SrcType", srcType);
+		}
+	}
+
+	public Integer getBaseRow() {
+		return this.baseRow;
+	}
+
+	public void setBaseRow(Integer baseRow) {
+		this.baseRow = baseRow;
+		if(baseRow != null){
+			putQueryParameter("BaseRow", baseRow.toString());
+		}
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
+
+	public Integer getZoomFactor() {
+		return this.zoomFactor;
+	}
+
+	public void setZoomFactor(Integer zoomFactor) {
+		this.zoomFactor = zoomFactor;
+		if(zoomFactor != null){
+			putQueryParameter("ZoomFactor", zoomFactor.toString());
+		}
+	}
+
+	public String getNotifyEndpoint() {
+		return this.notifyEndpoint;
+	}
+
+	public void setNotifyEndpoint(String notifyEndpoint) {
+		this.notifyEndpoint = notifyEndpoint;
+		if(notifyEndpoint != null){
+			putQueryParameter("NotifyEndpoint", notifyEndpoint);
 		}
 	}
 
@@ -111,17 +157,6 @@ public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConve
 		}
 	}
 
-	public Integer getBaseRow() {
-		return this.baseRow;
-	}
-
-	public void setBaseRow(Integer baseRow) {
-		this.baseRow = baseRow;
-		if(baseRow != null){
-			putQueryParameter("BaseRow", baseRow.toString());
-		}
-	}
-
 	public String getModelId() {
 		return this.modelId;
 	}
@@ -130,28 +165,6 @@ public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConve
 		this.modelId = modelId;
 		if(modelId != null){
 			putQueryParameter("ModelId", modelId);
-		}
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
-	public Integer getZoomFactor() {
-		return this.zoomFactor;
-	}
-
-	public void setZoomFactor(Integer zoomFactor) {
-		this.zoomFactor = zoomFactor;
-		if(zoomFactor != null){
-			putQueryParameter("ZoomFactor", zoomFactor.toString());
 		}
 	}
 
@@ -174,17 +187,6 @@ public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConve
 		this.unitHeight = unitHeight;
 		if(unitHeight != null){
 			putQueryParameter("UnitHeight", unitHeight.toString());
-		}
-	}
-
-	public String getNotifyEndpoint() {
-		return this.notifyEndpoint;
-	}
-
-	public void setNotifyEndpoint(String notifyEndpoint) {
-		this.notifyEndpoint = notifyEndpoint;
-		if(notifyEndpoint != null){
-			putQueryParameter("NotifyEndpoint", notifyEndpoint);
 		}
 	}
 

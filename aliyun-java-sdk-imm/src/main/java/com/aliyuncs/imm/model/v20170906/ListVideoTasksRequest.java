@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,15 +25,16 @@ public class ListVideoTasksRequest extends RpcAcsRequest<ListVideoTasksResponse>
 	
 	public ListVideoTasksRequest() {
 		super("imm", "2017-09-06", "ListVideoTasks", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private Integer maxKeys;
 
+	private String project;
+
 	private String taskType;
 
 	private String marker;
-
-	private String project;
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;
@@ -42,6 +44,17 @@ public class ListVideoTasksRequest extends RpcAcsRequest<ListVideoTasksResponse>
 		this.maxKeys = maxKeys;
 		if(maxKeys != null){
 			putQueryParameter("MaxKeys", maxKeys.toString());
+		}
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -64,17 +77,6 @@ public class ListVideoTasksRequest extends RpcAcsRequest<ListVideoTasksResponse>
 		this.marker = marker;
 		if(marker != null){
 			putQueryParameter("Marker", marker);
-		}
-	}
-
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
 		}
 	}
 

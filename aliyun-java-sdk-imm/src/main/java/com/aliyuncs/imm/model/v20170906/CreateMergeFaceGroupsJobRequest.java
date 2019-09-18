@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,50 +25,29 @@ public class CreateMergeFaceGroupsJobRequest extends RpcAcsRequest<CreateMergeFa
 	
 	public CreateMergeFaceGroupsJobRequest() {
 		super("imm", "2017-09-06", "CreateMergeFaceGroupsJob", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String groupIdFrom;
-
-	private String groupIdTo;
-
-	private String notifyTopicName;
-
-	private String notifyEndpoint;
 
 	private String project;
 
+	private String notifyEndpoint;
+
+	private String groupIdFrom;
+
+	private String notifyTopicName;
+
+	private String groupIdTo;
+
 	private String setId;
 
-	public String getGroupIdFrom() {
-		return this.groupIdFrom;
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setGroupIdFrom(String groupIdFrom) {
-		this.groupIdFrom = groupIdFrom;
-		if(groupIdFrom != null){
-			putQueryParameter("GroupIdFrom", groupIdFrom);
-		}
-	}
-
-	public String getGroupIdTo() {
-		return this.groupIdTo;
-	}
-
-	public void setGroupIdTo(String groupIdTo) {
-		this.groupIdTo = groupIdTo;
-		if(groupIdTo != null){
-			putQueryParameter("GroupIdTo", groupIdTo);
-		}
-	}
-
-	public String getNotifyTopicName() {
-		return this.notifyTopicName;
-	}
-
-	public void setNotifyTopicName(String notifyTopicName) {
-		this.notifyTopicName = notifyTopicName;
-		if(notifyTopicName != null){
-			putQueryParameter("NotifyTopicName", notifyTopicName);
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -82,14 +62,36 @@ public class CreateMergeFaceGroupsJobRequest extends RpcAcsRequest<CreateMergeFa
 		}
 	}
 
-	public String getProject() {
-		return this.project;
+	public String getGroupIdFrom() {
+		return this.groupIdFrom;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
+	public void setGroupIdFrom(String groupIdFrom) {
+		this.groupIdFrom = groupIdFrom;
+		if(groupIdFrom != null){
+			putQueryParameter("GroupIdFrom", groupIdFrom);
+		}
+	}
+
+	public String getNotifyTopicName() {
+		return this.notifyTopicName;
+	}
+
+	public void setNotifyTopicName(String notifyTopicName) {
+		this.notifyTopicName = notifyTopicName;
+		if(notifyTopicName != null){
+			putQueryParameter("NotifyTopicName", notifyTopicName);
+		}
+	}
+
+	public String getGroupIdTo() {
+		return this.groupIdTo;
+	}
+
+	public void setGroupIdTo(String groupIdTo) {
+		this.groupIdTo = groupIdTo;
+		if(groupIdTo != null){
+			putQueryParameter("GroupIdTo", groupIdTo);
 		}
 	}
 

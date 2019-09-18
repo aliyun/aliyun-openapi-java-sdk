@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,24 +25,14 @@ public class GetVideoRequest extends RpcAcsRequest<GetVideoResponse> {
 	
 	public GetVideoRequest() {
 		super("imm", "2017-09-06", "GetVideo", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String videoUri;
 
 	private String project;
 
+	private String videoUri;
+
 	private String setId;
-
-	public String getVideoUri() {
-		return this.videoUri;
-	}
-
-	public void setVideoUri(String videoUri) {
-		this.videoUri = videoUri;
-		if(videoUri != null){
-			putQueryParameter("VideoUri", videoUri);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -51,6 +42,17 @@ public class GetVideoRequest extends RpcAcsRequest<GetVideoResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getVideoUri() {
+		return this.videoUri;
+	}
+
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
+		if(videoUri != null){
+			putQueryParameter("VideoUri", videoUri);
 		}
 	}
 

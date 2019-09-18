@@ -21,26 +21,37 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class PhotoProcessRequest extends RpcAcsRequest<PhotoProcessResponse> {
+public class CreateVideoAbstractTaskRequest extends RpcAcsRequest<CreateVideoAbstractTaskResponse> {
 	
-	public PhotoProcessRequest() {
-		super("imm", "2017-09-06", "PhotoProcess", "imm");
+	public CreateVideoAbstractTaskRequest() {
+		super("imm", "2017-09-06", "CreateVideoAbstractTask", "imm");
 		setMethod(MethodType.POST);
 	}
 
-	private String project;
+	private String targetVideoUri;
 
-	private String externalID;
+	private String project;
 
 	private String notifyEndpoint;
 
 	private String notifyTopicName;
 
-	private String srcUri;
+	private String videoUri;
 
-	private String style;
+	private Integer abstractLength;
 
-	private String tgtUri;
+	private String targetClipsUri;
+
+	public String getTargetVideoUri() {
+		return this.targetVideoUri;
+	}
+
+	public void setTargetVideoUri(String targetVideoUri) {
+		this.targetVideoUri = targetVideoUri;
+		if(targetVideoUri != null){
+			putQueryParameter("TargetVideoUri", targetVideoUri);
+		}
+	}
 
 	public String getProject() {
 		return this.project;
@@ -50,17 +61,6 @@ public class PhotoProcessRequest extends RpcAcsRequest<PhotoProcessResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
-		}
-	}
-
-	public String getExternalID() {
-		return this.externalID;
-	}
-
-	public void setExternalID(String externalID) {
-		this.externalID = externalID;
-		if(externalID != null){
-			putQueryParameter("ExternalID", externalID);
 		}
 	}
 
@@ -86,42 +86,42 @@ public class PhotoProcessRequest extends RpcAcsRequest<PhotoProcessResponse> {
 		}
 	}
 
-	public String getSrcUri() {
-		return this.srcUri;
+	public String getVideoUri() {
+		return this.videoUri;
 	}
 
-	public void setSrcUri(String srcUri) {
-		this.srcUri = srcUri;
-		if(srcUri != null){
-			putQueryParameter("SrcUri", srcUri);
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
+		if(videoUri != null){
+			putQueryParameter("VideoUri", videoUri);
 		}
 	}
 
-	public String getStyle() {
-		return this.style;
+	public Integer getAbstractLength() {
+		return this.abstractLength;
 	}
 
-	public void setStyle(String style) {
-		this.style = style;
-		if(style != null){
-			putQueryParameter("Style", style);
+	public void setAbstractLength(Integer abstractLength) {
+		this.abstractLength = abstractLength;
+		if(abstractLength != null){
+			putQueryParameter("AbstractLength", abstractLength.toString());
 		}
 	}
 
-	public String getTgtUri() {
-		return this.tgtUri;
+	public String getTargetClipsUri() {
+		return this.targetClipsUri;
 	}
 
-	public void setTgtUri(String tgtUri) {
-		this.tgtUri = tgtUri;
-		if(tgtUri != null){
-			putQueryParameter("TgtUri", tgtUri);
+	public void setTargetClipsUri(String targetClipsUri) {
+		this.targetClipsUri = targetClipsUri;
+		if(targetClipsUri != null){
+			putQueryParameter("TargetClipsUri", targetClipsUri);
 		}
 	}
 
 	@Override
-	public Class<PhotoProcessResponse> getResponseClass() {
-		return PhotoProcessResponse.class;
+	public Class<CreateVideoAbstractTaskResponse> getResponseClass() {
+		return CreateVideoAbstractTaskResponse.class;
 	}
 
 }

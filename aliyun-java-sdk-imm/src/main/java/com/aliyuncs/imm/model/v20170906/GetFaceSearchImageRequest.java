@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,15 +25,16 @@ public class GetFaceSearchImageRequest extends RpcAcsRequest<GetFaceSearchImageR
 	
 	public GetFaceSearchImageRequest() {
 		super("imm", "2017-09-06", "GetFaceSearchImage", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private String imageId;
 
 	private String project;
 
-	private String srcUri;
-
 	private String groupName;
+
+	private String srcUri;
 
 	private String user;
 
@@ -58,17 +60,6 @@ public class GetFaceSearchImageRequest extends RpcAcsRequest<GetFaceSearchImageR
 		}
 	}
 
-	public String getSrcUri() {
-		return this.srcUri;
-	}
-
-	public void setSrcUri(String srcUri) {
-		this.srcUri = srcUri;
-		if(srcUri != null){
-			putQueryParameter("SrcUri", srcUri);
-		}
-	}
-
 	public String getGroupName() {
 		return this.groupName;
 	}
@@ -77,6 +68,17 @@ public class GetFaceSearchImageRequest extends RpcAcsRequest<GetFaceSearchImageR
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getSrcUri() {
+		return this.srcUri;
+	}
+
+	public void setSrcUri(String srcUri) {
+		this.srcUri = srcUri;
+		if(srcUri != null){
+			putQueryParameter("SrcUri", srcUri);
 		}
 	}
 

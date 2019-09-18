@@ -14,35 +14,28 @@
 
 package com.aliyuncs.imm.model.v20170906;
 
-import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.imm.transform.v20170906.CreateVideoAbstractTaskResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetVideoTaskRequest extends RpcAcsRequest<GetVideoTaskResponse> {
-	
-	public GetVideoTaskRequest() {
-		super("imm", "2017-09-06", "GetVideoTask", "imm");
-		setMethod(MethodType.POST);
-	}
+public class CreateVideoAbstractTaskResponse extends AcsResponse {
 
-	private String project;
+	private String requestId;
 
 	private String taskId;
 
 	private String taskType;
 
-	public String getProject() {
-		return this.project;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTaskId() {
@@ -51,9 +44,6 @@ public class GetVideoTaskRequest extends RpcAcsRequest<GetVideoTaskResponse> {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
 	}
 
 	public String getTaskType() {
@@ -62,14 +52,15 @@ public class GetVideoTaskRequest extends RpcAcsRequest<GetVideoTaskResponse> {
 
 	public void setTaskType(String taskType) {
 		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
-		}
 	}
 
 	@Override
-	public Class<GetVideoTaskResponse> getResponseClass() {
-		return GetVideoTaskResponse.class;
+	public CreateVideoAbstractTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateVideoAbstractTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

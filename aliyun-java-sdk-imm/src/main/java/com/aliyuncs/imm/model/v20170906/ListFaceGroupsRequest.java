@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,28 +25,29 @@ public class ListFaceGroupsRequest extends RpcAcsRequest<ListFaceGroupsResponse>
 	
 	public ListFaceGroupsRequest() {
 		super("imm", "2017-09-06", "ListFaceGroups", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String marker;
-
-	private Integer limit;
 
 	private String project;
 
-	private String setId;
-
-	private String orderBy;
+	private Integer limit;
 
 	private String order;
 
-	public String getMarker() {
-		return this.marker;
+	private String orderBy;
+
+	private String marker;
+
+	private String setId;
+
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -60,25 +62,14 @@ public class ListFaceGroupsRequest extends RpcAcsRequest<ListFaceGroupsResponse>
 		}
 	}
 
-	public String getProject() {
-		return this.project;
+	public String getOrder() {
+		return this.order;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 
@@ -93,14 +84,25 @@ public class ListFaceGroupsRequest extends RpcAcsRequest<ListFaceGroupsResponse>
 		}
 	}
 
-	public String getOrder() {
-		return this.order;
+	public String getMarker() {
+		return this.marker;
 	}
 
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
+		}
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
+		if(setId != null){
+			putQueryParameter("SetId", setId);
 		}
 	}
 

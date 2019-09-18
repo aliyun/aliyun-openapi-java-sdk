@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,28 +25,18 @@ public class ListTagPhotosRequest extends RpcAcsRequest<ListTagPhotosResponse> {
 	
 	public ListTagPhotosRequest() {
 		super("imm", "2017-09-06", "ListTagPhotos", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String tagName;
 
 	private String maxKeys;
 
-	private String marker;
-
 	private String project;
 
+	private String tagName;
+
+	private String marker;
+
 	private String setId;
-
-	public String getTagName() {
-		return this.tagName;
-	}
-
-	public void setTagName(String tagName) {
-		this.tagName = tagName;
-		if(tagName != null){
-			putQueryParameter("TagName", tagName);
-		}
-	}
 
 	public String getMaxKeys() {
 		return this.maxKeys;
@@ -58,17 +49,6 @@ public class ListTagPhotosRequest extends RpcAcsRequest<ListTagPhotosResponse> {
 		}
 	}
 
-	public String getMarker() {
-		return this.marker;
-	}
-
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
-		}
-	}
-
 	public String getProject() {
 		return this.project;
 	}
@@ -77,6 +57,28 @@ public class ListTagPhotosRequest extends RpcAcsRequest<ListTagPhotosResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getTagName() {
+		return this.tagName;
+	}
+
+	public void setTagName(String tagName) {
+		this.tagName = tagName;
+		if(tagName != null){
+			putQueryParameter("TagName", tagName);
+		}
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
 		}
 	}
 

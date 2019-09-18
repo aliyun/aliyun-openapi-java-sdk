@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,15 +25,28 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 	
 	public SearchDocIndexRequest() {
 		super("imm", "2017-09-06", "SearchDocIndex", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private Integer modifiedTimeEnd;
 
+	private Integer sizeLimitEnd;
+
+	private String project;
+
+	private Integer modifiedTimeStart;
+
+	private Integer pageNumLimitStart;
+
+	private String content;
+
+	private Integer sizeLimitStart;
+
+	private Integer limit;
+
 	private String customKey1;
 
 	private String set;
-
-	private Integer sizeLimitEnd;
 
 	private String customKey5;
 
@@ -44,25 +58,13 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 
 	private String customKey2;
 
-	private String project;
-
-	private Integer modifiedTimeStart;
-
-	private Integer pageNumLimitStart;
-
 	private String customKey6;
-
-	private String content;
 
 	private Integer pageNumLimitEnd;
 
 	private String contentType;
 
-	private Integer sizeLimitStart;
-
 	private String name;
-
-	private Integer limit;
 
 	public Integer getModifiedTimeEnd() {
 		return this.modifiedTimeEnd;
@@ -72,6 +74,83 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 		this.modifiedTimeEnd = modifiedTimeEnd;
 		if(modifiedTimeEnd != null){
 			putQueryParameter("ModifiedTimeEnd", modifiedTimeEnd.toString());
+		}
+	}
+
+	public Integer getSizeLimitEnd() {
+		return this.sizeLimitEnd;
+	}
+
+	public void setSizeLimitEnd(Integer sizeLimitEnd) {
+		this.sizeLimitEnd = sizeLimitEnd;
+		if(sizeLimitEnd != null){
+			putQueryParameter("SizeLimitEnd", sizeLimitEnd.toString());
+		}
+	}
+
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
+
+	public Integer getModifiedTimeStart() {
+		return this.modifiedTimeStart;
+	}
+
+	public void setModifiedTimeStart(Integer modifiedTimeStart) {
+		this.modifiedTimeStart = modifiedTimeStart;
+		if(modifiedTimeStart != null){
+			putQueryParameter("ModifiedTimeStart", modifiedTimeStart.toString());
+		}
+	}
+
+	public Integer getPageNumLimitStart() {
+		return this.pageNumLimitStart;
+	}
+
+	public void setPageNumLimitStart(Integer pageNumLimitStart) {
+		this.pageNumLimitStart = pageNumLimitStart;
+		if(pageNumLimitStart != null){
+			putQueryParameter("PageNumLimitStart", pageNumLimitStart.toString());
+		}
+	}
+
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
+		}
+	}
+
+	public Integer getSizeLimitStart() {
+		return this.sizeLimitStart;
+	}
+
+	public void setSizeLimitStart(Integer sizeLimitStart) {
+		this.sizeLimitStart = sizeLimitStart;
+		if(sizeLimitStart != null){
+			putQueryParameter("SizeLimitStart", sizeLimitStart.toString());
+		}
+	}
+
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 
@@ -94,17 +173,6 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 		this.set = set;
 		if(set != null){
 			putQueryParameter("Set", set);
-		}
-	}
-
-	public Integer getSizeLimitEnd() {
-		return this.sizeLimitEnd;
-	}
-
-	public void setSizeLimitEnd(Integer sizeLimitEnd) {
-		this.sizeLimitEnd = sizeLimitEnd;
-		if(sizeLimitEnd != null){
-			putQueryParameter("SizeLimitEnd", sizeLimitEnd.toString());
 		}
 	}
 
@@ -163,39 +231,6 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 		}
 	}
 
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
-	public Integer getModifiedTimeStart() {
-		return this.modifiedTimeStart;
-	}
-
-	public void setModifiedTimeStart(Integer modifiedTimeStart) {
-		this.modifiedTimeStart = modifiedTimeStart;
-		if(modifiedTimeStart != null){
-			putQueryParameter("ModifiedTimeStart", modifiedTimeStart.toString());
-		}
-	}
-
-	public Integer getPageNumLimitStart() {
-		return this.pageNumLimitStart;
-	}
-
-	public void setPageNumLimitStart(Integer pageNumLimitStart) {
-		this.pageNumLimitStart = pageNumLimitStart;
-		if(pageNumLimitStart != null){
-			putQueryParameter("PageNumLimitStart", pageNumLimitStart.toString());
-		}
-	}
-
 	public String getCustomKey6() {
 		return this.customKey6;
 	}
@@ -204,17 +239,6 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 		this.customKey6 = customKey6;
 		if(customKey6 != null){
 			putQueryParameter("CustomKey6", customKey6);
-		}
-	}
-
-	public String getContent() {
-		return this.content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-		if(content != null){
-			putQueryParameter("Content", content);
 		}
 	}
 
@@ -240,17 +264,6 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 		}
 	}
 
-	public Integer getSizeLimitStart() {
-		return this.sizeLimitStart;
-	}
-
-	public void setSizeLimitStart(Integer sizeLimitStart) {
-		this.sizeLimitStart = sizeLimitStart;
-		if(sizeLimitStart != null){
-			putQueryParameter("SizeLimitStart", sizeLimitStart.toString());
-		}
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -259,17 +272,6 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getLimit() {
-		return this.limit;
-	}
-
-	public void setLimit(Integer limit) {
-		this.limit = limit;
-		if(limit != null){
-			putQueryParameter("Limit", limit.toString());
 		}
 	}
 

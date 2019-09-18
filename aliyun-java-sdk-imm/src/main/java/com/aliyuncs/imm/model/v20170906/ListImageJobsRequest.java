@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,15 +25,16 @@ public class ListImageJobsRequest extends RpcAcsRequest<ListImageJobsResponse> {
 	
 	public ListImageJobsRequest() {
 		super("imm", "2017-09-06", "ListImageJobs", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private Integer maxKeys;
 
-	private String marker;
-
 	private String project;
 
 	private String jobType;
+
+	private String marker;
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;
@@ -42,17 +44,6 @@ public class ListImageJobsRequest extends RpcAcsRequest<ListImageJobsResponse> {
 		this.maxKeys = maxKeys;
 		if(maxKeys != null){
 			putQueryParameter("MaxKeys", maxKeys.toString());
-		}
-	}
-
-	public String getMarker() {
-		return this.marker;
-	}
-
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
 		}
 	}
 
@@ -75,6 +66,17 @@ public class ListImageJobsRequest extends RpcAcsRequest<ListImageJobsResponse> {
 		this.jobType = jobType;
 		if(jobType != null){
 			putQueryParameter("JobType", jobType);
+		}
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
 		}
 	}
 

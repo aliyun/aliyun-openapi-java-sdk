@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,17 +25,40 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 	
 	public PutProjectRequest() {
 		super("imm", "2017-09-06", "PutProject", "imm");
+		setMethod(MethodType.POST);
 	}
+
+	private String project;
+
+	private String type;
 
 	private Integer cU;
 
 	private String serviceRole;
 
-	private String project;
-
 	private String billingType;
 
-	private String type;
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
 
 	public Integer getCU() {
 		return this.cU;
@@ -58,17 +82,6 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 		}
 	}
 
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
 	public String getBillingType() {
 		return this.billingType;
 	}
@@ -77,17 +90,6 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 		this.billingType = billingType;
 		if(billingType != null){
 			putQueryParameter("BillingType", billingType);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 

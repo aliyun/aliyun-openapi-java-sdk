@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,22 +25,12 @@ public class DetectQRCodesRequest extends RpcAcsRequest<DetectQRCodesResponse> {
 	
 	public DetectQRCodesRequest() {
 		super("imm", "2017-09-06", "DetectQRCodes", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String srcUris;
 
 	private String project;
 
-	public String getSrcUris() {
-		return this.srcUris;
-	}
-
-	public void setSrcUris(String srcUris) {
-		this.srcUris = srcUris;
-		if(srcUris != null){
-			putQueryParameter("SrcUris", srcUris);
-		}
-	}
+	private String srcUris;
 
 	public String getProject() {
 		return this.project;
@@ -49,6 +40,17 @@ public class DetectQRCodesRequest extends RpcAcsRequest<DetectQRCodesResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getSrcUris() {
+		return this.srcUris;
+	}
+
+	public void setSrcUris(String srcUris) {
+		this.srcUris = srcUris;
+		if(srcUris != null){
+			putQueryParameter("SrcUris", srcUris);
 		}
 	}
 

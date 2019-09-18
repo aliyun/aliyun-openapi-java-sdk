@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,15 +25,18 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 	
 	public UpdateImageRequest() {
 		super("imm", "2017-09-06", "UpdateImage", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String remarksB;
 
 	private String project;
 
-	private String remarksA;
-
 	private String externalId;
+
+	private String sourceType;
+
+	private String remarksB;
+
+	private String remarksA;
 
 	private String imageUri;
 
@@ -46,7 +50,38 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 
 	private String setId;
 
-	private String sourceType;
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+		if(externalId != null){
+			putQueryParameter("ExternalId", externalId);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
 
 	public String getRemarksB() {
 		return this.remarksB;
@@ -59,17 +94,6 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 		}
 	}
 
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
 	public String getRemarksA() {
 		return this.remarksA;
 	}
@@ -78,17 +102,6 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 		this.remarksA = remarksA;
 		if(remarksA != null){
 			putQueryParameter("RemarksA", remarksA);
-		}
-	}
-
-	public String getExternalId() {
-		return this.externalId;
-	}
-
-	public void setExternalId(String externalId) {
-		this.externalId = externalId;
-		if(externalId != null){
-			putQueryParameter("ExternalId", externalId);
 		}
 	}
 
@@ -155,17 +168,6 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 		this.setId = setId;
 		if(setId != null){
 			putQueryParameter("SetId", setId);
-		}
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putQueryParameter("SourceType", sourceType);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,28 +25,18 @@ public class UpdateFaceGroupRequest extends RpcAcsRequest<UpdateFaceGroupRespons
 	
 	public UpdateFaceGroupRequest() {
 		super("imm", "2017-09-06", "UpdateFaceGroup", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String groupId;
 
 	private String project;
 
-	private String setId;
+	private String groupId;
 
 	private String groupName;
 
+	private String setId;
+
 	private String groupCoverFaceId;
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -58,14 +49,14 @@ public class UpdateFaceGroupRequest extends RpcAcsRequest<UpdateFaceGroupRespons
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
+	public String getGroupId() {
+		return this.groupId;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -77,6 +68,17 @@ public class UpdateFaceGroupRequest extends RpcAcsRequest<UpdateFaceGroupRespons
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
+		if(setId != null){
+			putQueryParameter("SetId", setId);
 		}
 	}
 

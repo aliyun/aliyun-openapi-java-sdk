@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,7 +25,12 @@ public class CreateDocIndexTaskRequest extends RpcAcsRequest<CreateDocIndexTaskR
 	
 	public CreateDocIndexTaskRequest() {
 		super("imm", "2017-09-06", "CreateDocIndexTask", "imm");
+		setMethod(MethodType.POST);
 	}
+
+	private String project;
+
+	private String uniqueId;
 
 	private String customKey1;
 
@@ -38,8 +44,6 @@ public class CreateDocIndexTaskRequest extends RpcAcsRequest<CreateDocIndexTaskR
 
 	private String customKey2;
 
-	private String project;
-
 	private String customKey6;
 
 	private String contentType;
@@ -48,7 +52,27 @@ public class CreateDocIndexTaskRequest extends RpcAcsRequest<CreateDocIndexTaskR
 
 	private String srcUri;
 
-	private String uniqueId;
+	public String getProject() {
+		return this.project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getUniqueId() {
+		return this.uniqueId;
+	}
+
+	public void setUniqueId(String uniqueId) {
+		this.uniqueId = uniqueId;
+		if(uniqueId != null){
+			putQueryParameter("UniqueId", uniqueId);
+		}
+	}
 
 	public String getCustomKey1() {
 		return this.customKey1;
@@ -116,17 +140,6 @@ public class CreateDocIndexTaskRequest extends RpcAcsRequest<CreateDocIndexTaskR
 		}
 	}
 
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
 	public String getCustomKey6() {
 		return this.customKey6;
 	}
@@ -168,17 +181,6 @@ public class CreateDocIndexTaskRequest extends RpcAcsRequest<CreateDocIndexTaskR
 		this.srcUri = srcUri;
 		if(srcUri != null){
 			putQueryParameter("SrcUri", srcUri);
-		}
-	}
-
-	public String getUniqueId() {
-		return this.uniqueId;
-	}
-
-	public void setUniqueId(String uniqueId) {
-		this.uniqueId = uniqueId;
-		if(uniqueId != null){
-			putQueryParameter("UniqueId", uniqueId);
 		}
 	}
 

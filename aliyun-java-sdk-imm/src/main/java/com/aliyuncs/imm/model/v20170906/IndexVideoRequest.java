@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,15 +25,16 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 	
 	public IndexVideoRequest() {
 		super("imm", "2017-09-06", "IndexVideo", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String remarksB;
 
 	private String project;
 
-	private String remarksA;
-
 	private String externalId;
+
+	private String remarksB;
+
+	private String remarksA;
 
 	private String videoUri;
 
@@ -43,17 +45,6 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 	private String setId;
 
 	private String tgtUri;
-
-	public String getRemarksB() {
-		return this.remarksB;
-	}
-
-	public void setRemarksB(String remarksB) {
-		this.remarksB = remarksB;
-		if(remarksB != null){
-			putQueryParameter("RemarksB", remarksB);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -66,17 +57,6 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 		}
 	}
 
-	public String getRemarksA() {
-		return this.remarksA;
-	}
-
-	public void setRemarksA(String remarksA) {
-		this.remarksA = remarksA;
-		if(remarksA != null){
-			putQueryParameter("RemarksA", remarksA);
-		}
-	}
-
 	public String getExternalId() {
 		return this.externalId;
 	}
@@ -85,6 +65,28 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 		this.externalId = externalId;
 		if(externalId != null){
 			putQueryParameter("ExternalId", externalId);
+		}
+	}
+
+	public String getRemarksB() {
+		return this.remarksB;
+	}
+
+	public void setRemarksB(String remarksB) {
+		this.remarksB = remarksB;
+		if(remarksB != null){
+			putQueryParameter("RemarksB", remarksB);
+		}
+	}
+
+	public String getRemarksA() {
+		return this.remarksA;
+	}
+
+	public void setRemarksA(String remarksA) {
+		this.remarksA = remarksA;
+		if(remarksA != null){
+			putQueryParameter("RemarksA", remarksA);
 		}
 	}
 

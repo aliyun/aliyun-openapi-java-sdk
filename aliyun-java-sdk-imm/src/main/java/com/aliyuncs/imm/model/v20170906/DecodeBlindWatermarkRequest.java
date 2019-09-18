@@ -21,16 +21,33 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DetectImageBodiesRequest extends RpcAcsRequest<DetectImageBodiesResponse> {
+public class DecodeBlindWatermarkRequest extends RpcAcsRequest<DecodeBlindWatermarkResponse> {
 	
-	public DetectImageBodiesRequest() {
-		super("imm", "2017-09-06", "DetectImageBodies", "imm");
+	public DecodeBlindWatermarkRequest() {
+		super("imm", "2017-09-06", "DecodeBlindWatermark", "imm");
 		setMethod(MethodType.POST);
 	}
 
+	private Integer imageQuality;
+
 	private String project;
 
+	private String targetUri;
+
 	private String imageUri;
+
+	private String originalImageUri;
+
+	public Integer getImageQuality() {
+		return this.imageQuality;
+	}
+
+	public void setImageQuality(Integer imageQuality) {
+		this.imageQuality = imageQuality;
+		if(imageQuality != null){
+			putQueryParameter("ImageQuality", imageQuality.toString());
+		}
+	}
 
 	public String getProject() {
 		return this.project;
@@ -40,6 +57,17 @@ public class DetectImageBodiesRequest extends RpcAcsRequest<DetectImageBodiesRes
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getTargetUri() {
+		return this.targetUri;
+	}
+
+	public void setTargetUri(String targetUri) {
+		this.targetUri = targetUri;
+		if(targetUri != null){
+			putQueryParameter("TargetUri", targetUri);
 		}
 	}
 
@@ -54,9 +82,20 @@ public class DetectImageBodiesRequest extends RpcAcsRequest<DetectImageBodiesRes
 		}
 	}
 
+	public String getOriginalImageUri() {
+		return this.originalImageUri;
+	}
+
+	public void setOriginalImageUri(String originalImageUri) {
+		this.originalImageUri = originalImageUri;
+		if(originalImageUri != null){
+			putQueryParameter("OriginalImageUri", originalImageUri);
+		}
+	}
+
 	@Override
-	public Class<DetectImageBodiesResponse> getResponseClass() {
-		return DetectImageBodiesResponse.class;
+	public Class<DecodeBlindWatermarkResponse> getResponseClass() {
+		return DecodeBlindWatermarkResponse.class;
 	}
 
 }

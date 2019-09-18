@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,26 +25,16 @@ public class DeleteTagByNameRequest extends RpcAcsRequest<DeleteTagByNameRespons
 	
 	public DeleteTagByNameRequest() {
 		super("imm", "2017-09-06", "DeleteTagByName", "imm");
+		setMethod(MethodType.POST);
 	}
 
-	private String tagName;
-
 	private String project;
+
+	private String tagName;
 
 	private String setId;
 
 	private String srcUri;
-
-	public String getTagName() {
-		return this.tagName;
-	}
-
-	public void setTagName(String tagName) {
-		this.tagName = tagName;
-		if(tagName != null){
-			putQueryParameter("TagName", tagName);
-		}
-	}
 
 	public String getProject() {
 		return this.project;
@@ -53,6 +44,17 @@ public class DeleteTagByNameRequest extends RpcAcsRequest<DeleteTagByNameRespons
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getTagName() {
+		return this.tagName;
+	}
+
+	public void setTagName(String tagName) {
+		this.tagName = tagName;
+		if(tagName != null){
+			putQueryParameter("TagName", tagName);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,13 +25,14 @@ public class ListTagSetsRequest extends RpcAcsRequest<ListTagSetsResponse> {
 	
 	public ListTagSetsRequest() {
 		super("imm", "2017-09-06", "ListTagSets", "imm");
+		setMethod(MethodType.POST);
 	}
 
 	private Integer maxKeys;
 
-	private String marker;
-
 	private String project;
+
+	private String marker;
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;
@@ -43,17 +45,6 @@ public class ListTagSetsRequest extends RpcAcsRequest<ListTagSetsResponse> {
 		}
 	}
 
-	public String getMarker() {
-		return this.marker;
-	}
-
-	public void setMarker(String marker) {
-		this.marker = marker;
-		if(marker != null){
-			putQueryParameter("Marker", marker);
-		}
-	}
-
 	public String getProject() {
 		return this.project;
 	}
@@ -62,6 +53,17 @@ public class ListTagSetsRequest extends RpcAcsRequest<ListTagSetsResponse> {
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getMarker() {
+		return this.marker;
+	}
+
+	public void setMarker(String marker) {
+		this.marker = marker;
+		if(marker != null){
+			putQueryParameter("Marker", marker);
 		}
 	}
 

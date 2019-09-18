@@ -15,6 +15,7 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,22 +25,23 @@ public class DetectImageCelebrityRequest extends RpcAcsRequest<DetectImageCelebr
 	
 	public DetectImageCelebrityRequest() {
 		super("imm", "2017-09-06", "DetectImageCelebrity", "imm");
+		setMethod(MethodType.POST);
 	}
-
-	private String imageUri;
-
-	private String library;
 
 	private String project;
 
-	public String getImageUri() {
-		return this.imageUri;
+	private String library;
+
+	private String imageUri;
+
+	public String getProject() {
+		return this.project;
 	}
 
-	public void setImageUri(String imageUri) {
-		this.imageUri = imageUri;
-		if(imageUri != null){
-			putQueryParameter("ImageUri", imageUri);
+	public void setProject(String project) {
+		this.project = project;
+		if(project != null){
+			putQueryParameter("Project", project);
 		}
 	}
 
@@ -54,14 +56,14 @@ public class DetectImageCelebrityRequest extends RpcAcsRequest<DetectImageCelebr
 		}
 	}
 
-	public String getProject() {
-		return this.project;
+	public String getImageUri() {
+		return this.imageUri;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
+		if(imageUri != null){
+			putQueryParameter("ImageUri", imageUri);
 		}
 	}
 
