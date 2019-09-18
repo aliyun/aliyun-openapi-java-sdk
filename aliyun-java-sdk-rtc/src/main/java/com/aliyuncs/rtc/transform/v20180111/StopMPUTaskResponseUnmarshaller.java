@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopMPUTaskResponseUnmarshaller {
 
-	public static StopMPUTaskResponse unmarshall(StopMPUTaskResponse stopMPUTaskResponse, UnmarshallerContext context) {
+	public static StopMPUTaskResponse unmarshall(StopMPUTaskResponse stopMPUTaskResponse, UnmarshallerContext _ctx) {
 		
-		stopMPUTaskResponse.setRequestId(context.stringValue("StopMPUTaskResponse.RequestId"));
+		stopMPUTaskResponse.setRequestId(_ctx.stringValue("StopMPUTaskResponse.RequestId"));
 	 
 	 	return stopMPUTaskResponse;
 	}

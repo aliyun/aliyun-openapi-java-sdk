@@ -24,25 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeAppsResponseUnmarshaller {
 
-	public static DescribeAppsResponse unmarshall(DescribeAppsResponse describeAppsResponse, UnmarshallerContext context) {
+	public static DescribeAppsResponse unmarshall(DescribeAppsResponse describeAppsResponse, UnmarshallerContext _ctx) {
 		
-		describeAppsResponse.setRequestId(context.stringValue("DescribeAppsResponse.RequestId"));
-		describeAppsResponse.setTotalNum(context.integerValue("DescribeAppsResponse.TotalNum"));
-		describeAppsResponse.setTotalPage(context.integerValue("DescribeAppsResponse.TotalPage"));
+		describeAppsResponse.setRequestId(_ctx.stringValue("DescribeAppsResponse.RequestId"));
+		describeAppsResponse.setTotalNum(_ctx.integerValue("DescribeAppsResponse.TotalNum"));
+		describeAppsResponse.setTotalPage(_ctx.integerValue("DescribeAppsResponse.TotalPage"));
 
 		List<App> appList = new ArrayList<App>();
-		for (int i = 0; i < context.lengthValue("DescribeAppsResponse.AppList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppsResponse.AppList.Length"); i++) {
 			App app = new App();
-			app.setStatus(context.integerValue("DescribeAppsResponse.AppList["+ i +"].Status"));
-			app.setAppId(context.stringValue("DescribeAppsResponse.AppList["+ i +"].AppId"));
-			app.setAppName(context.stringValue("DescribeAppsResponse.AppList["+ i +"].AppName"));
-			app.setCreateTime(context.stringValue("DescribeAppsResponse.AppList["+ i +"].CreateTime"));
-			app.setAppType(context.stringValue("DescribeAppsResponse.AppList["+ i +"].AppType"));
-			app.setBillType(context.stringValue("DescribeAppsResponse.AppList["+ i +"].BillType"));
+			app.setStatus(_ctx.integerValue("DescribeAppsResponse.AppList["+ i +"].Status"));
+			app.setAppId(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].AppId"));
+			app.setAppName(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].AppName"));
+			app.setCreateTime(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].CreateTime"));
+			app.setAppType(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].AppType"));
+			app.setBillType(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].BillType"));
 
 			List<String> serviceAreas = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeAppsResponse.AppList["+ i +"].ServiceAreas.Length"); j++) {
-				serviceAreas.add(context.stringValue("DescribeAppsResponse.AppList["+ i +"].ServiceAreas["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeAppsResponse.AppList["+ i +"].ServiceAreas.Length"); j++) {
+				serviceAreas.add(_ctx.stringValue("DescribeAppsResponse.AppList["+ i +"].ServiceAreas["+ j +"]"));
 			}
 			app.setServiceAreas(serviceAreas);
 

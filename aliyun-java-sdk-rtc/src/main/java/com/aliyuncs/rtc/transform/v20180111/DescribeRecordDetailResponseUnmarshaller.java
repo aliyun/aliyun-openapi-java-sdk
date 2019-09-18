@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRecordDetailResponseUnmarshaller {
 
-	public static DescribeRecordDetailResponse unmarshall(DescribeRecordDetailResponse describeRecordDetailResponse, UnmarshallerContext context) {
+	public static DescribeRecordDetailResponse unmarshall(DescribeRecordDetailResponse describeRecordDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeRecordDetailResponse.setRequestId(context.stringValue("DescribeRecordDetailResponse.RequestId"));
+		describeRecordDetailResponse.setRequestId(_ctx.stringValue("DescribeRecordDetailResponse.RequestId"));
 
 		Duration duration = new Duration();
-		duration.setAudio(context.floatValue("DescribeRecordDetailResponse.Duration.Audio"));
-		duration.setSd(context.floatValue("DescribeRecordDetailResponse.Duration.Sd"));
-		duration.setHd(context.floatValue("DescribeRecordDetailResponse.Duration.Hd"));
-		duration.setFhd(context.floatValue("DescribeRecordDetailResponse.Duration.Fhd"));
-		duration.setAll(context.floatValue("DescribeRecordDetailResponse.Duration.All"));
+		duration.setAudio(_ctx.floatValue("DescribeRecordDetailResponse.Duration.Audio"));
+		duration.setSd(_ctx.floatValue("DescribeRecordDetailResponse.Duration.Sd"));
+		duration.setHd(_ctx.floatValue("DescribeRecordDetailResponse.Duration.Hd"));
+		duration.setFhd(_ctx.floatValue("DescribeRecordDetailResponse.Duration.Fhd"));
+		duration.setAll(_ctx.floatValue("DescribeRecordDetailResponse.Duration.All"));
 		describeRecordDetailResponse.setDuration(duration);
 
 		List<RecordDetailInfo> recordDetailInfos = new ArrayList<RecordDetailInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeRecordDetailResponse.RecordDetailInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRecordDetailResponse.RecordDetailInfos.Length"); i++) {
 			RecordDetailInfo recordDetailInfo = new RecordDetailInfo();
-			recordDetailInfo.setUid(context.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].Uid"));
-			recordDetailInfo.setStartTime(context.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].StartTime"));
-			recordDetailInfo.setEndTime(context.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].EndTime"));
-			recordDetailInfo.setDeviceType(context.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].DeviceType"));
-			recordDetailInfo.setSDKVersion(context.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].SDKVersion"));
+			recordDetailInfo.setUid(_ctx.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].Uid"));
+			recordDetailInfo.setStartTime(_ctx.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].StartTime"));
+			recordDetailInfo.setEndTime(_ctx.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].EndTime"));
+			recordDetailInfo.setDeviceType(_ctx.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].DeviceType"));
+			recordDetailInfo.setSDKVersion(_ctx.stringValue("DescribeRecordDetailResponse.RecordDetailInfos["+ i +"].SDKVersion"));
 
 			recordDetailInfos.add(recordDetailInfo);
 		}

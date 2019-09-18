@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRtcChannelCntDataResponseUnmarshaller {
 
-	public static DescribeRtcChannelCntDataResponse unmarshall(DescribeRtcChannelCntDataResponse describeRtcChannelCntDataResponse, UnmarshallerContext context) {
+	public static DescribeRtcChannelCntDataResponse unmarshall(DescribeRtcChannelCntDataResponse describeRtcChannelCntDataResponse, UnmarshallerContext _ctx) {
 		
-		describeRtcChannelCntDataResponse.setRequestId(context.stringValue("DescribeRtcChannelCntDataResponse.RequestId"));
+		describeRtcChannelCntDataResponse.setRequestId(_ctx.stringValue("DescribeRtcChannelCntDataResponse.RequestId"));
 
 		List<ChannelCntModule> channelCntDataPerInterval = new ArrayList<ChannelCntModule>();
-		for (int i = 0; i < context.lengthValue("DescribeRtcChannelCntDataResponse.ChannelCntDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRtcChannelCntDataResponse.ChannelCntDataPerInterval.Length"); i++) {
 			ChannelCntModule channelCntModule = new ChannelCntModule();
-			channelCntModule.setTimeStamp(context.stringValue("DescribeRtcChannelCntDataResponse.ChannelCntDataPerInterval["+ i +"].TimeStamp"));
-			channelCntModule.setActiveChannelCnt(context.longValue("DescribeRtcChannelCntDataResponse.ChannelCntDataPerInterval["+ i +"].ActiveChannelCnt"));
+			channelCntModule.setTimeStamp(_ctx.stringValue("DescribeRtcChannelCntDataResponse.ChannelCntDataPerInterval["+ i +"].TimeStamp"));
+			channelCntModule.setActiveChannelCnt(_ctx.longValue("DescribeRtcChannelCntDataResponse.ChannelCntDataPerInterval["+ i +"].ActiveChannelCnt"));
 
 			channelCntDataPerInterval.add(channelCntModule);
 		}

@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRealTimeRecordListResponseUnmarshaller {
 
-	public static DescribeRealTimeRecordListResponse unmarshall(DescribeRealTimeRecordListResponse describeRealTimeRecordListResponse, UnmarshallerContext context) {
+	public static DescribeRealTimeRecordListResponse unmarshall(DescribeRealTimeRecordListResponse describeRealTimeRecordListResponse, UnmarshallerContext _ctx) {
 		
-		describeRealTimeRecordListResponse.setRequestId(context.stringValue("DescribeRealTimeRecordListResponse.RequestId"));
+		describeRealTimeRecordListResponse.setRequestId(_ctx.stringValue("DescribeRealTimeRecordListResponse.RequestId"));
 
 		List<CommunicationRecordInfo> communicationRecordInfos = new ArrayList<CommunicationRecordInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos.Length"); i++) {
 			CommunicationRecordInfo communicationRecordInfo = new CommunicationRecordInfo();
-			communicationRecordInfo.setChannelId(context.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].ChannelId"));
-			communicationRecordInfo.setStartTime(context.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].StartTime"));
-			communicationRecordInfo.setEndTime(context.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].EndTime"));
-			communicationRecordInfo.setOnlineUserCnt(context.longValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].OnlineUserCnt"));
-			communicationRecordInfo.setStatus(context.booleanValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].Status"));
-			communicationRecordInfo.setRecordId(context.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].RecordId"));
+			communicationRecordInfo.setChannelId(_ctx.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].ChannelId"));
+			communicationRecordInfo.setStartTime(_ctx.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].StartTime"));
+			communicationRecordInfo.setEndTime(_ctx.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].EndTime"));
+			communicationRecordInfo.setOnlineUserCnt(_ctx.longValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].OnlineUserCnt"));
+			communicationRecordInfo.setStatus(_ctx.booleanValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].Status"));
+			communicationRecordInfo.setRecordId(_ctx.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].RecordId"));
 
 			List<String> callAreas = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].CallAreas.Length"); j++) {
-				callAreas.add(context.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].CallAreas["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].CallAreas.Length"); j++) {
+				callAreas.add(_ctx.stringValue("DescribeRealTimeRecordListResponse.CommunicationRecordInfos["+ i +"].CallAreas["+ j +"]"));
 			}
 			communicationRecordInfo.setCallAreas(callAreas);
 

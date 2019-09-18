@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRtcPeakUserCntDataResponseUnmarshaller {
 
-	public static DescribeRtcPeakUserCntDataResponse unmarshall(DescribeRtcPeakUserCntDataResponse describeRtcPeakUserCntDataResponse, UnmarshallerContext context) {
+	public static DescribeRtcPeakUserCntDataResponse unmarshall(DescribeRtcPeakUserCntDataResponse describeRtcPeakUserCntDataResponse, UnmarshallerContext _ctx) {
 		
-		describeRtcPeakUserCntDataResponse.setRequestId(context.stringValue("DescribeRtcPeakUserCntDataResponse.RequestId"));
+		describeRtcPeakUserCntDataResponse.setRequestId(_ctx.stringValue("DescribeRtcPeakUserCntDataResponse.RequestId"));
 
 		List<PeakUserCntModule> peakUserCntDataPerInterval = new ArrayList<PeakUserCntModule>();
-		for (int i = 0; i < context.lengthValue("DescribeRtcPeakUserCntDataResponse.PeakUserCntDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRtcPeakUserCntDataResponse.PeakUserCntDataPerInterval.Length"); i++) {
 			PeakUserCntModule peakUserCntModule = new PeakUserCntModule();
-			peakUserCntModule.setTimeStamp(context.stringValue("DescribeRtcPeakUserCntDataResponse.PeakUserCntDataPerInterval["+ i +"].TimeStamp"));
-			peakUserCntModule.setActiveUserPeak(context.longValue("DescribeRtcPeakUserCntDataResponse.PeakUserCntDataPerInterval["+ i +"].ActiveUserPeak"));
-			peakUserCntModule.setActiveUserPeakTime(context.stringValue("DescribeRtcPeakUserCntDataResponse.PeakUserCntDataPerInterval["+ i +"].ActiveUserPeakTime"));
+			peakUserCntModule.setTimeStamp(_ctx.stringValue("DescribeRtcPeakUserCntDataResponse.PeakUserCntDataPerInterval["+ i +"].TimeStamp"));
+			peakUserCntModule.setActiveUserPeak(_ctx.longValue("DescribeRtcPeakUserCntDataResponse.PeakUserCntDataPerInterval["+ i +"].ActiveUserPeak"));
+			peakUserCntModule.setActiveUserPeakTime(_ctx.stringValue("DescribeRtcPeakUserCntDataResponse.PeakUserCntDataPerInterval["+ i +"].ActiveUserPeakTime"));
 
 			peakUserCntDataPerInterval.add(peakUserCntModule);
 		}

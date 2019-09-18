@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRtcDurationDataResponseUnmarshaller {
 
-	public static DescribeRtcDurationDataResponse unmarshall(DescribeRtcDurationDataResponse describeRtcDurationDataResponse, UnmarshallerContext context) {
+	public static DescribeRtcDurationDataResponse unmarshall(DescribeRtcDurationDataResponse describeRtcDurationDataResponse, UnmarshallerContext _ctx) {
 		
-		describeRtcDurationDataResponse.setRequestId(context.stringValue("DescribeRtcDurationDataResponse.RequestId"));
+		describeRtcDurationDataResponse.setRequestId(_ctx.stringValue("DescribeRtcDurationDataResponse.RequestId"));
 
 		List<DurationModule> durationDataPerInterval = new ArrayList<DurationModule>();
-		for (int i = 0; i < context.lengthValue("DescribeRtcDurationDataResponse.DurationDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRtcDurationDataResponse.DurationDataPerInterval.Length"); i++) {
 			DurationModule durationModule = new DurationModule();
-			durationModule.setTimeStamp(context.stringValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].TimeStamp"));
-			durationModule.setTotalDuration(context.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].TotalDuration"));
-			durationModule.setAudioDuration(context.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].AudioDuration"));
-			durationModule.setV360Duration(context.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].V360Duration"));
-			durationModule.setV720Duration(context.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].V720Duration"));
-			durationModule.setV1080Duration(context.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].V1080Duration"));
-			durationModule.setContentDuration(context.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].ContentDuration"));
+			durationModule.setTimeStamp(_ctx.stringValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].TimeStamp"));
+			durationModule.setTotalDuration(_ctx.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].TotalDuration"));
+			durationModule.setAudioDuration(_ctx.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].AudioDuration"));
+			durationModule.setV360Duration(_ctx.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].V360Duration"));
+			durationModule.setV720Duration(_ctx.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].V720Duration"));
+			durationModule.setV1080Duration(_ctx.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].V1080Duration"));
+			durationModule.setContentDuration(_ctx.longValue("DescribeRtcDurationDataResponse.DurationDataPerInterval["+ i +"].ContentDuration"));
 
 			durationDataPerInterval.add(durationModule);
 		}

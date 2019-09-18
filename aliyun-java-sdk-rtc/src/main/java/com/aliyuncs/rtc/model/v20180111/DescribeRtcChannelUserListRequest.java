@@ -22,10 +22,10 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeConferenceAuthInfoRequest extends RpcAcsRequest<DescribeConferenceAuthInfoResponse> {
+public class DescribeRtcChannelUserListRequest extends RpcAcsRequest<DescribeRtcChannelUserListResponse> {
 	
-	public DescribeConferenceAuthInfoRequest() {
-		super("rtc", "2018-01-11", "DescribeConferenceAuthInfo", "rtc");
+	public DescribeRtcChannelUserListRequest() {
+		super("rtc", "2018-01-11", "DescribeRtcChannelUserList", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,11 +33,28 @@ public class DescribeConferenceAuthInfoRequest extends RpcAcsRequest<DescribeCon
 		} catch (Exception e) {}
 	}
 
+	private Long pageSize;
+
 	private Long ownerId;
 
-	private String conferenceId;
+	private Long pageNo;
 
 	private String appId;
+
+	private String channelId;
+
+	private String timePoint;
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -50,14 +67,14 @@ public class DescribeConferenceAuthInfoRequest extends RpcAcsRequest<DescribeCon
 		}
 	}
 
-	public String getConferenceId() {
-		return this.conferenceId;
+	public Long getPageNo() {
+		return this.pageNo;
 	}
 
-	public void setConferenceId(String conferenceId) {
-		this.conferenceId = conferenceId;
-		if(conferenceId != null){
-			putQueryParameter("ConferenceId", conferenceId);
+	public void setPageNo(Long pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
@@ -72,9 +89,31 @@ public class DescribeConferenceAuthInfoRequest extends RpcAcsRequest<DescribeCon
 		}
 	}
 
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId);
+		}
+	}
+
+	public String getTimePoint() {
+		return this.timePoint;
+	}
+
+	public void setTimePoint(String timePoint) {
+		this.timePoint = timePoint;
+		if(timePoint != null){
+			putQueryParameter("TimePoint", timePoint);
+		}
+	}
+
 	@Override
-	public Class<DescribeConferenceAuthInfoResponse> getResponseClass() {
-		return DescribeConferenceAuthInfoResponse.class;
+	public Class<DescribeRtcChannelUserListResponse> getResponseClass() {
+		return DescribeRtcChannelUserListResponse.class;
 	}
 
 }

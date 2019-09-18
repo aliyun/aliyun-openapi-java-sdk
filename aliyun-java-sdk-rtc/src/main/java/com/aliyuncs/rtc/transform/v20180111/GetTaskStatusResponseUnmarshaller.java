@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTaskStatusResponseUnmarshaller {
 
-	public static GetTaskStatusResponse unmarshall(GetTaskStatusResponse getTaskStatusResponse, UnmarshallerContext context) {
+	public static GetTaskStatusResponse unmarshall(GetTaskStatusResponse getTaskStatusResponse, UnmarshallerContext _ctx) {
 		
-		getTaskStatusResponse.setRequestId(context.stringValue("GetTaskStatusResponse.RequestId"));
-		getTaskStatusResponse.setStatus(context.integerValue("GetTaskStatusResponse.Status"));
+		getTaskStatusResponse.setRequestId(_ctx.stringValue("GetTaskStatusResponse.RequestId"));
+		getTaskStatusResponse.setStatus(_ctx.integerValue("GetTaskStatusResponse.Status"));
 	 
 	 	return getTaskStatusResponse;
 	}

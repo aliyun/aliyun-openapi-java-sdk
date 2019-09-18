@@ -15,18 +15,16 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.CreateChannelTokenResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.UpdateMPULayoutResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateChannelTokenResponse extends AcsResponse {
+public class UpdateMPULayoutResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String channelToken;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,8 @@ public class CreateChannelTokenResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getChannelToken() {
-		return this.channelToken;
-	}
-
-	public void setChannelToken(String channelToken) {
-		this.channelToken = channelToken;
-	}
-
 	@Override
-	public CreateChannelTokenResponse getInstance(UnmarshallerContext context) {
-		return	CreateChannelTokenResponseUnmarshaller.unmarshall(this, context);
+	public UpdateMPULayoutResponse getInstance(UnmarshallerContext context) {
+		return	UpdateMPULayoutResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateConferenceResponseUnmarshaller {
 
-	public static CreateConferenceResponse unmarshall(CreateConferenceResponse createConferenceResponse, UnmarshallerContext context) {
+	public static CreateConferenceResponse unmarshall(CreateConferenceResponse createConferenceResponse, UnmarshallerContext _ctx) {
 		
-		createConferenceResponse.setRequestId(context.stringValue("CreateConferenceResponse.RequestId"));
-		createConferenceResponse.setConferenceId(context.stringValue("CreateConferenceResponse.ConferenceId"));
+		createConferenceResponse.setRequestId(_ctx.stringValue("CreateConferenceResponse.RequestId"));
+		createConferenceResponse.setConferenceId(_ctx.stringValue("CreateConferenceResponse.ConferenceId"));
 
 		AuthInfo authInfo = new AuthInfo();
-		authInfo.setKey(context.stringValue("CreateConferenceResponse.AuthInfo.Key"));
-		authInfo.setNonce(context.stringValue("CreateConferenceResponse.AuthInfo.Nonce"));
-		authInfo.setTimestamp(context.integerValue("CreateConferenceResponse.AuthInfo.Timestamp"));
+		authInfo.setKey(_ctx.stringValue("CreateConferenceResponse.AuthInfo.Key"));
+		authInfo.setNonce(_ctx.stringValue("CreateConferenceResponse.AuthInfo.Nonce"));
+		authInfo.setTimestamp(_ctx.integerValue("CreateConferenceResponse.AuthInfo.Timestamp"));
 		createConferenceResponse.setAuthInfo(authInfo);
 	 
 	 	return createConferenceResponse;

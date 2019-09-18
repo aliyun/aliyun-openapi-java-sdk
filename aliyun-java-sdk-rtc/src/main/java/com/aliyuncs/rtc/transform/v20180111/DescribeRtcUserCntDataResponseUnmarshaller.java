@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRtcUserCntDataResponseUnmarshaller {
 
-	public static DescribeRtcUserCntDataResponse unmarshall(DescribeRtcUserCntDataResponse describeRtcUserCntDataResponse, UnmarshallerContext context) {
+	public static DescribeRtcUserCntDataResponse unmarshall(DescribeRtcUserCntDataResponse describeRtcUserCntDataResponse, UnmarshallerContext _ctx) {
 		
-		describeRtcUserCntDataResponse.setRequestId(context.stringValue("DescribeRtcUserCntDataResponse.RequestId"));
+		describeRtcUserCntDataResponse.setRequestId(_ctx.stringValue("DescribeRtcUserCntDataResponse.RequestId"));
 
 		List<UserCntModule> userCntDataPerInterval = new ArrayList<UserCntModule>();
-		for (int i = 0; i < context.lengthValue("DescribeRtcUserCntDataResponse.UserCntDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRtcUserCntDataResponse.UserCntDataPerInterval.Length"); i++) {
 			UserCntModule userCntModule = new UserCntModule();
-			userCntModule.setTimeStamp(context.stringValue("DescribeRtcUserCntDataResponse.UserCntDataPerInterval["+ i +"].TimeStamp"));
-			userCntModule.setActiveUserCnt(context.longValue("DescribeRtcUserCntDataResponse.UserCntDataPerInterval["+ i +"].ActiveUserCnt"));
+			userCntModule.setTimeStamp(_ctx.stringValue("DescribeRtcUserCntDataResponse.UserCntDataPerInterval["+ i +"].TimeStamp"));
+			userCntModule.setActiveUserCnt(_ctx.longValue("DescribeRtcUserCntDataResponse.UserCntDataPerInterval["+ i +"].ActiveUserCnt"));
 
 			userCntDataPerInterval.add(userCntModule);
 		}

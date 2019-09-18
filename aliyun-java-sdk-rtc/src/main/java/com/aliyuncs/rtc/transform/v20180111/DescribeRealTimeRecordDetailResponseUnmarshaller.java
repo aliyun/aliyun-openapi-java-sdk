@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRealTimeRecordDetailResponseUnmarshaller {
 
-	public static DescribeRealTimeRecordDetailResponse unmarshall(DescribeRealTimeRecordDetailResponse describeRealTimeRecordDetailResponse, UnmarshallerContext context) {
+	public static DescribeRealTimeRecordDetailResponse unmarshall(DescribeRealTimeRecordDetailResponse describeRealTimeRecordDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeRealTimeRecordDetailResponse.setRequestId(context.stringValue("DescribeRealTimeRecordDetailResponse.RequestId"));
+		describeRealTimeRecordDetailResponse.setRequestId(_ctx.stringValue("DescribeRealTimeRecordDetailResponse.RequestId"));
 
 		List<RecordDetailInfo> recordDetailInfos = new ArrayList<RecordDetailInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos.Length"); i++) {
 			RecordDetailInfo recordDetailInfo = new RecordDetailInfo();
-			recordDetailInfo.setUid(context.stringValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos["+ i +"].Uid"));
-			recordDetailInfo.setStartTime(context.stringValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos["+ i +"].StartTime"));
-			recordDetailInfo.setDeviceType(context.stringValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos["+ i +"].DeviceType"));
-			recordDetailInfo.setSDKVersion(context.stringValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos["+ i +"].SDKVersion"));
+			recordDetailInfo.setUid(_ctx.stringValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos["+ i +"].Uid"));
+			recordDetailInfo.setStartTime(_ctx.stringValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos["+ i +"].StartTime"));
+			recordDetailInfo.setDeviceType(_ctx.stringValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos["+ i +"].DeviceType"));
+			recordDetailInfo.setSDKVersion(_ctx.stringValue("DescribeRealTimeRecordDetailResponse.RecordDetailInfos["+ i +"].SDKVersion"));
 
 			recordDetailInfos.add(recordDetailInfo);
 		}

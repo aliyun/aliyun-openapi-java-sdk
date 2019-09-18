@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class MuteAudioResponseUnmarshaller {
 
-	public static MuteAudioResponse unmarshall(MuteAudioResponse muteAudioResponse, UnmarshallerContext context) {
+	public static MuteAudioResponse unmarshall(MuteAudioResponse muteAudioResponse, UnmarshallerContext _ctx) {
 		
-		muteAudioResponse.setRequestId(context.stringValue("MuteAudioResponse.RequestId"));
-		muteAudioResponse.setConferenceId(context.stringValue("MuteAudioResponse.ConferenceId"));
+		muteAudioResponse.setRequestId(_ctx.stringValue("MuteAudioResponse.RequestId"));
+		muteAudioResponse.setConferenceId(_ctx.stringValue("MuteAudioResponse.ConferenceId"));
 
 		List<Participant> participants = new ArrayList<Participant>();
-		for (int i = 0; i < context.lengthValue("MuteAudioResponse.Participants.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("MuteAudioResponse.Participants.Length"); i++) {
 			Participant participant = new Participant();
-			participant.setId(context.stringValue("MuteAudioResponse.Participants["+ i +"].Id"));
-			participant.setCode(context.stringValue("MuteAudioResponse.Participants["+ i +"].Code"));
-			participant.setMessage(context.stringValue("MuteAudioResponse.Participants["+ i +"].Message"));
+			participant.setId(_ctx.stringValue("MuteAudioResponse.Participants["+ i +"].Id"));
+			participant.setCode(_ctx.stringValue("MuteAudioResponse.Participants["+ i +"].Code"));
+			participant.setMessage(_ctx.stringValue("MuteAudioResponse.Participants["+ i +"].Message"));
 
 			participants.add(participant);
 		}

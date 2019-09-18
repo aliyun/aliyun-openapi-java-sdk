@@ -26,22 +26,12 @@ public class DeleteConferenceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String conferenceId;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getConferenceId() {
-		return this.conferenceId;
-	}
-
-	public void setConferenceId(String conferenceId) {
-		this.conferenceId = conferenceId;
 	}
 
 	@Override

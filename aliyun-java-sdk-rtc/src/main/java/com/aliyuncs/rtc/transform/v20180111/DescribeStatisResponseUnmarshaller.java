@@ -27,45 +27,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeStatisResponseUnmarshaller {
 
-	public static DescribeStatisResponse unmarshall(DescribeStatisResponse describeStatisResponse, UnmarshallerContext context) {
+	public static DescribeStatisResponse unmarshall(DescribeStatisResponse describeStatisResponse, UnmarshallerContext _ctx) {
 		
-		describeStatisResponse.setRequestId(context.stringValue("DescribeStatisResponse.RequestId"));
+		describeStatisResponse.setRequestId(_ctx.stringValue("DescribeStatisResponse.RequestId"));
 
 		List<StatisInfo> statisInfos = new ArrayList<StatisInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeStatisResponse.StatisInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeStatisResponse.StatisInfos.Length"); i++) {
 			StatisInfo statisInfo = new StatisInfo();
-			statisInfo.setTime(context.stringValue("DescribeStatisResponse.StatisInfos["+ i +"].Time"));
+			statisInfo.setTime(_ctx.stringValue("DescribeStatisResponse.StatisInfos["+ i +"].Time"));
 
 			List<DurationItem> duration = new ArrayList<DurationItem>();
-			for (int j = 0; j < context.lengthValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration.Length"); j++) {
 				DurationItem durationItem = new DurationItem();
-				durationItem.setTotalDuration(context.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].TotalDuration"));
-				durationItem.setAudioDuration(context.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].AudioDuration"));
-				durationItem.setSdDuration(context.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].SdDuration"));
-				durationItem.setHdDuration(context.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].HdDuration"));
-				durationItem.setFhdDuration(context.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].FhdDuration"));
+				durationItem.setTotalDuration(_ctx.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].TotalDuration"));
+				durationItem.setAudioDuration(_ctx.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].AudioDuration"));
+				durationItem.setSdDuration(_ctx.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].SdDuration"));
+				durationItem.setHdDuration(_ctx.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].HdDuration"));
+				durationItem.setFhdDuration(_ctx.floatValue("DescribeStatisResponse.StatisInfos["+ i +"].Duration["+ j +"].FhdDuration"));
 
 				duration.add(durationItem);
 			}
 			statisInfo.setDuration(duration);
 
 			List<UserStatisItem> userStatis = new ArrayList<UserStatisItem>();
-			for (int j = 0; j < context.lengthValue("DescribeStatisResponse.StatisInfos["+ i +"].UserStatis.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeStatisResponse.StatisInfos["+ i +"].UserStatis.Length"); j++) {
 				UserStatisItem userStatisItem = new UserStatisItem();
-				userStatisItem.setActiveUserCnt(context.longValue("DescribeStatisResponse.StatisInfos["+ i +"].UserStatis["+ j +"].ActiveUserCnt"));
-				userStatisItem.setConSessionPeak(context.longValue("DescribeStatisResponse.StatisInfos["+ i +"].UserStatis["+ j +"].ConSessionPeak"));
-				userStatisItem.setConSessionPeakTime(context.stringValue("DescribeStatisResponse.StatisInfos["+ i +"].UserStatis["+ j +"].ConSessionPeakTime"));
+				userStatisItem.setActiveUserCnt(_ctx.longValue("DescribeStatisResponse.StatisInfos["+ i +"].UserStatis["+ j +"].ActiveUserCnt"));
+				userStatisItem.setConSessionPeak(_ctx.longValue("DescribeStatisResponse.StatisInfos["+ i +"].UserStatis["+ j +"].ConSessionPeak"));
+				userStatisItem.setConSessionPeakTime(_ctx.stringValue("DescribeStatisResponse.StatisInfos["+ i +"].UserStatis["+ j +"].ConSessionPeakTime"));
 
 				userStatis.add(userStatisItem);
 			}
 			statisInfo.setUserStatis(userStatis);
 
 			List<ChannelStatisItem> channelStatis = new ArrayList<ChannelStatisItem>();
-			for (int j = 0; j < context.lengthValue("DescribeStatisResponse.StatisInfos["+ i +"].ChannelStatis.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeStatisResponse.StatisInfos["+ i +"].ChannelStatis.Length"); j++) {
 				ChannelStatisItem channelStatisItem = new ChannelStatisItem();
-				channelStatisItem.setAccChannelCnt(context.longValue("DescribeStatisResponse.StatisInfos["+ i +"].ChannelStatis["+ j +"].AccChannelCnt"));
-				channelStatisItem.setConChannelPeak(context.longValue("DescribeStatisResponse.StatisInfos["+ i +"].ChannelStatis["+ j +"].ConChannelPeak"));
-				channelStatisItem.setConChannelPeakTime(context.stringValue("DescribeStatisResponse.StatisInfos["+ i +"].ChannelStatis["+ j +"].ConChannelPeakTime"));
+				channelStatisItem.setAccChannelCnt(_ctx.longValue("DescribeStatisResponse.StatisInfos["+ i +"].ChannelStatis["+ j +"].AccChannelCnt"));
+				channelStatisItem.setConChannelPeak(_ctx.longValue("DescribeStatisResponse.StatisInfos["+ i +"].ChannelStatis["+ j +"].ConChannelPeak"));
+				channelStatisItem.setConChannelPeakTime(_ctx.stringValue("DescribeStatisResponse.StatisInfos["+ i +"].ChannelStatis["+ j +"].ConChannelPeakTime"));
 
 				channelStatis.add(channelStatisItem);
 			}

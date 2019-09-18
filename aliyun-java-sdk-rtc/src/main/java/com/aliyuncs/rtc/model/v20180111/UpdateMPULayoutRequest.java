@@ -23,10 +23,10 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
+public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutResponse> {
 	
-	public StartMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StartMPUTask", "rtc");
+	public UpdateMPULayoutRequest() {
+		super("rtc", "2018-01-11", "UpdateMPULayout", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,21 +40,13 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private Integer cropMode;
 
-	private String taskProfile;
-
 	private List<Long> layoutIdss;
 
 	private String taskId;
 
-	private String streamURL;
-
 	private Long ownerId;
 
 	private String appId;
-
-	private Integer mediaEncode;
-
-	private String channelId;
 
 	public List<UserPanes> getUserPaness() {
 		return this.userPaness;
@@ -93,17 +85,6 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		}
 	}
 
-	public String getTaskProfile() {
-		return this.taskProfile;
-	}
-
-	public void setTaskProfile(String taskProfile) {
-		this.taskProfile = taskProfile;
-		if(taskProfile != null){
-			putQueryParameter("TaskProfile", taskProfile);
-		}
-	}
-
 	public List<Long> getLayoutIdss() {
 		return this.layoutIdss;
 	}
@@ -128,17 +109,6 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		}
 	}
 
-	public String getStreamURL() {
-		return this.streamURL;
-	}
-
-	public void setStreamURL(String streamURL) {
-		this.streamURL = streamURL;
-		if(streamURL != null){
-			putQueryParameter("StreamURL", streamURL);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -158,28 +128,6 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public Integer getMediaEncode() {
-		return this.mediaEncode;
-	}
-
-	public void setMediaEncode(Integer mediaEncode) {
-		this.mediaEncode = mediaEncode;
-		if(mediaEncode != null){
-			putQueryParameter("MediaEncode", mediaEncode.toString());
-		}
-	}
-
-	public String getChannelId() {
-		return this.channelId;
-	}
-
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
-		if(channelId != null){
-			putQueryParameter("ChannelId", channelId);
 		}
 	}
 
@@ -217,8 +165,8 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 	}
 
 	@Override
-	public Class<StartMPUTaskResponse> getResponseClass() {
-		return StartMPUTaskResponse.class;
+	public Class<UpdateMPULayoutResponse> getResponseClass() {
+		return UpdateMPULayoutResponse.class;
 	}
 
 }

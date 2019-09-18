@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateChannelResponseUnmarshaller {
 
-	public static CreateChannelResponse unmarshall(CreateChannelResponse createChannelResponse, UnmarshallerContext context) {
+	public static CreateChannelResponse unmarshall(CreateChannelResponse createChannelResponse, UnmarshallerContext _ctx) {
 		
-		createChannelResponse.setRequestId(context.stringValue("CreateChannelResponse.RequestId"));
-		createChannelResponse.setChannelKey(context.stringValue("CreateChannelResponse.ChannelKey"));
-		createChannelResponse.setNonce(context.stringValue("CreateChannelResponse.Nonce"));
-		createChannelResponse.setTimestamp(context.integerValue("CreateChannelResponse.Timestamp"));
+		createChannelResponse.setRequestId(_ctx.stringValue("CreateChannelResponse.RequestId"));
+		createChannelResponse.setChannelKey(_ctx.stringValue("CreateChannelResponse.ChannelKey"));
+		createChannelResponse.setNonce(_ctx.stringValue("CreateChannelResponse.Nonce"));
+		createChannelResponse.setTimestamp(_ctx.integerValue("CreateChannelResponse.Timestamp"));
 	 
 	 	return createChannelResponse;
 	}

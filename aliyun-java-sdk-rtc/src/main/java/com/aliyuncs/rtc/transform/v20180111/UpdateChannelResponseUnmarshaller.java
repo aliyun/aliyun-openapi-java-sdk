@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UpdateChannelResponseUnmarshaller {
 
-	public static UpdateChannelResponse unmarshall(UpdateChannelResponse updateChannelResponse, UnmarshallerContext context) {
+	public static UpdateChannelResponse unmarshall(UpdateChannelResponse updateChannelResponse, UnmarshallerContext _ctx) {
 		
-		updateChannelResponse.setRequestId(context.stringValue("UpdateChannelResponse.RequestId"));
-		updateChannelResponse.setNonce(context.stringValue("UpdateChannelResponse.Nonce"));
-		updateChannelResponse.setTimestamp(context.integerValue("UpdateChannelResponse.Timestamp"));
+		updateChannelResponse.setRequestId(_ctx.stringValue("UpdateChannelResponse.RequestId"));
+		updateChannelResponse.setNonce(_ctx.stringValue("UpdateChannelResponse.Nonce"));
+		updateChannelResponse.setTimestamp(_ctx.integerValue("UpdateChannelResponse.Timestamp"));
 	 
 	 	return updateChannelResponse;
 	}

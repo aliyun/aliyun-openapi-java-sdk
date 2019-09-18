@@ -15,6 +15,8 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rtc.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +26,11 @@ public class DescribeRecordDetailRequest extends RpcAcsRequest<DescribeRecordDet
 	
 	public DescribeRecordDetailRequest() {
 		super("rtc", "2018-01-11", "DescribeRecordDetail", "rtc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String startTime;

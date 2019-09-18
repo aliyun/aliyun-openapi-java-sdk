@@ -15,50 +15,31 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rtc.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateChannelTokenRequest extends RpcAcsRequest<CreateChannelTokenResponse> {
+public class DescribeRtcChannelMetricRequest extends RpcAcsRequest<DescribeRtcChannelMetricResponse> {
 	
-	public CreateChannelTokenRequest() {
-		super("rtc", "2018-01-11", "CreateChannelToken", "rtc");
+	public DescribeRtcChannelMetricRequest() {
+		super("rtc", "2018-01-11", "DescribeRtcChannelMetric", "rtc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String sessionId;
-
-	private String uId;
-
 	private Long ownerId;
-
-	private String nonce;
 
 	private String appId;
 
 	private String channelId;
 
-	public String getSessionId() {
-		return this.sessionId;
-	}
-
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
-		if(sessionId != null){
-			putQueryParameter("SessionId", sessionId);
-		}
-	}
-
-	public String getUId() {
-		return this.uId;
-	}
-
-	public void setUId(String uId) {
-		this.uId = uId;
-		if(uId != null){
-			putQueryParameter("UId", uId);
-		}
-	}
+	private String timePoint;
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -68,17 +49,6 @@ public class CreateChannelTokenRequest extends RpcAcsRequest<CreateChannelTokenR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getNonce() {
-		return this.nonce;
-	}
-
-	public void setNonce(String nonce) {
-		this.nonce = nonce;
-		if(nonce != null){
-			putQueryParameter("Nonce", nonce);
 		}
 	}
 
@@ -104,9 +74,20 @@ public class CreateChannelTokenRequest extends RpcAcsRequest<CreateChannelTokenR
 		}
 	}
 
+	public String getTimePoint() {
+		return this.timePoint;
+	}
+
+	public void setTimePoint(String timePoint) {
+		this.timePoint = timePoint;
+		if(timePoint != null){
+			putQueryParameter("TimePoint", timePoint);
+		}
+	}
+
 	@Override
-	public Class<CreateChannelTokenResponse> getResponseClass() {
-		return CreateChannelTokenResponse.class;
+	public Class<DescribeRtcChannelMetricResponse> getResponseClass() {
+		return DescribeRtcChannelMetricResponse.class;
 	}
 
 }

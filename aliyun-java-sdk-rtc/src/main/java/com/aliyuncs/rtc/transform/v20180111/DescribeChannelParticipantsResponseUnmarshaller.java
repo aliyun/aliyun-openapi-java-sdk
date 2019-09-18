@@ -23,16 +23,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeChannelParticipantsResponseUnmarshaller {
 
-	public static DescribeChannelParticipantsResponse unmarshall(DescribeChannelParticipantsResponse describeChannelParticipantsResponse, UnmarshallerContext context) {
+	public static DescribeChannelParticipantsResponse unmarshall(DescribeChannelParticipantsResponse describeChannelParticipantsResponse, UnmarshallerContext _ctx) {
 		
-		describeChannelParticipantsResponse.setRequestId(context.stringValue("DescribeChannelParticipantsResponse.RequestId"));
-		describeChannelParticipantsResponse.setTimestamp(context.integerValue("DescribeChannelParticipantsResponse.Timestamp"));
-		describeChannelParticipantsResponse.setTotalNum(context.integerValue("DescribeChannelParticipantsResponse.TotalNum"));
-		describeChannelParticipantsResponse.setTotalPage(context.integerValue("DescribeChannelParticipantsResponse.TotalPage"));
+		describeChannelParticipantsResponse.setRequestId(_ctx.stringValue("DescribeChannelParticipantsResponse.RequestId"));
+		describeChannelParticipantsResponse.setTimestamp(_ctx.integerValue("DescribeChannelParticipantsResponse.Timestamp"));
+		describeChannelParticipantsResponse.setTotalNum(_ctx.integerValue("DescribeChannelParticipantsResponse.TotalNum"));
+		describeChannelParticipantsResponse.setTotalPage(_ctx.integerValue("DescribeChannelParticipantsResponse.TotalPage"));
 
 		List<String> userList = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("DescribeChannelParticipantsResponse.UserList.Length"); i++) {
-			userList.add(context.stringValue("DescribeChannelParticipantsResponse.UserList["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeChannelParticipantsResponse.UserList.Length"); i++) {
+			userList.add(_ctx.stringValue("DescribeChannelParticipantsResponse.UserList["+ i +"]"));
 		}
 		describeChannelParticipantsResponse.setUserList(userList);
 	 

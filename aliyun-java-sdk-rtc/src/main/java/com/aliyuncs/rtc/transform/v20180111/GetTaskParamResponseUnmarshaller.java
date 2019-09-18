@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTaskParamResponseUnmarshaller {
 
-	public static GetTaskParamResponse unmarshall(GetTaskParamResponse getTaskParamResponse, UnmarshallerContext context) {
+	public static GetTaskParamResponse unmarshall(GetTaskParamResponse getTaskParamResponse, UnmarshallerContext _ctx) {
 		
-		getTaskParamResponse.setRequestId(context.stringValue("GetTaskParamResponse.RequestId"));
-		getTaskParamResponse.setChannelId(context.stringValue("GetTaskParamResponse.ChannelId"));
-		getTaskParamResponse.setTemplateId(context.longValue("GetTaskParamResponse.TemplateId"));
+		getTaskParamResponse.setRequestId(_ctx.stringValue("GetTaskParamResponse.RequestId"));
+		getTaskParamResponse.setChannelId(_ctx.stringValue("GetTaskParamResponse.ChannelId"));
+		getTaskParamResponse.setTemplateId(_ctx.longValue("GetTaskParamResponse.TemplateId"));
 
 		List<MixPaneItem> mixPane = new ArrayList<MixPaneItem>();
-		for (int i = 0; i < context.lengthValue("GetTaskParamResponse.MixPane.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetTaskParamResponse.MixPane.Length"); i++) {
 			MixPaneItem mixPaneItem = new MixPaneItem();
-			mixPaneItem.setPaneId(context.integerValue("GetTaskParamResponse.MixPane["+ i +"].PaneId"));
-			mixPaneItem.setUserId(context.stringValue("GetTaskParamResponse.MixPane["+ i +"].UserId"));
-			mixPaneItem.setSourceType(context.stringValue("GetTaskParamResponse.MixPane["+ i +"].SourceType"));
+			mixPaneItem.setPaneId(_ctx.integerValue("GetTaskParamResponse.MixPane["+ i +"].PaneId"));
+			mixPaneItem.setUserId(_ctx.stringValue("GetTaskParamResponse.MixPane["+ i +"].UserId"));
+			mixPaneItem.setSourceType(_ctx.stringValue("GetTaskParamResponse.MixPane["+ i +"].SourceType"));
 
 			mixPane.add(mixPaneItem);
 		}

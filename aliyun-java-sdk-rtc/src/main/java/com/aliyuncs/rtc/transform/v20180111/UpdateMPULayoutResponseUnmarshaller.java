@@ -14,17 +14,16 @@
 
 package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.rtc.model.v20180111.CreateChannelTokenResponse;
+import com.aliyuncs.rtc.model.v20180111.UpdateMPULayoutResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateChannelTokenResponseUnmarshaller {
+public class UpdateMPULayoutResponseUnmarshaller {
 
-	public static CreateChannelTokenResponse unmarshall(CreateChannelTokenResponse createChannelTokenResponse, UnmarshallerContext context) {
+	public static UpdateMPULayoutResponse unmarshall(UpdateMPULayoutResponse updateMPULayoutResponse, UnmarshallerContext _ctx) {
 		
-		createChannelTokenResponse.setRequestId(context.stringValue("CreateChannelTokenResponse.RequestId"));
-		createChannelTokenResponse.setChannelToken(context.stringValue("CreateChannelTokenResponse.ChannelToken"));
+		updateMPULayoutResponse.setRequestId(_ctx.stringValue("UpdateMPULayoutResponse.RequestId"));
 	 
-	 	return createChannelTokenResponse;
+	 	return updateMPULayoutResponse;
 	}
 }

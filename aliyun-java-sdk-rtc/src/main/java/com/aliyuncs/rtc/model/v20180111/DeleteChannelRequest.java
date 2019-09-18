@@ -15,6 +15,8 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rtc.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +26,11 @@ public class DeleteChannelRequest extends RpcAcsRequest<DeleteChannelResponse> {
 	
 	public DeleteChannelRequest() {
 		super("rtc", "2018-01-11", "DeleteChannel", "rtc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long ownerId;

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetMPUTaskStatusResponseUnmarshaller {
 
-	public static GetMPUTaskStatusResponse unmarshall(GetMPUTaskStatusResponse getMPUTaskStatusResponse, UnmarshallerContext context) {
+	public static GetMPUTaskStatusResponse unmarshall(GetMPUTaskStatusResponse getMPUTaskStatusResponse, UnmarshallerContext _ctx) {
 		
-		getMPUTaskStatusResponse.setRequestId(context.stringValue("GetMPUTaskStatusResponse.RequestId"));
-		getMPUTaskStatusResponse.setStatus(context.integerValue("GetMPUTaskStatusResponse.Status"));
+		getMPUTaskStatusResponse.setRequestId(_ctx.stringValue("GetMPUTaskStatusResponse.RequestId"));
+		getMPUTaskStatusResponse.setStatus(_ctx.integerValue("GetMPUTaskStatusResponse.Status"));
 	 
 	 	return getMPUTaskStatusResponse;
 	}

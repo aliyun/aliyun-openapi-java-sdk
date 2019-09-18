@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRecordListResponseUnmarshaller {
 
-	public static DescribeRecordListResponse unmarshall(DescribeRecordListResponse describeRecordListResponse, UnmarshallerContext context) {
+	public static DescribeRecordListResponse unmarshall(DescribeRecordListResponse describeRecordListResponse, UnmarshallerContext _ctx) {
 		
-		describeRecordListResponse.setRequestId(context.stringValue("DescribeRecordListResponse.RequestId"));
-		describeRecordListResponse.setPageSize(context.longValue("DescribeRecordListResponse.PageSize"));
-		describeRecordListResponse.setPageNo(context.longValue("DescribeRecordListResponse.PageNo"));
-		describeRecordListResponse.setTotalCnt(context.longValue("DescribeRecordListResponse.TotalCnt"));
+		describeRecordListResponse.setRequestId(_ctx.stringValue("DescribeRecordListResponse.RequestId"));
+		describeRecordListResponse.setPageSize(_ctx.longValue("DescribeRecordListResponse.PageSize"));
+		describeRecordListResponse.setPageNo(_ctx.longValue("DescribeRecordListResponse.PageNo"));
+		describeRecordListResponse.setTotalCnt(_ctx.longValue("DescribeRecordListResponse.TotalCnt"));
 
 		List<CommunicationRecordInfo> communicationRecordInfos = new ArrayList<CommunicationRecordInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeRecordListResponse.CommunicationRecordInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRecordListResponse.CommunicationRecordInfos.Length"); i++) {
 			CommunicationRecordInfo communicationRecordInfo = new CommunicationRecordInfo();
-			communicationRecordInfo.setChannelId(context.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].ChannelId"));
-			communicationRecordInfo.setStartTime(context.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].StartTime"));
-			communicationRecordInfo.setEndTime(context.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].EndTime"));
-			communicationRecordInfo.setTotalUserCnt(context.longValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].TotalUserCnt"));
-			communicationRecordInfo.setStatus(context.booleanValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].Status"));
-			communicationRecordInfo.setRecordId(context.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].RecordId"));
+			communicationRecordInfo.setChannelId(_ctx.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].ChannelId"));
+			communicationRecordInfo.setStartTime(_ctx.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].StartTime"));
+			communicationRecordInfo.setEndTime(_ctx.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].EndTime"));
+			communicationRecordInfo.setTotalUserCnt(_ctx.longValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].TotalUserCnt"));
+			communicationRecordInfo.setStatus(_ctx.booleanValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].Status"));
+			communicationRecordInfo.setRecordId(_ctx.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].RecordId"));
 
 			List<String> callAreas = new ArrayList<String>();
-			for (int j = 0; j < context.lengthValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].CallAreas.Length"); j++) {
-				callAreas.add(context.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].CallAreas["+ j +"]"));
+			for (int j = 0; j < _ctx.lengthValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].CallAreas.Length"); j++) {
+				callAreas.add(_ctx.stringValue("DescribeRecordListResponse.CommunicationRecordInfos["+ i +"].CallAreas["+ j +"]"));
 			}
 			communicationRecordInfo.setCallAreas(callAreas);
 

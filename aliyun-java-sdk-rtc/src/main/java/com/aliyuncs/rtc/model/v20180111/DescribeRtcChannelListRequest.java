@@ -15,7 +15,6 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rtc.Endpoint;
 
@@ -23,10 +22,10 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class RemoveTerminalsRequest extends RpcAcsRequest<RemoveTerminalsResponse> {
+public class DescribeRtcChannelListRequest extends RpcAcsRequest<DescribeRtcChannelListResponse> {
 	
-	public RemoveTerminalsRequest() {
-		super("rtc", "2018-01-11", "RemoveTerminals", "rtc");
+	public DescribeRtcChannelListRequest() {
+		super("rtc", "2018-01-11", "DescribeRtcChannelList", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,25 +33,66 @@ public class RemoveTerminalsRequest extends RpcAcsRequest<RemoveTerminalsRespons
 		} catch (Exception e) {}
 	}
 
-	private List<String> terminalIdss;
+	private String sortType;
+
+	private String userId;
+
+	private String serviceArea;
+
+	private Long pageSize;
 
 	private Long ownerId;
+
+	private Long pageNo;
 
 	private String appId;
 
 	private String channelId;
 
-	public List<String> getTerminalIdss() {
-		return this.terminalIdss;
+	private String timePoint;
+
+	public String getSortType() {
+		return this.sortType;
 	}
 
-	public void setTerminalIdss(List<String> terminalIdss) {
-		this.terminalIdss = terminalIdss;	
-		if (terminalIdss != null) {
-			for (int i = 0; i < terminalIdss.size(); i++) {
-				putQueryParameter("TerminalIds." + (i + 1) , terminalIdss.get(i));
-			}
-		}	
+	public void setSortType(String sortType) {
+		this.sortType = sortType;
+		if(sortType != null){
+			putQueryParameter("SortType", sortType);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getServiceArea() {
+		return this.serviceArea;
+	}
+
+	public void setServiceArea(String serviceArea) {
+		this.serviceArea = serviceArea;
+		if(serviceArea != null){
+			putQueryParameter("ServiceArea", serviceArea);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public Long getOwnerId() {
@@ -63,6 +103,17 @@ public class RemoveTerminalsRequest extends RpcAcsRequest<RemoveTerminalsRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Long getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Long pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
@@ -88,9 +139,20 @@ public class RemoveTerminalsRequest extends RpcAcsRequest<RemoveTerminalsRespons
 		}
 	}
 
+	public String getTimePoint() {
+		return this.timePoint;
+	}
+
+	public void setTimePoint(String timePoint) {
+		this.timePoint = timePoint;
+		if(timePoint != null){
+			putQueryParameter("TimePoint", timePoint);
+		}
+	}
+
 	@Override
-	public Class<RemoveTerminalsResponse> getResponseClass() {
-		return RemoveTerminalsResponse.class;
+	public Class<DescribeRtcChannelListResponse> getResponseClass() {
+		return DescribeRtcChannelListResponse.class;
 	}
 
 }

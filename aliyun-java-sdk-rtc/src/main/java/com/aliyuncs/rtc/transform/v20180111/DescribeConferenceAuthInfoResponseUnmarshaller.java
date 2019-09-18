@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeConferenceAuthInfoResponseUnmarshaller {
 
-	public static DescribeConferenceAuthInfoResponse unmarshall(DescribeConferenceAuthInfoResponse describeConferenceAuthInfoResponse, UnmarshallerContext context) {
+	public static DescribeConferenceAuthInfoResponse unmarshall(DescribeConferenceAuthInfoResponse describeConferenceAuthInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeConferenceAuthInfoResponse.setRequestId(context.stringValue("DescribeConferenceAuthInfoResponse.RequestId"));
-		describeConferenceAuthInfoResponse.setConferenceId(context.stringValue("DescribeConferenceAuthInfoResponse.ConferenceId"));
+		describeConferenceAuthInfoResponse.setRequestId(_ctx.stringValue("DescribeConferenceAuthInfoResponse.RequestId"));
+		describeConferenceAuthInfoResponse.setConferenceId(_ctx.stringValue("DescribeConferenceAuthInfoResponse.ConferenceId"));
 
 		AuthInfo authInfo = new AuthInfo();
-		authInfo.setKey(context.stringValue("DescribeConferenceAuthInfoResponse.AuthInfo.Key"));
-		authInfo.setNonce(context.stringValue("DescribeConferenceAuthInfoResponse.AuthInfo.Nonce"));
-		authInfo.setTimestamp(context.integerValue("DescribeConferenceAuthInfoResponse.AuthInfo.Timestamp"));
+		authInfo.setKey(_ctx.stringValue("DescribeConferenceAuthInfoResponse.AuthInfo.Key"));
+		authInfo.setNonce(_ctx.stringValue("DescribeConferenceAuthInfoResponse.AuthInfo.Nonce"));
+		authInfo.setTimestamp(_ctx.integerValue("DescribeConferenceAuthInfoResponse.AuthInfo.Timestamp"));
 		describeConferenceAuthInfoResponse.setAuthInfo(authInfo);
 	 
 	 	return describeConferenceAuthInfoResponse;

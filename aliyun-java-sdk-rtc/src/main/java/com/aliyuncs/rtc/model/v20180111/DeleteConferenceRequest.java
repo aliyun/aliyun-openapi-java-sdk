@@ -15,6 +15,8 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rtc.Endpoint;
 
 /**
  * @author auto create
@@ -24,24 +26,18 @@ public class DeleteConferenceRequest extends RpcAcsRequest<DeleteConferenceRespo
 	
 	public DeleteConferenceRequest() {
 		super("rtc", "2018-01-11", "DeleteConference", "rtc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
 
 	private String conferenceId;
 
+	private Long ownerId;
+
 	private String appId;
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
 
 	public String getConferenceId() {
 		return this.conferenceId;
@@ -51,6 +47,17 @@ public class DeleteConferenceRequest extends RpcAcsRequest<DeleteConferenceRespo
 		this.conferenceId = conferenceId;
 		if(conferenceId != null){
 			putQueryParameter("ConferenceId", conferenceId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

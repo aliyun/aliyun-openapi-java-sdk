@@ -12,19 +12,12 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.rtc.transform.v20180111;
+package com.aliyuncs.rtc;
 
-import com.aliyuncs.rtc.model.v20180111.ReceiveNotifyResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import java.util.HashMap;
 
+public class Endpoint {
+    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
 
-public class ReceiveNotifyResponseUnmarshaller {
-
-	public static ReceiveNotifyResponse unmarshall(ReceiveNotifyResponse receiveNotifyResponse, UnmarshallerContext _ctx) {
-		
-		receiveNotifyResponse.setRequestId(_ctx.stringValue("ReceiveNotifyResponse.RequestId"));
-		receiveNotifyResponse.setTraceId(_ctx.stringValue("ReceiveNotifyResponse.TraceId"));
-	 
-	 	return receiveNotifyResponse;
-	}
+    public static String endpointRegionalType = "central";
 }

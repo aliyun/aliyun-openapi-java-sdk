@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeRtcPeakChannelCntDataResponseUnmarshaller {
 
-	public static DescribeRtcPeakChannelCntDataResponse unmarshall(DescribeRtcPeakChannelCntDataResponse describeRtcPeakChannelCntDataResponse, UnmarshallerContext context) {
+	public static DescribeRtcPeakChannelCntDataResponse unmarshall(DescribeRtcPeakChannelCntDataResponse describeRtcPeakChannelCntDataResponse, UnmarshallerContext _ctx) {
 		
-		describeRtcPeakChannelCntDataResponse.setRequestId(context.stringValue("DescribeRtcPeakChannelCntDataResponse.RequestId"));
+		describeRtcPeakChannelCntDataResponse.setRequestId(_ctx.stringValue("DescribeRtcPeakChannelCntDataResponse.RequestId"));
 
 		List<PeakChannelCntModule> peakChannelCntDataPerInterval = new ArrayList<PeakChannelCntModule>();
-		for (int i = 0; i < context.lengthValue("DescribeRtcPeakChannelCntDataResponse.PeakChannelCntDataPerInterval.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeRtcPeakChannelCntDataResponse.PeakChannelCntDataPerInterval.Length"); i++) {
 			PeakChannelCntModule peakChannelCntModule = new PeakChannelCntModule();
-			peakChannelCntModule.setTimeStamp(context.stringValue("DescribeRtcPeakChannelCntDataResponse.PeakChannelCntDataPerInterval["+ i +"].TimeStamp"));
-			peakChannelCntModule.setActiveChannelPeak(context.longValue("DescribeRtcPeakChannelCntDataResponse.PeakChannelCntDataPerInterval["+ i +"].ActiveChannelPeak"));
-			peakChannelCntModule.setActiveChannelPeakTime(context.stringValue("DescribeRtcPeakChannelCntDataResponse.PeakChannelCntDataPerInterval["+ i +"].ActiveChannelPeakTime"));
+			peakChannelCntModule.setTimeStamp(_ctx.stringValue("DescribeRtcPeakChannelCntDataResponse.PeakChannelCntDataPerInterval["+ i +"].TimeStamp"));
+			peakChannelCntModule.setActiveChannelPeak(_ctx.longValue("DescribeRtcPeakChannelCntDataResponse.PeakChannelCntDataPerInterval["+ i +"].ActiveChannelPeak"));
+			peakChannelCntModule.setActiveChannelPeakTime(_ctx.stringValue("DescribeRtcPeakChannelCntDataResponse.PeakChannelCntDataPerInterval["+ i +"].ActiveChannelPeakTime"));
 
 			peakChannelCntDataPerInterval.add(peakChannelCntModule);
 		}

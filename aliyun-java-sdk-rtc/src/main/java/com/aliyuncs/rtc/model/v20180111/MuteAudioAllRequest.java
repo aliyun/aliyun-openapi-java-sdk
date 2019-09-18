@@ -15,6 +15,8 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rtc.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,31 @@ public class MuteAudioAllRequest extends RpcAcsRequest<MuteAudioAllResponse> {
 	
 	public MuteAudioAllRequest() {
 		super("rtc", "2018-01-11", "MuteAudioAll", "rtc");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String conferenceId;
 
 	private Long ownerId;
 
 	private String participantId;
 
-	private String conferenceId;
-
 	private String appId;
+
+	public String getConferenceId() {
+		return this.conferenceId;
+	}
+
+	public void setConferenceId(String conferenceId) {
+		this.conferenceId = conferenceId;
+		if(conferenceId != null){
+			putQueryParameter("ConferenceId", conferenceId);
+		}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;
@@ -53,17 +71,6 @@ public class MuteAudioAllRequest extends RpcAcsRequest<MuteAudioAllResponse> {
 		this.participantId = participantId;
 		if(participantId != null){
 			putQueryParameter("ParticipantId", participantId);
-		}
-	}
-
-	public String getConferenceId() {
-		return this.conferenceId;
-	}
-
-	public void setConferenceId(String conferenceId) {
-		this.conferenceId = conferenceId;
-		if(conferenceId != null){
-			putQueryParameter("ConferenceId", conferenceId);
 		}
 	}
 

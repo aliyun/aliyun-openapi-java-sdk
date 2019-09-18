@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveParticipantsResponseUnmarshaller {
 
-	public static RemoveParticipantsResponse unmarshall(RemoveParticipantsResponse removeParticipantsResponse, UnmarshallerContext context) {
+	public static RemoveParticipantsResponse unmarshall(RemoveParticipantsResponse removeParticipantsResponse, UnmarshallerContext _ctx) {
 		
-		removeParticipantsResponse.setRequestId(context.stringValue("RemoveParticipantsResponse.RequestId"));
-		removeParticipantsResponse.setConferenceId(context.stringValue("RemoveParticipantsResponse.ConferenceId"));
+		removeParticipantsResponse.setRequestId(_ctx.stringValue("RemoveParticipantsResponse.RequestId"));
+		removeParticipantsResponse.setConferenceId(_ctx.stringValue("RemoveParticipantsResponse.ConferenceId"));
 
 		List<Participant> participants = new ArrayList<Participant>();
-		for (int i = 0; i < context.lengthValue("RemoveParticipantsResponse.Participants.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("RemoveParticipantsResponse.Participants.Length"); i++) {
 			Participant participant = new Participant();
-			participant.setId(context.stringValue("RemoveParticipantsResponse.Participants["+ i +"].Id"));
-			participant.setCode(context.stringValue("RemoveParticipantsResponse.Participants["+ i +"].Code"));
-			participant.setMessage(context.stringValue("RemoveParticipantsResponse.Participants["+ i +"].Message"));
+			participant.setId(_ctx.stringValue("RemoveParticipantsResponse.Participants["+ i +"].Id"));
+			participant.setCode(_ctx.stringValue("RemoveParticipantsResponse.Participants["+ i +"].Code"));
+			participant.setMessage(_ctx.stringValue("RemoveParticipantsResponse.Participants["+ i +"].Message"));
 
 			participants.add(participant);
 		}

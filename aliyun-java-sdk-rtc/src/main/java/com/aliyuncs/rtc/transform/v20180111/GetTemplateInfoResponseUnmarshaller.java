@@ -23,32 +23,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetTemplateInfoResponseUnmarshaller {
 
-	public static GetTemplateInfoResponse unmarshall(GetTemplateInfoResponse getTemplateInfoResponse, UnmarshallerContext context) {
+	public static GetTemplateInfoResponse unmarshall(GetTemplateInfoResponse getTemplateInfoResponse, UnmarshallerContext _ctx) {
 		
-		getTemplateInfoResponse.setRequestId(context.stringValue("GetTemplateInfoResponse.RequestId"));
-		getTemplateInfoResponse.setMixMode(context.integerValue("GetTemplateInfoResponse.MixMode"));
-		getTemplateInfoResponse.setServiceMode(context.integerValue("GetTemplateInfoResponse.ServiceMode"));
-		getTemplateInfoResponse.setCallBack(context.stringValue("GetTemplateInfoResponse.CallBack"));
-		getTemplateInfoResponse.setMaxMixStreamCount(context.integerValue("GetTemplateInfoResponse.MaxMixStreamCount"));
-		getTemplateInfoResponse.setMediaConfig(context.integerValue("GetTemplateInfoResponse.MediaConfig"));
+		getTemplateInfoResponse.setRequestId(_ctx.stringValue("GetTemplateInfoResponse.RequestId"));
+		getTemplateInfoResponse.setMixMode(_ctx.integerValue("GetTemplateInfoResponse.MixMode"));
+		getTemplateInfoResponse.setServiceMode(_ctx.integerValue("GetTemplateInfoResponse.ServiceMode"));
+		getTemplateInfoResponse.setCallBack(_ctx.stringValue("GetTemplateInfoResponse.CallBack"));
+		getTemplateInfoResponse.setMaxMixStreamCount(_ctx.integerValue("GetTemplateInfoResponse.MaxMixStreamCount"));
+		getTemplateInfoResponse.setMediaConfig(_ctx.integerValue("GetTemplateInfoResponse.MediaConfig"));
 
 		LayOut layOut = new LayOut();
-		layOut.setColor(context.stringValue("GetTemplateInfoResponse.LayOut.Color"));
-		layOut.setCutmode(context.integerValue("GetTemplateInfoResponse.LayOut.Cutmode"));
-		layOut.setLayoutID(context.integerValue("GetTemplateInfoResponse.LayOut.LayoutID"));
+		layOut.setColor(_ctx.stringValue("GetTemplateInfoResponse.LayOut.Color"));
+		layOut.setCutmode(_ctx.integerValue("GetTemplateInfoResponse.LayOut.Cutmode"));
+		layOut.setLayoutID(_ctx.integerValue("GetTemplateInfoResponse.LayOut.LayoutID"));
 		getTemplateInfoResponse.setLayOut(layOut);
 
 		RecordConfig recordConfig = new RecordConfig();
-		recordConfig.setStorageType(context.stringValue("GetTemplateInfoResponse.RecordConfig.StorageType"));
-		recordConfig.setFileFormat(context.integerValue("GetTemplateInfoResponse.RecordConfig.FileFormat"));
-		recordConfig.setOssEndpoint(context.stringValue("GetTemplateInfoResponse.RecordConfig.OssEndpoint"));
-		recordConfig.setOssBucket(context.stringValue("GetTemplateInfoResponse.RecordConfig.OssBucket"));
-		recordConfig.setVodTranscodeGroupId(context.integerValue("GetTemplateInfoResponse.RecordConfig.VodTranscodeGroupId"));
+		recordConfig.setStorageType(_ctx.stringValue("GetTemplateInfoResponse.RecordConfig.StorageType"));
+		recordConfig.setFileFormat(_ctx.integerValue("GetTemplateInfoResponse.RecordConfig.FileFormat"));
+		recordConfig.setOssEndpoint(_ctx.stringValue("GetTemplateInfoResponse.RecordConfig.OssEndpoint"));
+		recordConfig.setOssBucket(_ctx.stringValue("GetTemplateInfoResponse.RecordConfig.OssBucket"));
+		recordConfig.setVodTranscodeGroupId(_ctx.integerValue("GetTemplateInfoResponse.RecordConfig.VodTranscodeGroupId"));
 		getTemplateInfoResponse.setRecordConfig(recordConfig);
 
 		LiveConfig liveConfig = new LiveConfig();
-		liveConfig.setDomainName(context.stringValue("GetTemplateInfoResponse.LiveConfig.DomainName"));
-		liveConfig.setAppName(context.stringValue("GetTemplateInfoResponse.LiveConfig.AppName"));
+		liveConfig.setDomainName(_ctx.stringValue("GetTemplateInfoResponse.LiveConfig.DomainName"));
+		liveConfig.setAppName(_ctx.stringValue("GetTemplateInfoResponse.LiveConfig.AppName"));
 		getTemplateInfoResponse.setLiveConfig(liveConfig);
 	 
 	 	return getTemplateInfoResponse;
