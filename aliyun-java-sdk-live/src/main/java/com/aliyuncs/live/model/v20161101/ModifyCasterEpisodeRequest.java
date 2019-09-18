@@ -16,6 +16,8 @@ package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -25,25 +27,52 @@ public class ModifyCasterEpisodeRequest extends RpcAcsRequest<ModifyCasterEpisod
 	
 	public ModifyCasterEpisodeRequest() {
 		super("live", "2016-11-01", "ModifyCasterEpisode", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String episodeName;
+
+	private String startTime;
 
 	private String resourceId;
 
 	private List<String> componentIds;
 
-	private String switchType;
-
 	private String casterId;
 
-	private String episodeName;
-
 	private String endTime;
-
-	private String startTime;
 
 	private Long ownerId;
 
 	private String episodeId;
+
+	private String switchType;
+
+	public String getEpisodeName() {
+		return this.episodeName;
+	}
+
+	public void setEpisodeName(String episodeName) {
+		this.episodeName = episodeName;
+		if(episodeName != null){
+			putQueryParameter("EpisodeName", episodeName);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
 
 	public String getResourceId() {
 		return this.resourceId;
@@ -69,17 +98,6 @@ public class ModifyCasterEpisodeRequest extends RpcAcsRequest<ModifyCasterEpisod
 		}	
 	}
 
-	public String getSwitchType() {
-		return this.switchType;
-	}
-
-	public void setSwitchType(String switchType) {
-		this.switchType = switchType;
-		if(switchType != null){
-			putQueryParameter("SwitchType", switchType);
-		}
-	}
-
 	public String getCasterId() {
 		return this.casterId;
 	}
@@ -91,17 +109,6 @@ public class ModifyCasterEpisodeRequest extends RpcAcsRequest<ModifyCasterEpisod
 		}
 	}
 
-	public String getEpisodeName() {
-		return this.episodeName;
-	}
-
-	public void setEpisodeName(String episodeName) {
-		this.episodeName = episodeName;
-		if(episodeName != null){
-			putQueryParameter("EpisodeName", episodeName);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -110,17 +117,6 @@ public class ModifyCasterEpisodeRequest extends RpcAcsRequest<ModifyCasterEpisod
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -143,6 +139,17 @@ public class ModifyCasterEpisodeRequest extends RpcAcsRequest<ModifyCasterEpisod
 		this.episodeId = episodeId;
 		if(episodeId != null){
 			putQueryParameter("EpisodeId", episodeId);
+		}
+	}
+
+	public String getSwitchType() {
+		return this.switchType;
+	}
+
+	public void setSwitchType(String switchType) {
+		this.switchType = switchType;
+		if(switchType != null){
+			putQueryParameter("SwitchType", switchType);
 		}
 	}
 

@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +26,29 @@ public class DeleteCasterLayoutRequest extends RpcAcsRequest<DeleteCasterLayoutR
 	
 	public DeleteCasterLayoutRequest() {
 		super("live", "2016-11-01", "DeleteCasterLayout", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String layoutId;
 
 	private String casterId;
 
 	private Long ownerId;
 
-	private String layoutId;
+	public String getLayoutId() {
+		return this.layoutId;
+	}
+
+	public void setLayoutId(String layoutId) {
+		this.layoutId = layoutId;
+		if(layoutId != null){
+			putQueryParameter("LayoutId", layoutId);
+		}
+	}
 
 	public String getCasterId() {
 		return this.casterId;
@@ -51,17 +69,6 @@ public class DeleteCasterLayoutRequest extends RpcAcsRequest<DeleteCasterLayoutR
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getLayoutId() {
-		return this.layoutId;
-	}
-
-	public void setLayoutId(String layoutId) {
-		this.layoutId = layoutId;
-		if(layoutId != null){
-			putQueryParameter("LayoutId", layoutId);
 		}
 	}
 

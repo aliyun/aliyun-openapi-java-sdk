@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,36 +26,63 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 	
 	public CreateLiveStreamRecordIndexFilesRequest() {
 		super("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String ossBucket;
+	private String ossEndpoint;
+
+	private String startTime;
+
+	private String ossObject;
 
 	private String appName;
 
 	private String securityToken;
 
-	private String domainName;
+	private String streamName;
 
-	private String ossEndpoint;
+	private String ossBucket;
+
+	private String domainName;
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
 
-	private String streamName;
-
-	private String ossObject;
-
-	public String getOssBucket() {
-		return this.ossBucket;
+	public String getOssEndpoint() {
+		return this.ossEndpoint;
 	}
 
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		if(ossBucket != null){
-			putQueryParameter("OssBucket", ossBucket);
+	public void setOssEndpoint(String ossEndpoint) {
+		this.ossEndpoint = ossEndpoint;
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getOssObject() {
+		return this.ossObject;
+	}
+
+	public void setOssObject(String ossObject) {
+		this.ossObject = ossObject;
+		if(ossObject != null){
+			putQueryParameter("OssObject", ossObject);
 		}
 	}
 
@@ -98,6 +127,28 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		}
 	}
 
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getOssBucket() {
+		return this.ossBucket;
+	}
+
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -106,17 +157,6 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getOssEndpoint() {
-		return this.ossEndpoint;
-	}
-
-	public void setOssEndpoint(String ossEndpoint) {
-		this.ossEndpoint = ossEndpoint;
-		if(ossEndpoint != null){
-			putQueryParameter("OssEndpoint", ossEndpoint);
 		}
 	}
 
@@ -131,17 +171,6 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -150,28 +179,6 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
-		}
-	}
-
-	public String getOssObject() {
-		return this.ossObject;
-	}
-
-	public void setOssObject(String ossObject) {
-		this.ossObject = ossObject;
-		if(ossObject != null){
-			putQueryParameter("OssObject", ossObject);
 		}
 	}
 

@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,7 +26,16 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 	
 	public CreateCasterRequest() {
 		super("live", "2016-11-01", "CreateCaster", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String clientToken;
+
+	private String casterName;
 
 	private String casterTemplate;
 
@@ -32,15 +43,33 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 
 	private Integer normType;
 
-	private String casterName;
-
-	private String clientToken;
-
-	private String chargeType;
-
 	private Long ownerId;
 
 	private String purchaseTime;
+
+	private String chargeType;
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getCasterName() {
+		return this.casterName;
+	}
+
+	public void setCasterName(String casterName) {
+		this.casterName = casterName;
+		if(casterName != null){
+			putQueryParameter("CasterName", casterName);
+		}
+	}
 
 	public String getCasterTemplate() {
 		return this.casterTemplate;
@@ -75,39 +104,6 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 		}
 	}
 
-	public String getCasterName() {
-		return this.casterName;
-	}
-
-	public void setCasterName(String casterName) {
-		this.casterName = casterName;
-		if(casterName != null){
-			putQueryParameter("CasterName", casterName);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getChargeType() {
-		return this.chargeType;
-	}
-
-	public void setChargeType(String chargeType) {
-		this.chargeType = chargeType;
-		if(chargeType != null){
-			putQueryParameter("ChargeType", chargeType);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -127,6 +123,17 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 		this.purchaseTime = purchaseTime;
 		if(purchaseTime != null){
 			putQueryParameter("PurchaseTime", purchaseTime);
+		}
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 

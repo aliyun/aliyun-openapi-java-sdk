@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,24 +26,29 @@ public class CopyCasterRequest extends RpcAcsRequest<CopyCasterResponse> {
 	
 	public CopyCasterRequest() {
 		super("live", "2016-11-01", "CopyCaster", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String srcCasterId;
-
-	private String casterName;
 
 	private String clientToken;
 
+	private String casterName;
+
+	private String srcCasterId;
+
 	private Long ownerId;
 
-	public String getSrcCasterId() {
-		return this.srcCasterId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setSrcCasterId(String srcCasterId) {
-		this.srcCasterId = srcCasterId;
-		if(srcCasterId != null){
-			putQueryParameter("SrcCasterId", srcCasterId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -56,14 +63,14 @@ public class CopyCasterRequest extends RpcAcsRequest<CopyCasterResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getSrcCasterId() {
+		return this.srcCasterId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setSrcCasterId(String srcCasterId) {
+		this.srcCasterId = srcCasterId;
+		if(srcCasterId != null){
+			putQueryParameter("SrcCasterId", srcCasterId);
 		}
 	}
 

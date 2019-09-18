@@ -16,6 +16,8 @@ package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -25,38 +27,54 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 	
 	public AddLiveAppRecordConfigRequest() {
 		super("live", "2016-11-01", "AddLiveAppRecordConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String ossBucket;
+	private String ossEndpoint;
+
+	private String startTime;
 
 	private String appName;
 
 	private String securityToken;
 
-	private List<RecordFormat> recordFormats;
-
-	private String domainName;
-
-	private String ossEndpoint;
-
-	private String endTime;
-
-	private String startTime;
-
-	private Long ownerId;
-
 	private Integer onDemand;
 
 	private String streamName;
 
-	public String getOssBucket() {
-		return this.ossBucket;
+	private String ossBucket;
+
+	private String domainName;
+
+	private String endTime;
+
+	private Long ownerId;
+
+	private List<RecordFormat> recordFormats;
+
+	public String getOssEndpoint() {
+		return this.ossEndpoint;
 	}
 
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		if(ossBucket != null){
-			putQueryParameter("OssBucket", ossBucket);
+	public void setOssEndpoint(String ossEndpoint) {
+		this.ossEndpoint = ossEndpoint;
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -101,77 +119,6 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		}
 	}
 
-	public List<RecordFormat> getRecordFormats() {
-		return this.recordFormats;
-	}
-
-	public void setRecordFormats(List<RecordFormat> recordFormats) {
-		this.recordFormats = recordFormats;	
-		if (recordFormats != null) {
-			for (int depth1 = 0; depth1 < recordFormats.size(); depth1++) {
-				putQueryParameter("RecordFormat." + (depth1 + 1) + ".SliceOssObjectPrefix" , recordFormats.get(depth1).getSliceOssObjectPrefix());
-				putQueryParameter("RecordFormat." + (depth1 + 1) + ".Format" , recordFormats.get(depth1).getFormat());
-				putQueryParameter("RecordFormat." + (depth1 + 1) + ".OssObjectPrefix" , recordFormats.get(depth1).getOssObjectPrefix());
-				putQueryParameter("RecordFormat." + (depth1 + 1) + ".CycleDuration" , recordFormats.get(depth1).getCycleDuration());
-			}
-		}	
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getOssEndpoint() {
-		return this.ossEndpoint;
-	}
-
-	public void setOssEndpoint(String ossEndpoint) {
-		this.ossEndpoint = ossEndpoint;
-		if(ossEndpoint != null){
-			putQueryParameter("OssEndpoint", ossEndpoint);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public Integer getOnDemand() {
 		return this.onDemand;
 	}
@@ -192,6 +139,66 @@ public class AddLiveAppRecordConfigRequest extends RpcAcsRequest<AddLiveAppRecor
 		if(streamName != null){
 			putQueryParameter("StreamName", streamName);
 		}
+	}
+
+	public String getOssBucket() {
+		return this.ossBucket;
+	}
+
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public List<RecordFormat> getRecordFormats() {
+		return this.recordFormats;
+	}
+
+	public void setRecordFormats(List<RecordFormat> recordFormats) {
+		this.recordFormats = recordFormats;	
+		if (recordFormats != null) {
+			for (int depth1 = 0; depth1 < recordFormats.size(); depth1++) {
+				putQueryParameter("RecordFormat." + (depth1 + 1) + ".SliceOssObjectPrefix" , recordFormats.get(depth1).getSliceOssObjectPrefix());
+				putQueryParameter("RecordFormat." + (depth1 + 1) + ".Format" , recordFormats.get(depth1).getFormat());
+				putQueryParameter("RecordFormat." + (depth1 + 1) + ".OssObjectPrefix" , recordFormats.get(depth1).getOssObjectPrefix());
+				putQueryParameter("RecordFormat." + (depth1 + 1) + ".CycleDuration" , recordFormats.get(depth1).getCycleDuration());
+			}
+		}	
 	}
 
 	public static class RecordFormat {

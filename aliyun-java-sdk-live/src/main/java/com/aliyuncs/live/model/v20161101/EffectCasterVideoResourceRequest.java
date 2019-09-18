@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,20 @@ public class EffectCasterVideoResourceRequest extends RpcAcsRequest<EffectCaster
 	
 	public EffectCasterVideoResourceRequest() {
 		super("live", "2016-11-01", "EffectCasterVideoResource", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String resourceId;
 
 	private String casterId;
 
-	private String sceneId;
-
 	private Long ownerId;
+
+	private String sceneId;
 
 	public String getResourceId() {
 		return this.resourceId;
@@ -56,17 +63,6 @@ public class EffectCasterVideoResourceRequest extends RpcAcsRequest<EffectCaster
 		}
 	}
 
-	public String getSceneId() {
-		return this.sceneId;
-	}
-
-	public void setSceneId(String sceneId) {
-		this.sceneId = sceneId;
-		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -75,6 +71,17 @@ public class EffectCasterVideoResourceRequest extends RpcAcsRequest<EffectCaster
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSceneId() {
+		return this.sceneId;
+	}
+
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId);
 		}
 	}
 

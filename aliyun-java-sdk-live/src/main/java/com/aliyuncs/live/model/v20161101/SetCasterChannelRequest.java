@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,28 +26,33 @@ public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelRespo
 	
 	public SetCasterChannelRequest() {
 		super("live", "2016-11-01", "SetCasterChannel", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String resourceId;
+	private Integer seekOffset;
 
 	private Integer playStatus;
+
+	private String resourceId;
 
 	private String casterId;
 
 	private Long ownerId;
 
-	private Integer seekOffset;
-
 	private String channelId;
 
-	public String getResourceId() {
-		return this.resourceId;
+	public Integer getSeekOffset() {
+		return this.seekOffset;
 	}
 
-	public void setResourceId(String resourceId) {
-		this.resourceId = resourceId;
-		if(resourceId != null){
-			putQueryParameter("ResourceId", resourceId);
+	public void setSeekOffset(Integer seekOffset) {
+		this.seekOffset = seekOffset;
+		if(seekOffset != null){
+			putQueryParameter("SeekOffset", seekOffset.toString());
 		}
 	}
 
@@ -57,6 +64,17 @@ public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelRespo
 		this.playStatus = playStatus;
 		if(playStatus != null){
 			putQueryParameter("PlayStatus", playStatus.toString());
+		}
+	}
+
+	public String getResourceId() {
+		return this.resourceId;
+	}
+
+	public void setResourceId(String resourceId) {
+		this.resourceId = resourceId;
+		if(resourceId != null){
+			putQueryParameter("ResourceId", resourceId);
 		}
 	}
 
@@ -79,17 +97,6 @@ public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getSeekOffset() {
-		return this.seekOffset;
-	}
-
-	public void setSeekOffset(Integer seekOffset) {
-		this.seekOffset = seekOffset;
-		if(seekOffset != null){
-			putQueryParameter("SeekOffset", seekOffset.toString());
 		}
 	}
 

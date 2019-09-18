@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,22 @@ public class RealTimeRecordCommandRequest extends RpcAcsRequest<RealTimeRecordCo
 	
 	public RealTimeRecordCommandRequest() {
 		super("live", "2016-11-01", "RealTimeRecordCommand", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String appName;
+
+	private String streamName;
 
 	private String domainName;
 
 	private Long ownerId;
 
 	private String command;
-
-	private String streamName;
 
 	public String getAppName() {
 		return this.appName;
@@ -44,6 +51,17 @@ public class RealTimeRecordCommandRequest extends RpcAcsRequest<RealTimeRecordCo
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 
@@ -77,17 +95,6 @@ public class RealTimeRecordCommandRequest extends RpcAcsRequest<RealTimeRecordCo
 		this.command = command;
 		if(command != null){
 			putQueryParameter("Command", command);
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
 		}
 	}
 

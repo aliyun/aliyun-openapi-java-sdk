@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,20 @@ public class AddLiveDomainRequest extends RpcAcsRequest<AddLiveDomainResponse> {
 	
 	public AddLiveDomainRequest() {
 		super("live", "2016-11-01", "AddLiveDomain", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String topLevelDomain;
 
 	private String securityToken;
 
-	private String ownerAccount;
-
 	private String scope;
+
+	private String topLevelDomain;
+
+	private String ownerAccount;
 
 	private String domainName;
 
@@ -43,17 +50,6 @@ public class AddLiveDomainRequest extends RpcAcsRequest<AddLiveDomainResponse> {
 	private String checkUrl;
 
 	private String liveDomainType;
-
-	public String getTopLevelDomain() {
-		return this.topLevelDomain;
-	}
-
-	public void setTopLevelDomain(String topLevelDomain) {
-		this.topLevelDomain = topLevelDomain;
-		if(topLevelDomain != null){
-			putQueryParameter("TopLevelDomain", topLevelDomain);
-		}
-	}
 
 	public String getBizSecurityToken() {
 		return this.securityToken;
@@ -85,17 +81,6 @@ public class AddLiveDomainRequest extends RpcAcsRequest<AddLiveDomainResponse> {
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getScope() {
 		return this.scope;
 	}
@@ -104,6 +89,28 @@ public class AddLiveDomainRequest extends RpcAcsRequest<AddLiveDomainResponse> {
 		this.scope = scope;
 		if(scope != null){
 			putQueryParameter("Scope", scope);
+		}
+	}
+
+	public String getTopLevelDomain() {
+		return this.topLevelDomain;
+	}
+
+	public void setTopLevelDomain(String topLevelDomain) {
+		this.topLevelDomain = topLevelDomain;
+		if(topLevelDomain != null){
+			putQueryParameter("TopLevelDomain", topLevelDomain);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

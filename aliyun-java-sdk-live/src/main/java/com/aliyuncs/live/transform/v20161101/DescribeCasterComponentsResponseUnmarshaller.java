@@ -46,10 +46,11 @@ public class DescribeCasterComponentsResponseUnmarshaller {
 			componentLayer.setHeightNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.HeightNormalized"));
 			componentLayer.setWidthNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.WidthNormalized"));
 			componentLayer.setPositionRefer(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionRefer"));
+			componentLayer.setTransparency(_ctx.integerValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.Transparency"));
 
-			List<String> positionNormalizeds = new ArrayList<String>();
+			List<Float> positionNormalizeds = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionNormalizeds.Length"); j++) {
-				positionNormalizeds.add(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionNormalizeds["+ j +"]"));
+				positionNormalizeds.add(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].ComponentLayer.PositionNormalizeds["+ j +"]"));
 			}
 			componentLayer.setPositionNormalizeds(positionNormalizeds);
 			component.setComponentLayer(componentLayer);
@@ -76,6 +77,9 @@ public class DescribeCasterComponentsResponseUnmarshaller {
 			captionLayerContent.setSizeNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.SizeNormalized"));
 			captionLayerContent.setBorderWidthNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderWidthNormalized"));
 			captionLayerContent.setBorderColor(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderColor"));
+			captionLayerContent.setWordCountPerLine(_ctx.integerValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.WordCountPerLine"));
+			captionLayerContent.setWordSpaceNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.WordSpaceNormalized"));
+			captionLayerContent.setLineSpaceNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.LineSpaceNormalized"));
 			component.setCaptionLayerContent(captionLayerContent);
 
 			components.add(component);

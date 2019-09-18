@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,21 +26,26 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 	
 	public RealTimeSnapshotCommandRequest() {
 		super("live", "2016-11-01", "RealTimeSnapshotCommand", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Integer mode;
 
 	private String appName;
 
-	private String domainName;
+	private String streamName;
 
-	private Integer interval;
+	private String domainName;
 
 	private Long ownerId;
 
 	private String command;
 
-	private String streamName;
+	private Integer interval;
 
 	public Integer getMode() {
 		return this.mode;
@@ -62,6 +69,17 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 		}
 	}
 
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -70,17 +88,6 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Integer getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Integer interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
 		}
 	}
 
@@ -106,14 +113,14 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 		}
 	}
 
-	public String getStreamName() {
-		return this.streamName;
+	public Integer getInterval() {
+		return this.interval;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
 		}
 	}
 

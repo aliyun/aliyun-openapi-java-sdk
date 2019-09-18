@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,27 +26,87 @@ public class AddCasterComponentRequest extends RpcAcsRequest<AddCasterComponentR
 	
 	public AddCasterComponentRequest() {
 		super("live", "2016-11-01", "AddCasterComponent", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String imageLayerContent;
+
+	private String componentName;
+
+	private String casterId;
+
+	private String componentLayer;
+
+	private Long ownerId;
 
 	private String componentType;
 
 	private String locationId;
 
-	private String imageLayerContent;
-
-	private String casterId;
-
 	private String effect;
-
-	private String componentLayer;
 
 	private String captionLayerContent;
 
-	private String componentName;
-
-	private Long ownerId;
-
 	private String textLayerContent;
+
+	public String getImageLayerContent() {
+		return this.imageLayerContent;
+	}
+
+	public void setImageLayerContent(String imageLayerContent) {
+		this.imageLayerContent = imageLayerContent;
+		if(imageLayerContent != null){
+			putQueryParameter("ImageLayerContent", imageLayerContent);
+		}
+	}
+
+	public String getComponentName() {
+		return this.componentName;
+	}
+
+	public void setComponentName(String componentName) {
+		this.componentName = componentName;
+		if(componentName != null){
+			putQueryParameter("ComponentName", componentName);
+		}
+	}
+
+	public String getCasterId() {
+		return this.casterId;
+	}
+
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
+		if(casterId != null){
+			putQueryParameter("CasterId", casterId);
+		}
+	}
+
+	public String getComponentLayer() {
+		return this.componentLayer;
+	}
+
+	public void setComponentLayer(String componentLayer) {
+		this.componentLayer = componentLayer;
+		if(componentLayer != null){
+			putQueryParameter("ComponentLayer", componentLayer);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
 
 	public String getComponentType() {
 		return this.componentType;
@@ -68,28 +130,6 @@ public class AddCasterComponentRequest extends RpcAcsRequest<AddCasterComponentR
 		}
 	}
 
-	public String getImageLayerContent() {
-		return this.imageLayerContent;
-	}
-
-	public void setImageLayerContent(String imageLayerContent) {
-		this.imageLayerContent = imageLayerContent;
-		if(imageLayerContent != null){
-			putQueryParameter("ImageLayerContent", imageLayerContent);
-		}
-	}
-
-	public String getCasterId() {
-		return this.casterId;
-	}
-
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-		if(casterId != null){
-			putQueryParameter("CasterId", casterId);
-		}
-	}
-
 	public String getEffect() {
 		return this.effect;
 	}
@@ -101,17 +141,6 @@ public class AddCasterComponentRequest extends RpcAcsRequest<AddCasterComponentR
 		}
 	}
 
-	public String getComponentLayer() {
-		return this.componentLayer;
-	}
-
-	public void setComponentLayer(String componentLayer) {
-		this.componentLayer = componentLayer;
-		if(componentLayer != null){
-			putQueryParameter("ComponentLayer", componentLayer);
-		}
-	}
-
 	public String getCaptionLayerContent() {
 		return this.captionLayerContent;
 	}
@@ -120,28 +149,6 @@ public class AddCasterComponentRequest extends RpcAcsRequest<AddCasterComponentR
 		this.captionLayerContent = captionLayerContent;
 		if(captionLayerContent != null){
 			putQueryParameter("CaptionLayerContent", captionLayerContent);
-		}
-	}
-
-	public String getComponentName() {
-		return this.componentName;
-	}
-
-	public void setComponentName(String componentName) {
-		this.componentName = componentName;
-		if(componentName != null){
-			putQueryParameter("ComponentName", componentName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

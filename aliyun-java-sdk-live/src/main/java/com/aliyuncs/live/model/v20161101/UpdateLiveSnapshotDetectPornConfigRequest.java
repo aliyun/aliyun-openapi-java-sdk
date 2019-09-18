@@ -16,6 +16,8 @@ package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -25,35 +27,64 @@ public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Upd
 	
 	public UpdateLiveSnapshotDetectPornConfigRequest() {
 		super("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String ossBucket;
-
-	private String appName;
-
-	private String securityToken;
-
-	private String domainName;
-
 	private String ossEndpoint;
-
-	private Integer interval;
-
-	private Long ownerId;
 
 	private String ossObject;
 
 	private List<String> scenes;
 
-	public String getOssBucket() {
-		return this.ossBucket;
+	private String appName;
+
+	private String securityToken;
+
+	private String ossBucket;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private Integer interval;
+
+	public String getOssEndpoint() {
+		return this.ossEndpoint;
 	}
 
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		if(ossBucket != null){
-			putQueryParameter("OssBucket", ossBucket);
+	public void setOssEndpoint(String ossEndpoint) {
+		this.ossEndpoint = ossEndpoint;
+		if(ossEndpoint != null){
+			putQueryParameter("OssEndpoint", ossEndpoint);
 		}
+	}
+
+	public String getOssObject() {
+		return this.ossObject;
+	}
+
+	public void setOssObject(String ossObject) {
+		this.ossObject = ossObject;
+		if(ossObject != null){
+			putQueryParameter("OssObject", ossObject);
+		}
+	}
+
+	public List<String> getScenes() {
+		return this.scenes;
+	}
+
+	public void setScenes(List<String> scenes) {
+		this.scenes = scenes;	
+		if (scenes != null) {
+			for (int i = 0; i < scenes.size(); i++) {
+				putQueryParameter("Scene." + (i + 1) , scenes.get(i));
+			}
+		}	
 	}
 
 	public String getAppName() {
@@ -97,6 +128,17 @@ public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Upd
 		}
 	}
 
+	public String getOssBucket() {
+		return this.ossBucket;
+	}
+
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -105,28 +147,6 @@ public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Upd
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getOssEndpoint() {
-		return this.ossEndpoint;
-	}
-
-	public void setOssEndpoint(String ossEndpoint) {
-		this.ossEndpoint = ossEndpoint;
-		if(ossEndpoint != null){
-			putQueryParameter("OssEndpoint", ossEndpoint);
-		}
-	}
-
-	public Integer getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Integer interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
 		}
 	}
 
@@ -141,28 +161,15 @@ public class UpdateLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Upd
 		}
 	}
 
-	public String getOssObject() {
-		return this.ossObject;
+	public Integer getInterval() {
+		return this.interval;
 	}
 
-	public void setOssObject(String ossObject) {
-		this.ossObject = ossObject;
-		if(ossObject != null){
-			putQueryParameter("OssObject", ossObject);
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
 		}
-	}
-
-	public List<String> getScenes() {
-		return this.scenes;
-	}
-
-	public void setScenes(List<String> scenes) {
-		this.scenes = scenes;	
-		if (scenes != null) {
-			for (int i = 0; i < scenes.size(); i++) {
-				putQueryParameter("Scene." + (i + 1) , scenes.get(i));
-			}
-		}	
 	}
 
 	@Override

@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,25 +26,63 @@ public class DescribeCasterProgramRequest extends RpcAcsRequest<DescribeCasterPr
 	
 	public DescribeCasterProgramRequest() {
 		super("live", "2016-11-01", "DescribeCasterProgram", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String startTime;
+
+	private Integer pageNum;
+
+	private Integer pageSize;
 
 	private String casterId;
 
 	private String episodeType;
 
-	private Integer pageSize;
-
 	private String endTime;
-
-	private String startTime;
 
 	private Long ownerId;
 
 	private String episodeId;
 
-	private Integer pageNum;
-
 	private Integer status;
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
 
 	public String getCasterId() {
 		return this.casterId;
@@ -66,17 +106,6 @@ public class DescribeCasterProgramRequest extends RpcAcsRequest<DescribeCasterPr
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -85,17 +114,6 @@ public class DescribeCasterProgramRequest extends RpcAcsRequest<DescribeCasterPr
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
 		}
 	}
 
@@ -118,17 +136,6 @@ public class DescribeCasterProgramRequest extends RpcAcsRequest<DescribeCasterPr
 		this.episodeId = episodeId;
 		if(episodeId != null){
 			putQueryParameter("EpisodeId", episodeId);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

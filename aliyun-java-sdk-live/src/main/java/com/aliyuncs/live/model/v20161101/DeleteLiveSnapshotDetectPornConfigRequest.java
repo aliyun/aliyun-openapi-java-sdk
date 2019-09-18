@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,42 @@ public class DeleteLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Del
 	
 	public DeleteLiveSnapshotDetectPornConfigRequest() {
 		super("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String domainName;
+
+	private Long ownerId;
 
 	private String appName;
 
 	private String securityToken;
 
-	private String domainName;
+	public String getDomainName() {
+		return this.domainName;
+	}
 
-	private Long ownerId;
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
 
 	public String getAppName() {
 		return this.appName;
@@ -72,28 +101,6 @@ public class DeleteLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Del
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +26,18 @@ public class DescribeHlsLiveStreamRealTimeBpsDataRequest extends RpcAcsRequest<D
 	
 	public DescribeHlsLiveStreamRealTimeBpsDataRequest() {
 		super("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData", "live");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String domainName;
 
-	private String time;
-
 	private Long ownerId;
+
+	private String time;
 
 	public String getDomainName() {
 		return this.domainName;
@@ -43,17 +50,6 @@ public class DescribeHlsLiveStreamRealTimeBpsDataRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public String getTime() {
-		return this.time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-		if(time != null){
-			putQueryParameter("Time", time);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -62,6 +58,17 @@ public class DescribeHlsLiveStreamRealTimeBpsDataRequest extends RpcAcsRequest<D
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTime() {
+		return this.time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+		if(time != null){
+			putQueryParameter("Time", time);
 		}
 	}
 

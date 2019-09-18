@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,22 @@ public class StopLiveIndexRequest extends RpcAcsRequest<StopLiveIndexResponse> {
 	
 	public StopLiveIndexRequest() {
 		super("live", "2016-11-01", "StopLiveIndex", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String appName;
 
-	private String domainName;
-
-	private Long ownerId;
-
 	private String streamName;
 
 	private String taskId;
+
+	private String domainName;
+
+	private Long ownerId;
 
 	public String getAppName() {
 		return this.appName;
@@ -44,28 +51,6 @@ public class StopLiveIndexRequest extends RpcAcsRequest<StopLiveIndexResponse> {
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -88,6 +73,28 @@ public class StopLiveIndexRequest extends RpcAcsRequest<StopLiveIndexResponse> {
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

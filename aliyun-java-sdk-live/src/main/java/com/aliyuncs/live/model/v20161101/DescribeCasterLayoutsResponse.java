@@ -119,7 +119,7 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 
 			private Integer fixedDelayDuration;
 
-			private List<String> positionNormalizeds;
+			private List<Float> positionNormalizeds;
 
 			public String getFillMode() {
 				return this.fillMode;
@@ -161,11 +161,11 @@ public class DescribeCasterLayoutsResponse extends AcsResponse {
 				this.fixedDelayDuration = fixedDelayDuration;
 			}
 
-			public List<String> getPositionNormalizeds() {
+			public List<Float> getPositionNormalizeds() {
 				return this.positionNormalizeds;
 			}
 
-			public void setPositionNormalizeds(List<String> positionNormalizeds) {
+			public void setPositionNormalizeds(List<Float> positionNormalizeds) {
 				this.positionNormalizeds = positionNormalizeds;
 			}
 		}

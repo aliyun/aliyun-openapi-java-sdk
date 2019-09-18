@@ -16,6 +16,8 @@ package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -25,23 +27,50 @@ public class AddCasterEpisodeGroupRequest extends RpcAcsRequest<AddCasterEpisode
 	
 	public AddCasterEpisodeGroupRequest() {
 		super("live", "2016-11-01", "AddCasterEpisodeGroup", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String clientToken;
+
+	private String startTime;
 
 	private String sideOutputUrl;
 
 	private List<Item> items;
 
-	private String clientToken;
-
 	private String domainName;
 
-	private String startTime;
+	private Long ownerId;
 
 	private Integer repeatNum;
 
 	private String callbackUrl;
 
-	private Long ownerId;
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
 
 	public String getSideOutputUrl() {
 		return this.sideOutputUrl;
@@ -62,21 +91,10 @@ public class AddCasterEpisodeGroupRequest extends RpcAcsRequest<AddCasterEpisode
 		this.items = items;	
 		if (items != null) {
 			for (int depth1 = 0; depth1 < items.size(); depth1++) {
-				putQueryParameter("Item." + (depth1 + 1) + ".VodUrl" , items.get(depth1).getVodUrl());
 				putQueryParameter("Item." + (depth1 + 1) + ".ItemName" , items.get(depth1).getItemName());
+				putQueryParameter("Item." + (depth1 + 1) + ".VodUrl" , items.get(depth1).getVodUrl());
 			}
 		}	
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getDomainName() {
@@ -90,14 +108,14 @@ public class AddCasterEpisodeGroupRequest extends RpcAcsRequest<AddCasterEpisode
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -123,30 +141,11 @@ public class AddCasterEpisodeGroupRequest extends RpcAcsRequest<AddCasterEpisode
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public static class Item {
-
-		private String vodUrl;
 
 		private String itemName;
 
-		public String getVodUrl() {
-			return this.vodUrl;
-		}
-
-		public void setVodUrl(String vodUrl) {
-			this.vodUrl = vodUrl;
-		}
+		private String vodUrl;
 
 		public String getItemName() {
 			return this.itemName;
@@ -154,6 +153,14 @@ public class AddCasterEpisodeGroupRequest extends RpcAcsRequest<AddCasterEpisode
 
 		public void setItemName(String itemName) {
 			this.itemName = itemName;
+		}
+
+		public String getVodUrl() {
+			return this.vodUrl;
+		}
+
+		public void setVodUrl(String vodUrl) {
+			this.vodUrl = vodUrl;
 		}
 	}
 

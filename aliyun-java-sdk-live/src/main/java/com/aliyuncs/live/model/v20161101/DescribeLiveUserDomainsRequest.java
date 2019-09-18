@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,25 +26,41 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 	
 	public DescribeLiveUserDomainsRequest() {
 		super("live", "2016-11-01", "DescribeLiveUserDomains", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private Integer pageNumber;
 
 	private String securityToken;
 
 	private Integer pageSize;
 
-	private String domainName;
-
 	private String regionName;
+
+	private String domainName;
 
 	private Long ownerId;
 
-	private Integer pageNumber;
-
 	private String domainStatus;
+
+	private String domainSearchType;
 
 	private String liveDomainType;
 
-	private String domainSearchType;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getBizSecurityToken() {
 		return this.securityToken;
@@ -85,17 +103,6 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
 	public String getRegionName() {
 		return this.regionName;
 	}
@@ -104,6 +111,17 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 		this.regionName = regionName;
 		if(regionName != null){
 			putQueryParameter("RegionName", regionName);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -118,17 +136,6 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getDomainStatus() {
 		return this.domainStatus;
 	}
@@ -140,17 +147,6 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 		}
 	}
 
-	public String getLiveDomainType() {
-		return this.liveDomainType;
-	}
-
-	public void setLiveDomainType(String liveDomainType) {
-		this.liveDomainType = liveDomainType;
-		if(liveDomainType != null){
-			putQueryParameter("LiveDomainType", liveDomainType);
-		}
-	}
-
 	public String getDomainSearchType() {
 		return this.domainSearchType;
 	}
@@ -159,6 +155,17 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 		this.domainSearchType = domainSearchType;
 		if(domainSearchType != null){
 			putQueryParameter("DomainSearchType", domainSearchType);
+		}
+	}
+
+	public String getLiveDomainType() {
+		return this.liveDomainType;
+	}
+
+	public void setLiveDomainType(String liveDomainType) {
+		this.liveDomainType = liveDomainType;
+		if(liveDomainType != null){
+			putQueryParameter("LiveDomainType", liveDomainType);
 		}
 	}
 

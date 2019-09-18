@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,22 +26,16 @@ public class DeleteCasterEpisodeGroupRequest extends RpcAcsRequest<DeleteCasterE
 	
 	public DeleteCasterEpisodeGroupRequest() {
 		super("live", "2016-11-01", "DeleteCasterEpisodeGroup", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private Long ownerId;
 
 	private String programId;
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
+	private Long ownerId;
 
 	public String getProgramId() {
 		return this.programId;
@@ -49,6 +45,17 @@ public class DeleteCasterEpisodeGroupRequest extends RpcAcsRequest<DeleteCasterE
 		this.programId = programId;
 		if(programId != null){
 			putQueryParameter("ProgramId", programId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

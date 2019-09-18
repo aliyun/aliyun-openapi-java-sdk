@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +26,12 @@ public class DescribeLiveDomainTrafficDataRequest extends RpcAcsRequest<Describe
 	
 	public DescribeLiveDomainTrafficDataRequest() {
 		super("live", "2016-11-01", "DescribeLiveDomainTrafficData", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String domainName;
-
-	private String endTime;
-
-	private String interval;
 
 	private String locationNameEn;
 
@@ -38,40 +39,13 @@ public class DescribeLiveDomainTrafficDataRequest extends RpcAcsRequest<Describe
 
 	private String ispNameEn;
 
+	private String domainName;
+
+	private String endTime;
+
 	private Long ownerId;
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(String interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval);
-		}
-	}
+	private String interval;
 
 	public String getLocationNameEn() {
 		return this.locationNameEn;
@@ -106,6 +80,28 @@ public class DescribeLiveDomainTrafficDataRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +110,17 @@ public class DescribeLiveDomainTrafficDataRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 

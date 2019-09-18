@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,31 @@ public class DeleteCasterSceneConfigRequest extends RpcAcsRequest<DeleteCasterSc
 	
 	public DeleteCasterSceneConfigRequest() {
 		super("live", "2016-11-01", "DeleteCasterSceneConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String type;
 
 	private String casterId;
 
-	private String sceneId;
-
 	private Long ownerId;
 
-	private String type;
+	private String sceneId;
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
 
 	public String getCasterId() {
 		return this.casterId;
@@ -42,17 +60,6 @@ public class DeleteCasterSceneConfigRequest extends RpcAcsRequest<DeleteCasterSc
 		this.casterId = casterId;
 		if(casterId != null){
 			putQueryParameter("CasterId", casterId);
-		}
-	}
-
-	public String getSceneId() {
-		return this.sceneId;
-	}
-
-	public void setSceneId(String sceneId) {
-		this.sceneId = sceneId;
-		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId);
 		}
 	}
 
@@ -67,14 +74,14 @@ public class DeleteCasterSceneConfigRequest extends RpcAcsRequest<DeleteCasterSc
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getSceneId() {
+		return this.sceneId;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId);
 		}
 	}
 

@@ -1,3 +1,6 @@
+2019-09-18 Version: 3.8.0
+- Generated 2016-11-01 for `live`.
+
 2019-07-12 Version: 3.7.5
 - Public api AddLivePullStreamInfoConfig.
 

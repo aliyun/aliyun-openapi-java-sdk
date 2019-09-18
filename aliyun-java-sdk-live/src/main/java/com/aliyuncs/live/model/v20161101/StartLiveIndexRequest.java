@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,23 +26,18 @@ public class StartLiveIndexRequest extends RpcAcsRequest<StartLiveIndexResponse>
 	
 	public StartLiveIndexRequest() {
 		super("live", "2016-11-01", "StartLiveIndex", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String ossBucket;
 
 	private String tokenId;
 
-	private String domainName;
-
 	private String ossEndpoint;
 
-	private String inputUrl;
-
-	private Long ownerId;
-
 	private String appName;
-
-	private Integer interval;
 
 	private String ossRamRole;
 
@@ -48,16 +45,15 @@ public class StartLiveIndexRequest extends RpcAcsRequest<StartLiveIndexResponse>
 
 	private String ossUserId;
 
-	public String getOssBucket() {
-		return this.ossBucket;
-	}
+	private String ossBucket;
 
-	public void setOssBucket(String ossBucket) {
-		this.ossBucket = ossBucket;
-		if(ossBucket != null){
-			putQueryParameter("OssBucket", ossBucket);
-		}
-	}
+	private String domainName;
+
+	private String inputUrl;
+
+	private Long ownerId;
+
+	private Integer interval;
 
 	public String getTokenId() {
 		return this.tokenId;
@@ -67,17 +63,6 @@ public class StartLiveIndexRequest extends RpcAcsRequest<StartLiveIndexResponse>
 		this.tokenId = tokenId;
 		if(tokenId != null){
 			putQueryParameter("TokenId", tokenId);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -92,28 +77,6 @@ public class StartLiveIndexRequest extends RpcAcsRequest<StartLiveIndexResponse>
 		}
 	}
 
-	public String getInputUrl() {
-		return this.inputUrl;
-	}
-
-	public void setInputUrl(String inputUrl) {
-		this.inputUrl = inputUrl;
-		if(inputUrl != null){
-			putQueryParameter("InputUrl", inputUrl);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -122,17 +85,6 @@ public class StartLiveIndexRequest extends RpcAcsRequest<StartLiveIndexResponse>
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public Integer getInterval() {
-		return this.interval;
-	}
-
-	public void setInterval(Integer interval) {
-		this.interval = interval;
-		if(interval != null){
-			putQueryParameter("Interval", interval.toString());
 		}
 	}
 
@@ -166,6 +118,61 @@ public class StartLiveIndexRequest extends RpcAcsRequest<StartLiveIndexResponse>
 		this.ossUserId = ossUserId;
 		if(ossUserId != null){
 			putQueryParameter("OssUserId", ossUserId);
+		}
+	}
+
+	public String getOssBucket() {
+		return this.ossBucket;
+	}
+
+	public void setOssBucket(String ossBucket) {
+		this.ossBucket = ossBucket;
+		if(ossBucket != null){
+			putQueryParameter("OssBucket", ossBucket);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getInputUrl() {
+		return this.inputUrl;
+	}
+
+	public void setInputUrl(String inputUrl) {
+		this.inputUrl = inputUrl;
+		if(inputUrl != null){
+			putQueryParameter("InputUrl", inputUrl);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Integer interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval.toString());
 		}
 	}
 

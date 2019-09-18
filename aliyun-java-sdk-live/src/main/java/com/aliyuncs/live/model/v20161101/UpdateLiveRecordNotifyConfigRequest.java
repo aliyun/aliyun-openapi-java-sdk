@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class UpdateLiveRecordNotifyConfigRequest extends RpcAcsRequest<UpdateLiv
 	
 	public UpdateLiveRecordNotifyConfigRequest() {
 		super("live", "2016-11-01", "UpdateLiveRecordNotifyConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String onDemandUrl;
 
 	private String securityToken;
 
-	private String domainName;
-
 	private String notifyUrl;
 
-	private Long ownerId;
-
 	private Boolean needStatusNotify;
+
+	private String domainName;
+
+	private Long ownerId;
 
 	public String getOnDemandUrl() {
 		return this.onDemandUrl;
@@ -79,17 +86,6 @@ public class UpdateLiveRecordNotifyConfigRequest extends RpcAcsRequest<UpdateLiv
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
 	public String getNotifyUrl() {
 		return this.notifyUrl;
 	}
@@ -101,17 +97,6 @@ public class UpdateLiveRecordNotifyConfigRequest extends RpcAcsRequest<UpdateLiv
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public Boolean getNeedStatusNotify() {
 		return this.needStatusNotify;
 	}
@@ -120,6 +105,28 @@ public class UpdateLiveRecordNotifyConfigRequest extends RpcAcsRequest<UpdateLiv
 		this.needStatusNotify = needStatusNotify;
 		if(needStatusNotify != null){
 			putQueryParameter("NeedStatusNotify", needStatusNotify.toString());
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

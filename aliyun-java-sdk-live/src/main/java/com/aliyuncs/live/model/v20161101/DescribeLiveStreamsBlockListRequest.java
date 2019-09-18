@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,33 @@ public class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest<DescribeL
 	
 	public DescribeLiveStreamsBlockListRequest() {
 		super("live", "2016-11-01", "DescribeLiveStreamsBlockList", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private Integer pageNum;
 
 	private String securityToken;
 
-	private String domainName;
-
 	private Integer pageSize;
+
+	private String domainName;
 
 	private Long ownerId;
 
-	private Integer pageNum;
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
 
 	public String getBizSecurityToken() {
 		return this.securityToken;
@@ -66,17 +84,6 @@ public class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest<DescribeL
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -88,6 +95,17 @@ public class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest<DescribeL
 		}
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -96,17 +114,6 @@ public class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest<DescribeL
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

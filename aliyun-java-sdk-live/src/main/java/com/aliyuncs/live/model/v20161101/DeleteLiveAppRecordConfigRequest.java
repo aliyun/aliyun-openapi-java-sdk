@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,22 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 	
 	public DeleteLiveAppRecordConfigRequest() {
 		super("live", "2016-11-01", "DeleteLiveAppRecordConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String appName;
 
 	private String securityToken;
 
+	private String streamName;
+
 	private String domainName;
 
 	private Long ownerId;
-
-	private String streamName;
 
 	public String getAppName() {
 		return this.appName;
@@ -77,6 +84,17 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 		}
 	}
 
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -96,17 +114,6 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
 		}
 	}
 

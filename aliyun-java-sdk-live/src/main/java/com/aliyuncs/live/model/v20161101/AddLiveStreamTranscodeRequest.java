@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,28 +26,22 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 	
 	public AddLiveStreamTranscodeRequest() {
 		super("live", "2016-11-01", "AddLiveStreamTranscode", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String app;
 
 	private String template;
 
 	private String securityToken;
 
-	private String domain;
+	private String app;
 
 	private Long ownerId;
 
-	public String getApp() {
-		return this.app;
-	}
-
-	public void setApp(String app) {
-		this.app = app;
-		if(app != null){
-			putQueryParameter("App", app);
-		}
-	}
+	private String domain;
 
 	public String getTemplate() {
 		return this.template;
@@ -88,6 +84,28 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		}
 	}
 
+	public String getApp() {
+		return this.app;
+	}
+
+	public void setApp(String app) {
+		this.app = app;
+		if(app != null){
+			putQueryParameter("App", app);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getBizDomain() {
 		return this.domain;
 	}
@@ -115,17 +133,6 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

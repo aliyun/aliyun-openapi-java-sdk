@@ -57,9 +57,9 @@ public class DescribeCasterLayoutsResponseUnmarshaller {
 				videoLayer.setPositionRefer(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionRefer"));
 				videoLayer.setFixedDelayDuration(_ctx.integerValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].FixedDelayDuration"));
 
-				List<String> positionNormalizeds = new ArrayList<String>();
+				List<Float> positionNormalizeds = new ArrayList<Float>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds.Length"); k++) {
-					positionNormalizeds.add(_ctx.stringValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds["+ k +"]"));
+					positionNormalizeds.add(_ctx.floatValue("DescribeCasterLayoutsResponse.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds["+ k +"]"));
 				}
 				videoLayer.setPositionNormalizeds(positionNormalizeds);
 

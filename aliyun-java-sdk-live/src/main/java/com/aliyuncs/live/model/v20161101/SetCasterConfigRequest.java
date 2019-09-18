@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,21 +26,18 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 	
 	public SetCasterConfigRequest() {
 		super("live", "2016-11-01", "SetCasterConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String sideOutputUrl;
-
-	private String casterId;
-
 	private Integer channelEnable;
-
-	private String domainName;
 
 	private Integer programEffect;
 
 	private String programName;
-
-	private Long ownerId;
 
 	private String recordConfig;
 
@@ -46,33 +45,19 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 
 	private String transcodeConfig;
 
-	private Float delay;
-
 	private String casterName;
 
+	private String sideOutputUrl;
+
+	private String casterId;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	private Float delay;
+
 	private String callbackUrl;
-
-	public String getSideOutputUrl() {
-		return this.sideOutputUrl;
-	}
-
-	public void setSideOutputUrl(String sideOutputUrl) {
-		this.sideOutputUrl = sideOutputUrl;
-		if(sideOutputUrl != null){
-			putQueryParameter("SideOutputUrl", sideOutputUrl);
-		}
-	}
-
-	public String getCasterId() {
-		return this.casterId;
-	}
-
-	public void setCasterId(String casterId) {
-		this.casterId = casterId;
-		if(casterId != null){
-			putQueryParameter("CasterId", casterId);
-		}
-	}
 
 	public Integer getChannelEnable() {
 		return this.channelEnable;
@@ -82,17 +67,6 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.channelEnable = channelEnable;
 		if(channelEnable != null){
 			putQueryParameter("ChannelEnable", channelEnable.toString());
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -115,17 +89,6 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.programName = programName;
 		if(programName != null){
 			putQueryParameter("ProgramName", programName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -162,17 +125,6 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		}
 	}
 
-	public Float getDelay() {
-		return this.delay;
-	}
-
-	public void setDelay(Float delay) {
-		this.delay = delay;
-		if(delay != null){
-			putQueryParameter("Delay", delay.toString());
-		}
-	}
-
 	public String getCasterName() {
 		return this.casterName;
 	}
@@ -181,6 +133,61 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 		this.casterName = casterName;
 		if(casterName != null){
 			putQueryParameter("CasterName", casterName);
+		}
+	}
+
+	public String getSideOutputUrl() {
+		return this.sideOutputUrl;
+	}
+
+	public void setSideOutputUrl(String sideOutputUrl) {
+		this.sideOutputUrl = sideOutputUrl;
+		if(sideOutputUrl != null){
+			putQueryParameter("SideOutputUrl", sideOutputUrl);
+		}
+	}
+
+	public String getCasterId() {
+		return this.casterId;
+	}
+
+	public void setCasterId(String casterId) {
+		this.casterId = casterId;
+		if(casterId != null){
+			putQueryParameter("CasterId", casterId);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Float getDelay() {
+		return this.delay;
+	}
+
+	public void setDelay(Float delay) {
+		this.delay = delay;
+		if(delay != null){
+			putQueryParameter("Delay", delay.toString());
 		}
 	}
 

@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +26,18 @@ public class UpdateLiveTopLevelDomainRequest extends RpcAcsRequest<UpdateLiveTop
 	
 	public UpdateLiveTopLevelDomainRequest() {
 		super("live", "2016-11-01", "UpdateLiveTopLevelDomain", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String topLevelDomain;
 
-	private String securityToken;
-
 	private String domainName;
+
+	private String securityToken;
 
 	public String getTopLevelDomain() {
 		return this.topLevelDomain;
@@ -40,6 +47,17 @@ public class UpdateLiveTopLevelDomainRequest extends RpcAcsRequest<UpdateLiveTop
 		this.topLevelDomain = topLevelDomain;
 		if(topLevelDomain != null){
 			putQueryParameter("TopLevelDomain", topLevelDomain);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -70,17 +88,6 @@ public class UpdateLiveTopLevelDomainRequest extends RpcAcsRequest<UpdateLiveTop
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 

@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,32 +26,37 @@ public class AddTrancodeSEIRequest extends RpcAcsRequest<AddTrancodeSEIResponse>
 	
 	public AddTrancodeSEIRequest() {
 		super("live", "2016-11-01", "AddTrancodeSEI", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private Integer delay;
+	private String pattern;
 
 	private String appName;
 
 	private Integer repeat;
 
-	private String domainName;
-
-	private String pattern;
-
 	private String text;
-
-	private Long ownerId;
 
 	private String streamName;
 
-	public Integer getDelay() {
-		return this.delay;
+	private String domainName;
+
+	private Long ownerId;
+
+	private Integer delay;
+
+	public String getPattern() {
+		return this.pattern;
 	}
 
-	public void setDelay(Integer delay) {
-		this.delay = delay;
-		if(delay != null){
-			putQueryParameter("Delay", delay.toString());
+	public void setPattern(String pattern) {
+		this.pattern = pattern;
+		if(pattern != null){
+			putQueryParameter("Pattern", pattern);
 		}
 	}
 
@@ -75,28 +82,6 @@ public class AddTrancodeSEIRequest extends RpcAcsRequest<AddTrancodeSEIResponse>
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getPattern() {
-		return this.pattern;
-	}
-
-	public void setPattern(String pattern) {
-		this.pattern = pattern;
-		if(pattern != null){
-			putQueryParameter("Pattern", pattern);
-		}
-	}
-
 	public String getText() {
 		return this.text;
 	}
@@ -105,6 +90,28 @@ public class AddTrancodeSEIRequest extends RpcAcsRequest<AddTrancodeSEIResponse>
 		this.text = text;
 		if(text != null){
 			putQueryParameter("Text", text);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -119,14 +126,14 @@ public class AddTrancodeSEIRequest extends RpcAcsRequest<AddTrancodeSEIResponse>
 		}
 	}
 
-	public String getStreamName() {
-		return this.streamName;
+	public Integer getDelay() {
+		return this.delay;
 	}
 
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
+	public void setDelay(Integer delay) {
+		this.delay = delay;
+		if(delay != null){
+			putQueryParameter("Delay", delay.toString());
 		}
 	}
 

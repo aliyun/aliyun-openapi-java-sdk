@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,35 @@ public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeL
 	
 	public DescribeLiveRecordVodConfigsRequest() {
 		super("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String appName;
-
-	private String domainName;
-
-	private Long pageSize;
-
-	private Long ownerId;
 
 	private Long pageNum;
 
+	private String appName;
+
+	private Long pageSize;
+
 	private String streamName;
+
+	private String domainName;
+
+	private Long ownerId;
+
+	public Long getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
 
 	public String getAppName() {
 		return this.appName;
@@ -46,17 +64,6 @@ public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeL
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
 		}
 	}
 
@@ -71,28 +78,6 @@ public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeL
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Long getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Long pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
-	}
-
 	public String getStreamName() {
 		return this.streamName;
 	}
@@ -101,6 +86,28 @@ public class DescribeLiveRecordVodConfigsRequest extends RpcAcsRequest<DescribeL
 		this.streamName = streamName;
 		if(streamName != null){
 			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

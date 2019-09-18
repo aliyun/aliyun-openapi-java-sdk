@@ -155,7 +155,9 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 			private String positionRefer;
 
-			private List<String> positionNormalizeds;
+			private Integer transparency;
+
+			private List<Float> positionNormalizeds;
 
 			public Float getHeightNormalized() {
 				return this.heightNormalized;
@@ -181,11 +183,19 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 				this.positionRefer = positionRefer;
 			}
 
-			public List<String> getPositionNormalizeds() {
+			public Integer getTransparency() {
+				return this.transparency;
+			}
+
+			public void setTransparency(Integer transparency) {
+				this.transparency = transparency;
+			}
+
+			public List<Float> getPositionNormalizeds() {
 				return this.positionNormalizeds;
 			}
 
-			public void setPositionNormalizeds(List<String> positionNormalizeds) {
+			public void setPositionNormalizeds(List<Float> positionNormalizeds) {
 				this.positionNormalizeds = positionNormalizeds;
 			}
 		}
@@ -284,6 +294,12 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 			private String borderColor;
 
+			private Integer wordCountPerLine;
+
+			private Float wordSpaceNormalized;
+
+			private Float lineSpaceNormalized;
+
 			public String getLocationId() {
 				return this.locationId;
 			}
@@ -346,6 +362,30 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 			public void setBorderColor(String borderColor) {
 				this.borderColor = borderColor;
+			}
+
+			public Integer getWordCountPerLine() {
+				return this.wordCountPerLine;
+			}
+
+			public void setWordCountPerLine(Integer wordCountPerLine) {
+				this.wordCountPerLine = wordCountPerLine;
+			}
+
+			public Float getWordSpaceNormalized() {
+				return this.wordSpaceNormalized;
+			}
+
+			public void setWordSpaceNormalized(Float wordSpaceNormalized) {
+				this.wordSpaceNormalized = wordSpaceNormalized;
+			}
+
+			public Float getLineSpaceNormalized() {
+				return this.lineSpaceNormalized;
+			}
+
+			public void setLineSpaceNormalized(Float lineSpaceNormalized) {
+				this.lineSpaceNormalized = lineSpaceNormalized;
 			}
 		}
 	}

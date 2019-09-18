@@ -16,6 +16,8 @@ package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -25,34 +27,24 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 	
 	public UpdateCasterSceneAudioRequest() {
 		super("live", "2016-11-01", "UpdateCasterSceneAudio", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private List<AudioLayer> audioLayers;
-
 	private String casterId;
+
+	private Long ownerId;
+
+	private List<AudioLayer> audioLayers;
 
 	private String sceneId;
 
 	private List<String> mixLists;
 
-	private Long ownerId;
-
 	private Integer followEnable;
-
-	public List<AudioLayer> getAudioLayers() {
-		return this.audioLayers;
-	}
-
-	public void setAudioLayers(List<AudioLayer> audioLayers) {
-		this.audioLayers = audioLayers;	
-		if (audioLayers != null) {
-			for (int depth1 = 0; depth1 < audioLayers.size(); depth1++) {
-				putQueryParameter("AudioLayer." + (depth1 + 1) + ".FixedDelayDuration" , audioLayers.get(depth1).getFixedDelayDuration());
-				putQueryParameter("AudioLayer." + (depth1 + 1) + ".VolumeRate" , audioLayers.get(depth1).getVolumeRate());
-				putQueryParameter("AudioLayer." + (depth1 + 1) + ".ValidChannel" , audioLayers.get(depth1).getValidChannel());
-			}
-		}	
-	}
 
 	public String getCasterId() {
 		return this.casterId;
@@ -63,6 +55,32 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 		if(casterId != null){
 			putQueryParameter("CasterId", casterId);
 		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public List<AudioLayer> getAudioLayers() {
+		return this.audioLayers;
+	}
+
+	public void setAudioLayers(List<AudioLayer> audioLayers) {
+		this.audioLayers = audioLayers;	
+		if (audioLayers != null) {
+			for (int depth1 = 0; depth1 < audioLayers.size(); depth1++) {
+				putQueryParameter("AudioLayer." + (depth1 + 1) + ".VolumeRate" , audioLayers.get(depth1).getVolumeRate());
+				putQueryParameter("AudioLayer." + (depth1 + 1) + ".ValidChannel" , audioLayers.get(depth1).getValidChannel());
+				putQueryParameter("AudioLayer." + (depth1 + 1) + ".FixedDelayDuration" , audioLayers.get(depth1).getFixedDelayDuration());
+			}
+		}	
 	}
 
 	public String getSceneId() {
@@ -89,17 +107,6 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 		}	
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public Integer getFollowEnable() {
 		return this.followEnable;
 	}
@@ -113,19 +120,11 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 
 	public static class AudioLayer {
 
-		private Integer fixedDelayDuration;
-
 		private Float volumeRate;
 
 		private String validChannel;
 
-		public Integer getFixedDelayDuration() {
-			return this.fixedDelayDuration;
-		}
-
-		public void setFixedDelayDuration(Integer fixedDelayDuration) {
-			this.fixedDelayDuration = fixedDelayDuration;
-		}
+		private Integer fixedDelayDuration;
 
 		public Float getVolumeRate() {
 			return this.volumeRate;
@@ -141,6 +140,14 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 
 		public void setValidChannel(String validChannel) {
 			this.validChannel = validChannel;
+		}
+
+		public Integer getFixedDelayDuration() {
+			return this.fixedDelayDuration;
+		}
+
+		public void setFixedDelayDuration(Integer fixedDelayDuration) {
+			this.fixedDelayDuration = fixedDelayDuration;
 		}
 	}
 

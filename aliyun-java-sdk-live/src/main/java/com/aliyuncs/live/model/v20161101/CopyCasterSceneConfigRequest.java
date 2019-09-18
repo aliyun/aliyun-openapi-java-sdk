@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,15 +26,20 @@ public class CopyCasterSceneConfigRequest extends RpcAcsRequest<CopyCasterSceneC
 	
 	public CopyCasterSceneConfigRequest() {
 		super("live", "2016-11-01", "CopyCasterSceneConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String fromSceneId;
 
+	private String toSceneId;
+
 	private String casterId;
 
 	private Long ownerId;
-
-	private String toSceneId;
 
 	public String getFromSceneId() {
 		return this.fromSceneId;
@@ -42,6 +49,17 @@ public class CopyCasterSceneConfigRequest extends RpcAcsRequest<CopyCasterSceneC
 		this.fromSceneId = fromSceneId;
 		if(fromSceneId != null){
 			putQueryParameter("FromSceneId", fromSceneId);
+		}
+	}
+
+	public String getToSceneId() {
+		return this.toSceneId;
+	}
+
+	public void setToSceneId(String toSceneId) {
+		this.toSceneId = toSceneId;
+		if(toSceneId != null){
+			putQueryParameter("ToSceneId", toSceneId);
 		}
 	}
 
@@ -64,17 +82,6 @@ public class CopyCasterSceneConfigRequest extends RpcAcsRequest<CopyCasterSceneC
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getToSceneId() {
-		return this.toSceneId;
-	}
-
-	public void setToSceneId(String toSceneId) {
-		this.toSceneId = toSceneId;
-		if(toSceneId != null){
-			putQueryParameter("ToSceneId", toSceneId);
 		}
 	}
 

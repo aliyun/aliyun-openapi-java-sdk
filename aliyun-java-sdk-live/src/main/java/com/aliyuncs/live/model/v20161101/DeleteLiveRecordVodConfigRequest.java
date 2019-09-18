@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,17 +26,20 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 	
 	public DeleteLiveRecordVodConfigRequest() {
 		super("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String appName;
 
-	private String securityToken;
+	private String streamName;
 
 	private String domainName;
 
 	private Long ownerId;
-
-	private String streamName;
 
 	public String getAppName() {
 		return this.appName;
@@ -47,33 +52,14 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
+	public String getStreamName() {
+		return this.streamName;
 	}
 
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
 		}
 	}
 
@@ -96,17 +82,6 @@ public class DeleteLiveRecordVodConfigRequest extends RpcAcsRequest<DeleteLiveRe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
 		}
 	}
 

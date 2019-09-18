@@ -16,6 +16,8 @@ package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -25,17 +27,33 @@ public class SetCasterSceneConfigRequest extends RpcAcsRequest<SetCasterSceneCon
 	
 	public SetCasterSceneConfigRequest() {
 		super("live", "2016-11-01", "SetCasterSceneConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String layoutId;
 
 	private List<String> componentIds;
 
 	private String casterId;
 
-	private String sceneId;
-
 	private Long ownerId;
 
-	private String layoutId;
+	private String sceneId;
+
+	public String getLayoutId() {
+		return this.layoutId;
+	}
+
+	public void setLayoutId(String layoutId) {
+		this.layoutId = layoutId;
+		if(layoutId != null){
+			putQueryParameter("LayoutId", layoutId);
+		}
+	}
 
 	public List<String> getComponentIds() {
 		return this.componentIds;
@@ -61,17 +79,6 @@ public class SetCasterSceneConfigRequest extends RpcAcsRequest<SetCasterSceneCon
 		}
 	}
 
-	public String getSceneId() {
-		return this.sceneId;
-	}
-
-	public void setSceneId(String sceneId) {
-		this.sceneId = sceneId;
-		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -83,14 +90,14 @@ public class SetCasterSceneConfigRequest extends RpcAcsRequest<SetCasterSceneCon
 		}
 	}
 
-	public String getLayoutId() {
-		return this.layoutId;
+	public String getSceneId() {
+		return this.sceneId;
 	}
 
-	public void setLayoutId(String layoutId) {
-		this.layoutId = layoutId;
-		if(layoutId != null){
-			putQueryParameter("LayoutId", layoutId);
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId);
 		}
 	}
 

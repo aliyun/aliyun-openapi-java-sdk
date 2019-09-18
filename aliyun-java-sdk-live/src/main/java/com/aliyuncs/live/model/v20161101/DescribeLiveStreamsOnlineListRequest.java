@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,12 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 	
 	public DescribeLiveStreamsOnlineListRequest() {
 		super("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String streamType;
-
-	private String domainName;
-
-	private String endTime;
-
-	private String orderBy;
-
-	private String startTime;
-
-	private Long ownerId;
 
 	private Integer pageNum;
 
@@ -48,71 +43,11 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 
 	private String queryType;
 
-	public String getStreamType() {
-		return this.streamType;
-	}
+	private String streamType;
 
-	public void setStreamType(String streamType) {
-		this.streamType = streamType;
-		if(streamType != null){
-			putQueryParameter("StreamType", streamType);
-		}
-	}
+	private String domainName;
 
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getOrderBy() {
-		return this.orderBy;
-	}
-
-	public void setOrderBy(String orderBy) {
-		this.orderBy = orderBy;
-		if(orderBy != null){
-			putQueryParameter("OrderBy", orderBy);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
+	private Long ownerId;
 
 	public Integer getPageNum() {
 		return this.pageNum;
@@ -166,6 +101,39 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 		this.queryType = queryType;
 		if(queryType != null){
 			putQueryParameter("QueryType", queryType);
+		}
+	}
+
+	public String getStreamType() {
+		return this.streamType;
+	}
+
+	public void setStreamType(String streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

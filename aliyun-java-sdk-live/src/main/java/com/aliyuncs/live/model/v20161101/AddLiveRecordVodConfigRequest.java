@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +26,24 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 	
 	public AddLiveRecordVodConfigRequest() {
 		super("live", "2016-11-01", "AddLiveRecordVodConfig", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
+
+	private String autoCompose;
+
+	private String composeVodTranscodeGroupId;
+
+	private String storageLocation;
 
 	private String appName;
 
-	private String autoCompose;
+	private String streamName;
+
+	private String vodTranscodeGroupId;
 
 	private String domainName;
 
@@ -36,11 +51,38 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 
 	private Long ownerId;
 
-	private String composeVodTranscodeGroupId;
+	public String getAutoCompose() {
+		return this.autoCompose;
+	}
 
-	private String streamName;
+	public void setAutoCompose(String autoCompose) {
+		this.autoCompose = autoCompose;
+		if(autoCompose != null){
+			putQueryParameter("AutoCompose", autoCompose);
+		}
+	}
 
-	private String vodTranscodeGroupId;
+	public String getComposeVodTranscodeGroupId() {
+		return this.composeVodTranscodeGroupId;
+	}
+
+	public void setComposeVodTranscodeGroupId(String composeVodTranscodeGroupId) {
+		this.composeVodTranscodeGroupId = composeVodTranscodeGroupId;
+		if(composeVodTranscodeGroupId != null){
+			putQueryParameter("ComposeVodTranscodeGroupId", composeVodTranscodeGroupId);
+		}
+	}
+
+	public String getStorageLocation() {
+		return this.storageLocation;
+	}
+
+	public void setStorageLocation(String storageLocation) {
+		this.storageLocation = storageLocation;
+		if(storageLocation != null){
+			putQueryParameter("StorageLocation", storageLocation);
+		}
+	}
 
 	public String getAppName() {
 		return this.appName;
@@ -53,14 +95,25 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 		}
 	}
 
-	public String getAutoCompose() {
-		return this.autoCompose;
+	public String getStreamName() {
+		return this.streamName;
 	}
 
-	public void setAutoCompose(String autoCompose) {
-		this.autoCompose = autoCompose;
-		if(autoCompose != null){
-			putQueryParameter("AutoCompose", autoCompose);
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
+
+	public String getVodTranscodeGroupId() {
+		return this.vodTranscodeGroupId;
+	}
+
+	public void setVodTranscodeGroupId(String vodTranscodeGroupId) {
+		this.vodTranscodeGroupId = vodTranscodeGroupId;
+		if(vodTranscodeGroupId != null){
+			putQueryParameter("VodTranscodeGroupId", vodTranscodeGroupId);
 		}
 	}
 
@@ -94,39 +147,6 @@ public class AddLiveRecordVodConfigRequest extends RpcAcsRequest<AddLiveRecordVo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getComposeVodTranscodeGroupId() {
-		return this.composeVodTranscodeGroupId;
-	}
-
-	public void setComposeVodTranscodeGroupId(String composeVodTranscodeGroupId) {
-		this.composeVodTranscodeGroupId = composeVodTranscodeGroupId;
-		if(composeVodTranscodeGroupId != null){
-			putQueryParameter("ComposeVodTranscodeGroupId", composeVodTranscodeGroupId);
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
-		}
-	}
-
-	public String getVodTranscodeGroupId() {
-		return this.vodTranscodeGroupId;
-	}
-
-	public void setVodTranscodeGroupId(String vodTranscodeGroupId) {
-		this.vodTranscodeGroupId = vodTranscodeGroupId;
-		if(vodTranscodeGroupId != null){
-			putQueryParameter("VodTranscodeGroupId", vodTranscodeGroupId);
 		}
 	}
 

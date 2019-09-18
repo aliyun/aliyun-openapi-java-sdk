@@ -15,6 +15,8 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.live.Endpoint;
 
 /**
  * @author auto create
@@ -24,11 +26,18 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 	
 	public ForbidLiveStreamRequest() {
 		super("live", "2016-11-01", "ForbidLiveStream", "live");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String resumeTime;
-
 	private String appName;
+
+	private String streamName;
+
+	private String resumeTime;
 
 	private String liveStreamType;
 
@@ -38,9 +47,27 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 
 	private String oneshot;
 
-	private String streamName;
+	public String getAppName() {
+		return this.appName;
+	}
 
-	private String controlStreamAction;
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getStreamName() {
+		return this.streamName;
+	}
+
+	public void setStreamName(String streamName) {
+		this.streamName = streamName;
+		if(streamName != null){
+			putQueryParameter("StreamName", streamName);
+		}
+	}
 
 	public String getResumeTime() {
 		return this.resumeTime;
@@ -50,17 +77,6 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		this.resumeTime = resumeTime;
 		if(resumeTime != null){
 			putQueryParameter("ResumeTime", resumeTime);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
 		}
 	}
 
@@ -105,28 +121,6 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 		this.oneshot = oneshot;
 		if(oneshot != null){
 			putQueryParameter("Oneshot", oneshot);
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
-		}
-	}
-
-	public String getControlStreamAction() {
-		return this.controlStreamAction;
-	}
-
-	public void setControlStreamAction(String controlStreamAction) {
-		this.controlStreamAction = controlStreamAction;
-		if(controlStreamAction != null){
-			putQueryParameter("ControlStreamAction", controlStreamAction);
 		}
 	}
 
