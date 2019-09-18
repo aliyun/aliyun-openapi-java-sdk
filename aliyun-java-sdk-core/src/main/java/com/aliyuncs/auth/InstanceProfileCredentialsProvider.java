@@ -13,7 +13,7 @@ public class InstanceProfileCredentialsProvider implements AlibabaCloudCredentia
 
     public InstanceProfileCredentialsProvider(String roleName) {
         if (null == roleName) {
-            throw new NullPointerException("You must specifiy a valid role name.");
+            throw new RuntimeException("You must specifiy a valid role name.");
         }
         this.roleName = roleName;
         this.fetcher = new ECSMetadataServiceCredentialsFetcher();

@@ -22,7 +22,7 @@ public class DefaultProfileTest {
     public void testSingleDefaultProfile() {
         DefaultProfile profile1 = DefaultProfile.getProfile();
         DefaultProfile profile2 = DefaultProfile.getProfile();
-        assertTrue(profile2 == profile1);
+        assertTrue(profile2.equals(profile1));
     }
 
     @SuppressWarnings("deprecation")
@@ -116,7 +116,7 @@ public class DefaultProfileTest {
         ICredentialProvider icredential = mock(ICredentialProvider.class);
         DefaultProfile profile2 = DefaultProfile.getProfile("cn-shanghai", icredential);
         assertEquals("cn-shanghai", profile2.getRegionId());
-        assertTrue(profile1 != profile2);
+        assertTrue(!profile1.equals(profile2));
 
         DefaultProfile profile;
         profile = DefaultProfile.getProfile("cn-qingdao", "accessKeyId", "secret");

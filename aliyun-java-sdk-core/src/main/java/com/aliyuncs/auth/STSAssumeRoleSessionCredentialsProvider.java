@@ -53,7 +53,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AlibabaCloudCred
     public STSAssumeRoleSessionCredentialsProvider(AlibabaCloudCredentialsProvider longLivedCredentialsProvider,
                                                    String roleArn, IClientProfile clientProfile) {
         if (roleArn == null) {
-            throw new NullPointerException(
+            throw new RuntimeException(
                     "You must specify a value for roleArn.");
         }
         this.roleArn = roleArn;
