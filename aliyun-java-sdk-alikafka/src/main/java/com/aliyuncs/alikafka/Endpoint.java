@@ -20,14 +20,18 @@ public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
             put("eu-west-1", "alikafka.ap-south-1.aliyuncs.com");
+            put("ap-northeast-1", "alikafka.ap-south-1.aliyuncs.com");
+            put("cn-shenzhen-finance-1", "alikafka.aliyuncs.com");
+            put("me-east-1", "alikafka.ap-south-1.aliyuncs.com");
+            put("cn-chengdu", "alikafka.aliyuncs.com");
+            put("cn-north-2-gov-1", "alikafka.aliyuncs.com");
+            put("cn-shanghai-finance-1", "alikafka.aliyuncs.com");
+            put("cn-hangzhou-finance", "alikafka.aliyuncs.com");
             put("ap-southeast-2", "alikafka.ap-south-1.aliyuncs.com");
             put("ap-southeast-3", "alikafka.ap-south-1.aliyuncs.com");
             put("eu-central-1", "alikafka.ap-south-1.aliyuncs.com");
-            put("ap-northeast-1", "alikafka.ap-south-1.aliyuncs.com");
             put("us-east-1", "alikafka.ap-south-1.aliyuncs.com");
-            put("me-east-1", "alikafka.ap-south-1.aliyuncs.com");
             put("us-west-1", "alikafka.ap-south-1.aliyuncs.com");
-            put("cn-chengdu", "alikafka.aliyuncs.com");
         }
     };
 
