@@ -210,9 +210,9 @@ public class JsonReader implements Reader {
 
     private void processObject(String baseKey) {
         String key = baseKey + "." + readJson(baseKey);
-        while (token != OBJECT_END_TOKEN) {
+        while (!token.equals(OBJECT_END_TOKEN)) {
             readJson(key);
-            if (token != OBJECT_END_TOKEN) {
+            if (!token.equals(OBJECT_END_TOKEN)) {
                 Object object = readJson(key);
                 if (object instanceof String || object instanceof Number || object instanceof Boolean) {
                     map.put(key, String.valueOf(object));
@@ -228,9 +228,9 @@ public class JsonReader implements Reader {
 
     private void processObjectForHideItemName(String baseKey) {
         String key = baseKey + "." + readJsonForHideItem(baseKey);
-        while (token != OBJECT_END_TOKEN) {
+        while (!token.equals(OBJECT_END_TOKEN)) {
             readJsonForHideItem(key);
-            if (token != OBJECT_END_TOKEN) {
+            if (!token.equals(OBJECT_END_TOKEN)) {
                 Object object = readJsonForHideItem(key);
                 if (object instanceof String || object instanceof Number || object instanceof Boolean) {
                     map.put(key, String.valueOf(object));
@@ -247,7 +247,7 @@ public class JsonReader implements Reader {
     private void processList(String baseKey) {
         Object value = readJson(baseKey);
         int index = 0;
-        while (token != ARRAY_END_TOKEN) {
+        while (!token.equals(ARRAY_END_TOKEN)) {
             String key = trimFromLast(baseKey, ".") + "[" + (index++) + "]";
             map.put(key, String.valueOf(value));
             if (readJson(baseKey) == COMMA_TOKEN) {
@@ -260,7 +260,7 @@ public class JsonReader implements Reader {
     private void processListForHideItem(String baseKey) {
         Object value = readJsonForHideItem(baseKey);
         int index = 0;
-        while (token != ARRAY_END_TOKEN) {
+        while (!token.equals(ARRAY_END_TOKEN)) {
             String key = baseKey + "[" + (index++) + "]";
             map.put(key, String.valueOf(value));
             if (readJsonForHideItem(baseKey) == COMMA_TOKEN) {
@@ -276,7 +276,7 @@ public class JsonReader implements Reader {
         String key = preKey + "[" + index + "]";
         Object value = readJson(key);
 
-        while (token != ARRAY_END_TOKEN) {
+        while (!token.equals(ARRAY_END_TOKEN)) {
             map.put(preKey + ".Length", String.valueOf(index + 1));
             if (value instanceof String) {
                 map.put(key, String.valueOf(value));
@@ -294,7 +294,7 @@ public class JsonReader implements Reader {
         String key = preKey + "[" + index + "]";
         Object value = readJsonForHideItem(key);
 
-        while (token != ARRAY_END_TOKEN) {
+        while (!token.equals(ARRAY_END_TOKEN)) {
             map.put(preKey + ".Length", String.valueOf(index + 1));
             if (value instanceof String) {
                 map.put(key, String.valueOf(value));

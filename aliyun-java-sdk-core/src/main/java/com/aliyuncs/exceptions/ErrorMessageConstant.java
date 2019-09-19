@@ -31,7 +31,9 @@ public class ErrorMessageConstant {
                     "You can set an endpoint for your request explicitly.%s\n" +
                     "See " + SDK_ENDPOINT_MANAGEMENT_DOC_HTML + "\n";
 
-    // Or use available regions:
+    /**
+     * Or use available regions:
+     */
     public static final String ENDPOINT_NO_PRODUCT =
             "No endpoint for product '%s'. \n" +
                     "Please check the product code, or set an endpoint for your request explicitly.\n" +

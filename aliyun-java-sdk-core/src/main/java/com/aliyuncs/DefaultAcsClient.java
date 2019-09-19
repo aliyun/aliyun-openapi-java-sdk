@@ -33,7 +33,9 @@ import java.util.regex.Pattern;
 @SuppressWarnings("deprecation")
 public class DefaultAcsClient implements IAcsClient {
 
-    // Now maxRetryNumber and autoRetry has no effect.
+    /*
+        Now maxRetryNumber and autoRetry has no effect.
+     */
     private int maxRetryNumber = 3;
     private boolean autoRetry = true;
     private IClientProfile clientProfile = null;

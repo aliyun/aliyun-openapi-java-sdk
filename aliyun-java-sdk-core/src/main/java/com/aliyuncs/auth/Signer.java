@@ -25,17 +25,17 @@ package com.aliyuncs.auth;
 
 public abstract class Signer {
 
-    private final static Signer hmacSHA1Signer = new HmacSHA1Signer();
-    private final static Signer sha256withRSASigner = new SHA256withRSASigner();
-    private final static Signer bearerTokenSigner = new BearerTokenSigner();
+    private final static Signer HMACSHA1_SIGNER = new HmacSHA1Signer();
+    private final static Signer SHA256_WITH_RSA_SIGNER = new SHA256withRSASigner();
+    private final static Signer BEARER_TOKEN_SIGNER = new BearerTokenSigner();
 
     public static Signer getSigner(AlibabaCloudCredentials credentials) {
         if (credentials instanceof KeyPairCredentials) {
-            return sha256withRSASigner;
+            return SHA256_WITH_RSA_SIGNER;
         } else if (credentials instanceof BearerTokenCredentials) {
-            return bearerTokenSigner;
+            return BEARER_TOKEN_SIGNER;
         } else {
-            return hmacSHA1Signer;
+            return HMACSHA1_SIGNER;
         }
     }
 

@@ -17,7 +17,6 @@ public class CredentialTest {
         Assert.assertTrue(credential.getRefreshDate().before(new Date()));
         Assert.assertNull(credential.getExpiredDate());
         Assert.assertNull(credential.getSecurityToken());
-        Assert.assertFalse(credential.isExpired());
 
         credential.setAccessKeyId("accessKeyId");
         credential.setAccessSecret("accessSecret");
@@ -25,6 +24,7 @@ public class CredentialTest {
         Assert.assertEquals("accessKeyId", credential.getAccessKeyId());
         Assert.assertEquals("accessSecret", credential.getAccessSecret());
         Assert.assertEquals("securityToken", credential.getSecurityToken());
+
     }
 
     @SuppressWarnings("deprecation")
@@ -37,7 +37,6 @@ public class CredentialTest {
         Assert.assertTrue(credential.getRefreshDate().before(new Date()));
         Assert.assertNull(credential.getExpiredDate());
         Assert.assertNull(credential.getSecurityToken());
-        Assert.assertFalse(credential.isExpired());
     }
 
     @SuppressWarnings("deprecation")
@@ -50,7 +49,6 @@ public class CredentialTest {
         Thread.sleep(100);
         Assert.assertTrue(credential.getRefreshDate().before(new Date()));
         Assert.assertNull(credential.getExpiredDate());
-        Assert.assertFalse(credential.isExpired());
     }
 
     @SuppressWarnings("deprecation")
@@ -62,15 +60,12 @@ public class CredentialTest {
         Thread.sleep(100);
         Assert.assertTrue(credential.getRefreshDate().before(new Date()));
         Assert.assertTrue(credential.getExpiredDate().after(new Date()));
-        Assert.assertFalse(credential.isExpired());
         Assert.assertNull(credential.getSecurityToken());
 
         credential = new Credential("accessKeyId", "accessSecret", 0);
-        Assert.assertFalse(credential.isExpired());
         Assert.assertNull(credential.getExpiredDate());
 
         credential = new Credential("accessKeyId", "accessSecret", -1);
-        Assert.assertFalse(credential.isExpired());
         Assert.assertNull(credential.getExpiredDate());
     }
 
@@ -81,7 +76,6 @@ public class CredentialTest {
         Assert.assertEquals("accessKeyId", credential.getAccessKeyId());
         Assert.assertEquals("accessSecret", credential.getAccessSecret());
         Assert.assertEquals("securityToken", credential.getSecurityToken());
-        Assert.assertFalse(credential.isExpired());
         Thread.sleep(100);
         Assert.assertTrue(credential.getRefreshDate().before(new Date()));
         Assert.assertTrue(credential.getExpiredDate().after(new Date()));
