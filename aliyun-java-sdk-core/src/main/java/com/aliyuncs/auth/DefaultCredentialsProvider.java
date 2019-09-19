@@ -9,7 +9,7 @@ import java.util.Vector;
 
 public class DefaultCredentialsProvider implements AlibabaCloudCredentialsProvider {
     private List<AlibabaCloudCredentialsProvider> defaultProviders = new ArrayList<AlibabaCloudCredentialsProvider>();
-    private static final List<AlibabaCloudCredentialsProvider> userConfigurationProviders =
+    private static final List<AlibabaCloudCredentialsProvider> USER_CONFIGURATION_PROVIDERS =
             new Vector<AlibabaCloudCredentialsProvider>();
 
     public DefaultCredentialsProvider() throws ClientException {
@@ -28,8 +28,8 @@ public class DefaultCredentialsProvider implements AlibabaCloudCredentialsProvid
     @Override
     public AlibabaCloudCredentials getCredentials() throws ClientException {
         AlibabaCloudCredentials credential;
-        if (userConfigurationProviders.size() > 0) {
-            for (AlibabaCloudCredentialsProvider provider : userConfigurationProviders) {
+        if (USER_CONFIGURATION_PROVIDERS.size() > 0) {
+            for (AlibabaCloudCredentialsProvider provider : USER_CONFIGURATION_PROVIDERS) {
                 credential = provider.getCredentials();
                 if (null != credential) {
                     return credential;
@@ -46,18 +46,18 @@ public class DefaultCredentialsProvider implements AlibabaCloudCredentialsProvid
     }
 
     public static boolean addCredentialsProvider(AlibabaCloudCredentialsProvider provider) {
-        return DefaultCredentialsProvider.userConfigurationProviders.add(provider);
+        return DefaultCredentialsProvider.USER_CONFIGURATION_PROVIDERS.add(provider);
     }
 
     public static boolean removeCredentialsProvider(AlibabaCloudCredentialsProvider provider) {
-        return DefaultCredentialsProvider.userConfigurationProviders.remove(provider);
+        return DefaultCredentialsProvider.USER_CONFIGURATION_PROVIDERS.remove(provider);
     }
 
     public static boolean containsCredentialsProvider(AlibabaCloudCredentialsProvider provider) {
-        return DefaultCredentialsProvider.userConfigurationProviders.contains(provider);
+        return DefaultCredentialsProvider.USER_CONFIGURATION_PROVIDERS.contains(provider);
     }
 
     public static void clearCredentialsProvider() {
-        DefaultCredentialsProvider.userConfigurationProviders.clear();
+        DefaultCredentialsProvider.USER_CONFIGURATION_PROVIDERS.clear();
     }
 }
