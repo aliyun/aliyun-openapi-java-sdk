@@ -1,6 +1,12 @@
 package com.aliyuncs.http;
 
 public enum MethodType {
+    /**
+     * GET
+     * PUT
+     * POST
+     * DELETE
+     */
     GET(false),
     PUT(true),
     POST(true),
