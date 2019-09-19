@@ -41,10 +41,7 @@ public class HttpResponse extends HttpMessage {
     }
 
     public boolean isSuccess() {
-        if (200 <= this.status && this.status < 300) {
-            return true;
-        }
-        return false;
+        return 200 <= this.status && this.status < 300;
     }
 
     public String getReasonPhrase() {

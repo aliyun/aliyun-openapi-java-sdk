@@ -3,6 +3,9 @@ package com.aliyuncs.http;
 import com.aliyuncs.http.clients.CompatibleUrlConnClient;
 
 public enum HttpClientType {
+    /**
+     * define Compatiblen,HttpClient,okHttp,Custom
+     */
 
     Compatible(CompatibleUrlConnClient.class),
     ApacheHttpClient(com.aliyuncs.http.clients.ApacheHttpClient.class),

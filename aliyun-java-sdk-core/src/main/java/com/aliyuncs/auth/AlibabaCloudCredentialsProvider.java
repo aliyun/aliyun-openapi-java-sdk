@@ -5,5 +5,5 @@ import com.aliyuncs.exceptions.ServerException;
 
 public interface AlibabaCloudCredentialsProvider {
 
-    public AlibabaCloudCredentials getCredentials() throws ClientException, ServerException;
+     AlibabaCloudCredentials getCredentials() throws ClientException, ServerException;
 }

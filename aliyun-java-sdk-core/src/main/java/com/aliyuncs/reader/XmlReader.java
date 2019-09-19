@@ -46,12 +46,17 @@ public class XmlReader implements Reader {
         }
 
         List<Element> listElements = XmlUtils.getChildElements(element, childElements.get(0).getNodeName());
-        if (listElements.size() > 1 && childElements.size() == listElements.size()) {//be list
+        //be list
+        if (listElements.size() > 1 && childElements.size() == listElements.size()) {
             elementsAsList(childElements, path);
-        } else if (listElements.size() == 1 && childElements.size() == 1) {//may be list
-            elementsAsList(listElements, path);//as list
-            read(childElements.get(0), path, true);//as not list
-        } else {//not list
+            //may be list
+        } else if (listElements.size() == 1 && childElements.size() == 1) {
+            //as list
+            elementsAsList(listElements, path);
+            //as not list
+            read(childElements.get(0), path, true);
+            //not list
+        } else {
             for (Element childElement : childElements) {
                 read(childElement, path, true);
             }

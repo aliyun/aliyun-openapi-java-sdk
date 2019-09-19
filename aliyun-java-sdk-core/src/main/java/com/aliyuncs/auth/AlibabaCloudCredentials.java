@@ -2,7 +2,7 @@ package com.aliyuncs.auth;
 
 public interface AlibabaCloudCredentials {
 
-    public String getAccessKeyId();
+     String getAccessKeyId();
 
-    public String getAccessKeySecret();
+     String getAccessKeySecret();
 }

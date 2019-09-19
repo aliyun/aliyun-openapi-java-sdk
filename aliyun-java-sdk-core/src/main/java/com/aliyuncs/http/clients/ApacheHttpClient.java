@@ -274,8 +274,9 @@ public class ApacheHttpClient extends IHttpClient {
         // status code
         result.setStatus(httpResponse.getStatusLine().getStatusCode());
         result.setReasonPhrase(httpResponse.getStatusLine().getReasonPhrase());
-        if ((httpResponse.getEntity() != null && (httpResponse.getEntity().getContentLength() > 0 || httpResponse
-                .getEntity().isChunked()))) {
+        boolean existed = ((httpResponse.getEntity() != null && (httpResponse.getEntity().getContentLength() > 0 || httpResponse
+                .getEntity().isChunked())));
+        if (existed){
             // content type
             Header contentTypeHeader = httpResponse.getEntity().getContentType();
             ContentType contentType = ContentType.parse(contentTypeHeader.getValue());

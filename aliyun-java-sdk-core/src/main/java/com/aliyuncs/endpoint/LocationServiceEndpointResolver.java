@@ -14,7 +14,10 @@ public class LocationServiceEndpointResolver extends EndpointResolverBase {
 
     private final static String DEFAULT_LOCATION_SERVICE_ENDPOINT = "location-readonly.aliyuncs.com";
     private final static String DEFAULT_LOCATION_SERVICE_API_VERSION = "2015-06-12";
-    public int locationServiceCallCounter = 0; // For test use
+    /**
+     *  For test use
+     */
+    public int locationServiceCallCounter = 0;
     protected String locationServiceEndpoint = DEFAULT_LOCATION_SERVICE_ENDPOINT;
     protected String locationServiceApiVersion = DEFAULT_LOCATION_SERVICE_API_VERSION;
     private DefaultAcsClient client;
