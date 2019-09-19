@@ -15,6 +15,7 @@
 package com.aliyuncs.companyreg.model.v20190508;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,7 +25,10 @@ public class ListCompanyRegOrdersRequest extends RpcAcsRequest<ListCompanyRegOrd
 	
 	public ListCompanyRegOrdersRequest() {
 		super("companyreg", "2019-05-08", "ListCompanyRegOrders", "companyreg");
+		setMethod(MethodType.POST);
 	}
+
+	private Integer pageNum;
 
 	private String bizStatus;
 
@@ -34,7 +38,18 @@ public class ListCompanyRegOrdersRequest extends RpcAcsRequest<ListCompanyRegOrd
 
 	private String aliyunOrderId;
 
-	private Integer pageNum;
+	private String bizSubCode;
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
 
 	public String getBizStatus() {
 		return this.bizStatus;
@@ -80,14 +95,14 @@ public class ListCompanyRegOrdersRequest extends RpcAcsRequest<ListCompanyRegOrd
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
+	public String getBizSubCode() {
+		return this.bizSubCode;
 	}
 
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
+	public void setBizSubCode(String bizSubCode) {
+		this.bizSubCode = bizSubCode;
+		if(bizSubCode != null){
+			putQueryParameter("BizSubCode", bizSubCode);
 		}
 	}
 

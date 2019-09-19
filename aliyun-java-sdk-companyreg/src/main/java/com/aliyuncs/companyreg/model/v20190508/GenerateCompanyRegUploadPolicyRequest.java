@@ -21,18 +21,14 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class SubmitConsultationRequest extends RpcAcsRequest<SubmitConsultationResponse> {
+public class GenerateCompanyRegUploadPolicyRequest extends RpcAcsRequest<GenerateCompanyRegUploadPolicyResponse> {
 	
-	public SubmitConsultationRequest() {
-		super("companyreg", "2019-05-08", "SubmitConsultation", "companyreg");
+	public GenerateCompanyRegUploadPolicyRequest() {
+		super("companyreg", "2019-05-08", "GenerateCompanyRegUploadPolicy", "companyreg");
 		setMethod(MethodType.POST);
 	}
 
 	private String data;
-
-	private String vcode;
-
-	private String consultRequestId;
 
 	private String bizSubCode;
 
@@ -44,28 +40,6 @@ public class SubmitConsultationRequest extends RpcAcsRequest<SubmitConsultationR
 		this.data = data;
 		if(data != null){
 			putQueryParameter("Data", data);
-		}
-	}
-
-	public String getVcode() {
-		return this.vcode;
-	}
-
-	public void setVcode(String vcode) {
-		this.vcode = vcode;
-		if(vcode != null){
-			putQueryParameter("Vcode", vcode);
-		}
-	}
-
-	public String getConsultRequestId() {
-		return this.consultRequestId;
-	}
-
-	public void setConsultRequestId(String consultRequestId) {
-		this.consultRequestId = consultRequestId;
-		if(consultRequestId != null){
-			putQueryParameter("ConsultRequestId", consultRequestId);
 		}
 	}
 
@@ -81,8 +55,8 @@ public class SubmitConsultationRequest extends RpcAcsRequest<SubmitConsultationR
 	}
 
 	@Override
-	public Class<SubmitConsultationResponse> getResponseClass() {
-		return SubmitConsultationResponse.class;
+	public Class<GenerateCompanyRegUploadPolicyResponse> getResponseClass() {
+		return GenerateCompanyRegUploadPolicyResponse.class;
 	}
 
 }

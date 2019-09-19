@@ -15,6 +15,7 @@
 package com.aliyuncs.companyreg.model.v20190508;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,19 +25,20 @@ public class ListCompanyRegConsultationsRequest extends RpcAcsRequest<ListCompan
 	
 	public ListCompanyRegConsultationsRequest() {
 		super("companyreg", "2019-05-08", "ListCompanyRegConsultations", "companyreg");
+		setMethod(MethodType.POST);
 	}
 
 	private Long endGmtCreate;
 
 	private String city;
 
+	private Integer pageNum;
+
 	private Integer pageSize;
 
 	private String bizId;
 
 	private Long startGmtCreate;
-
-	private Integer pageNum;
 
 	public Long getEndGmtCreate() {
 		return this.endGmtCreate;
@@ -57,6 +59,17 @@ public class ListCompanyRegConsultationsRequest extends RpcAcsRequest<ListCompan
 		this.city = city;
 		if(city != null){
 			putQueryParameter("City", city);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -90,17 +103,6 @@ public class ListCompanyRegConsultationsRequest extends RpcAcsRequest<ListCompan
 		this.startGmtCreate = startGmtCreate;
 		if(startGmtCreate != null){
 			putQueryParameter("StartGmtCreate", startGmtCreate.toString());
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

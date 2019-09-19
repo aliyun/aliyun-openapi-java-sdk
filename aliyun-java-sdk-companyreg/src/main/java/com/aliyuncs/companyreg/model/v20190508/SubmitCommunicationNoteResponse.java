@@ -14,36 +14,28 @@
 
 package com.aliyuncs.companyreg.model.v20190508;
 
-import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.companyreg.transform.v20190508.SubmitCommunicationNoteResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SendVcodeRequest extends RpcAcsRequest<SendVcodeResponse> {
-	
-	public SendVcodeRequest() {
-		super("companyreg", "2019-05-08", "SendVcode", "companyreg");
-		setMethod(MethodType.POST);
+public class SubmitCommunicationNoteResponse extends AcsResponse {
+
+	private String requestId;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	private String mobile;
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putQueryParameter("Mobile", mobile);
-		}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public Class<SendVcodeResponse> getResponseClass() {
-		return SendVcodeResponse.class;
+	public SubmitCommunicationNoteResponse getInstance(UnmarshallerContext context) {
+		return	SubmitCommunicationNoteResponseUnmarshaller.unmarshall(this, context);
 	}
-
 }

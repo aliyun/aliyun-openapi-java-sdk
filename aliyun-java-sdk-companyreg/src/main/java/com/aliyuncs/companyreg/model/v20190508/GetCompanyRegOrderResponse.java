@@ -51,6 +51,14 @@ public class GetCompanyRegOrderResponse extends AcsResponse {
 
 	private String bizStatusStage;
 
+	private String platformName;
+
+	private String inboundPhone;
+
+	private String outboundPhone;
+
+	private String bizSubCode;
+
 	private List<BizOperation> operations;
 
 	public String getRequestId() {
@@ -155,6 +163,38 @@ public class GetCompanyRegOrderResponse extends AcsResponse {
 
 	public void setBizStatusStage(String bizStatusStage) {
 		this.bizStatusStage = bizStatusStage;
+	}
+
+	public String getPlatformName() {
+		return this.platformName;
+	}
+
+	public void setPlatformName(String platformName) {
+		this.platformName = platformName;
+	}
+
+	public String getInboundPhone() {
+		return this.inboundPhone;
+	}
+
+	public void setInboundPhone(String inboundPhone) {
+		this.inboundPhone = inboundPhone;
+	}
+
+	public String getOutboundPhone() {
+		return this.outboundPhone;
+	}
+
+	public void setOutboundPhone(String outboundPhone) {
+		this.outboundPhone = outboundPhone;
+	}
+
+	public String getBizSubCode() {
+		return this.bizSubCode;
+	}
+
+	public void setBizSubCode(String bizSubCode) {
+		this.bizSubCode = bizSubCode;
 	}
 
 	public List<BizOperation> getOperations() {

@@ -15,6 +15,7 @@
 package com.aliyuncs.companyreg.model.v20190508;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
@@ -24,11 +25,14 @@ public class GetCompanyRegOrderRequest extends RpcAcsRequest<GetCompanyRegOrderR
 	
 	public GetCompanyRegOrderRequest() {
 		super("companyreg", "2019-05-08", "GetCompanyRegOrder", "companyreg");
+		setMethod(MethodType.POST);
 	}
 
 	private String actionTypes;
 
 	private String bizId;
+
+	private String bizSubCode;
 
 	public String getActionTypes() {
 		return this.actionTypes;
@@ -49,6 +53,17 @@ public class GetCompanyRegOrderRequest extends RpcAcsRequest<GetCompanyRegOrderR
 		this.bizId = bizId;
 		if(bizId != null){
 			putQueryParameter("BizId", bizId);
+		}
+	}
+
+	public String getBizSubCode() {
+		return this.bizSubCode;
+	}
+
+	public void setBizSubCode(String bizSubCode) {
+		this.bizSubCode = bizSubCode;
+		if(bizSubCode != null){
+			putQueryParameter("BizSubCode", bizSubCode);
 		}
 	}
 

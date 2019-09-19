@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SendVcodeResponseUnmarshaller {
 
-	public static SendVcodeResponse unmarshall(SendVcodeResponse sendVcodeResponse, UnmarshallerContext context) {
+	public static SendVcodeResponse unmarshall(SendVcodeResponse sendVcodeResponse, UnmarshallerContext _ctx) {
 		
-		sendVcodeResponse.setRequestId(context.stringValue("SendVcodeResponse.RequestId"));
+		sendVcodeResponse.setRequestId(_ctx.stringValue("SendVcodeResponse.RequestId"));
 	 
 	 	return sendVcodeResponse;
 	}

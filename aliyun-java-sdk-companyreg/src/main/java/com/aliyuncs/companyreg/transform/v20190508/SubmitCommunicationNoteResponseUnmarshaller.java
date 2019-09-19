@@ -14,17 +14,16 @@
 
 package com.aliyuncs.companyreg.transform.v20190508;
 
-import com.aliyuncs.companyreg.model.v20190508.ProcessCompanyRegOrderResponse;
+import com.aliyuncs.companyreg.model.v20190508.SubmitCommunicationNoteResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ProcessCompanyRegOrderResponseUnmarshaller {
+public class SubmitCommunicationNoteResponseUnmarshaller {
 
-	public static ProcessCompanyRegOrderResponse unmarshall(ProcessCompanyRegOrderResponse processCompanyRegOrderResponse, UnmarshallerContext _ctx) {
+	public static SubmitCommunicationNoteResponse unmarshall(SubmitCommunicationNoteResponse submitCommunicationNoteResponse, UnmarshallerContext _ctx) {
 		
-		processCompanyRegOrderResponse.setRequestId(_ctx.stringValue("ProcessCompanyRegOrderResponse.RequestId"));
-		processCompanyRegOrderResponse.setData(_ctx.stringValue("ProcessCompanyRegOrderResponse.Data"));
+		submitCommunicationNoteResponse.setRequestId(_ctx.stringValue("SubmitCommunicationNoteResponse.RequestId"));
 	 
-	 	return processCompanyRegOrderResponse;
+	 	return submitCommunicationNoteResponse;
 	}
 }

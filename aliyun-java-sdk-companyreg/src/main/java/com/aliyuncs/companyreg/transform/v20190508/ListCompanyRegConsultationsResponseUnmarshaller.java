@@ -24,23 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListCompanyRegConsultationsResponseUnmarshaller {
 
-	public static ListCompanyRegConsultationsResponse unmarshall(ListCompanyRegConsultationsResponse listCompanyRegConsultationsResponse, UnmarshallerContext context) {
+	public static ListCompanyRegConsultationsResponse unmarshall(ListCompanyRegConsultationsResponse listCompanyRegConsultationsResponse, UnmarshallerContext _ctx) {
 		
-		listCompanyRegConsultationsResponse.setRequestId(context.stringValue("ListCompanyRegConsultationsResponse.RequestId"));
-		listCompanyRegConsultationsResponse.setTotalItemNum(context.integerValue("ListCompanyRegConsultationsResponse.TotalItemNum"));
-		listCompanyRegConsultationsResponse.setCurrentPageNum(context.integerValue("ListCompanyRegConsultationsResponse.CurrentPageNum"));
-		listCompanyRegConsultationsResponse.setPageSize(context.integerValue("ListCompanyRegConsultationsResponse.PageSize"));
-		listCompanyRegConsultationsResponse.setTotalPageNum(context.integerValue("ListCompanyRegConsultationsResponse.TotalPageNum"));
-		listCompanyRegConsultationsResponse.setPrePage(context.booleanValue("ListCompanyRegConsultationsResponse.PrePage"));
-		listCompanyRegConsultationsResponse.setNextPage(context.booleanValue("ListCompanyRegConsultationsResponse.NextPage"));
+		listCompanyRegConsultationsResponse.setRequestId(_ctx.stringValue("ListCompanyRegConsultationsResponse.RequestId"));
+		listCompanyRegConsultationsResponse.setTotalItemNum(_ctx.integerValue("ListCompanyRegConsultationsResponse.TotalItemNum"));
+		listCompanyRegConsultationsResponse.setCurrentPageNum(_ctx.integerValue("ListCompanyRegConsultationsResponse.CurrentPageNum"));
+		listCompanyRegConsultationsResponse.setPageSize(_ctx.integerValue("ListCompanyRegConsultationsResponse.PageSize"));
+		listCompanyRegConsultationsResponse.setTotalPageNum(_ctx.integerValue("ListCompanyRegConsultationsResponse.TotalPageNum"));
+		listCompanyRegConsultationsResponse.setPrePage(_ctx.booleanValue("ListCompanyRegConsultationsResponse.PrePage"));
+		listCompanyRegConsultationsResponse.setNextPage(_ctx.booleanValue("ListCompanyRegConsultationsResponse.NextPage"));
 
 		List<CompanyRegConsultation> data = new ArrayList<CompanyRegConsultation>();
-		for (int i = 0; i < context.lengthValue("ListCompanyRegConsultationsResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListCompanyRegConsultationsResponse.Data.Length"); i++) {
 			CompanyRegConsultation companyRegConsultation = new CompanyRegConsultation();
-			companyRegConsultation.setBizId(context.stringValue("ListCompanyRegConsultationsResponse.Data["+ i +"].BizId"));
-			companyRegConsultation.setConsultInfo(context.stringValue("ListCompanyRegConsultationsResponse.Data["+ i +"].ConsultInfo"));
-			companyRegConsultation.setGmtModified(context.longValue("ListCompanyRegConsultationsResponse.Data["+ i +"].GmtModified"));
-			companyRegConsultation.setCity(context.stringValue("ListCompanyRegConsultationsResponse.Data["+ i +"].City"));
+			companyRegConsultation.setBizId(_ctx.stringValue("ListCompanyRegConsultationsResponse.Data["+ i +"].BizId"));
+			companyRegConsultation.setConsultInfo(_ctx.stringValue("ListCompanyRegConsultationsResponse.Data["+ i +"].ConsultInfo"));
+			companyRegConsultation.setGmtModified(_ctx.longValue("ListCompanyRegConsultationsResponse.Data["+ i +"].GmtModified"));
+			companyRegConsultation.setCity(_ctx.stringValue("ListCompanyRegConsultationsResponse.Data["+ i +"].City"));
+			companyRegConsultation.setPlatformName(_ctx.stringValue("ListCompanyRegConsultationsResponse.Data["+ i +"].PlatformName"));
+			companyRegConsultation.setInboundPhone(_ctx.stringValue("ListCompanyRegConsultationsResponse.Data["+ i +"].InboundPhone"));
+			companyRegConsultation.setOutboundPhone(_ctx.stringValue("ListCompanyRegConsultationsResponse.Data["+ i +"].OutboundPhone"));
 
 			data.add(companyRegConsultation);
 		}

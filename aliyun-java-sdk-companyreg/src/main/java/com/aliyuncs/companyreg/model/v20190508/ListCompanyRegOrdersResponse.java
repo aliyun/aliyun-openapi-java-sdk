@@ -123,6 +123,8 @@ public class ListCompanyRegOrdersResponse extends AcsResponse {
 
 		private String extend;
 
+		private String bizSubCode;
+
 		public String getBizId() {
 			return this.bizId;
 		}
@@ -185,6 +187,14 @@ public class ListCompanyRegOrdersResponse extends AcsResponse {
 
 		public void setExtend(String extend) {
 			this.extend = extend;
+		}
+
+		public String getBizSubCode() {
+			return this.bizSubCode;
+		}
+
+		public void setBizSubCode(String bizSubCode) {
+			this.bizSubCode = bizSubCode;
 		}
 	}
 

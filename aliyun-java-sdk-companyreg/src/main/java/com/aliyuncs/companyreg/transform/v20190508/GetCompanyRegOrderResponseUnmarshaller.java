@@ -24,28 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetCompanyRegOrderResponseUnmarshaller {
 
-	public static GetCompanyRegOrderResponse unmarshall(GetCompanyRegOrderResponse getCompanyRegOrderResponse, UnmarshallerContext context) {
+	public static GetCompanyRegOrderResponse unmarshall(GetCompanyRegOrderResponse getCompanyRegOrderResponse, UnmarshallerContext _ctx) {
 		
-		getCompanyRegOrderResponse.setRequestId(context.stringValue("GetCompanyRegOrderResponse.RequestId"));
-		getCompanyRegOrderResponse.setBizId(context.stringValue("GetCompanyRegOrderResponse.BizId"));
-		getCompanyRegOrderResponse.setCompanyName(context.stringValue("GetCompanyRegOrderResponse.CompanyName"));
-		getCompanyRegOrderResponse.setBizStatus(context.stringValue("GetCompanyRegOrderResponse.BizStatus"));
-		getCompanyRegOrderResponse.setBizInfo(context.stringValue("GetCompanyRegOrderResponse.BizInfo"));
-		getCompanyRegOrderResponse.setSupplementBizInfo(context.stringValue("GetCompanyRegOrderResponse.SupplementBizInfo"));
-		getCompanyRegOrderResponse.setAliyunOrderId(context.stringValue("GetCompanyRegOrderResponse.AliyunOrderId"));
-		getCompanyRegOrderResponse.setGmtModified(context.longValue("GetCompanyRegOrderResponse.GmtModified"));
-		getCompanyRegOrderResponse.setOrderAmount(context.floatValue("GetCompanyRegOrderResponse.OrderAmount"));
-		getCompanyRegOrderResponse.setYunMarketOrderAmount(context.floatValue("GetCompanyRegOrderResponse.YunMarketOrderAmount"));
-		getCompanyRegOrderResponse.setGmtPaid(context.longValue("GetCompanyRegOrderResponse.GmtPaid"));
-		getCompanyRegOrderResponse.setExtend(context.stringValue("GetCompanyRegOrderResponse.Extend"));
-		getCompanyRegOrderResponse.setBizStatusStage(context.stringValue("GetCompanyRegOrderResponse.BizStatusStage"));
+		getCompanyRegOrderResponse.setRequestId(_ctx.stringValue("GetCompanyRegOrderResponse.RequestId"));
+		getCompanyRegOrderResponse.setBizId(_ctx.stringValue("GetCompanyRegOrderResponse.BizId"));
+		getCompanyRegOrderResponse.setCompanyName(_ctx.stringValue("GetCompanyRegOrderResponse.CompanyName"));
+		getCompanyRegOrderResponse.setBizStatus(_ctx.stringValue("GetCompanyRegOrderResponse.BizStatus"));
+		getCompanyRegOrderResponse.setBizInfo(_ctx.stringValue("GetCompanyRegOrderResponse.BizInfo"));
+		getCompanyRegOrderResponse.setSupplementBizInfo(_ctx.stringValue("GetCompanyRegOrderResponse.SupplementBizInfo"));
+		getCompanyRegOrderResponse.setAliyunOrderId(_ctx.stringValue("GetCompanyRegOrderResponse.AliyunOrderId"));
+		getCompanyRegOrderResponse.setGmtModified(_ctx.longValue("GetCompanyRegOrderResponse.GmtModified"));
+		getCompanyRegOrderResponse.setOrderAmount(_ctx.floatValue("GetCompanyRegOrderResponse.OrderAmount"));
+		getCompanyRegOrderResponse.setYunMarketOrderAmount(_ctx.floatValue("GetCompanyRegOrderResponse.YunMarketOrderAmount"));
+		getCompanyRegOrderResponse.setGmtPaid(_ctx.longValue("GetCompanyRegOrderResponse.GmtPaid"));
+		getCompanyRegOrderResponse.setExtend(_ctx.stringValue("GetCompanyRegOrderResponse.Extend"));
+		getCompanyRegOrderResponse.setBizStatusStage(_ctx.stringValue("GetCompanyRegOrderResponse.BizStatusStage"));
+		getCompanyRegOrderResponse.setPlatformName(_ctx.stringValue("GetCompanyRegOrderResponse.PlatformName"));
+		getCompanyRegOrderResponse.setInboundPhone(_ctx.stringValue("GetCompanyRegOrderResponse.InboundPhone"));
+		getCompanyRegOrderResponse.setOutboundPhone(_ctx.stringValue("GetCompanyRegOrderResponse.OutboundPhone"));
+		getCompanyRegOrderResponse.setBizSubCode(_ctx.stringValue("GetCompanyRegOrderResponse.BizSubCode"));
 
 		List<BizOperation> operations = new ArrayList<BizOperation>();
-		for (int i = 0; i < context.lengthValue("GetCompanyRegOrderResponse.Operations.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetCompanyRegOrderResponse.Operations.Length"); i++) {
 			BizOperation bizOperation = new BizOperation();
-			bizOperation.setGmtAction(context.longValue("GetCompanyRegOrderResponse.Operations["+ i +"].GmtAction"));
-			bizOperation.setActionType(context.stringValue("GetCompanyRegOrderResponse.Operations["+ i +"].ActionType"));
-			bizOperation.setActionInfo(context.stringValue("GetCompanyRegOrderResponse.Operations["+ i +"].ActionInfo"));
+			bizOperation.setGmtAction(_ctx.longValue("GetCompanyRegOrderResponse.Operations["+ i +"].GmtAction"));
+			bizOperation.setActionType(_ctx.stringValue("GetCompanyRegOrderResponse.Operations["+ i +"].ActionType"));
+			bizOperation.setActionInfo(_ctx.stringValue("GetCompanyRegOrderResponse.Operations["+ i +"].ActionInfo"));
 
 			operations.add(bizOperation);
 		}

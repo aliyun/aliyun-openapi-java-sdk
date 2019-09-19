@@ -21,31 +21,40 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ProcessCompanyRegOrderRequest extends RpcAcsRequest<ProcessCompanyRegOrderResponse> {
+public class SubmitCommunicationNoteRequest extends RpcAcsRequest<SubmitCommunicationNoteResponse> {
 	
-	public ProcessCompanyRegOrderRequest() {
-		super("companyreg", "2019-05-08", "ProcessCompanyRegOrder", "companyreg");
+	public SubmitCommunicationNoteRequest() {
+		super("companyreg", "2019-05-08", "SubmitCommunicationNote", "companyreg");
 		setMethod(MethodType.POST);
 	}
 
-	private String actionType;
+	private String note;
+
+	private Integer type;
 
 	private String actionRequestId;
 
-	private String actionInfo;
-
 	private String bizId;
 
-	private String bizSubCode;
-
-	public String getActionType() {
-		return this.actionType;
+	public String getNote() {
+		return this.note;
 	}
 
-	public void setActionType(String actionType) {
-		this.actionType = actionType;
-		if(actionType != null){
-			putQueryParameter("ActionType", actionType);
+	public void setNote(String note) {
+		this.note = note;
+		if(note != null){
+			putQueryParameter("Note", note);
+		}
+	}
+
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type.toString());
 		}
 	}
 
@@ -60,17 +69,6 @@ public class ProcessCompanyRegOrderRequest extends RpcAcsRequest<ProcessCompanyR
 		}
 	}
 
-	public String getActionInfo() {
-		return this.actionInfo;
-	}
-
-	public void setActionInfo(String actionInfo) {
-		this.actionInfo = actionInfo;
-		if(actionInfo != null){
-			putQueryParameter("ActionInfo", actionInfo);
-		}
-	}
-
 	public String getBizId() {
 		return this.bizId;
 	}
@@ -82,20 +80,9 @@ public class ProcessCompanyRegOrderRequest extends RpcAcsRequest<ProcessCompanyR
 		}
 	}
 
-	public String getBizSubCode() {
-		return this.bizSubCode;
-	}
-
-	public void setBizSubCode(String bizSubCode) {
-		this.bizSubCode = bizSubCode;
-		if(bizSubCode != null){
-			putQueryParameter("BizSubCode", bizSubCode);
-		}
-	}
-
 	@Override
-	public Class<ProcessCompanyRegOrderResponse> getResponseClass() {
-		return ProcessCompanyRegOrderResponse.class;
+	public Class<SubmitCommunicationNoteResponse> getResponseClass() {
+		return SubmitCommunicationNoteResponse.class;
 	}
 
 }

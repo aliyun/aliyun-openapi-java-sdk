@@ -24,27 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListCompanyRegOrdersResponseUnmarshaller {
 
-	public static ListCompanyRegOrdersResponse unmarshall(ListCompanyRegOrdersResponse listCompanyRegOrdersResponse, UnmarshallerContext context) {
+	public static ListCompanyRegOrdersResponse unmarshall(ListCompanyRegOrdersResponse listCompanyRegOrdersResponse, UnmarshallerContext _ctx) {
 		
-		listCompanyRegOrdersResponse.setRequestId(context.stringValue("ListCompanyRegOrdersResponse.RequestId"));
-		listCompanyRegOrdersResponse.setTotalItemNum(context.integerValue("ListCompanyRegOrdersResponse.TotalItemNum"));
-		listCompanyRegOrdersResponse.setCurrentPageNum(context.integerValue("ListCompanyRegOrdersResponse.CurrentPageNum"));
-		listCompanyRegOrdersResponse.setPageSize(context.integerValue("ListCompanyRegOrdersResponse.PageSize"));
-		listCompanyRegOrdersResponse.setTotalPageNum(context.integerValue("ListCompanyRegOrdersResponse.TotalPageNum"));
-		listCompanyRegOrdersResponse.setPrePage(context.booleanValue("ListCompanyRegOrdersResponse.PrePage"));
-		listCompanyRegOrdersResponse.setNextPage(context.booleanValue("ListCompanyRegOrdersResponse.NextPage"));
+		listCompanyRegOrdersResponse.setRequestId(_ctx.stringValue("ListCompanyRegOrdersResponse.RequestId"));
+		listCompanyRegOrdersResponse.setTotalItemNum(_ctx.integerValue("ListCompanyRegOrdersResponse.TotalItemNum"));
+		listCompanyRegOrdersResponse.setCurrentPageNum(_ctx.integerValue("ListCompanyRegOrdersResponse.CurrentPageNum"));
+		listCompanyRegOrdersResponse.setPageSize(_ctx.integerValue("ListCompanyRegOrdersResponse.PageSize"));
+		listCompanyRegOrdersResponse.setTotalPageNum(_ctx.integerValue("ListCompanyRegOrdersResponse.TotalPageNum"));
+		listCompanyRegOrdersResponse.setPrePage(_ctx.booleanValue("ListCompanyRegOrdersResponse.PrePage"));
+		listCompanyRegOrdersResponse.setNextPage(_ctx.booleanValue("ListCompanyRegOrdersResponse.NextPage"));
 
 		List<CompanyRegOrder> data = new ArrayList<CompanyRegOrder>();
-		for (int i = 0; i < context.lengthValue("ListCompanyRegOrdersResponse.Data.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListCompanyRegOrdersResponse.Data.Length"); i++) {
 			CompanyRegOrder companyRegOrder = new CompanyRegOrder();
-			companyRegOrder.setBizId(context.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].BizId"));
-			companyRegOrder.setCompanyName(context.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].CompanyName"));
-			companyRegOrder.setBizStatus(context.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].BizStatus"));
-			companyRegOrder.setBizInfo(context.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].BizInfo"));
-			companyRegOrder.setSupplementBizInfo(context.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].SupplementBizInfo"));
-			companyRegOrder.setAliyunOrderId(context.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].AliyunOrderId"));
-			companyRegOrder.setGmtModified(context.longValue("ListCompanyRegOrdersResponse.Data["+ i +"].GmtModified"));
-			companyRegOrder.setExtend(context.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].Extend"));
+			companyRegOrder.setBizId(_ctx.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].BizId"));
+			companyRegOrder.setCompanyName(_ctx.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].CompanyName"));
+			companyRegOrder.setBizStatus(_ctx.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].BizStatus"));
+			companyRegOrder.setBizInfo(_ctx.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].BizInfo"));
+			companyRegOrder.setSupplementBizInfo(_ctx.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].SupplementBizInfo"));
+			companyRegOrder.setAliyunOrderId(_ctx.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].AliyunOrderId"));
+			companyRegOrder.setGmtModified(_ctx.longValue("ListCompanyRegOrdersResponse.Data["+ i +"].GmtModified"));
+			companyRegOrder.setExtend(_ctx.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].Extend"));
+			companyRegOrder.setBizSubCode(_ctx.stringValue("ListCompanyRegOrdersResponse.Data["+ i +"].BizSubCode"));
 
 			data.add(companyRegOrder);
 		}

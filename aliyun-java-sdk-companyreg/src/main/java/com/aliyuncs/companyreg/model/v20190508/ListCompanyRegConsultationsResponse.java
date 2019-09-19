@@ -115,6 +115,12 @@ public class ListCompanyRegConsultationsResponse extends AcsResponse {
 
 		private String city;
 
+		private String platformName;
+
+		private String inboundPhone;
+
+		private String outboundPhone;
+
 		public String getBizId() {
 			return this.bizId;
 		}
@@ -145,6 +151,30 @@ public class ListCompanyRegConsultationsResponse extends AcsResponse {
 
 		public void setCity(String city) {
 			this.city = city;
+		}
+
+		public String getPlatformName() {
+			return this.platformName;
+		}
+
+		public void setPlatformName(String platformName) {
+			this.platformName = platformName;
+		}
+
+		public String getInboundPhone() {
+			return this.inboundPhone;
+		}
+
+		public void setInboundPhone(String inboundPhone) {
+			this.inboundPhone = inboundPhone;
+		}
+
+		public String getOutboundPhone() {
+			return this.outboundPhone;
+		}
+
+		public void setOutboundPhone(String outboundPhone) {
+			this.outboundPhone = outboundPhone;
 		}
 	}
 
