@@ -3,6 +3,12 @@ package com.aliyuncs.http;
 import java.util.Arrays;
 
 public enum FormatType {
+    /**
+     * XML("application/xml","text/xml")
+     * JSON:("application/json", "text/json")
+     * RAW:("application/octet-stream")
+     * FORM:("application/x-www-form-urlencoded")
+     */
 
     XML("application/xml", "text/xml"),
     JSON("application/json", "text/json"),
