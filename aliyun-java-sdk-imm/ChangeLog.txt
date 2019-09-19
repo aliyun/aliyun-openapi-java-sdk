@@ -1,3 +1,6 @@
+2019-09-19 Version: 1.14.8
+- Supported Video Abstract for IMM.
+
 2019-09-19 Version: 1.14.7
 - Supported Video Abstract for IMM.
 

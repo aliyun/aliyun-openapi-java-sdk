@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.FindImagesByTagNamesResponse;
 import com.aliyuncs.imm.model.v20170906.FindImagesByTagNamesResponse.Frames;
+import com.aliyuncs.imm.model.v20170906.FindImagesByTagNamesResponse.Frames.Address;
 import com.aliyuncs.imm.model.v20170906.FindImagesByTagNamesResponse.Frames.CelebrityItem;
 import com.aliyuncs.imm.model.v20170906.FindImagesByTagNamesResponse.Frames.CelebrityItem.CelebrityBoundary;
 import com.aliyuncs.imm.model.v20170906.FindImagesByTagNamesResponse.Frames.FacesItem;
@@ -74,6 +75,18 @@ public class FindImagesByTagNamesResponseUnmarshaller {
 			frames.setExternalId(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].ExternalId"));
 			frames.setRemarksC(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].RemarksC"));
 			frames.setRemarksD(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].RemarksD"));
+			frames.setAddressModifyTime(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].AddressModifyTime"));
+			frames.setAddressStatus(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].AddressStatus"));
+			frames.setAddressFailReason(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].AddressFailReason"));
+
+			Address address = new Address();
+			address.setAddressLine(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].Address.AddressLine"));
+			address.setCountry(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].Address.Country"));
+			address.setProvince(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].Address.Province"));
+			address.setCity(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].Address.City"));
+			address.setDistrict(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].Address.District"));
+			address.setTownship(_ctx.stringValue("FindImagesByTagNamesResponse.Images["+ i +"].Address.Township"));
+			frames.setAddress(address);
 
 			List<FacesItem> faces = new ArrayList<FacesItem>();
 			for (int j = 0; j < _ctx.lengthValue("FindImagesByTagNamesResponse.Images["+ i +"].Faces.Length"); j++) {

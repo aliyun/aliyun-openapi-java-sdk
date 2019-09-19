@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem;
+import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.Address;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.CelebrityItem;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.CelebrityItem.CelebrityBoundary;
 import com.aliyuncs.imm.model.v20170906.FindImagesResponse.ImagesItem.FacesItem;
@@ -74,6 +75,18 @@ public class FindImagesResponseUnmarshaller {
 			imagesItem.setRemarksC(_ctx.stringValue("FindImagesResponse.Images["+ i +"].RemarksC"));
 			imagesItem.setRemarksD(_ctx.stringValue("FindImagesResponse.Images["+ i +"].RemarksD"));
 			imagesItem.setExternalId(_ctx.stringValue("FindImagesResponse.Images["+ i +"].ExternalId"));
+			imagesItem.setAddressModifyTime(_ctx.stringValue("FindImagesResponse.Images["+ i +"].AddressModifyTime"));
+			imagesItem.setAddressStatus(_ctx.stringValue("FindImagesResponse.Images["+ i +"].AddressStatus"));
+			imagesItem.setAddressFailReason(_ctx.stringValue("FindImagesResponse.Images["+ i +"].AddressFailReason"));
+
+			Address address = new Address();
+			address.setAddressLine(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Address.AddressLine"));
+			address.setCountry(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Address.Country"));
+			address.setProvince(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Address.Province"));
+			address.setCity(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Address.City"));
+			address.setDistrict(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Address.District"));
+			address.setTownship(_ctx.stringValue("FindImagesResponse.Images["+ i +"].Address.Township"));
+			imagesItem.setAddress(address);
 
 			List<FacesItem> faces = new ArrayList<FacesItem>();
 			for (int j = 0; j < _ctx.lengthValue("FindImagesResponse.Images["+ i +"].Faces.Length"); j++) {

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.GetImageResponse;
+import com.aliyuncs.imm.model.v20170906.GetImageResponse.Address;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.CelebrityItem;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.CelebrityItem.CelebrityBoundary;
 import com.aliyuncs.imm.model.v20170906.GetImageResponse.FacesItem;
@@ -68,6 +69,18 @@ public class GetImageResponseUnmarshaller {
 		getImageResponse.setRemarksC(_ctx.stringValue("GetImageResponse.RemarksC"));
 		getImageResponse.setRemarksD(_ctx.stringValue("GetImageResponse.RemarksD"));
 		getImageResponse.setExternalId(_ctx.stringValue("GetImageResponse.ExternalId"));
+		getImageResponse.setAddressModifyTime(_ctx.stringValue("GetImageResponse.AddressModifyTime"));
+		getImageResponse.setAddressStatus(_ctx.stringValue("GetImageResponse.AddressStatus"));
+		getImageResponse.setAddressFailReason(_ctx.stringValue("GetImageResponse.AddressFailReason"));
+
+		Address address = new Address();
+		address.setAddressLine(_ctx.stringValue("GetImageResponse.Address.AddressLine"));
+		address.setCountry(_ctx.stringValue("GetImageResponse.Address.Country"));
+		address.setProvince(_ctx.stringValue("GetImageResponse.Address.Province"));
+		address.setCity(_ctx.stringValue("GetImageResponse.Address.City"));
+		address.setDistrict(_ctx.stringValue("GetImageResponse.Address.District"));
+		address.setTownship(_ctx.stringValue("GetImageResponse.Address.Township"));
+		getImageResponse.setAddress(address);
 
 		List<FacesItem> faces = new ArrayList<FacesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetImageResponse.Faces.Length"); i++) {

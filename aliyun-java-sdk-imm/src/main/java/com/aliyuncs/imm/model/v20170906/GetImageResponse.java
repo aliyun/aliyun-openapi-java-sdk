@@ -91,6 +91,12 @@ public class GetImageResponse extends AcsResponse {
 
 	private String externalId;
 
+	private String addressModifyTime;
+
+	private String addressStatus;
+
+	private String addressFailReason;
+
 	private List<FacesItem> faces;
 
 	private List<OCRItem> oCR;
@@ -98,6 +104,8 @@ public class GetImageResponse extends AcsResponse {
 	private List<TagsItem> tags;
 
 	private List<CelebrityItem> celebrity;
+
+	private Address address;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -363,6 +371,30 @@ public class GetImageResponse extends AcsResponse {
 		this.externalId = externalId;
 	}
 
+	public String getAddressModifyTime() {
+		return this.addressModifyTime;
+	}
+
+	public void setAddressModifyTime(String addressModifyTime) {
+		this.addressModifyTime = addressModifyTime;
+	}
+
+	public String getAddressStatus() {
+		return this.addressStatus;
+	}
+
+	public void setAddressStatus(String addressStatus) {
+		this.addressStatus = addressStatus;
+	}
+
+	public String getAddressFailReason() {
+		return this.addressFailReason;
+	}
+
+	public void setAddressFailReason(String addressFailReason) {
+		this.addressFailReason = addressFailReason;
+	}
+
 	public List<FacesItem> getFaces() {
 		return this.faces;
 	}
@@ -393,6 +425,14 @@ public class GetImageResponse extends AcsResponse {
 
 	public void setCelebrity(List<CelebrityItem> celebrity) {
 		this.celebrity = celebrity;
+	}
+
+	public Address getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	public static class FacesItem {
@@ -972,6 +1012,69 @@ public class GetImageResponse extends AcsResponse {
 			public void setHeight(Integer height) {
 				this.height = height;
 			}
+		}
+	}
+
+	public static class Address {
+
+		private String addressLine;
+
+		private String country;
+
+		private String province;
+
+		private String city;
+
+		private String district;
+
+		private String township;
+
+		public String getAddressLine() {
+			return this.addressLine;
+		}
+
+		public void setAddressLine(String addressLine) {
+			this.addressLine = addressLine;
+		}
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
+		}
+
+		public String getCity() {
+			return this.city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public String getDistrict() {
+			return this.district;
+		}
+
+		public void setDistrict(String district) {
+			this.district = district;
+		}
+
+		public String getTownship() {
+			return this.township;
+		}
+
+		public void setTownship(String township) {
+			this.township = township;
 		}
 	}
 
