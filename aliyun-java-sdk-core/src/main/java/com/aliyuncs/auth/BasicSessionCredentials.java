@@ -6,7 +6,6 @@ public class BasicSessionCredentials implements AlibabaCloudCredentials {
     private final String accessKeyId;
     private final String accessKeySecret;
     private final String sessionToken;
-    private final double expireFact = 0.95;
     private long sessionStartedTimeInMilliSeconds = 0;
 
     public BasicSessionCredentials(String accessKeyId, String accessKeySecret, String sessionToken) {
@@ -48,6 +47,7 @@ public class BasicSessionCredentials implements AlibabaCloudCredentials {
             return false;
         }
         long now = System.currentTimeMillis();
+        double expireFact = 0.95;
         return roleSessionDurationSeconds * expireFact < (now - sessionStartedTimeInMilliSeconds) / 1000.0;
     }
 }

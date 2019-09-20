@@ -24,6 +24,7 @@ public class CredentialTest {
         Assert.assertEquals("accessKeyId", credential.getAccessKeyId());
         Assert.assertEquals("accessSecret", credential.getAccessSecret());
         Assert.assertEquals("securityToken", credential.getSecurityToken());
+
     }
 
     @SuppressWarnings("deprecation")
