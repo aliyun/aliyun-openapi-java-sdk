@@ -15,6 +15,8 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mse.Endpoint;
 
 /**
  * @author auto create
@@ -24,24 +26,18 @@ public class CreateZnodeRequest extends RpcAcsRequest<CreateZnodeResponse> {
 	
 	public CreateZnodeRequest() {
 		super("mse", "2019-05-31", "CreateZnode", "mse");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String path;
 
 	private String data;
 
 	private String clusterId;
 
-	public String getPath() {
-		return this.path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-		if(path != null){
-			putBodyParameter("Path", path);
-		}
-	}
+	private String path;
 
 	public String getData() {
 		return this.data;
@@ -62,6 +58,17 @@ public class CreateZnodeRequest extends RpcAcsRequest<CreateZnodeResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getPath() {
+		return this.path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+		if(path != null){
+			putBodyParameter("Path", path);
 		}
 	}
 

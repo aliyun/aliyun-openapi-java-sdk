@@ -15,6 +15,8 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mse.Endpoint;
 
 /**
  * @author auto create
@@ -24,26 +26,20 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 	
 	public UpdateZnodeRequest() {
 		super("mse", "2019-05-31", "UpdateZnode", "mse");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String path;
 
 	private String data;
 
-	private String requestPars;
-
 	private String clusterId;
 
-	public String getPath() {
-		return this.path;
-	}
+	private String path;
 
-	public void setPath(String path) {
-		this.path = path;
-		if(path != null){
-			putBodyParameter("Path", path);
-		}
-	}
+	private String requestPars;
 
 	public String getData() {
 		return this.data;
@@ -56,17 +52,6 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -75,6 +60,28 @@ public class UpdateZnodeRequest extends RpcAcsRequest<UpdateZnodeResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getPath() {
+		return this.path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+		if(path != null){
+			putBodyParameter("Path", path);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putBodyParameter("RequestPars", requestPars);
 		}
 	}
 

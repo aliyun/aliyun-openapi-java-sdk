@@ -22,46 +22,20 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListZnodeChildrenRequest extends RpcAcsRequest<ListZnodeChildrenResponse> {
+public class QueryClusterSpecificationRequest extends RpcAcsRequest<QueryClusterSpecificationResponse> {
 	
-	public ListZnodeChildrenRequest() {
-		super("mse", "2019-05-31", "ListZnodeChildren", "mse");
-		setMethod(MethodType.GET);
+	public QueryClusterSpecificationRequest() {
+		super("mse", "2019-05-31", "QueryClusterSpecification", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String clusterId;
-
-	private String path;
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getPath() {
-		return this.path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-		if(path != null){
-			putQueryParameter("Path", path);
-		}
-	}
-
 	@Override
-	public Class<ListZnodeChildrenResponse> getResponseClass() {
-		return ListZnodeChildrenResponse.class;
+	public Class<QueryClusterSpecificationResponse> getResponseClass() {
+		return QueryClusterSpecificationResponse.class;
 	}
 
 }

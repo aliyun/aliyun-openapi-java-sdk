@@ -15,6 +15,8 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mse.Endpoint;
 
 /**
  * @author auto create
@@ -24,13 +26,18 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 	
 	public QueryConfigRequest() {
 		super("mse", "2019-05-31", "QueryConfig", "mse");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String configType;
 
-	private String requestPars;
-
 	private String clusterId;
+
+	private String requestPars;
 
 	public String getConfigType() {
 		return this.configType;
@@ -43,17 +50,6 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -62,6 +58,17 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
 		}
 	}
 

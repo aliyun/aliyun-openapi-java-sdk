@@ -15,6 +15,8 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mse.Endpoint;
 
 /**
  * @author auto create
@@ -24,19 +26,24 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 	
 	public QueryMonitorRequest() {
 		super("mse", "2019-05-31", "QueryMonitor", "mse");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String monitorType;
 
-	private String requestPars;
-
 	private String endTime;
-
-	private String step;
 
 	private String clusterId;
 
 	private String startTime;
+
+	private String requestPars;
+
+	private String step;
 
 	public String getMonitorType() {
 		return this.monitorType;
@@ -49,17 +56,6 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
-		}
-	}
-
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -68,17 +64,6 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStep() {
-		return this.step;
-	}
-
-	public void setStep(String step) {
-		this.step = step;
-		if(step != null){
-			putQueryParameter("Step", step);
 		}
 	}
 
@@ -101,6 +86,28 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putBodyParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getStep() {
+		return this.step;
+	}
+
+	public void setStep(String step) {
+		this.step = step;
+		if(step != null){
+			putQueryParameter("Step", step);
 		}
 	}
 

@@ -1,3 +1,6 @@
+2019-09-20 Version: 1.3.0
+- Generated 2019-05-31 for `mse`.
+
 2019-08-23 Version: 1.1.0
 - Generated 2019-05-31 for `mse`.
 

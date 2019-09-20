@@ -15,6 +15,8 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mse.Endpoint;
 
 /**
  * @author auto create
@@ -24,9 +26,20 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 	
 	public UpdateConfigRequest() {
 		super("mse", "2019-05-31", "UpdateConfig", "mse");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String openSuperAcl;
+
+	private String passWord;
+
+	private String maxClientCnxns;
+
+	private String requestPars;
 
 	private String juteMaxbuffer;
 
@@ -40,13 +53,7 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String syncLimit;
 
-	private String passWord;
-
-	private String maxClientCnxns;
-
 	private String autopurgePurgeInterval;
-
-	private String requestPars;
 
 	private String initLimit;
 
@@ -60,6 +67,39 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.openSuperAcl = openSuperAcl;
 		if(openSuperAcl != null){
 			putBodyParameter("OpenSuperAcl", openSuperAcl);
+		}
+	}
+
+	public String getPassWord() {
+		return this.passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+		if(passWord != null){
+			putBodyParameter("PassWord", passWord);
+		}
+	}
+
+	public String getMaxClientCnxns() {
+		return this.maxClientCnxns;
+	}
+
+	public void setMaxClientCnxns(String maxClientCnxns) {
+		this.maxClientCnxns = maxClientCnxns;
+		if(maxClientCnxns != null){
+			putBodyParameter("MaxClientCnxns", maxClientCnxns);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putBodyParameter("RequestPars", requestPars);
 		}
 	}
 
@@ -129,28 +169,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		}
 	}
 
-	public String getPassWord() {
-		return this.passWord;
-	}
-
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
-		if(passWord != null){
-			putBodyParameter("PassWord", passWord);
-		}
-	}
-
-	public String getMaxClientCnxns() {
-		return this.maxClientCnxns;
-	}
-
-	public void setMaxClientCnxns(String maxClientCnxns) {
-		this.maxClientCnxns = maxClientCnxns;
-		if(maxClientCnxns != null){
-			putBodyParameter("MaxClientCnxns", maxClientCnxns);
-		}
-	}
-
 	public String getAutopurgePurgeInterval() {
 		return this.autopurgePurgeInterval;
 	}
@@ -159,17 +177,6 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.autopurgePurgeInterval = autopurgePurgeInterval;
 		if(autopurgePurgeInterval != null){
 			putBodyParameter("AutopurgePurgeInterval", autopurgePurgeInterval);
-		}
-	}
-
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
 		}
 	}
 

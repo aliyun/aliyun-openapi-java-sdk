@@ -15,6 +15,8 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mse.Endpoint;
 
 /**
  * @author auto create
@@ -24,24 +26,18 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 	
 	public UpdateClusterRequest() {
 		super("mse", "2019-05-31", "UpdateCluster", "mse");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String requestPars;
 
 	private String clusterAliasName;
 
 	private String clusterId;
 
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
-		}
-	}
+	private String requestPars;
 
 	public String getClusterAliasName() {
 		return this.clusterAliasName;
@@ -62,6 +58,17 @@ public class UpdateClusterRequest extends RpcAcsRequest<UpdateClusterResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putBodyParameter("RequestPars", requestPars);
 		}
 	}
 

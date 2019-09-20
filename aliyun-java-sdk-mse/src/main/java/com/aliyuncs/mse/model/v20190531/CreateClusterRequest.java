@@ -15,6 +15,8 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.mse.Endpoint;
 
 /**
  * @author auto create
@@ -24,51 +26,58 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 	
 	public CreateClusterRequest() {
 		super("mse", "2019-05-31", "CreateCluster", "mse");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	private String clusterType;
+	private String clusterSpecification;
 
-	private String vSwitchId;
+	private String likeEngines;
 
 	private String memoryCapacity;
 
 	private String instanceCount;
 
-	private String vpcId;
-
-	private String netType;
+	private String requestPars;
 
 	private String diskCapacity;
 
-	private String requestPars;
-
 	private String cpu;
-
-	private String likeEngines;
 
 	private String appVersion;
 
 	private String diskType;
 
-	public String getClusterType() {
-		return this.clusterType;
+	private String clusterType;
+
+	private String vSwitchId;
+
+	private String vpcId;
+
+	private String netType;
+
+	public String getClusterSpecification() {
+		return this.clusterSpecification;
 	}
 
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-		if(clusterType != null){
-			putBodyParameter("ClusterType", clusterType);
+	public void setClusterSpecification(String clusterSpecification) {
+		this.clusterSpecification = clusterSpecification;
+		if(clusterSpecification != null){
+			putBodyParameter("ClusterSpecification", clusterSpecification);
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getLikeEngines() {
+		return this.likeEngines;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putBodyParameter("VSwitchId", vSwitchId);
+	public void setLikeEngines(String likeEngines) {
+		this.likeEngines = likeEngines;
+		if(likeEngines != null){
+			putBodyParameter("LikeEngines", likeEngines);
 		}
 	}
 
@@ -94,25 +103,14 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public String getRequestPars() {
+		return this.requestPars;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putBodyParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getNetType() {
-		return this.netType;
-	}
-
-	public void setNetType(String netType) {
-		this.netType = netType;
-		if(netType != null){
-			putBodyParameter("NetType", netType);
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putBodyParameter("RequestPars", requestPars);
 		}
 	}
 
@@ -127,17 +125,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
-	}
-
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putBodyParameter("RequestPars", requestPars);
-		}
-	}
-
 	public String getCpu() {
 		return this.cpu;
 	}
@@ -146,17 +133,6 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.cpu = cpu;
 		if(cpu != null){
 			putBodyParameter("Cpu", cpu);
-		}
-	}
-
-	public String getLikeEngines() {
-		return this.likeEngines;
-	}
-
-	public void setLikeEngines(String likeEngines) {
-		this.likeEngines = likeEngines;
-		if(likeEngines != null){
-			putBodyParameter("LikeEngines", likeEngines);
 		}
 	}
 
@@ -179,6 +155,50 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.diskType = diskType;
 		if(diskType != null){
 			putBodyParameter("DiskType", diskType);
+		}
+	}
+
+	public String getClusterType() {
+		return this.clusterType;
+	}
+
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+		if(clusterType != null){
+			putBodyParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putBodyParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putBodyParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getNetType() {
+		return this.netType;
+	}
+
+	public void setNetType(String netType) {
+		this.netType = netType;
+		if(netType != null){
+			putBodyParameter("NetType", netType);
 		}
 	}
 
