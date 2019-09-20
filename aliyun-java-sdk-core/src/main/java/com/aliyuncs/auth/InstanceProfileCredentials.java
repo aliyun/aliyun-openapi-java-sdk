@@ -39,11 +39,7 @@ public class InstanceProfileCredentials extends BasicSessionCredentials {
 
     public boolean shouldRefresh() {
         long now = System.currentTimeMillis();
-        if (now - lastFailedRefreshTime > refreshIntervalInMillSeconds) {
-            return true;
-        } else {
-            return false;
-        }
+        return now - lastFailedRefreshTime > refreshIntervalInMillSeconds;
     }
 
     public void setLastFailedRefreshTime() {
