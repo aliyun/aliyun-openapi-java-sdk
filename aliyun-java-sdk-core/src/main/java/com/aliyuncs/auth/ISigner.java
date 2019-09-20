@@ -5,10 +5,10 @@ import java.security.InvalidKeyException;
 @Deprecated
 public interface ISigner {
 
-    public String getSignerName();
+           String getSignerName();
 
-    public String getSignerVersion();
+           String getSignerVersion();
 
-    public String signString(String source, String accessSecret) throws InvalidKeyException, IllegalStateException;
+           String signString(String source, String accessSecret) throws InvalidKeyException, IllegalStateException;
 
 }

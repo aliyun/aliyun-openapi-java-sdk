@@ -5,7 +5,6 @@ import com.aliyuncs.profile.IClientProfile;
 public class StaticCredentialsProvider implements AlibabaCloudCredentialsProvider {
 
     private AlibabaCloudCredentials credentials = null;
-    private IClientProfile clientProfile = null;
 
     public StaticCredentialsProvider(AlibabaCloudCredentials credentials) {
         this.credentials = credentials;
@@ -13,8 +12,8 @@ public class StaticCredentialsProvider implements AlibabaCloudCredentialsProvide
 
     @SuppressWarnings("deprecation")
     public StaticCredentialsProvider(IClientProfile clientProfile) {
-        this.clientProfile = clientProfile;
-        Credential legacyCredential = this.clientProfile.getCredential();
+        IClientProfile clientProfile1 = clientProfile;
+        Credential legacyCredential = clientProfile1.getCredential();
         if (null != legacyCredential.getSecurityToken()) {
             this.credentials = new BasicSessionCredentials(legacyCredential.getAccessKeyId(), legacyCredential
                     .getAccessSecret(), legacyCredential.getSecurityToken());

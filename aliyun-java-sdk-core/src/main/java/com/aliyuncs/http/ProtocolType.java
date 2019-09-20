@@ -11,7 +11,7 @@ public enum ProtocolType {
 
     private final String protocol;
 
-    private ProtocolType(String protocol) {
+        ProtocolType(String protocol) {
         this.protocol = protocol;
     }
 
