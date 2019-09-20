@@ -276,7 +276,7 @@ public class JsonReader implements Reader {
         String key = preKey + "[" + index + "]";
         Object value = readJson(key);
 
-        while (token != ARRAY_END_TOKEN) {
+        while (!token.equals(ARRAY_END_TOKEN)) {
             map.put(preKey + ".Length", String.valueOf(index + 1));
             if (value instanceof String) {
                 map.put(key, String.valueOf(value));

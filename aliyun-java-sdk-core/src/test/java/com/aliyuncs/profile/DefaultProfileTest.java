@@ -22,7 +22,7 @@ public class DefaultProfileTest {
     public void testSingleDefaultProfile() {
         DefaultProfile profile1 = DefaultProfile.getProfile();
         DefaultProfile profile2 = DefaultProfile.getProfile();
-        assertTrue(profile2 == profile1);
+        assertTrue(profile2.equals(profile1));
     }
 
     @SuppressWarnings("deprecation")
