@@ -1,6 +1,9 @@
 2019-09-20 Version: 1.0.7
 - Generated 2019-03-27 for `dg`.
 
+2019-09-20 Version: 1.0.7
+- Generated 2019-03-27 for `dg`.
+
 2019-07-17 Version: 1.0.6
 - Generated 2019-03-27 for `dg`.
 
