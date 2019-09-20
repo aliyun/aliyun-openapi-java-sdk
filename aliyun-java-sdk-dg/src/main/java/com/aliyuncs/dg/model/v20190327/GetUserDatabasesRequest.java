@@ -16,6 +16,8 @@ package com.aliyuncs.dg.model.v20190327;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dg.Endpoint;
 
 /**
  * @author auto create
@@ -26,26 +28,22 @@ public class GetUserDatabasesRequest extends RpcAcsRequest<GetUserDatabasesRespo
 	public GetUserDatabasesRequest() {
 		super("dg", "2019-03-27", "GetUserDatabases", "dg");
 		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String pageSize;
 
 	private String searchKey;
 
-	private String gatewayId;
-
 	private String pageNumber;
 
-	public String getPageSize() {
-		return this.pageSize;
-	}
+	private String pageSize;
 
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize);
-		}
-	}
+	private String dbType;
+
+	private String gatewayId;
 
 	public String getSearchKey() {
 		return this.searchKey;
@@ -58,17 +56,6 @@ public class GetUserDatabasesRequest extends RpcAcsRequest<GetUserDatabasesRespo
 		}
 	}
 
-	public String getGatewayId() {
-		return this.gatewayId;
-	}
-
-	public void setGatewayId(String gatewayId) {
-		this.gatewayId = gatewayId;
-		if(gatewayId != null){
-			putBodyParameter("GatewayId", gatewayId);
-		}
-	}
-
 	public String getPageNumber() {
 		return this.pageNumber;
 	}
@@ -77,6 +64,39 @@ public class GetUserDatabasesRequest extends RpcAcsRequest<GetUserDatabasesRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getDbType() {
+		return this.dbType;
+	}
+
+	public void setDbType(String dbType) {
+		this.dbType = dbType;
+		if(dbType != null){
+			putBodyParameter("DbType", dbType);
+		}
+	}
+
+	public String getGatewayId() {
+		return this.gatewayId;
+	}
+
+	public void setGatewayId(String gatewayId) {
+		this.gatewayId = gatewayId;
+		if(gatewayId != null){
+			putBodyParameter("GatewayId", gatewayId);
 		}
 	}
 
