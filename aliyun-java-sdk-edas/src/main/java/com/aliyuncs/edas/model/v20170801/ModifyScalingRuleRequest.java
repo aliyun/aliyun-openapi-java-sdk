@@ -27,7 +27,7 @@ public class ModifyScalingRuleRequest extends RoaAcsRequest<ModifyScalingRuleRes
 	public ModifyScalingRuleRequest() {
 		super("Edas", "2017-08-01", "ModifyScalingRule", "edas");
 		setUriPattern("/pop/v5/app/scaling_rules2");
-		setMethod(MethodType.POST);
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
