@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeActiveOperationTaskResponseUnmarshaller {
 
-	public static DescribeActiveOperationTaskResponse unmarshall(DescribeActiveOperationTaskResponse describeActiveOperationTaskResponse, UnmarshallerContext context) {
+	public static DescribeActiveOperationTaskResponse unmarshall(DescribeActiveOperationTaskResponse describeActiveOperationTaskResponse, UnmarshallerContext _ctx) {
 		
-		describeActiveOperationTaskResponse.setRequestId(context.stringValue("DescribeActiveOperationTaskResponse.RequestId"));
-		describeActiveOperationTaskResponse.setTotalRecordCount(context.integerValue("DescribeActiveOperationTaskResponse.TotalRecordCount"));
-		describeActiveOperationTaskResponse.setPageSize(context.integerValue("DescribeActiveOperationTaskResponse.PageSize"));
-		describeActiveOperationTaskResponse.setPageNumber(context.integerValue("DescribeActiveOperationTaskResponse.PageNumber"));
+		describeActiveOperationTaskResponse.setRequestId(_ctx.stringValue("DescribeActiveOperationTaskResponse.RequestId"));
+		describeActiveOperationTaskResponse.setTotalRecordCount(_ctx.integerValue("DescribeActiveOperationTaskResponse.TotalRecordCount"));
+		describeActiveOperationTaskResponse.setPageSize(_ctx.integerValue("DescribeActiveOperationTaskResponse.PageSize"));
+		describeActiveOperationTaskResponse.setPageNumber(_ctx.integerValue("DescribeActiveOperationTaskResponse.PageNumber"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
-		for (int i = 0; i < context.lengthValue("DescribeActiveOperationTaskResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeActiveOperationTaskResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setId(context.integerValue("DescribeActiveOperationTaskResponse.Items["+ i +"].Id"));
-			itemsItem.setInsName(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].InsName"));
-			itemsItem.setDbType(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].DbType"));
-			itemsItem.setStartTime(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].StartTime"));
-			itemsItem.setSwitchTime(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].SwitchTime"));
-			itemsItem.setDeadline(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].Deadline"));
-			itemsItem.setStatus(context.integerValue("DescribeActiveOperationTaskResponse.Items["+ i +"].Status"));
-			itemsItem.setCreatedTime(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].CreatedTime"));
-			itemsItem.setModifiedTime(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].ModifiedTime"));
-			itemsItem.setResultInfo(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].ResultInfo"));
-			itemsItem.setPrepareInterval(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].PrepareInterval"));
-			itemsItem.setTaskParams(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].TaskParams"));
-			itemsItem.setTaskType(context.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].TaskType"));
+			itemsItem.setId(_ctx.integerValue("DescribeActiveOperationTaskResponse.Items["+ i +"].Id"));
+			itemsItem.setInsName(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].InsName"));
+			itemsItem.setDbType(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].DbType"));
+			itemsItem.setStartTime(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].StartTime"));
+			itemsItem.setSwitchTime(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].SwitchTime"));
+			itemsItem.setDeadline(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].Deadline"));
+			itemsItem.setStatus(_ctx.integerValue("DescribeActiveOperationTaskResponse.Items["+ i +"].Status"));
+			itemsItem.setCreatedTime(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].CreatedTime"));
+			itemsItem.setModifiedTime(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].ModifiedTime"));
+			itemsItem.setResultInfo(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].ResultInfo"));
+			itemsItem.setPrepareInterval(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].PrepareInterval"));
+			itemsItem.setTaskParams(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].TaskParams"));
+			itemsItem.setTaskType(_ctx.stringValue("DescribeActiveOperationTaskResponse.Items["+ i +"].TaskType"));
 
 			items.add(itemsItem);
 		}

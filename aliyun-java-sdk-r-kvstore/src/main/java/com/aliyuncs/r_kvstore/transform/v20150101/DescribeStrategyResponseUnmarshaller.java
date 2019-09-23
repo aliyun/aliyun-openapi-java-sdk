@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeStrategyResponseUnmarshaller {
 
-	public static DescribeStrategyResponse unmarshall(DescribeStrategyResponse describeStrategyResponse, UnmarshallerContext context) {
+	public static DescribeStrategyResponse unmarshall(DescribeStrategyResponse describeStrategyResponse, UnmarshallerContext _ctx) {
 		
-		describeStrategyResponse.setRequestId(context.stringValue("DescribeStrategyResponse.RequestId"));
-		describeStrategyResponse.setReplicaId(context.stringValue("DescribeStrategyResponse.ReplicaId"));
-		describeStrategyResponse.setRecoveryMode(context.stringValue("DescribeStrategyResponse.RecoveryMode"));
-		describeStrategyResponse.setVerificationMode(context.stringValue("DescribeStrategyResponse.VerificationMode"));
+		describeStrategyResponse.setRequestId(_ctx.stringValue("DescribeStrategyResponse.RequestId"));
+		describeStrategyResponse.setReplicaId(_ctx.stringValue("DescribeStrategyResponse.ReplicaId"));
+		describeStrategyResponse.setRecoveryMode(_ctx.stringValue("DescribeStrategyResponse.RecoveryMode"));
+		describeStrategyResponse.setVerificationMode(_ctx.stringValue("DescribeStrategyResponse.VerificationMode"));
 	 
 	 	return describeStrategyResponse;
 	}

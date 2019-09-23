@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonthlyServiceStatusDetailResponseUnmarshaller {
 
-	public static DescribeMonthlyServiceStatusDetailResponse unmarshall(DescribeMonthlyServiceStatusDetailResponse describeMonthlyServiceStatusDetailResponse, UnmarshallerContext context) {
+	public static DescribeMonthlyServiceStatusDetailResponse unmarshall(DescribeMonthlyServiceStatusDetailResponse describeMonthlyServiceStatusDetailResponse, UnmarshallerContext _ctx) {
 		
-		describeMonthlyServiceStatusDetailResponse.setRequestId(context.stringValue("DescribeMonthlyServiceStatusDetailResponse.RequestId"));
-		describeMonthlyServiceStatusDetailResponse.setInstanceId(context.stringValue("DescribeMonthlyServiceStatusDetailResponse.InstanceId"));
-		describeMonthlyServiceStatusDetailResponse.setUptimePct(context.floatValue("DescribeMonthlyServiceStatusDetailResponse.UptimePct"));
+		describeMonthlyServiceStatusDetailResponse.setRequestId(_ctx.stringValue("DescribeMonthlyServiceStatusDetailResponse.RequestId"));
+		describeMonthlyServiceStatusDetailResponse.setInstanceId(_ctx.stringValue("DescribeMonthlyServiceStatusDetailResponse.InstanceId"));
+		describeMonthlyServiceStatusDetailResponse.setUptimePct(_ctx.floatValue("DescribeMonthlyServiceStatusDetailResponse.UptimePct"));
 
 		List<AffectedInfo> affectedInfos = new ArrayList<AffectedInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeMonthlyServiceStatusDetailResponse.AffectedInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonthlyServiceStatusDetailResponse.AffectedInfos.Length"); i++) {
 			AffectedInfo affectedInfo = new AffectedInfo();
-			affectedInfo.setStartTime(context.stringValue("DescribeMonthlyServiceStatusDetailResponse.AffectedInfos["+ i +"].StartTime"));
-			affectedInfo.setEndTime(context.stringValue("DescribeMonthlyServiceStatusDetailResponse.AffectedInfos["+ i +"].EndTime"));
-			affectedInfo.setDescription(context.stringValue("DescribeMonthlyServiceStatusDetailResponse.AffectedInfos["+ i +"].Description"));
+			affectedInfo.setStartTime(_ctx.stringValue("DescribeMonthlyServiceStatusDetailResponse.AffectedInfos["+ i +"].StartTime"));
+			affectedInfo.setEndTime(_ctx.stringValue("DescribeMonthlyServiceStatusDetailResponse.AffectedInfos["+ i +"].EndTime"));
+			affectedInfo.setDescription(_ctx.stringValue("DescribeMonthlyServiceStatusDetailResponse.AffectedInfos["+ i +"].Description"));
 
 			affectedInfos.add(affectedInfo);
 		}

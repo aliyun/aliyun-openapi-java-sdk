@@ -141,6 +141,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String connectionMode;
 
+		private String vpcCloudInstanceId;
+
 		private List<Tag> tags;
 
 		public String getReplacateId() {
@@ -413,6 +415,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setConnectionMode(String connectionMode) {
 			this.connectionMode = connectionMode;
+		}
+
+		public String getVpcCloudInstanceId() {
+			return this.vpcCloudInstanceId;
+		}
+
+		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+			this.vpcCloudInstanceId = vpcCloudInstanceId;
 		}
 
 		public List<Tag> getTags() {

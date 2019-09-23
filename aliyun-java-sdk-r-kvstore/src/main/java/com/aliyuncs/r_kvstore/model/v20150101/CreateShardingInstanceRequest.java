@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,24 +25,23 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingInstanceResponse> {
 	
 	public CreateShardingInstanceRequest() {
-		super("R-kvstore", "2015-01-01", "CreateShardingInstance", "redisa");
+		super("R-kvstore", "2015-01-01", "CreateShardingInstance");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Integer shardStorageQuantity;
 
 	private Long resourceOwnerId;
 
-	private String nodeType;
-
 	private String couponNo;
 
 	private String networkType;
 
 	private String engineVersion;
-
-	private String instanceClass;
-
-	private Long capacity;
 
 	private String password;
 
@@ -50,25 +51,13 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 
 	private String incrementalBackupMode;
 
-	private String instanceType;
-
 	private String businessInfo;
 
 	private String period;
 
-	private String resourceOwnerAccount;
-
-	private String srcDBInstanceId;
-
-	private String ownerAccount;
-
 	private String backupId;
 
 	private Long ownerId;
-
-	private String token;
-
-	private Integer shardQuantity;
 
 	private String vSwitchId;
 
@@ -78,6 +67,30 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 
 	private String instanceName;
 
+	private String zoneId;
+
+	private Integer proxyQuantity;
+
+	private String proxyMode;
+
+	private String nodeType;
+
+	private String instanceClass;
+
+	private Long capacity;
+
+	private String instanceType;
+
+	private String resourceOwnerAccount;
+
+	private String srcDBInstanceId;
+
+	private String ownerAccount;
+
+	private String token;
+
+	private Integer shardQuantity;
+
 	private Integer shardReplicaQuantity;
 
 	private String architectureType;
@@ -86,15 +99,9 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 
 	private String redisManagerClass;
 
-	private String zoneId;
-
 	private String chargeType;
 
-	private Integer proxyQuantity;
-
 	private String config;
-
-	private String proxyMode;
 
 	public Integer getShardStorageQuantity() {
 		return this.shardStorageQuantity;
@@ -115,17 +122,6 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getNodeType() {
-		return this.nodeType;
-	}
-
-	public void setNodeType(String nodeType) {
-		this.nodeType = nodeType;
-		if(nodeType != null){
-			putQueryParameter("NodeType", nodeType);
 		}
 	}
 
@@ -159,28 +155,6 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
-		}
-	}
-
-	public String getInstanceClass() {
-		return this.instanceClass;
-	}
-
-	public void setInstanceClass(String instanceClass) {
-		this.instanceClass = instanceClass;
-		if(instanceClass != null){
-			putQueryParameter("InstanceClass", instanceClass);
-		}
-	}
-
-	public Long getCapacity() {
-		return this.capacity;
-	}
-
-	public void setCapacity(Long capacity) {
-		this.capacity = capacity;
-		if(capacity != null){
-			putQueryParameter("Capacity", capacity.toString());
 		}
 	}
 
@@ -247,17 +221,6 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
 	public String getBusinessInfo() {
 		return this.businessInfo;
 	}
@@ -280,39 +243,6 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getSrcDBInstanceId() {
-		return this.srcDBInstanceId;
-	}
-
-	public void setSrcDBInstanceId(String srcDBInstanceId) {
-		this.srcDBInstanceId = srcDBInstanceId;
-		if(srcDBInstanceId != null){
-			putQueryParameter("SrcDBInstanceId", srcDBInstanceId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getBackupId() {
 		return this.backupId;
 	}
@@ -332,28 +262,6 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
-		}
-	}
-
-	public Integer getShardQuantity() {
-		return this.shardQuantity;
-	}
-
-	public void setShardQuantity(Integer shardQuantity) {
-		this.shardQuantity = shardQuantity;
-		if(shardQuantity != null){
-			putQueryParameter("ShardQuantity", shardQuantity.toString());
 		}
 	}
 
@@ -401,6 +309,138 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 		}
 	}
 
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Integer getProxyQuantity() {
+		return this.proxyQuantity;
+	}
+
+	public void setProxyQuantity(Integer proxyQuantity) {
+		this.proxyQuantity = proxyQuantity;
+		if(proxyQuantity != null){
+			putQueryParameter("ProxyQuantity", proxyQuantity.toString());
+		}
+	}
+
+	public String getProxyMode() {
+		return this.proxyMode;
+	}
+
+	public void setProxyMode(String proxyMode) {
+		this.proxyMode = proxyMode;
+		if(proxyMode != null){
+			putQueryParameter("ProxyMode", proxyMode);
+		}
+	}
+
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putQueryParameter("NodeType", nodeType);
+		}
+	}
+
+	public String getInstanceClass() {
+		return this.instanceClass;
+	}
+
+	public void setInstanceClass(String instanceClass) {
+		this.instanceClass = instanceClass;
+		if(instanceClass != null){
+			putQueryParameter("InstanceClass", instanceClass);
+		}
+	}
+
+	public Long getCapacity() {
+		return this.capacity;
+	}
+
+	public void setCapacity(Long capacity) {
+		this.capacity = capacity;
+		if(capacity != null){
+			putQueryParameter("Capacity", capacity.toString());
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getSrcDBInstanceId() {
+		return this.srcDBInstanceId;
+	}
+
+	public void setSrcDBInstanceId(String srcDBInstanceId) {
+		this.srcDBInstanceId = srcDBInstanceId;
+		if(srcDBInstanceId != null){
+			putQueryParameter("SrcDBInstanceId", srcDBInstanceId);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putQueryParameter("Token", token);
+		}
+	}
+
+	public Integer getShardQuantity() {
+		return this.shardQuantity;
+	}
+
+	public void setShardQuantity(Integer shardQuantity) {
+		this.shardQuantity = shardQuantity;
+		if(shardQuantity != null){
+			putQueryParameter("ShardQuantity", shardQuantity.toString());
+		}
+	}
+
 	public Integer getShardReplicaQuantity() {
 		return this.shardReplicaQuantity;
 	}
@@ -445,17 +485,6 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	public String getChargeType() {
 		return this.chargeType;
 	}
@@ -467,17 +496,6 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 		}
 	}
 
-	public Integer getProxyQuantity() {
-		return this.proxyQuantity;
-	}
-
-	public void setProxyQuantity(Integer proxyQuantity) {
-		this.proxyQuantity = proxyQuantity;
-		if(proxyQuantity != null){
-			putQueryParameter("ProxyQuantity", proxyQuantity.toString());
-		}
-	}
-
 	public String getConfig() {
 		return this.config;
 	}
@@ -486,17 +504,6 @@ public class CreateShardingInstanceRequest extends RpcAcsRequest<CreateShardingI
 		this.config = config;
 		if(config != null){
 			putQueryParameter("Config", config);
-		}
-	}
-
-	public String getProxyMode() {
-		return this.proxyMode;
-	}
-
-	public void setProxyMode(String proxyMode) {
-		this.proxyMode = proxyMode;
-		if(proxyMode != null){
-			putQueryParameter("ProxyMode", proxyMode);
 		}
 	}
 

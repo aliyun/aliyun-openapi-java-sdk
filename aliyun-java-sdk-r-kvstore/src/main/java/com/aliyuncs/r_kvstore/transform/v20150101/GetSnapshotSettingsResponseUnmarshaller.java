@@ -20,17 +20,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetSnapshotSettingsResponseUnmarshaller {
 
-	public static GetSnapshotSettingsResponse unmarshall(GetSnapshotSettingsResponse getSnapshotSettingsResponse, UnmarshallerContext context) {
+	public static GetSnapshotSettingsResponse unmarshall(GetSnapshotSettingsResponse getSnapshotSettingsResponse, UnmarshallerContext _ctx) {
 		
-		getSnapshotSettingsResponse.setRequestId(context.stringValue("GetSnapshotSettingsResponse.RequestId"));
-		getSnapshotSettingsResponse.setInstanceId(context.stringValue("GetSnapshotSettingsResponse.InstanceId"));
-		getSnapshotSettingsResponse.setBeginHour(context.integerValue("GetSnapshotSettingsResponse.BeginHour"));
-		getSnapshotSettingsResponse.setEndHour(context.integerValue("GetSnapshotSettingsResponse.EndHour"));
-		getSnapshotSettingsResponse.setRetentionDay(context.integerValue("GetSnapshotSettingsResponse.RetentionDay"));
-		getSnapshotSettingsResponse.setMaxAutoSnapshots(context.integerValue("GetSnapshotSettingsResponse.MaxAutoSnapshots"));
-		getSnapshotSettingsResponse.setMaxManualSnapshots(context.integerValue("GetSnapshotSettingsResponse.MaxManualSnapshots"));
-		getSnapshotSettingsResponse.setDayList(context.integerValue("GetSnapshotSettingsResponse.DayList"));
-		getSnapshotSettingsResponse.setNextTime(context.stringValue("GetSnapshotSettingsResponse.NextTime"));
+		getSnapshotSettingsResponse.setRequestId(_ctx.stringValue("GetSnapshotSettingsResponse.RequestId"));
+		getSnapshotSettingsResponse.setInstanceId(_ctx.stringValue("GetSnapshotSettingsResponse.InstanceId"));
+		getSnapshotSettingsResponse.setBeginHour(_ctx.integerValue("GetSnapshotSettingsResponse.BeginHour"));
+		getSnapshotSettingsResponse.setEndHour(_ctx.integerValue("GetSnapshotSettingsResponse.EndHour"));
+		getSnapshotSettingsResponse.setRetentionDay(_ctx.integerValue("GetSnapshotSettingsResponse.RetentionDay"));
+		getSnapshotSettingsResponse.setMaxAutoSnapshots(_ctx.integerValue("GetSnapshotSettingsResponse.MaxAutoSnapshots"));
+		getSnapshotSettingsResponse.setMaxManualSnapshots(_ctx.integerValue("GetSnapshotSettingsResponse.MaxManualSnapshots"));
+		getSnapshotSettingsResponse.setDayList(_ctx.integerValue("GetSnapshotSettingsResponse.DayList"));
+		getSnapshotSettingsResponse.setNextTime(_ctx.stringValue("GetSnapshotSettingsResponse.NextTime"));
 	 
 	 	return getSnapshotSettingsResponse;
 	}

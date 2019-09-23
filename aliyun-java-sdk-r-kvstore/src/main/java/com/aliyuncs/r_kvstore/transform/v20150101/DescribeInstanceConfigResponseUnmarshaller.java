@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceConfigResponseUnmarshaller {
 
-	public static DescribeInstanceConfigResponse unmarshall(DescribeInstanceConfigResponse describeInstanceConfigResponse, UnmarshallerContext context) {
+	public static DescribeInstanceConfigResponse unmarshall(DescribeInstanceConfigResponse describeInstanceConfigResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceConfigResponse.setRequestId(context.stringValue("DescribeInstanceConfigResponse.RequestId"));
-		describeInstanceConfigResponse.setConfig(context.stringValue("DescribeInstanceConfigResponse.Config"));
+		describeInstanceConfigResponse.setRequestId(_ctx.stringValue("DescribeInstanceConfigResponse.RequestId"));
+		describeInstanceConfigResponse.setConfig(_ctx.stringValue("DescribeInstanceConfigResponse.Config"));
 	 
 	 	return describeInstanceConfigResponse;
 	}

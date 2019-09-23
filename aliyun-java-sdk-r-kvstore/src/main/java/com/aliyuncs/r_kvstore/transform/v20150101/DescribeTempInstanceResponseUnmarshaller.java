@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeTempInstanceResponseUnmarshaller {
 
-	public static DescribeTempInstanceResponse unmarshall(DescribeTempInstanceResponse describeTempInstanceResponse, UnmarshallerContext context) {
+	public static DescribeTempInstanceResponse unmarshall(DescribeTempInstanceResponse describeTempInstanceResponse, UnmarshallerContext _ctx) {
 		
-		describeTempInstanceResponse.setRequestId(context.stringValue("DescribeTempInstanceResponse.RequestId"));
+		describeTempInstanceResponse.setRequestId(_ctx.stringValue("DescribeTempInstanceResponse.RequestId"));
 
 		List<TempInstance> tempInstances = new ArrayList<TempInstance>();
-		for (int i = 0; i < context.lengthValue("DescribeTempInstanceResponse.TempInstances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeTempInstanceResponse.TempInstances.Length"); i++) {
 			TempInstance tempInstance = new TempInstance();
-			tempInstance.setInstanceId(context.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].InstanceId"));
-			tempInstance.setTempInstanceId(context.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].TempInstanceId"));
-			tempInstance.setSnapshotId(context.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].SnapshotId"));
-			tempInstance.setCreateTime(context.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].CreateTime"));
-			tempInstance.setDomain(context.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].Domain"));
-			tempInstance.setStatus(context.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].Status"));
-			tempInstance.setMemory(context.longValue("DescribeTempInstanceResponse.TempInstances["+ i +"].Memory"));
-			tempInstance.setExpireTime(context.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].ExpireTime"));
+			tempInstance.setInstanceId(_ctx.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].InstanceId"));
+			tempInstance.setTempInstanceId(_ctx.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].TempInstanceId"));
+			tempInstance.setSnapshotId(_ctx.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].SnapshotId"));
+			tempInstance.setCreateTime(_ctx.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].CreateTime"));
+			tempInstance.setDomain(_ctx.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].Domain"));
+			tempInstance.setStatus(_ctx.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].Status"));
+			tempInstance.setMemory(_ctx.longValue("DescribeTempInstanceResponse.TempInstances["+ i +"].Memory"));
+			tempInstance.setExpireTime(_ctx.stringValue("DescribeTempInstanceResponse.TempInstances["+ i +"].ExpireTime"));
 
 			tempInstances.add(tempInstance);
 		}

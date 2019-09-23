@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +25,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplicaDescriptionResponse> {
 	
 	public ModifyReplicaDescriptionRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyReplicaDescription");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String replicaDescription;
@@ -32,11 +39,11 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 
 	private String securityToken;
 
+	private String replicaId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String replicaId;
 
 	private Long ownerId;
 
@@ -92,6 +99,17 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 		}
 	}
 
+	public String getReplicaId() {
+		return this.replicaId;
+	}
+
+	public void setReplicaId(String replicaId) {
+		this.replicaId = replicaId;
+		if(replicaId != null){
+			putQueryParameter("ReplicaId", replicaId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -111,17 +129,6 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getReplicaId() {
-		return this.replicaId;
-	}
-
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
 		}
 	}
 

@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +25,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeRdsVSwitchsRequest extends RpcAcsRequest<DescribeRdsVSwitchsResponse> {
 	
 	public DescribeRdsVSwitchsRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeRdsVSwitchs", "redisa");
+		super("R-kvstore", "2015-01-01", "DescribeRdsVSwitchs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
@@ -34,11 +41,11 @@ public class DescribeRdsVSwitchsRequest extends RpcAcsRequest<DescribeRdsVSwitch
 
 	private String ownerAccount;
 
+	private Long ownerId;
+
 	private String vpcId;
 
 	private String zoneId;
-
-	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -103,6 +110,17 @@ public class DescribeRdsVSwitchsRequest extends RpcAcsRequest<DescribeRdsVSwitch
 		}
 	}
 
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -122,17 +140,6 @@ public class DescribeRdsVSwitchsRequest extends RpcAcsRequest<DescribeRdsVSwitch
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

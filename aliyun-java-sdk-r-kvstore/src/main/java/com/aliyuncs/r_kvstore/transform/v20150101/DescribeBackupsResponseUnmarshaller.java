@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeBackupsResponseUnmarshaller {
 
-	public static DescribeBackupsResponse unmarshall(DescribeBackupsResponse describeBackupsResponse, UnmarshallerContext context) {
+	public static DescribeBackupsResponse unmarshall(DescribeBackupsResponse describeBackupsResponse, UnmarshallerContext _ctx) {
 		
-		describeBackupsResponse.setRequestId(context.stringValue("DescribeBackupsResponse.RequestId"));
-		describeBackupsResponse.setPageNumber(context.integerValue("DescribeBackupsResponse.PageNumber"));
-		describeBackupsResponse.setPageSize(context.integerValue("DescribeBackupsResponse.PageSize"));
-		describeBackupsResponse.setTotalCount(context.integerValue("DescribeBackupsResponse.TotalCount"));
+		describeBackupsResponse.setRequestId(_ctx.stringValue("DescribeBackupsResponse.RequestId"));
+		describeBackupsResponse.setPageNumber(_ctx.integerValue("DescribeBackupsResponse.PageNumber"));
+		describeBackupsResponse.setPageSize(_ctx.integerValue("DescribeBackupsResponse.PageSize"));
+		describeBackupsResponse.setTotalCount(_ctx.integerValue("DescribeBackupsResponse.TotalCount"));
 
 		List<Backup> backups = new ArrayList<Backup>();
-		for (int i = 0; i < context.lengthValue("DescribeBackupsResponse.Backups.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeBackupsResponse.Backups.Length"); i++) {
 			Backup backup = new Backup();
-			backup.setBackupId(context.integerValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
-			backup.setBackupDBNames(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDBNames"));
-			backup.setBackupStatus(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupStatus"));
-			backup.setBackupStartTime(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupStartTime"));
-			backup.setBackupEndTime(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupEndTime"));
-			backup.setBackupType(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupType"));
-			backup.setBackupMode(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMode"));
-			backup.setBackupMethod(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMethod"));
-			backup.setBackupDownloadURL(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDownloadURL"));
-			backup.setBackupSize(context.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupSize"));
-			backup.setEngineVersion(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].EngineVersion"));
-			backup.setNodeInstanceId(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].NodeInstanceId"));
-			backup.setBackupIntranetDownloadURL(context.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupIntranetDownloadURL"));
+			backup.setBackupId(_ctx.integerValue("DescribeBackupsResponse.Backups["+ i +"].BackupId"));
+			backup.setBackupDBNames(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDBNames"));
+			backup.setBackupStatus(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupStatus"));
+			backup.setBackupStartTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupStartTime"));
+			backup.setBackupEndTime(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupEndTime"));
+			backup.setBackupType(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupType"));
+			backup.setBackupMode(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMode"));
+			backup.setBackupMethod(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupMethod"));
+			backup.setBackupDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupDownloadURL"));
+			backup.setBackupSize(_ctx.longValue("DescribeBackupsResponse.Backups["+ i +"].BackupSize"));
+			backup.setEngineVersion(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].EngineVersion"));
+			backup.setNodeInstanceId(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].NodeInstanceId"));
+			backup.setBackupIntranetDownloadURL(_ctx.stringValue("DescribeBackupsResponse.Backups["+ i +"].BackupIntranetDownloadURL"));
 
 			backups.add(backup);
 		}

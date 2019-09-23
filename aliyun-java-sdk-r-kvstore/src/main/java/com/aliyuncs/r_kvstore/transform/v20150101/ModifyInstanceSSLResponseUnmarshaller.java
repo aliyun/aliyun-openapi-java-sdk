@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyInstanceSSLResponseUnmarshaller {
 
-	public static ModifyInstanceSSLResponse unmarshall(ModifyInstanceSSLResponse modifyInstanceSSLResponse, UnmarshallerContext context) {
+	public static ModifyInstanceSSLResponse unmarshall(ModifyInstanceSSLResponse modifyInstanceSSLResponse, UnmarshallerContext _ctx) {
 		
-		modifyInstanceSSLResponse.setRequestId(context.stringValue("ModifyInstanceSSLResponse.RequestId"));
-		modifyInstanceSSLResponse.setInstanceId(context.stringValue("ModifyInstanceSSLResponse.InstanceId"));
-		modifyInstanceSSLResponse.setTaskId(context.stringValue("ModifyInstanceSSLResponse.TaskId"));
+		modifyInstanceSSLResponse.setRequestId(_ctx.stringValue("ModifyInstanceSSLResponse.RequestId"));
+		modifyInstanceSSLResponse.setInstanceId(_ctx.stringValue("ModifyInstanceSSLResponse.InstanceId"));
+		modifyInstanceSSLResponse.setTaskId(_ctx.stringValue("ModifyInstanceSSLResponse.TaskId"));
 	 
 	 	return modifyInstanceSSLResponse;
 	}

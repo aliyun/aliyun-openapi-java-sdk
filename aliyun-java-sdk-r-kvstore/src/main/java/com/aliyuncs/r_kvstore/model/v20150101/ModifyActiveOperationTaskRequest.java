@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,22 +25,27 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyActiveOperationTaskRequest extends RpcAcsRequest<ModifyActiveOperationTaskResponse> {
 	
 	public ModifyActiveOperationTaskRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyActiveOperationTask");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
 	private String securityToken;
 
+	private String switchTime;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String ids;
-
-	private String switchTime;
-
 	private Long ownerId;
+
+	private String ids;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -81,6 +88,17 @@ public class ModifyActiveOperationTaskRequest extends RpcAcsRequest<ModifyActive
 		}
 	}
 
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -103,28 +121,6 @@ public class ModifyActiveOperationTaskRequest extends RpcAcsRequest<ModifyActive
 		}
 	}
 
-	public String getIds() {
-		return this.ids;
-	}
-
-	public void setIds(String ids) {
-		this.ids = ids;
-		if(ids != null){
-			putQueryParameter("Ids", ids);
-		}
-	}
-
-	public String getSwitchTime() {
-		return this.switchTime;
-	}
-
-	public void setSwitchTime(String switchTime) {
-		this.switchTime = switchTime;
-		if(switchTime != null){
-			putQueryParameter("SwitchTime", switchTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -133,6 +129,17 @@ public class ModifyActiveOperationTaskRequest extends RpcAcsRequest<ModifyActive
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getIds() {
+		return this.ids;
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
 		}
 	}
 

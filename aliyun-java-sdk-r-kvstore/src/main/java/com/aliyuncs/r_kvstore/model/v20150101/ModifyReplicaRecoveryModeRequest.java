@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,20 +25,25 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReplicaRecoveryModeRequest extends RpcAcsRequest<ModifyReplicaRecoveryModeResponse> {
 	
 	public ModifyReplicaRecoveryModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyReplicaRecoveryMode", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyReplicaRecoveryMode");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
 	private String securityToken;
 
-	private String resourceOwnerAccount;
-
 	private String recoveryMode;
 
-	private String ownerAccount;
-
 	private String replicaId;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
 
 	private Long ownerId;
 
@@ -81,17 +88,6 @@ public class ModifyReplicaRecoveryModeRequest extends RpcAcsRequest<ModifyReplic
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getRecoveryMode() {
 		return this.recoveryMode;
 	}
@@ -103,17 +99,6 @@ public class ModifyReplicaRecoveryModeRequest extends RpcAcsRequest<ModifyReplic
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
 	public String getReplicaId() {
 		return this.replicaId;
 	}
@@ -122,6 +107,28 @@ public class ModifyReplicaRecoveryModeRequest extends RpcAcsRequest<ModifyReplic
 		this.replicaId = replicaId;
 		if(replicaId != null){
 			putQueryParameter("ReplicaId", replicaId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 

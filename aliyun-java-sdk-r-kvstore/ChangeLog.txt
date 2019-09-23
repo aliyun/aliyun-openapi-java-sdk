@@ -1,3 +1,6 @@
+2019-09-23 Version: 2.0.8
+- Generated 2015-01-01 for `R-kvstore`.
+
 2019-06-13 Version: 2.1.1
 - Generated 2015-01-01 for `R-kvstore`
 

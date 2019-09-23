@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,22 +25,27 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeMonthlyServiceStatusRequest extends RpcAcsRequest<DescribeMonthlyServiceStatusResponse> {
 	
 	public DescribeMonthlyServiceStatusRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatus", "redisa");
+		super("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatus");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
-
-	private String month;
 
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
-	private String instanceIds;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String month;
+
+	private String instanceIds;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,17 +55,6 @@ public class DescribeMonthlyServiceStatusRequest extends RpcAcsRequest<DescribeM
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getMonth() {
-		return this.month;
-	}
-
-	public void setMonth(String month) {
-		this.month = month;
-		if(month != null){
-			putQueryParameter("Month", month);
 		}
 	}
 
@@ -103,17 +99,6 @@ public class DescribeMonthlyServiceStatusRequest extends RpcAcsRequest<DescribeM
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -133,6 +118,28 @@ public class DescribeMonthlyServiceStatusRequest extends RpcAcsRequest<DescribeM
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getMonth() {
+		return this.month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+		if(month != null){
+			putQueryParameter("Month", month);
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 

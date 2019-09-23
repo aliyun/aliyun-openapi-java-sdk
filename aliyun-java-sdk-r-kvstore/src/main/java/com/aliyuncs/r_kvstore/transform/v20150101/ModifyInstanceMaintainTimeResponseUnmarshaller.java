@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyInstanceMaintainTimeResponseUnmarshaller {
 
-	public static ModifyInstanceMaintainTimeResponse unmarshall(ModifyInstanceMaintainTimeResponse modifyInstanceMaintainTimeResponse, UnmarshallerContext context) {
+	public static ModifyInstanceMaintainTimeResponse unmarshall(ModifyInstanceMaintainTimeResponse modifyInstanceMaintainTimeResponse, UnmarshallerContext _ctx) {
 		
-		modifyInstanceMaintainTimeResponse.setRequestId(context.stringValue("ModifyInstanceMaintainTimeResponse.RequestId"));
+		modifyInstanceMaintainTimeResponse.setRequestId(_ctx.stringValue("ModifyInstanceMaintainTimeResponse.RequestId"));
 	 
 	 	return modifyInstanceMaintainTimeResponse;
 	}

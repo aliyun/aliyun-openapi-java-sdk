@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,24 +25,27 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogConfigResponse> {
 	
 	public ModifyAuditLogConfigRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyAuditLogConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
 	private String securityToken;
 
-	private String resourceOwnerAccount;
+	private String retention;
 
-	private String auditCommand;
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String retention;
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -50,17 +55,6 @@ public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogCon
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -94,6 +88,17 @@ public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogCon
 		}
 	}
 
+	public String getRetention() {
+		return this.retention;
+	}
+
+	public void setRetention(String retention) {
+		this.retention = retention;
+		if(retention != null){
+			putQueryParameter("Retention", retention);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -102,17 +107,6 @@ public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogCon
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getAuditCommand() {
-		return this.auditCommand;
-	}
-
-	public void setAuditCommand(String auditCommand) {
-		this.auditCommand = auditCommand;
-		if(auditCommand != null){
-			putQueryParameter("AuditCommand", auditCommand);
 		}
 	}
 
@@ -138,14 +132,14 @@ public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogCon
 		}
 	}
 
-	public String getRetention() {
-		return this.retention;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setRetention(String retention) {
-		this.retention = retention;
-		if(retention != null){
-			putQueryParameter("Retention", retention);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

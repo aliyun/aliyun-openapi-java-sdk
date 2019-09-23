@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +25,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class RestoreSnapshotRequest extends RpcAcsRequest<RestoreSnapshotResponse> {
 	
 	public RestoreSnapshotRequest() {
-		super("R-kvstore", "2015-01-01", "RestoreSnapshot", "redisa");
+		super("R-kvstore", "2015-01-01", "RestoreSnapshot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;

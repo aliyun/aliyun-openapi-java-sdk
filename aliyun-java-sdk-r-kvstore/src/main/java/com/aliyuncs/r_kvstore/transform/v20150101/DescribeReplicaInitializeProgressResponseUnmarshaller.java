@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeReplicaInitializeProgressResponseUnmarshaller {
 
-	public static DescribeReplicaInitializeProgressResponse unmarshall(DescribeReplicaInitializeProgressResponse describeReplicaInitializeProgressResponse, UnmarshallerContext context) {
+	public static DescribeReplicaInitializeProgressResponse unmarshall(DescribeReplicaInitializeProgressResponse describeReplicaInitializeProgressResponse, UnmarshallerContext _ctx) {
 		
-		describeReplicaInitializeProgressResponse.setRequestId(context.stringValue("DescribeReplicaInitializeProgressResponse.RequestId"));
+		describeReplicaInitializeProgressResponse.setRequestId(_ctx.stringValue("DescribeReplicaInitializeProgressResponse.RequestId"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
-		for (int i = 0; i < context.lengthValue("DescribeReplicaInitializeProgressResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeReplicaInitializeProgressResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setReplicaId(context.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].ReplicaId"));
-			itemsItem.setStatus(context.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].Status"));
-			itemsItem.setProgress(context.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].Progress"));
-			itemsItem.setFinishTime(context.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].FinishTime"));
-			itemsItem.setCurrentStep(context.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].CurrentStep"));
+			itemsItem.setReplicaId(_ctx.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].ReplicaId"));
+			itemsItem.setStatus(_ctx.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].Status"));
+			itemsItem.setProgress(_ctx.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].Progress"));
+			itemsItem.setFinishTime(_ctx.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].FinishTime"));
+			itemsItem.setCurrentStep(_ctx.stringValue("DescribeReplicaInitializeProgressResponse.Items["+ i +"].CurrentStep"));
 
 			items.add(itemsItem);
 		}

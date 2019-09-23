@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeReplicaConflictInfoResponseUnmarshaller {
 
-	public static DescribeReplicaConflictInfoResponse unmarshall(DescribeReplicaConflictInfoResponse describeReplicaConflictInfoResponse, UnmarshallerContext context) {
+	public static DescribeReplicaConflictInfoResponse unmarshall(DescribeReplicaConflictInfoResponse describeReplicaConflictInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeReplicaConflictInfoResponse.setRequestId(context.stringValue("DescribeReplicaConflictInfoResponse.RequestId"));
-		describeReplicaConflictInfoResponse.setReplicaId(context.stringValue("DescribeReplicaConflictInfoResponse.ReplicaId"));
-		describeReplicaConflictInfoResponse.setPagNumber(context.integerValue("DescribeReplicaConflictInfoResponse.PagNumber"));
-		describeReplicaConflictInfoResponse.setPageRecordCount(context.integerValue("DescribeReplicaConflictInfoResponse.PageRecordCount"));
-		describeReplicaConflictInfoResponse.setTotalRecordCount(context.integerValue("DescribeReplicaConflictInfoResponse.TotalRecordCount"));
+		describeReplicaConflictInfoResponse.setRequestId(_ctx.stringValue("DescribeReplicaConflictInfoResponse.RequestId"));
+		describeReplicaConflictInfoResponse.setReplicaId(_ctx.stringValue("DescribeReplicaConflictInfoResponse.ReplicaId"));
+		describeReplicaConflictInfoResponse.setPagNumber(_ctx.integerValue("DescribeReplicaConflictInfoResponse.PagNumber"));
+		describeReplicaConflictInfoResponse.setPageRecordCount(_ctx.integerValue("DescribeReplicaConflictInfoResponse.PageRecordCount"));
+		describeReplicaConflictInfoResponse.setTotalRecordCount(_ctx.integerValue("DescribeReplicaConflictInfoResponse.TotalRecordCount"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
-		for (int i = 0; i < context.lengthValue("DescribeReplicaConflictInfoResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeReplicaConflictInfoResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setSourceInstanceId(context.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].SourceInstanceId"));
-			itemsItem.setDestinationInstanceId(context.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].DestinationInstanceId"));
-			itemsItem.setOccurTime(context.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].OccurTime"));
-			itemsItem.setDetailInfo(context.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].DetailInfo"));
-			itemsItem.setConfictKey(context.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].ConfictKey"));
-			itemsItem.setConfictReason(context.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].ConfictReason"));
-			itemsItem.setDatabaseName(context.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].DatabaseName"));
-			itemsItem.setRecoveryMode(context.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].RecoveryMode"));
-			itemsItem.setConflictGtid(context.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].ConflictGtid"));
+			itemsItem.setSourceInstanceId(_ctx.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].SourceInstanceId"));
+			itemsItem.setDestinationInstanceId(_ctx.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].DestinationInstanceId"));
+			itemsItem.setOccurTime(_ctx.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].OccurTime"));
+			itemsItem.setDetailInfo(_ctx.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].DetailInfo"));
+			itemsItem.setConfictKey(_ctx.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].ConfictKey"));
+			itemsItem.setConfictReason(_ctx.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].ConfictReason"));
+			itemsItem.setDatabaseName(_ctx.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].DatabaseName"));
+			itemsItem.setRecoveryMode(_ctx.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].RecoveryMode"));
+			itemsItem.setConflictGtid(_ctx.stringValue("DescribeReplicaConflictInfoResponse.Items["+ i +"].ConflictGtid"));
 
 			items.add(itemsItem);
 		}

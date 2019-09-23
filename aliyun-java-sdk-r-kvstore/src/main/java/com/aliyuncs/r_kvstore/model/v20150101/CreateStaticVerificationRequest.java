@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,24 +25,29 @@ import com.aliyuncs.RpcAcsRequest;
 public class CreateStaticVerificationRequest extends RpcAcsRequest<CreateStaticVerificationResponse> {
 	
 	public CreateStaticVerificationRequest() {
-		super("R-kvstore", "2015-01-01", "CreateStaticVerification", "redisa");
+		super("R-kvstore", "2015-01-01", "CreateStaticVerification");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
 	private String securityToken;
 
+	private String replicaId;
+
+	private String sourceInstanceId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String replicaId;
+	private Long ownerId;
 
 	private String destinationInstanceId;
-
-	private String sourceInstanceId;
-
-	private Long ownerId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -83,6 +90,28 @@ public class CreateStaticVerificationRequest extends RpcAcsRequest<CreateStaticV
 		}
 	}
 
+	public String getReplicaId() {
+		return this.replicaId;
+	}
+
+	public void setReplicaId(String replicaId) {
+		this.replicaId = replicaId;
+		if(replicaId != null){
+			putQueryParameter("ReplicaId", replicaId);
+		}
+	}
+
+	public String getSourceInstanceId() {
+		return this.sourceInstanceId;
+	}
+
+	public void setSourceInstanceId(String sourceInstanceId) {
+		this.sourceInstanceId = sourceInstanceId;
+		if(sourceInstanceId != null){
+			putQueryParameter("SourceInstanceId", sourceInstanceId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -105,14 +134,14 @@ public class CreateStaticVerificationRequest extends RpcAcsRequest<CreateStaticV
 		}
 	}
 
-	public String getReplicaId() {
-		return this.replicaId;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -124,28 +153,6 @@ public class CreateStaticVerificationRequest extends RpcAcsRequest<CreateStaticV
 		this.destinationInstanceId = destinationInstanceId;
 		if(destinationInstanceId != null){
 			putQueryParameter("DestinationInstanceId", destinationInstanceId);
-		}
-	}
-
-	public String getSourceInstanceId() {
-		return this.sourceInstanceId;
-	}
-
-	public void setSourceInstanceId(String sourceInstanceId) {
-		this.sourceInstanceId = sourceInstanceId;
-		if(sourceInstanceId != null){
-			putQueryParameter("SourceInstanceId", sourceInstanceId);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

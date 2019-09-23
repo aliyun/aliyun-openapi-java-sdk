@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyInstanceNetExpireTimeResponseUnmarshaller {
 
-	public static ModifyInstanceNetExpireTimeResponse unmarshall(ModifyInstanceNetExpireTimeResponse modifyInstanceNetExpireTimeResponse, UnmarshallerContext context) {
+	public static ModifyInstanceNetExpireTimeResponse unmarshall(ModifyInstanceNetExpireTimeResponse modifyInstanceNetExpireTimeResponse, UnmarshallerContext _ctx) {
 		
-		modifyInstanceNetExpireTimeResponse.setRequestId(context.stringValue("ModifyInstanceNetExpireTimeResponse.RequestId"));
-		modifyInstanceNetExpireTimeResponse.setInstanceId(context.stringValue("ModifyInstanceNetExpireTimeResponse.InstanceId"));
+		modifyInstanceNetExpireTimeResponse.setRequestId(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.RequestId"));
+		modifyInstanceNetExpireTimeResponse.setInstanceId(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.InstanceId"));
 
 		List<NetInfoItem> netInfoItems = new ArrayList<NetInfoItem>();
-		for (int i = 0; i < context.lengthValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems.Length"); i++) {
 			NetInfoItem netInfoItem = new NetInfoItem();
-			netInfoItem.setDBInstanceNetType(context.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].DBInstanceNetType"));
-			netInfoItem.setPort(context.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].Port"));
-			netInfoItem.setExpiredTime(context.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].ExpiredTime"));
-			netInfoItem.setConnectionString(context.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].ConnectionString"));
-			netInfoItem.setIPAddress(context.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].IPAddress"));
+			netInfoItem.setDBInstanceNetType(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].DBInstanceNetType"));
+			netInfoItem.setPort(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].Port"));
+			netInfoItem.setExpiredTime(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].ExpiredTime"));
+			netInfoItem.setConnectionString(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].ConnectionString"));
+			netInfoItem.setIPAddress(_ctx.stringValue("ModifyInstanceNetExpireTimeResponse.NetInfoItems["+ i +"].IPAddress"));
 
 			netInfoItems.add(netInfoItem);
 		}

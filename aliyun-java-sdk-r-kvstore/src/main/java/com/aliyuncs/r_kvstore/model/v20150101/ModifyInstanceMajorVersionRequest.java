@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,16 +25,21 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceMajorVersionRequest extends RpcAcsRequest<ModifyInstanceMajorVersionResponse> {
 	
 	public ModifyInstanceMajorVersionRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
-	private String majorVersion;
+	private String effectTime;
 
 	private String securityToken;
+
+	private String majorVersion;
 
 	private String resourceOwnerAccount;
 
@@ -40,7 +47,7 @@ public class ModifyInstanceMajorVersionRequest extends RpcAcsRequest<ModifyInsta
 
 	private Long ownerId;
 
-	private String effectTime;
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,25 +60,14 @@ public class ModifyInstanceMajorVersionRequest extends RpcAcsRequest<ModifyInsta
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getEffectTime() {
+		return this.effectTime;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getMajorVersion() {
-		return this.majorVersion;
-	}
-
-	public void setMajorVersion(String majorVersion) {
-		this.majorVersion = majorVersion;
-		if(majorVersion != null){
-			putQueryParameter("MajorVersion", majorVersion);
+	public void setEffectTime(String effectTime) {
+		this.effectTime = effectTime;
+		if(effectTime != null){
+			putQueryParameter("EffectTime", effectTime);
 		}
 	}
 
@@ -102,6 +98,17 @@ public class ModifyInstanceMajorVersionRequest extends RpcAcsRequest<ModifyInsta
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getMajorVersion() {
+		return this.majorVersion;
+	}
+
+	public void setMajorVersion(String majorVersion) {
+		this.majorVersion = majorVersion;
+		if(majorVersion != null){
+			putQueryParameter("MajorVersion", majorVersion);
 		}
 	}
 
@@ -138,14 +145,14 @@ public class ModifyInstanceMajorVersionRequest extends RpcAcsRequest<ModifyInsta
 		}
 	}
 
-	public String getEffectTime() {
-		return this.effectTime;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setEffectTime(String effectTime) {
-		this.effectTime = effectTime;
-		if(effectTime != null){
-			putQueryParameter("EffectTime", effectTime);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

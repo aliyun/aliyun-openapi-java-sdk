@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeActiveOperationTaskRegionResponseUnmarshaller {
 
-	public static DescribeActiveOperationTaskRegionResponse unmarshall(DescribeActiveOperationTaskRegionResponse describeActiveOperationTaskRegionResponse, UnmarshallerContext context) {
+	public static DescribeActiveOperationTaskRegionResponse unmarshall(DescribeActiveOperationTaskRegionResponse describeActiveOperationTaskRegionResponse, UnmarshallerContext _ctx) {
 		
-		describeActiveOperationTaskRegionResponse.setRequestId(context.stringValue("DescribeActiveOperationTaskRegionResponse.RequestId"));
+		describeActiveOperationTaskRegionResponse.setRequestId(_ctx.stringValue("DescribeActiveOperationTaskRegionResponse.RequestId"));
 
 		List<Items> regionList = new ArrayList<Items>();
-		for (int i = 0; i < context.lengthValue("DescribeActiveOperationTaskRegionResponse.RegionList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeActiveOperationTaskRegionResponse.RegionList.Length"); i++) {
 			Items items = new Items();
-			items.setRegion(context.stringValue("DescribeActiveOperationTaskRegionResponse.RegionList["+ i +"].Region"));
-			items.setCount(context.integerValue("DescribeActiveOperationTaskRegionResponse.RegionList["+ i +"].Count"));
+			items.setRegion(_ctx.stringValue("DescribeActiveOperationTaskRegionResponse.RegionList["+ i +"].Region"));
+			items.setCount(_ctx.integerValue("DescribeActiveOperationTaskRegionResponse.RegionList["+ i +"].Count"));
 
 			regionList.add(items);
 		}

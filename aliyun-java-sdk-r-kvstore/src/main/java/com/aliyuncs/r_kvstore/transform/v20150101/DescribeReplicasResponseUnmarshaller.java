@@ -25,33 +25,33 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeReplicasResponseUnmarshaller {
 
-	public static DescribeReplicasResponse unmarshall(DescribeReplicasResponse describeReplicasResponse, UnmarshallerContext context) {
+	public static DescribeReplicasResponse unmarshall(DescribeReplicasResponse describeReplicasResponse, UnmarshallerContext _ctx) {
 		
-		describeReplicasResponse.setRequestId(context.stringValue("DescribeReplicasResponse.RequestId"));
-		describeReplicasResponse.setPageNumber(context.stringValue("DescribeReplicasResponse.PageNumber"));
-		describeReplicasResponse.setTotalRecordCount(context.integerValue("DescribeReplicasResponse.TotalRecordCount"));
-		describeReplicasResponse.setPageRecordCount(context.integerValue("DescribeReplicasResponse.PageRecordCount"));
+		describeReplicasResponse.setRequestId(_ctx.stringValue("DescribeReplicasResponse.RequestId"));
+		describeReplicasResponse.setPageNumber(_ctx.stringValue("DescribeReplicasResponse.PageNumber"));
+		describeReplicasResponse.setTotalRecordCount(_ctx.integerValue("DescribeReplicasResponse.TotalRecordCount"));
+		describeReplicasResponse.setPageRecordCount(_ctx.integerValue("DescribeReplicasResponse.PageRecordCount"));
 
 		List<Items> replicas = new ArrayList<Items>();
-		for (int i = 0; i < context.lengthValue("DescribeReplicasResponse.Replicas.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeReplicasResponse.Replicas.Length"); i++) {
 			Items items = new Items();
-			items.setReplicaId(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaId"));
-			items.setReplicaDescription(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaDescription"));
-			items.setReplicaStatus(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaStatus"));
-			items.setReplicaMode(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaMode"));
-			items.setDomainMode(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DomainMode"));
+			items.setReplicaId(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaId"));
+			items.setReplicaDescription(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaDescription"));
+			items.setReplicaStatus(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaStatus"));
+			items.setReplicaMode(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].ReplicaMode"));
+			items.setDomainMode(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DomainMode"));
 
 			List<Items1> dBInstances = new ArrayList<Items1>();
-			for (int j = 0; j < context.lengthValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances.Length"); j++) {
 				Items1 items1 = new Items1();
-				items1.setDBInstanceId(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceId"));
-				items1.setRole(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].Role"));
-				items1.setReadWriteType(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].ReadWriteType"));
-				items1.setInstanceNetworkType(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].InstanceNetworkType"));
-				items1.setDBInstanceDescription(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceDescription"));
-				items1.setDBInstanceStatus(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceStatus"));
-				items1.setEngine(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].Engine"));
-				items1.setRegionId(context.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].RegionId"));
+				items1.setDBInstanceId(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceId"));
+				items1.setRole(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].Role"));
+				items1.setReadWriteType(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].ReadWriteType"));
+				items1.setInstanceNetworkType(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].InstanceNetworkType"));
+				items1.setDBInstanceDescription(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceDescription"));
+				items1.setDBInstanceStatus(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceStatus"));
+				items1.setEngine(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].Engine"));
+				items1.setRegionId(_ctx.stringValue("DescribeReplicasResponse.Replicas["+ i +"].DBInstances["+ j +"].RegionId"));
 
 				dBInstances.add(items1);
 			}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RevokeAccountPrivilegeResponseUnmarshaller {
 
-	public static RevokeAccountPrivilegeResponse unmarshall(RevokeAccountPrivilegeResponse revokeAccountPrivilegeResponse, UnmarshallerContext context) {
+	public static RevokeAccountPrivilegeResponse unmarshall(RevokeAccountPrivilegeResponse revokeAccountPrivilegeResponse, UnmarshallerContext _ctx) {
 		
-		revokeAccountPrivilegeResponse.setRequestId(context.stringValue("RevokeAccountPrivilegeResponse.RequestId"));
+		revokeAccountPrivilegeResponse.setRequestId(_ctx.stringValue("RevokeAccountPrivilegeResponse.RequestId"));
 	 
 	 	return revokeAccountPrivilegeResponse;
 	}

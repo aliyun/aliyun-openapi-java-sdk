@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class VerifyPasswordResponseUnmarshaller {
 
-	public static VerifyPasswordResponse unmarshall(VerifyPasswordResponse verifyPasswordResponse, UnmarshallerContext context) {
+	public static VerifyPasswordResponse unmarshall(VerifyPasswordResponse verifyPasswordResponse, UnmarshallerContext _ctx) {
 		
-		verifyPasswordResponse.setRequestId(context.stringValue("VerifyPasswordResponse.RequestId"));
+		verifyPasswordResponse.setRequestId(_ctx.stringValue("VerifyPasswordResponse.RequestId"));
 	 
 	 	return verifyPasswordResponse;
 	}

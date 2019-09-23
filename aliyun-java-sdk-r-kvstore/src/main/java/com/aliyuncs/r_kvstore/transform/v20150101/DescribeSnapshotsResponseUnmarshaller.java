@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeSnapshotsResponseUnmarshaller {
 
-	public static DescribeSnapshotsResponse unmarshall(DescribeSnapshotsResponse describeSnapshotsResponse, UnmarshallerContext context) {
+	public static DescribeSnapshotsResponse unmarshall(DescribeSnapshotsResponse describeSnapshotsResponse, UnmarshallerContext _ctx) {
 		
-		describeSnapshotsResponse.setRequestId(context.stringValue("DescribeSnapshotsResponse.RequestId"));
+		describeSnapshotsResponse.setRequestId(_ctx.stringValue("DescribeSnapshotsResponse.RequestId"));
 
 		List<Snapshot> snapshots = new ArrayList<Snapshot>();
-		for (int i = 0; i < context.lengthValue("DescribeSnapshotsResponse.Snapshots.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotsResponse.Snapshots.Length"); i++) {
 			Snapshot snapshot = new Snapshot();
-			snapshot.setSnapshotId(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
-			snapshot.setSnapshotName(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
-			snapshot.setInstanceId(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].InstanceId"));
-			snapshot.setCreateTime(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].CreateTime"));
-			snapshot.setMemory(context.longValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Memory"));
-			snapshot.setRdbSize(context.longValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RdbSize"));
-			snapshot.setStatus(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Status"));
-			snapshot.setType(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Type"));
-			snapshot.setOssDownloadInPath(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].OssDownloadInPath"));
-			snapshot.setOssDownloadOutPath(context.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].OssDownloadOutPath"));
+			snapshot.setSnapshotId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotId"));
+			snapshot.setSnapshotName(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotName"));
+			snapshot.setInstanceId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].InstanceId"));
+			snapshot.setCreateTime(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].CreateTime"));
+			snapshot.setMemory(_ctx.longValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Memory"));
+			snapshot.setRdbSize(_ctx.longValue("DescribeSnapshotsResponse.Snapshots["+ i +"].RdbSize"));
+			snapshot.setStatus(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Status"));
+			snapshot.setType(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Type"));
+			snapshot.setOssDownloadInPath(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].OssDownloadInPath"));
+			snapshot.setOssDownloadOutPath(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].OssDownloadOutPath"));
 
 			snapshots.add(snapshot);
 		}

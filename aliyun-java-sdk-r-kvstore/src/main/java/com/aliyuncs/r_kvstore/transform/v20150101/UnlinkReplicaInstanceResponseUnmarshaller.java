@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UnlinkReplicaInstanceResponseUnmarshaller {
 
-	public static UnlinkReplicaInstanceResponse unmarshall(UnlinkReplicaInstanceResponse unlinkReplicaInstanceResponse, UnmarshallerContext context) {
+	public static UnlinkReplicaInstanceResponse unmarshall(UnlinkReplicaInstanceResponse unlinkReplicaInstanceResponse, UnmarshallerContext _ctx) {
 		
-		unlinkReplicaInstanceResponse.setRequestId(context.stringValue("UnlinkReplicaInstanceResponse.RequestId"));
-		unlinkReplicaInstanceResponse.setInstanceId(context.stringValue("UnlinkReplicaInstanceResponse.InstanceId"));
-		unlinkReplicaInstanceResponse.setWorkflowId(context.stringValue("UnlinkReplicaInstanceResponse.WorkflowId"));
-		unlinkReplicaInstanceResponse.setReplicaId(context.stringValue("UnlinkReplicaInstanceResponse.ReplicaId"));
+		unlinkReplicaInstanceResponse.setRequestId(_ctx.stringValue("UnlinkReplicaInstanceResponse.RequestId"));
+		unlinkReplicaInstanceResponse.setInstanceId(_ctx.stringValue("UnlinkReplicaInstanceResponse.InstanceId"));
+		unlinkReplicaInstanceResponse.setWorkflowId(_ctx.stringValue("UnlinkReplicaInstanceResponse.WorkflowId"));
+		unlinkReplicaInstanceResponse.setReplicaId(_ctx.stringValue("UnlinkReplicaInstanceResponse.ReplicaId"));
 	 
 	 	return unlinkReplicaInstanceResponse;
 	}

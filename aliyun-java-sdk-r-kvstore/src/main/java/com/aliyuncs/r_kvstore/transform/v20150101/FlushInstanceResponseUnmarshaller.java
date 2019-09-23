@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class FlushInstanceResponseUnmarshaller {
 
-	public static FlushInstanceResponse unmarshall(FlushInstanceResponse flushInstanceResponse, UnmarshallerContext context) {
+	public static FlushInstanceResponse unmarshall(FlushInstanceResponse flushInstanceResponse, UnmarshallerContext _ctx) {
 		
-		flushInstanceResponse.setRequestId(context.stringValue("FlushInstanceResponse.RequestId"));
+		flushInstanceResponse.setRequestId(_ctx.stringValue("FlushInstanceResponse.RequestId"));
 	 
 	 	return flushInstanceResponse;
 	}

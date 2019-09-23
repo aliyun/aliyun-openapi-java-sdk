@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,7 +25,12 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyGuardDomainModeRequest extends RpcAcsRequest<ModifyGuardDomainModeResponse> {
 	
 	public ModifyGuardDomainModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyGuardDomainMode", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyGuardDomainMode");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String domainMode;
@@ -32,11 +39,11 @@ public class ModifyGuardDomainModeRequest extends RpcAcsRequest<ModifyGuardDomai
 
 	private String securityToken;
 
+	private String replicaId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
-
-	private String replicaId;
 
 	private Long ownerId;
 
@@ -92,6 +99,17 @@ public class ModifyGuardDomainModeRequest extends RpcAcsRequest<ModifyGuardDomai
 		}
 	}
 
+	public String getReplicaId() {
+		return this.replicaId;
+	}
+
+	public void setReplicaId(String replicaId) {
+		this.replicaId = replicaId;
+		if(replicaId != null){
+			putQueryParameter("ReplicaId", replicaId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -111,17 +129,6 @@ public class ModifyGuardDomainModeRequest extends RpcAcsRequest<ModifyGuardDomai
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getReplicaId() {
-		return this.replicaId;
-	}
-
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
 		}
 	}
 

@@ -121,6 +121,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String replicationMode;
 
+		private String vpcCloudInstanceId;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -433,6 +435,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setReplicationMode(String replicationMode) {
 			this.replicationMode = replicationMode;
+		}
+
+		public String getVpcCloudInstanceId() {
+			return this.vpcCloudInstanceId;
+		}
+
+		public void setVpcCloudInstanceId(String vpcCloudInstanceId) {
+			this.vpcCloudInstanceId = vpcCloudInstanceId;
 		}
 
 		public List<Tag> getTags() {

@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,10 +25,19 @@ import com.aliyuncs.RpcAcsRequest;
 public class SwitchNetworkRequest extends RpcAcsRequest<SwitchNetworkResponse> {
 	
 	public SwitchNetworkRequest() {
-		super("R-kvstore", "2015-01-01", "SwitchNetwork", "redisa");
+		super("R-kvstore", "2015-01-01", "SwitchNetwork");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String securityToken;
+
+	private String classicExpiredDays;
 
 	private String resourceOwnerAccount;
 
@@ -38,13 +49,9 @@ public class SwitchNetworkRequest extends RpcAcsRequest<SwitchNetworkResponse> {
 
 	private String instanceId;
 
-	private String securityToken;
-
 	private String targetNetworkType;
 
 	private String retainClassic;
-
-	private String classicExpiredDays;
 
 	private String vpcId;
 
@@ -56,6 +63,47 @@ public class SwitchNetworkRequest extends RpcAcsRequest<SwitchNetworkResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getClassicExpiredDays() {
+		return this.classicExpiredDays;
+	}
+
+	public void setClassicExpiredDays(String classicExpiredDays) {
+		this.classicExpiredDays = classicExpiredDays;
+		if(classicExpiredDays != null){
+			putQueryParameter("ClassicExpiredDays", classicExpiredDays);
 		}
 	}
 
@@ -114,36 +162,6 @@ public class SwitchNetworkRequest extends RpcAcsRequest<SwitchNetworkResponse> {
 		}
 	}
 
-	public String getBizSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setBizSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	/**
-	 * @deprecated use getBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	/**
-	 * @deprecated use setBizSecurityToken instead of this.
-	 */
-	@Deprecated
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
 	public String getTargetNetworkType() {
 		return this.targetNetworkType;
 	}
@@ -163,17 +181,6 @@ public class SwitchNetworkRequest extends RpcAcsRequest<SwitchNetworkResponse> {
 		this.retainClassic = retainClassic;
 		if(retainClassic != null){
 			putQueryParameter("RetainClassic", retainClassic);
-		}
-	}
-
-	public String getClassicExpiredDays() {
-		return this.classicExpiredDays;
-	}
-
-	public void setClassicExpiredDays(String classicExpiredDays) {
-		this.classicExpiredDays = classicExpiredDays;
-		if(classicExpiredDays != null){
-			putQueryParameter("ClassicExpiredDays", classicExpiredDays);
 		}
 	}
 

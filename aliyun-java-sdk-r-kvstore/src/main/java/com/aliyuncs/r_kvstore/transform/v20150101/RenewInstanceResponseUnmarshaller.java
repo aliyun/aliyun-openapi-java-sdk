@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RenewInstanceResponseUnmarshaller {
 
-	public static RenewInstanceResponse unmarshall(RenewInstanceResponse renewInstanceResponse, UnmarshallerContext context) {
+	public static RenewInstanceResponse unmarshall(RenewInstanceResponse renewInstanceResponse, UnmarshallerContext _ctx) {
 		
-		renewInstanceResponse.setRequestId(context.stringValue("RenewInstanceResponse.RequestId"));
-		renewInstanceResponse.setOrderId(context.stringValue("RenewInstanceResponse.OrderId"));
-		renewInstanceResponse.setEndTime(context.stringValue("RenewInstanceResponse.EndTime"));
+		renewInstanceResponse.setRequestId(_ctx.stringValue("RenewInstanceResponse.RequestId"));
+		renewInstanceResponse.setOrderId(_ctx.stringValue("RenewInstanceResponse.OrderId"));
+		renewInstanceResponse.setEndTime(_ctx.stringValue("RenewInstanceResponse.EndTime"));
 	 
 	 	return renewInstanceResponse;
 	}

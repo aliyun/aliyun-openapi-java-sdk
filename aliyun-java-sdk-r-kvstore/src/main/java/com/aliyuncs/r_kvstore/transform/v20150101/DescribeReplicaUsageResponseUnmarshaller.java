@@ -27,29 +27,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeReplicaUsageResponseUnmarshaller {
 
-	public static DescribeReplicaUsageResponse unmarshall(DescribeReplicaUsageResponse describeReplicaUsageResponse, UnmarshallerContext context) {
+	public static DescribeReplicaUsageResponse unmarshall(DescribeReplicaUsageResponse describeReplicaUsageResponse, UnmarshallerContext _ctx) {
 		
-		describeReplicaUsageResponse.setRequestId(context.stringValue("DescribeReplicaUsageResponse.RequestId"));
-		describeReplicaUsageResponse.setStartTime(context.stringValue("DescribeReplicaUsageResponse.StartTime"));
-		describeReplicaUsageResponse.setEndTime(context.stringValue("DescribeReplicaUsageResponse.EndTime"));
-		describeReplicaUsageResponse.setReplicaId(context.stringValue("DescribeReplicaUsageResponse.ReplicaId"));
+		describeReplicaUsageResponse.setRequestId(_ctx.stringValue("DescribeReplicaUsageResponse.RequestId"));
+		describeReplicaUsageResponse.setStartTime(_ctx.stringValue("DescribeReplicaUsageResponse.StartTime"));
+		describeReplicaUsageResponse.setEndTime(_ctx.stringValue("DescribeReplicaUsageResponse.EndTime"));
+		describeReplicaUsageResponse.setReplicaId(_ctx.stringValue("DescribeReplicaUsageResponse.ReplicaId"));
 
 		PerformanceKeys performanceKeys = new PerformanceKeys();
 
 		List<PerformanceKeyItem> performanceKey = new ArrayList<PerformanceKeyItem>();
-		for (int i = 0; i < context.lengthValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey.Length"); i++) {
 			PerformanceKeyItem performanceKeyItem = new PerformanceKeyItem();
-			performanceKeyItem.setKey(context.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].Key"));
-			performanceKeyItem.setUnit(context.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].Unit"));
-			performanceKeyItem.setValueFormat(context.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].ValueFormat"));
+			performanceKeyItem.setKey(_ctx.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].Key"));
+			performanceKeyItem.setUnit(_ctx.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].Unit"));
+			performanceKeyItem.setValueFormat(_ctx.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].ValueFormat"));
 
 			PerformanceValues performanceValues = new PerformanceValues();
 
 			List<PerformanceValueItem> performanceValue = new ArrayList<PerformanceValueItem>();
-			for (int j = 0; j < context.lengthValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].PerformanceValues.PerformanceValue.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].PerformanceValues.PerformanceValue.Length"); j++) {
 				PerformanceValueItem performanceValueItem = new PerformanceValueItem();
-				performanceValueItem.setValue(context.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].PerformanceValues.PerformanceValue["+ j +"].Value"));
-				performanceValueItem.setDate(context.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].PerformanceValues.PerformanceValue["+ j +"].Date"));
+				performanceValueItem.setValue(_ctx.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].PerformanceValues.PerformanceValue["+ j +"].Value"));
+				performanceValueItem.setDate(_ctx.stringValue("DescribeReplicaUsageResponse.PerformanceKeys.PerformanceKey["+ i +"].PerformanceValues.PerformanceValue["+ j +"].Date"));
 
 				performanceValue.add(performanceValueItem);
 			}

@@ -20,15 +20,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCacheAnalysisReportResponseUnmarshaller {
 
-	public static DescribeCacheAnalysisReportResponse unmarshall(DescribeCacheAnalysisReportResponse describeCacheAnalysisReportResponse, UnmarshallerContext context) {
+	public static DescribeCacheAnalysisReportResponse unmarshall(DescribeCacheAnalysisReportResponse describeCacheAnalysisReportResponse, UnmarshallerContext _ctx) {
 		
-		describeCacheAnalysisReportResponse.setRequestId(context.stringValue("DescribeCacheAnalysisReportResponse.RequestId"));
-		describeCacheAnalysisReportResponse.setTotalRecordCount(context.integerValue("DescribeCacheAnalysisReportResponse.TotalRecordCount"));
-		describeCacheAnalysisReportResponse.setPageSize(context.integerValue("DescribeCacheAnalysisReportResponse.PageSize"));
-		describeCacheAnalysisReportResponse.setPageNumber(context.integerValue("DescribeCacheAnalysisReportResponse.PageNumber"));
-		describeCacheAnalysisReportResponse.setPageRecordCount(context.integerValue("DescribeCacheAnalysisReportResponse.PageRecordCount"));
-		describeCacheAnalysisReportResponse.setHotKeys(context.stringValue("DescribeCacheAnalysisReportResponse.HotKeys"));
-		describeCacheAnalysisReportResponse.setBigKeys(context.stringValue("DescribeCacheAnalysisReportResponse.BigKeys"));
+		describeCacheAnalysisReportResponse.setRequestId(_ctx.stringValue("DescribeCacheAnalysisReportResponse.RequestId"));
+		describeCacheAnalysisReportResponse.setTotalRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportResponse.TotalRecordCount"));
+		describeCacheAnalysisReportResponse.setPageSize(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageSize"));
+		describeCacheAnalysisReportResponse.setPageNumber(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageNumber"));
+		describeCacheAnalysisReportResponse.setPageRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportResponse.PageRecordCount"));
+		describeCacheAnalysisReportResponse.setHotKeys(_ctx.stringValue("DescribeCacheAnalysisReportResponse.HotKeys"));
+		describeCacheAnalysisReportResponse.setBigKeys(_ctx.stringValue("DescribeCacheAnalysisReportResponse.BigKeys"));
 	 
 	 	return describeCacheAnalysisReportResponse;
 	}

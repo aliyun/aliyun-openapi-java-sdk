@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeIntranetAttributeResponseUnmarshaller {
 
-	public static DescribeIntranetAttributeResponse unmarshall(DescribeIntranetAttributeResponse describeIntranetAttributeResponse, UnmarshallerContext context) {
+	public static DescribeIntranetAttributeResponse unmarshall(DescribeIntranetAttributeResponse describeIntranetAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeIntranetAttributeResponse.setRequestId(context.stringValue("DescribeIntranetAttributeResponse.RequestId"));
-		describeIntranetAttributeResponse.setIntranetBandwidth(context.integerValue("DescribeIntranetAttributeResponse.IntranetBandwidth"));
-		describeIntranetAttributeResponse.setExpireTime(context.stringValue("DescribeIntranetAttributeResponse.ExpireTime"));
+		describeIntranetAttributeResponse.setRequestId(_ctx.stringValue("DescribeIntranetAttributeResponse.RequestId"));
+		describeIntranetAttributeResponse.setIntranetBandwidth(_ctx.integerValue("DescribeIntranetAttributeResponse.IntranetBandwidth"));
+		describeIntranetAttributeResponse.setExpireTime(_ctx.stringValue("DescribeIntranetAttributeResponse.ExpireTime"));
 	 
 	 	return describeIntranetAttributeResponse;
 	}

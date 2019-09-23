@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,26 +25,31 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeResponse> {
 	
 	public ModifyReplicaModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyReplicaMode", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyReplicaMode");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private String domainMode;
 
 	private Long resourceOwnerId;
 
-	private String primaryInstanceId;
-
-	private String replicaMode;
-
 	private String securityToken;
+
+	private String replicaId;
+
+	private String primaryInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String replicaId;
-
 	private Long ownerId;
+
+	private String replicaMode;
 
 	public String getDomainMode() {
 		return this.domainMode;
@@ -63,28 +70,6 @@ public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getPrimaryInstanceId() {
-		return this.primaryInstanceId;
-	}
-
-	public void setPrimaryInstanceId(String primaryInstanceId) {
-		this.primaryInstanceId = primaryInstanceId;
-		if(primaryInstanceId != null){
-			putQueryParameter("PrimaryInstanceId", primaryInstanceId);
-		}
-	}
-
-	public String getReplicaMode() {
-		return this.replicaMode;
-	}
-
-	public void setReplicaMode(String replicaMode) {
-		this.replicaMode = replicaMode;
-		if(replicaMode != null){
-			putQueryParameter("ReplicaMode", replicaMode);
 		}
 	}
 
@@ -118,6 +103,28 @@ public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeRes
 		}
 	}
 
+	public String getReplicaId() {
+		return this.replicaId;
+	}
+
+	public void setReplicaId(String replicaId) {
+		this.replicaId = replicaId;
+		if(replicaId != null){
+			putQueryParameter("ReplicaId", replicaId);
+		}
+	}
+
+	public String getPrimaryInstanceId() {
+		return this.primaryInstanceId;
+	}
+
+	public void setPrimaryInstanceId(String primaryInstanceId) {
+		this.primaryInstanceId = primaryInstanceId;
+		if(primaryInstanceId != null){
+			putQueryParameter("PrimaryInstanceId", primaryInstanceId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -140,17 +147,6 @@ public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeRes
 		}
 	}
 
-	public String getReplicaId() {
-		return this.replicaId;
-	}
-
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -159,6 +155,17 @@ public class ModifyReplicaModeRequest extends RpcAcsRequest<ModifyReplicaModeRes
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getReplicaMode() {
+		return this.replicaMode;
+	}
+
+	public void setReplicaMode(String replicaMode) {
+		this.replicaMode = replicaMode;
+		if(replicaMode != null){
+			putQueryParameter("ReplicaMode", replicaMode);
 		}
 	}
 

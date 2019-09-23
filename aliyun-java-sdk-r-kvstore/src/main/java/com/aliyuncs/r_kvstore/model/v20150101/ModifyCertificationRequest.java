@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,14 +25,19 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyCertificationRequest extends RpcAcsRequest<ModifyCertificationResponse> {
 	
 	public ModifyCertificationRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyCertification", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyCertification");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
 	private String securityToken;
+
+	private Boolean noCertification;
 
 	private String resourceOwnerAccount;
 
@@ -38,7 +45,7 @@ public class ModifyCertificationRequest extends RpcAcsRequest<ModifyCertificatio
 
 	private Long ownerId;
 
-	private Boolean noCertification;
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,17 +55,6 @@ public class ModifyCertificationRequest extends RpcAcsRequest<ModifyCertificatio
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -89,6 +85,17 @@ public class ModifyCertificationRequest extends RpcAcsRequest<ModifyCertificatio
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Boolean getNoCertification() {
+		return this.noCertification;
+	}
+
+	public void setNoCertification(Boolean noCertification) {
+		this.noCertification = noCertification;
+		if(noCertification != null){
+			putQueryParameter("NoCertification", noCertification.toString());
 		}
 	}
 
@@ -125,14 +132,14 @@ public class ModifyCertificationRequest extends RpcAcsRequest<ModifyCertificatio
 		}
 	}
 
-	public Boolean getNoCertification() {
-		return this.noCertification;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setNoCertification(Boolean noCertification) {
-		this.noCertification = noCertification;
-		if(noCertification != null){
-			putQueryParameter("NoCertification", noCertification.toString());
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -20,29 +20,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateInstanceResponseUnmarshaller {
 
-	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext context) {
+	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createInstanceResponse.setRequestId(context.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setInstanceId(context.stringValue("CreateInstanceResponse.InstanceId"));
-		createInstanceResponse.setInstanceName(context.stringValue("CreateInstanceResponse.InstanceName"));
-		createInstanceResponse.setConnectionDomain(context.stringValue("CreateInstanceResponse.ConnectionDomain"));
-		createInstanceResponse.setPort(context.integerValue("CreateInstanceResponse.Port"));
-		createInstanceResponse.setUserName(context.stringValue("CreateInstanceResponse.UserName"));
-		createInstanceResponse.setInstanceStatus(context.stringValue("CreateInstanceResponse.InstanceStatus"));
-		createInstanceResponse.setRegionId(context.stringValue("CreateInstanceResponse.RegionId"));
-		createInstanceResponse.setCapacity(context.longValue("CreateInstanceResponse.Capacity"));
-		createInstanceResponse.setQPS(context.longValue("CreateInstanceResponse.QPS"));
-		createInstanceResponse.setBandwidth(context.longValue("CreateInstanceResponse.Bandwidth"));
-		createInstanceResponse.setConnections(context.longValue("CreateInstanceResponse.Connections"));
-		createInstanceResponse.setZoneId(context.stringValue("CreateInstanceResponse.ZoneId"));
-		createInstanceResponse.setConfig(context.stringValue("CreateInstanceResponse.Config"));
-		createInstanceResponse.setChargeType(context.stringValue("CreateInstanceResponse.ChargeType"));
-		createInstanceResponse.setEndTime(context.stringValue("CreateInstanceResponse.EndTime"));
-		createInstanceResponse.setNodeType(context.stringValue("CreateInstanceResponse.NodeType"));
-		createInstanceResponse.setNetworkType(context.stringValue("CreateInstanceResponse.NetworkType"));
-		createInstanceResponse.setVpcId(context.stringValue("CreateInstanceResponse.VpcId"));
-		createInstanceResponse.setVSwitchId(context.stringValue("CreateInstanceResponse.VSwitchId"));
-		createInstanceResponse.setPrivateIpAddr(context.stringValue("CreateInstanceResponse.PrivateIpAddr"));
+		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
+		createInstanceResponse.setInstanceId(_ctx.stringValue("CreateInstanceResponse.InstanceId"));
+		createInstanceResponse.setInstanceName(_ctx.stringValue("CreateInstanceResponse.InstanceName"));
+		createInstanceResponse.setConnectionDomain(_ctx.stringValue("CreateInstanceResponse.ConnectionDomain"));
+		createInstanceResponse.setPort(_ctx.integerValue("CreateInstanceResponse.Port"));
+		createInstanceResponse.setUserName(_ctx.stringValue("CreateInstanceResponse.UserName"));
+		createInstanceResponse.setInstanceStatus(_ctx.stringValue("CreateInstanceResponse.InstanceStatus"));
+		createInstanceResponse.setRegionId(_ctx.stringValue("CreateInstanceResponse.RegionId"));
+		createInstanceResponse.setCapacity(_ctx.longValue("CreateInstanceResponse.Capacity"));
+		createInstanceResponse.setQPS(_ctx.longValue("CreateInstanceResponse.QPS"));
+		createInstanceResponse.setBandwidth(_ctx.longValue("CreateInstanceResponse.Bandwidth"));
+		createInstanceResponse.setConnections(_ctx.longValue("CreateInstanceResponse.Connections"));
+		createInstanceResponse.setZoneId(_ctx.stringValue("CreateInstanceResponse.ZoneId"));
+		createInstanceResponse.setConfig(_ctx.stringValue("CreateInstanceResponse.Config"));
+		createInstanceResponse.setChargeType(_ctx.stringValue("CreateInstanceResponse.ChargeType"));
+		createInstanceResponse.setEndTime(_ctx.stringValue("CreateInstanceResponse.EndTime"));
+		createInstanceResponse.setNodeType(_ctx.stringValue("CreateInstanceResponse.NodeType"));
+		createInstanceResponse.setNetworkType(_ctx.stringValue("CreateInstanceResponse.NetworkType"));
+		createInstanceResponse.setVpcId(_ctx.stringValue("CreateInstanceResponse.VpcId"));
+		createInstanceResponse.setVSwitchId(_ctx.stringValue("CreateInstanceResponse.VSwitchId"));
+		createInstanceResponse.setPrivateIpAddr(_ctx.stringValue("CreateInstanceResponse.PrivateIpAddr"));
 	 
 	 	return createInstanceResponse;
 	}

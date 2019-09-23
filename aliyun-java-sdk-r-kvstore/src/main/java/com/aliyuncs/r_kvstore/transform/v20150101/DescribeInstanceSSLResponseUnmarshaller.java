@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceSSLResponseUnmarshaller {
 
-	public static DescribeInstanceSSLResponse unmarshall(DescribeInstanceSSLResponse describeInstanceSSLResponse, UnmarshallerContext context) {
+	public static DescribeInstanceSSLResponse unmarshall(DescribeInstanceSSLResponse describeInstanceSSLResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceSSLResponse.setRequestId(context.stringValue("DescribeInstanceSSLResponse.RequestId"));
-		describeInstanceSSLResponse.setInstanceId(context.stringValue("DescribeInstanceSSLResponse.InstanceId"));
-		describeInstanceSSLResponse.setSSLEnabled(context.stringValue("DescribeInstanceSSLResponse.SSLEnabled"));
-		describeInstanceSSLResponse.setCertCommonName(context.stringValue("DescribeInstanceSSLResponse.CertCommonName"));
-		describeInstanceSSLResponse.setSSLExpiredTime(context.stringValue("DescribeInstanceSSLResponse.SSLExpiredTime"));
+		describeInstanceSSLResponse.setRequestId(_ctx.stringValue("DescribeInstanceSSLResponse.RequestId"));
+		describeInstanceSSLResponse.setInstanceId(_ctx.stringValue("DescribeInstanceSSLResponse.InstanceId"));
+		describeInstanceSSLResponse.setSSLEnabled(_ctx.stringValue("DescribeInstanceSSLResponse.SSLEnabled"));
+		describeInstanceSSLResponse.setCertCommonName(_ctx.stringValue("DescribeInstanceSSLResponse.CertCommonName"));
+		describeInstanceSSLResponse.setSSLExpiredTime(_ctx.stringValue("DescribeInstanceSSLResponse.SSLExpiredTime"));
 	 
 	 	return describeInstanceSSLResponse;
 	}

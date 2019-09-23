@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,16 +25,21 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeActiveOperationTaskRegionRequest extends RpcAcsRequest<DescribeActiveOperationTaskRegionResponse> {
 	
 	public DescribeActiveOperationTaskRegionRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeActiveOperationTaskRegion", "redisa");
+		super("R-kvstore", "2015-01-01", "DescribeActiveOperationTaskRegion");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
 	private Integer isHistory;
 
-	private String taskType;
-
 	private String securityToken;
+
+	private String taskType;
 
 	private String resourceOwnerAccount;
 
@@ -59,17 +66,6 @@ public class DescribeActiveOperationTaskRegionRequest extends RpcAcsRequest<Desc
 		this.isHistory = isHistory;
 		if(isHistory != null){
 			putQueryParameter("IsHistory", isHistory.toString());
-		}
-	}
-
-	public String getTaskType() {
-		return this.taskType;
-	}
-
-	public void setTaskType(String taskType) {
-		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
 		}
 	}
 
@@ -100,6 +96,17 @@ public class DescribeActiveOperationTaskRegionRequest extends RpcAcsRequest<Desc
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getTaskType() {
+		return this.taskType;
+	}
+
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
 		}
 	}
 

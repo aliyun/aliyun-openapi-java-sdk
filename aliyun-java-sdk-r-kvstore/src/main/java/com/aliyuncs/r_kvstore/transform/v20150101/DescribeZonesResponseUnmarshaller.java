@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeZonesResponseUnmarshaller {
 
-	public static DescribeZonesResponse unmarshall(DescribeZonesResponse describeZonesResponse, UnmarshallerContext context) {
+	public static DescribeZonesResponse unmarshall(DescribeZonesResponse describeZonesResponse, UnmarshallerContext _ctx) {
 		
-		describeZonesResponse.setRequestId(context.stringValue("DescribeZonesResponse.RequestId"));
+		describeZonesResponse.setRequestId(_ctx.stringValue("DescribeZonesResponse.RequestId"));
 
 		List<KVStoreZone> zones = new ArrayList<KVStoreZone>();
-		for (int i = 0; i < context.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeZonesResponse.Zones.Length"); i++) {
 			KVStoreZone kVStoreZone = new KVStoreZone();
-			kVStoreZone.setRegionId(context.stringValue("DescribeZonesResponse.Zones["+ i +"].RegionId"));
-			kVStoreZone.setZoneId(context.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
-			kVStoreZone.setZoneName(context.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneName"));
-			kVStoreZone.setSwitchNetwork(context.booleanValue("DescribeZonesResponse.Zones["+ i +"].SwitchNetwork"));
-			kVStoreZone.setIsRds(context.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsRds"));
-			kVStoreZone.setDisabled(context.booleanValue("DescribeZonesResponse.Zones["+ i +"].Disabled"));
+			kVStoreZone.setRegionId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].RegionId"));
+			kVStoreZone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
+			kVStoreZone.setZoneName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneName"));
+			kVStoreZone.setSwitchNetwork(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].SwitchNetwork"));
+			kVStoreZone.setIsRds(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsRds"));
+			kVStoreZone.setDisabled(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].Disabled"));
 
 			zones.add(kVStoreZone);
 		}

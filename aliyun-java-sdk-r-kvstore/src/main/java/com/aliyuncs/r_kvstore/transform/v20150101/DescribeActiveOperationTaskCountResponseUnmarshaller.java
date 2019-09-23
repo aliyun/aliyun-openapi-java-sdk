@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeActiveOperationTaskCountResponseUnmarshaller {
 
-	public static DescribeActiveOperationTaskCountResponse unmarshall(DescribeActiveOperationTaskCountResponse describeActiveOperationTaskCountResponse, UnmarshallerContext context) {
+	public static DescribeActiveOperationTaskCountResponse unmarshall(DescribeActiveOperationTaskCountResponse describeActiveOperationTaskCountResponse, UnmarshallerContext _ctx) {
 		
-		describeActiveOperationTaskCountResponse.setRequestId(context.stringValue("DescribeActiveOperationTaskCountResponse.RequestId"));
-		describeActiveOperationTaskCountResponse.setTaskCount(context.integerValue("DescribeActiveOperationTaskCountResponse.TaskCount"));
-		describeActiveOperationTaskCountResponse.setNeedPop(context.integerValue("DescribeActiveOperationTaskCountResponse.NeedPop"));
+		describeActiveOperationTaskCountResponse.setRequestId(_ctx.stringValue("DescribeActiveOperationTaskCountResponse.RequestId"));
+		describeActiveOperationTaskCountResponse.setTaskCount(_ctx.integerValue("DescribeActiveOperationTaskCountResponse.TaskCount"));
+		describeActiveOperationTaskCountResponse.setNeedPop(_ctx.integerValue("DescribeActiveOperationTaskCountResponse.NeedPop"));
 	 
 	 	return describeActiveOperationTaskCountResponse;
 	}

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateStaticVerificationResponseUnmarshaller {
 
-	public static CreateStaticVerificationResponse unmarshall(CreateStaticVerificationResponse createStaticVerificationResponse, UnmarshallerContext context) {
+	public static CreateStaticVerificationResponse unmarshall(CreateStaticVerificationResponse createStaticVerificationResponse, UnmarshallerContext _ctx) {
 		
-		createStaticVerificationResponse.setRequestId(context.stringValue("CreateStaticVerificationResponse.RequestId"));
+		createStaticVerificationResponse.setRequestId(_ctx.stringValue("CreateStaticVerificationResponse.RequestId"));
 	 
 	 	return createStaticVerificationResponse;
 	}

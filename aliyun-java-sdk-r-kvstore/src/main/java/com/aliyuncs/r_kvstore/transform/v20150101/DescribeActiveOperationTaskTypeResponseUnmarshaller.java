@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeActiveOperationTaskTypeResponseUnmarshaller {
 
-	public static DescribeActiveOperationTaskTypeResponse unmarshall(DescribeActiveOperationTaskTypeResponse describeActiveOperationTaskTypeResponse, UnmarshallerContext context) {
+	public static DescribeActiveOperationTaskTypeResponse unmarshall(DescribeActiveOperationTaskTypeResponse describeActiveOperationTaskTypeResponse, UnmarshallerContext _ctx) {
 		
-		describeActiveOperationTaskTypeResponse.setRequestId(context.stringValue("DescribeActiveOperationTaskTypeResponse.RequestId"));
+		describeActiveOperationTaskTypeResponse.setRequestId(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.RequestId"));
 
 		List<Items> typeList = new ArrayList<Items>();
-		for (int i = 0; i < context.lengthValue("DescribeActiveOperationTaskTypeResponse.TypeList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeActiveOperationTaskTypeResponse.TypeList.Length"); i++) {
 			Items items = new Items();
-			items.setTaskType(context.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskType"));
-			items.setCount(context.integerValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].Count"));
+			items.setTaskType(_ctx.stringValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].TaskType"));
+			items.setCount(_ctx.integerValue("DescribeActiveOperationTaskTypeResponse.TypeList["+ i +"].Count"));
 
 			typeList.add(items);
 		}

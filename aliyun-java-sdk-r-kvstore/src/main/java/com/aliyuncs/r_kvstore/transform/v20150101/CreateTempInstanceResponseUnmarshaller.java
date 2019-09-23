@@ -20,13 +20,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateTempInstanceResponseUnmarshaller {
 
-	public static CreateTempInstanceResponse unmarshall(CreateTempInstanceResponse createTempInstanceResponse, UnmarshallerContext context) {
+	public static CreateTempInstanceResponse unmarshall(CreateTempInstanceResponse createTempInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createTempInstanceResponse.setRequestId(context.stringValue("CreateTempInstanceResponse.RequestId"));
-		createTempInstanceResponse.setInstanceId(context.stringValue("CreateTempInstanceResponse.InstanceId"));
-		createTempInstanceResponse.setSnapshotId(context.stringValue("CreateTempInstanceResponse.SnapshotId"));
-		createTempInstanceResponse.setTempInstanceId(context.stringValue("CreateTempInstanceResponse.TempInstanceId"));
-		createTempInstanceResponse.setStatus(context.stringValue("CreateTempInstanceResponse.Status"));
+		createTempInstanceResponse.setRequestId(_ctx.stringValue("CreateTempInstanceResponse.RequestId"));
+		createTempInstanceResponse.setInstanceId(_ctx.stringValue("CreateTempInstanceResponse.InstanceId"));
+		createTempInstanceResponse.setSnapshotId(_ctx.stringValue("CreateTempInstanceResponse.SnapshotId"));
+		createTempInstanceResponse.setTempInstanceId(_ctx.stringValue("CreateTempInstanceResponse.TempInstanceId"));
+		createTempInstanceResponse.setStatus(_ctx.stringValue("CreateTempInstanceResponse.Status"));
 	 
 	 	return createTempInstanceResponse;
 	}

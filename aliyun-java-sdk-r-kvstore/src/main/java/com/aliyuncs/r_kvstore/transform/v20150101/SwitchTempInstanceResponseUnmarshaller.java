@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class SwitchTempInstanceResponseUnmarshaller {
 
-	public static SwitchTempInstanceResponse unmarshall(SwitchTempInstanceResponse switchTempInstanceResponse, UnmarshallerContext context) {
+	public static SwitchTempInstanceResponse unmarshall(SwitchTempInstanceResponse switchTempInstanceResponse, UnmarshallerContext _ctx) {
 		
-		switchTempInstanceResponse.setRequestId(context.stringValue("SwitchTempInstanceResponse.RequestId"));
+		switchTempInstanceResponse.setRequestId(_ctx.stringValue("SwitchTempInstanceResponse.RequestId"));
 	 
 	 	return switchTempInstanceResponse;
 	}

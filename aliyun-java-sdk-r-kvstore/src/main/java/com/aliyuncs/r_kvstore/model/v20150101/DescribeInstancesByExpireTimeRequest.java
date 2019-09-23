@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,10 +25,25 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeInstancesByExpireTimeRequest extends RpcAcsRequest<DescribeInstancesByExpireTimeResponse> {
 	
 	public DescribeInstancesByExpireTimeRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeInstancesByExpireTime", "redisa");
+		super("R-kvstore", "2015-01-01", "DescribeInstancesByExpireTime");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private Integer pageNumber;
+
+	private String securityToken;
+
+	private Integer pageSize;
+
+	private String instanceType;
+
+	private Integer expirePeriod;
 
 	private String resourceOwnerAccount;
 
@@ -34,17 +51,7 @@ public class DescribeInstancesByExpireTimeRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 
-	private Integer pageNumber;
-
-	private String securityToken;
-
 	private Boolean hasExpiredRes;
-
-	private Integer pageSize;
-
-	private String instanceType;
-
-	private Integer expirePeriod;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,39 +61,6 @@ public class DescribeInstancesByExpireTimeRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -131,17 +105,6 @@ public class DescribeInstancesByExpireTimeRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public Boolean getHasExpiredRes() {
-		return this.hasExpiredRes;
-	}
-
-	public void setHasExpiredRes(Boolean hasExpiredRes) {
-		this.hasExpiredRes = hasExpiredRes;
-		if(hasExpiredRes != null){
-			putQueryParameter("HasExpiredRes", hasExpiredRes.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -172,6 +135,50 @@ public class DescribeInstancesByExpireTimeRequest extends RpcAcsRequest<Describe
 		this.expirePeriod = expirePeriod;
 		if(expirePeriod != null){
 			putQueryParameter("ExpirePeriod", expirePeriod.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Boolean getHasExpiredRes() {
+		return this.hasExpiredRes;
+	}
+
+	public void setHasExpiredRes(Boolean hasExpiredRes) {
+		this.hasExpiredRes = hasExpiredRes;
+		if(hasExpiredRes != null){
+			putQueryParameter("HasExpiredRes", hasExpiredRes.toString());
 		}
 	}
 

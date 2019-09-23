@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DestroyInstanceResponseUnmarshaller {
 
-	public static DestroyInstanceResponse unmarshall(DestroyInstanceResponse destroyInstanceResponse, UnmarshallerContext context) {
+	public static DestroyInstanceResponse unmarshall(DestroyInstanceResponse destroyInstanceResponse, UnmarshallerContext _ctx) {
 		
-		destroyInstanceResponse.setRequestId(context.stringValue("DestroyInstanceResponse.RequestId"));
+		destroyInstanceResponse.setRequestId(_ctx.stringValue("DestroyInstanceResponse.RequestId"));
 	 
 	 	return destroyInstanceResponse;
 	}

@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,12 +25,17 @@ import com.aliyuncs.RpcAcsRequest;
 public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPrivilegeResponse> {
 	
 	public GrantAccountPrivilegeRequest() {
-		super("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa");
+		super("R-kvstore", "2015-01-01", "GrantAccountPrivilege");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private String accountPrivilege;
 
 	private String accountName;
 
@@ -40,7 +47,7 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 
 	private Long ownerId;
 
-	private String accountPrivilege;
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,14 +60,14 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getAccountPrivilege() {
+		return this.accountPrivilege;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setAccountPrivilege(String accountPrivilege) {
+		this.accountPrivilege = accountPrivilege;
+		if(accountPrivilege != null){
+			putQueryParameter("AccountPrivilege", accountPrivilege);
 		}
 	}
 
@@ -138,14 +145,14 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 		}
 	}
 
-	public String getAccountPrivilege() {
-		return this.accountPrivilege;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setAccountPrivilege(String accountPrivilege) {
-		this.accountPrivilege = accountPrivilege;
-		if(accountPrivilege != null){
-			putQueryParameter("AccountPrivilege", accountPrivilege);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

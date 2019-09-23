@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class TransformToPrePaidResponseUnmarshaller {
 
-	public static TransformToPrePaidResponse unmarshall(TransformToPrePaidResponse transformToPrePaidResponse, UnmarshallerContext context) {
+	public static TransformToPrePaidResponse unmarshall(TransformToPrePaidResponse transformToPrePaidResponse, UnmarshallerContext _ctx) {
 		
-		transformToPrePaidResponse.setRequestId(context.stringValue("TransformToPrePaidResponse.RequestId"));
-		transformToPrePaidResponse.setOrderId(context.stringValue("TransformToPrePaidResponse.OrderId"));
-		transformToPrePaidResponse.setEndTime(context.stringValue("TransformToPrePaidResponse.EndTime"));
+		transformToPrePaidResponse.setRequestId(_ctx.stringValue("TransformToPrePaidResponse.RequestId"));
+		transformToPrePaidResponse.setOrderId(_ctx.stringValue("TransformToPrePaidResponse.OrderId"));
+		transformToPrePaidResponse.setEndTime(_ctx.stringValue("TransformToPrePaidResponse.EndTime"));
 	 
 	 	return transformToPrePaidResponse;
 	}

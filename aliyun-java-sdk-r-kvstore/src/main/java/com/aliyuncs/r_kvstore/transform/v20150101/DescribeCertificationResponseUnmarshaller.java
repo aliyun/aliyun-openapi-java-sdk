@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCertificationResponseUnmarshaller {
 
-	public static DescribeCertificationResponse unmarshall(DescribeCertificationResponse describeCertificationResponse, UnmarshallerContext context) {
+	public static DescribeCertificationResponse unmarshall(DescribeCertificationResponse describeCertificationResponse, UnmarshallerContext _ctx) {
 		
-		describeCertificationResponse.setRequestId(context.stringValue("DescribeCertificationResponse.RequestId"));
-		describeCertificationResponse.setNoCertification(context.booleanValue("DescribeCertificationResponse.NoCertification"));
+		describeCertificationResponse.setRequestId(_ctx.stringValue("DescribeCertificationResponse.RequestId"));
+		describeCertificationResponse.setNoCertification(_ctx.booleanValue("DescribeCertificationResponse.NoCertification"));
 	 
 	 	return describeCertificationResponse;
 	}

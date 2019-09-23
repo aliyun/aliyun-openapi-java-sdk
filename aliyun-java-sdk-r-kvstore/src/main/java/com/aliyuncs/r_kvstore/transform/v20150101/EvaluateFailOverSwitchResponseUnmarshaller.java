@@ -26,35 +26,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class EvaluateFailOverSwitchResponseUnmarshaller {
 
-	public static EvaluateFailOverSwitchResponse unmarshall(EvaluateFailOverSwitchResponse evaluateFailOverSwitchResponse, UnmarshallerContext context) {
+	public static EvaluateFailOverSwitchResponse unmarshall(EvaluateFailOverSwitchResponse evaluateFailOverSwitchResponse, UnmarshallerContext _ctx) {
 		
-		evaluateFailOverSwitchResponse.setRequestId(context.stringValue("EvaluateFailOverSwitchResponse.RequestId"));
-		evaluateFailOverSwitchResponse.setReplicaId(context.stringValue("EvaluateFailOverSwitchResponse.ReplicaId"));
-		evaluateFailOverSwitchResponse.setEvaluateResult(context.stringValue("EvaluateFailOverSwitchResponse.EvaluateResult"));
+		evaluateFailOverSwitchResponse.setRequestId(_ctx.stringValue("EvaluateFailOverSwitchResponse.RequestId"));
+		evaluateFailOverSwitchResponse.setReplicaId(_ctx.stringValue("EvaluateFailOverSwitchResponse.ReplicaId"));
+		evaluateFailOverSwitchResponse.setEvaluateResult(_ctx.stringValue("EvaluateFailOverSwitchResponse.EvaluateResult"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
-		for (int i = 0; i < context.lengthValue("EvaluateFailOverSwitchResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("EvaluateFailOverSwitchResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setDBInstanceId(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].DBInstanceId"));
-			itemsItem.setRegionId(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].RegionId"));
-			itemsItem.setReadWriteType(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].ReadWriteType"));
-			itemsItem.setInstanceNetworkType(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].InstanceNetworkType"));
-			itemsItem.setSecurityIPList(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].SecurityIPList"));
-			itemsItem.setHasInternetIP(context.booleanValue("EvaluateFailOverSwitchResponse.Items["+ i +"].HasInternetIP"));
-			itemsItem.setInternetIP(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].InternetIP"));
+			itemsItem.setDBInstanceId(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].DBInstanceId"));
+			itemsItem.setRegionId(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].RegionId"));
+			itemsItem.setReadWriteType(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].ReadWriteType"));
+			itemsItem.setInstanceNetworkType(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].InstanceNetworkType"));
+			itemsItem.setSecurityIPList(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].SecurityIPList"));
+			itemsItem.setHasInternetIP(_ctx.booleanValue("EvaluateFailOverSwitchResponse.Items["+ i +"].HasInternetIP"));
+			itemsItem.setInternetIP(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].InternetIP"));
 
 			List<AccountsItem> accounts = new ArrayList<AccountsItem>();
-			for (int j = 0; j < context.lengthValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts.Length"); j++) {
 				AccountsItem accountsItem = new AccountsItem();
-				accountsItem.setAccountPrivilege(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountPrivilege"));
-				accountsItem.setAccountStatus(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountStatus"));
-				accountsItem.setAccountPrivilegeDetail(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountPrivilegeDetail"));
-				accountsItem.setAccountDescription(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountDescription"));
-				accountsItem.setAccountID(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountID"));
-				accountsItem.setAccountName(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountName"));
-				accountsItem.setPrivExceeded(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].PrivExceeded"));
-				accountsItem.setEngine(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].Engine"));
-				accountsItem.setAccountType(context.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountType"));
+				accountsItem.setAccountPrivilege(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountPrivilege"));
+				accountsItem.setAccountStatus(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountStatus"));
+				accountsItem.setAccountPrivilegeDetail(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountPrivilegeDetail"));
+				accountsItem.setAccountDescription(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountDescription"));
+				accountsItem.setAccountID(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountID"));
+				accountsItem.setAccountName(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountName"));
+				accountsItem.setPrivExceeded(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].PrivExceeded"));
+				accountsItem.setEngine(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].Engine"));
+				accountsItem.setAccountType(_ctx.stringValue("EvaluateFailOverSwitchResponse.Items["+ i +"].Accounts["+ j +"].AccountType"));
 
 				accounts.add(accountsItem);
 			}
@@ -65,12 +65,12 @@ public class EvaluateFailOverSwitchResponseUnmarshaller {
 		evaluateFailOverSwitchResponse.setItems(items);
 
 		List<ReportsItem> reports = new ArrayList<ReportsItem>();
-		for (int i = 0; i < context.lengthValue("EvaluateFailOverSwitchResponse.Reports.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("EvaluateFailOverSwitchResponse.Reports.Length"); i++) {
 			ReportsItem reportsItem = new ReportsItem();
-			reportsItem.setCheckType(context.stringValue("EvaluateFailOverSwitchResponse.Reports["+ i +"].CheckType"));
-			reportsItem.setSeverity(context.stringValue("EvaluateFailOverSwitchResponse.Reports["+ i +"].Severity"));
-			reportsItem.setReasonCode(context.stringValue("EvaluateFailOverSwitchResponse.Reports["+ i +"].ReasonCode"));
-			reportsItem.setReasonMessage(context.stringValue("EvaluateFailOverSwitchResponse.Reports["+ i +"].ReasonMessage"));
+			reportsItem.setCheckType(_ctx.stringValue("EvaluateFailOverSwitchResponse.Reports["+ i +"].CheckType"));
+			reportsItem.setSeverity(_ctx.stringValue("EvaluateFailOverSwitchResponse.Reports["+ i +"].Severity"));
+			reportsItem.setReasonCode(_ctx.stringValue("EvaluateFailOverSwitchResponse.Reports["+ i +"].ReasonCode"));
+			reportsItem.setReasonMessage(_ctx.stringValue("EvaluateFailOverSwitchResponse.Reports["+ i +"].ReasonMessage"));
 
 			reports.add(reportsItem);
 		}

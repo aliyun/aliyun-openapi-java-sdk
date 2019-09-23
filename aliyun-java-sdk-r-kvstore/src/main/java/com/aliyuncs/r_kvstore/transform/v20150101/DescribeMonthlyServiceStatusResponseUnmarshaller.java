@@ -24,16 +24,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMonthlyServiceStatusResponseUnmarshaller {
 
-	public static DescribeMonthlyServiceStatusResponse unmarshall(DescribeMonthlyServiceStatusResponse describeMonthlyServiceStatusResponse, UnmarshallerContext context) {
+	public static DescribeMonthlyServiceStatusResponse unmarshall(DescribeMonthlyServiceStatusResponse describeMonthlyServiceStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeMonthlyServiceStatusResponse.setRequestId(context.stringValue("DescribeMonthlyServiceStatusResponse.RequestId"));
-		describeMonthlyServiceStatusResponse.setTotalCount(context.longValue("DescribeMonthlyServiceStatusResponse.TotalCount"));
+		describeMonthlyServiceStatusResponse.setRequestId(_ctx.stringValue("DescribeMonthlyServiceStatusResponse.RequestId"));
+		describeMonthlyServiceStatusResponse.setTotalCount(_ctx.longValue("DescribeMonthlyServiceStatusResponse.TotalCount"));
 
 		List<InstanceSLAInfo> instanceSLAInfos = new ArrayList<InstanceSLAInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeMonthlyServiceStatusResponse.InstanceSLAInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMonthlyServiceStatusResponse.InstanceSLAInfos.Length"); i++) {
 			InstanceSLAInfo instanceSLAInfo = new InstanceSLAInfo();
-			instanceSLAInfo.setInstanceId(context.stringValue("DescribeMonthlyServiceStatusResponse.InstanceSLAInfos["+ i +"].InstanceId"));
-			instanceSLAInfo.setUptimePct(context.floatValue("DescribeMonthlyServiceStatusResponse.InstanceSLAInfos["+ i +"].UptimePct"));
+			instanceSLAInfo.setInstanceId(_ctx.stringValue("DescribeMonthlyServiceStatusResponse.InstanceSLAInfos["+ i +"].InstanceId"));
+			instanceSLAInfo.setUptimePct(_ctx.floatValue("DescribeMonthlyServiceStatusResponse.InstanceSLAInfos["+ i +"].UptimePct"));
 
 			instanceSLAInfos.add(instanceSLAInfo);
 		}

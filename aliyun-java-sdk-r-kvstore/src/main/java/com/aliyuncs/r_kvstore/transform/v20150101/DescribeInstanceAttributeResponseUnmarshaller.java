@@ -25,56 +25,57 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceAttributeResponseUnmarshaller {
 
-	public static DescribeInstanceAttributeResponse unmarshall(DescribeInstanceAttributeResponse describeInstanceAttributeResponse, UnmarshallerContext context) {
+	public static DescribeInstanceAttributeResponse unmarshall(DescribeInstanceAttributeResponse describeInstanceAttributeResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceAttributeResponse.setRequestId(context.stringValue("DescribeInstanceAttributeResponse.RequestId"));
+		describeInstanceAttributeResponse.setRequestId(_ctx.stringValue("DescribeInstanceAttributeResponse.RequestId"));
 
 		List<DBInstanceAttribute> instances = new ArrayList<DBInstanceAttribute>();
-		for (int i = 0; i < context.lengthValue("DescribeInstanceAttributeResponse.Instances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances.Length"); i++) {
 			DBInstanceAttribute dBInstanceAttribute = new DBInstanceAttribute();
-			dBInstanceAttribute.setInstanceId(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceId"));
-			dBInstanceAttribute.setInstanceName(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceName"));
-			dBInstanceAttribute.setConnectionDomain(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ConnectionDomain"));
-			dBInstanceAttribute.setPort(context.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Port"));
-			dBInstanceAttribute.setInstanceStatus(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceStatus"));
-			dBInstanceAttribute.setRegionId(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].RegionId"));
-			dBInstanceAttribute.setCapacity(context.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Capacity"));
-			dBInstanceAttribute.setInstanceClass(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceClass"));
-			dBInstanceAttribute.setQPS(context.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].QPS"));
-			dBInstanceAttribute.setBandwidth(context.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Bandwidth"));
-			dBInstanceAttribute.setConnections(context.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Connections"));
-			dBInstanceAttribute.setZoneId(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ZoneId"));
-			dBInstanceAttribute.setConfig(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Config"));
-			dBInstanceAttribute.setChargeType(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ChargeType"));
-			dBInstanceAttribute.setNodeType(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NodeType"));
-			dBInstanceAttribute.setNetworkType(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NetworkType"));
-			dBInstanceAttribute.setVpcId(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcId"));
-			dBInstanceAttribute.setVSwitchId(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VSwitchId"));
-			dBInstanceAttribute.setPrivateIp(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].PrivateIp"));
-			dBInstanceAttribute.setCreateTime(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].CreateTime"));
-			dBInstanceAttribute.setEndTime(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].EndTime"));
-			dBInstanceAttribute.setHasRenewChangeOrder(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].HasRenewChangeOrder"));
-			dBInstanceAttribute.setIsRds(context.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsRds"));
-			dBInstanceAttribute.setEngine(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Engine"));
-			dBInstanceAttribute.setEngineVersion(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].EngineVersion"));
-			dBInstanceAttribute.setMaintainStartTime(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].MaintainStartTime"));
-			dBInstanceAttribute.setMaintainEndTime(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].MaintainEndTime"));
-			dBInstanceAttribute.setAvailabilityValue(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AvailabilityValue"));
-			dBInstanceAttribute.setSecurityIPList(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SecurityIPList"));
-			dBInstanceAttribute.setInstanceType(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceType"));
-			dBInstanceAttribute.setArchitectureType(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ArchitectureType"));
-			dBInstanceAttribute.setNodeType1(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NodeType"));
-			dBInstanceAttribute.setPackageType(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].PackageType"));
-			dBInstanceAttribute.setReplicaId(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicaId"));
-			dBInstanceAttribute.setVpcAuthMode(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcAuthMode"));
-			dBInstanceAttribute.setAuditLogRetention(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AuditLogRetention"));
-			dBInstanceAttribute.setReplicationMode(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicationMode"));
+			dBInstanceAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceId"));
+			dBInstanceAttribute.setInstanceName(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceName"));
+			dBInstanceAttribute.setConnectionDomain(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ConnectionDomain"));
+			dBInstanceAttribute.setPort(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Port"));
+			dBInstanceAttribute.setInstanceStatus(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceStatus"));
+			dBInstanceAttribute.setRegionId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].RegionId"));
+			dBInstanceAttribute.setCapacity(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Capacity"));
+			dBInstanceAttribute.setInstanceClass(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceClass"));
+			dBInstanceAttribute.setQPS(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].QPS"));
+			dBInstanceAttribute.setBandwidth(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Bandwidth"));
+			dBInstanceAttribute.setConnections(_ctx.longValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Connections"));
+			dBInstanceAttribute.setZoneId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ZoneId"));
+			dBInstanceAttribute.setConfig(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Config"));
+			dBInstanceAttribute.setChargeType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ChargeType"));
+			dBInstanceAttribute.setNodeType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NodeType"));
+			dBInstanceAttribute.setNetworkType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NetworkType"));
+			dBInstanceAttribute.setVpcId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcId"));
+			dBInstanceAttribute.setVSwitchId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VSwitchId"));
+			dBInstanceAttribute.setPrivateIp(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].PrivateIp"));
+			dBInstanceAttribute.setCreateTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].CreateTime"));
+			dBInstanceAttribute.setEndTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].EndTime"));
+			dBInstanceAttribute.setHasRenewChangeOrder(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].HasRenewChangeOrder"));
+			dBInstanceAttribute.setIsRds(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].IsRds"));
+			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Engine"));
+			dBInstanceAttribute.setEngineVersion(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].EngineVersion"));
+			dBInstanceAttribute.setMaintainStartTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].MaintainStartTime"));
+			dBInstanceAttribute.setMaintainEndTime(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].MaintainEndTime"));
+			dBInstanceAttribute.setAvailabilityValue(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AvailabilityValue"));
+			dBInstanceAttribute.setSecurityIPList(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SecurityIPList"));
+			dBInstanceAttribute.setInstanceType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceType"));
+			dBInstanceAttribute.setArchitectureType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ArchitectureType"));
+			dBInstanceAttribute.setNodeType1(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NodeType"));
+			dBInstanceAttribute.setPackageType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].PackageType"));
+			dBInstanceAttribute.setReplicaId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicaId"));
+			dBInstanceAttribute.setVpcAuthMode(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcAuthMode"));
+			dBInstanceAttribute.setAuditLogRetention(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].AuditLogRetention"));
+			dBInstanceAttribute.setReplicationMode(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicationMode"));
+			dBInstanceAttribute.setVpcCloudInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcCloudInstanceId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < context.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags["+ j +"].Key"));
-				tag.setValue(context.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags["+ j +"].Value"));
 
 				tags.add(tag);
 			}

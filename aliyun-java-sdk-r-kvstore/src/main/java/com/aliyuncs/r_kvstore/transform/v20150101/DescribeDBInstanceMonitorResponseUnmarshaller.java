@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDBInstanceMonitorResponseUnmarshaller {
 
-	public static DescribeDBInstanceMonitorResponse unmarshall(DescribeDBInstanceMonitorResponse describeDBInstanceMonitorResponse, UnmarshallerContext context) {
+	public static DescribeDBInstanceMonitorResponse unmarshall(DescribeDBInstanceMonitorResponse describeDBInstanceMonitorResponse, UnmarshallerContext _ctx) {
 		
-		describeDBInstanceMonitorResponse.setRequestId(context.stringValue("DescribeDBInstanceMonitorResponse.RequestId"));
-		describeDBInstanceMonitorResponse.setInterval(context.stringValue("DescribeDBInstanceMonitorResponse.Interval"));
+		describeDBInstanceMonitorResponse.setRequestId(_ctx.stringValue("DescribeDBInstanceMonitorResponse.RequestId"));
+		describeDBInstanceMonitorResponse.setInterval(_ctx.stringValue("DescribeDBInstanceMonitorResponse.Interval"));
 	 
 	 	return describeDBInstanceMonitorResponse;
 	}

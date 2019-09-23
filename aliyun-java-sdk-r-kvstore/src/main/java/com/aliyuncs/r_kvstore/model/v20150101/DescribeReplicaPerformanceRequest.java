@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,10 +25,23 @@ import com.aliyuncs.RpcAcsRequest;
 public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeReplicaPerformanceResponse> {
 	
 	public DescribeReplicaPerformanceRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeReplicaPerformance", "redisa");
+		super("R-kvstore", "2015-01-01", "DescribeReplicaPerformance");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
+
+	private String startTime;
+
+	private String securityToken;
+
+	private String replicaId;
+
+	private String key;
 
 	private String destinationDBInstanceId;
 
@@ -36,17 +51,9 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 
 	private String endTime;
 
-	private String startTime;
-
 	private Long ownerId;
 
 	private String sourceDBInstanceId;
-
-	private String securityToken;
-
-	private String replicaId;
-
-	private String key;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -59,50 +66,6 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		}
 	}
 
-	public String getDestinationDBInstanceId() {
-		return this.destinationDBInstanceId;
-	}
-
-	public void setDestinationDBInstanceId(String destinationDBInstanceId) {
-		this.destinationDBInstanceId = destinationDBInstanceId;
-		if(destinationDBInstanceId != null){
-			putQueryParameter("DestinationDBInstanceId", destinationDBInstanceId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -111,28 +74,6 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSourceDBInstanceId() {
-		return this.sourceDBInstanceId;
-	}
-
-	public void setSourceDBInstanceId(String sourceDBInstanceId) {
-		this.sourceDBInstanceId = sourceDBInstanceId;
-		if(sourceDBInstanceId != null){
-			putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
 		}
 	}
 
@@ -185,6 +126,72 @@ public class DescribeReplicaPerformanceRequest extends RpcAcsRequest<DescribeRep
 		this.key = key;
 		if(key != null){
 			putQueryParameter("Key", key);
+		}
+	}
+
+	public String getDestinationDBInstanceId() {
+		return this.destinationDBInstanceId;
+	}
+
+	public void setDestinationDBInstanceId(String destinationDBInstanceId) {
+		this.destinationDBInstanceId = destinationDBInstanceId;
+		if(destinationDBInstanceId != null){
+			putQueryParameter("DestinationDBInstanceId", destinationDBInstanceId);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSourceDBInstanceId() {
+		return this.sourceDBInstanceId;
+	}
+
+	public void setSourceDBInstanceId(String sourceDBInstanceId) {
+		this.sourceDBInstanceId = sourceDBInstanceId;
+		if(sourceDBInstanceId != null){
+			putQueryParameter("SourceDBInstanceId", sourceDBInstanceId);
 		}
 	}
 

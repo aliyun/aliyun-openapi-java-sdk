@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryTaskResponseUnmarshaller {
 
-	public static QueryTaskResponse unmarshall(QueryTaskResponse queryTaskResponse, UnmarshallerContext context) {
+	public static QueryTaskResponse unmarshall(QueryTaskResponse queryTaskResponse, UnmarshallerContext _ctx) {
 		
-		queryTaskResponse.setRequestId(context.stringValue("QueryTaskResponse.RequestId"));
-		queryTaskResponse.setAction(context.stringValue("QueryTaskResponse.Action"));
-		queryTaskResponse.setProgress(context.integerValue("QueryTaskResponse.Progress"));
+		queryTaskResponse.setRequestId(_ctx.stringValue("QueryTaskResponse.RequestId"));
+		queryTaskResponse.setAction(_ctx.stringValue("QueryTaskResponse.Action"));
+		queryTaskResponse.setProgress(_ctx.integerValue("QueryTaskResponse.Progress"));
 	 
 	 	return queryTaskResponse;
 	}

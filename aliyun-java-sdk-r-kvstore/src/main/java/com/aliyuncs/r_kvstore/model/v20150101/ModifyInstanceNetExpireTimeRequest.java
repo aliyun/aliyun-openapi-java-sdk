@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,24 +25,29 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyInstanceNetExpireTimeResponse> {
 	
 	public ModifyInstanceNetExpireTimeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private String connectionString;
 
 	private String securityToken;
 
-	private String resourceOwnerAccount;
-
-	private String connectionString;
-
 	private Integer classicExpiredDays;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,14 +60,14 @@ public class ModifyInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyInst
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getConnectionString() {
+		return this.connectionString;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+		if(connectionString != null){
+			putQueryParameter("ConnectionString", connectionString);
 		}
 	}
 
@@ -94,28 +101,6 @@ public class ModifyInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyInst
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getConnectionString() {
-		return this.connectionString;
-	}
-
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-		if(connectionString != null){
-			putQueryParameter("ConnectionString", connectionString);
-		}
-	}
-
 	public Integer getClassicExpiredDays() {
 		return this.classicExpiredDays;
 	}
@@ -124,6 +109,17 @@ public class ModifyInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyInst
 		this.classicExpiredDays = classicExpiredDays;
 		if(classicExpiredDays != null){
 			putQueryParameter("ClassicExpiredDays", classicExpiredDays.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -146,6 +142,17 @@ public class ModifyInstanceNetExpireTimeRequest extends RpcAcsRequest<ModifyInst
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,24 +25,29 @@ import com.aliyuncs.RpcAcsRequest;
 public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<AllocateInstancePublicConnectionResponse> {
 	
 	public AllocateInstancePublicConnectionRequest() {
-		super("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "redisa");
+		super("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
 	private String connectionStringPrefix;
 
-	private String instanceId;
-
 	private String securityToken;
 
 	private String resourceOwnerAccount;
 
-	private String port;
-
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String instanceId;
+
+	private String port;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -61,17 +68,6 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -116,17 +112,6 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 		}
 	}
 
-	public String getPort() {
-		return this.port;
-	}
-
-	public void setPort(String port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -146,6 +131,28 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
 		}
 	}
 

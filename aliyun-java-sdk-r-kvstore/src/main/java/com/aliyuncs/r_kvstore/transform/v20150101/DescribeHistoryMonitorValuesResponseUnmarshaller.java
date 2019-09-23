@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeHistoryMonitorValuesResponseUnmarshaller {
 
-	public static DescribeHistoryMonitorValuesResponse unmarshall(DescribeHistoryMonitorValuesResponse describeHistoryMonitorValuesResponse, UnmarshallerContext context) {
+	public static DescribeHistoryMonitorValuesResponse unmarshall(DescribeHistoryMonitorValuesResponse describeHistoryMonitorValuesResponse, UnmarshallerContext _ctx) {
 		
-		describeHistoryMonitorValuesResponse.setRequestId(context.stringValue("DescribeHistoryMonitorValuesResponse.RequestId"));
-		describeHistoryMonitorValuesResponse.setMonitorHistory(context.stringValue("DescribeHistoryMonitorValuesResponse.MonitorHistory"));
+		describeHistoryMonitorValuesResponse.setRequestId(_ctx.stringValue("DescribeHistoryMonitorValuesResponse.RequestId"));
+		describeHistoryMonitorValuesResponse.setMonitorHistory(_ctx.stringValue("DescribeHistoryMonitorValuesResponse.MonitorHistory"));
 	 
 	 	return describeHistoryMonitorValuesResponse;
 	}

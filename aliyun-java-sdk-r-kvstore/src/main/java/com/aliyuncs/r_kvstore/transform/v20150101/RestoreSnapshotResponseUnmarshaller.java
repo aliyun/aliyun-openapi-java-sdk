@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RestoreSnapshotResponseUnmarshaller {
 
-	public static RestoreSnapshotResponse unmarshall(RestoreSnapshotResponse restoreSnapshotResponse, UnmarshallerContext context) {
+	public static RestoreSnapshotResponse unmarshall(RestoreSnapshotResponse restoreSnapshotResponse, UnmarshallerContext _ctx) {
 		
-		restoreSnapshotResponse.setRequestId(context.stringValue("RestoreSnapshotResponse.RequestId"));
+		restoreSnapshotResponse.setRequestId(_ctx.stringValue("RestoreSnapshotResponse.RequestId"));
 	 
 	 	return restoreSnapshotResponse;
 	}

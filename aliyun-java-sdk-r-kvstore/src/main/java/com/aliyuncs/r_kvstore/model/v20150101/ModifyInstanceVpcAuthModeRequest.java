@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,22 +25,27 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyInstanceVpcAuthModeRequest extends RpcAcsRequest<ModifyInstanceVpcAuthModeResponse> {
 	
 	public ModifyInstanceVpcAuthModeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
-
 	private String securityToken;
+
+	private String vpcAuthMode;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String vpcAuthMode;
-
 	private Long ownerId;
+
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,17 +55,6 @@ public class ModifyInstanceVpcAuthModeRequest extends RpcAcsRequest<ModifyInstan
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -92,6 +88,17 @@ public class ModifyInstanceVpcAuthModeRequest extends RpcAcsRequest<ModifyInstan
 		}
 	}
 
+	public String getVpcAuthMode() {
+		return this.vpcAuthMode;
+	}
+
+	public void setVpcAuthMode(String vpcAuthMode) {
+		this.vpcAuthMode = vpcAuthMode;
+		if(vpcAuthMode != null){
+			putQueryParameter("VpcAuthMode", vpcAuthMode);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -114,17 +121,6 @@ public class ModifyInstanceVpcAuthModeRequest extends RpcAcsRequest<ModifyInstan
 		}
 	}
 
-	public String getVpcAuthMode() {
-		return this.vpcAuthMode;
-	}
-
-	public void setVpcAuthMode(String vpcAuthMode) {
-		this.vpcAuthMode = vpcAuthMode;
-		if(vpcAuthMode != null){
-			putQueryParameter("VpcAuthMode", vpcAuthMode);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -133,6 +129,17 @@ public class ModifyInstanceVpcAuthModeRequest extends RpcAcsRequest<ModifyInstan
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

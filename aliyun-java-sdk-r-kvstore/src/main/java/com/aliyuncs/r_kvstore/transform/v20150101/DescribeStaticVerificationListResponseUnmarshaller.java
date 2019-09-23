@@ -24,28 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeStaticVerificationListResponseUnmarshaller {
 
-	public static DescribeStaticVerificationListResponse unmarshall(DescribeStaticVerificationListResponse describeStaticVerificationListResponse, UnmarshallerContext context) {
+	public static DescribeStaticVerificationListResponse unmarshall(DescribeStaticVerificationListResponse describeStaticVerificationListResponse, UnmarshallerContext _ctx) {
 		
-		describeStaticVerificationListResponse.setRequestId(context.stringValue("DescribeStaticVerificationListResponse.RequestId"));
-		describeStaticVerificationListResponse.setReplicaId(context.stringValue("DescribeStaticVerificationListResponse.ReplicaId"));
-		describeStaticVerificationListResponse.setSourceInstanceId(context.stringValue("DescribeStaticVerificationListResponse.SourceInstanceId"));
-		describeStaticVerificationListResponse.setSourceDBNumber(context.integerValue("DescribeStaticVerificationListResponse.SourceDBNumber"));
-		describeStaticVerificationListResponse.setSourceTableNumber(context.integerValue("DescribeStaticVerificationListResponse.SourceTableNumber"));
-		describeStaticVerificationListResponse.setSourceCountNumber(context.integerValue("DescribeStaticVerificationListResponse.SourceCountNumber"));
-		describeStaticVerificationListResponse.setSourceDBSize(context.integerValue("DescribeStaticVerificationListResponse.SourceDBSize"));
-		describeStaticVerificationListResponse.setDestinationInstanceId(context.stringValue("DescribeStaticVerificationListResponse.DestinationInstanceId"));
-		describeStaticVerificationListResponse.setDestinationDBNumber(context.integerValue("DescribeStaticVerificationListResponse.DestinationDBNumber"));
-		describeStaticVerificationListResponse.setDestinationTableNumber(context.integerValue("DescribeStaticVerificationListResponse.DestinationTableNumber"));
-		describeStaticVerificationListResponse.setDestinationCountNumber(context.integerValue("DescribeStaticVerificationListResponse.DestinationCountNumber"));
-		describeStaticVerificationListResponse.setDestinationDBSize(context.integerValue("DescribeStaticVerificationListResponse.DestinationDBSize"));
-		describeStaticVerificationListResponse.setConsistencyPercent(context.stringValue("DescribeStaticVerificationListResponse.ConsistencyPercent"));
+		describeStaticVerificationListResponse.setRequestId(_ctx.stringValue("DescribeStaticVerificationListResponse.RequestId"));
+		describeStaticVerificationListResponse.setReplicaId(_ctx.stringValue("DescribeStaticVerificationListResponse.ReplicaId"));
+		describeStaticVerificationListResponse.setSourceInstanceId(_ctx.stringValue("DescribeStaticVerificationListResponse.SourceInstanceId"));
+		describeStaticVerificationListResponse.setSourceDBNumber(_ctx.integerValue("DescribeStaticVerificationListResponse.SourceDBNumber"));
+		describeStaticVerificationListResponse.setSourceTableNumber(_ctx.integerValue("DescribeStaticVerificationListResponse.SourceTableNumber"));
+		describeStaticVerificationListResponse.setSourceCountNumber(_ctx.integerValue("DescribeStaticVerificationListResponse.SourceCountNumber"));
+		describeStaticVerificationListResponse.setSourceDBSize(_ctx.integerValue("DescribeStaticVerificationListResponse.SourceDBSize"));
+		describeStaticVerificationListResponse.setDestinationInstanceId(_ctx.stringValue("DescribeStaticVerificationListResponse.DestinationInstanceId"));
+		describeStaticVerificationListResponse.setDestinationDBNumber(_ctx.integerValue("DescribeStaticVerificationListResponse.DestinationDBNumber"));
+		describeStaticVerificationListResponse.setDestinationTableNumber(_ctx.integerValue("DescribeStaticVerificationListResponse.DestinationTableNumber"));
+		describeStaticVerificationListResponse.setDestinationCountNumber(_ctx.integerValue("DescribeStaticVerificationListResponse.DestinationCountNumber"));
+		describeStaticVerificationListResponse.setDestinationDBSize(_ctx.integerValue("DescribeStaticVerificationListResponse.DestinationDBSize"));
+		describeStaticVerificationListResponse.setConsistencyPercent(_ctx.stringValue("DescribeStaticVerificationListResponse.ConsistencyPercent"));
 
 		List<ItemsItem> items = new ArrayList<ItemsItem>();
-		for (int i = 0; i < context.lengthValue("DescribeStaticVerificationListResponse.Items.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeStaticVerificationListResponse.Items.Length"); i++) {
 			ItemsItem itemsItem = new ItemsItem();
-			itemsItem.setAbnormalType(context.stringValue("DescribeStaticVerificationListResponse.Items["+ i +"].AbnormalType"));
-			itemsItem.setSourceDetail(context.stringValue("DescribeStaticVerificationListResponse.Items["+ i +"].SourceDetail"));
-			itemsItem.setDestinationDetail(context.stringValue("DescribeStaticVerificationListResponse.Items["+ i +"].DestinationDetail"));
+			itemsItem.setAbnormalType(_ctx.stringValue("DescribeStaticVerificationListResponse.Items["+ i +"].AbnormalType"));
+			itemsItem.setSourceDetail(_ctx.stringValue("DescribeStaticVerificationListResponse.Items["+ i +"].SourceDetail"));
+			itemsItem.setDestinationDetail(_ctx.stringValue("DescribeStaticVerificationListResponse.Items["+ i +"].DestinationDetail"));
 
 			items.add(itemsItem);
 		}

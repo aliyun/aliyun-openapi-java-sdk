@@ -15,6 +15,8 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.r_kvstore.Endpoint;
 
 /**
  * @author auto create
@@ -23,12 +25,17 @@ import com.aliyuncs.RpcAcsRequest;
 public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccountDescriptionResponse> {
 	
 	public ModifyAccountDescriptionRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyAccountDescription", "redisa");
+		super("R-kvstore", "2015-01-01", "ModifyAccountDescription");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	private Long resourceOwnerId;
 
-	private String instanceId;
+	private String accountDescription;
 
 	private String accountName;
 
@@ -40,7 +47,7 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 
 	private Long ownerId;
 
-	private String accountDescription;
+	private String instanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,14 +60,14 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getAccountDescription() {
+		return this.accountDescription;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setAccountDescription(String accountDescription) {
+		this.accountDescription = accountDescription;
+		if(accountDescription != null){
+			putQueryParameter("AccountDescription", accountDescription);
 		}
 	}
 
@@ -138,14 +145,14 @@ public class ModifyAccountDescriptionRequest extends RpcAcsRequest<ModifyAccount
 		}
 	}
 
-	public String getAccountDescription() {
-		return this.accountDescription;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setAccountDescription(String accountDescription) {
-		this.accountDescription = accountDescription;
-		if(accountDescription != null){
-			putQueryParameter("AccountDescription", accountDescription);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

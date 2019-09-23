@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyGuardDomainModeResponseUnmarshaller {
 
-	public static ModifyGuardDomainModeResponse unmarshall(ModifyGuardDomainModeResponse modifyGuardDomainModeResponse, UnmarshallerContext context) {
+	public static ModifyGuardDomainModeResponse unmarshall(ModifyGuardDomainModeResponse modifyGuardDomainModeResponse, UnmarshallerContext _ctx) {
 		
-		modifyGuardDomainModeResponse.setRequestId(context.stringValue("ModifyGuardDomainModeResponse.RequestId"));
+		modifyGuardDomainModeResponse.setRequestId(_ctx.stringValue("ModifyGuardDomainModeResponse.RequestId"));
 	 
 	 	return modifyGuardDomainModeResponse;
 	}

@@ -25,54 +25,55 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstancesResponseUnmarshaller {
 
-	public static DescribeInstancesResponse unmarshall(DescribeInstancesResponse describeInstancesResponse, UnmarshallerContext context) {
+	public static DescribeInstancesResponse unmarshall(DescribeInstancesResponse describeInstancesResponse, UnmarshallerContext _ctx) {
 		
-		describeInstancesResponse.setRequestId(context.stringValue("DescribeInstancesResponse.RequestId"));
-		describeInstancesResponse.setPageNumber(context.integerValue("DescribeInstancesResponse.PageNumber"));
-		describeInstancesResponse.setPageSize(context.integerValue("DescribeInstancesResponse.PageSize"));
-		describeInstancesResponse.setTotalCount(context.integerValue("DescribeInstancesResponse.TotalCount"));
+		describeInstancesResponse.setRequestId(_ctx.stringValue("DescribeInstancesResponse.RequestId"));
+		describeInstancesResponse.setPageNumber(_ctx.integerValue("DescribeInstancesResponse.PageNumber"));
+		describeInstancesResponse.setPageSize(_ctx.integerValue("DescribeInstancesResponse.PageSize"));
+		describeInstancesResponse.setTotalCount(_ctx.integerValue("DescribeInstancesResponse.TotalCount"));
 
 		List<KVStoreInstance> instances = new ArrayList<KVStoreInstance>();
-		for (int i = 0; i < context.lengthValue("DescribeInstancesResponse.Instances.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeInstancesResponse.Instances.Length"); i++) {
 			KVStoreInstance kVStoreInstance = new KVStoreInstance();
-			kVStoreInstance.setReplacateId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ReplacateId"));
-			kVStoreInstance.setInstanceId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
-			kVStoreInstance.setInstanceName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceName"));
-			kVStoreInstance.setSearchKey(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].SearchKey"));
-			kVStoreInstance.setConnectionDomain(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectionDomain"));
-			kVStoreInstance.setPort(context.longValue("DescribeInstancesResponse.Instances["+ i +"].Port"));
-			kVStoreInstance.setUserName(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].UserName"));
-			kVStoreInstance.setInstanceStatus(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceStatus"));
-			kVStoreInstance.setRegionId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].RegionId"));
-			kVStoreInstance.setCapacity(context.longValue("DescribeInstancesResponse.Instances["+ i +"].Capacity"));
-			kVStoreInstance.setInstanceClass(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceClass"));
-			kVStoreInstance.setQPS(context.longValue("DescribeInstancesResponse.Instances["+ i +"].QPS"));
-			kVStoreInstance.setBandwidth(context.longValue("DescribeInstancesResponse.Instances["+ i +"].Bandwidth"));
-			kVStoreInstance.setConnections(context.longValue("DescribeInstancesResponse.Instances["+ i +"].Connections"));
-			kVStoreInstance.setZoneId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ZoneId"));
-			kVStoreInstance.setConfig(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Config"));
-			kVStoreInstance.setChargeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ChargeType"));
-			kVStoreInstance.setNetworkType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkType"));
-			kVStoreInstance.setVpcId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].VpcId"));
-			kVStoreInstance.setVSwitchId(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].VSwitchId"));
-			kVStoreInstance.setPrivateIp(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIp"));
-			kVStoreInstance.setCreateTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreateTime"));
-			kVStoreInstance.setEndTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EndTime"));
-			kVStoreInstance.setHasRenewChangeOrder(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].HasRenewChangeOrder"));
-			kVStoreInstance.setIsRds(context.booleanValue("DescribeInstancesResponse.Instances["+ i +"].IsRds"));
-			kVStoreInstance.setInstanceType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceType"));
-			kVStoreInstance.setArchitectureType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ArchitectureType"));
-			kVStoreInstance.setNodeType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].NodeType"));
-			kVStoreInstance.setPackageType(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].PackageType"));
-			kVStoreInstance.setEngineVersion(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].EngineVersion"));
-			kVStoreInstance.setDestroyTime(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].DestroyTime"));
-			kVStoreInstance.setConnectionMode(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectionMode"));
+			kVStoreInstance.setReplacateId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ReplacateId"));
+			kVStoreInstance.setInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
+			kVStoreInstance.setInstanceName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceName"));
+			kVStoreInstance.setSearchKey(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SearchKey"));
+			kVStoreInstance.setConnectionDomain(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectionDomain"));
+			kVStoreInstance.setPort(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Port"));
+			kVStoreInstance.setUserName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].UserName"));
+			kVStoreInstance.setInstanceStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceStatus"));
+			kVStoreInstance.setRegionId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].RegionId"));
+			kVStoreInstance.setCapacity(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Capacity"));
+			kVStoreInstance.setInstanceClass(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceClass"));
+			kVStoreInstance.setQPS(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].QPS"));
+			kVStoreInstance.setBandwidth(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Bandwidth"));
+			kVStoreInstance.setConnections(_ctx.longValue("DescribeInstancesResponse.Instances["+ i +"].Connections"));
+			kVStoreInstance.setZoneId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ZoneId"));
+			kVStoreInstance.setConfig(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Config"));
+			kVStoreInstance.setChargeType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ChargeType"));
+			kVStoreInstance.setNetworkType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkType"));
+			kVStoreInstance.setVpcId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].VpcId"));
+			kVStoreInstance.setVSwitchId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].VSwitchId"));
+			kVStoreInstance.setPrivateIp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIp"));
+			kVStoreInstance.setCreateTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreateTime"));
+			kVStoreInstance.setEndTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].EndTime"));
+			kVStoreInstance.setHasRenewChangeOrder(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].HasRenewChangeOrder"));
+			kVStoreInstance.setIsRds(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].IsRds"));
+			kVStoreInstance.setInstanceType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceType"));
+			kVStoreInstance.setArchitectureType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ArchitectureType"));
+			kVStoreInstance.setNodeType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NodeType"));
+			kVStoreInstance.setPackageType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PackageType"));
+			kVStoreInstance.setEngineVersion(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].EngineVersion"));
+			kVStoreInstance.setDestroyTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DestroyTime"));
+			kVStoreInstance.setConnectionMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ConnectionMode"));
+			kVStoreInstance.setVpcCloudInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].VpcCloudInstanceId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
-			for (int j = 0; j < context.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {
 				Tag tag = new Tag();
-				tag.setKey(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Key"));
-				tag.setValue(context.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Value"));
+				tag.setKey(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Tags["+ j +"].Value"));
 
 				tags.add(tag);
 			}

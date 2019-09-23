@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeCacheAnalysisReportListResponseUnmarshaller {
 
-	public static DescribeCacheAnalysisReportListResponse unmarshall(DescribeCacheAnalysisReportListResponse describeCacheAnalysisReportListResponse, UnmarshallerContext context) {
+	public static DescribeCacheAnalysisReportListResponse unmarshall(DescribeCacheAnalysisReportListResponse describeCacheAnalysisReportListResponse, UnmarshallerContext _ctx) {
 		
-		describeCacheAnalysisReportListResponse.setRequestId(context.stringValue("DescribeCacheAnalysisReportListResponse.RequestId"));
-		describeCacheAnalysisReportListResponse.setInstanceId(context.stringValue("DescribeCacheAnalysisReportListResponse.InstanceId"));
-		describeCacheAnalysisReportListResponse.setTotalRecordCount(context.integerValue("DescribeCacheAnalysisReportListResponse.TotalRecordCount"));
-		describeCacheAnalysisReportListResponse.setPageNumbers(context.integerValue("DescribeCacheAnalysisReportListResponse.PageNumbers"));
-		describeCacheAnalysisReportListResponse.setPageRecordCount(context.integerValue("DescribeCacheAnalysisReportListResponse.PageRecordCount"));
+		describeCacheAnalysisReportListResponse.setRequestId(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.RequestId"));
+		describeCacheAnalysisReportListResponse.setInstanceId(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.InstanceId"));
+		describeCacheAnalysisReportListResponse.setTotalRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportListResponse.TotalRecordCount"));
+		describeCacheAnalysisReportListResponse.setPageNumbers(_ctx.integerValue("DescribeCacheAnalysisReportListResponse.PageNumbers"));
+		describeCacheAnalysisReportListResponse.setPageRecordCount(_ctx.integerValue("DescribeCacheAnalysisReportListResponse.PageRecordCount"));
 
 		List<DailyTask> dailyTasks = new ArrayList<DailyTask>();
-		for (int i = 0; i < context.lengthValue("DescribeCacheAnalysisReportListResponse.DailyTasks.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeCacheAnalysisReportListResponse.DailyTasks.Length"); i++) {
 			DailyTask dailyTask = new DailyTask();
-			dailyTask.setDate(context.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Date"));
+			dailyTask.setDate(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Date"));
 
 			List<Task> tasks = new ArrayList<Task>();
-			for (int j = 0; j < context.lengthValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks.Length"); j++) {
 				Task task = new Task();
-				task.setTaskId(context.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].TaskId"));
-				task.setNodeId(context.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].NodeId"));
-				task.setStartTime(context.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].StartTime"));
-				task.setStatus(context.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].Status"));
+				task.setTaskId(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].TaskId"));
+				task.setNodeId(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].NodeId"));
+				task.setStartTime(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].StartTime"));
+				task.setStatus(_ctx.stringValue("DescribeCacheAnalysisReportListResponse.DailyTasks["+ i +"].Tasks["+ j +"].Status"));
 
 				tasks.add(task);
 			}

@@ -24,34 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeLogicInstanceTopologyResponseUnmarshaller {
 
-	public static DescribeLogicInstanceTopologyResponse unmarshall(DescribeLogicInstanceTopologyResponse describeLogicInstanceTopologyResponse, UnmarshallerContext context) {
+	public static DescribeLogicInstanceTopologyResponse unmarshall(DescribeLogicInstanceTopologyResponse describeLogicInstanceTopologyResponse, UnmarshallerContext _ctx) {
 		
-		describeLogicInstanceTopologyResponse.setRequestId(context.stringValue("DescribeLogicInstanceTopologyResponse.RequestId"));
-		describeLogicInstanceTopologyResponse.setInstanceId(context.stringValue("DescribeLogicInstanceTopologyResponse.InstanceId"));
+		describeLogicInstanceTopologyResponse.setRequestId(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RequestId"));
+		describeLogicInstanceTopologyResponse.setInstanceId(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.InstanceId"));
 
 		List<NodeInfo> redisProxyList = new ArrayList<NodeInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeLogicInstanceTopologyResponse.RedisProxyList.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeLogicInstanceTopologyResponse.RedisProxyList.Length"); i++) {
 			NodeInfo nodeInfo = new NodeInfo();
-			nodeInfo.setNodeId(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].NodeId"));
-			nodeInfo.setConnection(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].Connection"));
-			nodeInfo.setBandwidth(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].Bandwidth"));
-			nodeInfo.setCapacity(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].Capacity"));
-			nodeInfo.setNodeType(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].NodeType"));
+			nodeInfo.setNodeId(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].NodeId"));
+			nodeInfo.setConnection(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].Connection"));
+			nodeInfo.setBandwidth(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].Bandwidth"));
+			nodeInfo.setCapacity(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].Capacity"));
+			nodeInfo.setNodeType(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisProxyList["+ i +"].NodeType"));
 
 			redisProxyList.add(nodeInfo);
 		}
 		describeLogicInstanceTopologyResponse.setRedisProxyList(redisProxyList);
 
 		List<NodeInfo> redisShardList = new ArrayList<NodeInfo>();
-		for (int i = 0; i < context.lengthValue("DescribeLogicInstanceTopologyResponse.RedisShardList.Length"); i++) {
-			NodeInfo nodeInfo = new NodeInfo();
-			nodeInfo.setNodeId(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].NodeId"));
-			nodeInfo.setConnection(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].Connection"));
-			nodeInfo.setBandwidth(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].Bandwidth"));
-			nodeInfo.setCapacity(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].Capacity"));
-			nodeInfo.setNodeType(context.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].NodeType"));
+		for (int i = 0; i < _ctx.lengthValue("DescribeLogicInstanceTopologyResponse.RedisShardList.Length"); i++) {
+			NodeInfo nodeInfo_ = new NodeInfo();
+			nodeInfo_.setNodeId(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].NodeId"));
+			nodeInfo_.setConnection(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].Connection"));
+			nodeInfo_.setBandwidth(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].Bandwidth"));
+			nodeInfo_.setCapacity(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].Capacity"));
+			nodeInfo_.setNodeType(_ctx.stringValue("DescribeLogicInstanceTopologyResponse.RedisShardList["+ i +"].NodeType"));
 
-			redisShardList.add(nodeInfo);
+			redisShardList.add(nodeInfo_);
 		}
 		describeLogicInstanceTopologyResponse.setRedisShardList(redisShardList);
 	 
