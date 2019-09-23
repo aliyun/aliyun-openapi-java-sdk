@@ -53,6 +53,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String instanceNetworkType;
 
+	private Integer instanceAmount;
+
 	private String dataDisk3PerformanceLevel;
 
 	private String imageId;
@@ -63,11 +65,15 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String systemDiskCategory;
 
+	private String platform;
+
 	private String systemDiskPerformanceLevel;
 
 	private String dataDisk4Category;
 
 	private String dataDisk4PerformanceLevel;
+
+	private String scope;
 
 	private String instanceType;
 
@@ -90,6 +96,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	private String dataDisk2PerformanceLevel;
 
 	private Integer systemDiskSize;
+
+	private String offeringType;
 
 	public Integer getDataDisk3Size() {
 		return this.dataDisk3Size;
@@ -201,6 +209,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public Integer getInstanceAmount() {
+		return this.instanceAmount;
+	}
+
+	public void setInstanceAmount(Integer instanceAmount) {
+		this.instanceAmount = instanceAmount;
+		if(instanceAmount != null){
+			putQueryParameter("InstanceAmount", instanceAmount.toString());
+		}
+	}
+
 	public String getDataDisk3PerformanceLevel() {
 		return this.dataDisk3PerformanceLevel;
 	}
@@ -256,6 +275,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
+		}
+	}
+
 	public String getSystemDiskPerformanceLevel() {
 		return this.systemDiskPerformanceLevel;
 	}
@@ -286,6 +316,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.dataDisk4PerformanceLevel = dataDisk4PerformanceLevel;
 		if(dataDisk4PerformanceLevel != null){
 			putQueryParameter("DataDisk.4.PerformanceLevel", dataDisk4PerformanceLevel);
+		}
+	}
+
+	public String getScope() {
+		return this.scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+		if(scope != null){
+			putQueryParameter("Scope", scope);
 		}
 	}
 
@@ -407,6 +448,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
+		}
+	}
+
+	public String getOfferingType() {
+		return this.offeringType;
+	}
+
+	public void setOfferingType(String offeringType) {
+		this.offeringType = offeringType;
+		if(offeringType != null){
+			putQueryParameter("OfferingType", offeringType);
 		}
 	}
 

@@ -41,6 +41,8 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 
 	private Long pageNumber;
 
+	private String contentEncoding;
+
 	private Long pageSize;
 
 	private String invokeId;
@@ -100,6 +102,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getContentEncoding() {
+		return this.contentEncoding;
+	}
+
+	public void setContentEncoding(String contentEncoding) {
+		this.contentEncoding = contentEncoding;
+		if(contentEncoding != null){
+			putQueryParameter("ContentEncoding", contentEncoding);
 		}
 	}
 

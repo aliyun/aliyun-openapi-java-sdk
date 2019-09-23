@@ -98,6 +98,8 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private Float tradePrice;
 
+			private Float reservedInstanceHourPrice;
+
 			private String currency;
 
 			private List<ResourcePriceModel> detailInfos;
@@ -124,6 +126,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setTradePrice(Float tradePrice) {
 				this.tradePrice = tradePrice;
+			}
+
+			public Float getReservedInstanceHourPrice() {
+				return this.reservedInstanceHourPrice;
+			}
+
+			public void setReservedInstanceHourPrice(Float reservedInstanceHourPrice) {
+				this.reservedInstanceHourPrice = reservedInstanceHourPrice;
 			}
 
 			public String getCurrency() {

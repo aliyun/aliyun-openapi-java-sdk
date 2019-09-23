@@ -1,3 +1,6 @@
+2019-09-23 Version: 4.17.5
+- Add param, DescribePrice supprot ReservedInstance.
+
 2019-09-06 Version: 4.17.4
 - Update endpoint data.
 

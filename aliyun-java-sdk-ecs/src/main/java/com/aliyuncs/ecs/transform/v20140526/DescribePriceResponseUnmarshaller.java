@@ -38,6 +38,7 @@ public class DescribePriceResponseUnmarshaller {
 		price.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.OriginalPrice"));
 		price.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.DiscountPrice"));
 		price.setTradePrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.TradePrice"));
+		price.setReservedInstanceHourPrice(_ctx.floatValue("DescribePriceResponse.PriceInfo.Price.ReservedInstanceHourPrice"));
 		price.setCurrency(_ctx.stringValue("DescribePriceResponse.PriceInfo.Price.Currency"));
 
 		List<ResourcePriceModel> detailInfos = new ArrayList<ResourcePriceModel>();
