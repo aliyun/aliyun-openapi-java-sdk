@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,19 +26,20 @@ public class ReportAppConsistentPointRequest extends RpcAcsRequest<ReportAppCons
 	
 	public ReportAppConsistentPointRequest() {
 		super("hdr", "2017-09-25", "ReportAppConsistentPoint", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private String snapshotId;
 
+	private String serverId;
+
 	private String securityToken;
 
 	private Long snapshotTime;
-
-	private String serverId;
 
 	public String getSnapshotId() {
 		return this.snapshotId;
@@ -47,6 +49,17 @@ public class ReportAppConsistentPointRequest extends RpcAcsRequest<ReportAppCons
 		this.snapshotId = snapshotId;
 		if(snapshotId != null){
 			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
 		}
 	}
 
@@ -88,17 +101,6 @@ public class ReportAppConsistentPointRequest extends RpcAcsRequest<ReportAppCons
 		this.snapshotTime = snapshotTime;
 		if(snapshotTime != null){
 			putQueryParameter("SnapshotTime", snapshotTime.toString());
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 

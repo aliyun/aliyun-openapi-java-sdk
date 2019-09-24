@@ -1,3 +1,6 @@
+2019-09-24 Version: 1.0.1
+- Support endpoint resolve.
+
 2019-08-07 Version: 1.0.0
 - First release of HDR java sdk.
 

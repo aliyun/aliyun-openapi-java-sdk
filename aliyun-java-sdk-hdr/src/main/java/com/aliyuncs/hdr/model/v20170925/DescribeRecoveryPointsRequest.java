@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,17 +26,40 @@ public class DescribeRecoveryPointsRequest extends RpcAcsRequest<DescribeRecover
 	
 	public DescribeRecoveryPointsRequest() {
 		super("hdr", "2017-09-25", "DescribeRecoveryPoints", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String securityToken;
 
 	private Long startTime;
 
 	private String serverId;
+
+	private String securityToken;
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
+		}
+	}
 
 	public String getBizSecurityToken() {
 		return this.securityToken;
@@ -64,28 +88,6 @@ public class DescribeRecoveryPointsRequest extends RpcAcsRequest<DescribeRecover
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 

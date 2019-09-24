@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,9 +26,10 @@ public class DeployDrGatewayRequest extends RpcAcsRequest<DeployDrGatewayRespons
 	
 	public DeployDrGatewayRequest() {
 		super("hdr", "2017-09-25", "DeployDrGateway", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -35,11 +37,7 @@ public class DeployDrGatewayRequest extends RpcAcsRequest<DeployDrGatewayRespons
 
 	private String sitePairId;
 
-	private String name;
-
 	private String gatewayImageName;
-
-	private String siteId;
 
 	private String description;
 
@@ -48,6 +46,12 @@ public class DeployDrGatewayRequest extends RpcAcsRequest<DeployDrGatewayRespons
 	private String drGatewayClass;
 
 	private String userVSwitchId;
+
+	private String securityToken;
+
+	private String name;
+
+	private String siteId;
 
 	public String getWindowsShadowVmImageName() {
 		return this.windowsShadowVmImageName;
@@ -71,17 +75,6 @@ public class DeployDrGatewayRequest extends RpcAcsRequest<DeployDrGatewayRespons
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getGatewayImageName() {
 		return this.gatewayImageName;
 	}
@@ -90,17 +83,6 @@ public class DeployDrGatewayRequest extends RpcAcsRequest<DeployDrGatewayRespons
 		this.gatewayImageName = gatewayImageName;
 		if(gatewayImageName != null){
 			putQueryParameter("GatewayImageName", gatewayImageName);
-		}
-	}
-
-	public String getSiteId() {
-		return this.siteId;
-	}
-
-	public void setSiteId(String siteId) {
-		this.siteId = siteId;
-		if(siteId != null){
-			putQueryParameter("SiteId", siteId);
 		}
 	}
 
@@ -145,6 +127,58 @@ public class DeployDrGatewayRequest extends RpcAcsRequest<DeployDrGatewayRespons
 		this.userVSwitchId = userVSwitchId;
 		if(userVSwitchId != null){
 			putQueryParameter("UserVSwitchId", userVSwitchId);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getSiteId() {
+		return this.siteId;
+	}
+
+	public void setSiteId(String siteId) {
+		this.siteId = siteId;
+		if(siteId != null){
+			putQueryParameter("SiteId", siteId);
 		}
 	}
 

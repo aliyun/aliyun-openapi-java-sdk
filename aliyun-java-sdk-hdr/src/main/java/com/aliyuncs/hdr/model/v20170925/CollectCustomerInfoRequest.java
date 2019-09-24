@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,9 +26,10 @@ public class CollectCustomerInfoRequest extends RpcAcsRequest<CollectCustomerInf
 	
 	public CollectCustomerInfoRequest() {
 		super("hdr", "2017-09-25", "CollectCustomerInfo", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -47,15 +49,7 @@ public class CollectCustomerInfoRequest extends RpcAcsRequest<CollectCustomerInf
 
 	private String value3;
 
-	private String telephone;
-
-	private String label1;
-
 	private String value9;
-
-	private String label2;
-
-	private String label3;
 
 	private String label4;
 
@@ -67,13 +61,23 @@ public class CollectCustomerInfoRequest extends RpcAcsRequest<CollectCustomerInf
 
 	private String label8;
 
-	private String label9;
+	private String securityToken;
 
-	private String service;
+	private String label9;
 
 	private String contact;
 
 	private String company;
+
+	private String telephone;
+
+	private String label1;
+
+	private String label2;
+
+	private String label3;
+
+	private String service;
 
 	public String getValue6() {
 		return this.value6;
@@ -163,28 +167,6 @@ public class CollectCustomerInfoRequest extends RpcAcsRequest<CollectCustomerInf
 		}
 	}
 
-	public String getTelephone() {
-		return this.telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-		if(telephone != null){
-			putQueryParameter("Telephone", telephone);
-		}
-	}
-
-	public String getLabel1() {
-		return this.label1;
-	}
-
-	public void setLabel1(String label1) {
-		this.label1 = label1;
-		if(label1 != null){
-			putQueryParameter("Label1", label1);
-		}
-	}
-
 	public String getValue9() {
 		return this.value9;
 	}
@@ -193,28 +175,6 @@ public class CollectCustomerInfoRequest extends RpcAcsRequest<CollectCustomerInf
 		this.value9 = value9;
 		if(value9 != null){
 			putQueryParameter("Value9", value9);
-		}
-	}
-
-	public String getLabel2() {
-		return this.label2;
-	}
-
-	public void setLabel2(String label2) {
-		this.label2 = label2;
-		if(label2 != null){
-			putQueryParameter("Label2", label2);
-		}
-	}
-
-	public String getLabel3() {
-		return this.label3;
-	}
-
-	public void setLabel3(String label3) {
-		this.label3 = label3;
-		if(label3 != null){
-			putQueryParameter("Label3", label3);
 		}
 	}
 
@@ -273,6 +233,36 @@ public class CollectCustomerInfoRequest extends RpcAcsRequest<CollectCustomerInf
 		}
 	}
 
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
 	public String getLabel9() {
 		return this.label9;
 	}
@@ -281,17 +271,6 @@ public class CollectCustomerInfoRequest extends RpcAcsRequest<CollectCustomerInf
 		this.label9 = label9;
 		if(label9 != null){
 			putQueryParameter("Label9", label9);
-		}
-	}
-
-	public String getService() {
-		return this.service;
-	}
-
-	public void setService(String service) {
-		this.service = service;
-		if(service != null){
-			putQueryParameter("Service", service);
 		}
 	}
 
@@ -314,6 +293,61 @@ public class CollectCustomerInfoRequest extends RpcAcsRequest<CollectCustomerInf
 		this.company = company;
 		if(company != null){
 			putQueryParameter("Company", company);
+		}
+	}
+
+	public String getTelephone() {
+		return this.telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+		if(telephone != null){
+			putQueryParameter("Telephone", telephone);
+		}
+	}
+
+	public String getLabel1() {
+		return this.label1;
+	}
+
+	public void setLabel1(String label1) {
+		this.label1 = label1;
+		if(label1 != null){
+			putQueryParameter("Label1", label1);
+		}
+	}
+
+	public String getLabel2() {
+		return this.label2;
+	}
+
+	public void setLabel2(String label2) {
+		this.label2 = label2;
+		if(label2 != null){
+			putQueryParameter("Label2", label2);
+		}
+	}
+
+	public String getLabel3() {
+		return this.label3;
+	}
+
+	public void setLabel3(String label3) {
+		this.label3 = label3;
+		if(label3 != null){
+			putQueryParameter("Label3", label3);
+		}
+	}
+
+	public String getService() {
+		return this.service;
+	}
+
+	public void setService(String service) {
+		this.service = service;
+		if(service != null){
+			putQueryParameter("Service", service);
 		}
 	}
 

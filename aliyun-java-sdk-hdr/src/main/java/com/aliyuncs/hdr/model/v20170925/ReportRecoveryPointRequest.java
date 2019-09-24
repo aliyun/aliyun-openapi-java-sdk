@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,34 +26,24 @@ public class ReportRecoveryPointRequest extends RpcAcsRequest<ReportRecoveryPoin
 	
 	public ReportRecoveryPointRequest() {
 		super("hdr", "2017-09-25", "ReportRecoveryPoint", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Boolean applicationConsistent;
-
 	private String recoveryPointId;
-
-	private String securityToken;
 
 	private Long recoveryPointTime;
 
 	private String serverId;
 
+	private Boolean applicationConsistent;
+
+	private String securityToken;
+
 	private Long userUid;
-
-	public Boolean getApplicationConsistent() {
-		return this.applicationConsistent;
-	}
-
-	public void setApplicationConsistent(Boolean applicationConsistent) {
-		this.applicationConsistent = applicationConsistent;
-		if(applicationConsistent != null){
-			putQueryParameter("ApplicationConsistent", applicationConsistent.toString());
-		}
-	}
 
 	public String getRecoveryPointId() {
 		return this.recoveryPointId;
@@ -62,6 +53,39 @@ public class ReportRecoveryPointRequest extends RpcAcsRequest<ReportRecoveryPoin
 		this.recoveryPointId = recoveryPointId;
 		if(recoveryPointId != null){
 			putQueryParameter("RecoveryPointId", recoveryPointId);
+		}
+	}
+
+	public Long getRecoveryPointTime() {
+		return this.recoveryPointTime;
+	}
+
+	public void setRecoveryPointTime(Long recoveryPointTime) {
+		this.recoveryPointTime = recoveryPointTime;
+		if(recoveryPointTime != null){
+			putQueryParameter("RecoveryPointTime", recoveryPointTime.toString());
+		}
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
+		}
+	}
+
+	public Boolean getApplicationConsistent() {
+		return this.applicationConsistent;
+	}
+
+	public void setApplicationConsistent(Boolean applicationConsistent) {
+		this.applicationConsistent = applicationConsistent;
+		if(applicationConsistent != null){
+			putQueryParameter("ApplicationConsistent", applicationConsistent.toString());
 		}
 	}
 
@@ -92,28 +116,6 @@ public class ReportRecoveryPointRequest extends RpcAcsRequest<ReportRecoveryPoin
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Long getRecoveryPointTime() {
-		return this.recoveryPointTime;
-	}
-
-	public void setRecoveryPointTime(Long recoveryPointTime) {
-		this.recoveryPointTime = recoveryPointTime;
-		if(recoveryPointTime != null){
-			putQueryParameter("RecoveryPointTime", recoveryPointTime.toString());
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 

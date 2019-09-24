@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,21 +26,26 @@ public class EnableReplicationRequest extends RpcAcsRequest<EnableReplicationRes
 	
 	public EnableReplicationRequest() {
 		super("hdr", "2017-09-25", "EnableReplication", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private Boolean replicationUseSsd;
 
+	private Boolean replicationUseEssd;
+
 	private String recoveryNetwork;
 
 	private String serverId;
 
-	private String replicationNetwork;
-
 	private String appConsistentPointPolicy;
+
+	private String securityToken;
+
+	private String replicationNetwork;
 
 	private String crashConsistentPointPolicy;
 
@@ -51,6 +57,17 @@ public class EnableReplicationRequest extends RpcAcsRequest<EnableReplicationRes
 		this.replicationUseSsd = replicationUseSsd;
 		if(replicationUseSsd != null){
 			putQueryParameter("ReplicationUseSsd", replicationUseSsd.toString());
+		}
+	}
+
+	public Boolean getReplicationUseEssd() {
+		return this.replicationUseEssd;
+	}
+
+	public void setReplicationUseEssd(Boolean replicationUseEssd) {
+		this.replicationUseEssd = replicationUseEssd;
+		if(replicationUseEssd != null){
+			putQueryParameter("ReplicationUseEssd", replicationUseEssd.toString());
 		}
 	}
 
@@ -76,17 +93,6 @@ public class EnableReplicationRequest extends RpcAcsRequest<EnableReplicationRes
 		}
 	}
 
-	public String getReplicationNetwork() {
-		return this.replicationNetwork;
-	}
-
-	public void setReplicationNetwork(String replicationNetwork) {
-		this.replicationNetwork = replicationNetwork;
-		if(replicationNetwork != null){
-			putQueryParameter("ReplicationNetwork", replicationNetwork);
-		}
-	}
-
 	public String getAppConsistentPointPolicy() {
 		return this.appConsistentPointPolicy;
 	}
@@ -95,6 +101,47 @@ public class EnableReplicationRequest extends RpcAcsRequest<EnableReplicationRes
 		this.appConsistentPointPolicy = appConsistentPointPolicy;
 		if(appConsistentPointPolicy != null){
 			putQueryParameter("AppConsistentPointPolicy", appConsistentPointPolicy);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getReplicationNetwork() {
+		return this.replicationNetwork;
+	}
+
+	public void setReplicationNetwork(String replicationNetwork) {
+		this.replicationNetwork = replicationNetwork;
+		if(replicationNetwork != null){
+			putQueryParameter("ReplicationNetwork", replicationNetwork);
 		}
 	}
 

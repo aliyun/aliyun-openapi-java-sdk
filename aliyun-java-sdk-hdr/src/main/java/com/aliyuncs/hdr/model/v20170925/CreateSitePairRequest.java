@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,9 +26,10 @@ public class CreateSitePairRequest extends RpcAcsRequest<CreateSitePairResponse>
 	
 	public CreateSitePairRequest() {
 		super("hdr", "2017-09-25", "CreateSitePair", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -35,11 +37,19 @@ public class CreateSitePairRequest extends RpcAcsRequest<CreateSitePairResponse>
 
 	private String secondarySiteVpcId;
 
-	private String localGatewayName;
-
 	private String primarySiteVpcId;
 
 	private String localSiteName;
+
+	private String sitePairType;
+
+	private String securityToken;
+
+	private String secondarySiteName;
+
+	private String cloudSiteName;
+
+	private String localGatewayName;
 
 	private String primarySiteType;
 
@@ -47,15 +57,9 @@ public class CreateSitePairRequest extends RpcAcsRequest<CreateSitePairResponse>
 
 	private String primarySiteZoneId;
 
-	private String sitePairType;
-
 	private String primarySiteName;
 
-	private String secondarySiteName;
-
 	private String secondarySiteRegionId;
-
-	private String cloudSiteName;
 
 	private String secondarySiteZoneId;
 
@@ -81,17 +85,6 @@ public class CreateSitePairRequest extends RpcAcsRequest<CreateSitePairResponse>
 		}
 	}
 
-	public String getLocalGatewayName() {
-		return this.localGatewayName;
-	}
-
-	public void setLocalGatewayName(String localGatewayName) {
-		this.localGatewayName = localGatewayName;
-		if(localGatewayName != null){
-			putQueryParameter("LocalGatewayName", localGatewayName);
-		}
-	}
-
 	public String getPrimarySiteVpcId() {
 		return this.primarySiteVpcId;
 	}
@@ -111,6 +104,80 @@ public class CreateSitePairRequest extends RpcAcsRequest<CreateSitePairResponse>
 		this.localSiteName = localSiteName;
 		if(localSiteName != null){
 			putQueryParameter("LocalSiteName", localSiteName);
+		}
+	}
+
+	public String getSitePairType() {
+		return this.sitePairType;
+	}
+
+	public void setSitePairType(String sitePairType) {
+		this.sitePairType = sitePairType;
+		if(sitePairType != null){
+			putQueryParameter("SitePairType", sitePairType);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getSecondarySiteName() {
+		return this.secondarySiteName;
+	}
+
+	public void setSecondarySiteName(String secondarySiteName) {
+		this.secondarySiteName = secondarySiteName;
+		if(secondarySiteName != null){
+			putQueryParameter("SecondarySiteName", secondarySiteName);
+		}
+	}
+
+	public String getCloudSiteName() {
+		return this.cloudSiteName;
+	}
+
+	public void setCloudSiteName(String cloudSiteName) {
+		this.cloudSiteName = cloudSiteName;
+		if(cloudSiteName != null){
+			putQueryParameter("CloudSiteName", cloudSiteName);
+		}
+	}
+
+	public String getLocalGatewayName() {
+		return this.localGatewayName;
+	}
+
+	public void setLocalGatewayName(String localGatewayName) {
+		this.localGatewayName = localGatewayName;
+		if(localGatewayName != null){
+			putQueryParameter("LocalGatewayName", localGatewayName);
 		}
 	}
 
@@ -147,17 +214,6 @@ public class CreateSitePairRequest extends RpcAcsRequest<CreateSitePairResponse>
 		}
 	}
 
-	public String getSitePairType() {
-		return this.sitePairType;
-	}
-
-	public void setSitePairType(String sitePairType) {
-		this.sitePairType = sitePairType;
-		if(sitePairType != null){
-			putQueryParameter("SitePairType", sitePairType);
-		}
-	}
-
 	public String getPrimarySiteName() {
 		return this.primarySiteName;
 	}
@@ -169,17 +225,6 @@ public class CreateSitePairRequest extends RpcAcsRequest<CreateSitePairResponse>
 		}
 	}
 
-	public String getSecondarySiteName() {
-		return this.secondarySiteName;
-	}
-
-	public void setSecondarySiteName(String secondarySiteName) {
-		this.secondarySiteName = secondarySiteName;
-		if(secondarySiteName != null){
-			putQueryParameter("SecondarySiteName", secondarySiteName);
-		}
-	}
-
 	public String getSecondarySiteRegionId() {
 		return this.secondarySiteRegionId;
 	}
@@ -188,17 +233,6 @@ public class CreateSitePairRequest extends RpcAcsRequest<CreateSitePairResponse>
 		this.secondarySiteRegionId = secondarySiteRegionId;
 		if(secondarySiteRegionId != null){
 			putQueryParameter("SecondarySiteRegionId", secondarySiteRegionId);
-		}
-	}
-
-	public String getCloudSiteName() {
-		return this.cloudSiteName;
-	}
-
-	public void setCloudSiteName(String cloudSiteName) {
-		this.cloudSiteName = cloudSiteName;
-		if(cloudSiteName != null){
-			putQueryParameter("CloudSiteName", cloudSiteName);
 		}
 	}
 

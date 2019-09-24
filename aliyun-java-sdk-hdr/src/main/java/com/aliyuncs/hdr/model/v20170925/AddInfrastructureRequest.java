@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,13 +26,16 @@ public class AddInfrastructureRequest extends RpcAcsRequest<AddInfrastructureRes
 	
 	public AddInfrastructureRequest() {
 		super("hdr", "2017-09-25", "AddInfrastructure", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private String ipAddress;
+
+	private String type;
 
 	private String credential;
 
@@ -41,8 +45,6 @@ public class AddInfrastructureRequest extends RpcAcsRequest<AddInfrastructureRes
 
 	private String siteId;
 
-	private String type;
-
 	public String getIpAddress() {
 		return this.ipAddress;
 	}
@@ -51,6 +53,17 @@ public class AddInfrastructureRequest extends RpcAcsRequest<AddInfrastructureRes
 		this.ipAddress = ipAddress;
 		if(ipAddress != null){
 			putQueryParameter("IpAddress", ipAddress);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
@@ -114,17 +127,6 @@ public class AddInfrastructureRequest extends RpcAcsRequest<AddInfrastructureRes
 		this.siteId = siteId;
 		if(siteId != null){
 			putQueryParameter("SiteId", siteId);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 

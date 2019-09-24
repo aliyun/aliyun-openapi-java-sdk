@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,19 +26,20 @@ public class ReportDrGatewayAlertRequest extends RpcAcsRequest<ReportDrGatewayAl
 	
 	public ReportDrGatewayAlertRequest() {
 		super("hdr", "2017-09-25", "ReportDrGatewayAlert", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private String eventId;
 
-	private String securityToken;
-
 	private String level;
 
 	private String alertTime;
+
+	private String securityToken;
 
 	private String alertValue;
 
@@ -53,6 +55,28 @@ public class ReportDrGatewayAlertRequest extends RpcAcsRequest<ReportDrGatewayAl
 		this.eventId = eventId;
 		if(eventId != null){
 			putQueryParameter("EventId", eventId);
+		}
+	}
+
+	public String getLevel() {
+		return this.level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+		if(level != null){
+			putQueryParameter("Level", level);
+		}
+	}
+
+	public String getAlertTime() {
+		return this.alertTime;
+	}
+
+	public void setAlertTime(String alertTime) {
+		this.alertTime = alertTime;
+		if(alertTime != null){
+			putQueryParameter("AlertTime", alertTime);
 		}
 	}
 
@@ -83,28 +107,6 @@ public class ReportDrGatewayAlertRequest extends RpcAcsRequest<ReportDrGatewayAl
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
-		}
-	}
-
-	public String getAlertTime() {
-		return this.alertTime;
-	}
-
-	public void setAlertTime(String alertTime) {
-		this.alertTime = alertTime;
-		if(alertTime != null){
-			putQueryParameter("AlertTime", alertTime);
 		}
 	}
 

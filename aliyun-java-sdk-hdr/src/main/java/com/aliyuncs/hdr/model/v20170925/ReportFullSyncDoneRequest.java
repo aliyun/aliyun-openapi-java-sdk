@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,19 +26,31 @@ public class ReportFullSyncDoneRequest extends RpcAcsRequest<ReportFullSyncDoneR
 	
 	public ReportFullSyncDoneRequest() {
 		super("hdr", "2017-09-25", "ReportFullSyncDone", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String securityToken;
-
 	private String serverId;
+
+	private String securityToken;
 
 	private Long userUid;
 
 	private String gatewayId;
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
+		}
+	}
 
 	public String getBizSecurityToken() {
 		return this.securityToken;
@@ -66,17 +79,6 @@ public class ReportFullSyncDoneRequest extends RpcAcsRequest<ReportFullSyncDoneR
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 

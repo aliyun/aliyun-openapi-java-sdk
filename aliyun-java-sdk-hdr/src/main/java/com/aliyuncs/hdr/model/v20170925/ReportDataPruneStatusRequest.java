@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,17 +26,18 @@ public class ReportDataPruneStatusRequest extends RpcAcsRequest<ReportDataPruneS
 	
 	public ReportDataPruneStatusRequest() {
 		super("hdr", "2017-09-25", "ReportDataPruneStatus", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private String appliedDatetime;
 
-	private String securityToken;
-
 	private String serverId;
+
+	private String securityToken;
 
 	private Long userUid;
 
@@ -49,6 +51,17 @@ public class ReportDataPruneStatusRequest extends RpcAcsRequest<ReportDataPruneS
 		this.appliedDatetime = appliedDatetime;
 		if(appliedDatetime != null){
 			putQueryParameter("AppliedDatetime", appliedDatetime);
+		}
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
 		}
 	}
 
@@ -79,17 +92,6 @@ public class ReportDataPruneStatusRequest extends RpcAcsRequest<ReportDataPruneS
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 

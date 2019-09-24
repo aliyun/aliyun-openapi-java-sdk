@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,19 +26,20 @@ public class ReportReplicationErrorRequest extends RpcAcsRequest<ReportReplicati
 	
 	public ReportReplicationErrorRequest() {
 		super("hdr", "2017-09-25", "ReportReplicationError", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private String errno;
 
-	private String securityToken;
-
 	private String errmsg;
 
 	private String serverId;
+
+	private String securityToken;
 
 	private Long userUid;
 
@@ -49,6 +51,28 @@ public class ReportReplicationErrorRequest extends RpcAcsRequest<ReportReplicati
 		this.errno = errno;
 		if(errno != null){
 			putQueryParameter("Errno", errno);
+		}
+	}
+
+	public String getErrmsg() {
+		return this.errmsg;
+	}
+
+	public void setErrmsg(String errmsg) {
+		this.errmsg = errmsg;
+		if(errmsg != null){
+			putQueryParameter("Errmsg", errmsg);
+		}
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
 		}
 	}
 
@@ -79,28 +103,6 @@ public class ReportReplicationErrorRequest extends RpcAcsRequest<ReportReplicati
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getErrmsg() {
-		return this.errmsg;
-	}
-
-	public void setErrmsg(String errmsg) {
-		this.errmsg = errmsg;
-		if(errmsg != null){
-			putQueryParameter("Errmsg", errmsg);
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 

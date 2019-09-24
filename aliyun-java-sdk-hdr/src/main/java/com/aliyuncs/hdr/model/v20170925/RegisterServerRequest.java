@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,9 +26,10 @@ public class RegisterServerRequest extends RpcAcsRequest<RegisterServerResponse>
 	
 	public RegisterServerRequest() {
 		super("hdr", "2017-09-25", "RegisterServer", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -39,15 +41,7 @@ public class RegisterServerRequest extends RpcAcsRequest<RegisterServerResponse>
 
 	private String disks;
 
-	private String volumes;
-
-	private Integer cpu;
-
-	private String osType;
-
 	private String osDetail;
-
-	private String serverId;
 
 	private String hostname;
 
@@ -58,6 +52,14 @@ public class RegisterServerRequest extends RpcAcsRequest<RegisterServerResponse>
 	private Long userUid;
 
 	private String gatewayId;
+
+	private String volumes;
+
+	private Integer cpu;
+
+	private String osType;
+
+	private String serverId;
 
 	public String getIpAddress() {
 		return this.ipAddress;
@@ -103,39 +105,6 @@ public class RegisterServerRequest extends RpcAcsRequest<RegisterServerResponse>
 		}
 	}
 
-	public String getVolumes() {
-		return this.volumes;
-	}
-
-	public void setVolumes(String volumes) {
-		this.volumes = volumes;
-		if(volumes != null){
-			putQueryParameter("Volumes", volumes);
-		}
-	}
-
-	public Integer getCpu() {
-		return this.cpu;
-	}
-
-	public void setCpu(Integer cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
-		}
-	}
-
-	public String getOsType() {
-		return this.osType;
-	}
-
-	public void setOsType(String osType) {
-		this.osType = osType;
-		if(osType != null){
-			putQueryParameter("OsType", osType);
-		}
-	}
-
 	public String getOsDetail() {
 		return this.osDetail;
 	}
@@ -144,17 +113,6 @@ public class RegisterServerRequest extends RpcAcsRequest<RegisterServerResponse>
 		this.osDetail = osDetail;
 		if(osDetail != null){
 			putQueryParameter("OsDetail", osDetail);
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 
@@ -229,6 +187,50 @@ public class RegisterServerRequest extends RpcAcsRequest<RegisterServerResponse>
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putQueryParameter("GatewayId", gatewayId);
+		}
+	}
+
+	public String getVolumes() {
+		return this.volumes;
+	}
+
+	public void setVolumes(String volumes) {
+		this.volumes = volumes;
+		if(volumes != null){
+			putQueryParameter("Volumes", volumes);
+		}
+	}
+
+	public Integer getCpu() {
+		return this.cpu;
+	}
+
+	public void setCpu(Integer cpu) {
+		this.cpu = cpu;
+		if(cpu != null){
+			putQueryParameter("Cpu", cpu.toString());
+		}
+	}
+
+	public String getOsType() {
+		return this.osType;
+	}
+
+	public void setOsType(String osType) {
+		this.osType = osType;
+		if(osType != null){
+			putQueryParameter("OsType", osType);
+		}
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
 		}
 	}
 

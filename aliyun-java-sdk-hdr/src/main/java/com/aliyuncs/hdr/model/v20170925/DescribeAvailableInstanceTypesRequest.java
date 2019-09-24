@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,25 +26,30 @@ public class DescribeAvailableInstanceTypesRequest extends RpcAcsRequest<Describ
 	
 	public DescribeAvailableInstanceTypesRequest() {
 		super("hdr", "2017-09-25", "DescribeAvailableInstanceTypes", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private Boolean ioOptimized;
 
-	private String diskType;
-
 	private Integer pageNumber;
 
 	private String network;
 
-	private String filter;
-
 	private String securityToken;
 
 	private Integer pageSize;
+
+	private Long userUid;
+
+	private String order;
+
+	private String diskType;
+
+	private String filter;
 
 	private String zoneId;
 
@@ -53,10 +59,6 @@ public class DescribeAvailableInstanceTypesRequest extends RpcAcsRequest<Describ
 
 	private String region;
 
-	private Long userUid;
-
-	private String order;
-
 	public Boolean getIoOptimized() {
 		return this.ioOptimized;
 	}
@@ -65,17 +67,6 @@ public class DescribeAvailableInstanceTypesRequest extends RpcAcsRequest<Describ
 		this.ioOptimized = ioOptimized;
 		if(ioOptimized != null){
 			putQueryParameter("IoOptimized", ioOptimized.toString());
-		}
-	}
-
-	public String getDiskType() {
-		return this.diskType;
-	}
-
-	public void setDiskType(String diskType) {
-		this.diskType = diskType;
-		if(diskType != null){
-			putQueryParameter("DiskType", diskType);
 		}
 	}
 
@@ -98,17 +89,6 @@ public class DescribeAvailableInstanceTypesRequest extends RpcAcsRequest<Describ
 		this.network = network;
 		if(network != null){
 			putQueryParameter("Network", network);
-		}
-	}
-
-	public String getFilter() {
-		return this.filter;
-	}
-
-	public void setFilter(String filter) {
-		this.filter = filter;
-		if(filter != null){
-			putQueryParameter("Filter", filter);
 		}
 	}
 
@@ -153,6 +133,50 @@ public class DescribeAvailableInstanceTypesRequest extends RpcAcsRequest<Describ
 		}
 	}
 
+	public Long getUserUid() {
+		return this.userUid;
+	}
+
+	public void setUserUid(Long userUid) {
+		this.userUid = userUid;
+		if(userUid != null){
+			putQueryParameter("UserUid", userUid.toString());
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
+		}
+	}
+
+	public String getDiskType() {
+		return this.diskType;
+	}
+
+	public void setDiskType(String diskType) {
+		this.diskType = diskType;
+		if(diskType != null){
+			putQueryParameter("DiskType", diskType);
+		}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -194,28 +218,6 @@ public class DescribeAvailableInstanceTypesRequest extends RpcAcsRequest<Describ
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
-		}
-	}
-
-	public Long getUserUid() {
-		return this.userUid;
-	}
-
-	public void setUserUid(Long userUid) {
-		this.userUid = userUid;
-		if(userUid != null){
-			putQueryParameter("UserUid", userUid.toString());
-		}
-	}
-
-	public String getOrder() {
-		return this.order;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-		if(order != null){
-			putQueryParameter("Order", order);
 		}
 	}
 

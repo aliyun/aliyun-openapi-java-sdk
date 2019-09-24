@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,13 +26,12 @@ public class FailbackRequest extends RpcAcsRequest<FailbackResponse> {
 	
 	public FailbackRequest() {
 		super("hdr", "2017-09-25", "Failback", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String recoveryGateway;
 
 	private String recoveryNetMask;
 
@@ -39,23 +39,15 @@ public class FailbackRequest extends RpcAcsRequest<FailbackResponse> {
 
 	private String recoveryPostScriptType;
 
-	private Boolean recoveryUseDhcp;
-
-	private String recoveryNetwork;
-
-	private String serverId;
-
 	private Long recoveryMemory;
 
 	private Integer recoveryCpu;
 
-	private String recoveryDatastore;
-
 	private String recoveryIpAddress;
 
-	private String recoveryDns;
+	private String securityToken;
 
-	private String recoveryPostScriptContent;
+	private String recoveryDns;
 
 	private String recoveryLocation;
 
@@ -63,18 +55,19 @@ public class FailbackRequest extends RpcAcsRequest<FailbackResponse> {
 
 	private String recoveryInstanceName;
 
+	private String recoveryGateway;
+
+	private Boolean recoveryUseDhcp;
+
+	private String recoveryNetwork;
+
+	private String serverId;
+
+	private String recoveryDatastore;
+
+	private String recoveryPostScriptContent;
+
 	private Boolean recoveryReserveIp;
-
-	public String getRecoveryGateway() {
-		return this.recoveryGateway;
-	}
-
-	public void setRecoveryGateway(String recoveryGateway) {
-		this.recoveryGateway = recoveryGateway;
-		if(recoveryGateway != null){
-			putQueryParameter("RecoveryGateway", recoveryGateway);
-		}
-	}
 
 	public String getRecoveryNetMask() {
 		return this.recoveryNetMask;
@@ -106,6 +99,124 @@ public class FailbackRequest extends RpcAcsRequest<FailbackResponse> {
 		this.recoveryPostScriptType = recoveryPostScriptType;
 		if(recoveryPostScriptType != null){
 			putQueryParameter("RecoveryPostScriptType", recoveryPostScriptType);
+		}
+	}
+
+	public Long getRecoveryMemory() {
+		return this.recoveryMemory;
+	}
+
+	public void setRecoveryMemory(Long recoveryMemory) {
+		this.recoveryMemory = recoveryMemory;
+		if(recoveryMemory != null){
+			putQueryParameter("RecoveryMemory", recoveryMemory.toString());
+		}
+	}
+
+	public Integer getRecoveryCpu() {
+		return this.recoveryCpu;
+	}
+
+	public void setRecoveryCpu(Integer recoveryCpu) {
+		this.recoveryCpu = recoveryCpu;
+		if(recoveryCpu != null){
+			putQueryParameter("RecoveryCpu", recoveryCpu.toString());
+		}
+	}
+
+	public String getRecoveryIpAddress() {
+		return this.recoveryIpAddress;
+	}
+
+	public void setRecoveryIpAddress(String recoveryIpAddress) {
+		this.recoveryIpAddress = recoveryIpAddress;
+		if(recoveryIpAddress != null){
+			putQueryParameter("RecoveryIpAddress", recoveryIpAddress);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getRecoveryDns() {
+		return this.recoveryDns;
+	}
+
+	public void setRecoveryDns(String recoveryDns) {
+		this.recoveryDns = recoveryDns;
+		if(recoveryDns != null){
+			putQueryParameter("RecoveryDns", recoveryDns);
+		}
+	}
+
+	public String getRecoveryLocation() {
+		return this.recoveryLocation;
+	}
+
+	public void setRecoveryLocation(String recoveryLocation) {
+		this.recoveryLocation = recoveryLocation;
+		if(recoveryLocation != null){
+			putQueryParameter("RecoveryLocation", recoveryLocation);
+		}
+	}
+
+	public String getRecoveryInfrastructureId() {
+		return this.recoveryInfrastructureId;
+	}
+
+	public void setRecoveryInfrastructureId(String recoveryInfrastructureId) {
+		this.recoveryInfrastructureId = recoveryInfrastructureId;
+		if(recoveryInfrastructureId != null){
+			putQueryParameter("RecoveryInfrastructureId", recoveryInfrastructureId);
+		}
+	}
+
+	public String getRecoveryInstanceName() {
+		return this.recoveryInstanceName;
+	}
+
+	public void setRecoveryInstanceName(String recoveryInstanceName) {
+		this.recoveryInstanceName = recoveryInstanceName;
+		if(recoveryInstanceName != null){
+			putQueryParameter("RecoveryInstanceName", recoveryInstanceName);
+		}
+	}
+
+	public String getRecoveryGateway() {
+		return this.recoveryGateway;
+	}
+
+	public void setRecoveryGateway(String recoveryGateway) {
+		this.recoveryGateway = recoveryGateway;
+		if(recoveryGateway != null){
+			putQueryParameter("RecoveryGateway", recoveryGateway);
 		}
 	}
 
@@ -142,28 +253,6 @@ public class FailbackRequest extends RpcAcsRequest<FailbackResponse> {
 		}
 	}
 
-	public Long getRecoveryMemory() {
-		return this.recoveryMemory;
-	}
-
-	public void setRecoveryMemory(Long recoveryMemory) {
-		this.recoveryMemory = recoveryMemory;
-		if(recoveryMemory != null){
-			putQueryParameter("RecoveryMemory", recoveryMemory.toString());
-		}
-	}
-
-	public Integer getRecoveryCpu() {
-		return this.recoveryCpu;
-	}
-
-	public void setRecoveryCpu(Integer recoveryCpu) {
-		this.recoveryCpu = recoveryCpu;
-		if(recoveryCpu != null){
-			putQueryParameter("RecoveryCpu", recoveryCpu.toString());
-		}
-	}
-
 	public String getRecoveryDatastore() {
 		return this.recoveryDatastore;
 	}
@@ -175,28 +264,6 @@ public class FailbackRequest extends RpcAcsRequest<FailbackResponse> {
 		}
 	}
 
-	public String getRecoveryIpAddress() {
-		return this.recoveryIpAddress;
-	}
-
-	public void setRecoveryIpAddress(String recoveryIpAddress) {
-		this.recoveryIpAddress = recoveryIpAddress;
-		if(recoveryIpAddress != null){
-			putQueryParameter("RecoveryIpAddress", recoveryIpAddress);
-		}
-	}
-
-	public String getRecoveryDns() {
-		return this.recoveryDns;
-	}
-
-	public void setRecoveryDns(String recoveryDns) {
-		this.recoveryDns = recoveryDns;
-		if(recoveryDns != null){
-			putQueryParameter("RecoveryDns", recoveryDns);
-		}
-	}
-
 	public String getRecoveryPostScriptContent() {
 		return this.recoveryPostScriptContent;
 	}
@@ -205,39 +272,6 @@ public class FailbackRequest extends RpcAcsRequest<FailbackResponse> {
 		this.recoveryPostScriptContent = recoveryPostScriptContent;
 		if(recoveryPostScriptContent != null){
 			putQueryParameter("RecoveryPostScriptContent", recoveryPostScriptContent);
-		}
-	}
-
-	public String getRecoveryLocation() {
-		return this.recoveryLocation;
-	}
-
-	public void setRecoveryLocation(String recoveryLocation) {
-		this.recoveryLocation = recoveryLocation;
-		if(recoveryLocation != null){
-			putQueryParameter("RecoveryLocation", recoveryLocation);
-		}
-	}
-
-	public String getRecoveryInfrastructureId() {
-		return this.recoveryInfrastructureId;
-	}
-
-	public void setRecoveryInfrastructureId(String recoveryInfrastructureId) {
-		this.recoveryInfrastructureId = recoveryInfrastructureId;
-		if(recoveryInfrastructureId != null){
-			putQueryParameter("RecoveryInfrastructureId", recoveryInfrastructureId);
-		}
-	}
-
-	public String getRecoveryInstanceName() {
-		return this.recoveryInstanceName;
-	}
-
-	public void setRecoveryInstanceName(String recoveryInstanceName) {
-		this.recoveryInstanceName = recoveryInstanceName;
-		if(recoveryInstanceName != null){
-			putQueryParameter("RecoveryInstanceName", recoveryInstanceName);
 		}
 	}
 

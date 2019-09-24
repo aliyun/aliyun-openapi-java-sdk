@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,25 +26,59 @@ public class ReportFullSyncStatusRequest extends RpcAcsRequest<ReportFullSyncSta
 	
 	public ReportFullSyncStatusRequest() {
 		super("hdr", "2017-09-25", "ReportFullSyncStatus", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String securityToken;
 
 	private Long fullSyncTotalSize;
 
 	private Integer fullSyncProgress;
 
-	private Long fullSyncCurrentSize;
-
 	private String serverId;
+
+	private String securityToken;
+
+	private Long fullSyncCurrentSize;
 
 	private Long userUid;
 
 	private String gatewayId;
+
+	public Long getFullSyncTotalSize() {
+		return this.fullSyncTotalSize;
+	}
+
+	public void setFullSyncTotalSize(Long fullSyncTotalSize) {
+		this.fullSyncTotalSize = fullSyncTotalSize;
+		if(fullSyncTotalSize != null){
+			putQueryParameter("FullSyncTotalSize", fullSyncTotalSize.toString());
+		}
+	}
+
+	public Integer getFullSyncProgress() {
+		return this.fullSyncProgress;
+	}
+
+	public void setFullSyncProgress(Integer fullSyncProgress) {
+		this.fullSyncProgress = fullSyncProgress;
+		if(fullSyncProgress != null){
+			putQueryParameter("FullSyncProgress", fullSyncProgress.toString());
+		}
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
+		}
+	}
 
 	public String getBizSecurityToken() {
 		return this.securityToken;
@@ -75,28 +110,6 @@ public class ReportFullSyncStatusRequest extends RpcAcsRequest<ReportFullSyncSta
 		}
 	}
 
-	public Long getFullSyncTotalSize() {
-		return this.fullSyncTotalSize;
-	}
-
-	public void setFullSyncTotalSize(Long fullSyncTotalSize) {
-		this.fullSyncTotalSize = fullSyncTotalSize;
-		if(fullSyncTotalSize != null){
-			putQueryParameter("FullSyncTotalSize", fullSyncTotalSize.toString());
-		}
-	}
-
-	public Integer getFullSyncProgress() {
-		return this.fullSyncProgress;
-	}
-
-	public void setFullSyncProgress(Integer fullSyncProgress) {
-		this.fullSyncProgress = fullSyncProgress;
-		if(fullSyncProgress != null){
-			putQueryParameter("FullSyncProgress", fullSyncProgress.toString());
-		}
-	}
-
 	public Long getFullSyncCurrentSize() {
 		return this.fullSyncCurrentSize;
 	}
@@ -105,17 +118,6 @@ public class ReportFullSyncStatusRequest extends RpcAcsRequest<ReportFullSyncSta
 		this.fullSyncCurrentSize = fullSyncCurrentSize;
 		if(fullSyncCurrentSize != null){
 			putQueryParameter("FullSyncCurrentSize", fullSyncCurrentSize.toString());
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 

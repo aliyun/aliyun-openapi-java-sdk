@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,17 +26,18 @@ public class ReclaimRecoveryPointRequest extends RpcAcsRequest<ReclaimRecoveryPo
 	
 	public ReclaimRecoveryPointRequest() {
 		super("hdr", "2017-09-25", "ReclaimRecoveryPoint", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
 	private String recoveryPointId;
 
-	private String securityToken;
-
 	private String serverId;
+
+	private String securityToken;
 
 	private Long userUid;
 
@@ -47,6 +49,17 @@ public class ReclaimRecoveryPointRequest extends RpcAcsRequest<ReclaimRecoveryPo
 		this.recoveryPointId = recoveryPointId;
 		if(recoveryPointId != null){
 			putQueryParameter("RecoveryPointId", recoveryPointId);
+		}
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
 		}
 	}
 
@@ -77,17 +90,6 @@ public class ReclaimRecoveryPointRequest extends RpcAcsRequest<ReclaimRecoveryPo
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,9 +26,10 @@ public class ReversedEnableReplicationRequest extends RpcAcsRequest<ReversedEnab
 	
 	public ReversedEnableReplicationRequest() {
 		super("hdr", "2017-09-25", "ReversedEnableReplication", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
@@ -35,25 +37,27 @@ public class ReversedEnableReplicationRequest extends RpcAcsRequest<ReversedEnab
 
 	private Boolean replicationUseOriginalInstance;
 
-	private String replicationNetMask;
-
 	private String replicationDatastore;
 
 	private String replicationLocation;
+
+	private String replicationInfrastructureId;
+
+	private String securityToken;
+
+	private String replicationComputeResource;
+
+	private Boolean replicationUseDhcp;
+
+	private String replicationNetMask;
 
 	private String recoveryNetwork;
 
 	private String serverId;
 
-	private String replicationInfrastructureId;
-
-	private String replicationComputeResource;
-
 	private String replicationNetwork;
 
 	private String replicationDns;
-
-	private Boolean replicationUseDhcp;
 
 	private String replicationIpAddress;
 
@@ -79,17 +83,6 @@ public class ReversedEnableReplicationRequest extends RpcAcsRequest<ReversedEnab
 		}
 	}
 
-	public String getReplicationNetMask() {
-		return this.replicationNetMask;
-	}
-
-	public void setReplicationNetMask(String replicationNetMask) {
-		this.replicationNetMask = replicationNetMask;
-		if(replicationNetMask != null){
-			putQueryParameter("ReplicationNetMask", replicationNetMask);
-		}
-	}
-
 	public String getReplicationDatastore() {
 		return this.replicationDatastore;
 	}
@@ -109,6 +102,80 @@ public class ReversedEnableReplicationRequest extends RpcAcsRequest<ReversedEnab
 		this.replicationLocation = replicationLocation;
 		if(replicationLocation != null){
 			putQueryParameter("ReplicationLocation", replicationLocation);
+		}
+	}
+
+	public String getReplicationInfrastructureId() {
+		return this.replicationInfrastructureId;
+	}
+
+	public void setReplicationInfrastructureId(String replicationInfrastructureId) {
+		this.replicationInfrastructureId = replicationInfrastructureId;
+		if(replicationInfrastructureId != null){
+			putQueryParameter("ReplicationInfrastructureId", replicationInfrastructureId);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getReplicationComputeResource() {
+		return this.replicationComputeResource;
+	}
+
+	public void setReplicationComputeResource(String replicationComputeResource) {
+		this.replicationComputeResource = replicationComputeResource;
+		if(replicationComputeResource != null){
+			putQueryParameter("ReplicationComputeResource", replicationComputeResource);
+		}
+	}
+
+	public Boolean getReplicationUseDhcp() {
+		return this.replicationUseDhcp;
+	}
+
+	public void setReplicationUseDhcp(Boolean replicationUseDhcp) {
+		this.replicationUseDhcp = replicationUseDhcp;
+		if(replicationUseDhcp != null){
+			putQueryParameter("ReplicationUseDhcp", replicationUseDhcp.toString());
+		}
+	}
+
+	public String getReplicationNetMask() {
+		return this.replicationNetMask;
+	}
+
+	public void setReplicationNetMask(String replicationNetMask) {
+		this.replicationNetMask = replicationNetMask;
+		if(replicationNetMask != null){
+			putQueryParameter("ReplicationNetMask", replicationNetMask);
 		}
 	}
 
@@ -134,28 +201,6 @@ public class ReversedEnableReplicationRequest extends RpcAcsRequest<ReversedEnab
 		}
 	}
 
-	public String getReplicationInfrastructureId() {
-		return this.replicationInfrastructureId;
-	}
-
-	public void setReplicationInfrastructureId(String replicationInfrastructureId) {
-		this.replicationInfrastructureId = replicationInfrastructureId;
-		if(replicationInfrastructureId != null){
-			putQueryParameter("ReplicationInfrastructureId", replicationInfrastructureId);
-		}
-	}
-
-	public String getReplicationComputeResource() {
-		return this.replicationComputeResource;
-	}
-
-	public void setReplicationComputeResource(String replicationComputeResource) {
-		this.replicationComputeResource = replicationComputeResource;
-		if(replicationComputeResource != null){
-			putQueryParameter("ReplicationComputeResource", replicationComputeResource);
-		}
-	}
-
 	public String getReplicationNetwork() {
 		return this.replicationNetwork;
 	}
@@ -175,17 +220,6 @@ public class ReversedEnableReplicationRequest extends RpcAcsRequest<ReversedEnab
 		this.replicationDns = replicationDns;
 		if(replicationDns != null){
 			putQueryParameter("ReplicationDns", replicationDns);
-		}
-	}
-
-	public Boolean getReplicationUseDhcp() {
-		return this.replicationUseDhcp;
-	}
-
-	public void setReplicationUseDhcp(Boolean replicationUseDhcp) {
-		this.replicationUseDhcp = replicationUseDhcp;
-		if(replicationUseDhcp != null){
-			putQueryParameter("ReplicationUseDhcp", replicationUseDhcp.toString());
 		}
 	}
 

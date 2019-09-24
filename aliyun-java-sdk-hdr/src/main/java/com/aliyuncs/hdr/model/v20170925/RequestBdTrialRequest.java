@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,47 +26,28 @@ public class RequestBdTrialRequest extends RpcAcsRequest<RequestBdTrialResponse>
 	
 	public RequestBdTrialRequest() {
 		super("hdr", "2017-09-25", "RequestBdTrial", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String contact;
-
-	private String company;
-
 	private String telephone;
-
-	private Long dataSize;
-
-	private String detail;
 
 	private String distribution;
 
 	private String version;
 
-	public String getContact() {
-		return this.contact;
-	}
+	private String securityToken;
 
-	public void setContact(String contact) {
-		this.contact = contact;
-		if(contact != null){
-			putQueryParameter("Contact", contact);
-		}
-	}
+	private String contact;
 
-	public String getCompany() {
-		return this.company;
-	}
+	private String company;
 
-	public void setCompany(String company) {
-		this.company = company;
-		if(company != null){
-			putQueryParameter("Company", company);
-		}
-	}
+	private Long dataSize;
+
+	private String detail;
 
 	public String getTelephone() {
 		return this.telephone;
@@ -75,28 +57,6 @@ public class RequestBdTrialRequest extends RpcAcsRequest<RequestBdTrialResponse>
 		this.telephone = telephone;
 		if(telephone != null){
 			putQueryParameter("Telephone", telephone);
-		}
-	}
-
-	public Long getDataSize() {
-		return this.dataSize;
-	}
-
-	public void setDataSize(Long dataSize) {
-		this.dataSize = dataSize;
-		if(dataSize != null){
-			putQueryParameter("DataSize", dataSize.toString());
-		}
-	}
-
-	public String getDetail() {
-		return this.detail;
-	}
-
-	public void setDetail(String detail) {
-		this.detail = detail;
-		if(detail != null){
-			putQueryParameter("Detail", detail);
 		}
 	}
 
@@ -138,6 +98,80 @@ public class RequestBdTrialRequest extends RpcAcsRequest<RequestBdTrialResponse>
 		this.version = version;
 		if(version != null){
 			putQueryParameter("Version", version);
+		}
+	}
+
+	public String getBizSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getContact() {
+		return this.contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+		if(contact != null){
+			putQueryParameter("Contact", contact);
+		}
+	}
+
+	public String getCompany() {
+		return this.company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+		if(company != null){
+			putQueryParameter("Company", company);
+		}
+	}
+
+	public Long getDataSize() {
+		return this.dataSize;
+	}
+
+	public void setDataSize(Long dataSize) {
+		this.dataSize = dataSize;
+		if(dataSize != null){
+			putQueryParameter("DataSize", dataSize.toString());
+		}
+	}
+
+	public String getDetail() {
+		return this.detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+		if(detail != null){
+			putQueryParameter("Detail", detail);
 		}
 	}
 

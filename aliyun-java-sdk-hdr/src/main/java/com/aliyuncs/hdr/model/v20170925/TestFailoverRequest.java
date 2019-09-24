@@ -15,6 +15,7 @@
 package com.aliyuncs.hdr.model.v20170925;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.hdr.Endpoint;
 
 /**
@@ -25,23 +26,14 @@ public class TestFailoverRequest extends RpcAcsRequest<TestFailoverResponse> {
 	
 	public TestFailoverRequest() {
 		super("hdr", "2017-09-25", "TestFailover", "hdr");
+		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String recoveryPointId;
-
-	private String eipAddressId;
-
 	private String recoveryPostScriptType;
-
-	private Boolean recoveryUseDhcp;
-
-	private String recoveryNetwork;
-
-	private String serverId;
 
 	private Long recoveryMemory;
 
@@ -49,35 +41,27 @@ public class TestFailoverRequest extends RpcAcsRequest<TestFailoverResponse> {
 
 	private String recoveryIpAddress;
 
-	private String recoveryPostScriptContent;
+	private String securityToken;
 
 	private String recoveryInstanceName;
 
 	private Boolean recoveryUseSsd;
 
+	private String recoveryPointId;
+
+	private String eipAddressId;
+
+	private Boolean recoveryUseDhcp;
+
+	private String recoveryNetwork;
+
+	private String serverId;
+
+	private String recoveryPostScriptContent;
+
+	private Boolean recoveryUseEssd;
+
 	private Boolean recoveryReserveIp;
-
-	public String getRecoveryPointId() {
-		return this.recoveryPointId;
-	}
-
-	public void setRecoveryPointId(String recoveryPointId) {
-		this.recoveryPointId = recoveryPointId;
-		if(recoveryPointId != null){
-			putQueryParameter("RecoveryPointId", recoveryPointId);
-		}
-	}
-
-	public String getEipAddressId() {
-		return this.eipAddressId;
-	}
-
-	public void setEipAddressId(String eipAddressId) {
-		this.eipAddressId = eipAddressId;
-		if(eipAddressId != null){
-			putQueryParameter("EipAddressId", eipAddressId);
-		}
-	}
 
 	public String getRecoveryPostScriptType() {
 		return this.recoveryPostScriptType;
@@ -87,39 +71,6 @@ public class TestFailoverRequest extends RpcAcsRequest<TestFailoverResponse> {
 		this.recoveryPostScriptType = recoveryPostScriptType;
 		if(recoveryPostScriptType != null){
 			putQueryParameter("RecoveryPostScriptType", recoveryPostScriptType);
-		}
-	}
-
-	public Boolean getRecoveryUseDhcp() {
-		return this.recoveryUseDhcp;
-	}
-
-	public void setRecoveryUseDhcp(Boolean recoveryUseDhcp) {
-		this.recoveryUseDhcp = recoveryUseDhcp;
-		if(recoveryUseDhcp != null){
-			putQueryParameter("RecoveryUseDhcp", recoveryUseDhcp.toString());
-		}
-	}
-
-	public String getRecoveryNetwork() {
-		return this.recoveryNetwork;
-	}
-
-	public void setRecoveryNetwork(String recoveryNetwork) {
-		this.recoveryNetwork = recoveryNetwork;
-		if(recoveryNetwork != null){
-			putQueryParameter("RecoveryNetwork", recoveryNetwork);
-		}
-	}
-
-	public String getServerId() {
-		return this.serverId;
-	}
-
-	public void setServerId(String serverId) {
-		this.serverId = serverId;
-		if(serverId != null){
-			putQueryParameter("ServerId", serverId);
 		}
 	}
 
@@ -156,14 +107,33 @@ public class TestFailoverRequest extends RpcAcsRequest<TestFailoverResponse> {
 		}
 	}
 
-	public String getRecoveryPostScriptContent() {
-		return this.recoveryPostScriptContent;
+	public String getBizSecurityToken() {
+		return this.securityToken;
 	}
 
-	public void setRecoveryPostScriptContent(String recoveryPostScriptContent) {
-		this.recoveryPostScriptContent = recoveryPostScriptContent;
-		if(recoveryPostScriptContent != null){
-			putQueryParameter("RecoveryPostScriptContent", recoveryPostScriptContent);
+	public void setBizSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	/**
+	 * @deprecated use getBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	/**
+	 * @deprecated use setBizSecurityToken instead of this.
+	 */
+	@Deprecated
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
@@ -186,6 +156,83 @@ public class TestFailoverRequest extends RpcAcsRequest<TestFailoverResponse> {
 		this.recoveryUseSsd = recoveryUseSsd;
 		if(recoveryUseSsd != null){
 			putQueryParameter("RecoveryUseSsd", recoveryUseSsd.toString());
+		}
+	}
+
+	public String getRecoveryPointId() {
+		return this.recoveryPointId;
+	}
+
+	public void setRecoveryPointId(String recoveryPointId) {
+		this.recoveryPointId = recoveryPointId;
+		if(recoveryPointId != null){
+			putQueryParameter("RecoveryPointId", recoveryPointId);
+		}
+	}
+
+	public String getEipAddressId() {
+		return this.eipAddressId;
+	}
+
+	public void setEipAddressId(String eipAddressId) {
+		this.eipAddressId = eipAddressId;
+		if(eipAddressId != null){
+			putQueryParameter("EipAddressId", eipAddressId);
+		}
+	}
+
+	public Boolean getRecoveryUseDhcp() {
+		return this.recoveryUseDhcp;
+	}
+
+	public void setRecoveryUseDhcp(Boolean recoveryUseDhcp) {
+		this.recoveryUseDhcp = recoveryUseDhcp;
+		if(recoveryUseDhcp != null){
+			putQueryParameter("RecoveryUseDhcp", recoveryUseDhcp.toString());
+		}
+	}
+
+	public String getRecoveryNetwork() {
+		return this.recoveryNetwork;
+	}
+
+	public void setRecoveryNetwork(String recoveryNetwork) {
+		this.recoveryNetwork = recoveryNetwork;
+		if(recoveryNetwork != null){
+			putQueryParameter("RecoveryNetwork", recoveryNetwork);
+		}
+	}
+
+	public String getServerId() {
+		return this.serverId;
+	}
+
+	public void setServerId(String serverId) {
+		this.serverId = serverId;
+		if(serverId != null){
+			putQueryParameter("ServerId", serverId);
+		}
+	}
+
+	public String getRecoveryPostScriptContent() {
+		return this.recoveryPostScriptContent;
+	}
+
+	public void setRecoveryPostScriptContent(String recoveryPostScriptContent) {
+		this.recoveryPostScriptContent = recoveryPostScriptContent;
+		if(recoveryPostScriptContent != null){
+			putQueryParameter("RecoveryPostScriptContent", recoveryPostScriptContent);
+		}
+	}
+
+	public Boolean getRecoveryUseEssd() {
+		return this.recoveryUseEssd;
+	}
+
+	public void setRecoveryUseEssd(Boolean recoveryUseEssd) {
+		this.recoveryUseEssd = recoveryUseEssd;
+		if(recoveryUseEssd != null){
+			putQueryParameter("RecoveryUseEssd", recoveryUseEssd.toString());
 		}
 	}
 
