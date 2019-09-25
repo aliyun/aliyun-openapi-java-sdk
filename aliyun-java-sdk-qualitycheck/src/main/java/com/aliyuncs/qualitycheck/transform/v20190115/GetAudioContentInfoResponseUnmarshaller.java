@@ -83,20 +83,20 @@ public class GetAudioContentInfoResponseUnmarshaller {
 
 			List<SentenceResult> customModelDialogues = new ArrayList<SentenceResult>();
 			for (int j = 0; j < _ctx.lengthValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues.Length"); j++) {
-				SentenceResult sentenceResult = new SentenceResult();
-				sentenceResult.setBeginTime(_ctx.longValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].BeginTime"));
-				sentenceResult.setChannelId(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].ChannelId"));
-				sentenceResult.setEndTime(_ctx.longValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].EndTime"));
-				sentenceResult.setText(_ctx.stringValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].Text"));
-				sentenceResult.setEmotionValue(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].EmotionValue"));
-				sentenceResult.setSilenceDuration(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].SilenceDuration"));
-				sentenceResult.setSpeechRate(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].SpeechRate"));
-				sentenceResult.setSpeakerId(_ctx.stringValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].SpeakerId"));
-				sentenceResult.setChannelKey(_ctx.stringValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].ChannelKey"));
-				sentenceResult.setAgentId(_ctx.stringValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].AgentId"));
-				sentenceResult.setIdentificationId(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].IdentificationId"));
+				SentenceResult sentenceResult_ = new SentenceResult();
+				sentenceResult_.setBeginTime(_ctx.longValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].BeginTime"));
+				sentenceResult_.setChannelId(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].ChannelId"));
+				sentenceResult_.setEndTime(_ctx.longValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].EndTime"));
+				sentenceResult_.setText(_ctx.stringValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].Text"));
+				sentenceResult_.setEmotionValue(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].EmotionValue"));
+				sentenceResult_.setSilenceDuration(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].SilenceDuration"));
+				sentenceResult_.setSpeechRate(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].SpeechRate"));
+				sentenceResult_.setSpeakerId(_ctx.stringValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].SpeakerId"));
+				sentenceResult_.setChannelKey(_ctx.stringValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].ChannelKey"));
+				sentenceResult_.setAgentId(_ctx.stringValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].AgentId"));
+				sentenceResult_.setIdentificationId(_ctx.integerValue("GetAudioContentInfoResponse.Data.DiffAsrContentInfo["+ i +"].CustomModelDialogues["+ j +"].IdentificationId"));
 
-				customModelDialogues.add(sentenceResult);
+				customModelDialogues.add(sentenceResult_);
 			}
 			diffAsrContentInfoItem.setCustomModelDialogues(customModelDialogues);
 

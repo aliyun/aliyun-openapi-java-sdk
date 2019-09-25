@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateSkillGroupConfigRequest extends RpcAcsRequest<CreateSkillGroupConfigResponse> {
-	
-	public CreateSkillGroupConfigRequest() {
-		super("Qualitycheck", "2019-01-15", "CreateSkillGroupConfig");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public CreateSkillGroupConfigRequest() {
+		super("Qualitycheck", "2019-01-15", "CreateSkillGroupConfig");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

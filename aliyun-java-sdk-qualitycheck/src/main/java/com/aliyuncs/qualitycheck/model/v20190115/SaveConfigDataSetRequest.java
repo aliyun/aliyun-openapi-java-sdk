@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SaveConfigDataSetRequest extends RpcAcsRequest<SaveConfigDataSetResponse> {
-	
-	public SaveConfigDataSetRequest() {
-		super("Qualitycheck", "2019-01-15", "SaveConfigDataSet");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public SaveConfigDataSetRequest() {
+		super("Qualitycheck", "2019-01-15", "SaveConfigDataSet");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

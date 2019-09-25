@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UploadAudioData4PreRequest extends RpcAcsRequest<UploadAudioData4PreResponse> {
-	
-	public UploadAudioData4PreRequest() {
-		super("Qualitycheck", "2019-01-15", "UploadAudioData4Pre");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public UploadAudioData4PreRequest() {
+		super("Qualitycheck", "2019-01-15", "UploadAudioData4Pre");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

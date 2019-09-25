@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateOnPurchaseSuccessRequest extends RpcAcsRequest<UpdateOnPurchaseSuccessResponse> {
-	
-	public UpdateOnPurchaseSuccessRequest() {
-		super("Qualitycheck", "2019-01-15", "UpdateOnPurchaseSuccess");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public UpdateOnPurchaseSuccessRequest() {
+		super("Qualitycheck", "2019-01-15", "UpdateOnPurchaseSuccess");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

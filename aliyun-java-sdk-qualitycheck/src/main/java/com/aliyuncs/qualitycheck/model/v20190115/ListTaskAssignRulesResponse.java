@@ -133,6 +133,8 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 		private List<Reviewer> reviewers;
 
+		private List<RuleBasicInfo> rules;
+
 		public Long getRuleId() {
 			return this.ruleId;
 		}
@@ -237,6 +239,14 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 			this.reviewers = reviewers;
 		}
 
+		public List<RuleBasicInfo> getRules() {
+			return this.rules;
+		}
+
+		public void setRules(List<RuleBasicInfo> rules) {
+			this.rules = rules;
+		}
+
 		public static class Agent {
 
 			private String agentId;
@@ -303,6 +313,29 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 			public void setReviewerName(String reviewerName) {
 				this.reviewerName = reviewerName;
+			}
+		}
+
+		public static class RuleBasicInfo {
+
+			private String rid;
+
+			private String name;
+
+			public String getRid() {
+				return this.rid;
+			}
+
+			public void setRid(String rid) {
+				this.rid = rid;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

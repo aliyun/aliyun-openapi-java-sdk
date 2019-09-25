@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteAsrVocabRequest extends RpcAcsRequest<DeleteAsrVocabResponse> {
-	
-	public DeleteAsrVocabRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteAsrVocab");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public DeleteAsrVocabRequest() {
+		super("Qualitycheck", "2019-01-15", "DeleteAsrVocab");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

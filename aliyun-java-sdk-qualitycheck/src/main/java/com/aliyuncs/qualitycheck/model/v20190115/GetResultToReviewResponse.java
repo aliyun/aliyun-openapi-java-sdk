@@ -107,7 +107,9 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 		private List<HitRuleReviewInfo> hitRuleReviewInfoList;
 
-		private List<String> manualScoreMappingList;
+		private List<HitRuleReviewInfo> manualScoreInfoList;
+
+		private List<ReviewHistory> reviewHistoryList;
 
 		public Boolean getAudio() {
 			return this.audio;
@@ -229,12 +231,20 @@ public class GetResultToReviewResponse extends AcsResponse {
 			this.hitRuleReviewInfoList = hitRuleReviewInfoList;
 		}
 
-		public List<String> getManualScoreMappingList() {
-			return this.manualScoreMappingList;
+		public List<HitRuleReviewInfo> getManualScoreInfoList() {
+			return this.manualScoreInfoList;
 		}
 
-		public void setManualScoreMappingList(List<String> manualScoreMappingList) {
-			this.manualScoreMappingList = manualScoreMappingList;
+		public void setManualScoreInfoList(List<HitRuleReviewInfo> manualScoreInfoList) {
+			this.manualScoreInfoList = manualScoreInfoList;
+		}
+
+		public List<ReviewHistory> getReviewHistoryList() {
+			return this.reviewHistoryList;
+		}
+
+		public void setReviewHistoryList(List<ReviewHistory> reviewHistoryList) {
+			this.reviewHistoryList = reviewHistoryList;
 		}
 
 		public static class Dialogue {
@@ -738,6 +748,79 @@ public class GetResultToReviewResponse extends AcsResponse {
 				public void setReviewTime(String reviewTime) {
 					this.reviewTime = reviewTime;
 				}
+			}
+		}
+
+		public static class ReviewHistory {
+
+			private String timeStr;
+
+			private String operatorName;
+
+			private Integer type;
+
+			private Integer reviewResult;
+
+			private Integer complainResult;
+
+			private Integer oldScore;
+
+			private Integer score;
+
+			public String getTimeStr() {
+				return this.timeStr;
+			}
+
+			public void setTimeStr(String timeStr) {
+				this.timeStr = timeStr;
+			}
+
+			public String getOperatorName() {
+				return this.operatorName;
+			}
+
+			public void setOperatorName(String operatorName) {
+				this.operatorName = operatorName;
+			}
+
+			public Integer getType() {
+				return this.type;
+			}
+
+			public void setType(Integer type) {
+				this.type = type;
+			}
+
+			public Integer getReviewResult() {
+				return this.reviewResult;
+			}
+
+			public void setReviewResult(Integer reviewResult) {
+				this.reviewResult = reviewResult;
+			}
+
+			public Integer getComplainResult() {
+				return this.complainResult;
+			}
+
+			public void setComplainResult(Integer complainResult) {
+				this.complainResult = complainResult;
+			}
+
+			public Integer getOldScore() {
+				return this.oldScore;
+			}
+
+			public void setOldScore(Integer oldScore) {
+				this.oldScore = oldScore;
+			}
+
+			public Integer getScore() {
+				return this.score;
+			}
+
+			public void setScore(Integer score) {
+				this.score = score;
 			}
 		}
 	}

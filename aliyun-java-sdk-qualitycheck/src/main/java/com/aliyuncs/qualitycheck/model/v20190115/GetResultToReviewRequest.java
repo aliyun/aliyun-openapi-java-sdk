@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetResultToReviewRequest extends RpcAcsRequest<GetResultToReviewResponse> {
-	
-	public GetResultToReviewRequest() {
-		super("Qualitycheck", "2019-01-15", "GetResultToReview");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public GetResultToReviewRequest() {
+		super("Qualitycheck", "2019-01-15", "GetResultToReview");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

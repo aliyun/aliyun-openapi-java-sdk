@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetRuleDimensionRequest extends RpcAcsRequest<GetRuleDimensionResponse> {
-	
-	public GetRuleDimensionRequest() {
-		super("Qualitycheck", "2019-01-15", "GetRuleDimension");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public GetRuleDimensionRequest() {
+		super("Qualitycheck", "2019-01-15", "GetRuleDimension");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

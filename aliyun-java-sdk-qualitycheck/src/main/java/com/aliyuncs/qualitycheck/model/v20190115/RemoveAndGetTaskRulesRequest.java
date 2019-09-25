@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RemoveAndGetTaskRulesRequest extends RpcAcsRequest<RemoveAndGetTaskRulesResponse> {
-	
-	public RemoveAndGetTaskRulesRequest() {
-		super("Qualitycheck", "2019-01-15", "RemoveAndGetTaskRules");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public RemoveAndGetTaskRulesRequest() {
+		super("Qualitycheck", "2019-01-15", "RemoveAndGetTaskRules");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

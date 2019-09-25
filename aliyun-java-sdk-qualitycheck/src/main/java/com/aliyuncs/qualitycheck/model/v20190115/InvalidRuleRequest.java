@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class InvalidRuleRequest extends RpcAcsRequest<InvalidRuleResponse> {
-	
-	public InvalidRuleRequest() {
-		super("Qualitycheck", "2019-01-15", "InvalidRule");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public InvalidRuleRequest() {
+		super("Qualitycheck", "2019-01-15", "InvalidRule");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

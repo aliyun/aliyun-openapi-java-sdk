@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddThesaurusForApiRequest extends RpcAcsRequest<AddThesaurusForApiResponse> {
-	
-	public AddThesaurusForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "AddThesaurusForApi");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public AddThesaurusForApiRequest() {
+		super("Qualitycheck", "2019-01-15", "AddThesaurusForApi");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

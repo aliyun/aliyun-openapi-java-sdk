@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class HandleComplaintRequest extends RpcAcsRequest<HandleComplaintResponse> {
-	
-	public HandleComplaintRequest() {
-		super("Qualitycheck", "2019-01-15", "HandleComplaint");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public HandleComplaintRequest() {
+		super("Qualitycheck", "2019-01-15", "HandleComplaint");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

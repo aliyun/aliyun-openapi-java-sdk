@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitModelTestTaskRequest extends RpcAcsRequest<SubmitModelTestTaskResponse> {
-	
-	public SubmitModelTestTaskRequest() {
-		super("Qualitycheck", "2019-01-15", "SubmitModelTestTask");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public SubmitModelTestTaskRequest() {
+		super("Qualitycheck", "2019-01-15", "SubmitModelTestTask");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

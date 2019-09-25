@@ -15,16 +15,14 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DoPhysicalDeleteResourceRequest extends RpcAcsRequest<DoPhysicalDeleteResourceResponse> {
-	
-	public DoPhysicalDeleteResourceRequest() {
-		super("Qualitycheck", "2019-01-15", "DoPhysicalDeleteResource");
-	}
+	   
 
 	private String country;
 
@@ -45,6 +43,10 @@ public class DoPhysicalDeleteResourceRequest extends RpcAcsRequest<DoPhysicalDel
 	private String taskExtraData;
 
 	private String taskIdentifier;
+	public DoPhysicalDeleteResourceRequest() {
+		super("Qualitycheck", "2019-01-15", "DoPhysicalDeleteResource");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCountry() {
 		return this.country;

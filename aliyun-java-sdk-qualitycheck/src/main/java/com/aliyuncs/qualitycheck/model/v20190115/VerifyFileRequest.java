@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class VerifyFileRequest extends RpcAcsRequest<VerifyFileResponse> {
-	
-	public VerifyFileRequest() {
-		super("Qualitycheck", "2019-01-15", "VerifyFile");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public VerifyFileRequest() {
+		super("Qualitycheck", "2019-01-15", "VerifyFile");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

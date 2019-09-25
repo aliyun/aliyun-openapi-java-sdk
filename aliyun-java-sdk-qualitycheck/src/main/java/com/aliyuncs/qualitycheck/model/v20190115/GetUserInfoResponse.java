@@ -14,6 +14,7 @@
 
 package com.aliyuncs.qualitycheck.model.v20190115;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.qualitycheck.transform.v20190115.GetUserInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -86,9 +87,13 @@ public class GetUserInfoResponse extends AcsResponse {
 
 		private Boolean poc;
 
+		private Integer loginUserType;
+
 		private String roleName;
 
-		private Integer loginUserType;
+		private String aliUid;
+
+		private List<String> hiddenMenuItems;
 
 		public Integer getCurrentStatus() {
 			return this.currentStatus;
@@ -130,6 +135,14 @@ public class GetUserInfoResponse extends AcsResponse {
 			this.poc = poc;
 		}
 
+		public Integer getLoginUserType() {
+			return this.loginUserType;
+		}
+
+		public void setLoginUserType(Integer loginUserType) {
+			this.loginUserType = loginUserType;
+		}
+
 		public String getRoleName() {
 			return this.roleName;
 		}
@@ -138,12 +151,20 @@ public class GetUserInfoResponse extends AcsResponse {
 			this.roleName = roleName;
 		}
 
-		public Integer getLoginUserType() {
-			return this.loginUserType;
+		public String getAliUid() {
+			return this.aliUid;
 		}
 
-		public void setLoginUserType(Integer loginUserType) {
-			this.loginUserType = loginUserType;
+		public void setAliUid(String aliUid) {
+			this.aliUid = aliUid;
+		}
+
+		public List<String> getHiddenMenuItems() {
+			return this.hiddenMenuItems;
+		}
+
+		public void setHiddenMenuItems(List<String> hiddenMenuItems) {
+			this.hiddenMenuItems = hiddenMenuItems;
 		}
 	}
 

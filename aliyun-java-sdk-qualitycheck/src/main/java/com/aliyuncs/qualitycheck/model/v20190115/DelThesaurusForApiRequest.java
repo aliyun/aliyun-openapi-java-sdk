@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DelThesaurusForApiRequest extends RpcAcsRequest<DelThesaurusForApiResponse> {
-	
-	public DelThesaurusForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "DelThesaurusForApi");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public DelThesaurusForApiRequest() {
+		super("Qualitycheck", "2019-01-15", "DelThesaurusForApi");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

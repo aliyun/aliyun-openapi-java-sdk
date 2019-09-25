@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class InsertScoreForApiRequest extends RpcAcsRequest<InsertScoreForApiResponse> {
-	
-	public InsertScoreForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "InsertScoreForApi");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public InsertScoreForApiRequest() {
+		super("Qualitycheck", "2019-01-15", "InsertScoreForApi");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

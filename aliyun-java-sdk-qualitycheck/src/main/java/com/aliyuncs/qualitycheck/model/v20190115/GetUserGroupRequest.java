@@ -15,18 +15,20 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetUserGroupRequest extends RpcAcsRequest<GetUserGroupResponse> {
-	
-	public GetUserGroupRequest() {
-		super("Qualitycheck", "2019-01-15", "GetUserGroup");
-	}
+	   
 
 	private Long resourceOwnerId;
+	public GetUserGroupRequest() {
+		super("Qualitycheck", "2019-01-15", "GetUserGroup");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

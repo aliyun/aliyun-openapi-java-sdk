@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeletePrecisionTaskRequest extends RpcAcsRequest<DeletePrecisionTaskResponse> {
-	
-	public DeletePrecisionTaskRequest() {
-		super("Qualitycheck", "2019-01-15", "DeletePrecisionTask");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public DeletePrecisionTaskRequest() {
+		super("Qualitycheck", "2019-01-15", "DeletePrecisionTask");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddBusinessCategoryRequest extends RpcAcsRequest<AddBusinessCategoryResponse> {
-	
-	public AddBusinessCategoryRequest() {
-		super("Qualitycheck", "2019-01-15", "AddBusinessCategory");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public AddBusinessCategoryRequest() {
+		super("Qualitycheck", "2019-01-15", "AddBusinessCategory");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

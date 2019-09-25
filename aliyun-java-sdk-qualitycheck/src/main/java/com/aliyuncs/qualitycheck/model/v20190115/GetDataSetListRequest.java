@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetDataSetListRequest extends RpcAcsRequest<GetDataSetListResponse> {
-	
-	public GetDataSetListRequest() {
-		super("Qualitycheck", "2019-01-15", "GetDataSetList");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public GetDataSetListRequest() {
+		super("Qualitycheck", "2019-01-15", "GetDataSetList");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

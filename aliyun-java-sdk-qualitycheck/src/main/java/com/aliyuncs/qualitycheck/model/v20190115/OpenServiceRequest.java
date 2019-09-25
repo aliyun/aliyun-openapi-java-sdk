@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class OpenServiceRequest extends RpcAcsRequest<OpenServiceResponse> {
-	
-	public OpenServiceRequest() {
-		super("Qualitycheck", "2019-01-15", "OpenService");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public OpenServiceRequest() {
+		super("Qualitycheck", "2019-01-15", "OpenService");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ValidateRoleSetRequest extends RpcAcsRequest<ValidateRoleSetResponse> {
-	
-	public ValidateRoleSetRequest() {
-		super("Qualitycheck", "2019-01-15", "ValidateRoleSet");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public ValidateRoleSetRequest() {
+		super("Qualitycheck", "2019-01-15", "ValidateRoleSet");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

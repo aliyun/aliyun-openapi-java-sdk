@@ -14,6 +14,9 @@
 
 package com.aliyuncs.qualitycheck.transform.v20190115;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.qualitycheck.model.v20190115.GetUserInfoResponse;
 import com.aliyuncs.qualitycheck.model.v20190115.GetUserInfoResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,8 +37,15 @@ public class GetUserInfoResponseUnmarshaller {
 		data.setProductType(_ctx.stringValue("GetUserInfoResponse.Data.ProductType"));
 		data.setShowNewbieTask(_ctx.booleanValue("GetUserInfoResponse.Data.ShowNewbieTask"));
 		data.setPoc(_ctx.booleanValue("GetUserInfoResponse.Data.Poc"));
-		data.setRoleName(_ctx.stringValue("GetUserInfoResponse.Data.RoleName"));
 		data.setLoginUserType(_ctx.integerValue("GetUserInfoResponse.Data.LoginUserType"));
+		data.setRoleName(_ctx.stringValue("GetUserInfoResponse.Data.RoleName"));
+		data.setAliUid(_ctx.stringValue("GetUserInfoResponse.Data.AliUid"));
+
+		List<String> hiddenMenuItems = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetUserInfoResponse.Data.HiddenMenuItems.Length"); i++) {
+			hiddenMenuItems.add(_ctx.stringValue("GetUserInfoResponse.Data.HiddenMenuItems["+ i +"]"));
+		}
+		data.setHiddenMenuItems(hiddenMenuItems);
 		getUserInfoResponse.setData(data);
 	 
 	 	return getUserInfoResponse;

@@ -15,22 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DoLogicalDeleteResourceRequest extends RpcAcsRequest<DoLogicalDeleteResourceResponse> {
-	
-	public DoLogicalDeleteResourceRequest() {
-		super("Qualitycheck", "2019-01-15", "DoLogicalDeleteResource");
-	}
+	   
 
 	private String country;
 
 	private Long resourceOwnerId;
 
 	private Long hid;
+
+	private String message;
 
 	private Boolean success;
 
@@ -42,11 +42,13 @@ public class DoLogicalDeleteResourceRequest extends RpcAcsRequest<DoLogicalDelet
 
 	private String bid;
 
-	private String message;
-
 	private String taskExtraData;
 
 	private String taskIdentifier;
+	public DoLogicalDeleteResourceRequest() {
+		super("Qualitycheck", "2019-01-15", "DoLogicalDeleteResource");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -78,6 +80,17 @@ public class DoLogicalDeleteResourceRequest extends RpcAcsRequest<DoLogicalDelet
 		this.hid = hid;
 		if(hid != null){
 			putQueryParameter("Hid", hid.toString());
+		}
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+		if(message != null){
+			putQueryParameter("Message", message);
 		}
 	}
 
@@ -133,17 +146,6 @@ public class DoLogicalDeleteResourceRequest extends RpcAcsRequest<DoLogicalDelet
 		this.bid = bid;
 		if(bid != null){
 			putQueryParameter("Bid", bid);
-		}
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-		if(message != null){
-			putQueryParameter("Message", message);
 		}
 	}
 

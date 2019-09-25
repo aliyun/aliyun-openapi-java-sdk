@@ -15,18 +15,20 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetUserConfigRequest extends RpcAcsRequest<GetUserConfigResponse> {
-	
-	public GetUserConfigRequest() {
-		super("Qualitycheck", "2019-01-15", "GetUserConfig");
-	}
+	   
 
 	private Long resourceOwnerId;
+	public GetUserConfigRequest() {
+		super("Qualitycheck", "2019-01-15", "GetUserConfig");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

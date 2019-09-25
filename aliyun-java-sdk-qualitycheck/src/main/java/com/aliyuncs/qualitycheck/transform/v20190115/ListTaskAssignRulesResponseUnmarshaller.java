@@ -21,6 +21,7 @@ import com.aliyuncs.qualitycheck.model.v20190115.ListTaskAssignRulesResponse;
 import com.aliyuncs.qualitycheck.model.v20190115.ListTaskAssignRulesResponse.TaskAssignRuleInfo;
 import com.aliyuncs.qualitycheck.model.v20190115.ListTaskAssignRulesResponse.TaskAssignRuleInfo.Agent;
 import com.aliyuncs.qualitycheck.model.v20190115.ListTaskAssignRulesResponse.TaskAssignRuleInfo.Reviewer;
+import com.aliyuncs.qualitycheck.model.v20190115.ListTaskAssignRulesResponse.TaskAssignRuleInfo.RuleBasicInfo;
 import com.aliyuncs.qualitycheck.model.v20190115.ListTaskAssignRulesResponse.TaskAssignRuleInfo.SkillGroup;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -80,6 +81,16 @@ public class ListTaskAssignRulesResponseUnmarshaller {
 				reviewers.add(reviewer);
 			}
 			taskAssignRuleInfo.setReviewers(reviewers);
+
+			List<RuleBasicInfo> rules = new ArrayList<RuleBasicInfo>();
+			for (int j = 0; j < _ctx.lengthValue("ListTaskAssignRulesResponse.Data["+ i +"].Rules.Length"); j++) {
+				RuleBasicInfo ruleBasicInfo = new RuleBasicInfo();
+				ruleBasicInfo.setRid(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Rules["+ j +"].Rid"));
+				ruleBasicInfo.setName(_ctx.stringValue("ListTaskAssignRulesResponse.Data["+ i +"].Rules["+ j +"].Name"));
+
+				rules.add(ruleBasicInfo);
+			}
+			taskAssignRuleInfo.setRules(rules);
 
 			data.add(taskAssignRuleInfo);
 		}

@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteScoreForApiRequest extends RpcAcsRequest<DeleteScoreForApiResponse> {
-	
-	public DeleteScoreForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteScoreForApi");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public DeleteScoreForApiRequest() {
+		super("Qualitycheck", "2019-01-15", "DeleteScoreForApi");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

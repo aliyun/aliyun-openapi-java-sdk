@@ -15,18 +15,20 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GenerateCustomizationModelIdRequest extends RpcAcsRequest<GenerateCustomizationModelIdResponse> {
-	
-	public GenerateCustomizationModelIdRequest() {
-		super("Qualitycheck", "2019-01-15", "GenerateCustomizationModelId");
-	}
+	   
 
 	private Long resourceOwnerId;
+	public GenerateCustomizationModelIdRequest() {
+		super("Qualitycheck", "2019-01-15", "GenerateCustomizationModelId");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

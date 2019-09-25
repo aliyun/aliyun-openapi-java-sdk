@@ -15,16 +15,14 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceResponse> {
-	
-	public DoCheckResourceRequest() {
-		super("Qualitycheck", "2019-01-15", "DoCheckResource");
-	}
+	   
 
 	private String country;
 
@@ -32,15 +30,17 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 
 	private Long hid;
 
+	private Boolean interrupt;
+
+	private String gmtWakeup;
+
+	private String taskExtraData;
+
 	private Long level;
 
 	private String message;
 
 	private Boolean success;
-
-	private Boolean interrupt;
-
-	private String gmtWakeup;
 
 	private String pk;
 
@@ -48,9 +48,11 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 
 	private String prompt;
 
-	private String taskExtraData;
-
 	private String taskIdentifier;
+	public DoCheckResourceRequest() {
+		super("Qualitycheck", "2019-01-15", "DoCheckResource");
+		setMethod(MethodType.POST);
+	}
 
 	public String getCountry() {
 		return this.country;
@@ -82,6 +84,39 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 		this.hid = hid;
 		if(hid != null){
 			putQueryParameter("Hid", hid.toString());
+		}
+	}
+
+	public Boolean getInterrupt() {
+		return this.interrupt;
+	}
+
+	public void setInterrupt(Boolean interrupt) {
+		this.interrupt = interrupt;
+		if(interrupt != null){
+			putQueryParameter("Interrupt", interrupt.toString());
+		}
+	}
+
+	public String getGmtWakeup() {
+		return this.gmtWakeup;
+	}
+
+	public void setGmtWakeup(String gmtWakeup) {
+		this.gmtWakeup = gmtWakeup;
+		if(gmtWakeup != null){
+			putQueryParameter("GmtWakeup", gmtWakeup);
+		}
+	}
+
+	public String getTaskExtraData() {
+		return this.taskExtraData;
+	}
+
+	public void setTaskExtraData(String taskExtraData) {
+		this.taskExtraData = taskExtraData;
+		if(taskExtraData != null){
+			putQueryParameter("TaskExtraData", taskExtraData);
 		}
 	}
 
@@ -118,28 +153,6 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 		}
 	}
 
-	public Boolean getInterrupt() {
-		return this.interrupt;
-	}
-
-	public void setInterrupt(Boolean interrupt) {
-		this.interrupt = interrupt;
-		if(interrupt != null){
-			putQueryParameter("Interrupt", interrupt.toString());
-		}
-	}
-
-	public String getGmtWakeup() {
-		return this.gmtWakeup;
-	}
-
-	public void setGmtWakeup(String gmtWakeup) {
-		this.gmtWakeup = gmtWakeup;
-		if(gmtWakeup != null){
-			putQueryParameter("GmtWakeup", gmtWakeup);
-		}
-	}
-
 	public String getPk() {
 		return this.pk;
 	}
@@ -170,17 +183,6 @@ public class DoCheckResourceRequest extends RpcAcsRequest<DoCheckResourceRespons
 		this.prompt = prompt;
 		if(prompt != null){
 			putQueryParameter("Prompt", prompt);
-		}
-	}
-
-	public String getTaskExtraData() {
-		return this.taskExtraData;
-	}
-
-	public void setTaskExtraData(String taskExtraData) {
-		this.taskExtraData = taskExtraData;
-		if(taskExtraData != null){
-			putQueryParameter("TaskExtraData", taskExtraData);
 		}
 	}
 

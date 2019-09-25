@@ -15,20 +15,22 @@
 package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateAsrVocabRequest extends RpcAcsRequest<CreateAsrVocabResponse> {
-	
-	public CreateAsrVocabRequest() {
-		super("Qualitycheck", "2019-01-15", "CreateAsrVocab");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String jsonStr;
+	public CreateAsrVocabRequest() {
+		super("Qualitycheck", "2019-01-15", "CreateAsrVocab");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
