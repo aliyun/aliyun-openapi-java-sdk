@@ -15,20 +15,19 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UnbindSubscriptionRequest extends RpcAcsRequest<UnbindSubscriptionResponse> {
-	
-	public UnbindSubscriptionRequest() {
-		super("Dyplsapi", "2017-05-25", "UnbindSubscription", "dyplsapi");
-	}
-
-	private String poolKey;
+	   
 
 	private Long resourceOwnerId;
+
+	private String productType;
 
 	private String subsId;
 
@@ -38,17 +37,14 @@ public class UnbindSubscriptionRequest extends RpcAcsRequest<UnbindSubscriptionR
 
 	private Long ownerId;
 
-	private String productType;
-
-	public String getPoolKey() {
-		return this.poolKey;
-	}
-
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
-		}
+	private String poolKey;
+	public UnbindSubscriptionRequest() {
+		super("Dyplsapi", "2017-05-25", "UnbindSubscription", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,6 +55,17 @@ public class UnbindSubscriptionRequest extends RpcAcsRequest<UnbindSubscriptionR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
 		}
 	}
 
@@ -106,14 +113,14 @@ public class UnbindSubscriptionRequest extends RpcAcsRequest<UnbindSubscriptionR
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
+	public String getPoolKey() {
+		return this.poolKey;
 	}
 
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
+	public void setPoolKey(String poolKey) {
+		this.poolKey = poolKey;
+		if(poolKey != null){
+			putQueryParameter("PoolKey", poolKey);
 		}
 	}
 

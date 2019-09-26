@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BuySecretNoResponseUnmarshaller {
 
-	public static BuySecretNoResponse unmarshall(BuySecretNoResponse buySecretNoResponse, UnmarshallerContext context) {
+	public static BuySecretNoResponse unmarshall(BuySecretNoResponse buySecretNoResponse, UnmarshallerContext _ctx) {
 		
-		buySecretNoResponse.setRequestId(context.stringValue("BuySecretNoResponse.RequestId"));
-		buySecretNoResponse.setCode(context.stringValue("BuySecretNoResponse.Code"));
-		buySecretNoResponse.setMessage(context.stringValue("BuySecretNoResponse.Message"));
+		buySecretNoResponse.setRequestId(_ctx.stringValue("BuySecretNoResponse.RequestId"));
+		buySecretNoResponse.setCode(_ctx.stringValue("BuySecretNoResponse.Code"));
+		buySecretNoResponse.setMessage(_ctx.stringValue("BuySecretNoResponse.Message"));
 
 		SecretBuyInfoDTO secretBuyInfoDTO = new SecretBuyInfoDTO();
-		secretBuyInfoDTO.setSecretNo(context.stringValue("BuySecretNoResponse.SecretBuyInfoDTO.SecretNo"));
+		secretBuyInfoDTO.setSecretNo(_ctx.stringValue("BuySecretNoResponse.SecretBuyInfoDTO.SecretNo"));
 		buySecretNoResponse.setSecretBuyInfoDTO(secretBuyInfoDTO);
 	 
 	 	return buySecretNoResponse;

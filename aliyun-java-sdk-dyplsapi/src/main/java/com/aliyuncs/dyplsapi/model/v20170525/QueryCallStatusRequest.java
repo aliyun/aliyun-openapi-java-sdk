@@ -15,18 +15,15 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryCallStatusRequest extends RpcAcsRequest<QueryCallStatusResponse> {
-	
-	public QueryCallStatusRequest() {
-		super("Dyplsapi", "2017-05-25", "QueryCallStatus", "dyplsapi");
-	}
-
-	private String poolKey;
+	   
 
 	private Long resourceOwnerId;
 
@@ -38,15 +35,14 @@ public class QueryCallStatusRequest extends RpcAcsRequest<QueryCallStatusRespons
 
 	private Long ownerId;
 
-	public String getPoolKey() {
-		return this.poolKey;
-	}
-
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
-		}
+	private String poolKey;
+	public QueryCallStatusRequest() {
+		super("Dyplsapi", "2017-05-25", "QueryCallStatus", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -101,6 +97,17 @@ public class QueryCallStatusRequest extends RpcAcsRequest<QueryCallStatusRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPoolKey() {
+		return this.poolKey;
+	}
+
+	public void setPoolKey(String poolKey) {
+		this.poolKey = poolKey;
+		if(poolKey != null){
+			putQueryParameter("PoolKey", poolKey);
 		}
 	}
 

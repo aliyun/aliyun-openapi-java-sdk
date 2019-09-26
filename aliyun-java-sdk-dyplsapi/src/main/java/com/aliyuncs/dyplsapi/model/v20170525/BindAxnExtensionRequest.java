@@ -15,24 +15,29 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class BindAxnExtensionRequest extends RpcAcsRequest<BindAxnExtensionResponse> {
-	
-	public BindAxnExtensionRequest() {
-		super("Dyplsapi", "2017-05-25", "BindAxnExtension", "dyplsapi");
-	}
-
-	private String phoneNoB;
-
-	private String phoneNoA;
+	   
 
 	private Long resourceOwnerId;
 
 	private String extension;
+
+	private Integer callDisplayType;
+
+	private String phoneNoX;
+
+	private String ringConfig;
+
+	private String phoneNoB;
+
+	private String phoneNoA;
 
 	private String expectCity;
 
@@ -44,34 +49,18 @@ public class BindAxnExtensionRequest extends RpcAcsRequest<BindAxnExtensionRespo
 
 	private String poolKey;
 
-	private String phoneNoX;
-
 	private String expiration;
 
 	private Boolean isRecordingEnabled;
 
 	private String outId;
-
-	public String getPhoneNoB() {
-		return this.phoneNoB;
-	}
-
-	public void setPhoneNoB(String phoneNoB) {
-		this.phoneNoB = phoneNoB;
-		if(phoneNoB != null){
-			putQueryParameter("PhoneNoB", phoneNoB);
-		}
-	}
-
-	public String getPhoneNoA() {
-		return this.phoneNoA;
-	}
-
-	public void setPhoneNoA(String phoneNoA) {
-		this.phoneNoA = phoneNoA;
-		if(phoneNoA != null){
-			putQueryParameter("PhoneNoA", phoneNoA);
-		}
+	public BindAxnExtensionRequest() {
+		super("Dyplsapi", "2017-05-25", "BindAxnExtension", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -93,6 +82,61 @@ public class BindAxnExtensionRequest extends RpcAcsRequest<BindAxnExtensionRespo
 		this.extension = extension;
 		if(extension != null){
 			putQueryParameter("Extension", extension);
+		}
+	}
+
+	public Integer getCallDisplayType() {
+		return this.callDisplayType;
+	}
+
+	public void setCallDisplayType(Integer callDisplayType) {
+		this.callDisplayType = callDisplayType;
+		if(callDisplayType != null){
+			putQueryParameter("CallDisplayType", callDisplayType.toString());
+		}
+	}
+
+	public String getPhoneNoX() {
+		return this.phoneNoX;
+	}
+
+	public void setPhoneNoX(String phoneNoX) {
+		this.phoneNoX = phoneNoX;
+		if(phoneNoX != null){
+			putQueryParameter("PhoneNoX", phoneNoX);
+		}
+	}
+
+	public String getRingConfig() {
+		return this.ringConfig;
+	}
+
+	public void setRingConfig(String ringConfig) {
+		this.ringConfig = ringConfig;
+		if(ringConfig != null){
+			putQueryParameter("RingConfig", ringConfig);
+		}
+	}
+
+	public String getPhoneNoB() {
+		return this.phoneNoB;
+	}
+
+	public void setPhoneNoB(String phoneNoB) {
+		this.phoneNoB = phoneNoB;
+		if(phoneNoB != null){
+			putQueryParameter("PhoneNoB", phoneNoB);
+		}
+	}
+
+	public String getPhoneNoA() {
+		return this.phoneNoA;
+	}
+
+	public void setPhoneNoA(String phoneNoA) {
+		this.phoneNoA = phoneNoA;
+		if(phoneNoA != null){
+			putQueryParameter("PhoneNoA", phoneNoA);
 		}
 	}
 
@@ -148,17 +192,6 @@ public class BindAxnExtensionRequest extends RpcAcsRequest<BindAxnExtensionRespo
 		this.poolKey = poolKey;
 		if(poolKey != null){
 			putQueryParameter("PoolKey", poolKey);
-		}
-	}
-
-	public String getPhoneNoX() {
-		return this.phoneNoX;
-	}
-
-	public void setPhoneNoX(String phoneNoX) {
-		this.phoneNoX = phoneNoX;
-		if(phoneNoX != null){
-			putQueryParameter("PhoneNoX", phoneNoX);
 		}
 	}
 

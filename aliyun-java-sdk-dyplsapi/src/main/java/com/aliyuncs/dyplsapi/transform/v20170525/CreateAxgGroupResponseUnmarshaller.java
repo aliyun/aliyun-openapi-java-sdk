@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateAxgGroupResponseUnmarshaller {
 
-	public static CreateAxgGroupResponse unmarshall(CreateAxgGroupResponse createAxgGroupResponse, UnmarshallerContext context) {
+	public static CreateAxgGroupResponse unmarshall(CreateAxgGroupResponse createAxgGroupResponse, UnmarshallerContext _ctx) {
 		
-		createAxgGroupResponse.setRequestId(context.stringValue("CreateAxgGroupResponse.RequestId"));
-		createAxgGroupResponse.setCode(context.stringValue("CreateAxgGroupResponse.Code"));
-		createAxgGroupResponse.setMessage(context.stringValue("CreateAxgGroupResponse.Message"));
-		createAxgGroupResponse.setGroupId(context.longValue("CreateAxgGroupResponse.GroupId"));
+		createAxgGroupResponse.setRequestId(_ctx.stringValue("CreateAxgGroupResponse.RequestId"));
+		createAxgGroupResponse.setCode(_ctx.stringValue("CreateAxgGroupResponse.Code"));
+		createAxgGroupResponse.setMessage(_ctx.stringValue("CreateAxgGroupResponse.Message"));
+		createAxgGroupResponse.setGroupId(_ctx.longValue("CreateAxgGroupResponse.GroupId"));
 	 
 	 	return createAxgGroupResponse;
 	}

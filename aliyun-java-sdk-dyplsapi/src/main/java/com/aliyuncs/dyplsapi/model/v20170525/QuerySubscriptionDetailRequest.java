@@ -15,40 +15,36 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QuerySubscriptionDetailRequest extends RpcAcsRequest<QuerySubscriptionDetailResponse> {
-	
-	public QuerySubscriptionDetailRequest() {
-		super("Dyplsapi", "2017-05-25", "QuerySubscriptionDetail", "dyplsapi");
-	}
-
-	private String poolKey;
+	   
 
 	private Long resourceOwnerId;
 
-	private String subsId;
+	private String productType;
 
-	private String resourceOwnerAccount;
+	private String subsId;
 
 	private String phoneNoX;
 
+	private String resourceOwnerAccount;
+
 	private Long ownerId;
 
-	private String productType;
-
-	public String getPoolKey() {
-		return this.poolKey;
-	}
-
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
-		}
+	private String poolKey;
+	public QuerySubscriptionDetailRequest() {
+		super("Dyplsapi", "2017-05-25", "QuerySubscriptionDetail", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,6 +55,17 @@ public class QuerySubscriptionDetailRequest extends RpcAcsRequest<QuerySubscript
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
 		}
 	}
 
@@ -73,17 +80,6 @@ public class QuerySubscriptionDetailRequest extends RpcAcsRequest<QuerySubscript
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
 	public String getPhoneNoX() {
 		return this.phoneNoX;
 	}
@@ -92,6 +88,17 @@ public class QuerySubscriptionDetailRequest extends RpcAcsRequest<QuerySubscript
 		this.phoneNoX = phoneNoX;
 		if(phoneNoX != null){
 			putQueryParameter("PhoneNoX", phoneNoX);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -106,14 +113,14 @@ public class QuerySubscriptionDetailRequest extends RpcAcsRequest<QuerySubscript
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
+	public String getPoolKey() {
+		return this.poolKey;
 	}
 
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
+	public void setPoolKey(String poolKey) {
+		this.poolKey = poolKey;
+		if(poolKey != null){
+			putQueryParameter("PoolKey", poolKey);
 		}
 	}
 

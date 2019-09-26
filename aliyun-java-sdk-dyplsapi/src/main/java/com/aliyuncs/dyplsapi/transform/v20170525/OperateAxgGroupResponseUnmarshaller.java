@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class OperateAxgGroupResponseUnmarshaller {
 
-	public static OperateAxgGroupResponse unmarshall(OperateAxgGroupResponse operateAxgGroupResponse, UnmarshallerContext context) {
+	public static OperateAxgGroupResponse unmarshall(OperateAxgGroupResponse operateAxgGroupResponse, UnmarshallerContext _ctx) {
 		
-		operateAxgGroupResponse.setRequestId(context.stringValue("OperateAxgGroupResponse.RequestId"));
-		operateAxgGroupResponse.setCode(context.stringValue("OperateAxgGroupResponse.Code"));
-		operateAxgGroupResponse.setMessage(context.stringValue("OperateAxgGroupResponse.Message"));
+		operateAxgGroupResponse.setRequestId(_ctx.stringValue("OperateAxgGroupResponse.RequestId"));
+		operateAxgGroupResponse.setCode(_ctx.stringValue("OperateAxgGroupResponse.Code"));
+		operateAxgGroupResponse.setMessage(_ctx.stringValue("OperateAxgGroupResponse.Message"));
 	 
 	 	return operateAxgGroupResponse;
 	}

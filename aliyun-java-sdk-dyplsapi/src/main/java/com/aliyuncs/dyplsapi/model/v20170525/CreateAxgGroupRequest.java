@@ -15,40 +15,36 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateAxgGroupRequest extends RpcAcsRequest<CreateAxgGroupResponse> {
-	
-	public CreateAxgGroupRequest() {
-		super("Dyplsapi", "2017-05-25", "CreateAxgGroup", "dyplsapi");
-	}
-
-	private String poolKey;
+	   
 
 	private Long resourceOwnerId;
-
-	private String resourceOwnerAccount;
-
-	private String name;
 
 	private String numbers;
 
 	private String remark;
 
+	private String resourceOwnerAccount;
+
 	private Long ownerId;
 
-	public String getPoolKey() {
-		return this.poolKey;
-	}
+	private String poolKey;
 
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
-		}
+	private String name;
+	public CreateAxgGroupRequest() {
+		super("Dyplsapi", "2017-05-25", "CreateAxgGroup", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,28 +55,6 @@ public class CreateAxgGroupRequest extends RpcAcsRequest<CreateAxgGroupResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -106,6 +80,17 @@ public class CreateAxgGroupRequest extends RpcAcsRequest<CreateAxgGroupResponse>
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,6 +99,28 @@ public class CreateAxgGroupRequest extends RpcAcsRequest<CreateAxgGroupResponse>
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPoolKey() {
+		return this.poolKey;
+	}
+
+	public void setPoolKey(String poolKey) {
+		this.poolKey = poolKey;
+		if(poolKey != null){
+			putQueryParameter("PoolKey", poolKey);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

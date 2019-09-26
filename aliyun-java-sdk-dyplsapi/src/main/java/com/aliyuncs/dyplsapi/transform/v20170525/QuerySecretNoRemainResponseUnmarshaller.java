@@ -14,22 +14,36 @@
 
 package com.aliyuncs.dyplsapi.transform.v20170525;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.dyplsapi.model.v20170525.QuerySecretNoRemainResponse;
 import com.aliyuncs.dyplsapi.model.v20170525.QuerySecretNoRemainResponse.SecretRemainDTO;
+import com.aliyuncs.dyplsapi.model.v20170525.QuerySecretNoRemainResponse.SecretRemainDTO.RemainDTO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
 public class QuerySecretNoRemainResponseUnmarshaller {
 
-	public static QuerySecretNoRemainResponse unmarshall(QuerySecretNoRemainResponse querySecretNoRemainResponse, UnmarshallerContext context) {
+	public static QuerySecretNoRemainResponse unmarshall(QuerySecretNoRemainResponse querySecretNoRemainResponse, UnmarshallerContext _ctx) {
 		
-		querySecretNoRemainResponse.setRequestId(context.stringValue("QuerySecretNoRemainResponse.RequestId"));
-		querySecretNoRemainResponse.setCode(context.stringValue("QuerySecretNoRemainResponse.Code"));
-		querySecretNoRemainResponse.setMessage(context.stringValue("QuerySecretNoRemainResponse.Message"));
+		querySecretNoRemainResponse.setRequestId(_ctx.stringValue("QuerySecretNoRemainResponse.RequestId"));
+		querySecretNoRemainResponse.setCode(_ctx.stringValue("QuerySecretNoRemainResponse.Code"));
+		querySecretNoRemainResponse.setMessage(_ctx.stringValue("QuerySecretNoRemainResponse.Message"));
 
 		SecretRemainDTO secretRemainDTO = new SecretRemainDTO();
-		secretRemainDTO.setCity(context.stringValue("QuerySecretNoRemainResponse.SecretRemainDTO.City"));
-		secretRemainDTO.setAmount(context.longValue("QuerySecretNoRemainResponse.SecretRemainDTO.Amount"));
+		secretRemainDTO.setCity(_ctx.stringValue("QuerySecretNoRemainResponse.SecretRemainDTO.City"));
+		secretRemainDTO.setAmount(_ctx.longValue("QuerySecretNoRemainResponse.SecretRemainDTO.Amount"));
+
+		List<RemainDTO> remainDTOList = new ArrayList<RemainDTO>();
+		for (int i = 0; i < _ctx.lengthValue("QuerySecretNoRemainResponse.SecretRemainDTO.RemainDTOList.Length"); i++) {
+			RemainDTO remainDTO = new RemainDTO();
+			remainDTO.setCity(_ctx.stringValue("QuerySecretNoRemainResponse.SecretRemainDTO.RemainDTOList["+ i +"].City"));
+			remainDTO.setAmount(_ctx.longValue("QuerySecretNoRemainResponse.SecretRemainDTO.RemainDTOList["+ i +"].Amount"));
+
+			remainDTOList.add(remainDTO);
+		}
+		secretRemainDTO.setRemainDTOList(remainDTOList);
 		querySecretNoRemainResponse.setSecretRemainDTO(secretRemainDTO);
 	 
 	 	return querySecretNoRemainResponse;

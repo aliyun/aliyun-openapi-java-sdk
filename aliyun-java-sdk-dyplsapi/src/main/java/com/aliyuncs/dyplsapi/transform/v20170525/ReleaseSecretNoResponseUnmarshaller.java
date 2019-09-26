@@ -20,11 +20,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ReleaseSecretNoResponseUnmarshaller {
 
-	public static ReleaseSecretNoResponse unmarshall(ReleaseSecretNoResponse releaseSecretNoResponse, UnmarshallerContext context) {
+	public static ReleaseSecretNoResponse unmarshall(ReleaseSecretNoResponse releaseSecretNoResponse, UnmarshallerContext _ctx) {
 		
-		releaseSecretNoResponse.setRequestId(context.stringValue("ReleaseSecretNoResponse.RequestId"));
-		releaseSecretNoResponse.setCode(context.stringValue("ReleaseSecretNoResponse.Code"));
-		releaseSecretNoResponse.setMessage(context.stringValue("ReleaseSecretNoResponse.Message"));
+		releaseSecretNoResponse.setRequestId(_ctx.stringValue("ReleaseSecretNoResponse.RequestId"));
+		releaseSecretNoResponse.setCode(_ctx.stringValue("ReleaseSecretNoResponse.Code"));
+		releaseSecretNoResponse.setMessage(_ctx.stringValue("ReleaseSecretNoResponse.Message"));
 	 
 	 	return releaseSecretNoResponse;
 	}

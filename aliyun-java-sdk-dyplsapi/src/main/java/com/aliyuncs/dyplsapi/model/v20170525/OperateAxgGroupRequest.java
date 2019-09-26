@@ -15,40 +15,36 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class OperateAxgGroupRequest extends RpcAcsRequest<OperateAxgGroupResponse> {
-	
-	public OperateAxgGroupRequest() {
-		super("Dyplsapi", "2017-05-25", "OperateAxgGroup", "dyplsapi");
-	}
-
-	private String poolKey;
+	   
 
 	private Long resourceOwnerId;
+
+	private String numbers;
 
 	private String resourceOwnerAccount;
 
 	private Long groupId;
 
-	private String numbers;
-
-	private String operateType;
-
 	private Long ownerId;
 
-	public String getPoolKey() {
-		return this.poolKey;
-	}
+	private String poolKey;
 
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
-		}
+	private String operateType;
+	public OperateAxgGroupRequest() {
+		super("Dyplsapi", "2017-05-25", "OperateAxgGroup", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -59,6 +55,17 @@ public class OperateAxgGroupRequest extends RpcAcsRequest<OperateAxgGroupRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getNumbers() {
+		return this.numbers;
+	}
+
+	public void setNumbers(String numbers) {
+		this.numbers = numbers;
+		if(numbers != null){
+			putQueryParameter("Numbers", numbers);
 		}
 	}
 
@@ -84,14 +91,25 @@ public class OperateAxgGroupRequest extends RpcAcsRequest<OperateAxgGroupRespons
 		}
 	}
 
-	public String getNumbers() {
-		return this.numbers;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setNumbers(String numbers) {
-		this.numbers = numbers;
-		if(numbers != null){
-			putQueryParameter("Numbers", numbers);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPoolKey() {
+		return this.poolKey;
+	}
+
+	public void setPoolKey(String poolKey) {
+		this.poolKey = poolKey;
+		if(poolKey != null){
+			putQueryParameter("PoolKey", poolKey);
 		}
 	}
 
@@ -103,17 +121,6 @@ public class OperateAxgGroupRequest extends RpcAcsRequest<OperateAxgGroupRespons
 		this.operateType = operateType;
 		if(operateType != null){
 			putQueryParameter("OperateType", operateType);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

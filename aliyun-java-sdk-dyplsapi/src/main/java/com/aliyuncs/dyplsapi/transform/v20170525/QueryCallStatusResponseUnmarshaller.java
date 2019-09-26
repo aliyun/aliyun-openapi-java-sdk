@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryCallStatusResponseUnmarshaller {
 
-	public static QueryCallStatusResponse unmarshall(QueryCallStatusResponse queryCallStatusResponse, UnmarshallerContext context) {
+	public static QueryCallStatusResponse unmarshall(QueryCallStatusResponse queryCallStatusResponse, UnmarshallerContext _ctx) {
 		
-		queryCallStatusResponse.setRequestId(context.stringValue("QueryCallStatusResponse.RequestId"));
-		queryCallStatusResponse.setCode(context.stringValue("QueryCallStatusResponse.Code"));
-		queryCallStatusResponse.setMessage(context.stringValue("QueryCallStatusResponse.Message"));
+		queryCallStatusResponse.setRequestId(_ctx.stringValue("QueryCallStatusResponse.RequestId"));
+		queryCallStatusResponse.setCode(_ctx.stringValue("QueryCallStatusResponse.Code"));
+		queryCallStatusResponse.setMessage(_ctx.stringValue("QueryCallStatusResponse.Message"));
 
 		SecretCallStatusDTO secretCallStatusDTO = new SecretCallStatusDTO();
-		secretCallStatusDTO.setStatus(context.integerValue("QueryCallStatusResponse.SecretCallStatusDTO.Status"));
-		secretCallStatusDTO.setCalledNo(context.stringValue("QueryCallStatusResponse.SecretCallStatusDTO.CalledNo"));
+		secretCallStatusDTO.setStatus(_ctx.integerValue("QueryCallStatusResponse.SecretCallStatusDTO.Status"));
+		secretCallStatusDTO.setCalledNo(_ctx.stringValue("QueryCallStatusResponse.SecretCallStatusDTO.CalledNo"));
 		queryCallStatusResponse.setSecretCallStatusDTO(secretCallStatusDTO);
 	 
 	 	return queryCallStatusResponse;

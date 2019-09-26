@@ -22,38 +22,25 @@ import com.aliyuncs.dyplsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QuerySecretNoRemainRequest extends RpcAcsRequest<QuerySecretNoRemainResponse> {
+public class QuerySubsIdRequest extends RpcAcsRequest<QuerySubsIdResponse> {
 	   
 
-	private Long specId;
-
 	private Long resourceOwnerId;
-
-	private String city;
-
-	private String secretNo;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
-	public QuerySecretNoRemainRequest() {
-		super("Dyplsapi", "2017-05-25", "QuerySecretNoRemain", "dypls");
+
+	private String poolKey;
+
+	private String phoneNoX;
+	public QuerySubsIdRequest() {
+		super("Dyplsapi", "2017-05-25", "QuerySubsId", "dypls");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getSpecId() {
-		return this.specId;
-	}
-
-	public void setSpecId(Long specId) {
-		this.specId = specId;
-		if(specId != null){
-			putQueryParameter("SpecId", specId.toString());
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -64,28 +51,6 @@ public class QuerySecretNoRemainRequest extends RpcAcsRequest<QuerySecretNoRemai
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-		if(city != null){
-			putQueryParameter("City", city);
-		}
-	}
-
-	public String getSecretNo() {
-		return this.secretNo;
-	}
-
-	public void setSecretNo(String secretNo) {
-		this.secretNo = secretNo;
-		if(secretNo != null){
-			putQueryParameter("SecretNo", secretNo);
 		}
 	}
 
@@ -111,9 +76,31 @@ public class QuerySecretNoRemainRequest extends RpcAcsRequest<QuerySecretNoRemai
 		}
 	}
 
+	public String getPoolKey() {
+		return this.poolKey;
+	}
+
+	public void setPoolKey(String poolKey) {
+		this.poolKey = poolKey;
+		if(poolKey != null){
+			putQueryParameter("PoolKey", poolKey);
+		}
+	}
+
+	public String getPhoneNoX() {
+		return this.phoneNoX;
+	}
+
+	public void setPhoneNoX(String phoneNoX) {
+		this.phoneNoX = phoneNoX;
+		if(phoneNoX != null){
+			putQueryParameter("PhoneNoX", phoneNoX);
+		}
+	}
+
 	@Override
-	public Class<QuerySecretNoRemainResponse> getResponseClass() {
-		return QuerySecretNoRemainResponse.class;
+	public Class<QuerySubsIdResponse> getResponseClass() {
+		return QuerySubsIdResponse.class;
 	}
 
 }

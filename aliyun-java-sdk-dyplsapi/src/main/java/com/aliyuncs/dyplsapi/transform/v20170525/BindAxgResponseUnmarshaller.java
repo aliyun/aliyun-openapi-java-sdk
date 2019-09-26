@@ -21,16 +21,16 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BindAxgResponseUnmarshaller {
 
-	public static BindAxgResponse unmarshall(BindAxgResponse bindAxgResponse, UnmarshallerContext context) {
+	public static BindAxgResponse unmarshall(BindAxgResponse bindAxgResponse, UnmarshallerContext _ctx) {
 		
-		bindAxgResponse.setRequestId(context.stringValue("BindAxgResponse.RequestId"));
-		bindAxgResponse.setCode(context.stringValue("BindAxgResponse.Code"));
-		bindAxgResponse.setMessage(context.stringValue("BindAxgResponse.Message"));
+		bindAxgResponse.setRequestId(_ctx.stringValue("BindAxgResponse.RequestId"));
+		bindAxgResponse.setCode(_ctx.stringValue("BindAxgResponse.Code"));
+		bindAxgResponse.setMessage(_ctx.stringValue("BindAxgResponse.Message"));
 
 		SecretBindDTO secretBindDTO = new SecretBindDTO();
-		secretBindDTO.setSubsId(context.stringValue("BindAxgResponse.SecretBindDTO.SubsId"));
-		secretBindDTO.setSecretNo(context.stringValue("BindAxgResponse.SecretBindDTO.SecretNo"));
-		secretBindDTO.setExtension(context.stringValue("BindAxgResponse.SecretBindDTO.Extension"));
+		secretBindDTO.setSubsId(_ctx.stringValue("BindAxgResponse.SecretBindDTO.SubsId"));
+		secretBindDTO.setSecretNo(_ctx.stringValue("BindAxgResponse.SecretBindDTO.SecretNo"));
+		secretBindDTO.setExtension(_ctx.stringValue("BindAxgResponse.SecretBindDTO.Extension"));
 		bindAxgResponse.setSecretBindDTO(secretBindDTO);
 	 
 	 	return bindAxgResponse;

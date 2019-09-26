@@ -15,36 +15,32 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ReleaseSecretNoRequest extends RpcAcsRequest<ReleaseSecretNoResponse> {
-	
-	public ReleaseSecretNoRequest() {
-		super("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "dyplsapi");
-	}
-
-	private String poolKey;
+	   
 
 	private Long resourceOwnerId;
-
-	private String secretNo;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	public String getPoolKey() {
-		return this.poolKey;
-	}
+	private String poolKey;
 
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
-		}
+	private String secretNo;
+	public ReleaseSecretNoRequest() {
+		super("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -55,17 +51,6 @@ public class ReleaseSecretNoRequest extends RpcAcsRequest<ReleaseSecretNoRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSecretNo() {
-		return this.secretNo;
-	}
-
-	public void setSecretNo(String secretNo) {
-		this.secretNo = secretNo;
-		if(secretNo != null){
-			putQueryParameter("SecretNo", secretNo);
 		}
 	}
 
@@ -88,6 +73,28 @@ public class ReleaseSecretNoRequest extends RpcAcsRequest<ReleaseSecretNoRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPoolKey() {
+		return this.poolKey;
+	}
+
+	public void setPoolKey(String poolKey) {
+		this.poolKey = poolKey;
+		if(poolKey != null){
+			putQueryParameter("PoolKey", poolKey);
+		}
+	}
+
+	public String getSecretNo() {
+		return this.secretNo;
+	}
+
+	public void setSecretNo(String secretNo) {
+		this.secretNo = secretNo;
+		if(secretNo != null){
+			putQueryParameter("SecretNo", secretNo);
 		}
 	}
 

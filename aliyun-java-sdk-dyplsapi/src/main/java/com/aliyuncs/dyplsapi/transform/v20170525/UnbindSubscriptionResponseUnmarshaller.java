@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class UnbindSubscriptionResponseUnmarshaller {
 
-	public static UnbindSubscriptionResponse unmarshall(UnbindSubscriptionResponse unbindSubscriptionResponse, UnmarshallerContext context) {
+	public static UnbindSubscriptionResponse unmarshall(UnbindSubscriptionResponse unbindSubscriptionResponse, UnmarshallerContext _ctx) {
 		
-		unbindSubscriptionResponse.setRequestId(context.stringValue("UnbindSubscriptionResponse.RequestId"));
-		unbindSubscriptionResponse.setChargeId(context.stringValue("UnbindSubscriptionResponse.ChargeId"));
-		unbindSubscriptionResponse.setCode(context.stringValue("UnbindSubscriptionResponse.Code"));
-		unbindSubscriptionResponse.setMessage(context.stringValue("UnbindSubscriptionResponse.Message"));
+		unbindSubscriptionResponse.setRequestId(_ctx.stringValue("UnbindSubscriptionResponse.RequestId"));
+		unbindSubscriptionResponse.setChargeId(_ctx.stringValue("UnbindSubscriptionResponse.ChargeId"));
+		unbindSubscriptionResponse.setCode(_ctx.stringValue("UnbindSubscriptionResponse.Code"));
+		unbindSubscriptionResponse.setMessage(_ctx.stringValue("UnbindSubscriptionResponse.Message"));
 	 
 	 	return unbindSubscriptionResponse;
 	}

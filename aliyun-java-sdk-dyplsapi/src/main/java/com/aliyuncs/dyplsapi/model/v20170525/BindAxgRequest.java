@@ -15,22 +15,27 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class BindAxgRequest extends RpcAcsRequest<BindAxgResponse> {
-	
-	public BindAxgRequest() {
-		super("Dyplsapi", "2017-05-25", "BindAxg", "dyplsapi");
-	}
+	   
+
+	private Long resourceOwnerId;
+
+	private Integer callDisplayType;
+
+	private String phoneNoX;
+
+	private String ringConfig;
 
 	private String phoneNoB;
 
 	private String phoneNoA;
-
-	private Long resourceOwnerId;
 
 	private String expectCity;
 
@@ -44,13 +49,63 @@ public class BindAxgRequest extends RpcAcsRequest<BindAxgResponse> {
 
 	private String poolKey;
 
-	private String phoneNoX;
-
 	private String expiration;
 
 	private Boolean isRecordingEnabled;
 
 	private String outId;
+	public BindAxgRequest() {
+		super("Dyplsapi", "2017-05-25", "BindAxg", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getCallDisplayType() {
+		return this.callDisplayType;
+	}
+
+	public void setCallDisplayType(Integer callDisplayType) {
+		this.callDisplayType = callDisplayType;
+		if(callDisplayType != null){
+			putQueryParameter("CallDisplayType", callDisplayType.toString());
+		}
+	}
+
+	public String getPhoneNoX() {
+		return this.phoneNoX;
+	}
+
+	public void setPhoneNoX(String phoneNoX) {
+		this.phoneNoX = phoneNoX;
+		if(phoneNoX != null){
+			putQueryParameter("PhoneNoX", phoneNoX);
+		}
+	}
+
+	public String getRingConfig() {
+		return this.ringConfig;
+	}
+
+	public void setRingConfig(String ringConfig) {
+		this.ringConfig = ringConfig;
+		if(ringConfig != null){
+			putQueryParameter("RingConfig", ringConfig);
+		}
+	}
 
 	public String getPhoneNoB() {
 		return this.phoneNoB;
@@ -71,17 +126,6 @@ public class BindAxgRequest extends RpcAcsRequest<BindAxgResponse> {
 		this.phoneNoA = phoneNoA;
 		if(phoneNoA != null){
 			putQueryParameter("PhoneNoA", phoneNoA);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -148,17 +192,6 @@ public class BindAxgRequest extends RpcAcsRequest<BindAxgResponse> {
 		this.poolKey = poolKey;
 		if(poolKey != null){
 			putQueryParameter("PoolKey", poolKey);
-		}
-	}
-
-	public String getPhoneNoX() {
-		return this.phoneNoX;
-	}
-
-	public void setPhoneNoX(String phoneNoX) {
-		this.phoneNoX = phoneNoX;
-		if(phoneNoX != null){
-			putQueryParameter("PhoneNoX", phoneNoX);
 		}
 	}
 

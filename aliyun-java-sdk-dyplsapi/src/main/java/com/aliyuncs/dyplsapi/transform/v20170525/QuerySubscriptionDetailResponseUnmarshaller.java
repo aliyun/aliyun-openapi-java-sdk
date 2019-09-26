@@ -21,24 +21,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QuerySubscriptionDetailResponseUnmarshaller {
 
-	public static QuerySubscriptionDetailResponse unmarshall(QuerySubscriptionDetailResponse querySubscriptionDetailResponse, UnmarshallerContext context) {
+	public static QuerySubscriptionDetailResponse unmarshall(QuerySubscriptionDetailResponse querySubscriptionDetailResponse, UnmarshallerContext _ctx) {
 		
-		querySubscriptionDetailResponse.setRequestId(context.stringValue("QuerySubscriptionDetailResponse.RequestId"));
-		querySubscriptionDetailResponse.setCode(context.stringValue("QuerySubscriptionDetailResponse.Code"));
-		querySubscriptionDetailResponse.setMessage(context.stringValue("QuerySubscriptionDetailResponse.Message"));
+		querySubscriptionDetailResponse.setRequestId(_ctx.stringValue("QuerySubscriptionDetailResponse.RequestId"));
+		querySubscriptionDetailResponse.setCode(_ctx.stringValue("QuerySubscriptionDetailResponse.Code"));
+		querySubscriptionDetailResponse.setMessage(_ctx.stringValue("QuerySubscriptionDetailResponse.Message"));
 
 		SecretBindDetailDTO secretBindDetailDTO = new SecretBindDetailDTO();
-		secretBindDetailDTO.setSubsId(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.SubsId"));
-		secretBindDetailDTO.setPhoneNoA(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoA"));
-		secretBindDetailDTO.setPhoneNoX(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoX"));
-		secretBindDetailDTO.setPhoneNoB(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoB"));
-		secretBindDetailDTO.setExtension(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Extension"));
-		secretBindDetailDTO.setGroupId(context.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.GroupId"));
-		secretBindDetailDTO.setGmtCreate(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.GmtCreate"));
-		secretBindDetailDTO.setExpireDate(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.ExpireDate"));
-		secretBindDetailDTO.setNeedRecord(context.booleanValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.NeedRecord"));
-		secretBindDetailDTO.setCallRestrict(context.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.CallRestrict"));
-		secretBindDetailDTO.setStatus(context.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Status"));
+		secretBindDetailDTO.setSubsId(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.SubsId"));
+		secretBindDetailDTO.setPhoneNoA(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoA"));
+		secretBindDetailDTO.setPhoneNoX(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoX"));
+		secretBindDetailDTO.setPhoneNoB(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.PhoneNoB"));
+		secretBindDetailDTO.setExtension(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Extension"));
+		secretBindDetailDTO.setGroupId(_ctx.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.GroupId"));
+		secretBindDetailDTO.setGmtCreate(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.GmtCreate"));
+		secretBindDetailDTO.setExpireDate(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.ExpireDate"));
+		secretBindDetailDTO.setNeedRecord(_ctx.booleanValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.NeedRecord"));
+		secretBindDetailDTO.setCallRestrict(_ctx.stringValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.CallRestrict"));
+		secretBindDetailDTO.setStatus(_ctx.longValue("QuerySubscriptionDetailResponse.SecretBindDetailDTO.Status"));
 		querySubscriptionDetailResponse.setSecretBindDetailDTO(secretBindDetailDTO);
 	 
 	 	return querySubscriptionDetailResponse;

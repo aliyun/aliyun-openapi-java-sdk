@@ -14,18 +14,19 @@
 
 package com.aliyuncs.dyplsapi.transform.v20170525;
 
-import com.aliyuncs.dyplsapi.model.v20170525.UpdateSubscriptionResponse;
+import com.aliyuncs.dyplsapi.model.v20170525.QuerySubsIdResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateSubscriptionResponseUnmarshaller {
+public class QuerySubsIdResponseUnmarshaller {
 
-	public static UpdateSubscriptionResponse unmarshall(UpdateSubscriptionResponse updateSubscriptionResponse, UnmarshallerContext _ctx) {
+	public static QuerySubsIdResponse unmarshall(QuerySubsIdResponse querySubsIdResponse, UnmarshallerContext _ctx) {
 		
-		updateSubscriptionResponse.setRequestId(_ctx.stringValue("UpdateSubscriptionResponse.RequestId"));
-		updateSubscriptionResponse.setCode(_ctx.stringValue("UpdateSubscriptionResponse.Code"));
-		updateSubscriptionResponse.setMessage(_ctx.stringValue("UpdateSubscriptionResponse.Message"));
+		querySubsIdResponse.setRequestId(_ctx.stringValue("QuerySubsIdResponse.RequestId"));
+		querySubsIdResponse.setCode(_ctx.stringValue("QuerySubsIdResponse.Code"));
+		querySubsIdResponse.setMessage(_ctx.stringValue("QuerySubsIdResponse.Message"));
+		querySubsIdResponse.setSubsId(_ctx.stringValue("QuerySubsIdResponse.SubsId"));
 	 
-	 	return updateSubscriptionResponse;
+	 	return querySubsIdResponse;
 	}
 }

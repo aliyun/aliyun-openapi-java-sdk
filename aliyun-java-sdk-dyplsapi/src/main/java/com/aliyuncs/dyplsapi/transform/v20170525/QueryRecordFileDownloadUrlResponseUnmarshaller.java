@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryRecordFileDownloadUrlResponseUnmarshaller {
 
-	public static QueryRecordFileDownloadUrlResponse unmarshall(QueryRecordFileDownloadUrlResponse queryRecordFileDownloadUrlResponse, UnmarshallerContext context) {
+	public static QueryRecordFileDownloadUrlResponse unmarshall(QueryRecordFileDownloadUrlResponse queryRecordFileDownloadUrlResponse, UnmarshallerContext _ctx) {
 		
-		queryRecordFileDownloadUrlResponse.setRequestId(context.stringValue("QueryRecordFileDownloadUrlResponse.RequestId"));
-		queryRecordFileDownloadUrlResponse.setCode(context.stringValue("QueryRecordFileDownloadUrlResponse.Code"));
-		queryRecordFileDownloadUrlResponse.setMessage(context.stringValue("QueryRecordFileDownloadUrlResponse.Message"));
-		queryRecordFileDownloadUrlResponse.setDownloadUrl(context.stringValue("QueryRecordFileDownloadUrlResponse.DownloadUrl"));
+		queryRecordFileDownloadUrlResponse.setRequestId(_ctx.stringValue("QueryRecordFileDownloadUrlResponse.RequestId"));
+		queryRecordFileDownloadUrlResponse.setCode(_ctx.stringValue("QueryRecordFileDownloadUrlResponse.Code"));
+		queryRecordFileDownloadUrlResponse.setMessage(_ctx.stringValue("QueryRecordFileDownloadUrlResponse.Message"));
+		queryRecordFileDownloadUrlResponse.setDownloadUrl(_ctx.stringValue("QueryRecordFileDownloadUrlResponse.DownloadUrl"));
 	 
 	 	return queryRecordFileDownloadUrlResponse;
 	}

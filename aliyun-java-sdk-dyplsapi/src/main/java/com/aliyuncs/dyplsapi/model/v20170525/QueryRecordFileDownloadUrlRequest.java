@@ -15,30 +15,37 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecordFileDownloadUrlResponse> {
-	
-	public QueryRecordFileDownloadUrlRequest() {
-		super("Dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl", "dyplsapi");
-	}
+	   
 
 	private String callId;
 
-	private String poolKey;
-
 	private Long resourceOwnerId;
+
+	private String productType;
 
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String productType;
-
 	private String callTime;
+
+	private String poolKey;
+	public QueryRecordFileDownloadUrlRequest() {
+		super("Dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCallId() {
 		return this.callId;
@@ -51,17 +58,6 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 		}
 	}
 
-	public String getPoolKey() {
-		return this.poolKey;
-	}
-
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -70,6 +66,17 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
 		}
 	}
 
@@ -95,17 +102,6 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
-		}
-	}
-
 	public String getCallTime() {
 		return this.callTime;
 	}
@@ -114,6 +110,17 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 		this.callTime = callTime;
 		if(callTime != null){
 			putQueryParameter("CallTime", callTime);
+		}
+	}
+
+	public String getPoolKey() {
+		return this.poolKey;
+	}
+
+	public void setPoolKey(String poolKey) {
+		this.poolKey = poolKey;
+		if(poolKey != null){
+			putQueryParameter("PoolKey", poolKey);
 		}
 	}
 

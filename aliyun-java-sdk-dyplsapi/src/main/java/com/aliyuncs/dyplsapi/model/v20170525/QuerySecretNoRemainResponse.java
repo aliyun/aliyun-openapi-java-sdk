@@ -14,6 +14,7 @@
 
 package com.aliyuncs.dyplsapi.model.v20170525;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dyplsapi.transform.v20170525.QuerySecretNoRemainResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -70,6 +71,8 @@ public class QuerySecretNoRemainResponse extends AcsResponse {
 
 		private Long amount;
 
+		private List<RemainDTO> remainDTOList;
+
 		public String getCity() {
 			return this.city;
 		}
@@ -84,6 +87,37 @@ public class QuerySecretNoRemainResponse extends AcsResponse {
 
 		public void setAmount(Long amount) {
 			this.amount = amount;
+		}
+
+		public List<RemainDTO> getRemainDTOList() {
+			return this.remainDTOList;
+		}
+
+		public void setRemainDTOList(List<RemainDTO> remainDTOList) {
+			this.remainDTOList = remainDTOList;
+		}
+
+		public static class RemainDTO {
+
+			private String city;
+
+			private Long amount;
+
+			public String getCity() {
+				return this.city;
+			}
+
+			public void setCity(String city) {
+				this.city = city;
+			}
+
+			public Long getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Long amount) {
+				this.amount = amount;
+			}
 		}
 	}
 

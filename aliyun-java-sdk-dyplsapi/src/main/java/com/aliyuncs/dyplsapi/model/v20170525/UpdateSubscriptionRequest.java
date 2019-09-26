@@ -15,22 +15,31 @@
 package com.aliyuncs.dyplsapi.model.v20170525;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dyplsapi.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionResponse> {
-	
-	public UpdateSubscriptionRequest() {
-		super("Dyplsapi", "2017-05-25", "UpdateSubscription", "dyplsapi");
-	}
+	   
+
+	private Long resourceOwnerId;
+
+	private Integer callDisplayType;
+
+	private String productType;
+
+	private String subsId;
+
+	private String phoneNoX;
+
+	private String ringConfig;
 
 	private String phoneNoB;
 
 	private String phoneNoA;
-
-	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
@@ -38,19 +47,91 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 
 	private Long ownerId;
 
-	private String productType;
-
 	private String poolKey;
 
-	private String subsId;
-
-	private String phoneNoX;
-
 	private String expiration;
+
+	private String outId;
+
+	private Boolean isRecordingEnabled;
 
 	private String operateType;
 
 	private String callRestrict;
+	public UpdateSubscriptionRequest() {
+		super("Dyplsapi", "2017-05-25", "UpdateSubscription", "dypls");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getCallDisplayType() {
+		return this.callDisplayType;
+	}
+
+	public void setCallDisplayType(Integer callDisplayType) {
+		this.callDisplayType = callDisplayType;
+		if(callDisplayType != null){
+			putQueryParameter("CallDisplayType", callDisplayType.toString());
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public String getSubsId() {
+		return this.subsId;
+	}
+
+	public void setSubsId(String subsId) {
+		this.subsId = subsId;
+		if(subsId != null){
+			putQueryParameter("SubsId", subsId);
+		}
+	}
+
+	public String getPhoneNoX() {
+		return this.phoneNoX;
+	}
+
+	public void setPhoneNoX(String phoneNoX) {
+		this.phoneNoX = phoneNoX;
+		if(phoneNoX != null){
+			putQueryParameter("PhoneNoX", phoneNoX);
+		}
+	}
+
+	public String getRingConfig() {
+		return this.ringConfig;
+	}
+
+	public void setRingConfig(String ringConfig) {
+		this.ringConfig = ringConfig;
+		if(ringConfig != null){
+			putQueryParameter("RingConfig", ringConfig);
+		}
+	}
 
 	public String getPhoneNoB() {
 		return this.phoneNoB;
@@ -71,17 +152,6 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 		this.phoneNoA = phoneNoA;
 		if(phoneNoA != null){
 			putQueryParameter("PhoneNoA", phoneNoA);
-		}
-	}
-
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
 		}
 	}
 
@@ -118,17 +188,6 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 		}
 	}
 
-	public String getProductType() {
-		return this.productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
-		if(productType != null){
-			putQueryParameter("ProductType", productType);
-		}
-	}
-
 	public String getPoolKey() {
 		return this.poolKey;
 	}
@@ -140,28 +199,6 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 		}
 	}
 
-	public String getSubsId() {
-		return this.subsId;
-	}
-
-	public void setSubsId(String subsId) {
-		this.subsId = subsId;
-		if(subsId != null){
-			putQueryParameter("SubsId", subsId);
-		}
-	}
-
-	public String getPhoneNoX() {
-		return this.phoneNoX;
-	}
-
-	public void setPhoneNoX(String phoneNoX) {
-		this.phoneNoX = phoneNoX;
-		if(phoneNoX != null){
-			putQueryParameter("PhoneNoX", phoneNoX);
-		}
-	}
-
 	public String getExpiration() {
 		return this.expiration;
 	}
@@ -170,6 +207,28 @@ public class UpdateSubscriptionRequest extends RpcAcsRequest<UpdateSubscriptionR
 		this.expiration = expiration;
 		if(expiration != null){
 			putQueryParameter("Expiration", expiration);
+		}
+	}
+
+	public String getOutId() {
+		return this.outId;
+	}
+
+	public void setOutId(String outId) {
+		this.outId = outId;
+		if(outId != null){
+			putQueryParameter("OutId", outId);
+		}
+	}
+
+	public Boolean getIsRecordingEnabled() {
+		return this.isRecordingEnabled;
+	}
+
+	public void setIsRecordingEnabled(Boolean isRecordingEnabled) {
+		this.isRecordingEnabled = isRecordingEnabled;
+		if(isRecordingEnabled != null){
+			putQueryParameter("IsRecordingEnabled", isRecordingEnabled.toString());
 		}
 	}
 
