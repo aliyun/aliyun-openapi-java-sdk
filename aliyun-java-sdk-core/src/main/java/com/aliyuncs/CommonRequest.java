@@ -225,7 +225,7 @@ public class CommonRequest {
     }
 
     private void setParameter(Map<String, String> map, String name, Object value) {
-        if (null == map) {
+        if (null == map || name == null || value == null) {
             return;
         }
         map.put(name, String.valueOf(value));

@@ -242,7 +242,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     }
 
     protected void setParameter(Map<String, String> map, String name, Object value) {
-        if (null == map) {
+        if (null == map || name == null || value == null) {
             return;
         }
         map.put(name, String.valueOf(value));
