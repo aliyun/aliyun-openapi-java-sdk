@@ -1,4 +1,7 @@
-﻿2019-09-16 Version: 4.4.5
+﻿2019-09-30 Version: 4.4.6
+1, change setParameter: Add null check
+
+2019-09-16 Version: 4.4.5
 1, Modify getEndpoint logic
 
 2019-05-27 Version: 4.4.4
