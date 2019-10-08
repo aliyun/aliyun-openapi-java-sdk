@@ -26,6 +26,7 @@ public class GenerateDataKeyResponseUnmarshaller {
 		generateDataKeyResponse.setCiphertextBlob(_ctx.stringValue("GenerateDataKeyResponse.CiphertextBlob"));
 		generateDataKeyResponse.setKeyId(_ctx.stringValue("GenerateDataKeyResponse.KeyId"));
 		generateDataKeyResponse.setPlaintext(_ctx.stringValue("GenerateDataKeyResponse.Plaintext"));
+		generateDataKeyResponse.setKeyVersionId(_ctx.stringValue("GenerateDataKeyResponse.KeyVersionId"));
 	 
 	 	return generateDataKeyResponse;
 	}

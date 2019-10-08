@@ -37,6 +37,11 @@ public class DescribeKeyResponseUnmarshaller {
 		keyMetadata.setOrigin(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.Origin"));
 		keyMetadata.setMaterialExpireTime(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.MaterialExpireTime"));
 		keyMetadata.setProtectionLevel(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.ProtectionLevel"));
+		keyMetadata.setPrimaryKeyVersion(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.PrimaryKeyVersion"));
+		keyMetadata.setLastRotationDate(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.LastRotationDate"));
+		keyMetadata.setAutomaticRotation(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.AutomaticRotation"));
+		keyMetadata.setRotationInterval(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.RotationInterval"));
+		keyMetadata.setNextRotationDate(_ctx.stringValue("DescribeKeyResponse.KeyMetadata.NextRotationDate"));
 		describeKeyResponse.setKeyMetadata(keyMetadata);
 	 
 	 	return describeKeyResponse;

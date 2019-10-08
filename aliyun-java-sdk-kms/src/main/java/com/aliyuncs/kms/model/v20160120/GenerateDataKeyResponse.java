@@ -32,6 +32,8 @@ public class GenerateDataKeyResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String keyVersionId;
+
 	public String getCiphertextBlob() {
 		return this.ciphertextBlob;
 	}
@@ -62,6 +64,14 @@ public class GenerateDataKeyResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getKeyVersionId() {
+		return this.keyVersionId;
+	}
+
+	public void setKeyVersionId(String keyVersionId) {
+		this.keyVersionId = keyVersionId;
 	}
 
 	@Override

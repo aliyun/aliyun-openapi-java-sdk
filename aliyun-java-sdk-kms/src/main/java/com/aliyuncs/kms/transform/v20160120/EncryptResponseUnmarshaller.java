@@ -25,6 +25,7 @@ public class EncryptResponseUnmarshaller {
 		encryptResponse.setRequestId(_ctx.stringValue("EncryptResponse.RequestId"));
 		encryptResponse.setCiphertextBlob(_ctx.stringValue("EncryptResponse.CiphertextBlob"));
 		encryptResponse.setKeyId(_ctx.stringValue("EncryptResponse.KeyId"));
+		encryptResponse.setKeyVersionId(_ctx.stringValue("EncryptResponse.KeyVersionId"));
 	 
 	 	return encryptResponse;
 	}

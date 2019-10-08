@@ -25,6 +25,7 @@ public class DecryptResponseUnmarshaller {
 		decryptResponse.setRequestId(_ctx.stringValue("DecryptResponse.RequestId"));
 		decryptResponse.setPlaintext(_ctx.stringValue("DecryptResponse.Plaintext"));
 		decryptResponse.setKeyId(_ctx.stringValue("DecryptResponse.KeyId"));
+		decryptResponse.setKeyVersionId(_ctx.stringValue("DecryptResponse.KeyVersionId"));
 	 
 	 	return decryptResponse;
 	}

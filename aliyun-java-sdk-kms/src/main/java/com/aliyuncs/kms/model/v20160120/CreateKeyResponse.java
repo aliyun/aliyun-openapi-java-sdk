@@ -68,6 +68,16 @@ public class CreateKeyResponse extends AcsResponse {
 
 		private String protectionLevel;
 
+		private String primaryKeyVersion;
+
+		private String lastRotationDate;
+
+		private String automaticRotation;
+
+		private String rotationInterval;
+
+		private String nextRotationDate;
+
 		public String getCreationDate() {
 			return this.creationDate;
 		}
@@ -154,6 +164,46 @@ public class CreateKeyResponse extends AcsResponse {
 
 		public void setProtectionLevel(String protectionLevel) {
 			this.protectionLevel = protectionLevel;
+		}
+
+		public String getPrimaryKeyVersion() {
+			return this.primaryKeyVersion;
+		}
+
+		public void setPrimaryKeyVersion(String primaryKeyVersion) {
+			this.primaryKeyVersion = primaryKeyVersion;
+		}
+
+		public String getLastRotationDate() {
+			return this.lastRotationDate;
+		}
+
+		public void setLastRotationDate(String lastRotationDate) {
+			this.lastRotationDate = lastRotationDate;
+		}
+
+		public String getAutomaticRotation() {
+			return this.automaticRotation;
+		}
+
+		public void setAutomaticRotation(String automaticRotation) {
+			this.automaticRotation = automaticRotation;
+		}
+
+		public String getRotationInterval() {
+			return this.rotationInterval;
+		}
+
+		public void setRotationInterval(String rotationInterval) {
+			this.rotationInterval = rotationInterval;
+		}
+
+		public String getNextRotationDate() {
+			return this.nextRotationDate;
+		}
+
+		public void setNextRotationDate(String nextRotationDate) {
+			this.nextRotationDate = nextRotationDate;
 		}
 	}
 

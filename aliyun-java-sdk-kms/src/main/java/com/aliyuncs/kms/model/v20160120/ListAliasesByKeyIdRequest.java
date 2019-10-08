@@ -16,6 +16,7 @@ package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.kms.Endpoint;
 
 /**
@@ -23,21 +24,22 @@ import com.aliyuncs.kms.Endpoint;
  * @version 
  */
 public class ListAliasesByKeyIdRequest extends RpcAcsRequest<ListAliasesByKeyIdResponse> {
-	
-	public ListAliasesByKeyIdRequest() {
-		super("Kms", "2016-01-20", "ListAliasesByKeyId", "kms");
-		setProtocol(ProtocolType.HTTPS);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageSize;
 
 	private String keyId;
 
 	private Integer pageNumber;
+	public ListAliasesByKeyIdRequest() {
+		super("Kms", "2016-01-20", "ListAliasesByKeyId", "kms");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

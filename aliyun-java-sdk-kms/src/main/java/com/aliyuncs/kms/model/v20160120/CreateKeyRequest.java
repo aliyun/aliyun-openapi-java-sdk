@@ -16,6 +16,7 @@ package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.kms.Endpoint;
 
 /**
@@ -23,15 +24,7 @@ import com.aliyuncs.kms.Endpoint;
  * @version 
  */
 public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
-	
-	public CreateKeyRequest() {
-		super("Kms", "2016-01-20", "CreateKey", "kms");
-		setProtocol(ProtocolType.HTTPS);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String protectionLevel;
 
@@ -40,6 +33,19 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 	private String origin;
 
 	private String description;
+
+	private String rotationInterval;
+
+	private Boolean enableAutomaticRotation;
+	public CreateKeyRequest() {
+		super("Kms", "2016-01-20", "CreateKey", "kms");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getProtectionLevel() {
 		return this.protectionLevel;
@@ -82,6 +88,28 @@ public class CreateKeyRequest extends RpcAcsRequest<CreateKeyResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getRotationInterval() {
+		return this.rotationInterval;
+	}
+
+	public void setRotationInterval(String rotationInterval) {
+		this.rotationInterval = rotationInterval;
+		if(rotationInterval != null){
+			putQueryParameter("RotationInterval", rotationInterval);
+		}
+	}
+
+	public Boolean getEnableAutomaticRotation() {
+		return this.enableAutomaticRotation;
+	}
+
+	public void setEnableAutomaticRotation(Boolean enableAutomaticRotation) {
+		this.enableAutomaticRotation = enableAutomaticRotation;
+		if(enableAutomaticRotation != null){
+			putQueryParameter("EnableAutomaticRotation", enableAutomaticRotation.toString());
 		}
 	}
 

@@ -37,6 +37,11 @@ public class CreateKeyResponseUnmarshaller {
 		keyMetadata.setOrigin(_ctx.stringValue("CreateKeyResponse.KeyMetadata.Origin"));
 		keyMetadata.setMaterialExpireTime(_ctx.stringValue("CreateKeyResponse.KeyMetadata.MaterialExpireTime"));
 		keyMetadata.setProtectionLevel(_ctx.stringValue("CreateKeyResponse.KeyMetadata.ProtectionLevel"));
+		keyMetadata.setPrimaryKeyVersion(_ctx.stringValue("CreateKeyResponse.KeyMetadata.PrimaryKeyVersion"));
+		keyMetadata.setLastRotationDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.LastRotationDate"));
+		keyMetadata.setAutomaticRotation(_ctx.stringValue("CreateKeyResponse.KeyMetadata.AutomaticRotation"));
+		keyMetadata.setRotationInterval(_ctx.stringValue("CreateKeyResponse.KeyMetadata.RotationInterval"));
+		keyMetadata.setNextRotationDate(_ctx.stringValue("CreateKeyResponse.KeyMetadata.NextRotationDate"));
 		createKeyResponse.setKeyMetadata(keyMetadata);
 	 
 	 	return createKeyResponse;

@@ -30,6 +30,8 @@ public class DecryptResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String keyVersionId;
+
 	public String getPlaintext() {
 		return this.plaintext;
 	}
@@ -52,6 +54,14 @@ public class DecryptResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getKeyVersionId() {
+		return this.keyVersionId;
+	}
+
+	public void setKeyVersionId(String keyVersionId) {
+		this.keyVersionId = keyVersionId;
 	}
 
 	@Override

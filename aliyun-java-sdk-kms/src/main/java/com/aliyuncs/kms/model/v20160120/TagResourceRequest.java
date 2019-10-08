@@ -16,6 +16,7 @@ package com.aliyuncs.kms.model.v20160120;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.kms.Endpoint;
 
 /**
@@ -23,19 +24,20 @@ import com.aliyuncs.kms.Endpoint;
  * @version 
  */
 public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
-	
-	public TagResourceRequest() {
-		super("Kms", "2016-01-20", "TagResource", "kms");
-		setProtocol(ProtocolType.HTTPS);
-		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String keyId;
 
 	private String tags;
+	public TagResourceRequest() {
+		super("Kms", "2016-01-20", "TagResource", "kms");
+		setProtocol(ProtocolType.HTTPS);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getKeyId() {
 		return this.keyId;
