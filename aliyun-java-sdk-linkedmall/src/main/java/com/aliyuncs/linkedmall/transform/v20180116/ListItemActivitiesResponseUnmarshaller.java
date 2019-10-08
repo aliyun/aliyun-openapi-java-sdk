@@ -43,9 +43,9 @@ public class ListItemActivitiesResponseUnmarshaller {
 			lmActivityPopModel.setBizId(_ctx.stringValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.BizId"));
 			lmActivityPopModel.setSubBizCode(_ctx.stringValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.SubBizCode"));
 			lmActivityPopModel.setTitle(_ctx.stringValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.Title"));
-			lmActivityPopModel.setDisplayDate(_ctx.longValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.DisplayDate"));
-			lmActivityPopModel.setStartDate(_ctx.longValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.StartDate"));
-			lmActivityPopModel.setEndDate(_ctx.longValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.EndDate"));
+			lmActivityPopModel.setDisplayDate(_ctx.stringValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.DisplayDate"));
+			lmActivityPopModel.setStartDate(_ctx.stringValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.StartDate"));
+			lmActivityPopModel.setEndDate(_ctx.stringValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.EndDate"));
 			lmActivityPopModel.setExtInfo(_ctx.mapValue("ListItemActivitiesResponse.LmItemActivityModelList["+ i +"].LmActivityPopModel.ExtInfo"));
 			lmItemActivityModel.setLmActivityPopModel(lmActivityPopModel);
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.linkedmall.transform.v20180116.QueryBizItemListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -235,6 +236,8 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 			private Boolean canSell;
 
+			private Map<Object,Object> customizedAttributeMap;
+
 			public Long getSkuId() {
 				return this.skuId;
 			}
@@ -297,6 +300,14 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 			public void setCanSell(Boolean canSell) {
 				this.canSell = canSell;
+			}
+
+			public Map<Object,Object> getCustomizedAttributeMap() {
+				return this.customizedAttributeMap;
+			}
+
+			public void setCustomizedAttributeMap(Map<Object,Object> customizedAttributeMap) {
+				this.customizedAttributeMap = customizedAttributeMap;
 			}
 		}
 	}

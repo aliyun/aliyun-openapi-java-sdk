@@ -1,3 +1,7 @@
+2019-10-08 Version: 2.8.1
+- Fix bug about ListItemActivities.
+- Add new response value for QueryBizItemList.
+
 2019-10-08 Version: 2.8.0
 - Add new interface -ListItemActivities.
 

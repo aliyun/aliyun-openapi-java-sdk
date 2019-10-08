@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.linkedmall.model.v20180116.QueryBizItemListResponse;
 import com.aliyuncs.linkedmall.model.v20180116.QueryBizItemListResponse.Item;
 import com.aliyuncs.linkedmall.model.v20180116.QueryBizItemListResponse.Item.Sku;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,6 +61,7 @@ public class QueryBizItemListResponseUnmarshaller {
 				sku.setPointsAmount(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].PointsAmount"));
 				sku.setBenefitId(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].BenefitId"));
 				sku.setCanSell(_ctx.booleanValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].CanSell"));
+				sku.setCustomizedAttributeMap(_ctx.mapValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].CustomizedAttributeMap"));
 
 				skuList.add(sku);
 			}

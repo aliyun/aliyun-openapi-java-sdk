@@ -108,11 +108,11 @@ public class ListItemActivitiesResponse extends AcsResponse {
 
 			private String title;
 
-			private Long displayDate;
+			private String displayDate;
 
-			private Long startDate;
+			private String startDate;
 
-			private Long endDate;
+			private String endDate;
 
 			private Map<Object,Object> extInfo;
 
@@ -148,27 +148,27 @@ public class ListItemActivitiesResponse extends AcsResponse {
 				this.title = title;
 			}
 
-			public Long getDisplayDate() {
+			public String getDisplayDate() {
 				return this.displayDate;
 			}
 
-			public void setDisplayDate(Long displayDate) {
+			public void setDisplayDate(String displayDate) {
 				this.displayDate = displayDate;
 			}
 
-			public Long getStartDate() {
+			public String getStartDate() {
 				return this.startDate;
 			}
 
-			public void setStartDate(Long startDate) {
+			public void setStartDate(String startDate) {
 				this.startDate = startDate;
 			}
 
-			public Long getEndDate() {
+			public String getEndDate() {
 				return this.endDate;
 			}
 
-			public void setEndDate(Long endDate) {
+			public void setEndDate(String endDate) {
 				this.endDate = endDate;
 			}
 
