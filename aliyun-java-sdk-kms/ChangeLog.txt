@@ -1,6 +1,9 @@
 2019-10-08 Version: 2.8.0
 - Generated 2016-01-20 for `Kms`.
 
+2019-10-08 Version: 2.8.0
+- Generated 2016-01-20 for `Kms`.
+
 2019-07-25 Version: 2.7.0
 - Api createKey add optional parameter `ProtectionLevel`.
 - Api describeKey add a field `ProtectionLevel` in the response.
