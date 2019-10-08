@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PushNoticeToAndroidResponseUnmarshaller {
 
-	public static PushNoticeToAndroidResponse unmarshall(PushNoticeToAndroidResponse pushNoticeToAndroidResponse, UnmarshallerContext context) {
+	public static PushNoticeToAndroidResponse unmarshall(PushNoticeToAndroidResponse pushNoticeToAndroidResponse, UnmarshallerContext _ctx) {
 		
-		pushNoticeToAndroidResponse.setRequestId(context.stringValue("PushNoticeToAndroidResponse.RequestId"));
-		pushNoticeToAndroidResponse.setMessageId(context.stringValue("PushNoticeToAndroidResponse.MessageId"));
+		pushNoticeToAndroidResponse.setRequestId(_ctx.stringValue("PushNoticeToAndroidResponse.RequestId"));
+		pushNoticeToAndroidResponse.setMessageId(_ctx.stringValue("PushNoticeToAndroidResponse.MessageId"));
 	 
 	 	return pushNoticeToAndroidResponse;
 	}

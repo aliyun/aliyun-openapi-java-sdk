@@ -15,18 +15,20 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
-	
-	public ListTagsRequest() {
-		super("Push", "2016-08-01", "ListTags");
-	}
+	   
 
 	private Long appKey;
+	public ListTagsRequest() {
+		super("Push", "2016-08-01", "ListTags");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getAppKey() {
 		return this.appKey;

@@ -15,20 +15,22 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class RemoveTagRequest extends RpcAcsRequest<RemoveTagResponse> {
-	
-	public RemoveTagRequest() {
-		super("Push", "2016-08-01", "RemoveTag");
-	}
+	   
 
 	private String tagName;
 
 	private Long appKey;
+	public RemoveTagRequest() {
+		super("Push", "2016-08-01", "RemoveTag");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTagName() {
 		return this.tagName;

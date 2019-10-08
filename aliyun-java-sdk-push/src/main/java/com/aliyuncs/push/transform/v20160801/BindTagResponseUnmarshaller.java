@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BindTagResponseUnmarshaller {
 
-	public static BindTagResponse unmarshall(BindTagResponse bindTagResponse, UnmarshallerContext context) {
+	public static BindTagResponse unmarshall(BindTagResponse bindTagResponse, UnmarshallerContext _ctx) {
 		
-		bindTagResponse.setRequestId(context.stringValue("BindTagResponse.RequestId"));
+		bindTagResponse.setRequestId(_ctx.stringValue("BindTagResponse.RequestId"));
 	 
 	 	return bindTagResponse;
 	}

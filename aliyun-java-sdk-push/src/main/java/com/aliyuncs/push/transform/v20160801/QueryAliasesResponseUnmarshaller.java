@@ -24,14 +24,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryAliasesResponseUnmarshaller {
 
-	public static QueryAliasesResponse unmarshall(QueryAliasesResponse queryAliasesResponse, UnmarshallerContext context) {
+	public static QueryAliasesResponse unmarshall(QueryAliasesResponse queryAliasesResponse, UnmarshallerContext _ctx) {
 		
-		queryAliasesResponse.setRequestId(context.stringValue("QueryAliasesResponse.RequestId"));
+		queryAliasesResponse.setRequestId(_ctx.stringValue("QueryAliasesResponse.RequestId"));
 
 		List<AliasInfo> aliasInfos = new ArrayList<AliasInfo>();
-		for (int i = 0; i < context.lengthValue("QueryAliasesResponse.AliasInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryAliasesResponse.AliasInfos.Length"); i++) {
 			AliasInfo aliasInfo = new AliasInfo();
-			aliasInfo.setAliasName(context.stringValue("QueryAliasesResponse.AliasInfos["+ i +"].AliasName"));
+			aliasInfo.setAliasName(_ctx.stringValue("QueryAliasesResponse.AliasInfos["+ i +"].AliasName"));
 
 			aliasInfos.add(aliasInfo);
 		}

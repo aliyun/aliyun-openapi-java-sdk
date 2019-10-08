@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryPushListResponseUnmarshaller {
 
-	public static QueryPushListResponse unmarshall(QueryPushListResponse queryPushListResponse, UnmarshallerContext context) {
+	public static QueryPushListResponse unmarshall(QueryPushListResponse queryPushListResponse, UnmarshallerContext _ctx) {
 		
-		queryPushListResponse.setRequestId(context.stringValue("QueryPushListResponse.RequestId"));
-		queryPushListResponse.setHasNext(context.booleanValue("QueryPushListResponse.HasNext"));
-		queryPushListResponse.setPage(context.integerValue("QueryPushListResponse.Page"));
-		queryPushListResponse.setPageSize(context.integerValue("QueryPushListResponse.PageSize"));
+		queryPushListResponse.setRequestId(_ctx.stringValue("QueryPushListResponse.RequestId"));
+		queryPushListResponse.setHasNext(_ctx.booleanValue("QueryPushListResponse.HasNext"));
+		queryPushListResponse.setPage(_ctx.integerValue("QueryPushListResponse.Page"));
+		queryPushListResponse.setPageSize(_ctx.integerValue("QueryPushListResponse.PageSize"));
 
 		List<PushMessageInfo> pushMessageInfos = new ArrayList<PushMessageInfo>();
-		for (int i = 0; i < context.lengthValue("QueryPushListResponse.PushMessageInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryPushListResponse.PushMessageInfos.Length"); i++) {
 			PushMessageInfo pushMessageInfo = new PushMessageInfo();
-			pushMessageInfo.setAppKey(context.longValue("QueryPushListResponse.PushMessageInfos["+ i +"].AppKey"));
-			pushMessageInfo.setAppName(context.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].AppName"));
-			pushMessageInfo.setMessageId(context.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].MessageId"));
-			pushMessageInfo.setType(context.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].Type"));
-			pushMessageInfo.setDeviceType(context.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].DeviceType"));
-			pushMessageInfo.setPushTime(context.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].PushTime"));
-			pushMessageInfo.setTitle(context.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].Title"));
-			pushMessageInfo.setBody(context.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].Body"));
+			pushMessageInfo.setAppKey(_ctx.longValue("QueryPushListResponse.PushMessageInfos["+ i +"].AppKey"));
+			pushMessageInfo.setAppName(_ctx.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].AppName"));
+			pushMessageInfo.setMessageId(_ctx.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].MessageId"));
+			pushMessageInfo.setType(_ctx.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].Type"));
+			pushMessageInfo.setDeviceType(_ctx.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].DeviceType"));
+			pushMessageInfo.setPushTime(_ctx.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].PushTime"));
+			pushMessageInfo.setTitle(_ctx.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].Title"));
+			pushMessageInfo.setBody(_ctx.stringValue("QueryPushListResponse.PushMessageInfos["+ i +"].Body"));
 
 			pushMessageInfos.add(pushMessageInfo);
 		}

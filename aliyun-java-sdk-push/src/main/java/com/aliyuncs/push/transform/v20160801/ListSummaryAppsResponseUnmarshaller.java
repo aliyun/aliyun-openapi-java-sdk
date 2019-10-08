@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListSummaryAppsResponseUnmarshaller {
 
-	public static ListSummaryAppsResponse unmarshall(ListSummaryAppsResponse listSummaryAppsResponse, UnmarshallerContext context) {
+	public static ListSummaryAppsResponse unmarshall(ListSummaryAppsResponse listSummaryAppsResponse, UnmarshallerContext _ctx) {
 		
-		listSummaryAppsResponse.setRequestId(context.stringValue("ListSummaryAppsResponse.RequestId"));
+		listSummaryAppsResponse.setRequestId(_ctx.stringValue("ListSummaryAppsResponse.RequestId"));
 
 		List<SummaryAppInfo> summaryAppInfos = new ArrayList<SummaryAppInfo>();
-		for (int i = 0; i < context.lengthValue("ListSummaryAppsResponse.SummaryAppInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListSummaryAppsResponse.SummaryAppInfos.Length"); i++) {
 			SummaryAppInfo summaryAppInfo = new SummaryAppInfo();
-			summaryAppInfo.setAppName(context.stringValue("ListSummaryAppsResponse.SummaryAppInfos["+ i +"].AppName"));
-			summaryAppInfo.setAppKey(context.longValue("ListSummaryAppsResponse.SummaryAppInfos["+ i +"].AppKey"));
+			summaryAppInfo.setAppName(_ctx.stringValue("ListSummaryAppsResponse.SummaryAppInfos["+ i +"].AppName"));
+			summaryAppInfo.setAppKey(_ctx.longValue("ListSummaryAppsResponse.SummaryAppInfos["+ i +"].AppKey"));
 
 			summaryAppInfos.add(summaryAppInfo);
 		}

@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckDeviceResponseUnmarshaller {
 
-	public static CheckDeviceResponse unmarshall(CheckDeviceResponse checkDeviceResponse, UnmarshallerContext context) {
+	public static CheckDeviceResponse unmarshall(CheckDeviceResponse checkDeviceResponse, UnmarshallerContext _ctx) {
 		
-		checkDeviceResponse.setRequestId(context.stringValue("CheckDeviceResponse.RequestId"));
-		checkDeviceResponse.setAvailable(context.booleanValue("CheckDeviceResponse.Available"));
+		checkDeviceResponse.setRequestId(_ctx.stringValue("CheckDeviceResponse.RequestId"));
+		checkDeviceResponse.setAvailable(_ctx.booleanValue("CheckDeviceResponse.Available"));
 	 
 	 	return checkDeviceResponse;
 	}

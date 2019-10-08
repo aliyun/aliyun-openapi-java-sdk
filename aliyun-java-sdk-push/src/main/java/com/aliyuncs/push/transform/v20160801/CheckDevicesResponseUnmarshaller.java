@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CheckDevicesResponseUnmarshaller {
 
-	public static CheckDevicesResponse unmarshall(CheckDevicesResponse checkDevicesResponse, UnmarshallerContext context) {
+	public static CheckDevicesResponse unmarshall(CheckDevicesResponse checkDevicesResponse, UnmarshallerContext _ctx) {
 		
-		checkDevicesResponse.setRequestId(context.stringValue("CheckDevicesResponse.RequestId"));
+		checkDevicesResponse.setRequestId(_ctx.stringValue("CheckDevicesResponse.RequestId"));
 
 		List<DeviceCheckInfo> deviceCheckInfos = new ArrayList<DeviceCheckInfo>();
-		for (int i = 0; i < context.lengthValue("CheckDevicesResponse.DeviceCheckInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CheckDevicesResponse.DeviceCheckInfos.Length"); i++) {
 			DeviceCheckInfo deviceCheckInfo = new DeviceCheckInfo();
-			deviceCheckInfo.setDeviceId(context.stringValue("CheckDevicesResponse.DeviceCheckInfos["+ i +"].DeviceId"));
-			deviceCheckInfo.setAvailable(context.booleanValue("CheckDevicesResponse.DeviceCheckInfos["+ i +"].Available"));
+			deviceCheckInfo.setDeviceId(_ctx.stringValue("CheckDevicesResponse.DeviceCheckInfos["+ i +"].DeviceId"));
+			deviceCheckInfo.setAvailable(_ctx.booleanValue("CheckDevicesResponse.DeviceCheckInfos["+ i +"].Available"));
 
 			deviceCheckInfos.add(deviceCheckInfo);
 		}

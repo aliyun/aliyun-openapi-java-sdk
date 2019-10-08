@@ -15,20 +15,22 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CancelPushRequest extends RpcAcsRequest<CancelPushResponse> {
-	
-	public CancelPushRequest() {
-		super("Push", "2016-08-01", "CancelPush");
-	}
+	   
 
 	private Long messageId;
 
 	private Long appKey;
+	public CancelPushRequest() {
+		super("Push", "2016-08-01", "CancelPush");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getMessageId() {
 		return this.messageId;

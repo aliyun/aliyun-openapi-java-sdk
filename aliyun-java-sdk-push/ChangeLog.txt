@@ -1,3 +1,6 @@
+2019-10-08 Version: 3.11.0
+- Supported API MassPush for Push Message or Notice.
+
 2019-03-11 Version: 3.10.1
 1, Update aliyun-java-sdk-core version.
 

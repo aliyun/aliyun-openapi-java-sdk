@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryUniqueDeviceStatResponseUnmarshaller {
 
-	public static QueryUniqueDeviceStatResponse unmarshall(QueryUniqueDeviceStatResponse queryUniqueDeviceStatResponse, UnmarshallerContext context) {
+	public static QueryUniqueDeviceStatResponse unmarshall(QueryUniqueDeviceStatResponse queryUniqueDeviceStatResponse, UnmarshallerContext _ctx) {
 		
-		queryUniqueDeviceStatResponse.setRequestId(context.stringValue("QueryUniqueDeviceStatResponse.RequestId"));
+		queryUniqueDeviceStatResponse.setRequestId(_ctx.stringValue("QueryUniqueDeviceStatResponse.RequestId"));
 
 		List<AppDeviceStat> appDeviceStats = new ArrayList<AppDeviceStat>();
-		for (int i = 0; i < context.lengthValue("QueryUniqueDeviceStatResponse.AppDeviceStats.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryUniqueDeviceStatResponse.AppDeviceStats.Length"); i++) {
 			AppDeviceStat appDeviceStat = new AppDeviceStat();
-			appDeviceStat.setTime(context.stringValue("QueryUniqueDeviceStatResponse.AppDeviceStats["+ i +"].Time"));
-			appDeviceStat.setCount(context.longValue("QueryUniqueDeviceStatResponse.AppDeviceStats["+ i +"].Count"));
+			appDeviceStat.setTime(_ctx.stringValue("QueryUniqueDeviceStatResponse.AppDeviceStats["+ i +"].Time"));
+			appDeviceStat.setCount(_ctx.longValue("QueryUniqueDeviceStatResponse.AppDeviceStats["+ i +"].Count"));
 
 			appDeviceStats.add(appDeviceStat);
 		}

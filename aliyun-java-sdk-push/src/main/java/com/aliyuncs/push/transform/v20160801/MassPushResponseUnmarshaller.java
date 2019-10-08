@@ -14,16 +14,25 @@
 
 package com.aliyuncs.push.transform.v20160801;
 
-import com.aliyuncs.push.model.v20160801.BindAliasResponse;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aliyuncs.push.model.v20160801.MassPushResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class BindAliasResponseUnmarshaller {
+public class MassPushResponseUnmarshaller {
 
-	public static BindAliasResponse unmarshall(BindAliasResponse bindAliasResponse, UnmarshallerContext _ctx) {
+	public static MassPushResponse unmarshall(MassPushResponse massPushResponse, UnmarshallerContext _ctx) {
 		
-		bindAliasResponse.setRequestId(_ctx.stringValue("BindAliasResponse.RequestId"));
+		massPushResponse.setRequestId(_ctx.stringValue("MassPushResponse.RequestId"));
+
+		List<String> messageIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("MassPushResponse.MessageIds.Length"); i++) {
+			messageIds.add(_ctx.stringValue("MassPushResponse.MessageIds["+ i +"]"));
+		}
+		massPushResponse.setMessageIds(messageIds);
 	 
-	 	return bindAliasResponse;
+	 	return massPushResponse;
 	}
 }

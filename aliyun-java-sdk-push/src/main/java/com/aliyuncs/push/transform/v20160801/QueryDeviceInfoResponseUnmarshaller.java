@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDeviceInfoResponseUnmarshaller {
 
-	public static QueryDeviceInfoResponse unmarshall(QueryDeviceInfoResponse queryDeviceInfoResponse, UnmarshallerContext context) {
+	public static QueryDeviceInfoResponse unmarshall(QueryDeviceInfoResponse queryDeviceInfoResponse, UnmarshallerContext _ctx) {
 		
-		queryDeviceInfoResponse.setRequestId(context.stringValue("QueryDeviceInfoResponse.RequestId"));
+		queryDeviceInfoResponse.setRequestId(_ctx.stringValue("QueryDeviceInfoResponse.RequestId"));
 
 		DeviceInfo deviceInfo = new DeviceInfo();
-		deviceInfo.setDeviceId(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceId"));
-		deviceInfo.setDeviceType(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceType"));
-		deviceInfo.setAccount(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.Account"));
-		deviceInfo.setDeviceToken(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceToken"));
-		deviceInfo.setTags(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.Tags"));
-		deviceInfo.setAlias(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.Alias"));
-		deviceInfo.setLastOnlineTime(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.LastOnlineTime"));
-		deviceInfo.setOnline(context.booleanValue("QueryDeviceInfoResponse.DeviceInfo.Online"));
-		deviceInfo.setPhoneNumber(context.stringValue("QueryDeviceInfoResponse.DeviceInfo.PhoneNumber"));
-		deviceInfo.setPushEnabled(context.booleanValue("QueryDeviceInfoResponse.DeviceInfo.PushEnabled"));
+		deviceInfo.setDeviceId(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceId"));
+		deviceInfo.setDeviceType(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceType"));
+		deviceInfo.setAccount(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Account"));
+		deviceInfo.setDeviceToken(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.DeviceToken"));
+		deviceInfo.setTags(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Tags"));
+		deviceInfo.setAlias(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.Alias"));
+		deviceInfo.setLastOnlineTime(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.LastOnlineTime"));
+		deviceInfo.setOnline(_ctx.booleanValue("QueryDeviceInfoResponse.DeviceInfo.Online"));
+		deviceInfo.setPhoneNumber(_ctx.stringValue("QueryDeviceInfoResponse.DeviceInfo.PhoneNumber"));
+		deviceInfo.setPushEnabled(_ctx.booleanValue("QueryDeviceInfoResponse.DeviceInfo.PushEnabled"));
 		queryDeviceInfoResponse.setDeviceInfo(deviceInfo);
 	 
 	 	return queryDeviceInfoResponse;

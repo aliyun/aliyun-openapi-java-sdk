@@ -15,30 +15,21 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryDeviceInfoRequest extends RpcAcsRequest<QueryDeviceInfoResponse> {
-	
-	public QueryDeviceInfoRequest() {
-		super("Push", "2016-08-01", "QueryDeviceInfo");
-	}
-
-	private Long appKey;
+	   
 
 	private String deviceId;
 
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey.toString());
-		}
+	private Long appKey;
+	public QueryDeviceInfoRequest() {
+		super("Push", "2016-08-01", "QueryDeviceInfo");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDeviceId() {
@@ -49,6 +40,17 @@ public class QueryDeviceInfoRequest extends RpcAcsRequest<QueryDeviceInfoRespons
 		this.deviceId = deviceId;
 		if(deviceId != null){
 			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
 		}
 	}
 

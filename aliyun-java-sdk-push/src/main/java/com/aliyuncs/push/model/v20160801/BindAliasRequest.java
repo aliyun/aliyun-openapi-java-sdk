@@ -15,22 +15,35 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class BindAliasRequest extends RpcAcsRequest<BindAliasResponse> {
-	
-	public BindAliasRequest() {
-		super("Push", "2016-08-01", "BindAlias");
-	}
+	   
+
+	private String deviceId;
 
 	private String aliasName;
 
 	private Long appKey;
+	public BindAliasRequest() {
+		super("Push", "2016-08-01", "BindAlias");
+		setMethod(MethodType.POST);
+	}
 
-	private String deviceId;
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
+		}
+	}
 
 	public String getAliasName() {
 		return this.aliasName;
@@ -51,17 +64,6 @@ public class BindAliasRequest extends RpcAcsRequest<BindAliasResponse> {
 		this.appKey = appKey;
 		if(appKey != null){
 			putQueryParameter("AppKey", appKey.toString());
-		}
-	}
-
-	public String getDeviceId() {
-		return this.deviceId;
-	}
-
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-		if(deviceId != null){
-			putQueryParameter("DeviceId", deviceId);
 		}
 	}
 

@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RemoveTagResponseUnmarshaller {
 
-	public static RemoveTagResponse unmarshall(RemoveTagResponse removeTagResponse, UnmarshallerContext context) {
+	public static RemoveTagResponse unmarshall(RemoveTagResponse removeTagResponse, UnmarshallerContext _ctx) {
 		
-		removeTagResponse.setRequestId(context.stringValue("RemoveTagResponse.RequestId"));
+		removeTagResponse.setRequestId(_ctx.stringValue("RemoveTagResponse.RequestId"));
 	 
 	 	return removeTagResponse;
 	}

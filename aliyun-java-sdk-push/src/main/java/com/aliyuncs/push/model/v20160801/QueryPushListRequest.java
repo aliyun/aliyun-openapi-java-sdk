@@ -15,38 +15,29 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryPushListRequest extends RpcAcsRequest<QueryPushListResponse> {
-	
-	public QueryPushListRequest() {
-		super("Push", "2016-08-01", "QueryPushList");
-	}
-
-	private Integer pageSize;
+	   
 
 	private String endTime;
 
-	private Long appKey;
-
 	private String startTime;
+
+	private Integer pageSize;
+
+	private Long appKey;
 
 	private Integer page;
 
 	private String pushType;
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	public QueryPushListRequest() {
+		super("Push", "2016-08-01", "QueryPushList");
+		setMethod(MethodType.POST);
 	}
 
 	public String getEndTime() {
@@ -60,17 +51,6 @@ public class QueryPushListRequest extends RpcAcsRequest<QueryPushListResponse> {
 		}
 	}
 
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey.toString());
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -79,6 +59,28 @@ public class QueryPushListRequest extends RpcAcsRequest<QueryPushListResponse> {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
 		}
 	}
 

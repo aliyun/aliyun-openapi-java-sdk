@@ -23,13 +23,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryDevicesByAliasResponseUnmarshaller {
 
-	public static QueryDevicesByAliasResponse unmarshall(QueryDevicesByAliasResponse queryDevicesByAliasResponse, UnmarshallerContext context) {
+	public static QueryDevicesByAliasResponse unmarshall(QueryDevicesByAliasResponse queryDevicesByAliasResponse, UnmarshallerContext _ctx) {
 		
-		queryDevicesByAliasResponse.setRequestId(context.stringValue("QueryDevicesByAliasResponse.RequestId"));
+		queryDevicesByAliasResponse.setRequestId(_ctx.stringValue("QueryDevicesByAliasResponse.RequestId"));
 
 		List<String> deviceIds = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("QueryDevicesByAliasResponse.DeviceIds.Length"); i++) {
-			deviceIds.add(context.stringValue("QueryDevicesByAliasResponse.DeviceIds["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("QueryDevicesByAliasResponse.DeviceIds.Length"); i++) {
+			deviceIds.add(_ctx.stringValue("QueryDevicesByAliasResponse.DeviceIds["+ i +"]"));
 		}
 		queryDevicesByAliasResponse.setDeviceIds(deviceIds);
 	 

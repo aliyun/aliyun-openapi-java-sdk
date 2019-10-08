@@ -15,24 +15,18 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSResponse> {
-	
-	public PushNoticeToiOSRequest() {
-		super("Push", "2016-08-01", "PushNoticeToiOS");
-	}
+	   
 
 	private String extParameters;
 
 	private String apnsEnv;
-
-	private Long appKey;
-
-	private String targetValue;
 
 	private String title;
 
@@ -41,6 +35,14 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 	private String jobKey;
 
 	private String target;
+
+	private Long appKey;
+
+	private String targetValue;
+	public PushNoticeToiOSRequest() {
+		super("Push", "2016-08-01", "PushNoticeToiOS");
+		setMethod(MethodType.POST);
+	}
 
 	public String getExtParameters() {
 		return this.extParameters;
@@ -61,28 +63,6 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 		this.apnsEnv = apnsEnv;
 		if(apnsEnv != null){
 			putQueryParameter("ApnsEnv", apnsEnv);
-		}
-	}
-
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey.toString());
-		}
-	}
-
-	public String getTargetValue() {
-		return this.targetValue;
-	}
-
-	public void setTargetValue(String targetValue) {
-		this.targetValue = targetValue;
-		if(targetValue != null){
-			putQueryParameter("TargetValue", targetValue);
 		}
 	}
 
@@ -127,6 +107,28 @@ public class PushNoticeToiOSRequest extends RpcAcsRequest<PushNoticeToiOSRespons
 		this.target = target;
 		if(target != null){
 			putQueryParameter("Target", target);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
+		}
+	}
+
+	public String getTargetValue() {
+		return this.targetValue;
+	}
+
+	public void setTargetValue(String targetValue) {
+		this.targetValue = targetValue;
+		if(targetValue != null){
+			putQueryParameter("TargetValue", targetValue);
 		}
 	}
 

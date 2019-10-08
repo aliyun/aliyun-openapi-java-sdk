@@ -20,9 +20,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class BindPhoneResponseUnmarshaller {
 
-	public static BindPhoneResponse unmarshall(BindPhoneResponse bindPhoneResponse, UnmarshallerContext context) {
+	public static BindPhoneResponse unmarshall(BindPhoneResponse bindPhoneResponse, UnmarshallerContext _ctx) {
 		
-		bindPhoneResponse.setRequestId(context.stringValue("BindPhoneResponse.RequestId"));
+		bindPhoneResponse.setRequestId(_ctx.stringValue("BindPhoneResponse.RequestId"));
 	 
 	 	return bindPhoneResponse;
 	}

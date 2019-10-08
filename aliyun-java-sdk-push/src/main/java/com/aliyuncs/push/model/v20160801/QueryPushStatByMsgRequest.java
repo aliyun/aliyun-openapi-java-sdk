@@ -15,20 +15,22 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryPushStatByMsgRequest extends RpcAcsRequest<QueryPushStatByMsgResponse> {
-	
-	public QueryPushStatByMsgRequest() {
-		super("Push", "2016-08-01", "QueryPushStatByMsg");
-	}
+	   
 
 	private Long messageId;
 
 	private Long appKey;
+	public QueryPushStatByMsgRequest() {
+		super("Push", "2016-08-01", "QueryPushStatByMsg");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getMessageId() {
 		return this.messageId;

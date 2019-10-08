@@ -15,24 +15,37 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class BindTagRequest extends RpcAcsRequest<BindTagResponse> {
-	
-	public BindTagRequest() {
-		super("Push", "2016-08-01", "BindTag");
-	}
+	   
+
+	private String keyType;
 
 	private String tagName;
 
 	private String clientKey;
 
 	private Long appKey;
+	public BindTagRequest() {
+		super("Push", "2016-08-01", "BindTag");
+		setMethod(MethodType.POST);
+	}
 
-	private String keyType;
+	public String getKeyType() {
+		return this.keyType;
+	}
+
+	public void setKeyType(String keyType) {
+		this.keyType = keyType;
+		if(keyType != null){
+			putQueryParameter("KeyType", keyType);
+		}
+	}
 
 	public String getTagName() {
 		return this.tagName;
@@ -64,17 +77,6 @@ public class BindTagRequest extends RpcAcsRequest<BindTagResponse> {
 		this.appKey = appKey;
 		if(appKey != null){
 			putQueryParameter("AppKey", appKey.toString());
-		}
-	}
-
-	public String getKeyType() {
-		return this.keyType;
-	}
-
-	public void setKeyType(String keyType) {
-		this.keyType = keyType;
-		if(keyType != null){
-			putQueryParameter("KeyType", keyType);
 		}
 	}
 

@@ -15,20 +15,22 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryDevicesByAccountRequest extends RpcAcsRequest<QueryDevicesByAccountResponse> {
-	
-	public QueryDevicesByAccountRequest() {
-		super("Push", "2016-08-01", "QueryDevicesByAccount");
-	}
+	   
 
 	private Long appKey;
 
 	private String account;
+	public QueryDevicesByAccountRequest() {
+		super("Push", "2016-08-01", "QueryDevicesByAccount");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getAppKey() {
 		return this.appKey;

@@ -15,22 +15,24 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class BindPhoneRequest extends RpcAcsRequest<BindPhoneResponse> {
-	
-	public BindPhoneRequest() {
-		super("Push", "2016-08-01", "BindPhone");
-	}
+	   
 
 	private String phoneNumber;
 
-	private Long appKey;
-
 	private String deviceId;
+
+	private Long appKey;
+	public BindPhoneRequest() {
+		super("Push", "2016-08-01", "BindPhone");
+		setMethod(MethodType.POST);
+	}
 
 	public String getPhoneNumber() {
 		return this.phoneNumber;
@@ -43,17 +45,6 @@ public class BindPhoneRequest extends RpcAcsRequest<BindPhoneResponse> {
 		}
 	}
 
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey.toString());
-		}
-	}
-
 	public String getDeviceId() {
 		return this.deviceId;
 	}
@@ -62,6 +53,17 @@ public class BindPhoneRequest extends RpcAcsRequest<BindPhoneResponse> {
 		this.deviceId = deviceId;
 		if(deviceId != null){
 			putQueryParameter("DeviceId", deviceId);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
 		}
 	}
 

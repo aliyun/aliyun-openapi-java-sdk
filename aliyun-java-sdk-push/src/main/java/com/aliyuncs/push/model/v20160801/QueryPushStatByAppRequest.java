@@ -15,34 +15,25 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryPushStatByAppRequest extends RpcAcsRequest<QueryPushStatByAppResponse> {
-	
-	public QueryPushStatByAppRequest() {
-		super("Push", "2016-08-01", "QueryPushStatByApp");
-	}
-
-	private String granularity;
+	   
 
 	private String endTime;
 
-	private Long appKey;
-
 	private String startTime;
 
-	public String getGranularity() {
-		return this.granularity;
-	}
+	private String granularity;
 
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		if(granularity != null){
-			putQueryParameter("Granularity", granularity);
-		}
+	private Long appKey;
+	public QueryPushStatByAppRequest() {
+		super("Push", "2016-08-01", "QueryPushStatByApp");
+		setMethod(MethodType.POST);
 	}
 
 	public String getEndTime() {
@@ -56,17 +47,6 @@ public class QueryPushStatByAppRequest extends RpcAcsRequest<QueryPushStatByAppR
 		}
 	}
 
-	public Long getAppKey() {
-		return this.appKey;
-	}
-
-	public void setAppKey(Long appKey) {
-		this.appKey = appKey;
-		if(appKey != null){
-			putQueryParameter("AppKey", appKey.toString());
-		}
-	}
-
 	public String getStartTime() {
 		return this.startTime;
 	}
@@ -75,6 +55,28 @@ public class QueryPushStatByAppRequest extends RpcAcsRequest<QueryPushStatByAppR
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getGranularity() {
+		return this.granularity;
+	}
+
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
+		}
+	}
+
+	public Long getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(Long appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey.toString());
 		}
 	}
 

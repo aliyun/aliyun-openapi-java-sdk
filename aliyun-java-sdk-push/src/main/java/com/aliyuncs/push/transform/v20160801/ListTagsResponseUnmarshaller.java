@@ -24,14 +24,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTagsResponseUnmarshaller {
 
-	public static ListTagsResponse unmarshall(ListTagsResponse listTagsResponse, UnmarshallerContext context) {
+	public static ListTagsResponse unmarshall(ListTagsResponse listTagsResponse, UnmarshallerContext _ctx) {
 		
-		listTagsResponse.setRequestId(context.stringValue("ListTagsResponse.RequestId"));
+		listTagsResponse.setRequestId(_ctx.stringValue("ListTagsResponse.RequestId"));
 
 		List<TagInfo> tagInfos = new ArrayList<TagInfo>();
-		for (int i = 0; i < context.lengthValue("ListTagsResponse.TagInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTagsResponse.TagInfos.Length"); i++) {
 			TagInfo tagInfo = new TagInfo();
-			tagInfo.setTagName(context.stringValue("ListTagsResponse.TagInfos["+ i +"].TagName"));
+			tagInfo.setTagName(_ctx.stringValue("ListTagsResponse.TagInfos["+ i +"].TagName"));
 
 			tagInfos.add(tagInfo);
 		}

@@ -15,20 +15,22 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class CheckDevicesRequest extends RpcAcsRequest<CheckDevicesResponse> {
-	
-	public CheckDevicesRequest() {
-		super("Push", "2016-08-01", "CheckDevices");
-	}
+	   
 
 	private String deviceIds;
 
 	private Long appKey;
+	public CheckDevicesRequest() {
+		super("Push", "2016-08-01", "CheckDevices");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDeviceIds() {
 		return this.deviceIds;

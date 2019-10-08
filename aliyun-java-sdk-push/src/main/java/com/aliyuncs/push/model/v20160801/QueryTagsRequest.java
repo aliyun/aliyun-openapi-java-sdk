@@ -15,22 +15,35 @@
 package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class QueryTagsRequest extends RpcAcsRequest<QueryTagsResponse> {
-	
-	public QueryTagsRequest() {
-		super("Push", "2016-08-01", "QueryTags");
-	}
+	   
+
+	private String keyType;
 
 	private String clientKey;
 
 	private Long appKey;
+	public QueryTagsRequest() {
+		super("Push", "2016-08-01", "QueryTags");
+		setMethod(MethodType.POST);
+	}
 
-	private String keyType;
+	public String getKeyType() {
+		return this.keyType;
+	}
+
+	public void setKeyType(String keyType) {
+		this.keyType = keyType;
+		if(keyType != null){
+			putQueryParameter("KeyType", keyType);
+		}
+	}
 
 	public String getClientKey() {
 		return this.clientKey;
@@ -51,17 +64,6 @@ public class QueryTagsRequest extends RpcAcsRequest<QueryTagsResponse> {
 		this.appKey = appKey;
 		if(appKey != null){
 			putQueryParameter("AppKey", appKey.toString());
-		}
-	}
-
-	public String getKeyType() {
-		return this.keyType;
-	}
-
-	public void setKeyType(String keyType) {
-		this.keyType = keyType;
-		if(keyType != null){
-			putQueryParameter("KeyType", keyType);
 		}
 	}
 

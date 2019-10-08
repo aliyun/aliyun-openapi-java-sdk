@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class QueryPushStatByMsgResponseUnmarshaller {
 
-	public static QueryPushStatByMsgResponse unmarshall(QueryPushStatByMsgResponse queryPushStatByMsgResponse, UnmarshallerContext context) {
+	public static QueryPushStatByMsgResponse unmarshall(QueryPushStatByMsgResponse queryPushStatByMsgResponse, UnmarshallerContext _ctx) {
 		
-		queryPushStatByMsgResponse.setRequestId(context.stringValue("QueryPushStatByMsgResponse.RequestId"));
+		queryPushStatByMsgResponse.setRequestId(_ctx.stringValue("QueryPushStatByMsgResponse.RequestId"));
 
 		List<PushStat> pushStats = new ArrayList<PushStat>();
-		for (int i = 0; i < context.lengthValue("QueryPushStatByMsgResponse.PushStats.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("QueryPushStatByMsgResponse.PushStats.Length"); i++) {
 			PushStat pushStat = new PushStat();
-			pushStat.setMessageId(context.stringValue("QueryPushStatByMsgResponse.PushStats["+ i +"].MessageId"));
-			pushStat.setAcceptCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].AcceptCount"));
-			pushStat.setSentCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SentCount"));
-			pushStat.setReceivedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].ReceivedCount"));
-			pushStat.setOpenedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].OpenedCount"));
-			pushStat.setDeletedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].DeletedCount"));
-			pushStat.setSmsSentCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSentCount"));
-			pushStat.setSmsSkipCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSkipCount"));
-			pushStat.setSmsFailedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsFailedCount"));
-			pushStat.setSmsReceiveSuccessCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsReceiveSuccessCount"));
-			pushStat.setSmsReceiveFailedCount(context.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsReceiveFailedCount"));
+			pushStat.setMessageId(_ctx.stringValue("QueryPushStatByMsgResponse.PushStats["+ i +"].MessageId"));
+			pushStat.setAcceptCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].AcceptCount"));
+			pushStat.setSentCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SentCount"));
+			pushStat.setReceivedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].ReceivedCount"));
+			pushStat.setOpenedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].OpenedCount"));
+			pushStat.setDeletedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].DeletedCount"));
+			pushStat.setSmsSentCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSentCount"));
+			pushStat.setSmsSkipCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsSkipCount"));
+			pushStat.setSmsFailedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsFailedCount"));
+			pushStat.setSmsReceiveSuccessCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsReceiveSuccessCount"));
+			pushStat.setSmsReceiveFailedCount(_ctx.longValue("QueryPushStatByMsgResponse.PushStats["+ i +"].SmsReceiveFailedCount"));
 
 			pushStats.add(pushStat);
 		}
