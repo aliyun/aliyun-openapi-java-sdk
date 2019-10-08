@@ -23,11 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
-	
-	public ApplyRefundRequest() {
-		super("linkedmall", "2018-01-16", "ApplyRefund", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizUid;
 
@@ -52,6 +48,10 @@ public class ApplyRefundRequest extends RpcAcsRequest<ApplyRefundResponse> {
 	private String bizId;
 
 	private String leaveMessage;
+	public ApplyRefundRequest() {
+		super("linkedmall", "2018-01-16", "ApplyRefund", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizUid() {
 		return this.bizUid;

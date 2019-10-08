@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class BatchRegistAnonymousTbAccountRequest extends RpcAcsRequest<BatchRegistAnonymousTbAccountResponse> {
-	
-	public BatchRegistAnonymousTbAccountRequest() {
-		super("linkedmall", "2018-01-16", "BatchRegistAnonymousTbAccount", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizId;
 
 	private String idJsonList;
+	public BatchRegistAnonymousTbAccountRequest() {
+		super("linkedmall", "2018-01-16", "BatchRegistAnonymousTbAccount", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;

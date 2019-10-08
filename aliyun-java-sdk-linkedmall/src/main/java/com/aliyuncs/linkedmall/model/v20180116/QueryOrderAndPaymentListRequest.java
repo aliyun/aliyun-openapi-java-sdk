@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryOrderAndPaymentListRequest extends RpcAcsRequest<QueryOrderAndPaymentListResponse> {
-	
-	public QueryOrderAndPaymentListRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderAndPaymentList", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String thirdPartyUserId;
 
@@ -41,6 +37,10 @@ public class QueryOrderAndPaymentListRequest extends RpcAcsRequest<QueryOrderAnd
 	private Boolean useAnonymousTbAccount;
 
 	private Long pageNumber;
+	public QueryOrderAndPaymentListRequest() {
+		super("linkedmall", "2018-01-16", "QueryOrderAndPaymentList", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getThirdPartyUserId() {
 		return this.thirdPartyUserId;

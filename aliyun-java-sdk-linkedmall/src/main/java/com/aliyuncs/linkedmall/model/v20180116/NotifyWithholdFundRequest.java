@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class NotifyWithholdFundRequest extends RpcAcsRequest<NotifyWithholdFundResponse> {
-	
-	public NotifyWithholdFundRequest() {
-		super("linkedmall", "2018-01-16", "NotifyWithholdFund", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long amount;
 
@@ -39,6 +35,10 @@ public class NotifyWithholdFundRequest extends RpcAcsRequest<NotifyWithholdFundR
 	private String operationDate;
 
 	private String channelId;
+	public NotifyWithholdFundRequest() {
+		super("linkedmall", "2018-01-16", "NotifyWithholdFund", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getAmount() {
 		return this.amount;

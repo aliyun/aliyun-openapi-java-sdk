@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryHotMoviesRequest extends RpcAcsRequest<QueryHotMoviesResponse> {
-	
-	public QueryHotMoviesRequest() {
-		super("linkedmall", "2018-01-16", "QueryHotMovies", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long cityCode;
 
 	private String extJson;
 
 	private String bizId;
+	public QueryHotMoviesRequest() {
+		super("linkedmall", "2018-01-16", "QueryHotMovies", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getCityCode() {
 		return this.cityCode;

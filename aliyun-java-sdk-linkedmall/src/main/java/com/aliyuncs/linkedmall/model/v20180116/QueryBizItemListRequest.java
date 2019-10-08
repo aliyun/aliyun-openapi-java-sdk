@@ -24,11 +24,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryBizItemListRequest extends RpcAcsRequest<QueryBizItemListResponse> {
-	
-	public QueryBizItemListRequest() {
-		super("linkedmall", "2018-01-16", "QueryBizItemList", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private List<Object> lmItemIds;
 
@@ -45,6 +41,10 @@ public class QueryBizItemListRequest extends RpcAcsRequest<QueryBizItemListRespo
 	private Long categoryId;
 
 	private String subBizId;
+	public QueryBizItemListRequest() {
+		super("linkedmall", "2018-01-16", "QueryBizItemList", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public List<Object> getLmItemIds() {
 		return this.lmItemIds;

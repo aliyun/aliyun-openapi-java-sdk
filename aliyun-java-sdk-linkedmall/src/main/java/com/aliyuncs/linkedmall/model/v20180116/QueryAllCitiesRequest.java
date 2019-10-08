@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryAllCitiesRequest extends RpcAcsRequest<QueryAllCitiesResponse> {
-	
-	public QueryAllCitiesRequest() {
-		super("linkedmall", "2018-01-16", "QueryAllCities", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String extJson;
 
 	private String bizId;
+	public QueryAllCitiesRequest() {
+		super("linkedmall", "2018-01-16", "QueryAllCities", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getExtJson() {
 		return this.extJson;

@@ -23,15 +23,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class AddSupplierNewItemsRequest extends RpcAcsRequest<AddSupplierNewItemsResponse> {
-	
-	public AddSupplierNewItemsRequest() {
-		super("linkedmall", "2018-01-16", "AddSupplierNewItems", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizId;
 
 	private List<ItemList> itemLists;
+	public AddSupplierNewItemsRequest() {
+		super("linkedmall", "2018-01-16", "AddSupplierNewItems", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;

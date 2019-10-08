@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryMovieSeatsRequest extends RpcAcsRequest<QueryMovieSeatsResponse> {
-	
-	public QueryMovieSeatsRequest() {
-		super("linkedmall", "2018-01-16", "QueryMovieSeats", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String extJson;
 
 	private String bizId;
 
 	private Long scheduleId;
+	public QueryMovieSeatsRequest() {
+		super("linkedmall", "2018-01-16", "QueryMovieSeats", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getExtJson() {
 		return this.extJson;

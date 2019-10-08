@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryMovieTicketsRequest extends RpcAcsRequest<QueryMovieTicketsResponse> {
-	
-	public QueryMovieTicketsRequest() {
-		super("linkedmall", "2018-01-16", "QueryMovieTickets", "linkedmall");
-		setSysMethod(MethodType.GET);
-	}
+	   
 
 	private String orderId;
 
@@ -35,6 +31,10 @@ public class QueryMovieTicketsRequest extends RpcAcsRequest<QueryMovieTicketsRes
 	private String extJson;
 
 	private String bizId;
+	public QueryMovieTicketsRequest() {
+		super("linkedmall", "2018-01-16", "QueryMovieTickets", "linkedmall");
+		setMethod(MethodType.GET);
+	}
 
 	public String getOrderId() {
 		return this.orderId;

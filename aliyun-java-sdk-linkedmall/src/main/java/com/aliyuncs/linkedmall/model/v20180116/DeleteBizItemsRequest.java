@@ -23,17 +23,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteBizItemsRequest extends RpcAcsRequest<DeleteBizItemsResponse> {
-	
-	public DeleteBizItemsRequest() {
-		super("linkedmall", "2018-01-16", "DeleteBizItems", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizId;
 
 	private List<Long> itemIdLists;
 
 	private String subBizId;
+	public DeleteBizItemsRequest() {
+		super("linkedmall", "2018-01-16", "DeleteBizItems", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;

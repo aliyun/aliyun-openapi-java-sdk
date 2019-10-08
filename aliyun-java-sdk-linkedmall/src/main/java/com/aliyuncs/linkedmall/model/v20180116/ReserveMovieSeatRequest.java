@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ReserveMovieSeatRequest extends RpcAcsRequest<ReserveMovieSeatResponse> {
-	
-	public ReserveMovieSeatRequest() {
-		super("linkedmall", "2018-01-16", "ReserveMovieSeat", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String seatIds;
 
@@ -41,6 +37,10 @@ public class ReserveMovieSeatRequest extends RpcAcsRequest<ReserveMovieSeatRespo
 	private String seatNames;
 
 	private Long scheduleId;
+	public ReserveMovieSeatRequest() {
+		super("linkedmall", "2018-01-16", "ReserveMovieSeat", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSeatIds() {
 		return this.seatIds;

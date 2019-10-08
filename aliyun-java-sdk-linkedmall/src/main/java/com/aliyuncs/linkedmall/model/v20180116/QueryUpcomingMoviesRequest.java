@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryUpcomingMoviesRequest extends RpcAcsRequest<QueryUpcomingMoviesResponse> {
-	
-	public QueryUpcomingMoviesRequest() {
-		super("linkedmall", "2018-01-16", "QueryUpcomingMovies", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long cityCode;
 
 	private String extJson;
 
 	private String bizId;
+	public QueryUpcomingMoviesRequest() {
+		super("linkedmall", "2018-01-16", "QueryUpcomingMovies", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getCityCode() {
 		return this.cityCode;

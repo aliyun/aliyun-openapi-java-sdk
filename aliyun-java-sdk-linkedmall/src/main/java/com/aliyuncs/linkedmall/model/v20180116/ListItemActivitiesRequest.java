@@ -15,21 +15,47 @@
 package com.aliyuncs.linkedmall.model.v20180116;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCategoryListRequest extends RpcAcsRequest<GetCategoryListResponse> {
+public class ListItemActivitiesRequest extends RpcAcsRequest<ListItemActivitiesResponse> {
 	   
 
-	private String bizId;
+	private List<Object> lmItemIds;
 
-	private Long categoryId;
-	public GetCategoryListRequest() {
-		super("linkedmall", "2018-01-16", "GetCategoryList", "linkedmall");
+	private List<Object> itemIds;
+
+	private String bizId;
+	public ListItemActivitiesRequest() {
+		super("linkedmall", "2018-01-16", "ListItemActivities", "linkedmall");
 		setMethod(MethodType.POST);
+	}
+
+	public List<Object> getLmItemIds() {
+		return this.lmItemIds;
+	}
+
+	public void setLmItemIds(List<Object> lmItemIds) {
+		this.lmItemIds = lmItemIds;
+		if(lmItemIds != null){
+			putQueryParameter("LmItemIds", new Gson().toJson(lmItemIds));
+		}
+	}
+
+	public List<Object> getItemIds() {
+		return this.itemIds;
+	}
+
+	public void setItemIds(List<Object> itemIds) {
+		this.itemIds = itemIds;
+		if(itemIds != null){
+			putQueryParameter("ItemIds", new Gson().toJson(itemIds));
+		}
 	}
 
 	public String getBizId() {
@@ -43,20 +69,9 @@ public class GetCategoryListRequest extends RpcAcsRequest<GetCategoryListRespons
 		}
 	}
 
-	public Long getCategoryId() {
-		return this.categoryId;
-	}
-
-	public void setCategoryId(Long categoryId) {
-		this.categoryId = categoryId;
-		if(categoryId != null){
-			putQueryParameter("CategoryId", categoryId.toString());
-		}
-	}
-
 	@Override
-	public Class<GetCategoryListResponse> getResponseClass() {
-		return GetCategoryListResponse.class;
+	public Class<ListItemActivitiesResponse> getResponseClass() {
+		return ListItemActivitiesResponse.class;
 	}
 
 }

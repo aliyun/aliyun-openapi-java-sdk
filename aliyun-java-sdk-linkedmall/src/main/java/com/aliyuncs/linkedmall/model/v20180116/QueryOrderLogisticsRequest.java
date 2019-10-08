@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryOrderLogisticsRequest extends RpcAcsRequest<QueryOrderLogisticsResponse> {
-	
-	public QueryOrderLogisticsRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderLogistics", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long lmOrderId;
 
@@ -37,6 +33,10 @@ public class QueryOrderLogisticsRequest extends RpcAcsRequest<QueryOrderLogistic
 	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
+	public QueryOrderLogisticsRequest() {
+		super("linkedmall", "2018-01-16", "QueryOrderLogistics", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getLmOrderId() {
 		return this.lmOrderId;

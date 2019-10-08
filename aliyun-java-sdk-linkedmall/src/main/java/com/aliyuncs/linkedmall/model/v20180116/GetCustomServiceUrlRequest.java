@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUrlResponse> {
-	
-	public GetCustomServiceUrlRequest() {
-		super("linkedmall", "2018-01-16", "GetCustomServiceUrl", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String nick;
 
@@ -41,6 +37,10 @@ public class GetCustomServiceUrlRequest extends RpcAcsRequest<GetCustomServiceUr
 	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
+	public GetCustomServiceUrlRequest() {
+		super("linkedmall", "2018-01-16", "GetCustomServiceUrl", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getNick() {
 		return this.nick;

@@ -1,3 +1,6 @@
+2019-10-08 Version: 2.8.0
+- Add new interface -ListItemActivities.
+
 2019-09-05 Version: 2.7.1
 - QueryItemList supports parameters itemIds and lmItemIds.
 

@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class RegistAnonymousTbAccountRequest extends RpcAcsRequest<RegistAnonymousTbAccountResponse> {
-	
-	public RegistAnonymousTbAccountRequest() {
-		super("linkedmall", "2018-01-16", "RegistAnonymousTbAccount", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String thirdPartyUserId;
 
 	private String bizId;
+	public RegistAnonymousTbAccountRequest() {
+		super("linkedmall", "2018-01-16", "RegistAnonymousTbAccount", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getThirdPartyUserId() {
 		return this.thirdPartyUserId;

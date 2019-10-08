@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryAddressRequest extends RpcAcsRequest<QueryAddressResponse> {
-	
-	public QueryAddressRequest() {
-		super("linkedmall", "2018-01-16", "QueryAddress", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String divisionCode;
 
 	private String ip;
 
 	private String bizId;
+	public QueryAddressRequest() {
+		super("linkedmall", "2018-01-16", "QueryAddress", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDivisionCode() {
 		return this.divisionCode;

@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CancelRefundRequest extends RpcAcsRequest<CancelRefundResponse> {
-	
-	public CancelRefundRequest() {
-		super("linkedmall", "2018-01-16", "CancelRefund", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String subLmOrderId;
 
@@ -39,6 +35,10 @@ public class CancelRefundRequest extends RpcAcsRequest<CancelRefundResponse> {
 	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
+	public CancelRefundRequest() {
+		super("linkedmall", "2018-01-16", "CancelRefund", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSubLmOrderId() {
 		return this.subLmOrderId;

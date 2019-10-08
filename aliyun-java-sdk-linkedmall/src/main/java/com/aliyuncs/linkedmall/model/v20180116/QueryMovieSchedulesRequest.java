@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryMovieSchedulesRequest extends RpcAcsRequest<QueryMovieSchedulesResponse> {
-	
-	public QueryMovieSchedulesRequest() {
-		super("linkedmall", "2018-01-16", "QueryMovieSchedules", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long cinemaId;
 
 	private String extJson;
 
 	private String bizId;
+	public QueryMovieSchedulesRequest() {
+		super("linkedmall", "2018-01-16", "QueryMovieSchedules", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getCinemaId() {
 		return this.cinemaId;

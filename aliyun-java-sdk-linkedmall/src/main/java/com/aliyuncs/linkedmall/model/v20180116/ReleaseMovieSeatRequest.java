@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ReleaseMovieSeatRequest extends RpcAcsRequest<ReleaseMovieSeatResponse> {
-	
-	public ReleaseMovieSeatRequest() {
-		super("linkedmall", "2018-01-16", "ReleaseMovieSeat", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizUid;
 
@@ -35,6 +31,10 @@ public class ReleaseMovieSeatRequest extends RpcAcsRequest<ReleaseMovieSeatRespo
 	private String bizId;
 
 	private String lockSeatApplyKey;
+	public ReleaseMovieSeatRequest() {
+		super("linkedmall", "2018-01-16", "ReleaseMovieSeat", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizUid() {
 		return this.bizUid;

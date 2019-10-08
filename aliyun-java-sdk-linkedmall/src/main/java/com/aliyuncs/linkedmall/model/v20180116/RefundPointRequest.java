@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
-	
-	public RefundPointRequest() {
-		super("linkedmall", "2018-01-16", "RefundPoint", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String reason;
 
@@ -39,6 +35,10 @@ public class RefundPointRequest extends RpcAcsRequest<RefundPointResponse> {
 	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
+	public RefundPointRequest() {
+		super("linkedmall", "2018-01-16", "RefundPoint", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getReason() {
 		return this.reason;

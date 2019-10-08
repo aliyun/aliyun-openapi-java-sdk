@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class RemoveMessagesRequest extends RpcAcsRequest<RemoveMessagesResponse> {
-	
-	public RemoveMessagesRequest() {
-		super("linkedmall", "2018-01-16", "RemoveMessages", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String extJson;
 
 	private String bizId;
 
 	private String messageIds;
+	public RemoveMessagesRequest() {
+		super("linkedmall", "2018-01-16", "RemoveMessages", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getExtJson() {
 		return this.extJson;

@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class NotifyPayOrderStatusRequest extends RpcAcsRequest<NotifyPayOrderStatusResponse> {
-	
-	public NotifyPayOrderStatusRequest() {
-		super("linkedmall", "2018-01-16", "NotifyPayOrderStatus", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long amount;
 
@@ -37,6 +33,10 @@ public class NotifyPayOrderStatusRequest extends RpcAcsRequest<NotifyPayOrderSta
 	private String operationDate;
 
 	private String channelId;
+	public NotifyPayOrderStatusRequest() {
+		super("linkedmall", "2018-01-16", "NotifyPayOrderStatus", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getAmount() {
 		return this.amount;

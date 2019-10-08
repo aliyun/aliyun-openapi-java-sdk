@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryRefundApplicationDetailRequest extends RpcAcsRequest<QueryRefundApplicationDetailResponse> {
-	
-	public QueryRefundApplicationDetailRequest() {
-		super("linkedmall", "2018-01-16", "QueryRefundApplicationDetail", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String subLmOrderId;
 
@@ -37,6 +33,10 @@ public class QueryRefundApplicationDetailRequest extends RpcAcsRequest<QueryRefu
 	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
+	public QueryRefundApplicationDetailRequest() {
+		super("linkedmall", "2018-01-16", "QueryRefundApplicationDetail", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSubLmOrderId() {
 		return this.subLmOrderId;

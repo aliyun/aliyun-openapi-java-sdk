@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class InitApplyRefundRequest extends RpcAcsRequest<InitApplyRefundResponse> {
-	
-	public InitApplyRefundRequest() {
-		super("linkedmall", "2018-01-16", "InitApplyRefund", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Integer goodsStatus;
 
@@ -41,6 +37,10 @@ public class InitApplyRefundRequest extends RpcAcsRequest<InitApplyRefundRespons
 	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
+	public InitApplyRefundRequest() {
+		super("linkedmall", "2018-01-16", "InitApplyRefund", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getGoodsStatus() {
 		return this.goodsStatus;

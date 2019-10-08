@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class EnableOrderRequest extends RpcAcsRequest<EnableOrderResponse> {
-	
-	public EnableOrderRequest() {
-		super("linkedmall", "2018-01-16", "EnableOrder", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String lmOrderId;
 
@@ -37,6 +33,10 @@ public class EnableOrderRequest extends RpcAcsRequest<EnableOrderResponse> {
 	private String bizId;
 
 	private String outTradeId;
+	public EnableOrderRequest() {
+		super("linkedmall", "2018-01-16", "EnableOrder", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getLmOrderId() {
 		return this.lmOrderId;

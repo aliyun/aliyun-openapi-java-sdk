@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryItemDetailRequest extends RpcAcsRequest<QueryItemDetailResponse> {
-	
-	public QueryItemDetailRequest() {
-		super("linkedmall", "2018-01-16", "QueryItemDetail", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long itemId;
 
 	private String bizId;
+	public QueryItemDetailRequest() {
+		super("linkedmall", "2018-01-16", "QueryItemDetail", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getItemId() {
 		return this.itemId;

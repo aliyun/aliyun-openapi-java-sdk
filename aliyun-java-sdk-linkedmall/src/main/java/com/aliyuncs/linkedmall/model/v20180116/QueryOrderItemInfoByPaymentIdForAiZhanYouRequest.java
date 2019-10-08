@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryOrderItemInfoByPaymentIdForAiZhanYouRequest extends RpcAcsRequest<QueryOrderItemInfoByPaymentIdForAiZhanYouResponse> {
-	
-	public QueryOrderItemInfoByPaymentIdForAiZhanYouRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderItemInfoByPaymentIdForAiZhanYou", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizUid;
 
 	private String paymentId;
 
 	private String bizId;
+	public QueryOrderItemInfoByPaymentIdForAiZhanYouRequest() {
+		super("linkedmall", "2018-01-16", "QueryOrderItemInfoByPaymentIdForAiZhanYou", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizUid() {
 		return this.bizUid;

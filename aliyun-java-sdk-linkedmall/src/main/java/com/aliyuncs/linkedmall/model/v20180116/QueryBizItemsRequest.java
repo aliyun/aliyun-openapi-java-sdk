@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryBizItemsRequest extends RpcAcsRequest<QueryBizItemsResponse> {
-	
-	public QueryBizItemsRequest() {
-		super("linkedmall", "2018-01-16", "QueryBizItems", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizId;
 
@@ -37,6 +33,10 @@ public class QueryBizItemsRequest extends RpcAcsRequest<QueryBizItemsResponse> {
 	private Integer pageNumber;
 
 	private String subBizId;
+	public QueryBizItemsRequest() {
+		super("linkedmall", "2018-01-16", "QueryBizItems", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;

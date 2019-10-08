@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryGuideItemGroupRequest extends RpcAcsRequest<QueryGuideItemGroupResponse> {
-	
-	public QueryGuideItemGroupRequest() {
-		super("linkedmall", "2018-01-16", "QueryGuideItemGroup", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String groupId;
 
@@ -35,6 +31,10 @@ public class QueryGuideItemGroupRequest extends RpcAcsRequest<QueryGuideItemGrou
 	private Long pageSize;
 
 	private Long pageNumber;
+	public QueryGuideItemGroupRequest() {
+		super("linkedmall", "2018-01-16", "QueryGuideItemGroup", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getGroupId() {
 		return this.groupId;

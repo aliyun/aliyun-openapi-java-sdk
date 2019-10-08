@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryAllCinemasRequest extends RpcAcsRequest<QueryAllCinemasResponse> {
-	
-	public QueryAllCinemasRequest() {
-		super("linkedmall", "2018-01-16", "QueryAllCinemas", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long cityCode;
 
@@ -35,6 +31,10 @@ public class QueryAllCinemasRequest extends RpcAcsRequest<QueryAllCinemasRespons
 	private String bizId;
 
 	private Long pageNumber;
+	public QueryAllCinemasRequest() {
+		super("linkedmall", "2018-01-16", "QueryAllCinemas", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getCityCode() {
 		return this.cityCode;

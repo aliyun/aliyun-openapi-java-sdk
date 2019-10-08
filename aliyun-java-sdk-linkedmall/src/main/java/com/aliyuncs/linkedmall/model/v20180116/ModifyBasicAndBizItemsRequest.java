@@ -23,17 +23,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ModifyBasicAndBizItemsRequest extends RpcAcsRequest<ModifyBasicAndBizItemsResponse> {
-	
-	public ModifyBasicAndBizItemsRequest() {
-		super("linkedmall", "2018-01-16", "ModifyBasicAndBizItems", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizId;
 
 	private List<ItemList> itemLists;
 
 	private String subBizId;
+	public ModifyBasicAndBizItemsRequest() {
+		super("linkedmall", "2018-01-16", "ModifyBasicAndBizItems", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizId() {
 		return this.bizId;

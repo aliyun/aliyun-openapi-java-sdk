@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class RepayOrderRequest extends RpcAcsRequest<RepayOrderResponse> {
-	
-	public RepayOrderRequest() {
-		super("linkedmall", "2018-01-16", "RepayOrder", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long lmOrderId;
 
@@ -37,6 +33,10 @@ public class RepayOrderRequest extends RpcAcsRequest<RepayOrderResponse> {
 	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
+	public RepayOrderRequest() {
+		super("linkedmall", "2018-01-16", "RepayOrder", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getLmOrderId() {
 		return this.lmOrderId;

@@ -23,11 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
-	
-	public RenderOrderRequest() {
-		super("linkedmall", "2018-01-16", "RenderOrder", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizUid;
 
@@ -42,6 +38,10 @@ public class RenderOrderRequest extends RpcAcsRequest<RenderOrderResponse> {
 	private String bizId;
 
 	private String deliveryAddress;
+	public RenderOrderRequest() {
+		super("linkedmall", "2018-01-16", "RenderOrder", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizUid() {
 		return this.bizUid;

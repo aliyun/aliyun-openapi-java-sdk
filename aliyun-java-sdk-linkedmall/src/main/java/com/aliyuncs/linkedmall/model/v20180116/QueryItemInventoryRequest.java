@@ -23,11 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryItemInventoryRequest extends RpcAcsRequest<QueryItemInventoryResponse> {
-	
-	public QueryItemInventoryRequest() {
-		super("linkedmall", "2018-01-16", "QueryItemInventory", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String divisionCode;
 
@@ -36,6 +32,10 @@ public class QueryItemInventoryRequest extends RpcAcsRequest<QueryItemInventoryR
 	private String bizId;
 
 	private List<ItemList> itemLists;
+	public QueryItemInventoryRequest() {
+		super("linkedmall", "2018-01-16", "QueryItemInventory", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getDivisionCode() {
 		return this.divisionCode;

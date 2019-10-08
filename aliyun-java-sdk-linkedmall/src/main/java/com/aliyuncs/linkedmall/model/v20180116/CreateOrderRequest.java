@@ -23,11 +23,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
-	
-	public CreateOrderRequest() {
-		super("linkedmall", "2018-01-16", "CreateOrder", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long quantity;
 
@@ -52,6 +48,10 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 	private String outTradeId;
 
 	private String deliveryAddress;
+	public CreateOrderRequest() {
+		super("linkedmall", "2018-01-16", "CreateOrder", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getQuantity() {
 		return this.quantity;

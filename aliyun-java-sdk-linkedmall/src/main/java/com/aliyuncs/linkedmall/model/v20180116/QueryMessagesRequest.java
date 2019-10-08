@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryMessagesRequest extends RpcAcsRequest<QueryMessagesResponse> {
-	
-	public QueryMessagesRequest() {
-		super("linkedmall", "2018-01-16", "QueryMessages", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String extJson;
 
 	private String bizId;
 
 	private String topic;
+	public QueryMessagesRequest() {
+		super("linkedmall", "2018-01-16", "QueryMessages", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getExtJson() {
 		return this.extJson;

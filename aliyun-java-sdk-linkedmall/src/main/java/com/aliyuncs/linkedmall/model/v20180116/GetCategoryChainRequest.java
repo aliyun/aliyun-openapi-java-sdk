@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetCategoryChainRequest extends RpcAcsRequest<GetCategoryChainResponse> {
-	
-	public GetCategoryChainRequest() {
-		super("linkedmall", "2018-01-16", "GetCategoryChain", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private Long itemId;
 
 	private String bizId;
 
 	private Long categoryId;
+	public GetCategoryChainRequest() {
+		super("linkedmall", "2018-01-16", "GetCategoryChain", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public Long getItemId() {
 		return this.itemId;

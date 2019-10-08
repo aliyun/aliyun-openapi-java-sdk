@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryMovieCommentsRequest extends RpcAcsRequest<QueryMovieCommentsResponse> {
-	
-	public QueryMovieCommentsRequest() {
-		super("linkedmall", "2018-01-16", "QueryMovieComments", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String extJson;
 
@@ -35,6 +31,10 @@ public class QueryMovieCommentsRequest extends RpcAcsRequest<QueryMovieCommentsR
 	private Long movieId;
 
 	private Long pageNumber;
+	public QueryMovieCommentsRequest() {
+		super("linkedmall", "2018-01-16", "QueryMovieComments", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getExtJson() {
 		return this.extJson;

@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ConfirmDisburseRequest extends RpcAcsRequest<ConfirmDisburseResponse> {
-	
-	public ConfirmDisburseRequest() {
-		super("linkedmall", "2018-01-16", "ConfirmDisburse", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String lmOrderId;
 
@@ -37,6 +33,10 @@ public class ConfirmDisburseRequest extends RpcAcsRequest<ConfirmDisburseRespons
 	private String bizId;
 
 	private Boolean useAnonymousTbAccount;
+	public ConfirmDisburseRequest() {
+		super("linkedmall", "2018-01-16", "ConfirmDisburse", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getLmOrderId() {
 		return this.lmOrderId;

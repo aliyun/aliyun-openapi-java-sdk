@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfoAfterSaleResponse> {
-	
-	public QueryOrderInfoAfterSaleRequest() {
-		super("linkedmall", "2018-01-16", "QueryOrderInfoAfterSale", "linkedmall");
-		setSysMethod(MethodType.GET);
-	}
+	   
 
 	private String lmOrderId;
 
@@ -37,6 +33,10 @@ public class QueryOrderInfoAfterSaleRequest extends RpcAcsRequest<QueryOrderInfo
 	private Boolean useAnonymousTbAccount;
 
 	private String channelUserId;
+	public QueryOrderInfoAfterSaleRequest() {
+		super("linkedmall", "2018-01-16", "QueryOrderInfoAfterSale", "linkedmall");
+		setMethod(MethodType.GET);
+	}
 
 	public String getLmOrderId() {
 		return this.lmOrderId;

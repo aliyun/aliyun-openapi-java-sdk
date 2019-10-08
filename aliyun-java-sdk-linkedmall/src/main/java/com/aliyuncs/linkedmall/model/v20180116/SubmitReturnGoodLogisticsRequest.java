@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturnGoodLogisticsResponse> {
-	
-	public SubmitReturnGoodLogisticsRequest() {
-		super("linkedmall", "2018-01-16", "SubmitReturnGoodLogistics", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizUid;
 
@@ -43,6 +39,10 @@ public class SubmitReturnGoodLogisticsRequest extends RpcAcsRequest<SubmitReturn
 	private String bizId;
 
 	private String logisticsNo;
+	public SubmitReturnGoodLogisticsRequest() {
+		super("linkedmall", "2018-01-16", "SubmitReturnGoodLogistics", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizUid() {
 		return this.bizUid;

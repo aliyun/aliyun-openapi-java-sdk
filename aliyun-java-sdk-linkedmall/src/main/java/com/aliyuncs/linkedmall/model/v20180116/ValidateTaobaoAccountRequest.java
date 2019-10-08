@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ValidateTaobaoAccountRequest extends RpcAcsRequest<ValidateTaobaoAccountResponse> {
-	
-	public ValidateTaobaoAccountRequest() {
-		super("linkedmall", "2018-01-16", "ValidateTaobaoAccount", "linkedmall");
-		setSysMethod(MethodType.POST);
-	}
+	   
 
 	private String bizUid;
 
@@ -37,6 +33,10 @@ public class ValidateTaobaoAccountRequest extends RpcAcsRequest<ValidateTaobaoAc
 	private String mobileNo;
 
 	private String tbUserNick;
+	public ValidateTaobaoAccountRequest() {
+		super("linkedmall", "2018-01-16", "ValidateTaobaoAccount", "linkedmall");
+		setMethod(MethodType.POST);
+	}
 
 	public String getBizUid() {
 		return this.bizUid;
