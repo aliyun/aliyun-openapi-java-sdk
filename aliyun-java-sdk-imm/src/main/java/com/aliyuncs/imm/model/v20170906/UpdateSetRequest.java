@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class UpdateSetRequest extends RpcAcsRequest<UpdateSetResponse> {
-	
-	public UpdateSetRequest() {
-		super("imm", "2017-09-06", "UpdateSet", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String setName;
 
 	private String setId;
+	public UpdateSetRequest() {
+		super("imm", "2017-09-06", "UpdateSet", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

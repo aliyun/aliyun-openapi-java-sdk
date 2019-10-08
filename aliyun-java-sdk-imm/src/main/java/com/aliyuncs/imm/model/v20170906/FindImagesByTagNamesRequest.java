@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class FindImagesByTagNamesRequest extends RpcAcsRequest<FindImagesByTagNamesResponse> {
-	
-	public FindImagesByTagNamesRequest() {
-		super("imm", "2017-09-06", "FindImagesByTagNames", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -37,6 +33,10 @@ public class FindImagesByTagNamesRequest extends RpcAcsRequest<FindImagesByTagNa
 	private String marker;
 
 	private String setId;
+	public FindImagesByTagNamesRequest() {
+		super("imm", "2017-09-06", "FindImagesByTagNames", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

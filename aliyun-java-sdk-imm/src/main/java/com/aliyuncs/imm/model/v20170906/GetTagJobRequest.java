@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetTagJobRequest extends RpcAcsRequest<GetTagJobResponse> {
-	
-	public GetTagJobRequest() {
-		super("imm", "2017-09-06", "GetTagJob", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String jobId;
+	public GetTagJobRequest() {
+		super("imm", "2017-09-06", "GetTagJob", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

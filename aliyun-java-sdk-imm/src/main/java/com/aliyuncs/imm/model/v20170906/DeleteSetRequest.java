@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteSetRequest extends RpcAcsRequest<DeleteSetResponse> {
-	
-	public DeleteSetRequest() {
-		super("imm", "2017-09-06", "DeleteSet", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String setId;
+	public DeleteSetRequest() {
+		super("imm", "2017-09-06", "DeleteSet", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

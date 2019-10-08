@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetMediaMetaRequest extends RpcAcsRequest<GetMediaMetaResponse> {
-	
-	public GetMediaMetaRequest() {
-		super("imm", "2017-09-06", "GetMediaMeta", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String mediaUri;
 
 	private String project;
+	public GetMediaMetaRequest() {
+		super("imm", "2017-09-06", "GetMediaMeta", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getMediaUri() {
 		return this.mediaUri;

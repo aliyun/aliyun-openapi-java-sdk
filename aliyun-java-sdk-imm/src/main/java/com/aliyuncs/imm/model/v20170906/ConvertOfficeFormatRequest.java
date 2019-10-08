@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeFormatResponse> {
-	
-	public ConvertOfficeFormatRequest() {
-		super("imm", "2017-09-06", "ConvertOfficeFormat", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String srcType;
 
@@ -67,6 +63,10 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 	private String tgtFilePages;
 
 	private String tgtUri;
+	public ConvertOfficeFormatRequest() {
+		super("imm", "2017-09-06", "ConvertOfficeFormat", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSrcType() {
 		return this.srcType;

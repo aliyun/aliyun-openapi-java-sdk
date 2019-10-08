@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListTagJobsRequest extends RpcAcsRequest<ListTagJobsResponse> {
-	
-	public ListTagJobsRequest() {
-		super("imm", "2017-09-06", "ListTagJobs", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer maxKeys;
 
@@ -35,6 +31,10 @@ public class ListTagJobsRequest extends RpcAcsRequest<ListTagJobsResponse> {
 	private String condition;
 
 	private String marker;
+	public ListTagJobsRequest() {
+		super("imm", "2017-09-06", "ListTagJobs", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;

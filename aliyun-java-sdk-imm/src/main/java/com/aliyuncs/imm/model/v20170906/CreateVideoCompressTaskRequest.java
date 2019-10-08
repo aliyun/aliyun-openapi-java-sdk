@@ -22,21 +22,23 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCompressTaskResponse> {
-	
-	public CreateVideoCompressTaskRequest() {
-		super("imm", "2017-09-06", "CreateVideoCompressTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String notifyEndpoint;
+
+	private String customMessage;
 
 	private String notifyTopicName;
 
 	private String targetList;
 
 	private String videoUri;
+	public CreateVideoCompressTaskRequest() {
+		super("imm", "2017-09-06", "CreateVideoCompressTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;
@@ -57,6 +59,17 @@ public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCom
 		this.notifyEndpoint = notifyEndpoint;
 		if(notifyEndpoint != null){
 			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+		}
+	}
+
+	public String getCustomMessage() {
+		return this.customMessage;
+	}
+
+	public void setCustomMessage(String customMessage) {
+		this.customMessage = customMessage;
+		if(customMessage != null){
+			putQueryParameter("CustomMessage", customMessage);
 		}
 	}
 

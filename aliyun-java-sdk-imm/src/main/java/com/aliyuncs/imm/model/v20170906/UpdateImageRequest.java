@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
-	
-	public UpdateImageRequest() {
-		super("imm", "2017-09-06", "UpdateImage", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -49,6 +45,10 @@ public class UpdateImageRequest extends RpcAcsRequest<UpdateImageResponse> {
 	private String remarksC;
 
 	private String setId;
+	public UpdateImageRequest() {
+		super("imm", "2017-09-06", "UpdateImage", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

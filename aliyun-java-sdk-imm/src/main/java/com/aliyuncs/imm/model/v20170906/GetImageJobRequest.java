@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetImageJobRequest extends RpcAcsRequest<GetImageJobResponse> {
-	
-	public GetImageJobRequest() {
-		super("imm", "2017-09-06", "GetImageJob", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String jobId;
 
 	private String jobType;
+	public GetImageJobRequest() {
+		super("imm", "2017-09-06", "GetImageJob", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

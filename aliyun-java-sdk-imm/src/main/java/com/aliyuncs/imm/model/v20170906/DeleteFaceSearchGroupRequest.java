@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteFaceSearchGroupRequest extends RpcAcsRequest<DeleteFaceSearchGroupResponse> {
-	
-	public DeleteFaceSearchGroupRequest() {
-		super("imm", "2017-09-06", "DeleteFaceSearchGroup", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String groupName;
+	public DeleteFaceSearchGroupRequest() {
+		super("imm", "2017-09-06", "DeleteFaceSearchGroup", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

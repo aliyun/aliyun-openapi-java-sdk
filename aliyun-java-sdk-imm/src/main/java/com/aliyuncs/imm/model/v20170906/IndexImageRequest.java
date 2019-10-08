@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
-	
-	public IndexImageRequest() {
-		super("imm", "2017-09-06", "IndexImage", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -53,6 +49,10 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 	private String remarksC;
 
 	private String setId;
+	public IndexImageRequest() {
+		super("imm", "2017-09-06", "IndexImage", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

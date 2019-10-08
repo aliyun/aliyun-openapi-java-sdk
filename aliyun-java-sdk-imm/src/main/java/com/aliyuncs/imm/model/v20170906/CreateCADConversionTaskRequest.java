@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConversionTaskResponse> {
-	
-	public CreateCADConversionTaskRequest() {
-		super("imm", "2017-09-06", "CreateCADConversionTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String srcType;
 
@@ -57,6 +53,10 @@ public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConve
 	private Boolean thumbnails;
 
 	private String tgtUri;
+	public CreateCADConversionTaskRequest() {
+		super("imm", "2017-09-06", "CreateCADConversionTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getSrcType() {
 		return this.srcType;

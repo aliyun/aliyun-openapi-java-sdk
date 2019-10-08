@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class UpdateProjectRequest extends RpcAcsRequest<UpdateProjectResponse> {
-	
-	public UpdateProjectRequest() {
-		super("imm", "2017-09-06", "UpdateProject", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String newServiceRole;
 
 	private Integer newCU;
+	public UpdateProjectRequest() {
+		super("imm", "2017-09-06", "UpdateProject", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

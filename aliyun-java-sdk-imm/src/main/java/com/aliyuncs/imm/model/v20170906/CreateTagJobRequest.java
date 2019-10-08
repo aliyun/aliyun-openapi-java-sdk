@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateTagJobRequest extends RpcAcsRequest<CreateTagJobResponse> {
-	
-	public CreateTagJobRequest() {
-		super("imm", "2017-09-06", "CreateTagJob", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -37,6 +33,10 @@ public class CreateTagJobRequest extends RpcAcsRequest<CreateTagJobResponse> {
 	private String notifyTopicName;
 
 	private String srcUri;
+	public CreateTagJobRequest() {
+		super("imm", "2017-09-06", "CreateTagJob", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

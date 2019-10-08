@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
-	
-	public ListProjectsRequest() {
-		super("imm", "2017-09-06", "ListProjects", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer maxKeys;
 
 	private String marker;
+	public ListProjectsRequest() {
+		super("imm", "2017-09-06", "ListProjects", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;

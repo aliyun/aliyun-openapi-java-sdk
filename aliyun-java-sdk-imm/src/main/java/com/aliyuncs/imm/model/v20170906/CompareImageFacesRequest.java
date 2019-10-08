@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CompareImageFacesRequest extends RpcAcsRequest<CompareImageFacesResponse> {
-	
-	public CompareImageFacesRequest() {
-		super("imm", "2017-09-06", "CompareImageFaces", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -39,6 +35,10 @@ public class CompareImageFacesRequest extends RpcAcsRequest<CompareImageFacesRes
 	private String imageUriA;
 
 	private String setId;
+	public CompareImageFacesRequest() {
+		super("imm", "2017-09-06", "CompareImageFaces", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

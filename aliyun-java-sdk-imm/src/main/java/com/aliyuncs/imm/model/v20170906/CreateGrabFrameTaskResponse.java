@@ -14,35 +14,28 @@
 
 package com.aliyuncs.imm.model.v20170906;
 
-import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.MethodType;
+import com.aliyuncs.AcsResponse;
+import com.aliyuncs.imm.transform.v20170906.CreateGrabFrameTaskResponseUnmarshaller;
+import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteVideoTaskRequest extends RpcAcsRequest<DeleteVideoTaskResponse> {
-	   
+public class CreateGrabFrameTaskResponse extends AcsResponse {
 
-	private String project;
+	private String requestId;
 
 	private String taskId;
 
 	private String taskType;
-	public DeleteVideoTaskRequest() {
-		super("imm", "2017-09-06", "DeleteVideoTask", "imm");
-		setMethod(MethodType.POST);
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public String getProject() {
-		return this.project;
-	}
-
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTaskId() {
@@ -51,9 +44,6 @@ public class DeleteVideoTaskRequest extends RpcAcsRequest<DeleteVideoTaskRespons
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
 	}
 
 	public String getTaskType() {
@@ -62,14 +52,15 @@ public class DeleteVideoTaskRequest extends RpcAcsRequest<DeleteVideoTaskRespons
 
 	public void setTaskType(String taskType) {
 		this.taskType = taskType;
-		if(taskType != null){
-			putQueryParameter("TaskType", taskType);
-		}
 	}
 
 	@Override
-	public Class<DeleteVideoTaskResponse> getResponseClass() {
-		return DeleteVideoTaskResponse.class;
+	public CreateGrabFrameTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateGrabFrameTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

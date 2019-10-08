@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class IndexTagRequest extends RpcAcsRequest<IndexTagResponse> {
-	
-	public IndexTagRequest() {
-		super("imm", "2017-09-06", "IndexTag", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -35,6 +31,10 @@ public class IndexTagRequest extends RpcAcsRequest<IndexTagResponse> {
 	private String setId;
 
 	private String force;
+	public IndexTagRequest() {
+		super("imm", "2017-09-06", "IndexTag", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

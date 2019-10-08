@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteFaceJobRequest extends RpcAcsRequest<DeleteFaceJobResponse> {
-	
-	public DeleteFaceJobRequest() {
-		super("imm", "2017-09-06", "DeleteFaceJob", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String jobId;
 
 	private String clearIndexData;
+	public DeleteFaceJobRequest() {
+		super("imm", "2017-09-06", "DeleteFaceJob", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

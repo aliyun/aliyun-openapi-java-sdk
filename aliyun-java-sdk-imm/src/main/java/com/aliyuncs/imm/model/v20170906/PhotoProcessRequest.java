@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class PhotoProcessRequest extends RpcAcsRequest<PhotoProcessResponse> {
-	
-	public PhotoProcessRequest() {
-		super("imm", "2017-09-06", "PhotoProcess", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -41,6 +37,10 @@ public class PhotoProcessRequest extends RpcAcsRequest<PhotoProcessResponse> {
 	private String style;
 
 	private String tgtUri;
+	public PhotoProcessRequest() {
+		super("imm", "2017-09-06", "PhotoProcess", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

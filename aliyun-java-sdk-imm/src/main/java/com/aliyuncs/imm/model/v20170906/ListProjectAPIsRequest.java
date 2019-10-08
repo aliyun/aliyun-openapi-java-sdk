@@ -22,13 +22,13 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListProjectAPIsRequest extends RpcAcsRequest<ListProjectAPIsResponse> {
-	
+	   
+
+	private String project;
 	public ListProjectAPIsRequest() {
 		super("imm", "2017-09-06", "ListProjectAPIs", "imm");
 		setMethod(MethodType.POST);
 	}
-
-	private String project;
 
 	public String getProject() {
 		return this.project;

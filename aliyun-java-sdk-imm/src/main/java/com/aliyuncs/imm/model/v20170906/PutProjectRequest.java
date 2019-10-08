@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
-	
-	public PutProjectRequest() {
-		super("imm", "2017-09-06", "PutProject", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -37,6 +33,10 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 	private String serviceRole;
 
 	private String billingType;
+	public PutProjectRequest() {
+		super("imm", "2017-09-06", "PutProject", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListTagPhotosRequest extends RpcAcsRequest<ListTagPhotosResponse> {
-	
-	public ListTagPhotosRequest() {
-		super("imm", "2017-09-06", "ListTagPhotos", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String maxKeys;
 
@@ -37,6 +33,10 @@ public class ListTagPhotosRequest extends RpcAcsRequest<ListTagPhotosResponse> {
 	private String marker;
 
 	private String setId;
+	public ListTagPhotosRequest() {
+		super("imm", "2017-09-06", "ListTagPhotos", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getMaxKeys() {
 		return this.maxKeys;

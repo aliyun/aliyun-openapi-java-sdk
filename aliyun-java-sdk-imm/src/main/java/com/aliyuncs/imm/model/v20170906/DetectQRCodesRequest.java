@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DetectQRCodesRequest extends RpcAcsRequest<DetectQRCodesResponse> {
-	
-	public DetectQRCodesRequest() {
-		super("imm", "2017-09-06", "DetectQRCodes", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String srcUris;
+	public DetectQRCodesRequest() {
+		super("imm", "2017-09-06", "DetectQRCodes", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

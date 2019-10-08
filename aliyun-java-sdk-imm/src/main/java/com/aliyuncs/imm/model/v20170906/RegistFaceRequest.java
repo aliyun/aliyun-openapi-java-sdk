@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class RegistFaceRequest extends RpcAcsRequest<RegistFaceResponse> {
-	
-	public RegistFaceRequest() {
-		super("imm", "2017-09-06", "RegistFace", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Boolean chooseBiggestFace;
 
@@ -41,6 +37,10 @@ public class RegistFaceRequest extends RpcAcsRequest<RegistFaceResponse> {
 	private String registerCheckLevel;
 
 	private String user;
+	public RegistFaceRequest() {
+		super("imm", "2017-09-06", "RegistFace", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Boolean getChooseBiggestFace() {
 		return this.chooseBiggestFace;

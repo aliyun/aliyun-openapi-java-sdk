@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteDocIndexRequest extends RpcAcsRequest<DeleteDocIndexResponse> {
-	
-	public DeleteDocIndexRequest() {
-		super("imm", "2017-09-06", "DeleteDocIndex", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String uniqueId;
 
 	private String set;
+	public DeleteDocIndexRequest() {
+		super("imm", "2017-09-06", "DeleteDocIndex", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

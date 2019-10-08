@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class UpdateDocIndexMetaRequest extends RpcAcsRequest<UpdateDocIndexMetaResponse> {
-	
-	public UpdateDocIndexMetaRequest() {
-		super("imm", "2017-09-06", "UpdateDocIndexMeta", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -47,6 +43,10 @@ public class UpdateDocIndexMetaRequest extends RpcAcsRequest<UpdateDocIndexMetaR
 	private String customKey6;
 
 	private String name;
+	public UpdateDocIndexMetaRequest() {
+		super("imm", "2017-09-06", "UpdateDocIndexMeta", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

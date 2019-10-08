@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetPornBatchDetectJobRequest extends RpcAcsRequest<GetPornBatchDetectJobResponse> {
-	
-	public GetPornBatchDetectJobRequest() {
-		super("imm", "2017-09-06", "GetPornBatchDetectJob", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String jobId;
+	public GetPornBatchDetectJobRequest() {
+		super("imm", "2017-09-06", "GetPornBatchDetectJob", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

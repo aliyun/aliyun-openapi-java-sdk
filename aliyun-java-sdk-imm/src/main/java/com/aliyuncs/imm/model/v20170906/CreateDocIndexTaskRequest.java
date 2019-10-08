@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateDocIndexTaskRequest extends RpcAcsRequest<CreateDocIndexTaskResponse> {
-	
-	public CreateDocIndexTaskRequest() {
-		super("imm", "2017-09-06", "CreateDocIndexTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -51,6 +47,10 @@ public class CreateDocIndexTaskRequest extends RpcAcsRequest<CreateDocIndexTaskR
 	private String name;
 
 	private String srcUri;
+	public CreateDocIndexTaskRequest() {
+		super("imm", "2017-09-06", "CreateDocIndexTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

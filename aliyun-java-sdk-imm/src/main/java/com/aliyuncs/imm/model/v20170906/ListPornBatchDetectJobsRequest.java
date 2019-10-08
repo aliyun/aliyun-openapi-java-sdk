@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListPornBatchDetectJobsRequest extends RpcAcsRequest<ListPornBatchDetectJobsResponse> {
-	
-	public ListPornBatchDetectJobsRequest() {
-		super("imm", "2017-09-06", "ListPornBatchDetectJobs", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer maxKeys;
 
 	private String project;
 
 	private String marker;
+	public ListPornBatchDetectJobsRequest() {
+		super("imm", "2017-09-06", "ListPornBatchDetectJobs", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;

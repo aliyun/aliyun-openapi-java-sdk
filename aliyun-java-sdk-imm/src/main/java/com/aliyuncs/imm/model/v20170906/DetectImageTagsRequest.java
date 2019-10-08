@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DetectImageTagsRequest extends RpcAcsRequest<DetectImageTagsResponse> {
-	
-	public DetectImageTagsRequest() {
-		super("imm", "2017-09-06", "DetectImageTags", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String imageUri;
+	public DetectImageTagsRequest() {
+		super("imm", "2017-09-06", "DetectImageTags", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

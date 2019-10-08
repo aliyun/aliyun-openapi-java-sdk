@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
-	
-	public SearchFaceRequest() {
-		super("imm", "2017-09-06", "SearchFace", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer resultNum;
 
@@ -39,6 +35,10 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	private String groupName;
 
 	private String srcUri;
+	public SearchFaceRequest() {
+		super("imm", "2017-09-06", "SearchFace", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getResultNum() {
 		return this.resultNum;

@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteOfficeConversionTaskRequest extends RpcAcsRequest<DeleteOfficeConversionTaskResponse> {
-	
-	public DeleteOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "DeleteOfficeConversionTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String taskId;
+	public DeleteOfficeConversionTaskRequest() {
+		super("imm", "2017-09-06", "DeleteOfficeConversionTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

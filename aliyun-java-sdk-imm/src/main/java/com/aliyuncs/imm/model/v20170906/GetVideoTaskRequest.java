@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetVideoTaskRequest extends RpcAcsRequest<GetVideoTaskResponse> {
-	
-	public GetVideoTaskRequest() {
-		super("imm", "2017-09-06", "GetVideoTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String taskId;
 
 	private String taskType;
+	public GetVideoTaskRequest() {
+		super("imm", "2017-09-06", "GetVideoTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

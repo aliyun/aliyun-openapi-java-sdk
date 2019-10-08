@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListFaceSearchGroupImagesRequest extends RpcAcsRequest<ListFaceSearchGroupImagesResponse> {
-	
-	public ListFaceSearchGroupImagesRequest() {
-		super("imm", "2017-09-06", "ListFaceSearchGroupImages", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer maxKeys;
 
@@ -37,6 +33,10 @@ public class ListFaceSearchGroupImagesRequest extends RpcAcsRequest<ListFaceSear
 	private String marker;
 
 	private String user;
+	public ListFaceSearchGroupImagesRequest() {
+		super("imm", "2017-09-06", "ListFaceSearchGroupImages", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;

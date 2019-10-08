@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSearchImageByIdResponse> {
-	
-	public DeleteFaceSearchImageByIdRequest() {
-		super("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String imageId;
 
@@ -37,6 +33,10 @@ public class DeleteFaceSearchImageByIdRequest extends RpcAcsRequest<DeleteFaceSe
 	private String srcUri;
 
 	private String user;
+	public DeleteFaceSearchImageByIdRequest() {
+		super("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getImageId() {
 		return this.imageId;

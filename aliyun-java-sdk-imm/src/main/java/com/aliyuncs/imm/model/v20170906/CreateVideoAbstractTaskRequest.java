@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateVideoAbstractTaskRequest extends RpcAcsRequest<CreateVideoAbstractTaskResponse> {
-	
-	public CreateVideoAbstractTaskRequest() {
-		super("imm", "2017-09-06", "CreateVideoAbstractTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String targetVideoUri;
 
@@ -41,6 +37,10 @@ public class CreateVideoAbstractTaskRequest extends RpcAcsRequest<CreateVideoAbs
 	private Integer abstractLength;
 
 	private String targetClipsUri;
+	public CreateVideoAbstractTaskRequest() {
+		super("imm", "2017-09-06", "CreateVideoAbstractTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getTargetVideoUri() {
 		return this.targetVideoUri;

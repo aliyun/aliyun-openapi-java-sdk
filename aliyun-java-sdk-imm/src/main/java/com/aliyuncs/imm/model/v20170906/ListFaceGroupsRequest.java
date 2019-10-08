@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListFaceGroupsRequest extends RpcAcsRequest<ListFaceGroupsResponse> {
-	
-	public ListFaceGroupsRequest() {
-		super("imm", "2017-09-06", "ListFaceGroups", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -39,6 +35,10 @@ public class ListFaceGroupsRequest extends RpcAcsRequest<ListFaceGroupsResponse>
 	private String marker;
 
 	private String setId;
+	public ListFaceGroupsRequest() {
+		super("imm", "2017-09-06", "ListFaceGroups", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

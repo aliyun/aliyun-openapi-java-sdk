@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateMediaComplexTaskRequest extends RpcAcsRequest<CreateMediaComplexTaskResponse> {
-	
-	public CreateMediaComplexTaskRequest() {
-		super("imm", "2017-09-06", "CreateMediaComplexTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -35,6 +31,10 @@ public class CreateMediaComplexTaskRequest extends RpcAcsRequest<CreateMediaComp
 	private String notifyTopicName;
 
 	private String parameters;
+	public CreateMediaComplexTaskRequest() {
+		super("imm", "2017-09-06", "CreateMediaComplexTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

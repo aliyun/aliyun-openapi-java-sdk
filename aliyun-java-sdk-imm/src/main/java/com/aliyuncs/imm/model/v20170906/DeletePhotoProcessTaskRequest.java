@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeletePhotoProcessTaskRequest extends RpcAcsRequest<DeletePhotoProcessTaskResponse> {
-	
-	public DeletePhotoProcessTaskRequest() {
-		super("imm", "2017-09-06", "DeletePhotoProcessTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String taskId;
+	public DeletePhotoProcessTaskRequest() {
+		super("imm", "2017-09-06", "DeletePhotoProcessTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DetectLogoRequest extends RpcAcsRequest<DetectLogoResponse> {
-	
-	public DetectLogoRequest() {
-		super("imm", "2017-09-06", "DetectLogo", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String srcUris;
+	public DetectLogoRequest() {
+		super("imm", "2017-09-06", "DetectLogo", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

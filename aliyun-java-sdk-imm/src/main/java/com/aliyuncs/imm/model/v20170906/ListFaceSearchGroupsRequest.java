@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListFaceSearchGroupsRequest extends RpcAcsRequest<ListFaceSearchGroupsResponse> {
-	
-	public ListFaceSearchGroupsRequest() {
-		super("imm", "2017-09-06", "ListFaceSearchGroups", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer maxKeys;
 
 	private String project;
 
 	private String marker;
+	public ListFaceSearchGroupsRequest() {
+		super("imm", "2017-09-06", "ListFaceSearchGroups", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;

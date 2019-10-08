@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListImageJobsRequest extends RpcAcsRequest<ListImageJobsResponse> {
-	
-	public ListImageJobsRequest() {
-		super("imm", "2017-09-06", "ListImageJobs", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer maxKeys;
 
@@ -35,6 +31,10 @@ public class ListImageJobsRequest extends RpcAcsRequest<ListImageJobsResponse> {
 	private String jobType;
 
 	private String marker;
+	public ListImageJobsRequest() {
+		super("imm", "2017-09-06", "ListImageJobs", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;

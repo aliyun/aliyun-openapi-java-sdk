@@ -22,13 +22,13 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateFaceSetRequest extends RpcAcsRequest<CreateFaceSetResponse> {
-	
+	   
+
+	private String project;
 	public CreateFaceSetRequest() {
 		super("imm", "2017-09-06", "CreateFaceSet", "imm");
 		setMethod(MethodType.POST);
 	}
-
-	private String project;
 
 	public String getProject() {
 		return this.project;

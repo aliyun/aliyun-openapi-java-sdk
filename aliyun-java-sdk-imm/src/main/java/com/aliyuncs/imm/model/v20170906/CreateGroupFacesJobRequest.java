@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJobResponse> {
-	
-	public CreateGroupFacesJobRequest() {
-		super("imm", "2017-09-06", "CreateGroupFacesJob", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -35,6 +31,10 @@ public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJo
 	private String notifyTopicName;
 
 	private String setId;
+	public CreateGroupFacesJobRequest() {
+		super("imm", "2017-09-06", "CreateGroupFacesJob", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

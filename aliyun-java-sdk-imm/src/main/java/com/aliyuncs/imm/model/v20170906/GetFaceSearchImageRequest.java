@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetFaceSearchImageRequest extends RpcAcsRequest<GetFaceSearchImageResponse> {
-	
-	public GetFaceSearchImageRequest() {
-		super("imm", "2017-09-06", "GetFaceSearchImage", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String imageId;
 
@@ -37,6 +33,10 @@ public class GetFaceSearchImageRequest extends RpcAcsRequest<GetFaceSearchImageR
 	private String srcUri;
 
 	private String user;
+	public GetFaceSearchImageRequest() {
+		super("imm", "2017-09-06", "GetFaceSearchImage", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getImageId() {
 		return this.imageId;

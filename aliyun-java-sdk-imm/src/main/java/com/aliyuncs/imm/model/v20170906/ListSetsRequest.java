@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListSetsRequest extends RpcAcsRequest<ListSetsResponse> {
-	
-	public ListSetsRequest() {
-		super("imm", "2017-09-06", "ListSets", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String marker;
+	public ListSetsRequest() {
+		super("imm", "2017-09-06", "ListSets", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

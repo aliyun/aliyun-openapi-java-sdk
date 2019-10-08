@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListOfficeConversionTaskRequest extends RpcAcsRequest<ListOfficeConversionTaskResponse> {
-	
-	public ListOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "ListOfficeConversionTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer maxKeys;
 
 	private String project;
 
 	private String marker;
+	public ListOfficeConversionTaskRequest() {
+		super("imm", "2017-09-06", "ListOfficeConversionTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;

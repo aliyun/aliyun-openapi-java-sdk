@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
-	
-	public IndexVideoRequest() {
-		super("imm", "2017-09-06", "IndexVideo", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -45,6 +41,10 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 	private String setId;
 
 	private String tgtUri;
+	public IndexVideoRequest() {
+		super("imm", "2017-09-06", "IndexVideo", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

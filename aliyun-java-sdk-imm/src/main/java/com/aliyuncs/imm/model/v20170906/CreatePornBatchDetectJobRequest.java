@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreatePornBatchDetectJobRequest extends RpcAcsRequest<CreatePornBatchDetectJobResponse> {
-	
-	public CreatePornBatchDetectJobRequest() {
-		super("imm", "2017-09-06", "CreatePornBatchDetectJob", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -39,6 +35,10 @@ public class CreatePornBatchDetectJobRequest extends RpcAcsRequest<CreatePornBat
 	private String srcUri;
 
 	private String tgtUri;
+	public CreatePornBatchDetectJobRequest() {
+		super("imm", "2017-09-06", "CreatePornBatchDetectJob", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

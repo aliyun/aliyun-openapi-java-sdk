@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class EncodeBlindWatermarkRequest extends RpcAcsRequest<EncodeBlindWatermarkResponse> {
-	
-	public EncodeBlindWatermarkRequest() {
-		super("imm", "2017-09-06", "EncodeBlindWatermark", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String imageQuality;
 
@@ -41,6 +37,10 @@ public class EncodeBlindWatermarkRequest extends RpcAcsRequest<EncodeBlindWaterm
 	private String targetImageType;
 
 	private String imageUri;
+	public EncodeBlindWatermarkRequest() {
+		super("imm", "2017-09-06", "EncodeBlindWatermark", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getImageQuality() {
 		return this.imageQuality;

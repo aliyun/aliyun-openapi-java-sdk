@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse> {
-	
-	public SearchDocIndexRequest() {
-		super("imm", "2017-09-06", "SearchDocIndex", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer modifiedTimeEnd;
 
@@ -65,6 +61,10 @@ public class SearchDocIndexRequest extends RpcAcsRequest<SearchDocIndexResponse>
 	private String contentType;
 
 	private String name;
+	public SearchDocIndexRequest() {
+		super("imm", "2017-09-06", "SearchDocIndex", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getModifiedTimeEnd() {
 		return this.modifiedTimeEnd;

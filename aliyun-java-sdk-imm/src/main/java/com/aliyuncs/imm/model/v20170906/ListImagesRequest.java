@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
-	
-	public ListImagesRequest() {
-		super("imm", "2017-09-06", "ListImages", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -37,6 +33,10 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 	private String setId;
 
 	private String createTimeStart;
+	public ListImagesRequest() {
+		super("imm", "2017-09-06", "ListImages", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

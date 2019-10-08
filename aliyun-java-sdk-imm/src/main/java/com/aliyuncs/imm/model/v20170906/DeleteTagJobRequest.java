@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteTagJobRequest extends RpcAcsRequest<DeleteTagJobResponse> {
-	
-	public DeleteTagJobRequest() {
-		super("imm", "2017-09-06", "DeleteTagJob", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String jobId;
 
 	private String clearIndexData;
+	public DeleteTagJobRequest() {
+		super("imm", "2017-09-06", "DeleteTagJob", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

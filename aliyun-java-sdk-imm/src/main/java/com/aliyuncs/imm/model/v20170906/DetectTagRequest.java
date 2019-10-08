@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DetectTagRequest extends RpcAcsRequest<DetectTagResponse> {
-	
-	public DetectTagRequest() {
-		super("imm", "2017-09-06", "DetectTag", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String srcUris;
+	public DetectTagRequest() {
+		super("imm", "2017-09-06", "DetectTag", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

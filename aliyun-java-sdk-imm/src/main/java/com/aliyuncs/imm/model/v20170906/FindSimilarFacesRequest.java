@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesResponse> {
-	
-	public FindSimilarFacesRequest() {
-		super("imm", "2017-09-06", "FindSimilarFaces", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -41,6 +37,10 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 	private String imageUri;
 
 	private String setId;
+	public FindSimilarFacesRequest() {
+		super("imm", "2017-09-06", "FindSimilarFaces", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

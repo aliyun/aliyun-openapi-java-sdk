@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetFaceSearchUserRequest extends RpcAcsRequest<GetFaceSearchUserResponse> {
-	
-	public GetFaceSearchUserRequest() {
-		super("imm", "2017-09-06", "GetFaceSearchUser", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String groupName;
 
 	private String user;
+	public GetFaceSearchUserRequest() {
+		super("imm", "2017-09-06", "GetFaceSearchUser", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

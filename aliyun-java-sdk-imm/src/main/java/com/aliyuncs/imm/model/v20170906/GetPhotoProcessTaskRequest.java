@@ -22,15 +22,15 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class GetPhotoProcessTaskRequest extends RpcAcsRequest<GetPhotoProcessTaskResponse> {
-	
-	public GetPhotoProcessTaskRequest() {
-		super("imm", "2017-09-06", "GetPhotoProcessTask", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String taskId;
+	public GetPhotoProcessTaskRequest() {
+		super("imm", "2017-09-06", "GetPhotoProcessTask", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

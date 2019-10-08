@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListTagSetsRequest extends RpcAcsRequest<ListTagSetsResponse> {
-	
-	public ListTagSetsRequest() {
-		super("imm", "2017-09-06", "ListTagSets", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer maxKeys;
 
 	private String project;
 
 	private String marker;
+	public ListTagSetsRequest() {
+		super("imm", "2017-09-06", "ListTagSets", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;

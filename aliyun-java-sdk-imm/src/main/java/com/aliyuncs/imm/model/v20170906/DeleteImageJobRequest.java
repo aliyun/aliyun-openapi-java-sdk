@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteImageJobRequest extends RpcAcsRequest<DeleteImageJobResponse> {
-	
-	public DeleteImageJobRequest() {
-		super("imm", "2017-09-06", "DeleteImageJob", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String jobId;
 
 	private String jobType;
+	public DeleteImageJobRequest() {
+		super("imm", "2017-09-06", "DeleteImageJob", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

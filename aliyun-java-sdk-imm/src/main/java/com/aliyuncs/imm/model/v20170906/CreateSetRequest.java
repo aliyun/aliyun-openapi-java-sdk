@@ -22,17 +22,17 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateSetRequest extends RpcAcsRequest<CreateSetResponse> {
-	
-	public CreateSetRequest() {
-		super("imm", "2017-09-06", "CreateSet", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
 	private String setName;
 
 	private String setId;
+	public CreateSetRequest() {
+		super("imm", "2017-09-06", "CreateSet", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

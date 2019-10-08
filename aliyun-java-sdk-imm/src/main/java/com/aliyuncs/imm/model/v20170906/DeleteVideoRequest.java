@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
-	
-	public DeleteVideoRequest() {
-		super("imm", "2017-09-06", "DeleteVideo", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -35,6 +31,10 @@ public class DeleteVideoRequest extends RpcAcsRequest<DeleteVideoResponse> {
 	private String videoUri;
 
 	private String setId;
+	public DeleteVideoRequest() {
+		super("imm", "2017-09-06", "DeleteVideo", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

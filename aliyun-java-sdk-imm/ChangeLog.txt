@@ -1,3 +1,6 @@
+2019-10-08 Version: 1.15.0
+- Supported Grab Frame IMM.
+
 2019-09-19 Version: 1.14.8
 - Supported Video Abstract for IMM.
 

@@ -21,20 +21,22 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnalyseTaskResponse> {
+public class CreateGrabFrameTaskRequest extends RpcAcsRequest<CreateGrabFrameTaskResponse> {
 	   
 
 	private String project;
 
 	private String notifyEndpoint;
 
+	private String customMessage;
+
 	private String notifyTopicName;
 
-	private String videoUri;
+	private String targetList;
 
-	private String tgtUri;
-	public CreateVideoAnalyseTaskRequest() {
-		super("imm", "2017-09-06", "CreateVideoAnalyseTask", "imm");
+	private String videoUri;
+	public CreateGrabFrameTaskRequest() {
+		super("imm", "2017-09-06", "CreateGrabFrameTask", "imm");
 		setMethod(MethodType.POST);
 	}
 
@@ -60,6 +62,17 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 		}
 	}
 
+	public String getCustomMessage() {
+		return this.customMessage;
+	}
+
+	public void setCustomMessage(String customMessage) {
+		this.customMessage = customMessage;
+		if(customMessage != null){
+			putQueryParameter("CustomMessage", customMessage);
+		}
+	}
+
 	public String getNotifyTopicName() {
 		return this.notifyTopicName;
 	}
@@ -68,6 +81,17 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 		this.notifyTopicName = notifyTopicName;
 		if(notifyTopicName != null){
 			putQueryParameter("NotifyTopicName", notifyTopicName);
+		}
+	}
+
+	public String getTargetList() {
+		return this.targetList;
+	}
+
+	public void setTargetList(String targetList) {
+		this.targetList = targetList;
+		if(targetList != null){
+			putQueryParameter("TargetList", targetList);
 		}
 	}
 
@@ -82,20 +106,9 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 		}
 	}
 
-	public String getTgtUri() {
-		return this.tgtUri;
-	}
-
-	public void setTgtUri(String tgtUri) {
-		this.tgtUri = tgtUri;
-		if(tgtUri != null){
-			putQueryParameter("TgtUri", tgtUri);
-		}
-	}
-
 	@Override
-	public Class<CreateVideoAnalyseTaskResponse> getResponseClass() {
-		return CreateVideoAnalyseTaskResponse.class;
+	public Class<CreateGrabFrameTaskResponse> getResponseClass() {
+		return CreateGrabFrameTaskResponse.class;
 	}
 
 }

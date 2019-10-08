@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListVideoFramesRequest extends RpcAcsRequest<ListVideoFramesResponse> {
-	
-	public ListVideoFramesRequest() {
-		super("imm", "2017-09-06", "ListVideoFrames", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -35,6 +31,10 @@ public class ListVideoFramesRequest extends RpcAcsRequest<ListVideoFramesRespons
 	private String marker;
 
 	private String setId;
+	public ListVideoFramesRequest() {
+		super("imm", "2017-09-06", "ListVideoFrames", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

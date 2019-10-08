@@ -22,13 +22,13 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class CreateTagSetRequest extends RpcAcsRequest<CreateTagSetResponse> {
-	
+	   
+
+	private String project;
 	public CreateTagSetRequest() {
 		super("imm", "2017-09-06", "CreateTagSet", "imm");
 		setMethod(MethodType.POST);
 	}
-
-	private String project;
 
 	public String getProject() {
 		return this.project;

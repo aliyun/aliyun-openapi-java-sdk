@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteTagSetRequest extends RpcAcsRequest<DeleteTagSetResponse> {
-	
-	public DeleteTagSetRequest() {
-		super("imm", "2017-09-06", "DeleteTagSet", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String project;
 
@@ -35,6 +31,10 @@ public class DeleteTagSetRequest extends RpcAcsRequest<DeleteTagSetResponse> {
 	private String checkEmpty;
 
 	private String setId;
+	public DeleteTagSetRequest() {
+		super("imm", "2017-09-06", "DeleteTagSet", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public String getProject() {
 		return this.project;

@@ -22,11 +22,7 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListVideoTasksRequest extends RpcAcsRequest<ListVideoTasksResponse> {
-	
-	public ListVideoTasksRequest() {
-		super("imm", "2017-09-06", "ListVideoTasks", "imm");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private Integer maxKeys;
 
@@ -35,6 +31,10 @@ public class ListVideoTasksRequest extends RpcAcsRequest<ListVideoTasksResponse>
 	private String taskType;
 
 	private String marker;
+	public ListVideoTasksRequest() {
+		super("imm", "2017-09-06", "ListVideoTasks", "imm");
+		setMethod(MethodType.POST);
+	}
 
 	public Integer getMaxKeys() {
 		return this.maxKeys;
