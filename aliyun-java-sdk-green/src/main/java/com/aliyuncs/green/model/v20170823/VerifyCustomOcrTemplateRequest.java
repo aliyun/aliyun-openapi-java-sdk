@@ -15,20 +15,27 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class VerifyCustomOcrTemplateRequest extends RpcAcsRequest<VerifyCustomOcrTemplateResponse> {
-	
-	public VerifyCustomOcrTemplateRequest() {
-		super("Green", "2017-08-23", "VerifyCustomOcrTemplate", "green");
-	}
+	   
 
 	private String testImgUrl;
 
 	private Long id;
+	public VerifyCustomOcrTemplateRequest() {
+		super("Green", "2017-08-23", "VerifyCustomOcrTemplate", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTestImgUrl() {
 		return this.testImgUrl;

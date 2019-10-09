@@ -15,28 +15,35 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateNotificationSettingRequest extends RpcAcsRequest<UpdateNotificationSettingResponse> {
-	
-	public UpdateNotificationSettingRequest() {
-		super("Green", "2017-08-23", "UpdateNotificationSetting", "green");
-	}
+	   
 
 	private String realtimeMessageList;
+
+	private Integer scheduleMessageTime;
 
 	private String sourceIp;
 
 	private String reminderModeList;
 
-	private Integer scheduleMessageTime;
-
 	private String lang;
 
 	private Integer scheduleMessageTimeZone;
+	public UpdateNotificationSettingRequest() {
+		super("Green", "2017-08-23", "UpdateNotificationSetting", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getRealtimeMessageList() {
 		return this.realtimeMessageList;
@@ -46,6 +53,17 @@ public class UpdateNotificationSettingRequest extends RpcAcsRequest<UpdateNotifi
 		this.realtimeMessageList = realtimeMessageList;
 		if(realtimeMessageList != null){
 			putQueryParameter("RealtimeMessageList", realtimeMessageList);
+		}
+	}
+
+	public Integer getScheduleMessageTime() {
+		return this.scheduleMessageTime;
+	}
+
+	public void setScheduleMessageTime(Integer scheduleMessageTime) {
+		this.scheduleMessageTime = scheduleMessageTime;
+		if(scheduleMessageTime != null){
+			putQueryParameter("ScheduleMessageTime", scheduleMessageTime.toString());
 		}
 	}
 
@@ -68,17 +86,6 @@ public class UpdateNotificationSettingRequest extends RpcAcsRequest<UpdateNotifi
 		this.reminderModeList = reminderModeList;
 		if(reminderModeList != null){
 			putQueryParameter("ReminderModeList", reminderModeList);
-		}
-	}
-
-	public Integer getScheduleMessageTime() {
-		return this.scheduleMessageTime;
-	}
-
-	public void setScheduleMessageTime(Integer scheduleMessageTime) {
-		this.scheduleMessageTime = scheduleMessageTime;
-		if(scheduleMessageTime != null){
-			putQueryParameter("ScheduleMessageTime", scheduleMessageTime.toString());
 		}
 	}
 

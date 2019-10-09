@@ -15,30 +15,48 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateKeywordLibRequest extends RpcAcsRequest<UpdateKeywordLibResponse> {
-	
-	public UpdateKeywordLibRequest() {
-		super("Green", "2017-08-23", "UpdateKeywordLib", "green");
-	}
+	   
+
+	private String matchMode;
 
 	private String sourceIp;
 
 	private Boolean enable;
 
-	private String name;
-
-	private String bizTypes;
-
 	private Integer id;
 
 	private String lang;
 
-	private String matchMode;
+	private String bizTypes;
+
+	private String name;
+	public UpdateKeywordLibRequest() {
+		super("Green", "2017-08-23", "UpdateKeywordLib", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getMatchMode() {
+		return this.matchMode;
+	}
+
+	public void setMatchMode(String matchMode) {
+		this.matchMode = matchMode;
+		if(matchMode != null){
+			putQueryParameter("MatchMode", matchMode);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -59,28 +77,6 @@ public class UpdateKeywordLibRequest extends RpcAcsRequest<UpdateKeywordLibRespo
 		this.enable = enable;
 		if(enable != null){
 			putQueryParameter("Enable", enable.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getBizTypes() {
-		return this.bizTypes;
-	}
-
-	public void setBizTypes(String bizTypes) {
-		this.bizTypes = bizTypes;
-		if(bizTypes != null){
-			putQueryParameter("BizTypes", bizTypes);
 		}
 	}
 
@@ -106,14 +102,25 @@ public class UpdateKeywordLibRequest extends RpcAcsRequest<UpdateKeywordLibRespo
 		}
 	}
 
-	public String getMatchMode() {
-		return this.matchMode;
+	public String getBizTypes() {
+		return this.bizTypes;
 	}
 
-	public void setMatchMode(String matchMode) {
-		this.matchMode = matchMode;
-		if(matchMode != null){
-			putQueryParameter("MatchMode", matchMode);
+	public void setBizTypes(String bizTypes) {
+		this.bizTypes = bizTypes;
+		if(bizTypes != null){
+			putQueryParameter("BizTypes", bizTypes);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

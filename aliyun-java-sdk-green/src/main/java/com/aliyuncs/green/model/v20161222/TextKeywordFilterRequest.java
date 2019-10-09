@@ -16,17 +16,22 @@ package com.aliyuncs.green.model.v20161222;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class TextKeywordFilterRequest extends RoaAcsRequest<TextKeywordFilterResponse> {
-	
+	   
 	public TextKeywordFilterRequest() {
 		super("Green", "2016-12-22", "TextKeywordFilter", "green");
 		setUriPattern("/text/keyword_filter");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	@Override

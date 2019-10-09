@@ -15,30 +15,48 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class MarkOssResultRequest extends RpcAcsRequest<MarkOssResultResponse> {
-	
-	public MarkOssResultRequest() {
-		super("Green", "2017-08-23", "MarkOssResult", "green");
-	}
+	   
+
+	private String scene;
 
 	private String sourceIp;
-
-	private String ids;
 
 	private String lang;
 
 	private Boolean stock;
 
-	private String operation;
-
 	private String resourceType;
 
-	private String scene;
+	private String ids;
+
+	private String operation;
+	public MarkOssResultRequest() {
+		super("Green", "2017-08-23", "MarkOssResult", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getScene() {
+		return this.scene;
+	}
+
+	public void setScene(String scene) {
+		this.scene = scene;
+		if(scene != null){
+			putQueryParameter("Scene", scene);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -48,17 +66,6 @@ public class MarkOssResultRequest extends RpcAcsRequest<MarkOssResultResponse> {
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getIds() {
-		return this.ids;
-	}
-
-	public void setIds(String ids) {
-		this.ids = ids;
-		if(ids != null){
-			putQueryParameter("Ids", ids);
 		}
 	}
 
@@ -84,17 +91,6 @@ public class MarkOssResultRequest extends RpcAcsRequest<MarkOssResultResponse> {
 		}
 	}
 
-	public String getOperation() {
-		return this.operation;
-	}
-
-	public void setOperation(String operation) {
-		this.operation = operation;
-		if(operation != null){
-			putQueryParameter("Operation", operation);
-		}
-	}
-
 	public String getResourceType() {
 		return this.resourceType;
 	}
@@ -106,14 +102,25 @@ public class MarkOssResultRequest extends RpcAcsRequest<MarkOssResultResponse> {
 		}
 	}
 
-	public String getScene() {
-		return this.scene;
+	public String getIds() {
+		return this.ids;
 	}
 
-	public void setScene(String scene) {
-		this.scene = scene;
-		if(scene != null){
-			putQueryParameter("Scene", scene);
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
+		}
+	}
+
+	public String getOperation() {
+		return this.operation;
+	}
+
+	public void setOperation(String operation) {
+		this.operation = operation;
+		if(operation != null){
+			putQueryParameter("Operation", operation);
 		}
 	}
 

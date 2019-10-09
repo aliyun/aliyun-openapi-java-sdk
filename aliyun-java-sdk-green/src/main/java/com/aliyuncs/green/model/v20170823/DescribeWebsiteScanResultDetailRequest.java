@@ -15,24 +15,42 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeWebsiteScanResultDetailRequest extends RpcAcsRequest<DescribeWebsiteScanResultDetailResponse> {
-	
-	public DescribeWebsiteScanResultDetailRequest() {
-		super("Green", "2017-08-23", "DescribeWebsiteScanResultDetail", "green");
-	}
+	   
+
+	private String resourceType;
 
 	private String sourceIp;
 
 	private Integer id;
 
 	private String lang;
+	public DescribeWebsiteScanResultDetailRequest() {
+		super("Green", "2017-08-23", "DescribeWebsiteScanResultDetail", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String resourceType;
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -64,17 +82,6 @@ public class DescribeWebsiteScanResultDetailRequest extends RpcAcsRequest<Descri
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

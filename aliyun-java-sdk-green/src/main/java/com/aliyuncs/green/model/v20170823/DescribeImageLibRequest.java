@@ -15,30 +15,26 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeImageLibRequest extends RpcAcsRequest<DescribeImageLibResponse> {
-	
-	public DescribeImageLibRequest() {
-		super("Green", "2017-08-23", "DescribeImageLib", "green");
-	}
-
-	private String sourceIp;
+	   
 
 	private String serviceModule;
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
+	private String sourceIp;
+	public DescribeImageLibRequest() {
+		super("Green", "2017-08-23", "DescribeImageLib", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getServiceModule() {
@@ -49,6 +45,17 @@ public class DescribeImageLibRequest extends RpcAcsRequest<DescribeImageLibRespo
 		this.serviceModule = serviceModule;
 		if(serviceModule != null){
 			putQueryParameter("ServiceModule", serviceModule);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

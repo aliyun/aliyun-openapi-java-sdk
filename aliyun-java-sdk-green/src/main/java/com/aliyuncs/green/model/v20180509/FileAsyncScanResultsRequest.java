@@ -23,18 +23,18 @@ import com.aliyuncs.green.Endpoint;
  * @version 
  */
 public class FileAsyncScanResultsRequest extends RoaAcsRequest<FileAsyncScanResultsResponse> {
-	
+	   
+
+	private String clientInfo;
 	public FileAsyncScanResultsRequest() {
 		super("Green", "2018-05-09", "FileAsyncScanResults", "green");
 		setUriPattern("/green/file/results");
 		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clientInfo;
 
 	public String getClientInfo() {
 		return this.clientInfo;

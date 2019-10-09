@@ -15,18 +15,19 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeWebsiteInstanceRequest extends RpcAcsRequest<DescribeWebsiteInstanceResponse> {
-	
-	public DescribeWebsiteInstanceRequest() {
-		super("Green", "2017-08-23", "DescribeWebsiteInstance", "green");
-	}
+	   
 
 	private Integer totalCount;
+
+	private Integer currentPage;
 
 	private String instanceId;
 
@@ -34,9 +35,15 @@ public class DescribeWebsiteInstanceRequest extends RpcAcsRequest<DescribeWebsit
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private String lang;
+	public DescribeWebsiteInstanceRequest() {
+		super("Green", "2017-08-23", "DescribeWebsiteInstance", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -46,6 +53,17 @@ public class DescribeWebsiteInstanceRequest extends RpcAcsRequest<DescribeWebsit
 		this.totalCount = totalCount;
 		if(totalCount != null){
 			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -79,17 +97,6 @@ public class DescribeWebsiteInstanceRequest extends RpcAcsRequest<DescribeWebsit
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

@@ -15,16 +15,15 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateWebsiteInstanceStatusRequest extends RpcAcsRequest<UpdateWebsiteInstanceStatusResponse> {
-	
-	public UpdateWebsiteInstanceStatusRequest() {
-		super("Green", "2017-08-23", "UpdateWebsiteInstanceStatus", "green");
-	}
+	   
 
 	private String instanceId;
 
@@ -33,6 +32,14 @@ public class UpdateWebsiteInstanceStatusRequest extends RpcAcsRequest<UpdateWebs
 	private String lang;
 
 	private String status;
+	public UpdateWebsiteInstanceStatusRequest() {
+		super("Green", "2017-08-23", "UpdateWebsiteInstanceStatus", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

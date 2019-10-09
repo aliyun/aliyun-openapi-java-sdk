@@ -16,17 +16,22 @@ package com.aliyuncs.green.model.v20161222;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ImageResultsRequest extends RoaAcsRequest<ImageResultsResponse> {
-	
+	   
 	public ImageResultsRequest() {
 		super("Green", "2016-12-22", "ImageResults", "green");
 		setUriPattern("/image/results");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	@Override

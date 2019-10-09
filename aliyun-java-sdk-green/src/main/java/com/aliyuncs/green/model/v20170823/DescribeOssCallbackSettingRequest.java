@@ -15,15 +15,22 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeOssCallbackSettingRequest extends RpcAcsRequest<DescribeOssCallbackSettingResponse> {
-	
+	   
 	public DescribeOssCallbackSettingRequest() {
 		super("Green", "2017-08-23", "DescribeOssCallbackSetting", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	@Override

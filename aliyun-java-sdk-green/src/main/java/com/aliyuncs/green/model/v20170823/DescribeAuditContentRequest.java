@@ -15,42 +15,23 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditContentResponse> {
-	
-	public DescribeAuditContentRequest() {
-		super("Green", "2017-08-23", "DescribeAuditContent", "green");
-	}
-
-	private Integer totalCount;
-
-	private String keywordId;
+	   
 
 	private String imageId;
 
-	private String suggestion;
-
-	private Integer currentPage;
-
-	private String label;
-
 	private String startDate;
-
-	private String resourceType;
 
 	private String scene;
 
-	private String bizType;
-
-	private String endDate;
-
 	private String sourceIp;
-
-	private String dataId;
 
 	private String libType;
 
@@ -62,26 +43,30 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 
 	private String taskId;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
+	private Integer totalCount;
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-		if(totalCount != null){
-			putQueryParameter("TotalCount", totalCount.toString());
-		}
-	}
+	private String keywordId;
 
-	public String getKeywordId() {
-		return this.keywordId;
-	}
+	private String suggestion;
 
-	public void setKeywordId(String keywordId) {
-		this.keywordId = keywordId;
-		if(keywordId != null){
-			putQueryParameter("KeywordId", keywordId);
-		}
+	private Integer currentPage;
+
+	private String label;
+
+	private String resourceType;
+
+	private String bizType;
+
+	private String endDate;
+
+	private String dataId;
+	public DescribeAuditContentRequest() {
+		super("Green", "2017-08-23", "DescribeAuditContent", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getImageId() {
@@ -92,39 +77,6 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getSuggestion() {
-		return this.suggestion;
-	}
-
-	public void setSuggestion(String suggestion) {
-		this.suggestion = suggestion;
-		if(suggestion != null){
-			putQueryParameter("Suggestion", suggestion);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getLabel() {
-		return this.label;
-	}
-
-	public void setLabel(String label) {
-		this.label = label;
-		if(label != null){
-			putQueryParameter("Label", label);
 		}
 	}
 
@@ -139,17 +91,6 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
 	public String getScene() {
 		return this.scene;
 	}
@@ -161,28 +102,6 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 		}
 	}
 
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
-	}
-
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
-		}
-	}
-
 	public String getSourceIp() {
 		return this.sourceIp;
 	}
@@ -191,17 +110,6 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getDataId() {
-		return this.dataId;
-	}
-
-	public void setDataId(String dataId) {
-		this.dataId = dataId;
-		if(dataId != null){
-			putQueryParameter("DataId", dataId);
 		}
 	}
 
@@ -257,6 +165,105 @@ public class DescribeAuditContentRequest extends RpcAcsRequest<DescribeAuditCont
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+		if(totalCount != null){
+			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public String getKeywordId() {
+		return this.keywordId;
+	}
+
+	public void setKeywordId(String keywordId) {
+		this.keywordId = keywordId;
+		if(keywordId != null){
+			putQueryParameter("KeywordId", keywordId);
+		}
+	}
+
+	public String getSuggestion() {
+		return this.suggestion;
+	}
+
+	public void setSuggestion(String suggestion) {
+		this.suggestion = suggestion;
+		if(suggestion != null){
+			putQueryParameter("Suggestion", suggestion);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+		if(label != null){
+			putQueryParameter("Label", label);
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
+		}
+	}
+
+	public String getDataId() {
+		return this.dataId;
+	}
+
+	public void setDataId(String dataId) {
+		this.dataId = dataId;
+		if(dataId != null){
+			putQueryParameter("DataId", dataId);
 		}
 	}
 

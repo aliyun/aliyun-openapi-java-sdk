@@ -15,26 +15,31 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateOssStockStatusRequest extends RpcAcsRequest<UpdateOssStockStatusResponse> {
-	
-	public UpdateOssStockStatusRequest() {
-		super("Green", "2017-08-23", "UpdateOssStockStatus", "green");
-	}
-
-	private String imageAutoFreeze;
+	   
 
 	private String resourceTypeList;
 
 	private Integer videoFrameInterval;
 
-	private Integer videoMaxSize;
-
 	private String startDate;
+
+	private String sourceIp;
+
+	private String videoAutoFreezeSceneList;
+
+	private String lang;
+
+	private String imageAutoFreeze;
+
+	private Integer videoMaxSize;
 
 	private String autoFreezeType;
 
@@ -42,27 +47,18 @@ public class UpdateOssStockStatusRequest extends RpcAcsRequest<UpdateOssStockSta
 
 	private String bucketConfigList;
 
-	private String sourceIp;
-
 	private String sceneList;
-
-	private String videoAutoFreezeSceneList;
-
-	private String lang;
 
 	private Integer videoMaxFrames;
 
 	private String operation;
-
-	public String getImageAutoFreeze() {
-		return this.imageAutoFreeze;
-	}
-
-	public void setImageAutoFreeze(String imageAutoFreeze) {
-		this.imageAutoFreeze = imageAutoFreeze;
-		if(imageAutoFreeze != null){
-			putQueryParameter("ImageAutoFreeze", imageAutoFreeze);
-		}
+	public UpdateOssStockStatusRequest() {
+		super("Green", "2017-08-23", "UpdateOssStockStatus", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getResourceTypeList() {
@@ -87,17 +83,6 @@ public class UpdateOssStockStatusRequest extends RpcAcsRequest<UpdateOssStockSta
 		}
 	}
 
-	public Integer getVideoMaxSize() {
-		return this.videoMaxSize;
-	}
-
-	public void setVideoMaxSize(Integer videoMaxSize) {
-		this.videoMaxSize = videoMaxSize;
-		if(videoMaxSize != null){
-			putQueryParameter("VideoMaxSize", videoMaxSize.toString());
-		}
-	}
-
 	public String getStartDate() {
 		return this.startDate;
 	}
@@ -106,6 +91,61 @@ public class UpdateOssStockStatusRequest extends RpcAcsRequest<UpdateOssStockSta
 		this.startDate = startDate;
 		if(startDate != null){
 			putQueryParameter("StartDate", startDate);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getVideoAutoFreezeSceneList() {
+		return this.videoAutoFreezeSceneList;
+	}
+
+	public void setVideoAutoFreezeSceneList(String videoAutoFreezeSceneList) {
+		this.videoAutoFreezeSceneList = videoAutoFreezeSceneList;
+		if(videoAutoFreezeSceneList != null){
+			putQueryParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getImageAutoFreeze() {
+		return this.imageAutoFreeze;
+	}
+
+	public void setImageAutoFreeze(String imageAutoFreeze) {
+		this.imageAutoFreeze = imageAutoFreeze;
+		if(imageAutoFreeze != null){
+			putQueryParameter("ImageAutoFreeze", imageAutoFreeze);
+		}
+	}
+
+	public Integer getVideoMaxSize() {
+		return this.videoMaxSize;
+	}
+
+	public void setVideoMaxSize(Integer videoMaxSize) {
+		this.videoMaxSize = videoMaxSize;
+		if(videoMaxSize != null){
+			putQueryParameter("VideoMaxSize", videoMaxSize.toString());
 		}
 	}
 
@@ -142,17 +182,6 @@ public class UpdateOssStockStatusRequest extends RpcAcsRequest<UpdateOssStockSta
 		}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
 	public String getSceneList() {
 		return this.sceneList;
 	}
@@ -161,28 +190,6 @@ public class UpdateOssStockStatusRequest extends RpcAcsRequest<UpdateOssStockSta
 		this.sceneList = sceneList;
 		if(sceneList != null){
 			putQueryParameter("SceneList", sceneList);
-		}
-	}
-
-	public String getVideoAutoFreezeSceneList() {
-		return this.videoAutoFreezeSceneList;
-	}
-
-	public void setVideoAutoFreezeSceneList(String videoAutoFreezeSceneList) {
-		this.videoAutoFreezeSceneList = videoAutoFreezeSceneList;
-		if(videoAutoFreezeSceneList != null){
-			putQueryParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

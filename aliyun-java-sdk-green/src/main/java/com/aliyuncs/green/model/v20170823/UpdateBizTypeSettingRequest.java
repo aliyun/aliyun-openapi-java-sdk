@@ -15,45 +15,30 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateBizTypeSettingRequest extends RpcAcsRequest<UpdateBizTypeSettingResponse> {
-	
-	public UpdateBizTypeSettingRequest() {
-		super("Green", "2017-08-23", "UpdateBizTypeSetting", "green");
-	}
-
-	private String terrorism;
-
-	private String bizTypeName;
+	   
 
 	private String resourceType;
 
 	private String porn;
 
-	public String getTerrorism() {
-		return this.terrorism;
-	}
+	private String terrorism;
 
-	public void setTerrorism(String terrorism) {
-		this.terrorism = terrorism;
-		if(terrorism != null){
-			putQueryParameter("Terrorism", terrorism);
-		}
-	}
-
-	public String getBizTypeName() {
-		return this.bizTypeName;
-	}
-
-	public void setBizTypeName(String bizTypeName) {
-		this.bizTypeName = bizTypeName;
-		if(bizTypeName != null){
-			putQueryParameter("BizTypeName", bizTypeName);
-		}
+	private String bizTypeName;
+	public UpdateBizTypeSettingRequest() {
+		super("Green", "2017-08-23", "UpdateBizTypeSetting", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getResourceType() {
@@ -75,6 +60,28 @@ public class UpdateBizTypeSettingRequest extends RpcAcsRequest<UpdateBizTypeSett
 		this.porn = porn;
 		if(porn != null){
 			putQueryParameter("Porn", porn);
+		}
+	}
+
+	public String getTerrorism() {
+		return this.terrorism;
+	}
+
+	public void setTerrorism(String terrorism) {
+		this.terrorism = terrorism;
+		if(terrorism != null){
+			putQueryParameter("Terrorism", terrorism);
+		}
+	}
+
+	public String getBizTypeName() {
+		return this.bizTypeName;
+	}
+
+	public void setBizTypeName(String bizTypeName) {
+		this.bizTypeName = bizTypeName;
+		if(bizTypeName != null){
+			putQueryParameter("BizTypeName", bizTypeName);
 		}
 	}
 

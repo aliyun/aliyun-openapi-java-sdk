@@ -15,30 +15,48 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateImageLibRequest extends RpcAcsRequest<UpdateImageLibResponse> {
-	
-	public UpdateImageLibRequest() {
-		super("Green", "2017-08-23", "UpdateImageLib", "green");
-	}
+	   
+
+	private String scene;
 
 	private String sourceIp;
 
 	private Boolean enable;
 
-	private String name;
+	private Integer id;
 
 	private String bizTypes;
 
-	private Integer id;
+	private String name;
 
 	private String category;
+	public UpdateImageLibRequest() {
+		super("Green", "2017-08-23", "UpdateImageLib", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String scene;
+	public String getScene() {
+		return this.scene;
+	}
+
+	public void setScene(String scene) {
+		this.scene = scene;
+		if(scene != null){
+			putQueryParameter("Scene", scene);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -62,14 +80,14 @@ public class UpdateImageLibRequest extends RpcAcsRequest<UpdateImageLibResponse>
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public Integer getId() {
+		return this.id;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setId(Integer id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id.toString());
 		}
 	}
 
@@ -84,14 +102,14 @@ public class UpdateImageLibRequest extends RpcAcsRequest<UpdateImageLibResponse>
 		}
 	}
 
-	public Integer getId() {
-		return this.id;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id.toString());
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
@@ -103,17 +121,6 @@ public class UpdateImageLibRequest extends RpcAcsRequest<UpdateImageLibResponse>
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category);
-		}
-	}
-
-	public String getScene() {
-		return this.scene;
-	}
-
-	public void setScene(String scene) {
-		this.scene = scene;
-		if(scene != null){
-			putQueryParameter("Scene", scene);
 		}
 	}
 

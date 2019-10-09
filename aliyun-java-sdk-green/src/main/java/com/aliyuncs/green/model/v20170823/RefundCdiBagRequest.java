@@ -15,20 +15,27 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RefundCdiBagRequest extends RpcAcsRequest<RefundCdiBagResponse> {
-	
-	public RefundCdiBagRequest() {
-		super("Green", "2017-08-23", "RefundCdiBag", "green");
-	}
+	   
 
 	private String resourceOwnerId;
 
 	private String instanceId;
+	public RefundCdiBagRequest() {
+		super("Green", "2017-08-23", "RefundCdiBag", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResourceOwnerId() {
 		return this.resourceOwnerId;

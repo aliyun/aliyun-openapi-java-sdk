@@ -15,34 +15,30 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateKeywordRequest extends RpcAcsRequest<CreateKeywordResponse> {
-	
-	public CreateKeywordRequest() {
-		super("Green", "2017-08-23", "CreateKeyword", "green");
-	}
-
-	private String sourceIp;
+	   
 
 	private String keywords;
 
 	private Integer keywordLibId;
 
+	private String sourceIp;
+
 	private String lang;
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
+	public CreateKeywordRequest() {
+		super("Green", "2017-08-23", "CreateKeyword", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getKeywords() {
@@ -64,6 +60,17 @@ public class CreateKeywordRequest extends RpcAcsRequest<CreateKeywordResponse> {
 		this.keywordLibId = keywordLibId;
 		if(keywordLibId != null){
 			putQueryParameter("KeywordLibId", keywordLibId.toString());
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

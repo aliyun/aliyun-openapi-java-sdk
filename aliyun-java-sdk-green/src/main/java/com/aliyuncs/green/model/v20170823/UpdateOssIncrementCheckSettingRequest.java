@@ -15,26 +15,21 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateOssIncrementCheckSettingResponse> {
-	
-	public UpdateOssIncrementCheckSettingRequest() {
-		super("Green", "2017-08-23", "UpdateOssIncrementCheckSetting", "green");
-	}
-
-	private String imageAutoFreeze;
+	   
 
 	private String videoSceneList;
 
-	private String autoFreezeType;
-
 	private String imageSceneList;
 
-	private String bucketConfigList;
+	private Integer videoFrameInterval;
 
 	private String sourceIp;
 
@@ -42,23 +37,24 @@ public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateO
 
 	private String videoAutoFreezeSceneList;
 
-	private Integer videoFrameInterval;
+	private String lang;
+
+	private String imageAutoFreeze;
 
 	private Integer videoMaxSize;
 
-	private String lang;
+	private String autoFreezeType;
+
+	private String bucketConfigList;
 
 	private Integer videoMaxFrames;
-
-	public String getImageAutoFreeze() {
-		return this.imageAutoFreeze;
-	}
-
-	public void setImageAutoFreeze(String imageAutoFreeze) {
-		this.imageAutoFreeze = imageAutoFreeze;
-		if(imageAutoFreeze != null){
-			putQueryParameter("ImageAutoFreeze", imageAutoFreeze);
-		}
+	public UpdateOssIncrementCheckSettingRequest() {
+		super("Green", "2017-08-23", "UpdateOssIncrementCheckSetting", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getVideoSceneList() {
@@ -69,17 +65,6 @@ public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateO
 		this.videoSceneList = videoSceneList;
 		if(videoSceneList != null){
 			putQueryParameter("VideoSceneList", videoSceneList);
-		}
-	}
-
-	public String getAutoFreezeType() {
-		return this.autoFreezeType;
-	}
-
-	public void setAutoFreezeType(String autoFreezeType) {
-		this.autoFreezeType = autoFreezeType;
-		if(autoFreezeType != null){
-			putQueryParameter("AutoFreezeType", autoFreezeType);
 		}
 	}
 
@@ -94,14 +79,14 @@ public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateO
 		}
 	}
 
-	public String getBucketConfigList() {
-		return this.bucketConfigList;
+	public Integer getVideoFrameInterval() {
+		return this.videoFrameInterval;
 	}
 
-	public void setBucketConfigList(String bucketConfigList) {
-		this.bucketConfigList = bucketConfigList;
-		if(bucketConfigList != null){
-			putQueryParameter("BucketConfigList", bucketConfigList);
+	public void setVideoFrameInterval(Integer videoFrameInterval) {
+		this.videoFrameInterval = videoFrameInterval;
+		if(videoFrameInterval != null){
+			putQueryParameter("VideoFrameInterval", videoFrameInterval.toString());
 		}
 	}
 
@@ -138,14 +123,25 @@ public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateO
 		}
 	}
 
-	public Integer getVideoFrameInterval() {
-		return this.videoFrameInterval;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setVideoFrameInterval(Integer videoFrameInterval) {
-		this.videoFrameInterval = videoFrameInterval;
-		if(videoFrameInterval != null){
-			putQueryParameter("VideoFrameInterval", videoFrameInterval.toString());
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getImageAutoFreeze() {
+		return this.imageAutoFreeze;
+	}
+
+	public void setImageAutoFreeze(String imageAutoFreeze) {
+		this.imageAutoFreeze = imageAutoFreeze;
+		if(imageAutoFreeze != null){
+			putQueryParameter("ImageAutoFreeze", imageAutoFreeze);
 		}
 	}
 
@@ -160,14 +156,25 @@ public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateO
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getAutoFreezeType() {
+		return this.autoFreezeType;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setAutoFreezeType(String autoFreezeType) {
+		this.autoFreezeType = autoFreezeType;
+		if(autoFreezeType != null){
+			putQueryParameter("AutoFreezeType", autoFreezeType);
+		}
+	}
+
+	public String getBucketConfigList() {
+		return this.bucketConfigList;
+	}
+
+	public void setBucketConfigList(String bucketConfigList) {
+		this.bucketConfigList = bucketConfigList;
+		if(bucketConfigList != null){
+			putQueryParameter("BucketConfigList", bucketConfigList);
 		}
 	}
 

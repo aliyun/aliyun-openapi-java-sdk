@@ -23,18 +23,18 @@ import com.aliyuncs.green.Endpoint;
  * @version 
  */
 public class GetGroupsRequest extends RoaAcsRequest<GetGroupsResponse> {
-	
+	   
+
+	private String clientInfo;
 	public GetGroupsRequest() {
 		super("Green", "2018-05-09", "GetGroups", "green");
 		setUriPattern("/green/sface/groups");
 		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clientInfo;
 
 	public String getClientInfo() {
 		return this.clientInfo;

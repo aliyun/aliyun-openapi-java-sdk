@@ -19,20 +19,24 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            endpointMap.put("ap-south-1", "green.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("eu-west-1", "green.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("ap-northeast-1", "green.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("me-east-1", "green.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("cn-chengdu", "green.aliyuncs.com");
-            endpointMap.put("cn-qingdao", "green.aliyuncs.com");
-            endpointMap.put("cn-hongkong", "green.aliyuncs.com");
-            endpointMap.put("ap-southeast-2", "green.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("ap-southeast-3", "green.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("eu-central-1", "green.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("cn-huhehaote", "green.aliyuncs.com");
-            endpointMap.put("ap-southeast-5", "green.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("us-east-1", "green.ap-southeast-1.aliyuncs.com");
-            endpointMap.put("cn-zhangjiakou", "green.aliyuncs.com");
+            put("ap-south-1", "green.ap-southeast-1.aliyuncs.com");
+            put("eu-west-1", "green.ap-southeast-1.aliyuncs.com");
+            put("ap-northeast-1", "green.ap-southeast-1.aliyuncs.com");
+            put("cn-shenzhen-finance-1", "green.aliyuncs.com");
+            put("me-east-1", "green.ap-southeast-1.aliyuncs.com");
+            put("cn-chengdu", "green.aliyuncs.com");
+            put("cn-north-2-gov-1", "green.aliyuncs.com");
+            put("cn-qingdao", "green.aliyuncs.com");
+            put("cn-shanghai-finance-1", "green.aliyuncs.com");
+            put("cn-hongkong", "green.aliyuncs.com");
+            put("cn-hangzhou-finance", "green.aliyuncs.com");
+            put("ap-southeast-2", "green.ap-southeast-1.aliyuncs.com");
+            put("ap-southeast-3", "green.ap-southeast-1.aliyuncs.com");
+            put("eu-central-1", "green.ap-southeast-1.aliyuncs.com");
+            put("cn-huhehaote", "green.aliyuncs.com");
+            put("ap-southeast-5", "green.ap-southeast-1.aliyuncs.com");
+            put("us-east-1", "green.ap-southeast-1.aliyuncs.com");
+            put("cn-zhangjiakou", "green.aliyuncs.com");
         }
     };
 

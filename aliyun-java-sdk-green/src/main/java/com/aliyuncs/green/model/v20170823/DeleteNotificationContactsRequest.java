@@ -15,22 +15,40 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteNotificationContactsRequest extends RpcAcsRequest<DeleteNotificationContactsResponse> {
-	
-	public DeleteNotificationContactsRequest() {
-		super("Green", "2017-08-23", "DeleteNotificationContacts", "green");
-	}
+	   
+
+	private String contactTypes;
 
 	private String sourceIp;
 
 	private String lang;
+	public DeleteNotificationContactsRequest() {
+		super("Green", "2017-08-23", "DeleteNotificationContacts", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String contactTypes;
+	public String getContactTypes() {
+		return this.contactTypes;
+	}
+
+	public void setContactTypes(String contactTypes) {
+		this.contactTypes = contactTypes;
+		if(contactTypes != null){
+			putQueryParameter("ContactTypes", contactTypes);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -51,17 +69,6 @@ public class DeleteNotificationContactsRequest extends RpcAcsRequest<DeleteNotif
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getContactTypes() {
-		return this.contactTypes;
-	}
-
-	public void setContactTypes(String contactTypes) {
-		this.contactTypes = contactTypes;
-		if(contactTypes != null){
-			putQueryParameter("ContactTypes", contactTypes);
 		}
 	}
 

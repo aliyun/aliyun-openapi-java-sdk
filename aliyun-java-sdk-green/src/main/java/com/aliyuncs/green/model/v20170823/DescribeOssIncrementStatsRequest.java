@@ -15,22 +15,15 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeOssIncrementStatsRequest extends RpcAcsRequest<DescribeOssIncrementStatsResponse> {
-	
-	public DescribeOssIncrementStatsRequest() {
-		super("Green", "2017-08-23", "DescribeOssIncrementStats", "green");
-	}
-
-	private String endDate;
-
-	private String sourceIp;
-
-	private String lang;
+	   
 
 	private String startDate;
 
@@ -38,37 +31,18 @@ public class DescribeOssIncrementStatsRequest extends RpcAcsRequest<DescribeOssI
 
 	private String scene;
 
-	public String getEndDate() {
-		return this.endDate;
-	}
+	private String endDate;
 
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
-		}
-	}
+	private String sourceIp;
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
+	private String lang;
+	public DescribeOssIncrementStatsRequest() {
+		super("Green", "2017-08-23", "DescribeOssIncrementStats", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getStartDate() {
@@ -101,6 +75,39 @@ public class DescribeOssIncrementStatsRequest extends RpcAcsRequest<DescribeOssI
 		this.scene = scene;
 		if(scene != null){
 			putQueryParameter("Scene", scene);
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

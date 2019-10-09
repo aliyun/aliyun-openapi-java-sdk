@@ -38,6 +38,8 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 	private Integer ossVideoSizeLimit;
 
+	private String uid;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +94,14 @@ public class DescribeUserStatusResponse extends AcsResponse {
 
 	public void setOssVideoSizeLimit(Integer ossVideoSizeLimit) {
 		this.ossVideoSizeLimit = ossVideoSizeLimit;
+	}
+
+	public String getUid() {
+		return this.uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
 	}
 
 	@Override

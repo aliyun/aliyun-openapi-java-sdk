@@ -15,40 +15,36 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAuditContentItemRequest extends RpcAcsRequest<DescribeAuditContentItemResponse> {
-	
-	public DescribeAuditContentItemRequest() {
-		super("Green", "2017-08-23", "DescribeAuditContentItem", "green");
-	}
-
-	private Integer totalCount;
+	   
 
 	private String sourceIp;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private String lang;
-
-	private String resourceType;
 
 	private String taskId;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
+	private Integer totalCount;
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-		if(totalCount != null){
-			putQueryParameter("TotalCount", totalCount.toString());
-		}
+	private Integer currentPage;
+
+	private String resourceType;
+	public DescribeAuditContentItemRequest() {
+		super("Green", "2017-08-23", "DescribeAuditContentItem", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSourceIp() {
@@ -73,17 +69,6 @@ public class DescribeAuditContentItemRequest extends RpcAcsRequest<DescribeAudit
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -95,17 +80,6 @@ public class DescribeAuditContentItemRequest extends RpcAcsRequest<DescribeAudit
 		}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
-		}
-	}
-
 	public String getTaskId() {
 		return this.taskId;
 	}
@@ -114,6 +88,39 @@ public class DescribeAuditContentItemRequest extends RpcAcsRequest<DescribeAudit
 		this.taskId = taskId;
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+		if(totalCount != null){
+			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

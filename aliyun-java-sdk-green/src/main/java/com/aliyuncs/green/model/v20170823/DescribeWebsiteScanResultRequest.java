@@ -15,46 +15,42 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeWebsiteScanResultRequest extends RpcAcsRequest<DescribeWebsiteScanResultResponse> {
-	
-	public DescribeWebsiteScanResultRequest() {
-		super("Green", "2017-08-23", "DescribeWebsiteScanResult", "green");
-	}
-
-	private Integer totalCount;
+	   
 
 	private String subServiceModule;
 
-	private String siteUrl;
-
 	private String sourceIp;
 
-	private String handleStatus;
-
-	private String domain;
-
 	private Integer pageSize;
+
+	private String lang;
+
+	private Integer totalCount;
+
+	private String siteUrl;
+
+	private String handleStatus;
 
 	private Integer currentPage;
 
 	private String label;
 
-	private String lang;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-		if(totalCount != null){
-			putQueryParameter("TotalCount", totalCount.toString());
-		}
+	private String domain;
+	public DescribeWebsiteScanResultRequest() {
+		super("Green", "2017-08-23", "DescribeWebsiteScanResult", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSubServiceModule() {
@@ -65,17 +61,6 @@ public class DescribeWebsiteScanResultRequest extends RpcAcsRequest<DescribeWebs
 		this.subServiceModule = subServiceModule;
 		if(subServiceModule != null){
 			putQueryParameter("SubServiceModule", subServiceModule);
-		}
-	}
-
-	public String getSiteUrl() {
-		return this.siteUrl;
-	}
-
-	public void setSiteUrl(String siteUrl) {
-		this.siteUrl = siteUrl;
-		if(siteUrl != null){
-			putQueryParameter("SiteUrl", siteUrl);
 		}
 	}
 
@@ -90,6 +75,50 @@ public class DescribeWebsiteScanResultRequest extends RpcAcsRequest<DescribeWebs
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+		if(totalCount != null){
+			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public String getSiteUrl() {
+		return this.siteUrl;
+	}
+
+	public void setSiteUrl(String siteUrl) {
+		this.siteUrl = siteUrl;
+		if(siteUrl != null){
+			putQueryParameter("SiteUrl", siteUrl);
+		}
+	}
+
 	public String getHandleStatus() {
 		return this.handleStatus;
 	}
@@ -98,6 +127,28 @@ public class DescribeWebsiteScanResultRequest extends RpcAcsRequest<DescribeWebs
 		this.handleStatus = handleStatus;
 		if(handleStatus != null){
 			putQueryParameter("HandleStatus", handleStatus);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getLabel() {
+		return this.label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+		if(label != null){
+			putQueryParameter("Label", label);
 		}
 	}
 
@@ -128,50 +179,6 @@ public class DescribeWebsiteScanResultRequest extends RpcAcsRequest<DescribeWebs
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getLabel() {
-		return this.label;
-	}
-
-	public void setLabel(String label) {
-		this.label = label;
-		if(label != null){
-			putQueryParameter("Label", label);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
 		}
 	}
 

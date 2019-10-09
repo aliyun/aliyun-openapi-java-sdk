@@ -23,18 +23,18 @@ import com.aliyuncs.green.Endpoint;
  * @version 
  */
 public class VoiceIdentityStartRegisterRequest extends RoaAcsRequest<VoiceIdentityStartRegisterResponse> {
-	
+	   
+
+	private String clientInfo;
 	public VoiceIdentityStartRegisterRequest() {
 		super("Green", "2018-05-09", "VoiceIdentityStartRegister", "green");
 		setUriPattern("/green/voice/auth/start/register");
 		setMethod(MethodType.POST);
 		try {
-			this.getClass().getDeclaredField("ProductEndpointMap").set(this, Endpoint.endpointMap);
-			this.getClass().getDeclaredField("ProductEndpointRegional").set(this, Endpoint.endpointRegionalType);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clientInfo;
 
 	public String getClientInfo() {
 		return this.clientInfo;

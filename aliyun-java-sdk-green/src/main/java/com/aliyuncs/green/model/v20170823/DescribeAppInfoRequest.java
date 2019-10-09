@@ -15,28 +15,35 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeAppInfoRequest extends RpcAcsRequest<DescribeAppInfoResponse> {
-	
-	public DescribeAppInfoRequest() {
-		super("Green", "2017-08-23", "DescribeAppInfo", "green");
-	}
+	   
 
 	private Integer totalCount;
+
+	private Integer currentPage;
+
+	private String platform;
 
 	private String sourceIp;
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private String lang;
-
-	private String platform;
+	public DescribeAppInfoRequest() {
+		super("Green", "2017-08-23", "DescribeAppInfo", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -46,6 +53,28 @@ public class DescribeAppInfoRequest extends RpcAcsRequest<DescribeAppInfoRespons
 		this.totalCount = totalCount;
 		if(totalCount != null){
 			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
 		}
 	}
 
@@ -71,17 +100,6 @@ public class DescribeAppInfoRequest extends RpcAcsRequest<DescribeAppInfoRespons
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public String getLang() {
 		return this.lang;
 	}
@@ -90,17 +108,6 @@ public class DescribeAppInfoRequest extends RpcAcsRequest<DescribeAppInfoRespons
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getPlatform() {
-		return this.platform;
-	}
-
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
 		}
 	}
 

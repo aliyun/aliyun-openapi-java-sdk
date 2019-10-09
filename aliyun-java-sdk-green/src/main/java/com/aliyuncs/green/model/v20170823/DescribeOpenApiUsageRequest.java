@@ -15,45 +15,30 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeOpenApiUsageRequest extends RpcAcsRequest<DescribeOpenApiUsageResponse> {
-	
-	public DescribeOpenApiUsageRequest() {
-		super("Green", "2017-08-23", "DescribeOpenApiUsage", "green");
-	}
-
-	private String endDate;
-
-	private String sourceIp;
+	   
 
 	private String startDate;
 
 	private String resourceType;
 
-	public String getEndDate() {
-		return this.endDate;
-	}
+	private String endDate;
 
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
+	private String sourceIp;
+	public DescribeOpenApiUsageRequest() {
+		super("Green", "2017-08-23", "DescribeOpenApiUsage", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getStartDate() {
@@ -75,6 +60,28 @@ public class DescribeOpenApiUsageRequest extends RpcAcsRequest<DescribeOpenApiUs
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

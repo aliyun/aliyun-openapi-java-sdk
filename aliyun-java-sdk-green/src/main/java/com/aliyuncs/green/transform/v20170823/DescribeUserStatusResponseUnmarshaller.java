@@ -29,6 +29,7 @@ public class DescribeUserStatusResponseUnmarshaller {
 		describeUserStatusResponse.setOpenApiBeginTime(_ctx.stringValue("DescribeUserStatusResponse.OpenApiBeginTime"));
 		describeUserStatusResponse.setOssCheckStatus(_ctx.stringValue("DescribeUserStatusResponse.OssCheckStatus"));
 		describeUserStatusResponse.setOssVideoSizeLimit(_ctx.integerValue("DescribeUserStatusResponse.OssVideoSizeLimit"));
+		describeUserStatusResponse.setUid(_ctx.stringValue("DescribeUserStatusResponse.Uid"));
 	 
 	 	return describeUserStatusResponse;
 	}

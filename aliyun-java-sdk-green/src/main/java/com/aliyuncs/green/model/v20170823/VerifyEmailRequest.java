@@ -15,22 +15,29 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class VerifyEmailRequest extends RpcAcsRequest<VerifyEmailResponse> {
-	
-	public VerifyEmailRequest() {
-		super("Green", "2017-08-23", "VerifyEmail", "green");
-	}
+	   
 
 	private String verifyCode;
 
 	private String sourceIp;
 
 	private String lang;
+	public VerifyEmailRequest() {
+		super("Green", "2017-08-23", "VerifyEmail", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getVerifyCode() {
 		return this.verifyCode;

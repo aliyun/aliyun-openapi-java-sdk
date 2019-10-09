@@ -53,14 +53,14 @@ public class DescribeCustomOcrTemplateResponseUnmarshaller {
 
 			List<Item> recognizeArea = new ArrayList<Item>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea.Length"); j++) {
-				Item item = new Item();
-				item.setName(_ctx.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Name"));
-				item.setX(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].X"));
-				item.setY(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Y"));
-				item.setWidth(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Width"));
-				item.setHeight(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Height"));
+				Item item_ = new Item();
+				item_.setName(_ctx.stringValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Name"));
+				item_.setX(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].X"));
+				item_.setY(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Y"));
+				item_.setWidth(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Width"));
+				item_.setHeight(_ctx.integerValue("DescribeCustomOcrTemplateResponse.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Height"));
 
-				recognizeArea.add(item);
+				recognizeArea.add(item_);
 			}
 			ocrTemplate.setRecognizeArea(recognizeArea);
 

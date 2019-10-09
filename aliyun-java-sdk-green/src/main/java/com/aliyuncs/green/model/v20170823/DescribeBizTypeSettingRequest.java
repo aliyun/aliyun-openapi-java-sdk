@@ -15,30 +15,26 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeBizTypeSettingRequest extends RpcAcsRequest<DescribeBizTypeSettingResponse> {
-	
-	public DescribeBizTypeSettingRequest() {
-		super("Green", "2017-08-23", "DescribeBizTypeSetting", "green");
-	}
-
-	private String bizTypeName;
+	   
 
 	private String resourceType;
 
-	public String getBizTypeName() {
-		return this.bizTypeName;
-	}
-
-	public void setBizTypeName(String bizTypeName) {
-		this.bizTypeName = bizTypeName;
-		if(bizTypeName != null){
-			putQueryParameter("BizTypeName", bizTypeName);
-		}
+	private String bizTypeName;
+	public DescribeBizTypeSettingRequest() {
+		super("Green", "2017-08-23", "DescribeBizTypeSetting", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getResourceType() {
@@ -49,6 +45,17 @@ public class DescribeBizTypeSettingRequest extends RpcAcsRequest<DescribeBizType
 		this.resourceType = resourceType;
 		if(resourceType != null){
 			putQueryParameter("ResourceType", resourceType);
+		}
+	}
+
+	public String getBizTypeName() {
+		return this.bizTypeName;
+	}
+
+	public void setBizTypeName(String bizTypeName) {
+		this.bizTypeName = bizTypeName;
+		if(bizTypeName != null){
+			putQueryParameter("BizTypeName", bizTypeName);
 		}
 	}
 

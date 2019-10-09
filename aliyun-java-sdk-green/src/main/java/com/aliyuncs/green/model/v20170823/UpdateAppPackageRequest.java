@@ -15,18 +15,19 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateAppPackageRequest extends RpcAcsRequest<UpdateAppPackageResponse> {
-	
-	public UpdateAppPackageRequest() {
-		super("Green", "2017-08-23", "UpdateAppPackage", "green");
-	}
+	   
 
 	private Boolean debug;
+
+	private String platform;
 
 	private String sourceIp;
 
@@ -35,8 +36,14 @@ public class UpdateAppPackageRequest extends RpcAcsRequest<UpdateAppPackageRespo
 	private Long id;
 
 	private String lang;
-
-	private String platform;
+	public UpdateAppPackageRequest() {
+		super("Green", "2017-08-23", "UpdateAppPackage", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getDebug() {
 		return this.debug;
@@ -46,6 +53,17 @@ public class UpdateAppPackageRequest extends RpcAcsRequest<UpdateAppPackageRespo
 		this.debug = debug;
 		if(debug != null){
 			putQueryParameter("Debug", debug.toString());
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
 		}
 	}
 
@@ -90,17 +108,6 @@ public class UpdateAppPackageRequest extends RpcAcsRequest<UpdateAppPackageRespo
 		this.lang = lang;
 		if(lang != null){
 			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getPlatform() {
-		return this.platform;
-	}
-
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
 		}
 	}
 

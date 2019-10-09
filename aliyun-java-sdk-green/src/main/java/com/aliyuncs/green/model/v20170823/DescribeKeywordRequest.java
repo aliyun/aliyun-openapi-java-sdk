@@ -15,40 +15,36 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeKeywordRequest extends RpcAcsRequest<DescribeKeywordResponse> {
-	
-	public DescribeKeywordRequest() {
-		super("Green", "2017-08-23", "DescribeKeyword", "green");
-	}
-
-	private Integer totalCount;
+	   
 
 	private String sourceIp;
 
-	private Integer keywordLibId;
-
 	private Integer pageSize;
-
-	private Integer currentPage;
 
 	private String lang;
 
 	private String keyword;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
+	private Integer totalCount;
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-		if(totalCount != null){
-			putQueryParameter("TotalCount", totalCount.toString());
-		}
+	private Integer keywordLibId;
+
+	private Integer currentPage;
+	public DescribeKeywordRequest() {
+		super("Green", "2017-08-23", "DescribeKeyword", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSourceIp() {
@@ -62,17 +58,6 @@ public class DescribeKeywordRequest extends RpcAcsRequest<DescribeKeywordRespons
 		}
 	}
 
-	public Integer getKeywordLibId() {
-		return this.keywordLibId;
-	}
-
-	public void setKeywordLibId(Integer keywordLibId) {
-		this.keywordLibId = keywordLibId;
-		if(keywordLibId != null){
-			putQueryParameter("KeywordLibId", keywordLibId.toString());
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -81,17 +66,6 @@ public class DescribeKeywordRequest extends RpcAcsRequest<DescribeKeywordRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -114,6 +88,39 @@ public class DescribeKeywordRequest extends RpcAcsRequest<DescribeKeywordRespons
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
+		}
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+		if(totalCount != null){
+			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public Integer getKeywordLibId() {
+		return this.keywordLibId;
+	}
+
+	public void setKeywordLibId(Integer keywordLibId) {
+		this.keywordLibId = keywordLibId;
+		if(keywordLibId != null){
+			putQueryParameter("KeywordLibId", keywordLibId.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

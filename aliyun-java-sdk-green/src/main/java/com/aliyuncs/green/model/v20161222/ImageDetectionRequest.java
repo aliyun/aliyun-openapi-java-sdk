@@ -16,17 +16,22 @@ package com.aliyuncs.green.model.v20161222;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ImageDetectionRequest extends RoaAcsRequest<ImageDetectionResponse> {
-	
+	   
 	public ImageDetectionRequest() {
 		super("Green", "2016-12-22", "ImageDetection", "green");
 		setUriPattern("/image/detection");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	@Override

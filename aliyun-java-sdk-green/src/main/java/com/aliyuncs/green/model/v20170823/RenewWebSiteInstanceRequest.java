@@ -15,20 +15,15 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RenewWebSiteInstanceRequest extends RpcAcsRequest<RenewWebSiteInstanceResponse> {
-	
-	public RenewWebSiteInstanceRequest() {
-		super("Green", "2017-08-23", "RenewWebSiteInstance", "green");
-	}
-
-	private Integer duration;
-
-	private String instanceId;
+	   
 
 	private String clientToken;
 
@@ -38,30 +33,20 @@ public class RenewWebSiteInstanceRequest extends RpcAcsRequest<RenewWebSiteInsta
 
 	private Long ownerId;
 
+	private Integer duration;
+
+	private String instanceId;
+
 	private String pricingCycle;
 
 	private String orderType;
-
-	public Integer getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
+	public RenewWebSiteInstanceRequest() {
+		super("Green", "2017-08-23", "RenewWebSiteInstance", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientToken() {
@@ -105,6 +90,28 @@ public class RenewWebSiteInstanceRequest extends RpcAcsRequest<RenewWebSiteInsta
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

@@ -15,16 +15,21 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateKeywordLibRequest extends RpcAcsRequest<CreateKeywordLibResponse> {
-	
-	public CreateKeywordLibRequest() {
-		super("Green", "2017-08-23", "CreateKeywordLib", "green");
-	}
+	   
+
+	private String language;
+
+	private String serviceModule;
+
+	private String matchMode;
 
 	private String sourceIp;
 
@@ -32,21 +37,56 @@ public class CreateKeywordLibRequest extends RpcAcsRequest<CreateKeywordLibRespo
 
 	private Boolean enable;
 
-	private String name;
+	private String lang;
 
 	private String bizTypes;
 
-	private String language;
+	private String resourceType;
 
-	private String serviceModule;
-
-	private String lang;
+	private String name;
 
 	private String category;
+	public CreateKeywordLibRequest() {
+		super("Green", "2017-08-23", "CreateKeywordLib", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String matchMode;
+	public String getLanguage() {
+		return this.language;
+	}
 
-	private String resourceType;
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
+		}
+	}
+
+	public String getServiceModule() {
+		return this.serviceModule;
+	}
+
+	public void setServiceModule(String serviceModule) {
+		this.serviceModule = serviceModule;
+		if(serviceModule != null){
+			putQueryParameter("ServiceModule", serviceModule);
+		}
+	}
+
+	public String getMatchMode() {
+		return this.matchMode;
+	}
+
+	public void setMatchMode(String matchMode) {
+		this.matchMode = matchMode;
+		if(matchMode != null){
+			putQueryParameter("MatchMode", matchMode);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -81,14 +121,14 @@ public class CreateKeywordLibRequest extends RpcAcsRequest<CreateKeywordLibRespo
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -103,36 +143,25 @@ public class CreateKeywordLibRequest extends RpcAcsRequest<CreateKeywordLibRespo
 		}
 	}
 
-	public String getLanguage() {
-		return this.language;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
-		if(language != null){
-			putQueryParameter("Language", language);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
-	public String getServiceModule() {
-		return this.serviceModule;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setServiceModule(String serviceModule) {
-		this.serviceModule = serviceModule;
-		if(serviceModule != null){
-			putQueryParameter("ServiceModule", serviceModule);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
@@ -144,28 +173,6 @@ public class CreateKeywordLibRequest extends RpcAcsRequest<CreateKeywordLibRespo
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category);
-		}
-	}
-
-	public String getMatchMode() {
-		return this.matchMode;
-	}
-
-	public void setMatchMode(String matchMode) {
-		this.matchMode = matchMode;
-		if(matchMode != null){
-			putQueryParameter("MatchMode", matchMode);
-		}
-	}
-
-	public String getResourceType() {
-		return this.resourceType;
-	}
-
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

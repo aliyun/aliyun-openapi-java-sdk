@@ -15,22 +15,29 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UploadImageToLibRequest extends RpcAcsRequest<UploadImageToLibResponse> {
-	
-	public UploadImageToLibRequest() {
-		super("Green", "2017-08-23", "UploadImageToLib", "green");
-	}
+	   
 
 	private String images;
 
 	private String sourceIp;
 
 	private Integer imageLibId;
+	public UploadImageToLibRequest() {
+		super("Green", "2017-08-23", "UploadImageToLib", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getImages() {
 		return this.images;

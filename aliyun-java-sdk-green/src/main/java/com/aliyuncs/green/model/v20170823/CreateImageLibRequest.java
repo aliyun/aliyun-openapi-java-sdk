@@ -15,30 +15,59 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateImageLibRequest extends RpcAcsRequest<CreateImageLibResponse> {
-	
-	public CreateImageLibRequest() {
-		super("Green", "2017-08-23", "CreateImageLib", "green");
-	}
+	   
+
+	private String serviceModule;
+
+	private String scene;
 
 	private String sourceIp;
 
 	private Boolean enable;
 
-	private String name;
-
 	private String bizTypes;
 
-	private String serviceModule;
+	private String name;
 
 	private String category;
+	public CreateImageLibRequest() {
+		super("Green", "2017-08-23", "CreateImageLib", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String scene;
+	public String getServiceModule() {
+		return this.serviceModule;
+	}
+
+	public void setServiceModule(String serviceModule) {
+		this.serviceModule = serviceModule;
+		if(serviceModule != null){
+			putQueryParameter("ServiceModule", serviceModule);
+		}
+	}
+
+	public String getScene() {
+		return this.scene;
+	}
+
+	public void setScene(String scene) {
+		this.scene = scene;
+		if(scene != null){
+			putQueryParameter("Scene", scene);
+		}
+	}
 
 	public String getSourceIp() {
 		return this.sourceIp;
@@ -62,17 +91,6 @@ public class CreateImageLibRequest extends RpcAcsRequest<CreateImageLibResponse>
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getBizTypes() {
 		return this.bizTypes;
 	}
@@ -84,14 +102,14 @@ public class CreateImageLibRequest extends RpcAcsRequest<CreateImageLibResponse>
 		}
 	}
 
-	public String getServiceModule() {
-		return this.serviceModule;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setServiceModule(String serviceModule) {
-		this.serviceModule = serviceModule;
-		if(serviceModule != null){
-			putQueryParameter("ServiceModule", serviceModule);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
@@ -103,17 +121,6 @@ public class CreateImageLibRequest extends RpcAcsRequest<CreateImageLibResponse>
 		this.category = category;
 		if(category != null){
 			putQueryParameter("Category", category);
-		}
-	}
-
-	public String getScene() {
-		return this.scene;
-	}
-
-	public void setScene(String scene) {
-		this.scene = scene;
-		if(scene != null){
-			putQueryParameter("Scene", scene);
 		}
 	}
 

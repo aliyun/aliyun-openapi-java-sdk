@@ -15,24 +15,42 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class VerifyWebsiteInstanceRequest extends RpcAcsRequest<VerifyWebsiteInstanceResponse> {
-	
-	public VerifyWebsiteInstanceRequest() {
-		super("Green", "2017-08-23", "VerifyWebsiteInstance", "green");
-	}
+	   
+
+	private String verifyMethod;
 
 	private String instanceId;
 
 	private String sourceIp;
 
-	private String verifyMethod;
-
 	private String lang;
+	public VerifyWebsiteInstanceRequest() {
+		super("Green", "2017-08-23", "VerifyWebsiteInstance", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getVerifyMethod() {
+		return this.verifyMethod;
+	}
+
+	public void setVerifyMethod(String verifyMethod) {
+		this.verifyMethod = verifyMethod;
+		if(verifyMethod != null){
+			putQueryParameter("VerifyMethod", verifyMethod);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -53,17 +71,6 @@ public class VerifyWebsiteInstanceRequest extends RpcAcsRequest<VerifyWebsiteIns
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getVerifyMethod() {
-		return this.verifyMethod;
-	}
-
-	public void setVerifyMethod(String verifyMethod) {
-		this.verifyMethod = verifyMethod;
-		if(verifyMethod != null){
-			putQueryParameter("VerifyMethod", verifyMethod);
 		}
 	}
 

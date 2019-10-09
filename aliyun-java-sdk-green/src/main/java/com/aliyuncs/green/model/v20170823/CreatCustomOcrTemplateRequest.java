@@ -15,24 +15,42 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreatCustomOcrTemplateRequest extends RpcAcsRequest<CreatCustomOcrTemplateResponse> {
-	
-	public CreatCustomOcrTemplateRequest() {
-		super("Green", "2017-08-23", "CreatCustomOcrTemplate", "green");
-	}
+	   
+
+	private String recognizeArea;
 
 	private String imgUrl;
 
 	private String referArea;
 
-	private String recognizeArea;
-
 	private String name;
+	public CreatCustomOcrTemplateRequest() {
+		super("Green", "2017-08-23", "CreatCustomOcrTemplate", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getRecognizeArea() {
+		return this.recognizeArea;
+	}
+
+	public void setRecognizeArea(String recognizeArea) {
+		this.recognizeArea = recognizeArea;
+		if(recognizeArea != null){
+			putQueryParameter("RecognizeArea", recognizeArea);
+		}
+	}
 
 	public String getImgUrl() {
 		return this.imgUrl;
@@ -53,17 +71,6 @@ public class CreatCustomOcrTemplateRequest extends RpcAcsRequest<CreatCustomOcrT
 		this.referArea = referArea;
 		if(referArea != null){
 			putQueryParameter("ReferArea", referArea);
-		}
-	}
-
-	public String getRecognizeArea() {
-		return this.recognizeArea;
-	}
-
-	public void setRecognizeArea(String recognizeArea) {
-		this.recognizeArea = recognizeArea;
-		if(recognizeArea != null){
-			putQueryParameter("RecognizeArea", recognizeArea);
 		}
 	}
 

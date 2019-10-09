@@ -15,20 +15,17 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeImageFromLibRequest extends RpcAcsRequest<DescribeImageFromLibResponse> {
-	
-	public DescribeImageFromLibRequest() {
-		super("Green", "2017-08-23", "DescribeImageFromLib", "green");
-	}
+	   
 
-	private Integer totalCount;
-
-	private String endDate;
+	private String startDate;
 
 	private String sourceIp;
 
@@ -36,31 +33,30 @@ public class DescribeImageFromLibRequest extends RpcAcsRequest<DescribeImageFrom
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private Long id;
 
-	private String startDate;
+	private Integer totalCount;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	private Integer currentPage;
+
+	private String endDate;
+	public DescribeImageFromLibRequest() {
+		super("Green", "2017-08-23", "DescribeImageFromLib", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-		if(totalCount != null){
-			putQueryParameter("TotalCount", totalCount.toString());
-		}
+	public String getStartDate() {
+		return this.startDate;
 	}
 
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putQueryParameter("StartDate", startDate);
 		}
 	}
 
@@ -97,17 +93,6 @@ public class DescribeImageFromLibRequest extends RpcAcsRequest<DescribeImageFrom
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public Long getId() {
 		return this.id;
 	}
@@ -119,14 +104,36 @@ public class DescribeImageFromLibRequest extends RpcAcsRequest<DescribeImageFrom
 		}
 	}
 
-	public String getStartDate() {
-		return this.startDate;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate);
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+		if(totalCount != null){
+			putQueryParameter("TotalCount", totalCount.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
 		}
 	}
 

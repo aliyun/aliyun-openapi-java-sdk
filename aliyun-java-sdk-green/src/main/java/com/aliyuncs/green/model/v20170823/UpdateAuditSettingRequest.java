@@ -15,34 +15,30 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.green.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateAuditSettingRequest extends RpcAcsRequest<UpdateAuditSettingResponse> {
-	
-	public UpdateAuditSettingRequest() {
-		super("Green", "2017-08-23", "UpdateAuditSetting", "green");
-	}
-
-	private String sourceIp;
+	   
 
 	private String seed;
 
 	private String auditRange;
 
+	private String sourceIp;
+
 	private String callback;
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
+	public UpdateAuditSettingRequest() {
+		super("Green", "2017-08-23", "UpdateAuditSetting", "green");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSeed() {
@@ -64,6 +60,17 @@ public class UpdateAuditSettingRequest extends RpcAcsRequest<UpdateAuditSettingR
 		this.auditRange = auditRange;
 		if(auditRange != null){
 			putQueryParameter("AuditRange", auditRange);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
