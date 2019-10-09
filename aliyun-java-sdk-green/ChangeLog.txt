@@ -1,4 +1,7 @@
 2019-10-09 Version: 3.5.1
+- Generated 2018-05-09, 2016-12-22, 2017-08-23 for `Green`.
+
+2019-10-09 Version: 3.5.1
 - Add VideoCancelScan Api.
 
 2019-10-09 Version: 3.5.1
