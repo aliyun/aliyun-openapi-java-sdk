@@ -27,7 +27,7 @@ public class GetReportRequest extends RpcAcsRequest<GetReportResponse> {
 
 	private Long reportId;
 	public GetReportRequest() {
-		super("PTS", "2018-11-11", "GetReport");
+		super("PTS", "2018-11-11", "GetReport", "1.0.0");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
