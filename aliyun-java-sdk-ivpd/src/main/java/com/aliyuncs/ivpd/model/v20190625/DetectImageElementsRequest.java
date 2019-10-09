@@ -23,7 +23,9 @@ import com.aliyuncs.ivpd.Endpoint;
  * @version 
  */
 public class DetectImageElementsRequest extends RpcAcsRequest<DetectImageElementsResponse> {
-	
+	   
+
+	private String url;
 	public DetectImageElementsRequest() {
 		super("ivpd", "2019-06-25", "DetectImageElements", "ivpd");
 		setMethod(MethodType.POST);
@@ -32,8 +34,6 @@ public class DetectImageElementsRequest extends RpcAcsRequest<DetectImageElement
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String url;
 
 	public String getBizUrl() {
 		return this.url;

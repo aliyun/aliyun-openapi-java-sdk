@@ -23,7 +23,9 @@ import com.aliyuncs.ivpd.Endpoint;
  * @version 
  */
 public class MakeSuperResolutionImageRequest extends RpcAcsRequest<MakeSuperResolutionImageResponse> {
-	
+	   
+
+	private String url;
 	public MakeSuperResolutionImageRequest() {
 		super("ivpd", "2019-06-25", "MakeSuperResolutionImage", "ivpd");
 		setMethod(MethodType.POST);
@@ -32,8 +34,6 @@ public class MakeSuperResolutionImageRequest extends RpcAcsRequest<MakeSuperReso
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String url;
 
 	public String getBizUrl() {
 		return this.url;

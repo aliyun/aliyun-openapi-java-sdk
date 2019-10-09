@@ -23,7 +23,11 @@ import com.aliyuncs.ivpd.Endpoint;
  * @version 
  */
 public class RecognizeImageColorRequest extends RpcAcsRequest<RecognizeImageColorResponse> {
-	
+	   
+
+	private String url;
+
+	private String colorCount;
 	public RecognizeImageColorRequest() {
 		super("ivpd", "2019-06-25", "RecognizeImageColor", "ivpd");
 		setMethod(MethodType.POST);
@@ -31,21 +35,6 @@ public class RecognizeImageColorRequest extends RpcAcsRequest<RecognizeImageColo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	private String colorCount;
-
-	private String url;
-
-	public String getColorCount() {
-		return this.colorCount;
-	}
-
-	public void setColorCount(String colorCount) {
-		this.colorCount = colorCount;
-		if(colorCount != null){
-			putBodyParameter("ColorCount", colorCount);
-		}
 	}
 
 	public String getBizUrl() {
@@ -75,6 +64,17 @@ public class RecognizeImageColorRequest extends RpcAcsRequest<RecognizeImageColo
 		this.url = url;
 		if(url != null){
 			putBodyParameter("Url", url);
+		}
+	}
+
+	public String getColorCount() {
+		return this.colorCount;
+	}
+
+	public void setColorCount(String colorCount) {
+		this.colorCount = colorCount;
+		if(colorCount != null){
+			putBodyParameter("ColorCount", colorCount);
 		}
 	}
 

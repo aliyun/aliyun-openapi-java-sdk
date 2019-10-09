@@ -23,7 +23,13 @@ import com.aliyuncs.ivpd.Endpoint;
  * @version 
  */
 public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeResponse> {
-	
+	   
+
+	private String url;
+
+	private Integer width;
+
+	private Integer height;
 	public ChangeImageSizeRequest() {
 		super("ivpd", "2019-06-25", "ChangeImageSize", "ivpd");
 		setMethod(MethodType.POST);
@@ -31,23 +37,6 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	private Integer width;
-
-	private String url;
-
-	private Integer height;
-
-	public Integer getWidth() {
-		return this.width;
-	}
-
-	public void setWidth(Integer width) {
-		this.width = width;
-		if(width != null){
-			putBodyParameter("Width", width.toString());
-		}
 	}
 
 	public String getBizUrl() {
@@ -77,6 +66,17 @@ public class ChangeImageSizeRequest extends RpcAcsRequest<ChangeImageSizeRespons
 		this.url = url;
 		if(url != null){
 			putBodyParameter("Url", url);
+		}
+	}
+
+	public Integer getWidth() {
+		return this.width;
+	}
+
+	public void setWidth(Integer width) {
+		this.width = width;
+		if(width != null){
+			putBodyParameter("Width", width.toString());
 		}
 	}
 

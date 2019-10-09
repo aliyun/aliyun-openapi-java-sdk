@@ -23,7 +23,9 @@ import com.aliyuncs.ivpd.Endpoint;
  * @version 
  */
 public class RecognizeImageStyleRequest extends RpcAcsRequest<RecognizeImageStyleResponse> {
-	
+	   
+
+	private String url;
 	public RecognizeImageStyleRequest() {
 		super("ivpd", "2019-06-25", "RecognizeImageStyle", "ivpd");
 		setMethod(MethodType.POST);
@@ -32,8 +34,6 @@ public class RecognizeImageStyleRequest extends RpcAcsRequest<RecognizeImageStyl
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String url;
 
 	public String getBizUrl() {
 		return this.url;

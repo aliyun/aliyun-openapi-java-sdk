@@ -23,7 +23,11 @@ import com.aliyuncs.ivpd.Endpoint;
  * @version 
  */
 public class ExtendImageStyleRequest extends RpcAcsRequest<ExtendImageStyleResponse> {
-	
+	   
+
+	private String majorUrl;
+
+	private String styleUrl;
 	public ExtendImageStyleRequest() {
 		super("ivpd", "2019-06-25", "ExtendImageStyle", "ivpd");
 		setMethod(MethodType.POST);
@@ -32,10 +36,6 @@ public class ExtendImageStyleRequest extends RpcAcsRequest<ExtendImageStyleRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String majorUrl;
-
-	private String styleUrl;
 
 	public String getMajorUrl() {
 		return this.majorUrl;
