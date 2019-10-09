@@ -15,14 +15,14 @@
 package com.aliyuncs.pts.model.v20181111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.pts.transform.v20181111.GetReportResponseUnmarshaller;
+import com.aliyuncs.pts.transform.v20181111.StartSceneResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetReportResponse extends AcsResponse {
+public class StartSceneResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -32,9 +32,7 @@ public class GetReportResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String snapshot;
-
-	private String summary;
+	private Long reportId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -68,29 +66,16 @@ public class GetReportResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getSnapshot() {
-		return this.snapshot;
+	public Long getReportId() {
+		return this.reportId;
 	}
 
-	public void setSnapshot(String snapshot) {
-		this.snapshot = snapshot;
-	}
-
-	public String getSummary() {
-		return this.summary;
-	}
-
-	public void setSummary(String summary) {
-		this.summary = summary;
+	public void setReportId(Long reportId) {
+		this.reportId = reportId;
 	}
 
 	@Override
-	public GetReportResponse getInstance(UnmarshallerContext context) {
-		return	GetReportResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public StartSceneResponse getInstance(UnmarshallerContext context) {
+		return	StartSceneResponseUnmarshaller.unmarshall(this, context);
 	}
 }

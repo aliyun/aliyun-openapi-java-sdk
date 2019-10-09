@@ -1,3 +1,6 @@
+2019-10-09 Version: 1.0.0
+- Generated 2018-11-11 for `PTS`.
+
 2018-11-13 Version: 1.0.0
 1, Added pts platinum get report api
 

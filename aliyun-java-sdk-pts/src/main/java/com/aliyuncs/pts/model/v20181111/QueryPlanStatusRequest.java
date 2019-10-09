@@ -22,13 +22,15 @@ import com.aliyuncs.pts.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetReportRequest extends RpcAcsRequest<GetReportResponse> {
+public class QueryPlanStatusRequest extends RpcAcsRequest<QueryPlanStatusResponse> {
 	   
 
 	private Long reportId;
-	public GetReportRequest() {
-		super("PTS", "2018-11-11", "GetReport");
-		setMethod(MethodType.GET);
+
+	private Long sceneId;
+	public QueryPlanStatusRequest() {
+		super("PTS", "2018-11-11", "QueryPlanStatus");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -46,9 +48,20 @@ public class GetReportRequest extends RpcAcsRequest<GetReportResponse> {
 		}
 	}
 
+	public Long getSceneId() {
+		return this.sceneId;
+	}
+
+	public void setSceneId(Long sceneId) {
+		this.sceneId = sceneId;
+		if(sceneId != null){
+			putQueryParameter("SceneId", sceneId.toString());
+		}
+	}
+
 	@Override
-	public Class<GetReportResponse> getResponseClass() {
-		return GetReportResponse.class;
+	public Class<QueryPlanStatusResponse> getResponseClass() {
+		return QueryPlanStatusResponse.class;
 	}
 
 }
