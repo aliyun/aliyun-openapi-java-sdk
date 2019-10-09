@@ -4,6 +4,9 @@
 2019-10-09 Version: 3.5.1
 - Add VideoCancelScan Api.
 
+2019-10-09 Version: 3.5.1
+- Add VideoCancelScan Api.
+
 2019-08-12 Version: 3.5.0
 - Support Defect Face API.
 
