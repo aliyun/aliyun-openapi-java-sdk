@@ -23,21 +23,21 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class DescribeInstanceRequest extends RpcAcsRequest<DescribeInstanceResponse> {
-	
-	public DescribeInstanceRequest() {
-		super("Market", "2015-11-01", "DescribeInstance", "yunmarket");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long ownerId;
 
 	private String instanceId;
 
 	private String orderType;
+	public DescribeInstanceRequest() {
+		super("Market", "2015-11-01", "DescribeInstance", "yunmarket");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getOwnerId() {
 		return this.ownerId;

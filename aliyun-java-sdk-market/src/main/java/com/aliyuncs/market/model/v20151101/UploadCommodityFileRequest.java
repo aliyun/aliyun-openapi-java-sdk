@@ -23,21 +23,21 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class UploadCommodityFileRequest extends RpcAcsRequest<UploadCommodityFileResponse> {
-	
-	public UploadCommodityFileRequest() {
-		super("Market", "2015-11-01", "UploadCommodityFile", "yunmarket");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String fileResourceType;
 
 	private String fileResource;
 
 	private String fileContentType;
+	public UploadCommodityFileRequest() {
+		super("Market", "2015-11-01", "UploadCommodityFile", "yunmarket");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFileResourceType() {
 		return this.fileResourceType;

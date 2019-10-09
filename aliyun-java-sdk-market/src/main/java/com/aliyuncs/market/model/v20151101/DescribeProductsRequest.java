@@ -24,15 +24,7 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class DescribeProductsRequest extends RpcAcsRequest<DescribeProductsResponse> {
-	
-	public DescribeProductsRequest() {
-		super("Market", "2015-11-01", "DescribeProducts", "yunmarket");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<Filter> filters;
 
@@ -41,6 +33,14 @@ public class DescribeProductsRequest extends RpcAcsRequest<DescribeProductsRespo
 	private Integer pageSize;
 
 	private Integer pageNumber;
+	public DescribeProductsRequest() {
+		super("Market", "2015-11-01", "DescribeProducts", "yunmarket");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<Filter> getFilters() {
 		return this.filters;

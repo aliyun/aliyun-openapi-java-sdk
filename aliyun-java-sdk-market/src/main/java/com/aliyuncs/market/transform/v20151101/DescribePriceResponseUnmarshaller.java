@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.market.model.v20151101.DescribePriceResponse;
+import com.aliyuncs.market.model.v20151101.DescribePriceResponse.Coupon;
 import com.aliyuncs.market.model.v20151101.DescribePriceResponse.PromotionRule;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -30,6 +31,10 @@ public class DescribePriceResponseUnmarshaller {
 		describePriceResponse.setOriginalPrice(_ctx.floatValue("DescribePriceResponse.OriginalPrice"));
 		describePriceResponse.setTradePrice(_ctx.floatValue("DescribePriceResponse.TradePrice"));
 		describePriceResponse.setDiscountPrice(_ctx.floatValue("DescribePriceResponse.DiscountPrice"));
+		describePriceResponse.setCuxiao(_ctx.booleanValue("DescribePriceResponse.Cuxiao"));
+		describePriceResponse.setDuration(_ctx.integerValue("DescribePriceResponse.Duration"));
+		describePriceResponse.setCycle(_ctx.stringValue("DescribePriceResponse.Cycle"));
+		describePriceResponse.setInfoTitle(_ctx.stringValue("DescribePriceResponse.InfoTitle"));
 
 		List<PromotionRule> promotionRules = new ArrayList<PromotionRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PromotionRules.Length"); i++) {
@@ -41,6 +46,20 @@ public class DescribePriceResponseUnmarshaller {
 			promotionRules.add(promotionRule);
 		}
 		describePriceResponse.setPromotionRules(promotionRules);
+
+		List<Coupon> coupons = new ArrayList<Coupon>();
+		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Coupons.Length"); i++) {
+			Coupon coupon = new Coupon();
+			coupon.setCouponOptionCode(_ctx.stringValue("DescribePriceResponse.Coupons["+ i +"].CouponOptionCode"));
+			coupon.setCouponOptionNo(_ctx.stringValue("DescribePriceResponse.Coupons["+ i +"].CouponOptionNo"));
+			coupon.setCouponName(_ctx.stringValue("DescribePriceResponse.Coupons["+ i +"].CouponName"));
+			coupon.setCouponDesc(_ctx.stringValue("DescribePriceResponse.Coupons["+ i +"].CouponDesc"));
+			coupon.setCanPromFee(_ctx.floatValue("DescribePriceResponse.Coupons["+ i +"].CanPromFee"));
+			coupon.setIsSelected(_ctx.booleanValue("DescribePriceResponse.Coupons["+ i +"].IsSelected"));
+
+			coupons.add(coupon);
+		}
+		describePriceResponse.setCoupons(coupons);
 	 
 	 	return describePriceResponse;
 	}

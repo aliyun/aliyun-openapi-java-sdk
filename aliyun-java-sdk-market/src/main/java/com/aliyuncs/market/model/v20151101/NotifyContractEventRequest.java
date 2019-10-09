@@ -23,19 +23,19 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class NotifyContractEventRequest extends RpcAcsRequest<NotifyContractEventResponse> {
-	
+	   
+
+	private String eventMessage;
+
+	private String eventType;
 	public NotifyContractEventRequest() {
 		super("Market", "2015-11-01", "NotifyContractEvent", "yunmarket");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String eventMessage;
-
-	private String eventType;
 
 	public String getEventMessage() {
 		return this.eventMessage;

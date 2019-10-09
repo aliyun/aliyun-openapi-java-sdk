@@ -23,21 +23,21 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class DescribeProductRequest extends RpcAcsRequest<DescribeProductResponse> {
-	
-	public DescribeProductRequest() {
-		super("Market", "2015-11-01", "DescribeProduct", "yunmarket");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String code;
 
 	private Boolean queryDraft;
 
 	private String aliUid;
+	public DescribeProductRequest() {
+		super("Market", "2015-11-01", "DescribeProduct", "yunmarket");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCode() {
 		return this.code;

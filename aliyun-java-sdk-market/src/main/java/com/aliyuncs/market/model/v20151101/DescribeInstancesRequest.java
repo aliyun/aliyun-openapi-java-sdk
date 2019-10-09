@@ -23,21 +23,21 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
-	
-	public DescribeInstancesRequest() {
-		super("Market", "2015-11-01", "DescribeInstances", "yunmarket");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer pageSize;
 
 	private Integer pageNumber;
 
 	private String productType;
+	public DescribeInstancesRequest() {
+		super("Market", "2015-11-01", "DescribeInstances", "yunmarket");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;

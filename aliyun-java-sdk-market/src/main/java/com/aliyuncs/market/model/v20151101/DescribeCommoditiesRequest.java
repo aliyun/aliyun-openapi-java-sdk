@@ -23,15 +23,7 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class DescribeCommoditiesRequest extends RpcAcsRequest<DescribeCommoditiesResponse> {
-	
-	public DescribeCommoditiesRequest() {
-		super("Market", "2015-11-01", "DescribeCommodities", "yunmarket");
-		setSysMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String commodityGmtModifiedTo;
 
@@ -60,6 +52,14 @@ public class DescribeCommoditiesRequest extends RpcAcsRequest<DescribeCommoditie
 	private String properties;
 
 	private String commodityCategoryIds;
+	public DescribeCommoditiesRequest() {
+		super("Market", "2015-11-01", "DescribeCommodities", "yunmarket");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCommodityGmtModifiedTo() {
 		return this.commodityGmtModifiedTo;

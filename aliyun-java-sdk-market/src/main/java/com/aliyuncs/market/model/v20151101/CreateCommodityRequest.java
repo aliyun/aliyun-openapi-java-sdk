@@ -23,19 +23,19 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class CreateCommodityRequest extends RpcAcsRequest<CreateCommodityResponse> {
-	
+	   
+
+	private String applicationId;
+
+	private String content;
 	public CreateCommodityRequest() {
 		super("Market", "2015-11-01", "CreateCommodity", "yunmarket");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String applicationId;
-
-	private String content;
 
 	public String getApplicationId() {
 		return this.applicationId;

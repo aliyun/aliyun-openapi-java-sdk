@@ -23,15 +23,7 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class CreateRateRequest extends RpcAcsRequest<CreateRateResponse> {
-	
-	public CreateRateRequest() {
-		super("Market", "2015-11-01", "CreateRate", "yunmarket");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String score;
 
@@ -40,6 +32,14 @@ public class CreateRateRequest extends RpcAcsRequest<CreateRateResponse> {
 	private String requestId;
 
 	private String content;
+	public CreateRateRequest() {
+		super("Market", "2015-11-01", "CreateRate", "yunmarket");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getScore() {
 		return this.score;

@@ -23,19 +23,19 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class ActivateLicenseRequest extends RpcAcsRequest<ActivateLicenseResponse> {
-	
+	   
+
+	private String identification;
+
+	private String licenseCode;
 	public ActivateLicenseRequest() {
 		super("Market", "2015-11-01", "ActivateLicense", "yunmarket");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String identification;
-
-	private String licenseCode;
 
 	public String getIdentification() {
 		return this.identification;

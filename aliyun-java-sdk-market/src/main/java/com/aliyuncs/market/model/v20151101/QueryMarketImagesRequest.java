@@ -23,17 +23,17 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class QueryMarketImagesRequest extends RpcAcsRequest<QueryMarketImagesResponse> {
-	
+	   
+
+	private String param;
 	public QueryMarketImagesRequest() {
 		super("Market", "2015-11-01", "QueryMarketImages", "yunmarket");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String param;
 
 	public String getParam() {
 		return this.param;

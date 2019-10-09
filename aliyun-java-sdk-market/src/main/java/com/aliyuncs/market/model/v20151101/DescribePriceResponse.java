@@ -33,7 +33,17 @@ public class DescribePriceResponse extends AcsResponse {
 
 	private Float discountPrice;
 
+	private Boolean cuxiao;
+
+	private Integer duration;
+
+	private String cycle;
+
+	private String infoTitle;
+
 	private List<PromotionRule> promotionRules;
+
+	private List<Coupon> coupons;
 
 	public String getProductCode() {
 		return this.productCode;
@@ -67,12 +77,52 @@ public class DescribePriceResponse extends AcsResponse {
 		this.discountPrice = discountPrice;
 	}
 
+	public Boolean getCuxiao() {
+		return this.cuxiao;
+	}
+
+	public void setCuxiao(Boolean cuxiao) {
+		this.cuxiao = cuxiao;
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+	}
+
+	public String getCycle() {
+		return this.cycle;
+	}
+
+	public void setCycle(String cycle) {
+		this.cycle = cycle;
+	}
+
+	public String getInfoTitle() {
+		return this.infoTitle;
+	}
+
+	public void setInfoTitle(String infoTitle) {
+		this.infoTitle = infoTitle;
+	}
+
 	public List<PromotionRule> getPromotionRules() {
 		return this.promotionRules;
 	}
 
 	public void setPromotionRules(List<PromotionRule> promotionRules) {
 		this.promotionRules = promotionRules;
+	}
+
+	public List<Coupon> getCoupons() {
+		return this.coupons;
+	}
+
+	public void setCoupons(List<Coupon> coupons) {
+		this.coupons = coupons;
 	}
 
 	public static class PromotionRule {
@@ -105,6 +155,69 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public void setTitle(String title) {
 			this.title = title;
+		}
+	}
+
+	public static class Coupon {
+
+		private String couponOptionCode;
+
+		private String couponOptionNo;
+
+		private String couponName;
+
+		private String couponDesc;
+
+		private Float canPromFee;
+
+		private Boolean isSelected;
+
+		public String getCouponOptionCode() {
+			return this.couponOptionCode;
+		}
+
+		public void setCouponOptionCode(String couponOptionCode) {
+			this.couponOptionCode = couponOptionCode;
+		}
+
+		public String getCouponOptionNo() {
+			return this.couponOptionNo;
+		}
+
+		public void setCouponOptionNo(String couponOptionNo) {
+			this.couponOptionNo = couponOptionNo;
+		}
+
+		public String getCouponName() {
+			return this.couponName;
+		}
+
+		public void setCouponName(String couponName) {
+			this.couponName = couponName;
+		}
+
+		public String getCouponDesc() {
+			return this.couponDesc;
+		}
+
+		public void setCouponDesc(String couponDesc) {
+			this.couponDesc = couponDesc;
+		}
+
+		public Float getCanPromFee() {
+			return this.canPromFee;
+		}
+
+		public void setCanPromFee(Float canPromFee) {
+			this.canPromFee = canPromFee;
+		}
+
+		public Boolean getIsSelected() {
+			return this.isSelected;
+		}
+
+		public void setIsSelected(Boolean isSelected) {
+			this.isSelected = isSelected;
 		}
 	}
 

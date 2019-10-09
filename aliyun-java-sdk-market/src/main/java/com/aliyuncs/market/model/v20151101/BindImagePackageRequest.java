@@ -23,19 +23,19 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class BindImagePackageRequest extends RpcAcsRequest<BindImagePackageResponse> {
-	
+	   
+
+	private String ecsInstanceId;
+
+	private String imagePackageInstanceId;
 	public BindImagePackageRequest() {
 		super("Market", "2015-11-01", "BindImagePackage", "yunmarket");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String ecsInstanceId;
-
-	private String imagePackageInstanceId;
 
 	public String getEcsInstanceId() {
 		return this.ecsInstanceId;

@@ -23,19 +23,19 @@ import com.aliyuncs.market.Endpoint;
  * @version 
  */
 public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
-	
+	   
+
+	private String commodity;
+
+	private String orderType;
 	public DescribePriceRequest() {
 		super("Market", "2015-11-01", "DescribePrice", "yunmarket");
-		setSysMethod(MethodType.POST);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String commodity;
-
-	private String orderType;
 
 	public String getCommodity() {
 		return this.commodity;
