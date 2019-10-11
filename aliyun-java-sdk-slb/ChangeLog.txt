@@ -1,6 +1,9 @@
 2019-10-11 Version: 3.2.15
 - Add response paramete for DescribeDomainExtensionAttribute.
 
+2019-10-11 Version: 3.2.15
+- Add response paramete for DescribeDomainExtensionAttribute.
+
 2019-10-11 Version: 3.2.14
 - Add new interface DescribeDomainExtensionAttribute.
 
