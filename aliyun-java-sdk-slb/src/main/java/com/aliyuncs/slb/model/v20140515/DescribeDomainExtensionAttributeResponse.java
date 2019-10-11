@@ -32,6 +32,10 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 
 	private String serverCertificateId;
 
+	private String loadBalancerId;
+
+	private Integer listenerPort;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -78,6 +82,22 @@ public class DescribeDomainExtensionAttributeResponse extends AcsResponse {
 
 	public void setServerCertificateId(String serverCertificateId) {
 		this.serverCertificateId = serverCertificateId;
+	}
+
+	public String getLoadBalancerId() {
+		return this.loadBalancerId;
+	}
+
+	public void setLoadBalancerId(String loadBalancerId) {
+		this.loadBalancerId = loadBalancerId;
+	}
+
+	public Integer getListenerPort() {
+		return this.listenerPort;
+	}
+
+	public void setListenerPort(Integer listenerPort) {
+		this.listenerPort = listenerPort;
 	}
 
 	@Override

@@ -26,6 +26,8 @@ public class DescribeDomainExtensionAttributeResponseUnmarshaller {
 		describeDomainExtensionAttributeResponse.setDomainExtensionId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.DomainExtensionId"));
 		describeDomainExtensionAttributeResponse.setDomain(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.Domain"));
 		describeDomainExtensionAttributeResponse.setServerCertificateId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.ServerCertificateId"));
+		describeDomainExtensionAttributeResponse.setLoadBalancerId(_ctx.stringValue("DescribeDomainExtensionAttributeResponse.LoadBalancerId"));
+		describeDomainExtensionAttributeResponse.setListenerPort(_ctx.integerValue("DescribeDomainExtensionAttributeResponse.ListenerPort"));
 	 
 	 	return describeDomainExtensionAttributeResponse;
 	}
