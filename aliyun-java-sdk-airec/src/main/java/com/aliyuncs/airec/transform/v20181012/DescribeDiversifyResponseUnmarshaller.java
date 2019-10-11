@@ -22,20 +22,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDiversifyResponseUnmarshaller {
 
-	public static DescribeDiversifyResponse unmarshall(DescribeDiversifyResponse describeDiversifyResponse, UnmarshallerContext context) {
+	public static DescribeDiversifyResponse unmarshall(DescribeDiversifyResponse describeDiversifyResponse, UnmarshallerContext _ctx) {
 		
-		describeDiversifyResponse.setRequestId(context.stringValue("DescribeDiversifyResponse.RequestId"));
-		describeDiversifyResponse.setCode(context.stringValue("DescribeDiversifyResponse.Code"));
-		describeDiversifyResponse.setMessage(context.stringValue("DescribeDiversifyResponse.Message"));
+		describeDiversifyResponse.setRequestId(_ctx.stringValue("DescribeDiversifyResponse.RequestId"));
+		describeDiversifyResponse.setCode(_ctx.stringValue("DescribeDiversifyResponse.Code"));
+		describeDiversifyResponse.setMessage(_ctx.stringValue("DescribeDiversifyResponse.Message"));
 
 		Result result = new Result();
-		result.setName(context.stringValue("DescribeDiversifyResponse.Result.Name"));
-		result.setGmtCreate(context.stringValue("DescribeDiversifyResponse.Result.GmtCreate"));
-		result.setGmtModified(context.stringValue("DescribeDiversifyResponse.Result.GmtModified"));
+		result.setName(_ctx.stringValue("DescribeDiversifyResponse.Result.Name"));
+		result.setGmtCreate(_ctx.stringValue("DescribeDiversifyResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.stringValue("DescribeDiversifyResponse.Result.GmtModified"));
 
 		Parameter parameter = new Parameter();
-		parameter.setCategoryIndex(context.integerValue("DescribeDiversifyResponse.Result.Parameter.CategoryIndex"));
-		parameter.setWindow(context.integerValue("DescribeDiversifyResponse.Result.Parameter.Window"));
+		parameter.setCategoryIndex(_ctx.integerValue("DescribeDiversifyResponse.Result.Parameter.CategoryIndex"));
+		parameter.setWindow(_ctx.integerValue("DescribeDiversifyResponse.Result.Parameter.Window"));
 		result.setParameter(parameter);
 		describeDiversifyResponse.setResult(result);
 	 

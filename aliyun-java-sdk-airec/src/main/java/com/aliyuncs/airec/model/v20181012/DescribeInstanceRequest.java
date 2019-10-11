@@ -16,20 +16,25 @@ package com.aliyuncs.airec.model.v20181012;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.airec.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeInstanceRequest extends RoaAcsRequest<DescribeInstanceResponse> {
-	
+	   
+
+	private String instanceId;
 	public DescribeInstanceRequest() {
 		super("Airec", "2018-10-12", "DescribeInstance", "airec");
 		setUriPattern("/openapi/instances/[InstanceId]");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
-
-	private String instanceId;
 
 	public String getInstanceId() {
 		return this.instanceId;

@@ -24,29 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListInstanceResponseUnmarshaller {
 
-	public static ListInstanceResponse unmarshall(ListInstanceResponse listInstanceResponse, UnmarshallerContext context) {
+	public static ListInstanceResponse unmarshall(ListInstanceResponse listInstanceResponse, UnmarshallerContext _ctx) {
 		
-		listInstanceResponse.setRequestId(context.stringValue("ListInstanceResponse.RequestId"));
-		listInstanceResponse.setCode(context.stringValue("ListInstanceResponse.Code"));
-		listInstanceResponse.setMessage(context.stringValue("ListInstanceResponse.Message"));
+		listInstanceResponse.setRequestId(_ctx.stringValue("ListInstanceResponse.RequestId"));
+		listInstanceResponse.setCode(_ctx.stringValue("ListInstanceResponse.Code"));
+		listInstanceResponse.setMessage(_ctx.stringValue("ListInstanceResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("ListInstanceResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListInstanceResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setInstanceId(context.stringValue("ListInstanceResponse.Result["+ i +"].InstanceId"));
-			resultItem.setChargeType(context.stringValue("ListInstanceResponse.Result["+ i +"].ChargeType"));
-			resultItem.setRegionId(context.stringValue("ListInstanceResponse.Result["+ i +"].RegionId"));
-			resultItem.setName(context.stringValue("ListInstanceResponse.Result["+ i +"].Name"));
-			resultItem.setType(context.stringValue("ListInstanceResponse.Result["+ i +"].Type"));
-			resultItem.setExpiredTime(context.stringValue("ListInstanceResponse.Result["+ i +"].ExpiredTime"));
-			resultItem.setGmtCreate(context.stringValue("ListInstanceResponse.Result["+ i +"].GmtCreate"));
-			resultItem.setGmtModified(context.stringValue("ListInstanceResponse.Result["+ i +"].GmtModified"));
-			resultItem.setStatus(context.stringValue("ListInstanceResponse.Result["+ i +"].Status"));
-			resultItem.setIndustry(context.stringValue("ListInstanceResponse.Result["+ i +"].Industry"));
-			resultItem.setScene(context.stringValue("ListInstanceResponse.Result["+ i +"].Scene"));
-			resultItem.setDataSetVersion(context.stringValue("ListInstanceResponse.Result["+ i +"].DataSetVersion"));
-			resultItem.setCommodityCode(context.stringValue("ListInstanceResponse.Result["+ i +"].CommodityCode"));
-			resultItem.setLockMode(context.stringValue("ListInstanceResponse.Result["+ i +"].LockMode"));
+			resultItem.setInstanceId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].InstanceId"));
+			resultItem.setChargeType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].ChargeType"));
+			resultItem.setRegionId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].RegionId"));
+			resultItem.setName(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].Name"));
+			resultItem.setType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].Type"));
+			resultItem.setExpiredTime(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].ExpiredTime"));
+			resultItem.setGmtCreate(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].GmtCreate"));
+			resultItem.setGmtModified(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].GmtModified"));
+			resultItem.setStatus(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].Status"));
+			resultItem.setIndustry(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].Industry"));
+			resultItem.setScene(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].Scene"));
+			resultItem.setDataSetVersion(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].DataSetVersion"));
+			resultItem.setCommodityCode(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].CommodityCode"));
+			resultItem.setLockMode(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].LockMode"));
 
 			result.add(resultItem);
 		}

@@ -22,20 +22,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateDiversifyResponseUnmarshaller {
 
-	public static CreateDiversifyResponse unmarshall(CreateDiversifyResponse createDiversifyResponse, UnmarshallerContext context) {
+	public static CreateDiversifyResponse unmarshall(CreateDiversifyResponse createDiversifyResponse, UnmarshallerContext _ctx) {
 		
-		createDiversifyResponse.setRequestId(context.stringValue("CreateDiversifyResponse.RequestId"));
-		createDiversifyResponse.setCode(context.stringValue("CreateDiversifyResponse.Code"));
-		createDiversifyResponse.setMessage(context.stringValue("CreateDiversifyResponse.Message"));
+		createDiversifyResponse.setRequestId(_ctx.stringValue("CreateDiversifyResponse.RequestId"));
+		createDiversifyResponse.setCode(_ctx.stringValue("CreateDiversifyResponse.Code"));
+		createDiversifyResponse.setMessage(_ctx.stringValue("CreateDiversifyResponse.Message"));
 
 		Result result = new Result();
-		result.setName(context.stringValue("CreateDiversifyResponse.Result.Name"));
-		result.setGmtCreate(context.stringValue("CreateDiversifyResponse.Result.GmtCreate"));
-		result.setGmtModified(context.stringValue("CreateDiversifyResponse.Result.GmtModified"));
+		result.setName(_ctx.stringValue("CreateDiversifyResponse.Result.Name"));
+		result.setGmtCreate(_ctx.stringValue("CreateDiversifyResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.stringValue("CreateDiversifyResponse.Result.GmtModified"));
 
 		Parameter parameter = new Parameter();
-		parameter.setCategoryIndex(context.integerValue("CreateDiversifyResponse.Result.Parameter.CategoryIndex"));
-		parameter.setWindow(context.integerValue("CreateDiversifyResponse.Result.Parameter.Window"));
+		parameter.setCategoryIndex(_ctx.integerValue("CreateDiversifyResponse.Result.Parameter.CategoryIndex"));
+		parameter.setWindow(_ctx.integerValue("CreateDiversifyResponse.Result.Parameter.Window"));
 		result.setParameter(parameter);
 		createDiversifyResponse.setResult(result);
 	 

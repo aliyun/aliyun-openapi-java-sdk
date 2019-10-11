@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class StopDataSetResponseUnmarshaller {
 
-	public static StopDataSetResponse unmarshall(StopDataSetResponse stopDataSetResponse, UnmarshallerContext context) {
+	public static StopDataSetResponse unmarshall(StopDataSetResponse stopDataSetResponse, UnmarshallerContext _ctx) {
 		
-		stopDataSetResponse.setRequestId(context.stringValue("StopDataSetResponse.RequestId"));
-		stopDataSetResponse.setCode(context.stringValue("StopDataSetResponse.Code"));
-		stopDataSetResponse.setMessage(context.stringValue("StopDataSetResponse.Message"));
+		stopDataSetResponse.setRequestId(_ctx.stringValue("StopDataSetResponse.RequestId"));
+		stopDataSetResponse.setCode(_ctx.stringValue("StopDataSetResponse.Code"));
+		stopDataSetResponse.setMessage(_ctx.stringValue("StopDataSetResponse.Message"));
 
 		Result result = new Result();
-		result.setInstanceId(context.stringValue("StopDataSetResponse.Result.InstanceId"));
-		result.setVersionId(context.stringValue("StopDataSetResponse.Result.VersionId"));
-		result.setState(context.stringValue("StopDataSetResponse.Result.State"));
-		result.setGmtCreate(context.longValue("StopDataSetResponse.Result.GmtCreate"));
-		result.setGmtModified(context.longValue("StopDataSetResponse.Result.GmtModified"));
+		result.setInstanceId(_ctx.stringValue("StopDataSetResponse.Result.InstanceId"));
+		result.setVersionId(_ctx.stringValue("StopDataSetResponse.Result.VersionId"));
+		result.setState(_ctx.stringValue("StopDataSetResponse.Result.State"));
+		result.setGmtCreate(_ctx.longValue("StopDataSetResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.longValue("StopDataSetResponse.Result.GmtModified"));
 		stopDataSetResponse.setResult(result);
 	 
 	 	return stopDataSetResponse;

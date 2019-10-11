@@ -16,18 +16,14 @@ package com.aliyuncs.airec.model.v20181012;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.airec.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
-	
-	public RecommendRequest() {
-		super("Airec", "2018-10-12", "Recommend", "airec");
-		setUriPattern("/openapi/instances/[InstanceId]/actions/recommend");
-		setMethod(MethodType.GET);
-	}
+	   
 
 	private Integer returnCount;
 
@@ -42,6 +38,15 @@ public class RecommendRequest extends RoaAcsRequest<RecommendResponse> {
 	private String userId;
 
 	private String items;
+	public RecommendRequest() {
+		super("Airec", "2018-10-12", "Recommend", "airec");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/recommend");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getReturnCount() {
 		return this.returnCount;

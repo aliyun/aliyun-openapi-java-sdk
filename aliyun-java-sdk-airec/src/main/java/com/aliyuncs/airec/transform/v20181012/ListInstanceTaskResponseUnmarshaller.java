@@ -25,26 +25,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListInstanceTaskResponseUnmarshaller {
 
-	public static ListInstanceTaskResponse unmarshall(ListInstanceTaskResponse listInstanceTaskResponse, UnmarshallerContext context) {
+	public static ListInstanceTaskResponse unmarshall(ListInstanceTaskResponse listInstanceTaskResponse, UnmarshallerContext _ctx) {
 		
-		listInstanceTaskResponse.setRequestId(context.stringValue("ListInstanceTaskResponse.RequestId"));
-		listInstanceTaskResponse.setCode(context.stringValue("ListInstanceTaskResponse.Code"));
-		listInstanceTaskResponse.setMessage(context.stringValue("ListInstanceTaskResponse.Message"));
+		listInstanceTaskResponse.setRequestId(_ctx.stringValue("ListInstanceTaskResponse.RequestId"));
+		listInstanceTaskResponse.setCode(_ctx.stringValue("ListInstanceTaskResponse.Code"));
+		listInstanceTaskResponse.setMessage(_ctx.stringValue("ListInstanceTaskResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("ListInstanceTaskResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListInstanceTaskResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(context.stringValue("ListInstanceTaskResponse.Result["+ i +"].Name"));
-			resultItem.setTotalProgress(context.integerValue("ListInstanceTaskResponse.Result["+ i +"].TotalProgress"));
+			resultItem.setName(_ctx.stringValue("ListInstanceTaskResponse.Result["+ i +"].Name"));
+			resultItem.setTotalProgress(_ctx.integerValue("ListInstanceTaskResponse.Result["+ i +"].TotalProgress"));
 
 			List<SubProgressInfosItem> subProgressInfos = new ArrayList<SubProgressInfosItem>();
-			for (int j = 0; j < context.lengthValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos.Length"); j++) {
 				SubProgressInfosItem subProgressInfosItem = new SubProgressInfosItem();
-				subProgressInfosItem.setType(context.stringValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].Type"));
-				subProgressInfosItem.setProgress(context.integerValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].Progress"));
-				subProgressInfosItem.setDetail(context.stringValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].Detail"));
-				subProgressInfosItem.setTotalNum(context.integerValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].TotalNum"));
-				subProgressInfosItem.setFinishedNum(context.integerValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].FinishedNum"));
+				subProgressInfosItem.setType(_ctx.stringValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].Type"));
+				subProgressInfosItem.setProgress(_ctx.integerValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].Progress"));
+				subProgressInfosItem.setDetail(_ctx.stringValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].Detail"));
+				subProgressInfosItem.setTotalNum(_ctx.integerValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].TotalNum"));
+				subProgressInfosItem.setFinishedNum(_ctx.integerValue("ListInstanceTaskResponse.Result["+ i +"].SubProgressInfos["+ j +"].FinishedNum"));
 
 				subProgressInfos.add(subProgressInfosItem);
 			}

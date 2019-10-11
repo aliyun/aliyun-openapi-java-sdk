@@ -26,24 +26,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteMixResponseUnmarshaller {
 
-	public static DeleteMixResponse unmarshall(DeleteMixResponse deleteMixResponse, UnmarshallerContext context) {
+	public static DeleteMixResponse unmarshall(DeleteMixResponse deleteMixResponse, UnmarshallerContext _ctx) {
 		
-		deleteMixResponse.setRequestId(context.stringValue("DeleteMixResponse.RequestId"));
-		deleteMixResponse.setCode(context.stringValue("DeleteMixResponse.Code"));
-		deleteMixResponse.setMessage(context.stringValue("DeleteMixResponse.Message"));
+		deleteMixResponse.setRequestId(_ctx.stringValue("DeleteMixResponse.RequestId"));
+		deleteMixResponse.setCode(_ctx.stringValue("DeleteMixResponse.Code"));
+		deleteMixResponse.setMessage(_ctx.stringValue("DeleteMixResponse.Message"));
 
 		Result result = new Result();
-		result.setName(context.stringValue("DeleteMixResponse.Result.Name"));
-		result.setGmtCreate(context.stringValue("DeleteMixResponse.Result.GmtCreate"));
-		result.setGmtModified(context.stringValue("DeleteMixResponse.Result.GmtModified"));
+		result.setName(_ctx.stringValue("DeleteMixResponse.Result.Name"));
+		result.setGmtCreate(_ctx.stringValue("DeleteMixResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.stringValue("DeleteMixResponse.Result.GmtModified"));
 
 		Parameter parameter = new Parameter();
 
 		List<SettingsItem> settings = new ArrayList<SettingsItem>();
-		for (int i = 0; i < context.lengthValue("DeleteMixResponse.Result.Parameter.Settings.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DeleteMixResponse.Result.Parameter.Settings.Length"); i++) {
 			SettingsItem settingsItem = new SettingsItem();
-			settingsItem.setName(context.stringValue("DeleteMixResponse.Result.Parameter.Settings["+ i +"].Name"));
-			settingsItem.setValue(context.stringValue("DeleteMixResponse.Result.Parameter.Settings["+ i +"].Value"));
+			settingsItem.setName(_ctx.stringValue("DeleteMixResponse.Result.Parameter.Settings["+ i +"].Name"));
+			settingsItem.setValue(_ctx.stringValue("DeleteMixResponse.Result.Parameter.Settings["+ i +"].Value"));
 
 			settings.add(settingsItem);
 		}

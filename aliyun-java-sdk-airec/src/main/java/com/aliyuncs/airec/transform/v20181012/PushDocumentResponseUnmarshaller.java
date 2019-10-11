@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class PushDocumentResponseUnmarshaller {
 
-	public static PushDocumentResponse unmarshall(PushDocumentResponse pushDocumentResponse, UnmarshallerContext context) {
+	public static PushDocumentResponse unmarshall(PushDocumentResponse pushDocumentResponse, UnmarshallerContext _ctx) {
 		
-		pushDocumentResponse.setRequestId(context.stringValue("PushDocumentResponse.RequestId"));
-		pushDocumentResponse.setCode(context.stringValue("PushDocumentResponse.Code"));
-		pushDocumentResponse.setMessage(context.stringValue("PushDocumentResponse.Message"));
-		pushDocumentResponse.setResult(context.booleanValue("PushDocumentResponse.Result"));
+		pushDocumentResponse.setRequestId(_ctx.stringValue("PushDocumentResponse.RequestId"));
+		pushDocumentResponse.setCode(_ctx.stringValue("PushDocumentResponse.Code"));
+		pushDocumentResponse.setMessage(_ctx.stringValue("PushDocumentResponse.Message"));
+		pushDocumentResponse.setResult(_ctx.booleanValue("PushDocumentResponse.Result"));
 	 
 	 	return pushDocumentResponse;
 	}

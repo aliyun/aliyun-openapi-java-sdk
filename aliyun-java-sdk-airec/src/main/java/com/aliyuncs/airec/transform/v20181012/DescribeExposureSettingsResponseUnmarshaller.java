@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeExposureSettingsResponseUnmarshaller {
 
-	public static DescribeExposureSettingsResponse unmarshall(DescribeExposureSettingsResponse describeExposureSettingsResponse, UnmarshallerContext context) {
+	public static DescribeExposureSettingsResponse unmarshall(DescribeExposureSettingsResponse describeExposureSettingsResponse, UnmarshallerContext _ctx) {
 		
-		describeExposureSettingsResponse.setRequestId(context.stringValue("DescribeExposureSettingsResponse.RequestId"));
-		describeExposureSettingsResponse.setCode(context.stringValue("DescribeExposureSettingsResponse.Code"));
-		describeExposureSettingsResponse.setMessage(context.stringValue("DescribeExposureSettingsResponse.Message"));
+		describeExposureSettingsResponse.setRequestId(_ctx.stringValue("DescribeExposureSettingsResponse.RequestId"));
+		describeExposureSettingsResponse.setCode(_ctx.stringValue("DescribeExposureSettingsResponse.Code"));
+		describeExposureSettingsResponse.setMessage(_ctx.stringValue("DescribeExposureSettingsResponse.Message"));
 
 		Result result = new Result();
-		result.setDurationSeconds(context.integerValue("DescribeExposureSettingsResponse.Result.DurationSeconds"));
-		result.setScenarioBased(context.booleanValue("DescribeExposureSettingsResponse.Result.ScenarioBased"));
+		result.setDurationSeconds(_ctx.integerValue("DescribeExposureSettingsResponse.Result.DurationSeconds"));
+		result.setScenarioBased(_ctx.booleanValue("DescribeExposureSettingsResponse.Result.ScenarioBased"));
 		describeExposureSettingsResponse.setResult(result);
 	 
 	 	return describeExposureSettingsResponse;

@@ -21,27 +21,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeInstanceResponseUnmarshaller {
 
-	public static DescribeInstanceResponse unmarshall(DescribeInstanceResponse describeInstanceResponse, UnmarshallerContext context) {
+	public static DescribeInstanceResponse unmarshall(DescribeInstanceResponse describeInstanceResponse, UnmarshallerContext _ctx) {
 		
-		describeInstanceResponse.setRequestId(context.stringValue("DescribeInstanceResponse.RequestId"));
-		describeInstanceResponse.setCode(context.stringValue("DescribeInstanceResponse.Code"));
-		describeInstanceResponse.setMessage(context.stringValue("DescribeInstanceResponse.Message"));
+		describeInstanceResponse.setRequestId(_ctx.stringValue("DescribeInstanceResponse.RequestId"));
+		describeInstanceResponse.setCode(_ctx.stringValue("DescribeInstanceResponse.Code"));
+		describeInstanceResponse.setMessage(_ctx.stringValue("DescribeInstanceResponse.Message"));
 
 		Result result = new Result();
-		result.setInstanceId(context.stringValue("DescribeInstanceResponse.Result.InstanceId"));
-		result.setChargeType(context.stringValue("DescribeInstanceResponse.Result.ChargeType"));
-		result.setRegionId(context.stringValue("DescribeInstanceResponse.Result.RegionId"));
-		result.setName(context.stringValue("DescribeInstanceResponse.Result.Name"));
-		result.setType(context.stringValue("DescribeInstanceResponse.Result.Type"));
-		result.setExpiredTime(context.stringValue("DescribeInstanceResponse.Result.ExpiredTime"));
-		result.setGmtCreate(context.stringValue("DescribeInstanceResponse.Result.GmtCreate"));
-		result.setGmtModified(context.stringValue("DescribeInstanceResponse.Result.GmtModified"));
-		result.setStatus(context.stringValue("DescribeInstanceResponse.Result.Status"));
-		result.setIndustry(context.stringValue("DescribeInstanceResponse.Result.Industry"));
-		result.setScene(context.stringValue("DescribeInstanceResponse.Result.Scene"));
-		result.setDataSetVersion(context.stringValue("DescribeInstanceResponse.Result.DataSetVersion"));
-		result.setCommodityCode(context.stringValue("DescribeInstanceResponse.Result.CommodityCode"));
-		result.setLockMode(context.stringValue("DescribeInstanceResponse.Result.LockMode"));
+		result.setInstanceId(_ctx.stringValue("DescribeInstanceResponse.Result.InstanceId"));
+		result.setChargeType(_ctx.stringValue("DescribeInstanceResponse.Result.ChargeType"));
+		result.setRegionId(_ctx.stringValue("DescribeInstanceResponse.Result.RegionId"));
+		result.setName(_ctx.stringValue("DescribeInstanceResponse.Result.Name"));
+		result.setType(_ctx.stringValue("DescribeInstanceResponse.Result.Type"));
+		result.setExpiredTime(_ctx.stringValue("DescribeInstanceResponse.Result.ExpiredTime"));
+		result.setGmtCreate(_ctx.stringValue("DescribeInstanceResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.stringValue("DescribeInstanceResponse.Result.GmtModified"));
+		result.setStatus(_ctx.stringValue("DescribeInstanceResponse.Result.Status"));
+		result.setIndustry(_ctx.stringValue("DescribeInstanceResponse.Result.Industry"));
+		result.setScene(_ctx.stringValue("DescribeInstanceResponse.Result.Scene"));
+		result.setDataSetVersion(_ctx.stringValue("DescribeInstanceResponse.Result.DataSetVersion"));
+		result.setCommodityCode(_ctx.stringValue("DescribeInstanceResponse.Result.CommodityCode"));
+		result.setLockMode(_ctx.stringValue("DescribeInstanceResponse.Result.LockMode"));
 		describeInstanceResponse.setResult(result);
 	 
 	 	return describeInstanceResponse;

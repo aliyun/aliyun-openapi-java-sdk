@@ -21,19 +21,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeQuotaResponseUnmarshaller {
 
-	public static DescribeQuotaResponse unmarshall(DescribeQuotaResponse describeQuotaResponse, UnmarshallerContext context) {
+	public static DescribeQuotaResponse unmarshall(DescribeQuotaResponse describeQuotaResponse, UnmarshallerContext _ctx) {
 		
-		describeQuotaResponse.setRequestId(context.stringValue("DescribeQuotaResponse.RequestId"));
-		describeQuotaResponse.setCode(context.stringValue("DescribeQuotaResponse.Code"));
-		describeQuotaResponse.setMessage(context.stringValue("DescribeQuotaResponse.Message"));
+		describeQuotaResponse.setRequestId(_ctx.stringValue("DescribeQuotaResponse.RequestId"));
+		describeQuotaResponse.setCode(_ctx.stringValue("DescribeQuotaResponse.Code"));
+		describeQuotaResponse.setMessage(_ctx.stringValue("DescribeQuotaResponse.Message"));
 
 		Result result = new Result();
-		result.setUserCount(context.longValue("DescribeQuotaResponse.Result.UserCount"));
-		result.setUserCountUsed(context.longValue("DescribeQuotaResponse.Result.UserCountUsed"));
-		result.setItemCount(context.longValue("DescribeQuotaResponse.Result.ItemCount"));
-		result.setItemCountUsed(context.longValue("DescribeQuotaResponse.Result.ItemCountUsed"));
-		result.setQps(context.integerValue("DescribeQuotaResponse.Result.Qps"));
-		result.setCurrentQps(context.integerValue("DescribeQuotaResponse.Result.CurrentQps"));
+		result.setUserCount(_ctx.longValue("DescribeQuotaResponse.Result.UserCount"));
+		result.setUserCountUsed(_ctx.longValue("DescribeQuotaResponse.Result.UserCountUsed"));
+		result.setItemCount(_ctx.longValue("DescribeQuotaResponse.Result.ItemCount"));
+		result.setItemCountUsed(_ctx.longValue("DescribeQuotaResponse.Result.ItemCountUsed"));
+		result.setQps(_ctx.integerValue("DescribeQuotaResponse.Result.Qps"));
+		result.setCurrentQps(_ctx.integerValue("DescribeQuotaResponse.Result.CurrentQps"));
 		describeQuotaResponse.setResult(result);
 	 
 	 	return describeQuotaResponse;

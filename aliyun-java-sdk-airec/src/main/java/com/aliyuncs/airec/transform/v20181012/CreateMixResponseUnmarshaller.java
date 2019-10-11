@@ -26,24 +26,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateMixResponseUnmarshaller {
 
-	public static CreateMixResponse unmarshall(CreateMixResponse createMixResponse, UnmarshallerContext context) {
+	public static CreateMixResponse unmarshall(CreateMixResponse createMixResponse, UnmarshallerContext _ctx) {
 		
-		createMixResponse.setRequestId(context.stringValue("CreateMixResponse.RequestId"));
-		createMixResponse.setCode(context.stringValue("CreateMixResponse.Code"));
-		createMixResponse.setMessage(context.stringValue("CreateMixResponse.Message"));
+		createMixResponse.setRequestId(_ctx.stringValue("CreateMixResponse.RequestId"));
+		createMixResponse.setCode(_ctx.stringValue("CreateMixResponse.Code"));
+		createMixResponse.setMessage(_ctx.stringValue("CreateMixResponse.Message"));
 
 		Result result = new Result();
-		result.setName(context.stringValue("CreateMixResponse.Result.Name"));
-		result.setGmtCreate(context.stringValue("CreateMixResponse.Result.GmtCreate"));
-		result.setGmtModified(context.stringValue("CreateMixResponse.Result.GmtModified"));
+		result.setName(_ctx.stringValue("CreateMixResponse.Result.Name"));
+		result.setGmtCreate(_ctx.stringValue("CreateMixResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.stringValue("CreateMixResponse.Result.GmtModified"));
 
 		Parameter parameter = new Parameter();
 
 		List<SettingsItem> settings = new ArrayList<SettingsItem>();
-		for (int i = 0; i < context.lengthValue("CreateMixResponse.Result.Parameter.Settings.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("CreateMixResponse.Result.Parameter.Settings.Length"); i++) {
 			SettingsItem settingsItem = new SettingsItem();
-			settingsItem.setName(context.stringValue("CreateMixResponse.Result.Parameter.Settings["+ i +"].Name"));
-			settingsItem.setValue(context.integerValue("CreateMixResponse.Result.Parameter.Settings["+ i +"].Value"));
+			settingsItem.setName(_ctx.stringValue("CreateMixResponse.Result.Parameter.Settings["+ i +"].Name"));
+			settingsItem.setValue(_ctx.integerValue("CreateMixResponse.Result.Parameter.Settings["+ i +"].Value"));
 
 			settings.add(settingsItem);
 		}

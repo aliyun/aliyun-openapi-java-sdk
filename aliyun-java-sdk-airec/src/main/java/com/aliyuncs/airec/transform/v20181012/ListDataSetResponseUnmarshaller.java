@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDataSetResponseUnmarshaller {
 
-	public static ListDataSetResponse unmarshall(ListDataSetResponse listDataSetResponse, UnmarshallerContext context) {
+	public static ListDataSetResponse unmarshall(ListDataSetResponse listDataSetResponse, UnmarshallerContext _ctx) {
 		
-		listDataSetResponse.setRequestId(context.stringValue("ListDataSetResponse.RequestId"));
-		listDataSetResponse.setCode(context.stringValue("ListDataSetResponse.Code"));
-		listDataSetResponse.setMessage(context.stringValue("ListDataSetResponse.Message"));
+		listDataSetResponse.setRequestId(_ctx.stringValue("ListDataSetResponse.RequestId"));
+		listDataSetResponse.setCode(_ctx.stringValue("ListDataSetResponse.Code"));
+		listDataSetResponse.setMessage(_ctx.stringValue("ListDataSetResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("ListDataSetResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDataSetResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setInstanceId(context.stringValue("ListDataSetResponse.Result["+ i +"].InstanceId"));
-			resultItem.setVersionId(context.stringValue("ListDataSetResponse.Result["+ i +"].VersionId"));
-			resultItem.setState(context.stringValue("ListDataSetResponse.Result["+ i +"].State"));
-			resultItem.setGmtCreate(context.longValue("ListDataSetResponse.Result["+ i +"].GmtCreate"));
-			resultItem.setGmtModified(context.longValue("ListDataSetResponse.Result["+ i +"].GmtModified"));
+			resultItem.setInstanceId(_ctx.stringValue("ListDataSetResponse.Result["+ i +"].InstanceId"));
+			resultItem.setVersionId(_ctx.stringValue("ListDataSetResponse.Result["+ i +"].VersionId"));
+			resultItem.setState(_ctx.stringValue("ListDataSetResponse.Result["+ i +"].State"));
+			resultItem.setGmtCreate(_ctx.longValue("ListDataSetResponse.Result["+ i +"].GmtCreate"));
+			resultItem.setGmtModified(_ctx.longValue("ListDataSetResponse.Result["+ i +"].GmtModified"));
 
 			result.add(resultItem);
 		}

@@ -26,24 +26,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeMixResponseUnmarshaller {
 
-	public static DescribeMixResponse unmarshall(DescribeMixResponse describeMixResponse, UnmarshallerContext context) {
+	public static DescribeMixResponse unmarshall(DescribeMixResponse describeMixResponse, UnmarshallerContext _ctx) {
 		
-		describeMixResponse.setRequestId(context.stringValue("DescribeMixResponse.RequestId"));
-		describeMixResponse.setCode(context.stringValue("DescribeMixResponse.Code"));
-		describeMixResponse.setMessage(context.stringValue("DescribeMixResponse.Message"));
+		describeMixResponse.setRequestId(_ctx.stringValue("DescribeMixResponse.RequestId"));
+		describeMixResponse.setCode(_ctx.stringValue("DescribeMixResponse.Code"));
+		describeMixResponse.setMessage(_ctx.stringValue("DescribeMixResponse.Message"));
 
 		Result result = new Result();
-		result.setName(context.stringValue("DescribeMixResponse.Result.Name"));
-		result.setGmtCreate(context.stringValue("DescribeMixResponse.Result.GmtCreate"));
-		result.setGmtModified(context.stringValue("DescribeMixResponse.Result.GmtModified"));
+		result.setName(_ctx.stringValue("DescribeMixResponse.Result.Name"));
+		result.setGmtCreate(_ctx.stringValue("DescribeMixResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.stringValue("DescribeMixResponse.Result.GmtModified"));
 
 		Parameter parameter = new Parameter();
 
 		List<SettingsItem> settings = new ArrayList<SettingsItem>();
-		for (int i = 0; i < context.lengthValue("DescribeMixResponse.Result.Parameter.Settings.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeMixResponse.Result.Parameter.Settings.Length"); i++) {
 			SettingsItem settingsItem = new SettingsItem();
-			settingsItem.setName(context.stringValue("DescribeMixResponse.Result.Parameter.Settings["+ i +"].Name"));
-			settingsItem.setValue(context.integerValue("DescribeMixResponse.Result.Parameter.Settings["+ i +"].Value"));
+			settingsItem.setName(_ctx.stringValue("DescribeMixResponse.Result.Parameter.Settings["+ i +"].Name"));
+			settingsItem.setValue(_ctx.integerValue("DescribeMixResponse.Result.Parameter.Settings["+ i +"].Value"));
 
 			settings.add(settingsItem);
 		}

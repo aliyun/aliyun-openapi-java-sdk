@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyExposureSettingsResponseUnmarshaller {
 
-	public static ModifyExposureSettingsResponse unmarshall(ModifyExposureSettingsResponse modifyExposureSettingsResponse, UnmarshallerContext context) {
+	public static ModifyExposureSettingsResponse unmarshall(ModifyExposureSettingsResponse modifyExposureSettingsResponse, UnmarshallerContext _ctx) {
 		
-		modifyExposureSettingsResponse.setRequestId(context.stringValue("ModifyExposureSettingsResponse.RequestId"));
-		modifyExposureSettingsResponse.setCode(context.stringValue("ModifyExposureSettingsResponse.Code"));
-		modifyExposureSettingsResponse.setMessage(context.stringValue("ModifyExposureSettingsResponse.Message"));
+		modifyExposureSettingsResponse.setRequestId(_ctx.stringValue("ModifyExposureSettingsResponse.RequestId"));
+		modifyExposureSettingsResponse.setCode(_ctx.stringValue("ModifyExposureSettingsResponse.Code"));
+		modifyExposureSettingsResponse.setMessage(_ctx.stringValue("ModifyExposureSettingsResponse.Message"));
 
 		Result result = new Result();
-		result.setDurationSeconds(context.integerValue("ModifyExposureSettingsResponse.Result.DurationSeconds"));
-		result.setScenarioBased(context.booleanValue("ModifyExposureSettingsResponse.Result.ScenarioBased"));
+		result.setDurationSeconds(_ctx.integerValue("ModifyExposureSettingsResponse.Result.DurationSeconds"));
+		result.setScenarioBased(_ctx.booleanValue("ModifyExposureSettingsResponse.Result.ScenarioBased"));
 		modifyExposureSettingsResponse.setResult(result);
 	 
 	 	return modifyExposureSettingsResponse;

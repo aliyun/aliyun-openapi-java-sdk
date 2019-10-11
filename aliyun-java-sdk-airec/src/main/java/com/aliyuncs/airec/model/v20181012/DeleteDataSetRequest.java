@@ -16,22 +16,27 @@ package com.aliyuncs.airec.model.v20181012;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.airec.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteDataSetRequest extends RoaAcsRequest<DeleteDataSetResponse> {
-	
-	public DeleteDataSetRequest() {
-		super("Airec", "2018-10-12", "DeleteDataSet", "airec");
-		setUriPattern("/openapi/instances/[InstanceId]/dataSets/[VersionId]");
-		setMethod(MethodType.DELETE);
-	}
+	   
 
 	private String versionId;
 
 	private String instanceId;
+	public DeleteDataSetRequest() {
+		super("Airec", "2018-10-12", "DeleteDataSet", "airec");
+		setUriPattern("/openapi/instances/[InstanceId]/dataSets/[VersionId]");
+		setMethod(MethodType.DELETE);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getVersionId() {
 		return this.versionId;

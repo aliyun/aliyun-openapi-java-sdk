@@ -16,17 +16,48 @@ package com.aliyuncs.airec.model.v20181012;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.airec.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
-	
+	   
+
+	private Integer size;
+
+	private Integer page;
 	public ListInstanceRequest() {
 		super("Airec", "2018-10-12", "ListInstance", "airec");
 		setUriPattern("/openapi/instances");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Integer getSize() {
+		return this.size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("size", size.toString());
+		}
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("page", page.toString());
+		}
 	}
 
 	@Override

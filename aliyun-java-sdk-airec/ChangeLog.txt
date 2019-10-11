@@ -1,3 +1,6 @@
+2019-10-11 Version: 1.1.3
+- Generated 2018-10-12 for `Airec`.
+
 2019-06-18 Version: 1.1.2
 1. Supported the related recommend.
 2. Supported exposure time controll and exposure filter by scene.

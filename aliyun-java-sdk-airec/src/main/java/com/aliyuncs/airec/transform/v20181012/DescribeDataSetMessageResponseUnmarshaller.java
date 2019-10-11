@@ -24,19 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataSetMessageResponseUnmarshaller {
 
-	public static DescribeDataSetMessageResponse unmarshall(DescribeDataSetMessageResponse describeDataSetMessageResponse, UnmarshallerContext context) {
+	public static DescribeDataSetMessageResponse unmarshall(DescribeDataSetMessageResponse describeDataSetMessageResponse, UnmarshallerContext _ctx) {
 		
-		describeDataSetMessageResponse.setRequestId(context.stringValue("DescribeDataSetMessageResponse.RequestId"));
-		describeDataSetMessageResponse.setCode(context.stringValue("DescribeDataSetMessageResponse.Code"));
-		describeDataSetMessageResponse.setMessage(context.stringValue("DescribeDataSetMessageResponse.Message"));
+		describeDataSetMessageResponse.setRequestId(_ctx.stringValue("DescribeDataSetMessageResponse.RequestId"));
+		describeDataSetMessageResponse.setCode(_ctx.stringValue("DescribeDataSetMessageResponse.Code"));
+		describeDataSetMessageResponse.setMessage(_ctx.stringValue("DescribeDataSetMessageResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("DescribeDataSetMessageResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDataSetMessageResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setMessage(context.stringValue("DescribeDataSetMessageResponse.Result["+ i +"].Message"));
-			resultItem.setErrorLevel(context.stringValue("DescribeDataSetMessageResponse.Result["+ i +"].ErrorLevel"));
-			resultItem.setErrorType(context.stringValue("DescribeDataSetMessageResponse.Result["+ i +"].ErrorType"));
-			resultItem.setTimestamp(context.stringValue("DescribeDataSetMessageResponse.Result["+ i +"].Timestamp"));
+			resultItem.setMessage(_ctx.stringValue("DescribeDataSetMessageResponse.Result["+ i +"].Message"));
+			resultItem.setErrorLevel(_ctx.stringValue("DescribeDataSetMessageResponse.Result["+ i +"].ErrorLevel"));
+			resultItem.setErrorType(_ctx.stringValue("DescribeDataSetMessageResponse.Result["+ i +"].ErrorType"));
+			resultItem.setTimestamp(_ctx.stringValue("DescribeDataSetMessageResponse.Result["+ i +"].Timestamp"));
 
 			result.add(resultItem);
 		}

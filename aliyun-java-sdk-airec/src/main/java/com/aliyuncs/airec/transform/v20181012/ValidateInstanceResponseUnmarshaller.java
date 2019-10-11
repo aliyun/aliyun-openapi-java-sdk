@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ValidateInstanceResponseUnmarshaller {
 
-	public static ValidateInstanceResponse unmarshall(ValidateInstanceResponse validateInstanceResponse, UnmarshallerContext context) {
+	public static ValidateInstanceResponse unmarshall(ValidateInstanceResponse validateInstanceResponse, UnmarshallerContext _ctx) {
 		
-		validateInstanceResponse.setRequestId(context.stringValue("ValidateInstanceResponse.RequestId"));
-		validateInstanceResponse.setCode(context.stringValue("ValidateInstanceResponse.Code"));
-		validateInstanceResponse.setMessage(context.stringValue("ValidateInstanceResponse.Message"));
-		validateInstanceResponse.setResult(context.booleanValue("ValidateInstanceResponse.Result"));
+		validateInstanceResponse.setRequestId(_ctx.stringValue("ValidateInstanceResponse.RequestId"));
+		validateInstanceResponse.setCode(_ctx.stringValue("ValidateInstanceResponse.Code"));
+		validateInstanceResponse.setMessage(_ctx.stringValue("ValidateInstanceResponse.Message"));
+		validateInstanceResponse.setResult(_ctx.booleanValue("ValidateInstanceResponse.Result"));
 	 
 	 	return validateInstanceResponse;
 	}

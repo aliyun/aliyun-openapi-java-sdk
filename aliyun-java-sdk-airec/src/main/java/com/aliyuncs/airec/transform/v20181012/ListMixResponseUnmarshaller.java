@@ -26,26 +26,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListMixResponseUnmarshaller {
 
-	public static ListMixResponse unmarshall(ListMixResponse listMixResponse, UnmarshallerContext context) {
+	public static ListMixResponse unmarshall(ListMixResponse listMixResponse, UnmarshallerContext _ctx) {
 		
-		listMixResponse.setRequestId(context.stringValue("ListMixResponse.RequestId"));
-		listMixResponse.setCode(context.stringValue("ListMixResponse.Code"));
-		listMixResponse.setMessage(context.stringValue("ListMixResponse.Message"));
+		listMixResponse.setRequestId(_ctx.stringValue("ListMixResponse.RequestId"));
+		listMixResponse.setCode(_ctx.stringValue("ListMixResponse.Code"));
+		listMixResponse.setMessage(_ctx.stringValue("ListMixResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("ListMixResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListMixResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(context.stringValue("ListMixResponse.Result["+ i +"].Name"));
-			resultItem.setGmtCreate(context.stringValue("ListMixResponse.Result["+ i +"].GmtCreate"));
-			resultItem.setGmtModified(context.stringValue("ListMixResponse.Result["+ i +"].GmtModified"));
+			resultItem.setName(_ctx.stringValue("ListMixResponse.Result["+ i +"].Name"));
+			resultItem.setGmtCreate(_ctx.stringValue("ListMixResponse.Result["+ i +"].GmtCreate"));
+			resultItem.setGmtModified(_ctx.stringValue("ListMixResponse.Result["+ i +"].GmtModified"));
 
 			Parameter parameter = new Parameter();
 
 			List<SettingsItem> settings = new ArrayList<SettingsItem>();
-			for (int j = 0; j < context.lengthValue("ListMixResponse.Result["+ i +"].Parameter.Settings.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("ListMixResponse.Result["+ i +"].Parameter.Settings.Length"); j++) {
 				SettingsItem settingsItem = new SettingsItem();
-				settingsItem.setName(context.stringValue("ListMixResponse.Result["+ i +"].Parameter.Settings["+ j +"].Name"));
-				settingsItem.setValue(context.integerValue("ListMixResponse.Result["+ i +"].Parameter.Settings["+ j +"].Value"));
+				settingsItem.setName(_ctx.stringValue("ListMixResponse.Result["+ i +"].Parameter.Settings["+ j +"].Name"));
+				settingsItem.setValue(_ctx.integerValue("ListMixResponse.Result["+ i +"].Parameter.Settings["+ j +"].Value"));
 
 				settings.add(settingsItem);
 			}

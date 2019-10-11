@@ -16,22 +16,27 @@ package com.aliyuncs.airec.model.v20181012;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.airec.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteDiversifyRequest extends RoaAcsRequest<DeleteDiversifyResponse> {
-	
-	public DeleteDiversifyRequest() {
-		super("Airec", "2018-10-12", "DeleteDiversify", "airec");
-		setUriPattern("/openapi/instances/[InstanceId]/diversifies/[Name]");
-		setMethod(MethodType.DELETE);
-	}
+	   
 
 	private String instanceId;
 
 	private String name;
+	public DeleteDiversifyRequest() {
+		super("Airec", "2018-10-12", "DeleteDiversify", "airec");
+		setUriPattern("/openapi/instances/[InstanceId]/diversifies/[Name]");
+		setMethod(MethodType.DELETE);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

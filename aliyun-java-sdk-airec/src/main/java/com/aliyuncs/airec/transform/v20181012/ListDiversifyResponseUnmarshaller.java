@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDiversifyResponseUnmarshaller {
 
-	public static ListDiversifyResponse unmarshall(ListDiversifyResponse listDiversifyResponse, UnmarshallerContext context) {
+	public static ListDiversifyResponse unmarshall(ListDiversifyResponse listDiversifyResponse, UnmarshallerContext _ctx) {
 		
-		listDiversifyResponse.setRequestId(context.stringValue("ListDiversifyResponse.RequestId"));
-		listDiversifyResponse.setCode(context.stringValue("ListDiversifyResponse.Code"));
-		listDiversifyResponse.setMessage(context.stringValue("ListDiversifyResponse.Message"));
+		listDiversifyResponse.setRequestId(_ctx.stringValue("ListDiversifyResponse.RequestId"));
+		listDiversifyResponse.setCode(_ctx.stringValue("ListDiversifyResponse.Code"));
+		listDiversifyResponse.setMessage(_ctx.stringValue("ListDiversifyResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("ListDiversifyResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDiversifyResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setName(context.stringValue("ListDiversifyResponse.Result["+ i +"].Name"));
-			resultItem.setGmtCreate(context.stringValue("ListDiversifyResponse.Result["+ i +"].GmtCreate"));
-			resultItem.setGmtModified(context.stringValue("ListDiversifyResponse.Result["+ i +"].GmtModified"));
+			resultItem.setName(_ctx.stringValue("ListDiversifyResponse.Result["+ i +"].Name"));
+			resultItem.setGmtCreate(_ctx.stringValue("ListDiversifyResponse.Result["+ i +"].GmtCreate"));
+			resultItem.setGmtModified(_ctx.stringValue("ListDiversifyResponse.Result["+ i +"].GmtModified"));
 
 			Parameter parameter = new Parameter();
-			parameter.setCategoryIndex(context.integerValue("ListDiversifyResponse.Result["+ i +"].Parameter.CategoryIndex"));
-			parameter.setWindow(context.integerValue("ListDiversifyResponse.Result["+ i +"].Parameter.Window"));
+			parameter.setCategoryIndex(_ctx.integerValue("ListDiversifyResponse.Result["+ i +"].Parameter.CategoryIndex"));
+			parameter.setWindow(_ctx.integerValue("ListDiversifyResponse.Result["+ i +"].Parameter.Window"));
 			resultItem.setParameter(parameter);
 
 			result.add(resultItem);

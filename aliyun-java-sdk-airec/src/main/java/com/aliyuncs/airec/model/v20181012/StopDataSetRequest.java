@@ -16,22 +16,27 @@ package com.aliyuncs.airec.model.v20181012;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.airec.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class StopDataSetRequest extends RoaAcsRequest<StopDataSetResponse> {
-	
-	public StopDataSetRequest() {
-		super("Airec", "2018-10-12", "StopDataSet", "airec");
-		setUriPattern("/openapi/instances/[InstanceId]/dataSets/[VersionId]/actions/stop");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String versionId;
 
 	private String instanceId;
+	public StopDataSetRequest() {
+		super("Airec", "2018-10-12", "StopDataSet", "airec");
+		setUriPattern("/openapi/instances/[InstanceId]/dataSets/[VersionId]/actions/stop");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getVersionId() {
 		return this.versionId;

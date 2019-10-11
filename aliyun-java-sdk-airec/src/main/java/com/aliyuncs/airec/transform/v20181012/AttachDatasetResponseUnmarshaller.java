@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class AttachDatasetResponseUnmarshaller {
 
-	public static AttachDatasetResponse unmarshall(AttachDatasetResponse attachDatasetResponse, UnmarshallerContext context) {
+	public static AttachDatasetResponse unmarshall(AttachDatasetResponse attachDatasetResponse, UnmarshallerContext _ctx) {
 		
-		attachDatasetResponse.setRequestId(context.stringValue("AttachDatasetResponse.RequestId"));
-		attachDatasetResponse.setCode(context.stringValue("AttachDatasetResponse.Code"));
-		attachDatasetResponse.setMessage(context.stringValue("AttachDatasetResponse.Message"));
+		attachDatasetResponse.setRequestId(_ctx.stringValue("AttachDatasetResponse.RequestId"));
+		attachDatasetResponse.setCode(_ctx.stringValue("AttachDatasetResponse.Code"));
+		attachDatasetResponse.setMessage(_ctx.stringValue("AttachDatasetResponse.Message"));
 
 		Result result = new Result();
-		result.setInstanceId(context.stringValue("AttachDatasetResponse.Result.InstanceId"));
-		result.setVersionId(context.stringValue("AttachDatasetResponse.Result.VersionId"));
-		result.setState(context.stringValue("AttachDatasetResponse.Result.State"));
-		result.setGmtCreate(context.longValue("AttachDatasetResponse.Result.GmtCreate"));
-		result.setGmtModified(context.longValue("AttachDatasetResponse.Result.GmtModified"));
+		result.setInstanceId(_ctx.stringValue("AttachDatasetResponse.Result.InstanceId"));
+		result.setVersionId(_ctx.stringValue("AttachDatasetResponse.Result.VersionId"));
+		result.setState(_ctx.stringValue("AttachDatasetResponse.Result.State"));
+		result.setGmtCreate(_ctx.longValue("AttachDatasetResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.longValue("AttachDatasetResponse.Result.GmtModified"));
 		attachDatasetResponse.setResult(result);
 	 
 	 	return attachDatasetResponse;

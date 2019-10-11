@@ -21,18 +21,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteDataSetResponseUnmarshaller {
 
-	public static DeleteDataSetResponse unmarshall(DeleteDataSetResponse deleteDataSetResponse, UnmarshallerContext context) {
+	public static DeleteDataSetResponse unmarshall(DeleteDataSetResponse deleteDataSetResponse, UnmarshallerContext _ctx) {
 		
-		deleteDataSetResponse.setRequestId(context.stringValue("DeleteDataSetResponse.RequestId"));
-		deleteDataSetResponse.setCode(context.stringValue("DeleteDataSetResponse.Code"));
-		deleteDataSetResponse.setMessage(context.stringValue("DeleteDataSetResponse.Message"));
+		deleteDataSetResponse.setRequestId(_ctx.stringValue("DeleteDataSetResponse.RequestId"));
+		deleteDataSetResponse.setCode(_ctx.stringValue("DeleteDataSetResponse.Code"));
+		deleteDataSetResponse.setMessage(_ctx.stringValue("DeleteDataSetResponse.Message"));
 
 		Result result = new Result();
-		result.setInstanceId(context.stringValue("DeleteDataSetResponse.Result.InstanceId"));
-		result.setVersionId(context.stringValue("DeleteDataSetResponse.Result.VersionId"));
-		result.setState(context.stringValue("DeleteDataSetResponse.Result.State"));
-		result.setGmtCreate(context.longValue("DeleteDataSetResponse.Result.GmtCreate"));
-		result.setGmtModified(context.longValue("DeleteDataSetResponse.Result.GmtModified"));
+		result.setInstanceId(_ctx.stringValue("DeleteDataSetResponse.Result.InstanceId"));
+		result.setVersionId(_ctx.stringValue("DeleteDataSetResponse.Result.VersionId"));
+		result.setState(_ctx.stringValue("DeleteDataSetResponse.Result.State"));
+		result.setGmtCreate(_ctx.longValue("DeleteDataSetResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.longValue("DeleteDataSetResponse.Result.GmtModified"));
 		deleteDataSetResponse.setResult(result);
 	 
 	 	return deleteDataSetResponse;

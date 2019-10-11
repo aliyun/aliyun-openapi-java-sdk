@@ -16,22 +16,27 @@ package com.aliyuncs.airec.model.v20181012;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.airec.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class PushDocumentRequest extends RoaAcsRequest<PushDocumentResponse> {
-	
-	public PushDocumentRequest() {
-		super("Airec", "2018-10-12", "PushDocument", "airec");
-		setUriPattern("/openapi/instances/[InstanceId]/tables/[TableName]/actions/bulk");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String instanceId;
 
 	private String tableName;
+	public PushDocumentRequest() {
+		super("Airec", "2018-10-12", "PushDocument", "airec");
+		setUriPattern("/openapi/instances/[InstanceId]/tables/[TableName]/actions/bulk");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

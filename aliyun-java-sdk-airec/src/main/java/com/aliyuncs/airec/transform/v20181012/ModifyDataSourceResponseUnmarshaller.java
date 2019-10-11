@@ -22,26 +22,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ModifyDataSourceResponseUnmarshaller {
 
-	public static ModifyDataSourceResponse unmarshall(ModifyDataSourceResponse modifyDataSourceResponse, UnmarshallerContext context) {
+	public static ModifyDataSourceResponse unmarshall(ModifyDataSourceResponse modifyDataSourceResponse, UnmarshallerContext _ctx) {
 		
-		modifyDataSourceResponse.setRequestId(context.stringValue("ModifyDataSourceResponse.RequestId"));
-		modifyDataSourceResponse.setCode(context.stringValue("ModifyDataSourceResponse.Code"));
-		modifyDataSourceResponse.setMessage(context.stringValue("ModifyDataSourceResponse.Message"));
+		modifyDataSourceResponse.setRequestId(_ctx.stringValue("ModifyDataSourceResponse.RequestId"));
+		modifyDataSourceResponse.setCode(_ctx.stringValue("ModifyDataSourceResponse.Code"));
+		modifyDataSourceResponse.setMessage(_ctx.stringValue("ModifyDataSourceResponse.Message"));
 
 		Result result = new Result();
-		result.setTableName(context.stringValue("ModifyDataSourceResponse.Result.TableName"));
-		result.setGmtCreate(context.stringValue("ModifyDataSourceResponse.Result.GmtCreate"));
-		result.setGmtModified(context.stringValue("ModifyDataSourceResponse.Result.GmtModified"));
+		result.setTableName(_ctx.stringValue("ModifyDataSourceResponse.Result.TableName"));
+		result.setGmtCreate(_ctx.stringValue("ModifyDataSourceResponse.Result.GmtCreate"));
+		result.setGmtModified(_ctx.stringValue("ModifyDataSourceResponse.Result.GmtModified"));
 
 		Meta meta = new Meta();
-		meta.setAccessKeyId(context.stringValue("ModifyDataSourceResponse.Result.Meta.AccessKeyId"));
-		meta.setProjectName(context.stringValue("ModifyDataSourceResponse.Result.Meta.ProjectName"));
-		meta.setTableName(context.stringValue("ModifyDataSourceResponse.Result.Meta.TableName"));
-		meta.setPartition(context.stringValue("ModifyDataSourceResponse.Result.Meta.Partition"));
-		meta.setTimestamp(context.longValue("ModifyDataSourceResponse.Result.Meta.Timestamp"));
-		meta.setBucketName(context.stringValue("ModifyDataSourceResponse.Result.Meta.BucketName"));
-		meta.setPath(context.stringValue("ModifyDataSourceResponse.Result.Meta.Path"));
-		meta.setType(context.stringValue("ModifyDataSourceResponse.Result.Meta.Type"));
+		meta.setAccessKeyId(_ctx.stringValue("ModifyDataSourceResponse.Result.Meta.AccessKeyId"));
+		meta.setProjectName(_ctx.stringValue("ModifyDataSourceResponse.Result.Meta.ProjectName"));
+		meta.setTableName(_ctx.stringValue("ModifyDataSourceResponse.Result.Meta.TableName"));
+		meta.setPartition(_ctx.stringValue("ModifyDataSourceResponse.Result.Meta.Partition"));
+		meta.setTimestamp(_ctx.longValue("ModifyDataSourceResponse.Result.Meta.Timestamp"));
+		meta.setBucketName(_ctx.stringValue("ModifyDataSourceResponse.Result.Meta.BucketName"));
+		meta.setPath(_ctx.stringValue("ModifyDataSourceResponse.Result.Meta.Path"));
+		meta.setType(_ctx.stringValue("ModifyDataSourceResponse.Result.Meta.Type"));
 		result.setMeta(meta);
 		modifyDataSourceResponse.setResult(result);
 	 

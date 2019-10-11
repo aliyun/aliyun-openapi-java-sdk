@@ -16,24 +16,25 @@ package com.aliyuncs.airec.model.v20181012;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.airec.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDashboardRequest extends RoaAcsRequest<DescribeDashboardResponse> {
-	
-	public DescribeDashboardRequest() {
-		super("Airec", "2018-10-12", "DescribeDashboard", "airec");
-		setUriPattern("/openapi/instances/[InstanceId]/dashboard");
-		setMethod(MethodType.GET);
-	}
+public class DowngradeInstanceRequest extends RoaAcsRequest<DowngradeInstanceResponse> {
+	   
 
 	private String instanceId;
-
-	private String endDate;
-
-	private String startDate;
+	public DowngradeInstanceRequest() {
+		super("Airec", "2018-10-12", "DowngradeInstance", "airec");
+		setUriPattern("/openapi/instances/[InstanceId]/actions/downgrade");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -46,31 +47,9 @@ public class DescribeDashboardRequest extends RoaAcsRequest<DescribeDashboardRes
 		}
 	}
 
-	public String getEndDate() {
-		return this.endDate;
-	}
-
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-		if(endDate != null){
-			putQueryParameter("EndDate", endDate);
-		}
-	}
-
-	public String getStartDate() {
-		return this.startDate;
-	}
-
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
-		if(startDate != null){
-			putQueryParameter("StartDate", startDate);
-		}
-	}
-
 	@Override
-	public Class<DescribeDashboardResponse> getResponseClass() {
-		return DescribeDashboardResponse.class;
+	public Class<DowngradeInstanceResponse> getResponseClass() {
+		return DowngradeInstanceResponse.class;
 	}
 
 }

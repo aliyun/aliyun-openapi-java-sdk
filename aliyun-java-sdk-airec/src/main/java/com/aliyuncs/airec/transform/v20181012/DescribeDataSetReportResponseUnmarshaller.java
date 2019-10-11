@@ -26,42 +26,42 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDataSetReportResponseUnmarshaller {
 
-	public static DescribeDataSetReportResponse unmarshall(DescribeDataSetReportResponse describeDataSetReportResponse, UnmarshallerContext context) {
+	public static DescribeDataSetReportResponse unmarshall(DescribeDataSetReportResponse describeDataSetReportResponse, UnmarshallerContext _ctx) {
 		
-		describeDataSetReportResponse.setRequestId(context.stringValue("DescribeDataSetReportResponse.RequestId"));
-		describeDataSetReportResponse.setCode(context.stringValue("DescribeDataSetReportResponse.Code"));
-		describeDataSetReportResponse.setMessage(context.stringValue("DescribeDataSetReportResponse.Message"));
+		describeDataSetReportResponse.setRequestId(_ctx.stringValue("DescribeDataSetReportResponse.RequestId"));
+		describeDataSetReportResponse.setCode(_ctx.stringValue("DescribeDataSetReportResponse.Code"));
+		describeDataSetReportResponse.setMessage(_ctx.stringValue("DescribeDataSetReportResponse.Message"));
 
 		Result result = new Result();
 
 		Overall overall = new Overall();
-		overall.setBhvCount(context.integerValue("DescribeDataSetReportResponse.Result.Overall.BhvCount"));
-		overall.setItemItemCount(context.integerValue("DescribeDataSetReportResponse.Result.Overall.ItemItemCount"));
-		overall.setUserUserCount(context.integerValue("DescribeDataSetReportResponse.Result.Overall.UserUserCount"));
-		overall.setItemRepetitiveRate(context.floatValue("DescribeDataSetReportResponse.Result.Overall.ItemRepetitiveRate"));
-		overall.setUserRepetitiveRate(context.floatValue("DescribeDataSetReportResponse.Result.Overall.UserRepetitiveRate"));
-		overall.setUserLegalRate(context.floatValue("DescribeDataSetReportResponse.Result.Overall.UserLegalRate"));
-		overall.setItemLegalRate(context.floatValue("DescribeDataSetReportResponse.Result.Overall.ItemLegalRate"));
-		overall.setBhvLegalRate(context.floatValue("DescribeDataSetReportResponse.Result.Overall.BhvLegalRate"));
-		overall.setUserCompleteRate(context.floatValue("DescribeDataSetReportResponse.Result.Overall.UserCompleteRate"));
-		overall.setItemCompleteRate(context.floatValue("DescribeDataSetReportResponse.Result.Overall.ItemCompleteRate"));
-		overall.setUserLoginRate(context.floatValue("DescribeDataSetReportResponse.Result.Overall.UserLoginRate"));
-		overall.setItemLoginRate(context.floatValue("DescribeDataSetReportResponse.Result.Overall.ItemLoginRate"));
+		overall.setBhvCount(_ctx.integerValue("DescribeDataSetReportResponse.Result.Overall.BhvCount"));
+		overall.setItemItemCount(_ctx.integerValue("DescribeDataSetReportResponse.Result.Overall.ItemItemCount"));
+		overall.setUserUserCount(_ctx.integerValue("DescribeDataSetReportResponse.Result.Overall.UserUserCount"));
+		overall.setItemRepetitiveRate(_ctx.floatValue("DescribeDataSetReportResponse.Result.Overall.ItemRepetitiveRate"));
+		overall.setUserRepetitiveRate(_ctx.floatValue("DescribeDataSetReportResponse.Result.Overall.UserRepetitiveRate"));
+		overall.setUserLegalRate(_ctx.floatValue("DescribeDataSetReportResponse.Result.Overall.UserLegalRate"));
+		overall.setItemLegalRate(_ctx.floatValue("DescribeDataSetReportResponse.Result.Overall.ItemLegalRate"));
+		overall.setBhvLegalRate(_ctx.floatValue("DescribeDataSetReportResponse.Result.Overall.BhvLegalRate"));
+		overall.setUserCompleteRate(_ctx.floatValue("DescribeDataSetReportResponse.Result.Overall.UserCompleteRate"));
+		overall.setItemCompleteRate(_ctx.floatValue("DescribeDataSetReportResponse.Result.Overall.ItemCompleteRate"));
+		overall.setUserLoginRate(_ctx.floatValue("DescribeDataSetReportResponse.Result.Overall.UserLoginRate"));
+		overall.setItemLoginRate(_ctx.floatValue("DescribeDataSetReportResponse.Result.Overall.ItemLoginRate"));
 		result.setOverall(overall);
 
 		List<DetailItem> detail = new ArrayList<DetailItem>();
-		for (int i = 0; i < context.lengthValue("DescribeDataSetReportResponse.Result.Detail.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDataSetReportResponse.Result.Detail.Length"); i++) {
 			DetailItem detailItem = new DetailItem();
-			detailItem.setBizDate(context.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].BizDate"));
-			detailItem.setPv(context.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].Pv"));
-			detailItem.setUv(context.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].Uv"));
-			detailItem.setClick(context.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].Click"));
-			detailItem.setCtr(context.floatValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].Ctr"));
-			detailItem.setUvCtr(context.floatValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].UvCtr"));
-			detailItem.setPerUvBhv(context.floatValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].PerUvBhv"));
-			detailItem.setPerUvClick(context.floatValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].PerUvClick"));
-			detailItem.setClickUser(context.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].ClickUser"));
-			detailItem.setActiveItem(context.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].ActiveItem"));
+			detailItem.setBizDate(_ctx.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].BizDate"));
+			detailItem.setPv(_ctx.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].Pv"));
+			detailItem.setUv(_ctx.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].Uv"));
+			detailItem.setClick(_ctx.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].Click"));
+			detailItem.setCtr(_ctx.floatValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].Ctr"));
+			detailItem.setUvCtr(_ctx.floatValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].UvCtr"));
+			detailItem.setPerUvBhv(_ctx.floatValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].PerUvBhv"));
+			detailItem.setPerUvClick(_ctx.floatValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].PerUvClick"));
+			detailItem.setClickUser(_ctx.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].ClickUser"));
+			detailItem.setActiveItem(_ctx.longValue("DescribeDataSetReportResponse.Result.Detail["+ i +"].ActiveItem"));
 
 			detail.add(detailItem);
 		}

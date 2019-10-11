@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDashboardUidResponseUnmarshaller {
 
-	public static ListDashboardUidResponse unmarshall(ListDashboardUidResponse listDashboardUidResponse, UnmarshallerContext context) {
+	public static ListDashboardUidResponse unmarshall(ListDashboardUidResponse listDashboardUidResponse, UnmarshallerContext _ctx) {
 		
-		listDashboardUidResponse.setRequestId(context.stringValue("ListDashboardUidResponse.RequestId"));
-		listDashboardUidResponse.setCode(context.stringValue("ListDashboardUidResponse.Code"));
-		listDashboardUidResponse.setMessage(context.stringValue("ListDashboardUidResponse.Message"));
+		listDashboardUidResponse.setRequestId(_ctx.stringValue("ListDashboardUidResponse.RequestId"));
+		listDashboardUidResponse.setCode(_ctx.stringValue("ListDashboardUidResponse.Code"));
+		listDashboardUidResponse.setMessage(_ctx.stringValue("ListDashboardUidResponse.Message"));
 
 		Result result = new Result();
-		result.setNum(context.integerValue("ListDashboardUidResponse.Result.Num"));
+		result.setNum(_ctx.integerValue("ListDashboardUidResponse.Result.Num"));
 
 		List<String> uid = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ListDashboardUidResponse.Result.Uid.Length"); i++) {
-			uid.add(context.stringValue("ListDashboardUidResponse.Result.Uid["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ListDashboardUidResponse.Result.Uid.Length"); i++) {
+			uid.add(_ctx.stringValue("ListDashboardUidResponse.Result.Uid["+ i +"]"));
 		}
 		result.setUid(uid);
 		listDashboardUidResponse.setResult(result);

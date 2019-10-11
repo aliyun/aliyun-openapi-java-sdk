@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RecommendResponseUnmarshaller {
 
-	public static RecommendResponse unmarshall(RecommendResponse recommendResponse, UnmarshallerContext context) {
+	public static RecommendResponse unmarshall(RecommendResponse recommendResponse, UnmarshallerContext _ctx) {
 		
-		recommendResponse.setRequestId(context.stringValue("RecommendResponse.RequestId"));
-		recommendResponse.setCode(context.stringValue("RecommendResponse.Code"));
-		recommendResponse.setMessage(context.stringValue("RecommendResponse.Message"));
+		recommendResponse.setRequestId(_ctx.stringValue("RecommendResponse.RequestId"));
+		recommendResponse.setCode(_ctx.stringValue("RecommendResponse.Code"));
+		recommendResponse.setMessage(_ctx.stringValue("RecommendResponse.Message"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
-		for (int i = 0; i < context.lengthValue("RecommendResponse.Result.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("RecommendResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
-			resultItem.setTraceId(context.stringValue("RecommendResponse.Result["+ i +"].TraceId"));
-			resultItem.setItemId(context.stringValue("RecommendResponse.Result["+ i +"].ItemId"));
-			resultItem.setItemType(context.stringValue("RecommendResponse.Result["+ i +"].ItemType"));
-			resultItem.setMatchInfo(context.stringValue("RecommendResponse.Result["+ i +"].MatchInfo"));
-			resultItem.setWeight(context.floatValue("RecommendResponse.Result["+ i +"].Weight"));
-			resultItem.setPosition(context.integerValue("RecommendResponse.Result["+ i +"].Position"));
-			resultItem.setTraceInfo(context.stringValue("RecommendResponse.Result["+ i +"].TraceInfo"));
+			resultItem.setTraceId(_ctx.stringValue("RecommendResponse.Result["+ i +"].TraceId"));
+			resultItem.setItemId(_ctx.stringValue("RecommendResponse.Result["+ i +"].ItemId"));
+			resultItem.setItemType(_ctx.stringValue("RecommendResponse.Result["+ i +"].ItemType"));
+			resultItem.setMatchInfo(_ctx.stringValue("RecommendResponse.Result["+ i +"].MatchInfo"));
+			resultItem.setWeight(_ctx.floatValue("RecommendResponse.Result["+ i +"].Weight"));
+			resultItem.setPosition(_ctx.integerValue("RecommendResponse.Result["+ i +"].Position"));
+			resultItem.setTraceInfo(_ctx.stringValue("RecommendResponse.Result["+ i +"].TraceInfo"));
 
 			result.add(resultItem);
 		}

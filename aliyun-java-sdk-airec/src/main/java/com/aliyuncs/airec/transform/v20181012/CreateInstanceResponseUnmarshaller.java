@@ -21,14 +21,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class CreateInstanceResponseUnmarshaller {
 
-	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext context) {
+	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
 		
-		createInstanceResponse.setRequestId(context.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setCode(context.stringValue("CreateInstanceResponse.Code"));
-		createInstanceResponse.setMessage(context.stringValue("CreateInstanceResponse.Message"));
+		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
+		createInstanceResponse.setCode(_ctx.stringValue("CreateInstanceResponse.Code"));
+		createInstanceResponse.setMessage(_ctx.stringValue("CreateInstanceResponse.Message"));
 
 		Result result = new Result();
-		result.setInstanceId(context.stringValue("CreateInstanceResponse.Result.InstanceId"));
+		result.setInstanceId(_ctx.stringValue("CreateInstanceResponse.Result.InstanceId"));
 		createInstanceResponse.setResult(result);
 	 
 	 	return createInstanceResponse;

@@ -16,20 +16,25 @@ package com.aliyuncs.airec.model.v20181012;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.airec.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeSchemaRequest extends RoaAcsRequest<DescribeSchemaResponse> {
-	
-	public DescribeSchemaRequest() {
-		super("Airec", "2018-10-12", "DescribeSchema", "airec");
-		setUriPattern("/openapi/instances/[InstanceId]/schema");
-		setMethod(MethodType.GET);
-	}
+public class QuerySingleAggregationReportRequest extends RoaAcsRequest<QuerySingleAggregationReportResponse> {
+	   
 
 	private String instanceId;
+	public QuerySingleAggregationReportRequest() {
+		super("Airec", "2018-10-12", "QuerySingleAggregationReport", "airec");
+		setUriPattern("/openapi/instances/[InstanceId]/sync-reports/single-aggregation-report");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -43,8 +48,8 @@ public class DescribeSchemaRequest extends RoaAcsRequest<DescribeSchemaResponse>
 	}
 
 	@Override
-	public Class<DescribeSchemaResponse> getResponseClass() {
-		return DescribeSchemaResponse.class;
+	public Class<QuerySingleAggregationReportResponse> getResponseClass() {
+		return QuerySingleAggregationReportResponse.class;
 	}
 
 }

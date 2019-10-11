@@ -24,23 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDashboardParametersResponseUnmarshaller {
 
-	public static ListDashboardParametersResponse unmarshall(ListDashboardParametersResponse listDashboardParametersResponse, UnmarshallerContext context) {
+	public static ListDashboardParametersResponse unmarshall(ListDashboardParametersResponse listDashboardParametersResponse, UnmarshallerContext _ctx) {
 		
-		listDashboardParametersResponse.setRequestId(context.stringValue("ListDashboardParametersResponse.RequestId"));
-		listDashboardParametersResponse.setCode(context.stringValue("ListDashboardParametersResponse.Code"));
-		listDashboardParametersResponse.setMessage(context.stringValue("ListDashboardParametersResponse.Message"));
+		listDashboardParametersResponse.setRequestId(_ctx.stringValue("ListDashboardParametersResponse.RequestId"));
+		listDashboardParametersResponse.setCode(_ctx.stringValue("ListDashboardParametersResponse.Code"));
+		listDashboardParametersResponse.setMessage(_ctx.stringValue("ListDashboardParametersResponse.Message"));
 
 		Result result = new Result();
 
 		List<String> traceId = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ListDashboardParametersResponse.Result.TraceId.Length"); i++) {
-			traceId.add(context.stringValue("ListDashboardParametersResponse.Result.TraceId["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ListDashboardParametersResponse.Result.TraceId.Length"); i++) {
+			traceId.add(_ctx.stringValue("ListDashboardParametersResponse.Result.TraceId["+ i +"]"));
 		}
 		result.setTraceId(traceId);
 
 		List<String> sceneId = new ArrayList<String>();
-		for (int i = 0; i < context.lengthValue("ListDashboardParametersResponse.Result.SceneId.Length"); i++) {
-			sceneId.add(context.stringValue("ListDashboardParametersResponse.Result.SceneId["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("ListDashboardParametersResponse.Result.SceneId.Length"); i++) {
+			sceneId.add(_ctx.stringValue("ListDashboardParametersResponse.Result.SceneId["+ i +"]"));
 		}
 		result.setSceneId(sceneId);
 		listDashboardParametersResponse.setResult(result);
