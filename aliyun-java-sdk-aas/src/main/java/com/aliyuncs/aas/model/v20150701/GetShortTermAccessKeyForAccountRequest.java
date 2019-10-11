@@ -15,22 +15,29 @@
 package com.aliyuncs.aas.model.v20150701;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.aas.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetShortTermAccessKeyForAccountRequest extends RpcAcsRequest<GetShortTermAccessKeyForAccountResponse> {
-	
-	public GetShortTermAccessKeyForAccountRequest() {
-		super("Aas", "2015-07-01", "GetShortTermAccessKeyForAccount");
-	}
+	   
 
 	private String expireTime;
 
 	private Boolean isMfaPresent;
 
 	private String pK;
+	public GetShortTermAccessKeyForAccountRequest() {
+		super("Aas", "2015-07-01", "GetShortTermAccessKeyForAccount");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getExpireTime() {
 		return this.expireTime;

@@ -22,12 +22,12 @@ import com.aliyuncs.aas.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateAliyunAccountWithBindHidRequest extends RpcAcsRequest<CreateAliyunAccountWithBindHidResponse> {
+public class ChangePreferredLanguageRequest extends RpcAcsRequest<ChangePreferredLanguageResponse> {
 	   
 
-	private String innerAccountHid;
-	public CreateAliyunAccountWithBindHidRequest() {
-		super("Aas", "2015-07-01", "CreateAliyunAccountWithBindHid");
+	private String preferredLanguage;
+	public ChangePreferredLanguageRequest() {
+		super("Aas", "2015-07-01", "ChangePreferredLanguage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class CreateAliyunAccountWithBindHidRequest extends RpcAcsRequest<CreateA
 		} catch (Exception e) {}
 	}
 
-	public String getInnerAccountHid() {
-		return this.innerAccountHid;
+	public String getPreferredLanguage() {
+		return this.preferredLanguage;
 	}
 
-	public void setInnerAccountHid(String innerAccountHid) {
-		this.innerAccountHid = innerAccountHid;
-		if(innerAccountHid != null){
-			putQueryParameter("InnerAccountHid", innerAccountHid);
+	public void setPreferredLanguage(String preferredLanguage) {
+		this.preferredLanguage = preferredLanguage;
+		if(preferredLanguage != null){
+			putQueryParameter("PreferredLanguage", preferredLanguage);
 		}
 	}
 
 	@Override
-	public Class<CreateAliyunAccountWithBindHidResponse> getResponseClass() {
-		return CreateAliyunAccountWithBindHidResponse.class;
+	public Class<ChangePreferredLanguageResponse> getResponseClass() {
+		return ChangePreferredLanguageResponse.class;
 	}
 
 }

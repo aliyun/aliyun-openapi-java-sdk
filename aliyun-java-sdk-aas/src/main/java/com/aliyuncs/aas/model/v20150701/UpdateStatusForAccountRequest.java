@@ -15,20 +15,27 @@
 package com.aliyuncs.aas.model.v20150701;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.aas.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpdateStatusForAccountRequest extends RpcAcsRequest<UpdateStatusForAccountResponse> {
-	
-	public UpdateStatusForAccountRequest() {
-		super("Aas", "2015-07-01", "UpdateStatusForAccount");
-	}
+	   
 
 	private String accountStatus;
 
 	private String pK;
+	public UpdateStatusForAccountRequest() {
+		super("Aas", "2015-07-01", "UpdateStatusForAccount");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAccountStatus() {
 		return this.accountStatus;

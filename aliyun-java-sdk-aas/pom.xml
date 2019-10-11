@@ -4,16 +4,13 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-aas</artifactId>
   <packaging>jar</packaging>
-  <version>2.1.0</version>
+  <version>2.4.0</version>
   <name>aliyun-java-sdk-aas</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
-
 Copyright (C) Alibaba Cloud Computing
 All rights reserved.
-
 版权所有 （C）阿里云计算有限公司
-
 http://www.aliyun.com</description>
   <distributionManagement>
     <snapshotRepository>
@@ -73,8 +70,7 @@ http://www.aliyun.com</description>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <excludes>
-					</excludes>
+          <excludes/>
         </configuration>
       </plugin>
       <plugin>
