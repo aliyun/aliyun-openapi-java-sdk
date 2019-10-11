@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<SetLoadBalancerUDPListenerAttributeResponse> {
-	
-	public SetLoadBalancerUDPListenerAttributeRequest() {
-		super("Slb", "2014-05-15", "SetLoadBalancerUDPListenerAttribute", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer healthCheckConnectTimeout;
 
@@ -78,6 +70,14 @@ public class SetLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<Se
 	private Integer healthCheckConnectPort;
 
 	private String vServerGroup;
+	public SetLoadBalancerUDPListenerAttributeRequest() {
+		super("Slb", "2014-05-15", "SetLoadBalancerUDPListenerAttribute", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getHealthCheckConnectTimeout() {
 		return this.healthCheckConnectTimeout;

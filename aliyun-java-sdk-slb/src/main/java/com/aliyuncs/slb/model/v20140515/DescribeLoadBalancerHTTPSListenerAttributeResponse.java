@@ -113,6 +113,8 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	private List<DomainExtension> domainExtensions;
 
+	private List<String> aclIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -463,6 +465,14 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponse extends AcsRespo
 
 	public void setDomainExtensions(List<DomainExtension> domainExtensions) {
 		this.domainExtensions = domainExtensions;
+	}
+
+	public List<String> getAclIds() {
+		return this.aclIds;
+	}
+
+	public void setAclIds(List<String> aclIds) {
+		this.aclIds = aclIds;
 	}
 
 	public static class Rule {

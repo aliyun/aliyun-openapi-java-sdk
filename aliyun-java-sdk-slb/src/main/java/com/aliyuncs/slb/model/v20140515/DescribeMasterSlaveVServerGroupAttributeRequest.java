@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class DescribeMasterSlaveVServerGroupAttributeRequest extends RpcAcsRequest<DescribeMasterSlaveVServerGroupAttributeResponse> {
-	
-	public DescribeMasterSlaveVServerGroupAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeMasterSlaveVServerGroupAttribute", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String access_key_id;
 
@@ -44,6 +36,14 @@ public class DescribeMasterSlaveVServerGroupAttributeRequest extends RpcAcsReque
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeMasterSlaveVServerGroupAttributeRequest() {
+		super("Slb", "2014-05-15", "DescribeMasterSlaveVServerGroupAttribute", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAccess_key_id() {
 		return this.access_key_id;

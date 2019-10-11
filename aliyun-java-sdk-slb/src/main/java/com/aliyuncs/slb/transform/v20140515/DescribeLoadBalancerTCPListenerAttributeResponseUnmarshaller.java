@@ -14,6 +14,9 @@
 
 package com.aliyuncs.slb.transform.v20140515;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.slb.model.v20140515.DescribeLoadBalancerTCPListenerAttributeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -50,6 +53,12 @@ public class DescribeLoadBalancerTCPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerTCPListenerAttributeResponse.setAclStatus(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclStatus"));
 		describeLoadBalancerTCPListenerAttributeResponse.setVpcIds(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.VpcIds"));
 		describeLoadBalancerTCPListenerAttributeResponse.setDescription(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.Description"));
+
+		List<String> aclIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclIds.Length"); i++) {
+			aclIds.add(_ctx.stringValue("DescribeLoadBalancerTCPListenerAttributeResponse.AclIds["+ i +"]"));
+		}
+		describeLoadBalancerTCPListenerAttributeResponse.setAclIds(aclIds);
 	 
 	 	return describeLoadBalancerTCPListenerAttributeResponse;
 	}

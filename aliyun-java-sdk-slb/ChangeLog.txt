@@ -1,3 +1,6 @@
+2019-10-11 Version: 3.2.14
+- Add new interface DescribeDomainExtensionAttribute.
+
 2019-09-05 Version: 3.2.13
 - Generated 2014-05-15 for `Slb`.
 

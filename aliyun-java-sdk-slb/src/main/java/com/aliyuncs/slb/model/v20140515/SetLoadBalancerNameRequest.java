@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class SetLoadBalancerNameRequest extends RpcAcsRequest<SetLoadBalancerNameResponse> {
-	
-	public SetLoadBalancerNameRequest() {
-		super("Slb", "2014-05-15", "SetLoadBalancerName", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class SetLoadBalancerNameRequest extends RpcAcsRequest<SetLoadBalancerNam
 	private Long ownerId;
 
 	private String loadBalancerId;
+	public SetLoadBalancerNameRequest() {
+		super("Slb", "2014-05-15", "SetLoadBalancerName", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

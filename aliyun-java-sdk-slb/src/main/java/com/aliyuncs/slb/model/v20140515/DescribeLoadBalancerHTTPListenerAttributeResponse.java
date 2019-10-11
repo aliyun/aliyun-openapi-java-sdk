@@ -105,6 +105,8 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	private List<Rule> rules;
 
+	private List<String> aclIds;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -423,6 +425,14 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponse extends AcsRespon
 
 	public void setRules(List<Rule> rules) {
 		this.rules = rules;
+	}
+
+	public List<String> getAclIds() {
+		return this.aclIds;
+	}
+
+	public void setAclIds(List<String> aclIds) {
+		this.aclIds = aclIds;
 	}
 
 	public static class Rule {

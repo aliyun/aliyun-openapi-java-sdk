@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class DescribeHealthStatusRequest extends RpcAcsRequest<DescribeHealthStatusResponse> {
-	
-	public DescribeHealthStatusRequest() {
-		super("Slb", "2014-05-15", "DescribeHealthStatus", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class DescribeHealthStatusRequest extends RpcAcsRequest<DescribeHealthSta
 	private String listenerProtocol;
 
 	private String loadBalancerId;
+	public DescribeHealthStatusRequest() {
+		super("Slb", "2014-05-15", "DescribeHealthStatus", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

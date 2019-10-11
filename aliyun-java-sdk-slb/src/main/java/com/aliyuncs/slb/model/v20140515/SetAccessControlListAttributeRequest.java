@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class SetAccessControlListAttributeRequest extends RpcAcsRequest<SetAccessControlListAttributeResponse> {
-	
-	public SetAccessControlListAttributeRequest() {
-		super("Slb", "2014-05-15", "SetAccessControlListAttribute", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class SetAccessControlListAttributeRequest extends RpcAcsRequest<SetAcces
 	private String ownerAccount;
 
 	private Long ownerId;
+	public SetAccessControlListAttributeRequest() {
+		super("Slb", "2014-05-15", "SetAccessControlListAttribute", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -14,6 +14,7 @@
 
 package com.aliyuncs.slb.model.v20140515;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.slb.transform.v20140515.DescribeLoadBalancerUDPListenerAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -69,6 +70,8 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 	private String vpcIds;
 
 	private String description;
+
+	private List<String> aclIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -252,6 +255,14 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public List<String> getAclIds() {
+		return this.aclIds;
+	}
+
+	public void setAclIds(List<String> aclIds) {
+		this.aclIds = aclIds;
 	}
 
 	@Override

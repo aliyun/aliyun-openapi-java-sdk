@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class DescribeListenerAccessControlAttributeRequest extends RpcAcsRequest<DescribeListenerAccessControlAttributeResponse> {
-	
-	public DescribeListenerAccessControlAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeListenerAccessControlAttribute", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class DescribeListenerAccessControlAttributeRequest extends RpcAcsRequest
 	private String listenerProtocol;
 
 	private String loadBalancerId;
+	public DescribeListenerAccessControlAttributeRequest() {
+		super("Slb", "2014-05-15", "DescribeListenerAccessControlAttribute", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class DeleteMasterSlaveServerGroupRequest extends RpcAcsRequest<DeleteMasterSlaveServerGroupResponse> {
-	
-	public DeleteMasterSlaveServerGroupRequest() {
-		super("Slb", "2014-05-15", "DeleteMasterSlaveServerGroup", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DeleteMasterSlaveServerGroupRequest extends RpcAcsRequest<DeleteMas
 	private Long ownerId;
 
 	private String masterSlaveServerGroupId;
+	public DeleteMasterSlaveServerGroupRequest() {
+		super("Slb", "2014-05-15", "DeleteMasterSlaveServerGroup", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

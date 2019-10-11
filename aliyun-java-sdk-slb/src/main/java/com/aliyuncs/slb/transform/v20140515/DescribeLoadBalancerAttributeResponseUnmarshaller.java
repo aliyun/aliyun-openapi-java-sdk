@@ -67,9 +67,9 @@ public class DescribeLoadBalancerAttributeResponseUnmarshaller {
 		describeLoadBalancerAttributeResponse.setTunnelType(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.TunnelType"));
 		describeLoadBalancerAttributeResponse.setCloudInstanceUid(_ctx.longValue("DescribeLoadBalancerAttributeResponse.CloudInstanceUid"));
 
-		List<String> listenerPorts = new ArrayList<String>();
+		List<Integer> listenerPorts = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerAttributeResponse.ListenerPorts.Length"); i++) {
-			listenerPorts.add(_ctx.stringValue("DescribeLoadBalancerAttributeResponse.ListenerPorts["+ i +"]"));
+			listenerPorts.add(_ctx.integerValue("DescribeLoadBalancerAttributeResponse.ListenerPorts["+ i +"]"));
 		}
 		describeLoadBalancerAttributeResponse.setListenerPorts(listenerPorts);
 

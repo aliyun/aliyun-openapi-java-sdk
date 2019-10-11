@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class AddVServerGroupBackendServersRequest extends RpcAcsRequest<AddVServerGroupBackendServersResponse> {
-	
-	public AddVServerGroupBackendServersRequest() {
-		super("Slb", "2014-05-15", "AddVServerGroupBackendServers", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class AddVServerGroupBackendServersRequest extends RpcAcsRequest<AddVServ
 	private String ownerAccount;
 
 	private Long ownerId;
+	public AddVServerGroupBackendServersRequest() {
+		super("Slb", "2014-05-15", "AddVServerGroupBackendServers", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

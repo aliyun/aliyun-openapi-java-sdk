@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class DescribeRuleAttributeRequest extends RpcAcsRequest<DescribeRuleAttributeResponse> {
-	
-	public DescribeRuleAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeRuleAttribute", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DescribeRuleAttributeRequest extends RpcAcsRequest<DescribeRuleAttr
 	private Long ownerId;
 
 	private String ruleId;
+	public DescribeRuleAttributeRequest() {
+		super("Slb", "2014-05-15", "DescribeRuleAttribute", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

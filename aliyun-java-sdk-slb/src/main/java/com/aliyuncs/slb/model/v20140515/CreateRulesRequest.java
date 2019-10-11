@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
-	
-	public CreateRulesRequest() {
-		super("Slb", "2014-05-15", "CreateRules", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -48,6 +40,14 @@ public class CreateRulesRequest extends RpcAcsRequest<CreateRulesResponse> {
 	private String listenerProtocol;
 
 	private String loadBalancerId;
+	public CreateRulesRequest() {
+		super("Slb", "2014-05-15", "CreateRules", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

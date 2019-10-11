@@ -22,22 +22,20 @@ import com.aliyuncs.slb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLoadBalancerUDPListenerAttributeRequest extends RpcAcsRequest<DescribeLoadBalancerUDPListenerAttributeResponse> {
+public class DescribeDomainExtensionAttributeRequest extends RpcAcsRequest<DescribeDomainExtensionAttributeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer listenerPort;
+	private String domainExtensionId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String loadBalancerId;
-	public DescribeLoadBalancerUDPListenerAttributeRequest() {
-		super("Slb", "2014-05-15", "DescribeLoadBalancerUDPListenerAttribute", "slb");
+	public DescribeDomainExtensionAttributeRequest() {
+		super("Slb", "2014-05-15", "DescribeDomainExtensionAttribute", "slb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +54,14 @@ public class DescribeLoadBalancerUDPListenerAttributeRequest extends RpcAcsReque
 		}
 	}
 
-	public Integer getListenerPort() {
-		return this.listenerPort;
+	public String getDomainExtensionId() {
+		return this.domainExtensionId;
 	}
 
-	public void setListenerPort(Integer listenerPort) {
-		this.listenerPort = listenerPort;
-		if(listenerPort != null){
-			putQueryParameter("ListenerPort", listenerPort.toString());
+	public void setDomainExtensionId(String domainExtensionId) {
+		this.domainExtensionId = domainExtensionId;
+		if(domainExtensionId != null){
+			putQueryParameter("DomainExtensionId", domainExtensionId);
 		}
 	}
 
@@ -100,20 +98,9 @@ public class DescribeLoadBalancerUDPListenerAttributeRequest extends RpcAcsReque
 		}
 	}
 
-	public String getLoadBalancerId() {
-		return this.loadBalancerId;
-	}
-
-	public void setLoadBalancerId(String loadBalancerId) {
-		this.loadBalancerId = loadBalancerId;
-		if(loadBalancerId != null){
-			putQueryParameter("LoadBalancerId", loadBalancerId);
-		}
-	}
-
 	@Override
-	public Class<DescribeLoadBalancerUDPListenerAttributeResponse> getResponseClass() {
-		return DescribeLoadBalancerUDPListenerAttributeResponse.class;
+	public Class<DescribeDomainExtensionAttributeResponse> getResponseClass() {
+		return DescribeDomainExtensionAttributeResponse.class;
 	}
 
 }

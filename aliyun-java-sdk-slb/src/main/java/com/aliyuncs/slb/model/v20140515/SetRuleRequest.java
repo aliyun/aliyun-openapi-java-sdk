@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class SetRuleRequest extends RpcAcsRequest<SetRuleResponse> {
-	
-	public SetRuleRequest() {
-		super("Slb", "2014-05-15", "SetRule", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -76,6 +68,14 @@ public class SetRuleRequest extends RpcAcsRequest<SetRuleResponse> {
 	private Integer healthCheckConnectPort;
 
 	private String healthCheckHttpCode;
+	public SetRuleRequest() {
+		super("Slb", "2014-05-15", "SetRule", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

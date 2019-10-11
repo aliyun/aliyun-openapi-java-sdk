@@ -70,6 +70,12 @@ public class DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPSListenerAttributeResponse.setTLSCipherPolicy(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.TLSCipherPolicy"));
 		describeLoadBalancerHTTPSListenerAttributeResponse.setDescription(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Description"));
 
+		List<String> aclIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.AclIds.Length"); i++) {
+			aclIds.add(_ctx.stringValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.AclIds["+ i +"]"));
+		}
+		describeLoadBalancerHTTPSListenerAttributeResponse.setAclIds(aclIds);
+
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPSListenerAttributeResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();

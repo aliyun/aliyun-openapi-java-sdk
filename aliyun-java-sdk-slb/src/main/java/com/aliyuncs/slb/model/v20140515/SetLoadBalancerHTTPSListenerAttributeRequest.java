@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<SetLoadBalancerHTTPSListenerAttributeResponse> {
-	
-	public SetLoadBalancerHTTPSListenerAttributeRequest() {
-		super("Slb", "2014-05-15", "SetLoadBalancerHTTPSListenerAttribute", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -108,6 +100,14 @@ public class SetLoadBalancerHTTPSListenerAttributeRequest extends RpcAcsRequest<
 	private String healthCheckHttpCode;
 
 	private String vServerGroup;
+	public SetLoadBalancerHTTPSListenerAttributeRequest() {
+		super("Slb", "2014-05-15", "SetLoadBalancerHTTPSListenerAttribute", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

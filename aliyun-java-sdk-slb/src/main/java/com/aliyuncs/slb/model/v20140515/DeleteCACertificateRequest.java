@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class DeleteCACertificateRequest extends RpcAcsRequest<DeleteCACertificateResponse> {
-	
-	public DeleteCACertificateRequest() {
-		super("Slb", "2014-05-15", "DeleteCACertificate", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DeleteCACertificateRequest extends RpcAcsRequest<DeleteCACertificat
 	private Long ownerId;
 
 	private String cACertificateId;
+	public DeleteCACertificateRequest() {
+		super("Slb", "2014-05-15", "DeleteCACertificate", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class RemoveAccessControlListEntryRequest extends RpcAcsRequest<RemoveAccessControlListEntryResponse> {
-	
-	public RemoveAccessControlListEntryRequest() {
-		super("Slb", "2014-05-15", "RemoveAccessControlListEntry", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class RemoveAccessControlListEntryRequest extends RpcAcsRequest<RemoveAcc
 	private String ownerAccount;
 
 	private Long ownerId;
+	public RemoveAccessControlListEntryRequest() {
+		super("Slb", "2014-05-15", "RemoveAccessControlListEntry", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -23,15 +23,7 @@ import com.aliyuncs.slb.Endpoint;
  * @version 
  */
 public class ModifyLoadBalancerPayTypeRequest extends RpcAcsRequest<ModifyLoadBalancerPayTypeResponse> {
-	
-	public ModifyLoadBalancerPayTypeRequest() {
-		super("Slb", "2014-05-15", "ModifyLoadBalancerPayType", "slb");
-		setSysMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -50,6 +42,14 @@ public class ModifyLoadBalancerPayTypeRequest extends RpcAcsRequest<ModifyLoadBa
 	private String payType;
 
 	private String pricingCycle;
+	public ModifyLoadBalancerPayTypeRequest() {
+		super("Slb", "2014-05-15", "ModifyLoadBalancerPayType", "slb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

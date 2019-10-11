@@ -107,7 +107,7 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 
 	private List<BackendServer> backendServers;
 
-	private List<String> listenerPorts;
+	private List<Integer> listenerPorts;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -453,11 +453,11 @@ public class DescribeLoadBalancerAttributeResponse extends AcsResponse {
 		this.backendServers = backendServers;
 	}
 
-	public List<String> getListenerPorts() {
+	public List<Integer> getListenerPorts() {
 		return this.listenerPorts;
 	}
 
-	public void setListenerPorts(List<String> listenerPorts) {
+	public void setListenerPorts(List<Integer> listenerPorts) {
 		this.listenerPorts = listenerPorts;
 	}
 

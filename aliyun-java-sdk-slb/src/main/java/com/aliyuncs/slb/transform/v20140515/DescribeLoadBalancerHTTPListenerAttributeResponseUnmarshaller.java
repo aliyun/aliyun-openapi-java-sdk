@@ -66,6 +66,12 @@ public class DescribeLoadBalancerHTTPListenerAttributeResponseUnmarshaller {
 		describeLoadBalancerHTTPListenerAttributeResponse.setIdleTimeout(_ctx.integerValue("DescribeLoadBalancerHTTPListenerAttributeResponse.IdleTimeout"));
 		describeLoadBalancerHTTPListenerAttributeResponse.setDescription(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Description"));
 
+		List<String> aclIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPListenerAttributeResponse.AclIds.Length"); i++) {
+			aclIds.add(_ctx.stringValue("DescribeLoadBalancerHTTPListenerAttributeResponse.AclIds["+ i +"]"));
+		}
+		describeLoadBalancerHTTPListenerAttributeResponse.setAclIds(aclIds);
+
 		List<Rule> rules = new ArrayList<Rule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeLoadBalancerHTTPListenerAttributeResponse.Rules.Length"); i++) {
 			Rule rule = new Rule();
