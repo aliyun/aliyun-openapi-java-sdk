@@ -52,10 +52,7 @@ public class QueryPlanStatusResponseUnmarshaller {
 		List<Map<Object, Object>> monitorData = _ctx.listMapValue("QueryPlanStatusResponse.MonitorData");
 		queryPlanStatusResponse.setMonitorData(monitorData);
 
-		List<String> agentLocations = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("QueryPlanStatusResponse.AgentLocations.Length"); i++) {
-			agentLocations.add(_ctx.stringValue("QueryPlanStatusResponse.AgentLocations["+ i +"]"));
-		}
+		List<Map<Object, Object>> agentLocations = _ctx.listMapValue("QueryPlanStatusResponse.AgentLocations");
 		queryPlanStatusResponse.setAgentLocations(agentLocations);
 	 
 	 	return queryPlanStatusResponse;

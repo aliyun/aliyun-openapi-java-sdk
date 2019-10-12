@@ -72,7 +72,7 @@ public class QueryPlanStatusResponse extends AcsResponse {
 
 	private List<Map<Object,Object>> monitorData;
 
-	private List<String> agentLocations;
+	private List<Map<Object,Object>> agentLocations;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -258,11 +258,11 @@ public class QueryPlanStatusResponse extends AcsResponse {
 		this.monitorData = monitorData;
 	}
 
-	public List<String> getAgentLocations() {
+	public List<Map<Object,Object>> getAgentLocations() {
 		return this.agentLocations;
 	}
 
-	public void setAgentLocations(List<String> agentLocations) {
+	public void setAgentLocations(List<Map<Object,Object>> agentLocations) {
 		this.agentLocations = agentLocations;
 	}
 

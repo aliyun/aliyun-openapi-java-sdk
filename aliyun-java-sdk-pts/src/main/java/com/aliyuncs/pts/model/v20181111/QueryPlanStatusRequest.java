@@ -29,7 +29,7 @@ public class QueryPlanStatusRequest extends RpcAcsRequest<QueryPlanStatusRespons
 
 	private Long sceneId;
 	public QueryPlanStatusRequest() {
-		super("PTS", "2018-11-11", "QueryPlanStatus", "1.0.0");
+		super("PTS", "2018-11-11", "QueryPlanStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
