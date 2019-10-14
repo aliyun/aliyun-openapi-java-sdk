@@ -111,15 +111,19 @@ public class DescribeGroupsResponse extends AcsResponse {
 
 		private String playDomain;
 
+		private Boolean lazyPull;
+
+		private String callback;
+
 		private String gbId;
 
 		private String gbIp;
 
 		private Long gbPort;
 
-		private Long gbUdpPort;
+		private List<String> gbUdpPorts;
 
-		private Long gbTcpPort;
+		private List<String> gbTcpPorts;
 
 		private Stats stats;
 
@@ -219,6 +223,22 @@ public class DescribeGroupsResponse extends AcsResponse {
 			this.playDomain = playDomain;
 		}
 
+		public Boolean getLazyPull() {
+			return this.lazyPull;
+		}
+
+		public void setLazyPull(Boolean lazyPull) {
+			this.lazyPull = lazyPull;
+		}
+
+		public String getCallback() {
+			return this.callback;
+		}
+
+		public void setCallback(String callback) {
+			this.callback = callback;
+		}
+
 		public String getGbId() {
 			return this.gbId;
 		}
@@ -243,20 +263,20 @@ public class DescribeGroupsResponse extends AcsResponse {
 			this.gbPort = gbPort;
 		}
 
-		public Long getGbUdpPort() {
-			return this.gbUdpPort;
+		public List<String> getGbUdpPorts() {
+			return this.gbUdpPorts;
 		}
 
-		public void setGbUdpPort(Long gbUdpPort) {
-			this.gbUdpPort = gbUdpPort;
+		public void setGbUdpPorts(List<String> gbUdpPorts) {
+			this.gbUdpPorts = gbUdpPorts;
 		}
 
-		public Long getGbTcpPort() {
-			return this.gbTcpPort;
+		public List<String> getGbTcpPorts() {
+			return this.gbTcpPorts;
 		}
 
-		public void setGbTcpPort(Long gbTcpPort) {
-			this.gbTcpPort = gbTcpPort;
+		public void setGbTcpPorts(List<String> gbTcpPorts) {
+			this.gbTcpPorts = gbTcpPorts;
 		}
 
 		public Stats getStats() {

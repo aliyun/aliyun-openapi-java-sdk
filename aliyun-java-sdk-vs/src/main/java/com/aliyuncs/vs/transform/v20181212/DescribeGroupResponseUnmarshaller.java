@@ -14,6 +14,9 @@
 
 package com.aliyuncs.vs.transform.v20181212;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.vs.model.v20181212.DescribeGroupResponse;
 import com.aliyuncs.vs.model.v20181212.DescribeGroupResponse.Stats;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -36,11 +39,23 @@ public class DescribeGroupResponseUnmarshaller {
 		describeGroupResponse.setCreatedTime(_ctx.stringValue("DescribeGroupResponse.CreatedTime"));
 		describeGroupResponse.setPushDomain(_ctx.stringValue("DescribeGroupResponse.PushDomain"));
 		describeGroupResponse.setPlayDomain(_ctx.stringValue("DescribeGroupResponse.PlayDomain"));
+		describeGroupResponse.setLazyPull(_ctx.booleanValue("DescribeGroupResponse.LazyPull"));
+		describeGroupResponse.setCallback(_ctx.stringValue("DescribeGroupResponse.Callback"));
 		describeGroupResponse.setGbId(_ctx.stringValue("DescribeGroupResponse.GbId"));
 		describeGroupResponse.setGbIp(_ctx.stringValue("DescribeGroupResponse.GbIp"));
 		describeGroupResponse.setGbPort(_ctx.longValue("DescribeGroupResponse.GbPort"));
-		describeGroupResponse.setGbUdpPort(_ctx.longValue("DescribeGroupResponse.GbUdpPort"));
-		describeGroupResponse.setGbTcpPort(_ctx.longValue("DescribeGroupResponse.GbTcpPort"));
+
+		List<String> gbUdpPorts = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeGroupResponse.GbUdpPorts.Length"); i++) {
+			gbUdpPorts.add(_ctx.stringValue("DescribeGroupResponse.GbUdpPorts["+ i +"]"));
+		}
+		describeGroupResponse.setGbUdpPorts(gbUdpPorts);
+
+		List<String> gbTcpPorts = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeGroupResponse.GbTcpPorts.Length"); i++) {
+			gbTcpPorts.add(_ctx.stringValue("DescribeGroupResponse.GbTcpPorts["+ i +"]"));
+		}
+		describeGroupResponse.setGbTcpPorts(gbTcpPorts);
 
 		Stats stats = new Stats();
 		stats.setDeviceNum(_ctx.longValue("DescribeGroupResponse.Stats.DeviceNum"));

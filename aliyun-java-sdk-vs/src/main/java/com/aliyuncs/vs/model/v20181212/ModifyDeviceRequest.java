@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
-	
-	public ModifyDeviceRequest() {
-		super("vs", "2018-12-12", "ModifyDevice", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String gbId;
 
@@ -60,6 +54,14 @@ public class ModifyDeviceRequest extends RpcAcsRequest<ModifyDeviceResponse> {
 	private String name;
 
 	private String username;
+	public ModifyDeviceRequest() {
+		super("vs", "2018-12-12", "ModifyDevice", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getGbId() {
 		return this.gbId;

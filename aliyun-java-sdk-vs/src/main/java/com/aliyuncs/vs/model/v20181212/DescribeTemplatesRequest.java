@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class DescribeTemplatesRequest extends RpcAcsRequest<DescribeTemplatesResponse> {
-	
-	public DescribeTemplatesRequest() {
-		super("vs", "2018-12-12", "DescribeTemplates", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String sortDirection;
 
@@ -46,6 +40,14 @@ public class DescribeTemplatesRequest extends RpcAcsRequest<DescribeTemplatesRes
 	private String instanceId;
 
 	private String sortBy;
+	public DescribeTemplatesRequest() {
+		super("vs", "2018-12-12", "DescribeTemplates", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSortDirection() {
 		return this.sortDirection;

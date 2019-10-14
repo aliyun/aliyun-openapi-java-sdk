@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,18 +23,45 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class DescribeDeviceChannelsRequest extends RpcAcsRequest<DescribeDeviceChannelsResponse> {
-	
+	   
+
+	private Long pageNum;
+
+	private Long pageSize;
+
+	private String id;
+
+	private Long ownerId;
 	public DescribeDeviceChannelsRequest() {
 		super("vs", "2018-12-12", "DescribeDeviceChannels", "vs");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String id;
+	public Long getPageNum() {
+		return this.pageNum;
+	}
 
-	private Long ownerId;
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
 
 	public String getId() {
 		return this.id;

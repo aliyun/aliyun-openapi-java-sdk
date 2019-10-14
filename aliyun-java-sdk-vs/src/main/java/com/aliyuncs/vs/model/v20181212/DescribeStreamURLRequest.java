@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,18 +23,13 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class DescribeStreamURLRequest extends RpcAcsRequest<DescribeStreamURLResponse> {
-	
-	public DescribeStreamURLRequest() {
-		super("vs", "2018-12-12", "DescribeStreamURL", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String authKey;
 
 	private Boolean auth;
+
+	private Long startTime;
 
 	private String type;
 
@@ -41,11 +37,21 @@ public class DescribeStreamURLRequest extends RpcAcsRequest<DescribeStreamURLRes
 
 	private String outProtocol;
 
+	private Long endTime;
+
 	private Long ownerId;
 
 	private Long expire;
 
 	private String location;
+	public DescribeStreamURLRequest() {
+		super("vs", "2018-12-12", "DescribeStreamURL", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAuthKey() {
 		return this.authKey;
@@ -66,6 +72,17 @@ public class DescribeStreamURLRequest extends RpcAcsRequest<DescribeStreamURLRes
 		this.auth = auth;
 		if(auth != null){
 			putQueryParameter("Auth", auth.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 
@@ -99,6 +116,17 @@ public class DescribeStreamURLRequest extends RpcAcsRequest<DescribeStreamURLRes
 		this.outProtocol = outProtocol;
 		if(outProtocol != null){
 			putQueryParameter("OutProtocol", outProtocol);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 

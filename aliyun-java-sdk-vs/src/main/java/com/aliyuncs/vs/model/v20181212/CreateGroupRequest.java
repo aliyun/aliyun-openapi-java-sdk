@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
-	
-	public CreateGroupRequest() {
-		super("vs", "2018-12-12", "CreateGroup", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String description;
 
@@ -45,9 +39,21 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 
 	private String inProtocol;
 
+	private Boolean lazyPull;
+
 	private String name;
 
+	private String callback;
+
 	private String region;
+	public CreateGroupRequest() {
+		super("vs", "2018-12-12", "CreateGroup", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDescription() {
 		return this.description;
@@ -126,6 +132,17 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 		}
 	}
 
+	public Boolean getLazyPull() {
+		return this.lazyPull;
+	}
+
+	public void setLazyPull(Boolean lazyPull) {
+		this.lazyPull = lazyPull;
+		if(lazyPull != null){
+			putQueryParameter("LazyPull", lazyPull.toString());
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -134,6 +151,17 @@ public class CreateGroupRequest extends RpcAcsRequest<CreateGroupResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getCallback() {
+		return this.callback;
+	}
+
+	public void setCallback(String callback) {
+		this.callback = callback;
+		if(callback != null){
+			putQueryParameter("Callback", callback);
 		}
 	}
 

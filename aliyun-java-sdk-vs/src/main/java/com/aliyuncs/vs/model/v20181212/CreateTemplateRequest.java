@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse> {
-	
-	public CreateTemplateRequest() {
-		super("vs", "2018-12-12", "CreateTemplate", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String hlsTs;
 
@@ -70,6 +64,14 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 	private String fileFormat;
 
 	private String region;
+	public CreateTemplateRequest() {
+		super("vs", "2018-12-12", "CreateTemplate", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getHlsTs() {
 		return this.hlsTs;

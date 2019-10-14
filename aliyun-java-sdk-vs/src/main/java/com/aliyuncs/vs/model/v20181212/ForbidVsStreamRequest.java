@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class ForbidVsStreamRequest extends RpcAcsRequest<ForbidVsStreamResponse> {
-	
-	public ForbidVsStreamRequest() {
-		super("vs", "2018-12-12", "ForbidVsStream", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String appName;
 
@@ -46,6 +40,14 @@ public class ForbidVsStreamRequest extends RpcAcsRequest<ForbidVsStreamResponse>
 	private Long ownerId;
 
 	private String oneshot;
+	public ForbidVsStreamRequest() {
+		super("vs", "2018-12-12", "ForbidVsStream", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAppName() {
 		return this.appName;

@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class BatchDeleteVsDomainConfigsRequest extends RpcAcsRequest<BatchDeleteVsDomainConfigsResponse> {
-	
-	public BatchDeleteVsDomainConfigsRequest() {
-		super("vs", "2018-12-12", "BatchDeleteVsDomainConfigs", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String functionNames;
 
 	private String domainNames;
 
 	private Long ownerId;
+	public BatchDeleteVsDomainConfigsRequest() {
+		super("vs", "2018-12-12", "BatchDeleteVsDomainConfigs", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFunctionNames() {
 		return this.functionNames;

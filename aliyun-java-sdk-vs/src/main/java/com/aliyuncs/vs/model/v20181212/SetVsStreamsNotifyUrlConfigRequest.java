@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class SetVsStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetVsStreamsNotifyUrlConfigResponse> {
-	
-	public SetVsStreamsNotifyUrlConfigRequest() {
-		super("vs", "2018-12-12", "SetVsStreamsNotifyUrlConfig", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String authKey;
 
@@ -40,6 +34,14 @@ public class SetVsStreamsNotifyUrlConfigRequest extends RpcAcsRequest<SetVsStrea
 	private String domainName;
 
 	private Long ownerId;
+	public SetVsStreamsNotifyUrlConfigRequest() {
+		super("vs", "2018-12-12", "SetVsStreamsNotifyUrlConfig", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAuthKey() {
 		return this.authKey;

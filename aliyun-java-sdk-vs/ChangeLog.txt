@@ -1,3 +1,7 @@
+2019-10-14 Version: 1.2.0
+- Supported callback for groups APIs.
+- Supported NVR historical stream for DescribeStreamURL.
+
 2019-08-29 Version: 1.1.0
 - Add PTZ APIs.
 

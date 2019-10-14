@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class DescribeVsUpPeakPublishStreamDataRequest extends RpcAcsRequest<DescribeVsUpPeakPublishStreamDataResponse> {
-	
-	public DescribeVsUpPeakPublishStreamDataRequest() {
-		super("vs", "2018-12-12", "DescribeVsUpPeakPublishStreamData", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String startTime;
 
@@ -40,6 +34,14 @@ public class DescribeVsUpPeakPublishStreamDataRequest extends RpcAcsRequest<Desc
 	private Long ownerId;
 
 	private String domainSwitch;
+	public DescribeVsUpPeakPublishStreamDataRequest() {
+		super("vs", "2018-12-12", "DescribeVsUpPeakPublishStreamData", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStartTime() {
 		return this.startTime;

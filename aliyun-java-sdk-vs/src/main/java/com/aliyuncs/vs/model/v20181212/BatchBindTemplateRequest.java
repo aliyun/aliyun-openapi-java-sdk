@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class BatchBindTemplateRequest extends RpcAcsRequest<BatchBindTemplateResponse> {
-	
-	public BatchBindTemplateRequest() {
-		super("vs", "2018-12-12", "BatchBindTemplate", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean replace;
 
@@ -42,6 +36,14 @@ public class BatchBindTemplateRequest extends RpcAcsRequest<BatchBindTemplateRes
 	private String templateId;
 
 	private String instanceId;
+	public BatchBindTemplateRequest() {
+		super("vs", "2018-12-12", "BatchBindTemplate", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getReplace() {
 		return this.replace;

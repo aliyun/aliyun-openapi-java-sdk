@@ -14,6 +14,7 @@
 
 package com.aliyuncs.vs.model.v20181212;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.vs.transform.v20181212.DescribeGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -50,15 +51,19 @@ public class DescribeGroupResponse extends AcsResponse {
 
 	private String playDomain;
 
+	private Boolean lazyPull;
+
+	private String callback;
+
 	private String gbId;
 
 	private String gbIp;
 
 	private Long gbPort;
 
-	private Long gbUdpPort;
+	private List<String> gbUdpPorts;
 
-	private Long gbTcpPort;
+	private List<String> gbTcpPorts;
 
 	private Stats stats;
 
@@ -166,6 +171,22 @@ public class DescribeGroupResponse extends AcsResponse {
 		this.playDomain = playDomain;
 	}
 
+	public Boolean getLazyPull() {
+		return this.lazyPull;
+	}
+
+	public void setLazyPull(Boolean lazyPull) {
+		this.lazyPull = lazyPull;
+	}
+
+	public String getCallback() {
+		return this.callback;
+	}
+
+	public void setCallback(String callback) {
+		this.callback = callback;
+	}
+
 	public String getGbId() {
 		return this.gbId;
 	}
@@ -190,20 +211,20 @@ public class DescribeGroupResponse extends AcsResponse {
 		this.gbPort = gbPort;
 	}
 
-	public Long getGbUdpPort() {
-		return this.gbUdpPort;
+	public List<String> getGbUdpPorts() {
+		return this.gbUdpPorts;
 	}
 
-	public void setGbUdpPort(Long gbUdpPort) {
-		this.gbUdpPort = gbUdpPort;
+	public void setGbUdpPorts(List<String> gbUdpPorts) {
+		this.gbUdpPorts = gbUdpPorts;
 	}
 
-	public Long getGbTcpPort() {
-		return this.gbTcpPort;
+	public List<String> getGbTcpPorts() {
+		return this.gbTcpPorts;
 	}
 
-	public void setGbTcpPort(Long gbTcpPort) {
-		this.gbTcpPort = gbTcpPort;
+	public void setGbTcpPorts(List<String> gbTcpPorts) {
+		this.gbTcpPorts = gbTcpPorts;
 	}
 
 	public Stats getStats() {
@@ -260,5 +281,10 @@ public class DescribeGroupResponse extends AcsResponse {
 	@Override
 	public DescribeGroupResponse getInstance(UnmarshallerContext context) {
 		return	DescribeGroupResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

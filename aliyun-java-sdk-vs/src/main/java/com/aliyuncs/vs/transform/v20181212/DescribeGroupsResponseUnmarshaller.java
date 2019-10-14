@@ -48,11 +48,23 @@ public class DescribeGroupsResponseUnmarshaller {
 			group.setCreatedTime(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].CreatedTime"));
 			group.setPushDomain(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].PushDomain"));
 			group.setPlayDomain(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].PlayDomain"));
+			group.setLazyPull(_ctx.booleanValue("DescribeGroupsResponse.Groups["+ i +"].LazyPull"));
+			group.setCallback(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].Callback"));
 			group.setGbId(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbId"));
 			group.setGbIp(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbIp"));
 			group.setGbPort(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].GbPort"));
-			group.setGbUdpPort(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].GbUdpPort"));
-			group.setGbTcpPort(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].GbTcpPort"));
+
+			List<String> gbUdpPorts = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeGroupsResponse.Groups["+ i +"].GbUdpPorts.Length"); j++) {
+				gbUdpPorts.add(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbUdpPorts["+ j +"]"));
+			}
+			group.setGbUdpPorts(gbUdpPorts);
+
+			List<String> gbTcpPorts = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeGroupsResponse.Groups["+ i +"].GbTcpPorts.Length"); j++) {
+				gbTcpPorts.add(_ctx.stringValue("DescribeGroupsResponse.Groups["+ i +"].GbTcpPorts["+ j +"]"));
+			}
+			group.setGbTcpPorts(gbTcpPorts);
 
 			Stats stats = new Stats();
 			stats.setDeviceNum(_ctx.longValue("DescribeGroupsResponse.Groups["+ i +"].Stats.DeviceNum"));

@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class StopMoveRequest extends RpcAcsRequest<StopMoveResponse> {
-	
-	public StopMoveRequest() {
-		super("vs", "2018-12-12", "StopMove", "vs");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean tilt;
 
@@ -40,6 +34,14 @@ public class StopMoveRequest extends RpcAcsRequest<StopMoveResponse> {
 	private Boolean zoom;
 
 	private Long ownerId;
+	public StopMoveRequest() {
+		super("vs", "2018-12-12", "StopMove", "vs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getTilt() {
 		return this.tilt;

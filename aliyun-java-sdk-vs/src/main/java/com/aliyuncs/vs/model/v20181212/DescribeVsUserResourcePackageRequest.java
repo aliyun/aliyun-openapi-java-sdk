@@ -15,6 +15,7 @@
 package com.aliyuncs.vs.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vs.Endpoint;
 
 /**
@@ -22,18 +23,30 @@ import com.aliyuncs.vs.Endpoint;
  * @version 
  */
 public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<DescribeVsUserResourcePackageResponse> {
-	
+	   
+
+	private Long ownerId;
+
+	private String securityToken;
 	public DescribeVsUserResourcePackageRequest() {
 		super("vs", "2018-12-12", "DescribeVsUserResourcePackage", "vs");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String securityToken;
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
 
-	private Long ownerId;
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
 
 	public String getBizSecurityToken() {
 		return this.securityToken;
@@ -62,17 +75,6 @@ public class DescribeVsUserResourcePackageRequest extends RpcAcsRequest<Describe
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
