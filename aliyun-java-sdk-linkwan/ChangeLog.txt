@@ -1,3 +1,6 @@
+2019-10-14 Version: 1.0.4
+- Generated 2019-03-01 for `LinkWAN`.
+
 2019-02-20 Version: 1.0.3
 1, Modify the NotificationId parameter type of the GetNotification API from Long to String.
 2, Modify the Ascending parameter type of the ListNotifications API from String to Boolean.
