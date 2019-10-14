@@ -22,18 +22,14 @@ import com.aliyuncs.push.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDeviceStatResponse> {
+public class CompleteContinuouslyPushRequest extends RpcAcsRequest<CompleteContinuouslyPushResponse> {
 	   
 
-	private String endTime;
-
-	private String startTime;
-
-	private String granularity;
+	private String messageId;
 
 	private Long appKey;
-	public QueryUniqueDeviceStatRequest() {
-		super("Push", "2016-08-01", "QueryUniqueDeviceStat");
+	public CompleteContinuouslyPushRequest() {
+		super("Push", "2016-08-01", "CompleteContinuouslyPush");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +37,14 @@ public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDevic
 		} catch (Exception e) {}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getMessageId() {
+		return this.messageId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getGranularity() {
-		return this.granularity;
-	}
-
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		if(granularity != null){
-			putQueryParameter("Granularity", granularity);
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+		if(messageId != null){
+			putQueryParameter("MessageId", messageId);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDevic
 	}
 
 	@Override
-	public Class<QueryUniqueDeviceStatResponse> getResponseClass() {
-		return QueryUniqueDeviceStatResponse.class;
+	public Class<CompleteContinuouslyPushResponse> getResponseClass() {
+		return CompleteContinuouslyPushResponse.class;
 	}
 
 }

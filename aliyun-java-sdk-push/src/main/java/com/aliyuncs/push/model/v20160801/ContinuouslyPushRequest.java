@@ -22,18 +22,18 @@ import com.aliyuncs.push.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDeviceStatResponse> {
+public class ContinuouslyPushRequest extends RpcAcsRequest<ContinuouslyPushResponse> {
 	   
 
-	private String endTime;
+	private String messageId;
 
-	private String startTime;
-
-	private String granularity;
+	private String target;
 
 	private Long appKey;
-	public QueryUniqueDeviceStatRequest() {
-		super("Push", "2016-08-01", "QueryUniqueDeviceStat");
+
+	private String targetValue;
+	public ContinuouslyPushRequest() {
+		super("Push", "2016-08-01", "ContinuouslyPush");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +41,25 @@ public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDevic
 		} catch (Exception e) {}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getMessageId() {
+		return this.messageId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+		if(messageId != null){
+			putQueryParameter("MessageId", messageId);
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getTarget() {
+		return this.target;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getGranularity() {
-		return this.granularity;
-	}
-
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		if(granularity != null){
-			putQueryParameter("Granularity", granularity);
+	public void setTarget(String target) {
+		this.target = target;
+		if(target != null){
+			putQueryParameter("Target", target);
 		}
 	}
 
@@ -85,9 +74,20 @@ public class QueryUniqueDeviceStatRequest extends RpcAcsRequest<QueryUniqueDevic
 		}
 	}
 
+	public String getTargetValue() {
+		return this.targetValue;
+	}
+
+	public void setTargetValue(String targetValue) {
+		this.targetValue = targetValue;
+		if(targetValue != null){
+			putQueryParameter("TargetValue", targetValue);
+		}
+	}
+
 	@Override
-	public Class<QueryUniqueDeviceStatResponse> getResponseClass() {
-		return QueryUniqueDeviceStatResponse.class;
+	public Class<ContinuouslyPushResponse> getResponseClass() {
+		return ContinuouslyPushResponse.class;
 	}
 
 }

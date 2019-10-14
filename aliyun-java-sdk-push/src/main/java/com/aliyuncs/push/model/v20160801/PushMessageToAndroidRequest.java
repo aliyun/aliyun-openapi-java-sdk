@@ -16,6 +16,7 @@ package com.aliyuncs.push.model.v20160801;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.push.Endpoint;
 
 /**
  * @author auto create
@@ -38,6 +39,10 @@ public class PushMessageToAndroidRequest extends RpcAcsRequest<PushMessageToAndr
 	public PushMessageToAndroidRequest() {
 		super("Push", "2016-08-01", "PushMessageToAndroid");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getTitle() {

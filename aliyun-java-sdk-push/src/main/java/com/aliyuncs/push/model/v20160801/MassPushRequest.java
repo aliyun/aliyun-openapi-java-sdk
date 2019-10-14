@@ -17,6 +17,7 @@ package com.aliyuncs.push.model.v20160801;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.push.Endpoint;
 
 /**
  * @author auto create
@@ -31,6 +32,10 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 	public MassPushRequest() {
 		super("Push", "2016-08-01", "MassPush");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public List<PushTask> getPushTasks() {
