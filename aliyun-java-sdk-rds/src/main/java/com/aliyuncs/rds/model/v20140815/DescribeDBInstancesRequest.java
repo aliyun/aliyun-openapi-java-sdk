@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstancesResponse> {
-	
-	public DescribeDBInstancesRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstances", "rds");
-	}
+	   
 
 	private String tag4value;
 
@@ -78,6 +77,8 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 
 	private String dBInstanceId;
 
+	private String dedicatedHostGroupId;
+
 	private String tag3value;
 
 	private String resourceOwnerAccount;
@@ -93,6 +94,14 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 	private String tag2value;
 
 	private String payType;
+	public DescribeDBInstancesRequest() {
+		super("Rds", "2014-08-15", "DescribeDBInstances", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTag4value() {
 		return this.tag4value;
@@ -377,6 +386,17 @@ public class DescribeDBInstancesRequest extends RpcAcsRequest<DescribeDBInstance
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDedicatedHostGroupId() {
+		return this.dedicatedHostGroupId;
+	}
+
+	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+		this.dedicatedHostGroupId = dedicatedHostGroupId;
+		if(dedicatedHostGroupId != null){
+			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 		}
 	}
 

@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsResponse> {
-	
-	public ModifySecurityIpsRequest() {
-		super("Rds", "2014-08-15", "ModifySecurityIps", "rds");
-	}
+	   
 
 	private String dBInstanceIPArrayName;
 
@@ -43,6 +42,14 @@ public class ModifySecurityIpsRequest extends RpcAcsRequest<ModifySecurityIpsRes
 	private String modifyMode;
 
 	private String dBInstanceIPArrayAttribute;
+	public ModifySecurityIpsRequest() {
+		super("Rds", "2014-08-15", "ModifySecurityIps", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDBInstanceIPArrayName() {
 		return this.dBInstanceIPArrayName;

@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class PreCheckCreateOrderForDeferRequest extends RpcAcsRequest<PreCheckCreateOrderForDeferResponse> {
-	
-	public PreCheckCreateOrderForDeferRequest() {
-		super("Rds", "2014-08-15", "PreCheckCreateOrderForDefer", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -57,6 +56,14 @@ public class PreCheckCreateOrderForDeferRequest extends RpcAcsRequest<PreCheckCr
 	private String timeType;
 
 	private String payType;
+	public PreCheckCreateOrderForDeferRequest() {
+		super("Rds", "2014-08-15", "PreCheckCreateOrderForDefer", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

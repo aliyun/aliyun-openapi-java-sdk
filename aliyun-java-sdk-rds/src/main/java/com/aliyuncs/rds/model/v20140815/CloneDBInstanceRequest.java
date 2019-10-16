@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceResponse> {
-	
-	public CloneDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CloneDBInstance", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -63,6 +62,14 @@ public class CloneDBInstanceRequest extends RpcAcsRequest<CloneDBInstanceRespons
 	private String payType;
 
 	private String instanceNetworkType;
+	public CloneDBInstanceRequest() {
+		super("Rds", "2014-08-15", "CloneDBInstance", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

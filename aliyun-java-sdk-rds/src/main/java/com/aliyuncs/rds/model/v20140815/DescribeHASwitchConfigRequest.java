@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeHASwitchConfigRequest extends RpcAcsRequest<DescribeHASwitchConfigResponse> {
-	
-	public DescribeHASwitchConfigRequest() {
-		super("Rds", "2014-08-15", "DescribeHASwitchConfig", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -33,6 +32,14 @@ public class DescribeHASwitchConfigRequest extends RpcAcsRequest<DescribeHASwitc
 	private Long ownerId;
 
 	private String dBInstanceId;
+	public DescribeHASwitchConfigRequest() {
+		super("Rds", "2014-08-15", "DescribeHASwitchConfig", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

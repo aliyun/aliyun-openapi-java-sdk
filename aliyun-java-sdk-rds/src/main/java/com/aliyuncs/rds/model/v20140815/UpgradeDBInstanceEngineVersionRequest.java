@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<UpgradeDBInstanceEngineVersionResponse> {
-	
-	public UpgradeDBInstanceEngineVersionRequest() {
-		super("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -41,6 +40,14 @@ public class UpgradeDBInstanceEngineVersionRequest extends RpcAcsRequest<Upgrade
 	private String ownerAccount;
 
 	private Long ownerId;
+	public UpgradeDBInstanceEngineVersionRequest() {
+		super("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

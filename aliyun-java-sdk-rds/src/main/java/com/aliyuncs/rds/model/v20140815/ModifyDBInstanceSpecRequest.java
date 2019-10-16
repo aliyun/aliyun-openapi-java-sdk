@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceSpecResponse> {
-	
-	public ModifyDBInstanceSpecRequest() {
-		super("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -36,6 +35,8 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 
 	private String dBInstanceId;
 
+	private String dBInstanceStorageType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -45,6 +46,14 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 	private String dBInstanceClass;
 
 	private String payType;
+	public ModifyDBInstanceSpecRequest() {
+		super("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -98,6 +107,17 @@ public class ModifyDBInstanceSpecRequest extends RpcAcsRequest<ModifyDBInstanceS
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBInstanceStorageType() {
+		return this.dBInstanceStorageType;
+	}
+
+	public void setDBInstanceStorageType(String dBInstanceStorageType) {
+		this.dBInstanceStorageType = dBInstanceStorageType;
+		if(dBInstanceStorageType != null){
+			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
 		}
 	}
 

@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<DescribeDBInstancesByPerformanceResponse> {
-	
-	public DescribeDBInstancesByPerformanceRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds");
-	}
+	   
 
 	private String tag4value;
 
@@ -69,6 +68,14 @@ public class DescribeDBInstancesByPerformanceRequest extends RpcAcsRequest<Descr
 	private String tag2value;
 
 	private String tag4key;
+	public DescribeDBInstancesByPerformanceRequest() {
+		super("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTag4value() {
 		return this.tag4value;

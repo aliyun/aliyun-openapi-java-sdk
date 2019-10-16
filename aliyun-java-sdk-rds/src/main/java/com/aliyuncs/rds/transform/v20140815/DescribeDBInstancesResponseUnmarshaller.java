@@ -66,6 +66,13 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setReplicateId(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ReplicateId"));
 			dBInstance.setResourceGroupId(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].ResourceGroupId"));
 			dBInstance.setAutoUpgradeMinorVersion(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].AutoUpgradeMinorVersion"));
+			dBInstance.setDedicatedHostGroupId(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostGroupId"));
+			dBInstance.setDedicatedHostIdForMaster(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostIdForMaster"));
+			dBInstance.setDedicatedHostIdForSlave(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostIdForSlave"));
+			dBInstance.setDedicatedHostIdForLog(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostIdForLog"));
+			dBInstance.setDedicatedHostNameForMaster(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostNameForMaster"));
+			dBInstance.setDedicatedHostNameForSlave(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostNameForSlave"));
+			dBInstance.setDedicatedHostNameForLog(_ctx.stringValue("DescribeDBInstancesResponse.Items["+ i +"].DedicatedHostNameForLog"));
 
 			List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new ArrayList<ReadOnlyDBInstanceId>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

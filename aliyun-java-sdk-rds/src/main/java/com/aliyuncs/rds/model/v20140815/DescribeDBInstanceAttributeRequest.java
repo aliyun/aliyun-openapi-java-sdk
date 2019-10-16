@@ -15,22 +15,29 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeDBInstanceAttributeRequest extends RpcAcsRequest<DescribeDBInstanceAttributeResponse> {
-	
-	public DescribeDBInstanceAttributeRequest() {
-		super("Rds", "2014-08-15", "DescribeDBInstanceAttribute", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String expired;
 
 	private String dBInstanceId;
+	public DescribeDBInstanceAttributeRequest() {
+		super("Rds", "2014-08-15", "DescribeDBInstanceAttribute", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

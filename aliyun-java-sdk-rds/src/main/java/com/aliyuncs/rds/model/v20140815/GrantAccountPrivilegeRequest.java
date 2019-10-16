@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPrivilegeResponse> {
-	
-	public GrantAccountPrivilegeRequest() {
-		super("Rds", "2014-08-15", "GrantAccountPrivilege", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -35,6 +34,14 @@ public class GrantAccountPrivilegeRequest extends RpcAcsRequest<GrantAccountPriv
 	private String dBInstanceId;
 
 	private String dBName;
+	public GrantAccountPrivilegeRequest() {
+		super("Rds", "2014-08-15", "GrantAccountPrivilege", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

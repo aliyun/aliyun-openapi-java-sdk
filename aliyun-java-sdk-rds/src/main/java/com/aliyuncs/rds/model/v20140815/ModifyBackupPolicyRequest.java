@@ -15,22 +15,23 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
-	
-	public ModifyBackupPolicyRequest() {
-		super("Rds", "2014-08-15", "ModifyBackupPolicy", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String localLogRetentionHours;
 
 	private String logBackupFrequency;
+
+	private String archiveBackupKeepCount;
 
 	private String backupLog;
 
@@ -56,6 +57,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private Long ownerId;
 
+	private String archiveBackupKeepPolicy;
+
 	private String duplication;
 
 	private String preferredBackupTime;
@@ -64,7 +67,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String duplicationLocation;
 
+	private String archiveBackupRetentionPeriod;
+
 	private String logBackupRetentionPeriod;
+	public ModifyBackupPolicyRequest() {
+		super("Rds", "2014-08-15", "ModifyBackupPolicy", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -96,6 +109,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.logBackupFrequency = logBackupFrequency;
 		if(logBackupFrequency != null){
 			putQueryParameter("LogBackupFrequency", logBackupFrequency);
+		}
+	}
+
+	public String getArchiveBackupKeepCount() {
+		return this.archiveBackupKeepCount;
+	}
+
+	public void setArchiveBackupKeepCount(String archiveBackupKeepCount) {
+		this.archiveBackupKeepCount = archiveBackupKeepCount;
+		if(archiveBackupKeepCount != null){
+			putQueryParameter("ArchiveBackupKeepCount", archiveBackupKeepCount);
 		}
 	}
 
@@ -231,6 +255,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
+	public String getArchiveBackupKeepPolicy() {
+		return this.archiveBackupKeepPolicy;
+	}
+
+	public void setArchiveBackupKeepPolicy(String archiveBackupKeepPolicy) {
+		this.archiveBackupKeepPolicy = archiveBackupKeepPolicy;
+		if(archiveBackupKeepPolicy != null){
+			putQueryParameter("ArchiveBackupKeepPolicy", archiveBackupKeepPolicy);
+		}
+	}
+
 	public String getDuplication() {
 		return this.duplication;
 	}
@@ -272,6 +307,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.duplicationLocation = duplicationLocation;
 		if(duplicationLocation != null){
 			putQueryParameter("DuplicationLocation", duplicationLocation);
+		}
+	}
+
+	public String getArchiveBackupRetentionPeriod() {
+		return this.archiveBackupRetentionPeriod;
+	}
+
+	public void setArchiveBackupRetentionPeriod(String archiveBackupRetentionPeriod) {
+		this.archiveBackupRetentionPeriod = archiveBackupRetentionPeriod;
+		if(archiveBackupRetentionPeriod != null){
+			putQueryParameter("ArchiveBackupRetentionPeriod", archiveBackupRetentionPeriod);
 		}
 	}
 

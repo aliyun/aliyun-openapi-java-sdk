@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
-	
-	public CreateDBInstanceRequest() {
-		super("Rds", "2014-08-15", "CreateDBInstance", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -33,6 +32,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String systemDBCharset;
 
 	private String engineVersion;
+
+	private String targetDedicatedHostIdForMaster;
 
 	private String dBInstanceDescription;
 
@@ -48,6 +49,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String privateIpAddress;
 
+	private String targetDedicatedHostIdForLog;
+
 	private String autoRenew;
 
 	private String zoneId;
@@ -58,9 +61,13 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String clientToken;
 
+	private String targetDedicatedHostIdForSlave;
+
 	private String engine;
 
 	private String dBInstanceStorageType;
+
+	private String dedicatedHostGroupId;
 
 	private String dBInstanceNetType;
 
@@ -71,6 +78,14 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String category;
 
 	private String payType;
+	public CreateDBInstanceRequest() {
+		super("Rds", "2014-08-15", "CreateDBInstance", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -113,6 +128,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getTargetDedicatedHostIdForMaster() {
+		return this.targetDedicatedHostIdForMaster;
+	}
+
+	public void setTargetDedicatedHostIdForMaster(String targetDedicatedHostIdForMaster) {
+		this.targetDedicatedHostIdForMaster = targetDedicatedHostIdForMaster;
+		if(targetDedicatedHostIdForMaster != null){
+			putQueryParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
 		}
 	}
 
@@ -193,6 +219,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getTargetDedicatedHostIdForLog() {
+		return this.targetDedicatedHostIdForLog;
+	}
+
+	public void setTargetDedicatedHostIdForLog(String targetDedicatedHostIdForLog) {
+		this.targetDedicatedHostIdForLog = targetDedicatedHostIdForLog;
+		if(targetDedicatedHostIdForLog != null){
+			putQueryParameter("TargetDedicatedHostIdForLog", targetDedicatedHostIdForLog);
+		}
+	}
+
 	public String getAutoRenew() {
 		return this.autoRenew;
 	}
@@ -248,6 +285,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
+	public String getTargetDedicatedHostIdForSlave() {
+		return this.targetDedicatedHostIdForSlave;
+	}
+
+	public void setTargetDedicatedHostIdForSlave(String targetDedicatedHostIdForSlave) {
+		this.targetDedicatedHostIdForSlave = targetDedicatedHostIdForSlave;
+		if(targetDedicatedHostIdForSlave != null){
+			putQueryParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
+		}
+	}
+
 	public String getEngine() {
 		return this.engine;
 	}
@@ -267,6 +315,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBInstanceStorageType = dBInstanceStorageType;
 		if(dBInstanceStorageType != null){
 			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
+		}
+	}
+
+	public String getDedicatedHostGroupId() {
+		return this.dedicatedHostGroupId;
+	}
+
+	public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+		this.dedicatedHostGroupId = dedicatedHostGroupId;
+		if(dedicatedHostGroupId != null){
+			putQueryParameter("DedicatedHostGroupId", dedicatedHostGroupId);
 		}
 	}
 

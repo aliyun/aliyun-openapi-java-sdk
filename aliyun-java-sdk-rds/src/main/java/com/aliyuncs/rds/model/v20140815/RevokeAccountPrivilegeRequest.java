@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPrivilegeResponse> {
-	
-	public RevokeAccountPrivilegeRequest() {
-		super("Rds", "2014-08-15", "RevokeAccountPrivilege", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -39,6 +38,14 @@ public class RevokeAccountPrivilegeRequest extends RpcAcsRequest<RevokeAccountPr
 	private Long ownerId;
 
 	private String dBName;
+	public RevokeAccountPrivilegeRequest() {
+		super("Rds", "2014-08-15", "RevokeAccountPrivilege", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

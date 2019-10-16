@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPriceResponse> {
-	
-	public DescribeRenewalPriceRequest() {
-		super("Rds", "2014-08-15", "DescribeRenewalPrice", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,7 +43,7 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 
 	private Long ownerId;
 
-	private String usedTime;
+	private Integer usedTime;
 
 	private String dBInstanceClass;
 
@@ -55,6 +54,14 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 	private String payType;
 
 	private String orderType;
+	public DescribeRenewalPriceRequest() {
+		super("Rds", "2014-08-15", "DescribeRenewalPrice", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -155,14 +162,14 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		}
 	}
 
-	public String getUsedTime() {
+	public Integer getUsedTime() {
 		return this.usedTime;
 	}
 
-	public void setUsedTime(String usedTime) {
+	public void setUsedTime(Integer usedTime) {
 		this.usedTime = usedTime;
 		if(usedTime != null){
-			putQueryParameter("UsedTime", usedTime);
+			putQueryParameter("UsedTime", usedTime.toString());
 		}
 	}
 

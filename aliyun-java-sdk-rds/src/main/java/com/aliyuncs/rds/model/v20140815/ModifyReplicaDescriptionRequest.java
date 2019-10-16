@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplicaDescriptionResponse> {
-	
-	public ModifyReplicaDescriptionRequest() {
-		super("Rds", "2014-08-15", "ModifyReplicaDescription", "rds");
-	}
+	   
 
 	private String replicaDescription;
 
@@ -39,6 +38,14 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 	private String ownerAccount;
 
 	private Long ownerId;
+	public ModifyReplicaDescriptionRequest() {
+		super("Rds", "2014-08-15", "ModifyReplicaDescription", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getReplicaDescription() {
 		return this.replicaDescription;

@@ -15,22 +15,29 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RequestServiceOfCloudDBExpertRequest extends RpcAcsRequest<RequestServiceOfCloudDBExpertResponse> {
-	
-	public RequestServiceOfCloudDBExpertRequest() {
-		super("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "rds");
-	}
+	   
 
 	private String serviceRequestType;
 
 	private String serviceRequestParam;
 
 	private String dBInstanceId;
+	public RequestServiceOfCloudDBExpertRequest() {
+		super("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getServiceRequestType() {
 		return this.serviceRequestType;

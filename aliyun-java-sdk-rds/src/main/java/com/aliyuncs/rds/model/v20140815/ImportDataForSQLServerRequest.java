@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ImportDataForSQLServerRequest extends RpcAcsRequest<ImportDataForSQLServerResponse> {
-	
-	public ImportDataForSQLServerRequest() {
-		super("Rds", "2014-08-15", "ImportDataForSQLServer", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -37,6 +36,14 @@ public class ImportDataForSQLServerRequest extends RpcAcsRequest<ImportDataForSQ
 	private String fileName;
 
 	private String dBInstanceId;
+	public ImportDataForSQLServerRequest() {
+		super("Rds", "2014-08-15", "ImportDataForSQLServer", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

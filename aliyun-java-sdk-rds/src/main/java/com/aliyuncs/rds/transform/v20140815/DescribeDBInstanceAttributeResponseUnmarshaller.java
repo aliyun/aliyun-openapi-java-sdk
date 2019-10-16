@@ -102,6 +102,8 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setDispenseMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].DispenseMode"));
 			dBInstanceAttribute.setMasterZone(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].MasterZone"));
 			dBInstanceAttribute.setAutoUpgradeMinorVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].AutoUpgradeMinorVersion"));
+			dBInstanceAttribute.setProxyType(_ctx.integerValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ProxyType"));
+			dBInstanceAttribute.setConsoleVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].ConsoleVersion"));
 
 			Extra extra = new Extra();
 			extra.setReplicaGroupID(_ctx.stringValue("DescribeDBInstanceAttributeResponse.Items["+ i +"].Extra.ReplicaGroupID"));

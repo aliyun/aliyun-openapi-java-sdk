@@ -183,6 +183,10 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String autoUpgradeMinorVersion;
 
+		private Integer proxyType;
+
+		private String consoleVersion;
+
 		private List<SlaveZone> slaveZones;
 
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -747,6 +751,22 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		public void setAutoUpgradeMinorVersion(String autoUpgradeMinorVersion) {
 			this.autoUpgradeMinorVersion = autoUpgradeMinorVersion;
+		}
+
+		public Integer getProxyType() {
+			return this.proxyType;
+		}
+
+		public void setProxyType(Integer proxyType) {
+			this.proxyType = proxyType;
+		}
+
+		public String getConsoleVersion() {
+			return this.consoleVersion;
+		}
+
+		public void setConsoleVersion(String consoleVersion) {
+			this.consoleVersion = consoleVersion;
 		}
 
 		public List<SlaveZone> getSlaveZones() {

@@ -139,6 +139,20 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String autoUpgradeMinorVersion;
 
+		private String dedicatedHostGroupId;
+
+		private String dedicatedHostIdForMaster;
+
+		private String dedicatedHostIdForSlave;
+
+		private String dedicatedHostIdForLog;
+
+		private String dedicatedHostNameForMaster;
+
+		private String dedicatedHostNameForSlave;
+
+		private String dedicatedHostNameForLog;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public Integer getInsId() {
@@ -403,6 +417,62 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setAutoUpgradeMinorVersion(String autoUpgradeMinorVersion) {
 			this.autoUpgradeMinorVersion = autoUpgradeMinorVersion;
+		}
+
+		public String getDedicatedHostGroupId() {
+			return this.dedicatedHostGroupId;
+		}
+
+		public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+			this.dedicatedHostGroupId = dedicatedHostGroupId;
+		}
+
+		public String getDedicatedHostIdForMaster() {
+			return this.dedicatedHostIdForMaster;
+		}
+
+		public void setDedicatedHostIdForMaster(String dedicatedHostIdForMaster) {
+			this.dedicatedHostIdForMaster = dedicatedHostIdForMaster;
+		}
+
+		public String getDedicatedHostIdForSlave() {
+			return this.dedicatedHostIdForSlave;
+		}
+
+		public void setDedicatedHostIdForSlave(String dedicatedHostIdForSlave) {
+			this.dedicatedHostIdForSlave = dedicatedHostIdForSlave;
+		}
+
+		public String getDedicatedHostIdForLog() {
+			return this.dedicatedHostIdForLog;
+		}
+
+		public void setDedicatedHostIdForLog(String dedicatedHostIdForLog) {
+			this.dedicatedHostIdForLog = dedicatedHostIdForLog;
+		}
+
+		public String getDedicatedHostNameForMaster() {
+			return this.dedicatedHostNameForMaster;
+		}
+
+		public void setDedicatedHostNameForMaster(String dedicatedHostNameForMaster) {
+			this.dedicatedHostNameForMaster = dedicatedHostNameForMaster;
+		}
+
+		public String getDedicatedHostNameForSlave() {
+			return this.dedicatedHostNameForSlave;
+		}
+
+		public void setDedicatedHostNameForSlave(String dedicatedHostNameForSlave) {
+			this.dedicatedHostNameForSlave = dedicatedHostNameForSlave;
+		}
+
+		public String getDedicatedHostNameForLog() {
+			return this.dedicatedHostNameForLog;
+		}
+
+		public void setDedicatedHostNameForLog(String dedicatedHostNameForLog) {
+			this.dedicatedHostNameForLog = dedicatedHostNameForLog;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

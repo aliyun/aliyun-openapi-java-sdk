@@ -127,6 +127,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private String slaveStatus;
 
+		private Long consistentTime;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -285,6 +287,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setSlaveStatus(String slaveStatus) {
 			this.slaveStatus = slaveStatus;
+		}
+
+		public Long getConsistentTime() {
+			return this.consistentTime;
+		}
+
+		public void setConsistentTime(Long consistentTime) {
+			this.consistentTime = consistentTime;
 		}
 	}
 

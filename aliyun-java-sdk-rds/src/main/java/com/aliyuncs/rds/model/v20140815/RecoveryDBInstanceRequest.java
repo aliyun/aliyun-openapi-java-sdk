@@ -15,22 +15,23 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceResponse> {
-	
-	public RecoveryDBInstanceRequest() {
-		super("Rds", "2014-08-15", "RecoveryDBInstance", "rds");
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private Integer dBInstanceStorage;
 
 	private String dBInstanceId;
+
+	private String dBInstanceStorageType;
 
 	private String restoreTime;
 
@@ -55,6 +56,14 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 	private String payType;
 
 	private String instanceNetworkType;
+	public RecoveryDBInstanceRequest() {
+		super("Rds", "2014-08-15", "RecoveryDBInstance", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -86,6 +95,17 @@ public class RecoveryDBInstanceRequest extends RpcAcsRequest<RecoveryDBInstanceR
 		this.dBInstanceId = dBInstanceId;
 		if(dBInstanceId != null){
 			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getDBInstanceStorageType() {
+		return this.dBInstanceStorageType;
+	}
+
+	public void setDBInstanceStorageType(String dBInstanceStorageType) {
+		this.dBInstanceStorageType = dBInstanceStorageType;
+		if(dBInstanceStorageType != null){
+			putQueryParameter("DBInstanceStorageType", dBInstanceStorageType);
 		}
 	}
 

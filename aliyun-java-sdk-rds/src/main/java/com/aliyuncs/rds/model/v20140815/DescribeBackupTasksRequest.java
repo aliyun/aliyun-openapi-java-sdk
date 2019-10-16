@@ -15,16 +15,15 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rds.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTasksResponse> {
-	
-	public DescribeBackupTasksRequest() {
-		super("Rds", "2014-08-15", "DescribeBackupTasks", "rds");
-	}
+	   
 
 	private String backupJobId;
 
@@ -45,6 +44,14 @@ public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTask
 	private String backupJobStatus;
 
 	private String backupMode;
+	public DescribeBackupTasksRequest() {
+		super("Rds", "2014-08-15", "DescribeBackupTasks", "rds");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getBackupJobId() {
 		return this.backupJobId;
