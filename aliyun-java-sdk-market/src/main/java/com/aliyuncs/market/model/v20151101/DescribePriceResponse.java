@@ -41,6 +41,10 @@ public class DescribePriceResponse extends AcsResponse {
 
 	private String infoTitle;
 
+	private String expressionCode;
+
+	private String currency;
+
 	private List<PromotionRule> promotionRules;
 
 	private List<Coupon> coupons;
@@ -107,6 +111,22 @@ public class DescribePriceResponse extends AcsResponse {
 
 	public void setInfoTitle(String infoTitle) {
 		this.infoTitle = infoTitle;
+	}
+
+	public String getExpressionCode() {
+		return this.expressionCode;
+	}
+
+	public void setExpressionCode(String expressionCode) {
+		this.expressionCode = expressionCode;
+	}
+
+	public String getCurrency() {
+		return this.currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 
 	public List<PromotionRule> getPromotionRules() {

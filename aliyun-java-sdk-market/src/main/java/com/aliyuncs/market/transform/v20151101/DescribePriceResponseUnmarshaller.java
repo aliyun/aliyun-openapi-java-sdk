@@ -35,6 +35,8 @@ public class DescribePriceResponseUnmarshaller {
 		describePriceResponse.setDuration(_ctx.integerValue("DescribePriceResponse.Duration"));
 		describePriceResponse.setCycle(_ctx.stringValue("DescribePriceResponse.Cycle"));
 		describePriceResponse.setInfoTitle(_ctx.stringValue("DescribePriceResponse.InfoTitle"));
+		describePriceResponse.setExpressionCode(_ctx.stringValue("DescribePriceResponse.ExpressionCode"));
+		describePriceResponse.setCurrency(_ctx.stringValue("DescribePriceResponse.Currency"));
 
 		List<PromotionRule> promotionRules = new ArrayList<PromotionRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.PromotionRules.Length"); i++) {
