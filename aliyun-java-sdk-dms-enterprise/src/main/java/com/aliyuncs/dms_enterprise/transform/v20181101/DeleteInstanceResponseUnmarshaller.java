@@ -14,19 +14,19 @@
 
 package com.aliyuncs.dms_enterprise.transform.v20181101;
 
-import com.aliyuncs.dms_enterprise.model.v20181101.EnableUserResponse;
+import com.aliyuncs.dms_enterprise.model.v20181101.DeleteInstanceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class EnableUserResponseUnmarshaller {
+public class DeleteInstanceResponseUnmarshaller {
 
-	public static EnableUserResponse unmarshall(EnableUserResponse enableUserResponse, UnmarshallerContext _ctx) {
+	public static DeleteInstanceResponse unmarshall(DeleteInstanceResponse deleteInstanceResponse, UnmarshallerContext _ctx) {
 		
-		enableUserResponse.setRequestId(_ctx.stringValue("EnableUserResponse.RequestId"));
-		enableUserResponse.setSuccess(_ctx.booleanValue("EnableUserResponse.Success"));
-		enableUserResponse.setErrorMessage(_ctx.stringValue("EnableUserResponse.ErrorMessage"));
-		enableUserResponse.setErrorCode(_ctx.stringValue("EnableUserResponse.ErrorCode"));
+		deleteInstanceResponse.setRequestId(_ctx.stringValue("DeleteInstanceResponse.RequestId"));
+		deleteInstanceResponse.setSuccess(_ctx.booleanValue("DeleteInstanceResponse.Success"));
+		deleteInstanceResponse.setErrorMessage(_ctx.stringValue("DeleteInstanceResponse.ErrorMessage"));
+		deleteInstanceResponse.setErrorCode(_ctx.stringValue("DeleteInstanceResponse.ErrorCode"));
 	 
-	 	return enableUserResponse;
+	 	return deleteInstanceResponse;
 	}
 }

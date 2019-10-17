@@ -22,22 +22,22 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
+public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	   
 
-	private String module;
+	private String userState;
+
+	private String role;
 
 	private Integer pageSize;
 
-	private String endTime;
-
-	private String startTime;
+	private String searchKey;
 
 	private Long tid;
 
 	private Integer pageNumber;
-	public GetOpLogRequest() {
-		super("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise");
+	public ListUsersRequest() {
+		super("dms-enterprise", "2018-11-01", "ListUsers", "dmsenterprise");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,14 +45,25 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getModule() {
-		return this.module;
+	public String getUserState() {
+		return this.userState;
 	}
 
-	public void setModule(String module) {
-		this.module = module;
-		if(module != null){
-			putQueryParameter("Module", module);
+	public void setUserState(String userState) {
+		this.userState = userState;
+		if(userState != null){
+			putQueryParameter("UserState", userState);
+		}
+	}
+
+	public String getRole() {
+		return this.role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+		if(role != null){
+			putQueryParameter("Role", role);
 		}
 	}
 
@@ -67,25 +78,14 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getSearchKey() {
+		return this.searchKey;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+		if(searchKey != null){
+			putQueryParameter("SearchKey", searchKey);
 		}
 	}
 
@@ -112,8 +112,8 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 	}
 
 	@Override
-	public Class<GetOpLogResponse> getResponseClass() {
-		return GetOpLogResponse.class;
+	public Class<ListUsersResponse> getResponseClass() {
+		return ListUsersResponse.class;
 	}
 
 }

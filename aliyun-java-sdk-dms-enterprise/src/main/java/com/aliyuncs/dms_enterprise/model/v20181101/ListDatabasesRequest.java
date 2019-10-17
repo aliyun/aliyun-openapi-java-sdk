@@ -22,55 +22,44 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
+public class ListDatabasesRequest extends RpcAcsRequest<ListDatabasesResponse> {
 	   
 
-	private String roleNames;
+	private String instanceId;
 
-	private Long uid;
-
-	private String userNick;
+	private Integer pageSize;
 
 	private Long tid;
-	public RegisterUserRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
-		setMethod(MethodType.POST);
+
+	private Integer pageNumber;
+	public ListDatabasesRequest() {
+		super("dms-enterprise", "2018-11-01", "ListDatabases", "dmsenterprise");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getRoleNames() {
-		return this.roleNames;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setRoleNames(String roleNames) {
-		this.roleNames = roleNames;
-		if(roleNames != null){
-			putQueryParameter("RoleNames", roleNames);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public Long getUid() {
-		return this.uid;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
-		}
-	}
-
-	public String getUserNick() {
-		return this.userNick;
-	}
-
-	public void setUserNick(String userNick) {
-		this.userNick = userNick;
-		if(userNick != null){
-			putQueryParameter("UserNick", userNick);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -85,9 +74,20 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	@Override
-	public Class<RegisterUserResponse> getResponseClass() {
-		return RegisterUserResponse.class;
+	public Class<ListDatabasesResponse> getResponseClass() {
+		return ListDatabasesResponse.class;
 	}
 
 }

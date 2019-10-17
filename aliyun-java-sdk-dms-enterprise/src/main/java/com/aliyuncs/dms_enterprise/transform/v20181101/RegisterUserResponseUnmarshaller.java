@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class RegisterUserResponseUnmarshaller {
 
-	public static RegisterUserResponse unmarshall(RegisterUserResponse registerUserResponse, UnmarshallerContext context) {
+	public static RegisterUserResponse unmarshall(RegisterUserResponse registerUserResponse, UnmarshallerContext _ctx) {
 		
-		registerUserResponse.setRequestId(context.stringValue("RegisterUserResponse.RequestId"));
-		registerUserResponse.setSuccess(context.booleanValue("RegisterUserResponse.Success"));
-		registerUserResponse.setErrorMessage(context.stringValue("RegisterUserResponse.ErrorMessage"));
-		registerUserResponse.setErrorCode(context.stringValue("RegisterUserResponse.ErrorCode"));
+		registerUserResponse.setRequestId(_ctx.stringValue("RegisterUserResponse.RequestId"));
+		registerUserResponse.setSuccess(_ctx.booleanValue("RegisterUserResponse.Success"));
+		registerUserResponse.setErrorMessage(_ctx.stringValue("RegisterUserResponse.ErrorMessage"));
+		registerUserResponse.setErrorCode(_ctx.stringValue("RegisterUserResponse.ErrorCode"));
 	 
 	 	return registerUserResponse;
 	}

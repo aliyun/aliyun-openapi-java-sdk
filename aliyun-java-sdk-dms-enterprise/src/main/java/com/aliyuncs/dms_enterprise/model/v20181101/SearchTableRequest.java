@@ -22,38 +22,27 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
+public class SearchTableRequest extends RpcAcsRequest<SearchTableResponse> {
 	   
-
-	private String module;
 
 	private Integer pageSize;
 
-	private String endTime;
+	private String envType;
 
-	private String startTime;
+	private String searchKey;
+
+	private String searchRange;
 
 	private Long tid;
 
 	private Integer pageNumber;
-	public GetOpLogRequest() {
-		super("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise");
+	public SearchTableRequest() {
+		super("dms-enterprise", "2018-11-01", "SearchTable", "dmsenterprise");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getModule() {
-		return this.module;
-	}
-
-	public void setModule(String module) {
-		this.module = module;
-		if(module != null){
-			putQueryParameter("Module", module);
-		}
 	}
 
 	public Integer getPageSize() {
@@ -67,25 +56,36 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getEnvType() {
+		return this.envType;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+	public void setEnvType(String envType) {
+		this.envType = envType;
+		if(envType != null){
+			putQueryParameter("EnvType", envType);
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getSearchKey() {
+		return this.searchKey;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+		if(searchKey != null){
+			putQueryParameter("SearchKey", searchKey);
+		}
+	}
+
+	public String getSearchRange() {
+		return this.searchRange;
+	}
+
+	public void setSearchRange(String searchRange) {
+		this.searchRange = searchRange;
+		if(searchRange != null){
+			putQueryParameter("SearchRange", searchRange);
 		}
 	}
 
@@ -112,8 +112,8 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 	}
 
 	@Override
-	public Class<GetOpLogResponse> getResponseClass() {
-		return GetOpLogResponse.class;
+	public Class<SearchTableResponse> getResponseClass() {
+		return SearchTableResponse.class;
 	}
 
 }

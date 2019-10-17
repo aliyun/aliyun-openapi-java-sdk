@@ -22,55 +22,29 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
+public class GetLogicDatabaseRequest extends RpcAcsRequest<GetLogicDatabaseResponse> {
 	   
 
-	private String roleNames;
-
-	private Long uid;
-
-	private String userNick;
+	private String dbId;
 
 	private Long tid;
-	public RegisterUserRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
-		setMethod(MethodType.POST);
+	public GetLogicDatabaseRequest() {
+		super("dms-enterprise", "2018-11-01", "GetLogicDatabase", "dmsenterprise");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getRoleNames() {
-		return this.roleNames;
+	public String getDbId() {
+		return this.dbId;
 	}
 
-	public void setRoleNames(String roleNames) {
-		this.roleNames = roleNames;
-		if(roleNames != null){
-			putQueryParameter("RoleNames", roleNames);
-		}
-	}
-
-	public Long getUid() {
-		return this.uid;
-	}
-
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
-		}
-	}
-
-	public String getUserNick() {
-		return this.userNick;
-	}
-
-	public void setUserNick(String userNick) {
-		this.userNick = userNick;
-		if(userNick != null){
-			putQueryParameter("UserNick", userNick);
+	public void setDbId(String dbId) {
+		this.dbId = dbId;
+		if(dbId != null){
+			putQueryParameter("DbId", dbId);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 	}
 
 	@Override
-	public Class<RegisterUserResponse> getResponseClass() {
-		return RegisterUserResponse.class;
+	public Class<GetLogicDatabaseResponse> getResponseClass() {
+		return GetLogicDatabaseResponse.class;
 	}
 
 }

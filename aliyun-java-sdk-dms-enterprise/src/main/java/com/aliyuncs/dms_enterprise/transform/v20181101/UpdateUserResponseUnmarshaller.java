@@ -14,19 +14,19 @@
 
 package com.aliyuncs.dms_enterprise.transform.v20181101;
 
-import com.aliyuncs.dms_enterprise.model.v20181101.EnableUserResponse;
+import com.aliyuncs.dms_enterprise.model.v20181101.UpdateUserResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class EnableUserResponseUnmarshaller {
+public class UpdateUserResponseUnmarshaller {
 
-	public static EnableUserResponse unmarshall(EnableUserResponse enableUserResponse, UnmarshallerContext _ctx) {
+	public static UpdateUserResponse unmarshall(UpdateUserResponse updateUserResponse, UnmarshallerContext _ctx) {
 		
-		enableUserResponse.setRequestId(_ctx.stringValue("EnableUserResponse.RequestId"));
-		enableUserResponse.setSuccess(_ctx.booleanValue("EnableUserResponse.Success"));
-		enableUserResponse.setErrorMessage(_ctx.stringValue("EnableUserResponse.ErrorMessage"));
-		enableUserResponse.setErrorCode(_ctx.stringValue("EnableUserResponse.ErrorCode"));
+		updateUserResponse.setRequestId(_ctx.stringValue("UpdateUserResponse.RequestId"));
+		updateUserResponse.setSuccess(_ctx.booleanValue("UpdateUserResponse.Success"));
+		updateUserResponse.setErrorMessage(_ctx.stringValue("UpdateUserResponse.ErrorMessage"));
+		updateUserResponse.setErrorCode(_ctx.stringValue("UpdateUserResponse.ErrorCode"));
 	 
-	 	return enableUserResponse;
+	 	return updateUserResponse;
 	}
 }

@@ -16,14 +16,14 @@ package com.aliyuncs.dms_enterprise.model.v20181101;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dms_enterprise.transform.v20181101.GetOpLogResponseUnmarshaller;
+import com.aliyuncs.dms_enterprise.transform.v20181101.ListUsersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetOpLogResponse extends AcsResponse {
+public class ListUsersResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class GetOpLogResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private List<OpLogDetail> opLogDetails;
+	private List<User> userList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,89 +77,99 @@ public class GetOpLogResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<OpLogDetail> getOpLogDetails() {
-		return this.opLogDetails;
+	public List<User> getUserList() {
+		return this.userList;
 	}
 
-	public void setOpLogDetails(List<OpLogDetail> opLogDetails) {
-		this.opLogDetails = opLogDetails;
+	public void setUserList(List<User> userList) {
+		this.userList = userList;
 	}
 
-	public static class OpLogDetail {
+	public static class User {
 
-		private Long userId;
+		private String userId;
 
-		private String userNick;
+		private Long uid;
 
-		private String module;
+		private String nickName;
 
-		private String opContent;
+		private String mobile;
 
-		private String opTime;
+		private Long parentUid;
 
-		private String database;
+		private String state;
 
-		private Long orderId;
+		private List<Integer> roleIdList;
 
-		public Long getUserId() {
+		private List<String> roleNameList;
+
+		public String getUserId() {
 			return this.userId;
 		}
 
-		public void setUserId(Long userId) {
+		public void setUserId(String userId) {
 			this.userId = userId;
 		}
 
-		public String getUserNick() {
-			return this.userNick;
+		public Long getUid() {
+			return this.uid;
 		}
 
-		public void setUserNick(String userNick) {
-			this.userNick = userNick;
+		public void setUid(Long uid) {
+			this.uid = uid;
 		}
 
-		public String getModule() {
-			return this.module;
+		public String getNickName() {
+			return this.nickName;
 		}
 
-		public void setModule(String module) {
-			this.module = module;
+		public void setNickName(String nickName) {
+			this.nickName = nickName;
 		}
 
-		public String getOpContent() {
-			return this.opContent;
+		public String getMobile() {
+			return this.mobile;
 		}
 
-		public void setOpContent(String opContent) {
-			this.opContent = opContent;
+		public void setMobile(String mobile) {
+			this.mobile = mobile;
 		}
 
-		public String getOpTime() {
-			return this.opTime;
+		public Long getParentUid() {
+			return this.parentUid;
 		}
 
-		public void setOpTime(String opTime) {
-			this.opTime = opTime;
+		public void setParentUid(Long parentUid) {
+			this.parentUid = parentUid;
 		}
 
-		public String getDatabase() {
-			return this.database;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setDatabase(String database) {
-			this.database = database;
+		public void setState(String state) {
+			this.state = state;
 		}
 
-		public Long getOrderId() {
-			return this.orderId;
+		public List<Integer> getRoleIdList() {
+			return this.roleIdList;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
+		public void setRoleIdList(List<Integer> roleIdList) {
+			this.roleIdList = roleIdList;
+		}
+
+		public List<String> getRoleNameList() {
+			return this.roleNameList;
+		}
+
+		public void setRoleNameList(List<String> roleNameList) {
+			this.roleNameList = roleNameList;
 		}
 	}
 
 	@Override
-	public GetOpLogResponse getInstance(UnmarshallerContext context) {
-		return	GetOpLogResponseUnmarshaller.unmarshall(this, context);
+	public ListUsersResponse getInstance(UnmarshallerContext context) {
+		return	ListUsersResponseUnmarshaller.unmarshall(this, context);
 	}
 }

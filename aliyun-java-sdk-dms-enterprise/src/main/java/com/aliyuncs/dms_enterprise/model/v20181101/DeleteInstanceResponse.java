@@ -15,14 +15,14 @@
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dms_enterprise.transform.v20181101.RegisterUserResponseUnmarshaller;
+import com.aliyuncs.dms_enterprise.transform.v20181101.DeleteInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RegisterUserResponse extends AcsResponse {
+public class DeleteInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -65,7 +65,7 @@ public class RegisterUserResponse extends AcsResponse {
 	}
 
 	@Override
-	public RegisterUserResponse getInstance(UnmarshallerContext context) {
-		return	RegisterUserResponseUnmarshaller.unmarshall(this, context);
+	public DeleteInstanceResponse getInstance(UnmarshallerContext context) {
+		return	DeleteInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

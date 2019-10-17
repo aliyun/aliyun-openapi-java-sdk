@@ -1,3 +1,10 @@
+2019-10-17 Version: 1.2.0
+- Support instance manage API, includes UpdateInstance and DeleteInstance.
+- Support user manage API, includes ListUsers and UpdateUser.
+- Support meta data information API, includes ListInstances, ListDatabases, ListLogicDatabases, ListTables, ListLogicTables, ListColumns, ListIndexes.
+- Support meta data search API, inclues SearchDatabase, SearcTable.
+- Support RegisterInstance API to set datalinkName and useDsql option.
+
 2018-12-29 Version: 1.1.0
 1, Add EnableUser interface, Support admin user to enable another user.
 2, Add DisableUser Interface, Support admin user to disable another user.

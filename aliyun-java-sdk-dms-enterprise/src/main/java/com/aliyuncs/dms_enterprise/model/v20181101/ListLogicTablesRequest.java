@@ -22,22 +22,20 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
+public class ListLogicTablesRequest extends RpcAcsRequest<ListLogicTablesResponse> {
 	   
 
-	private String module;
+	private String searchName;
 
 	private Integer pageSize;
 
-	private String endTime;
-
-	private String startTime;
+	private String databaseId;
 
 	private Long tid;
 
 	private Integer pageNumber;
-	public GetOpLogRequest() {
-		super("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise");
+	public ListLogicTablesRequest() {
+		super("dms-enterprise", "2018-11-01", "ListLogicTables", "dmsenterprise");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,14 +43,14 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getModule() {
-		return this.module;
+	public String getSearchName() {
+		return this.searchName;
 	}
 
-	public void setModule(String module) {
-		this.module = module;
-		if(module != null){
-			putQueryParameter("Module", module);
+	public void setSearchName(String searchName) {
+		this.searchName = searchName;
+		if(searchName != null){
+			putQueryParameter("SearchName", searchName);
 		}
 	}
 
@@ -67,25 +65,14 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public String getDatabaseId() {
+		return this.databaseId;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+	public void setDatabaseId(String databaseId) {
+		this.databaseId = databaseId;
+		if(databaseId != null){
+			putQueryParameter("DatabaseId", databaseId);
 		}
 	}
 
@@ -112,8 +99,8 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 	}
 
 	@Override
-	public Class<GetOpLogResponse> getResponseClass() {
-		return GetOpLogResponse.class;
+	public Class<ListLogicTablesResponse> getResponseClass() {
+		return ListLogicTablesResponse.class;
 	}
 
 }

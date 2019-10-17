@@ -14,7 +14,6 @@
 
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dms_enterprise.transform.v20181101.DeleteUserResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;

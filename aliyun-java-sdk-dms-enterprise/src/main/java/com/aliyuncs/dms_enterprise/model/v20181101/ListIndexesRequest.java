@@ -22,55 +22,42 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
+public class ListIndexesRequest extends RpcAcsRequest<ListIndexesResponse> {
 	   
 
-	private String roleNames;
+	private String tableId;
 
-	private Long uid;
-
-	private String userNick;
+	private Boolean logic;
 
 	private Long tid;
-	public RegisterUserRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
-		setMethod(MethodType.POST);
+	public ListIndexesRequest() {
+		super("dms-enterprise", "2018-11-01", "ListIndexes", "dmsenterprise");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getRoleNames() {
-		return this.roleNames;
+	public String getTableId() {
+		return this.tableId;
 	}
 
-	public void setRoleNames(String roleNames) {
-		this.roleNames = roleNames;
-		if(roleNames != null){
-			putQueryParameter("RoleNames", roleNames);
+	public void setTableId(String tableId) {
+		this.tableId = tableId;
+		if(tableId != null){
+			putQueryParameter("TableId", tableId);
 		}
 	}
 
-	public Long getUid() {
-		return this.uid;
+	public Boolean getLogic() {
+		return this.logic;
 	}
 
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
-		}
-	}
-
-	public String getUserNick() {
-		return this.userNick;
-	}
-
-	public void setUserNick(String userNick) {
-		this.userNick = userNick;
-		if(userNick != null){
-			putQueryParameter("UserNick", userNick);
+	public void setLogic(Boolean logic) {
+		this.logic = logic;
+		if(logic != null){
+			putQueryParameter("Logic", logic.toString());
 		}
 	}
 
@@ -86,8 +73,8 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 	}
 
 	@Override
-	public Class<RegisterUserResponse> getResponseClass() {
-		return RegisterUserResponse.class;
+	public Class<ListIndexesResponse> getResponseClass() {
+		return ListIndexesResponse.class;
 	}
 
 }

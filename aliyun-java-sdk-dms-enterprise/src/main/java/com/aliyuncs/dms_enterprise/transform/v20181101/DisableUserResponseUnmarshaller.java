@@ -20,12 +20,12 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DisableUserResponseUnmarshaller {
 
-	public static DisableUserResponse unmarshall(DisableUserResponse disableUserResponse, UnmarshallerContext context) {
+	public static DisableUserResponse unmarshall(DisableUserResponse disableUserResponse, UnmarshallerContext _ctx) {
 		
-		disableUserResponse.setRequestId(context.stringValue("DisableUserResponse.RequestId"));
-		disableUserResponse.setSuccess(context.booleanValue("DisableUserResponse.Success"));
-		disableUserResponse.setErrorMessage(context.stringValue("DisableUserResponse.ErrorMessage"));
-		disableUserResponse.setErrorCode(context.stringValue("DisableUserResponse.ErrorCode"));
+		disableUserResponse.setRequestId(_ctx.stringValue("DisableUserResponse.RequestId"));
+		disableUserResponse.setSuccess(_ctx.booleanValue("DisableUserResponse.Success"));
+		disableUserResponse.setErrorMessage(_ctx.stringValue("DisableUserResponse.ErrorMessage"));
+		disableUserResponse.setErrorCode(_ctx.stringValue("DisableUserResponse.ErrorCode"));
 	 
 	 	return disableUserResponse;
 	}

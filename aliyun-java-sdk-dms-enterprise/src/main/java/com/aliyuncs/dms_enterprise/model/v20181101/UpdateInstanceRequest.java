@@ -22,8 +22,10 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceResponse> {
+public class UpdateInstanceRequest extends RpcAcsRequest<UpdateInstanceResponse> {
 	   
+
+	private String safeRuleId;
 
 	private String ecsRegion;
 
@@ -31,11 +33,11 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 
 	private Integer useDsql;
 
-	private String networkType;
-
 	private Long tid;
 
 	private String sid;
+
+	private String dbaId;
 
 	private String dataLinkName;
 
@@ -59,20 +61,29 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 
 	private String databaseUser;
 
+	private String instanceId;
+
 	private Integer port;
 
 	private String vpcId;
-
-	private Long dbaUid;
-
-	private String safeRule;
-	public RegisterInstanceRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterInstance", "dmsenterprise");
+	public UpdateInstanceRequest() {
+		super("dms-enterprise", "2018-11-01", "UpdateInstance", "dmsenterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSafeRuleId() {
+		return this.safeRuleId;
+	}
+
+	public void setSafeRuleId(String safeRuleId) {
+		this.safeRuleId = safeRuleId;
+		if(safeRuleId != null){
+			putQueryParameter("SafeRuleId", safeRuleId);
+		}
 	}
 
 	public String getEcsRegion() {
@@ -108,17 +119,6 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		}
 	}
 
-	public String getNetworkType() {
-		return this.networkType;
-	}
-
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
-		}
-	}
-
 	public Long getTid() {
 		return this.tid;
 	}
@@ -138,6 +138,17 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		this.sid = sid;
 		if(sid != null){
 			putQueryParameter("Sid", sid);
+		}
+	}
+
+	public String getDbaId() {
+		return this.dbaId;
+	}
+
+	public void setDbaId(String dbaId) {
+		this.dbaId = dbaId;
+		if(dbaId != null){
+			putQueryParameter("DbaId", dbaId);
 		}
 	}
 
@@ -262,6 +273,17 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public Integer getPort() {
 		return this.port;
 	}
@@ -284,31 +306,9 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		}
 	}
 
-	public Long getDbaUid() {
-		return this.dbaUid;
-	}
-
-	public void setDbaUid(Long dbaUid) {
-		this.dbaUid = dbaUid;
-		if(dbaUid != null){
-			putQueryParameter("DbaUid", dbaUid.toString());
-		}
-	}
-
-	public String getSafeRule() {
-		return this.safeRule;
-	}
-
-	public void setSafeRule(String safeRule) {
-		this.safeRule = safeRule;
-		if(safeRule != null){
-			putQueryParameter("SafeRule", safeRule);
-		}
-	}
-
 	@Override
-	public Class<RegisterInstanceResponse> getResponseClass() {
-		return RegisterInstanceResponse.class;
+	public Class<UpdateInstanceResponse> getResponseClass() {
+		return UpdateInstanceResponse.class;
 	}
 
 }

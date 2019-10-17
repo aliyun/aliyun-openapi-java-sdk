@@ -22,7 +22,7 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
+public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 	   
 
 	private String roleNames;
@@ -31,9 +31,11 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 
 	private String userNick;
 
+	private String mobile;
+
 	private Long tid;
-	public RegisterUserRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
+	public UpdateUserRequest() {
+		super("dms-enterprise", "2018-11-01", "UpdateUser", "dmsenterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,6 +76,17 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 		}
 	}
 
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+		if(mobile != null){
+			putQueryParameter("Mobile", mobile);
+		}
+	}
+
 	public Long getTid() {
 		return this.tid;
 	}
@@ -86,8 +99,8 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 	}
 
 	@Override
-	public Class<RegisterUserResponse> getResponseClass() {
-		return RegisterUserResponse.class;
+	public Class<UpdateUserResponse> getResponseClass() {
+		return UpdateUserResponse.class;
 	}
 
 }

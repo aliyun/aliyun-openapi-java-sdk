@@ -15,20 +15,27 @@
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dms_enterprise.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DisableUserRequest extends RpcAcsRequest<DisableUserResponse> {
-	
-	public DisableUserRequest() {
-		super("dms-enterprise", "2018-11-01", "DisableUser", "dmsenterprise");
-	}
+	   
 
 	private Long uid;
 
 	private Long tid;
+	public DisableUserRequest() {
+		super("dms-enterprise", "2018-11-01", "DisableUser", "dmsenterprise");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getUid() {
 		return this.uid;

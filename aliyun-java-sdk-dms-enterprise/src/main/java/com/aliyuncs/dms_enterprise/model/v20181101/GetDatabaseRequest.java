@@ -22,55 +22,57 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
+public class GetDatabaseRequest extends RpcAcsRequest<GetDatabaseResponse> {
 	   
 
-	private String roleNames;
+	private String schemaName;
 
-	private Long uid;
+	private Integer port;
 
-	private String userNick;
+	private String host;
 
 	private Long tid;
-	public RegisterUserRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
-		setMethod(MethodType.POST);
+
+	private String sid;
+	public GetDatabaseRequest() {
+		super("dms-enterprise", "2018-11-01", "GetDatabase", "dmsenterprise");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getRoleNames() {
-		return this.roleNames;
+	public String getSchemaName() {
+		return this.schemaName;
 	}
 
-	public void setRoleNames(String roleNames) {
-		this.roleNames = roleNames;
-		if(roleNames != null){
-			putQueryParameter("RoleNames", roleNames);
+	public void setSchemaName(String schemaName) {
+		this.schemaName = schemaName;
+		if(schemaName != null){
+			putQueryParameter("SchemaName", schemaName);
 		}
 	}
 
-	public Long getUid() {
-		return this.uid;
+	public Integer getPort() {
+		return this.port;
 	}
 
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
 		}
 	}
 
-	public String getUserNick() {
-		return this.userNick;
+	public String getHost() {
+		return this.host;
 	}
 
-	public void setUserNick(String userNick) {
-		this.userNick = userNick;
-		if(userNick != null){
-			putQueryParameter("UserNick", userNick);
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
 		}
 	}
 
@@ -85,9 +87,20 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 		}
 	}
 
+	public String getSid() {
+		return this.sid;
+	}
+
+	public void setSid(String sid) {
+		this.sid = sid;
+		if(sid != null){
+			putQueryParameter("Sid", sid);
+		}
+	}
+
 	@Override
-	public Class<RegisterUserResponse> getResponseClass() {
-		return RegisterUserResponse.class;
+	public Class<GetDatabaseResponse> getResponseClass() {
+		return GetDatabaseResponse.class;
 	}
 
 }
