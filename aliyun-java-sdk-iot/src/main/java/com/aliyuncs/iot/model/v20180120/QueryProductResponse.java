@@ -108,6 +108,8 @@ public class QueryProductResponse extends AcsResponse {
 
 		private Integer netType;
 
+		private String authType;
+
 		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -234,6 +236,14 @@ public class QueryProductResponse extends AcsResponse {
 
 		public void setNetType(Integer netType) {
 			this.netType = netType;
+		}
+
+		public String getAuthType() {
+			return this.authType;
+		}
+
+		public void setAuthType(String authType) {
+			this.authType = authType;
 		}
 	}
 

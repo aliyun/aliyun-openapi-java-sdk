@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,22 +24,34 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class QueryDeviceGroupByTagsRequest extends RpcAcsRequest<QueryDeviceGroupByTagsResponse> {
-	
+	   
+
+	private Integer currentPage;
+
+	private String iotInstanceId;
+
+	private Integer pageSize;
+
+	private List<Tag> tags;
 	public QueryDeviceGroupByTagsRequest() {
 		super("Iot", "2018-01-20", "QueryDeviceGroupByTags", "iot");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String iotInstanceId;
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
 
-	private Integer pageSize;
-
-	private Integer currentPage;
-
-	private List<Tag> tags;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
 
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
@@ -59,17 +72,6 @@ public class QueryDeviceGroupByTagsRequest extends RpcAcsRequest<QueryDeviceGrou
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

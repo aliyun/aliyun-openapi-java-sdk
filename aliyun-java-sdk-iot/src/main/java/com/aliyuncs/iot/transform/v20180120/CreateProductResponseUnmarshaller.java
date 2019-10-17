@@ -38,6 +38,7 @@ public class CreateProductResponseUnmarshaller {
 		data.setAliyunCommodityCode(_ctx.stringValue("CreateProductResponse.Data.AliyunCommodityCode"));
 		data.setId2(_ctx.booleanValue("CreateProductResponse.Data.Id2"));
 		data.setProtocolType(_ctx.stringValue("CreateProductResponse.Data.ProtocolType"));
+		data.setAuthType(_ctx.stringValue("CreateProductResponse.Data.AuthType"));
 		createProductResponse.setData(data);
 	 
 	 	return createProductResponse;

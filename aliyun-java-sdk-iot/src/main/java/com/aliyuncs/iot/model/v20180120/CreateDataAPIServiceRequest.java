@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,20 +24,7 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServiceResponse> {
-	
-	public CreateDataAPIServiceRequest() {
-		super("Iot", "2018-01-20", "CreateDataAPIService", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private List<ResponseParam> responseParams;
-
-	private String originSql;
-
-	private String displayName;
+	   
 
 	private String apiPath;
 
@@ -46,45 +34,20 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 
 	private String templateSql;
 
+	private List<ResponseParam> responseParams;
+
+	private String originSql;
+
+	private String displayName;
+
 	private String desc;
-
-	public List<ResponseParam> getResponseParams() {
-		return this.responseParams;
-	}
-
-	public void setResponseParams(List<ResponseParam> responseParams) {
-		this.responseParams = responseParams;	
-		if (responseParams != null) {
-			for (int depth1 = 0; depth1 < responseParams.size(); depth1++) {
-				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Name" , responseParams.get(depth1).getName());
-				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Type" , responseParams.get(depth1).getType());
-				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Required" , responseParams.get(depth1).getRequired());
-				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Desc" , responseParams.get(depth1).getDesc());
-				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Example" , responseParams.get(depth1).getExample());
-			}
-		}	
-	}
-
-	public String getOriginSql() {
-		return this.originSql;
-	}
-
-	public void setOriginSql(String originSql) {
-		this.originSql = originSql;
-		if(originSql != null){
-			putQueryParameter("OriginSql", originSql);
-		}
-	}
-
-	public String getDisplayName() {
-		return this.displayName;
-	}
-
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
-		if(displayName != null){
-			putQueryParameter("DisplayName", displayName);
-		}
+	public CreateDataAPIServiceRequest() {
+		super("Iot", "2018-01-20", "CreateDataAPIService", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getApiPath() {
@@ -137,6 +100,45 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 		}
 	}
 
+	public List<ResponseParam> getResponseParams() {
+		return this.responseParams;
+	}
+
+	public void setResponseParams(List<ResponseParam> responseParams) {
+		this.responseParams = responseParams;	
+		if (responseParams != null) {
+			for (int depth1 = 0; depth1 < responseParams.size(); depth1++) {
+				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Name" , responseParams.get(depth1).getName());
+				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Type" , responseParams.get(depth1).getType());
+				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Required" , responseParams.get(depth1).getRequired());
+				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Desc" , responseParams.get(depth1).getDesc());
+				putBodyParameter("ResponseParam." + (depth1 + 1) + ".Example" , responseParams.get(depth1).getExample());
+			}
+		}	
+	}
+
+	public String getOriginSql() {
+		return this.originSql;
+	}
+
+	public void setOriginSql(String originSql) {
+		this.originSql = originSql;
+		if(originSql != null){
+			putQueryParameter("OriginSql", originSql);
+		}
+	}
+
+	public String getDisplayName() {
+		return this.displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+		if(displayName != null){
+			putQueryParameter("DisplayName", displayName);
+		}
+	}
+
 	public String getDesc() {
 		return this.desc;
 	}
@@ -148,7 +150,7 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 		}
 	}
 
-	public static class ResponseParam {
+	public static class RequestParam {
 
 		private String name;
 
@@ -201,7 +203,7 @@ public class CreateDataAPIServiceRequest extends RpcAcsRequest<CreateDataAPIServ
 		}
 	}
 
-	public static class RequestParam {
+	public static class ResponseParam {
 
 		private String name;
 

@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,18 +24,19 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class BatchUpdateDeviceNicknameRequest extends RpcAcsRequest<BatchUpdateDeviceNicknameResponse> {
-	
+	   
+
+	private List<DeviceNicknameInfo> deviceNicknameInfos;
+
+	private String iotInstanceId;
 	public BatchUpdateDeviceNicknameRequest() {
 		super("Iot", "2018-01-20", "BatchUpdateDeviceNickname", "iot");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private List<DeviceNicknameInfo> deviceNicknameInfos;
-
-	private String iotInstanceId;
 
 	public List<DeviceNicknameInfo> getDeviceNicknameInfos() {
 		return this.deviceNicknameInfos;

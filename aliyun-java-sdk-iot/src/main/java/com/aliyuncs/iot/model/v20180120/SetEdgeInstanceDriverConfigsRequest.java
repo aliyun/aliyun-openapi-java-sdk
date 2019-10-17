@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class SetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<SetEdgeInstanceDriverConfigsResponse> {
-	
-	public SetEdgeInstanceDriverConfigsRequest() {
-		super("Iot", "2018-01-20", "SetEdgeInstanceDriverConfigs", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<Configs> configss;
 
@@ -39,6 +33,14 @@ public class SetEdgeInstanceDriverConfigsRequest extends RpcAcsRequest<SetEdgeIn
 	private String driverId;
 
 	private String iotInstanceId;
+	public SetEdgeInstanceDriverConfigsRequest() {
+		super("Iot", "2018-01-20", "SetEdgeInstanceDriverConfigs", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<Configs> getConfigss() {
 		return this.configss;

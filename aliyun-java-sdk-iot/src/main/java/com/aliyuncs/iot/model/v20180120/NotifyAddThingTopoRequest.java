@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,24 +23,25 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class NotifyAddThingTopoRequest extends RpcAcsRequest<NotifyAddThingTopoResponse> {
-	
-	public NotifyAddThingTopoRequest() {
-		super("Iot", "2018-01-20", "NotifyAddThingTopo", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String gwProductKey;
+
+	private String deviceListStr;
 
 	private String gwDeviceName;
 
 	private String iotInstanceId;
 
 	private String gwIotId;
-
-	private String deviceListStr;
+	public NotifyAddThingTopoRequest() {
+		super("Iot", "2018-01-20", "NotifyAddThingTopo", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getGwProductKey() {
 		return this.gwProductKey;
@@ -49,6 +51,17 @@ public class NotifyAddThingTopoRequest extends RpcAcsRequest<NotifyAddThingTopoR
 		this.gwProductKey = gwProductKey;
 		if(gwProductKey != null){
 			putQueryParameter("GwProductKey", gwProductKey);
+		}
+	}
+
+	public String getDeviceListStr() {
+		return this.deviceListStr;
+	}
+
+	public void setDeviceListStr(String deviceListStr) {
+		this.deviceListStr = deviceListStr;
+		if(deviceListStr != null){
+			putQueryParameter("DeviceListStr", deviceListStr);
 		}
 	}
 
@@ -82,17 +95,6 @@ public class NotifyAddThingTopoRequest extends RpcAcsRequest<NotifyAddThingTopoR
 		this.gwIotId = gwIotId;
 		if(gwIotId != null){
 			putQueryParameter("GwIotId", gwIotId);
-		}
-	}
-
-	public String getDeviceListStr() {
-		return this.deviceListStr;
-	}
-
-	public void setDeviceListStr(String deviceListStr) {
-		this.deviceListStr = deviceListStr;
-		if(deviceListStr != null){
-			putQueryParameter("DeviceListStr", deviceListStr);
 		}
 	}
 

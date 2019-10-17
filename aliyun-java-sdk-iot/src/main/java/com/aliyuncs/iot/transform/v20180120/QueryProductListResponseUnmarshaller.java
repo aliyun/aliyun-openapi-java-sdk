@@ -48,6 +48,7 @@ public class QueryProductListResponseUnmarshaller {
 			productInfo.setNodeType(_ctx.integerValue("QueryProductListResponse.Data.List["+ i +"].NodeType"));
 			productInfo.setProductKey(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].ProductKey"));
 			productInfo.setProductName(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].ProductName"));
+			productInfo.setAuthType(_ctx.stringValue("QueryProductListResponse.Data.List["+ i +"].AuthType"));
 
 			list.add(productInfo);
 		}

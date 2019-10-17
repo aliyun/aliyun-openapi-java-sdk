@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,32 +23,22 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class QueryDeviceListByDeviceGroupRequest extends RpcAcsRequest<QueryDeviceListByDeviceGroupResponse> {
-	
+	   
+
+	private String groupId;
+
+	private Integer currentPage;
+
+	private String iotInstanceId;
+
+	private Integer pageSize;
 	public QueryDeviceListByDeviceGroupRequest() {
 		super("Iot", "2018-01-20", "QueryDeviceListByDeviceGroup", "iot");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	private String iotInstanceId;
-
-	private String groupId;
-
-	private Integer pageSize;
-
-	private Integer currentPage;
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
 	}
 
 	public String getGroupId() {
@@ -61,17 +52,6 @@ public class QueryDeviceListByDeviceGroupRequest extends RpcAcsRequest<QueryDevi
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -80,6 +60,28 @@ public class QueryDeviceListByDeviceGroupRequest extends RpcAcsRequest<QueryDevi
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

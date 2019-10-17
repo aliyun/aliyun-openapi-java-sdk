@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,14 +23,9 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class SetDeviceDesiredPropertyRequest extends RpcAcsRequest<SetDeviceDesiredPropertyResponse> {
-	
-	public SetDeviceDesiredPropertyRequest() {
-		super("Iot", "2018-01-20", "SetDeviceDesiredProperty", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String productKey;
 
 	private String iotId;
 
@@ -39,9 +35,26 @@ public class SetDeviceDesiredPropertyRequest extends RpcAcsRequest<SetDeviceDesi
 
 	private String deviceName;
 
-	private String productKey;
-
 	private String items;
+	public SetDeviceDesiredPropertyRequest() {
+		super("Iot", "2018-01-20", "SetDeviceDesiredProperty", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
 
 	public String getIotId() {
 		return this.iotId;
@@ -84,17 +97,6 @@ public class SetDeviceDesiredPropertyRequest extends RpcAcsRequest<SetDeviceDesi
 		this.deviceName = deviceName;
 		if(deviceName != null){
 			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

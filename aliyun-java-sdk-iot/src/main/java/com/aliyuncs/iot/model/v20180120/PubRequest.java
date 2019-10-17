@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,24 +23,25 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class PubRequest extends RpcAcsRequest<PubResponse> {
-	
+	   
+
+	private String topicFullName;
+
+	private String messageContent;
+
+	private String productKey;
+
+	private Integer qos;
+
+	private String iotInstanceId;
 	public PubRequest() {
 		super("Iot", "2018-01-20", "Pub", "iot");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String topicFullName;
-
-	private Integer qos;
-
-	private String messageContent;
-
-	private String iotInstanceId;
-
-	private String productKey;
 
 	public String getTopicFullName() {
 		return this.topicFullName;
@@ -49,17 +51,6 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.topicFullName = topicFullName;
 		if(topicFullName != null){
 			putQueryParameter("TopicFullName", topicFullName);
-		}
-	}
-
-	public Integer getQos() {
-		return this.qos;
-	}
-
-	public void setQos(Integer qos) {
-		this.qos = qos;
-		if(qos != null){
-			putQueryParameter("Qos", qos.toString());
 		}
 	}
 
@@ -74,17 +65,6 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		}
 	}
 
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -93,6 +73,28 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public Integer getQos() {
+		return this.qos;
+	}
+
+	public void setQos(Integer qos) {
+		this.qos = qos;
+		if(qos != null){
+			putQueryParameter("Qos", qos.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

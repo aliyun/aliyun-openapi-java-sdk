@@ -102,6 +102,8 @@ public class CreateProductResponse extends AcsResponse {
 
 		private String protocolType;
 
+		private String authType;
+
 		public Integer getDataFormat() {
 			return this.dataFormat;
 		}
@@ -164,6 +166,14 @@ public class CreateProductResponse extends AcsResponse {
 
 		public void setProtocolType(String protocolType) {
 			this.protocolType = protocolType;
+		}
+
+		public String getAuthType() {
+			return this.authType;
+		}
+
+		public void setAuthType(String authType) {
+			this.authType = authType;
 		}
 	}
 

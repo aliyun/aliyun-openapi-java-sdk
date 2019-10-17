@@ -121,6 +121,8 @@ public class QueryEdgeInstanceDriverResponse extends AcsResponse {
 
 			private String driverId;
 
+			private String orderId;
+
 			private String gmtCreate;
 
 			private String gmtModified;
@@ -131,6 +133,14 @@ public class QueryEdgeInstanceDriverResponse extends AcsResponse {
 
 			public void setDriverId(String driverId) {
 				this.driverId = driverId;
+			}
+
+			public String getOrderId() {
+				return this.orderId;
+			}
+
+			public void setOrderId(String orderId) {
+				this.orderId = orderId;
 			}
 
 			public String getGmtCreate() {

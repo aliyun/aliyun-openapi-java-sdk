@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class PubBroadcastRequest extends RpcAcsRequest<PubBroadcastResponse> {
-	
-	public PubBroadcastRequest() {
-		super("Iot", "2018-01-20", "PubBroadcast", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String topicFullName;
 
 	private String messageContent;
 
-	private String iotInstanceId;
-
 	private String productKey;
+
+	private String iotInstanceId;
+	public PubBroadcastRequest() {
+		super("Iot", "2018-01-20", "PubBroadcast", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTopicFullName() {
 		return this.topicFullName;
@@ -61,17 +63,6 @@ public class PubBroadcastRequest extends RpcAcsRequest<PubBroadcastResponse> {
 		}
 	}
 
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -80,6 +71,17 @@ public class PubBroadcastRequest extends RpcAcsRequest<PubBroadcastResponse> {
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

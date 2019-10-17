@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,34 +24,24 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class InvokeThingsServiceRequest extends RpcAcsRequest<InvokeThingsServiceResponse> {
-	
-	public InvokeThingsServiceRequest() {
-		super("Iot", "2018-01-20", "InvokeThingsService", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String args;
+	   
 
 	private String identifier;
+
+	private String productKey;
+
+	private String args;
 
 	private String iotInstanceId;
 
 	private List<String> deviceNames;
-
-	private String productKey;
-
-	public String getArgs() {
-		return this.args;
-	}
-
-	public void setArgs(String args) {
-		this.args = args;
-		if(args != null){
-			putQueryParameter("Args", args);
-		}
+	public InvokeThingsServiceRequest() {
+		super("Iot", "2018-01-20", "InvokeThingsService", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getIdentifier() {
@@ -61,6 +52,28 @@ public class InvokeThingsServiceRequest extends RpcAcsRequest<InvokeThingsServic
 		this.identifier = identifier;
 		if(identifier != null){
 			putQueryParameter("Identifier", identifier);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getArgs() {
+		return this.args;
+	}
+
+	public void setArgs(String args) {
+		this.args = args;
+		if(args != null){
+			putQueryParameter("Args", args);
 		}
 	}
 
@@ -86,17 +99,6 @@ public class InvokeThingsServiceRequest extends RpcAcsRequest<InvokeThingsServic
 				putQueryParameter("DeviceName." + (i + 1) , deviceNames.get(i));
 			}
 		}	
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
 	}
 
 	@Override

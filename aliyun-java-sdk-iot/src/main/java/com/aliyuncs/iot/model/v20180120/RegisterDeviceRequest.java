@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,26 +23,27 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse> {
-	
-	public RegisterDeviceRequest() {
-		super("Iot", "2018-01-20", "RegisterDevice", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String pinCode;
+
+	private String productKey;
+
+	private String devEui;
 
 	private String iotInstanceId;
 
 	private String nickname;
 
 	private String deviceName;
-
-	private String productKey;
-
-	private String devEui;
+	public RegisterDeviceRequest() {
+		super("Iot", "2018-01-20", "RegisterDevice", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPinCode() {
 		return this.pinCode;
@@ -51,6 +53,28 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		this.pinCode = pinCode;
 		if(pinCode != null){
 			putQueryParameter("PinCode", pinCode);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDevEui() {
+		return this.devEui;
+	}
+
+	public void setDevEui(String devEui) {
+		this.devEui = devEui;
+		if(devEui != null){
+			putQueryParameter("DevEui", devEui);
 		}
 	}
 
@@ -84,28 +108,6 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		this.deviceName = deviceName;
 		if(deviceName != null){
 			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getDevEui() {
-		return this.devEui;
-	}
-
-	public void setDevEui(String devEui) {
-		this.devEui = devEui;
-		if(devEui != null){
-			putQueryParameter("DevEui", devEui);
 		}
 	}
 

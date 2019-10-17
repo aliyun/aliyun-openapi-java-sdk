@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,20 +23,32 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class CreateEdgeInstanceDeploymentRequest extends RpcAcsRequest<CreateEdgeInstanceDeploymentResponse> {
-	
+	   
+
+	private String type;
+
+	private String instanceId;
+
+	private String iotInstanceId;
 	public CreateEdgeInstanceDeploymentRequest() {
 		super("Iot", "2018-01-20", "CreateEdgeInstanceDeployment", "iot");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String instanceId;
+	public String getType() {
+		return this.type;
+	}
 
-	private String iotInstanceId;
-
-	private String type;
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -56,17 +69,6 @@ public class CreateEdgeInstanceDeploymentRequest extends RpcAcsRequest<CreateEdg
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
 		}
 	}
 

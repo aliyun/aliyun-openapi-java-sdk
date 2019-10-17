@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,20 +24,21 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class BatchSetEdgeInstanceDeviceConfigRequest extends RpcAcsRequest<BatchSetEdgeInstanceDeviceConfigResponse> {
-	
-	public BatchSetEdgeInstanceDeviceConfigRequest() {
-		super("Iot", "2018-01-20", "BatchSetEdgeInstanceDeviceConfig", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String instanceId;
 
 	private List<DeviceConfigs> deviceConfigss;
 
 	private String iotInstanceId;
+	public BatchSetEdgeInstanceDeviceConfigRequest() {
+		super("Iot", "2018-01-20", "BatchSetEdgeInstanceDeviceConfig", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;

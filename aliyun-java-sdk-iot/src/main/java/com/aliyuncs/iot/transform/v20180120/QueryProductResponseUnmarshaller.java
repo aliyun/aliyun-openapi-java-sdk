@@ -45,6 +45,7 @@ public class QueryProductResponseUnmarshaller {
 		data.setProductStatus(_ctx.stringValue("QueryProductResponse.Data.ProductStatus"));
 		data.setOwner(_ctx.booleanValue("QueryProductResponse.Data.Owner"));
 		data.setNetType(_ctx.integerValue("QueryProductResponse.Data.NetType"));
+		data.setAuthType(_ctx.stringValue("QueryProductResponse.Data.AuthType"));
 		queryProductResponse.setData(data);
 	 
 	 	return queryProductResponse;

@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowResponse> {
-	
+	   
+
+	private String shadowMessage;
+
+	private String productKey;
+
+	private String iotInstanceId;
+
+	private String deviceName;
 	public GetDeviceShadowRequest() {
 		super("Iot", "2018-01-20", "GetDeviceShadow", "iot");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String shadowMessage;
-
-	private String iotInstanceId;
-
-	private String deviceName;
-
-	private String productKey;
 
 	public String getShadowMessage() {
 		return this.shadowMessage;
@@ -47,6 +49,17 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 		this.shadowMessage = shadowMessage;
 		if(shadowMessage != null){
 			putQueryParameter("ShadowMessage", shadowMessage);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 
@@ -69,17 +82,6 @@ public class GetDeviceShadowRequest extends RpcAcsRequest<GetDeviceShadowRespons
 		this.deviceName = deviceName;
 		if(deviceName != null){
 			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

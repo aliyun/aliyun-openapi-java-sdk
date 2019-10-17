@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,14 +23,11 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class QueryDeviceFileListRequest extends RpcAcsRequest<QueryDeviceFileListResponse> {
-	
-	public QueryDeviceFileListRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceFileList", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private Integer currentPage;
+
+	private String productKey;
 
 	private String iotId;
 
@@ -38,10 +36,36 @@ public class QueryDeviceFileListRequest extends RpcAcsRequest<QueryDeviceFileLis
 	private Integer pageSize;
 
 	private String deviceName;
+	public QueryDeviceFileListRequest() {
+		super("Iot", "2018-01-20", "QueryDeviceFileList", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Integer currentPage;
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
 
-	private String productKey;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
 
 	public String getIotId() {
 		return this.iotId;
@@ -84,28 +108,6 @@ public class QueryDeviceFileListRequest extends RpcAcsRequest<QueryDeviceFileLis
 		this.deviceName = deviceName;
 		if(deviceName != null){
 			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

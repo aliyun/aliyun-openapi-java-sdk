@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,14 +24,11 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListResponse> {
-	
-	public QueryAppDeviceListRequest() {
-		super("Iot", "2018-01-20", "QueryAppDeviceList", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private Integer currentPage;
+
+	private List<TagList> tagLists;
 
 	private List<String> productKeyLists;
 
@@ -40,11 +38,40 @@ public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListR
 
 	private Integer pageSize;
 
-	private Integer currentPage;
-
 	private String appKey;
+	public QueryAppDeviceListRequest() {
+		super("Iot", "2018-01-20", "QueryAppDeviceList", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private List<TagList> tagLists;
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public List<TagList> getTagLists() {
+		return this.tagLists;
+	}
+
+	public void setTagLists(List<TagList> tagLists) {
+		this.tagLists = tagLists;	
+		if (tagLists != null) {
+			for (int depth1 = 0; depth1 < tagLists.size(); depth1++) {
+				putQueryParameter("TagList." + (depth1 + 1) + ".TagName" , tagLists.get(depth1).getTagName());
+				putQueryParameter("TagList." + (depth1 + 1) + ".TagValue" , tagLists.get(depth1).getTagValue());
+			}
+		}	
+	}
 
 	public List<String> getProductKeyLists() {
 		return this.productKeyLists;
@@ -94,17 +121,6 @@ public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListR
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public String getAppKey() {
 		return this.appKey;
 	}
@@ -114,20 +130,6 @@ public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListR
 		if(appKey != null){
 			putQueryParameter("AppKey", appKey);
 		}
-	}
-
-	public List<TagList> getTagLists() {
-		return this.tagLists;
-	}
-
-	public void setTagLists(List<TagList> tagLists) {
-		this.tagLists = tagLists;	
-		if (tagLists != null) {
-			for (int depth1 = 0; depth1 < tagLists.size(); depth1++) {
-				putQueryParameter("TagList." + (depth1 + 1) + ".TagName" , tagLists.get(depth1).getTagName());
-				putQueryParameter("TagList." + (depth1 + 1) + ".TagValue" , tagLists.get(depth1).getTagValue());
-			}
-		}	
 	}
 
 	public static class TagList {

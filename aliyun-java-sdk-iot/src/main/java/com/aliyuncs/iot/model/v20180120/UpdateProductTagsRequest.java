@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,20 +24,32 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class UpdateProductTagsRequest extends RpcAcsRequest<UpdateProductTagsResponse> {
-	
+	   
+
+	private String productKey;
+
+	private List<ProductTag> productTags;
+
+	private String iotInstanceId;
 	public UpdateProductTagsRequest() {
 		super("Iot", "2018-01-20", "UpdateProductTags", "iot");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private List<ProductTag> productTags;
+	public String getProductKey() {
+		return this.productKey;
+	}
 
-	private String iotInstanceId;
-
-	private String productKey;
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
 
 	public List<ProductTag> getProductTags() {
 		return this.productTags;
@@ -60,17 +73,6 @@ public class UpdateProductTagsRequest extends RpcAcsRequest<UpdateProductTagsRes
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
 		}
 	}
 

@@ -22,14 +22,14 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListProductTagsRequest extends RpcAcsRequest<ListProductTagsResponse> {
+public class QueryCertUrlByApplyIdRequest extends RpcAcsRequest<QueryCertUrlByApplyIdResponse> {
 	   
 
-	private String productKey;
+	private Long applyId;
 
 	private String iotInstanceId;
-	public ListProductTagsRequest() {
-		super("Iot", "2018-01-20", "ListProductTags", "iot");
+	public QueryCertUrlByApplyIdRequest() {
+		super("Iot", "2018-01-20", "QueryCertUrlByApplyId", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class ListProductTagsRequest extends RpcAcsRequest<ListProductTagsRespons
 		} catch (Exception e) {}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
+	public Long getApplyId() {
+		return this.applyId;
 	}
 
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
+	public void setApplyId(Long applyId) {
+		this.applyId = applyId;
+		if(applyId != null){
+			putQueryParameter("ApplyId", applyId.toString());
 		}
 	}
 
@@ -60,8 +60,8 @@ public class ListProductTagsRequest extends RpcAcsRequest<ListProductTagsRespons
 	}
 
 	@Override
-	public Class<ListProductTagsResponse> getResponseClass() {
-		return ListProductTagsResponse.class;
+	public Class<QueryCertUrlByApplyIdResponse> getResponseClass() {
+		return QueryCertUrlByApplyIdResponse.class;
 	}
 
 }

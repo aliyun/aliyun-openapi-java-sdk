@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,18 +23,15 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
-	
-	public CreateRuleRequest() {
-		super("Iot", "2018-01-20", "CreateRule", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String select;
 
 	private String ruleDesc;
+
+	private String productKey;
+
+	private String shortTopic;
 
 	private String dataType;
 
@@ -43,11 +41,15 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private String where;
 
-	private String productKey;
-
 	private Integer topicType;
-
-	private String shortTopic;
+	public CreateRuleRequest() {
+		super("Iot", "2018-01-20", "CreateRule", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSelect() {
 		return this.select;
@@ -68,6 +70,28 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.ruleDesc = ruleDesc;
 		if(ruleDesc != null){
 			putQueryParameter("RuleDesc", ruleDesc);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getShortTopic() {
+		return this.shortTopic;
+	}
+
+	public void setShortTopic(String shortTopic) {
+		this.shortTopic = shortTopic;
+		if(shortTopic != null){
+			putQueryParameter("ShortTopic", shortTopic);
 		}
 	}
 
@@ -115,17 +139,6 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	public Integer getTopicType() {
 		return this.topicType;
 	}
@@ -134,17 +147,6 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.topicType = topicType;
 		if(topicType != null){
 			putQueryParameter("TopicType", topicType.toString());
-		}
-	}
-
-	public String getShortTopic() {
-		return this.shortTopic;
-	}
-
-	public void setShortTopic(String shortTopic) {
-		this.shortTopic = shortTopic;
-		if(shortTopic != null){
-			putQueryParameter("ShortTopic", shortTopic);
 		}
 	}
 

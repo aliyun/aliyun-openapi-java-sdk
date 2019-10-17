@@ -22,14 +22,16 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListProductTagsRequest extends RpcAcsRequest<ListProductTagsResponse> {
+public class QueryDeviceCertRequest extends RpcAcsRequest<QueryDeviceCertResponse> {
 	   
 
 	private String productKey;
 
 	private String iotInstanceId;
-	public ListProductTagsRequest() {
-		super("Iot", "2018-01-20", "ListProductTags", "iot");
+
+	private String deviceName;
+	public QueryDeviceCertRequest() {
+		super("Iot", "2018-01-20", "QueryDeviceCert", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,9 +61,20 @@ public class ListProductTagsRequest extends RpcAcsRequest<ListProductTagsRespons
 		}
 	}
 
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
+	}
+
 	@Override
-	public Class<ListProductTagsResponse> getResponseClass() {
-		return ListProductTagsResponse.class;
+	public Class<QueryDeviceCertResponse> getResponseClass() {
+		return QueryDeviceCertResponse.class;
 	}
 
 }

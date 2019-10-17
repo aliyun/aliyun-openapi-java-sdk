@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,20 +24,21 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class DeleteTopicRouteTableRequest extends RpcAcsRequest<DeleteTopicRouteTableResponse> {
-	
-	public DeleteTopicRouteTableRequest() {
-		super("Iot", "2018-01-20", "DeleteTopicRouteTable", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> dstTopics;
 
 	private String iotInstanceId;
 
 	private String srcTopic;
+	public DeleteTopicRouteTableRequest() {
+		super("Iot", "2018-01-20", "DeleteTopicRouteTable", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getDstTopics() {
 		return this.dstTopics;

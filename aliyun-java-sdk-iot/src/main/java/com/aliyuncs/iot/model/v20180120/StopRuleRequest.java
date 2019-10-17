@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class StopRuleRequest extends RpcAcsRequest<StopRuleResponse> {
-	
+	   
+
+	private String iotInstanceId;
+
+	private Long ruleId;
 	public StopRuleRequest() {
 		super("Iot", "2018-01-20", "StopRule", "iot");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String iotInstanceId;
-
-	private Long ruleId;
 
 	public String getIotInstanceId() {
 		return this.iotInstanceId;

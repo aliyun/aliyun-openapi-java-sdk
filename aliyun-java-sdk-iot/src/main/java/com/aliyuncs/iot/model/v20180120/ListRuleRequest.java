@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
-	
+	   
+
+	private String searchName;
+
+	private Integer currentPage;
+
+	private String iotInstanceId;
+
+	private Integer pageSize;
 	public ListRuleRequest() {
 		super("Iot", "2018-01-20", "ListRule", "iot");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String searchName;
-
-	private String iotInstanceId;
-
-	private Integer pageSize;
-
-	private Integer currentPage;
 
 	public String getSearchName() {
 		return this.searchName;
@@ -47,6 +49,17 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 		this.searchName = searchName;
 		if(searchName != null){
 			putQueryParameter("SearchName", searchName);
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -69,17 +82,6 @@ public class ListRuleRequest extends RpcAcsRequest<ListRuleResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

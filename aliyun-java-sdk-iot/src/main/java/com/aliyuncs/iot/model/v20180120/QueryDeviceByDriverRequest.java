@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,14 +23,9 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class QueryDeviceByDriverRequest extends RpcAcsRequest<QueryDeviceByDriverResponse> {
-	
-	public QueryDeviceByDriverRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceByDriver", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private Integer currentPage;
 
 	private String instanceId;
 
@@ -38,8 +34,25 @@ public class QueryDeviceByDriverRequest extends RpcAcsRequest<QueryDeviceByDrive
 	private String iotInstanceId;
 
 	private Integer pageSize;
+	public QueryDeviceByDriverRequest() {
+		super("Iot", "2018-01-20", "QueryDeviceByDriver", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Integer currentPage;
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
 
 	public String getInstanceId() {
 		return this.instanceId;
@@ -82,17 +95,6 @@ public class QueryDeviceByDriverRequest extends RpcAcsRequest<QueryDeviceByDrive
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

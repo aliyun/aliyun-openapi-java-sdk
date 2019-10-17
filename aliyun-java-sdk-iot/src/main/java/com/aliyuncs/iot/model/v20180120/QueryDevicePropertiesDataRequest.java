@@ -16,6 +16,7 @@ package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -23,18 +24,9 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class QueryDevicePropertiesDataRequest extends RpcAcsRequest<QueryDevicePropertiesDataResponse> {
-	
-	public QueryDevicePropertiesDataRequest() {
-		super("Iot", "2018-01-20", "QueryDevicePropertiesData", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
-	private Integer asc;
-
-	private List<String> identifiers;
+	private Long startTime;
 
 	private String iotId;
 
@@ -42,36 +34,33 @@ public class QueryDevicePropertiesDataRequest extends RpcAcsRequest<QueryDeviceP
 
 	private Integer pageSize;
 
+	private List<String> identifiers;
+
 	private Long endTime;
-
-	private String deviceName;
-
-	private Long startTime;
 
 	private String productKey;
 
-	public Integer getAsc() {
-		return this.asc;
+	private Integer asc;
+
+	private String deviceName;
+	public QueryDevicePropertiesDataRequest() {
+		super("Iot", "2018-01-20", "QueryDevicePropertiesData", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public void setAsc(Integer asc) {
-		this.asc = asc;
-		if(asc != null){
-			putQueryParameter("Asc", asc.toString());
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
-	}
-
-	public List<String> getIdentifiers() {
-		return this.identifiers;
-	}
-
-	public void setIdentifiers(List<String> identifiers) {
-		this.identifiers = identifiers;	
-		if (identifiers != null) {
-			for (int i = 0; i < identifiers.size(); i++) {
-				putQueryParameter("Identifier." + (i + 1) , identifiers.get(i));
-			}
-		}	
 	}
 
 	public String getIotId() {
@@ -107,6 +96,19 @@ public class QueryDevicePropertiesDataRequest extends RpcAcsRequest<QueryDeviceP
 		}
 	}
 
+	public List<String> getIdentifiers() {
+		return this.identifiers;
+	}
+
+	public void setIdentifiers(List<String> identifiers) {
+		this.identifiers = identifiers;	
+		if (identifiers != null) {
+			for (int i = 0; i < identifiers.size(); i++) {
+				putQueryParameter("Identifier." + (i + 1) , identifiers.get(i));
+			}
+		}	
+	}
+
 	public Long getEndTime() {
 		return this.endTime;
 	}
@@ -118,28 +120,6 @@ public class QueryDevicePropertiesDataRequest extends RpcAcsRequest<QueryDeviceP
 		}
 	}
 
-	public String getDeviceName() {
-		return this.deviceName;
-	}
-
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		if(deviceName != null){
-			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -148,6 +128,28 @@ public class QueryDevicePropertiesDataRequest extends RpcAcsRequest<QueryDeviceP
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public Integer getAsc() {
+		return this.asc;
+	}
+
+	public void setAsc(Integer asc) {
+		this.asc = asc;
+		if(asc != null){
+			putQueryParameter("Asc", asc.toString());
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,43 +23,22 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class CreateDeviceGroupRequest extends RpcAcsRequest<CreateDeviceGroupResponse> {
-	
-	public CreateDeviceGroupRequest() {
-		super("Iot", "2018-01-20", "CreateDeviceGroup", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String groupDesc;
-
-	private String iotInstanceId;
+	   
 
 	private String superGroupId;
 
 	private String groupName;
 
-	public String getGroupDesc() {
-		return this.groupDesc;
-	}
+	private String groupDesc;
 
-	public void setGroupDesc(String groupDesc) {
-		this.groupDesc = groupDesc;
-		if(groupDesc != null){
-			putQueryParameter("GroupDesc", groupDesc);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
+	private String iotInstanceId;
+	public CreateDeviceGroupRequest() {
+		super("Iot", "2018-01-20", "CreateDeviceGroup", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSuperGroupId() {
@@ -80,6 +60,28 @@ public class CreateDeviceGroupRequest extends RpcAcsRequest<CreateDeviceGroupRes
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getGroupDesc() {
+		return this.groupDesc;
+	}
+
+	public void setGroupDesc(String groupDesc) {
+		this.groupDesc = groupDesc;
+		if(groupDesc != null){
+			putQueryParameter("GroupDesc", groupDesc);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

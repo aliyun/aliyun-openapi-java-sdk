@@ -41,6 +41,7 @@ public class QueryEdgeInstanceDriverResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryEdgeInstanceDriverResponse.Data.DriverList.Length"); i++) {
 			Driver driver = new Driver();
 			driver.setDriverId(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].DriverId"));
+			driver.setOrderId(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].OrderId"));
 			driver.setGmtCreate(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].GmtCreate"));
 			driver.setGmtModified(_ctx.stringValue("QueryEdgeInstanceDriverResponse.Data.DriverList["+ i +"].GmtModified"));
 

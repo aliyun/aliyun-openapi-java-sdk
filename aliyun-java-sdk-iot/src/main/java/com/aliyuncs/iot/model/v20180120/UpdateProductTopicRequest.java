@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class UpdateProductTopicRequest extends RpcAcsRequest<UpdateProductTopicResponse> {
-	
-	public UpdateProductTopicRequest() {
-		super("Iot", "2018-01-20", "UpdateProductTopic", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String topicId;
 
@@ -40,6 +34,14 @@ public class UpdateProductTopicRequest extends RpcAcsRequest<UpdateProductTopicR
 	private String topicShortName;
 
 	private String desc;
+	public UpdateProductTopicRequest() {
+		super("Iot", "2018-01-20", "UpdateProductTopic", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTopicId() {
 		return this.topicId;

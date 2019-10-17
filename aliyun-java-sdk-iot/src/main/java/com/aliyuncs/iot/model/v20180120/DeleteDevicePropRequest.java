@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
 /**
@@ -22,24 +23,47 @@ import com.aliyuncs.iot.Endpoint;
  * @version 
  */
 public class DeleteDevicePropRequest extends RpcAcsRequest<DeleteDevicePropResponse> {
-	
-	public DeleteDevicePropRequest() {
-		super("Iot", "2018-01-20", "DeleteDeviceProp", "iot");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String productKey;
+
+	private String propKey;
 
 	private String iotId;
 
 	private String iotInstanceId;
 
 	private String deviceName;
+	public DeleteDevicePropRequest() {
+		super("Iot", "2018-01-20", "DeleteDeviceProp", "iot");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private String productKey;
+	public String getProductKey() {
+		return this.productKey;
+	}
 
-	private String propKey;
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getPropKey() {
+		return this.propKey;
+	}
+
+	public void setPropKey(String propKey) {
+		this.propKey = propKey;
+		if(propKey != null){
+			putQueryParameter("PropKey", propKey);
+		}
+	}
 
 	public String getIotId() {
 		return this.iotId;
@@ -71,28 +95,6 @@ public class DeleteDevicePropRequest extends RpcAcsRequest<DeleteDevicePropRespo
 		this.deviceName = deviceName;
 		if(deviceName != null){
 			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getPropKey() {
-		return this.propKey;
-	}
-
-	public void setPropKey(String propKey) {
-		this.propKey = propKey;
-		if(propKey != null){
-			putQueryParameter("PropKey", propKey);
 		}
 	}
 
