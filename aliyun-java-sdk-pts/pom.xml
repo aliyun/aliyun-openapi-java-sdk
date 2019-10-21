@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-pts</artifactId>
   <packaging>jar</packaging>
-  <version>1.9.19</version>
+  <version>1.9.20</version>
   <name>aliyun-java-sdk-pts</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

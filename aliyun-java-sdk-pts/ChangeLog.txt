@@ -1,3 +1,7 @@
+2019-10-21 Version: 1.9.20
+- Supported For ListRunnableScens.
+- Supported For StopScene.
+
 2019-10-12 Version: 1.9.19
 - Fixed bug for queryPlanStatus.
 
