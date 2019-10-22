@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<ModifyPhysicalConnectionAttributeResponse> {
-	
-	public ModifyPhysicalConnectionAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -62,6 +54,14 @@ public class ModifyPhysicalConnectionAttributeRequest extends RpcAcsRequest<Modi
 	private String physicalConnectionId;
 
 	private String name;
+	public ModifyPhysicalConnectionAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

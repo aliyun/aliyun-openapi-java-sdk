@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class AllocatePublicIpAddressRequest extends RpcAcsRequest<AllocatePublicIpAddressResponse> {
-	
-	public AllocatePublicIpAddressRequest() {
-		super("Ecs", "2014-05-26", "AllocatePublicIpAddress", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ipAddress;
 
@@ -46,6 +38,14 @@ public class AllocatePublicIpAddressRequest extends RpcAcsRequest<AllocatePublic
 	private Long ownerId;
 
 	private String instanceId;
+	public AllocatePublicIpAddressRequest() {
+		super("Ecs", "2014-05-26", "AllocatePublicIpAddress", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getIpAddress() {
 		return this.ipAddress;

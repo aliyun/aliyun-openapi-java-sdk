@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeInstanceTopologyRequest extends RpcAcsRequest<DescribeInstanceTopologyResponse> {
-	
-	public DescribeInstanceTopologyRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceTopology", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,6 +32,14 @@ public class DescribeInstanceTopologyRequest extends RpcAcsRequest<DescribeInsta
 	private Long ownerId;
 
 	private String instanceIds;
+	public DescribeInstanceTopologyRequest() {
+		super("Ecs", "2014-05-26", "DescribeInstanceTopology", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

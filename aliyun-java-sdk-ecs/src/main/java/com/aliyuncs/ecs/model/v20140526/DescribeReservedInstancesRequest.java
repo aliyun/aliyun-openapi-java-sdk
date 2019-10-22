@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeReservedInstancesRequest extends RpcAcsRequest<DescribeReservedInstancesResponse> {
-	
-	public DescribeReservedInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeReservedInstances", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -63,6 +55,14 @@ public class DescribeReservedInstancesRequest extends RpcAcsRequest<DescribeRese
 	private String reservedInstanceName;
 
 	private List<String> statuss;
+	public DescribeReservedInstancesRequest() {
+		super("Ecs", "2014-05-26", "DescribeReservedInstances", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

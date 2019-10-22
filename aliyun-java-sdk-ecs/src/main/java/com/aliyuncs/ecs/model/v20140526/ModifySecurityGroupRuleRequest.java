@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurityGroupRuleResponse> {
-	
-	public ModifySecurityGroupRuleRequest() {
-		super("Ecs", "2014-05-26", "ModifySecurityGroupRule", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String nicType;
 
@@ -72,6 +64,14 @@ public class ModifySecurityGroupRuleRequest extends RpcAcsRequest<ModifySecurity
 	private String destCidrIp;
 
 	private String sourceGroupId;
+	public ModifySecurityGroupRuleRequest() {
+		super("Ecs", "2014-05-26", "ModifySecurityGroupRule", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNicType() {
 		return this.nicType;

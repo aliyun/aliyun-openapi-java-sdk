@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse> {
-	
-	public CreateSnapshotRequest() {
-		super("Ecs", "2014-05-26", "CreateSnapshot", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -53,6 +45,14 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 	private Long ownerId;
 
 	private Integer retentionDays;
+	public CreateSnapshotRequest() {
+		super("Ecs", "2014-05-26", "CreateSnapshot", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

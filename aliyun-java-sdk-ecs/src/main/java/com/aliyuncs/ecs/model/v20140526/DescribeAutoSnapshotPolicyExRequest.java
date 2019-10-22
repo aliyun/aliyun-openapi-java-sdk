@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeAutoSnapshotPolicyExRequest extends RpcAcsRequest<DescribeAutoSnapshotPolicyExResponse> {
-	
-	public DescribeAutoSnapshotPolicyExRequest() {
-		super("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyEx", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class DescribeAutoSnapshotPolicyExRequest extends RpcAcsRequest<DescribeA
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeAutoSnapshotPolicyExRequest() {
+		super("Ecs", "2014-05-26", "DescribeAutoSnapshotPolicyEx", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

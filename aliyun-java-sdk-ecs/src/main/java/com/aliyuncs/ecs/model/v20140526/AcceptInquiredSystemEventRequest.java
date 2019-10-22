@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class AcceptInquiredSystemEventRequest extends RpcAcsRequest<AcceptInquiredSystemEventResponse> {
-	
-	public AcceptInquiredSystemEventRequest() {
-		super("Ecs", "2014-05-26", "AcceptInquiredSystemEvent", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String eventId;
 
@@ -42,6 +34,14 @@ public class AcceptInquiredSystemEventRequest extends RpcAcsRequest<AcceptInquir
 	private String ownerAccount;
 
 	private Long ownerId;
+	public AcceptInquiredSystemEventRequest() {
+		super("Ecs", "2014-05-26", "AcceptInquiredSystemEvent", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getEventId() {
 		return this.eventId;

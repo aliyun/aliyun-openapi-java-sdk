@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeInstanceVncPasswdRequest extends RpcAcsRequest<DescribeInstanceVncPasswdResponse> {
-	
-	public DescribeInstanceVncPasswdRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceVncPasswd", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DescribeInstanceVncPasswdRequest extends RpcAcsRequest<DescribeInst
 	private Long ownerId;
 
 	private String instanceId;
+	public DescribeInstanceVncPasswdRequest() {
+		super("Ecs", "2014-05-26", "DescribeInstanceVncPasswd", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttributeResponse> {
-	
-	public ModifyDiskAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDiskAttribute", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,6 +33,8 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 	private String diskName;
 
 	private Boolean deleteAutoSnapshot;
+
+	private List<String> diskIdss;
 
 	private String diskId;
 
@@ -52,6 +47,14 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 	private String ownerAccount;
 
 	private Long ownerId;
+	public ModifyDiskAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyDiskAttribute", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -95,6 +98,19 @@ public class ModifyDiskAttributeRequest extends RpcAcsRequest<ModifyDiskAttribut
 		if(deleteAutoSnapshot != null){
 			putQueryParameter("DeleteAutoSnapshot", deleteAutoSnapshot.toString());
 		}
+	}
+
+	public List<String> getDiskIdss() {
+		return this.diskIdss;
+	}
+
+	public void setDiskIdss(List<String> diskIdss) {
+		this.diskIdss = diskIdss;	
+		if (diskIdss != null) {
+			for (int i = 0; i < diskIdss.size(); i++) {
+				putQueryParameter("DiskIds." + (i + 1) , diskIdss.get(i));
+			}
+		}	
 	}
 
 	public String getDiskId() {

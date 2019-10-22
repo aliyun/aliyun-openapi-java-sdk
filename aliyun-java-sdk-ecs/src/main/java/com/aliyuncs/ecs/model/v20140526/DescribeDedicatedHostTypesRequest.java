@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeDedicatedHostTypesRequest extends RpcAcsRequest<DescribeDedicatedHostTypesResponse> {
-	
-	public DescribeDedicatedHostTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeDedicatedHostTypes", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -44,6 +36,14 @@ public class DescribeDedicatedHostTypesRequest extends RpcAcsRequest<DescribeDed
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeDedicatedHostTypesRequest() {
+		super("Ecs", "2014-05-26", "DescribeDedicatedHostTypes", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

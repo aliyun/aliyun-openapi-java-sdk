@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class CancelSimulatedSystemEventsRequest extends RpcAcsRequest<CancelSimulatedSystemEventsResponse> {
-	
-	public CancelSimulatedSystemEventsRequest() {
-		super("Ecs", "2014-05-26", "CancelSimulatedSystemEvents", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> eventIds;
 
@@ -43,6 +35,14 @@ public class CancelSimulatedSystemEventsRequest extends RpcAcsRequest<CancelSimu
 	private String ownerAccount;
 
 	private Long ownerId;
+	public CancelSimulatedSystemEventsRequest() {
+		super("Ecs", "2014-05-26", "CancelSimulatedSystemEvents", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getEventIds() {
 		return this.eventIds;

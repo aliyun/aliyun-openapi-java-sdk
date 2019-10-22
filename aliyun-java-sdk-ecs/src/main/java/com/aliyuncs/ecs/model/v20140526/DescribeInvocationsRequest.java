@@ -23,19 +23,13 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocationsResponse> {
-	
-	public DescribeInvocationsRequest() {
-		super("Ecs", "2014-05-26", "DescribeInvocations", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String invokeStatus;
+
+	private Boolean includeOutput;
 
 	private String commandId;
 
@@ -60,6 +54,14 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 	private String commandType;
 
 	private String instanceId;
+	public DescribeInvocationsRequest() {
+		super("Ecs", "2014-05-26", "DescribeInvocations", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -80,6 +82,17 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 		this.invokeStatus = invokeStatus;
 		if(invokeStatus != null){
 			putQueryParameter("InvokeStatus", invokeStatus);
+		}
+	}
+
+	public Boolean getIncludeOutput() {
+		return this.includeOutput;
+	}
+
+	public void setIncludeOutput(Boolean includeOutput) {
+		this.includeOutput = includeOutput;
+		if(includeOutput != null){
+			putQueryParameter("IncludeOutput", includeOutput.toString());
 		}
 	}
 

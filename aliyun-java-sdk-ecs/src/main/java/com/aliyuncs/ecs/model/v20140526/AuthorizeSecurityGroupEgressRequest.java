@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<AuthorizeSecurityGroupEgressResponse> {
-	
-	public AuthorizeSecurityGroupEgressRequest() {
-		super("Ecs", "2014-05-26", "AuthorizeSecurityGroupEgress", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String nicType;
 
@@ -72,6 +64,14 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 	private String destCidrIp;
 
 	private Long destGroupOwnerId;
+	public AuthorizeSecurityGroupEgressRequest() {
+		super("Ecs", "2014-05-26", "AuthorizeSecurityGroupEgress", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNicType() {
 		return this.nicType;

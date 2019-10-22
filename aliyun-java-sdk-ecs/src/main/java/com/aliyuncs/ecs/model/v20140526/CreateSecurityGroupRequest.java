@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGroupResponse> {
-	
-	public CreateSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "CreateSecurityGroup", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -55,6 +47,14 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 	private String securityGroupType;
 
 	private String vpcId;
+	public CreateSecurityGroupRequest() {
+		super("Ecs", "2014-05-26", "CreateSecurityGroup", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

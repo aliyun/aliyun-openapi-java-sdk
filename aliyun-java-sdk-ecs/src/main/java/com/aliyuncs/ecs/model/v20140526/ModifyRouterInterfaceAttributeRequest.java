@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyRouterInterfaceAttributeResponse> {
-	
-	public ModifyRouterInterfaceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String oppositeRouterId;
 
@@ -56,6 +48,14 @@ public class ModifyRouterInterfaceAttributeRequest extends RpcAcsRequest<ModifyR
 	private String name;
 
 	private String oppositeRouterType;
+	public ModifyRouterInterfaceAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getOppositeRouterId() {
 		return this.oppositeRouterId;

@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeHaVipsRequest extends RpcAcsRequest<DescribeHaVipsResponse> {
-	
-	public DescribeHaVipsRequest() {
-		super("Ecs", "2014-05-26", "DescribeHaVips", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -47,6 +39,14 @@ public class DescribeHaVipsRequest extends RpcAcsRequest<DescribeHaVipsResponse>
 	private Long ownerId;
 
 	private List<Filter> filters;
+	public DescribeHaVipsRequest() {
+		super("Ecs", "2014-05-26", "DescribeHaVips", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

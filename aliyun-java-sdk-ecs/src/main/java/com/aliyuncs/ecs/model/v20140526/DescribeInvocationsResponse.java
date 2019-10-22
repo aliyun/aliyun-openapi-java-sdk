@@ -183,6 +183,10 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			private String instanceInvokeStatus;
 
+			private String output;
+
+			private Long exitCode;
+
 			private String creationTime;
 
 			private String startTime;
@@ -203,6 +207,22 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			public void setInstanceInvokeStatus(String instanceInvokeStatus) {
 				this.instanceInvokeStatus = instanceInvokeStatus;
+			}
+
+			public String getOutput() {
+				return this.output;
+			}
+
+			public void setOutput(String output) {
+				this.output = output;
+			}
+
+			public Long getExitCode() {
+				return this.exitCode;
+			}
+
+			public void setExitCode(Long exitCode) {
+				this.exitCode = exitCode;
 			}
 
 			public String getCreationTime() {

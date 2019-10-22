@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
-	
-	public DescribePriceRequest() {
-		super("Ecs", "2014-05-26", "DescribePrice", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer dataDisk3Size;
 
@@ -67,6 +59,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String platform;
 
+	private Integer capacity;
+
 	private String systemDiskPerformanceLevel;
 
 	private String dataDisk4Category;
@@ -98,6 +92,14 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 	private Integer systemDiskSize;
 
 	private String offeringType;
+	public DescribePriceRequest() {
+		super("Ecs", "2014-05-26", "DescribePrice", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getDataDisk3Size() {
 		return this.dataDisk3Size;
@@ -283,6 +285,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.platform = platform;
 		if(platform != null){
 			putQueryParameter("Platform", platform);
+		}
+	}
+
+	public Integer getCapacity() {
+		return this.capacity;
+	}
+
+	public void setCapacity(Integer capacity) {
+		this.capacity = capacity;
+		if(capacity != null){
+			putQueryParameter("Capacity", capacity.toString());
 		}
 	}
 

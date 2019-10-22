@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeHpcClustersRequest extends RpcAcsRequest<DescribeHpcClustersResponse> {
-	
-	public DescribeHpcClustersRequest() {
-		super("Ecs", "2014-05-26", "DescribeHpcClusters", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -48,6 +40,14 @@ public class DescribeHpcClustersRequest extends RpcAcsRequest<DescribeHpcCluster
 	private Long ownerId;
 
 	private String hpcClusterIds;
+	public DescribeHpcClustersRequest() {
+		super("Ecs", "2014-05-26", "DescribeHpcClusters", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

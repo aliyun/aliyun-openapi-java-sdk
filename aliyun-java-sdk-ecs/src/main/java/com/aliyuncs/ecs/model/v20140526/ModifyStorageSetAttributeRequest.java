@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyStorageSetAttributeRequest extends RpcAcsRequest<ModifyStorageSetAttributeResponse> {
-	
-	public ModifyStorageSetAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyStorageSetAttribute", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -48,6 +40,14 @@ public class ModifyStorageSetAttributeRequest extends RpcAcsRequest<ModifyStorag
 	private String storageSetId;
 
 	private String storageSetName;
+	public ModifyStorageSetAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyStorageSetAttribute", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

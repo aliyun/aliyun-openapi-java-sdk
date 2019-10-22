@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
-	
-	public DescribeTasksRequest() {
-		super("Ecs", "2014-05-26", "DescribeTasks", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -54,6 +46,14 @@ public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 	private Long ownerId;
 
 	private String taskAction;
+	public DescribeTasksRequest() {
+		super("Ecs", "2014-05-26", "DescribeTasks", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

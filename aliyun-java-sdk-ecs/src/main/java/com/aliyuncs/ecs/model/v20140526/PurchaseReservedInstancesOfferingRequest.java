@@ -23,21 +23,15 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<PurchaseReservedInstancesOfferingResponse> {
-	
-	public PurchaseReservedInstancesOfferingRequest() {
-		super("Ecs", "2014-05-26", "PurchaseReservedInstancesOffering", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
 	private String description;
+
+	private String platform;
 
 	private String resourceGroupId;
 
@@ -62,6 +56,14 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 	private String reservedInstanceName;
 
 	private Integer instanceAmount;
+	public PurchaseReservedInstancesOfferingRequest() {
+		super("Ecs", "2014-05-26", "PurchaseReservedInstancesOffering", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -93,6 +95,17 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getPlatform() {
+		return this.platform;
+	}
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
+		if(platform != null){
+			putQueryParameter("Platform", platform);
 		}
 	}
 

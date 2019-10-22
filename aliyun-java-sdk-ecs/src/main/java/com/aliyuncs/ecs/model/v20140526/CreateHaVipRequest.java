@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
-	
-	public CreateHaVipRequest() {
-		super("Ecs", "2014-05-26", "CreateHaVip", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String ipAddress;
 
@@ -48,6 +40,14 @@ public class CreateHaVipRequest extends RpcAcsRequest<CreateHaVipResponse> {
 	private Long ownerId;
 
 	private String vSwitchId;
+	public CreateHaVipRequest() {
+		super("Ecs", "2014-05-26", "CreateHaVip", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getIpAddress() {
 		return this.ipAddress;

@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifySecurityGroupAttributeRequest extends RpcAcsRequest<ModifySecurityGroupAttributeResponse> {
-	
-	public ModifySecurityGroupAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifySecurityGroupAttribute", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class ModifySecurityGroupAttributeRequest extends RpcAcsRequest<ModifySec
 	private String ownerAccount;
 
 	private Long ownerId;
+	public ModifySecurityGroupAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifySecurityGroupAttribute", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

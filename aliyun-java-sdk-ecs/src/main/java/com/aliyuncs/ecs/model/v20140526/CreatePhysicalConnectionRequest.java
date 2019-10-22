@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysicalConnectionResponse> {
-	
-	public CreatePhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "CreatePhysicalConnection", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String accessPointId;
 
@@ -64,6 +56,14 @@ public class CreatePhysicalConnectionRequest extends RpcAcsRequest<CreatePhysica
 	private String lineOperator;
 
 	private String name;
+	public CreatePhysicalConnectionRequest() {
+		super("Ecs", "2014-05-26", "CreatePhysicalConnection", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAccessPointId() {
 		return this.accessPointId;

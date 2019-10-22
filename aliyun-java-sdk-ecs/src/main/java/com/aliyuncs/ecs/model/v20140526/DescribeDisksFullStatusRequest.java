@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeDisksFullStatusRequest extends RpcAcsRequest<DescribeDisksFullStatusResponse> {
-	
-	public DescribeDisksFullStatusRequest() {
-		super("Ecs", "2014-05-26", "DescribeDisksFullStatus", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> eventIds;
 
@@ -59,6 +51,14 @@ public class DescribeDisksFullStatusRequest extends RpcAcsRequest<DescribeDisksF
 	private String eventType;
 
 	private String status;
+	public DescribeDisksFullStatusRequest() {
+		super("Ecs", "2014-05-26", "DescribeDisksFullStatus", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getEventIds() {
 		return this.eventIds;

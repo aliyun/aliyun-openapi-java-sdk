@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeEniMonitorDataRequest extends RpcAcsRequest<DescribeEniMonitorDataResponse> {
-	
-	public DescribeEniMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeEniMonitorData", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -50,6 +42,14 @@ public class DescribeEniMonitorDataRequest extends RpcAcsRequest<DescribeEniMoni
 	private String instanceId;
 
 	private String eniId;
+	public DescribeEniMonitorDataRequest() {
+		super("Ecs", "2014-05-26", "DescribeEniMonitorData", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

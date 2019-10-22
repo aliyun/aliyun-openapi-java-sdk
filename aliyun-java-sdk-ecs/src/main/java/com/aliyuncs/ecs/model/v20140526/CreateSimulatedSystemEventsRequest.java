@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class CreateSimulatedSystemEventsRequest extends RpcAcsRequest<CreateSimulatedSystemEventsResponse> {
-	
-	public CreateSimulatedSystemEventsRequest() {
-		super("Ecs", "2014-05-26", "CreateSimulatedSystemEvents", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -47,6 +39,14 @@ public class CreateSimulatedSystemEventsRequest extends RpcAcsRequest<CreateSimu
 	private List<String> instanceIds;
 
 	private String eventType;
+	public CreateSimulatedSystemEventsRequest() {
+		super("Ecs", "2014-05-26", "CreateSimulatedSystemEvents", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

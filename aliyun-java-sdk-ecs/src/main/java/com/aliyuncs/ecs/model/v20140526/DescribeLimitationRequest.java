@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeLimitationRequest extends RpcAcsRequest<DescribeLimitationResponse> {
-	
-	public DescribeLimitationRequest() {
-		super("Ecs", "2014-05-26", "DescribeLimitation", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String limitation;
 
@@ -42,6 +34,14 @@ public class DescribeLimitationRequest extends RpcAcsRequest<DescribeLimitationR
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeLimitationRequest() {
+		super("Ecs", "2014-05-26", "DescribeLimitation", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLimitation() {
 		return this.limitation;

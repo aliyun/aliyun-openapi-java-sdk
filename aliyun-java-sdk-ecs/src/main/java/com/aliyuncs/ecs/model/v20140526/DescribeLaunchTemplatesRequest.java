@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunchTemplatesResponse> {
-	
-	public DescribeLaunchTemplatesRequest() {
-		super("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> launchTemplateNames;
 
@@ -53,6 +45,14 @@ public class DescribeLaunchTemplatesRequest extends RpcAcsRequest<DescribeLaunch
 	private String templateResourceGroupId;
 
 	private Long ownerId;
+	public DescribeLaunchTemplatesRequest() {
+		super("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getLaunchTemplateNames() {
 		return this.launchTemplateNames;

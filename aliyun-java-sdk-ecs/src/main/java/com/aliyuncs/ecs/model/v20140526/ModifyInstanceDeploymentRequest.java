@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanceDeploymentResponse> {
-	
-	public ModifyInstanceDeploymentRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceDeployment", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -54,6 +46,14 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 	private String migrationType;
 
 	private String affinity;
+	public ModifyInstanceDeploymentRequest() {
+		super("Ecs", "2014-05-26", "ModifyInstanceDeployment", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

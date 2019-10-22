@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotPriceHistoryResponse> {
-	
-	public DescribeSpotPriceHistoryRequest() {
-		super("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -58,6 +50,14 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 	private Integer spotDuration;
 
 	private String zoneId;
+	public DescribeSpotPriceHistoryRequest() {
+		super("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

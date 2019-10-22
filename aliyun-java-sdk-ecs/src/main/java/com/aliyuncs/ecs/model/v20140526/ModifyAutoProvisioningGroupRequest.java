@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAutoProvisioningGroupResponse> {
-	
-	public ModifyAutoProvisioningGroupRequest() {
-		super("Ecs", "2014-05-26", "ModifyAutoProvisioningGroup", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -58,6 +50,14 @@ public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAuto
 	private Float maxSpotPrice;
 
 	private String autoProvisioningGroupName;
+	public ModifyAutoProvisioningGroupRequest() {
+		super("Ecs", "2014-05-26", "ModifyAutoProvisioningGroup", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

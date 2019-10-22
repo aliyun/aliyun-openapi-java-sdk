@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstanceRamRoleResponse> {
-	
-	public DescribeInstanceRamRoleRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class DescribeInstanceRamRoleRequest extends RpcAcsRequest<DescribeInstan
 	private Long ownerId;
 
 	private String instanceIds;
+	public DescribeInstanceRamRoleRequest() {
+		super("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

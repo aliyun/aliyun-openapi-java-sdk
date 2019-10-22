@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
-	
-	public CreateImageRequest() {
-		super("Ecs", "2014-05-26", "CreateImage", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<DiskDeviceMapping> diskDeviceMappings;
 
@@ -63,6 +55,14 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 	private String instanceId;
 
 	private String imageVersion;
+	public CreateImageRequest() {
+		super("Ecs", "2014-05-26", "CreateImage", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<DiskDeviceMapping> getDiskDeviceMappings() {
 		return this.diskDeviceMappings;

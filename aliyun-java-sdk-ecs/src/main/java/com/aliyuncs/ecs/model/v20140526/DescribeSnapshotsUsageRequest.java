@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeSnapshotsUsageRequest extends RpcAcsRequest<DescribeSnapshotsUsageResponse> {
-	
-	public DescribeSnapshotsUsageRequest() {
-		super("Ecs", "2014-05-26", "DescribeSnapshotsUsage", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,6 +32,14 @@ public class DescribeSnapshotsUsageRequest extends RpcAcsRequest<DescribeSnapsho
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeSnapshotsUsageRequest() {
+		super("Ecs", "2014-05-26", "DescribeSnapshotsUsage", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
-	
-	public ImportImageRequest() {
-		super("Ecs", "2014-05-26", "ImportImage", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<DiskDeviceMapping> diskDeviceMappings;
 
@@ -55,6 +47,14 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 	private String oSType;
 
 	private Long ownerId;
+	public ImportImageRequest() {
+		super("Ecs", "2014-05-26", "ImportImage", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<DiskDeviceMapping> getDiskDeviceMappings() {
 		return this.diskDeviceMappings;

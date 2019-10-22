@@ -1,3 +1,6 @@
+2019-10-22 Version: 4.17.6
+- RunInstances support AutoSnapshotPolicyId.
+
 2019-09-23 Version: 4.17.5
 - Add param, DescribePrice supprot ReservedInstance.
 

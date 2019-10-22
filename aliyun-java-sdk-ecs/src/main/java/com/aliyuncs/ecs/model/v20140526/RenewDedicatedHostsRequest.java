@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class RenewDedicatedHostsRequest extends RpcAcsRequest<RenewDedicatedHostsResponse> {
-	
-	public RenewDedicatedHostsRequest() {
-		super("Ecs", "2014-05-26", "RenewDedicatedHosts", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String dedicatedHostIds;
 
@@ -48,6 +40,14 @@ public class RenewDedicatedHostsRequest extends RpcAcsRequest<RenewDedicatedHost
 	private Long ownerId;
 
 	private String periodUnit;
+	public RenewDedicatedHostsRequest() {
+		super("Ecs", "2014-05-26", "RenewDedicatedHosts", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDedicatedHostIds() {
 		return this.dedicatedHostIds;

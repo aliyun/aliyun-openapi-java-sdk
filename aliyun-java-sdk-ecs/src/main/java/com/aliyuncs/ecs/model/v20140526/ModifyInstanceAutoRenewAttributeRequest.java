@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<ModifyInstanceAutoRenewAttributeResponse> {
-	
-	public ModifyInstanceAutoRenewAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -50,6 +42,14 @@ public class ModifyInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Modif
 	private String instanceId;
 
 	private Boolean autoRenew;
+	public ModifyInstanceAutoRenewAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DeleteLaunchTemplateVersionRequest extends RpcAcsRequest<DeleteLaunchTemplateVersionResponse> {
-	
-	public DeleteLaunchTemplateVersionRequest() {
-		super("Ecs", "2014-05-26", "DeleteLaunchTemplateVersion", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String launchTemplateName;
 
@@ -47,6 +39,14 @@ public class DeleteLaunchTemplateVersionRequest extends RpcAcsRequest<DeleteLaun
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DeleteLaunchTemplateVersionRequest() {
+		super("Ecs", "2014-05-26", "DeleteLaunchTemplateVersion", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLaunchTemplateName() {
 		return this.launchTemplateName;

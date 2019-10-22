@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
-	
-	public DescribeDisksRequest() {
-		super("Ecs", "2014-05-26", "DescribeDisks", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -99,6 +91,14 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 	private String category;
 
 	private String kMSKeyId;
+	public DescribeDisksRequest() {
+		super("Ecs", "2014-05-26", "DescribeDisks", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

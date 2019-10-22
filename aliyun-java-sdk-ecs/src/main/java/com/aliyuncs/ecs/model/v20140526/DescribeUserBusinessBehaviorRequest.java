@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeUserBusinessBehaviorRequest extends RpcAcsRequest<DescribeUserBusinessBehaviorResponse> {
-	
-	public DescribeUserBusinessBehaviorRequest() {
-		super("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DescribeUserBusinessBehaviorRequest extends RpcAcsRequest<DescribeU
 	private Long ownerId;
 
 	private String statusKey;
+	public DescribeUserBusinessBehaviorRequest() {
+		super("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

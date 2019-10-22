@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSnapshotPolicyResponse> {
-	
-	public ModifyAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicy", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean dataDiskPolicyEnabled;
 
@@ -56,6 +48,14 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 	private Boolean dataDiskPolicyRetentionLastWeek;
 
 	private Boolean systemDiskPolicyEnabled;
+	public ModifyAutoSnapshotPolicyRequest() {
+		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicy", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getDataDiskPolicyEnabled() {
 		return this.dataDiskPolicyEnabled;

@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<ModifyNetworkInterfaceAttributeResponse> {
-	
-	public ModifyNetworkInterfaceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -49,6 +41,14 @@ public class ModifyNetworkInterfaceAttributeRequest extends RpcAcsRequest<Modify
 	private Long ownerId;
 
 	private String networkInterfaceId;
+	public ModifyNetworkInterfaceAttributeRequest() {
+		super("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

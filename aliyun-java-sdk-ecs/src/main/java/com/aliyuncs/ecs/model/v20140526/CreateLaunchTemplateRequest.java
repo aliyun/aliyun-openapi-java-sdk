@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTemplateResponse> {
-	
-	public CreateLaunchTemplateRequest() {
-		super("Ecs", "2014-05-26", "CreateLaunchTemplate", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String launchTemplateName;
 
@@ -121,6 +113,14 @@ public class CreateLaunchTemplateRequest extends RpcAcsRequest<CreateLaunchTempl
 	private String vpcId;
 
 	private String systemDiskDescription;
+	public CreateLaunchTemplateRequest() {
+		super("Ecs", "2014-05-26", "CreateLaunchTemplate", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getLaunchTemplateName() {
 		return this.launchTemplateName;

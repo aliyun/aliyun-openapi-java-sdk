@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<ModifyImageShareGroupPermissionResponse> {
-	
-	public ModifyImageShareGroupPermissionRequest() {
-		super("Ecs", "2014-05-26", "ModifyImageShareGroupPermission", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class ModifyImageShareGroupPermissionRequest extends RpcAcsRequest<Modify
 	private Long ownerId;
 
 	private String removeGroup1;
+	public ModifyImageShareGroupPermissionRequest() {
+		super("Ecs", "2014-05-26", "ModifyImageShareGroupPermission", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

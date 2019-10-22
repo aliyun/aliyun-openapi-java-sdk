@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class AssignPrivateIpAddressesRequest extends RpcAcsRequest<AssignPrivateIpAddressesResponse> {
-	
-	public AssignPrivateIpAddressesRequest() {
-		super("Ecs", "2014-05-26", "AssignPrivateIpAddresses", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -47,6 +39,14 @@ public class AssignPrivateIpAddressesRequest extends RpcAcsRequest<AssignPrivate
 	private List<String> privateIpAddresss;
 
 	private String networkInterfaceId;
+	public AssignPrivateIpAddressesRequest() {
+		super("Ecs", "2014-05-26", "AssignPrivateIpAddresses", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

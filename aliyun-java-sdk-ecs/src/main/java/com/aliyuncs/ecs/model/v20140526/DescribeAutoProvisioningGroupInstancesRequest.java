@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeAutoProvisioningGroupInstancesRequest extends RpcAcsRequest<DescribeAutoProvisioningGroupInstancesResponse> {
-	
-	public DescribeAutoProvisioningGroupInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeAutoProvisioningGroupInstances", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class DescribeAutoProvisioningGroupInstancesRequest extends RpcAcsRequest
 	private Long ownerId;
 
 	private String autoProvisioningGroupId;
+	public DescribeAutoProvisioningGroupInstancesRequest() {
+		super("Ecs", "2014-05-26", "DescribeAutoProvisioningGroupInstances", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

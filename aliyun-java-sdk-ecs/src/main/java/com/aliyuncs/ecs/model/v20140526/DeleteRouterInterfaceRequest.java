@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInterfaceResponse> {
-	
-	public DeleteRouterInterfaceRequest() {
-		super("Ecs", "2014-05-26", "DeleteRouterInterface", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -46,6 +38,14 @@ public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInte
 	private String routerInterfaceId;
 
 	private Long ownerId;
+	public DeleteRouterInterfaceRequest() {
+		super("Ecs", "2014-05-26", "DeleteRouterInterface", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

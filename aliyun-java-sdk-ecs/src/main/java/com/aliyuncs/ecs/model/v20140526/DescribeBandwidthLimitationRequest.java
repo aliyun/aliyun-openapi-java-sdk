@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeBandwidthLimitationRequest extends RpcAcsRequest<DescribeBandwidthLimitationResponse> {
-	
-	public DescribeBandwidthLimitationRequest() {
-		super("Ecs", "2014-05-26", "DescribeBandwidthLimitation", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -50,6 +42,14 @@ public class DescribeBandwidthLimitationRequest extends RpcAcsRequest<DescribeBa
 	private Long ownerId;
 
 	private String spotStrategy;
+	public DescribeBandwidthLimitationRequest() {
+		super("Ecs", "2014-05-26", "DescribeBandwidthLimitation", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

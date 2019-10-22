@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
-	
-	public TagResourcesRequest() {
-		super("Ecs", "2014-05-26", "TagResources", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<Tag> tags;
 
@@ -45,6 +37,14 @@ public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	private Long ownerId;
 
 	private String resourceType;
+	public TagResourcesRequest() {
+		super("Ecs", "2014-05-26", "TagResources", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<Tag> getTags() {
 		return this.tags;

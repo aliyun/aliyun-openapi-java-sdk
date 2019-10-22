@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse> {
-	
-	public DescribeImagesRequest() {
-		super("Ecs", "2014-05-26", "DescribeImages", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String actionType;
 
@@ -79,6 +71,14 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 	private List<Filter> filters;
 
 	private String status;
+	public DescribeImagesRequest() {
+		super("Ecs", "2014-05-26", "DescribeImages", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getActionType() {
 		return this.actionType;

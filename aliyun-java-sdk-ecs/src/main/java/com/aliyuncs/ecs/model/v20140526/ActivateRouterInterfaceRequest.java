@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ActivateRouterInterfaceRequest extends RpcAcsRequest<ActivateRouterInterfaceResponse> {
-	
-	public ActivateRouterInterfaceRequest() {
-		super("Ecs", "2014-05-26", "ActivateRouterInterface", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,6 +32,14 @@ public class ActivateRouterInterfaceRequest extends RpcAcsRequest<ActivateRouter
 	private Long ownerId;
 
 	private String routerInterfaceId;
+	public ActivateRouterInterfaceRequest() {
+		super("Ecs", "2014-05-26", "ActivateRouterInterface", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

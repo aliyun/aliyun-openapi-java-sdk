@@ -24,15 +24,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicatedHostsResponse> {
-	
-	public AllocateDedicatedHostsRequest() {
-		super("Ecs", "2014-05-26", "AllocateDedicatedHosts", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -77,6 +69,14 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 	private String chargeType;
 
 	private Integer networkAttributesUdpTimeout;
+	public AllocateDedicatedHostsRequest() {
+		super("Ecs", "2014-05-26", "AllocateDedicatedHosts", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

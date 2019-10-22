@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeInstanceTypeFamiliesRequest extends RpcAcsRequest<DescribeInstanceTypeFamiliesResponse> {
-	
-	public DescribeInstanceTypeFamiliesRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class DescribeInstanceTypeFamiliesRequest extends RpcAcsRequest<DescribeI
 	private String ownerAccount;
 
 	private Long ownerId;
+	public DescribeInstanceTypeFamiliesRequest() {
+		super("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

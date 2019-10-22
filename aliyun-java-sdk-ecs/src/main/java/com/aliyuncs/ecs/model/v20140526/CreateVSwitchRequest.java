@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
-	
-	public CreateVSwitchRequest() {
-		super("Ecs", "2014-05-26", "CreateVSwitch", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -52,6 +44,14 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 	private String cidrBlock;
 
 	private String zoneId;
+	public CreateVSwitchRequest() {
+		super("Ecs", "2014-05-26", "CreateVSwitch", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

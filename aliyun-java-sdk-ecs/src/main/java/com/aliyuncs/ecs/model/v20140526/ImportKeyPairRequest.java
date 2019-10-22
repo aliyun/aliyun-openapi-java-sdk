@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
-	
-	public ImportKeyPairRequest() {
-		super("Ecs", "2014-05-26", "ImportKeyPair", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,6 +34,14 @@ public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 	private String publicKeyBody;
 
 	private Long ownerId;
+	public ImportKeyPairRequest() {
+		super("Ecs", "2014-05-26", "ImportKeyPair", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

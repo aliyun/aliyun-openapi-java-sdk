@@ -23,15 +23,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @version 
  */
 public class DescribeDiskMonitorDataRequest extends RpcAcsRequest<DescribeDiskMonitorDataResponse> {
-	
-	public DescribeDiskMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -48,6 +40,14 @@ public class DescribeDiskMonitorDataRequest extends RpcAcsRequest<DescribeDiskMo
 	private String endTime;
 
 	private Long ownerId;
+	public DescribeDiskMonitorDataRequest() {
+		super("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
