@@ -15,16 +15,17 @@
 package com.aliyuncs.ivision.model.v20190308;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ivision.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class CreateStreamPredictRequest extends RpcAcsRequest<CreateStreamPredictResponse> {
-	
-	public CreateStreamPredictRequest() {
-		super("ivision", "2019-03-08", "CreateStreamPredict", "ivision");
-	}
+	   
+
+	private String clientToken;
 
 	private String autoStart;
 
@@ -32,17 +33,40 @@ public class CreateStreamPredictRequest extends RpcAcsRequest<CreateStreamPredic
 
 	private String output;
 
-	private String userData;
-
 	private String streamType;
 
+	private String faceGroupId;
+
 	private String streamId;
+
+	private String detectIntervals;
 
 	private Long ownerId;
 
 	private String probabilityThresholds;
 
 	private String modelIds;
+
+	private String modelUserData;
+	public CreateStreamPredictRequest() {
+		super("ivision", "2019-03-08", "CreateStreamPredict", "ivision");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
 
 	public String getAutoStart() {
 		return this.autoStart;
@@ -77,17 +101,6 @@ public class CreateStreamPredictRequest extends RpcAcsRequest<CreateStreamPredic
 		}
 	}
 
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
-
 	public String getStreamType() {
 		return this.streamType;
 	}
@@ -99,6 +112,17 @@ public class CreateStreamPredictRequest extends RpcAcsRequest<CreateStreamPredic
 		}
 	}
 
+	public String getFaceGroupId() {
+		return this.faceGroupId;
+	}
+
+	public void setFaceGroupId(String faceGroupId) {
+		this.faceGroupId = faceGroupId;
+		if(faceGroupId != null){
+			putQueryParameter("FaceGroupId", faceGroupId);
+		}
+	}
+
 	public String getStreamId() {
 		return this.streamId;
 	}
@@ -107,6 +131,17 @@ public class CreateStreamPredictRequest extends RpcAcsRequest<CreateStreamPredic
 		this.streamId = streamId;
 		if(streamId != null){
 			putQueryParameter("StreamId", streamId);
+		}
+	}
+
+	public String getDetectIntervals() {
+		return this.detectIntervals;
+	}
+
+	public void setDetectIntervals(String detectIntervals) {
+		this.detectIntervals = detectIntervals;
+		if(detectIntervals != null){
+			putQueryParameter("DetectIntervals", detectIntervals);
 		}
 	}
 
@@ -140,6 +175,17 @@ public class CreateStreamPredictRequest extends RpcAcsRequest<CreateStreamPredic
 		this.modelIds = modelIds;
 		if(modelIds != null){
 			putQueryParameter("ModelIds", modelIds);
+		}
+	}
+
+	public String getModelUserData() {
+		return this.modelUserData;
+	}
+
+	public void setModelUserData(String modelUserData) {
+		this.modelUserData = modelUserData;
+		if(modelUserData != null){
+			putQueryParameter("ModelUserData", modelUserData);
 		}
 	}
 

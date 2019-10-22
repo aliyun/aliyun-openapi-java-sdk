@@ -22,29 +22,42 @@ import com.aliyuncs.ivision.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopStreamPredictRequest extends RpcAcsRequest<StopStreamPredictResponse> {
+public class ImagePredictRequest extends RpcAcsRequest<ImagePredictResponse> {
 	   
 
-	private String predictId;
+	private String dataUrl;
+
+	private String modelId;
 
 	private Long ownerId;
-	public StopStreamPredictRequest() {
-		super("ivision", "2019-03-08", "StopStreamPredict", "ivision");
-		setMethod(MethodType.POST);
+	public ImagePredictRequest() {
+		super("ivision", "2019-03-08", "ImagePredict", "ivision");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getPredictId() {
-		return this.predictId;
+	public String getDataUrl() {
+		return this.dataUrl;
 	}
 
-	public void setPredictId(String predictId) {
-		this.predictId = predictId;
-		if(predictId != null){
-			putQueryParameter("PredictId", predictId);
+	public void setDataUrl(String dataUrl) {
+		this.dataUrl = dataUrl;
+		if(dataUrl != null){
+			putQueryParameter("DataUrl", dataUrl);
+		}
+	}
+
+	public String getModelId() {
+		return this.modelId;
+	}
+
+	public void setModelId(String modelId) {
+		this.modelId = modelId;
+		if(modelId != null){
+			putQueryParameter("ModelId", modelId);
 		}
 	}
 
@@ -60,8 +73,8 @@ public class StopStreamPredictRequest extends RpcAcsRequest<StopStreamPredictRes
 	}
 
 	@Override
-	public Class<StopStreamPredictResponse> getResponseClass() {
-		return StopStreamPredictResponse.class;
+	public Class<ImagePredictResponse> getResponseClass() {
+		return ImagePredictResponse.class;
 	}
 
 }

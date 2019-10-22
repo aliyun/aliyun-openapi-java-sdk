@@ -14,28 +14,19 @@
 
 package com.aliyuncs.ivision.model.v20190308;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ivision.transform.v20190308.DescribeStreamPredictResultResponseUnmarshaller;
+import com.aliyuncs.ivision.transform.v20190308.ImagePredictResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeStreamPredictResultResponse extends AcsResponse {
+public class ImagePredictResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long totalNum;
-
-	private Long currentPage;
-
-	private Long pageSize;
-
-	private String nextPageToken;
-
-	private List<StreamPredictData> streamPredictDatas;
+	private ImagePredict imagePredict;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,47 +36,15 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTotalNum() {
-		return this.totalNum;
+	public ImagePredict getImagePredict() {
+		return this.imagePredict;
 	}
 
-	public void setTotalNum(Long totalNum) {
-		this.totalNum = totalNum;
+	public void setImagePredict(ImagePredict imagePredict) {
+		this.imagePredict = imagePredict;
 	}
 
-	public Long getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Long currentPage) {
-		this.currentPage = currentPage;
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public String getNextPageToken() {
-		return this.nextPageToken;
-	}
-
-	public void setNextPageToken(String nextPageToken) {
-		this.nextPageToken = nextPageToken;
-	}
-
-	public List<StreamPredictData> getStreamPredictDatas() {
-		return this.streamPredictDatas;
-	}
-
-	public void setStreamPredictDatas(List<StreamPredictData> streamPredictDatas) {
-		this.streamPredictDatas = streamPredictDatas;
-	}
-
-	public static class StreamPredictData {
+	public static class ImagePredict {
 
 		private String predictId;
 
@@ -93,11 +52,13 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 
 		private String dataUrl;
 
-		private Long timestamp;
-
 		private String predictTime;
 
 		private String status;
+
+		private String code;
+
+		private String message;
 
 		private String predictResult;
 
@@ -125,14 +86,6 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 			this.dataUrl = dataUrl;
 		}
 
-		public Long getTimestamp() {
-			return this.timestamp;
-		}
-
-		public void setTimestamp(Long timestamp) {
-			this.timestamp = timestamp;
-		}
-
 		public String getPredictTime() {
 			return this.predictTime;
 		}
@@ -149,6 +102,22 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 			this.status = status;
 		}
 
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
 		public String getPredictResult() {
 			return this.predictResult;
 		}
@@ -159,12 +128,7 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeStreamPredictResultResponse getInstance(UnmarshallerContext context) {
-		return	DescribeStreamPredictResultResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public ImagePredictResponse getInstance(UnmarshallerContext context) {
+		return	ImagePredictResponseUnmarshaller.unmarshall(this, context);
 	}
 }

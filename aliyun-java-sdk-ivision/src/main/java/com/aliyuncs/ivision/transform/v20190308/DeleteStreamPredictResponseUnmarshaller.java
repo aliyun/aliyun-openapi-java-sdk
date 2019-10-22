@@ -20,10 +20,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DeleteStreamPredictResponseUnmarshaller {
 
-	public static DeleteStreamPredictResponse unmarshall(DeleteStreamPredictResponse deleteStreamPredictResponse, UnmarshallerContext context) {
+	public static DeleteStreamPredictResponse unmarshall(DeleteStreamPredictResponse deleteStreamPredictResponse, UnmarshallerContext _ctx) {
 		
-		deleteStreamPredictResponse.setRequestId(context.stringValue("DeleteStreamPredictResponse.RequestId"));
-		deleteStreamPredictResponse.setPredictId(context.stringValue("DeleteStreamPredictResponse.PredictId"));
+		deleteStreamPredictResponse.setRequestId(_ctx.stringValue("DeleteStreamPredictResponse.RequestId"));
+		deleteStreamPredictResponse.setPredictId(_ctx.stringValue("DeleteStreamPredictResponse.PredictId"));
 	 
 	 	return deleteStreamPredictResponse;
 	}

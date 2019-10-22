@@ -22,29 +22,55 @@ import com.aliyuncs.ivision.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopStreamPredictRequest extends RpcAcsRequest<StopStreamPredictResponse> {
+public class RegisterFaceRequest extends RpcAcsRequest<RegisterFaceResponse> {
 	   
 
-	private String predictId;
+	private String content;
+
+	private String dataType;
+
+	private String groupId;
 
 	private Long ownerId;
-	public StopStreamPredictRequest() {
-		super("ivision", "2019-03-08", "StopStreamPredict", "ivision");
-		setMethod(MethodType.POST);
+	public RegisterFaceRequest() {
+		super("ivision", "2019-03-08", "RegisterFace", "ivision");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getPredictId() {
-		return this.predictId;
+	public String getContent() {
+		return this.content;
 	}
 
-	public void setPredictId(String predictId) {
-		this.predictId = predictId;
-		if(predictId != null){
-			putQueryParameter("PredictId", predictId);
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
+		}
+	}
+
+	public String getDataType() {
+		return this.dataType;
+	}
+
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+		if(dataType != null){
+			putQueryParameter("DataType", dataType);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 
@@ -60,8 +86,8 @@ public class StopStreamPredictRequest extends RpcAcsRequest<StopStreamPredictRes
 	}
 
 	@Override
-	public Class<StopStreamPredictResponse> getResponseClass() {
-		return StopStreamPredictResponse.class;
+	public Class<RegisterFaceResponse> getResponseClass() {
+		return RegisterFaceResponse.class;
 	}
 
 }

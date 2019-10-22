@@ -24,27 +24,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeStreamPredictsResponseUnmarshaller {
 
-	public static DescribeStreamPredictsResponse unmarshall(DescribeStreamPredictsResponse describeStreamPredictsResponse, UnmarshallerContext context) {
+	public static DescribeStreamPredictsResponse unmarshall(DescribeStreamPredictsResponse describeStreamPredictsResponse, UnmarshallerContext _ctx) {
 		
-		describeStreamPredictsResponse.setRequestId(context.stringValue("DescribeStreamPredictsResponse.RequestId"));
-		describeStreamPredictsResponse.setTotalNum(context.longValue("DescribeStreamPredictsResponse.TotalNum"));
-		describeStreamPredictsResponse.setCurrentPage(context.longValue("DescribeStreamPredictsResponse.CurrentPage"));
-		describeStreamPredictsResponse.setPageSize(context.longValue("DescribeStreamPredictsResponse.PageSize"));
-		describeStreamPredictsResponse.setNextPageToken(context.stringValue("DescribeStreamPredictsResponse.NextPageToken"));
+		describeStreamPredictsResponse.setRequestId(_ctx.stringValue("DescribeStreamPredictsResponse.RequestId"));
+		describeStreamPredictsResponse.setTotalNum(_ctx.longValue("DescribeStreamPredictsResponse.TotalNum"));
+		describeStreamPredictsResponse.setCurrentPage(_ctx.longValue("DescribeStreamPredictsResponse.CurrentPage"));
+		describeStreamPredictsResponse.setPageSize(_ctx.longValue("DescribeStreamPredictsResponse.PageSize"));
+		describeStreamPredictsResponse.setNextPageToken(_ctx.stringValue("DescribeStreamPredictsResponse.NextPageToken"));
 
 		List<StreamPredict> streamPredicts = new ArrayList<StreamPredict>();
-		for (int i = 0; i < context.lengthValue("DescribeStreamPredictsResponse.StreamPredicts.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeStreamPredictsResponse.StreamPredicts.Length"); i++) {
 			StreamPredict streamPredict = new StreamPredict();
-			streamPredict.setPredictId(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].PredictId"));
-			streamPredict.setStreamType(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].StreamType"));
-			streamPredict.setStreamId(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].StreamId"));
-			streamPredict.setModelIds(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].ModelIds"));
-			streamPredict.setProbabilityThresholds(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].ProbabilityThresholds"));
-			streamPredict.setOutput(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].Output"));
-			streamPredict.setNotify(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].Notify"));
-			streamPredict.setUserData(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].UserData"));
-			streamPredict.setCreationTime(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].CreationTime"));
-			streamPredict.setStatus(context.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].Status"));
+			streamPredict.setPredictId(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].PredictId"));
+			streamPredict.setStreamType(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].StreamType"));
+			streamPredict.setStreamId(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].StreamId"));
+			streamPredict.setModelIds(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].ModelIds"));
+			streamPredict.setProbabilityThresholds(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].ProbabilityThresholds"));
+			streamPredict.setDetectIntervals(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].DetectIntervals"));
+			streamPredict.setOutput(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].Output"));
+			streamPredict.setNotify(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].Notify"));
+			streamPredict.setUserData(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].UserData"));
+			streamPredict.setCreationTime(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].CreationTime"));
+			streamPredict.setStatus(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].Status"));
 
 			streamPredicts.add(streamPredict);
 		}

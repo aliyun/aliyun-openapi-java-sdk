@@ -22,29 +22,55 @@ import com.aliyuncs.ivision.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopStreamPredictRequest extends RpcAcsRequest<StopStreamPredictResponse> {
+public class DescribeFaceGroupsRequest extends RpcAcsRequest<DescribeFaceGroupsResponse> {
 	   
 
-	private String predictId;
+	private String nextPageToken;
+
+	private Long pageSize;
+
+	private Long currentPage;
 
 	private Long ownerId;
-	public StopStreamPredictRequest() {
-		super("ivision", "2019-03-08", "StopStreamPredict", "ivision");
-		setMethod(MethodType.POST);
+	public DescribeFaceGroupsRequest() {
+		super("ivision", "2019-03-08", "DescribeFaceGroups", "ivision");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getPredictId() {
-		return this.predictId;
+	public String getNextPageToken() {
+		return this.nextPageToken;
 	}
 
-	public void setPredictId(String predictId) {
-		this.predictId = predictId;
-		if(predictId != null){
-			putQueryParameter("PredictId", predictId);
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
+		if(nextPageToken != null){
+			putQueryParameter("NextPageToken", nextPageToken);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Long currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -60,8 +86,8 @@ public class StopStreamPredictRequest extends RpcAcsRequest<StopStreamPredictRes
 	}
 
 	@Override
-	public Class<StopStreamPredictResponse> getResponseClass() {
-		return StopStreamPredictResponse.class;
+	public Class<DescribeFaceGroupsResponse> getResponseClass() {
+		return DescribeFaceGroupsResponse.class;
 	}
 
 }

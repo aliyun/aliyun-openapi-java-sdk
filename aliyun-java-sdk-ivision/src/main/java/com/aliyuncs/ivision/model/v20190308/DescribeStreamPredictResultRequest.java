@@ -15,16 +15,15 @@
 package com.aliyuncs.ivision.model.v20190308;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ivision.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeStreamPredictResultRequest extends RpcAcsRequest<DescribeStreamPredictResultResponse> {
-	
-	public DescribeStreamPredictResultRequest() {
-		super("ivision", "2019-03-08", "DescribeStreamPredictResult", "ivision");
-	}
+	   
 
 	private String nextPageToken;
 
@@ -43,6 +42,14 @@ public class DescribeStreamPredictResultRequest extends RpcAcsRequest<DescribeSt
 	private Long currentPage;
 
 	private Long ownerId;
+	public DescribeStreamPredictResultRequest() {
+		super("ivision", "2019-03-08", "DescribeStreamPredictResult", "ivision");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNextPageToken() {
 		return this.nextPageToken;

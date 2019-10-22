@@ -97,6 +97,8 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 		private String probabilityThresholds;
 
+		private String detectIntervals;
+
 		private String output;
 
 		private String notify;
@@ -147,6 +149,14 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 			this.probabilityThresholds = probabilityThresholds;
 		}
 
+		public String getDetectIntervals() {
+			return this.detectIntervals;
+		}
+
+		public void setDetectIntervals(String detectIntervals) {
+			this.detectIntervals = detectIntervals;
+		}
+
 		public String getOutput() {
 			return this.output;
 		}
@@ -191,5 +201,10 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 	@Override
 	public DescribeStreamPredictsResponse getInstance(UnmarshallerContext context) {
 		return	DescribeStreamPredictsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

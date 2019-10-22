@@ -15,20 +15,27 @@
 package com.aliyuncs.ivision.model.v20190308;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ivision.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteStreamPredictRequest extends RpcAcsRequest<DeleteStreamPredictResponse> {
-	
-	public DeleteStreamPredictRequest() {
-		super("ivision", "2019-03-08", "DeleteStreamPredict", "ivision");
-	}
+	   
 
 	private String predictId;
 
 	private Long ownerId;
+	public DeleteStreamPredictRequest() {
+		super("ivision", "2019-03-08", "DeleteStreamPredict", "ivision");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getPredictId() {
 		return this.predictId;

@@ -22,30 +22,19 @@ import com.aliyuncs.ivision.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopStreamPredictRequest extends RpcAcsRequest<StopStreamPredictResponse> {
+public class CreateFaceGroupRequest extends RpcAcsRequest<CreateFaceGroupResponse> {
 	   
 
-	private String predictId;
-
 	private Long ownerId;
-	public StopStreamPredictRequest() {
-		super("ivision", "2019-03-08", "StopStreamPredict", "ivision");
-		setMethod(MethodType.POST);
+
+	private String name;
+	public CreateFaceGroupRequest() {
+		super("ivision", "2019-03-08", "CreateFaceGroup", "ivision");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getPredictId() {
-		return this.predictId;
-	}
-
-	public void setPredictId(String predictId) {
-		this.predictId = predictId;
-		if(predictId != null){
-			putQueryParameter("PredictId", predictId);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -59,9 +48,20 @@ public class StopStreamPredictRequest extends RpcAcsRequest<StopStreamPredictRes
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	@Override
-	public Class<StopStreamPredictResponse> getResponseClass() {
-		return StopStreamPredictResponse.class;
+	public Class<CreateFaceGroupResponse> getResponseClass() {
+		return CreateFaceGroupResponse.class;
 	}
 
 }

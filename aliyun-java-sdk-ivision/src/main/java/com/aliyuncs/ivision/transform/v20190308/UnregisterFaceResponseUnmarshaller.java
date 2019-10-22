@@ -14,17 +14,18 @@
 
 package com.aliyuncs.ivision.transform.v20190308;
 
-import com.aliyuncs.ivision.model.v20190308.StopStreamPredictResponse;
+import com.aliyuncs.ivision.model.v20190308.UnregisterFaceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StopStreamPredictResponseUnmarshaller {
+public class UnregisterFaceResponseUnmarshaller {
 
-	public static StopStreamPredictResponse unmarshall(StopStreamPredictResponse stopStreamPredictResponse, UnmarshallerContext _ctx) {
+	public static UnregisterFaceResponse unmarshall(UnregisterFaceResponse unregisterFaceResponse, UnmarshallerContext _ctx) {
 		
-		stopStreamPredictResponse.setRequestId(_ctx.stringValue("StopStreamPredictResponse.RequestId"));
-		stopStreamPredictResponse.setPredictId(_ctx.stringValue("StopStreamPredictResponse.PredictId"));
+		unregisterFaceResponse.setRequestId(_ctx.stringValue("UnregisterFaceResponse.RequestId"));
+		unregisterFaceResponse.setGroupId(_ctx.stringValue("UnregisterFaceResponse.GroupId"));
+		unregisterFaceResponse.setFaceToken(_ctx.stringValue("UnregisterFaceResponse.FaceToken"));
 	 
-	 	return stopStreamPredictResponse;
+	 	return unregisterFaceResponse;
 	}
 }
