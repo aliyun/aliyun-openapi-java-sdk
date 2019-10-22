@@ -15,30 +15,26 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetChangeSetRequest extends RpcAcsRequest<GetChangeSetResponse> {
-	
-	public GetChangeSetRequest() {
-		super("ROS", "2019-09-10", "GetChangeSet", "ROS");
-	}
-
-	private String changeSetId;
+	   
 
 	private Boolean showTemplate;
 
-	public String getChangeSetId() {
-		return this.changeSetId;
-	}
-
-	public void setChangeSetId(String changeSetId) {
-		this.changeSetId = changeSetId;
-		if(changeSetId != null){
-			putQueryParameter("ChangeSetId", changeSetId);
-		}
+	private String changeSetId;
+	public GetChangeSetRequest() {
+		super("ROS", "2019-09-10", "GetChangeSet");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Boolean getShowTemplate() {
@@ -49,6 +45,17 @@ public class GetChangeSetRequest extends RpcAcsRequest<GetChangeSetResponse> {
 		this.showTemplate = showTemplate;
 		if(showTemplate != null){
 			putQueryParameter("ShowTemplate", showTemplate.toString());
+		}
+	}
+
+	public String getChangeSetId() {
+		return this.changeSetId;
+	}
+
+	public void setChangeSetId(String changeSetId) {
+		this.changeSetId = changeSetId;
+		if(changeSetId != null){
+			putQueryParameter("ChangeSetId", changeSetId);
 		}
 	}
 

@@ -16,20 +16,27 @@ package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStackResponse> {
-	
-	public ContinueCreateStackRequest() {
-		super("ROS", "2019-09-10", "ContinueCreateStack", "ROS");
-	}
+	   
 
 	private String stackId;
 
 	private List<String> recreatingResourcess;
+	public ContinueCreateStackRequest() {
+		super("ROS", "2019-09-10", "ContinueCreateStack");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStackId() {
 		return this.stackId;

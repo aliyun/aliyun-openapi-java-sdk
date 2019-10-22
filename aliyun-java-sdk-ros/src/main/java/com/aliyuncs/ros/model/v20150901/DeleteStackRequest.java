@@ -16,22 +16,27 @@ package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteStackRequest extends RoaAcsRequest<DeleteStackResponse> {
-	
-	public DeleteStackRequest() {
-		super("ROS", "2015-09-01", "DeleteStack", "ROS");
-		setUriPattern("/stacks/[StackName]/[StackId]");
-		setMethod(MethodType.DELETE);
-	}
+	   
 
 	private String stackId;
 
 	private String stackName;
+	public DeleteStackRequest() {
+		super("ROS", "2015-09-01", "DeleteStack");
+		setUriPattern("/stacks/[StackName]/[StackId]");
+		setMethod(MethodType.DELETE);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStackId() {
 		return this.stackId;

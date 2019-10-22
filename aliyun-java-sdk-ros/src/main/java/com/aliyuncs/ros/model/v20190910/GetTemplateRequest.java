@@ -15,20 +15,29 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
-	
-	public GetTemplateRequest() {
-		super("ROS", "2019-09-10", "GetTemplate", "ROS");
-	}
+	   
 
 	private String stackId;
 
+	private String templateId;
+
 	private String changeSetId;
+	public GetTemplateRequest() {
+		super("ROS", "2019-09-10", "GetTemplate");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStackId() {
 		return this.stackId;
@@ -38,6 +47,17 @@ public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 

@@ -22,12 +22,16 @@ import com.aliyuncs.ros.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetResourceTypeTemplateRequest extends RpcAcsRequest<GetResourceTypeTemplateResponse> {
+public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 	   
 
-	private String resourceType;
-	public GetResourceTypeTemplateRequest() {
-		super("ROS", "2019-09-10", "GetResourceTypeTemplate");
+	private Long pageNumber;
+
+	private Long pageSize;
+
+	private String templateName;
+	public ListTemplatesRequest() {
+		super("ROS", "2019-09-10", "ListTemplates");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class GetResourceTypeTemplateRequest extends RpcAcsRequest<GetResourceTyp
 		} catch (Exception e) {}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
+	public Long getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putQueryParameter("TemplateName", templateName);
 		}
 	}
 
 	@Override
-	public Class<GetResourceTypeTemplateResponse> getResponseClass() {
-		return GetResourceTypeTemplateResponse.class;
+	public Class<ListTemplatesResponse> getResponseClass() {
+		return ListTemplatesResponse.class;
 	}
 
 }

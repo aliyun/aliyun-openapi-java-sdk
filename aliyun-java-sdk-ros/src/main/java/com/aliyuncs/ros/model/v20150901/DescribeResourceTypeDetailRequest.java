@@ -16,20 +16,25 @@ package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeResourceTypeDetailRequest extends RoaAcsRequest<DescribeResourceTypeDetailResponse> {
-	
-	public DescribeResourceTypeDetailRequest() {
-		super("ROS", "2015-09-01", "DescribeResourceTypeDetail", "ROS");
-		setUriPattern("/resource_types/[TypeName]");
-		setMethod(MethodType.GET);
-	}
+	   
 
 	private String typeName;
+	public DescribeResourceTypeDetailRequest() {
+		super("ROS", "2015-09-01", "DescribeResourceTypeDetail");
+		setUriPattern("/resource_types/[TypeName]");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTypeName() {
 		return this.typeName;

@@ -15,16 +15,15 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SignalResourceRequest extends RpcAcsRequest<SignalResourceResponse> {
-	
-	public SignalResourceRequest() {
-		super("ROS", "2019-09-10", "SignalResource", "ROS");
-	}
+	   
 
 	private String clientToken;
 
@@ -35,6 +34,14 @@ public class SignalResourceRequest extends RpcAcsRequest<SignalResourceResponse>
 	private String uniqueId;
 
 	private String status;
+	public SignalResourceRequest() {
+		super("ROS", "2019-09-10", "SignalResource");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;

@@ -16,24 +16,29 @@ package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ExecuteChangeSetRequest extends RoaAcsRequest<ExecuteChangeSetResponse> {
-	
-	public ExecuteChangeSetRequest() {
-		super("ROS", "2015-09-01", "ExecuteChangeSet", "ROS");
-		setUriPattern("/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]/execute");
-		setMethod(MethodType.PUT);
-	}
+	   
 
 	private String changeSetName;
 
 	private String stackId;
 
 	private String stackName;
+	public ExecuteChangeSetRequest() {
+		super("ROS", "2015-09-01", "ExecuteChangeSet");
+		setUriPattern("/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]/execute");
+		setMethod(MethodType.PUT);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getChangeSetName() {
 		return this.changeSetName;

@@ -16,38 +16,34 @@ package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
-	
-	public ListStacksRequest() {
-		super("ROS", "2019-09-10", "ListStacks", "ROS");
-	}
-
-	private String parentStackId;
+	   
 
 	private Boolean showNestedStack;
+
+	private Long pageNumber;
 
 	private Long pageSize;
 
 	private List<String> stackNames;
 
-	private Long pageNumber;
+	private String parentStackId;
 
 	private List<String> statuss;
-
-	public String getParentStackId() {
-		return this.parentStackId;
-	}
-
-	public void setParentStackId(String parentStackId) {
-		this.parentStackId = parentStackId;
-		if(parentStackId != null){
-			putQueryParameter("ParentStackId", parentStackId);
-		}
+	public ListStacksRequest() {
+		super("ROS", "2019-09-10", "ListStacks");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Boolean getShowNestedStack() {
@@ -58,6 +54,17 @@ public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
 		this.showNestedStack = showNestedStack;
 		if(showNestedStack != null){
 			putQueryParameter("ShowNestedStack", showNestedStack.toString());
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -85,14 +92,14 @@ public class ListStacksRequest extends RpcAcsRequest<ListStacksResponse> {
 		}	
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public String getParentStackId() {
+		return this.parentStackId;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setParentStackId(String parentStackId) {
+		this.parentStackId = parentStackId;
+		if(parentStackId != null){
+			putQueryParameter("ParentStackId", parentStackId);
 		}
 	}
 

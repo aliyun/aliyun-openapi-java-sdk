@@ -22,14 +22,18 @@ import com.aliyuncs.ros.Endpoint;
  * @author auto create
  * @version 
  */
-public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateResponse> {
+public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse> {
 	   
 
 	private String templateBody;
 
+	private String description;
+
 	private String templateURL;
-	public ValidateTemplateRequest() {
-		super("ROS", "2019-09-10", "ValidateTemplate");
+
+	private String templateName;
+	public CreateTemplateRequest() {
+		super("ROS", "2019-09-10", "CreateTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +52,17 @@ public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateRespo
 		}
 	}
 
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
 	public String getTemplateURL() {
 		return this.templateURL;
 	}
@@ -59,9 +74,20 @@ public class ValidateTemplateRequest extends RpcAcsRequest<ValidateTemplateRespo
 		}
 	}
 
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putQueryParameter("TemplateName", templateName);
+		}
+	}
+
 	@Override
-	public Class<ValidateTemplateResponse> getResponseClass() {
-		return ValidateTemplateResponse.class;
+	public Class<CreateTemplateResponse> getResponseClass() {
+		return CreateTemplateResponse.class;
 	}
 
 }

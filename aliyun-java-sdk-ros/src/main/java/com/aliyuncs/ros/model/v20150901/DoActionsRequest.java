@@ -16,22 +16,27 @@ package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DoActionsRequest extends RoaAcsRequest<DoActionsResponse> {
-	
-	public DoActionsRequest() {
-		super("ROS", "2015-09-01", "DoActions", "ROS");
-		setUriPattern("/stacks/[StackName]/[StackId]/actions");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String stackId;
 
 	private String stackName;
+	public DoActionsRequest() {
+		super("ROS", "2015-09-01", "DoActions");
+		setUriPattern("/stacks/[StackName]/[StackId]/actions");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStackId() {
 		return this.stackId;

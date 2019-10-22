@@ -16,22 +16,27 @@ package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DescribeTemplateRequest extends RoaAcsRequest<DescribeTemplateResponse> {
-	
-	public DescribeTemplateRequest() {
-		super("ROS", "2015-09-01", "DescribeTemplate", "ROS");
-		setUriPattern("/stacks/[StackName]/[StackId]/template");
-		setMethod(MethodType.GET);
-	}
+	   
 
 	private String stackId;
 
 	private String stackName;
+	public DescribeTemplateRequest() {
+		super("ROS", "2015-09-01", "DescribeTemplate");
+		setUriPattern("/stacks/[StackName]/[StackId]/template");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStackId() {
 		return this.stackId;

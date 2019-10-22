@@ -16,44 +16,40 @@ package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class PreviewStackRequest extends RpcAcsRequest<PreviewStackResponse> {
-	
-	public PreviewStackRequest() {
-		super("ROS", "2019-09-10", "PreviewStack", "ROS");
-	}
-
-	private String stackPolicyURL;
+	   
 
 	private String clientToken;
 
 	private String templateBody;
 
-	private Boolean disableRollback;
-
-	private String stackName;
-
-	private List<Parameters> parameterss;
-
-	private String stackPolicyBody;
-
 	private Long timeoutInMinutes;
 
 	private String templateURL;
 
-	public String getStackPolicyURL() {
-		return this.stackPolicyURL;
-	}
+	private String stackName;
 
-	public void setStackPolicyURL(String stackPolicyURL) {
-		this.stackPolicyURL = stackPolicyURL;
-		if(stackPolicyURL != null){
-			putQueryParameter("StackPolicyURL", stackPolicyURL);
-		}
+	private String stackPolicyBody;
+
+	private Boolean disableRollback;
+
+	private String stackPolicyURL;
+
+	private List<Parameters> parameterss;
+	public PreviewStackRequest() {
+		super("ROS", "2019-09-10", "PreviewStack");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientToken() {
@@ -78,53 +74,6 @@ public class PreviewStackRequest extends RpcAcsRequest<PreviewStackResponse> {
 		}
 	}
 
-	public Boolean getDisableRollback() {
-		return this.disableRollback;
-	}
-
-	public void setDisableRollback(Boolean disableRollback) {
-		this.disableRollback = disableRollback;
-		if(disableRollback != null){
-			putQueryParameter("DisableRollback", disableRollback.toString());
-		}
-	}
-
-	public String getStackName() {
-		return this.stackName;
-	}
-
-	public void setStackName(String stackName) {
-		this.stackName = stackName;
-		if(stackName != null){
-			putQueryParameter("StackName", stackName);
-		}
-	}
-
-	public List<Parameters> getParameterss() {
-		return this.parameterss;
-	}
-
-	public void setParameterss(List<Parameters> parameterss) {
-		this.parameterss = parameterss;	
-		if (parameterss != null) {
-			for (int depth1 = 0; depth1 < parameterss.size(); depth1++) {
-				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterValue" , parameterss.get(depth1).getParameterValue());
-				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterKey" , parameterss.get(depth1).getParameterKey());
-			}
-		}	
-	}
-
-	public String getStackPolicyBody() {
-		return this.stackPolicyBody;
-	}
-
-	public void setStackPolicyBody(String stackPolicyBody) {
-		this.stackPolicyBody = stackPolicyBody;
-		if(stackPolicyBody != null){
-			putQueryParameter("StackPolicyBody", stackPolicyBody);
-		}
-	}
-
 	public Long getTimeoutInMinutes() {
 		return this.timeoutInMinutes;
 	}
@@ -145,6 +94,64 @@ public class PreviewStackRequest extends RpcAcsRequest<PreviewStackResponse> {
 		if(templateURL != null){
 			putQueryParameter("TemplateURL", templateURL);
 		}
+	}
+
+	public String getStackName() {
+		return this.stackName;
+	}
+
+	public void setStackName(String stackName) {
+		this.stackName = stackName;
+		if(stackName != null){
+			putQueryParameter("StackName", stackName);
+		}
+	}
+
+	public String getStackPolicyBody() {
+		return this.stackPolicyBody;
+	}
+
+	public void setStackPolicyBody(String stackPolicyBody) {
+		this.stackPolicyBody = stackPolicyBody;
+		if(stackPolicyBody != null){
+			putQueryParameter("StackPolicyBody", stackPolicyBody);
+		}
+	}
+
+	public Boolean getDisableRollback() {
+		return this.disableRollback;
+	}
+
+	public void setDisableRollback(Boolean disableRollback) {
+		this.disableRollback = disableRollback;
+		if(disableRollback != null){
+			putQueryParameter("DisableRollback", disableRollback.toString());
+		}
+	}
+
+	public String getStackPolicyURL() {
+		return this.stackPolicyURL;
+	}
+
+	public void setStackPolicyURL(String stackPolicyURL) {
+		this.stackPolicyURL = stackPolicyURL;
+		if(stackPolicyURL != null){
+			putQueryParameter("StackPolicyURL", stackPolicyURL);
+		}
+	}
+
+	public List<Parameters> getParameterss() {
+		return this.parameterss;
+	}
+
+	public void setParameterss(List<Parameters> parameterss) {
+		this.parameterss = parameterss;	
+		if (parameterss != null) {
+			for (int depth1 = 0; depth1 < parameterss.size(); depth1++) {
+				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterValue" , parameterss.get(depth1).getParameterValue());
+				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterKey" , parameterss.get(depth1).getParameterKey());
+			}
+		}	
 	}
 
 	public static class Parameters {

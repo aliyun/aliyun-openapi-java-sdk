@@ -15,30 +15,26 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
-	
-	public DeleteStackRequest() {
-		super("ROS", "2019-09-10", "DeleteStack", "ROS");
-	}
-
-	private Boolean retainAllResources;
+	   
 
 	private String stackId;
 
-	public Boolean getRetainAllResources() {
-		return this.retainAllResources;
-	}
-
-	public void setRetainAllResources(Boolean retainAllResources) {
-		this.retainAllResources = retainAllResources;
-		if(retainAllResources != null){
-			putQueryParameter("RetainAllResources", retainAllResources.toString());
-		}
+	private Boolean retainAllResources;
+	public DeleteStackRequest() {
+		super("ROS", "2019-09-10", "DeleteStack");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getStackId() {
@@ -49,6 +45,17 @@ public class DeleteStackRequest extends RpcAcsRequest<DeleteStackResponse> {
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public Boolean getRetainAllResources() {
+		return this.retainAllResources;
+	}
+
+	public void setRetainAllResources(Boolean retainAllResources) {
+		this.retainAllResources = retainAllResources;
+		if(retainAllResources != null){
+			putQueryParameter("RetainAllResources", retainAllResources.toString());
 		}
 	}
 

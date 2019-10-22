@@ -22,12 +22,12 @@ import com.aliyuncs.ros.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetResourceTypeTemplateRequest extends RpcAcsRequest<GetResourceTypeTemplateResponse> {
+public class DeleteTemplateRequest extends RpcAcsRequest<DeleteTemplateResponse> {
 	   
 
-	private String resourceType;
-	public GetResourceTypeTemplateRequest() {
-		super("ROS", "2019-09-10", "GetResourceTypeTemplate");
+	private String templateId;
+	public DeleteTemplateRequest() {
+		super("ROS", "2019-09-10", "DeleteTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class GetResourceTypeTemplateRequest extends RpcAcsRequest<GetResourceTyp
 		} catch (Exception e) {}
 	}
 
-	public String getResourceType() {
-		return this.resourceType;
+	public String getTemplateId() {
+		return this.templateId;
 	}
 
-	public void setResourceType(String resourceType) {
-		this.resourceType = resourceType;
-		if(resourceType != null){
-			putQueryParameter("ResourceType", resourceType);
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 
 	@Override
-	public Class<GetResourceTypeTemplateResponse> getResponseClass() {
-		return GetResourceTypeTemplateResponse.class;
+	public Class<DeleteTemplateResponse> getResponseClass() {
+		return DeleteTemplateResponse.class;
 	}
 
 }

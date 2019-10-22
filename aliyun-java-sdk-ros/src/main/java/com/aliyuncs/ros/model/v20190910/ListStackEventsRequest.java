@@ -16,18 +16,19 @@ package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListStackEventsRequest extends RpcAcsRequest<ListStackEventsResponse> {
-	
-	public ListStackEventsRequest() {
-		super("ROS", "2019-09-10", "ListStackEvents", "ROS");
-	}
+	   
 
 	private String stackId;
+
+	private Long pageNumber;
 
 	private Long pageSize;
 
@@ -35,9 +36,15 @@ public class ListStackEventsRequest extends RpcAcsRequest<ListStackEventsRespons
 
 	private List<String> resourceTypes;
 
-	private Long pageNumber;
-
 	private List<String> statuss;
+	public ListStackEventsRequest() {
+		super("ROS", "2019-09-10", "ListStackEvents");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStackId() {
 		return this.stackId;
@@ -47,6 +54,17 @@ public class ListStackEventsRequest extends RpcAcsRequest<ListStackEventsRespons
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -85,17 +103,6 @@ public class ListStackEventsRequest extends RpcAcsRequest<ListStackEventsRespons
 				putQueryParameter("ResourceType." + (i + 1) , resourceTypes.get(i));
 			}
 		}	
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public List<String> getStatuss() {

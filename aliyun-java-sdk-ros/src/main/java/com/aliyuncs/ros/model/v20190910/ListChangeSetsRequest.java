@@ -16,28 +16,68 @@ package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListChangeSetsRequest extends RpcAcsRequest<ListChangeSetsResponse> {
-	
-	public ListChangeSetsRequest() {
-		super("ROS", "2019-09-10", "ListChangeSets", "ROS");
-	}
+	   
+
+	private String stackId;
+
+	private Long pageNumber;
+
+	private Long pageSize;
 
 	private List<String> executionStatuss;
 
 	private List<String> changeSetNames;
 
-	private String stackId;
-
-	private Long pageSize;
-
-	private Long pageNumber;
-
 	private List<String> statuss;
+	public ListChangeSetsRequest() {
+		super("ROS", "2019-09-10", "ListChangeSets");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getStackId() {
+		return this.stackId;
+	}
+
+	public void setStackId(String stackId) {
+		this.stackId = stackId;
+		if(stackId != null){
+			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
 
 	public List<String> getExecutionStatuss() {
 		return this.executionStatuss;
@@ -63,39 +103,6 @@ public class ListChangeSetsRequest extends RpcAcsRequest<ListChangeSetsResponse>
 				putQueryParameter("ChangeSetName." + (i + 1) , changeSetNames.get(i));
 			}
 		}	
-	}
-
-	public String getStackId() {
-		return this.stackId;
-	}
-
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
-		if(stackId != null){
-			putQueryParameter("StackId", stackId);
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public List<String> getStatuss() {

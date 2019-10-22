@@ -16,18 +16,14 @@ package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class WaitConditionsRequest extends RoaAcsRequest<WaitConditionsResponse> {
-	
-	public WaitConditionsRequest() {
-		super("ROS", "2015-09-01", "WaitConditions", "ROS");
-		setUriPattern("/waitcondition");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String resource;
 
@@ -38,6 +34,15 @@ public class WaitConditionsRequest extends RoaAcsRequest<WaitConditionsResponse>
 	private String expire;
 
 	private String stackname;
+	public WaitConditionsRequest() {
+		super("ROS", "2015-09-01", "WaitConditions");
+		setUriPattern("/waitcondition");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getResource() {
 		return this.resource;

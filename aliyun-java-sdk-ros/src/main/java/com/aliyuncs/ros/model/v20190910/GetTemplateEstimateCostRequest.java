@@ -16,24 +16,31 @@ package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEstimateCostResponse> {
-	
-	public GetTemplateEstimateCostRequest() {
-		super("ROS", "2019-09-10", "GetTemplateEstimateCost", "ROS");
-	}
+	   
 
 	private String clientToken;
 
 	private String templateBody;
 
-	private List<Parameters> parameterss;
-
 	private String templateURL;
+
+	private List<Parameters> parameterss;
+	public GetTemplateEstimateCostRequest() {
+		super("ROS", "2019-09-10", "GetTemplateEstimateCost");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getClientToken() {
 		return this.clientToken;
@@ -57,6 +64,17 @@ public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEst
 		}
 	}
 
+	public String getTemplateURL() {
+		return this.templateURL;
+	}
+
+	public void setTemplateURL(String templateURL) {
+		this.templateURL = templateURL;
+		if(templateURL != null){
+			putQueryParameter("TemplateURL", templateURL);
+		}
+	}
+
 	public List<Parameters> getParameterss() {
 		return this.parameterss;
 	}
@@ -69,17 +87,6 @@ public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEst
 				putQueryParameter("Parameters." + (depth1 + 1) + ".ParameterKey" , parameterss.get(depth1).getParameterKey());
 			}
 		}	
-	}
-
-	public String getTemplateURL() {
-		return this.templateURL;
-	}
-
-	public void setTemplateURL(String templateURL) {
-		this.templateURL = templateURL;
-		if(templateURL != null){
-			putQueryParameter("TemplateURL", templateURL);
-		}
 	}
 
 	public static class Parameters {

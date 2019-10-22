@@ -15,32 +15,28 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SetStackPolicyRequest extends RpcAcsRequest<SetStackPolicyResponse> {
-	
-	public SetStackPolicyRequest() {
-		super("ROS", "2019-09-10", "SetStackPolicy", "ROS");
-	}
-
-	private String stackPolicyURL;
+	   
 
 	private String stackId;
 
 	private String stackPolicyBody;
 
-	public String getStackPolicyURL() {
-		return this.stackPolicyURL;
-	}
-
-	public void setStackPolicyURL(String stackPolicyURL) {
-		this.stackPolicyURL = stackPolicyURL;
-		if(stackPolicyURL != null){
-			putQueryParameter("StackPolicyURL", stackPolicyURL);
-		}
+	private String stackPolicyURL;
+	public SetStackPolicyRequest() {
+		super("ROS", "2019-09-10", "SetStackPolicy");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getStackId() {
@@ -62,6 +58,17 @@ public class SetStackPolicyRequest extends RpcAcsRequest<SetStackPolicyResponse>
 		this.stackPolicyBody = stackPolicyBody;
 		if(stackPolicyBody != null){
 			putQueryParameter("StackPolicyBody", stackPolicyBody);
+		}
+	}
+
+	public String getStackPolicyURL() {
+		return this.stackPolicyURL;
+	}
+
+	public void setStackPolicyURL(String stackPolicyURL) {
+		this.stackPolicyURL = stackPolicyURL;
+		if(stackPolicyURL != null){
+			putQueryParameter("StackPolicyURL", stackPolicyURL);
 		}
 	}
 

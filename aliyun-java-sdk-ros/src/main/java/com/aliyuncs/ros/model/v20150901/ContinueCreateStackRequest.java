@@ -16,22 +16,27 @@ package com.aliyuncs.ros.model.v20150901;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.ros.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ContinueCreateStackRequest extends RoaAcsRequest<ContinueCreateStackResponse> {
-	
-	public ContinueCreateStackRequest() {
-		super("ROS", "2015-09-01", "ContinueCreateStack", "ROS");
-		setUriPattern("/stacks/[StackName]/[StackId]/continue");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String stackId;
 
 	private String stackName;
+	public ContinueCreateStackRequest() {
+		super("ROS", "2015-09-01", "ContinueCreateStack");
+		setUriPattern("/stacks/[StackName]/[StackId]/continue");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getStackId() {
 		return this.stackId;
