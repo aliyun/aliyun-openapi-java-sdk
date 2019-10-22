@@ -31,12 +31,6 @@ public class ListIndexesResponseUnmarshaller {
 		listIndexesResponse.setErrorMessage(_ctx.stringValue("ListIndexesResponse.ErrorMessage"));
 		listIndexesResponse.setErrorCode(_ctx.stringValue("ListIndexesResponse.ErrorCode"));
 
-		List<String> columnList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("ListIndexesResponse.ColumnList.Length"); i++) {
-			columnList.add(_ctx.stringValue("ListIndexesResponse.ColumnList["+ i +"]"));
-		}
-		listIndexesResponse.setColumnList(columnList);
-
 		List<Index> indexList = new ArrayList<Index>();
 		for (int i = 0; i < _ctx.lengthValue("ListIndexesResponse.IndexList.Length"); i++) {
 			Index index = new Index();

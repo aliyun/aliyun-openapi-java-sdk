@@ -39,7 +39,7 @@ public class ListDatabasesResponseUnmarshaller {
 			database.setDatabaseId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DatabaseId"));
 			database.setEnvType(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].EnvType"));
 			database.setSchemaName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].SchemaName"));
-			database.setCatalogName(_ctx.integerValue("ListDatabasesResponse.DatabaseList["+ i +"].CatalogName"));
+			database.setCatalogName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].CatalogName"));
 			database.setEncoding(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Encoding"));
 			database.setSearchName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].SearchName"));
 			database.setState(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].State"));

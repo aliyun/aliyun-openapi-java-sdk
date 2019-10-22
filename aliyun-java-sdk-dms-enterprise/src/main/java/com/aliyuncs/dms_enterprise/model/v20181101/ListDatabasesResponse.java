@@ -95,7 +95,7 @@ public class ListDatabasesResponse extends AcsResponse {
 
 		private String schemaName;
 
-		private Integer catalogName;
+		private String catalogName;
 
 		private String encoding;
 
@@ -151,11 +151,11 @@ public class ListDatabasesResponse extends AcsResponse {
 			this.schemaName = schemaName;
 		}
 
-		public Integer getCatalogName() {
+		public String getCatalogName() {
 			return this.catalogName;
 		}
 
-		public void setCatalogName(Integer catalogName) {
+		public void setCatalogName(String catalogName) {
 			this.catalogName = catalogName;
 		}
 

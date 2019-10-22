@@ -30,7 +30,6 @@ public class GetLogicDatabaseResponseUnmarshaller {
 		getLogicDatabaseResponse.setSuccess(_ctx.booleanValue("GetLogicDatabaseResponse.Success"));
 		getLogicDatabaseResponse.setErrorMessage(_ctx.stringValue("GetLogicDatabaseResponse.ErrorMessage"));
 		getLogicDatabaseResponse.setErrorCode(_ctx.stringValue("GetLogicDatabaseResponse.ErrorCode"));
-		getLogicDatabaseResponse.setTotalCount(_ctx.longValue("GetLogicDatabaseResponse.TotalCount"));
 
 		LogicDatabase logicDatabase = new LogicDatabase();
 		logicDatabase.setLogic(_ctx.booleanValue("GetLogicDatabaseResponse.LogicDatabase.Logic"));

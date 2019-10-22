@@ -33,8 +33,6 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 	private String errorCode;
 
-	private Long totalCount;
-
 	private LogicDatabase logicDatabase;
 
 	public String getRequestId() {
@@ -67,14 +65,6 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public LogicDatabase getLogicDatabase() {

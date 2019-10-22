@@ -35,8 +35,6 @@ public class ListIndexesResponse extends AcsResponse {
 
 	private List<Index> indexList;
 
-	private List<String> columnList;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -75,14 +73,6 @@ public class ListIndexesResponse extends AcsResponse {
 
 	public void setIndexList(List<Index> indexList) {
 		this.indexList = indexList;
-	}
-
-	public List<String> getColumnList() {
-		return this.columnList;
-	}
-
-	public void setColumnList(List<String> columnList) {
-		this.columnList = columnList;
 	}
 
 	public static class Index {

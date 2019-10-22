@@ -25,6 +25,8 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class SearchTableRequest extends RpcAcsRequest<SearchTableResponse> {
 	   
 
+	private String searchTarget;
+
 	private Integer pageSize;
 
 	private String envType;
@@ -43,6 +45,17 @@ public class SearchTableRequest extends RpcAcsRequest<SearchTableResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSearchTarget() {
+		return this.searchTarget;
+	}
+
+	public void setSearchTarget(String searchTarget) {
+		this.searchTarget = searchTarget;
+		if(searchTarget != null){
+			putQueryParameter("SearchTarget", searchTarget);
+		}
 	}
 
 	public Integer getPageSize() {
