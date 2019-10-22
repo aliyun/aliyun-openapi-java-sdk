@@ -21,16 +21,14 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteTagByUrlRequest extends RpcAcsRequest<DeleteTagByUrlResponse> {
+public class DetectImageQRCodesRequest extends RpcAcsRequest<DetectImageQRCodesResponse> {
 	   
 
 	private String project;
 
-	private String setId;
-
-	private String srcUri;
-	public DeleteTagByUrlRequest() {
-		super("imm", "2017-09-06", "DeleteTagByUrl", "imm");
+	private String imageUri;
+	public DetectImageQRCodesRequest() {
+		super("imm", "2017-09-06", "DetectImageQRCodes", "imm");
 		setMethod(MethodType.POST);
 	}
 
@@ -45,31 +43,20 @@ public class DeleteTagByUrlRequest extends RpcAcsRequest<DeleteTagByUrlResponse>
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
+	public String getImageUri() {
+		return this.imageUri;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
-		}
-	}
-
-	public String getSrcUri() {
-		return this.srcUri;
-	}
-
-	public void setSrcUri(String srcUri) {
-		this.srcUri = srcUri;
-		if(srcUri != null){
-			putQueryParameter("SrcUri", srcUri);
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
+		if(imageUri != null){
+			putQueryParameter("ImageUri", imageUri);
 		}
 	}
 
 	@Override
-	public Class<DeleteTagByUrlResponse> getResponseClass() {
-		return DeleteTagByUrlResponse.class;
+	public Class<DetectImageQRCodesResponse> getResponseClass() {
+		return DetectImageQRCodesResponse.class;
 	}
 
 }

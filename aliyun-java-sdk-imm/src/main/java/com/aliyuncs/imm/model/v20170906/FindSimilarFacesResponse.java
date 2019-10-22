@@ -53,6 +53,8 @@ public class FindSimilarFacesResponse extends AcsResponse {
 
 		private Float similarity;
 
+		private String externalId;
+
 		private List<SimilarFacesItem> similarFaces;
 
 		private FaceAttributes faceAttributes;
@@ -81,6 +83,14 @@ public class FindSimilarFacesResponse extends AcsResponse {
 			this.similarity = similarity;
 		}
 
+		public String getExternalId() {
+			return this.externalId;
+		}
+
+		public void setExternalId(String externalId) {
+			this.externalId = externalId;
+		}
+
 		public List<SimilarFacesItem> getSimilarFaces() {
 			return this.similarFaces;
 		}
@@ -104,6 +114,8 @@ public class FindSimilarFacesResponse extends AcsResponse {
 			private String imageUri;
 
 			private Float similarity;
+
+			private String externalId;
 
 			private FaceAttributes1 faceAttributes1;
 
@@ -129,6 +141,14 @@ public class FindSimilarFacesResponse extends AcsResponse {
 
 			public void setSimilarity(Float similarity) {
 				this.similarity = similarity;
+			}
+
+			public String getExternalId() {
+				return this.externalId;
+			}
+
+			public void setExternalId(String externalId) {
+				this.externalId = externalId;
 			}
 
 			public FaceAttributes1 getFaceAttributes1() {

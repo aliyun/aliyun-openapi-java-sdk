@@ -39,6 +39,7 @@ public class FindSimilarFacesResponseUnmarshaller {
 			facesItem.setFaceId(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].FaceId"));
 			facesItem.setImageUri(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].ImageUri"));
 			facesItem.setSimilarity(_ctx.floatValue("FindSimilarFacesResponse.Faces["+ i +"].Similarity"));
+			facesItem.setExternalId(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].ExternalId"));
 
 			FaceAttributes faceAttributes = new FaceAttributes();
 
@@ -56,6 +57,7 @@ public class FindSimilarFacesResponseUnmarshaller {
 				similarFacesItem.setFaceId(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].FaceId"));
 				similarFacesItem.setImageUri(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].ImageUri"));
 				similarFacesItem.setSimilarity(_ctx.floatValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].Similarity"));
+				similarFacesItem.setExternalId(_ctx.stringValue("FindSimilarFacesResponse.Faces["+ i +"].SimilarFaces["+ j +"].ExternalId"));
 
 				FaceAttributes1 faceAttributes1 = new FaceAttributes1();
 

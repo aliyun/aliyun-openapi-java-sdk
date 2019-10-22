@@ -1,3 +1,6 @@
+2019-10-22 Version: 1.15.1
+- Supported ExternalId IMM.
+
 2019-10-08 Version: 1.15.0
 - Supported Grab Frame IMM.
 
