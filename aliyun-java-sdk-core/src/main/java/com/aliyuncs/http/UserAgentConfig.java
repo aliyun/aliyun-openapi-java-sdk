@@ -13,15 +13,18 @@ import com.aliyuncs.utils.StringUtils;
 public class UserAgentConfig {
 
     static {
-        Properties props = System.getProperties();
+        Properties sysProps = System.getProperties();
+        String coreVersion = "";
+        Properties props = new Properties();
         try {
             props.load(UserAgentConfig.class.getClassLoader().getResourceAsStream("project.properties"));
+            coreVersion = props.getProperty("sdk.project.version");
         } catch (IOException e) {
-            props.setProperty("sdk.project.version", "(got version failed)");
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
-        DEFAULT_MESSAGE = String.format("AlibabaCloud (%s; %s) Java/%s %s/%s", props.getProperty("os.name"), props
-                .getProperty("os.arch"), props.getProperty("java.runtime.version"), "Core", props.getProperty(
-                        "sdk.project.version"));
+        DEFAULT_MESSAGE = String.format("AlibabaCloud (%s; %s) Java/%s %s/%s", sysProps.getProperty("os.name"), sysProps
+                .getProperty("os.arch"), sysProps.getProperty("java.runtime.version"), "Core", coreVersion);
     }
 
     private static String DEFAULT_MESSAGE;
