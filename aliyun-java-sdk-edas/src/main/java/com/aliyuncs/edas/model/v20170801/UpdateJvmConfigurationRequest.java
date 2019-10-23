@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateJvmConfigurationRequest extends RoaAcsRequest<UpdateJvmConfigurationResponse> {
-	
-	public UpdateJvmConfigurationRequest() {
-		super("Edas", "2017-08-01", "UpdateJvmConfiguration", "edas");
-		setUriPattern("/pop/v5/app/app_jvm_config");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer minHeapSize;
 
@@ -45,6 +36,15 @@ public class UpdateJvmConfigurationRequest extends RoaAcsRequest<UpdateJvmConfig
 	private Integer maxPermSize;
 
 	private Integer maxHeapSize;
+	public UpdateJvmConfigurationRequest() {
+		super("Edas", "2017-08-01", "UpdateJvmConfiguration", "edas");
+		setUriPattern("/pop/v5/app/app_jvm_config");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getMinHeapSize() {
 		return this.minHeapSize;

@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InsertClusterMemberRequest extends RoaAcsRequest<InsertClusterMemberResponse> {
-	
+	   
+
+	private String password;
+
+	private String instanceIds;
+
+	private String clusterId;
 	public InsertClusterMemberRequest() {
 		super("Edas", "2017-08-01", "InsertClusterMember", "edas");
 		setUriPattern("/pop/v5/resource/cluster_member");
@@ -33,12 +39,6 @@ public class InsertClusterMemberRequest extends RoaAcsRequest<InsertClusterMembe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String password;
-
-	private String instanceIds;
-
-	private String clusterId;
 
 	public String getPassword() {
 		return this.password;

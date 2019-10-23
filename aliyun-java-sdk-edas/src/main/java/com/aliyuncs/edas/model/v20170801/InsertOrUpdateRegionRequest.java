@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InsertOrUpdateRegionRequest extends RoaAcsRequest<InsertOrUpdateRegionResponse> {
-	
-	public InsertOrUpdateRegionRequest() {
-		super("Edas", "2017-08-01", "InsertOrUpdateRegion", "edas");
-		setUriPattern("/pop/v5/user_region_def");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean debugEnable;
 
@@ -43,6 +34,15 @@ public class InsertOrUpdateRegionRequest extends RoaAcsRequest<InsertOrUpdateReg
 	private String description;
 
 	private Long id;
+	public InsertOrUpdateRegionRequest() {
+		super("Edas", "2017-08-01", "InsertOrUpdateRegion", "edas");
+		setUriPattern("/pop/v5/user_region_def");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getDebugEnable() {
 		return this.debugEnable;

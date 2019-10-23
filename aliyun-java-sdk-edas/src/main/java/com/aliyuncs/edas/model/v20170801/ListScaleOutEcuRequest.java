@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListScaleOutEcuRequest extends RoaAcsRequest<ListScaleOutEcuResponse> {
-	
-	public ListScaleOutEcuRequest() {
-		super("Edas", "2017-08-01", "ListScaleOutEcu", "edas");
-		setUriPattern("/pop/v5/resource/scale_out_ecu_list");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer mem;
 
@@ -47,6 +38,15 @@ public class ListScaleOutEcuRequest extends RoaAcsRequest<ListScaleOutEcuRespons
 	private Integer cpu;
 
 	private String clusterId;
+	public ListScaleOutEcuRequest() {
+		super("Edas", "2017-08-01", "ListScaleOutEcu", "edas");
+		setUriPattern("/pop/v5/resource/scale_out_ecu_list");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getMem() {
 		return this.mem;

@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicationResponse> {
-	
-	public DeployK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
-		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String nasId;
 
@@ -83,6 +74,15 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 	private String appId;
 
 	private String postStart;
+	public DeployK8sApplicationRequest() {
+		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
+		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNasId() {
 		return this.nasId;

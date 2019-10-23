@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class QueryEccInfoRequest extends RoaAcsRequest<QueryEccInfoResponse> {
-	
+	   
+
+	private String eccId;
 	public QueryEccInfoRequest() {
 		super("Edas", "2017-08-01", "QueryEccInfo", "edas");
 		setUriPattern("/pop/v5/ecc");
@@ -33,8 +35,6 @@ public class QueryEccInfoRequest extends RoaAcsRequest<QueryEccInfoResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String eccId;
 
 	public String getEccId() {
 		return this.eccId;

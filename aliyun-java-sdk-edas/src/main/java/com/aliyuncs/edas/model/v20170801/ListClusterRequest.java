@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListClusterRequest extends RoaAcsRequest<ListClusterResponse> {
-	
+	   
+
+	private String logicalRegionId;
 	public ListClusterRequest() {
 		super("Edas", "2017-08-01", "ListCluster", "edas");
 		setUriPattern("/pop/v5/resource/cluster_list");
@@ -33,8 +35,6 @@ public class ListClusterRequest extends RoaAcsRequest<ListClusterResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String logicalRegionId;
 
 	public String getLogicalRegionId() {
 		return this.logicalRegionId;

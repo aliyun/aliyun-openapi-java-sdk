@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteApplicationRequest extends RoaAcsRequest<DeleteApplicationResponse> {
-	
+	   
+
+	private String appId;
 	public DeleteApplicationRequest() {
 		super("Edas", "2017-08-01", "DeleteApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_delete_app");
@@ -33,8 +35,6 @@ public class DeleteApplicationRequest extends RoaAcsRequest<DeleteApplicationRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class QueryMonitorInfoRequest extends RoaAcsRequest<QueryMonitorInfoResponse> {
-	
-	public QueryMonitorInfoRequest() {
-		super("Edas", "2017-08-01", "QueryMonitorInfo", "edas");
-		setUriPattern("/pop/v5/monitor/queryMonitorInfo");
-		setMethod(MethodType.GET);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String metric;
 
@@ -45,6 +36,15 @@ public class QueryMonitorInfoRequest extends RoaAcsRequest<QueryMonitorInfoRespo
 	private String interval;
 
 	private String tags;
+	public QueryMonitorInfoRequest() {
+		super("Edas", "2017-08-01", "QueryMonitorInfo", "edas");
+		setUriPattern("/pop/v5/monitor/queryMonitorInfo");
+		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getMetric() {
 		return this.metric;

@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateHealthCheckUrlRequest extends RoaAcsRequest<UpdateHealthCheckUrlResponse> {
-	
+	   
+
+	private String appId;
+
+	private String hcURL;
 	public UpdateHealthCheckUrlRequest() {
 		super("Edas", "2017-08-01", "UpdateHealthCheckUrl", "edas");
 		setUriPattern("/pop/v5/app/modify_hc_url");
@@ -33,10 +37,6 @@ public class UpdateHealthCheckUrlRequest extends RoaAcsRequest<UpdateHealthCheck
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String hcURL;
 
 	public String getAppId() {
 		return this.appId;

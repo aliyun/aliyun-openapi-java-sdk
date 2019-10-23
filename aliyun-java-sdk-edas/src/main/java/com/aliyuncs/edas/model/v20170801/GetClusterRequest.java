@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class GetClusterRequest extends RoaAcsRequest<GetClusterResponse> {
-	
+	   
+
+	private String clusterId;
 	public GetClusterRequest() {
 		super("Edas", "2017-08-01", "GetCluster", "edas");
 		setUriPattern("/pop/v5/resource/cluster");
@@ -33,8 +35,6 @@ public class GetClusterRequest extends RoaAcsRequest<GetClusterResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

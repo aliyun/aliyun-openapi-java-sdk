@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class GetJvmConfigurationRequest extends RoaAcsRequest<GetJvmConfigurationResponse> {
-	
+	   
+
+	private String appId;
+
+	private String groupId;
 	public GetJvmConfigurationRequest() {
 		super("Edas", "2017-08-01", "GetJvmConfiguration", "edas");
 		setUriPattern("/pop/v5/app/app_jvm_config");
@@ -33,10 +37,6 @@ public class GetJvmConfigurationRequest extends RoaAcsRequest<GetJvmConfiguratio
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String groupId;
 
 	public String getAppId() {
 		return this.appId;

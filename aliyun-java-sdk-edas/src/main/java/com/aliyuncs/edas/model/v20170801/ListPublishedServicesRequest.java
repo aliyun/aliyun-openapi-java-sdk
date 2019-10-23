@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListPublishedServicesRequest extends RoaAcsRequest<ListPublishedServicesResponse> {
-	
+	   
+
+	private String appId;
 	public ListPublishedServicesRequest() {
 		super("Edas", "2017-08-01", "ListPublishedServices", "edas");
 		setUriPattern("/pop/v5/service/listPublishedServices");
@@ -33,8 +35,6 @@ public class ListPublishedServicesRequest extends RoaAcsRequest<ListPublishedSer
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

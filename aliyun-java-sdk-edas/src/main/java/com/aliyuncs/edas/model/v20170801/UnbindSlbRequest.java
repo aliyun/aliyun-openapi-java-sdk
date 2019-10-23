@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
-	
+	   
+
+	private String slbId;
+
+	private String appId;
+
+	private String type;
 	public UnbindSlbRequest() {
 		super("Edas", "2017-08-01", "UnbindSlb", "edas");
 		setUriPattern("/pop/app/unbind_slb_json");
@@ -33,12 +39,6 @@ public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String slbId;
-
-	private String appId;
-
-	private String type;
 
 	public String getSlbId() {
 		return this.slbId;

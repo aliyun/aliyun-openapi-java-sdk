@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListDeployGroupRequest extends RoaAcsRequest<ListDeployGroupResponse> {
-	
+	   
+
+	private String appId;
 	public ListDeployGroupRequest() {
 		super("Edas", "2017-08-01", "ListDeployGroup", "edas");
 		setUriPattern("/pop/v5/app/deploy_group_list");
@@ -33,8 +35,6 @@ public class ListDeployGroupRequest extends RoaAcsRequest<ListDeployGroupRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

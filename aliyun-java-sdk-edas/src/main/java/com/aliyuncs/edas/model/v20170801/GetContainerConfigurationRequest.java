@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class GetContainerConfigurationRequest extends RoaAcsRequest<GetContainerConfigurationResponse> {
-	
+	   
+
+	private String appId;
+
+	private String groupId;
 	public GetContainerConfigurationRequest() {
 		super("Edas", "2017-08-01", "GetContainerConfiguration", "edas");
 		setUriPattern("/pop/v5/app/container_config");
@@ -33,10 +37,6 @@ public class GetContainerConfigurationRequest extends RoaAcsRequest<GetContainer
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String groupId;
 
 	public String getAppId() {
 		return this.appId;

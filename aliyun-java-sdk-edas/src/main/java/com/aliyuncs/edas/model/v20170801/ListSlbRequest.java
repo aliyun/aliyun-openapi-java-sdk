@@ -23,7 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListSlbRequest extends RoaAcsRequest<ListSlbResponse> {
-	
+	   
 	public ListSlbRequest() {
 		super("Edas", "2017-08-01", "ListSlb", "edas");
 		setUriPattern("/pop/v5/slb_list");

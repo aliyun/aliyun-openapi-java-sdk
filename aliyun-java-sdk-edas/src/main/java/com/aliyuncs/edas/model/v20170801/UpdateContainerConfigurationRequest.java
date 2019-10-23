@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateContainerConfigurationRequest extends RoaAcsRequest<UpdateContainerConfigurationResponse> {
-	
-	public UpdateContainerConfigurationRequest() {
-		super("Edas", "2017-08-01", "UpdateContainerConfiguration", "edas");
-		setUriPattern("/pop/v5/app/container_config");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean useBodyEncoding;
 
@@ -47,6 +38,15 @@ public class UpdateContainerConfigurationRequest extends RoaAcsRequest<UpdateCon
 	private Integer httpPort;
 
 	private String contextPath;
+	public UpdateContainerConfigurationRequest() {
+		super("Edas", "2017-08-01", "UpdateContainerConfiguration", "edas");
+		setUriPattern("/pop/v5/app/container_config");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getUseBodyEncoding() {
 		return this.useBodyEncoding;

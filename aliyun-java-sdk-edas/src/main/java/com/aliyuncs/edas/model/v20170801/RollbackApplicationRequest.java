@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class RollbackApplicationRequest extends RoaAcsRequest<RollbackApplicationResponse> {
-	
-	public RollbackApplicationRequest() {
-		super("Edas", "2017-08-01", "RollbackApplication", "edas");
-		setUriPattern("/pop/v5/changeorder/co_rollback");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String appId;
 
@@ -43,6 +34,15 @@ public class RollbackApplicationRequest extends RoaAcsRequest<RollbackApplicatio
 	private Integer batch;
 
 	private String historyVersion;
+	public RollbackApplicationRequest() {
+		super("Edas", "2017-08-01", "RollbackApplication", "edas");
+		setUriPattern("/pop/v5/changeorder/co_rollback");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getAppId() {
 		return this.appId;

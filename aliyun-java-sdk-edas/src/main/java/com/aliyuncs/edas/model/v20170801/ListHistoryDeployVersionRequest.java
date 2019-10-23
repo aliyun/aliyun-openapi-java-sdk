@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListHistoryDeployVersionRequest extends RoaAcsRequest<ListHistoryDeployVersionResponse> {
-	
+	   
+
+	private String appId;
 	public ListHistoryDeployVersionRequest() {
 		super("Edas", "2017-08-01", "ListHistoryDeployVersion", "edas");
 		setUriPattern("/pop/v5/app/deploy_history_version_list");
@@ -33,8 +35,6 @@ public class ListHistoryDeployVersionRequest extends RoaAcsRequest<ListHistoryDe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

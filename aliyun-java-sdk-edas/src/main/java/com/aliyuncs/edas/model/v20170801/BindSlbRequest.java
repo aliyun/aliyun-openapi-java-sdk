@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
-	
-	public BindSlbRequest() {
-		super("Edas", "2017-08-01", "BindSlb", "edas");
-		setUriPattern("/pop/app/bind_slb_json");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String vServerGroupId;
 
@@ -45,6 +36,15 @@ public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 	private String slbIp;
 
 	private String type;
+	public BindSlbRequest() {
+		super("Edas", "2017-08-01", "BindSlb", "edas");
+		setUriPattern("/pop/app/bind_slb_json");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getVServerGroupId() {
 		return this.vServerGroupId;

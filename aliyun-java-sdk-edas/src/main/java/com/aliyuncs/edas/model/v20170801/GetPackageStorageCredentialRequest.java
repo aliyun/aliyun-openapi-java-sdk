@@ -23,7 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class GetPackageStorageCredentialRequest extends RoaAcsRequest<GetPackageStorageCredentialResponse> {
-	
+	   
 	public GetPackageStorageCredentialRequest() {
 		super("Edas", "2017-08-01", "GetPackageStorageCredential", "edas");
 		setUriPattern("/pop/v5/package_storage_credential");

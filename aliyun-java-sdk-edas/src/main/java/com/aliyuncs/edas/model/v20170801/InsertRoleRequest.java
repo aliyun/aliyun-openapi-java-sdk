@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InsertRoleRequest extends RoaAcsRequest<InsertRoleResponse> {
-	
+	   
+
+	private String roleName;
+
+	private String actionData;
 	public InsertRoleRequest() {
 		super("Edas", "2017-08-01", "InsertRole", "edas");
 		setUriPattern("/pop/v5/account/create_role");
@@ -33,10 +37,6 @@ public class InsertRoleRequest extends RoaAcsRequest<InsertRoleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String roleName;
-
-	private String actionData;
 
 	public String getRoleName() {
 		return this.roleName;

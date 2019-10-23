@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class QueryMigrateEcuListRequest extends RoaAcsRequest<QueryMigrateEcuListResponse> {
-	
+	   
+
+	private String logicalRegionId;
 	public QueryMigrateEcuListRequest() {
 		super("Edas", "2017-08-01", "QueryMigrateEcuList", "edas");
 		setUriPattern("/pop/v5/resource/migrate_ecu_list");
@@ -33,8 +35,6 @@ public class QueryMigrateEcuListRequest extends RoaAcsRequest<QueryMigrateEcuLis
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String logicalRegionId;
 
 	public String getLogicalRegionId() {
 		return this.logicalRegionId;

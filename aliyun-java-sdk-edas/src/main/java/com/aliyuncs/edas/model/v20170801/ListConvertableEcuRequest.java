@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListConvertableEcuRequest extends RoaAcsRequest<ListConvertableEcuResponse> {
-	
+	   
+
+	private String clusterId;
 	public ListConvertableEcuRequest() {
 		super("Edas", "2017-08-01", "ListConvertableEcu", "edas");
 		setUriPattern("/pop/v5/resource/convertable_ecu_list");
@@ -33,8 +35,6 @@ public class ListConvertableEcuRequest extends RoaAcsRequest<ListConvertableEcuR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

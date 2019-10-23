@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteEcuRequest extends RoaAcsRequest<DeleteEcuResponse> {
-	
+	   
+
+	private String ecuId;
 	public DeleteEcuRequest() {
 		super("Edas", "2017-08-01", "DeleteEcu", "edas");
 		setUriPattern("/pop/v5/resource/delete_ecu");
@@ -33,8 +35,6 @@ public class DeleteEcuRequest extends RoaAcsRequest<DeleteEcuResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String ecuId;
 
 	public String getEcuId() {
 		return this.ecuId;

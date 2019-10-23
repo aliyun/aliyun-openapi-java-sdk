@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ContinuePipelineRequest extends RoaAcsRequest<ContinuePipelineResponse> {
-	
+	   
+
+	private Boolean confirm;
+
+	private String pipelineId;
 	public ContinuePipelineRequest() {
 		super("Edas", "2017-08-01", "ContinuePipeline", "edas");
 		setUriPattern("/pop/v5/changeorder/pipeline_batch_confirm");
@@ -33,10 +37,6 @@ public class ContinuePipelineRequest extends RoaAcsRequest<ContinuePipelineRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Boolean confirm;
-
-	private String pipelineId;
 
 	public Boolean getConfirm() {
 		return this.confirm;

@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteK8sApplicationRequest extends RoaAcsRequest<DeleteK8sApplicationResponse> {
-	
+	   
+
+	private String appId;
 	public DeleteK8sApplicationRequest() {
 		super("Edas", "2017-08-01", "DeleteK8sApplication", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
@@ -33,8 +35,6 @@ public class DeleteK8sApplicationRequest extends RoaAcsRequest<DeleteK8sApplicat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

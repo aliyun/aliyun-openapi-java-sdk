@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class SynchronizeResourceRequest extends RoaAcsRequest<SynchronizeResourceResponse> {
-	
+	   
+
+	private String type;
 	public SynchronizeResourceRequest() {
 		super("Edas", "2017-08-01", "SynchronizeResource", "edas");
 		setUriPattern("/pop/v5/resource/pop_sync_resource");
@@ -33,8 +35,6 @@ public class SynchronizeResourceRequest extends RoaAcsRequest<SynchronizeResourc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String type;
 
 	public String getType() {
 		return this.type;

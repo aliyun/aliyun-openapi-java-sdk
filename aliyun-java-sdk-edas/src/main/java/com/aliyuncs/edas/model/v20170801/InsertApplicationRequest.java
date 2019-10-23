@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationResponse> {
-	
-	public InsertApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertApplication", "edas");
-		setUriPattern("/pop/v5/changeorder/co_create_app");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String webContainer;
 
@@ -59,6 +50,15 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 	private String logicalRegionId;
 
 	private String packageType;
+	public InsertApplicationRequest() {
+		super("Edas", "2017-08-01", "InsertApplication", "edas");
+		setUriPattern("/pop/v5/changeorder/co_create_app");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getWebContainer() {
 		return this.webContainer;

@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class AuthorizeApplicationRequest extends RoaAcsRequest<AuthorizeApplicationResponse> {
-	
+	   
+
+	private String appIds;
+
+	private String targetUserId;
 	public AuthorizeApplicationRequest() {
 		super("Edas", "2017-08-01", "AuthorizeApplication", "edas");
 		setUriPattern("/pop/v5/account/authorize_app");
@@ -33,10 +37,6 @@ public class AuthorizeApplicationRequest extends RoaAcsRequest<AuthorizeApplicat
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appIds;
-
-	private String targetUserId;
 
 	public String getAppIds() {
 		return this.appIds;

@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ImportK8sClusterRequest extends RoaAcsRequest<ImportK8sClusterResponse> {
-	
+	   
+
+	private String namespaceId;
+
+	private String clusterId;
 	public ImportK8sClusterRequest() {
 		super("Edas", "2017-08-01", "ImportK8sCluster", "edas");
 		setUriPattern("/pop/v5/import_k8s_cluster");
@@ -33,10 +37,6 @@ public class ImportK8sClusterRequest extends RoaAcsRequest<ImportK8sClusterRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String namespaceId;
-
-	private String clusterId;
 
 	public String getNamespaceId() {
 		return this.namespaceId;

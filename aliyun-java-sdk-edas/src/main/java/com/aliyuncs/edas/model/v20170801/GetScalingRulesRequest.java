@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class GetScalingRulesRequest extends RoaAcsRequest<GetScalingRulesResponse> {
-	
+	   
+
+	private String mode;
+
+	private String appId;
+
+	private String groupId;
 	public GetScalingRulesRequest() {
 		super("Edas", "2017-08-01", "GetScalingRules", "edas");
 		setUriPattern("/pop/v5/app/scalingRules");
@@ -33,12 +39,6 @@ public class GetScalingRulesRequest extends RoaAcsRequest<GetScalingRulesRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String mode;
-
-	private String appId;
-
-	private String groupId;
 
 	public String getMode() {
 		return this.mode;

@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ResetApplicationRequest extends RoaAcsRequest<ResetApplicationResponse> {
-	
+	   
+
+	private String appId;
+
+	private String eccInfo;
 	public ResetApplicationRequest() {
 		super("Edas", "2017-08-01", "ResetApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_reset");
@@ -33,10 +37,6 @@ public class ResetApplicationRequest extends RoaAcsRequest<ResetApplicationRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String eccInfo;
 
 	public String getAppId() {
 		return this.appId;

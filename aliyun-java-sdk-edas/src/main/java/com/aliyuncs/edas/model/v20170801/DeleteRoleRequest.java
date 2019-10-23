@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteRoleRequest extends RoaAcsRequest<DeleteRoleResponse> {
-	
+	   
+
+	private Integer roleId;
 	public DeleteRoleRequest() {
 		super("Edas", "2017-08-01", "DeleteRole", "edas");
 		setUriPattern("/pop/v5/account/delete_role");
@@ -33,8 +35,6 @@ public class DeleteRoleRequest extends RoaAcsRequest<DeleteRoleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Integer roleId;
 
 	public Integer getRoleId() {
 		return this.roleId;

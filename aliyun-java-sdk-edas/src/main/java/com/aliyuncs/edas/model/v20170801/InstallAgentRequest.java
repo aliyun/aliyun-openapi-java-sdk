@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InstallAgentRequest extends RoaAcsRequest<InstallAgentResponse> {
-	
+	   
+
+	private String instanceIds;
+
+	private Boolean doAsync;
+
+	private String clusterId;
 	public InstallAgentRequest() {
 		super("Edas", "2017-08-01", "InstallAgent", "edas");
 		setUriPattern("/pop/v5/ecss/install_agent");
@@ -33,12 +39,6 @@ public class InstallAgentRequest extends RoaAcsRequest<InstallAgentResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String instanceIds;
-
-	private Boolean doAsync;
-
-	private String clusterId;
 
 	public String getInstanceIds() {
 		return this.instanceIds;

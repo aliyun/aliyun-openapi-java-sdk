@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteClusterMemberRequest extends RoaAcsRequest<DeleteClusterMemberResponse> {
-	
+	   
+
+	private String clusterMemberId;
+
+	private String clusterId;
 	public DeleteClusterMemberRequest() {
 		super("Edas", "2017-08-01", "DeleteClusterMember", "edas");
 		setUriPattern("/pop/v5/resource/cluster_member");
@@ -33,10 +37,6 @@ public class DeleteClusterMemberRequest extends RoaAcsRequest<DeleteClusterMembe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterMemberId;
-
-	private String clusterId;
 
 	public String getClusterMemberId() {
 		return this.clusterMemberId;

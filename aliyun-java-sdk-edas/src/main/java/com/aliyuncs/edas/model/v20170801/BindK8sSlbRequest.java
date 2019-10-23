@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class BindK8sSlbRequest extends RoaAcsRequest<BindK8sSlbResponse> {
-	
-	public BindK8sSlbRequest() {
-		super("Edas", "2017-08-01", "BindK8sSlb", "edas");
-		setUriPattern("/pop/v5/k8s/acs/k8s_slb_binding");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String slbId;
 
@@ -47,6 +38,15 @@ public class BindK8sSlbRequest extends RoaAcsRequest<BindK8sSlbResponse> {
 	private String type;
 
 	private String targetPort;
+	public BindK8sSlbRequest() {
+		super("Edas", "2017-08-01", "BindK8sSlb", "edas");
+		setUriPattern("/pop/v5/k8s/acs/k8s_slb_binding");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSlbId() {
 		return this.slbId;

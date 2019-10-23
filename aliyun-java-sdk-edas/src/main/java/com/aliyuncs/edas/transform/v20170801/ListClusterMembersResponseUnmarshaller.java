@@ -44,8 +44,8 @@ public class ListClusterMembersResponseUnmarshaller {
 			clusterMember.setEcuId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].EcuId"));
 			clusterMember.setEcsId(_ctx.stringValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].EcsId"));
 			clusterMember.setStatus(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].Status"));
-			clusterMember.setCreateTime(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].CreateTime"));
-			clusterMember.setUpdateTime(_ctx.integerValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].UpdateTime"));
+			clusterMember.setCreateTime(_ctx.longValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].CreateTime"));
+			clusterMember.setUpdateTime(_ctx.longValue("ListClusterMembersResponse.ClusterMemberPage.ClusterMemberList["+ i +"].UpdateTime"));
 
 			clusterMemberList.add(clusterMember);
 		}

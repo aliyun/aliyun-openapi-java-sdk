@@ -23,7 +23,15 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ChangeDeployGroupRequest extends RoaAcsRequest<ChangeDeployGroupResponse> {
-	
+	   
+
+	private Boolean forceStatus;
+
+	private String appId;
+
+	private String eccInfo;
+
+	private String groupName;
 	public ChangeDeployGroupRequest() {
 		super("Edas", "2017-08-01", "ChangeDeployGroup", "edas");
 		setUriPattern("/pop/v5/changeorder/co_change_group");
@@ -33,14 +41,6 @@ public class ChangeDeployGroupRequest extends RoaAcsRequest<ChangeDeployGroupRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Boolean forceStatus;
-
-	private String appId;
-
-	private String eccInfo;
-
-	private String groupName;
 
 	public Boolean getForceStatus() {
 		return this.forceStatus;

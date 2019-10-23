@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class QueryConfigCenterRequest extends RoaAcsRequest<QueryConfigCenterResponse> {
-	
+	   
+
+	private String dataId;
+
+	private String logicalRegionId;
+
+	private String group;
 	public QueryConfigCenterRequest() {
 		super("Edas", "2017-08-01", "QueryConfigCenter", "edas");
 		setUriPattern("/pop/v5/configCenter");
@@ -33,12 +39,6 @@ public class QueryConfigCenterRequest extends RoaAcsRequest<QueryConfigCenterRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String dataId;
-
-	private String logicalRegionId;
-
-	private String group;
 
 	public String getDataId() {
 		return this.dataId;

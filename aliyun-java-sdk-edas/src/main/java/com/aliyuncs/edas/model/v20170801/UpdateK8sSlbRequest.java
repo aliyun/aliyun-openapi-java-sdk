@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
-	
-	public UpdateK8sSlbRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sSlb", "edas");
-		setUriPattern("/pop/v5/k8s/acs/k8s_slb_binding");
-		setMethod(MethodType.PUT);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String slbProtocol;
 
@@ -45,6 +36,15 @@ public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
 	private String type;
 
 	private String targetPort;
+	public UpdateK8sSlbRequest() {
+		super("Edas", "2017-08-01", "UpdateK8sSlb", "edas");
+		setUriPattern("/pop/v5/k8s/acs/k8s_slb_binding");
+		setMethod(MethodType.PUT);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getSlbProtocol() {
 		return this.slbProtocol;

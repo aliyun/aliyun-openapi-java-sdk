@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InsertServiceGroupRequest extends RoaAcsRequest<InsertServiceGroupResponse> {
-	
+	   
+
+	private String groupName;
 	public InsertServiceGroupRequest() {
 		super("Edas", "2017-08-01", "InsertServiceGroup", "edas");
 		setUriPattern("/pop/v5/service/serviceGroups");
@@ -33,8 +35,6 @@ public class InsertServiceGroupRequest extends RoaAcsRequest<InsertServiceGroupR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String groupName;
 
 	public String getGroupName() {
 		return this.groupName;

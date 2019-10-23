@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class AuthorizeRoleRequest extends RoaAcsRequest<AuthorizeRoleResponse> {
-	
+	   
+
+	private String roleIds;
+
+	private String targetUserId;
 	public AuthorizeRoleRequest() {
 		super("Edas", "2017-08-01", "AuthorizeRole", "edas");
 		setUriPattern("/pop/v5/account/authorize_role");
@@ -33,10 +37,6 @@ public class AuthorizeRoleRequest extends RoaAcsRequest<AuthorizeRoleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String roleIds;
-
-	private String targetUserId;
 
 	public String getRoleIds() {
 		return this.roleIds;

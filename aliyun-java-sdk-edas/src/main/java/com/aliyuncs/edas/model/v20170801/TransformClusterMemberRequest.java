@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class TransformClusterMemberRequest extends RoaAcsRequest<TransformClusterMemberResponse> {
-	
+	   
+
+	private String password;
+
+	private String instanceIds;
+
+	private String targetClusterId;
 	public TransformClusterMemberRequest() {
 		super("Edas", "2017-08-01", "TransformClusterMember", "edas");
 		setUriPattern("/pop/v5/resource/transform_cluster_member");
@@ -33,12 +39,6 @@ public class TransformClusterMemberRequest extends RoaAcsRequest<TransformCluste
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String password;
-
-	private String instanceIds;
-
-	private String targetClusterId;
 
 	public String getPassword() {
 		return this.password;

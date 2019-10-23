@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListEcuByRegionRequest extends RoaAcsRequest<ListEcuByRegionResponse> {
-	
+	   
+
+	private String act;
+
+	private String logicalRegionId;
 	public ListEcuByRegionRequest() {
 		super("Edas", "2017-08-01", "ListEcuByRegion", "edas");
 		setUriPattern("/pop/v5/resource/ecu_list");
@@ -33,10 +37,6 @@ public class ListEcuByRegionRequest extends RoaAcsRequest<ListEcuByRegionRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String act;
-
-	private String logicalRegionId;
 
 	public String getAct() {
 		return this.act;

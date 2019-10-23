@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationResponse> {
-	
-	public DeployApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployApplication", "edas");
-		setUriPattern("/pop/v5/changeorder/co_deploy");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long buildPackId;
 
@@ -59,6 +50,15 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	private String desc;
 
 	private String deployType;
+	public DeployApplicationRequest() {
+		super("Edas", "2017-08-01", "DeployApplication", "edas");
+		setUriPattern("/pop/v5/changeorder/co_deploy");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getBuildPackId() {
 		return this.buildPackId;

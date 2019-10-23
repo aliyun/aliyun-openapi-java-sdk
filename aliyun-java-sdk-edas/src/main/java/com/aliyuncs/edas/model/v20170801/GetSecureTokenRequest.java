@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class GetSecureTokenRequest extends RoaAcsRequest<GetSecureTokenResponse> {
-	
+	   
+
+	private String namespaceId;
 	public GetSecureTokenRequest() {
 		super("Edas", "2017-08-01", "GetSecureToken", "edas");
 		setUriPattern("/pop/v5/secure_token");
@@ -33,8 +35,6 @@ public class GetSecureTokenRequest extends RoaAcsRequest<GetSecureTokenResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String namespaceId;
 
 	public String getNamespaceId() {
 		return this.namespaceId;

@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ModifyScalingRuleRequest extends RoaAcsRequest<ModifyScalingRuleResponse> {
-	
-	public ModifyScalingRuleRequest() {
-		super("Edas", "2017-08-01", "ModifyScalingRule", "edas");
-		setUriPattern("/pop/v5/app/scaling_rules2");
-		setMethod(MethodType.PUT);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer inStep;
 
@@ -93,6 +84,15 @@ public class ModifyScalingRuleRequest extends RoaAcsRequest<ModifyScalingRuleRes
 	private String vpcId;
 
 	private String templateInstanceName;
+	public ModifyScalingRuleRequest() {
+		super("Edas", "2017-08-01", "ModifyScalingRule", "edas");
+		setUriPattern("/pop/v5/app/scaling_rules2");
+		setMethod(MethodType.PUT);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getInStep() {
 		return this.inStep;

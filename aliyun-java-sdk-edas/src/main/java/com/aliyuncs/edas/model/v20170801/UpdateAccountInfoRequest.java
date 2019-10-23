@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateAccountInfoRequest extends RoaAcsRequest<UpdateAccountInfoResponse> {
-	
+	   
+
+	private String name;
+
+	private String telephone;
+
+	private String email;
 	public UpdateAccountInfoRequest() {
 		super("Edas", "2017-08-01", "UpdateAccountInfo", "edas");
 		setUriPattern("/pop/v5/account/edit_account_info");
@@ -33,12 +39,6 @@ public class UpdateAccountInfoRequest extends RoaAcsRequest<UpdateAccountInfoRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String name;
-
-	private String telephone;
-
-	private String email;
 
 	public String getName() {
 		return this.name;

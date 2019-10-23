@@ -23,7 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListVpcRequest extends RoaAcsRequest<ListVpcResponse> {
-	
+	   
 	public ListVpcRequest() {
 		super("Edas", "2017-08-01", "ListVpc", "edas");
 		setUriPattern("/pop/v5/vpc_list");

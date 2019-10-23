@@ -23,7 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListResourceGroupRequest extends RoaAcsRequest<ListResourceGroupResponse> {
-	
+	   
 	public ListResourceGroupRequest() {
 		super("Edas", "2017-08-01", "ListResourceGroup", "edas");
 		setUriPattern("/pop/v5/resource/reg_group_list");

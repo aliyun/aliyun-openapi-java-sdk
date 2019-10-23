@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ScaleInApplicationRequest extends RoaAcsRequest<ScaleInApplicationResponse> {
-	
+	   
+
+	private Boolean forceStatus;
+
+	private String appId;
+
+	private String eccInfo;
 	public ScaleInApplicationRequest() {
 		super("Edas", "2017-08-01", "ScaleInApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_scale_in");
@@ -33,12 +39,6 @@ public class ScaleInApplicationRequest extends RoaAcsRequest<ScaleInApplicationR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Boolean forceStatus;
-
-	private String appId;
-
-	private String eccInfo;
 
 	public Boolean getForceStatus() {
 		return this.forceStatus;

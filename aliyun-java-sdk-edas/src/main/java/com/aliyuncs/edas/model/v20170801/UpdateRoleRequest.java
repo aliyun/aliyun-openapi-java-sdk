@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateRoleRequest extends RoaAcsRequest<UpdateRoleResponse> {
-	
+	   
+
+	private Integer roleId;
+
+	private String actionData;
 	public UpdateRoleRequest() {
 		super("Edas", "2017-08-01", "UpdateRole", "edas");
 		setUriPattern("/pop/v5/account/edit_role");
@@ -33,10 +37,6 @@ public class UpdateRoleRequest extends RoaAcsRequest<UpdateRoleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Integer roleId;
-
-	private String actionData;
 
 	public Integer getRoleId() {
 		return this.roleId;

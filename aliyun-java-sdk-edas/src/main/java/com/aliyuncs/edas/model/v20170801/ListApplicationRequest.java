@@ -23,7 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListApplicationRequest extends RoaAcsRequest<ListApplicationResponse> {
-	
+	   
 	public ListApplicationRequest() {
 		super("Edas", "2017-08-01", "ListApplication", "edas");
 		setUriPattern("/pop/v5/app/app_list");

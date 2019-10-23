@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteUserDefineRegionRequest extends RoaAcsRequest<DeleteUserDefineRegionResponse> {
-	
+	   
+
+	private String regionTag;
+
+	private Long id;
 	public DeleteUserDefineRegionRequest() {
 		super("Edas", "2017-08-01", "DeleteUserDefineRegion", "edas");
 		setUriPattern("/pop/v5/user_region_def");
@@ -33,10 +37,6 @@ public class DeleteUserDefineRegionRequest extends RoaAcsRequest<DeleteUserDefin
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String regionTag;
-
-	private Long id;
 
 	public String getRegionTag() {
 		return this.regionTag;

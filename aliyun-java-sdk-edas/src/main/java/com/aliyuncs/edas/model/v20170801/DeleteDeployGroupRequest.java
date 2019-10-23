@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteDeployGroupRequest extends RoaAcsRequest<DeleteDeployGroupResponse> {
-	
+	   
+
+	private String appId;
+
+	private String groupName;
 	public DeleteDeployGroupRequest() {
 		super("Edas", "2017-08-01", "DeleteDeployGroup", "edas");
 		setUriPattern("/pop/v5/deploy_group");
@@ -33,10 +37,6 @@ public class DeleteDeployGroupRequest extends RoaAcsRequest<DeleteDeployGroupRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String groupName;
 
 	public String getAppId() {
 		return this.appId;

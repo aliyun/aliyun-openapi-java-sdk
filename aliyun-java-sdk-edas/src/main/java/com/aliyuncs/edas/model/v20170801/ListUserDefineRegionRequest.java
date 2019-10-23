@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListUserDefineRegionRequest extends RoaAcsRequest<ListUserDefineRegionResponse> {
-	
+	   
+
+	private Boolean debugEnable;
 	public ListUserDefineRegionRequest() {
 		super("Edas", "2017-08-01", "ListUserDefineRegion", "edas");
 		setUriPattern("/pop/v5/user_region_defs");
@@ -33,8 +35,6 @@ public class ListUserDefineRegionRequest extends RoaAcsRequest<ListUserDefineReg
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Boolean debugEnable;
 
 	public Boolean getDebugEnable() {
 		return this.debugEnable;

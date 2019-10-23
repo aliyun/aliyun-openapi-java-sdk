@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class AuthorizeResourceGroupRequest extends RoaAcsRequest<AuthorizeResourceGroupResponse> {
-	
+	   
+
+	private String resourceGroupIds;
+
+	private String targetUserId;
 	public AuthorizeResourceGroupRequest() {
 		super("Edas", "2017-08-01", "AuthorizeResourceGroup", "edas");
 		setUriPattern("/pop/v5/account/authorize_res_group");
@@ -33,10 +37,6 @@ public class AuthorizeResourceGroupRequest extends RoaAcsRequest<AuthorizeResour
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String resourceGroupIds;
-
-	private String targetUserId;
 
 	public String getResourceGroupIds() {
 		return this.resourceGroupIds;

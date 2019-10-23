@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteClusterRequest extends RoaAcsRequest<DeleteClusterResponse> {
-	
+	   
+
+	private String clusterId;
 	public DeleteClusterRequest() {
 		super("Edas", "2017-08-01", "DeleteCluster", "edas");
 		setUriPattern("/pop/v5/resource/cluster");
@@ -33,8 +35,6 @@ public class DeleteClusterRequest extends RoaAcsRequest<DeleteClusterResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
 
 	public String getClusterId() {
 		return this.clusterId;

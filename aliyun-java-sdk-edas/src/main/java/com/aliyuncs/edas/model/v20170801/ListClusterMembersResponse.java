@@ -119,9 +119,9 @@ public class ListClusterMembersResponse extends AcsResponse {
 
 			private Integer status;
 
-			private Integer createTime;
+			private Long createTime;
 
-			private Integer updateTime;
+			private Long updateTime;
 
 			public String getClusterMemberId() {
 				return this.clusterMemberId;
@@ -163,19 +163,19 @@ public class ListClusterMembersResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public Integer getCreateTime() {
+			public Long getCreateTime() {
 				return this.createTime;
 			}
 
-			public void setCreateTime(Integer createTime) {
+			public void setCreateTime(Long createTime) {
 				this.createTime = createTime;
 			}
 
-			public Integer getUpdateTime() {
+			public Long getUpdateTime() {
 				return this.updateTime;
 			}
 
-			public void setUpdateTime(Integer updateTime) {
+			public void setUpdateTime(Long updateTime) {
 				this.updateTime = updateTime;
 			}
 		}

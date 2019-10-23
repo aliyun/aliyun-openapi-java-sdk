@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteFlowControlRequest extends RoaAcsRequest<DeleteFlowControlResponse> {
-	
+	   
+
+	private String appId;
+
+	private String ruleId;
 	public DeleteFlowControlRequest() {
 		super("Edas", "2017-08-01", "DeleteFlowControl", "edas");
 		setUriPattern("/pop/v5/flowControl");
@@ -33,10 +37,6 @@ public class DeleteFlowControlRequest extends RoaAcsRequest<DeleteFlowControlRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String ruleId;
 
 	public String getAppId() {
 		return this.appId;

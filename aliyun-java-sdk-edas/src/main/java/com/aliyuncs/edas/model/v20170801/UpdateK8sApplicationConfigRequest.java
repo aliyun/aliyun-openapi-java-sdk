@@ -23,7 +23,15 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sApplicationConfigResponse> {
-	
+	   
+
+	private String appId;
+
+	private String memoryLimit;
+
+	private String clusterId;
+
+	private String cpuLimit;
 	public UpdateK8sApplicationConfigRequest() {
 		super("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_app_configuration");
@@ -33,14 +41,6 @@ public class UpdateK8sApplicationConfigRequest extends RoaAcsRequest<UpdateK8sAp
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String memoryLimit;
-
-	private String clusterId;
-
-	private String cpuLimit;
 
 	public String getAppId() {
 		return this.appId;

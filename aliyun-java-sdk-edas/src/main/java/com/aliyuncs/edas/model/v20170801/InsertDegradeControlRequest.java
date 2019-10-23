@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InsertDegradeControlRequest extends RoaAcsRequest<InsertDegradeControlResponse> {
-	
-	public InsertDegradeControlRequest() {
-		super("Edas", "2017-08-01", "InsertDegradeControl", "edas");
-		setUriPattern("/pop/v5/degradeControl");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer duration;
 
@@ -47,6 +38,15 @@ public class InsertDegradeControlRequest extends RoaAcsRequest<InsertDegradeCont
 	private String serviceName;
 
 	private String methodName;
+	public InsertDegradeControlRequest() {
+		super("Edas", "2017-08-01", "InsertDegradeControl", "edas");
+		setUriPattern("/pop/v5/degradeControl");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getDuration() {
 		return this.duration;

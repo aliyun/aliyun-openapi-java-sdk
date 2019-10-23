@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class StopApplicationRequest extends RoaAcsRequest<StopApplicationResponse> {
-	
+	   
+
+	private String appId;
+
+	private String eccInfo;
 	public StopApplicationRequest() {
 		super("Edas", "2017-08-01", "StopApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_stop");
@@ -33,10 +37,6 @@ public class StopApplicationRequest extends RoaAcsRequest<StopApplicationRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String eccInfo;
 
 	public String getAppId() {
 		return this.appId;

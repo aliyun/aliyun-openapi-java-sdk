@@ -23,7 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListRoleRequest extends RoaAcsRequest<ListRoleResponse> {
-	
+	   
 	public ListRoleRequest() {
 		super("Edas", "2017-08-01", "ListRole", "edas");
 		setUriPattern("/pop/v5/account/role_list");

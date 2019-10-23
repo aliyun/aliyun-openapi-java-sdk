@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteServiceGroupRequest extends RoaAcsRequest<DeleteServiceGroupResponse> {
-	
+	   
+
+	private String groupId;
 	public DeleteServiceGroupRequest() {
 		super("Edas", "2017-08-01", "DeleteServiceGroup", "edas");
 		setUriPattern("/pop/v5/service/serviceGroups");
@@ -33,8 +35,6 @@ public class DeleteServiceGroupRequest extends RoaAcsRequest<DeleteServiceGroupR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String groupId;
 
 	public String getGroupId() {
 		return this.groupId;

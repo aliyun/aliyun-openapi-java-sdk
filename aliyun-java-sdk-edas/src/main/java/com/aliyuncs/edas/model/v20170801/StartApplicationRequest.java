@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class StartApplicationRequest extends RoaAcsRequest<StartApplicationResponse> {
-	
+	   
+
+	private String appId;
+
+	private String eccInfo;
 	public StartApplicationRequest() {
 		super("Edas", "2017-08-01", "StartApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_start");
@@ -33,10 +37,6 @@ public class StartApplicationRequest extends RoaAcsRequest<StartApplicationRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String eccInfo;
 
 	public String getAppId() {
 		return this.appId;

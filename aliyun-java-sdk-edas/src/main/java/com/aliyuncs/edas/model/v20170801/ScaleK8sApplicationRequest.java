@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ScaleK8sApplicationRequest extends RoaAcsRequest<ScaleK8sApplicationResponse> {
-	
+	   
+
+	private Integer replicas;
+
+	private String appId;
 	public ScaleK8sApplicationRequest() {
 		super("Edas", "2017-08-01", "ScaleK8sApplication", "edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
@@ -33,10 +37,6 @@ public class ScaleK8sApplicationRequest extends RoaAcsRequest<ScaleK8sApplicatio
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Integer replicas;
-
-	private String appId;
 
 	public Integer getReplicas() {
 		return this.replicas;

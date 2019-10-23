@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateContainerRequest extends RoaAcsRequest<UpdateContainerResponse> {
-	
+	   
+
+	private Integer buildPackId;
+
+	private String appId;
 	public UpdateContainerRequest() {
 		super("Edas", "2017-08-01", "UpdateContainer", "edas");
 		setUriPattern("/pop/v5/changeorder/co_update_container");
@@ -33,10 +37,6 @@ public class UpdateContainerRequest extends RoaAcsRequest<UpdateContainerRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Integer buildPackId;
-
-	private String appId;
 
 	public Integer getBuildPackId() {
 		return this.buildPackId;

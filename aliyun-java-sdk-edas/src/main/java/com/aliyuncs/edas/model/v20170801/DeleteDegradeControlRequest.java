@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DeleteDegradeControlRequest extends RoaAcsRequest<DeleteDegradeControlResponse> {
-	
+	   
+
+	private String appId;
+
+	private String ruleId;
 	public DeleteDegradeControlRequest() {
 		super("Edas", "2017-08-01", "DeleteDegradeControl", "edas");
 		setUriPattern("/pop/v5/degradeControl");
@@ -33,10 +37,6 @@ public class DeleteDegradeControlRequest extends RoaAcsRequest<DeleteDegradeCont
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String ruleId;
 
 	public String getAppId() {
 		return this.appId;

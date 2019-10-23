@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListMethodsRequest extends RoaAcsRequest<ListMethodsResponse> {
-	
+	   
+
+	private String appId;
+
+	private String serviceName;
 	public ListMethodsRequest() {
 		super("Edas", "2017-08-01", "ListMethods", "edas");
 		setUriPattern("/pop/v5/service/list_methods");
@@ -33,10 +37,6 @@ public class ListMethodsRequest extends RoaAcsRequest<ListMethodsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String serviceName;
 
 	public String getAppId() {
 		return this.appId;

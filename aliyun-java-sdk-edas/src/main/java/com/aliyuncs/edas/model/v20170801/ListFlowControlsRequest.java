@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListFlowControlsRequest extends RoaAcsRequest<ListFlowControlsResponse> {
-	
+	   
+
+	private String appId;
 	public ListFlowControlsRequest() {
 		super("Edas", "2017-08-01", "ListFlowControls", "edas");
 		setUriPattern("/pop/v5/app/flowControls");
@@ -33,8 +35,6 @@ public class ListFlowControlsRequest extends RoaAcsRequest<ListFlowControlsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;

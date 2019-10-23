@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ScaleOutApplicationRequest extends RoaAcsRequest<ScaleOutApplicationResponse> {
-	
+	   
+
+	private String ecuInfo;
+
+	private String deployGroup;
+
+	private String appId;
 	public ScaleOutApplicationRequest() {
 		super("Edas", "2017-08-01", "ScaleOutApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_scale_out");
@@ -33,12 +39,6 @@ public class ScaleOutApplicationRequest extends RoaAcsRequest<ScaleOutApplicatio
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String ecuInfo;
-
-	private String deployGroup;
-
-	private String appId;
 
 	public String getEcuInfo() {
 		return this.ecuInfo;

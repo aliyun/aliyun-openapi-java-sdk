@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InsertClusterRequest extends RoaAcsRequest<InsertClusterResponse> {
-	
-	public InsertClusterRequest() {
-		super("Edas", "2017-08-01", "InsertCluster", "edas");
-		setUriPattern("/pop/v5/resource/cluster");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer clusterType;
 
@@ -47,6 +38,15 @@ public class InsertClusterRequest extends RoaAcsRequest<InsertClusterResponse> {
 	private Integer networkMode;
 
 	private Integer oversoldFactor;
+	public InsertClusterRequest() {
+		super("Edas", "2017-08-01", "InsertCluster", "edas");
+		setUriPattern("/pop/v5/resource/cluster");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getClusterType() {
 		return this.clusterType;

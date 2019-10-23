@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateFlowControlRequest extends RoaAcsRequest<UpdateFlowControlResponse> {
-	
-	public UpdateFlowControlRequest() {
-		super("Edas", "2017-08-01", "UpdateFlowControl", "edas");
-		setUriPattern("/pop/v5/flowControl");
-		setMethod(MethodType.PUT);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String consumerAppId;
 
@@ -53,6 +44,15 @@ public class UpdateFlowControlRequest extends RoaAcsRequest<UpdateFlowControlRes
 	private String strategy;
 
 	private String methodName;
+	public UpdateFlowControlRequest() {
+		super("Edas", "2017-08-01", "UpdateFlowControl", "edas");
+		setUriPattern("/pop/v5/flowControl");
+		setMethod(MethodType.PUT);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getConsumerAppId() {
 		return this.consumerAppId;

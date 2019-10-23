@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class ListEcsNotInClusterRequest extends RoaAcsRequest<ListEcsNotInClusterResponse> {
-	
+	   
+
+	private String vpcId;
+
+	private Integer networkMode;
 	public ListEcsNotInClusterRequest() {
 		super("Edas", "2017-08-01", "ListEcsNotInCluster", "edas");
 		setUriPattern("/pop/v5/resource/ecs_not_in_cluster");
@@ -33,10 +37,6 @@ public class ListEcsNotInClusterRequest extends RoaAcsRequest<ListEcsNotInCluste
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String vpcId;
-
-	private Integer networkMode;
 
 	public String getVpcId() {
 		return this.vpcId;

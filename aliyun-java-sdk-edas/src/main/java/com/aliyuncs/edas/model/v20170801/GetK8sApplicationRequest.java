@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class GetK8sApplicationRequest extends RoaAcsRequest<GetK8sApplicationResponse> {
-	
+	   
+
+	private String appId;
+
+	private String from;
 	public GetK8sApplicationRequest() {
 		super("Edas", "2017-08-01", "GetK8sApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_application");
@@ -33,10 +37,6 @@ public class GetK8sApplicationRequest extends RoaAcsRequest<GetK8sApplicationRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String from;
 
 	public String getAppId() {
 		return this.appId;

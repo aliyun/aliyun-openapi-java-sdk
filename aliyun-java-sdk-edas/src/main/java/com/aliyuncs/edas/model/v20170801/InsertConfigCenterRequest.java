@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InsertConfigCenterRequest extends RoaAcsRequest<InsertConfigCenterResponse> {
-	
-	public InsertConfigCenterRequest() {
-		super("Edas", "2017-08-01", "InsertConfigCenter", "edas");
-		setUriPattern("/pop/v5/configCenter");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String dataId;
 
@@ -43,6 +34,15 @@ public class InsertConfigCenterRequest extends RoaAcsRequest<InsertConfigCenterR
 	private String logicalRegionId;
 
 	private String group;
+	public InsertConfigCenterRequest() {
+		super("Edas", "2017-08-01", "InsertConfigCenter", "edas");
+		setUriPattern("/pop/v5/configCenter");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getDataId() {
 		return this.dataId;

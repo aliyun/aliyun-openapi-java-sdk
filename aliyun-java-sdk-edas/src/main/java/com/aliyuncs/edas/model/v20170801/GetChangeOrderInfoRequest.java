@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class GetChangeOrderInfoRequest extends RoaAcsRequest<GetChangeOrderInfoResponse> {
-	
+	   
+
+	private String changeOrderId;
 	public GetChangeOrderInfoRequest() {
 		super("Edas", "2017-08-01", "GetChangeOrderInfo", "edas");
 		setUriPattern("/pop/v5/changeorder/change_order_info");
@@ -33,8 +35,6 @@ public class GetChangeOrderInfoRequest extends RoaAcsRequest<GetChangeOrderInfoR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String changeOrderId;
 
 	public String getChangeOrderId() {
 		return this.changeOrderId;

@@ -23,16 +23,7 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class InsertFlowControlRequest extends RoaAcsRequest<InsertFlowControlResponse> {
-	
-	public InsertFlowControlRequest() {
-		super("Edas", "2017-08-01", "InsertFlowControl", "edas");
-		setUriPattern("/pop/v5/flowControl");
-		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String consumerAppId;
 
@@ -51,6 +42,15 @@ public class InsertFlowControlRequest extends RoaAcsRequest<InsertFlowControlRes
 	private String strategy;
 
 	private String methodName;
+	public InsertFlowControlRequest() {
+		super("Edas", "2017-08-01", "InsertFlowControl", "edas");
+		setUriPattern("/pop/v5/flowControl");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getConsumerAppId() {
 		return this.consumerAppId;

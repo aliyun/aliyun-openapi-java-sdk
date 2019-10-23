@@ -120,50 +120,18 @@ public class GetPackageStorageCredentialResponse extends AcsResponse {
 			this.keyPrefix = keyPrefix;
 		}
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
 
-		public String getBizSecurityToken() {
-			return this.securityToken;
-		}
-
-		public void setBizSecurityToken(String securityToken) {
-			this.securityToken = securityToken;
-		}
-
-		/**
-		 * @deprecated use getBizSecurityToken instead of this.
-		 */
-		@Deprecated
 		public String getSecurityToken() {
 			return this.securityToken;
 		}
 
-		/**
-		 * @deprecated use setBizSecurityToken instead of this.
-		 */
-		@Deprecated
 		public void setSecurityToken(String securityToken) {
 			this.securityToken = securityToken;
 		}

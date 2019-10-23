@@ -23,7 +23,11 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class DisableFlowControlRequest extends RoaAcsRequest<DisableFlowControlResponse> {
-	
+	   
+
+	private String appId;
+
+	private String ruleId;
 	public DisableFlowControlRequest() {
 		super("Edas", "2017-08-01", "DisableFlowControl", "edas");
 		setUriPattern("/pop/v5/flowcontrol/disable");
@@ -33,10 +37,6 @@ public class DisableFlowControlRequest extends RoaAcsRequest<DisableFlowControlR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
-
-	private String ruleId;
 
 	public String getAppId() {
 		return this.appId;

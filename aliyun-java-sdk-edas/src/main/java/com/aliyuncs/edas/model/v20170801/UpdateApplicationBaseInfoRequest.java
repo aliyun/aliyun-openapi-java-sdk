@@ -23,7 +23,13 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class UpdateApplicationBaseInfoRequest extends RoaAcsRequest<UpdateApplicationBaseInfoResponse> {
-	
+	   
+
+	private String appName;
+
+	private String appId;
+
+	private String desc;
 	public UpdateApplicationBaseInfoRequest() {
 		super("Edas", "2017-08-01", "UpdateApplicationBaseInfo", "edas");
 		setUriPattern("/pop/v5/app/update_app_info");
@@ -33,12 +39,6 @@ public class UpdateApplicationBaseInfoRequest extends RoaAcsRequest<UpdateApplic
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appName;
-
-	private String appId;
-
-	private String desc;
 
 	public String getAppName() {
 		return this.appName;

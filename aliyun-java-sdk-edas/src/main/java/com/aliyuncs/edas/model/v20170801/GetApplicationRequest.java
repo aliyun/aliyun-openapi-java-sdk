@@ -23,7 +23,9 @@ import com.aliyuncs.edas.Endpoint;
  * @version 
  */
 public class GetApplicationRequest extends RoaAcsRequest<GetApplicationResponse> {
-	
+	   
+
+	private String appId;
 	public GetApplicationRequest() {
 		super("Edas", "2017-08-01", "GetApplication", "edas");
 		setUriPattern("/pop/v5/app/app_info");
@@ -33,8 +35,6 @@ public class GetApplicationRequest extends RoaAcsRequest<GetApplicationResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String appId;
 
 	public String getAppId() {
 		return this.appId;
